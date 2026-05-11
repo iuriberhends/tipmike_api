@@ -1,5 +1,6 @@
 """
 telegram_notifier.py - Worker de envio de tips pro Telegram
+v6 - le tambem filtrosHistAdicionados (formato antigo) alem de filtrosCompAdicionados
 v5 - layout detalhado com filtros do bot (valor atual) + ultimo confronto + resumo aprovado
 v4 - adiciona linha "Motivo" na mensagem (lida da coluna apostas.motivo)
 v3 - fix: usa coluna 'resultado' (green/red/void) em vez de 'status' (resolvida)
@@ -191,16 +192,103 @@ TIPO_LABEL = {
 }
 
 
+def _normalizar_filtros_hist(filtros_hist: list) -> list:
+    """
+    Converte filtrosHistAdicionados (formato antigo) pra estrutura interna
+    compativel com filtrosCompAdicionados.
+
+    Formato origem:
+      {
+        "base": "match" | "individual",
+        "janela": "last_10",
+        "prob": [70, 100],
+        "tipo": "all" | "same_grade" | "specific_teams",
+        "versao": "all",
+        "minPartidas": 10
+      }
+
+    Formato destino (compativel com renderer):
+      {
+        "tipo": "wr",
+        "janela": 10,
+        "min": 0.7,
+        "max": 1.0,
+        "minAtivo": True,
+        "maxAtivo": True,
+        "hist_base": "match",
+        "hist_tipo": "all",
+        "min_partidas": 10,
+        "_origem": "hist"
+      }
+    """
+    normalizados = []
+    for fh in filtros_hist or []:
+        if not isinstance(fh, dict):
+            continue
+
+        # Parse janela "last_N" -> N
+        janela_str = str(fh.get('janela', '')).strip()
+        janela_num = None
+        if janela_str.startswith('last_'):
+            try:
+                janela_num = int(janela_str.replace('last_', ''))
+            except ValueError:
+                pass
+        if not janela_num:
+            continue
+
+        # prob: [min, max] em %
+        prob = fh.get('prob') or [0, 100]
+        if not isinstance(prob, list) or len(prob) < 2:
+            prob = [0, 100]
+        prob_min, prob_max = prob[0], prob[1]
+
+        # Converte % (0-100) pra decimal (0.0-1.0) usado internamente nos stats
+        min_v = float(prob_min) / 100.0 if prob_min is not None else None
+        max_v = float(prob_max) / 100.0 if prob_max is not None else None
+
+        # Min/Max so ativos se nao forem 0 e 100 (range total = sem filtro real)
+        min_ativo = min_v is not None and prob_min > 0
+        max_ativo = max_v is not None and prob_max < 100
+
+        normalizados.append({
+            'tipo': 'wr',
+            'janela': janela_num,
+            'min': min_v,
+            'max': max_v,
+            'minAtivo': min_ativo,
+            'maxAtivo': max_ativo,
+            'hist_base': fh.get('base', 'match'),
+            'hist_tipo': fh.get('tipo', 'all'),
+            'min_partidas': fh.get('minPartidas'),
+            '_origem': 'hist',
+        })
+
+    return normalizados
+
+
 def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
     """
     Pra cada filtro complementar do bot, mostra:
       • WR últ 10 ≥ 50% → 80% ✅
 
-    Lê filtros do bot (filtrosCompAdicionados) e cruza com stats_h2h da aposta.
+    Le filtros de DUAS chaves do bot:
+      1. filtrosCompAdicionados (formato novo - WR/media/gap/tendencia)
+      2. filtrosHistAdicionados (formato antigo - so WR com base/tipo/janela)
     """
     filtros = _parse_json_field(bot_row.get('filtros_jsonb') or aposta.get('bot_filtros'))
+
+    # 1. Filtros complementares novos
     filtros_comp = filtros.get('filtrosCompAdicionados') or []
-    if not filtros_comp:
+
+    # 2. Filtros historicos antigos - normaliza pro mesmo formato
+    filtros_hist = filtros.get('filtrosHistAdicionados') or []
+    filtros_hist_norm = _normalizar_filtros_hist(filtros_hist)
+
+    # Concatena os 2
+    todos_filtros = list(filtros_comp) + filtros_hist_norm
+
+    if not todos_filtros:
         return []
 
     stats = _parse_json_field(aposta.get('stats_h2h'))
@@ -208,32 +296,45 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         return []
 
     linhas = []
-    for fc in filtros_comp:
+    for fc in todos_filtros:
         if not isinstance(fc, dict):
             continue
         tipo = (fc.get('tipo') or '').lower().strip()
         janela = fc.get('janela')
         min_v = fc.get('min') if fc.get('minAtivo') else None
         max_v = fc.get('max') if fc.get('maxAtivo') else None
+        origem = fc.get('_origem', 'comp')
+        hist_base = fc.get('hist_base')
+        hist_tipo = fc.get('hist_tipo')
 
         if not tipo:
             continue
 
+        # FiltroHist com base=individual ou tipo!=all: nao suportado ainda
+        nao_suportado = False
+        nao_suportado_motivo = ''
+        if origem == 'hist':
+            if hist_base != 'match':
+                nao_suportado = True
+                nao_suportado_motivo = f'base={hist_base}'
+            elif hist_tipo != 'all':
+                nao_suportado = True
+                nao_suportado_motivo = f'tipo={hist_tipo}'
+
         # Resolve chave do stats_dict
-        # NOTA: backtest_runner so calcula wr_ult5/10/15 e media_ult5/10/20.
-        # Se o bot pediu uma janela fora disso, marca como nao calculado.
+        # NOTA: backtest_runner so calcula wr_ult5/10/15 e media_ult5/10/20 por padrao.
+        # v3+ tambem calcula janelas customizadas extraidas dos filtros.
         janela_valida = True
-        if tipo == 'media':
-            if janela in (5, 10, 20):
-                stat_key = f"media_ult{janela}"
-            else:
-                # backtest_runner mapeia: <=5 -> ult5, <=10 -> ult10, >10 -> ult20
+        if tipo == 'media' and janela:
+            try:
+                stat_key = f'media_ult{int(janela)}'
+            except (TypeError, ValueError):
                 janela_valida = False
                 stat_key = None
-        elif tipo == 'wr':
-            if janela in (5, 10, 15):
-                stat_key = f"wr_ult{janela}"
-            else:
+        elif tipo == 'wr' and janela:
+            try:
+                stat_key = f'wr_ult{int(janela)}'
+            except (TypeError, ValueError):
                 janela_valida = False
                 stat_key = None
         elif tipo == 'gap_media':
@@ -244,7 +345,7 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
             stat_key = tipo
 
         # Pega valor
-        if not janela_valida:
+        if not janela_valida or nao_suportado:
             valor = None
         elif stat_key == 'gap_linha_calc':
             media = stats.get('media_ult20')
@@ -255,6 +356,9 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
 
         # Formata rótulo
         rotulo_tipo = TIPO_LABEL.get(tipo, tipo.capitalize())
+        # FiltroHist do match: prefixa com 'H2H' pra ficar claro
+        if origem == 'hist' and hist_base == 'match':
+            rotulo_tipo = f'WR H2H'
         if janela and tipo in ('media', 'wr'):
             rotulo = f"{rotulo_tipo} últ {janela}"
         else:
@@ -263,7 +367,7 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         # Formata condição (≥ x, ≤ y, x a y)
         cond_partes = []
         if min_v is not None and max_v is not None:
-            cond_partes.append(f"{_fmt_filtro_valor(tipo, min_v)} a {_fmt_filtro_valor(tipo, max_v)}")
+            cond_partes.append(f"({_fmt_filtro_valor(tipo, min_v)}-{_fmt_filtro_valor(tipo, max_v)})")
         elif min_v is not None:
             cond_partes.append(f"≥ {_fmt_filtro_valor(tipo, min_v)}")
         elif max_v is not None:
@@ -271,7 +375,10 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         cond_txt = ' '.join(cond_partes)
 
         # Formata valor real
-        if not janela_valida:
+        if nao_suportado:
+            valor_txt = f'não suportado ({nao_suportado_motivo})'
+            check = '⚠️'
+        elif not janela_valida:
             valor_txt = 'não calculado'
             check = '⚠️'
         elif valor is None:
@@ -279,7 +386,7 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
             check = '⚠️'
         else:
             valor_txt = _fmt_filtro_valor(tipo, valor)
-            # Verifica se passou (deveria ter passado já que apostou, mas confere)
+            # Verifica se passou
             passou = True
             try:
                 v_num = float(valor)
@@ -724,7 +831,7 @@ async def loop_listener():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("TelegramNotifier iniciando (v5 - layout detalhado com filtros)")
+    logger.info("TelegramNotifier iniciando (v6 - le filtrosHistAdicionados + filtrosCompAdicionados)")
     logger.info(f"TOKEN configurado: {'sim' if TELEGRAM_BOT_TOKEN else 'NAO!'}")
     if TELEGRAM_BOT_TOKEN:
         logger.info(f"TOKEN preview: {TELEGRAM_BOT_TOKEN[:8]}...{TELEGRAM_BOT_TOKEN[-4:]}")
