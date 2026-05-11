@@ -1,14 +1,12 @@
 """
 telegram_notifier.py - Worker de envio de tips pro Telegram
+v5 - layout detalhado com filtros do bot (valor atual) + ultimo confronto + resumo aprovado
 v4 - adiciona linha "Motivo" na mensagem (lida da coluna apostas.motivo)
 v3 - fix: usa coluna 'resultado' (green/red/void) em vez de 'status' (resolvida)
 
 O resolver de apostas seta:
   - status = 'resolvida' (generico)
   - resultado = 'green'/'red'/'void' (veredito real)
-
-O bot_executor preenche apostas.motivo com resumo curto dos filtros
-que bateram pra apitar a tip (ex: "WR10=100% · gap=8 · Q2").
 """
 import asyncio
 import json
@@ -69,7 +67,7 @@ state = State()
 
 
 # ============================================================
-# FORMATACAO
+# HELPERS DE FORMATACAO
 # ============================================================
 def _emoji_esporte(esporte: str) -> str:
     e = (esporte or '').lower()
@@ -94,10 +92,275 @@ def _format_decimal(v, casas=2):
         return str(v)
 
 
-def montar_msg_aposta_nova(aposta: dict) -> str:
-    """Mensagem HTML quando aposta é criada"""
+def _formatar_data_hora(ts) -> str:
+    """Format datetime pra '05/05 14:36:36'"""
+    if ts is None:
+        return ''
+    if isinstance(ts, str):
+        try:
+            ts = datetime.fromisoformat(ts.replace('Z', '+00:00'))
+        except Exception:
+            return ts
+    try:
+        return ts.strftime('%d/%m %H:%M:%S')
+    except Exception:
+        return str(ts)
+
+
+def _parse_json_field(v):
+    """Bot.filtros/stats_h2h podem vir como str JSON ou dict ja parseado."""
+    if v is None:
+        return {}
+    if isinstance(v, str):
+        try:
+            return json.loads(v)
+        except Exception:
+            return {}
+    return v
+
+
+# ============================================================
+# RESUMO DOS FILTROS APROVADOS (linha superior tipo "ALVO GANHANDO, AZARAO, DIF 2+")
+# ============================================================
+CENARIO_LABEL = {
+    'casa_vencendo':       'CASA VENCENDO',
+    'casa_perdendo':       'CASA PERDENDO',
+    'empate':              'EMPATE',
+    'casa_ou_empate':      'CASA OU EMPATE',
+    'visitante_ou_empate': 'FORA OU EMPATE',
+    'casa_ou_visitante':   'SEM EMPATE',
+    'alvo_vencendo':       'ALVO VENCENDO',
+    'alvo_perdendo':       'ALVO PERDENDO',
+    'oponente_vencendo':   'OPONENTE VENCENDO',
+    'favorito':            'FAVORITO',
+    'azarao':              'AZARAO',
+}
+
+
+def _resumir_filtros_aprovados(bot_row: dict, aposta: dict) -> str:
+    """
+    Monta linha de cabecalho com tags curtas dos filtros ativos:
+    'LINHA 0.25 A 1.25 · DIF 2+ · CASA VENCENDO'
+    """
+    filtros = _parse_json_field(bot_row.get('filtros_jsonb') or aposta.get('bot_filtros'))
+    tags = []
+
+    # Linha range
+    lmin = bot_row.get('linha_min')
+    lmax = bot_row.get('linha_max')
+    if lmin is not None and lmax is not None:
+        tags.append(f"LINHA {_format_decimal(lmin)} A {_format_decimal(lmax)}")
+    elif lmin is not None:
+        tags.append(f"LINHA ≥ {_format_decimal(lmin)}")
+    elif lmax is not None:
+        tags.append(f"LINHA ≤ {_format_decimal(lmax)}")
+
+    # Odd range
+    omin = bot_row.get('odd_min')
+    omax = bot_row.get('odd_max')
+    if omin is not None and omax is not None:
+        tags.append(f"ODD {_format_decimal(omin, 2)} A {_format_decimal(omax, 2)}")
+
+    # Cenario de partida
+    if filtros.get('cenarioPartidaAtivo'):
+        cen = filtros.get('cenarioPartida')
+        label = CENARIO_LABEL.get(cen, str(cen).upper() if cen else '')
+        if label:
+            tags.append(label)
+
+    # Diff de placar
+    if filtros.get('diferencaPlacarAtivo'):
+        diff = filtros.get('diferencaPlacar', 0)
+        if diff:
+            tags.append(f"DIF {diff}+")
+
+    return ' · '.join(tags)
+
+
+# ============================================================
+# FILTROS COMPLEMENTARES (valor atual de cada filtro do bot)
+# ============================================================
+TIPO_LABEL = {
+    'media': 'Média',
+    'wr':    'WR',
+    'gap':   'Gap',
+    'gap_linha':  'Gap (linha)',
+    'gap_media':  'Gap (média)',
+    'tendencia':  'Tendência',
+    'qtd_h2h':    'H2H',
+}
+
+
+def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
+    """
+    Pra cada filtro complementar do bot, mostra:
+      • WR últ 10 ≥ 50% → 80% ✅
+
+    Lê filtros do bot (filtrosCompAdicionados) e cruza com stats_h2h da aposta.
+    """
+    filtros = _parse_json_field(bot_row.get('filtros_jsonb') or aposta.get('bot_filtros'))
+    filtros_comp = filtros.get('filtrosCompAdicionados') or []
+    if not filtros_comp:
+        return []
+
+    stats = _parse_json_field(aposta.get('stats_h2h'))
+    if not stats:
+        return []
+
+    linhas = []
+    for fc in filtros_comp:
+        if not isinstance(fc, dict):
+            continue
+        tipo = (fc.get('tipo') or '').lower().strip()
+        janela = fc.get('janela')
+        min_v = fc.get('min') if fc.get('minAtivo') else None
+        max_v = fc.get('max') if fc.get('maxAtivo') else None
+
+        if not tipo:
+            continue
+
+        # Resolve chave do stats_dict
+        # NOTA: backtest_runner so calcula wr_ult5/10/15 e media_ult5/10/20.
+        # Se o bot pediu uma janela fora disso, marca como nao calculado.
+        janela_valida = True
+        if tipo == 'media':
+            if janela in (5, 10, 20):
+                stat_key = f"media_ult{janela}"
+            else:
+                # backtest_runner mapeia: <=5 -> ult5, <=10 -> ult10, >10 -> ult20
+                janela_valida = False
+                stat_key = None
+        elif tipo == 'wr':
+            if janela in (5, 10, 15):
+                stat_key = f"wr_ult{janela}"
+            else:
+                janela_valida = False
+                stat_key = None
+        elif tipo == 'gap_media':
+            stat_key = 'gap'
+        elif tipo == 'gap_linha':
+            stat_key = 'gap_linha_calc'
+        else:
+            stat_key = tipo
+
+        # Pega valor
+        if not janela_valida:
+            valor = None
+        elif stat_key == 'gap_linha_calc':
+            media = stats.get('media_ult20')
+            linha = stats.get('linha_atual')
+            valor = abs(float(media) - float(linha)) if (media is not None and linha is not None) else None
+        else:
+            valor = stats.get(stat_key)
+
+        # Formata rótulo
+        rotulo_tipo = TIPO_LABEL.get(tipo, tipo.capitalize())
+        if janela and tipo in ('media', 'wr'):
+            rotulo = f"{rotulo_tipo} últ {janela}"
+        else:
+            rotulo = rotulo_tipo
+
+        # Formata condição (≥ x, ≤ y, x a y)
+        cond_partes = []
+        if min_v is not None and max_v is not None:
+            cond_partes.append(f"{_fmt_filtro_valor(tipo, min_v)} a {_fmt_filtro_valor(tipo, max_v)}")
+        elif min_v is not None:
+            cond_partes.append(f"≥ {_fmt_filtro_valor(tipo, min_v)}")
+        elif max_v is not None:
+            cond_partes.append(f"≤ {_fmt_filtro_valor(tipo, max_v)}")
+        cond_txt = ' '.join(cond_partes)
+
+        # Formata valor real
+        if not janela_valida:
+            valor_txt = 'não calculado'
+            check = '⚠️'
+        elif valor is None:
+            valor_txt = 'sem H2H'
+            check = '⚠️'
+        else:
+            valor_txt = _fmt_filtro_valor(tipo, valor)
+            # Verifica se passou (deveria ter passado já que apostou, mas confere)
+            passou = True
+            try:
+                v_num = float(valor)
+                if min_v is not None and v_num < float(min_v):
+                    passou = False
+                if max_v is not None and v_num > float(max_v):
+                    passou = False
+            except Exception:
+                pass
+            check = '✅' if passou else '❌'
+
+        if cond_txt:
+            linhas.append(f"   • {rotulo} {cond_txt} → {valor_txt} {check}")
+        else:
+            linhas.append(f"   • {rotulo} → {valor_txt}")
+
+    return linhas
+
+
+def _fmt_filtro_valor(tipo: str, v) -> str:
+    """Formata valor segundo o tipo (% pra WR, 1 casa pra média/gap, int pra qtd)"""
+    try:
+        f = float(v)
+    except Exception:
+        return str(v)
+
+    if tipo == 'wr':
+        # 0.0-1.0 vira %
+        if 0 <= f <= 1:
+            return f"{f * 100:.0f}%"
+        return f"{f:.0f}%"
+    if tipo == 'qtd_h2h':
+        return f"{int(f)}"
+    if tipo == 'gap' or tipo.startswith('gap_'):
+        return f"{f:+.1f}"
+    if tipo == 'tendencia':
+        return f"{f:+.2f}"
+    return f"{f:.1f}"
+
+
+# ============================================================
+# ULTIMO CONFRONTO (placar do ultimo jogo do par)
+# ============================================================
+async def _buscar_ultimo_confronto(jogador_a: str, jogador_b: str, bookmaker: str,
+                                    sport: str, antes_de_ts) -> Optional[str]:
+    """Retorna placar do ultimo jogo entre jogador_a e jogador_b (ex: '4-2') ou None."""
+    if not jogador_a or not jogador_b or not bookmaker:
+        return None
+    try:
+        async with state.pool.acquire() as conn:
+            row = await conn.fetchrow("""
+                SELECT DISTINCT ON (event_id)
+                    event_id, ts, score_home, score_away
+                FROM ticks
+                WHERE bookmaker = $1
+                  AND ($2::text IS NULL OR sport = $2)
+                  AND ((jogador_a = $3 AND jogador_b = $4)
+                    OR (jogador_a = $4 AND jogador_b = $3))
+                  AND score_home IS NOT NULL
+                  AND score_away IS NOT NULL
+                  AND ts < $5
+                ORDER BY event_id, ts DESC
+                LIMIT 1
+            """, bookmaker, sport, jogador_a, jogador_b, antes_de_ts)
+            if not row:
+                return None
+            return f"{row['score_home']}-{row['score_away']}"
+    except Exception as e:
+        logger.exception(f"erro buscando ultimo confronto: {e}")
+        return None
+
+
+# ============================================================
+# MONTA MENSAGEM NOVA (LAYOUT v5)
+# ============================================================
+async def montar_msg_aposta_nova(aposta: dict) -> str:
+    """Mensagem HTML quando aposta é criada — layout v5 detalhado"""
     emoji = _emoji_esporte(aposta.get('bot_esporte') or aposta.get('esporte', ''))
     bot_nome = (aposta.get('bot_nome') or 'Bot').upper()
+    apostado_em = _formatar_data_hora(aposta.get('apostado_em'))
+
     casa = (aposta.get('casa') or aposta.get('bot_casa') or '?').upper()
     liga = aposta.get('liga') or aposta.get('torneio') or '?'
 
@@ -106,9 +369,16 @@ def montar_msg_aposta_nova(aposta: dict) -> str:
 
     selecao = aposta.get('selecao') or aposta.get('lado') or '?'
     linha = aposta.get('linha')
-    linha_txt = f' {linha}' if linha is not None else ''
-
+    # Fix: nao duplica linha se ja esta no texto da selecao
+    # (ex: "Mais de 4.5" ja tem o 4.5, "HC Asiatico - Senya +0.25" tambem)
+    linha_str = str(linha) if linha is not None else ''
+    if linha_str and linha_str in selecao:
+        linha_txt = ''
+    else:
+        linha_txt = f' {linha}' if linha is not None else ''
     odd = _format_decimal(aposta.get('odd'))
+
+    # Tempo + placar atual no momento da entrada
     minuto = aposta.get('minuto_entrada')
     periodo = aposta.get('periodo_entrada')
     if minuto is not None:
@@ -124,36 +394,61 @@ def montar_msg_aposta_nova(aposta: dict) -> str:
         placar_a = aposta.get('score_home_no_momento')
     if placar_b is None:
         placar_b = aposta.get('score_away_no_momento')
-    placar = f'{placar_a}x{placar_b}' if placar_a is not None else '-'
+    placar = f'{placar_a}-{placar_b}' if placar_a is not None else '-'
 
     stake = _format_decimal(aposta.get('stake'))
-    motivo = (aposta.get('motivo') or '').strip()
-    motivo_linha = f'\n🧠 {motivo}' if motivo else ''
+
+    # Resumo dos filtros aprovados (linha de tags)
+    resumo_aprovado = _resumir_filtros_aprovados(aposta, aposta)
+
+    # Ultimo confronto entre os jogadores
+    ultimo_confronto = await _buscar_ultimo_confronto(
+        jogador_a, jogador_b,
+        aposta.get('bookmaker') or aposta.get('bot_casa'),
+        aposta.get('sport') or aposta.get('bot_sport_banco'),
+        aposta.get('apostado_em') or datetime.now(),
+    )
+    ultimo_txt = f"\n⏳ Último Confronto: <b>{ultimo_confronto}</b>" if ultimo_confronto else ''
+
+    # Filtros complementares (valor atual de cada filtro do bot)
+    filtros_linhas = _formatar_filtros_complementares(aposta, aposta)
+    filtros_bloco = ''
+    if filtros_linhas:
+        filtros_bloco = '\n\n📊 <b>Filtros do bot (valor atual):</b>\n' + '\n'.join(filtros_linhas)
+
+    # Monta mensagem
+    cabecalho = f'{emoji} <b>{bot_nome}</b>'
+    if apostado_em:
+        cabecalho += f'\n<i>{apostado_em}</i>'
 
     msg = (
-        f'🟢 <b>NOVA TIP</b> — {bot_nome}\n'
+        f'{cabecalho}\n'
         f'━━━━━━━━━━━━━━━━━━\n'
-        f'{emoji} <b>{casa}</b> · {liga}\n'
-        f'⚔️ {jogador_a} vs {jogador_b}\n'
-        f'📊 <b>{selecao}{linha_txt}</b> @ <b>{odd}</b>\n'
-        f'⏱️ Live: {tempo_txt} · {placar}\n'
-        f'💰 Stake: R${stake}'
-        f'{motivo_linha}\n'
+        f'<b>{selecao}{linha_txt} @ {odd}</b>\n'
+        f'<i>{casa} · {liga}</i>\n\n'
+        f'⚔️ {jogador_a} vs {jogador_b}'
+    )
+    if resumo_aprovado:
+        msg += f'\n📋 {resumo_aprovado}'
+
+    msg += (
+        f'\n\n🕐 Tempo: {tempo_txt}\n'
+        f'🔢 Placar: {placar}'
+        f'{ultimo_txt}'
+        f'{filtros_bloco}'
+        f'\n\n💰 Stake: R${stake}\n'
         f'🆔 #{aposta.get("id")}'
     )
     return msg
 
 
+# ============================================================
+# MONTA MENSAGEM RESOLVIDA (mantida como v4, minimo)
+# ============================================================
 def montar_msg_aposta_resolvida(aposta: dict) -> str:
-    """Mensagem HTML quando aposta resolve.
-
-    IMPORTANTE: usa coluna 'resultado' (que tem green/red/void),
-    NAO 'status' (que tem 'resolvida' generico).
-    """
-    # Prioriza 'resultado' sobre 'status' (este eh sempre 'resolvida')
+    """Mensagem HTML quando aposta resolve."""
     veredito = (aposta.get('resultado') or '').lower()
     if not veredito or veredito == 'pendente':
-        # fallback se algum dia o resolver mudar de coluna
         veredito = (aposta.get('status') or '').lower()
 
     if veredito in ('green', 'ganhou'):
@@ -179,7 +474,7 @@ def montar_msg_aposta_resolvida(aposta: dict) -> str:
         placar_a = aposta.get('placar_a_entrada')
     if placar_b is None:
         placar_b = aposta.get('placar_b_entrada')
-    placar_final = f'{placar_a}x{placar_b}' if placar_a is not None else '?'
+    placar_final = f'{placar_a}-{placar_b}' if placar_a is not None else '?'
 
     selecao = aposta.get('selecao') or aposta.get('lado') or '?'
     linha = aposta.get('linha')
@@ -273,7 +568,7 @@ async def enviar_telegram(chat_id: str, text: str, max_retries: int = MAX_RETRIE
 
 
 # ============================================================
-# LOOKUP - QUERY COM NOMES REAIS
+# LOOKUP - QUERY COM NOMES REAIS + DADOS PRO LAYOUT v5
 # ============================================================
 SQL_APOSTA_COMPLETA = """
     SELECT
@@ -288,10 +583,14 @@ SQL_APOSTA_COMPLETA = """
         a.minuto_entrada, a.periodo_entrada, a.live_time,
         a.stake, a.pnl, a.lucro_unidades,
         a.status, a.resultado, a.motivo,
+        a.stats_h2h,
         a.apostado_em, a.resolvido_em,
         b.nome AS bot_nome,
         b.casa AS bot_casa,
         b.esporte AS bot_esporte,
+        b.linha_min, b.linha_max,
+        b.odd_min, b.odd_max,
+        b.filtros AS filtros_jsonb,
         b.em_treinamento,
         b.telegram_canal_id,
         c.chat_id AS canal_chat_id,
@@ -309,7 +608,12 @@ async def buscar_aposta(aposta_id: int) -> Optional[dict]:
         row = await conn.fetchrow(SQL_APOSTA_COMPLETA, aposta_id)
         if not row:
             return None
-        return dict(row)
+        d = dict(row)
+        # Calcula sport do banco a partir do esporte
+        esp_to_sport = {'fifa': 'E-Football', 'nba2k': 'E-Basketball',
+                        'ehockey': 'E-Hockey', 'etennis': 'E-Tennis'}
+        d['bot_sport_banco'] = esp_to_sport.get(d.get('bot_esporte'), d.get('bot_esporte'))
+        return d
 
 
 # ============================================================
@@ -339,7 +643,7 @@ async def processar_aposta_nova(aposta_id: int):
             logger.warning(f"aposta #{aposta_id} pulada: canal {data.get('canal_nome')} sem chat_id real")
             return
 
-        msg = montar_msg_aposta_nova(data)
+        msg = await montar_msg_aposta_nova(data)
         await enviar_telegram(chat_id, msg)
 
     except Exception as e:
@@ -420,7 +724,7 @@ async def loop_listener():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("TelegramNotifier iniciando (v4 — mostra motivo da tip)")
+    logger.info("TelegramNotifier iniciando (v5 - layout detalhado com filtros)")
     logger.info(f"TOKEN configurado: {'sim' if TELEGRAM_BOT_TOKEN else 'NAO!'}")
     if TELEGRAM_BOT_TOKEN:
         logger.info(f"TOKEN preview: {TELEGRAM_BOT_TOKEN[:8]}...{TELEGRAM_BOT_TOKEN[-4:]}")
