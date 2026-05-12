@@ -1,9 +1,14 @@
 """routers/torneios.py - torneio + grade + jogadores E times + whitelist/blacklist + cache
 
+v5 - fix: NBA aparecendo em FIFA (e cross-pollination entre esportes)
+  - Adiciona ESPORTE_LIGA_BLACKLIST: patterns que NUNCA podem aparecer em cada esporte.
+  - Pra fifa: bloqueia '%NBA%', '%Basket%', '%NHL%', '%Hockey%', '%Tennis%', '%ATP%', '%WTA%'.
+  - Pra nba2k: bloqueia '%NHL%', '%Hockey%', '%Tennis%', '%ATP%', '%WTA%' e padroes de futebol.
+  - Aplica no WHERE como AND NOT (liga LIKE ... OR liga LIKE ...).
+
 v4 - tradutor de IDs:
   - SUPERBET_ID_TO_NAME: converte IDs numericos da Superbet (94993, 89069, etc)
     pra nomes humanos (Cyber Live Arena, EAL - NextGen).
-    Cobre ticks antigos do banco onde o coletor caiu pro fallback de ID.
   - BET365_CODE_TO_NAME: converte codigos crus da Bet365 (ESOC-GTL-12MP)
     pra nomes humanos (GT Leagues - 2x6).
   - traduzir_liga() roda antes do classificar_pai() em todas as queries.
@@ -69,6 +74,34 @@ ESPORTE_LIGA_PATTERNS = {
 }
 
 
+# v5: blacklist de patterns que NUNCA podem aparecer no esporte
+# (resolve casos de patterns muito genericos tipo '%H2H GG%' pegando 'NBA H2H GG')
+ESPORTE_LIGA_BLACKLIST = {
+    'fifa': [
+        '%NBA%', '%Basket%', '%E-Basket%', '%E Basket%',     # nba2k
+        '%NHL%', '%Hockey%', '%E-Hockey%', '%E Hockey%',     # ehockey
+        '%Tennis%', '%Tenis%', '%ATP%', '%WTA%',             # etennis
+    ],
+    'nba2k': [
+        '%NHL%', '%Hockey%',
+        '%Tennis%', '%Tenis%', '%ATP%', '%WTA%',
+        # Padroes claramente de futebol
+        '%FIFA%', '%FC %', '%Soccer%', '%E-Football%', '%E Football%',
+        '%minutos de jogo%',  # esports de futebol da Betano
+    ],
+    'ehockey': [
+        '%NBA%', '%Basket%',
+        '%Tennis%', '%Tenis%', '%ATP%', '%WTA%',
+        '%FIFA%', '%FC %', '%Soccer%',
+    ],
+    'etennis': [
+        '%NBA%', '%Basket%',
+        '%NHL%', '%Hockey%',
+        '%FIFA%', '%FC %', '%Soccer%',
+    ],
+}
+
+
 # Ligas que nao tem hifen mas pertencem a um pai
 PAIS_ESPECIAIS = {
     'GT League': 'GT',
@@ -89,13 +122,7 @@ PAI_ALIASES = {
 # ============================================================
 # TRADUTORES DE LIGA - converte IDs/codigos brutos -> nome humano
 # ============================================================
-# Cobre casos onde o coletor caiu no fallback (sem nome no JSON do coletor)
-# ou onde a casa retorna codigo cru via API.
-# ============================================================
 
-# SUPERBET: IDs numericos -> nomes humanos
-# Fonte: mapeamento confirmado pelo usuario em 11/05/2026
-# Quando o superbet_ligas.json nao tem o ID, o coletor salva o numero cru.
 SUPERBET_ID_TO_NAME = {
     # FIFA (E-Football)
     "49959": "Battle - Premier League",
@@ -138,29 +165,21 @@ SUPERBET_ID_TO_NAME = {
     "92679": "European Conference 4x5",
 }
 
-# BET365: codigos brutos -> nomes humanos
-# Fonte: mapeamento confirmado pelo usuario em 11/05/2026
 BET365_CODE_TO_NAME = {
-    # FIFA (E-Football)
     "ESOC-GTL-12MP":   "GT Leagues - 2x6",
     "ESOCH2HGG-8MP":   "H2H GG League - 2x4",
     "ESOCBATVOL-6":    "Battle Volta - 2x3",
     "ESOCCERBATTLE":   "Battle - 2x4",
-    # NBA (E-Basketball)
     "B-EBASKBLITZ4X5": "H2H GG League - 4x5",
     "B-EBASKBAT4X5":   "Battle - 5x5",
 }
 
-
-# Aliases de torneios renomeados pelas casas
-# (mesmo torneio, nome antigo -> nome atual)
 SUPERBET_ALIASES = {
     "Live Arena": "Cyber Live Arena",
 }
 
 
 def traduzir_liga(bookmaker: str, liga: str) -> str:
-    """Traduz ID/codigo bruto pra nome humano. Se nao tem mapeamento, devolve igual."""
     if not liga:
         return liga
     if bookmaker == 'superbet':
@@ -173,36 +192,28 @@ def traduzir_liga(bookmaker: str, liga: str) -> str:
     return liga
 
 
-# Mapa de qual esporte cada ID/codigo bruto pertence
-# (usado pra expandir o WHERE do /disponiveis com IDs conhecidos)
 SUPERBET_ID_TO_ESPORTE = {
-    # NBA
     "75124": "nba2k", "80566": "nba2k", "89069": "nba2k", "92679": "nba2k",
-    # Hockey
     "91014": "ehockey", "91015": "ehockey",
-    # Tenis
     "91005": "etennis",
-    # Tudo mais e FIFA
 }
 
 BET365_CODE_TO_ESPORTE = {
     "B-EBASKBLITZ4X5": "nba2k",
     "B-EBASKBAT4X5":   "nba2k",
-    # ESOC* sao FIFA
 }
 
 
 def _ids_brutos_para_esporte(casa: str, esporte: str) -> list:
-    """Retorna lista de IDs/codigos brutos que pertencem ao esporte na casa."""
     out = []
     if casa == 'superbet':
         for liga_id in SUPERBET_ID_TO_NAME.keys():
-            esp = SUPERBET_ID_TO_ESPORTE.get(liga_id, 'fifa')  # default FIFA
+            esp = SUPERBET_ID_TO_ESPORTE.get(liga_id, 'fifa')
             if esp == esporte:
                 out.append(liga_id)
     elif casa == 'bet365':
         for codigo in BET365_CODE_TO_NAME.keys():
-            esp = BET365_CODE_TO_ESPORTE.get(codigo, 'fifa')  # default FIFA
+            esp = BET365_CODE_TO_ESPORTE.get(codigo, 'fifa')
             if esp == esporte:
                 out.append(codigo)
     return out
@@ -210,7 +221,6 @@ def _ids_brutos_para_esporte(casa: str, esporte: str) -> list:
 
 
 def classificar_pai(nome_liga: str) -> str:
-    """Detecta o torneio pai a partir do nome completo da liga."""
     if not nome_liga:
         return ''
     if nome_liga in PAIS_ESPECIAIS:
@@ -257,9 +267,6 @@ async def _buscar_times(filtro_sql: str, params: list):
     return [r["time"] for r in rows if r["time"]]
 
 
-# ============================================================
-# /disponiveis - TORNEIOS PAI agrupados com grades dentro
-# ============================================================
 @router.get("/disponiveis")
 async def listar_torneios_disponiveis(
     casa: str = Query(...),
@@ -267,19 +274,8 @@ async def listar_torneios_disponiveis(
     dias: int = Query(7, ge=1, le=30),
     min_ticks: int = Query(100, ge=0),
 ):
-    """
-    Retorna TORNEIOS PAI agrupados, com suas grades reais dentro.
-
-    Estrutura:
-    {
-        casa, esporte, dias, min_ticks, total_pais,
-        torneios: [
-            {nome_pai, nome_pai_real, ticks_total, grades: [{nome, ticks}, ...]},
-            ...
-        ]
-    }
-    """
-    cache_key = ("disponiveis_v4b", casa, esporte, dias, min_ticks)
+    """v5: filtra cross-pollination com blacklist (NBA nao aparece em FIFA, etc)"""
+    cache_key = ("disponiveis_v5", casa, esporte, dias, min_ticks)
     cached = _cache_get(cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
@@ -297,8 +293,6 @@ async def listar_torneios_disponiveis(
         params.append(p)
         placeholders.append(f"liga LIKE ${len(params)}")
 
-    # v4: tambem inclui IDs/codigos brutos conhecidos pra essa casa+esporte
-    # (resolve casos onde o coletor caiu no fallback e salvou o ID cru)
     ids_brutos = _ids_brutos_para_esporte(casa, esporte)
     if ids_brutos:
         in_placeholders = []
@@ -309,6 +303,16 @@ async def listar_torneios_disponiveis(
 
     where_esporte = " OR ".join(placeholders)
 
+    # v5: blacklist - NBA nao aparece em FIFA, etc
+    blacklist_patterns = ESPORTE_LIGA_BLACKLIST.get(esporte, [])
+    where_blacklist = ""
+    if blacklist_patterns:
+        bl_placeholders = []
+        for bp in blacklist_patterns:
+            params.append(bp)
+            bl_placeholders.append(f"liga LIKE ${len(params)}")
+        where_blacklist = f"AND NOT ({' OR '.join(bl_placeholders)})"
+
     sql = f"""
         SELECT liga, COUNT(*) AS ticks
         FROM ticks
@@ -317,6 +321,7 @@ async def listar_torneios_disponiveis(
           AND liga != ''
           AND ts >= NOW() - INTERVAL '{dias} days'
           AND ({where_esporte})
+          {where_blacklist}
         GROUP BY liga
         HAVING COUNT(*) >= {min_ticks}
         ORDER BY ticks DESC
@@ -330,7 +335,6 @@ async def listar_torneios_disponiveis(
     for r in rows:
         liga_bruta = r["liga"]
         ticks = r["ticks"]
-        # v4: traduz IDs/codigos brutos antes de classificar pai
         liga = traduzir_liga(casa, liga_bruta)
         pai = classificar_pai(liga)
 
@@ -339,16 +343,13 @@ async def listar_torneios_disponiveis(
 
         if pai not in pais_dict:
             pais_dict[pai] = {
-                "grades": {},  # dict {nome_grade: ticks} - dedupe automatico
+                "grades": {},
                 "ticks_total": 0,
             }
 
-        # Dedupe: se ja existe grade com esse nome, mantem a com mais ticks
-        # (rows ja vem ORDER BY ticks DESC, entao a primeira sempre eh a maior)
         if liga not in pais_dict[pai]["grades"]:
             pais_dict[pai]["grades"][liga] = ticks
             pais_dict[pai]["ticks_total"] += ticks
-        # senao: ignora (ja temos a versao maior)
 
     torneios = []
     for pai, dados in sorted(
@@ -356,7 +357,6 @@ async def listar_torneios_disponiveis(
         key=lambda x: x[1]["ticks_total"],
         reverse=True,
     ):
-        # Converte dict de grades em lista ordenada por ticks
         grades_lista = [
             {"nome": nome, "ticks": ticks}
             for nome, ticks in sorted(
