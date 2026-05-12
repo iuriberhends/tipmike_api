@@ -70,7 +70,7 @@ def _sport_from_esporte(esporte: str) -> str:
 
 @router.get("/dashboard")
 async def dashboard():
-    agora = datetime.now(timezone.utc)
+    agora = datetime.utcnow()
     inicio_hoje = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
     uma_hora_atras = agora - timedelta(hours=1)
 
@@ -193,7 +193,7 @@ async def stats_overview(esporte: str = Query(...)):
 
     sport = _sport_from_esporte(esporte)
     inicio_hoje = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
-    h24 = datetime.now(timezone.utc) - timedelta(hours=24)
+    h24 = datetime.utcnow() - timedelta(hours=24)
 
     async with db() as conn:
         # 1 query agregada com tudo de uma vez
@@ -767,7 +767,7 @@ async def stats_preview_jogador(
             else:
                 break
 
-    h24 = datetime.now(timezone.utc) - timedelta(hours=24)
+    h24 = datetime.utcnow() - timedelta(hours=24)
     async with db() as conn:
         apostas_jogador = await conn.fetchrow("""
             SELECT
