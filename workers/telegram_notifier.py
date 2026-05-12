@@ -1,5 +1,7 @@
 """
 telegram_notifier.py - Worker de envio de tips pro Telegram
+v7 - fix _buscar_ultimo_confronto: pega ULTIMO tick de cada event_id (placar final
+     mais proximo possivel) e exclui o jogo atual da aposta
 v6 - le tambem filtrosHistAdicionados (formato antigo) alem de filtrosCompAdicionados
 v5 - layout detalhado com filtros do bot (valor atual) + ultimo confronto + resumo aprovado
 v4 - adiciona linha "Motivo" na mensagem (lida da coluna apostas.motivo)
@@ -121,7 +123,7 @@ def _parse_json_field(v):
 
 
 # ============================================================
-# RESUMO DOS FILTROS APROVADOS (linha superior tipo "ALVO GANHANDO, AZARAO, DIF 2+")
+# RESUMO DOS FILTROS APROVADOS
 # ============================================================
 CENARIO_LABEL = {
     'casa_vencendo':       'CASA VENCENDO',
@@ -139,14 +141,9 @@ CENARIO_LABEL = {
 
 
 def _resumir_filtros_aprovados(bot_row: dict, aposta: dict) -> str:
-    """
-    Monta linha de cabecalho com tags curtas dos filtros ativos:
-    'LINHA 0.25 A 1.25 · DIF 2+ · CASA VENCENDO'
-    """
     filtros = _parse_json_field(bot_row.get('filtros_jsonb') or aposta.get('bot_filtros'))
     tags = []
 
-    # Linha range
     lmin = bot_row.get('linha_min')
     lmax = bot_row.get('linha_max')
     if lmin is not None and lmax is not None:
@@ -156,20 +153,17 @@ def _resumir_filtros_aprovados(bot_row: dict, aposta: dict) -> str:
     elif lmax is not None:
         tags.append(f"LINHA ≤ {_format_decimal(lmax)}")
 
-    # Odd range
     omin = bot_row.get('odd_min')
     omax = bot_row.get('odd_max')
     if omin is not None and omax is not None:
         tags.append(f"ODD {_format_decimal(omin, 2)} A {_format_decimal(omax, 2)}")
 
-    # Cenario de partida
     if filtros.get('cenarioPartidaAtivo'):
         cen = filtros.get('cenarioPartida')
         label = CENARIO_LABEL.get(cen, str(cen).upper() if cen else '')
         if label:
             tags.append(label)
 
-    # Diff de placar
     if filtros.get('diferencaPlacarAtivo'):
         diff = filtros.get('diferencaPlacar', 0)
         if diff:
@@ -179,7 +173,7 @@ def _resumir_filtros_aprovados(bot_row: dict, aposta: dict) -> str:
 
 
 # ============================================================
-# FILTROS COMPLEMENTARES (valor atual de cada filtro do bot)
+# FILTROS COMPLEMENTARES
 # ============================================================
 TIPO_LABEL = {
     'media': 'Média',
@@ -193,40 +187,10 @@ TIPO_LABEL = {
 
 
 def _normalizar_filtros_hist(filtros_hist: list) -> list:
-    """
-    Converte filtrosHistAdicionados (formato antigo) pra estrutura interna
-    compativel com filtrosCompAdicionados.
-
-    Formato origem:
-      {
-        "base": "match" | "individual",
-        "janela": "last_10",
-        "prob": [70, 100],
-        "tipo": "all" | "same_grade" | "specific_teams",
-        "versao": "all",
-        "minPartidas": 10
-      }
-
-    Formato destino (compativel com renderer):
-      {
-        "tipo": "wr",
-        "janela": 10,
-        "min": 0.7,
-        "max": 1.0,
-        "minAtivo": True,
-        "maxAtivo": True,
-        "hist_base": "match",
-        "hist_tipo": "all",
-        "min_partidas": 10,
-        "_origem": "hist"
-      }
-    """
     normalizados = []
     for fh in filtros_hist or []:
         if not isinstance(fh, dict):
             continue
-
-        # Parse janela "last_N" -> N
         janela_str = str(fh.get('janela', '')).strip()
         janela_num = None
         if janela_str.startswith('last_'):
@@ -237,17 +201,13 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
         if not janela_num:
             continue
 
-        # prob: [min, max] em %
         prob = fh.get('prob') or [0, 100]
         if not isinstance(prob, list) or len(prob) < 2:
             prob = [0, 100]
         prob_min, prob_max = prob[0], prob[1]
 
-        # Converte % (0-100) pra decimal (0.0-1.0) usado internamente nos stats
         min_v = float(prob_min) / 100.0 if prob_min is not None else None
         max_v = float(prob_max) / 100.0 if prob_max is not None else None
-
-        # Min/Max so ativos se nao forem 0 e 100 (range total = sem filtro real)
         min_ativo = min_v is not None and prob_min > 0
         max_ativo = max_v is not None and prob_max < 100
 
@@ -268,24 +228,10 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
 
 
 def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
-    """
-    Pra cada filtro complementar do bot, mostra:
-      • WR últ 10 ≥ 50% → 80% ✅
-
-    Le filtros de DUAS chaves do bot:
-      1. filtrosCompAdicionados (formato novo - WR/media/gap/tendencia)
-      2. filtrosHistAdicionados (formato antigo - so WR com base/tipo/janela)
-    """
     filtros = _parse_json_field(bot_row.get('filtros_jsonb') or aposta.get('bot_filtros'))
-
-    # 1. Filtros complementares novos
     filtros_comp = filtros.get('filtrosCompAdicionados') or []
-
-    # 2. Filtros historicos antigos - normaliza pro mesmo formato
     filtros_hist = filtros.get('filtrosHistAdicionados') or []
     filtros_hist_norm = _normalizar_filtros_hist(filtros_hist)
-
-    # Concatena os 2
     todos_filtros = list(filtros_comp) + filtros_hist_norm
 
     if not todos_filtros:
@@ -310,7 +256,6 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         if not tipo:
             continue
 
-        # FiltroHist com base=individual ou tipo!=all: nao suportado ainda
         nao_suportado = False
         nao_suportado_motivo = ''
         if origem == 'hist':
@@ -321,9 +266,6 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
                 nao_suportado = True
                 nao_suportado_motivo = f'tipo={hist_tipo}'
 
-        # Resolve chave do stats_dict
-        # NOTA: backtest_runner so calcula wr_ult5/10/15 e media_ult5/10/20 por padrao.
-        # v3+ tambem calcula janelas customizadas extraidas dos filtros.
         janela_valida = True
         if tipo == 'media' and janela:
             try:
@@ -344,7 +286,6 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         else:
             stat_key = tipo
 
-        # Pega valor
         if not janela_valida or nao_suportado:
             valor = None
         elif stat_key == 'gap_linha_calc':
@@ -354,9 +295,7 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         else:
             valor = stats.get(stat_key)
 
-        # Formata rótulo
         rotulo_tipo = TIPO_LABEL.get(tipo, tipo.capitalize())
-        # FiltroHist do match: prefixa com 'H2H' pra ficar claro
         if origem == 'hist' and hist_base == 'match':
             rotulo_tipo = f'WR H2H'
         if janela and tipo in ('media', 'wr'):
@@ -364,7 +303,6 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         else:
             rotulo = rotulo_tipo
 
-        # Formata condição (≥ x, ≤ y, x a y)
         cond_partes = []
         if min_v is not None and max_v is not None:
             cond_partes.append(f"({_fmt_filtro_valor(tipo, min_v)}-{_fmt_filtro_valor(tipo, max_v)})")
@@ -374,7 +312,6 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
             cond_partes.append(f"≤ {_fmt_filtro_valor(tipo, max_v)}")
         cond_txt = ' '.join(cond_partes)
 
-        # Formata valor real
         if nao_suportado:
             valor_txt = f'não suportado ({nao_suportado_motivo})'
             check = '⚠️'
@@ -386,7 +323,6 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
             check = '⚠️'
         else:
             valor_txt = _fmt_filtro_valor(tipo, valor)
-            # Verifica se passou
             passou = True
             try:
                 v_num = float(valor)
@@ -407,14 +343,12 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
 
 
 def _fmt_filtro_valor(tipo: str, v) -> str:
-    """Formata valor segundo o tipo (% pra WR, 1 casa pra média/gap, int pra qtd)"""
     try:
         f = float(v)
     except Exception:
         return str(v)
 
     if tipo == 'wr':
-        # 0.0-1.0 vira %
         if 0 <= f <= 1:
             return f"{f * 100:.0f}%"
         return f"{f:.0f}%"
@@ -428,18 +362,26 @@ def _fmt_filtro_valor(tipo: str, v) -> str:
 
 
 # ============================================================
-# ULTIMO CONFRONTO (placar do ultimo jogo do par)
+# ULTIMO CONFRONTO (placar FINAL do ultimo jogo do par)
 # ============================================================
 async def _buscar_ultimo_confronto(jogador_a: str, jogador_b: str, bookmaker: str,
-                                    sport: str, antes_de_ts) -> Optional[str]:
-    """Retorna placar do ultimo jogo entre jogador_a e jogador_b (ex: '4-2') ou None."""
+                                    sport: str, antes_de_ts,
+                                    event_id_excluir=None) -> Optional[str]:
+    """
+    Retorna placar do ULTIMO jogo finalizado entre jogador_a e jogador_b (ex: '0-4').
+
+    v7: 2 fixes:
+    1. Exclui o event_id da aposta atual (nao retorna placar live do jogo em andamento)
+    2. Pega o ULTIMO tick de cada event_id (placar mais proximo do final do jogo),
+       em vez do tick "mais recente antes da aposta" (que pode ser de jogo em andamento)
+    """
     if not jogador_a or not jogador_b or not bookmaker:
         return None
     try:
         async with state.pool.acquire() as conn:
-            row = await conn.fetchrow("""
-                SELECT DISTINCT ON (event_id)
-                    event_id, ts, score_home, score_away
+            # 1. Acha o event_id anterior mais recente do par (excluindo o atual)
+            event_row = await conn.fetchrow("""
+                SELECT event_id, MAX(ts) AS ultimo_ts
                 FROM ticks
                 WHERE bookmaker = $1
                   AND ($2::text IS NULL OR sport = $2)
@@ -447,13 +389,34 @@ async def _buscar_ultimo_confronto(jogador_a: str, jogador_b: str, bookmaker: st
                     OR (jogador_a = $4 AND jogador_b = $3))
                   AND score_home IS NOT NULL
                   AND score_away IS NOT NULL
-                  AND ts < $5
-                ORDER BY event_id, ts DESC
+                  AND ($5::text IS NULL OR event_id != $5)
+                GROUP BY event_id
+                ORDER BY MAX(ts) DESC
                 LIMIT 1
-            """, bookmaker, sport, jogador_a, jogador_b, antes_de_ts)
-            if not row:
+            """, bookmaker, sport, jogador_a, jogador_b,
+                str(event_id_excluir) if event_id_excluir else None)
+
+            if not event_row:
                 return None
-            return f"{row['score_home']}-{row['score_away']}"
+
+            event_id_anterior = event_row['event_id']
+
+            # 2. Pega o ULTIMO tick com placar desse evento (mais proximo do fim do jogo)
+            placar_row = await conn.fetchrow("""
+                SELECT score_home, score_away
+                FROM ticks
+                WHERE event_id = $1
+                  AND bookmaker = $2
+                  AND score_home IS NOT NULL
+                  AND score_away IS NOT NULL
+                ORDER BY ts DESC
+                LIMIT 1
+            """, event_id_anterior, bookmaker)
+
+            if not placar_row:
+                return None
+
+            return f"{placar_row['score_home']}-{placar_row['score_away']}"
     except Exception as e:
         logger.exception(f"erro buscando ultimo confronto: {e}")
         return None
@@ -463,7 +426,6 @@ async def _buscar_ultimo_confronto(jogador_a: str, jogador_b: str, bookmaker: st
 # MONTA MENSAGEM NOVA (LAYOUT v5)
 # ============================================================
 async def montar_msg_aposta_nova(aposta: dict) -> str:
-    """Mensagem HTML quando aposta é criada — layout v5 detalhado"""
     emoji = _emoji_esporte(aposta.get('bot_esporte') or aposta.get('esporte', ''))
     bot_nome = (aposta.get('bot_nome') or 'Bot').upper()
     apostado_em = _formatar_data_hora(aposta.get('apostado_em'))
@@ -476,8 +438,6 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
 
     selecao = aposta.get('selecao') or aposta.get('lado') or '?'
     linha = aposta.get('linha')
-    # Fix: nao duplica linha se ja esta no texto da selecao
-    # (ex: "Mais de 4.5" ja tem o 4.5, "HC Asiatico - Senya +0.25" tambem)
     linha_str = str(linha) if linha is not None else ''
     if linha_str and linha_str in selecao:
         linha_txt = ''
@@ -485,7 +445,6 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
         linha_txt = f' {linha}' if linha is not None else ''
     odd = _format_decimal(aposta.get('odd'))
 
-    # Tempo + placar atual no momento da entrada
     minuto = aposta.get('minuto_entrada')
     periodo = aposta.get('periodo_entrada')
     if minuto is not None:
@@ -505,25 +464,23 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
 
     stake = _format_decimal(aposta.get('stake'))
 
-    # Resumo dos filtros aprovados (linha de tags)
     resumo_aprovado = _resumir_filtros_aprovados(aposta, aposta)
 
-    # Ultimo confronto entre os jogadores
+    # v7: passa event_id pra excluir o jogo atual da busca
     ultimo_confronto = await _buscar_ultimo_confronto(
         jogador_a, jogador_b,
         aposta.get('bookmaker') or aposta.get('bot_casa'),
         aposta.get('sport') or aposta.get('bot_sport_banco'),
         aposta.get('apostado_em') or datetime.now(),
+        event_id_excluir=aposta.get('event_id'),
     )
     ultimo_txt = f"\n⏳ Último Confronto: <b>{ultimo_confronto}</b>" if ultimo_confronto else ''
 
-    # Filtros complementares (valor atual de cada filtro do bot)
     filtros_linhas = _formatar_filtros_complementares(aposta, aposta)
     filtros_bloco = ''
     if filtros_linhas:
         filtros_bloco = '\n\n📊 <b>Filtros do bot (valor atual):</b>\n' + '\n'.join(filtros_linhas)
 
-    # Monta mensagem
     cabecalho = f'{emoji} <b>{bot_nome}</b>'
     if apostado_em:
         cabecalho += f'\n<i>{apostado_em}</i>'
@@ -550,10 +507,9 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
 
 
 # ============================================================
-# MONTA MENSAGEM RESOLVIDA (mantida como v4, minimo)
+# MONTA MENSAGEM RESOLVIDA
 # ============================================================
 def montar_msg_aposta_resolvida(aposta: dict) -> str:
-    """Mensagem HTML quando aposta resolve."""
     veredito = (aposta.get('resultado') or '').lower()
     if not veredito or veredito == 'pendente':
         veredito = (aposta.get('status') or '').lower()
@@ -716,7 +672,6 @@ async def buscar_aposta(aposta_id: int) -> Optional[dict]:
         if not row:
             return None
         d = dict(row)
-        # Calcula sport do banco a partir do esporte
         esp_to_sport = {'fifa': 'E-Football', 'nba2k': 'E-Basketball',
                         'ehockey': 'E-Hockey', 'etennis': 'E-Tennis'}
         d['bot_sport_banco'] = esp_to_sport.get(d.get('bot_esporte'), d.get('bot_esporte'))
@@ -831,7 +786,7 @@ async def loop_listener():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("TelegramNotifier iniciando (v6 - le filtrosHistAdicionados + filtrosCompAdicionados)")
+    logger.info("TelegramNotifier iniciando (v7 - fix ultimo confronto: pega ultimo tick + exclui jogo atual)")
     logger.info(f"TOKEN configurado: {'sim' if TELEGRAM_BOT_TOKEN else 'NAO!'}")
     if TELEGRAM_BOT_TOKEN:
         logger.info(f"TOKEN preview: {TELEGRAM_BOT_TOKEN[:8]}...{TELEGRAM_BOT_TOKEN[-4:]}")

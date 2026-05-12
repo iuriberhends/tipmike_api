@@ -1,5 +1,11 @@
 """
-workers/backtest_runner.py - Worker do backtest (v3)
+workers/backtest_runner.py - Worker do backtest (v4)
+
+v4 - Le filtrosHistAdicionados (formato antigo) alem de filtrosCompAdicionados:
+- _normalizar_filtros_hist converte formato antigo {base, janela:"last_N", prob:[min,max]} pro novo
+- _extrair_janelas_dos_filtros agora le dos 2 lugares
+- _aplicar_filtros_complementares aceita filtros normalizados de ambas fontes
+- Filtros hist com base=individual ou tipo!=all sao rejeitados (nao suportado)
 
 v3 - Janelas H2H dinamicas:
 - _calcular_stats_h2h aceita lista de janelas (qualquer N de 3-100)
@@ -304,7 +310,119 @@ class H2HCache:
 
 
 # ============================================================
-# CALCULO DE STATS H2H (v3 - janelas dinamicas)
+# NORMALIZACAO E EXTRAÇAO DE FILTROS (v4)
+# ============================================================
+
+def _normalizar_filtros_hist(filtros_hist: list) -> list:
+    """
+    Converte filtrosHistAdicionados (formato antigo) pro mesmo formato
+    do filtrosCompAdicionados, pra unificar o processamento.
+
+    Formato origem (filtrosHistAdicionados):
+      {
+        "base": "match" | "individual",
+        "janela": "last_10",
+        "prob": [70, 100],
+        "tipo": "all" | "same_grade" | "specific_teams",
+        "versao": "all",
+        "minPartidas": 10
+      }
+
+    Formato destino:
+      {
+        "tipo": "wr",
+        "janela": 10,
+        "min": 0.7,           # 70/100 (decimal)
+        "max": 1.0,           # 100/100 (decimal)
+        "minAtivo": True,
+        "maxAtivo": False,    # max=1.0 (100%) eh "nao filtrado"
+        "hist_base": "match",
+        "hist_tipo": "all",
+        "hist_min_partidas": 10,
+        "_origem": "hist",
+      }
+    """
+    normalizados = []
+    for fh in filtros_hist or []:
+        if not isinstance(fh, dict):
+            continue
+
+        # Parse janela "last_N" -> N
+        janela_str = str(fh.get('janela', '')).strip()
+        janela_num = None
+        if janela_str.startswith('last_'):
+            try:
+                janela_num = int(janela_str.replace('last_', ''))
+            except ValueError:
+                pass
+        if not janela_num or janela_num < 1:
+            continue
+
+        # prob: [min, max] em % (0-100)
+        prob = fh.get('prob') or [0, 100]
+        if not isinstance(prob, list) or len(prob) < 2:
+            prob = [0, 100]
+        prob_min = float(prob[0]) if prob[0] is not None else 0
+        prob_max = float(prob[1]) if prob[1] is not None else 100
+
+        # Converte % (0-100) pra decimal (0.0-1.0) usado nos stats
+        min_v = prob_min / 100.0
+        max_v = prob_max / 100.0
+
+        # Min/Max so "ativos" se nao forem o extremo (0% ou 100% = sem filtro real)
+        min_ativo = prob_min > 0
+        max_ativo = prob_max < 100
+
+        normalizados.append({
+            'tipo': 'wr',
+            'janela': janela_num,
+            'min': min_v,
+            'max': max_v,
+            'minAtivo': min_ativo,
+            'maxAtivo': max_ativo,
+            'hist_base': fh.get('base', 'match'),
+            'hist_tipo': fh.get('tipo', 'all'),
+            'hist_min_partidas': fh.get('minPartidas'),
+            '_origem': 'hist',
+        })
+
+    return normalizados
+
+
+def _coletar_todos_filtros(filtros: dict) -> list:
+    """
+    Pega filtros dos 2 lugares e retorna lista unificada.
+    Filtros hist com base!=match ou tipo!=all sao SKIPADOS (nao suportado ainda
+    pelo backend de H2H simples - exigiria sub-query por liga/jogador/times).
+
+    Retorna sempre lista (pode ser vazia).
+    """
+    filtros_comp = filtros.get('filtrosCompAdicionados') or []
+    filtros_hist = filtros.get('filtrosHistAdicionados') or []
+    filtros_hist_norm = _normalizar_filtros_hist(filtros_hist)
+
+    # Skipa filtros hist nao suportados (base=individual ou tipo!=all)
+    # Eles nao geram rejeicao silenciosa - sao tratados como "nao calculado"
+    # mas o bot DEVE rejeitar o tick? Decisao: nao aplica = nao filtra
+    # (igual ao comportamento atual antes do v4)
+    filtros_hist_suportados = []
+    for f in filtros_hist_norm:
+        base = f.get('hist_base')
+        tipo = f.get('hist_tipo')
+        if base == 'match' and tipo == 'all':
+            filtros_hist_suportados.append(f)
+        else:
+            # Loga warning - filtro sera ignorado pelo executor
+            logger.warning(
+                f"FiltroHist nao suportado ignorado: base={base}, tipo={tipo}, "
+                f"janela={f.get('janela')}"
+            )
+
+    return list(filtros_comp) + filtros_hist_suportados
+
+
+# ============================================================
+# CALCULO DE STATS H2H
 # ============================================================
 
 MIN_H2H_DEFAULT = 5
@@ -314,19 +432,19 @@ JANELAS_PADRAO_WR = (5, 10, 15)
 JANELAS_PADRAO_MEDIA = (5, 10, 20)
 
 
-def _extrair_janelas_dos_filtros(filtros_comp: list) -> tuple[set, set]:
+def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
     """
-    Extrai janelas customizadas (alem das padrao) dos filtros complementares.
+    Extrai janelas customizadas (alem das padrao) dos filtros unificados.
     Retorna (janelas_wr, janelas_media).
-    Limita janela ao maximo de jogos no cache (100).
+    Recebe lista JA UNIFICADA (saida de _coletar_todos_filtros).
     """
     janelas_wr = set(JANELAS_PADRAO_WR)
     janelas_media = set(JANELAS_PADRAO_MEDIA)
 
-    if not filtros_comp:
+    if not filtros_unificados:
         return janelas_wr, janelas_media
 
-    for f in filtros_comp:
+    for f in filtros_unificados:
         if not isinstance(f, dict):
             continue
         tipo = (f.get('tipo') or '').lower().strip()
@@ -353,7 +471,6 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
                         janelas_media: Optional[set] = None) -> dict:
     """
     Calcula stats H2H com janelas dinamicas.
-    v3: aceita janelas_wr e janelas_media custom. Sem elas, usa padrao 5/10/15 e 5/10/20.
     """
     qtd = len(jogos)
 
@@ -382,35 +499,42 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     for n in janelas_media:
         out[f'media_ult{n}'] = media(n)
 
-    # Gap = media_ult20 - linha (mantem semantica antiga)
+    # Gap = media_ult20 - linha
     m20 = out.get('media_ult20')
     out['gap'] = (m20 - linha_atual) if m20 is not None else None
 
-    # Tendencia = media_ult5 - media_ult20 (mantem semantica antiga)
+    # Tendencia = media_ult5 - media_ult20
     m5 = out.get('media_ult5')
     out['tendencia'] = (m5 - m20) if (m5 is not None and m20 is not None) else None
 
     return out
 
 
-def _aplicar_filtros_complementares(stats: dict, filtros_comp: list, min_h2h: int = MIN_H2H_DEFAULT) -> tuple[bool, str]:
+def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h2h: int = MIN_H2H_DEFAULT) -> tuple[bool, str]:
     """
-    Aplica filtrosCompAdicionados do bot.
-    v3: usa janela EXATA do filtro (em vez de mapear pra 5/10/20).
+    Aplica filtros unificados (comp + hist normalizado).
     Pre-condicao: _calcular_stats_h2h foi chamado COM as janelas dos filtros.
     """
-    if not filtros_comp:
+    if not filtros_unificados:
         return True, ''
 
     qtd = stats.get('qtd_h2h', 0)
-    if qtd < min_h2h:
-        return False, f'h2h_insuficiente_qtd_{qtd}'
 
-    for f in filtros_comp:
+    for f in filtros_unificados:
         tipo = (f.get('tipo') or '').lower().strip()
         janela = f.get('janela')
         min_v = f.get('min') if f.get('minAtivo') else None
         max_v = f.get('max') if f.get('maxAtivo') else None
+
+        # Filtros hist tem min_partidas proprio; senao usa default
+        min_partidas = f.get('hist_min_partidas') or min_h2h
+        try:
+            min_partidas = int(min_partidas)
+        except (TypeError, ValueError):
+            min_partidas = min_h2h
+
+        if qtd < min_partidas:
+            return False, f'h2h_insuficiente_qtd_{qtd}_min_{min_partidas}'
 
         valor = None
 
@@ -571,14 +695,18 @@ async def executar_backtest(job_id: int):
             )
 
         filtros = bot.get('filtros') or {}
-        filtros_comp = filtros.get('filtrosCompAdicionados') or []
         cenario_ativo = filtros.get('cenarioPartidaAtivo', False)
         cenario_partida = filtros.get('cenarioPartida') if cenario_ativo else None
         diff_ativo = filtros.get('diferencaPlacarAtivo', False)
         diff_min = filtros.get('diferencaPlacar', 0) if diff_ativo else 0
 
-        # v3: extrai janelas custom dos filtros pra passar pro calculo de stats
-        janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_comp)
+        # v4: coleta filtros dos 2 lugares (comp + hist normalizado)
+        filtros_unificados = _coletar_todos_filtros(filtros)
+        janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
+
+        if filtros_unificados:
+            tipos_resumo = [f"{f.get('tipo')}_ult{f.get('janela')}" for f in filtros_unificados]
+            logger.info(f"[backtest] Filtros unificados: {tipos_resumo}")
 
         async with pool.acquire() as conn:
             torneios = bot.get('torneios') or []
@@ -716,7 +844,9 @@ async def executar_backtest(job_id: int):
                     rej['diff'] += 1
                     continue
 
-            if filtros_comp:
+            # v4: aplica filtros unificados (comp + hist normalizado)
+            stats = None
+            if filtros_unificados:
                 ja = tick.get('jogador_a')
                 jb = tick.get('jogador_b')
                 if not ja or not jb:
@@ -725,19 +855,16 @@ async def executar_backtest(job_id: int):
 
                 jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'])
                 linha_num = _parse_linha(tick.get('linha')) or 0
-                # v3: passa janelas custom
                 stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media)
                 stats['linha_atual'] = linha_num
 
-                passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_comp)
+                passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_unificados)
                 if not passou_comp:
                     if 'h2h_insuficiente' in motivo:
                         rej['h2h_insuf'] += 1
                     else:
                         rej['comp'] += 1
                     continue
-            else:
-                stats = None
 
             placar = placar_final.get(evt)
             if not placar:
