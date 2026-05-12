@@ -692,28 +692,51 @@ async def stats_jogadores(
 
 @router.get("/torneios")
 async def stats_torneios(esporte: str = Query(...)):
-    """v3: janela 7d + cache 15min."""
+    """
+    v6: retorna apenas torneios PAIS (Battle, GT League, H2H GG, etc),
+    nao mais cada grade individual. Usa classificar_pai do routers/torneios.
+    Janela 6h + cache 15min.
+    """
     cached = _cache_get('torneios', (esporte,))
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
+    # Importa classificacao do routers/torneios pra reaproveitar logica
+    from routers.torneios import classificar_pai, nome_pai_para_exibicao
+
     sport = _sport_from_esporte(esporte)
 
     sql = """
-        SELECT liga
+        SELECT liga, COUNT(*) AS qtd
         FROM ticks
         WHERE sport = $1
           AND liga IS NOT NULL AND liga != ''
           AND ts >= NOW() - INTERVAL '6 hours'
         GROUP BY liga
-        ORDER BY COUNT(*) DESC
-        LIMIT 30
+        ORDER BY qtd DESC
+        LIMIT 200
     """
 
     async with db() as conn:
         rows = await conn.fetch(sql, sport)
 
-    resultado = {"torneios": [r['liga'] for r in rows]}
+    # Agrupa ligas brutas por torneio pai
+    pais_dict = {}
+    for r in rows:
+        liga_bruta = r['liga']
+        qtd = r['qtd']
+        pai = classificar_pai(liga_bruta)
+        if not pai:
+            continue
+        if pai not in pais_dict:
+            pais_dict[pai] = 0
+        pais_dict[pai] += qtd
+
+    # Ordena por volume
+    torneios_pais = sorted(pais_dict.items(), key=lambda x: x[1], reverse=True)
+    torneios = [nome_pai_para_exibicao(pai) for pai, _ in torneios_pais[:30]]
+
+    resultado = {"torneios": torneios}
     _cache_set('torneios', (esporte,), resultado)
     return {**resultado, "_cache": "miss"}
 
