@@ -1,5 +1,12 @@
 """
-bot_executor.py - Worker de simulacao em tempo real (v5)
+bot_executor.py - Worker de simulacao em tempo real (v6)
+
+v6 - Filtro evitar_linhas_seq:
+- Le filtros.evitarLinhasSeq (default True)
+- Se ativo: bloqueia aposta se ja existe aposta desse bot, nesse event_id,
+  com MESMA linha e MESMO mercado_tipo. Conta rejeicao como 'linha_repetida'.
+- Resolve issue do checkbox "Evitar linhas em sequencia" que nao tinha
+  implementacao backend antes.
 
 v5 - Suporte a filtrosHistAdicionados:
 - Le filtros dos 2 lugares (filtrosCompAdicionados + filtrosHistAdicionados)
@@ -403,6 +410,26 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
             return
 
+    # v6: evitar linhas em sequencia - bloqueia se ja apostou MESMA linha + MESMO mercado
+    # nesse mesmo event_id. Default = true (legado: bots sem flag definida -> ativo).
+    evitar_linhas_seq = filtros.get('evitarLinhasSeq', True)
+    if evitar_linhas_seq:
+        linha_atual = _parse_linha(tick.get('linha'))
+        mercado_tipo_atual = tick.get('mercado_tipo')
+        if linha_atual is not None:
+            async with state.pool.acquire() as conn:
+                ja_apostou = await conn.fetchval("""
+                    SELECT COUNT(*) FROM apostas
+                    WHERE bot_id = $1
+                      AND event_id = $2
+                      AND modo = 'simulado'
+                      AND linha = $3
+                      AND (mercado_tipo = $4 OR ($4 IS NULL AND mercado_tipo IS NULL))
+                """, bot['id'], tick.get('event_id'), linha_atual, mercado_tipo_atual)
+            if ja_apostou and ja_apostou > 0:
+                state.contador_rejeicoes['linha_repetida'] = state.contador_rejeicoes.get('linha_repetida', 0) + 1
+                return
+
     max_apostas = bot.get('max_apostas_partida')
     if max_apostas:
         async with state.pool.acquire() as conn:
@@ -701,7 +728,7 @@ async def loop_stats():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("Bot Executor iniciando (v5 - filtrosHistAdicionados + janelas dinamicas)...")
+    logger.info("Bot Executor iniciando (v6 - filtro evitar_linhas_seq + janelas dinamicas)...")
     logger.info("=" * 60)
 
     state.bots_lock = asyncio.Lock()
