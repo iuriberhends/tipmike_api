@@ -413,7 +413,7 @@ async def stats_ultimos(
             WHERE sport = $1
               AND score_home IS NOT NULL
               AND score_away IS NOT NULL
-              AND ts >= NOW() - INTERVAL '7 days'
+              AND ts >= NOW() - INTERVAL '3 days'
               {where_extras}
             ORDER BY event_id, ts DESC
         )
@@ -428,7 +428,7 @@ async def stats_ultimos(
         WHERE sport = $1
           AND score_home IS NOT NULL
           AND score_away IS NOT NULL
-          AND ts >= NOW() - INTERVAL '7 days'
+          AND ts >= NOW() - INTERVAL '3 days'
           {where_extras}
     """
 
@@ -478,7 +478,7 @@ async def stats_heatmap(esporte: str = Query(...)):
                 COUNT(DISTINCT event_id) AS qtd
             FROM ticks
             WHERE sport = $1
-              AND ts >= NOW() - INTERVAL '7 days'
+              AND ts >= NOW() - INTERVAL '3 days'
             GROUP BY dow, hora
         """, sport)
 
@@ -623,14 +623,14 @@ async def stats_jogadores(
             FROM ticks
             WHERE sport = $1
               AND jogador_a IS NOT NULL AND jogador_a != ''
-              AND ts >= NOW() - INTERVAL '3 days'
+              AND ts >= NOW() - INTERVAL '6 hours'
             GROUP BY jogador_a, time_a
             UNION ALL
             SELECT jogador_b AS jogador, time_b AS time, COUNT(*) AS qtd
             FROM ticks
             WHERE sport = $1
               AND jogador_b IS NOT NULL AND jogador_b != ''
-              AND ts >= NOW() - INTERVAL '3 days'
+              AND ts >= NOW() - INTERVAL '6 hours'
             GROUP BY jogador_b, time_b
         ),
         jog_principal AS (
@@ -669,7 +669,7 @@ async def stats_torneios(esporte: str = Query(...)):
         FROM ticks
         WHERE sport = $1
           AND liga IS NOT NULL AND liga != ''
-          AND ts >= NOW() - INTERVAL '7 days'
+          AND ts >= NOW() - INTERVAL '6 hours'
         GROUP BY liga
         ORDER BY COUNT(*) DESC
         LIMIT 30
@@ -706,7 +706,7 @@ async def stats_preview_jogador(
           AND (jogador_a = $2 OR jogador_b = $2)
           AND score_home IS NOT NULL
           AND score_away IS NOT NULL
-          AND ts >= NOW() - INTERVAL '14 days'
+          AND ts >= NOW() - INTERVAL '3 days'
         ORDER BY event_id, ts DESC
         LIMIT 30
     """
