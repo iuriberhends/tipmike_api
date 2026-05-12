@@ -382,7 +382,16 @@ async def stats_ultimos(
     page: int = Query(1, ge=1),
     pageSize: int = Query(10, ge=1, le=100),
 ):
-    """v3: janela 7d + cache 2min."""
+    """
+    v5: query reescrita com LATERAL JOIN + filtro 'finalizados'.
+    Considera jogo finalizado se o ultimo tick foi ha mais de 5 minutos.
+    Isso garante que o placar exibido eh o FINAL (nao parcial de jogo rolando).
+
+    Estrategia:
+    1. Lista de eventos finalizados (MAX(ts) < NOW() - 5min) nos ultimos 3 dias
+    2. Pra cada um, LATERAL pega o ultimo tick com placar = placar final
+    3. Paginacao por evento, ordenado pelo timestamp do final do jogo
+    """
     cache_key = (esporte, busca or '', liga or '', page, pageSize)
     cached = _cache_get('ultimos', cache_key)
     if cached is not None:
@@ -402,38 +411,64 @@ async def stats_ultimos(
         where_extras += f" AND (jogador_a ILIKE ${idx} OR jogador_b ILIKE ${idx} OR time_a ILIKE ${idx} OR time_b ILIKE ${idx} OR liga ILIKE ${idx})"
 
     offset = (page - 1) * pageSize
+    limit_param_idx = len(params) + 1
+    offset_param_idx = len(params) + 2
     params.extend([pageSize, offset])
 
+    # NOVA: filtra eventos finalizados (sem ticks novos ha 5+ min)
+    # HAVING MAX(ts) < NOW() - INTERVAL '5 minutes' garante que jogo acabou
     sql = f"""
-        WITH ult AS (
-            SELECT DISTINCT ON (event_id)
-                event_id, liga, jogador_a, jogador_b, time_a, time_b,
-                score_home, score_away, ts
+        WITH eventos_finalizados AS (
+            SELECT event_id, MAX(ts) AS final_ts
             FROM ticks
             WHERE sport = $1
               AND score_home IS NOT NULL
               AND score_away IS NOT NULL
               AND ts >= NOW() - INTERVAL '3 days'
               {where_extras}
-            ORDER BY event_id, ts DESC
+            GROUP BY event_id
+            HAVING MAX(ts) < NOW() - INTERVAL '5 minutes'
+            ORDER BY final_ts DESC
+            LIMIT ${limit_param_idx} OFFSET ${offset_param_idx}
         )
-        SELECT * FROM ult
-        ORDER BY ts DESC
-        LIMIT ${len(params) - 1} OFFSET ${len(params)}
+        SELECT
+            e.event_id,
+            e.final_ts AS ts,
+            t.liga, t.jogador_a, t.jogador_b, t.time_a, t.time_b,
+            t.score_home, t.score_away
+        FROM eventos_finalizados e
+        JOIN LATERAL (
+            SELECT liga, jogador_a, jogador_b, time_a, time_b,
+                   score_home, score_away
+            FROM ticks
+            WHERE event_id = e.event_id AND ts = e.final_ts
+            LIMIT 1
+        ) t ON true
+        ORDER BY e.final_ts DESC
     """
 
+    # Count tambem filtra finalizados
     sql_count = f"""
-        SELECT COUNT(DISTINCT event_id)
-        FROM ticks
-        WHERE sport = $1
-          AND score_home IS NOT NULL
-          AND score_away IS NOT NULL
-          AND ts >= NOW() - INTERVAL '3 days'
-          {where_extras}
+        SELECT COUNT(*) FROM (
+            SELECT event_id
+            FROM ticks
+            WHERE sport = $1
+              AND score_home IS NOT NULL
+              AND score_away IS NOT NULL
+              AND ts >= NOW() - INTERVAL '3 days'
+              {where_extras}
+            GROUP BY event_id
+            HAVING MAX(ts) < NOW() - INTERVAL '5 minutes'
+        ) sub
     """
 
     async with db() as conn:
-        total = await conn.fetchval(sql_count, *params[:-2])
+        # Count com timeout de 30s
+        try:
+            await conn.execute("SET LOCAL statement_timeout = '30s'")
+            total = await conn.fetchval(sql_count, *params[:-2])
+        except Exception:
+            total = -1
         rows = await conn.fetch(sql, *params)
 
     jogos = []
@@ -451,7 +486,7 @@ async def stats_ultimos(
             "placarB": r['score_away'] or 0,
         })
 
-    resultado = {"jogos": jogos, "total": total or 0}
+    resultado = {"jogos": jogos, "total": total if total >= 0 else len(jogos)}
     _cache_set('ultimos', cache_key, resultado)
     return {**resultado, "_cache": "miss"}
 
