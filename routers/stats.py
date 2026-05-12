@@ -192,7 +192,9 @@ async def stats_overview(esporte: str = Query(...)):
         return {**cached, "_cache": "hit"}
 
     sport = _sport_from_esporte(esporte)
-    inicio_hoje = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+    # v4: usa "ultimas 6h" em vez de "desde meia-noite" pra queries mais rapidas
+    # (jogos de e-sports tem rotacao rapida, 6h cobre o ciclo ativo)
+    h6 = datetime.utcnow() - timedelta(hours=6)
     h24 = datetime.utcnow() - timedelta(hours=24)
 
     async with db() as conn:
@@ -212,7 +214,7 @@ async def stats_overview(esporte: str = Query(...)):
                  FROM apostas
                  WHERE esporte = $3 AND apostado_em >= $4
                    AND resultado != 'pendente' AND modo = 'simulado') AS lucro_24h
-        """, sport, inicio_hoje, esporte, h24)
+        """, sport, h6, esporte, h24)
 
         # Liga quente e jogador hot em queries separadas mas leves
         liga_quente = await conn.fetchval("""
@@ -222,7 +224,7 @@ async def stats_overview(esporte: str = Query(...)):
             GROUP BY liga
             ORDER BY COUNT(*) DESC
             LIMIT 1
-        """, sport, inicio_hoje)
+        """, sport, h6)
 
         jogador_hot = await conn.fetchval("""
             SELECT jogador FROM (
@@ -237,7 +239,7 @@ async def stats_overview(esporte: str = Query(...)):
             GROUP BY jogador
             ORDER BY SUM(qtd) DESC
             LIMIT 1
-        """, sport, inicio_hoje)
+        """, sport, h6)
 
         # Top 3 ligas com jogos ativos
         ligas_top = await conn.fetch("""
