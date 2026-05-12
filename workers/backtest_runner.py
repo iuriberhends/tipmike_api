@@ -262,7 +262,13 @@ class H2HCache:
         b = (jb or '').strip()
         return tuple(sorted([a, b]))
 
-    async def get_jogos(self, ja: str, jb: str, antes_de_ts) -> list:
+    async def get_jogos(self, ja: str, jb: str, antes_de_ts, event_id_excluir=None) -> list:
+        """
+        Retorna jogos do par com ts < antes_de_ts.
+
+        v5: aceita event_id_excluir pra remover o jogo atual da lista H2H
+        (evita contar o placar parcial do jogo em andamento no calculo do WR).
+        """
         par = self._normalizar_par(ja, jb)
         if not par[0] or not par[1]:
             return []
@@ -270,7 +276,11 @@ class H2HCache:
         if par not in self._cache:
             self._cache[par] = await self._buscar(par[0], par[1])
 
-        return [j for j in self._cache[par] if j['ts'] < antes_de_ts]
+        jogos = [j for j in self._cache[par] if j['ts'] < antes_de_ts]
+        if event_id_excluir is not None:
+            eid_str = str(event_id_excluir)
+            jogos = [j for j in jogos if str(j.get('event_id')) != eid_str]
+        return jogos
 
     async def _buscar(self, j1: str, j2: str) -> list:
         sql = """
@@ -892,7 +902,7 @@ async def executar_backtest(job_id: int):
                     rej['sem_par'] += 1
                     continue
 
-                jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'])
+                jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
                 linha_num = _parse_linha(tick.get('linha')) or 0
                 stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media)
                 stats['linha_atual'] = linha_num

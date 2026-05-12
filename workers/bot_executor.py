@@ -395,7 +395,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             return
 
         h2h_cache = _get_h2h_cache(casa_bot, sport_banco)
-        jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'])
+        jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
         linha_num = _parse_linha(tick.get('linha')) or 0
 
         janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
