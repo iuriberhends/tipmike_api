@@ -1,5 +1,15 @@
 """
-workers/backtest_runner.py - Worker do backtest (v4)
+workers/backtest_runner.py - Worker do backtest (v5)
+
+v5 - Stats H2H usam jogos disponiveis ate N (em vez de exigir N exato):
+- _calcular_stats_h2h: WR ult 20 com 12 jogos agora calcula com 12 (em vez de
+  retornar None). Tambem grava wr_ult{N}_qtd e media_ult{N}_qtd indicando
+  quantos jogos foram usados.
+- _aplicar_filtros_complementares: valida min_partidas contra qtd ESPECIFICA
+  daquela janela. Antes validava contra qtd_h2h global, o que era o mesmo,
+  mas agora a diferenca eh que wr_ult{N}_qtd pode ser MENOR que qtd_h2h se
+  jogos < N. Mas como min_partidas eh o piso aceitavel, isso permite
+  "WR ult20, min=10" passar com 12 jogos.
 
 v4 - Le filtrosHistAdicionados (formato antigo) alem de filtrosCompAdicionados:
 - _normalizar_filtros_hist converte formato antigo {base, janela:"last_N", prob:[min,max]} pro novo
@@ -471,6 +481,11 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
                         janelas_media: Optional[set] = None) -> dict:
     """
     Calcula stats H2H com janelas dinamicas.
+
+    v5: usa MIN(qtd, N) jogos quando qtd < N (em vez de retornar None).
+    Tambem grava 'wr_ult{N}_qtd' e 'media_ult{N}_qtd' indicando quantos jogos
+    foram realmente usados, pra que _aplicar_filtros_complementares possa
+    validar contra min_partidas do filtro.
     """
     qtd = len(jogos)
 
@@ -480,24 +495,31 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
         janelas_media = set(JANELAS_PADRAO_MEDIA)
 
     def wr(n):
-        if qtd < n:
-            return None
-        slice_ = jogos[:n]
+        # v5: usa o que tiver (ate N). Se nao tem nada, retorna None.
+        if qtd <= 0:
+            return None, 0
+        usar = min(qtd, n)
+        slice_ = jogos[:usar]
         passou = sum(1 for j in slice_ if j['total'] > linha_atual)
-        return passou / n
+        return passou / usar, usar
 
     def media(n):
-        if qtd < n:
-            return None
-        slice_ = jogos[:n]
-        return sum(j['total'] for j in slice_) / n
+        if qtd <= 0:
+            return None, 0
+        usar = min(qtd, n)
+        slice_ = jogos[:usar]
+        return sum(j['total'] for j in slice_) / usar, usar
 
     out: dict = {'qtd_h2h': qtd}
 
     for n in janelas_wr:
-        out[f'wr_ult{n}'] = wr(n)
+        v, usados = wr(n)
+        out[f'wr_ult{n}'] = v
+        out[f'wr_ult{n}_qtd'] = usados
     for n in janelas_media:
-        out[f'media_ult{n}'] = media(n)
+        v, usados = media(n)
+        out[f'media_ult{n}'] = v
+        out[f'media_ult{n}_qtd'] = usados
 
     # Gap = media_ult20 - linha
     m20 = out.get('media_ult20')
@@ -514,11 +536,15 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
     """
     Aplica filtros unificados (comp + hist normalizado).
     Pre-condicao: _calcular_stats_h2h foi chamado COM as janelas dos filtros.
+
+    v5: valida min_partidas contra qtd ESPECIFICA daquela janela (wr_ult{n}_qtd
+    ou media_ult{n}_qtd), nao mais contra qtd_h2h global. Isso permite que
+    "WR ult 20, min_partidas=10" passe quando ha 12 jogos (usa 12).
     """
     if not filtros_unificados:
         return True, ''
 
-    qtd = stats.get('qtd_h2h', 0)
+    qtd_global = stats.get('qtd_h2h', 0)
 
     for f in filtros_unificados:
         tipo = (f.get('tipo') or '').lower().strip()
@@ -533,8 +559,21 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         except (TypeError, ValueError):
             min_partidas = min_h2h
 
-        if qtd < min_partidas:
-            return False, f'h2h_insuficiente_qtd_{qtd}_min_{min_partidas}'
+        # v5: qtd a validar depende do tipo+janela do filtro
+        qtd_validar = qtd_global
+        if tipo == 'wr' and janela:
+            try:
+                qtd_validar = stats.get(f'wr_ult{int(janela)}_qtd', qtd_global) or 0
+            except (TypeError, ValueError):
+                pass
+        elif tipo == 'media' and janela:
+            try:
+                qtd_validar = stats.get(f'media_ult{int(janela)}_qtd', qtd_global) or 0
+            except (TypeError, ValueError):
+                pass
+
+        if qtd_validar < min_partidas:
+            return False, f'h2h_insuficiente_qtd_{qtd_validar}_min_{min_partidas}'
 
         valor = None
 
