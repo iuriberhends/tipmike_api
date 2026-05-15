@@ -1,5 +1,12 @@
 """
 telegram_notifier.py - Worker de envio de tips pro Telegram
+v8 - ANTI-FLOOD: ao resolver aposta, EDITA a mensagem original
+     (editMessageText) adicionando um footer "GREEN/RED/DEVOLVIDA"
+     ao inves de postar uma mensagem nova.
+     Persiste telegram_message_id / telegram_chat_id / telegram_message_text
+     em apostas no momento do envio inicial.
+     Fallback: se a aposta nao tiver telegram_message_id (apostas antigas
+     anteriores a migration 012), volta a mandar mensagem nova.
 v7 - fix _buscar_ultimo_confronto: pega ULTIMO tick de cada event_id (placar final
      mais proximo possivel) e exclui o jogo atual da aposta
 v6 - le tambem filtrosHistAdicionados (formato antigo) alem de filtrosCompAdicionados
@@ -507,7 +514,61 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
 
 
 # ============================================================
-# MONTA MENSAGEM RESOLVIDA
+# FOOTER DE RESOLUCAO (concatenado na msg original via edit)
+# ============================================================
+def _footer_resolucao(aposta: dict) -> str:
+    veredito = (aposta.get('resultado') or '').lower()
+    if not veredito or veredito == 'pendente':
+        veredito = (aposta.get('status') or '').lower()
+
+    if veredito in ('green', 'ganhou'):
+        emoji_status = '✅'
+        rotulo = 'GREEN'
+    elif veredito in ('red', 'perdeu'):
+        emoji_status = '❌'
+        rotulo = 'RED'
+    elif veredito in ('void', 'devolvido', 'devolvida', 'cancelado'):
+        emoji_status = '⚪'
+        rotulo = 'DEVOLVIDA'
+    else:
+        emoji_status = 'ℹ️'
+        rotulo = veredito.upper() if veredito else '?'
+
+    placar_a = aposta.get('placar_final_a')
+    placar_b = aposta.get('placar_final_b')
+    if placar_a is None:
+        placar_a = aposta.get('placar_a_entrada')
+    if placar_b is None:
+        placar_b = aposta.get('placar_b_entrada')
+    placar_txt = f'{placar_a}-{placar_b}' if placar_a is not None else '?'
+
+    pnl_raw = aposta.get('pnl')
+    if pnl_raw is None:
+        pnl_raw = aposta.get('lucro_unidades')
+    if pnl_raw is not None:
+        try:
+            pnl_dec = Decimal(str(pnl_raw))
+            sinal = '+' if pnl_dec >= 0 else ''
+            pnl_txt = f'{sinal}R${_format_decimal(pnl_dec)}'
+        except Exception:
+            pnl_txt = '-'
+    else:
+        pnl_txt = '-'
+
+    motivo = (aposta.get('motivo') or '').strip()
+    motivo_linha = f'\n🧠 {motivo}' if motivo else ''
+
+    linha_status = (
+        f'{emoji_status} <b>{rotulo}</b> · '
+        f'Placar final <b>{placar_txt}</b> · '
+        f'PnL <b>{pnl_txt}</b>'
+    )
+
+    return '\n\n━━━━━━━━━━━━━━━━━━\n' + linha_status + motivo_linha
+
+
+# ============================================================
+# MONTA MENSAGEM RESOLVIDA (fallback - mensagem nova standalone)
 # ============================================================
 def montar_msg_aposta_resolvida(aposta: dict) -> str:
     veredito = (aposta.get('resultado') or '').lower()
@@ -520,9 +581,9 @@ def montar_msg_aposta_resolvida(aposta: dict) -> str:
     elif veredito in ('red', 'perdeu'):
         emoji_status = '❌'
         rotulo = 'RED'
-    elif veredito in ('void', 'devolvido', 'cancelado'):
+    elif veredito in ('void', 'devolvido', 'devolvida', 'cancelado'):
         emoji_status = '⚪'
-        rotulo = 'VOID'
+        rotulo = 'DEVOLVIDA'
     else:
         emoji_status = 'ℹ️'
         rotulo = veredito.upper() if veredito else '?'
@@ -573,10 +634,15 @@ def montar_msg_aposta_resolvida(aposta: dict) -> str:
 # ============================================================
 # TELEGRAM API
 # ============================================================
-async def enviar_telegram(chat_id: str, text: str, max_retries: int = MAX_RETRIES) -> bool:
+async def enviar_telegram(chat_id: str, text: str,
+                          max_retries: int = MAX_RETRIES) -> Optional[int]:
+    """
+    Envia mensagem. Retorna o message_id retornado pelo Telegram em caso
+    de sucesso, ou None em caso de falha.
+    """
     if not TELEGRAM_BOT_TOKEN:
         logger.error("TELEGRAM_BOT_TOKEN nao configurado — pulando envio")
-        return False
+        return None
 
     agora = datetime.now()
     ultimo = state.canal_last_send.get(chat_id)
@@ -600,8 +666,9 @@ async def enviar_telegram(chat_id: str, text: str, max_retries: int = MAX_RETRIE
 
             if r.status_code == 200 and data.get('ok'):
                 state.canal_last_send[chat_id] = datetime.now()
-                logger.info(f"[OK] msg enviada chat_id={chat_id} (tentativa {tentativa})")
-                return True
+                msg_id = data.get('result', {}).get('message_id')
+                logger.info(f"[OK] msg enviada chat_id={chat_id} message_id={msg_id} (tentativa {tentativa})")
+                return msg_id
 
             if r.status_code == 429:
                 retry_after = data.get('parameters', {}).get('retry_after', RETRY_BASE_SEC * tentativa)
@@ -611,7 +678,7 @@ async def enviar_telegram(chat_id: str, text: str, max_retries: int = MAX_RETRIE
 
             if r.status_code in (400, 403):
                 logger.error(f"[{r.status_code}] chat_id={chat_id} erro permanente: {data.get('description', r.text)[:200]}")
-                return False
+                return None
 
             espera = RETRY_BASE_SEC * (2 ** (tentativa - 1))
             logger.warning(f"[{r.status_code}] chat_id={chat_id} erro temporario, retry em {espera}s: {data}")
@@ -624,9 +691,77 @@ async def enviar_telegram(chat_id: str, text: str, max_retries: int = MAX_RETRIE
 
         except Exception as e:
             logger.exception(f"[ERR] chat_id={chat_id} erro inesperado: {e}")
-            return False
+            return None
 
     logger.error(f"[FAIL] chat_id={chat_id} desistiu apos {max_retries} tentativas")
+    return None
+
+
+async def editar_telegram(chat_id: str, message_id: int, text: str,
+                          max_retries: int = MAX_RETRIES) -> bool:
+    """
+    Edita uma mensagem existente. Retorna True em caso de sucesso (incluindo
+    o caso 'message is not modified'), False em caso de falha permanente.
+    """
+    if not TELEGRAM_BOT_TOKEN:
+        logger.error("TELEGRAM_BOT_TOKEN nao configurado — pulando edicao")
+        return False
+
+    agora = datetime.now()
+    ultimo = state.canal_last_send.get(chat_id)
+    if ultimo:
+        delta = (agora - ultimo).total_seconds()
+        if delta < RATE_LIMIT_DELAY_SEC:
+            await asyncio.sleep(RATE_LIMIT_DELAY_SEC - delta)
+
+    url = TELEGRAM_API_BASE.format(token=TELEGRAM_BOT_TOKEN, method='editMessageText')
+    payload = {
+        'chat_id': chat_id,
+        'message_id': message_id,
+        'text': text,
+        'parse_mode': 'HTML',
+        'disable_web_page_preview': True,
+    }
+
+    for tentativa in range(1, max_retries + 1):
+        try:
+            r = await state.http.post(url, json=payload, timeout=HTTP_TIMEOUT_SEC)
+            data = r.json()
+
+            if r.status_code == 200 and data.get('ok'):
+                state.canal_last_send[chat_id] = datetime.now()
+                logger.info(f"[OK] msg editada chat_id={chat_id} message_id={message_id} (tentativa {tentativa})")
+                return True
+
+            if r.status_code == 429:
+                retry_after = data.get('parameters', {}).get('retry_after', RETRY_BASE_SEC * tentativa)
+                logger.warning(f"[429] edit chat_id={chat_id} rate-limit, retry_after={retry_after}s")
+                await asyncio.sleep(retry_after + 0.5)
+                continue
+
+            desc = (data.get('description') or '').lower()
+            if 'message is not modified' in desc:
+                logger.info(f"edit chat_id={chat_id} message_id={message_id}: ja igual, ok")
+                return True
+
+            if r.status_code in (400, 403):
+                logger.error(f"[{r.status_code}] edit chat_id={chat_id} message_id={message_id} erro permanente: {data.get('description', r.text)[:200]}")
+                return False
+
+            espera = RETRY_BASE_SEC * (2 ** (tentativa - 1))
+            logger.warning(f"[{r.status_code}] edit chat_id={chat_id} erro temporario, retry em {espera}s: {data}")
+            await asyncio.sleep(espera)
+
+        except (httpx.TimeoutException, httpx.NetworkError) as e:
+            espera = RETRY_BASE_SEC * (2 ** (tentativa - 1))
+            logger.warning(f"[NET] edit chat_id={chat_id} {type(e).__name__}, retry em {espera}s")
+            await asyncio.sleep(espera)
+
+        except Exception as e:
+            logger.exception(f"[ERR] edit chat_id={chat_id} erro inesperado: {e}")
+            return False
+
+    logger.error(f"[FAIL] edit chat_id={chat_id} message_id={message_id} desistiu apos {max_retries} tentativas")
     return False
 
 
@@ -648,6 +783,7 @@ SQL_APOSTA_COMPLETA = """
         a.status, a.resultado, a.motivo,
         a.stats_h2h,
         a.apostado_em, a.resolvido_em,
+        a.telegram_message_id, a.telegram_chat_id, a.telegram_message_text,
         b.nome AS bot_nome,
         b.casa AS bot_casa,
         b.esporte AS bot_esporte,
@@ -678,6 +814,21 @@ async def buscar_aposta(aposta_id: int) -> Optional[dict]:
         return d
 
 
+async def _persistir_msg_telegram(aposta_id: int, chat_id: str, message_id: int, text: str):
+    """Salva o tracking da mensagem na aposta pra permitir edit no resolve."""
+    try:
+        async with state.pool.acquire() as conn:
+            await conn.execute("""
+                UPDATE apostas
+                   SET telegram_message_id   = $1,
+                       telegram_chat_id      = $2,
+                       telegram_message_text = $3
+                 WHERE id = $4
+            """, message_id, chat_id, text, aposta_id)
+    except Exception as e:
+        logger.exception(f"erro salvando telegram_message_id da aposta #{aposta_id}: {e}")
+
+
 # ============================================================
 # HANDLERS
 # ============================================================
@@ -706,7 +857,10 @@ async def processar_aposta_nova(aposta_id: int):
             return
 
         msg = await montar_msg_aposta_nova(data)
-        await enviar_telegram(chat_id, msg)
+        message_id = await enviar_telegram(chat_id, msg)
+
+        if message_id is not None:
+            await _persistir_msg_telegram(aposta_id, chat_id, message_id, msg)
 
     except Exception as e:
         logger.exception(f"erro processando aposta_nova #{aposta_id}: {e}")
@@ -719,19 +873,33 @@ async def processar_aposta_resolvida(aposta_id: int):
             return
 
         if data.get('em_treinamento'):
-            logger.info(f"aposta resolvida #{aposta_id} pulada: bot {data.get('bot_nome')} em treinamento")
+            logger.info(f"aposta resolvida #{aposta_id} pulada: bot em treinamento")
             return
 
         if not data.get('telegram_canal_id') or not data.get('canal_ativo'):
             return
 
-        chat_id = data.get('canal_chat_id')
-        if not chat_id or chat_id.startswith('PLACEHOLDER_'):
+        chat_id_atual = data.get('canal_chat_id')
+        if not chat_id_atual or chat_id_atual.startswith('PLACEHOLDER_'):
             return
 
+        tg_msg_id = data.get('telegram_message_id')
+        tg_chat_id = data.get('telegram_chat_id') or chat_id_atual
+        tg_text = data.get('telegram_message_text')
+
+        # Caminho preferido: edita a mensagem original (anti-flood)
+        if tg_msg_id and tg_text:
+            novo_texto = tg_text + _footer_resolucao(data)
+            ok = await editar_telegram(tg_chat_id, tg_msg_id, novo_texto)
+            if ok:
+                logger.info(f"aposta resolvida #{aposta_id} editada: resultado={data.get('resultado')}")
+                return
+            logger.warning(f"aposta #{aposta_id} falhou ao editar mensagem original — caindo pra mensagem nova")
+
+        # Fallback: mensagem nova (apostas legacy sem telegram_message_id)
         msg = montar_msg_aposta_resolvida(data)
-        await enviar_telegram(chat_id, msg)
-        logger.info(f"aposta resolvida #{aposta_id} enviada: resultado={data.get('resultado')}")
+        await enviar_telegram(chat_id_atual, msg)
+        logger.info(f"aposta resolvida #{aposta_id} enviada (fallback nova msg): resultado={data.get('resultado')}")
 
     except Exception as e:
         logger.exception(f"erro processando aposta_resolvida #{aposta_id}: {e}")
@@ -786,7 +954,7 @@ async def loop_listener():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("TelegramNotifier iniciando (v7 - fix ultimo confronto: pega ultimo tick + exclui jogo atual)")
+    logger.info("TelegramNotifier iniciando (v8 - edit msg original ao resolver, anti-flood)")
     logger.info(f"TOKEN configurado: {'sim' if TELEGRAM_BOT_TOKEN else 'NAO!'}")
     if TELEGRAM_BOT_TOKEN:
         logger.info(f"TOKEN preview: {TELEGRAM_BOT_TOKEN[:8]}...{TELEGRAM_BOT_TOKEN[-4:]}")

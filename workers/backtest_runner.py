@@ -547,9 +547,30 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
     Aplica filtros unificados (comp + hist normalizado).
     Pre-condicao: _calcular_stats_h2h foi chamado COM as janelas dos filtros.
 
-    v5: valida min_partidas contra qtd ESPECIFICA daquela janela (wr_ult{n}_qtd
-    ou media_ult{n}_qtd), nao mais contra qtd_h2h global. Isso permite que
-    "WR ult 20, min_partidas=10" passe quando ha 12 jogos (usa 12).
+    v6 FIX (14/05/2026): filtros hist (origem='hist', vindos do
+    filtrosHistAdicionados) usam minPartidas como MATURIDADE DA
+    AMOSTRA H2H TOTAL (qtd_h2h), nao como tamanho efetivo usado
+    na janela.
+
+    Exemplo de uso pretendido pelo usuario:
+      janela=last_5, minPartidas=10
+      Significado: "analiso WR nas ultimas 5 partidas, MAS so
+      processo se o par tem >=10 partidas no historico total"
+      (filtro de maturidade — evita pares com pouco historico).
+
+    Antes (v5): validava qtd_validar contra wr_ult{N}_qtd
+    (max=N), o que tornava "janela=5 + min=10" matematicamente
+    impossivel (qtd_validar maximo=5 < 10 sempre). Bot 17 com
+    filtros [last_10/min=10, last_5/min=10] rejeitava 100% dos
+    ticks pelo segundo filtro.
+
+    Comportamento agora:
+      - origem='hist': valida contra qtd_h2h GLOBAL.
+        Ex: last_5+min=10 passa se par tem >=10 jogos no historico.
+      - origem='comp' (padrao se nao tiver _origem): mantem
+        comportamento v5 (qtd da janela). Filtros comp usam
+        min_h2h default=5 que sempre <= janela, entao nao geram
+        contradicao matematica.
     """
     if not filtros_unificados:
         return True, ''
@@ -561,6 +582,7 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         janela = f.get('janela')
         min_v = f.get('min') if f.get('minAtivo') else None
         max_v = f.get('max') if f.get('maxAtivo') else None
+        origem = f.get('_origem', 'comp')
 
         # Filtros hist tem min_partidas proprio; senao usa default
         min_partidas = f.get('hist_min_partidas') or min_h2h
@@ -569,18 +591,24 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         except (TypeError, ValueError):
             min_partidas = min_h2h
 
-        # v5: qtd a validar depende do tipo+janela do filtro
-        qtd_validar = qtd_global
-        if tipo == 'wr' and janela:
-            try:
-                qtd_validar = stats.get(f'wr_ult{int(janela)}_qtd', qtd_global) or 0
-            except (TypeError, ValueError):
-                pass
-        elif tipo == 'media' and janela:
-            try:
-                qtd_validar = stats.get(f'media_ult{int(janela)}_qtd', qtd_global) or 0
-            except (TypeError, ValueError):
-                pass
+        # v6 FIX: filtros HIST validam minPartidas contra qtd_h2h GLOBAL
+        # (= maturidade do par). Filtros COMP continuam validando
+        # contra qtd da janela (compat backwards v5).
+        if origem == 'hist':
+            qtd_validar = qtd_global
+        else:
+            # v5 (comp): qtd a validar depende do tipo+janela do filtro
+            qtd_validar = qtd_global
+            if tipo == 'wr' and janela:
+                try:
+                    qtd_validar = stats.get(f'wr_ult{int(janela)}_qtd', qtd_global) or 0
+                except (TypeError, ValueError):
+                    pass
+            elif tipo == 'media' and janela:
+                try:
+                    qtd_validar = stats.get(f'media_ult{int(janela)}_qtd', qtd_global) or 0
+                except (TypeError, ValueError):
+                    pass
 
         if qtd_validar < min_partidas:
             return False, f'h2h_insuficiente_qtd_{qtd_validar}_min_{min_partidas}'
