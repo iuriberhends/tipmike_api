@@ -4,15 +4,27 @@ Endpoint que retorna o histórico agregado de um bot:
 - Resultados por dia (greens, reds, lucro, total)
 - Totais consolidados (WR, ROI, lucro, odd média)
 - Tips recentes (últimas N apostas)
+- Export CSV (todas as apostas do bot)
 
 Usa modo='simulado' por padrão (apostas geradas pelo bot_executor).
 """
 
-from fastapi import APIRouter, HTTPException, Query
+import csv
+import io
+import json
+from datetime import datetime, timezone, timedelta
+from decimal import Decimal
 from typing import Optional
+
+from fastapi import APIRouter, HTTPException, Query
+from fastapi.responses import Response
+
 from database import db
 
 router = APIRouter(prefix="/bots", tags=["historico"])
+
+# Timezone do Brasil pra formatar timestamps do CSV de forma amigavel
+BRT = timezone(timedelta(hours=-3))
 
 # Mapeamento periodo -> dias
 PERIODO_DIAS = {
@@ -289,3 +301,150 @@ async def get_stats_bot(
             "wr": wr,
             "oddMedia": round(d.get("odd_media") or 0, 2),
         }
+
+
+# ============================================================
+# EXPORT CSV
+# ============================================================
+
+CSV_COLUNAS = [
+    'id', 'apostado_em', 'resolvido_em', 'modo',
+    'bookmaker', 'casa', 'esporte', 'torneio', 'liga', 'event_id',
+    'jogador_a', 'jogador_b',
+    'mercado', 'mercado_tipo', 'linha', 'selecao', 'lado',
+    'odd', 'stake',
+    'placar_a_entrada', 'placar_b_entrada',
+    'placar_final_a', 'placar_final_b',
+    'minuto_entrada', 'periodo_entrada', 'live_time',
+    'status', 'resultado', 'pnl', 'lucro_unidades', 'motivo',
+    'stats_h2h_json',
+]
+
+
+def _csv_safe(v):
+    """Converte valor pra string segura pro CSV (None -> '').
+    Datetimes sao convertidos pra BRT e formatados sem timezone suffix
+    (Excel pt-BR nao parseia timezone bem).
+    """
+    if v is None:
+        return ''
+    if isinstance(v, Decimal):
+        return str(v)
+    if isinstance(v, datetime):
+        if v.tzinfo is not None:
+            v = v.astimezone(BRT)
+        return v.strftime('%Y-%m-%d %H:%M:%S')
+    return str(v)
+
+
+def _slug_filename(s: str, max_len: int = 50) -> str:
+    """Slug ASCII pra usar em filename (sem caracter problematico)."""
+    out = []
+    for c in (s or ''):
+        if c.isalnum():
+            out.append(c)
+        elif c in (' ', '-', '_'):
+            out.append('_')
+    slug = ''.join(out).strip('_')[:max_len]
+    return slug or 'bot'
+
+
+@router.get("/{bot_id}/export.csv")
+async def export_apostas_csv(
+    bot_id: int,
+    modo: str = Query("simulado", description="simulado | real"),
+    excel: bool = Query(True, description="True: UTF-8 BOM + separator ;  False: UTF-8 + ,"),
+    periodo: str = Query("todas", description="dia | 3d | 7d | 15d | 30d | todas (todas = sem filtro de data)"),
+    resolvidas: bool = Query(False, description="True: só apostas com resultado definido"),
+    limit: int = Query(50000, ge=1, le=200000),
+):
+    """
+    Exporta apostas de um bot pra CSV.
+    Cada bot tem seu CSV próprio (rota independente por bot_id).
+    """
+    if modo not in ("simulado", "real"):
+        raise HTTPException(400, "modo deve ser 'simulado' ou 'real'")
+    if periodo not in PERIODO_DIAS:
+        raise HTTPException(400, f"periodo invalido. Use: {list(PERIODO_DIAS.keys())}")
+
+    async with db() as conn:
+        bot_row = await conn.fetchrow("SELECT id, nome FROM bots WHERE id = $1", bot_id)
+        if not bot_row:
+            raise HTTPException(404, f"Bot {bot_id} nao encontrado")
+
+        where = ["bot_id = $1", "modo = $2"]
+        args = [bot_id, modo]
+
+        # 'todas' = sem filtro de data; outras chaves filtram por janela
+        if periodo != 'todas':
+            dias = PERIODO_DIAS[periodo]
+            where.append(f"apostado_em >= NOW() - INTERVAL '{dias} days'")
+
+        if resolvidas:
+            where.append("resultado IS NOT NULL")
+
+        sql = f"""
+            SELECT
+                id, apostado_em, resolvido_em, modo,
+                bookmaker, casa, esporte, torneio, liga, event_id,
+                jogador_a, jogador_b,
+                mercado, mercado_tipo, linha, selecao, lado,
+                odd, stake,
+                placar_a_entrada, placar_b_entrada,
+                placar_final_a, placar_final_b,
+                minuto_entrada, periodo_entrada, live_time,
+                status, resultado, pnl, lucro_unidades, motivo,
+                stats_h2h
+            FROM apostas
+            WHERE {' AND '.join(where)}
+            ORDER BY apostado_em DESC
+            LIMIT {limit}
+        """
+        rows = await conn.fetch(sql, *args)
+
+    # Monta CSV em memoria
+    delimiter = ';' if excel else ','
+    buf = io.StringIO()
+    if excel:
+        buf.write('\ufeff')  # BOM pro Excel pt-BR abrir UTF-8 corretamente
+
+    writer = csv.writer(buf, delimiter=delimiter, lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(CSV_COLUNAS)
+
+    for r in rows:
+        d = dict(r)
+
+        # stats_h2h vira string JSON
+        stats = d.get('stats_h2h')
+        if stats is None:
+            stats_str = ''
+        elif isinstance(stats, str):
+            stats_str = stats
+        else:
+            stats_str = json.dumps(stats, separators=(',', ':'), ensure_ascii=False)
+
+        row_out = []
+        for col in CSV_COLUNAS:
+            if col == 'stats_h2h_json':
+                row_out.append(stats_str)
+            else:
+                row_out.append(_csv_safe(d.get(col)))
+        writer.writerow(row_out)
+
+    csv_content = buf.getvalue()
+    buf.close()
+
+    # Filename: bot_<id>_<slug_nome>_<YYYYMMDD>.csv
+    nome_slug = _slug_filename(bot_row['nome'] or 'bot')
+    data_str = datetime.now().strftime('%Y%m%d')
+    filename = f"bot_{bot_id}_{nome_slug}_{data_str}.csv"
+
+    return Response(
+        content=csv_content.encode('utf-8'),
+        media_type="text/csv; charset=utf-8",
+        headers={
+            'Content-Disposition': f'attachment; filename="{filename}"',
+            # CORS: expor o header pra fetch() do frontend conseguir ler
+            'Access-Control-Expose-Headers': 'Content-Disposition',
+        },
+    )
