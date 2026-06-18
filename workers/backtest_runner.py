@@ -248,7 +248,8 @@ def _resolve_resultado(mercado: str, selecao: str, linha: float,
 # ============================================================
 
 class H2HCache:
-    LIMITE_JOGOS_POR_PAR = 100
+    LIMITE_JOGOS_POR_PAR = 100      # janela padrao/maxima dos filtros normais
+    TETO_BUSCA = 5000               # teto absoluto do _buscar (suporta 'todas')
 
     def __init__(self, pool, casa: str, esporte_banco: str):
         self._pool = pool
@@ -316,7 +317,7 @@ class H2HCache:
         try:
             async with self._pool.acquire() as conn:
                 rows = await conn.fetch(
-                    sql, self._casa, self._esporte, j1, j2, self.LIMITE_JOGOS_POR_PAR
+                    sql, self._casa, self._esporte, j1, j2, self.TETO_BUSCA
                 )
         except Exception as e:
             logger.exception(f"[h2h] Erro buscando par ({j1}, {j2}): {e}")
@@ -384,15 +385,24 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
         if not isinstance(fh, dict):
             continue
 
-        # Parse janela "last_N" -> N
-        janela_str = str(fh.get('janela', '')).strip()
+        # Parse janela. Aceita:
+        #   'all'      -> 0 (TODAS, usa todo o historico do par)
+        #   'last_0'   -> 0 (TODAS, alias)
+        #   'last_N'   -> N
+        # Janelas de tempo (last_1h, last_7d, current_championship, same_day)
+        # NAO sao suportadas pelo H2H simples -> descartadas.
+        janela_str = str(fh.get('janela', '')).strip().lower()
         janela_num = None
-        if janela_str.startswith('last_'):
+        if janela_str == 'all':
+            janela_num = 0
+        elif janela_str.startswith('last_'):
+            resto = janela_str.replace('last_', '')
             try:
-                janela_num = int(janela_str.replace('last_', ''))
+                janela_num = int(resto)   # so converte se for numero puro (rejeita 1h, 7d)
             except ValueError:
                 pass
-        if not janela_num or janela_num < 1:
+        # aceita 0 (TODAS) explicitamente; rejeita None ou negativo
+        if janela_num is None or janela_num < 0:
             continue
 
         # prob: [min, max] em % (0-100)
@@ -492,7 +502,9 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
             j = int(janela)
         except (TypeError, ValueError):
             continue
-        if j < 1 or j > H2HCache.LIMITE_JOGOS_POR_PAR:
+        # janela 0 = 'TODAS' (usa todo o historico do par). Sentinela aceito.
+        # Qualquer j entre 1 e TETO_BUSCA tambem e aceito (antes limitava a 100).
+        if j != 0 and (j < 1 or j > H2HCache.TETO_BUSCA):
             continue
 
         if tipo == 'wr':
@@ -523,9 +535,10 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
 
     def wr(n):
         # v5: usa o que tiver (ate N). Se nao tem nada, retorna None.
+        # n==0 = 'TODAS' -> usa todos os jogos disponiveis do par.
         if qtd <= 0:
             return None, 0
-        usar = min(qtd, n)
+        usar = qtd if n == 0 else min(qtd, n)
         slice_ = jogos[:usar]
         passou = sum(1 for j in slice_ if j['total'] > linha_atual)
         return passou / usar, usar
@@ -533,7 +546,7 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     def media(n):
         if qtd <= 0:
             return None, 0
-        usar = min(qtd, n)
+        usar = qtd if n == 0 else min(qtd, n)
         slice_ = jogos[:usar]
         return sum(j['total'] for j in slice_) / usar, usar
 
