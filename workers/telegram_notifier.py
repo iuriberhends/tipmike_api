@@ -198,14 +198,16 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
     for fh in filtros_hist or []:
         if not isinstance(fh, dict):
             continue
-        janela_str = str(fh.get('janela', '')).strip()
+        janela_str = str(fh.get('janela', '')).strip().lower()
         janela_num = None
-        if janela_str.startswith('last_'):
+        if janela_str == 'all':
+            janela_num = 0
+        elif janela_str.startswith('last_'):
             try:
                 janela_num = int(janela_str.replace('last_', ''))
             except ValueError:
                 pass
-        if not janela_num:
+        if janela_num is None or janela_num < 0:
             continue
 
         prob = fh.get('prob') or [0, 100]
@@ -274,13 +276,13 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
                 nao_suportado_motivo = f'tipo={hist_tipo}'
 
         janela_valida = True
-        if tipo == 'media' and janela:
+        if tipo == 'media' and janela is not None:
             try:
                 stat_key = f'media_ult{int(janela)}'
             except (TypeError, ValueError):
                 janela_valida = False
                 stat_key = None
-        elif tipo == 'wr' and janela:
+        elif tipo == 'wr' and janela is not None:
             try:
                 stat_key = f'wr_ult{int(janela)}'
             except (TypeError, ValueError):
@@ -305,8 +307,11 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         rotulo_tipo = TIPO_LABEL.get(tipo, tipo.capitalize())
         if origem == 'hist' and hist_base == 'match':
             rotulo_tipo = f'WR H2H'
-        if janela and tipo in ('media', 'wr'):
-            rotulo = f"{rotulo_tipo} últ {janela}"
+        if janela is not None and tipo in ('media', 'wr'):
+            if int(janela) == 0:
+                rotulo = f"{rotulo_tipo} Todas"
+            else:
+                rotulo = f"{rotulo_tipo} últ {janela}"
         else:
             rotulo = rotulo_tipo
 
