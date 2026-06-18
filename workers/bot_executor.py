@@ -467,7 +467,7 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
             if not tipo:
                 continue
 
-            if tipo in ('media', 'wr') and janela:
+            if tipo in ('media', 'wr') and janela is not None:
                 stat_key = f"{tipo}_ult{janela}"
                 if origem == 'hist':
                     rotulo = f"WR{janela}H2H" if tipo == 'wr' else f"média{janela}H2H"

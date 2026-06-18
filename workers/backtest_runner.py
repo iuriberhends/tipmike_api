@@ -496,7 +496,7 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
             continue
         tipo = (f.get('tipo') or '').lower().strip()
         janela = f.get('janela')
-        if not janela:
+        if janela is None:
             continue
         try:
             j = int(janela)
@@ -629,12 +629,12 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         else:
             # v5 (comp): qtd a validar depende do tipo+janela do filtro
             qtd_validar = qtd_global
-            if tipo == 'wr' and janela:
+            if tipo == 'wr' and janela is not None:
                 try:
                     qtd_validar = stats.get(f'wr_ult{int(janela)}_qtd', qtd_global) or 0
                 except (TypeError, ValueError):
                     pass
-            elif tipo == 'media' and janela:
+            elif tipo == 'media' and janela is not None:
                 try:
                     qtd_validar = stats.get(f'media_ult{int(janela)}_qtd', qtd_global) or 0
                 except (TypeError, ValueError):
@@ -645,12 +645,12 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
 
         valor = None
 
-        if tipo == 'media' and janela:
+        if tipo == 'media' and janela is not None:
             try:
                 valor = stats.get(f'media_ult{int(janela)}')
             except (TypeError, ValueError):
                 valor = None
-        elif tipo == 'wr' and janela:
+        elif tipo == 'wr' and janela is not None:
             try:
                 valor = stats.get(f'wr_ult{int(janela)}')
             except (TypeError, ValueError):
