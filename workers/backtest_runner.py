@@ -48,7 +48,7 @@ ESPORTE_UI_PARA_BANCO = {
 
 MERCADO_TIPOS_POR_CASA = {
     'betano': {
-        'over_under_ft':        ['13'],
+        'over_under_ft':        ['13', '157'],
         'asian_over_under_ft':  ['189'],
         'ml_ft':                ['1'],
         'btts_ft':              ['15'],
