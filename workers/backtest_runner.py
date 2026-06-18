@@ -286,16 +286,19 @@ class H2HCache:
         sql = """
         SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
         FROM (
-            SELECT DISTINCT ON (event_id)
-                event_id, ts, jogador_a, jogador_b, score_home, score_away
-            FROM ticks
-            WHERE bookmaker = $1
-              AND sport = $2
-              AND ((jogador_a = $3 AND jogador_b = $4)
-                OR (jogador_a = $4 AND jogador_b = $3))
-              AND score_home IS NOT NULL
-              AND score_away IS NOT NULL
-            ORDER BY event_id, ts DESC
+            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
+            FROM (
+                SELECT DISTINCT ON (event_id)
+                    event_id, ts, jogador_a, jogador_b, score_home, score_away
+                FROM ticks
+                WHERE bookmaker = $1
+                  AND sport = $2
+                  AND ((jogador_a = $3 AND jogador_b = $4)
+                    OR (jogador_a = $4 AND jogador_b = $3))
+                  AND score_home IS NOT NULL
+                  AND score_away IS NOT NULL
+                ORDER BY event_id, ts DESC
+            ) ticks_distinct
 
             UNION ALL
 
