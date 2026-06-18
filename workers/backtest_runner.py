@@ -282,8 +282,10 @@ class H2HCache:
             jogos = [j for j in jogos if str(j.get('event_id')) != eid_str]
         return jogos
 
-    async def _buscar(self, j1: str, j2: str) -> list:
-        sql = """
+async def _buscar(self, j1: str, j2: str) -> list:
+    sql = """
+        SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
+        FROM (
             SELECT DISTINCT ON (event_id)
                 event_id, ts, jogador_a, jogador_b, score_home, score_away
             FROM ticks
@@ -294,8 +296,20 @@ class H2HCache:
               AND score_home IS NOT NULL
               AND score_away IS NOT NULL
             ORDER BY event_id, ts DESC
-            LIMIT $5
-        """
+
+            UNION ALL
+
+            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
+            FROM h2h_historico
+            WHERE sport = $2
+              AND ((UPPER(jogador_a) = UPPER($3) AND UPPER(jogador_b) = UPPER($4))
+                OR (UPPER(jogador_a) = UPPER($4) AND UPPER(jogador_b) = UPPER($3)))
+              AND score_home IS NOT NULL
+              AND score_away IS NOT NULL
+        ) combinado
+        ORDER BY ts DESC
+        LIMIT $5
+    """
         try:
             async with self._pool.acquire() as conn:
                 rows = await conn.fetch(
