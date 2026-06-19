@@ -263,12 +263,23 @@ class H2HCache:
         b = (jb or '').strip()
         return tuple(sorted([a, b]))
 
+    # v7 FIX (18/06/2026): margem ao-vivo. Se o ultimo tick de um jogo
+    # (vindo de 'ticks') foi ha menos de MARGEM_AO_VIVO_MIN minutos ANTES
+    # do tick avaliado, o jogo ainda estava AO VIVO (placar parcial) e NAO
+    # deve contar no WR. Jogos de h2h_historico (placar final) nunca filtram.
+    MARGEM_AO_VIVO_MIN = 15
+
     async def get_jogos(self, ja: str, jb: str, antes_de_ts, event_id_excluir=None) -> list:
         """
         Retorna jogos do par com ts < antes_de_ts.
 
         v5: aceita event_id_excluir pra remover o jogo atual da lista H2H
         (evita contar o placar parcial do jogo em andamento no calculo do WR).
+        v7 (FIX): exclui jogos que vieram de TICKS e ainda estavam ao vivo
+        no momento da aposta (ultimo tick < MARGEM_AO_VIVO_MIN antes de
+        antes_de_ts). Esses tem placar PARCIAL e poluiam o WR. Jogos de
+        h2h_historico (placar final real da TM/CSV) nunca sao filtrados.
+        Usa antes_de_ts (nao NOW()) -> funciona igual em backtest e ao vivo.
         """
         par = self._normalizar_par(ja, jb)
         if not par[0] or not par[1]:
@@ -277,17 +288,35 @@ class H2HCache:
         if par not in self._cache:
             self._cache[par] = await self._buscar(par[0], par[1])
 
-        jogos = [j for j in self._cache[par] if j['ts'] < antes_de_ts]
+        corte_ao_vivo = antes_de_ts - timedelta(minutes=self.MARGEM_AO_VIVO_MIN)
+
+        jogos = []
+        for j in self._cache[par]:
+            if j['ts'] >= antes_de_ts:
+                continue
+            # v7: se o jogo veio de ticks e o ultimo tick dele foi recente
+            # demais (ainda ao vivo no momento da aposta), descarta.
+            if j.get('fonte') == 'tick':
+                ult = j.get('ultimo_tick_ts') or j['ts']
+                if ult >= corte_ao_vivo:
+                    continue
+            jogos.append(j)
+
         if event_id_excluir is not None:
             eid_str = str(event_id_excluir)
             jogos = [j for j in jogos if str(j.get('event_id')) != eid_str]
         return jogos
 
     async def _buscar(self, j1: str, j2: str) -> list:
+        # v7: o lado ticks traz tambem o ts do ultimo tick (ultimo_tick_ts)
+        # e marca fonte='tick' vs fonte='hist', pra get_jogos saber se o jogo
+        # estava ao vivo no momento da aposta e filtrar so os de tick.
         sql = """
-        SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
+        SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+               ultimo_tick_ts, fonte
         FROM (
-            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
+            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+                   ts AS ultimo_tick_ts, 'tick' AS fonte
             FROM (
                 SELECT DISTINCT ON (event_id)
                     event_id, ts, jogador_a, jogador_b, score_home, score_away
@@ -303,7 +332,8 @@ class H2HCache:
 
             UNION ALL
 
-            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away
+            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+                   NULL::timestamptz AS ultimo_tick_ts, 'hist' AS fonte
             FROM h2h_historico
             WHERE sport = $2
               AND ((UPPER(jogador_a) = UPPER($3) AND UPPER(jogador_b) = UPPER($4))
@@ -335,6 +365,8 @@ class H2HCache:
                 'score_home': sh,
                 'score_away': sa,
                 'total': (sh or 0) + (sa or 0),
+                'fonte': r['fonte'],
+                'ultimo_tick_ts': r['ultimo_tick_ts'],
             })
         jogos.sort(key=lambda x: x['ts'], reverse=True)
         return jogos
