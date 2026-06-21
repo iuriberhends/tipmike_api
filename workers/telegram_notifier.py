@@ -488,6 +488,16 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
     )
     ultimo_txt = f"\n⏳ Último Confronto: <b>{ultimo_confronto}</b>" if ultimo_confronto else ''
 
+    # Total de Confrontos (qtd_h2h do stats_h2h) - quantos jogos do par o bot usou
+    stats_msg = _parse_json_field(aposta.get('stats_h2h'))
+    qtd_h2h = stats_msg.get('qtd_h2h') if stats_msg else None
+    total_confrontos_txt = ''
+    if qtd_h2h is not None:
+        try:
+            total_confrontos_txt = f"\n📚 Total de Confrontos: <b>{int(qtd_h2h)}</b>"
+        except (TypeError, ValueError):
+            pass
+
     filtros_linhas = _formatar_filtros_complementares(aposta, aposta)
     filtros_bloco = ''
     if filtros_linhas:
@@ -511,6 +521,7 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
         f'\n\n🕐 Tempo: {tempo_txt}\n'
         f'🔢 Placar: {placar}'
         f'{ultimo_txt}'
+        f'{total_confrontos_txt}'
         f'{filtros_bloco}'
         f'\n\n💰 Stake: R${stake}\n'
         f'🆔 #{aposta.get("id")}'
