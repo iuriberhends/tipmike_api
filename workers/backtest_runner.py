@@ -172,6 +172,19 @@ def _normalizar(s: str) -> str:
     return s
 
 
+def _lado_aposta(selecao: str) -> Optional[str]:
+    """v9: deriva o lado ('over'/'under') da selecao do tick, pra calcular o WR
+    do lado certo. Retorna None se nao for um mercado over/under."""
+    s = _normalizar(selecao)
+    if not s:
+        return None
+    if any(w in s for w in ('mais', 'over', 'acima')) or s.startswith('+') or s in ('sim', 'yes'):
+        return 'over'
+    if any(w in s for w in ('menos', 'under', 'abaixo')) or s.startswith('-') or s in ('nao', 'no'):
+        return 'under'
+    return None
+
+
 def _resolve_resultado(mercado: str, selecao: str, linha: float,
                        score_home: int, score_away: int) -> Optional[str]:
     if score_home is None or score_away is None:
@@ -592,7 +605,8 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
 
 def _calcular_stats_h2h(jogos: list, linha_atual: float,
                         janelas_wr: Optional[set] = None,
-                        janelas_media: Optional[set] = None) -> dict:
+                        janelas_media: Optional[set] = None,
+                        lado: Optional[str] = None) -> dict:
     """
     Calcula stats H2H com janelas dinamicas.
 
@@ -600,6 +614,14 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     Tambem grava 'wr_ult{N}_qtd' e 'media_ult{N}_qtd' indicando quantos jogos
     foram realmente usados, pra que _aplicar_filtros_complementares possa
     validar contra min_partidas do filtro.
+
+    v9: parametro `lado` ('over'/'under'/None). O WR e calculado como % de
+    jogos que VENCERIAM a aposta DAQUELE lado:
+      - over  (ou None, legado): % com total > linha
+      - under: % com total < linha
+    Como as linhas sao sempre .5, total (inteiro) nunca empata na linha,
+    entao wr_under = 1 - wr_over exatamente. Antes (ate v8) o WR era SEMPRE
+    do over e usado pros dois lados - um under apitava olhando o WR do over.
     """
     qtd = len(jogos)
 
@@ -608,6 +630,8 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     if janelas_media is None:
         janelas_media = set(JANELAS_PADRAO_MEDIA)
 
+    eh_under = (str(lado).lower().strip() == 'under') if lado else False
+
     def wr(n):
         # v5: usa o que tiver (ate N). Se nao tem nada, retorna None.
         # n==0 = 'TODAS' -> usa todos os jogos disponiveis do par.
@@ -615,7 +639,11 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
             return None, 0
         usar = qtd if n == 0 else min(qtd, n)
         slice_ = jogos[:usar]
-        passou = sum(1 for j in slice_ if j['total'] > linha_atual)
+        # v9: conta o lado certo. under = total < linha; over = total > linha.
+        if eh_under:
+            passou = sum(1 for j in slice_ if j['total'] < linha_atual)
+        else:
+            passou = sum(1 for j in slice_ if j['total'] > linha_atual)
         return passou / usar, usar
 
     def media(n):
@@ -1037,7 +1065,8 @@ async def executar_backtest(job_id: int):
 
                 jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
                 linha_num = _parse_linha(tick.get('linha')) or 0
-                stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media)
+                stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media,
+                                            lado=_lado_aposta(tick.get('selecao')))
                 stats['linha_atual'] = linha_num
 
                 passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_unificados)

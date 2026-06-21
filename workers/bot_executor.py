@@ -1,5 +1,10 @@
 """
-bot_executor.py - Worker de simulacao em tempo real (v7)
+bot_executor.py - Worker de simulacao em tempo real (v9)
+
+v9 - WR por LADO (over/under):
+- Passa o lado da aposta pro _calcular_stats_h2h. O WR do under agora
+  e % com total < linha (era sempre o do over). Como linhas sao .5,
+  wr_under = 1 - wr_over exato. Corrige under apitando com WR do over.
 
 v7 - Fix do filtro evitar_linhas_seq:
 - Antes (v6): so bloqueava se ja existia aposta com MESMA linha exata.
@@ -406,7 +411,12 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         linha_num = _parse_linha(tick.get('linha')) or 0
 
         janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
-        stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media)
+        # v9: passa o LADO (over/under) pra calcular o WR do lado APOSTADO.
+        # Antes o WR era sempre do over e usado nos 2 lados - um under apitava
+        # olhando o WR do over (ex: over 65% -> under apitava como se fosse 65%,
+        # quando o under real era 35%). Agora o filtro checa o numero certo.
+        lado_aposta = _selecao_eh_over_under(tick.get('selecao'))
+        stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta)
         stats_dict['linha_atual'] = linha_num
 
         passou_comp, motivo = _aplicar_filtros_complementares(stats_dict, filtros_unificados)
