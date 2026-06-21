@@ -368,6 +368,49 @@ class H2HCache:
                 'fonte': r['fonte'],
                 'ultimo_tick_ts': r['ultimo_tick_ts'],
             })
+
+        # v8: dedup ENTRE fontes (tick x hist). O mesmo jogo pode estar no
+        # ticks (ts = quando o coletor capturou) E no h2h_historico (ts = horario
+        # oficial da TM), com lag de ~20-40min e placar possivelmente invertido
+        # (perspectiva A/B trocada). Sem isso, o jogo conta 2x e infla a amostra.
+        # Criterio: mesmo PLACAR NORMALIZADO (ordenado, pega inversao) dentro de
+        # uma janela de tempo, e SO entre fontes diferentes (tick vs hist).
+        # Mantem o do historico (placar oficial TM) e descarta o do tick.
+        # Jogos da MESMA fonte com mesmo placar ficam preservados (jogos reais
+        # distintos) - mesma logica da limpeza do banco.
+        JANELA_DEDUP_MIN = 45  # lag tipico tick<->TM
+        jogos.sort(key=lambda x: x['ts'])  # mais antigo primeiro
+        manter = []
+        for jg in jogos:
+            placar_norm = tuple(sorted([jg['score_home'] or 0, jg['score_away'] or 0]))
+            achou = None
+            for m in manter:
+                if m.get('_descartado'):
+                    continue
+                if m['fonte'] == jg['fonte']:
+                    continue  # so dedup entre fontes diferentes
+                m_norm = tuple(sorted([m['score_home'] or 0, m['score_away'] or 0]))
+                if m_norm != placar_norm:
+                    continue
+                dt = abs((jg['ts'] - m['ts']).total_seconds()) / 60.0
+                if dt <= JANELA_DEDUP_MIN:
+                    achou = m
+                    break
+            if achou is not None:
+                # mesmo jogo na outra fonte: mantem o 'hist', descarta o 'tick'
+                if achou['fonte'] == 'hist':
+                    jg['_descartado'] = True
+                else:
+                    achou['_descartado'] = True
+                    jg['_descartado'] = False
+                manter.append(jg)
+            else:
+                jg['_descartado'] = False
+                manter.append(jg)
+
+        jogos = [j for j in manter if not j.get('_descartado')]
+        for j in jogos:
+            j.pop('_descartado', None)
         jogos.sort(key=lambda x: x['ts'], reverse=True)
         return jogos
 
