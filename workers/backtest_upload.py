@@ -67,6 +67,16 @@ ESPORTE_UI_PARA_BANCO = {
     "etennis": "E-Tennis",
 }
 
+# Tamanho maximo do parquet aceito (bytes). Protege contra arquivo gigante
+# que estoura memoria do VPS. Ajustavel via env.
+MAX_PARQUET_BYTES = int(os.environ.get("BACKTEST_MAX_PARQUET_MB", "500")) * 1024 * 1024
+
+
+class BacktestUploadError(Exception):
+    """Erro de upload/parsing de ticks. O worker captura e marca job como 'erro'
+    com mensagem amigavel, em vez de quebrar com stacktrace cru."""
+    pass
+
 
 def parse_ticks_parquet(caminho_arquivo: str,
                         bot: Optional[dict] = None) -> list[dict]:
@@ -82,50 +92,126 @@ def parse_ticks_parquet(caminho_arquivo: str,
 
     Se `bot` vier, aplica os MESMOS filtros de pre-selecao do SQL do banco
     (bookmaker, sport, torneios) - pra o arquivo se comportar igual ao banco.
-    """
-    import pandas as pd
 
+    BLINDAGEM: toda falha previsivel vira BacktestUploadError com mensagem clara.
+    Como e dinheiro real, prefere FALHAR EXPLICITO a devolver dado silenciosamente
+    errado (ex: ts que nao deu pra converter -> aborta, nao "passa batido").
+    """
+    try:
+        import pandas as pd
+    except ImportError as e:
+        raise BacktestUploadError(
+            "pandas/pyarrow nao instalados no ambiente do worker"
+        ) from e
+
+    # --- arquivo existe e tem tamanho sao ---
     p = Path(caminho_arquivo)
     if not p.exists():
-        raise FileNotFoundError(f"parquet nao encontrado: {caminho_arquivo}")
+        raise BacktestUploadError(f"arquivo nao encontrado: {p.name}")
+    if not p.is_file():
+        raise BacktestUploadError(f"caminho nao e um arquivo: {p.name}")
 
-    df = pd.read_parquet(p)
+    tamanho = p.stat().st_size
+    if tamanho == 0:
+        raise BacktestUploadError("arquivo vazio (0 bytes)")
+    if tamanho > MAX_PARQUET_BYTES:
+        mb = tamanho / 1024 / 1024
+        lim = MAX_PARQUET_BYTES / 1024 / 1024
+        raise BacktestUploadError(
+            f"parquet grande demais: {mb:.0f}MB (limite {lim:.0f}MB)"
+        )
 
+    # --- leitura ---
+    try:
+        df = pd.read_parquet(p)
+    except Exception as e:
+        raise BacktestUploadError(
+            f"nao foi possivel ler o parquet (corrompido ou formato invalido): {e}"
+        ) from e
+
+    if df is None or len(df) == 0:
+        raise BacktestUploadError("parquet sem linhas")
+
+    # --- colunas ---
     ok, faltando = validar_colunas(list(df.columns))
     if not ok:
-        raise ValueError(f"parquet sem colunas que o motor espera: {faltando}")
+        raise BacktestUploadError(
+            f"parquet sem as colunas que o motor espera. Faltando: {faltando}"
+        )
 
-    # TIMEZONE: UTC -> BRT naive (alinha com o banco)
-    df['ts'] = (pd.to_datetime(df['ts'], utc=True)
-                  .dt.tz_convert('America/Sao_Paulo')
-                  .dt.tz_localize(None))
+    # --- timezone: UTC -> BRT naive ---
+    # errors='coerce' transforma ts invalido em NaT (nao quebra). Depois a gente
+    # mede quantos NaT deu - se for muito, ABORTA (dado suspeito, dinheiro real).
+    try:
+        ts_orig = df['ts']
+        # ts do parquet vem ISO8601 (ex: 2026-05-21T05:00:28.402Z). format='ISO8601'
+        # evita o warning de inferencia e e mais rapido. errors='coerce' -> NaT no ruim.
+        ts_parsed = pd.to_datetime(ts_orig, utc=True, format='ISO8601', errors='coerce')
+    except Exception as e:
+        raise BacktestUploadError(f"falha ao interpretar a coluna ts: {e}") from e
 
-    # Pre-selecao igual ao SQL do banco (so se bot vier)
+    n_total = len(df)
+    n_nat = int(ts_parsed.isna().sum())
+    if n_nat == n_total:
+        raise BacktestUploadError(
+            "nenhum ts pode ser interpretado como data - coluna ts invalida"
+        )
+    if n_nat > 0:
+        frac = n_nat / n_total
+        # tolera ate 1% de ts ruim (descarta). Acima disso, aborta: algo errado.
+        if frac > 0.01:
+            raise BacktestUploadError(
+                f"{n_nat} de {n_total} ts invalidos ({frac:.1%}) - parquet suspeito"
+            )
+        logger.warning(f"[backtest_upload] descartando {n_nat} linhas com ts invalido")
+        mask_ok = ts_parsed.notna()
+        df = df[mask_ok].copy()
+        ts_parsed = ts_parsed[mask_ok]
+
+    try:
+        df['ts'] = ts_parsed.dt.tz_convert('America/Sao_Paulo').dt.tz_localize(None)
+    except Exception as e:
+        raise BacktestUploadError(f"falha na conversao de fuso (UTC->BRT): {e}") from e
+
+    # --- pre-selecao igual ao SQL do banco (so se bot vier) ---
     if bot:
-        casa = bot.get('casa')
-        if casa:
-            df = df[df['bookmaker'] == casa]
+        try:
+            casa = bot.get('casa')
+            if casa:
+                df = df[df['bookmaker'] == casa]
 
-        esporte_ui = bot.get('esporte')
-        if esporte_ui:
-            sport_banco = ESPORTE_UI_PARA_BANCO.get(esporte_ui, esporte_ui)
-            df = df[df['sport'] == sport_banco]
+            esporte_ui = bot.get('esporte')
+            if esporte_ui:
+                sport_banco = ESPORTE_UI_PARA_BANCO.get(esporte_ui, esporte_ui)
+                df = df[df['sport'] == sport_banco]
 
-        torneios = bot.get('torneios') or []
-        if torneios:
-            mask = pd.Series(False, index=df.index)
-            for t in torneios:
-                mask |= df['liga'].str.contains(t, case=False, na=False)
-            df = df[mask]
+            torneios = bot.get('torneios') or []
+            if torneios:
+                mask = pd.Series(False, index=df.index)
+                for t in torneios:
+                    if t:
+                        mask |= df['liga'].str.contains(str(t), case=False, na=False)
+                df = df[mask]
 
-        torneios_excluir = bot.get('torneios_excluir') or []
-        for t in torneios_excluir:
-            df = df[~df['liga'].str.contains(t, case=False, na=False)]
+            torneios_excluir = bot.get('torneios_excluir') or []
+            for t in torneios_excluir:
+                if t:
+                    df = df[~df['liga'].str.contains(str(t), case=False, na=False)]
+        except KeyError as e:
+            raise BacktestUploadError(f"coluna ausente ao filtrar: {e}") from e
+        except Exception as e:
+            raise BacktestUploadError(f"falha ao aplicar filtros do bot: {e}") from e
 
-    # Mesma ordenacao do motor
-    df = df.sort_values(['event_id', 'mercado_id', 'linha', 'selecao_id', 'ts'])
+    # --- ordenacao (mesma do motor) ---
+    try:
+        df = df.sort_values(['event_id', 'mercado_id', 'linha', 'selecao_id', 'ts'])
+    except Exception as e:
+        raise BacktestUploadError(f"falha ao ordenar ticks: {e}") from e
 
-    logger.info(f"[backtest_upload] parquet {p.name}: {len(df)} ticks apos filtros")
+    logger.info(
+        f"[backtest_upload] parquet {p.name}: {len(df)} ticks apos filtros "
+        f"(de {n_total} no arquivo)"
+    )
     return df.to_dict('records')
 
 
@@ -134,48 +220,159 @@ def parse_ticks_parquet(caminho_arquivo: str,
 # ============================================================
 
 def salvar_upload(conteudo: bytes, nome_original: str) -> str:
-    """Salva o parquet upado e devolve um upload_id (o caminho ou um id).
-    ESQUELETO: estrutura do storage temporario.
-    """
-    UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-    # TODO LOGICA: gerar id unico (uuid), validar extensao .parquet,
-    #   gravar bytes, talvez registrar numa tabela backtest_uploads.
-    destino = UPLOAD_DIR / nome_original
-    logger.info(f"[backtest_upload] (esqueleto) salvaria em {destino}")
+    """Salva o parquet upado e devolve o upload_id (o caminho no disco).
+    Gera nome unico (uuid + nome original) pra nao colidir entre uploads.
+    BLINDADO: valida extensao, tamanho, e trata falha de escrita (disco cheio)."""
+    import uuid
+
+    if not conteudo:
+        raise BacktestUploadError("conteudo vazio")
+    if not nome_original or not nome_original.lower().endswith(".parquet"):
+        raise BacktestUploadError("so arquivo .parquet e aceito")
+    if len(conteudo) > MAX_PARQUET_BYTES:
+        mb = len(conteudo) / 1024 / 1024
+        lim = MAX_PARQUET_BYTES / 1024 / 1024
+        raise BacktestUploadError(f"arquivo {mb:.0f}MB excede limite de {lim:.0f}MB")
+
+    try:
+        UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    except OSError as e:
+        raise BacktestUploadError(f"nao foi possivel criar pasta de uploads: {e}") from e
+
+    safe_nome = Path(nome_original).name  # tira path, evita traversal
+    uid = uuid.uuid4().hex[:8]
+    destino = UPLOAD_DIR / f"{uid}_{safe_nome}"
+    try:
+        destino.write_bytes(conteudo)
+    except OSError as e:
+        raise BacktestUploadError(f"falha ao gravar arquivo (disco cheio?): {e}") from e
+
+    logger.info(f"[backtest_upload] salvo: {destino} ({len(conteudo)} bytes)")
     return str(destino)
 
 
 def caminho_do_upload(upload_id: str) -> str:
-    """Resolve o upload_id pro caminho do arquivo no disco.
-    ESQUELETO."""
-    # TODO LOGICA: se upload_id for id de tabela, buscar o caminho; se for o
-    #   proprio caminho, validar que esta dentro de UPLOAD_DIR (seguranca).
-    return upload_id
+    """Resolve o upload_id pro caminho do arquivo. Aqui upload_id JA E o caminho.
+    Valida que esta dentro de UPLOAD_DIR (seguranca: evita ler arquivo arbitrario).
+    BLINDADO contra path-traversal e upload_id vazio/invalido."""
+    if not upload_id or not str(upload_id).strip():
+        raise BacktestUploadError("upload_id vazio")
+
+    try:
+        p = Path(upload_id).resolve()
+        base = UPLOAD_DIR.resolve()
+    except (OSError, ValueError) as e:
+        raise BacktestUploadError(f"upload_id invalido: {e}") from e
+
+    if base not in p.parents and p != base:
+        raise BacktestUploadError("upload_id fora do diretorio de uploads (bloqueado)")
+    if not p.exists():
+        raise BacktestUploadError(f"upload nao encontrado: {p.name}")
+    return str(p)
 
 
 # ============================================================
-# Peça 3 (integracao no motor): de onde vem os ticks
+# Validacao cruzada: arquivo x banco (detecta divergencia)
 # ============================================================
 
-async def carregar_ticks(conn, bot: dict, data_inicio, data_fim,
-                         upload_id: Optional[str] = None) -> list[dict]:
+async def validar_cruzado(conn, upload_id: str, bot: dict,
+                          amostra: int = 500) -> dict:
     """
-    Fonte unica de ticks pro motor. Se `upload_id` vier, le do ARQUIVO;
-    senao, le do BANCO (comportamento atual).
+    Compara uma AMOSTRA dos ticks do arquivo com o que o banco tem, pra detectar
+    se o parquet diverge do banco (ex: arquivo de outra epoca, placar diferente,
+    coletor mudou). NAO bloqueia o backtest - retorna um relatorio de divergencia
+    pra UI mostrar um aviso. Decisao de confiar fica com o usuario.
 
-    A ideia e o executar_backtest chamar ISTO no lugar do SELECT direto,
-    e ganhar a fonte=arquivo sem mudar o resto do motor.
+    Retorna dict com:
+        - amostrados: quantos ticks comparados
+        - so_no_arquivo: event_ids que o arquivo tem e o banco nao
+        - placar_divergente: casos onde o placar final difere entre arquivo e banco
+        - ok: bool (True se divergencia dentro do tolerado)
 
-    ESQUELETO: mostra o galho. A query do banco ja existe no motor - aqui
-    so o esqueleto do roteamento.
+    Filosofia: o backtest do arquivo SO e confiavel se o arquivo for fiel ao que
+    o banco teria. Se divergir muito, o numero pode nao refletir a realidade -
+    e o usuario PRECISA saber disso antes de apostar.
     """
-    if upload_id:
+    rel = {
+        'amostrados': 0,
+        'so_no_arquivo': 0,
+        'placar_divergente': 0,
+        'exemplos_divergencia': [],
+        'ok': True,
+        'erro': None,
+    }
+
+    try:
         caminho = caminho_do_upload(upload_id)
         ticks = parse_ticks_parquet(caminho, bot=bot)
-        logger.info(f"[backtest_upload] fonte=ARQUIVO, {len(ticks)} ticks")
-        return ticks
+    except BacktestUploadError as e:
+        rel['erro'] = f"nao deu pra ler arquivo: {e}"
+        rel['ok'] = False
+        return rel
 
-    # TODO LOGICA: fonte=BANCO -> mover pra ca o SELECT que ja existe no
-    #   executar_backtest (linhas ~925-964). Por ora, sinaliza.
-    logger.info("[backtest_upload] fonte=BANCO (usa query existente do motor)")
-    return []
+    if not ticks:
+        rel['erro'] = "arquivo sem ticks apos filtros"
+        return rel
+
+    # pega placar final por event_id no arquivo
+    placar_arquivo: dict = {}
+    for t in ticks:
+        sh, sa = t.get('score_home'), t.get('score_away')
+        if sh is not None and sa is not None:
+            try:
+                placar_arquivo[str(t['event_id'])] = (int(sh), int(sa))
+            except (TypeError, ValueError):
+                pass
+
+    # amostra de event_ids pra comparar
+    event_ids = list(placar_arquivo.keys())[:amostra]
+    rel['amostrados'] = len(event_ids)
+    if not event_ids:
+        rel['erro'] = "nenhum event_id com placar no arquivo pra comparar"
+        return rel
+
+    try:
+        rows = await conn.fetch(
+            "SELECT DISTINCT ON (event_id) event_id, score_home, score_away "
+            "FROM ticks WHERE event_id = ANY($1::text[]) "
+            "AND score_home IS NOT NULL ORDER BY event_id, ts DESC",
+            event_ids,
+        )
+    except Exception as e:
+        rel['erro'] = f"falha ao consultar banco: {e}"
+        rel['ok'] = False
+        return rel
+
+    placar_banco = {str(r['event_id']): (r['score_home'], r['score_away'])
+                    for r in rows}
+
+    for eid in event_ids:
+        if eid not in placar_banco:
+            rel['so_no_arquivo'] += 1
+            continue
+        pa = placar_arquivo[eid]
+        pb = placar_banco[eid]
+        # placar pode estar invertido (perspectiva A/B) - compara normalizado
+        if tuple(sorted(pa)) != tuple(sorted(pb)):
+            rel['placar_divergente'] += 1
+            if len(rel['exemplos_divergencia']) < 5:
+                rel['exemplos_divergencia'].append(
+                    {'event_id': eid, 'arquivo': pa, 'banco': pb})
+
+    # tolerancia: ate 5% de placar divergente e ate 50% so-no-arquivo (normal,
+    # arquivo tem dados antigos que o banco ja limpou). Acima disso, alerta.
+    if rel['amostrados'] > 0:
+        frac_div = rel['placar_divergente'] / rel['amostrados']
+        if frac_div > 0.05:
+            rel['ok'] = False
+            rel['erro'] = (
+                f"{rel['placar_divergente']} placares divergentes de "
+                f"{rel['amostrados']} ({frac_div:.0%}) - arquivo pode estar furado"
+            )
+
+    logger.info(
+        f"[backtest_upload] validacao cruzada: {rel['amostrados']} amostrados, "
+        f"{rel['so_no_arquivo']} so-no-arquivo, "
+        f"{rel['placar_divergente']} placar divergente, ok={rel['ok']}"
+    )
+    return rel

@@ -898,10 +898,21 @@ async def executar_backtest(job_id: int):
             stake_valor = float(job_row['stake_valor'])
             banca_inicial = float(job_row['banca_inicial'] or 1000)
 
+            # v10 (peca 3): fonte dos ticks. Se upload_id vier preenchido, le do
+            # ARQUIVO parquet; senao, le do BANCO por periodo (comportamento atual).
+            # job_row pode nao ter a coluna (migration nao rodada) -> trata como None.
+            try:
+                upload_id = job_row['upload_id']
+            except (KeyError, IndexError):
+                upload_id = None
+
+            fonte_ticks = 'arquivo' if upload_id else 'banco'
+
             await conn.execute(
                 "UPDATE backtest_jobs SET status='rodando', progresso=5, "
-                "progresso_msg='Buscando ticks no periodo' WHERE id=$1",
+                "progresso_msg=$2 WHERE id=$1",
                 job_id,
+                f"Buscando ticks ({fonte_ticks})",
             )
 
         filtros = bot.get('filtros') or {}
@@ -922,71 +933,119 @@ async def executar_backtest(job_id: int):
             torneios = bot.get('torneios') or []
             torneios_excluir = bot.get('torneios_excluir') or []
 
-            sql = """
-                SELECT id, ts, bookmaker, sport, liga, event_id,
-                       jogador_a, jogador_b, time_a, time_b,
-                       score_home, score_away, live_time,
-                       mercado, mercado_id, mercado_tipo, linha, selecao, selecao_id,
-                       odds
-                FROM ticks
-                WHERE bookmaker = $1
-                  AND ts >= $2::timestamp
-                  AND ts < $3::timestamp + INTERVAL '1 day'
-            """
-            params: list = [bot.get('casa'), data_inicio, data_fim]
-            n = 4
+            # === v10 (peca 3): FONTE = ARQUIVO ===
+            if upload_id:
+                try:
+                    from workers.backtest_upload import (parse_ticks_parquet,
+                                                         caminho_do_upload,
+                                                         BacktestUploadError)
+                except ImportError as e:
+                    raise RuntimeError(
+                        "modulo backtest_upload nao encontrado no worker"
+                    ) from e
 
-            if bot.get('esporte'):
-                sport_banco = ESPORTE_UI_PARA_BANCO.get(bot['esporte'], bot['esporte'])
-                sql += f" AND sport = ${n}"
-                params.append(sport_banco)
-                n += 1
+                try:
+                    caminho = caminho_do_upload(upload_id)
+                    ticks = parse_ticks_parquet(caminho, bot=bot)
+                except BacktestUploadError as e:
+                    # erro previsivel de arquivo: marca job erro com msg clara
+                    raise RuntimeError(f"Falha no arquivo de ticks: {e}") from e
 
-            if torneios:
-                ors = []
-                for t in torneios:
-                    ors.append(f"liga ILIKE ${n}")
-                    params.append(f"%{t}%")
-                    n += 1
-                sql += f" AND ({' OR '.join(ors)})"
+                total_ticks = len(ticks)
+                logger.info(f"[backtest] Job {job_id}: {total_ticks} ticks do ARQUIVO")
 
-            if torneios_excluir:
-                ands = []
-                for t in torneios_excluir:
-                    ands.append(f"liga NOT ILIKE ${n}")
-                    params.append(f"%{t}%")
-                    n += 1
-                sql += f" AND ({' AND '.join(ands)})"
-
-            sql += " ORDER BY event_id, mercado_id, linha, selecao_id, ts ASC"
-            logger.info(f"[backtest] SQL params count: {len(params)}")
-
-            ticks = await conn.fetch(sql, *params)
-            total_ticks = len(ticks)
-            logger.info(f"[backtest] Job {job_id}: {total_ticks} ticks brutos")
-
-            await conn.execute(
-                "UPDATE backtest_jobs SET progresso=15, "
-                "progresso_msg=$2, total_ticks_avaliados=$3 WHERE id=$1",
-                job_id, f"Encontrados {total_ticks} ticks. Aplicando filtros...", total_ticks,
-            )
-
-            if total_ticks == 0:
                 await conn.execute(
-                    """
-                    UPDATE backtest_jobs SET
-                        status='concluido', progresso=100,
-                        progresso_msg='Nenhum tick no periodo',
-                        total_apostas=0, green=0, red=0, void_count=0,
-                        pnl=0, roi=0, win_rate=0, drawdown_max=0, max_streak_red=0,
-                        dias_verdes=0, dias_total=0,
-                        equity_curve='[]'::jsonb, apostas_detalhe='[]'::jsonb, pnl_por_dia='[]'::jsonb,
-                        concluido_em=NOW()
-                    WHERE id=$1
-                    """,
+                    "UPDATE backtest_jobs SET progresso=15, "
+                    "progresso_msg=$2, total_ticks_avaliados=$3 WHERE id=$1",
                     job_id,
+                    f"Lidos {total_ticks} ticks do arquivo. Aplicando filtros...",
+                    total_ticks,
                 )
-                return
+
+                if total_ticks == 0:
+                    await conn.execute(
+                        """
+                        UPDATE backtest_jobs SET
+                            status='concluido', progresso=100,
+                            progresso_msg='Arquivo sem ticks apos filtros do bot',
+                            total_apostas=0, green=0, red=0, void_count=0,
+                            pnl=0, roi=0, win_rate=0, drawdown_max=0, max_streak_red=0,
+                            dias_verdes=0, dias_total=0,
+                            equity_curve='[]'::jsonb, apostas_detalhe='[]'::jsonb,
+                            pnl_por_dia='[]'::jsonb, concluido_em=NOW()
+                        WHERE id=$1
+                        """,
+                        job_id,
+                    )
+                    return
+
+            # === FONTE = BANCO (comportamento atual) ===
+            else:
+                sql = """
+                    SELECT id, ts, bookmaker, sport, liga, event_id,
+                           jogador_a, jogador_b, time_a, time_b,
+                           score_home, score_away, live_time,
+                           mercado, mercado_id, mercado_tipo, linha, selecao, selecao_id,
+                           odds
+                    FROM ticks
+                    WHERE bookmaker = $1
+                      AND ts >= $2::timestamp
+                      AND ts < $3::timestamp + INTERVAL '1 day'
+                """
+                params: list = [bot.get('casa'), data_inicio, data_fim]
+                n = 4
+
+                if bot.get('esporte'):
+                    sport_banco = ESPORTE_UI_PARA_BANCO.get(bot['esporte'], bot['esporte'])
+                    sql += f" AND sport = ${n}"
+                    params.append(sport_banco)
+                    n += 1
+
+                if torneios:
+                    ors = []
+                    for t in torneios:
+                        ors.append(f"liga ILIKE ${n}")
+                        params.append(f"%{t}%")
+                        n += 1
+                    sql += f" AND ({' OR '.join(ors)})"
+
+                if torneios_excluir:
+                    ands = []
+                    for t in torneios_excluir:
+                        ands.append(f"liga NOT ILIKE ${n}")
+                        params.append(f"%{t}%")
+                        n += 1
+                    sql += f" AND ({' AND '.join(ands)})"
+
+                sql += " ORDER BY event_id, mercado_id, linha, selecao_id, ts ASC"
+                logger.info(f"[backtest] SQL params count: {len(params)}")
+
+                ticks = await conn.fetch(sql, *params)
+                total_ticks = len(ticks)
+                logger.info(f"[backtest] Job {job_id}: {total_ticks} ticks brutos")
+
+                await conn.execute(
+                    "UPDATE backtest_jobs SET progresso=15, "
+                    "progresso_msg=$2, total_ticks_avaliados=$3 WHERE id=$1",
+                    job_id, f"Encontrados {total_ticks} ticks. Aplicando filtros...", total_ticks,
+                )
+
+                if total_ticks == 0:
+                    await conn.execute(
+                        """
+                        UPDATE backtest_jobs SET
+                            status='concluido', progresso=100,
+                            progresso_msg='Nenhum tick no periodo',
+                            total_apostas=0, green=0, red=0, void_count=0,
+                            pnl=0, roi=0, win_rate=0, drawdown_max=0, max_streak_red=0,
+                            dias_verdes=0, dias_total=0,
+                            equity_curve='[]'::jsonb, apostas_detalhe='[]'::jsonb, pnl_por_dia='[]'::jsonb,
+                            concluido_em=NOW()
+                        WHERE id=$1
+                        """,
+                        job_id,
+                    )
+                    return
 
         primeiros: dict = {}
         placar_final: dict = {}
@@ -1020,6 +1079,15 @@ async def executar_backtest(job_id: int):
             'h2h_insuf': 0, 'comp': 0, 'sem_par': 0,
             'sem_placar': 0, 'sem_resultado': 0,
         }
+        # v10: contadores de QUALIDADE (nao rejeitam, mas reportam no relatorio).
+        # Filosofia: num backtest de dinheiro real, o numero precisa vir com
+        # ressalva honesta. Esconder que X apostas tiveram h2h fraco = mentir.
+        qualidade = {
+            'apostas_h2h_fraco': 0,   # apostou mas com poucos jogos h2h (<min saudavel)
+            'eventos_sem_placar_final': 0,  # tick sem placar pra resolver
+            'ticks_odds_invalida': 0,  # odds NaN/<=1 (score_update etc) - pulados
+        }
+        H2H_MIN_SAUDAVEL = 10  # abaixo disso, marca como amostra fraca
 
         ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
         total_candidatos = len(ticks_ordenados)
@@ -1063,7 +1131,17 @@ async def executar_backtest(job_id: int):
                     rej['sem_par'] += 1
                     continue
 
-                jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
+                # v10: get_jogos toca o banco - blinda. Se falhar a busca do h2h
+                # de UM tick, nao derruba o backtest inteiro: conta e pula esse.
+                try:
+                    jogos_h2h = await h2h_cache.get_jogos(
+                        ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
+                except Exception as e:
+                    logger.warning(
+                        f"[backtest] job {job_id}: falha h2h {ja}x{jb}: {e}")
+                    rej['sem_par'] += 1
+                    continue
+
                 linha_num = _parse_linha(tick.get('linha')) or 0
                 stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media,
                                             lado=_lado_aposta(tick.get('selecao')))
@@ -1077,9 +1155,16 @@ async def executar_backtest(job_id: int):
                         rej['comp'] += 1
                     continue
 
+                # v10: passou nos filtros, mas com amostra h2h fraca? Marca pra
+                # reportar (NAO rejeita - so transparencia). qtd_h2h vem do stats.
+                qtd_h2h = stats.get('qtd_h2h', 0) or 0
+                if qtd_h2h < H2H_MIN_SAUDAVEL:
+                    qualidade['apostas_h2h_fraco'] += 1
+
             placar = placar_final.get(evt)
             if not placar:
                 rej['sem_placar'] += 1
+                qualidade['eventos_sem_placar_final'] += 1
                 continue
             score_home, score_away = placar
 
@@ -1198,7 +1283,32 @@ async def executar_backtest(job_id: int):
         dias_total = len(pnl_por_dia_lista)
 
         rej_resumo = ', '.join(f'{k}={v}' for k, v in rej.items() if v > 0) or 'nenhuma'
-        msg_final = f'Concluido. Rej: {rej_resumo}' if total_apostas == 0 else 'Concluido'
+
+        # v10: monta avisos de QUALIDADE (transparencia do resultado).
+        # Num backtest de dinheiro real, o numero precisa vir com ressalvas.
+        avisos = []
+        if total_apostas > 0:
+            frac_fraco = qualidade['apostas_h2h_fraco'] / total_apostas
+            if qualidade['apostas_h2h_fraco'] > 0:
+                avisos.append(
+                    f"{qualidade['apostas_h2h_fraco']} apostas "
+                    f"({frac_fraco:.0%}) com h2h fraco (<{H2H_MIN_SAUDAVEL} jogos)"
+                )
+        if qualidade['eventos_sem_placar_final'] > 0:
+            avisos.append(
+                f"{qualidade['eventos_sem_placar_final']} sinais sem placar final "
+                f"(nao resolvidos)"
+            )
+
+        partes_msg = []
+        if total_apostas == 0:
+            partes_msg.append(f"Concluido. Rej: {rej_resumo}")
+        else:
+            partes_msg.append("Concluido")
+        if avisos:
+            partes_msg.append("RESSALVAS: " + "; ".join(avisos))
+        msg_final = ' | '.join(partes_msg)
+
         async with pool.acquire() as conn:
             await conn.execute(
                 """

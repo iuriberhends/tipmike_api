@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_pool, close_pool
-from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram 
+from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload 
 
 
 @asynccontextmanager
@@ -57,6 +57,7 @@ app.include_router(torneios.router)
 app.include_router(backtest.router)
 app.include_router(historico.router)
 app.include_router(telegram.router)
+app.include_router(backtest_upload.router)
 
 
 @app.get("/")
