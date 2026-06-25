@@ -37,9 +37,20 @@ import json
 import logging
 import signal
 import sys
+import os
 from datetime import datetime, timedelta
 from decimal import Decimal
 from typing import Optional, Any
+
+# Garante que a pasta PyCharmMiscProject (onde estao tm_backfill.py e os
+# fase2_*.py) esteja no path, pro backfill ser importavel mesmo o executor
+# rodando de tipmike_api/. Tenta o diretorio pai e um caminho fixo conhecido.
+for _p in (
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    r"C:\Users\Administrator\PyCharmMiscProject",
+):
+    if _p and os.path.isdir(_p) and _p not in sys.path:
+        sys.path.insert(0, _p)
 
 import asyncpg
 
@@ -588,6 +599,16 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                 f"linha={linha_num} {tick.get('selecao')} @ {tick.get('odds')} | "
                 f"motivo: {motivo or '-'}"
             )
+            # v10: backfill sob demanda - enfileira o par pra completar o h2h
+            # na DB via TM. Fire-and-forget (nao trava o apito). Blindado.
+            try:
+                from tm_backfill import enfileirar_par
+                enfileirar_par(
+                    bot.get('casa'), bot.get('esporte'),
+                    tick.get('jogador_a'), tick.get('jogador_b'),
+                    bot_id=bot.get('id'))
+            except Exception:
+                pass  # backfill nunca afeta a aposta
     except Exception as e:
         logger.exception(f"Erro registrando aposta bot={bot['id']} tick={tick.get('id')}: {e}")
 
@@ -759,6 +780,15 @@ async def main():
     logger.info(f"✅ Pool de conexoes criado (min=2, max=10)")
 
     await _carregar_bots_ativos()
+
+    # v10: worker de backfill sob demanda (preenche h2h do par que apita).
+    # Blindado: se o modulo nao existir ou falhar, o executor segue normal.
+    try:
+        from tm_backfill import iniciar_worker
+        await iniciar_worker(pool=state.pool)
+        logger.info("✅ Worker de backfill TM iniciado (preenche par que apita)")
+    except Exception as e:
+        logger.warning(f"Backfill TM nao iniciou (segue sem ele): {e}")
 
     tasks = [
         asyncio.create_task(loop_listener()),
