@@ -548,8 +548,25 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
 
     linha_num = _parse_linha(tick.get('linha'))
 
+    # mesmo flag do _avaliar_e_apostar, recalculado aqui (escopo proprio).
+    # Default true (legado). Usado na guarda atomica do INSERT contra over+under.
+    _filtros_bot = bot.get('filtros') or {}
+    if isinstance(_filtros_bot, str):
+        try:
+            _filtros_bot = json.loads(_filtros_bot)
+        except Exception:
+            _filtros_bot = {}
+    evitar_linhas_seq = _filtros_bot.get('evitarLinhasSeq', True)
+
     try:
         async with state.pool.acquire() as conn:
+            # v8: INSERT ... SELECT ... WHERE NOT EXISTS fecha a RACE CONDITION
+            # do over+under. Antes, a checagem evitar_linhas_seq rodava ANTES da
+            # gravacao; quando os 2 ticks (over E under) do mesmo mercado/jogo
+            # chegavam quase juntos, ambos viam "0 apostas" e os 2 entravam
+            # (1 GREEN + 1 RED garantidos, lucro zero, msg duplicada = flood).
+            # Agora a verificacao e ATOMICA: o 2o lado bate no NOT EXISTS e nao
+            # entra. So aplica quando evitar_linhas_seq esta ativo (parametro $22).
             row = await conn.fetchrow("""
                 INSERT INTO apostas (
                     bot_id, modo, status,
@@ -562,17 +579,24 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                     live_time, tick_id, bookmaker, liga,
                     stats_h2h, motivo,
                     apostado_em
-                ) VALUES (
+                )
+                SELECT
                     $1, 'simulado', 'pendente',
                     $2, $3, $4, $5,
                     $6, $7,
                     $8, $9, $10, $11, $11,
                     $12, $13,
-                    $14, $14,
+                    $14, $15,
                     $14, $15,
                     $16, $17, $18, $19,
                     $20::jsonb, $21,
                     NOW()
+                WHERE NOT ($22::boolean) OR NOT EXISTS (
+                    SELECT 1 FROM apostas
+                    WHERE bot_id = $1
+                      AND event_id = $5
+                      AND modo = 'simulado'
+                      AND (mercado_tipo = $9 OR ($9 IS NULL AND mercado_tipo IS NULL))
                 )
                 ON CONFLICT (bot_id, tick_id) WHERE tick_id IS NOT NULL DO NOTHING
                 RETURNING id
@@ -589,6 +613,7 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                 tick.get('live_time'),
                 tick.get('id'), tick.get('bookmaker'), liga_traduzida or tick.get('liga'),
                 _to_jsonb(stats), motivo,
+                bool(evitar_linhas_seq),
             )
 
         if row:
