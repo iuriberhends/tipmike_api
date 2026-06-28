@@ -333,8 +333,8 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
                 stat_key = None
             else:
                 stat_key = f'wr_ult{tok}'
-        elif tipo == 'gap_media':
-            stat_key = 'gap'
+        elif tipo in ('gap_media', 'gap'):
+            stat_key = 'gap_media_calc'
         elif tipo == 'gap_linha':
             stat_key = 'gap_linha_calc'
         else:
@@ -346,13 +346,21 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
             media = stats.get('media_ult20')
             linha = stats.get('linha_atual')
             valor = abs(float(media) - float(linha)) if (media is not None and linha is not None) else None
+        elif stat_key == 'gap_media_calc':
+            # gap = media_ult{janela} - linha, EM CADA JANELA (lógica Primo Rico).
+            linha_g = stats.get('linha_atual')
+            if tok is not None:
+                media_jan = stats.get(f'media_ult{tok}')
+                valor = (media_jan - linha_g) if (media_jan is not None and linha_g is not None) else None
+            else:
+                valor = stats.get('gap')  # legado sem janela
         else:
             valor = stats.get(stat_key)
 
         rotulo_tipo = TIPO_LABEL.get(tipo, tipo.capitalize())
         if origem == 'hist' and hist_base == 'match':
             rotulo_tipo = f'WR H2H'
-        if janela is not None and tipo in ('media', 'wr'):
+        if janela is not None and tipo in ('media', 'wr', 'gap_media', 'gap'):
             modo_j, _ = _parse_janela(janela)
             if modo_j == 'qtd' and int(janela) == 0:
                 rotulo = f"{rotulo_tipo} Todas"

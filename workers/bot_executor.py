@@ -499,6 +499,20 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
                 stat_key = tipo
                 rotulo = tipo
 
+            # gap_media/gap: gap = media_ult{janela} - linha, EM CADA JANELA.
+            # (antes pegava 'gap' fixo de 20 ou stat_key inexistente 'gap_media')
+            if tipo in ('gap_media', 'gap'):
+                linha_g = stats.get('linha_atual')
+                if janela is not None:
+                    media_jan = stats.get(f"media_ult{janela}")
+                    if media_jan is not None and linha_g is not None:
+                        partes.append(f"gap{janela}={media_jan - linha_g:+.1f}")
+                else:
+                    g = stats.get('gap')
+                    if g is not None:
+                        partes.append(f"gap={float(g):+.1f}")
+                continue
+
             valor = stats.get(stat_key)
             if valor is None:
                 continue

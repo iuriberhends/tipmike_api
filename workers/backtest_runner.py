@@ -663,6 +663,10 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
             janelas_wr.add(chave)
         elif tipo == 'media':
             janelas_media.add(chave)
+        elif tipo in ('gap_media', 'gap'):
+            # gap_media = media_ult{janela} - linha. Precisa que a media daquela
+            # janela seja calculada -> adiciona a janela em janelas_media.
+            janelas_media.add(chave)
 
     return janelas_wr, janelas_media
 
@@ -903,7 +907,19 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
             tok = _janela_token(janela)
             valor = stats.get(f'wr_ult{tok}') if tok is not None else None
         elif tipo in ('gap_media', 'gap'):
-            valor = stats.get('gap')
+            # gap_media = media_ult{janela} - linha, EM CADA JANELA.
+            # Se o filtro tem janela, usa a media daquela janela; senao cai no
+            # gap padrao (media_ult20 - linha) por compatibilidade.
+            linha_g = stats.get('linha_atual')
+            tok = _janela_token(janela) if janela is not None else None
+            if tok is not None:
+                media_jan = stats.get(f'media_ult{tok}')
+                if media_jan is not None and linha_g is not None:
+                    valor = media_jan - linha_g
+                else:
+                    valor = None
+            else:
+                valor = stats.get('gap')
         elif tipo == 'tendencia':
             valor = stats.get('tendencia')
         elif tipo == 'gap_linha':
