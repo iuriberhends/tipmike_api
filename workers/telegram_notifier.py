@@ -21,6 +21,7 @@ O resolver de apostas seta:
 import asyncio
 import json
 import logging
+import re
 import os
 import signal
 import sys
@@ -180,6 +181,45 @@ def _resumir_filtros_aprovados(bot_row: dict, aposta: dict) -> str:
 
 
 # ============================================================
+# JANELAS: quantidade (int) OU tempo (string "8h"/"7d")
+# Mesma logica do backtest_runner - aceita janela de tempo alem de qtd.
+# ============================================================
+_RE_JANELA_TEMPO = re.compile(r'^\s*(\d+)\s*([hd])\s*$', re.IGNORECASE)
+
+
+def _parse_janela(janela):
+    """Retorna (modo, valor): ('qtd', n) | ('tempo', segundos) | (None, None)."""
+    if isinstance(janela, bool):
+        return (None, None)
+    if isinstance(janela, int):
+        return ('qtd', janela) if (janela == 0 or janela >= 1) else (None, None)
+    if janela is None:
+        return (None, None)
+    s = str(janela).strip().lower()
+    m = _RE_JANELA_TEMPO.match(s)
+    if m:
+        num = int(m.group(1))
+        if num <= 0:
+            return (None, None)
+        return ('tempo', num * 3600 if m.group(2) == 'h' else num * 86400)
+    try:
+        n = int(s)
+        return ('qtd', n) if (n == 0 or n >= 1) else (None, None)
+    except (TypeError, ValueError):
+        return (None, None)
+
+
+def _janela_token(janela):
+    """Token da janela pra chave de stats: 10->'10', '8h'->'8h', '7d'->'7d'."""
+    modo, _ = _parse_janela(janela)
+    if modo == 'tempo':
+        return str(janela).strip().lower().replace(" ", "")
+    if modo == 'qtd':
+        return str(int(janela))
+    return None
+
+
+# ============================================================
 # FILTROS COMPLEMENTARES
 # ============================================================
 TIPO_LABEL = {
@@ -199,15 +239,19 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
         if not isinstance(fh, dict):
             continue
         janela_str = str(fh.get('janela', '')).strip().lower()
-        janela_num = None
+        janela_norm = None  # int (qtd) OU str token de tempo ('8h')
         if janela_str == 'all':
-            janela_num = 0
+            janela_norm = 0
         elif janela_str.startswith('last_'):
-            try:
-                janela_num = int(janela_str.replace('last_', ''))
-            except ValueError:
-                pass
-        if janela_num is None or janela_num < 0:
+            resto = janela_str.replace('last_', '').strip()
+            modo, _ = _parse_janela(resto)
+            if modo == 'qtd':
+                janela_norm = int(resto)
+            elif modo == 'tempo':
+                janela_norm = _janela_token(resto)  # '8h','24h','7d'
+        if janela_norm is None:
+            continue
+        if isinstance(janela_norm, int) and janela_norm < 0:
             continue
 
         prob = fh.get('prob') or [0, 100]
@@ -222,7 +266,7 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
 
         normalizados.append({
             'tipo': 'wr',
-            'janela': janela_num,
+            'janela': janela_norm,
             'min': min_v,
             'max': max_v,
             'minAtivo': min_ativo,
@@ -276,18 +320,19 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
                 nao_suportado_motivo = f'tipo={hist_tipo}'
 
         janela_valida = True
+        tok = _janela_token(janela) if janela is not None else None
         if tipo == 'media' and janela is not None:
-            try:
-                stat_key = f'media_ult{int(janela)}'
-            except (TypeError, ValueError):
+            if tok is None:
                 janela_valida = False
                 stat_key = None
+            else:
+                stat_key = f'media_ult{tok}'
         elif tipo == 'wr' and janela is not None:
-            try:
-                stat_key = f'wr_ult{int(janela)}'
-            except (TypeError, ValueError):
+            if tok is None:
                 janela_valida = False
                 stat_key = None
+            else:
+                stat_key = f'wr_ult{tok}'
         elif tipo == 'gap_media':
             stat_key = 'gap'
         elif tipo == 'gap_linha':
@@ -308,10 +353,12 @@ def _formatar_filtros_complementares(bot_row: dict, aposta: dict) -> list[str]:
         if origem == 'hist' and hist_base == 'match':
             rotulo_tipo = f'WR H2H'
         if janela is not None and tipo in ('media', 'wr'):
-            if int(janela) == 0:
+            modo_j, _ = _parse_janela(janela)
+            if modo_j == 'qtd' and int(janela) == 0:
                 rotulo = f"{rotulo_tipo} Todas"
             else:
-                rotulo = f"{rotulo_tipo} últ {janela}"
+                # qtd: "últ 10" | tempo: "últ 7d"
+                rotulo = f"{rotulo_tipo} últ {_janela_token(janela)}"
         else:
             rotulo = rotulo_tipo
 
