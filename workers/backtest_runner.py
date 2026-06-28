@@ -475,23 +475,28 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
             continue
 
         # Parse janela. Aceita:
-        #   'all'      -> 0 (TODAS, usa todo o historico do par)
-        #   'last_0'   -> 0 (TODAS, alias)
-        #   'last_N'   -> N
-        # Janelas de tempo (last_1h, last_7d, current_championship, same_day)
-        # NAO sao suportadas pelo H2H simples -> descartadas.
+        #   'all'         -> 0 (TODAS, usa todo o historico do par)
+        #   'last_0'      -> 0 (TODAS, alias)
+        #   'last_N'      -> N (quantidade: ultimos N jogos)
+        #   'last_8h'/'last_7d' -> '8h'/'7d' (TEMPO: janela por horas/dias)
+        # v10: janelas de TEMPO agora SAO suportadas (antes eram descartadas).
+        # O _calcular_stats_h2h sabe processar tanto quantidade (int) quanto
+        # tempo (token '8h'/'7d'), usando o ts de cada jogo + ts_ref da aposta.
         janela_str = str(fh.get('janela', '')).strip().lower()
-        janela_num = None
+        janela_norm = None  # int (qtd) OU str token de tempo ('8h')
         if janela_str == 'all':
-            janela_num = 0
+            janela_norm = 0
         elif janela_str.startswith('last_'):
-            resto = janela_str.replace('last_', '')
-            try:
-                janela_num = int(resto)   # so converte se for numero puro (rejeita 1h, 7d)
-            except ValueError:
-                pass
-        # aceita 0 (TODAS) explicitamente; rejeita None ou negativo
-        if janela_num is None or janela_num < 0:
+            resto = janela_str.replace('last_', '').strip()
+            modo, _ = _parse_janela(resto)
+            if modo == 'qtd':
+                janela_norm = int(resto)
+            elif modo == 'tempo':
+                janela_norm = _janela_token(resto)  # '8h','24h','7d'...
+            # resto invalido -> janela_norm None -> filtro descartado abaixo
+        if janela_norm is None:
+            continue
+        if isinstance(janela_norm, int) and janela_norm < 0:
             continue
 
         # prob: [min, max] em % (0-100)
@@ -511,7 +516,7 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
 
         normalizados.append({
             'tipo': 'wr',
-            'janela': janela_num,
+            'janela': janela_norm,
             'min': min_v,
             'max': max_v,
             'minAtivo': min_ativo,
