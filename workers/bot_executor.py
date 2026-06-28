@@ -427,7 +427,8 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         # olhando o WR do over (ex: over 65% -> under apitava como se fosse 65%,
         # quando o under real era 35%). Agora o filtro checa o numero certo.
         lado_aposta = _selecao_eh_over_under(tick.get('selecao'))
-        stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta)
+        # v10: ts_ref = tick['ts'] (momento da aposta) p/ janelas de tempo (24h/7d).
+        stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta, ts_ref=tick.get('ts'))
         stats_dict['linha_atual'] = linha_num
 
         passou_comp, motivo = _aplicar_filtros_complementares(stats_dict, filtros_unificados)

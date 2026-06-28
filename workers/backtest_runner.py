@@ -30,6 +30,7 @@ from datetime import date, datetime, timedelta
 from typing import Any, Optional
 from decimal import Decimal
 import json
+import re
 import logging
 import asyncio
 
@@ -567,12 +568,63 @@ JANELAS_PADRAO_WR = (5, 10, 15)
 JANELAS_PADRAO_MEDIA = (5, 10, 20)
 
 
+# ============================================================
+# JANELAS: quantidade (int) OU tempo (string "24h"/"7d")
+# ============================================================
+# Uma janela de filtro pode ser:
+#   - QUANTIDADE: int N -> ultimos N jogos (ex: 10 = ult10). 0 = TODAS.
+#   - TEMPO: string "Nh"/"Nd" -> jogos nas ultimas N horas/dias (ex: "24h","7d").
+# As janelas de tempo so do PAR (H2H) por enquanto. O ts de referencia e o
+# momento da aposta (tick['ts'] no ao vivo, ts do tick no backtest) - mesmo
+# cutoff temporal das janelas de quantidade, sem leak.
+_RE_JANELA_TEMPO = re.compile(r'^\s*(\d+)\s*([hd])\s*$', re.IGNORECASE)
+
+
+def _parse_janela(janela):
+    """Normaliza uma janela. Retorna (modo, valor):
+      ('qtd', n)            quantidade (int>=1, ou 0='todas')
+      ('tempo', segundos)   tempo ('24h'->86400, '7d'->604800)
+      (None, None)          invalida
+    """
+    if isinstance(janela, bool):  # bool e subclasse de int - barra antes
+        return (None, None)
+    if isinstance(janela, int):
+        return ('qtd', janela) if (janela == 0 or janela >= 1) else (None, None)
+    if janela is None:
+        return (None, None)
+    s = str(janela).strip().lower()
+    m = _RE_JANELA_TEMPO.match(s)
+    if m:
+        num = int(m.group(1))
+        if num <= 0:
+            return (None, None)
+        return ('tempo', num * 3600 if m.group(2) == 'h' else num * 86400)
+    try:
+        n = int(s)
+        return ('qtd', n) if (n == 0 or n >= 1) else (None, None)
+    except (TypeError, ValueError):
+        return (None, None)
+
+
+def _janela_token(janela):
+    """Token canonico da janela pra montar a chave de stats:
+      10 -> '10', '24h' -> '24h', '7d' -> '7d'. None se invalida."""
+    modo, _ = _parse_janela(janela)
+    if modo == 'tempo':
+        return str(janela).strip().lower().replace(" ", "")
+    if modo == 'qtd':
+        return str(int(janela))
+    return None
+
+
 def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
     """
     Extrai janelas customizadas (alem das padrao) dos filtros unificados.
     Retorna (janelas_wr, janelas_media).
     Recebe lista JA UNIFICADA (saida de _coletar_todos_filtros).
     """
+    # Cada set guarda janelas de QUANTIDADE (int) E de TEMPO (string "24h"/"7d").
+    # _calcular_stats_h2h sabe distinguir via _parse_janela.
     janelas_wr = set(JANELAS_PADRAO_WR)
     janelas_media = set(JANELAS_PADRAO_MEDIA)
 
@@ -586,19 +638,26 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
         janela = f.get('janela')
         if janela is None:
             continue
-        try:
+
+        modo, _ = _parse_janela(janela)
+        if modo is None:
+            continue  # janela invalida, ignora
+        if modo == 'qtd':
             j = int(janela)
-        except (TypeError, ValueError):
-            continue
-        # janela 0 = 'TODAS' (usa todo o historico do par). Sentinela aceito.
-        # Qualquer j entre 1 e TETO_BUSCA tambem e aceito (antes limitava a 100).
-        if j != 0 and (j < 1 or j > H2HCache.TETO_BUSCA):
-            continue
+            # janela 0 = 'TODAS'. 1..TETO_BUSCA aceito.
+            if j != 0 and (j < 1 or j > H2HCache.TETO_BUSCA):
+                continue
+            chave = j
+        else:
+            # tempo: guarda o token normalizado ('24h','7d') no set
+            chave = _janela_token(janela)
+            if chave is None:
+                continue
 
         if tipo == 'wr':
-            janelas_wr.add(j)
+            janelas_wr.add(chave)
         elif tipo == 'media':
-            janelas_media.add(j)
+            janelas_media.add(chave)
 
     return janelas_wr, janelas_media
 
@@ -606,7 +665,8 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
 def _calcular_stats_h2h(jogos: list, linha_atual: float,
                         janelas_wr: Optional[set] = None,
                         janelas_media: Optional[set] = None,
-                        lado: Optional[str] = None) -> dict:
+                        lado: Optional[str] = None,
+                        ts_ref=None) -> dict:
     """
     Calcula stats H2H com janelas dinamicas.
 
@@ -622,6 +682,13 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     Como as linhas sao sempre .5, total (inteiro) nunca empata na linha,
     entao wr_under = 1 - wr_over exatamente. Antes (ate v8) o WR era SEMPRE
     do over e usado pros dois lados - um under apitava olhando o WR do over.
+
+    v10: janelas de TEMPO ("24h","7d"). Alem de janela por quantidade (ultimos
+    N jogos), aceita janela por tempo: jogos cujo ts esta nas ultimas N horas/
+    dias a partir de ts_ref. A chave de stats usa o token: wr_ult24h, wr_ult7d.
+    ts_ref e o momento da aposta (tick['ts']); se nao vier, janelas de tempo
+    sao puladas (retornam None) - nunca usa NOW() pra nao vazar no backtest.
+    As janelas de quantidade continuam 100% iguais.
     """
     qtd = len(jogos)
 
@@ -653,16 +720,96 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
         slice_ = jogos[:usar]
         return sum(j['total'] for j in slice_) / usar, usar
 
+    # ---- v10: janelas de TEMPO ----
+    # Seleciona jogos com ts em [ts_ref - segundos, ts_ref). Reusa o ts que ja
+    # vem em cada jogo (mesmo cutoff temporal das janelas de quantidade).
+    # BLINDADO: ts None, tipos de timestamp incompativeis (aware vs naive), e
+    # qualquer erro de comparacao -> ignora o jogo problematico em vez de
+    # derrubar a avaliacao da aposta. Dinheiro real: melhor amostra menor (ou
+    # None) do que crash. ts_ref e o MESMO tick['ts'] que o get_jogos ja compara
+    # com sucesso, entao na pratica os tipos batem; isto e defesa em profundidade.
+    def _jogos_na_janela_tempo(segundos):
+        if ts_ref is None:
+            return None  # sem referencia temporal -> nao da pra calcular
+        try:
+            corte = ts_ref - timedelta(seconds=segundos)
+        except (TypeError, ValueError, OverflowError):
+            return None
+        sel = []
+        for j in jogos:
+            t = j.get('ts')
+            if t is None:
+                continue
+            try:
+                if corte <= t < ts_ref:
+                    sel.append(j)
+            except TypeError:
+                # ts incompativel com ts_ref (ex: aware vs naive). Pula o jogo.
+                continue
+        return sel
+
+    def _total_ok(j):
+        """total do jogo como numero, ou None se faltar/invalido."""
+        t = j.get('total')
+        if t is None:
+            return None
+        try:
+            return float(t)
+        except (TypeError, ValueError):
+            return None
+
+    def wr_tempo(segundos):
+        sel = _jogos_na_janela_tempo(segundos)
+        if not sel:
+            return None, 0
+        if linha_atual is None:
+            return None, 0
+        # ignora jogos sem 'total' valido (nao conta nem no numerador nem no denom)
+        validos = [t for t in (_total_ok(j) for j in sel) if t is not None]
+        if not validos:
+            return None, 0
+        if eh_under:
+            passou = sum(1 for t in validos if t < linha_atual)
+        else:
+            passou = sum(1 for t in validos if t > linha_atual)
+        # denominador = jogos VALIDOS (com total), nao o total bruto da janela
+        return passou / len(validos), len(validos)
+
+    def media_tempo(segundos):
+        sel = _jogos_na_janela_tempo(segundos)
+        if not sel:
+            return None, 0
+        validos = [t for t in (_total_ok(j) for j in sel) if t is not None]
+        if not validos:
+            return None, 0
+        return sum(validos) / len(validos), len(validos)
+
     out: dict = {'qtd_h2h': qtd}
 
-    for n in janelas_wr:
-        v, usados = wr(n)
-        out[f'wr_ult{n}'] = v
-        out[f'wr_ult{n}_qtd'] = usados
-    for n in janelas_media:
-        v, usados = media(n)
-        out[f'media_ult{n}'] = v
-        out[f'media_ult{n}_qtd'] = usados
+    for jan in janelas_wr:
+        modo, valor = _parse_janela(jan)
+        if modo == 'tempo':
+            v, usados = wr_tempo(valor)
+            tok = _janela_token(jan)
+        elif modo == 'qtd':
+            v, usados = wr(valor)
+            tok = str(valor)
+        else:
+            continue
+        out[f'wr_ult{tok}'] = v
+        out[f'wr_ult{tok}_qtd'] = usados
+    for jan in janelas_media:
+        modo, valor = _parse_janela(jan)
+        if modo == 'tempo':
+            v, usados = media_tempo(valor)
+            tok = _janela_token(jan)
+        elif modo == 'qtd':
+            v, usados = media(valor)
+            tok = str(valor)
+        else:
+            continue
+        out[f'media_ult{tok}'] = v
+        out[f'media_ult{tok}_qtd'] = usados
 
     # Gap = media_ult20 - linha
     m20 = out.get('media_ult20')
@@ -731,17 +878,13 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
             qtd_validar = qtd_global
         else:
             # v5 (comp): qtd a validar depende do tipo+janela do filtro
+            # v10: usa _janela_token (funciona p/ quantidade E tempo "24h")
             qtd_validar = qtd_global
-            if tipo == 'wr' and janela is not None:
-                try:
-                    qtd_validar = stats.get(f'wr_ult{int(janela)}_qtd', qtd_global) or 0
-                except (TypeError, ValueError):
-                    pass
-            elif tipo == 'media' and janela is not None:
-                try:
-                    qtd_validar = stats.get(f'media_ult{int(janela)}_qtd', qtd_global) or 0
-                except (TypeError, ValueError):
-                    pass
+            tok = _janela_token(janela)
+            if tipo == 'wr' and tok is not None:
+                qtd_validar = stats.get(f'wr_ult{tok}_qtd', qtd_global) or 0
+            elif tipo == 'media' and tok is not None:
+                qtd_validar = stats.get(f'media_ult{tok}_qtd', qtd_global) or 0
 
         if qtd_validar < min_partidas:
             return False, f'h2h_insuficiente_qtd_{qtd_validar}_min_{min_partidas}'
@@ -749,15 +892,11 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         valor = None
 
         if tipo == 'media' and janela is not None:
-            try:
-                valor = stats.get(f'media_ult{int(janela)}')
-            except (TypeError, ValueError):
-                valor = None
+            tok = _janela_token(janela)
+            valor = stats.get(f'media_ult{tok}') if tok is not None else None
         elif tipo == 'wr' and janela is not None:
-            try:
-                valor = stats.get(f'wr_ult{int(janela)}')
-            except (TypeError, ValueError):
-                valor = None
+            tok = _janela_token(janela)
+            valor = stats.get(f'wr_ult{tok}') if tok is not None else None
         elif tipo in ('gap_media', 'gap'):
             valor = stats.get('gap')
         elif tipo == 'tendencia':
@@ -1144,7 +1283,8 @@ async def executar_backtest(job_id: int):
 
                 linha_num = _parse_linha(tick.get('linha')) or 0
                 stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media,
-                                            lado=_lado_aposta(tick.get('selecao')))
+                                            lado=_lado_aposta(tick.get('selecao')),
+                                            ts_ref=tick['ts'])
                 stats['linha_atual'] = linha_num
 
                 passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_unificados)
