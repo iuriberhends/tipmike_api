@@ -139,14 +139,35 @@ def parse_ticks_parquet(caminho_arquivo: str,
             f"parquet sem as colunas que o motor espera. Faltando: {faltando}"
         )
 
-    # --- timezone: UTC -> BRT naive ---
-    # errors='coerce' transforma ts invalido em NaT (nao quebra). Depois a gente
-    # mede quantos NaT deu - se for muito, ABORTA (dado suspeito, dinheiro real).
+    # --- timezone: parse NAIVE, SEM conversao de fuso ---
+    # REGRA DO PROJETO: o ts vem com sufixo 'Z' mas o relogio JA ESTA em BRT
+    # (mesma convencao do fixture_date da TipManager). O caminho do BANCO le o ts
+    # naive e NAO converte nada - e essa e a referencia validada em producao.
+    # Pro arquivo bater com o banco, parseia o MESMO relogio de parede, sem somar
+    # nem subtrair 3h. O codigo antigo fazia UTC->BRT (-3h): deixava o tick 3h
+    # atrasado, desalinhava o cutoff do H2H e os buckets por dia = backtest furado.
+    # Se algum dia confirmar que o ts e UTC REAL, vire a chave abaixo pra True.
+    CONVERTER_UTC_PARA_BRT = False
     try:
         ts_orig = df['ts']
-        # ts do parquet vem ISO8601 (ex: 2026-05-21T05:00:28.402Z). format='ISO8601'
-        # evita o warning de inferencia e e mais rapido. errors='coerce' -> NaT no ruim.
-        ts_parsed = pd.to_datetime(ts_orig, utc=True, format='ISO8601', errors='coerce')
+        if pd.api.types.is_datetime64_any_dtype(ts_orig):
+            # parquet trouxe timestamp NATIVO
+            if getattr(ts_orig.dt, 'tz', None) is not None:
+                if CONVERTER_UTC_PARA_BRT:
+                    ts_parsed = ts_orig.dt.tz_convert('America/Sao_Paulo').dt.tz_localize(None)
+                else:
+                    ts_parsed = ts_orig.dt.tz_localize(None)  # descarta tz, mantem relogio
+            else:
+                ts_parsed = ts_orig  # ja naive, usa como esta
+        else:
+            # veio STRING (ex: '2026-05-21T05:00:28.402Z'). Tira o 'Z'/offset e
+            # parseia naive: o relogio de parede e o que vale (convencao BRT).
+            s = ts_orig.astype(str).str.replace(r'(Z|[+-]\d{2}:?\d{2})$', '', regex=True)
+            ts_parsed = pd.to_datetime(s, format='ISO8601', errors='coerce')
+            if CONVERTER_UTC_PARA_BRT:
+                ts_parsed = (ts_parsed.dt.tz_localize('UTC')
+                                       .dt.tz_convert('America/Sao_Paulo')
+                                       .dt.tz_localize(None))
     except Exception as e:
         raise BacktestUploadError(f"falha ao interpretar a coluna ts: {e}") from e
 
@@ -168,10 +189,16 @@ def parse_ticks_parquet(caminho_arquivo: str,
         df = df[mask_ok].copy()
         ts_parsed = ts_parsed[mask_ok]
 
+    df['ts'] = ts_parsed
+    # DIAGNOSTICO: loga amostra do ts pra conferir o fuso a olho contra um jogo
+    # de horario conhecido. Se vier 3h diferente do banco, e a chave de fuso.
     try:
-        df['ts'] = ts_parsed.dt.tz_convert('America/Sao_Paulo').dt.tz_localize(None)
-    except Exception as e:
-        raise BacktestUploadError(f"falha na conversao de fuso (UTC->BRT): {e}") from e
+        logger.info(
+            f"[backtest_upload] ts naive (sem conversao). "
+            f"amostra={df['ts'].head(2).tolist()} min={df['ts'].min()} max={df['ts'].max()}"
+        )
+    except Exception:
+        pass
 
     # --- pre-selecao igual ao SQL do banco (so se bot vier) ---
     if bot:

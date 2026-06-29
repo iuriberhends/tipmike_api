@@ -1296,13 +1296,24 @@ async def executar_backtest(job_id: int):
 
         primeiros: dict = {}
         placar_final: dict = {}
+        _placar_ts: dict = {}   # evt -> ts do tick que deu o placar (pega o MAIS RECENTE)
 
         for t in ticks:
             evt = t['event_id']
             sh = t['score_home']
             sa = t['score_away']
             if sh is not None and sa is not None:
-                placar_final[evt] = (sh, sa)
+                # FIX (dado falso): placar FINAL = score do tick com MAIOR ts do
+                # evento - exatamente como o telegram_notifier resolve em producao
+                # (SELECT ... ORDER BY ts DESC LIMIT 1). Antes pegava o "ultimo na
+                # ordem do SQL" (event_id, mercado_id, linha, selecao_id, ts), que
+                # NAO e o ultimo no tempo: se o ultimo mercado/selecao do evento
+                # parou de atualizar antes do fim, o placar 'final' saia errado e
+                # o backtest resolvia GREEN/RED contra um placar parcial.
+                tts = t['ts']
+                if evt not in _placar_ts or tts >= _placar_ts[evt]:
+                    placar_final[evt] = (sh, sa)
+                    _placar_ts[evt] = tts
 
             chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
             if chave not in primeiros:
@@ -1427,12 +1438,21 @@ async def executar_backtest(job_id: int):
             score_home, score_away = placar
 
             linha_num = _parse_linha(tick.get('linha'))
+            mercado_bot = bot.get('mercado', '')
             resultado = _resolve_resultado(
-                bot.get('mercado', ''), tick.get('selecao', ''),
+                mercado_bot, tick.get('selecao', ''),
                 linha_num, score_home, score_away,
             )
             if resultado is None:
-                rej['sem_resultado'] += 1
+                # Mercados de 1o tempo (HT) nao tem como ser resolvidos com o placar
+                # FINAL - precisariam do placar do intervalo (nao disponivel aqui).
+                # Em vez de cair mudo em 'sem_resultado', conta num balde proprio
+                # pra UI deixar claro POR QUE deu 0 (e nao parecer bug de "nada").
+                if mercado_bot in ('over_under_ht', 'asian_over_under_ht',
+                                    'over_under_ht_player', 'ml_ht', 'ah_ht', 'asian_over_under_ht'):
+                    rej['mercado_ht_sem_suporte'] = rej.get('mercado_ht_sem_suporte', 0) + 1
+                else:
+                    rej['sem_resultado'] += 1
                 continue
 
             apostas_por_evento[evt] = apostas_por_evento.get(evt, 0) + 1
