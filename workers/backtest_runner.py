@@ -969,27 +969,112 @@ def _aplicar_filtro_diff_placar(tick: dict, diff_min: int) -> bool:
     return abs(sh - sa) >= diff_min
 
 
+def _num_seguro(v):
+    """Coage qualquer valor a float de forma segura, tratando os tipos que
+    chegam do parquet/banco/snapshot. Retorna (float, None) em sucesso ou
+    (None, motivo) em falha. Cobre:
+      - None -> ausente
+      - string numerica ('1.85', '+2.5', 'away|0.5') -> parseia (igual linha)
+      - string vazia / nao-numerica -> invalido
+      - NaN (float('nan') ou numpy.nan) -> invalido (NaN quebra comparacoes)
+      - int/float/Decimal/numpy number -> float()
+    Dinheiro real: prefere reportar 'invalido' a deixar passar NaN (que faz
+    toda comparacao virar False silenciosamente) ou quebrar com str<float.
+    """
+    if v is None:
+        return None, 'ausente'
+    # ja numerico?
+    if isinstance(v, bool):
+        # bool e int em python; nao deveria ser odd/linha -> trata como invalido
+        return None, 'tipo_bool'
+    if isinstance(v, (int, float, Decimal)):
+        try:
+            f = float(v)
+        except (TypeError, ValueError, OverflowError):
+            return None, 'nao_convertivel'
+        if f != f:  # NaN (NaN != NaN é True)
+            return None, 'nan'
+        return f, None
+    # string (ou numpy str, ou outro) -> tenta parsear como a linha faz
+    try:
+        s = str(v).strip()
+    except Exception:
+        return None, 'nao_stringificavel'
+    if not s:
+        return None, 'vazio'
+    # trata formatos da casa: 'away|0.5' -> '0.5'; '+2.5' -> '2.5'
+    if '|' in s:
+        s = s.split('|')[0]
+    if s.startswith('+'):
+        s = s[1:]
+    try:
+        f = float(s)
+    except (TypeError, ValueError):
+        return None, f'nao_numerico({s[:20]})'
+    if f != f:
+        return None, 'nan'
+    return f, None
+
+
 def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
+    """
+    Avalia os filtros basicos do tick. BLINDADO: cada comparacao numerica coage
+    os dois lados (tick e bot) com _num_seguro e, se algum nao converter, retorna
+    motivo CLARO em vez de quebrar (str<float) ou passar NaN silenciosamente.
+    Filosofia (dinheiro real): tick com campo invalido (odd/linha que nao da pra
+    ler) = NAO apostar, com motivo legivel. Nunca crash, nunca comparacao furada.
+    """
+    # --- LINHA ---
     linha = _parse_linha(tick.get('linha'))
     if linha is None:
-        return False, 'linha invalida'
+        return False, 'linha_invalida'
 
-    if bot.get('linha_min') is not None and linha < float(bot['linha_min']):
-        return False, f'linha {linha} < min'
-    if bot.get('linha_max') is not None and linha > float(bot['linha_max']):
-        return False, f'linha {linha} > max'
+    lmin = bot.get('linha_min')
+    if lmin is not None:
+        lmin_f, err = _num_seguro(lmin)
+        if err is not None:
+            return False, f'bot.linha_min_{err}'  # config do bot ruim -> reporta
+        if linha < lmin_f:
+            return False, f'linha_{linha}_lt_min_{lmin_f}'
+    lmax = bot.get('linha_max')
+    if lmax is not None:
+        lmax_f, err = _num_seguro(lmax)
+        if err is not None:
+            return False, f'bot.linha_max_{err}'
+        if linha > lmax_f:
+            return False, f'linha_{linha}_gt_max_{lmax_f}'
 
-    odd = tick.get('odds')
-    if odd is None:
-        return False, 'odd ausente'
-    if bot.get('odd_min') is not None and odd < float(bot['odd_min']):
-        return False, f'odd {odd} < min'
-    if bot.get('odd_max') is not None and odd > float(bot['odd_max']):
-        return False, f'odd {odd} > max'
+    # --- ODD ---
+    odd_f, err = _num_seguro(tick.get('odds'))
+    if err is not None:
+        # odd do tick invalida (ausente, NaN, string, score_update odd=0->valido
+        # mas <min). 'ausente'/'vazio'/'nan' -> tick sem odd real, nao aposta.
+        return False, f'odd_{err}'
+    omin = bot.get('odd_min')
+    if omin is not None:
+        omin_f, err = _num_seguro(omin)
+        if err is not None:
+            return False, f'bot.odd_min_{err}'
+        if odd_f < omin_f:
+            return False, f'odd_{odd_f}_lt_min_{omin_f}'
+    omax = bot.get('odd_max')
+    if omax is not None:
+        omax_f, err = _num_seguro(omax)
+        if err is not None:
+            return False, f'bot.odd_max_{err}'
+        if odd_f > omax_f:
+            return False, f'odd_{odd_f}_gt_max_{omax_f}'
 
-    if not _matches_mercado(bot.get('mercado', ''), tick.get('mercado', ''), tick.get('mercado_tipo', ''), bot.get('casa', '')):
-        return False, 'mercado nao bate'
+    # --- MERCADO ---
+    # _matches_mercado compara mercado_tipo (string) com mapping. Coage o tipo a
+    # string pra nao falhar se vier numero do parquet (18 vs '18').
+    mtipo = tick.get('mercado_tipo')
+    mtipo_str = '' if mtipo is None else str(mtipo).strip()
+    if not _matches_mercado(bot.get('mercado', ''), tick.get('mercado', ''),
+                            mtipo_str, bot.get('casa', '')):
+        return False, f'mercado_nao_bate(tipo={mtipo_str[:12]})'
 
+    # --- BLACKLIST / WHITELIST (strings, nao quebram, mas blinda .lower()) ---
     blacklist_pares = bot.get('blacklist_pares') or []
     if blacklist_pares:
         ja = (tick.get('jogador_a') or '').lower()
@@ -997,14 +1082,16 @@ def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
         ta = (tick.get('time_a') or '').lower()
         tb = (tick.get('time_b') or '').lower()
         for entry in blacklist_pares:
+            if not isinstance(entry, dict):
+                continue
             j1 = (entry.get('j1') or '').lower()
             j2 = (entry.get('j2') or '').lower()
             t1 = (entry.get('t1') or '').lower()
             t2 = (entry.get('t2') or '').lower()
-            if j1 and (j1 == ja or j1 == jb): return False, f'blacklist {j1}'
-            if j2 and (j2 == ja or j2 == jb): return False, f'blacklist {j2}'
-            if t1 and (t1 == ta or t1 == tb): return False, f'blacklist time {t1}'
-            if t2 and (t2 == ta or t2 == tb): return False, f'blacklist time {t2}'
+            if j1 and (j1 == ja or j1 == jb): return False, f'blacklist_{j1}'
+            if j2 and (j2 == ja or j2 == jb): return False, f'blacklist_{j2}'
+            if t1 and (t1 == ta or t1 == tb): return False, f'blacklist_time_{t1}'
+            if t2 and (t2 == ta or t2 == tb): return False, f'blacklist_time_{t2}'
 
     whitelist_pares = bot.get('whitelist_pares') or []
     if whitelist_pares:
@@ -1239,6 +1326,10 @@ async def executar_backtest(job_id: int):
             'h2h_insuf': 0, 'comp': 0, 'sem_par': 0,
             'sem_placar': 0, 'sem_resultado': 0,
         }
+        # Detalhe das rejeicoes BASICAS por sub-motivo (odd_lt_min, mercado_nao_bate,
+        # linha_invalida, odd_ausente, etc). Permanente, vai pro relatorio - assim
+        # 'basico=N' nunca mais e uma caixa-preta: a UI mostra a quebra.
+        rej_basico_detalhe: dict = {}
         # v10: contadores de QUALIDADE (nao rejeitam, mas reportam no relatorio).
         # Filosofia: num backtest de dinheiro real, o numero precisa vir com
         # ressalva honesta. Esconder que X apostas tiveram h2h fraco = mentir.
@@ -1267,9 +1358,15 @@ async def executar_backtest(job_id: int):
                 rej['cap_jogo'] += 1
                 continue
 
-            passou, _ = _avaliar_filtros_basicos(tick, bot)
+            passou, _motivo_basico = _avaliar_filtros_basicos(tick, bot)
             if not passou:
                 rej['basico'] += 1
+                # Agrupa o SUB-MOTIVO da rejeicao basica (sem os valores, so a
+                # categoria) pra reportar no relatorio: assim a UI mostra POR QUE
+                # os ticks caem no basico (odd_lt_min, mercado_nao_bate, etc) em
+                # vez de so 'basico=N'. Normaliza tirando numeros pra agrupar.
+                _cat = re.sub(r'[0-9.]+', '#', _motivo_basico)
+                rej_basico_detalhe[_cat] = rej_basico_detalhe.get(_cat, 0) + 1
                 continue
 
             if cenario_partida:
@@ -1349,15 +1446,21 @@ async def executar_backtest(job_id: int):
             })
 
         rej_str = ', '.join(f'{k}={v}' for k, v in rej.items() if v > 0) or 'nenhuma'
+        # monta o detalhe do basico (top sub-motivos) pra log e relatorio
+        basico_det_str = ''
+        if rej_basico_detalhe:
+            top = sorted(rej_basico_detalhe.items(), key=lambda x: -x[1])
+            basico_det_str = ' [basico: ' + ', '.join(f'{k}={v}' for k, v in top[:8]) + ']'
+
         logger.info(
             f"[backtest] Job {job_id}: {len(candidatas)} candidatas. "
-            f"Rejeicoes: {rej_str}. H2H cache: {h2h_cache.stats_cache}"
+            f"Rejeicoes: {rej_str}{basico_det_str}. H2H cache: {h2h_cache.stats_cache}"
         )
 
         async with pool.acquire() as conn:
             await conn.execute(
                 "UPDATE backtest_jobs SET progresso=80, progresso_msg=$2 WHERE id=$1",
-                job_id, f"{len(candidatas)} validadas. Rej: {rej_str[:200]}",
+                job_id, f"{len(candidatas)} validadas. Rej: {rej_str[:120]}{basico_det_str[:180]}",
             )
 
         banca = banca_inicial
@@ -1463,7 +1566,8 @@ async def executar_backtest(job_id: int):
 
         partes_msg = []
         if total_apostas == 0:
-            partes_msg.append(f"Concluido. Rej: {rej_resumo}")
+            # 0 apostas: mostra a quebra do basico (a UI ve POR QUE deu 0).
+            partes_msg.append(f"Concluido. Rej: {rej_resumo}{basico_det_str}")
         else:
             partes_msg.append("Concluido")
         if avisos:

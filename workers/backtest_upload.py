@@ -202,6 +202,30 @@ def parse_ticks_parquet(caminho_arquivo: str,
         except Exception as e:
             raise BacktestUploadError(f"falha ao aplicar filtros do bot: {e}") from e
 
+    # --- coercao de tipos: APENAS score_home/score_away ---
+    # O motor (backtest_runner) trata cada campo do seu jeito:
+    #   - linha: _parse_linha() ja lida com '+0.5', 'away|0.5', '' -> NAO converter
+    #     aqui (to_numeric transformaria esses em NaN e perderia o tick).
+    #   - odds: o motor faz float(tick['odds']) na hora -> deixa como vem.
+    #   - mercado_tipo / mercado_id / selecao_id: usados como STRING (mapping de
+    #     mercado compara com ['18'], dedup usa 'mercado_id' or '') -> NAO converter.
+    # SO os scores entram em comparacao numerica direta (total = sh+sa; total>linha)
+    # sem passar por parser. Se vierem string do parquet, da o erro str<float.
+    # Entao converte SO eles pra Int64 (nullable: aceita None sem virar float).
+    # Esta e a correcao minima e segura - mexer no resto quebra os parsers do motor.
+    try:
+        for col in ('score_home', 'score_away'):
+            if col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce').astype('Int64')
+        # odds: o motor compara CRU (odd < float(odd_min)) sem converter -> se
+        # vier string do parquet da str<float. odds nao tem formato especial
+        # (sempre "1.85"), entao to_numeric e seguro. NaN -> None (motor: odd
+        # ausente -> rejeita o tick, comportamento correto).
+        if 'odds' in df.columns:
+            df['odds'] = pd.to_numeric(df['odds'], errors='coerce')
+    except Exception as e:
+        raise BacktestUploadError(f"falha ao converter scores/odds: {e}") from e
+
     # --- ordenacao (mesma do motor) ---
     try:
         df = df.sort_values(['event_id', 'mercado_id', 'linha', 'selecao_id', 'ts'])
@@ -212,7 +236,17 @@ def parse_ticks_parquet(caminho_arquivo: str,
         f"[backtest_upload] parquet {p.name}: {len(df)} ticks apos filtros "
         f"(de {n_total} no arquivo)"
     )
-    return df.to_dict('records')
+    # to_dict pode deixar NaN/NaT/pd.NA nos campos (o Int64 nullable vira pd.NA).
+    # O motor espera None nesses casos (linha None -> pula, score None -> ignora).
+    # Normaliza tudo pra None de uma vez, pra o parquet entregar igual ao banco.
+    registros = df.to_dict('records')
+    for r in registros:
+        for k, v in r.items():
+            if v is pd.NA or (isinstance(v, float) and pd.isna(v)):
+                r[k] = None
+            elif v is pd.NaT:
+                r[k] = None
+    return registros
 
 
 # ============================================================
