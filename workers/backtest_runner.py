@@ -1168,6 +1168,29 @@ async def executar_backtest(job_id: int):
         diff_ativo = filtros.get('diferencaPlacarAtivo', False)
         diff_min = filtros.get('diferencaPlacar', 0) if diff_ativo else 0
 
+        # FIX (over-entry): replica o evitarLinhasSeq do bot_executor (default True).
+        # AO VIVO o bot aposta 1 vez por mercado_tipo por jogo (trava qualquer 2a
+        # linha do mesmo mercado no mesmo event_id). Sem isso, o backtest apostava
+        # TODA linha (Over 0.5, 1.5, 2.5...7.5) do mesmo jogo -> ~9x mais apostas e
+        # WR colapsando pra taxa-base (as linhas altas perdem). Agora bate com o vivo.
+        evitar_linhas_seq = filtros.get('evitarLinhasSeq', True)
+        mercado_apostado_evt: set = set()  # {(event_id, mercado_tipo)} ja apostados
+
+        # FIX (lado / falso-positivo): replica o filtro de LADO do bot_executor
+        # (linhas 374-385). AO VIVO o bot so aposta os lados configurados em
+        # filtros.lados / filtros.lado (ex.: ['over']). SEM esse filtro o backtest
+        # gerava candidato pro OVER **e** pro UNDER da mesma linha/jogo e apostava
+        # os dois -> WR colado em ~55% (cara-ou-coroa por construcao), MASCARANDO a
+        # performance real do lado configurado (o over puro do #32 da 39%/-27%).
+        # 'ambos' (ou ausencia) => lados_bot_norm=None => nao filtra (aceita os dois).
+        lados_bot = filtros.get('lados')
+        if lados_bot is None and filtros.get('lado'):
+            _lado_str = str(filtros.get('lado')).lower().strip()
+            lados_bot = [] if _lado_str == 'ambos' else [_lado_str]
+        lados_bot_norm = None
+        if lados_bot and isinstance(lados_bot, list) and len(lados_bot) > 0:
+            lados_bot_norm = [str(l).lower().strip() for l in lados_bot if l]
+
         # v4: coleta filtros dos 2 lugares (comp + hist normalizado)
         filtros_unificados = _coletar_todos_filtros(filtros)
         janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
@@ -1335,7 +1358,7 @@ async def executar_backtest(job_id: int):
         rej = {
             'cap_jogo': 0, 'basico': 0, 'cenario': 0, 'diff': 0,
             'h2h_insuf': 0, 'comp': 0, 'sem_par': 0,
-            'sem_placar': 0, 'sem_resultado': 0,
+            'sem_placar': 0, 'sem_resultado': 0, 'lado': 0,
         }
         # Detalhe das rejeicoes BASICAS por sub-motivo (odd_lt_min, mercado_nao_bate,
         # linha_invalida, odd_ausente, etc). Permanente, vai pro relatorio - assim
@@ -1365,9 +1388,28 @@ async def executar_backtest(job_id: int):
 
             evt = tick['event_id']
 
+            # filtro de LADO (over/under) - igual ao executor (linhas 374-385).
+            # Tick cujo lado nao esta na lista do bot e cortado ANTES de tudo:
+            # nao consome cap_jogo nem trava mercado, exatamente como ao vivo.
+            if lados_bot_norm is not None:
+                _sel_lado = _lado_aposta(tick.get('selecao'))
+                if _sel_lado is not None and _sel_lado not in lados_bot_norm:
+                    rej['lado'] += 1
+                    continue
+
             if max_apostas_partida is not None and apostas_por_evento.get(evt, 0) >= max_apostas_partida:
                 rej['cap_jogo'] += 1
                 continue
+
+            # evitarLinhasSeq: 1 aposta por mercado_tipo por jogo (igual ao vivo).
+            # ticks_ordenados esta em ordem de ts, entao o 1o aceitado por
+            # (evento, mercado_tipo) e o mais cedo no tempo = o que o bot ao vivo
+            # teria apostado (primeiro tick que passa, depois trava o mercado).
+            if evitar_linhas_seq:
+                _mtipo_evt = tick.get('mercado_tipo')
+                if (evt, _mtipo_evt) in mercado_apostado_evt:
+                    rej['mercado_repetido'] = rej.get('mercado_repetido', 0) + 1
+                    continue
 
             passou, _motivo_basico = _avaliar_filtros_basicos(tick, bot)
             if not passou:
@@ -1456,6 +1498,8 @@ async def executar_backtest(job_id: int):
                 continue
 
             apostas_por_evento[evt] = apostas_por_evento.get(evt, 0) + 1
+            if evitar_linhas_seq:
+                mercado_apostado_evt.add((evt, tick.get('mercado_tipo')))
             candidatas.append({
                 'tick': tick,
                 'linha_num': linha_num,
