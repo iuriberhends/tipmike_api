@@ -1047,9 +1047,18 @@ def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
     # --- ODD ---
     odd_f, err = _num_seguro(tick.get('odds'))
     if err is not None:
-        # odd do tick invalida (ausente, NaN, string, score_update odd=0->valido
-        # mas <min). 'ausente'/'vazio'/'nan' -> tick sem odd real, nao aposta.
+        # odd do tick invalida (ausente, NaN, string). 'ausente'/'vazio'/'nan'
+        # -> tick sem odd real, nao aposta.
         return False, f'odd_{err}'
+    # Odd <= 1 NAO e cotacao real: mercado SUSPENSO (odd_status suspenso, odds
+    # 0.00) ou tick de score_update/fechamento. Nunca e apostavel (1.0 = sem
+    # retorno, <1 = impossivel). Corta SEMPRE, independente de odd_min - senao um
+    # run sem piso de odds (backtest avulso seta odd_min=None) apostaria esses
+    # ticks a 0.00, cada um um -stake fake que corrompe WR/ROI. O PLACAR nao e
+    # afetado: e montado de todos os ticks antes (inclusive os suspensos, que
+    # carregam o score final quando o mercado fecha no fim do jogo).
+    if odd_f <= 1.0:
+        return False, 'odd_suspensa_lte1'
     omin = bot.get('odd_min')
     if omin is not None:
         omin_f, err = _num_seguro(omin)
@@ -1317,7 +1326,6 @@ async def executar_backtest(job_id: int):
                     )
                     return
 
-        primeiros: dict = {}
         placar_final: dict = {}
         _placar_ts: dict = {}   # evt -> ts do tick que deu o placar (pega o MAIS RECENTE)
 
@@ -1337,10 +1345,6 @@ async def executar_backtest(job_id: int):
                 if evt not in _placar_ts or tts >= _placar_ts[evt]:
                     placar_final[evt] = (sh, sa)
                     _placar_ts[evt] = tts
-
-            chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
-            if chave not in primeiros:
-                primeiros[chave] = dict(t)
 
         async with pool.acquire() as conn:
             await conn.execute(
@@ -1374,7 +1378,28 @@ async def executar_backtest(job_id: int):
         }
         H2H_MIN_SAUDAVEL = 10  # abaixo disso, marca como amostra fraca
 
-        ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
+        # REENTRADA (fidelidade com o vivo): o bot ao vivo usa LISTEN/NOTIFY e
+        # processa CADA tick inserido, apostando todo que passa o filtro ate bater
+        # o cap (max_apostas_partida) - sem deduplicar por linha. Resultado: ele
+        # RE-APOSTA a mesma linha varias vezes no mesmo jogo (ex.: over 7.5 a 1.78,
+        # depois 1.85, depois 1.95 conforme a odd anda). O backtest tem que fazer
+        # igual, senao mente pra menos (da 55% onde o vivo da 39%).
+        #   - evitarLinhasSeq=False  -> NAO deduplica: processa todos os ticks, a
+        #     mesma linha pode ser apostada ate o cap (reentrada, igual ao vivo).
+        #   - evitarLinhasSeq=True   -> a trava ja garante 1 aposta por mercado_tipo
+        #     por jogo, entao deduplicar por linha (1 tick/linha) da o MESMO
+        #     resultado e e muito mais rapido. Mantem o comportamento antigo.
+        # Obs.: o cap (checado no topo do loop) corta cedo os ticks de jogos ja
+        # cheios, entao processar todos os ticks nao explode o custo.
+        if evitar_linhas_seq:
+            primeiros: dict = {}
+            for t in ticks:
+                chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
+                if chave not in primeiros:
+                    primeiros[chave] = dict(t)
+            ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
+        else:
+            ticks_ordenados = sorted((dict(t) for t in ticks), key=lambda x: x['ts'])
         total_candidatos = len(ticks_ordenados)
 
         for i, tick in enumerate(ticks_ordenados):
