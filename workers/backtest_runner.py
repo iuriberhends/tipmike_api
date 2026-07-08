@@ -261,6 +261,19 @@ def _resolve_resultado(mercado: str, selecao: str, linha: float,
 # H2H CACHE
 # ============================================================
 
+def _dt_naive(dt):
+    """Remove o tzinfo mantendo o horario de PAREDE (nao converte fuso).
+
+    Serve pra comparar datas naive (do banco) com aware (do parquet, que vem
+    com 'Z'). Regra do projeto: o 'Z' da TM/coletor ja e BRT -> NUNCA converter
+    UTC->BRT, so tirar o tz. Assim naive-do-banco e (ex-)aware-do-parquet ficam
+    no mesmo fuso e a comparacao para de estourar 'can't compare naive/aware'.
+    """
+    if dt is not None and getattr(dt, 'tzinfo', None) is not None:
+        return dt.replace(tzinfo=None)
+    return dt
+
+
 class H2HCache:
     LIMITE_JOGOS_POR_PAR = 100      # janela padrao/maxima dos filtros normais
     TETO_BUSCA = 5000               # teto absoluto do _buscar (suporta 'todas')
@@ -302,16 +315,17 @@ class H2HCache:
         if par not in self._cache:
             self._cache[par] = await self._buscar(par[0], par[1])
 
-        corte_ao_vivo = antes_de_ts - timedelta(minutes=self.MARGEM_AO_VIVO_MIN)
+        corte_ao_vivo = _dt_naive(antes_de_ts) - timedelta(minutes=self.MARGEM_AO_VIVO_MIN)
+        antes = _dt_naive(antes_de_ts)
 
         jogos = []
         for j in self._cache[par]:
-            if j['ts'] >= antes_de_ts:
+            if _dt_naive(j['ts']) >= antes:
                 continue
             # v7: se o jogo veio de ticks e o ultimo tick dele foi recente
             # demais (ainda ao vivo no momento da aposta), descarta.
             if j.get('fonte') == 'tick':
-                ult = j.get('ultimo_tick_ts') or j['ts']
+                ult = _dt_naive(j.get('ultimo_tick_ts') or j['ts'])
                 if ult >= corte_ao_vivo:
                     continue
             jogos.append(j)
@@ -378,7 +392,11 @@ class H2HCache:
                 'jogador_b': r['jogador_b'],
                 'score_home': sh,
                 'score_away': sa,
-                'total': (sh or 0) + (sa or 0),
+                # BLINDADO: coage os placares a numero seguro antes de somar. Se
+                # sh/sa vierem None -> 0; string numerica -> parseia; lixo -> 0.
+                # Sem isso, um placar string ('5') faria '5'+'3'='53' (concat) e
+                # o media()/desvio() quebrariam. Garante 'total' SEMPRE int.
+                'total': int(_num_seguro(sh)[0] or 0) + int(_num_seguro(sa)[0] or 0),
                 'fonte': r['fonte'],
                 'ultimo_tick_ts': r['ultimo_tick_ts'],
             })
@@ -667,6 +685,10 @@ def _extrair_janelas_dos_filtros(filtros_unificados: list) -> tuple[set, set]:
             # gap_media = media_ult{janela} - linha. Precisa que a media daquela
             # janela seja calculada -> adiciona a janela em janelas_media.
             janelas_media.add(chave)
+        elif tipo in ('zscore', 'z'):
+            # z = (media-linha)/desvio: precisa da media (e o desvio e calculado
+            # junto no mesmo loop de janelas_media). Registra a janela.
+            janelas_media.add(chave)
 
     return janelas_wr, janelas_media
 
@@ -701,6 +723,11 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     """
     qtd = len(jogos)
 
+    # v10 FIX: normaliza ts_ref (tira tz mantendo horario de parede) pra bater
+    # com o ts dos jogos do banco (naive) nas janelas de TEMPO. Sem isso, tick do
+    # parquet (aware, 'Z') vs jogo do banco (naive) pulava tudo -> janela vazia.
+    ts_ref = _dt_naive(ts_ref)
+
     if janelas_wr is None:
         janelas_wr = set(JANELAS_PADRAO_WR)
     if janelas_media is None:
@@ -729,6 +756,20 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
         slice_ = jogos[:usar]
         return sum(j['total'] for j in slice_) / usar, usar
 
+    def desvio(n):
+        # Desvio padrao POPULACIONAL (÷N) dos totais na janela. Mesmo slice que
+        # media(). Precisa de >=2 jogos (com 1 nao existe dispersao). Retorna
+        # (desvio, qtd_usada) ou (None, qtd) se qtd<2.
+        if qtd <= 0:
+            return None, 0
+        usar = qtd if n == 0 else min(qtd, n)
+        if usar < 2:
+            return None, usar
+        slice_ = jogos[:usar]
+        m = sum(j['total'] for j in slice_) / usar
+        var = sum((j['total'] - m) ** 2 for j in slice_) / usar
+        return var ** 0.5, usar
+
     # ---- v10: janelas de TEMPO ----
     # Seleciona jogos com ts em [ts_ref - segundos, ts_ref). Reusa o ts que ja
     # vem em cada jogo (mesmo cutoff temporal das janelas de quantidade).
@@ -746,7 +787,7 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
             return None
         sel = []
         for j in jogos:
-            t = j.get('ts')
+            t = _dt_naive(j.get('ts'))
             if t is None:
                 continue
             try:
@@ -793,6 +834,18 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
             return None, 0
         return sum(validos) / len(validos), len(validos)
 
+    def desvio_tempo(segundos):
+        # Desvio populacional dos totais na janela de TEMPO. Precisa de >=2.
+        sel = _jogos_na_janela_tempo(segundos)
+        if not sel:
+            return None, 0
+        validos = [t for t in (_total_ok(j) for j in sel) if t is not None]
+        if len(validos) < 2:
+            return None, len(validos)
+        m = sum(validos) / len(validos)
+        var = sum((t - m) ** 2 for t in validos) / len(validos)
+        return var ** 0.5, len(validos)
+
     out: dict = {'qtd_h2h': qtd}
 
     for jan in janelas_wr:
@@ -819,6 +872,32 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
             continue
         out[f'media_ult{tok}'] = v
         out[f'media_ult{tok}_qtd'] = usados
+        # --- desvio + z-score (BLINDADO) ---
+        # z-score LADO-AWARE: quantos desvios a media esta do lado favoravel da
+        # linha. over -> (media-linha)/desvio ; under -> (linha-media)/desvio.
+        # Assim um threshold unico "z >= X" vale pros dois lados. Bordas:
+        #   desvio None (janela <2 jogos) -> z None (filtro rejeita: sem amostra)
+        #   desvio 0 (par faz sempre o mesmo total) -> z +/-999 simbolico:
+        #     +999 se media do lado certo da linha (trava perfeita), -999 se nao.
+        #     (total e int, linha e .5, entao media==linha nunca acontece aqui.)
+        # Qualquer erro inesperado -> desvio/z=None e loga (falha FECHADA: o
+        # filtro rejeita, nunca aposta com numero furado). Nao afeta media_ult
+        # (ja gravado acima pelo media()/media_tempo() intocado).
+        try:
+            dv, _ = desvio_tempo(valor) if modo == 'tempo' else desvio(valor)
+            out[f'desvio_ult{tok}'] = dv
+            if v is None or dv is None or linha_atual is None:
+                out[f'z_ult{tok}'] = None
+            else:
+                margem = (linha_atual - v) if eh_under else (v - linha_atual)
+                if dv == 0:
+                    out[f'z_ult{tok}'] = 999.0 if margem > 0 else -999.0
+                else:
+                    out[f'z_ult{tok}'] = margem / dv
+        except Exception as e:
+            logger.warning(f"[stats] desvio/z janela {jan} (tok={tok}) falhou: {e}")
+            out[f'desvio_ult{tok}'] = None
+            out[f'z_ult{tok}'] = None
 
     # Gap = media_ult20 - linha
     m20 = out.get('media_ult20')
@@ -922,6 +1001,11 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
                 valor = stats.get('gap')
         elif tipo == 'tendencia':
             valor = stats.get('tendencia')
+        elif tipo in ('zscore', 'z'):
+            # z-score lado-aware ja calculado por janela em _calcular_stats_h2h
+            # (grava z_ult{tok}). Sem janela -> usa a janela 20 (default eBasket).
+            tok = _janela_token(janela) if janela is not None else '20'
+            valor = stats.get(f'z_ult{tok}')
         elif tipo == 'gap_linha':
             media = stats.get('media_ult20')
             if media is not None:
@@ -932,10 +1016,25 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         if valor is None:
             return False, f'stat_{tipo}_ult{janela}_indisponivel'
 
-        if min_v is not None and valor < float(min_v):
-            return False, f'{tipo}_ult{janela}_lt_min'
-        if max_v is not None and valor > float(max_v):
-            return False, f'{tipo}_ult{janela}_gt_max'
+        # BLINDADO: coage o threshold com _num_seguro em vez de float() cru. Config
+        # do bot com min/max invalido -> REJEITA com motivo claro (falha FECHADA,
+        # nunca aposta), igual _avaliar_filtros_basicos faz com odd_min ruim. Pra
+        # dinheiro real: prefere NAO apostar a apostar sem o gate configurado.
+        # Comportamento identico p/ min/max validos.
+        if min_v is not None:
+            mn, err = _num_seguro(min_v)
+            if err is not None:
+                logger.warning(f"[comp] {tipo} min invalido: {min_v!r} ({err}) -> rejeita")
+                return False, f'bot.{tipo}_min_invalido'
+            if valor < mn:
+                return False, f'{tipo}_ult{janela}_lt_min'
+        if max_v is not None:
+            mx, err = _num_seguro(max_v)
+            if err is not None:
+                logger.warning(f"[comp] {tipo} max invalido: {max_v!r} ({err}) -> rejeita")
+                return False, f'bot.{tipo}_max_invalido'
+            if valor > mx:
+                return False, f'{tipo}_ult{janela}_gt_max'
 
     return True, ''
 
@@ -1563,6 +1662,21 @@ async def executar_backtest(job_id: int):
 
         candidatas.sort(key=lambda x: x['tick']['ts'])
 
+        # Colunas de WR pra planilha (estilo bot 313886): pega as janelas dos
+        # filtros de WR (tipo='wr') -> (rotulo, chave_no_stats). Ex: janela 10 ->
+        # ("Últ. 10", "wr_ult10"). So as 2 primeiras (formato Janela 1/2).
+        _wr_cols = []
+        for _f in filtros_unificados:
+            if _f.get('tipo') == 'wr':
+                _jw = _f.get('janela')
+                if isinstance(_jw, str):
+                    _tok = _jw; _lbl = f"Últ. {_jw}"
+                elif _jw:
+                    _tok = str(int(_jw)); _lbl = f"Últ. {int(_jw)}"
+                else:
+                    _tok = '0'; _lbl = "Todas"
+                _wr_cols.append((_lbl, f'wr_ult{_tok}'))
+
         for i, c in enumerate(candidatas):
             tick = c['tick']
             odd = float(tick['odds'])
@@ -1593,21 +1707,37 @@ async def executar_backtest(job_id: int):
             if banca > banca_pico:
                 banca_pico = banca
 
+            st = c.get('stats') or {}
+            _sel = tick.get('selecao', '') or ''
+            _ld = _lado_aposta(_sel)
+            _tip = 'Over' if _ld == 'over' else ('Under' if _ld == 'under' else _sel)
             apostas_detalhe.append({
                 'n': i + 1,
                 'event_id': tick['event_id'],
                 'ts': tick['ts'].isoformat() if hasattr(tick['ts'], 'isoformat') else str(tick['ts']),
+                'torneio': tick.get('torneio') or bot.get('torneio') or '',
+                'liga': tick.get('liga', '') or '',
                 'jogador_a': tick['jogador_a'],
                 'jogador_b': tick['jogador_b'],
+                'time_a': tick.get('time_a', '') or '',
+                'time_b': tick.get('time_b', '') or '',
                 'mercado': tick['mercado'],
+                'tip': _tip,
                 'linha': c['linha_num'],
-                'selecao': tick['selecao'],
+                'selecao': _sel,
+                # WR/janelas que o backtest usou (pra bater com a planilha do bot)
+                'janela_1': _wr_cols[0][0] if len(_wr_cols) > 0 else '',
+                'winrate_1': st.get(_wr_cols[0][1]) if len(_wr_cols) > 0 else None,
+                'janela_2': _wr_cols[1][0] if len(_wr_cols) > 1 else '',
+                'winrate_2': st.get(_wr_cols[1][1]) if len(_wr_cols) > 1 else None,
                 'odd': odd,
                 'stake': stake,
+                'placar_envio': f"{tick.get('score_home')}-{tick.get('score_away')}",
+                'score_final': f"{c['score_home']}-{c['score_away']}",
                 'resultado': resultado,
                 'pnl': round(pnl_aposta, 2),
+                'lucro_unidades': round(pnl_aposta / stake, 3) if stake else 0,
                 'banca_apos': round(banca, 2),
-                'score_final': f"{c['score_home']}-{c['score_away']}",
             })
 
             equity_curve.append({

@@ -27,12 +27,16 @@ MIGRATION necessaria (rodar uma vez):
     ALTER TABLE backtest_jobs ALTER COLUMN bot_id DROP NOT NULL;
 """
 
+import io
 import json
 import logging
+import re
+from datetime import datetime
 from typing import Optional
 
 from fastapi import (APIRouter, BackgroundTasks, File, HTTPException,
                      UploadFile)
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from database import get_pool
@@ -287,6 +291,8 @@ async def validar_cruzado_endpoint(req: ValidarCruzadoRequest):
 
 # Vocabulario valido (espelha o backtest_runner). Se o runner mudar, ajustar aqui.
 _LADOS_VALIDOS = {"over", "under", "ambos"}
+# janela do WR: "all" ou "last_<N>" (qtd) / "last_<N>h|d|m" (tempo)
+_WR_JANELA_RE = re.compile(r'^(all|last_\d+[hdm]?)$')
 _CENARIOS_VALIDOS = {
     "", "casa_vencendo", "casa_perdendo", "empate",
     "casa_ou_empate", "visitante_ou_empate", "casa_ou_visitante",
@@ -311,7 +317,8 @@ class BacktestAvulsoRequest(BaseModel):
     esporte: Optional[str] = Field(default=None, max_length=40)
     # WR do H2H (porcentagem): janela e minimo. janela 0 = todas.
     wr_min: Optional[float] = Field(default=None, ge=0, le=100)
-    wr_janela: int = Field(default=0, ge=0, le=500)
+    # janela do WR: "all" ou "last_N"/"last_Nh"/"last_Nd" (quantidade OU tempo)
+    wr_janela: str = Field(default="all", max_length=20)
     wr_min_partidas: int = Field(default=10, ge=0, le=10000)
     # placar: cenario + diferenca minima de gols/pontos
     cenario: Optional[str] = Field(default=None, max_length=30)
@@ -324,6 +331,12 @@ class BacktestAvulsoRequest(BaseModel):
     # black/white list de nicks (bloqueia/permite nick em QUALQUER posicao)
     blacklist: list = Field(default_factory=list)
     whitelist: list = Field(default_factory=list)
+    # filtros complementares (H2H): media, gap_media, zscore, gap_linha, tendencia
+    # cada item: {tipo, janela, min, minAtivo, max, maxAtivo}
+    filtros_comp: list = Field(default_factory=list)
+    # filtros de historico (WR): VARIOS filtros de win-rate por janela (escadinha)
+    # cada item: {janela, prob:[min%,max%], minPartidas}. Formato do bot ao vivo.
+    filtros_hist: list = Field(default_factory=list)
     # stake
     stake_modo: str = Field(default="fixo", max_length=20)
     stake_valor: float = Field(..., gt=0, le=1_000_000)
@@ -360,6 +373,91 @@ def _limpar_nicks(lista, campo: str) -> list:
     return out
 
 
+# tipos de filtro complementar aceitos (mesmos do bot ao vivo / CriarBot)
+_COMP_TIPOS_VALIDOS = {"media", "gap_media", "gap", "gap_linha", "tendencia", "zscore", "z"}
+_MAX_FILTROS_COMP = 20
+
+
+def _limpar_filtros_comp(lista) -> list:
+    """Sanitiza os filtros complementares vindos da aba avulsa. Mantem so tipos
+    conhecidos, valida thresholds ativos (numero), e devolve no formato que o
+    worker entende (mesmo de filtrosCompAdicionados). Falha EXPLICITA (400) se um
+    threshold ativo nao for numero - melhor erro claro que backtest zerado."""
+    if not lista:
+        return []
+    if not isinstance(lista, (list, tuple)):
+        raise HTTPException(status_code=400, detail="filtros_comp deve ser uma lista")
+    out = []
+    for f in lista:
+        if not isinstance(f, dict):
+            continue
+        tipo = str(f.get("tipo", "")).strip().lower()
+        if tipo not in _COMP_TIPOS_VALIDOS:
+            continue  # ignora tipo desconhecido (nao quebra)
+        min_ativo = bool(f.get("minAtivo"))
+        max_ativo = bool(f.get("maxAtivo"))
+        if not min_ativo and not max_ativo:
+            continue  # sem limite ativo = no-op, nao adiciona
+        entry = {"tipo": tipo, "janela": f.get("janela"),
+                 "minAtivo": min_ativo, "maxAtivo": max_ativo}
+        if min_ativo:
+            try:
+                entry["min"] = float(f.get("min"))
+            except (TypeError, ValueError):
+                raise HTTPException(status_code=400,
+                                    detail=f"filtro complementar '{tipo}': min invalido ({f.get('min')!r}).")
+        if max_ativo:
+            try:
+                entry["max"] = float(f.get("max"))
+            except (TypeError, ValueError):
+                raise HTTPException(status_code=400,
+                                    detail=f"filtro complementar '{tipo}': max invalido ({f.get('max')!r}).")
+        out.append(entry)
+        if len(out) >= _MAX_FILTROS_COMP:
+            break
+    return out
+
+
+def _limpar_filtros_hist(lista) -> list:
+    """Sanitiza os filtros de historico (WR) da aba avulsa. Cada item vira um
+    filtrosHistAdicionados no formato do worker (base=match, tipo=all, versao=all).
+    Valida janela (mesmo formato do WR) e prob [min%,max%]. Falha 400 se invalido -
+    erro claro em vez de backtest zerado."""
+    if not lista:
+        return []
+    if not isinstance(lista, (list, tuple)):
+        raise HTTPException(status_code=400, detail="filtros_hist deve ser uma lista")
+    out = []
+    for f in lista:
+        if not isinstance(f, dict):
+            continue
+        janela = str(f.get("janela", "all")).strip().lower()
+        if not _WR_JANELA_RE.match(janela):
+            raise HTTPException(status_code=400,
+                                detail=f"janela do filtro de WR invalida: '{janela}'. Use 'all' ou 'last_N' / 'last_Nh' / 'last_Nd'.")
+        prob = f.get("prob") or []
+        try:
+            pmin = float(prob[0])
+            pmax = float(prob[1]) if (len(prob) > 1 and prob[1] is not None) else 100.0
+        except (TypeError, ValueError, IndexError):
+            raise HTTPException(status_code=400,
+                                detail=f"WR do filtro invalido: {f.get('prob')!r}. Informe a % minima.")
+        if not (0 <= pmin <= 100 and 0 <= pmax <= 100) or pmin > pmax:
+            raise HTTPException(status_code=400,
+                                detail=f"WR fora de 0-100 (ou min>max): {[pmin, pmax]}.")
+        try:
+            minp = max(0, int(f.get("minPartidas", 10)))
+        except (TypeError, ValueError):
+            minp = 10
+        out.append({
+            "base": "match", "tipo": "all", "versao": "all",
+            "janela": janela, "prob": [pmin, pmax], "minPartidas": minp,
+        })
+        if len(out) >= 20:
+            break
+    return out
+
+
 def _validar_e_normalizar(req: "BacktestAvulsoRequest") -> dict:
     """Valida os filtros da aba e devolve um dict ja normalizado pronto pro
     snapshot. Levanta HTTPException 400 com mensagem clara se algo invalido.
@@ -379,6 +477,12 @@ def _validar_e_normalizar(req: "BacktestAvulsoRequest") -> dict:
     if cenario not in _CENARIOS_VALIDOS:
         raise HTTPException(status_code=400,
                             detail=f"cenario invalido: '{cenario}'.")
+    # janela do WR: "all" ou "last_N"/"last_Nh"/"last_Nd" (so valida se WR ativo)
+    if req.wr_min is not None:
+        wj = (req.wr_janela or "all").strip().lower()
+        if not _WR_JANELA_RE.match(wj):
+            raise HTTPException(status_code=400,
+                                detail=f"janela do WR invalida: '{wj}'. Use 'all' ou 'last_N' / 'last_Nh' / 'last_Nd'.")
     # linha: se ambas vierem, min <= max
     if (req.linha_min is not None and req.linha_max is not None
             and req.linha_min > req.linha_max):
@@ -405,10 +509,15 @@ def _validar_e_normalizar(req: "BacktestAvulsoRequest") -> dict:
     # nicks
     blacklist = _limpar_nicks(req.blacklist, "blacklist")
     whitelist = _limpar_nicks(req.whitelist, "whitelist")
+    # filtros complementares (H2H)
+    filtros_comp = _limpar_filtros_comp(req.filtros_comp)
+    # filtros de historico (WR): varios por janela
+    filtros_hist = _limpar_filtros_hist(req.filtros_hist)
 
     return {
         "lado": lado, "mercado": mercado, "cenario": cenario,
         "quartos": quartos, "blacklist": blacklist, "whitelist": whitelist,
+        "filtros_comp": filtros_comp, "filtros_hist": filtros_hist,
     }
 
 
@@ -423,8 +532,14 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
         filtros["inner"] = [norm["lado"].capitalize()]
 
     # WR do H2H -> filtrosHistAdicionados (formato que o worker normaliza)
-    if req.wr_min is not None:
-        janela_str = "all" if not req.wr_janela else f"last_{int(req.wr_janela)}"
+    # Prioridade: array filtros_hist (varios filtros, escadinha). Se vazio, cai no
+    # filtro unico antigo (wr_min) por compatibilidade.
+    if norm.get("filtros_hist"):
+        filtros["filtrosHistAdicionados"] = norm["filtros_hist"]
+    elif req.wr_min is not None:
+        # janela ja vem no formato do worker ("all"/"last_N"/"last_1d"/"last_7d").
+        # validada em _validar_e_normalizar; aqui so passa (default "all").
+        janela_str = (req.wr_janela or "all").strip().lower()
         filtros["filtrosHistAdicionados"] = [{
             "base": "match",
             "prob": [float(req.wr_min), 100],
@@ -433,6 +548,10 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
             "versao": "all",
             "minPartidas": int(req.wr_min_partidas),
         }]
+
+    # filtros complementares (H2H) -> filtrosCompAdicionados (o worker le direto)
+    if norm.get("filtros_comp"):
+        filtros["filtrosCompAdicionados"] = norm["filtros_comp"]
 
     # placar: cenario + diferenca
     if norm["cenario"]:
@@ -573,3 +692,71 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
     logger.info(f"[backtest_upload] Job avulso {job_id} criado (mercado={norm['mercado']}, lado={norm['lado']})")
     background.add_task(_rodar_backtest_seguro, job_id)
     return {"job_id": job_id, "status": "pendente", "fonte": "arquivo", "avulso": True}
+
+
+@router.get("/jobs/{job_id}/planilha")
+async def baixar_planilha_apostas(job_id: int):
+    """Gera um .xlsx com as apostas do backtest no MESMO formato do export do bot
+    ao vivo (aba 'Tips Enviadas'). Permite comparar backtest vs vivo lado a lado.
+    Le apostas_detalhe (ja salvo no job) e monta a planilha on-demand."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT status, apostas_detalhe FROM backtest_jobs WHERE id=$1", job_id)
+    if row is None:
+        raise HTTPException(status_code=404, detail="job nao encontrado")
+    detalhe = row["apostas_detalhe"]
+    if isinstance(detalhe, str):
+        detalhe = json.loads(detalhe or "[]")
+    detalhe = detalhe or []
+    if not detalhe:
+        raise HTTPException(status_code=400,
+                            detail="job sem apostas para exportar (0 apostas ou ainda rodando).")
+
+    def _fmt_dt(ts_iso):
+        try:
+            d = datetime.fromisoformat(str(ts_iso).replace("Z", ""))
+            return d.strftime("%d/%m/%Y"), d.strftime("%H:%M:%S")
+        except Exception:
+            return str(ts_iso), ""
+
+    _res_map = {"green": "Green", "red": "Red", "void": "Void"}
+    linhas = []
+    for a in detalhe:
+        data, hora = _fmt_dt(a.get("ts"))
+        linhas.append({
+            "Torneio": a.get("torneio", ""),
+            "Campeonato": a.get("liga", ""),
+            "Confronto": f"{a.get('jogador_a', '')} x {a.get('jogador_b', '')}",
+            "Jogador A": a.get("jogador_a", ""),
+            "Time A": a.get("time_a", ""),
+            "Jogador B": a.get("jogador_b", ""),
+            "Time B": a.get("time_b", ""),
+            "Data": data,
+            "Hora": hora,
+            "Mercado": a.get("mercado", ""),
+            "Tip": a.get("tip", ""),
+            "Linha": a.get("linha"),
+            "Janela 1": a.get("janela_1", ""),
+            "Winrate 1": a.get("winrate_1"),
+            "Janela 2": a.get("janela_2", ""),
+            "Winrate 2": a.get("winrate_2"),
+            "Odd": a.get("odd"),
+            "Placar Envio": a.get("placar_envio", ""),
+            "Placar Final": a.get("score_final", ""),
+            "Resultado": _res_map.get(a.get("resultado"), a.get("resultado", "")),
+            "Lucro/Prej.": a.get("lucro_unidades"),
+        })
+
+    import pandas as pd
+    df = pd.DataFrame(linhas)
+    buf = io.BytesIO()
+    with pd.ExcelWriter(buf, engine="openpyxl") as xls:
+        df.to_excel(xls, index=False, sheet_name="Tips Enviadas")
+    buf.seek(0)
+    fn = f"backtest_job_{job_id}_apostas.xlsx"
+    return StreamingResponse(
+        buf,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f'attachment; filename="{fn}"'},
+    )
