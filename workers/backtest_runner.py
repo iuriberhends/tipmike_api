@@ -470,6 +470,40 @@ def _mercado_eh_hc(mercado: str) -> bool:
     return (mercado or '').strip().lower() in ('ah_ft', 'ah_ht', 'eh_ft')
 
 
+def _hc_blacklist_bloqueia(selecao, jogador_a, jogador_b,
+                           blacklist_zebra, blacklist_favorito) -> tuple:
+    """Filtros 6 e 7 do HC. (bloqueia: bool, motivo: str).
+      6) zebra    = o NICK apostado (lado +). Na blacklist_zebra -> bloqueia.
+      7) favorito = o ADVERSARIO (lado -, o outro do par). Na blacklist_favorito
+                    -> bloqueia.
+    BLINDADO: listas vazias/None -> nunca bloqueia. Nick indeterminado -> nao
+    bloqueia (deixa a resolucao/outros filtros decidirem; nunca inventa corte)."""
+    zebra = _extrair_nick_hc(selecao)
+    if zebra is None:
+        return False, ''
+    zebra_u = zebra.strip().upper()
+    ja = (jogador_a or '').strip().upper()
+    jb = (jogador_b or '').strip().upper()
+    # favorito = o lado que NAO e a zebra (mesma logica de casamento do resolve_hc)
+    if zebra_u == ja:
+        favorito = jb
+    elif zebra_u == jb:
+        favorito = ja
+    elif ja and (zebra_u in ja or ja in zebra_u):
+        favorito = jb
+    elif jb and (zebra_u in jb or jb in zebra_u):
+        favorito = ja
+    else:
+        favorito = None
+    bl_z = {str(x).strip().upper() for x in (blacklist_zebra or []) if x}
+    bl_f = {str(x).strip().upper() for x in (blacklist_favorito or []) if x}
+    if zebra_u in bl_z:
+        return True, f'blacklist_zebra_{zebra_u}'
+    if favorito and favorito in bl_f:
+        return True, f'blacklist_favorito_{favorito}'
+    return False, ''
+
+
 def _ramo_hc_pct(stats: dict, min_v, max_v, min_partidas: int) -> tuple:
     """Ramo de filtro do HC: valida qtd>=min_partidas e hc_pct vs min/max.
     (passou, motivo). Blindado (config ruim -> falha fechada com motivo)."""
@@ -1876,6 +1910,16 @@ async def executar_backtest(job_id: int):
                         hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
                     except (TypeError, ValueError):
                         hc_min_part = 20
+
+                    # FILTROS 6 e 7: blacklist de zebra / favorito (HC).
+                    # Listas no filtros jsonb do bot. Isolado, blindado.
+                    _blz = (bot.get('filtros') or {}).get('blacklist_zebra')
+                    _blf = (bot.get('filtros') or {}).get('blacklist_favorito')
+                    _bloq, _mot_bl = _hc_blacklist_bloqueia(
+                        tick.get('selecao', ''), ja, jb, _blz, _blf)
+                    if _bloq:
+                        rej['hc_blacklist'] = rej.get('hc_blacklist', 0) + 1
+                        continue
 
                     passou_hc, motivo_hc = _ramo_hc_pct(
                         stats, hc_min, hc_max, hc_min_part)

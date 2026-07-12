@@ -76,6 +76,7 @@ from workers.backtest_runner import (
     _resolve_resultado_hc,
     _selecao_hc_valor,
     _num_seguro,
+    _hc_blacklist_bloqueia,
 )
 
 
@@ -474,6 +475,15 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
             except (TypeError, ValueError):
                 hc_min_part = 20
+
+            # FILTROS 6 e 7: blacklist de zebra / favorito (HC).
+            _blz = (bot.get('filtros') or {}).get('blacklist_zebra')
+            _blf = (bot.get('filtros') or {}).get('blacklist_favorito')
+            _bloq, _mot_bl = _hc_blacklist_bloqueia(
+                tick.get('selecao', ''), ja, jb, _blz, _blf)
+            if _bloq:
+                state.contador_rejeicoes['hc_blacklist'] = state.contador_rejeicoes.get('hc_blacklist', 0) + 1
+                return
 
             passou_hc, motivo_hc = _ramo_hc_pct(stats_dict, hc_min, hc_max, hc_min_part)
             if not passou_hc:
