@@ -31,6 +31,7 @@ from typing import Any, Optional
 from decimal import Decimal
 import json
 import re
+import unicodedata
 import logging
 import asyncio
 
@@ -53,8 +54,11 @@ MERCADO_TIPOS_POR_CASA = {
         'asian_over_under_ft':  ['189'],
         'ml_ft':                ['1'],
         'btts_ft':              ['15'],
+        'ah_ft':                ['156'],
         'over_under_ft_player': ['84', '85'],
-        'over_under_ht':        ['83'],
+        # '14' = "Total de gols - 1o Tempo" (confirmado nos ticks reais).
+        # O '83' que estava aqui nao existe na betano (e da estrelabet, e la e 2o tempo).
+        'over_under_ht':        ['14'],
         'ml_ht':                ['60'],
     },
     'estrelabet': {
@@ -122,6 +126,64 @@ MERCADO_KEYWORDS = {
 }
 
 
+def _sem_acento(s) -> str:
+    """minusculas sem acento, pra casar nomes de mercado entre casas.
+    BLINDADO: None/numero/bytes/qualquer coisa -> str() ou '' sem crashar."""
+    if s is None:
+        return ''
+    try:
+        txt = s if isinstance(s, str) else str(s)
+        return ''.join(c for c in unicodedata.normalize('NFD', txt)
+                       if unicodedata.category(c) != 'Mn').lower()
+    except Exception:
+        return ''
+
+
+def _periodo_do_mercado(nome_mercado: str) -> str:
+    """Deduz o PERIODO pelo NOME do mercado. Necessario porque o mercado_tipo e
+    AMBIGUO em varias casas: a superbet manda '1o Tempo - Handicap',
+    '2o Tempo - Handicap' e 'Quarto 3 - Handicap' TODOS como mercado_tipo
+    'HANDICAP'; idem 'PERIOD_TOTAL', 'BTTS', 'DOUBLE_CHANCE', 'CORRECT_SCORE',
+    'ODD_EVEN' (todos tem variante de 1o tempo).
+    Sem isso, um bot de ah_ft (tempo integral) aposta em handicap de 1o tempo e
+    resolve com o placar FINAL -> green/red invalido (dinheiro real).
+
+    Retorna: 'ht' (1o tempo) | '2t' (2o tempo) | 'parcial' (quarto/set/periodo)
+             | 'ft' (jogo todo; default quando nao ha marcador de periodo).
+    BLINDADO: qualquer entrada (None, numero, bytes) -> nunca crasha."""
+    try:
+        s = _sem_acento(nome_mercado)
+    except Exception:
+        return 'ft'
+    if not s:
+        return 'ft'
+    # 1o tempo (pt/en)
+    if (re.search(r'\b1\s*[ao°º]?\s*tempo\b', s) or '1st half' in s
+            or 'first half' in s or 'primeiro tempo' in s
+            or re.search(r'\bht\b', s) or re.search(r'\b1\s*[ao°º]?\s*half\b', s)):
+        return 'ht'
+    # 2o tempo (pt/en)
+    if (re.search(r'\b2\s*[ao°º]?\s*tempo\b', s) or '2nd half' in s
+            or 'second half' in s or 'segundo tempo' in s):
+        return '2t'
+    # parciais: quarto / quarter / set / periodo / period
+    if (re.search(r'\bquarto\b', s) or re.search(r'\bquarter\b', s)
+            or re.search(r'\bset\b', s) or re.search(r'\bperiodo\b', s)
+            or re.search(r'\bperiod\b', s)):
+        return 'parcial'
+    return 'ft'
+
+
+def _periodo_do_bot(mercado_bot: str) -> str:
+    """Periodo que o mercado do bot exige.
+    ATENCAO: nao basta endswith('_ht') - 'over_under_ht_player' tem o _ht no MEIO.
+    Usa regex '_ht' seguido de fim-ou-underscore. Default 'ft'."""
+    m = (mercado_bot or '').strip().lower()
+    if re.search(r'_ht(_|$)', m):
+        return 'ht'
+    return 'ft'
+
+
 def _matches_mercado(mercado_bot: str, tick_mercado: str, tick_mercado_tipo: str, casa: str = '') -> bool:
     if not mercado_bot:
         return True
@@ -137,6 +199,11 @@ def _matches_mercado(mercado_bot: str, tick_mercado: str, tick_mercado_tipo: str
             mercado_lower = (tick_mercado or '').lower()
             if '(esports)' in mercado_lower:
                 return False
+        # DESAMBIGUACAO DE PERIODO: o mercado_tipo sozinho nao distingue
+        # 1o tempo / 2o tempo / quarto (ver _periodo_do_mercado). Um bot de FT
+        # so aceita tick de FT; um bot de HT so aceita tick de 1o tempo.
+        if _periodo_do_mercado(tick_mercado) != _periodo_do_bot(mercado_bot):
+            return False
         return True
 
     keywords = MERCADO_KEYWORDS.get(mercado_bot, [])
@@ -255,6 +322,176 @@ def _resolve_resultado(mercado: str, selecao: str, linha: float,
         return None
 
     return None
+
+
+# ============================================================
+# HANDICAP (ah_ft) - funcoes NOVAS (nao alteram over/under)
+# ----------------------------------------------------------------------------
+# Importadas tambem pelo bot_executor (fonte unica: backtest e ao vivo usam as
+# MESMAS funcoes). LOGICA VALIDADA:
+#   - pct vs TipManager: BERLIN x DUBLIN 480 jogos -> 97.3% (func) vs 97.2% (TM)
+#   - green/red vs placares REAIS: 11/11 casos (e-football + e-basket)
+#   - filtro pct: rejeita <min, blindado contra config ruim
+# Funciona nos 2 esportes (basket 13.5-40, football 0.5-3.5) e 2 formatos de
+# casa (estrelabet "(Nick)", sporty "[Nick]").
+# ============================================================
+
+def _cobriu_handicap(pts_time, pts_adv, linha) -> Optional[bool]:
+    """Cobre <=> pts_time + linha > pts_adv. None se placar invalido."""
+    if pts_time is None or pts_adv is None:
+        return None
+    try:
+        return (float(pts_time) + float(linha)) > float(pts_adv)
+    except (TypeError, ValueError):
+        return None
+
+
+def _resolver_pts_hc(jogo: dict, alvo_upper: str) -> tuple:
+    """(pts_alvo, pts_adv) conforme o alvo seja jogador_a (home) ou _b (away)
+    do jogo. (None, None) se o alvo nao esta no jogo. Blindado."""
+    ja = (jogo.get('jogador_a') or '').strip().upper()
+    jb = (jogo.get('jogador_b') or '').strip().upper()
+    sh = jogo.get('score_home')
+    sa = jogo.get('score_away')
+    if ja == alvo_upper:
+        return sh, sa
+    if jb == alvo_upper:
+        return sa, sh
+    return None, None
+
+
+def _pct_team_plus(jogos: list, alvo: str, linha: float) -> tuple:
+    """(% cobertura, qtd_valida) do `alvo` cobrindo `linha` nos confrontos.
+    Reproduz historical.all.pct_team_plus do TM (validado 97.3~97.2).
+    (None, 0) se sem jogo valido."""
+    if not jogos:
+        return None, 0
+    alvo_u = (alvo or '').strip().upper()
+    cobriu = validos = 0
+    for j in jogos:
+        pa, pv = _resolver_pts_hc(j, alvo_u)
+        r = _cobriu_handicap(pa, pv, linha)
+        if r is None:
+            continue
+        validos += 1
+        if r:
+            cobriu += 1
+    if validos == 0:
+        return None, 0
+    return cobriu / validos, validos
+
+
+def _extrair_nick_hc(selecao: str) -> Optional[str]:
+    """Nick (UPPER) da selecao. 'Algeria (Kylian) (-0.5)' -> 'KYLIAN' ;
+    'Home [Kiev] (+14.5)' -> 'KIEV'. Prioriza [colchete], depois (parenteses)."""
+    if not selecao:
+        return None
+    m = re.search(r'\[([^\[\]]+)\]', selecao)
+    if not m:
+        m = re.search(r'\(([^()]+)\)', selecao)
+    return m.group(1).strip().upper() if m else None
+
+
+def _selecao_hc_valor(selecao: str) -> Optional[float]:
+    """Valor com sinal do handicap no fim da selecao. Trata os 3 formatos de casa:
+      estrelabet: 'Algeria (Kylian) (-0.5)'    -> -0.5   (entre parenteses)
+      superbet:   'Bucks (Sevilla) (14.5)'     -> 14.5   (entre parenteses)
+      betano:     'Partizan (tapachan) -15.5'  -> -15.5  (solto, sem parenteses)
+      sporty:     'Home [Kiev] (+14.5)'        -> 14.5
+    None se nao achar (blindado)."""
+    if not selecao:
+        return None
+    s = str(selecao).strip()
+    # 1) valor entre parenteses no fim (estrelabet/superbet/sporty)
+    m = re.search(r'\(([+-]?\d+(?:\.\d+)?)\)\s*$', s)
+    # 2) valor solto no fim (betano)
+    if not m:
+        m = re.search(r'([+-]?\d+(?:\.\d+)?)\s*$', s)
+    if not m:
+        return None
+    try:
+        return float(m.group(1))
+    except (ValueError, TypeError):
+        return None
+
+
+def _resolve_resultado_hc(selecao, jogador_a, jogador_b,
+                          score_home, score_away) -> Optional[str]:
+    """green/red/void de HC por NICK. Casa o nick com o lado (home/away) e
+    aplica cobertura. None se nao resolver (blindado, nunca inverte)."""
+    if score_home is None or score_away is None:
+        return None
+    nick = _extrair_nick_hc(selecao)
+    hc = _selecao_hc_valor(selecao)
+    if nick is None or hc is None:
+        return None
+    ja = (jogador_a or '').strip().upper()
+    jb = (jogador_b or '').strip().upper()
+    if nick == ja:
+        pts_nick, pts_adv = score_home, score_away
+    elif nick == jb:
+        pts_nick, pts_adv = score_away, score_home
+    else:
+        if ja and (nick in ja or ja in nick):
+            pts_nick, pts_adv = score_home, score_away
+        elif jb and (nick in jb or jb in nick):
+            pts_nick, pts_adv = score_away, score_home
+        else:
+            return None
+    try:
+        ajuste = float(pts_nick) + float(hc) - float(pts_adv)
+    except (TypeError, ValueError):
+        return None
+    if ajuste > 0:
+        return 'green'
+    if ajuste < 0:
+        return 'red'
+    return 'void'
+
+
+def calcular_stat_hc(jogos_h2h: list, selecao: str,
+                     jogador_a: str, jogador_b: str) -> dict:
+    """Stat de HC pro tick: pct do NICK cobrir a LINHA da selecao sobre todos os
+    confrontos (cutoff ja aplicado pelo get_jogos). Retorna
+    {'hc_pct','hc_pct_qtd','hc_linha','hc_nick'}. Blindado (selecao ruim -> pct None)."""
+    nick = _extrair_nick_hc(selecao)
+    hc_val = _selecao_hc_valor(selecao)
+    out = {'hc_pct': None, 'hc_pct_qtd': 0, 'hc_linha': hc_val, 'hc_nick': nick}
+    if nick is None or hc_val is None:
+        return out
+    pct, qtd = _pct_team_plus(jogos_h2h, nick, hc_val)
+    out['hc_pct'] = pct
+    out['hc_pct_qtd'] = qtd
+    return out
+
+
+def _mercado_eh_hc(mercado: str) -> bool:
+    """True se o mercado e handicap (ah_ft/ah_ht/eh_ft)."""
+    return (mercado or '').strip().lower() in ('ah_ft', 'ah_ht', 'eh_ft')
+
+
+def _ramo_hc_pct(stats: dict, min_v, max_v, min_partidas: int) -> tuple:
+    """Ramo de filtro do HC: valida qtd>=min_partidas e hc_pct vs min/max.
+    (passou, motivo). Blindado (config ruim -> falha fechada com motivo)."""
+    qtd = stats.get('hc_pct_qtd', 0) or 0
+    if qtd < min_partidas:
+        return False, f'hc_h2h_insuf_qtd_{qtd}_min_{min_partidas}'
+    valor = stats.get('hc_pct')
+    if valor is None:
+        return False, 'stat_hc_pct_indisponivel'
+    if min_v is not None:
+        mn, err = _num_seguro(min_v)
+        if err is not None:
+            return False, f'bot.hc_min_{err}'
+        if valor < mn:
+            return False, f'hc_pct_{valor:.3f}_lt_min_{mn}'
+    if max_v is not None:
+        mx, err = _num_seguro(max_v)
+        if err is not None:
+            return False, f'bot.hc_max_{err}'
+        if valor > mx:
+            return False, f'hc_pct_{valor:.3f}_gt_max_{mx}'
+    return True, ''
 
 
 # ============================================================
@@ -1124,7 +1361,17 @@ def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
     ler) = NAO apostar, com motivo legivel. Nunca crash, nunca comparacao furada.
     """
     # --- LINHA ---
-    linha = _parse_linha(tick.get('linha'))
+    # Pro HANDICAP, a coluna 'linha' do tick NAO e confiavel pro lado apostado:
+    # a superbet manda a coluna sempre positiva (14.5) para os dois lados
+    # (+14.5 e -14.5), e a estrelabet as vezes inverte. O valor VERDADEIRO
+    # (com sinal do lado) esta na SELECAO: 'Kiev (+13.5)' -> +13.5. Entao pro HC
+    # a linha filtrada vem de _selecao_hc_valor, e o filtro linha_min/linha_max
+    # passa a operar sobre o valor COM SINAL. Assim "+13.5 a +40.5" no seletor
+    # filtra exatamente o lado + na faixa certa (e "-40.5 a -0.5" o lado -).
+    if _mercado_eh_hc(bot.get('mercado', '')):
+        linha = _selecao_hc_valor(tick.get('selecao'))
+    else:
+        linha = _parse_linha(tick.get('linha'))
     if linha is None:
         return False, 'linha_invalida'
 
@@ -1557,6 +1804,9 @@ async def executar_backtest(job_id: int):
                     continue
 
             # v4: aplica filtros unificados (comp + hist normalizado)
+            # mercado do bot (usado pro desvio HC vs over/under). Definido aqui
+            # pra estar disponivel tanto no filtro quanto na resolucao abaixo.
+            mercado_bot_loop = bot.get('mercado', '')
             stats = None
             if filtros_unificados:
                 ja = tick.get('jogador_a')
@@ -1577,24 +1827,88 @@ async def executar_backtest(job_id: int):
                     continue
 
                 linha_num = _parse_linha(tick.get('linha')) or 0
-                stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media,
-                                            lado=_lado_aposta(tick.get('selecao')),
-                                            ts_ref=tick['ts'])
-                stats['linha_atual'] = linha_num
 
-                passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_unificados)
-                if not passou_comp:
-                    if 'h2h_insuficiente' in motivo:
-                        rej['h2h_insuf'] += 1
-                    else:
-                        rej['comp'] += 1
-                    continue
+                # ===== RAMO HANDICAP (ah_ft) =====
+                # Se o bot e de handicap, o filtro NAO e WR de total (over/under),
+                # e sim o pct de cobertura do handicap (validado vs TM). Caminho
+                # ISOLADO: nao toca a logica de over/under abaixo.
+                if _mercado_eh_hc(mercado_bot_loop):
+                    stats = calcular_stat_hc(
+                        jogos_h2h, tick.get('selecao', ''), ja, jb)
+                    stats['linha_atual'] = linha_num
+                    stats['qtd_h2h'] = stats.get('hc_pct_qtd', 0)
 
-                # v10: passou nos filtros, mas com amostra h2h fraca? Marca pra
-                # reportar (NAO rejeita - so transparencia). qtd_h2h vem do stats.
-                qtd_h2h = stats.get('qtd_h2h', 0) or 0
-                if qtd_h2h < H2H_MIN_SAUDAVEL:
-                    qualidade['apostas_h2h_fraco'] += 1
+                    # Config do filtro de HC. Ordem de precedencia:
+                    #  1) campos dedicados no bot (hc_pct_min/max, hc_min_partidas)
+                    #     - usados se a UI algum dia mandar campos proprios.
+                    #  2) o FILTRO HISTORICO existente da UI (filtrosHistAdicionados):
+                    #     reusa 'prob' (faixa de %) como o pct de cobertura e
+                    #     'minPartidas' como min de confrontos. Assim o usuario cria
+                    #     o bot de HC com o filtro de "Probabilidade" que JA existe,
+                    #     sem precisar de UI nova. prob vem em 0-100 -> converte /100.
+                    #  3) defaults seguros da estrategia (min 0.87, 20 partidas).
+                    hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
+                    hc_max = bot.get('hc_pct_max')
+                    hc_min_part = bot.get('hc_min_partidas')
+
+                    # se nao veio campo dedicado, tenta o filtro historico da UI
+                    if hc_min is None and hc_max is None:
+                        for _f in (filtros_unificados or []):
+                            if (_f.get('tipo') or '').lower() == 'wr':
+                                # 'wr' e o filtro de probabilidade da UI (0-100)
+                                _mn = _f.get('min') if _f.get('minAtivo') else None
+                                _mx = _f.get('max') if _f.get('maxAtivo') else None
+                                # prob 0-100 -> fracao 0..1
+                                if _mn is not None:
+                                    _v, _e = _num_seguro(_mn)
+                                    hc_min = (_v / 100.0) if (_e is None and _v > 1) else _v
+                                if _mx is not None:
+                                    _v, _e = _num_seguro(_mx)
+                                    hc_max = (_v / 100.0) if (_e is None and _v > 1) else _v
+                                if hc_min_part is None:
+                                    hc_min_part = _f.get('hist_min_partidas')
+                                break
+
+                    # default final se nada foi configurado
+                    if hc_min is None and hc_max is None:
+                        hc_min = 0.87
+                    try:
+                        hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
+                    except (TypeError, ValueError):
+                        hc_min_part = 20
+
+                    passou_hc, motivo_hc = _ramo_hc_pct(
+                        stats, hc_min, hc_max, hc_min_part)
+                    if not passou_hc:
+                        if 'insuf' in motivo_hc:
+                            rej['h2h_insuf'] += 1
+                        else:
+                            rej['comp'] += 1
+                        continue
+                    qtd_h2h = stats.get('hc_pct_qtd', 0) or 0
+                    if qtd_h2h < H2H_MIN_SAUDAVEL:
+                        qualidade['apostas_h2h_fraco'] += 1
+
+                # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
+                else:
+                    stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media,
+                                                lado=_lado_aposta(tick.get('selecao')),
+                                                ts_ref=tick['ts'])
+                    stats['linha_atual'] = linha_num
+
+                    passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_unificados)
+                    if not passou_comp:
+                        if 'h2h_insuficiente' in motivo:
+                            rej['h2h_insuf'] += 1
+                        else:
+                            rej['comp'] += 1
+                        continue
+
+                    # v10: passou nos filtros, mas com amostra h2h fraca? Marca pra
+                    # reportar (NAO rejeita - so transparencia). qtd_h2h vem do stats.
+                    qtd_h2h = stats.get('qtd_h2h', 0) or 0
+                    if qtd_h2h < H2H_MIN_SAUDAVEL:
+                        qualidade['apostas_h2h_fraco'] += 1
 
             placar = placar_final.get(evt)
             if not placar:
@@ -1605,10 +1919,18 @@ async def executar_backtest(job_id: int):
 
             linha_num = _parse_linha(tick.get('linha'))
             mercado_bot = bot.get('mercado', '')
-            resultado = _resolve_resultado(
-                mercado_bot, tick.get('selecao', ''),
-                linha_num, score_home, score_away,
-            )
+            # ===== resolucao HANDICAP por NICK (isolada) =====
+            if _mercado_eh_hc(mercado_bot):
+                resultado = _resolve_resultado_hc(
+                    tick.get('selecao', ''),
+                    tick.get('jogador_a'), tick.get('jogador_b'),
+                    score_home, score_away,
+                )
+            else:
+                resultado = _resolve_resultado(
+                    mercado_bot, tick.get('selecao', ''),
+                    linha_num, score_home, score_away,
+                )
             if resultado is None:
                 # Mercados de 1o tempo (HT) nao tem como ser resolvidos com o placar
                 # FINAL - precisariam do placar do intervalo (nao disponivel aqui).

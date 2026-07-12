@@ -69,6 +69,13 @@ from workers.backtest_runner import (
     _extrair_janelas_dos_filtros,
     ESPORTE_UI_PARA_BANCO,
     MIN_H2H_DEFAULT,
+    # --- HC (handicap): mesmas funcoes do backtest, pra ao vivo NAO divergir ---
+    _mercado_eh_hc,
+    calcular_stat_hc,
+    _ramo_hc_pct,
+    _resolve_resultado_hc,
+    _selecao_hc_valor,
+    _num_seguro,
 )
 
 
@@ -385,6 +392,21 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             state.contador_rejeicoes['lado'] = state.contador_rejeicoes.get('lado', 0) + 1
             return
 
+    # ===== filtro de LADO do HANDICAP (+ / -) =====
+    # Pro HC, o "lado" nao e over/under, e o SINAL do handicap: '+' (zebra
+    # recebe) ou '-' (favorito da). O bot define isso em filtros['hc_lado']
+    # ('+', '-' ou 'ambos'/None). Se definido, rejeita o tick do lado errado.
+    # Ex: hc_lado='+' -> so aposta Kiev (+5.5), nunca Bangkok (-5.5).
+    if _mercado_eh_hc(bot.get('mercado', '')):
+        hc_lado = (filtros.get('hc_lado') or '').strip()
+        if hc_lado in ('+', '-'):
+            val = _selecao_hc_valor(tick.get('selecao'))
+            if val is not None:
+                sinal_tick = '+' if val > 0 else '-'
+                if sinal_tick != hc_lado:
+                    state.contador_rejeicoes['lado'] = state.contador_rejeicoes.get('lado', 0) + 1
+                    return
+
     passou, motivo = _avaliar_filtros_basicos(tick, bot)
     if not passou:
         state.contador_rejeicoes['basico'] = state.contador_rejeicoes.get('basico', 0) + 1
@@ -421,23 +443,65 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
         linha_num = _parse_linha(tick.get('linha')) or 0
 
-        janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
-        # v9: passa o LADO (over/under) pra calcular o WR do lado APOSTADO.
-        # Antes o WR era sempre do over e usado nos 2 lados - um under apitava
-        # olhando o WR do over (ex: over 65% -> under apitava como se fosse 65%,
-        # quando o under real era 35%). Agora o filtro checa o numero certo.
-        lado_aposta = _selecao_eh_over_under(tick.get('selecao'))
-        # v10: ts_ref = tick['ts'] (momento da aposta) p/ janelas de tempo (24h/7d).
-        stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta, ts_ref=tick.get('ts'))
-        stats_dict['linha_atual'] = linha_num
+        mercado_bot_hc = bot.get('mercado', '')
+        # ===== RAMO HANDICAP (ah_ft) - MESMA logica do backtest (nao diverge) =====
+        if _mercado_eh_hc(mercado_bot_hc):
+            stats_dict = calcular_stat_hc(jogos_h2h, tick.get('selecao', ''), ja, jb)
+            stats_dict['linha_atual'] = linha_num
+            stats_dict['qtd_h2h'] = stats_dict.get('hc_pct_qtd', 0)
 
-        passou_comp, motivo = _aplicar_filtros_complementares(stats_dict, filtros_unificados)
-        if not passou_comp:
-            if 'h2h_insuficiente' in motivo:
-                state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
-            else:
-                state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
-            return
+            # config do filtro HC: campos dedicados > filtro historico da UI > default
+            hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
+            hc_max = bot.get('hc_pct_max')
+            hc_min_part = bot.get('hc_min_partidas')
+            if hc_min is None and hc_max is None:
+                for _f in (filtros_unificados or []):
+                    if (_f.get('tipo') or '').lower() == 'wr':
+                        _mn = _f.get('min') if _f.get('minAtivo') else None
+                        _mx = _f.get('max') if _f.get('maxAtivo') else None
+                        if _mn is not None:
+                            _v, _e = _num_seguro(_mn)
+                            hc_min = (_v / 100.0) if (_e is None and _v > 1) else _v
+                        if _mx is not None:
+                            _v, _e = _num_seguro(_mx)
+                            hc_max = (_v / 100.0) if (_e is None and _v > 1) else _v
+                        if hc_min_part is None:
+                            hc_min_part = _f.get('hist_min_partidas')
+                        break
+            if hc_min is None and hc_max is None:
+                hc_min = 0.87
+            try:
+                hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
+            except (TypeError, ValueError):
+                hc_min_part = 20
+
+            passou_hc, motivo_hc = _ramo_hc_pct(stats_dict, hc_min, hc_max, hc_min_part)
+            if not passou_hc:
+                if 'insuf' in motivo_hc:
+                    state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
+                else:
+                    state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
+                return
+
+        # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
+        else:
+            janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
+            # v9: passa o LADO (over/under) pra calcular o WR do lado APOSTADO.
+            # Antes o WR era sempre do over e usado nos 2 lados - um under apitava
+            # olhando o WR do over (ex: over 65% -> under apitava como se fosse 65%,
+            # quando o under real era 35%). Agora o filtro checa o numero certo.
+            lado_aposta = _selecao_eh_over_under(tick.get('selecao'))
+            # v10: ts_ref = tick['ts'] (momento da aposta) p/ janelas de tempo (24h/7d).
+            stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta, ts_ref=tick.get('ts'))
+            stats_dict['linha_atual'] = linha_num
+
+            passou_comp, motivo = _aplicar_filtros_complementares(stats_dict, filtros_unificados)
+            if not passou_comp:
+                if 'h2h_insuficiente' in motivo:
+                    state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
+                else:
+                    state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
+                return
 
     # v7: evitar linhas em sequencia - bloqueia se ja apitou QUALQUER linha
     # do MESMO mercado_tipo nesse event_id (1 aposta maxima por mercado por jogo).
@@ -548,7 +612,13 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
         if diff_min:
             partes.append(f"diff>={diff_min}")
 
-    linha_num = _parse_linha(tick.get('linha'))
+    # pro HC, mostra a linha REAL (com sinal, da selecao), nao a coluna do tick
+    if _mercado_eh_hc(bot.get('mercado', '')):
+        linha_num = _selecao_hc_valor(tick.get('selecao'))
+        if linha_num is None:
+            linha_num = _parse_linha(tick.get('linha'))
+    else:
+        linha_num = _parse_linha(tick.get('linha'))
     if linha_num is not None:
         partes.append(f"L={linha_num}")
 
@@ -561,7 +631,18 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
 async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo: Optional[str] = None, liga_traduzida: Optional[str] = None):
     global state
 
-    linha_num = _parse_linha(tick.get('linha'))
+    # LINHA GRAVADA NA APOSTA.
+    # Pro HANDICAP, a coluna 'linha' do tick NAO e confiavel: a superbet manda o
+    # sinal invertido/ausente (ex: selecao '(13.5)' com coluna '-13.50'). O valor
+    # verdadeiro (com sinal do lado apostado) esta na SELECAO. Grava o valor certo
+    # pra que Telegram, historico e analises leiam a linha real da aposta.
+    # Fallback pra coluna se a selecao nao tiver valor (blindado).
+    if _mercado_eh_hc(bot.get('mercado', '')):
+        linha_num = _selecao_hc_valor(tick.get('selecao'))
+        if linha_num is None:
+            linha_num = _parse_linha(tick.get('linha'))
+    else:
+        linha_num = _parse_linha(tick.get('linha'))
 
     # mesmo flag do _avaliar_e_apostar, recalculado aqui (escopo proprio).
     # Default true (legado). Usado na guarda atomica do INSERT contra over+under.
@@ -662,7 +743,8 @@ async def _resolver_apostas_pendentes():
         async with state.pool.acquire() as conn:
             apostas = await conn.fetch("""
                 SELECT a.id, a.bot_id, a.event_id, a.bookmaker, a.mercado,
-                       a.linha, a.selecao, a.lado, a.odd, a.stake
+                       a.linha, a.selecao, a.lado, a.odd, a.stake,
+                       a.jogador_a, a.jogador_b
                 FROM apostas a
                 WHERE a.status = 'pendente'
                   AND a.modo = 'simulado'
@@ -702,11 +784,19 @@ async def _resolver_apostas_pendentes():
                 if (datetime.now(ultimo_tick.tzinfo) - ultimo_tick).total_seconds() < 180:
                     continue
 
-                resultado = _resolve_resultado(
-                    ap['mercado'], ap['selecao'] or ap['lado'],
-                    float(ap['linha']) if ap['linha'] else None,
-                    placar['score_home'], placar['score_away']
-                )
+                # ===== resolucao HANDICAP por NICK (isolada) =====
+                if _mercado_eh_hc(ap['mercado']):
+                    resultado = _resolve_resultado_hc(
+                        ap['selecao'] or ap['lado'],
+                        ap.get('jogador_a'), ap.get('jogador_b'),
+                        placar['score_home'], placar['score_away']
+                    )
+                else:
+                    resultado = _resolve_resultado(
+                        ap['mercado'], ap['selecao'] or ap['lado'],
+                        float(ap['linha']) if ap['linha'] else None,
+                        placar['score_home'], placar['score_away']
+                    )
 
                 if resultado is None:
                     continue
