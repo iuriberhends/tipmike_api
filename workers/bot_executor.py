@@ -697,12 +697,23 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                     $16, $17, $18, $19,
                     $20::jsonb, $21,
                     NOW()
-                WHERE NOT ($22::boolean) OR NOT EXISTS (
+                WHERE (NOT ($22::boolean) OR NOT EXISTS (
                     SELECT 1 FROM apostas
                     WHERE bot_id = $1
                       AND event_id = $5
                       AND modo = 'simulado'
                       AND (mercado_tipo = $9 OR ($9 IS NULL AND mercado_tipo IS NULL))
+                ))
+                  -- FIX dedup por linha: NUNCA aposta a mesma (evento+mercado+linha)
+                  -- 2x, mesmo com evitarLinhasSeq=false. Permite linhas DIFERENTES
+                  -- (13.5, 14.5, ...) mas bloqueia a repetida (duas 13.5).
+                  AND NOT EXISTS (
+                    SELECT 1 FROM apostas
+                    WHERE bot_id = $1
+                      AND event_id = $5
+                      AND modo = 'simulado'
+                      AND (mercado_tipo = $9 OR ($9 IS NULL AND mercado_tipo IS NULL))
+                      AND linha = $10
                 )
                 ON CONFLICT (bot_id, tick_id) WHERE tick_id IS NOT NULL DO NOTHING
                 RETURNING id
