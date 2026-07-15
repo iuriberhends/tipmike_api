@@ -18,10 +18,11 @@ from typing import Any, Optional
 import json
 import logging
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, Query
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query
 from pydantic import BaseModel, Field, field_validator
 
 from database import get_pool
+from security import get_current_user, acesso_total
 from workers.backtest_runner import executar_backtest
 
 logger = logging.getLogger(__name__)
@@ -95,17 +96,19 @@ def _row_to_job_dict(row: Any, incluir_detalhe: bool = False) -> dict:
 # ============================================================
 
 @router.post("/jobs")
-async def criar_job(req: BacktestCreateRequest, background: BackgroundTasks):
+async def criar_job(req: BacktestCreateRequest, background: BackgroundTasks, usuario: dict = Depends(get_current_user)):
     pool = get_pool()
     async with pool.acquire() as conn:
         bot_row = await conn.fetchrow(
-            "SELECT id, nome, casa, esporte, mercado, torneios, torneios_excluir, "
+            "SELECT id, user_id, nome, casa, esporte, mercado, torneios, torneios_excluir, "
             "linha_min, linha_max, odd_min, odd_max, whitelist_pares, blacklist_pares, "
             "whitelist_cenarios, max_apostas_partida, filtros "
             "FROM bots WHERE id = $1",
             req.bot_id,
         )
         if not bot_row:
+            raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
+        if not acesso_total(usuario) and bot_row["user_id"] != usuario.get("id"):
             raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
 
         bot_dict = dict(bot_row)
@@ -122,13 +125,14 @@ async def criar_job(req: BacktestCreateRequest, background: BackgroundTasks):
             """
             INSERT INTO backtest_jobs
                 (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
-                 banca_inicial, bot_snapshot, status, progresso)
-            VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, 'pendente', 0)
+                 banca_inicial, bot_snapshot, status, progresso, user_id)
+            VALUES ($1, $2, $3, $4, $5, $6, $7::jsonb, 'pendente', 0, $8)
             RETURNING id
             """,
             req.bot_id, req.data_inicio, req.data_fim,
             req.stake_modo, req.stake_valor, req.banca_inicial,
             json.dumps(bot_dict, default=str),
+            usuario.get("id"),
         )
 
     logger.info(f"[backtest] Job {job_id} criado para bot {req.bot_id}")
@@ -140,19 +144,24 @@ async def criar_job(req: BacktestCreateRequest, background: BackgroundTasks):
 
 
 @router.get("/jobs/{job_id}")
-async def get_job(job_id: int, incluir_detalhe: bool = Query(default=False)):
+async def get_job(job_id: int, incluir_detalhe: bool = Query(default=False), usuario: dict = Depends(get_current_user)):
     pool = get_pool()
     async with pool.acquire() as conn:
         row = await conn.fetchrow("SELECT * FROM backtest_jobs WHERE id = $1", job_id)
     if not row:
         raise HTTPException(status_code=404, detail=f"Job {job_id} nao encontrado")
+    if not acesso_total(usuario) and row["user_id"] != usuario.get("id"):
+        raise HTTPException(status_code=404, detail=f"Job {job_id} nao encontrado")
     return _row_to_job_dict(row, incluir_detalhe=incluir_detalhe)
 
 
 @router.get("/bot/{bot_id}")
-async def listar_jobs_do_bot(bot_id: int, limit: int = Query(default=10, le=50)):
+async def listar_jobs_do_bot(bot_id: int, limit: int = Query(default=10, le=50), usuario: dict = Depends(get_current_user)):
     pool = get_pool()
     async with pool.acquire() as conn:
+        dono = await conn.fetchrow("SELECT user_id FROM bots WHERE id = $1", bot_id)
+        if not dono or (not acesso_total(usuario) and dono["user_id"] != usuario.get("id")):
+            raise HTTPException(status_code=404, detail=f"Bot {bot_id} nao encontrado")
         rows = await conn.fetch(
             "SELECT * FROM backtest_jobs WHERE bot_id = $1 "
             "ORDER BY iniciado_em DESC LIMIT $2",
@@ -162,11 +171,13 @@ async def listar_jobs_do_bot(bot_id: int, limit: int = Query(default=10, le=50))
 
 
 @router.delete("/jobs/{job_id}")
-async def deletar_job(job_id: int):
+async def deletar_job(job_id: int, usuario: dict = Depends(get_current_user)):
     pool = get_pool()
     async with pool.acquire() as conn:
-        row = await conn.fetchrow("SELECT status FROM backtest_jobs WHERE id = $1", job_id)
+        row = await conn.fetchrow("SELECT status, user_id FROM backtest_jobs WHERE id = $1", job_id)
         if not row:
+            raise HTTPException(status_code=404, detail=f"Job {job_id} nao encontrado")
+        if not acesso_total(usuario) and row["user_id"] != usuario.get("id"):
             raise HTTPException(status_code=404, detail=f"Job {job_id} nao encontrado")
 
         if row["status"] in ("concluido", "erro", "pendente"):

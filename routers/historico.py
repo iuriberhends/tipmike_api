@@ -16,10 +16,11 @@ from datetime import datetime, timezone, timedelta
 from decimal import Decimal
 from typing import Optional
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import Response
 
 from database import db
+from security import get_current_user, acesso_total
 
 router = APIRouter(prefix="/bots", tags=["historico"])
 
@@ -43,6 +44,7 @@ async def get_historico(
     periodo: str = Query("30d", description="dia | 3d | 7d | 15d | 30d | todas"),
     modo: str = Query("simulado", description="simulado | real"),
     limite_tips: int = Query(60, ge=1, le=500, description="Quantas tips retornar"),
+    usuario: dict = Depends(get_current_user),
 ):
     """
     Retorna histórico completo do bot:
@@ -65,7 +67,7 @@ async def get_historico(
         # 1. Bot existe?
         bot_row = await conn.fetchrow("""
             SELECT id, nome, descricao, casa, esporte, mercado, status,
-                   torneios, criado_em, atualizado_em
+                   torneios, criado_em, atualizado_em, user_id
             FROM bots
             WHERE id = $1
         """, bot_id)
@@ -73,6 +75,10 @@ async def get_historico(
             raise HTTPException(404, f"Bot {bot_id} nao encontrado")
 
         bot = dict(bot_row)
+        dono_id = bot.pop("user_id", None)
+        if not acesso_total(usuario) and dono_id != usuario.get("id"):
+            # 404 igual ao inexistente: não vaza existência de bot alheio.
+            raise HTTPException(404, f"Bot {bot_id} nao encontrado")
         # Liga: pega 1° torneio do bot (UI espera string única)
         liga_str = ""
         torneios = bot.get("torneios")
@@ -261,6 +267,7 @@ async def get_historico(
 async def get_stats_bot(
     bot_id: int,
     modo: str = Query("simulado"),
+    usuario: dict = Depends(get_current_user),
 ):
     """
     Stats resumidos do bot pra mostrar inline no card da tela /bots:
@@ -270,6 +277,10 @@ async def get_stats_bot(
         raise HTTPException(400, "modo deve ser 'simulado' ou 'real'")
 
     async with db() as conn:
+        dono = await conn.fetchrow("SELECT user_id FROM bots WHERE id = $1", bot_id)
+        if not dono or (not acesso_total(usuario) and dono["user_id"] != usuario.get("id")):
+            raise HTTPException(404, f"Bot {bot_id} nao encontrado")
+
         row = await conn.fetchrow("""
             SELECT
                 COUNT(*) AS total,
@@ -357,6 +368,7 @@ async def export_apostas_csv(
     periodo: str = Query("todas", description="dia | 3d | 7d | 15d | 30d | todas (todas = sem filtro de data)"),
     resolvidas: bool = Query(False, description="True: só apostas com resultado definido"),
     limit: int = Query(50000, ge=1, le=200000),
+    usuario: dict = Depends(get_current_user),
 ):
     """
     Exporta apostas de um bot pra CSV.
@@ -368,8 +380,10 @@ async def export_apostas_csv(
         raise HTTPException(400, f"periodo invalido. Use: {list(PERIODO_DIAS.keys())}")
 
     async with db() as conn:
-        bot_row = await conn.fetchrow("SELECT id, nome FROM bots WHERE id = $1", bot_id)
+        bot_row = await conn.fetchrow("SELECT id, nome, user_id FROM bots WHERE id = $1", bot_id)
         if not bot_row:
+            raise HTTPException(404, f"Bot {bot_id} nao encontrado")
+        if not acesso_total(usuario) and bot_row["user_id"] != usuario.get("id"):
             raise HTTPException(404, f"Bot {bot_id} nao encontrado")
 
         where = ["bot_id = $1", "modo = $2"]

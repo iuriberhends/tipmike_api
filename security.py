@@ -373,3 +373,17 @@ async def require_admin(usuario: dict = Depends(get_current_user)) -> dict:
     if usuario.get("role") != "admin":
         raise HTTPException(status_code=403, detail="Requer permissão de administrador.")
     return usuario
+
+
+# ─────────────────────── Autorização / escopo (Fase 4) ──────────────────────
+
+def acesso_total(usuario: dict) -> bool:
+    """
+    True para quem enxerga TODOS os dados: admins e tokens de serviço
+    (workers internos). Usuário comum enxerga apenas o que é dele.
+    Nunca levanta exceção — qualquer anomalia nega o acesso total.
+    """
+    try:
+        return (usuario or {}).get("role") in ("admin", "service")
+    except Exception:
+        return False

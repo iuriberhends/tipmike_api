@@ -13,10 +13,14 @@ ENDPOINTS:
 - GET /stats/overview, /stats/proximos, /stats/ultimos, /stats/heatmap,
        /stats/distribuicoes, /stats/jogadores, /stats/torneios, /stats/preview-jogador
 """
-from fastapi import APIRouter, HTTPException, Query
+import logging
+from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import Optional
 from datetime import datetime, timezone, timedelta
 from database import db
+from security import get_current_user, acesso_total
+
+logger = logging.getLogger("tipmike.stats")
 
 router = APIRouter(prefix="/stats", tags=["Stats"])
 
@@ -69,30 +73,44 @@ def _sport_from_esporte(esporte: str) -> str:
 # ============================================================
 
 @router.get("/dashboard")
-async def dashboard():
+async def dashboard(usuario: dict = Depends(get_current_user)):
     agora = datetime.utcnow()
     inicio_hoje = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
     uma_hora_atras = agora - timedelta(hours=1)
 
-    async with db() as conn:
-        # 1 query agregada com todos os contadores
-        row = await conn.fetchrow("""
-            SELECT
-                (SELECT COUNT(*) FROM bots WHERE status = 'ativo') AS bots_ativos,
-                (SELECT COUNT(*) FROM bots WHERE status != 'arquivado') AS bots_total,
-                (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1) AS apostas_hoje,
-                (SELECT COUNT(*) FROM apostas WHERE resultado = 'pendente') AS apostas_pendentes,
-                (SELECT COALESCE(SUM(lucro_unidades), 0) FROM apostas
-                 WHERE apostado_em >= $1 AND resultado != 'pendente') AS lucro_hoje,
-                (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1 AND resultado = 'green') AS ganhas_hoje,
-                (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1 AND resultado != 'pendente') AS resolvidas_hoje,
-                (SELECT COUNT(*) FROM ticks WHERE ts >= $2) AS ticks_ultima_hora
-        """, inicio_hoje, uma_hora_atras)
+    # Fase 4: usuário comum vê contadores só dos próprios bots/apostas.
+    # Ticks/bookmakers são dados de mercado da plataforma (globais).
+    args = [inicio_hoje, uma_hora_atras]
+    filtro_bots = ""
+    filtro_apostas = ""
+    if not acesso_total(usuario):
+        args.append(usuario.get("id"))
+        filtro_bots = f" AND user_id = ${len(args)}"
+        filtro_apostas = f" AND bot_id IN (SELECT id FROM bots WHERE user_id = ${len(args)})"
 
-        bookmakers_rows = await conn.fetch(
-            "SELECT DISTINCT bookmaker FROM ticks WHERE ts >= $1 ORDER BY bookmaker",
-            uma_hora_atras
-        )
+    try:
+        async with db() as conn:
+            # 1 query agregada com todos os contadores
+            row = await conn.fetchrow(f"""
+                SELECT
+                    (SELECT COUNT(*) FROM bots WHERE status = 'ativo'{filtro_bots}) AS bots_ativos,
+                    (SELECT COUNT(*) FROM bots WHERE status != 'arquivado'{filtro_bots}) AS bots_total,
+                    (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1{filtro_apostas}) AS apostas_hoje,
+                    (SELECT COUNT(*) FROM apostas WHERE resultado = 'pendente'{filtro_apostas}) AS apostas_pendentes,
+                    (SELECT COALESCE(SUM(lucro_unidades), 0) FROM apostas
+                     WHERE apostado_em >= $1 AND resultado != 'pendente'{filtro_apostas}) AS lucro_hoje,
+                    (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1 AND resultado = 'green'{filtro_apostas}) AS ganhas_hoje,
+                    (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1 AND resultado != 'pendente'{filtro_apostas}) AS resolvidas_hoje,
+                    (SELECT COUNT(*) FROM ticks WHERE ts >= $2) AS ticks_ultima_hora
+            """, *args)
+
+            bookmakers_rows = await conn.fetch(
+                "SELECT DISTINCT bookmaker FROM ticks WHERE ts >= $1 ORDER BY bookmaker",
+                uma_hora_atras
+            )
+    except Exception:
+        logger.exception("Erro ao montar dashboard.")
+        raise HTTPException(status_code=500, detail="Erro interno ao montar o dashboard.")
 
     win_rate = round((row['ganhas_hoje'] / row['resolvidas_hoje'] * 100), 1) if row['resolvidas_hoje'] > 0 else None
 
@@ -110,8 +128,13 @@ async def dashboard():
 
 
 @router.get("/bots")
-async def stats_todos_bots():
-    sql = """
+async def stats_todos_bots(usuario: dict = Depends(get_current_user)):
+    args = []
+    filtro = ""
+    if not acesso_total(usuario):
+        args.append(usuario.get("id"))
+        filtro = f" AND b.user_id = ${len(args)}"
+    sql = f"""
         SELECT
             b.id, b.nome, b.casa, b.esporte, b.mercado, b.status,
             COUNT(a.id) AS total_apostas,
@@ -126,20 +149,26 @@ async def stats_todos_bots():
             ) AS win_rate
         FROM bots b
         LEFT JOIN apostas a ON a.bot_id = b.id AND a.modo = 'real'
-        WHERE b.status != 'arquivado'
+        WHERE b.status != 'arquivado'{filtro}
         GROUP BY b.id, b.nome, b.casa, b.esporte, b.mercado, b.status
         ORDER BY lucro_total DESC
     """
-    async with db() as conn:
-        rows = await conn.fetch(sql)
+    try:
+        async with db() as conn:
+            rows = await conn.fetch(sql, *args)
+    except Exception:
+        logger.exception("Erro no stats de bots.")
+        raise HTTPException(status_code=500, detail="Erro interno ao montar stats dos bots.")
     return [dict(r) for r in rows]
 
 
 @router.get("/bots/{bot_id}")
-async def stats_bot(bot_id: int):
+async def stats_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
     async with db() as conn:
         bot = await conn.fetchrow("SELECT * FROM bots WHERE id = $1", bot_id)
         if not bot:
+            raise HTTPException(status_code=404, detail="Bot não encontrado")
+        if not acesso_total(usuario) and bot["user_id"] != usuario.get("id"):
             raise HTTPException(status_code=404, detail="Bot não encontrado")
 
         stats = await conn.fetchrow("""

@@ -34,12 +34,13 @@ import re
 from datetime import datetime
 from typing import Optional
 
-from fastapi import (APIRouter, BackgroundTasks, File, HTTPException,
+from fastapi import (APIRouter, BackgroundTasks, Depends, File, HTTPException,
                      UploadFile)
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
 from database import get_pool
+from security import get_current_user, acesso_total
 from workers.backtest_runner import executar_backtest
 from workers.backtest_upload import (salvar_upload, parse_ticks_parquet,
                                      BacktestUploadError)
@@ -152,7 +153,7 @@ class BacktestUploadJobRequest(BaseModel):
 
 
 @router.post("/jobs-upload")
-async def criar_job_upload(req: BacktestUploadJobRequest, background: BackgroundTasks):
+async def criar_job_upload(req: BacktestUploadJobRequest, background: BackgroundTasks, usuario: dict = Depends(get_current_user)):
     """
     Cria um job de backtest usando os ticks do ARQUIVO (upload_id), nao do banco.
     Mesmo fluxo do POST /jobs: snapshot do bot, insere job, dispara worker.
@@ -177,13 +178,15 @@ async def criar_job_upload(req: BacktestUploadJobRequest, background: Background
     try:
         async with pool.acquire() as conn:
             bot_row = await conn.fetchrow(
-                "SELECT id, nome, casa, esporte, mercado, torneios, torneios_excluir, "
+                "SELECT id, user_id, nome, casa, esporte, mercado, torneios, torneios_excluir, "
                 "linha_min, linha_max, odd_min, odd_max, whitelist_pares, blacklist_pares, "
                 "whitelist_cenarios, max_apostas_partida, filtros "
                 "FROM bots WHERE id = $1",
                 req.bot_id,
             )
             if not bot_row:
+                raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
+            if not acesso_total(usuario) and bot_row["user_id"] != usuario.get("id"):
                 raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
 
             bot_dict = dict(bot_row)
@@ -201,12 +204,13 @@ async def criar_job_upload(req: BacktestUploadJobRequest, background: Background
                     """
                     INSERT INTO backtest_jobs
                         (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
-                         banca_inicial, bot_snapshot, status, progresso, upload_id)
-                    VALUES ($1, NULL, NULL, $2, $3, $4, $5::jsonb, 'pendente', 0, $6)
+                         banca_inicial, bot_snapshot, status, progresso, upload_id, user_id)
+                    VALUES ($1, NULL, NULL, $2, $3, $4, $5::jsonb, 'pendente', 0, $6, $7)
                     RETURNING id
                     """,
                     req.bot_id, req.stake_modo, req.stake_valor, req.banca_inicial,
                     json.dumps(bot_dict, default=str), req.upload_id,
+                    usuario.get("id"),
                 )
             except Exception as e:
                 # erro comum: coluna upload_id ainda nao existe -> avisa pra migrar
@@ -240,7 +244,7 @@ class ValidarCruzadoRequest(BaseModel):
 
 
 @router.post("/validar-cruzado")
-async def validar_cruzado_endpoint(req: ValidarCruzadoRequest):
+async def validar_cruzado_endpoint(req: ValidarCruzadoRequest, usuario: dict = Depends(get_current_user)):
     """
     Compara o arquivo upado com o banco (amostra) pra detectar divergencia ANTES
     de rodar o backtest. Retorna relatorio: quantos so estao no arquivo, quantos
@@ -254,10 +258,12 @@ async def validar_cruzado_endpoint(req: ValidarCruzadoRequest):
     try:
         async with pool.acquire() as conn:
             bot_row = await conn.fetchrow(
-                "SELECT casa, esporte, torneios, torneios_excluir FROM bots WHERE id=$1",
+                "SELECT casa, esporte, torneios, torneios_excluir, user_id FROM bots WHERE id=$1",
                 req.bot_id,
             )
             if not bot_row:
+                raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
+            if not acesso_total(usuario) and bot_row["user_id"] != usuario.get("id"):
                 raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
 
             bot_dict = dict(bot_row)
@@ -610,7 +616,7 @@ async def _rodar_backtest_seguro(job_id: int):
 
 
 @router.post("/jobs-avulso")
-async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTasks):
+async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTasks, usuario: dict = Depends(get_current_user)):
     """
     Backtest STANDALONE: nao precisa de bot. Os filtros (WR H2H, placar, tempo,
     black/white list de nicks, mercado/lado) vem da aba; os ticks vem do arquivo
@@ -656,12 +662,13 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
                     """
                     INSERT INTO backtest_jobs
                         (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
-                         banca_inicial, bot_snapshot, status, progresso, upload_id)
-                    VALUES (NULL, NULL, NULL, $1, $2, $3, $4::jsonb, 'pendente', 0, $5)
+                         banca_inicial, bot_snapshot, status, progresso, upload_id, user_id)
+                    VALUES (NULL, NULL, NULL, $1, $2, $3, $4::jsonb, 'pendente', 0, $5, $6)
                     RETURNING id
                     """,
                     req.stake_modo, req.stake_valor, req.banca_inicial,
                     snapshot_json, req.upload_id,
+                    usuario.get("id"),
                 )
             except Exception as e:
                 msg = str(e).lower()
@@ -695,15 +702,17 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
 
 
 @router.get("/jobs/{job_id}/planilha")
-async def baixar_planilha_apostas(job_id: int):
+async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_current_user)):
     """Gera um .xlsx com as apostas do backtest no MESMO formato do export do bot
     ao vivo (aba 'Tips Enviadas'). Permite comparar backtest vs vivo lado a lado.
     Le apostas_detalhe (ja salvo no job) e monta a planilha on-demand."""
     pool = await get_pool()
     async with pool.acquire() as conn:
         row = await conn.fetchrow(
-            "SELECT status, apostas_detalhe FROM backtest_jobs WHERE id=$1", job_id)
+            "SELECT status, apostas_detalhe, user_id FROM backtest_jobs WHERE id=$1", job_id)
     if row is None:
+        raise HTTPException(status_code=404, detail="job nao encontrado")
+    if not acesso_total(usuario) and row["user_id"] != usuario.get("id"):
         raise HTTPException(status_code=404, detail="job nao encontrado")
     detalhe = row["apostas_detalhe"]
     if isinstance(detalhe, str):

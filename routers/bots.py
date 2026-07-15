@@ -3,17 +3,26 @@
 v2 - inclui em_treinamento + telegram_canal_id na listagem e no detalhe.
      Endpoint PATCH /bots/:id/treinamento integrado aqui (invalida cache certo).
 """
-from fastapi import APIRouter, HTTPException, Query, Body
+from fastapi import APIRouter, Depends, HTTPException, Query, Body
 from pydantic import BaseModel, Field, field_validator
 from typing import Optional, List, Dict, Any
 from datetime import datetime, timedelta, time as time_t
 from decimal import Decimal
 import json
 import asyncio
+import logging
 
 from database import db
+from security import get_current_user, acesso_total
+
+logger = logging.getLogger("tipmike.bots")
 
 router = APIRouter(prefix="/bots", tags=["Bots"])
+
+
+def _escopo(usuario: dict) -> str:
+    """Chave de escopo pro cache: dados de um usuário nunca servem outro."""
+    return "all" if acesso_total(usuario) else f"u{usuario.get('id')}"
 
 # ============================================================
 # CACHE EM MEMÓRIA (TTL curto, invalida em mutações)
@@ -162,7 +171,10 @@ def _row_to_dict(row, full=True):
         'telegram_canal_id': d.get('telegram_canal_id'),
         'criado_em': d['criado_em'].isoformat() if d.get('criado_em') else None,
         'atualizado_em': d['atualizado_em'].isoformat() if d.get('atualizado_em') else None,
+        'user_id': d.get('user_id'),
     }
+    if 'dono_nome' in d:
+        base['dono_nome'] = d.get('dono_nome')
 
     if not full:
         return base
@@ -227,47 +239,60 @@ async def list_bots(
     casa: Optional[str] = Query(None),
     esporte: Optional[str] = Query(None),
     q: Optional[str] = Query(None, description="Busca por nome (LIKE)"),
+    usuario: dict = Depends(get_current_user),
 ):
     """
     Lista bots paginada. Inclui em_treinamento + telegram_canal_id
     pra o frontend mostrar corretamente o estado do botao Treinamento.
+
+    Fase 4 (ownership): usuário comum vê só os próprios bots;
+    admin/serviço vê todos (com user_id + dono_nome em cada item).
     """
-    cache_key = f"list:{limit}:{offset}:{status}:{casa}:{esporte}:{q}"
+    cache_key = f"list:{_escopo(usuario)}:{limit}:{offset}:{status}:{casa}:{esporte}:{q}"
     cached = _cache_get(cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
     where = []
     params = []
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        where.append(f"b.user_id = ${len(params)}")
     if status:
         params.append(status)
-        where.append(f"status = ${len(params)}")
+        where.append(f"b.status = ${len(params)}")
     if casa:
         params.append(casa)
-        where.append(f"casa = ${len(params)}")
+        where.append(f"b.casa = ${len(params)}")
     if esporte:
         params.append(esporte)
-        where.append(f"esporte = ${len(params)}")
+        where.append(f"b.esporte = ${len(params)}")
     if q:
         params.append(f"%{q}%")
-        where.append(f"nome ILIKE ${len(params)}")
+        where.append(f"b.nome ILIKE ${len(params)}")
 
     where_clause = ("WHERE " + " AND ".join(where)) if where else ""
 
     sql = f"""
-        SELECT id, nome, casa, esporte, mercado, status,
-               em_treinamento, telegram_canal_id,
-               criado_em, atualizado_em
-        FROM bots
+        SELECT b.id, b.nome, b.casa, b.esporte, b.mercado, b.status,
+               b.em_treinamento, b.telegram_canal_id,
+               b.criado_em, b.atualizado_em,
+               b.user_id, ud.nome AS dono_nome
+        FROM bots b
+        LEFT JOIN usuarios ud ON ud.id = b.user_id
         {where_clause}
-        ORDER BY atualizado_em DESC NULLS LAST, id DESC
+        ORDER BY b.atualizado_em DESC NULLS LAST, b.id DESC
         LIMIT {limit} OFFSET {offset}
     """
-    sql_count = f"SELECT COUNT(*) FROM bots {where_clause}"
+    sql_count = f"SELECT COUNT(*) FROM bots b {where_clause}"
 
-    async with db() as conn:
-        rows = await conn.fetch(sql, *params)
-        total = await conn.fetchval(sql_count, *params)
+    try:
+        async with db() as conn:
+            rows = await conn.fetch(sql, *params)
+            total = await conn.fetchval(sql_count, *params)
+    except Exception:
+        logger.exception("Erro ao listar bots.")
+        raise HTTPException(status_code=500, detail="Erro interno ao listar bots.")
 
     resultado = {
         "total": total,
@@ -280,15 +305,33 @@ async def list_bots(
 
 
 @router.get("/{bot_id}")
-async def get_bot(bot_id: int):
-    """Retorna bot completo (com JSONB) pra edição."""
-    cache_key = f"get:{bot_id}"
+async def get_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
+    """Retorna bot completo (com JSONB) pra edição. Bot alheio -> 404 (não vaza existência)."""
+    cache_key = f"get:{_escopo(usuario)}:{bot_id}"
     cached = _cache_get(cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
-    async with db() as conn:
-        row = await conn.fetchrow("SELECT * FROM bots WHERE id = $1", bot_id)
+    guarda = ""
+    params = [bot_id]
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        guarda = " AND b.user_id = $2"
+
+    try:
+        async with db() as conn:
+            row = await conn.fetchrow(
+                f"""
+                SELECT b.*, ud.nome AS dono_nome
+                FROM bots b
+                LEFT JOIN usuarios ud ON ud.id = b.user_id
+                WHERE b.id = $1{guarda}
+                """,
+                *params,
+            )
+    except Exception:
+        logger.exception("Erro ao buscar bot %s.", bot_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao buscar bot.")
 
     if not row:
         raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
@@ -299,21 +342,23 @@ async def get_bot(bot_id: int):
 
 
 @router.post("", status_code=201)
-async def create_bot(payload: BotCreate):
-    """Cria bot novo. Status default 'pausado'."""
+async def create_bot(payload: BotCreate, usuario: dict = Depends(get_current_user)):
+    """Cria bot novo. Status default 'pausado'. O dono é sempre quem cria (vem do token, nunca do payload)."""
+    if usuario.get("id") is None:
+        raise HTTPException(status_code=400, detail="Token de serviço não pode criar bots.")
     sql = """
         INSERT INTO bots (
             nome, descricao, status, casa, esporte, mercado,
             torneios, torneios_excluir,
             linha_min, linha_max, odd_min, odd_max,
             whitelist_pares, blacklist_pares, whitelist_cenarios,
-            max_apostas_partida, filtros
+            max_apostas_partida, filtros, user_id
         ) VALUES (
             $1, $2, 'pausado', $3, $4, $5,
             $6::jsonb, $7::jsonb,
             $8, $9, $10, $11,
             $12::jsonb, $13::jsonb, $14::jsonb,
-            $15, $16::jsonb
+            $15, $16::jsonb, $17
         )
         RETURNING *
     """
@@ -334,6 +379,7 @@ async def create_bot(payload: BotCreate):
         _to_jsonb(payload.whitelist_cenarios),
         payload.max_apostas_partida,
         json.dumps(payload.filtros or {}, separators=(',', ':'), ensure_ascii=False),
+        usuario.get("id"),
     ]
 
     try:
@@ -343,11 +389,13 @@ async def create_bot(payload: BotCreate):
         raise HTTPException(status_code=400, detail=f"Erro ao criar bot: {str(e)[:200]}")
 
     _cache_invalidate_all()
-    return _row_to_dict(row, full=True)
+    resultado = _row_to_dict(row, full=True)
+    resultado["dono_nome"] = usuario.get("nome")
+    return resultado
 
 
 @router.patch("/{bot_id}")
-async def patch_bot(bot_id: int, payload: BotPatch):
+async def patch_bot(bot_id: int, payload: BotPatch, usuario: dict = Depends(get_current_user)):
     """Update parcial. Só atualiza os campos enviados."""
     data = payload.model_dump(exclude_unset=True)
     if not data:
@@ -368,9 +416,13 @@ async def patch_bot(bot_id: int, payload: BotPatch):
     set_clauses.append("atualizado_em = NOW()")
 
     args.append(bot_id)
+    cond = f"id = ${len(args)}"
+    if not acesso_total(usuario):
+        args.append(usuario.get("id"))
+        cond += f" AND user_id = ${len(args)}"
     sql = f"""
         UPDATE bots SET {', '.join(set_clauses)}
-        WHERE id = ${len(args)}
+        WHERE {cond}
         RETURNING *
     """
 
@@ -388,10 +440,19 @@ async def patch_bot(bot_id: int, payload: BotPatch):
 
 
 @router.delete("/{bot_id}")
-async def delete_bot(bot_id: int):
-    """Deleta bot. CASCADE remove apostas/backtest_execucoes vinculadas."""
-    async with db() as conn:
-        result = await conn.execute("DELETE FROM bots WHERE id = $1", bot_id)
+async def delete_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
+    """Deleta bot. CASCADE remove apostas/backtest_execucoes vinculadas. Bot alheio -> 404."""
+    params = [bot_id]
+    cond = "id = $1"
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        cond += " AND user_id = $2"
+    try:
+        async with db() as conn:
+            result = await conn.execute(f"DELETE FROM bots WHERE {cond}", *params)
+    except Exception:
+        logger.exception("Erro ao deletar bot %s.", bot_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao deletar bot.")
 
     if result == "DELETE 0":
         raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
@@ -401,13 +462,22 @@ async def delete_bot(bot_id: int):
 
 
 @router.post("/{bot_id}/start")
-async def start_bot(bot_id: int):
-    """Liga bot (status='ativo')."""
-    async with db() as conn:
-        row = await conn.fetchrow(
-            "UPDATE bots SET status='ativo', atualizado_em=NOW() WHERE id=$1 RETURNING id, nome, status",
-            bot_id,
-        )
+async def start_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
+    """Liga bot (status='ativo'). Bot alheio -> 404."""
+    params = [bot_id]
+    cond = "id=$1"
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        cond += " AND user_id=$2"
+    try:
+        async with db() as conn:
+            row = await conn.fetchrow(
+                f"UPDATE bots SET status='ativo', atualizado_em=NOW() WHERE {cond} RETURNING id, nome, status",
+                *params,
+            )
+    except Exception:
+        logger.exception("Erro ao ligar bot %s.", bot_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao ligar bot.")
     if not row:
         raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
     _cache_invalidate_all()
@@ -415,13 +485,22 @@ async def start_bot(bot_id: int):
 
 
 @router.post("/{bot_id}/stop")
-async def stop_bot(bot_id: int):
-    """Pausa bot (status='pausado')."""
-    async with db() as conn:
-        row = await conn.fetchrow(
-            "UPDATE bots SET status='pausado', atualizado_em=NOW() WHERE id=$1 RETURNING id, nome, status",
-            bot_id,
-        )
+async def stop_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
+    """Pausa bot (status='pausado'). Bot alheio -> 404."""
+    params = [bot_id]
+    cond = "id=$1"
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        cond += " AND user_id=$2"
+    try:
+        async with db() as conn:
+            row = await conn.fetchrow(
+                f"UPDATE bots SET status='pausado', atualizado_em=NOW() WHERE {cond} RETURNING id, nome, status",
+                *params,
+            )
+    except Exception:
+        logger.exception("Erro ao pausar bot %s.", bot_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao pausar bot.")
     if not row:
         raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
     _cache_invalidate_all()
@@ -429,7 +508,7 @@ async def stop_bot(bot_id: int):
 
 
 @router.patch("/{bot_id}/treinamento")
-async def toggle_treinamento(bot_id: int, payload: TreinamentoToggle):
+async def toggle_treinamento(bot_id: int, payload: TreinamentoToggle, usuario: dict = Depends(get_current_user)):
     """
     Liga/desliga modo treinamento.
     em_treinamento=true: bot continua simulando mas NAO envia Telegram.
@@ -437,17 +516,25 @@ async def toggle_treinamento(bot_id: int, payload: TreinamentoToggle):
     Integrado no proprio router pra invalidar o cache de listagem
     (caso contrario o GET /bots fica retornando estado antigo por ate 5s).
     """
-    async with db() as conn:
-        row = await conn.fetchrow(
-            """
-            UPDATE bots
-            SET em_treinamento = $1, atualizado_em = NOW()
-            WHERE id = $2
-            RETURNING id, nome, em_treinamento, telegram_canal_id, status
-            """,
-            payload.em_treinamento,
-            bot_id,
-        )
+    params = [payload.em_treinamento, bot_id]
+    cond = "id = $2"
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        cond += " AND user_id = $3"
+    try:
+        async with db() as conn:
+            row = await conn.fetchrow(
+                f"""
+                UPDATE bots
+                SET em_treinamento = $1, atualizado_em = NOW()
+                WHERE {cond}
+                RETURNING id, nome, em_treinamento, telegram_canal_id, status
+                """,
+                *params,
+            )
+    except Exception:
+        logger.exception("Erro no toggle treinamento do bot %s.", bot_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao alternar treinamento.")
     if not row:
         raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
 
@@ -462,11 +549,18 @@ async def toggle_treinamento(bot_id: int, payload: TreinamentoToggle):
 
 
 @router.post("/{bot_id}/clone")
-async def clone_bot(bot_id: int):
-    """Clona bot. Novo bot fica pausado, nome com sufixo (cópia)."""
+async def clone_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
+    """Clona bot. Novo bot fica pausado, nome com sufixo (cópia). A cópia pertence a quem clona."""
+    if usuario.get("id") is None:
+        raise HTTPException(status_code=400, detail="Token de serviço não pode clonar bots.")
+    guarda = ""
+    params = [bot_id]
+    if not acesso_total(usuario):
+        params.append(usuario.get("id"))
+        guarda = " AND user_id=$2"
     async with db() as conn:
         async with conn.transaction():
-            orig = await conn.fetchrow("SELECT * FROM bots WHERE id=$1", bot_id)
+            orig = await conn.fetchrow(f"SELECT * FROM bots WHERE id=$1{guarda}", *params)
             if not orig:
                 raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
             row = await conn.fetchrow("""
@@ -478,7 +572,7 @@ async def clone_bot(bot_id: int):
                     whitelist_jogadores, blacklist_jogadores,
                     whitelist_pares, blacklist_pares, whitelist_cenarios,
                     max_apostas_dia, max_apostas_simult, max_apostas_partida, max_apostas_torneio,
-                    horario_inicio, horario_fim, dias_semana, cooldown_segundos, filtros
+                    horario_inicio, horario_fim, dias_semana, cooldown_segundos, filtros, user_id
                 ) VALUES (
                     LEFT($1 || ' (cópia)', 100), $2, 'pausado', $3, $4, $5,
                     $6, $7, $8, $9,
@@ -487,7 +581,7 @@ async def clone_bot(bot_id: int):
                     $17, $18,
                     $19, $20, $21,
                     $22, $23, $24, $25,
-                    $26, $27, $28, $29, $30
+                    $26, $27, $28, $29, $30, $31
                 ) RETURNING *
             """,
                 orig['nome'], orig['descricao'], orig['casa'], orig['esporte'], orig['mercado'],
@@ -499,7 +593,10 @@ async def clone_bot(bot_id: int):
                 orig['max_apostas_dia'], orig['max_apostas_simult'], orig['max_apostas_partida'], orig['max_apostas_torneio'],
                 orig['horario_inicio'], orig['horario_fim'], orig['dias_semana'], orig['cooldown_segundos'],
                 orig['filtros'],
+                usuario.get("id"),
             )
 
     _cache_invalidate_all()
-    return _row_to_dict(row, full=True)
+    resultado = _row_to_dict(row, full=True)
+    resultado["dono_nome"] = usuario.get("nome")
+    return resultado
