@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_pool, close_pool
-from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload 
+from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth
 
 
 @asynccontextmanager
@@ -46,6 +46,10 @@ app.add_middleware(
 )
 
 # Registra routers
+# Auth (Fase 1). As rotas existentes seguem abertas por enquanto — a proteção
+# gradual entra na Fase 3 via dependencies=[Depends(get_current_user)].
+app.include_router(auth.router)
+
 app.include_router(sistema.router)
 app.include_router(ticks.router)
 app.include_router(h2h.router)

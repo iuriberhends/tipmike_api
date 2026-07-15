@@ -194,3 +194,41 @@ class StatsDashboard(BaseModel):
     apostas_pendentes: int
     ticks_ultima_hora: int
     bookmakers_ativos: list
+
+
+# ── Auth ───────────────────────────────────────────────────────────
+# Validações de conteúdo (formato de e-mail, força da senha) ficam em
+# security.py — compatível com Pydantic v1 e v2.
+
+class RegistroRequest(BaseModel):
+    email: str
+    nome: str
+    senha: str
+    role: Optional[str] = None  # só é honrado se o solicitante for admin
+
+
+class LoginRequest(BaseModel):
+    email: str
+    senha: str
+
+
+class RefreshRequest(BaseModel):
+    refresh_token: str
+
+
+class UsuarioOut(BaseModel):
+    id: Optional[int] = None          # None quando for token de serviço
+    email: Optional[str] = None
+    nome: str
+    role: str
+    ativo: bool = True
+    criado_em: Optional[datetime] = None
+    ultimo_login: Optional[datetime] = None
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: str = "bearer"
+    expira_em_segundos: int
+    usuario: UsuarioOut
