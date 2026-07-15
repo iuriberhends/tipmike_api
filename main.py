@@ -2,13 +2,18 @@
 main.py — TipMike API
 Entry point. Roda com:
     uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+Fase 3 (auth): TODAS as rotas de negócio exigem Bearer token válido
+(access de usuário ou token de serviço). Somente /auth/* e a raiz "/"
+permanecem públicas.
 """
 
 from contextlib import asynccontextmanager
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_pool, close_pool
+from security import get_current_user
 from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth
 
 
@@ -45,23 +50,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Registra routers
-# Auth (Fase 1). As rotas existentes seguem abertas por enquanto — a proteção
-# gradual entra na Fase 3 via dependencies=[Depends(get_current_user)].
+# ── Registra routers ─────────────────────────────────────────────
+# Fase 3: dependencies=PROTEGIDO exige Bearer válido em TODAS as
+# rotas do router. Usuário desativado ou token expirado → 401/403.
+PROTEGIDO = [Depends(get_current_user)]
+
+# Público: login/refresh/registro (o registro em si é controlado por
+# env var + role admin dentro do próprio router).
 app.include_router(auth.router)
 
-app.include_router(sistema.router)
-app.include_router(ticks.router)
-app.include_router(h2h.router)
-app.include_router(eventos.router)
-app.include_router(bots.router)
-app.include_router(apostas.router)
-app.include_router(stats.router)
-app.include_router(torneios.router)
-app.include_router(backtest.router)
-app.include_router(historico.router)
-app.include_router(telegram.router)
-app.include_router(backtest_upload.router)
+# Protegido: todo o resto.
+app.include_router(sistema.router, dependencies=PROTEGIDO)
+app.include_router(ticks.router, dependencies=PROTEGIDO)
+app.include_router(h2h.router, dependencies=PROTEGIDO)
+app.include_router(eventos.router, dependencies=PROTEGIDO)
+app.include_router(bots.router, dependencies=PROTEGIDO)
+app.include_router(apostas.router, dependencies=PROTEGIDO)
+app.include_router(stats.router, dependencies=PROTEGIDO)
+app.include_router(torneios.router, dependencies=PROTEGIDO)
+app.include_router(backtest.router, dependencies=PROTEGIDO)
+app.include_router(historico.router, dependencies=PROTEGIDO)
+app.include_router(telegram.router, dependencies=PROTEGIDO)
+app.include_router(backtest_upload.router, dependencies=PROTEGIDO)
 
 
 @app.get("/")
