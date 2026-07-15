@@ -204,8 +204,7 @@ class RegistroRequest(BaseModel):
     email: str
     nome: str
     senha: str
-    role: Optional[str] = None      # só é honrado se o solicitante for admin
-    convite: Optional[str] = None   # obrigatório no registro público (Fase 5)
+    role: Optional[str] = None  # só é honrado se o solicitante for admin
 
 
 class LoginRequest(BaseModel):

@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_pool, close_pool
 from security import get_current_user
-from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth, admin
+from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth
 
 
 @asynccontextmanager
@@ -58,7 +58,6 @@ PROTEGIDO = [Depends(get_current_user)]
 # Público: login/refresh/registro (o registro em si é controlado por
 # env var + role admin dentro do próprio router).
 app.include_router(auth.router)
-app.include_router(admin.router, dependencies=PROTEGIDO)
 
 # Protegido: todo o resto.
 app.include_router(sistema.router, dependencies=PROTEGIDO)

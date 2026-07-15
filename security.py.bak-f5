@@ -387,15 +387,3 @@ def acesso_total(usuario: dict) -> bool:
         return (usuario or {}).get("role") in ("admin", "service")
     except Exception:
         return False
-
-
-# ─────────────────────── Convites (Fase 5) ──────────────────────
-
-def gerar_codigo_convite() -> str:
-    """Código de convite copiável — exibido UMA única vez na criação."""
-    return "TM-" + secrets.token_urlsafe(18)
-
-
-def hash_codigo_convite(codigo: str) -> str:
-    """SHA-256 do código; o código cru nunca é persistido (mesmo padrão do refresh)."""
-    return hashlib.sha256((codigo or "").strip().encode("utf-8")).hexdigest()

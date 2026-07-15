@@ -37,7 +37,6 @@ from security import (
     gerar_refresh_token,
     get_current_user,
     get_current_user_opcional,
-    hash_codigo_convite,
     hash_refresh_token,
     hash_senha,
     limiter_login,
@@ -117,21 +116,14 @@ async def registro(
     exigir_rate_limit(limiter_registro, f"registro:{ip}")
 
     eh_admin = bool(solicitante and solicitante.get("role") == "admin")
-    codigo_convite = (body.convite or "").strip()
-    precisa_convite = not _registro_aberto() and not eh_admin
-
-    # Fase 5: registro público exige convite gerado pelo admin (uso único).
-    if precisa_convite and not codigo_convite:
-        raise HTTPException(
-            status_code=403,
-            detail="Registro requer um código de convite. Contate um administrador.",
-        )
+    if not _registro_aberto() and not eh_admin:
+        raise HTTPException(status_code=403, detail="Registro fechado. Contate um administrador.")
 
     email = normalizar_e_validar_email(body.email)
     nome = validar_nome(body.nome)
     senha = validar_senha(body.senha)
 
-    # role: admin escolhe; no convite vale a role gravada nele; senão 'user'.
+    # role só é honrada quando quem cria é admin; caso contrário é sempre 'user'.
     role = "user"
     if eh_admin and body.role in ("admin", "user"):
         role = body.role
@@ -142,50 +134,17 @@ async def registro(
         logger.exception("Falha ao gerar hash de senha.")
         raise HTTPException(status_code=500, detail="Erro interno ao processar o cadastro.")
 
-    convite_id = None
     try:
         async with db() as conn:
-            async with conn.transaction():
-                if precisa_convite:
-                    # FOR UPDATE: dois registros simultâneos com o mesmo código
-                    # não passam — o segundo já enxerga usado_em preenchido.
-                    convite = await conn.fetchrow(
-                        """
-                        SELECT id, role, revogado, usado_em, expira_em
-                        FROM convites
-                        WHERE codigo_hash = $1
-                        FOR UPDATE
-                        """,
-                        hash_codigo_convite(codigo_convite),
-                    )
-                    convite_valido = bool(
-                        convite
-                        and not convite["revogado"]
-                        and convite["usado_em"] is None
-                        and convite["expira_em"] > datetime.now(timezone.utc)
-                    )
-                    if not convite_valido:
-                        # mensagem única: não revela se o código existe/expirou/foi usado
-                        raise HTTPException(status_code=403, detail="Convite inválido ou expirado.")
-                    convite_id = convite["id"]
-                    role = convite["role"] if convite["role"] in ("admin", "user") else "user"
-
-                row = await conn.fetchrow(
-                    """
-                    INSERT INTO usuarios (email, nome, senha_hash, role)
-                    VALUES ($1, $2, $3, $4)
-                    RETURNING id, email, nome, role, ativo, criado_em, ultimo_login
-                    """,
-                    email, nome, senha_hash, role,
-                )
-
-                if convite_id is not None:
-                    await conn.execute(
-                        "UPDATE convites SET usado_por = $1, usado_em = now() WHERE id = $2",
-                        row["id"], convite_id,
-                    )
+            row = await conn.fetchrow(
+                """
+                INSERT INTO usuarios (email, nome, senha_hash, role)
+                VALUES ($1, $2, $3, $4)
+                RETURNING id, email, nome, role, ativo, criado_em, ultimo_login
+                """,
+                email, nome, senha_hash, role,
+            )
     except asyncpg.UniqueViolationError:
-        # rollback da transação: e-mail duplicado NÃO queima o convite.
         raise HTTPException(status_code=409, detail="E-mail já cadastrado.")
     except HTTPException:
         raise
@@ -193,10 +152,7 @@ async def registro(
         logger.exception("Falha ao inserir usuário.")
         raise HTTPException(status_code=500, detail="Erro interno ao processar o cadastro.")
 
-    logger.info(
-        "Usuário criado: id=%s role=%s por_admin=%s convite=%s ip=%s",
-        row["id"], role, eh_admin, convite_id, ip,
-    )
+    logger.info("Usuário criado: id=%s role=%s por_admin=%s ip=%s", row["id"], role, eh_admin, ip)
     return dict(row)
 
 
