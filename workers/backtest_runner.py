@@ -491,6 +491,108 @@ def calcular_stat_hc(jogos_h2h: list, selecao: str,
     return out
 
 
+def _fatiar_jogos_janela(jogos: list, janela, ts_ref) -> list:
+    """Fatia a lista de confrontos pela janela de UM filtro (ramo HC).
+    Convencao IDENTICA ao _calcular_stats_h2h (over/under): a lista vem do
+    MAIS RECENTE pro mais antigo, entao janela de QUANTIDADE = jogos[:N]
+    (0 = 'todas'); janela de TEMPO ('8h'/'24h'/'7d') = jogos com ts em
+    [ts_ref - seg, ts_ref), mesmo corte do v10 do o/u.
+    BLINDADO: janela invalida -> todos os jogos; ts_ref ausente em janela de
+    tempo -> [] (nunca usa NOW(), nao vaza no backtest); ts de jogo ruim ->
+    pula o jogo. Nunca crasha."""
+    if not jogos:
+        return []
+    modo, valor = _parse_janela(janela)
+    if modo == 'qtd':
+        return list(jogos) if valor == 0 else list(jogos[:valor])
+    if modo == 'tempo':
+        ref = _dt_naive(ts_ref)
+        if ref is None:
+            return []
+        try:
+            corte = ref - timedelta(seconds=valor)
+        except (TypeError, ValueError, OverflowError):
+            return []
+        sel = []
+        for j in jogos:
+            t = _dt_naive(j.get('ts'))
+            if t is None:
+                continue
+            try:
+                if corte <= t < ref:
+                    sel.append(j)
+            except TypeError:
+                continue
+        return sel
+    return list(jogos)
+
+
+def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
+                          filtros_wr: list, ts_ref) -> tuple:
+    """ESCADINHA de WR no ramo HC: TODOS os filtros valem (AND) e cada um
+    computa a COBERTURA na SUA janela. (Antes: so o 1o filtro, com break, e
+    sempre sobre todos os confrontos — 2o chip e janela ignorados em silencio.)
+
+    Grava no stats as chaves wr_ult{tok} / wr_ult{tok}_qtd — as MESMAS que o
+    _wr_cols da planilha ja le, entao Janela/Winrate 1-2 passam a sair
+    preenchidos no export do HC sem mudanca no detalhe.
+
+    minPartidas segue a semantica v6 do o/u:
+      - _origem='hist' (chips da UI): maturidade contra o TOTAL de confrontos
+        do par (qtd_h2h) — 'Ult. 5 + min 10' = analisa 5, exige par com >=10.
+      - _origem='comp' (filtro complementar hc_wr): contra a qtd DA JANELA.
+    (passou, motivo). BLINDADO: falha fechada com motivo legivel."""
+    nick = stats.get('hc_nick')
+    hc_linha = stats.get('hc_linha')
+    if nick is None or hc_linha is None:
+        return False, 'stat_hc_selecao_invalida'
+    qtd_global = stats.get('qtd_h2h', 0) or 0
+    for _i, _f in enumerate(filtros_wr, 1):
+        _jw = _f.get('janela')
+        # token IGUAL ao do _wr_cols (chave da planilha tem que bater 1:1)
+        if isinstance(_jw, str):
+            _tok = _jw
+        elif _jw:
+            try:
+                _tok = str(int(_jw))
+            except (TypeError, ValueError):
+                _tok = '0'
+        else:
+            _tok = '0'
+        fatia = _fatiar_jogos_janela(jogos_h2h, _jw, ts_ref)
+        pct, qtd_janela = _pct_team_plus(fatia, nick, hc_linha)
+        stats[f'wr_ult{_tok}'] = pct
+        stats[f'wr_ult{_tok}_qtd'] = qtd_janela
+        # minPartidas (maturidade): hist -> total do par; comp -> qtd da janela
+        _mp_raw = _f.get('hist_min_partidas')
+        try:
+            _mp = int(_mp_raw) if _mp_raw is not None else 20
+        except (TypeError, ValueError):
+            _mp = 20
+        _qtd_validar = qtd_global if _f.get('_origem', 'comp') == 'hist' else (qtd_janela or 0)
+        if _qtd_validar < _mp:
+            return False, f'hc_f{_i}_insuf_qtd_{_qtd_validar}_min_{_mp}'
+        if pct is None:
+            return False, f'hc_f{_i}_pct_indisponivel'
+        _mn = _f.get('min') if _f.get('minAtivo') else None
+        _mx = _f.get('max') if _f.get('maxAtivo') else None
+        if _mn is not None:
+            _v, _e = _num_seguro(_mn)
+            if _e is not None:
+                return False, f'hc_f{_i}_min_{_e}'
+            _v = (_v / 100.0) if _v > 1 else _v
+            if pct < _v:
+                return False, f'hc_f{_i}_pct_{pct:.3f}_lt_min_{_v}'
+        if _mx is not None:
+            _v, _e = _num_seguro(_mx)
+            if _e is not None:
+                return False, f'hc_f{_i}_max_{_e}'
+            _v = (_v / 100.0) if _v > 1 else _v
+            if pct > _v:
+                return False, f'hc_f{_i}_pct_{pct:.3f}_gt_max_{_v}'
+    return True, ''
+
+
 def _mercado_eh_hc(mercado: str) -> bool:
     """True se o mercado e handicap (ah_ft/ah_ht/eh_ft)."""
     return (mercado or '').strip().lower() in ('ah_ft', 'ah_ht', 'eh_ft')
@@ -1898,44 +2000,18 @@ async def executar_backtest(job_id: int):
                     stats['linha_atual'] = linha_num
                     stats['qtd_h2h'] = stats.get('hc_pct_qtd', 0)
 
-                    # Config do filtro de HC. Ordem de precedencia:
+                    # Config do filtro de HC (v_escadinha). Precedencia:
                     #  1) campos dedicados no bot (hc_pct_min/max, hc_min_partidas)
-                    #     - usados se a UI algum dia mandar campos proprios.
-                    #  2) o FILTRO HISTORICO existente da UI (filtrosHistAdicionados):
-                    #     reusa 'prob' (faixa de %) como o pct de cobertura e
-                    #     'minPartidas' como min de confrontos. Assim o usuario cria
-                    #     o bot de HC com o filtro de "Probabilidade" que JA existe,
-                    #     sem precisar de UI nova. prob vem em 0-100 -> converte /100.
+                    #     -> comportamento original (_ramo_hc_pct sobre todos).
+                    #  2) filtros de WR da UI (tipo 'wr' dos chips E 'hc_wr' dos
+                    #     complementares): ESCADINHA — TODOS valem (AND) e cada um
+                    #     computa a cobertura na SUA janela. (Antes: so o 1o
+                    #     filtro com break, sempre sobre todos os confrontos —
+                    #     2o chip e janela eram ignorados em silencio.)
                     #  3) defaults seguros da estrategia (min 0.87, 20 partidas).
                     hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
                     hc_max = bot.get('hc_pct_max')
                     hc_min_part = bot.get('hc_min_partidas')
-
-                    # se nao veio campo dedicado, tenta o filtro historico da UI
-                    if hc_min is None and hc_max is None:
-                        for _f in (filtros_unificados or []):
-                            if (_f.get('tipo') or '').lower() == 'wr':
-                                # 'wr' e o filtro de probabilidade da UI (0-100)
-                                _mn = _f.get('min') if _f.get('minAtivo') else None
-                                _mx = _f.get('max') if _f.get('maxAtivo') else None
-                                # prob 0-100 -> fracao 0..1
-                                if _mn is not None:
-                                    _v, _e = _num_seguro(_mn)
-                                    hc_min = (_v / 100.0) if (_e is None and _v > 1) else _v
-                                if _mx is not None:
-                                    _v, _e = _num_seguro(_mx)
-                                    hc_max = (_v / 100.0) if (_e is None and _v > 1) else _v
-                                if hc_min_part is None:
-                                    hc_min_part = _f.get('hist_min_partidas')
-                                break
-
-                    # default final se nada foi configurado
-                    if hc_min is None and hc_max is None:
-                        hc_min = 0.87
-                    try:
-                        hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
-                    except (TypeError, ValueError):
-                        hc_min_part = 20
 
                     # FILTROS 6 e 7: blacklist de zebra / favorito (HC).
                     # Listas no filtros jsonb do bot. Isolado, blindado.
@@ -1947,8 +2023,25 @@ async def executar_backtest(job_id: int):
                         rej['hc_blacklist'] = rej.get('hc_blacklist', 0) + 1
                         continue
 
-                    passou_hc, motivo_hc = _ramo_hc_pct(
-                        stats, hc_min, hc_max, hc_min_part)
+                    if hc_min is not None or hc_max is not None:
+                        # 1) campos dedicados do bot — comportamento original
+                        try:
+                            hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
+                        except (TypeError, ValueError):
+                            hc_min_part = 20
+                        passou_hc, motivo_hc = _ramo_hc_pct(
+                            stats, hc_min, hc_max, hc_min_part)
+                    else:
+                        _fs_wr = [f for f in (filtros_unificados or [])
+                                  if (f.get('tipo') or '').lower() in ('wr', 'hc_wr')]
+                        if _fs_wr:
+                            # 2) ESCADINHA: todos os filtros, cada um na sua janela
+                            passou_hc, motivo_hc = _avaliar_escadinha_hc(
+                                jogos_h2h, stats, _fs_wr, tick['ts'])
+                        else:
+                            # 3) default seguro da estrategia
+                            passou_hc, motivo_hc = _ramo_hc_pct(
+                                stats, 0.87, None, 20)
                     if not passou_hc:
                         if 'insuf' in motivo_hc:
                             rej['h2h_insuf'] += 1
@@ -2074,7 +2167,8 @@ async def executar_backtest(job_id: int):
         # ("Últ. 10", "wr_ult10"). So as 2 primeiras (formato Janela 1/2).
         _wr_cols = []
         for _f in filtros_unificados:
-            if _f.get('tipo') == 'wr':
+            # v_escadinha: 'hc_wr' (complementar) tambem vira coluna na planilha
+            if (_f.get('tipo') or '').lower() in ('wr', 'hc_wr'):
                 _jw = _f.get('janela')
                 if isinstance(_jw, str):
                     _tok = _jw; _lbl = f"Últ. {_jw}"
