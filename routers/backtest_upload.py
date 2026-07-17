@@ -27,6 +27,7 @@ MIGRATION necessaria (rodar uma vez):
     ALTER TABLE backtest_jobs ALTER COLUMN bot_id DROP NOT NULL;
 """
 
+import asyncio
 import io
 import json
 import logging
@@ -43,7 +44,7 @@ from database import get_pool
 from security import get_current_user, acesso_total
 from workers.backtest_runner import executar_backtest
 from workers.backtest_upload import (salvar_upload, parse_ticks_parquet,
-                                     BacktestUploadError)
+                                     caminho_do_upload, BacktestUploadError)
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/backtest", tags=["backtest"])
@@ -51,6 +52,100 @@ router = APIRouter(prefix="/backtest", tags=["backtest"])
 # Limite defensivo de leitura do upload (alinha com MAX_PARQUET_BYTES do worker).
 # 500MB. Evita estourar memoria do processo da API.
 _MAX_UPLOAD_BYTES = 500 * 1024 * 1024
+
+
+def _resumo_upload_leve(upload_id: str) -> dict:
+    """Panorama do parquet SEM materializar os ticks em lista de dicts.
+
+    v7 (fix "Sem conexao com a API" no upload grande): o resumo antigo chamava
+    parse_ticks_parquet(upload_id, bot=None) — 1M+ linhas viravam ~GBs de dicts
+    Python, dezenas de segundos SINCRONOS no event loop; a API congelava e a
+    conexao do upload morria no meio. Aqui: nº de linhas vem do METADATA do
+    parquet e só 4 colunas (ts/bookmaker/sport/liga) são lidas, em modo colunar.
+    Mesma convenção de fuso do parse (arquivo em UTC -> BRT naive).
+    BLINDADO: qualquer falha previsivel vira BacktestUploadError clara."""
+    caminho = caminho_do_upload(upload_id)
+    try:
+        import pandas as pd
+    except ImportError as e:
+        raise BacktestUploadError(
+            "pandas nao instalado no ambiente da API") from e
+
+    linhas = None
+    disponiveis = None
+    try:
+        import pyarrow.parquet as pq
+        pf = pq.ParquetFile(caminho)
+        linhas = int(pf.metadata.num_rows or 0)
+        disponiveis = set(pf.schema_arrow.names)
+    except ImportError:
+        pass  # sem pyarrow: fallback pandas-only abaixo
+    except Exception as e:
+        raise BacktestUploadError(
+            f"nao foi possivel ler o parquet (corrompido ou invalido): {e}") from e
+
+    cols_alvo = ("ts", "bookmaker", "sport", "liga")
+    try:
+        if disponiveis is None:
+            df = pd.read_parquet(caminho)
+            linhas = len(df)
+            df = df[[c for c in cols_alvo if c in df.columns]]
+        else:
+            if linhas == 0:
+                return {"linhas": 0, "aviso": "arquivo sem ticks apos leitura"}
+            if "ts" not in disponiveis:
+                raise BacktestUploadError(
+                    "parquet sem a coluna 'ts' que o motor espera")
+            df = pd.read_parquet(
+                caminho, columns=[c for c in cols_alvo if c in disponiveis])
+    except BacktestUploadError:
+        raise
+    except Exception as e:
+        raise BacktestUploadError(
+            f"falha ao ler colunas do parquet: {e}") from e
+
+    if linhas == 0 or df is None or len(df) == 0:
+        return {"linhas": 0, "aviso": "arquivo sem ticks apos leitura"}
+    if "ts" not in df.columns:
+        raise BacktestUploadError("parquet sem a coluna 'ts' que o motor espera")
+
+    # ts NAIVE, SEM conversao de fuso — MESMA regra do parse_ticks_parquet:
+    # o sufixo 'Z' e mentiroso, o relogio ja esta em BRT (convencao do projeto
+    # validada em producao no caminho do banco). Nao somar nem subtrair 3h,
+    # senao o range mostrado no painel desalinha do que o motor vai usar.
+    try:
+        ts_orig = df["ts"]
+        if pd.api.types.is_datetime64_any_dtype(ts_orig):
+            if getattr(ts_orig.dt, "tz", None) is not None:
+                ts = ts_orig.dt.tz_localize(None)  # descarta tz, mantem relogio
+            else:
+                ts = ts_orig
+        else:
+            s = ts_orig.astype(str).str.replace(
+                r"(Z|[+-]\d{2}:?\d{2})$", "", regex=True)
+            ts = pd.to_datetime(s, format="ISO8601", errors="coerce")
+    except Exception as e:
+        raise BacktestUploadError(
+            f"falha ao interpretar a coluna ts: {e}") from e
+    ts = ts.dropna()
+
+    def _uni(col: str) -> list:
+        if col not in df.columns:
+            return []
+        try:
+            return sorted({str(v) for v in df[col].dropna().unique()
+                           if str(v).strip()})
+        except Exception:
+            return []
+
+    return {
+        "linhas": int(linhas),
+        "ts_min": str(ts.min()) if len(ts) else None,
+        "ts_max": str(ts.max()) if len(ts) else None,
+        "casas": _uni("bookmaker"),
+        "esportes": _uni("sport"),
+        "ligas": _uni("liga")[:20],
+    }
 
 
 # ============================================================
@@ -91,53 +186,26 @@ async def upload_ticks(arquivo: UploadFile = File(...)):
             detail=f"Arquivo muito grande ({mb:.0f}MB). Limite: 500MB",
         )
 
-    # salva no storage temporario -> upload_id
+    # salva no storage temporario -> upload_id (em thread: nao segura o loop)
     try:
-        upload_id = salvar_upload(conteudo, nome)
+        upload_id = await asyncio.to_thread(salvar_upload, conteudo, nome)
     except BacktestUploadError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         logger.exception("[backtest_upload] erro inesperado ao salvar")
         raise HTTPException(status_code=500, detail=f"Erro ao salvar: {e}")
 
-    # le pra montar o resumo (sem filtro de bot - so panorama)
+    # resumo LEVE (v7): metadata + 4 colunas, em thread. O parse completo em
+    # dicts (que congelava a API com arquivo grande) so roda dentro do JOB.
     try:
-        ticks = parse_ticks_parquet(upload_id, bot=None)
+        resumo = await asyncio.to_thread(_resumo_upload_leve, upload_id)
     except BacktestUploadError as e:
-        # parquet invalido: avisa claro (400), arquivo ja foi salvo mas e inutil
         raise HTTPException(status_code=400, detail=f"Parquet invalido: {e}")
     except Exception as e:
         logger.exception("[backtest_upload] erro inesperado ao ler parquet")
         raise HTTPException(status_code=500, detail=f"Erro ao ler parquet: {e}")
 
-    if not ticks:
-        return {
-            "upload_id": upload_id,
-            "arquivo": nome,
-            "linhas": 0,
-            "aviso": "arquivo sem ticks apos leitura",
-        }
-
-    # resumo: range de datas, casas, esportes, ligas distintas
-    try:
-        ts_vals = [t["ts"] for t in ticks if t.get("ts") is not None]
-        casas = sorted({t.get("bookmaker") for t in ticks if t.get("bookmaker")})
-        esportes = sorted({t.get("sport") for t in ticks if t.get("sport")})
-        ligas = sorted({t.get("liga") for t in ticks if t.get("liga")})
-    except Exception as e:
-        logger.exception("[backtest_upload] erro ao montar resumo")
-        raise HTTPException(status_code=500, detail=f"Erro ao resumir: {e}")
-
-    return {
-        "upload_id": upload_id,
-        "arquivo": nome,
-        "linhas": len(ticks),
-        "ts_min": str(min(ts_vals)) if ts_vals else None,
-        "ts_max": str(max(ts_vals)) if ts_vals else None,
-        "casas": casas,
-        "esportes": esportes,
-        "ligas": ligas[:20],
-    }
+    return {"upload_id": upload_id, "arquivo": nome, **resumo}
 
 
 # ============================================================
