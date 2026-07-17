@@ -126,13 +126,31 @@ MERCADO_KEYWORDS = {
 }
 
 
+def _demojibake(txt: str) -> str:
+    """Conserta dupla codificacao UTF-8->Latin-1 vinda dos coletores
+    ('1Âº Tempo' -> '1º Tempo', 'prorrogaÃ§Ã£o' -> 'prorrogação').
+    So age se a string tem os marcadores 'Ã'/'Â'; so aceita o resultado se ele
+    REDUZIU os marcadores (nao corrompe texto legitimo). BLINDADO."""
+    if not txt or ('Ã' not in txt and 'Â' not in txt):
+        return txt
+    try:
+        arrumado = txt.encode('latin-1', errors='ignore').decode('utf-8', errors='ignore')
+        if arrumado and (arrumado.count('Ã') + arrumado.count('Â')) < (txt.count('Ã') + txt.count('Â')):
+            return arrumado
+    except Exception:
+        pass
+    return txt
+
+
 def _sem_acento(s) -> str:
     """minusculas sem acento, pra casar nomes de mercado entre casas.
-    BLINDADO: None/numero/bytes/qualquer coisa -> str() ou '' sem crashar."""
+    BLINDADO: None/numero/bytes/qualquer coisa -> str() ou '' sem crashar.
+    JOB42: passa por _demojibake antes ('1Âº Tempo' era classificado como FT)."""
     if s is None:
         return ''
     try:
         txt = s if isinstance(s, str) else str(s)
+        txt = _demojibake(txt)
         return ''.join(c for c in unicodedata.normalize('NFD', txt)
                        if unicodedata.category(c) != 'Mn').lower()
     except Exception:
@@ -157,19 +175,24 @@ def _periodo_do_mercado(nome_mercado: str) -> str:
         return 'ft'
     if not s:
         return 'ft'
-    # 1o tempo (pt/en)
-    if (re.search(r'\b1\s*[ao°º]?\s*tempo\b', s) or '1st half' in s
+    # 1o tempo (pt/en). JOB42: {0,2} tolera residuo de mojibake ('1aº tempo').
+    if (re.search(r'\b1\s*[ao°º]{0,2}\s*tempo\b', s) or '1st half' in s
             or 'first half' in s or 'primeiro tempo' in s
-            or re.search(r'\bht\b', s) or re.search(r'\b1\s*[ao°º]?\s*half\b', s)):
+            or re.search(r'\bht\b', s) or re.search(r'\b1\s*[ao°º]{0,2}\s*half\b', s)):
         return 'ht'
     # 2o tempo (pt/en)
-    if (re.search(r'\b2\s*[ao°º]?\s*tempo\b', s) or '2nd half' in s
+    if (re.search(r'\b2\s*[ao°º]{0,2}\s*tempo\b', s) or '2nd half' in s
             or 'second half' in s or 'segundo tempo' in s):
         return '2t'
     # parciais: quarto / quarter / set / periodo / period
     if (re.search(r'\bquarto\b', s) or re.search(r'\bquarter\b', s)
             or re.search(r'\bset\b', s) or re.search(r'\bperiodo\b', s)
             or re.search(r'\bperiod\b', s)):
+        return 'parcial'
+    # BLINDAGEM (job 42): digito 1/2 + ate 3 chars de lixo + tempo/half que NAO
+    # foi classificado acima = periodo desconhecido/corrompido. Nunca pode
+    # passar como jogo inteiro - devolve 'parcial' (bot de FT rejeita).
+    if re.search(r'\b[12]\S{0,3}\s*(tempo|half)\b', s):
         return 'parcial'
     return 'ft'
 
@@ -246,9 +269,12 @@ def _lado_aposta(selecao: str) -> Optional[str]:
     s = _normalizar(selecao)
     if not s:
         return None
-    if any(w in s for w in ('mais', 'over', 'acima')) or s.startswith('+') or s in ('sim', 'yes'):
+    # JOB42: word-boundary obrigatorio. Substring pegava 'Oklahoma City
+    # ThUNDER' -> lado under (tip errada na planilha + corte errado no
+    # filtro de lado quando o bot nao e 'ambos').
+    if re.search(r'\b(mais|over|acima)\b', s) or s.startswith('+') or s in ('sim', 'yes'):
         return 'over'
-    if any(w in s for w in ('menos', 'under', 'abaixo')) or s.startswith('-') or s in ('nao', 'no'):
+    if re.search(r'\b(menos|under|abaixo)\b', s) or s.startswith('-') or s in ('nao', 'no'):
         return 'under'
     return None
 
@@ -2025,8 +2051,23 @@ async def executar_backtest(job_id: int):
         apostas_detalhe = []
         equity_curve = []
         pnl_por_dia: dict = {}
+        # JOB42: DD verdadeiro (pico->vale cronologico) + acumulado em unidades
+        drawdown_max = 0.0
+        pnl_u_acum = 0.0
+        pnl_u_pico = 0.0
+        drawdown_unidades = 0.0
 
-        candidatas.sort(key=lambda x: x['tick']['ts'])
+        # JOB42 (streak/DD reais): liquida na ordem em que os JOGOS TERMINAM
+        # (_placar_ts = ts do ultimo tick com placar do evento), nao na ordem
+        # de entrada da aposta. Com jogos sobrepostos, a ordem de entrada
+        # intercala green/red de jogos diferentes e mente o streak e o DD
+        # (job 42: streak 4 na ordem de entrada vs 5 na ordem real de caixa).
+        # Desempate: ts da aposta. Fallback blindado: sem _placar_ts, usa o
+        # proprio ts da aposta (nunca crasha).
+        candidatas.sort(key=lambda x: (
+            _placar_ts.get(x['tick']['event_id'], x['tick']['ts']),
+            x['tick']['ts'],
+        ))
 
         # Colunas de WR pra planilha (estilo bot 313886): pega as janelas dos
         # filtros de WR (tipo='wr') -> (rotulo, chave_no_stats). Ex: janela 10 ->
@@ -2067,20 +2108,41 @@ async def executar_backtest(job_id: int):
             else:
                 pnl_aposta = 0
                 void_count += 1
-                streak_red_atual = 0
+                # JOB42: void NAO e green - nao quebra a sequencia de reds.
+                # (streak_red_atual fica como esta: nao soma, nao zera.)
 
             banca += pnl_aposta
             if banca > banca_pico:
                 banca_pico = banca
+            # JOB42: DD pico->vale em ORDEM cronologica (o calculo antigo
+            # max(banca)-min(banca) misturava vale ANTERIOR ao pico: 6171
+            # onde o verdadeiro era 3652). banca_pico e o pico corrente.
+            if (banca_pico - banca) > drawdown_max:
+                drawdown_max = banca_pico - banca
+            # acumulado em UNIDADES (1u = stake da aposta; vale pro fixo e pro %)
+            pnl_u_acum += (pnl_aposta / stake) if stake else 0.0
+            if pnl_u_acum > pnl_u_pico:
+                pnl_u_pico = pnl_u_acum
+            if (pnl_u_pico - pnl_u_acum) > drawdown_unidades:
+                drawdown_unidades = pnl_u_pico - pnl_u_acum
 
             st = c.get('stats') or {}
             _sel = tick.get('selecao', '') or ''
-            _ld = _lado_aposta(_sel)
-            _tip = 'Over' if _ld == 'over' else ('Under' if _ld == 'under' else _sel)
+            if _mercado_eh_hc(bot.get('mercado', '')):
+                # HC nao tem lado Over/Under: a tip e a propria selecao
+                # (JOB42: 'ThUNDER' virava tip 'Under' na planilha).
+                _tip = _sel
+            else:
+                _ld = _lado_aposta(_sel)
+                _tip = 'Over' if _ld == 'over' else ('Under' if _ld == 'under' else _sel)
             apostas_detalhe.append({
                 'n': i + 1,
                 'event_id': tick['event_id'],
                 'ts': tick['ts'].isoformat() if hasattr(tick['ts'], 'isoformat') else str(tick['ts']),
+                # JOB42: quando o jogo terminou (ordem de liquidacao/caixa).
+                'ts_resolucao': (_placar_ts.get(tick['event_id']).isoformat()
+                                 if hasattr(_placar_ts.get(tick['event_id'], None), 'isoformat')
+                                 else str(_placar_ts.get(tick['event_id'], ''))),
                 'torneio': tick.get('torneio') or bot.get('torneio') or '',
                 'liga': tick.get('liga', '') or '',
                 'jogador_a': tick['jogador_a'],
@@ -2110,6 +2172,7 @@ async def executar_backtest(job_id: int):
                 'n': i + 1,
                 'banca': round(banca, 2),
                 'pnl_acum': round(banca - banca_inicial, 2),
+                'u_acum': round(pnl_u_acum, 2),
                 'ts': tick['ts'].isoformat() if hasattr(tick['ts'], 'isoformat') else str(tick['ts']),
             })
 
@@ -2125,7 +2188,9 @@ async def executar_backtest(job_id: int):
 
         roi = (pnl_total / total_stake) if total_stake > 0 else 0
         win_rate = (green / (green + red)) if (green + red) > 0 else 0
-        drawdown_max = max(0, banca_pico - min((p['banca'] for p in equity_curve), default=banca_inicial))
+        # JOB42: drawdown_max ja foi calculado DENTRO do loop (pico->vale
+        # cronologico). Aqui so garante nao-negativo.
+        drawdown_max = max(0.0, drawdown_max)
 
         pnl_por_dia_lista = sorted(pnl_por_dia.values(), key=lambda d: d['data'])
         dias_verdes = sum(1 for d in pnl_por_dia_lista if d['pnl'] > 0)
@@ -2169,6 +2234,7 @@ async def executar_backtest(job_id: int):
                     pnl=$6, roi=$7, win_rate=$8, drawdown_max=$9, max_streak_red=$10,
                     dias_verdes=$11, dias_total=$12,
                     equity_curve=$13::jsonb, apostas_detalhe=$14::jsonb, pnl_por_dia=$15::jsonb,
+                    pnl_unidades=$17, drawdown_unidades=$18,
                     concluido_em=NOW()
                 WHERE id=$1
                 """,
@@ -2180,6 +2246,7 @@ async def executar_backtest(job_id: int):
                 json.dumps(apostas_detalhe, default=str),
                 json.dumps(pnl_por_dia_lista, default=str),
                 msg_final[:500],
+                round(pnl_u_acum, 2), round(drawdown_unidades, 2),
             )
 
         logger.info(
