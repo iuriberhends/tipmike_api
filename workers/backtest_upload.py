@@ -1,439 +1,839 @@
 """
-workers/backtest_upload.py - ESQUELETO do backtest por upload de arquivo (parquet).
+routers/backtest_upload.py - Endpoints do backtest por UPLOAD de arquivo parquet.
 
-OBJETIVO (validar estrutura, ainda SEM logica final):
-    Permitir rodar o backtest de um bot sobre ticks vindos de um ARQUIVO PARQUET
-    (extraido do HD), em vez de ler os ticks do banco por periodo.
-    O h2h_historico continua vindo do BANCO, com cutoff no ts de cada tick.
-    Resposta final = quantas U o bot teria feito naquele periodo (+ DD).
+Complementa o routers/backtest.py existente (que roda backtest lendo ticks do
+BANCO por periodo). Aqui os ticks vem de um ARQUIVO parquet upado do HD.
+O h2h continua vindo do banco com cutoff no ts (decidido).
 
-ARQUITETURA (o que ja existe vs o que e novo):
-    [NOVO]  upload do parquet  -> salva temp -> upload_id
-    [NOVO]  parse_ticks_parquet -> arquivo -> lista de ticks (mesmo formato do banco)
-    [EXISTE] motor executar_backtest (workers/backtest_runner.py)
-    [EXISTE] h2h do banco com cutoff (H2HCache.get_jogos)
-    [EXISTE] relatorio U + DD (backtest_jobs: pnl, roi, drawdown_max, equity_curve)
+Endpoints:
+    POST /backtest/upload-ticks      sobe o parquet -> upload_id + resumo
+    POST /backtest/jobs-upload       cria job usando o upload_id -> dispara worker
+    POST /backtest/jobs-avulso       backtest standalone (filtros da aba, sem bot)
 
-PONTOS DE INTEGRACAO (3 peças):
-    1. routers/backtest.py     -> novo endpoint POST /backtest/upload-ticks
-    2. workers/backtest_upload -> parse_ticks_parquet (ESTE arquivo)
-    3. workers/backtest_runner -> executar_backtest ganha fonte=arquivo (upload_id)
+Aplicar no VPS:
+    1. Salvar em routers/backtest_upload.py
+    2. main.py: from routers import backtest_upload
+                app.include_router(backtest_upload.router)
+    3. nssm restart TipMikeAPI
 
-Este arquivo e ESQUELETO: assinaturas + validacao + pontos marcados com
-'# TODO LOGICA'. Nada de implementacao pesada ainda - primeiro validar o encaixe.
+Depende de:
+    - workers/backtest_upload.py  (parse_ticks_parquet, salvar_upload)
+    - tabela backtest_jobs com coluna nova: upload_id TEXT (ver migration abaixo)
+    - executar_backtest aceitar fonte=arquivo (peca 3 - ainda a fazer)
+
+MIGRATION necessaria (rodar uma vez):
+    ALTER TABLE backtest_jobs ADD COLUMN IF NOT EXISTS upload_id TEXT;
+    -- p/ backtest avulso (sem bot), bot_id precisa aceitar NULL:
+    ALTER TABLE backtest_jobs ALTER COLUMN bot_id DROP NOT NULL;
 """
 
-from __future__ import annotations
-
+import asyncio
+import io
+import json
 import logging
-import os
-from pathlib import Path
-from typing import Any, Optional
+import re
+from datetime import datetime
+from typing import Optional
+
+from fastapi import (APIRouter, BackgroundTasks, Depends, File, HTTPException,
+                     UploadFile)
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel, Field
+
+from database import get_pool
+from security import get_current_user, acesso_total
+from workers.backtest_runner import executar_backtest
+from workers.backtest_upload import (salvar_upload, parse_ticks_parquet,
+                                     caminho_do_upload, BacktestUploadError)
 
 logger = logging.getLogger(__name__)
+router = APIRouter(prefix="/backtest", tags=["backtest"])
 
-# Diretorio onde os parquets upados ficam ate o job rodar.
-# TODO LOGICA: definir local definitivo no VPS (ex: C:\...\uploads_backtest)
-UPLOAD_DIR = Path(os.environ.get("BACKTEST_UPLOAD_DIR", "uploads_backtest"))
-
-# Colunas que o motor (executar_backtest) espera de cada tick.
-# O parquet PRECISA ter essas (ou o parser mapeia pra elas).
-COLUNAS_ESPERADAS = [
-    "ts", "bookmaker", "sport", "liga", "event_id",
-    "jogador_a", "jogador_b", "time_a", "time_b",
-    "score_home", "score_away", "live_time",
-    "mercado", "mercado_id", "mercado_tipo", "linha", "selecao", "selecao_id",
-    "odds",
-]
+# Limite defensivo de leitura do upload (alinha com MAX_PARQUET_BYTES do worker).
+# 500MB. Evita estourar memoria do processo da API.
+_MAX_UPLOAD_BYTES = 500 * 1024 * 1024
 
 
-# ============================================================
-# Peça 2: PARSER do parquet -> lista de ticks
-# ============================================================
+def _resumo_upload_leve(upload_id: str) -> dict:
+    """Panorama do parquet SEM materializar os ticks em lista de dicts.
 
-def validar_colunas(colunas_arquivo: list[str]) -> tuple[bool, list[str]]:
-    """Confere se o parquet tem as colunas que o motor espera.
-    Retorna (ok, faltando)."""
-    faltando = [c for c in COLUNAS_ESPERADAS if c not in colunas_arquivo]
-    return (len(faltando) == 0, faltando)
-
-
-# Mapa esporte UI -> banco (mesmo do motor). Importado de la quando integrar;
-# duplicado aqui pra o parser ser testavel isolado.
-ESPORTE_UI_PARA_BANCO = {
-    "fifa": "E-Football",
-    "nba2k": "E-Basketball",
-    "ehockey": "E-Hockey",
-    "etennis": "E-Tennis",
-}
-
-# Tamanho maximo do parquet aceito (bytes). Protege contra arquivo gigante
-# que estoura memoria do VPS. Ajustavel via env.
-MAX_PARQUET_BYTES = int(os.environ.get("BACKTEST_MAX_PARQUET_MB", "500")) * 1024 * 1024
-
-
-class BacktestUploadError(Exception):
-    """Erro de upload/parsing de ticks. O worker captura e marca job como 'erro'
-    com mensagem amigavel, em vez de quebrar com stacktrace cru."""
-    pass
-
-
-def parse_ticks_parquet(caminho_arquivo: str,
-                        bot: Optional[dict] = None) -> list[dict]:
-    """
-    Le o parquet e devolve a lista de ticks no MESMO formato que o motor recebe
-    do banco (lista de dicts), ja ordenada como o motor espera:
-    ORDER BY event_id, mercado_id, linha, selecao_id, ts ASC.
-
-    TIMEZONE: o parquet vem em UTC (ts com 'Z'). O banco (h2h_historico, ticks)
-    esta em BRT. Pro cutoff time-machine bater, converte UTC -> America/Sao_Paulo
-    e deixa naive (sem tz), igual ao ts que o motor usa internamente. Sem isso o
-    cutoff ficaria 3h adiantado e o backtest contaria jogos do futuro = FURADO.
-
-    Se `bot` vier, aplica os MESMOS filtros de pre-selecao do SQL do banco
-    (bookmaker, sport, torneios) - pra o arquivo se comportar igual ao banco.
-
-    BLINDAGEM: toda falha previsivel vira BacktestUploadError com mensagem clara.
-    Como e dinheiro real, prefere FALHAR EXPLICITO a devolver dado silenciosamente
-    errado (ex: ts que nao deu pra converter -> aborta, nao "passa batido").
-    """
+    v7 (fix "Sem conexao com a API" no upload grande): o resumo antigo chamava
+    parse_ticks_parquet(upload_id, bot=None) — 1M+ linhas viravam ~GBs de dicts
+    Python, dezenas de segundos SINCRONOS no event loop; a API congelava e a
+    conexao do upload morria no meio. Aqui: nº de linhas vem do METADATA do
+    parquet e só 4 colunas (ts/bookmaker/sport/liga) são lidas, em modo colunar.
+    Mesma convenção de fuso do parse (arquivo em UTC -> BRT naive).
+    BLINDADO: qualquer falha previsivel vira BacktestUploadError clara."""
+    caminho = caminho_do_upload(upload_id)
     try:
         import pandas as pd
     except ImportError as e:
         raise BacktestUploadError(
-            "pandas/pyarrow nao instalados no ambiente do worker"
-        ) from e
+            "pandas nao instalado no ambiente da API") from e
 
-    # --- arquivo existe e tem tamanho sao ---
-    p = Path(caminho_arquivo)
-    if not p.exists():
-        raise BacktestUploadError(f"arquivo nao encontrado: {p.name}")
-    if not p.is_file():
-        raise BacktestUploadError(f"caminho nao e um arquivo: {p.name}")
-
-    tamanho = p.stat().st_size
-    if tamanho == 0:
-        raise BacktestUploadError("arquivo vazio (0 bytes)")
-    if tamanho > MAX_PARQUET_BYTES:
-        mb = tamanho / 1024 / 1024
-        lim = MAX_PARQUET_BYTES / 1024 / 1024
-        raise BacktestUploadError(
-            f"parquet grande demais: {mb:.0f}MB (limite {lim:.0f}MB)"
-        )
-
-    # --- leitura ---
+    linhas = None
+    disponiveis = None
     try:
-        df = pd.read_parquet(p)
+        import pyarrow.parquet as pq
+        pf = pq.ParquetFile(caminho)
+        linhas = int(pf.metadata.num_rows or 0)
+        disponiveis = set(pf.schema_arrow.names)
+    except ImportError:
+        pass  # sem pyarrow: fallback pandas-only abaixo
     except Exception as e:
         raise BacktestUploadError(
-            f"nao foi possivel ler o parquet (corrompido ou formato invalido): {e}"
-        ) from e
+            f"nao foi possivel ler o parquet (corrompido ou invalido): {e}") from e
 
-    if df is None or len(df) == 0:
-        raise BacktestUploadError("parquet sem linhas")
-
-    # --- colunas ---
-    ok, faltando = validar_colunas(list(df.columns))
-    if not ok:
-        raise BacktestUploadError(
-            f"parquet sem as colunas que o motor espera. Faltando: {faltando}"
-        )
-
-    # --- timezone: parse NAIVE, SEM conversao de fuso ---
-    # REGRA DO PROJETO: o ts vem com sufixo 'Z' mas o relogio JA ESTA em BRT
-    # (mesma convencao do fixture_date da TipManager). O caminho do BANCO le o ts
-    # naive e NAO converte nada - e essa e a referencia validada em producao.
-    # Pro arquivo bater com o banco, parseia o MESMO relogio de parede, sem somar
-    # nem subtrair 3h. O codigo antigo fazia UTC->BRT (-3h): deixava o tick 3h
-    # atrasado, desalinhava o cutoff do H2H e os buckets por dia = backtest furado.
-    # Se algum dia confirmar que o ts e UTC REAL, vire a chave abaixo pra True.
-    CONVERTER_UTC_PARA_BRT = False
+    cols_alvo = ("ts", "bookmaker", "sport", "liga")
     try:
-        ts_orig = df['ts']
-        if pd.api.types.is_datetime64_any_dtype(ts_orig):
-            # parquet trouxe timestamp NATIVO
-            if getattr(ts_orig.dt, 'tz', None) is not None:
-                if CONVERTER_UTC_PARA_BRT:
-                    ts_parsed = ts_orig.dt.tz_convert('America/Sao_Paulo').dt.tz_localize(None)
-                else:
-                    ts_parsed = ts_orig.dt.tz_localize(None)  # descarta tz, mantem relogio
-            else:
-                ts_parsed = ts_orig  # ja naive, usa como esta
+        if disponiveis is None:
+            df = pd.read_parquet(caminho)
+            linhas = len(df)
+            df = df[[c for c in cols_alvo if c in df.columns]]
         else:
-            # veio STRING (ex: '2026-05-21T05:00:28.402Z'). Tira o 'Z'/offset e
-            # parseia naive: o relogio de parede e o que vale (convencao BRT).
-            s = ts_orig.astype(str).str.replace(r'(Z|[+-]\d{2}:?\d{2})$', '', regex=True)
-            ts_parsed = pd.to_datetime(s, format='ISO8601', errors='coerce')
-            if CONVERTER_UTC_PARA_BRT:
-                ts_parsed = (ts_parsed.dt.tz_localize('UTC')
-                                       .dt.tz_convert('America/Sao_Paulo')
-                                       .dt.tz_localize(None))
+            if linhas == 0:
+                return {"linhas": 0, "aviso": "arquivo sem ticks apos leitura"}
+            if "ts" not in disponiveis:
+                raise BacktestUploadError(
+                    "parquet sem a coluna 'ts' que o motor espera")
+            df = pd.read_parquet(
+                caminho, columns=[c for c in cols_alvo if c in disponiveis])
+    except BacktestUploadError:
+        raise
     except Exception as e:
-        raise BacktestUploadError(f"falha ao interpretar a coluna ts: {e}") from e
-
-    n_total = len(df)
-    n_nat = int(ts_parsed.isna().sum())
-    if n_nat == n_total:
         raise BacktestUploadError(
-            "nenhum ts pode ser interpretado como data - coluna ts invalida"
-        )
-    if n_nat > 0:
-        frac = n_nat / n_total
-        # tolera ate 1% de ts ruim (descarta). Acima disso, aborta: algo errado.
-        if frac > 0.01:
-            raise BacktestUploadError(
-                f"{n_nat} de {n_total} ts invalidos ({frac:.1%}) - parquet suspeito"
-            )
-        logger.warning(f"[backtest_upload] descartando {n_nat} linhas com ts invalido")
-        mask_ok = ts_parsed.notna()
-        df = df[mask_ok].copy()
-        ts_parsed = ts_parsed[mask_ok]
+            f"falha ao ler colunas do parquet: {e}") from e
 
-    df['ts'] = ts_parsed
-    # DIAGNOSTICO: loga amostra do ts pra conferir o fuso a olho contra um jogo
-    # de horario conhecido. Se vier 3h diferente do banco, e a chave de fuso.
+    if linhas == 0 or df is None or len(df) == 0:
+        return {"linhas": 0, "aviso": "arquivo sem ticks apos leitura"}
+    if "ts" not in df.columns:
+        raise BacktestUploadError("parquet sem a coluna 'ts' que o motor espera")
+
+    # ts NAIVE, SEM conversao de fuso — MESMA regra do parse_ticks_parquet:
+    # o sufixo 'Z' e mentiroso, o relogio ja esta em BRT (convencao do projeto
+    # validada em producao no caminho do banco). Nao somar nem subtrair 3h,
+    # senao o range mostrado no painel desalinha do que o motor vai usar.
     try:
-        logger.info(
-            f"[backtest_upload] ts naive (sem conversao). "
-            f"amostra={df['ts'].head(2).tolist()} min={df['ts'].min()} max={df['ts'].max()}"
-        )
-    except Exception:
-        pass
+        ts_orig = df["ts"]
+        if pd.api.types.is_datetime64_any_dtype(ts_orig):
+            if getattr(ts_orig.dt, "tz", None) is not None:
+                ts = ts_orig.dt.tz_localize(None)  # descarta tz, mantem relogio
+            else:
+                ts = ts_orig
+        else:
+            s = ts_orig.astype(str).str.replace(
+                r"(Z|[+-]\d{2}:?\d{2})$", "", regex=True)
+            ts = pd.to_datetime(s, format="ISO8601", errors="coerce")
+    except Exception as e:
+        raise BacktestUploadError(
+            f"falha ao interpretar a coluna ts: {e}") from e
+    ts = ts.dropna()
 
-    # --- pre-selecao igual ao SQL do banco (so se bot vier) ---
-    if bot:
+    def _uni(col: str) -> list:
+        if col not in df.columns:
+            return []
         try:
-            casa = bot.get('casa')
-            if casa:
-                df = df[df['bookmaker'] == casa]
+            return sorted({str(v) for v in df[col].dropna().unique()
+                           if str(v).strip()})
+        except Exception:
+            return []
 
-            esporte_ui = bot.get('esporte')
-            if esporte_ui:
-                sport_banco = ESPORTE_UI_PARA_BANCO.get(esporte_ui, esporte_ui)
-                df = df[df['sport'] == sport_banco]
-
-            torneios = bot.get('torneios') or []
-            if torneios:
-                mask = pd.Series(False, index=df.index)
-                for t in torneios:
-                    if t:
-                        mask |= df['liga'].str.contains(str(t), case=False, na=False)
-                df = df[mask]
-
-            torneios_excluir = bot.get('torneios_excluir') or []
-            for t in torneios_excluir:
-                if t:
-                    df = df[~df['liga'].str.contains(str(t), case=False, na=False)]
-        except KeyError as e:
-            raise BacktestUploadError(f"coluna ausente ao filtrar: {e}") from e
-        except Exception as e:
-            raise BacktestUploadError(f"falha ao aplicar filtros do bot: {e}") from e
-
-    # --- coercao de tipos: APENAS score_home/score_away ---
-    # O motor (backtest_runner) trata cada campo do seu jeito:
-    #   - linha: _parse_linha() ja lida com '+0.5', 'away|0.5', '' -> NAO converter
-    #     aqui (to_numeric transformaria esses em NaN e perderia o tick).
-    #   - odds: o motor faz float(tick['odds']) na hora -> deixa como vem.
-    #   - mercado_tipo / mercado_id / selecao_id: usados como STRING (mapping de
-    #     mercado compara com ['18'], dedup usa 'mercado_id' or '') -> NAO converter.
-    # SO os scores entram em comparacao numerica direta (total = sh+sa; total>linha)
-    # sem passar por parser. Se vierem string do parquet, da o erro str<float.
-    # Entao converte SO eles pra Int64 (nullable: aceita None sem virar float).
-    # Esta e a correcao minima e segura - mexer no resto quebra os parsers do motor.
-    try:
-        for col in ('score_home', 'score_away'):
-            if col in df.columns:
-                df[col] = pd.to_numeric(df[col], errors='coerce').astype('Int64')
-        # odds: o motor compara CRU (odd < float(odd_min)) sem converter -> se
-        # vier string do parquet da str<float. odds nao tem formato especial
-        # (sempre "1.85"), entao to_numeric e seguro. NaN -> None (motor: odd
-        # ausente -> rejeita o tick, comportamento correto).
-        if 'odds' in df.columns:
-            df['odds'] = pd.to_numeric(df['odds'], errors='coerce')
-    except Exception as e:
-        raise BacktestUploadError(f"falha ao converter scores/odds: {e}") from e
-
-    # --- ordenacao (mesma do motor) ---
-    try:
-        df = df.sort_values(['event_id', 'mercado_id', 'linha', 'selecao_id', 'ts'])
-    except Exception as e:
-        raise BacktestUploadError(f"falha ao ordenar ticks: {e}") from e
-
-    logger.info(
-        f"[backtest_upload] parquet {p.name}: {len(df)} ticks apos filtros "
-        f"(de {n_total} no arquivo)"
-    )
-    # to_dict pode deixar NaN/NaT/pd.NA nos campos (o Int64 nullable vira pd.NA).
-    # O motor espera None nesses casos (linha None -> pula, score None -> ignora).
-    # Normaliza tudo pra None de uma vez, pra o parquet entregar igual ao banco.
-    registros = df.to_dict('records')
-    for r in registros:
-        for k, v in r.items():
-            if v is pd.NA or (isinstance(v, float) and pd.isna(v)):
-                r[k] = None
-            elif v is pd.NaT:
-                r[k] = None
-    return registros
-
-
-# ============================================================
-# Peça 1 (helper): salvar/recuperar o arquivo upado
-# ============================================================
-
-def salvar_upload(conteudo: bytes, nome_original: str) -> str:
-    """Salva o parquet upado e devolve o upload_id (o caminho no disco).
-    Gera nome unico (uuid + nome original) pra nao colidir entre uploads.
-    BLINDADO: valida extensao, tamanho, e trata falha de escrita (disco cheio)."""
-    import uuid
-
-    if not conteudo:
-        raise BacktestUploadError("conteudo vazio")
-    if not nome_original or not nome_original.lower().endswith(".parquet"):
-        raise BacktestUploadError("so arquivo .parquet e aceito")
-    if len(conteudo) > MAX_PARQUET_BYTES:
-        mb = len(conteudo) / 1024 / 1024
-        lim = MAX_PARQUET_BYTES / 1024 / 1024
-        raise BacktestUploadError(f"arquivo {mb:.0f}MB excede limite de {lim:.0f}MB")
-
-    try:
-        UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-    except OSError as e:
-        raise BacktestUploadError(f"nao foi possivel criar pasta de uploads: {e}") from e
-
-    safe_nome = Path(nome_original).name  # tira path, evita traversal
-    uid = uuid.uuid4().hex[:8]
-    destino = UPLOAD_DIR / f"{uid}_{safe_nome}"
-    try:
-        destino.write_bytes(conteudo)
-    except OSError as e:
-        raise BacktestUploadError(f"falha ao gravar arquivo (disco cheio?): {e}") from e
-
-    logger.info(f"[backtest_upload] salvo: {destino} ({len(conteudo)} bytes)")
-    return str(destino)
-
-
-def caminho_do_upload(upload_id: str) -> str:
-    """Resolve o upload_id pro caminho do arquivo. Aqui upload_id JA E o caminho.
-    Valida que esta dentro de UPLOAD_DIR (seguranca: evita ler arquivo arbitrario).
-    BLINDADO contra path-traversal e upload_id vazio/invalido."""
-    if not upload_id or not str(upload_id).strip():
-        raise BacktestUploadError("upload_id vazio")
-
-    try:
-        p = Path(upload_id).resolve()
-        base = UPLOAD_DIR.resolve()
-    except (OSError, ValueError) as e:
-        raise BacktestUploadError(f"upload_id invalido: {e}") from e
-
-    if base not in p.parents and p != base:
-        raise BacktestUploadError("upload_id fora do diretorio de uploads (bloqueado)")
-    if not p.exists():
-        raise BacktestUploadError(f"upload nao encontrado: {p.name}")
-    return str(p)
-
-
-# ============================================================
-# Validacao cruzada: arquivo x banco (detecta divergencia)
-# ============================================================
-
-async def validar_cruzado(conn, upload_id: str, bot: dict,
-                          amostra: int = 500) -> dict:
-    """
-    Compara uma AMOSTRA dos ticks do arquivo com o que o banco tem, pra detectar
-    se o parquet diverge do banco (ex: arquivo de outra epoca, placar diferente,
-    coletor mudou). NAO bloqueia o backtest - retorna um relatorio de divergencia
-    pra UI mostrar um aviso. Decisao de confiar fica com o usuario.
-
-    Retorna dict com:
-        - amostrados: quantos ticks comparados
-        - so_no_arquivo: event_ids que o arquivo tem e o banco nao
-        - placar_divergente: casos onde o placar final difere entre arquivo e banco
-        - ok: bool (True se divergencia dentro do tolerado)
-
-    Filosofia: o backtest do arquivo SO e confiavel se o arquivo for fiel ao que
-    o banco teria. Se divergir muito, o numero pode nao refletir a realidade -
-    e o usuario PRECISA saber disso antes de apostar.
-    """
-    rel = {
-        'amostrados': 0,
-        'so_no_arquivo': 0,
-        'placar_divergente': 0,
-        'exemplos_divergencia': [],
-        'ok': True,
-        'erro': None,
+    return {
+        "linhas": int(linhas),
+        "ts_min": str(ts.min()) if len(ts) else None,
+        "ts_max": str(ts.max()) if len(ts) else None,
+        "casas": _uni("bookmaker"),
+        "esportes": _uni("sport"),
+        "ligas": _uni("liga")[:20],
     }
 
+
+# ============================================================
+# POST /backtest/upload-ticks
+# ============================================================
+
+@router.post("/upload-ticks")
+async def upload_ticks(arquivo: UploadFile = File(...)):
+    """
+    Recebe um .parquet de ticks, salva, valida e devolve um resumo + upload_id.
+    A UI mostra o resumo (linhas, periodo, ligas) antes de o usuario rodar o job.
+
+    BLINDADO: valida extensao, tamanho, conteudo e parsing. Qualquer falha
+    previsivel vira HTTP 400 com mensagem clara (nao 500 generico).
+    """
+    nome = (arquivo.filename or "").strip() or "ticks.parquet"
+    if not nome.lower().endswith(".parquet"):
+        raise HTTPException(status_code=400, detail="Envie um arquivo .parquet")
+
+    # leitura defensiva: limita tamanho pra nao estourar memoria
     try:
-        caminho = caminho_do_upload(upload_id)
-        ticks = parse_ticks_parquet(caminho, bot=bot)
-    except BacktestUploadError as e:
-        rel['erro'] = f"nao deu pra ler arquivo: {e}"
-        rel['ok'] = False
-        return rel
-
-    if not ticks:
-        rel['erro'] = "arquivo sem ticks apos filtros"
-        return rel
-
-    # pega placar final por event_id no arquivo
-    placar_arquivo: dict = {}
-    for t in ticks:
-        sh, sa = t.get('score_home'), t.get('score_away')
-        if sh is not None and sa is not None:
-            try:
-                placar_arquivo[str(t['event_id'])] = (int(sh), int(sa))
-            except (TypeError, ValueError):
-                pass
-
-    # amostra de event_ids pra comparar
-    event_ids = list(placar_arquivo.keys())[:amostra]
-    rel['amostrados'] = len(event_ids)
-    if not event_ids:
-        rel['erro'] = "nenhum event_id com placar no arquivo pra comparar"
-        return rel
-
-    try:
-        rows = await conn.fetch(
-            "SELECT DISTINCT ON (event_id) event_id, score_home, score_away "
-            "FROM ticks WHERE event_id = ANY($1::text[]) "
-            "AND score_home IS NOT NULL ORDER BY event_id, ts DESC",
-            event_ids,
-        )
+        conteudo = await arquivo.read()
     except Exception as e:
-        rel['erro'] = f"falha ao consultar banco: {e}"
-        rel['ok'] = False
-        return rel
+        logger.exception("[backtest_upload] falha ao ler upload")
+        raise HTTPException(status_code=400, detail=f"Falha ao receber arquivo: {e}")
+    finally:
+        try:
+            await arquivo.close()
+        except Exception:
+            pass
 
-    placar_banco = {str(r['event_id']): (r['score_home'], r['score_away'])
-                    for r in rows}
+    if not conteudo:
+        raise HTTPException(status_code=400, detail="Arquivo vazio")
+    if len(conteudo) > _MAX_UPLOAD_BYTES:
+        mb = len(conteudo) / 1024 / 1024
+        raise HTTPException(
+            status_code=413,
+            detail=f"Arquivo muito grande ({mb:.0f}MB). Limite: 500MB",
+        )
 
-    for eid in event_ids:
-        if eid not in placar_banco:
-            rel['so_no_arquivo'] += 1
-            continue
-        pa = placar_arquivo[eid]
-        pb = placar_banco[eid]
-        # placar pode estar invertido (perspectiva A/B) - compara normalizado
-        if tuple(sorted(pa)) != tuple(sorted(pb)):
-            rel['placar_divergente'] += 1
-            if len(rel['exemplos_divergencia']) < 5:
-                rel['exemplos_divergencia'].append(
-                    {'event_id': eid, 'arquivo': pa, 'banco': pb})
+    # salva no storage temporario -> upload_id (em thread: nao segura o loop)
+    try:
+        upload_id = await asyncio.to_thread(salvar_upload, conteudo, nome)
+    except BacktestUploadError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.exception("[backtest_upload] erro inesperado ao salvar")
+        raise HTTPException(status_code=500, detail=f"Erro ao salvar: {e}")
 
-    # tolerancia: ate 5% de placar divergente e ate 50% so-no-arquivo (normal,
-    # arquivo tem dados antigos que o banco ja limpou). Acima disso, alerta.
-    if rel['amostrados'] > 0:
-        frac_div = rel['placar_divergente'] / rel['amostrados']
-        if frac_div > 0.05:
-            rel['ok'] = False
-            rel['erro'] = (
-                f"{rel['placar_divergente']} placares divergentes de "
-                f"{rel['amostrados']} ({frac_div:.0%}) - arquivo pode estar furado"
+    # resumo LEVE (v7): metadata + 4 colunas, em thread. O parse completo em
+    # dicts (que congelava a API com arquivo grande) so roda dentro do JOB.
+    try:
+        resumo = await asyncio.to_thread(_resumo_upload_leve, upload_id)
+    except BacktestUploadError as e:
+        raise HTTPException(status_code=400, detail=f"Parquet invalido: {e}")
+    except Exception as e:
+        logger.exception("[backtest_upload] erro inesperado ao ler parquet")
+        raise HTTPException(status_code=500, detail=f"Erro ao ler parquet: {e}")
+
+    return {"upload_id": upload_id, "arquivo": nome, **resumo}
+
+
+# ============================================================
+# POST /backtest/jobs-upload
+# ============================================================
+
+class BacktestUploadJobRequest(BaseModel):
+    bot_id: int = Field(..., gt=0)
+    upload_id: str = Field(..., min_length=1)
+    stake_modo: str = Field(default="fixo")
+    stake_valor: float = Field(..., gt=0)
+    banca_inicial: float = Field(default=1000.00, gt=0)
+
+
+@router.post("/jobs-upload")
+async def criar_job_upload(req: BacktestUploadJobRequest, background: BackgroundTasks, usuario: dict = Depends(get_current_user)):
+    """
+    Cria um job de backtest usando os ticks do ARQUIVO (upload_id), nao do banco.
+    Mesmo fluxo do POST /jobs: snapshot do bot, insere job, dispara worker.
+    A diferenca e que grava upload_id - o worker, vendo ele preenchido, le do
+    arquivo em vez do banco (peca 3).
+
+    BLINDADO: valida que o upload existe ANTES de criar o job (nao cria job
+    fadado a falhar), trata bot inexistente e erro de DB (ex: coluna upload_id
+    ausente -> avisa pra rodar a migration).
+    """
+    # 1) o upload existe e e legivel? (falha cedo, antes de criar job)
+    try:
+        from workers.backtest_upload import caminho_do_upload
+        caminho_do_upload(req.upload_id)
+    except BacktestUploadError as e:
+        raise HTTPException(status_code=400, detail=f"upload_id invalido: {e}")
+    except Exception as e:
+        logger.exception("[backtest_upload] erro ao validar upload_id")
+        raise HTTPException(status_code=400, detail=f"upload_id invalido: {e}")
+
+    pool = get_pool()
+    try:
+        async with pool.acquire() as conn:
+            bot_row = await conn.fetchrow(
+                "SELECT id, user_id, nome, casa, esporte, mercado, torneios, torneios_excluir, "
+                "linha_min, linha_max, odd_min, odd_max, whitelist_pares, blacklist_pares, "
+                "whitelist_cenarios, max_apostas_partida, filtros "
+                "FROM bots WHERE id = $1",
+                req.bot_id,
             )
+            if not bot_row:
+                raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
+            if not acesso_total(usuario) and bot_row["user_id"] != usuario.get("id"):
+                raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
 
-    logger.info(
-        f"[backtest_upload] validacao cruzada: {rel['amostrados']} amostrados, "
-        f"{rel['so_no_arquivo']} so-no-arquivo, "
-        f"{rel['placar_divergente']} placar divergente, ok={rel['ok']}"
-    )
+            bot_dict = dict(bot_row)
+            for k in ("torneios", "torneios_excluir", "whitelist_pares", "blacklist_pares",
+                      "whitelist_cenarios", "filtros"):
+                v = bot_dict.get(k)
+                if isinstance(v, str):
+                    try:
+                        bot_dict[k] = json.loads(v)
+                    except Exception:
+                        pass
+
+            try:
+                job_id = await conn.fetchval(
+                    """
+                    INSERT INTO backtest_jobs
+                        (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
+                         banca_inicial, bot_snapshot, status, progresso, upload_id, user_id)
+                    VALUES ($1, NULL, NULL, $2, $3, $4, $5::jsonb, 'pendente', 0, $6, $7)
+                    RETURNING id
+                    """,
+                    req.bot_id, req.stake_modo, req.stake_valor, req.banca_inicial,
+                    json.dumps(bot_dict, default=str), req.upload_id,
+                    usuario.get("id"),
+                )
+            except Exception as e:
+                # erro comum: coluna upload_id ainda nao existe -> avisa pra migrar
+                msg = str(e)
+                if "upload_id" in msg and ("column" in msg.lower() or "coluna" in msg.lower()):
+                    raise HTTPException(
+                        status_code=500,
+                        detail="Coluna upload_id ausente. Rode a migration: "
+                               "ALTER TABLE backtest_jobs ADD COLUMN IF NOT EXISTS upload_id TEXT;",
+                    )
+                logger.exception("[backtest_upload] erro ao inserir job")
+                raise HTTPException(status_code=500, detail=f"Erro ao criar job: {e}")
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("[backtest_upload] erro de DB ao criar job")
+        raise HTTPException(status_code=500, detail=f"Erro de banco: {e}")
+
+    logger.info(f"[backtest_upload] Job {job_id} (upload) criado p/ bot {req.bot_id}")
+    background.add_task(executar_backtest, job_id)
+    return {"job_id": job_id, "status": "pendente", "fonte": "arquivo"}
+
+
+# ============================================================
+# POST /backtest/validar-cruzado
+# ============================================================
+
+class ValidarCruzadoRequest(BaseModel):
+    bot_id: int = Field(..., gt=0)
+    upload_id: str = Field(..., min_length=1)
+
+
+@router.post("/validar-cruzado")
+async def validar_cruzado_endpoint(req: ValidarCruzadoRequest, usuario: dict = Depends(get_current_user)):
+    """
+    Compara o arquivo upado com o banco (amostra) pra detectar divergencia ANTES
+    de rodar o backtest. Retorna relatorio: quantos so estao no arquivo, quantos
+    placares divergem, e se esta dentro do tolerado. A UI mostra como aviso.
+
+    BLINDADO: bot inexistente, upload invalido, erro de banco - tudo tratado.
+    """
+    from workers.backtest_upload import validar_cruzado, BacktestUploadError
+
+    pool = get_pool()
+    try:
+        async with pool.acquire() as conn:
+            bot_row = await conn.fetchrow(
+                "SELECT casa, esporte, torneios, torneios_excluir, user_id FROM bots WHERE id=$1",
+                req.bot_id,
+            )
+            if not bot_row:
+                raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
+            if not acesso_total(usuario) and bot_row["user_id"] != usuario.get("id"):
+                raise HTTPException(status_code=404, detail=f"Bot {req.bot_id} nao encontrado")
+
+            bot_dict = dict(bot_row)
+            for k in ("torneios", "torneios_excluir"):
+                v = bot_dict.get(k)
+                if isinstance(v, str):
+                    try:
+                        bot_dict[k] = json.loads(v)
+                    except Exception:
+                        pass
+
+            try:
+                rel = await validar_cruzado(conn, req.upload_id, bot_dict)
+            except BacktestUploadError as e:
+                raise HTTPException(status_code=400, detail=str(e))
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("[backtest_upload] erro na validacao cruzada")
+        raise HTTPException(status_code=500, detail=f"Erro na validacao: {e}")
+
     return rel
+
+
+# ============================================================
+# POST /backtest/jobs-avulso
+# Backtest STANDALONE (sem bot): filtros vem da aba, ticks do upload.
+# Monta um bot_snapshot "virtual" no formato que o worker ja entende.
+# Tudo validado e blindado - entrada da aba nao pode gerar snapshot invalido.
+# ============================================================
+
+# Vocabulario valido (espelha o backtest_runner). Se o runner mudar, ajustar aqui.
+_LADOS_VALIDOS = {"over", "under", "ambos"}
+# janela do WR: "all" ou "last_<N>" (qtd) / "last_<N>h|d|m" (tempo)
+_WR_JANELA_RE = re.compile(r'^(all|last_\d+[hdm]?)$')
+_CENARIOS_VALIDOS = {
+    "", "casa_vencendo", "casa_perdendo", "empate",
+    "casa_ou_empate", "visitante_ou_empate", "casa_ou_visitante",
+}
+_MERCADOS_VALIDOS = {
+    "over_under_ft", "over_under_ht", "asian_over_under_ft", "asian_over_under_ht",
+    "ml_ft", "ml_ht", "btts_ft", "ah_ft", "ah_ht",
+    "correct_score", "double_chance_ft", "odd_even",
+}
+_QUARTOS_VALIDOS = {"q1", "q2", "q3", "q4"}
+# limites defensivos (evita payload absurdo)
+_MAX_NICKS = 500
+_MAX_NICK_LEN = 80
+
+
+class BacktestAvulsoRequest(BaseModel):
+    upload_id: str = Field(..., min_length=1, max_length=200)
+    # mercado escolhido na aba (ex: over_under_ft). lado: over/under/ambos.
+    mercado: str = Field(..., min_length=1, max_length=40)
+    lado: str = Field(default="ambos", max_length=10)
+    casa: Optional[str] = Field(default=None, max_length=40)
+    esporte: Optional[str] = Field(default=None, max_length=40)
+    # WR do H2H (porcentagem): janela e minimo. janela 0 = todas.
+    wr_min: Optional[float] = Field(default=None, ge=0, le=100)
+    # janela do WR: "all" ou "last_N"/"last_Nh"/"last_Nd" (quantidade OU tempo)
+    wr_janela: str = Field(default="all", max_length=20)
+    wr_min_partidas: int = Field(default=10, ge=0, le=10000)
+    # placar: cenario + diferenca minima de gols/pontos
+    cenario: Optional[str] = Field(default=None, max_length=30)
+    diferenca_placar: Optional[int] = Field(default=None, ge=0, le=200)
+    # tempo: quartos ativos (basket). Lista tipo ["q1","q2"].
+    quartos: Optional[list] = None
+    # linha (faixa)
+    linha_min: Optional[float] = Field(default=None, ge=-1000, le=1000)
+    linha_max: Optional[float] = Field(default=None, ge=-1000, le=1000)
+    # black/white list de nicks (bloqueia/permite nick em QUALQUER posicao)
+    blacklist: list = Field(default_factory=list)
+    whitelist: list = Field(default_factory=list)
+    # filtros complementares (H2H): media, gap_media, zscore, gap_linha, tendencia
+    # cada item: {tipo, janela, min, minAtivo, max, maxAtivo}
+    filtros_comp: list = Field(default_factory=list)
+    # filtros de historico (WR): VARIOS filtros de win-rate por janela (escadinha)
+    # cada item: {janela, prob:[min%,max%], minPartidas}. Formato do bot ao vivo.
+    filtros_hist: list = Field(default_factory=list)
+    # stake
+    stake_modo: str = Field(default="fixo", max_length=20)
+    stake_valor: float = Field(..., gt=0, le=1_000_000)
+    banca_inicial: float = Field(default=1000.00, gt=0, le=1_000_000_000)
+
+
+def _limpar_nicks(lista, campo: str) -> list:
+    """Normaliza uma lista de nicks: aceita so strings nao-vazias, faz strip,
+    limita tamanho e quantidade. Ignora itens invalidos em vez de quebrar."""
+    if not lista:
+        return []
+    if not isinstance(lista, (list, tuple)):
+        raise HTTPException(status_code=400, detail=f"{campo} deve ser uma lista de nicks")
+    out = []
+    vistos = set()
+    for item in lista:
+        if item is None:
+            continue
+        try:
+            s = str(item).strip()
+        except Exception:
+            continue
+        if not s:
+            continue
+        if len(s) > _MAX_NICK_LEN:
+            s = s[:_MAX_NICK_LEN]
+        chave = s.lower()
+        if chave in vistos:   # dedup case-insensitive
+            continue
+        vistos.add(chave)
+        out.append(s)
+        if len(out) >= _MAX_NICKS:
+            break
+    return out
+
+
+# tipos de filtro complementar aceitos (mesmos do bot ao vivo / CriarBot)
+_COMP_TIPOS_VALIDOS = {"media", "gap_media", "gap", "gap_linha", "tendencia", "zscore", "z"}
+_MAX_FILTROS_COMP = 20
+
+
+def _limpar_filtros_comp(lista) -> list:
+    """Sanitiza os filtros complementares vindos da aba avulsa. Mantem so tipos
+    conhecidos, valida thresholds ativos (numero), e devolve no formato que o
+    worker entende (mesmo de filtrosCompAdicionados). Falha EXPLICITA (400) se um
+    threshold ativo nao for numero - melhor erro claro que backtest zerado."""
+    if not lista:
+        return []
+    if not isinstance(lista, (list, tuple)):
+        raise HTTPException(status_code=400, detail="filtros_comp deve ser uma lista")
+    out = []
+    for f in lista:
+        if not isinstance(f, dict):
+            continue
+        tipo = str(f.get("tipo", "")).strip().lower()
+        if tipo not in _COMP_TIPOS_VALIDOS:
+            continue  # ignora tipo desconhecido (nao quebra)
+        min_ativo = bool(f.get("minAtivo"))
+        max_ativo = bool(f.get("maxAtivo"))
+        if not min_ativo and not max_ativo:
+            continue  # sem limite ativo = no-op, nao adiciona
+        entry = {"tipo": tipo, "janela": f.get("janela"),
+                 "minAtivo": min_ativo, "maxAtivo": max_ativo}
+        if min_ativo:
+            try:
+                entry["min"] = float(f.get("min"))
+            except (TypeError, ValueError):
+                raise HTTPException(status_code=400,
+                                    detail=f"filtro complementar '{tipo}': min invalido ({f.get('min')!r}).")
+        if max_ativo:
+            try:
+                entry["max"] = float(f.get("max"))
+            except (TypeError, ValueError):
+                raise HTTPException(status_code=400,
+                                    detail=f"filtro complementar '{tipo}': max invalido ({f.get('max')!r}).")
+        out.append(entry)
+        if len(out) >= _MAX_FILTROS_COMP:
+            break
+    return out
+
+
+def _limpar_filtros_hist(lista) -> list:
+    """Sanitiza os filtros de historico (WR) da aba avulsa. Cada item vira um
+    filtrosHistAdicionados no formato do worker (base=match, tipo=all, versao=all).
+    Valida janela (mesmo formato do WR) e prob [min%,max%]. Falha 400 se invalido -
+    erro claro em vez de backtest zerado."""
+    if not lista:
+        return []
+    if not isinstance(lista, (list, tuple)):
+        raise HTTPException(status_code=400, detail="filtros_hist deve ser uma lista")
+    out = []
+    for f in lista:
+        if not isinstance(f, dict):
+            continue
+        janela = str(f.get("janela", "all")).strip().lower()
+        if not _WR_JANELA_RE.match(janela):
+            raise HTTPException(status_code=400,
+                                detail=f"janela do filtro de WR invalida: '{janela}'. Use 'all' ou 'last_N' / 'last_Nh' / 'last_Nd'.")
+        prob = f.get("prob") or []
+        try:
+            pmin = float(prob[0])
+            pmax = float(prob[1]) if (len(prob) > 1 and prob[1] is not None) else 100.0
+        except (TypeError, ValueError, IndexError):
+            raise HTTPException(status_code=400,
+                                detail=f"WR do filtro invalido: {f.get('prob')!r}. Informe a % minima.")
+        if not (0 <= pmin <= 100 and 0 <= pmax <= 100) or pmin > pmax:
+            raise HTTPException(status_code=400,
+                                detail=f"WR fora de 0-100 (ou min>max): {[pmin, pmax]}.")
+        try:
+            minp = max(0, int(f.get("minPartidas", 10)))
+        except (TypeError, ValueError):
+            minp = 10
+        out.append({
+            "base": "match", "tipo": "all", "versao": "all",
+            "janela": janela, "prob": [pmin, pmax], "minPartidas": minp,
+        })
+        if len(out) >= 20:
+            break
+    return out
+
+
+def _validar_e_normalizar(req: "BacktestAvulsoRequest") -> dict:
+    """Valida os filtros da aba e devolve um dict ja normalizado pronto pro
+    snapshot. Levanta HTTPException 400 com mensagem clara se algo invalido.
+    Centraliza TODA a validacao (o snapshot so recebe valores limpos)."""
+    # lado
+    lado = (req.lado or "ambos").strip().lower()
+    if lado not in _LADOS_VALIDOS:
+        raise HTTPException(status_code=400,
+                            detail=f"lado invalido: '{lado}'. Use over, under ou ambos.")
+    # mercado
+    mercado = (req.mercado or "").strip().lower()
+    if mercado not in _MERCADOS_VALIDOS:
+        raise HTTPException(status_code=400,
+                            detail=f"mercado invalido: '{mercado}'.")
+    # cenario
+    cenario = (req.cenario or "").strip().lower()
+    if cenario not in _CENARIOS_VALIDOS:
+        raise HTTPException(status_code=400,
+                            detail=f"cenario invalido: '{cenario}'.")
+    # janela do WR: "all" ou "last_N"/"last_Nh"/"last_Nd" (so valida se WR ativo)
+    if req.wr_min is not None:
+        wj = (req.wr_janela or "all").strip().lower()
+        if not _WR_JANELA_RE.match(wj):
+            raise HTTPException(status_code=400,
+                                detail=f"janela do WR invalida: '{wj}'. Use 'all' ou 'last_N' / 'last_Nh' / 'last_Nd'.")
+    # linha: se ambas vierem, min <= max
+    if (req.linha_min is not None and req.linha_max is not None
+            and req.linha_min > req.linha_max):
+        raise HTTPException(status_code=400,
+                            detail="linha_min nao pode ser maior que linha_max.")
+    # quartos: aceita so q1..q4, normaliza
+    quartos = None
+    if req.quartos:
+        if not isinstance(req.quartos, (list, tuple)):
+            raise HTTPException(status_code=400, detail="quartos deve ser uma lista.")
+        q_norm = set()
+        for x in req.quartos:
+            try:
+                qx = str(x).strip().lower()
+            except Exception:
+                continue
+            if qx in _QUARTOS_VALIDOS:
+                q_norm.add(qx)
+        # se mandou quartos mas nenhum valido, e erro (evita filtro vazio silencioso)
+        if not q_norm:
+            raise HTTPException(status_code=400,
+                                detail="quartos sem nenhum valor valido (use q1..q4).")
+        quartos = q_norm
+    # nicks
+    blacklist = _limpar_nicks(req.blacklist, "blacklist")
+    whitelist = _limpar_nicks(req.whitelist, "whitelist")
+    # filtros complementares (H2H)
+    filtros_comp = _limpar_filtros_comp(req.filtros_comp)
+    # filtros de historico (WR): varios por janela
+    filtros_hist = _limpar_filtros_hist(req.filtros_hist)
+
+    return {
+        "lado": lado, "mercado": mercado, "cenario": cenario,
+        "quartos": quartos, "blacklist": blacklist, "whitelist": whitelist,
+        "filtros_comp": filtros_comp, "filtros_hist": filtros_hist,
+    }
+
+
+def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
+    """Converte os filtros (ja validados em `norm`) num bot_snapshot que o
+    worker ja entende. Nao valida nada aqui - so monta (a validacao foi antes)."""
+    filtros: dict = {}
+
+    # lado (ambos = nao restringe)
+    if norm["lado"] in ("over", "under"):
+        filtros["lados"] = [norm["lado"]]
+        filtros["inner"] = [norm["lado"].capitalize()]
+
+    # WR do H2H -> filtrosHistAdicionados (formato que o worker normaliza)
+    # Prioridade: array filtros_hist (varios filtros, escadinha). Se vazio, cai no
+    # filtro unico antigo (wr_min) por compatibilidade.
+    if norm.get("filtros_hist"):
+        filtros["filtrosHistAdicionados"] = norm["filtros_hist"]
+    elif req.wr_min is not None:
+        # janela ja vem no formato do worker ("all"/"last_N"/"last_1d"/"last_7d").
+        # validada em _validar_e_normalizar; aqui so passa (default "all").
+        janela_str = (req.wr_janela or "all").strip().lower()
+        filtros["filtrosHistAdicionados"] = [{
+            "base": "match",
+            "prob": [float(req.wr_min), 100],
+            "tipo": "all",
+            "janela": janela_str,
+            "versao": "all",
+            "minPartidas": int(req.wr_min_partidas),
+        }]
+
+    # filtros complementares (H2H) -> filtrosCompAdicionados (o worker le direto)
+    if norm.get("filtros_comp"):
+        filtros["filtrosCompAdicionados"] = norm["filtros_comp"]
+
+    # placar: cenario + diferenca
+    if norm["cenario"]:
+        filtros["cenarioPartida"] = norm["cenario"]
+        filtros["cenarioPartidaAtivo"] = True
+    if req.diferenca_placar is not None and req.diferenca_placar > 0:
+        filtros["diferencaPlacar"] = int(req.diferenca_placar)
+        filtros["diferencaPlacarAtivo"] = True
+
+    # tempo: quartos (basket)
+    if norm["quartos"]:
+        filtros["quartosAtivos"] = {
+            f"q{i}": (f"q{i}" in norm["quartos"]) for i in range(1, 5)
+        }
+
+    # black/white list de nicks -> entries {j1: nick} (worker checa qualquer posicao)
+    blacklist_pares = [{"j1": n} for n in norm["blacklist"]]
+    whitelist_pares = [{"j1": n} for n in norm["whitelist"]]
+
+    return {
+        "nome": "Backtest avulso",
+        "casa": (req.casa or None),
+        "esporte": (req.esporte or None),
+        "mercado": norm["mercado"],
+        "linha_min": req.linha_min,
+        "linha_max": req.linha_max,
+        "odd_min": None,
+        "odd_max": None,
+        "torneios": [],
+        "torneios_excluir": [],
+        "whitelist_pares": whitelist_pares,
+        "blacklist_pares": blacklist_pares,
+        "whitelist_cenarios": [],
+        "max_apostas_partida": None,
+        "filtros": filtros,
+    }
+
+
+async def _rodar_backtest_seguro(job_id: int):
+    """Wrapper do executar_backtest pro BackgroundTask. Se o worker estourar,
+    marca o job como 'erro' no banco (em vez de deixar 'pendente' pra sempre =
+    job zumbi que a UI fica esperando eternamente)."""
+    try:
+        await executar_backtest(job_id)
+    except Exception as e:
+        logger.exception(f"[backtest_upload] job avulso {job_id} estourou no worker")
+        try:
+            pool = get_pool()
+            async with pool.acquire() as conn:
+                await conn.execute(
+                    "UPDATE backtest_jobs SET status='erro', erro=$2 WHERE id=$1",
+                    job_id, f"Falha no worker: {str(e)[:300]}",
+                )
+        except Exception:
+            logger.exception(f"[backtest_upload] nao consegui marcar job {job_id} como erro")
+
+
+@router.post("/jobs-avulso")
+async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTasks, usuario: dict = Depends(get_current_user)):
+    """
+    Backtest STANDALONE: nao precisa de bot. Os filtros (WR H2H, placar, tempo,
+    black/white list de nicks, mercado/lado) vem da aba; os ticks vem do arquivo
+    (upload_id). Monta um bot_snapshot virtual e roda o MESMO worker.
+
+    BLINDADO ponta a ponta:
+      - valida TODOS os filtros (lado/mercado/cenario/quartos/nicks/linha) -> 400 claro
+      - valida que o upload existe antes de criar o job (nao cria job fadado a falhar)
+      - trata coluna upload_id ausente e bot_id NOT NULL (avisa a migration)
+      - se o worker estourar no background, marca o job como 'erro' (sem zumbi)
+    """
+    # 1) valida e normaliza os filtros (400 claro se algo invalido)
+    norm = _validar_e_normalizar(req)
+
+    # 2) upload existe e e legivel? (falha cedo, antes de criar job)
+    try:
+        from workers.backtest_upload import caminho_do_upload
+        caminho_do_upload(req.upload_id)
+    except BacktestUploadError as e:
+        raise HTTPException(status_code=400, detail=f"upload_id invalido: {e}")
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("[backtest_upload] erro ao validar upload_id (avulso)")
+        raise HTTPException(status_code=400, detail=f"upload_id invalido: {e}")
+
+    # 3) monta o snapshot (so com valores ja validados)
+    try:
+        snapshot = _montar_snapshot_avulso(req, norm)
+        snapshot_json = json.dumps(snapshot, default=str)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("[backtest_upload] erro montando snapshot avulso")
+        raise HTTPException(status_code=400, detail=f"Filtros invalidos: {e}")
+
+    # 4) cria o job
+    pool = get_pool()
+    try:
+        async with pool.acquire() as conn:
+            try:
+                job_id = await conn.fetchval(
+                    """
+                    INSERT INTO backtest_jobs
+                        (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
+                         banca_inicial, bot_snapshot, status, progresso, upload_id, user_id)
+                    VALUES (NULL, NULL, NULL, $1, $2, $3, $4::jsonb, 'pendente', 0, $5, $6)
+                    RETURNING id
+                    """,
+                    req.stake_modo, req.stake_valor, req.banca_inicial,
+                    snapshot_json, req.upload_id,
+                    usuario.get("id"),
+                )
+            except Exception as e:
+                msg = str(e).lower()
+                if "upload_id" in msg and "column" in msg:
+                    raise HTTPException(
+                        status_code=500,
+                        detail="Coluna upload_id ausente. Rode: "
+                               "ALTER TABLE backtest_jobs ADD COLUMN IF NOT EXISTS upload_id TEXT;",
+                    )
+                if "bot_id" in msg and ("null" in msg or "not-null" in msg):
+                    raise HTTPException(
+                        status_code=500,
+                        detail="Coluna bot_id precisa aceitar NULL p/ backtest avulso. Rode: "
+                               "ALTER TABLE backtest_jobs ALTER COLUMN bot_id DROP NOT NULL;",
+                    )
+                logger.exception("[backtest_upload] erro ao inserir job avulso")
+                raise HTTPException(status_code=500, detail=f"Erro ao criar job: {e}")
+
+            if job_id is None:
+                raise HTTPException(status_code=500, detail="Job nao foi criado (id nulo).")
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception("[backtest_upload] erro de DB no job avulso")
+        raise HTTPException(status_code=500, detail=f"Erro de banco: {e}")
+
+    # 5) dispara o worker (com wrapper que marca erro se estourar)
+    logger.info(f"[backtest_upload] Job avulso {job_id} criado (mercado={norm['mercado']}, lado={norm['lado']})")
+    background.add_task(_rodar_backtest_seguro, job_id)
+    return {"job_id": job_id, "status": "pendente", "fonte": "arquivo", "avulso": True}
+
+
+@router.get("/jobs/{job_id}/planilha")
+async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_current_user)):
+    """Gera um .xlsx com as apostas do backtest no MESMO formato do export do bot
+    ao vivo (aba 'Tips Enviadas'). Permite comparar backtest vs vivo lado a lado.
+    Le apostas_detalhe (ja salvo no job) e monta a planilha on-demand."""
+    pool = await get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT status, apostas_detalhe, user_id FROM backtest_jobs WHERE id=$1", job_id)
+    if row is None:
+        raise HTTPException(status_code=404, detail="job nao encontrado")
+    if not acesso_total(usuario) and row["user_id"] != usuario.get("id"):
+        raise HTTPException(status_code=404, detail="job nao encontrado")
+    detalhe = row["apostas_detalhe"]
+    if isinstance(detalhe, str):
+        detalhe = json.loads(detalhe or "[]")
+    detalhe = detalhe or []
+    if not detalhe:
+        raise HTTPException(status_code=400,
+                            detail="job sem apostas para exportar (0 apostas ou ainda rodando).")
+
+    def _fmt_dt(ts_iso):
+        try:
+            d = datetime.fromisoformat(str(ts_iso).replace("Z", ""))
+            return d.strftime("%d/%m/%Y"), d.strftime("%H:%M:%S")
+        except Exception:
+            return str(ts_iso), ""
+
+    _res_map = {"green": "Green", "red": "Red", "void": "Void"}
+    linhas = []
+    for a in detalhe:
+        data, hora = _fmt_dt(a.get("ts"))
+        linhas.append({
+            "Torneio": a.get("torneio", ""),
+            "Campeonato": a.get("liga", ""),
+            "Confronto": f"{a.get('jogador_a', '')} x {a.get('jogador_b', '')}",
+            "Jogador A": a.get("jogador_a", ""),
+            "Time A": a.get("time_a", ""),
+            "Jogador B": a.get("jogador_b", ""),
+            "Time B": a.get("time_b", ""),
+            "Data": data,
+            "Hora": hora,
+            "Mercado": a.get("mercado", ""),
+            "Tip": a.get("tip", ""),
+            "Linha": a.get("linha"),
+            "Janela 1": a.get("janela_1", ""),
+            "Winrate 1": a.get("winrate_1"),
+            "Janela 2": a.get("janela_2", ""),
+            "Winrate 2": a.get("winrate_2"),
+            "Odd": a.get("odd"),
+            "Placar Envio": a.get("placar_envio", ""),
+            "Placar Final": a.get("score_final", ""),
+            "Resultado": _res_map.get(a.get("resultado"), a.get("resultado", "")),
+            "Lucro/Prej.": a.get("lucro_unidades"),
+        })
+
+    import pandas as pd
+    df = pd.DataFrame(linhas)
+    buf = io.BytesIO()
+    with pd.ExcelWriter(buf, engine="openpyxl") as xls:
+        df.to_excel(xls, index=False, sheet_name="Tips Enviadas")
+    buf.seek(0)
+    fn = f"backtest_job_{job_id}_apostas.xlsx"
+    return StreamingResponse(
+        buf,
+        media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f'attachment; filename="{fn}"'},
+    )

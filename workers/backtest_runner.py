@@ -1733,7 +1733,10 @@ async def executar_backtest(job_id: int):
 
                 try:
                     caminho = caminho_do_upload(upload_id)
-                    ticks = parse_ticks_parquet(caminho, bot=bot)
+                    # JOB42/upload: parse de parquet grande (1M+ linhas) e
+                    # PESADO e sincrono - fora do event loop, senao a API
+                    # inteira congela durante o inicio do job.
+                    ticks = await asyncio.to_thread(parse_ticks_parquet, caminho, bot)
                 except BacktestUploadError as e:
                     # erro previsivel de arquivo: marca job erro com msg clara
                     raise RuntimeError(f"Falha no arquivo de ticks: {e}") from e
