@@ -1,5 +1,11 @@
 """
-bot_executor.py - Worker de simulacao em tempo real (v11)
+bot_executor.py - Worker de simulacao em tempo real (v11.2)
+
+v11.2 - Trava do evitarLinhasSeq por (jogo, mercado, LADO):
+- Espelha o backtest v11.2. Bot de lado unico e HC: identico ao antigo (lado
+  constante/None). Lado 'Ambos' em over/under: cada lado ganha a SUA aposta
+  no jogo; antes o primeiro tick que chegava (Under, na estrelabet) travava o
+  mercado e o outro lado nunca apostava.
 
 v11 - Filtro INDIVIDUAL (base=individual) + FAIL CLOSED + escadinha HC no vivo:
 - Chips de historico com base=individual agora funcionam: WR das ultimas N
@@ -90,6 +96,7 @@ from workers.backtest_runner import (
     _espelhar_stats_individuais,
     _primeiro_nao_suportado,
     _zebra_favorito,
+    _lado_aposta,
     ESPORTE_UI_PARA_BANCO,
     MIN_H2H_DEFAULT,
     # --- HC (handicap): mesmas funcoes do backtest, pra ao vivo NAO divergir ---
@@ -625,14 +632,20 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     if evitar_linhas_seq:
         mercado_tipo_atual = tick.get('mercado_tipo')
         async with state.pool.acquire() as conn:
-            ja_apostou = await conn.fetchval("""
-                SELECT COUNT(*) FROM apostas
+            _sels_mercado = await conn.fetch("""
+                SELECT selecao FROM apostas
                 WHERE bot_id = $1
                   AND event_id = $2
                   AND modo = 'simulado'
                   AND (mercado_tipo = $3 OR ($3 IS NULL AND mercado_tipo IS NULL))
             """, bot['id'], tick.get('event_id'), mercado_tipo_atual)
-        if ja_apostou and ja_apostou > 0:
+        # v11.2: trava por (jogo, mercado, LADO) — MESMA regra do backtest
+        # (fonte unica, sem divergir). Lado unico e HC: identico ao antigo
+        # (lado constante/None). Lado 'Ambos' em over/under: cada lado ganha
+        # a SUA vaga. BLINDADO: selecao ilegivel -> lado None, que trava como
+        # antes (nunca abre brecha pra apostar 2x o mesmo lado).
+        _lado_atual = _lado_aposta(tick.get('selecao'))
+        if any(_lado_aposta(r['selecao']) == _lado_atual for r in _sels_mercado):
             state.contador_rejeicoes['mercado_repetido'] = state.contador_rejeicoes.get('mercado_repetido', 0) + 1
             return
 
@@ -1033,7 +1046,7 @@ async def loop_stats():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("Bot Executor iniciando (v11 - filtro individual + fail closed + escadinha HC no vivo)...")
+    logger.info("Bot Executor iniciando (v11.2 - trava por lado no evitarLinhasSeq + filtro individual)...")
     logger.info("=" * 60)
 
     state.bots_lock = asyncio.Lock()

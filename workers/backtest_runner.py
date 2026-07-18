@@ -1,5 +1,14 @@
 """
-workers/backtest_runner.py - Worker do backtest (v11.1)
+workers/backtest_runner.py - Worker do backtest (v11.2)
+
+v11.2 - "Ambos" de verdade no evitarLinhasSeq:
+- A trava de 1 aposta por mercado passou a incluir o LADO:
+  (jogo, mercado_tipo, lado). Bot de lado unico e HC: comportamento IDENTICO
+  (lado constante/None = mesma trava de antes). Lado 'Ambos' em over/under:
+  cada lado ganha a SUA aposta no jogo — antes o primeiro tick gravado pelo
+  coletor (Under, na estrelabet) vencia o desempate em 100% dos jogos e o
+  'Ambos' saia um lado so (job 58: 4167/4167 Under). O bot_executor v11.2
+  espelha a MESMA trava no vivo (fonte unica, sem divergir).
 
 v11.1 - Colunas de WR DINAMICAS na planilha (coleta de dados):
 - apostas_detalhe ganha 'wr_cols': TODAS as janelas de TODOS os chips viram
@@ -2128,7 +2137,11 @@ async def executar_backtest(job_id: int):
         # TODA linha (Over 0.5, 1.5, 2.5...7.5) do mesmo jogo -> ~9x mais apostas e
         # WR colapsando pra taxa-base (as linhas altas perdem). Agora bate com o vivo.
         evitar_linhas_seq = filtros.get('evitarLinhasSeq', True)
-        mercado_apostado_evt: set = set()  # {(event_id, mercado_tipo)} ja apostados
+        # v11.2: a trava inclui o LADO -> {(event_id, mercado_tipo, lado)}.
+        # Lado unico e HC: nada muda (lado constante/None = mesma trava).
+        # Lado 'Ambos' em over/under: cada lado ganha a sua vaga — "Ambos"
+        # vira os dois de verdade, nao "o primeiro que o coletor gravou".
+        mercado_apostado_evt: set = set()
 
         # FIX (lado / falso-positivo): replica o filtro de LADO do bot_executor
         # (linhas 374-385). AO VIVO o bot so aposta os lados configurados em
@@ -2391,7 +2404,8 @@ async def executar_backtest(job_id: int):
             # teria apostado (primeiro tick que passa, depois trava o mercado).
             if evitar_linhas_seq:
                 _mtipo_evt = tick.get('mercado_tipo')
-                if (evt, _mtipo_evt) in mercado_apostado_evt:
+                _lado_evt = _lado_aposta(tick.get('selecao'))
+                if (evt, _mtipo_evt, _lado_evt) in mercado_apostado_evt:
                     rej['mercado_repetido'] = rej.get('mercado_repetido', 0) + 1
                     continue
 
@@ -2628,7 +2642,8 @@ async def executar_backtest(job_id: int):
 
             apostas_por_evento[evt] = apostas_por_evento.get(evt, 0) + 1
             if evitar_linhas_seq:
-                mercado_apostado_evt.add((evt, tick.get('mercado_tipo')))
+                mercado_apostado_evt.add((evt, tick.get('mercado_tipo'),
+                                          _lado_aposta(tick.get('selecao'))))
             candidatas.append({
                 'tick': tick,
                 'linha_num': linha_num,

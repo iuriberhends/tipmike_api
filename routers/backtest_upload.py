@@ -402,6 +402,10 @@ class BacktestAvulsoRequest(BaseModel):
     # linha (faixa)
     linha_min: Optional[float] = Field(default=None, ge=-1000, le=1000)
     linha_max: Optional[float] = Field(default=None, ge=-1000, le=1000)
+    # v11.2: faixa de ODD do avulso (antes NAO existia — o snapshot ia com
+    # odd_min/max None e apostas a qualquer odd passavam, ex.: 1.42 no job 58)
+    odd_min: Optional[float] = Field(default=None, gt=1, le=1000)
+    odd_max: Optional[float] = Field(default=None, gt=1, le=1000)
     # black/white list de nicks (bloqueia/permite nick em QUALQUER posicao)
     blacklist: list = Field(default_factory=list)
     whitelist: list = Field(default_factory=list)
@@ -577,6 +581,11 @@ def _validar_e_normalizar(req: "BacktestAvulsoRequest") -> dict:
             and req.linha_min > req.linha_max):
         raise HTTPException(status_code=400,
                             detail="linha_min nao pode ser maior que linha_max.")
+    # odd (v11.2): se ambas vierem, min <= max
+    if (req.odd_min is not None and req.odd_max is not None
+            and req.odd_min > req.odd_max):
+        raise HTTPException(status_code=400,
+                            detail="odd_min nao pode ser maior que odd_max.")
     # quartos: aceita so q1..q4, normaliza
     quartos = None
     if req.quartos:
@@ -667,8 +676,9 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
         "mercado": norm["mercado"],
         "linha_min": req.linha_min,
         "linha_max": req.linha_max,
-        "odd_min": None,
-        "odd_max": None,
+        # v11.2: faixa de odd da aba (o worker ja aplica no _avaliar_filtros_basicos)
+        "odd_min": req.odd_min,
+        "odd_max": req.odd_max,
         "torneios": [],
         "torneios_excluir": [],
         "whitelist_pares": whitelist_pares,
