@@ -1,5 +1,20 @@
 """
-bot_executor.py - Worker de simulacao em tempo real (v9)
+bot_executor.py - Worker de simulacao em tempo real (v11)
+
+v11 - Filtro INDIVIDUAL (base=individual) + FAIL CLOSED + escadinha HC no vivo:
+- Chips de historico com base=individual agora funcionam: WR das ultimas N
+  partidas de CADA jogador (contra qualquer adversario), nao do confronto do
+  par. O/U = regra AND (os DOIS jogadores precisam passar). HC = pct
+  individual da ZEBRA; chip com indivAlvo='ambos' tambem exige o favorito
+  (% dos jogos dele em que o ADVERSARIO cobriu +linha). Numeros espelhados
+  no stats_h2h salvo (indiv_a_/indiv_b_/..._indmin) pro telegram/historico.
+- FAIL CLOSED: filtro configurado que o backend nao suporta (tipo != 'all')
+  REJEITA o tick com contador 'filtro_nao_suportado'. Antes era descartado
+  em silencio e o bot apostava SEM o filtro.
+- HC no vivo agora usa a MESMA escadinha do backtest (_avaliar_escadinha_hc):
+  TODOS os chips valem (AND), cada um na SUA janela. Antes o vivo pegava so
+  o 1o chip e ignorava a janela -> divergia do backtest. Bots com chip unico
+  janela='all' (ex.: bot_40) dao o MESMO resultado de antes.
 
 v9 - WR por LADO (over/under):
 - Passa o lado da aposta pro _calcular_stats_h2h. O WR do under agora
@@ -60,6 +75,7 @@ from workers.backtest_runner import (
     _normalizar,
     _resolve_resultado,
     H2HCache,
+    HistIndividualCache,
     _calcular_stats_h2h,
     _aplicar_filtros_complementares,
     _aplicar_filtro_cenario,
@@ -67,12 +83,20 @@ from workers.backtest_runner import (
     _avaliar_filtros_basicos,
     _coletar_todos_filtros,
     _extrair_janelas_dos_filtros,
+    # --- v11: filtro individual + fail closed ---
+    _tem_filtro_individual,
+    _eh_filtro_individual,
+    _janelas_wr_individuais,
+    _espelhar_stats_individuais,
+    _primeiro_nao_suportado,
+    _zebra_favorito,
     ESPORTE_UI_PARA_BANCO,
     MIN_H2H_DEFAULT,
     # --- HC (handicap): mesmas funcoes do backtest, pra ao vivo NAO divergir ---
     _mercado_eh_hc,
     calcular_stat_hc,
     _ramo_hc_pct,
+    _avaliar_escadinha_hc,
     _resolve_resultado_hc,
     _selecao_hc_valor,
     _num_seguro,
@@ -185,6 +209,10 @@ class State:
     bots_lock: Optional[asyncio.Lock] = None
     bots_assinatura: str = ""
     h2h_cache_por_casa: dict = {}
+    # v11: cache de historico INDIVIDUAL (filtros base=individual).
+    # Compartilha o MESMO TTL do h2h (reset conjunto) pra nunca misturar
+    # snapshots de epocas diferentes na mesma avaliacao de tick.
+    indiv_cache_por_casa: dict = {}
     h2h_cache_atualizado_em: Optional[datetime] = None
     contador_ticks: int = 0
     contador_apostas: int = 0
@@ -263,18 +291,36 @@ async def _carregar_bots_ativos():
             return state.bots_ativos
 
 
-def _get_h2h_cache(casa: str, esporte_banco: str) -> H2HCache:
+def _resetar_caches_h2h_se_expirado():
+    """v11: TTL UNICO pros 2 caches (par + individual). Expirar junto garante
+    que uma mesma avaliacao de tick nunca mistura snapshot novo do par com
+    snapshot velho do individual (ou vice-versa)."""
     global state
     agora = datetime.now()
     if (state.h2h_cache_atualizado_em is None
             or (agora - state.h2h_cache_atualizado_em).total_seconds() > H2H_CACHE_TTL_SEC):
         state.h2h_cache_por_casa = {}
+        state.indiv_cache_por_casa = {}
         state.h2h_cache_atualizado_em = agora
 
+
+def _get_h2h_cache(casa: str, esporte_banco: str) -> H2HCache:
+    global state
+    _resetar_caches_h2h_se_expirado()
     chave = f"{casa}::{esporte_banco}"
     if chave not in state.h2h_cache_por_casa:
         state.h2h_cache_por_casa[chave] = H2HCache(state.pool, casa, esporte_banco)
     return state.h2h_cache_por_casa[chave]
+
+
+def _get_indiv_cache(casa: str, esporte_banco: str) -> HistIndividualCache:
+    """v11: cache de historico INDIVIDUAL (filtros base=individual)."""
+    global state
+    _resetar_caches_h2h_se_expirado()
+    chave = f"{casa}::{esporte_banco}"
+    if chave not in state.indiv_cache_por_casa:
+        state.indiv_cache_por_casa[chave] = HistIndividualCache(state.pool, casa, esporte_banco)
+    return state.indiv_cache_por_casa[chave]
 
 
 # ============================================================
@@ -434,6 +480,16 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     # v5: SEMPRE calcula stats_h2h se tiver qualquer filtro
     stats_dict = None
     if filtros_unificados:
+        # v11 FAIL CLOSED: filtro configurado que o backend nao suporta
+        # (tipo same_grade/specific_teams, base desconhecida) -> REJEITA o
+        # tick com contador proprio. Antes era descartado em silencio no
+        # coletar e o bot apostava SEM o filtro configurado.
+        _mot_ns = _primeiro_nao_suportado(filtros_unificados)
+        if _mot_ns:
+            state.contador_rejeicoes['filtro_nao_suportado'] = \
+                state.contador_rejeicoes.get('filtro_nao_suportado', 0) + 1
+            return
+
         ja = tick.get('jogador_a')
         jb = tick.get('jogador_b')
         if not ja or not jb:
@@ -443,6 +499,8 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         h2h_cache = _get_h2h_cache(casa_bot, sport_banco)
         jogos_h2h = await h2h_cache.get_jogos(ja, jb, tick['ts'], event_id_excluir=tick.get('event_id'))
         linha_num = _parse_linha(tick.get('linha')) or 0
+        # v11: existe chip de historico INDIVIDUAL neste bot?
+        tem_indiv = _tem_filtro_individual(filtros_unificados)
 
         mercado_bot_hc = bot.get('mercado', '')
         # ===== RAMO HANDICAP (ah_ft) - MESMA logica do backtest (nao diverge) =====
@@ -450,31 +508,6 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             stats_dict = calcular_stat_hc(jogos_h2h, tick.get('selecao', ''), ja, jb)
             stats_dict['linha_atual'] = linha_num
             stats_dict['qtd_h2h'] = stats_dict.get('hc_pct_qtd', 0)
-
-            # config do filtro HC: campos dedicados > filtro historico da UI > default
-            hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
-            hc_max = bot.get('hc_pct_max')
-            hc_min_part = bot.get('hc_min_partidas')
-            if hc_min is None and hc_max is None:
-                for _f in (filtros_unificados or []):
-                    if (_f.get('tipo') or '').lower() == 'wr':
-                        _mn = _f.get('min') if _f.get('minAtivo') else None
-                        _mx = _f.get('max') if _f.get('maxAtivo') else None
-                        if _mn is not None:
-                            _v, _e = _num_seguro(_mn)
-                            hc_min = (_v / 100.0) if (_e is None and _v > 1) else _v
-                        if _mx is not None:
-                            _v, _e = _num_seguro(_mx)
-                            hc_max = (_v / 100.0) if (_e is None and _v > 1) else _v
-                        if hc_min_part is None:
-                            hc_min_part = _f.get('hist_min_partidas')
-                        break
-            if hc_min is None and hc_max is None:
-                hc_min = 0.87
-            try:
-                hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
-            except (TypeError, ValueError):
-                hc_min_part = 20
 
             # FILTROS 6 e 7: blacklist de zebra / favorito (HC).
             _blz = (bot.get('filtros') or {}).get('blacklist_zebra')
@@ -485,7 +518,57 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 state.contador_rejeicoes['hc_blacklist'] = state.contador_rejeicoes.get('hc_blacklist', 0) + 1
                 return
 
-            passou_hc, motivo_hc = _ramo_hc_pct(stats_dict, hc_min, hc_max, hc_min_part)
+            # v11: MESMA precedencia do backtest (fonte unica, sem divergir):
+            #  1) campos dedicados do bot (hc_pct_min/max, hc_min_partidas)
+            #     -> _ramo_hc_pct sobre todos os confrontos (original).
+            #  2) chips de WR da UI ('wr' e 'hc_wr') -> ESCADINHA
+            #     (_avaliar_escadinha_hc): TODOS os chips valem (AND), cada um
+            #     na SUA janela, com suporte a base=individual. (Antes o vivo
+            #     pegava so o 1o chip e IGNORAVA a janela -- divergia do
+            #     backtest. Chip unico com janela='all' da o MESMO resultado.)
+            #  3) default seguro da estrategia (min 0.87, 20 partidas).
+            hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
+            hc_max = bot.get('hc_pct_max')
+            hc_min_part = bot.get('hc_min_partidas')
+
+            if hc_min is not None or hc_max is not None:
+                try:
+                    hc_min_part = int(hc_min_part if hc_min_part is not None else 20)
+                except (TypeError, ValueError):
+                    hc_min_part = 20
+                passou_hc, motivo_hc = _ramo_hc_pct(stats_dict, hc_min, hc_max, hc_min_part)
+            else:
+                _fs_wr = [f for f in (filtros_unificados or [])
+                          if (f.get('tipo') or '').lower() in ('wr', 'hc_wr')]
+                if _fs_wr:
+                    # v11: chips individuais na escadinha -- busca o historico
+                    # individual da ZEBRA (e do FAVORITO se algum chip pedir
+                    # alvo 'ambos'). Fail closed se nao casar o nick.
+                    jogos_indiv_hc = None
+                    if tem_indiv:
+                        z_nome, f_nome = _zebra_favorito(tick.get('selecao', ''), ja, jb)
+                        if z_nome is None:
+                            state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
+                            return
+                        indiv_cache = _get_indiv_cache(casa_bot, sport_banco)
+                        _precisa_fav = any(
+                            _eh_filtro_individual(f) and f.get('hist_indiv_alvo') == 'ambos'
+                            for f in _fs_wr)
+                        _zl = await indiv_cache.get_jogos(
+                            z_nome, tick['ts'], event_id_excluir=tick.get('event_id'))
+                        _fl = None
+                        if _precisa_fav and f_nome:
+                            _fl = await indiv_cache.get_jogos(
+                                f_nome, tick['ts'], event_id_excluir=tick.get('event_id'))
+                        jogos_indiv_hc = {
+                            'zebra_nome': z_nome, 'favorito_nome': f_nome,
+                            'zebra': _zl, 'favorito': _fl,
+                        }
+                    passou_hc, motivo_hc = _avaliar_escadinha_hc(
+                        jogos_h2h, stats_dict, _fs_wr, tick['ts'],
+                        jogos_indiv=jogos_indiv_hc)
+                else:
+                    passou_hc, motivo_hc = _ramo_hc_pct(stats_dict, 0.87, None, 20)
             if not passou_hc:
                 if 'insuf' in motivo_hc:
                     state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
@@ -505,7 +588,27 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta, ts_ref=tick.get('ts'))
             stats_dict['linha_atual'] = linha_num
 
-            passou_comp, motivo = _aplicar_filtros_complementares(stats_dict, filtros_unificados)
+            # v11: filtros INDIVIDUAIS (base=individual) -- WR das ultimas N
+            # partidas de CADA jogador contra QUALQUER adversario, regra AND
+            # (os DOIS precisam passar). Numeros espelhados no stats salvo
+            # (telegram/historico leem indiv_a_/indiv_b_/..._indmin).
+            stats_indiv = None
+            if tem_indiv:
+                indiv_cache = _get_indiv_cache(casa_bot, sport_banco)
+                jogos_ind_a = await indiv_cache.get_jogos(
+                    ja, tick['ts'], event_id_excluir=tick.get('event_id'))
+                jogos_ind_b = await indiv_cache.get_jogos(
+                    jb, tick['ts'], event_id_excluir=tick.get('event_id'))
+                janelas_wr_indiv = _janelas_wr_individuais(filtros_unificados)
+                st_ind_a = _calcular_stats_h2h(jogos_ind_a, linha_num, janelas_wr_indiv,
+                                               set(), lado=lado_aposta, ts_ref=tick.get('ts'))
+                st_ind_b = _calcular_stats_h2h(jogos_ind_b, linha_num, janelas_wr_indiv,
+                                               set(), lado=lado_aposta, ts_ref=tick.get('ts'))
+                stats_indiv = {'a': st_ind_a, 'b': st_ind_b}
+                _espelhar_stats_individuais(stats_dict, st_ind_a, st_ind_b)
+
+            passou_comp, motivo = _aplicar_filtros_complementares(
+                stats_dict, filtros_unificados, stats_indiv=stats_indiv)
             if not passou_comp:
                 if 'h2h_insuficiente' in motivo:
                     state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
@@ -561,6 +664,19 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
             janela = fc.get('janela')
             origem = fc.get('_origem', 'comp')
             if not tipo:
+                continue
+
+            # v11: chip INDIVIDUAL -- mostra o WR dos DOIS jogadores.
+            if fc.get('hist_base') == 'individual' and tipo == 'wr':
+                va = stats.get(f"indiv_a_wr_ult{janela}")
+                vb = stats.get(f"indiv_b_wr_ult{janela}")
+                if va is not None or vb is not None:
+                    try:
+                        fa = f"{float(va) * 100:.0f}%" if va is not None else '-'
+                        fb = f"{float(vb) * 100:.0f}%" if vb is not None else '-'
+                        partes.append(f"WR{janela}ind A={fa} B={fb}")
+                    except (TypeError, ValueError):
+                        pass
                 continue
 
             if tipo in ('media', 'wr') and janela is not None:
@@ -917,7 +1033,7 @@ async def loop_stats():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("Bot Executor iniciando (v7 - fix evitar_linhas_seq: 1 aposta max por mercado/jogo)...")
+    logger.info("Bot Executor iniciando (v11 - filtro individual + fail closed + escadinha HC no vivo)...")
     logger.info("=" * 60)
 
     state.bots_lock = asyncio.Lock()

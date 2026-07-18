@@ -494,7 +494,8 @@ def _limpar_filtros_comp(lista) -> list:
 
 def _limpar_filtros_hist(lista) -> list:
     """Sanitiza os filtros de historico (WR) da aba avulsa. Cada item vira um
-    filtrosHistAdicionados no formato do worker (base=match, tipo=all, versao=all).
+    filtrosHistAdicionados no formato do worker (base=match|individual, tipo=all,
+    versao=all; indivAlvo repassado so quando base=individual).
     Valida janela (mesmo formato do WR) e prob [min%,max%]. Falha 400 se invalido -
     erro claro em vez de backtest zerado."""
     if not lista:
@@ -523,10 +524,24 @@ def _limpar_filtros_hist(lista) -> list:
             minp = max(0, int(f.get("minPartidas", 10)))
         except (TypeError, ValueError):
             minp = 10
-        out.append({
-            "base": "match", "tipo": "all", "versao": "all",
+        # v11: base do historico vinda do front — 'match' (confronto, default)
+        # ou 'individual' (ultimas N de CADA jogador; O/U = AND dos dois,
+        # HC = zebra, ou zebra+favorito se indivAlvo='ambos'). Whitelist
+        # rigida: qualquer outro valor cai no default (falha SEGURA, nunca
+        # inventa filtro que o usuario nao pediu).
+        base = str(f.get("base", "match")).strip().lower()
+        if base not in ("match", "individual"):
+            base = "match"
+        indiv_alvo = str(f.get("indivAlvo", "zebra")).strip().lower()
+        if indiv_alvo not in ("zebra", "ambos"):
+            indiv_alvo = "zebra"
+        item = {
+            "base": base, "tipo": "all", "versao": "all",
             "janela": janela, "prob": [pmin, pmax], "minPartidas": minp,
-        })
+        }
+        if base == "individual":
+            item["indivAlvo"] = indiv_alvo
+        out.append(item)
         if len(out) >= 20:
             break
     return out

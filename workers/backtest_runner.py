@@ -1,5 +1,26 @@
 """
-workers/backtest_runner.py - Worker do backtest (v5)
+workers/backtest_runner.py - Worker do backtest (v11)
+
+v11 - Filtro INDIVIDUAL (base=individual) + FAIL CLOSED:
+- Chips de historico com base=individual agora FUNCIONAM: a janela (ult10 etc)
+  passa a olhar o historico INDIVIDUAL de cada jogador (contra QUALQUER
+  adversario), em vez do confronto direto do par.
+    * Over/Under: WR individual calculado pros DOIS jogadores; regra AND —
+      os dois precisam passar no chip (decisao do usuario, 17/jul).
+    * Handicap: pct individual da ZEBRA cobrir a linha nas ultimas N dela.
+      Chip com indivAlvo='ambos' TAMBEM exige o favorito: % dos jogos dele em
+      que o ADVERSARIO cobriu +linha (= favorito nao abriu mais que a linha).
+      Default indivAlvo='zebra'.
+    * minPartidas = maturidade do TOTAL individual de cada jogador (espelha a
+      semantica v6 dos filtros hist por par).
+- Novo HistIndividualCache (mesmo contrato do H2HCache: cutoff temporal,
+  margem ao-vivo, dedup tick x hist — helpers compartilhados, sem divergir).
+- FAIL CLOSED: filtro hist com combo ainda nao suportado (tipo != 'all',
+  base desconhecida) NAO e mais descartado em silencio. Ele fica MARCADO
+  (_nao_suportado) e o avaliador REJEITA o tick com motivo claro. Antes o bot
+  rodava SEM o filtro configurado — inaceitavel com dinheiro real.
+- Escadinha HC (_avaliar_escadinha_hc) ganhou o ramo individual e o
+  bot_executor v11 passa a usar a MESMA escadinha ao vivo (fonte unica).
 
 v5 - Stats H2H usam jogos disponiveis ate N (em vez de exigir N exato):
 - _calcular_stats_h2h: WR ult 20 com 12 jogos agora calcula com 12 (em vez de
@@ -15,7 +36,7 @@ v4 - Le filtrosHistAdicionados (formato antigo) alem de filtrosCompAdicionados:
 - _normalizar_filtros_hist converte formato antigo {base, janela:"last_N", prob:[min,max]} pro novo
 - _extrair_janelas_dos_filtros agora le dos 2 lugares
 - _aplicar_filtros_complementares aceita filtros normalizados de ambas fontes
-- Filtros hist com base=individual ou tipo!=all sao rejeitados (nao suportado)
+- (v11) base=individual passou a ser suportado; tipo!=all agora e fail closed
 
 v3 - Janelas H2H dinamicas:
 - _calcular_stats_h2h aceita lista de janelas (qualquer N de 3-100)
@@ -407,6 +428,30 @@ def _pct_team_plus(jogos: list, alvo: str, linha: float) -> tuple:
     return cobriu / validos, validos
 
 
+def _pct_adversario_cobre(jogos: list, alvo: str, linha: float) -> tuple:
+    """v11 (filtro individual HC, alvo='ambos').
+    (% dos jogos do `alvo` em que o ADVERSARIO cobriu +linha, qtd_valida) —
+    ou seja: o alvo NAO venceu por mais que a linha, exatamente o que a aposta
+    na zebra +linha precisa que aconteca com o FAVORITO. Como as linhas sao .5,
+    e o complemento exato de 'alvo cobre -linha' (sem push possivel).
+    (None, 0) se sem jogo valido. BLINDADO (mesma disciplina da _pct_team_plus)."""
+    if not jogos:
+        return None, 0
+    alvo_u = (alvo or '').strip().upper()
+    ok = validos = 0
+    for j in jogos:
+        pa, pv = _resolver_pts_hc(j, alvo_u)
+        r = _cobriu_handicap(pv, pa, linha)  # adversario + linha > alvo
+        if r is None:
+            continue
+        validos += 1
+        if r:
+            ok += 1
+    if validos == 0:
+        return None, 0
+    return ok / validos, validos
+
+
 def _extrair_nick_hc(selecao: str) -> Optional[str]:
     """Nick (UPPER) da selecao. 'Algeria (Kylian) (-0.5)' -> 'KYLIAN' ;
     'Home [Kiev] (+14.5)' -> 'KIEV'. Prioriza [colchete], depois (parenteses)."""
@@ -528,7 +573,8 @@ def _fatiar_jogos_janela(jogos: list, janela, ts_ref) -> list:
 
 
 def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
-                          filtros_wr: list, ts_ref) -> tuple:
+                          filtros_wr: list, ts_ref,
+                          jogos_indiv: Optional[dict] = None) -> tuple:
     """ESCADINHA de WR no ramo HC: TODOS os filtros valem (AND) e cada um
     computa a COBERTURA na SUA janela. (Antes: so o 1o filtro, com break, e
     sempre sobre todos os confrontos — 2o chip e janela ignorados em silencio.)
@@ -541,6 +587,19 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
       - _origem='hist' (chips da UI): maturidade contra o TOTAL de confrontos
         do par (qtd_h2h) — 'Ult. 5 + min 10' = analisa 5, exige par com >=10.
       - _origem='comp' (filtro complementar hc_wr): contra a qtd DA JANELA.
+
+    v11 (filtro INDIVIDUAL): chip com base=individual computa a cobertura no
+    historico INDIVIDUAL (contra qualquer adversario) em vez do confronto do
+    par. `jogos_indiv` = {'zebra_nome','favorito_nome','zebra':[...],
+    'favorito':[...]|None}. Semantica:
+      - zebra: % dos jogos DELA em que ela cobriu +linha (_pct_team_plus).
+      - hist_indiv_alvo='ambos': ALEM da zebra, o favorito tambem e checado —
+        % dos jogos DELE em que o ADVERSARIO cobriu +linha (= o favorito NAO
+        abriu mais que a linha), via _pct_adversario_cobre. Mesmos min/max (AND).
+      - minPartidas = maturidade do TOTAL individual de cada um.
+      - Chaves gravadas: wr_ult{tok}_ind (zebra) e wr_ult{tok}_indfav
+        (favorito), + _qtd — sem colidir com as chaves do par.
+    Filtro marcado _nao_suportado REJEITA (fail closed, v11).
     (passou, motivo). BLINDADO: falha fechada com motivo legivel."""
     nick = stats.get('hc_nick')
     hc_linha = stats.get('hc_linha')
@@ -548,6 +607,8 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
         return False, 'stat_hc_selecao_invalida'
     qtd_global = stats.get('qtd_h2h', 0) or 0
     for _i, _f in enumerate(filtros_wr, 1):
+        if _f.get('_nao_suportado'):
+            return False, f"hc_f{_i}_filtro_nao_suportado({_f.get('_nao_suportado')})"
         _jw = _f.get('janela')
         # token IGUAL ao do _wr_cols (chave da planilha tem que bater 1:1)
         if isinstance(_jw, str):
@@ -559,16 +620,81 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
                 _tok = '0'
         else:
             _tok = '0'
-        fatia = _fatiar_jogos_janela(jogos_h2h, _jw, ts_ref)
-        pct, qtd_janela = _pct_team_plus(fatia, nick, hc_linha)
-        stats[f'wr_ult{_tok}'] = pct
-        stats[f'wr_ult{_tok}_qtd'] = qtd_janela
-        # minPartidas (maturidade): hist -> total do par; comp -> qtd da janela
+        # minPartidas (maturidade) — parse unico pros dois ramos
         _mp_raw = _f.get('hist_min_partidas')
         try:
             _mp = int(_mp_raw) if _mp_raw is not None else 20
         except (TypeError, ValueError):
             _mp = 20
+
+        # ===== v11: ramo INDIVIDUAL =====
+        if _eh_filtro_individual(_f):
+            _ji = jogos_indiv or {}
+            _z_nome = _ji.get('zebra_nome')
+            _zl = _ji.get('zebra')
+            if not _z_nome or _zl is None:
+                return False, f'hc_f{_i}_indiv_dados_indisponiveis'
+            _pz_tot, _qz_tot = _pct_team_plus(_zl, _z_nome, hc_linha)
+            _fatia_z = _fatiar_jogos_janela(_zl, _jw, ts_ref)
+            _pz, _qz = _pct_team_plus(_fatia_z, _z_nome, hc_linha)
+            stats[f'wr_ult{_tok}_ind'] = _pz
+            stats[f'wr_ult{_tok}_ind_qtd'] = _qz
+            if (_qz_tot or 0) < _mp:
+                return False, f'hc_f{_i}_indiv_zebra_insuf_qtd_{_qz_tot or 0}_min_{_mp}'
+            if _pz is None:
+                return False, f'hc_f{_i}_indiv_pct_indisponivel'
+            _mn = _f.get('min') if _f.get('minAtivo') else None
+            _mx = _f.get('max') if _f.get('maxAtivo') else None
+            if _mn is not None:
+                _v, _e = _num_seguro(_mn)
+                if _e is not None:
+                    return False, f'hc_f{_i}_min_{_e}'
+                _v = (_v / 100.0) if _v > 1 else _v
+                if _pz < _v:
+                    return False, f'hc_f{_i}_indiv_pct_{_pz:.3f}_lt_min_{_v}'
+            if _mx is not None:
+                _v, _e = _num_seguro(_mx)
+                if _e is not None:
+                    return False, f'hc_f{_i}_max_{_e}'
+                _v = (_v / 100.0) if _v > 1 else _v
+                if _pz > _v:
+                    return False, f'hc_f{_i}_indiv_pct_{_pz:.3f}_gt_max_{_v}'
+            if (_f.get('hist_indiv_alvo') or 'zebra') == 'ambos':
+                _f_nome = _ji.get('favorito_nome')
+                _fl = _ji.get('favorito')
+                if not _f_nome or _fl is None:
+                    return False, f'hc_f{_i}_indiv_fav_dados_indisponiveis'
+                _pf_tot, _qf_tot = _pct_adversario_cobre(_fl, _f_nome, hc_linha)
+                _fatia_f = _fatiar_jogos_janela(_fl, _jw, ts_ref)
+                _pf, _qf = _pct_adversario_cobre(_fatia_f, _f_nome, hc_linha)
+                stats[f'wr_ult{_tok}_indfav'] = _pf
+                stats[f'wr_ult{_tok}_indfav_qtd'] = _qf
+                if (_qf_tot or 0) < _mp:
+                    return False, f'hc_f{_i}_indiv_fav_insuf_qtd_{_qf_tot or 0}_min_{_mp}'
+                if _pf is None:
+                    return False, f'hc_f{_i}_indiv_fav_pct_indisponivel'
+                if _mn is not None:
+                    _v, _e = _num_seguro(_mn)
+                    if _e is not None:
+                        return False, f'hc_f{_i}_min_{_e}'
+                    _v = (_v / 100.0) if _v > 1 else _v
+                    if _pf < _v:
+                        return False, f'hc_f{_i}_indiv_fav_pct_{_pf:.3f}_lt_min_{_v}'
+                if _mx is not None:
+                    _v, _e = _num_seguro(_mx)
+                    if _e is not None:
+                        return False, f'hc_f{_i}_max_{_e}'
+                    _v = (_v / 100.0) if _v > 1 else _v
+                    if _pf > _v:
+                        return False, f'hc_f{_i}_indiv_fav_pct_{_pf:.3f}_gt_max_{_v}'
+            continue
+
+        # ===== ramo POR PAR (comportamento original, intacto) =====
+        fatia = _fatiar_jogos_janela(jogos_h2h, _jw, ts_ref)
+        pct, qtd_janela = _pct_team_plus(fatia, nick, hc_linha)
+        stats[f'wr_ult{_tok}'] = pct
+        stats[f'wr_ult{_tok}_qtd'] = qtd_janela
+        # minPartidas (maturidade): hist -> total do par; comp -> qtd da janela
         _qtd_validar = qtd_global if _f.get('_origem', 'comp') == 'hist' else (qtd_janela or 0)
         if _qtd_validar < _mp:
             return False, f'hc_f{_i}_insuf_qtd_{_qtd_validar}_min_{_mp}'
@@ -632,6 +758,31 @@ def _hc_blacklist_bloqueia(selecao, jogador_a, jogador_b,
     return False, ''
 
 
+def _zebra_favorito(selecao, jogador_a, jogador_b) -> tuple:
+    """v11. (nome_zebra, nome_favorito) com os NOMES ORIGINAIS do tick (ja/jb),
+    casando o nick da selecao com o lado — mesma logica de casamento do
+    _resolve_resultado_hc / _hc_blacklist_bloqueia. Devolve os nomes EXATOS do
+    tick (nao o nick upper) pra busca no cache individual bater com o banco.
+    (None, None) se o nick nao casar (blindado: quem chama trata fail closed)."""
+    nick = _extrair_nick_hc(selecao)
+    if nick is None:
+        return None, None
+    nu = nick.strip().upper()
+    ja_o = (jogador_a or '').strip()
+    jb_o = (jogador_b or '').strip()
+    ja_u = ja_o.upper()
+    jb_u = jb_o.upper()
+    if nu and nu == ja_u:
+        return ja_o, jb_o
+    if nu and nu == jb_u:
+        return jb_o, ja_o
+    if ja_u and (nu in ja_u or ja_u in nu):
+        return ja_o, jb_o
+    if jb_u and (nu in jb_u or jb_u in nu):
+        return jb_o, ja_o
+    return None, None
+
+
 def _ramo_hc_pct(stats: dict, min_v, max_v, min_partidas: int) -> tuple:
     """Ramo de filtro do HC: valida qtd>=min_partidas e hc_pct vs min/max.
     (passou, motivo). Blindado (config ruim -> falha fechada com motivo)."""
@@ -673,6 +824,127 @@ def _dt_naive(dt):
     return dt
 
 
+def _aplicar_cutoff_jogos(jogos: list, antes_de_ts, event_id_excluir,
+                          margem_ao_vivo_min: int) -> list:
+    """v11: corte temporal da lista bruta do cache pro momento da aposta —
+    EXTRAIDO do H2HCache.get_jogos v7 pra reuso do cache INDIVIDUAL sem
+    divergir. Regras identicas ao v7:
+      - so jogos com ts < antes_de_ts (nunca vaza futuro no backtest);
+      - jogo de fonte 'tick' cujo ultimo tick foi ha menos de
+        `margem_ao_vivo_min` do momento da aposta = ainda AO VIVO (placar
+        parcial) -> descartado. Jogos de h2h_historico nunca filtram por isso;
+      - exclui o event_id do jogo atual.
+    BLINDADO: ts None / aware-vs-naive -> pula o jogo em vez de crashar."""
+    antes = _dt_naive(antes_de_ts)
+    if antes is None:
+        return []
+    try:
+        corte_ao_vivo = antes - timedelta(minutes=margem_ao_vivo_min)
+    except (TypeError, ValueError, OverflowError):
+        return []
+    out = []
+    for j in jogos:
+        tsj = _dt_naive(j.get('ts'))
+        if tsj is None:
+            continue
+        try:
+            if tsj >= antes:
+                continue
+            # v7: se o jogo veio de ticks e o ultimo tick dele foi recente
+            # demais (ainda ao vivo no momento da aposta), descarta.
+            if j.get('fonte') == 'tick':
+                ult = _dt_naive(j.get('ultimo_tick_ts') or j.get('ts'))
+                if ult is None or ult >= corte_ao_vivo:
+                    continue
+        except TypeError:
+            continue
+        out.append(j)
+    if event_id_excluir is not None:
+        eid_str = str(event_id_excluir)
+        out = [j for j in out if str(j.get('event_id')) != eid_str]
+    return out
+
+
+def _montar_jogos_e_dedup(rows) -> list:
+    """v11: converte rows do banco em dicts de jogo + dedup ENTRE fontes
+    (tick x hist) — logica v8 do H2HCache, EXTRAIDA pra reuso do cache
+    individual. O mesmo jogo pode estar no ticks (ts = quando o coletor
+    capturou) E no h2h_historico (ts = horario oficial da TM), com lag de
+    ~20-40min e placar possivelmente invertido (perspectiva A/B trocada).
+    Sem dedup, o jogo conta 2x e infla a amostra.
+
+    Criterio: mesmo PLACAR NORMALIZADO (ordenado, pega inversao) + mesmo PAR
+    de jogadores (case-insensitive) dentro de JANELA_DEDUP_MIN, e SO entre
+    fontes diferentes (tick vs hist). Mantem o do historico (placar oficial
+    TM) e descarta o do tick. Jogos da MESMA fonte com mesmo placar ficam
+    preservados (jogos reais distintos).
+    (O criterio de PAR e redundante no cache por par — la os dois lados sao
+    sempre os mesmos — e protege o cache INDIVIDUAL de deduplicar jogos
+    distintos do mesmo jogador contra adversarios diferentes.)
+    Retorna ordenado do mais recente pro mais antigo."""
+    jogos = []
+    for r in rows:
+        sh = r['score_home']
+        sa = r['score_away']
+        jogos.append({
+            'event_id': r['event_id'],
+            'ts': r['ts'],
+            'jogador_a': r['jogador_a'],
+            'jogador_b': r['jogador_b'],
+            'score_home': sh,
+            'score_away': sa,
+            # BLINDADO: coage os placares a numero seguro antes de somar. Se
+            # sh/sa vierem None -> 0; string numerica -> parseia; lixo -> 0.
+            # Sem isso, um placar string ('5') faria '5'+'3'='53' (concat) e
+            # o media()/desvio() quebrariam. Garante 'total' SEMPRE int.
+            'total': int(_num_seguro(sh)[0] or 0) + int(_num_seguro(sa)[0] or 0),
+            'fonte': r['fonte'],
+            'ultimo_tick_ts': r['ultimo_tick_ts'],
+        })
+
+    JANELA_DEDUP_MIN = 45  # lag tipico tick<->TM
+    jogos.sort(key=lambda x: x['ts'])  # mais antigo primeiro
+    manter = []
+    for jg in jogos:
+        placar_norm = tuple(sorted([jg['score_home'] or 0, jg['score_away'] or 0]))
+        par_norm = tuple(sorted([(jg.get('jogador_a') or '').strip().upper(),
+                                 (jg.get('jogador_b') or '').strip().upper()]))
+        achou = None
+        for m in manter:
+            if m.get('_descartado'):
+                continue
+            if m['fonte'] == jg['fonte']:
+                continue  # so dedup entre fontes diferentes
+            m_norm = tuple(sorted([m['score_home'] or 0, m['score_away'] or 0]))
+            if m_norm != placar_norm:
+                continue
+            m_par = tuple(sorted([(m.get('jogador_a') or '').strip().upper(),
+                                  (m.get('jogador_b') or '').strip().upper()]))
+            if m_par != par_norm:
+                continue
+            dt = abs((jg['ts'] - m['ts']).total_seconds()) / 60.0
+            if dt <= JANELA_DEDUP_MIN:
+                achou = m
+                break
+        if achou is not None:
+            # mesmo jogo na outra fonte: mantem o 'hist', descarta o 'tick'
+            if achou['fonte'] == 'hist':
+                jg['_descartado'] = True
+            else:
+                achou['_descartado'] = True
+                jg['_descartado'] = False
+            manter.append(jg)
+        else:
+            jg['_descartado'] = False
+            manter.append(jg)
+
+    jogos = [j for j in manter if not j.get('_descartado')]
+    for j in jogos:
+        j.pop('_descartado', None)
+    jogos.sort(key=lambda x: x['ts'], reverse=True)
+    return jogos
+
+
 class H2HCache:
     LIMITE_JOGOS_POR_PAR = 100      # janela padrao/maxima dos filtros normais
     TETO_BUSCA = 5000               # teto absoluto do _buscar (suporta 'todas')
@@ -706,6 +978,8 @@ class H2HCache:
         antes_de_ts). Esses tem placar PARCIAL e poluiam o WR. Jogos de
         h2h_historico (placar final real da TM/CSV) nunca sao filtrados.
         Usa antes_de_ts (nao NOW()) -> funciona igual em backtest e ao vivo.
+        v11: corte extraido pro helper _aplicar_cutoff_jogos (compartilhado
+        com o cache INDIVIDUAL) — comportamento identico ao v7.
         """
         par = self._normalizar_par(ja, jb)
         if not par[0] or not par[1]:
@@ -714,25 +988,8 @@ class H2HCache:
         if par not in self._cache:
             self._cache[par] = await self._buscar(par[0], par[1])
 
-        corte_ao_vivo = _dt_naive(antes_de_ts) - timedelta(minutes=self.MARGEM_AO_VIVO_MIN)
-        antes = _dt_naive(antes_de_ts)
-
-        jogos = []
-        for j in self._cache[par]:
-            if _dt_naive(j['ts']) >= antes:
-                continue
-            # v7: se o jogo veio de ticks e o ultimo tick dele foi recente
-            # demais (ainda ao vivo no momento da aposta), descarta.
-            if j.get('fonte') == 'tick':
-                ult = _dt_naive(j.get('ultimo_tick_ts') or j['ts'])
-                if ult >= corte_ao_vivo:
-                    continue
-            jogos.append(j)
-
-        if event_id_excluir is not None:
-            eid_str = str(event_id_excluir)
-            jogos = [j for j in jogos if str(j.get('event_id')) != eid_str]
-        return jogos
+        return _aplicar_cutoff_jogos(self._cache[par], antes_de_ts,
+                                     event_id_excluir, self.MARGEM_AO_VIVO_MIN)
 
     async def _buscar(self, j1: str, j2: str) -> list:
         # v7: o lado ticks traz tambem o ts do ultimo tick (ultimo_tick_ts)
@@ -780,70 +1037,9 @@ class H2HCache:
             logger.exception(f"[h2h] Erro buscando par ({j1}, {j2}): {e}")
             return []
 
-        jogos = []
-        for r in rows:
-            sh = r['score_home']
-            sa = r['score_away']
-            jogos.append({
-                'event_id': r['event_id'],
-                'ts': r['ts'],
-                'jogador_a': r['jogador_a'],
-                'jogador_b': r['jogador_b'],
-                'score_home': sh,
-                'score_away': sa,
-                # BLINDADO: coage os placares a numero seguro antes de somar. Se
-                # sh/sa vierem None -> 0; string numerica -> parseia; lixo -> 0.
-                # Sem isso, um placar string ('5') faria '5'+'3'='53' (concat) e
-                # o media()/desvio() quebrariam. Garante 'total' SEMPRE int.
-                'total': int(_num_seguro(sh)[0] or 0) + int(_num_seguro(sa)[0] or 0),
-                'fonte': r['fonte'],
-                'ultimo_tick_ts': r['ultimo_tick_ts'],
-            })
-
-        # v8: dedup ENTRE fontes (tick x hist). O mesmo jogo pode estar no
-        # ticks (ts = quando o coletor capturou) E no h2h_historico (ts = horario
-        # oficial da TM), com lag de ~20-40min e placar possivelmente invertido
-        # (perspectiva A/B trocada). Sem isso, o jogo conta 2x e infla a amostra.
-        # Criterio: mesmo PLACAR NORMALIZADO (ordenado, pega inversao) dentro de
-        # uma janela de tempo, e SO entre fontes diferentes (tick vs hist).
-        # Mantem o do historico (placar oficial TM) e descarta o do tick.
-        # Jogos da MESMA fonte com mesmo placar ficam preservados (jogos reais
-        # distintos) - mesma logica da limpeza do banco.
-        JANELA_DEDUP_MIN = 45  # lag tipico tick<->TM
-        jogos.sort(key=lambda x: x['ts'])  # mais antigo primeiro
-        manter = []
-        for jg in jogos:
-            placar_norm = tuple(sorted([jg['score_home'] or 0, jg['score_away'] or 0]))
-            achou = None
-            for m in manter:
-                if m.get('_descartado'):
-                    continue
-                if m['fonte'] == jg['fonte']:
-                    continue  # so dedup entre fontes diferentes
-                m_norm = tuple(sorted([m['score_home'] or 0, m['score_away'] or 0]))
-                if m_norm != placar_norm:
-                    continue
-                dt = abs((jg['ts'] - m['ts']).total_seconds()) / 60.0
-                if dt <= JANELA_DEDUP_MIN:
-                    achou = m
-                    break
-            if achou is not None:
-                # mesmo jogo na outra fonte: mantem o 'hist', descarta o 'tick'
-                if achou['fonte'] == 'hist':
-                    jg['_descartado'] = True
-                else:
-                    achou['_descartado'] = True
-                    jg['_descartado'] = False
-                manter.append(jg)
-            else:
-                jg['_descartado'] = False
-                manter.append(jg)
-
-        jogos = [j for j in manter if not j.get('_descartado')]
-        for j in jogos:
-            j.pop('_descartado', None)
-        jogos.sort(key=lambda x: x['ts'], reverse=True)
-        return jogos
+        # v11: montagem + dedup entre fontes extraidos pro helper compartilhado
+        # (_montar_jogos_e_dedup) — logica v8 identica.
+        return _montar_jogos_e_dedup(rows)
 
     @property
     def stats_cache(self):
@@ -853,9 +1049,113 @@ class H2HCache:
         }
 
 
+class HistIndividualCache:
+    """v11: cache de historico INDIVIDUAL por jogador (filtros base=individual).
+
+    Mesmo contrato do H2HCache, mas a chave e UM jogador e a busca traz TODOS
+    os jogos dele (contra QUALQUER adversario) — ticks + h2h_historico, com o
+    MESMO cutoff temporal, margem ao-vivo e dedup entre fontes do cache por par
+    (helpers compartilhados _aplicar_cutoff_jogos / _montar_jogos_e_dedup),
+    pra backtest e ao vivo NUNCA divergirem.
+
+    RESSALVA DE DADO (honestidade): o h2h_historico e semeado por PAR via
+    TipManager, entao o 'individual' do banco e a UNIAO dos pares ja sincados
+    daquele jogador — pra ligas ativas cobre bem, mas nao e o last_10_player
+    oficial do TM.
+    """
+    TETO_BUSCA = H2HCache.TETO_BUSCA
+    MARGEM_AO_VIVO_MIN = H2HCache.MARGEM_AO_VIVO_MIN
+
+    def __init__(self, pool, casa: str, esporte_banco: str):
+        self._pool = pool
+        self._casa = casa
+        self._esporte = esporte_banco
+        self._cache: dict = {}
+
+    @staticmethod
+    def _chave(jogador: str) -> str:
+        return (jogador or '').strip()
+
+    async def get_jogos(self, jogador: str, antes_de_ts, event_id_excluir=None) -> list:
+        """Jogos INDIVIDUAIS do jogador com ts < antes_de_ts (contra qualquer
+        adversario), mesmas regras de corte do cache por par."""
+        ch = self._chave(jogador)
+        if not ch:
+            return []
+        if ch not in self._cache:
+            self._cache[ch] = await self._buscar(ch)
+        return _aplicar_cutoff_jogos(self._cache[ch], antes_de_ts,
+                                     event_id_excluir, self.MARGEM_AO_VIVO_MIN)
+
+    async def _buscar(self, jogador: str) -> list:
+        # Espelho do _buscar do par, com UM jogador em QUALQUER lado.
+        # ticks: match exato (usa indice; os nomes vem do proprio tick ou do
+        # ja/jb casado pelo _zebra_favorito, entao batem com o banco).
+        # h2h_historico: UPPER dos dois lados (mesma tolerancia do par).
+        sql = """
+        SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+               ultimo_tick_ts, fonte
+        FROM (
+            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+                   ts AS ultimo_tick_ts, 'tick' AS fonte
+            FROM (
+                SELECT DISTINCT ON (event_id)
+                    event_id, ts, jogador_a, jogador_b, score_home, score_away
+                FROM ticks
+                WHERE bookmaker = $1
+                  AND sport = $2
+                  AND (jogador_a = $3 OR jogador_b = $3)
+                  AND score_home IS NOT NULL
+                  AND score_away IS NOT NULL
+                ORDER BY event_id, ts DESC
+            ) ticks_distinct
+
+            UNION ALL
+
+            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+                   NULL::timestamptz AS ultimo_tick_ts, 'hist' AS fonte
+            FROM h2h_historico
+            WHERE sport = $2
+              AND (UPPER(jogador_a) = UPPER($3) OR UPPER(jogador_b) = UPPER($3))
+              AND score_home IS NOT NULL
+              AND score_away IS NOT NULL
+        ) combinado
+        ORDER BY ts DESC
+        LIMIT $4
+        """
+        try:
+            async with self._pool.acquire() as conn:
+                rows = await conn.fetch(
+                    sql, self._casa, self._esporte, jogador, self.TETO_BUSCA
+                )
+        except Exception as e:
+            logger.exception(f"[indiv] Erro buscando jogador ({jogador}): {e}")
+            return []
+
+        return _montar_jogos_e_dedup(rows)
+
+    @property
+    def stats_cache(self):
+        return {
+            'jogadores_carregados': len(self._cache),
+            'jogos_total': sum(len(v) for v in self._cache.values()),
+        }
+
+
 # ============================================================
-# NORMALIZACAO E EXTRAÇAO DE FILTROS (v4)
+# NORMALIZACAO E EXTRAÇAO DE FILTROS (v4 / v11)
 # ============================================================
+
+def _normalizar_indiv_alvo(v) -> str:
+    """v11. Alvo do filtro INDIVIDUAL no HC: 'zebra' (default) ou 'ambos'
+    (zebra E favorito). Qualquer valor desconhecido vira 'zebra' — falha
+    SEGURA: nunca inventa exigencia sobre o favorito que o usuario nao pediu.
+    No over/under o campo e ignorado (la o AND dos dois jogadores e fixo)."""
+    s = str(v or '').strip().lower()
+    if s in ('ambos', 'os_dois', 'os dois', 'zebra_favorito', 'zebra+favorito', 'both'):
+        return 'ambos'
+    return 'zebra'
+
 
 def _normalizar_filtros_hist(filtros_hist: list) -> list:
     """
@@ -869,7 +1169,8 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
         "prob": [70, 100],
         "tipo": "all" | "same_grade" | "specific_teams",
         "versao": "all",
-        "minPartidas": 10
+        "minPartidas": 10,
+        "indivAlvo": "zebra" | "ambos"   # v11, opcional (so HC individual)
       }
 
     Formato destino:
@@ -883,6 +1184,7 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
         "hist_base": "match",
         "hist_tipo": "all",
         "hist_min_partidas": 10,
+        "hist_indiv_alvo": "zebra",   # v11
         "_origem": "hist",
       }
     """
@@ -941,6 +1243,8 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
             'hist_base': fh.get('base', 'match'),
             'hist_tipo': fh.get('tipo', 'all'),
             'hist_min_partidas': fh.get('minPartidas'),
+            'hist_indiv_alvo': _normalizar_indiv_alvo(
+                fh.get('indivAlvo', fh.get('indiv_alvo'))),
             '_origem': 'hist',
         })
 
@@ -950,8 +1254,14 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
 def _coletar_todos_filtros(filtros: dict) -> list:
     """
     Pega filtros dos 2 lugares e retorna lista unificada.
-    Filtros hist com base!=match ou tipo!=all sao SKIPADOS (nao suportado ainda
-    pelo backend de H2H simples - exigiria sub-query por liga/jogador/times).
+
+    v11: base='individual' passou a ser SUPORTADO (WR sobre o historico
+    individual de cada jogador — ver _aplicar_filtros_complementares e
+    _avaliar_escadinha_hc). Combos ainda nao suportados (tipo != 'all',
+    base desconhecida) NAO sao mais descartados em silencio: ficam na lista
+    MARCADOS com '_nao_suportado' e o avaliador REJEITA o tick com motivo
+    claro (FAIL CLOSED). Antes o bot rodava SEM o filtro configurado,
+    apostando como se ele nao existisse — inaceitavel com dinheiro real.
 
     Retorna sempre lista (pode ser vazia).
     """
@@ -959,24 +1269,89 @@ def _coletar_todos_filtros(filtros: dict) -> list:
     filtros_hist = filtros.get('filtrosHistAdicionados') or []
     filtros_hist_norm = _normalizar_filtros_hist(filtros_hist)
 
-    # Skipa filtros hist nao suportados (base=individual ou tipo!=all)
-    # Eles nao geram rejeicao silenciosa - sao tratados como "nao calculado"
-    # mas o bot DEVE rejeitar o tick? Decisao: nao aplica = nao filtra
-    # (igual ao comportamento atual antes do v4)
-    filtros_hist_suportados = []
+    filtros_hist_final = []
     for f in filtros_hist_norm:
-        base = f.get('hist_base')
-        tipo = f.get('hist_tipo')
-        if base == 'match' and tipo == 'all':
-            filtros_hist_suportados.append(f)
+        base = (f.get('hist_base') or 'match')
+        tipo = (f.get('hist_tipo') or 'all')
+        if base in ('match', 'individual') and tipo == 'all':
+            filtros_hist_final.append(f)
         else:
-            # Loga warning - filtro sera ignorado pelo executor
+            f['_nao_suportado'] = f'base={base},tipo={tipo}'
+            filtros_hist_final.append(f)
             logger.warning(
-                f"FiltroHist nao suportado ignorado: base={base}, tipo={tipo}, "
-                f"janela={f.get('janela')}"
+                f"FiltroHist NAO SUPORTADO (base={base}, tipo={tipo}, "
+                f"janela={f.get('janela')}) -> ticks deste bot serao "
+                f"REJEITADOS (fail closed, v11)"
             )
 
-    return list(filtros_comp) + filtros_hist_suportados
+    return list(filtros_comp) + filtros_hist_final
+
+
+def _eh_filtro_individual(f) -> bool:
+    """v11: True se o filtro e um chip de WR valido com base=individual."""
+    return (isinstance(f, dict)
+            and not f.get('_nao_suportado')
+            and (f.get('hist_base') or 'match') == 'individual'
+            and (f.get('tipo') or '').lower().strip() in ('wr', 'hc_wr'))
+
+
+def _tem_filtro_individual(filtros_unificados: list) -> bool:
+    """v11: True se existe ao menos um chip individual valido."""
+    return any(_eh_filtro_individual(f) for f in (filtros_unificados or []))
+
+
+def _primeiro_nao_suportado(filtros_unificados: list) -> Optional[str]:
+    """v11: motivo do 1o filtro marcado _nao_suportado, ou None. Usado pelos
+    executores pra rejeitar o tick CEDO (fail closed) com contador proprio."""
+    for f in (filtros_unificados or []):
+        if isinstance(f, dict) and f.get('_nao_suportado'):
+            return str(f.get('_nao_suportado'))
+    return None
+
+
+def _janelas_wr_individuais(filtros_unificados: list) -> set:
+    """v11: janelas (int de qtd ou token de tempo '24h') dos chips INDIVIDUAIS
+    de WR — passadas ao _calcular_stats_h2h de cada jogador. Blindada."""
+    jans: set = set()
+    for f in (filtros_unificados or []):
+        if not _eh_filtro_individual(f):
+            continue
+        janela = f.get('janela')
+        modo, _ = _parse_janela(janela)
+        if modo == 'qtd':
+            j = int(janela)
+            if j == 0 or (1 <= j <= H2HCache.TETO_BUSCA):
+                jans.add(j)
+        elif modo == 'tempo':
+            tok = _janela_token(janela)
+            if tok is not None:
+                jans.add(tok)
+    return jans
+
+
+def _espelhar_stats_individuais(stats: dict, stats_a: dict, stats_b: dict) -> None:
+    """v11: copia os numeros INDIVIDUAIS pro stats salvo (jsonb da aposta,
+    planilha, telegram): indiv_a_wr_ult{tok} / indiv_b_wr_ult{tok} (+ _qtd),
+    qtd_indiv_a/b, e o combinado wr_ult{tok}_indmin = MIN(a, b) — o numero que
+    efetivamente decide o gate AND (os dois passam <=> o pior dos dois passa).
+    BLINDADO: erro no espelho nunca derruba a avaliacao da aposta."""
+    try:
+        stats['qtd_indiv_a'] = stats_a.get('qtd_h2h', 0)
+        stats['qtd_indiv_b'] = stats_b.get('qtd_h2h', 0)
+        for k, v in stats_a.items():
+            if k.startswith('wr_ult'):
+                stats[f'indiv_a_{k}'] = v
+        for k, v in stats_b.items():
+            if k.startswith('wr_ult'):
+                stats[f'indiv_b_{k}'] = v
+        for k, va in stats_a.items():
+            if k.startswith('wr_ult') and not k.endswith('_qtd'):
+                vb = stats_b.get(k)
+                stats[f'{k}_indmin'] = (min(va, vb)
+                                        if (va is not None and vb is not None)
+                                        else None)
+    except Exception as e:
+        logger.warning(f"[stats] espelho individual falhou (segue sem): {e}")
 
 
 # ============================================================
@@ -1119,6 +1494,10 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     ts_ref e o momento da aposta (tick['ts']); se nao vier, janelas de tempo
     sao puladas (retornam None) - nunca usa NOW() pra nao vazar no backtest.
     As janelas de quantidade continuam 100% iguais.
+
+    v11: a MESMA funcao e reusada pro historico INDIVIDUAL (lista de jogos de
+    UM jogador contra qualquer adversario) — nenhuma mudanca aqui: a funcao e
+    agnostica a origem da lista.
     """
     qtd = len(jogos)
 
@@ -1309,7 +1688,9 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     return out
 
 
-def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h2h: int = MIN_H2H_DEFAULT) -> tuple[bool, str]:
+def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list,
+                                    min_h2h: int = MIN_H2H_DEFAULT,
+                                    stats_indiv: Optional[dict] = None) -> tuple[bool, str]:
     """
     Aplica filtros unificados (comp + hist normalizado).
     Pre-condicao: _calcular_stats_h2h foi chamado COM as janelas dos filtros.
@@ -1338,6 +1719,15 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         comportamento v5 (qtd da janela). Filtros comp usam
         min_h2h default=5 que sempre <= janela, entao nao geram
         contradicao matematica.
+
+    v11 - filtro INDIVIDUAL (base=individual) + FAIL CLOSED:
+      - `stats_indiv` = {'a': stats_do_jogador_a, 'b': stats_do_jogador_b}
+        (saida do _calcular_stats_h2h sobre a lista INDIVIDUAL de cada um).
+      - Chip individual: os DOIS jogadores precisam passar (regra AND) no
+        mesmo min/max da janela. minPartidas = maturidade do TOTAL individual
+        de CADA jogador (espelha a semantica v6 dos hist por par).
+      - Filtro marcado _nao_suportado REJEITA o tick com motivo claro (antes
+        do v11 era descartado em silencio no coletar e o bot rodava sem ele).
     """
     if not filtros_unificados:
         return True, ''
@@ -1351,12 +1741,50 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list, min_h
         max_v = f.get('max') if f.get('maxAtivo') else None
         origem = f.get('_origem', 'comp')
 
+        # v11 FAIL CLOSED: filtro configurado que o backend nao suporta ->
+        # rejeita o tick (nunca roda "sem o filtro" em silencio).
+        if f.get('_nao_suportado'):
+            return False, f"filtro_nao_suportado({f.get('_nao_suportado')})"
+
         # Filtros hist tem min_partidas proprio; senao usa default
         min_partidas = f.get('hist_min_partidas') or min_h2h
         try:
             min_partidas = int(min_partidas)
         except (TypeError, ValueError):
             min_partidas = min_h2h
+
+        # ===== v11: filtro INDIVIDUAL (base=individual) =====
+        # WR da janela sobre o historico de CADA jogador (contra qualquer
+        # adversario). Regra AND: os DOIS precisam passar no mesmo chip.
+        if _eh_filtro_individual(f):
+            if not stats_indiv or 'a' not in stats_indiv or 'b' not in stats_indiv:
+                return False, 'indiv_stats_indisponivel'
+            tok = _janela_token(janela)
+            if tok is None:
+                return False, f'indiv_janela_invalida_{janela}'
+            for _lado_k in ('a', 'b'):
+                _st_j = stats_indiv.get(_lado_k) or {}
+                _qtd_j = _st_j.get('qtd_h2h', 0) or 0
+                if _qtd_j < min_partidas:
+                    return False, f'indiv_{_lado_k}_insuficiente_qtd_{_qtd_j}_min_{min_partidas}'
+                _valor_j = _st_j.get(f'wr_ult{tok}')
+                if _valor_j is None:
+                    return False, f'stat_indiv_{_lado_k}_wr_ult{janela}_indisponivel'
+                if min_v is not None:
+                    mn, err = _num_seguro(min_v)
+                    if err is not None:
+                        logger.warning(f"[comp] wr individual min invalido: {min_v!r} ({err}) -> rejeita")
+                        return False, 'bot.wr_min_invalido'
+                    if _valor_j < mn:
+                        return False, f'indiv_{_lado_k}_wr_ult{janela}_lt_min'
+                if max_v is not None:
+                    mx, err = _num_seguro(max_v)
+                    if err is not None:
+                        logger.warning(f"[comp] wr individual max invalido: {max_v!r} ({err}) -> rejeita")
+                        return False, 'bot.wr_max_invalido'
+                    if _valor_j > mx:
+                        return False, f'indiv_{_lado_k}_wr_ult{janela}_gt_max'
+            continue
 
         # v6 FIX: filtros HIST validam minPartidas contra qtd_h2h GLOBAL
         # (= maturidade do par). Filtros COMP continuam validando
@@ -1712,9 +2140,18 @@ async def executar_backtest(job_id: int):
         filtros_unificados = _coletar_todos_filtros(filtros)
         janelas_wr, janelas_media = _extrair_janelas_dos_filtros(filtros_unificados)
 
+        # v11: filtros INDIVIDUAIS (base=individual)
+        tem_indiv = _tem_filtro_individual(filtros_unificados)
+        janelas_wr_indiv = _janelas_wr_individuais(filtros_unificados) if tem_indiv else set()
+        indiv_precisa_fav = any(
+            _eh_filtro_individual(f) and f.get('hist_indiv_alvo') == 'ambos'
+            for f in (filtros_unificados or [])
+        )
+
         if filtros_unificados:
             tipos_resumo = [f"{f.get('tipo')}_ult{f.get('janela')}" for f in filtros_unificados]
-            logger.info(f"[backtest] Filtros unificados: {tipos_resumo}")
+            logger.info(f"[backtest] Filtros unificados: {tipos_resumo}"
+                        + (" [+individual]" if tem_indiv else ""))
 
         async with pool.acquire() as conn:
             torneios = bot.get('torneios') or []
@@ -1865,6 +2302,8 @@ async def executar_backtest(job_id: int):
 
         sport_banco = ESPORTE_UI_PARA_BANCO.get(bot.get('esporte', ''), bot.get('esporte', ''))
         h2h_cache = H2HCache(pool, bot.get('casa', ''), sport_banco)
+        # v11: cache de historico INDIVIDUAL (so consultado se tem_indiv)
+        indiv_cache = HistIndividualCache(pool, bot.get('casa', ''), sport_banco)
 
         max_apostas_partida = bot.get('max_apostas_partida')
         apostas_por_evento: dict = {}
@@ -1974,6 +2413,14 @@ async def executar_backtest(job_id: int):
             mercado_bot_loop = bot.get('mercado', '')
             stats = None
             if filtros_unificados:
+                # v11 FAIL CLOSED: filtro configurado que o backend nao suporta
+                # (tipo same_grade/specific_teams, base desconhecida) -> REJEITA
+                # o tick com contador proprio; nunca roda "sem o filtro".
+                _mot_ns = _primeiro_nao_suportado(filtros_unificados)
+                if _mot_ns:
+                    rej['filtro_nao_suportado'] = rej.get('filtro_nao_suportado', 0) + 1
+                    continue
+
                 ja = tick.get('jogador_a')
                 jb = tick.get('jogador_b')
                 if not ja or not jb:
@@ -2008,9 +2455,8 @@ async def executar_backtest(job_id: int):
                     #     -> comportamento original (_ramo_hc_pct sobre todos).
                     #  2) filtros de WR da UI (tipo 'wr' dos chips E 'hc_wr' dos
                     #     complementares): ESCADINHA — TODOS valem (AND) e cada um
-                    #     computa a cobertura na SUA janela. (Antes: so o 1o
-                    #     filtro com break, sempre sobre todos os confrontos —
-                    #     2o chip e janela eram ignorados em silencio.)
+                    #     computa a cobertura na SUA janela. v11: chips com
+                    #     base=individual computam no historico INDIVIDUAL.
                     #  3) defaults seguros da estrategia (min 0.87, 20 partidas).
                     hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
                     hc_max = bot.get('hc_pct_max')
@@ -2038,9 +2484,41 @@ async def executar_backtest(job_id: int):
                         _fs_wr = [f for f in (filtros_unificados or [])
                                   if (f.get('tipo') or '').lower() in ('wr', 'hc_wr')]
                         if _fs_wr:
+                            # v11: chips individuais na escadinha — busca o
+                            # historico individual da ZEBRA (e do FAVORITO se
+                            # algum chip pedir alvo 'ambos'). Fail closed.
+                            jogos_indiv_hc = None
+                            if tem_indiv:
+                                z_nome, f_nome = _zebra_favorito(
+                                    tick.get('selecao', ''), ja, jb)
+                                if z_nome is None:
+                                    rej['comp'] += 1
+                                    continue
+                                try:
+                                    _zl = await indiv_cache.get_jogos(
+                                        z_nome, tick['ts'],
+                                        event_id_excluir=tick.get('event_id'))
+                                    _fl = None
+                                    if indiv_precisa_fav and f_nome:
+                                        _fl = await indiv_cache.get_jogos(
+                                            f_nome, tick['ts'],
+                                            event_id_excluir=tick.get('event_id'))
+                                except Exception as e:
+                                    logger.warning(
+                                        f"[backtest] job {job_id}: falha hist "
+                                        f"individual HC {z_nome}/{f_nome}: {e}")
+                                    rej['indiv_erro'] = rej.get('indiv_erro', 0) + 1
+                                    continue
+                                jogos_indiv_hc = {
+                                    'zebra_nome': z_nome,
+                                    'favorito_nome': f_nome,
+                                    'zebra': _zl,
+                                    'favorito': _fl,
+                                }
                             # 2) ESCADINHA: todos os filtros, cada um na sua janela
                             passou_hc, motivo_hc = _avaliar_escadinha_hc(
-                                jogos_h2h, stats, _fs_wr, tick['ts'])
+                                jogos_h2h, stats, _fs_wr, tick['ts'],
+                                jogos_indiv=jogos_indiv_hc)
                         else:
                             # 3) default seguro da estrategia
                             passou_hc, motivo_hc = _ramo_hc_pct(
@@ -2062,9 +2540,39 @@ async def executar_backtest(job_id: int):
                                                 ts_ref=tick['ts'])
                     stats['linha_atual'] = linha_num
 
-                    passou_comp, motivo = _aplicar_filtros_complementares(stats, filtros_unificados)
+                    # v11: filtros INDIVIDUAIS (base=individual) — WR das ultimas
+                    # N partidas de CADA jogador contra QUALQUER adversario.
+                    # Regra AND: os dois precisam passar (aplicada dentro do
+                    # _aplicar_filtros_complementares). BLINDADO: falha na busca
+                    # individual -> tick rejeitado (fail closed), backtest segue.
+                    stats_indiv = None
+                    if tem_indiv:
+                        try:
+                            jogos_ind_a = await indiv_cache.get_jogos(
+                                ja, tick['ts'], event_id_excluir=tick.get('event_id'))
+                            jogos_ind_b = await indiv_cache.get_jogos(
+                                jb, tick['ts'], event_id_excluir=tick.get('event_id'))
+                        except Exception as e:
+                            logger.warning(
+                                f"[backtest] job {job_id}: falha hist individual {ja}/{jb}: {e}")
+                            rej['indiv_erro'] = rej.get('indiv_erro', 0) + 1
+                            continue
+                        _lado_t = _lado_aposta(tick.get('selecao'))
+                        st_ind_a = _calcular_stats_h2h(jogos_ind_a, linha_num,
+                                                       janelas_wr_indiv, set(),
+                                                       lado=_lado_t, ts_ref=tick['ts'])
+                        st_ind_b = _calcular_stats_h2h(jogos_ind_b, linha_num,
+                                                       janelas_wr_indiv, set(),
+                                                       lado=_lado_t, ts_ref=tick['ts'])
+                        stats_indiv = {'a': st_ind_a, 'b': st_ind_b}
+                        _espelhar_stats_individuais(stats, st_ind_a, st_ind_b)
+
+                    passou_comp, motivo = _aplicar_filtros_complementares(
+                        stats, filtros_unificados, stats_indiv=stats_indiv)
                     if not passou_comp:
                         if 'h2h_insuficiente' in motivo:
+                            rej['h2h_insuf'] += 1
+                        elif 'indiv' in motivo and 'insuficiente' in motivo:
                             rej['h2h_insuf'] += 1
                         else:
                             rej['comp'] += 1
@@ -2131,6 +2639,7 @@ async def executar_backtest(job_id: int):
         logger.info(
             f"[backtest] Job {job_id}: {len(candidatas)} candidatas. "
             f"Rejeicoes: {rej_str}{basico_det_str}. H2H cache: {h2h_cache.stats_cache}"
+            + (f". Indiv cache: {indiv_cache.stats_cache}" if tem_indiv else "")
         )
 
         async with pool.acquire() as conn:
@@ -2168,6 +2677,9 @@ async def executar_backtest(job_id: int):
         # Colunas de WR pra planilha (estilo bot 313886): pega as janelas dos
         # filtros de WR (tipo='wr') -> (rotulo, chave_no_stats). Ex: janela 10 ->
         # ("Últ. 10", "wr_ult10"). So as 2 primeiras (formato Janela 1/2).
+        # v11: chip INDIVIDUAL aponta pra chave individual — O/U mostra o PIOR
+        # dos dois jogadores (o numero que decide o gate AND); HC mostra o pct
+        # da ZEBRA na janela. Sem colidir com as chaves do par.
         _wr_cols = []
         for _f in filtros_unificados:
             # v_escadinha: 'hc_wr' (complementar) tambem vira coluna na planilha
@@ -2179,7 +2691,13 @@ async def executar_backtest(job_id: int):
                     _tok = str(int(_jw)); _lbl = f"Últ. {int(_jw)}"
                 else:
                     _tok = '0'; _lbl = "Todas"
-                _wr_cols.append((_lbl, f'wr_ult{_tok}'))
+                if _eh_filtro_individual(_f):
+                    if _mercado_eh_hc(bot.get('mercado', '')):
+                        _wr_cols.append((f"{_lbl} (ind zebra)", f'wr_ult{_tok}_ind'))
+                    else:
+                        _wr_cols.append((f"{_lbl} (ind pior)", f'wr_ult{_tok}_indmin'))
+                else:
+                    _wr_cols.append((_lbl, f'wr_ult{_tok}'))
 
         for i, c in enumerate(candidatas):
             tick = c['tick']
@@ -2309,6 +2827,13 @@ async def executar_backtest(job_id: int):
             avisos.append(
                 f"{qualidade['eventos_sem_placar_final']} sinais sem placar final "
                 f"(nao resolvidos)"
+            )
+        # v11: bot com filtro nao suportado = 100% rejeitado de proposito.
+        # Deixa isso ESCRITO no relatorio pro usuario entender o 0 apostas.
+        if rej.get('filtro_nao_suportado'):
+            avisos.append(
+                f"{rej['filtro_nao_suportado']} ticks rejeitados por filtro "
+                f"NAO SUPORTADO no bot (fail closed) — revise os chips"
             )
 
         partes_msg = []
