@@ -1,5 +1,14 @@
 """
-workers/backtest_runner.py - Worker do backtest (v11)
+workers/backtest_runner.py - Worker do backtest (v11.1)
+
+v11.1 - Colunas de WR DINAMICAS na planilha (coleta de dados):
+- apostas_detalhe ganha 'wr_cols': TODAS as janelas de TODOS os chips viram
+  coluna no export (nao so 2). Chip INDIVIDUAL de O/U exporta 3 numeros por
+  janela: "(ind pior)" (min dos dois — o valor que decidiria um gate AND),
+  "(ind A)" e "(ind B)". Chip individual de HC com alvo 'ambos' exporta
+  tambem "(ind fav)". + colunas Qtd Ind A/B (total individual de cada um).
+- janela_1/2 e winrate_1/2 continuam gravados (compat com jobs antigos e
+  qualquer leitor do formato legado).
 
 v11 - Filtro INDIVIDUAL (base=individual) + FAIL CLOSED:
 - Chips de historico com base=individual agora FUNCIONAM: a janela (ult10 etc)
@@ -2676,10 +2685,14 @@ async def executar_backtest(job_id: int):
 
         # Colunas de WR pra planilha (estilo bot 313886): pega as janelas dos
         # filtros de WR (tipo='wr') -> (rotulo, chave_no_stats). Ex: janela 10 ->
-        # ("Últ. 10", "wr_ult10"). So as 2 primeiras (formato Janela 1/2).
+        # ("Últ. 10", "wr_ult10").
         # v11: chip INDIVIDUAL aponta pra chave individual — O/U mostra o PIOR
         # dos dois jogadores (o numero que decide o gate AND); HC mostra o pct
         # da ZEBRA na janela. Sem colidir com as chaves do par.
+        # v11.1: a lista carrega TODAS as colunas (todos os chips; individuais
+        # de O/U tambem A e B; HC alvo 'ambos' tambem o favorito). A planilha
+        # monta uma coluna por item ('wr_cols' no detalhe); janela_1/2 seguem
+        # sendo as 2 primeiras, por compatibilidade.
         _wr_cols = []
         for _f in filtros_unificados:
             # v_escadinha: 'hc_wr' (complementar) tambem vira coluna na planilha
@@ -2694,8 +2707,13 @@ async def executar_backtest(job_id: int):
                 if _eh_filtro_individual(_f):
                     if _mercado_eh_hc(bot.get('mercado', '')):
                         _wr_cols.append((f"{_lbl} (ind zebra)", f'wr_ult{_tok}_ind'))
+                        if _f.get('hist_indiv_alvo') == 'ambos':
+                            # v11.1: pct do favorito agora vira coluna tambem
+                            _wr_cols.append((f"{_lbl} (ind fav)", f'wr_ult{_tok}_indfav'))
                     else:
                         _wr_cols.append((f"{_lbl} (ind pior)", f'wr_ult{_tok}_indmin'))
+                        _wr_cols.append((f"{_lbl} (ind A)", f'indiv_a_wr_ult{_tok}'))
+                        _wr_cols.append((f"{_lbl} (ind B)", f'indiv_b_wr_ult{_tok}'))
                 else:
                     _wr_cols.append((_lbl, f'wr_ult{_tok}'))
 
@@ -2773,6 +2791,11 @@ async def executar_backtest(job_id: int):
                 'winrate_1': st.get(_wr_cols[0][1]) if len(_wr_cols) > 0 else None,
                 'janela_2': _wr_cols[1][0] if len(_wr_cols) > 1 else '',
                 'winrate_2': st.get(_wr_cols[1][1]) if len(_wr_cols) > 1 else None,
+                # v11.1: TODAS as colunas de WR (a planilha monta dinamico) +
+                # qtd individual de cada jogador (pra filtrar maturidade no Excel)
+                'wr_cols': [{'l': _l, 'v': st.get(_k)} for _l, _k in _wr_cols],
+                'qtd_ind_a': st.get('qtd_indiv_a'),
+                'qtd_ind_b': st.get('qtd_indiv_b'),
                 'odd': odd,
                 'stake': stake,
                 'placar_envio': f"{tick.get('score_home')}-{tick.get('score_away')}",

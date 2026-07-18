@@ -816,7 +816,7 @@ async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_curre
     linhas = []
     for a in detalhe:
         data, hora = _fmt_dt(a.get("ts"))
-        linhas.append({
+        linha = {
             "Torneio": a.get("torneio", ""),
             "Campeonato": a.get("liga", ""),
             "Confronto": f"{a.get('jogador_a', '')} x {a.get('jogador_b', '')}",
@@ -829,16 +829,40 @@ async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_curre
             "Mercado": a.get("mercado", ""),
             "Tip": a.get("tip", ""),
             "Linha": a.get("linha"),
-            "Janela 1": a.get("janela_1", ""),
-            "Winrate 1": a.get("winrate_1"),
-            "Janela 2": a.get("janela_2", ""),
-            "Winrate 2": a.get("winrate_2"),
+        }
+        # v11.1: colunas de WR DINAMICAS — o runner grava 'wr_cols' com TODAS
+        # as janelas de todos os chips (e os numeros individuais A/B/fav).
+        # Uma coluna por item, com dedup de rotulo repetido (chip duplicado
+        # vira "... #2"). Jobs antigos (sem wr_cols) caem no formato legado
+        # Janela 1/2. BLINDADO: item torto e ignorado, nunca derruba o export.
+        wr_cols = a.get("wr_cols")
+        if isinstance(wr_cols, list) and wr_cols:
+            _vistos: dict = {}
+            for wc in wr_cols:
+                if not isinstance(wc, dict):
+                    continue
+                lbl = str(wc.get("l") or "").strip() or "WR"
+                _vistos[lbl] = _vistos.get(lbl, 0) + 1
+                if _vistos[lbl] > 1:
+                    lbl = f"{lbl} #{_vistos[lbl]}"
+                linha[lbl] = wc.get("v")
+            if a.get("qtd_ind_a") is not None:
+                linha["Qtd Ind A"] = a.get("qtd_ind_a")
+            if a.get("qtd_ind_b") is not None:
+                linha["Qtd Ind B"] = a.get("qtd_ind_b")
+        else:
+            linha["Janela 1"] = a.get("janela_1", "")
+            linha["Winrate 1"] = a.get("winrate_1")
+            linha["Janela 2"] = a.get("janela_2", "")
+            linha["Winrate 2"] = a.get("winrate_2")
+        linha.update({
             "Odd": a.get("odd"),
             "Placar Envio": a.get("placar_envio", ""),
             "Placar Final": a.get("score_final", ""),
             "Resultado": _res_map.get(a.get("resultado"), a.get("resultado", "")),
             "Lucro/Prej.": a.get("lucro_unidades"),
         })
+        linhas.append(linha)
 
     import pandas as pd
     df = pd.DataFrame(linhas)
