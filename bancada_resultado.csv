@@ -1,0 +1,32 @@
+﻿caso;casa;mercado_bot;esperado;descricao;ticks_testados;acertos;falhas;falhas_parsing;status;exemplos_falha;notas
+S1;superbet;ah_ft;True;eBasket: HC jogo inteiro '(Inc. prorrogação)' CASA no ah_ft;42;42;0;0;OK;;hc_valor None: 0/42
+S2;superbet;ah_ft;False;eBasket: HC de 1º Tempo NAO casa no ah_ft;41;41;0;0;OK;;
+S3;superbet;ah_ft;False;eBasket: HC de Quarto (linha com sufixo -1..-4) NAO casa no ah_ft;42;42;0;0;OK;;
+S4;superbet;over_under_ft;True;eBasket: OU jogo inteiro '(Inc. prorrogação)' CASA no over_under_ft;42;42;0;0;OK;;lado None: 0/42
+S5;superbet;over_under_ft;False;eBasket: PERIOD_TOTAL 1º Tempo NAO casa no over_under_ft;41;41;0;0;OK;;
+S6;superbet;over_under_ht;True;eBasket: PERIOD_TOTAL 1º Tempo CASA no over_under_ht;41;41;0;0;OK;;lado None: 0/41
+S7;superbet;over_under_ht;False;eBasket: PERIOD_TOTAL de Quarto (linha com prefixo n-) NAO casa no over_under_ht;42;42;0;0;OK;;
+S8;superbet;over_under_ft;False;eBasket: PLAYER_TOTAL (total por jogador) NAO casa no over_under_ft;41;41;0;0;OK;;
+S9;superbet;ah_ft;True;e-foot: 'Handicap Asiático' (jogo inteiro) CASA no ah_ft;41;41;0;0;OK;;hc_valor None: 0/41
+S9b;superbet;ah_ft;False;e-foot: '1º Tempo - Handicap asiático' (HT!) NAO casa no ah_ft — descoberta da rodada 20/jul;41;41;0;0;OK;;
+S10;superbet;ah_ft;False;e-foot: 'Handicap 3-Way' (europeu, empate PERDE) NAO deveria casar no ah_ft;41;41;0;0;OK;;
+S11;superbet;ah_ft;True;e-foot: 'Handicap 2-way' (linha meia, sem empate) casa no ah_ft;41;41;0;0;OK;;hc_valor None: 0/41
+S12;superbet;over_under_ft;True;e-foot: 'Total de Gols' CASA no over_under_ft;35;35;0;0;OK;;lado None: 0/35
+S13;superbet;over_under_ft;False;e-foot: 'Total de Gols Asiático' NAO deveria casar no over_under_ft (tem mercado_bot próprio);41;41;0;0;OK;;
+E1;estrelabet;ah_ft;True;e-foot: tipo 16 'Handicap' CASA no ah_ft;41;41;0;0;OK;;hc_valor None: 0/41
+E2;estrelabet;ah_ft;False;e-foot: tipo 66 (1º tempo - handicap) NAO casa no ah_ft;41;41;0;0;OK;;
+E2b;estrelabet;ah_ht;True;e-foot: tipo 66 CASA no ah_ht;41;41;0;0;OK;;hc_valor None: 0/41
+E3;estrelabet;ah_ft;False;eBasket: tipo 303 (handicap por quarto) NAO casa no ah_ft;41;41;0;0;OK;;
+E4;estrelabet;over_under_ft;True;e-foot: tipo 18 'Total de Gols' CASA no over_under_ft;35;35;0;0;OK;;lado None: 0/35
+E5;estrelabet;over_under_ft;False;e-foot: tipo 68 (1º tempo - total) NAO casa no over_under_ft;41;41;0;0;OK;;
+E5b;estrelabet;over_under_ht;True;e-foot: tipo 68 CASA no over_under_ht;41;41;0;0;OK;;lado None: 0/41
+E6;estrelabet;over_under_ft;False;eBasket: tipo 236 (total por quarto) NAO casa no over_under_ft;41;41;0;0;OK;;
+E7;estrelabet;over_under_ft;False;eBasket: tipos 227/228 (PLAYER total incl. prorrogação) NAO casam no over_under_ft;41;41;0;0;OK;;
+E8;estrelabet;over_under_ft;False;e-foot: tipo 8 (Próximo gol N) NAO casa no over_under_ft;41;41;0;0;OK;;
+B1;betano;ah_ft;True;eBasket: tipo 156 'Handicap' CASA no ah_ft (seleção betano SEM parênteses);41;41;0;0;OK;;hc_valor None: 0/41
+B2;betano;over_under_ft;True;eBasket: tipo 157 'Total de pontos' CASA no over_under_ft;41;41;0;0;OK;;lado None: 0/41
+B3;betano;over_under_ft;True;e-foot: tipo 13 'Total de Gols' CASA no over_under_ft;35;35;0;0;OK;;lado None: 0/35
+B4;betano;over_under_ft;False;e-foot: tipo 14 (Total 1º Tempo) NAO casa no over_under_ft;21;21;0;0;OK;;
+B4b;betano;over_under_ht;True;e-foot: tipo 14 CASA no over_under_ht;21;21;0;0;OK;;lado None: 0/21
+B5;betano;over_under_ft;False;e-foot: tipo 189 (Total Asiático — mercado_bot próprio) NAO casa no over_under_ft;41;41;0;0;OK;;
+B7;betano;over_under_ft;False;e-foot: tipo 11 (Próximo gol) NAO casa no over_under_ft;41;41;0;0;OK;;

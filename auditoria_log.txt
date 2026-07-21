@@ -1,0 +1,18 @@
+[21:45:07] === auditoria_sentinelas.py v1.0 | modo=SECO ===
+[21:45:07] [OK ] superbet ah_ft aceita 'Handicap (Inc. prorrogação)' -> aprova
+[21:45:07] [OK ] superbet ah_ft ACUSA HC de 1º tempo -> acusa [gabarito_mercado:hc_de_periodo]
+[21:45:07] [OK ] superbet ah_ft ACUSA 'Handicap 3-Way' -> acusa [gabarito_mercado:hc_3way_europeu]
+[21:45:07] [OK ] superbet ah_ft ACUSA '1º Tempo - Handicap asiático' (caso S9b) -> acusa [gabarito_mercado:hc_de_periodo]
+[21:45:07] [OK ] superbet over_under_ft aceita 'Total de Pontos (Inc. prorrogação)' -> aprova
+[21:45:07] [OK ] superbet over_under_ft ACUSA 'Total de Gols Asiático' -> acusa [gabarito_mercado:ou_asiatico]
+[21:45:07] [OK ] superbet over_under_ht aceita '1º Tempo - Total de Pontos' (PERIOD_TOTAL) -> aprova
+[21:45:07] [OK ] estrelabet over_under_ht aceita tipo 68 com 'ª' feminino (caso E5b) -> aprova
+[21:45:07] [OK ] estrelabet ah_ft ACUSA tipo 303 (quarto) -> acusa [gabarito_mercado:tipo_303_esperado_16]
+[21:45:07] [OK ] betano ah_ft aceita tipo 156 (seleção sem parênteses) -> aprova
+[21:45:07] [OK ] betano over_under_ft ACUSA tipo 189 (asiático) -> acusa [gabarito_mercado:tipo_189_esperado_13/157]
+[21:45:07] [OK ] qualquer: ACUSA odd suspensa (<=1) -> acusa [odd_nao_apostavel(1.0)]
+[21:45:07] [OK ] qualquer: ACUSA liga fora da whitelist -> acusa [liga_fora_da_whitelist(Euroliga)]
+[21:45:07] [OK ] qualquer: ACUSA tick fonte ausente -> acusa [tick_fonte_nao_encontrado(retencao?)]
+[21:45:07] [OK ] qualquer: ACUSA seleção de OU sem lado -> acusa [selecao_ou_sem_lado]
+
+[21:45:07] SECO: 15/15 casos do auditor OK

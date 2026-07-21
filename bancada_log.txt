@@ -1,0 +1,66 @@
+[21:02:28] === bancada_matching.py — etapa 2 | modo=BANCO+SECO ===
+[21:03:04] [OK] S1 (superbet/ah_ft, esperado=True) — eBasket: HC jogo inteiro '(Inc. prorrogação)' CASA no ah_ft
+[21:03:04]        2 sintéticos + 40 do banco | acertos 42/42 | hc_valor None: 0/42
+[21:03:36] [OK] S2 (superbet/ah_ft, esperado=False) — eBasket: HC de 1º Tempo NAO casa no ah_ft
+[21:03:36]        1 sintéticos + 40 do banco | acertos 41/41
+[21:04:06] [OK] S3 (superbet/ah_ft, esperado=False) — eBasket: HC de Quarto (linha com sufixo -1..-4) NAO casa no ah_ft
+[21:04:06]        2 sintéticos + 40 do banco | acertos 42/42
+[21:04:45] [OK] S4 (superbet/over_under_ft, esperado=True) — eBasket: OU jogo inteiro '(Inc. prorrogação)' CASA no over_under_ft
+[21:04:45]        2 sintéticos + 40 do banco | acertos 42/42 | lado None: 0/42
+[21:05:27] [OK] S5 (superbet/over_under_ft, esperado=False) — eBasket: PERIOD_TOTAL 1º Tempo NAO casa no over_under_ft
+[21:05:27]        1 sintéticos + 40 do banco | acertos 41/41
+[21:06:03] [OK] S6 (superbet/over_under_ht, esperado=True) — eBasket: PERIOD_TOTAL 1º Tempo CASA no over_under_ht
+[21:06:03]        1 sintéticos + 40 do banco | acertos 41/41 | lado None: 0/41
+[21:06:41] [OK] S7 (superbet/over_under_ht, esperado=False) — eBasket: PERIOD_TOTAL de Quarto (linha com prefixo n-) NAO casa no over_under_ht
+[21:06:41]        2 sintéticos + 40 do banco | acertos 42/42
+[21:07:09] [OK] S8 (superbet/over_under_ft, esperado=False) — eBasket: PLAYER_TOTAL (total por jogador) NAO casa no over_under_ft
+[21:07:09]        1 sintéticos + 40 do banco | acertos 41/41
+[21:07:31] [OK] S9 (superbet/ah_ft, esperado=True) — e-foot: 'Handicap Asiático' (jogo inteiro) CASA no ah_ft
+[21:07:31]        1 sintéticos + 40 do banco | acertos 41/41 | hc_valor None: 0/41
+[21:07:51] [OK] S9b (superbet/ah_ft, esperado=False) — e-foot: '1º Tempo - Handicap asiático' (HT!) NAO casa no ah_ft — descoberta da rodada 20/jul
+[21:07:51]        1 sintéticos + 40 do banco | acertos 41/41
+[21:08:15] [OK] S10 (superbet/ah_ft, esperado=False) — e-foot: 'Handicap 3-Way' (europeu, empate PERDE) NAO deveria casar no ah_ft
+[21:08:15]        1 sintéticos + 40 do banco | acertos 41/41
+[21:08:37] [OK] S11 (superbet/ah_ft, esperado=True) — e-foot: 'Handicap 2-way' (linha meia, sem empate) casa no ah_ft
+[21:08:37]        1 sintéticos + 40 do banco | acertos 41/41 | hc_valor None: 0/41
+[21:08:54] [OK] S12 (superbet/over_under_ft, esperado=True) — e-foot: 'Total de Gols' CASA no over_under_ft
+[21:08:54]        1 sintéticos + 34 do banco | acertos 35/35 | lado None: 0/35
+[21:09:15] [OK] S13 (superbet/over_under_ft, esperado=False) — e-foot: 'Total de Gols Asiático' NAO deveria casar no over_under_ft (tem mercado_bot próprio)
+[21:09:15]        1 sintéticos + 40 do banco | acertos 41/41
+[21:09:33] [OK] E1 (estrelabet/ah_ft, esperado=True) — e-foot: tipo 16 'Handicap' CASA no ah_ft
+[21:09:33]        1 sintéticos + 40 do banco | acertos 41/41 | hc_valor None: 0/41
+[21:09:49] [OK] E2 (estrelabet/ah_ft, esperado=False) — e-foot: tipo 66 (1º tempo - handicap) NAO casa no ah_ft
+[21:09:49]        1 sintéticos + 40 do banco | acertos 41/41
+[21:10:06] [OK] E2b (estrelabet/ah_ht, esperado=True) — e-foot: tipo 66 CASA no ah_ht
+[21:10:06]        1 sintéticos + 40 do banco | acertos 41/41 | hc_valor None: 0/41
+[21:10:23] [OK] E3 (estrelabet/ah_ft, esperado=False) — eBasket: tipo 303 (handicap por quarto) NAO casa no ah_ft
+[21:10:23]        1 sintéticos + 40 do banco | acertos 41/41
+[21:10:40] [OK] E4 (estrelabet/over_under_ft, esperado=True) — e-foot: tipo 18 'Total de Gols' CASA no over_under_ft
+[21:10:40]        1 sintéticos + 34 do banco | acertos 35/35 | lado None: 0/35
+[21:11:02] [OK] E5 (estrelabet/over_under_ft, esperado=False) — e-foot: tipo 68 (1º tempo - total) NAO casa no over_under_ft
+[21:11:02]        1 sintéticos + 40 do banco | acertos 41/41
+[21:11:20] [OK] E5b (estrelabet/over_under_ht, esperado=True) — e-foot: tipo 68 CASA no over_under_ht
+[21:11:20]        1 sintéticos + 40 do banco | acertos 41/41 | lado None: 0/41
+[21:11:39] [OK] E6 (estrelabet/over_under_ft, esperado=False) — eBasket: tipo 236 (total por quarto) NAO casa no over_under_ft
+[21:11:39]        1 sintéticos + 40 do banco | acertos 41/41
+[21:11:58] [OK] E7 (estrelabet/over_under_ft, esperado=False) — eBasket: tipos 227/228 (PLAYER total incl. prorrogação) NAO casam no over_under_ft
+[21:11:58]        1 sintéticos + 40 do banco | acertos 41/41
+[21:12:16] [OK] E8 (estrelabet/over_under_ft, esperado=False) — e-foot: tipo 8 (Próximo gol N) NAO casa no over_under_ft
+[21:12:16]        1 sintéticos + 40 do banco | acertos 41/41
+[21:12:32] [OK] B1 (betano/ah_ft, esperado=True) — eBasket: tipo 156 'Handicap' CASA no ah_ft (seleção betano SEM parênteses)
+[21:12:32]        1 sintéticos + 40 do banco | acertos 41/41 | hc_valor None: 0/41
+[21:12:48] [OK] B2 (betano/over_under_ft, esperado=True) — eBasket: tipo 157 'Total de pontos' CASA no over_under_ft
+[21:12:48]        1 sintéticos + 40 do banco | acertos 41/41 | lado None: 0/41
+[21:13:05] [OK] B3 (betano/over_under_ft, esperado=True) — e-foot: tipo 13 'Total de Gols' CASA no over_under_ft
+[21:13:05]        1 sintéticos + 34 do banco | acertos 35/35 | lado None: 0/35
+[21:13:21] [OK] B4 (betano/over_under_ft, esperado=False) — e-foot: tipo 14 (Total 1º Tempo) NAO casa no over_under_ft
+[21:13:21]        1 sintéticos + 20 do banco | acertos 21/21
+[21:13:37] [OK] B4b (betano/over_under_ht, esperado=True) — e-foot: tipo 14 CASA no over_under_ht
+[21:13:37]        1 sintéticos + 20 do banco | acertos 21/21 | lado None: 0/21
+[21:13:56] [OK] B5 (betano/over_under_ft, esperado=False) — e-foot: tipo 189 (Total Asiático — mercado_bot próprio) NAO casa no over_under_ft
+[21:13:56]        1 sintéticos + 40 do banco | acertos 41/41
+[21:14:13] [OK] B7 (betano/over_under_ft, esperado=False) — e-foot: tipo 11 (Próximo gol) NAO casa no over_under_ft
+[21:14:13]        1 sintéticos + 40 do banco | acertos 41/41
+
+[21:14:13] RESULTADO: 31/31 casos OK | CSV: C:\Users\Administrator\PyCharmMiscProject\tipmike_api\bancada_resultado.csv
+[21:14:13] GATE etapa 2: 100% — qualquer FAIL acima precisa de correção no motor antes da etapa 3.

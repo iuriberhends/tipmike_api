@@ -215,12 +215,15 @@ def _periodo_do_mercado(nome_mercado: str) -> str:
     if not s:
         return 'ft'
     # 1o tempo (pt/en). JOB42: {0,2} tolera residuo de mojibake ('1aº tempo').
-    if (re.search(r'\b1\s*[ao°º]{0,2}\s*tempo\b', s) or '1st half' in s
+    # BANCADA E5b: inclui 'ª' (ordinal FEMININO) — estrelabet manda
+    # '1ª tempo - Total de gols'; sem o ª o regex nao casava e a blindagem
+    # jogava em 'parcial' -> bot de over_under_ht nunca apitava.
+    if (re.search(r'\b1\s*[ao°ºª]{0,2}\s*tempo\b', s) or '1st half' in s
             or 'first half' in s or 'primeiro tempo' in s
-            or re.search(r'\bht\b', s) or re.search(r'\b1\s*[ao°º]{0,2}\s*half\b', s)):
+            or re.search(r'\bht\b', s) or re.search(r'\b1\s*[ao°ºª]{0,2}\s*half\b', s)):
         return 'ht'
     # 2o tempo (pt/en)
-    if (re.search(r'\b2\s*[ao°º]{0,2}\s*tempo\b', s) or '2nd half' in s
+    if (re.search(r'\b2\s*[ao°ºª]{0,2}\s*tempo\b', s) or '2nd half' in s
             or 'second half' in s or 'segundo tempo' in s):
         return '2t'
     # parciais: quarto / quarter / set / periodo / period
@@ -265,6 +268,26 @@ def _matches_mercado(mercado_bot: str, tick_mercado: str, tick_mercado_tipo: str
         # 1o tempo / 2o tempo / quarto (ver _periodo_do_mercado). Um bot de FT
         # so aceita tick de FT; um bot de HT so aceita tick de 1o tempo.
         if _periodo_do_mercado(tick_mercado) != _periodo_do_bot(mercado_bot):
+            return False
+        # DESAMBIGUACAO POR NOME (bancada S10/S13): na superbet o mesmo
+        # mercado_tipo cobre variantes DIFERENTES do mercado —
+        # 'HANDICAP' = Handicap Asiatico + Handicap 3-Way + 2-way;
+        # 'OVER_UNDER' = Total de Gols + Total de Gols Asiatico.
+        # Sem este filtro um bot ah_ft apostava 3-Way (europeu: empate PERDE)
+        # e um over_under_ft pegava linha asiatica .25/.75 (meio green/red que
+        # o resolvedor nao trata). Regra: cada mercado_bot rejeita a variante
+        # que tem mercado_bot proprio.
+        nome_norm = _sem_acento(tick_mercado)
+        eh_asiatico_nome = ('asiatic' in nome_norm) or ('asian' in nome_norm)
+        eh_3way_nome = ('3-way' in nome_norm) or ('3 way' in nome_norm
+                        or 'europeu' in nome_norm or 'european' in nome_norm)
+        if mercado_bot in ('over_under_ft', 'over_under_ht') and eh_asiatico_nome:
+            return False
+        if mercado_bot in ('asian_over_under_ft', 'asian_over_under_ht') and not eh_asiatico_nome:
+            return False
+        if mercado_bot in ('ah_ft', 'ah_ht') and eh_3way_nome:
+            return False
+        if mercado_bot == 'eh_ft' and not eh_3way_nome:
             return False
         return True
 

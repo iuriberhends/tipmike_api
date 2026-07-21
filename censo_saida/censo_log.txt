@@ -1,0 +1,122 @@
+[2026-07-20 15:29:50] === censo_mercados.py v2 — Etapa 1 (censo por ticks reais) | fonte=pg ===
+[2026-07-20 15:29:50] Janela: 2026-07-17 15:29 ate 2026-07-20 15:29 | filtros: casa=- sport=- liga=-
+[2026-07-20 15:29:50] Driver: psycopg2 | conectando no Postgres...
+[2026-07-20 15:29:50] Rodando a agregacao no Postgres...
+[2026-07-20 15:33:10] Agregacao ok: 11973 grupos (casa x esporte x liga x mercado).
+[2026-07-20 15:33:13] Celulas casa x esporte x liga: 121
+[2026-07-20 15:33:13] Com HC FT (>= 5 eventos): 62 | Com OU FT: 110
+[2026-07-20 15:33:13] Gravado: C:\Users\Administrator\PyCharmMiscProject\tipmike_api\censo_saida\censo_matriz.csv (121 linhas)
+[2026-07-20 15:33:13] Gravado: C:\Users\Administrator\PyCharmMiscProject\tipmike_api\censo_saida\censo_detalhe.csv (11973 linhas)
+[2026-07-20 15:33:13] --- RESUMO (celulas com mercado-alvo) ---
+[2026-07-20 15:33:13] bet365 | E-Basketball | B-EBASKBAT4X5 -> HC_FT=TEM(52 ev) OU_FT=TEM(38 ev) obs=HC_FT_MUITO_SUSPENSO
+[2026-07-20 15:33:13] bet365 | E-Basketball | B-EBASKBLITZ4X5 -> HC_FT=TEM(123 ev) OU_FT=TEM(91 ev) obs=-
+[2026-07-20 15:33:13] bet365 | E-Football | ESOC-GTL-12MP -> HC_FT=TEM(42 ev) OU_FT=TEM(48 ev) obs=-
+[2026-07-20 15:33:13] bet365 | E-Football | ESOCBATVOL-6 -> HC_FT=TEM(58 ev) OU_FT=TEM(86 ev) obs=-
+[2026-07-20 15:33:13] bet365 | E-Football | ESOCCERBATTLE -> HC_FT=TEM(81 ev) OU_FT=TEM(97 ev) obs=-
+[2026-07-20 15:33:13] bet365 | E-Football | ESOCH2HGG-8MP -> HC_FT=TEM(62 ev) OU_FT=TEM(83 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Basketball | NBA 2K Battle European Conference 4x5 minutes -> HC_FT=TEM(213 ev) OU_FT=TEM(213 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Argentinian Super League - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(36 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Bundesliga - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Campeonato Mundial de Clubes - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(50 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Copa Do Mundo - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(1030 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Internacional - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - La Liga - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(120 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - La Liga - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(30 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Liga Europa - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(171 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Liga dos Campeões - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(236 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Liga dos Campeões - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(72 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Liga dos Campeões B - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(92 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Ligue 1 - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(59 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Premier League - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(107 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Primera - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle - Série A - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(180 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | Battle- FA Cup - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | GT Leagues - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(866 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | H2H GG League - 2x4 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(958 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | eAdriatic League - Internacional - 2x5 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(318 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | eAdriatic League - La Liga - 2x5 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | eAdriatic League - Liga dos Campeões - 2x5 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(317 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | eAdriatic League - Premier League - 2x5 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(136 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | eAdriatic League - Série A - 2x5 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(120 ev) obs=-
+[2026-07-20 15:33:13] betano | E-Football | ePremier League - 2x6 minutos de jogo -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(57 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football |  CLA-UA Champions Cyber League (UA) -> HC_FT=TEM(62 ev) OU_FT=TEM(94 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football |  CLA-UA France Cyber Cup (UA) -> HC_FT=TEM(17 ev) OU_FT=TEM(25 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football |  CLA-UA Italy Cyber Cup (UA) -> HC_FT=TEM(61 ev) OU_FT=TEM(76 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football |  CLA-UA Spain Cyber Cup (UA) -> HC_FT=TEM(51 ev) OU_FT=TEM(81 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Bundesliga -> HC_FT=TEM(60 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | CLA-UA Argentina Cyber Cup (UA) -> HC_FT=TEM(20 ev) OU_FT=TEM(43 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | CLA-UA World Cyber Cup (UA) -> HC_FT=TEM(206 ev) OU_FT=TEM(252 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Champions League -> HC_FT=TEM(231 ev) OU_FT=TEM(231 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Champions League B 2x6 -> HC_FT=TEM(73 ev) OU_FT=TEM(73 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Champions VOLTA league 4x4 (2x3 mins) -> HC_FT=TEM(97 ev) OU_FT=TEM(100 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | ESportsBattle. Argentinian Super League (2x6 mins) -> HC_FT=TEM(17 ev) OU_FT=TEM(17 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | ESportsBattle. Club World Cup (2x4 mins) -> HC_FT=TEM(49 ev) OU_FT=TEM(50 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | ESportsBattle. La Liga (2x6 mins) -> HC_FT=TEM(16 ev) OU_FT=TEM(16 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | ESportsBattle. Portugal Primera (2x4 mins) -> HC_FT=TEM(38 ev) OU_FT=TEM(38 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Europa League -> HC_FT=TEM(137 ev) OU_FT=TEM(140 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | FA Cup -> HC_FT=TEM(56 ev) OU_FT=TEM(56 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | FC26 Champions League A -> HC_FT=TEM(32 ev) OU_FT=TEM(32 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | FC26 Champions League B -> HC_FT=TEM(24 ev) OU_FT=TEM(33 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | FC26 World Cup A -> HC_FT=TEM(25 ev) OU_FT=TEM(25 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | FC26 World Cup B -> HC_FT=TEM(37 ev) OU_FT=TEM(45 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | H2H GG - E-football -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(574 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | La Liga -> HC_FT=TEM(98 ev) OU_FT=TEM(98 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Ligue 1 -> HC_FT=TEM(59 ev) OU_FT=TEM(59 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Premier League -> HC_FT=TEM(67 ev) OU_FT=TEM(72 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Premier League 2x6 -> HC_FT=TEM(55 ev) OU_FT=TEM(55 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Serie A -> HC_FT=TEM(141 ev) OU_FT=TEM(142 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Valhalla Cup 2026 Week #29 -> HC_FT=TEM(333 ev) OU_FT=TEM(340 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Valhalla Cup 2026 Week #30 -> HC_FT=TEM(147 ev) OU_FT=TEM(151 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Valhalla Cup 3 2026 Week #29 -> HC_FT=TEM(143 ev) OU_FT=TEM(176 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Valhalla Cup 3 2026 Week #30 -> HC_FT=TEM(67 ev) OU_FT=TEM(77 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Valkyrie Cup 2026 Week #29 -> HC_FT=TEM(283 ev) OU_FT=TEM(314 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Valkyrie Cup 2026 Week #30 -> HC_FT=TEM(126 ev) OU_FT=TEM(135 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta Bundesliga 4x4 (2x3 mins) -> HC_FT=TEM(100 ev) OU_FT=TEM(102 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta Club World Cup 4x4 (2x3 mins.) -> HC_FT=TEM(47 ev) OU_FT=TEM(48 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta Europa League -> HC_FT=TEM(59 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta FA Cup 4x4 (2x3 mins) -> HC_FT=TEM(59 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta International III 4x4 (2x3 mins) -> HC_FT=TEM(275 ev) OU_FT=TEM(278 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta Premier League 4x4 (2x3 mins) -> HC_FT=TEM(60 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | Volta Seria A 4x4 (2x3 mins) -> HC_FT=TEM(59 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | World Cup A -> HC_FT=TEM(739 ev) OU_FT=TEM(743 ev) obs=-
+[2026-07-20 15:33:13] estrelabet | E-Football | World Cup B -> HC_FT=TEM(202 ev) OU_FT=TEM(203 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 100105 -> HC_FT=TEM(922 ev) OU_FT=TEM(922 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 49959 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(99 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 49960 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(180 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 49961 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 49964 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(234 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 49968 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(171 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 49969 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(58 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 51264 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(118 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 67380 -> HC_FT=TEM(308 ev) OU_FT=TEM(308 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 67381 -> HC_FT=TEM(310 ev) OU_FT=TEM(310 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 67383 -> HC_FT=TEM(136 ev) OU_FT=TEM(136 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 67400 -> HC_FT=TEM(112 ev) OU_FT=TEM(112 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 67556 -> HC_FT=TEM(60 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 71851 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(163 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 72619 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(120 ev) obs=-
+[2026-07-20 15:33:13] superbet | E-Football | 72620 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 72621 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(300 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 72622 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 72623 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(122 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 72624 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 72643 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 74224 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(58 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 78542 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 81985 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(50 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 81987 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 81988 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(36 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 82545 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(30 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 94139 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(56 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 94141 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(60 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 97337 -> HC_FT=NAO_TEM(0 ev) OU_FT=TEM(1015 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | 99945 -> HC_FT=TEM(425 ev) OU_FT=TEM(424 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | Adriatic -> HC_FT=TEM(418 ev) OU_FT=TEM(418 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Football | Liga das Estrelas -> HC_FT=TEM(988 ev) OU_FT=TEM(988 ev) obs=-
+[2026-07-20 15:33:14] superbet | E-Hockey | 98256 -> HC_FT=TEM(27 ev) OU_FT=TEM(27 ev) obs=HC_FT_SUFIXO_LINHA
+[2026-07-20 15:33:14] superbet | E-Hockey | 98257 -> HC_FT=TEM(27 ev) OU_FT=TEM(27 ev) obs=HC_FT_SUFIXO_LINHA
+[2026-07-20 15:33:14] superbet | E-Hockey | 99178 -> HC_FT=TEM(162 ev) OU_FT=TEM(162 ev) obs=HC_FT_SUFIXO_LINHA
+[2026-07-20 15:33:14] superbet | E-Hockey | NHL Esports -> HC_FT=TEM(90 ev) OU_FT=TEM(90 ev) obs=HC_FT_SUFIXO_LINHA
+[2026-07-20 15:33:14] superbet | E-Hockey | NHL Esports League -> HC_FT=TEM(89 ev) OU_FT=TEM(89 ev) obs=HC_FT_SUFIXO_LINHA
+[2026-07-20 15:33:14] superbet | E-Tennis | Tênis Esports -> HC_FT=TEM(45 ev) OU_FT=SO_OUTROS_PERIODOS(0 ev) obs=HC_FT_SUFIXO_LINHA
+[2026-07-20 15:33:14] Concluido.
