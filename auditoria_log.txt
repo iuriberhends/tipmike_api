@@ -1,18 +1,16 @@
-[21:45:07] === auditoria_sentinelas.py v1.0 | modo=SECO ===
-[21:45:07] [OK ] superbet ah_ft aceita 'Handicap (Inc. prorrogação)' -> aprova
-[21:45:07] [OK ] superbet ah_ft ACUSA HC de 1º tempo -> acusa [gabarito_mercado:hc_de_periodo]
-[21:45:07] [OK ] superbet ah_ft ACUSA 'Handicap 3-Way' -> acusa [gabarito_mercado:hc_3way_europeu]
-[21:45:07] [OK ] superbet ah_ft ACUSA '1º Tempo - Handicap asiático' (caso S9b) -> acusa [gabarito_mercado:hc_de_periodo]
-[21:45:07] [OK ] superbet over_under_ft aceita 'Total de Pontos (Inc. prorrogação)' -> aprova
-[21:45:07] [OK ] superbet over_under_ft ACUSA 'Total de Gols Asiático' -> acusa [gabarito_mercado:ou_asiatico]
-[21:45:07] [OK ] superbet over_under_ht aceita '1º Tempo - Total de Pontos' (PERIOD_TOTAL) -> aprova
-[21:45:07] [OK ] estrelabet over_under_ht aceita tipo 68 com 'ª' feminino (caso E5b) -> aprova
-[21:45:07] [OK ] estrelabet ah_ft ACUSA tipo 303 (quarto) -> acusa [gabarito_mercado:tipo_303_esperado_16]
-[21:45:07] [OK ] betano ah_ft aceita tipo 156 (seleção sem parênteses) -> aprova
-[21:45:07] [OK ] betano over_under_ft ACUSA tipo 189 (asiático) -> acusa [gabarito_mercado:tipo_189_esperado_13/157]
-[21:45:07] [OK ] qualquer: ACUSA odd suspensa (<=1) -> acusa [odd_nao_apostavel(1.0)]
-[21:45:07] [OK ] qualquer: ACUSA liga fora da whitelist -> acusa [liga_fora_da_whitelist(Euroliga)]
-[21:45:07] [OK ] qualquer: ACUSA tick fonte ausente -> acusa [tick_fonte_nao_encontrado(retencao?)]
-[21:45:07] [OK ] qualquer: ACUSA seleção de OU sem lado -> acusa [selecao_ou_sem_lado]
+[18:58:36] === auditoria_sentinelas.py v1.0 | modo=BANCO ===
+[18:58:36] 9 sentinelas encontrados: SENTINELA-B-NBA2K-HC, SENTINELA-B-NBA2K-OU, SENTINELA-E-WCA-HC, SENTINELA-E-WCA-OU, SENTINELA-E-WCA-OUHT, SENTINELA-NEG-E-NBA2K-OU, SENTINELA-S-ADRIATIC-HC, SENTINELA-S-ESTRELAS-HC, SENTINELA-S-ESTRELAS-OU
 
-[21:45:07] SECO: 15/15 casos do auditor OK
+[18:59:29] [OK] SENTINELA-B-NBA2K-HC — apostas 137 (ok 137 / reprovadas 0) | eventos apitados 68/78 (87% da celula na janela)
+[19:00:03] [OK] SENTINELA-B-NBA2K-OU — apostas 152 (ok 152 / reprovadas 0) | eventos apitados 68/78 (87% da celula na janela)
+[19:00:56] [OK] SENTINELA-E-WCA-HC — apostas 345 (ok 345 / reprovadas 0) | eventos apitados 240/305 (79% da celula na janela)
+[19:01:46] [REPROVADAS] SENTINELA-E-WCA-OU — apostas 292 (ok 291 / reprovadas 1) | eventos apitados 244/305 (80% da celula na janela)
+[19:02:38] [OK] SENTINELA-E-WCA-OUHT — apostas 287 (ok 287 / reprovadas 0) | eventos apitados 237/305 (78% da celula na janela)
+[19:03:23] [OK] SENTINELA-NEG-E-NBA2K-OU — apostas 0 (ok 0 / reprovadas 0) | eventos apitados 0/544 (0% da celula na janela)
+[19:04:11] [REPROVADAS] SENTINELA-S-ADRIATIC-HC — apostas 46 (ok 40 / reprovadas 6) | eventos apitados 31/97 (32% da celula na janela)
+[19:05:02] [OK] SENTINELA-S-ESTRELAS-HC — apostas 26 (ok 26 / reprovadas 0) | eventos apitados 21/65 (32% da celula na janela)
+[19:05:59] [OK] SENTINELA-S-ESTRELAS-OU — apostas 24 (ok 24 / reprovadas 0) | eventos apitados 21/65 (32% da celula na janela)
+[19:05:59] CSV por aposta: C:\Users\Administrator\PyCharmMiscProject\tipmike_api\auditoria_resultado.csv
+[19:05:59] CSV resumo: C:\Users\Administrator\PyCharmMiscProject\tipmike_api\auditoria_resumo.csv
+
+[19:05:59] GATE etapa 4: positivos apitando, negativo zerado, zero reprovadas. -> NAO PASSOU

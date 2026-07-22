@@ -123,7 +123,25 @@ PAI_ALIASES = {
 # TRADUTORES DE LIGA - converte IDs/codigos brutos -> nome humano
 # ============================================================
 
-SUPERBET_ID_TO_NAME = {
+# SUPERBET_ID_TO_NAME = dict BASE (hardcoded, o mesmo de sempre) + o que vier do
+# superbet_ligas.json (a MESMA fonte que o coletor usa) sobreposto por cima.
+#
+# BLINDAGEM (por que isso NAO pode quebrar nada):
+#   - a BASE abaixo e o dicionario original completo. Se o JSON nao existir,
+#     estiver corrompido, vazio, ilegivel ou com formato errado, o modulo cai
+#     na BASE e o comportamento fica IDENTICO ao de antes desta mudanca.
+#   - nenhuma excecao escapa: qualquer erro de leitura/parse e engolido. O
+#     import de routers/torneios.py nunca falha por causa do JSON (se falhasse,
+#     a API inteira nao subiria).
+#   - so entram entradas validas: chave nao-metadata ('_...'), valor string
+#     nao-vazia e que nao seja so numero (nome numerico nao traduz nada).
+#   - o JSON so ACRESCENTA ou CORRIGE nomes. Nenhum id da BASE e removido.
+import json as _json_ligas
+import os as _os_ligas
+import time as _time_ligas
+
+# --- BASE: dicionario original (fallback total). NAO remover entradas daqui. ---
+_SUPERBET_BASE = {
     # FIFA (E-Football)
     "49959": "Battle - Premier League",
     "49964": "Battle - Liga dos Campeões 1 2x4",
@@ -165,6 +183,114 @@ SUPERBET_ID_TO_NAME = {
     "92679": "European Conference 4x5",
 }
 
+# caminhos onde o superbet_ligas.json pode estar (primeiro que servir, vence).
+# IMPORTANTE: aponte para o MESMO arquivo que o coletor le. Nao faca copias —
+# duas copias voltam a divergir, que e exatamente o problema que isso resolve.
+_LIGAS_JSON_CANDIDATOS = [
+    _os_ligas.environ.get("SUPERBET_LIGAS_JSON", ""),          # 1) o mais explicito
+    _os_ligas.path.join(
+        _os_ligas.path.dirname(_os_ligas.path.dirname(_os_ligas.path.abspath(__file__))),
+        "superbet_ligas.json"),                                # 2) raiz do tipmike_api
+    _os_ligas.path.join(
+        _os_ligas.path.dirname(_os_ligas.path.dirname(_os_ligas.path.dirname(
+            _os_ligas.path.abspath(__file__)))),
+        "superbet_ligas.json"),                                # 3) PASTA PAI do projeto
+    _os_ligas.path.join(_os_ligas.path.dirname(_os_ligas.path.abspath(__file__)),
+                        "superbet_ligas.json"),                # 4) ao lado de routers/
+    r"C:\Users\Administrator\PyCharmMiscProject\superbet_ligas.json",
+    r"C:\Users\Administrator\PycharmProjects\MIKEDB\superbet_ligas.json",
+    "superbet_ligas.json",                                     # 7) diretorio corrente
+]
+
+
+def diagnostico_ligas() -> dict:
+    """Ajuda a descobrir de onde (ou se) o JSON foi carregado. Uso:
+       python -c "from routers.torneios import diagnostico_ligas as d; print(d())"
+    """
+    try:
+        mapa, assinatura = _ler_json_ligas()
+        return {
+            "arquivo_usado": assinatura[0] if assinatura else None,
+            "ids_no_json": len(mapa) if mapa else 0,
+            "ids_em_uso": len(SUPERBET_ID_TO_NAME),
+            "ids_na_base": len(_SUPERBET_BASE),
+            "candidatos": [{"caminho": c, "existe": bool(c) and _os_ligas.path.exists(c)}
+                           for c in _LIGAS_JSON_CANDIDATOS if c],
+        }
+    except Exception as e:
+        return {"erro": repr(e), "ids_em_uso": len(SUPERBET_ID_TO_NAME)}
+
+_LIGAS_TTL_SEG = 60          # so checa o arquivo no maximo 1x por minuto
+_ligas_prox_check = 0.0      # timestamp da proxima verificacao
+_ligas_assinatura = None     # (caminho, mtime, tamanho) do que ja foi carregado
+
+
+def _ler_json_ligas():
+    """Le o primeiro superbet_ligas.json valido. Devolve (mapa, assinatura) ou
+    (None, None). NUNCA levanta excecao."""
+    for caminho in _LIGAS_JSON_CANDIDATOS:
+        if not caminho:
+            continue
+        try:
+            st = _os_ligas.stat(caminho)
+            with open(caminho, encoding="utf-8") as fh:
+                raw = _json_ligas.load(fh)
+            if not isinstance(raw, dict):        # JSON valido mas formato errado
+                continue
+            mapa = {}
+            for k, v in raw.items():
+                try:
+                    chave = str(k).strip()
+                    if not chave or chave.startswith("_"):
+                        continue                  # metadata (_comentario etc)
+                    if not isinstance(v, str):
+                        continue                  # so aceita nome em texto
+                    nome = v.strip()
+                    if not nome or nome.isdigit():
+                        continue                  # vazio ou "nome" numerico
+                    mapa[chave] = nome
+                except Exception:
+                    continue                      # entrada podre: pula so ela
+            if mapa:
+                return mapa, (caminho, st.st_mtime, st.st_size)
+        except Exception:
+            continue                              # arquivo sumiu/corrompido/sem permissao
+    return None, None
+
+
+def _montar_mapa_ligas() -> dict:
+    """BASE + JSON por cima. Em qualquer falha, devolve a BASE intacta."""
+    try:
+        mapa = dict(_SUPERBET_BASE)
+        doJson, assinatura = _ler_json_ligas()
+        if doJson:
+            mapa.update(doJson)                   # JSON corrige/acrescenta
+        return mapa, assinatura
+    except Exception:
+        return dict(_SUPERBET_BASE), None
+
+
+def _talvez_recarregar_ligas():
+    """Recarrega o mapa se o JSON mudou (checa no maximo 1x/min). Assim um id
+    novo nomeado no JSON entra sem reiniciar a API. NUNCA levanta excecao."""
+    global SUPERBET_ID_TO_NAME, _ligas_prox_check, _ligas_assinatura
+    try:
+        agora = _time_ligas.monotonic()
+        if agora < _ligas_prox_check:
+            return
+        _ligas_prox_check = agora + _LIGAS_TTL_SEG
+        _, assinatura = _ler_json_ligas()
+        if assinatura != _ligas_assinatura:
+            novo, assinatura = _montar_mapa_ligas()
+            if novo:
+                SUPERBET_ID_TO_NAME = novo        # rebind atomico
+                _ligas_assinatura = assinatura
+    except Exception:
+        pass                                      # mantem o mapa atual
+
+
+SUPERBET_ID_TO_NAME, _ligas_assinatura = _montar_mapa_ligas()
+
 BET365_CODE_TO_NAME = {
     "ESOC-GTL-12MP":   "GT Leagues - 2x6",
     "ESOCH2HGG-8MP":   "H2H GG League - 2x4",
@@ -179,16 +305,24 @@ SUPERBET_ALIASES = {
 }
 
 
+
 def traduzir_liga(bookmaker: str, liga: str) -> str:
+    """Converte id/codigo bruto -> nome humano. BLINDADO: em qualquer erro
+    devolve a liga como veio (nunca levanta, nunca devolve None novo)."""
     if not liga:
         return liga
-    if bookmaker == 'superbet':
-        if liga in SUPERBET_ID_TO_NAME:
-            return SUPERBET_ID_TO_NAME[liga]
-        if liga in SUPERBET_ALIASES:
-            return SUPERBET_ALIASES[liga]
-    if bookmaker == 'bet365' and liga in BET365_CODE_TO_NAME:
-        return BET365_CODE_TO_NAME[liga]
+    try:
+        _talvez_recarregar_ligas()   # pega id novo do JSON sem reiniciar a API
+        if bookmaker == 'superbet':
+            mapa = SUPERBET_ID_TO_NAME
+            if liga in mapa:
+                return mapa[liga]
+            if liga in SUPERBET_ALIASES:
+                return SUPERBET_ALIASES[liga]
+        if bookmaker == 'bet365' and liga in BET365_CODE_TO_NAME:
+            return BET365_CODE_TO_NAME[liga]
+    except Exception:
+        pass
     return liga
 
 
@@ -204,18 +338,39 @@ BET365_CODE_TO_ESPORTE = {
 }
 
 
+def _esporte_do_id_superbet(liga_id: str, nome: str = '') -> str:
+    """Esporte de um id da Superbet. O mapa explicito manda; se o id nao estiver
+    la (caso dos ids novos vindos do superbet_ligas.json), INFERE pelo nome —
+    senao um id de hoquei/tenis cairia no default 'fifa'."""
+    try:
+        if liga_id in SUPERBET_ID_TO_ESPORTE:
+            return SUPERBET_ID_TO_ESPORTE[liga_id]
+        n = (nome or '').lower()
+        if any(p in n for p in ('nhl', 'hockey', 'hoquei', 'iihf', 'khl')):
+            return 'ehockey'
+        if any(p in n for p in ('tennis', 'tênis', 'tenis', 'atp', 'wta')):
+            return 'etennis'
+        if any(p in n for p in ('nba', 'basket', 'basquete', 'euroliga')):
+            return 'nba2k'
+    except Exception:
+        pass
+    return 'fifa'
+
+
 def _ids_brutos_para_esporte(casa: str, esporte: str) -> list:
     out = []
-    if casa == 'superbet':
-        for liga_id in SUPERBET_ID_TO_NAME.keys():
-            esp = SUPERBET_ID_TO_ESPORTE.get(liga_id, 'fifa')
-            if esp == esporte:
-                out.append(liga_id)
-    elif casa == 'bet365':
-        for codigo in BET365_CODE_TO_NAME.keys():
-            esp = BET365_CODE_TO_ESPORTE.get(codigo, 'fifa')
-            if esp == esporte:
-                out.append(codigo)
+    try:
+        if casa == 'superbet':
+            for liga_id, nome in list(SUPERBET_ID_TO_NAME.items()):
+                if _esporte_do_id_superbet(liga_id, nome) == esporte:
+                    out.append(liga_id)
+        elif casa == 'bet365':
+            for codigo in list(BET365_CODE_TO_NAME.keys()):
+                esp = BET365_CODE_TO_ESPORTE.get(codigo, 'fifa')
+                if esp == esporte:
+                    out.append(codigo)
+    except Exception:
+        return out
     return out
 
 

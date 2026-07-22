@@ -1,0 +1,16 @@
+[21:56:51] === criar_sentinelas.py v1.0 | CRIAR ===
+[21:56:51] Tabela bots: 38 colunas — ativado_em, atualizado_em, blacklist_jogadores, blacklist_pares, casa, cooldown_segundos, criado_em, descricao, dias_semana, em_treinamento, esporte, filtros, horario_fim, horario_inicio, id, linha_max, linha_min, max_apostas_dia, max_apostas_partida, max_apostas_simult, max_apostas_torneio, mercado, movimento_linha, movimento_odd, nome, odd_max, odd_min, periodo_hc, spread_max, status, telegram_canal_id, tipo_hc, torneios, torneios_excluir, user_id, whitelist_cenarios, whitelist_jogadores, whitelist_pares
+[21:56:51] [NOTA] colunas hc_pct_min/hc_min_partidas nao existem — HC escancarado via chip de historico aberto (fallback ja previsto).
+[21:56:51] user_id herdado do bot mais antigo: 1
+[21:56:51] [CRIADO] id=41 SENTINELA-S-ADRIATIC-HC — superbet/nba2k/ah_ft torneios=['Adriatic Premier']
+[21:56:51] [CRIADO] id=42 SENTINELA-B-NBA2K-HC — betano/nba2k/ah_ft torneios=['NBA 2K Battle European Conference']
+[21:56:51] [CRIADO] id=43 SENTINELA-B-NBA2K-OU — betano/nba2k/over_under_ft torneios=['NBA 2K Battle European Conference']
+[21:56:51] [CRIADO] id=44 SENTINELA-E-WCA-HC — estrelabet/fifa/ah_ft torneios=['World Cup A']
+[21:56:51] [CRIADO] id=45 SENTINELA-E-WCA-OU — estrelabet/fifa/over_under_ft torneios=['World Cup A']
+[21:56:51] [CRIADO] id=46 SENTINELA-E-WCA-OUHT — estrelabet/fifa/over_under_ht torneios=['World Cup A']
+[21:56:51] [CRIADO] id=47 SENTINELA-S-ESTRELAS-HC — superbet/fifa/ah_ft torneios=['Liga das Estrelas']
+[21:56:51] [CRIADO] id=48 SENTINELA-S-ESTRELAS-OU — superbet/fifa/over_under_ft torneios=['Liga das Estrelas']
+[21:56:51] [CRIADO] id=49 SENTINELA-NEG-E-NBA2K-OU — estrelabet/nba2k/over_under_ft torneios=(sem)
+
+[21:56:51] RESULTADO: 9 criados, 0 ja existiam.
+[21:56:51] Confira no painel: os 9 devem aparecer como ATIVO. Janela de ~24h comeca agora; depois rode 'python auditoria_sentinelas.py --horas 24'.
