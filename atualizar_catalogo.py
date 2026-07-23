@@ -59,6 +59,14 @@ ESPORTE_PARA_SPORT = {
 GRUPOS_PREFIXO = [
     ("FC26",             "FC26"),
     ("CLA-UA",           "CLA-UA"),
+    # --- familia GT: junta "GT - X" e "GT League - X" num pai so ---
+    ("GT",               "GT "),
+    ("GT",               "GT League"),
+    # --- familia CLA: junta "CLA - X", o rotulo velho "CLA Copa do Mundo 2x5"
+    #     e o "Cyber Live Arena" (que nao tem hifen e virava familia sozinha) ---
+    ("CLA",              "CLA "),
+    ("CLA",              "Cyber Live Arena"),
+    ("CLA",              "Live Arena"),
     ("ESportsBattle",    "ESportsBattle"),
     ("Volta",            "Volta"),
     ("Champions VOLTA",  "Champions VOLTA"),

@@ -1729,6 +1729,38 @@ def _calcular_stats_h2h(jogos: list, linha_atual: float,
     return out
 
 
+def _valor_coluna(st: dict, chave: str):
+    """Resolve o valor de UMA coluna da planilha a partir do stats da aposta.
+
+    v_colunas: chave normal sai direto do stats; chave 'CALC:...' e DERIVADA —
+    o gap por janela nao existe como chave propria (o stats so grava o 'gap'
+    fixo da janela 20), entao ele e calculado aqui: media_ult{tok} menos a
+    linha daquela aposta. BLINDADO: qualquer coisa torta vira None em vez de
+    derrubar o export inteiro."""
+    try:
+        if not chave:
+            return None
+        if not str(chave).startswith('CALC:'):
+            return st.get(chave)
+        partes = str(chave).split(':')
+        tipo = partes[1] if len(partes) > 1 else ''
+        linha = st.get('linha_atual')
+        if tipo == 'gap':
+            tok = partes[2] if len(partes) > 2 else '20'
+            media = st.get(f'media_ult{tok}')
+            if media is None or linha is None:
+                return st.get('gap')          # fallback: gap padrao (ult20)
+            return media - linha
+        if tipo == 'gaplinha':
+            media = st.get('media_ult20')
+            if media is None or linha is None:
+                return None
+            return abs(media - linha)
+        return None
+    except Exception:
+        return None
+
+
 def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list,
                                     min_h2h: int = MIN_H2H_DEFAULT,
                                     stats_indiv: Optional[dict] = None) -> tuple[bool, str]:
@@ -2731,17 +2763,28 @@ async def executar_backtest(job_id: int):
         # de O/U tambem A e B; HC alvo 'ambos' tambem o favorito). A planilha
         # monta uma coluna por item ('wr_cols' no detalhe); janela_1/2 seguem
         # sendo as 2 primeiras, por compatibilidade.
+        # v_colunas (mineracao): alem dos chips de WR, os COMPLEMENTARES
+        # (media, gap, z-score, desvio, tendencia) e a QUANTIDADE de confrontos
+        # tambem viram coluna. Sem isso o minerador nao enxerga os eixos que
+        # decidem over/under (gap e z) nem o "tamanho do historico" — que era
+        # o '20+ conf.' escolhido na mao. Chip com filtro ABERTO (0%) nao corta
+        # nada e so anota: e assim que se gera a planilha de mineracao.
+        _TIPOS_COLUNA = ('wr', 'hc_wr', 'media', 'gap_media', 'gap',
+                         'gap_linha', 'zscore', 'z', 'tendencia', 'qtd_h2h')
         _wr_cols = []
         for _f in filtros_unificados:
-            # v_escadinha: 'hc_wr' (complementar) tambem vira coluna na planilha
-            if (_f.get('tipo') or '').lower() in ('wr', 'hc_wr'):
-                _jw = _f.get('janela')
-                if isinstance(_jw, str):
-                    _tok = _jw; _lbl = f"Últ. {_jw}"
-                elif _jw:
-                    _tok = str(int(_jw)); _lbl = f"Últ. {int(_jw)}"
-                else:
-                    _tok = '0'; _lbl = "Todas"
+            _tipo_f = (_f.get('tipo') or '').lower().strip()
+            if _tipo_f not in _TIPOS_COLUNA:
+                continue
+            _jw = _f.get('janela')
+            if isinstance(_jw, str):
+                _tok = _jw; _lbl = f"Últ. {_jw}"
+            elif _jw:
+                _tok = str(int(_jw)); _lbl = f"Últ. {int(_jw)}"
+            else:
+                _tok = '0'; _lbl = "Todas"
+
+            if _tipo_f in ('wr', 'hc_wr'):
                 if _eh_filtro_individual(_f):
                     if _mercado_eh_hc(bot.get('mercado', '')):
                         _wr_cols.append((f"{_lbl} (ind zebra)", f'wr_ult{_tok}_ind'))
@@ -2754,6 +2797,30 @@ async def executar_backtest(job_id: int):
                         _wr_cols.append((f"{_lbl} (ind B)", f'indiv_b_wr_ult{_tok}'))
                 else:
                     _wr_cols.append((_lbl, f'wr_ult{_tok}'))
+                    # v_colunas: quantos confrontos a janela realmente usou
+                    _wr_cols.append((f"Qtd {_lbl}", f'wr_ult{_tok}_qtd'))
+            elif _tipo_f == 'media':
+                _wr_cols.append((f"Média {_lbl}", f'media_ult{_tok}'))
+                _wr_cols.append((f"Qtd Média {_lbl}", f'media_ult{_tok}_qtd'))
+            elif _tipo_f in ('gap_media', 'gap'):
+                # derivada: media da janela MENOS a linha daquela aposta
+                _wr_cols.append((f"Gap {_lbl}", f'CALC:gap:{_tok}'))
+            elif _tipo_f in ('zscore', 'z'):
+                _wr_cols.append((f"Z {_lbl}", f'z_ult{_tok}'))
+                _wr_cols.append((f"Desvio {_lbl}", f'desvio_ult{_tok}'))
+            elif _tipo_f == 'tendencia':
+                _wr_cols.append(("Tendência", 'tendencia'))
+            elif _tipo_f == 'gap_linha':
+                _wr_cols.append(("Gap Linha", 'CALC:gaplinha'))
+            elif _tipo_f == 'qtd_h2h':
+                _wr_cols.append(("Qtd H2H", 'qtd_h2h'))
+
+        # legado (janela_1/2 e winrate_1/2): so as colunas de WR PERCENTUAL,
+        # na ordem — as novas colunas nao podem entrar aqui senao quebram o
+        # formato antigo que jobs velhos e leitores externos esperam.
+        _wr_legado = [_c for _c in _wr_cols
+                      if str(_c[1]).startswith(('wr_ult', 'indiv_a_wr', 'indiv_b_wr'))
+                      and not str(_c[1]).endswith('_qtd')]
 
         for i, c in enumerate(candidatas):
             tick = c['tick']
@@ -2825,13 +2892,13 @@ async def executar_backtest(job_id: int):
                 'linha': c['linha_num'],
                 'selecao': _sel,
                 # WR/janelas que o backtest usou (pra bater com a planilha do bot)
-                'janela_1': _wr_cols[0][0] if len(_wr_cols) > 0 else '',
-                'winrate_1': st.get(_wr_cols[0][1]) if len(_wr_cols) > 0 else None,
-                'janela_2': _wr_cols[1][0] if len(_wr_cols) > 1 else '',
-                'winrate_2': st.get(_wr_cols[1][1]) if len(_wr_cols) > 1 else None,
+                'janela_1': _wr_legado[0][0] if len(_wr_legado) > 0 else '',
+                'winrate_1': st.get(_wr_legado[0][1]) if len(_wr_legado) > 0 else None,
+                'janela_2': _wr_legado[1][0] if len(_wr_legado) > 1 else '',
+                'winrate_2': st.get(_wr_legado[1][1]) if len(_wr_legado) > 1 else None,
                 # v11.1: TODAS as colunas de WR (a planilha monta dinamico) +
                 # qtd individual de cada jogador (pra filtrar maturidade no Excel)
-                'wr_cols': [{'l': _l, 'v': st.get(_k)} for _l, _k in _wr_cols],
+                'wr_cols': [{'l': _l, 'v': _valor_coluna(st, _k)} for _l, _k in _wr_cols],
                 'qtd_ind_a': st.get('qtd_indiv_a'),
                 'qtd_ind_b': st.get('qtd_indiv_b'),
                 'odd': odd,
