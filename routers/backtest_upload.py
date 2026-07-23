@@ -406,6 +406,15 @@ class BacktestAvulsoRequest(BaseModel):
     # odd_min/max None e apostas a qualquer odd passavam, ex.: 1.42 no job 58)
     odd_min: Optional[float] = Field(default=None, gt=1, le=1000)
     odd_max: Optional[float] = Field(default=None, gt=1, le=1000)
+    # v13: QUANTAS LINHAS POR JOGO. O runner ja sabia fazer isso (le
+    # max_apostas_partida e filtros.evitarLinhasSeq), mas o avulso nunca
+    # preenchia — por isso todo job saia com 1 aposta/jogo e a escada de
+    # linhas fundas (13.5+, que so nasce com o jogo andado) nunca aparecia.
+    #   evitar_linhas_seq=True  (padrao) -> 1 aposta por mercado/lado no jogo
+    #   evitar_linhas_seq=False          -> pega a escada, ate o teto abaixo
+    #                                       (igual ao bot ao vivo)
+    max_apostas_partida: Optional[int] = Field(default=None, ge=1, le=50)
+    evitar_linhas_seq: bool = Field(default=True)
     # black/white list de nicks (bloqueia/permite nick em QUALQUER posicao)
     blacklist: list = Field(default_factory=list)
     whitelist: list = Field(default_factory=list)
@@ -665,6 +674,10 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
             f"q{i}": (f"q{i}" in norm["quartos"]) for i in range(1, 5)
         }
 
+    # v13: trava de linhas sequenciais (o worker le filtros.evitarLinhasSeq,
+    # default True). Desligada = escada de linhas do mesmo jogo, igual ao vivo.
+    filtros["evitarLinhasSeq"] = bool(req.evitar_linhas_seq)
+
     # black/white list de nicks -> entries {j1: nick} (worker checa qualquer posicao)
     blacklist_pares = [{"j1": n} for n in norm["blacklist"]]
     whitelist_pares = [{"j1": n} for n in norm["whitelist"]]
@@ -684,7 +697,8 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
         "whitelist_pares": whitelist_pares,
         "blacklist_pares": blacklist_pares,
         "whitelist_cenarios": [],
-        "max_apostas_partida": None,
+        # v13: teto de apostas por jogo (None = sem teto)
+        "max_apostas_partida": req.max_apostas_partida,
         "filtros": filtros,
     }
 
@@ -721,6 +735,14 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
       - trata coluna upload_id ausente e bot_id NOT NULL (avisa a migration)
       - se o worker estourar no background, marca o job como 'erro' (sem zumbi)
     """
+    # v13: sem a trava de linhas, um unico jogo pode gerar centenas de
+    # entradas (o runner reprocessa cada tick). Exige teto explicito.
+    if not req.evitar_linhas_seq and req.max_apostas_partida is None:
+        raise HTTPException(
+            status_code=400,
+            detail="Com 'evitar linhas sequenciais' desligado e obrigatorio "
+                   "informar max_apostas_partida (quantas linhas por jogo).")
+
     # 1) valida e normaliza os filtros (400 claro se algo invalido)
     norm = _validar_e_normalizar(req)
 
