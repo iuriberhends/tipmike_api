@@ -735,13 +735,11 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
       - trata coluna upload_id ausente e bot_id NOT NULL (avisa a migration)
       - se o worker estourar no background, marca o job como 'erro' (sem zumbi)
     """
-    # v13: sem a trava de linhas, um unico jogo pode gerar centenas de
-    # entradas (o runner reprocessa cada tick). Exige teto explicito.
-    if not req.evitar_linhas_seq and req.max_apostas_partida is None:
-        raise HTTPException(
-            status_code=400,
-            detail="Com 'evitar linhas sequenciais' desligado e obrigatorio "
-                   "informar max_apostas_partida (quantas linhas por jogo).")
+    # v15: o teto deixou de ser obrigatorio. Com a deduplicacao por linha
+    # valendo nos dois modos (runner v15), o volume ja fica limitado pelo
+    # numero de LINHAS DISTINTAS que a casa ofertou naquele jogo — na pratica
+    # 12 em media, 29 no pior caso. Teto None = escada inteira, que e o que a
+    # mineracao quer; teto N = reproduz um bot que aposta no maximo N linhas.
 
     # 1) valida e normaliza os filtros (400 claro se algo invalido)
     norm = _validar_e_normalizar(req)

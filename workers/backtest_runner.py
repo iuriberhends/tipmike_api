@@ -2418,16 +2418,34 @@ async def executar_backtest(job_id: int):
         #     resultado e e muito mais rapido. Mantem o comportamento antigo.
         # Obs.: o cap (checado no topo do loop) corta cedo os ticks de jogos ja
         # cheios, entao processar todos os ticks nao explode o custo.
-        if evitar_linhas_seq:
-            primeiros: dict = {}
-            for t in ticks:
-                chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
-                if chave not in primeiros:
-                    primeiros[chave] = dict(t)
-            ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
-        else:
-            ticks_ordenados = sorted((dict(t) for t in ticks), key=lambda x: x['ts'])
+        # v15 (escada de linhas): a DEDUPLICACAO POR LINHA agora vale nos DOIS
+        # modos. Antes ela so rodava com evitar_linhas_seq=True; no modo escada
+        # o motor nao deduplicava nada e reapostava a MESMA linha varias vezes
+        # seguidas enquanto a odd balancava — num job real 59% das apostas eram
+        # reentrada, e o teto por jogo (max_apostas_partida) queimava nos
+        # primeiros minutos. Resultado: o jogo nunca chegava nas linhas fundas,
+        # que so nascem com a partida andada. Com a dedup ligada, cada vaga do
+        # teto vira uma LINHA DIFERENTE e a escada sobe de verdade.
+        #
+        # A chave inclui event_id DE PROPOSITO: o mesmo par joga varias vezes no
+        # periodo e cada jogo precisa da sua propria escada. Se a chave fosse
+        # por PAR, o motor pegaria a escada do primeiro jogo e ignoraria todos
+        # os confrontos seguintes daquela dupla.
+        primeiros: dict = {}
+        for t in ticks:
+            chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
+            if chave not in primeiros:
+                primeiros[chave] = dict(t)
+        ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
         total_candidatos = len(ticks_ordenados)
+        try:
+            _n_ev = len({t['event_id'] for t in ticks_ordenados})
+            logger.info(f"[backtest {job_id}] escada: {total_candidatos} linhas unicas "
+                        f"em {_n_ev} eventos "
+                        f"({total_candidatos / max(_n_ev, 1):.1f} por jogo) | "
+                        f"trava de mercado={'ON' if evitar_linhas_seq else 'OFF'}")
+        except Exception:
+            pass
 
         for i, tick in enumerate(ticks_ordenados):
             if i > 0 and i % 200 == 0:
