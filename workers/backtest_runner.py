@@ -1,5 +1,15 @@
 """
-workers/backtest_runner.py - Worker do backtest (v11.2)
+workers/backtest_runner.py - Worker do backtest (v12)
+
+v12 - Filtro FOLGA (so handicap):
+- folga = hc_assinado - (pts_adversario - pts_do_lado_apostado), calculada no
+  placar do TICK (momento da aposta). folga > 0 <=> o lado apostado esta
+  cobrindo a linha AGORA. Config no filtros jsonb: folgaAtivo / folgaMin /
+  folgaMax — bot antigo sem as chaves = filtro desligado (zero mudanca).
+- FAIL CLOSED: tick sem placar/nick/hc -> rejeitado (contador 'folga');
+  folga ligada em bot NAO-handicap -> rejeita com 'folga_so_hc' (nunca roda
+  "sem o filtro" em silencio). O bot_executor importa e aplica a MESMA
+  funcao no ponto espelhado (fonte unica: backtest e vivo nao divergem).
 
 v11.2 - "Ambos" de verdade no evitarLinhasSeq:
 - A trava de 1 aposta por mercado passou a incluir o LADO:
@@ -1975,6 +1985,61 @@ def _aplicar_filtro_diff_placar(tick: dict, diff_min: int) -> bool:
     return abs(sh - sa) >= diff_min
 
 
+def _aplicar_filtro_folga(tick: dict, selecao: str, folga_min, folga_max) -> tuple:
+    """v12. FOLGA (so handicap): quanto o LADO APOSTADO esta cobrindo a linha
+    com o placar ATUAL do tick.
+
+        folga = hc_assinado - (pts_adversario - pts_do_lado_apostado)
+
+    O hc_assinado vem da SELECAO (_selecao_hc_valor) — a coluna 'linha' do
+    tick NAO e confiavel no HC (superbet manda positiva pros 2 lados). O lado
+    vem do nick (_extrair_nick_hc), com o MESMO casamento nick->lado do
+    _resolve_resultado_hc (fonte unica, nunca inverte). folga > 0 <=> o lado
+    apostado cobre a linha agora; zebra +13.5 perdendo por 8 -> folga 5.5;
+    zebra +6.5 GANHANDO por 2 -> folga 8.5 (deficit negativo soma).
+
+    Retorna (passou: bool, motivo: str). FAIL CLOSED: sem placar, selecao sem
+    nick/valor, nick que nao casa com o par, ou config min/max invalida ->
+    (False, motivo claro). Nunca crasha, nunca aposta com numero furado."""
+    sh = tick.get('score_home')
+    sa = tick.get('score_away')
+    if sh is None or sa is None:
+        return False, 'folga_sem_placar'
+    nick = _extrair_nick_hc(selecao)
+    hc = _selecao_hc_valor(selecao)
+    if nick is None or hc is None:
+        return False, 'folga_selecao_invalida'
+    ja = (tick.get('jogador_a') or '').strip().upper()
+    jb = (tick.get('jogador_b') or '').strip().upper()
+    if nick == ja:
+        pts_nick, pts_adv = sh, sa
+    elif nick == jb:
+        pts_nick, pts_adv = sa, sh
+    elif ja and (nick in ja or ja in nick):
+        pts_nick, pts_adv = sh, sa
+    elif jb and (nick in jb or jb in nick):
+        pts_nick, pts_adv = sa, sh
+    else:
+        return False, 'folga_nick_nao_casa'
+    try:
+        folga = float(hc) - (float(pts_adv) - float(pts_nick))
+    except (TypeError, ValueError):
+        return False, 'folga_placar_invalido'
+    if folga_min is not None:
+        mn, err = _num_seguro(folga_min)
+        if err is not None:
+            return False, f'bot.folga_min_{err}'
+        if folga < mn:
+            return False, f'folga_{folga:.1f}_lt_min_{mn}'
+    if folga_max is not None:
+        mx, err = _num_seguro(folga_max)
+        if err is not None:
+            return False, f'bot.folga_max_{err}'
+        if folga > mx:
+            return False, f'folga_{folga:.1f}_gt_max_{mx}'
+    return True, ''
+
+
 def _num_seguro(v):
     """Coage qualquer valor a float de forma segura, tratando os tipos que
     chegam do parquet/banco/snapshot. Retorna (float, None) em sucesso ou
@@ -2192,6 +2257,16 @@ async def executar_backtest(job_id: int):
         cenario_partida = filtros.get('cenarioPartida') if cenario_ativo else None
         diff_ativo = filtros.get('diferencaPlacarAtivo', False)
         diff_min = filtros.get('diferencaPlacar', 0) if diff_ativo else 0
+
+        # v12 — FOLGA (so handicap). Chaves no filtros jsonb; bot antigo sem
+        # elas = filtro desligado (comportamento identico ao de antes).
+        folga_ativo = filtros.get('folgaAtivo', False)
+        folga_min = filtros.get('folgaMin') if folga_ativo else None
+        folga_max = filtros.get('folgaMax') if folga_ativo else None
+        # FAIL CLOSED (filosofia v11): folga so faz sentido em handicap. Num
+        # bot NAO-HC com folga ligada, TODO tick e rejeitado com motivo
+        # proprio ('folga_so_hc') — nunca roda "sem o filtro" em silencio.
+        folga_fora_de_hc = folga_ativo and not _mercado_eh_hc(bot.get('mercado', ''))
 
         # FIX (over-entry): replica o evitarLinhasSeq do bot_executor (default True).
         # AO VIVO o bot aposta 1 vez por mercado_tipo por jogo (trava qualquer 2a
@@ -2429,7 +2504,7 @@ async def executar_backtest(job_id: int):
         candidatas = []
 
         rej = {
-            'cap_jogo': 0, 'basico': 0, 'cenario': 0, 'diff': 0,
+            'cap_jogo': 0, 'basico': 0, 'cenario': 0, 'diff': 0, 'folga': 0,
             'h2h_insuf': 0, 'comp': 0, 'sem_par': 0,
             'sem_placar': 0, 'sem_resultado': 0, 'lado': 0,
         }
@@ -2543,6 +2618,19 @@ async def executar_backtest(job_id: int):
             if diff_ativo and diff_min > 0:
                 if not _aplicar_filtro_diff_placar(tick, diff_min):
                     rej['diff'] += 1
+                    continue
+
+            # v12 — FOLGA (so handicap): folga = hc_assinado - deficit do lado
+            # apostado, no placar DESTE tick. Mesma funcao que o bot_executor
+            # aplica no vivo (fonte unica).
+            if folga_ativo:
+                if folga_fora_de_hc:
+                    rej['folga_so_hc'] = rej.get('folga_so_hc', 0) + 1
+                    continue
+                _ok_folga, _mot_folga = _aplicar_filtro_folga(
+                    tick, tick.get('selecao', ''), folga_min, folga_max)
+                if not _ok_folga:
+                    rej['folga'] += 1
                     continue
 
             # v4: aplica filtros unificados (comp + hist normalizado)

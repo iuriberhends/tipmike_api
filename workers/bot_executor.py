@@ -1,5 +1,12 @@
 """
-bot_executor.py - Worker de simulacao em tempo real (v11.2)
+bot_executor.py - Worker de simulacao em tempo real (v12)
+
+v12 - Filtro FOLGA (so handicap):
+- Le folgaAtivo/folgaMin/folgaMax do filtros jsonb (MESMAS chaves do
+  backtest) e aplica a MESMA _aplicar_filtro_folga importada do
+  backtest_runner (fonte unica: backtest e vivo nao divergem).
+- FAIL CLOSED: folga ligada em bot NAO-handicap -> rejeita com contador
+  'folga_so_hc' (nunca roda "sem o filtro" em silencio).
 
 v11.2 - Trava do evitarLinhasSeq por (jogo, mercado, LADO):
 - Espelha o backtest v11.2. Bot de lado unico e HC: identico ao antigo (lado
@@ -86,6 +93,7 @@ from workers.backtest_runner import (
     _aplicar_filtros_complementares,
     _aplicar_filtro_cenario,
     _aplicar_filtro_diff_placar,
+    _aplicar_filtro_folga,
     _avaliar_filtros_basicos,
     _coletar_todos_filtros,
     _extrair_janelas_dos_filtros,
@@ -471,6 +479,12 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     diff_ativo = filtros.get('diferencaPlacarAtivo', False)
     diff_min = filtros.get('diferencaPlacar', 0) if diff_ativo else 0
 
+    # v12 — FOLGA (so handicap). MESMAS chaves e MESMA funcao do backtest
+    # (fonte unica, sem divergir). Bot antigo sem as chaves = desligado.
+    folga_ativo = filtros.get('folgaAtivo', False)
+    folga_min = filtros.get('folgaMin') if folga_ativo else None
+    folga_max = filtros.get('folgaMax') if folga_ativo else None
+
     # v5: unifica filtros comp + hist
     filtros_unificados = _coletar_todos_filtros(filtros)
 
@@ -482,6 +496,20 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     if diff_ativo and diff_min > 0:
         if not _aplicar_filtro_diff_placar(tick, diff_min):
             state.contador_rejeicoes['diff'] = state.contador_rejeicoes.get('diff', 0) + 1
+            return
+
+    # v12 — FOLGA (so handicap): folga = hc_assinado - deficit do lado
+    # apostado, no placar DESTE tick. FAIL CLOSED: folga ligada em bot
+    # nao-HC rejeita com contador proprio (nunca roda "sem o filtro").
+    if folga_ativo:
+        if not _mercado_eh_hc(bot.get('mercado', '')):
+            state.contador_rejeicoes['folga_so_hc'] = \
+                state.contador_rejeicoes.get('folga_so_hc', 0) + 1
+            return
+        _ok_folga, _mot_folga = _aplicar_filtro_folga(
+            tick, tick.get('selecao', ''), folga_min, folga_max)
+        if not _ok_folga:
+            state.contador_rejeicoes['folga'] = state.contador_rejeicoes.get('folga', 0) + 1
             return
 
     # v5: SEMPRE calcula stats_h2h se tiver qualquer filtro
@@ -750,6 +778,12 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
         diff_min = filtros.get('diferencaPlacar')
         if diff_min:
             partes.append(f"diff>={diff_min}")
+
+    # v12: tag da FOLGA no motivo (mesma linha do diff)
+    if filtros.get('folgaAtivo'):
+        _fmin = filtros.get('folgaMin')
+        if _fmin is not None:
+            partes.append(f"folga>={_fmin}")
 
     # pro HC, mostra a linha REAL (com sinal, da selecao), nao a coluna do tick
     if _mercado_eh_hc(bot.get('mercado', '')):
@@ -1046,7 +1080,7 @@ async def loop_stats():
 # ============================================================
 async def main():
     logger.info("=" * 60)
-    logger.info("Bot Executor iniciando (v11.2 - trava por lado no evitarLinhasSeq + filtro individual)...")
+    logger.info("Bot Executor iniciando (v12 - filtro FOLGA no HC + trava por lado + filtro individual)...")
     logger.info("=" * 60)
 
     state.bots_lock = asyncio.Lock()
