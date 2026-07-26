@@ -354,7 +354,14 @@ def _resolve_resultado(mercado: str, selecao: str, linha: float,
     sel = _normalizar(selecao)
 
     if mercado in ('over_under_ft', 'asian_over_under_ft', 'over_under_ht', 'asian_over_under_ht'):
-        if mercado in ('over_under_ht', 'asian_over_under_ht'):
+        # over_under_ht AGORA e resolvido — mas SO com o placar do INTERVALO, que
+        # o chamador passa em score_home/score_away quando ha marcador de periodo
+        # nos ticks (live_time='HT'/'2Q'; hoje so a superbet emite). Sem placar de
+        # HT o chamador nem chega aqui (cai no balde 'mercado_ht_sem_suporte'),
+        # entao a soma abaixo ja e o total do 1o tempo.
+        # O asiatico de 1o tempo (linha .25/.75) segue SEM suporte: o resolvedor
+        # nao trata meio-green/meio-red.
+        if mercado == 'asian_over_under_ht':
             return None
 
         total = score_home + score_away
@@ -2371,6 +2378,41 @@ async def executar_backtest(job_id: int):
                     placar_final[evt] = (sh, sa)
                     _placar_ts[evt] = tts
 
+        # === PLACAR DO INTERVALO (HT) — pra resolver over/under de 1o tempo ===
+        # over_under_ht so pode ser gradeado com o placar do FIM DO 1o TEMPO, nao
+        # o final. Recupera do proprio fluxo de ticks: prefere live_time='HT'
+        # (intervalo); na falta, o ULTIMO tick de '2Q' (fim do 2o quarto) — os
+        # dois carregam o mesmo placar de intervalo. So casas cujo coletor marca
+        # o periodo preenchem isto (hoje: superbet). Evento sem marcador fica de
+        # fora e seu over_under_ht cai no balde 'mercado_ht_sem_suporte'.
+        # BLINDADO: acesso a live_time protegido (Record OU dict OU ausente).
+        placar_ht: dict = {}
+        _ht_ts: dict = {}      # evt -> ts do melhor tick de HT
+        _ht_fonte: dict = {}   # evt -> 'HT' | '2Q' (prioridade: HT vence 2Q)
+        for t in ticks:
+            try:
+                lt = t['live_time']
+            except Exception:
+                lt = None
+            if lt not in ('HT', '2Q'):
+                continue
+            evt = t['event_id']
+            sh = t['score_home']
+            sa = t['score_away']
+            if sh is None or sa is None:
+                continue
+            fonte = _ht_fonte.get(evt)
+            # ja temos HT desse evento e este tick e so 2Q -> ignora
+            if fonte == 'HT' and lt == '2Q':
+                continue
+            # promove pra HT, ou atualiza pelo tick de maior ts na mesma fonte
+            melhor = (lt == 'HT' and fonte != 'HT') \
+                or (evt not in _ht_ts) or (t['ts'] >= _ht_ts[evt])
+            if melhor:
+                placar_ht[evt] = (sh, sa)
+                _ht_ts[evt] = t['ts']
+                _ht_fonte[evt] = lt
+
         async with pool.acquire() as conn:
             await conn.execute(
                 "UPDATE backtest_jobs SET progresso=30, progresso_msg='Calculando stats H2H' WHERE id=$1",
@@ -2680,15 +2722,26 @@ async def executar_backtest(job_id: int):
                     if qtd_h2h < H2H_MIN_SAUDAVEL:
                         qualidade['apostas_h2h_fraco'] += 1
 
-            placar = placar_final.get(evt)
-            if not placar:
-                rej['sem_placar'] += 1
-                qualidade['eventos_sem_placar_final'] += 1
-                continue
+            mercado_bot = bot.get('mercado', '')
+            # Mercado de 1o tempo (HT) resolve com o placar do INTERVALO; todo o
+            # resto com o placar FINAL. Se o bot e HT mas nao ha placar de HT
+            # recuperavel (casa nao marca periodo, ou evento sem tick de HT/2Q),
+            # nao da pra gradear -> balde 'mercado_ht_sem_suporte' (mesmo destino
+            # de antes, quando NADA de HT era resolvido).
+            if _periodo_do_bot(mercado_bot) == 'ht':
+                placar = placar_ht.get(evt)
+                if not placar:
+                    rej['mercado_ht_sem_suporte'] = rej.get('mercado_ht_sem_suporte', 0) + 1
+                    continue
+            else:
+                placar = placar_final.get(evt)
+                if not placar:
+                    rej['sem_placar'] += 1
+                    qualidade['eventos_sem_placar_final'] += 1
+                    continue
             score_home, score_away = placar
 
             linha_num = _parse_linha(tick.get('linha'))
-            mercado_bot = bot.get('mercado', '')
             # ===== resolucao HANDICAP por NICK (isolada) =====
             if _mercado_eh_hc(mercado_bot):
                 resultado = _resolve_resultado_hc(
