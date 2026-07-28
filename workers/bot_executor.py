@@ -945,7 +945,7 @@ async def _resolver_apostas_pendentes():
 
             for ap in apostas:
                 placar = await conn.fetchrow("""
-                    SELECT score_home, score_away
+                    SELECT score_home, score_away, live_time
                     FROM ticks
                     WHERE event_id = $1
                       AND bookmaker = $2
@@ -965,7 +965,37 @@ async def _resolver_apostas_pendentes():
 
                 if not ultimo_tick:
                     continue
-                if (datetime.now(ultimo_tick.tzinfo) - ultimo_tick).total_seconds() < 180:
+                # v12 (fix liquidacao prematura, 28/jul): 180s de silencio NAO
+                # significa fim de jogo — quando o coletor cai no meio (o
+                # Chrome reiniciando leva mais que isso), o "ultimo tick" e um
+                # placar PARCIAL e a aposta era liquidada errada. Caso real
+                # (bot 54, BLADE x CLAW): liquidado red com 37-25 (~2Q); o
+                # jogo terminou 65-59 = green. Regra nova: o live_time do
+                # ultimo tick COM PLACAR decide a idade minima de silencio:
+                #   END           -> fim explicito: 180s bastam
+                #   4Q / 2H / OT  -> periodo final: 300s (OT em andamento
+                #                    manda tick a cada ~3s; 5min = acabou)
+                #   sem marcacao  -> 600s (casa que nao marca periodo)
+                #   1Q/2Q/3Q/HT/B/1H (jogo INCOMPLETO no ultimo placar) ->
+                #                    1800s: espera o coletor voltar e gravar o
+                #                    fim; so liquida com parcial depois de
+                #                    30min de silencio (coletor morto —
+                #                    fallback pra nao travar pra sempre)
+                idade_s = (datetime.now(ultimo_tick.tzinfo) - ultimo_tick).total_seconds()
+                try:
+                    _lt_raw = placar['live_time']
+                except (KeyError, IndexError, TypeError):
+                    _lt_raw = None
+                lt = str(_lt_raw or '').strip().upper()
+                if lt.startswith('END'):
+                    _min_s = 180
+                elif lt.startswith(('4Q', '2H', 'OT')):
+                    _min_s = 300
+                elif not lt:
+                    _min_s = 600
+                else:
+                    _min_s = 1800
+                if idade_s < _min_s:
                     continue
 
                 # ===== resolucao HANDICAP por NICK (isolada) =====

@@ -882,22 +882,52 @@ def _dt_naive(dt):
     return dt
 
 
+def _margem_hist_min_por_esporte(esporte) -> int:
+    """v12: margem de seguranca (min) pra jogo que so existe no h2h_historico
+    (sem tick correspondente). O ts do hist e o INICIO oficial do jogo — nao
+    da pra saber o fim. A margem cobre a DURACAO MAXIMA de um jogo + lag de
+    publicacao da TM, garantindo que o jogo ja tinha TERMINADO (e sido
+    publicado) antes do momento da aposta. Duracao real tipica: e-football
+    2x4min ~12-15min; e-hockey/e-tennis curtos; e-basketball 4x5min ~30-40min
+    com pausas. Conservador por design: melhor descartar um jogo legitimo
+    muito recente do que deixar o placar final de um jogo em andamento
+    (incluindo o PROPRIO jogo da aposta) vazar pro Ult.N."""
+    e = str(esporte or '').lower()
+    if 'foot' in e or 'futebol' in e:
+        return 20
+    if 'hock' in e or 'tenn' in e or 'tenis' in e:
+        return 25
+    return 45
+
+
 def _aplicar_cutoff_jogos(jogos: list, antes_de_ts, event_id_excluir,
-                          margem_ao_vivo_min: int) -> list:
-    """v11: corte temporal da lista bruta do cache pro momento da aposta —
-    EXTRAIDO do H2HCache.get_jogos v7 pra reuso do cache INDIVIDUAL sem
-    divergir. Regras identicas ao v7:
-      - so jogos com ts < antes_de_ts (nunca vaza futuro no backtest);
-      - jogo de fonte 'tick' cujo ultimo tick foi ha menos de
-        `margem_ao_vivo_min` do momento da aposta = ainda AO VIVO (placar
-        parcial) -> descartado. Jogos de h2h_historico nunca filtram por isso;
-      - exclui o event_id do jogo atual.
+                          margem_ao_vivo_min: int,
+                          margem_hist_min: int = 45) -> list:
+    """v12 (fix do look-ahead, 28/jul): corte temporal da lista bruta do cache
+    pro momento da aposta — compartilhado pelos caches H2H e INDIVIDUAL.
+      - so jogos com ts < antes_de_ts (nunca vaza futuro);
+      - jogo com FIM conhecido (ultimo_tick_ts — nativo do tick, ou herdado
+        pelo hist no dedup): fim >= antes-margem_ao_vivo = ainda AO VIVO no
+        momento da aposta (placar parcial / resultado ainda nao publicado)
+        -> descartado;
+      - jogo de hist SEM fim conhecido (nao casou com nenhum tick — tipico
+        de jogo antigo cujos ticks ja sairam da retencao, ou importado por
+        CSV): o ts e o INICIO oficial; o placar final desse registro pode
+        nem existir ainda no momento da aposta (jogo em andamento — incluindo
+        o PROPRIO jogo). So entra se comecou ha pelo menos margem_hist_min
+        antes da aposta;
+      - exclui o jogo atual por event_id (da casa) E por event_id_tick
+        (herdado no dedup — o event_id nativo do hist e o da TM, nao bate).
+    Era exatamente por aqui que o backtest enxergava o resultado do proprio
+    jogo (wr_bt != wr_vivo, provado no bot 54 em 28/jul): o registro hist
+    entrava com ts=inicio e placar final, sem margem e sem exclusao por id.
     BLINDADO: ts None / aware-vs-naive -> pula o jogo em vez de crashar."""
     antes = _dt_naive(antes_de_ts)
     if antes is None:
         return []
     try:
         corte_ao_vivo = antes - timedelta(minutes=margem_ao_vivo_min)
+        corte_hist = antes - timedelta(minutes=margem_hist_min)
     except (TypeError, ValueError, OverflowError):
         return []
     out = []
@@ -908,18 +938,27 @@ def _aplicar_cutoff_jogos(jogos: list, antes_de_ts, event_id_excluir,
         try:
             if tsj >= antes:
                 continue
-            # v7: se o jogo veio de ticks e o ultimo tick dele foi recente
-            # demais (ainda ao vivo no momento da aposta), descarta.
-            if j.get('fonte') == 'tick':
-                ult = _dt_naive(j.get('ultimo_tick_ts') or j.get('ts'))
-                if ult is None or ult >= corte_ao_vivo:
+            ult = _dt_naive(j.get('ultimo_tick_ts'))
+            if ult is not None:
+                # fim (ultima atividade) conhecido — vale pra tick E pra hist
+                # que herdou o fim no dedup
+                if ult >= corte_ao_vivo:
+                    continue
+            elif j.get('fonte') == 'tick':
+                # tick sem ultimo_tick_ts (nao deveria ocorrer): conservador
+                continue
+            else:
+                # hist puro: exige inicio anterior a margem de seguranca
+                if tsj > corte_hist:
                     continue
         except TypeError:
             continue
         out.append(j)
     if event_id_excluir is not None:
         eid_str = str(event_id_excluir)
-        out = [j for j in out if str(j.get('event_id')) != eid_str]
+        out = [j for j in out
+               if str(j.get('event_id')) != eid_str
+               and str(j.get('event_id_tick')) != eid_str]
     return out
 
 
@@ -985,10 +1024,31 @@ def _montar_jogos_e_dedup(rows) -> list:
                 achou = m
                 break
         if achou is not None:
-            # mesmo jogo na outra fonte: mantem o 'hist', descarta o 'tick'
+            # mesmo jogo na outra fonte: mantem o 'hist' (placar oficial TM),
+            # descarta o 'tick' — MAS antes o registro mantido HERDA do tick:
+            #   - ultimo_tick_ts (o FIM real do jogo): permite ao cutoff saber
+            #     que o jogo ja tinha TERMINADO no momento da aposta (o ts do
+            #     hist e o INICIO oficial — sozinho ele deixa o placar final
+            #     de um jogo ainda em andamento vazar pro Ult.N);
+            #   - event_id_tick (o id da CASA): permite ao cutoff excluir o
+            #     PROPRIO jogo da aposta tambem pelo lado hist (o event_id
+            #     nativo do hist e o da TM e nao bate com o da casa).
+            # Sem essa heranca, o backtest enxergava o resultado do proprio
+            # jogo no Ult.N (look-ahead) — vazamento provado 28/jul (bot 54:
+            # 22/80 apostas com wr_bt != wr_vivo, reds sumindo do backtest).
             if achou['fonte'] == 'hist':
+                achou['ultimo_tick_ts'] = (achou.get('ultimo_tick_ts')
+                                           or jg.get('ultimo_tick_ts')
+                                           or jg.get('ts'))
+                if jg.get('event_id') is not None:
+                    achou['event_id_tick'] = jg.get('event_id')
                 jg['_descartado'] = True
             else:
+                jg['ultimo_tick_ts'] = (jg.get('ultimo_tick_ts')
+                                        or achou.get('ultimo_tick_ts')
+                                        or achou.get('ts'))
+                if achou.get('event_id') is not None:
+                    jg['event_id_tick'] = achou.get('event_id')
                 achou['_descartado'] = True
                 jg['_descartado'] = False
             manter.append(jg)
@@ -1047,7 +1107,9 @@ class H2HCache:
             self._cache[par] = await self._buscar(par[0], par[1])
 
         return _aplicar_cutoff_jogos(self._cache[par], antes_de_ts,
-                                     event_id_excluir, self.MARGEM_AO_VIVO_MIN)
+                                     event_id_excluir, self.MARGEM_AO_VIVO_MIN,
+                                     _margem_hist_min_por_esporte(
+                                         getattr(self, '_esporte', None)))
 
     async def _buscar(self, j1: str, j2: str) -> list:
         # v7: o lado ticks traz tambem o ts do ultimo tick (ultimo_tick_ts)
@@ -1074,7 +1136,18 @@ class H2HCache:
 
             UNION ALL
 
-            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+            SELECT event_id,
+                   -- v12.1 (fix do fuso, 28/jul): a coluna ts do h2h_historico
+                   -- e timestamp SEM timezone gravada em HORARIO DE BRASILIA
+                   -- (seeder da TM). Sem a conversao explicita, a promocao na
+                   -- UNION com o lado ticks (timestamptz) depende do TimeZone
+                   -- da sessao — em UTC, todo registro parece 3h MAIS ANTIGO,
+                   -- o que furou a margem_hist e o dedup: o registro do
+                   -- PROPRIO jogo (inicio 20:03Z gravado como 17:03) passava
+                   -- por "jogo antigo" e vazava o resultado pro Ult.N
+                   -- (provado no gate: KARMA|TAAPZ wr 1.0->0.9 pos-fix-v12).
+                   (ts AT TIME ZONE 'America/Sao_Paulo') AS ts,
+                   jogador_a, jogador_b, score_home, score_away,
                    NULL::timestamptz AS ultimo_tick_ts, 'hist' AS fonte
             FROM h2h_historico
             WHERE sport = $2
@@ -1143,7 +1216,9 @@ class HistIndividualCache:
         if ch not in self._cache:
             self._cache[ch] = await self._buscar(ch)
         return _aplicar_cutoff_jogos(self._cache[ch], antes_de_ts,
-                                     event_id_excluir, self.MARGEM_AO_VIVO_MIN)
+                                     event_id_excluir, self.MARGEM_AO_VIVO_MIN,
+                                     _margem_hist_min_por_esporte(
+                                         getattr(self, '_esporte', None)))
 
     async def _buscar(self, jogador: str) -> list:
         # Espelho do _buscar do par, com UM jogador em QUALQUER lado.
@@ -1170,7 +1245,11 @@ class HistIndividualCache:
 
             UNION ALL
 
-            SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+            SELECT event_id,
+                   -- v12.1: mesmo fix do fuso do cache por par (ver comentario
+                   -- la) — ts do h2h_historico e naive-BRT; converte explicito.
+                   (ts AT TIME ZONE 'America/Sao_Paulo') AS ts,
+                   jogador_a, jogador_b, score_home, score_away,
                    NULL::timestamptz AS ultimo_tick_ts, 'hist' AS fonte
             FROM h2h_historico
             WHERE sport = $2
