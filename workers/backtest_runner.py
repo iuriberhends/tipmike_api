@@ -2119,6 +2119,76 @@ def _aplicar_filtro_folga(tick: dict, selecao: str, folga_min, folga_max) -> tup
     return True, ''
 
 
+# ===================== MOMENTO (v13) — quando no jogo =====================
+# Escala numerica de "quanto o jogo ja avancou" no instante da aposta, lida
+# do live_time do tick (o coletor da superbet marca 1Q/2Q/HT/3Q/4Q/OT/B/END).
+# NAO e minuto cronometrado — e o ESTAGIO do jogo, granularidade de quarto,
+# que e o que o coletor entrega hoje. Mapa (basket 4 quartos):
+#   1Q -> 1   (comeco, linha da casa ainda defasada = onde mora o edge)
+#   2Q -> 2 ; HT -> 2 (intervalo conta como fim do 2o)
+#   3Q -> 3 ; 4Q/OT -> 4 ; B/END/FT -> 5 (bola parada / fim)
+# Filtro momentoMax=2 => "so 1o tempo". Comprovado no vivo (bot 56): 1Q+2Q
+# +18,7% ROI vs 3Q+4Q -7,6%. FAIL CLOSED: live_time ausente/desconhecido e
+# momento ativo -> tick rejeitado (nunca aposta "sem saber quando").
+_MOMENTO_MAPA = {
+    '1Q': 1, 'Q1': 1, '1': 1,
+    '2Q': 2, 'Q2': 2, '2': 2, 'HT': 2, 'HALFTIME': 2, 'INTERVALO': 2,
+    '3Q': 3, 'Q3': 3, '3': 3,
+    '4Q': 4, 'Q4': 4, '4': 4, 'OT': 4, 'PRORROGACAO': 4, 'OVERTIME': 4,
+    'B': 5, 'END': 5, 'FT': 5, 'ENDED': 5, 'FIM': 5,
+}
+
+
+def _momento_do_tick(tick):
+    """Estagio numerico do jogo (1..5) a partir do live_time. None se ausente
+    ou nao reconhecido (o chamador trata como fail-closed quando o filtro esta
+    ligado). BLINDADO: nunca levanta — tick nao-dict, live_time exotico ou
+    valor fora do mapa -> None."""
+    try:
+        lt = tick.get('live_time') if isinstance(tick, dict) else None
+    except Exception:
+        return None
+    if lt is None:
+        return None
+    try:
+        s = str(lt).strip().upper()
+    except Exception:
+        return None
+    if not s:
+        return None
+    return _MOMENTO_MAPA.get(s)
+
+
+def _aplicar_filtro_momento(tick, momento_min, momento_max) -> tuple:
+    """v13. So aposta quando o ESTAGIO do jogo esta na faixa [min, max].
+    Ex.: momentoMax=2 => so 1o tempo (1Q/2Q/HT). Retorna (passou, motivo).
+    FAIL CLOSED: live_time ausente/desconhecido, config invalida, ou faixa
+    impossivel (min > max) -> (False, motivo). BLINDADO: qualquer excecao
+    inesperada tambem vira rejeicao (nunca aposta, nunca crasha)."""
+    try:
+        m = _momento_do_tick(tick)
+        if m is None:
+            return False, 'momento_sem_live_time'
+        mn = mx = None
+        if momento_min is not None:
+            mn, err = _num_seguro(momento_min)
+            if err is not None:
+                return False, f'bot.momento_min_{err}'
+        if momento_max is not None:
+            mx, err = _num_seguro(momento_max)
+            if err is not None:
+                return False, f'bot.momento_max_{err}'
+        if mn is not None and mx is not None and mn > mx:
+            return False, f'momento_faixa_invalida_{mn:g}_{mx:g}'
+        if mn is not None and m < mn:
+            return False, f'momento_{m}_lt_min_{mn:g}'
+        if mx is not None and m > mx:
+            return False, f'momento_{m}_gt_max_{mx:g}'
+        return True, ''
+    except Exception as e:
+        return False, 'momento_erro_' + type(e).__name__
+
+
 def _num_seguro(v):
     """Coage qualquer valor a float de forma segura, tratando os tipos que
     chegam do parquet/banco/snapshot. Retorna (float, None) em sucesso ou
@@ -2342,6 +2412,16 @@ async def executar_backtest(job_id: int):
         folga_ativo = filtros.get('folgaAtivo', False)
         folga_min = filtros.get('folgaMin') if folga_ativo else None
         folga_max = filtros.get('folgaMax') if folga_ativo else None
+        # v13 — MOMENTO (estagio do jogo via live_time). Bot antigo sem as
+        # chaves = filtro desligado. Vale pra QUALQUER mercado (nao so HC),
+        # mas depende de o coletor marcar o periodo no live_time (hoje: superbet).
+        momento_ativo = bool(filtros.get('momentoAtivo', False)) if isinstance(filtros, dict) else False
+        momento_min = filtros.get('momentoMin') if momento_ativo else None
+        momento_max = filtros.get('momentoMax') if momento_ativo else None
+        # Guarda: ligado mas SEM nenhuma borda = sem efeito. Desliga (evita
+        # que 'ativo' com bordas None deixe todo tick passar por engano).
+        if momento_ativo and momento_min is None and momento_max is None:
+            momento_ativo = False
         # FAIL CLOSED (filosofia v11): folga so faz sentido em handicap. Num
         # bot NAO-HC com folga ligada, TODO tick e rejeitado com motivo
         # proprio ('folga_so_hc') — nunca roda "sem o filtro" em silencio.
@@ -2710,6 +2790,15 @@ async def executar_backtest(job_id: int):
                     tick, tick.get('selecao', ''), folga_min, folga_max)
                 if not _ok_folga:
                     rej['folga'] += 1
+                    continue
+
+            # v13 — MOMENTO (estagio do jogo via live_time). Vale pra qualquer
+            # mercado; fail-closed quando o tick nao tem periodo reconhecivel.
+            if momento_ativo:
+                _ok_mom, _mot_mom = _aplicar_filtro_momento(
+                    tick, momento_min, momento_max)
+                if not _ok_mom:
+                    rej['momento'] = rej.get('momento', 0) + 1
                     continue
 
             # v4: aplica filtros unificados (comp + hist normalizado)

@@ -94,6 +94,7 @@ from workers.backtest_runner import (
     _aplicar_filtro_cenario,
     _aplicar_filtro_diff_placar,
     _aplicar_filtro_folga,
+    _aplicar_filtro_momento,
     _avaliar_filtros_basicos,
     _coletar_todos_filtros,
     _extrair_janelas_dos_filtros,
@@ -484,6 +485,15 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     folga_ativo = filtros.get('folgaAtivo', False)
     folga_min = filtros.get('folgaMin') if folga_ativo else None
     folga_max = filtros.get('folgaMax') if folga_ativo else None
+    # v13 — MOMENTO (estagio do jogo via live_time). Mesmas chaves/funcao do
+    # backtest (fonte unica). Bot antigo sem as chaves = desligado.
+    momento_ativo = bool(filtros.get('momentoAtivo', False)) if isinstance(filtros, dict) else False
+    momento_min = filtros.get('momentoMin') if momento_ativo else None
+    momento_max = filtros.get('momentoMax') if momento_ativo else None
+    # Guarda: ligado sem nenhuma borda = sem efeito -> desliga (nunca deixa
+    # 'ativo' com bordas None passar tudo por engano).
+    if momento_ativo and momento_min is None and momento_max is None:
+        momento_ativo = False
 
     # v5: unifica filtros comp + hist
     filtros_unificados = _coletar_todos_filtros(filtros)
@@ -510,6 +520,19 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             tick, tick.get('selecao', ''), folga_min, folga_max)
         if not _ok_folga:
             state.contador_rejeicoes['folga'] = state.contador_rejeicoes.get('folga', 0) + 1
+            return
+
+    # v13 — MOMENTO: so aposta no estagio de jogo configurado (fail-closed
+    # se o tick nao tem live_time reconhecivel). Vale pra qualquer mercado.
+    # BLINDADO: a funcao ja e a prova de excecao, mas cerco a chamada tambem —
+    # com dinheiro em jogo, erro aqui vira NAO-aposta, nunca crash do tick.
+    if momento_ativo:
+        try:
+            _ok_mom, _mot_mom = _aplicar_filtro_momento(tick, momento_min, momento_max)
+        except Exception:
+            _ok_mom, _mot_mom = False, 'momento_erro_chamada'
+        if not _ok_mom:
+            state.contador_rejeicoes['momento'] = state.contador_rejeicoes.get('momento', 0) + 1
             return
 
     # v5: SEMPRE calcula stats_h2h se tiver qualquer filtro
