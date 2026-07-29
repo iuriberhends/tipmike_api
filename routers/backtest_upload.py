@@ -420,6 +420,11 @@ class BacktestAvulsoRequest(BaseModel):
     folga_ativo: bool = Field(default=False)
     folga_min: Optional[float] = Field(default=None, ge=-1000, le=1000)
     folga_max: Optional[float] = Field(default=None, ge=-1000, le=1000)
+    # MOMENTO (v13): so aposta ate certo estagio do jogo (1=1Q .. 5=fim),
+    # lido do live_time do tick. momento_max=2 => so 1o tempo. Vale p/ qualquer mercado.
+    momento_ativo: bool = Field(default=False)
+    momento_min: Optional[float] = Field(default=None, ge=0, le=10)
+    momento_max: Optional[float] = Field(default=None, ge=0, le=10)
     # black/white list de nicks (bloqueia/permite nick em QUALQUER posicao)
     blacklist: list = Field(default_factory=list)
     whitelist: list = Field(default_factory=list)
@@ -692,6 +697,15 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
             filtros["folgaMin"] = float(req.folga_min)
         if req.folga_max is not None:
             filtros["folgaMax"] = float(req.folga_max)
+
+    # MOMENTO (v13): mesmas chaves do bot ao vivo (filtros.momentoAtivo/Min/Max).
+    # So injeta se ligado E com ao menos uma borda (evita filtro sem efeito).
+    if bool(req.momento_ativo) and (req.momento_min is not None or req.momento_max is not None):
+        filtros["momentoAtivo"] = True
+        if req.momento_min is not None:
+            filtros["momentoMin"] = float(req.momento_min)
+        if req.momento_max is not None:
+            filtros["momentoMax"] = float(req.momento_max)
 
     # black/white list de nicks -> entries {j1: nick} (worker checa qualquer posicao)
     blacklist_pares = [{"j1": n} for n in norm["blacklist"]]
