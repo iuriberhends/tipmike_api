@@ -415,6 +415,11 @@ class BacktestAvulsoRequest(BaseModel):
     #                                       (igual ao bot ao vivo)
     max_apostas_partida: Optional[int] = Field(default=None, ge=1, le=50)
     evitar_linhas_seq: bool = Field(default=True)
+    # FOLGA (v12): so aposta HC quando a zebra ja cobre a linha por >= folga_min
+    # no placar do tick (folga = linha_assinada - deficit do lado). Espelha o vivo.
+    folga_ativo: bool = Field(default=False)
+    folga_min: Optional[float] = Field(default=None, ge=-1000, le=1000)
+    folga_max: Optional[float] = Field(default=None, ge=-1000, le=1000)
     # black/white list de nicks (bloqueia/permite nick em QUALQUER posicao)
     blacklist: list = Field(default_factory=list)
     whitelist: list = Field(default_factory=list)
@@ -677,6 +682,16 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
     # v13: trava de linhas sequenciais (o worker le filtros.evitarLinhasSeq,
     # default True). Desligada = escada de linhas do mesmo jogo, igual ao vivo.
     filtros["evitarLinhasSeq"] = bool(req.evitar_linhas_seq)
+
+    # FOLGA (v12): passa pro snapshot no MESMO formato que o bot ao vivo usa
+    # (filtros.folgaAtivo / folgaMin / folgaMax). So faz sentido em HC (ah_*),
+    # mas grava sem discriminar mercado: o worker ignora em O/U (fail-closed).
+    if bool(req.folga_ativo) and (req.folga_min is not None or req.folga_max is not None):
+        filtros["folgaAtivo"] = True
+        if req.folga_min is not None:
+            filtros["folgaMin"] = float(req.folga_min)
+        if req.folga_max is not None:
+            filtros["folgaMax"] = float(req.folga_max)
 
     # black/white list de nicks -> entries {j1: nick} (worker checa qualquer posicao)
     blacklist_pares = [{"j1": n} for n in norm["blacklist"]]

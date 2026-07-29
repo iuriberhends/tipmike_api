@@ -928,7 +928,7 @@ async def _resolver_apostas_pendentes():
             apostas = await conn.fetch("""
                 SELECT a.id, a.bot_id, a.event_id, a.bookmaker, a.mercado,
                        a.linha, a.selecao, a.lado, a.odd, a.stake,
-                       a.jogador_a, a.jogador_b
+                       a.jogador_a, a.jogador_b, a.apostado_em
                 FROM apostas a
                 WHERE a.status = 'pendente'
                   AND a.modo = 'simulado'
@@ -958,58 +958,114 @@ async def _resolver_apostas_pendentes():
                 if not placar:
                     continue
 
-                ultimo_tick = await conn.fetchval("""
-                    SELECT MAX(ts) FROM ticks
+                _span = await conn.fetchrow("""
+                    SELECT MIN(ts) AS ini, MAX(ts) AS fim FROM ticks
                     WHERE event_id = $1 AND bookmaker = $2
                 """, ap['event_id'], ap['bookmaker'])
+                ultimo_tick = _span['fim'] if _span else None
+                primeiro_tick = _span['ini'] if _span else None
 
                 if not ultimo_tick:
                     continue
-                # v12 (fix liquidacao prematura, 28/jul): 180s de silencio NAO
-                # significa fim de jogo — quando o coletor cai no meio (o
-                # Chrome reiniciando leva mais que isso), o "ultimo tick" e um
-                # placar PARCIAL e a aposta era liquidada errada. Caso real
-                # (bot 54, BLADE x CLAW): liquidado red com 37-25 (~2Q); o
-                # jogo terminou 65-59 = green. Regra nova: o live_time do
-                # ultimo tick COM PLACAR decide a idade minima de silencio:
-                #   END           -> fim explicito: 180s bastam
-                #   4Q / 2H / OT  -> periodo final: 300s (OT em andamento
-                #                    manda tick a cada ~3s; 5min = acabou)
-                #   sem marcacao  -> 600s (casa que nao marca periodo)
-                #   1Q/2Q/3Q/HT/B/1H (jogo INCOMPLETO no ultimo placar) ->
-                #                    1800s: espera o coletor voltar e gravar o
-                #                    fim; so liquida com parcial depois de
-                #                    30min de silencio (coletor morto —
-                #                    fallback pra nao travar pra sempre)
+                # v13 (placar certo garantido, 28/jul): liquidacao em 3 CAMADAS.
+                #  1) tick com SINAL DE FIM (END 180s / 4Q-2H-OT 300s) ->
+                #     placar do tick (caminho normal; validado 1022/1022 na
+                #     etapa 5 da validacao);
+                #  2) sem fim no tick (coletor caiu no meio do jogo): busca o
+                #     placar OFICIAL no h2h_historico — a TM publica por canal
+                #     INDEPENDENTE do coletor. Guarda anti-jogo-errado: o
+                #     placar oficial nunca pode ser MENOR que o parcial visto
+                #     (jogo so acumula pontos); se for menor, e OUTRO jogo do
+                #     par e a TM e descartada;
+                #  3) PARCIAL so como ultimo recurso (coletor morto E TM sem o
+                #     jogo apos 30min de silencio). Era a regra unica dos 180s
+                #     que liquidou BLADE x CLAW com 37-25 (~2Q) num jogo que
+                #     terminou 65-59.
                 idade_s = (datetime.now(ultimo_tick.tzinfo) - ultimo_tick).total_seconds()
                 try:
                     _lt_raw = placar['live_time']
                 except (KeyError, IndexError, TypeError):
                     _lt_raw = None
                 lt = str(_lt_raw or '').strip().upper()
-                if lt.startswith('END'):
-                    _min_s = 180
-                elif lt.startswith(('4Q', '2H', 'OT')):
-                    _min_s = 300
-                elif not lt:
-                    _min_s = 600
-                else:
-                    _min_s = 1800
-                if idade_s < _min_s:
-                    continue
+                sh = placar['score_home']
+                sa = placar['score_away']
+                placar_final_ok = (
+                    (lt.startswith('END') and idade_s >= 180) or
+                    (lt.startswith(('4Q', '2H', 'OT')) and idade_s >= 300))
+                if not placar_final_ok:
+                    # camada 2: placar oficial da TM. ANCORA: o primeiro tick
+                    # OBSERVADO do evento — o inicio oficial do jogo da aposta
+                    # nunca e DEPOIS do primeiro tick visto (+5min de clock),
+                    # o que elimina o PROXIMO jogo do par; e no maximo 40min
+                    # antes (coletor pode ter entrado atrasado no jogo). ts do
+                    # h2h_historico e naive-BRT -> conversao explicita (a
+                    # mesma do runner). Residual documentado: par com jogos
+                    # CONSECUTIVOS encostados (<40min entre inicios) + coletor
+                    # caido + so o anterior publicado — raro; a guarda de
+                    # placar>=parcial ainda filtra a maioria desses.
+                    tm = None
+                    try:
+                        tm = await conn.fetchrow("""
+                            SELECT jogador_a, jogador_b, score_home, score_away
+                            FROM h2h_historico
+                            WHERE ((UPPER(jogador_a) = UPPER($1) AND UPPER(jogador_b) = UPPER($2))
+                                OR (UPPER(jogador_a) = UPPER($2) AND UPPER(jogador_b) = UPPER($1)))
+                              AND score_home IS NOT NULL
+                              AND score_away IS NOT NULL
+                              AND (ts AT TIME ZONE 'America/Sao_Paulo')
+                                  BETWEEN $3::timestamptz - INTERVAL '40 minutes'
+                                      AND $3::timestamptz + INTERVAL '5 minutes'
+                            ORDER BY ts DESC
+                            LIMIT 1
+                        """, ap['jogador_a'], ap['jogador_b'],
+                             primeiro_tick or ap['apostado_em'])
+                    except Exception as _e_tm:
+                        logger.warning(
+                            f"[resolver] busca TM falhou ap {ap['id']}: {_e_tm}")
+                    if tm is not None:
+                        t_sh, t_sa = tm['score_home'], tm['score_away']
+                        # o registro da TM pode vir com A/B invertidos
+                        if (str(tm['jogador_a'] or '').strip().upper()
+                                != str(ap['jogador_a'] or '').strip().upper()):
+                            t_sh, t_sa = t_sa, t_sh
+                        try:
+                            _guard = (int(t_sh) >= int(sh or 0)
+                                      and int(t_sa) >= int(sa or 0))
+                        except (TypeError, ValueError):
+                            _guard = False
+                        if _guard:
+                            sh, sa = t_sh, t_sa
+                            placar_final_ok = True
+                            logger.info(
+                                f"[resolver] ap {ap['id']}: placar oficial da "
+                                f"TM ({sh}x{sa}) — tick sem sinal de fim")
+                if not placar_final_ok:
+                    # camada 3: espera (coletor pode voltar / TM publicar).
+                    if lt.startswith('END'):
+                        _min_s = 180
+                    elif lt.startswith(('4Q', '2H', 'OT')):
+                        _min_s = 300
+                    elif not lt:
+                        _min_s = 600
+                    else:
+                        _min_s = 1800
+                    if idade_s < _min_s:
+                        continue
+                    # teto vencido sem fim e sem TM: liquida com o que tem
+                    # (parcial) — caso raro; melhor tarde/aproximado que nunca.
 
                 # ===== resolucao HANDICAP por NICK (isolada) =====
                 if _mercado_eh_hc(ap['mercado']):
                     resultado = _resolve_resultado_hc(
                         ap['selecao'] or ap['lado'],
                         ap.get('jogador_a'), ap.get('jogador_b'),
-                        placar['score_home'], placar['score_away']
+                        sh, sa
                     )
                 else:
                     resultado = _resolve_resultado(
                         ap['mercado'], ap['selecao'] or ap['lado'],
                         float(ap['linha']) if ap['linha'] else None,
-                        placar['score_home'], placar['score_away']
+                        sh, sa
                     )
 
                 if resultado is None:
@@ -1035,7 +1091,7 @@ async def _resolver_apostas_pendentes():
                         resolvido_em = NOW()
                     WHERE id = $1
                 """, ap['id'], resultado,
-                    placar['score_home'], placar['score_away'],
+                    sh, sa,
                     round(pnl, 2),
                     round(pnl / stake, 4)
                 )
