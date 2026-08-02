@@ -88,6 +88,24 @@ from database import get_pool
 
 logger = logging.getLogger(__name__)
 
+# =====================================================================
+# v15 (02/ago) — PERNA "TICKS" DO H2H LIDA DA h2h_matches
+# Medido (EXPLAIN): a consulta por par nos ticks brutos custava 2.3-3.9s
+# (56.404 linhas lidas+ordenadas pra destilar 35 jogos; ~400x por job =
+# ~26min so de warm-up do cache). A h2h_matches — mantida pelo
+# atualizar_h2h a cada 60s — ja guarda EXATAMENTE esse resumo (1 linha
+# por evento, placar final, par normalizado): 5ms na mesma pergunta.
+# Semantica preservada: ts_fim = ts do ultimo tick (igual ao DISTINCT ON
+# ... ORDER BY ts DESC); score_a e SEMPRE o placar do jogador_a da linha
+# (a normalizacao alfabetica reordena par E placar juntos); fonte segue
+# rotulada 'tick' pro dedup entre fontes preferir o hist (placar oficial
+# da TM) — politica identica a de hoje.
+# Diferenca honesta: a matches guarda jogos que o expurgo ja comeu dos
+# ticks — chips podem ver historico MAIS COMPLETO (mais fiel, nao menos).
+# Reversao: USAR_H2H_MATCHES = False volta ao SQL antigo sem reinstalar.
+# =====================================================================
+USAR_H2H_MATCHES = True
+
 
 ESPORTE_UI_PARA_BANCO = {
     'fifa':    'E-Football',
@@ -1119,6 +1137,17 @@ class H2HCache:
         SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
                ultimo_tick_ts, fonte
         FROM (
+            """ + ("""
+            SELECT event_id, ts_fim AS ts, jogador_a, jogador_b,
+                   score_a AS score_home, score_b AS score_away,
+                   ts_fim AS ultimo_tick_ts, 'tick' AS fonte
+            FROM h2h_matches
+            WHERE bookmaker = $1
+              AND sport = $2
+              AND ((jogador_a = $3 AND jogador_b = $4)
+                OR (jogador_a = $4 AND jogador_b = $3))
+              AND score_a IS NOT NULL AND score_b IS NOT NULL
+            """ if USAR_H2H_MATCHES else """
             SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
                    ts AS ultimo_tick_ts, 'tick' AS fonte
             FROM (
@@ -1133,6 +1162,7 @@ class H2HCache:
                   AND score_away IS NOT NULL
                 ORDER BY event_id, ts DESC
             ) ticks_distinct
+            """) + """
 
             UNION ALL
 
@@ -1229,6 +1259,16 @@ class HistIndividualCache:
         SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
                ultimo_tick_ts, fonte
         FROM (
+            """ + ("""
+            SELECT event_id, ts_fim AS ts, jogador_a, jogador_b,
+                   score_a AS score_home, score_b AS score_away,
+                   ts_fim AS ultimo_tick_ts, 'tick' AS fonte
+            FROM h2h_matches
+            WHERE bookmaker = $1
+              AND sport = $2
+              AND (jogador_a = $3 OR jogador_b = $3)
+              AND score_a IS NOT NULL AND score_b IS NOT NULL
+            """ if USAR_H2H_MATCHES else """
             SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
                    ts AS ultimo_tick_ts, 'tick' AS fonte
             FROM (
@@ -1242,6 +1282,7 @@ class HistIndividualCache:
                   AND score_away IS NOT NULL
                 ORDER BY event_id, ts DESC
             ) ticks_distinct
+            """) + """
 
             UNION ALL
 
