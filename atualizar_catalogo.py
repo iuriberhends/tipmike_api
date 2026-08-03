@@ -12,7 +12,7 @@ MODOS:
 
 Casas e esportes processados estao em COMBINACOES abaixo.
 """
-import sys, os, json, asyncio
+import sys, os, json, asyncio, socket
 from datetime import datetime
 
 import asyncpg
@@ -37,6 +37,29 @@ COMBINACOES = [
 
 DIAS = 7
 MIN_TICKS = 100
+
+# ------------------------------------------------------------------
+# Blindagem (02/ago): 3 copias deste script rodaram SIMULTANEAS (agenda
+# empilhando execucoes mais lentas que o intervalo) e as agregacoes em
+# paralelo saturaram o banco — a API afogou junto e o site caiu.
+#   1. TRAVA DE INSTANCIA (porta local): a copia seguinte detecta e sai
+#      na hora — empilhamento vira impossivel por construcao.
+#   2. STATEMENT_TIMEOUT por conexao: no pior caso a query morre sozinha
+#      em 120s em vez de segurar o banco (a proxima rodada refaz).
+# ------------------------------------------------------------------
+PORTA_TRAVA = 47232
+STATEMENT_TIMEOUT_MS = 120_000
+
+
+def travar_instancia() -> socket.socket:
+    sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        sk.bind(("127.0.0.1", PORTA_TRAVA))
+        sk.listen(1)
+        return sk
+    except OSError:
+        print(f"[catalogo] JA EXISTE outra instancia (porta {PORTA_TRAVA}). Saindo.")
+        sys.exit(0)
 
 # mapa esporte (chave do frontend) -> valor REAL da coluna `sport` na tabela ticks.
 # o coletor ja grava o sport certo, entao classificar por aqui e robusto e nao
@@ -206,8 +229,9 @@ async def computar_combo(conn, casa, esporte, full=True):
 
 
 async def main():
+    trava = travar_instancia()  # noqa: F841
     full = "--full" in sys.argv
-    conn = await asyncpg.connect(DSN)
+    conn = await asyncpg.connect(DSN, server_settings={'statement_timeout': str(STATEMENT_TIMEOUT_MS)})
     print(f"[{datetime.now():%H:%M:%S}] {'FULL' if full else 'INCREMENTAL'} — atualizando catalogo")
 
     if not full:

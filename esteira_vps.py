@@ -1,0 +1,573 @@
+# -*- coding: utf-8 -*-
+"""
+===============================================================================
+ ESTEIRA VPS v2 — 20/50 estrategias direto no MOTOR do backtest, sem clique
+===============================================================================
+ Roda NA VPS, DENTRO da pasta do tipmike_api. Nada de HTTP/token/upload:
+   - importa o executar_backtest (o motor REAL, o mesmo do painel)
+   - insere o job direto em backtest_jobs (mesmo INSERT do router avulso)
+   - roda o job INLINE (um por vez — o cache v3 do parse serve todos)
+   - le o resultado de apostas_detalhe no proprio banco (sem baixar xlsx)
+   - calcula ap, G-R, WR, u, ROI, DD, m1/m2, 3d/7d (fim do DADO), vivo,
+     queda_ponta — e as VARIACOES por eixo (chip/folga/linha/teto)
+   - salva placar_esteira.xlsx (PLACAR / VARIACOES / LOG) + estado p/ retomada
+
+ COMO USAR (na VPS):
+   1. salve este arquivo na RAIZ do tipmike_api (junto do main.py)
+   2. deixe na mesma pasta: estrategias.xlsx e o parquet de ticks
+   3. (recomendado) aplique o workers/backtest_upload.py v3 e ligue o cache:
+        BACKTEST_CACHE_N2=1  (o 1o job paga o parse; os outros ~0s)
+   4. python esteira_vps.py
+   5. abra placar_esteira.xlsx
+
+ Retomada: Ctrl+C salva o que tem; rodar de novo pula o que ja concluiu.
+===============================================================================
+"""
+
+import asyncio
+import hashlib
+import json
+import os
+import shutil
+import sys
+import time
+from datetime import timedelta
+from pathlib import Path
+
+import pandas as pd
+import numpy as np
+
+# ============================== CONFIG =======================================
+PARQUET = "h2h_bet365_15d.parquet"       # ticks (na mesma pasta, ou caminho)
+PLANILHA_ESTRATEGIAS = "estrategias.xlsx"
+SAIDA = "placar_esteira.xlsx"
+STATE = "esteira_state.json"
+
+STAKE = 1.0
+BANCA = 1000.0
+REC_JANELAS = (3, 7)
+RODAR_VARIACOES = True
+TIMEOUT_JOB_S = 45 * 60      # watchdog: job travado nao trava a fila
+HILL_CLIMB = True            # variacao que MELHOROU continua andando
+HILL_MAX_PASSOS = 3          # ate N passos extras na mesma direcao
+# v2.2: a regra antiga exigia unidades >= as da mae. Na rodada 1 isso
+# BARROU o melhor achado do arquivo (linha+1: ROI +7/+8 pontos e DD MENOR,
+# custando 4-6 unidades de 100). Agora tolera uma perda pequena de lucro
+# total quando o ROI sobe — que e a regua sniper (ROI alto, DD baixo).
+HILL_TOL_U = 0.92            # aceita ate 8% menos unidades que a mae
+TOP_CARTEIRA = 8             # quantas maes entram na matriz de correlacao
+USER_ID = None                            # id do teu usuario (ou None)
+# Chip de WR usa o H2H do BANCO, e a query filtra sport = $2 (e a de ticks
+# tambem por bookmaker). Se a planilha nao trouxer casa/esporte, o snapshot
+# vai com None -> "WHERE sport = NULL" nao casa nada -> TODA config com chip
+# devolve 0 apostas (mecanica pura passa liso porque nem consulta H2H).
+# Estes defaults valem quando a coluna da planilha estiver vazia.
+CASA_PADRAO = "bet365"                    # como esta gravado no banco
+ESPORTE_PADRAO = "nba2k"                  # UI -> banco: E-Basketball
+
+VARIACOES = {
+    "chip_wr_min": [-5.0, +5.0],          # pontos de %
+    "folga_min":   [-1.0, +1.0],
+    "linha_min":   [-1.0, +1.0],
+    "teto":        [-2, +2],
+}
+# =============================================================================
+
+# --- imports do proprio tipmike_api (por isso o script mora na raiz do repo) --
+try:
+    from database import init_pool, close_pool, get_pool
+    from workers.backtest_runner import executar_backtest
+    from workers.backtest_upload import UPLOAD_DIR
+except ImportError as e:
+    print("ERRO: rode este arquivo DENTRO da pasta do tipmike_api "
+          f"(import falhou: {e})")
+    sys.exit(1)
+
+
+# ------------------------------ helpers --------------------------------------
+def _num(v):
+    try:
+        f = float(str(v).replace(",", "."))
+        return None if f != f else f
+    except (TypeError, ValueError):
+        return None
+
+
+def _pct(v):
+    f = _num(v)
+    if f is None:
+        return None
+    return f * 100.0 if f <= 1.0 else f
+
+
+def _txt(v, padrao=""):
+    s = str(v).strip()
+    return padrao if s.lower() in ("", "nan", "none", "-") else s
+
+
+def _janela_api(v) -> str:
+    s = str(v or "all").strip().lower()
+    if s in ("", "all", "todas", "-", "nan", "none"):
+        return "all"
+    dig = "".join(ch for ch in s if ch.isdigit())
+    return f"last_{dig}" if dig else "all"
+
+
+def montar_snapshot(e: dict) -> dict:
+    """Mesmo formato do _montar_snapshot_avulso do router — o worker entende."""
+    filtros: dict = {"evitarLinhasSeq": bool(int(_num(e.get("evitar_linhas_seq")) or 0))}
+
+    hist = []
+    for pref in ("chip_", "chip2_"):
+        wr_min = _pct(e.get(pref + "wr_min"))
+        wr_max = _pct(e.get(pref + "wr_max"))
+        if wr_min is None and wr_max is None:
+            continue
+        hist.append({
+            "base": "match", "tipo": "all", "versao": "all",
+            "janela": _janela_api(e.get(pref + "janela")),
+            "prob": [wr_min if wr_min is not None else 0.0,
+                     wr_max if wr_max is not None else 100.0],
+            "minPartidas": int(_num(e.get(pref + "conf")) or 0),
+        })
+    if hist:
+        filtros["filtrosHistAdicionados"] = hist
+
+    fmin, fmax = _num(e.get("folga_min")), _num(e.get("folga_max"))
+    if fmin is not None or fmax is not None:
+        filtros["folgaAtivo"] = True
+        if fmin is not None:
+            filtros["folgaMin"] = fmin
+        if fmax is not None:
+            filtros["folgaMax"] = fmax
+
+    mmin, mmax = _num(e.get("momento_min")), _num(e.get("momento_max"))
+    if mmin is not None or mmax is not None:
+        filtros["momentoAtivo"] = True
+        if mmin is not None:
+            filtros["momentoMin"] = mmin
+        if mmax is not None:
+            filtros["momentoMax"] = mmax
+
+    lado = _txt(e.get("lado"), "ambos").lower()
+    if lado in ("over", "under"):
+        filtros["lados"] = [lado]
+        filtros["inner"] = [lado.capitalize()]
+
+    teto = _num(e.get("teto"))
+    return {
+        "nome": f"Esteira: {e.get('nome')}",
+        "casa": _txt(e.get("casa")) or (CASA_PADRAO or None),
+        "esporte": _txt(e.get("esporte")) or (ESPORTE_PADRAO or None),
+        "mercado": _txt(e.get("mercado"), "ah_ft").lower(),
+        "linha_min": _num(e.get("linha_min")),
+        "linha_max": _num(e.get("linha_max")),
+        "odd_min": _num(e.get("odd_min")),
+        "odd_max": _num(e.get("odd_max")),
+        "torneios": [], "torneios_excluir": [],
+        "whitelist_pares": [], "blacklist_pares": [], "whitelist_cenarios": [],
+        "max_apostas_partida": int(teto) if teto else None,
+        "filtros": filtros,
+    }
+
+
+def assinatura(snap: dict) -> str:
+    return hashlib.sha1(json.dumps(snap, sort_keys=True, default=str)
+                        .encode()).hexdigest()[:14]
+
+
+def gerar_variacoes(e: dict) -> list:
+    out = []
+    for campo, deltas in VARIACOES.items():
+        base = _num(e.get(campo))
+        if base is None:
+            continue
+        for dlt in deltas:
+            v = dict(e)
+            if campo == "chip_wr_min":
+                b = _pct(base)
+                novo = min(100.0, max(0.0, b + dlt))
+                if novo == b:
+                    continue
+            else:
+                novo = base + dlt
+                if campo == "teto":
+                    novo = int(novo)
+                    if novo < 1:
+                        continue
+            v[campo] = novo
+            v["nome"] = f"{e.get('nome')} [{campo}{'+' if dlt > 0 else ''}{dlt:g}]"
+            v["_mae"] = e.get("nome")
+            v["_eixo"] = f"{campo}{'+' if dlt > 0 else ''}{dlt:g}"
+            out.append(v)
+    return out
+
+
+def _df_do_detalhe(detalhe):
+    if isinstance(detalhe, str):
+        detalhe = json.loads(detalhe or "[]")
+    d = pd.DataFrame(detalhe or [])
+    if not len(d):
+        return d
+    d["u"] = pd.to_numeric(d.get("lucro_unidades"), errors="coerce")
+    res = d.get("resultado").astype(str).str.lower()
+    d = d[res.isin(["green", "red"]) & d["u"].notna()].copy()
+    d["green"] = d["resultado"].astype(str).str.lower().eq("green")
+    d["ts"] = pd.to_datetime(d["ts"].astype(str).str.replace("Z", ""),
+                             errors="coerce", format="mixed")
+    d = d[d["ts"].notna()].sort_values("ts")
+    par = (d.get("jogador_a").astype(str).str.upper() + "|"
+           + d.get("jogador_b").astype(str).str.upper())
+    gap = d.groupby(par)["ts"].diff().dt.total_seconds().div(60).fillna(999)
+    d["jogo"] = ((gap > 45) | (gap == 999)).groupby(par).cumsum().astype(str) + par
+    return d
+
+
+def lucro_por_jogo(detalhe):
+    """Serie jogo -> lucro (pra correlacao de CARTEIRA entre estrategias)."""
+    d = _df_do_detalhe(detalhe)
+    if not len(d):
+        return pd.Series(dtype=float)
+    return d.groupby("jogo")["u"].sum()
+
+
+def _proximo_passo(v: dict):
+    """Um passo a mais na MESMA direcao do eixo que melhorou (hill-climb)."""
+    eixo = str(v.get("_eixo", ""))
+    for campo, deltas in VARIACOES.items():
+        for dlt in deltas:
+            if eixo == f"{campo}{'+' if dlt > 0 else ''}{dlt:g}":
+                n = dict(v)
+                base = _num(v.get(campo))
+                if base is None:
+                    return None
+                if campo == "chip_wr_min":
+                    b = _pct(base)
+                    novo = min(100.0, max(0.0, b + dlt))
+                    if novo == b:
+                        return None
+                else:
+                    novo = base + dlt
+                    if campo == "teto":
+                        novo = int(novo)
+                        if novo < 1:
+                            return None
+                n[campo] = novo
+                n["_passo"] = int(v.get("_passo", 1)) + 1
+                n["nome"] = (f"{v.get('_mae')} [{campo}"
+                             f"{'+' if dlt > 0 else ''}{dlt * n['_passo']:g}]")
+                return n
+    return None
+
+
+def metricas_do_detalhe(detalhe: list) -> dict:
+    d = _df_do_detalhe(detalhe)
+    if not len(d):
+        return {"apostas": 0}
+    n, G = len(d), int(d["green"].sum())
+    if not n:
+        return {"apostas": 0}
+    cum = d["u"].cumsum()
+    dd = float((cum.cummax() - cum).max())
+    fim = d["ts"].max().normalize() + timedelta(days=1)
+    meio = d["ts"].min() + (d["ts"].max() - d["ts"].min()) / 2
+    out = {
+        "apostas": n, "G-R": f"{G}-{n - G}",
+        "WR": round(G / n * 100, 1),
+        "unidades": round(float(d["u"].sum()), 2),
+        "ROI": round(float(d["u"].sum()) / n * 100, 2),
+        "DD": round(dd, 1),
+        "lucro_dd": (round(float(d["u"].sum()) / dd, 2) if dd > 0 else None),
+        "roi_m1": round(float(d[d.ts < meio]["u"].sum())
+                        / max(len(d[d.ts < meio]), 1) * 100, 2),
+        "roi_m2": round(float(d[d.ts >= meio]["u"].sum())
+                        / max(len(d[d.ts >= meio]), 1) * 100, 2),
+        "de": str(d["ts"].min())[:16], "ate": str(d["ts"].max())[:16],
+    }
+    for w in REC_JANELAS:
+        f = d[d.ts >= fim - timedelta(days=w)]
+        Gw = int(f["green"].sum())
+        out[f"ap_{w}d"] = len(f)
+        out[f"GR_{w}d"] = f"{Gw}-{len(f) - Gw}"
+        out[f"u_{w}d"] = round(float(f["u"].sum()), 2)
+        out[f"roi_{w}d"] = (round(float(f["u"].sum()) / len(f) * 100, 2)
+                            if len(f) else None)
+    out["vivo"] = (1 if all(
+        (out.get(f"ap_{w}d", 0) < 10) or (out.get(f"u_{w}d", 0) > 0)
+        for w in REC_JANELAS) and out.get(f"ap_{REC_JANELAS[-1]}d", 0) >= 10
+        else 0)
+    w0 = REC_JANELAS[0]
+    out["queda_ponta"] = (round(out[f"roi_{w0}d"] - out["roi_m2"], 2)
+                          if out.get(f"roi_{w0}d") is not None else None)
+    # z por JOGO (nao por aposta): lucro medio/desvio na unidade certa —
+    # a mesma regua do varredor. z>=2 = dificil ser sorte.
+    pj = d.groupby("jogo")["u"].sum()
+    if len(pj) >= 5 and float(pj.std(ddof=1) or 0) > 0:
+        out["jogos"] = int(len(pj))
+        out["z_jogo"] = round(float(pj.mean() / (pj.std(ddof=1)
+                              / np.sqrt(len(pj)))), 2)
+    else:
+        out["jogos"] = int(len(pj))
+        out["z_jogo"] = None
+    # CEGO: ultimos ~30%% das apostas por tempo (holdout de sequencia)
+    corte = int(n * 0.7)
+    tr, cg = d.iloc[:corte], d.iloc[corte:]
+    if len(cg) >= 10:
+        out["roi_treino"] = round(float(tr["u"].sum()) / max(len(tr), 1) * 100, 2)
+        out["roi_cego"] = round(float(cg["u"].sum()) / len(cg) * 100, 2)
+        out["ap_cego"] = int(len(cg))
+        out["desvio_cego"] = round(out["roi_cego"] - out["roi_treino"], 2)
+    else:
+        out["roi_cego"] = None
+    return out
+
+
+def carregar_estado() -> dict:
+    if os.path.exists(STATE):
+        try:
+            with open(STATE, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"parquet": {}, "jobs": {}}
+
+
+def salvar_estado(st: dict):
+    try:
+        with open(STATE, "w", encoding="utf-8") as f:
+            json.dump(st, f, ensure_ascii=False, indent=1)
+    except Exception as e:
+        print(f"[esteira] AVISO: state nao salvo: {e}")
+
+
+def preparar_upload_local(st: dict) -> str:
+    """Copia o parquet pra UPLOAD_DIR (1x por conteudo) e devolve o caminho,
+    que e o upload_id que o worker entende."""
+    h = hashlib.sha1(open(PARQUET, "rb").read()).hexdigest()[:16]
+    if st["parquet"].get("hash") == h and os.path.exists(st["parquet"].get("path", "")):
+        return st["parquet"]["path"]
+    Path(UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
+    destino = str(Path(UPLOAD_DIR) / f"esteira_{h}.parquet")
+    shutil.copyfile(PARQUET, destino)
+    st["parquet"] = {"hash": h, "path": destino}
+    salvar_estado(st)
+    print(f"[esteira] parquet preparado em {destino}")
+    return destino
+
+
+# ------------------------------ ciclo ----------------------------------------
+async def rodar_um(conn_pool, snap: dict, upload_id: str):
+    async with conn_pool.acquire() as conn:
+        job_id = await conn.fetchval(
+            """
+            INSERT INTO backtest_jobs
+                (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
+                 banca_inicial, bot_snapshot, status, progresso, upload_id, user_id)
+            VALUES (NULL, NULL, NULL, 'fixo', $1, $2, $3::jsonb,
+                    'pendente', 0, $4, $5)
+            RETURNING id
+            """,
+            STAKE, BANCA, json.dumps(snap, default=str), upload_id, USER_ID,
+        )
+    try:
+        await asyncio.wait_for(executar_backtest(job_id),
+                               timeout=TIMEOUT_JOB_S)   # o MOTOR REAL, inline
+    except asyncio.TimeoutError:
+        raise RuntimeError(f"job {job_id}: passou de {TIMEOUT_JOB_S//60}min "
+                           f"(watchdog) — fila segue no proximo")
+    async with conn_pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT status, erro, apostas_detalhe FROM backtest_jobs WHERE id=$1",
+            job_id)
+    if row is None:
+        raise RuntimeError(f"job {job_id} sumiu do banco")
+    if str(row["status"]).lower() == "erro":
+        raise RuntimeError(f"job {job_id} ERRO no motor: {row['erro']}")
+    det = row["apostas_detalhe"]
+    return job_id, metricas_do_detalhe(det), lucro_por_jogo(det)
+
+
+async def main():
+    print("=" * 78)
+    print(" ESTEIRA VPS v2 — motor real importado, jobs em sequencia")
+    print("=" * 78)
+    for arq in (PARQUET, PLANILHA_ESTRATEGIAS):
+        if not os.path.exists(arq):
+            print(f"ERRO: nao achei {arq} nesta pasta")
+            return
+
+    est = pd.read_excel(PLANILHA_ESTRATEGIAS)
+    est.columns = [str(c).strip().lower() for c in est.columns]
+    if "nome" not in est.columns:
+        est["nome"] = [f"estrategia_{i+1}" for i in range(len(est))]
+    fila = [dict(r) for _, r in est.iterrows()]
+    if RODAR_VARIACOES:
+        extra = []
+        for e in fila:
+            if int(_num(e.get("variar")) or 0) == 1:
+                extra += gerar_variacoes(e)
+        fila += extra
+        print(f"[esteira] {len(est)} estrategias + {len(extra)} variacoes")
+
+    st = carregar_estado()
+    await init_pool()
+    pool = get_pool()
+    upload_id = preparar_upload_local(st)
+
+    placar, log = [], []
+    por_jogo: dict = {}
+    t_ini = time.time()
+    try:
+        i = 0
+        while fila:
+            e = fila.pop(0)
+            i += 1
+            nome = str(e.get("nome"))
+            try:
+                snap = montar_snapshot(e)
+            except Exception as ex:
+                log.append({"estrategia": nome, "evento": f"snapshot: {ex}"})
+                continue
+            ass = assinatura(snap)
+            reg = st["jobs"].get(ass, {})
+            try:
+                if reg.get("metricas"):
+                    m = reg["metricas"]
+                    print(f"[{i}/{len(fila)}] {nome}: ja rodada "
+                          f"(job {reg.get('job_id')}) — reaproveitando")
+                else:
+                    t0 = time.time()
+                    print(f"[{i}/{len(fila)}] {nome}: rodando no motor...")
+                    job_id, m, pj = await rodar_um(pool, snap, upload_id)
+                    por_jogo[nome] = pj
+                    st["jobs"][ass] = {"job_id": job_id, "nome": nome,
+                                       "metricas": m}
+                    salvar_estado(st)
+                    if not m.get("apostas"):
+                        tem_chip = bool(snap["filtros"].get("filtrosHistAdicionados"))
+                        print(f"    job {job_id} em {time.time()-t0:.0f}s -> "
+                              f"0 apostas" + (
+                                  "  <-- config COM CHIP e H2H vazio: confira "
+                                  "casa/esporte (CASA_PADRAO/ESPORTE_PADRAO) "
+                                  "contra o que o banco tem" if tem_chip else
+                                  "  (filtro cortou tudo)"))
+                    else:
+                        print(f"    job {job_id} em {time.time()-t0:.0f}s -> "
+                              f"{m.get('apostas')} ap | {m.get('G-R')} | "
+                              f"WR {m.get('WR')} | ROI {m.get('ROI')} | "
+                              f"3d {m.get('roi_3d')} | 7d {m.get('roi_7d')}")
+                placar.append({"estrategia": nome, "mae": e.get("_mae", ""),
+                               "eixo": e.get("_eixo", ""),
+                               "job": st["jobs"][ass].get("job_id"), **m})
+                # HILL-CLIMB: variacao que MELHOROU a mae anda mais um passo
+                if (HILL_CLIMB and e.get("_mae") and m.get("apostas", 0) > 0
+                        and int(e.get("_passo", 1)) < HILL_MAX_PASSOS):
+                    mae_m = next((p for p in placar
+                                  if p["estrategia"] == e.get("_mae")
+                                  and not p.get("mae")), None)
+                    u_mae = mae_m.get("unidades") if mae_m else None
+                    piso_u = (u_mae * HILL_TOL_U if isinstance(u_mae, (int, float))
+                              and u_mae > 0 else -9)
+                    if (mae_m and m.get("ROI") is not None
+                            and m["ROI"] > (mae_m.get("ROI") or -9)
+                            and m.get("unidades", -9) >= piso_u):
+                        prox = _proximo_passo(e)
+                        if prox is not None:
+                            print(f"    hill-climb: {prox['nome']} entra na fila")
+                            fila.insert(0, prox)
+            except KeyboardInterrupt:
+                raise
+            except Exception as ex:
+                log.append({"estrategia": nome, "evento": str(ex)})
+                print(f"    ERRO em {nome}: {ex}")
+    except KeyboardInterrupt:
+        print("\n[esteira] Ctrl+C — salvando o parcial...")
+    finally:
+        try:
+            await close_pool()
+        except Exception:
+            pass
+
+    if not placar and not log:
+        print("[esteira] nada a salvar")
+        return
+    P = pd.DataFrame(placar)
+    variacoes = pd.DataFrame()
+    if len(P):
+        maes = P[P["mae"].astype(str) == ""].copy()
+        w0 = REC_JANELAS[0]
+        maes = maes.sort_values([f"roi_{w0}d", "ROI"],
+                                ascending=False, na_position="last")
+        variacoes = P[P["mae"].astype(str) != ""].copy()
+        if len(variacoes):
+            ref = maes.set_index("estrategia")
+            def _delta(r, col):
+                try:
+                    return round(r[col] - ref.loc[r["mae"], col], 2)
+                except Exception:
+                    return None
+            for col, novo in (("ROI", "dROI"), ("apostas", "dAp"),
+                              ("unidades", "dU")):
+                variacoes[novo] = variacoes.apply(
+                    lambda r, c=col: _delta(r, c), axis=1)
+            # retencao de lucro: quanto do lucro da mae a variacao manteve
+            u_mae_col = variacoes.apply(
+                lambda r: (ref.loc[r["mae"], "unidades"]
+                           if r["mae"] in ref.index else np.nan), axis=1)
+            variacoes["ret_u"] = (variacoes["unidades"] / u_mae_col).round(3)
+            variacoes["veredito"] = np.where(
+                (variacoes["dROI"].fillna(-9) > 0)
+                & (variacoes["ret_u"].fillna(0) >= HILL_TOL_U),
+                "MELHOROU (roi+ mantendo lucro)",
+                np.where(variacoes["dROI"].fillna(-9) > 0,
+                         "roi+ mas custa lucro", "-"))
+        # EVOLUCAO: compara com a ultima rodada registrada no state
+        hist_ant = {h["estrategia"]: h for h in st.get("historico", [])}
+        evolucao = []
+        for _, r in maes.iterrows():
+            ant = hist_ant.get(r["estrategia"])
+            if ant:
+                evolucao.append({
+                    "estrategia": r["estrategia"],
+                    "roi_3d_antes": ant.get("roi_3d"), "roi_3d_agora": r.get("roi_3d"),
+                    "d_roi_3d": (round(r["roi_3d"] - ant["roi_3d"], 2)
+                                 if pd.notna(r.get("roi_3d")) and ant.get("roi_3d") is not None else None),
+                    "roi_antes": ant.get("ROI"), "roi_agora": r.get("ROI"),
+                    "tendencia": ("AQUECENDO" if (ant.get("roi_3d") is not None
+                                  and pd.notna(r.get("roi_3d"))
+                                  and r["roi_3d"] > ant["roi_3d"]) else "esfriando"),
+                })
+        st["historico"] = [{"estrategia": r["estrategia"], "ROI": r.get("ROI"),
+                            "roi_3d": (None if pd.isna(r.get("roi_3d")) else r.get("roi_3d")),
+                            "roi_7d": (None if pd.isna(r.get("roi_7d")) else r.get("roi_7d"))}
+                           for _, r in maes.iterrows()]
+        salvar_estado(st)
+        # CARTEIRA: correlacao de lucro POR JOGO entre as top maes desta rodada
+        cart = None
+        tops = [n for n in maes["estrategia"].head(TOP_CARTEIRA) if n in por_jogo]
+        if len(tops) >= 2:
+            M = pd.DataFrame({n: por_jogo[n] for n in tops}).fillna(0.0)
+            cart = M.corr().round(2)
+        with pd.ExcelWriter(SAIDA) as w:
+            maes.to_excel(w, sheet_name="PLACAR", index=False)
+            if len(variacoes):
+                variacoes.sort_values("dROI", ascending=False).to_excel(
+                    w, sheet_name="VARIACOES", index=False)
+            if evolucao:
+                pd.DataFrame(evolucao).to_excel(w, sheet_name="EVOLUCAO", index=False)
+            if cart is not None:
+                cart.to_excel(w, sheet_name="CARTEIRA")
+            if log:
+                pd.DataFrame(log).to_excel(w, sheet_name="LOG", index=False)
+        print(f"\n[esteira] {len(maes)} estrategias + {len(variacoes)} "
+              f"variacoes em {SAIDA} ({(time.time()-t_ini)/60:.0f} min)")
+    elif log:
+        pd.DataFrame(log).to_excel(SAIDA.replace(".xlsx", "_log.xlsx"),
+                                   index=False)
+
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        pass
