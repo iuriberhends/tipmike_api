@@ -263,17 +263,33 @@ def parse_ticks_parquet(caminho_arquivo: str,
         f"[backtest_upload] parquet {p.name}: {len(df)} ticks apos filtros "
         f"(de {n_total} no arquivo)"
     )
-    # to_dict pode deixar NaN/NaT/pd.NA nos campos (o Int64 nullable vira pd.NA).
-    # O motor espera None nesses casos (linha None -> pula, score None -> ignora).
-    # Normaliza tudo pra None de uma vez, pra o parquet entregar igual ao banco.
-    registros = df.to_dict('records')
-    for r in registros:
-        for k, v in r.items():
-            if v is pd.NA or (isinstance(v, float) and pd.isna(v)):
-                r[k] = None
-            elif v is pd.NaT:
-                r[k] = None
-    return registros
+    # v2 (02/ago — fase "Buscando ticks (arquivo)" era a mais lenta do job):
+    # o caminho antigo fazia to_dict('records') e DEPOIS visitava ~36 MILHOES
+    # de celulas em Python puro (isinstance + pd.isna por campo) so pra trocar
+    # NaN/NaT/NA por None. A v2 faz a mesma normalizacao VETORIZADA (uma
+    # passada em C) e monta os dicts por itertuples+zip (o caminho rapido).
+    # SAIDA EQUIVALENTE: mesmas chaves na mesma ordem, mesmas linhas na mesma
+    # ordem, mesmos None; numeros continuam escalares equivalentes aos do
+    # to_dict (aritmetica e comparacoes identicas — provado na bancada com
+    # parquet real, campo a campo). BLINDADO: qualquer falha no caminho
+    # rapido cai no caminho antigo, que segue aqui intacto.
+    try:
+        df_obj = df.astype(object)
+        df_obj = df_obj.where(pd.notna(df_obj), None)
+        cols = list(df_obj.columns)
+        registros = [dict(zip(cols, linha))
+                     for linha in df_obj.itertuples(index=False, name=None)]
+        return registros
+    except Exception:
+        logger.exception("[backtest_upload] caminho rapido falhou — usando o lento")
+        registros = df.to_dict('records')
+        for r in registros:
+            for k, v in r.items():
+                if v is pd.NA or (isinstance(v, float) and pd.isna(v)):
+                    r[k] = None
+                elif v is pd.NaT:
+                    r[k] = None
+        return registros
 
 
 # ============================================================
