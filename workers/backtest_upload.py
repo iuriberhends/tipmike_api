@@ -19,6 +19,15 @@ PONTOS DE INTEGRACAO (3 peças):
     2. workers/backtest_upload -> parse_ticks_parquet (ESTE arquivo)
     3. workers/backtest_runner -> executar_backtest ganha fonte=arquivo (upload_id)
 
+v3 (02/ago) — CACHE ENTRE JOBS: os jobs rodam no mesmo processo da API, e
+cada um re-lia e re-parseava o parquet inteiro (a fase mais lenta). Agora:
+  nivel 1: DataFrame ja lido/coagido/ordenado, por (arquivo, mtime, size)
+  nivel 2: lista de registros pronta, por (arquivo + assinatura do filtro
+           do bot) — o consumidor recebe COPIA rasa (dict novo por tick),
+           entao um job jamais contamina o outro
+Limite: 1 arquivo por nivel (LRU minimo). Desligar: BACKTEST_CACHE=0.
+Fail-open: qualquer erro no cache cai no caminho sem cache.
+
 Este arquivo e ESQUELETO: assinaturas + validacao + pontos marcados com
 '# TODO LOGICA'. Nada de implementacao pesada ainda - primeiro validar o encaixe.
 """
@@ -78,6 +87,56 @@ class BacktestUploadError(Exception):
     pass
 
 
+# ============================================================
+# v3: cache entre jobs (mesmo processo da API)
+# ============================================================
+import threading as _threading
+import time as _time
+
+_CACHE_ON = os.environ.get("BACKTEST_CACHE", "1") != "0"
+# nivel 2 guarda a LISTA DE DICTS pronta — e o mais rapido, mas segura a
+# lista em RAM e entrega COPIA (pico ~2x). Em maquina folgada: ligue com
+# BACKTEST_CACHE_N2=1. Default OFF: o nivel 1 ja corta o grosso do tempo
+# (leitura + parse de ts + coercao + ordenacao) gastando pouca memoria.
+_CACHE_N2_ON = _CACHE_ON and os.environ.get("BACKTEST_CACHE_N2", "0") == "1"
+# PROVADO no backtest_runner: os ticks sao SOMENTE LIDOS (zero atribuicao em
+# tick[...] e zero mutacao da lista). Por isso o hit n2 entrega a PROPRIA
+# lista cacheada (custo ~zero, pico de RAM = 1 lista, igual ao job normal).
+# Se um dia o runner passar a mutar ticks, ligue BACKTEST_CACHE_COPIA=1.
+_CACHE_COPIA = os.environ.get("BACKTEST_CACHE_COPIA", "0") == "1"
+_CACHE_LOCK = _threading.Lock()
+_CACHE_DF: dict = {}     # chave_arquivo -> DataFrame pronto (pos-coercao/sort)
+_CACHE_REG: dict = {}    # (chave_arquivo, assin_filtro) -> lista de registros
+
+
+def _chave_arquivo(p) -> tuple:
+    st = p.stat()
+    return (str(p.resolve()), st.st_mtime_ns, st.st_size)
+
+
+def _assinatura_filtro(bot) -> tuple:
+    if not bot:
+        return ("sem_bot",)
+    casa = bot.get("casa") or ""
+    esporte_ui = bot.get("esporte") or ""
+    sport = ESPORTE_UI_PARA_BANCO.get(esporte_ui, esporte_ui) or ""
+    tor = tuple(sorted(str(t) for t in (bot.get("torneios") or []) if t))
+    exc = tuple(sorted(str(t) for t in (bot.get("torneios_excluir") or []) if t))
+    return (casa, sport, tor, exc)
+
+
+def _copia_rasa(registros: list) -> list:
+    # dict(r) e raso e roda em C: barato, e blinda contra mutacao entre jobs
+    return [dict(r) for r in registros]
+
+
+def limpar_cache_backtest():
+    """Esvazia os caches (util em teste/manutencao)."""
+    with _CACHE_LOCK:
+        _CACHE_DF.clear()
+        _CACHE_REG.clear()
+
+
 def parse_ticks_parquet(caminho_arquivo: str,
                         bot: Optional[dict] = None) -> list[dict]:
     """
@@ -121,84 +180,170 @@ def parse_ticks_parquet(caminho_arquivo: str,
             f"parquet grande demais: {mb:.0f}MB (limite {lim:.0f}MB)"
         )
 
+    # --- v3: cache ---
+    chave = None
+    assin = _assinatura_filtro(bot)
+    if _CACHE_N2_ON:
+        try:
+            chave = _chave_arquivo(p)
+            with _CACHE_LOCK:
+                reg_pronto = _CACHE_REG.get((chave, assin))
+            if reg_pronto is not None:
+                t0 = _time.time()
+                out = _copia_rasa(reg_pronto) if _CACHE_COPIA else reg_pronto
+                logger.info(
+                    f"[backtest_upload] CACHE nivel2 HIT: {len(out)} ticks "
+                    f"entregues em {_time.time() - t0:.2f}s (sem reler o arquivo)")
+                return out
+        except Exception:
+            logger.exception("[backtest_upload] cache n2 falhou — seguindo sem")
+            chave = None
+
+    df = None
+    if _CACHE_ON and chave is None:
+        try:
+            chave = _chave_arquivo(p)
+        except Exception:
+            chave = None
+    if _CACHE_ON and chave is not None:
+        try:
+            with _CACHE_LOCK:
+                base = _CACHE_DF.get(chave)
+            if base is not None:
+                df = base.copy(deep=False)
+                logger.info("[backtest_upload] CACHE nivel1 HIT: parquet ja "
+                            "parseado — pulando leitura/coercao/ordenacao")
+        except Exception:
+            logger.exception("[backtest_upload] cache n1 falhou — seguindo sem")
+            df = None
+
+    _veio_do_cache_n1 = df is not None
     # --- leitura ---
-    try:
-        df = pd.read_parquet(p)
-    except Exception as e:
-        raise BacktestUploadError(
-            f"nao foi possivel ler o parquet (corrompido ou formato invalido): {e}"
-        ) from e
+    if df is None:
+        try:
+            df = pd.read_parquet(p)
+        except Exception as e:
+            raise BacktestUploadError(
+                f"nao foi possivel ler o parquet (corrompido ou formato invalido): {e}"
+            ) from e
 
     if df is None or len(df) == 0:
         raise BacktestUploadError("parquet sem linhas")
+    n_total = len(df)   # v3: definido aqui p/ o log final valer tambem no hit n1
 
     # --- colunas ---
-    ok, faltando = validar_colunas(list(df.columns))
+    if _veio_do_cache_n1:
+        ok, faltando = True, []
+    else:
+        ok, faltando = validar_colunas(list(df.columns))
     if not ok:
         raise BacktestUploadError(
             f"parquet sem as colunas que o motor espera. Faltando: {faltando}"
         )
 
-    # --- timezone: parse NAIVE, SEM conversao de fuso ---
-    # REGRA DO PROJETO: o ts vem com sufixo 'Z' mas o relogio JA ESTA em BRT
-    # (mesma convencao do fixture_date da TipManager). O caminho do BANCO le o ts
-    # naive e NAO converte nada - e essa e a referencia validada em producao.
-    # Pro arquivo bater com o banco, parseia o MESMO relogio de parede, sem somar
-    # nem subtrair 3h. O codigo antigo fazia UTC->BRT (-3h): deixava o tick 3h
-    # atrasado, desalinhava o cutoff do H2H e os buckets por dia = backtest furado.
-    # Se algum dia confirmar que o ts e UTC REAL, vire a chave abaixo pra True.
-    CONVERTER_UTC_PARA_BRT = False
-    try:
-        ts_orig = df['ts']
-        if pd.api.types.is_datetime64_any_dtype(ts_orig):
-            # parquet trouxe timestamp NATIVO
-            if getattr(ts_orig.dt, 'tz', None) is not None:
-                if CONVERTER_UTC_PARA_BRT:
-                    ts_parsed = ts_orig.dt.tz_convert('America/Sao_Paulo').dt.tz_localize(None)
+    if not _veio_do_cache_n1:  # v3: ja feito na entrada do cache (ts)
+        # --- timezone: parse NAIVE, SEM conversao de fuso ---
+        # REGRA DO PROJETO: o ts vem com sufixo 'Z' mas o relogio JA ESTA em BRT
+        # (mesma convencao do fixture_date da TipManager). O caminho do BANCO le o ts
+        # naive e NAO converte nada - e essa e a referencia validada em producao.
+        # Pro arquivo bater com o banco, parseia o MESMO relogio de parede, sem somar
+        # nem subtrair 3h. O codigo antigo fazia UTC->BRT (-3h): deixava o tick 3h
+        # atrasado, desalinhava o cutoff do H2H e os buckets por dia = backtest furado.
+        # Se algum dia confirmar que o ts e UTC REAL, vire a chave abaixo pra True.
+        CONVERTER_UTC_PARA_BRT = False
+        try:
+            ts_orig = df['ts']
+            if pd.api.types.is_datetime64_any_dtype(ts_orig):
+                # parquet trouxe timestamp NATIVO
+                if getattr(ts_orig.dt, 'tz', None) is not None:
+                    if CONVERTER_UTC_PARA_BRT:
+                        ts_parsed = ts_orig.dt.tz_convert('America/Sao_Paulo').dt.tz_localize(None)
+                    else:
+                        ts_parsed = ts_orig.dt.tz_localize(None)  # descarta tz, mantem relogio
                 else:
-                    ts_parsed = ts_orig.dt.tz_localize(None)  # descarta tz, mantem relogio
+                    ts_parsed = ts_orig  # ja naive, usa como esta
             else:
-                ts_parsed = ts_orig  # ja naive, usa como esta
-        else:
-            # veio STRING (ex: '2026-05-21T05:00:28.402Z'). Tira o 'Z'/offset e
-            # parseia naive: o relogio de parede e o que vale (convencao BRT).
-            s = ts_orig.astype(str).str.replace(r'(Z|[+-]\d{2}:?\d{2})$', '', regex=True)
-            ts_parsed = pd.to_datetime(s, format='ISO8601', errors='coerce')
-            if CONVERTER_UTC_PARA_BRT:
-                ts_parsed = (ts_parsed.dt.tz_localize('UTC')
-                                       .dt.tz_convert('America/Sao_Paulo')
-                                       .dt.tz_localize(None))
-    except Exception as e:
-        raise BacktestUploadError(f"falha ao interpretar a coluna ts: {e}") from e
+                # veio STRING (ex: '2026-05-21T05:00:28.402Z'). Tira o 'Z'/offset e
+                # parseia naive: o relogio de parede e o que vale (convencao BRT).
+                s = ts_orig.astype(str).str.replace(r'(Z|[+-]\d{2}:?\d{2})$', '', regex=True)
+                ts_parsed = pd.to_datetime(s, format='ISO8601', errors='coerce')
+                if CONVERTER_UTC_PARA_BRT:
+                    ts_parsed = (ts_parsed.dt.tz_localize('UTC')
+                                           .dt.tz_convert('America/Sao_Paulo')
+                                           .dt.tz_localize(None))
+        except Exception as e:
+            raise BacktestUploadError(f"falha ao interpretar a coluna ts: {e}") from e
 
-    n_total = len(df)
-    n_nat = int(ts_parsed.isna().sum())
-    if n_nat == n_total:
-        raise BacktestUploadError(
-            "nenhum ts pode ser interpretado como data - coluna ts invalida"
-        )
-    if n_nat > 0:
-        frac = n_nat / n_total
-        # tolera ate 1% de ts ruim (descarta). Acima disso, aborta: algo errado.
-        if frac > 0.01:
+        n_total = len(df)
+        n_nat = int(ts_parsed.isna().sum())
+        if n_nat == n_total:
             raise BacktestUploadError(
-                f"{n_nat} de {n_total} ts invalidos ({frac:.1%}) - parquet suspeito"
+                "nenhum ts pode ser interpretado como data - coluna ts invalida"
             )
-        logger.warning(f"[backtest_upload] descartando {n_nat} linhas com ts invalido")
-        mask_ok = ts_parsed.notna()
-        df = df[mask_ok].copy()
-        ts_parsed = ts_parsed[mask_ok]
+        if n_nat > 0:
+            frac = n_nat / n_total
+            # tolera ate 1% de ts ruim (descarta). Acima disso, aborta: algo errado.
+            if frac > 0.01:
+                raise BacktestUploadError(
+                    f"{n_nat} de {n_total} ts invalidos ({frac:.1%}) - parquet suspeito"
+                )
+            logger.warning(f"[backtest_upload] descartando {n_nat} linhas com ts invalido")
+            mask_ok = ts_parsed.notna()
+            df = df[mask_ok].copy()
+            ts_parsed = ts_parsed[mask_ok]
 
-    df['ts'] = ts_parsed
-    # DIAGNOSTICO: loga amostra do ts pra conferir o fuso a olho contra um jogo
-    # de horario conhecido. Se vier 3h diferente do banco, e a chave de fuso.
-    try:
-        logger.info(
-            f"[backtest_upload] ts naive (sem conversao). "
-            f"amostra={df['ts'].head(2).tolist()} min={df['ts'].min()} max={df['ts'].max()}"
-        )
-    except Exception:
-        pass
+        df['ts'] = ts_parsed
+        # DIAGNOSTICO: loga amostra do ts pra conferir o fuso a olho contra um jogo
+        # de horario conhecido. Se vier 3h diferente do banco, e a chave de fuso.
+        try:
+            logger.info(
+                f"[backtest_upload] ts naive (sem conversao). "
+                f"amostra={df['ts'].head(2).tolist()} min={df['ts'].min()} max={df['ts'].max()}"
+            )
+        except Exception:
+            pass
+
+    if not _veio_do_cache_n1:  # v3: ja feito na entrada do cache (coercao)
+        # --- coercao de tipos: APENAS score_home/score_away ---
+        # O motor (backtest_runner) trata cada campo do seu jeito:
+        #   - linha: _parse_linha() ja lida com '+0.5', 'away|0.5', '' -> NAO converter
+        #     aqui (to_numeric transformaria esses em NaN e perderia o tick).
+        #   - odds: o motor faz float(tick['odds']) na hora -> deixa como vem.
+        #   - mercado_tipo / mercado_id / selecao_id: usados como STRING (mapping de
+        #     mercado compara com ['18'], dedup usa 'mercado_id' or '') -> NAO converter.
+        # SO os scores entram em comparacao numerica direta (total = sh+sa; total>linha)
+        # sem passar por parser. Se vierem string do parquet, da o erro str<float.
+        # Entao converte SO eles pra Int64 (nullable: aceita None sem virar float).
+        # Esta e a correcao minima e segura - mexer no resto quebra os parsers do motor.
+        try:
+            for col in ('score_home', 'score_away'):
+                if col in df.columns:
+                    df[col] = pd.to_numeric(df[col], errors='coerce').astype('Int64')
+            # odds: o motor compara CRU (odd < float(odd_min)) sem converter -> se
+            # vier string do parquet da str<float. odds nao tem formato especial
+            # (sempre "1.85"), entao to_numeric e seguro. NaN -> None (motor: odd
+            # ausente -> rejeita o tick, comportamento correto).
+            if 'odds' in df.columns:
+                df['odds'] = pd.to_numeric(df['odds'], errors='coerce')
+        except Exception as e:
+            raise BacktestUploadError(f"falha ao converter scores/odds: {e}") from e
+
+    if not _veio_do_cache_n1:  # v3: ja feito na entrada do cache (sort)
+        # --- ordenacao (mesma do motor) ---
+        try:
+            df = df.sort_values(['event_id', 'mercado_id', 'linha', 'selecao_id', 'ts'])
+        except Exception as e:
+            raise BacktestUploadError(f"falha ao ordenar ticks: {e}") from e
+
+
+    # v3: grava o df pronto (pos ts/coercao/sort, PRE filtro do bot)
+    if _CACHE_ON and chave is not None and not _veio_do_cache_n1:
+        try:
+            with _CACHE_LOCK:
+                _CACHE_DF.clear()
+                _CACHE_DF[chave] = df.copy(deep=False)
+        except Exception:
+            logger.exception('[backtest_upload] falha gravando cache n1')
 
     # --- pre-selecao igual ao SQL do banco (so se bot vier) ---
     if bot:
@@ -229,36 +374,6 @@ def parse_ticks_parquet(caminho_arquivo: str,
         except Exception as e:
             raise BacktestUploadError(f"falha ao aplicar filtros do bot: {e}") from e
 
-    # --- coercao de tipos: APENAS score_home/score_away ---
-    # O motor (backtest_runner) trata cada campo do seu jeito:
-    #   - linha: _parse_linha() ja lida com '+0.5', 'away|0.5', '' -> NAO converter
-    #     aqui (to_numeric transformaria esses em NaN e perderia o tick).
-    #   - odds: o motor faz float(tick['odds']) na hora -> deixa como vem.
-    #   - mercado_tipo / mercado_id / selecao_id: usados como STRING (mapping de
-    #     mercado compara com ['18'], dedup usa 'mercado_id' or '') -> NAO converter.
-    # SO os scores entram em comparacao numerica direta (total = sh+sa; total>linha)
-    # sem passar por parser. Se vierem string do parquet, da o erro str<float.
-    # Entao converte SO eles pra Int64 (nullable: aceita None sem virar float).
-    # Esta e a correcao minima e segura - mexer no resto quebra os parsers do motor.
-    try:
-        for col in ('score_home', 'score_away'):
-            if col in df.columns:
-                df[col] = pd.to_numeric(df[col], errors='coerce').astype('Int64')
-        # odds: o motor compara CRU (odd < float(odd_min)) sem converter -> se
-        # vier string do parquet da str<float. odds nao tem formato especial
-        # (sempre "1.85"), entao to_numeric e seguro. NaN -> None (motor: odd
-        # ausente -> rejeita o tick, comportamento correto).
-        if 'odds' in df.columns:
-            df['odds'] = pd.to_numeric(df['odds'], errors='coerce')
-    except Exception as e:
-        raise BacktestUploadError(f"falha ao converter scores/odds: {e}") from e
-
-    # --- ordenacao (mesma do motor) ---
-    try:
-        df = df.sort_values(['event_id', 'mercado_id', 'linha', 'selecao_id', 'ts'])
-    except Exception as e:
-        raise BacktestUploadError(f"falha ao ordenar ticks: {e}") from e
-
     logger.info(
         f"[backtest_upload] parquet {p.name}: {len(df)} ticks apos filtros "
         f"(de {n_total} no arquivo)"
@@ -279,6 +394,14 @@ def parse_ticks_parquet(caminho_arquivo: str,
         cols = list(df_obj.columns)
         registros = [dict(zip(cols, linha))
                      for linha in df_obj.itertuples(index=False, name=None)]
+        if _CACHE_N2_ON and chave is not None:
+            try:
+                with _CACHE_LOCK:
+                    _CACHE_REG.clear()
+                    _CACHE_REG[(chave, assin)] = registros
+                return _copia_rasa(registros) if _CACHE_COPIA else registros
+            except Exception:
+                logger.exception('[backtest_upload] falha gravando cache n2')
         return registros
     except Exception:
         logger.exception("[backtest_upload] caminho rapido falhou — usando o lento")
