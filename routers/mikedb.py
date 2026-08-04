@@ -369,7 +369,12 @@ async def _rodar(jid: str, args: list, cwd: Path, timeout: int,
     # UTF-8 obrigatorio: rodando como subprocesso, o Python herda a codificacao
     # do console do Windows (cp1252) e MORRE no primeiro emoji que o script
     # imprime (o converter estourou em "\U0001f4d6" antes de converter nada).
-    env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
+    # PYTHONUNBUFFERED e' o que faz o log aparecer AO VIVO: sem ele, o Python
+    # do subprocesso usa buffer de BLOCO (4-8KB) porque a saida nao e' um
+    # terminal — o script trabalha normal, mas o painel fica mudo por minutos
+    # e parece travado (barra em 5%, log so com o comando).
+    env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1",
+               PYTHONUNBUFFERED="1")
     try:
         proc = await asyncio.create_subprocess_exec(
             *[str(a) for a in args], cwd=str(cwd), env=env,
@@ -422,6 +427,8 @@ class GerarRequest(BaseModel):
     # entao o painel pode forcar 'historico' pra bet365: sai em segundos em
     # vez de horas e nao depende do Chrome/Cloudflare.
     via: Optional[str] = Field("auto", description="auto | historico | betsapi")
+    # paralelismo da raspagem (abas worker no Chrome). Default do coletor = 7.
+    workers: Optional[int] = Field(None, ge=1, le=24, description="abas worker (1-24)")
 
 
 # ----------------------------------------------------------------- /status ---
@@ -581,8 +588,39 @@ async def _gerar_da_betsapi(jid: str, req: GerarRequest) -> str:
     # inaceitavel num processo que leva horas.
     liga_slug = re.sub(r"[^\w]", "", (req.liga or "H2H"))[:20]
     csv_saida = BASE_DIR / f"betsapi_{liga_slug}_{req.de}_a_{req.ate}.csv"
+
+    # ------------------------------------------------------------------
+    # CAMINHO RAPIDO: o ACERVO (atualizar_betsapi.bat mantem 1 CSV por liga,
+    # incremental e sem gap). Se o periodo pedido ja estiver la dentro, o
+    # trabalho e' so RECORTAR — segundos, sem Chrome, sem Cloudflare, sem
+    # esperar raspagem. O converter devolve codigo 2 quando o periodo nao
+    # esta coberto; nesse caso caimos pra raspagem normal, sem drama.
+    # ------------------------------------------------------------------
+    acervo = BASE_DIR / f"acervo_betsapi_{liga_slug}.csv"
+    if acervo.exists():
+        _log_job(jid, f"acervo encontrado ({acervo.name}) — tentando recortar "
+                      f"em vez de raspar", etapa="lendo o acervo", progresso=8)
+        parquet_acervo = BASE_DIR / f"_mikedb_{jid}.parquet"
+        args_ac = [PYTHON, str(SCRIPT_CONVERTER), "--csv", str(acervo),
+                   "--out", str(parquet_acervo), "--ht"]
+        if req.de:
+            args_ac += ["--de", req.de]
+        if req.ate:
+            args_ac += ["--ate", req.ate]
+        if (req.liga or "").upper().startswith("FUT_"):
+            args_ac += ["--sport", "E-Football"]
+        rc_ac = await _rodar(jid, args_ac, BASE_DIR, TIMEOUT_CONVERTER_S,
+                             "recortando do acervo", 8, 90)
+        if rc_ac == 0 and parquet_acervo.exists():
+            _log_job(jid, "recorte do acervo pronto (nao precisou raspar)",
+                     progresso=90)
+            return str(parquet_acervo)
+        _log_job(jid, "o acervo nao cobre esse periodo — vou raspar",
+                 etapa="acervo incompleto", progresso=10)
     args = [PYTHON, str(SCRIPT_BETSAPI), "--liga", req.liga or "H2H",
             "--de", req.de, "--ate", req.ate, "--out", str(csv_saida)]
+    if req.workers:
+        args += ["--workers", str(int(req.workers))]
     rc = await _rodar(jid, args, BASE_DIR, TIMEOUT_BETSAPI_S,
                       "raspando a BetsAPI (pode demorar)", 5, 70)
     if rc != 0 or not csv_saida.exists():
