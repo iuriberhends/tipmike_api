@@ -344,6 +344,20 @@ MERCADO_TIPOS_POR_CASA = {
         'over_under_ft':        ['1450'],
         'ah_ft':                ['1446'],
         'ml_ft':                ['180032'],
+        # 03/ago: codigos de 1o TEMPO. Origem: o mapa de protocolo do
+        # coletor CDP, o mesmo que o converter_betsapi grava no parquet
+        # (180062 = 1st half total, 180061 = 1st half spread, 180060 =
+        # 1st half money line). Antes disto, mercado HT da bet365 so
+        # casava pelo fallback de PALAVRA-CHAVE (porta lateral: funciona,
+        # mas depende do nome do mercado vir bonitinho).
+        # NAO VERIFICADO em e-Soccer — se um desses codigos significar
+        # outra coisa la, o cinto que segura e' a checagem de PERIODO pelo
+        # NOME do mercado (_periodo_do_mercado), que exige "1o Tempo"/"1st
+        # half" no rotulo pra aceitar como HT. Verificar no primeiro teste
+        # de e-Soccer: a planilha tem que mostrar placar de INTERVALO.
+        'over_under_ht':        ['180062'],
+        'ah_ht':                ['180061'],
+        'ml_ht':                ['180060'],
     },
 }
 

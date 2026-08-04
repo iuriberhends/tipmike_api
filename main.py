@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_pool, close_pool
 from security import get_current_user
-from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth, admin, h2h_sync
+from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth, admin, h2h_sync, mikedb
 
 
 @asynccontextmanager
@@ -76,6 +76,7 @@ app.include_router(historico.router, dependencies=PROTEGIDO)
 app.include_router(telegram.router, dependencies=PROTEGIDO)
 app.include_router(backtest_upload.router, dependencies=PROTEGIDO)
 app.include_router(h2h_sync.router, dependencies=PROTEGIDO)
+app.include_router(mikedb.router, dependencies=PROTEGIDO)
 
 
 @app.get("/")
