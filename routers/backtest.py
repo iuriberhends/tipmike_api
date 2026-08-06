@@ -25,6 +25,102 @@ from database import get_pool
 from security import get_current_user, acesso_total
 from workers.backtest_runner import executar_backtest
 
+# ---------------------------------------------------------------------------
+# v2 (03/ago) — JOB EM PROCESSO SEPARADO
+# Medido: com o job rodando via BackgroundTasks (mesmo processo, mesmo event
+# loop da API), /docs levou 10,7s com UM job ativo; com 4 empilhados a pagina
+# nao carregava. A maquina tem 24 nucleos e 23 ficavam parados, porque tudo
+# disputava um loop so.
+# Agora a API so DESPACHA: cada job vira um processo (workers/run_job.py).
+#   - API responde sempre (o loop nao faz trabalho de CPU);
+#   - jobs rodam em paralelo de verdade, um nucleo cada;
+#   - job que estoura nao leva a API junto.
+# MAX_JOBS_PARALELOS segura a fila: sem teto, 10 jobs simultaneos brigariam
+# por RAM e disco. Reversao: USAR_PROCESSO_SEPARADO = False volta ao antigo.
+# ---------------------------------------------------------------------------
+import asyncio
+import os
+import sys as _sys
+from pathlib import Path as _Path
+
+USAR_PROCESSO_SEPARADO = True
+# Teto de jobs simultaneos. Cada processo carrega o proprio parquet em memoria
+# (~2,5 GB num arquivo de 1,5M ticks), entao o limite real e' RAM, nao CPU:
+# com 32 GB e o Postgres levando 6, 4 jobs ficam folgados e 6 e' o teto sao.
+# Da pra ajustar sem editar codigo: variavel de ambiente BACKTEST_MAX_PARALELO.
+MAX_JOBS_PARALELOS = int(os.environ.get("BACKTEST_MAX_PARALELO", "4"))
+_SEM_JOBS = asyncio.Semaphore(MAX_JOBS_PARALELOS)
+_RAIZ_API = _Path(__file__).resolve().parent.parent
+
+
+async def _rodar_job_em_processo(job_id: int):
+    """Sobe `python -m workers.run_job <id>` e espera. O semaforo limita
+    quantos rodam ao mesmo tempo; os demais ficam na fila (status 'pendente'
+    no banco, como sempre)."""
+    async with _SEM_JOBS:
+        env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1",
+                   PYTHONUNBUFFERED="1")
+        # LOG POR JOB: sem isto a saida do filho ia pro vazio e um job que
+        # morresse de forma esquisita nao deixaria rastro pra autopsia.
+        dir_logs = _RAIZ_API / "logs_jobs"
+        try:
+            dir_logs.mkdir(exist_ok=True)
+        except Exception:
+            pass
+        arq_log = dir_logs / f"job_{job_id}.log"
+        # PRIORIDADE ABAIXO DO NORMAL (Windows): o job e' importante mas nao
+        # urgente; a API, os coletores e os bots continuam com passagem
+        # preferencial mesmo com a maquina cheia. Nao deixa o job mais lento
+        # quando ha nucleo sobrando — e sobra (24).
+        criacao = getattr(__import__("subprocess"), "BELOW_NORMAL_PRIORITY_CLASS", 0)
+        try:
+            saida = open(arq_log, "ab", buffering=0)
+        except Exception:
+            saida = asyncio.subprocess.DEVNULL
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                _sys.executable, "-m", "workers.run_job", str(job_id),
+                cwd=str(_RAIZ_API), env=env,
+                stdout=saida, stderr=asyncio.subprocess.STDOUT,
+                creationflags=criacao,
+            )
+            rc = await proc.wait()
+            logger.info(f"[backtest] job {job_id} terminou no processo "
+                        f"{proc.pid} (codigo {rc}) — log em {arq_log.name}")
+        except Exception:
+            logger.exception(f"[backtest] falha ao rodar job {job_id} em "
+                             f"processo separado — caindo pro modo antigo")
+            await executar_backtest(job_id)
+        finally:
+            try:
+                if saida not in (None, asyncio.subprocess.DEVNULL):
+                    saida.close()
+            except Exception:
+                pass
+
+
+async def _limpar_orfaos():
+    """Job marcado 'rodando' cujo processo morreu (restart da API, queda da
+    VPS) ficava assim PRA SEMPRE — hoje a tabela tinha jobs 'rodando' ha 41
+    horas, sujando o painel e a leitura de carga. Varre antes de criar job
+    novo: barato e mantem a casa limpa."""
+    try:
+        pool = get_pool()
+        async with pool.acquire() as conn:
+            ids = await conn.fetch(
+                """UPDATE backtest_jobs
+                      SET status='erro',
+                          erro='job orfao: o processo morreu (restart da API?)',
+                          concluido_em=NOW()
+                    WHERE status='rodando'
+                      AND iniciado_em < NOW() - INTERVAL '3 hours'
+                RETURNING id""")
+        if ids:
+            logger.info(f"[backtest] {len(ids)} job(s) orfao(s) fechados: "
+                        f"{[r['id'] for r in ids]}")
+    except Exception:
+        logger.exception("[backtest] falha limpando orfaos (segue o jogo)")
+
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/backtest", tags=["backtest"])
 
@@ -136,9 +232,14 @@ async def criar_job(req: BacktestCreateRequest, background: BackgroundTasks, usu
         )
 
     logger.info(f"[backtest] Job {job_id} criado para bot {req.bot_id}")
+    await _limpar_orfaos()
 
-    # Dispara worker async (nao bloqueia resposta)
-    background.add_task(executar_backtest, job_id)
+    # Dispara o worker. Em processo separado (padrao) a API nao trava;
+    # o fallback mantem o comportamento antigo se a chave for desligada.
+    if USAR_PROCESSO_SEPARADO:
+        background.add_task(_rodar_job_em_processo, job_id)
+    else:
+        background.add_task(executar_backtest, job_id)
 
     return {"job_id": job_id, "status": "pendente"}
 

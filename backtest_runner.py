@@ -106,6 +106,196 @@ logger = logging.getLogger(__name__)
 # =====================================================================
 USAR_H2H_MATCHES = True
 
+# =====================================================================
+# v16 (02/ago) — CUTOFF POR EVENTO + MEMO DE STATS (aval do Santos:
+# "faca de tudo para que saia perfeito, tratamento de erro e blinde").
+#
+# MEDIDO: _aplicar_cutoff_jogos varria a lista INTEIRA do par/jogador a
+# cada tick avaliado (re-parseando datas por item), e _calcular_stats_h2h
+# re-somava as janelas por tick — 1,5M ticks x 2-3 sujeitos x milhares de
+# jogos = bilhoes de operacoes Python. Era o custo real dos jobs de 45-49
+# min (multi-chip sem folga) e do chip INDIVIDUAL "muito lento".
+#
+# O QUE MUDA (matematica IDENTICA por construcao — nada e computado
+# diferente; apenas deixa de recomputar o que e provadamente igual):
+#   1. datas normalizadas UMA vez no load do cache (nao por tick);
+#   2. corte calculado UMA vez por EVENTO e reusado pelos ticks daquele
+#      jogo — a lista historica e constante enquanto o jogo corre. Unica
+#      excecao real: jogo do sujeito cujo LIMIAR de margem (inicio+margem
+#      hist, fim+margem ao-vivo, ou ts futuro) cai DENTRO do evento; esses
+#      viram "pendentes" e, quando o relogio da aposta cruza o limiar, o
+#      corte e RECALCULADO do zero (exatidao preservada; sem aproximacao);
+#   3. stats das janelas memoizadas por (lista-do-evento, linha, lado) —
+#      janelas de QUANTIDADE apenas; janela de TEMPO depende do ts do tick
+#      e NUNCA e memoizada (calcula direto, como sempre).
+#
+# BLINDAGEM: qualquer excecao no caminho novo -> log + FALLBACK AUTOMATICO
+# pro caminho v15 naquela consulta (resultado nunca em risco). Reversao
+# total: USAR_CUTOFF_V16 = False. Contadores em _V16_STATS.
+# =====================================================================
+USAR_CUTOFF_V16 = True
+
+_V16_STATS = {"cortes_calculados": 0, "cortes_reusados": 0,
+              "invalidacoes_pendente": 0, "fallbacks_corte": 0,
+              "stats_memo_hits": 0, "stats_memo_miss": 0,
+              "fallbacks_stats": 0}
+
+
+class _ListaCortada(list):
+    """Lista de jogos cortada, com espaco pra memo de stats. O memo vive e
+    morre COM a lista (trocou o evento -> lista nova -> memo novo): zero
+    risco de reuso indevido e zero vazamento."""
+    __slots__ = ("memo",)
+
+    def __init__(self, *a):
+        super().__init__(*a)
+        self.memo = {}
+
+
+def _preparar_jogos_inplace(jogos: list) -> list:
+    """v16: normaliza ts/ultimo_tick_ts UMA vez no load (tira tz mantendo o
+    horario de parede — mesma regra do _dt_naive). Antes isso rodava por
+    JOGO x por TICK. BLINDADO: item problematico fica como esta (o corte
+    v15/v16 ja pula ts None)."""
+    for j in jogos:
+        try:
+            j['ts'] = _dt_naive(j.get('ts'))
+            j['ultimo_tick_ts'] = _dt_naive(j.get('ultimo_tick_ts'))
+        except Exception:
+            continue
+    return jogos
+
+
+class _SlotCorte:
+    """Corte cacheado de UM evento para UM sujeito (par ou jogador).
+    'pendentes' = limiares (datetimes) de jogos hoje EXCLUIDOS que passam a
+    ENTRAR quando antes_de_ts cruzar o limiar — ai o corte e refeito."""
+    __slots__ = ("ev", "antes_base", "lista", "pendentes")
+
+    def __init__(self, ev, antes_base, lista, pendentes):
+        self.ev = ev
+        self.antes_base = antes_base
+        self.lista = lista
+        self.pendentes = pendentes
+
+
+def _cortar_e_pendentes(jogos, antes, ev_str, m_vivo, m_hist):
+    """Corte identico ao v15 (mesmas 4 regras, mesma ordem) + coleta dos
+    limiares de transicao. Roda sobre datas JA normalizadas (load)."""
+    corte_ao_vivo = antes - timedelta(minutes=m_vivo)
+    corte_hist = antes - timedelta(minutes=m_hist)
+    out = _ListaCortada()
+    pend = []
+    for j in jogos:
+        tsj = j.get('ts')
+        if tsj is None:
+            continue
+        try:
+            if tsj >= antes:
+                # futuro AGORA; entra quando antes > tsj -> pendente
+                pend.append(tsj)
+                continue
+            ult = j.get('ultimo_tick_ts')
+            if ult is not None:
+                if ult >= corte_ao_vivo:
+                    pend.append(ult + timedelta(minutes=m_vivo))
+                    continue
+            elif j.get('fonte') == 'tick':
+                continue           # tick sem fim: conservador (igual v15)
+            else:
+                if tsj > corte_hist:
+                    pend.append(tsj + timedelta(minutes=m_hist))
+                    continue
+        except TypeError:
+            continue
+        if ev_str is not None:
+            if str(j.get('event_id')) == ev_str or str(j.get('event_id_tick')) == ev_str:
+                continue
+        out.append(j)
+    return out, pend
+
+
+def _cutoff_v16(slots: dict, jogos_prep: list, antes_de_ts, event_id_excluir,
+                m_vivo: int, m_hist: int):
+    """Substitui o corte por-tick pelo corte por-EVENTO com invalidacao por
+    pendentes. slots = dict {sujeito -> _SlotCorte} da instancia de cache
+    (1 slot por sujeito: o mesmo par/jogador nao tem 2 eventos simultaneos).
+    BLINDADO: qualquer surpresa -> fallback exato pro v15 nesta consulta."""
+    try:
+        antes = _dt_naive(antes_de_ts)
+        if antes is None:
+            return _ListaCortada()
+        ev = None if event_id_excluir is None else str(event_id_excluir)
+        slot = slots.get('_')
+        if (slot is not None and slot.ev == ev and antes >= slot.antes_base):
+            # mesmo evento, relogio so avancou: valido a menos que algum
+            # pendente tenha cruzado o limiar (jogo passaria a ENTRAR)
+            if not any(lim <= antes for lim in slot.pendentes):
+                _V16_STATS["cortes_reusados"] += 1
+                return slot.lista
+            _V16_STATS["invalidacoes_pendente"] += 1
+        lista, pend = _cortar_e_pendentes(jogos_prep, antes, ev, m_vivo, m_hist)
+        slots['_'] = _SlotCorte(ev, antes, lista, pend)
+        _V16_STATS["cortes_calculados"] += 1
+        return lista
+    except Exception:
+        _V16_STATS["fallbacks_corte"] += 1
+        logger.exception("[v16] corte falhou — fallback pro caminho v15")
+        # AUTO-CURA (pego na bancada de sabotagem): sem isto, um slot
+        # corrompido ficava no cache e TODA consulta seguinte do sujeito
+        # caia em fallback ate o fim do job — degradacao permanente e
+        # silenciosa. Removendo, a proxima consulta reconstroi limpo e o
+        # ganho volta sozinho.
+        try:
+            slots.pop('_', None)
+        except Exception:
+            pass
+        # tipo consistente: _ListaCortada mesmo no fallback, pro memo de
+        # stats continuar valendo na sequencia.
+        return _ListaCortada(_aplicar_cutoff_jogos(
+            jogos_prep, antes_de_ts, event_id_excluir, m_vivo, m_hist))
+
+
+def _tem_janela_de_tempo(*conjuntos) -> bool:
+    for c in conjuntos:
+        if not c:
+            continue
+        for x in c:
+            if not isinstance(x, int):
+                return True
+    return False
+
+
+def _stats_h2h_memo(jogos, linha_atual, janelas_wr=None, janelas_media=None,
+                    lado=None, ts_ref=None):
+    """Memo de _calcular_stats_h2h por (lista-do-evento, linha, lado).
+    So memoiza quando: a lista e uma _ListaCortada v16 (memo atrelado ao
+    evento) E nao ha janela de TEMPO (essas dependem do ts do tick).
+    O calculo em si e a funcao ORIGINAL, intocada. BLINDADO: erro no memo
+    -> calcula direto."""
+    try:
+        memo = getattr(jogos, 'memo', None)
+        if memo is None or _tem_janela_de_tempo(janelas_wr, janelas_media):
+            return _calcular_stats_h2h(jogos, linha_atual, janelas_wr,
+                                       janelas_media, lado, ts_ref)
+        chave = (linha_atual, lado,
+                 frozenset(janelas_wr) if janelas_wr else None,
+                 frozenset(janelas_media) if janelas_media else None)
+        st = memo.get(chave)
+        if st is not None:
+            _V16_STATS["stats_memo_hits"] += 1
+            return st
+        _V16_STATS["stats_memo_miss"] += 1
+        st = _calcular_stats_h2h(jogos, linha_atual, janelas_wr,
+                                 janelas_media, lado, ts_ref)
+        memo[chave] = st
+        return st
+    except Exception:
+        _V16_STATS["fallbacks_stats"] += 1
+        logger.exception("[v16] memo de stats falhou — calculando direto")
+        return _calcular_stats_h2h(jogos, linha_atual, janelas_wr,
+                                   janelas_media, lado, ts_ref)
+
 
 ESPORTE_UI_PARA_BANCO = {
     'fifa':    'E-Football',
@@ -154,6 +344,20 @@ MERCADO_TIPOS_POR_CASA = {
         'over_under_ft':        ['1450'],
         'ah_ft':                ['1446'],
         'ml_ft':                ['180032'],
+        # 03/ago: codigos de 1o TEMPO. Origem: o mapa de protocolo do
+        # coletor CDP, o mesmo que o converter_betsapi grava no parquet
+        # (180062 = 1st half total, 180061 = 1st half spread, 180060 =
+        # 1st half money line). Antes disto, mercado HT da bet365 so
+        # casava pelo fallback de PALAVRA-CHAVE (porta lateral: funciona,
+        # mas depende do nome do mercado vir bonitinho).
+        # NAO VERIFICADO em e-Soccer — se um desses codigos significar
+        # outra coisa la, o cinto que segura e' a checagem de PERIODO pelo
+        # NOME do mercado (_periodo_do_mercado), que exige "1o Tempo"/"1st
+        # half" no rotulo pra aceitar como HT. Verificar no primeiro teste
+        # de e-Soccer: a planilha tem que mostrar placar de INTERVALO.
+        'over_under_ht':        ['180062'],
+        'ah_ht':                ['180061'],
+        'ml_ht':                ['180060'],
     },
 }
 
@@ -1090,6 +1294,7 @@ class H2HCache:
         self._casa = casa
         self._esporte = esporte_banco
         self._cache: dict = {}
+        self._cortes: dict = {}   # v16: {par -> {'_': _SlotCorte}}
 
     @staticmethod
     def _normalizar_par(ja: str, jb: str) -> tuple:
@@ -1122,8 +1327,15 @@ class H2HCache:
             return []
 
         if par not in self._cache:
-            self._cache[par] = await self._buscar(par[0], par[1])
+            self._cache[par] = _preparar_jogos_inplace(
+                await self._buscar(par[0], par[1]))
 
+        if USAR_CUTOFF_V16:
+            return _cutoff_v16(self._cortes.setdefault(par, {}),
+                               self._cache[par], antes_de_ts, event_id_excluir,
+                               self.MARGEM_AO_VIVO_MIN,
+                               _margem_hist_min_por_esporte(
+                                   getattr(self, '_esporte', None)))
         return _aplicar_cutoff_jogos(self._cache[par], antes_de_ts,
                                      event_id_excluir, self.MARGEM_AO_VIVO_MIN,
                                      _margem_hist_min_por_esporte(
@@ -1232,6 +1444,7 @@ class HistIndividualCache:
         self._casa = casa
         self._esporte = esporte_banco
         self._cache: dict = {}
+        self._cortes: dict = {}   # v16: {jogador -> {'_': _SlotCorte}}
 
     @staticmethod
     def _chave(jogador: str) -> str:
@@ -1244,7 +1457,13 @@ class HistIndividualCache:
         if not ch:
             return []
         if ch not in self._cache:
-            self._cache[ch] = await self._buscar(ch)
+            self._cache[ch] = _preparar_jogos_inplace(await self._buscar(ch))
+        if USAR_CUTOFF_V16:
+            return _cutoff_v16(self._cortes.setdefault(ch, {}),
+                               self._cache[ch], antes_de_ts, event_id_excluir,
+                               self.MARGEM_AO_VIVO_MIN,
+                               _margem_hist_min_por_esporte(
+                                   getattr(self, '_esporte', None)))
         return _aplicar_cutoff_jogos(self._cache[ch], antes_de_ts,
                                      event_id_excluir, self.MARGEM_AO_VIVO_MIN,
                                      _margem_hist_min_por_esporte(
@@ -2970,7 +3189,7 @@ async def executar_backtest(job_id: int):
 
                 # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
                 else:
-                    stats = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media,
+                    stats = _stats_h2h_memo(jogos_h2h, linha_num, janelas_wr, janelas_media,
                                                 lado=_lado_aposta(tick.get('selecao')),
                                                 ts_ref=tick['ts'])
                     stats['linha_atual'] = linha_num
@@ -2993,10 +3212,10 @@ async def executar_backtest(job_id: int):
                             rej['indiv_erro'] = rej.get('indiv_erro', 0) + 1
                             continue
                         _lado_t = _lado_aposta(tick.get('selecao'))
-                        st_ind_a = _calcular_stats_h2h(jogos_ind_a, linha_num,
+                        st_ind_a = _stats_h2h_memo(jogos_ind_a, linha_num,
                                                        janelas_wr_indiv, set(),
                                                        lado=_lado_t, ts_ref=tick['ts'])
-                        st_ind_b = _calcular_stats_h2h(jogos_ind_b, linha_num,
+                        st_ind_b = _stats_h2h_memo(jogos_ind_b, linha_num,
                                                        janelas_wr_indiv, set(),
                                                        lado=_lado_t, ts_ref=tick['ts'])
                         stats_indiv = {'a': st_ind_a, 'b': st_ind_b}

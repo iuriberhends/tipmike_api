@@ -1,5 +1,9 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas)
+
+v15 - TETO DE CONFRONTOS (maxPartidas): espelha o minPartidas nos mesmos
+  4 pontos de validacao. Ausente/None = sem teto (mudanca ADITIVA, zero
+  efeito em bot ou job que nao usa o campo).
 
 v12 - Filtro FOLGA (so handicap):
 - folga = hc_assinado - (pts_adversario - pts_do_lado_apostado), calculada no
@@ -906,6 +910,11 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
             _mp = int(_mp_raw) if _mp_raw is not None else 20
         except (TypeError, ValueError):
             _mp = 20
+        _mx_raw = _f.get('hist_max_partidas')
+        try:
+            _mxp = int(_mx_raw) if _mx_raw not in (None, '', '-') else None
+        except (TypeError, ValueError):
+            _mxp = None
 
         # ===== v11: ramo INDIVIDUAL =====
         if _eh_filtro_individual(_f):
@@ -919,6 +928,8 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
             _pz, _qz = _pct_team_plus(_fatia_z, _z_nome, hc_linha)
             stats[f'wr_ult{_tok}_ind'] = _pz
             stats[f'wr_ult{_tok}_ind_qtd'] = _qz
+            if _mxp is not None and (_qz_tot or 0) > _mxp:
+                return False, f'hc_f{_i}_indiv_zebra_qtd_{_qz_tot or 0}_gt_max_{_mxp}'
             if (_qz_tot or 0) < _mp:
                 return False, f'hc_f{_i}_indiv_zebra_insuf_qtd_{_qz_tot or 0}_min_{_mp}'
             if _pz is None:
@@ -976,6 +987,8 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
         stats[f'wr_ult{_tok}_qtd'] = qtd_janela
         # minPartidas (maturidade): hist -> total do par; comp -> qtd da janela
         _qtd_validar = qtd_global if _f.get('_origem', 'comp') == 'hist' else (qtd_janela or 0)
+        if _mxp is not None and _qtd_validar > _mxp:
+            return False, f'hc_f{_i}_qtd_{_qtd_validar}_gt_max_{_mxp}'
         if _qtd_validar < _mp:
             return False, f'hc_f{_i}_insuf_qtd_{_qtd_validar}_min_{_mp}'
         if pct is None:
@@ -1640,6 +1653,10 @@ def _normalizar_filtros_hist(filtros_hist: list) -> list:
             'hist_base': fh.get('base', 'match'),
             'hist_tipo': fh.get('tipo', 'all'),
             'hist_min_partidas': fh.get('minPartidas'),
+            # v15: TETO de maturidade (maxPartidas). Mesma unidade do
+            # minPartidas: total do par p/ filtros hist, qtd da janela p/ comp.
+            # None/ausente = SEM teto — todo bot e job existente segue identico.
+            'hist_max_partidas': fh.get('maxPartidas'),
             'hist_indiv_alvo': _normalizar_indiv_alvo(
                 fh.get('indivAlvo', fh.get('indiv_alvo'))),
             '_origem': 'hist',
@@ -2181,6 +2198,12 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list,
             min_partidas = int(min_partidas)
         except (TypeError, ValueError):
             min_partidas = min_h2h
+        _mx_p_raw = f.get('hist_max_partidas')
+        try:
+            max_partidas = (int(_mx_p_raw)
+                            if _mx_p_raw not in (None, '', '-') else None)
+        except (TypeError, ValueError):
+            max_partidas = None
 
         # ===== v11: filtro INDIVIDUAL (base=individual) =====
         # WR da janela sobre o historico de CADA jogador (contra qualquer
@@ -2194,6 +2217,8 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list,
             for _lado_k in ('a', 'b'):
                 _st_j = stats_indiv.get(_lado_k) or {}
                 _qtd_j = _st_j.get('qtd_h2h', 0) or 0
+                if max_partidas is not None and _qtd_j > max_partidas:
+                    return False, f'indiv_{_lado_k}_qtd_{_qtd_j}_gt_max_{max_partidas}'
                 if _qtd_j < min_partidas:
                     return False, f'indiv_{_lado_k}_insuficiente_qtd_{_qtd_j}_min_{min_partidas}'
                 _valor_j = _st_j.get(f'wr_ult{tok}')
@@ -2230,6 +2255,8 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list,
             elif tipo == 'media' and tok is not None:
                 qtd_validar = stats.get(f'media_ult{tok}_qtd', qtd_global) or 0
 
+        if max_partidas is not None and qtd_validar > max_partidas:
+            return False, f'h2h_qtd_{qtd_validar}_gt_max_{max_partidas}'
         if qtd_validar < min_partidas:
             return False, f'h2h_insuficiente_qtd_{qtd_validar}_min_{min_partidas}'
 

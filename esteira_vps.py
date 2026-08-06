@@ -38,8 +38,13 @@ import pandas as pd
 import numpy as np
 
 # ============================== CONFIG =======================================
-PARQUET = "h2h_bet365_15d.parquet"       # ticks (na mesma pasta, ou caminho)
+PARQUET = "over_bet365_30d.parquet"       # ticks (na mesma pasta, ou caminho)
 PLANILHA_ESTRATEGIAS = "estrategias.xlsx"
+# v2.8: aborta a rodada apos N jobs SEGUIDOS com 0 apostas. Sem isso, um
+# codigo de mercado errado na planilha queima ~50s por job em silencio —
+# aconteceu de verdade: 30 jobs perdidos por 'ou_ft' em vez de 'over_under_ft'.
+# 0 desliga a trava.
+MAX_ZERADOS_SEGUIDOS = 3
 SAIDA = "placar_esteira.xlsx"
 STATE = "esteira_state.json"
 
@@ -67,10 +72,17 @@ ESPORTE_PADRAO = "nba2k"                  # UI -> banco: E-Basketball
 
 VARIACOES = {
     "chip_wr_min": [-5.0, +5.0],          # pontos de %
+    "chip_wr_max": [-5.0, +5.0],          # p/ chip em BANDA (mercados de total)
     "folga_min":   [-1.0, +1.0],
     "linha_min":   [-1.0, +1.0],
+    "linha_max":   [-1.0, +1.0],          # o corte que decide em total de pontos
     "teto":        [-2, +2],
 }
+# A linha do handicap anda de 0,5 em 0,5 (1 a 35); a de total de pontos anda na
+# casa das dezenas (66 a 161). Passo de 1 ali nao mexe em nada — entao o passo
+# dos eixos de linha ESCALA com o valor.
+def _passo_linha(base):
+    return 5.0 if (base is not None and abs(base) >= 40) else 1.0
 # =============================================================================
 
 # --- imports do proprio tipmike_api (por isso o script mora na raiz do repo) --
@@ -123,13 +135,19 @@ def montar_snapshot(e: dict) -> dict:
         wr_max = _pct(e.get(pref + "wr_max"))
         if wr_min is None and wr_max is None:
             continue
-        hist.append({
+        _h = {
             "base": "match", "tipo": "all", "versao": "all",
             "janela": _janela_api(e.get(pref + "janela")),
             "prob": [wr_min if wr_min is not None else 0.0,
                      wr_max if wr_max is not None else 100.0],
             "minPartidas": int(_num(e.get(pref + "conf")) or 0),
-        })
+        }
+        # v2.5: TETO de confrontos (runner v15). Colunas `chip_conf_max` e
+        # `chip2_conf_max` na planilha. Vazio = sem teto.
+        _cmax = _num(e.get(pref + "conf_max"))
+        if _cmax is not None and _cmax > 0:
+            _h["maxPartidas"] = int(_cmax)
+        hist.append(_h)
     if hist:
         filtros["filtrosHistAdicionados"] = hist
 
@@ -171,8 +189,101 @@ def montar_snapshot(e: dict) -> dict:
     }
 
 
-def assinatura(snap: dict) -> str:
-    return hashlib.sha1(json.dumps(snap, sort_keys=True, default=str)
+def _fmt(v, suf=''):
+    if v is None:
+        return ''
+    f = float(v)
+    return (f'{int(f)}{suf}' if f == int(f) else f'{f:g}{suf}')
+
+
+def resumo_config(snap: dict) -> dict:
+    """v2.3: devolve a config RESOLVIDA (a que o motor recebeu) em colunas.
+    Antes o placar so trazia o nome — e numa variacao ('[folga_min+1]') o
+    valor real ficava implicito. Agora cada linha se explica sozinha."""
+    fl = snap.get('filtros', {}) or {}
+    hist = fl.get('filtrosHistAdicionados', []) or []
+
+    def chip(h):
+        if not h:
+            return '', ''
+        jan = str(h.get('janela', 'all'))
+        rot = 'Todas' if jan == 'all' else 'Últ.' + jan.split('_')[-1]
+        lo, hi = (h.get('prob') or [0, 100])[:2]
+        if lo and hi and hi < 100:
+            txt = f'{rot} {_fmt(lo)}~{_fmt(hi)}%'
+        elif hi and hi < 100:
+            txt = f'{rot}≤{_fmt(hi)}%'
+        else:
+            txt = f'{rot}≥{_fmt(lo)}%'
+        return txt, (h.get('minPartidas') or '')
+
+    c1, cf1 = chip(hist[0] if len(hist) > 0 else None)
+    c2, cf2 = chip(hist[1] if len(hist) > 1 else None)
+    cx1 = (hist[0].get('maxPartidas') if len(hist) > 0 else None) or ''
+    cx2 = (hist[1].get('maxPartidas') if len(hist) > 1 else None) or ''
+    teto = snap.get('max_apostas_partida')
+    fmin = fl.get('folgaMin') if fl.get('folgaAtivo') else None
+    fmax = fl.get('folgaMax') if fl.get('folgaAtivo') else None
+    partes = [p for p in (
+        c1, (f'conf≥{_fmt(cf1)}' if cf1 else ''),
+        (f'conf≤{_fmt(cx1)}' if cx1 else ''), c2,
+        (f'conf2≤{_fmt(cx2)}' if cx2 else ''),
+        (f'L≥{_fmt(snap.get("linha_min"))}' if snap.get('linha_min') else ''),
+        (f'L≤{_fmt(snap.get("linha_max"))}' if snap.get('linha_max') else ''),
+        (f'odd≥{_fmt(snap.get("odd_min"))}' if snap.get('odd_min') else ''),
+        (f'folga≥{_fmt(fmin)}' if fmin is not None else ''),
+        (f'folga≤{_fmt(fmax)}' if fmax is not None else ''),
+        (f'teto {teto}' if teto else 'sem teto')) if p]
+    return {
+        'config': ' · '.join(partes),
+        'chip1': c1, 'chip1_conf': cf1, 'chip1_conf_max': cx1,
+        'chip2': c2, 'chip2_conf': cf2, 'chip2_conf_max': cx2,
+        'linha_min': snap.get('linha_min'), 'linha_max': snap.get('linha_max'),
+        'odd_min': snap.get('odd_min'), 'odd_max': snap.get('odd_max'),
+        'folga_min': fmin, 'folga_max': fmax, 'teto': teto,
+        'lado': (fl.get('lados') or ['ambos'])[0],
+    }
+
+
+def _hash_motor() -> str:
+    """v2.7: impressao digital do MOTOR (workers/backtest_runner.py).
+
+    Por que existe: o state guardava resultado por config + parquet. Trocar o
+    runner nao mudava a assinatura, entao a esteira devolvia numero do motor
+    ANTIGO como se fosse do novo — silenciosamente. Isso chegou a pular um
+    teste de aceite. Agora o proprio arquivo do runner entra no hash: mexeu no
+    motor, tudo roda de novo, sem ninguem precisar lembrar de apagar o state.
+    """
+    for cam in (Path("workers/backtest_runner.py"),
+                Path(__file__).resolve().parent / "workers" / "backtest_runner.py"):
+        try:
+            if cam.is_file():
+                return hashlib.sha1(cam.read_bytes()).hexdigest()[:10]
+        except Exception:
+            pass
+    return "motor-desconhecido"
+
+
+_MOTOR_HASH = None
+
+
+def assinatura(snap: dict, base: str = '') -> str:
+    # v2.3: o NOME fica FORA do hash. Antes ele entrava, e duas linhas com a
+    # mesma config sob nomes diferentes (ex.: a mae 'c_todas75_L105_f35' e a
+    # variacao 'c_todas70_L105_f35 [chip_wr_min+5]', que sao a MESMA coisa)
+    # geravam assinaturas distintas — o state nao reconhecia e o motor rodava
+    # o job de novo. Na rodada de 04/ago isso queimou 8 jobs (~5 min) repetindo
+    # configs ja medidas.
+    # v2.4: a BASE (hash do parquet) entra no hash. Sem isso, trocar de
+    # parquet fazia o state devolver o numero da base ANTIGA como se fosse
+    # da nova — silenciosamente. Agora base nova = tudo roda de novo.
+    global _MOTOR_HASH
+    if _MOTOR_HASH is None:
+        _MOTOR_HASH = _hash_motor()
+    limpo = {k: v for k, v in snap.items() if k != 'nome'}
+    limpo['__base__'] = base
+    limpo['__motor__'] = _MOTOR_HASH
+    return hashlib.sha1(json.dumps(limpo, sort_keys=True, default=str)
                         .encode()).hexdigest()[:14]
 
 
@@ -184,13 +295,14 @@ def gerar_variacoes(e: dict) -> list:
             continue
         for dlt in deltas:
             v = dict(e)
-            if campo == "chip_wr_min":
+            if campo in ("chip_wr_min", "chip_wr_max"):
                 b = _pct(base)
                 novo = min(100.0, max(0.0, b + dlt))
                 if novo == b:
                     continue
             else:
-                novo = base + dlt
+                _d = dlt * _passo_linha(base) if campo.startswith("linha") else dlt
+                novo = base + _d
                 if campo == "teto":
                     novo = int(novo)
                     if novo < 1:
@@ -241,13 +353,14 @@ def _proximo_passo(v: dict):
                 base = _num(v.get(campo))
                 if base is None:
                     return None
-                if campo == "chip_wr_min":
+                if campo in ("chip_wr_min", "chip_wr_max"):
                     b = _pct(base)
                     novo = min(100.0, max(0.0, b + dlt))
                     if novo == b:
                         return None
                 else:
-                    novo = base + dlt
+                    _d = dlt * _passo_linha(base) if campo.startswith("linha") else dlt
+                    novo = base + _d
                     if campo == "teto":
                         novo = int(novo)
                         if novo < 1:
@@ -396,6 +509,7 @@ async def main():
             print(f"ERRO: nao achei {arq} nesta pasta")
             return
 
+    zerados_seguidos = [0]
     est = pd.read_excel(PLANILHA_ESTRATEGIAS)
     est.columns = [str(c).strip().lower() for c in est.columns]
     if "nome" not in est.columns:
@@ -428,13 +542,15 @@ async def main():
             except Exception as ex:
                 log.append({"estrategia": nome, "evento": f"snapshot: {ex}"})
                 continue
-            ass = assinatura(snap)
+            ass = assinatura(snap, st['parquet'].get('hash', ''))
             reg = st["jobs"].get(ass, {})
             try:
                 if reg.get("metricas"):
                     m = reg["metricas"]
+                    igual = (f" (identica a '{reg['nome']}')"
+                             if reg.get("nome") and reg["nome"] != nome else "")
                     print(f"[{i}/{len(fila)}] {nome}: ja rodada "
-                          f"(job {reg.get('job_id')}) — reaproveitando")
+                          f"(job {reg.get('job_id')}){igual} — reaproveitando")
                 else:
                     t0 = time.time()
                     print(f"[{i}/{len(fila)}] {nome}: rodando no motor...")
@@ -444,6 +560,7 @@ async def main():
                                        "metricas": m}
                     salvar_estado(st)
                     if not m.get("apostas"):
+                        zerados_seguidos[0] += 1
                         tem_chip = bool(snap["filtros"].get("filtrosHistAdicionados"))
                         print(f"    job {job_id} em {time.time()-t0:.0f}s -> "
                               f"0 apostas" + (
@@ -451,12 +568,30 @@ async def main():
                                   "casa/esporte (CASA_PADRAO/ESPORTE_PADRAO) "
                                   "contra o que o banco tem" if tem_chip else
                                   "  (filtro cortou tudo)"))
+                        if (MAX_ZERADOS_SEGUIDOS
+                                and zerados_seguidos[0] >= MAX_ZERADOS_SEGUIDOS):
+                            print("\n" + "=" * 78)
+                            print(f" ABORTANDO: {zerados_seguidos[0]} jobs "
+                                  "SEGUIDOS com 0 apostas.")
+                            print(" Quase sempre e um destes tres, nesta ordem:")
+                            print(f"   1. coluna `mercado` da planilha "
+                                  f"(este job usou: {snap.get('mercado')!r})")
+                            print(f"   2. PARQUET nao tem ticks desse mercado "
+                                  f"(atual: {PARQUET!r})")
+                            print(f"   3. casa/esporte "
+                                  f"({snap.get('casa')!r}/{snap.get('esporte')!r})")
+                            print(" Confira, corrija e rode de novo — o que ja "
+                                  "rodou fica no state.")
+                            print("=" * 78)
+                            break
                     else:
+                        zerados_seguidos[0] = 0
                         print(f"    job {job_id} em {time.time()-t0:.0f}s -> "
                               f"{m.get('apostas')} ap | {m.get('G-R')} | "
                               f"WR {m.get('WR')} | ROI {m.get('ROI')} | "
                               f"3d {m.get('roi_3d')} | 7d {m.get('roi_7d')}")
-                placar.append({"estrategia": nome, "mae": e.get("_mae", ""),
+                placar.append({"estrategia": nome, **resumo_config(snap),
+                               "mae": e.get("_mae", ""),
                                "eixo": e.get("_eixo", ""),
                                "job": st["jobs"][ass].get("job_id"), **m})
                 # HILL-CLIMB: variacao que MELHOROU a mae anda mais um passo
