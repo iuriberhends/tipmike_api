@@ -1,5 +1,11 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo)
+
+v16 - FILTRO ATROPELO: % dos jogos ANTERIORES de cada jogador que terminaram
+  com |diferenca| >= atropeloMargem (default 15). Valor da aposta = o PIOR dos
+  dois jogadores. Chaves em filtros: atropeloAtivo/Min/Max/Margem/MinJogos.
+  Ausente = desligado. Aplicado por ULTIMO no laco (so quem passou em tudo
+  paga o custo) e memoizado por (jogador, qtd de jogos).
 
 v15 - TETO DE CONFRONTOS (maxPartidas): espelha o minPartidas nos mesmos
   4 pontos de validacao. Ausente/None = sem teto (mudanca ADITIVA, zero
@@ -689,6 +695,79 @@ def _resolver_pts_hc(jogo: dict, alvo_upper: str) -> tuple:
     if jb == alvo_upper:
         return sa, sh
     return None, None
+
+
+def _taxa_atropelo(jogos: list, alvo: str, margem: float = 15.0) -> tuple:
+    """v16 — TAXA DE ATROPELO do jogador: (% dos jogos ANTERIORES dele que
+    terminaram com |diferenca| >= margem, quantidade valida).
+
+    Aposta de almofada (azarao com folga, over com linha atrasada) morre em jogo
+    que desanda. Jogador cujos jogos viram massacre e veneno pros DOIS lados —
+    por isso e propriedade do JOGO, nao do lado.
+
+    Blindado: jogo sem placar resolvivel e ignorado (fora do denominador);
+    lista vazia ou zero validos devolve (None, 0) e o chamador FECHA.
+    """
+    if not jogos:
+        return None, 0
+    alvo_u = (alvo or '').strip().upper()
+    validos = atropelos = 0
+    for j in jogos:
+        try:
+            pa, pv = _resolver_pts_hc(j, alvo_u)
+        except Exception:
+            continue
+        if pa is None or pv is None:
+            continue
+        validos += 1
+        if abs(float(pa) - float(pv)) >= margem:
+            atropelos += 1
+    if validos == 0:
+        return None, 0
+    return (atropelos / validos) * 100.0, validos
+
+
+async def _checar_atropelo(tick, indiv_cache, memo, margem, min_jogos,
+                           lim_min, lim_max, job_id=None):
+    """v16 — decide o tick pelo ATROPELO. Devolve (ok, motivo, valor).
+
+    PERF: a taxa de um jogador so muda quando entra jogo novo, entao ela e
+    memoizada por (jogador, qtd de jogos que o cutoff devolveu). Uma rodada faz
+    algumas centenas de calculos em vez de um por tick.
+
+    FAIL CLOSED em todas as pontas: sem par, erro de busca, historico curto ou
+    config invalida -> tick REJEITADO com motivo proprio. Nunca passa calado.
+    """
+    ja = tick.get('jogador_a')
+    jb = tick.get('jogador_b')
+    if not ja or not jb:
+        return False, 'atropelo_sem_par', None
+    try:
+        taxas = []
+        for _p in (ja, jb):
+            _jg = await indiv_cache.get_jogos(
+                _p, tick['ts'], event_id_excluir=tick.get('event_id'))
+            _k = ((_p or '').strip().upper(), len(_jg))
+            if _k not in memo:
+                memo[_k] = _taxa_atropelo(_jg, _p, margem)
+            taxas.append(memo[_k])
+    except Exception as e:
+        logger.warning(f"[backtest] job {job_id}: falha atropelo {ja}/{jb}: {e}")
+        return False, 'atropelo_erro', None
+    (tx_a, n_a), (tx_b, n_b) = taxas
+    if tx_a is None or tx_b is None or n_a < min_jogos or n_b < min_jogos:
+        return False, 'atropelo_hist_insuf', None
+    val = max(tx_a, tx_b)                     # o PIOR dos dois
+    for lim, e_piso in ((lim_min, True), (lim_max, False)):
+        if lim is None:
+            continue
+        try:
+            _v = float(lim)
+        except (TypeError, ValueError):
+            return False, 'atropelo_cfg_invalida', None
+        if (val < _v) if e_piso else (val > _v):
+            return False, 'atropelo', val
+    return True, '', val
 
 
 def _pct_team_plus(jogos: list, alvo: str, linha: float) -> tuple:
@@ -2709,6 +2788,22 @@ async def executar_backtest(job_id: int):
         # que 'ativo' com bordas None deixe todo tick passar por engano).
         if momento_ativo and momento_min is None and momento_max is None:
             momento_ativo = False
+        # v16 — ATROPELO. Bot/job antigo sem as chaves = desligado, comportamento
+        # identico ao de antes. atropeloMargem default 15, atropeloMinJogos 6.
+        _fd = filtros if isinstance(filtros, dict) else {}
+        atropelo_ativo = bool(_fd.get('atropeloAtivo', False))
+        atropelo_min = _fd.get('atropeloMin') if atropelo_ativo else None
+        atropelo_max = _fd.get('atropeloMax') if atropelo_ativo else None
+        try:
+            atropelo_margem = float(_fd.get('atropeloMargem') or 15)
+        except (TypeError, ValueError):
+            atropelo_margem = 15.0
+        try:
+            atropelo_min_jogos = int(_fd.get('atropeloMinJogos') or 6)
+        except (TypeError, ValueError):
+            atropelo_min_jogos = 6
+        if atropelo_ativo and atropelo_min is None and atropelo_max is None:
+            atropelo_ativo = False
         # FAIL CLOSED (filosofia v11): folga so faz sentido em handicap. Num
         # bot NAO-HC com folga ligada, TODO tick e rejeitado com motivo
         # proprio ('folga_so_hc') — nunca roda "sem o filtro" em silencio.
@@ -2747,6 +2842,9 @@ async def executar_backtest(job_id: int):
 
         # v11: filtros INDIVIDUAIS (base=individual)
         tem_indiv = _tem_filtro_individual(filtros_unificados)
+        # v16: o atropelo le o historico INDIVIDUAL de cada jogador
+        if atropelo_ativo:
+            tem_indiv = True
         janelas_wr_indiv = _janelas_wr_individuais(filtros_unificados) if tem_indiv else set()
         indiv_precisa_fav = any(
             _eh_filtro_individual(f) and f.get('hist_indiv_alvo') == 'ambos'
@@ -2943,6 +3041,9 @@ async def executar_backtest(job_id: int):
         sport_banco = ESPORTE_UI_PARA_BANCO.get(bot.get('esporte', ''), bot.get('esporte', ''))
         h2h_cache = H2HCache(pool, bot.get('casa', ''), sport_banco)
         # v11: cache de historico INDIVIDUAL (so consultado se tem_indiv)
+        # v16 PERF: memo da taxa por (jogador, qtd de jogos). Sem isso o
+        # calculo rodava do zero em TODO tick e a rodada ficava lenta.
+        _atr_memo: dict = {}
         indiv_cache = HistIndividualCache(pool, bot.get('casa', ''), sport_banco)
 
         max_apostas_partida = bot.get('max_apostas_partida')
@@ -3258,6 +3359,19 @@ async def executar_backtest(job_id: int):
                         else:
                             rej['comp'] += 1
                         continue
+
+                    # v16 — ATROPELO: por ultimo, de proposito. So os ticks que
+                    # ja passaram em TUDO pagam a busca do historico individual.
+                    if atropelo_ativo:
+                        _ok_a, _mot_a, _atr_v = await _checar_atropelo(
+                            tick, indiv_cache, _atr_memo, atropelo_margem,
+                            atropelo_min_jogos, atropelo_min, atropelo_max,
+                            job_id)
+                        if not _ok_a:
+                            rej[_mot_a] = rej.get(_mot_a, 0) + 1
+                            continue
+                        if _atr_v is not None and isinstance(stats, dict):
+                            stats['atropelo'] = round(_atr_v, 2)
 
                     # v10: passou nos filtros, mas com amostra h2h fraca? Marca pra
                     # reportar (NAO rejeita - so transparencia). qtd_h2h vem do stats.

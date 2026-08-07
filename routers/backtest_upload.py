@@ -417,6 +417,15 @@ class BacktestAvulsoRequest(BaseModel):
     evitar_linhas_seq: bool = Field(default=True)
     # FOLGA (v12): so aposta HC quando a zebra ja cobre a linha por >= folga_min
     # no placar do tick (folga = linha_assinada - deficit do lado). Espelha o vivo.
+    # ATROPELO (v16): % dos jogos ANTERIORES de cada jogador que terminaram com
+    # >= atropelo_margem de diferenca no placar final; vale o PIOR dos dois.
+    # Jogo que desanda mata aposta de almofada e o efeito bate nos DOIS lados —
+    # e' propriedade do JOGO, nao do lado. Ausente = filtro desligado.
+    atropelo_ativo: bool = Field(default=False)
+    atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
+    atropelo_max: Optional[float] = Field(default=None, ge=0, le=100)
+    atropelo_margem: Optional[float] = Field(default=None, ge=1, le=200)
+    atropelo_min_jogos: Optional[int] = Field(default=None, ge=1, le=500)
     folga_ativo: bool = Field(default=False)
     folga_min: Optional[float] = Field(default=None, ge=-1000, le=1000)
     folga_max: Optional[float] = Field(default=None, ge=-1000, le=1000)
@@ -691,6 +700,23 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
     # FOLGA (v12): passa pro snapshot no MESMO formato que o bot ao vivo usa
     # (filtros.folgaAtivo / folgaMin / folgaMax). So faz sentido em HC (ah_*),
     # mas grava sem discriminar mercado: o worker ignora em O/U (fail-closed).
+    # ATROPELO (v16): mesmo formato que o worker le (filtros.atropeloAtivo /
+    # atropeloMin / atropeloMax / atropeloMargem / atropeloMinJogos). So liga
+    # se houver borda — ativo sem min nem max nao filtra nada e o worker
+    # desliga sozinho. Medido out-of-sample no HC: cortar acima de 22% melhorou
+    # o ROI em todas as configs testadas. No Over PIORA — nao usar la.
+    if bool(req.atropelo_ativo) and (req.atropelo_min is not None
+                                     or req.atropelo_max is not None):
+        filtros["atropeloAtivo"] = True
+        if req.atropelo_min is not None:
+            filtros["atropeloMin"] = float(req.atropelo_min)
+        if req.atropelo_max is not None:
+            filtros["atropeloMax"] = float(req.atropelo_max)
+        if req.atropelo_margem:
+            filtros["atropeloMargem"] = float(req.atropelo_margem)
+        if req.atropelo_min_jogos:
+            filtros["atropeloMinJogos"] = int(req.atropelo_min_jogos)
+
     if bool(req.folga_ativo) and (req.folga_min is not None or req.folga_max is not None):
         filtros["folgaAtivo"] = True
         if req.folga_min is not None:

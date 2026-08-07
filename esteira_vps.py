@@ -24,6 +24,7 @@
 ===============================================================================
 """
 
+import argparse
 import asyncio
 import hashlib
 import json
@@ -38,7 +39,16 @@ import pandas as pd
 import numpy as np
 
 # ============================== CONFIG =======================================
-PARQUET = "over_bet365_30d.parquet"       # ticks (na mesma pasta, ou caminho)
+# v2.9: FONTE dos ticks — aceita .parquet OU .csv (o acervo da BetsAPI).
+# Caminho completo funciona; se for so o nome, procura nesta pasta.
+PARQUET = r"C:\Users\Administrator\PyCharmMiscProject\MikeBacktest\acervo_betsapi_H2H.csv"
+
+# v2.9: RECORTE DE DIAS. Pega os ULTIMOS N dias do arquivo (contados a partir
+# do tick mais recente que existe nele, nao da data de hoje). Use:
+#   3, 7, 15, 30 ...  -> ultimos N dias
+#   None  ou  0       -> TUDO, sem recorte
+# Recortar acelera muito: o motor le so a fatia, nao o acervo inteiro.
+DIAS = 30
 PLANILHA_ESTRATEGIAS = "estrategias.xlsx"
 # v2.8: aborta a rodada apos N jobs SEGUIDOS com 0 apostas. Sem isso, um
 # codigo de mercado errado na planilha queima ~50s por job em silencio —
@@ -453,18 +463,101 @@ def salvar_estado(st: dict):
         print(f"[esteira] AVISO: state nao salvo: {e}")
 
 
+def _coluna_ts(df) -> str:
+    """Acha a coluna de tempo do arquivo (o acervo da BetsAPI e o parquet dos
+    coletores nao usam o mesmo nome). BLINDADO: se nao achar, devolve ''."""
+    for c in ("ts", "timestamp", "data_hora", "datahora", "time", "hora_ts",
+              "created_at", "dt"):
+        if c in df.columns:
+            return c
+    for c in df.columns:
+        if "ts" == str(c).lower() or "time" in str(c).lower():
+            return c
+    return ""
+
+
 def preparar_upload_local(st: dict) -> str:
-    """Copia o parquet pra UPLOAD_DIR (1x por conteudo) e devolve o caminho,
-    que e o upload_id que o worker entende."""
-    h = hashlib.sha1(open(PARQUET, "rb").read()).hexdigest()[:16]
+    """v2.9: le a FONTE (.parquet ou .csv), aplica o recorte de DIAS e grava
+    um parquet em UPLOAD_DIR — o caminho e o upload_id que o worker entende.
+
+    A assinatura do cache inclui o recorte, entao trocar DIAS de 30 pra 7
+    gera outro arquivo e NAO reaproveita o anterior por engano.
+    """
+    origem = Path(PARQUET)
+    if not origem.is_file():
+        alt = Path(__file__).resolve().parent / origem.name
+        if alt.is_file():
+            origem = alt
+    bruto = hashlib.sha1(origem.read_bytes()).hexdigest()[:16]
+    dias = int(DIAS) if DIAS else 0
+    h = f"{bruto}_d{dias or 'tudo'}"
     if st["parquet"].get("hash") == h and os.path.exists(st["parquet"].get("path", "")):
+        print(f"[esteira] base ja preparada ({dias or 'tudo'} dias) — reusando")
         return st["parquet"]["path"]
+
     Path(UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
     destino = str(Path(UPLOAD_DIR) / f"esteira_{h}.parquet")
-    shutil.copyfile(PARQUET, destino)
+
+    eh_csv = origem.suffix.lower() in (".csv", ".txt")
+    if not eh_csv and not dias:
+        # parquet inteiro: caminho antigo, so copia (rapido)
+        shutil.copyfile(origem, destino)
+        st["parquet"] = {"hash": h, "path": destino}
+        salvar_estado(st)
+        print(f"[esteira] base preparada em {destino} (parquet inteiro)")
+        return destino
+
+    print(f"[esteira] lendo {origem.name} ...")
+    try:
+        df = (pd.read_csv(origem, low_memory=False) if eh_csv
+              else pd.read_parquet(origem))
+    except UnicodeDecodeError:
+        df = pd.read_csv(origem, low_memory=False, encoding="latin-1")
+    n0 = len(df)
+
+    if dias:
+        col = _coluna_ts(df)
+        if not col:
+            print(f"[esteira] AVISO: nao achei coluna de tempo em "
+                  f"{list(df.columns)[:8]}... — seguindo SEM recorte de dias")
+        else:
+            ts = pd.to_datetime(df[col], errors="coerce")
+            fim = ts.max()
+            if pd.isna(fim):
+                print("[esteira] AVISO: coluna de tempo sem data valida — "
+                      "seguindo SEM recorte")
+            else:
+                ini = fim - pd.Timedelta(days=dias)
+                df = df[ts >= ini].copy()
+                # imprime o que o arquivo TEM, nao o que foi pedido: pedir 30
+                # dias num arquivo de 15 mostrava "07/07 a 06/08" e dava a
+                # impressao de cobertura que nao existe.
+                _tr = ts[ts >= ini]
+                _real = (_tr.max() - _tr.min()).days + 1
+                print(f"[esteira] recorte pedido: {dias} dias | REAL no arquivo: "
+                      f"{_real} dias ({_tr.min():%d/%m} a {_tr.max():%d/%m}) "
+                      f"-> {len(df):,} de {n0:,} linhas")
+                if _real < dias:
+                    print(f"[esteira] AVISO: o arquivo so tem {_real} dias — "
+                          f"pedir {dias} nao cortou nada")
+                if df.empty:
+                    raise ValueError(
+                        f"o recorte de {dias} dias nao deixou nenhuma linha — "
+                        f"confira DIAS ou a coluna de tempo ({col})")
+    if not dias:
+        _c = _coluna_ts(df)
+        if _c:
+            _t = pd.to_datetime(df[_c], errors="coerce")
+            print(f"[esteira] sem recorte: {n0:,} linhas | "
+                  f"{(_t.max()-_t.min()).days+1} dias "
+                  f"({_t.min():%d/%m} a {_t.max():%d/%m})")
+        else:
+            print(f"[esteira] sem recorte: {n0:,} linhas (arquivo inteiro)")
+
+    df.to_parquet(destino, index=False)
     st["parquet"] = {"hash": h, "path": destino}
     salvar_estado(st)
-    print(f"[esteira] parquet preparado em {destino}")
+    print(f"[esteira] base preparada em {destino}")
     return destino
 
 
@@ -505,9 +598,12 @@ async def main():
     print(" ESTEIRA VPS v2 — motor real importado, jobs em sequencia")
     print("=" * 78)
     for arq in (PARQUET, PLANILHA_ESTRATEGIAS):
-        if not os.path.exists(arq):
-            print(f"ERRO: nao achei {arq} nesta pasta")
+        if not os.path.exists(arq) and not os.path.exists(
+                str(Path(__file__).resolve().parent / Path(arq).name)):
+            print(f"ERRO: nao achei {arq}")
             return
+    print(f"[esteira] fonte: {Path(PARQUET).name} | recorte: "
+          f"{(str(DIAS) + ' dias') if DIAS else 'TUDO'}")
 
     zerados_seguidos = [0]
     est = pd.read_excel(PLANILHA_ESTRATEGIAS)
@@ -701,7 +797,73 @@ async def main():
                                    index=False)
 
 
+def _ler_argumentos():
+    """v3.0: linha de comando manda mais que o CONFIG do topo.
+
+        python esteira_vps.py --30            (atalho: ultimos 30 dias)
+        python esteira_vps.py --7
+        python esteira_vps.py --tudo          (sem recorte)
+        python esteira_vps.py --dias 15
+        python esteira_vps.py --dias tudo --fonte outro_acervo.csv
+        python esteira_vps.py --planilha estrategias_over.xlsx --saida over.xlsx
+
+    Sem argumento nenhum, vale o que esta escrito no CONFIG (DIAS/PARQUET/...).
+    """
+    global DIAS, PARQUET, PLANILHA_ESTRATEGIAS, SAIDA, STATE, MAX_ZERADOS_SEGUIDOS
+
+    argv = sys.argv[1:]
+    # atalhos numericos: --30 --15 --7 --3 --tudo (viram --dias X)
+    normal = []
+    for a in argv:
+        s = a.lstrip('-')
+        if a.startswith('--') and (s.isdigit() or s.lower() in ('tudo', 'all')):
+            normal += ['--dias', s]
+        else:
+            normal.append(a)
+
+    ap = argparse.ArgumentParser(
+        prog='esteira_vps.py',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description='Roda a planilha de estrategias no motor real do tipmike.',
+        epilog='atalhos: --30  --15  --7  --3  --tudo')
+    ap.add_argument('--dias', '-d', default=None,
+                    help='ultimos N dias da fonte, ou "tudo" pra nao recortar. '
+                         'Conta do tick MAIS RECENTE do arquivo, nao de hoje')
+    ap.add_argument('--fonte', '-f', default=None,
+                    help='csv ou parquet com os ticks (default: o do CONFIG)')
+    ap.add_argument('--planilha', '-p', default=None, help='xlsx de estrategias')
+    ap.add_argument('--saida', '-o', default=None, help='xlsx do placar')
+    ap.add_argument('--state', default=None, help='json de estado (cache de jobs)')
+    ap.add_argument('--sem-trava', action='store_true',
+                    help='nao aborta apos jobs seguidos com 0 apostas')
+    a = ap.parse_args(normal)
+
+    if a.dias is not None:
+        d = str(a.dias).strip().lower()
+        if d in ('tudo', 'all', '0'):
+            DIAS = None
+        else:
+            try:
+                DIAS = int(d)
+                if DIAS <= 0:
+                    DIAS = None
+            except ValueError:
+                print(f"ERRO: --dias {a.dias!r} nao e numero nem 'tudo'")
+                sys.exit(2)
+    if a.fonte:
+        PARQUET = a.fonte
+    if a.planilha:
+        PLANILHA_ESTRATEGIAS = a.planilha
+    if a.saida:
+        SAIDA = a.saida
+    if a.state:
+        STATE = a.state
+    if a.sem_trava:
+        MAX_ZERADOS_SEGUIDOS = 0
+
+
 if __name__ == "__main__":
+    _ler_argumentos()
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
