@@ -169,6 +169,23 @@ def montar_snapshot(e: dict) -> dict:
         if fmax is not None:
             filtros["folgaMax"] = fmax
 
+    # v3.1: ATROPELO (runner v16) — colunas atropelo_min / atropelo_max /
+    # atropelo_margem (default 15) / atropelo_min_jogos (default 6).
+    # Vazias = filtro desligado, snapshot identico ao de antes.
+    amin, amax = _num(e.get("atropelo_min")), _num(e.get("atropelo_max"))
+    if amin is not None or amax is not None:
+        filtros["atropeloAtivo"] = True
+        if amin is not None:
+            filtros["atropeloMin"] = amin
+        if amax is not None:
+            filtros["atropeloMax"] = amax
+        _amg = _num(e.get("atropelo_margem"))
+        if _amg:
+            filtros["atropeloMargem"] = _amg
+        _amj = _num(e.get("atropelo_min_jogos"))
+        if _amj:
+            filtros["atropeloMinJogos"] = int(_amj)
+
     mmin, mmax = _num(e.get("momento_min")), _num(e.get("momento_max"))
     if mmin is not None or mmax is not None:
         filtros["momentoAtivo"] = True
@@ -243,6 +260,10 @@ def resumo_config(snap: dict) -> dict:
         (f'odd≥{_fmt(snap.get("odd_min"))}' if snap.get('odd_min') else ''),
         (f'folga≥{_fmt(fmin)}' if fmin is not None else ''),
         (f'folga≤{_fmt(fmax)}' if fmax is not None else ''),
+        (f'atropelo≥{_fmt(fl.get("atropeloMin"))}%'
+         if fl.get('atropeloAtivo') and fl.get('atropeloMin') is not None else ''),
+        (f'atropelo≤{_fmt(fl.get("atropeloMax"))}%'
+         if fl.get('atropeloAtivo') and fl.get('atropeloMax') is not None else ''),
         (f'teto {teto}' if teto else 'sem teto')) if p]
     return {
         'config': ' · '.join(partes),

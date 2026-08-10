@@ -2842,9 +2842,10 @@ async def executar_backtest(job_id: int):
 
         # v11: filtros INDIVIDUAIS (base=individual)
         tem_indiv = _tem_filtro_individual(filtros_unificados)
-        # v16: o atropelo le o historico INDIVIDUAL de cada jogador
-        if atropelo_ativo:
-            tem_indiv = True
+        # v16: o atropelo le o historico individual, MAS por conta propria
+        # (indiv_cache direto, memoizado). Nao precisa forcar tem_indiv, que
+        # ligaria o calculo de stats individuais pra todo tick — era isso que
+        # deixava a rodada 6x mais lenta sem filtrar nada.
         janelas_wr_indiv = _janelas_wr_individuais(filtros_unificados) if tem_indiv else set()
         indiv_precisa_fav = any(
             _eh_filtro_individual(f) and f.get('hist_indiv_alvo') == 'ambos'
@@ -3314,6 +3315,21 @@ async def executar_backtest(job_id: int):
                     qtd_h2h = stats.get('hc_pct_qtd', 0) or 0
                     if qtd_h2h < H2H_MIN_SAUDAVEL:
                         qualidade['apostas_h2h_fraco'] += 1
+
+                    # v16.1 — ATROPELO no ramo HC. O laco tem DOIS ramos
+                    # (HC e over/under) e a v16 so tinha posto o filtro no
+                    # segundo: em ah_ft ele nunca era alcancado, e o unico
+                    # efeito visivel era a lentidao do tem_indiv=True.
+                    if atropelo_ativo:
+                        _ok_a, _mot_a, _atr_v = await _checar_atropelo(
+                            tick, indiv_cache, _atr_memo, atropelo_margem,
+                            atropelo_min_jogos, atropelo_min, atropelo_max,
+                            job_id)
+                        if not _ok_a:
+                            rej[_mot_a] = rej.get(_mot_a, 0) + 1
+                            continue
+                        if _atr_v is not None and isinstance(stats, dict):
+                            stats['atropelo'] = round(_atr_v, 2)
 
                 # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
                 else:
