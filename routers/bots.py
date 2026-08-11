@@ -239,6 +239,10 @@ async def list_bots(
     casa: Optional[str] = Query(None),
     esporte: Optional[str] = Query(None),
     q: Optional[str] = Query(None, description="Busca por nome (LIKE)"),
+    escopo: str = Query("todos", pattern="^(todos|meus)$",
+                        description="admin: 'todos' (padrao) ou 'meus' (so os "
+                                    "bots dele). Usuario comum ve so os dele "
+                                    "de qualquer jeito."),
     usuario: dict = Depends(get_current_user),
 ):
     """
@@ -247,15 +251,25 @@ async def list_bots(
 
     Fase 4 (ownership): usuário comum vê só os próprios bots;
     admin/serviço vê todos (com user_id + dono_nome em cada item).
+
+    v2 (11/ago): admin ganhou ESCOLHA. `escopo=meus` filtra pelos bots do
+    próprio admin; `escopo=todos` (padrão) mantém o comportamento de sempre.
+    Pro usuário comum o parâmetro é inócuo — o filtro por dono continua
+    aplicado de qualquer forma (a permissão NÃO vem do parâmetro, vem do
+    acesso_total; senão bastaria mandar escopo=todos pra ver bot alheio).
     """
-    cache_key = f"list:{_escopo(usuario)}:{limit}:{offset}:{status}:{casa}:{esporte}:{q}"
+    # o escopo entra na CHAVE do cache: sem isso, "todos" e "meus" se
+    # atropelariam (o segundo pedido receberia a lista do primeiro).
+    cache_key = (f"list:{_escopo(usuario)}:{escopo}:{limit}:{offset}:"
+                 f"{status}:{casa}:{esporte}:{q}")
     cached = _cache_get(cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
     where = []
     params = []
-    if not acesso_total(usuario):
+    # usuario comum: sempre so os dele. Admin: so filtra se PEDIR (escopo=meus).
+    if not acesso_total(usuario) or escopo == "meus":
         params.append(usuario.get("id"))
         where.append(f"b.user_id = ${len(params)}")
     if status:
@@ -298,6 +312,11 @@ async def list_bots(
         "total": total,
         "limit": limit,
         "offset": offset,
+        # eco do que foi de fato aplicado (admin=True diz ao front se vale a
+        # pena mostrar o seletor)
+        "escopo": ("meus" if (not acesso_total(usuario) or escopo == "meus")
+                   else "todos"),
+        "admin": bool(acesso_total(usuario)),
         "items": [_row_to_dict(r, full=False) for r in rows],
     }
     _cache_set(cache_key, resultado)

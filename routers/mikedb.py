@@ -57,6 +57,7 @@ import re
 import shutil
 import socket
 import sys
+import time
 import uuid
 from datetime import datetime
 from pathlib import Path
@@ -290,6 +291,74 @@ class _CanceladoPeloUsuario(Exception):
 JOBS: dict = {}
 _LOCK_GERACAO = asyncio.Lock()
 
+# v10 (11/ago) — TRAVA QUE NAO PRENDE PRA SEMPRE.
+# Antes: se um script morria calado (ou a aba era recarregada e ninguem
+# cancelava), a trava de "uma geracao por vez" ficava presa e TODA geracao
+# nova tomava 409 ate reiniciar a API. Agora a trava tem prazo: quando alguem
+# pede uma geracao nova, o job ativo e' inspecionado — parado ha mais de
+# TIMEOUT_TRAVA_MIN sem UMA linha de log (ou com o processo ja morto), ele e'
+# encerrado e a vez passa. E' um "coveiro preguicoso": so age quando alguem
+# quer entrar, entao nunca mata job saudavel por conta propria.
+TIMEOUT_TRAVA_MIN = int(os.environ.get("MIKEDB_TIMEOUT_TRAVA_MIN", "20"))
+
+
+def _job_ativo() -> Optional[dict]:
+    for j in JOBS.values():
+        if j.get("status") == "rodando":
+            return j
+    return None
+
+
+def _minutos_parado(j: dict) -> float:
+    ts = j.get("_ultimo_avanco") or 0
+    return round((time.time() - ts) / 60.0, 1) if ts else 0.0
+
+
+def _resumo_ativo() -> Optional[dict]:
+    j = _job_ativo()
+    if not j:
+        return None
+    return {"id": j["id"], "etapa": j.get("etapa"),
+            "progresso": j.get("progresso"),
+            "minutos_parado": _minutos_parado(j),
+            "criado_em": j.get("criado_em")}
+
+
+async def _liberar_se_travado() -> Optional[str]:
+    """Encerra a geracao ativa se ela estiver claramente abandonada.
+    Devolve o id encerrado, ou None se o job ativo ainda da sinal de vida."""
+    j = _job_ativo()
+    if not j:
+        return None
+    parado = _minutos_parado(j)
+    proc = j.get("_proc")
+    proc_morto = proc is not None and proc.returncode is not None
+    # processo ja morreu e ninguem fechou o job -> 2min de tolerancia bastam
+    if not (parado >= TIMEOUT_TRAVA_MIN or (proc_morto and parado >= 2)):
+        return None
+
+    jid = j["id"]
+    logger.warning("[mikedb] trava liberada: job %s parado ha %.1f min "
+                   "(processo_morto=%s)", jid, parado, proc_morto)
+    j["_cancelado"] = True
+    if proc is not None and proc.returncode is None:
+        try:
+            proc.kill()
+        except Exception:
+            pass
+    tarefa = j.get("_task")
+    if tarefa is not None and not tarefa.done():
+        tarefa.cancel()          # solta a trava mesmo se estiver preso numa thread
+    # da um respiro pro _executar sair do `async with` e devolver a trava
+    for _ in range(20):
+        await asyncio.sleep(0.1)
+        if not _LOCK_GERACAO.locked():
+            break
+    if j.get("status") == "rodando":
+        j["status"] = "cancelado"
+        j["erro"] = f"encerrado: {parado:.0f} min sem avancar"
+    return jid
+
 
 def _novo_job() -> str:
     jid = uuid.uuid4().hex[:12]
@@ -301,7 +370,8 @@ def _novo_job() -> str:
         # (coletor/converter/backtest_csv); _cancelado = pedido do usuario.
         # Sem isto, geracao travada so saia com restart da API — e a trava de
         # "uma por vez" ficava presa junto, bloqueando tudo.
-        "_proc": None, "_cancelado": False,
+        "_proc": None, "_cancelado": False, "_task": None,
+        "_ultimo_avanco": time.time(),
     }
     # nao deixa a memoria crescer pra sempre (mantem os 20 mais novos)
     if len(JOBS) > 20:
@@ -323,6 +393,10 @@ def _log_job(jid: str, linha: str, etapa: Optional[str] = None,
         j["etapa"] = etapa
     if progresso is not None:
         j["progresso"] = max(0, min(100, int(progresso)))
+    # qualquer linha de log conta como sinal de vida (com PYTHONUNBUFFERED os
+    # scripts falam o tempo todo) — e' isso que o coveiro le pra decidir se a
+    # geracao esta viva ou abandonada.
+    j["_ultimo_avanco"] = time.time()
 
 
 # ------------------------------------------------------------- utilitarios ---
@@ -483,6 +557,10 @@ async def status(usuario: dict = Depends(get_current_user)):
         "mercados_por_casa": {c: [k for k, _ in MERCADOS_LOGICOS if k in m]
                               for c, m in MERCADO_TIPOS_POR_CASA.items()},
         "geracao_em_andamento": _LOCK_GERACAO.locked(),
+        # quem esta segurando a trava (o painel usa pra oferecer o cancelar
+        # mesmo depois de recarregar a aba, quando perdeu o job_id)
+        "job_ativo": _resumo_ativo(),
+        "timeout_trava_min": TIMEOUT_TRAVA_MIN,
     }
 
 
@@ -703,6 +781,16 @@ async def _executar(jid: str, req: GerarRequest):
                               **(resumo or {})}
             j["status"] = "concluido"
             _log_job(jid, "pronto", etapa="concluido", progresso=100)
+    except asyncio.CancelledError:
+        j["status"] = "cancelado"
+        j["erro"] = j.get("erro") or "encerrado por inatividade"
+        _log_job(jid, "encerrado (trava liberada)", etapa="cancelado")
+        for resto in BASE_DIR.glob(f"_mikedb_{jid}.*"):
+            try:
+                os.remove(resto)
+            except Exception:
+                pass
+        raise
     except _CanceladoPeloUsuario:
         j["status"] = "cancelado"
         j["erro"] = None
@@ -741,8 +829,22 @@ async def gerar(req: GerarRequest, usuario: dict = Depends(get_current_user)):
     if req.de and req.ate and req.de > req.ate:
         raise HTTPException(400, "a data inicial e maior que a final")
     if _LOCK_GERACAO.locked():
-        raise HTTPException(409, "ja existe uma geracao em andamento — "
-                                 "espere ela terminar (1 por vez, de proposito)")
+        liberado = await _liberar_se_travado()
+        if liberado:
+            logger.info("[mikedb] geracao %s estava travada e foi encerrada; "
+                        "seguindo com a nova", liberado)
+    if _LOCK_GERACAO.locked():
+        ativo = _resumo_ativo() or {}
+        # detail em STRING de proposito: o cliente do front so sabe ler string
+        # (detail objeto viraria "HTTP 409" seco). O painel pega o id pelo
+        # /mikedb/status, que agora expoe job_ativo.
+        raise HTTPException(409, (
+            "ja existe uma geracao em andamento"
+            + (f" (job {ativo['id']}, {ativo.get('etapa') or '...'}"
+               f", {ativo.get('progresso', 0)}%"
+               f", parada ha {ativo.get('minutos_parado', 0)} min)"
+               if ativo.get("id") else "")
+            + " — cancele-a no painel ou espere terminar"))
     via = (req.via or "auto").lower()
     if via not in ("auto", "historico", "betsapi"):
         raise HTTPException(400, "via invalida: use auto, historico ou betsapi")
@@ -754,13 +856,21 @@ async def gerar(req: GerarRequest, usuario: dict = Depends(get_current_user)):
         raise HTTPException(400, f"backtest_csv.py nao encontrado em {BASE_DIR}")
 
     jid = _novo_job()
-    asyncio.create_task(_executar(jid, req))
+    JOBS[jid]["_task"] = asyncio.create_task(_executar(jid, req))
     return {"job_id": jid, "via": "betsapi" if eh_betsapi else "historico"}
 
 
 @router.get("/gerar/{job_id}")
 async def status_job(job_id: str, usuario: dict = Depends(get_current_user)):
-    j = JOBS.get(job_id)
+    # "ativo" = cancela o que estiver segurando a trava agora. Serve pro caso
+    # de a aba ter sido recarregada e o painel nao saber mais o job_id.
+    if job_id == "ativo":
+        j = _job_ativo()
+        if not j:
+            return {"ok": True, "status": "livre", "aviso": "nada rodando"}
+        job_id = j["id"]
+    else:
+        j = JOBS.get(job_id)
     if not j:
         raise HTTPException(404, "job nao encontrado (a API pode ter reiniciado)")
     # NUNCA devolver as chaves privadas: `_proc` e' um objeto de processo e o
