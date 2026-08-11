@@ -282,6 +282,11 @@ async def mercados(casa: Optional[str] = None, sport: Optional[str] = None,
 
 
 # -------------------------------------------------------------------- jobs ---
+class _CanceladoPeloUsuario(Exception):
+    """Cancelamento pedido no painel — nao e' falha, entao nao vira 'erro'
+    (o Santos precisa distinguir 'eu parei' de 'quebrou')."""
+
+
 JOBS: dict = {}
 _LOCK_GERACAO = asyncio.Lock()
 
@@ -292,6 +297,11 @@ def _novo_job() -> str:
         "id": jid, "status": "rodando", "progresso": 0,
         "etapa": "na fila", "log": [], "erro": None, "resultado": None,
         "criado_em": datetime.now().isoformat(timespec="seconds"),
+        # v9 (11/ago): cancelamento. _proc = processo do script rodando agora
+        # (coletor/converter/backtest_csv); _cancelado = pedido do usuario.
+        # Sem isto, geracao travada so saia com restart da API — e a trava de
+        # "uma por vez" ficava presa junto, bloqueando tudo.
+        "_proc": None, "_cancelado": False,
     }
     # nao deixa a memoria crescer pra sempre (mantem os 20 mais novos)
     if len(JOBS) > 20:
@@ -383,6 +393,15 @@ async def _rodar(jid: str, args: list, cwd: Path, timeout: int,
     except FileNotFoundError as e:
         raise RuntimeError(f"script nao encontrado: {e}") from e
 
+    _j = JOBS.get(jid) or {}
+    if _j.get("_cancelado"):          # cancelou antes desta etapa comecar
+        try:
+            proc.kill()
+        except Exception:
+            pass
+        raise _CanceladoPeloUsuario()
+    _j["_proc"] = proc
+
     lidas = 0
 
     async def _drenar():
@@ -408,6 +427,9 @@ async def _rodar(jid: str, args: list, cwd: Path, timeout: int,
             pass
         raise RuntimeError(f"{etapa}: estourou o tempo limite "
                            f"({timeout // 60} min) e foi encerrado")
+    _j["_proc"] = None
+    if _j.get("_cancelado"):
+        raise _CanceladoPeloUsuario()
     _log_job(jid, f"[fim] codigo de saida: {proc.returncode}", progresso=prog_fim)
     return proc.returncode or 0
 
@@ -681,6 +703,15 @@ async def _executar(jid: str, req: GerarRequest):
                               **(resumo or {})}
             j["status"] = "concluido"
             _log_job(jid, "pronto", etapa="concluido", progresso=100)
+    except _CanceladoPeloUsuario:
+        j["status"] = "cancelado"
+        j["erro"] = None
+        _log_job(jid, "cancelado pelo usuario", etapa="cancelado")
+        for resto in BASE_DIR.glob(f"_mikedb_{jid}.*"):
+            try:
+                os.remove(resto)   # parquet/csv pela metade nao serve pra nada
+            except Exception:
+                pass
     except Exception as e:
         logger.exception("[mikedb] job %s falhou", jid)
         j["status"] = "erro"
@@ -733,6 +764,32 @@ async def status_job(job_id: str, usuario: dict = Depends(get_current_user)):
     if not j:
         raise HTTPException(404, "job nao encontrado (a API pode ter reiniciado)")
     return {**j, "log": j["log"][-40:]}
+
+
+@router.post("/gerar/{job_id}/cancelar")
+async def cancelar_geracao(job_id: str, usuario: dict = Depends(get_current_user)):
+    """Mata o script em andamento e libera a trava de 'uma geracao por vez'.
+
+    Seguro por etapa: matar o COLETOR no meio nao corrompe o acervo (o CSV e'
+    gravado por evento e o resume re-raspa o ultimo com dedupe); matar o
+    CONVERTER deixaria um parquet pela metade — por isso o _executar apaga os
+    temporarios `_mikedb_<job>.*` ao cancelar."""
+    j = JOBS.get(job_id)
+    if not j:
+        raise HTTPException(404, "job nao encontrado (a API pode ter reiniciado)")
+    if j["status"] not in ("rodando",):
+        return {"ok": True, "status": j["status"], "aviso": "job ja terminou"}
+    j["_cancelado"] = True
+    proc = j.get("_proc")
+    morto = False
+    if proc is not None and proc.returncode is None:
+        try:
+            proc.kill()
+            morto = True
+        except Exception:
+            logger.exception("[mikedb] falha matando processo do job %s", job_id)
+    _log_job(job_id, "cancelamento pedido pelo usuario", etapa="cancelando")
+    return {"ok": True, "processo_morto": morto, "status": "cancelando"}
 
 
 # --------------------------------------------------------------- /download ---
