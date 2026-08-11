@@ -763,7 +763,11 @@ async def status_job(job_id: str, usuario: dict = Depends(get_current_user)):
     j = JOBS.get(job_id)
     if not j:
         raise HTTPException(404, "job nao encontrado (a API pode ter reiniciado)")
-    return {**j, "log": j["log"][-40:]}
+    # NUNCA devolver as chaves privadas: `_proc` e' um objeto de processo e o
+    # FastAPI nao serializa isso — a resposta estourava com 500 e o painel
+    # mostrava "Sem conexao com a API" (bug introduzido junto do cancelamento).
+    publico = {k: v for k, v in j.items() if not k.startswith("_")}
+    return {**publico, "log": j["log"][-40:]}
 
 
 @router.post("/gerar/{job_id}/cancelar")
