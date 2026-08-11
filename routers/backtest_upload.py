@@ -298,7 +298,15 @@ async def criar_job_upload(req: BacktestUploadJobRequest, background: Background
         raise HTTPException(status_code=500, detail=f"Erro de banco: {e}")
 
     logger.info(f"[backtest_upload] Job {job_id} (upload) criado p/ bot {req.bot_id}")
-    background.add_task(executar_backtest, job_id)
+    # v2 (10/ago): o job sai do processo da API (mesmo tratamento do backtest
+    # de bot). Este era o buraco que sobrava: o AVULSO — o caminho mais usado —
+    # seguia rodando dentro do event loop, entao a pagina travava durante o
+    # backtest e o job nao ganhava log proprio.
+    from routers.backtest import _rodar_job_em_processo, USAR_PROCESSO_SEPARADO
+    if USAR_PROCESSO_SEPARADO:
+        background.add_task(_rodar_job_em_processo, job_id)
+    else:
+        background.add_task(executar_backtest, job_id)
     return {"job_id": job_id, "status": "pendente", "fonte": "arquivo"}
 
 
@@ -865,7 +873,11 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
 
     # 5) dispara o worker (com wrapper que marca erro se estourar)
     logger.info(f"[backtest_upload] Job avulso {job_id} criado (mercado={norm['mercado']}, lado={norm['lado']})")
-    background.add_task(_rodar_backtest_seguro, job_id)
+    from routers.backtest import _rodar_job_em_processo, USAR_PROCESSO_SEPARADO
+    if USAR_PROCESSO_SEPARADO:
+        background.add_task(_rodar_job_em_processo, job_id)
+    else:
+        background.add_task(_rodar_backtest_seguro, job_id)
     return {"job_id": job_id, "status": "pendente", "fonte": "arquivo", "avulso": True}
 
 

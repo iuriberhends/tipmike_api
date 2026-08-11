@@ -389,11 +389,23 @@ def parse_ticks_parquet(caminho_arquivo: str,
     # parquet real, campo a campo). BLINDADO: qualquer falha no caminho
     # rapido cai no caminho antigo, que segue aqui intacto.
     try:
-        df_obj = df.astype(object)
-        df_obj = df_obj.where(pd.notna(df_obj), None)
-        cols = list(df_obj.columns)
-        registros = [dict(zip(cols, linha))
-                     for linha in df_obj.itertuples(index=False, name=None)]
+        # v3 (10/ago) — CONVERSAO COLUNA A COLUNA.
+        # O astype(object) do quadro INTEIRO criava uma copia completa em
+        # dtype object antes de montar os registros: num parquet de milhoes
+        # de linhas x 24 colunas isso e' o pico de RAM do job todo (e a fase
+        # "Buscando ticks (arquivo)" que ficava minutos em 5%). Agora so as
+        # colunas que REALMENTE tem nulo pagam a conversao; as demais saem
+        # direto por .tolist(), que ja devolve escalares Python.
+        # Saida identica: mesmas chaves, mesma ordem, NaN/NaT/NA -> None.
+        cols = list(df.columns)
+        colunas_py = []
+        for _c in cols:
+            _s = df[_c]
+            if _s.isna().any():
+                _s = _s.astype(object).where(_s.notna(), None)
+            colunas_py.append(_s.tolist())
+        registros = [dict(zip(cols, vals)) for vals in zip(*colunas_py)]
+        del colunas_py
         if _CACHE_N2_ON and chave is not None:
             try:
                 with _CACHE_LOCK:
