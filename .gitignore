@@ -221,3 +221,6 @@ __marimo__/
 .streamlit/secrets.toml
 >>>>>>> a360226bc6bb380f946ca479507eaab3ac890156
 *.bak-job42
+uploads_backtest/
+logs_jobs/
+*.log
