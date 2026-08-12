@@ -113,6 +113,40 @@ def preparar(ap: pd.DataFrame) -> dict:
         jog[o] = jog_o
         d['jogo_fonte'] = 'Confronto + intervalo 45min'
     d['ev'] = pd.factorize(jog)[0]
+    # ATROPELO (v16 do varredor): % dos jogos ANTERIORES do jogador que
+    # terminaram com |diferenca| >= 15; vale o PIOR dos dois. So jogos ja
+    # encerrados antes da aposta entram (o proprio jogo NUNCA), e jogador com
+    # menos de 6 jogos usa a media corrente da liga. Mesma regra do varredor —
+    # se divergir aqui, o T2 acusa erro que nao existe.
+    d['atropelo'] = np.nan
+    try:
+        _pf2 = ap['Placar Final'].astype(str).str.extract(r'(\d+)\s*[-x:]\s*(\d+)')
+        _mg = (pd.to_numeric(_pf2[0], errors='coerce')
+               - pd.to_numeric(_pf2[1], errors='coerce')).abs()
+        _jg = (pd.DataFrame({'j': jog, 't': ts.values,
+                             'A': ap['Jogador A'].astype(str).str.upper().str.strip(),
+                             'B': ap['Jogador B'].astype(str).str.upper().str.strip(),
+                             'm': _mg})
+               .dropna(subset=['m']).sort_values('t', kind='stable')
+               .drop_duplicates('j'))
+        _n, _b, _taxa = {}, {}, {}
+        _tn = _tb = 0
+        for _j, _A, _B, _m in zip(_jg.j.values, _jg.A.values, _jg.B.values, _jg.m.values):
+            _lig = (_tb / _tn) if _tn >= 30 else 0.11
+            _r = []
+            for _p in (_A, _B):
+                _np_ = _n.get(_p, 0)
+                _r.append((_b.get(_p, 0) / _np_) if _np_ >= 6 else _lig)
+            _taxa[_j] = max(_r) * 100.0
+            _ate = 1 if _m >= 15 else 0
+            for _p in (_A, _B):
+                _n[_p] = _n.get(_p, 0) + 1
+                _b[_p] = _b.get(_p, 0) + _ate
+            _tn += 1
+            _tb += _ate
+        d['atropelo'] = pd.Series(jog).map(_taxa).astype(float).values
+    except Exception:
+        pass
     # eixos derivados de TOTAL DE PONTOS — mesma regra do varredor:
     # lin_ini = 1a linha ofertada no jogo (chave = event_id, ou Confronto+4h)
     d['dif'] = np.abs((pa - pb).values)
@@ -146,7 +180,7 @@ def _extra(e, D):
     e = str(e).strip()
     if e in ('-', 'nan', ''):
         return None
-    for campo in ('folga', 'momento', 'desloc', 'lin_ini', 'dif'):
+    for campo in ('folga', 'momento', 'desloc', 'lin_ini', 'dif', 'atropelo'):
         if e.startswith(campo):
             v, r = D[campo], e[len(campo):].strip()
             if r.startswith('>='):
@@ -252,6 +286,9 @@ def t1_liquidacao(D):
     return err == 0
 
 
+_PCT_T2 = [0.0]          # preenchido pelo t2_leitura, lido no resumo final
+
+
 def t2_leitura(D, cfgs, n_amostra, seed=7):
     print('\n' + '=' * 78)
     print(' T2  LEITURA — o varredor filtra os jogos certos?')
@@ -307,6 +344,7 @@ def t2_leitura(D, cfgs, n_amostra, seed=7):
         print(f'  eixo suspeito nas divergencias: {culpados}')
     for e in erros[:6]:
         print(f'    - {e}')
+    _PCT_T2[0] = min(ok_ap, ok_g, ok_u) / max(k, 1) * 100
     passou = ok_ap == k and ok_g == k and ok_u == k
     print(f'  VEREDITO: {"PASSOU" if passou else "FALHOU — ver eixo suspeito acima"}')
     return passou
@@ -376,6 +414,14 @@ def main():
     p.add_argument('--garimpo', required=True, help='saida do varredor (csv _tudo ou xlsx)')
     p.add_argument('--aba', default='TUDO')
     p.add_argument('--amostra', type=int, default=300)
+    # v3: JANELA. Garimpo feito com pre-compromisso (--ate) so enxergou o
+    # TREINO; conferir contra o export INTEIRO compara coisas diferentes e o
+    # T2 reprova por construcao (as contagens batem na fracao do treino).
+    # Use a MESMA data que voce passou pro varredor.
+    p.add_argument('--ate', default=None,
+                   help='so valida apostas ate esta data (AAAA-MM-DD) — use a '
+                        'mesma do --ate do varredor')
+    p.add_argument('--de', default=None, help='so valida a partir desta data')
     a = p.parse_args()
 
     print('=' * 78)
@@ -386,6 +432,20 @@ def main():
     cfgs = (pd.read_excel(a.garimpo, sheet_name=a.aba)
             if a.garimpo.lower().endswith(('.xlsx', '.xlsm'))
             else pd.read_csv(a.garimpo, low_memory=False))
+    if a.ate or a.de:
+        _ts = pd.to_datetime(ap['Data'].astype(str) + ' ' + ap['Hora'].astype(str),
+                             dayfirst=True, errors='coerce')
+        _n0 = len(ap)
+        if a.de:
+            ap = ap[_ts >= pd.Timestamp(a.de)]
+        if a.ate:
+            ap = ap[_ts < pd.Timestamp(a.ate) + pd.Timedelta(days=1)]
+        ap = ap.reset_index(drop=True)
+        print(f'janela: {len(ap):,} de {_n0:,} apostas '
+              f'({a.de or "inicio"} a {a.ate or "fim"})')
+        if ap.empty:
+            print('ERRO: a janela nao deixou nenhuma aposta')
+            sys.exit(2)
     print(f'export: {len(ap):,} apostas | garimpo: {len(cfgs):,} configs')
     D = preparar(ap)
 
@@ -399,6 +459,10 @@ def main():
     print('\n' + '=' * 78)
     print(f' RESUMO: T1 liquidacao {"OK" if r1 else "pulado"} | '
           f'T2 leitura {"OK" if r2 else "FALHOU"}')
+    # linha estruturada: quem chama isto de um job le daqui em vez de tentar
+    # entender o texto. t1 e' fatal (o export nao fecha); t2 e' percentual.
+    print(f'GATE t1={"OK" if r1 else ("PULADO" if r1 is None else "FALHOU")} '
+          f't2={_PCT_T2[0]:.1f}')
     print('=' * 78)
     sys.exit(0 if (r2 and r1 is not False) else 1)
 

@@ -44,6 +44,11 @@ SAIDA_DIR = Path(os.environ.get("VARREDURA_OUT", str(RAIZ / "varreduras")))
 # acima disto o job PARA e espera confirmacao explicita (protege contra rodada
 # de dias disparada sem querer). O --plano ja imprime esse total.
 TETO_CONFIGS_SEM_CONFIRMAR = 400_000_000
+# T1 (liquidacao) e' FATAL: se o export nao fecha, nada ali presta.
+# T2 (leitura) e' percentual — 100% so acontece com event_id no export; sem
+# ele o teto da escadinha troca 1-2 apostas de degrau em algumas configs.
+# Abaixo deste piso o job reprova; acima, passa com o numero registrado.
+GATE_T2_MIN = 90.0
 # fracao do periodo que fica de fora da busca (holdout de verdade)
 FRACAO_HOLDOUT = 0.30
 MIN_DIAS_HOLDOUT = 3
@@ -96,6 +101,24 @@ def _rodar_cli(caminho, args):
         return 1, buf.getvalue() + "\n" + traceback.format_exc()
     finally:
         sys.argv = argv_antigo
+
+
+def _ler_gate(texto):
+    """Le a linha `GATE t1=OK t2=98.5` do validador. Sem ela (versao antiga do
+    script), devolve (None, 100) pra nao reprovar por falta de informacao."""
+    t1, pct = None, 100.0
+    for l in texto.split("\n"):
+        s = l.strip()
+        if "GATE " in s and "t1=" in s:
+            for parte in s.split():
+                if parte.startswith("t1="):
+                    t1 = parte[3:]
+                elif parte.startswith("t2="):
+                    try:
+                        pct = float(parte[3:])
+                    except ValueError:
+                        pass
+    return t1, pct
 
 
 def _num(txt):
@@ -168,10 +191,17 @@ def _args_do_params(p, entrada, saida, ate=None, plano=False):
 
 
 # ------------------------------------------------------------------ banco ---
+_COLS_JSONB = {"contrato", "resumo", "params"}
+
+
 async def _set(conn, job_id, **campos):
+    """UPDATE parcial. Coluna jsonb PRECISA de cast explicito — o asyncpg manda
+    str como text e o Postgres nao converte sozinho."""
     if not campos:
         return
-    cols = ", ".join(f"{k} = ${i + 2}" for i, k in enumerate(campos))
+    cols = ", ".join(
+        f"{k} = ${i + 2}" + ("::jsonb" if k in _COLS_JSONB else "")
+        for i, k in enumerate(campos))
     await conn.execute(f"UPDATE varredura_jobs SET {cols} WHERE id = $1",
                        job_id, *campos.values())
 
@@ -383,10 +413,18 @@ async def executar_varredura(job_id: int):
     gate_ok = None
     try:
         val_py = _achar_ferramenta("validar_varredor.py")
-        cod, txt = _rodar_cli(val_py, [
-            "--export", str(entrada), "--garimpo", tudo_csv, "--amostra", "400"])
-        gate_ok = (cod == 0)
-        resumo["gate"] = {"passou": gate_ok, "log": txt[-2500:]}
+        _args_gate = ["--export", str(entrada), "--garimpo", tudo_csv,
+                      "--amostra", "400"]
+        # CRITICO: a busca rodou com --ate (so viu o treino). Conferir contra o
+        # export inteiro compara janelas diferentes e o T2 reprova por
+        # construcao — as contagens batem exatamente na fracao do treino.
+        if ate:
+            _args_gate += ["--ate", str(ate)]
+        cod, txt = _rodar_cli(val_py, _args_gate)
+        t1, t2_pct = _ler_gate(txt)
+        gate_ok = (t1 != "FALHOU") and (t2_pct >= GATE_T2_MIN)
+        resumo["gate"] = {"passou": gate_ok, "t1": t1, "t2_pct": t2_pct,
+                          "log": txt[-2500:]}
     except VarreduraErro as e:
         resumo["gate"] = {"passou": None, "aviso": str(e)}
     except Exception as e:
@@ -395,11 +433,18 @@ async def executar_varredura(job_id: int):
     # ---- 8) fecha ---------------------------------------------------------
     async with pool.acquire() as conn:
         if gate_ok is False:
+            _g = resumo.get("gate") or {}
+            if _g.get("t1") == "FALHOU":
+                _msg = ("o EXPORT nao fecha: o T1 recalculou green/red pelo "
+                        "placar final e achou divergencia. O problema esta no "
+                        "backtest de origem, nao no garimpo.")
+            else:
+                _msg = (f"o T2 (leitura) bateu em so {_g.get('t2_pct', 0):.1f}% "
+                        f"das configs conferidas (minimo {GATE_T2_MIN}%). O "
+                        "garimpo pode estar filtrando diferente do motor — veja "
+                        "o log do gate no resumo.")
             await _set(
-                conn, job_id, status="erro", progresso=100,
-                erro=("o garimpo NAO passou no carimbo (T1 liquidacao / T2 "
-                      "leitura). Os numeros nao sao confiaveis — veja o log do "
-                      "gate no resumo."),
+                conn, job_id, status="erro", progresso=100, erro=_msg,
                 arquivo_saida=str(saida), arquivo_tudo=tudo_csv,
                 arquivo_holdout=arq_hold,
                 resumo=json.dumps(resumo, default=str),
