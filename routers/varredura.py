@@ -103,35 +103,51 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
     certa: se o job de origem ja veio filtrado, a busca so procura DENTRO da
     estrategia dele e nunca fora dela. O front mostra isso como aviso.
     """
+    # A coluna de data da backtest_jobs varia entre instalacoes (criado_em /
+    # iniciado_em / nenhuma das duas). Em vez de chutar — o que derruba o
+    # endpoint com 500, e no browser aparece como "sem conexao" porque a
+    # resposta de erro sai sem os headers de CORS — descubro no catalogo e
+    # monto o SELECT com o que existe de fato.
     pool = get_pool()
     async with pool.acquire() as conn:
+        col_data = await conn.fetchval(
+            """SELECT column_name FROM information_schema.columns
+                WHERE table_name = 'backtest_jobs'
+                  AND column_name IN ('criado_em', 'iniciado_em', 'created_at')
+                ORDER BY CASE column_name
+                           WHEN 'criado_em'   THEN 1
+                           WHEN 'iniciado_em' THEN 2
+                           ELSE 3 END
+                LIMIT 1""")
+        campo_data = f"{col_data} AS criado_em" if col_data else "NULL AS criado_em"
+        base_sql = f"""SELECT id, {campo_data}, total_apostas, bot_snapshot, user_id
+                         FROM backtest_jobs
+                        WHERE status = 'concluido' AND total_apostas >= 500"""
         if acesso_total(usuario):
             rows = await conn.fetch(
-                """SELECT id, criado_em, total_apostas, bot_snapshot, user_id
-                     FROM backtest_jobs
-                    WHERE status = 'concluido' AND total_apostas >= 500
-                    ORDER BY id DESC LIMIT $1""", limite)
+                base_sql + " ORDER BY id DESC LIMIT $1", limite)
         else:
             rows = await conn.fetch(
-                """SELECT id, criado_em, total_apostas, bot_snapshot, user_id
-                     FROM backtest_jobs
-                    WHERE status = 'concluido' AND total_apostas >= 500
-                      AND user_id = $2
-                    ORDER BY id DESC LIMIT $1""", limite, usuario.get("id"))
+                base_sql + " AND user_id = $2 ORDER BY id DESC LIMIT $1",
+                limite, usuario.get("id"))
     saida = []
     for r in rows:
+        # linha torta nao derruba a lista inteira
         snap = _json(r["bot_snapshot"], {}) or {}
         f = snap.get("filtros") or {}
         filtrado = bool(f.get("filtrosHistAdicionados") or f.get("folgaAtivo")
                         or snap.get("linha_min") or snap.get("linha_max")
                         or snap.get("max_apostas_partida"))
-        saida.append({
-            "job_id": r["id"], "criado_em": r["criado_em"],
-            "apostas": r["total_apostas"],
-            "mercado": snap.get("mercado"), "casa": snap.get("casa"),
-            "esporte": snap.get("esporte"),
-            "escancarado": not filtrado,
-        })
+        try:
+            saida.append({
+                "job_id": r["id"], "criado_em": r["criado_em"],
+                "apostas": r["total_apostas"],
+                "mercado": snap.get("mercado"), "casa": snap.get("casa"),
+                "esporte": snap.get("esporte"),
+                "escancarado": not filtrado,
+            })
+        except Exception:
+            logger.exception(f"[varredura] origem {r['id']} ilegivel — pulando")
     return saida
 
 
@@ -142,10 +158,12 @@ async def criar_varredura(req: CriarVarreduraRequest,
     if req.modo not in MODOS:
         raise HTTPException(status_code=400,
                             detail=f"modo invalido; use um de {MODOS}")
+    # coluna DATE: o asyncpg exige datetime.date, nao string
+    corte = None
     if req.data_corte:
         try:
-            from datetime import date
-            date.fromisoformat(req.data_corte)
+            from datetime import date as _date
+            corte = _date.fromisoformat(req.data_corte)
         except Exception:
             raise HTTPException(status_code=400,
                                 detail="data_corte deve ser AAAA-MM-DD")
@@ -190,7 +208,7 @@ async def criar_varredura(req: CriarVarreduraRequest,
             usuario.get("id"), req.job_backtest_id,
             req.nome or f"garimpo do job {req.job_backtest_id}",
             json.dumps(params),
-            req.data_corte)
+            corte)
 
         na_frente = await conn.fetchval(
             "SELECT COUNT(*) FROM varredura_jobs WHERE status='pendente' AND id < $1",

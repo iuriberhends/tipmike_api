@@ -217,7 +217,11 @@ async def executar_varredura(job_id: int):
             "SELECT * FROM varredura_jobs WHERE id = $1", job_id)
         if job is None:
             raise VarreduraErro(f"job {job_id} nao existe")
-        if job["status"] not in ("pendente", "planejado"):
+        # 'planejando' entra na lista: e' o status que o DAEMON grava ao
+        # reservar o slot, antes de subir este processo. Sem ele aqui, o worker
+        # desistia calado e o job ficava parado pra sempre — o job 1 so' passou
+        # porque foi rodado na mao, com status 'pendente'.
+        if job["status"] not in ("pendente", "planejado", "planejando"):
             logger.warning(f"[varredura] job {job_id} em '{job['status']}' — "
                            "nao vou rodar de novo")
             return
@@ -286,9 +290,13 @@ async def executar_varredura(job_id: int):
 
     SAIDA_DIR.mkdir(parents=True, exist_ok=True)
     base = SAIDA_DIR / f"varredura_{job_id}"
-    entrada = base.with_name(base.name + "_entrada.xlsx")
+    # CSV, nao XLSX: este arquivo e' lido 3-4x depois (varredura, repontua,
+    # validador) e o openpyxl custa ~18s POR LEITURA num export de 42k linhas,
+    # contra 0,4s do csv. So a troca de formato tira ~1min30 da rodada.
+    # O varredor/repontua/validador detectam a extensao e leem csv igual.
+    entrada = base.with_name(base.name + "_entrada.csv")
     saida = base.with_name(base.name + ".xlsx")
-    df.to_excel(entrada, index=False)
+    df.to_csv(entrada, index=False, encoding="utf-8")
 
     # ---- 3) holdout: data de corte ---------------------------------------
     import pandas as pd
@@ -314,20 +322,32 @@ async def executar_varredura(job_id: int):
     # ---- 4) PLANO ---------------------------------------------------------
     import contextlib
     import io as _io
-    buf = _io.StringIO()
-    with contextlib.redirect_stdout(buf):
-        mod_var.varrer(_args_do_params(params, entrada, saida, ate, plano=True))
-    contrato = _ler_contrato(buf.getvalue())
-    contrato.update({
+    # O --plano recarrega e reprepara o dado inteiro so pra estimar. Isso so
+    # vale a pena quando a estimativa pode PARAR o job (modo total sem
+    # confirmacao). Nos outros casos o contrato sai do cabecalho da propria
+    # rodada, que imprime exatamente as mesmas linhas — e economiza uma
+    # preparacao completa.
+    precisa_plano_antes = (str(params.get("modo") or "").lower() == "total"
+                           and not confirmado)
+    contrato = {}
+    if precisa_plano_antes:
+        buf = _io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            mod_var.varrer(_args_do_params(params, entrada, saida, ate, plano=True))
+        contrato = _ler_contrato(buf.getvalue())
+    _extra_contrato = {
         "origem_job": org["id"], "origem_filtrada": origem_filtrada,
         "periodo": f"{d0:%d/%m/%Y} a {d1:%d/%m/%Y}", "dias_total": total_dias,
         "holdout": (f"{de_holdout:%d/%m/%Y} em diante" if usar_holdout
                     else "SEM holdout (periodo curto demais)"),
         "treino_ate": str(ate) if ate else None,
-    })
+    }
+    if contrato:
+        contrato.update(_extra_contrato)
 
     async with pool.acquire() as conn:
-        await _set(conn, job_id, contrato=json.dumps(contrato, default=str))
+        if contrato:
+            await _set(conn, job_id, contrato=json.dumps(contrato, default=str))
         est = contrato.get("total_estimado") or 0
         if est > TETO_CONFIGS_SEM_CONFIRMAR and not confirmado:
             await _set(conn, job_id, status="planejado", progresso=0,
@@ -373,6 +393,12 @@ async def executar_varredura(job_id: int):
         return rc, b.getvalue()
 
     rc, log_varredura = await asyncio.to_thread(_rodar)
+    if not contrato:
+        # o cabecalho da rodada traz as mesmas linhas do --plano
+        contrato = _ler_contrato(log_varredura)
+        contrato.update(_extra_contrato)
+        async with pool.acquire() as conn:
+            await _set(conn, job_id, contrato=json.dumps(contrato, default=str))
     if rc != 0 or not saida.is_file():
         raise VarreduraErro(
             f"a varredura terminou com codigo {rc} e sem arquivo de saida. "

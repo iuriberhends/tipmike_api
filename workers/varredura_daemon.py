@@ -61,9 +61,50 @@ def _flags_prioridade():
 
 
 def _subir(job_id: int) -> subprocess.Popen:
+    """Sobe o processo do job. A saida vai pra UM LOG POR JOB — mandar pro
+    DEVNULL escondeu um bug por horas: o worker recusava o job e avisava no
+    stdout, que ninguem via. Log de processo filho e' barato; depurar as cegas
+    nao e'."""
     cmd = [sys.executable, "-m", "workers.run_varredura", str(job_id)]
-    return subprocess.Popen(cmd, cwd=str(RAIZ), stdout=subprocess.DEVNULL,
-                            stderr=subprocess.DEVNULL, **_flags_prioridade())
+    pasta = RAIZ / "varreduras"
+    try:
+        pasta.mkdir(parents=True, exist_ok=True)
+        saida = open(pasta / f"varredura_{job_id}.log", "a", encoding="utf-8",
+                     errors="replace")
+    except Exception:
+        saida = subprocess.DEVNULL
+    return subprocess.Popen(cmd, cwd=str(RAIZ), stdout=saida,
+                            stderr=subprocess.STDOUT, **_flags_prioridade())
+
+
+def _pid_vivo(pid):
+    """O processo daquele job ainda esta de pe? Sem isso, reiniciar o servico
+    (pra ligar um log, por exemplo) MATAVA no banco um garimpo que continuava
+    rodando feliz — o filho sobrevive ao pai no Windows."""
+    if not pid:
+        return False
+    try:
+        import psutil
+        return psutil.pid_exists(int(pid))
+    except ImportError:
+        pass
+    if os.name == "nt":
+        import ctypes
+        PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+        STILL_ACTIVE = 259
+        k32 = ctypes.windll.kernel32
+        h = k32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, int(pid))
+        if not h:
+            return False
+        cod = ctypes.c_ulong()
+        k32.GetExitCodeProcess(h, ctypes.byref(cod))
+        k32.CloseHandle(h)
+        return cod.value == STILL_ACTIVE
+    try:
+        os.kill(int(pid), 0)
+        return True
+    except Exception:
+        return False
 
 
 async def _faxina_inicial(pool):
@@ -72,16 +113,27 @@ async def _faxina_inicial(pool):
     Deixar em 'rodando' pra sempre e' pior que marcar erro — o usuario fica
     olhando uma barra que nunca anda."""
     async with pool.acquire() as conn:
-        n = await conn.fetch(
-            """UPDATE varredura_jobs
-                  SET status = 'erro', concluido_em = NOW(),
-                      erro = 'o servico da fila reiniciou no meio da rodada — '
-                             'rode de novo (nada foi corrompido)'
-                WHERE status IN ('rodando', 'planejando')
-            RETURNING id""")
-    if n:
-        logger.warning(f"[fila] {len(n)} job(s) orfao(s) marcados: "
-                       f"{[r['id'] for r in n]}")
+        abertos = await conn.fetch(
+            """SELECT id, pid FROM varredura_jobs
+                WHERE status IN ('rodando', 'planejando')""")
+        orfaos, sobreviventes = [], []
+        for r in abertos:
+            (sobreviventes if _pid_vivo(r["pid"]) else orfaos).append(r["id"])
+        if orfaos:
+            await conn.execute(
+                """UPDATE varredura_jobs
+                      SET status = 'erro', concluido_em = NOW(),
+                          erro = 'o servico da fila caiu no meio da rodada e o '
+                                 'processo morreu junto — rode de novo (nada '
+                                 'foi corrompido)'
+                    WHERE id = ANY($1::int[])""", orfaos)
+            logger.warning(f"[fila] {len(orfaos)} orfao(s) marcados: {orfaos}")
+        if sobreviventes:
+            # o processo continua vivo: NAO mexer. Ele termina e grava o
+            # resultado sozinho; o daemon so nao o contabiliza nos slots.
+            logger.info(f"[fila] {len(sobreviventes)} job(s) seguem rodando "
+                        f"fora do meu controle: {sobreviventes} "
+                        f"(nao ocupam slot ate terminarem)")
 
 
 async def _cancelar_pedidos(pool, vivos: dict):
