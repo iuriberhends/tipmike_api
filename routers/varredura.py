@@ -256,9 +256,16 @@ async def confirmar(job_id: int, usuario: dict = Depends(get_current_user)):
                 status_code=400,
                 detail=f"a varredura {job_id} esta '{row['status']}', "
                        "nao ha o que confirmar")
+        # A confirmacao PRECISA morar nos params, nao no status. O worker
+        # deduzia "confirmado" de status=='planejado', mas aqui o status vira
+        # 'pendente' -> o daemon marca 'planejando' -> o worker rele, acha que
+        # nao foi confirmado, refaz o plano, ve a estimativa alta e para em
+        # 'planejado' outra vez. Laco infinito: confirmar nunca rodava.
         await conn.execute(
             """UPDATE varredura_jobs
-                  SET status = 'pendente', erro = NULL,
+                  SET status = 'pendente', erro = NULL, progresso = 0,
+                      params = jsonb_set(COALESCE(params, '{}'::jsonb),
+                                         '{confirmado}', 'true'::jsonb),
                       progresso_msg = 'confirmada, aguardando slot'
                 WHERE id = $1""", job_id)
     return {"id": job_id, "status": "pendente"}

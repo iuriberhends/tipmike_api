@@ -229,6 +229,11 @@ async def executar_varredura(job_id: int):
         if isinstance(params, str):
             params = json.loads(params or "{}")
         params = params or {}
+        # 'confirmado' vem dos PARAMS (o endpoint /confirmar grava la). Nao
+        # deduzir do status: ele muda pra 'pendente'/'planejando' no caminho
+        # e a confirmacao se perderia — o job voltaria pra 'planejado' pra
+        # sempre. O status 'planejado' aqui e' so' um segundo caminho valido
+        # (execucao manual do run_varredura sobre um job ja planejado).
         confirmado = bool(params.get("confirmado")) or job["status"] == "planejado"
 
         await _set(conn, job_id, status="planejando", iniciado_em=datetime.now(),
