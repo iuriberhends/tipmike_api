@@ -186,6 +186,17 @@ def montar_snapshot(e: dict) -> dict:
         if _amj:
             filtros["atropeloMinJogos"] = int(_amj)
 
+    # v3.2: TOT_ENV (runner v17) — soma do placar no envio. Colunas
+    # `tot_env_min` / `tot_env_max`. NAO confundir com momento_min/max, que no
+    # motor e' o ESTAGIO do jogo (1Q/1T/3Q). Vazias = desligado.
+    tmin, tmax = _num(e.get("tot_env_min")), _num(e.get("tot_env_max"))
+    if tmin is not None or tmax is not None:
+        filtros["totEnvAtivo"] = True
+        if tmin is not None:
+            filtros["totEnvMin"] = tmin
+        if tmax is not None:
+            filtros["totEnvMax"] = tmax
+
     mmin, mmax = _num(e.get("momento_min")), _num(e.get("momento_max"))
     if mmin is not None or mmax is not None:
         filtros["momentoAtivo"] = True
@@ -260,6 +271,10 @@ def resumo_config(snap: dict) -> dict:
         (f'odd≥{_fmt(snap.get("odd_min"))}' if snap.get('odd_min') else ''),
         (f'folga≥{_fmt(fmin)}' if fmin is not None else ''),
         (f'folga≤{_fmt(fmax)}' if fmax is not None else ''),
+        (f'tot_env≥{_fmt(fl.get("totEnvMin"))}'
+         if fl.get('totEnvAtivo') and fl.get('totEnvMin') is not None else ''),
+        (f'tot_env≤{_fmt(fl.get("totEnvMax"))}'
+         if fl.get('totEnvAtivo') and fl.get('totEnvMax') is not None else ''),
         (f'atropelo≥{_fmt(fl.get("atropeloMin"))}%'
          if fl.get('atropeloAtivo') and fl.get('atropeloMin') is not None else ''),
         (f'atropelo≤{_fmt(fl.get("atropeloMax"))}%'

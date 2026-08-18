@@ -293,16 +293,23 @@ def carregar(caminho, h2h_path=None, paridade_path=None, chips_fonte='todas'):
     codd = achar(d, 'Odd', 'odds', 'odd', 'cotacao', 'preco')
     d['_odd'] = pd.to_numeric(d[codd], errors='coerce') if codd is not None else np.nan
 
-    # --- eixos derivados do Placar Envio: momento (ritmo) e folga (linha-deficit)
+    # --- eixos derivados do Placar Envio: tot_env (soma do placar) e folga ---
+    # v10: o eixo antes chamado `momento` virou `tot_env`. O motivo e' serio:
+    # no RUNNER `momento` significa ESTAGIO do jogo (1Q/1T/3Q, lido do
+    # live_time), coisa completamente diferente. Config garimpada com
+    # "momento>=58" nao era reproduzivel no painel — o campo com esse nome la
+    # faz outra coisa e as configs davam ZERO aposta. Agora o varredor emite
+    # `tot_env` e o runner (v17) tem o filtro totEnvMin/totEnvMax que le
+    # exatamente a mesma conta: soma do placar no envio.
     cpe = achar(d, 'Placar Envio', 'placar_envio', 'placar envio')
-    d['_momento'] = np.nan
+    d['_tot_env'] = np.nan
     d['_folga'] = np.nan
     d['_dif'] = np.nan
     if cpe is not None:
         pe = d[cpe].astype(str).str.extract(r'(\d+)\s*[-x:]\s*(\d+)')
         ea = pd.to_numeric(pe[0], errors='coerce')
         eb = pd.to_numeric(pe[1], errors='coerce')
-        d['_momento'] = ea + eb
+        d['_tot_env'] = ea + eb
         nick = (d[csel].astype(str).str.extract(r'\(([^()]+)\)\s*\(')[0]
                 .str.upper().str.strip()) if csel is not None else None
         cja = achar(d, 'Jogador A', 'jogador_a')
@@ -318,7 +325,7 @@ def carregar(caminho, h2h_path=None, paridade_path=None, chips_fonte='todas'):
     # separa e o MOVIMENTO DA LINHA dentro do jogo. Derivados aqui:
     #   lin_ini = primeira linha ofertada no jogo (a abertura)
     #   desloc  = linha atual - lin_ini  (negativo = linha caiu = Over barato)
-    # 'momento' ja e o tot_env (soma do placar no envio) e continua valendo.
+    # 'tot_env' = soma do placar no envio (era chamado 'momento' ate a v9).
     # --- v9: TAXA DE ATROPELO (propriedade do JOGADOR, nao da aposta) --------
     # % dos jogos ANTERIORES daquele jogador que terminaram com 15+ de
     # diferenca. Aposta de folga (azarao com almofada) morre em jogo que
@@ -738,7 +745,7 @@ def apostas_de_ticks(t, h2h_path=None, paridade_path=None, chips_fonte='todas'):
 _PROIBIDAS = ('id', 'stake', 'odd', 'linha', 'placar', 'data', 'hora', 'lucro',
               'pnl', 'resultado', 'status', 'selec', 'tip', 'confronto',
               'jogador', 'evento', 'mercado', 'lado', 'unnamed')
-_COMP_PISTAS = ('gap', 'desvio', 'tend', 'med', 'méd', 'momento', 'ritmo',
+_COMP_PISTAS = ('gap', 'desvio', 'tend', 'med', 'méd', 'tot_env', 'momento', 'ritmo',
                 'streak', 'seq', 'folga', 'deficit', 'déficit', 'dif', 'pace',
                 'pontos', 'total')
 
@@ -776,7 +783,7 @@ def detectar_eixos(d):
         if pista_comp and not any(p in low for p in _PROIBIDAS):
             comp[cs] = s.values.astype(np.float64)
     # derivados viram complementares se existirem
-    for nome, col in (('momento', '_momento'), ('folga', '_folga'),
+    for nome, col in (('tot_env', '_tot_env'), ('folga', '_folga'),
                       ('desloc', '_desloc'), ('lin_ini', '_lin_ini'),
                       ('dif', '_dif'), ('atropelo', '_atropelo')):
         v = d[col].values
@@ -1021,8 +1028,8 @@ def main():
                          'SPEC = pares chave=valor separados por ";". Chaves: '
                          'janela, wr_min, wr_max, janela2, op2(ge/le), wr2, '
                          'conf_min, conf_max, linha_min, linha_max, odd_min, '
-                         'odd_max, lado, folga_min, folga_max, momento_min, '
-                         'momento_max, extra(nome>=x), teto. '
+                         'odd_max, lado, folga_min, folga_max, tot_env_min, '
+                         'tot_env_max, extra(nome>=x), teto. '
                          'Ex: -e "janela=ult.10; wr_min=0.70; linha_min=6.5; folga_min=5.5; teto=3"')
     a = ap.parse_args()
 
@@ -1696,7 +1703,8 @@ def main():
                 # extras (folga/momento/qualquer complementar)
                 extras_rot = []
                 for ch, nome_busca in (('folga_min', 'folga'), ('folga_max', 'folga'),
-                                       ('momento_min', 'momento'), ('momento_max', 'momento')):
+                                       ('momento_min', 'tot_env'), ('momento_max', 'tot_env'),
+                                       ('tot_env_min', 'tot_env'), ('tot_env_max', 'tot_env')):
                     if ch in kv:
                         ck = _acha_comp(nome_busca)
                         if ck is None:
@@ -2118,7 +2126,7 @@ def main():
         ('conf_max', 'maximo de confrontos ("-" = sem maximo; baixo = novato)'),
         ('linha_min / linha_max', 'faixa da linha (valor absoluto)'),
         ('odd_min / odd_max', 'faixa de odd (- = sem filtro de odd)'),
-        ('extra', 'corte complementar (gap/z/media/tendencia/momento/folga)'),
+        ('extra', 'corte complementar (gap/z/media/tendencia/tot_env/folga)'),
         ('teto', 'maximo de apostas por jogo (escadinha), recalculado POS-filtro'),
         ('apostas / jogos / por_jogo', 'volume; amostra de verdade e JOGOS (reds vem em bloco)'),
         ('unidades / ROI / u_dia', 'lucro total, por aposta e por dia'),

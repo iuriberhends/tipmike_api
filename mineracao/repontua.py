@@ -47,7 +47,27 @@ def preparar(ap: pd.DataFrame) -> dict:
     eA = (nick == ap['Jogador A'].astype(str).str.upper().str.strip()).values
     d['folga'] = np.abs(d['lin']) - np.where(eA, (pb - pa).values,
                                              (pa - pb).values)
-    d['momento'] = (pa + pb).values
+    d['tot_env'] = (pa + pb).values
+    d['momento'] = d['tot_env']          # alias: garimpo antigo dizia 'momento'
+    # v2: os demais eixos derivados do varredor. Sem eles, config com
+    # `desloc<=-5` era pontuada COMO SE O FILTRO NAO EXISTISSE — o numero de
+    # holdout saia de outra config, calado.
+    d['dif'] = np.abs(pa - pb).values
+    _ts = pd.to_datetime(ap['Data'].astype(str) + ' ' + ap['Hora'].astype(str),
+                         dayfirst=True, errors='coerce')
+    _o4 = np.argsort(_ts.values, kind='stable')
+    _s4 = pd.DataFrame({'c': ap['Confronto'].astype(str).values[_o4],
+                        't': _ts.values[_o4]})
+    _g4 = _s4.groupby('c')['t'].diff().dt.total_seconds().div(60).fillna(9e9)
+    _b4 = (_g4 > 240).groupby(_s4['c']).cumsum().astype(str)
+    _ev4 = np.empty(len(ap), object)
+    _ev4[_o4] = (_s4['c'] + '|' + _b4).values
+    _pr = (pd.DataFrame({'ev': _ev4, 't': _ts.values, 'lin': d['lin']})
+           .sort_values('t', kind='stable').drop_duplicates('ev')
+           .set_index('ev')['lin'])
+    d['lin_ini'] = pd.Series(_ev4).map(_pr).astype(float).values
+    d['desloc'] = d['lin'] - d['lin_ini']
+    d['atropelo'] = np.full(len(ap), np.nan)     # preenchido abaixo, com `ev`
     for j in JAN:
         d[j] = (pd.to_numeric(ap[j], errors='coerce').values
                 if j in ap.columns else np.full(len(ap), np.nan))
@@ -65,6 +85,36 @@ def preparar(ap: pd.DataFrame) -> dict:
         ev = np.empty(len(ap), object)
         ev[_o] = (_s['c'] + '|' + _blk).values
     d['ev_cod'] = pd.factorize(ev)[0]
+    # ATROPELO: % dos jogos ANTERIORES do jogador com |margem| >= 15; vale o
+    # PIOR dos dois; menos de 6 jogos usa a media corrente da liga. Mesma
+    # regra do varredor — se divergir, o holdout mede outra coisa.
+    try:
+        _pf = ap['Placar Final'].astype(str).str.extract(r'(\d+)\s*[-x:]\s*(\d+)')
+        _mg = (pd.to_numeric(_pf[0], errors='coerce')
+               - pd.to_numeric(_pf[1], errors='coerce')).abs()
+        _jg = (pd.DataFrame({'j': ev, 't': d['ts'],
+                             'A': ap['Jogador A'].astype(str).str.upper().str.strip(),
+                             'B': ap['Jogador B'].astype(str).str.upper().str.strip(),
+                             'm': _mg}).dropna(subset=['m'])
+               .sort_values('t', kind='stable').drop_duplicates('j'))
+        _nn, _bb, _tx = {}, {}, {}
+        _tn = _tb = 0
+        for _j, _A, _B, _m in zip(_jg.j.values, _jg.A.values, _jg.B.values, _jg.m.values):
+            _lig = (_tb / _tn) if _tn >= 30 else 0.11
+            _r = []
+            for _p in (_A, _B):
+                _q = _nn.get(_p, 0)
+                _r.append((_bb.get(_p, 0) / _q) if _q >= 6 else _lig)
+            _tx[_j] = max(_r) * 100.0
+            _at = 1 if _m >= 15 else 0
+            for _p in (_A, _B):
+                _nn[_p] = _nn.get(_p, 0) + 1
+                _bb[_p] = _bb.get(_p, 0) + _at
+            _tn += 1
+            _tb += _at
+        d['atropelo'] = pd.Series(ev).map(_tx).astype(float).values
+    except Exception as _e:
+        print(f'  aviso: nao calculei o atropelo ({_e}) — configs desse eixo serao PULADAS')
     ordem = np.argsort(d['ts'], kind='stable')
     for k in list(d):
         d[k] = d[k][ordem]
@@ -79,11 +129,17 @@ def preparar(ap: pd.DataFrame) -> dict:
     return d
 
 
+class ExtraDesconhecido(Exception):
+    """Eixo que este script nao sabe calcular. NUNCA ignorar: pontuar a config
+    sem o filtro dela devolve o numero de OUTRA config, e ninguem percebe."""
+
+
 def _extra_mask(extra: str, D: dict) -> np.ndarray:
     e = str(extra).strip()
     if e in ('-', 'nan', ''):
         return None
-    for campo in ('folga', 'momento'):
+    for campo in ('folga', 'tot_env', 'momento', 'desloc', 'lin_ini', 'dif',
+                  'atropelo'):
         if not e.startswith(campo):
             continue
         v = D[campo]
@@ -95,7 +151,7 @@ def _extra_mask(extra: str, D: dict) -> np.ndarray:
         if '~' in resto:                       # faixa "a~b"
             a, b = resto.split('~')
             return (v >= float(a)) & (v <= float(b))
-    return None
+    raise ExtraDesconhecido(e)
 
 
 def mascara(cfg, D: dict):
@@ -254,8 +310,13 @@ def main():
               'odd_max', 'lado', 'extra', 'teto']
     base = cfgs[chaves].to_dict('records')
     linhas = []
+    pulados = {}
     for i, cfg in enumerate(base):
-        m = mascara(cfg, D)
+        try:
+            m = mascara(cfg, D)
+        except ExtraDesconhecido as e:
+            pulados[str(e)] = pulados.get(str(e), 0) + 1
+            continue
         r = metricas(m, D)
         if r['apostas'] == 0:
             continue
@@ -263,6 +324,12 @@ def main():
         linhas.append({**cfg, **r})
         if (i + 1) % 20000 == 0:
             print(f'  {i + 1:,}...')
+    if pulados:
+        tot = sum(pulados.values())
+        print(f'\n  ATENCAO: {tot:,} configs PULADAS por eixo nao calculavel '
+              f'(melhor faltar que mentir):')
+        for k, v in sorted(pulados.items(), key=lambda x: -x[1])[:8]:
+            print(f'    {v:>6,}x  {k}')
     R = pd.DataFrame(linhas)
     print(f'{len(R):,} configs com apostas > 0')
 

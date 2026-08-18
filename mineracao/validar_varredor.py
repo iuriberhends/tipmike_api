@@ -71,7 +71,8 @@ def preparar(ap: pd.DataFrame) -> dict:
     eA = (nick == ap['Jogador A'].astype(str).str.upper().str.strip()).values
     d['eA'] = eA
     d['folga'] = np.abs(d['lin']) - np.where(eA, (pb - pa).values, (pa - pb).values)
-    d['momento'] = (pa + pb).values
+    d['tot_env'] = (pa + pb).values
+    d['momento'] = d['tot_env']        # alias do nome antigo
     # v2: MERCADO. A liquidacao do handicap (placar do lado + linha vs o outro)
     # NAO vale pra total de pontos (soma dos dois vs linha). Aplicar a regra
     # errada da ~50% de divergencia — parece motor quebrado e nao e.
@@ -180,7 +181,11 @@ def _extra(e, D):
     e = str(e).strip()
     if e in ('-', 'nan', ''):
         return None
-    for campo in ('folga', 'momento', 'desloc', 'lin_ini', 'dif', 'atropelo'):
+    # 'tot_env' e o nome novo do que o varredor chamava de 'momento'
+    # (soma do placar no envio). Os dois entram: garimpo antigo diz
+    # 'momento', garimpo novo diz 'tot_env'.
+    for campo in ('folga', 'tot_env', 'momento', 'desloc', 'lin_ini',
+                  'dif', 'atropelo'):
         if e.startswith(campo):
             v, r = D[campo], e[len(campo):].strip()
             if r.startswith('>='):

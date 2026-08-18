@@ -1,5 +1,16 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix)
+
+v18 - CORRECAO CRITICA: o filtro de atropelo estava dentro do bloco
+  `if filtros_unificados:`, ou seja so rodava quando a config tinha
+  CHIP. Config sem chip pulava o bloco e apostava SEM o filtro, em
+  silencio. Movido pro ponto comum aos dois ramos, ao lado do tot_env.
+
+v17 - FILTRO TOT_ENV: soma do placar no envio (score_home+score_away).
+  Chaves: totEnvAtivo / totEnvMin / totEnvMax. NAO confundir com `momento`,
+  que aqui e ESTAGIO do jogo (live_time). O varredor chamava a soma de
+  placar de "momento" e por isso config garimpada nao era reproduzivel —
+  agora o varredor emite `tot_env` e este filtro le a mesma coisa.
 
 v16 - FILTRO ATROPELO: % dos jogos ANTERIORES de cada jogador que terminaram
   com |diferenca| >= atropeloMargem (default 15). Valor da aposta = o PIOR dos
@@ -2525,6 +2536,51 @@ def _momento_do_tick(tick):
     return _MOMENTO_MAPA.get(s)
 
 
+def _aplicar_filtro_tot_env(tick, tot_env_min, tot_env_max) -> tuple:
+    """v17. TOT_ENV = SOMA DO PLACAR no instante do envio (score_home +
+    score_away). NAO confundir com `momento`, que neste motor e' o ESTAGIO do
+    jogo (1Q/1T/3Q, lido do live_time) — sao dois eixos diferentes que por
+    azar tinham o mesmo nome no varredor. Agora o varredor emite `tot_env` e
+    este filtro le exatamente a mesma coisa, entao config garimpada e' 1:1
+    reproduzivel aqui.
+
+    Serve pra qualquer mercado: no Over mede quanto de jogo ja passou (a linha
+    da casa costuma ficar atrasada quando o placar anda), no HC diz se a
+    aposta e' de comeco ou de fim de partida.
+
+    FAIL CLOSED: sem placar, placar nao numerico, config invalida ou faixa
+    impossivel (min > max) -> rejeita. Nunca crasha, nunca aposta com numero
+    furado.
+    """
+    try:
+        sh = tick.get('score_home')
+        sa = tick.get('score_away')
+        if sh is None or sa is None:
+            return False, 'tot_env_sem_placar'
+        try:
+            tot = float(sh) + float(sa)
+        except (TypeError, ValueError):
+            return False, 'tot_env_placar_invalido'
+        mn = mx = None
+        if tot_env_min is not None:
+            mn, err = _num_seguro(tot_env_min)
+            if err is not None:
+                return False, 'tot_env_min_invalido'
+        if tot_env_max is not None:
+            mx, err = _num_seguro(tot_env_max)
+            if err is not None:
+                return False, 'tot_env_max_invalido'
+        if mn is not None and mx is not None and mn > mx:
+            return False, 'tot_env_faixa_impossivel'
+        if mn is not None and tot < mn:
+            return False, f'tot_env_{tot:g}_lt_min_{mn:g}'
+        if mx is not None and tot > mx:
+            return False, f'tot_env_{tot:g}_gt_max_{mx:g}'
+        return True, ''
+    except Exception as e:
+        return False, f'tot_env_erro_{type(e).__name__}'
+
+
 def _aplicar_filtro_momento(tick, momento_min, momento_max) -> tuple:
     """v13. So aposta quando o ESTAGIO do jogo esta na faixa [min, max].
     Ex.: momentoMax=2 => so 1o tempo (1Q/2Q/HT). Retorna (passou, motivo).
@@ -2788,6 +2844,15 @@ async def executar_backtest(job_id: int):
         # que 'ativo' com bordas None deixe todo tick passar por engano).
         if momento_ativo and momento_min is None and momento_max is None:
             momento_ativo = False
+        # v17 — TOT_ENV (soma do placar no envio). Chaves proprias pra nao
+        # colidir com o `momento` acima, que e' ESTAGIO do jogo. Ausente =
+        # desligado; bot/job antigo segue idendico.
+        _ftv = filtros if isinstance(filtros, dict) else {}
+        tot_env_ativo = bool(_ftv.get('totEnvAtivo', False))
+        tot_env_min = _ftv.get('totEnvMin') if tot_env_ativo else None
+        tot_env_max = _ftv.get('totEnvMax') if tot_env_ativo else None
+        if tot_env_ativo and tot_env_min is None and tot_env_max is None:
+            tot_env_ativo = False
         # v16 — ATROPELO. Bot/job antigo sem as chaves = desligado, comportamento
         # identico ao de antes. atropeloMargem default 15, atropeloMinJogos 6.
         _fd = filtros if isinstance(filtros, dict) else {}
@@ -3190,6 +3255,30 @@ async def executar_backtest(job_id: int):
                     rej['momento'] = rej.get('momento', 0) + 1
                     continue
 
+            # v17 — TOT_ENV (soma do placar no envio). Mesmo ponto do momento:
+            # antes dos chips, porque e' barato e corta cedo.
+            if tot_env_ativo:
+                _ok_tv, _mot_tv = _aplicar_filtro_tot_env(
+                    tick, tot_env_min, tot_env_max)
+                if not _ok_tv:
+                    rej['tot_env'] = rej.get('tot_env', 0) + 1
+                    continue
+
+            # v18 — ATROPELO. AQUI, no ponto COMUM, fora do `if
+            # filtros_unificados:`. Na v16.1 ele ficava dentro daquele bloco por
+            # performance, e o efeito foi que config SEM CHIP pulava o bloco
+            # inteiro e apostava sem o filtro, calada: 3.006 apostas onde
+            # deviam ser ~400, ROI -6,5 em vez de +30. Correcao antes de
+            # otimizacao — o memo por (jogador, qtd de jogos) segura o custo.
+            _atr_v = None
+            if atropelo_ativo:
+                _ok_a, _mot_a, _atr_v = await _checar_atropelo(
+                    tick, indiv_cache, _atr_memo, atropelo_margem,
+                    atropelo_min_jogos, atropelo_min, atropelo_max, job_id)
+                if not _ok_a:
+                    rej[_mot_a] = rej.get(_mot_a, 0) + 1
+                    continue
+
             # v4: aplica filtros unificados (comp + hist normalizado)
             # mercado do bot (usado pro desvio HC vs over/under). Definido aqui
             # pra estar disponivel tanto no filtro quanto na resolucao abaixo.
@@ -3231,6 +3320,8 @@ async def executar_backtest(job_id: int):
                     stats = calcular_stat_hc(
                         jogos_h2h, tick.get('selecao', ''), ja, jb)
                     stats['linha_atual'] = linha_num
+                    if _atr_v is not None:
+                        stats['atropelo'] = round(_atr_v, 2)
                     stats['qtd_h2h'] = stats.get('hc_pct_qtd', 0)
 
                     # Config do filtro de HC (v_escadinha). Precedencia:
@@ -3316,20 +3407,6 @@ async def executar_backtest(job_id: int):
                     if qtd_h2h < H2H_MIN_SAUDAVEL:
                         qualidade['apostas_h2h_fraco'] += 1
 
-                    # v16.1 — ATROPELO no ramo HC. O laco tem DOIS ramos
-                    # (HC e over/under) e a v16 so tinha posto o filtro no
-                    # segundo: em ah_ft ele nunca era alcancado, e o unico
-                    # efeito visivel era a lentidao do tem_indiv=True.
-                    if atropelo_ativo:
-                        _ok_a, _mot_a, _atr_v = await _checar_atropelo(
-                            tick, indiv_cache, _atr_memo, atropelo_margem,
-                            atropelo_min_jogos, atropelo_min, atropelo_max,
-                            job_id)
-                        if not _ok_a:
-                            rej[_mot_a] = rej.get(_mot_a, 0) + 1
-                            continue
-                        if _atr_v is not None and isinstance(stats, dict):
-                            stats['atropelo'] = round(_atr_v, 2)
 
                 # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
                 else:
@@ -3337,6 +3414,8 @@ async def executar_backtest(job_id: int):
                                                 lado=_lado_aposta(tick.get('selecao')),
                                                 ts_ref=tick['ts'])
                     stats['linha_atual'] = linha_num
+                    if _atr_v is not None:
+                        stats['atropelo'] = round(_atr_v, 2)
 
                     # v11: filtros INDIVIDUAIS (base=individual) — WR das ultimas
                     # N partidas de CADA jogador contra QUALQUER adversario.
@@ -3376,18 +3455,6 @@ async def executar_backtest(job_id: int):
                             rej['comp'] += 1
                         continue
 
-                    # v16 — ATROPELO: por ultimo, de proposito. So os ticks que
-                    # ja passaram em TUDO pagam a busca do historico individual.
-                    if atropelo_ativo:
-                        _ok_a, _mot_a, _atr_v = await _checar_atropelo(
-                            tick, indiv_cache, _atr_memo, atropelo_margem,
-                            atropelo_min_jogos, atropelo_min, atropelo_max,
-                            job_id)
-                        if not _ok_a:
-                            rej[_mot_a] = rej.get(_mot_a, 0) + 1
-                            continue
-                        if _atr_v is not None and isinstance(stats, dict):
-                            stats['atropelo'] = round(_atr_v, 2)
 
                     # v10: passou nos filtros, mas com amostra h2h fraca? Marca pra
                     # reportar (NAO rejeita - so transparencia). qtd_h2h vem do stats.
