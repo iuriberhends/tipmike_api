@@ -340,19 +340,31 @@ def _novo_job(tipo: str, params: dict) -> str:
 # --------------------------------------------------------------- ANALISAR ---
 
 SQL_ANALISE = """
+-- v2 (17/ago): a lista de jogos vem da h2h_matches, nao mais de um
+-- GROUP BY na `ticks`.
+-- MEDIDO: o caminho antigo dava Parallel Seq Scan lendo 12,2 MILHOES de
+-- linhas da ticks pra destilar 1.564 eventos = 52,8s em 3 DIAS (e cresce
+-- linear: 15 dias viravam minutos, dai o "tempo esgotado"). A h2h_matches
+-- ja e' exatamente isso — 1 linha por evento, com par, liga e horario,
+-- mantida a cada 60s pelo atualizar_h2h.
+-- DIFERENCA DE SEMANTICA (assumida de proposito): `ini` passa a ser o
+-- ts_fim (ultimo tick do jogo) em vez do MIN(ts) (primeiro). Num jogo de
+-- ~20min a janela de +-45min vira [inicio-25, inicio+65] — o proprio jogo
+-- continua dentro com folga, e o jogo ANTERIOR do mesmo par (2h antes)
+-- segue de fora. Validar comparando os totais antes/depois no mesmo
+-- periodo: pares, cobertos e so-tick tem que bater.
 WITH jogos AS (
-    SELECT event_id,
-           MIN(ts) AS ini,
-           MIN(UPPER(jogador_a)) AS ja,
-           MIN(UPPER(jogador_b)) AS jb
-    FROM ticks
-    WHERE bookmaker = $1
-      AND sport = $2
-      AND ts >= $3 AND ts < $4
-      AND jogador_a IS NOT NULL AND jogador_b IS NOT NULL
-      AND score_home IS NOT NULL AND score_away IS NOT NULL
-      AND ($5::text IS NULL OR liga = $5)
-    GROUP BY event_id
+    SELECT m.event_id,
+           m.ts_fim AS ini,
+           UPPER(m.jogador_a) AS ja,
+           UPPER(m.jogador_b) AS jb
+    FROM h2h_matches m
+    WHERE m.bookmaker = $1
+      AND m.sport = $2
+      AND m.ts_fim >= $3 AND m.ts_fim < $4
+      AND m.jogador_a IS NOT NULL AND m.jogador_b IS NOT NULL
+      AND m.score_a IS NOT NULL AND m.score_b IS NOT NULL
+      AND ($5::text IS NULL OR m.liga = $5)
 ),
 faltas AS (
     SELECT LEAST(j.ja, j.jb) AS p1,
