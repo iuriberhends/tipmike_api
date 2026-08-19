@@ -337,6 +337,20 @@ def _novo_job(tipo: str, params: dict) -> str:
     return jid
 
 
+# v3 (19/ago) - DIAGNOSTICO EM PORTUGUES, ADITIVO.
+# O analisar continua devolvendo TUDO que devolvia (a lista de pares que
+# alimenta o /preencher nao muda uma virgula). O que entra e' o contrato do
+# h2h_diagnostico: as quatro perguntas, o veredito e o "o que fazer".
+# Import tolerante de proposito: sem o modulo, o analisar roda igual a hoje.
+try:
+    from workers import h2h_diagnostico as _diag
+except Exception:            # pragma: no cover
+    try:
+        import h2h_diagnostico as _diag
+    except Exception:
+        _diag = None
+
+
 # --------------------------------------------------------------- ANALISAR ---
 
 SQL_ANALISE = """
@@ -448,9 +462,17 @@ async def analisar(pool, params: dict, job_id: Optional[str] = None) -> dict:
             "so_tick": so_tick,                 # so na perna ticks (nao permanente)
             "jogos_hist": r["jogos_hist"],      # profundidade total do par
             "precisa": precisa,
-            "motivo": (f"{so_tick} jogo(s) so na perna dos ticks (sem copia permanente no hist)"
+            # v3: o texto antigo dizia "sem copia permanente" porque a perna
+            # de tick vinha da tabela `ticks`, expurgada em ~3 dias. Desde a
+            # v15 do runner ela vem da h2h_matches, que e' PERMANENTE (o
+            # proprio runner: "guarda jogos que o expurgo ja comeu dos
+            # ticks"). Entao so_tick NAO evapora - so' nao tem o placar
+            # oficial da TM ainda.
+            "motivo": (f"{so_tick} jogo(s) que o nosso coletor viu e a "
+                       f"TipManager ainda nao confirmou"
                        if so_tick > 0
-                       else ("historico raso" if precisa else "ok")),
+                       else ("poucos confrontos entre os dois"
+                             if precisa else "ok")),
         })
 
     rel = {
@@ -466,6 +488,26 @@ async def analisar(pool, params: dict, job_id: Optional[str] = None) -> dict:
         "so_tick_total": sum(p["so_tick"] for p in pares),
         "pares": pares,
     }
+
+    # v3: o diagnostico em portugues. Falha aqui NAO derruba a analise - o
+    # relatorio antigo (e o /preencher) seguem valendo sem ele.
+    if _diag is not None:
+        try:
+            if job_id:
+                JOBS[job_id].update(etapa="conferindo o dado", progresso=70)
+            nicks = sorted({p["jogador_a"] for p in pares}
+                           | {p["jogador_b"] for p in pares})
+            rel["diagnostico"] = await _diag.diagnosticar(
+                pool, casa=casa, sport=esporte, nicks=nicks,
+                inicio=ini, fim=fim, jogos_periodo=None)
+        except Exception as e:
+            rel["diagnostico"] = {
+                "veredito": "indisponivel",
+                "resumo": "Nao consegui conferir o dado desta vez.",
+                "erro": f"{type(e).__name__}: {str(e)[:160]}",
+                "checagens": [], "fontes": [], "filtros": [], "jogadores": [],
+            }
+
     if job_id:
         JOBS[job_id].update(status="concluido", progresso=100,
                             etapa="analise pronta", relatorio=rel)

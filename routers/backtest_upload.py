@@ -429,6 +429,11 @@ class BacktestAvulsoRequest(BaseModel):
     # >= atropelo_margem de diferenca no placar final; vale o PIOR dos dois.
     # Jogo que desanda mata aposta de almofada e o efeito bate nos DOIS lados —
     # e' propriedade do JOGO, nao do lado. Ausente = filtro desligado.
+    # v17 — TOT_ENV: soma do placar no envio. Chaves proprias pra nao colidir
+    # com `momento`, que no motor e' o ESTAGIO do jogo.
+    tot_env_ativo: bool = Field(default=False)
+    tot_env_min: Optional[float] = Field(default=None, ge=0, le=1000)
+    tot_env_max: Optional[float] = Field(default=None, ge=0, le=1000)
     atropelo_ativo: bool = Field(default=False)
     atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
     atropelo_max: Optional[float] = Field(default=None, ge=0, le=100)
@@ -713,6 +718,17 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
     # se houver borda — ativo sem min nem max nao filtra nada e o worker
     # desliga sozinho. Medido out-of-sample no HC: cortar acima de 22% melhorou
     # o ROI em todas as configs testadas. No Over PIORA — nao usar la.
+    # TOT_ENV (v17): so liga se houver borda — ativo sem min nem max nao
+    # filtra nada e o worker desliga sozinho.
+    if bool(getattr(req, "tot_env_ativo", False)) and (
+            getattr(req, "tot_env_min", None) is not None
+            or getattr(req, "tot_env_max", None) is not None):
+        filtros["totEnvAtivo"] = True
+        if getattr(req, "tot_env_min", None) is not None:
+            filtros["totEnvMin"] = float(req.tot_env_min)
+        if getattr(req, "tot_env_max", None) is not None:
+            filtros["totEnvMax"] = float(req.tot_env_max)
+
     if bool(req.atropelo_ativo) and (req.atropelo_min is not None
                                      or req.atropelo_max is not None):
         filtros["atropeloAtivo"] = True
