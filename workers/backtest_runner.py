@@ -362,9 +362,6 @@ MERCADO_TIPOS_POR_CASA = {
         'odd_even':             ['ODD_EVEN'],
     },
     'bet365': {
-        'over_under_ft':        ['1450'],
-        'ah_ft':                ['1446'],
-        'ml_ft':                ['180032'],
         # 03/ago: codigos de 1o TEMPO. Origem: o mapa de protocolo do
         # coletor CDP, o mesmo que o converter_betsapi grava no parquet
         # (180062 = 1st half total, 180061 = 1st half spread, 180060 =
@@ -379,6 +376,25 @@ MERCADO_TIPOS_POR_CASA = {
         'over_under_ht':        ['180062'],
         'ah_ht':                ['180061'],
         'ml_ht':                ['180060'],
+        # ---- e-SOCCER na mesma casa (05/ago) --------------------------------
+        # PRECISA estar aqui: a chave existindo faz _matches_mercado decidir por
+        # ID EXATO, e o fallback de palavra-chave so vale quando a chave FALTA.
+        # Ou seja, sem estes IDs, tick de e-Soccer da bet365 seria descartado
+        # SEMPRE — e nao pela porta lateral, e sim silenciosamente.
+        # Sem risco de misturar com basquete: o bot filtra por esporte antes
+        # (ESPORTE_UI_PARA_BANCO fifa->E-Football, nba2k->E-Basketball), entao
+        # 1450 e 10566 nunca disputam o mesmo tick.
+        # IDs conferidos no MA real do protocolo (coletor CDP, coleta de 29/jul,
+        # onde o nome do mercado vem no proprio feed):
+        #   10147 handicap asiatico 2 vias · 10148 goal line (total asiatico)
+        #   10566 match goals · 10124 "Partida - Gols" · 1777 resultado final
+        # 10159 (handicap de 3 OPCOES, com empate) fica DE FORA de proposito:
+        # liquida diferente do de 2 vias e, entrando em ah_ft, viraria green/red
+        # errado sem ninguem perceber. Se um dia for usar, precisa de ramo
+        # proprio no resolvedor (eh_ft ja existe pra isso).
+        'over_under_ft':        ['1450', '10566', '10148', '10124'],
+        'ah_ft':                ['1446', '10147'],
+        'ml_ft':                ['180032', '1777'],
     },
 }
 
