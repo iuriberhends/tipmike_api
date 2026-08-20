@@ -613,9 +613,11 @@ async def _analisar_de_arquivo(pool, params: dict, job_id: Optional[str] = None)
                 "jogos_ticks": len(inis), "cobertos_hist": cobertos,
                 "so_tick": so_tick, "jogos_hist": hist_total,
                 "precisa": precisa,
-                "motivo": (f"{so_tick} jogo(s) do arquivo sem copia no hist"
+                "motivo": (f"{so_tick} jogo(s) do arquivo que a TipManager "
+                           f"ainda nao confirmou"
                            if so_tick > 0
-                           else ("historico raso" if precisa else "ok")),
+                           else ("poucos confrontos entre os dois"
+                                 if precisa else "ok")),
             })
     pares.sort(key=lambda p: (-(p["so_tick"] or 0), p["jogos_hist"] or 0))
 
@@ -634,6 +636,33 @@ async def _analisar_de_arquivo(pool, params: dict, job_id: Optional[str] = None)
         "so_tick_total": sum(p["so_tick"] for p in pares),
         "pares": pares,
     }
+
+    # v3: o diagnostico em portugues. ESTE e' o caminho que o painel do
+    # backtest usa (com upload_id) — eu tinha enxertado so' no `analisar` do
+    # banco e o selo nunca aparecia, sem erro nenhum. E aqui da' pra calcular
+    # a 4a pergunta ("tem historico suficiente?"), porque `eventos` tem a
+    # lista de jogos do periodo com par e horario.
+    if _diag is not None:
+        try:
+            if job_id:
+                JOBS[job_id].update(etapa="conferindo o dado", progresso=70)
+            nicks = sorted({p["jogador_a"] for p in pares}
+                           | {p["jogador_b"] for p in pares})
+            jogos_periodo = [(e["ja"], e["jb"], e["ini"]) for e in eventos]
+            rel["diagnostico"] = await _diag.diagnosticar(
+                pool, casa=(casa_arq or params.get("casa")), sport=esporte,
+                nicks=nicks,
+                inicio=min(e["ini"] for e in eventos),
+                fim=max(e["ini"] for e in eventos),
+                jogos_periodo=jogos_periodo)
+        except Exception as e:
+            rel["diagnostico"] = {
+                "veredito": "indisponivel",
+                "resumo": "Nao consegui conferir o dado desta vez.",
+                "erro": f"{type(e).__name__}: {str(e)[:160]}",
+                "checagens": [], "fontes": [], "filtros": [], "jogadores": [],
+            }
+
     if job_id:
         JOBS[job_id].update(status="concluido", progresso=100,
                             etapa="analise pronta", relatorio=rel)
