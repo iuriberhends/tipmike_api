@@ -162,6 +162,274 @@ async def listar_arquivos(usuario: dict = Depends(get_current_user)):
             "parquets": _lista("*.parquet")}
 
 
+
+# ===================================================== tela de escolha (5b) ==
+def _mods_selecao():
+    """Import tardio: se os modulos nao estiverem em workers/, o endpoint
+    responde com o motivo em portugues — a API nunca cai por import no topo
+    (a licao do incidente do JSX salvo por cima do router)."""
+    try:
+        from workers import esteira_conversor as C, esteira_selecao as S
+        return C, S
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail="esteira_conversor.py / esteira_selecao.py precisam estar "
+                   f"em workers\\ — mova os arquivos e tente de novo ({e})")
+
+
+def _baseline_do_contrato(contrato):
+    """O contrato guarda o baseline como texto ('-4,88% (2.407 ap)') ou
+    numero. Parse defensivo: se nao achar, devolve None e o alerta de
+    magnitude simplesmente nao sai."""
+    if not contrato:
+        return None
+    v = contrato.get("baseline") if isinstance(contrato, dict) else None
+    if v is None:
+        return None
+    if isinstance(v, (int, float)):
+        return float(v) if abs(float(v)) <= 100 else None
+    import re as _re
+    s = str(v)
+    # o contrato guarda a LINHA INTEIRA do plano ("-452,09u ... -4,52%"):
+    # o numero que interessa e' o ancorado no %, nunca o primeiro que aparece
+    m = _re.search(r"(-?\d+(?:[.,]\d+)?)\s*%", s)
+    if m:
+        return float(m.group(1).replace(",", "."))
+    # sem % na string: o primeiro numero PLAUSIVEL pra ROI de mercado
+    for m in _re.finditer(r"-?\d+(?:[.,]\d+)?", s):
+        x = float(m.group(0).replace(",", "."))
+        if abs(x) <= 100:
+            return x
+    return None
+
+
+def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top):
+    """Roda em thread (pandas em 17k linhas travaria o event loop).
+    Replica o caminho do testar_selecao: rename -> coercao -> merge do
+    holdout pela chave normalizada -> conversor -> pacote colunar."""
+    import pandas as pd
+    C, S = _mods_selecao()
+
+    m = pd.read_csv(caminho_tudo, low_memory=False)
+    ren = {"apostas": "ap", "unidades": "u", "lucro_dd": "ldd",
+           "max_reds": "seq_neg", "roi_m1": "m1", "roi_m2": "m2",
+           "conc_alvo": "conc3", "n_par": "n_alvos"}
+    m = m.rename(columns={k: v for k, v in ren.items() if k in m.columns})
+    for c in ("ROI", "ap", "WR", "u", "ldd", "conc3", "DD", "u_dia", "ap_dia",
+              "m1", "m2", "pior_dia"):
+        if c in m.columns:
+            m[c] = pd.to_numeric(m[c], errors="coerce")
+
+    cruzadas = 0
+    if caminho_holdout and os.path.isfile(caminho_holdout):
+        h = pd.read_csv(caminho_holdout, low_memory=False)
+        K = ["janela", "wr_min", "wr_max", "janela2", "op2", "wr2",
+             "conf_min", "conf_max", "linha_min", "linha_max",
+             "odd_min", "odd_max", "extra", "teto"]
+
+        def nrm(v):
+            s = str(v).strip()
+            if s in ("-", "nan", "None", ""):
+                return "-"
+            try:
+                return f"{float(s):.4f}"
+            except ValueError:
+                return s
+
+        def key(d):
+            return d[K].astype(str).apply(lambda c: c.map(nrm)).agg("|".join, axis=1)
+
+        m["_k"] = key(m)
+        h["_k"] = key(h)
+        h = h.rename(columns={"ROI": "ROI_ho", "apostas": "ap_ho"})
+        m = m.drop_duplicates("_k").merge(
+            h[["_k", "ROI_ho", "ap_ho"]].drop_duplicates("_k"),
+            on="_k", how="left")
+        m = m.drop(columns=["_k"])
+        cruzadas = int(m["ROI_ho"].notna().sum())
+
+    # o drop_duplicates do merge fura o indice — sem isto, o indice do df
+    # deixa de bater com a POSICAO na lista e a marcacao da tela erraria
+    m = m.reset_index(drop=True)
+
+    # o top inicial se decide com o df ainda NUMERICO (nlargest exige)
+    crit = criterio if criterio in m.columns else "ROI"
+    idx_top = [int(x) for x in m.nlargest(top, crit).index] if crit in m.columns else []
+
+    # NaN das celulas vazias nao e' JSON — vira None aqui, uma vez so
+    m = m.astype(object).where(m.notna(), None)
+    registros = m.to_dict("records")
+
+    # quais linhas o MOTOR nao reproduz — com o motivo, nunca silencio
+    itens, recusadas = C.converter_lote(registros)
+    irrep = {r["i"]: r["motivo"] for r in recusadas}
+
+    # o pacote da tela (colunar, formato do prototipo) + os itens da planilha
+    # colunares e ALINHADOS POR INDICE com o pack (recusada = linha nula)
+    pack = S.empacotar(registros, baseline_treino=baseline)
+    COLS_ITEM = ["nome", "grupo", "mercado", "casa", "esporte", "chip_janela",
+                 "chip_wr_min", "chip_wr_max", "chip_conf", "chip_conf_max",
+                 "chip2_janela", "chip2_wr_min", "chip2_wr_max",
+                 "linha_min", "linha_max", "odd_min", "odd_max",
+                 "folga_min", "folga_max", "tot_env_min", "tot_env_max",
+                 "atropelo_min", "atropelo_max", "teto",
+                 "evitar_linhas_seq", "variar"]
+    it_rows, pos = [], 0
+    for i in range(len(registros)):
+        if i in irrep:
+            it_rows.append(None)
+        else:
+            d = itens[pos]
+            pos += 1
+            it_rows.append([d.get(c) for c in COLS_ITEM])
+
+    # a fotografia inicial: os alertas do top-N pelo criterio pedido
+    escolhidas = [registros[i] for i in idx_top]
+    checks, veredito, resumo = S.alertas(
+        escolhidas, todas=registros, baseline_treino=baseline)
+
+    return {
+        "total": len(registros),
+        "holdout_cruzado": cruzadas,
+        "baseline": baseline,
+        "pack": pack,
+        "itens_pack": {"cols": COLS_ITEM, "rows": it_rows},
+        "irreproduziveis": {str(k): v for k, v in irrep.items()},
+        "alertas": {"criterio": crit, "top": top, "indices": idx_top,
+                    "checks": checks, "veredito": veredito, "resumo": resumo},
+    }
+
+
+@router.get("/varreduras/{vid}/selecao")
+async def selecao_da_varredura(
+        vid: int,
+        criterio: str = Query("ldd", max_length=30),
+        top: int = Query(30, ge=1, le=300),
+        baseline: Optional[float] = Query(None,
+            description="ROI do mercado no treino; vazio = do contrato"),
+        usuario: dict = Depends(get_current_user)):
+    """A tela de escolha: converte o garimpo, marca o que o motor nao
+    reproduz e devolve o pacote colunar + alertas do top inicial. Recebe o
+    ID da varredura — nunca caminho de arquivo."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM varredura_jobs WHERE id = $1", vid)
+        if row is None or not _pode_ver(usuario, row["user_id"]):
+            raise HTTPException(status_code=404,
+                                detail="varredura nao encontrada")
+        if row["status"] != "concluido":
+            raise HTTPException(
+                status_code=400,
+                detail=f"a varredura {vid} esta '{row['status']}' — so da "
+                       "pra escolher em cima de garimpo concluido")
+    caminho = row["arquivo_tudo"]
+    if not caminho or not os.path.isfile(caminho):
+        raise HTTPException(
+            status_code=404,
+            detail=f"a varredura {vid} nao tem o arquivo completo no disco "
+                   "(arquivo_tudo) — rode o garimpo de novo")
+    if baseline is None:
+        baseline = _baseline_do_contrato(_json(row["contrato"], {}))
+
+    import asyncio
+    try:
+        corpo = await asyncio.to_thread(
+            _montar_selecao, caminho, row["arquivo_holdout"], baseline,
+            criterio, top)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception(f"[esteira] selecao da varredura {vid} falhou")
+        raise HTTPException(status_code=500,
+                            detail=f"falha lendo o garimpo: {e}")
+    corpo["varredura"] = {"id": row["id"], "nome": row["nome"]}
+    logger.info(f"[esteira] selecao da varredura {vid}: {corpo['total']} "
+                f"configs, {len(corpo['irreproduziveis'])} irreproduziveis")
+    return corpo
+
+
+class AlertasSelecaoRequest(BaseModel):
+    indices: List[int] = Field(..., min_length=1, max_length=300,
+                               description="indices das linhas marcadas")
+    baseline: Optional[float] = None
+
+
+@router.post("/varreduras/{vid}/selecao/alertas")
+async def alertas_da_selecao(vid: int, req: AlertasSelecaoRequest,
+                             usuario: dict = Depends(get_current_user)):
+    """Recalcula os 4 alertas para a marcacao ATUAL da tela — mesma conta do
+    GET, so muda quem sao as escolhidas."""
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            "SELECT * FROM varredura_jobs WHERE id = $1", vid)
+        if row is None or not _pode_ver(usuario, row["user_id"]):
+            raise HTTPException(status_code=404,
+                                detail="varredura nao encontrada")
+    caminho = row["arquivo_tudo"]
+    if not caminho or not os.path.isfile(caminho):
+        raise HTTPException(status_code=404,
+                            detail="arquivo do garimpo sumiu do disco")
+    baseline = req.baseline
+    if baseline is None:
+        baseline = _baseline_do_contrato(_json(row["contrato"], {}))
+
+    def _rodar():
+        import pandas as pd
+        C, S = _mods_selecao()
+        m = pd.read_csv(caminho, low_memory=False)
+        ren = {"apostas": "ap", "unidades": "u", "lucro_dd": "ldd",
+               "max_reds": "seq_neg", "roi_m1": "m1", "roi_m2": "m2",
+               "conc_alvo": "conc3", "n_par": "n_alvos"}
+        m = m.rename(columns={k: v for k, v in ren.items() if k in m.columns})
+        for c in ("ROI", "conc3"):
+            if c in m.columns:
+                m[c] = pd.to_numeric(m[c], errors="coerce")
+        if row["arquivo_holdout"] and os.path.isfile(row["arquivo_holdout"]):
+            h = pd.read_csv(row["arquivo_holdout"], low_memory=False)
+            K = ["janela", "wr_min", "wr_max", "janela2", "op2", "wr2",
+                 "conf_min", "conf_max", "linha_min", "linha_max",
+                 "odd_min", "odd_max", "extra", "teto"]
+
+            def nrm(v):
+                s = str(v).strip()
+                if s in ("-", "nan", "None", ""):
+                    return "-"
+                try:
+                    return f"{float(s):.4f}"
+                except ValueError:
+                    return s
+
+            def key(d):
+                return d[K].astype(str).apply(
+                    lambda c: c.map(nrm)).agg("|".join, axis=1)
+
+            m["_k"] = key(m)
+            h["_k"] = key(h)
+            h = h.rename(columns={"ROI": "ROI_ho", "apostas": "ap_ho"})
+            m = m.drop_duplicates("_k").merge(
+                h[["_k", "ROI_ho", "ap_ho"]].drop_duplicates("_k"),
+                on="_k", how="left")
+        m = m.reset_index(drop=True)
+        m = m.astype(object).where(m.notna(), None)
+        regs = m.to_dict("records")
+        escolhidas = [regs[i] for i in req.indices if 0 <= i < len(regs)]
+        return S.alertas(escolhidas, todas=regs, baseline_treino=baseline)
+
+    import asyncio
+    try:
+        checks, veredito, resumo = await asyncio.to_thread(_rodar)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.exception(f"[esteira] alertas da selecao {vid} falharam")
+        raise HTTPException(status_code=500, detail=f"falha nos alertas: {e}")
+    return {"checks": checks, "veredito": veredito, "resumo": resumo,
+            "n": len(req.indices), "baseline": baseline}
+
+
 @router.post("/rodadas")
 async def criar_rodada(req: CriarEsteiraRequest,
                        usuario: dict = Depends(get_current_user)):
