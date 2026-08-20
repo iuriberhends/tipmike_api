@@ -417,6 +417,22 @@ def metricas_do_detalhe(detalhe: list) -> dict:
                         / max(len(d[d.ts >= meio]), 1) * 100, 2),
         "de": str(d["ts"].min())[:16], "ate": str(d["ts"].max())[:16],
     }
+    # POR DIA — a regua de leitura do placar: dias verdes vs vermelhos,
+    # pior dia e a maior sequencia ruim (que e' o que se sente na banca)
+    dias = d.groupby(d["ts"].dt.date)["u"].sum()
+    nd = max(len(dias), 1)
+    out["dias"] = int(len(dias))
+    out["u_dia"] = round(float(d["u"].sum()) / nd, 2)
+    out["ap_dia"] = round(n / nd, 1)
+    out["dias_pos"] = int((dias > 0).sum())
+    out["dias_neg"] = int((dias < 0).sum())
+    out["pior_dia"] = round(float(dias.min()), 2)
+    mx = cur = 0
+    for _v in (dias < 0).astype(int).values:
+        cur = cur + 1 if _v else 0
+        if cur > mx:
+            mx = cur
+    out["seq_neg"] = int(mx)
     for w in REC_JANELAS:
         f = d[d.ts >= fim - timedelta(days=w)]
         Gw = int(f["green"].sum())

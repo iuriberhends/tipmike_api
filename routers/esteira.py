@@ -137,6 +137,131 @@ def _linha(row, completo=False):
     return d
 
 
+# ======================================================= criar bot (item) ==
+_RE_CODIGO_LIGA = None
+
+class CriarBotDoItemRequest(BaseModel):
+    torneios: List[str] = Field(..., min_length=1, max_length=10,
+        description="nomes TRADUZIDOS da liga, como aparecem na tela de Bots")
+    nome: Optional[str] = Field(None, min_length=4, max_length=100)
+    descricao: Optional[str] = Field(None, max_length=2000)
+    casa: Optional[str] = Field(None, max_length=60,
+        description="vazio = a casa do proprio backtest")
+
+
+@router.post("/itens/{item_id}/criar-bot")
+async def criar_bot_do_item(item_id: int, req: CriarBotDoItemRequest,
+                            usuario: dict = Depends(get_current_user)):
+    """O snapshot que RODOU no motor vira bot — pelo MESMO create_bot do
+    painel (herda toda validacao; nada de INSERT paralelo). Nasce 'pausado';
+    ativa na tela de Bots. Fail-closed: cortes que o executor de bots nao
+    aplica (atropelo, tot_env) recusam na hora — melhor nao criar do que
+    criar um bot que aposta sem o filtro que fez a estrategia lucrar."""
+    global _RE_CODIGO_LIGA
+    import re as _re
+    if _RE_CODIGO_LIGA is None:
+        # codigo cru de liga (B-EBASKBLITZ4X5, ESOC-GTL-12MP): maiusculas/
+        # digitos/hifens, sem espaco — a whitelist casa contra o nome
+        # TRADUZIDO, entao codigo = bot mudo
+        _RE_CODIGO_LIGA = _re.compile(r"^[A-Z0-9][A-Z0-9-]{5,}$")
+
+    pool = get_pool()
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow(
+            """SELECT i.*, j.user_id, j.id AS jid
+                 FROM esteira_itens i
+                 JOIN esteira_jobs j ON j.id = i.esteira_job_id
+                WHERE i.id = $1""", item_id)
+    if row is None or not _pode_ver(usuario, row["user_id"]):
+        raise HTTPException(status_code=404, detail="item nao encontrado")
+
+    snap = _json(row["snapshot"])
+    if not snap:
+        raise HTTPException(
+            status_code=400,
+            detail="o item ainda nao tem snapshot — a rodada precisa ao "
+                   "menos ter preparado os itens")
+    m = _json(row["metricas"], {}) or {}
+    fl = dict(snap.get("filtros") or {})
+
+    # 1) cortes que o bot do painel NAO aplica — recusar com o porque
+    bloqueios = []
+    if fl.get("atropeloAtivo"):
+        bloqueios.append("atropelo (filtro de goleada)")
+    if fl.get("totEnvAtivo"):
+        bloqueios.append("tot_env (soma do placar no envio)")
+    if bloqueios:
+        raise HTTPException(
+            status_code=400,
+            detail="esta estrategia usa " + " e ".join(bloqueios) + " — o "
+                   "executor de bots do painel ainda nao aplica esse corte, "
+                   "entao o bot apostaria SEM o filtro que fez a estrategia "
+                   "lucrar. Teste na esteira uma variante sem esse corte, ou "
+                   "peca o suporte no executor antes de criar o bot.")
+
+    # 2) whitelist com cara de CODIGO de liga = bot mudo garantido
+    for t in req.torneios:
+        tt = str(t).strip()
+        if not tt:
+            raise HTTPException(status_code=400,
+                                detail="torneio vazio na whitelist")
+        if _RE_CODIGO_LIGA.match(tt) and " " not in tt:
+            raise HTTPException(
+                status_code=400,
+                detail=f"'{tt}' parece o CODIGO da liga — a whitelist casa "
+                       "por substring contra o nome TRADUZIDO (ex.: 'H2H GG "
+                       "League - 4x5', 'Battle - 5x5', 'GT Leagues - 2x6'). "
+                       "Com o codigo, o bot fica mudo.")
+
+    filtros_bot = dict(fl)
+    filtros_bot.setdefault("evitarLinhasSeq", False)  # nunca deixar implicito
+    filtros_bot["_origem_esteira"] = {
+        "esteira_job_id": row["jid"], "esteira_item_id": row["id"],
+        "backtest_job_id": row["backtest_job_id"],
+    }
+
+    nome = (req.nome or snap.get("nome") or row["nome"] or "").strip()
+    if len(nome) < 4:
+        nome = f"bot {nome}".strip()
+    descricao = req.descricao or (
+        f"Criado da esteira #{row['jid']} · item {row['nome']}"
+        + (f" · backtest #{row['backtest_job_id']}" if row["backtest_job_id"] else "")
+        + (f" · {m.get('G-R')} · WR {m.get('WR')}% · ROI {m.get('ROI')}%"
+           if m.get("G-R") else "")
+        + (f" · {m.get('de', '')} a {m.get('ate', '')}" if m.get("de") else "")
+        + ". Numeros do backtest — passado.")
+
+    try:
+        from routers.bots import BotCreate, create_bot
+    except Exception as e:
+        raise HTTPException(status_code=500,
+                            detail=f"routers/bots.py indisponivel: {e}")
+    from pydantic import ValidationError
+    try:
+        payload = BotCreate(
+            nome=nome[:100], descricao=descricao[:2000],
+            casa=(req.casa or snap.get("casa") or "").strip().lower(),
+            esporte=(snap.get("esporte") or "").strip().lower(),
+            mercado=snap.get("mercado") or "ah_ft",
+            torneios=[str(t).strip() for t in req.torneios],
+            linha_min=snap.get("linha_min"), linha_max=snap.get("linha_max"),
+            odd_min=snap.get("odd_min"), odd_max=snap.get("odd_max"),
+            max_apostas_partida=snap.get("max_apostas_partida"),
+            filtros=filtros_bot)
+    except ValidationError as e:
+        err = e.errors()[0]
+        raise HTTPException(
+            status_code=400,
+            detail=f"{'.'.join(str(x) for x in err.get('loc', []))}: "
+                   f"{err.get('msg', 'invalido')}")
+
+    bot = await create_bot(payload, usuario)   # o MESMO caminho do painel
+    logger.info(f"[esteira] item {item_id} virou bot {bot.get('id')} "
+                f"(pausado, casa {payload.casa})")
+    return {"bot_id": bot.get("id"), "nome": payload.nome,
+            "status": bot.get("status", "pausado"), "casa": payload.casa,
+            "aviso": "bot criado PAUSADO — confere e ativa na tela de Bots"}
+
 # ================================================================ endpoints ==
 @router.get("/arquivos")
 async def listar_arquivos(usuario: dict = Depends(get_current_user)):
@@ -548,7 +673,7 @@ async def itens(job_id: int, usuario: dict = Depends(get_current_user)):
         rows = await conn.fetch(
             """SELECT id, ordem, nome, papel, pai_item_id, assinatura,
                       status, backtest_job_id, metricas, alertas, erro,
-                      iniciado_em, finalizado_em
+                      snapshot, iniciado_em, finalizado_em
                  FROM esteira_itens
                 WHERE esteira_job_id = $1
                 ORDER BY ordem, id""", job_id)
@@ -558,6 +683,7 @@ async def itens(job_id: int, usuario: dict = Depends(get_current_user)):
         "assinatura": r["assinatura"], "status": r["status"],
         "backtest_job_id": r["backtest_job_id"],
         "metricas": _json(r["metricas"]), "alertas": _json(r["alertas"]),
+        "snapshot": _json(r["snapshot"]),
         "erro": r["erro"], "iniciado_em": r["iniciado_em"],
         "finalizado_em": r["finalizado_em"],
     } for r in rows]
