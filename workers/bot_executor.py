@@ -117,6 +117,8 @@ from workers.backtest_runner import (
     _selecao_hc_valor,
     _num_seguro,
     _hc_blacklist_bloqueia,
+    _checar_atropelo,
+    _aplicar_filtro_tot_env,
 )
 
 
@@ -318,6 +320,11 @@ def _resetar_caches_h2h_se_expirado():
         state.h2h_cache_por_casa = {}
         state.indiv_cache_por_casa = {}
         state.h2h_cache_atualizado_em = agora
+
+
+# v19: memo do atropelo por casa::esporte — chave (jogador, qtd_jogos), que
+# se auto-invalida quando entra jogo novo; teto simples pra nao crescer sem fim
+_ATROPELO_MEMO: dict = {}
 
 
 def _get_h2h_cache(casa: str, esporte_banco: str) -> H2HCache:
@@ -533,6 +540,56 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             _ok_mom, _mot_mom = False, 'momento_erro_chamada'
         if not _ok_mom:
             state.contador_rejeicoes['momento'] = state.contador_rejeicoes.get('momento', 0) + 1
+            return
+
+    # v19 — ATROPELO ao vivo: a MESMA conta do backtest (_checar_atropelo do
+    # runner, sobre a HistIndividualCache que o executor ja mantem). Gate
+    # PROPRIO, FORA do bloco de chips: bot so-atropelo filtra mesmo sem chip
+    # nenhum. Defaults identicos ao backtest (margem 15, min 6 jogos). FAIL
+    # CLOSED herdado: sem par, erro, hist curto ou cfg invalida -> NAO aposta,
+    # com o motivo no contador. Erro na chamada tambem nunca vira aposta.
+    _f_at = bot.get('filtros') or {}
+    if _f_at.get('atropeloAtivo'):
+        try:
+            _icache_at = _get_indiv_cache(casa_bot, sport_banco)
+            _memo_at = _ATROPELO_MEMO.setdefault(
+                f"{casa_bot}::{sport_banco}", {})
+            if len(_memo_at) > 5000:
+                _memo_at.clear()
+            _ok_at, _mot_at, _ = await _checar_atropelo(
+                tick, _icache_at, _memo_at,
+                float(_f_at.get('atropeloMargem') or 15.0),
+                int(_f_at.get('atropeloMinJogos') or 6),
+                _f_at.get('atropeloMin'), _f_at.get('atropeloMax'),
+                job_id=f"bot{bot.get('id')}")
+        except Exception:
+            _ok_at, _mot_at = False, 'atropelo_erro_chamada'
+        if not _ok_at:
+            _k_at = _mot_at or 'atropelo'
+            state.contador_rejeicoes[_k_at] = \
+                state.contador_rejeicoes.get(_k_at, 0) + 1
+            return
+
+    # v20 — TOT_ENV ao vivo: soma do placar no instante do envio, a MESMA
+    # funcao do backtest (o tick vivo ja traz score_home/score_away). NAO e'
+    # o `momento` (estagio do jogo) — sao eixos diferentes. FAIL CLOSED
+    # herdado: sem placar, placar invalido, cfg invalida ou faixa impossivel
+    # -> NAO aposta, com motivo no contador.
+    if _f_at.get('totEnvAtivo'):
+        try:
+            _ok_te, _mot_te = _aplicar_filtro_tot_env(
+                tick, _f_at.get('totEnvMin'), _f_at.get('totEnvMax'))
+        except Exception:
+            _ok_te, _mot_te = False, 'tot_env_erro_chamada'
+        if not _ok_te:
+            if '_lt_min_' in (_mot_te or ''):
+                _k_te = 'tot_env_abaixo'
+            elif '_gt_max_' in (_mot_te or ''):
+                _k_te = 'tot_env_acima'
+            else:
+                _k_te = _mot_te or 'tot_env'
+            state.contador_rejeicoes[_k_te] = \
+                state.contador_rejeicoes.get(_k_te, 0) + 1
             return
 
     # v5: SEMPRE calcula stats_h2h se tiver qualquer filtro

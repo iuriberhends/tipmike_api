@@ -33,7 +33,7 @@ import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, File, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
@@ -184,20 +184,8 @@ async def criar_bot_do_item(item_id: int, req: CriarBotDoItemRequest,
     m = _json(row["metricas"], {}) or {}
     fl = dict(snap.get("filtros") or {})
 
-    # 1) cortes que o bot do painel NAO aplica — recusar com o porque
-    bloqueios = []
-    if fl.get("atropeloAtivo"):
-        bloqueios.append("atropelo (filtro de goleada)")
-    if fl.get("totEnvAtivo"):
-        bloqueios.append("tot_env (soma do placar no envio)")
-    if bloqueios:
-        raise HTTPException(
-            status_code=400,
-            detail="esta estrategia usa " + " e ".join(bloqueios) + " — o "
-                   "executor de bots do painel ainda nao aplica esse corte, "
-                   "entao o bot apostaria SEM o filtro que fez a estrategia "
-                   "lucrar. Teste na esteira uma variante sem esse corte, ou "
-                   "peca o suporte no executor antes de criar o bot.")
+    # atropelo (v19) e tot_env (v20) LIBERADOS: o bot_executor aplica as
+    # MESMAS funcoes do backtest — snapshot copia inteiro, nada fica de fora
 
     # 2) whitelist com cara de CODIGO de liga = bot mudo garantido
     for t in req.torneios:
@@ -283,8 +271,27 @@ async def listar_arquivos(usuario: dict = Depends(get_current_user)):
             logger.exception("[esteira] falha listando arquivos da raiz")
         itens.sort(key=lambda x: -x["mtime"])
         return itens[:100]
+    # os gerados/enviados (backtest avulso e MikeDB) moram em uploads_backtest/
+    # — o VALOR devolvido e' o upload_id (caminho relativo), o NOME e' limpo
+    # do prefixo uuid pra leitura humana
+    import re as _re
+    ups = []
+    try:
+        for p in (RAIZ / "uploads_backtest").glob("*.parquet"):
+            if not p.is_file():
+                continue
+            st = p.stat()
+            nome = _re.sub(r"^[0-9a-f]{8,32}_", "", p.name)
+            ups.append({"nome": nome,
+                        "upload_id": f"uploads_backtest/{p.name}",
+                        "mb": round(st.st_size / 1048576, 1),
+                        "mtime": st.st_mtime})
+    except Exception:
+        logger.exception("[esteira] falha listando uploads_backtest")
+    ups.sort(key=lambda x: -x["mtime"])
     return {"planilhas": _lista("*.xlsx", ignora=("placar_", "esteira_")),
-            "parquets": _lista("*.parquet")}
+            "parquets": _lista("*.parquet"),
+            "uploads": ups[:100]}
 
 
 
@@ -553,6 +560,104 @@ async def alertas_da_selecao(vid: int, req: AlertasSelecaoRequest,
         raise HTTPException(status_code=500, detail=f"falha nos alertas: {e}")
     return {"checks": checks, "veredito": veredito, "resumo": resumo,
             "n": len(req.indices), "baseline": baseline}
+
+
+
+
+@router.get("/ligas")
+async def listar_ligas(casa: str = Query(..., max_length=60),
+                       esporte: str = Query(..., max_length=60),
+                       usuario: dict = Depends(get_current_user)):
+    """As ligas pro dropdown do criar-bot, em DUAS camadas: 'vivas' (do
+    catalogo — com tick recente) e 'todas' (o mapa de traducao do motor, a
+    lista canonica do que o executor reconhece). Nomes TRADUZIDOS — o que a
+    whitelist casa. Import tardio do routers.torneios: se algo faltar, o
+    endpoint degrada pra lista menor em vez de derrubar a API."""
+    casa = casa.strip().lower()
+    esporte = esporte.strip().lower()
+
+    todas: list = []
+    try:
+        from routers import torneios as _T
+        ids = _T._ids_brutos_para_esporte(casa, esporte) or []
+        nomes = set()
+        for i in ids:
+            n = _T.traduzir_liga(casa, str(i))
+            if n and not str(n).isdigit():
+                nomes.add(str(n))
+        todas = sorted(nomes)
+    except Exception:
+        logger.exception("[esteira] mapa de ligas indisponivel")
+
+    vivas: list = []
+    try:
+        pool = get_pool()
+        async with pool.acquire() as conn:
+            row = await conn.fetchrow(
+                "SELECT payload FROM catalogo_torneios WHERE casa=$1 "
+                "AND esporte=$2", casa, esporte)
+        if row and row["payload"]:
+            payload = row["payload"]
+            if isinstance(payload, str):
+                payload = json.loads(payload)
+            for t in (payload.get("torneios") or []):
+                if isinstance(t, dict):
+                    n = t.get("pai") or t.get("nome") or t.get("torneio")
+                else:
+                    n = t
+                if n and not str(n).isdigit():
+                    vivas.append(str(n))
+        vivas = sorted(set(vivas))
+    except Exception:
+        # sem tabela/sem catalogo: segue so com o mapa — nunca quebra
+        pass
+
+    return {"casa": casa, "esporte": esporte, "vivas": vivas, "todas": todas}
+
+
+@router.post("/upload-planilha")
+async def upload_planilha(arquivo: UploadFile = File(...),
+                          usuario: dict = Depends(get_current_user)):
+    """Sobe uma estrategias.xlsx direto pra RAIZ do servidor — onde o
+    dropdown de planilhas ja le. Sem RDP no meio do fluxo. Blindado: so
+    .xlsx, nome saneado (nada de caminho), 10 MB no teto, colisao de nome
+    ganha sufixo em vez de sobrescrever."""
+    nome_cru = os.path.basename(arquivo.filename or "").strip()
+    if not nome_cru.lower().endswith(".xlsx"):
+        raise HTTPException(status_code=400,
+                            detail="so aceito planilha .xlsx")
+    # sanear: so letras/numeros/espaco/._- e nunca comecar com ponto
+    import re as _re
+    base = _re.sub(r"[^A-Za-z0-9 ._\-]", "_", nome_cru)[:120].lstrip(".")
+    if not base or base.lower() == ".xlsx":
+        raise HTTPException(status_code=400, detail="nome de arquivo invalido")
+
+    dados = await arquivo.read()
+    if len(dados) > 10 * 1024 * 1024:
+        raise HTTPException(status_code=400,
+                            detail="planilha acima de 10 MB — isso nao e "
+                                   "uma estrategias.xlsx")
+    if len(dados) < 100 or dados[:2] != b"PK":
+        raise HTTPException(status_code=400,
+                            detail="o arquivo nao parece um .xlsx valido")
+
+    destino = RAIZ / base
+    if destino.exists():
+        raiz_nome, ext = os.path.splitext(base)
+        k = 2
+        while (RAIZ / f"{raiz_nome}_{k}{ext}").exists():
+            k += 1
+        destino = RAIZ / f"{raiz_nome}_{k}{ext}"
+
+    try:
+        destino.write_bytes(dados)
+    except Exception as e:
+        logger.exception("[esteira] falha salvando planilha enviada")
+        raise HTTPException(status_code=500,
+                            detail=f"nao consegui salvar no servidor: {e}")
+    logger.info(f"[esteira] planilha recebida: {destino.name} "
+                f"({len(dados) // 1024} KB, user {usuario.get('id')})")
+    return {"nome": destino.name, "kb": len(dados) // 1024}
 
 
 @router.post("/rodadas")
