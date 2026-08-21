@@ -1,5 +1,17 @@
 """
-bot_executor.py - Worker de simulacao em tempo real (v12)
+bot_executor.py - Worker de simulacao em tempo real (v12 + v20 hc_relativo)
+
+v20 - HANDICAP AO VIVO: de que placar a linha vale (espelha o backtest v20).
+- Feeds em que a linha de HC vale DO PLACAR CORRENTE PRA FRENTE (hoje:
+  bet365 / E-Football) passaram a ser liquidados descontando o placar que
+  estava no ar quando a aposta entrou. O executor JA grava esse placar em
+  placar_a_entrada / placar_b_entrada desde sempre - o resolver so nao usava.
+- Tabela e regra unicas, importadas do backtest_runner (HC_RELATIVO_AO_PLACAR
+  / _hc_modo_liquidacao): backtest e vivo nunca divergem.
+- FAIL CLOSED na ENTRADA: bot de HC em feed relativo NAO aposta em tick sem
+  placar (contador 'hc_sem_placar_envio'), porque sem o placar de partida a
+  aposta nao teria como ser liquidada depois.
+- bet365 / E-Basketball foi validado como JOGO INTEIRO: zero mudanca la.
 
 v12 - Filtro FOLGA (so handicap):
 - Le folgaAtivo/folgaMin/folgaMax do filtros jsonb (MESMAS chaves do
@@ -119,6 +131,9 @@ from workers.backtest_runner import (
     _hc_blacklist_bloqueia,
     _checar_atropelo,
     _aplicar_filtro_tot_env,
+    # --- v20: de que placar a linha de HC vale (fonte unica com o backtest) ---
+    _hc_modo_liquidacao,
+    HC_MODO_DESCONHECIDO,
 )
 
 
@@ -476,6 +491,32 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 if sinal_tick != hc_lado:
                     state.contador_rejeicoes['lado'] = state.contador_rejeicoes.get('lado', 0) + 1
                     return
+
+    # v20 — HC de feed RELATIVO precisa do placar de partida pra poder ser
+    # liquidado depois (a linha vale do placar corrente pra frente). Tick sem
+    # score = aposta que ficaria impossivel de resolver -> nao aposta.
+    if _mercado_eh_hc(bot.get('mercado', '')):
+        try:
+            _modo_hc = _hc_modo_liquidacao(tick)
+        except Exception:
+            _modo_hc = 'desconhecido'
+        if _modo_hc == 'relativo' and (tick.get('score_home') is None
+                                       or tick.get('score_away') is None):
+            state.contador_rejeicoes['hc_sem_placar_envio'] = \
+                state.contador_rejeicoes.get('hc_sem_placar_envio', 0) + 1
+            return
+        # Feed de HC nao registrado + politica 'rejeitar': nao da pra saber de
+        # que placar a linha vale, entao nao aposta ao vivo. Mesma politica do
+        # backtest (HC_MODO_DESCONHECIDO no backtest_runner) — os dois lados
+        # leem a MESMA constante, entao nunca divergem.
+        if _modo_hc == 'desconhecido' and HC_MODO_DESCONHECIDO == 'rejeitar':
+            _sh, _sa = tick.get('score_home'), tick.get('score_away')
+            _ao_vivo = (_sh is None or _sa is None
+                        or (_sh or 0) > 0 or (_sa or 0) > 0)
+            if _ao_vivo:
+                state.contador_rejeicoes['hc_feed_nao_validado'] = \
+                    state.contador_rejeicoes.get('hc_feed_nao_validado', 0) + 1
+                return
 
     passou, motivo = _avaliar_filtros_basicos(tick, bot)
     if not passou:
@@ -1008,7 +1049,11 @@ async def _resolver_apostas_pendentes():
             apostas = await conn.fetch("""
                 SELECT a.id, a.bot_id, a.event_id, a.bookmaker, a.mercado,
                        a.linha, a.selecao, a.lado, a.odd, a.stake,
-                       a.jogador_a, a.jogador_b, a.apostado_em
+                       a.jogador_a, a.jogador_b, a.apostado_em,
+                       -- v20: placar do ENVIO (ja gravado desde sempre) +
+                       -- esporte/liga pra saber de que placar a linha vale
+                       a.placar_a_entrada, a.placar_b_entrada,
+                       a.esporte, a.liga
                 FROM apostas a
                 WHERE a.status = 'pendente'
                   AND a.modo = 'simulado'
@@ -1136,10 +1181,30 @@ async def _resolver_apostas_pendentes():
 
                 # ===== resolucao HANDICAP por NICK (isolada) =====
                 if _mercado_eh_hc(ap['mercado']):
+                    # v20: MESMA regra do backtest. Em feed relativo desconta o
+                    # placar que estava no ar quando a aposta entrou.
+                    try:
+                        _modo_hc = _hc_modo_liquidacao({
+                            'bookmaker': ap['bookmaker'],
+                            'sport': ap['esporte'],
+                            'liga': ap['liga'],
+                        })
+                    except Exception:
+                        _modo_hc = 'desconhecido'
+                    _rel_hc = (_modo_hc == 'relativo')
+                    if _rel_hc and (ap['placar_a_entrada'] is None
+                                    or ap['placar_b_entrada'] is None):
+                        logger.warning(
+                            f"[resolver] ap {ap['id']}: HC de feed relativo sem "
+                            f"placar de entrada — nao da pra liquidar, segue pendente")
+                        continue
                     resultado = _resolve_resultado_hc(
                         ap['selecao'] or ap['lado'],
                         ap.get('jogador_a'), ap.get('jogador_b'),
-                        sh, sa
+                        sh, sa,
+                        score_envio_home=ap['placar_a_entrada'],
+                        score_envio_away=ap['placar_b_entrada'],
+                        relativo=_rel_hc,
                     )
                 else:
                     resultado = _resolve_resultado(
