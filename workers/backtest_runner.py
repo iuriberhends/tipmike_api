@@ -1,5 +1,24 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo)
+
+v20 - CORRECAO CRITICA (handicap ao vivo): existem feeds em que a linha de
+  handicap vale DO PLACAR CORRENTE PRA FRENTE, e nao do jogo inteiro. Nesses
+  feeds o motor liquidava contra o placar FINAL e toda aposta que entrou com
+  o lado ja na frente virava green de graca.
+  Medido no bet365 FUT_GT (S-ESOCGT12), 15.612 apostas escancaradas:
+    entrou ja cobrindo a linha .... ROI +33,5%   (com a conta certa: -9,1%)
+    entrou atras da linha ......... ROI -47,3%   (com a conta certa: -3,0%)
+  Como sao espelhos, o universo inteiro fechava no vig (-6,5%) e o erro so
+  aparecia quando um filtro pendia pra um dos lados: o chip "Todas >= 0,50",
+  que na pratica escolhe quem esta ganhando na hora, dava +14,7% de ROI
+  fantasma (job 1385) e vira -4,9% com a liquidacao certa.
+  PROVA (ticks equilibrados, o book dando 1,85 nas duas pontas): lendo jogo
+  inteiro, o lado A cobre 0,0% quando esta 3 atras e 99,3% quando esta 3 na
+  frente; lendo do placar pra frente, fica entre 45% e 58% em toda a escada.
+  Nenhum book paga 1,85 num evento de 99,3%.
+  A convencao e POR FEED: bet365/E-Basketball foi validado como JOGO INTEIRO
+  (desvio 2,2 pontos) e nao muda em nada. Ver HC_RELATIVO_AO_PLACAR e o
+  script valida_hc.py antes de registrar qualquer feed novo.
 
 v18 - CORRECAO CRITICA: o filtro de atropelo estava dentro do bloco
   `if filtros_unificados:`, ou seja so rodava quando a config tinha
@@ -101,6 +120,7 @@ from typing import Any, Optional
 from decimal import Decimal
 import json
 import re
+import bisect
 import unicodedata
 import logging
 import asyncio
@@ -876,10 +896,171 @@ def _selecao_hc_valor(selecao: str) -> Optional[float]:
         return None
 
 
+
+# ============================================================
+# v20 - DE QUE PLACAR A LINHA DE HANDICAP VALE
+# ------------------------------------------------------------
+# Dois tipos de book convivem nas fontes que este motor le:
+#
+#   JOGO INTEIRO  - a linha conta os gols/pontos ja marcados. E o caso do
+#                   e-basket da bet365: quem esta 17 na frente e ofertado em
+#                   -16, a linha anda junto com o placar.
+#   DO PLACAR PRA - a linha vale do instante da aposta em diante; o que ja
+#   FRENTE          aconteceu nao conta. E o caso do e-soccer GT da bet365:
+#                   quem esta 3 gols na frente e ofertado em +0,5, a linha
+#                   fica colada no zero o jogo inteiro.
+#
+# COMO DESCOBRIR (nao chute): rode valida_hc.py no parquet do feed. Ele pega
+# os ticks em que o book poe as duas pontas na mesma odd (= "e moeda") e
+# conta qual das duas leituras realmente da 50%. A errada dispara pra 0% e
+# 100% conforme o placar abre.
+#
+# COMO LIGAR: registre o feed abaixo. Chave mais especifica vence.
+# Feed NAO registrado mantem o comportamento antigo (jogo inteiro) - nada
+# quebra sozinho. Pra ser conservador num feed novo, use HC_MODO_DESCONHECIDO.
+# ============================================================
+
+# (bookmaker, sport) -> True = a linha vale do placar corrente pra frente
+HC_RELATIVO_AO_PLACAR = {
+    # validado 21/08 em 5.395 jogos (desvio de 50%: 2,2 pontos na leitura
+    # relativa contra 35,3 na de jogo inteiro). Validado na S-ESOCGT12 /
+    # GT Leagues; as demais ligas de e-soccer da bet365 herdam por serem o
+    # mesmo book - passe cada uma pelo valida_hc.py quando puder.
+    ('bet365', 'E-Football'): True,
+    # validado 21/08 em 1.057 jogos: a linha acompanha o placar ponto a
+    # ponto (17 na frente -> linha -16). NADA muda aqui.
+    ('bet365', 'E-Basketball'): False,
+}
+
+# (bookmaker, liga) -> sobrepoe o default do feed pra UMA liga especifica.
+# Aceita tanto o codigo cru do coletor quanto o nome traduzido.
+HC_RELATIVO_POR_LIGA: dict = {}
+
+# O que fazer com feed NAO registrado quando a aposta entrou AO VIVO:
+#   'jogo_inteiro' -> liquida como sempre liquidou (default, nao quebra nada)
+#   'rejeitar'     -> nao aposta (fail closed) ate voce validar o feed
+HC_MODO_DESCONHECIDO = 'jogo_inteiro'
+
+
+def _chave_feed(valor) -> str:
+    """Normaliza bookmaker/sport/liga pra chave (upper, sem espaco nas pontas).
+    BLINDADO: qualquer coisa vira string, None vira ''."""
+    try:
+        return str(valor or '').strip().upper()
+    except Exception:
+        return ''
+
+
+def _hc_modo_liquidacao(tick) -> str:
+    """v20. Devolve 'relativo' | 'jogo_inteiro' | 'desconhecido' pro tick.
+
+    Ordem: liga especifica -> (bookmaker, sport) -> desconhecido.
+    O sport aceita tanto o rotulo do banco ('E-Football') quanto o da UI
+    (passa pelo ESPORTE_UI_PARA_BANCO). BLINDADO: nunca levanta."""
+    try:
+        book = _chave_feed(tick.get('bookmaker') if isinstance(tick, dict) else None)
+        sport_raw = tick.get('sport') if isinstance(tick, dict) else None
+        liga = _chave_feed(tick.get('liga') if isinstance(tick, dict) else None)
+    except Exception:
+        return 'desconhecido'
+    if not book:
+        return 'desconhecido'
+
+    sport = ESPORTE_UI_PARA_BANCO.get(sport_raw, sport_raw)
+    sport = _chave_feed(sport)
+
+    if liga:
+        for (b, lg), rel in HC_RELATIVO_POR_LIGA.items():
+            if _chave_feed(b) == book and _chave_feed(lg) == liga:
+                return 'relativo' if rel else 'jogo_inteiro'
+    for (b, sp), rel in HC_RELATIVO_AO_PLACAR.items():
+        if _chave_feed(b) == book and _chave_feed(sp) == sport:
+            return 'relativo' if rel else 'jogo_inteiro'
+    return 'desconhecido'
+
+
+def _indexar_placar_por_evento(ticks) -> dict:
+    """v20. {event_id: ([ts, ...], [(sh, sa), ...])} com TODOS os ticks que
+    trazem placar, em ordem de ts.
+
+    Serve pra recuperar o placar do envio quando o proprio tick da aposta veio
+    sem score (no acervo do FUT_GT isso acontece em ~30% deles). Usa a lista
+    CRUA de ticks - inclusive os de outros mercados do mesmo jogo, que muitas
+    vezes tem o placar que faltou. BLINDADO: linha ruim e ignorada."""
+    idx: dict = {}
+    for t in (ticks or []):
+        try:
+            sh = t['score_home']
+            sa = t['score_away']
+            if sh is None or sa is None:
+                continue
+            evt = t['event_id']
+            ts = t['ts']
+            if evt is None or ts is None:
+                continue
+            idx.setdefault(evt, []).append((ts, int(sh), int(sa)))
+        except (KeyError, TypeError, ValueError, IndexError):
+            continue
+    saida = {}
+    for evt, linhas in idx.items():
+        try:
+            linhas.sort(key=lambda x: x[0])
+            saida[evt] = ([x[0] for x in linhas], [(x[1], x[2]) for x in linhas])
+        except Exception:
+            continue
+    return saida
+
+
+def _placar_no_envio(tick, idx) -> tuple:
+    """v20. (sh, sa) conhecidos no instante do envio, ou (None, None).
+
+    1) o placar do PROPRIO tick, quando existe;
+    2) senao, o ultimo tick do MESMO evento com placar, com ts <= o da aposta;
+    3) senao (None, None) - e o chamador decide (fail closed).
+    NUNCA olha pra frente: o corte e <= ts da aposta."""
+    try:
+        sh = tick.get('score_home')
+        sa = tick.get('score_away')
+        if sh is not None and sa is not None:
+            return int(sh), int(sa)
+    except (TypeError, ValueError, AttributeError):
+        pass
+    try:
+        evt = tick.get('event_id')
+        ts = tick.get('ts')
+        if evt is None or ts is None or not idx:
+            return None, None
+        par = idx.get(evt)
+        if not par:
+            return None, None
+        tss, placares = par
+        i = bisect.bisect_right(tss, ts)
+        if i <= 0:
+            return None, None
+        return placares[i - 1]
+    except Exception:
+        return None, None
+
+
 def _resolve_resultado_hc(selecao, jogador_a, jogador_b,
-                          score_home, score_away) -> Optional[str]:
+                          score_home, score_away,
+                          score_envio_home=None, score_envio_away=None,
+                          relativo: bool = False) -> Optional[str]:
     """green/red/void de HC por NICK. Casa o nick com o lado (home/away) e
-    aplica cobertura. None se nao resolver (blindado, nunca inverte)."""
+    aplica cobertura. None se nao resolver (blindado, nunca inverte).
+
+    v20 - relativo=True: a linha vale DO PLACAR DO ENVIO PRA FRENTE, entao o
+    que ja estava no placar quando a aposta entrou e descontado:
+
+        cobertura = (final_nick - final_adv) - (envio_nick - envio_adv) + hc
+
+    Com relativo=False (default) o comportamento e IDENTICO ao de antes -
+    nenhum feed muda de resultado sem ser ligado de proposito. Pre-jogo os
+    dois modos dao o mesmo numero (envio 0-0).
+
+    FAIL CLOSED no modo relativo: sem placar de envio, placar de envio ilegivel
+    ou MAIOR que o final (evento trocado / fuso desalinhado) -> None, e o
+    chamador rejeita a aposta em vez de liquidar com numero furado."""
     if score_home is None or score_away is None:
         return None
     nick = _extrair_nick_hc(selecao)
@@ -889,18 +1070,41 @@ def _resolve_resultado_hc(selecao, jogador_a, jogador_b,
     ja = (jogador_a or '').strip().upper()
     jb = (jogador_b or '').strip().upper()
     if nick == ja:
-        pts_nick, pts_adv = score_home, score_away
+        nick_eh_home = True
     elif nick == jb:
-        pts_nick, pts_adv = score_away, score_home
+        nick_eh_home = False
     else:
         if ja and (nick in ja or ja in nick):
-            pts_nick, pts_adv = score_home, score_away
+            nick_eh_home = True
         elif jb and (nick in jb or jb in nick):
-            pts_nick, pts_adv = score_away, score_home
+            nick_eh_home = False
         else:
             return None
+    if nick_eh_home:
+        pts_nick, pts_adv = score_home, score_away
+    else:
+        pts_nick, pts_adv = score_away, score_home
+
     try:
-        ajuste = float(pts_nick) + float(hc) - float(pts_adv)
+        margem = float(pts_nick) - float(pts_adv)
+    except (TypeError, ValueError):
+        return None
+
+    if relativo:
+        if score_envio_home is None or score_envio_away is None:
+            return None
+        try:
+            env_h = float(score_envio_home)
+            env_a = float(score_envio_away)
+            if env_h > float(score_home) or env_a > float(score_away):
+                return None  # envio depois do final: evento trocado ou fuso
+            env_nick, env_adv = (env_h, env_a) if nick_eh_home else (env_a, env_h)
+            margem -= (env_nick - env_adv)
+        except (TypeError, ValueError):
+            return None
+
+    try:
+        ajuste = margem + float(hc)
     except (TypeError, ValueError):
         return None
     if ajuste > 0:
@@ -3136,6 +3340,10 @@ async def executar_backtest(job_id: int):
             'cap_jogo': 0, 'basico': 0, 'cenario': 0, 'diff': 0, 'folga': 0,
             'h2h_insuf': 0, 'comp': 0, 'sem_par': 0,
             'sem_placar': 0, 'sem_resultado': 0, 'lado': 0,
+            # v20: HC de feed relativo sem placar no envio (nao da pra liquidar)
+            'hc_sem_placar_envio': 0,
+            # v20: feed de HC nao registrado + HC_MODO_DESCONHECIDO='rejeitar'
+            'hc_feed_nao_validado': 0,
         }
         # Detalhe das rejeicoes BASICAS por sub-motivo (odd_lt_min, mercado_nao_bate,
         # linha_invalida, odd_ausente, etc). Permanente, vai pro relatorio - assim
@@ -3184,6 +3392,15 @@ async def executar_backtest(job_id: int):
                 primeiros[chave] = dict(t)
         ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
         total_candidatos = len(ticks_ordenados)
+        # v20: indice do placar por evento, montado com a lista CRUA de ticks
+        # (todos os mercados). Serve pra recuperar o placar do envio quando o
+        # tick da aposta veio sem score - no acervo do FUT_GT sao ~30% deles.
+        # So e consultado no ramo de HC com feed relativo.
+        try:
+            _idx_placar = _indexar_placar_por_evento(ticks)
+        except Exception as _e_idx:
+            logger.warning(f"[backtest] job {job_id}: indice de placar falhou: {_e_idx}")
+            _idx_placar = {}
         try:
             _n_ev = len({t['event_id'] for t in ticks_ordenados})
             logger.info(f"[backtest {job_id}] escada: {total_candidatos} linhas unicas "
@@ -3499,11 +3716,32 @@ async def executar_backtest(job_id: int):
 
             linha_num = _parse_linha(tick.get('linha'))
             # ===== resolucao HANDICAP por NICK (isolada) =====
+            _envio_h = _envio_a = None
             if _mercado_eh_hc(mercado_bot):
+                # v20: de que placar a linha vale neste feed?
+                _modo_hc = _hc_modo_liquidacao(tick)
+                _hc_relativo = (_modo_hc == 'relativo')
+                if _modo_hc == 'desconhecido':
+                    _envio_h, _envio_a = _placar_no_envio(tick, _idx_placar)
+                    _ao_vivo = (_envio_h is not None
+                                and (_envio_h > 0 or _envio_a > 0))
+                    if _ao_vivo and HC_MODO_DESCONHECIDO == 'rejeitar':
+                        # feed nao validado + aposta ao vivo: nao da pra saber
+                        # de que placar a linha vale, entao nao liquida.
+                        rej['hc_feed_nao_validado'] += 1
+                        continue
+                if _hc_relativo:
+                    _envio_h, _envio_a = _placar_no_envio(tick, _idx_placar)
+                    if _envio_h is None or _envio_a is None:
+                        # sem o placar do envio a conta nao existe. FAIL CLOSED.
+                        rej['hc_sem_placar_envio'] += 1
+                        continue
                 resultado = _resolve_resultado_hc(
                     tick.get('selecao', ''),
                     tick.get('jogador_a'), tick.get('jogador_b'),
                     score_home, score_away,
+                    score_envio_home=_envio_h, score_envio_away=_envio_a,
+                    relativo=_hc_relativo,
                 )
             else:
                 resultado = _resolve_resultado(
@@ -3531,6 +3769,10 @@ async def executar_backtest(job_id: int):
                 'linha_num': linha_num,
                 'score_home': score_home,
                 'score_away': score_away,
+                # v20: placar do envio JA RECUPERADO (o do tick, ou o ultimo
+                # conhecido do evento antes dele). Vai pro export.
+                'envio_home': _envio_h,
+                'envio_away': _envio_a,
                 'resultado': resultado,
                 'stats': stats,
             })
@@ -3730,7 +3972,13 @@ async def executar_backtest(job_id: int):
                 'qtd_ind_b': st.get('qtd_indiv_b'),
                 'odd': odd,
                 'stake': stake,
-                'placar_envio': f"{tick.get('score_home')}-{tick.get('score_away')}",
+                # v20: usa o placar do envio RECUPERADO quando o proprio tick
+                # veio sem score (antes saia "None-None" em ~30% das linhas).
+                'placar_envio': (
+                    f"{c.get('envio_home')}-{c.get('envio_away')}"
+                    if c.get('envio_home') is not None
+                    else f"{tick.get('score_home')}-{tick.get('score_away')}"
+                ),
                 'score_final': f"{c['score_home']}-{c['score_away']}",
                 'resultado': resultado,
                 'pnl': round(pnl_aposta, 2),
