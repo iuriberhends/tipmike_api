@@ -306,6 +306,35 @@ SUPERBET_ALIASES = {
 
 
 
+def expandir_torneios(bookmaker: str, termos) -> list:
+    """Whitelist de bot usa o NOME traduzido ('Battle - 5x5'); a coluna
+    `liga` dos ticks/parquets carrega o CODIGO cru (B-EBASKBAT4X5). O
+    executor ao vivo traduz tick a tick; backtest e validacao filtram em
+    massa — entao aqui vai o caminho inverso: pra cada termo, os CODIGOS
+    da casa cuja traducao contem o termo (mesma semantica de substring,
+    case-insensitive, do executor). BLINDADO: qualquer erro devolve [] e
+    o chamador segue so com os termos (comportamento antigo)."""
+    try:
+        cods = set()
+        termos_l = [str(t).lower() for t in (termos or []) if t]
+        if not termos_l:
+            return []
+        _talvez_recarregar_ligas()
+        mapas = []
+        if bookmaker == 'superbet':
+            mapas = [SUPERBET_ID_TO_NAME, SUPERBET_ALIASES]
+        elif bookmaker == 'bet365':
+            mapas = [BET365_CODE_TO_NAME]
+        for mapa in mapas:
+            for cod, nome in mapa.items():
+                nome_l = str(nome).lower()
+                if any(t in nome_l for t in termos_l):
+                    cods.add(str(cod))
+        return sorted(cods)
+    except Exception:
+        return []
+
+
 def traduzir_liga(bookmaker: str, liga: str) -> str:
     """Converte id/codigo bruto -> nome humano. BLINDADO: em qualquer erro
     devolve a liga como veio (nunca levanta, nunca devolve None novo)."""

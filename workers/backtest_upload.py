@@ -359,16 +359,39 @@ def parse_ticks_parquet(caminho_arquivo: str,
 
             torneios = bot.get('torneios') or []
             if torneios:
+                # v4 (21/ago): a whitelist do bot vem no NOME traduzido
+                # ('Battle - 5x5') e a coluna liga carrega o CODIGO
+                # (B-EBASKBAT4X5) — expandir nome->codigos com a MESMA regra
+                # de substring do executor, senao bot com whitelist zera o
+                # arquivo inteiro ("sem ticks apos filtros"). Blindado: erro
+                # na expansao degrada pro comportamento antigo (so nomes).
+                try:
+                    from routers.torneios import expandir_torneios
+                    _cods_t = set(c.upper() for c in
+                                  expandir_torneios(bot.get('casa'), torneios))
+                except Exception:
+                    _cods_t = set()
                 mask = pd.Series(False, index=df.index)
                 for t in torneios:
                     if t:
                         mask |= df['liga'].str.contains(str(t), case=False, na=False)
+                if _cods_t:
+                    mask |= df['liga'].astype(str).str.upper().isin(_cods_t)
                 df = df[mask]
 
             torneios_excluir = bot.get('torneios_excluir') or []
-            for t in torneios_excluir:
-                if t:
-                    df = df[~df['liga'].str.contains(str(t), case=False, na=False)]
+            if torneios_excluir:
+                try:
+                    from routers.torneios import expandir_torneios
+                    _cods_e = set(c.upper() for c in
+                                  expandir_torneios(bot.get('casa'), torneios_excluir))
+                except Exception:
+                    _cods_e = set()
+                for t in torneios_excluir:
+                    if t:
+                        df = df[~df['liga'].str.contains(str(t), case=False, na=False)]
+                if _cods_e:
+                    df = df[~df['liga'].astype(str).str.upper().isin(_cods_e)]
         except KeyError as e:
             raise BacktestUploadError(f"coluna ausente ao filtrar: {e}") from e
         except Exception as e:
