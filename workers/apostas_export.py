@@ -92,6 +92,11 @@ def montar_linhas_apostas(detalhe):
                 # unidade de jogo muda o resultado de ~1/3 das configs com teto.
                 "event_id": a.get("event_id"),
             })
+            # v23: coluna Err — so quando o job computou (errAtivo ou
+            # errAnotar). Mesma regra do endpoint do painel: job sem err
+            # continua saindo byte a byte identico.
+            if a.get("err") is not None:
+                linha["Err"] = a.get("err")
             linhas.append(linha)
         except Exception:
             continue

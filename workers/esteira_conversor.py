@@ -50,6 +50,8 @@ _JANELA = {
 # por isso os dois mapeiam pra tot_env aqui.
 _EIXOS = {
     'folga':    ('folga_min', 'folga_max'),
+    # v23: erro da casa na linha de total (motor errAtivo/errMin/errMax)
+    'err':      ('err_min', 'err_max'),
     'tot_env':  ('tot_env_min', 'tot_env_max'),
     'momento':  ('tot_env_min', 'tot_env_max'),
     'atropelo': ('atropelo_min', 'atropelo_max'),
@@ -213,6 +215,7 @@ def resumir(lin: dict) -> str:
     elif hi is not None:
         p.append(f"L<={abs(hi):g}" if hi > 0 else f"L>={abs(hi):g}")
     for c, r in (('atropelo_min', 'atr>='), ('atropelo_max', 'atr<='),
+                 ('err_min', 'err>='), ('err_max', 'err<='),
                  ('tot_env_min', 'tot>='), ('tot_env_max', 'tot<='),
                  ('folga_min', 'folga>='), ('folga_max', 'folga<=')):
         if lin.get(c) is not None:
