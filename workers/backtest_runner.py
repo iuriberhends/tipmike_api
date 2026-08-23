@@ -1,5 +1,19 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick)
+
+v22 - BOT COM FILTRO DE ESTADO AVALIA TICK A TICK (primeiro tick QUE PASSA,
+  nao primeiro tick da linha). Motivo, medido no bot 109 (folga>=0.5, L>=10.5):
+  o 1o tick de uma linha funda nasce quando o book abre a linha - cedo, com o
+  jogo apertado e folga mediana -0,5 -> reprova. O bot ao vivo reavalia cada
+  tick e entra minutos depois, quando o estado vira. A regra antiga descartava
+  a linha para sempre no 1o tick e o backtest media OUTRA estrategia.
+  Como funciona: quando o bot tem folga/momento/tot_env/diff/cenario ativo, o
+  motor NAO deduplica por linha - processa todos os ticks em ordem e cada
+  selecao pode ser apostada UMA vez (trava apos apostar; rejeicao por estado
+  permite tentar de novo no tick seguinte). Chip/h2h reprovado e cacheado por
+  (evento, selecao) - historico nao muda no meio do jogo - entao o custo extra
+  fica nos filtros baratos. Bot SEM filtro de estado: comportamento identico
+  ao v15 (dedup por linha), nada muda.
 
 v20 - CORRECAO CRITICA (handicap ao vivo): existem feeds em que a linha de
   handicap vale DO PLACAR CORRENTE PRA FRENTE, e nao do jogo inteiro. Nesses
@@ -119,6 +133,7 @@ from datetime import date, datetime, timedelta
 from typing import Any, Optional
 from decimal import Decimal
 import json
+import os
 import re
 import bisect
 import unicodedata
@@ -3371,6 +3386,21 @@ async def executar_backtest(job_id: int):
         apostas_por_evento: dict = {}
         candidatas = []
 
+        # v22: filtro de ESTADO = muda ao longo do jogo (placar/tempo). Chip,
+        # h2h, atropelo e odd sao estaticos dentro do jogo e nao entram aqui.
+        # CHAVE DE REVERSAO OPERACIONAL: BACKTEST_TICK_A_TICK=0 (ou off/
+        # false/nao) forca o comportamento antigo (dedup por linha) sem trocar
+        # arquivo. Qualquer outro valor (ou ausente) = v22 ligada.
+        _v22_env = os.getenv('BACKTEST_TICK_A_TICK', '1').strip().lower()
+        modo_tick_a_tick = (_v22_env not in ('0', 'off', 'false', 'nao')) and bool(
+            folga_ativo or momento_ativo or tot_env_ativo
+            or diff_ativo or cenario_ativo)
+        # trava: selecao ja APOSTADA neste evento (so no modo tick a tick)
+        selecao_apostada_evt: set = set()
+        # cache: chip/h2h ja REPROVOU esta selecao neste evento - historico nao
+        # muda no meio do jogo, entao nao reavalia (e nao reconta rejeicao)
+        chip_morto_evt: set = set()
+
         rej = {
             'cap_jogo': 0, 'basico': 0, 'cenario': 0, 'diff': 0, 'folga': 0,
             'h2h_insuf': 0, 'comp': 0, 'sem_par': 0,
@@ -3420,13 +3450,24 @@ async def executar_backtest(job_id: int):
         # periodo e cada jogo precisa da sua propria escada. Se a chave fosse
         # por PAR, o motor pegaria a escada do primeiro jogo e ignoraria todos
         # os confrontos seguintes daquela dupla.
-        primeiros: dict = {}
-        for t in ticks:
-            chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
-            if chave not in primeiros:
-                primeiros[chave] = dict(t)
-        ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
+        if modo_tick_a_tick:
+            # v22: TODOS os ticks, em ordem de ts. sorted() so cria a lista de
+            # referencias (sem copiar registro) - dict e asyncpg.Record
+            # respondem igual a ['ts']/.get() no loop. A trava de 1 aposta por
+            # selecao fica no proprio loop (selecao_apostada_evt), entao nao ha
+            # reentrada da mesma linha.
+            ticks_ordenados = sorted(ticks, key=lambda x: x['ts'])
+        else:
+            primeiros = {}
+            for t in ticks:
+                chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
+                if chave not in primeiros:
+                    primeiros[chave] = dict(t)
+            ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
         total_candidatos = len(ticks_ordenados)
+        # progresso: no modo tick a tick o total e ~10-20x maior; atualizar o
+        # banco a cada 200 viraria milhares de UPDATEs a toa
+        _passo_prog = 200 if total_candidatos <= 60000 else 2000
         # v20: indice do placar por evento, montado com a lista CRUA de ticks
         # (todos os mercados). Serve pra recuperar o placar do envio quando o
         # tick da aposta veio sem score - no acervo do FUT_GT sao ~30% deles.
@@ -3446,12 +3487,13 @@ async def executar_backtest(job_id: int):
             logger.info(f"[backtest {job_id}] escada: {total_candidatos} linhas unicas "
                         f"em {_n_ev} eventos "
                         f"({total_candidatos / max(_n_ev, 1):.1f} por jogo) | "
-                        f"trava de mercado={'ON' if evitar_linhas_seq else 'OFF'}")
+                        f"trava de mercado={'ON' if evitar_linhas_seq else 'OFF'} | "
+                        f"modo={'TICK A TICK (filtro de estado ativo)' if modo_tick_a_tick else 'dedup por linha'}")
         except Exception:
             pass
 
         for i, tick in enumerate(ticks_ordenados):
-            if i > 0 and i % 200 == 0:
+            if i > 0 and i % _passo_prog == 0:
                 pct = 30 + int(40 * i / total_candidatos)
                 async with pool.acquire() as conn:
                     await conn.execute(
@@ -3460,6 +3502,14 @@ async def executar_backtest(job_id: int):
                     )
 
             evt = tick['event_id']
+
+            # v22: essa selecao ja foi apostada neste jogo -> ticks seguintes
+            # dela sao ignorados sem contar rejeicao (nao e recusa, e trava)
+            if modo_tick_a_tick:
+                _sel_key = (evt, tick.get('mercado_id') or '',
+                            tick.get('linha') or '', tick.get('selecao_id') or '')
+                if _sel_key in selecao_apostada_evt:
+                    continue
 
             # filtro de LADO (over/under) - igual ao executor (linhas 374-385).
             # Tick cujo lado nao esta na lista do bot e cortado ANTES de tudo:
@@ -3557,6 +3607,10 @@ async def executar_backtest(job_id: int):
             # pra estar disponivel tanto no filtro quanto na resolucao abaixo.
             mercado_bot_loop = bot.get('mercado', '')
             stats = None
+            # v22: chip/h2h ja reprovou essa selecao neste jogo - o historico e
+            # o mesmo em qualquer tick do jogo, entao nem tenta de novo
+            if modo_tick_a_tick and (evt, tick.get('selecao_id') or '') in chip_morto_evt:
+                continue
             if filtros_unificados:
                 # v11 FAIL CLOSED: filtro configurado que o backend nao suporta
                 # (tipo same_grade/specific_teams, base desconhecida) -> REJEITA
@@ -3726,6 +3780,10 @@ async def executar_backtest(job_id: int):
                             rej['h2h_insuf'] += 1
                         else:
                             rej['comp'] += 1
+                        # v22: veredito e estatico dentro do jogo - cacheia pra
+                        # nao reprocessar (nem recontar) nos proximos ticks
+                        if modo_tick_a_tick:
+                            chip_morto_evt.add((evt, tick.get('selecao_id') or ''))
                         continue
 
 
@@ -3801,6 +3859,9 @@ async def executar_backtest(job_id: int):
                 continue
 
             apostas_por_evento[evt] = apostas_por_evento.get(evt, 0) + 1
+            if modo_tick_a_tick:
+                selecao_apostada_evt.add((evt, tick.get('mercado_id') or '',
+                                          tick.get('linha') or '', tick.get('selecao_id') or ''))
             if evitar_linhas_seq:
                 mercado_apostado_evt.add((evt, tick.get('mercado_tipo'),
                                           _lado_aposta(tick.get('selecao'))))
