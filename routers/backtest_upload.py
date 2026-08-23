@@ -434,6 +434,19 @@ class BacktestAvulsoRequest(BaseModel):
     tot_env_ativo: bool = Field(default=False)
     tot_env_min: Optional[float] = Field(default=None, ge=0, le=1000)
     tot_env_max: Optional[float] = Field(default=None, ge=0, le=1000)
+    # ERR (v23): "erro da casa" na linha de total. err do jogo = total real -
+    # linha de ABERTURA; na aposta vale a media dos ultimos err_janela jogos
+    # de cada jogador, ficando o MENOR dos dois. So over_under_ft/ht (o
+    # worker rejeita fail-closed no resto). err_anotar=True poe a coluna Err
+    # na planilha SEM filtrar (modo garimpo). err_janela_horas troca a janela
+    # de contagem por TEMPO (ex.: 2.0 = jogos das ultimas 2h).
+    err_ativo: bool = Field(default=False)
+    err_min: Optional[float] = Field(default=None, ge=-200, le=200)
+    err_max: Optional[float] = Field(default=None, ge=-200, le=200)
+    err_janela: Optional[int] = Field(default=None, ge=1, le=100)
+    err_min_jogos: Optional[int] = Field(default=None, ge=1, le=100)
+    err_janela_horas: Optional[float] = Field(default=None, gt=0, le=168)
+    err_anotar: bool = Field(default=False)
     atropelo_ativo: bool = Field(default=False)
     atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
     atropelo_max: Optional[float] = Field(default=None, ge=0, le=100)
@@ -729,6 +742,27 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
         if getattr(req, "tot_env_max", None) is not None:
             filtros["totEnvMax"] = float(req.tot_env_max)
 
+    # ERR (v23): mesmas chaves que o worker le (filtros.errAtivo/errMin/
+    # errMax/errJanela/errMinJogos/errJanelaHoras/errAnotar). So liga se
+    # houver borda — ativo sem min nem max nao filtra nada e o worker
+    # desliga sozinho. errAnotar e' independente (anota sem filtrar).
+    if bool(getattr(req, "err_ativo", False)) and (
+            getattr(req, "err_min", None) is not None
+            or getattr(req, "err_max", None) is not None):
+        filtros["errAtivo"] = True
+        if req.err_min is not None:
+            filtros["errMin"] = float(req.err_min)
+        if req.err_max is not None:
+            filtros["errMax"] = float(req.err_max)
+    if getattr(req, "err_janela", None):
+        filtros["errJanela"] = int(req.err_janela)
+    if getattr(req, "err_min_jogos", None):
+        filtros["errMinJogos"] = int(req.err_min_jogos)
+    if getattr(req, "err_janela_horas", None):
+        filtros["errJanelaHoras"] = float(req.err_janela_horas)
+    if bool(getattr(req, "err_anotar", False)):
+        filtros["errAnotar"] = True
+
     if bool(req.atropelo_ativo) and (req.atropelo_min is not None
                                      or req.atropelo_max is not None):
         filtros["atropeloAtivo"] = True
@@ -975,6 +1009,9 @@ async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_curre
             "Resultado": _res_map.get(a.get("resultado"), a.get("resultado", "")),
             "Lucro/Prej.": a.get("lucro_unidades"),
         })
+        # v23: coluna Err — so aparece quando o job computou o err
+        if a.get("err") is not None:
+            linha["Err"] = a.get("err")
         linhas.append(linha)
 
     import pandas as pd

@@ -77,6 +77,7 @@ import json
 import logging
 import signal
 import sys
+import time
 import os
 from datetime import datetime, timedelta
 from decimal import Decimal
@@ -134,7 +135,15 @@ from workers.backtest_runner import (
     # --- v20: de que placar a linha de HC vale (fonte unica com o backtest) ---
     _hc_modo_liquidacao,
     HC_MODO_DESCONHECIDO,
+    # --- v23: ERR (erro da casa na linha de total) — fonte unica c/ backtest ---
+    _err_reduzir_eventos,
+    _err_params_do_filtro,
+    _checar_err,
+    _periodo_do_bot,
+    MERCADO_TIPOS_POR_CASA,
+    ERR_MERCADOS_SUPORTADOS,
 )
+import bisect
 
 
 # ============================================================
@@ -359,6 +368,212 @@ def _get_indiv_cache(casa: str, esporte_banco: str) -> HistIndividualCache:
     if chave not in state.indiv_cache_por_casa:
         state.indiv_cache_por_casa[chave] = HistIndividualCache(state.pool, casa, esporte_banco)
     return state.indiv_cache_por_casa[chave]
+
+
+# ============================================================
+# v23 — ERR AO VIVO: estado do "erro da casa" por (casa, esporte)
+# ============================================================
+# A descoberta de 23/ago: o err mede REGIME INTRADIARIO (turno) — 87% do
+# edge vem dos jogos do MESMO dia. Consequencia: nao pode ser chip diario;
+# tem que se recalcular conforme os jogos liquidam. Este cache faz isso:
+#  - reconstroi as ultimas ERR_VIVO_HORAS_BOOT horas na subida (sobrevive
+#    a restart do servico sem perder o dia);
+#  - a cada ERR_VIVO_TTL_SEC re-sincroniza INCREMENTAL com a tabela ticks
+#    (a mesma que dispara o bot) e fecha os jogos novos com a MESMA
+#    _err_reduzir_eventos do backtest — fonte unica, vivo e backtest nunca
+#    divergem na conta;
+#  - jogo so entra no historico FECHADO pela regra de live_time+idade
+#    (END>=180s / 4Q>=300s, espelho do resolvedor). Jogo que o coletor
+#    perdeu (fica 0-0 ou some no 1o tempo) NUNCA vira err falso: nao fecha,
+#    e apos ERR_VIVO_EVENTO_ABANDONO_SEC e' descartado.
+# FAIL CLOSED herdado do _checar_err: qualquer falha aqui vira NAO-aposta
+# com contador, nunca aposta com numero furado e nunca crash do tick.
+
+ERR_VIVO_TTL_SEC = 60                 # re-sincroniza a cada 60s (jogos saem a cada ~15min)
+ERR_VIVO_HORAS_BOOT = 30              # quanto de passado reconstruir na subida
+ERR_VIVO_MARGEM_SEC = 300             # sobreposicao do incremento (pega tick atrasado)
+ERR_VIVO_MAX_TICKS = 500_000          # trava de sanidade da query
+ERR_VIVO_EVENTO_ABANDONO_SEC = 4 * 3600   # evento aberto ha 4h+ = coletor perdeu, descarta
+ERR_VIVO_CAP_TICKS_EVENTO = 800       # teto de buffer por evento (mantem inicio+fim)
+ERR_VIVO_HIST_MAX_JOGOS = 60          # poda por (liga, jogador)
+# live_times que interessam ao err (fechamento FT/HT) — o SQL filtra por eles
+# OU pelos mercados de total da casa, pra nao arrastar o resto do feed
+_ERR_VIVO_LTS_SQL = ['END', 'FT', 'HT', '4Q', 'Q4', 'OT', '2Q', 'Q2', '2H', '2T', '3Q', 'Q3']
+
+
+class ErrVivoCache:
+    """Historico vivo do err por (casa, esporte), particionado por liga e
+    periodo dentro do proprio historico (chave (LIGA, JOGADOR))."""
+
+    def __init__(self, pool, casa: str, sport: str):
+        self.pool = pool
+        self.casa = (casa or '').lower()
+        self.sport = sport
+        self._abertos: dict = {}                 # event_id -> [mini-ticks]
+        self._hist = {'ft': {}, 'ht': {}}        # {(LIGA, J): ([ts...], [err...])}
+        self._fechados = {'ft': {}, 'ht': {}}    # event_id -> ts_fim (dedup de fusao)
+        self._ultimo_ts = None
+        self._ultimo_refresh = 0.0
+        self._lock = asyncio.Lock()
+        self.stats = {'refreshes': 0, 'ticks_lidos': 0, 'jogos_ft': 0,
+                      'jogos_ht': 0, 'falhas': 0, 'descartados_abandono': 0}
+
+    def _ids_mercado_total(self) -> list:
+        m = MERCADO_TIPOS_POR_CASA.get(self.casa, {}) or {}
+        ids = set()
+        for k in ('over_under_ft', 'over_under_ht'):
+            for v in (m.get(k) or []):
+                ids.add(str(v))
+        return sorted(ids)
+
+    async def historico(self, periodo: str) -> dict:
+        """Devolve o historico do periodo ('ft'|'ht'), re-sincronizando se o
+        estado tiver mais de ERR_VIVO_TTL_SEC. Serializado por lock: um tick
+        paga o refresh, os outros esperam e leem pronto."""
+        per = 'ht' if periodo == 'ht' else 'ft'
+        async with self._lock:
+            agora_m = time.monotonic()
+            if (self._ultimo_ts is None
+                    or agora_m - self._ultimo_refresh >= ERR_VIVO_TTL_SEC):
+                try:
+                    await self._refresh()
+                except Exception:
+                    # fail-closed a jusante: quem consome ve o historico velho
+                    # (ou vazio) e o _checar_err rejeita por err_hist_insuf/
+                    # err_erro. Nunca derruba o executor.
+                    self.stats['falhas'] += 1
+                    logger.exception(
+                        f"[err_vivo {self.casa}/{self.sport}] refresh falhou")
+                self._ultimo_refresh = time.monotonic()
+            return self._hist[per]
+
+    async def _refresh(self):
+        agora = datetime.now()
+        de = agora - timedelta(hours=ERR_VIVO_HORAS_BOOT)
+        if self._ultimo_ts is not None:
+            _de2 = self._ultimo_ts - timedelta(seconds=ERR_VIVO_MARGEM_SEC)
+            if _de2 > de:
+                de = _de2
+
+        ids = self._ids_mercado_total()
+        # ticks que importam: candidatos a abertura (mercados de total da
+        # casa) OU marcadores de fechamento/placar (live_time de fim/2a
+        # metade/intervalo). Colunas minimas de proposito.
+        if ids:
+            sql = """
+                SELECT event_id, ts, jogador_a, jogador_b, liga, live_time,
+                       score_home, score_away, mercado, mercado_tipo, linha
+                FROM ticks
+                WHERE bookmaker = $1 AND sport = $2 AND ts >= $3
+                  AND (mercado_tipo = ANY($4) OR live_time = ANY($5))
+                ORDER BY ts ASC
+                LIMIT $6
+            """
+            rows = await asyncio.wait_for(
+                self.pool.fetch(sql, self.casa, self.sport, de, ids,
+                                _ERR_VIVO_LTS_SQL, ERR_VIVO_MAX_TICKS),
+                timeout=30)
+        else:
+            # casa sem mapa de mercados: sem filtro de tipo (custa mais, mas
+            # nao deixa a casa sem o filtro — _matches_mercado decide via
+            # keywords na reducao)
+            sql = """
+                SELECT event_id, ts, jogador_a, jogador_b, liga, live_time,
+                       score_home, score_away, mercado, mercado_tipo, linha
+                FROM ticks
+                WHERE bookmaker = $1 AND sport = $2 AND ts >= $3
+                ORDER BY ts ASC
+                LIMIT $4
+            """
+            rows = await asyncio.wait_for(
+                self.pool.fetch(sql, self.casa, self.sport, de,
+                                ERR_VIVO_MAX_TICKS),
+                timeout=30)
+
+        self.stats['refreshes'] += 1
+        self.stats['ticks_lidos'] += len(rows)
+        if len(rows) >= ERR_VIVO_MAX_TICKS:
+            logger.warning(
+                f"[err_vivo {self.casa}/{self.sport}] janela devolveu "
+                f"{len(rows)} ticks (teto) — historico pode estar incompleto")
+
+        # acumula no buffer por evento (pulando eventos ja FECHADOS em FT —
+        # tick atrasado de jogo ja liquidado nao pode duplicar o historico)
+        for r in rows:
+            evt = r['event_id']
+            if evt is None or evt in self._fechados['ft']:
+                continue
+            buf = self._abertos.setdefault(evt, [])
+            buf.append({
+                'event_id': evt, 'ts': r['ts'],
+                'jogador_a': r['jogador_a'], 'jogador_b': r['jogador_b'],
+                'liga': r['liga'], 'live_time': r['live_time'],
+                'score_home': r['score_home'], 'score_away': r['score_away'],
+                'mercado': r['mercado'], 'mercado_tipo': r['mercado_tipo'],
+                'linha': r['linha'],
+            })
+            # cap: preserva o INICIO (abertura) e o FIM (fechamento/placar)
+            if len(buf) > ERR_VIVO_CAP_TICKS_EVENTO:
+                meio = ERR_VIVO_CAP_TICKS_EVENTO // 2
+                self._abertos[evt] = buf[:meio] + buf[-meio:]
+            if self._ultimo_ts is None or r['ts'] > self._ultimo_ts:
+                self._ultimo_ts = r['ts']
+
+        # reduz os eventos abertos com a MESMA funcao do backtest e funde os
+        # que fecharam no historico
+        pend = [t for lst in self._abertos.values() for t in lst]
+        for per in ('ft', 'ht'):
+            jogos, _cont = _err_reduzir_eventos(pend, self.casa, per, agora=agora)
+            for evt, j in jogos.items():
+                if evt in self._fechados[per]:
+                    continue
+                self._fechados[per][evt] = j['ts_fim']
+                for p in (j['ja'], j['jb']):
+                    if not p:
+                        continue
+                    k = (j['liga'], p)
+                    ts_l, err_l = self._hist[per].setdefault(k, ([], []))
+                    i = bisect.bisect_right(ts_l, j['ts_fim'])
+                    ts_l.insert(i, j['ts_fim'])
+                    err_l.insert(i, j['err'])
+                    if len(ts_l) > ERR_VIVO_HIST_MAX_JOGOS:
+                        del ts_l[0], err_l[0]
+                self.stats['jogos_ft' if per == 'ft' else 'jogos_ht'] += 1
+
+        # faxina do buffer: evento fechado em FT sai (o HT dele ja fechou no
+        # intervalo, ou nunca vai fechar); aberto ha demais = coletor perdeu
+        for evt in list(self._abertos.keys()):
+            if evt in self._fechados['ft']:
+                del self._abertos[evt]
+                continue
+            try:
+                _ult = max(t['ts'] for t in self._abertos[evt])
+                if (agora - _ult).total_seconds() > ERR_VIVO_EVENTO_ABANDONO_SEC:
+                    del self._abertos[evt]
+                    self.stats['descartados_abandono'] += 1
+            except Exception:
+                del self._abertos[evt]
+
+        # faxina do dedup de fechados (ids de 30h+ nao voltam)
+        _corte_velho = agora - timedelta(hours=ERR_VIVO_HORAS_BOOT + 1)
+        for per in ('ft', 'ht'):
+            for evt in [e for e, tf in self._fechados[per].items()
+                        if isinstance(tf, datetime) and tf < _corte_velho]:
+                del self._fechados[per][evt]
+
+
+def _get_err_cache(casa: str, esporte_banco: str) -> ErrVivoCache:
+    """v23: um ErrVivoCache por (casa, esporte). Guardado no state por
+    setattr defensivo — nao exige mudar a classe do state (aditivo puro)."""
+    global state
+    caches = getattr(state, 'err_cache_por_casa', None)
+    if caches is None:
+        caches = {}
+        state.err_cache_por_casa = caches
+    chave = f"{casa}::{esporte_banco}"
+    if chave not in caches:
+        caches[chave] = ErrVivoCache(state.pool, casa, esporte_banco)
+    return caches[chave]
 
 
 # ============================================================
@@ -631,6 +846,33 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 _k_te = _mot_te or 'tot_env'
             state.contador_rejeicoes[_k_te] = \
                 state.contador_rejeicoes.get(_k_te, 0) + 1
+            return
+
+    # v23 — ERR ao vivo: a MESMA conta do backtest (_checar_err do runner)
+    # sobre o estado vivo do ErrVivoCache. Gate PROPRIO, FORA do bloco de
+    # chips: bot so-err filtra mesmo sem chip nenhum. FAIL CLOSED herdado:
+    # mercado errado, historico curto, cache frio/quebrado, cfg invalida ou
+    # excecao -> NAO aposta, com o motivo no contador. Nunca crasha o tick.
+    if _f_at.get('errAtivo'):
+        _mercado_bot_err = bot.get('mercado', '')
+        if _mercado_bot_err not in ERR_MERCADOS_SUPORTADOS:
+            state.contador_rejeicoes['err_so_over_under'] = \
+                state.contador_rejeicoes.get('err_so_over_under', 0) + 1
+            return
+        try:
+            _ecache_err = _get_err_cache(casa_bot, sport_banco)
+            _hist_err = await _ecache_err.historico(
+                _periodo_do_bot(_mercado_bot_err))
+            _ej, _emj, _ejh = _err_params_do_filtro(_f_at)
+            _ok_e, _mot_e, _ = _checar_err(
+                tick, _hist_err, None, _ej, _emj,
+                _f_at.get('errMin'), _f_at.get('errMax'), _ejh)
+        except Exception:
+            _ok_e, _mot_e = False, 'err_erro_chamada'
+        if not _ok_e:
+            _k_e = _mot_e or 'err'
+            state.contador_rejeicoes[_k_e] = \
+                state.contador_rejeicoes.get(_k_e, 0) + 1
             return
 
     # v5: SEMPRE calcula stats_h2h se tiver qualquer filtro

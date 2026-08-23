@@ -1,5 +1,17 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err)
+
+v23 - ERR ("erro da casa" na linha de total, over/under): err de um jogo
+  terminado = total real do periodo - linha de ABERTURA daquele jogo. Na
+  aposta vale a media dos ultimos N jogos de CADA jogador, ficando o MENOR
+  dos dois (err5). Mede o regime intradiario da casa, nao o jogador — por
+  isso ao vivo e' ESTADO recalculado conforme os jogos liquidam. Chaves no
+  filtros jsonb: errAtivo/errMin/errMax/errJanela/errMinJogos/
+  errJanelaHoras (janela em TEMPO, alternativa a contagem) + errAnotar
+  (so anota a coluna Err na planilha, sem filtrar — pro garimpo). Ausentes
+  = comportamento identico ao anterior. So mercados over_under_ft/ht;
+  fail-closed (err_so_over_under) no resto. Detalhes/armadilhas: bloco
+  "v23 — ERR" no meio do arquivo.
 
 v22 - BOT COM FILTRO DE ESTADO AVALIA TICK A TICK (primeiro tick QUE PASSA,
   nao primeiro tick da linha). Motivo, medido no bot 109 (folga>=0.5, L>=10.5):
@@ -2903,6 +2915,387 @@ def _num_seguro(v):
     return f, None
 
 
+# ============================================================
+# v23 — ERR: "erro da casa" na linha de TOTAL (over/under)
+# ============================================================
+# err de um jogo TERMINADO = total real do periodo - linha de ABERTURA
+# daquele jogo naquele periodo. Ex.: casa abriu o 1o tempo em 65.5 e o 1o
+# tempo saiu 71 -> err = +5.5 (a casa abriu baixo). Saiu 60 -> err = -5.5.
+# O err do jogo vale pros DOIS jogadores. Na hora de apostar: media do err
+# dos ultimos N jogos de cada jogador e fica o MENOR dos dois (os dois
+# precisam estar vindo de sequencia em que a casa abre baixo). NAO mede o
+# jogador — mede o ERRO DA CASA (regime do turno, medido em 23/ago: 87% do
+# edge vem dos jogos do MESMO dia, por isso ao vivo isto e' ESTADO que se
+# recalcula a cada jogo que liquida — nunca chip diario).
+#
+# ARMADILHAS QUE ESTE CODIGO FECHA (cada uma ja custou um erro):
+#  - linha de referencia = a de ABERTURA do jogo (1o tick do mercado de
+#    total), nunca a linha corrente — senao vira conta circular;
+#  - e' POR PERIODO: err de 1o tempo usa linha E total de 1o tempo
+#    (mercado over_under_ht), jogo inteiro usa over_under_ft. Nunca mistura;
+#  - e' POR LIGA: o historico de um jogador em outra liga (formato/duracao
+#    diferentes) NAO entra — mesma licao do atropelo, que mistura por
+#    esporte e por isso tem outra escala;
+#  - SO jogos anteriores: o jogo atual nunca entra (ts_fim < ts do tick,
+#    estrito). Controle positivo da ficha: incluir o proprio jogo = +58%
+#    de "ROI" falso — vazamento puro;
+#  - jogo cuja "abertura" ja pegou o placar andando (coletor entrou tarde)
+#    NAO fornece err (ERR_ABERTURA_SOMA_MAX) — linha ja movida nao e'
+#    abertura;
+#  - jogo NAO FECHADO (cortado no meio do arquivo, ou coletor cego) NAO
+#    entra no historico: o fechamento exige live_time de fim/2a metade,
+#    espelhando a regra do resolvedor (END>=180s / 4Q>=300s no vivo). E'
+#    isto que impede o placar 0-0 de um jogo cego de virar err falso.
+# Identificacao de jogo = event_id nativo dos ticks (banco e parquet tem);
+# a janela de 30min da analise offline era so pra dado sem event_id.
+
+ERR_JANELA_DEFAULT = 5          # "ultimos 5 jogos" (err5). err3 tb funciona; err10 e' o pior
+ERR_MIN_JOGOS_DEFAULT = 5       # menos que isso de historico -> nao computa (fail-closed)
+ERR_ABERTURA_SOMA_MAX = 10.0    # 1o tick com soma de placar acima disso = abertura tardia, jogo fora
+ERR_MERCADOS_SUPORTADOS = ('over_under_ft', 'over_under_ht')
+
+# fechamento por live_time (mesma familia de rotulos do resolvedor: JBot manda
+# 'Q4 03:24' com Q na frente, BetsAPI/parquet manda '4Q'/'FT', superbet '2Q'/'B')
+_ERR_LT_FIM = ('END', 'FT')
+_ERR_LT_2A_METADE = ('4Q', 'Q4', 'OT', '2H', '2T', '3Q', 'Q3')
+_ERR_LT_HT = ('HT',)
+_ERR_LT_2Q = ('2Q', 'Q2')
+
+
+def _err_norm_nome(nome) -> str:
+    """Normaliza nick/liga pra chave de historico. Blindado: qualquer coisa vira str."""
+    try:
+        return str(nome or '').strip().upper()
+    except Exception:
+        return ''
+
+
+def _err_lt_prefixo(lt, prefixos) -> bool:
+    """live_time comeca com algum dos prefixos ('Q4 03:24' casa com 'Q4')."""
+    try:
+        s = str(lt or '').strip().upper()
+    except Exception:
+        return False
+    return bool(s) and s.startswith(tuple(prefixos))
+
+
+def _err_params_do_filtro(filtros) -> tuple:
+    """Le (janela, min_jogos, janela_horas) do jsonb do bot com coercao segura.
+    FONTE UNICA: backtest e bot_executor chamam esta mesma funcao — os dois
+    lados nunca leem a config de um jeito diferente."""
+    fd = filtros if isinstance(filtros, dict) else {}
+    try:
+        janela = int(fd.get('errJanela') or ERR_JANELA_DEFAULT)
+        if janela < 1:
+            janela = ERR_JANELA_DEFAULT
+    except (TypeError, ValueError):
+        janela = ERR_JANELA_DEFAULT
+    try:
+        min_jogos = int(fd.get('errMinJogos') or ERR_MIN_JOGOS_DEFAULT)
+        if min_jogos < 1:
+            min_jogos = ERR_MIN_JOGOS_DEFAULT
+    except (TypeError, ValueError):
+        min_jogos = ERR_MIN_JOGOS_DEFAULT
+    janela_horas = None
+    if fd.get('errJanelaHoras') is not None:
+        try:
+            _jh = float(fd.get('errJanelaHoras'))
+            if _jh > 0:
+                janela_horas = _jh
+        except (TypeError, ValueError):
+            janela_horas = None
+    return janela, min_jogos, janela_horas
+
+
+def _err_reduzir_eventos(ticks, casa: str, periodo: str, agora=None) -> tuple:
+    """Reduz a lista CRUA de ticks (todos os mercados) aos JOGOS FECHADOS do
+    `periodo` ('ft'|'ht'), cada um com linha de ABERTURA, total real e err.
+
+    FONTE UNICA backtest + vivo: o backtest chama com os ticks do job
+    (agora=None: arquivo acabou, fecha pelo live_time); o bot_executor chama
+    com os ticks recentes do banco (agora=datetime: fecha por live_time +
+    IDADE, espelhando o resolvedor — END>=180s, 4Q/OT>=300s, HT>=60s).
+
+    Devolve (jogos, contadores):
+      jogos = {event_id: {'liga', 'ja', 'jb', 'ts_fim', 'err',
+                          'linha_abertura', 'total'}}
+      contadores = descartes por motivo (pro log — nada aqui e' silencioso).
+    BLINDADO: tick torto e' pulado e contado, nunca derruba a reducao.
+    """
+    mercado_ou = 'over_under_ht' if periodo == 'ht' else 'over_under_ft'
+    ev: dict = {}
+    cont = {'sem_event_id': 0, 'tick_torto': 0}
+
+    for t in ticks:
+        try:
+            try:
+                evt = t['event_id']
+            except (KeyError, TypeError, IndexError):
+                evt = None
+            if evt is None or evt == '':
+                cont['sem_event_id'] += 1
+                continue
+            reg = ev.get(evt)
+            if reg is None:
+                reg = ev[evt] = {
+                    'liga': None, 'ja': None, 'jb': None,
+                    'ab_ts': None, 'ab_linhas': None, 'ab_score': None,
+                    'fim_ts': None, 'fim_score': None,
+                    'lt_ts': None, 'lt': None, 'tem_lt': False,
+                    'ht_ts': None, 'ht_score': None, 'ht_fonte': None,
+                }
+            # jogadores + liga: primeiro tick que tiver
+            if reg['ja'] is None or reg['jb'] is None:
+                _ja = t.get('jogador_a') if hasattr(t, 'get') else t['jogador_a']
+                _jb = t.get('jogador_b') if hasattr(t, 'get') else t['jogador_b']
+                if _ja and _jb:
+                    reg['ja'], reg['jb'] = _ja, _jb
+            if reg['liga'] is None:
+                _lg = t.get('liga') if hasattr(t, 'get') else t['liga']
+                if _lg:
+                    reg['liga'] = _lg
+
+            ts = t['ts']
+            sh = t.get('score_home') if hasattr(t, 'get') else t['score_home']
+            sa = t.get('score_away') if hasattr(t, 'get') else t['score_away']
+            lt = t.get('live_time') if hasattr(t, 'get') else t['live_time']
+
+            # --- candidato a ABERTURA: tick do mercado de total do periodo ---
+            # _matches_mercado carrega TODA a inteligencia da casa (IDs por
+            # bookmaker, desambiguacao de periodo pelo nome, exclusao do
+            # asiatico) — zero classificador novo = zero furo novo.
+            _mrc = t.get('mercado') if hasattr(t, 'get') else t['mercado']
+            _mtp = t.get('mercado_tipo') if hasattr(t, 'get') else t['mercado_tipo']
+            if _matches_mercado(mercado_ou, _mrc or '', _mtp or '', casa):
+                _ln = _parse_linha(t.get('linha') if hasattr(t, 'get') else t['linha'])
+                if _ln is not None:
+                    if reg['ab_ts'] is None or ts < reg['ab_ts']:
+                        reg['ab_ts'] = ts
+                        reg['ab_linhas'] = {_ln}
+                        reg['ab_score'] = (sh, sa)
+                    elif ts == reg['ab_ts']:
+                        reg['ab_linhas'].add(_ln)
+
+            # --- placar do periodo cheio (maior ts com score) ---
+            if sh is not None and sa is not None:
+                if reg['fim_ts'] is None or ts >= reg['fim_ts']:
+                    reg['fim_ts'] = ts
+                    reg['fim_score'] = (sh, sa)
+
+            # --- ultimo live_time visto (pro fechamento) ---
+            if lt:
+                reg['tem_lt'] = True
+                if reg['lt_ts'] is None or ts >= reg['lt_ts']:
+                    reg['lt_ts'] = ts
+                    reg['lt'] = lt
+
+            # --- placar de INTERVALO: prioridade HT, fallback ultimo 2Q ---
+            # (mesma regra do placar_ht do proprio motor)
+            if sh is not None and sa is not None:
+                if _err_lt_prefixo(lt, _ERR_LT_HT):
+                    if reg['ht_fonte'] != 'HT' or reg['ht_ts'] is None or ts >= reg['ht_ts']:
+                        reg['ht_ts'] = ts
+                        reg['ht_score'] = (sh, sa)
+                        reg['ht_fonte'] = 'HT'
+                elif _err_lt_prefixo(lt, _ERR_LT_2Q) and reg['ht_fonte'] != 'HT':
+                    if reg['ht_ts'] is None or ts >= reg['ht_ts']:
+                        reg['ht_ts'] = ts
+                        reg['ht_score'] = (sh, sa)
+                        reg['ht_fonte'] = '2Q'
+        except Exception:
+            cont['tick_torto'] += 1
+            continue
+
+    jogos: dict = {}
+    cont.update({'sem_par': 0, 'sem_abertura': 0, 'abertura_tardia': 0,
+                 'sem_placar': 0, 'aberto': 0, 'sem_live_time': 0})
+
+    for evt, reg in ev.items():
+        try:
+            if not reg['ja'] or not reg['jb']:
+                cont['sem_par'] += 1
+                continue
+            if reg['ab_ts'] is None or not reg['ab_linhas']:
+                cont['sem_abertura'] += 1
+                continue
+            # abertura tardia: 1o tick do mercado ja com placar andando ->
+            # a linha ja se moveu, NAO e' abertura. Score None = pre-jogo, ok.
+            _abs = reg['ab_score']
+            if _abs and _abs[0] is not None and _abs[1] is not None:
+                try:
+                    if float(_abs[0]) + float(_abs[1]) > ERR_ABERTURA_SOMA_MAX:
+                        cont['abertura_tardia'] += 1
+                        continue
+                except (TypeError, ValueError):
+                    cont['abertura_tardia'] += 1
+                    continue
+
+            # placar-alvo + ts_fim + regra de fechamento, por periodo
+            if periodo == 'ht':
+                if reg['ht_score'] is None:
+                    cont['sem_placar'] += 1
+                    continue
+                score, ts_fim = reg['ht_score'], reg['ht_ts']
+                if agora is not None:
+                    # vivo: HT confirmado com 60s de assentamento; fallback 2Q
+                    # exige 300s (mesmo espirito do resolvedor)
+                    try:
+                        idade = (agora - ts_fim).total_seconds()
+                    except Exception:
+                        cont['aberto'] += 1
+                        continue
+                    _min_idade = 60 if reg['ht_fonte'] == 'HT' else 300
+                    if idade < _min_idade:
+                        cont['aberto'] += 1
+                        continue
+            else:
+                if reg['fim_score'] is None:
+                    cont['sem_placar'] += 1
+                    continue
+                score, ts_fim = reg['fim_score'], reg['fim_ts']
+                if reg['tem_lt']:
+                    _lt = reg['lt']
+                    if _err_lt_prefixo(_lt, _ERR_LT_FIM):
+                        _min_idade = 180
+                    elif _err_lt_prefixo(_lt, _ERR_LT_2A_METADE):
+                        _min_idade = 300
+                    else:
+                        # jogo cortado no 1o tempo / coletor cego: NUNCA fecha
+                        cont['aberto'] += 1
+                        continue
+                    if agora is not None:
+                        try:
+                            idade = (agora - reg['lt_ts']).total_seconds()
+                        except Exception:
+                            cont['aberto'] += 1
+                            continue
+                        if idade < _min_idade:
+                            cont['aberto'] += 1
+                            continue
+                else:
+                    # fonte legada sem live_time em NENHUM tick do evento:
+                    # aceita pelo placar de maior ts (compat), mas conta —
+                    # nada passa em silencio.
+                    cont['sem_live_time'] += 1
+
+            try:
+                total = float(score[0]) + float(score[1])
+            except (TypeError, ValueError):
+                cont['sem_placar'] += 1
+                continue
+
+            # linha de abertura: se o menor ts tinha mais de uma linha ativa
+            # (escada), fica a MEDIANA-INFERIOR das linhas distintas —
+            # deterministico e imune a linha alternativa de ponta.
+            _lns = sorted(reg['ab_linhas'])
+            linha_ab = _lns[(len(_lns) - 1) // 2]
+
+            jogos[evt] = {
+                'liga': _err_norm_nome(reg['liga']),
+                'ja': _err_norm_nome(reg['ja']),
+                'jb': _err_norm_nome(reg['jb']),
+                'ts_fim': ts_fim,
+                'err': total - linha_ab,
+                'linha_abertura': linha_ab,
+                'total': total,
+            }
+        except Exception:
+            cont['tick_torto'] += 1
+            continue
+
+    return jogos, cont
+
+
+def _err_montar_historico(jogos: dict) -> dict:
+    """{(LIGA, JOGADOR): ([ts_fim...], [err...])} com as duas listas paralelas
+    ORDENADAS por ts_fim — bisect no _checar_err. O err do jogo vale pros
+    DOIS jogadores dele."""
+    hist: dict = {}
+    itens = sorted(jogos.values(), key=lambda j: j['ts_fim'])
+    for j in itens:
+        for p in (j['ja'], j['jb']):
+            if not p:
+                continue
+            k = (j['liga'], p)
+            if k not in hist:
+                hist[k] = ([], [])
+            hist[k][0].append(j['ts_fim'])
+            hist[k][1].append(j['err'])
+    return hist
+
+
+def _checar_err(tick, historico, memo, janela, min_jogos, lim_min, lim_max,
+                janela_horas=None):
+    """v23 — decide o tick pelo ERR. Devolve (ok, motivo, valor).
+
+    valor = MENOR das medias de err dos dois jogadores (janela de `janela`
+    jogos, ou das ultimas `janela_horas` horas se setada), SO com jogos de
+    ts_fim < ts do tick (anti-vazamento estrito) e da MESMA liga do tick.
+
+    MEMO por event_id (passe um dict; None desliga): o err do par e'
+    CONSTANTE dentro do evento — os dois jogadores estao jogando ESTE jogo,
+    nenhum jogo novo deles fecha no meio — entao no modo tick a tick o mesmo
+    evento custa 1 calculo. Config fixa por job, memo pos-faixa e' seguro.
+
+    FAIL CLOSED em todas as pontas: historico ausente, sem par, sem liga,
+    historico curto, config invalida ou excecao -> tick REJEITADO com motivo
+    proprio. Nunca passa calado, nunca crasha."""
+    try:
+        evt = tick.get('event_id') if hasattr(tick, 'get') else tick['event_id']
+        if memo is not None and evt is not None and evt in memo:
+            return memo[evt]
+
+        def _guarda(res):
+            if memo is not None and evt is not None:
+                memo[evt] = res
+            return res
+
+        if not historico:
+            return _guarda((False, 'err_erro', None))
+        ja = _err_norm_nome(tick.get('jogador_a') if hasattr(tick, 'get') else tick['jogador_a'])
+        jb = _err_norm_nome(tick.get('jogador_b') if hasattr(tick, 'get') else tick['jogador_b'])
+        if not ja or not jb:
+            return _guarda((False, 'err_sem_par', None))
+        liga = _err_norm_nome(tick.get('liga') if hasattr(tick, 'get') else tick['liga'])
+        ts_ref = tick['ts']
+
+        medias = []
+        for p in (ja, jb):
+            par = historico.get((liga, p))
+            if not par:
+                return _guarda((False, 'err_hist_insuf', None))
+            ts_list, err_list = par
+            # jogos ESTRITAMENTE anteriores ao envio
+            i_fim = bisect.bisect_left(ts_list, ts_ref)
+            if janela_horas is not None:
+                try:
+                    corte = ts_ref - timedelta(hours=float(janela_horas))
+                except Exception:
+                    return _guarda((False, 'err_cfg_invalida', None))
+                i_ini = bisect.bisect_left(ts_list, corte, 0, i_fim)
+            else:
+                i_ini = max(0, i_fim - int(janela))
+            n = i_fim - i_ini
+            if n < int(min_jogos):
+                return _guarda((False, 'err_hist_insuf', None))
+            medias.append(sum(err_list[i_ini:i_fim]) / n)
+
+        val = min(medias)   # o PIOR dos dois: ambos precisam vir subestimados
+
+        for lim, e_piso in ((lim_min, True), (lim_max, False)):
+            if lim is None:
+                continue
+            try:
+                _v = float(lim)
+            except (TypeError, ValueError):
+                return _guarda((False, 'err_cfg_invalida', None))
+            if (val < _v) if e_piso else (val > _v):
+                return _guarda((False, 'err', round(val, 2)))
+        return _guarda((True, '', round(val, 2)))
+    except Exception:
+        return False, 'err_erro', None
+
+
 def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
     """
     Avalia os filtros basicos do tick. BLINDADO: cada comparacao numerica coage
@@ -3114,6 +3507,23 @@ async def executar_backtest(job_id: int):
             atropelo_min_jogos = 6
         if atropelo_ativo and atropelo_min is None and atropelo_max is None:
             atropelo_ativo = False
+        # v23 — ERR (erro da casa na linha de total). Bot/job antigo sem as
+        # chaves = desligado, comportamento identico ao de antes. errAnotar
+        # SO anota a coluna Err na planilha (nunca rejeita) — e' o modo do
+        # export escancarado pro garimpo minerar o eixo.
+        err_ativo = bool(_fd.get('errAtivo', False))
+        err_min = _fd.get('errMin') if err_ativo else None
+        err_max = _fd.get('errMax') if err_ativo else None
+        err_janela, err_min_jogos, err_janela_horas = _err_params_do_filtro(_fd)
+        if err_ativo and err_min is None and err_max is None:
+            err_ativo = False
+        err_anotar = bool(_fd.get('errAnotar', False))
+        # FAIL CLOSED: err so faz sentido em total seco (over_under_ft/ht).
+        # Em HC/ML/asiatico com errAtivo, TODO tick e' rejeitado com motivo
+        # proprio — nunca roda "sem o filtro" em silencio.
+        err_fora_de_ou = err_ativo and (
+            bot.get('mercado', '') not in ERR_MERCADOS_SUPORTADOS)
+
         # FAIL CLOSED (filosofia v11): folga so faz sentido em handicap. Num
         # bot NAO-HC com folga ligada, TODO tick e rejeitado com motivo
         # proprio ('folga_so_hc') — nunca roda "sem o filtro" em silencio.
@@ -3368,6 +3778,34 @@ async def executar_backtest(job_id: int):
                 _ht_ts[evt] = t['ts']
                 _ht_fonte[evt] = lt
 
+        # v23 — ERR: indice do "erro da casa" montado DOS PROPRIOS TICKS do
+        # job (abertura = 1o tick do mercado de total; total = placar do jogo
+        # fechado). Escopo natural: o dataset ja vem filtrado por casa/esporte/
+        # whitelist do bot, e o historico e' particionado POR LIGA — jogo de
+        # outra liga nunca contamina (licao do atropelo). Jogos do comeco do
+        # arquivo sem 5 anteriores caem em err_hist_insuf (warm-up honesto).
+        err_historico = None
+        err_memo_evt: dict = {}
+        if (err_ativo and not err_fora_de_ou) or (
+                err_anotar and bot.get('mercado', '') in ERR_MERCADOS_SUPORTADOS):
+            try:
+                _per_err = _periodo_do_bot(bot.get('mercado', ''))
+                _jogos_err, _cont_err = _err_reduzir_eventos(
+                    ticks, (bot.get('casa') or '').lower(), _per_err, agora=None)
+                err_historico = _err_montar_historico(_jogos_err)
+                _desc_err = ', '.join(
+                    f'{k}={v}' for k, v in _cont_err.items() if v) or 'nenhum'
+                logger.info(
+                    f"[backtest] Job {job_id}: err[{_per_err}] "
+                    f"{len(_jogos_err)} jogos fechados, "
+                    f"{len(err_historico)} chaves (liga,jogador) | "
+                    f"descartes: {_desc_err}")
+            except Exception:
+                # fail-closed: com errAtivo, todo tick cai em err_erro no laco
+                logger.exception(
+                    f"[backtest] Job {job_id}: falha montando indice do err")
+                err_historico = None
+
         async with pool.acquire() as conn:
             await conn.execute(
                 "UPDATE backtest_jobs SET progresso=30, progresso_msg='Calculando stats H2H' WHERE id=$1",
@@ -3601,6 +4039,33 @@ async def executar_backtest(job_id: int):
                 if not _ok_a:
                     rej[_mot_a] = rej.get(_mot_a, 0) + 1
                     continue
+
+            # v23 — ERR. Mesmo ponto COMUM do atropelo/tot_env (fora do
+            # `if filtros_unificados:`): bot so-err filtra mesmo sem chip.
+            # NAO e' filtro de estado (o err do par e' constante dentro do
+            # evento — nenhum jogo dos dois fecha no meio DESTE jogo), entao
+            # nao entra no gatilho do tick-a-tick e o memo por evento paga
+            # 1 calculo por jogo.
+            _err_v = None
+            if err_ativo:
+                if err_fora_de_ou:
+                    rej['err_so_over_under'] = rej.get('err_so_over_under', 0) + 1
+                    continue
+                _ok_e, _mot_e, _err_v = _checar_err(
+                    tick, err_historico, err_memo_evt, err_janela,
+                    err_min_jogos, err_min, err_max, err_janela_horas)
+                if not _ok_e:
+                    _k_e = _mot_e or 'err'
+                    rej[_k_e] = rej.get(_k_e, 0) + 1
+                    continue
+            elif err_anotar and err_historico is not None:
+                # anota sem filtrar: mesma conta, bordas None (nunca rejeita)
+                try:
+                    _, _, _err_v = _checar_err(
+                        tick, err_historico, err_memo_evt, err_janela,
+                        err_min_jogos, None, None, err_janela_horas)
+                except Exception:
+                    _err_v = None
 
             # v4: aplica filtros unificados (comp + hist normalizado)
             # mercado do bot (usado pro desvio HC vs over/under). Definido aqui
@@ -3876,6 +4341,8 @@ async def executar_backtest(job_id: int):
                 'envio_away': _envio_a,
                 'resultado': resultado,
                 'stats': stats,
+                # v23: err do par no envio (None = filtro/anotacao desligados)
+                'err': _err_v,
             })
 
         rej_str = ', '.join(f'{k}={v}' for k, v in rej.items() if v > 0) or 'nenhuma'
@@ -4086,6 +4553,12 @@ async def executar_backtest(job_id: int):
                 'lucro_unidades': round(pnl_aposta / stake, 3) if stake else 0,
                 'banca_apos': round(banca, 2),
             })
+            # v23: coluna Err — so quando o job computou (filtro ou errAnotar)
+            if c.get('err') is not None:
+                try:
+                    apostas_detalhe[-1]['err'] = round(float(c['err']), 2)
+                except (TypeError, ValueError):
+                    pass
 
             equity_curve.append({
                 'n': i + 1,
