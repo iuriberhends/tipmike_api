@@ -336,6 +336,28 @@ def _baseline_do_contrato(contrato):
     return None
 
 
+def _ler_tabela_garimpo(caminho):
+    """Leitura BLINDADA do resultado do varredor. O arquivo pode vir de
+    maquina Windows (cp1252 — foi o caso do garimpo 13, byte 0xd2 no
+    cabecalho) ou ate noutro formato (xlsx/parquet). Detecta a assinatura
+    e tenta os encodings na ordem; latin-1 no fim nunca falha e preserva
+    os bytes — nada de estourar utf-8 na cara do usuario."""
+    import pandas as pd
+    with open(caminho, 'rb') as f:
+        cab = f.read(8)
+    if cab[:2] == b'PK':            # xlsx/zip
+        return pd.read_excel(caminho)
+    if cab[:4] == b'PAR1':          # parquet
+        return pd.read_parquet(caminho)
+    for enc in ('utf-8', 'utf-8-sig', 'cp1252', 'latin-1'):
+        try:
+            return pd.read_csv(caminho, low_memory=False, encoding=enc)
+        except UnicodeDecodeError:
+            continue
+    return pd.read_csv(caminho, low_memory=False, encoding='latin-1',
+                       encoding_errors='replace')
+
+
 def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top):
     """Roda em thread (pandas em 17k linhas travaria o event loop).
     Replica o caminho do testar_selecao: rename -> coercao -> merge do
@@ -343,7 +365,7 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top):
     import pandas as pd
     C, S = _mods_selecao()
 
-    m = pd.read_csv(caminho_tudo, low_memory=False)
+    m = _ler_tabela_garimpo(caminho_tudo)
     ren = {"apostas": "ap", "unidades": "u", "lucro_dd": "ldd",
            "max_reds": "seq_neg", "roi_m1": "m1", "roi_m2": "m2",
            "conc_alvo": "conc3", "n_par": "n_alvos"}
@@ -355,7 +377,7 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top):
 
     cruzadas = 0
     if caminho_holdout and os.path.isfile(caminho_holdout):
-        h = pd.read_csv(caminho_holdout, low_memory=False)
+        h = _ler_tabela_garimpo(caminho_holdout)
         K = ["janela", "wr_min", "wr_max", "janela2", "op2", "wr2",
              "conf_min", "conf_max", "linha_min", "linha_max",
              "odd_min", "odd_max", "extra", "teto"]
