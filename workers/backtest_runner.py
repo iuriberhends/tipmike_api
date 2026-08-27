@@ -1,5 +1,17 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT)
+
+v24 - CHIP DE HANDICAP DE 1o TEMPO COM PLACAR DE INTERVALO (26/ago): ate aqui a
+  cobertura do handicap (hc_pct / escadinha) era medida SEMPRE com o placar
+  FINAL do jogo, inclusive em bot de ah_ht — o backtest de 1o tempo media
+  outra estrategia (mais restrita) que a do bot vivo, que le a cobertura de
+  1o tempo (ah_ht da TM). Agora: o h2h traz score_ht_home/score_ht_away do
+  h2h_historico (NULL na perna ticks/h2h_matches, que nao tem HT), e quando
+  o mercado do bot e' de 1o tempo (_periodo_do_bot == 'ht') a cobertura usa
+  o placar de INTERVALO; jogo sem HT e' PULADO (fora do denominador) — nunca
+  cai pro placar final. Mercado FT: caminho IDENTICO ao anterior (default
+  periodo='ft' em toda assinatura). O atropelo continua no placar final
+  (propriedade do jogo inteiro).
 
 v23 - ERR ("erro da casa" na linha de total, over/under): err de um jogo
   terminado = total real do periodo - linha de ABERTURA daquele jogo. Na
@@ -757,13 +769,22 @@ def _cobriu_handicap(pts_time, pts_adv, linha) -> Optional[bool]:
         return None
 
 
-def _resolver_pts_hc(jogo: dict, alvo_upper: str) -> tuple:
+def _resolver_pts_hc(jogo: dict, alvo_upper: str, periodo: str = 'ft') -> tuple:
     """(pts_alvo, pts_adv) conforme o alvo seja jogador_a (home) ou _b (away)
-    do jogo. (None, None) se o alvo nao esta no jogo. Blindado."""
+    do jogo. (None, None) se o alvo nao esta no jogo. Blindado.
+    v24: periodo='ht' le o placar de INTERVALO (score_ht_home/score_ht_away);
+    jogo sem placar de intervalo devolve (None, None) — o chamador PULA o jogo
+    (nunca usa o placar final no lugar). Default 'ft' = comportamento original."""
     ja = (jogo.get('jogador_a') or '').strip().upper()
     jb = (jogo.get('jogador_b') or '').strip().upper()
-    sh = jogo.get('score_home')
-    sa = jogo.get('score_away')
+    if periodo == 'ht':
+        sh = jogo.get('score_ht_home')
+        sa = jogo.get('score_ht_away')
+        if sh is None or sa is None:
+            return None, None
+    else:
+        sh = jogo.get('score_home')
+        sa = jogo.get('score_away')
     if ja == alvo_upper:
         return sh, sa
     if jb == alvo_upper:
@@ -844,16 +865,18 @@ async def _checar_atropelo(tick, indiv_cache, memo, margem, min_jogos,
     return True, '', val
 
 
-def _pct_team_plus(jogos: list, alvo: str, linha: float) -> tuple:
+def _pct_team_plus(jogos: list, alvo: str, linha: float, periodo: str = 'ft') -> tuple:
     """(% cobertura, qtd_valida) do `alvo` cobrindo `linha` nos confrontos.
     Reproduz historical.all.pct_team_plus do TM (validado 97.3~97.2).
-    (None, 0) se sem jogo valido."""
+    (None, 0) se sem jogo valido.
+    v24: periodo='ht' mede a cobertura no placar de INTERVALO (= ah_ht da TM);
+    jogo sem HT fica fora do denominador."""
     if not jogos:
         return None, 0
     alvo_u = (alvo or '').strip().upper()
     cobriu = validos = 0
     for j in jogos:
-        pa, pv = _resolver_pts_hc(j, alvo_u)
+        pa, pv = _resolver_pts_hc(j, alvo_u, periodo)
         r = _cobriu_handicap(pa, pv, linha)
         if r is None:
             continue
@@ -865,19 +888,20 @@ def _pct_team_plus(jogos: list, alvo: str, linha: float) -> tuple:
     return cobriu / validos, validos
 
 
-def _pct_adversario_cobre(jogos: list, alvo: str, linha: float) -> tuple:
+def _pct_adversario_cobre(jogos: list, alvo: str, linha: float, periodo: str = 'ft') -> tuple:
     """v11 (filtro individual HC, alvo='ambos').
     (% dos jogos do `alvo` em que o ADVERSARIO cobriu +linha, qtd_valida) —
     ou seja: o alvo NAO venceu por mais que a linha, exatamente o que a aposta
     na zebra +linha precisa que aconteca com o FAVORITO. Como as linhas sao .5,
     e o complemento exato de 'alvo cobre -linha' (sem push possivel).
-    (None, 0) se sem jogo valido. BLINDADO (mesma disciplina da _pct_team_plus)."""
+    (None, 0) se sem jogo valido. BLINDADO (mesma disciplina da _pct_team_plus).
+    v24: periodo='ht' -> placar de intervalo (mesma regra da _pct_team_plus)."""
     if not jogos:
         return None, 0
     alvo_u = (alvo or '').strip().upper()
     ok = validos = 0
     for j in jogos:
-        pa, pv = _resolver_pts_hc(j, alvo_u)
+        pa, pv = _resolver_pts_hc(j, alvo_u, periodo)
         r = _cobriu_handicap(pv, pa, linha)  # adversario + linha > alvo
         if r is None:
             continue
@@ -1152,16 +1176,22 @@ def _resolve_resultado_hc(selecao, jogador_a, jogador_b,
 
 
 def calcular_stat_hc(jogos_h2h: list, selecao: str,
-                     jogador_a: str, jogador_b: str) -> dict:
+                     jogador_a: str, jogador_b: str,
+                     periodo: str = 'ft') -> dict:
     """Stat de HC pro tick: pct do NICK cobrir a LINHA da selecao sobre todos os
     confrontos (cutoff ja aplicado pelo get_jogos). Retorna
-    {'hc_pct','hc_pct_qtd','hc_linha','hc_nick'}. Blindado (selecao ruim -> pct None)."""
+    {'hc_pct','hc_pct_qtd','hc_linha','hc_nick','hc_periodo'}. Blindado (selecao ruim -> pct None).
+    v24: periodo = _periodo_do_bot(mercado do bot). 'ht' -> cobertura no placar
+    de INTERVALO e hc_pct_qtd = so jogos com HT. O periodo fica gravado em
+    stats['hc_periodo'] pra escadinha usar a MESMA regra (executor incluso)."""
     nick = _extrair_nick_hc(selecao)
     hc_val = _selecao_hc_valor(selecao)
-    out = {'hc_pct': None, 'hc_pct_qtd': 0, 'hc_linha': hc_val, 'hc_nick': nick}
+    periodo = 'ht' if (periodo or 'ft') == 'ht' else 'ft'
+    out = {'hc_pct': None, 'hc_pct_qtd': 0, 'hc_linha': hc_val, 'hc_nick': nick,
+           'hc_periodo': periodo}
     if nick is None or hc_val is None:
         return out
-    pct, qtd = _pct_team_plus(jogos_h2h, nick, hc_val)
+    pct, qtd = _pct_team_plus(jogos_h2h, nick, hc_val, periodo)
     out['hc_pct'] = pct
     out['hc_pct_qtd'] = qtd
     return out
@@ -1237,6 +1267,8 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
     if nick is None or hc_linha is None:
         return False, 'stat_hc_selecao_invalida'
     qtd_global = stats.get('qtd_h2h', 0) or 0
+    # v24: mesmo periodo do calcular_stat_hc (ht = placar de intervalo)
+    _per = 'ht' if (stats.get('hc_periodo') or 'ft') == 'ht' else 'ft'
     for _i, _f in enumerate(filtros_wr, 1):
         if _f.get('_nao_suportado'):
             return False, f"hc_f{_i}_filtro_nao_suportado({_f.get('_nao_suportado')})"
@@ -1270,9 +1302,9 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
             _zl = _ji.get('zebra')
             if not _z_nome or _zl is None:
                 return False, f'hc_f{_i}_indiv_dados_indisponiveis'
-            _pz_tot, _qz_tot = _pct_team_plus(_zl, _z_nome, hc_linha)
+            _pz_tot, _qz_tot = _pct_team_plus(_zl, _z_nome, hc_linha, _per)
             _fatia_z = _fatiar_jogos_janela(_zl, _jw, ts_ref)
-            _pz, _qz = _pct_team_plus(_fatia_z, _z_nome, hc_linha)
+            _pz, _qz = _pct_team_plus(_fatia_z, _z_nome, hc_linha, _per)
             stats[f'wr_ult{_tok}_ind'] = _pz
             stats[f'wr_ult{_tok}_ind_qtd'] = _qz
             if _mxp is not None and (_qz_tot or 0) > _mxp:
@@ -1302,9 +1334,9 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
                 _fl = _ji.get('favorito')
                 if not _f_nome or _fl is None:
                     return False, f'hc_f{_i}_indiv_fav_dados_indisponiveis'
-                _pf_tot, _qf_tot = _pct_adversario_cobre(_fl, _f_nome, hc_linha)
+                _pf_tot, _qf_tot = _pct_adversario_cobre(_fl, _f_nome, hc_linha, _per)
                 _fatia_f = _fatiar_jogos_janela(_fl, _jw, ts_ref)
-                _pf, _qf = _pct_adversario_cobre(_fatia_f, _f_nome, hc_linha)
+                _pf, _qf = _pct_adversario_cobre(_fatia_f, _f_nome, hc_linha, _per)
                 stats[f'wr_ult{_tok}_indfav'] = _pf
                 stats[f'wr_ult{_tok}_indfav_qtd'] = _qf
                 if (_qf_tot or 0) < _mp:
@@ -1329,7 +1361,7 @@ def _avaliar_escadinha_hc(jogos_h2h: list, stats: dict,
 
         # ===== ramo POR PAR (comportamento original, intacto) =====
         fatia = _fatiar_jogos_janela(jogos_h2h, _jw, ts_ref)
-        pct, qtd_janela = _pct_team_plus(fatia, nick, hc_linha)
+        pct, qtd_janela = _pct_team_plus(fatia, nick, hc_linha, _per)
         stats[f'wr_ult{_tok}'] = pct
         stats[f'wr_ult{_tok}_qtd'] = qtd_janela
         # minPartidas (maturidade): hist -> total do par; comp -> qtd da janela
@@ -1544,6 +1576,14 @@ def _aplicar_cutoff_jogos(jogos: list, antes_de_ts, event_id_excluir,
     return out
 
 
+def _col_opcional(r, nome):
+    """v24: le coluna que pode nao existir no row (asyncpg.Record ou dict)."""
+    try:
+        return r[nome]
+    except (KeyError, IndexError, TypeError):
+        return None
+
+
 def _montar_jogos_e_dedup(rows) -> list:
     """v11: converte rows do banco em dicts de jogo + dedup ENTRE fontes
     (tick x hist) — logica v8 do H2HCache, EXTRAIDA pra reuso do cache
@@ -1572,6 +1612,11 @@ def _montar_jogos_e_dedup(rows) -> list:
             'jogador_b': r['jogador_b'],
             'score_home': sh,
             'score_away': sa,
+            # v24: placar de INTERVALO (so o h2h_historico tem; ticks/h2h_matches
+            # vem NULL). Blindado: coluna ausente -> None (jogo fica fora do
+            # chip de HT, nunca do FT).
+            'score_ht_home': _col_opcional(r, 'score_ht_home'),
+            'score_ht_away': _col_opcional(r, 'score_ht_away'),
             # BLINDADO: coage os placares a numero seguro antes de somar. Se
             # sh/sa vierem None -> 0; string numerica -> parseia; lixo -> 0.
             # Sem isso, um placar string ('5') faria '5'+'3'='53' (concat) e
@@ -1707,11 +1752,13 @@ class H2HCache:
         # estava ao vivo no momento da aposta e filtrar so os de tick.
         sql = """
         SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+               score_ht_home, score_ht_away,
                ultimo_tick_ts, fonte
         FROM (
             """ + ("""
             SELECT event_id, ts_fim AS ts, jogador_a, jogador_b,
                    score_a AS score_home, score_b AS score_away,
+                   NULL::smallint AS score_ht_home, NULL::smallint AS score_ht_away,
                    ts_fim AS ultimo_tick_ts, 'tick' AS fonte
             FROM h2h_matches
             WHERE bookmaker = $1
@@ -1721,6 +1768,7 @@ class H2HCache:
               AND score_a IS NOT NULL AND score_b IS NOT NULL
             """ if USAR_H2H_MATCHES else """
             SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+                   NULL::smallint AS score_ht_home, NULL::smallint AS score_ht_away,
                    ts AS ultimo_tick_ts, 'tick' AS fonte
             FROM (
                 SELECT DISTINCT ON (event_id)
@@ -1750,6 +1798,7 @@ class H2HCache:
                    -- (provado no gate: KARMA|TAAPZ wr 1.0->0.9 pos-fix-v12).
                    (ts AT TIME ZONE 'America/Sao_Paulo') AS ts,
                    jogador_a, jogador_b, score_home, score_away,
+                   score_ht_home, score_ht_away,
                    NULL::timestamptz AS ultimo_tick_ts, 'hist' AS fonte
             FROM h2h_historico
             WHERE sport = $2
@@ -1836,11 +1885,13 @@ class HistIndividualCache:
         # h2h_historico: UPPER dos dois lados (mesma tolerancia do par).
         sql = """
         SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+               score_ht_home, score_ht_away,
                ultimo_tick_ts, fonte
         FROM (
             """ + ("""
             SELECT event_id, ts_fim AS ts, jogador_a, jogador_b,
                    score_a AS score_home, score_b AS score_away,
+                   NULL::smallint AS score_ht_home, NULL::smallint AS score_ht_away,
                    ts_fim AS ultimo_tick_ts, 'tick' AS fonte
             FROM h2h_matches
             WHERE bookmaker = $1
@@ -1849,6 +1900,7 @@ class HistIndividualCache:
               AND score_a IS NOT NULL AND score_b IS NOT NULL
             """ if USAR_H2H_MATCHES else """
             SELECT event_id, ts, jogador_a, jogador_b, score_home, score_away,
+                   NULL::smallint AS score_ht_home, NULL::smallint AS score_ht_away,
                    ts AS ultimo_tick_ts, 'tick' AS fonte
             FROM (
                 SELECT DISTINCT ON (event_id)
@@ -1870,6 +1922,7 @@ class HistIndividualCache:
                    -- la) — ts do h2h_historico e naive-BRT; converte explicito.
                    (ts AT TIME ZONE 'America/Sao_Paulo') AS ts,
                    jogador_a, jogador_b, score_home, score_away,
+                   score_ht_home, score_ht_away,
                    NULL::timestamptz AS ultimo_tick_ts, 'hist' AS fonte
             FROM h2h_historico
             WHERE sport = $2
@@ -4109,8 +4162,10 @@ async def executar_backtest(job_id: int):
                 # e sim o pct de cobertura do handicap (validado vs TM). Caminho
                 # ISOLADO: nao toca a logica de over/under abaixo.
                 if _mercado_eh_hc(mercado_bot_loop):
+                    # v24: bot de 1o tempo mede a cobertura no placar de intervalo
                     stats = calcular_stat_hc(
-                        jogos_h2h, tick.get('selecao', ''), ja, jb)
+                        jogos_h2h, tick.get('selecao', ''), ja, jb,
+                        periodo=_periodo_do_bot(mercado_bot_loop))
                     stats['linha_atual'] = linha_num
                     if _atr_v is not None:
                         stats['atropelo'] = round(_atr_v, 2)

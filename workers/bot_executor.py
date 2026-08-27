@@ -903,7 +903,9 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         mercado_bot_hc = bot.get('mercado', '')
         # ===== RAMO HANDICAP (ah_ft) - MESMA logica do backtest (nao diverge) =====
         if _mercado_eh_hc(mercado_bot_hc):
-            stats_dict = calcular_stat_hc(jogos_h2h, tick.get('selecao', ''), ja, jb)
+            # v24: bot de 1o tempo (ah_ht) mede a cobertura no placar de INTERVALO
+            stats_dict = calcular_stat_hc(jogos_h2h, tick.get('selecao', ''), ja, jb,
+                                          periodo=_periodo_do_bot(mercado_bot_hc))
             stats_dict['linha_atual'] = linha_num
             stats_dict['qtd_h2h'] = stats_dict.get('hc_pct_qtd', 0)
 
