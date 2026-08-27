@@ -864,6 +864,81 @@ async def _rodar_item_no_motor(pool, job, item, upload_id, d_ini, d_fim,
     return bt_id, metricas_do_detalhe(det), lucro_por_jogo(det), snap
 
 
+def conferir_fonte_vs_itens(upload_id, itens, log):
+    """Guarda de largada (21/ago, rodada 8): o conversor chutava casa
+    'bet365' e a fonte era da Betano — o preparo filtrava tudo pra zero e
+    so descobriamos 3 itens depois, com mensagem burra. Aqui a rodada morre
+    NA LARGADA com o diagnostico pronto quando a fonte nao tem a casa (ou o
+    esporte) que os itens pedem. Blindada: qualquer falha na espiada do
+    parquet nao bloqueia a rodada (segue como antes)."""
+    if not upload_id or not itens:
+        return
+    try:
+        import pandas as pd
+        import os as _os
+        cam = None
+        try:
+            from workers.backtest_upload import caminho_do_upload
+            cam = caminho_do_upload(upload_id)
+        except Exception:
+            pass
+        if not cam or not _os.path.isfile(cam):
+            # fallback: upload_id como caminho relativo a raiz (formato da
+            # esteira) — sem depender do resolvedor
+            cand = _os.path.abspath(str(upload_id))
+            cam = cand if _os.path.isfile(cand) else None
+        if not cam:
+            return
+        casas = sports = None
+        # sem depender de pyarrow: tenta as colunas em cascata (engine que houver)
+        for cols in (["bookmaker", "sport"], ["bookmaker"], ["sport"]):
+            try:
+                df = pd.read_parquet(cam, columns=cols)
+            except Exception:
+                continue
+            if "bookmaker" in df.columns:
+                casas = set(str(x).lower() for x in df["bookmaker"].dropna().unique())
+            if "sport" in df.columns:
+                sports = set(str(x).lower() for x in df["sport"].dropna().unique())
+            break
+        if casas is None and sports is None:
+            return
+    except Exception:
+        return
+    casas_itens = set(str(i.get("casa") or "").lower() for i in itens) - {""}
+    # os itens falam o dialeto da UI ('nba2k'); o parquet, o do banco
+    # ('E-Basketball') — traduzir com o MESMO mapa do runner antes de
+    # comparar, senao a guarda mata rodada valida (falso positivo do dia 21)
+    try:
+        from workers.backtest_runner import ESPORTE_UI_PARA_BANCO as _MAPA_E
+    except Exception:
+        _MAPA_E = {}
+    if not _MAPA_E:
+        # rede de seguranca: o mesmo mapa do runner, embutido
+        _MAPA_E = {"fifa": "E-Football", "nba2k": "E-Basketball",
+                   "ehockey": "E-Hockey", "etennis": "E-Tennis"}
+    sports_itens = set()
+    for i in itens:
+        e = str(i.get("esporte") or "").strip()
+        if not e:
+            continue
+        sports_itens.add(e.lower())
+        sports_itens.add(str(_MAPA_E.get(e.lower(), e)).lower())
+    if casas and casas_itens and not (casas_itens & casas):
+        raise EsteiraErro(
+            f"a FONTE desta rodada so tem casa(s) {sorted(casas)} e os itens "
+            f"pedem {sorted(casas_itens)} — nada vai casar. Isso acontece "
+            "quando o garimpo veio de outra casa; reenvie da tela de escolha "
+            "com a casa certa (ou me chame que o conversor pode estar "
+            "chutando o default).")
+    if sports and sports_itens and not (sports_itens & sports):
+        raise EsteiraErro(
+            f"a FONTE so tem esporte(s) {sorted(sports)} e os itens pedem "
+            f"{sorted(sports_itens)} — nada vai casar.")
+    log(f"fonte confere: casas {sorted(casas) if casas else '?'} x itens "
+        f"{sorted(casas_itens)}")
+
+
 def _diagnostico_zerado(snap: dict) -> str:
     tem_chip = bool((snap.get("filtros") or {}).get("filtrosHistAdicionados"))
     if tem_chip:
@@ -929,6 +1004,7 @@ async def executar_esteira(job_id: int):
         log(f"h2h carimbado ({h2h_col}): {h2h_ini}")
 
     upload_id, base_hash, d_ini, d_fim = preparar_base(params, log)
+    conferir_fonte_vs_itens(upload_id, params.get("itens") or [], log)
     total = await _montar_itens(pool, job, params, base_hash, log)
     log(f"{total} itens na rodada")
 

@@ -358,7 +358,47 @@ def _ler_tabela_garimpo(caminho):
                        encoding_errors='replace')
 
 
-def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top):
+async def _origem_do_garimpo(conn, row) -> tuple:
+    """De onde o garimpo veio: (casa, esporte, assumido). Ordem: contrato
+    explicito -> backtest de origem (id no contrato ou no nome 'garimpo do
+    job N') -> defaults antigos com a flag assumido=True (a tela avisa).
+    Nascida do caso real da rodada 8 (21/ago): garimpo da Betano virava
+    itens bet365 por default chumbado e a rodada abortava com 0 ticks."""
+    import re as _re
+    contrato = _json(row["contrato"], {}) or {}
+    casa = str(contrato.get("casa") or contrato.get("bookmaker") or "").lower().strip()
+    esporte = str(contrato.get("esporte") or contrato.get("sport") or "").lower().strip()
+    if casa and esporte:
+        return casa, esporte, False
+
+    bt_id = None
+    for k in ("backtest_job_id", "job_id", "origem_job", "bt_id"):
+        v = contrato.get(k)
+        if v and str(v).isdigit():
+            bt_id = int(v)
+            break
+    if bt_id is None:
+        m = _re.search(r"job\s+(\d+)", str(row.get("nome") or ""), _re.I)
+        if m:
+            bt_id = int(m.group(1))
+    if bt_id is not None:
+        try:
+            r2 = await conn.fetchrow(
+                "SELECT bot_snapshot FROM backtest_jobs WHERE id = $1", bt_id)
+            if r2 and r2["bot_snapshot"]:
+                snap = _json(r2["bot_snapshot"], {}) or {}
+                c2 = str(snap.get("casa") or "").lower().strip()
+                e2 = str(snap.get("esporte") or "").lower().strip()
+                if c2 or e2:
+                    return (c2 or casa or "bet365",
+                            e2 or esporte or "nba2k", False)
+        except Exception:
+            logger.exception(f"[esteira] falha lendo origem do garimpo (bt {bt_id})")
+    return casa or "bet365", esporte or "nba2k", True
+
+
+def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
+                    casa=None, esporte=None):
     """Roda em thread (pandas em 17k linhas travaria o event loop).
     Replica o caminho do testar_selecao: rename -> coercao -> merge do
     holdout pela chave normalizada -> conversor -> pacote colunar."""
@@ -416,7 +456,12 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top):
     registros = m.to_dict("records")
 
     # quais linhas o MOTOR nao reproduz — com o motivo, nunca silencio
-    itens, recusadas = C.converter_lote(registros)
+    kw = {}
+    if casa:
+        kw["casa"] = casa
+    if esporte:
+        kw["esporte"] = esporte
+    itens, recusadas = C.converter_lote(registros, **kw)
     irrep = {r["i"]: r["motivo"] for r in recusadas}
 
     # o pacote da tela (colunar, formato do prototipo) + os itens da planilha
@@ -487,11 +532,14 @@ async def selecao_da_varredura(
     if baseline is None:
         baseline = _baseline_do_contrato(_json(row["contrato"], {}))
 
+    async with pool.acquire() as conn:
+        casa_g, esporte_g, casa_assumida = await _origem_do_garimpo(conn, row)
+
     import asyncio
     try:
         corpo = await asyncio.to_thread(
             _montar_selecao, caminho, row["arquivo_holdout"], baseline,
-            criterio, top)
+            criterio, top, casa_g, esporte_g)
     except HTTPException:
         raise
     except Exception as e:
@@ -499,6 +547,8 @@ async def selecao_da_varredura(
         raise HTTPException(status_code=500,
                             detail=f"falha lendo o garimpo: {e}")
     corpo["varredura"] = {"id": row["id"], "nome": row["nome"]}
+    corpo["origem"] = {"casa": casa_g, "esporte": esporte_g,
+                       "assumida": casa_assumida}
     logger.info(f"[esteira] selecao da varredura {vid}: {corpo['total']} "
                 f"configs, {len(corpo['irreproduziveis'])} irreproduziveis")
     return corpo
