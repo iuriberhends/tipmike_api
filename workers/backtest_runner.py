@@ -1,5 +1,5 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT + v25 anotar_tudo)
 
 v24 - CHIP DE HANDICAP DE 1o TEMPO COM PLACAR DE INTERVALO (26/ago): ate aqui a
   cobertura do handicap (hc_pct / escadinha) era medida SEMPRE com o placar
@@ -865,6 +865,72 @@ async def _checar_atropelo(tick, indiv_cache, memo, margem, min_jogos,
     return True, '', val
 
 
+
+# ===================== v25 — ANOTAR TUDO (modo garimpo) =====================
+# Escreve no export, POR APOSTA, os eixos que o motor calcula mas so gravava
+# quando o filtro correspondente estava ligado: momento (estagio 1-5),
+# atropelo (taxa de cada jogador na ESCALA DO BANCO, e o pior dos dois) e
+# folga (so HC). Nunca rejeita nada: e' anotacao, nao filtro. Com
+# `filtros.anotarTudo` ausente/false o job e' byte a byte identico ao v24.
+async def _anotar_atropelo(tick, indiv_cache, memo, margem, job_id=None) -> dict:
+    """Taxa de atropelo de CADA jogador do tick (mesma conta e mesmo memo do
+    _checar_atropelo, sem bordas). Devolve dict com a/b/n_a/n_b/pior; valor
+    None onde nao houve historico. BLINDADO: nunca levanta."""
+    out = {'a': None, 'b': None, 'n_a': 0, 'n_b': 0, 'pior': None}
+    try:
+        ja = tick.get('jogador_a')
+        jb = tick.get('jogador_b')
+        if not ja or not jb:
+            return out
+        taxas = []
+        for _p in (ja, jb):
+            _jg = await indiv_cache.get_jogos(
+                _p, tick['ts'], event_id_excluir=tick.get('event_id'))
+            _k = ((_p or '').strip().upper(), len(_jg))
+            if _k not in memo:
+                memo[_k] = _taxa_atropelo(_jg, _p, margem)
+            taxas.append(memo[_k])
+        (tx_a, n_a), (tx_b, n_b) = taxas
+        out.update({'a': tx_a, 'b': tx_b, 'n_a': int(n_a or 0), 'n_b': int(n_b or 0)})
+        if tx_a is not None and tx_b is not None:
+            out['pior'] = max(tx_a, tx_b)
+        elif tx_a is not None or tx_b is not None:
+            out['pior'] = tx_a if tx_a is not None else tx_b
+    except Exception as e:
+        logger.warning(f"[backtest] job {job_id}: falha anotando atropelo: {e}")
+    return out
+
+
+def _folga_valor(tick: dict, selecao: str):
+    """v25. A MESMA conta da _aplicar_filtro_folga (fonte unica de lado/nick),
+    devolvendo o numero em vez de decidir. None quando nao da pra calcular
+    (sem placar, selecao sem nick/valor, nick que nao casa)."""
+    try:
+        sh = tick.get('score_home')
+        sa = tick.get('score_away')
+        if sh is None or sa is None:
+            return None
+        nick = _extrair_nick_hc(selecao)
+        hc = _selecao_hc_valor(selecao)
+        if nick is None or hc is None:
+            return None
+        ja = (tick.get('jogador_a') or '').strip().upper()
+        jb = (tick.get('jogador_b') or '').strip().upper()
+        if nick == ja:
+            pts_nick, pts_adv = sh, sa
+        elif nick == jb:
+            pts_nick, pts_adv = sa, sh
+        elif ja and (nick in ja or ja in nick):
+            pts_nick, pts_adv = sh, sa
+        elif jb and (nick in jb or jb in nick):
+            pts_nick, pts_adv = sa, sh
+        else:
+            return None
+        return float(hc) - (float(pts_adv) - float(pts_nick))
+    except Exception:
+        return None
+
+
 def _pct_team_plus(jogos: list, alvo: str, linha: float, periodo: str = 'ft') -> tuple:
     """(% cobertura, qtd_valida) do `alvo` cobrindo `linha` nos confrontos.
     Reproduz historical.all.pct_team_plus do TM (validado 97.3~97.2).
@@ -1195,6 +1261,42 @@ def calcular_stat_hc(jogos_h2h: list, selecao: str,
     out['hc_pct'] = pct
     out['hc_pct_qtd'] = qtd
     return out
+
+
+def _anotar_chips_hc(jogos_h2h, stats, selecao, ts_ref, janelas,
+                     jogos_indiv=None):
+    """v25 (modo garimpo). Grava em stats, pra CADA janela pedida, a cobertura
+    do par (wr_ult{tok}) e a individual (zebra: wr_ult{tok}_ind; favorito:
+    wr_ult{tok}_indfav) — a MESMA conta da _avaliar_escadinha_hc, sem decidir
+    nada. Nao sobrescreve chave que a escadinha ja gravou. BLINDADO."""
+    try:
+        nick = _extrair_nick_hc(selecao)
+        hc_linha = _selecao_hc_valor(selecao)
+        if nick is None or hc_linha is None:
+            return
+        _per = 'ht' if (stats.get('hc_periodo') or 'ft') == 'ht' else 'ft'
+        _ji = jogos_indiv or {}
+        for _n in janelas:
+            _tok = str(int(_n)); _jw = None if int(_n) == 0 else int(_n)
+            if f'wr_ult{_tok}' not in stats:
+                _fatia = _fatiar_jogos_janela(jogos_h2h, _jw, ts_ref) if _jw else jogos_h2h
+                _p, _q = _pct_team_plus(_fatia, nick, hc_linha, _per)
+                stats[f'wr_ult{_tok}'] = _p
+                stats[f'wr_ult{_tok}_qtd'] = _q
+            _zl = _ji.get('zebra'); _zn = _ji.get('zebra_nome')
+            if _zl is not None and _zn and f'wr_ult{_tok}_ind' not in stats:
+                _fz = _fatiar_jogos_janela(_zl, _jw, ts_ref) if _jw else _zl
+                _pz, _qz = _pct_team_plus(_fz, _zn, hc_linha, _per)
+                stats[f'wr_ult{_tok}_ind'] = _pz
+                stats[f'wr_ult{_tok}_ind_qtd'] = _qz
+            _fl = _ji.get('favorito'); _fn = _ji.get('favorito_nome')
+            if _fl is not None and _fn and f'wr_ult{_tok}_indfav' not in stats:
+                _ff = _fatiar_jogos_janela(_fl, _jw, ts_ref) if _jw else _fl
+                _pf, _qf = _pct_adversario_cobre(_ff, _fn, hc_linha, _per)
+                stats[f'wr_ult{_tok}_indfav'] = _pf
+                stats[f'wr_ult{_tok}_indfav_qtd'] = _qf
+    except Exception as e:
+        logger.warning(f"[backtest] anotar chips hc falhou (segue sem): {e}")
 
 
 def _fatiar_jogos_janela(jogos: list, janela, ts_ref) -> list:
@@ -2177,6 +2279,8 @@ MIN_H2H_DEFAULT = 5
 # Janelas padrao SEMPRE calculadas (compatibilidade backwards)
 JANELAS_PADRAO_WR = (5, 10, 15)
 JANELAS_PADRAO_MEDIA = (5, 10, 20)
+# v25: janelas que o modo garimpo (anotarTudo) sempre calcula (0 = Todas)
+JANELAS_ANOTAR_TUDO = (0, 5, 10, 15, 20, 30, 50)
 
 
 # ============================================================
@@ -3571,6 +3675,12 @@ async def executar_backtest(job_id: int):
         if err_ativo and err_min is None and err_max is None:
             err_ativo = False
         err_anotar = bool(_fd.get('errAnotar', False))
+        # v25 — ANOTAR TUDO (modo garimpo): escreve momento/atropelo/folga por
+        # aposta sem filtrar. Liga o errAnotar junto (o err e' um dos eixos)
+        # quando o mercado suporta. Ausente = job identico ao v24.
+        anotar_tudo = bool(_fd.get('anotarTudo', False))
+        if anotar_tudo and bot.get('mercado', '') in ERR_MERCADOS_SUPORTADOS:
+            err_anotar = True
         # FAIL CLOSED: err so faz sentido em total seco (over_under_ft/ht).
         # Em HC/ML/asiatico com errAtivo, TODO tick e' rejeitado com motivo
         # proprio — nunca roda "sem o filtro" em silencio.
@@ -3624,6 +3734,20 @@ async def executar_backtest(job_id: int):
             _eh_filtro_individual(f) and f.get('hist_indiv_alvo') == 'ambos'
             for f in (filtros_unificados or [])
         )
+        # v25 — ANOTAR TUDO: as stats de TODAS as janelas padrao do garimpo
+        # (chip, media, z, desvio, individual) sao calculadas pra cada aposta
+        # e viram coluna, independente dos filtros do job. Custo assumido: e'
+        # um job de export, nao de bot. Sem a flag nada disto roda.
+        if anotar_tudo:
+            janelas_wr = set(janelas_wr) | set(JANELAS_ANOTAR_TUDO)
+            janelas_media = set(janelas_media) | set(JANELAS_ANOTAR_TUDO)
+            # O/U: o individual sai pelo espelho (ind A/B/pior), que so roda
+            # com tem_indiv. HC: NAO forca tem_indiv — no ramo HC ele muda
+            # a decisao (zebra nao identificavel vira rejeicao); la o anotar
+            # busca o historico por conta propria e nunca rejeita.
+            if not _mercado_eh_hc(bot.get('mercado', '')):
+                tem_indiv = True
+                janelas_wr_indiv = set(janelas_wr_indiv) | set(JANELAS_ANOTAR_TUDO)
 
         if filtros_unificados:
             tipos_resumo = [f"{f.get('tipo')}_ult{f.get('janela')}" for f in filtros_unificados]
@@ -4120,6 +4244,21 @@ async def executar_backtest(job_id: int):
                 except Exception:
                     _err_v = None
 
+            # v25 — ANOTAR TUDO: momento/atropelo/folga por aposta, sem
+            # rejeitar. Calculado ANTES do chip pra sair mesmo em config sem
+            # filtro hist; custo do atropelo segurado pelo mesmo memo do v16.
+            _anot = None
+            if anotar_tudo:
+                _anot = {'momento': _momento_do_tick(tick)}
+                # mesmo memo do filtro: se o atropelo ja rodou neste tick, o
+                # calculo por jogador ja esta cacheado e isso custa ~zero
+                _anot['atropelo'] = await _anotar_atropelo(
+                    tick, indiv_cache, _atr_memo, atropelo_margem, job_id)
+                if _mercado_eh_hc(bot.get('mercado', '')):
+                    _anot['folga'] = _folga_valor(tick, tick.get('selecao', ''))
+                else:
+                    _anot['folga'] = None
+
             # v4: aplica filtros unificados (comp + hist normalizado)
             # mercado do bot (usado pro desvio HC vs over/under). Definido aqui
             # pra estar disponivel tanto no filtro quanto na resolucao abaixo.
@@ -4182,6 +4321,7 @@ async def executar_backtest(job_id: int):
                     hc_min = bot.get('hc_pct_min', bot.get('hc_wr_min'))
                     hc_max = bot.get('hc_pct_max')
                     hc_min_part = bot.get('hc_min_partidas')
+                    jogos_indiv_hc = None   # v25: por tick (o anotar le daqui)
 
                     # FILTROS 6 e 7: blacklist de zebra / favorito (HC).
                     # Listas no filtros jsonb do bot. Isolado, blindado.
@@ -4250,6 +4390,29 @@ async def executar_backtest(job_id: int):
                         else:
                             rej['comp'] += 1
                         continue
+                    # v25 — ANOTAR TUDO (HC): chips do par e individuais em
+                    # todas as janelas do garimpo, so pra sair no export.
+                    if anotar_tudo:
+                        _ji_an = jogos_indiv_hc
+                        if _ji_an is None:
+                            try:
+                                _zn_an, _fn_an = _zebra_favorito(
+                                    tick.get('selecao', ''), ja, jb)
+                                if _zn_an:
+                                    _ji_an = {
+                                        'zebra_nome': _zn_an, 'favorito_nome': _fn_an,
+                                        'zebra': await indiv_cache.get_jogos(
+                                            _zn_an, tick['ts'],
+                                            event_id_excluir=tick.get('event_id')),
+                                        'favorito': (await indiv_cache.get_jogos(
+                                            _fn_an, tick['ts'],
+                                            event_id_excluir=tick.get('event_id'))
+                                                     if _fn_an else None)}
+                            except Exception as e:
+                                logger.warning(f"[backtest] job {job_id}: hist indiv (anotar) {e}")
+                                _ji_an = None
+                        _anotar_chips_hc(jogos_h2h, stats, tick.get('selecao', ''),
+                                         tick['ts'], JANELAS_ANOTAR_TUDO, jogos_indiv=_ji_an)
                     qtd_h2h = stats.get('hc_pct_qtd', 0) or 0
                     if qtd_h2h < H2H_MIN_SAUDAVEL:
                         qualidade['apostas_h2h_fraco'] += 1
@@ -4398,6 +4561,8 @@ async def executar_backtest(job_id: int):
                 'stats': stats,
                 # v23: err do par no envio (None = filtro/anotacao desligados)
                 'err': _err_v,
+                # v25: anotacoes do modo garimpo (None = desligado)
+                'anot': _anot,
             })
 
         rej_str = ', '.join(f'{k}={v}' for k, v in rej.items() if v > 0) or 'nenhuma'
@@ -4507,6 +4672,33 @@ async def executar_backtest(job_id: int):
             elif _tipo_f == 'qtd_h2h':
                 _wr_cols.append(("Qtd H2H", 'qtd_h2h'))
 
+        # v25 — ANOTAR TUDO: acrescenta as colunas de TODAS as janelas do
+        # garimpo (sem repetir rotulo que os filtros do job ja geraram).
+        if anotar_tudo:
+            _eh_hc_cols = _mercado_eh_hc(bot.get('mercado', ''))
+            _extra_cols = []
+            for _n in sorted(JANELAS_ANOTAR_TUDO):
+                _tok = str(int(_n)); _lbl = "Todas" if _n == 0 else f"Últ. {_n}"
+                _extra_cols += [(_lbl, f'wr_ult{_tok}'),
+                                (f"Qtd {_lbl}", f'wr_ult{_tok}_qtd'),
+                                (f"Média {_lbl}", f'media_ult{_tok}'),
+                                (f"Qtd Média {_lbl}", f'media_ult{_tok}_qtd'),
+                                (f"Gap {_lbl}", f'CALC:gap:{_tok}'),
+                                (f"Z {_lbl}", f'z_ult{_tok}'),
+                                (f"Desvio {_lbl}", f'desvio_ult{_tok}')]
+                if _eh_hc_cols:
+                    _extra_cols += [(f"{_lbl} (ind zebra)", f'wr_ult{_tok}_ind'),
+                                    (f"{_lbl} (ind fav)", f'wr_ult{_tok}_indfav')]
+                else:
+                    _extra_cols += [(f"{_lbl} (ind pior)", f'wr_ult{_tok}_indmin'),
+                                    (f"{_lbl} (ind A)", f'indiv_a_wr_ult{_tok}'),
+                                    (f"{_lbl} (ind B)", f'indiv_b_wr_ult{_tok}')]
+            _extra_cols += [("Tendência", 'tendencia'),
+                            ("Gap Linha", 'CALC:gaplinha'),
+                            ("Qtd H2H", 'qtd_h2h')]
+            _ja_tem = {c[0] for c in _wr_cols}
+            _wr_cols += [c for c in _extra_cols if c[0] not in _ja_tem]
+
         # legado (janela_1/2 e winrate_1/2): so as colunas de WR PERCENTUAL,
         # na ordem — as novas colunas nao podem entrar aqui senao quebram o
         # formato antigo que jobs velhos e leitores externos esperam.
@@ -4614,6 +4806,24 @@ async def executar_backtest(job_id: int):
                     apostas_detalhe[-1]['err'] = round(float(c['err']), 2)
                 except (TypeError, ValueError):
                     pass
+            # v25: colunas do modo garimpo — so quando anotarTudo ligou
+            _an = c.get('anot')
+            if isinstance(_an, dict):
+                def _r2(v):
+                    try:
+                        return None if v is None else round(float(v), 2)
+                    except (TypeError, ValueError):
+                        return None
+                _at = _an.get('atropelo') or {}
+                apostas_detalhe[-1]['anot'] = {
+                    'momento': _an.get('momento'),
+                    'atropelo_a': _r2(_at.get('a')),
+                    'atropelo_b': _r2(_at.get('b')),
+                    'atropelo': _r2(_at.get('pior')),
+                    'atropelo_n_a': _at.get('n_a'),
+                    'atropelo_n_b': _at.get('n_b'),
+                    'folga': _r2(_an.get('folga')),
+                }
 
             equity_curve.append({
                 'n': i + 1,

@@ -461,6 +461,119 @@ async def executar_varredura(job_id: int):
     except Exception as e:
         resumo["gate"] = {"passou": None, "aviso": f"{type(e).__name__}: {e}"}
 
+    # ---- 9) CARIMBO NO MOTOR (esteira) -------------------------------------
+    # Requisito (26/ago): o numero que o garimpo apresenta tem que ser o do
+    # MOTOR (5-10% de folga), nao o da planilha. Gate aprovado -> o topo
+    # HONESTO (eixo limpo + acima do placebo + vivo FORA do treino) vira
+    # rodada na esteira automaticamente; a tela exibe o placar real quando
+    # concluir. Best-effort: falha aqui vira aviso no resumo e NUNCA derruba
+    # a varredura. Desligavel com params.sem_esteira=true.
+    if gate_ok is not False and not params.get("sem_esteira"):
+        try:
+            n_top = int(params.get("esteira_top") or 12)
+            import pandas as pd
+
+            def _ler_tudo(cam):
+                for enc in ("utf-8", "utf-8-sig", "cp1252", "latin-1"):
+                    try:
+                        return pd.read_csv(cam, low_memory=False, encoding=enc)
+                    except UnicodeDecodeError:
+                        continue
+                return pd.read_csv(cam, low_memory=False, encoding="latin-1",
+                                   encoding_errors="replace")
+
+            t = _ler_tudo(tudo_csv)
+            m = t["extra"].astype(str).str.strip().eq("-") if "extra" in t                 else pd.Series(True, index=t.index)
+            if "acima_placebo" in t:
+                m &= pd.to_numeric(t["acima_placebo"], errors="coerce").fillna(-1) > 0
+            if "roi_cego" in t:
+                m &= pd.to_numeric(t["roi_cego"], errors="coerce").fillna(-99) > 0
+            if "equiv" in t:
+                m &= pd.to_numeric(t["equiv"], errors="coerce").fillna(1) == 1
+            top = t[m].copy()
+            if "roi_cego" in top.columns:
+                top = top.sort_values("roi_cego", ascending=False)
+            # dedup de gemeas: mesma config sob linhas diferentes do csv
+            # (rodada 10 gastou 12 slots com 6 configs). Chave = todas as
+            # colunas de FILTRO normalizadas.
+            _cols_id = [c for c in ("janela", "wr_min", "wr_max", "janela2",
+                                    "op2", "wr2", "conf_min", "conf_max",
+                                    "linha_min", "linha_max", "odd_min",
+                                    "odd_max", "lado", "teto") if c in top.columns]
+            if _cols_id:
+                top = top.drop_duplicates(subset=_cols_id, keep="first")
+            top = top.head(n_top)
+
+            fonte = params.get("esteira_upload")
+            if not fonte:
+                try:
+                    async with pool.acquire() as conn:
+                        fonte = await conn.fetchval(
+                            "SELECT upload_id FROM backtest_jobs WHERE id = $1",
+                            org["id"])
+                except Exception:
+                    fonte = None
+
+            if not len(top):
+                resumo["esteira"] = {"aviso": "nenhuma config passou as reguas "
+                                     "honestas (placebo + roi_cego>0 + eixo limpo)"}
+            elif not fonte:
+                resumo["esteira"] = {"aviso": "origem sem upload_id e sem "
+                                     "params.esteira_upload — rodada no motor "
+                                     "nao criada"}
+            else:
+                sys.path.insert(0, str(RAIZ))
+                from workers.esteira_conversor import converter_lote
+                kw = {}
+                casa_o = str((snap or {}).get("casa") or "").strip().lower()
+                esp_o = str((snap or {}).get("esporte") or "").strip().lower()
+                if casa_o:
+                    kw["casa"] = casa_o
+                if esp_o:
+                    kw["esporte"] = esp_o
+                # converte LINHA A LINHA pra amarrar o PREVISTO do garimpo em
+                # cada item (a rodada 10 saiu sem o previsto e o delta% ficou
+                # incomputavel). O _previsto entra no dict do item e o
+                # montar_snapshot o preserva dentro de _planilha.
+                itens, recusadas = [], []
+                for _reg in top.to_dict("records"):
+                    _its, _rec = converter_lote([_reg], **kw)
+                    recusadas.extend(_rec)
+                    for it in _its:
+                        it["variar"] = 1
+                        it["_previsto"] = {
+                            k: _reg.get(k) for k in
+                            ("apostas", "G", "R", "WR", "ROI", "unidades",
+                             "roi_treino", "roi_cego", "ap_cego", "DD",
+                             "acima_placebo")
+                            if k in _reg}
+                        itens.append(it)
+                if not itens:
+                    resumo["esteira"] = {"aviso": f"conversor recusou todas "
+                                         f"({len(recusadas)} recusadas)"}
+                else:
+                    pj = {"itens": itens, "upload_id": fonte,
+                          "origem": {"casa": casa_o or None,
+                                     "esporte": esp_o or None,
+                                     "assumida": False}}
+                    async with pool.acquire() as conn:
+                        ej = await conn.fetchval(
+                            """INSERT INTO esteira_jobs
+                                   (user_id, nome, origem, origem_ref, params,
+                                    status)
+                               VALUES ($1, $2, 'varredura', $3, $4::jsonb,
+                                       'pendente')
+                            RETURNING id""",
+                            org["user_id"], f"carimbo motor: varredura {job_id}",
+                            str(job_id), json.dumps(pj, default=str))
+                    resumo["esteira"] = {"esteira_job_id": ej,
+                                         "itens": len(itens),
+                                         "fonte": fonte}
+                    logger.info(f"[varredura] job {job_id}: top {len(itens)} "
+                                f"no motor (rodada {ej})")
+        except Exception as e:
+            resumo["esteira"] = {"erro": f"{type(e).__name__}: {e}"}
+
     # ---- 8) fecha ---------------------------------------------------------
     async with pool.acquire() as conn:
         if gate_ok is False:

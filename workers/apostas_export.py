@@ -97,6 +97,17 @@ def montar_linhas_apostas(detalhe):
             # continua saindo byte a byte identico.
             if a.get("err") is not None:
                 linha["Err"] = a.get("err")
+            # v25: colunas do modo garimpo (anotarTudo). Job sem a flag nao
+            # tem a chave e continua saindo byte a byte identico.
+            an = a.get("anot")
+            if isinstance(an, dict):
+                linha["Momento"] = an.get("momento")
+                linha["Atropelo A"] = an.get("atropelo_a")
+                linha["Atropelo B"] = an.get("atropelo_b")
+                linha["Atropelo"] = an.get("atropelo")
+                linha["Qtd Atr A"] = an.get("atropelo_n_a")
+                linha["Qtd Atr B"] = an.get("atropelo_n_b")
+                linha["Folga"] = an.get("folga")
             linhas.append(linha)
         except Exception:
             continue
