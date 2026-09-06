@@ -768,6 +768,13 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
     # v25: anotarTudo — independente de tudo, so anota
     if bool(getattr(req, "anotar_tudo", False)):
         filtros["anotarTudo"] = True
+        # v25.1: a margem/min_jogos do atropelo valem tambem pra ANOTACAO
+        # (antes so viajavam com atropeloAtivo — em futebol a margem default
+        # 15 zera tudo). Nao liga o filtro: so parametriza o calculo.
+        if getattr(req, "atropelo_margem", None):
+            filtros["atropeloMargem"] = float(req.atropelo_margem)
+        if getattr(req, "atropelo_min_jogos", None):
+            filtros["atropeloMinJogos"] = int(req.atropelo_min_jogos)
 
     if bool(req.atropelo_ativo) and (req.atropelo_min is not None
                                      or req.atropelo_max is not None):
