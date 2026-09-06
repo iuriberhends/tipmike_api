@@ -447,6 +447,9 @@ class BacktestAvulsoRequest(BaseModel):
     err_min_jogos: Optional[int] = Field(default=None, ge=1, le=100)
     err_janela_horas: Optional[float] = Field(default=None, gt=0, le=168)
     err_anotar: bool = Field(default=False)
+    # v25: ANOTAR TUDO (modo garimpo) — escreve Momento/Atropelo/Folga (e Err
+    # quando o mercado suporta) por aposta SEM filtrar. Pro export do garimpo.
+    anotar_tudo: bool = Field(default=False)
     atropelo_ativo: bool = Field(default=False)
     atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
     atropelo_max: Optional[float] = Field(default=None, ge=0, le=100)
@@ -762,6 +765,9 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
         filtros["errJanelaHoras"] = float(req.err_janela_horas)
     if bool(getattr(req, "err_anotar", False)):
         filtros["errAnotar"] = True
+    # v25: anotarTudo — independente de tudo, so anota
+    if bool(getattr(req, "anotar_tudo", False)):
+        filtros["anotarTudo"] = True
 
     if bool(req.atropelo_ativo) and (req.atropelo_min is not None
                                      or req.atropelo_max is not None):
@@ -1012,6 +1018,17 @@ async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_curre
         # v23: coluna Err — so aparece quando o job computou o err
         if a.get("err") is not None:
             linha["Err"] = a.get("err")
+        # v25: colunas do modo garimpo (anotarTudo) — mesma regra do
+        # workers/apostas_export.py; job sem a flag sai identico
+        an = a.get("anot")
+        if isinstance(an, dict):
+            linha["Momento"] = an.get("momento")
+            linha["Atropelo A"] = an.get("atropelo_a")
+            linha["Atropelo B"] = an.get("atropelo_b")
+            linha["Atropelo"] = an.get("atropelo")
+            linha["Qtd Atr A"] = an.get("atropelo_n_a")
+            linha["Qtd Atr B"] = an.get("atropelo_n_b")
+            linha["Folga"] = an.get("folga")
         linhas.append(linha)
 
     import pandas as pd
