@@ -405,6 +405,9 @@ class BacktestAvulsoRequest(BaseModel):
     # placar: cenario + diferenca minima de gols/pontos
     cenario: Optional[str] = Field(default=None, max_length=30)
     diferenca_placar: Optional[int] = Field(default=None, ge=0, le=200)
+    # v26: TETO da diferenca de placar (piso continua no campo acima).
+    # Ausente = sem teto = job identico ao de antes.
+    diferenca_placar_max: Optional[int] = Field(default=None, ge=0, le=200)
     # tempo: quartos ativos (basket). Lista tipo ["q1","q2"].
     quartos: Optional[list] = None
     # linha (faixa)
@@ -712,9 +715,22 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
     if norm["cenario"]:
         filtros["cenarioPartida"] = norm["cenario"]
         filtros["cenarioPartidaAtivo"] = True
-    if req.diferenca_placar is not None and req.diferenca_placar > 0:
-        filtros["diferencaPlacar"] = int(req.diferenca_placar)
+    _dif_min = int(req.diferenca_placar) if req.diferenca_placar else 0
+    _dif_max = (int(req.diferenca_placar_max)
+                if req.diferenca_placar_max is not None else None)
+    # v26: teto sozinho (piso 0) tambem liga o filtro. Se o teto vier abaixo
+    # do piso a faixa e' impossivel -> ignora o teto e avisa, em vez de criar
+    # um job que rejeita 100% dos ticks calado.
+    if _dif_max is not None and _dif_max < _dif_min:
+        logger.warning(
+            f"diferenca_placar_max ({_dif_max}) < diferenca_placar "
+            f"({_dif_min}) -> faixa impossivel, teto IGNORADO")
+        _dif_max = None
+    if _dif_min > 0 or _dif_max is not None:
+        filtros["diferencaPlacar"] = _dif_min
         filtros["diferencaPlacarAtivo"] = True
+        if _dif_max is not None:
+            filtros["diferencaPlacarMax"] = _dif_max
 
     # tempo: quartos (basket)
     if norm["quartos"]:

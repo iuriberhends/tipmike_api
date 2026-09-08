@@ -2847,12 +2847,35 @@ def _aplicar_filtro_cenario(tick: dict, cenario: str) -> bool:
     return True
 
 
-def _aplicar_filtro_diff_placar(tick: dict, diff_min: int) -> bool:
+def _aplicar_filtro_diff_placar(tick: dict, diff_min: int, diff_max=None) -> bool:
+    """DIFERENCA DE PLACAR: |casa - fora| no placar DESTE tick.
+
+    v26 - ganhou TETO (diff_max). `diferencaPlacar` continua sendo o PISO
+    (comportamento historico: >= diff_min); `diferencaPlacarMax` e' novo e
+    OPCIONAL. Ausente/None = sem teto -> bot e job antigos rodam identicos,
+    byte a byte (a chamada de 1 argumento continua valendo).
+
+    FAIL CLOSED, na mesma filosofia do resto do motor: tick sem placar ou
+    teto configurado com valor invalido -> False (nao aposta). Nunca roda
+    "sem o filtro" em silencio.
+    """
     sh = tick.get('score_home')
     sa = tick.get('score_away')
     if sh is None or sa is None:
         return False
-    return abs(sh - sa) >= diff_min
+    dif = abs(sh - sa)
+    if dif < diff_min:
+        return False
+    if diff_max is not None:
+        mx, err = _num_seguro(diff_max)
+        if err is not None:
+            logger.warning(
+                f"[diff] diferencaPlacarMax invalido: {diff_max!r} ({err}) "
+                f"-> rejeita")
+            return False
+        if dif > mx:
+            return False
+    return True
 
 
 def _aplicar_filtro_folga(tick: dict, selecao: str, folga_min, folga_max) -> tuple:
@@ -3623,6 +3646,9 @@ async def executar_backtest(job_id: int):
         cenario_partida = filtros.get('cenarioPartida') if cenario_ativo else None
         diff_ativo = filtros.get('diferencaPlacarAtivo', False)
         diff_min = filtros.get('diferencaPlacar', 0) if diff_ativo else 0
+        # v26 - TETO da diferenca de placar. Chave nova e OPCIONAL: ausente =
+        # sem teto = comportamento identico ao de antes.
+        diff_max = filtros.get('diferencaPlacarMax') if diff_ativo else None
 
         # v12 — FOLGA (so handicap). Chaves no filtros jsonb; bot antigo sem
         # elas = filtro desligado (comportamento identico ao de antes).
@@ -4166,8 +4192,11 @@ async def executar_backtest(job_id: int):
                     rej['cenario'] += 1
                     continue
 
-            if diff_ativo and diff_min > 0:
-                if not _aplicar_filtro_diff_placar(tick, diff_min):
+            # v26: o gate passou a aceitar config SO com teto (min 0 + max N).
+            # Antes exigia diff_min > 0, entao "diferenca de ate 5" nunca
+            # chegava a ser aplicada.
+            if diff_ativo and (diff_min > 0 or diff_max is not None):
+                if not _aplicar_filtro_diff_placar(tick, diff_min, diff_max):
                     rej['diff'] += 1
                     continue
 

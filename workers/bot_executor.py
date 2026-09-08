@@ -742,6 +742,9 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     cenario_partida = filtros.get('cenarioPartida') if cenario_ativo else None
     diff_ativo = filtros.get('diferencaPlacarAtivo', False)
     diff_min = filtros.get('diferencaPlacar', 0) if diff_ativo else 0
+    # v26 — TETO da diferenca de placar. Mesma chave e MESMA funcao do
+    # backtest (fonte unica). Bot antigo sem a chave = sem teto, identico.
+    diff_max = filtros.get('diferencaPlacarMax') if diff_ativo else None
 
     # v12 — FOLGA (so handicap). MESMAS chaves e MESMA funcao do backtest
     # (fonte unica, sem divergir). Bot antigo sem as chaves = desligado.
@@ -766,8 +769,8 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             state.contador_rejeicoes['cenario'] = state.contador_rejeicoes.get('cenario', 0) + 1
             return
 
-    if diff_ativo and diff_min > 0:
-        if not _aplicar_filtro_diff_placar(tick, diff_min):
+    if diff_ativo and (diff_min > 0 or diff_max is not None):
+        if not _aplicar_filtro_diff_placar(tick, diff_min, diff_max):
             state.contador_rejeicoes['diff'] = state.contador_rejeicoes.get('diff', 0) + 1
             return
 
@@ -1143,6 +1146,10 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
         diff_min = filtros.get('diferencaPlacar')
         if diff_min:
             partes.append(f"diff>={diff_min}")
+        # v26: teto da diferenca de placar no motivo da aposta
+        _diff_max = filtros.get('diferencaPlacarMax')
+        if _diff_max is not None:
+            partes.append(f"diff<={_diff_max}")
 
     # v12: tag da FOLGA no motivo (mesma linha do diff)
     if filtros.get('folgaAtivo'):
