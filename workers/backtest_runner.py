@@ -524,6 +524,169 @@ def _sem_acento(s) -> str:
         return ''
 
 
+# =========================================================================
+# v27 - PLACAR DE INTERVALO POR FEED (e-football)
+# =========================================================================
+# Ate aqui o placar de intervalo saia SO de live_time 'HT' ou '2Q' —
+# vocabulario de basquete, herdado do conserto de 24/jul feito sobre o
+# coletor da superbet de e-basket. Nenhuma casa de e-FOOTBALL emite isso,
+# entao todo mercado de 1o tempo no futebol caia em 'mercado_ht_sem_suporte'
+# e o job devolvia zero aposta.
+#
+# Cada feed marca o tempo do seu jeito (medido em 08/set/2026 sobre 2,1 M de
+# ticks das tres casas, com os jogos casados par a par):
+#
+#  betano/E-Football     relogio real "m'ss", CUMULATIVO (2x4 termina ~8'00).
+#                        Sem rotulo de tempo. A metade sai do "2xN" do nome da
+#                        liga. O relogio CONGELA em N:00 no ultimo lance do 1o
+#                        tempo (plato de mediana 0s, p90 0s), entao o corte
+#                        INCLUI o N:00 — excluir derruba a media de gols do 1o
+#                        tempo de 2,85 pra 2,54, que e gol legitimo jogado fora.
+#
+#  estrelabet/E-Football DUAS gramaticas, e a escolha e POR LIGA, nao por data:
+#                        as ligas VOLTA mandam "1a parte"/"2a parte"; todas as
+#                        outras (H2H GG, Europa, Champions, Serie A, Valhalla,
+#                        CLA-UA) mandam "N'", minuto CUMULATIVO. Regra por data
+#                        quebraria metade da casa.
+#
+#  superbet/E-Football   "1H m'" / "2H m'". O placar dela e AO VIVO (mediana de
+#                        +3s contra a betano em 1.982 gols casados), mas o
+#                        ROTULO e o RELOGIO atrasam JUNTOS: mediana 43s, p10
+#                        23s, p90 70s. Resultado: gol dos primeiros ~40s do 2o
+#                        tempo entra ao vivo com o feed ainda dizendo 1H, e o
+#                        intervalo sai errado em 12,5% dos jogos (43 de 344),
+#                        SEMPRE pra cima (41 dos 43 com gol a mais).
+#                        NAO ha conserto de dentro do feed dela — testados e
+#                        REPROVADOS: corte fixo (15,5% em 20s, 25,9% em 43s),
+#                        extrapolacao do relogio (17,4%; o relogio pausa no
+#                        intervalo, 97,3s na troca da fronteira contra 62,4s
+#                        nas normais), ancora na saida do mercado de 1o tempo
+#                        (42,5%), o proprio tick 'HT' que a casa manda (mesmos
+#                        9 erros do rotulo, e so em 28% dos eventos) e
+#                        quarentena dos jogos ambiguos — esta ultima limpa o
+#                        erro mas EXCLUI justamente os jogos com gol perto da
+#                        virada, inflando o under 2.5 de 51,3% pra 69,4%:
+#                        vies que fabrica edge que nao existe.
+#                        Por isso a superbet fica no ROTULO e o numero dela e
+#                        um PISO: o erro empurra gol PRA DENTRO do intervalo,
+#                        entao under de 1o tempo medido aqui e limite inferior
+#                        (o lucro real e maior) e OVER de 1o tempo NAO pode ser
+#                        lido daqui, porque o vies joga a favor dele.
+#                        A correcao exata existe e e externa: casar o jogo com
+#                        a betano (82% dos jogos casaram por par de jogadores
+#                        + inicio a <=10min) e usar o relogio dela — fase 2,
+#                        condicionada ao teste de como a casa LIQUIDA de fato.
+#
+# Feed FORA desta tabela nao muda em nada: cai no caminho 'HT'/'2Q' de sempre.
+PLACAR_HT_POR_FEED = {
+    ('betano',     'e-football'): 'relogio_mmss',
+    ('estrelabet', 'e-football'): 'relogio_estrela',
+    ('superbet',   'e-football'): 'rotulo_1h',
+}
+
+# Ligas que NAO trazem o formato no nome. Medido em 08/set no proprio feed
+# (minuto final mediana / 2). Sem esta tabela, 21% dos eventos de e-football
+# da estrelabet ficariam sem intervalo — so a 'H2H GG - E-football' sao 107.
+# Casa por SUBSTRING, minuscula, na mesma logica da whitelist de torneio.
+MEIA_POR_LIGA_SEM_FORMATO = {
+    'estrelabet': [
+        ('h2h gg - e-football', 4),
+        ('premier league', 4),
+        ('super lig', 4),
+    ],
+}
+
+_RE_2xN = re.compile(r'\b2\s*[xX]\s*(\d+)')
+_RE_MMSS = re.compile(r"^(\d{1,3})'(\d{1,2})$")
+_RE_MIN = re.compile(r"^(\d{1,3})'$")
+_RE_PARTE = re.compile(r'^(\d)\s*[ao°ºª]{0,2}\s*parte$')
+_RE_1H = re.compile(r'^(\d)H\b')
+
+
+def _meia_da_liga(liga, casa=None):
+    """Minutos de CADA tempo. Primeiro tenta o '2xN' do nome da liga
+    ('GT Leagues - 2x6 minutos de jogo' -> 6 · 'H2H GG (2x4 mins)' -> 4);
+    depois a tabela de excecoes por casa. Sem nenhum dos dois -> None -> o
+    evento fica SEM placar de intervalo (fail closed: melhor nao gradear do
+    que gradear no lugar errado)."""
+    try:
+        nome = str(liga or '')
+    except Exception:
+        return None
+    try:
+        m = _RE_2xN.search(nome)
+    except Exception:
+        m = None
+    if m:
+        try:
+            n = int(m.group(1))
+            if 1 <= n <= 45:
+                return n
+        except (TypeError, ValueError):
+            pass
+    try:
+        alvo = nome.strip().lower()
+        for trecho, n in MEIA_POR_LIGA_SEM_FORMATO.get(
+                str(casa or '').strip().lower(), []):
+            if trecho in alvo:
+                return n
+    except Exception:
+        return None
+    return None
+
+
+def _fase_do_tick(regra, live_time, meia_min):
+    """Em que tempo este tick esta: 1 (1o tempo), 2 (2o em diante), None.
+    BLINDADO: qualquer entrada esquisita devolve None (o tick e ignorado)."""
+    try:
+        s = str(live_time or '').strip()
+    except Exception:
+        return None
+    if not s:
+        return None
+    # meia_min chega de _meia_da_liga (int ou None), mas coage aqui do mesmo
+    # jeito: chamador futuro passando '4' faria o '<=' estourar TypeError no
+    # meio do laco do job. Valor impossivel -> None -> tick ignorado.
+    if meia_min is not None:
+        try:
+            meia_min = int(meia_min)
+        except (TypeError, ValueError):
+            return None
+        if meia_min <= 0:
+            return None
+    if regra == 'relogio_mmss':
+        m = _RE_MMSS.match(s)
+        if not m or not meia_min:
+            return None
+        seg = int(m.group(1)) * 60 + int(m.group(2))
+        return 1 if seg <= meia_min * 60 else 2
+    if regra == 'relogio_estrela':
+        m = _RE_PARTE.match(s)
+        if m:
+            n = int(m.group(1))
+            return 1 if n == 1 else 2
+        m = _RE_MIN.match(s)
+        if not m or not meia_min:
+            return None
+        return 1 if int(m.group(1)) <= meia_min else 2
+    if regra == 'rotulo_1h':
+        m = _RE_1H.match(s)
+        if not m:
+            return None
+        return 1 if m.group(1) == '1' else 2
+    return None
+
+
+def _regra_ht_do_tick(t):
+    """Devolve a regra de intervalo do feed deste tick, ou None."""
+    try:
+        casa = str(t['bookmaker'] or '').strip().lower()
+        esp = str(t['sport'] or '').strip().lower()
+    except Exception:
+        return None
+    return PLACAR_HT_POR_FEED.get((casa, esp))
+
+
 def _periodo_do_mercado(nome_mercado: str) -> str:
     """Deduz o PERIODO pelo NOME do mercado. Necessario porque o mercado_tipo e
     AMBIGUO em varias casas: a superbet manda '1o Tempo - Handicap',
@@ -3957,7 +4120,36 @@ async def executar_backtest(job_id: int):
         placar_ht: dict = {}
         _ht_ts: dict = {}      # evt -> ts do melhor tick de HT
         _ht_fonte: dict = {}   # evt -> 'HT' | '2Q' (prioridade: HT vence 2Q)
+        # v27 — feeds de e-football: o intervalo sai do RELOGIO/ROTULO do feed
+        # (ver PLACAR_HT_POR_FEED). Acumulado num passo separado porque a regra
+        # precisa saber se o evento chegou a ter 2o tempo.
+        _ht_v27: dict = {}     # evt -> (ts, (sh, sa)) do ultimo tick do 1o tempo
+        _ht_v27_teve2t: set = set()
+        _ht_v27_meia: dict = {}
         for t in ticks:
+            _regra = _regra_ht_do_tick(t)
+            if _regra:
+                try:
+                    _evt = t['event_id']
+                    _sh, _sa, _tts = t['score_home'], t['score_away'], t['ts']
+                    _lt_v27 = t['live_time']
+                    _liga_v27 = t['liga']
+                except Exception:
+                    continue
+                if _evt not in _ht_v27_meia:
+                    try:
+                        _casa_v27 = t['bookmaker']
+                    except Exception:
+                        _casa_v27 = None
+                    _ht_v27_meia[_evt] = _meia_da_liga(_liga_v27, _casa_v27)
+                _fase = _fase_do_tick(_regra, _lt_v27, _ht_v27_meia[_evt])
+                if _fase == 2:
+                    _ht_v27_teve2t.add(_evt)
+                elif _fase == 1 and _sh is not None and _sa is not None:
+                    _ant = _ht_v27.get(_evt)
+                    if _ant is None or _tts >= _ant[0]:
+                        _ht_v27[_evt] = (_tts, (_sh, _sa))
+                continue
             try:
                 lt = t['live_time']
             except Exception:
@@ -3980,6 +4172,15 @@ async def executar_backtest(job_id: int):
                 placar_ht[evt] = (sh, sa)
                 _ht_ts[evt] = t['ts']
                 _ht_fonte[evt] = lt
+
+        # v27: so entra no placar_ht o evento que REALMENTE virou o tempo. Jogo
+        # cortado no meio (coletor caiu, recorte de periodo pegando o comeco)
+        # nao tem intervalo — fica de fora e cai em 'mercado_ht_sem_suporte',
+        # que e o comportamento seguro. Nao sobrescreve o que a regra
+        # 'HT'/'2Q' ja resolveu.
+        for _evt, (_tts, _pl) in _ht_v27.items():
+            if _evt in _ht_v27_teve2t and _evt not in placar_ht:
+                placar_ht[_evt] = _pl
 
         # v23 — ERR: indice do "erro da casa" montado DOS PROPRIOS TICKS do
         # job (abertura = 1o tick do mercado de total; total = placar do jogo

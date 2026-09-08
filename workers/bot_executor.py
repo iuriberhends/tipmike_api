@@ -140,6 +140,9 @@ from workers.backtest_runner import (
     _err_params_do_filtro,
     _checar_err,
     _periodo_do_bot,
+    _regra_ht_do_tick,
+    _fase_do_tick,
+    _meia_da_liga,
     MERCADO_TIPOS_POR_CASA,
     ERR_MERCADOS_SUPORTADOS,
 )
@@ -1293,6 +1296,57 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
 # ============================================================
 # RESOLVER
 # ============================================================
+async def _placar_intervalo(conn, event_id, bookmaker):
+    """Placar do INTERVALO deste evento, montado dos ticks do banco com a mesma
+    regra do backtest (PLACAR_HT_POR_FEED do runner).
+
+    Devolve (score_home, score_away) ou None. None = nao da pra gradear ->
+    a aposta segue PENDENTE em vez de ser liquidada com o placar errado.
+    Exige que o evento tenha chegado ao 2o tempo: jogo cortado no meio nao
+    tem intervalo, e o ultimo placar do 1o tempo dele nao e o do intervalo.
+
+    Feed fora da tabela (e-basket etc.) cai no marcador de sempre: o ultimo
+    tick com live_time 'HT' ou, na falta dele, '2Q'.
+    """
+    try:
+        linhas = await conn.fetch("""
+            SELECT ts, live_time, score_home, score_away, liga, bookmaker, sport
+            FROM ticks
+            WHERE event_id = $1 AND bookmaker = $2
+              AND score_home IS NOT NULL AND score_away IS NOT NULL
+            ORDER BY ts
+        """, event_id, bookmaker)
+    except Exception as e:
+        logger.warning(f"[resolver] busca de ticks pro intervalo falhou "
+                       f"({event_id}/{bookmaker}): {e}")
+        return None
+    if not linhas:
+        return None
+
+    regra = _regra_ht_do_tick(linhas[0])
+    if regra:
+        meia = _meia_da_liga(linhas[0]['liga'], bookmaker)
+        ultimo_1t = None
+        teve_2t = False
+        for r in linhas:
+            fase = _fase_do_tick(regra, r['live_time'], meia)
+            if fase == 2:
+                teve_2t = True
+            elif fase == 1:
+                ultimo_1t = (r['score_home'], r['score_away'])
+        return ultimo_1t if (teve_2t and ultimo_1t) else None
+
+    # caminho antigo (basquete): HT vence 2Q
+    ht = q2 = None
+    for r in linhas:
+        lt = str(r['live_time'] or '').strip().upper()
+        if lt == 'HT':
+            ht = (r['score_home'], r['score_away'])
+        elif lt == '2Q':
+            q2 = (r['score_home'], r['score_away'])
+    return ht or q2
+
+
 async def _resolver_apostas_pendentes():
     global state
     try:
@@ -1458,10 +1512,28 @@ async def _resolver_apostas_pendentes():
                         relativo=_rel_hc,
                     )
                 else:
+                    # v27 — mercado de 1o TEMPO liquida com o placar do
+                    # INTERVALO, nao com o final. Ate aqui o resolvedor usava
+                    # `sh, sa` (placar final) pra TODO mercado: bot de HT
+                    # gradeava errado, calado, e o G-R registrado ficava
+                    # corrompido. Mesmas funcoes do runner (import acima), pra
+                    # backtest e vivo nunca divergirem.
+                    if _periodo_do_bot(ap['mercado']) == 'ht':
+                        _pl_ht = await _placar_intervalo(
+                            conn, ap['event_id'], ap['bookmaker'])
+                        if _pl_ht is None:
+                            logger.warning(
+                                f"[resolver] ap {ap['id']}: mercado de 1o tempo "
+                                f"sem placar de intervalo recuperavel — segue "
+                                f"pendente")
+                            continue
+                        _sh_g, _sa_g = _pl_ht
+                    else:
+                        _sh_g, _sa_g = sh, sa
                     resultado = _resolve_resultado(
                         ap['mercado'], ap['selecao'] or ap['lado'],
                         float(ap['linha']) if ap['linha'] else None,
-                        sh, sa
+                        _sh_g, _sa_g
                     )
 
                 if resultado is None:
