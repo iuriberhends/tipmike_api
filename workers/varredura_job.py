@@ -404,6 +404,13 @@ async def executar_varredura(job_id: int):
         contrato.update(_extra_contrato)
         async with pool.acquire() as conn:
             await _set(conn, job_id, contrato=json.dumps(contrato, default=str))
+    if rc == 3:
+        # v11 do varredor: REPROVADO NA PORTA (poucos dias / mercado morto).
+        # Nao e' falha — e' a resposta: os motivos vao inteiros pro erro.
+        _mot = [l.strip(' -') for l in log_varredura.splitlines()
+                if l.strip().startswith('- ')]
+        raise VarreduraErro('REPROVADO NA PORTA: ' + (' | '.join(_mot) or
+                            log_varredura[-400:]))
     if rc != 0 or not saida.is_file():
         raise VarreduraErro(
             f"a varredura terminou com codigo {rc} e sem arquivo de saida. "
@@ -483,23 +490,38 @@ async def executar_varredura(job_id: int):
                                    encoding_errors="replace")
 
             t = _ler_tudo(tudo_csv)
-            m = t["extra"].astype(str).str.strip().eq("-") if "extra" in t                 else pd.Series(True, index=t.index)
-            if "acima_placebo" in t:
-                m &= pd.to_numeric(t["acima_placebo"], errors="coerce").fillna(-1) > 0
-            if "roi_cego" in t:
-                m &= pd.to_numeric(t["roi_cego"], errors="coerce").fillna(-99) > 0
-            if "equiv" in t:
-                m &= pd.to_numeric(t["equiv"], errors="coerce").fillna(1) == 1
-            top = t[m].copy()
-            if "roi_cego" in top.columns:
-                top = top.sort_values("roi_cego", ascending=False)
+            if "robusta" in t.columns:
+                # v11.2: o topo que vai pro motor e' a ROBUSTAS do varredor
+                # (11 reguas: sorte por jogo E par, placebo, cego, premio,
+                # identidade, semanas). Complementar do motor (folga,
+                # tot_env, dif, atropelo, media/gap/z) ENTRA — a regra
+                # antiga de "extra = -" era de quando os extras nao eram
+                # reproduziveis, e deixou a familia certa fora da rodada 18.
+                m = pd.to_numeric(t["robusta"], errors="coerce").fillna(0) == 1
+                if "equiv" in t:
+                    m &= pd.to_numeric(t["equiv"], errors="coerce").fillna(1) == 1
+                top = t[m].copy()
+                if "unidades" in top.columns:
+                    top = top.sort_values("unidades", ascending=False)
+            else:
+                m = t["extra"].astype(str).str.strip().eq("-") if "extra" in t \
+                    else pd.Series(True, index=t.index)
+                if "acima_placebo" in t:
+                    m &= pd.to_numeric(t["acima_placebo"], errors="coerce").fillna(-1) > 0
+                if "roi_cego" in t:
+                    m &= pd.to_numeric(t["roi_cego"], errors="coerce").fillna(-99) > 0
+                if "equiv" in t:
+                    m &= pd.to_numeric(t["equiv"], errors="coerce").fillna(1) == 1
+                top = t[m].copy()
+                if "roi_cego" in top.columns:
+                    top = top.sort_values("roi_cego", ascending=False)
             # dedup de gemeas: mesma config sob linhas diferentes do csv
             # (rodada 10 gastou 12 slots com 6 configs). Chave = todas as
             # colunas de FILTRO normalizadas.
             _cols_id = [c for c in ("janela", "wr_min", "wr_max", "janela2",
                                     "op2", "wr2", "conf_min", "conf_max",
                                     "linha_min", "linha_max", "odd_min",
-                                    "odd_max", "lado", "teto") if c in top.columns]
+                                    "odd_max", "lado", "extra", "teto") if c in top.columns]
             if _cols_id:
                 top = top.drop_duplicates(subset=_cols_id, keep="first")
             top = top.head(n_top)

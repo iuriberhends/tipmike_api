@@ -14,8 +14,12 @@
 ===============================================================================
 """
 import argparse
+import sys
 import numpy as np
 import pandas as pd
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import varredura as _V     # v3: fonte unica das mascaras
 
 JAN = {'Últ. 10': 'Últ. 10', 'Últ. 20': 'Últ. 20', 'Últ. 30': 'Últ. 30',
        'Últ. 50': 'Últ. 50', 'Todas': 'Todas'}
@@ -29,183 +33,22 @@ def _n(v):
         return None
 
 
-def preparar(ap: pd.DataFrame) -> dict:
-    """Colunas cruas em vetores numpy — tudo o que as mascaras precisam."""
-    d = {}
-    d['u'] = pd.to_numeric(ap['Lucro/Prej.'], errors='coerce').values
-    d['green'] = ap['Resultado'].astype(str).str.lower().eq('green').values
-    ts = pd.to_datetime(ap['Data'].astype(str) + ' ' + ap['Hora'].astype(str),
-                        dayfirst=True)
-    d['ts'] = ts.values
-    d['lin'] = pd.to_numeric(ap['Linha'], errors='coerce').values
-    d['odd'] = pd.to_numeric(ap['Odd'], errors='coerce').values
-    pe = ap['Placar Envio'].astype(str).str.split('-', expand=True)
-    pa = pd.to_numeric(pe[0], errors='coerce')
-    pb = pd.to_numeric(pe[1], errors='coerce')
-    nick = ap['Tip'].astype(str).str.extract(r'\(([^()]+)\)\s*\(')[0] \
-        .str.upper().str.strip()
-    eA = (nick == ap['Jogador A'].astype(str).str.upper().str.strip()).values
-    d['folga'] = np.abs(d['lin']) - np.where(eA, (pb - pa).values,
-                                             (pa - pb).values)
-    d['tot_env'] = (pa + pb).values
-    d['momento'] = d['tot_env']          # alias: garimpo antigo dizia 'momento'
-    # v2: os demais eixos derivados do varredor. Sem eles, config com
-    # `desloc<=-5` era pontuada COMO SE O FILTRO NAO EXISTISSE — o numero de
-    # holdout saia de outra config, calado.
-    d['dif'] = np.abs(pa - pb).values
-    _ts = pd.to_datetime(ap['Data'].astype(str) + ' ' + ap['Hora'].astype(str),
-                         dayfirst=True, errors='coerce')
-    _o4 = np.argsort(_ts.values, kind='stable')
-    _s4 = pd.DataFrame({'c': ap['Confronto'].astype(str).values[_o4],
-                        't': _ts.values[_o4]})
-    _g4 = _s4.groupby('c')['t'].diff().dt.total_seconds().div(60).fillna(9e9)
-    _b4 = (_g4 > 240).groupby(_s4['c']).cumsum().astype(str)
-    _ev4 = np.empty(len(ap), object)
-    _ev4[_o4] = (_s4['c'] + '|' + _b4).values
-    _pr = (pd.DataFrame({'ev': _ev4, 't': _ts.values, 'lin': d['lin']})
-           .sort_values('t', kind='stable').drop_duplicates('ev')
-           .set_index('ev')['lin'])
-    d['lin_ini'] = pd.Series(_ev4).map(_pr).astype(float).values
-    d['desloc'] = d['lin'] - d['lin_ini']
-    d['atropelo'] = np.full(len(ap), np.nan)     # preenchido abaixo, com `ev`
-    for j in JAN:
-        d[j] = (pd.to_numeric(ap[j], errors='coerce').values
-                if j in ap.columns else np.full(len(ap), np.nan))
-    d['qtd'] = pd.to_numeric(ap['Qtd Todas'], errors='coerce').values
-    # jogo: event_id quando existir; senao Confronto + intervalo de 45min
-    # (mesma regra do varredor — sem isso o TETO conta degrau errado)
-    if 'event_id' in ap.columns:
-        ev = ap['event_id'].astype(str).values
-    else:
-        _o = np.argsort(ts.values, kind='stable')
-        _s = pd.DataFrame({'c': ap['Confronto'].astype(str).values[_o],
-                           't': ts.values[_o]})
-        _gap = _s.groupby('c')['t'].diff().dt.total_seconds().div(60).fillna(9e9)
-        _blk = (_gap > 45).groupby(_s['c']).cumsum().astype(str)
-        ev = np.empty(len(ap), object)
-        ev[_o] = (_s['c'] + '|' + _blk).values
-    d['ev_cod'] = pd.factorize(ev)[0]
-    # ATROPELO: % dos jogos ANTERIORES do jogador com |margem| >= 15; vale o
-    # PIOR dos dois; menos de 6 jogos usa a media corrente da liga. Mesma
-    # regra do varredor — se divergir, o holdout mede outra coisa.
-    try:
-        _pf = ap['Placar Final'].astype(str).str.extract(r'(\d+)\s*[-x:]\s*(\d+)')
-        _mg = (pd.to_numeric(_pf[0], errors='coerce')
-               - pd.to_numeric(_pf[1], errors='coerce')).abs()
-        _jg = (pd.DataFrame({'j': ev, 't': d['ts'],
-                             'A': ap['Jogador A'].astype(str).str.upper().str.strip(),
-                             'B': ap['Jogador B'].astype(str).str.upper().str.strip(),
-                             'm': _mg}).dropna(subset=['m'])
-               .sort_values('t', kind='stable').drop_duplicates('j'))
-        _nn, _bb, _tx = {}, {}, {}
-        _tn = _tb = 0
-        for _j, _A, _B, _m in zip(_jg.j.values, _jg.A.values, _jg.B.values, _jg.m.values):
-            _lig = (_tb / _tn) if _tn >= 30 else 0.11
-            _r = []
-            for _p in (_A, _B):
-                _q = _nn.get(_p, 0)
-                _r.append((_bb.get(_p, 0) / _q) if _q >= 6 else _lig)
-            _tx[_j] = max(_r) * 100.0
-            _at = 1 if _m >= 15 else 0
-            for _p in (_A, _B):
-                _nn[_p] = _nn.get(_p, 0) + 1
-                _bb[_p] = _bb.get(_p, 0) + _at
-            _tn += 1
-            _tb += _at
-        d['atropelo'] = pd.Series(ev).map(_tx).astype(float).values
-    except Exception as _e:
-        print(f'  aviso: nao calculei o atropelo ({_e}) — configs desse eixo serao PULADAS')
-    ordem = np.argsort(d['ts'], kind='stable')
-    for k in list(d):
-        d[k] = d[k][ordem]
-    d['n'] = len(ap)
-    d['nj_tot'] = int(d['ev_cod'].max()) + 1
-    fim = pd.Timestamp(d['ts'].max()).normalize() + pd.Timedelta(days=1)
-    d['ini_3d'] = np.datetime64(fim - pd.Timedelta(days=3))
-    d['ini_7d'] = np.datetime64(fim - pd.Timedelta(days=7))
-    d['meio'] = d['ts'][d['n'] // 2]
-    d['dias'] = max((pd.Timestamp(d['ts'].max())
-                     - pd.Timestamp(d['ts'].min())).days + 1, 1)
-    return d
+def preparar(caminho, de=None, ate=None) -> dict:
+    """v3: monta o dado pelo PROPRIO varredor (varredura.preparar_D). As
+    mascaras saem de varredura.mascara_config — fonte unica. Antes este
+    arquivo reimplementava folga/tot_env/atropelo/lin_ini e divergia."""
+    return _V.preparar_D(caminho, de=de, ate=ate)
 
 
 class ExtraDesconhecido(Exception):
-    """Eixo que este script nao sabe calcular. NUNCA ignorar: pontuar a config
-    sem o filtro dela devolve o numero de OUTRA config, e ninguem percebe."""
-
-
-def _extra_mask(extra: str, D: dict) -> np.ndarray:
-    e = str(extra).strip()
-    if e in ('-', 'nan', ''):
-        return None
-    for campo in ('folga', 'tot_env', 'momento', 'desloc', 'lin_ini', 'dif',
-                  'atropelo'):
-        if not e.startswith(campo):
-            continue
-        v = D[campo]
-        resto = e[len(campo):].strip()
-        if resto.startswith('>='):
-            return v >= float(resto[2:])
-        if resto.startswith('<='):
-            return v <= float(resto[2:])
-        if '~' in resto:                       # faixa "a~b"
-            a, b = resto.split('~')
-            return (v >= float(a)) & (v <= float(b))
-    raise ExtraDesconhecido(e)
+    pass
 
 
 def mascara(cfg, D: dict):
-    m = np.ones(D['n'], bool)
-    jan = str(cfg['janela']).strip()
-    if jan in JAN:
-        v = D[jan]
-        wmin, wmax = _n(cfg['wr_min']), _n(cfg['wr_max'])
-        if wmin is not None:
-            m &= np.nan_to_num(v, nan=-1) >= wmin
-        if wmax is not None:
-            m &= np.nan_to_num(v, nan=2) <= wmax
-    jan2 = str(cfg['janela2']).strip()
-    if jan2 in JAN:
-        v2, w2 = D[jan2], _n(cfg['wr2'])
-        if w2 is not None:
-            m &= (np.nan_to_num(v2, nan=2) <= w2 if str(cfg['op2']).strip() == '<='
-                  else np.nan_to_num(v2, nan=-1) >= w2)
-    cmin, cmax = _n(cfg['conf_min']), _n(cfg['conf_max'])
-    if cmin:
-        m &= np.nan_to_num(D['qtd'], nan=-1) >= cmin
-    if cmax is not None:
-        m &= np.nan_to_num(D['qtd'], nan=1e9) <= cmax
-    for k, campo, op in (('linha_min', 'lin', 'ge'), ('linha_max', 'lin', 'le'),
-                         ('odd_min', 'odd', 'ge'), ('odd_max', 'odd', 'le')):
-        v = _n(cfg[k])
-        if v is None:
-            continue
-        m &= (D[campo] >= v) if op == 'ge' else (D[campo] <= v)
-    ex = _extra_mask(cfg['extra'], D)
-    if ex is not None:
-        m &= ex
-    teto = _n(cfg['teto'])
-    if teto and teto > 0:
-        # escada RECALCULADA pos-mascara — MESMA rotina do varredor
-        # (degrau_no_indice): ordena por JOGO com sort estavel (blocos
-        # contiguos preservando o tempo) e conta a posicao dentro do bloco.
-        # Contar direto na ordem temporal esta ERRADO: jogos simultaneos se
-        # intercalam e o contador reinicia no meio do jogo.
-        idx = np.flatnonzero(m)
-        if idx.size:
-            gs = D['ev_cod'][idx]
-            o = np.argsort(gs, kind='stable')
-            gso = gs[o]
-            novo = np.empty(gso.size, bool)
-            novo[0] = True
-            novo[1:] = gso[1:] != gso[:-1]
-            arr = np.arange(gso.size)
-            pos_o = arr - np.maximum.accumulate(np.where(novo, arr, 0))
-            deg = np.empty(gso.size, np.int64)
-            deg[o] = pos_o
-            m = np.zeros(D['n'], bool)
-            m[idx[deg < int(teto)]] = True
-    return m
+    try:
+        return _V.mascara_config(cfg, D)
+    except _V.ExtraDesconhecido as e:
+        raise ExtraDesconhecido(str(e))
 
 
 def metricas(m: np.ndarray, D: dict) -> dict:
@@ -286,22 +129,11 @@ def main():
     cfgs = (pd.read_excel(a.garimpo, sheet_name=a.aba)
             if a.garimpo.lower().endswith(('.xlsx', '.xlsm'))
             else pd.read_csv(a.garimpo, low_memory=False))
-    ap = (pd.read_parquet(a.apostas) if a.apostas.lower().endswith('.parquet')
-          else (pd.read_excel(a.apostas)
-                if a.apostas.lower().endswith(('.xlsx', '.xlsm'))
-                else pd.read_csv(a.apostas, low_memory=False)))
+    # v3: a carga e o recorte de datas sao do varredor (mesmo carregar)
+    D = preparar(a.apostas, de=a.de, ate=a.ate)
     if a.de or a.ate:
-        _ts = pd.to_datetime(ap['Data'].astype(str) + ' ' + ap['Hora'].astype(str),
-                             dayfirst=True, errors='coerce')
-        _n0 = len(ap)
-        if a.de:
-            ap = ap[_ts >= pd.Timestamp(a.de)]
-        if a.ate:
-            ap = ap[_ts < pd.Timestamp(a.ate) + pd.Timedelta(days=1)]
-        ap = ap.reset_index(drop=True)
-        print(f'janela: {len(ap):,} de {_n0:,} apostas ({a.de or "inicio"} a '
+        print(f'janela: {D["n"]:,} apostas ({a.de or "inicio"} a '
               f'{a.ate or "fim"}) — HOLDOUT se a busca usou --ate {a.de}')
-    D = preparar(ap)
     print(f'{len(cfgs):,} configs x {D["n"]:,} apostas — recalculando...')
     tam, p95 = barra_sorte(D)
 

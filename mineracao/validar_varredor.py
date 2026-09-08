@@ -34,6 +34,9 @@ import sys
 
 import numpy as np
 import pandas as pd
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+import varredura as _V     # v4: fonte unica das mascaras (preparar_D/mascara_config)
 
 JAN = ['Últ. 10', 'Últ. 20', 'Últ. 30', 'Últ. 50', 'Últ. 100', 'Todas']
 
@@ -307,13 +310,20 @@ def t2_leitura(D, cfgs, n_amostra, seed=7):
     erros, culpados = [], {}
     for _, c in am.iterrows():
         cfg = c.to_dict()
-        m, motivo = mascara(cfg, D)
+        # v4: a mascara vem do PROPRIO varredor (varredura.mascara_config sobre
+        # varredura.preparar_D) — o validador deixa de reimplementar eixo.
+        try:
+            m, motivo = _V.mascara_config(cfg, D['_DV']), None
+        except _V.ExtraDesconhecido as _e:
+            m, motivo = None, f'complementar/janela nao reconhecido: {_e}'
+        except Exception as _e:
+            m, motivo = None, f'mascara falhou: {_e}'
         if m is None:
             erros.append((motivo, cfg.get('janela'), cfg.get('extra')))
             continue
         n = int(m.sum())
-        G = int(D['green'][m].sum())
-        u = float(np.nansum(D['u'][m]))
+        G = int(D['_DV']['green'][m].sum())
+        u = float(np.nansum(D['_DV']['u'][m]))
         dif = abs(n - int(cfg['apostas']))
         if dif == 0:
             ok_ap += 1
@@ -453,6 +463,13 @@ def main():
             sys.exit(2)
     print(f'export: {len(ap):,} apostas | garimpo: {len(cfgs):,} configs')
     D = preparar(ap)
+    # v4: o T2 le pelo varredor. preparar_D ordena por tempo; o D local do
+    # T1 segue na ordem do arquivo — por isso o T2 usa u/green de DV.
+    DV = _V.preparar_D(a.export, de=a.de, ate=a.ate)
+    if DV['n'] != D['n']:
+        print(f'AVISO: preparar_D leu {DV["n"]} apostas e o T1 {D["n"]} — '
+              'conferir filtro de datas')
+    D['_DV'] = DV
 
     r1 = t1_liquidacao(D)
     if r1 is False:

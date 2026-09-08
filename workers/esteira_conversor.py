@@ -152,6 +152,20 @@ def converter(g: dict, *, casa='bet365', esporte='nba2k', mercado=None,
             lin['chip_conf'] = int(cmin)
         if cmax:
             lin['chip_conf_max'] = int(cmax)
+    # v4 (06/set): config SEM janela mas com conf_min/conf_max (ou HC sem
+    # chip nenhum) precisa de chip EXPLICITO [0,100] — sem ele o motor de
+    # HC aplica o default escondido 0,87/20 e o numero vira outro (rodada
+    # 18: 'FAV conf<=30' foi pro motor sem chip). 'all' 0-100 nao corta
+    # nada por winrate; so' carrega a maturidade.
+    if not j1:
+        cmin, cmax = _num(L.get('conf_min')), _num(L.get('conf_max'))
+        if cmin or cmax or str(lin['mercado']).startswith('ah_'):
+            lin['chip_janela'] = 'all'
+            lin['chip_wr_min'] = 0
+            lin['chip_wr_max'] = 100
+            lin['chip_conf'] = int(cmin) if cmin else 1
+            if cmax:
+                lin['chip_conf_max'] = int(cmax)
     j2 = _janela(L.get('janela2'))
     if j2:
         lin['chip2_janela'] = j2

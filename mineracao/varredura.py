@@ -102,12 +102,13 @@
 """
 import argparse, os, sys, itertools, warnings, time, heapq, math
 import unicodedata
+import re
 import numpy as np
 import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v9'
+VERSAO = 'VARREDURA v11.3 (grade do motor + reguas na porta)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -134,6 +135,19 @@ GRADES = {
 }
 
 MIN_CEGO_AP = 20          # minimo de apostas no cego pra reportar roi_cego
+# v11 — REGUAS NA PORTA (so quem passa vira ROBUSTA; o resto e' ranking)
+MIN_DIAS_PORTA = 21        # dias de TREINO que a busca precisa ver (--ate corta ~30%)
+MIN_CEGO_DIAS = 7          # cego automatico nunca menor que isto
+MORTO_ROI = -8.0           # mercado com baseline abaixo disto...
+MORTO_DIAS_POS = 0.25      # ...e menos de 25% de dias positivos nem roda
+PREMIO_MIN = 5.0           # pontos de ROI acima do baseline pra ser ROBUSTA
+PREMIO_SUSPEITO = 25.0     # acima disto marca premio_alto=1 (historico real: 9-21)
+CONC_MAX = 40.0            # top-3 pares/alvos carregando mais que isto = identidade
+N_PAR_MIN = 10             # pares distintos minimos numa config ROBUSTA
+# colunas do export do motor (v25 anotar_tudo) que NAO sao filtro do motor e
+# por isso NAO viram eixo: lado A/B do atropelo e' auditoria, ind A/ind B sao
+# posicionais (o filtro individual do motor e' o PIOR dos dois / zebra / fav)
+_NAO_EIXO = ('atropelo a', 'atropelo b', 'qtd atr', '(ind a)', '(ind b)')
 SEED = 11
 
 
@@ -317,7 +331,16 @@ def carregar(caminho, h2h_path=None, paridade_path=None, chips_fonte='todas'):
             ja = d[cja].astype(str).str.upper().str.strip()
             deficit = np.where(nick.values == ja.values,
                                (eb - ea).values, (ea - eb).values)
-            d['_folga'] = np.abs(d['_linha'].values) - deficit
+            # v11.3: MESMA conta do motor (_aplicar_filtro_folga):
+            # folga = hc ASSINADO do nick − (pts_adv − pts_nick). No zebra o
+            # hc e' +|linha|; no favorito e' −|linha|. A versao antiga usava
+            # |linha| pros dois lados — no favorito isso media OUTRA coisa
+            # ("perdendo por mais que a linha"), e a esteira 19 mostrou:
+            # a familia folga<=-0.5 do garimpo 20 virou 19k apostas a -9,65
+            # no motor. Eixo que o motor nao reproduz nao pode existir aqui.
+            _hc = np.where(d['_zebra'].values == 1,
+                           np.abs(d['_linha'].values), -np.abs(d['_linha'].values))
+            d['_folga'] = _hc - deficit
         d['_dif'] = np.abs((ea - eb).values)
 
     # --- v8: eixos de TOTAL DE PONTOS (Over/Under) ---------------------------
@@ -333,64 +356,21 @@ def carregar(caminho, h2h_path=None, paridade_path=None, chips_fonte='todas'):
     # jogo e nao do lado. Medida SO com jogos ja encerrados antes da aposta
     # (o proprio jogo NUNCA entra), entao nao ha vazamento de futuro.
     # Valor da aposta = o PIOR dos dois jogadores: basta um pra estragar.
+    # v11 — GRADE DO MOTOR: o varredor NAO deriva mais eixo que o runner nao
+    # aplica. `atropelo` so entra se vier a coluna do MOTOR (export v25, escala
+    # do banco, margem do bot); `lin_ini`/`desloc` sairam da grade (nao existem
+    # no runner — o conversor da esteira recusava e a config morria).
+    _catr = achar(d, 'Atropelo', 'atropelo')
+    if _catr is not None and str(_catr).startswith('_'):
+        _catr = None                       # achou a propria coluna interna
     d['_atropelo'] = np.nan
-    try:
-        _cA, _cB = achar(d, 'Jogador A'), achar(d, 'Jogador B')
-        _cpf = achar(d, 'Placar Final', 'placar final', 'placar_final')
-        if _cA and _cB and _cpf and '_dt' in d.columns and '_jogo' in d.columns:
-            _pf = d[_cpf].astype(str).str.extract(r'(\d+)\s*[-x:]\s*(\d+)')
-            _fa = pd.to_numeric(_pf[0], errors='coerce')
-            _fb = pd.to_numeric(_pf[1], errors='coerce')
-            _mg = (_fa - _fb).abs()
-            _jg = (pd.DataFrame({'j': d['_jogo'].values, 't': d['_dt'].values,
-                                 'A': d[_cA].astype(str).str.upper().str.strip().values,
-                                 'B': d[_cB].astype(str).str.upper().str.strip().values,
-                                 'm': _mg.values})
-                   .dropna(subset=['m']).sort_values('t', kind='stable')
-                   .drop_duplicates('j'))
-            MIN_JG = 6            # abaixo disso usa a media corrente da liga
-            _n = {}
-            _b = {}
-            _tot_n = _tot_b = 0
-            _taxa = {}
-            for _j, _A, _B, _m in zip(_jg.j.values, _jg.A.values,
-                                      _jg.B.values, _jg.m.values):
-                _lig = (_tot_b / _tot_n) if _tot_n >= 30 else 0.11
-                _r = []
-                for _p in (_A, _B):
-                    _np_ = _n.get(_p, 0)
-                    _r.append((_b.get(_p, 0) / _np_) if _np_ >= MIN_JG else _lig)
-                _taxa[_j] = max(_r) * 100.0        # o pior dos dois
-                _ate = 1 if _m >= 15 else 0        # so DEPOIS, nunca no proprio
-                for _p in (_A, _B):
-                    _n[_p] = _n.get(_p, 0) + 1
-                    _b[_p] = _b.get(_p, 0) + _ate
-                _tot_n += 1
-                _tot_b += _ate
-            d['_atropelo'] = d['_jogo'].map(_taxa).astype(float)
-    except Exception:
-        pass
-
     d['_lin_ini'] = np.nan
     d['_desloc'] = np.nan
-    try:
-        cconf = achar(d, 'Confronto', 'confronto')
-        cev = achar(d, 'event_id', 'evento')
-        if (cev is not None or cconf is not None) and '_dt' in d.columns:
-            chave = (d[cev].astype(str) if cev is not None
-                     else (d[cconf].astype(str) + '|'
-                           + d['_dt'].dt.floor('4h').astype(str)))
-            ordem = d['_dt'].values.argsort(kind='stable')
-            k_ord = chave.values[ordem]
-            l_ord = d['_linha'].values[ordem]
-            prim = {}
-            for k, lv in zip(k_ord, l_ord):
-                if k not in prim and np.isfinite(lv):
-                    prim[k] = lv
-            d['_lin_ini'] = chave.map(prim).astype(float)
-            d['_desloc'] = d['_linha'].values - d['_lin_ini'].values
-    except Exception:
-        pass
+    if _catr is not None:
+        d['_atropelo'] = pd.to_numeric(d[_catr], errors='coerce').values
+        d.attrs['atropelo_fonte'] = 'coluna do motor'
+    else:
+        d.attrs['atropelo_fonte'] = 'ausente (export sem anotar_tudo) — eixo fora da grade'
     return d
 
 
@@ -747,7 +727,7 @@ _PROIBIDAS = ('id', 'stake', 'odd', 'linha', 'placar', 'data', 'hora', 'lucro',
               'jogador', 'evento', 'mercado', 'lado', 'unnamed')
 _COMP_PISTAS = ('gap', 'desvio', 'tend', 'med', 'méd', 'tot_env', 'momento', 'ritmo',
                 'streak', 'seq', 'folga', 'deficit', 'déficit', 'dif', 'pace',
-                'pontos', 'total')
+                'pontos', 'total', 'atropelo', 'err')
 
 
 def detectar_eixos(d):
@@ -761,15 +741,24 @@ def detectar_eixos(d):
         if cs.startswith('_'):
             continue
         low = cs.lower()
+        if any(p in low for p in _NAO_EIXO):      # v11: auditoria, nao filtro
+            continue
         s = pd.to_numeric(d[c], errors='coerce')
         if s.notna().sum() < len(d) * 0.5 or s.nunique(dropna=True) < 3:
             continue
         if low.startswith('qtd') or 'confronto' in low or low.startswith('n_'):
             qtd[cs] = s.fillna(0).values.astype(np.float64)
             continue
-        pista_wr = ('winrate' in low or low.startswith('wr') or 'últ' in low
-                    or 'ult' in low or low == 'todas' or 'cobertura' in low
-                    or 'pct' in low or low.endswith('%'))
+        # v11: coluna de STAT (media/gap/z/desvio/tendencia) nunca e' chip,
+        # mesmo trazendo o nome da janela ('Média Últ. 10' cai em 'últ')
+        _eh_stat = any(low.startswith(p) for p in ('média', 'media', 'méd', 'gap',
+                                                    'desvio', 'z ', 'z_', 'tend'))
+        if low in ('atropelo',):
+            continue                       # v11: entra pelo derivado '_atropelo'
+        pista_wr = (not _eh_stat) and (
+            'winrate' in low or low.startswith('wr') or 'últ' in low
+            or 'ult' in low or low.startswith('todas') or 'cobertura' in low
+            or 'pct' in low or low.endswith('%'))
         if pista_wr:
             mx = float(s.max())
             if s.min() >= 0 and mx <= 1.0001:
@@ -780,11 +769,16 @@ def detectar_eixos(d):
                 continue
         pista_comp = (any(p in low for p in _COMP_PISTAS)
                       or low.startswith('z') or 'zscore' in low or 'z_' in low)
+        if low == 'gap linha':             # v11: filtro gap_linha do motor
+            comp[cs] = s.values.astype(np.float64)
+            continue
         if pista_comp and not any(p in low for p in _PROIBIDAS):
             comp[cs] = s.values.astype(np.float64)
     # derivados viram complementares se existirem
+    # v11: so eixos que EXISTEM no motor — tot_env (totEnv), folga (folga),
+    # dif (diferencaPlacar+cenario), atropelo (coluna do motor). desloc e
+    # lin_ini NAO entram mais.
     for nome, col in (('tot_env', '_tot_env'), ('folga', '_folga'),
-                      ('desloc', '_desloc'), ('lin_ini', '_lin_ini'),
                       ('dif', '_dif'), ('atropelo', '_atropelo')):
         v = d[col].values
         if np.isfinite(v).sum() > len(d) * 0.5 and len(np.unique(v[np.isfinite(v)])) >= 4:
@@ -795,7 +789,12 @@ def detectar_eixos(d):
 def coluna_historico(qtd):
     if not qtd:
         return None
+    for nome in qtd:                       # v11: 'Qtd Todas' EXATO primeiro
+        if str(nome).strip().lower() in ('qtd todas', 'qtd. todas'):
+            return nome
     for nome in qtd:
+        if 'média' in str(nome).lower() or 'media' in str(nome).lower():
+            continue                       # 'Qtd Média X' e' maturidade da media
         if 'todas' in str(nome).lower() or 'total' in str(nome).lower():
             return nome
     return max(qtd, key=lambda k: float(np.nanmax(qtd[k])))
@@ -864,7 +863,10 @@ def cortes_complementar(nome, vals):
     v = vals[np.isfinite(vals)]
     if v.size == 0:
         return []
-    q = np.nanquantile(v, [0.10, 0.25, 0.50, 0.75, 0.90])
+    # v11: o corte que MASCARA e' o mesmo que sai no ROTULO (2 casas). Antes a
+    # mascara usava o quantil cru e o rotulo arredondado — a config impressa
+    # nao reproduzia o proprio numero (93 de 382 divergiam no repontua).
+    q = np.round(np.nanquantile(v, [0.10, 0.25, 0.50, 0.75, 0.90]), 2)
 
     def fmt(x):
         return f'{x:.2f}'.rstrip('0').rstrip('.')
@@ -919,6 +921,162 @@ def max_seq_reds(g_keep):
     return int((ends - starts).max())
 
 
+# ---------------------------------------------------------------------------
+# v11 — API COMPARTILHADA (fonte unica das mascaras)
+# repontua.py e validar_varredor.py passam a montar o dado e as mascaras AQUI,
+# em vez de reimplementar folga/tot_env/atropelo/lin_ini por conta propria
+# (tres copias divergiam — o holdout media outra coisa em silencio).
+# ---------------------------------------------------------------------------
+_EXTRA_RE_OP = re.compile(r'^(.*?)\s*(>=|<=)\s*(-?\d+(?:\.\d+)?)$')
+_EXTRA_RE_BANDA = re.compile(r'^(.*?)\s+(-?\d+(?:\.\d+)?)~(-?\d+(?:\.\d+)?)$')
+
+
+class ExtraDesconhecido(Exception):
+    """Config com complementar que este arquivo nao tem: PULAR avisando.
+    Nunca virar "sem filtro" — isso devolve o numero de outra config."""
+
+
+def preparar_D(caminho, h2h_path=None, paridade_path=None, chips_fonte='todas',
+               de=None, ate=None):
+    """Carrega o export e devolve o dicionario D com TODOS os vetores que uma
+    mascara precisa: u, green, ts, dia, ev_cod (jogo), lin (abs), lin_sig,
+    odd, zebra, qtd, WR{coluna->0-1}, COMP{nome->float}, n, meio, ini_3d/7d,
+    dias, nj_tot. Mesmo `carregar` + `detectar_eixos` da busca."""
+    d = carregar(caminho, h2h_path=h2h_path, paridade_path=paridade_path,
+                 chips_fonte=chips_fonte)
+    if de:
+        d = d[d['_dt'] >= pd.Timestamp(de)]
+    if ate:
+        d = d[d['_dt'] < pd.Timestamp(ate) + pd.Timedelta(days=1)]
+    d = d.sort_values('_dt', kind='stable').reset_index(drop=True)
+    if not len(d):
+        raise ValueError('--de/--ate nao deixaram nenhuma aposta')
+    WR, QTD, COMP = detectar_eixos(d)
+    qhist = coluna_historico(QTD)
+    n = len(d)
+    D = {
+        'n': n,
+        'u': d['_u'].values.astype(np.float64),
+        'green': d['_G'].values.astype(bool),
+        'ts': d['_dt'].values,
+        'dia': d['_dt'].dt.date.values,
+        'ev_cod': pd.factorize(d['_jogo'])[0],
+        'lin_sig': d['_linha'].values.astype(np.float64),
+        'lin': np.abs(d['_linha'].values.astype(np.float64)),
+        'odd': d['_odd'].values.astype(np.float64),
+        'zebra': d['_zebra'].values.astype(np.int8),
+        'qtd': (QTD[qhist] if qhist else np.full(n, 1e9)),
+        'WR': WR, 'COMP': COMP, 'qhist': qhist,
+        'atropelo_fonte': d.attrs.get('atropelo_fonte', '?'),
+        'origem_jogo': d.attrs.get('origem_jogo', '?'),
+    }
+    _cpar = achar(d, 'Confronto', 'confronto', 'partida')
+    D['par'] = (pd.factorize(d[_cpar].astype(str).str.upper().str.replace(' ', ''))[0]
+                if _cpar else np.zeros(n, np.int64))
+    D['nj_tot'] = int(D['ev_cod'].max()) + 1
+    fim = pd.Timestamp(d['_dt'].max()).normalize() + pd.Timedelta(days=1)
+    D['ini_3d'] = np.datetime64(fim - pd.Timedelta(days=3))
+    D['ini_7d'] = np.datetime64(fim - pd.Timedelta(days=7))
+    D['meio'] = D['ts'][n // 2]
+    D['dias'] = max((pd.Timestamp(d['_dt'].max()) - pd.Timestamp(d['_dt'].min())).days + 1, 1)
+    return D
+
+
+def _num(v):
+    try:
+        if v is None:
+            return None
+        sv = str(v).strip()
+        if sv in ('-', '', 'nan', 'None'):
+            return None
+        return float(sv)
+    except (TypeError, ValueError):
+        return None
+
+
+def mascara_extra(extra, D):
+    """Mascara de UM complementar pelo rotulo que a busca emite
+    ('nome>=x', 'nome<=x', 'nome a~b'). O nome e' a chave de COMP (coluna do
+    export ou derivado tot_env/folga/dif/atropelo). Desconhecido = excecao."""
+    e = str(extra).strip()
+    if e in ('-', '', 'nan', 'None'):
+        return None
+    comp = D['COMP']
+    m = _EXTRA_RE_BANDA.match(e)
+    if m and m.group(1).strip() in comp:
+        v = comp[m.group(1).strip()]
+        return (v >= float(m.group(2))) & (v <= float(m.group(3)))
+    m = _EXTRA_RE_OP.match(e)
+    if m and m.group(1).strip() in comp:
+        v = comp[m.group(1).strip()]
+        t = float(m.group(3))
+        return (v >= t) if m.group(2) == '>=' else (v <= t)
+    # garimpo antigo dizia 'momento' pro que hoje e' tot_env
+    if e.startswith('momento') and 'tot_env' in comp and 'momento' not in comp:
+        return mascara_extra('tot_env' + e[len('momento'):], D)
+    raise ExtraDesconhecido(e)
+
+
+def mascara_config(cfg, D):
+    """Mascara booleana de uma linha do TUDO (dict/Series com janela, wr_min,
+    wr_max, janela2, op2, wr2, conf_min, conf_max, linha_min, linha_max,
+    odd_min, odd_max, lado, extra, teto) — MESMA semantica da busca:
+    WR nulo = 0, linha em valor ABSOLUTO, odd nula reprova odd_min/max,
+    teto pela escada recalculada POS-mascara (degrau_no_indice)."""
+    WR = D['WR']
+    m = np.ones(D['n'], bool)
+    jan = str(cfg.get('janela', '-')).strip()
+    if jan not in ('-', '', 'nan'):
+        if jan not in WR:
+            raise ExtraDesconhecido(f'janela {jan!r} nao existe neste export')
+        v = WR[jan]
+        wmin, wmax = _num(cfg.get('wr_min')), _num(cfg.get('wr_max'))
+        if wmin is not None:
+            m &= v >= wmin
+        if wmax is not None:
+            m &= v <= wmax
+    jan2 = str(cfg.get('janela2', '-')).strip()
+    if jan2 not in ('-', '', 'nan'):
+        if jan2 not in WR:
+            raise ExtraDesconhecido(f'janela2 {jan2!r} nao existe neste export')
+        w2 = _num(cfg.get('wr2'))
+        if w2 is not None:
+            op2 = str(cfg.get('op2', '>=')).strip()
+            m &= (WR[jan2] <= w2) if op2 in ('<=', 'le') else (WR[jan2] >= w2)
+    cmin, cmax = _num(cfg.get('conf_min')), _num(cfg.get('conf_max'))
+    if cmin:
+        m &= D['qtd'] >= cmin
+    if cmax is not None and cmax < 999:
+        m &= D['qtd'] <= cmax
+    lmin, lmax = _num(cfg.get('linha_min')), _num(cfg.get('linha_max'))
+    if lmin is not None:
+        m &= D['lin'] >= lmin
+    if lmax is not None:
+        m &= D['lin'] <= lmax
+    omin, omax = _num(cfg.get('odd_min')), _num(cfg.get('odd_max'))
+    if omin is not None:
+        m &= np.isfinite(D['odd']) & (D['odd'] >= omin)
+    if omax is not None and omax < 999:
+        m &= np.isfinite(D['odd']) & (D['odd'] <= omax)
+    lado = str(cfg.get('lado', '-')).strip().lower()
+    if lado == 'zebra':
+        m &= D['zebra'] == 1
+    elif lado == 'favorito':
+        m &= D['zebra'] == 0
+    ex = mascara_extra(cfg.get('extra', '-'), D)
+    if ex is not None:
+        m &= ex
+    teto = _num(cfg.get('teto'))
+    if teto and 0 < teto < 999:
+        idx = np.flatnonzero(m)
+        if idx.size:
+            deg = degrau_no_indice(idx, D['ev_cod'])
+            keep = idx[deg < int(teto)]
+            m = np.zeros(D['n'], bool)
+            m[keep] = True
+    return m
+
+
 # ------------------------------------------------------------------ main ----
 # ---------------------------------------------------------------------------
 # API DE BIBLIOTECA (v10) — pro varredor rodar como JOB do sistema.
@@ -955,9 +1113,9 @@ def varrer(argumentos, on_progress=None):
     PROGRESSO_CB = on_progress
     sys.argv = ['varredura.py'] + [str(x) for x in argumentos]
     try:
-        main()
-        return 0
-    except SystemExit as e:                 # --plano e erros de flag saem assim
+        rc = main()
+        return int(rc or 0)                 # v11: main() devolve 2 em erro de leitura
+    except SystemExit as e:                 # --plano, porta (3) e erros de flag
         return int(e.code or 0)
     finally:
         sys.argv = argv_antigo
@@ -1021,6 +1179,10 @@ def main():
                     help='janelas da leitura de recencia, em dias ancorados no ULTIMO dia '
                          '(ex: "3,7" = ultimos 3 e ultimos 7 dias; vazio desliga)')
     ap.add_argument('--sem-odd', action='store_true')
+    ap.add_argument('--min-dias', type=int, default=MIN_DIAS_PORTA,
+                    help='PORTA: dias de treino minimos (menos que isso nao roda)')
+    ap.add_argument('--forcar', action='store_true',
+                    help='ignora a PORTA (mercado morto / poucos dias) — so pra estudo')
     ap.add_argument('--sem-duplo', action='store_true')
     ap.add_argument('--sem-extras', action='store_true')
     ap.add_argument('--estrategia', '-e', action='append', metavar='SPEC',
@@ -1097,6 +1259,38 @@ def main():
     ndias = max(len(np.unique(dias_arr)), 1)
     maxpj = int(np.bincount(jid_all).max())
 
+    # --- v11: PORTA — o que nao presta nem roda -------------------------------
+    _base_roi = float(u.mean()) * 100
+    _du_base = np.bincount(dia_idx, weights=u, minlength=n_dias_tot)
+    _frac_pos = float((_du_base > 0).sum()) / max(n_dias_tot, 1)
+    porta = []
+    if ndias < a.min_dias:
+        porta.append(f'{ndias} dias de treino (minimo {a.min_dias}) — com poucos '
+                     f'dias o p95 do acaso passa de +10% e tudo "aprova"')
+    # v11.1: arquivo com os DOIS lados (HC ambos, over+under) tem baseline =
+    # vig por construcao e 0 dias positivos — a regua de mercado morto so vale
+    # pra arquivo de UM lado (over so, zebra so), onde o baseline mede o lado.
+    _n_zeb = int((zeb == 1).sum()); _n_fav = int((zeb == 0).sum())
+    _dois_lados = min(_n_zeb, _n_fav) >= 0.30 * N
+    if _dois_lados:
+        print(f'porta: arquivo de DOIS lados ({_n_zeb:,} zebra / {_n_fav:,} fav) — '
+              f'baseline {_base_roi:+.2f}% e\' a vig; regua de mercado morto nao se aplica')
+    elif _base_roi <= MORTO_ROI and _frac_pos <= MORTO_DIAS_POS:
+        porta.append(f'mercado morto: baseline {_base_roi:+.2f}% com '
+                     f'{_frac_pos * 100:.0f}% de dias positivos (regua: pior que '
+                     f'{MORTO_ROI:+.0f}% e menos de {MORTO_DIAS_POS * 100:.0f}%)')
+    if porta:
+        print('=' * 78)
+        print(' REPROVADO NA PORTA' + (' (seguindo por --forcar)' if a.forcar else ''))
+        for _m in porta:
+            print(f'   - {_m}')
+        print('=' * 78)
+        if not a.forcar:
+            raise SystemExit(3)
+    _sem_per = pd.to_datetime(pd.Series(dias_arr)).dt.to_period('W-SUN')
+    sem_idx = pd.factorize(_sem_per)[0]
+    n_sem_tot = int(sem_idx.max()) + 1
+
     rng = np.random.default_rng(SEED)
     RH = rng.integers(1, 2 ** 63 - 1, size=N, dtype=np.int64).astype(np.uint64)
 
@@ -1113,6 +1307,8 @@ def main():
     cego_dias = a.cego
     if cego_dias < 0:
         cego_dias = 0 if ndias < 6 else max(3, int(round(ndias * 0.30)))
+        if ndias >= 2 * MIN_CEGO_DIAS:            # v11: cego nunca < 7 dias
+            cego_dias = max(cego_dias, MIN_CEGO_DIAS)
     if 0 < cego_dias < ndias:
         corte = dias_ord[-cego_dias]
         te = dias_arr >= corte
@@ -1144,6 +1340,45 @@ def main():
                 for _ in range(200)]
         curva_sorte[nsz] = float(np.percentile(sims, 95))
     sz_ns = sorted(curva_sorte)
+
+    # v11 — TETO DE SORTE POR PAR: sorteia PARES inteiros ate juntar n jogos.
+    # Config que seleciona por banda de confrontos (conf 30-60, whitelist
+    # disfarcada) e' cluster de pares; a barra por jogo mente pra baixo nela.
+    curva_sorte_par = {}
+    try:
+        _par_jg = {}
+        for _pi, _ji in zip(par_all, jid_all):
+            _par_jg.setdefault(int(_pi), set()).add(int(_ji))
+        _par_ids = np.array(list(_par_jg))
+        _par_nj = np.array([len(_par_jg[k]) for k in _par_ids])
+        _jg_u = {}
+        for _ji, _ui in zip(jid_all, u):
+            _jg_u[int(_ji)] = _jg_u.get(int(_ji), 0.0) + float(_ui)
+        _jg_c = np.bincount(jid_all, minlength=n_jogos_tot)
+        if _par_ids.size >= 8:
+            for nsz in sz_ns:
+                sims = []
+                for _ in range(200):
+                    _ordem = rng.permutation(_par_ids.size)
+                    _acc = 0; _sel = []
+                    for _k in _ordem:
+                        _sel.append(_par_ids[_k]); _acc += _par_nj[_k]
+                        if _acc >= nsz:
+                            break
+                    _jgs = set().union(*[_par_jg[k] for k in _sel])
+                    _u_s = sum(_jg_u[j] for j in _jgs)
+                    _c_s = sum(int(_jg_c[j]) for j in _jgs)
+                    sims.append(_u_s / max(_c_s, 1) * 100)
+                curva_sorte_par[nsz] = float(np.percentile(sims, 95))
+    except Exception as _e:
+        print(f'  aviso: barra por par nao calculada ({_e})')
+    sz_np = sorted(curva_sorte_par)
+
+    def sorte_par(nj):
+        if not sz_np:
+            return float('nan')
+        return float(np.interp(min(max(nj, sz_np[0]), sz_np[-1]), sz_np,
+                               [curva_sorte_par[k] for k in sz_np]))
 
     def sorte(nj):
         if not sz_ns:
@@ -1208,7 +1443,7 @@ def main():
             cts = cortes_complementar(nome, vals)
             if cts:
                 eixos_comp.append((nome, cts))
-        eixos_comp = eixos_comp[:12]
+        eixos_comp = eixos_comp[:48]      # v11: export do motor traz ~36
 
     # --- cabecalho ---
     print(f'{N:,} apostas | {len(jg_un):,} jogos | {ndias} dias | '
@@ -1226,6 +1461,13 @@ def main():
         print(f'  qtd ignoradas (capadas na janela): {", ".join(ign)}')
     print(f'eixo de odd ......... {"VIVO — " + odd_info if odd_ok else "morto — " + odd_info}')
     print(f'complementares ...... {[n for n, _ in eixos_comp] or "(nenhum)"}')
+    print(f'atropelo ............ {d.attrs.get("atropelo_fonte", "?")}')
+    print(f'porta ............... dias {ndias} (min {a.min_dias}) | baseline '
+          f'{_base_roi:+.2f}% | dias positivos {_frac_pos * 100:.0f}% | '
+          f'{n_sem_tot} semana(s)')
+    if curva_sorte_par:
+        print(f'teto de sorte POR PAR (p95): '
+              + ' | '.join(f'{k}j {v:+.1f}%' for k, v in curva_sorte_par.items()))
     print(f'teto de sorte (p95 por n de jogos): '
           + ' | '.join(f'{k}j {v:+.1f}%' for k, v in curva_sorte.items()))
     if tem_cego:
@@ -1504,6 +1746,18 @@ def main():
             acima_sorte=round(roi - sorte(nj), 2),
             equiv=1,
         )
+        # --- v11: reguas novas, por config ---
+        _asp = sorte_par(nj)
+        rec['acima_sorte_par'] = round(roi - _asp, 2) if math.isfinite(_asp) else None
+        rec['premio'] = round(roi - _base_roi, 2)
+        rec['premio_alto'] = 1 if (roi - _base_roi) > PREMIO_SUSPEITO else 0
+        _sw = np.bincount(sem_idx[keep], weights=su, minlength=n_sem_tot)
+        _sc = np.bincount(sem_idx[keep], minlength=n_sem_tot)
+        _tem_s = _sc > 0
+        rec['sem_tot'] = int(_tem_s.sum())
+        rec['sem_pos'] = int(((_sw > 0) & _tem_s).sum())
+        _ult = np.flatnonzero(_tem_s)
+        rec['ult_sem_u'] = round(float(_sw[_ult[-1]]), 2) if _ult.size else None
         # v6: FRAGILIDADE — fracao da cesta cujo chip esta a menos de UM JOGO
         # (1/N da janela; Todas usa a Qtd da propria aposta) de um corte de WR
         # da config. E o que desmonta quando a fase 2 escreve 1 jogo retroativo
@@ -2089,17 +2343,38 @@ def main():
             print(f'  placebo falhou ({e}) — seguindo sem a barra')
 
     # --- ROBUSTAS: passa em TODAS as reguas ao mesmo tempo ---
-    cond = pd.Series(True, index=R.index)
-    cond &= R['acima_sorte'] > 0
+    # v11: cada regua conta quantas reprovou — quando a aba sai vazia, o
+    # motivo sai em UMA linha no log em vez de 500 "robustas" falsas.
+    reguas = []
+    reguas.append(('acima da sorte por JOGO', R['acima_sorte'] > 0))
+    if 'acima_sorte_par' in R.columns:
+        reguas.append(('acima da sorte por PAR', R['acima_sorte_par'].fillna(-9) > 0))
     if 'acima_placebo' in R.columns:
-        cond &= R['acima_placebo'] > 0
-    cond &= R['z_jogo'].fillna(-9) >= 2.0
-    cond &= (R['roi_m1'].fillna(-9) > 0) & (R['roi_m2'].fillna(-9) > 0)
+        reguas.append(('acima do placebo', R['acima_placebo'] > 0))
+    reguas.append(('z_jogo >= 2', R['z_jogo'].fillna(-9) >= 2.0))
+    reguas.append(('duas metades positivas',
+                   (R['roi_m1'].fillna(-9) > 0) & (R['roi_m2'].fillna(-9) > 0)))
     if tem_cego:
-        cond &= R['roi_cego'].notna() & (R['roi_cego'] > 0)
+        reguas.append(('cego positivo', R['roi_cego'].notna() & (R['roi_cego'] > 0)))
         folga = np.maximum(5.0, 0.5 * R['roi_treino'].abs().fillna(0))
-        cond &= (R['roi_treino'] - R['roi_cego']) <= folga   # nao pode DESABAR no cego
+        reguas.append(('nao desaba no cego', (R['roi_treino'] - R['roi_cego']) <= folga))
+    reguas.append((f'premio >= {PREMIO_MIN:.0f} pts sobre o baseline',
+                   R['premio'].fillna(-99) >= PREMIO_MIN))
+    reguas.append((f'sem identidade (top-3 pares/alvos <= {CONC_MAX:.0f}%)',
+                   R['id_suspeita'].fillna(1) == 0))
+    reguas.append((f'>= {N_PAR_MIN} pares distintos', R['n_par'].fillna(0) >= N_PAR_MIN))
+    reguas.append(('maioria das semanas positiva',
+                   R['sem_pos'].fillna(0) >= np.ceil(R['sem_tot'].fillna(99) / 2.0)))
+    cond = pd.Series(True, index=R.index)
+    for _nome, _m in reguas:
+        cond &= _m
+    R['robusta'] = cond.astype(int)          # v11.2: viaja no TUDO pro estagio 9
     ROB = R[cond].sort_values(['unidades'], ascending=False)
+    if len(ROB) == 0 and len(R):
+        _rep = sorted(((int((~_m).sum()), _nome) for _nome, _m in reguas), reverse=True)
+        print(' ROBUSTAS VAZIA — motivo: ' + ' | '.join(
+            f'{_n} reprovam em "{_r}"' for _n, _r in _rep[:4]))
+        _emitir_progresso(robustas=0, motivo=_rep[0][1] if _rep else '')
 
     # v6: recencia/vivo/tendencia/fragilidade LOGO depois do ROI — a primeira
     # coisa que o olho pega e o que decide se a config esta de pe AGORA.
@@ -2115,7 +2390,9 @@ def main():
              'margem_be', 'linha_media', 'DD', 'lucro_dd', 'pior_jogo',
              'pior_dia', 'melhor_dia', 'dias_pos', 'dias_neg', 'max_reds',
              'z_jogo', 'roi_m1', 'roi_m2', 'acima_sorte', 'acima_placebo',
-             'roi_treino', 'roi_cego', 'ap_cego', 'desvio_cego', 'equiv']
+             'roi_treino', 'roi_cego', 'ap_cego', 'desvio_cego', 'equiv',
+             'acima_sorte_par', 'premio', 'premio_alto', 'sem_tot', 'sem_pos',
+             'ult_sem_u', 'robusta']
     cols = [c for c in cols if c in R.columns]
 
     LEGENDA = pd.DataFrame([
@@ -2139,7 +2416,12 @@ def main():
         ('acima_placebo', 'ROI menos a barra p95 da busca rodada em dado embaralhado'),
         ('roi_treino / roi_cego / desvio_cego', 'treino vs ultimos dias nunca vistos pela busca'),
         ('equiv', 'quantas configuracoes diferentes selecionam EXATAMENTE as mesmas apostas'),
-        ('ROBUSTAS', 'so quem passa em TUDO: sorte, placebo, z>=2, duas metades positivas e cego'),
+        ('ROBUSTAS', 'so quem passa em TUDO: sorte por jogo E por par, placebo, z>=2, duas metades positivas, cego, premio>=5 sobre o baseline, sem identidade (top-3<=40%), >=10 pares, maioria das semanas positiva'),
+        ('acima_sorte_par', 'v11: ROI menos o teto p95 sorteando PARES inteiros ate o mesmo n de jogos — a barra certa pra config de banda de confrontos'),
+        ('premio / premio_alto', 'v11: ROI menos o baseline do arquivo; premio_alto=1 acima de 25 pts (historico real do projeto: 9-21) — nao bloqueia, audite'),
+        ('sem_tot / sem_pos / ult_sem_u', 'v11: semanas com aposta, semanas positivas e unidades da ULTIMA semana — le a ponta do arco'),
+        ('PORTA', 'v11: o varredor nem roda com menos de --min-dias de treino ou com mercado morto (baseline <= -8% e <= 25% de dias positivos); --forcar ignora'),
+        ('GRADE DO MOTOR', 'v11: so eixos que o runner aplica: chips por janela (par e ind pior/zebra/fav), conf min/max, linha, odd, lado, teto, folga, tot_env, dif (=diferencaPlacar), atropelo (coluna do motor), media/gap/z/desvio/tendencia/gap linha (filtros_comp), momento e err quando o export traz. desloc e lin_ini SAIRAM'),
         ('u_Nd / roi_Nd / G_Nd-R_Nd / ap_Nd', 'LEITURA DE FRENTE PRA TRAS: ultimos N dias ancorados no ultimo dia do arquivo'),
         ('vivo', 'v6 ENDURECIDO: 1 = lucro positivo em TODAS as janelas de recencia com >=10 ap (3d E 7d); 0 = apagou em alguma; vazio = pouco dado'),
         ('queda_ponta', 'roi_3d - roi_m2: quanto a ponta caiu vs a 2a metade. Negativo grande = edge morrendo'),
