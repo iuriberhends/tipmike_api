@@ -33,7 +33,7 @@ import json
 import logging
 import re
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 
 from fastapi import (APIRouter, BackgroundTasks, Depends, File, HTTPException,
                      UploadFile)
@@ -453,6 +453,9 @@ class BacktestAvulsoRequest(BaseModel):
     # v25: ANOTAR TUDO (modo garimpo) — escreve Momento/Atropelo/Folga (e Err
     # quando o mercado suporta) por aposta SEM filtrar. Pro export do garimpo.
     anotar_tudo: bool = Field(default=False)
+    # v25.2: quais janelas o anotar_tudo calcula (0 = Todas). Menos janelas =
+    # export menor; o apostas_detalhe e' jsonb e estoura em 256 MB.
+    anotar_janelas: Optional[List[int]] = Field(default=None)
     atropelo_ativo: bool = Field(default=False)
     atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
     atropelo_max: Optional[float] = Field(default=None, ge=0, le=100)
@@ -784,6 +787,8 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
     # v25: anotarTudo — independente de tudo, so anota
     if bool(getattr(req, "anotar_tudo", False)):
         filtros["anotarTudo"] = True
+        if getattr(req, "anotar_janelas", None):
+            filtros["anotarJanelas"] = [int(x) for x in req.anotar_janelas]
         # v25.1: a margem/min_jogos do atropelo valem tambem pra ANOTACAO
         # (antes so viajavam com atropeloAtivo — em futebol a margem default
         # 15 zera tudo). Nao liga o filtro: so parametriza o calculo.

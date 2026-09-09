@@ -1,5 +1,5 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT + v25 anotar_tudo)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT + v25.2 anotar_tudo)
 
 v24 - CHIP DE HANDICAP DE 1o TEMPO COM PLACAR DE INTERVALO (26/ago): ate aqui a
   cobertura do handicap (hc_pct / escadinha) era medida SEMPRE com o placar
@@ -2472,6 +2472,11 @@ MIN_H2H_DEFAULT = 5
 JANELAS_PADRAO_WR = (5, 10, 15)
 JANELAS_PADRAO_MEDIA = (5, 10, 20)
 # v25: janelas que o modo garimpo (anotarTudo) sempre calcula (0 = Todas)
+# v25.2: virou DEFAULT — o job pode pedir outras em filtros.anotarJanelas.
+# POR QUE IMPORTA: cada janela custa ~9 colunas por aposta no apostas_detalhe,
+# e o jsonb do Postgres tem teto de 256 MB. Com as 7 janelas, 86 mil apostas
+# dao ~317 MB e o job MORRE no fim (job 2132). Regra de bolso:
+#   ate  25k apostas -> 7 janelas | ate 50k -> 5 | ate 100k -> 3
 JANELAS_ANOTAR_TUDO = (0, 5, 10, 15, 20, 30, 50)
 
 
@@ -3897,6 +3902,20 @@ async def executar_backtest(job_id: int):
         # aposta sem filtrar. Liga o errAnotar junto (o err e' um dos eixos)
         # quando o mercado suporta. Ausente = job identico ao v24.
         anotar_tudo = bool(_fd.get('anotarTudo', False))
+        _jat = JANELAS_ANOTAR_TUDO
+        if anotar_tudo and _fd.get('anotarJanelas'):
+            try:
+                _jat = tuple(sorted({int(x) for x in _fd['anotarJanelas']
+                                     if 0 <= int(x) <= 200}))
+                if not _jat:
+                    _jat = JANELAS_ANOTAR_TUDO
+            except (TypeError, ValueError):
+                logger.warning(f"[backtest] job {job_id}: anotarJanelas invalido, "
+                               f"usando o default {JANELAS_ANOTAR_TUDO}")
+        if anotar_tudo:
+            logger.info(f"[backtest] job {job_id}: anotarTudo com janelas {_jat} "
+                        f"(~{9 * len(_jat) + 16} colunas/aposta; o jsonb do "
+                        f"apostas_detalhe tem teto de 256 MB)")
         if anotar_tudo and bot.get('mercado', '') in ERR_MERCADOS_SUPORTADOS:
             err_anotar = True
         # FAIL CLOSED: err so faz sentido em total seco (over_under_ft/ht).
@@ -3957,15 +3976,15 @@ async def executar_backtest(job_id: int):
         # e viram coluna, independente dos filtros do job. Custo assumido: e'
         # um job de export, nao de bot. Sem a flag nada disto roda.
         if anotar_tudo:
-            janelas_wr = set(janelas_wr) | set(JANELAS_ANOTAR_TUDO)
-            janelas_media = set(janelas_media) | set(JANELAS_ANOTAR_TUDO)
+            janelas_wr = set(janelas_wr) | set(_jat)
+            janelas_media = set(janelas_media) | set(_jat)
             # O/U: o individual sai pelo espelho (ind A/B/pior), que so roda
             # com tem_indiv. HC: NAO forca tem_indiv — no ramo HC ele muda
             # a decisao (zebra nao identificavel vira rejeicao); la o anotar
             # busca o historico por conta propria e nunca rejeita.
             if not _mercado_eh_hc(bot.get('mercado', '')):
                 tem_indiv = True
-                janelas_wr_indiv = set(janelas_wr_indiv) | set(JANELAS_ANOTAR_TUDO)
+                janelas_wr_indiv = set(janelas_wr_indiv) | set(_jat)
 
         if filtros_unificados:
             tipos_resumo = [f"{f.get('tipo')}_ult{f.get('janela')}" for f in filtros_unificados]
@@ -4686,7 +4705,7 @@ async def executar_backtest(job_id: int):
                                 logger.warning(f"[backtest] job {job_id}: hist indiv (anotar) {e}")
                                 _ji_an = None
                         _anotar_chips_hc(jogos_h2h, stats, tick.get('selecao', ''),
-                                         tick['ts'], JANELAS_ANOTAR_TUDO, jogos_indiv=_ji_an)
+                                         tick['ts'], _jat, jogos_indiv=_ji_an)
                     qtd_h2h = stats.get('hc_pct_qtd', 0) or 0
                     if qtd_h2h < H2H_MIN_SAUDAVEL:
                         qualidade['apostas_h2h_fraco'] += 1
@@ -4951,7 +4970,7 @@ async def executar_backtest(job_id: int):
         if anotar_tudo:
             _eh_hc_cols = _mercado_eh_hc(bot.get('mercado', ''))
             _extra_cols = []
-            for _n in sorted(JANELAS_ANOTAR_TUDO):
+            for _n in sorted(_jat):
                 _tok = str(int(_n)); _lbl = "Todas" if _n == 0 else f"Últ. {_n}"
                 _extra_cols += [(_lbl, f'wr_ult{_tok}'),
                                 (f"Qtd {_lbl}", f'wr_ult{_tok}_qtd'),
