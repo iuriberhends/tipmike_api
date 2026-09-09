@@ -108,7 +108,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v11.3 (grade do motor + reguas na porta)'
+VERSAO = 'VARREDURA v11.5 (grade do motor + selo em vez de porta)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -136,7 +136,9 @@ GRADES = {
 
 MIN_CEGO_AP = 20          # minimo de apostas no cego pra reportar roi_cego
 # v11 — REGUAS NA PORTA (so quem passa vira ROBUSTA; o resto e' ranking)
-MIN_DIAS_PORTA = 21        # dias de TREINO que a busca precisa ver (--ate corta ~30%)
+MIN_DIAS_PORTA = 21        # dias de treino pro selo VALIDAVEL (nao bloqueia)
+MIN_JOGOS_SELO = 800       # jogos independentes pro selo VALIDAVEL
+MIN_SEMANAS_SELO = 3       # semanas pra medir se o padrao se mantem
 MIN_CEGO_DIAS = 7          # cego automatico nunca menor que isto
 MORTO_ROI = -8.0           # mercado com baseline abaixo disto...
 MORTO_DIAS_POS = 0.25      # ...e menos de 25% de dias positivos nem roda
@@ -1247,7 +1249,13 @@ def main():
             _cnick = _c
             break
     if _cnick is not None:
-        _nk = d[_cnick].astype(str).str.extract(r'\(([^()]+)\)\s*\(')[0]
+        # v11.4: pega o ULTIMO parenteses que tem LETRA. Cobre os dois
+        # formatos que o export usa — 'Time (Nick) (+8.5)' e
+        # 'Partizan (tapachan) +8.5'. Com o regex antigo (que exigia o
+        # segundo parenteses) 67% das apostas ficavam sem alvo e a regua
+        # por JOGADOR nem rodava.
+        _nk = (d[_cnick].astype(str)
+               .str.findall(r'\(([^()]*[A-Za-z][^()]*)\)').str[-1])
         alvo_all = pd.factorize(_nk.fillna('?').str.upper().str.strip())[0]
     else:
         alvo_all = np.zeros(N, np.int64)
@@ -1259,37 +1267,50 @@ def main():
     ndias = max(len(np.unique(dias_arr)), 1)
     maxpj = int(np.bincount(jid_all).max())
 
-    # --- v11: PORTA — o que nao presta nem roda -------------------------------
+    # --- v11.5: SELO (nunca bloqueia) -----------------------------------------
+    # A varredura SEMPRE responde. "Quais as configs mais lucrativas destes 7
+    # dias?" e' pergunta legitima e tem resposta. O que muda com amostra curta
+    # nao e' o direito de rodar: e' o que o resultado PODE ser chamado.
+    #   VALIDAVEL -> da' pra carimbar (semanas pra medir persistencia, jogos
+    #                independentes suficientes e holdout com volume)
+    #   DIRECAO   -> e' o ranking do periodo, nao e' bot: serve pra apontar
+    #                onde cavar, e o carimbo tem que vir de dado novo
+    # Dias e' proxy ruim (15 dias de CLA com 4.000 jogos tem mais informacao
+    # que 40 dias de liga com 150), entao o selo olha JOGOS e SEMANAS.
     _base_roi = float(u.mean()) * 100
     _du_base = np.bincount(dia_idx, weights=u, minlength=n_dias_tot)
     _frac_pos = float((_du_base > 0).sum()) / max(n_dias_tot, 1)
-    porta = []
-    if ndias < a.min_dias:
-        porta.append(f'{ndias} dias de treino (minimo {a.min_dias}) — com poucos '
-                     f'dias o p95 do acaso passa de +10% e tudo "aprova"')
-    # v11.1: arquivo com os DOIS lados (HC ambos, over+under) tem baseline =
-    # vig por construcao e 0 dias positivos — a regua de mercado morto so vale
-    # pra arquivo de UM lado (over so, zebra so), onde o baseline mede o lado.
-    _n_zeb = int((zeb == 1).sum()); _n_fav = int((zeb == 0).sum())
-    _dois_lados = min(_n_zeb, _n_fav) >= 0.30 * N
-    if _dois_lados:
-        print(f'porta: arquivo de DOIS lados ({_n_zeb:,} zebra / {_n_fav:,} fav) — '
-              f'baseline {_base_roi:+.2f}% e\' a vig; regua de mercado morto nao se aplica')
-    elif _base_roi <= MORTO_ROI and _frac_pos <= MORTO_DIAS_POS:
-        porta.append(f'mercado morto: baseline {_base_roi:+.2f}% com '
-                     f'{_frac_pos * 100:.0f}% de dias positivos (regua: pior que '
-                     f'{MORTO_ROI:+.0f}% e menos de {MORTO_DIAS_POS * 100:.0f}%)')
-    if porta:
-        print('=' * 78)
-        print(' REPROVADO NA PORTA' + (' (seguindo por --forcar)' if a.forcar else ''))
-        for _m in porta:
-            print(f'   - {_m}')
-        print('=' * 78)
-        if not a.forcar:
-            raise SystemExit(3)
     _sem_per = pd.to_datetime(pd.Series(dias_arr)).dt.to_period('W-SUN')
     sem_idx = pd.factorize(_sem_per)[0]
     n_sem_tot = int(sem_idx.max()) + 1
+    _n_zeb = int((zeb == 1).sum()); _n_fav = int((zeb == 0).sum())
+    _dois_lados = min(_n_zeb, _n_fav) >= 0.30 * N
+
+    faltas = []
+    if n_jogos_tot < MIN_JOGOS_SELO:
+        faltas.append(f'{n_jogos_tot:,} jogos (para carimbar: {MIN_JOGOS_SELO:,})')
+    if n_sem_tot < MIN_SEMANAS_SELO:
+        faltas.append(f'{n_sem_tot} semana(s) — com menos de {MIN_SEMANAS_SELO} '
+                      'nao da pra ver se o padrao se mantem no tempo')
+    if ndias < a.min_dias:
+        faltas.append(f'{ndias} dias (com poucos dias o p95 do acaso passa de '
+                      f'+10% e quase tudo "aprova")')
+    selo = 'VALIDAVEL' if not faltas else 'DIRECAO'
+    print('=' * 78)
+    print(f' SELO: {selo}')
+    if faltas:
+        for _m in faltas:
+            print(f'   - {_m}')
+        print('   -> o ranking sai igual; o que sair daqui aponta onde cavar,')
+        print('      e so' + " vira bot depois de carimbar em dado novo.")
+    if not _dois_lados and _base_roi <= MORTO_ROI and _frac_pos <= MORTO_DIAS_POS:
+        print(f' AVISO: este lado do mercado esta MORTO no periodo — baseline '
+              f'{_base_roi:+.2f}% com {_frac_pos * 100:.0f}% de dias positivos.')
+        print('   Achado aqui e' + " nadar contra a mare: exija premio grande e carimbo.")
+    if _dois_lados:
+        print(f' arquivo de DOIS lados ({_n_zeb:,} x {_n_fav:,}) — baseline '
+              f'{_base_roi:+.2f}% e' + " a vig, nao o retorno de um lado.")
+    print('=' * 78)
 
     rng = np.random.default_rng(SEED)
     RH = rng.integers(1, 2 ** 63 - 1, size=N, dtype=np.int64).astype(np.uint64)
@@ -1711,17 +1732,35 @@ def main():
             _c = np.bincount(_cod[keep], minlength=_nn)
             _s = _s[_c > 0]
             rec[f'n_{_rot}'] = int(_s.size)
+            _viv = np.flatnonzero(_c > 0)
             if _s.size >= 4 and soma > 0:
-                _top = np.sort(_s)[-3:].sum()
-                rec[f'conc_{_rot}'] = round(float(_top / soma) * 100, 1)
-                _bot = np.sort(_s)[:3].sum()
-                rec[f'dano_{_rot}'] = round(float(_bot), 2)
+                _ordem = np.argsort(_s)
+                rec[f'conc_{_rot}'] = round(float(_s[_ordem[-3:]].sum() / soma) * 100, 1)
+                rec[f'dano_{_rot}'] = round(float(_s[_ordem[:3]].sum()), 2)
+                # v11.4 — A PERGUNTA CERTA: tirando os 3 melhores, sobra lucro?
+                # conc_* divide pelo lucro LIQUIDO; num mercado onde ganho e
+                # perda quase se anulam isso passa de 100% sempre (mediana 103%
+                # no garimpo 22, que reprovou 24.396 de 24.397 configs). O que
+                # importa e' se a config vive sem as 3 identidades campeas — e
+                # quanto do VOLUME elas carregam (whitelist disfarcada).
+                _ids = _viv[_ordem[-3:]]
+                _fora = ~np.isin(_cod[keep], _ids)
+                _nf = int(_fora.sum())
+                rec[f'roi_sem3_{_rot}'] = (round(float(su[_fora].mean()) * 100, 2)
+                                           if _nf >= 30 else None)
+                rec[f'vol3_{_rot}'] = round((n - _nf) / max(n, 1) * 100, 1)
             else:
                 rec[f'conc_{_rot}'] = None
-        _cp = rec.get('conc_par')
-        _ca = rec.get('conc_alvo')
-        rec['id_suspeita'] = 1 if ((_cp is not None and _cp > 40)
-                                   or (_ca is not None and _ca > 40)) else 0
+                rec[f'roi_sem3_{_rot}'] = None
+                rec[f'vol3_{_rot}'] = None
+        # v11.4: suspeita de identidade = a config MORRE sem os 3 melhores
+        # (par ou alvo), ou os 3 melhores carregam volume demais.
+        _r3p, _r3a = rec.get('roi_sem3_par'), rec.get('roi_sem3_alvo')
+        _v3p, _v3a = rec.get('vol3_par'), rec.get('vol3_alvo')
+        rec['id_suspeita'] = 1 if (
+            (_r3p is not None and _r3p <= 0) or (_r3a is not None and _r3a <= 0)
+            or (_v3p is not None and _v3p > CONC_MAX)
+            or (_v3a is not None and _v3a > CONC_MAX)) else 0
         rec.update(
             teto=(teto if teto < 999 else '-'),
             apostas=n, jogos=nj, por_jogo=round(n / nj, 2),
@@ -2360,7 +2399,8 @@ def main():
         reguas.append(('nao desaba no cego', (R['roi_treino'] - R['roi_cego']) <= folga))
     reguas.append((f'premio >= {PREMIO_MIN:.0f} pts sobre o baseline',
                    R['premio'].fillna(-99) >= PREMIO_MIN))
-    reguas.append((f'sem identidade (top-3 pares/alvos <= {CONC_MAX:.0f}%)',
+    reguas.append(('sem identidade (vive sem os 3 melhores; volume deles <= '
+                   f'{CONC_MAX:.0f}%)',
                    R['id_suspeita'].fillna(1) == 0))
     reguas.append((f'>= {N_PAR_MIN} pares distintos', R['n_par'].fillna(0) >= N_PAR_MIN))
     reguas.append(('maioria das semanas positiva',
@@ -2369,7 +2409,11 @@ def main():
     for _nome, _m in reguas:
         cond &= _m
     R['robusta'] = cond.astype(int)          # v11.2: viaja no TUDO pro estagio 9
+    R['selo'] = selo                         # v11.5: VALIDAVEL | DIRECAO
     ROB = R[cond].sort_values(['unidades'], ascending=False)
+    if selo != 'VALIDAVEL' and len(ROB):
+        print(f' ATENCAO: {len(ROB)} configs passaram as reguas, mas o SELO e' + '\''
+              f' {selo} — isto e' + "' um RANKING DO PERIODO, nao um bot validado.")
     if len(ROB) == 0 and len(R):
         _rep = sorted(((int((~_m).sum()), _nome) for _nome, _m in reguas), reverse=True)
         print(' ROBUSTAS VAZIA — motivo: ' + ' | '.join(
@@ -2385,14 +2429,15 @@ def main():
     for w in rec_js:                       # leitura frente -> tras
         cols += [f'roi_{w}d', f'u_{w}d', f'G_{w}d', f'R_{w}d', f'ap_{w}d']
     cols += ['borda_chip', 'fragil', 'conc_par', 'conc_alvo', 'n_par',
-             'n_alvo', 'dano_par', 'id_suspeita',
+             'n_alvo', 'dano_par', 'roi_sem3_par', 'roi_sem3_alvo',
+             'vol3_par', 'vol3_alvo', 'id_suspeita',
              'u_dia', 'ap_dia', 'odd_media', 'break_even',
              'margem_be', 'linha_media', 'DD', 'lucro_dd', 'pior_jogo',
              'pior_dia', 'melhor_dia', 'dias_pos', 'dias_neg', 'max_reds',
              'z_jogo', 'roi_m1', 'roi_m2', 'acima_sorte', 'acima_placebo',
              'roi_treino', 'roi_cego', 'ap_cego', 'desvio_cego', 'equiv',
              'acima_sorte_par', 'premio', 'premio_alto', 'sem_tot', 'sem_pos',
-             'ult_sem_u', 'robusta']
+             'ult_sem_u', 'robusta', 'selo']
     cols = [c for c in cols if c in R.columns]
 
     LEGENDA = pd.DataFrame([
@@ -2416,7 +2461,8 @@ def main():
         ('acima_placebo', 'ROI menos a barra p95 da busca rodada em dado embaralhado'),
         ('roi_treino / roi_cego / desvio_cego', 'treino vs ultimos dias nunca vistos pela busca'),
         ('equiv', 'quantas configuracoes diferentes selecionam EXATAMENTE as mesmas apostas'),
-        ('ROBUSTAS', 'so quem passa em TUDO: sorte por jogo E por par, placebo, z>=2, duas metades positivas, cego, premio>=5 sobre o baseline, sem identidade (top-3<=40%), >=10 pares, maioria das semanas positiva'),
+        ('selo', 'v11.5: VALIDAVEL = da pra carimbar (>=800 jogos, >=3 semanas, dias suficientes) | DIRECAO = ranking do periodo, aponta onde cavar mas so vira bot com carimbo em dado novo. A varredura NUNCA bloqueia: amostra curta muda o rotulo, nao o direito de rodar'),
+        ('ROBUSTAS', 'so quem passa em TUDO: sorte por jogo E por par, placebo, z>=2, duas metades positivas, cego, premio>=5 sobre o baseline, sem identidade (vive sem os 3 melhores pares/alvos e o volume deles nao passa de 40%), >=10 pares, maioria das semanas positiva'),
         ('acima_sorte_par', 'v11: ROI menos o teto p95 sorteando PARES inteiros ate o mesmo n de jogos — a barra certa pra config de banda de confrontos'),
         ('premio / premio_alto', 'v11: ROI menos o baseline do arquivo; premio_alto=1 acima de 25 pts (historico real do projeto: 9-21) — nao bloqueia, audite'),
         ('sem_tot / sem_pos / ult_sem_u', 'v11: semanas com aposta, semanas positivas e unidades da ULTIMA semana — le a ponta do arco'),
@@ -2431,7 +2477,9 @@ def main():
         ('conc_alvo', 'idem para os 3 JOGADORES em que se aposta'),
         ('n_par / n_alvo', 'quantos pares/jogadores distintos a config toca — poucos = sem lastro'),
         ('dano_par', 'unidades perdidas nos 3 PARES piores (o espelho: quanto um troll estaria custando)'),
-        ('id_suspeita', '1 = concentracao acima de 40% em pares OU em jogadores: audite antes de operar'),
+        ('id_suspeita', 'v11.4: 1 = a config MORRE sem os 3 melhores pares/alvos (roi_sem3 <= 0) ou eles carregam mais de 40% das apostas (vol3). Antes era conc_* > 40%, que num mercado de liquido pequeno reprovava tudo (garimpo 22: 24.396 de 24.397)'),
+        ('roi_sem3_par / roi_sem3_alvo', 'v11.4: ROI da config TIRANDO os 3 pares (ou 3 jogadores) mais lucrativos — o numero honesto sem as identidades campeas'),
+        ('vol3_par / vol3_alvo', 'v11.4: % das apostas que vem desses 3 — acima de 40% e whitelist disfarcada de filtro'),
         ('FONTE TICK', 'entrada pode ser o parquet BRUTO: o conversor replica o runner (escancarado zebra, FT, chips por cobertura). --h2h = dump carimbado do banco; --paridade = export do painel pra conferencia'),
         ('SNIPERS', 'aprovadas em todas as reguas com apostas >= --min-ap-sniper, ordenadas por WR (a regua sniper)'),
         ('FRONTEIRA_WR', 'a melhor config (por unidades) em cada patamar de WR — o preco de cada ponto de WR em volume'),

@@ -477,6 +477,8 @@ async def executar_varredura(job_id: int):
     # a varredura. Desligavel com params.sem_esteira=true.
     if gate_ok is not False and not params.get("sem_esteira"):
         try:
+            class _PulaEsteira(Exception):
+                pass
             n_top = int(params.get("esteira_top") or 12)
             import pandas as pd
 
@@ -490,6 +492,17 @@ async def executar_varredura(job_id: int):
                                    encoding_errors="replace")
 
             t = _ler_tudo(tudo_csv)
+            _selo = (str(t["selo"].iloc[0]).strip().upper()
+                     if "selo" in t.columns and len(t) else "VALIDAVEL")
+            if _selo != "VALIDAVEL":
+                # v11.5: amostra curta -> o garimpo vale como DIRECAO. Nao
+                # gasta 2h de motor carimbando ranking de periodo; o carimbo
+                # so' faz sentido em dado que da' pra validar.
+                resumo["esteira"] = {"pulado": f"selo {_selo}: ranking do periodo, "
+                                               "nao vai pro carimbo automatico"}
+                logger.info(f"[varredura] job {job_id}: selo {_selo} — "
+                            "estagio 9 (carimbo no motor) pulado")
+                raise _PulaEsteira
             if "robusta" in t.columns:
                 # v11.2: o topo que vai pro motor e' a ROBUSTAS do varredor
                 # (11 reguas: sorte por jogo E par, placebo, cego, premio,
@@ -593,6 +606,8 @@ async def executar_varredura(job_id: int):
                                          "fonte": fonte}
                     logger.info(f"[varredura] job {job_id}: top {len(itens)} "
                                 f"no motor (rodada {ej})")
+        except _PulaEsteira:
+            pass                       # v11.5: selo DIRECAO — ja anotado no resumo
         except Exception as e:
             resumo["esteira"] = {"erro": f"{type(e).__name__}: {e}"}
 

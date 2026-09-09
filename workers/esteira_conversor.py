@@ -55,13 +55,16 @@ _EIXOS = {
     'tot_env':  ('tot_env_min', 'tot_env_max'),
     'momento':  ('tot_env_min', 'tot_env_max'),
     'atropelo': ('atropelo_min', 'atropelo_max'),
+    # v5: `dif` do varredor = |placar casa - fora| no envio = filtro
+    # diferencaPlacar (piso) + diferencaPlacarMax (teto) do motor. Estava na
+    # lista de "o motor nao tem" por confusao com diferenca de WINRATES.
+    'dif':      ('dif_min', 'dif_max'),
 }
 
 # o varredor corta por estes, o motor NAO tem filtro. Recusar e' o certo.
 _SEM_FILTRO_NO_MOTOR = {
     'desloc':  'deslocamento da linha desde a abertura',
     'lin_ini': 'linha de abertura do jogo',
-    'dif':     'diferenca entre os winrates dos dois jogadores',
 }
 
 
