@@ -686,7 +686,24 @@ def _fase_do_tick(regra, live_time, meia_min):
         if not m:
             return None
         return 1 if m.group(1) == '1' else 2
+    if regra == 'periodo_superbet':
+        # v27.1 — a superbet manda o placar POR PERIODO (`metadata.periods`) e o
+        # coletor passou a gravar o do 1o tempo no tick PERIOD_UPDATE do HT.
+        # Esse tick e' AUTORIDADE (fase 0): dispensa rotulo e relogio, que sao
+        # justamente o que atrasa nessa casa. Tratado no laco do placar_ht.
+        return None
     return None
+
+
+_RE_HT_AUTORIDADE = re.compile(r'^\s*(HT|INTERVALO)\b', re.I)
+
+
+def _ht_autoridade(live_time):
+    """True se o tick e' um marcador de INTERVALO emitido pela propria casa."""
+    try:
+        return bool(_RE_HT_AUTORIDADE.match(str(live_time or '')))
+    except Exception:
+        return False
 
 
 def _regra_ht_do_tick(t):
@@ -4138,6 +4155,7 @@ async def executar_backtest(job_id: int):
         _ht_v27: dict = {}     # evt -> (ts, (sh, sa)) do ultimo tick do 1o tempo
         _ht_v27_teve2t: set = set()
         _ht_v27_meia: dict = {}
+        _ht_v27_auto: dict = {}   # evt -> tick de intervalo explicito da casa
         for t in ticks:
             _regra = _regra_ht_do_tick(t)
             if _regra:
@@ -4154,6 +4172,17 @@ async def executar_backtest(job_id: int):
                     except Exception:
                         _casa_v27 = None
                     _ht_v27_meia[_evt] = _meia_da_liga(_liga_v27, _casa_v27)
+                # v27.1 — AUTORIDADE: tick de intervalo explicito da casa
+                # (PERIOD_UPDATE/HT da superbet, que carrega o `periods[1]`).
+                # Quando existe, ele manda e nada mais e' olhado: nao depende de
+                # rotulo nem de relogio, que sao o que atrasa. Ver
+                # PLACAR_HT_POR_FEED.
+                if _ht_autoridade(_lt_v27) and _sh is not None and _sa is not None:
+                    _ht_v27_teve2t.add(_evt)
+                    _ant = _ht_v27_auto.get(_evt)
+                    if _ant is None or _tts <= _ant[0]:
+                        _ht_v27_auto[_evt] = (_tts, (_sh, _sa))
+                    continue
                 _fase = _fase_do_tick(_regra, _lt_v27, _ht_v27_meia[_evt])
                 if _fase == 2:
                     _ht_v27_teve2t.add(_evt)
@@ -4193,6 +4222,9 @@ async def executar_backtest(job_id: int):
         for _evt, (_tts, _pl) in _ht_v27.items():
             if _evt in _ht_v27_teve2t and _evt not in placar_ht:
                 placar_ht[_evt] = _pl
+        # a autoridade entra por ultimo e SOBREPOE o inferido
+        for _evt, (_tts, _pl) in _ht_v27_auto.items():
+            placar_ht[_evt] = _pl
 
         # v23 — ERR: indice do "erro da casa" montado DOS PROPRIOS TICKS do
         # job (abertura = 1o tick do mercado de total; total = placar do jogo
