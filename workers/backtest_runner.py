@@ -600,6 +600,9 @@ _RE_2xN = re.compile(r'\b2\s*[xX]\s*(\d+)')
 _RE_MMSS = re.compile(r"^(\d{1,3})'(\d{1,2})$")
 _RE_MIN = re.compile(r"^(\d{1,3})'$")
 _RE_PARTE = re.compile(r'^(\d)\s*[ao°ºª]{0,2}\s*parte$')
+# com ou sem o cronometro depois: "1ª parte" e "1ª parte 4'" casam os dois
+_RE_PARTE_PREFIXO = re.compile(r'^(\d)\s*[ao°ºª]{0,2}\s*parte\b')
+_RE_POR_INICIAR = re.compile(r'^por\s+iniciar\b', re.I)
 _RE_1H = re.compile(r'^(\d)H\b')
 
 
@@ -661,10 +664,19 @@ def _fase_do_tick(regra, live_time, meia_min):
         seg = int(m.group(1)) * 60 + int(m.group(2))
         return 1 if seg <= meia_min * 60 else 2
     if regra == 'relogio_estrela':
-        m = _RE_PARTE.match(s)
+        # v27.1 — o coletor passou a gravar o PERIODO (campo `ls` da Altenar)
+        # na frente do cronometro: "1ª parte 4'". Quando o periodo esta ali, ele
+        # MANDA e o minuto nem e' olhado — e' o unico jeito exato nessa casa,
+        # porque o cronometro dela so tem minuto inteiro e a fronteira cai
+        # dentro dele (31,3% de erro medido contra a betano em 182 jogos).
+        # "Por iniciar" = jogo nao comecou -> None (nao e' 1o tempo).
+        m = _RE_PARTE_PREFIXO.match(s)
         if m:
-            n = int(m.group(1))
-            return 1 if n == 1 else 2
+            return 1 if m.group(1) == '1' else 2
+        if _RE_POR_INICIAR.match(s):
+            return None
+        # tick antigo, gravado antes do fix do coletor: so o minuto. Continua
+        # funcionando, com a imprecisao da fronteira ja documentada.
         m = _RE_MIN.match(s)
         if not m or not meia_min:
             return None
