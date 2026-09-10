@@ -31,6 +31,7 @@ import asyncio
 import io
 import json
 import logging
+import os
 import re
 from datetime import datetime
 from typing import List, Optional
@@ -871,6 +872,58 @@ async def _rodar_backtest_seguro(job_id: int):
                 )
         except Exception:
             logger.exception(f"[backtest_upload] nao consegui marcar job {job_id} como erro")
+
+
+@router.get("/arquivos")
+async def listar_parquets():
+    """v029: os parquets que ja estao no servidor, pro painel escolher em vez
+    de exigir que o usuario decore o caminho. Le a MESMA pasta que o backtest
+    usa (uploads_backtest) e junta o APELIDO da tabela `rotulos`, quando tem.
+    So' leitura — nada aqui muda o funcionamento do backtest."""
+    import re as _re
+    itens = []
+    try:
+        from workers.backtest_upload import UPLOAD_DIR
+        base = str(UPLOAD_DIR.resolve())
+        for nome in os.listdir(base):
+            if not nome.lower().endswith(".parquet"):
+                continue
+            cam = os.path.join(base, nome)
+            try:
+                st = os.stat(cam)
+            except OSError:
+                continue
+            # <hash>_mikedb_<casa>_<liga...>_<de>_<ate>.parquet
+            m = _re.match(r"^([0-9a-f]{6,})_(?:mikedb_)?(.+?)"
+                          r"(?:_(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2}))?"
+                          r"\.parquet$", nome, _re.I)
+            miolo = (m.group(2) if m else nome[:-8]).replace("_", " ").strip()
+            partes = miolo.split(" ", 1)
+            itens.append({
+                "upload_id": cam.replace("\\", "/"),
+                "arquivo": nome,
+                "limpo": miolo,
+                "casa": (partes[0].lower() if partes else ""),
+                "liga": (partes[1] if len(partes) > 1 else ""),
+                "de": (m.group(3) if m else None),
+                "ate": (m.group(4) if m else None),
+                "mb": round(st.st_size / (1024 * 1024), 1),
+                "modificado": int(st.st_mtime),
+            })
+        itens.sort(key=lambda x: x["modificado"], reverse=True)
+    except Exception as e:
+        logger.warning(f"[backtest] falha listando parquets: {e}")
+        return {"arquivos": [], "erro": str(e)}
+    try:
+        from routers.rotulos import apelidos
+        ap = await apelidos("parquet", [i["upload_id"] for i in itens])
+        for it in itens:
+            it["apelido"] = ap.get(it["upload_id"]) or ""
+    except Exception as e:
+        logger.warning(f"[backtest] apelidos indisponiveis: {e}")
+        for it in itens:
+            it["apelido"] = ""
+    return {"arquivos": itens}
 
 
 @router.post("/jobs-avulso")
