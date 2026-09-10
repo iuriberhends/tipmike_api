@@ -432,6 +432,13 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
                 return s
 
         def key(d):
+            # v: holdout VAZIO (0 configs com aposta na janela cega) faz o
+            # agg(axis=1) do pandas devolver DataFrame em vez de Series e a
+            # atribuicao d["_k"] estoura ("Cannot set a DataFrame with
+            # multiple columns to the single column _k"). Sem holdout
+            # cruzavel a tela abre igual, so sem as colunas do cego.
+            if not len(d):
+                return pd.Series(dtype="object", index=d.index)
             return d[K].astype(str).apply(lambda c: c.map(nrm)).agg("|".join, axis=1)
 
         m["_k"] = key(m)
@@ -607,6 +614,8 @@ async def alertas_da_selecao(vid: int, req: AlertasSelecaoRequest,
                     return s
 
             def key(d):
+                if not len(d):                 # holdout vazio: ver nota acima
+                    return pd.Series(dtype="object", index=d.index)
                 return d[K].astype(str).apply(
                     lambda c: c.map(nrm)).agg("|".join, axis=1)
 

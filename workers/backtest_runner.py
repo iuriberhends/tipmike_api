@@ -1,5 +1,5 @@
 """
-workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT + v25.2 anotar_tudo)
+workers/backtest_runner.py - Worker do backtest (v12 + v15 maxPartidas + v16 atropelo + v17 tot_env + v18 fix + v20 hc_relativo + v22 tick_a_tick + v23 err + v24 chip HT + v25 anotar_tudo)
 
 v24 - CHIP DE HANDICAP DE 1o TEMPO COM PLACAR DE INTERVALO (26/ago): ate aqui a
   cobertura do handicap (hc_pct / escadinha) era medida SEMPRE com o placar
@@ -1988,12 +1988,19 @@ class H2HCache:
     LIMITE_JOGOS_POR_PAR = 100      # janela padrao/maxima dos filtros normais
     TETO_BUSCA = 5000               # teto absoluto do _buscar (suporta 'todas')
 
-    def __init__(self, pool, casa: str, esporte_banco: str):
+    def __init__(self, pool, casa: str, esporte_banco: str, h2h_as_of=None):
         self._pool = pool
         self._casa = casa
         self._esporte = esporte_banco
         self._cache: dict = {}
         self._cortes: dict = {}   # v16: {par -> {'_': _SlotCorte}}
+        # v28: CARIMBO DO H2H. O h2h_historico recebe jogos NOVOS e tambem
+        # RETROATIVOS (o seeder preenche buracos pra tras). Sem carimbo, o
+        # mesmo job rodado 40 min depois ve outro historico e o chip muda —
+        # foi o 108 -> 608 apostas entre o garimpo 27 e a esteira 20. Com
+        # `h2h_as_of` preenchido, so entra linha inserida ate' aquele
+        # instante: o numero vira reproduzivel. None = comportamento antigo.
+        self._as_of = h2h_as_of
 
     @staticmethod
     def _normalizar_par(ja: str, jb: str) -> tuple:
@@ -2100,15 +2107,17 @@ class H2HCache:
                 OR (UPPER(jogador_a) = UPPER($4) AND UPPER(jogador_b) = UPPER($3)))
               AND score_home IS NOT NULL
               AND score_away IS NOT NULL
+              """ + ("AND inserted_at <= $6" if self._as_of else "") + """
         ) combinado
         ORDER BY ts DESC
         LIMIT $5
         """
         try:
             async with self._pool.acquire() as conn:
-                rows = await conn.fetch(
-                    sql, self._casa, self._esporte, j1, j2, self.TETO_BUSCA
-                )
+                _args = [self._casa, self._esporte, j1, j2, self.TETO_BUSCA]
+                if self._as_of:
+                    _args.append(self._as_of)
+                rows = await conn.fetch(sql, *_args)
         except Exception as e:
             logger.exception(f"[h2h] Erro buscando par ({j1}, {j2}): {e}")
             return []
@@ -2142,12 +2151,13 @@ class HistIndividualCache:
     TETO_BUSCA = H2HCache.TETO_BUSCA
     MARGEM_AO_VIVO_MIN = H2HCache.MARGEM_AO_VIVO_MIN
 
-    def __init__(self, pool, casa: str, esporte_banco: str):
+    def __init__(self, pool, casa: str, esporte_banco: str, h2h_as_of=None):
         self._pool = pool
         self._casa = casa
         self._esporte = esporte_banco
         self._cache: dict = {}
         self._cortes: dict = {}   # v16: {jogador -> {'_': _SlotCorte}}
+        self._as_of = h2h_as_of   # v28: ver nota no H2HCache
 
     @staticmethod
     def _chave(jogador: str) -> str:
@@ -2223,15 +2233,17 @@ class HistIndividualCache:
               AND (UPPER(jogador_a) = UPPER($3) OR UPPER(jogador_b) = UPPER($3))
               AND score_home IS NOT NULL
               AND score_away IS NOT NULL
+              """ + ("AND inserted_at <= $5" if self._as_of else "") + """
         ) combinado
         ORDER BY ts DESC
         LIMIT $4
         """
         try:
             async with self._pool.acquire() as conn:
-                rows = await conn.fetch(
-                    sql, self._casa, self._esporte, jogador, self.TETO_BUSCA
-                )
+                _args = [self._casa, self._esporte, jogador, self.TETO_BUSCA]
+                if self._as_of:
+                    _args.append(self._as_of)
+                rows = await conn.fetch(sql, *_args)
         except Exception as e:
             logger.exception(f"[indiv] Erro buscando jogador ({jogador}): {e}")
             return []
@@ -2472,11 +2484,6 @@ MIN_H2H_DEFAULT = 5
 JANELAS_PADRAO_WR = (5, 10, 15)
 JANELAS_PADRAO_MEDIA = (5, 10, 20)
 # v25: janelas que o modo garimpo (anotarTudo) sempre calcula (0 = Todas)
-# v25.2: virou DEFAULT — o job pode pedir outras em filtros.anotarJanelas.
-# POR QUE IMPORTA: cada janela custa ~9 colunas por aposta no apostas_detalhe,
-# e o jsonb do Postgres tem teto de 256 MB. Com as 7 janelas, 86 mil apostas
-# dao ~317 MB e o job MORRE no fim (job 2132). Regra de bolso:
-#   ate  25k apostas -> 7 janelas | ate 50k -> 5 | ate 100k -> 3
 JANELAS_ANOTAR_TUDO = (0, 5, 10, 15, 20, 30, 50)
 
 
@@ -3902,20 +3909,6 @@ async def executar_backtest(job_id: int):
         # aposta sem filtrar. Liga o errAnotar junto (o err e' um dos eixos)
         # quando o mercado suporta. Ausente = job identico ao v24.
         anotar_tudo = bool(_fd.get('anotarTudo', False))
-        _jat = JANELAS_ANOTAR_TUDO
-        if anotar_tudo and _fd.get('anotarJanelas'):
-            try:
-                _jat = tuple(sorted({int(x) for x in _fd['anotarJanelas']
-                                     if 0 <= int(x) <= 200}))
-                if not _jat:
-                    _jat = JANELAS_ANOTAR_TUDO
-            except (TypeError, ValueError):
-                logger.warning(f"[backtest] job {job_id}: anotarJanelas invalido, "
-                               f"usando o default {JANELAS_ANOTAR_TUDO}")
-        if anotar_tudo:
-            logger.info(f"[backtest] job {job_id}: anotarTudo com janelas {_jat} "
-                        f"(~{9 * len(_jat) + 16} colunas/aposta; o jsonb do "
-                        f"apostas_detalhe tem teto de 256 MB)")
         if anotar_tudo and bot.get('mercado', '') in ERR_MERCADOS_SUPORTADOS:
             err_anotar = True
         # FAIL CLOSED: err so faz sentido em total seco (over_under_ft/ht).
@@ -3976,15 +3969,15 @@ async def executar_backtest(job_id: int):
         # e viram coluna, independente dos filtros do job. Custo assumido: e'
         # um job de export, nao de bot. Sem a flag nada disto roda.
         if anotar_tudo:
-            janelas_wr = set(janelas_wr) | set(_jat)
-            janelas_media = set(janelas_media) | set(_jat)
+            janelas_wr = set(janelas_wr) | set(JANELAS_ANOTAR_TUDO)
+            janelas_media = set(janelas_media) | set(JANELAS_ANOTAR_TUDO)
             # O/U: o individual sai pelo espelho (ind A/B/pior), que so roda
             # com tem_indiv. HC: NAO forca tem_indiv — no ramo HC ele muda
             # a decisao (zebra nao identificavel vira rejeicao); la o anotar
             # busca o historico por conta propria e nunca rejeita.
             if not _mercado_eh_hc(bot.get('mercado', '')):
                 tem_indiv = True
-                janelas_wr_indiv = set(janelas_wr_indiv) | set(_jat)
+                janelas_wr_indiv = set(janelas_wr_indiv) | set(JANELAS_ANOTAR_TUDO)
 
         if filtros_unificados:
             tipos_resumo = [f"{f.get('tipo')}_ult{f.get('janela')}" for f in filtros_unificados]
@@ -4280,12 +4273,21 @@ async def executar_backtest(job_id: int):
             )
 
         sport_banco = ESPORTE_UI_PARA_BANCO.get(bot.get('esporte', ''), bot.get('esporte', ''))
-        h2h_cache = H2HCache(pool, bot.get('casa', ''), sport_banco)
+        try:
+            _as_of = job_row['h2h_as_of']
+        except (KeyError, TypeError):
+            _as_of = None          # coluna ainda nao migrada: roda como antes
+        if _as_of:
+            logger.info(f"[backtest] job {job_id}: h2h CARIMBADO em {_as_of} "
+                        "— chip so' enxerga historico inserido ate' esse "
+                        "instante (numero reproduzivel em re-run)")
+        h2h_cache = H2HCache(pool, bot.get('casa', ''), sport_banco, _as_of)
         # v11: cache de historico INDIVIDUAL (so consultado se tem_indiv)
         # v16 PERF: memo da taxa por (jogador, qtd de jogos). Sem isso o
         # calculo rodava do zero em TODO tick e a rodada ficava lenta.
         _atr_memo: dict = {}
-        indiv_cache = HistIndividualCache(pool, bot.get('casa', ''), sport_banco)
+        indiv_cache = HistIndividualCache(pool, bot.get('casa', ''),
+                                          sport_banco, _as_of)
 
         max_apostas_partida = bot.get('max_apostas_partida')
         apostas_por_evento: dict = {}
@@ -4705,7 +4707,7 @@ async def executar_backtest(job_id: int):
                                 logger.warning(f"[backtest] job {job_id}: hist indiv (anotar) {e}")
                                 _ji_an = None
                         _anotar_chips_hc(jogos_h2h, stats, tick.get('selecao', ''),
-                                         tick['ts'], _jat, jogos_indiv=_ji_an)
+                                         tick['ts'], JANELAS_ANOTAR_TUDO, jogos_indiv=_ji_an)
                     qtd_h2h = stats.get('hc_pct_qtd', 0) or 0
                     if qtd_h2h < H2H_MIN_SAUDAVEL:
                         qualidade['apostas_h2h_fraco'] += 1
@@ -4970,7 +4972,7 @@ async def executar_backtest(job_id: int):
         if anotar_tudo:
             _eh_hc_cols = _mercado_eh_hc(bot.get('mercado', ''))
             _extra_cols = []
-            for _n in sorted(_jat):
+            for _n in sorted(JANELAS_ANOTAR_TUDO):
                 _tok = str(int(_n)); _lbl = "Todas" if _n == 0 else f"Últ. {_n}"
                 _extra_cols += [(_lbl, f'wr_ult{_tok}'),
                                 (f"Qtd {_lbl}", f'wr_ult{_tok}_qtd'),

@@ -453,9 +453,13 @@ class BacktestAvulsoRequest(BaseModel):
     # v25: ANOTAR TUDO (modo garimpo) — escreve Momento/Atropelo/Folga (e Err
     # quando o mercado suporta) por aposta SEM filtrar. Pro export do garimpo.
     anotar_tudo: bool = Field(default=False)
-    # v25.2: quais janelas o anotar_tudo calcula (0 = Todas). Menos janelas =
-    # export menor; o apostas_detalhe e' jsonb e estoura em 256 MB.
     anotar_janelas: Optional[List[int]] = Field(default=None)
+    # v28: CARIMBO DO H2H. true = congela no instante da criacao do job (o
+    # chip so enxerga historico ja inserido) -> re-run devolve o MESMO numero
+    # e o garimpo fica comparavel com a esteira. Tambem aceita instante
+    # explicito, pra uma rodada inteira usar o carimbo do job-mae.
+    congelar_h2h: bool = Field(default=False)
+    h2h_as_of: Optional[str] = Field(default=None, max_length=40)
     atropelo_ativo: bool = Field(default=False)
     atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
     atropelo_max: Optional[float] = Field(default=None, ge=0, le=100)
@@ -917,18 +921,28 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
     pool = get_pool()
     try:
         async with pool.acquire() as conn:
+            # v28: carimbo do h2h — congela o historico que o chip enxerga
+            _as_of_job = None
+            if getattr(req, "h2h_as_of", None):
+                _as_of_job = str(req.h2h_as_of).strip() or None
+            elif bool(getattr(req, "congelar_h2h", False)):
+                from datetime import datetime, timezone
+                _as_of_job = datetime.now(timezone.utc).isoformat()
+
             try:
                 job_id = await conn.fetchval(
                     """
                     INSERT INTO backtest_jobs
                         (bot_id, data_inicio, data_fim, stake_modo, stake_valor,
-                         banca_inicial, bot_snapshot, status, progresso, upload_id, user_id)
-                    VALUES (NULL, NULL, NULL, $1, $2, $3, $4::jsonb, 'pendente', 0, $5, $6)
+                         banca_inicial, bot_snapshot, status, progresso, upload_id,
+                         user_id, h2h_as_of)
+                    VALUES (NULL, NULL, NULL, $1, $2, $3, $4::jsonb, 'pendente', 0, $5,
+                            $6, $7::timestamptz)
                     RETURNING id
                     """,
                     req.stake_modo, req.stake_valor, req.banca_inicial,
                     snapshot_json, req.upload_id,
-                    usuario.get("id"),
+                    usuario.get("id"), _as_of_job,
                 )
             except Exception as e:
                 msg = str(e).lower()

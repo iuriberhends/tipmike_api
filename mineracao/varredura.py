@@ -108,7 +108,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v11.5 (grade do motor + selo em vez de porta)'
+VERSAO = 'VARREDURA v11.6 (grade do motor + selo + cauda de eixo inteiro)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -881,6 +881,24 @@ def cortes_complementar(nome, vals):
         (f'{nome}<={fmt(q[0])}', vals <= q[0]),
         (f'{nome} {fmt(q[1])}~{fmt(q[3])}', (vals >= q[1]) & (vals <= q[3])),
     ]
+    # v11.6 — CAUDA DE EIXO INTEIRO. Quantil nao alcanca a ponta: `dif`
+    # (|placar A-B| no envio) e' quase todo 0/1/2, entao p90 = 2 e a grade
+    # NUNCA testava dif>=4 — que e' exatamente onde mora o UNDER CLA
+    # validado no motor (margem >= 4, +19,8%). Para eixo que so tem valores
+    # inteiros e poucos distintos, varre TODOS os inteiros da faixa (ate 12),
+    # nas duas pontas. A poda por n>0 e por contagem repetida cuida do resto.
+    try:
+        _vf = v[np.isfinite(v)]
+        _uni = np.unique(_vf)
+        _eh_int = _uni.size <= 30 and np.allclose(_uni, np.round(_uni))
+        if _eh_int:
+            for _x in _uni:
+                if abs(_x) > 12:
+                    continue
+                cand.append((f'{nome}>={fmt(_x)}', vals >= _x))
+                cand.append((f'{nome}<={fmt(_x)}', vals <= _x))
+    except Exception:
+        pass
     saida, vistos = [], set()
     for rot, m in cand:
         c = int(m.sum())
