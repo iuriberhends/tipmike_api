@@ -182,6 +182,17 @@ def montar_snapshot(e: dict, casa_padrao=None, esporte_padrao=None) -> dict:
         if tmax is not None:
             filtros["totEnvMax"] = tmax
 
+    # v030: dif = |placar casa - fora| NO TICK. E' o mesmo eixo `dif` que o
+    # varredor emite e o motor tem (diferencaPlacar piso + diferencaPlacarMax
+    # teto, v26). Sem esta ponte a planilha rodava SEM o filtro e devolvia o
+    # numero de outra estrategia — em silencio.
+    dmin, dmax = _num(e.get("dif_min")), _num(e.get("dif_max"))
+    if dmin is not None or dmax is not None:
+        filtros["diferencaPlacarAtivo"] = True
+        filtros["diferencaPlacar"] = int(dmin) if dmin is not None else 0
+        if dmax is not None:
+            filtros["diferencaPlacarMax"] = int(dmax)
+
     mmin, mmax = _num(e.get("momento_min")), _num(e.get("momento_max"))
     if mmin is not None or mmax is not None:
         filtros["momentoAtivo"] = True

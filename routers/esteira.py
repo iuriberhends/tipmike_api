@@ -289,9 +289,41 @@ async def listar_arquivos(usuario: dict = Depends(get_current_user)):
     except Exception:
         logger.exception("[esteira] falha listando uploads_backtest")
     ups.sort(key=lambda x: -x["mtime"])
+    ups = ups[:100]
+    # v030: APELIDO do parquet (mesmo escopo do backtest avulso: nomeou uma
+    # vez, vale em toda tela) + casa/liga/periodo tirados do proprio nome.
+    # So' rotulo: nada aqui muda o que a rodada roda.
+    for u in ups:
+        u["apelido"] = ""
+        try:
+            m = _re.match(r"^(?:mikedb_)?(.+?)"
+                          r"(?:_(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2}))?"
+                          r"\.parquet$", u["nome"], _re.I)
+            miolo = (m.group(1) if m else u["nome"][:-8]).replace("_", " ").strip()
+            partes = miolo.split(" ", 1)
+            u["casa"] = partes[0].lower() if partes else ""
+            u["liga"] = partes[1] if len(partes) > 1 else ""
+            u["de"] = m.group(2) if m else None
+            u["ate"] = m.group(3) if m else None
+        except Exception:
+            u["casa"] = u["liga"] = ""
+            u["de"] = u["ate"] = None
+    try:
+        from routers.rotulos import apelidos
+        # a chave do apelido e' o caminho ABSOLUTO (o mesmo que o backtest
+        # avulso grava) — aqui o upload_id e' relativo, entao casa pelo fim
+        ap = await apelidos("parquet")
+        porfim = {}
+        for k, v in ap.items():
+            porfim[str(k).replace("\\", "/").split("/")[-1]] = v
+        for u in ups:
+            porfim_nome = u["upload_id"].split("/")[-1]
+            u["apelido"] = porfim.get(porfim_nome, "")
+    except Exception as e:
+        logger.warning(f"[esteira] apelidos indisponiveis: {e}")
     return {"planilhas": _lista("*.xlsx", ignora=("placar_", "esteira_")),
             "parquets": _lista("*.parquet"),
-            "uploads": ups[:100]}
+            "uploads": ups}
 
 
 

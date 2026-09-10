@@ -94,6 +94,30 @@ def _linha(row, completo=False):
 
 
 # ================================================================ endpoints ==
+def _do_parquet(caminho: str):
+    """v030: tira LIGA e PERIODO do nome do parquet
+    (`<hash>_mikedb_<casa>_<liga>_<de>_<ate>.parquet`). Sem isto a lista de
+    origens nao diz de que liga o job e' — que e' justamente o que obriga o
+    usuario a decorar o nome do arquivo. Nunca levanta."""
+    import os as _os
+    import re as _re
+    try:
+        nome = _os.path.basename(str(caminho or ""))
+        if not nome.lower().endswith(".parquet"):
+            return "", None, None
+        m = _re.match(r"^([0-9a-f]{6,})_(?:mikedb_)?(.+?)"
+                      r"(?:_(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2}))?"
+                      r"\.parquet$", nome, _re.I)
+        if not m:
+            return nome[:-8].replace("_", " ").strip(), None, None
+        miolo = m.group(2).replace("_", " ").strip()
+        partes = miolo.split(" ", 1)
+        liga = partes[1] if len(partes) > 1 else ""
+        return liga, m.group(3), m.group(4)
+    except Exception:
+        return "", None, None
+
+
 @router.get("/origens")
 async def listar_origens(limite: int = Query(50, ge=1, le=200),
                          usuario: dict = Depends(get_current_user)):
@@ -120,7 +144,8 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
                            ELSE 3 END
                 LIMIT 1""")
         campo_data = f"{col_data} AS criado_em" if col_data else "NULL AS criado_em"
-        base_sql = f"""SELECT id, {campo_data}, total_apostas, bot_snapshot, user_id
+        base_sql = f"""SELECT id, {campo_data}, total_apostas, bot_snapshot,
+                              user_id, upload_id, h2h_as_of
                          FROM backtest_jobs
                         WHERE status = 'concluido' AND total_apostas >= 500"""
         if acesso_total(usuario):
@@ -139,15 +164,37 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
                         or snap.get("linha_min") or snap.get("linha_max")
                         or snap.get("max_apostas_partida"))
         try:
+            up = r["upload_id"] or ""
+            liga, de, ate = _do_parquet(up)
             saida.append({
                 "job_id": r["id"], "criado_em": r["criado_em"],
                 "apostas": r["total_apostas"],
                 "mercado": snap.get("mercado"), "casa": snap.get("casa"),
                 "esporte": snap.get("esporte"),
                 "escancarado": not filtrado,
+                # v030: o que identifica a fonte de verdade. Antes a lista era
+                # "#2242 · over_under_ft · 887 apostas" e nao dava pra saber de
+                # QUE liga/periodo era o job — o usuario tinha que decorar o
+                # parquet. Tudo isto ja existia no banco, so nao viajava.
+                "lado": snap.get("lado"),
+                "upload_id": up,
+                "liga": liga, "de": de, "ate": ate,
+                "carimbado": bool(r["h2h_as_of"]),
+                "apelido": "",           # preenchido abaixo
             })
         except Exception:
             logger.exception(f"[varredura] origem {r['id']} ilegivel — pulando")
+    # apelido do PARQUET (escopo unico: nomear uma vez serve pra todo job que
+    # usa aquele arquivo) e apelido do proprio JOB, quando tiver
+    try:
+        from routers.rotulos import apelidos
+        ap_par = await apelidos("parquet", [x["upload_id"] for x in saida if x["upload_id"]])
+        ap_job = await apelidos("backtest", [str(x["job_id"]) for x in saida])
+        for x in saida:
+            x["apelido"] = (ap_job.get(str(x["job_id"]))
+                            or ap_par.get(x["upload_id"]) or "")
+    except Exception as e:
+        logger.warning(f"[varredura] apelidos indisponiveis: {e}")
     return saida
 
 
