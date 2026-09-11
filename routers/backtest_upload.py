@@ -974,13 +974,25 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
     pool = get_pool()
     try:
         async with pool.acquire() as conn:
-            # v28: carimbo do h2h — congela o historico que o chip enxerga
+            # v28.2: carimbo do h2h — congela o historico que o chip enxerga.
+            # TEM que ser datetime NAIVE: a coluna e' TIMESTAMP sem fuso
+            # (migration 030, como o resto do projeto) e o asyncpg exige
+            # objeto datetime, nao string. A v28.0 mandava string ISO com
+            # fuso e o INSERT estourava com
+            #   "invalid input for query argument $7 ... got 'str'".
+            from datetime import datetime as _dt
             _as_of_job = None
-            if getattr(req, "h2h_as_of", None):
-                _as_of_job = str(req.h2h_as_of).strip() or None
+            _pedido = getattr(req, "h2h_as_of", None)
+            if _pedido:
+                try:
+                    _v = _dt.fromisoformat(str(_pedido).strip().replace("Z", ""))
+                    _as_of_job = _v.replace(tzinfo=None) if _v.tzinfo else _v
+                except ValueError:
+                    raise HTTPException(
+                        400, f"h2h_as_of invalido: {_pedido!r} — use ISO "
+                             "(ex.: 2026-09-11T20:34:25)")
             elif bool(getattr(req, "congelar_h2h", False)):
-                from datetime import datetime, timezone
-                _as_of_job = datetime.now(timezone.utc).isoformat()
+                _as_of_job = _dt.now()
 
             try:
                 job_id = await conn.fetchval(
@@ -990,7 +1002,7 @@ async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTas
                          banca_inicial, bot_snapshot, status, progresso, upload_id,
                          user_id, h2h_as_of)
                     VALUES (NULL, NULL, NULL, $1, $2, $3, $4::jsonb, 'pendente', 0, $5,
-                            $6, $7::timestamptz)
+                            $6, $7)
                     RETURNING id
                     """,
                     req.stake_modo, req.stake_valor, req.banca_inicial,
