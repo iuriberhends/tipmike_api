@@ -148,9 +148,52 @@ def montar_snapshot(e: dict, casa_padrao=None, esporte_padrao=None) -> dict:
         _cmax = _num(e.get(pref + "conf_max"))
         if _cmax is not None and _cmax > 0:
             _h["maxPartidas"] = int(_cmax)
+        # v031: CHIP INDIVIDUAL. Ate aqui a planilha escrevia base="match"
+        # fixo, entao chip de JOGADOR (o "(ind pior)" / "(ind zebra)" que o
+        # garimpo passou a achar com o anotar_tudo) virava chip de PAR em
+        # silencio — outra estrategia com o mesmo nome. Colunas:
+        #   chip_base / chip2_base   -> match (default) | individual
+        #   chip_indiv_alvo          -> zebra (default) | ambos   [so HC]
+        _base = _txt(e.get(pref + "base"), "match").lower()
+        if _base == "individual":
+            _h["base"] = "individual"
+            _alvo = _txt(e.get(pref + "indiv_alvo"), "zebra").lower()
+            _h["indivAlvo"] = "ambos" if _alvo == "ambos" else "zebra"
         hist.append(_h)
     if hist:
         filtros["filtrosHistAdicionados"] = hist
+
+    # v031: FILTROS COMPLEMENTARES (media / gap_media / gap_linha / zscore /
+    # tendencia). O motor tem esses filtros desde sempre, mas a planilha nao
+    # tinha coluna pra eles — e o garimpo passou a achar familias que dependem
+    # de `Media Ult.30 6.87~8.6`. Sem esta ponte a config rodava SEM o corte.
+    # Colunas (ate dois): comp_tipo / comp_janela / comp_min / comp_max
+    #                     comp2_tipo / comp2_janela / comp2_min / comp2_max
+    comps = []
+    for pref in ("comp_", "comp2_"):
+        tipo = _txt(e.get(pref + "tipo")).lower().replace(" ", "_")
+        if not tipo:
+            continue
+        tipo = {"média": "media", "gap": "gap_media", "z": "zscore",
+                "desvio": "zscore", "gaplinha": "gap_linha",
+                "gap_linha": "gap_linha", "tendência": "tendencia"}.get(tipo, tipo)
+        if tipo not in ("media", "gap_media", "gap_linha", "zscore", "tendencia"):
+            raise EsteiraErro(
+                f"filtro complementar '{tipo}' desconhecido — use media, "
+                "gap_media, gap_linha, zscore ou tendencia")
+        cmin, cmax = _num(e.get(pref + "min")), _num(e.get(pref + "max"))
+        if cmin is None and cmax is None:
+            continue
+        _c = {"tipo": tipo, "janela": _janela_api(e.get(pref + "janela")),
+              "minAtivo": cmin is not None, "maxAtivo": cmax is not None}
+        if cmin is not None:
+            _c["min"] = float(cmin)
+        if cmax is not None:
+            _c["max"] = float(cmax)
+        comps.append(_c)
+    if comps:
+        filtros["filtrosCompAdicionados"] = comps
+        filtros["filtrosComplementaresAtivo"] = True
 
     fmin, fmax = _num(e.get("folga_min")), _num(e.get("folga_max"))
     if fmin is not None or fmax is not None:
@@ -580,45 +623,31 @@ def _json_safe(o):
     return o
 
 
-def _as_of_rodada(job):
-    """v28.1: CARIMBO DO H2H da rodada — todo item roda com a MESMA foto do
+def _as_of_rodada(job) -> str:
+    """v28: CARIMBO DO H2H da rodada — todo item roda com a MESMA foto do
     historico. Sem isso, um item que roda 40 min depois do outro ve outro
     h2h e o chip muda (garimpo 27 x esteira 20: a mesma config saiu de 108
     pra 608 apostas). Ordem: params.h2h_as_of explicito -> carimbo do job de
-    ORIGEM -> inicio da propria rodada.
-
-    SEMPRE devolve datetime NAIVE. O projeto inteiro e' naive (o `Z` do feed
-    ja e' BRT) e a v28.0 devolvia string ISO com fuso, o que estourava no
-    asyncpg: "can't subtract offset-naive and offset-aware datetimes".
-    """
-    from datetime import datetime
-
-    def _naive(v):
-        if v is None:
-            return None
-        if isinstance(v, str):
-            try:
-                v = datetime.fromisoformat(v.strip().replace("Z", ""))
-            except ValueError:
-                return None
-        if hasattr(v, "tzinfo") and v.tzinfo is not None:
-            v = v.replace(tzinfo=None)
-        return v if isinstance(v, datetime) else None
-
+    ORIGEM (o job-mae do garimpo, pra esteira bater com o previsto) ->
+    inicio da propria rodada. Devolve string ISO ou None."""
     try:
         p = job.get("params") or {}
         if isinstance(p, str):
             import json as _j
             p = _j.loads(p) or {}
-        for cand in (p.get("h2h_as_of"), p.get("h2hAsOf"), job.get("h2h_as_of"),
-                     job.get("iniciado_em"), job.get("criado_em")):
-            v = _naive(cand)
-            if v is not None:
-                return v
+        v = p.get("h2h_as_of") or p.get("h2hAsOf")
+        if v:
+            return str(v)
+        v = job.get("h2h_as_of")
+        if v:
+            return v.isoformat() if hasattr(v, "isoformat") else str(v)
+        ini = job.get("iniciado_em") or job.get("criado_em")
+        if ini:
+            return ini.isoformat() if hasattr(ini, "isoformat") else str(ini)
     except Exception:
         pass                  # sem logger neste modulo: fail-safe silencioso
-    return datetime.now()
-
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).isoformat()
 
 
 def _jdump(o) -> str:
@@ -743,11 +772,6 @@ async def _carimbo_h2h(pool, log):
             async with pool.acquire() as conn:
                 v = await conn.fetchval(f"SELECT MAX({col}) FROM h2h_historico")
             if v is not None:
-                # v28.1: cinto — se a coluna vier com fuso (timestamptz), tira
-                # o fuso aqui. `esteira_jobs.h2h_ts_inicio` e' naive, como o
-                # resto do projeto, e misturar os dois estoura no asyncpg.
-                if getattr(v, "tzinfo", None) is not None:
-                    v = v.replace(tzinfo=None)
                 return v, col
         except Exception:
             continue
@@ -900,7 +924,7 @@ async def _rodar_item_no_motor(pool, job, item, upload_id, d_ini, d_fim,
                     banca_inicial, bot_snapshot, status, progresso,
                     upload_id, user_id, h2h_as_of)
                VALUES (NULL, $1, $2, 'fixo', $3, $4, $5::jsonb,
-                       'pendente', 0, $6, $7, $8)
+                       'pendente', 0, $6, $7, $8::timestamptz)
                RETURNING id""",
             d_ini, d_fim, stake, banca, _jdump(snap), upload_id,
             job.get("user_id"), _as_of_rodada(job))

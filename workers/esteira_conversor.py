@@ -37,6 +37,8 @@ import re
 # o garimpo escreve "Últ. 10" / "Todas"; a planilha quer "last_10" / "all"
 _JANELA = {
     'todas': 'all', 'all': 'all',
+    'últ. 5': 'last_5', 'ult. 5': 'last_5', 'last_5': 'last_5',
+    'últ. 15': 'last_15', 'ult. 15': 'last_15', 'last_15': 'last_15',
     'últ. 10': 'last_10', 'ult. 10': 'last_10', 'last_10': 'last_10',
     'últ. 20': 'last_20', 'ult. 20': 'last_20', 'last_20': 'last_20',
     'últ. 30': 'last_30', 'ult. 30': 'last_30', 'last_30': 'last_30',
@@ -97,7 +99,83 @@ def _janela(v):
     if v is None:
         return None
     s = str(v).strip().lower()
-    return _JANELA.get(s)
+    return _JANELA.get(_sem_sufixo_indiv(s))
+
+
+# v031: o garimpo passou a achar chip INDIVIDUAL (o export do anotar_tudo traz
+# "Últ. 10 (ind pior)", "Todas (ind zebra)", "Últ. 30 (ind fav)"). Antes o
+# conversor nao reconhecia o rotulo, devolvia janela None e a config virava
+# "sem chip" — outra estrategia com o mesmo nome.
+_SUFIXO_INDIV = {
+    '(ind pior)': ('individual', 'zebra'),     # O/U: o pior dos dois jogadores
+    '(ind zebra)': ('individual', 'zebra'),    # HC: so a zebra
+    '(ind fav)': ('individual', 'ambos'),      # HC: zebra + favorito
+    '(ind a)': None, '(ind b)': None,          # posicionais: o motor nao tem
+}
+
+
+def _sem_sufixo_indiv(s: str) -> str:
+    for suf in _SUFIXO_INDIV:
+        if s.endswith(suf):
+            return s[: -len(suf)].strip()
+    return s
+
+
+def _base_indiv(v):
+    """('individual','zebra'|'ambos') ou (None, None) pro chip de par.
+    Levanta se o rotulo for posicional (ind A / ind B), que o motor nao tem."""
+    s = str(v or '').strip().lower()
+    for suf, dest in _SUFIXO_INDIV.items():
+        if s.endswith(suf):
+            if dest is None:
+                raise ConfigNaoReproduzivel(
+                    f'"{suf}" e chip posicional (jogador A/B). O motor so tem '
+                    'o individual do PIOR dos dois / zebra / favorito')
+            return dest
+    return None, None
+
+
+_COMP_ROTULO = {
+    'média': 'media', 'media': 'media', 'méd': 'media',
+    'gap': 'gap_media', 'gap linha': 'gap_linha', 'gap_linha': 'gap_linha',
+    'z': 'zscore', 'desvio': 'desvio', 'tendência': 'tendencia',
+    'tendencia': 'tendencia',
+}
+
+
+def comp_do_extra(extra):
+    """v031: 'Média Últ. 30 6.87~8.6' -> dict do filtro complementar do motor
+    (media/gap_media/gap_linha/zscore/tendencia). O anotar_tudo passou a
+    exportar essas colunas e o garimpo achou familias que dependem delas;
+    sem esta traducao a config ia pro motor SEM o corte. Devolve None quando
+    o extra nao e complementar (folga, dif, tot_env, atropelo seguem o
+    caminho antigo)."""
+    e = str(extra or '').strip()
+    if e in ('', '-', 'nan', 'None'):
+        return None
+    m = re.match(r'^([A-Za-zÀ-ú]+(?:\s+[Ll]inha)?)\s*'
+                 r'((?:[ÚúUu]lt\.?\s*\d+|[Tt]odas))?\s*'
+                 r'(>=|<=)?\s*(-?[\d.]+)?\s*(?:~\s*(-?[\d.]+))?$', e)
+    if not m:
+        return None
+    rot = (m.group(1) or '').strip().lower()
+    tipo = _COMP_ROTULO.get(rot)
+    if tipo is None:
+        return None
+    if tipo == 'desvio':
+        raise ConfigNaoReproduzivel(
+            '"Desvio" e coluna de auditoria do export; o motor filtra por '
+            'zscore (Z), nao pelo desvio bruto')
+    jan = _janela(m.group(2) or 'todas') or 'all'
+    op, a, b = m.group(3), _num(m.group(4)), _num(m.group(5))
+    out = {'comp_tipo': tipo, 'comp_janela': jan}
+    if b is not None:                      # faixa a~b
+        out['comp_min'], out['comp_max'] = a, b
+    elif op == '<=':
+        out['comp_max'] = a
+    else:
+        out['comp_min'] = a
+    return out
 
 
 def parse_extra(extra):
@@ -155,6 +233,10 @@ def converter(g: dict, *, casa='bet365', esporte='nba2k', mercado=None,
             lin['chip_conf'] = int(cmin)
         if cmax:
             lin['chip_conf_max'] = int(cmax)
+        _b, _alvo = _base_indiv(L.get('janela'))
+        if _b:
+            lin['chip_base'] = _b
+            lin['chip_indiv_alvo'] = _alvo
     # v4 (06/set): config SEM janela mas com conf_min/conf_max (ou HC sem
     # chip nenhum) precisa de chip EXPLICITO [0,100] — sem ele o motor de
     # HC aplica o default escondido 0,87/20 e o numero vira outro (rodada
@@ -172,6 +254,10 @@ def converter(g: dict, *, casa='bet365', esporte='nba2k', mercado=None,
     j2 = _janela(L.get('janela2'))
     if j2:
         lin['chip2_janela'] = j2
+        _b2, _alvo2 = _base_indiv(L.get('janela2'))
+        if _b2:
+            lin['chip2_base'] = _b2
+            lin['chip2_indiv_alvo'] = _alvo2
         # op2 diz o lado: '>=' vira piso, '<=' vira teto
         if str(L.get('op2') or '>=').strip() == '<=':
             lin['chip2_wr_max'] = _pct(L.get('wr2'))
@@ -201,6 +287,10 @@ def converter(g: dict, *, casa='bet365', esporte='nba2k', mercado=None,
             lin[b] = v
 
     # --- o eixo complementar ---
+    _c = comp_do_extra(L.get('extra'))
+    if _c:
+        lin.update(_c)
+        L = dict(L, extra='-')        # ja tratado: nao cair no parse_extra
     for col, val in parse_extra(L.get('extra')):
         lin[col] = val
 
