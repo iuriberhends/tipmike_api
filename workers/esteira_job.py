@@ -623,31 +623,45 @@ def _json_safe(o):
     return o
 
 
-def _as_of_rodada(job) -> str:
-    """v28: CARIMBO DO H2H da rodada — todo item roda com a MESMA foto do
+def _as_of_rodada(job):
+    """v28.1: CARIMBO DO H2H da rodada — todo item roda com a MESMA foto do
     historico. Sem isso, um item que roda 40 min depois do outro ve outro
     h2h e o chip muda (garimpo 27 x esteira 20: a mesma config saiu de 108
     pra 608 apostas). Ordem: params.h2h_as_of explicito -> carimbo do job de
-    ORIGEM (o job-mae do garimpo, pra esteira bater com o previsto) ->
-    inicio da propria rodada. Devolve string ISO ou None."""
+    ORIGEM -> inicio da propria rodada.
+
+    SEMPRE devolve datetime NAIVE. O projeto inteiro e' naive (o `Z` do feed
+    ja e' BRT) e devolver string ISO estoura no asyncpg:
+      "invalid input for query argument ... got 'str'".
+    """
+    from datetime import datetime
+
+    def _naive(v):
+        if v is None:
+            return None
+        if isinstance(v, str):
+            try:
+                v = datetime.fromisoformat(v.strip().replace("Z", ""))
+            except ValueError:
+                return None
+        if hasattr(v, "tzinfo") and v.tzinfo is not None:
+            v = v.replace(tzinfo=None)
+        return v if isinstance(v, datetime) else None
+
     try:
         p = job.get("params") or {}
         if isinstance(p, str):
             import json as _j
             p = _j.loads(p) or {}
-        v = p.get("h2h_as_of") or p.get("h2hAsOf")
-        if v:
-            return str(v)
-        v = job.get("h2h_as_of")
-        if v:
-            return v.isoformat() if hasattr(v, "isoformat") else str(v)
-        ini = job.get("iniciado_em") or job.get("criado_em")
-        if ini:
-            return ini.isoformat() if hasattr(ini, "isoformat") else str(ini)
+        for cand in (p.get("h2h_as_of"), p.get("h2hAsOf"), job.get("h2h_as_of"),
+                     job.get("iniciado_em"), job.get("criado_em")):
+            v = _naive(cand)
+            if v is not None:
+                return v
     except Exception:
         pass                  # sem logger neste modulo: fail-safe silencioso
-    from datetime import datetime, timezone
-    return datetime.now(timezone.utc).isoformat()
+    return datetime.now()
+
 
 
 def _jdump(o) -> str:
@@ -924,7 +938,7 @@ async def _rodar_item_no_motor(pool, job, item, upload_id, d_ini, d_fim,
                     banca_inicial, bot_snapshot, status, progresso,
                     upload_id, user_id, h2h_as_of)
                VALUES (NULL, $1, $2, 'fixo', $3, $4, $5::jsonb,
-                       'pendente', 0, $6, $7, $8::timestamptz)
+                       'pendente', 0, $6, $7, $8)
                RETURNING id""",
             d_ini, d_fim, stake, banca, _jdump(snap), upload_id,
             job.get("user_id"), _as_of_rodada(job))
