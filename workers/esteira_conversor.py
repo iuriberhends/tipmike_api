@@ -166,7 +166,11 @@ def comp_do_extra(extra):
         raise ConfigNaoReproduzivel(
             '"Desvio" e coluna de auditoria do export; o motor filtra por '
             'zscore (Z), nao pelo desvio bruto')
-    jan = _janela(m.group(2) or 'todas') or 'all'
+    # o filtro COMP do motor quer NUMERO (30 = ultimos 30 jogos, 0 = todas),
+    # nao 'last_30' como o chip — ver nota em esteira_job._janela_comp
+    _jtxt = (m.group(2) or 'todas').strip().lower()
+    _jn = re.search(r'(\d+)', _jtxt)
+    jan = int(_jn.group(1)) if _jn else 0
     op, a, b = m.group(3), _num(m.group(4)), _num(m.group(5))
     out = {'comp_tipo': tipo, 'comp_janela': jan}
     if b is not None:                      # faixa a~b

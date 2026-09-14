@@ -114,6 +114,22 @@ def _txt(v, padrao=""):
     return padrao if s.lower() in ("", "nan", "none", "-") else s
 
 
+def _janela_comp(v):
+    """Janela do filtro COMPLEMENTAR, no formato do runner: int (30, 0=todas)
+    ou string de tempo ('24h'/'7d'). Aceita o que o usuario escrever —
+    30, '30', 'last_30', 'Ult. 30', 'todas' — e devolve o numero."""
+    import re as _re
+    s = str(v if v is not None else "").strip().lower()
+    if not s or s in ("todas", "all", "-"):
+        return 0
+    if _re.fullmatch(r"\d+\s*[hd]", s.replace(" ", "")):
+        return s.replace(" ", "")
+    m = _re.search(r"(\d+)", s)
+    if not m:
+        return 0
+    return int(m.group(1))
+
+
 def _janela_api(v) -> str:
     s = str(v or "all").strip().lower()
     if s in ("", "all", "todas", "-", "nan", "none"):
@@ -184,7 +200,12 @@ def montar_snapshot(e: dict, casa_padrao=None, esporte_padrao=None) -> dict:
         cmin, cmax = _num(e.get(pref + "min")), _num(e.get(pref + "max"))
         if cmin is None and cmax is None:
             continue
-        _c = {"tipo": tipo, "janela": _janela_api(e.get(pref + "janela")),
+        # ATENCAO: o filtro COMP quer a janela como NUMERO (30 = ultimos 30
+        # jogos, 0 = todas), diferente do chip, que usa 'last_30'. O runner
+        # normaliza com _parse_janela: 'last_30' e' INVALIDA la, a media nunca
+        # e' calculada e o filtro rejeita 100% dos ticks em silencio (foi o
+        # C2 da rodada 30, com 0 apostas). Aceita tambem '24h'/'7d'.
+        _c = {"tipo": tipo, "janela": _janela_comp(e.get(pref + "janela")),
               "minAtivo": cmin is not None, "maxAtivo": cmax is not None}
         if cmin is not None:
             _c["min"] = float(cmin)
