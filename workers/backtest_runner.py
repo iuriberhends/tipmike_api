@@ -2485,6 +2485,10 @@ JANELAS_PADRAO_WR = (5, 10, 15)
 JANELAS_PADRAO_MEDIA = (5, 10, 20)
 # v25: janelas que o modo garimpo (anotarTudo) sempre calcula (0 = Todas)
 JANELAS_ANOTAR_TUDO = (0, 5, 10, 15, 20, 30, 50)
+# v33: no modo candidatos, um tick vira candidato quando a odd da linha andou
+# pelo menos isto desde o ultimo candidato daquela linha (alem de placar novo)
+CAND_ODD_PASSO = 0.02
+CANDIDATOS_DIR = os.environ.get('CANDIDATOS_DIR', 'varreduras')
 
 
 # ============================================================
@@ -3909,6 +3913,25 @@ async def executar_backtest(job_id: int):
         # aposta sem filtrar. Liga o errAnotar junto (o err e' um dos eixos)
         # quando o mercado suporta. Ausente = job identico ao v24.
         anotar_tudo = bool(_fd.get('anotarTudo', False))
+        # v33 — MODO CANDIDATOS (job-mae do garimpo). O export normal tem UM
+        # tick por linha (o primeiro valido). O motor, com filtro de estado
+        # (tot_env, dif, folga, odd, momento), aposta a mesma linha no
+        # PRIMEIRO TICK QUE PASSA — que pode ser bem depois. O varredor, lendo
+        # so o primeiro tick, nao consegue reproduzir isso (T4 de 14/set:
+        # tot_env>=1 previsto 2.686 x motor 5.026). Neste modo o job grava um
+        # CANDIDATO por tick relevante de cada linha (a linha aparece, o placar
+        # mudou, ou a odd andou >= CAND_ODD_PASSO), com TODAS as anotacoes,
+        # num parquet em varreduras/. O varredor entao mascara e fica com o
+        # primeiro candidato que passa por (jogo, linha) — a mesma regra do
+        # motor. Sem selecao apostada, sem cap, sem trava de mercado: e' uma
+        # TABELA DE CANDIDATOS, nao um backtest (o P&L do job fica sem
+        # sentido e e' marcado como tal).
+        modo_candidatos = bool(_fd.get('candidatos', False))
+        if modo_candidatos:
+            anotar_tudo = True
+            logger.info(f"[backtest] job {job_id}: MODO CANDIDATOS — tabela "
+                        f"de candidatos por tick relevante (passo de odd "
+                        f"{CAND_ODD_PASSO})")
         if anotar_tudo and bot.get('mercado', '') in ERR_MERCADOS_SUPORTADOS:
             err_anotar = True
         # FAIL CLOSED: err so faz sentido em total seco (over_under_ft/ht).
@@ -4302,6 +4325,9 @@ async def executar_backtest(job_id: int):
         modo_tick_a_tick = (_v22_env not in ('0', 'off', 'false', 'nao')) and bool(
             folga_ativo or momento_ativo or tot_env_ativo
             or diff_ativo or cenario_ativo)
+        if modo_candidatos:
+            modo_tick_a_tick = True        # v33: todos os ticks, em ordem
+        _ultimo_cand: dict = {}            # v33: (evt,merc,linha,sel) -> (placar, odd)
         # trava: selecao ja APOSTADA neste evento (so no modo tick a tick)
         selecao_apostada_evt: set = set()
         # cache: chip/h2h ja REPROVOU esta selecao neste evento - historico nao
@@ -4412,7 +4438,7 @@ async def executar_backtest(job_id: int):
 
             # v22: essa selecao ja foi apostada neste jogo -> ticks seguintes
             # dela sao ignorados sem contar rejeicao (nao e recusa, e trava)
-            if modo_tick_a_tick:
+            if modo_tick_a_tick and not modo_candidatos:
                 _sel_key = (evt, tick.get('mercado_id') or '',
                             tick.get('linha') or '', tick.get('selecao_id') or '')
                 if _sel_key in selecao_apostada_evt:
@@ -4427,7 +4453,8 @@ async def executar_backtest(job_id: int):
                     rej['lado'] += 1
                     continue
 
-            if max_apostas_partida is not None and apostas_por_evento.get(evt, 0) >= max_apostas_partida:
+            if (not modo_candidatos and max_apostas_partida is not None
+                    and apostas_por_evento.get(evt, 0) >= max_apostas_partida):
                 rej['cap_jogo'] += 1
                 continue
 
@@ -4435,7 +4462,7 @@ async def executar_backtest(job_id: int):
             # ticks_ordenados esta em ordem de ts, entao o 1o aceitado por
             # (evento, mercado_tipo) e o mais cedo no tempo = o que o bot ao vivo
             # teria apostado (primeiro tick que passa, depois trava o mercado).
-            if evitar_linhas_seq:
+            if evitar_linhas_seq and not modo_candidatos:
                 _mtipo_evt = tick.get('mercado_tipo')
                 _lado_evt = _lado_aposta(tick.get('selecao'))
                 if (evt, _mtipo_evt, _lado_evt) in mercado_apostado_evt:
@@ -4836,13 +4863,31 @@ async def executar_backtest(job_id: int):
                     rej['sem_resultado'] += 1
                 continue
 
-            apostas_por_evento[evt] = apostas_por_evento.get(evt, 0) + 1
-            if modo_tick_a_tick:
-                selecao_apostada_evt.add((evt, tick.get('mercado_id') or '',
-                                          tick.get('linha') or '', tick.get('selecao_id') or ''))
-            if evitar_linhas_seq:
-                mercado_apostado_evt.add((evt, tick.get('mercado_tipo'),
-                                          _lado_aposta(tick.get('selecao'))))
+            if modo_candidatos:
+                # v33: so' vira candidato se e' RELEVANTE — linha nova neste
+                # jogo, placar mudou, ou a odd andou. Ticks iguais em sequencia
+                # nao acrescentam decisao nenhuma e so' inflam a tabela.
+                _ck = (evt, tick.get('mercado_id') or '', tick.get('linha') or '',
+                       tick.get('selecao_id') or '')
+                try:
+                    _odd_c = float(tick.get('odds') or 0)
+                except (TypeError, ValueError):
+                    _odd_c = 0.0
+                _estado_c = (_envio_h, _envio_a)
+                _ant = _ultimo_cand.get(_ck)
+                if (_ant is not None and _ant[0] == _estado_c
+                        and abs(_odd_c - _ant[1]) < CAND_ODD_PASSO):
+                    rej['cand_repetido'] = rej.get('cand_repetido', 0) + 1
+                    continue
+                _ultimo_cand[_ck] = (_estado_c, _odd_c)
+            else:
+                apostas_por_evento[evt] = apostas_por_evento.get(evt, 0) + 1
+                if modo_tick_a_tick:
+                    selecao_apostada_evt.add((evt, tick.get('mercado_id') or '',
+                                              tick.get('linha') or '', tick.get('selecao_id') or ''))
+                if evitar_linhas_seq:
+                    mercado_apostado_evt.add((evt, tick.get('mercado_tipo'),
+                                              _lado_aposta(tick.get('selecao'))))
             candidatas.append({
                 'tick': tick,
                 'linha_num': linha_num,
@@ -5182,6 +5227,33 @@ async def executar_backtest(job_id: int):
         if avisos:
             partes_msg.append("RESSALVAS: " + "; ".join(avisos))
         msg_final = ' | '.join(partes_msg)
+
+        # v33 — MODO CANDIDATOS: a tabela vai pra PARQUET (o jsonb do
+        # apostas_detalhe tem teto de 256 MB e a tabela de candidatos e' 5-10x
+        # o export). No banco fica so' uma amostra + o caminho na mensagem.
+        if modo_candidatos:
+            try:
+                from workers.apostas_export import montar_linhas_apostas as _mla
+                import pandas as _pd
+                _linhas = _mla(apostas_detalhe)
+                _dfc = _pd.DataFrame(_linhas)
+                # chaves da decisao do varredor (primeiro que passa por linha)
+                _dfc['ordem_tick'] = range(len(_dfc))
+                os.makedirs(CANDIDATOS_DIR, exist_ok=True)
+                _cam = os.path.join(CANDIDATOS_DIR, f'candidatos_{job_id}.parquet')
+                _dfc.to_parquet(_cam, index=False)
+                _n_lin = _dfc.groupby(['event_id', 'Tip', 'Linha']).ngroups if len(_dfc) else 0
+                avisos.insert(0, f"MODO CANDIDATOS: {len(_dfc):,} candidatos em "
+                                 f"{_n_lin:,} linhas -> {_cam} (P&L deste job NAO e' "
+                                 f"de bot: sao todos os ticks relevantes)")
+                logger.info(f"[backtest] job {job_id}: {len(_dfc):,} candidatos "
+                            f"gravados em {_cam}")
+                apostas_detalhe = apostas_detalhe[:2000]     # amostra no banco
+            except Exception as _e_c:
+                logger.exception(f"[backtest] job {job_id}: falha gravando candidatos")
+                avisos.insert(0, f"MODO CANDIDATOS: FALHOU ao gravar o parquet ({_e_c})")
+            _base_msg = [p for p in partes_msg if not str(p).startswith("RESSALVAS")]
+            msg_final = ' | '.join(_base_msg + (["RESSALVAS: " + "; ".join(avisos)] if avisos else []))
 
         async with pool.acquire() as conn:
             await conn.execute(

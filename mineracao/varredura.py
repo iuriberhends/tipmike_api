@@ -108,7 +108,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v11.6 (grade do motor + selo + cauda de eixo inteiro)'
+VERSAO = 'VARREDURA v12.1 (candidatos: primeiro que passa por linha + chip individual AND)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -373,6 +373,23 @@ def carregar(caminho, h2h_path=None, paridade_path=None, chips_fonte='todas'):
         d.attrs['atropelo_fonte'] = 'coluna do motor'
     else:
         d.attrs['atropelo_fonte'] = 'ausente (export sem anotar_tudo) — eixo fora da grade'
+    # v12: tabela de CANDIDATOS? (varios ticks por linha, coluna ordem_tick)
+    global LINHA_KEY, ORDEM_TICK
+    LINHA_KEY = ORDEM_TICK = None
+    _ctip = achar(d, 'Tip', 'selecao', 'Selecao')
+    _clin = achar(d, 'Linha', 'linha')
+    if 'ordem_tick' in d.columns and _ctip and _clin:
+        _k = (d['_jogo'].astype(str) + '|' + d[_ctip].astype(str) + '|'
+              + d[_clin].astype(str))
+        LINHA_KEY = pd.factorize(_k)[0]
+        ORDEM_TICK = pd.to_numeric(d['ordem_tick'], errors='coerce').fillna(0).values.astype(np.int64)
+        _n_lin = int(LINHA_KEY.max()) + 1
+        d.attrs['candidatos'] = True
+        print(f'tabela de CANDIDATOS: {len(d):,} candidatos em {_n_lin:,} linhas '
+              f'({len(d) / max(_n_lin, 1):.1f} por linha) — regra do motor: '
+              f'primeiro que passa por linha')
+    else:
+        d.attrs['candidatos'] = False
     return d
 
 
@@ -785,6 +802,22 @@ def detectar_eixos(d):
         v = d[col].values
         if np.isfinite(v).sum() > len(d) * 0.5 and len(np.unique(v[np.isfinite(v)])) >= 4:
             comp[nome] = v.astype(np.float64)
+    # v12.1: teto do chip individual = max(A,B) (ver WR_TETO)
+    global WR_TETO
+    WR_TETO = {}
+    _lowmap = {str(c).lower(): c for c in d.columns}
+    for jan in list(wr):
+        jl = jan.lower()
+        if not jl.endswith('(ind pior)'):
+            continue
+        pref = jl[: -len('(ind pior)')].strip()
+        ca = _lowmap.get(f'{pref} (ind a)')
+        cb = _lowmap.get(f'{pref} (ind b)')
+        if ca is None or cb is None:
+            continue
+        va = pd.to_numeric(d[ca], errors='coerce').values.astype(np.float64)
+        vb = pd.to_numeric(d[cb], errors='coerce').values.astype(np.float64)
+        WR_TETO[jan] = np.fmax(va, vb)
     return wr, qtd, comp
 
 
@@ -909,6 +942,48 @@ def cortes_complementar(nome, vals):
 
 
 # --------------------------------------------------------- mecanica ---------
+# ---------------------------------------------------------------------------
+# v12 — TABELA DE CANDIDATOS (modo `candidatos` do runner v33)
+# O export classico tem UM tick por linha (o primeiro valido). O motor, com
+# filtro de estado (tot_env, dif, folga, odd, momento), aposta a mesma linha
+# no PRIMEIRO TICK QUE PASSA — o varredor lendo so o primeiro tick nao tinha
+# como reproduzir (T4 14/set: tot_env>=1 previsto 2.686 x motor 5.026). Com a
+# tabela de candidatos (um por tick relevante de cada linha), a regra do motor
+# vira uma linha aqui: depois da mascara, fica o PRIMEIRO candidato que passou
+# por (jogo, selecao, linha). Teto e escada continuam depois, como sempre.
+# LINHA_KEY e' None num export classico (identidade) e um array de codigos na
+# tabela de candidatos; e' preenchido por carregar().
+# ---------------------------------------------------------------------------
+LINHA_KEY = None
+ORDEM_TICK = None
+
+# v12.1 — CHIP INDIVIDUAL COM TETO. O motor exige que OS DOIS jogadores passem
+# no min/max (regra AND). Pra um piso isso e' min(A,B) >= X = 'ind pior' >= X,
+# que ja era o que o varredor fazia. Pra um TETO e' max(A,B) <= X — e ate a
+# v12 o varredor usava 'ind pior' <= X, que passa se QUALQUER um dos dois
+# esta abaixo. T4 de 14/set: todo chip individual '<=' dava -10 a -17% de
+# apostas no motor. WR_TETO[jan] = max(A,B) quando o export traz 'ind a' e
+# 'ind b' da mesma janela; senao cai no proprio 'ind pior' (e o T4 acusa).
+WR_TETO: dict = {}
+
+
+def wr_para_teto(jan, WR):
+    """Vetor a usar num corte '<=' do chip: max(A,B) no individual, o proprio
+    no chip de par."""
+    return WR_TETO.get(jan, WR[jan])
+
+
+def primeiro_por_linha(idx):
+    """Dos indices selecionados, mantem o primeiro (em ordem de tick) de cada
+    (jogo, selecao, linha). Identidade quando a tabela nao e' de candidatos."""
+    if LINHA_KEY is None or idx.size == 0:
+        return idx
+    o = np.argsort(ORDEM_TICK[idx], kind='stable')
+    idx_o = idx[o]
+    _, first = np.unique(LINHA_KEY[idx_o], return_index=True)
+    return np.sort(idx_o[first])
+
+
 def degrau_no_indice(idx, jid):
     """Posicao (0-based) de cada aposta DENTRO do seu jogo, contando so as
     apostas selecionadas, em ordem temporal. Recalculado por mascara — a
@@ -1054,7 +1129,7 @@ def mascara_config(cfg, D):
         if wmin is not None:
             m &= v >= wmin
         if wmax is not None:
-            m &= v <= wmax
+            m &= wr_para_teto(jan, WR) <= wmax
     jan2 = str(cfg.get('janela2', '-')).strip()
     if jan2 not in ('-', '', 'nan'):
         if jan2 not in WR:
@@ -1088,12 +1163,17 @@ def mascara_config(cfg, D):
         m &= ex
     teto = _num(cfg.get('teto'))
     if teto and 0 < teto < 999:
-        idx = np.flatnonzero(m)
+        idx = primeiro_por_linha(np.flatnonzero(m))
         if idx.size:
             deg = degrau_no_indice(idx, D['ev_cod'])
             keep = idx[deg < int(teto)]
             m = np.zeros(D['n'], bool)
             m[keep] = True
+    elif LINHA_KEY is not None:
+        # sem teto: a regra do motor ainda vale (um candidato por linha)
+        idx = primeiro_por_linha(np.flatnonzero(m))
+        m = np.zeros(D['n'], bool)
+        m[idx] = True
     return m
 
 
@@ -1571,7 +1651,7 @@ def main():
                 if mm.sum() >= a.min_apostas:
                     segundas.append((n2, '>=', thr, mm))
             for thr in GM['w2le']:
-                mm = v2 <= thr
+                mm = wr_para_teto(n2, WR) <= thr
                 c = int(mm.sum())
                 if a.min_apostas <= c < N:      # <N: senao e neutro
                     segundas.append((n2, '<=', thr, mm))
@@ -2062,7 +2142,7 @@ def main():
                 for p in problemas:
                     print(f'  ERRO: {p}')
                 continue
-            idx = np.where(m)[0]
+            idx = primeiro_por_linha(np.where(m)[0])
             if idx.size == 0:
                 print('  0 apostas passam nesse filtro.')
                 erro_algum = True
@@ -2139,7 +2219,9 @@ def main():
                     if int(base0.sum()) < a.min_apostas:
                         continue
                     for wmax in wrmax_eff:                     # frouxo -> apertado
-                        mA = base0 if wmax >= 1.0 else (base0 & (wv <= wmax))
+                        mA = base0 if wmax >= 1.0 else (
+                            base0 & (wr_para_teto(wname, WR) <= wmax)
+                            if wname in WR else base0 & (wv <= wmax))
                         if int(mA.sum()) < a.min_apostas:
                             break
                         for wmin in wr_eff:                    # crescente
@@ -2197,6 +2279,11 @@ def main():
                                                             testadas[0] += len(gr['tetos'])
                                                             progresso()
                                                             continue
+                                                    idx = primeiro_por_linha(idx)
+                                                    if idx.size < a.min_apostas:
+                                                        testadas[0] += len(gr['tetos'])
+                                                        progresso()
+                                                        continue
                                                     hb = hash_idx(idx)
                                                     if hb in vistos_base:
                                                         testadas[0] += len(gr['tetos'])
@@ -2295,7 +2382,7 @@ def main():
                 m = np.ones(N, bool)
                 if wv is not None:
                     if rec['wr_max'] != '-':
-                        m &= wv <= float(rec['wr_max'])
+                        m &= wr_para_teto(wname, WR) <= float(rec['wr_max'])
                     if rec['wr_min'] > 0:
                         m &= wv >= float(rec['wr_min'])
                 if rec['conf_min'] > 0:
@@ -2315,7 +2402,7 @@ def main():
                     m &= SEG_M[(rec['janela2'], rec['op2'], float(rec['wr2']))]
                 if rec['extra'] != '-':
                     m &= EXTRA_M[rec['extra']]
-                idx = np.flatnonzero(m)
+                idx = primeiro_por_linha(np.flatnonzero(m))
                 deg = degrau_no_indice(idx, jid_all)
                 teto = 999 if rec['teto'] == '-' else int(rec['teto'])
                 return idx[deg < teto]

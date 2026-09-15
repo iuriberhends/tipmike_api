@@ -301,7 +301,26 @@ async def executar_varredura(job_id: int):
     # O varredor/repontua/validador detectam a extensao e leem csv igual.
     entrada = base.with_name(base.name + "_entrada.csv")
     saida = base.with_name(base.name + ".xlsx")
-    df.to_csv(entrada, index=False, encoding="utf-8")
+    # v12 — TABELA DE CANDIDATOS: se o job-mae rodou no modo `candidatos`
+    # (runner v33), existe varreduras/candidatos_<job>.parquet com um
+    # candidato por tick relevante de cada linha. E' ELA a entrada do
+    # varredor (regra do motor: primeiro que passa por linha). O
+    # apostas_detalhe desse job e' so' uma amostra e NAO serve de entrada.
+    _cand = SAIDA_DIR / f"candidatos_{org['id']}.parquet"
+    if _cand.is_file():
+        import pandas as _pd
+        _dfc = _pd.read_parquet(_cand)
+        if "ordem_tick" not in _dfc.columns:
+            _dfc["ordem_tick"] = range(len(_dfc))
+        _dfc.to_csv(entrada, index=False, encoding="utf-8")
+        _n_lin = _dfc.groupby(["event_id", "Tip", "Linha"]).ngroups if len(_dfc) else 0
+        logger.info(f"[varredura] job {job_id}: entrada = TABELA DE CANDIDATOS "
+                    f"({len(_dfc):,} candidatos em {_n_lin:,} linhas) de {_cand}")
+        _entrada_info = {"tipo": "candidatos", "arquivo": str(_cand),
+                         "candidatos": int(len(_dfc)), "linhas": int(_n_lin)}
+    else:
+        df.to_csv(entrada, index=False, encoding="utf-8")
+        _entrada_info = {"tipo": "export", "apostas": int(len(df))}
 
     # ---- 3) holdout: data de corte ---------------------------------------
     import pandas as pd
@@ -417,7 +436,8 @@ async def executar_varredura(job_id: int):
             f"Fim do log: ...{log_varredura[-600:]}")
 
     tudo_csv = saida.with_suffix("").as_posix() + ".tudo.csv"
-    resumo = {"segundos": round(time.time() - t_ini),
+    resumo = {"entrada": _entrada_info,
+              "segundos": round(time.time() - t_ini),
               "linhas_saida": None, "holdout": None, "gate": None}
     try:
         resumo["linhas_saida"] = sum(1 for _ in open(tudo_csv, encoding="utf-8")) - 1

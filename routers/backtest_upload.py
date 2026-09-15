@@ -460,6 +460,9 @@ class BacktestAvulsoRequest(BaseModel):
     # e o garimpo fica comparavel com a esteira. Tambem aceita instante
     # explicito, pra uma rodada inteira usar o carimbo do job-mae.
     congelar_h2h: bool = Field(default=False)
+    # v33: MODO CANDIDATOS — job-mae do garimpo grava um candidato por tick
+    # relevante de cada linha (parquet em varreduras/), nao so o primeiro.
+    candidatos: bool = Field(default=False)
     h2h_as_of: Optional[str] = Field(default=None, max_length=40)
     atropelo_ativo: bool = Field(default=False)
     atropelo_min: Optional[float] = Field(default=None, ge=0, le=100)
@@ -794,6 +797,9 @@ def _montar_snapshot_avulso(req: "BacktestAvulsoRequest", norm: dict) -> dict:
         filtros["anotarTudo"] = True
         if getattr(req, "anotar_janelas", None):
             filtros["anotarJanelas"] = [int(x) for x in req.anotar_janelas]
+    if bool(getattr(req, "candidatos", False)):
+        filtros["candidatos"] = True
+        filtros["anotarTudo"] = True
         # v25.1: a margem/min_jogos do atropelo valem tambem pra ANOTACAO
         # (antes so viajavam com atropeloAtivo — em futebol a margem default
         # 15 zera tudo). Nao liga o filtro: so parametriza o calculo.
