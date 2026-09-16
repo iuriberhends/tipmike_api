@@ -108,7 +108,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v12.3 (candidatos + chip individual AND/conf + minimo do comp)'
+VERSAO = 'VARREDURA v12.4 (candidatos + chip individual AND/conf + min comp + odd minima)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -1305,6 +1305,8 @@ def main():
     ap.add_argument('--guardar', type=int, default=30000, help='melhores guardadas por criterio')
     ap.add_argument('--cego', type=int, default=-1,
                     help='dias finais como teste cego (-1=auto ~30%% dos dias, 0=off)')
+    ap.add_argument('--odd-min-media', dest='odd_min_media', type=float, default=1.60,
+                    help='odd media minima pra entrar na ROBUSTAS (default 1.60)')
     ap.add_argument('--placebo', type=int, default=12,
                     help='embaralhamentos por jogo pra barra do placebo (0=off)')
     ap.add_argument('--prof-extra', type=int, choices=[1, 2], default=1,
@@ -2561,6 +2563,12 @@ def main():
     # v11: cada regua conta quantas reprovou — quando a aba sai vazia, o
     # motivo sai em UMA linha no log em vez de 500 "robustas" falsas.
     reguas = []
+    # v12.4: ODD MINIMA. WR 76% a odd 1,30 rende 1u/dia e enche a ROBUSTAS de
+    # config que nao paga (o break-even a 1,30 e' 77%). Config com odd media
+    # abaixo do minimo fica no TUDO (coluna odd_baixa=1) mas nao entra na
+    # ROBUSTAS. Ajustavel com --odd-min-media (default 1.60).
+    R['odd_baixa'] = (R['odd_media'].fillna(0) < a.odd_min_media).astype(int)
+    reguas.append((f'odd media >= {a.odd_min_media:.2f}', R['odd_baixa'] == 0))
     reguas.append(('acima da sorte por JOGO', R['acima_sorte'] > 0))
     if 'acima_sorte_par' in R.columns:
         reguas.append(('acima da sorte por PAR', R['acima_sorte_par'].fillna(-9) > 0))
@@ -2613,7 +2621,7 @@ def main():
              'z_jogo', 'roi_m1', 'roi_m2', 'acima_sorte', 'acima_placebo',
              'roi_treino', 'roi_cego', 'ap_cego', 'desvio_cego', 'equiv',
              'acima_sorte_par', 'premio', 'premio_alto', 'sem_tot', 'sem_pos',
-             'ult_sem_u', 'robusta', 'selo']
+             'ult_sem_u', 'robusta', 'selo', 'odd_baixa']
     cols = [c for c in cols if c in R.columns]
 
     LEGENDA = pd.DataFrame([
@@ -2637,6 +2645,7 @@ def main():
         ('acima_placebo', 'ROI menos a barra p95 da busca rodada em dado embaralhado'),
         ('roi_treino / roi_cego / desvio_cego', 'treino vs ultimos dias nunca vistos pela busca'),
         ('equiv', 'quantas configuracoes diferentes selecionam EXATAMENTE as mesmas apostas'),
+        ('odd_baixa', 'v12.4: 1 = odd media abaixo do minimo (--odd-min-media, default 1.60): fica fora da ROBUSTAS porque WR alto a odd baixa nao paga'),
         ('selo', 'v11.5: VALIDAVEL = da pra carimbar (>=800 jogos, >=3 semanas, dias suficientes) | DIRECAO = ranking do periodo, aponta onde cavar mas so vira bot com carimbo em dado novo. A varredura NUNCA bloqueia: amostra curta muda o rotulo, nao o direito de rodar'),
         ('ROBUSTAS', 'so quem passa em TUDO: sorte por jogo E por par, placebo, z>=2, duas metades positivas, cego, premio>=5 sobre o baseline, sem identidade (vive sem os 3 melhores pares/alvos e o volume deles nao passa de 40%), >=10 pares, maioria das semanas positiva'),
         ('acima_sorte_par', 'v11: ROI menos o teto p95 sorteando PARES inteiros ate o mesmo n de jogos — a barra certa pra config de banda de confrontos'),

@@ -44,6 +44,8 @@ class CriarVarreduraRequest(BaseModel):
     nlmax: Optional[int] = Field(default=None, ge=1, le=60)
     nlin: Optional[int] = Field(default=None, ge=1, le=60)
     placebo: Optional[int] = Field(default=None, ge=1, le=50)
+    # v12.4: odd media minima pra entrar na ROBUSTAS (default 1.60 no varredor)
+    odd_min_media: Optional[float] = Field(default=None, ge=1.01, le=10.0)
     sem_odd: bool = Field(default=False)
     # PRE-COMPROMISSO. Vazio = o worker separa 30% do fim como holdout.
     data_corte: Optional[str] = Field(default=None,

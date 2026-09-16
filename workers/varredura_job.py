@@ -181,6 +181,12 @@ def _args_do_params(p, entrada, saida, ate=None, plano=False):
         a += ["--nlin", str(int(p["nlin"]))]
     if p.get("placebo"):
         a += ["--placebo", str(int(p["placebo"]))]
+    if p.get("odd_min_media") is not None:
+        # v12.4: odd media minima pra entrar na ROBUSTAS (default 1.60 no varredor)
+        try:
+            a += ["--odd-min-media", f"{float(p['odd_min_media']):.2f}"]
+        except (TypeError, ValueError):
+            pass
     if p.get("sem_odd"):
         a += ["--sem-odd"]
     if ate:
