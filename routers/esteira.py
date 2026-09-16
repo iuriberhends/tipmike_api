@@ -547,13 +547,23 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
     # o pacote da tela (colunar, formato do prototipo) + os itens da planilha
     # colunares e ALINHADOS POR INDICE com o pack (recusada = linha nula)
     pack = S.empacotar(registros, baseline_treino=baseline)
-    COLS_ITEM = ["nome", "grupo", "mercado", "casa", "esporte", "chip_janela",
+    # v35.1: lista COMPLETA do que o conversor produz. Antes era uma lista
+    # fixa sem `lado`, `dif`, `err`, `momento`, comp e chip individual — tudo
+    # que o conversor traduzia era DESCARTADO aqui e o item chegava no motor
+    # sem o filtro (rodadas 34/37: Under indo como 'ambos', sem dif).
+    COLS_ITEM = ["nome", "grupo", "mercado", "lado", "casa", "esporte",
+                 "chip_janela", "chip_base", "chip_indiv_alvo",
                  "chip_wr_min", "chip_wr_max", "chip_conf", "chip_conf_max",
-                 "chip2_janela", "chip2_wr_min", "chip2_wr_max",
+                 "chip2_janela", "chip2_base", "chip2_indiv_alvo",
+                 "chip2_wr_min", "chip2_wr_max",
+                 "comp_tipo", "comp_janela", "comp_min", "comp_max",
+                 "comp2_tipo", "comp2_janela", "comp2_min", "comp2_max",
                  "linha_min", "linha_max", "odd_min", "odd_max",
                  "folga_min", "folga_max", "tot_env_min", "tot_env_max",
+                 "dif_min", "dif_max", "err_min", "err_max",
+                 "momento_min", "momento_max",
                  "atropelo_min", "atropelo_max", "teto",
-                 "evitar_linhas_seq", "variar"]
+                 "evitar_linhas_seq", "variar", "h2h_as_of"]
     it_rows, pos = [], 0
     for i in range(len(registros)):
         if i in irrep:
