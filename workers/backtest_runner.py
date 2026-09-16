@@ -2904,12 +2904,20 @@ def _aplicar_filtros_complementares(stats: dict, filtros_unificados: list,
         if f.get('_nao_suportado'):
             return False, f"filtro_nao_suportado({f.get('_nao_suportado')})"
 
-        # Filtros hist tem min_partidas proprio; senao usa default
-        min_partidas = f.get('hist_min_partidas') or min_h2h
-        try:
-            min_partidas = int(min_partidas)
-        except (TypeError, ValueError):
+        # Filtros hist tem min_partidas proprio; senao usa default.
+        # v33.1: ZERO E' ZERO. `x or min_h2h` tratava minPartidas=0 como
+        # "nao informado" e aplicava o default 5 — o job-mae "escancarado"
+        # (chip 0-100, minPartidas 0) rejeitava 312 selecoes por
+        # h2h_insuficiente enquanto o item da esteira (minPartidas 1) passava.
+        # So' None / '' / '-' caem no default.
+        _mp_raw = f.get('hist_min_partidas')
+        if _mp_raw in (None, '', '-'):
             min_partidas = min_h2h
+        else:
+            try:
+                min_partidas = int(_mp_raw)
+            except (TypeError, ValueError):
+                min_partidas = min_h2h
         _mx_p_raw = f.get('hist_max_partidas')
         try:
             max_partidas = (int(_mx_p_raw)
@@ -4322,9 +4330,17 @@ async def executar_backtest(job_id: int):
         # false/nao) forca o comportamento antigo (dedup por linha) sem trocar
         # arquivo. Qualquer outro valor (ou ausente) = v22 ligada.
         _v22_env = os.getenv('BACKTEST_TICK_A_TICK', '1').strip().lower()
+        # v33.1: ODD tambem liga o tick-a-tick. O bot ao vivo ve todos os
+        # ticks: com odd_min 1.82 ele ESPERA a odd subir na mesma linha. O
+        # backtest classico (primeiro tick por linha) rejeitava a linha de vez
+        # — T4 15/set: odd_min 1.82 = 4.495 no varredor (regra do vivo) x
+        # 3.030 no motor. Ligar o tick-a-tick aqui aproxima o backtest do que
+        # o bot faz de verdade.
+        _odd_estado = bool(bot.get('odd_min') or bot.get('odd_max')
+                           or (bot.get('filtros') or {}).get('limitarOddsAtivo'))
         modo_tick_a_tick = (_v22_env not in ('0', 'off', 'false', 'nao')) and bool(
             folga_ativo or momento_ativo or tot_env_ativo
-            or diff_ativo or cenario_ativo)
+            or diff_ativo or cenario_ativo or _odd_estado)
         if modo_candidatos:
             modo_tick_a_tick = True        # v33: todos os ticks, em ordem
         _ultimo_cand: dict = {}            # v33: (evt,merc,linha,sel) -> (placar, odd)

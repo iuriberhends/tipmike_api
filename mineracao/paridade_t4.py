@@ -171,7 +171,10 @@ def comparar(a):
         u_m = float(r.get('unidades') or 0)
         d_ap = (ap_m - pv['apostas']) / max(pv['apostas'], 1) * 100
         d_u = u_m - pv['unidades']
-        tol_u = max(TOL_ABS_U, abs(pv['unidades']) * TOL_PCT / 100)
+        # unidades: 5% do |u|, ou 2u, ou 0.25u por 100 apostas (5 apostas de
+        # diferenca em 2.500 sao ~4u e nao sao divergencia de eixo)
+        tol_u = max(TOL_ABS_U, abs(pv['unidades']) * TOL_PCT / 100,
+                    pv['apostas'] * 0.0025)
         ok = abs(d_ap) <= TOL_PCT and abs(d_u) <= tol_u
         out.append({'eixo': chave.replace('T4 ', ''), 'ap_prev': pv['apostas'], 'ap_motor': int(ap_m),
                     'd_ap%': round(d_ap, 1), 'u_prev': pv['unidades'], 'u_motor': round(u_m, 2),

@@ -144,10 +144,15 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
                            ELSE 3 END
                 LIMIT 1""")
         campo_data = f"{col_data} AS criado_em" if col_data else "NULL AS criado_em"
+        # v031.1: itens de ESTEIRA (T4, planilha, carimbo) nao sao origem de
+        # garimpo — cada um tem um filtro proprio e poluia a lista com
+        # dezenas de "escancarados" falsos. Ficam de fora.
         base_sql = f"""SELECT id, {campo_data}, total_apostas, bot_snapshot,
                               user_id, upload_id, h2h_as_of
                          FROM backtest_jobs
-                        WHERE status = 'concluido' AND total_apostas >= 500"""
+                        WHERE status = 'concluido' AND total_apostas >= 500
+                          AND id NOT IN (SELECT backtest_job_id FROM esteira_itens
+                                          WHERE backtest_job_id IS NOT NULL)"""
         if acesso_total(usuario):
             rows = await conn.fetch(
                 base_sql + " ORDER BY id DESC LIMIT $1", limite)
@@ -160,9 +165,19 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
         # linha torta nao derruba a lista inteira
         snap = _json(r["bot_snapshot"], {}) or {}
         f = snap.get("filtros") or {}
-        filtrado = bool(f.get("filtrosHistAdicionados") or f.get("folgaAtivo")
-                        or snap.get("linha_min") or snap.get("linha_max")
-                        or snap.get("max_apostas_partida"))
+        candidatos = bool(f.get("candidatos"))
+        # chip 0-100 sem minimo e' escancarado, nao filtro
+        _hist = f.get("filtrosHistAdicionados") or []
+        _hist_real = any(
+            (h.get("prob") or [0, 100])[0] > 0 or (h.get("prob") or [0, 100])[1] < 100
+            or int(h.get("minPartidas") or 0) > 0 for h in _hist if isinstance(h, dict))
+        filtrado = (not candidatos) and bool(
+            _hist_real or f.get("folgaAtivo") or f.get("totEnvAtivo")
+            or f.get("diferencaPlacarAtivo") or f.get("momentoAtivo")
+            or f.get("filtrosComplementaresAtivo") or f.get("atropeloAtivo")
+            or snap.get("linha_min") or snap.get("linha_max")
+            or snap.get("odd_min") or snap.get("odd_max")
+            or (snap.get("max_apostas_partida") and int(snap.get("max_apostas_partida") or 0) < 50))
         try:
             up = r["upload_id"] or ""
             liga, de, ate = _do_parquet(up)
@@ -172,6 +187,7 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
                 "mercado": snap.get("mercado"), "casa": snap.get("casa"),
                 "esporte": snap.get("esporte"),
                 "escancarado": not filtrado,
+                "candidatos": candidatos,      # v031.1: tabela de candidatos (v33)
                 # v030: o que identifica a fonte de verdade. Antes a lista era
                 # "#2242 · over_under_ft · 887 apostas" e nao dava pra saber de
                 # QUE liga/periodo era o job — o usuario tinha que decorar o
