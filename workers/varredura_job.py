@@ -460,6 +460,14 @@ async def executar_varredura(job_id: int):
                                  "de": str(de_holdout)}
             if cod != 0:
                 arq_hold = None
+            else:
+                # v34.1: o que a tela cruza e' o _tudo.csv do holdout (TODAS as
+                # configs, com a coluna `aprovada`), nao o .xlsx (so as
+                # aprovadas — vazio quando nenhuma passa, e a tela dizia
+                # "sem holdout" mesmo com o cego medido).
+                _csv_hold = arq_hold.replace(".xlsx", "_tudo.csv")
+                if os.path.isfile(_csv_hold):
+                    arq_hold = _csv_hold
         except VarreduraErro as e:
             resumo["holdout"] = {"erro": str(e)}
         except Exception as e:
@@ -514,15 +522,10 @@ async def executar_varredura(job_id: int):
             t = _ler_tudo(tudo_csv)
             _selo = (str(t["selo"].iloc[0]).strip().upper()
                      if "selo" in t.columns and len(t) else "VALIDAVEL")
-            if _selo != "VALIDAVEL":
-                # v11.5: amostra curta -> o garimpo vale como DIRECAO. Nao
-                # gasta 2h de motor carimbando ranking de periodo; o carimbo
-                # so' faz sentido em dado que da' pra validar.
-                resumo["esteira"] = {"pulado": f"selo {_selo}: ranking do periodo, "
-                                               "nao vai pro carimbo automatico"}
-                logger.info(f"[varredura] job {job_id}: selo {_selo} — "
-                            "estagio 9 (carimbo no motor) pulado")
-                raise _PulaEsteira
+            # v34.1: o selo NAO bloqueia mais o estagio 9. Com o T4 cravado o
+            # varredor preve o numero do motor; o carimbo e' confirmacao barata
+            # e vale tambem em amostra curta. O selo viaja no NOME da rodada.
+            _sufixo_selo = "" if _selo == "VALIDAVEL" else f" [{_selo}]"
             if "robusta" in t.columns:
                 # v11.2: o topo que vai pro motor e' a ROBUSTAS do varredor
                 # (11 reguas: sorte por jogo E par, placebo, cego, premio,
@@ -582,10 +585,17 @@ async def executar_varredura(job_id: int):
                 kw = {}
                 casa_o = str((snap or {}).get("casa") or "").strip().lower()
                 esp_o = str((snap or {}).get("esporte") or "").strip().lower()
+                # v34.1: MERCADO e LADO do job-mae. Sem eles o conversor cai
+                # no default `ah_ft` e um garimpo de over/under vai pro motor
+                # como HANDICAP (rodada 34: "under" com 648 ap de HC).
+                merc_o = str((snap or {}).get("mercado") or "").strip().lower()
+                lado_o = str((snap or {}).get("lado") or "").strip().lower()
                 if casa_o:
                     kw["casa"] = casa_o
                 if esp_o:
                     kw["esporte"] = esp_o
+                if merc_o:
+                    kw["mercado"] = merc_o
                 # converte LINHA A LINHA pra amarrar o PREVISTO do garimpo em
                 # cada item (a rodada 10 saiu sem o previsto e o delta% ficou
                 # incomputavel). O _previsto entra no dict do item e o
@@ -596,6 +606,8 @@ async def executar_varredura(job_id: int):
                     recusadas.extend(_rec)
                     for it in _its:
                         it["variar"] = 1
+                        if lado_o in ("over", "under"):
+                            it["lado"] = lado_o
                         it["_previsto"] = {
                             k: _reg.get(k) for k in
                             ("apostas", "G", "R", "WR", "ROI", "unidades",
@@ -619,7 +631,7 @@ async def executar_varredura(job_id: int):
                                VALUES ($1, $2, 'varredura', $3, $4::jsonb,
                                        'pendente')
                             RETURNING id""",
-                            org["user_id"], f"carimbo motor: varredura {job_id}",
+                            org["user_id"], f"carimbo motor: varredura {job_id}{_sufixo_selo}",
                             str(job_id), json.dumps(pj, default=str))
                     resumo["esteira"] = {"esteira_job_id": ej,
                                          "itens": len(itens),

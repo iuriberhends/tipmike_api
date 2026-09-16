@@ -932,6 +932,98 @@ async def listar_parquets():
     return {"arquivos": itens}
 
 
+class JobMaeRequest(BaseModel):
+    """v34: JOB-MAE PRA GARIMPO — o usuario so' diz parquet, mercado e lado.
+    Todo o resto e' montado aqui, do jeito que o garimpo precisa:
+    escancarado (chip 0-100, minPartidas 0, sem linha/odd, teto 50, sem
+    evitarLinhasSeq), candidatos (um por tick relevante de cada linha, em
+    parquet), anotar_tudo com as 7 janelas, h2h carimbado e a margem de
+    atropelo certa pro esporte. Opcionalmente ja deixa o GARIMPO engatado
+    (modo completo, min 150), que o daemon solta quando o job concluir."""
+    upload_id: str = Field(..., min_length=1, max_length=300)
+    mercado: str = Field(..., min_length=1, max_length=40)
+    lado: str = Field(default="ambos", max_length=10)
+    casa: Optional[str] = Field(default=None, max_length=40)
+    esporte: Optional[str] = Field(default=None, max_length=40)
+    garimpo_auto: bool = Field(default=True)
+    garimpo_modo: str = Field(default="completo", max_length=20)
+    garimpo_min_apostas: int = Field(default=150, ge=1, le=100000)
+    nome: Optional[str] = Field(default=None, max_length=120)
+
+
+@router.post("/job-mae")
+async def criar_job_mae(req: JobMaeRequest, background: BackgroundTasks,
+                        usuario: dict = Depends(get_current_user)):
+    mercado = (req.mercado or "").strip().lower()
+    lado = (req.lado or "ambos").strip().lower()
+    eh_ou = mercado.startswith("over_under")
+    if eh_ou and lado not in ("over", "under"):
+        raise HTTPException(400, "Over/Under: escolha o lado (over ou under) — "
+                                 "um job-mae por lado")
+    if not eh_ou:
+        lado = "ambos"
+    esporte = (req.esporte or "").strip().lower() or None
+    # margem de atropelo: 15 e' de basquete; no e-football a escala e' de gols
+    atr_margem = 3.0 if esporte in ("fifa", "efootball", "e-football") else None
+
+    payload = {
+        "upload_id": req.upload_id, "mercado": mercado, "lado": lado,
+        "casa": req.casa, "esporte": esporte,
+        "filtros_hist": [{"janela": "all", "prob": [0, 100],
+                          "minPartidas": 0, "base": "match"}],
+        "filtros_comp": [],
+        "evitar_linhas_seq": False, "max_apostas_partida": 50,
+        "candidatos": True, "anotar_tudo": True,
+        "anotar_janelas": [0, 5, 10, 15, 20, 30, 50],
+        "congelar_h2h": True,
+        "stake_modo": "fixo", "stake_valor": 1, "banca_inicial": 1000,
+    }
+    if atr_margem:
+        payload["atropelo_margem"] = atr_margem
+    try:
+        sub = BacktestAvulsoRequest(**payload)
+    except Exception as e:
+        raise HTTPException(400, f"payload do job-mae invalido: {e}")
+    criado = await criar_job_avulso(sub, background, usuario)
+    job_id = int(criado.get("job_id"))
+
+    saida = {"job_id": job_id, "mercado": mercado, "lado": lado,
+             "candidatos": True, "carimbado": True}
+    if req.nome:
+        try:
+            pool = get_pool()
+            async with pool.acquire() as conn:
+                await conn.execute(
+                    """INSERT INTO rotulos (escopo, chave, nome)
+                       VALUES ('backtest', $1, $2)
+                       ON CONFLICT (escopo, chave) DO UPDATE SET nome = EXCLUDED.nome""",
+                    str(job_id), req.nome.strip())
+        except Exception as e:
+            logger.warning(f"[job-mae] apelido nao salvo: {e}")
+
+    if req.garimpo_auto:
+        params = {"modo": (req.garimpo_modo or "completo").strip().lower(),
+                  "min_apostas": int(req.garimpo_min_apostas),
+                  "esperar_origem": True}
+        try:
+            pool = get_pool()
+            async with pool.acquire() as conn:
+                vid = await conn.fetchval(
+                    """INSERT INTO varredura_jobs
+                           (user_id, job_backtest_id, nome, params, status)
+                       VALUES ($1, $2, $3, $4::jsonb, 'aguardando_origem')
+                       RETURNING id""",
+                    usuario.get("id"), job_id,
+                    (req.nome or f"garimpo do job {job_id}")[:120],
+                    json.dumps(params))
+            saida["varredura_id"] = int(vid)
+            saida["garimpo"] = "aguardando o job-mae concluir"
+        except Exception as e:
+            logger.exception("[job-mae] falha engatando o garimpo")
+            saida["garimpo_erro"] = str(e)
+    return saida
+
+
 @router.post("/jobs-avulso")
 async def criar_job_avulso(req: BacktestAvulsoRequest, background: BackgroundTasks, usuario: dict = Depends(get_current_user)):
     """

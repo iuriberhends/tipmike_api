@@ -391,7 +391,12 @@ def _ler_tabela_garimpo(caminho):
 
 
 async def _origem_do_garimpo(conn, row) -> tuple:
-    """De onde o garimpo veio: (casa, esporte, assumido). Ordem: contrato
+    """De onde o garimpo veio: (casa, esporte, assumido, mercado, lado).
+
+    v031: MERCADO e LADO entraram. Ate aqui a selecao so passava casa e
+    esporte pro conversor, e o conversor tem `ah_ft` como DEFAULT — entao
+    todo item nascido de garimpo de over/under virava HANDICAP em silencio
+    (rodadas 20 e 34: "under" rodando como HC). Ordem: contrato
     explicito -> backtest de origem (id no contrato ou no nome 'garimpo do
     job N') -> defaults antigos com a flag assumido=True (a tela avisa).
     Nascida do caso real da rodada 8 (21/ago): garimpo da Betano virava
@@ -400,8 +405,10 @@ async def _origem_do_garimpo(conn, row) -> tuple:
     contrato = _json(row["contrato"], {}) or {}
     casa = str(contrato.get("casa") or contrato.get("bookmaker") or "").lower().strip()
     esporte = str(contrato.get("esporte") or contrato.get("sport") or "").lower().strip()
-    if casa and esporte:
-        return casa, esporte, False
+    mercado = str(contrato.get("mercado") or "").lower().strip()
+    lado = str(contrato.get("lado") or "").lower().strip()
+    if casa and esporte and mercado:
+        return casa, esporte, False, mercado, lado
 
     bt_id = None
     for k in ("backtest_job_id", "job_id", "origem_job", "bt_id"):
@@ -421,16 +428,19 @@ async def _origem_do_garimpo(conn, row) -> tuple:
                 snap = _json(r2["bot_snapshot"], {}) or {}
                 c2 = str(snap.get("casa") or "").lower().strip()
                 e2 = str(snap.get("esporte") or "").lower().strip()
-                if c2 or e2:
+                m2 = str(snap.get("mercado") or "").lower().strip()
+                l2 = str(snap.get("lado") or "").lower().strip()
+                if c2 or e2 or m2:
                     return (c2 or casa or "bet365",
-                            e2 or esporte or "nba2k", False)
+                            e2 or esporte or "nba2k", False,
+                            m2 or mercado, l2 or lado)
         except Exception:
             logger.exception(f"[esteira] falha lendo origem do garimpo (bt {bt_id})")
-    return casa or "bet365", esporte or "nba2k", True
+    return casa or "bet365", esporte or "nba2k", True, mercado, lado
 
 
 def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
-                    casa=None, esporte=None):
+                    casa=None, esporte=None, mercado=None, lado=None):
     """Roda em thread (pandas em 17k linhas travaria o event loop).
     Replica o caminho do testar_selecao: rename -> coercao -> merge do
     holdout pela chave normalizada -> conversor -> pacote colunar."""
@@ -500,7 +510,17 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
         kw["casa"] = casa
     if esporte:
         kw["esporte"] = esporte
+    # v031: sem o mercado o conversor cai no default `ah_ft` e um garimpo de
+    # over/under vira handicap sem ninguem ver. `lado` idem: em O/U o campo
+    # `lado` da config e' artefato (linha positiva = 'zebra'), quem manda e'
+    # o lado do job-mae.
+    if mercado:
+        kw["mercado"] = mercado
     itens, recusadas = C.converter_lote(registros, **kw)
+    if lado in ("over", "under"):
+        for it in itens:
+            if it is not None:
+                it["lado"] = lado
     irrep = {r["i"]: r["motivo"] for r in recusadas}
 
     # o pacote da tela (colunar, formato do prototipo) + os itens da planilha
@@ -572,13 +592,14 @@ async def selecao_da_varredura(
         baseline = _baseline_do_contrato(_json(row["contrato"], {}))
 
     async with pool.acquire() as conn:
-        casa_g, esporte_g, casa_assumida = await _origem_do_garimpo(conn, row)
+        (casa_g, esporte_g, casa_assumida,
+         mercado_g, lado_g) = await _origem_do_garimpo(conn, row)
 
     import asyncio
     try:
         corpo = await asyncio.to_thread(
             _montar_selecao, caminho, row["arquivo_holdout"], baseline,
-            criterio, top, casa_g, esporte_g)
+            criterio, top, casa_g, esporte_g, mercado_g, lado_g)
     except HTTPException:
         raise
     except Exception as e:
@@ -587,6 +608,7 @@ async def selecao_da_varredura(
                             detail=f"falha lendo o garimpo: {e}")
     corpo["varredura"] = {"id": row["id"], "nome": row["nome"]}
     corpo["origem"] = {"casa": casa_g, "esporte": esporte_g,
+                       "mercado": mercado_g, "lado": lado_g,
                        "assumida": casa_assumida}
     logger.info(f"[esteira] selecao da varredura {vid}: {corpo['total']} "
                 f"configs, {len(corpo['irreproduziveis'])} irreproduziveis")
@@ -826,6 +848,21 @@ async def criar_rodada(req: CriarEsteiraRequest,
 
     pool = get_pool()
     async with pool.acquire() as conn:
+        # v35: rodada nascida de um GARIMPO herda o carimbo do h2h do job-mae
+        # (backtest_jobs.h2h_as_of). Sem isso a rodada usava o instante em que
+        # ela mesma comecou e o universo nao batia com o garimpo (+6% no T4
+        # de 14/set). O esteira_job le params.h2h_as_of.
+        if req.origem == "varredura" and "h2h_as_of" not in params:
+            try:
+                _vid = int(str(req.origem_ref or "").strip())
+                _as_of = await conn.fetchval(
+                    """SELECT b.h2h_as_of FROM varredura_jobs v
+                         JOIN backtest_jobs b ON b.id = v.job_backtest_id
+                        WHERE v.id = $1""", _vid)
+                if _as_of:
+                    params["h2h_as_of"] = _as_of.isoformat()
+            except Exception as e:
+                logger.warning(f"[esteira] carimbo do job-mae nao herdado: {e}")
         job_id = await conn.fetchval(
             """INSERT INTO esteira_jobs
                    (user_id, nome, origem, origem_ref, params, status)

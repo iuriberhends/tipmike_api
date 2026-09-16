@@ -108,7 +108,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v12.1 (candidatos: primeiro que passa por linha + chip individual AND)'
+VERSAO = 'VARREDURA v12.2 (candidatos + chip individual AND + minimo do comp)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -818,6 +818,45 @@ def detectar_eixos(d):
         va = pd.to_numeric(d[ca], errors='coerce').values.astype(np.float64)
         vb = pd.to_numeric(d[cb], errors='coerce').values.astype(np.float64)
         WR_TETO[jan] = np.fmax(va, vb)
+
+    # v12.2 — MINIMO DE JOGOS DO FILTRO COMPLEMENTAR (regra do motor). Todo
+    # filtro comp do motor exige qtd >= minPartidas, e sem minPartidas na
+    # config cai no default 5 (MIN_H2H_DEFAULT): 'media' valida a qtd da
+    # JANELA; gap/z/gap_linha/tendencia validam o TOTAL do par. O varredor
+    # cortava a Media sem exigir nada e pegava ~5,5% de apostas a mais que o
+    # motor em TODOS os comp (T4 15/set, rodada 33). Aqui a linha que nao
+    # tem jogos suficientes vira NaN na coluna do comp — e NaN reprova em
+    # qualquer corte (>=, <=, banda), na busca e na mascara_config.
+    # le as colunas de qtd DIRETO do export (o dict `qtd` poda colunas com
+    # poucos valores distintos, e 'Qtd Ult. 5' e' capada em 5)
+    def _col_qtd(*nomes):
+        for n in nomes:
+            c = _lowmap.get(n.lower())
+            if c is not None:
+                return pd.to_numeric(d[c], errors='coerce').fillna(0).values.astype(np.float64)
+        return None
+    _qtd_tot = _col_qtd('Qtd Todas', 'Qtd Total', 'Confrontos')
+    if _qtd_tot is None and qtd:
+        _qtd_tot = qtd[max(qtd, key=lambda k: float(np.nanmax(qtd[k])))]
+    if _qtd_tot is not None:
+        for nome in list(comp):
+            low = nome.lower()
+            if low.startswith(('média', 'media', 'méd')):
+                # o motor valida media_ult{N}_qtd = a coluna 'Qtd Média Ult. N'
+                # do export (v25); sem ela, a qtd do chip da janela; sem ela, o total
+                m_j = re.search(r'(últ\.?\s*\d+|ult\.?\s*\d+|todas)', low)
+                jan_txt = m_j.group(1) if m_j else 'todas'
+                base_q = _col_qtd(f'Qtd Média {jan_txt}', f'Qtd Media {jan_txt}',
+                                  f'Qtd {jan_txt}')
+                if base_q is None:
+                    base_q = _qtd_tot
+            elif low.startswith(('gap', 'z ', 'z últ', 'z todas', 'desvio', 'tend')):
+                base_q = _qtd_tot
+            else:
+                continue                      # tot_env/folga/dif/atropelo: nao e' comp do motor
+            v = comp[nome].copy()
+            v[base_q < MIN_JOGOS_COMP] = np.nan
+            comp[nome] = v
     return wr, qtd, comp
 
 
@@ -965,6 +1004,7 @@ ORDEM_TICK = None
 # apostas no motor. WR_TETO[jan] = max(A,B) quando o export traz 'ind a' e
 # 'ind b' da mesma janela; senao cai no proprio 'ind pior' (e o T4 acusa).
 WR_TETO: dict = {}
+MIN_JOGOS_COMP = 5     # = MIN_H2H_DEFAULT do runner: minimo de jogos do filtro comp
 
 
 def wr_para_teto(jan, WR):

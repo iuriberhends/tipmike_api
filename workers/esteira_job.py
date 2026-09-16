@@ -147,13 +147,6 @@ def montar_snapshot(e: dict, casa_padrao=None, esporte_padrao=None) -> dict:
     A linha crua da planilha vai junto em "_planilha" (o runner ignora chaves
     desconhecidas) para variacoes/hill-climb e auditoria."""
     filtros: dict = {"evitarLinhasSeq": bool(int(_num(e.get("evitar_linhas_seq")) or 0))}
-    # v33: carimbo do h2h POR ITEM (coluna h2h_as_of na planilha). E' assim
-    # que uma rodada por planilha herda o carimbo do job-mae — sem isso ela
-    # usa o instante em que a propria rodada comecou e o universo nao bate
-    # (T4 14/set: sentinela 5.124 no garimpo x 5.436 na esteira).
-    _as_of_item = _txt(e.get("h2h_as_of"))
-    if _as_of_item:
-        filtros["_h2h_as_of"] = _as_of_item
 
     hist = []
     for pref in ("chip_", "chip2_"):
@@ -263,6 +256,18 @@ def montar_snapshot(e: dict, casa_padrao=None, esporte_padrao=None) -> dict:
         filtros["diferencaPlacar"] = int(dmin) if dmin is not None else 0
         if dmax is not None:
             filtros["diferencaPlacarMax"] = int(dmax)
+
+    # v34.1: ERR (erro da casa na linha) — o motor tem errAtivo/errMin/errMax
+    # (janela e min de jogos ficam no default do runner, os mesmos que o
+    # job-mae usou pra anotar a coluna). Sem esta ponte o eixo aparecia
+    # BLOQUEADO na selecao do garimpo.
+    emin, emax = _num(e.get("err_min")), _num(e.get("err_max"))
+    if emin is not None or emax is not None:
+        filtros["errAtivo"] = True
+        if emin is not None:
+            filtros["errMin"] = float(emin)
+        if emax is not None:
+            filtros["errMax"] = float(emax)
 
     mmin, mmax = _num(e.get("momento_min")), _num(e.get("momento_max"))
     if mmin is not None or mmax is not None:
@@ -651,20 +656,6 @@ def _json_safe(o):
     return o
 
 
-def _as_of_item_ou_rodada(snap, job):
-    """v33: o carimbo do ITEM (planilha, coluna h2h_as_of) manda; sem ele,
-    o da rodada. Sempre datetime naive."""
-    try:
-        v = ((snap or {}).get("filtros") or {}).get("_h2h_as_of")
-        if v:
-            from datetime import datetime as _dt
-            x = _dt.fromisoformat(str(v).strip().replace("Z", "").replace("T", " "))
-            return x.replace(tzinfo=None) if x.tzinfo else x
-    except Exception:
-        pass
-    return _as_of_rodada(job)
-
-
 def _as_of_rodada(job):
     """v28.1: CARIMBO DO H2H da rodada — todo item roda com a MESMA foto do
     historico. Sem isso, um item que roda 40 min depois do outro ve outro
@@ -983,7 +974,7 @@ async def _rodar_item_no_motor(pool, job, item, upload_id, d_ini, d_fim,
                        'pendente', 0, $6, $7, $8)
                RETURNING id""",
             d_ini, d_fim, stake, banca, _jdump(snap), upload_id,
-            job.get("user_id"), _as_of_item_ou_rodada(snap, job))
+            job.get("user_id"), _as_of_rodada(job))
     try:
         await asyncio.wait_for(executar_backtest(bt_id), timeout=timeout_s)
     except asyncio.TimeoutError:

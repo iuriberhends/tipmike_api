@@ -201,6 +201,42 @@ async def _laco():
                 await asyncio.sleep(POLL_S)
                 continue
 
+            # 2b) v34: garimpos ENGATADOS num job-mae (status aguardando_origem)
+            # soltam quando o backtest de origem concluir; se a origem der
+            # erro, o garimpo herda o erro em vez de esperar pra sempre.
+            try:
+                async with pool.acquire() as conn:
+                    espera = await conn.fetch(
+                        """SELECT v.id, v.job_backtest_id, b.status AS st_origem,
+                                  left(coalesce(b.erro, ''), 200) AS erro_origem
+                             FROM varredura_jobs v
+                             JOIN backtest_jobs b ON b.id = v.job_backtest_id
+                            WHERE v.status = 'aguardando_origem'""")
+                    for r in espera:
+                        if r["st_origem"] == "concluido":
+                            await conn.execute(
+                                """UPDATE varredura_jobs SET status = 'pendente',
+                                          progresso_msg = 'job-mae concluido — na fila'
+                                    WHERE id = $1 AND status = 'aguardando_origem'""",
+                                r["id"])
+                            logger.info(f"[fila] garimpo {r['id']}: job-mae "
+                                        f"{r['job_backtest_id']} concluiu, liberado")
+                        elif r["st_origem"] in ("erro", "cancelado"):
+                            await conn.execute(
+                                """UPDATE varredura_jobs SET status = 'erro',
+                                          erro = $2, concluido_em = NOW()
+                                    WHERE id = $1""",
+                                r["id"], f"job-mae {r['job_backtest_id']} "
+                                         f"{r['st_origem']}: {r['erro_origem']}")
+                        else:
+                            await conn.execute(
+                                """UPDATE varredura_jobs SET progresso_msg = $2
+                                    WHERE id = $1""",
+                                r["id"], f"aguardando o job-mae {r['job_backtest_id']} "
+                                         f"({r['st_origem']})")
+            except Exception:
+                logger.exception("[fila] falha checando garimpos aguardando origem")
+
             # 3) sobe ate encher os slots
             livres = SLOTS - len(vivos)
             if livres > 0:

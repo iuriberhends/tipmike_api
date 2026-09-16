@@ -188,7 +188,9 @@ def parse_extra(extra):
     e = str(extra or '').strip()
     if e in ('', '-', 'nan', 'None'):
         return []
-    m = re.match(r'^([a-z_]+)\s*(>=|<=|=)?\s*(-?[\d.]+)?\s*~?\s*(-?[\d.]+)?$', e)
+    # v5.2: o export escreve 'Err', 'Folga', 'Atropelo' com maiuscula; o
+    # motor tem todos esses filtros. Comparar em minusculas.
+    m = re.match(r'^([a-z_]+)\s*(>=|<=|=)?\s*(-?[\d.]+)?\s*~?\s*(-?[\d.]+)?$', e.lower())
     if not m:
         raise ConfigNaoReproduzivel(f'não entendi o corte "{e}"')
     eixo, op, a, b = m.group(1), m.group(2), _num(m.group(3)), _num(m.group(4))
