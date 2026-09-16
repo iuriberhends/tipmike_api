@@ -108,7 +108,7 @@ import pandas as pd
 
 warnings.filterwarnings('ignore')
 
-VERSAO = 'VARREDURA v12.2 (candidatos + chip individual AND + minimo do comp)'
+VERSAO = 'VARREDURA v12.3 (candidatos + chip individual AND/conf + minimo do comp)'
 
 # ------------------------------------------------------------------ grades --
 G_WR     = [0.00, 0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.87, 0.90, 0.95, 0.97]
@@ -802,6 +802,14 @@ def detectar_eixos(d):
         v = d[col].values
         if np.isfinite(v).sum() > len(d) * 0.5 and len(np.unique(v[np.isfinite(v)])) >= 4:
             comp[nome] = v.astype(np.float64)
+    # v12.3: maturidade individual (min dos dois jogadores) — ver QTD_IND
+    global QTD_IND
+    QTD_IND = None
+    _lm = {str(c).lower(): c for c in d.columns}
+    _qa, _qb = _lm.get('qtd ind a'), _lm.get('qtd ind b')
+    if _qa is not None and _qb is not None:
+        QTD_IND = np.fmin(pd.to_numeric(d[_qa], errors='coerce').fillna(0).values.astype(np.float64),
+                          pd.to_numeric(d[_qb], errors='coerce').fillna(0).values.astype(np.float64))
     # v12.1: teto do chip individual = max(A,B) (ver WR_TETO)
     global WR_TETO
     WR_TETO = {}
@@ -1006,6 +1014,25 @@ ORDEM_TICK = None
 WR_TETO: dict = {}
 MIN_JOGOS_COMP = 5     # = MIN_H2H_DEFAULT do runner: minimo de jogos do filtro comp
 
+# v12.3 — CONF DO CHIP INDIVIDUAL. No motor, minPartidas num chip `individual`
+# e' a maturidade DE CADA JOGADOR (os dois precisam ter >= N jogos); o varredor
+# cortava pela quantidade de confrontos DO PAR. Em conf alto divergem muito:
+# `Todas (ind pior) >= 0.87 conf>=200 L>=10.5 t3` previa 157 apostas e o motor
+# fez 332 (rodada 39). QTD_IND = min(Qtd Ind A, Qtd Ind B) do export; a funcao
+# escolhe o vetor certo pelo rotulo da janela do chip.
+QTD_IND = None
+
+
+def qtd_para_conf(jan, qv):
+    """Vetor de 'confrontos' pra aplicar conf_min/conf_max: individual
+    (min dos dois jogadores) quando o chip e' '(ind ...)', senao o do par."""
+    if jan is None or QTD_IND is None:
+        return qv
+    j = str(jan).lower()
+    if '(ind ' in j:
+        return QTD_IND
+    return qv
+
 
 def wr_para_teto(jan, WR):
     """Vetor a usar num corte '<=' do chip: max(A,B) no individual, o proprio
@@ -1179,10 +1206,11 @@ def mascara_config(cfg, D):
             op2 = str(cfg.get('op2', '>=')).strip()
             m &= (WR[jan2] <= w2) if op2 in ('<=', 'le') else (WR[jan2] >= w2)
     cmin, cmax = _num(cfg.get('conf_min')), _num(cfg.get('conf_max'))
+    _qconf = qtd_para_conf(cfg.get('janela'), D['qtd'])
     if cmin:
-        m &= D['qtd'] >= cmin
+        m &= _qconf >= cmin
     if cmax is not None and cmax < 999:
-        m &= D['qtd'] <= cmax
+        m &= _qconf <= cmax
     lmin, lmax = _num(cfg.get('linha_min')), _num(cfg.get('linha_max'))
     if lmin is not None:
         m &= D['lin'] >= lmin
@@ -2105,12 +2133,13 @@ def main():
                         problemas.append('conf_min/max: planilha sem coluna de '
                                          'confrontos (Qtd Todas)')
                     else:
+                        _qc = qtd_para_conf(rot.get('janela'), qv)
                         if 'conf_min' in kv:
                             t = _f(kv['conf_min']); rot['conf_min'] = int(t)
-                            m &= qv >= t
+                            m &= _qc >= t
                         if 'conf_max' in kv:
                             t = _f(kv['conf_max']); rot['conf_max'] = int(t)
-                            m &= qv <= t
+                            m &= _qc <= t
                 # linha (valor ABSOLUTO, igual a busca)
                 if 'linha_min' in kv:
                     t = _f(kv['linha_min']); rot['linha_min'] = t; m &= alin >= t
@@ -2271,8 +2300,9 @@ def main():
                             mB = mA if wmin <= 0 else (mA & (wv >= wmin))
                             if int(mB.sum()) < a.min_apostas:
                                 break
+                            _qc = qtd_para_conf(wname, qv)
                             for qmin in gr['qtd']:             # crescente
-                                mC0 = mB if qmin <= 0 else (mB & (qv >= qmin))
+                                mC0 = mB if qmin <= 0 else (mB & (_qc >= qmin))
                                 if int(mC0.sum()) < a.min_apostas:
                                     break
                                 for qmax in gr['qmaxs']:       # DEcrescente
@@ -2281,7 +2311,7 @@ def main():
                                     if not (qmax >= 999 or qmin <= 0
                                             or qmin * 2 <= qmax):
                                         continue
-                                    mC = mC0 if qmax >= 999 else (mC0 & (qv <= qmax))
+                                    mC = mC0 if qmax >= 999 else (mC0 & (_qc <= qmax))
                                     if int(mC.sum()) < a.min_apostas:
                                         break
                                     # v7: destes niveis pra baixo o trabalho e por
@@ -2425,10 +2455,11 @@ def main():
                         m &= wr_para_teto(wname, WR) <= float(rec['wr_max'])
                     if rec['wr_min'] > 0:
                         m &= wv >= float(rec['wr_min'])
+                _qc = qtd_para_conf(wname, qv)
                 if rec['conf_min'] > 0:
-                    m &= qv >= rec['conf_min']
+                    m &= _qc >= rec['conf_min']
                 if rec.get('conf_max', '-') != '-':
-                    m &= qv <= int(rec['conf_max'])
+                    m &= _qc <= int(rec['conf_max'])
                 m &= alin >= float(rec['linha_min'])
                 if rec['linha_max'] != '-':
                     m &= alin <= float(rec['linha_max'])
