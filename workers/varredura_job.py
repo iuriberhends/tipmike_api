@@ -590,6 +590,16 @@ async def executar_varredura(job_id: int):
                 # como HANDICAP (rodada 34: "under" com 648 ap de HC).
                 merc_o = str((snap or {}).get("mercado") or "").strip().lower()
                 lado_o = str((snap or {}).get("lado") or "").strip().lower()
+                if lado_o not in ("over", "under"):
+                    # o avulso guarda o lado em filtros.lados / filtros.inner
+                    _f = (snap or {}).get("filtros") or {}
+                    for _ch in ("lados", "inner"):
+                        _v = _f.get(_ch)
+                        if isinstance(_v, list) and _v:
+                            _c = str(_v[0] or "").strip().lower()
+                            if _c in ("over", "under"):
+                                lado_o = _c
+                                break
                 if casa_o:
                     kw["casa"] = casa_o
                 if esp_o:

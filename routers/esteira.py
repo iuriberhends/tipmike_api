@@ -390,6 +390,27 @@ def _ler_tabela_garimpo(caminho):
                        encoding_errors='replace')
 
 
+def _lado_do_snapshot(snap: dict) -> str:
+    """v35.1: o lado do job-mae. O avulso grava em filtros.lados (['under'])
+    e filtros.inner (['Under']); so o bot tem `lado` de cima. Sem isto o
+    Under ia pro motor como 'ambos' e o baseline saia 2945-2945 (os dois
+    lados) — rodadas 34 e 37."""
+    try:
+        l = str((snap or {}).get("lado") or "").lower().strip()
+        if l in ("over", "under"):
+            return l
+        f = (snap or {}).get("filtros") or {}
+        for chave in ("lados", "inner"):
+            v = f.get(chave)
+            if isinstance(v, list) and v:
+                l = str(v[0] or "").lower().strip()
+                if l in ("over", "under"):
+                    return l
+    except Exception:
+        pass
+    return ""
+
+
 async def _origem_do_garimpo(conn, row) -> tuple:
     """De onde o garimpo veio: (casa, esporte, assumido, mercado, lado).
 
@@ -429,7 +450,7 @@ async def _origem_do_garimpo(conn, row) -> tuple:
                 c2 = str(snap.get("casa") or "").lower().strip()
                 e2 = str(snap.get("esporte") or "").lower().strip()
                 m2 = str(snap.get("mercado") or "").lower().strip()
-                l2 = str(snap.get("lado") or "").lower().strip()
+                l2 = _lado_do_snapshot(snap)
                 if c2 or e2 or m2:
                     return (c2 or casa or "bet365",
                             e2 or esporte or "nba2k", False,
