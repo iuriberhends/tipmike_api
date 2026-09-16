@@ -330,7 +330,10 @@ def resumir(lin: dict) -> str:
     for c, r in (('atropelo_min', 'atr>='), ('atropelo_max', 'atr<='),
                  ('err_min', 'err>='), ('err_max', 'err<='),
                  ('tot_env_min', 'tot>='), ('tot_env_max', 'tot<='),
-                 ('folga_min', 'folga>='), ('folga_max', 'folga<=')):
+                 ('folga_min', 'folga>='), ('folga_max', 'folga<='),
+                 # v5.1: dif e momento eram APLICADOS mas nao apareciam no nome
+                 ('dif_min', 'dif>='), ('dif_max', 'dif<='),
+                 ('momento_min', 'mom>='), ('momento_max', 'mom<=')):
         if lin.get(c) is not None:
             p.append(f"{r}{lin[c]:g}")
     if lin.get('teto'):
