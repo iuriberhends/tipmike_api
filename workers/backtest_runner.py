@@ -392,7 +392,12 @@ MERCADO_TIPOS_POR_CASA = {
         'ml_ft':                ['1'],
         'btts_ft':              ['15'],
         'ah_ft':                ['156'],
-        'over_under_ft_player': ['84', '85'],
+        # v34: TOTAL POR TIME/JOGADOR. 84/85 = gols (e-football); 1902/1926 =
+        # pontos (e-basket); 1912/1916 = pontos do 1o tempo. Os ids ja vinham
+        # no historico da Betano desde maio — o motor conhecia 84/85 mas nunca
+        # liquidou (ver _resolve_resultado / _lado_alvo_player).
+        'over_under_ft_player': ['84', '85', '1902', '1926'],
+        'over_under_ht_player': ['1912', '1916'],
         # '14' = "Total de gols - 1o Tempo" (confirmado nos ticks reais).
         # O '83' que estava aqui nao existe na betano (e da estrelabet, e la e 2o tempo).
         'over_under_ht':        ['14'],
@@ -419,6 +424,24 @@ MERCADO_TIPOS_POR_CASA = {
         'ml_ht':                ['PERIOD_RESULT'],
         'double_chance_ft':     ['DOUBLE_CHANCE'],
         'odd_even':             ['ODD_EVEN'],
+        # v34: total por time/jogador (69M de ticks no historico, todos os
+        # esportes; texto 'Charlotte Hornets (PRODIGY) - Total de pontos')
+        'over_under_ft_player': ['PLAYER_TOTAL'],
+    },
+    # v34: KTO — mesma familia de codigos de texto da Superbet (plataforma
+    # irma). Sem esta entrada o parquet da KTO nem casava mercado.
+    'kto': {
+        'over_under_ft':        ['OVER_UNDER'],
+        'asian_over_under_ft':  ['OVER_UNDER'],
+        'ml_ft':                ['MATCH_RESULT'],
+        'btts_ft':              ['BTTS'],
+        'ah_ft':                ['HANDICAP'],
+        'correct_score':        ['CORRECT_SCORE'],
+        'over_under_ht':        ['PERIOD_TOTAL'],
+        'ml_ht':                ['PERIOD_RESULT'],
+        'double_chance_ft':     ['DOUBLE_CHANCE'],
+        'odd_even':             ['ODD_EVEN'],
+        'over_under_ft_player': ['PLAYER_TOTAL'],
     },
     'bet365': {
         # 03/ago: codigos de 1o TEMPO. Origem: o mapa de protocolo do
@@ -835,6 +858,58 @@ def _parse_linha(linha_text: str) -> Optional[float]:
         return None
 
 
+MERCADOS_PLAYER = ('over_under_ft_player', 'over_under_ht_player')
+
+
+def _texto_tem(texto: str, cand: str) -> bool:
+    """cand aparece em texto como nome inteiro (nao como pedaco de outro
+    nome). Ambos ja normalizados."""
+    if not cand or not texto:
+        return False
+    return re.search(r'(^|[^a-z0-9])' + re.escape(cand) + r'($|[^a-z0-9])', texto) is not None
+
+
+def _lado_alvo_player(tick) -> Optional[str]:
+    """v34 — de QUAL LADO e' o total por time/jogador deste tick: 'home' ou
+    'away', ou None quando nao da' pra saber.
+
+    O texto do mercado carrega o time/jogador:
+      superbet 'Charlotte Hornets (PRODIGY) - Total de pontos'
+      betano   'Nottm Forest (Rodja) (Esports) - Total de Gols Mais/Menos'
+      betano   'Total de pontos Indiana Pacers (Knez) (Esports)'
+      kto      'Total de Gols do Argentina (Buu)'
+    Casa com jogador_a/jogador_b (nick) e time_a/time_b (time) do evento.
+    Regra: um lado bate e o outro NAO -> esse lado. Os dois batem (nicks
+    iguais, nomes um dentro do outro) ou nenhum -> None (FAIL CLOSED: o
+    chamador rejeita a aposta em vez de chutar)."""
+    try:
+        txt = _normalizar(tick.get('mercado') or '')
+        if not txt:
+            return None
+        ja = _normalizar(tick.get('jogador_a') or '')
+        jb = _normalizar(tick.get('jogador_b') or '')
+        ta = _normalizar(tick.get('time_a') or '')
+        tb = _normalizar(tick.get('time_b') or '')
+        # 1) pelo NICK (o mais especifico) — so vale se os nicks diferem
+        if ja and jb and ja != jb:
+            a_ok, b_ok = _texto_tem(txt, ja), _texto_tem(txt, jb)
+            if a_ok != b_ok:
+                return 'home' if a_ok else 'away'
+        # 2) pelo TIME
+        if ta and tb and ta != tb:
+            a_ok, b_ok = _texto_tem(txt, ta), _texto_tem(txt, tb)
+            if a_ok != b_ok:
+                return 'home' if a_ok else 'away'
+        # 3) so um dos dois lados tem nome conhecido
+        if ja and not jb and _texto_tem(txt, ja):
+            return 'home'
+        if jb and not ja and _texto_tem(txt, jb):
+            return 'away'
+        return None
+    except Exception:
+        return None
+
+
 def _normalizar(s: str) -> str:
     if s is None:
         return ''
@@ -862,9 +937,18 @@ def _lado_aposta(selecao: str) -> Optional[str]:
 
 
 def _resolve_resultado(mercado: str, selecao: str, linha: float,
-                       score_home: int, score_away: int) -> Optional[str]:
+                       score_home: int, score_away: int,
+                       score_alvo: Optional[int] = None) -> Optional[str]:
     if score_home is None or score_away is None:
         return None
+    # v34: TOTAL POR TIME/JOGADOR — e' um over/under sobre o placar de UM
+    # lado so'. O chamador descobre o lado (_lado_alvo_player) e passa o
+    # placar dele em `score_alvo`; sem ele, segue None (pendente/rejeita),
+    # exatamente como antes deste patch — nada muda pra quem nao passa.
+    if mercado in MERCADOS_PLAYER:
+        if score_alvo is None or linha is None:
+            return None
+        return _resolve_resultado('over_under_ft', selecao, linha, int(score_alvo), 0)
     mercados_com_linha = ('over_under_ft', 'over_under_ht', 'asian_over_under_ft',
                           'asian_over_under_ht', 'ah_ft', 'ah_ht', 'eh_ft',
                           'over_under_ft_player', 'over_under_ht_player')
@@ -4836,6 +4920,7 @@ async def executar_backtest(job_id: int):
             linha_num = _parse_linha(tick.get('linha'))
             # ===== resolucao HANDICAP por NICK (isolada) =====
             _envio_h = _envio_a = None
+            _lado_alvo = None
             if _mercado_eh_hc(mercado_bot):
                 # v20: de que placar a linha vale neste feed?
                 _modo_hc = _hc_modo_liquidacao(tick)
@@ -4861,6 +4946,22 @@ async def executar_backtest(job_id: int):
                     score_home, score_away,
                     score_envio_home=_envio_h, score_envio_away=_envio_a,
                     relativo=_hc_relativo,
+                )
+            elif mercado_bot in MERCADOS_PLAYER:
+                # v34: total por TIME/JOGADOR — acha o lado no texto do
+                # mercado e liquida so' com o placar dele. Lado indefinido =
+                # rejeita (nunca chuta). Guarda o placar do envio tambem, pra
+                # varredura ver 'gols do alvo ate aqui'.
+                _lado_alvo = _lado_alvo_player(tick)
+                if _lado_alvo is None:
+                    rej['player_lado_indefinido'] = rej.get('player_lado_indefinido', 0) + 1
+                    continue
+                _envio_h, _envio_a = _placar_no_envio(tick, _idx_placar)
+                _score_alvo = score_home if _lado_alvo == 'home' else score_away
+                resultado = _resolve_resultado(
+                    mercado_bot, tick.get('selecao', ''),
+                    linha_num, score_home, score_away,
+                    score_alvo=_score_alvo,
                 )
             else:
                 resultado = _resolve_resultado(
@@ -4913,6 +5014,8 @@ async def executar_backtest(job_id: int):
                 # conhecido do evento antes dele). Vai pro export.
                 'envio_home': _envio_h,
                 'envio_away': _envio_a,
+                # v34: lado do total por time/jogador ('home'/'away'); '' nos outros
+                'lado_alvo': (_lado_alvo if mercado_bot in MERCADOS_PLAYER else ''),
                 'resultado': resultado,
                 'stats': stats,
                 # v23: err do par no envio (None = filtro/anotacao desligados)
@@ -5151,6 +5254,11 @@ async def executar_backtest(job_id: int):
                     else f"{tick.get('score_home')}-{tick.get('score_away')}"
                 ),
                 'score_final': f"{c['score_home']}-{c['score_away']}",
+                # v34: total por time/jogador — de que lado e' e o placar DELE
+                'lado_alvo': c.get('lado_alvo') or '',
+                'placar_alvo_final': (
+                    (c['score_home'] if c.get('lado_alvo') == 'home' else c['score_away'])
+                    if c.get('lado_alvo') in ('home', 'away') else None),
                 'resultado': resultado,
                 'pnl': round(pnl_aposta, 2),
                 'lucro_unidades': round(pnl_aposta / stake, 3) if stake else 0,

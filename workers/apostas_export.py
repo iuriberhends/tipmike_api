@@ -97,6 +97,11 @@ def montar_linhas_apostas(detalhe):
             # continua saindo byte a byte identico.
             if a.get("err") is not None:
                 linha["Err"] = a.get("err")
+            # v34: total por TIME/JOGADOR — de que lado e' o alvo e o placar
+            # dele no fim. So' aparece nesses mercados; os outros saem iguais.
+            if a.get("lado_alvo"):
+                linha["Lado Alvo"] = "casa" if a.get("lado_alvo") == "home" else "fora"
+                linha["Placar Alvo"] = a.get("placar_alvo_final")
             # v25: colunas do modo garimpo (anotarTudo). Job sem a flag nao
             # tem a chave e continua saindo byte a byte identico.
             an = a.get("anot")

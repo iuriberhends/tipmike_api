@@ -384,6 +384,9 @@ _MERCADOS_VALIDOS = {
     "over_under_ft", "over_under_ht", "asian_over_under_ft", "asian_over_under_ht",
     "ml_ft", "ml_ht", "btts_ft", "ah_ft", "ah_ht",
     "correct_score", "double_chance_ft", "odd_even",
+    # v34: total por time/jogador (superbet/kto PLAYER_TOTAL; betano 84/85,
+    # 1902/1926, 1912/1916)
+    "over_under_ft_player", "over_under_ht_player",
 }
 _QUARTOS_VALIDOS = {"q1", "q2", "q3", "q4"}
 # limites defensivos (evita payload absurdo)
@@ -1220,6 +1223,10 @@ async def baixar_planilha_apostas(job_id: int, usuario: dict = Depends(get_curre
             "Resultado": _res_map.get(a.get("resultado"), a.get("resultado", "")),
             "Lucro/Prej.": a.get("lucro_unidades"),
         })
+        # v34: total por time/jogador — lado do alvo e o placar dele
+        if a.get("lado_alvo"):
+            linha["Lado Alvo"] = "casa" if a.get("lado_alvo") == "home" else "fora"
+            linha["Placar Alvo"] = a.get("placar_alvo_final")
         # v23: coluna Err — so aparece quando o job computou o err
         if a.get("err") is not None:
             linha["Err"] = a.get("err")
