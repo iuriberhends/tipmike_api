@@ -624,6 +624,9 @@ async def executar_varredura(job_id: int):
                         it["variar"] = 1
                         if lado_o in ("over", "under"):
                             it["lado"] = lado_o
+                            _n = str(it.get("nome") or "")
+                            if _n.startswith(("ZEB ", "FAV ")):
+                                it["nome"] = lado_o.upper() + _n[3:]
                         it["_previsto"] = {
                             k: _reg.get(k) for k in
                             ("apostas", "G", "R", "WR", "ROI", "unidades",

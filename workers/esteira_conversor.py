@@ -336,9 +336,33 @@ def resumir(lin: dict) -> str:
                  ('momento_min', 'mom>='), ('momento_max', 'mom<=')):
         if lin.get(c) is not None:
             p.append(f"{r}{lin[c]:g}")
+    # v5.3: filtros COMPLEMENTARES no nome (Tend/Media/Gap/Z). Sem isto
+    # 'ZEB L>=6.5 t6' escondia um `tendencia >= -0.13` e o item parecia
+    # mecanico no placar.
+    _abrev = {'media': 'Med', 'gap_media': 'Gap', 'gap_linha': 'GapL',
+              'zscore': 'Z', 'tendencia': 'Tend'}
+    for pref in ('comp_', 'comp2_'):
+        tipo = lin.get(pref + 'tipo')
+        if not tipo:
+            continue
+        jan = lin.get(pref + 'janela')
+        jtxt = '' if jan in (None, 0, '0', 'all', 'todas') else str(jan)
+        cmin, cmax = lin.get(pref + 'min'), lin.get(pref + 'max')
+        rot = _abrev.get(str(tipo).lower(), str(tipo)) + jtxt
+        if cmin is not None and cmax is not None:
+            p.append(f"{rot} {cmin:g}~{cmax:g}")
+        elif cmin is not None:
+            p.append(f"{rot}>={cmin:g}")
+        elif cmax is not None:
+            p.append(f"{rot}<={cmax:g}")
     if lin.get('teto'):
         p.append(f"t{lin['teto']}")
-    lado = 'FAV' if lin.get('_lado') == 'favorito' else 'ZEB'
+    # lado real: em O/U e' OVER/UNDER, nao ZEB/FAV (que so' faz sentido em HC)
+    _l = str(lin.get('lado') or '').lower()
+    if _l in ('over', 'under'):
+        lado = _l.upper()
+    else:
+        lado = 'FAV' if lin.get('_lado') == 'favorito' else 'ZEB'
     return f"{lado} " + ' '.join(p) if p else f"{lado} escancarado"
 
 

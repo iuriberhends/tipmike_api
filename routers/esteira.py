@@ -542,6 +542,11 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
         for it in itens:
             if it is not None:
                 it["lado"] = lado
+                # v5.3: o nome nasce antes do lado — troca o prefixo ZEB/FAV
+                # (que so' faz sentido em HC) pelo lado real do O/U
+                _n = str(it.get("nome") or "")
+                if _n.startswith(("ZEB ", "FAV ")):
+                    it["nome"] = lado.upper() + _n[3:]
     irrep = {r["i"]: r["motivo"] for r in recusadas}
 
     # o pacote da tela (colunar, formato do prototipo) + os itens da planilha
