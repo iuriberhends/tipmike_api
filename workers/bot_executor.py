@@ -1229,10 +1229,16 @@ def _fav_ids_ml(casa: str) -> list:
 
 
 def _fav_lado_da_selecao(sel: str, ja: str, jb: str, ta: str, tb: str) -> Optional[str]:
-    """'a' | 'b' | None a partir do texto da selecao do mercado vencedor."""
-    s = (sel or '').lower()
+    """'a' | 'b' | None a partir do texto da selecao do mercado vencedor.
+    Superbet e-football manda '1 / X / 2' (sem nick nem time); e-basket manda
+    o nome do time. Cobre os dois."""
+    s = (sel or '').strip().lower()
     if not s:
         return None
+    if s in ('1', 'casa', 'home', 'w1', 'p1'):
+        return 'a'
+    if s in ('2', 'fora', 'away', 'w2', 'p2'):
+        return 'b'
     for nick, lado in ((ja, 'a'), (jb, 'b')):
         if nick and nick.lower() in s:
             return lado
