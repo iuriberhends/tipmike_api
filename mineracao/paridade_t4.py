@@ -98,11 +98,19 @@ def montar_grade(D):
     # --- teto por jogo ---
     itens.append(('teto 2', dict(base, teto=2)))
 
+    # --- v2 (HC): LADO zebra/favorito — em O/U o lado vem do job-mae e a
+    # coluna e' artefato; em HC ('ambos') e' eixo de verdade ---
+    if str(D.get('mercado') or '').startswith('ah_'):
+        for l in ('zebra', 'favorito'):
+            itens.append((f'lado {l}', dict(base, lado=l)))
+
     # --- complementares: mecanicos e comp (um piso e um teto por eixo) ---
     for nome, v in COMP.items():
         low = nome.lower()
-        if low.startswith(('desvio', 'atropelo')) or 'ind a' in low or 'ind b' in low:
-            continue                      # o motor nao filtra por eles / posicionais
+        # v2: atropelo E desvio sao filtros do motor (atropeloAtivo; comp tipo
+        # desvio desde o v37). So' os posicionais (ind A / ind B) ficam de fora.
+        if 'ind a' in low or 'ind b' in low:
+            continue
         med = _q(v, 0.5)
         if med is None:
             continue
@@ -117,6 +125,7 @@ def gerar(a):
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'workers'))
     import esteira_conversor as C
     D = V.preparar_D(a.entrada)
+    D['mercado'] = a.mercado           # v2: a grade precisa saber se e' HC (lado)
     itens = montar_grade(D)
     linhas, previsto = [], {}
     for nome, cfg in itens:
@@ -132,7 +141,10 @@ def gerar(a):
         u = float(D['u'][m].sum())
         g = int(D['green'][m].sum())
         try:
-            l = C.converter(dict(cfg, lado='-'), casa=a.casa, esporte=a.esporte,
+            # v2: em HC o lado da config (zebra/favorito) e' eixo e VIAJA pro
+            # conversor; em O/U continua '-' (o lado vem do job-mae, abaixo)
+            _cfg_lado = cfg.get('lado', '-') if str(a.mercado).startswith('ah_') else '-'
+            l = C.converter(dict(cfg, lado=_cfg_lado), casa=a.casa, esporte=a.esporte,
                             mercado=a.mercado, nome=f'T4 {nome}')
         except C.ConfigNaoReproduzivel as e:
             print(f'  FORA DA GRADE (motor nao tem): {nome} -> {e}')

@@ -72,6 +72,7 @@ v4 - Tradutor de liga (Superbet IDs + Bet365 codigos)
 REUSA: todas as funcoes de filtragem do backtest_runner.py v4
 """
 
+import re
 import asyncio
 import json
 import logging
@@ -97,6 +98,8 @@ import asyncpg
 
 from workers.backtest_runner import (
     _matches_mercado,
+    MERCADOS_PLAYER,       # v35: total por TIME/JOGADOR
+    _lado_alvo_player,     # v35: de que lado e' o total (pelo texto do mercado)
     _parse_linha,
     _normalizar,
     _resolve_resultado,
@@ -262,6 +265,9 @@ class State:
     contador_ticks: int = 0
     contador_apostas: int = 0
     contador_rejeicoes: dict = {}
+    # v35: rejeicoes POR BOT — {bot_id: {motivo: n}} — pra saber por que um
+    # bot especifico esta mudo sem ter que adivinhar (bots 145/146, 18/set)
+    rej_por_bot: dict = {}
     parar: bool = False
 
 
@@ -519,8 +525,16 @@ class ErrVivoCache:
             if len(buf) > ERR_VIVO_CAP_TICKS_EVENTO:
                 meio = ERR_VIVO_CAP_TICKS_EVENTO // 2
                 self._abertos[evt] = buf[:meio] + buf[-meio:]
-            if self._ultimo_ts is None or r['ts'] > self._ultimo_ts:
-                self._ultimo_ts = r['ts']
+            # v35: o ts do banco vem AWARE (timestamptz) e `de` e' naive local
+            # (datetime.now()); comparar os dois estourava "can't compare
+            # offset-naive and offset-aware" a cada refresh — o err_vivo da
+            # superbet/e-football nunca atualizava e todo bot com filtro err
+            # caia em err_erro. Normaliza pra naive LOCAL, o mesmo frame de `de`.
+            _ts_r = r['ts']
+            if getattr(_ts_r, 'tzinfo', None) is not None:
+                _ts_r = _ts_r.astimezone().replace(tzinfo=None)
+            if self._ultimo_ts is None or _ts_r > self._ultimo_ts:
+                self._ultimo_ts = _ts_r
 
         # reduz os eventos abertos com a MESMA funcao do backtest e funde os
         # que fecharam no historico
@@ -650,6 +664,23 @@ def _selecao_eh_over_under(selecao: str) -> Optional[str]:
     return None
 
 
+def _conta_rej(bot, motivo: str, detalhe: str = None):
+    """v35: conta a rejeicao no agregado (como sempre) E por bot. `detalhe`
+    (sub-motivo do filtro basico, com numeros mascarados) entra so' no por-bot."""
+    try:
+        state.contador_rejeicoes[motivo] = state.contador_rejeicoes.get(motivo, 0) + 1
+        bid = (bot or {}).get('id')
+        if bid is None:
+            return
+        chave = motivo
+        if detalhe:
+            chave = f"{motivo}:{re.sub(r'[0-9]+(\\.[0-9]+)?', '#', str(detalhe))[:40]}"
+        d = state.rej_por_bot.setdefault(bid, {})
+        d[chave] = d.get(chave, 0) + 1
+    except Exception:
+        pass
+
+
 async def _avaliar_e_apostar(bot: dict, tick: dict):
     """v5: unifica filtros comp + hist e SEMPRE calcula stats_h2h se tiver filtros."""
     global state
@@ -692,7 +723,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         lados_bot_norm = [str(l).lower().strip() for l in lados_bot if l]
         selecao_lado = _selecao_normalizada(tick.get('selecao'))
         if selecao_lado is not None and selecao_lado not in lados_bot_norm:
-            state.contador_rejeicoes['lado'] = state.contador_rejeicoes.get('lado', 0) + 1
+            _conta_rej(bot, 'lado')
             return
 
     # ===== filtro de LADO do HANDICAP (+ / -) =====
@@ -707,7 +738,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             if val is not None:
                 sinal_tick = '+' if val > 0 else '-'
                 if sinal_tick != hc_lado:
-                    state.contador_rejeicoes['lado'] = state.contador_rejeicoes.get('lado', 0) + 1
+                    _conta_rej(bot, 'lado')
                     return
 
     # v20 — HC de feed RELATIVO precisa do placar de partida pra poder ser
@@ -720,8 +751,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             _modo_hc = 'desconhecido'
         if _modo_hc == 'relativo' and (tick.get('score_home') is None
                                        or tick.get('score_away') is None):
-            state.contador_rejeicoes['hc_sem_placar_envio'] = \
-                state.contador_rejeicoes.get('hc_sem_placar_envio', 0) + 1
+            _conta_rej(bot, 'hc_sem_placar_envio')
             return
         # Feed de HC nao registrado + politica 'rejeitar': nao da pra saber de
         # que placar a linha vale, entao nao aposta ao vivo. Mesma politica do
@@ -732,13 +762,12 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             _ao_vivo = (_sh is None or _sa is None
                         or (_sh or 0) > 0 or (_sa or 0) > 0)
             if _ao_vivo:
-                state.contador_rejeicoes['hc_feed_nao_validado'] = \
-                    state.contador_rejeicoes.get('hc_feed_nao_validado', 0) + 1
+                _conta_rej(bot, 'hc_feed_nao_validado')
                 return
 
     passou, motivo = _avaliar_filtros_basicos(tick, bot)
     if not passou:
-        state.contador_rejeicoes['basico'] = state.contador_rejeicoes.get('basico', 0) + 1
+        _conta_rej(bot, 'basico', motivo)
         return
 
     cenario_ativo = filtros.get('cenarioPartidaAtivo', False)
@@ -769,12 +798,12 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
 
     if cenario_partida:
         if not _aplicar_filtro_cenario(tick, cenario_partida):
-            state.contador_rejeicoes['cenario'] = state.contador_rejeicoes.get('cenario', 0) + 1
+            _conta_rej(bot, 'cenario')
             return
 
     if diff_ativo and (diff_min > 0 or diff_max is not None):
         if not _aplicar_filtro_diff_placar(tick, diff_min, diff_max):
-            state.contador_rejeicoes['diff'] = state.contador_rejeicoes.get('diff', 0) + 1
+            _conta_rej(bot, 'diff')
             return
 
     # v12 — FOLGA (so handicap): folga = hc_assinado - deficit do lado
@@ -782,13 +811,12 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     # nao-HC rejeita com contador proprio (nunca roda "sem o filtro").
     if folga_ativo:
         if not _mercado_eh_hc(bot.get('mercado', '')):
-            state.contador_rejeicoes['folga_so_hc'] = \
-                state.contador_rejeicoes.get('folga_so_hc', 0) + 1
+            _conta_rej(bot, 'folga_so_hc')
             return
         _ok_folga, _mot_folga = _aplicar_filtro_folga(
             tick, tick.get('selecao', ''), folga_min, folga_max)
         if not _ok_folga:
-            state.contador_rejeicoes['folga'] = state.contador_rejeicoes.get('folga', 0) + 1
+            _conta_rej(bot, 'folga')
             return
 
     # v13 — MOMENTO: so aposta no estagio de jogo configurado (fail-closed
@@ -801,7 +829,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         except Exception:
             _ok_mom, _mot_mom = False, 'momento_erro_chamada'
         if not _ok_mom:
-            state.contador_rejeicoes['momento'] = state.contador_rejeicoes.get('momento', 0) + 1
+            _conta_rej(bot, 'momento')
             return
 
     # v19 — ATROPELO ao vivo: a MESMA conta do backtest (_checar_atropelo do
@@ -828,8 +856,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             _ok_at, _mot_at = False, 'atropelo_erro_chamada'
         if not _ok_at:
             _k_at = _mot_at or 'atropelo'
-            state.contador_rejeicoes[_k_at] = \
-                state.contador_rejeicoes.get(_k_at, 0) + 1
+            _conta_rej(bot, _k_at)
             return
 
     # v20 — TOT_ENV ao vivo: soma do placar no instante do envio, a MESMA
@@ -850,8 +877,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 _k_te = 'tot_env_acima'
             else:
                 _k_te = _mot_te or 'tot_env'
-            state.contador_rejeicoes[_k_te] = \
-                state.contador_rejeicoes.get(_k_te, 0) + 1
+            _conta_rej(bot, _k_te)
             return
 
     # v23 — ERR ao vivo: a MESMA conta do backtest (_checar_err do runner)
@@ -862,8 +888,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     if _f_at.get('errAtivo'):
         _mercado_bot_err = bot.get('mercado', '')
         if _mercado_bot_err not in ERR_MERCADOS_SUPORTADOS:
-            state.contador_rejeicoes['err_so_over_under'] = \
-                state.contador_rejeicoes.get('err_so_over_under', 0) + 1
+            _conta_rej(bot, 'err_so_over_under')
             return
         try:
             _ecache_err = _get_err_cache(casa_bot, sport_banco)
@@ -877,8 +902,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             _ok_e, _mot_e = False, 'err_erro_chamada'
         if not _ok_e:
             _k_e = _mot_e or 'err'
-            state.contador_rejeicoes[_k_e] = \
-                state.contador_rejeicoes.get(_k_e, 0) + 1
+            _conta_rej(bot, _k_e)
             return
 
     # v5: SEMPRE calcula stats_h2h se tiver qualquer filtro
@@ -890,14 +914,13 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         # coletar e o bot apostava SEM o filtro configurado.
         _mot_ns = _primeiro_nao_suportado(filtros_unificados)
         if _mot_ns:
-            state.contador_rejeicoes['filtro_nao_suportado'] = \
-                state.contador_rejeicoes.get('filtro_nao_suportado', 0) + 1
+            _conta_rej(bot, 'filtro_nao_suportado')
             return
 
         ja = tick.get('jogador_a')
         jb = tick.get('jogador_b')
         if not ja or not jb:
-            state.contador_rejeicoes['sem_par'] = state.contador_rejeicoes.get('sem_par', 0) + 1
+            _conta_rej(bot, 'sem_par')
             return
 
         h2h_cache = _get_h2h_cache(casa_bot, sport_banco)
@@ -921,7 +944,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             _bloq, _mot_bl = _hc_blacklist_bloqueia(
                 tick.get('selecao', ''), ja, jb, _blz, _blf)
             if _bloq:
-                state.contador_rejeicoes['hc_blacklist'] = state.contador_rejeicoes.get('hc_blacklist', 0) + 1
+                _conta_rej(bot, 'hc_blacklist')
                 return
 
             # v11: MESMA precedencia do backtest (fonte unica, sem divergir):
@@ -954,7 +977,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                     if tem_indiv:
                         z_nome, f_nome = _zebra_favorito(tick.get('selecao', ''), ja, jb)
                         if z_nome is None:
-                            state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
+                            _conta_rej(bot, 'comp')
                             return
                         indiv_cache = _get_indiv_cache(casa_bot, sport_banco)
                         _precisa_fav = any(
@@ -977,9 +1000,9 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                     passou_hc, motivo_hc = _ramo_hc_pct(stats_dict, 0.87, None, 20)
             if not passou_hc:
                 if 'insuf' in motivo_hc:
-                    state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
+                    _conta_rej(bot, 'h2h_insuf', motivo_hc)
                 else:
-                    state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
+                    _conta_rej(bot, 'comp', motivo_hc)
                 return
 
         # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
@@ -1017,9 +1040,9 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 stats_dict, filtros_unificados, stats_indiv=stats_indiv)
             if not passou_comp:
                 if 'h2h_insuficiente' in motivo:
-                    state.contador_rejeicoes['h2h_insuf'] = state.contador_rejeicoes.get('h2h_insuf', 0) + 1
+                    _conta_rej(bot, 'h2h_insuf', motivo)
                 else:
-                    state.contador_rejeicoes['comp'] = state.contador_rejeicoes.get('comp', 0) + 1
+                    _conta_rej(bot, 'comp', motivo)
                 return
 
     # v7: evitar linhas em sequencia - bloqueia se ja apitou QUALQUER linha
@@ -1045,7 +1068,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
         # antes (nunca abre brecha pra apostar 2x o mesmo lado).
         _lado_atual = _lado_aposta(tick.get('selecao'))
         if any(_lado_aposta(r['selecao']) == _lado_atual for r in _sels_mercado):
-            state.contador_rejeicoes['mercado_repetido'] = state.contador_rejeicoes.get('mercado_repetido', 0) + 1
+            _conta_rej(bot, 'mercado_repetido')
             return
 
     max_apostas = bot.get('max_apostas_partida')
@@ -1056,7 +1079,7 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 WHERE bot_id = $1 AND event_id = $2 AND modo = 'simulado'
             """, bot['id'], tick.get('event_id'))
         if count and count >= max_apostas:
-            state.contador_rejeicoes['cap_jogo'] = state.contador_rejeicoes.get('cap_jogo', 0) + 1
+            _conta_rej(bot, 'cap_jogo')
             return
 
     motivo = _montar_motivo(bot, tick, stats_dict, filtros_unificados)
@@ -1178,6 +1201,20 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
 
 async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo: Optional[str] = None, liga_traduzida: Optional[str] = None):
     global state
+
+    # v35: TOTAL POR TIME/JOGADOR — o lado do alvo (casa/fora) sai do texto
+    # do mercado no momento do ENVIO (mesma funcao do backtest) e vai guardado
+    # em stats_h2h.lado_alvo, que e' jsonb (nao precisa de migration). O
+    # resolver le de la' pra liquidar so' com o placar daquele lado. Se nao
+    # der pra saber o lado, NAO aposta (fail closed, igual ao backtest).
+    if (bot.get('mercado') or '') in MERCADOS_PLAYER:
+        _la = _lado_alvo_player(tick)
+        if _la is None:
+            _conta_rej(bot, 'player_lado_indefinido')
+            return None
+        stats = dict(stats or {})
+        stats['lado_alvo'] = _la
+        stats['alvo_nome'] = (tick.get('jogador_a') if _la == 'home' else tick.get('jogador_b')) or ''
 
     # LINHA GRAVADA NA APOSTA.
     # Pro HANDICAP, a coluna 'linha' do tick NAO e confiavel: a superbet manda o
@@ -1358,7 +1395,8 @@ async def _resolver_apostas_pendentes():
                        -- v20: placar do ENVIO (ja gravado desde sempre) +
                        -- esporte/liga pra saber de que placar a linha vale
                        a.placar_a_entrada, a.placar_b_entrada,
-                       a.esporte, a.liga
+                       a.esporte, a.liga,
+                       a.stats_h2h
                 FROM apostas a
                 WHERE a.status = 'pendente'
                   AND a.modo = 'simulado'
@@ -1530,10 +1568,28 @@ async def _resolver_apostas_pendentes():
                         _sh_g, _sa_g = _pl_ht
                     else:
                         _sh_g, _sa_g = sh, sa
+                    # v35: total por TIME/JOGADOR — placar de UM lado so'. O lado
+                    # foi gravado no envio (stats_h2h.lado_alvo); sem ele a
+                    # aposta segue pendente (nunca chuta).
+                    _score_alvo = None
+                    if (ap['mercado'] or '') in MERCADOS_PLAYER:
+                        _st = ap.get('stats_h2h')
+                        if isinstance(_st, str):
+                            try:
+                                _st = json.loads(_st)
+                            except Exception:
+                                _st = None
+                        _la = (_st or {}).get('lado_alvo') if isinstance(_st, dict) else None
+                        if _la not in ('home', 'away'):
+                            logger.warning(f"[resolver] ap {ap['id']}: total por time sem "
+                                           f"lado_alvo gravado — segue pendente")
+                            continue
+                        _score_alvo = _sh_g if _la == 'home' else _sa_g
                     resultado = _resolve_resultado(
                         ap['mercado'], ap['selecao'] or ap['lado'],
                         float(ap['linha']) if ap['linha'] else None,
-                        _sh_g, _sa_g
+                        _sh_g, _sa_g,
+                        score_alvo=_score_alvo,
                     )
 
                 if resultado is None:
@@ -1627,6 +1683,15 @@ async def loop_stats():
             f"bots_ativos={len(state.bots_ativos)} | "
             f"rejeicoes={rej_str}"
         )
+        # v35: por bot — os 3 motivos que mais rejeitaram cada bot desde o
+        # boot. E' o que responde "por que o bot X esta mudo" sem chute.
+        try:
+            for bid, d in sorted(state.rej_por_bot.items()):
+                top = sorted(d.items(), key=lambda x: -x[1])[:3]
+                if top:
+                    logger.info(f"   ↳ bot {bid}: " + ', '.join(f'{k}={v}' for k, v in top))
+        except Exception:
+            pass
 
 
 # ============================================================
