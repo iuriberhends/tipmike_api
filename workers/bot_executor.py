@@ -1,6 +1,17 @@
 """
 bot_executor.py - Worker de simulacao em tempo real (v12 + v20 hc_relativo)
 
+v36 - DADOS DA PLANILHA (TipManager) GRAVADOS NA APOSTA:
+- Ao registrar a aposta, grava em stats_h2h (jsonb, sem migration):
+  time_a / time_b (do tick) e favorito / azarao (nick do jogador com a
+  menor odd no mercado VENCEDOR - ml_ft - no tick mais antigo do evento
+  na janela de 45min antes do envio, i.e. o mais perto do pre-match que a
+  coleta tem). Tambem odd_fav_pre / odd_aza_pre.
+- Consulta blindada e barata (indice bookmaker+sport+ts, janela de ts),
+  cache por (bookmaker, event_id), timeout curto; se falhar, a aposta
+  entra do mesmo jeito sem esses campos. NADA muda na logica de apito.
+- Lido por routers/export_tm.py (export .xlsx com as 7 abas da TM).
+
 v20 - HANDICAP AO VIVO: de que placar a linha vale (espelha o backtest v20).
 - Feeds em que a linha de HC vale DO PLACAR CORRENTE PRA FRENTE (hoje:
   bet365 / E-Football) passaram a ser liquidados descontando o placar que
@@ -1199,6 +1210,110 @@ def _montar_motivo(bot: dict, tick: dict, stats: Optional[dict], filtros_unifica
     return " · ".join(partes)
 
 
+# ---------------------------------------------------------------------------
+# v36: favorito/azarao "pre-match" pro export TM. Cache por evento (bounded).
+# ---------------------------------------------------------------------------
+_FAV_CACHE: dict = {}
+_FAV_CACHE_MAX = 3000
+_FAV_JANELA_MIN = 45
+_FAV_TIMEOUT_S = 2.0
+_FAV_DRAW_RX = re.compile(r'^(x|draw|empate|tie)$|\bempate\b|\bdraw\b', re.I)
+
+
+def _fav_ids_ml(casa: str) -> list:
+    try:
+        m = MERCADO_TIPOS_POR_CASA.get(casa, {}) or {}
+        return [str(v) for v in (m.get('ml_ft') or [])]
+    except Exception:
+        return []
+
+
+def _fav_lado_da_selecao(sel: str, ja: str, jb: str, ta: str, tb: str) -> Optional[str]:
+    """'a' | 'b' | None a partir do texto da selecao do mercado vencedor."""
+    s = (sel or '').lower()
+    if not s:
+        return None
+    for nick, lado in ((ja, 'a'), (jb, 'b')):
+        if nick and nick.lower() in s:
+            return lado
+    for time_, lado in ((ta, 'a'), (tb, 'b')):
+        if time_ and len(time_) >= 3 and time_.lower() in s:
+            return lado
+    return None
+
+
+async def _favorito_prematch(tick: dict) -> Optional[dict]:
+    """Devolve {'favorito','azarao','odd_fav_pre','odd_aza_pre'} ou None.
+    Nunca levanta excecao; nunca demora mais que _FAV_TIMEOUT_S."""
+    global state
+    try:
+        casa = tick.get('bookmaker')
+        ev = tick.get('event_id')
+        if not casa or not ev:
+            return None
+        chave = (casa, str(ev))
+        if chave in _FAV_CACHE:
+            return _FAV_CACHE[chave]
+        ids = _fav_ids_ml(casa)
+        if not ids:
+            return None
+        ts = tick.get('ts')
+        if not isinstance(ts, datetime):
+            return None
+        de = ts - timedelta(minutes=_FAV_JANELA_MIN)
+        sql = """
+            SELECT selecao, odds, ts
+            FROM ticks
+            WHERE bookmaker = $1 AND sport = $2
+              AND ts >= $3 AND ts <= $4
+              AND event_id = $5
+              AND mercado_tipo = ANY($6::text[])
+            ORDER BY ts ASC
+            LIMIT 12
+        """
+        async with state.pool.acquire() as conn:
+            rows = await asyncio.wait_for(
+                conn.fetch(sql, casa, tick.get('sport'), de, ts, str(ev), ids),
+                timeout=_FAV_TIMEOUT_S)
+        if not rows:
+            _FAV_CACHE[chave] = None
+            return None
+        # primeira odd de cada selecao (o tick mais antigo = mais perto do pre-match)
+        primeiras = {}
+        for r in rows:
+            sel = (r['selecao'] or '').strip()
+            if not sel or sel in primeiras or _FAV_DRAW_RX.search(sel):
+                continue
+            try:
+                od = float(r['odds'])
+            except Exception:
+                continue
+            if od > 1.0:
+                primeiras[sel] = od
+        ja, jb = tick.get('jogador_a') or '', tick.get('jogador_b') or ''
+        ta, tb = tick.get('time_a') or '', tick.get('time_b') or ''
+        por_lado = {}
+        for sel, od in primeiras.items():
+            lado = _fav_lado_da_selecao(sel, ja, jb, ta, tb)
+            if lado and lado not in por_lado:
+                por_lado[lado] = od
+        if 'a' not in por_lado or 'b' not in por_lado:
+            _FAV_CACHE[chave] = None
+            return None
+        if por_lado['a'] == por_lado['b']:
+            out = None
+        elif por_lado['a'] < por_lado['b']:
+            out = {'favorito': ja, 'azarao': jb, 'odd_fav_pre': por_lado['a'], 'odd_aza_pre': por_lado['b']}
+        else:
+            out = {'favorito': jb, 'azarao': ja, 'odd_fav_pre': por_lado['b'], 'odd_aza_pre': por_lado['a']}
+        if len(_FAV_CACHE) >= _FAV_CACHE_MAX:
+            _FAV_CACHE.clear()
+        _FAV_CACHE[chave] = out
+        return out
+    except Exception:
+        return None
+
+
 async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo: Optional[str] = None, liga_traduzida: Optional[str] = None):
     global state
 
@@ -1215,6 +1330,24 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
         stats = dict(stats or {})
         stats['lado_alvo'] = _la
         stats['alvo_nome'] = (tick.get('jogador_a') if _la == 'home' else tick.get('jogador_b')) or ''
+
+    # v36: campos da planilha TM (Time A/B, Favorito/Azarao) em stats_h2h.
+    # Blindado: qualquer falha aqui e' ignorada e a aposta entra igual.
+    try:
+        _extra = {}
+        if tick.get('time_a'):
+            _extra['time_a'] = str(tick.get('time_a'))
+        if tick.get('time_b'):
+            _extra['time_b'] = str(tick.get('time_b'))
+        _fav = await _favorito_prematch(tick)
+        if _fav:
+            _extra.update(_fav)
+        if _extra:  # so mexe no stats se tiver algo a acrescentar (None continua None)
+            stats = dict(stats or {})
+            for _k, _v in _extra.items():
+                stats.setdefault(_k, _v)
+    except Exception:
+        pass
 
     # LINHA GRAVADA NA APOSTA.
     # Pro HANDICAP, a coluna 'linha' do tick NAO e confiavel: a superbet manda o

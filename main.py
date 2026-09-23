@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from database import init_pool, close_pool
 from security import get_current_user
-from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth, admin, h2h_sync, mikedb, varredura, esteira, rotulos
+from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth, admin, h2h_sync, mikedb, varredura, esteira, rotulos, export_tm
 
 
 @asynccontextmanager
@@ -80,6 +80,7 @@ app.include_router(mikedb.router, dependencies=PROTEGIDO)
 app.include_router(varredura.router, dependencies=PROTEGIDO)
 app.include_router(esteira.router, dependencies=PROTEGIDO)
 app.include_router(rotulos.router, dependencies=PROTEGIDO)   # v029: apelidos de tela
+app.include_router(export_tm.router, dependencies=PROTEGIDO)
 
 
 @app.get("/")
