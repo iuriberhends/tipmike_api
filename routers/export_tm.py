@@ -1,5 +1,5 @@
 """
-routers/export_tm.py  (v40, 23/set)
+routers/export_tm.py  (v40.1, 23/set)
 Export .xlsx no formato da planilha da TipManager (7 abas): Tips Enviadas,
 Torneios, Grades, Confrontos, Jogadores, Prob. Hist., Horarios.
 
@@ -105,6 +105,17 @@ def _f(v):
         return None
 
 
+def _i(v):
+    """inteiro pra exibir placar (aceita Decimal/float/str); None se vazio."""
+    if v is None or v == '':
+        return None
+    try:
+        fv = float(v)
+        return int(fv) if fv == int(fv) else fv
+    except Exception:
+        return v
+
+
 def _stats_dict(v) -> dict:
     if v is None:
         return {}
@@ -178,23 +189,27 @@ _JANELA_ORDEM = [
 
 
 def _janelas(stats: dict) -> list:
-    """Lista [(label, wr)] das janelas de chip gravadas no stats_h2h."""
+    """Lista [(label, wr)] das janelas de chip gravadas no stats_h2h.
+    Ordem: primeiro os chips EXPLICITOS do bot (wr_ultN — so existem se o bot
+    pediu), depois 'Todas' (wr_all / hc_pct — o hc_pct e' o chip default do
+    HC e vem sempre), depois individuais e chips de comparacao. Assim a
+    Janela 1 e' o chip que de fato disparou o bot."""
     out = []
     vistos = set()
-    for k, label in _JANELA_ORDEM:
-        if k in stats and _f(stats.get(k)) is not None and label not in vistos:
-            out.append((label, _f(stats[k])))
-            vistos.add(label)
     ults = []
     for k, v in stats.items():
         mm = re.fullmatch(r'wr_ult(\d+)', str(k))
         if mm and _f(v) is not None:
             ults.append((int(mm.group(1)), _f(v)))
-    for n, v in sorted(ults, reverse=True):
+    for n, v in sorted(ults):
         lab = f'Últ. {n}'
         if lab not in vistos:
             out.append((lab, v))
             vistos.add(lab)
+    for k, label in _JANELA_ORDEM:
+        if k in stats and _f(stats.get(k)) is not None and label not in vistos:
+            out.append((label, _f(stats[k])))
+            vistos.add(label)
     for k, v in stats.items():
         mm = re.fullmatch(r'indiv_([ab])_ult(\d+)', str(k))
         if mm and _f(v) is not None:
@@ -299,7 +314,8 @@ def _linha_tips(d: dict) -> dict:
     tip = _tip_label(mercado, d.get('selecao') or d.get('lado'), stats)
     horario, periodo = _horario_periodo(d.get('live_time'), d.get('periodo_entrada'), d.get('minuto_entrada'))
     jan = _janelas(stats)
-    fa, fb = d.get('placar_final_a'), d.get('placar_final_b')
+    fa, fb = _i(d.get('placar_final_a')), _i(d.get('placar_final_b'))
+    ea, eb = _i(d.get('placar_a_entrada')), _i(d.get('placar_b_entrada'))
     res = _resultado_label(d.get('resultado'), d.get('status'))
     lucro = _f(d.get('lucro_unidades'))
     if res == 'Pendente':
@@ -328,8 +344,7 @@ def _linha_tips(d: dict) -> dict:
         'Janela 2': jan[1][0] if len(jan) > 1 else '',
         'Winrate 2': round(jan[1][1], 4) if len(jan) > 1 else None,
         'Odd': _f(d.get('odd')),
-        'Placar Envio': (f"{d.get('placar_a_entrada')}-{d.get('placar_b_entrada')}"
-                         if d.get('placar_a_entrada') is not None and d.get('placar_b_entrada') is not None else '-'),
+        'Placar Envio': f'{ea}-{eb}' if ea is not None and eb is not None else '-',
         'Placar Final': f'{fa}-{fb}' if fa is not None and fb is not None else '-',
         'Red Por': _red_por(mercado, tip, d.get('linha'), fa, fb, d.get('resultado'), stats, ja, jb),
         'Resultado': res,

@@ -1,0 +1,217 @@
+===========================================================
+ MIKE MENTOR - o que fazer com esta pasta
+===========================================================
+
+Copie o CONTEUDO desta pasta pra dentro do diretorio do
+tipmike_api na VPS. Deve ficar assim:
+
+    tipmike_api/
+        migrations/020_mentor_schema.sql   <- daqui
+        mentor_carga.py                    <- daqui
+        mentor_tiers.py                    <- daqui
+        dados_m/                           <- daqui
+            aulas/        (111 JSON + 111 PDF)
+            questoes/     (5 JSON)
+            _progresso.json
+
+Dependencia (uma vez):     pip install psycopg2-binary
+Os scripts acham a pasta dados_m sozinhos. Se voce a mover,
+aponte com --saida <caminho>.
+O DSN vem de MIKEDB_DSN, ou passe --dsn "postgresql://..."
+
+
+===========================================================
+ PASSO 1 - criar as tabelas
+===========================================================
+
+    python mentor_carga.py --migrar
+
+Cria o schema "mentor" com 21 tabelas. E idempotente: rodar
+duas vezes nao quebra nada (tudo IF NOT EXISTS).
+
+(Aplica o .sql pelo psycopg2. NAO use psql: esta VPS e Windows
+e o psql nao esta no PATH - ja quebrou aqui uma vez.)
+
+No fim ele lista as tabelas. Devem aparecer 21:
+  anotacao   aula      bizu       card        destilado
+  disciplina modulo    par_confundido  ponto   prova_real
+  questao    questao_fixacao  redacao  resposta  revisao
+  sessao     simulado  suficiencia  topico    trecho
+
+Se aparecer erro de permissao pra criar schema, rode como
+o dono do banco (postgres).
+
+
+===========================================================
+ PASSO 2 - conferir ANTES de gravar
+===========================================================
+
+    python mentor_carga.py --simular
+
+NAO toca no banco. Le os arquivos e mostra o que seria
+carregado. Esperado (23/09):
+
+    disciplina          2        card            2.270
+    modulo             16        questao_fixacao 1.058
+    topico (= aula)   111        questao         8.890
+    aula              111
+
+E, no bloco de qualidade, o numero que mais importa:
+
+    questoes COM assunto_ids            : 8.420/8.890
+    questoes que casam com algum topico : 6.797/8.890
+
+Esse ultimo era 634 antes da colheita pela tela. E ele que
+sustenta tier e suficiencia - se vier baixo, nao adianta
+seguir para o PASSO 4.
+
+Se os numeros baterem, siga. Se aparecer "[!]" em alguma
+linha, me mande a saida antes de continuar.
+
+
+===========================================================
+ PASSO 3 - carregar
+===========================================================
+
+    python mentor_carga.py --tudo
+
+Transacao unica: se der erro no meio, faz rollback e o banco
+fica exatamente como estava. Nao existe carga pela metade.
+
+No fim ele conta as linhas de cada tabela.
+
+E IDEMPOTENTE: rodar de novo nao duplica. Depois de cada
+coleta nova, repita os passos 2 e 3.
+
+Detalhe pensado: o comentario do professor, quando ja estiver
+no banco, NUNCA e apagado por uma recarga. Ele e buscado sob
+demanda (spec 3.3.1b), entao seria burrice uma recarga zerar
+o que ja foi conquistado.
+
+
+===========================================================
+ PASSO 4 - tier e suficiencia (3.7 e 3.8)
+===========================================================
+
+    python mentor_tiers.py --simular
+    python mentor_tiers.py --aplicar
+
+Calcula, por topico:
+  tier        S | A | B | C | Z  + a frase de evidencia
+  suficiencia suficiente | fino | insuficiente + o motivo
+
+Agora o resultado VALE: 6.797 das 8.890 questoes estao ligadas
+a um topico (eram 634). Antes quase tudo caia em "insuficiente"
+por falta de vinculo, nao por falta de questao - isso acabou.
+
+Duas ressalvas honestas:
+  - 81 questoes de Penal (1,2%) ficaram sem id de assunto. Elas
+    estao no meu arquivo mas nao aparecem no filtro da tela.
+  - 495 questoes tiveram o assunto lido da trilha do card em vez
+    da API (campo assuntos_origem = "tela"). Medido contra 307
+    casos com os dois dados: 92% identicas, e as diferencas eram
+    sempre um assunto SECUNDARIO a menos - nunca um errado. O
+    assunto principal, que e o que liga ao topico, sempre veio.
+
+
+===========================================================
+ COMO O id DO ASSUNTO FOI RESOLVIDO (e como refazer)
+===========================================================
+
+As 6.821 questoes de Penal foram coletadas antes de o extrator
+guardar o id do assunto. Sem ele nao da pra ligar questao ->
+topico, e sem isso tier e suficiencia nao fecham.
+
+Reler as listagens pelo meu proprio cliente esbarrava em 429 -
+e o app do Gran, no mesmo navegador e com o mesmo token, recebia
+200. Depois de conferir que as duas requisicoes eram identicas,
+a saida foi parar de pedir: o script dirige a TELA, o app pede,
+e eu so escuto pelo CDP.
+
+Roda NO PC (precisa do Chrome logado em abrir_chrome_gran.bat):
+
+    python gran_extrator.py --colher-da-tela "Direito Penal" ^
+        --assunto 406223
+
+  --assunto e o id RAIZ da disciplina (ele ja expande os filhos).
+  Nao precisa configurar nada na tela: o script aplica o filtro,
+  poe 100 por pagina e pagina sozinho.
+
+Duas coisas que parecem erro e nao sao:
+  [tela] na linha da pagina  -> o app ja tinha os dados e nao
+     precisou pedir; o id foi lido da trilha do card, de graca.
+  [api]                      -> o app pediu e eu ouvi a resposta
+     completa, que tem preferencia sobre a da tela.
+
+Casa por id da questao: pode rodar de novo a vontade, nada
+duplica e nada se perde. Depois: rodar preparar_vps.bat, copiar
+dados_m e repetir os passos 2 a 4.
+
+
+===========================================================
+ COLETAR UMA DISCIPLINA NOVA (faltam 11)
+===========================================================
+
+Sao dois passos, de proposito. O caro e o segundo.
+
+PASSO A - a disciplina inteira, SEM gastar requisicao:
+
+    python gran_extrator.py --coletar-pela-tela "<nome>" ^
+        --assunto <id da raiz>
+
+  A listagem ja traz enunciado, alternativas e o GABARITO, e ela
+  sai do cache do proprio app. Roda ate durante uma penalidade
+  de 429. Penal Militar: 426 questoes em ~30 segundos.
+
+  Ids de raiz ja conhecidos:
+      Direito Penal .......... 406223
+      Direito Penal Militar .. 404290
+  Para descobrir outros: abra a disciplina no filtro do Gran
+  Questoes e olhe o numero no fim do link da materia no card
+  (ex: /direito-penal-406223).
+
+PASSO B - o que falta (estatistica + comentario):
+
+    python gran_extrator.py --completar-leves "<nome>"
+
+  ESTE gasta a minha cota e e o que leva 429. Grava a cada
+  questao, entao pode ser interrompido sem perder nada - roda
+  de novo e ele continua de onde parou.
+
+Por que separado: o indice de acerto e obrigatorio pela spec,
+entao o passo B e necessario. Mas separando, uma noite de 429
+nao impede de ter a disciplina inteira montada e conferida.
+
+Alternativa em um passo so (usa a tela pra listagem e faz as
+leves na hora) - precisa que nao haja penalidade ativa:
+
+    python gran_extrator.py --todas-questoes --disciplina "<nome>"
+
+
+===========================================================
+ O QUE NAO ESTA AQUI (de proposito)
+===========================================================
+
+O extrator, os .bat de coleta e o inspecionador ficam no PC:
+dependem do Chrome logado com a sessao do Gran. Na VPS nao
+funcionariam - e uma segunda sessao logada ainda dispararia a
+deteccao de acesso simultaneo.
+
+O ciclo e:
+    PC coleta -> voce copia dados_m -> VPS carrega no banco
+
+
+===========================================================
+ DUAS COISAS CONHECIDAS NOS DADOS
+===========================================================
+
+1. 9 questoes sem enunciado (imagem ou grupo com texto comum
+   fora delas). A view mentor.v_questao_usavel ja exclui.
+
+2. 7 questoes onde o gabarito da API diverge da letra que o
+   professor escreveu no comentario. Conferi uma: a API estava
+   CERTA e a letra do comentario e que estava trocada. O campo
+   gabarito_confere_com_comentario marca "vale um olhar", nao
+   "a API errou".
+
+Detalhes em MIKE_MENTOR_STATUS.md, nesta mesma pasta.

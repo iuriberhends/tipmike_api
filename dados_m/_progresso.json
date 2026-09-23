@@ -1,0 +1,716 @@
+{
+  "aulas": {
+    "135779": {
+      "quando": "2026-09-23T01:20:33",
+      "arquivo": "saida\\aulas\\Direito Penal\\07_Dolo - Crime Doloso II.json",
+      "titulo": "Dolo - Crime Doloso II",
+      "disciplina": "Direito Penal"
+    },
+    "127631": {
+      "quando": "2026-09-23T01:43:17",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Conceitos Introdutórios.json",
+      "titulo": "Conceitos Introdutórios",
+      "disciplina": "Direito Penal"
+    },
+    "127633": {
+      "quando": "2026-09-23T01:43:42",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Conceitos Introdutórios II.json",
+      "titulo": "Conceitos Introdutórios II",
+      "disciplina": "Direito Penal"
+    },
+    "134252": {
+      "quando": "2026-09-23T01:44:10",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Teoria do Crime - Conceito de Crime.json",
+      "titulo": "Teoria do Crime - Conceito de Crime",
+      "disciplina": "Direito Penal"
+    },
+    "135777": {
+      "quando": "2026-09-23T01:44:37",
+      "arquivo": "saida\\aulas\\Direito Penal\\04_Fato Típico - Conduta.json",
+      "titulo": "Fato Típico - Conduta",
+      "disciplina": "Direito Penal"
+    },
+    "138368": {
+      "quando": "2026-09-23T01:45:05",
+      "arquivo": "saida\\aulas\\Direito Penal\\05_Fato Típico - Resultado.json",
+      "titulo": "Fato Típico - Resultado",
+      "disciplina": "Direito Penal"
+    },
+    "135778": {
+      "quando": "2026-09-23T01:45:34",
+      "arquivo": "saida\\aulas\\Direito Penal\\06_Dolo - Crime Doloso.json",
+      "titulo": "Dolo - Crime Doloso",
+      "disciplina": "Direito Penal"
+    },
+    "137458": {
+      "quando": "2026-09-23T01:46:00",
+      "arquivo": "saida\\aulas\\Direito Penal\\08_Crimes Culposos.json",
+      "titulo": "Crimes Culposos",
+      "disciplina": "Direito Penal"
+    },
+    "137460": {
+      "quando": "2026-09-23T01:46:28",
+      "arquivo": "saida\\aulas\\Direito Penal\\09_Crimes Culposos II.json",
+      "titulo": "Crimes Culposos II",
+      "disciplina": "Direito Penal"
+    },
+    "137461": {
+      "quando": "2026-09-23T01:46:56",
+      "arquivo": "saida\\aulas\\Direito Penal\\10_Crimes Culposos III.json",
+      "titulo": "Crimes Culposos III",
+      "disciplina": "Direito Penal"
+    },
+    "137462": {
+      "quando": "2026-09-23T01:47:25",
+      "arquivo": "saida\\aulas\\Direito Penal\\11_Resultado Agravador - Preterdolo.json",
+      "titulo": "Resultado Agravador - Preterdolo",
+      "disciplina": "Direito Penal"
+    },
+    "139148": {
+      "quando": "2026-09-23T01:47:52",
+      "arquivo": "saida\\aulas\\Direito Penal\\12_Iter Criminis e Consumação.json",
+      "titulo": "Iter Criminis e Consumação",
+      "disciplina": "Direito Penal"
+    },
+    "139419": {
+      "quando": "2026-09-23T01:48:20",
+      "arquivo": "saida\\aulas\\Direito Penal\\13_Tentativa.json",
+      "titulo": "Tentativa",
+      "disciplina": "Direito Penal"
+    },
+    "139420": {
+      "quando": "2026-09-23T01:48:46",
+      "arquivo": "saida\\aulas\\Direito Penal\\14_Tentativa II.json",
+      "titulo": "Tentativa II",
+      "disciplina": "Direito Penal"
+    },
+    "139421": {
+      "quando": "2026-09-23T01:49:13",
+      "arquivo": "saida\\aulas\\Direito Penal\\15_Tentativa III.json",
+      "titulo": "Tentativa III",
+      "disciplina": "Direito Penal"
+    },
+    "139422": {
+      "quando": "2026-09-23T01:49:42",
+      "arquivo": "saida\\aulas\\Direito Penal\\16_Desistência Voluntária e Arrependimento Eficaz.json",
+      "titulo": "Desistência Voluntária e Arrependimento Eficaz",
+      "disciplina": "Direito Penal"
+    },
+    "139423": {
+      "quando": "2026-09-23T01:50:10",
+      "arquivo": "saida\\aulas\\Direito Penal\\17_Arrependimento Posterior.json",
+      "titulo": "Arrependimento Posterior",
+      "disciplina": "Direito Penal"
+    },
+    "139955": {
+      "quando": "2026-09-23T01:50:37",
+      "arquivo": "saida\\aulas\\Direito Penal\\18_Crime Impossível.json",
+      "titulo": "Crime Impossível",
+      "disciplina": "Direito Penal"
+    },
+    "139957": {
+      "quando": "2026-09-23T01:51:06",
+      "arquivo": "saida\\aulas\\Direito Penal\\19_Ilicitude - Introdução.json",
+      "titulo": "Ilicitude - Introdução",
+      "disciplina": "Direito Penal"
+    },
+    "140350": {
+      "quando": "2026-09-23T01:51:34",
+      "arquivo": "saida\\aulas\\Direito Penal\\20_Estado de Necessidade.json",
+      "titulo": "Estado de Necessidade",
+      "disciplina": "Direito Penal"
+    },
+    "140352": {
+      "quando": "2026-09-23T01:52:01",
+      "arquivo": "saida\\aulas\\Direito Penal\\21_Estado de Necessidade II.json",
+      "titulo": "Estado de Necessidade II",
+      "disciplina": "Direito Penal"
+    },
+    "140353": {
+      "quando": "2026-09-23T01:52:29",
+      "arquivo": "saida\\aulas\\Direito Penal\\22_Legítima Defesa.json",
+      "titulo": "Legítima Defesa",
+      "disciplina": "Direito Penal"
+    },
+    "140355": {
+      "quando": "2026-09-23T01:52:57",
+      "arquivo": "saida\\aulas\\Direito Penal\\23_Legítima Defesa II.json",
+      "titulo": "Legítima Defesa II",
+      "disciplina": "Direito Penal"
+    },
+    "150180": {
+      "quando": "2026-09-23T01:53:25",
+      "arquivo": "saida\\aulas\\Direito Penal\\24_Pacote Anticrime - Art. 25, Parágrafo Único.json",
+      "titulo": "Pacote Anticrime - Art. 25, Parágrafo Único",
+      "disciplina": "Direito Penal"
+    },
+    "140357": {
+      "quando": "2026-09-23T01:53:50",
+      "arquivo": "saida\\aulas\\Direito Penal\\25_Exercícios - Excludentes de Ilicitude.json",
+      "titulo": "Exercícios - Excludentes de Ilicitude",
+      "disciplina": "Direito Penal"
+    },
+    "140999": {
+      "quando": "2026-09-23T01:54:19",
+      "arquivo": "saida\\aulas\\Direito Penal\\26_Ilicitude - Excesso.json",
+      "titulo": "Ilicitude - Excesso",
+      "disciplina": "Direito Penal"
+    },
+    "141000": {
+      "quando": "2026-09-23T01:54:43",
+      "arquivo": "saida\\aulas\\Direito Penal\\27_Estrito Cumprimento de Dever Legal.json",
+      "titulo": "Estrito Cumprimento de Dever Legal",
+      "disciplina": "Direito Penal"
+    },
+    "141001": {
+      "quando": "2026-09-23T01:55:10",
+      "arquivo": "saida\\aulas\\Direito Penal\\28_Exercício Regular do Direito.json",
+      "titulo": "Exercício Regular do Direito",
+      "disciplina": "Direito Penal"
+    },
+    "141002": {
+      "quando": "2026-09-23T01:55:37",
+      "arquivo": "saida\\aulas\\Direito Penal\\29_Culpabilidade.json",
+      "titulo": "Culpabilidade",
+      "disciplina": "Direito Penal"
+    },
+    "141179": {
+      "quando": "2026-09-23T01:56:04",
+      "arquivo": "saida\\aulas\\Direito Penal\\30_Imputabilidade.json",
+      "titulo": "Imputabilidade",
+      "disciplina": "Direito Penal"
+    },
+    "141181": {
+      "quando": "2026-09-23T01:56:32",
+      "arquivo": "saida\\aulas\\Direito Penal\\31_Imputabilidade II.json",
+      "titulo": "Imputabilidade II",
+      "disciplina": "Direito Penal"
+    },
+    "141182": {
+      "quando": "2026-09-23T01:56:59",
+      "arquivo": "saida\\aulas\\Direito Penal\\32_Imputabilidade III.json",
+      "titulo": "Imputabilidade III",
+      "disciplina": "Direito Penal"
+    },
+    "141784": {
+      "quando": "2026-09-23T01:57:27",
+      "arquivo": "saida\\aulas\\Direito Penal\\33_Inexigibilidade de Conduta Diversa.json",
+      "titulo": "Inexigibilidade de Conduta Diversa",
+      "disciplina": "Direito Penal"
+    },
+    "141785": {
+      "quando": "2026-09-23T01:57:55",
+      "arquivo": "saida\\aulas\\Direito Penal\\34_Inexigibilidade de Conduta Diversa II.json",
+      "titulo": "Inexigibilidade de Conduta Diversa II",
+      "disciplina": "Direito Penal"
+    },
+    "141786": {
+      "quando": "2026-09-23T01:58:22",
+      "arquivo": "saida\\aulas\\Direito Penal\\35_Erro de Proibição.json",
+      "titulo": "Erro de Proibição",
+      "disciplina": "Direito Penal"
+    },
+    "141788": {
+      "quando": "2026-09-23T01:58:51",
+      "arquivo": "saida\\aulas\\Direito Penal\\36_Erro de Proibição II.json",
+      "titulo": "Erro de Proibição II",
+      "disciplina": "Direito Penal"
+    },
+    "337620": {
+      "quando": "2026-09-23T01:59:17",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Decreto - Lei 3.688-41 (Contravenções Penais).json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais)",
+      "disciplina": "Direito Penal"
+    },
+    "337621": {
+      "quando": "2026-09-23T01:59:46",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Decreto - Lei 3.688-41 (Contravenções Penais) II.json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais) II",
+      "disciplina": "Direito Penal"
+    },
+    "337622": {
+      "quando": "2026-09-23T02:00:14",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Decreto - Lei 3.688-41 (Contravenções Penais) III.json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais) III",
+      "disciplina": "Direito Penal"
+    },
+    "337623": {
+      "quando": "2026-09-23T02:00:41",
+      "arquivo": "saida\\aulas\\Direito Penal\\04_Decreto - Lei 3.688-41 (Contravenções Penais) IV.json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais) IV",
+      "disciplina": "Direito Penal"
+    },
+    "337624": {
+      "quando": "2026-09-23T02:01:08",
+      "arquivo": "saida\\aulas\\Direito Penal\\05_Decreto - Lei 3.688-41 (Contravenções Penais) V.json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais) V",
+      "disciplina": "Direito Penal"
+    },
+    "337625": {
+      "quando": "2026-09-23T02:01:34",
+      "arquivo": "saida\\aulas\\Direito Penal\\06_Decreto - Lei 3.688-41 (Contravenções Penais) VI.json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais) VI",
+      "disciplina": "Direito Penal"
+    },
+    "337626": {
+      "quando": "2026-09-23T02:02:01",
+      "arquivo": "saida\\aulas\\Direito Penal\\07_Decreto - Lei 3.688-41 (Contravenções Penais) VII.json",
+      "titulo": "Decreto - Lei 3.688/41 (Contravenções Penais) VII",
+      "disciplina": "Direito Penal"
+    },
+    "191220": {
+      "quando": "2026-09-23T02:02:28",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Crimes Contra a Pessoa - Homicídio.json",
+      "titulo": "Crimes Contra a Pessoa - Homicídio",
+      "disciplina": "Direito Penal"
+    },
+    "191221": {
+      "quando": "2026-09-23T02:02:56",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Crimes Contra a Pessoa - Homicídio II.json",
+      "titulo": "Crimes Contra a Pessoa - Homicídio II",
+      "disciplina": "Direito Penal"
+    },
+    "191222": {
+      "quando": "2026-09-23T02:03:21",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Crimes Contra a Pessoa - Homicídio III.json",
+      "titulo": "Crimes Contra a Pessoa - Homicídio III",
+      "disciplina": "Direito Penal"
+    },
+    "218744": {
+      "quando": "2026-09-23T02:03:51",
+      "arquivo": "saida\\aulas\\Direito Penal\\04_Crimes Contra a Pessoa - Homicídio IV.json",
+      "titulo": "Crimes Contra a Pessoa - Homicídio IV",
+      "disciplina": "Direito Penal"
+    },
+    "191223": {
+      "quando": "2026-09-23T02:04:17",
+      "arquivo": "saida\\aulas\\Direito Penal\\05_Crimes Contra a Pessoa - Homicídio V.json",
+      "titulo": "Crimes Contra a Pessoa - Homicídio V",
+      "disciplina": "Direito Penal"
+    },
+    "191224": {
+      "quando": "2026-09-23T02:04:45",
+      "arquivo": "saida\\aulas\\Direito Penal\\06_Crimes Contra a Pessoa - Art. 121 - A - Feminicídio.json",
+      "titulo": "Crimes Contra a Pessoa - Art. 121 - A - Feminicídio",
+      "disciplina": "Direito Penal"
+    },
+    "191225": {
+      "quando": "2026-09-23T02:05:13",
+      "arquivo": "saida\\aulas\\Direito Penal\\07_Crimes Contra Pessoa - Art. 122 - Participação em Suicídio ou Automutilação.json",
+      "titulo": "Crimes Contra Pessoa - Art. 122 - Participação em Suicídio ou Automutilação",
+      "disciplina": "Direito Penal"
+    },
+    "191226": {
+      "quando": "2026-09-23T02:05:40",
+      "arquivo": "saida\\aulas\\Direito Penal\\08_Crimes Contra Pessoa - Art. 123 - Infanticídio.json",
+      "titulo": "Crimes Contra Pessoa - Art. 123 - Infanticídio",
+      "disciplina": "Direito Penal"
+    },
+    "191227": {
+      "quando": "2026-09-23T02:06:09",
+      "arquivo": "saida\\aulas\\Direito Penal\\09_Crimes Contra Pessoa - Arts. 124 a 128 - Aborto.json",
+      "titulo": "Crimes Contra Pessoa - Arts. 124 a 128 - Aborto",
+      "disciplina": "Direito Penal"
+    },
+    "191229": {
+      "quando": "2026-09-23T02:06:36",
+      "arquivo": "saida\\aulas\\Direito Penal\\10_Crimes Contra Pessoa - Exercícios - Arts. 122 a 128.json",
+      "titulo": "Crimes Contra Pessoa - Exercícios - Arts. 122 a 128",
+      "disciplina": "Direito Penal"
+    },
+    "191230": {
+      "quando": "2026-09-23T02:07:05",
+      "arquivo": "saida\\aulas\\Direito Penal\\11_Crimes Contra Pessoa - Lesão Corporal.json",
+      "titulo": "Crimes Contra Pessoa - Lesão Corporal",
+      "disciplina": "Direito Penal"
+    },
+    "191232": {
+      "quando": "2026-09-23T02:07:33",
+      "arquivo": "saida\\aulas\\Direito Penal\\12_Crimes Contra Pessoa - Lesão Corporal II.json",
+      "titulo": "Crimes Contra Pessoa - Lesão Corporal II",
+      "disciplina": "Direito Penal"
+    },
+    "191234": {
+      "quando": "2026-09-23T02:08:01",
+      "arquivo": "saida\\aulas\\Direito Penal\\13_Crimes Contra Pessoa - Lesão Corporal III.json",
+      "titulo": "Crimes Contra Pessoa - Lesão Corporal III",
+      "disciplina": "Direito Penal"
+    },
+    "191235": {
+      "quando": "2026-09-23T02:08:27",
+      "arquivo": "saida\\aulas\\Direito Penal\\14_Crimes Contra Pessoa - Exercícios - Lesão Corporal.json",
+      "titulo": "Crimes Contra Pessoa - Exercícios - Lesão Corporal",
+      "disciplina": "Direito Penal"
+    },
+    "191237": {
+      "quando": "2026-09-23T02:08:56",
+      "arquivo": "saida\\aulas\\Direito Penal\\15_Crimes Contra Pessoa - Art. 137 - Da Rixa.json",
+      "titulo": "Crimes Contra Pessoa - Art. 137 - Da Rixa",
+      "disciplina": "Direito Penal"
+    },
+    "191242": {
+      "quando": "2026-09-23T02:09:25",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Crimes Contra Pessoa - Crimes Contra a Liberdade Individual.json",
+      "titulo": "Crimes Contra Pessoa - Crimes Contra a Liberdade Individual",
+      "disciplina": "Direito Penal"
+    },
+    "269160": {
+      "quando": "2026-09-23T02:09:53",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Crimes Contra Pessoa - Crimes contra a liberdade individual - Art. 147 - B.json",
+      "titulo": "Crimes Contra Pessoa - Crimes contra a liberdade individual - Art. 147 - B",
+      "disciplina": "Direito Penal"
+    },
+    "191243": {
+      "quando": "2026-09-23T02:10:21",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Crimes Contra Pessoa - Crimes Contra a Liberdade Individual II.json",
+      "titulo": "Crimes Contra Pessoa - Crimes Contra a Liberdade Individual II",
+      "disciplina": "Direito Penal"
+    },
+    "191247": {
+      "quando": "2026-09-23T02:10:49",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Crimes Contra o Patrimônio - Furto.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto",
+      "disciplina": "Direito Penal"
+    },
+    "191249": {
+      "quando": "2026-09-23T02:11:17",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Crimes Contra o Patrimônio - Furto II.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto II",
+      "disciplina": "Direito Penal"
+    },
+    "191250": {
+      "quando": "2026-09-23T02:11:44",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Crimes Contra o Patrimônio - Furto III.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto III",
+      "disciplina": "Direito Penal"
+    },
+    "191254": {
+      "quando": "2026-09-23T02:12:12",
+      "arquivo": "saida\\aulas\\Direito Penal\\04_Crimes Contra o Patrimônio - Furto IV.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto IV",
+      "disciplina": "Direito Penal"
+    },
+    "191255": {
+      "quando": "2026-09-23T02:12:39",
+      "arquivo": "saida\\aulas\\Direito Penal\\05_Crimes Contra o Patrimônio - Furto V.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto V",
+      "disciplina": "Direito Penal"
+    },
+    "191257": {
+      "quando": "2026-09-23T02:13:06",
+      "arquivo": "saida\\aulas\\Direito Penal\\06_Crimes Contra o Patrimônio - Furto VI.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto VI",
+      "disciplina": "Direito Penal"
+    },
+    "191258": {
+      "quando": "2026-09-23T02:13:34",
+      "arquivo": "saida\\aulas\\Direito Penal\\07_Crimes Contra o Patrimônio - Furto VII.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto VII",
+      "disciplina": "Direito Penal"
+    },
+    "226153": {
+      "quando": "2026-09-23T02:14:01",
+      "arquivo": "saida\\aulas\\Direito Penal\\08_Crimes Contra o Patrimônio - Furto VIII.json",
+      "titulo": "Crimes Contra o Patrimônio - Furto VIII",
+      "disciplina": "Direito Penal"
+    },
+    "191261": {
+      "quando": "2026-09-23T02:14:29",
+      "arquivo": "saida\\aulas\\Direito Penal\\09_Crimes Contra o Patrimônio - Exercícios - Furto.json",
+      "titulo": "Crimes Contra o Patrimônio - Exercícios - Furto",
+      "disciplina": "Direito Penal"
+    },
+    "191260": {
+      "quando": "2026-09-23T02:14:56",
+      "arquivo": "saida\\aulas\\Direito Penal\\10_Crimes Contra o Patrimônio - Roubo.json",
+      "titulo": "Crimes Contra o Patrimônio - Roubo",
+      "disciplina": "Direito Penal"
+    },
+    "191262": {
+      "quando": "2026-09-23T02:15:23",
+      "arquivo": "saida\\aulas\\Direito Penal\\11_Crimes Contra o Patrimônio - Roubo II.json",
+      "titulo": "Crimes Contra o Patrimônio - Roubo II",
+      "disciplina": "Direito Penal"
+    },
+    "191263": {
+      "quando": "2026-09-23T02:15:51",
+      "arquivo": "saida\\aulas\\Direito Penal\\12_Crimes Contra o Patrimônio - Roubo III.json",
+      "titulo": "Crimes Contra o Patrimônio - Roubo III",
+      "disciplina": "Direito Penal"
+    },
+    "191264": {
+      "quando": "2026-09-23T02:16:20",
+      "arquivo": "saida\\aulas\\Direito Penal\\13_Crimes Contra o Patrimônio - Roubo IV.json",
+      "titulo": "Crimes Contra o Patrimônio - Roubo IV",
+      "disciplina": "Direito Penal"
+    },
+    "191265": {
+      "quando": "2026-09-23T02:16:48",
+      "arquivo": "saida\\aulas\\Direito Penal\\14_Crimes Contra o Patrimônio - Exercícios - Roubo.json",
+      "titulo": "Crimes Contra o Patrimônio - Exercícios - Roubo",
+      "disciplina": "Direito Penal"
+    },
+    "191266": {
+      "quando": "2026-09-23T02:17:17",
+      "arquivo": "saida\\aulas\\Direito Penal\\15_Crimes Contra o Patrimônio - Extorsão.json",
+      "titulo": "Crimes Contra o Patrimônio - Extorsão",
+      "disciplina": "Direito Penal"
+    },
+    "191267": {
+      "quando": "2026-09-23T02:17:45",
+      "arquivo": "saida\\aulas\\Direito Penal\\16_Crimes Contra o Patrimônio - Extorsão II.json",
+      "titulo": "Crimes Contra o Patrimônio - Extorsão II",
+      "disciplina": "Direito Penal"
+    },
+    "191273": {
+      "quando": "2026-09-23T02:18:13",
+      "arquivo": "saida\\aulas\\Direito Penal\\17_Crimes Contra o Patrimônio - Apropriação Indébita - Art. 168.json",
+      "titulo": "Crimes Contra o Patrimônio - Apropriação Indébita - Art. 168",
+      "disciplina": "Direito Penal"
+    },
+    "193187": {
+      "quando": "2026-09-23T02:18:40",
+      "arquivo": "saida\\aulas\\Direito Penal\\18_Crimes Contra o Patrimônio - Receptação.json",
+      "titulo": "Crimes Contra o Patrimônio - Receptação",
+      "disciplina": "Direito Penal"
+    },
+    "191282": {
+      "quando": "2026-09-23T02:19:08",
+      "arquivo": "saida\\aulas\\Direito Penal\\19_Crimes Contra o Patrimônio - Receptação II.json",
+      "titulo": "Crimes Contra o Patrimônio - Receptação II",
+      "disciplina": "Direito Penal"
+    },
+    "191283": {
+      "quando": "2026-09-23T02:19:35",
+      "arquivo": "saida\\aulas\\Direito Penal\\20_Crimes Contra o Patrimônio - Exercícios - Receptação.json",
+      "titulo": "Crimes Contra o Patrimônio - Exercícios - Receptação",
+      "disciplina": "Direito Penal"
+    },
+    "191286": {
+      "quando": "2026-09-23T02:20:03",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Crimes Contra a Dignidade Sexual - Ação Penal e Conceitos Gerais.json",
+      "titulo": "Crimes Contra a Dignidade Sexual - Ação Penal e Conceitos Gerais",
+      "disciplina": "Direito Penal"
+    },
+    "191287": {
+      "quando": "2026-09-23T02:20:29",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Crimes Contra a Dignidade Sexual - Estupro.json",
+      "titulo": "Crimes Contra a Dignidade Sexual - Estupro",
+      "disciplina": "Direito Penal"
+    },
+    "191288": {
+      "quando": "2026-09-23T02:20:55",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Crimes Contra a Dignidade Sexual - Estupro II.json",
+      "titulo": "Crimes Contra a Dignidade Sexual - Estupro II",
+      "disciplina": "Direito Penal"
+    },
+    "191289": {
+      "quando": "2026-09-23T02:21:21",
+      "arquivo": "saida\\aulas\\Direito Penal\\04_Crimes Contra a Dignidade Sexual (art. 215 e 215 - A).json",
+      "titulo": "Crimes Contra a Dignidade Sexual (art. 215 e 215 - A)",
+      "disciplina": "Direito Penal"
+    },
+    "191290": {
+      "quando": "2026-09-23T02:21:50",
+      "arquivo": "saida\\aulas\\Direito Penal\\05_Crimes Contra a Dignidade Sexual II (art. 216 - A e 216 - B).json",
+      "titulo": "Crimes Contra a Dignidade Sexual II (art. 216 - A e 216 - B)",
+      "disciplina": "Direito Penal"
+    },
+    "192286": {
+      "quando": "2026-09-23T02:22:18",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Crimes Contra a Administração Pública - Prevaricação.json",
+      "titulo": "Crimes Contra a Administração Pública - Prevaricação",
+      "disciplina": "Direito Penal"
+    },
+    "192287": {
+      "quando": "2026-09-23T02:22:45",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Crimes Contra a Administração Pública - Art. 318 a 322.json",
+      "titulo": "Crimes Contra a Administração Pública - Art. 318 a 322",
+      "disciplina": "Direito Penal"
+    },
+    "192288": {
+      "quando": "2026-09-23T02:23:11",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Crimes Contra a Administração Pública - Art. 323 a 326.json",
+      "titulo": "Crimes Contra a Administração Pública - Art. 323 a 326",
+      "disciplina": "Direito Penal"
+    },
+    "192289": {
+      "quando": "2026-09-23T02:23:39",
+      "arquivo": "saida\\aulas\\Direito Penal\\04_Crimes Contra a Administração Pública - Exercícios.json",
+      "titulo": "Crimes Contra a Administração Pública - Exercícios",
+      "disciplina": "Direito Penal"
+    },
+    "192290": {
+      "quando": "2026-09-23T02:24:07",
+      "arquivo": "saida\\aulas\\Direito Penal\\05_Crimes Contra a Administração Pública - Exercícos II.json",
+      "titulo": "Crimes Contra a Administração Pública - Exercícos II",
+      "disciplina": "Direito Penal"
+    },
+    "192292": {
+      "quando": "2026-09-23T02:24:33",
+      "arquivo": "saida\\aulas\\Direito Penal\\06_Crimes Contra a Administração Pública - Usurpação e Resistência.json",
+      "titulo": "Crimes Contra a Administração Pública - Usurpação e Resistência",
+      "disciplina": "Direito Penal"
+    },
+    "192293": {
+      "quando": "2026-09-23T02:25:00",
+      "arquivo": "saida\\aulas\\Direito Penal\\07_Crimes Contra a Administração Pública - Desobediência e Desacato.json",
+      "titulo": "Crimes Contra a Administração Pública - Desobediência e Desacato",
+      "disciplina": "Direito Penal"
+    },
+    "192294": {
+      "quando": "2026-09-23T02:25:27",
+      "arquivo": "saida\\aulas\\Direito Penal\\08_Crimes Contra a Administração Pública - Tráfico de Influência e Corrupção Ativa.json",
+      "titulo": "Crimes Contra a Administração Pública - Tráfico de Influência e Corrupção Ativa",
+      "disciplina": "Direito Penal"
+    },
+    "150865": {
+      "quando": "2026-09-23T02:25:56",
+      "arquivo": "saida\\aulas\\Direito Penal\\01_Lei de Tortura.json",
+      "titulo": "Lei de Tortura",
+      "disciplina": "Direito Penal"
+    },
+    "150866": {
+      "quando": "2026-09-23T02:26:24",
+      "arquivo": "saida\\aulas\\Direito Penal\\02_Lei de Tortura II.json",
+      "titulo": "Lei de Tortura II",
+      "disciplina": "Direito Penal"
+    },
+    "150867": {
+      "quando": "2026-09-23T02:26:53",
+      "arquivo": "saida\\aulas\\Direito Penal\\03_Lei de Tortura - Questões de Consolidação do Aprendizado.json",
+      "titulo": "Lei de Tortura - Questões de Consolidação do Aprendizado",
+      "disciplina": "Direito Penal"
+    },
+    "192942": {
+      "quando": "2026-09-23T02:27:18",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Do Motim e Da Revolta.json",
+      "titulo": "CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Do Motim e Da Revolta",
+      "disciplina": "Direito Penal Militar"
+    },
+    "209598": {
+      "quando": "2026-09-23T02:27:44",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\02_CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Do Motim e Da Revolta e Da Aliciação e do.json",
+      "titulo": "CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Do Motim e Da Revolta e Da Aliciação e do Incitamento",
+      "disciplina": "Direito Penal Militar"
+    },
+    "210400": {
+      "quando": "2026-09-23T02:28:12",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Da Violência Superior ou Militar de Servi.json",
+      "titulo": "CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Da Violência Superior ou Militar de Serviço, Do Desrespeito a Superior e a Símbolo Nacional ou Farda",
+      "disciplina": "Direito Penal Militar"
+    },
+    "210818": {
+      "quando": "2026-09-23T02:28:40",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Do Desrespeito a Superior e a Símbolo Nac.json",
+      "titulo": "CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Do Desrespeito a Superior e a Símbolo Nacional ou Farda e Da Insubordinação",
+      "disciplina": "Direito Penal Militar"
+    },
+    "211431": {
+      "quando": "2026-09-23T02:29:08",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Da Insubordinação e Da Usurpação e do Exc.json",
+      "titulo": "CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Da Insubordinação e Da Usurpação e do Excesso ou Abuso de Autoridade",
+      "disciplina": "Direito Penal Militar"
+    },
+    "215237": {
+      "quando": "2026-09-23T02:29:34",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Da Usurpação e do Excesso ou Abuso de Aut.json",
+      "titulo": "CRIMES CONTRA AUTORIDADE OU DISCIPLINA MILITAR – Da Usurpação e do Excesso ou Abuso de Autoridade e Da Resistência e Da Fuga, Evasão, Arrebatamento e Amotinamento de Presos",
+      "disciplina": "Direito Penal Militar"
+    },
+    "216123": {
+      "quando": "2026-09-23T02:30:01",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção.json",
+      "titulo": "CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção",
+      "disciplina": "Direito Penal Militar"
+    },
+    "217998": {
+      "quando": "2026-09-23T02:30:29",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\02_CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção.json",
+      "titulo": "CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção",
+      "disciplina": "Direito Penal Militar"
+    },
+    "218000": {
+      "quando": "2026-09-23T02:30:59",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\03_CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção e do Abandono de Posto e d.json",
+      "titulo": "CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção e do Abandono de Posto e de outros crimes em serviços",
+      "disciplina": "Direito Penal Militar"
+    },
+    "218001": {
+      "quando": "2026-09-23T02:31:26",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\04_CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção e do Abandono de Posto e d.json",
+      "titulo": "CRIMES CONTRA O SERVIÇO MILITAR E O DEVER MILITAR – Da Deserção e do Abandono de Posto e de outros crimes em serviços e Do Exercício de Comércio",
+      "disciplina": "Direito Penal Militar"
+    },
+    "219572": {
+      "quando": "2026-09-23T02:31:53",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Do Desacato e da Desobediência.json",
+      "titulo": "CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Do Desacato e da Desobediência",
+      "disciplina": "Direito Penal Militar"
+    },
+    "219573": {
+      "quando": "2026-09-23T02:32:20",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\02_CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Do Peculato e Da Concussão, Excesso de Exação e De.json",
+      "titulo": "CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Do Peculato e Da Concussão, Excesso de Exação e Desvio",
+      "disciplina": "Direito Penal Militar"
+    },
+    "220358": {
+      "quando": "2026-09-23T02:32:48",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\03_CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Da Corrupção e Da Falsidade.json",
+      "titulo": "CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Da Corrupção e Da Falsidade",
+      "disciplina": "Direito Penal Militar"
+    },
+    "220360": {
+      "quando": "2026-09-23T02:33:12",
+      "arquivo": "saida\\aulas\\Direito Penal Militar\\01_CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Dos Crimes contra o Dever Funcional.json",
+      "titulo": "CRIMES CONTRA A ADMINISTRAÇÃO MILITAR – Dos Crimes contra o Dever Funcional",
+      "disciplina": "Direito Penal Militar"
+    }
+  },
+  "questoes": {
+    "assunto 406223|406223|Médio": {
+      "proxima_pagina": 2,
+      "rotulo": "assunto 406223",
+      "arquivo": "saida\\questoes\\assunto 406223\\assunto 406223.json",
+      "coletadas": 20,
+      "quando": "2026-09-23T01:26:10"
+    },
+    "406223_Direito Penal|406223|Médio": {
+      "proxima_pagina": 2,
+      "rotulo": "406223_Direito Penal",
+      "arquivo": "saida\\questoes\\406223_Direito Penal\\406223_Direito Penal.json",
+      "coletadas": 20,
+      "quando": "2026-09-23T01:35:19"
+    },
+    "Direito Penal|406223,406256,406277,406370,406371,406453,406454,406456,406457,406459,406460,406462,406469,406477,406478,406479,406480,406494,406515,406519,406521,413718,413750,413755,413791,413795,413796,413808,413916,413917,413918,413921,414056,418518,418519,418520,418521,418544,418547,418551,418553,418633,418636,418638,418641,418643,418665,418666,418688,418945|Médio": {
+      "proxima_pagina": 70,
+      "rotulo": "Direito Penal",
+      "arquivo": "saida\\questoes\\Direito Penal\\Direito Penal.json",
+      "coletadas": 6821,
+      "quando": "2026-09-23T07:58:46"
+    },
+    "Direito Penal Militar|404290|Médio": {
+      "proxima_pagina": 6,
+      "rotulo": "Direito Penal Militar",
+      "arquivo": "saida\\questoes\\Direito Penal Militar\\Direito Penal Militar.json",
+      "coletadas": 426,
+      "quando": "2026-09-23T08:19:12"
+    },
+    "reenriquecer|Direito Penal": {
+      "proxima_pagina": 6,
+      "por_pagina": 100,
+      "rotulo": "Direito Penal",
+      "ritmo_s": 20,
+      "quando": "2026-09-23T13:38:28"
+    },
+    "orgao|544|": {
+      "proxima_pagina": 90,
+      "rotulo": "orgao PM BA",
+      "arquivo": "saida\\questoes\\orgao PM BA\\orgao PM BA.json",
+      "coletadas": 1777,
+      "quando": "2026-09-23T13:06:22"
+    }
+  },
+  "ultimo_429": "2026-09-23T14:34:35",
+  "n_429": 4
+}
