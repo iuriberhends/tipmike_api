@@ -1218,6 +1218,14 @@ _FAV_CACHE_MAX = 3000
 _FAV_JANELA_MIN = 45
 _FAV_TIMEOUT_S = 2.0
 _FAV_DRAW_RX = re.compile(r'^(x|draw|empate|tie)$|\bempate\b|\bdraw\b', re.I)
+# nomes do mercado VENCEDOR (jogo inteiro) por extenso — fallback quando o
+# mercado_tipo da casa nao esta no mapa (ex.: betano e-basket = '155', o mapa
+# so tem '1' que e' o 1X2 do futebol). Comparado em lower(); sem '1o Tempo'.
+_FAV_NOMES_ML = [
+    'vencedor', 'vencedor da partida', 'vencedor do jogo', 'resultado final',
+    'resultado final (1x2)', '1x2', 'match winner', 'match result', 'moneyline',
+    'money line', 'winner', 'to win',
+]
 
 
 def _fav_ids_ml(casa: str) -> list:
@@ -1260,9 +1268,7 @@ async def _favorito_prematch(tick: dict) -> Optional[dict]:
         chave = (casa, str(ev))
         if chave in _FAV_CACHE:
             return _FAV_CACHE[chave]
-        ids = _fav_ids_ml(casa)
-        if not ids:
-            return None
+        ids = _fav_ids_ml(casa) or ['__sem_id__']
         ts = tick.get('ts')
         if not isinstance(ts, datetime):
             return None
@@ -1273,13 +1279,13 @@ async def _favorito_prematch(tick: dict) -> Optional[dict]:
             WHERE bookmaker = $1 AND sport = $2
               AND ts >= $3 AND ts <= $4
               AND event_id = $5
-              AND mercado_tipo = ANY($6::text[])
+              AND (mercado_tipo = ANY($6::text[]) OR lower(mercado) = ANY($7::text[]))
             ORDER BY ts ASC
-            LIMIT 12
+            LIMIT 60
         """
         async with state.pool.acquire() as conn:
             rows = await asyncio.wait_for(
-                conn.fetch(sql, casa, tick.get('sport'), de, ts, str(ev), ids),
+                conn.fetch(sql, casa, tick.get('sport'), de, ts, str(ev), ids, _FAV_NOMES_ML),
                 timeout=_FAV_TIMEOUT_S)
         if not rows:
             _FAV_CACHE[chave] = None
