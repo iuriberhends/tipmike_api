@@ -33,6 +33,9 @@ COMBINACOES = [
     ("betano", "fifa"),   ("betano", "nba2k"),
     ("estrelabet", "fifa"), ("estrelabet", "nba2k"),
     ("bet365", "fifa"),   ("bet365", "nba2k"),
+    # v2 (24/09): e-Hockey e e-Tenis da Superbet — sem isto o dropdown de
+    # torneios do Criar Bot vinha vazio e caia na lista de nomes ficticios.
+    ("superbet", "ehockey"), ("superbet", "etennis"),
 ]
 
 DIAS = 7

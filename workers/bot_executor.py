@@ -1,6 +1,17 @@
 """
 bot_executor.py - Worker de simulacao em tempo real (v12 + v20 hc_relativo)
 
+v40 - E-HOCKEY / E-TENIS (Superbet):
+- VENCEDOR (ml_ft) passa a funcionar: nao tinha linha e era cortado como
+  'linha_invalida' nos filtros basicos (nenhum bot de ML apostou nunca).
+- lado do vencedor por 1/X/2 OU pelo nick da selecao ('Andre Agassi (Smet13)'),
+  no filtro de lado e na liquidacao — mesma _lado_ml do backtest.
+- "Handicap 3way" (sem hifen) nao entra mais no bot de HC asiatico.
+
+v39 - filtro PLACARES (a tela ja' gravava placaresAtivo/placares; o motor
+  nao lia): so' aposta se o placar do tick estiver na lista, nos dois
+  sentidos (1x0 = 0x1). Mesma funcao do backtest.
+
 v38 - TRAVA POR (bot, jogo): ticks simultaneos do mesmo jogo eram avaliados
   em paralelo e furavam escada/teto/dedup (4-7 apostas onde o teto era 1-3).
   Agora passam em fila por (bot, jogo); o resto segue em paralelo.
@@ -131,6 +142,10 @@ from workers.backtest_runner import (
     _aplicar_filtros_complementares,
     _aplicar_filtro_cenario,
     _aplicar_filtro_diff_placar,
+    _aplicar_filtro_placares,   # v39: lista de placares no envio
+    _lado_ml,                   # v40: lado do VENCEDOR (1/X/2 ou nick)
+    _placar_final_tenis_ok,     # v40: tenis so' liquida com 2 sets fechados
+    _parse_placares,
     _aplicar_filtro_folga,
     _aplicar_filtro_momento,
     _avaliar_filtros_basicos,
@@ -775,10 +790,19 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             lados_bot = [lado_str]
     if lados_bot and isinstance(lados_bot, list) and len(lados_bot) > 0:
         lados_bot_norm = [str(l).lower().strip() for l in lados_bot if l]
-        selecao_lado = _selecao_normalizada(tick.get('selecao'))
-        if selecao_lado is not None and selecao_lado not in lados_bot_norm:
-            _conta_rej(bot, 'lado')
-            return
+        if (bot.get('mercado') or '') in ('ml_ft', 'ml_ht'):
+            # v40: vencedor — mesma funcao do backtest; lado nao identificado
+            # (selecao com nome que nao casa com jogador_a/_b) = nao aposta.
+            selecao_lado = _lado_ml(tick.get('selecao'), tick.get('jogador_a'),
+                                    tick.get('jogador_b'))
+            if selecao_lado is None or selecao_lado not in lados_bot_norm:
+                _conta_rej(bot, 'lado')
+                return
+        else:
+            selecao_lado = _selecao_normalizada(tick.get('selecao'))
+            if selecao_lado is not None and selecao_lado not in lados_bot_norm:
+                _conta_rej(bot, 'lado')
+                return
 
     # ===== filtro de LADO do HANDICAP (+ / -) =====
     # Pro HC, o "lado" nao e over/under, e o SINAL do handicap: '+' (zebra
@@ -858,6 +882,18 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     if diff_ativo and (diff_min > 0 or diff_max is not None):
         if not _aplicar_filtro_diff_placar(tick, diff_min, diff_max):
             _conta_rej(bot, 'diff')
+            return
+
+    # v39 — PLACARES: so' aposta se o placar do tick for um dos listados
+    # (nos dois sentidos). Mesma funcao do backtest. Ligado sem placar valido
+    # = nao aposta (fail closed), com contador proprio.
+    if filtros.get('placaresAtivo'):
+        _pls = _parse_placares(filtros.get('placares'))
+        if not _pls:
+            _conta_rej(bot, 'placares_invalido')
+            return
+        if not _aplicar_filtro_placares(tick, _pls):
+            _conta_rej(bot, 'placares')
             return
 
     # v12 — FOLGA (so handicap): folga = hc_assinado - deficit do lado
@@ -1795,11 +1831,18 @@ async def _resolver_apostas_pendentes():
                                            f"lado_alvo gravado — segue pendente")
                             continue
                         _score_alvo = _sh_g if _la == 'home' else _sa_g
+                    # v40: e-tenis — placar em sets empatado/incompleto = a
+                    # partida nao acabou no feed; segue pendente (nunca red falso)
+                    if not _placar_final_tenis_ok(ap['esporte'], _sh_g, _sa_g):
+                        logger.info(f"[resolver] ap {ap['id']}: tenis {_sh_g}x{_sa_g} "
+                                    f"nao e' placar final — segue pendente")
+                        continue
                     resultado = _resolve_resultado(
                         ap['mercado'], ap['selecao'] or ap['lado'],
                         float(ap['linha']) if ap['linha'] else None,
                         _sh_g, _sa_g,
                         score_alvo=_score_alvo,
+                        jogador_a=ap['jogador_a'], jogador_b=ap['jogador_b'],
                     )
 
                 if resultado is None:

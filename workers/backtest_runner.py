@@ -822,7 +822,10 @@ def _matches_mercado(mercado_bot: str, tick_mercado: str, tick_mercado_tipo: str
         # que tem mercado_bot proprio.
         nome_norm = _sem_acento(tick_mercado)
         eh_asiatico_nome = ('asiatic' in nome_norm) or ('asian' in nome_norm)
+        # v36: superbet hockey escreve "Handicap 3way" (sem hifen/espaco) —
+        # sem o '3way' o bot de ah_ft pegava o handicap EUROPEU (linha "0:1").
         eh_3way_nome = ('3-way' in nome_norm) or ('3 way' in nome_norm
+                        or '3way' in nome_norm
                         or 'europeu' in nome_norm or 'european' in nome_norm)
         if mercado_bot in ('over_under_ft', 'over_under_ht') and eh_asiatico_nome:
             return False
@@ -936,9 +939,81 @@ def _lado_aposta(selecao: str) -> Optional[str]:
     return None
 
 
+MERCADOS_SEM_LINHA = ('ml_ft', 'ml_ht', 'btts_ft', 'btts_ht')
+
+
+def _placar_final_tenis_ok(esporte, score_home, score_away) -> bool:
+    """v36 — e-tenis (melhor de 3): o placar vem em SETS. So' e' final se
+    alguem fechou 2 sets e nao ha empate. Outros esportes: sempre True (a
+    regra de fim de jogo deles continua a de sempre). Blindado."""
+    try:
+        if str(esporte or '').lower() != 'etennis':
+            return True
+        h, a = int(score_home), int(score_away)
+        return h != a and max(h, a) >= 2
+    except Exception:
+        return False
+
+_RX_NICK_FINAL = re.compile(r'\(([^()]+)\)\s*$')
+
+
+def _lado_ml(selecao, jogador_a=None, jogador_b=None) -> Optional[str]:
+    """v36 — lado de uma selecao de VENCEDOR: 'casa' | 'empate' | 'fora' | None.
+    Cobre os 3 formatos que a casa manda:
+      '1' / 'X' / '2'                      (e-football, e-hockey 1X2)
+      'Andre Agassi (Smet13)'              (e-tenis: nome + nick no parentese)
+      'Toronto Raptors (PROWLER)'          (e-basket)
+    O nick do ULTIMO parentese e' comparado com jogador_a/_b (igual o HC).
+    Nada casou -> None (quem chama decide; o filtro de lado REJEITA)."""
+    try:
+        s = _normalizar(selecao)
+        if not s:
+            return None
+        if s in ('1', 'home', 'casa', 'w1', 'p1'):
+            return 'casa'
+        if s in ('2', 'away', 'fora', 'w2', 'p2'):
+            return 'fora'
+        if s in ('x', 'draw', 'empate', 'tie'):
+            return 'empate'
+        ja = (jogador_a or '').strip().upper()
+        jb = (jogador_b or '').strip().upper()
+        m = _RX_NICK_FINAL.search(str(selecao or ''))
+        if m:
+            # Selecao com nick no parentese: SO' vale o casamento exato do
+            # nick. Nick que nao e' nem o A nem o B = selecao de outro jogo
+            # ou jogador trocado -> None (nunca chuta por substring).
+            nick = m.group(1).strip().upper()
+            if ja and nick == ja:
+                return 'casa'
+            if jb and nick == jb:
+                return 'fora'
+            return None
+        su = ' ' + re.sub(r'[^A-Z0-9_]+', ' ', str(selecao or '').upper()) + ' '
+        if ja and jb:
+            # nome solto (sem parentese): palavra inteira, nao pedaco
+            tem_a = (' ' + ja + ' ') in su
+            tem_b = (' ' + jb + ' ') in su
+            if tem_a and not tem_b:
+                return 'casa'
+            if tem_b and not tem_a:
+                return 'fora'
+        # formatos por extenso (legado)
+        if 'empate' in s or 'draw' in s:
+            return 'empate'
+        if 'casa' in s or 'home' in s:
+            return 'casa'
+        if 'fora' in s or 'away' in s or 'visitante' in s:
+            return 'fora'
+    except Exception:
+        return None
+    return None
+
+
 def _resolve_resultado(mercado: str, selecao: str, linha: float,
                        score_home: int, score_away: int,
-                       score_alvo: Optional[int] = None) -> Optional[str]:
+                       score_alvo: Optional[int] = None,
+                       jogador_a: Optional[str] = None,
+                       jogador_b: Optional[str] = None) -> Optional[str]:
     if score_home is None or score_away is None:
         return None
     # v34: TOTAL POR TIME/JOGADOR — e' um over/under sobre o placar de UM
@@ -1002,11 +1077,13 @@ def _resolve_resultado(mercado: str, selecao: str, linha: float,
             vencedor = 'away'
         else:
             vencedor = 'draw'
-        if sel in ('1', 'home', 'casa') or 'home' in sel or 'casa' in sel:
+        # v36: lado pela selecao — 1/X/2, nome+nick (tenis/basket) ou extenso
+        _lml = _lado_ml(selecao, jogador_a, jogador_b)
+        if _lml == 'casa':
             return 'green' if vencedor == 'home' else 'red'
-        elif sel in ('2', 'away', 'fora') or 'away' in sel or 'visitante' in sel or 'fora' in sel:
+        if _lml == 'fora':
             return 'green' if vencedor == 'away' else 'red'
-        elif sel in ('x', 'draw', 'empate') or 'draw' in sel or 'empate' in sel:
+        if _lml == 'empate':
             return 'green' if vencedor == 'draw' else 'red'
         return None
 
@@ -3227,6 +3304,41 @@ def _aplicar_filtro_cenario(tick: dict, cenario: str) -> bool:
     return True
 
 
+_RX_PLACAR_LISTA = re.compile(r'(\d{1,3})\s*[xX\u00d7:\-\u2013]\s*(\d{1,3})')
+
+
+def _parse_placares(txt) -> set:
+    """v36 — '0x0, 1-0, 2 x 1' -> {(0,0), (0,1), (1,2)} (pares ORDENADOS: o
+    filtro vale nos dois sentidos, 1x0 casa com 0x1). Aceita x, X, -, :, ×.
+    Pedaco que nao e' placar e' ignorado; nada valido -> set vazio."""
+    out = set()
+    try:
+        for a, b in _RX_PLACAR_LISTA.findall(str(txt or '')):
+            x, y = int(a), int(b)
+            out.add((min(x, y), max(x, y)))
+    except Exception:
+        return set()
+    return out
+
+
+def _aplicar_filtro_placares(tick: dict, placares) -> bool:
+    """v36 — PLACARES: so' aposta se o placar DESTE tick (no envio) for um dos
+    listados, em qualquer ordem (0x1 = 1x0). Mais um portao, somado aos
+    outros filtros. `placares` = set ja parseado (_parse_placares) ou texto.
+    FAIL CLOSED: lista vazia/invalida ou tick sem placar -> False."""
+    try:
+        alvo = placares if isinstance(placares, set) else _parse_placares(placares)
+        if not alvo:
+            return False
+        sh, sa = tick.get('score_home'), tick.get('score_away')
+        if sh is None or sa is None:
+            return False
+        x, y = int(sh), int(sa)
+        return (min(x, y), max(x, y)) in alvo
+    except Exception:
+        return False
+
+
 def _aplicar_filtro_diff_placar(tick: dict, diff_min: int, diff_max=None) -> bool:
     """DIFERENCA DE PLACAR: |casa - fora| no placar DESTE tick.
 
@@ -3872,21 +3984,27 @@ def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
     # a linha filtrada vem de _selecao_hc_valor, e o filtro linha_min/linha_max
     # passa a operar sobre o valor COM SINAL. Assim "+13.5 a +40.5" no seletor
     # filtra exatamente o lado + na faixa certa (e "-40.5 a -0.5" o lado -).
-    if _mercado_eh_hc(bot.get('mercado', '')):
+    # v36: VENCEDOR / AMBOS MARCAM nao tem linha. Antes o tick era cortado
+    # aqui como 'linha_invalida' — nenhum bot de ml_ft/btts apostou nunca.
+    # Nesses mercados o filtro de linha nao existe; odd e o resto seguem.
+    _sem_linha = (bot.get('mercado', '') or '') in MERCADOS_SEM_LINHA
+    if _sem_linha:
+        linha = None
+    elif _mercado_eh_hc(bot.get('mercado', '')):
         linha = _selecao_hc_valor(tick.get('selecao'))
     else:
         linha = _parse_linha(tick.get('linha'))
-    if linha is None:
+    if linha is None and not _sem_linha:
         return False, 'linha_invalida'
 
-    lmin = bot.get('linha_min')
+    lmin = bot.get('linha_min') if not _sem_linha else None
     if lmin is not None:
         lmin_f, err = _num_seguro(lmin)
         if err is not None:
             return False, f'bot.linha_min_{err}'  # config do bot ruim -> reporta
         if linha < lmin_f:
             return False, f'linha_{linha}_lt_min_{lmin_f}'
-    lmax = bot.get('linha_max')
+    lmax = bot.get('linha_max') if not _sem_linha else None
     if lmax is not None:
         lmax_f, err = _num_seguro(lmax)
         if err is not None:
@@ -4029,6 +4147,14 @@ async def executar_backtest(job_id: int):
         # v26 - TETO da diferenca de placar. Chave nova e OPCIONAL: ausente =
         # sem teto = comportamento identico ao de antes.
         diff_max = filtros.get('diferencaPlacarMax') if diff_ativo else None
+        # v36 — PLACARES (lista de placares exatos no envio, nos dois sentidos).
+        # A tela ja' gravava placaresAtivo/placares no filtros; o motor nunca
+        # lia. Bot sem a chave = desligado (identico ao de antes).
+        placares_ativo = bool(filtros.get('placaresAtivo', False))
+        placares_set = _parse_placares(filtros.get('placares')) if placares_ativo else set()
+        if placares_ativo and not placares_set:
+            logger.warning(f"[backtest] job {job_id}: placares ligado mas sem placar "
+                           f"valido ({filtros.get('placares')!r}) -> nenhum tick passa")
 
         # v12 — FOLGA (so handicap). Chaves no filtros jsonb; bot antigo sem
         # elas = filtro desligado (comportamento identico ao de antes).
@@ -4628,10 +4754,19 @@ async def executar_backtest(job_id: int):
             # Tick cujo lado nao esta na lista do bot e cortado ANTES de tudo:
             # nao consome cap_jogo nem trava mercado, exatamente como ao vivo.
             if lados_bot_norm is not None:
-                _sel_lado = _lado_aposta(tick.get('selecao'))
-                if _sel_lado is not None and _sel_lado not in lados_bot_norm:
-                    rej['lado'] += 1
-                    continue
+                if (bot.get('mercado', '') or '') in ('ml_ft', 'ml_ht'):
+                    # v36: vencedor — casa/empate/fora pela selecao (1/X/2 ou
+                    # nick). Lado nao identificado = rejeita (fail closed).
+                    _sel_lado = _lado_ml(tick.get('selecao'), tick.get('jogador_a'),
+                                         tick.get('jogador_b'))
+                    if _sel_lado is None or _sel_lado not in lados_bot_norm:
+                        rej['lado'] += 1
+                        continue
+                else:
+                    _sel_lado = _lado_aposta(tick.get('selecao'))
+                    if _sel_lado is not None and _sel_lado not in lados_bot_norm:
+                        rej['lado'] += 1
+                        continue
 
             if (not modo_candidatos and max_apostas_partida is not None
                     and apostas_por_evento.get(evt, 0) >= max_apostas_partida):
@@ -4671,6 +4806,12 @@ async def executar_backtest(job_id: int):
             if diff_ativo and (diff_min > 0 or diff_max is not None):
                 if not _aplicar_filtro_diff_placar(tick, diff_min, diff_max):
                     rej['diff'] += 1
+                    continue
+
+            # v36 — PLACARES (mesma funcao do executor)
+            if placares_ativo:
+                if not _aplicar_filtro_placares(tick, placares_set):
+                    rej['placares'] = rej.get('placares', 0) + 1
                     continue
 
             # v12 — FOLGA (so handicap): folga = hc_assinado - deficit do lado
@@ -5009,6 +5150,13 @@ async def executar_backtest(job_id: int):
                     qualidade['eventos_sem_placar_final'] += 1
                     continue
             score_home, score_away = placar
+            # v36: e-TENIS e' melhor de 3 sets — placar final empatado (1-1) ou
+            # sem ninguem com 2 sets = a partida NAO terminou no feed (sem END).
+            # Liquidar assim daria 'empate' e red em toda aposta. Nao liquida.
+            if not _placar_final_tenis_ok(bot.get('esporte'), score_home, score_away):
+                rej['tenis_placar_incompleto'] = rej.get('tenis_placar_incompleto', 0) + 1
+                qualidade['eventos_sem_placar_final'] += 1
+                continue
 
             linha_num = _parse_linha(tick.get('linha'))
             # ===== resolucao HANDICAP por NICK (isolada) =====
@@ -5060,6 +5208,7 @@ async def executar_backtest(job_id: int):
                 resultado = _resolve_resultado(
                     mercado_bot, tick.get('selecao', ''),
                     linha_num, score_home, score_away,
+                    jogador_a=tick.get('jogador_a'), jogador_b=tick.get('jogador_b'),
                 )
             if resultado is None:
                 # Mercados de 1o tempo (HT) nao tem como ser resolvidos com o placar
