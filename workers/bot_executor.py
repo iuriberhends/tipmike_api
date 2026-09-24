@@ -1,6 +1,10 @@
 """
 bot_executor.py - Worker de simulacao em tempo real (v12 + v20 hc_relativo)
 
+v38 - TRAVA POR (bot, jogo): ticks simultaneos do mesmo jogo eram avaliados
+  em paralelo e furavam escada/teto/dedup (4-7 apostas onde o teto era 1-3).
+  Agora passam em fila por (bot, jogo); o resto segue em paralelo.
+
 v37 - TOTAL POR TIME/JOGADOR completo:
 - chips (WR/media/Z/desvio/gap, par e individual) medidos no placar do ALVO,
   nao no total do jogo — mesma _jogos_player do backtest (fonte unica).
@@ -614,6 +618,36 @@ def _get_err_cache(casa: str, esporte_banco: str) -> ErrVivoCache:
 # ============================================================
 # PROCESSAMENTO DE TICK
 # ============================================================
+# ---------------------------------------------------------------------------
+# v38 — TRAVA POR (bot, jogo). Cada NOTIFY vira um create_task, entao os ticks
+# que a casa solta JUNTOS (todas as linhas dos 2 times, todas as odds do
+# mercado) eram avaliados EM PARALELO: todos liam "0 apostas neste jogo" antes
+# de qualquer INSERT gravar, e escada/teto/dedup por linha furavam. Medido:
+# bot 135 (teto 3) com 4 no jogo, bot 127 (1 entrada) com 6, validadores
+# 154/155 com 3-4 no mesmo alvo. O backtest processa em ordem e nao fura —
+# era uma divergencia vivo x backtest. Agora: ticks do MESMO bot no MESMO jogo
+# passam um de cada vez (FIFO, na ordem do NOTIFY); bots e jogos diferentes
+# seguem em paralelo. Nada muda na regra de apito — so' a ordem.
+# ---------------------------------------------------------------------------
+_LOCKS_EVT: dict = {}
+_LOCKS_EVT_MAX = 5000
+
+
+def _lock_bot_evento(bot_id, event_id) -> asyncio.Lock:
+    chave = (bot_id, str(event_id))
+    lk = _LOCKS_EVT.get(chave)
+    if lk is None:
+        if len(_LOCKS_EVT) >= _LOCKS_EVT_MAX:
+            # limpa so' trava livre e sem ninguem na fila (nunca uma em uso)
+            livres = [k for k, v in _LOCKS_EVT.items()
+                      if not v.locked() and not getattr(v, '_waiters', None)]
+            for k in livres[: max(1, len(livres) // 2)]:
+                _LOCKS_EVT.pop(k, None)
+        lk = asyncio.Lock()
+        _LOCKS_EVT[chave] = lk
+    return lk
+
+
 async def _processar_tick(tick_id: int):
     global state
     state.contador_ticks += 1
@@ -643,7 +677,9 @@ async def _processar_tick(tick_id: int):
 
     for bot in bots:
         try:
-            await _avaliar_e_apostar(bot, tick)
+            # v38: serializa (bot, jogo) — ver _lock_bot_evento
+            async with _lock_bot_evento(bot.get('id'), tick.get('event_id')):
+                await _avaliar_e_apostar(bot, tick)
         except Exception as e:
             logger.exception(f"Erro avaliando bot {bot.get('id')} pra tick {tick_id}: {e}")
 
