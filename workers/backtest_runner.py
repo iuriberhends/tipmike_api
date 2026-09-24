@@ -1230,6 +1230,86 @@ def _pct_team_plus(jogos: list, alvo: str, linha: float, periodo: str = 'ft') ->
     return cobriu / validos, validos
 
 
+# ---------------------------------------------------------------------------
+# v35 — TOTAL POR TIME/JOGADOR: chips medidos no placar DO ALVO.
+# Ate aqui os chips de O/U (WR, media, Z, desvio, gap...) mediam o total do
+# JOGO (home+away) tambem no mercado por time: "Over 52,5 do time X" olhava
+# "% de jogos do par com total > 52,5" (~100%, sem sentido). Agora, so' pros
+# MERCADOS_PLAYER, a lista de jogos e' reescrita com 'total' = placar que
+# decide a aposta, e a MESMA _calcular_stats_h2h mede o resto (fonte unica,
+# runner e executor). Mercado que nao e' player: lista original, intocada.
+#   papel 'par'   -> jogos do par: pontos/gols MARCADOS pelo alvo
+#   papel 'ind_a' / 'ind_b' -> historico individual de jogador_a / _b:
+#       se o dono da lista e' o alvo  -> o que ELE marca contra qualquer um
+#       se o dono e' o adversario     -> o que o adversario SOFRE de qualquer
+#                                        um (a defesa que o alvo enfrenta)
+#   Os dois individuais medem a MESMA grandeza (o total do alvo), por isso a
+#   regra AND/pior do chip individual continua fazendo sentido.
+# HT (over_under_ht_player): placar de INTERVALO; jogo sem HT fica de fora
+# (nunca usa o final no lugar). Jogo em que o nick nao aparece: fora.
+# ---------------------------------------------------------------------------
+def _derivar_jogos_player(jogos, dono: str, modo: str, periodo: str):
+    """Lista nova (mesma ordem) com 'total' = placar do alvo. Blindado."""
+    out = _ListaCortada()
+    dono_u = (dono or '').strip().upper()
+    if not dono_u:
+        return out
+    for j in (jogos or []):
+        try:
+            p_dono, p_adv = _resolver_pts_hc(j, dono_u, periodo)
+            v = p_dono if modo == 'marcado' else p_adv
+            if v is None:
+                continue
+            n = int(_num_seguro(v)[0] or 0) if not isinstance(v, (int, float)) else int(v)
+            jj = dict(j)
+            jj['total'] = n
+            out.append(jj)
+        except Exception:
+            continue
+    return out
+
+
+def _jogos_player(jogos, tick: dict, mercado_bot: str, papel: str = 'par'):
+    """v35: jogos que os chips enxergam num mercado por time/jogador.
+    Mercado que NAO e' player -> devolve `jogos` como veio (nada muda).
+    Lado do alvo indefinido -> None (o chamador REJEITA, fail closed).
+    Cacheia a lista derivada no memo da lista original (v16), entao o memo
+    de stats continua valendo por evento."""
+    if (mercado_bot or '') not in MERCADOS_PLAYER:
+        return jogos
+    lado = _lado_alvo_player(tick)
+    if lado not in ('home', 'away'):
+        return None
+    ja, jb = tick.get('jogador_a') or '', tick.get('jogador_b') or ''
+    alvo = ja if lado == 'home' else jb
+    periodo = _periodo_do_bot(mercado_bot)
+    if papel == 'par':
+        dono, modo = alvo, 'marcado'
+    else:
+        dono = ja if papel == 'ind_a' else jb
+        modo = 'marcado' if dono == alvo else 'sofrido'
+    chave = ('__player__', papel, (dono or '').upper(), modo, periodo)
+    memo = getattr(jogos, 'memo', None)
+    if isinstance(memo, dict):
+        d = memo.get(chave)
+        if d is None:
+            d = _derivar_jogos_player(jogos, dono, modo, periodo)
+            memo[chave] = d
+        return d
+    return _derivar_jogos_player(jogos, dono, modo, periodo)
+
+
+def _chave_mercado_evt(tick: dict, mercado_bot: str):
+    """v35: chave da ESCADA (evitarLinhasSeq). No total por time os dois
+    times do mesmo jogo vem no MESMO mercado_tipo (PLAYER_TOTAL): apostar no
+    time A travava o time B. Pra player, a chave ganha o lado do alvo; pros
+    outros mercados e' o mercado_tipo de sempre (identico ao antigo)."""
+    mt = tick.get('mercado_tipo')
+    if (mercado_bot or '') in MERCADOS_PLAYER:
+        return (mt, _lado_alvo_player(tick))
+    return mt
+
+
 def _pct_adversario_cobre(jogos: list, alvo: str, linha: float, periodo: str = 'ft') -> tuple:
     """v11 (filtro individual HC, alvo='ambos').
     (% dos jogos do `alvo` em que o ADVERSARIO cobriu +linha, qtd_valida) —
@@ -4563,7 +4643,7 @@ async def executar_backtest(job_id: int):
             # (evento, mercado_tipo) e o mais cedo no tempo = o que o bot ao vivo
             # teria apostado (primeiro tick que passa, depois trava o mercado).
             if evitar_linhas_seq and not modo_candidatos:
-                _mtipo_evt = tick.get('mercado_tipo')
+                _mtipo_evt = _chave_mercado_evt(tick, bot.get('mercado', ''))
                 _lado_evt = _lado_aposta(tick.get('selecao'))
                 if (evt, _mtipo_evt, _lado_evt) in mercado_apostado_evt:
                     rej['mercado_repetido'] = rej.get('mercado_repetido', 0) + 1
@@ -4842,7 +4922,13 @@ async def executar_backtest(job_id: int):
 
                 # ===== RAMO OVER/UNDER (comportamento original, intacto) =====
                 else:
-                    stats = _stats_h2h_memo(jogos_h2h, linha_num, janelas_wr, janelas_media,
+                    # v35: total por time/jogador -> chips no placar do ALVO
+                    _mb_pl = bot.get('mercado', '') or ''
+                    _jogos_st = _jogos_player(jogos_h2h, tick, _mb_pl, 'par')
+                    if _jogos_st is None:
+                        rej['player_lado_indefinido'] = rej.get('player_lado_indefinido', 0) + 1
+                        continue
+                    stats = _stats_h2h_memo(_jogos_st, linha_num, janelas_wr, janelas_media,
                                                 lado=_lado_aposta(tick.get('selecao')),
                                                 ts_ref=tick['ts'])
                     stats['linha_atual'] = linha_num
@@ -4867,6 +4953,13 @@ async def executar_backtest(job_id: int):
                             rej['indiv_erro'] = rej.get('indiv_erro', 0) + 1
                             continue
                         _lado_t = _lado_aposta(tick.get('selecao'))
+                        # v35: player -> individuais medem o total do ALVO
+                        # (o que ele marca / o que o adversario sofre)
+                        jogos_ind_a = _jogos_player(jogos_ind_a, tick, _mb_pl, 'ind_a')
+                        jogos_ind_b = _jogos_player(jogos_ind_b, tick, _mb_pl, 'ind_b')
+                        if jogos_ind_a is None or jogos_ind_b is None:
+                            rej['player_lado_indefinido'] = rej.get('player_lado_indefinido', 0) + 1
+                            continue
                         st_ind_a = _stats_h2h_memo(jogos_ind_a, linha_num,
                                                        janelas_wr_indiv, set(),
                                                        lado=_lado_t, ts_ref=tick['ts'])
@@ -5003,7 +5096,7 @@ async def executar_backtest(job_id: int):
                     selecao_apostada_evt.add((evt, tick.get('mercado_id') or '',
                                               tick.get('linha') or '', tick.get('selecao_id') or ''))
                 if evitar_linhas_seq:
-                    mercado_apostado_evt.add((evt, tick.get('mercado_tipo'),
+                    mercado_apostado_evt.add((evt, _chave_mercado_evt(tick, bot.get('mercado', '')),
                                               _lado_aposta(tick.get('selecao'))))
             candidatas.append({
                 'tick': tick,

@@ -549,6 +549,22 @@ def _montar_selecao(caminho_tudo, caminho_holdout, baseline, criterio, top,
                     it["nome"] = lado.upper() + _n[3:]
     irrep = {r["i"]: r["motivo"] for r in recusadas}
 
+    # v35.2 (23/09): o pack da tela lia `desc`/`nome` que o tudo.csv NAO tem,
+    # entao a coluna ESTRATEGIA caia no `extra` ("dif>=5") e 60 configs
+    # diferentes (odd/conf/WR<=/linha) apareciam identicas. O nome completo
+    # ja existe — e' o resumir() do conversor — so' nao chegava aqui.
+    _pos = 0
+    for _i in range(len(registros)):
+        if _i in irrep:
+            continue
+        try:
+            _nome = (itens[_pos] or {}).get("nome")
+            if _nome and not registros[_i].get("desc"):
+                registros[_i]["_desc"] = _nome
+        except Exception:
+            pass
+        _pos += 1
+
     # o pacote da tela (colunar, formato do prototipo) + os itens da planilha
     # colunares e ALINHADOS POR INDICE com o pack (recusada = linha nula)
     pack = S.empacotar(registros, baseline_treino=baseline)

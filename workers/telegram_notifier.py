@@ -492,6 +492,27 @@ async def _buscar_ultimo_confronto(jogador_a: str, jogador_b: str, bookmaker: st
 # ============================================================
 # MONTA MENSAGEM NOVA (LAYOUT v5)
 # ============================================================
+def _alvo_player_txt(aposta: dict) -> str:
+    """v37: no total por TIME/JOGADOR a selecao ('Mais de 52.5') nao diz de
+    QUAL time e' o total. O executor grava stats_h2h.alvo_nome/lado_alvo no
+    envio; aqui so' vira texto. Mercado que nao e' player -> ''. Blindado."""
+    try:
+        if str(aposta.get('mercado') or '') not in ('over_under_ft_player', 'over_under_ht_player'):
+            return ''
+        st = _parse_json_field(aposta.get('stats_h2h')) or {}
+        nome = st.get('alvo_nome') or ''
+        if not nome:
+            la = st.get('lado_alvo')
+            nome = (aposta.get('jogador_a') if la == 'home'
+                    else aposta.get('jogador_b') if la == 'away' else '') or ''
+        if not nome:
+            return ''
+        per = ' (1º tempo)' if 'ht' in str(aposta.get('mercado')) else ''
+        return f'🎯 Total de <b>{nome}</b>{per}'
+    except Exception:
+        return ''
+
+
 async def montar_msg_aposta_nova(aposta: dict) -> str:
     emoji = _emoji_esporte(aposta.get('bot_esporte') or aposta.get('esporte', ''))
     bot_nome = (aposta.get('bot_nome') or 'Bot').upper()
@@ -569,6 +590,9 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
         f'<i>{casa} · {liga}</i>\n\n'
         f'⚔️ {jogador_a} vs {jogador_b}'
     )
+    _alvo_txt = _alvo_player_txt(aposta)
+    if _alvo_txt:
+        msg += f'\n{_alvo_txt}'
     if resumo_aprovado:
         msg += f'\n📋 {resumo_aprovado}'
 
@@ -695,6 +719,7 @@ def montar_msg_aposta_resolvida(aposta: dict) -> str:
         f'━━━━━━━━━━━━━━\n'
         f'⚔️ {jogador_a} vs {jogador_b}: <b>{placar_final}</b>\n'
         f'📊 {selecao}{linha_txt} @ {odd}\n'
+        f'{(_alvo_player_txt(aposta) + chr(10)) if _alvo_player_txt(aposta) else ""}'
         f'💵 PnL: <b>{pnl_txt}</b>'
         f'{motivo_linha}\n'
         f'🆔 #{aposta.get("id")}'

@@ -1,6 +1,12 @@
 """
 bot_executor.py - Worker de simulacao em tempo real (v12 + v20 hc_relativo)
 
+v37 - TOTAL POR TIME/JOGADOR completo:
+- chips (WR/media/Z/desvio/gap, par e individual) medidos no placar do ALVO,
+  nao no total do jogo — mesma _jogos_player do backtest (fonte unica).
+- escada e dedup por linha passam a ser por (jogo, mercado, ALVO): apostar no
+  time A nao trava mais o time B do mesmo jogo.
+
 v36 - DADOS DA PLANILHA (TipManager) GRAVADOS NA APOSTA:
 - Ao registrar a aposta, grava em stats_h2h (jsonb, sem migration):
   time_a / time_b (do tick) e favorito / azarao (nick do jogador com a
@@ -111,6 +117,7 @@ from workers.backtest_runner import (
     _matches_mercado,
     MERCADOS_PLAYER,       # v35: total por TIME/JOGADOR
     _lado_alvo_player,     # v35: de que lado e' o total (pelo texto do mercado)
+    _jogos_player,         # v37: chips do total por time no placar do ALVO
     _parse_linha,
     _normalizar,
     _resolve_resultado,
@@ -1025,7 +1032,14 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
             # quando o under real era 35%). Agora o filtro checa o numero certo.
             lado_aposta = _selecao_eh_over_under(tick.get('selecao'))
             # v10: ts_ref = tick['ts'] (momento da aposta) p/ janelas de tempo (24h/7d).
-            stats_dict = _calcular_stats_h2h(jogos_h2h, linha_num, janelas_wr, janelas_media, lado=lado_aposta, ts_ref=tick.get('ts'))
+            # v37: total por TIME/JOGADOR -> chips no placar do ALVO (mesma
+            # funcao do backtest). Lado indefinido = nao aposta (fail closed).
+            _mb_pl = bot.get('mercado', '') or ''
+            _jogos_st = _jogos_player(jogos_h2h, tick, _mb_pl, 'par')
+            if _jogos_st is None:
+                _conta_rej(bot, 'player_lado_indefinido')
+                return
+            stats_dict = _calcular_stats_h2h(_jogos_st, linha_num, janelas_wr, janelas_media, lado=lado_aposta, ts_ref=tick.get('ts'))
             stats_dict['linha_atual'] = linha_num
 
             # v11: filtros INDIVIDUAIS (base=individual) -- WR das ultimas N
@@ -1040,6 +1054,11 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                 jogos_ind_b = await indiv_cache.get_jogos(
                     jb, tick['ts'], event_id_excluir=tick.get('event_id'))
                 janelas_wr_indiv = _janelas_wr_individuais(filtros_unificados)
+                jogos_ind_a = _jogos_player(jogos_ind_a, tick, _mb_pl, 'ind_a')
+                jogos_ind_b = _jogos_player(jogos_ind_b, tick, _mb_pl, 'ind_b')
+                if jogos_ind_a is None or jogos_ind_b is None:
+                    _conta_rej(bot, 'player_lado_indefinido')
+                    return
                 st_ind_a = _calcular_stats_h2h(jogos_ind_a, linha_num, janelas_wr_indiv,
                                                set(), lado=lado_aposta, ts_ref=tick.get('ts'))
                 st_ind_b = _calcular_stats_h2h(jogos_ind_b, linha_num, janelas_wr_indiv,
@@ -1064,6 +1083,10 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
     evitar_linhas_seq = filtros.get('evitarLinhasSeq', True)
     if evitar_linhas_seq:
         mercado_tipo_atual = tick.get('mercado_tipo')
+        # v37: total por time -> a trava e' por (jogo, mercado, ALVO, lado).
+        # Os 2 times vem no mesmo mercado_tipo; sem isto o time A travava o B.
+        _alvo_esc = (_lado_alvo_player(tick)
+                     if (bot.get('mercado') or '') in MERCADOS_PLAYER else None)
         async with state.pool.acquire() as conn:
             _sels_mercado = await conn.fetch("""
                 SELECT selecao FROM apostas
@@ -1071,7 +1094,8 @@ async def _avaliar_e_apostar(bot: dict, tick: dict):
                   AND event_id = $2
                   AND modo = 'simulado'
                   AND (mercado_tipo = $3 OR ($3 IS NULL AND mercado_tipo IS NULL))
-            """, bot['id'], tick.get('event_id'), mercado_tipo_atual)
+                  AND ($4::text IS NULL OR stats_h2h->>'lado_alvo' = $4::text)
+            """, bot['id'], tick.get('event_id'), mercado_tipo_atual, _alvo_esc)
         # v11.2: trava por (jogo, mercado, LADO) — MESMA regra do backtest
         # (fonte unica, sem divergir). Lado unico e HC: identico ao antigo
         # (lado constante/None). Lado 'Ambos' em over/under: cada lado ganha
@@ -1423,6 +1447,7 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                       AND event_id = $5
                       AND modo = 'simulado'
                       AND (mercado_tipo = $9 OR ($9 IS NULL AND mercado_tipo IS NULL))
+                      AND ($23::text IS NULL OR stats_h2h->>'lado_alvo' = $23::text)
                 ))
                   -- FIX dedup por linha: NUNCA aposta a mesma (evento+mercado+linha)
                   -- 2x, mesmo com evitarLinhasSeq=false. Permite linhas DIFERENTES
@@ -1434,6 +1459,7 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                       AND modo = 'simulado'
                       AND (mercado_tipo = $9 OR ($9 IS NULL AND mercado_tipo IS NULL))
                       AND linha = $10
+                      AND ($23::text IS NULL OR stats_h2h->>'lado_alvo' = $23::text)
                 )
                 ON CONFLICT (bot_id, tick_id) WHERE tick_id IS NOT NULL DO NOTHING
                 RETURNING id
@@ -1451,6 +1477,9 @@ async def _registrar_aposta(bot: dict, tick: dict, stats: Optional[dict], motivo
                 tick.get('id'), tick.get('bookmaker'), liga_traduzida or tick.get('liga'),
                 _to_jsonb(stats), motivo,
                 bool(evitar_linhas_seq),
+                # v37: $23 = lado do alvo (so' total por time; None = inerte)
+                ((stats or {}).get('lado_alvo')
+                 if (bot.get('mercado') or '') in MERCADOS_PLAYER else None),
             )
 
         if row:

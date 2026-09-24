@@ -310,15 +310,52 @@ def converter(g: dict, *, casa='bet365', esporte='nba2k', mercado=None,
     return {k: v for k, v in lin.items() if v is not None}
 
 
+def _chip_txt(lin: dict, pref: str) -> str:
+    """v5.4: texto de UM chip com tudo que ele carrega — janela, base
+    individual, WR min E max (banda), conf min E max. Antes so' saia
+    'janela>=min', e configs que diferiam em odd/conf/WR<= apareciam com
+    o MESMO nome na tela de escolha (garimpo HC: 60 linhas 'dif>=5')."""
+    jan = lin.get(pref + 'janela')
+    if not jan:
+        return ''
+    wmin, wmax = lin.get(pref + 'wr_min'), lin.get(pref + 'wr_max')
+    base = str(lin.get(pref + 'base') or '').lower()
+    alvo = str(lin.get(pref + 'indiv_alvo') or '').lower()
+    rot = str(jan)
+    if rot == 'all':
+        rot = 'Todas'
+    elif rot.startswith('last_'):
+        rot = 'Últ.' + rot[5:]
+    if base and base != 'par':
+        rot += f"({'ind ' + alvo if alvo else 'ind'})"
+    try:
+        lo = float(wmin) if wmin is not None else 0.0
+        hi = float(wmax) if wmax is not None else 100.0
+    except (TypeError, ValueError):
+        lo, hi = 0.0, 100.0
+    if lo > 0 and hi < 100:
+        rot += f" {lo:.0f}~{hi:.0f}"
+    elif lo > 0:
+        rot += f">={lo:.0f}"
+    elif hi < 100:
+        rot += f"<={hi:.0f}"
+    cmin, cmax = lin.get(pref + 'conf'), lin.get(pref + 'conf_max')
+    if cmin not in (None, 0, 1, '0', '1'):
+        rot += f" q>={cmin}"
+    if cmax:
+        rot += f" q<={cmax}"
+    return rot
+
+
 def resumir(lin: dict) -> str:
-    """Nome curto e legivel, pro placar e pro log."""
+    """Nome curto e legivel, pro placar e pro log.
+    v5.4: mostra TUDO que a config carrega (chip completo, odd, escada) —
+    o nome e' a unica coisa que a tela de escolha exibe por linha."""
     p = []
-    if lin.get('chip_wr_min'):
-        p.append(f"{lin['chip_janela']}>={lin['chip_wr_min']:.0f}")
-    if lin.get('chip2_wr_min'):
-        p.append(f"{lin['chip2_janela']}>={lin['chip2_wr_min']:.0f}")
-    if lin.get('chip_conf_max'):
-        p.append(f"conf<={lin['chip_conf_max']}")
+    for pref in ('chip_', 'chip2_'):
+        t = _chip_txt(lin, pref)
+        if t:
+            p.append(t)
     lo, hi = lin.get('linha_min'), lin.get('linha_max')
     if lo is not None and hi is not None:
         a, b = sorted((abs(lo), abs(hi)))
@@ -355,6 +392,20 @@ def resumir(lin: dict) -> str:
             p.append(f"{rot}>={cmin:g}")
         elif cmax is not None:
             p.append(f"{rot}<={cmax:g}")
+    # v5.4: odd e escada tambem sao filtro — sem eles duas configs
+    # diferentes viravam homonimas
+    omin, omax = lin.get('odd_min'), lin.get('odd_max')
+    try:
+        if omin is not None and omax is not None:
+            p.append(f"odd{float(omin):g}-{float(omax):g}")
+        elif omin is not None:
+            p.append(f"odd>={float(omin):g}")
+        elif omax is not None:
+            p.append(f"odd<={float(omax):g}")
+    except (TypeError, ValueError):
+        pass
+    if lin.get('evitar_linhas_seq') in (1, True, '1'):
+        p.append("esc")
     if lin.get('teto'):
         p.append(f"t{lin['teto']}")
     # lado real: em O/U e' OVER/UNDER, nao ZEB/FAV (que so' faz sentido em HC)
