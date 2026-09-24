@@ -4095,6 +4095,27 @@ def _avaliar_filtros_basicos(tick: dict, bot: dict) -> tuple[bool, str]:
     return True, ''
 
 
+def _chave_ordem_tick(t):
+    """v37 — ordem de avaliacao do backtest = ordem do bot ao vivo.
+    O vivo recebe cada tick pelo NOTIFY na ORDEM DE GRAVACAO (id) e avalia
+    nessa ordem. O backtest ordenava so' por ts; em EMPATE de ts (a casa manda
+    varias linhas no mesmo microssegundo) ficava a ordem da consulta, que
+    ordena `linha` como TEXTO ('10.5' antes de '9.5') -> com escada/teto o
+    backtest entrava numa linha e o vivo em outra (caso 127, jogos 15135118 e
+    15142393 em 24/09). Agora: ts e, no empate, id.
+    Tick sem id (parquet antigo) -> 0 pra todos: a ordem estavel de antes se
+    mantem, identica ao comportamento anterior. Nunca levanta."""
+    try:
+        _id = t['id']
+    except Exception:
+        _id = None
+    try:
+        _id = int(_id) if _id is not None else 0
+    except Exception:
+        _id = 0
+    return (t['ts'], _id)
+
+
 # ============================================================
 # WORKER PRINCIPAL
 # ============================================================
@@ -4695,14 +4716,14 @@ async def executar_backtest(job_id: int):
             # respondem igual a ['ts']/.get() no loop. A trava de 1 aposta por
             # selecao fica no proprio loop (selecao_apostada_evt), entao nao ha
             # reentrada da mesma linha.
-            ticks_ordenados = sorted(ticks, key=lambda x: x['ts'])
+            ticks_ordenados = sorted(ticks, key=_chave_ordem_tick)   # v37: ts, depois id
         else:
             primeiros = {}
             for t in ticks:
                 chave = (t['event_id'], t['mercado_id'] or '', t['linha'] or '', t['selecao_id'] or '')
                 if chave not in primeiros:
                     primeiros[chave] = dict(t)
-            ticks_ordenados = sorted(primeiros.values(), key=lambda x: x['ts'])
+            ticks_ordenados = sorted(primeiros.values(), key=_chave_ordem_tick)   # v37: ts, depois id
         total_candidatos = len(ticks_ordenados)
         # progresso: no modo tick a tick o total e ~10-20x maior; atualizar o
         # banco a cada 200 viraria milhares de UPDATEs a toa
