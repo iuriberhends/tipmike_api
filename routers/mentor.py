@@ -67,6 +67,25 @@ def _rs(rows):
     return [dict(r) for r in rows]
 
 
+def _comentario(v):
+    """O comentário vem gravado como JSON {professor, texto, html}; devolve só o texto."""
+    if not v:
+        return None
+    if isinstance(v, str) and v.lstrip().startswith("{"):
+        try:
+            d = json.loads(v)
+            t = d.get("texto") or d.get("html") or ""
+            if d.get("professor"):
+                t = f"{t}\n\n— {d['professor']}"
+            v = t
+        except Exception:
+            pass
+    import re as _re
+    v = _re.sub(r"<[^>]+>", " ", str(v))
+    v = _re.sub(r"\s{3,}", "\n\n", v).strip()
+    return v or None
+
+
 def _patente(xp):
     p = PATENTES[0][1]
     for lim, nome in PATENTES:
@@ -108,39 +127,55 @@ SQL_BASE_Q = """
 """
 
 
+def _palavra_chave(titulo):
+    """A palavra que distingue a aula das irmãs (Writer × Calc × Impress; Windows × Linux)."""
+    import re as _re
+    t = _re.sub(r"\b(I{1,3}|IV|V|VI{0,3}|IX|X|\d+)\b", " ", titulo or "")
+    t = _re.sub(r"[-–:()\[\]]", " ", t)
+    STOP = {"office", "libreoffice", "aula", "parte", "de", "da", "do", "e", "o", "a", "os", "as", "em", "no", "na", "dos", "das", "com", "para", "web", "365", "introdução", "exercícios", "exercicios", "resolução", "questões", "questoes", "teoria", "geral"}
+    for w in t.split():
+        if len(w) >= 4 and w.lower() not in STOP:
+            return w
+    return None
+
+
 async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=False, excluir=()):
-    """Questões ligadas à aula (etiqueta exata primeiro), inéditas, com preferência FCC/IBFC e recentes."""
+    """
+    Questões ligadas à aula. Regras: etiqueta exata antes de etiqueta-pai; nunca duas com o mesmo texto;
+    nunca um texto já respondido (mesmo com id diferente); a palavra-chave do título desempata
+    (uma aula de Writer prefere questão que fala em Writer).
+    """
     excl = list(excluir)
-    rows = await conn.fetch(f"""
-        SELECT q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo,
-               q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.via, qa.forca
+    titulo = await conn.fetchval("SELECT titulo FROM mentor.aula WHERE id=$1", aula_id)
+    kw = _palavra_chave(titulo)
+    sql = f"""
+        SELECT DISTINCT ON (q.enunciado_hash) q.enunciado_hash, q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo,
+               q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.via, qa.forca,
+               (CASE WHEN qa.via = 'etiqueta' THEN 0 ELSE 1 END) AS o_via,
+               (CASE WHEN $4::text IS NOT NULL AND q.enunciado ILIKE '%' || $4 || '%' THEN 0 ELSE 1 END) AS o_kw,
+               (CASE WHEN q.banca_sigla = ANY($3::text[]) THEN 0 ELSE 1 END) AS o_banca,
+               (CASE WHEN q.soldado_ba THEN 0 ELSE 1 END) AS o_sold, random() AS rnd
         FROM mentor.questao_aula qa JOIN mentor.questao q ON q.id = qa.questao_id
         WHERE qa.aula_id = $1 AND {SQL_BASE_Q}
           {"AND q.tipo = 'ME'" if so_me else ""}
-          AND NOT (q.id = ANY($3::bigint[]))
-          {"AND NOT EXISTS (SELECT 1 FROM mentor.resposta r WHERE r.questao_id = q.id)" if ineditas else ""}
-        ORDER BY qa.forca DESC,
-                 CASE WHEN q.banca_sigla = ANY($4::text[]) THEN 0 ELSE 1 END,
-                 CASE WHEN q.soldado_ba THEN 0 ELSE 1 END,
-                 q.ano DESC NULLS LAST, random()
-        LIMIT $2
-    """, aula_id, n, excl, list(BANCAS_PREF))
-    out = _rs(rows)
-    if len(out) < n and ineditas:
-        # estoque curto: completa com questão já vista há mais de 30 dias (spec §3.10)
-        mais = await conn.fetch(f"""
-            SELECT q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo,
-                   q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.via, qa.forca
-            FROM mentor.questao_aula qa JOIN mentor.questao q ON q.id = qa.questao_id
-            WHERE qa.aula_id = $1 AND {SQL_BASE_Q}
-              AND NOT (q.id = ANY($3::bigint[]))
-              AND NOT EXISTS (SELECT 1 FROM mentor.resposta r WHERE r.questao_id = q.id AND r.data > now() - interval '30 days')
-            ORDER BY random() LIMIT $2
-        """, aula_id, n - len(out), excl + [q["id"] for q in out])
-        out += _rs(mais)
+          AND NOT (q.id = ANY($2::bigint[]))
+          {"AND NOT EXISTS (SELECT 1 FROM mentor.resposta r JOIN mentor.questao q2 ON q2.id = r.questao_id WHERE q2.enunciado_hash = q.enunciado_hash" + ("" if ineditas else " AND r.data > now() - interval '30 days'") + ")"}
+        ORDER BY q.enunciado_hash, o_via, o_kw, o_banca, o_sold, q.ano DESC NULLS LAST
+    """
+    rows = await conn.fetch(sql, aula_id, excl, list(BANCAS_PREF), kw)
+    lst = _rs(rows)
+    lst.sort(key=lambda q: (q["o_via"], q["o_kw"], q["o_banca"], q["o_sold"], -(q["ano"] or 0), q["rnd"]))
+    # exclui textos já escolhidos nesta rodada (excluir pode trazer ids de textos iguais)
+    if excl:
+        hashes_excl = {r["h"] for r in await conn.fetch("SELECT enunciado_hash AS h FROM mentor.questao WHERE id = ANY($1::bigint[])", excl)}
+        lst = [q for q in lst if q.get("enunciado_hash") not in hashes_excl]
+    out = lst[:n]
     for q in out:
         q["alternativas"] = json.loads(q["alternativas"]) if isinstance(q["alternativas"], str) else q["alternativas"]
         q["contexto"] = contexto
+        q["comentario_professor"] = _comentario(q.get("comentario_professor"))
+        for k in ("o_via", "o_kw", "o_banca", "o_sold", "rnd", "enunciado_hash"):
+            q.pop(k, None)
     return out
 
 
@@ -158,9 +193,16 @@ async def _questoes_do_assunto(conn, assunto_id, n, ineditas=True):
     out = lst[:n]
     if len(out) < n and ineditas:
         out += await _questoes_do_assunto(conn, assunto_id, n - len(out), ineditas=False)
+    vistos, dedup = set(), []
     for q in out:
+        h = (q.get("enunciado") or "")[:300].lower()
+        if h in vistos:
+            continue
+        vistos.add(h)
         q["alternativas"] = json.loads(q["alternativas"]) if isinstance(q["alternativas"], str) else q["alternativas"]
-    return out[:n]
+        q["comentario_professor"] = _comentario(q.get("comentario_professor"))
+        dedup.append(q)
+    return dedup[:n]
 
 
 # ----------------------------------------------------------------- painel
@@ -518,7 +560,7 @@ async def responder(questao_id: int = Body(...), contexto: str = Body(...), marc
             if len(ult) == 3 and all(r["correta"] and r["confianca"] == "certeza" for r in ult):
                 await _add_xp(conn, "combo", XP["combo"], {"sessao_id": sessao_id, "resposta_id": rid})
                 combo = XP["combo"]
-    return {"resposta_id": rid, "correta": correta, "gabarito": q["gabarito"], "comentario_professor": q["comentario_professor"], "combo_xp": combo}
+    return {"resposta_id": rid, "correta": correta, "gabarito": q["gabarito"], "comentario_professor": _comentario(q["comentario_professor"]), "combo_xp": combo}
 
 
 async def _agendar_revisao(conn, assunto_id, tipo, dias, hoje=None):
