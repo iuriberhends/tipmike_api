@@ -4649,9 +4649,13 @@ async def executar_backtest(job_id: int):
         # o bot faz de verdade.
         _odd_estado = bool(bot.get('odd_min') or bot.get('odd_max')
                            or (bot.get('filtros') or {}).get('limitarOddsAtivo'))
+        # v38: PLACARES e' filtro de ESTADO (depende do placar do momento). Sem
+        # ele aqui o backtest so' olhava o 1o tick de cada linha (placar do
+        # comeco do jogo) e o filtro reprovava quase tudo; o vivo avalia todo
+        # tick e aposta quando o placar da lista aparece.
         modo_tick_a_tick = (_v22_env not in ('0', 'off', 'false', 'nao')) and bool(
             folga_ativo or momento_ativo or tot_env_ativo
-            or diff_ativo or cenario_ativo or _odd_estado)
+            or diff_ativo or cenario_ativo or _odd_estado or placares_ativo)
         if modo_candidatos:
             modo_tick_a_tick = True        # v33: todos os ticks, em ordem
         _ultimo_cand: dict = {}            # v33: (evt,merc,linha,sel) -> (placar, odd)

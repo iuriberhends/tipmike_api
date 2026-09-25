@@ -139,6 +139,19 @@ def _palavra_chave(titulo):
     return None
 
 
+_FEEDBACK_OK = False
+
+
+async def _garantir_feedback(conn):
+    """A tabela de feedback é criada pelo afinador; se ainda não existe, cria aqui (uma vez por processo)."""
+    global _FEEDBACK_OK
+    if _FEEDBACK_OK:
+        return
+    await conn.execute("""CREATE TABLE IF NOT EXISTS mentor.vinculo_feedback (questao_id BIGINT NOT NULL, aula_id BIGINT NOT NULL, ok BOOLEAN NOT NULL,
+                          criado_em TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY (questao_id, aula_id))""")
+    _FEEDBACK_OK = True
+
+
 async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=False, excluir=()):
     """
     Questões ligadas à aula. Regras: etiqueta exata antes de etiqueta-pai; nunca duas com o mesmo texto;
@@ -146,11 +159,13 @@ async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=Fal
     (uma aula de Writer prefere questão que fala em Writer).
     """
     excl = list(excluir)
+    await _garantir_feedback(conn)
     titulo = await conn.fetchval("SELECT titulo FROM mentor.aula WHERE id=$1", aula_id)
     kw = _palavra_chave(titulo)
     sql = f"""
         SELECT DISTINCT ON (q.enunciado_hash) q.enunciado_hash, q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo,
                q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.via, qa.forca,
+               (CASE WHEN qa.melhor_mat THEN 0 WHEN qa.melhor THEN 1 ELSE 2 END) AS o_melhor,
                (CASE WHEN qa.via = 'etiqueta' THEN 0 ELSE 1 END) AS o_via,
                (CASE WHEN $4::text IS NOT NULL AND q.enunciado ILIKE '%' || $4 || '%' THEN 0 ELSE 1 END) AS o_kw,
                (CASE WHEN q.banca_sigla = ANY($3::text[]) THEN 0 ELSE 1 END) AS o_banca,
@@ -159,12 +174,29 @@ async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=Fal
         WHERE qa.aula_id = $1 AND {SQL_BASE_Q}
           {"AND q.tipo = 'ME'" if so_me else ""}
           AND NOT (q.id = ANY($2::bigint[]))
+          AND NOT EXISTS (SELECT 1 FROM mentor.vinculo_feedback f WHERE f.questao_id = q.id AND f.aula_id = $1 AND NOT f.ok)
+          {{NIVEL}}
           {"AND NOT EXISTS (SELECT 1 FROM mentor.resposta r JOIN mentor.questao q2 ON q2.id = r.questao_id WHERE q2.enunciado_hash = q.enunciado_hash" + ("" if ineditas else " AND r.data > now() - interval '30 days'") + ")"}
-        ORDER BY q.enunciado_hash, o_via, o_kw, o_banca, o_sold, q.ano DESC NULLS LAST
+        ORDER BY q.enunciado_hash, o_melhor, o_via, o_kw, o_banca, o_sold, q.ano DESC NULLS LAST
     """
-    rows = await conn.fetch(sql, aula_id, excl, list(BANCAS_PREF), kw)
+    # nível: fora a questão que tem etiqueta de uma aula POSTERIOR do mesmo assunto ainda não concluída e que esta aula não tem
+    # 1) pelo texto (mentor_afinar.py): a questão pertence à aula que mais a explica; se essa aula é uma parte
+    #    posterior ainda não concluída, espera. 2) sem afinação, pela etiqueta exclusiva de aula posterior.
+    NIVEL = """AND NOT EXISTS (SELECT 1 FROM mentor.questao_aula qb JOIN mentor.aula a2 ON a2.id = qb.aula_id JOIN mentor.aula a1 ON a1.id = $1
+                          WHERE qb.questao_id = q.id AND qb.melhor AND a2.assunto_id = a1.assunto_id AND a2.ordem > a1.ordem AND a2.estado <> 'concluida')
+               AND NOT EXISTS (SELECT 1 FROM mentor.questao_aula qc JOIN mentor.aula ac ON ac.id = qc.aula_id JOIN mentor.aula a1 ON a1.id = $1
+                          WHERE qc.questao_id = q.id AND qc.melhor_mat AND ac.assunto_id <> a1.assunto_id)
+               AND (EXISTS (SELECT 1 FROM mentor.questao_aula qb JOIN mentor.aula a1 ON a1.id = $1 JOIN mentor.aula ab ON ab.id = qb.aula_id
+                            WHERE qb.questao_id = q.id AND qb.melhor AND ab.assunto_id = a1.assunto_id)
+                    OR NOT EXISTS (SELECT 1 FROM mentor.aula a2 JOIN mentor.aula a1 ON a1.id = $1
+                          WHERE a2.id <> a1.id AND a2.assunto_id = a1.assunto_id AND a2.ordem > a1.ordem AND a2.estado <> 'concluida'
+                            AND EXISTS (SELECT 1 FROM unnest(q.etiquetas) e WHERE e = ANY(a2.etiquetas) AND NOT (e = ANY(a1.etiquetas)))))"""
+    rows = await conn.fetch(sql.replace("{NIVEL}", NIVEL), aula_id, excl, list(BANCAS_PREF), kw)
+    if len(rows) < n:   # estoque curto no nível: completa sem a regra
+        vistos = {r["id"] for r in rows}
+        rows = list(rows) + [r for r in await conn.fetch(sql.replace("{NIVEL}", ""), aula_id, excl, list(BANCAS_PREF), kw) if r["id"] not in vistos]
     lst = _rs(rows)
-    lst.sort(key=lambda q: (q["o_via"], q["o_kw"], q["o_banca"], q["o_sold"], -(q["ano"] or 0), q["rnd"]))
+    lst.sort(key=lambda q: (q["o_melhor"], q["o_via"], q["o_kw"], q["o_banca"], q["o_sold"], -(q["ano"] or 0), q["rnd"]))
     # exclui textos já escolhidos nesta rodada (excluir pode trazer ids de textos iguais)
     if excl:
         hashes_excl = {r["h"] for r in await conn.fetch("SELECT enunciado_hash AS h FROM mentor.questao WHERE id = ANY($1::bigint[])", excl)}
@@ -174,7 +206,7 @@ async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=Fal
         q["alternativas"] = json.loads(q["alternativas"]) if isinstance(q["alternativas"], str) else q["alternativas"]
         q["contexto"] = contexto
         q["comentario_professor"] = _comentario(q.get("comentario_professor"))
-        for k in ("o_via", "o_kw", "o_banca", "o_sold", "rnd", "enunciado_hash"):
+        for k in ("o_melhor", "o_via", "o_kw", "o_banca", "o_sold", "rnd", "enunciado_hash"):
             q.pop(k, None)
     return out
 
@@ -902,3 +934,386 @@ async def responder_card(card_id: int, lembrou: bool = Body(..., embed=True)):
         await conn.execute("UPDATE mentor.card SET caixa=$2, proxima=$3, acertos=acertos+$4, erros=erros+$5 WHERE id=$1", card_id, caixa, prox, int(lembrou), int(not lembrou))
         xp = await _add_xp(conn, "card", XP["card"], {"card_id": card_id}) if lembrou else None
     return {"card_id": card_id, "caixa": caixa, "proxima": prox.isoformat(), "xp": xp}
+
+
+# =====================================================================
+# PROTÓTIPO LIGADO NA API — dados no formato do protótipo aprovado
+# (D, SEMANAS_DET, HOJE_AULAS), estado persistido e eventos → motor.
+# =====================================================================
+MODO_PROTO = {"S": "completo", "A": "completo", "B": "expresso", "C": "expresso", "treino": "expresso", "fora": "fora", "revisao": "expresso"}
+REVISAO_TIPOS = ("R1", "R2", "R3", "R7", "R15", "R30", "M")
+AGENDA_SIM = [["2026-12-04", "montado", "Simulado 1 · montado"], ["2026-12-18", "montado", "Simulado 2 · montado"],
+              ["2027-01-08", "real", "Simulado 3 · prova real IBFC 2020 (reservada)"], ["2027-01-22", "montado", "Simulado 4 · montado"],
+              ["2027-02-05", "real", "Simulado 5 · prova real FCC 2012 (reservada)"], ["2027-02-19", "montado", "Simulado 6 · montado"]]
+
+
+def _q_proto(q, mat=None, assunto=None):
+    alts = q.get("alternativas") or []
+    if isinstance(alts, str):
+        alts = json.loads(alts)
+    com = _comentario(q.get("comentario_professor"))
+    return {"id": q["id"], "ano": q.get("ano"), "banca": q.get("banca_sigla") or "", "banca_curta": q.get("banca_sigla") or "",
+            "orgao": q.get("orgao_sigla") or "", "cargo": q.get("cargo") or "", "enunciado": q.get("enunciado") or "",
+            "alts": [[a.get("letra"), a.get("texto")] for a in alts], "gab": (q.get("gabarito") or "").strip().upper(),
+            "pct": float(q["indice_acerto"]) if q.get("indice_acerto") is not None else None, "mat": mat, "assunto": assunto,
+            "explicacao": com or "", "resolucao": ({"fonte": "professor", "texto": com} if com else {"fonte": "mentor", "texto": ""}),
+            "soldado": bool(q.get("soldado_ba")), "aula_id": q.get("aula_id"), "assunto_id": q.get("assunto_id")}
+
+
+def _dur_txt(s):
+    s = int(s or 0)
+    return f"{s // 3600}:{(s % 3600) // 60:02d}:{s % 60:02d}"
+
+
+def _curta(d):
+    MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+    SEM = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"]
+    return f"{SEM[d.weekday()]} {d.day:02d}/{MESES[d.month - 1]}"
+
+
+async def _assuntos_proto(conn, ids=None, materia_id=None):
+    where = "TRUE"
+    args = []
+    if ids is not None:
+        where = "s.id = ANY($1::bigint[])"
+        args = [ids]
+    elif materia_id:
+        where = "s.materia_id = $1"
+        args = [materia_id]
+    rows = await conn.fetch(f"""
+        SELECT s.id, s.nome, s.tier, s.modo, s.base, s.origem, s.soldado, s.estado, s.ordem, s.materia_id, s.modulo_id, m.nome AS materia,
+               mo.nome AS modulo, mo.ordem AS modulo_ordem, mo.tipo AS modulo_tipo,
+               COALESCE((SELECT sum(a.duracao_s) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora'),0)/60 AS video,
+               (SELECT array_agg(a.titulo ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aulas,
+               (SELECT array_agg(a.id ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aula_ids,
+               (SELECT array_agg(a.estado ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aula_estados,
+               (SELECT count(*) FROM mentor.questao_aula qa WHERE qa.assunto_id=s.id) AS questoes
+        FROM mentor.assunto s JOIN mentor.materia m ON m.id=s.materia_id JOIN mentor.modulo mo ON mo.id=s.modulo_id
+        WHERE {where} ORDER BY s.materia_id, (mo.tipo='propria'), mo.ordem, s.ordem""", *args)
+    out = []
+    for r in rows:
+        r = dict(r)
+        tipo = "conteudo"
+        if r["tier"] in ("treino",):
+            tipo = "exercicios"
+        modo = "leitura" if r["origem"] == "propria" else MODO_PROTO.get(r["tier"], "expresso")
+        out.append({"id": r["id"], "nome": r["nome"], "tipo": tipo, "base": r["tier"] == "S", "tier": r["tier"] if r["tier"] in ("S", "A", "B", "C") else "C",
+                    "modo": modo, "soldado": r["soldado"] or 0, "video": int(r["video"] or 0), "aulas": list(r["aulas"] or []),
+                    "aula_ids": list(r["aula_ids"] or []), "aula_estados": list(r["aula_estados"] or []), "questoes": r["questoes"],
+                    "propria": r["origem"] == "propria", "ordem": r["ordem"], "materia": r["materia"], "materia_id": r["materia_id"],
+                    "modulo": r["modulo"], "modulo_ordem": r["modulo_ordem"], "modulo_tipo": r["modulo_tipo"], "estado": r["estado"]})
+    return out
+
+
+def _custo_h(a):
+    if a["propria"]:
+        return 0.75
+    n = max(1, len(a["aulas"]))
+    if a["tier"] == "C":
+        return round(n * 0.15 + 0.1, 2)
+    return round(a["video"] / 60 / 1.5 + n * 0.25, 2)
+
+
+def _fase_semana(seg):
+    return "A" if seg < date(2026, 12, 14) else ("B" if seg < date(2027, 1, 4) else ("C" if seg < date(2027, 1, 18) else "D"))
+
+
+def _titulo_semana(seg, mats):
+    f = _fase_semana(seg)
+    if f == "D":
+        return "Reta final: passada M, cards, simulados e questões dos assuntos fracos"
+    base = {"A": "O que a prova cobra sempre (tier S)", "B": "O que cobra bastante (tier A)", "C": "Completar: B com evidência e resumos de C"}[f]
+    return base + (" · " + ", ".join(mats[:4]) if mats else "")
+
+
+async def _previsao_semanas(conn, a_partir, ate=date(2027, 2, 21)):
+    """Simula as semanas futuras com a mesma regra do planejador (sem gravar)."""
+    todos = await _assuntos_proto(conn)
+    rest = [a for a in todos if a["estado"] == "nao_estudado" and a["tier"] in ("S", "A", "B", "C", "treino")]
+    W = {1: 1.5, 8: 1.5, 7: 1.3, 4: 1.1, 6: 1.1, 10: 1.1, 12: 1.1, 5: 0.8}
+    semanas = []
+    seg = a_partir
+    while seg <= ate:
+        cap_total = await _capacidade_semana(conn, seg)
+        cap = cap_total * PCT_CONTEUDO
+        sem, gasto = [], 0.0
+        for tier in ("S", "A", "B", "C", "treino"):
+            if gasto >= cap * 0.95:
+                break
+            fila = {}
+            for a in rest:
+                if a["tier"] == tier:
+                    fila.setdefault(a["materia_id"], []).append(a)
+            if tier == "B":
+                for l in fila.values():
+                    l.sort(key=lambda a: (-(a["soldado"] or 0), a["modulo_ordem"], a["ordem"]))
+            if not fila:
+                continue
+            resto = cap - gasto
+            peso = {m: sum(_custo_h(a) for a in l) * W.get(m, 1.0) for m, l in fila.items()}
+            top = sorted(peso, key=lambda k: -peso[k])[:5]
+            tot = sum(peso[m] for m in top) or 1
+            for mid in top:
+                if gasto >= cap:
+                    break
+                aloc, g = resto * peso[mid] / tot, 0.0
+                for a in fila[mid]:
+                    c = _custo_h(a)
+                    if gasto + g + c > cap * 1.1 or (g > 0 and g + c > aloc * 1.2):
+                        break
+                    sem.append(a)
+                    g += c
+                gasto += g
+        ids = {a["id"] for a in sem}
+        rest = [a for a in rest if a["id"] not in ids]
+        semanas.append((seg, cap_total, sem))
+        seg += timedelta(days=7)
+    return semanas
+
+
+def _semana_proto(n, seg, meta, itens, revisoes):
+    por = {}
+    for a in itens:
+        por.setdefault(a["materia"], []).append({"id": a["id"], "nome": a["nome"], "base": a["base"], "tier": a["tier"], "modo": a["modo"], "propria": a["propria"],
+                                                 "aulas": a["aulas"], "aula_ids": a.get("aula_ids", []), "aula_estados": a.get("aula_estados", []),
+                                                 "video": a["video"], "soldado": a["soldado"], "estado": a.get("estado")})
+    return {"n": n, "ini": seg.isoformat(), "fim": (seg + timedelta(days=6)).isoformat(), "titulo": _titulo_semana(seg, list(por.keys())), "meta": float(meta),
+            "materias": [[m, l] for m, l in por.items()], "revisoes": revisoes, "reta": _fase_semana(seg) == "D"}
+
+
+@router.get("/proto/dados")
+async def proto_dados():
+    hoje = _hoje()
+    async with db() as conn:
+        # ---- D.materias
+        todos = await _assuntos_proto(conn)
+        mats = _rs(await conn.fetch("SELECT id, nome, peso_prova FROM mentor.materia ORDER BY id"))
+        D_mat = []
+        for m in mats:
+            mods = {}
+            for a in todos:
+                if a["materia_id"] != m["id"]:
+                    continue
+                mods.setdefault((a["modulo_ordem"], a["modulo"]), []).append(a)
+            D_mat.append({"id": m["id"], "nome": m["nome"], "peso": m["peso_prova"],
+                          "modulos": [{"ordem": k[0], "nome": k[1], "assuntos": [{kk: a[kk] for kk in ("id", "nome", "tipo", "base", "tier", "modo", "soldado", "video", "aulas", "aula_ids", "aula_estados", "questoes", "propria", "ordem", "estado")} for a in l]}
+                                      for k, l in sorted(mods.items(), key=lambda x: (x[0][0] == 0, x[0][0]))]})
+        # ---- orçamento
+        orc = []
+        for m in mats:
+            am = [a for a in todos if a["materia_id"] == m["id"]]
+            base = sum(_custo_h(a) for a in am if a["tier"] == "S")
+            orcam = sum(_custo_h(a) for a in am if a["tier"] in ("S", "A"))
+            usado = sum(_custo_h(a) for a in am if a["estado"] in ("estudado", "dominado", "ressalva"))
+            orc.append({"materia": m["nome"], "peso": m["peso_prova"], "orcamento": round(orcam, 1), "usado": round(usado, 1), "base": round(base, 1)})
+        # ---- semanas: reais + previsão
+        reais = _rs(await conn.fetch("SELECT * FROM mentor.semana WHERE status <> 'bloqueada' ORDER BY inicio"))
+        semanas = []
+        n = 1
+        ultimo_fim = None
+        for s in reais:
+            itens_ids = [r["assunto_id"] for r in await conn.fetch("SELECT assunto_id FROM mentor.plano_item WHERE semana_id=$1 ORDER BY ordem", s["id"])]
+            itens = [next(a for a in todos if a["id"] == i) for i in itens_ids if any(a["id"] == i for a in todos)]
+            revs = [[_curta(r["prevista"]), r["tipo"], r["nome"], REV_N.get(r["tipo"], 4), r["id"], bool(r["feita"]), r["acerto"] and float(r["acerto"])]
+                    for r in await conn.fetch("""SELECT r.id, r.tipo, COALESCE(r.adiada_para, r.prevista) AS prevista, r.feita, r.acerto, a.nome FROM mentor.revisao r JOIN mentor.assunto a ON a.id=r.assunto_id
+                                                 WHERE COALESCE(r.adiada_para, r.prevista) BETWEEN $1 AND $2 ORDER BY 3""", s["inicio"], s["fim"])]
+            sp = _semana_proto(n, s["inicio"], s["meta_horas"], itens, revs)
+            sp["id"] = s["id"]
+            sp["status"] = s["status"]
+            semanas.append(sp)
+            ultimo_fim = s["fim"]
+            n += 1
+        inicio_prev = (ultimo_fim + timedelta(days=1)) if ultimo_fim else _segunda(hoje)
+        for seg, cap, itens in await _previsao_semanas(conn, inicio_prev):
+            # revisões previstas: R1/R7/R30 dos assuntos das semanas anteriores (estimativa)
+            sp = _semana_proto(n, seg, cap, itens, [])
+            sp["status"] = "prevista"
+            semanas.append(sp)
+            n += 1
+        # ---- hoje: aulas pendentes do plano aberto, até a meta do dia
+        hoje_aulas = []
+        aberta = _r(await conn.fetchrow("SELECT * FROM mentor.semana WHERE status='aberta' ORDER BY inicio DESC LIMIT 1"))
+        if aberta:
+            cfg = await _config(conn, "horas_dia", {})
+            meta_min = _horas_dia(hoje, cfg) * 60 * PCT_CONTEUDO
+            usado = 0
+            pend = await conn.fetch("""SELECT a.id, a.titulo, a.url, a.duracao_s, a.estado, a.tipo, s.id AS assunto_id, s.nome AS assunto, m.nome AS mat, a.questoes_fixacao
+                                       FROM mentor.plano_item pi JOIN mentor.assunto s ON s.id=pi.assunto_id JOIN mentor.materia m ON m.id=s.materia_id JOIN mentor.aula a ON a.assunto_id=s.id
+                                       WHERE pi.semana_id=$1 AND NOT pi.feito AND a.estado <> 'concluida' AND a.tipo IN ('conteudo','exercicios','propria') ORDER BY pi.ordem, a.ordem""", aberta["id"])
+            # intercalar: no máximo 2 aulas seguidas do mesmo assunto; a próxima vem de outra matéria (spec v3.2 §3)
+            por_assunto = {}
+            for a in pend:
+                por_assunto.setdefault(a["assunto_id"], []).append(a)
+            ordem_ass = list(por_assunto.keys())
+            escolhidas, mat_ultima, i = [], None, 0
+            while any(por_assunto.values()) and len(escolhidas) < 12:
+                # escolhe o próximo assunto de matéria diferente da última, na ordem do plano
+                cand = [k for k in ordem_ass if por_assunto[k]]
+                prox = next((k for k in cand if por_assunto[k][0]["mat"] != mat_ultima), cand[0])
+                lote = por_assunto[prox][:2]
+                por_assunto[prox] = por_assunto[prox][2:]
+                escolhidas += lote
+                mat_ultima = lote[0]["mat"]
+            for a in escolhidas:
+                custo = (a["duracao_s"] or 0) / 60 / 1.5 + 15
+                if hoje_aulas and usado + custo > meta_min:
+                    break
+                usado += custo
+                pre = await _questoes_da_aula(conn, a["id"], AQUEC_N, "aquecimento")
+                gate = await _questoes_da_aula(conn, a["id"], GATE_N, "gate", excluir=[q["id"] for q in pre])
+                fx = a["questoes_fixacao"]
+                if isinstance(fx, str):
+                    try:
+                        fx = json.loads(fx)
+                    except Exception:
+                        fx = []
+                fix = []
+                for q in (fx or [])[:FIX_N]:
+                    alts = q.get("alternatives") or q.get("alternativas") or []
+                    # formato do protótipo: [letra, texto, correta, explicação]
+                    fix.append({"enunciado": q.get("question") or q.get("enunciado") or "",
+                                "alts": [[(x.get("id") or x.get("letra") or "").upper(), x.get("text") or x.get("texto") or "", bool(x.get("correct") or x.get("correta")), x.get("explanation") or x.get("explicacao") or ""] for x in alts],
+                                "gab": next(((x.get("id") or x.get("letra") or "").upper() for x in alts if x.get("correct")), None),
+                                "explicacoes": {(x.get("id") or x.get("letra") or "").upper(): x.get("explanation") or x.get("explicacao") or "" for x in alts}})
+                hoje_aulas.append({"mat": a["mat"], "assunto": a["assunto"], "codigo": str(a["id"]), "aula_id": a["id"], "assunto_id": a["assunto_id"], "titulo": a["titulo"],
+                                   "url": a["url"], "dur": _dur_txt(a["duracao_s"]), "propria": a["tipo"] == "propria",
+                                   "pre": [_q_proto(q, a["mat"], a["assunto"]) for q in pre], "gate": [_q_proto(q, a["mat"], a["assunto"]) for q in gate], "fix": fix})
+        # ---- pool de questões (aba Questões e simulado): ME inéditas, uma por texto, dos assuntos estudados + amostra da prova
+        pool = _rs(await conn.fetch(f"""
+            SELECT DISTINCT ON (q.enunciado_hash) q.id, q.enunciado, q.alternativas, q.gabarito, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo, q.indice_acerto, q.comentario_professor, q.soldado_ba,
+                   qa.assunto_id, qa.aula_id, s.nome AS assunto, m.nome AS mat, random() AS rnd
+            FROM mentor.questao_aula qa JOIN mentor.questao q ON q.id=qa.questao_id JOIN mentor.assunto s ON s.id=qa.assunto_id JOIN mentor.materia m ON m.id=s.materia_id
+            WHERE q.tipo='ME' AND {SQL_BASE_Q} AND s.estado IN ('estudado','ressalva','dominado','em_andamento')
+              AND NOT EXISTS (SELECT 1 FROM mentor.resposta r JOIN mentor.questao q2 ON q2.id=r.questao_id WHERE q2.enunciado_hash=q.enunciado_hash)
+            ORDER BY q.enunciado_hash, (q.banca_sigla = ANY($1::text[])) DESC, q.ano DESC NULLS LAST LIMIT 600""", list(BANCAS_PREF)))
+        random.shuffle(pool)
+        D_q = [_q_proto(q, q["mat"], q["assunto"]) for q in pool[:400]]
+        # ---- estado persistido do protótipo
+        est = {r["chave"][6:]: (json.loads(r["valor"]) if isinstance(r["valor"], str) else r["valor"]) for r in await conn.fetch("SELECT chave, valor FROM mentor.config WHERE chave LIKE 'proto:%'")}
+        prog = _r(await conn.fetchrow("SELECT * FROM mentor.progresso WHERE id=1"))
+        horas = {str(r["dia"]): int(r["m"]) for r in await conn.fetch("SELECT (inicio - interval '4 hours')::date AS dia, sum(minutos) AS m FROM mentor.sessao WHERE fim IS NOT NULL GROUP BY 1")}
+        est["mm3_horas"] = horas
+        # projeção (meses) a partir da previsão
+        meses = ["out", "nov", "dez", "jan", "fev"]
+        proj = {"meses": meses, "revisao": [], "conteudo": [], "acumulado": []}
+        acum = 0
+        for i, mes in enumerate([10, 11, 12, 1, 2]):
+            sems = [s for s in semanas if dt_mes(s["ini"]) == mes]
+            cont = sum(len(a) for s in sems for _, a in s["materias"])
+            acum += cont
+            proj["conteudo"].append(cont)
+            proj["revisao"].append(int(sum(s["meta"] for s in sems) * 0.35))
+            proj["acumulado"].append(acum)
+    return {"D": {"materias": D_mat, "orcamento": orc, "calendario": {"fechado": "2027-01-31", "em_dia": [], "atrasado": []}, "questoes": D_q, "projecao": proj, "outras": [], "agenda_sim": AGENDA_SIM},
+            "SEMANAS": semanas, "HOJE_AULAS": hoje_aulas, "HOJE": hoje.isoformat(), "ESTADO": est, "progresso": prog}
+
+
+def dt_mes(iso):
+    return int(str(iso)[5:7])
+
+
+@router.post("/proto/estado")
+async def proto_estado(chave: str = Body(...), valor: object = Body(None)):
+    if not chave.startswith("mm3_") or len(chave) > 40:
+        raise HTTPException(400, "chave inválida")
+    async with db() as conn:
+        await conn.execute("INSERT INTO mentor.config (chave, valor) VALUES ($1,$2) ON CONFLICT (chave) DO UPDATE SET valor=EXCLUDED.valor, alterado_em=now()", "proto:" + chave, json.dumps(valor))
+    return {"ok": True}
+
+
+@router.post("/proto/evento")
+async def proto_evento(tipo: str = Body(...), dados: dict = Body(default_factory=dict)):
+    """Ganchos do protótipo → motor real."""
+    hoje = _hoje()
+    async with db() as conn:
+        if tipo == "resposta":
+            r = await responder(questao_id=int(dados["questao_id"]), contexto=dados.get("contexto") or "questoes", marcada=dados.get("marcada"), aula_id=dados.get("aula_id"),
+                                assunto_id=dados.get("assunto_id"), sessao_id=dados.get("sessao_id"), confianca=dados.get("confianca"), tipo_erro=None, tempo_s=dados.get("tempo_s"), revisao_id=None)
+            return r
+        if tipo == "gate":
+            return await fechar_gate(int(dados["aula_id"]), sessao_id=dados.get("sessao_id"))
+        if tipo == "horas":
+            dia = date.fromisoformat(dados["dia"])
+            minutos = int(dados["minutos"])
+            sid = await conn.fetchval("SELECT id FROM mentor.sessao WHERE tipo='estudo' AND resumo->>'origem'='crono' AND (inicio - interval '4 hours')::date=$1", dia)
+            if sid:
+                await conn.execute("UPDATE mentor.sessao SET minutos=$2, fim=now() WHERE id=$1", sid, minutos)
+            else:
+                await conn.execute("INSERT INTO mentor.sessao (tipo, inicio, fim, minutos, resumo) VALUES ('estudo', $1::date + interval '8 hours', now(), $2, '{\"origem\":\"crono\"}')", dia, minutos)
+            return {"ok": True}
+        if tipo == "estudei":
+            aid = int(dados["assunto_id"])
+            if dados.get("estudado", True):
+                await conn.execute("UPDATE mentor.assunto SET estado='estudado', estudado_em=now() WHERE id=$1 AND estado <> 'estudado'", aid)
+                await conn.execute("UPDATE mentor.aula SET estado='concluida', concluida_em=now() WHERE assunto_id=$1 AND estado <> 'concluida' AND tipo IN ('conteudo','exercicios','propria')", aid)
+                if not await conn.fetchval("SELECT 1 FROM mentor.revisao WHERE assunto_id=$1 AND feita IS NULL", aid):
+                    await _agendar_revisao(conn, aid, "R1", INTERVALO["R1"], hoje)
+                await conn.execute("UPDATE mentor.plano_item pi SET feito=TRUE FROM mentor.semana s WHERE pi.semana_id=s.id AND s.status='aberta' AND pi.assunto_id=$1", aid)
+            else:
+                await conn.execute("UPDATE mentor.assunto SET estado='nao_estudado', estudado_em=NULL WHERE id=$1", aid)
+                await conn.execute("UPDATE mentor.aula SET estado='pendente' WHERE assunto_id=$1", aid)
+                await conn.execute("DELETE FROM mentor.revisao WHERE assunto_id=$1 AND feita IS NULL", aid)
+            return {"ok": True}
+        if tipo == "aula_concluida":
+            aid = int(dados["aula_id"])
+            await conn.execute("UPDATE mentor.aula SET estado='concluida', concluida_em=now() WHERE id=$1 AND estado <> 'concluida'", aid)
+            sid = await conn.fetchval("SELECT assunto_id FROM mentor.aula WHERE id=$1", aid)
+            faltam = await conn.fetchval("SELECT count(*) FROM mentor.aula WHERE assunto_id=$1 AND tipo IN ('conteudo','exercicios','propria') AND estado <> 'concluida'", sid)
+            if faltam == 0:
+                await conn.execute("UPDATE mentor.assunto SET estado='estudado', estudado_em=now() WHERE id=$1 AND estado NOT IN ('estudado','dominado')", sid)
+                await conn.execute("UPDATE mentor.plano_item pi SET feito=TRUE FROM mentor.semana s WHERE pi.semana_id=s.id AND s.status='aberta' AND pi.assunto_id=$1", sid)
+                if not await conn.fetchval("SELECT 1 FROM mentor.revisao WHERE assunto_id=$1 AND feita IS NULL", sid):
+                    await _agendar_revisao(conn, sid, "R1", INTERVALO["R1"], hoje)
+            return {"ok": True, "assunto_fechou": faltam == 0}
+        if tipo == "revisao_feita":
+            rid = int(dados["revisao_id"])
+            r = _r(await conn.fetchrow("SELECT * FROM mentor.revisao WHERE id=$1", rid))
+            if not r or r["feita"]:
+                return {"ok": False}
+            acerto = float(dados.get("acerto") if dados.get("acerto") is not None else 100)
+            await conn.execute("UPDATE mentor.revisao SET feita=now(), acerto=$2 WHERE id=$1", rid, acerto)
+            prox, dias = _proxima_revisao(r["tipo"], acerto)
+            await _agendar_revisao(conn, r["assunto_id"], prox, dias, hoje)
+            await _add_xp(conn, "revisao", XP["revisao"], {"revisao_id": rid})
+            return {"ok": True, "proxima": prox}
+        if tipo == "simulado":
+            ids = [int(x) for x in dados.get("questoes") or []]
+            certas = int(dados.get("certas") or 0)
+            n = len(ids) or int(dados.get("n") or 0) or 1
+            nota = float(dados.get("pontos") or 0)
+            sid = await conn.fetchval("INSERT INTO mentor.simulado (numero, data, tipo, questoes, respostas, inicio, fim, certas, nota, por_materia, status) VALUES ((SELECT COALESCE(max(numero),0)+1 FROM mentor.simulado), $1, 'montado', $2, $3, now(), now(), $4, $5, $6, 'entregue') RETURNING id",
+                                      hoje, ids, json.dumps(dados.get("respostas") or {}), certas, nota, json.dumps(dados.get("por_materia") or {}))
+            for qid, marc in (dados.get("respostas") or {}).items():
+                try:
+                    g = await conn.fetchval("SELECT gabarito FROM mentor.questao WHERE id=$1", int(qid))
+                    await conn.execute("INSERT INTO mentor.resposta (questao_id, contexto, marcada, correta) VALUES ($1,'simulado',$2,$3)", int(qid), marc, (marc or "").upper() == (g or "").upper())
+                except Exception:
+                    pass
+            await _add_xp(conn, "simulado", XP["simulado"] + (XP["simulado_acima_60"] if nota >= 60 else 0), {"simulado_id": sid, "nota": nota})
+            return {"ok": True, "simulado_id": sid}
+    raise HTTPException(400, "evento desconhecido")
+
+
+# =====================================================================
+# "Não é desta aula" — o aluno corrige o vínculo; vale na hora e no afinador
+# =====================================================================
+@router.post("/vinculo/feedback")
+async def vinculo_feedback(questao_id: int = Body(...), aula_id: int = Body(...), ok: bool = Body(False), contexto: str = Body("gate"),
+                           excluir: list = Body(default_factory=list)):
+    async with db() as conn:
+        async with conn.transaction():
+            await conn.execute("""CREATE TABLE IF NOT EXISTS mentor.vinculo_feedback (questao_id BIGINT NOT NULL, aula_id BIGINT NOT NULL, ok BOOLEAN NOT NULL,
+                                  criado_em TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY (questao_id, aula_id))""")
+            await conn.execute("""INSERT INTO mentor.vinculo_feedback (questao_id, aula_id, ok) VALUES ($1,$2,$3)
+                                  ON CONFLICT (questao_id, aula_id) DO UPDATE SET ok=EXCLUDED.ok, criado_em=now()""", questao_id, aula_id, ok)
+            # efeito imediato: a questão deixa de ser "desta aula" (ou volta a ser)
+            tem_col = await conn.fetchval("SELECT 1 FROM information_schema.columns WHERE table_schema='mentor' AND table_name='questao_aula' AND column_name='melhor_mat'")
+            if tem_col:
+                await conn.execute("UPDATE mentor.questao_aula SET melhor=$3, melhor_mat=$3 WHERE questao_id=$1 AND aula_id=$2", questao_id, aula_id, ok)
+            if not ok:
+                await conn.execute("UPDATE mentor.questao_aula SET forca = LEAST(forca, 0.1) WHERE questao_id=$1 AND aula_id=$2", questao_id, aula_id)
+        reposicao = None
+        if not ok:
+            novas = await _questoes_da_aula(conn, aula_id, 1, contexto, excluir=[int(x) for x in (excluir or []) if str(x).lstrip('-').isdigit()] + [questao_id])
+            reposicao = novas[0] if novas else None
+    return {"ok": True, "reposicao": reposicao}
