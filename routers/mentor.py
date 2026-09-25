@@ -198,7 +198,7 @@ async def topico(topico_id: int,
         "topico": dict(t),
         "aula": dict(aula) if aula else None,
         # quem divide o caderno divide as questoes: dizer isso evita a leitura
-        # de que sao materias diferentes com numeros iguais por coincidencia
+        # de que sao assuntos diferentes com numeros iguais por coincidencia
         "aulas_irmas": [dict(r) for r in irmas],
         "cards": [dict(r) for r in lista_cards],
         "questoes_fixacao": [dict(r) for r in fixacao],
@@ -213,7 +213,7 @@ async def diagnostico(disciplina: Optional[int] = None, limite: int = 30):
     O que estudar primeiro: cai na PMBA e nao tem questao que baste.
 
     Agrupa as aulas irmas - 9 das 14 linhas de alerta de hoje sao a MESMA
-    materia (Contravencoes Penais) repetida em 7 aulas. Listar cru faz parecer
+    ASSUNTO (Contravencoes Penais) repetido em 7 aulas. Listar cru faz parecer
     que ha 9 problemas onde ha 1.
     """
     args = []
