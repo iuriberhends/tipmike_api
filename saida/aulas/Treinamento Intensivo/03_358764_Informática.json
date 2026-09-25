@@ -1,0 +1,690 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 6,
+    "titulo": "Informática"
+  },
+  "ordem": 3,
+  "ordem_no_curso": "3.00",
+  "titulo": "Informática",
+  "codigo_aula": "358764",
+  "video_id": "kvaylTKwnKI=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:29:39",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/kvaylTKwnKI%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=420621%2C420622%2C420227%2C420228%2C420229%2C405030&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Informática\n\n## Códigos Maliciosos: Backdoor e Rootkit\nVamos lá, de volta com o nosso treinamento intensivo. Então, cada tipo de código malicioso — entenda-se por malware — possui suas características próprias, que o diferenciam dos demais. Vale lembrar: “malware” é a junção das palavras “malicious” e “software”.\n\nCom relação às ações mais comuns do backdoor e do rootkit, vamos falar um pouquinho previamente. Backdoor é um programa que permite o retorno de um invasor a uma máquina previamente invadida. O invasor cria ou modifica programas para deixar uma porta de comunicação, um meio de comunicação com aquela máquina, e voltar a ela. É algo que fica escondido; o usuário não sabe que sua máquina está sob domínio de alguém.\n\nJá o rootkit é um conjunto de técnicas e programas para invadir a máquina, se esconder na máquina e mantê-la sob invasão. Eles são muito similares. A palavra “root” vem do Linux; “root” é o usuário master — o usuário que tem todos os poderes no Linux. O rootkit, antes de poder traduzir literalmente, são programas que vão se esconder e manter a máquina sob domínio, com características similares às do backdoor, além de outras.\n\nVamos trabalhar aqui na questão. “Phishing” não tem nada a ver com essas características. Phishing não vem em mídias removíveis infectadas como característica; pode até vir, mas não é típico. “Consome grandes quantidades de recursos” e “ficam bem escondidos” — quem costuma se disfarçar assim são, em geral, vírus e worms. “Consomem muitos recursos, roubam informações sensíveis, enviam cópias de si próprio automaticamente por e-mail” — isso mistura comportamentos de worms e vírus. “São baixados de sites da internet e desferem ataques na internet” — não é característica de backdoor/rootkit. “Possibilitam o retorno dos invasores, não se propagam e ficam escondidos” — agora sim, dentro daquilo que a gente trabalhou, características similares deles. Gabarito: letra D.\n\nLembrando: onde aprimorar essas informações? No site do CERT.br — Centro de Estudos, Resposta e Tratamento de Incidentes de Segurança no Brasil.\n\n## Protocolos de E-mail: POP, IMAP e SMTP\nO servidor de e-mail do destinatário, ao receber uma mensagem para um dos seus usuários, coloca-a na caixa postal desses usuários. A transferência das mensagens entre servidor e cliente de e-mail requer a utilização de outros programas e protocolos. Usualmente, para este fim, é utilizado o protocolo que guarda mensagens em caixas postais e aguarda que os usuários venham buscá-las: POP. Outro protocolo que pode ser utilizado para o mesmo fim, implementando vários outros recursos além do anterior, é o IMAP. Portanto, está falando de protocolos para recebimento de mensagens: primeiro POP, depois IMAP. Ao contrário do protocolo que serve para enviar mensagens, que é o SMTP — Simple Mail Transfer Protocol. Logo, os protocolos referenciados são, respectivamente, POP e IMAP.\n\nComo isso trabalha? Tenho minha máquina (remetente), o servidor 1, o servidor 2 e o destinatário. O remetente envia com SMTP. O servidor do remetente envia para o servidor do destinatário, também via SMTP. Para o usuário receber na sua máquina, usa-se POP (ou IMAP). Lembrando: se usar POP, baixa literalmente a mensagem e deixa na máquina do usuário.\n\n💬 História: Antigamente, quando a internet era discada, lá por 1999, onde eu trabalhava, acessavam o e-mail duas ou três vezes por dia, no máximo, para ver se tinha chegado alguma coisa. Era caro, tudo era lento, telefone fixo... Saudosismo à parte, a dinâmica era: SMTP para envio entre servidores, POP para baixar e ler offline. O IMAP, por padrão, não permitia isso, mas hoje a maioria dos servidores permite acesso às mensagens mesmo offline. Claro, hoje ninguém mais “se desconecta”. Casas e dispositivos inteligentes — internet das coisas — ficam conectados o tempo todo. Minha assistente no quarto acende a luz, desliga a luz, liga meu computador, tudo por voz, conectado à internet o tempo todo.\n\n## Windows: Gerenciador de Tarefas e Finalizar Tarefa\nEm condições normais de operação, a finalização de um aplicativo que está demorando a responder pode ser feita pelo botão “Finalizar tarefa” após selecionar o aplicativo na lista disponível na aba correta. Esse tipo de questão é “chapa”, mas cai. Mesmo que você quase não use, precisa saber a ferramenta para a prova.\n\nDá para acionar o Gerenciador de Tarefas com Ctrl+Shift+Esc (abre direto). Outra opção é Ctrl+Alt+Del e escolher Gerenciador de Tarefas.\n\nNa guia Processos, você consegue finalizar uma tarefa em execução. Ela mostra uso de processador, memória, disco e rede daquela tarefa. Antigamente, travava muito, e finalizar nem sempre adiantava. Multitarefa preemptiva separa tarefas por prioridade. O sistema operacional classifica as tarefas; as do próprio sistema têm prioridade mais alta. Se um app “parar de funcionar”, você consegue finalizá-lo sem afetar o todo, ao contrário do que acontecia no Windows 95/98.\n\nNa guia Desempenho, você vê o uso geral do computador: CPU, núcleos, memória, rede. Na guia Inicializar, você gerencia os programas que serão carregados no boot. Dá para habilitar e desabilitar por ali (antes era feito no msconfig). Ele mostra impacto de inicialização (alto, médio, baixo). Hoje as máquinas são tão velozes que a diferença tende a ser mínima, mas saiba que existe.\n\n## Armazenamento: Exclusão em Pen Drive e Lixeira\nO pen drive é um dos dispositivos de armazenamento mais utilizados. Hoje as bancas têm cobrado mais nuvem (Google Drive, Dropbox), mas aqui a questão é pen drive.\n\nConsidere um arquivo “edital.pdf” armazenado no pen drive. Se ele for arrastado para a Lixeira do Windows, o que acontece? Pen drive não tem lixeira. Ao excluir a partir de um dispositivo removível (pen drive, cartão), a exclusão é permanente.\n\n> 🎯 Dicas de prova: Em dispositivos removíveis, a exclusão é permanente, mesmo usando apenas Del. Aparecerá uma janela de alerta avisando exclusão permanente.\n\nNão vai criar atalho na lixeira, nem vai para uma “pasta oculta Lixeira do pen drive”. Se aparecer “Deseja excluir permanentemente?”, confirmou, já era. No contexto de prova: não há recuperação nativa no Windows. Programas de terceiros podem tentar recuperar, mas para a prova, considere que não tem volta.\n\n> 🎯 Dicas de prova: Toda exclusão com Shift+Del é permanente. Não vai para a lixeira.\n\nSe você estiver acessando uma pasta de rede e mandar excluir com Del, também é exclusão permanente (para a prova).\n\nE não caia na pegadinha: arrastar do pen drive para a Lixeira ou pressionar Del no arquivo do pen drive resulta em exclusão permanente.\n\n## Internet x Web e FTP\nO protocolo de transmissão que permite troca de arquivos grandes e também acessar remotamente sistemas entre computadores, sem passar pela web, é o FTP.\n\nAqui é importante diferenciar web de internet. A web é o conglomerado de páginas (World Wide Web). A internet é a rede de redes. A web é um serviço que roda na internet.\n\nHistoricamente, a internet começou a operar na década de 70; a web, como conhecemos, surgiu nos anos 90, 20 anos depois. Antes da web, já existiam serviços como correio eletrônico e acesso remoto a arquivos.\n\nQuando falamos de HTTP/HTTPS, eles estão totalmente vinculados à web (requisição de páginas). Já FTP é para transferência de arquivos (upload e download).\n\n> 🎯 Dicas de prova: FTP usa portas 20 (dados) e 21 (controle) e, na camada de transporte, utiliza TCP.\n\nSMTP é para envio de e-mails. Na camada de transporte, pense no TCP e no UDP. TCP é orientado à conexão, confiável: acompanha pacotes, pede confirmação, reenvia se necessário, garante entrega e reordenação no destino. UDP não se preocupa com isso; prioriza velocidade.\n\nQuando você fala por voz na internet, usa-se UDP; quando assiste transmissões ao vivo, também. Se fosse TCP, cada perda de pacote congelaria a imagem/áudio aguardando retransmissão, inviabilizando a experiência.\n\nGravou? Então: TCP (confiável, ordenado), UDP (rápido, sem garantia). HTTP/HTTPS sobre TCP; streaming/voz sobre UDP; FTP sobre TCP.\n\n## Excel: Referência entre Planilhas\nUm técnico abriu um arquivo do Microsoft Excel e notou três planilhas nomeadas, respectivamente: Planilha1, Planilha2 e Planilha3 (vou apelidar de Plano1, Plano2 e Plano3 só para ilustração). No Excel, o arquivo é a pasta de trabalho; dentro dele, temos as planilhas.\n\nNa célula A1 da Planilha3, deseja-se colocar uma fórmula para somar corretamente o conteúdo da célula A1 da Planilha1 com o conteúdo da A1 da Planilha2.\n\nQuando faço cálculo dentro da mesma planilha (estou em Planilha3 e somo A1 + A2), não preciso indicar o nome da planilha atual. Agora, para referenciar outras planilhas, preciso colocar: NomeDaPlanilha!EndereçoDaCélula.\n\nLogo, em Planilha3!A1, para somar A1 de Planilha1 com A1 de Planilha2, a fórmula correta é:\n=Planilha1!A1+Planilha2!A1\n\nNão precisa de colchetes, não é outro arquivo, então não coloque caminho completo. É apenas nome da planilha, exclamação, célula.\n\nEncerramos mais um bloco do nosso treinamento intensivo. De volta em seguida para o último bloco — mais questões, mais dicas e mais desabafos. Até daqui a pouco.",
+  "transcricao_meta": {
+    "title": "Informática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36257,
+    "createdAt": "2026-02-07T01:30:53.267Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: segurança (malware backdoor e rootkit), correio eletrônico (SMTP, POP, IMAP), Gerenciador de Tarefas (Windows 7/8/8.1/10/11), exclusão de arquivos e Lixeira (incluindo pendrive e Shift+Del), Internet vs Web, protocolos de transporte (TCP vs UDP), portas do FTP, e referências de células no Microsoft Excel (mesma planilha, entre planilhas e entre arquivos).\nPrincipais pontos: \n- Diferenciar backdoor e rootkit; POP vs IMAP vs SMTP; TCP vs UDP.\n- Usar corretamente o Gerenciador de Tarefas e a guia certa para cada ação.\n- Regras de exclusão: quando vai para a Lixeira e quando é exclusão permanente.\n- Sintaxe de referência no Excel: NomeDaPlanilha!Célula e quando usar caminho completo.\n\n## 1. Base / Conceitos Fundamentais\n- Segurança:\n  - Backdoor: programa que mantém acesso/retorno do invasor a máquina previamente invadida, operando oculto.\n  - Rootkit: conjunto de técnicas/programas para invadir, ocultar presença e manter domínio; esconde processos/arquivos.\n  - Termos: root (Linux) = usuário master com privilégios totais.\n- Correio eletrônico:\n  - SMTP: protocolo de envio (cliente→servidor e servidor→servidor).\n  - POP (POP3): protocolo de recebimento que baixa mensagens para a máquina do usuário (por padrão remove do servidor).\n  - IMAP: protocolo de recebimento com mensagens mantidas no servidor; sincroniza e organiza pastas.\n- Windows – Gerenciador de Tarefas:\n  - Acesso: Ctrl+Shift+Esc (direto); Ctrl+Alt+Del (tela de opções).\n  - Guias: Processos (encerrar apps), Desempenho (monitorar recursos), Inicializar (programas de boot e impacto).\n- Exclusão e Lixeira:\n  - Del/arrastar para Lixeira (disco local): move para a pasta oculta Lixeira (permite restauração).\n  - Shift+Del: exclusão permanente.\n  - Em pendrive/rede: exclusão permanente (alerta “excluir permanentemente”).\n- Internet vs Web:\n  - Internet: infraestrutura de redes (desde a década de 1970).\n  - Web (World Wide Web): serviço sobre a Internet, baseada em páginas (década de 1990).\n- Transporte: \n  - TCP: orientado a conexão, confiável, garante entrega/ordem, retransmite.\n  - UDP: sem conexão, foco em velocidade, não garante entrega/ordem.\n- Portas e serviços:\n  - FTP: portas 20 (dados) e 21 (controle).\n- Microsoft Excel:\n  - Pasta de trabalho: arquivo com múltiplas planilhas.\n  - Referência entre planilhas: NomeDaPlanilha!A1.\n  - Entre arquivos diferentes: caminho + [Arquivo.xlsx]Planilha!Célula.\n\n## 2. Como Funciona / Distinções\n- Backdoor vs Rootkit:\n  - Semelhanças: ocultação e manutenção de controle.\n  - Diferenças: backdoor foca em acesso persistente/retorno; rootkit é um kit completo para invadir+ocultar+persistir.\n- POP vs IMAP vs SMTP:\n  - SMTP: envio (nunca recebimento pelo usuário).\n  - POP: baixa e armazena localmente (simples).\n  - IMAP: mantém no servidor e sincroniza (recursos adicionais).\n- TCP vs UDP:\n  - TCP garante entrega e ordem (mais latência); UDP prioriza velocidade (aceita perdas).\n- Gerenciador de Tarefas – guias:\n  - Processos: encerrar apps que “não respondem”.\n  - Desempenho: somente monitoramento de CPU, memória, disco, rede.\n  - Inicializar: habilitar/desabilitar programas de boot, com impacto (alto/médio/baixo).\n- Exclusão:\n  - Disco local: Del/arrastar → Lixeira (reversível).\n  - Pendrive/rede/Shift+Del: permanente (irreversível via Lixeira).\n- Excel – escopos de referência:\n  - Mesma planilha: A1, A2 (sem prefixo).\n  - Outra planilha (mesmo arquivo): Planilha!Célula.\n  - Outro arquivo: caminho + [Arquivo]Planilha!Célula.\n\n## 3. Aplicação Prática / Técnicas\n- Encerrar app travado (Windows 7/8/8.1/10/11):\n  1) Pressione Ctrl+Shift+Esc para abrir o Gerenciador de Tarefas.\n  2) Guia Processos > selecione o app “Não respondendo”.\n  3) Clique em Finalizar tarefa.\n- Gerenciar inicialização:\n  1) Guia Inicializar.\n  2) Avalie o impacto (alto/médio/baixo).\n  3) Desabilite o que não é crítico para acelerar o boot.\n- Decidir protocolo de e-mail:\n  - Conexão instável/um dispositivo: POP (baixa local).\n  - Vários dispositivos/sincronização: IMAP (servidor).\n  - Envio: SMTP.\n- Escolher transporte:\n  - Transferência confiável (arquivo): TCP.\n  - Tempo real (voz/vídeo ao vivo): UDP.\n- Regras rápidas de exclusão:\n  - Disco local + Del/arrastar: vai para Lixeira, dá para restaurar.\n  - Pendrive/rede ou Shift+Del: exclusão permanente (aparece ou não confirmação).\n- Excel – fórmulas de referência:\n  - Somar duas células na mesma planilha: =A1+A2.\n  - Somar A1 da “Um” com A1 da “Dois”: =Um!A1 + Dois!A1.\n  - Referenciar outra planilha de outro arquivo:\n    - Ex.: ='C:\\Pasta\\Subpasta\\[Vendas.xlsx]Jan'!A1\n\n> Dica de prova: Caminho e colchetes [Arquivo] só quando a referência é para OUTRO arquivo. No mesmo arquivo, nunca use caminho.\n\n## 4. Exemplos e Casos Resolvidos\n- Malware:\n  - “Permite retorno a máquina invadida, operando oculto” → backdoor.\n  - “Conjunto para invadir, ocultar e manter domínio” → rootkit.\n- Correio eletrônico:\n  - “Guarda mensagens em caixas postais até o usuário buscar” → POP.\n  - “Implementa funcionalidades adicionais em relação ao anterior” → IMAP.\n  - “Protocolo para envio” → SMTP.\n- Gerenciador de Tarefas:\n  - “Encerrar app que demora a responder” → Guia Processos > Finalizar tarefa.\n  - “Monitorar uso de CPU/memória” → Guia Desempenho (não encerra).\n  - “Acelerar boot” → Guia Inicializar (desabilitar itens de alto impacto).\n- Exclusão:\n  - “Arquivo arrastado para a Lixeira no disco C:” → vai para Lixeira (reversível).\n  - “Del em arquivo de pendrive” → exclusão permanente (não vai para a Lixeira local).\n  - “Shift+Del em qualquer unidade” → exclusão permanente (confirmação pode aparecer).\n  - “Exclusão em pasta compartilhada de rede com Del” → permanente.\n- Transporte:\n  - “Garante entrega e reenviar se sem confirmação” → TCP.\n  - “Foco em velocidade, pode perder pacotes” → UDP.\n- Portas:\n  - “FTP usa portas vinte e vinte e um, respectivamente, dados e controle” → 20 (dados) e 21 (controle).\n- Excel:\n  - “Na célula A1 da planilha Três, somar A1 da planilha Um com A1 da planilha Dois” → =Um!A1 + Dois!A1.\n  - “Somar A1 e A2 na mesma planilha” → =A1+A2.\n  - “Referenciar célula de outro arquivo” → caminho + [Arquivo]Planilha!Célula.\n- Telefonia (contexto complementar):\n  - “Interurbano: 021 + 62 + telefone” → código da operadora + DDD + número.\n\n## 5. Pegadinhas e Erros Comuns\n- Segurança:\n  - Confundir backdoor/rootkit com vírus/worm (propagação e consumo de recursos não são características definidoras de backdoor/rootkit).\n- E-mail:\n  - Afirmar que SMTP é de recebimento pelo usuário (errado: é de envio).\n  - Dizer que POP mantém mensagens no servidor por padrão (clássico: por padrão baixa/localiza).\n- Gerenciador de Tarefas:\n  - Tentar encerrar app pela guia Desempenho (errado; use Processos).\n  - Esquecer atalhos: Ctrl+Shift+Esc abre direto; Ctrl+Alt+Del abre tela de opções.\n- Exclusão/Lixeira:\n  - Considerar que arquivo de pendrive vai para a Lixeira do Windows (nas provas, não vai: é exclusão permanente).\n  - Achar que Shift+Del pode ser restaurado pela Lixeira (não pode).\n  - Ignorar que exclusão via rede com Del é permanente.\n- Redes:\n  - Confundir Internet com Web (Web é um serviço da Internet, não sinônimo).\n  - Dizer que HTTP/SMTP são transporte (são aplicação; transporte é TCP/UDP).\n- FTP:\n  - Inverter portas: lembrar 20 (dados) e 21 (controle).\n- Excel:\n  - Esquecer a exclamação em referências cruzadas (NomeDaPlanilha!Célula).\n  - Usar caminho completo quando as planilhas estão no mesmo arquivo (errado).\n  - Trocar nomes das planilhas ou escrever “Plano” em vez de “planilha”.\n\n> Dica de prova: Em mídias removíveis e rede, “exclusão permanente” é a resposta padrão. Em e-mail, POP baixa/local, IMAP sincroniza/servidor, SMTP envia. Em Excel, “nome!célula” indica outra planilha do mesmo arquivo; se aparecer caminho e [Arquivo], é outro arquivo.",
+  "resumo_bolso": "# Informática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Backdoor**: programa que **mantém acesso/retorno** do invasor a máquina previamente invadida, operando **oculto**.\n* **Rootkit**: **conjunto de técnicas/programas** para **invadir, ocultar presença e manter domínio**, escondendo processos/arquivos.\n* **SMTP**: protocolo de **envio** de e-mails (cliente→servidor e servidor→servidor); **não é de recebimento** pelo usuário.\n* **POP3**: protocolo de **recebimento** que **baixa** mensagens para o computador do usuário e, por padrão, **remove do servidor**.\n* **IMAP**: protocolo de **recebimento** que **mantém mensagens no servidor**, sincroniza e organiza pastas.\n* **TCP**: protocolo de transporte **orientado à conexão**, **confiável**, garante **entrega e ordem**, retransmite se necessário.\n* **UDP**: transporte **sem conexão**, foco em **velocidade**, **não garante entrega/ordem**.\n* **FTP**: serviço de transferência de arquivos; usa portas **20 (dados)** e **21 (controle)**.\n* **Internet**: **infraestrutura de redes** (desde a década de 1970); **Web** é apenas um **serviço** dentro dela.\n* **Web (WWW)**: serviço baseado em **páginas** sobre a Internet (década de 1990), **não é sinônimo** de Internet.\n* **Gerenciador de Tarefas (Windows 7/8/8.1/10/11)**:  \n  * Acesso: **Ctrl+Shift+Esc** (abre direto) e **Ctrl+Alt+Del** (tela de opções).  \n  * Guias principais: **Processos** (encerrar apps), **Desempenho** (monitorar recursos), **Inicializar** (programas de boot e impacto).\n* **Exclusão e Lixeira**:  \n  * **Disco local**: Del/arrastar → **Lixeira** (reversível).  \n  * **Shift+Del**: **exclusão permanente**.  \n  * **Pendrive/rede**: Del → **exclusão permanente** (alerta “excluir permanentemente”).\n* **Excel – referências**:  \n  * Mesma planilha: `A1`, `A2`.  \n  * Outra planilha (mesmo arquivo): `NomeDaPlanilha!Célula`.  \n  * Outro arquivo: `'Caminho\\[Arquivo.xlsx]Planilha'!Célula`.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Backdoor vs Rootkit\n\n| Aspecto | Backdoor | Rootkit |\n| --- | --- | --- |\n| **Função principal** | Manter **acesso/retorno** a máquina invadida | **Invadir + ocultar + manter domínio** |\n| **Escopo** | Programa específico | **Conjunto** de técnicas/programas |\n| **Ocultação** | Opera oculto | Forte foco em **ocultar presença** (processos/arquivos) |\n\n---\n\n### POP3 vs IMAP vs SMTP\n\n| Aspecto | POP3 | IMAP | SMTP |\n| --- | --- | --- | --- |\n| **Função** | **Receber** (baixa/local) | **Receber** (sincroniza/servidor) | **Enviar** |\n| **Local das msgs** | Baixa p/ **máquina**; por padrão **remove do servidor** | Mantém no **servidor** | Não armazena msgs do usuário |\n| **Uso típico** | Conexão instável/1 dispositivo | Vários dispositivos/sincronização | Envio de e-mails |\n\n---\n\n### TCP vs UDP\n\n| Aspecto | TCP | UDP |\n| --- | --- | --- |\n| **Conexão** | **Orientado à conexão** | **Sem conexão** |\n| **Confiabilidade** | Garante **entrega e ordem**, retransmite | **Não garante** entrega/ordem |\n| **Uso típico** | Transferência confiável (arquivos) | Tempo real (voz/vídeo ao vivo) |\n\n---\n\n### Internet vs Web\n\n| Aspecto | Internet | Web |\n| --- | --- | --- |\n| **Natureza** | **Infraestrutura** de redes | **Serviço** sobre a Internet |\n| **Origem** | Década de 1970 | Década de 1990 |\n| **Escopo** | Suporta vários serviços (Web, e-mail, FTP etc.) | Páginas/hipertexto |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Acesso ao Gerenciador de Tarefas (Windows 7/8/8.1/10/11)**  \n* **Ctrl+Shift+Esc** → abre **direto** o Gerenciador de Tarefas.  \n* **Ctrl+Alt+Del** → abre **tela de opções** (entre elas, Gerenciador de Tarefas).\n\n---\n\n**2. Guias do Gerenciador de Tarefas**\n\n* **Processos**: **encerrar** aplicativos (ex.: “Não respondendo”) → **Finalizar tarefa**.  \n* **Desempenho**: **monitorar** CPU, memória, disco, rede (não encerra).  \n* **Inicializar**: **habilitar/desabilitar** programas de boot; mostra **impacto** (alto/médio/baixo).\n\n---\n\n**3. Regras de Exclusão e Lixeira**\n\n* **Disco local (C:, D: etc.)**  \n  * **Del / arrastar p/ Lixeira** → vai para **Lixeira** (pasta oculta), **reversível**.  \n  * **Shift+Del** → **exclusão permanente** (não vai para Lixeira).\n\n* **Pendrive / unidade de rede**  \n  * **Del** → **exclusão permanente** (mensagem “excluir permanentemente”).  \n  * **Shift+Del** → também **permanente**.\n\n---\n\n**4. Portas do FTP**\n\n* **Porta 20** → **dados**.  \n* **Porta 21** → **controle**.\n\n---\n\n**5. Referências no Excel**\n\n* **Mesma planilha**:  \n  * Ex.: `=A1+A2`\n\n* **Outra planilha, mesmo arquivo**:  \n  * **Sintaxe**: `NomeDaPlanilha!Célula`  \n  * Ex.: `=Um!A1 + Dois!A1`\n\n* **Outro arquivo**:  \n  * **Sintaxe**: `'Caminho\\[Arquivo.xlsx]Planilha'!Célula`  \n  * Ex.: `'C:\\Pasta\\Subpasta\\[Vendas.xlsx]Jan'!A1`  \n\n> Caminho + **[Arquivo]** só quando for **OUTRO arquivo**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir **backdoor/rootkit** com vírus/worm (propagação e consumo de recursos **não** são características definidoras de backdoor/rootkit).\n2. Afirmar que **SMTP** é de **recebimento** pelo usuário (é **apenas envio**).\n3. Dizer que **POP** mantém mensagens no servidor por padrão (por padrão, **baixa e armazena localmente**).\n4. Considerar que arquivo de **pendrive** vai para a **Lixeira** do Windows (nas provas, **não vai**: é exclusão permanente).\n5. Tentar encerrar app travado pela guia **Desempenho** do Gerenciador (encerramento é na guia **Processos**).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **backdoor** (acesso/retorno persistente) de **rootkit** (invadir + ocultar + manter domínio)?\n* Fixei: **SMTP = envio**, **POP = baixa/local**, **IMAP = servidor/sincroniza**?\n* Lembrei: **TCP = confiável/orientado à conexão**, **UDP = rápido/sem garantia**?\n* Sei que em **disco local** Del/arrastar → **Lixeira**, e em **pendrive/rede** ou com **Shift+Del** → **exclusão permanente**?\n* Gravei: **FTP 20 = dados**, **21 = controle**?\n* Sei usar o **Gerenciador de Tarefas**:  \n  * **Processos** para encerrar apps;  \n  * **Desempenho** para monitorar recursos;  \n  * **Inicializar** para gerenciar programas de boot e impacto?\n* Memorizei a sintaxe do Excel:  \n  * mesma planilha: `=A1+A2`;  \n  * outra planilha (mesmo arquivo): `Planilha!A1`;  \n  * outro arquivo: `'C:\\...\\[Arq.xlsx]Planilha'!A1`?\n* Evito confundir **Internet** (infraestrutura de redes) com **Web** (serviço de páginas sobre a Internet)?",
+  "mapa_mental": "# 💻 Informática para Concursos\n## 🛡️ Segurança em Informática\n### 💣 Malware Avançado\n- Backdoor conceito\n- Backdoor objetivo\n- Rootkit conceito\n- Rootkit objetivo\n- Ocultação presença\n### 👑 Usuário Root\n- Root privilégios\n- Root sistema Linux\n- Controle total\n- Administração avançada\n- Alvo invasores\n### ⚠️ Erros Comuns Segurança\n- Confundir com vírus\n- Confundir com worm\n- Focar só propagação\n- Ignorar ocultação\n- Ignorar persistência\n\n## 📧 Correio Eletrônico e Internet\n### ✉️ Protocolos de E-mail\n- SMTP envio\n- POP3 recebimento local\n- IMAP recebimento servidor\n- POP remove servidor\n- IMAP sincroniza pastas\n### 🌐 Internet x Web\n- Internet infraestrutura\n- Redes interligadas\n- Web serviço Internet\n- Páginas hipertexto\n- Não sinônimos\n### ⚠️ Erros Comuns E-mail/Web\n- SMTP recebimento usuário\n- POP manter servidor\n- Confundir Internet Web\n- HTTP camada aplicação\n- SMTP camada aplicação\n\n## 🪟 Windows e Arquivos\n### 🧰 Gerenciador de Tarefas\n- Atalho Ctrl+Shift+Esc\n- Atalho Ctrl+Alt+Del\n- Guia Processos encerrar\n- Guia Desempenho monitorar\n- Guia Inicializar boot\n### 🗑️ Exclusão e Lixeira\n- Del disco local\n- Arrastar Lixeira\n- Shift+Del permanente\n- Pendrive exclusão direta\n- Rede exclusão direta\n### ⚠️ Erros Comuns Windows\n- Encerrar via Desempenho\n- Esquecer atalhos teclado\n- Pendrive vai Lixeira\n- Shift+Del recuperável\n- Rede usa Lixeira\n\n## 🌐 Redes, FTP e Excel\n### 🔄 Transporte TCP x UDP\n- TCP orientado conexão\n- TCP entrega confiável\n- TCP ordem garantida\n- UDP sem conexão\n- UDP foco velocidade\n### 📡 FTP e Portas\n- FTP serviço arquivos\n- Porta 20 dados\n- Porta 21 controle\n- Camada aplicação\n- Lembrar 20/21\n### 📊 Excel Referências\n- Mesma planilha A1\n- Outra planilha nome!célula\n- Outro arquivo caminho completo\n- Colchetes [Arquivo.xlsx]\n- Exclamação obrigatória",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Código Malicioso",
+      "description": "Código Malicioso — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual termo designa um software criado para causar ações maliciosas em um sistema?",
+          "back": "Malware",
+          "hint": "Termo genérico para códigos maliciosos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca-da-informacao",
+            "malware"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a função de uma **backdoor** em um computador previamente invadido?",
+          "back": "Permitir o retorno de um invasor a uma máquina previamente invadida.",
+          "hint": "Relacionado a acesso remoto não autorizado",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "seguranca-da-informacao",
+            "backdoor"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "O que um **rootkit** busca fazer após invadir um computador?",
+          "back": "Invadir a máquina, se esconder nela e mantê-la sob sua invasão.",
+          "hint": "Foca em ocultação e persistência no sistema",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "seguranca-da-informacao",
+            "rootkit"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Protocolos de E-mail",
+      "description": "Protocolos de E-mail — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual protocolo mantém mensagens na caixa postal para o usuário baixá-las?",
+          "back": "POP",
+          "hint": "Protocolo de recebimento clássico",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual protocolo de e-mail permite acessar mensagens sem necessariamente baixá-las?",
+          "back": "IMAP",
+          "hint": "Protocolo de sincronização de mensagens",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual protocolo é usado para enviar mensagens de correio eletrônico?",
+          "back": "SMTP",
+          "hint": "Protocolo de envio de mensagens",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Gerenciamento do Windows",
+      "description": "Gerenciamento do Windows — 6 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual atalho abre diretamente o Gerenciador de Tarefas do Windows?",
+          "back": "Ctrl+Shift+Esc",
+          "hint": "Combinação de três teclas",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Em qual guia do Gerenciador de Tarefas uma aplicação em execução pode ser encerrada?",
+          "back": "Processos",
+          "hint": "Onde ficam listados os programas ativos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "gerenciador-tarefas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Que tipo de prioridade o sistema operacional atribui às tarefas durante a multitarefa preemptiva?",
+          "back": "Classificar as tarefas de acordo com a sua prioridade.",
+          "hint": "Mecanismo de escalonamento de CPU",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "processamento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "O que a guia Desempenho do Gerenciador de Tarefas permite acompanhar?",
+          "back": "O uso geral do computador, como processador, memória e rede.",
+          "hint": "Monitoramento de recursos de hardware",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "gerenciador-tarefas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é o efeito de usar Shift+Del para excluir um arquivo?",
+          "back": "Excluir o arquivo permanentemente sem enviá-lo para a lixeira.",
+          "hint": "Atalho para exclusão definitiva",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual destino recebe normalmente um arquivo excluído com Del em uma unidade interna?",
+          "back": "Lixeira",
+          "hint": "Local temporário de arquivos deletados",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "arquivos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Protocolos de Internet",
+      "description": "Protocolos de Internet — 4 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual protocolo permite transferir arquivos grandes e acessar sistemas remotamente sem usar a Web?",
+          "back": "FTP",
+          "hint": "Protocolo para transferência de arquivos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "protocolos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual é a diferença entre a Internet e a World Wide Web?",
+          "back": "A Internet é uma rede de computadores interligados, enquanto a Web é um serviço de páginas que roda sobre ela.",
+          "hint": "Infraestrutura física vs serviço",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "conceitos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-15",
+          "front": "Como o TCP reage quando não recebe a confirmação de entrega de um pacote?",
+          "back": "Reenviar o pacote automaticamente após o tempo de espera.",
+          "hint": "Protocolo orientado à conexão",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "tcp-ip"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual característica prioriza o UDP em detrimento da confirmação e da ordenação dos pacotes?",
+          "back": "Velocidade",
+          "hint": "Protocolo sem confirmação de entrega",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "tcp-ip"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Planilhas do Excel",
+      "description": "Planilhas do Excel — 2 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Como se denomina o arquivo do Excel que pode conter várias planilhas?",
+          "back": "Pasta de trabalho",
+          "hint": "Arquivo contêiner do Excel",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "excel"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Em uma fórmula do Excel, qual símbolo separa o nome da planilha da referência da célula?",
+          "back": "Exclamação (!)",
+          "hint": "Caractere separador de planilha",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "excel"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal característica que diferencia um backdoor de outros tipos de malware?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Consome grandes quantidades de recursos do sistema operacional durante sua execução",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns malwares possam consumir recursos, a principal característica do backdoor não é o consumo excessivo, mas sim a criação de um acesso secreto e persistente. O consumo de recursos é mais comum em vírus e worms que se replicam ou executam tarefas intensivas."
+        },
+        {
+          "id": "b",
+          "text": "Envia cópias de si próprio automaticamente por correio eletrônico para contatos da vítima",
+          "correct": false,
+          "explanation": "Incorreta. O envio automático de cópias por correio eletrônico é uma forma de propagação de worms de e-mail. Backdoors são projetados para acesso remoto e controle, não para replicação e envio por e-mail."
+        },
+        {
+          "id": "c",
+          "text": "Propaga-se automaticamente através de mídias removíveis infectadas",
+          "correct": false,
+          "explanation": "Incorreta. A propagação automática através de mídias removíveis é uma característica típica de vírus e worms, que buscam se espalhar ativamente. Um backdoor é instalado para manter acesso, não necessariamente para se propagar por conta própria dessa forma."
+        },
+        {
+          "id": "d",
+          "text": "Permite o retorno de um invasor a uma máquina previamente comprometida através de portas de comunicação ocultas",
+          "correct": true,
+          "explanation": "Correta. Um backdoor (porta dos fundos, em português) é um tipo de programa malicioso que permite o retorno de um invasor a um sistema previamente comprometido. Ele estabelece canais de comunicação ocultos ou ignora mecanismos de segurança para garantir acesso futuro sem detecção, sendo sua principal função a persistência do acesso."
+        }
+      ],
+      "explanation": "Correta. Um backdoor (porta dos fundos, em português) é um tipo de programa malicioso que permite o retorno de um invasor a um sistema previamente comprometido. Ele estabelece canais de comunicação ocultos ou ignora mecanismos de segurança para garantir acesso futuro sem detecção, sendo sua principal função a persistência do acesso.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual protocolo é utilizado para o recebimento de mensagens de correio eletrônico e mantém as mensagens armazenadas no servidor até que o usuário as recupere?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "HTTP (Hypertext Transfer Protocol)",
+          "correct": false,
+          "explanation": "Incorreta. O HTTP (Hypertext Transfer Protocol, ou Protocolo de Transferência de Hipertexto) é o protocolo fundamental para a World Wide Web, utilizado para acessar páginas da internet. Embora serviços de webmail usem HTTP para a interface do usuário, ele não é o protocolo subjacente para a entrega e armazenamento de e-mails em si."
+        },
+        {
+          "id": "b",
+          "text": "POP (Post Office Protocol)",
+          "correct": true,
+          "explanation": "Correta. O POP (Post Office Protocol, ou Protocolo dos Correios) é um dos protocolos mais comuns para o recebimento de mensagens de correio eletrônico. Ele permite que o cliente de e-mail baixe as mensagens do servidor para o dispositivo local, geralmente as removendo do servidor após o download, embora configurações modernas permitam manter uma cópia no servidor. A descrição de que ele mantém as mensagens armazenadas no servidor até que o usuário as recupere se encaixa em sua funcionalidade."
+        },
+        {
+          "id": "c",
+          "text": "SMTP (Simple Mail Transfer Protocol)",
+          "correct": false,
+          "explanation": "Incorreta. O SMTP (Simple Mail Transfer Protocol, ou Protocolo Simples de Transferência de Correio) é o protocolo padrão para o envio de mensagens de correio eletrônico entre servidores e do cliente para o servidor, mas não para o recebimento pelo cliente."
+        },
+        {
+          "id": "d",
+          "text": "FTP (File Transfer Protocol)",
+          "correct": false,
+          "explanation": "Incorreta. O FTP (File Transfer Protocol, ou Protocolo de Transferência de Arquivos) é utilizado para a transferência de arquivos entre computadores em uma rede, não sendo o protocolo principal para o recebimento de e-mails."
+        }
+      ],
+      "explanation": "Correta. O POP (Post Office Protocol, ou Protocolo dos Correios) é um dos protocolos mais comuns para o recebimento de mensagens de correio eletrônico. Ele permite que o cliente de e-mail baixe as mensagens do servidor para o dispositivo local, geralmente as removendo do servidor após o download, embora configurações modernas permitam manter uma cópia no servidor. A descrição de que ele mantém as mensagens armazenadas no servidor até que o usuário as recupere se encaixa em sua funcionalidade.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Windows, qual combinação de teclas abre diretamente o Gerenciador de Tarefas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + Shift + Del",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Ctrl + Shift + Del não é um atalho padrão para abrir o Gerenciador de Tarefas no Windows. Em navegadores de internet, essa combinação é frequentemente usada para abrir as opções de limpeza de dados de navegação."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + Shift + Esc",
+          "correct": true,
+          "explanation": "Correta. A combinação de teclas Ctrl + Shift + Esc é o atalho direto para abrir o Gerenciador de Tarefas no sistema operacional Windows, a partir do Windows 95 e em todas as versões subsequentes, incluindo Windows 10 e 11."
+        },
+        {
+          "id": "c",
+          "text": "Alt + F4",
+          "correct": false,
+          "explanation": "Incorreta. Alt + F4 é um atalho de teclado utilizado para fechar a janela ou o programa ativo no momento, não para abrir o Gerenciador de Tarefas."
+        },
+        {
+          "id": "d",
+          "text": "Ctrl + Alt + Del",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Ctrl + Alt + Del, embora relacionada ao Gerenciador de Tarefas, abre uma tela de segurança no Windows que oferece várias opções, incluindo \"Gerenciador de Tarefas\", mas não o abre diretamente. É um passo intermediário."
+        }
+      ],
+      "explanation": "Correta. A combinação de teclas Ctrl + Shift + Esc é o atalho direto para abrir o Gerenciador de Tarefas no sistema operacional Windows, a partir do Windows 95 e em todas as versões subsequentes, incluindo Windows 10 e 11.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No Windows, qual tecla deve ser mantida pressionada junto com a tecla Delete para realizar uma exclusão permanente de arquivo, sem enviá-lo para a Lixeira?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl",
+          "correct": false,
+          "explanation": "Incorreta. Pressionar Ctrl junto com Delete não resulta em exclusão permanente; o arquivo é movido para a Lixeira, permitindo sua recuperação."
+        },
+        {
+          "id": "b",
+          "text": "Alt",
+          "correct": false,
+          "explanation": "Incorreta. A tecla Alt não tem função para exclusão permanente quando combinada com Delete no Windows."
+        },
+        {
+          "id": "c",
+          "text": "Tab",
+          "correct": false,
+          "explanation": "Incorreta. A tecla Tab é usada para navegar entre elementos de interface (como botões e campos de texto) e não possui função de exclusão quando combinada com Delete."
+        },
+        {
+          "id": "d",
+          "text": "Shift",
+          "correct": true,
+          "explanation": "Correta. No Windows, ao selecionar um arquivo ou pasta e pressionar a tecla Shift junto com a tecla Delete (Shift + Del), o item é excluído permanentemente, sem ser movido para a Lixeira. Uma caixa de diálogo de confirmação geralmente aparece, alertando sobre a exclusão definitiva."
+        }
+      ],
+      "explanation": "Correta. No Windows, ao selecionar um arquivo ou pasta e pressionar a tecla Shift junto com a tecla Delete (Shift + Del), o item é excluído permanentemente, sem ser movido para a Lixeira. Uma caixa de diálogo de confirmação geralmente aparece, alertando sobre a exclusão definitiva.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a principal diferença entre a World Wide Web (WWW) e a Internet?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A World Wide Web é um sistema de páginas que funciona como serviço sobre a infraestrutura da Internet",
+          "correct": true,
+          "explanation": "Correta. A Internet é a infraestrutura física e lógica global de redes interconectadas que permite a comunicação de dados. A World Wide Web (WWW), por outro lado, é um sistema de documentos interligados (páginas web) e outros recursos acessíveis via Internet, funcionando como um serviço sobre essa infraestrutura. Ela é apenas uma das muitas aplicações da Internet, ao lado de e-mail, FTP e mensagens instantâneas."
+        },
+        {
+          "id": "b",
+          "text": "A Internet e a World Wide Web são termos sinônimos que designam a mesma tecnologia",
+          "correct": false,
+          "explanation": "Incorreta. Internet e World Wide Web não são termos sinônimos. A Internet é a rede global de hardware e software que permite a comunicação, enquanto a WWW é um sistema de informações interligadas que utiliza essa rede para funcionar. A WWW é uma parte da Internet."
+        },
+        {
+          "id": "c",
+          "text": "A Internet é um serviço que funciona dentro da World Wide Web",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação inverte a relação. A World Wide Web é um serviço que utiliza a infraestrutura da Internet, e não o contrário. A Internet é a rede global de computadores, e a WWW é uma das aplicações que roda sobre ela."
+        },
+        {
+          "id": "d",
+          "text": "A World Wide Web surgiu antes da Internet e serviu de base para sua criação",
+          "correct": false,
+          "explanation": "Incorreta. Historicamente, a Internet (em suas formas iniciais, como ARPANET) surgiu na década de 1960 e se desenvolveu nas décadas seguintes. A World Wide Web, como a conhecemos, foi criada por Tim Berners-Lee no CERN no final da década de 1980 e popularizada na década de 1990, portanto, a Internet precedeu a WWW."
+        }
+      ],
+      "explanation": "Correta. A Internet é a infraestrutura física e lógica global de redes interconectadas que permite a comunicação de dados. A World Wide Web (WWW), por outro lado, é um sistema de documentos interligados (páginas web) e outros recursos acessíveis via Internet, funcionando como um serviço sobre essa infraestrutura. Ela é apenas uma das muitas aplicações da Internet, ao lado de e-mail, FTP e mensagens instantâneas.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a principal semelhança entre backdoor e rootkit em termos de funcionalidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ambos se propagam automaticamente através de redes de computadores",
+          "correct": false,
+          "explanation": "Incorreta. A propagação automática é uma característica típica de worms e alguns vírus. Backdoors e rootkits, por outro lado, são geralmente instalados após uma invasão inicial e seu objetivo principal é manter o acesso e a ocultação, não se espalhar por conta própria."
+        },
+        {
+          "id": "b",
+          "text": "Ambos são detectados facilmente por antivírus convencionais devido às suas assinaturas características",
+          "correct": false,
+          "explanation": "Incorreta. Rootkits, em particular, são projetados especificamente para evadir a detecção por softwares de segurança, operando em níveis profundos do sistema para ocultar processos, arquivos e chaves de registro. Backdoors também podem ser desenvolvidas para serem sigilosas, dificultando a detecção por antivírus convencionais, o que torna a afirmação de que são 'detectados facilmente' falsa."
+        },
+        {
+          "id": "c",
+          "text": "Ambos possibilitam o retorno de invasores, não se propagam automaticamente e permanecem ocultos no sistema",
+          "correct": true,
+          "explanation": "Correta. Tanto o backdoor (porta dos fundos) quanto o rootkit são ferramentas usadas por invasores para manter o acesso a um sistema comprometido (possibilitam o retorno) e para esconder sua presença ou a de outros softwares maliciosos (permanecem ocultos). Eles não possuem mecanismos de propagação automática inerentes, dependendo de outras formas de infecção inicial."
+        },
+        {
+          "id": "d",
+          "text": "Ambos consomem grandes quantidades de recursos do sistema durante sua execução",
+          "correct": false,
+          "explanation": "Incorreta. Embora qualquer software malicioso possa consumir recursos do sistema, o consumo de grandes quantidades não é a principal característica ou semelhança definidora de backdoors e rootkits. Malwares como worms ou alguns tipos de vírus são mais conhecidos por essa característica, enquanto backdoors focam em acesso e rootkits em ocultação."
+        }
+      ],
+      "explanation": "Correta. Tanto o backdoor (porta dos fundos) quanto o rootkit são ferramentas usadas por invasores para manter o acesso a um sistema comprometido (possibilitam o retorno) e para esconder sua presença ou a de outros softwares maliciosos (permanecem ocultos). Eles não possuem mecanismos de propagação automática inerentes, dependendo de outras formas de infecção inicial.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "No Gerenciador de Tarefas do Windows, qual guia permite visualizar e finalizar aplicativos que não estão respondendo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Serviços",
+          "correct": false,
+          "explanation": "Incorreta. A guia 'Serviços' lista os serviços do sistema operacional Windows, que são programas que rodam em segundo plano e fornecem funcionalidades essenciais ou adicionais. Embora alguns serviços possam ser iniciados ou parados por aqui, esta guia não é o local padrão para finalizar aplicativos de usuário que travaram."
+        },
+        {
+          "id": "b",
+          "text": "Processos",
+          "correct": true,
+          "explanation": "Correta. A guia 'Processos' (ou 'Aplicativos' em versões mais antigas do Windows) é onde se pode visualizar todos os programas e processos em execução no sistema. É nesta guia que o usuário pode selecionar um aplicativo que não está respondendo e utilizar a opção 'Finalizar tarefa' para encerrá-lo compulsoriamente."
+        },
+        {
+          "id": "c",
+          "text": "Inicializar",
+          "correct": false,
+          "explanation": "Incorreta. A guia 'Inicializar' (ou 'Startup') exibe os programas que são carregados automaticamente quando o sistema operacional é iniciado. Ela permite gerenciar quais desses programas devem ser habilitados ou desabilitados, mas não serve para finalizar aplicativos que já estão em execução e não respondem."
+        },
+        {
+          "id": "d",
+          "text": "Desempenho",
+          "correct": false,
+          "explanation": "Incorreta. A guia 'Desempenho' no Gerenciador de Tarefas fornece informações sobre o uso de recursos do sistema, como CPU, memória, disco e rede, através de gráficos e estatísticas. Ela não oferece a funcionalidade de finalizar aplicativos."
+        }
+      ],
+      "explanation": "Correta. A guia 'Processos' (ou 'Aplicativos' em versões mais antigas do Windows) é onde se pode visualizar todos os programas e processos em execução no sistema. É nesta guia que o usuário pode selecionar um aplicativo que não está respondendo e utilizar a opção 'Finalizar tarefa' para encerrá-lo compulsoriamente.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a principal vantagem histórica do protocolo POP3 em relação ao IMAP em cenários de conexão discada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O POP3 mantém cópias de segurança automáticas de todas as mensagens no servidor",
+          "correct": false,
+          "explanation": "Incorreta. Por padrão, o POP3 é configurado para baixar as mensagens do servidor e, em seguida, excluí-las do servidor. Portanto, ele não mantém cópias de segurança automáticas de todas as mensagens no servidor; na verdade, ele as remove, transferindo a responsabilidade do armazenamento para o cliente local."
+        },
+        {
+          "id": "b",
+          "text": "O POP3 permite sincronização automática de mensagens entre múltiplos dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. A sincronização automática de mensagens entre múltiplos dispositivos, onde o estado das mensagens (lida, não lida, movida) é replicado em todos os clientes, é uma funcionalidade primária do protocolo IMAP (Internet Message Access Protocol), e não do POP3. Por padrão, o POP3 baixa as mensagens para um único dispositivo e as remove do servidor."
+        },
+        {
+          "id": "c",
+          "text": "O POP3 baixa as mensagens para a máquina local, permitindo acesso offline após desconectar da Internet",
+          "correct": true,
+          "explanation": "Correta. Em cenários de conexão discada, onde o acesso à internet era lento e caro, a principal vantagem do POP3 (Post Office Protocol version 3) era permitir que o usuário baixasse todas as suas mensagens para o computador local. Após o download, o usuário podia se desconectar da internet e ler, organizar e responder aos e-mails offline, economizando tempo e custos de conexão. As mensagens ficavam armazenadas localmente, permitindo acesso mesmo sem conexão."
+        },
+        {
+          "id": "d",
+          "text": "O POP3 oferece recursos avançados de organização de pastas no servidor",
+          "correct": false,
+          "explanation": "Incorreta. O POP3 é um protocolo mais simples, focado no download de mensagens para a caixa de entrada local. Ele não oferece recursos avançados de organização de pastas diretamente no servidor; essa é uma característica do IMAP, que permite ao usuário gerenciar pastas e mensagens diretamente no servidor."
+        }
+      ],
+      "explanation": "Correta. Em cenários de conexão discada, onde o acesso à internet era lento e caro, a principal vantagem do POP3 (Post Office Protocol version 3) era permitir que o usuário baixasse todas as suas mensagens para o computador local. Após o download, o usuário podia se desconectar da internet e ler, organizar e responder aos e-mails offline, economizando tempo e custos de conexão. As mensagens ficavam armazenadas localmente, permitindo acesso mesmo sem conexão.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a principal diferença entre os protocolos TCP e UDP na camada de transporte em relação à confiabilidade da entrega de dados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O TCP é orientado a conexão e garante a entrega ordenada dos pacotes através de confirmações e retransmissões, enquanto o UDP prioriza velocidade sem garantias de entrega",
+          "correct": true,
+          "explanation": "Correta. O TCP (Transmission Control Protocol) é um protocolo orientado a conexão, o que significa que ele estabelece e mantém uma conexão lógica entre os hosts antes de enviar os dados. Ele garante a entrega confiável, ordenada e sem erros dos pacotes por meio de mecanismos como confirmações (acknowledgements), retransmissões de pacotes perdidos e controle de fluxo. Em contraste, o UDP (User Datagram Protocol) é um protocolo não orientado a conexão que prioriza a velocidade e a baixa latência, enviando pacotes sem garantias de entrega, ordem ou detecção de erros, sendo ideal para aplicações onde pequenas perdas de dados são aceitáveis."
+        },
+        {
+          "id": "b",
+          "text": "O TCP é utilizado exclusivamente para transferência de arquivos, enquanto o UDP é usado apenas para navegação web",
+          "correct": false,
+          "explanation": "Incorreta. O TCP é amplamente utilizado em diversas aplicações que exigem confiabilidade, como transferência de arquivos (FTP), navegação web (HTTP/HTTPS), e-mail (SMTP, POP3, IMAP) e acesso remoto (SSH). O UDP, por sua vez, é empregado em cenários que priorizam a velocidade e a eficiência, como streaming de vídeo e áudio, jogos online, VoIP e serviços de nomes de domínio (DNS), e não é usado exclusivamente para navegação web."
+        },
+        {
+          "id": "c",
+          "text": "O UDP implementa mecanismos de correção de erros mais avançados que o TCP",
+          "correct": false,
+          "explanation": "Incorreta. Na realidade, o TCP implementa mecanismos de correção e recuperação de erros muito mais avançados e robustos do que o UDP. O UDP oferece apenas um checksum básico para verificar a integridade dos dados, mas não garante a retransmissão de pacotes perdidos ou a correção de erros."
+        },
+        {
+          "id": "d",
+          "text": "O UDP garante a entrega de todos os pacotes na ordem correta, enquanto o TCP permite perda de pacotes para maior velocidade",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação inverte as características dos protocolos. O UDP não garante a entrega de todos os pacotes nem a ordem correta; ele opera no modelo 'melhor esforço'. O TCP, por outro lado, tem como objetivo principal garantir a entrega completa e ordenada dos dados, retransmitindo pacotes se necessário, e não permite perda de pacotes em prol da velocidade."
+        }
+      ],
+      "explanation": "Correta. O TCP (Transmission Control Protocol) é um protocolo orientado a conexão, o que significa que ele estabelece e mantém uma conexão lógica entre os hosts antes de enviar os dados. Ele garante a entrega confiável, ordenada e sem erros dos pacotes por meio de mecanismos como confirmações (acknowledgements), retransmissões de pacotes perdidos e controle de fluxo. Em contraste, o UDP (User Datagram Protocol) é um protocolo não orientado a conexão que prioriza a velocidade e a baixa latência, enviando pacotes sem garantias de entrega, ordem ou detecção de erros, sendo ideal para aplicações onde pequenas perdas de dados são aceitáveis.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a diferença fundamental entre uma pasta de trabalho e uma planilha no Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma pasta de trabalho é um arquivo que pode conter múltiplas planilhas, enquanto uma planilha é uma única folha de cálculo dentro desse arquivo",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, uma **pasta de trabalho** (ou 'workbook') é o arquivo principal (.xlsx, .xls) que serve como um contêiner. Este arquivo pode abrigar uma ou mais **planilhas** (ou 'worksheets'), que são as folhas individuais onde os dados são inseridos, organizados, e onde cálculos e gráficos são realizados. É como um caderno (pasta de trabalho) que contém várias páginas (planilhas)."
+        },
+        {
+          "id": "b",
+          "text": "Uma pasta de trabalho contém apenas fórmulas, enquanto uma planilha contém apenas dados",
+          "correct": false,
+          "explanation": "Incorreta. Tanto as pastas de trabalho quanto as planilhas podem conter uma variedade de elementos, incluindo dados, fórmulas, gráficos, tabelas e objetos. Não há uma distinção rígida de que uma contenha apenas fórmulas e a outra apenas dados; ambas podem conter ambos."
+        },
+        {
+          "id": "c",
+          "text": "Uma planilha é um arquivo completo, enquanto uma pasta de trabalho é apenas uma célula formatada",
+          "correct": false,
+          "explanation": "Incorreta. Uma **planilha** não é um arquivo completo; ela é uma parte integrante de uma pasta de trabalho. Por outro lado, uma **pasta de trabalho** é o arquivo completo que armazena todas as planilhas e outras informações relacionadas, e não é 'apenas uma célula formatada'."
+        },
+        {
+          "id": "d",
+          "text": "Uma planilha pode conter múltiplas pastas de trabalho organizadas hierarquicamente",
+          "correct": false,
+          "explanation": "Incorreta. A relação hierárquica é inversa. Uma **pasta de trabalho** contém uma ou mais **planilhas**. Uma planilha, por si só, não pode conter múltiplas pastas de trabalho."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, uma **pasta de trabalho** (ou 'workbook') é o arquivo principal (.xlsx, .xls) que serve como um contêiner. Este arquivo pode abrigar uma ou mais **planilhas** (ou 'worksheets'), que são as folhas individuais onde os dados são inseridos, organizados, e onde cálculos e gráficos são realizados. É como um caderno (pasta de trabalho) que contém várias páginas (planilhas).",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "03_358764_Informática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:30:40"
+}

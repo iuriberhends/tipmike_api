@@ -1,0 +1,562 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 4,
+  "ordem_no_curso": "73.00",
+  "titulo": "Função do 2º Grau",
+  "codigo_aula": "308495",
+  "video_id": "uqbbUqmT/XQ=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:49",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/uqbbUqmT%2FXQ%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408763%2C408764%2C408756%2C425181%2C403846%2C408917%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Função do 2º Grau\n\n## Abertura e Objetivo da Aula\nBeleza, turma. Hoje vamos começar a trabalhar com funções do segundo grau. Vocês já devem ter visto equação do segundo grau; aqui é uma extensão: a gente vai transformar essa ideia em função. Não é difícil e é muito comum nas aulas de matemática. Vamos estruturar isso direitinho.\n\n## Definição de Função do 2º Grau\nA função do segundo grau, também chamada de função quadrática, é uma função real dada por f(x) = ax² + bx + c, onde o domínio é R. Para ser de segundo grau, obrigatoriamente a ≠ 0. O b e o c podem ser zero, sem problema. Se o a for zero, deixa de ser função do segundo grau e vira função do primeiro grau.\n\nEntão, atenção:\n- a ≠ 0\n- b pode ser 0\n- c pode ser 0\n\nSe a = 0, ficamos só com bx + c, que é uma função linear.\n\n## Identificando os Coeficientes\nVamos a alguns exemplos para identificar a, b e c:\n\n- f(x) = x² − 5x + 1\n  - a = 1 (é o que multiplica x²)\n  - b = −5\n  - c = 1\n\n- f(x) = 3x² − 4\n  - a = 3\n  - b = 0 (não tem termo em x)\n  - c = −4\n\n- f(x) = x² + 5\n  - a = 1\n  - b = 0\n  - c = 5\n\nPerceba: b pode ser zero, c pode ser zero; o único que não pode zerar é o a. Se a = 0, não é função do segundo grau.\n\n## Forma do Gráfico: Parábola e Simetria\nO gráfico de uma função do segundo grau é uma parábola. Ela é simétrica em relação a uma reta vertical que passa pelo vértice. Essa simetria significa que, se você olhar para as raízes (quando existem), o eixo de simetria fica exatamente no meio entre elas. A parábola é totalmente simétrica; a distância do eixo de simetria até cada raiz é a mesma quando as raízes existem.\n\nA reta de simetria divide a parábola em duas partes iguais. O ponto onde a parábola alcança seu valor extremo (máximo ou mínimo) é o vértice. Pode ser o ponto mais alto ou o mais baixo do gráfico, dependendo da concavidade.\n\n## Concavidade e o Papel do Coeficiente a\nA concavidade é determinada pelo sinal de a:\n- Se a > 0, concavidade para cima; o vértice é um ponto mínimo.\n- Se a < 0, concavidade para baixo; o vértice é um ponto máximo.\n\nEssa “abertura” da parábola (para cima ou para baixo) é toda controlada por a. Então:\n- a > 0 → abre para cima → mínimo\n- a < 0 → abre para baixo → máximo\n\n> 🎯 Dicas de prova: O sinal de a determina a concavidade: a > 0 para cima (mínimo), a < 0 para baixo (máximo).\n\n## Interseções com os Eixos e a Discriminante (Delta)\nNo plano cartesiano, a parábola pode:\n- Cortar o eixo x em dois pontos distintos (duas raízes reais diferentes);\n- Tocar o eixo x em um único ponto (duas raízes reais iguais);\n- Não tocar o eixo x (não tem raízes reais).\n\nComo saber isso rapidamente? Pelo discriminante Δ (Delta) da equação ax² + bx + c, dado por Δ = b² − 4ac.\n\n- Se Δ < 0: não há raízes reais; o gráfico não intercepta o eixo x.\n- Se Δ = 0: há duas raízes reais iguais; a parábola é tangente ao eixo x (toca e volta).\n- Se Δ > 0: há duas raízes reais distintas; a parábola intercepta o eixo x em dois pontos.\n\nIsso vale tanto para a > 0 quanto para a < 0; o que muda é se o vértice é máximo ou mínimo e a direção da concavidade, mas a contagem de raízes reais é sempre pelo Delta.\n\n> 🎯 Dicas de prova: Δ < 0 → sem raízes reais; Δ = 0 → raízes iguais; Δ > 0 → duas raízes distintas.\n\n## Resumo Visual Mental\n- Concavidade para cima (a > 0): mínimo. Se Δ < 0, a parábola fica toda acima do eixo x (ou toda abaixo, dependendo de c), sem cruzar. Se Δ = 0, toca o eixo x no vértice. Se Δ > 0, corta o eixo x em dois pontos.\n- Concavidade para baixo (a < 0): máximo. Mesma lógica de Δ para o contato com o eixo x.\n\n> 🎯 Dicas de prova: A análise de raízes reais depende exclusivamente de Δ. O sinal de a não altera a quantidade de raízes, apenas a concavidade e se o vértice é máximo ou mínimo.\n\n## Reforço dos Conceitos-Chave\n- a ≠ 0 sempre.\n- b e c podem ser zero.\n- Concavidade: a > 0 para cima; a < 0 para baixo.\n- Raízes reais: avaliadas por Δ.\n- Eixo de simetria passa pelo vértice e divide a parábola em duas partes iguais.\n\n## Aplicação Prática 1: Condição para Duas Raízes Reais\nVamos aplicar. A pergunta é: qual é o valor de um parâmetro (chamemos de k) para que a equação do segundo grau tenha duas raízes reais? Para ter duas raízes reais distintas, precisamos de Δ > 0.\n\nSe, em outro caso, a questão pedisse raízes reais iguais, então Δ = 0. E se não houvesse raízes reais, seria Δ < 0. Portanto, tudo gira em torno da discriminante.\n\n> 🎯 Dicas de prova: Para “duas raízes reais” → Δ > 0. Para “raízes iguais” → Δ = 0. Para “não tem raízes reais” → Δ < 0.\n\n## Identificação dos Coeficientes em um Exemplo\nNum exemplo dado, identificamos:\n- a = 2\n- b = −1\n- c = algum termo constante (atenção ao sinal; o sinal faz parte do coeficiente)\n\nCuidado para não perder o sinal de b e c ao ler a expressão. O sinal pertence ao coeficiente.\n\n## Cálculo do Delta no Exemplo\nCom a = 2, b = −1 e c apropriado, montamos:\nΔ = b² − 4ac\nSubstituímos corretamente, lembrando que “menos com menos” vira mais, e fazemos as contas com atenção para não errar sinal.\n\nSeguindo a conta do exemplo da aula, o resultado do Delta levou a um valor específico do parâmetro para garantir a condição desejada nas raízes. O professor concluiu um valor numérico final para o parâmetro: 48. Assim, com esse valor, a equação terá o comportamento de raízes conforme solicitado no enunciado do exercício trabalhado.\n\n## Conclusão Parcial e Próximos Passos\nEntão, recapitulando:\n- a não pode ser zero.\n- b e c podem ser zero.\n- A concavidade depende do sinal de a.\n- A quantidade de raízes reais depende do Delta:\n  - Δ < 0: nenhuma raiz real.\n  - Δ = 0: raízes reais iguais, tangência.\n  - Δ > 0: duas raízes reais distintas.\n\nNo próximo bloco, a gente avança para vértice e soma das coordenadas do vértice, e prática com mais aplicações, como produção máxima e mínima em problemas de modelagem com parábolas. Vamos praticar mais, porque é a prática que fixa.",
+  "transcricao_meta": {
+    "title": "Função do 2º Grau",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 26851,
+    "createdAt": "2026-01-30T18:47:26.693Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: definição e estrutura da função do 2º grau, papel dos coeficientes, interpretação do gráfico (parábola), discriminante (Delta) e raízes, vértice e condições típicas cobradas em prova.\nPrincipais pontos: \n- a ≠ 0 define função do 2º grau; sinal de a define concavidade e tipo de extremum.\n- Δ = b² − 4ac define quantidade de raízes reais e o contato com o eixo x.\n- Condições-padrão: Δ > 0 (duas raízes reais distintas), Δ = 0 (raiz dupla), Δ < 0 (sem raízes reais).\n\n## 1. Base / Conceitos Fundamentais\n- Definição: Função do 2º grau (função quadrática) é f(x) = ax² + bx + c, com a ≠ 0.\n- Coeficientes:\n  - a: determina a concavidade (abertura) e se o vértice é mínimo (a > 0) ou máximo (a < 0).\n  - b: influencia a posição do vértice no eixo x.\n  - c: termo independente; f(0) = c é a interseção com o eixo y.\n- Gráfico: parábola no plano cartesiano (eixo x e eixo y), com eixo de simetria vertical passando pelo vértice.\n- Discriminante (Delta): Δ = b² − 4ac. Controla a existência/quantidade de raízes reais.\n\n> Dica de Prova: a ≠ 0 é condição de existência. Se a = 0, é função do 1º grau e não se aplicam as fórmulas do 2º grau.\n\n## 2. Como Funciona / Distinções\n- Concavidade:\n  - a > 0 → concavidade para cima; vértice é ponto de mínimo.\n  - a < 0 → concavidade para baixo; vértice é ponto de máximo.\n- Delta (Δ) e raízes reais:\n  - Δ > 0 → duas raízes reais distintas; a parábola intercepta o eixo x em dois pontos.\n  - Δ = 0 → duas raízes reais iguais (raiz dupla); a parábola é tangente ao eixo x (vértice no eixo x).\n  - Δ < 0 → não há raízes reais; a parábola não toca o eixo x.\n\nTabela-resumo (Δ vs comportamento):\n- Δ > 0: corta o eixo x em dois pontos; vértice acima do eixo x se a < 0, ou abaixo se a > 0.\n- Δ = 0: toca o eixo x no vértice (tangência).\n- Δ < 0: não intercepta o eixo x; parábola toda acima (a > 0) ou toda abaixo (a < 0) do eixo x.\n\n> Dica de Prova: Quantidade de raízes depende do Δ; concavidade e tipo de extremum dependem do sinal de a.\n\n## 3. Aplicação Prática / Técnicas\n- Identificar coeficientes: Dado f(x) em ax² + bx + c, leia a, b, c diretamente.\n- Vértice:\n  - Abscissa: xv = −b/(2a)\n  - Ordenada: yv = −Δ/(4a)\n- Passo a passo padrão para questões com parâmetro:\n  1) Identifique a, b, c.\n  2) Calcule Δ = b² − 4ac (em função do parâmetro, se houver).\n  3) Aplique a condição pedida:\n     - Duas raízes reais distintas: Δ > 0.\n     - Raízes reais iguais: Δ = 0.\n     - Sem raízes reais: Δ < 0.\n  4) Resolva a desigualdade/igualdade resultante.\n- Interpretação rápida do gráfico:\n  - c = f(0): ponto de interseção com eixo y.\n  - Se c = 0 → x = 0 é raiz (a parábola passa pela origem).\n  - Sinal de a: indica para onde “abre” a parábola.\n  - Δ informa se e como toca/corta o eixo x.\n\n> Dica de Prova: yv = −Δ/(4a) mostra que, se Δ = 0, então yv = 0 (vértice exatamente no eixo x).\n\n## 4. Exemplos e Casos Resolvidos\n- Identificação de coeficientes:\n  - f(x) = 2x² − 5x + 3 → a = 2, b = −5, c = 3.\n  - f(x) = x² − 5 → a = 1, b = 0, c = −5.\n  - f(x) = −x² + 4x → a = −1, b = 4, c = 0.\n- Condição para duas raízes reais distintas:\n  - Dado f(x) = kx² + 2x + 1. Para “duas raízes reais distintas”, exija Δ > 0.\n    - Δ = b² − 4ac = 2² − 4·k·1 = 4 − 4k.\n    - 4 − 4k > 0 ⇒ k < 1 (com k ≠ 0 para ser 2º grau).\n- Caso Δ = 0 (tangência):\n  - f(x) = x² − 6x + 9. Δ = (−6)² − 4·1·9 = 36 − 36 = 0.\n  - Uma raiz real dupla (x = 3) e a parábola tangencia o eixo x no vértice (3,0).\n- Caso Δ < 0 (sem raízes reais):\n  - f(x) = x² + x + 1. Δ = 1 − 4 = −3 < 0.\n  - Não intercepta o eixo x; como a > 0, a parábola está toda acima do eixo x.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir quantidade de raízes (Δ) com concavidade (a). Δ decide se há/quantas raízes; a decide para onde abre e se o vértice é máximo/minimo.\n- Esquecer a condição a ≠ 0. Se a = 0, não use Δ nem fórmulas do 2º grau.\n- Achar que b = 0 ou c = 0 impede ser 2º grau. Não impede: quem não pode ser zero é o a.\n- Tangência ao eixo x não é “uma raiz só”, e sim “duas raízes reais iguais” (Δ = 0).\n- Tentar “achar raízes” reais quando Δ < 0. Não existem raízes reais nesse caso.\n\n> Dica de Prova: Em problemas “para que tenha duas raízes reais”, vá direto ao ponto: calcule Δ e imponha Δ > 0. Evite manipular raízes pela fórmula de Bhaskara desnecessariamente.",
+  "resumo_bolso": "# Função do 2º Grau\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Definição**: f(x) = ax² + bx + c, com **a ≠ 0**. Se a = 0 → função do 1º grau (não se aplicam as fórmulas do 2º grau).\n* **Coeficiente a**: determina a **concavidade** (para onde a parábola “abre”) e se o vértice é **mínimo (a > 0)** ou **máximo (a < 0)**.\n* **Coeficiente b**: influencia a **posição do vértice** no eixo x.\n* **Coeficiente c**: termo independente; **f(0) = c** é o ponto de interseção com o **eixo y**.\n* **Gráfico**: parábola no plano cartesiano, com **eixo de simetria vertical** passando pelo vértice.\n* **Delta (Δ)**: Δ = b² − 4ac → controla **existência e quantidade de raízes reais**.\n* **Raízes reais**: soluções de ax² + bx + c = 0; ligadas ao **contato com o eixo x**.\n* **Eixo y**: sempre interceptado em (0, c); **eixo x** pode ter 0, 1 (raiz dupla) ou 2 interseções reais, conforme o Δ.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Sinal de a vs Sinal de Δ\n\n| Aspecto | Sinal de **a** | Sinal de **Δ** |\n|--------|-----------------|----------------|\n| **Função** | Define concavidade e tipo de extremum | Define quantidade de raízes reais |\n| **Gráfico** | a > 0 → abre p/ cima; a < 0 → p/ baixo | Δ > 0: corta eixo x em 2 pts; Δ = 0: tangencia; Δ < 0: não toca |\n| **Extremum** | a > 0 → vértice é mínimo; a < 0 → máximo | Não define máximo/mínimo, só contato com eixo x |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Estrutura da Função do 2º Grau**\n\n* **Forma padrão**: f(x) = ax² + bx + c, **a ≠ 0**.\n* **Identificação de coeficientes**: dados ax² + bx + c, leia diretamente a, b, c.\n* **Exemplos**:  \n  * f(x) = 2x² − 5x + 3 → a = 2, b = −5, c = 3.  \n  * f(x) = x² − 5 → a = 1, b = 0, c = −5.  \n  * f(x) = −x² + 4x → a = −1, b = 4, c = 0.\n\n---\n\n**2. Discriminante (Delta)**\n\n* **Fórmula**: Δ = b² − 4ac.\n* **Função**: decidir **quantidade de raízes reais** e tipo de contato com eixo x.\n\n---\n\n**3. Condições em Função de Δ**\n\n* **Δ > 0**  \n  * Duas raízes reais distintas; parábola corta o eixo x em **dois pontos**.  \n  * Vértice acima do eixo x se a < 0, ou abaixo se a > 0.\n\n* **Δ = 0**  \n  * Duas raízes reais **iguais** (raiz dupla); parábola **tangencia** o eixo x (vértice no eixo x).  \n  * Exemplo: x² − 6x + 9 → Δ = 0, raiz dupla x = 3; tangência no ponto (3, 0).\n\n* **Δ < 0**  \n  * **Nenhuma raiz real**; parábola **não toca** o eixo x.  \n  * Exemplo: x² + x + 1 → Δ = −3 < 0; como a > 0, gráfico todo acima do eixo x.\n\n---\n\n**4. Vértice da Parábola**\n\n* **Abscissa**: x_v = −b / (2a).  \n* **Ordenada**: y_v = −Δ / (4a).  \n* Se Δ = 0 → y_v = 0 → vértice exatamente no eixo x.\n\n---\n\n**5. Interpretação Rápida do Gráfico**\n\n* **c = f(0)** → ponto (0, c) no eixo y.  \n* **Se c = 0** → x = 0 é raiz → parábola passa pela origem.  \n* **Sinal de a**: indica para onde “abre” a parábola.  \n* **Δ e posição relativa ao eixo x**:  \n  * Δ > 0 → corta o eixo x em dois pontos.  \n  * Δ = 0 → toca o eixo x no vértice (tangência).  \n  * Δ < 0 → não intercepta o eixo x; parábola toda acima (a > 0) ou toda abaixo (a < 0) do eixo x.\n\n---\n\n**6. Questões com Parâmetro (k, m, etc.)**\n\n* **Passo a passo padrão**:\n  1) Identifique a, b, c (podem depender do parâmetro).  \n  2) Calcule Δ = b² − 4ac (em função do parâmetro).  \n  3) Aplique a condição pedida:  \n     * “Duas raízes reais distintas” → **Δ > 0**.  \n     * “Raízes reais iguais” → **Δ = 0**.  \n     * “Sem raízes reais” → **Δ < 0**.  \n  4) Resolva a desigualdade/igualdade obtida.  \n* **Exemplo**: f(x) = kx² + 2x + 1, 2 raízes reais distintas:  \n  * Δ = 4 − 4k > 0 ⇒ k < 1, com **k ≠ 0** (para ser 2º grau).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir quantidade de raízes (Δ) com concavidade (a): Δ decide se há/quantas raízes; a decide para onde abre e se o vértice é máximo/mínimo.\n* Esquecer a condição **a ≠ 0**: se a = 0, é função do 1º grau; não use Δ nem fórmulas do 2º grau.\n* Achar que **b = 0** ou **c = 0** impede ser 2º grau: não impede; quem não pode ser zero é o **a**.\n* Tangência ao eixo x (Δ = 0) não é “uma raiz só”, e sim **duas raízes reais iguais** (raiz dupla).\n* Tentar achar raízes reais quando **Δ < 0**: não existem raízes reais nesse caso.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **sinal de a** (concavidade/máx-mín) de **sinal de Δ** (raízes reais)?  \n* Lembrei que **a ≠ 0** é condição obrigatória para ser função do 2º grau?  \n* Sei aplicar **Δ > 0, = 0, < 0** para decidir quantidade de raízes e contato com o eixo x?  \n* Memorizei o **vértice**: x_v = −b/(2a) e y_v = −Δ/(4a)?  \n* Sei que **c = f(0)** é o ponto no eixo y e que **c = 0** implica raiz em x = 0 (parábola passa pela origem)?",
+  "mapa_mental": "# 🧮 Função do 2º Grau\n## 🎯 Estrutura da Função\n### 💡 Definição Geral\n- Função quadrática\n- f(x)=ax²+bx+c\n- Condição a≠0\n- Domínio reais\n### 🔢 Coeficientes a, b, c\n- a concavidade\n- a máximo mínimo\n- b posição vértice\n- c termo independente\n- c interseção eixo y\n### 📈 Gráfico Parábola\n- Curva parabólica\n- Eixo cartesiano\n- Eixo simetria vertical\n- Vértice ponto extremo\n- Interseções eixos\n\n## 🧮 Delta, Raízes e Vértice\n### 🔢 Discriminante Δ\n- Fórmula Δ=b²−4ac\n- Δ controla raízes\n- Δ controla contato x\n- Δ ligado vértice\n- Δ ligado yv\n### 📊 Classificação pelas Raízes\n- Δ>0 duas raízes\n- Δ=0 raiz dupla\n- Δ<0 sem raízes\n- Raízes reais eixo x\n- Tangência Δ=0\n### 📍 Vértice da Parábola\n- xv=−b/2a\n- yv=−Δ/4a\n- a>0 vértice mínimo\n- a<0 vértice máximo\n- Vértice posição gráfica\n\n## ⚙️ Comportamento do Gráfico\n### 🔄 Concavidade e Posição\n- a>0 abre cima\n- a<0 abre baixo\n- Toda acima Δ<0,a>0\n- Toda abaixo Δ<0,a<0\n- Forma geral curva\n### 📉 Relação Δ e Eixo x\n- Δ>0 corta dois pontos\n- Δ=0 toca um ponto\n- Δ<0 não intercepta\n- Vértice sobre eixo x\n- Vértice fora eixo x\n### 📝 Condições Clássicas Prova\n- Duas raízes Δ>0\n- Raiz dupla Δ=0\n- Sem raízes Δ<0\n- Função 2º grau a≠0\n- Uso direto Δ\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Confusões Comuns\n- Confundir Δ com a\n- Δ quantidade raízes\n- a concavidade extremo\n- b,c podem zero\n- a nunca zero\n### 🛑 Interpretação de Raízes\n- Tangência raiz dupla\n- Não “uma raiz só”\n- Δ<0 sem reais\n- Não buscar Bhaskara\n- Verificar Δ primeiro\n### 📋 Estratégia Rápida\n- Identificar a,b,c\n- Calcular Δ direto\n- Aplicar condição Δ\n- Verificar a≠0\n- Ler gráfico por a,Δ,c",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Definição e Coeficientes",
+      "description": "Definição e Coeficientes — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a forma algébrica geral de uma função quadrática?",
+          "back": "f(x) = ax² + bx + c",
+          "hint": "É uma expressão polinomial de grau dois",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição o coeficiente do termo de segundo grau deve satisfazer?",
+          "back": "Deve ser diferente de zero",
+          "hint": "Refere-se à existência da função",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "coeficientes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Parábola e Vértice",
+      "description": "Parábola e Vértice — 4 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual figura representa graficamente uma função quadrática?",
+          "back": "Uma parábola",
+          "hint": "É uma curva geométrica específica",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "grafico"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Que tipo de simetria possui o gráfico de uma função quadrática?",
+          "back": "Simetria em uma reta vertical passando pelo vértice",
+          "hint": "Relacionado ao eixo de simetria",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "grafico"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "O que representa o vértice de uma parábola?",
+          "back": "O ponto máximo ou mínimo da parábola",
+          "hint": "Ponto de inflexão da curva",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "vertice"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como a parábola se comporta quando o coeficiente a é positivo?",
+          "back": "Concavidade voltada para cima",
+          "hint": "Direção da abertura da curva",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "concavidade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Discriminante e Raízes",
+      "description": "Discriminante e Raízes — 4 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual é a fórmula do discriminante de ax² + bx + c?",
+          "back": "Δ = b² - 4ac",
+          "hint": "Envolve os três coeficientes da função",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "discriminante"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Quantas raízes reais possui a equação quando o discriminante é positivo?",
+          "back": "Duas raízes reais distintas",
+          "hint": "Quantidade de raízes quando delta > 0",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "raizes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a consequência de um discriminante negativo para as raízes reais?",
+          "back": "Não possui raízes reais",
+          "hint": "Quantidade de raízes quando delta < 0",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "raizes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Em que condição as duas raízes de uma equação quadrática são iguais?",
+          "back": "Quando o discriminante é igual a zero",
+          "hint": "Quantidade de raízes quando delta = 0",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-segundo-grau",
+            "raizes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a condição obrigatória para que uma função seja classificada como função do segundo grau ou função quadrática?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O coeficiente 'a' deve ser diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Uma função quadrática ou do segundo grau é definida pela forma f(x) = ax² + bx + c, onde 'a', 'b' e 'c' são coeficientes reais e, fundamentalmente, o coeficiente 'a' deve ser diferente de zero. Se 'a' fosse igual a zero, o termo ax² seria anulado, e a função se tornaria f(x) = bx + c, que é uma função do primeiro grau (linear), não mais quadrática."
+        },
+        {
+          "id": "b",
+          "text": "O coeficiente 'c' deve ser diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente 'c' (o termo independente) pode ser zero em uma função do segundo grau. Por exemplo, f(x) = x² + 2x é uma função do segundo grau onde c = 0. A presença do termo ax² com a ≠ 0 é o que define o grau da função."
+        },
+        {
+          "id": "c",
+          "text": "Todos os coeficientes devem ser diferentes de zero",
+          "correct": false,
+          "explanation": "Incorreta. Conforme explicado nas alternativas 'b' e 'c', os coeficientes 'b' e 'c' podem ser iguais a zero. Apenas o coeficiente 'a' é obrigatoriamente diferente de zero para que a função seja classificada como do segundo grau."
+        },
+        {
+          "id": "d",
+          "text": "O coeficiente 'b' deve ser diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente 'b' (que multiplica o termo x) pode ser zero em uma função do segundo grau. Por exemplo, f(x) = x² + 5 é uma função do segundo grau onde b = 0. A única condição obrigatória para que seja uma função do segundo grau é que o coeficiente 'a' seja diferente de zero."
+        }
+      ],
+      "explanation": "Correta. Uma função quadrática ou do segundo grau é definida pela forma f(x) = ax² + bx + c, onde 'a', 'b' e 'c' são coeficientes reais e, fundamentalmente, o coeficiente 'a' deve ser diferente de zero. Se 'a' fosse igual a zero, o termo ax² seria anulado, e a função se tornaria f(x) = bx + c, que é uma função do primeiro grau (linear), não mais quadrática.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o tipo de gráfico que representa uma função do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma reta inclinada que passa pela origem do plano cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. Uma reta inclinada que passa pela origem do plano cartesiano representa uma função linear do tipo f(x) = kx, onde k é uma constante diferente de zero. O gráfico de uma função do segundo grau possui uma curvatura característica."
+        },
+        {
+          "id": "b",
+          "text": "Uma parábola com eixo de simetria vertical",
+          "correct": true,
+          "explanation": "Correta. O gráfico de uma função do segundo grau, dada na forma f(x) = ax² + bx + c, é sempre uma parábola. Essa parábola possui um eixo de simetria que é uma reta vertical, e seu vértice representa o ponto de máximo ou mínimo da função."
+        },
+        {
+          "id": "c",
+          "text": "Uma circunferência com centro na origem",
+          "correct": false,
+          "explanation": "Incorreta. Uma circunferência é o gráfico de uma equação que descreve um conjunto de pontos equidistantes de um centro, como x² + y² = r², e não de uma função quadrática explícita do tipo y = f(x)."
+        },
+        {
+          "id": "d",
+          "text": "Uma hipérbole com dois ramos simétricos",
+          "correct": false,
+          "explanation": "Incorreta. Uma hipérbole é o gráfico de outras relações matemáticas, como funções inversas do tipo f(x) = k/x ou equações de cônicas específicas, e não de uma função quadrática."
+        }
+      ],
+      "explanation": "Correta. O gráfico de uma função do segundo grau, dada na forma f(x) = ax² + bx + c, é sempre uma parábola. Essa parábola possui um eixo de simetria que é uma reta vertical, e seu vértice representa o ponto de máximo ou mínimo da função.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quando o coeficiente 'a' de uma função quadrática é maior que zero, qual é a característica da concavidade da parábola?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A concavidade é voltada para a esquerda e o vértice está no eixo y",
+          "correct": false,
+          "explanation": "Incorreta. A concavidade de uma parábola gerada por uma função do segundo grau é sempre voltada para cima ou para baixo, nunca para a esquerda ou para a direita, pois o eixo de simetria é vertical. Além disso, a posição do vértice no eixo y não é determinada apenas pelo sinal de 'a'."
+        },
+        {
+          "id": "b",
+          "text": "A concavidade é voltada para baixo e o vértice representa um ponto máximo",
+          "correct": false,
+          "explanation": "Incorreta. Quando o coeficiente 'a' é maior que zero (a > 0), a parábola tem sua concavidade voltada para cima, o que significa que o vértice é o ponto mais baixo da parábola, representando um valor mínimo da função, não um ponto máximo."
+        },
+        {
+          "id": "c",
+          "text": "A concavidade é voltada para cima e o vértice representa um ponto mínimo",
+          "correct": true,
+          "explanation": "Correta. Em uma função quadrática f(x) = ax² + bx + c, se o coeficiente 'a' é positivo (a > 0), a parábola que representa a função tem sua concavidade voltada para cima. Nesse caso, o vértice da parábola é o ponto mais baixo do gráfico, indicando o valor mínimo que a função pode assumir."
+        },
+        {
+          "id": "d",
+          "text": "A concavidade é voltada para a direita e o vértice está no eixo x",
+          "correct": false,
+          "explanation": "Incorreta. Assim como na alternativa 'c', a concavidade de uma parábola de função quadrática não é voltada para a direita. A orientação da concavidade é vertical (para cima ou para baixo), e a posição do vértice no eixo x depende de todos os coeficientes da função."
+        }
+      ],
+      "explanation": "Correta. Em uma função quadrática f(x) = ax² + bx + c, se o coeficiente 'a' é positivo (a > 0), a parábola que representa a função tem sua concavidade voltada para cima. Nesse caso, o vértice da parábola é o ponto mais baixo do gráfico, indicando o valor mínimo que a função pode assumir.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "O que representa o discriminante (delta) em uma função do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O coeficiente angular da reta que passa pelas raízes da função",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente angular da reta que passa pelas raízes da função não é determinado pelo discriminante. Além disso, se a parábola tiver duas raízes reais distintas, a reta que as conecta é uma secante, e seu coeficiente angular é calculado pela variação de y dividida pela variação de x entre os dois pontos das raízes."
+        },
+        {
+          "id": "b",
+          "text": "A inclinação da reta tangente à parábola no ponto de máximo ou mínimo",
+          "correct": false,
+          "explanation": "Incorreta. A inclinação da reta tangente à parábola em qualquer ponto é determinada pela derivada da função nesse ponto. O discriminante não se relaciona diretamente com a inclinação de retas tangentes, mas sim com a existência e tipo das raízes."
+        },
+        {
+          "id": "c",
+          "text": "A distância entre o vértice da parábola e a origem do plano cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. A distância entre o vértice da parábola e a origem do plano cartesiano é calculada de forma diferente e não é a função principal do discriminante. O discriminante está diretamente relacionado às raízes da equação."
+        },
+        {
+          "id": "d",
+          "text": "O valor que determina a quantidade e natureza das raízes da função",
+          "correct": true,
+          "explanation": "Correta. O discriminante, geralmente representado pela letra grega delta (Δ), é uma parte crucial da fórmula resolutiva de Bhaskara para equações do segundo grau (ax² + bx + c = 0). Seu valor (Δ = b² - 4ac) determina a natureza e a quantidade das raízes reais da equação: se Δ > 0, há duas raízes reais distintas; se Δ = 0, há duas raízes reais iguais (ou uma raiz real dupla); e se Δ < 0, não há raízes reais."
+        }
+      ],
+      "explanation": "Correta. O discriminante, geralmente representado pela letra grega delta (Δ), é uma parte crucial da fórmula resolutiva de Bhaskara para equações do segundo grau (ax² + bx + c = 0). Seu valor (Δ = b² - 4ac) determina a natureza e a quantidade das raízes reais da equação: se Δ > 0, há duas raízes reais distintas; se Δ = 0, há duas raízes reais iguais (ou uma raiz real dupla); e se Δ < 0, não há raízes reais.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a fórmula correta para calcular o discriminante (delta) de uma função quadrática?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Delta = 4ac - b²",
+          "correct": false,
+          "explanation": "Incorreta. Embora os mesmos termos estejam presentes, a ordem e o sinal estão incorretos. A fórmula padrão é b² - 4ac, onde o termo b² é positivo e 4ac é subtraído. Inverter a ordem e os sinais alteraria o resultado e a interpretação do discriminante."
+        },
+        {
+          "id": "b",
+          "text": "Delta = b² - 4ac",
+          "correct": true,
+          "explanation": "Correta. A fórmula universalmente aceita para calcular o discriminante (delta, Δ) de uma função quadrática na forma ax² + bx + c = 0 é Δ = b² - 4ac. Este valor é fundamental para determinar a quantidade e a natureza das raízes reais da equação, sendo parte integrante da fórmula de Bhaskara."
+        },
+        {
+          "id": "c",
+          "text": "Delta = b² + 4ac",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula correta do discriminante envolve a subtração de 4ac, não a adição. A inversão do sinal resultaria em um valor incorreto do discriminante e, consequentemente, em uma análise errada das raízes da função."
+        },
+        {
+          "id": "d",
+          "text": "Delta = a² - 4bc",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula apresenta uma combinação incorreta dos coeficientes. O termo 'a' deve ser elevado ao quadrado e multiplicado por 'c' para o discriminante, e o coeficiente 'b' é elevado ao quadrado isoladamente. A estrutura correta é b² - 4ac."
+        }
+      ],
+      "explanation": "Correta. A fórmula universalmente aceita para calcular o discriminante (delta, Δ) de uma função quadrática na forma ax² + bx + c = 0 é Δ = b² - 4ac. Este valor é fundamental para determinar a quantidade e a natureza das raízes reais da equação, sendo parte integrante da fórmula de Bhaskara.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quando o discriminante (delta) é igual a zero, qual é a característica das raízes da função quadrática?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função não possui raízes reais, não interceptando o eixo x em nenhum ponto",
+          "correct": false,
+          "explanation": "Incorreta. A ausência de raízes reais ocorre quando o discriminante (delta) é menor que zero (Δ < 0). Nesse caso, a parábola não intercepta o eixo x em nenhum ponto, permanecendo inteiramente acima ou abaixo dele. Esta alternativa não corresponde à condição de Δ = 0."
+        },
+        {
+          "id": "b",
+          "text": "A função possui infinitas raízes reais, coincidindo completamente com o eixo x",
+          "correct": false,
+          "explanation": "Incorreta. Uma função quadrática (com coeficiente 'a' diferente de zero) sempre representa uma parábola, que é uma curva bem definida e não uma linha reta. Portanto, ela não pode possuir infinitas raízes reais nem coincidir completamente com o eixo x. Isso só aconteceria se a função fosse f(x) = 0, o que não é uma função quadrática típica."
+        },
+        {
+          "id": "c",
+          "text": "A função possui duas raízes reais e distintas, interceptando o eixo x em dois pontos diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Quando o discriminante (delta) é maior que zero (Δ > 0), a função quadrática possui duas raízes reais e distintas, o que significa que a parábola intercepta o eixo x em dois pontos diferentes. Esta alternativa descreve essa situação, não a de Δ = 0."
+        },
+        {
+          "id": "d",
+          "text": "A função possui duas raízes reais e iguais, sendo a parábola tangente ao eixo x",
+          "correct": true,
+          "explanation": "Correta. Para que uma função quadrática possua duas raízes reais e iguais, o seu discriminante (Δ = b² - 4ac) deve ser exatamente igual a zero. Geometricamente, isso implica que a parábola 'toca' o eixo x em apenas um ponto, sendo, portanto, tangente a ele. As duas raízes são idênticas nesse ponto."
+        }
+      ],
+      "explanation": "Correta. Para que uma função quadrática possua duas raízes reais e iguais, o seu discriminante (Δ = b² - 4ac) deve ser exatamente igual a zero. Geometricamente, isso implica que a parábola 'toca' o eixo x em apenas um ponto, sendo, portanto, tangente a ele. As duas raízes são idênticas nesse ponto.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Considerando uma função quadrática com coeficiente 'a' negativo e discriminante positivo, qual é a configuração do gráfico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Parábola com concavidade para baixo, interceptando o eixo x em dois pontos distintos e apresentando ponto de máximo",
+          "correct": true,
+          "explanation": "Correta. Quando o coeficiente 'a' é negativo (a < 0), a parábola tem sua concavidade voltada para baixo. Isso significa que ela possui um ponto de máximo, que é o vértice. Um discriminante positivo (Δ > 0) garante que a parábola intercepta o eixo x em dois pontos distintos, pois existem duas raízes reais diferentes."
+        },
+        {
+          "id": "b",
+          "text": "Parábola com concavidade para baixo, não interceptando o eixo x e apresentando ponto de máximo",
+          "correct": false,
+          "explanation": "Incorreta. Embora a concavidade para baixo e o ponto de máximo estejam corretos para um 'a' negativo, a condição de 'não interceptar o eixo x' corresponde a um discriminante negativo (Δ < 0), e não a um discriminante positivo (Δ > 0) como especificado na pergunta."
+        },
+        {
+          "id": "c",
+          "text": "Parábola com concavidade para cima, tangente ao eixo x em um único ponto e apresentando ponto de mínimo",
+          "correct": false,
+          "explanation": "Incorreta. Concavidade para cima e ponto de mínimo são características de 'a > 0', o que contradiz a condição de 'a' negativo. Além disso, ser tangente ao eixo x em um único ponto indica que o discriminante é igual a zero (Δ = 0), e não positivo (Δ > 0)."
+        },
+        {
+          "id": "d",
+          "text": "Parábola com concavidade para cima, interceptando o eixo x em dois pontos distintos e apresentando ponto de mínimo",
+          "correct": false,
+          "explanation": "Incorreta. Uma parábola com concavidade para cima indica que o coeficiente 'a' é positivo (a > 0), e um ponto de mínimo é característico dessa orientação. No entanto, a condição dada é de coeficiente 'a' negativo."
+        }
+      ],
+      "explanation": "Correta. Quando o coeficiente 'a' é negativo (a < 0), a parábola tem sua concavidade voltada para baixo. Isso significa que ela possui um ponto de máximo, que é o vértice. Um discriminante positivo (Δ > 0) garante que a parábola intercepta o eixo x em dois pontos distintos, pois existem duas raízes reais diferentes.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a propriedade geométrica fundamental do eixo de simetria de uma parábola em relação às suas raízes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O eixo de simetria é perpendicular ao eixo x e passa pelo ponto médio entre as raízes quando elas existem",
+          "correct": true,
+          "explanation": "Correta. O eixo de simetria de uma parábola definida por uma função quadrática f(x) = ax² + bx + c é uma linha vertical, dada pela equação x = -b/(2a). Uma linha vertical é, por definição, perpendicular ao eixo x. Quando a parábola possui raízes (pontos onde intercepta o eixo x), o eixo de simetria passa exatamente pelo ponto médio entre essas raízes. Isso ocorre porque as raízes são simétricas em relação a esse eixo."
+        },
+        {
+          "id": "b",
+          "text": "O eixo de simetria é paralelo ao eixo x e passa pela raiz de maior valor absoluto",
+          "correct": false,
+          "explanation": "Incorreta. O eixo de simetria de uma parábola de função quadrática é sempre vertical, ou seja, perpendicular ao eixo x, e não paralelo a ele. Além disso, ele passa pelo ponto médio entre as raízes, e não necessariamente pela raiz de maior valor absoluto."
+        },
+        {
+          "id": "c",
+          "text": "O eixo de simetria é diagonal ao plano cartesiano e forma ângulo de 45 graus com o eixo x",
+          "correct": false,
+          "explanation": "Incorreta. O eixo de simetria de uma parábola de função quadrática é uma linha vertical, não uma diagonal. Ele não forma um ângulo de 45 graus com o eixo x, mas sim de 90 graus (sendo perpendicular)."
+        },
+        {
+          "id": "d",
+          "text": "O eixo de simetria é horizontal e passa pela origem do sistema de coordenadas",
+          "correct": false,
+          "explanation": "Incorreta. O eixo de simetria é vertical, não horizontal. Ele passa pela origem (x=0) apenas em casos específicos, quando o coeficiente 'b' da função quadrática é zero (x = -0/(2a) = 0), e não é uma propriedade geral."
+        }
+      ],
+      "explanation": "Correta. O eixo de simetria de uma parábola definida por uma função quadrática f(x) = ax² + bx + c é uma linha vertical, dada pela equação x = -b/(2a). Uma linha vertical é, por definição, perpendicular ao eixo x. Quando a parábola possui raízes (pontos onde intercepta o eixo x), o eixo de simetria passa exatamente pelo ponto médio entre essas raízes. Isso ocorre porque as raízes são simétricas em relação a esse eixo.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Quando o discriminante de uma função quadrática é negativo, considerando o conjunto dos números reais, qual é a relação entre a parábola e o eixo x?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A parábola coincide completamente com o eixo x, gerando infinitas raízes reais",
+          "correct": false,
+          "explanation": "Incorreta. Uma função quadrática, que forma uma parábola, não pode coincidir completamente com o eixo x. Isso implicaria que a função seria idêntica a zero para todos os valores de x, o que não é característica de uma função quadrática com coeficiente 'a' diferente de zero."
+        },
+        {
+          "id": "b",
+          "text": "A parábola intercepta o eixo x em dois pontos distintos, gerando duas raízes reais diferentes",
+          "correct": false,
+          "explanation": "Incorreta. A parábola intercepta o eixo x em dois pontos distintos quando o discriminante (delta) é positivo (Δ > 0), resultando em duas raízes reais diferentes. Esta situação não se aplica a um discriminante negativo."
+        },
+        {
+          "id": "c",
+          "text": "A parábola não intercepta o eixo x em nenhum ponto, não possuindo raízes reais",
+          "correct": true,
+          "explanation": "Correta. No conjunto dos números reais, quando o discriminante (Δ = b² - 4ac) de uma função quadrática é negativo (Δ < 0), não existem raízes reais. Geometricamente, isso significa que a parábola não cruza nem toca o eixo x em nenhum ponto, ela se mantém inteiramente acima ou abaixo dele."
+        },
+        {
+          "id": "d",
+          "text": "A parábola é tangente ao eixo x em um único ponto, gerando duas raízes reais iguais",
+          "correct": false,
+          "explanation": "Incorreta. A parábola é tangente ao eixo x em um único ponto quando o discriminante (delta) é igual a zero (Δ = 0), gerando duas raízes reais e iguais. Esta alternativa descreve uma condição diferente daquela em que o discriminante é negativo."
+        }
+      ],
+      "explanation": "Correta. No conjunto dos números reais, quando o discriminante (Δ = b² - 4ac) de uma função quadrática é negativo (Δ < 0), não existem raízes reais. Geometricamente, isso significa que a parábola não cruza nem toca o eixo x em nenhum ponto, ela se mantém inteiramente acima ou abaixo dele.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando uma função quadrática f(x) = 2x² - 6x + c, qual deve ser o valor de 'c' para que a função possua raízes reais e iguais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "c = 3, pois garante que o discriminante seja nulo através da relação b² = 4ac",
+          "correct": false,
+          "explanation": "Incorreta. Para a função f(x) = 2x² - 6x + c, temos a=2, b=-6. Para raízes reais e iguais, o discriminante (Δ) deve ser zero: Δ = b² - 4ac = (-6)² - 4(2)c = 36 - 8c. Se c = 3, então Δ = 36 - 8(3) = 36 - 24 = 12. Como Δ ≠ 0, c=3 não resulta em raízes reais e iguais."
+        },
+        {
+          "id": "b",
+          "text": "c = 4,5, pois garante que o discriminante seja nulo através da relação b² = 4ac",
+          "correct": true,
+          "explanation": "Correta. Para que a função f(x) = 2x² - 6x + c possua raízes reais e iguais, o seu discriminante (Δ) deve ser igual a zero. Calculando Δ = b² - 4ac, temos (-6)² - 4(2)c = 0. Isso resulta em 36 - 8c = 0, o que implica 8c = 36. Dividindo ambos os lados por 8, obtemos c = 36/8 = 9/2 = 4,5. Portanto, c = 4,5 garante que Δ = 0."
+        },
+        {
+          "id": "c",
+          "text": "c = 6, pois garante que o discriminante seja positivo através da relação b² > 4ac",
+          "correct": false,
+          "explanation": "Incorreta. Se c = 6, o discriminante seria Δ = 36 - 8(6) = 36 - 48 = -12. Um discriminante negativo indica que a função não possui raízes reais, e não que possui raízes reais e iguais ou um discriminante positivo. A afirmação sobre b² > 4ac também estaria incorreta, pois -12 não é positivo."
+        },
+        {
+          "id": "d",
+          "text": "c = 9, pois garante que o discriminante seja negativo através da relação b² < 4ac",
+          "correct": false,
+          "explanation": "Incorreta. Se c = 9, o discriminante seria Δ = 36 - 8(9) = 36 - 72 = -36. Um discriminante negativo significa que não há raízes reais. Embora c=9 de fato resulte em um discriminante negativo, a pergunta pede o valor de 'c' para raízes reais e iguais, o que exige Δ = 0."
+        }
+      ],
+      "explanation": "Correta. Para que a função f(x) = 2x² - 6x + c possua raízes reais e iguais, o seu discriminante (Δ) deve ser igual a zero. Calculando Δ = b² - 4ac, temos (-6)² - 4(2)c = 0. Isso resulta em 36 - 8c = 0, o que implica 8c = 36. Dividindo ambos os lados por 8, obtemos c = 36/8 = 9/2 = 4,5. Portanto, c = 4,5 garante que Δ = 0.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "04_308495_Função do 2º Grau.pdf",
+  "coletado_em": "2026-09-23T20:56:26"
+}

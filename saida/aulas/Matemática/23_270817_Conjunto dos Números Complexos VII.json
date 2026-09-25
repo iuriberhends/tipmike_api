@@ -1,0 +1,495 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 23,
+  "ordem_no_curso": "25.00",
+  "titulo": "Conjunto dos Números Complexos VII",
+  "codigo_aula": "270817",
+  "video_id": "UgHRHjJTFT0=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:40:30",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/UgHRHjJTFT0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/questoes?a=408692&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Complexos VII\n\n## Continuidade e organização da aula\nVamos dar continuidade à nossa matriz de matemática, em números complexos. Estamos quase finalizando. Deixei algumas questões para treinamento. Participem pelo chat: não consigo interagir o tempo todo, mas dou uma olhadinha e respondo quando possível. Vamos fechar a parte de forma algébrica e geométrica, operações e potências, e treinar com questões de concurso.\n\n## Conjugado da soma\nQuero o conjugado da soma entre os números complexos z1 = 3 − 2i e z2 = 4 + 7i. A ideia é simples: somamos primeiro e depois tiramos o conjugado.\n\nSomando parte real com parte real e parte imaginária com parte imaginária:\n- 3 com 4 dá 7;\n- −2i com +7i dá +5i.\n\nEntão z1 + z2 = 7 + 5i. Agora o conjugado repete a parte real e inverte o sinal da parte imaginária. Aqui, o “+5i” vira “−5i”. Logo, o conjugado da soma é 7 − 5i.\n\nIsso é simples, mas cai em prova.\n\n> 🎯 Dicas de prova: Para o conjugado, repita a parte real e inverta o sinal da parte imaginária.\n\nAproveitando, o módulo de z = a + bi é |z| = √(a² + b²). Vou usar isso mais à frente.\n\n## Questão 2: análise de afirmativas\nAnalise as afirmativas e marque V/F.\n\n- Afirmação 1: z = 2x + 8i + 3, com x = −4, é imaginário puro.\nSubstituindo x = −4:\nz = 2(−4) + 8i + 3 = −8 + 8i + 3 = (−5) + 8i.\n\nAqui ainda temos parte real (−5) e parte imaginária (8i). Imaginário puro é quando a parte real é zero. Portanto, essa afirmação é falsa. Se fosse apenas 8i, aí sim seria imaginário puro.\n\n- Afirmação 2: z = x + 2 + x² − 4, com x = −2, é real e não nulo.\nSubstituindo x = −2:\nz = (−2) + 2 + (−2)² − 4 = 0 + 4 − 4 = 0.\n\nÉ real, porém nulo. A afirmativa diz que é real e não nulo, então é falsa.\n\nRelembrando: imaginário puro tem parte real zero; número real (dentro dos complexos) tem parte imaginária zero.\n\n## Questão 3: divisão e forma algébrica, depois somar a + b\nDado z = (3 + i)² / (1 + i). Primeiro, vamos elevar ao quadrado, depois dividir.\n\nCalculando (3 + i)² pela distributiva:\n(3 + i)(3 + i) = 9 + 3i + 3i + i² = 9 + 6i + (−1) = 8 + 6i.\n\nEntão temos z = (8 + 6i) / (1 + i).\n\nPara dividir na forma algébrica, multiplicamos numerador e denominador pelo conjugado do denominador (1 − i):\n- Numerador: (8 + 6i)(1 − i) = 8 − 8i + 6i − 6i² = 8 − 2i + 6 = 14 − 2i, pois i² = −1.\n- Denominador: (1 + i)(1 − i) = 1 − i² = 1 − (−1) = 2.\n\nLogo, z = (14 − 2i)/2 = 7 − i. Forma algébrica: a + bi com a = 7 e b = −1. A questão pede a + b: 7 + (−1) = 6. Resposta: 6.\n\n> 🎯 Dicas de prova: Na divisão de complexos em forma algébrica, multiplique pelo conjugado do denominador para “racionalizar” e usar i² = −1.\n\n## Questão 4: inverso de z = 3 + 2i\nQueremos z^(−1), o inverso multiplicativo. Em complexos:\nz^(−1) = 1/(3 + 2i). Multiplicamos pelo conjugado do denominador (3 − 2i):\n\n- Numerador: 1 · (3 − 2i) = 3 − 2i.\n- Denominador: (3 + 2i)(3 − 2i) = 9 − (2i)² = 9 − (−4) = 13.\n\nPortanto, o inverso é (3 − 2i)/13.\n\n> 🎯 Dicas de prova: O inverso de a + bi é (a − bi)/(a² + b²).\n\nObservação: Conjugado inverte o sinal da parte imaginária; parte real permanece.\n\n## Igualdade de complexos com parâmetros\nConsidere z = 3 − 2i + (m + ni) e isso é igual a −1 + 3i. Aqui m e n são reais. Vamos organizar por partes reais e imaginárias.\n\nSomando termos semelhantes:\n- Parte real: 3 + m.\n- Parte imaginária: (−2 + n)i.\n\nIgualando a −1 + 3i:\n- Parte real: 3 + m = −1 ⇒ m = −4.\n- Parte imaginária: −2 + n = 3 ⇒ n = 5.\n\nLogo, m = −4 e n = 5, respectivamente.\n\n> 🎯 Dicas de prova: Se dois complexos são iguais, então suas partes reais são iguais entre si, e suas partes imaginárias também.\n\n## Encerramento e próximos passos\nFechamos as operações na forma algébrica: somar, subtrair, multiplicar e dividir. Vimos também:\n- Forma geométrica e afixos.\n- Módulo |z| = √(a² + b²).\n- i² = −1.\n- Potências de i repetem em ciclo de 4.\n- Conjugado: inverter o sinal da parte imaginária.\n\nSe o seu edital trouxer forma trigonométrica, aí entra a conversão para resolver potenciação e radiciação de complexos, usando De Moivre. Para muitas carreiras (tribunais, fiscais, bancárias), até aqui costuma ser o suficiente. Se o edital exigir, teremos o vídeo de forma trigonométrica. Caso contrário, finalizamos por aqui este bloco de números complexos. Bom treino e até o próximo assunto da nossa matriz de matemática!",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Complexos VII",
+    "subject": "Geografia do Brasil",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36402,
+    "createdAt": "2026-02-08T20:00:27.424Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: números complexos em forma algébrica, geométrica e trigonométrica; operações básicas (soma, subtração, multiplicação, divisão), conjugado, módulo e igualdade; técnicas para inverso e racionalização; quando usar forma trigonométrica (potenciação e radiciação).\nPrincipais pontos: \n- i² = −1 e separação entre parte real e parte imaginária\n- Divisão e inverso via conjugado do denominador\n- Classificações: real, imaginário puro; propriedades de conjugado e módulo\n\n## 1. Base / Conceitos Fundamentais\n- **Número complexo**: z = a + bi, com a ∈ ℝ (parte real) e b ∈ ℝ (parte imaginária). **i** é a unidade imaginária e satisfaz **i² = −1**.\n- **Forma algébrica**: z = a + bi.\n- **Forma geométrica**: afixo (a, b) no plano complexo.\n- **Forma trigonométrica**: z = r(cos θ + i sen θ), onde r = |z| e θ é um argumento.\n- **Conjugado**: z̄ = a − bi (troca o sinal da parte imaginária).\n- **Módulo**: |z| = √(a² + b²).\n- **Classificações**:\n  - **Real (em ℂ)**: parte imaginária = 0.\n  - **Imaginário puro**: parte real = 0.\n\n## 2. Como Funciona / Distinções\n- Soma/Subtração em ℂ: faça por componentes\n  - (a + bi) ± (c + di) = (a ± c) + (b ± d)i.\n- Multiplicação: distributiva e i² = −1\n  - (a + bi)(c + di) = (ac − bd) + (ad + bc)i.\n- Divisão (forma algébrica): multiplique numerador e denominador pelo **conjugado** do denominador\n  - (a + bi)/(c + di) = [(a + bi)(c − di)]/(c² + d²).\n- Inverso: z^(−1) = 1/z = z̄/|z|² para z ≠ 0.\n- Igualdade de complexos: A + Bi = C + Di ⇒ A = C e B = D (igualar real com real; imaginário com imaginário).\n- Formas e usos:\n  - **Algébrica**: melhor para somar/subtrair/dividir com conjugado.\n  - **Trigonométrica**: melhor para potenciação e radiciação (use De Moivre).\n  - **Geométrica**: interpretação como ponto/afixo e distância (módulo).\n\n> Dica de Prova\n> - Sempre substitua i² por −1 ao simplificar.\n> - |z| = |z̄| e z·z̄ = |z|².\n\n## 3. Aplicação Prática / Técnicas\n- Soma/Subtração:\n  - Some parte real com parte real; parte imaginária com parte imaginária.\n- Conjugado:\n  - a + bi ↔ a − bi. Útil para divisão e para obter inverso.\n- Divisão (passo a passo):\n  1) Identifique z1/z2 com z2 = c + di.\n  2) Multiplique por (c − di)/(c − di).\n  3) Distribua no numerador.\n  4) No denominador, use c² + d² (vem de (c + di)(c − di)).\n  5) Aplique i² = −1 e simplifique separando partes real e imaginária.\n- Inverso 1/(a + bi):\n  - Fórmula direta: (a − bi)/(a² + b²).\n- Módulo:\n  - |a + bi| = √(a² + b²).\n- Potenciação/Radiciação:\n  - Converter para z = r(cos θ + i sen θ).\n  - De Moivre: [r(cos θ + i sen θ)]^n = r^n[cos(nθ) + i sen(nθ)].\n  - Raízes n-ésimas: r^(1/n)[cos((θ + 2kπ)/n) + i sen((θ + 2kπ)/n)], k = 0,…,n−1.\n\n> Dica de Prova\n> - Atalho: 1/(a + bi) = (a − bi)/(a² + b²).\n> - Potências de i: reduza módulo 4 (i⁰=1, i¹=i, i²=−1, i³=−i, e repete).\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: Conjugado da soma\n  - z₁ = 3 − 2i; z₂ = 4 + 7i\n  - z₁ + z₂ = (3 + 4) + (−2i + 7i) = 7 + 5i\n  - Conjugado: (z₁ + z₂)̄ = 7 − 5i\n\n- Exemplo 2: Classificação por parâmetro\n  - Afirmação: z(a) = 2a + 8i + 13 é imaginário puro quando a = −4\n    - a = −4 ⇒ z = −8 + 8i + 13 = 5 + 8i ⇒ parte real = 5 ≠ 0 ⇒ FALSA.\n  - Afirmação: z(a) = a + 2 + a² − 4i é real e não nulo para a = −2\n    - a = −2 ⇒ z = (−2) + 2 + 4 − 4i = 4 − 4i ⇒ parte imaginária ≠ 0 ⇒ FALSA.\n\n- Exemplo 3: Divisão com conjugado e identificação de partes\n  - [(3 + i)²]/(1 + i): \n    - (3 + i)² = 9 + 6i + i² = 8 + 6i.\n    - Multiplique por (1 − i)/(1 − i):\n      - Numerador: (8 + 6i)(1 − i) = 8 − 8i + 6i − 6i² = 14 − 2i.\n      - Denominador: (1 + i)(1 − i) = 1 − i² = 2.\n    - Resultado: (14 − 2i)/2 = 7 − i ⇒ parte real = 7; parte imaginária = −1 ⇒ a + b = 6.\n\n- Exemplo 4: Inverso de Z = 3 + 2i\n  - Z^(−1) = 1/Z = (3 − 2i)/(3² + 2²) = (3 − 2i)/13.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - “Imaginário puro” exige parte real = 0; “real (em ℂ)” exige parte imaginária = 0.\n> - “Conjugado” não é “inverso”. Conjugado: a − bi; inverso: (a − bi)/(a² + b²).\n> - Em divisões, SEMPRE racionalize com o conjugado do denominador; do contrário, a forma algébrica sai errada.\n> - Em igualdade de complexos, iguale coeficientes: real com real; imaginário com imaginário (o i não “some”, você iguala os coeficientes).\n> - i² deve ser trocado por −1; esquecer isso derruba sinal e valor.\n> - Argumento tem infinitas determinações (θ + 2kπ). Em radiciação, isso gera raízes distintas: não perca soluções.\n> - |z| = |z̄| e z·z̄ = |z|². Não confundir com a + b ou outras somas.\n\nComparações essenciais (X vs Y):\n- Conjugado vs Inverso:\n  - Conjugado: z̄ = a − bi.\n  - Inverso: z^(−1) = z̄/|z|².\n- Forma algébrica vs trigonométrica:\n  - Algébrica: ideal para somar, subtrair, dividir com conjugado.\n  - Trigonométrica: ideal para potências e raízes (De Moivre).\n\n> Dica de Prova\n> - Ordem prática para divisões: expandir → substituir i² = −1 → somar termos semelhantes → multiplicar pelo conjugado do denominador → simplificar → identificar partes real/imaginária.",
+  "resumo_bolso": "# Conjunto dos Números Complexos VII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Número complexo**: z = a + bi, com a ∈ ℝ (parte real) e b ∈ ℝ (parte imaginária); **i² = −1**.\n* **Forma algébrica**: z = a + bi.\n* **Forma geométrica**: afixo (a, b) no plano complexo; distância à origem é o módulo.\n* **Forma trigonométrica**: z = r(cos θ + i sen θ), onde r = |z| e θ é um argumento.\n* **Conjugado**: z̄ = a − bi (troca o sinal da parte imaginária).\n* **Módulo**: |z| = √(a² + b²); |z| = |z̄|.\n* **Classificação**:\n  * **Real (em ℂ)**: parte imaginária = 0.\n  * **Imaginário puro**: parte real = 0.\n* **Igualdade de complexos**: A + Bi = C + Di ⇒ A = C e B = D (igualar real com real; imaginário com imaginário).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Conjugado vs Inverso\n\n| Aspecto | Conjugado z̄ | Inverso z⁻¹ |\n| --- | --- | --- |\n| **Definição** | a − bi | 1/z = z̄/|z|² = (a − bi)/(a² + b²) |\n| **Uso principal** | Divisão, obtenção do inverso, racionalização | Resolver 1/z, frações com denominador complexo |\n\n### Forma Algébrica vs Forma Trigonométrica\n\n| Aspecto | Forma Algébrica | Forma Trigonométrica |\n| --- | --- | --- |\n| **Expressão** | a + bi | r(cos θ + i sen θ) |\n| **Operações mais indicadas** | Soma, subtração, divisão com conjugado | Potenciação e radiciação (De Moivre) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Operações básicas**\n\n* **Soma/Subtração**:  \n  (a + bi) ± (c + di) = (a ± c) + (b ± d)i.\n\n* **Multiplicação** (distributiva com i² = −1):  \n  (a + bi)(c + di) = (ac − bd) + (ad + bc)i.\n\n**2. Divisão em forma algébrica**\n\n* **Regra**:  \n  (a + bi)/(c + di) = [(a + bi)(c − di)]/(c² + d²).\n* **Origem do denominador**: (c + di)(c − di) = c² + d².\n\n**3. Inverso de número complexo**\n\n* **Regra geral** (z ≠ 0):  \n  z⁻¹ = 1/z = z̄/|z|².\n* **Caso z = a + bi**:  \n  1/(a + bi) = (a − bi)/(a² + b²).\n\n**4. Módulo e produto com conjugado**\n\n* **Módulo**: |a + bi| = √(a² + b²).\n* **Propriedades**: |z| = |z̄| e z·z̄ = |z|².\n\n**5. Potências de i**\n\n* **Ciclo**: i⁰ = 1, i¹ = i, i² = −1, i³ = −i, e repete.\n* **Regra prática**: reduza o expoente módulo 4.\n\n**6. Forma trigonométrica, De Moivre e raízes**\n\n* **Conversão**: z = r(cos θ + i sen θ), com r = |z|.\n* **De Moivre (potência)**:  \n  [r(cos θ + i sen θ)]ⁿ = rⁿ[cos(nθ) + i sen(nθ)].\n* **Raízes n-ésimas**:  \n  r^(1/n)[cos((θ + 2kπ)/n) + i sen((θ + 2kπ)/n)], k = 0,…,n−1.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Imaginário puro” exige parte real = 0; “real (em ℂ)” exige parte imaginária = 0.\n2. “Conjugado” não é “inverso”: conjugado é a − bi; inverso é z̄/|z|² = (a − bi)/(a² + b²).\n3. Em divisões, racionalize com o conjugado do denominador; caso contrário, a forma algébrica sai errada.\n4. Em igualdade de complexos, iguale coeficientes: real com real; imaginário com imaginário.\n5. i² deve ser trocado por −1; esquecer isso altera sinais e valores.\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar z = a + bi, com a parte real e a parte imaginária, e usar i² = −1?\n* Sei somar, subtrair e multiplicar complexos em forma algébrica?\n* Sei fazer divisão em ℂ multiplicando pelo conjugado do denominador?\n* Sei obter o inverso 1/(a + bi) usando (a − bi)/(a² + b²)?\n* Lembro que |z| = √(a² + b²), |z| = |z̄| e z·z̄ = |z|²?\n* Sei classificar números como reais em ℂ (parte imaginária = 0) ou imaginários puros (parte real = 0)?\n* Sei usar a forma trigonométrica e a fórmula de De Moivre para potências e raízes?\n* Lembro de reduzir expoentes de i módulo 4?\n* Em igualdade de complexos, estou igualando parte real com parte real e parte imaginária com parte imaginária?",
+  "mapa_mental": "# 🧮 Números Complexos VII\n## 🎯 Estrutura do Número Complexo\n### 💡 Definição básica\n- z = a + bi\n- a parte real\n- b parte imaginária\n- i unidade imaginária\n- i² = −1\n### 🧭 Formas principais\n- Forma algébrica\n- Forma geométrica\n- Forma trigonométrica\n- Afixo (a, b)\n- Plano complexo\n### 🧱 Classificações\n- Número real\n- Imaginário puro\n- Complexo não real\n- Zero complexo\n- Igualdade de complexos\n\n## 🧮 Operações em Forma Algébrica\n### ➕ Soma e subtração\n- Componentes reais\n- Componentes imaginários\n- Agrupar semelhantes\n- Manter forma a + bi\n- Igualdade termo a termo\n### ✖️ Multiplicação\n- Propriedade distributiva\n- Produto (a + bi)(c + di)\n- Uso de i² = −1\n- Separar partes\n- Simplificação final\n### ➗ Divisão e inverso\n- Conjugado denominador\n- Racionalização c² + d²\n- Fórmula divisão\n- Inverso z⁻¹ = z̄/|z|²\n- 1/(a + bi) padrão\n\n## 📊 Conjugado, Módulo e Propriedades\n### 🔁 Conjugado complexo\n- z̄ = a − bi\n- Mesma parte real\n- Imaginária oposta\n- Produto z·z̄\n- Conjugado da soma\n### 📏 Módulo\n- |z| = √(a² + b²)\n- Distância à origem\n- Módulo não negativo\n- |z| = |z̄|\n- z·z̄ = |z|²\n### ⚠️ Erros conceituais\n- Conjugado ≠ inverso\n- Real ≠ imaginário puro\n- Esquecer i² = −1\n- Igualdade coeficientes\n- Forma algébrica final\n\n## 📐 Forma Trigonométrica e Potências\n### 📐 Forma trigonométrica\n- z = r(cos θ + i sen θ)\n- r módulo do número\n- θ argumento principal\n- Argumentos múltiplos\n- Representação polar\n### 🔢 Potenciação (De Moivre)\n- zⁿ em trigonométrica\n- rⁿ módulo elevado\n- nθ argumento\n- Fórmula De Moivre\n- Potências de i ciclo 4\n### 🌱 Radiciação complexa\n- Raízes n-ésimas\n- r^(1/n) módulo\n- (θ + 2kπ)/n\n- k = 0,…,n−1\n- Raízes distintas no plano",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Conjugado e Módulo",
+      "description": "Conjugado e Módulo — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se obtém o conjugado de um número complexo na forma algébrica?",
+          "back": "Repete a parte real e inverte o sinal da parte imaginária.",
+          "hint": "Pense na simetria em relação ao eixo real",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "conjugado"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Como o conjugado se relaciona com a soma de dois números complexos?",
+          "back": "O conjugado da soma é igual à soma dos conjugados dos números complexos.",
+          "hint": "Refere-se à distributividade da operação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a expressão do módulo de z = a + bi?",
+          "back": "|z| = √(a² + b²)",
+          "hint": "Relacionado ao Teorema de Pitágoras",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "modulo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual propriedade do módulo permite relacioná-lo ao conjugado de um complexo?",
+          "back": "O quadrado do módulo de um número complexo é igual ao produto desse número pelo seu conjugado.",
+          "hint": "Envolve o produto de z por seu conjugado",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "modulo"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Operações Algébricas",
+      "description": "Operações Algébricas — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual valor é atribuído ao quadrado da unidade imaginária?",
+          "back": "Menos um.",
+          "hint": "A base da definição de números complexos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "unidade-imaginaria"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Como são combinadas as partes reais e imaginárias em uma soma complexa?",
+          "back": "Soma-se parte real com parte real e parte imaginária com parte imaginária.",
+          "hint": "Pense em termos de vetores ou componentes",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "adicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual ciclo caracteriza as potências sucessivas da unidade imaginária?",
+          "back": "Um ciclo de quatro potências sucessivas.",
+          "hint": "O valor se repete periodicamente",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "potenciacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Quais operações são realizadas diretamente na forma algébrica dos complexos?",
+          "back": "Adição, subtração, multiplicação e divisão.",
+          "hint": "Operações básicas da aritmética",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "operacoes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Classificação Complexa",
+      "description": "Classificação Complexa — 2 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual condição caracteriza um número complexo puramente imaginário?",
+          "back": "Quando possui apenas a parte imaginária e a parte real é zero.",
+          "hint": "O afixo está sobre o eixo vertical",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Como identificar a parte real e a parte imaginária de a + bi?",
+          "back": "Em a + bi, a é a parte real e b é a parte imaginária.",
+          "hint": "Identificação dos coeficientes da forma a+bi",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "forma-algebrica"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Divisão e Inversos",
+      "description": "Divisão e Inversos — 2 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Qual estratégia transforma a divisão de complexos em uma expressão algébrica?",
+          "back": "Multiplicar o numerador e o denominador pelo conjugado do denominador.",
+          "hint": "Processo similar à racionalização de radicais",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "divisao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Como se representa o inverso multiplicativo de um número complexo não nulo?",
+          "back": "z elevado a menos um (z⁻¹)",
+          "hint": "Notação de expoente negativo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "inverso"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Igualdade Complexa",
+      "description": "Igualdade Complexa — 1 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Como são comparados dois números complexos apresentados como iguais?",
+          "back": "Iguala-se a parte real com a parte real e a parte imaginária com a parte imaginária.",
+          "hint": "Princípio da identidade de complexos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "igualdade"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-6",
+      "title": "Forma Trigonométrica",
+      "description": "Forma Trigonométrica — 1 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Qual transformação é necessária para efetuar potenciação e radiciação de complexos?",
+          "back": "Transformar o número complexo na forma trigonométrica.",
+          "hint": "Facilita o uso da fórmula de De Moivre",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "forma-trigonometrica"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em números complexos, qual é a definição de um número imaginário puro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É um número complexo que possui apenas parte real, sem componente imaginária",
+          "correct": false,
+          "explanation": "Incorreta. Um número complexo que possui apenas parte real (ou seja, a parte imaginária é zero) é classificado como um número real, não um número imaginário puro. Por exemplo, o número 5 é um número real, que pode ser escrito como 5 + 0i."
+        },
+        {
+          "id": "b",
+          "text": "É um número complexo que possui apenas parte imaginária, com a parte real igual a zero",
+          "correct": true,
+          "explanation": "Correta. Um número imaginário puro é aquele em que a parte real é igual a zero e a parte imaginária é diferente de zero. Ele é expresso na forma bi, onde b é um número real diferente de zero e 'i' é a unidade imaginária. Por exemplo, 3i ou -7i são números imaginários puros."
+        },
+        {
+          "id": "c",
+          "text": "É um número complexo que resulta da multiplicação de dois números reais distintos",
+          "correct": false,
+          "explanation": "Incorreta. O produto de dois números reais distintos sempre resultará em um número real. Um número imaginário puro, por definição, possui uma componente imaginária não nula e uma componente real nula, o que não é o resultado direto da multiplicação de dois números reais."
+        },
+        {
+          "id": "d",
+          "text": "É um número complexo cuja parte real e imaginária possuem o mesmo valor absoluto",
+          "correct": false,
+          "explanation": "Incorreta. Um número complexo com partes real e imaginária de mesmo valor absoluto (como 3 + 3i ou -5 - 5i) é um número complexo geral, mas não é a definição de um número imaginário puro. Para ser imaginário puro, a parte real deve ser zero."
+        }
+      ],
+      "explanation": "Correta. Um número imaginário puro é aquele em que a parte real é igual a zero e a parte imaginária é diferente de zero. Ele é expresso na forma bi, onde b é um número real diferente de zero e 'i' é a unidade imaginária. Por exemplo, 3i ou -7i são números imaginários puros.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o procedimento correto para obter o conjugado de um número complexo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Eleva-se o número complexo ao quadrado e extrai-se a raiz do resultado",
+          "correct": false,
+          "explanation": "Incorreta. Elevar um número complexo ao quadrado e depois extrair a raiz do resultado não é o procedimento para encontrar o conjugado. Essa operação geralmente leva ao número original (ou a um de seus valores de raiz), ou a uma expressão diferente, dependendo da raiz considerada, e não ao conjugado."
+        },
+        {
+          "id": "b",
+          "text": "Mantém-se a parte real e inverte-se o sinal da parte imaginária",
+          "correct": true,
+          "explanation": "Correta. O conjugado de um número complexo z = a + bi é obtido mantendo-se a parte real (a) inalterada e invertendo o sinal da parte imaginária (bi), resultando em z̄ = a - bi. Este é um conceito fundamental para operações como a divisão de números complexos."
+        },
+        {
+          "id": "c",
+          "text": "Multiplica-se tanto a parte real quanto a imaginária por -1",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar tanto a parte real quanto a imaginária por -1 (por exemplo, de a + bi para -a - bi) resulta no número complexo oposto, e não no seu conjugado. O conjugado de 'a + bi' é 'a - bi'."
+        },
+        {
+          "id": "d",
+          "text": "Inverte-se o sinal da parte real mantendo a parte imaginária inalterada",
+          "correct": false,
+          "explanation": "Incorreta. Inverter o sinal da parte real de um número complexo (por exemplo, de a + bi para -a + bi) resulta no oposto da parte real, não no conjugado. O conjugado foca na parte imaginária."
+        }
+      ],
+      "explanation": "Correta. O conjugado de um número complexo z = a + bi é obtido mantendo-se a parte real (a) inalterada e invertendo o sinal da parte imaginária (bi), resultando em z̄ = a - bi. Este é um conceito fundamental para operações como a divisão de números complexos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Segundo a definição fundamental dos números complexos, qual é o valor de i²?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "i²  = 2i",
+          "correct": false,
+          "explanation": "Incorreta. O valor de i² é um número real (-1), enquanto 2i é um número imaginário puro. Portanto, i² não pode ser igual a 2i. Essa alternativa confunde a natureza do quadrado da unidade imaginária com um múltiplo da própria unidade imaginária."
+        },
+        {
+          "id": "b",
+          "text": "i²  = 0",
+          "correct": false,
+          "explanation": "Incorreta. Se i² fosse igual a 0, 'i' seria igual a 0, que é um número real. Isso anularia a distinção entre números reais e imaginários, e a teoria dos números complexos como a conhecemos não existiria."
+        },
+        {
+          "id": "c",
+          "text": "i²  = 1",
+          "correct": false,
+          "explanation": "Incorreta. Se i² fosse igual a 1, a unidade imaginária 'i' seria igual a 1 ou -1, que são números reais. Isso contradiria a própria definição de 'i' como um número não real, essencial para estender o conjunto dos números reais aos complexos."
+        },
+        {
+          "id": "d",
+          "text": "i²  = -1",
+          "correct": true,
+          "explanation": "Correta. A unidade imaginária 'i' é definida como a raiz quadrada de -1, ou seja, i = √(-1). Consequentemente, ao elevar 'i' ao quadrado, obtemos i² = (√(-1))² = -1. Esta é a propriedade fundamental que permite a existência e o estudo dos números complexos."
+        }
+      ],
+      "explanation": "Correta. A unidade imaginária 'i' é definida como a raiz quadrada de -1, ou seja, i = √(-1). Consequentemente, ao elevar 'i' ao quadrado, obtemos i² = (√(-1))² = -1. Esta é a propriedade fundamental que permite a existência e o estudo dos números complexos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao realizar a divisão de números complexos na forma algébrica, qual é o procedimento matemático necessário?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplica-se o numerador e o denominador pelo conjugado do denominador para racionalizar a expressão",
+          "correct": true,
+          "explanation": "Correta. Para dividir números complexos na forma algébrica (z1/z2), multiplica-se tanto o numerador quanto o denominador pelo conjugado do denominador. Este processo é análogo à racionalização de denominadores em expressões com radicais, transformando o denominador complexo em um número real, o que permite separar a parte real e imaginária do quociente."
+        },
+        {
+          "id": "b",
+          "text": "Divide-se diretamente a parte real do numerador pela parte real do denominador e a parte imaginária do numerador pela parte imaginária do denominador",
+          "correct": false,
+          "explanation": "Incorreta. A divisão direta das partes real e imaginária não é uma operação válida para números complexos. Essa abordagem ignoraria a natureza combinada das partes real e imaginária, levando a resultados incorretos. Por exemplo, (1+i)/(1-i) não é (1/1) + i(1/(-1))."
+        },
+        {
+          "id": "c",
+          "text": "Converte-se ambos os números para a forma polar antes de realizar qualquer operação de divisão",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível realizar a divisão de números complexos convertendo-os para a forma polar (onde se dividem os módulos e subtraem os argumentos), a questão se refere ao procedimento na *forma algébrica*. A conversão para a forma polar é um método alternativo, mas não o procedimento direto na forma algébrica."
+        },
+        {
+          "id": "d",
+          "text": "Multiplica-se o numerador e o denominador pelo conjugado do numerador para eliminar a parte imaginária",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o numerador e o denominador pelo conjugado do *numerador* eliminaria a parte imaginária do numerador, mas não do denominador. O objetivo na divisão é transformar o denominador em um número real para simplificar a expressão."
+        }
+      ],
+      "explanation": "Correta. Para dividir números complexos na forma algébrica (z1/z2), multiplica-se tanto o numerador quanto o denominador pelo conjugado do denominador. Este processo é análogo à racionalização de denominadores em expressões com radicais, transformando o denominador complexo em um número real, o que permite separar a parte real e imaginária do quociente.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Quando dois números complexos são iguais, qual relação deve necessariamente existir entre suas componentes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O produto das partes reais deve ser igual ao produto das partes imaginárias",
+          "correct": false,
+          "explanation": "Incorreta. A igualdade do produto das partes reais com o produto das partes imaginárias também não é uma condição suficiente para a igualdade de números complexos. Por exemplo, 2 + 6i e 3 + 4i não são iguais, mas o produto de suas partes (2*6=12 e 3*4=12) é o mesmo."
+        },
+        {
+          "id": "b",
+          "text": "A soma das partes reais deve ser igual à soma das partes imaginárias de ambos os números",
+          "correct": false,
+          "explanation": "Incorreta. A igualdade da soma das partes reais com a soma das partes imaginárias não garante a igualdade dos números complexos. Por exemplo, 1 + 5i e 2 + 4i têm a soma das partes (1+5=6 e 2+4=6) iguais, mas os números complexos são diferentes."
+        },
+        {
+          "id": "c",
+          "text": "A parte real de um deve ser igual à parte real do outro, e a parte imaginária de um deve ser igual à parte imaginária do outro",
+          "correct": true,
+          "explanation": "Correta. Dois números complexos, z1 = a + bi e z2 = c + di, são considerados iguais se, e somente se, suas partes reais são iguais (a = c) e suas partes imaginárias são iguais (b = d). Esta é a definição fundamental de igualdade para números complexos."
+        },
+        {
+          "id": "d",
+          "text": "Os módulos dos dois números complexos devem ser iguais, independentemente de suas componentes individuais",
+          "correct": false,
+          "explanation": "Incorreta. A igualdade dos módulos dos dois números complexos (a distância do número à origem no plano complexo) é uma condição necessária, mas não suficiente para que os números complexos sejam iguais. Por exemplo, 3 + 4i e 3 - 4i possuem o mesmo módulo (5), mas são números complexos distintos."
+        }
+      ],
+      "explanation": "Correta. Dois números complexos, z1 = a + bi e z2 = c + di, são considerados iguais se, e somente se, suas partes reais são iguais (a = c) e suas partes imaginárias são iguais (b = d). Esta é a definição fundamental de igualdade para números complexos.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao realizar operações com números complexos na forma algébrica, qual propriedade deve ser aplicada na multiplicação de (a + bi)(c + di)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplica-se a propriedade distributiva, multiplicando cada termo do primeiro fator por cada termo do segundo fator, lembrando que i² = -1",
+          "correct": true,
+          "explanation": "Correta. Para multiplicar números complexos na forma algébrica (a + bi)(c + di), aplica-se a propriedade distributiva, ou seja, cada termo do primeiro fator multiplica cada termo do segundo fator. O resultado é então simplificado utilizando a definição fundamental da unidade imaginária, onde i² é igual a -1, o que permite combinar os termos e expressar o produto final na forma a + bi."
+        },
+        {
+          "id": "b",
+          "text": "Aplica-se a propriedade associativa, agrupando primeiro os termos reais e depois os imaginários antes de multiplicar",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade associativa refere-se à maneira como os termos são agrupados em uma sequência de operações, não ao método fundamental de como se realiza a multiplicação de dois números complexos. A separação e agrupamento de partes reais e imaginárias ocorrem na etapa de simplificação do produto, após a aplicação da propriedade distributiva."
+        },
+        {
+          "id": "c",
+          "text": "Aplica-se a regra do produto de módulos, multiplicando os módulos e somando os argumentos dos números complexos",
+          "correct": false,
+          "explanation": "Incorreta. A regra de multiplicar os módulos e somar os argumentos é uma propriedade válida e útil para a multiplicação de números complexos, mas ela é aplicada quando os números estão representados na forma polar (ou trigonométrica), e não na forma algébrica (a + bi), conforme explicitamente solicitado na questão. Na forma algébrica, o método é a aplicação da propriedade distributiva."
+        },
+        {
+          "id": "d",
+          "text": "Aplica-se a propriedade comutativa invertendo a ordem dos fatores e somando os resultados parciais",
+          "correct": false,
+          "explanation": "Incorreta. Embora a multiplicação de números complexos seja comutativa (ou seja, a ordem dos fatores não altera o produto), a propriedade comutativa não descreve o processo de como a multiplicação é realizada. A afirmação de \"somar os resultados parciais\" de ordens invertidas não corresponde ao método correto para efetuar a multiplicação de complexos."
+        }
+      ],
+      "explanation": "Correta. Para multiplicar números complexos na forma algébrica (a + bi)(c + di), aplica-se a propriedade distributiva, ou seja, cada termo do primeiro fator multiplica cada termo do segundo fator. O resultado é então simplificado utilizando a definição fundamental da unidade imaginária, onde i² é igual a -1, o que permite combinar os termos e expressar o produto final na forma a + bi.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "23_270817_Conjunto dos Números Complexos VII.pdf",
+  "coletado_em": "2026-09-23T20:54:20"
+}

@@ -1,0 +1,583 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 11,
+  "ordem_no_curso": "81.00",
+  "titulo": "Logaritmo e Funções Logarítmicas II",
+  "codigo_aula": "309596",
+  "video_id": "6q8AZ5UjPac=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:45:52",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/6q8AZ5UjPac%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403851%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Logaritmo e Funções Logarítmicas II\n\n## Abertura e contexto da aula\nVamos continuar com equações e logaritmos. Show de bola. Prestem atenção, que tem coisa muito boa para a gente trabalhar com a cabeça.\n\n## Enunciado e objetivo da questão de domínio\nQuestão 3. O intervalo de números reais que contém todos os pontos do domínio da função logarítmica. Olha só: queremos o domínio da função. Então, para a função logarítmica do tipo log na base (x + 1), precisamos das condições de existência.\n\nSe a função envolve logaritmo, ela tem níveis, conceitos e representações. Isso é importante. Vamos continuar com a ideia de “domínio da função”.\n\n## Condições de existência do logaritmo\nO intervalo de reais deve conter todos os pontos do domínio da função logarítmica. A base é dada e o argumento é dado. O domínio depende:\n- do argumento do logaritmo ser maior que zero;\n- e da base ser maior que zero e diferente de 1.\n\nEu quero saber quem é o x, porque eu quero o domínio. Existem condições: o argumento tem que existir, a base tem que existir. Quando pedem o domínio da função, independentemente de qual seja a função, precisamos atender às condições de existência do logaritmo.\n\nBom, a nossa proposta: esse é o nosso mundo. O x é o nosso foco. O que “existe” se encontra no logaritmando (o argumento) e também se encontra na base. Como eu acho esse “vestígio”? Vamos às condições de existência:\n\n- A base do logaritmo tem que ser maior que zero.\n- A base tem que ser diferente de 1.\n- O logaritmando (argumento) tem que ser maior que zero.\n\nA base aqui é (x + 1). Então:\n- x + 1 > 0\n- x + 1 ≠ 1\n\nE, além disso, o logaritmando — a expressão dentro do log — também precisa ser maior que zero. A questão pede o domínio da função. Quais são os valores que x pode receber? Os valores que x pode receber são de acordo com a condição de existência do logaritmo.\n\n## Aplicando as condições à expressão\nVamos organizar:\n\n1) x + 1 > 0\n2) x + 1 ≠ 1\n\nAgora, além da base, olhamos o logaritmando. Se o logaritmando for uma expressão quadrática, temos uma inequação do segundo grau do tipo: −x² + 6 > 0 (exemplo do que apareceu na base/argumento). O que estamos fazendo? Estamos procurando x, porque queremos o domínio. Se o argumento é −x² + 6, precisamos que seja maior que 0 para existir logaritmo.\n\nEntão, vamos tratar como inequação do segundo grau:\n−x² + 6 > 0\n\n## Resolvendo a inequação do segundo grau\nQuando temos inequação do segundo grau, a técnica:\n- Igualamos a zero para achar as raízes da equação associada.\n- Depois analisamos o sinal pela parábola.\n\nEquação associada: −x² + 6 = 0\nx² = 6\nx = −√6 e x = √6\n\nA parábola de −x² + 6 é voltada para baixo (concavidade para baixo). Onde ela é positiva? Entre as raízes. Então:\n−√6 < x < √6\n\nIsso nos dá a condição do logaritmando > 0.\n\n## Recapitulando e combinando com a condição da base\nTemos:\n- Do logaritmando: −√6 < x < √6\n- Da base: x + 1 > 0 → x > −1\n- Da base: x + 1 ≠ 1 → x ≠ 0\n\nAgora fazemos a interseção dessas informações, porque tudo deve acontecer ao mesmo tempo.\n\nIntervalos:\n- Do logaritmando: (−√6, √6)\n- Da base: (−1, ∞)\n- Exclusão: x ≠ 0\n\nInterseção principal entre (−√6, √6) e (−1, ∞) é (−1, √6). E lembrando: x ≠ 0.\n\nLogo, o domínio fica:\n(−1, 0) ∪ (0, √6)\n\nO professor, durante a fala, também ilustrou com valores de referência como −3, −1, 0, 2 para marcar a linha numérica e reforçar: queremos a parte onde a expressão é positiva e respeita as condições da base. A ideia é: maior que −1, menor que a raiz positiva, e não pode ser zero.\n\n> 🎯 **Dicas de prova:** Domínio de função logarítmica exige:\n> - Logaritmando > 0\n> - Base > 0\n> - Base ≠ 1\n> Combine as condições por interseção.\n\n## Observação sobre técnica de inequações\nQuando você se depara com inequação do segundo grau:\n- Acha as raízes pela equação associada (igual a zero).\n- Usa a concavidade para decidir onde é positivo/negativo.\n- Se for “> 0”, escolhe as regiões onde a parábola está acima do eixo; se for “< 0”, escolhe onde está abaixo.\n- Depois, combina com as demais restrições (como base do log).\n\n## Conclusão do exemplo de domínio\nNosso domínio exemplificado: x maior que −1 e menor que √6, com a ressalva de que x não pode ser 0. Em notação de intervalo: (−1, 0) ∪ (0, √6). Maravilha de resposta.\n\n## Transição para questões de concursos\nBeleza dessa questão. Outra questão: provas administrativas, concursos de 2018, provas gerais. Esse tipo de tema cai bastante em concursos e também em universidades. É conteúdo de base, então reforcem logaritmos, inequações e segundo grau.\n\n> 🎯 **Dicas de prova:** Em concursos e vestibulares, domínio de funções logarítmicas e inequações de segundo grau aparecem com frequência. Saber resolver e intersectar condições é fundamental.\n\n## Motivação para revisar propriedades\nSe você não está seguro nas condições, revisa: logaritmando > 0; base > 0; base ≠ 1. Em matemática financeira, por exemplo, propriedades de logaritmo são úteis para trabalhar com juros compostos. O modelo costuma ser algo como M = C·(1 + i)^n; quando você quer isolar expoentes, você “desce” com logaritmo usando propriedades.\n\n## Propriedades fundamentais de logaritmos\n- log_b(1) = 0, para base b > 0 e b ≠ 1. Por quê? Porque b^0 = 1.\n- Quando as bases são iguais e os logaritmandos são iguais, os logaritmos são iguais.\n- Produto vira soma: log_b(a·c) = log_b(a) + log_b(c), com a > 0, c > 0, b > 0 e b ≠ 1.\n- Divisão vira subtração: log_b(a/c) = log_b(a) − log_b(c).\n- Potência do logaritmando: log_b(a^k) = k·log_b(a).\n- Mudança de base: log_b(a) = log_c(a) / log_c(b), com b, c > 0, b ≠ 1, c ≠ 1.\n- Se a base do log é igual à base da potência dentro do log, a potência “sai” diretamente pelo expoente, respeitando as condições.\n\nEssas propriedades são usadas para simplificar expressões e resolver equações exponenciais/logarítmicas, e também para isolar n em modelos de juros compostos.\n\n> 🎯 **Dicas de prova:** Produto vira soma, divisão vira subtração, potência “desce” multiplicando. Mudança de base cai bastante.\n\n## Exemplos conceituais com base e potência\n- Se temos log_b(b^k), isso é k, porque b^k é o número cujo log na base b é k.\n- Se as bases são iguais em ambos os lados de uma equação exponencial, podemos igualar os expoentes.\n- Em expressões com potências e logaritmos de mesma base, use correspondência direta para simplificar.\n\n## Observações finais e reforço\nGuardem essas propriedades. É provocação para vocês praticarem: quando tiver potência e a base da potência for a mesma base do logaritmo, há simplificações diretas. E quando não forem as mesmas, a gente usa mudança de base ou transforma produtos e divisões em soma e subtração de logaritmos.\n\n> 🎯 **Dicas de prova:** Domínio + propriedades básicas + inequações do segundo grau formam o kit essencial para resolver rapidamente questões de funções logarítmicas em exames e concursos.",
+  "transcricao_meta": {
+    "title": "Logaritmo e Funções Logarítmicas II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 31204,
+    "createdAt": "2026-02-05T23:58:22.651Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: domínio e condições de existência de logaritmos (com base variável), propriedades fundamentais, distinções entre operações, resolução de inequações do 2º grau ligadas ao domínio, aplicação em equações e em juros compostos, e pegadinhas clássicas.\nPrincipais pontos: \n- Base do logaritmo: maior que zero e diferente de 1; argumento: maior que zero.\n- Inequações do 2º grau: use raízes e sinal da parábola para determinar intervalos.\n- Propriedades: produto, quociente, potência, mudança de base e igualdade de logs com mesma base.\n\n## 1. Base / Conceitos Fundamentais\n- **Logaritmo**: log_b(a) = c ⇔ b^c = a.\n- **Condições de existência (simultâneas)**:\n  - **Base** b: b > 0 e b ≠ 1 (não pode ser zero; “base ... tem que ser maior que zero” e “tem que ser diferente” de 1).\n  - **Argumento** a: a > 0 (“maior que zero”).\n- **Função logarítmica**: f(x) = log_b(x), com b fixo, ou f(x) = log_{g(x)}(h(x)) com base variável (atenção redobrada ao domínio).\n- **Domínio**: conjunto de x que satisfazem, ao mesmo tempo, as condições da base e do argumento.\n> Dica de Prova: “Tudo ao mesmo tempo” = interseção dos conjuntos. Ex.: base > 0 e diferente de 1 AND argumento > 0.\n\n## 2. Como Funciona / Distinções\n- **Igualdade de logaritmos (mesma base)**: log_b(A) = log_b(B) ⇒ A = B, com A > 0, B > 0, b > 0, b ≠ 1.\n- **Produto vs Soma**:\n  - log_b(xy) = log_b(x) + log_b(y)\n  - Não existe regra para log_b(x + y). \n- **Quociente**: log_b(x/y) = log_b(x) − log_b(y) (x > 0, y > 0).\n- **Potência no argumento**: log_b(x^k) = k·log_b(x).\n- **Casos imediatos**:\n  - log_b(b) = 1; log_b(1) = 0.\n  - log_b(b^k) = k.\n- **Mudança de base**: log_b(a) = log_c(a)/log_c(b).\n- **Sinal da função logarítmica** e monotonicidade:\n  - Se b > 1: função crescente.\n  - Se 0 < b < 1: função decrescente.\n> Dica de Prova: Em desigualdades logarítmicas, ao “tirar o log”, respeite a monotonicidade da base. Se 0 < b < 1, o sentido da desigualdade inverte.\n\n## 3. Aplicação Prática / Técnicas\n- **Domínio com base variável** (ex.: f(x) = log_{x+1}(−x² + 6x − 5)):\n  1) Base: x + 1 > 0 e x + 1 ≠ 1 ⇒ x > −1 e x ≠ 0.\n  2) Argumento: −x² + 6x − 5 > 0 ⇒ inequação do 2º grau.\n  3) Resolva a inequação: encontre raízes via “= 0”, analise o sinal pela parábola.\n  4) Interseção: combine as restrições da base e do argumento.\n  5) Escreva o domínio em intervalo(s), observando se inclui/exclui extremos.\n- **Inequação do 2º grau (macete rápido)**:\n  - Faça “= 0”, ache as **raízes**.\n  - **Sinal da parábola**:\n    - a > 0 (abre para cima): > 0 fora das raízes; < 0 entre as raízes.\n    - a < 0 (abre para baixo): > 0 entre as raízes; < 0 fora das raízes.\n  - “≥ 0”/“≤ 0” inclui raízes; “> 0”/“< 0” exclui.\n> Dica de Prova: “Maior” costuma pedir a parte positiva do gráfico; lembre da regra “entre” vs “fora” conforme o sinal de a.\n- **Equações logarítmicas**:\n  - log_b(A) = c ⇒ A = b^c (cheque A > 0, b > 0, b ≠ 1).\n  - log_b(A) = log_b(B) ⇒ A = B (após checar domínios).\n- **Juros compostos**:\n  - M = C·(1 + i)^n.\n  - Isolar n: n = log(M/C)/log(1 + i).\n  - Isolar i: i = (M/C)^(1/n) − 1.\n> Dica de Prova: Se a incógnita está no expoente, aplique log e “desça” o expoente.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (Domínio com base variável)\n  - f(x) = log_{x+1}(−x² + 6x − 5).\n  - Base: x + 1 > 0 ⇒ x > −1; x + 1 ≠ 1 ⇒ x ≠ 0.\n  - Argumento: −x² + 6x − 5 > 0 ⇒ x² − 6x + 5 < 0.\n    - Raízes de x² − 6x + 5 = 0: x = 1 e x = 5.\n    - Como a = 1 > 0 (abre para cima), “< 0” entre as raízes ⇒ 1 < x < 5.\n  - Interseção: x > −1 e x ≠ 0 com 1 < x < 5 ⇒ domínio: (1, 5).\n- Exemplo 2 (Igualdade de logs)\n  - Resolver log_2(x − 1) = log_2(3x − 13).\n  - Domínio: x − 1 > 0 ⇒ x > 1; 3x − 13 > 0 ⇒ x > 13/3.\n  - Igualar argumentos: x − 1 = 3x − 13 ⇒ 2x = 12 ⇒ x = 6.\n  - Verificação no domínio: 6 > 13/3 ⇒ válido. Solução: x = 6.\n- Exemplo 3 (Juros compostos)\n  - M = 2C, i = 10% ao período. Achar n.\n  - 2 = (1,1)^n ⇒ n = log(2)/log(1,1).\n\n## 5. Pegadinhas e Erros Comuns\n- **Base inválida**: base ≤ 0 ou base = 1 (ex.: “A igual a um” é proibido para base).\n- **Argumento ≤ 0**: expressão indefinida nos reais.\n- **Esquecer interseção**: “tem que fazer a interseção dessas duas informações ... dois ao mesmo tempo”.\n- **Confundir produto com soma**: não existe propriedade para log(x + y).\n- **Desigualdade com base entre 0 e 1**: inverter o sinal ao tirar o log.\n- **Raízes incluídas/excluídas**: confundir “> 0” com “≥ 0” na inequação do 2º grau.\n- **Ponto proibido no caminho**: ex.: base = x + 1 ⇒ x ≠ 0; não esqueça de excluir mesmo se o intervalo “parecer” aceitável.\n> Dica de Prova: Após achar o intervalo do argumento (ex.: “maior que menos um ... e menor do que dois”), aplique as exclusões da base (“não pode ser zero”) antes de marcar a alternativa.\n\n- Vocábulos que podem confundir:\n  - “maior”, “menor”, “maior ou igual, menor ou igual”: definem se raízes entram ou não.\n  - “parábola”, “raiz”, “equação do segundo grau”, “inequação”: indicam o método do sinal.\n  - “domínio”, “função”, “base”: palavras‑chave que o examinador usa para cobrar condições de existência.\n\n> Dica de Prova: Se aparecer “maior que menos três menos um zero” ou expressões coloidais, traduza para restrições claras (ex.: x > −1 e x ≠ 0). Mantenha foco nas condições formais: base > 0 e ≠ 1; argumento > 0.",
+  "resumo_bolso": "# Logaritmo e Funções Logarítmicas II\n\n---\n\n## 📌 Conceitos-Chave\n\n* Logaritmo: log_b(a) = c ⇔ b^c = a; c é o expoente que gera a a partir de b.\n* Condições de existência (simultâneas): base b > 0 e b ≠ 1; argumento a > 0.\n* Domínio: interseção das condições da base e do argumento (“tudo ao mesmo tempo”).\n* Função logarítmica: f(x) = log_b(x) (b fixo) ou f(x) = log_{g(x)}(h(x)) (base variável — domínio mais restrito).\n* Propriedades: produto, quociente, potência no argumento, mudança de base, igualdade de logs com mesma base, casos imediatos.\n* Monotonicidade: b > 1 ⇒ crescente; 0 < b < 1 ⇒ decrescente (inverte desigualdade ao “tirar o log”).\n* Inequações do 2º grau: ache raízes e use o sinal da parábola para intervalos válidos.\n* Juros compostos: M = C·(1 + i)^n; use log para isolar n ou i.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Produto vs Soma no argumento do log\n\n| Aspecto | Produto | Soma |\n| **Regra** | log_b(xy) = log_b(x) + log_b(y) | Não existe propriedade para log_b(x + y) |\n\n### Base > 1 vs 0 < Base < 1\n\n| Aspecto | b > 1 | 0 < b < 1 |\n| **Comportamento** | Função crescente | Função decrescente (inverte desigualdade) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Existência do log\n- Condição: log_b(A) existe nos reais se b > 0, b ≠ 1 e A > 0.\n- Exemplo: log_{x+1}(2x−3) ⇒ x+1 > 0, x+1 ≠ 1, 2x−3 > 0.\n\n2. Produto, Quociente e Potência\n- Exemplo: log_b(xy) = log_b(x) + log_b(y); log_b(x/y) = log_b(x) − log_b(y) (x > 0, y > 0); log_b(x^k) = k·log_b(x).\n\n3. Mudança de base\n- Fórmula: log_b(a) = log_c(a)/log_c(b).\n\n4. Igualdade de logs (mesma base)\n- Regra: log_b(A) = log_b(B) ⇒ A = B, com A > 0, B > 0, b > 0, b ≠ 1.\n\n5. Desigualdades logarítmicas e monotonicidade\n- Se b > 1: log_b(A) ⋚ log_b(B) ⇒ A ⋚ B.\n- Se 0 < b < 1: log_b(A) ⋚ log_b(B) ⇒ A ⋚̸ B (inverte).\n\n6. Inequação do 2º grau — sinal da parábola\n- a > 0: > 0 fora das raízes; < 0 entre as raízes.\n- a < 0: > 0 entre; < 0 fora.\n- “≥/≤” inclui raízes; “>/<” exclui.\n\n7. Casos imediatos\n- log_b(b) = 1; log_b(1) = 0; log_b(b^k) = k.\n\n8. Juros compostos\n- M = C·(1 + i)^n.\n- n = log(M/C)/log(1 + i); i = (M/C)^(1/n) − 1.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Base inválida: base ≤ 0 ou base = 1.\n- Argumento ≤ 0: expressão indefinida nos reais.\n- Esquecer a interseção das condições de base e argumento no domínio.\n- Confundir produto com soma: não existe propriedade para log(x + y).\n- Em desigualdade com 0 < b < 1, esquecer de inverter o sentido ao “tirar o log”.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei produto/quociente/potência da “soma” inexistente?\n* Lembrei que existência exige base > 0 e ≠ 1 e argumento > 0, em interseção?\n* Sei decidir crescente/decrescente pela base e inverter desigualdades quando 0 < b < 1?\n* Sei usar o sinal da parábola para inequações do 2º grau no domínio?\n* Memorizei mudança de base e casos imediatos (log_b(b)=1, log_b(1)=0, log_b(b^k)=k)?",
+  "mapa_mental": "# 🧮 Logaritmos e Funções Logarítmicas II\n## 🎯 Conceitos Fundamentais\n### 💡 Definição de logaritmo\n- log_b(a) = c\n- Equivalência exponencial\n- b^c = a\n- Interpretação potência\n### 📋 Condições de existência\n- Base b > 0\n- Base b ≠ 1\n- Argumento a > 0\n- Condições simultâneas\n### 🧾 Função logarítmica\n- f(x) = log_b(x)\n- Base fixa b\n- Base variável g(x)\n- Argumento h(x)\n- Domínio da função\n\n## 🧱 Domínio e Propriedades\n### 🗺️ Domínio do logaritmo\n- Condição da base\n- Condição do argumento\n- Interseção de conjuntos\n- Intervalos reais\n- Exclusão de pontos\n### 🧮 Propriedades algébricas\n- Propriedade produto\n- Propriedade quociente\n- Propriedade potência\n- Casos imediatos\n- Mudança de base\n### 📊 Comportamento da função\n- Base maior que 1\n- Base entre 0 e 1\n- Função crescente\n- Função decrescente\n- Sinal do logaritmo\n\n## 📜 Igualdades e Desigualdades\n### 📖 Igualdade de logaritmos\n- Mesma base b\n- log_b(A) = log_b(B)\n- Igualdade argumentos\n- A > 0 e B > 0\n- Verificação domínio\n### ⚖️ Desigualdades logarítmicas\n- Base maior que 1\n- Mantém desigualdade\n- Base entre 0 e 1\n- Inverte desigualdade\n- Checagem domínio\n### 🔢 Inequações quadráticas\n- Colocar = 0\n- Cálculo das raízes\n- Sinal da parábola\n- a > 0 abre cima\n- a < 0 abre baixo\n\n## 🚀 Aplicações Clássicas\n### 🧮 Domínio base variável\n- Base função de x\n- Base > 0\n- Base ≠ 1\n- Argumento > 0\n- Interseção final\n### 📐 Equações logarítmicas\n- log_b(A) = c\n- Forma exponencial\n- A = b^c\n- Igualdade argumentos\n- Solução no domínio\n### 💰 Juros compostos\n- Fórmula M = C(1+i)^n\n- Isolar expoente n\n- Uso de logaritmos\n- n pela mudança base\n- Isolar taxa i\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Condições esquecidas\n- Base ≤ 0 proibida\n- Base = 1 proibida\n- Argumento ≤ 0 inválido\n- Falta de interseção\n- Ponto proibido excluído\n### 🛑 Propriedades mal usadas\n- Confundir soma produto\n- Ausência log(x + y)\n- Potência no argumento\n- Erro mudança de base\n- Erro casos imediatos\n### 📌 Inequações e linguagem\n- Maior menor estrito\n- Maior ou igual\n- Menor ou igual\n- Inclusão das raízes\n- Tradução linguagem coloquial",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Domínio Logarítmico",
+      "description": "Domínio Logarítmico — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quais condições a base de um logaritmo deve satisfazer?",
+          "back": "Deve ser **maior que zero** e **diferente de um**.",
+          "hint": "São duas restrições numéricas",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "condicao-existencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Que condição o argumento de um logaritmo deve cumprir?",
+          "back": "Deve ser **maior que zero**.",
+          "hint": "Relacionado ao valor interno do logaritmo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "condicao-existencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Como determinar o domínio de uma função logarítmica?",
+          "back": "Aplicar as **condições de existência** (base maior que zero e diferente de um; logaritmando maior que zero).",
+          "hint": "Reúne todas as restrições de base e argumento",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "dominio"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Inequações Logarítmicas",
+      "description": "Inequações Logarítmicas — 2 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Como combinar as restrições obtidas ao resolver uma inequação logarítmica?",
+          "back": "Fazer a **interseção** das restrições obtidas.",
+          "hint": "Operação de conjuntos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "inequacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Como representar a análise de sinais de uma inequação quadrática?",
+          "back": "Igualar a equação a zero para encontrar as raízes e analisar a **parábola** com concavidade voltada para cima.",
+          "hint": "Geometria da função de segundo grau",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-quadratica",
+            "analise-sinal"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Propriedades Logarítmicas",
+      "description": "Propriedades Logarítmicas — 4 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual é o valor de logaritmo de 1 em qualquer base válida?",
+          "back": "**Zero**.",
+          "hint": "Propriedade fundamental do logaritmo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é o valor de um logaritmo cuja base coincide com o argumento?",
+          "back": "**Um**.",
+          "hint": "Identidade de base e argumento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Como transformar o logaritmo de um produto em uma soma?",
+          "back": "Transformar em uma **soma** dos logaritmos dos fatores.",
+          "hint": "Operação inversa da multiplicação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Como escrever o logaritmo de uma potência usando o expoente?",
+          "back": "Multiplicar o expoente pelo logaritmo da base.",
+          "hint": "Regra do peteleco",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedade"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Equações Logarítmicas",
+      "description": "Equações Logarítmicas — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Que transformação resolve uma igualdade entre logaritmos de mesma base?",
+          "back": "Igualar os **logaritmandos** quando as bases são iguais.",
+          "hint": "Comparação de argumentos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "equacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual propriedade relaciona uma potência e um logaritmo de mesma base?",
+          "back": "Quando a base da potência é igual à base do logaritmo, o resultado é o próprio **logaritmando**.",
+          "hint": "Definição de logaritmo como expoente",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedade"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a condição de existência para a base de um logaritmo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base deve ser maior que um e diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. A base não precisa ser maior que um; ela pode estar entre 0 e 1 (por exemplo, 0,5). A condição é que seja maior que zero e diferente de um. Além disso, a base não pode ser apenas 'diferente de zero', ela deve ser positiva."
+        },
+        {
+          "id": "b",
+          "text": "A base deve ser positiva e pode ser igual a um",
+          "correct": false,
+          "explanation": "Incorreta. Embora a base deva ser positiva, ela não pode ser igual a um. Se a base fosse 1, o logaritmo de qualquer número diferente de 1 seria indefinido, e o logaritmo de 1 seria qualquer número, o que contradiz a unicidade da função."
+        },
+        {
+          "id": "c",
+          "text": "A base deve ser maior que zero e diferente de um",
+          "correct": true,
+          "explanation": "Correta. A base de um logaritmo, denotada por 'b', deve ser um número real estritamente positivo (b > 0) e diferente de 1 (b ≠ 1). Essa é uma condição fundamental para que a função logarítmica esteja bem definida e seja unívoca no conjunto dos números reais."
+        },
+        {
+          "id": "d",
+          "text": "A base deve ser maior ou igual a zero e diferente de um",
+          "correct": false,
+          "explanation": "Incorreta. A base de um logaritmo não pode ser igual a zero. Se a base fosse zero, a expressão logarítmica não teria um valor real definido para a maioria dos logaritmandos, e a função não seria consistente."
+        }
+      ],
+      "explanation": "Correta. A base de um logaritmo, denotada por 'b', deve ser um número real estritamente positivo (b > 0) e diferente de 1 (b ≠ 1). Essa é uma condição fundamental para que a função logarítmica esteja bem definida e seja unívoca no conjunto dos números reais.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o valor do logaritmo de um número qualquer na sua própria base?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor é sempre um, independentemente da base",
+          "correct": true,
+          "explanation": "Correta. Por definição, o logaritmo de um número na sua própria base é sempre igual a 1. Isso decorre da relação fundamental entre logaritmos e potências: se log_b(x) = y, então b^y = x. Se x = b, então b^y = b, o que implica que y = 1. Assim, log_b(b) = 1 para qualquer base 'b' que satisfaça as condições de existência."
+        },
+        {
+          "id": "b",
+          "text": "O valor depende do logaritmando escolhido",
+          "correct": false,
+          "explanation": "Incorreta. O valor é sempre 1 quando o logaritmando é igual à base, independentemente do valor específico do logaritmando (desde que seja igual à base e a base seja válida)."
+        },
+        {
+          "id": "c",
+          "text": "O valor é sempre zero, independentemente da base",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmo de um número na sua própria base não é zero. O logaritmo de 1 em qualquer base válida é zero (log_b(1) = 0), mas não o logaritmo da base por ela mesma."
+        },
+        {
+          "id": "d",
+          "text": "O valor é sempre igual à própria base",
+          "correct": false,
+          "explanation": "Incorreta. O valor do logaritmo de um número na sua própria base é 1, e não a própria base. Por exemplo, log_7(7) = 1, não 7."
+        }
+      ],
+      "explanation": "Correta. Por definição, o logaritmo de um número na sua própria base é sempre igual a 1. Isso decorre da relação fundamental entre logaritmos e potências: se log_b(x) = y, então b^y = x. Se x = b, então b^y = b, o que implica que y = 1. Assim, log_b(b) = 1 para qualquer base 'b' que satisfaça as condições de existência.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual condição deve ser satisfeita pelo logaritmando em uma função logarítmica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O logaritmando pode assumir qualquer valor real",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmando não pode assumir qualquer valor real. Ele está restrito a valores estritamente maiores que zero. Por exemplo, log_2(-4) não tem solução no conjunto dos números reais."
+        },
+        {
+          "id": "b",
+          "text": "O logaritmando deve ser estritamente maior que zero",
+          "correct": true,
+          "explanation": "Correta. Para que uma função logarítmica log_b(x) seja definida no conjunto dos números reais, o logaritmando 'x' deve ser um número real estritamente positivo (x > 0). Essa condição é crucial porque não há potência real de uma base positiva que resulte em um número negativo ou zero."
+        },
+        {
+          "id": "c",
+          "text": "O logaritmando deve ser maior ou igual a zero",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmando não pode ser igual a zero. A função logarítmica não é definida para logaritmandos nulos, pois não existe um número real que, elevado a uma base positiva, resulte em zero."
+        },
+        {
+          "id": "d",
+          "text": "O logaritmando deve ser diferente de zero apenas",
+          "correct": false,
+          "explanation": "Incorreta. A condição não é apenas ser diferente de zero. O logaritmando deve ser estritamente positivo, ou seja, maior que zero. Valores negativos também não são permitidos para o logaritmando no conjunto dos números reais."
+        }
+      ],
+      "explanation": "Correta. Para que uma função logarítmica log_b(x) seja definida no conjunto dos números reais, o logaritmando 'x' deve ser um número real estritamente positivo (x > 0). Essa condição é crucial porque não há potência real de uma base positiva que resulte em um número negativo ou zero.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao resolver uma inequação do segundo grau, qual é o primeiro passo necessário?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar diretamente a fórmula de Bhaskara sem igualar a zero",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula de Bhaskara é uma ferramenta para encontrar as raízes, mas ela é aplicada após igualar a expressão a zero. Não se pode aplicar a fórmula de Bhaskara diretamente a uma inequação sem antes transformá-la em uma equação para encontrar os pontos críticos."
+        },
+        {
+          "id": "b",
+          "text": "Transformar a inequação em equação igualando a zero para encontrar as raízes",
+          "correct": true,
+          "explanation": "Correta. Ao resolver uma inequação do segundo grau (por exemplo, ax² + bx + c > 0), o primeiro passo é encontrar as raízes da função quadrática associada, ou seja, resolver a equação ax² + bx + c = 0. Essas raízes são os pontos onde a parábola intercepta o eixo x e delimitam os intervalos nos quais o sinal da função quadrática é constante, permitindo determinar a solução da inequação."
+        },
+        {
+          "id": "c",
+          "text": "Isolar a variável de maior grau em um dos lados da desigualdade",
+          "correct": false,
+          "explanation": "Incorreta. Isolar a variável de maior grau não é o primeiro passo para resolver uma inequação do segundo grau. Essa técnica é mais comum em inequações lineares ou para simplificação, mas não ajuda a determinar os intervalos de sinal de uma função quadrática."
+        },
+        {
+          "id": "d",
+          "text": "Fatorar a expressão sem determinar previamente as raízes",
+          "correct": false,
+          "explanation": "Incorreta. Fatorar a expressão pode ser uma etapa útil, mas geralmente é feita após (ou como parte do processo de) encontrar as raízes da equação associada. O conhecimento das raízes é fundamental para determinar os intervalos de sinal da função e, consequentemente, a solução da inequação."
+        }
+      ],
+      "explanation": "Correta. Ao resolver uma inequação do segundo grau (por exemplo, ax² + bx + c > 0), o primeiro passo é encontrar as raízes da função quadrática associada, ou seja, resolver a equação ax² + bx + c = 0. Essas raízes são os pontos onde a parábola intercepta o eixo x e delimitam os intervalos nos quais o sinal da função quadrática é constante, permitindo determinar a solução da inequação.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Para determinar o domínio de uma função logarítmica composta, quais condições devem ser verificadas simultaneamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base deve ser maior que zero e diferente de um, e o logaritmando deve ser maior que zero",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Apenas a base precisa ser diferente de um, sem restrições ao logaritmando",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Apenas a condição de existência do logaritmando deve ser maior que zero",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "O logaritmando deve ser diferente de zero e a base pode ser qualquer número real positivo",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao resolver uma inequação do segundo grau com coeficiente principal negativo e desigualdade do tipo 'maior que zero', qual região da parábola deve ser considerada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A região externa ao intervalo entre as raízes, pois a concavidade é voltada para cima",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as partes da afirmação estão incorretas. A concavidade 'voltada para cima' contradiz o coeficiente principal negativo. Além disso, para uma parábola com concavidade para baixo, a região externa às raízes representa onde a função é negativa, e não positiva."
+        },
+        {
+          "id": "b",
+          "text": "A região externa ao intervalo entre as raízes, pois a concavidade é voltada para baixo",
+          "correct": false,
+          "explanation": "Incorreta. Se a concavidade é voltada para baixo (coeficiente principal negativo) e buscamos valores 'maior que zero', a região externa ao intervalo entre as raízes é onde a parábola estaria abaixo do eixo x, ou seja, onde a função é negativa. Portanto, não corresponde à condição 'maior que zero'."
+        },
+        {
+          "id": "c",
+          "text": "A região interna ao intervalo entre as raízes, pois a concavidade é voltada para cima",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de que a concavidade é 'voltada para cima' está errada, pois a questão especifica um coeficiente principal negativo. Um coeficiente principal negativo sempre indica uma parábola com concavidade voltada para baixo. A região interna seria correta para 'maior que zero' se a concavidade fosse para baixo, mas a premissa da concavidade está equivocada."
+        },
+        {
+          "id": "d",
+          "text": "A região interna ao intervalo entre as raízes, pois a concavidade é voltada para baixo",
+          "correct": true,
+          "explanation": "Correta. Quando o coeficiente principal (o 'a' da função quadrática ax² + bx + c) é negativo, a parábola tem concavidade voltada para baixo. Se a desigualdade pede valores 'maior que zero', estamos procurando a região onde a parábola está acima do eixo x. Essa região, para uma parábola com concavidade para baixo, situa-se entre as raízes, caso existam."
+        }
+      ],
+      "explanation": "Correta. Quando o coeficiente principal (o 'a' da função quadrática ax² + bx + c) é negativo, a parábola tem concavidade voltada para baixo. Se a desigualdade pede valores 'maior que zero', estamos procurando a região onde a parábola está acima do eixo x. Essa região, para uma parábola com concavidade para baixo, situa-se entre as raízes, caso existam.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual propriedade logarítmica permite transformar o logaritmo de um produto em uma soma de logaritmos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O logaritmo do produto de dois números é igual ao logaritmo da soma desses números",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma propriedade logarítmica que relacione o logaritmo de um produto com o logaritmo de uma soma. O logaritmo de uma soma (log_b(M + N)) não pode ser simplificado ou reescrito em termos de logaritmos individuais de M e N de forma geral."
+        },
+        {
+          "id": "b",
+          "text": "O logaritmo do produto de dois números é igual à soma dos logaritmos desses números na mesma base",
+          "correct": true,
+          "explanation": "Correta. A propriedade fundamental dos logaritmos estabelece que o logaritmo de um produto de dois números é igual à soma dos logaritmos desses números, desde que todos estejam na mesma base. Em termos matemáticos, log_b(M × N) = log_b(M) + log_b(N)."
+        },
+        {
+          "id": "c",
+          "text": "O logaritmo do produto de dois números é igual ao produto dos logaritmos desses números",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreve uma operação incorreta. O logaritmo de um produto não é o produto dos logaritmos. Essa é uma confusão comum, mas matematicamente imprecisa."
+        },
+        {
+          "id": "d",
+          "text": "O logaritmo do produto de dois números é igual à diferença dos logaritmos desses números",
+          "correct": false,
+          "explanation": "Incorreta. A diferença dos logaritmos corresponde ao logaritmo de um quociente (divisão), e não de um produto. A propriedade é log_b(M / N) = log_b(M) - log_b(N)."
+        }
+      ],
+      "explanation": "Correta. A propriedade fundamental dos logaritmos estabelece que o logaritmo de um produto de dois números é igual à soma dos logaritmos desses números, desde que todos estejam na mesma base. Em termos matemáticos, log_b(M × N) = log_b(M) + log_b(N).",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Quando se tem uma potência dentro de um logaritmo, como o expoente pode ser manipulado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O expoente pode ser extraído como um fator multiplicativo do logaritmo",
+          "correct": true,
+          "explanation": "Correta. A propriedade da potência em logaritmos afirma que o expoente de um logaritmando pode ser \"baixado\" e se tornar um fator multiplicativo do logaritmo. Matematicamente, log_b(M^p) = p × log_b(M). Isso simplifica a expressão e é amplamente utilizado em cálculos logarítmicos."
+        },
+        {
+          "id": "b",
+          "text": "O expoente deve ser somado ao logaritmo da base",
+          "correct": false,
+          "explanation": "Incorreta. Não há propriedade logarítmica que determine que o expoente deva ser somado ao logaritmo da base. Essa operação não corresponde a uma manipulação válida de logaritmos."
+        },
+        {
+          "id": "c",
+          "text": "O expoente permanece dentro do logaritmo sem alterações possíveis",
+          "correct": false,
+          "explanation": "Incorreta. Uma das propriedades mais úteis dos logaritmos permite, sim, manipular o expoente de uma potência que está no logaritmando. Deixar o expoente inalterado dentro do logaritmo seria ignorar essa propriedade fundamental."
+        },
+        {
+          "id": "d",
+          "text": "O expoente transforma o logaritmo em uma operação de radiciação",
+          "correct": false,
+          "explanation": "Incorreta. Embora potências e radiciações sejam operações inversas e relacionadas, a manipulação do expoente dentro de um logaritmo não transforma o logaritmo em uma radiciação. A propriedade correta é a multiplicação do logaritmo pelo expoente, como descrito na alternativa 'b'."
+        }
+      ],
+      "explanation": "Correta. A propriedade da potência em logaritmos afirma que o expoente de um logaritmando pode ser \"baixado\" e se tornar um fator multiplicativo do logaritmo. Matematicamente, log_b(M^p) = p × log_b(M). Isso simplifica a expressão e é amplamente utilizado em cálculos logarítmicos.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Ao determinar o domínio de uma função logarítmica onde o logaritmando é uma expressão do segundo grau e a base também depende da variável, qual procedimento deve ser adotado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Resolver separadamente as condições de existência da base e do logaritmando, depois fazer a união dos conjuntos solução",
+          "correct": false,
+          "explanation": "Incorreta. As condições de existência para o logaritmando e para a base devem ser satisfeitas simultaneamente para que a função logarítmica seja definida. A união dos conjuntos solução incluiria valores que satisfazem apenas uma das condições, o que não é permitido para o domínio de uma função logarítmica."
+        },
+        {
+          "id": "b",
+          "text": "Igualar a base ao logaritmando e resolver a equação resultante",
+          "correct": false,
+          "explanation": "Incorreta. Igualar a base ao logaritmando (g(x) = f(x)) é um procedimento utilizado para resolver certos tipos de equações logarítmicas, especialmente quando o resultado do logaritmo é 1, mas não serve para determinar o domínio da função logarítmica. O domínio é o conjunto de todos os valores de x para os quais a função está definida, e não para um valor específico."
+        },
+        {
+          "id": "c",
+          "text": "Resolver apenas a condição do logaritmando, pois a base não influencia o domínio",
+          "correct": false,
+          "explanation": "Incorreta. A base de uma função logarítmica possui condições de existência rigorosas: ela deve ser maior que zero e diferente de um. Ignorar a condição da base resultaria em um domínio incorreto, pois a base é um elemento crucial na definição do logaritmo."
+        },
+        {
+          "id": "d",
+          "text": "Resolver separadamente as condições de existência da base e do logaritmando, depois fazer a interseção dos conjuntos solução",
+          "correct": true,
+          "explanation": "Correta. Para que uma função logarítmica log_g(x) f(x) seja definida, três condições devem ser atendidas simultaneamente: o logaritmando f(x) deve ser maior que zero (f(x) > 0); a base g(x) deve ser maior que zero (g(x) > 0); e a base g(x) deve ser diferente de um (g(x) ≠ 1). A interseção dos conjuntos solução dessas três condições fornecerá o domínio correto da função."
+        }
+      ],
+      "explanation": "Correta. Para que uma função logarítmica log_g(x) f(x) seja definida, três condições devem ser atendidas simultaneamente: o logaritmando f(x) deve ser maior que zero (f(x) > 0); a base g(x) deve ser maior que zero (g(x) > 0); e a base g(x) deve ser diferente de um (g(x) ≠ 1). A interseção dos conjuntos solução dessas três condições fornecerá o domínio correto da função.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Ao aplicar as propriedades logarítmicas em expressões que envolvem potências com bases iguais ao logaritmo, qual é o procedimento correto para simplificação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar a propriedade do produto antes de considerar as potências",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade do logaritmo de um produto (log_b(MN) = log_b(M) + log_b(N)) é aplicada a logaritmos cujo argumento é um produto. Ela não é diretamente aplicável ou útil para simplificar uma expressão onde uma base é elevada a um logaritmo com a mesma base."
+        },
+        {
+          "id": "b",
+          "text": "Transformar as potências em radicais para facilitar a simplificação",
+          "correct": false,
+          "explanation": "Incorreta. Transformar potências em radicais é uma manipulação algébrica válida para expressar expoentes fracionários, mas não é o procedimento adequado para simplificar expressões que envolvem a identidade logarítmica fundamental. Essa abordagem não leva à simplificação direta que a propriedade logarítmica oferece."
+        },
+        {
+          "id": "c",
+          "text": "Utilizar a propriedade que permite cancelar a base do logaritmo com a base da potência, isolando o expoente",
+          "correct": true,
+          "explanation": "Correta. Existe uma propriedade fundamental dos logaritmos que afirma que se um número 'a' é elevado a um logaritmo na base 'a' (ou seja, a^(log_a(x))), o resultado é simplesmente o logaritmando 'x'. Essa propriedade, muitas vezes referida como a identidade logarítmica fundamental, permite a simplificação direta da expressão, cancelando a base da potência com a base do logaritmo e resultando no logaritmando."
+        },
+        {
+          "id": "d",
+          "text": "Converter todas as bases para base dez antes de aplicar qualquer propriedade",
+          "correct": false,
+          "explanation": "Incorreta. Converter todas as bases para base dez (ou base natural 'e') é uma estratégia de mudança de base útil para cálculos com calculadoras ou para padronização, mas não é o procedimento mais direto ou correto para simplificar expressões onde a base da potência já é igual à base do logaritmo. Isso adicionaria etapas desnecessárias e complexidade."
+        }
+      ],
+      "explanation": "Correta. Existe uma propriedade fundamental dos logaritmos que afirma que se um número 'a' é elevado a um logaritmo na base 'a' (ou seja, a^(log_a(x))), o resultado é simplesmente o logaritmando 'x'. Essa propriedade, muitas vezes referida como a identidade logarítmica fundamental, permite a simplificação direta da expressão, cancelando a base da potência com a base do logaritmo e resultando no logaritmando.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "11_309596_Logaritmo e Funções Logarítmicas II.pdf",
+  "coletado_em": "2026-09-23T20:57:33"
+}

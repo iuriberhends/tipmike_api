@@ -1,0 +1,788 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 13,
+  "ordem_no_curso": "13.00",
+  "titulo": "Windows 10 VIII",
+  "codigo_aula": "253602",
+  "video_id": "/BfUhZHjOXo=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:24:28",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/%2FBfUhZHjOXo%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405101&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Windows 10 VIII\n\n## Painel de Controle: Visão Geral e Modos de Exibição\nAgora vamos analisar o Painel de Controle. Temos muitas opções cobradas em prova, então precisamos ter pelo menos uma noção do que é o Painel de Controle e para que serve. Basicamente, posso configurar coisas do Windows, opções do sistema e também da minha máquina e dos programas que estão instalados.\n\nVem comigo nesse passeio pelo Painel. Iniciando pela exibição: temos a exibição em ícones grandes, a exibição em ícones pequenos e a exibição por categoria. A exibição por categoria é, sem dúvida, a mais cobrada em prova. É nela que vou enfatizar o passeio.\n\nQuando você vê aqui, por exemplo, “Sistema e Segurança”, estou falando da categoria Sistema e Segurança. Dentro dela, veremos as principais opções. Já de cara ele mostra, mais ou menos, o que eu tenho: verificar o estado do computador, salvar cópias de segurança dos arquivos com o Histórico de Arquivos (o que eu falei quando entrei nas propriedades: se ela estiver habilitada, eu vejo lá um histórico), Restauração do Sistema, Encontrar e corrigir problemas. São noções gerais.\n\nVeja: quando tem essa borda laranja, trata-se da categoria. Entrando em Sistema e Segurança, por exemplo, temos Segurança e Manutenção, onde posso verificar o computador e resolver possíveis problemas. Nem sempre resolve por aqui, mas é a janela Segurança e Manutenção do Painel de Controle, dentro de Sistema e Segurança. Ela divide em duas áreas: segurança e manutenção. Alguns problemas eu posso tentar resolver a partir daqui. Se não conseguir, posso fazer uma recuperação: voltar meu computador ao estado anterior, desde que eu tenha criado um ponto de restauração no tempo.\n\n## Segurança do Windows (Windows Defender)\nO Segurança do Windows reúne hoje um conjunto de opções, a chamada segurança do Windows. Lá dentro eu tenho o Windows Defender e suas ferramentas, que tratam basicamente de proteção contra vírus e ameaças. Antigamente, em versões bem anteriores, ele era só um antispyware. Hoje ele é um antivírus completo, com proteção de contas, firewall e proteção de rede, controle de aplicativos e do navegador, monitorando possíveis falhas.\n\nIsso não quer dizer que você esteja imune a contaminação. Muita gente não gosta, acha que não funciona direito, mas, se a pessoa navegar de qualquer jeito, acessar qualquer arquivo, vai ser contaminada com ou sem o melhor antivírus. Enfim: segurança do dispositivo, desempenho e integridade são opções reunidas aqui.\n\n> 🎯 Dicas de prova: O Windows Defender não é apenas um antivírus; é um conjunto de ferramentas de segurança do Windows 10.\n\nAqui está a janela do Windows Defender, onde posso analisar as forças de segurança local. Na verdade, o acesso é aberto pelas configurações, mas, pelo Painel de Controle, você chega às opções do Segurança do Windows e pode ver configurações como alterar as definições de proteção em tempo real, ativar ou desativar o Defender e restaurar padrões, caso tenha feito alguma configuração errada e queira voltar ao original. Em Configurações Avançadas, “Solucionar problemas com a rede” pode aparecer. Às vezes a prova fala: acesse pelo Painel de Controle > Sistema e Segurança > Windows Defender (Segurança do Windows). Por ali, é possível, por exemplo, verificar rede privada (particular) e públicas, dependendo das configurações.\n\n## Sistema\nEm Sistema, eu vejo informações como quantidade e velocidade do processador, memória, nome deste computador (posso alterar), permitir acesso remoto (para que outra pessoa acesse remotamente minha máquina) e Assistência Remota (posso usar para acessar a máquina de alguém e ajudar em alguma configuração).\n\nNa janela Sistema, aparecem: nome do dispositivo, processador, quantidade de memória, ID do dispositivo e do produto, versão do Windows (se é 64 ou 32 bits; no meu caso, 64 bits), especificações do Windows 10, versão, data de instalação, compilação e experiência. Vários dados sobre a máquina podem ser acessados aqui. Entre eles, destaco versão do Windows, quantidade de memória e processador.\n\n> 🎯 Dicas de prova: Onde obter informações como versão do Windows, arquitetura (64/32 bits), memória e processador? Em Sistema, no Painel de Controle/Configurações.\n\n## Opções de Energia\nOpções de Energia são muito usadas em notebooks. Muita gente me pergunta: “No laptop, quando eu baixo a tampa, quero que o computador hiberne. Tem como?” Tem.\n\n💬 História: Eu configurava assim: quando baixava a tampa sem estar conectado à energia, ele hibernava, salvava tudo e desligava. Eu guardava na mochila e seguia viagem. Quando estava conectado na energia, eu configurei para baixar a tampa e suspender, entrando no modo de economia de energia. Ao abrir a tampa, ele “acordava”. Também dá para configurar para “não fazer nada”, por exemplo, quando uso segunda tela.\n\nAlém da tampa, há outras opções: o que acontece ao suspender; desligar discos; configurar planos de energia (alto desempenho, equilibrado). Quem joga costuma optar por desempenho máximo, sem economia de energia, para não reduzir velocidade de processador e placa de vídeo.\n\nO plano equilibrado é o recomendável pelo sistema, mas nem sempre é o melhor para você. Então, ajuste conforme a necessidade.\n\n## Backup e Restauração (Histórico de Arquivos e Restauração do Sistema)\nBackup e Restauração: você pode configurar o backup dos seus arquivos, indicando a unidade onde fará. O Windows recomenda usar outra unidade e guardá-la de forma segura. Assim você consegue restaurar seus dados à situação anterior.\n\nNa janela “Backup e Restauração (Windows 7)”, você pode fazer backup ou restaurar o Windows. Já a Restauração do Sistema é outra coisa: você cria um ponto de restauração (manualmente ou automaticamente em algumas circunstâncias, quando habilitado). Ao longo do tempo, faz modificações; se der problema, você volta as configurações para a data do ponto.\n\n> 🎯 Dicas de prova: A Restauração do Sistema afeta programas e atualizações instalados após o ponto, mas não afeta arquivos do usuário (documentos, fotos, etc.).\n\n## Criptografia de Unidade (BitLocker)\nCriptografia de unidade de disco: nem todas as edições do Windows têm essa opção. Se você ativar, o disco será criptografado. Se alguém furtar sua máquina, pegar o disco e tentar copiar os dados, não vai conseguir sem a senha e as chaves. Existe também o BitLocker To Go para unidades removíveis (pendrives, discos externos).\n\nExemplo: eu criptografo meu pendrive e gravo um arquivo nele. Ao conectá-lo em outra máquina, para abrir os arquivos vai pedir a senha. Se você perder a senha e as chaves de recuperação, já era: vai ter que formatar o disco para reutilizar, mas os dados estão perdidos.\n\n> 🎯 Dicas de prova: BitLocker protege o conteúdo da unidade; sem senha/chave de recuperação não há acesso aos dados.\n\n## Rede e Internet\nEntrando em Rede e Internet, a primeira opção é a Central de Rede e Compartilhamento: exibir status e tarefas da rede, conectar a uma rede, exibir computadores e dispositivos da rede. Em “Opções da Internet”, mesmo hoje com o Edge sendo o navegador padrão, ainda há configurações herdadas do Internet Explorer. Já caiu questão falando “do navegador” genericamente; lembrem que “Opções da Internet” é do Internet Explorer/Configurações de Internet, não do navegador em geral.\n\nGerenciar complementos do navegador, por exemplo, foi motivo de anulação porque atribuíram genericamente a “navegador”. Fiquem atentos.\n\n## Dispositivos e Impressoras, Reprodução Automática e Som\nNo Painel de Controle, em Dispositivos e Impressoras, posso instalar e remover dispositivos e impressoras e configurar seus parâmetros básicos.\n\nPosso configurar a Reprodução Automática (o que acontece ao conectar um dispositivo). Não é legal deixar totalmente liberado, porque pode permitir a execução de ameaças.\n\nAjustar configurações de som: volume, dispositivos de áudio (fone de ouvido, placa de som), alterações do sistema relacionadas a áudio.\n\nOpções de Energia também aparecem aqui como atalho (já vimos).\n\nCentral de Mobilidade do Windows: opções de mobilidade para notebooks, como ajustar configurações comumente usadas, inclusive antes de uma apresentação.\n\n## Programas e Recursos\nPara desinstalar programas, o local correto é Programas e Recursos. Não é correto ir na pasta Arquivos de Programas e apagar pastas e arquivos. Use Programas e Recursos. Ali também posso definir Programas Padrão para abertura de tipos de arquivos.\n\nAlém disso, posso ativar ou desativar recursos do Windows (alguns recursos nativos podem ser habilitados/desabilitados). Posso exibir as atualizações instaladas e desinstalá-las caso causem conflito (quem joga sabe que às vezes uma atualização quebra o jogo).\n\nTambém há o Modo de Compatibilidade para executar programas criados para versões anteriores do Windows. Em muitos instaladores, há a opção de Reparar o programa. Se não resolver, faz-se uma reinstalação limpa.\n\nDica prática: para desinstalar, selecione o programa, botão direito e desinstalar.\n\n## Contas de Usuário\nAqui posso alterar o tipo de conta: de padrão para administrador e vice-versa. Lembrando: você precisa ter ao menos uma conta de administrador. Se só existir uma conta e ela for administrador, não dá para removê-la sem criar outra com privilégios.\n\nAlgumas opções do Painel redirecionam para a janela Configurações (já mostrei isso no comecinho da aula).\n\n## Aparência e Personalização\nSe perguntar como alterar o tema do Windows, é aqui: Aparência e Personalização. Ajustar a resolução da tela também fica por aqui, porque tem a ver com aparência.\n\nPosso alterar e configurar a barra de tarefas e navegação (dá também para clicar com o botão direito na barra e acessar opções, como ocultá-la). Facilidade de Acesso tem atalhos aqui também.\n\nEm Opções de Pasta, por exemplo:\n- Alterar o padrão de exibição de extensões de arquivos conhecidos.\n- Mudar o comportamento para abrir itens com um clique em vez de dois.\n- Gerenciar fontes.\n\nRelógio e Região: bem básico. Adicionar idioma (nem todas as edições do Windows permitem), alterar métodos de entrada e formatos de data, hora e número.\n\n> 🎯 Dicas de prova: Formato padrão de data no Brasil: dd/MM/aaaa. Nos EUA: MM/dd/aaaa.\n\n## Facilidade de Acesso\nAlgumas ferramentas aparecem em mais de uma categoria. Aqui trabalhamos com opções como Lupa, Teclado Virtual e Narrador. Para quem tem dificuldade de visão, o Narrador lê elementos na tela. Você pode configurar reconhecimento de fala para abrir programas, configurar compromissos e automatizar ações por voz.\n\n## Dica de Estudo e Questões de Prova\nQuestão típica: “Nas Configurações do Windows 10, em Rede e Internet, entram opções de gerenciamento de diversos aspectos, exceto...”. Você vai precisar conhecer essas opções e detalhes. Muitas vezes eu já disse isso durante a aula, mas reforço: apresentar bem o seu material de estudo vai te salvar. Construa e reconstrua seu material do jeito que faça sentido para você.\n\nEm Rede e Internet não tem “Email”. Tem “Internet”, “Proxy” (servidor intermediário para acessar a internet), “VPN” (rede privada virtual), “Wi‑Fi” etc. Se sua rede usa proxy, pode ser configurado aqui ou no navegador.\n\n> 🎯 Dicas de prova: Em Rede e Internet, existem Wi‑Fi, Ethernet, VPN, Proxy. Não existe “Email”.\n\nPara não ficar um bloco quebrado no meio, vou encerrar este bloco e começo o próximo já com esse assunto aqui no final. Beleza? Fica a dica; até daqui a pouquinho encerramos mais um bloco.\n\n## Encerramento da Aula\nHoje até daria tempo de fazer mais um bloco, meu horário vai até as 16h, mas preciso fazer um ajuste no material. Vou dar preferência a isso agora. Agradeço a compreensão e a colaboração de vocês que estiveram aqui.\n\nSobre a disponibilidade do conteúdo: acredito que ainda não está na plataforma. Na próxima gravação eu termino, e depois que eles fizerem o processo na agência para o bloco, aí vai subir. Por enquanto, vocês têm o anterior que eu tinha gravado.\n\nTerça e quarta-feira, hoje eu acabaria por escala. Desculpem, acho que a questão é quarta mesmo. Quem quiser me seguir no Instagram, eu sou policial militar e estou trabalhando na operação de busca. Estou sem noção dos dias mesmo; na última vez fiquei mais de trinta horas lá. Infelizmente, não encontramos ainda.\n\nFiquem com Deus e uma ótima tarde a todos. Muito obrigado a todos e a todas. Fiquem com Deus e até a próxima, se Deus quiser. Valeu!",
+  "transcricao_meta": {
+    "title": "Windows 10 VIII",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 33285,
+    "createdAt": "2026-02-09T11:23:55.744Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda o Painel de Controle do Windows 10 (ênfase na exibição por categoria), incluindo Sistema e Segurança, Rede e Internet, Programas, Dispositivos, Aparência, Contas, Acessibilidade e Relógio/Região.\nPrincipais pontos: \n- Caminhos por “categoria” (a mais cobrada em prova)\n- Segurança: Windows Defender, Restauração, Backup, BitLocker\n- Rede: Central de Rede e Compartilhamento, VPN, Proxy, Opções da Internet\n\n## 1. Base / Conceitos Fundamentais\n- **Painel de Controle**: Interface clássica de administração do Windows 10.\n- **Modos de exibição**: \n  - **Ícones grandes** e **ícones pequenos** (lista completa)\n  - **Por categoria** (preferida em provas)\n- **Categorias principais**:\n  - **Sistema e Segurança**\n  - **Rede e Internet**\n  - **Hardware e Sons** (inclui Dispositivos e Impressoras, Som, Reprodução Automática)\n  - **Programas**\n  - **Contas de Usuário**\n  - **Aparência e Personalização**\n  - **Facilidade de Acesso**\n  - **Relógio e Região**\n- **Windows Defender (Windows Security)**: suíte de proteção integrada que cobre antivírus, firewall, proteção de conta e de apps/navegador.\n- **Restauração do Sistema**: retorna a um ponto anterior (drivers/programas/atualizações), sem afetar arquivos pessoais.\n- **Backup e Restauração (Windows 7)**: cópia de segurança de arquivos para outra unidade e posterior restauração.\n- **BitLocker**: criptografia de disco/unidades removíveis com senha/chave de recuperação.\n- **Central de Rede e Compartilhamento**: status, conexão e compartilhamento na rede.\n- **Opções da Internet**: configurações herdadas do Internet Explorer (ainda presentes no Windows 10).\n- **Planos de energia**: equilibrado, alto desempenho; ações ao fechar a tampa; suspender/hibernar.\n\n> Dica de Prova: “Exibição por categoria” é a mais cobrada. Decore os caminhos: Painel de Controle > Categoria > Item.\n\n## 2. Como Funciona / Distinções\n- Exibição:\n  - **Ícones**: mostra tudo de uma vez.\n  - **Categoria**: agrupa por assunto; memorização de “caminhos” é essencial.\n- Segurança:\n  - **Windows Defender** atual: antivírus completo, não apenas antiespião.\n  - **Controle de aplicativos e navegador**: monitora e mitiga riscos, não torna o sistema imune.\n- Recuperação:\n  - **Backup**: recupera arquivos gravados na cópia.\n  - **Restauração do Sistema**: reverte sistema/registradores/drivers/updates; não recupera arquivos pessoais deletados.\n- Energia:\n  - **Suspender**: mantém sessão na RAM; retorno rápido; com energia externa é comum ao “fechar a tampa”.\n  - **Hibernar**: salva no disco e desliga; bom sem energia externa.\n- Criptografia:\n  - **BitLocker** em disco/pendrive pede senha/chave ao conectar em outro computador; sem chave, não há acesso.\n- Rede:\n  - **VPN (rede privada virtual)**: túnel seguro; não confundir com instituição.\n  - **Proxy**: servidor intermediário para acesso à internet; pode ser no sistema ou no navegador.\n  - **Rede privada x pública**: perfis com políticas de compartilhamento diferentes.\n- Programas:\n  - **Desinstalar** via “Programas e Recursos” (não apagar pastas manualmente).\n  - **Exibir atualizações instaladas**: permite remover update problemático.\n  - **Ativar/Desativar recursos do Windows**: liga/desliga componentes do sistema.\n- Navegador:\n  - **Opções da Internet** ainda existem por compatibilidade com componentes do sistema e do Internet Explorer, mesmo com o **Microsoft Edge** como padrão.\n\n## 3. Aplicação Prática / Técnicas\n- Memorização de caminhos por categoria:\n  - **Sistema e Segurança**:\n    - Segurança e Manutenção: verificar estado, encontrar e corrigir problemas.\n    - Windows Defender: proteção contra vírus e ameaças; Firewall e proteção de rede; proteção de contas; controle de aplicativos e de navegador; configurações avançadas.\n    - Sistema: nome do dispositivo, processador, memória, tipo de sistema (64 bits/32 bits), versão/compilação/data de instalação; assistência remota (permitir acesso remoto / usar assistência remota).\n    - Opções de Energia: escolher plano (equilibrado/alto desempenho); definir o que acontece ao fechar a tampa (suspender/hibernar/desligar/nada).\n    - Backup e Restauração (Windows 7): configurar backup em outra unidade; criar/restaurar ponto de restauração.\n    - BitLocker: criptografar unidade do sistema e unidades removíveis (pendrive); gerenciar senhas e chaves de recuperação.\n  - **Rede e Internet**:\n    - Central de Rede e Compartilhamento: exibir status e tarefas; conectar a uma rede; exibir computadores e dispositivos da rede; solucionar problemas com a rede.\n    - Opções da Internet: segurança, privacidade, conteúdo, conexões, programas, avançadas; gerenciar complementos.\n    - Proxy e VPN: configurar conforme necessidade (sistema/navegador).\n  - **Hardware e Sons**:\n    - Dispositivos e Impressoras: adicionar/remover/configurar impressoras e outros dispositivos.\n    - Som: dispositivos de reprodução/gravação e propriedades.\n    - Reprodução Automática: definir ação para mídias/pendrives (recomendado restringir/desabilitar).\n    - Central de Mobilidade do Windows: atalhos para brilho, volume, apresentação, energia.\n  - **Programas**:\n    - Programas e Recursos: desinstalar/reparar; exibir atualizações instaladas; ativar/desativar recursos do Windows; definir programas padrão; compatibilidade.\n  - **Contas de Usuário**:\n    - Alterar tipo de conta; exigir conta administrador para alterações; não é possível remover a única conta admin sem outra para gerenciar.\n  - **Aparência e Personalização**:\n    - Barra de tarefas e navegação; tema; resolução; Opções de Pasta (exibir extensões; clique único/duplo).\n  - **Facilidade de Acesso**:\n    - Lupa, Teclado Virtual, Narrador, Reconhecimento de fala.\n  - **Relógio e Região**:\n    - Formatos regionais e de data/hora; idiomas. Nem todas as edições permitem mudar o idioma de exibição do sistema.\n\n> Dica de Prova: Para “quem joga”, plano “alto desempenho” evita economia de energia que reduz CPU/GPU.\n\n## 4. Exemplos e Casos Resolvidos\n- Remover atualização que quebrou um jogo:\n  - Painel de Controle > Programas > Programas e Recursos > Exibir atualizações instaladas > selecionar e desinstalar.\n- Computador instável após driver novo:\n  - Painel de Controle > Sistema e Segurança > Segurança e Manutenção > Recuperação > Abrir Restauração do Sistema > escolher ponto anterior ao driver.\n- Proteger pendrive com senha:\n  - Painel de Controle > Sistema e Segurança > BitLocker > Ativar BitLocker na unidade removível > definir senha e salvar chave de recuperação.\n- Desabilitar execução automática de mídias:\n  - Painel de Controle > Hardware e Sons > Reprodução Automática > desmarcar ou definir “Não executar nenhuma ação”.\n- Ajudar um usuário remotamente:\n  - Painel de Controle > Sistema e Segurança > Sistema > Configurações de acesso remoto > permitir assistência remota; ou iniciar convite de assistência remota.\n- Ajustar tampa do notebook para não desligar na tomada:\n  - Painel de Controle > Sistema e Segurança > Opções de Energia > Escolher a função dos botões de energia > Ao fechar a tampa (com energia) > “Não fazer nada” ou “Suspender”.\n\n## 5. Pegadinhas e Erros Comuns\n- Exibição “por categoria” é a mais cobrada; memorize os caminhos. \n- “Opções da Internet” ainda existem no Windows 10 por compatibilidade, apesar do Microsoft Edge ser o padrão.\n- “Controle de aplicativos e de navegador” não torna o sistema imune; apenas reduz riscos.\n- “Restauração do Sistema” não recupera arquivos pessoais apagados; reverte programas/drivers/updates.\n- Desinstalar programa não é apagar pasta em “Arquivos de Programas”; use “Programas e Recursos”.\n- BitLocker: sem senha e sem chave de recuperação, não há como acessar os dados (“já era”).\n- “Rede e Internet” não inclui “e-mail” como item de configuração no Painel de Controle.\n- VPN é “rede privada virtual” (túnel seguro), não confundir com instituição/empresa.\n- Nem todas as edições do Windows permitem alterar o idioma de exibição do sistema.\n- Fechar a tampa:\n  - Na bateria: hibernar/desligar é comum; \n  - Na tomada: suspender/“não fazer nada” são opções frequentes; a banca explora essas distinções.\n\n> Dica de Prova: Em “Sistema”, conferem se você identifica tipo de sistema (64 bits/32 bits), processador, memória, versão/compilação do Windows e data de instalação.\n\n> Dica de Prova: “Firewall e proteção de rede”, “proteção contra vírus e ameaças”, “proteção de contas” e “controle de aplicativos e de navegador” são áreas dentro do Windows Defender (Windows Security).",
+  "resumo_bolso": "# Windows 10 VIII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Painel de Controle**: interface clássica de administração; em prova cobram **caminho por categoria**.\n* **Modos de exibição**: **Ícones grandes/pequenos** (lista completa) x **Categoria** (agrupado por assunto – foco de prova).\n* **Categorias**: **Sistema e Segurança; Rede e Internet; Hardware e Sons; Programas; Contas de Usuário; Aparência e Personalização; Facilidade de Acesso; Relógio e Região.**\n* **Windows Defender (Windows Security)**: suíte integrada (antivírus + firewall + proteção de conta + controle de apps/navegador).\n* **Restauração do Sistema**: volta a ponto anterior (sistema/driver/update/registro) **sem mexer em arquivos pessoais**.\n* **Backup e Restauração (Windows 7)**: cópia de arquivos em outra unidade + restauração posterior.\n* **BitLocker**: criptografia de disco/unidade removível; exige **senha/chave de recuperação**.\n* **Central de Rede e Compartilhamento**: status da rede, conexões, compartilhamento, solução de problemas.\n* **Opções da Internet**: configurações herdadas do IE (segurança, privacidade, conexões, etc.), ainda presentes no Win10.\n* **Planos de energia**: equilibrado/alto desempenho; ações ao fechar tampa; suspender x hibernar.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Backup x Restauração do Sistema\n\n| Aspecto | Backup e Restauração (Windows 7) | Restauração do Sistema |\n|--------|-----------------------------------|------------------------|\n| **Foco** | Arquivos do usuário | Configuração do sistema |\n| **O que salva** | Cópia de arquivos em outra unidade | Estado de sistema/registro/drivers/updates |\n| **Arquivos pessoais apagados** | Podem ser recuperados se estavam no backup | **Não** são recuperados |\n| **Gatilho de uso** | Prevenção de perda de dados | Reverter instabilidade após mudança |\n\n---\n\n### Suspender x Hibernar\n\n| Aspecto | Suspender | Hibernar |\n|--------|-----------|----------|\n| **Onde guarda sessão** | RAM | Disco |\n| **Consumo de energia** | Baixo, mas existe | Praticamente zero |\n| **Retorno** | Muito rápido | Mais lento |\n| **Uso típico** | Com energia externa (tomada) | Sem energia (bateria) |\n\n---\n\n### Windows Defender x Controle de aplicativos e navegador\n\n| Aspecto | Windows Defender (Windows Security) | Controle de aplicativos e navegador |\n|--------|--------------------------------------|-------------------------------------|\n| **Escopo** | Suíte completa de segurança | Módulo específico |\n| **Função** | Antivírus, firewall, proteção de conta, rede | Mitigar riscos de apps/navegação |\n| **Resultado** | Proteção geral do sistema | Redução de risco em apps/sites |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Sistema e Segurança**\n\n* **Segurança e Manutenção**: Painel > **Sistema e Segurança** > Segurança e Manutenção (estado, encontrar e corrigir problemas).\n* **Windows Defender**: Painel > Sistema e Segurança > **Windows Defender** (proteção contra vírus e ameaças; firewall e proteção de rede; proteção de contas; controle de aplicativos e navegador; configurações avançadas).\n* **Sistema**: Painel > Sistema e Segurança > **Sistema** (nome do dispositivo, processador, memória, tipo de sistema 32/64 bits, versão/compilação, data de instalação, acesso remoto/assistência remota).\n* **Opções de Energia**: Painel > Sistema e Segurança > **Opções de Energia** (plano equilibrado/alto desempenho; definir o que acontece ao fechar a tampa/botões).\n* **Backup e Restauração (Windows 7)**: Painel > Sistema e Segurança > **Backup e Restauração (Windows 7)** (configurar backup em outra unidade; criar/restaurar ponto).\n* **BitLocker**: Painel > Sistema e Segurança > **Criptografia de Unidade de Disco BitLocker** (criptografar unidade do sistema e pendrive; gerenciar senhas/chaves).\n\n**2. Rede e Internet**\n\n* **Central de Rede e Compartilhamento**: Painel > **Rede e Internet** > Central de Rede e Compartilhamento (status, conectar, exibir computadores/dispositivos da rede, solucionar problemas).\n* **Opções da Internet**: Painel > Rede e Internet > **Opções da Internet** (segurança, privacidade, conteúdo, conexões, programas, avançadas; complementos).\n* **VPN/Proxy**: configurados via Central de Rede/Opções da Internet (no sistema ou navegador).\n\n**3. Hardware e Sons**\n\n* **Dispositivos e Impressoras**: Painel > **Hardware e Sons** > Dispositivos e Impressoras (adicionar/remover/configurar).\n* **Som**: Painel > Hardware e Sons > **Som** (reprodução/gravação, propriedades).\n* **Reprodução Automática**: Painel > Hardware e Sons > **Reprodução Automática** (definir ação para mídias/pendrives; recomendado restringir/desabilitar).\n* **Central de Mobilidade do Windows**: Painel > Hardware e Sons > **Central de Mobilidade do Windows** (brilho, volume, apresentação, energia).\n\n**4. Programas**\n\n* **Desinstalar programa**: Painel > **Programas** > Programas e Recursos > **Desinstalar/Alterar**.\n* **Exibir atualizações instaladas**: Painel > Programas > Programas e Recursos > **Exibir atualizações instaladas** (remover update problemático).\n* **Ativar/Desativar recursos do Windows**: Painel > Programas > Programas e Recursos > **Ativar ou desativar recursos do Windows**.\n* **Programas padrão/compatibilidade**: dentro de Programas e Recursos.\n\n**5. Contas de Usuário**\n\n* Painel > **Contas de Usuário** > alterar tipo de conta; exigir conta administrador para alterações; não é possível remover a única conta admin sem outra.\n\n**6. Aparência e Personalização**\n\n* Painel > **Aparência e Personalização** > Barra de tarefas e navegação; Tema; Resolução; **Opções de Pasta** (exibir extensões; clique único/duplo).\n\n**7. Facilidade de Acesso**\n\n* Painel > **Facilidade de Acesso** > Lupa; Teclado Virtual; Narrador; Reconhecimento de fala.\n\n**8. Relógio e Região**\n\n* Painel > **Relógio e Região** > Data e hora; formatos regionais; idiomas.\n* Nem todas as edições permitem mudar **idioma de exibição** do sistema.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Exibição “por categoria” é a mais cobrada; memorize os caminhos.\n* “Opções da Internet” ainda existem no Windows 10 por compatibilidade, apesar do Microsoft Edge ser o padrão.\n* “Controle de aplicativos e de navegador” não torna o sistema imune; apenas reduz riscos.\n* “Restauração do Sistema” não recupera arquivos pessoais apagados; reverte programas/drivers/updates.\n* Desinstalar programa não é apagar pasta em “Arquivos de Programas”; use “Programas e Recursos”.\n\n---\n\n## 📋 Checklist Final\n\n* Sei listar as **8 categorias** do Painel de Controle?\n* Memorizei os caminhos de: **Windows Defender, Sistema, Opções de Energia, Backup/Restauração, BitLocker**?\n* Diferenciei **Backup x Restauração do Sistema** e **Suspender x Hibernar**?\n* Lembro que **Opções da Internet** ainda existem e ficam em **Rede e Internet**?\n* Sei que **desinstalar ≠ apagar pasta** em Arquivos de Programas?",
+  "mapa_mental": "# 💻 Windows 10 VIII – Painel de Controle\n## 🎯 Visão Geral Painel\n### 💡 Conceitos Básicos\n- Interface administração\n- Painel de Controle\n- Windows 10\n- Configurações clássicas\n### 🧭 Modos de Exibição\n- Ícones grandes\n- Ícones pequenos\n- Exibição categoria\n- Caminhos em provas\n### 📂 Categorias Principais\n- Sistema e Segurança\n- Rede e Internet\n- Hardware e Sons\n- Programas\n- Contas de Usuário\n- Aparência Personalização\n- Facilidade de Acesso\n- Relógio e Região\n\n## 🛡️ Sistema e Segurança\n### 🔐 Segurança Windows\n- Windows Defender\n- Antivírus integrado\n- Firewall rede\n- Proteção contas\n- Controle apps navegador\n### ♻️ Recuperação Sistema\n- Restauração Sistema\n- Pontos restauração\n- Afeta programas drivers\n- Não afeta arquivos\n- Backup Restauração Win7\n### 🔒 Criptografia BitLocker\n- Criptografia disco\n- Unidades removíveis\n- Senha obrigatória\n- Chave recuperação\n- Sem chave sem acesso\n### ⚡ Energia e Desempenho\n- Opções energia\n- Planos equilibrado alto\n- Suspender em RAM\n- Hibernar em disco\n- Ação fechar tampa\n### 🖥️ Sistema Detalhes\n- Nome computador\n- Processador memória\n- Tipo sistema 32 64\n- Versão compilação\n- Data instalação\n\n## 🌐 Rede e Internet\n### 🌍 Central de Rede\n- Status conexões\n- Configurar adaptadores\n- Compartilhamento rede\n- Rede privada pública\n- Solução problemas\n### 🛰️ VPN e Proxy\n- VPN túnel seguro\n- Rede privada virtual\n- Proxy intermediário\n- Configuração sistema\n- Configuração navegador\n### 🌐 Opções da Internet\n- Segurança privacidade\n- Conteúdo conexões\n- Programas avançadas\n- Complementos navegador\n- Compatibilidade Internet Explorer\n\n## 🧩 Hardware Programas Aparência\n### 🖨️ Hardware e Sons\n- Dispositivos impressoras\n- Configurar impressoras\n- Áudio som\n- Reprodução automática\n- Central mobilidade\n### 📦 Programas e Recursos\n- Instalar desinstalar\n- Não apagar pastas\n- Atualizações instaladas\n- Remover atualização\n- Recursos Windows\n### 👤 Contas Usuário\n- Tipos de conta\n- Conta administrador\n- Elevação privilégios\n- Não remover único admin\n- Controle alterações\n### 🎨 Aparência Personalização\n- Barra tarefas\n- Temas área trabalho\n- Resolução tela\n- Opções pasta\n- Extensões arquivos\n### 🧏 Facilidade Acesso\n- Lupa zoom\n- Teclado virtual\n- Narrador leitura\n- Reconhecimento fala\n- Acessibilidade geral\n### 🕒 Relógio e Região\n- Data hora\n- Fuso horário\n- Formatos regionais\n- Idiomas sistema\n- Limites mudança idioma",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Exibições do Painel",
+      "description": "Exibições do Painel — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quais são os modos de exibição disponíveis no Painel de Controle?",
+          "back": "Ícones grandes, ícones pequenos e categoria.",
+          "hint": "São três opções de visualização",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "painel-de-controle"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a diferença entre as exibições por ícones grandes e pequenos?",
+          "back": "Apenas a forma como as opções são exibidas.",
+          "hint": "A diferença é apenas visual",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "painel-de-controle"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Segurança e Recuperação",
+      "description": "Segurança e Recuperação — 12 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Em quais áreas a categoria Segurança e Manutenção divide seus alertas?",
+          "back": "Segurança e manutenção.",
+          "hint": "São dois pilares de proteção",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "seguranca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Além do antivírus, o que o Windows Defender reúne?",
+          "back": "Um conjunto completo de ferramentas de proteção.",
+          "hint": "É uma suíte de segurança",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "windows-defender"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Contra quais ameaças o Windows Defender oferece proteção?",
+          "back": "Vírus e ameaças.",
+          "hint": "O nome do recurso já indica",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "windows-defender"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual recurso do Windows Defender monitora aplicativos e navegadores?",
+          "back": "Controle de aplicativos e de navegador.",
+          "hint": "Foca em softwares e navegação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "windows-defender"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual finalidade tem a solução de problemas de rede no Painel de Controle?",
+          "back": "Encontrar e corrigir problemas na rede.",
+          "hint": "O nome da ferramenta é autoexplicativo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "rede"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Em qual unidade é recomendável armazenar um backup do Windows?",
+          "back": "Em uma outra unidade.",
+          "hint": "Evite a mesma unidade do sistema",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "backup"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "O que um ponto de restauração permite recuperar no Windows 10?",
+          "back": "Voltar o computador a um estado anterior no tempo.",
+          "hint": "É uma viagem no tempo do sistema",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "restauracao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Após uma restauração, qual efeito ocorre nos programas instalados depois do ponto?",
+          "back": "São automaticamente desinstalados.",
+          "hint": "O que acontece com apps novos?",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "restauracao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Quais arquivos pessoais não são afetados pela Restauração do Sistema?",
+          "back": "Arquivos pessoais como fotos e e-mails.",
+          "hint": "O sistema preserva dados do usuário",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "restauracao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual tecnologia do Windows 10 criptografa uma unidade de disco?",
+          "back": "BitLocker.",
+          "hint": "Tecnologia de proteção de disco",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "bitlocker"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual recurso do BitLocker protege unidades removíveis?",
+          "back": "BitLocker To Go.",
+          "hint": "Versão para dispositivos externos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "bitlocker"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual é a consequência de perder a senha de uma unidade criptografada?",
+          "back": "A perda dos dados, pois não há volta.",
+          "hint": "O risco é permanente",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "bitlocker"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Rede e Internet",
+      "description": "Rede e Internet — 5 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual central permite exibir o estado e as tarefas da rede?",
+          "back": "Central de Rede e Compartilhamento.",
+          "hint": "O nome indica a função de rede",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "rede"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual seção do Painel de Controle reúne opções do Internet Explorer?",
+          "back": "Opções da Internet.",
+          "hint": "Configurações do navegador legado",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "internet-explorer"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual é a função de um servidor proxy no acesso à internet?",
+          "back": "Um servidor intermediário usado para o acesso à internet.",
+          "hint": "Atua como um intermediário",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "rede"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Que tipo de conexão virtual pode ser configurada em Rede e Internet?",
+          "back": "Rede privada virtual (VPN).",
+          "hint": "Sigla para rede privada virtual",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "rede"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Em qual categoria do Painel de Controle são configuradas redes Wi-Fi?",
+          "back": "Rede e Internet.",
+          "hint": "Onde se gerencia conectividade",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "rede"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Sistema e Energia",
+      "description": "Sistema e Energia — 5 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Qual janela reúne a versão do Windows, a memória e o processador?",
+          "back": "Janela Sistema.",
+          "hint": "Exibe hardware e versão do SO",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "sistema"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual informação indica se o sistema operacional é de 32 ou 64 bits?",
+          "back": "A versão do sistema operacional (ex: 64 bits).",
+          "hint": "Refere-se à arquitetura do SO",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "sistema"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Como a fonte de energia pode alterar o comportamento ao fechar a tampa?",
+          "back": "Pode hibernar, suspender ou não fazer nada, dependendo da conexão com a energia.",
+          "hint": "Depende da fonte de energia",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual plano de energia prioriza o desempenho máximo da máquina?",
+          "back": "Alto desempenho.",
+          "hint": "Foca em performance máxima",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-24",
+          "front": "Qual é a diferença entre os planos de energia equilibrado e alto desempenho?",
+          "back": "O equilibrado é o recomendado, enquanto o alto desempenho prioriza o desempenho máximo da máquina sem economia de energia.",
+          "hint": "Compare economia vs performance",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Programas e Acessibilidade",
+      "description": "Programas e Acessibilidade — 1 cards",
+      "cards": [
+        {
+          "id": "card-25",
+          "front": "Qual área do Painel de Controle deve ser usada para desinstalar programas?",
+          "back": "Programas e Recursos.",
+          "hint": "Gerenciamento de softwares instalados",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "programas"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Painel de Controle do Windows 10, qual é o modo de exibição que organiza as opções em agrupamentos temáticos e é considerado o mais cobrado em provas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Exibição por categoria",
+          "correct": true,
+          "explanation": "Correta. A exibição por categoria é o modo padrão e mais didático do Painel de Controle, agrupando funcionalidades relacionadas sob títulos como \"Sistema e Segurança\", \"Rede e Internet\", entre outros. Essa organização facilita a localização de configurações específicas e é frequentemente o foco em avaliações sobre o sistema operacional."
+        },
+        {
+          "id": "b",
+          "text": "Exibição por ícones pequenos",
+          "correct": false,
+          "explanation": "Incorreta. Similar à exibição por ícones grandes, a exibição por ícones pequenos mostra os itens individualmente em um tamanho reduzido, sem qualquer agrupamento temático."
+        },
+        {
+          "id": "c",
+          "text": "Exibição por ícones grandes",
+          "correct": false,
+          "explanation": "Incorreta. A exibição por ícones grandes no Painel de Controle organiza todos os itens individualmente, mostrando-os como ícones maiores, mas não os agrupa por categorias temáticas."
+        },
+        {
+          "id": "d",
+          "text": "Exibição por lista detalhada",
+          "correct": false,
+          "explanation": "Incorreta. \"Exibição por lista detalhada\" não é um modo de exibição padrão ou reconhecido para o Painel de Controle do Windows 10. Os modos principais são por categoria, ícones grandes e ícones pequenos."
+        }
+      ],
+      "explanation": "Correta. A exibição por categoria é o modo padrão e mais didático do Painel de Controle, agrupando funcionalidades relacionadas sob títulos como \"Sistema e Segurança\", \"Rede e Internet\", entre outros. Essa organização facilita a localização de configurações específicas e é frequentemente o foco em avaliações sobre o sistema operacional.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual ferramenta do Windows 10 reúne funcionalidades de proteção contra vírus e ameaças, proteção de contas, firewall e proteção de rede, controle de aplicativos e navegador?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Firewall do Windows",
+          "correct": false,
+          "explanation": "Incorreta. O Firewall do Windows é um componente específico de segurança que controla o tráfego de rede, protegendo o sistema contra acessos não autorizados. No entanto, ele não abrange a proteção contra vírus, ameaças de malware, proteção de contas ou controle de aplicativos de forma abrangente, como o Windows Defender."
+        },
+        {
+          "id": "b",
+          "text": "Proteção do Sistema",
+          "correct": false,
+          "explanation": "Incorreta. A Proteção do Sistema refere-se principalmente à funcionalidade de Ponto de Restauração, que permite reverter o sistema operacional a um estado anterior para corrigir problemas. Não é uma ferramenta de segurança que oferece proteção contra vírus, firewall ou controle de aplicativos e navegador."
+        },
+        {
+          "id": "c",
+          "text": "Central de Segurança e Manutenção",
+          "correct": false,
+          "explanation": "Incorreta. A Central de Segurança e Manutenção (atualmente parte da Segurança do Windows) atua como um painel de controle e monitoramento para diversas funcionalidades de segurança, mas não é a ferramenta que, por si só, oferece todas as proteções mencionadas. Ela reporta o status e permite o acesso a essas ferramentas."
+        },
+        {
+          "id": "d",
+          "text": "Windows Defender",
+          "correct": true,
+          "explanation": "Correta. O Windows Defender, que hoje faz parte da \"Segurança do Windows\" e é conhecido como Microsoft Defender Antivírus, evoluiu para ser uma suíte de segurança completa. Ele integra proteção em tempo real contra vírus e ameaças, firewall, controle de aplicativos e navegador, proteção de contas e rede, consolidando várias funcionalidades de segurança em uma única solução."
+        }
+      ],
+      "explanation": "Correta. O Windows Defender, que hoje faz parte da \"Segurança do Windows\" e é conhecido como Microsoft Defender Antivírus, evoluiu para ser uma suíte de segurança completa. Ele integra proteção em tempo real contra vírus e ameaças, firewall, controle de aplicativos e navegador, proteção de contas e rede, consolidando várias funcionalidades de segurança em uma única solução.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Na janela Sistema do Painel de Controle, quais informações sobre o computador podem ser visualizadas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Exclusivamente as especificações de hardware sem informações do sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. A janela Sistema não se limita a exibir exclusivamente as especificações de hardware. Pelo contrário, ela combina informações de hardware (como processador e RAM) com dados cruciais do sistema operacional (como a versão do Windows e sua arquitetura)."
+        },
+        {
+          "id": "b",
+          "text": "Apenas o nome do dispositivo e o processador instalado",
+          "correct": false,
+          "explanation": "Incorreta. A janela Sistema fornece mais informações do que apenas o nome do dispositivo e o processador. Ela oferece um panorama mais completo do hardware e do sistema operacional."
+        },
+        {
+          "id": "c",
+          "text": "Nome do dispositivo, processador, memória RAM, versão do Windows e arquitetura do sistema",
+          "correct": true,
+          "explanation": "Correta. Na janela Sistema do Painel de Controle, é possível visualizar detalhes essenciais como o nome do dispositivo, o modelo e a velocidade do processador, a quantidade de memória RAM instalada, a versão e edição do Windows, e a arquitetura do sistema operacional (32 ou 64 bits)."
+        },
+        {
+          "id": "d",
+          "text": "Somente a versão do Windows e a data de instalação",
+          "correct": false,
+          "explanation": "Incorreta. Embora a versão do Windows e a data de instalação estejam disponíveis, a janela Sistema exibe um conjunto mais amplo de detalhes sobre o computador, incluindo especificações de hardware."
+        }
+      ],
+      "explanation": "Correta. Na janela Sistema do Painel de Controle, é possível visualizar detalhes essenciais como o nome do dispositivo, o modelo e a velocidade do processador, a quantidade de memória RAM instalada, a versão e edição do Windows, e a arquitetura do sistema operacional (32 ou 64 bits).",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a finalidade principal da funcionalidade de Ponto de Restauração do Windows?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Fazer backup completo do disco rígido em uma unidade externa",
+          "correct": false,
+          "explanation": "Incorreta. Fazer um backup completo do disco rígido (imagem do sistema) é uma operação mais abrangente que cria uma cópia exata de todo o conteúdo do disco, incluindo sistema operacional, programas e arquivos pessoais, geralmente em uma unidade externa. Isso é diferente da finalidade do Ponto de Restauração."
+        },
+        {
+          "id": "b",
+          "text": "Restaurar configurações do sistema e programas instalados para um estado anterior",
+          "correct": true,
+          "explanation": "Correta. A funcionalidade de Ponto de Restauração permite que o usuário reverta o sistema operacional a um estado anterior, desfazendo alterações em arquivos de sistema, configurações, drivers e programas instalados. É útil para solucionar problemas causados por novas instalações ou atualizações, sem afetar documentos, imagens ou outros arquivos pessoais."
+        },
+        {
+          "id": "c",
+          "text": "Criar cópias de segurança de todos os arquivos pessoais do usuário",
+          "correct": false,
+          "explanation": "Incorreta. A criação de cópias de segurança de arquivos pessoais é uma função de backup (como o Histórico de Arquivos ou o Backup e Restauração do Windows), e não do Ponto de Restauração. Os Pontos de Restauração não afetam arquivos pessoais."
+        },
+        {
+          "id": "d",
+          "text": "Sincronizar arquivos entre diferentes dispositivos na nuvem",
+          "correct": false,
+          "explanation": "Incorreta. A sincronização de arquivos entre dispositivos na nuvem é um serviço que mantém cópias de arquivos atualizadas em múltiplos locais (dispositivos e armazenamento em nuvem), facilitando o acesso e a colaboração. Não tem relação com a restauração de configurações do sistema."
+        }
+      ],
+      "explanation": "Correta. A funcionalidade de Ponto de Restauração permite que o usuário reverta o sistema operacional a um estado anterior, desfazendo alterações em arquivos de sistema, configurações, drivers e programas instalados. É útil para solucionar problemas causados por novas instalações ou atualizações, sem afetar documentos, imagens ou outros arquivos pessoais.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o procedimento correto para desinstalar um programa no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Formatar a partição onde o programa está instalado",
+          "correct": false,
+          "explanation": "Incorreta. Formatar a partição onde o programa está instalado é uma medida drástica que apaga todos os dados daquela partição, incluindo o sistema operacional se for a partição principal. Não é um procedimento para desinstalar um único programa, mas sim para limpar completamente um disco ou reinstalar o sistema operacional."
+        },
+        {
+          "id": "b",
+          "text": "Excluir manualmente a pasta do programa em Arquivos de Programas",
+          "correct": false,
+          "explanation": "Incorreta. Excluir manualmente a pasta de um programa é um método inadequado e pode deixar rastros (como entradas no registro do sistema e arquivos residuais) que podem causar instabilidade ou ocupar espaço desnecessariamente. Não garante a remoção completa do programa."
+        },
+        {
+          "id": "c",
+          "text": "Utilizar a opção Programas e Recursos no Painel de Controle",
+          "correct": true,
+          "explanation": "Correta. O procedimento correto e recomendado para desinstalar um programa no Windows 10 é através da opção \"Programas e Recursos\" (ou \"Aplicativos e Recursos\" nas Configurações) no Painel de Controle. Este método aciona o desinstalador do programa, garantindo a remoção adequada de todos os seus componentes e entradas no sistema."
+        },
+        {
+          "id": "d",
+          "text": "Remover apenas os atalhos da área de trabalho e do menu iniciar",
+          "correct": false,
+          "explanation": "Incorreta. Remover apenas os atalhos de um programa da área de trabalho ou do menu iniciar não desinstala o programa. Apenas remove os links de acesso, e o programa continua instalado no sistema, ocupando espaço e podendo ser executado de outras formas."
+        }
+      ],
+      "explanation": "Correta. O procedimento correto e recomendado para desinstalar um programa no Windows 10 é através da opção \"Programas e Recursos\" (ou \"Aplicativos e Recursos\" nas Configurações) no Painel de Controle. Este método aciona o desinstalador do programa, garantindo a remoção adequada de todos os seus componentes e entradas no sistema.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quando um Ponto de Restauração do Sistema é utilizado para reverter o Windows a um estado anterior, o que acontece com os arquivos pessoais do usuário?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os arquivos pessoais como fotos e documentos não são afetados pela restauração",
+          "correct": true,
+          "explanation": "Correta. Conforme a funcionalidade da Restauração do Sistema do Windows, arquivos pessoais (como documentos, fotos, músicas e vídeos) não são alterados ou excluídos quando o sistema é revertido para um ponto de restauração anterior. O foco da ferramenta é restaurar configurações do sistema, programas e drivers."
+        },
+        {
+          "id": "b",
+          "text": "Os arquivos são movidos para uma pasta de backup temporária que expira em 30 dias",
+          "correct": false,
+          "explanation": "Incorreta. A Restauração do Sistema não move arquivos pessoais para uma pasta de backup temporária. Ela simplesmente não os afeta. Ferramentas de backup separadas, como o Histórico de Arquivos, são responsáveis por criar cópias de segurança de dados."
+        },
+        {
+          "id": "c",
+          "text": "Apenas os arquivos da pasta Documentos são preservados durante a restauração",
+          "correct": false,
+          "explanation": "Incorreta. Não são apenas os arquivos da pasta \"Documentos\" que são preservados. A Restauração do Sistema foi desenvolvida para não afetar nenhum arquivo pessoal do usuário, independentemente da pasta onde estejam armazenados (ex: Imagens, Vídeos, Área de Trabalho, etc.)."
+        },
+        {
+          "id": "d",
+          "text": "Todos os arquivos criados após o ponto de restauração são permanentemente excluídos",
+          "correct": false,
+          "explanation": "Incorreta. A Restauração do Sistema do Windows é projetada para afetar apenas arquivos de sistema, programas instalados e drivers, não excluindo arquivos pessoais como documentos, fotos ou vídeos criados após o ponto de restauração."
+        }
+      ],
+      "explanation": "Correta. Conforme a funcionalidade da Restauração do Sistema do Windows, arquivos pessoais (como documentos, fotos, músicas e vídeos) não são alterados ou excluídos quando o sistema é revertido para um ponto de restauração anterior. O foco da ferramenta é restaurar configurações do sistema, programas e drivers.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a função do BitLocker no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Realizar backup automático de arquivos em unidades externas",
+          "correct": false,
+          "explanation": "Incorreta. O BitLocker não tem a função de realizar backup automático de arquivos. Essa tarefa é geralmente executada por ferramentas de backup dedicadas, como o Histórico de Arquivos ou serviços de armazenamento em nuvem."
+        },
+        {
+          "id": "b",
+          "text": "Criptografar unidades de disco para proteger dados contra acesso não autorizado",
+          "correct": true,
+          "explanation": "Correta. O BitLocker é uma funcionalidade de segurança do Windows que permite a criptografia completa de unidades de disco rígido e unidades removíveis. Seu objetivo principal é proteger os dados contra acesso não autorizado, mesmo que o dispositivo seja perdido, roubado ou o disco seja removido e conectado a outro computador."
+        },
+        {
+          "id": "c",
+          "text": "Gerenciar permissões de acesso a pastas compartilhadas na rede",
+          "correct": false,
+          "explanation": "Incorreta. O gerenciamento de permissões de acesso a pastas compartilhadas na rede é feito através das configurações de compartilhamento do Windows e das permissões do sistema de arquivos (NTFS), e não é uma função do BitLocker."
+        },
+        {
+          "id": "d",
+          "text": "Otimizar o desempenho do disco rígido através de desfragmentação",
+          "correct": false,
+          "explanation": "Incorreta. A otimização do desempenho do disco rígido, como a desfragmentação, é realizada por outras ferramentas do sistema operacional (como a ferramenta \"Otimizar Unidades\"), e não pelo BitLocker, cuja função é a segurança dos dados."
+        }
+      ],
+      "explanation": "Correta. O BitLocker é uma funcionalidade de segurança do Windows que permite a criptografia completa de unidades de disco rígido e unidades removíveis. Seu objetivo principal é proteger os dados contra acesso não autorizado, mesmo que o dispositivo seja perdido, roubado ou o disco seja removido e conectado a outro computador.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Em Programas e Recursos do Painel de Controle, além de desinstalar programas, quais outras operações podem ser realizadas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Somente desinstalar programas e visualizar o espaço ocupado por cada aplicativo",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível desinstalar programas e, em alguns casos, visualizar o espaço ocupado, a funcionalidade da seção \"Programas e Recursos\" é mais abrangente, incluindo a gestão de recursos do Windows e atualizações."
+        },
+        {
+          "id": "b",
+          "text": "Ativar ou desativar recursos do Windows, exibir atualizações instaladas e reparar programas",
+          "correct": true,
+          "explanation": "Correta. Na seção \"Programas e Recursos\" do Painel de Controle, além de desinstalar programas, é possível acessar a opção \"Ativar ou desativar recursos do Windows\" para gerenciar componentes do sistema, \"Exibir atualizações instaladas\" para remover atualizações problemáticas e, para alguns softwares, a opção de \"Reparar\" a instalação."
+        },
+        {
+          "id": "c",
+          "text": "Exclusivamente configurar programas para inicialização automática com o Windows",
+          "correct": false,
+          "explanation": "Incorreta. A configuração de programas para inicialização automática com o Windows é geralmente gerenciada através do Gerenciador de Tarefas (aba \"Inicializar\") ou das configurações internas dos próprios programas, e não é uma função direta da seção \"Programas e Recursos\"."
+        },
+        {
+          "id": "d",
+          "text": "Apenas visualizar a lista de programas instalados sem possibilidade de modificação",
+          "correct": false,
+          "explanation": "Incorreta. A seção \"Programas e Recursos\" no Painel de Controle oferece mais do que apenas a visualização. Ela é a interface principal para gerenciar o software instalado, permitindo modificações e desinstalações."
+        }
+      ],
+      "explanation": "Correta. Na seção \"Programas e Recursos\" do Painel de Controle, além de desinstalar programas, é possível acessar a opção \"Ativar ou desativar recursos do Windows\" para gerenciar componentes do sistema, \"Exibir atualizações instaladas\" para remover atualizações problemáticas e, para alguns softwares, a opção de \"Reparar\" a instalação.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No contexto de gerenciamento de energia em notebooks, qual é a diferença prática entre configurar a ação de fechar a tampa quando conectado à energia versus quando operando apenas com bateria?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É possível definir ações distintas, como suspender quando em bateria e não fazer nada quando conectado à energia",
+          "correct": true,
+          "explanation": "Correta. As opções de energia do Windows, acessíveis no Painel de Controle, permitem que o usuário configure ações diferentes para o fechamento da tampa, dependendo se o notebook está usando a bateria ou conectado à fonte de energia. Por exemplo, pode-se configurar para suspender o sistema quando na bateria e para não fazer nada quando conectado à energia, o que é útil para usar um monitor externo."
+        },
+        {
+          "id": "b",
+          "text": "A configuração de bateria sempre prevalece sobre a configuração de energia conectada",
+          "correct": false,
+          "explanation": "Incorreta. As configurações de energia para bateria e para energia conectada são independentes. Nenhuma prevalece automaticamente sobre a outra; o sistema aplica a configuração correspondente à fonte de energia ativa no momento."
+        },
+        {
+          "id": "c",
+          "text": "Apenas quando conectado à energia é possível configurar a ação de fechar a tampa",
+          "correct": false,
+          "explanation": "Incorreta. É possível configurar a ação de fechar a tampa tanto para quando o notebook está conectado à energia quanto para quando está operando apenas com bateria, oferecendo flexibilidade ao usuário."
+        },
+        {
+          "id": "d",
+          "text": "Não há diferença, pois o sistema aplica a mesma configuração independentemente da fonte de energia",
+          "correct": false,
+          "explanation": "Incorreta. O Windows permite configurações de gerenciamento de energia distintas para quando o notebook está conectado à energia e quando está operando com bateria, visando otimizar o consumo e o desempenho em cada cenário."
+        }
+      ],
+      "explanation": "Correta. As opções de energia do Windows, acessíveis no Painel de Controle, permitem que o usuário configure ações diferentes para o fechamento da tampa, dependendo se o notebook está usando a bateria ou conectado à fonte de energia. Por exemplo, pode-se configurar para suspender o sistema quando na bateria e para não fazer nada quando conectado à energia, o que é útil para usar um monitor externo.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No Windows 10, qual é a consequência de perder a senha de recuperação de uma unidade criptografada com BitLocker?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O sistema permite redefinir a senha usando a conta de administrador local",
+          "correct": false,
+          "explanation": "Incorreta. A senha de recuperação do BitLocker é diferente da senha da conta de administrador local. A perda da chave de recuperação impossibilita o acesso aos dados criptografados, mesmo com privilégios de administrador, pois a criptografia é uma camada de segurança anterior ao login do sistema operacional."
+        },
+        {
+          "id": "b",
+          "text": "É possível recuperar a senha através do suporte técnico da Microsoft",
+          "correct": false,
+          "explanation": "Incorreta. O suporte técnico da Microsoft não armazena as chaves de recuperação do BitLocker para unidades criptografadas por usuários. A responsabilidade de guardar essa chave é do próprio usuário, e sem ela, a Microsoft não pode auxiliar na recuperação dos dados."
+        },
+        {
+          "id": "c",
+          "text": "A unidade pode ser descriptografada através do modo de segurança do Windows",
+          "correct": false,
+          "explanation": "Incorreta. O modo de segurança do Windows não oferece um método para descriptografar uma unidade protegida por BitLocker sem a senha ou a chave de recuperação. A criptografia BitLocker atua em um nível fundamental do disco, exigindo a chave antes mesmo que o sistema operacional possa ser totalmente inicializado."
+        },
+        {
+          "id": "d",
+          "text": "Os dados na unidade criptografada tornam-se permanentemente inacessíveis",
+          "correct": true,
+          "explanation": "Correta. A perda da senha ou da chave de recuperação de uma unidade criptografada com BitLocker resulta na inacessibilidade permanente dos dados. Essa é uma característica fundamental da criptografia de disco, que garante a segurança da informação ao custo da irrecuperabilidade em caso de perda das credenciais."
+        }
+      ],
+      "explanation": "Correta. A perda da senha ou da chave de recuperação de uma unidade criptografada com BitLocker resulta na inacessibilidade permanente dos dados. Essa é uma característica fundamental da criptografia de disco, que garante a segurança da informação ao custo da irrecuperabilidade em caso de perda das credenciais.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "13_253602_Windows 10 VIII.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:57:47"
+}

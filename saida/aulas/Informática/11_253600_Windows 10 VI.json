@@ -1,0 +1,774 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 11,
+  "ordem_no_curso": "11.00",
+  "titulo": "Windows 10 VI",
+  "codigo_aula": "253600",
+  "video_id": "U6zvhK2EANU=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:27:45",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/U6zvhK2EANU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405101&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Windows 10 VI\n\n## Exclusões permanentes e Lixeira no Windows 10\nEntão, continuando na linha do Windows 10: acabamos de ver as exclusões que serão sempre permanentes, entre outras opções também. Mas vale lembrar que, quando o arquivo está armazenado em um pendrive ou em uma unidade de rede, usar Del ou Delete é permanente. Porque são exclusões que, depois de confirmadas, serão permanentes também. Comigo?\n\nJá temos aqui um exercício que dizia o seguinte: em relação ao Windows 10, a lixeira permite a recuperação de arquivos removidos. Não. Também vimos essa opção. Podemos, inclusive, logo após excluir um arquivo, usar a opção Ctrl+Z. É possível fazer isso com relação à lixeira? Sim.\n\nAssinalar a alternativa correta:\n- Letra A: ao se excluir um arquivo com a combinação de teclas Shift+Delete, esse arquivo é excluído diretamente e não fica armazenado na lixeira. Beleza, nossa opção correta. Quando eu excluo com Shift+Delete, basicamente, como falei agora, não há como desfazer isso. Não há como voltar atrás, digamos assim.\n\nLetra B: a lixeira deve ser esvaziada periodicamente, pois não possui caixa automático dos itens excluídos... Veja, os itens que a gente coloca na lixeira não são excluídos automaticamente. Segundo a informação, ela deve ser esvaziada periodicamente. Só que, quando a lixeira está cheia, não cabe mais itens, ela vai ficar lotada. Nesse caso, a questão... (aqui a ideia é: sim, a lixeira não esvazia sozinha por padrão; quando lota, ela começa a substituir itens mais antigos, conforme configuração).\n\nPortanto, a letra C dizia que arquivos de pendrives e cartões também são armazenados na lixeira ao serem excluídos. Embora eu não tenha comentado antes, é importante: assim como nos pendrives, cartões de memória também, se você conectar no computador e apagar arquivos (geralmente fotos), será uma exclusão permanente. Ele fala que são armazenados na lixeira: mentira. Não vão para a lixeira.\n\nVem comigo: letra D. A lixeira permite restaurar arquivos individualmente, mas não permite a remoção definitiva de arquivos individualmente. Permite, sim. Você pode tanto excluir quanto restaurar arquivos manualmente — um ou vários de uma vez — ou esvaziar toda a lixeira de uma vez. Então, por isso, ficamos com a letra A como correta.\n\n## Propriedades de arquivos (metadados) e o que aparece\nNo Windows 10, ao clicar com o botão direito do mouse sobre um arquivo do disco C: (veja, por padrão, o Windows é instalado na unidade lógica C:) e selecionar a opção Propriedades, será aberta uma janela com informações e opções. Lembra da ideia que eu passei dos metadados? Dados sobre os dados. O que é isso que vamos exibir lá? Como a data de criação — sim, a data de criação vai estar lá. É uma opção? Sim, beleza.\n\nSe estiver perguntando sobre “editar arquivo” pelas propriedades, não tem essa opção. Nós teríamos a opção de renomear o arquivo (diferente de editar conteúdo). Nós temos lá também a opção para alterar o programa usado na sua abertura, entre outras informações. Sobre a data de exclusão dele: não tem, porque se ele foi excluído, não vai dar para acessar os metadados daquele arquivo excluído (ou de quem não está ali naquele local).\n\nAgendar a exclusão? Também não temos essa opção de agenda: “excluir daqui dois dias” — não dá. Excluir é excluir. Também não dá para, pelas propriedades, “alterar preço em segurança da fronteira” (nada a ver). Outras opções que nós vimos… Aqui, a única opção correta envolve metadados reais, como data de criação, modificação, tipo, tamanho, e alterar o programa padrão de abertura.\n\n## Bibliotecas padrão do Windows 10\nMais uma questão: arquivos, pastas e programas são nomes de bibliotecas padrão do Windows 10? Quer saber quais são as bibliotecas padrão. Lembra que tratamos de bibliotecas? Eu tinha até criado uma biblioteca chamada “Concurso”, mas falei: olha, eu criei, e existem as demais que são padrão.\n\nVamos então: Documentos e Imagens — sim, ambas são bibliotecas padrão. Aqui já podemos marcar a alternativa correta. “Nuvem, Downloads” — não (Downloads não é biblioteca padrão clássica, é pasta especial; “Nuvem” não é biblioteca padrão). “Músicas e E-mails” — também não. “Vídeos e Mercado” — tem Músicas e Vídeos, mas não na combinação mostrada.\n\nSão várias coisas que eu mostrei ao longo da aula. Se você perceber, estão sendo cobradas nas questões não por acaso. Não que eu tenha escolhido somente questões… É que eu vou acrescentando durante a resolução os detalhezinhos, como falei, da configuração padrão, os nomes padrão, a forma como o Windows faz por padrão. Muita gente brinca comigo: “Gerson, por padrão o seu nome…” Coisa do tipo. Vale lembrar: isso aqui é para você passar no concurso. Vem comigo.\n\n## Deleção de arquivos e pastas: o que é permanente e quem pode fazer\nSobre a deleção de arquivos e pastas no Windows 10, assinale a correta. Vamos:\n\n- “Arquivo deletado não pode ser restaurado.” Já vimos que, geralmente, pode ser restaurado pela lixeira, salvo se foi exclusão permanente.\n- “Ao esvaziar a lixeira, os arquivos são colocados em quarentena.” Não. Ao esvaziar a lixeira, são excluídos permanentemente, não tem volta.\n- “O atalho Shift+Delete deleta os arquivos permanentemente.” Sim. Não entrei em detalhes, mas vai lembrar: ele pede confirmação. Pede confirmação, mas o resultado é excluir permanentemente.\n- “Só é possível deletar permanentemente utilizando usuário administrador.” Não. O usuário comum (usuário padrão) também consegue deletar permanentemente. \n\nFica o cuidado na hora de analisar a questão.\n\n## Mover entre partições diferentes: arrastar, copiar e atalhos\nO usuário realiza copiar, recortar e colar no Explorer (no Windows 10, o nome é Explorador de Arquivos). Para mover um arquivo entre partições diferentes (letras/unidades lógicas, como C: para D:), vamos lembrar: quando arrasto entre unidades diferentes, por padrão, o Windows copia. Mas ele quer mover.\n\nO que podemos usar? Por exemplo:\n- Usar a tecla Shift ao arrastar com o botão esquerdo para forçar mover.\n- Clicar sobre o arquivo com o botão direito do mouse, manter pressionado, arrastar para a partição de destino, soltar e escolher a opção “Mover para cá”.\n\nTambém mostrei que é possível usar o botão direito para arrastar e, ao soltar, ele dá opções: “Copiar para cá” ou “Mover para cá”. O que nos interessa é “Mover para cá”. “Colar” criaria uma cópia, não moveria do local de origem para o destino.\n\nSe clicar com o botão esquerdo, manter pressionado e soltar no destino, por padrão, entre unidades diferentes, ele copia — não é o que eu quero. Usando o botão direito, ao soltar, ele abre o menu para você decidir. Aí sim você escolhe “Mover”. Se usasse o esquerdo, bastaria manter Shift pressionado durante o arraste para que mova.\n\nComo já falei: ele copia por padrão para unidades lógicas diferentes. Você tem que saber o que acontece por padrão e como alterar esse comportamento quando necessário.\n\nFica a dica: conforme a gente vai andando na aula, quero que você absorva o que é importante. Muita gente acha o conteúdo extenso. É mesmo, e não dá para ver tudo do Windows 10. A gente foca no que mais cai.\n\n## Atalhos de teclado: o essencial para prova\nPara não ficar parado no tempo, vamos ver alguns atalhos, de forma objetiva: qual atalho e o que ele faz — é isso que você tem que levar para a prova.\n\n- Ctrl+C: copia o item selecionado (cria uma cópia na Área de Transferência).\n  - Lembrando: a Área de Transferência é memória temporária. Se desligar o computador, o conteúdo vai embora.\n- Ctrl+X: recorta. A finalidade básica é mover o item de um local para outro quando depois você cola.\n- Ctrl+V: cola. É a ação que realiza o resultado do Ctrl+C ou Ctrl+X.\n- Ctrl+Z: desfaz a última ação, desde que seja possível.\n  - Exemplo: renomeei um arquivo; com Ctrl+Z, ele volta o nome anterior.\n  - Se eu deletei com Delete (foi para a lixeira), posso dar Ctrl+Z e ele restaura. Se foi Shift+Delete (exclusão definitiva), não dá para desfazer.\n- F2: renomear arquivo. Seleciona o arquivo (um clique com o esquerdo) e pressiona F2 para ativar o nome para renomear.\n- Ctrl+A: selecionar tudo em uma pasta (não seleciona itens ocultos).\n- Alt+Enter: exibe as Propriedades do item (equivale a clicar com o botão direito e Propriedades).\n- Alt+F4: fecha a janela ativa. Alguns programas podem perguntar se deseja salvar alterações.\n  - No Explorador de Arquivos, equivale a clicar no X para fechar.\n- Shift+clique no ícone de um programa na barra de tarefas: abre uma nova janela do programa (a janela precisa estar aberta; o clique com Shift no ícone abre outra).\n- Ctrl+Shift+N: cria uma nova pasta no local atual. Eu vou lá e coloco o nome que eu quiser. Beleza.\n- Alt+Tab: alterna entre janelas abertas exibindo miniaturas, da esquerda para a direita.\n- Ctrl+Alt+Tab: também alterna entre janelas, mas congela a visualização para você escolher; não exibe miniaturas como o Alt+Tab antigo exibia de forma contínua (no Windows 10, ambos ajudam a alternar, mas a experiência visual difere).\n- Shift+F10: abre o menu de contexto (equivale ao botão direito do mouse). Útil se o mouse estiver inoperante: você navega com o teclado e abre o menu.\n- Tecla Windows: abre o menu Iniciar.\n- Alt (em janelas com menu): ativa as teclas de acesso do menu (letras sublinhadas). Você pode usar Alt e depois a letra/número indicado para navegar por Arquivo, Editar etc.\n\nSobre o uso do Alt para menus: por exemplo, no Explorador de Arquivos, apertando Alt você verá letras/números. Para acessar o menu Arquivo, você pressiona Alt e depois a letra indicada (por exemplo, F). Ao abrir o menu Arquivo, verá letras novamente para acessar as funções. Isso vale para a maioria das janelas. Não é muito prático no dia a dia, mas para a prova basta saber que Alt ativa os menus por letras/números.\n\nCuidado para não confundir ambiente Windows (janelas do sistema) com programas rodando no Windows. Algumas teclas de atalho mantêm a função em vários programas (Ctrl+C, Ctrl+X, Ctrl+V), mas outras variam conforme o aplicativo.\n\n- Esc: cancelar/fechar diálogos, “escapar” de uma ação em andamento. Por exemplo, abriu uma caixa de diálogo, aperta Esc e ela fecha. Se começou uma ação e mudou de ideia, Esc cancela.\n\n- Ctrl+Alt+Del: no Windows 10, não abre diretamente o Gerenciador de Tarefas. Ele exibe uma tela com opções: bloquear, trocar usuário, sair, alterar senha, acessar o Gerenciador de Tarefas e opções de desligar/acessibilidade. Muito cobrado em prova: lembrar que NÃO abre direto o gerenciador.\n- Ctrl+Shift+Esc: abre diretamente o Gerenciador de Tarefas. Se quiser abrir o Gerenciador sem passar por outra tela, use este.\n\n> 🎯 **Dicas de prova:** \n> - Shift+Delete realiza exclusão permanente, sem passar pela lixeira.\n> - Arquivos excluídos de pendrives/cartões não vão para a lixeira.\n> - Arrastar entre unidades diferentes copia por padrão; para mover, use Shift ao arrastar ou arraste com o botão direito e escolha “Mover para cá”.\n> - Ctrl+Alt+Del não abre diretamente o Gerenciador de Tarefas no Windows 10; Ctrl+Shift+Esc abre direto.\n> - F2 renomeia; Alt+Enter abre Propriedades; Alt+F4 fecha a janela ativa; Ctrl+A seleciona tudo.\n\nFechando este bloco: sim, é preciso saber esses atalhos. Não estão todas as teclas possíveis aqui, mas respondi as dúvidas mais comuns. É bom saber pelo menos essas, porque caem muito em prova. Podem cair outras? Podem. Mas foque no que mais cai. Beleza?",
+  "transcricao_meta": {
+    "title": "Windows 10 VI",
+    "subject": "Noções de Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 35921,
+    "createdAt": "2026-02-05T17:50:05.619Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: Lixeira e exclusão no Windows 10, metadados e Propriedades, bibliotecas/pastas padrão, copiar vs mover entre partições, navegação no Explorador de Arquivos e atalhos essenciais (janelas, seleção, renomear, Gerenciador de Tarefas).\nPrincipais pontos: \n- Diferença Del vs Shift+Del e exceções (pendrive/rede).\n- Padrões de arrastar entre C: e D: e como forçar mover/copiar.\n- Atalhos certeiros de prova: Ctrl+Z, F2, Alt+Tab, Ctrl+Shift+Esc, Backspace no Explorer.\n\n## 1. Base / Conceitos Fundamentais\n- **Lixeira**: Área temporária para itens excluídos de unidades locais; permite restaurar ou esvaziar.\n- **Del (Delete)**: Exclusão que envia para a Lixeira (em disco local).\n- **Shift + Del**: Exclusão permanente (não vai para a Lixeira).\n- **Explorador de Arquivos (Windows Explorer)**: Gerenciador de arquivos/pastas do Windows 10.\n- **Unidades lógicas / Partições**: Exemplos: **C:**, **D:**. Partições diferentes mudam o comportamento de copiar/mover.\n- **Metadados**: “Dados sobre os dados” (ex.: data de criação de arquivo).\n- **Bibliotecas/Pastas padrão**: **Documentos**, **Imagens**, **Músicas**, **Vídeos**.\n\n## 2. Como Funciona / Distinções\n- Lixeira e exclusão:\n  - **Del** (em disco local) → vai para a **Lixeira** → pode restaurar.\n  - **Shift + Del** → exclusão permanente → não há restauração via Lixeira nem via **Ctrl+Z**.\n  - **Pendrives/cartões/unidades de rede**: mesmo com **Del**, a exclusão é permanente (não usam Lixeira).\n  - **Lixeira cheia**: não comporta novos itens; esvazie periodicamente.\n- Propriedades e metadados:\n  - Acessar: **botão direito do mouse → Propriedades**.\n  - Exibe metadados como **data de criação**; permite **alterar o programa padrão** de abertura.\n  - Não existe “agendar exclusão” nas Propriedades; “data de exclusão” não é exibida.\n- Copiar vs mover (arrastar/atalhos) entre partições:\n  - Arrastar com botão esquerdo:\n    - Mesma partição: padrão é **mover**.\n    - Partições diferentes (ex.: **C:** → **D:**): padrão é **copiar**.\n  - Forçar comportamento:\n    - **Shift** + arrastar (esquerdo) → força **mover**.\n    - Arrastar com **botão direito** → ao soltar, escolha **Copiar** ou **Mover**.\n    - **Ctrl+C/Ctrl+V** sempre copia; **Ctrl+X/Ctrl+V** move.\n- Ambientes de atalhos:\n  - **Ambiente Windows/Explorer** vs **aplicativos**: alguns atalhos variam; atenção ao contexto.\n- Janelas e navegação:\n  - Alternância: **Alt+Tab** (com miniaturas) vs **Ctrl+Tab** (sem miniaturas, comum em abas).\n  - Subir nível no Explorer: **Backspace**.\n- Segurança/Gerenciador de Tarefas:\n  - **Ctrl+Alt+Del** (Windows 10) → tela de opções (bloquear, trocar usuário, sair/encerrar sessão, acessibilidade/energia e acesso ao Gerenciador).\n  - **Ctrl+Shift+Esc** → abre diretamente o **Gerenciador de Tarefas**.\n\n## 3. Aplicação Prática / Técnicas\n- Excluir e restaurar:\n  - Excluir para Lixeira: selecione o item → **Del**.\n  - Restaurar: abra a **Lixeira** → selecione item → Restaurar.\n  - Esvaziar Lixeira: **Lixeira** → Esvaziar Lixeira.\n  - Exclusão permanente: selecione o item → **Shift + Del** → confirmar.\n- Ver metadados e alterar app padrão:\n  - Item → **botão direito → Propriedades** → guia **Geral/Detalhes** (metadados, ex.: **data de criação**).\n  - Alterar programa: **botão direito → Abrir com → Escolher outro aplicativo** → marcar “Sempre usar”.\n- Mover/copiar entre C: e D::\n  - Padrão: arrastar com botão esquerdo → entre partições copia.\n  - Mover entre partições:\n    - Segure **Shift** ao arrastar (botão esquerdo); ou\n    - Arraste com **botão direito** → soltar → **Mover para cá**; ou\n    - **Ctrl+X** no origem → ir ao destino → **Ctrl+V**.\n- Navegação hierárquica:\n  - Dentro de subpasta → **Backspace** para subir um nível.\n- Gestão de janelas:\n  - Nova janela do mesmo programa: clique no ícone da barra de tarefas mantendo **Shift** pressionado.\n  - Fechar a janela ativa: **Alt+F4**.\n\n## 4. Exemplos e Casos Resolvidos\n- Exclusão em pendrive:\n  - Situação: Arquivo em pendrive → pressionou **Del**.\n  - Resultado: Exclusão permanente; não vai para a Lixeira. **Ctrl+Z** não reverte.\n- Restaurar arquivo apagado por engano (disco local):\n  - Situação: Excluiu com **Del**.\n  - Solução: Abrir **Lixeira** → localizar item → Restaurar. Alternativa imediata: **Ctrl+Z** (se a última ação for reversível).\n- Mover de **C:** para **D:**:\n  - Situação: Arrastou com botão esquerdo.\n  - Resultado: Copiou (padrão entre partições). Para mover, repita segurando **Shift** ao arrastar, ou use **Ctrl+X/Ctrl+V**.\n- Ver a data de criação de um arquivo:\n  - Item → **botão direito → Propriedades → Detalhes** → verificar **data de criação**.\n- Abrir Gerenciador de Tarefas rapidamente:\n  - Pressione **Ctrl+Shift+Esc** → abre direto o **Gerenciador de Tarefas**.\n\n## 5. Pegadinhas e Erros Comuns\n- > Dica de Prova: “Shift + Del” = exclusão permanente; arquivos em pendrive/cartão/rede não vão para a Lixeira.\n- > Pegadinha: “Ctrl+Alt+Del abre diretamente o Gerenciador de Tarefas no Windows 10.” Errado. Abre a tela de opções; o direto é **Ctrl+Shift+Esc**.\n- > Dica de Prova: Padrão do arrastar com botão esquerdo — mesma partição move; partições diferentes copia. **Shift** altera o padrão.\n- > Pegadinha: Achar que precisa ser administrador para exclusão permanente. Usuário padrão consegue (com confirmação).\n- > Dica de Prova: **Backspace** sobe um nível no Explorador; não confunda com comportamento em navegadores.\n- > Pegadinha: “Agendar exclusão” nas Propriedades não existe; “data de exclusão” não é exibida.\n- > Dica de Prova: **Ctrl+A** não seleciona itens ocultos.\n- > Pegadinha: “Arquivos, pastas e programas” não são bibliotecas padrão. As padrão são **Documentos**, **Imagens**, **Músicas**, **Vídeos**.\n\n## Atalhos Essenciais (memorização rápida)\n- Arquivos:\n  - **Ctrl+C** copiar | **Ctrl+X** recortar | **Ctrl+V** colar | **Ctrl+Z** desfazer (se possível)\n  - **F2** renomear | **Del** Lixeira (local) | **Shift+Del** excluir definitivamente\n  - **Ctrl+A** selecionar tudo (sem itens ocultos) | **Shift+F10** menu de contexto\n- Navegação/Janelas:\n  - **Alt+Tab** alternar (com miniaturas) | **Ctrl+Tab** alternar (sem miniaturas; comum em abas)\n  - **Alt+F4** fechar janela ativa | Tecla **Windows** abrir menu Iniciar\n  - **Backspace** subir um nível (Explorer) | **Esc** cancelar/fechar diálogo\n- Segurança/Gerenciador:\n  - **Ctrl+Alt+Del** tela de opções (bloquear, trocar usuário, sair/encerrar sessão, acessibilidade/energia, acesso ao Gerenciador)\n  - **Ctrl+Shift+Esc** abre o **Gerenciador de Tarefas** diretamente\n\n> Macete final: Se a questão citar “miniaturas ao alternar janelas” → **Alt+Tab**. Se pedir “abrir o Gerenciador de Tarefas diretamente” → **Ctrl+Shift+Esc**. Se a exclusão não deve ir para a Lixeira → **Shift+Del** ou mídia removível/rede.",
+  "resumo_bolso": "# Windows 10 VI\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Lixeira**: Área temporária para itens excluídos de **unidades locais**; permite **restaurar** ou **esvaziar**.\n* **Del (Delete)**: Exclui enviando para a **Lixeira** (somente em disco local).\n* **Shift+Del**: **Exclusão permanente**; não vai para a Lixeira.\n* **Explorador de Arquivos**: Gerenciador de arquivos/pastas do Windows 10.\n* **Unidades/Partições**: Ex.: **C:**, **D:**; entre partições diferentes muda o padrão de **copiar/mover**.\n* **Metadados**: “Dados sobre os dados” (ex.: **data de criação** do arquivo).\n* **Propriedades**: Acesso via **botão direito → Propriedades**; mostra metadados e permite trocar programa padrão.\n* **Bibliotecas/Pastas padrão**: **Documentos**, **Imagens**, **Músicas**, **Vídeos**.\n* **Gerenciador de Tarefas**: Ferramenta para ver processos, desempenho; atalho direto: **Ctrl+Shift+Esc**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Del vs Shift+Del\n\n| Aspecto              | Del (Delete)                                  | Shift+Del                                      |\n|----------------------|-----------------------------------------------|-----------------------------------------------|\n| Destino              | **Lixeira** (se em disco local)              | Exclusão **permanente**                       |\n| Restauração          | Possível via Lixeira                         | Não restaura por Lixeira nem **Ctrl+Z**       |\n\n---\n\n### Disco Local vs Pendrive/Rede (Del)\n\n| Aspecto        | Disco Local (HD/SSD interno)                 | Pendrive / Cartão / Unidade de Rede      |\n|----------------|----------------------------------------------|------------------------------------------|\n| Del            | Vai para **Lixeira**                         | Exclusão **permanente**                  |\n| Shift+Del      | Exclusão permanente                          | Exclusão permanente                      |\n\n---\n\n### Arrastar na Mesma Partição vs Entre Partições\n\n| Aspecto                 | Mesma Partição (C: → C:)             | Partições Diferentes (C: → D:)           |\n|-------------------------|--------------------------------------|------------------------------------------|\n| Arrastar (botão esq.)   | **Mover**                            | **Copiar**                               |\n| Forçar mover            | **Shift** + arrastar (esq.)          | **Shift** + arrastar (esq.)              |\n| Forçar escolha          | Arrastar com **botão direito**       | Arrastar com **botão direito**           |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra da Lixeira**\n\n* **Aplicação**: Arquivos em **discos locais** excluídos com **Del** vão para a Lixeira.\n* **Exemplo**: Arquivo em C: → Del → pode restaurar pela Lixeira.\n\n**2. Regra da Exclusão Permanente**\n\n* **Aplicação**: Sempre que usar **Shift+Del** ou excluir em **pendrive/rede** (mesmo com Del).\n* **Exemplo**: Arquivo em pendrive → Del → exclusão permanente; não vai para a Lixeira.\n\n**3. Regra de Copiar/Mover ao Arrastar**\n\n* **Aplicação**: Arrastar com **botão esquerdo** no Explorer.\n* **Padrão**: Mesma partição → **mover**; partições diferentes → **copiar**.\n* **Exemplo**: C:\\Pasta1 → C:\\Pasta2 (esq.) = mover; C:\\ → D:\\ (esq.) = copiar.\n\n**4. Forçar Mover/Copiar**\n\n* **Aplicação**: Quando quiser quebrar o padrão.\n* **Shift + arrastar (esq.)**: força **mover**.\n* **Botão direito + arrastar**: menu para escolher **Copiar** ou **Mover**.\n* **Ctrl+C/Ctrl+V**: sempre **copia**; **Ctrl+X/Ctrl+V**: sempre **move**.\n\n**5. Atalhos de Acesso a Propriedades e Programa Padrão**\n\n* **Aplicação**: Ver metadados / trocar app padrão.\n* **Exemplo**: Arquivo → botão direito → **Propriedades** (metadados); botão direito → **Abrir com → Escolher outro aplicativo** (definir padrão).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “Ctrl+Alt+Del abre diretamente o Gerenciador de Tarefas no Windows 10.”  \n  → Na verdade, abre a **tela de opções**; o direto é **Ctrl+Shift+Esc**.\n\n* “Arquivos em pendrive, ao usar Del, vão para a Lixeira.”  \n  → Em **pendrive/cartão/rede**, Del já é **exclusão permanente** (não usam Lixeira).\n\n* “Propriedades do arquivo permitem agendar exclusão ou exibem ‘data de exclusão’.”  \n  → Propriedades mostram **data de criação**, etc., mas **não** agendam exclusão nem exibem “data de exclusão”.\n\n* “Bibliotecas padrão incluem ‘Arquivos’, ‘Pastas’ e ‘Programas’.”  \n  → As bibliotecas padrão são: **Documentos, Imagens, Músicas, Vídeos**.\n\n* “Ctrl+A seleciona inclusive itens ocultos.”  \n  → **Ctrl+A** seleciona tudo que está **visível**, não inclui itens ocultos.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Del x Shift+Del** e **disco local x pendrive/rede**?  \n* Memorizei o padrão de **arrastar com botão esquerdo** (mesma partição move, partições diferentes copiam)?  \n* Sei **forçar mover** (**Shift+arrastar**, **Ctrl+X/Ctrl+V**) e **forçar escolha** (arrastar com botão direito)?  \n* Lembro que **Shift+Del** e exclusão em **mídia removível/rede** são **permanentes**?  \n* Gravei que **Ctrl+Shift+Esc** abre o **Gerenciador de Tarefas** direto e **Alt+Tab** mostra **miniaturas**?  \n* Sei que **Backspace** sobe um nível no Explorer e que **Propriedades** não têm “data/agendamento de exclusão”?  \n* Fixei as bibliotecas padrão: **Documentos, Imagens, Músicas, Vídeos**?",
+  "mapa_mental": "# 💻 Noções de Informática – Windows 10 VI\n## 🗑️ Lixeira e Exclusão\n### 🎯 Conceitos Lixeira\n- Área temporária\n- Unidades locais\n- Restaurar arquivos\n- Esvaziar conteúdo\n### ⚠️ Tipos de Exclusão\n- Del envia Lixeira\n- Shift+Del permanente\n- Sem restauração Lixeira\n- Sem Ctrl+Z permanente\n### 🚫 Mídias sem Lixeira\n- Pendrive\n- Cartão memória\n- Unidade rede\n- Del permanente\n### 🧹 Gerenciamento Lixeira\n- Capacidade limitada\n- Lixeira cheia\n- Esvaziar periodicamente\n- Risco perda dados\n\n## 📂 Arquivos, Propriedades e Pastas\n### 💡 Metadados e Propriedades\n- Dados sobre dados\n- Data criação\n- Tamanho arquivo\n- Tipo arquivo\n- Acesso botão direito\n### 📜 Programas Padrão\n- Abrir com\n- Escolher aplicativo\n- Sempre usar opção\n- Alterar associação\n### 🗃️ Bibliotecas Padrão\n- Documentos\n- Imagens\n- Músicas\n- Vídeos\n\n## 🔄 Copiar, Mover e Navegar\n### 💾 Copiar x Mover\n- Mesma partição move\n- Partições diferentes copia\n- Ctrl+C Ctrl+V copia\n- Ctrl+X Ctrl+V move\n### ⏩ Forçar Comportamento\n- Shift arrastar mover\n- Botão direito arrastar\n- Escolher Copiar\n- Escolher Mover\n### 📁 Navegação Explorer\n- Explorador arquivos\n- Backspace subir nível\n- Pastas hierárquicas\n- Barra endereços\n\n## ⌨️ Atalhos Essenciais Windows 10\n### 📝 Arquivos e Seleção\n- Ctrl+C copiar\n- Ctrl+X recortar\n- Ctrl+V colar\n- Ctrl+Z desfazer\n- Ctrl+A selecionar tudo\n- F2 renomear\n- Del Lixeira\n- Shift+Del definitivo\n### 🔄 Janelas e Programas\n- Alt+Tab alternar janelas\n- Ctrl+Tab alternar abas\n- Alt+F4 fechar janela\n- Tecla Windows Iniciar\n- Shift clique ícone nova janela\n### 🛡️ Segurança e Tarefas\n- Ctrl+Alt+Del tela opções\n- Bloquear computador\n- Trocar usuário\n- Encerrar sessão\n- Ctrl+Shift+Esc Gerenciador Tarefas",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Lixeira do Windows",
+      "description": "Lixeira do Windows — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como o Windows 10 trata a exclusão de arquivos em um pen drive?",
+          "back": "Exclusão **permanente** (não vai para a lixeira).",
+          "hint": "Refere-se ao destino do arquivo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "gerenciamento-arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual ação remove definitivamente um item que está na Lixeira?",
+          "back": "Esvaziar a Lixeira ou remover itens individualmente.",
+          "hint": "Ação de limpeza",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "lixeira"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual ação permite recuperar um arquivo individual da Lixeira?",
+          "back": "Restaurar o item.",
+          "hint": "Ação de recuperação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "lixeira"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Como os itens excluídos são tratados antes do esvaziamento da Lixeira?",
+          "back": "Ficam armazenados até que a Lixeira seja **esvaziada**.",
+          "hint": "Estado de espera",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "lixeira"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Bibliotecas do Windows",
+      "description": "Bibliotecas do Windows — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Quais são as bibliotecas padrão do Windows 10?",
+          "back": "Documentos, Imagens, Músicas e Vídeos.",
+          "hint": "São quatro itens",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual informação de data pode ser consultada nas propriedades de um arquivo?",
+          "back": "Data de criação.",
+          "hint": "Metadado temporal",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "propriedades-arquivo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Que recurso permite escolher o programa padrão para abrir um arquivo?",
+          "back": "Propriedades do arquivo (opção de alterar o programa usado na abertura).",
+          "hint": "Local de configuração",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "propriedades-arquivo"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Por que as propriedades de um arquivo excluído deixam de ser acessíveis?",
+          "back": "O arquivo deixa de existir no local original, impossibilitando o acesso aos metadados.",
+          "hint": "Estado de existência",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "gerenciamento-arquivos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Arquivos e Pastas",
+      "description": "Arquivos e Pastas — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é o comportamento padrão ao arrastar um arquivo entre unidades lógicas diferentes?",
+          "back": "Cópia do arquivo.",
+          "hint": "Depende da unidade de destino",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "operacoes-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual tecla altera para movimentação o arraste com o botão esquerdo entre unidades?",
+          "back": "Shift.",
+          "hint": "Tecla modificadora",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "operacoes-arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual opção deve ser escolhida após arrastar um arquivo com o botão direito?",
+          "back": "**Mover**.",
+          "hint": "Menu contextual",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "operacoes-arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual é a finalidade de recortar um arquivo antes de colá-lo?",
+          "back": "Mover o item de um local para outro.",
+          "hint": "Objetivo da operação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "operacoes-arquivos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Atalhos do Windows",
+      "description": "Atalhos do Windows — 8 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual atalho copia o item selecionado para a área de transferência?",
+          "back": "Ctrl+C",
+          "hint": "Atalho de duplicação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual atalho recorta o item selecionado?",
+          "back": "Ctrl+X",
+          "hint": "Atalho de movimentação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual atalho desfaz a última ação quando ela pode ser revertida?",
+          "back": "Ctrl+Z",
+          "hint": "Atalho de reversão",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual atalho seleciona todo o conteúdo não oculto de uma pasta?",
+          "back": "Ctrl+A",
+          "hint": "Atalho de seleção total",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual atalho exibe as propriedades do item selecionado?",
+          "back": "Alt+Enter",
+          "hint": "Atalho de metadados",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual atalho fecha a janela ativa?",
+          "back": "Alt+F4",
+          "hint": "Atalho de encerramento",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "O que o Ctrl+Alt+Delete exibe no Windows 10?",
+          "back": "Opções como bloquear, trocar o usuário, sair e acesso ao Gerenciador de Tarefas.",
+          "hint": "Atalho de segurança",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual atalho abre diretamente o Gerenciador de Tarefas?",
+          "back": "Ctrl+Shift+Esc",
+          "hint": "Atalho direto",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Explorador de Arquivos",
+      "description": "Explorador de Arquivos — 4 cards",
+      "cards": [
+        {
+          "id": "card-21",
+          "front": "Qual atalho cria uma nova janela do programa ativo?",
+          "back": "Shift + Clique no ícone da barra de tarefas",
+          "hint": "Atalho de instância",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Como o Alt+Tab alterna entre janelas abertas?",
+          "back": "Exibe miniaturas e alterna entre as janelas abertas.",
+          "hint": "Atalho de alternância",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual tecla leva o Explorador de Arquivos um nível acima?",
+          "back": "Backspace",
+          "hint": "Tecla de navegação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-24",
+          "front": "Qual tecla cancela uma operação ou fecha um diálogo aberto?",
+          "back": "Esc",
+          "hint": "Tecla de interrupção",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "atalhos-teclado"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Windows 10, qual é o resultado da exclusão de um arquivo armazenado em um pen drive utilizando a tecla Delete?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo é movido para uma pasta de quarentena temporária no pen drive",
+          "correct": false,
+          "explanation": "Incorreta. O Windows não possui um recurso padrão que mova arquivos excluídos de pen drives para uma \"pasta de quarentena temporária\" no próprio dispositivo. Pastas de quarentena são geralmente associadas a programas antivírus, que isolam arquivos suspeitos, e não a um processo de exclusão comum."
+        },
+        {
+          "id": "b",
+          "text": "O arquivo é excluído permanentemente, sem possibilidade de recuperação pela Lixeira",
+          "correct": true,
+          "explanation": "Correta. A exclusão de um arquivo armazenado em um pen drive, ou qualquer outra unidade removível ou de rede, utilizando a tecla Delete resulta na remoção permanente do arquivo, sem que ele passe pela Lixeira do Windows. Isso significa que, uma vez excluído, o arquivo não poderá ser restaurado a partir da Lixeira."
+        },
+        {
+          "id": "c",
+          "text": "O arquivo é movido para a Lixeira do Windows e pode ser restaurado posteriormente",
+          "correct": false,
+          "explanation": "Incorreta. Ao excluir um arquivo de um pen drive ou de qualquer outra unidade de armazenamento removível (como cartão de memória ou unidade de rede) utilizando apenas a tecla Delete, o arquivo não é enviado para a Lixeira do Windows. A Lixeira é um recurso do sistema operacional para arquivos excluídos de discos locais."
+        },
+        {
+          "id": "d",
+          "text": "O arquivo é compactado automaticamente e armazenado na Lixeira do pen drive",
+          "correct": false,
+          "explanation": "Incorreta. A ação de excluir um arquivo de um pen drive com a tecla Delete não envolve compactação automática nem o armazenamento em uma \"Lixeira do pen drive\". Dispositivos de armazenamento removíveis não mantêm uma Lixeira própria, e a compactação é uma operação distinta da exclusão."
+        }
+      ],
+      "explanation": "Correta. A exclusão de um arquivo armazenado em um pen drive, ou qualquer outra unidade removível ou de rede, utilizando a tecla Delete resulta na remoção permanente do arquivo, sem que ele passe pela Lixeira do Windows. Isso significa que, uma vez excluído, o arquivo não poderá ser restaurado a partir da Lixeira.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual combinação de teclas permite renomear um arquivo selecionado no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "F5",
+          "correct": false,
+          "explanation": "Incorreta. A tecla F5 é comumente utilizada para atualizar o conteúdo de uma janela ativa, como o Explorador de Arquivos ou um navegador da web. Ela não tem a função de renomear arquivos."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + R",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Ctrl + R não é o atalho padrão para renomear arquivos no Windows 10. Em alguns contextos, Ctrl + R pode ser usado para recarregar uma página ou responder a uma mensagem, mas não para edição de nomes de arquivos."
+        },
+        {
+          "id": "c",
+          "text": "F2",
+          "correct": true,
+          "explanation": "Correta. A tecla de função F2 é o atalho de teclado padrão no Windows 10 (e em versões anteriores do sistema operacional) para renomear um arquivo ou pasta que esteja selecionado. Ao pressionar F2, o nome do item selecionado se torna editável."
+        },
+        {
+          "id": "d",
+          "text": "Alt + Enter",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Alt + Enter é utilizada para abrir a janela de Propriedades de um arquivo ou pasta selecionado no Windows 10. Embora exiba informações detalhadas sobre o item, ela não permite a renomeação direta."
+        }
+      ],
+      "explanation": "Correta. A tecla de função F2 é o atalho de teclado padrão no Windows 10 (e em versões anteriores do sistema operacional) para renomear um arquivo ou pasta que esteja selecionado. Ao pressionar F2, o nome do item selecionado se torna editável.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quais são as bibliotecas padrão do Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Arquivos, Pastas, Programas e Aplicativos",
+          "correct": false,
+          "explanation": "Incorreta. \"Arquivos\", \"Pastas\", \"Programas\" e \"Aplicativos\" são termos genéricos ou categorias de elementos no sistema operacional, mas não representam as bibliotecas padrão do Windows 10. As bibliotecas são coleções virtuais que agregam conteúdo de diferentes locais."
+        },
+        {
+          "id": "b",
+          "text": "Documentos, Imagens, Músicas e Vídeos",
+          "correct": true,
+          "explanation": "Correta. As bibliotecas padrão do Windows 10 são \"Documentos\", \"Imagens\", \"Músicas\" e \"Vídeos\". Essas bibliotecas foram introduzidas para ajudar os usuários a organizar e acessar facilmente seus arquivos de mídia e documentos, mesmo que estejam armazenados em diferentes locais físicos no computador ou na rede."
+        },
+        {
+          "id": "c",
+          "text": "Sistema, Usuário, Rede e Compartilhados",
+          "correct": false,
+          "explanation": "Incorreta. \"Sistema\", \"Usuário\", \"Rede\" e \"Compartilhados\" referem-se a componentes do sistema operacional, perfis de usuário, recursos de rede e pastas compartilhadas, respectivamente. Eles não são as bibliotecas padrão destinadas à organização do conteúdo pessoal do usuário."
+        },
+        {
+          "id": "d",
+          "text": "Desktop, Downloads, Favoritos e Recentes",
+          "correct": false,
+          "explanation": "Incorreta. \"Desktop\", \"Downloads\", \"Favoritos\" e \"Recentes\" são pastas comuns ou atalhos de acesso rápido no Windows 10, mas não são consideradas as bibliotecas padrão do sistema operacional. As bibliotecas têm uma função específica de agregar conteúdo de diversas fontes."
+        }
+      ],
+      "explanation": "Correta. As bibliotecas padrão do Windows 10 são \"Documentos\", \"Imagens\", \"Músicas\" e \"Vídeos\". Essas bibliotecas foram introduzidas para ajudar os usuários a organizar e acessar facilmente seus arquivos de mídia e documentos, mesmo que estejam armazenados em diferentes locais físicos no computador ou na rede.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No Windows 10, qual combinação de teclas deve ser mantida pressionada ao arrastar um arquivo entre partições diferentes para movê-lo em vez de copiá-lo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl",
+          "correct": false,
+          "explanation": "Incorreta. Quando um arquivo é arrastado entre partições diferentes (por exemplo, da unidade C: para a unidade D:), a ação padrão do Windows é copiar o arquivo. Se a tecla Ctrl for mantida pressionada durante o arrasto, a ação de copiar é explicitamente confirmada, mantendo o arquivo original e criando uma cópia no destino."
+        },
+        {
+          "id": "b",
+          "text": "Alt",
+          "correct": false,
+          "explanation": "Incorreta. Manter a tecla Alt pressionada enquanto arrasta um arquivo geralmente cria um atalho para o arquivo no local de destino, em vez de movê-lo ou copiá-lo."
+        },
+        {
+          "id": "c",
+          "text": "Tab",
+          "correct": false,
+          "explanation": "Incorreta. A tecla Tab é usada para navegar entre elementos de interface ou para criar tabulações em textos. Ela não tem função no controle da ação de arrastar e soltar arquivos para mover ou copiar."
+        },
+        {
+          "id": "d",
+          "text": "Shift",
+          "correct": true,
+          "explanation": "Correta. No Windows 10, ao arrastar um arquivo de uma partição para outra (ou entre unidades de disco diferentes), a ação padrão é copiar. Para *mover* o arquivo, removendo-o da origem e colocando-o no destino, é necessário manter a tecla Shift pressionada enquanto realiza a operação de arrastar e soltar."
+        }
+      ],
+      "explanation": "Correta. No Windows 10, ao arrastar um arquivo de uma partição para outra (ou entre unidades de disco diferentes), a ação padrão é copiar. Para *mover* o arquivo, removendo-o da origem e colocando-o no destino, é necessário manter a tecla Shift pressionada enquanto realiza a operação de arrastar e soltar.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o resultado da combinação de teclas Shift + Delete ao excluir um arquivo no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo é excluído permanentemente, sem passar pela Lixeira",
+          "correct": true,
+          "explanation": "Correta. A combinação de teclas Shift + Delete é um atalho no Windows 10 (e em outras versões) que exclui arquivos ou pastas permanentemente, sem que eles sejam movidos para a Lixeira. O sistema geralmente solicita uma confirmação, alertando que o item não poderá ser recuperado da Lixeira."
+        },
+        {
+          "id": "b",
+          "text": "O arquivo é movido para a Lixeira com possibilidade de restauração",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Shift + Delete modifica o comportamento padrão da tecla Delete. Apenas a tecla Delete envia o arquivo para a Lixeira, permitindo a restauração posterior."
+        },
+        {
+          "id": "c",
+          "text": "O arquivo é movido para uma pasta de quarentena do sistema",
+          "correct": false,
+          "explanation": "Incorreta. O Windows não move arquivos excluídos com Shift + Delete para uma \"pasta de quarentena do sistema\". Pastas de quarentena são um recurso de segurança, geralmente implementado por softwares antivírus, para isolar arquivos potencialmente maliciosos, e não fazem parte do processo de exclusão permanente de arquivos."
+        },
+        {
+          "id": "d",
+          "text": "O arquivo é marcado para exclusão automática após 30 dias",
+          "correct": false,
+          "explanation": "Incorreta. O uso de Shift + Delete não implica que o arquivo será marcado para exclusão automática após um período específico, como 30 dias. A exclusão é imediata e permanente no momento da confirmação."
+        }
+      ],
+      "explanation": "Correta. A combinação de teclas Shift + Delete é um atalho no Windows 10 (e em outras versões) que exclui arquivos ou pastas permanentemente, sem que eles sejam movidos para a Lixeira. O sistema geralmente solicita uma confirmação, alertando que o item não poderá ser recuperado da Lixeira.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No Windows 10, o que acontece com os arquivos armazenados na Lixeira quando ela atinge sua capacidade máxima?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os arquivos mais antigos são excluídos automaticamente para liberar espaço",
+          "correct": true,
+          "explanation": "Correta. Por padrão, a Lixeira no Windows 10 tem um tamanho máximo configurável. Quando essa capacidade é atingida, o sistema operacional automaticamente exclui os arquivos mais antigos para liberar espaço e permitir que novos itens sejam armazenados. Este mecanismo garante que a Lixeira continue funcional sem a necessidade de intervenção manual constante."
+        },
+        {
+          "id": "b",
+          "text": "Os arquivos são compactados automaticamente para economizar espaço",
+          "correct": false,
+          "explanation": "Incorreta. A Lixeira do Windows 10 não possui uma funcionalidade de compactação automática de arquivos para economizar espaço. Sua principal função é atuar como um repositório temporário para arquivos excluídos, permitindo a recuperação, e não como uma ferramenta de otimização de armazenamento por compactação."
+        },
+        {
+          "id": "c",
+          "text": "O sistema solicita ao usuário que esvazie a Lixeira manualmente",
+          "correct": false,
+          "explanation": "Incorreta. O sistema Windows não exibe uma solicitação específica para esvaziar a Lixeira quando ela atinge sua capacidade máxima. Em vez disso, ele gerencia o espaço de forma autônoma, removendo os arquivos mais antigos, conforme descrito na alternativa correta."
+        },
+        {
+          "id": "d",
+          "text": "Os novos arquivos não podem ser adicionados até que a Lixeira seja esvaziada",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é imprecisa. Quando a Lixeira está cheia, o Windows não impede a adição de novos arquivos. Para acomodar os novos itens, ele remove os arquivos mais antigos que já estavam na Lixeira, mantendo-a dentro dos limites de sua capacidade configurada."
+        }
+      ],
+      "explanation": "Correta. Por padrão, a Lixeira no Windows 10 tem um tamanho máximo configurável. Quando essa capacidade é atingida, o sistema operacional automaticamente exclui os arquivos mais antigos para liberar espaço e permitir que novos itens sejam armazenados. Este mecanismo garante que a Lixeira continue funcional sem a necessidade de intervenção manual constante.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "No Windows 10, qual é a característica da área de transferência em relação ao armazenamento de dados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os dados são perdidos quando o computador é desligado",
+          "correct": true,
+          "explanation": "Correta. A área de transferência é uma porção da memória RAM (Memória de Acesso Aleatório) dedicada ao armazenamento temporário de dados copiados ou recortados. Como a RAM é uma memória volátil, seu conteúdo é perdido automaticamente quando o computador é desligado ou reiniciado, pois a energia é cortada."
+        },
+        {
+          "id": "b",
+          "text": "Os dados são automaticamente salvos em arquivo de backup",
+          "correct": false,
+          "explanation": "Incorreta. A área de transferência não possui uma funcionalidade integrada para salvar automaticamente seu conteúdo em um arquivo de backup. Seu propósito é facilitar a transferência imediata de dados entre aplicativos ou dentro do mesmo aplicativo, e não para armazenamento persistente ou backup."
+        },
+        {
+          "id": "c",
+          "text": "Os dados permanecem armazenados permanentemente até serem excluídos manualmente",
+          "correct": false,
+          "explanation": "Incorreta. A área de transferência (conhecida como \"clipboard\" em inglês) é um recurso de armazenamento temporário. Os dados nela contidos não são armazenados permanentemente e são voláteis, ou seja, não persistem por longos períodos ou após o desligamento do sistema."
+        },
+        {
+          "id": "d",
+          "text": "Os dados são sincronizados com a nuvem do OneDrive",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Windows 10 ofereça uma funcionalidade opcional de \"área de transferência na nuvem\" que permite sincronizar o histórico da área de transferência entre dispositivos via OneDrive, essa não é uma característica padrão ou inerente à área de transferência em si. A funcionalidade básica da área de transferência é local e temporária, a sincronização é um recurso adicional que precisa ser ativado."
+        }
+      ],
+      "explanation": "Correta. A área de transferência é uma porção da memória RAM (Memória de Acesso Aleatório) dedicada ao armazenamento temporário de dados copiados ou recortados. Como a RAM é uma memória volátil, seu conteúdo é perdido automaticamente quando o computador é desligado ou reiniciado, pois a energia é cortada.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No Windows 10, qual é a diferença entre Ctrl + Alt + Del e Ctrl + Shift + Esc?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + Alt + Del reinicia o sistema, enquanto Ctrl + Shift + Esc apenas fecha programas",
+          "correct": false,
+          "explanation": "Incorreta. Ctrl + Alt + Del não reinicia o sistema diretamente; a opção de reiniciar o computador está disponível no menu que essa combinação abre, mas não é a ação imediata. Ctrl + Shift + Esc não serve para fechar programas diretamente, mas sim para abrir o Gerenciador de Tarefas, onde o usuário pode optar por finalizar processos ou aplicativos."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + Alt + Del abre diretamente o Gerenciador de Tarefas, enquanto Ctrl + Shift + Esc exibe um menu de opções",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte as funções das combinações de teclas. A combinação Ctrl + Alt + Del, no Windows 10, abre um menu de segurança com várias opções, enquanto Ctrl + Shift + Esc abre diretamente o Gerenciador de Tarefas."
+        },
+        {
+          "id": "c",
+          "text": "Ambas as combinações executam exatamente a mesma função",
+          "correct": false,
+          "explanation": "Incorreta. As duas combinações de teclas não executam a mesma função. Uma apresenta um menu de segurança com múltiplas opções, e a outra abre diretamente uma ferramenta específica (Gerenciador de Tarefas), demonstrando propósitos e comportamentos distintos."
+        },
+        {
+          "id": "d",
+          "text": "Ctrl + Alt + Del exibe um menu de opções incluindo o Gerenciador de Tarefas, enquanto Ctrl + Shift + Esc abre diretamente o Gerenciador",
+          "correct": true,
+          "explanation": "Correta. A combinação de teclas Ctrl + Alt + Del, no Windows 10, exibe uma tela de segurança com diversas opções, como Bloquear, Trocar Usuário, Sair, Alterar uma senha e Gerenciador de Tarefas. Já a combinação Ctrl + Shift + Esc tem como função principal abrir o Gerenciador de Tarefas diretamente, sem a necessidade de passar por um menu intermediário, sendo um atalho mais rápido para essa ferramenta."
+        }
+      ],
+      "explanation": "Correta. A combinação de teclas Ctrl + Alt + Del, no Windows 10, exibe uma tela de segurança com diversas opções, como Bloquear, Trocar Usuário, Sair, Alterar uma senha e Gerenciador de Tarefas. Já a combinação Ctrl + Shift + Esc tem como função principal abrir o Gerenciador de Tarefas diretamente, sem a necessidade de passar por um menu intermediário, sendo um atalho mais rápido para essa ferramenta.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No Windows 10, o que é possível fazer com a Lixeira em relação aos arquivos armazenados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Agendar a exclusão automática de arquivos após um período determinado",
+          "correct": false,
+          "explanation": "Incorreta. O Windows 10 não possui uma funcionalidade nativa que permita agendar a exclusão automática de arquivos da Lixeira após um período determinado. A gestão do espaço da Lixeira ocorre automaticamente excluindo os arquivos mais antigos quando ela atinge seu limite de capacidade, ou por meio de ações manuais do usuário."
+        },
+        {
+          "id": "b",
+          "text": "Apenas restaurar todos os arquivos de uma vez, sem opção de seleção individual",
+          "correct": false,
+          "explanation": "Incorreta. A Lixeira do Windows 10 oferece a possibilidade de restaurar arquivos de forma individual, além da opção de restaurar todos os itens de uma vez. O usuário tem controle sobre quais arquivos deseja recuperar."
+        },
+        {
+          "id": "c",
+          "text": "Restaurar arquivos individualmente e remover definitivamente arquivos específicos",
+          "correct": true,
+          "explanation": "Correta. A Lixeira no Windows 10 permite ao usuário restaurar arquivos que foram removidos para ela, seja um por um (individualmente) ou múltiplos arquivos. Além disso, também é possível remover definitivamente arquivos específicos da Lixeira, esvaziando-os sem afetar os demais itens que ali se encontram, ou esvaziá-la por completo."
+        },
+        {
+          "id": "d",
+          "text": "Apenas esvaziar completamente a Lixeira, sem opções individuais",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível esvaziar completamente a Lixeira, esta não é a única ação disponível. O usuário pode interagir com os arquivos na Lixeira de forma mais granular, selecionando itens específicos para restaurar ou remover definitivamente."
+        }
+      ],
+      "explanation": "Correta. A Lixeira no Windows 10 permite ao usuário restaurar arquivos que foram removidos para ela, seja um por um (individualmente) ou múltiplos arquivos. Além disso, também é possível remover definitivamente arquivos específicos da Lixeira, esvaziando-os sem afetar os demais itens que ali se encontram, ou esvaziá-la por completo.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No contexto do Windows 10, qual é a diferença fundamental entre usar Ctrl + C seguido de Ctrl + V e usar Ctrl + X seguido de Ctrl + V ao trabalhar com arquivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + C e Ctrl + V funcionam apenas dentro da mesma partição, enquanto Ctrl + X e Ctrl + V funcionam entre partições diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as combinações, Ctrl + C/Ctrl + V e Ctrl + X/Ctrl + V, funcionam tanto dentro da mesma partição de disco quanto entre partições diferentes. A funcionalidade de cópia ou movimentação não é restrita pela localização das partições."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + C e Ctrl + V criam uma cópia mantendo o original, enquanto Ctrl + X e Ctrl + V movem o arquivo removendo-o da origem",
+          "correct": true,
+          "explanation": "Correta. A combinação Ctrl + C (Copiar) seguida de Ctrl + V (Colar) cria uma duplicata do arquivo selecionado, mantendo o arquivo original em seu local de origem e inserindo uma cópia no destino. Por outro lado, Ctrl + X (Recortar) seguida de Ctrl + V (Colar) move o arquivo; o arquivo é removido de seu local de origem e transferido para o novo destino, não deixando uma cópia no ponto inicial."
+        },
+        {
+          "id": "c",
+          "text": "Ctrl + C e Ctrl + V requerem permissões de administrador, enquanto Ctrl + X e Ctrl + V não requerem",
+          "correct": false,
+          "explanation": "Incorreta. A necessidade de permissões de administrador para copiar ou mover arquivos está relacionada ao destino ou à origem dos arquivos (por exemplo, pastas protegidas do sistema), e não à combinação de teclas utilizada. Ambas as operações podem exigir permissões elevadas em contextos específicos."
+        },
+        {
+          "id": "d",
+          "text": "Ambas as combinações executam a mesma função, diferindo apenas na velocidade de execução",
+          "correct": false,
+          "explanation": "Incorreta. As funções são fundamentalmente distintas. Ctrl + C/Ctrl + V realiza uma cópia, resultando em duas instâncias do arquivo (original e cópia), enquanto Ctrl + X/Ctrl + V realiza uma movimentação, resultando em apenas uma instância do arquivo no novo local. A velocidade de execução não é o fator diferenciador principal."
+        }
+      ],
+      "explanation": "Correta. A combinação Ctrl + C (Copiar) seguida de Ctrl + V (Colar) cria uma duplicata do arquivo selecionado, mantendo o arquivo original em seu local de origem e inserindo uma cópia no destino. Por outro lado, Ctrl + X (Recortar) seguida de Ctrl + V (Colar) move o arquivo; o arquivo é removido de seu local de origem e transferido para o novo destino, não deixando uma cópia no ponto inicial.",
+      "difficulty": "hard",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "11_253600_Windows 10 VI.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:57:30"
+}

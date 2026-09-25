@@ -1,0 +1,446 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 2,
+  "ordem_no_curso": "2.00",
+  "titulo": "Conjunto dos Números Naturais II",
+  "codigo_aula": "249028",
+  "video_id": "qKI0uKGuAHI=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:39:08",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/qKI0uKGuAHI%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408654%2C403825&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Naturais II\n\n## Introdução e contexto\nTudo bem com vocês? Vamos dar continuidade ao conjunto dos números naturais. Então, vocês já sabem o que é número natural, correto? Dei aquelas definições para vocês. E tem algo muito importante dentro dos naturais, logo no comecinho: os critérios de divisibilidade, correto? Eu acho interessante colocar junto. O que pode acontecer até esse momento com o conjunto dos números naturais? Vem comigo.\n\nAcontece o seguinte: nós podemos ter algo importantíssimo nesse conjunto, que são os critérios de divisibilidade. É um tópico muito importante para abordar dentro dos naturais, tá okay?\n\nPara alguns números, como 2, 3, 5 e outros, existem regras que permitem verificar a divisibilidade sem efetuar a divisão. Essas regras são chamadas critérios de divisibilidade. Então você olha para o número e já pensa: “Pô, isso aqui é divisível por 2; esse aqui é por 3; aquele é por 5”, sem fazer conta nenhuma. Isso é importante demais! Por quê? Em questões de concurso, muitas vezes teremos exatamente essa pergunta: é divisível por tal número ou não é? Às vezes isso aparece nas alternativas, e você tem que saber. Se você precisar dividir um número gigante, complica. Então vamos aprender os principais critérios, os que mais aparecem em provas de concursos públicos.\n\n## Critério de divisibilidade por 2\nDivisibilidade por 2 é tranquilo. O número natural é divisível por 2 quando termina em 0, 2, 4, 6 ou 8, ou seja, quando ele é par. Se o número for par, automaticamente é divisível por 2.\n\n- Exemplos:\n  - 5040: termina em 0, então é par; é divisível por 2.\n  - 237: não é divisível por 2, pois termina em 7, que não é par.\n\n## Critério de divisibilidade por 3\nEsse aqui ajuda demais. Quando é que eu sei que o número é divisível por 3? O número é divisível por 3 quando a soma dos valores absolutos dos seus algarismos for divisível por 3.\n\nObservação importante: mesmo que apareça número negativo (embora neste momento estejamos nos naturais, que são positivos), você considera o valor absoluto. Valor absoluto é considerar o módulo: por exemplo, o módulo de −2 é 2.\n\nEntão, para saber se um número é divisível por 3, some os algarismos. Se essa soma for divisível por 3, então o número todo é divisível por 3.\n\n- Exemplo: 234. Some 2 + 3 + 4 = 9. Nove é divisível por 3, então 234 é divisível por 3.\n- Se fosse −234, você consideraria 2 + 3 + 4 do mesmo jeito, pois usou valor absoluto.\n\nSe você tem um número gigante, some todos os algarismos. Se a soma for divisível por 3, o número também será.\n\n## Critério de divisibilidade por 4\nQuando é que eu sei que o número é divisível por 4? O número é divisível por 4 quando:\n- termina em 00, ou\n- o número formado pelos seus dois últimos algarismos da direita é divisível por 4.\n\n- Exemplos:\n  - 1800: termina em 00, então é divisível por 4.\n  - 4116: os dois últimos algarismos formam 16; 16 é divisível por 4. Logo, 4116 é divisível por 4.\n  - 1324: últimos dois algarismos 24; 24 é divisível por 4, então 1324 é divisível por 4.\n  - 3850: últimos dois algarismos 50; 50 não é divisível por 4 e não termina em 00. Logo, não é divisível por 4.\n\n## Critério de divisibilidade por 5\nBem fácil: o número é divisível por 5 quando termina em 0 ou em 5. Olhe apenas o último algarismo.\n\n- Exemplos:\n  - 55: termina em 5, é divisível por 5.\n  - 90: termina em 0, é divisível por 5.\n  - 87: não termina em 0 ou 5, então não é divisível por 5.\n\n## Critério de divisibilidade por 6\nQuando eu digo que é divisível, é porque o resto é zero. Divisível significa divisão exata. Por exemplo, 6 é divisível por 2 porque 6 ÷ 2 = 3, resto 0.\n\nUm número é divisível por 6 quando é simultaneamente divisível por 2 e por 3.\n\n- Exemplos:\n  - 312: é divisível por 2 (termina em 2, é par) e por 3 (3 + 1 + 2 = 6; 6 é divisível por 3). Logo, é divisível por 6.\n  - 5214: é par (termina em 4) e 5 + 2 + 1 + 4 = 12; 12 é divisível por 3. Logo, é divisível por 6.\n  - 716: é par, mas 7 + 1 + 6 = 14; 14 não é divisível por 3. Logo, não é divisível por 6.\n  - 34051: não é par, então já não é divisível por 2; 3 + 4 + 0 + 5 + 1 = 13 (não importa aqui, pois precisa ser por 2 e por 3). Logo, não é divisível por 6.\n\nTem que ser os dois simultaneamente.\n\n## Critério de divisibilidade por 8\nO número é divisível por 8 quando:\n- termina em 000 (três zeros), ou\n- o número formado pelos três últimos algarismos da direita é divisível por 8.\n\n- Exemplos:\n  - 7000: termina em 000, é divisível por 8.\n  - 56104: últimos três algarismos 104; 104 é divisível por 8. Logo, 56104 é divisível por 8.\n  - 61112: últimos três algarismos 112; 112 ÷ 8 = 14, resto 0; é divisível por 8.\n  - 78164: últimos três algarismos 164; 164 ÷ 8 = 20 e sobra 4. Teve resto, então não é divisível por 8.\n\nLembre: para ser divisível, o resto tem que ser zero. Se você precisar usar vírgula, não é divisão exata.\n\n## Critério de divisibilidade por 9\nO número é divisível por 9 quando a soma dos valores absolutos dos seus algarismos for divisível por 9. É parecido com o do 3.\n\n- Exemplo:\n  - −81: considere os algarismos 8 e 1. 8 + 1 = 9; 9 é divisível por 9. Logo, 81 é divisível por 9 e, no critério, considerar o valor absoluto te leva à mesma conclusão sobre a estrutura do número.\n  - 2871: 2 + 8 + 7 + 1 = 18; 18 é divisível por 9, então 2871 é divisível por 9.\n\nIsso aqui é importante. Agora é mais informação mesmo; daqui a pouco vêm as questões de concurso. Estamos no comecinho da matriz, ainda tem outros conjuntos numéricos; vai ficando cada vez melhor.\n\n## Critério de divisibilidade por 10\nCritério fácil: é divisível por 10 quando termina em 0.\n\n- Exemplos:\n  - 4150: termina em 0, é divisível por 10.\n  - 2106: termina em 6, não é divisível por 10.\n\n## Critério de divisibilidade por 11\nEsse aqui é o que mais aparece nas provinhas de concursos públicos. Tem que guardar! Um número é divisível por 11 quando a diferença entre a soma dos valores absolutos dos algarismos de ordem ímpar e a soma dos algarismos de ordem par é divisível por 11.\n\nOrdem é a posição do algarismo no número, contando da direita para a esquerda: 1ª, 2ª, 3ª, 4ª...\n\n- Exemplo 1: 23456. Vamos marcar as ordens da direita para a esquerda:\n  - 1ª: 6 (ímpar), 2ª: 5 (par), 3ª: 4 (ímpar), 4ª: 3 (par), 5ª: 2 (ímpar).\n  - Soma das ordens ímpares: 6 + 4 + 2 = 12.\n  - Soma das ordens pares: 5 + 3 = 8.\n  - Diferença: 12 − 8 = 4. Quatro não é divisível por 11, então 23456 não é divisível por 11.\n\n- Exemplo 2: 87549. Vamos marcar:\n  - Ordens ímpares: 9 (1ª), 5 (3ª), 8 (5ª) → 9 + 5 + 8 = 22.\n  - Ordens pares: 4 (2ª), 7 (4ª) → 4 + 7 = 11.\n  - Diferença: 22 − 11 = 11. Onze é divisível por 11, então 87549 é divisível por 11.\n\n> 🎯 **Atenção para prova:** Para o 11, some os algarismos nas posições ímpares e subtraia a soma das posições pares (contando da direita para a esquerda). Se o resultado for múltiplo de 11 (inclusive 0), o número é divisível por 11.\n\n## Critério de divisibilidade por 12\nQuando é que eu sei que é divisível por 12? Simples: quando é divisível por 3 e por 4 ao mesmo tempo.\n\n- Lembre:\n  - Por 3: soma dos algarismos divisível por 3.\n  - Por 4: termina em 00 ou os dois últimos algarismos formam número divisível por 4.\n\n- Exemplos:\n  - 720: soma 7 + 2 + 0 = 9 (divisível por 3). Últimos dois algarismos 20; 20 ÷ 4 = 5 (divisão exata). Logo, 720 é divisível por 12.\n  - 870: 8 + 7 + 0 = 15 (divisível por 3). Últimos dois algarismos 70; 70 não é divisível por 4. Logo, não é divisível por 12.\n\nÉ como no 6: precisa ser simultaneamente (no 6 era por 2 e por 3; no 12 é por 3 e por 4).\n\n## Questões de concurso (fixação)\nQuestão 1 (Quadrix 2023). O enunciado explica o critério de 11. Julgue o item:\n- “O número 22.253 é divisível por 11.”\n  - Posições: ímpar, ímpar, par, ímpar, par (da direita para a esquerda).\n  - Soma das ímpares: 3 + 2 + 2 = 7.\n  - Soma das pares: 5 + 2 = 7.\n  - Diferença: 7 − 7 = 0.\n\n> 🎯 **Atenção para prova:** Zero é divisível por 11 (0 ÷ 11 = 0, divisão exata). Logo, se a diferença der 0, o número é divisível por 11.\n\nItem correto. Aqui a sacada é lembrar que 0 é divisível por qualquer número, exceto a situação 0 ÷ 0, que é indeterminada.\n\nQuestão 2. Todo número palíndromo com número par de dígitos é divisível por 11.\n- Palíndromo é o número que se lê igual da esquerda para a direita e da direita para a esquerda. Exemplos: 121; 3443; 223322.\n- Ideia: em um palíndromo de quantidade par de dígitos, quando somamos os algarismos das posições ímpares e das posições pares (contando da direita para a esquerda), essas somas são iguais, porque os “pares” da ida viram “ímpares” da volta e vice-versa. Então a diferença sempre dá 0.\n\n> 🎯 **Atenção para prova:** Em palíndromos com número par de dígitos, a diferença (ímpares − pares) é 0, e 0 é divisível por 11. Logo, todo palíndromo com quantidade par de dígitos é divisível por 11.\n\nItem certíssimo. Bonita a questão!\n\nQuestão 3 (2023). Julgue se o número dado é divisível por 11.\n- Some os algarismos de ordem ímpar e subtraia dos de ordem par.\n- Exemplo de procedimento (genérico demonstrado em aula):\n  - Ímpares (posições 1, 3, 5, 7): some-os.\n  - Pares (posições 2, 4, 6): some-os.\n  - Se a diferença for múltiplo de 11, inclusive 0, o número é divisível.\n  - No exemplo trabalhado, a soma dos ímpares deu 22 e a dos pares deu 11; 22 − 11 = 11, que é divisível por 11. Logo, o número é divisível por 11.\n\n> 🎯 **Atenção para prova:** No critério de 11, a contagem das ordens é sempre da direita para a esquerda. Não esqueça!\n\n## Encerramento\nVou parar por aqui. Vamos continuar ainda com conjuntos numéricos. Achei interessante começarmos com essas informações dentro do conjunto dos números naturais, porque é um assunto recorrente em provas e cai bastante como critérios. Se o seu edital continuar, seguimos para o próximo conjunto: os números inteiros. Se parar nos naturais, ficamos por aqui. Abraço! Vamos com tudo, vamos aprender e passar nesse concurso!",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Naturais II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 27222,
+    "createdAt": "2025-12-12T18:00:46.955Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: critérios de divisibilidade no conjunto dos números naturais, com foco em 2, 3, 4, 5, 6, 8, 9, 10, 11 e 12.\nPrincipais pontos: \n- Como verificar divisibilidade de forma rápida (últimos algarismos e soma de dígitos).\n- Testes combinados (6 e 12).\n- Critério posicional de 11 e casos especiais (palíndromos e zero).\n\n## 1. Base / Conceitos Fundamentais\n- **Conjunto dos números naturais**: 0, 1, 2, 3, ...\n- **Divisível por N**: a divisão por N é exata, com **resto zero**.\n- **Valor absoluto (módulo)**: desconsidera o sinal. Ex.: módulo de −2 é 2; em somas de dígitos (3 e 9) use os valores absolutos se aparecer número negativo em outro contexto.\n- **Posições/ordens**: contam-se da direita para a esquerda: 1ª (unidades), 2ª (dezenas), 3ª (centenas), etc.\n- **Últimos algarismos**: \n  - “Último”: algarismo das unidades.\n  - “Dois últimos”: formam um número de 00 a 99.\n  - “Três últimos”: formam um número de 000 a 999.\n\n## 2. Como Funciona / Distinções\n- Critérios por terminação:\n  - **2**: termina em 0, 2, 4, 6, 8 (par).\n  - **5**: termina em 0 ou 5.\n  - **10**: termina em 0.\n- Critérios por blocos finais:\n  - **4**: termina em 00 ou os dois últimos formam múltiplo de 4.\n  - **8**: termina em 000 ou os três últimos formam múltiplo de 8.\n- Critérios por soma:\n  - **3**: soma dos algarismos é múltipla de 3.\n  - **9**: soma dos algarismos é múltipla de 9.\n- Critérios combinados:\n  - **6 = 2 × 3**: precisa passar em 2 e 3 simultaneamente.\n  - **12 = 3 × 4**: precisa passar em 3 e 4 simultaneamente.\n- Critério posicional:\n  - **11**: diferença entre soma das posições ímpares e soma das posições pares é múltipla de 11 (inclusive 0).\n- Distinções-chave:\n  - 4 olha 2 últimos; 8 olha 3 últimos.\n  - 3 e 9 usam a mesma técnica (soma de dígitos), mas testam múltiplos diferentes.\n  - 6 e 12 exigem dois testes simultâneos diferentes.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo geral:\n  1) Aplique critérios rápidos por terminação (2, 5, 10).\n  2) Aplique blocos finais (4, 8).\n  3) Use soma de dígitos (3, 9).\n  4) Se a questão pedir 6 ou 12, verifique os dois critérios exigidos.\n  5) Para 11, marque ordens da direita para a esquerda, some ímpares e pares e subtraia.\n- Macetes:\n  - “Últimos 2 → 4; últimos 3 → 8; soma → 3/9.”\n  - 6 pede “par e soma múltipla de 3”.\n  - 12 pede “(soma múltipla de 3) e (últimos 2 múltiplos de 4)”.\n  - Para 11, vale 0, ±11, ±22, ... na diferença (valor absoluto).\n- Cálculo rápido de somas:\n  - Agrupe para fechar múltiplos: 9, 18, 27 (para 9) e 3, 6, 9, 12 (para 3).\n  - Zeros não alteram soma.\n\n## 4. Exemplos e Casos Resolvidos\n- 2:\n  - 5.040 → termina em 0 → divisível.\n  - 237 → termina em 7 → não.\n- 3:\n  - 234 → 2+3+4=9 → divisível.\n  - −234 → 2+3+4=9 (valor absoluto) → passaria no critério; em naturais trabalhamos com positivos.\n- 4:\n  - 1.800 → “00” → divisível.\n  - 4.116 → “16” → 16 ÷ 4 = 4 → divisível.\n  - 1.324 → “24” → 24 ÷ 4 = 6 → divisível.\n  - 3.850 → “50” → não.\n- 5:\n  - 55 e 90 → sim; 87 → não.\n- 6:\n  - 312 → par e 3+1+2=6 → sim.\n  - 5.214 → par e 5+2+1+4=12 → sim.\n  - 716 → par, mas 7+1+6=14 → não.\n  - “Divisível por 3, mas não por 2” → não é por 6.\n- 8:\n  - 7.000 → “000” → sim.\n  - 56.104 → “104” → 104 ÷ 8 = 13 → sim.\n  - 61.112 → “112” → 14 → sim.\n  - 78.164 → “164” → 20,5 (resto 4) → não.\n- 9:\n  - 2.871 → 2+8+7+1=18 → sim.\n  - −81 → 8+1=9 → sim (critério).\n- 10:\n  - 4.150 → termina em 0 → sim.\n  - 2.106 → termina em 6 → não.\n- 11:\n  - 23.456 → ímpares: 6+4+2=12; pares: 5+3=8; dif=4 → não.\n  - 87.549 → ímpares: 9+5+8=22; pares: 4+7=11; dif=11 → sim.\n  - 22.253 (Quadrix 2023) → ímpares: 3+2+2=7; pares: 5+2=7; dif=0 → sim.\n  - Palíndromo (ex.: 3443, 22322): soma(ímpares) − soma(pares) = 0 → sim.\n- 12:\n  - 720 → 7+2+0=9 (por 3) e “20” ÷ 4 = 5 (por 4) → sim.\n  - 870 → 8+7+0=15 (por 3) e “70” ÷ 4 não é exato → não.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: “Resto zero” é a palavra-chave. Se aparecer qualquer resto, não é divisível.\n\n- Confundir blocos:\n  - 4 usa os dois últimos; 8 usa os três últimos. Não misture.\n- Sinal em somas (3 e 9):\n  - Use valores absolutos dos algarismos se aparecer número negativo em outro contexto.\n- 6 e 12:\n  - Não basta um dos critérios; precisam ser simultâneos (2 e 3 para 6; 3 e 4 para 12).\n- 11:\n  - Conte ordens da direita para a esquerda.\n  - A diferença pode ser 0 ou múltiplo de 11 (considere valor absoluto).\n  - Palíndromos com número par de dígitos forçam diferença 0 → divisíveis por 11.\n- Zero:\n  - 0 é divisível por qualquer número diferente de 0.\n  - 0 ÷ 0 é indeterminado.\n- Perda de tempo:\n  - Não teste o número inteiro para 4/8; olhe apenas os últimos 2/3 dígitos.\n  - Para 3/9, some os dígitos; não tente dividir o número grande diretamente.\n\n> Dica de Prova: Ordem ideal para filtrar alternativas rápido:\n> - 10, 5, 2 (terminação).\n> - 4, 8 (blocos finais).\n> - 3, 9 (soma).\n> - 6, 12 (combinações).\n> - 11 (posições alternadas).\n\n### Comparações essenciais (memorização rápida)\n- 2 vs 5 vs 10: terminam em {par} vs {0/5} vs {0}.\n- 4 vs 8: últimos {2} vs {3}.\n- 3 vs 9: mesma técnica (soma), múltiplos de 3 vs 9.\n- 6: 2 e 3 juntos. 12: 3 e 4 juntos.\n- 11: diferença de somas alternadas = 0, ±11, ±22, ... → divisível.",
+  "resumo_bolso": "# Conjunto dos Números Naturais II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Divisível por N**: divisão exata por **N**, com **resto zero**.\n* **Valor absoluto (módulo)**: desconsidera o sinal. Em somas de dígitos (3 e 9), use sempre os valores absolutos se aparecer número negativo em outro contexto.\n* **Posições (ordens)**: contam da **direita para a esquerda**: 1ª (unidades), 2ª (dezenas), 3ª (centenas), etc.\n* **Últimos algarismos**:  \n  - “Último” → algarismo das unidades.  \n  - “Dois últimos” → número de 00 a 99.  \n  - “Três últimos” → número de 000 a 999.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### 4 vs 8\n\n| Aspecto | 4 | 8 |\n|--------|---|---|\n| **Bloco analisado** | **2 últimos dígitos** | **3 últimos dígitos** |\n| **Condição** | Termina em 00 ou 2 últimos formam múltiplo de 4 | Termina em 000 ou 3 últimos formam múltiplo de 8 |\n\n---\n\n### 3 vs 9\n\n| Aspecto | 3 | 9 |\n|--------|---|---|\n| **Técnica** | Soma dos algarismos | Soma dos algarismos |\n| **Condição** | Soma múltipla de 3 | Soma múltipla de 9 |\n\n---\n\n### 6 vs 12\n\n| Aspecto | 6 | 12 |\n|--------|---|----|\n| **Fatoração** | 2 × 3 | 3 × 4 |\n| **Condição** | Divisível por 2 **e** 3 | Divisível por 3 **e** 4 |\n\n---\n\n### 2 vs 5 vs 10\n\n| Aspecto | 2 | 5 | 10 |\n|--------|---|---|----|\n| **Terminação** | 0, 2, 4, 6, 8 | 0 ou 5 | 0 |\n\n---\n\n### Critério de 11\n\n| Aspecto | Regra |\n|--------|-------|\n| **Técnica** | Some algarismos em **posições ímpares** e em **posições pares** (da direita para a esquerda) |\n| **Condição** | Diferença (em módulo) é **0 ou múltiplo de 11** |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Divisibilidade por 2**\n\n* **Regra**: termina em **0, 2, 4, 6, 8** (número par).\n* **Exemplos**:  \n  - 5.040 → termina em 0 → divisível.  \n  - 237 → termina em 7 → não divisível.\n\n---\n\n**2. Divisibilidade por 3**\n\n* **Regra**: soma dos algarismos é **múltipla de 3**.\n* **Exemplos**:  \n  - 234 → 2+3+4=9 → divisível.  \n  - −234 → 2+3+4=9 (valor absoluto) → passaria no critério; em naturais trabalhamos com positivos.\n\n---\n\n**3. Divisibilidade por 4**\n\n* **Regra**: termina em **00** ou os **2 últimos dígitos** formam múltiplo de 4.\n* **Exemplos**:  \n  - 1.800 → “00” → divisível.  \n  - 4.116 → “16” → 16 ÷ 4 = 4 → divisível.  \n  - 1.324 → “24” → 24 ÷ 4 = 6 → divisível.  \n  - 3.850 → “50” → não divisível.\n\n---\n\n**4. Divisibilidade por 5**\n\n* **Regra**: termina em **0 ou 5**.\n* **Exemplos**:  \n  - 55 e 90 → divisíveis.  \n  - 87 → não divisível.\n\n---\n\n**5. Divisibilidade por 6**\n\n* **Regra**: precisa ser **par** (critério de 2) **e** ter soma dos algarismos **múltipla de 3**.\n* **Exemplos**:  \n  - 312 → par e 3+1+2=6 → divisível.  \n  - 5.214 → par e 5+2+1+4=12 → divisível.  \n  - 716 → par, mas 7+1+6=14 → não divisível.  \n  - “Divisível por 3, mas não por 2” → não é divisível por 6.\n\n---\n\n**6. Divisibilidade por 8**\n\n* **Regra**: termina em **000** ou os **3 últimos dígitos** formam múltiplo de 8.\n* **Exemplos**:  \n  - 7.000 → “000” → divisível.  \n  - 56.104 → “104” → 104 ÷ 8 = 13 → divisível.  \n  - 61.112 → “112” → 14 → divisível.  \n  - 78.164 → “164” → 20,5 (resto 4) → não divisível.\n\n---\n\n**7. Divisibilidade por 9**\n\n* **Regra**: soma dos algarismos é **múltipla de 9**.\n* **Exemplos**:  \n  - 2.871 → 2+8+7+1=18 → divisível.  \n  - −81 → 8+1=9 → divisível pelo critério.\n\n---\n\n**8. Divisibilidade por 10**\n\n* **Regra**: termina em **0**.\n* **Exemplos**:  \n  - 4.150 → termina em 0 → divisível.  \n  - 2.106 → termina em 6 → não divisível.\n\n---\n\n**9. Divisibilidade por 11**\n\n* **Regra**: diferença entre soma das posições ímpares e soma das posições pares (da direita para a esquerda) é **0 ou múltiplo de 11** (em módulo).\n* **Exemplos**:  \n  - 23.456 → ímpares: 6+4+2=12; pares: 5+3=8; dif=4 → não divisível.  \n  - 87.549 → ímpares: 9+5+8=22; pares: 4+7=11; dif=11 → divisível.  \n  - 22.253 → ímpares: 3+2+2=7; pares: 5+2=7; dif=0 → divisível.  \n  - Palíndromos com número par de dígitos (ex.: 3443, 22322): soma(ímpares) − soma(pares) = 0 → divisíveis.\n\n---\n\n**10. Divisibilidade por 12**\n\n* **Regra**: soma dos algarismos **múltipla de 3** e **2 últimos dígitos** múltiplos de 4 (passar em 3 e 4 simultaneamente).\n* **Exemplos**:  \n  - 720 → 7+2+0=9 (por 3) e “20” ÷ 4 = 5 (por 4) → divisível.  \n  - 870 → 8+7+0=15 (por 3) e “70” ÷ 4 não é exato → não divisível.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **Resto zero é obrigatório**: se aparecer qualquer resto na divisão, o número **não** é divisível.\n2. **Não confundir blocos de 4 e 8**: 4 usa os **2 últimos dígitos**; 8 usa os **3 últimos dígitos**; não teste o número inteiro para 4/8.\n3. **6 e 12 exigem dois testes simultâneos**:  \n   - 6 → precisa passar em 2 **e** 3.  \n   - 12 → precisa passar em 3 **e** 4.  \n   “Divisível por 3, mas não por 2” → não é por 6.\n4. **Critério de 11 é posicional**: conte ordens da **direita para a esquerda**; a diferença pode ser 0 ou múltiplo de 11 (considere valor absoluto).\n5. **Zero**: 0 é divisível por qualquer número diferente de 0; 0 ÷ 0 é indeterminado.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **4** (2 últimos dígitos) de **8** (3 últimos dígitos)?\n* Lembrei que **3** e **9** usam soma de dígitos, mas testam múltiplos diferentes?\n* Fixei que **6 = 2 e 3** e **12 = 3 e 4**, ambos **ao mesmo tempo**?\n* Sei aplicar o critério de **11** (posições alternadas da direita para a esquerda, diferença 0 ou múltiplo de 11, em módulo)?\n* Sei usar a ordem sugerida para filtrar rápido: **10, 5, 2 → 4, 8 → 3, 9 → 6, 12 → 11**?",
+  "mapa_mental": "# 🧮 Conjunto dos Números Naturais II\n## 🎯 Fundamentos\n### 💡 Conceitos básicos\n- Números naturais\n- Divisão exata\n- Resto zero\n- Valor absoluto\n- Ordens decimais\n### 🔢 Últimos algarismos\n- Último algarismo\n- Dois últimos\n- Três últimos\n- Blocos 00 a 99\n- Blocos 000 a 999\n### 📝 Ideia geral\n- Testes rápidos\n- Terminação\n- Blocos finais\n- Soma de dígitos\n- Combinação critérios\n\n## 🧮 Critérios de Divisibilidade\n### 🔚 Terminação 2,5,10\n- Divisível por 2\n- Divisível por 5\n- Divisível por 10\n- Algarismos permitidos\n- Número par\n### 🔚 Blocos 4 e 8\n- Divisível por 4\n- Divisível por 8\n- Uso dois últimos\n- Uso três últimos\n- Termina em zeros\n### ➕ Soma 3 e 9\n- Divisível por 3\n- Divisível por 9\n- Soma algarismos\n- Múltiplos de 3\n- Múltiplos de 9\n### 🔗 Combinações 6 e 12\n- Divisível por 6\n- Divisível por 12\n- 6 igual 2×3\n- 12 igual 3×4\n- Testes simultâneos\n### 📏 Critério 11\n- Posições ímpares\n- Posições pares\n- Diferença somas\n- Múltiplo de 11\n- Diferença zero\n\n## 🧠 Técnicas e Macetes\n### 🚀 Passo a passo\n- Testar terminação\n- Testar blocos\n- Testar soma\n- Combinar 6 e 12\n- Aplicar 11 por último\n### 🧩 Macetes memória\n- Últimos 2 → 4\n- Últimos 3 → 8\n- Soma → 3 e 9\n- 6: par e soma 3\n- 12: soma 3 e 4\n### 🔢 Somas rápidas\n- Agrupar múltiplos\n- Fechar múltiplos 3\n- Fechar múltiplos 9\n- Zeros na soma\n- Uso valor absoluto\n\n## ⚠️ Erros e Comparações\n### 🚨 Erros frequentes\n- Confundir 4 e 8\n- Ignorar valor absoluto\n- Esquecer critério duplo\n- Errar contagem posições\n- Testar número inteiro\n### 🧮 Zero e divisibilidade\n- Zero divisível\n- Proibido divisor zero\n- Zero por zero\n- Resto zero foco\n- Interpretação enunciado\n### 📊 Comparações chave\n- 2, 5, 10 terminações\n- 4 versus 8 blocos\n- 3 versus 9 soma\n- 6: 2 e 3 juntos\n- 12: 3 e 4 juntos",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Divisibilidade Básica",
+      "description": "Divisibilidade Básica — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza a divisibilidade de um número por outro?",
+          "back": "Permitir verificar a divisibilidade sem efetuar a divisão, de modo que o **resto seja zero**.",
+          "hint": "Foco no resultado da operação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "divisibilidade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como devem ser tratados algarismos negativos na aplicação dos critérios?",
+          "back": "Considerar o **valor absoluto** (módulo) do número.",
+          "hint": "Pense na distância até a origem",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "operacoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o critério de divisibilidade por dois?",
+          "back": "Terminar em **zero, dois, quatro, seis ou oito** (ser par).",
+          "hint": "São cinco opções possíveis",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "criterios-divisibilidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual condição sobre os algarismos determina a divisibilidade por três?",
+          "back": "A **soma dos valores absolutos** dos seus algarismos ser divisível por três.",
+          "hint": "Envolve uma operação aritmética simples",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "criterios-divisibilidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual deve ser o último algarismo de um número divisível por cinco?",
+          "back": "Zero ou cinco.",
+          "hint": "São apenas duas opções",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "criterios-divisibilidade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Critérios Compostos",
+      "description": "Critérios Compostos — 1 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Quais condições simultâneas tornam um número divisível por seis?",
+          "back": "Ser **simultaneamente** divisível por **dois e por três**.",
+          "hint": "Depende de outros dois critérios",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "criterios-divisibilidade"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Critério de Onze",
+      "description": "Critério de Onze — 6 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "A partir de qual extremidade devem ser numeradas as posições dos algarismos?",
+          "back": "A partir da **direita para a esquerda**.",
+          "hint": "Direção oposta à leitura convencional",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "posicionamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Como é calculada a diferença usada no critério de divisibilidade por onze?",
+          "back": "A diferença entre a soma dos algarismos de **ordem ímpar** e a dos de **ordem par**.",
+          "hint": "Compare somas de posições alternadas",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "criterios-divisibilidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual número é divisível por qualquer número natural não nulo?",
+          "back": "O zero.",
+          "hint": "Elemento neutro da soma",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a natureza da divisão de zero por zero?",
+          "back": "Constitui uma indeterminação matemática.",
+          "hint": "Não possui resultado definido",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "excecoes"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-11",
+          "front": "O que define um número palíndromo?",
+          "back": "Número que pode ser lido da mesma forma da esquerda para a direita e da direita para a esquerda.",
+          "hint": "Refere-se à simetria de leitura",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "definicoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual propriedade têm os palíndromos com quantidade par de algarismos?",
+          "back": "São divisíveis por **onze**.",
+          "hint": "Relacionado a um critério de divisibilidade",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-naturais",
+            "palindromos"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o critério de divisibilidade por 2?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número deve terminar em 0, 2, 4, 6 ou 8",
+          "correct": true,
+          "explanation": "Correta. Um número natural é divisível por 2 quando ele é par, ou seja, quando seu último algarismo é 0, 2, 4, 6 ou 8. Esta é a definição fundamental de um número par e, consequentemente, de sua divisibilidade por 2. Por exemplo, 5.040 termina em 0, indicando que é divisível por 2."
+        },
+        {
+          "id": "b",
+          "text": "O número deve terminar em 0 ou 5",
+          "correct": false,
+          "explanation": "Incorreta. Este critério é aplicável para a divisibilidade por 5. Números que terminam em 0 ou 5 são divisíveis por 5, mas apenas aqueles que terminam em 0 também são divisíveis por 2."
+        },
+        {
+          "id": "c",
+          "text": "Os dois últimos algarismos devem formar um número divisível por 2",
+          "correct": false,
+          "explanation": "Incorreta. Para a divisibilidade por 2, basta analisar o último algarismo. O critério de verificar se os dois últimos algarismos formam um número divisível por 2 não é o mais direto e, na verdade, é uma simplificação desnecessária, pois o critério dos dois últimos algarismos é mais relevante para a divisibilidade por 4."
+        },
+        {
+          "id": "d",
+          "text": "A soma dos algarismos deve ser divisível por 2",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos algarismos ser divisível por 2 não é um critério de divisibilidade por 2. Por exemplo, o número 13 tem a soma dos algarismos 1+3=4, que é divisível por 2, mas 13 não é divisível por 2. Este tipo de critério é utilizado para a divisibilidade por 3 ou 9."
+        }
+      ],
+      "explanation": "Correta. Um número natural é divisível por 2 quando ele é par, ou seja, quando seu último algarismo é 0, 2, 4, 6 ou 8. Esta é a definição fundamental de um número par e, consequentemente, de sua divisibilidade por 2. Por exemplo, 5.040 termina em 0, indicando que é divisível por 2.",
+      "difficulty": "easy",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Como se verifica se um número é divisível por 3?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Verificando se o último algarismo é 3, 6 ou 9",
+          "correct": false,
+          "explanation": "Incorreta. Este não é um critério de divisibilidade por 3. Por exemplo, 13 termina em 3, mas não é divisível por 3. O critério de divisibilidade por 3 envolve a soma dos algarismos, e não o valor do último algarismo."
+        },
+        {
+          "id": "b",
+          "text": "Verificando se os três últimos algarismos formam um número divisível por 3",
+          "correct": false,
+          "explanation": "Incorreta. O critério de verificar os três últimos algarismos é utilizado para a divisibilidade por 8, não por 3. Para a divisibilidade por 3, a soma de todos os algarismos é o que importa, independentemente de sua posição."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicando os algarismos e verificando se o produto é divisível por 3",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar os algarismos não é um critério de divisibilidade por 3. Por exemplo, para o número 21, a multiplicação dos algarismos é 2 * 1 = 2, que não é divisível por 3, mas 21 é divisível por 3. Este método não possui fundamento matemático para determinar a divisibilidade."
+        },
+        {
+          "id": "d",
+          "text": "Somando os valores absolutos dos algarismos e verificando se o resultado é divisível por 3",
+          "correct": true,
+          "explanation": "Correta. Um número é divisível por 3 se a soma dos valores absolutos de seus algarismos for divisível por 3. Por exemplo, para o número 234, a soma dos algarismos é 2 + 3 + 4 = 9. Como 9 é divisível por 3, o número 234 também é divisível por 3. Este critério é uma ferramenta eficiente para verificar a divisibilidade de números grandes."
+        }
+      ],
+      "explanation": "Correta. Um número é divisível por 3 se a soma dos valores absolutos de seus algarismos for divisível por 3. Por exemplo, para o número 234, a soma dos algarismos é 2 + 3 + 4 = 9. Como 9 é divisível por 3, o número 234 também é divisível por 3. Este critério é uma ferramenta eficiente para verificar a divisibilidade de números grandes.",
+      "difficulty": "easy",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No critério de divisibilidade por 11, como são contadas as posições dos algarismos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Da esquerda para a direita, começando pela primeira posição",
+          "correct": false,
+          "explanation": "Incorreta. Contar as posições da esquerda para a direita alteraria a aplicação do critério de divisibilidade por 11, pois a ordem (ímpar ou par) de cada algarismo seria diferente da convenção estabelecida."
+        },
+        {
+          "id": "b",
+          "text": "Da esquerda para a direita, começando pela posição zero",
+          "correct": false,
+          "explanation": "Incorreta. Embora em alguns contextos de programação ou matemática a indexação possa começar do zero, no critério de divisibilidade por 11, as posições são tradicionalmente referidas por números ordinais (primeira, segunda, etc.), começando por 1. Alterar essa contagem para iniciar em zero modificaria a aplicação do critério."
+        },
+        {
+          "id": "c",
+          "text": "Da direita para a esquerda, começando pela primeira posição",
+          "correct": true,
+          "explanation": "Correta. No critério de divisibilidade por 11, as posições dos algarismos são contadas da direita para a esquerda, começando pela primeira posição (algarismo das unidades). A primeira, terceira, quinta posições, e assim por diante, são consideradas ímpares, enquanto a segunda, quarta, sexta, etc., são pares. O critério envolve a diferença entre a soma dos algarismos de ordem ímpar e a soma dos algarismos de ordem par."
+        },
+        {
+          "id": "d",
+          "text": "Do centro para as extremidades, alternando as posições",
+          "correct": false,
+          "explanation": "Incorreta. Não há um critério de divisibilidade por 11 que envolva a contagem de posições do centro para as extremidades. A abordagem padrão é linear e unidirecional, da direita para a esquerda."
+        }
+      ],
+      "explanation": "Correta. No critério de divisibilidade por 11, as posições dos algarismos são contadas da direita para a esquerda, começando pela primeira posição (algarismo das unidades). A primeira, terceira, quinta posições, e assim por diante, são consideradas ímpares, enquanto a segunda, quarta, sexta, etc., são pares. O critério envolve a diferença entre a soma dos algarismos de ordem ímpar e a soma dos algarismos de ordem par.",
+      "difficulty": "hard",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Por que o número zero é considerado divisível por qualquer número (exceto ele mesmo)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque zero é menor que qualquer número positivo",
+          "correct": false,
+          "explanation": "Incorreta. A relação de ordem de zero em relação a outros números (ser menor que qualquer número positivo) é uma propriedade numérica, mas não explica sua divisibilidade. A divisibilidade é uma característica intrínseca à operação de divisão exata."
+        },
+        {
+          "id": "b",
+          "text": "Porque zero dividido por qualquer número resulta em zero, gerando uma divisão exata com resto zero",
+          "correct": true,
+          "explanation": "Correta. Um número 'a' é divisível por um número 'b' (não nulo) se o resultado da divisão 'a/b' for um número inteiro e o resto for zero. No caso do zero, se dividirmos 0 por qualquer número 'b' (onde 'b' é diferente de zero), o resultado é sempre 0, e o resto é 0. Por exemplo, 0 ÷ 11 = 0, com resto 0. Assim, zero é divisível por qualquer número inteiro, exceto por ele mesmo (a divisão por zero é uma indeterminação matemática)."
+        },
+        {
+          "id": "c",
+          "text": "Porque zero é o elemento neutro da multiplicação",
+          "correct": false,
+          "explanation": "Incorreta. Zero não é o elemento neutro da multiplicação. O elemento neutro da multiplicação é 1 (qualquer número multiplicado por 1 é ele mesmo). Zero é o elemento neutro da adição e o elemento absorvente da multiplicação."
+        },
+        {
+          "id": "d",
+          "text": "Porque zero multiplicado por qualquer número resulta em zero",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja uma propriedade verdadeira da multiplicação (zero multiplicado por qualquer número é zero), esta afirmação descreve o resultado de uma multiplicação, e não a razão pela qual zero é considerado divisível por outros números. A divisibilidade está ligada à divisão exata."
+        }
+      ],
+      "explanation": "Correta. Um número 'a' é divisível por um número 'b' (não nulo) se o resultado da divisão 'a/b' for um número inteiro e o resto for zero. No caso do zero, se dividirmos 0 por qualquer número 'b' (onde 'b' é diferente de zero), o resultado é sempre 0, e o resto é 0. Por exemplo, 0 ÷ 11 = 0, com resto 0. Assim, zero é divisível por qualquer número inteiro, exceto por ele mesmo (a divisão por zero é uma indeterminação matemática).",
+      "difficulty": "hard",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Por que todo número palíndromo com quantidade par de dígitos é divisível por 11?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque a soma dos algarismos de posição ímpar é igual à soma dos de posição par, resultando em subtração zero, que é divisível por 11",
+          "correct": true,
+          "explanation": "Correta. Em um número palíndromo com quantidade par de dígitos, ao aplicar o critério de divisibilidade por 11 (somar os algarismos de ordem ímpar e subtrair a soma dos algarismos de ordem par, contando da direita para a esquerda), as somas resultantes serão iguais. Isso acontece porque a estrutura simétrica do palíndromo faz com que cada algarismo de uma posição ímpar tenha um correspondente de mesmo valor em uma posição par, e vice-versa. Assim, a diferença entre essas duas somas sempre será zero. Como zero é divisível por 11, o número palíndromo também será divisível por 11. Por exemplo, para 3443: (3 + 4) - (4 + 3) = 7 - 7 = 0."
+        },
+        {
+          "id": "b",
+          "text": "Porque em um palíndromo os algarismos de ordem par são iguais aos de ordem ímpar",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de que os algarismos de ordem par são iguais aos de ordem ímpar não é precisa. Em um palíndromo como 3443, o algarismo da 1ª ordem (ímpar) é 3, e o da 2ª ordem (par) é 4, que são diferentes. O que ocorre é uma simetria que faz com que as somas se anulem."
+        },
+        {
+          "id": "c",
+          "text": "Porque a soma dos algarismos de um palíndromo é sempre múltiplo de 11",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos algarismos de um palíndromo com quantidade par de dígitos não é necessariamente um múltiplo de 11. Por exemplo, o palíndromo 1221 tem a soma dos algarismos 1+2+2+1 = 6, que não é múltiplo de 11, mas o número 1221 é divisível por 11."
+        },
+        {
+          "id": "d",
+          "text": "Porque palíndromos sempre terminam em números divisíveis por 11",
+          "correct": false,
+          "explanation": "Incorreta. Palíndromos não precisam terminar em números divisíveis por 11. Por exemplo, o palíndromo 3443 termina em 3, que não é divisível por 11. O critério de divisibilidade por 11 não se baseia no último algarismo, mas sim na alternância das somas dos algarismos em posições específicas."
+        }
+      ],
+      "explanation": "Correta. Em um número palíndromo com quantidade par de dígitos, ao aplicar o critério de divisibilidade por 11 (somar os algarismos de ordem ímpar e subtrair a soma dos algarismos de ordem par, contando da direita para a esquerda), as somas resultantes serão iguais. Isso acontece porque a estrutura simétrica do palíndromo faz com que cada algarismo de uma posição ímpar tenha um correspondente de mesmo valor em uma posição par, e vice-versa. Assim, a diferença entre essas duas somas sempre será zero. Como zero é divisível por 11, o número palíndromo também será divisível por 11. Por exemplo, para 3443: (3 + 4) - (4 + 3) = 7 - 7 = 0.",
+      "difficulty": "hard",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "O que significa considerar o valor absoluto de um algarismo ao aplicar critérios de divisibilidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Considerar apenas a posição do algarismo no número",
+          "correct": false,
+          "explanation": "Incorreta. Considerar a posição do algarismo no número refere-se à sua ordem ou valor posicional (unidade, dezena, centena, etc.), que é diferente do valor absoluto. O valor absoluto foca na magnitude do algarismo, independentemente de sua posição."
+        },
+        {
+          "id": "b",
+          "text": "Desconsiderar o sinal negativo e considerar apenas o valor numérico positivo",
+          "correct": true,
+          "explanation": "Correta. O valor absoluto de um número, ou de um algarismo isolado, é a sua distância de zero na reta numérica, ou seja, seu valor numérico sem considerar o sinal. Por exemplo, o valor absoluto de -5 é 5, e o valor absoluto de 5 também é 5. Em contextos de divisibilidade, quando se fala em \"valores absolutos dos algarismos\", ignora-se qualquer sinal que o número completo possa ter e considera-se apenas o valor positivo de cada dígito."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar o algarismo por seu índice de posição",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o algarismo por seu índice de posição (ou valor posicional) é parte do cálculo do valor do número, não do seu valor absoluto. Por exemplo, no número 234, o algarismo '2' tem um valor posicional de 200 (2 * 100), enquanto seu valor absoluto é apenas 2."
+        },
+        {
+          "id": "d",
+          "text": "Somar o algarismo com todos os anteriores",
+          "correct": false,
+          "explanation": "Incorreta. Somar o algarismo com todos os anteriores descreve uma operação de soma acumulada ou sequencial, que não tem relação com o conceito matemático de valor absoluto. O valor absoluto de um algarismo é uma propriedade intrínseca a ele, não dependente de outros algarismos ou operações de soma."
+        }
+      ],
+      "explanation": "Correta. O valor absoluto de um número, ou de um algarismo isolado, é a sua distância de zero na reta numérica, ou seja, seu valor numérico sem considerar o sinal. Por exemplo, o valor absoluto de -5 é 5, e o valor absoluto de 5 também é 5. Em contextos de divisibilidade, quando se fala em \"valores absolutos dos algarismos\", ignora-se qualquer sinal que o número completo possa ter e considera-se apenas o valor positivo de cada dígito.",
+      "difficulty": "hard",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "02_249028_Conjunto dos Números Naturais II.pdf",
+  "coletado_em": "2026-09-23T20:51:07"
+}

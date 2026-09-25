@@ -1,0 +1,582 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 4,
+    "titulo": "Matemática"
+  },
+  "ordem": 6,
+  "ordem_no_curso": "6.00",
+  "titulo": "Matemática",
+  "codigo_aula": "358753",
+  "video_id": "MQGtKu2lm94=",
+  "professor": "Diego Ribeiro",
+  "duracao": "00:26:06",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/MQGtKu2lm94%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408869%2C408839%2C403891%2C403868%2C403869%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matemática\n\n## Revisão do Bloco Anterior: Divisores de 72 e múltiplos de 6\nNo bloco anterior, a gente realizou uma questão que apresentava os divisores de 72 e pedia a probabilidade desses divisores serem múltiplos de 6. Eu acho interessante passar para vocês, depois da fatoraçao de 72 que a gente encontrou. Alega que a gente encontrou: 2 elevado ao cubo vezes 3 elevado ao quadrado. É lógico que isso aqui vai dar 72, lógico. E esses divisores são encontrados observando a relação entre esses números: multiplicando 2, 2, 2 (2 ao cubo), 3, 3 (3 ao quadrado), 3 ao quadrado vezes 2... E assim a gente encontra todos esses divisores.\n\nPorém, existe uma forma linda, e é isso que eu quero mostrar para vocês: eu consigo rapidamente encontrar a quantidade de divisores. Para encontrar os divisores, eu preciso fazer essa multiplicação, essa relação entre os números encontrados. Mas para encontrar a quantidade, basta fazer o seguinte: você vai pegar o expoente de cada número, vai somar com 1 e multiplicar. Realizou? 3 + 1, 2 + 1. Agora vamos multiplicar: (2 + 1) e (3 + 1) vai dar 4 vezes 3, igual a 12. Olha lá: aqui encontrei a quantidade de divisores dos 72, apenas a quantidade.\n\nIsso aqui vai servir para qualquer número. Para qualquer número, você vai somar mais um nos expoentes e multiplicá-los. Claro que, para identificar os múltiplos, aí é outro trabalho: é observar realmente a relação entre esses números encontrados.\n\n## Probabilidade – União e Interseção de Eventos\nQuestão 26. Embora seja... (lendo) “Seja a probabilidade de ocorrência de um evento X, Y, Z… Dados dois eventos A e B, a probabilidade de ocorrer pelo menos um dos dois eventos é igual a quatro quintos.” A probabilidade de ocorrer pelo menos um... Aconteceu um ou dois, estavam em “um ou dois”. Então já sei que a probabilidade de não acontecer esse evento é um quinto. Isso aí está claro, beleza. Vamos continuar a leitura.\n\nA probabilidade de ocorrer o evento A e o evento B é igual a um décimo. Então a probabilidade de acontecer a interseção, a probabilidade dos eventos A e B, ele está me dizendo que é de um décimo. Ele diz ainda: probabilidade de A é igual a meio da probabilidade de B. O que ele quer saber? Probabilidade de A união B é o que ele quer saber.\n\nEu vou chamar esse “pelo menos um” de A união B. Pelo menos um. A união de conjuntos. Você tem que o A, o evento B... Então, pelo menos uma vez, pode acontecer A, pode acontecer B, como os dois. Isso aqui é a união. Então a probabilidade da união, P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = quatro quintos. E aí, a probabilidade de não acontecer nada é um quinto, porque a diferença é 100% menos quatro quintos (80%), que vai dar 20%.\n\nEnfim, como é que a gente vai resolver essa situação? Seguinte, prestem atenção. Ele falou que a probabilidade da interseção é um décimo. Então aqui há um décimo: P(A ∩ B) = 1/10.\n\nA probabilidade de acontecer “pelo menos um” é dada por: P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Diego, de onde se está tirando isso? A fórmula do número de elementos da união de conjuntos. Vai dar certo, confia.\n\nEle deu P(A) = 1/2. Então: 1/2 + P(B) − 1/10 = 4/5.\n\nAgora eu vou multiplicar tudo por 10 para eliminar denominadores:\n10/2 + 10·P(B) − 1 = 40/5\n5 + 10·P(B) − 1 = 8\n10·P(B) + 4 = 8\n10·P(B) = 4\nP(B) = 4/10 = 2/5.\n\nSerá que temos esse resultado? 2/5. Afirmativo. Gabarito: alternativa B de bravo. Bacana! Trabalhamos aqui conceitos de probabilidade, trabalhamos conjuntos, e eu falei que aquela fórmula dá certo.\n\n## Sistema Monetário – Sistema de Equações\nVamos trabalhar álgebra? Olha aqui: em um sistema monetário, as cédulas brancas eu vou chamar de B, as azuis vou chamar de A, e as pretas de P.\n\nSabe-se que:\n- Duas cédulas azuis e uma branca: 2A + B = 29.\n- Uma cédula branca e duas pretas: B + 2P = 43.\n- Duas cédulas pretas e uma azul: 2P + A = 47.\n\nVou chamar de equações 1, 2 e 3. Criei um sisteminha de equações. É correto afirmar que uma cédula branca mais uma azul mais uma preta equivalem a quanto? Essa é a nossa questão.\n\nVamos resolver. O que eu posso fazer aqui? Multiplicar a equação 1 por −1:\n−2A − B = −29.\n\nSomando com a equação 2 (B + 2P = 43):\n−2A − B + B + 2P = −29 + 43\n−2A + 2P = 14. (Resultado da soma de 1 e 2.)\n\nAgora vou pegar a equação 3: 2P + A = 47.\nE vou somar com a equação anterior, mas antes, multiplico a relação −2A + 2P = 14 por −1 para eliminar P ao somar com a 3:\n2A − 2P = −14\nSomando com 2P + A = 47:\n(2A + A) + (−2P + 2P) = −14 + 47\n3A = 33\nA = 11.\n\nJá matei uma charada: A = 11. Falta encontrar B e P. Tranquilo. Posso pegar qualquer equação e substituir. Pegando a primeira:\n2A + B = 29\n2·11 + B = 29\n22 + B = 29\nB = 7.\n\nAgora, pela segunda:\nB + 2P = 43\n7 + 2P = 43\n2P = 36\nP = 18.\n\nVamos somar tudo: B + A + P = 7 + 11 + 18 = 36.\nGabarito: alternativa C de coragem. Questão trabalhosa, com certeza, sistema de três equações e três variáveis, perfeitamente possível determinar. Foi isso que a gente fez: uma série de operações para definir o valor da cédula branca, azul e preta. Ao final encontramos B = 7, A = 11, P = 18.\n\n## Combinação – Três Frutas Diferentes\nQuestão 29. “Ao comprar três frutas diferentes no mesmo supermercado, o cliente dispõe de 56 maneiras distintas de efetuar a compra.” O que a gente consegue perceber? Quantas frutas diferentes o supermercado disponibiliza para a venda?\n\nPensa comigo: se eu comprar abacaxi, melancia, banana, eu fiz uma compra. Se eu comprei melancia, abacaxi, banana, ou banana, melancia, abacaxi, a ordem está diferente, mas as compras mudaram? Não. É a mesma compra. Então a ordem da escolha não importa. Se a ordem não importa, eu tenho combinação.\n\nEstou escolhendo 3. O que eu quero saber é a quantidade de frutas (N). Então é C(N, 3) = 56.\n\nC(N,3) = N! / [(N−3)!·3!] = 56.\n\nDesenvolvendo:\nN! / (N−3)! = 56 · 3! = 56 · 6 = 336\nN·(N−1)·(N−2) = 336.\n\nObservando fatoração: 56 é 8 × 7, e multiplicado por 6 fecha a sequência N, N−1, N−2 = 8, 7, 6. Logo N = 8. Eu não preciso desenvolver uma equação de terceiro grau: já observei o encaixe.\n\nEsse supermercado tem um total de 8 frutas. Pode conferir: C(8,3) = 56. Boa! Tempo é fundamental em prova, e essa observação ajuda. Também daria para testar alternativas por substituição.\n\n## Geometria – Três Semirretas e Ângulos Proporcionais\nQuestão 30. Três semirretas partem de um mesmo ponto, formando três ângulos que envolvem todo o plano e são proporcionais aos números 11, 12 e 13.\n\nDesenho: três ângulos que somam 360°. Vou chamar de α, β, γ. Sei que α + β + γ = 360°. E α:β:γ = 11:12:13.\n\nIsso vira uma constante de proporcionalidade k:\nα = 11k, β = 12k, γ = 13k.\nSomando: 11k + 12k + 13k = 36k = 360 → k = 10.\n\nEntão:\nα = 110°, β = 120°, γ = 130°.\n\nO que ele quer? O suplemento do menor dos três ângulos. O menor é 110°. O suplemento é 180° − 110° = 70°. Esse é o suplemento do menor ângulo.\n\nGabarito: alternativa D, sem medo de errar. Questão boa: envolveu geometria, razão, proporção e suplemento de ângulo.\n\n## Progressão Geométrica – Planejamento de Corrida\nQuestão 31. Murilo planeja percorrer 90 km em 4 dias. Em cada um dos últimos três dias, ele percorre o dobro do dia anterior. Então, se no primeiro dia ele correu x, no segundo 2x, no terceiro 4x e no quarto 8x.\n\nTotal: x + 2x + 4x + 8x = 15x = 90 → x = 6.\n\nLogo, as distâncias: 6, 12, 24, 48. Confere: 6 + 12 + 24 + 48 = 90.\n\nEle quer a diferença entre o total do 1º e 4º com o total do 2º e 3º:\n(6 + 48) − (12 + 24) = 54 − 36 = 18 km.\n\nPode marcar: gabarito alternativa A, de aprovado. Questão boa: é uma PG de razão 2.\n\n## Progressões Aritméticas – Últimos Três Termos e Par Igual\nQuestão 32. Cada uma das sequências a seguir é formada por 20 termos.\n\nSequência 1: a1 = 30, razão r1 = 3.\nSequência 2: a1 = 157, razão r2 = −4.\nN = 20 em ambas.\n\nConsiderando os últimos três termos de cada sequência, some os números do único par de termos iguais entre elas.\n\nÚltimos três termos são a18, a19, a20.\n\nPara a primeira PA:\nan = a1 + (n − 1)r.\na18 = 30 + 17·3 = 30 + 51 = 81.\nLogo, a19 = 84, a20 = 87.\n\nPara a segunda PA:\na18 = 157 + 17·(−4) = 157 − 68 = 89.\nEntão a19 = 85, a20 = 81.\n\nPar de termos iguais entre os últimos três: 81 e 81 (a18 da primeira e a20 da segunda).\nSoma pedida: 81 + 81 = 162.\n\nGabarito: alternativa D. Show de bola, galera. Finalizamos mais um bloco! Voltamos na sequência com a questão de número 33.",
+  "transcricao_meta": {
+    "title": "Matemática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 27206,
+    "createdAt": "2026-02-07T02:57:23.766Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: divisores e fatoração, probabilidade (união/interseção), sistemas lineares simples, combinações, ângulos proporcionais que fecham o plano, PG de razão 2 em situações de soma e comparação de PAs.\n\nPrincipais pontos:\n- Contagem de divisores por fatoração em primos.\n- Fórmula da união P(A ∪ B) e interpretação de “pelo menos um”.\n- Eliminação rápida em sistemas 3×3.\n- Quando usar combinação (ordem não importa) e identificação de n em C(n,3)=56.\n- Proporcionalidade angular com soma 360° e cálculo de suplemento.\n- Modelagem por PG/PA e aplicação direta de fórmulas.\n\n## 1. Base / Conceitos Fundamentais\n- **Fatoração em primos**: todo número natural > 1 pode ser escrito como produto de primos.\n- **Quantidade de divisores**: se N = p1^a · p2^b · …, a quantidade é (a+1)(b+1)….\n- **Probabilidade**:\n  - **União**: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n  - “**Pelo menos um**” = união; “**nenhum**” = complementar da união.\n- **Sistema linear 3×3**: resolução por eliminação/soma-subtração de equações.\n- **Combinação**: ordem não importa. C(n,k) = n! / [(n−k)! k!].\n- **Proporcionalidade**: grandezas a:b:c → use k: ak, bk, ck.\n- **Ângulos**:\n  - Fecham linha reta: somam 180°.\n  - Fecham o plano: somam 360°.\n  - **Suplemento**: 180° − ângulo. **Complemento**: 90° − ângulo.\n- **PG**: termos x, 2x, 4x, 8x … (razão 2).\n- **PA**: an = a1 + (n−1)r.\n\n## 2. Como Funciona / Distinções\n- **Contar divisores vs. achar divisores específicos**:\n  - Contagem: use (expoente+1) e multiplique.\n  - Específicos (ex.: múltiplos de 6): verifique se contêm fatores exigidos (6 = 2 × 3).\n- **União vs. interseção na probabilidade**:\n  - União aumenta probabilidade (evite dupla contagem subtraindo a interseção).\n  - Complementar da união = nenhum dos eventos.\n- **Combinação vs. permutação**:\n  - Ordem importa? Sim → permutação; Não → combinação.\n- **PA vs. PG**:\n  - PA: diferença constante r.\n  - PG: razão constante q (ex.: dobra diariamente → q = 2).\n- **Ângulos 180° vs. 360°**:\n  - “Linha”/“semirretas opostas” → 180°.\n  - “Cobrem todo o plano”/“dão a volta” → 360°.\n\n## 3. Aplicação Prática / Técnicas\n- **Macete dos divisores**:\n  - Fatora: ex. 72 = 2^3 · 3^2.\n  - Quantidade: (3+1)(2+1) = 12.\n  > Dica de Prova: Lembre sempre “some 1 aos expoentes e multiplica”.\n\n- **Probabilidade (Pelo menos um)**:\n  - Use P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n  - Se necessário, multiplique tudo por MMC do denominador para eliminar frações.\n  > Dica de Prova: “Pelo menos um” = união. “Nenhum” = 1 − P(união).\n\n- **Sistema 3×3 por eliminação**:\n  - Some/subtraia pares de equações para cancelar variáveis.\n  - Substitua o valor encontrado nas demais.\n  > Dica de Prova: Alinhe coeficientes para cancelar rapidamente.\n\n- **Combinação C(n,3) = 56**:\n  - Use C(n,3) = n(n−1)(n−2)/6.\n  - Igualar a 56 → n(n−1)(n−2) = 336; teste n inteiros próximos de 8.\n  > Dica de Prova: 56 = 8×7; teste n = 8: C(8,3) = 56.\n\n- **Ângulos proporcionais (11:12:13)**:\n  - Some os coeficientes: 36k = soma total (180° ou 360°).\n  - k = total/soma; ângulos = 11k, 12k, 13k.\n  - Suplemento do menor = 180° − menor.\n  > Dica de Prova: “Cobrem o plano” → use 360°, não 180°.\n\n- **PG de razão 2 com soma dada**:\n  - Modele: x, 2x, 4x, 8x → soma 15x.\n  - x = total/15. Depois, calcule combinações pedidas.\n\n- **Comparação de PAs (últimos termos)**:\n  - Para 20 termos, use n = 18, 19, 20.\n  - Calcule com an = a1 + (n−1)r e compare.\n\n## 4. Exemplos e Casos Resolvidos\n- Divisores de 72:\n  - 72 = 2^3 · 3^2 → (3+1)(2+1) = 12 divisores.\n  > Dica de Prova: Serve para qualquer N fatorado em primos.\n\n- Probabilidade – encontrar P(B):\n  - Dados: P(A ∪ B) = 4/5; P(A) = 1/2; P(A ∩ B) = 1/10.\n  - 4/5 = 1/2 + P(B) − 1/10.\n  - Multiplique por 10: 8 = 5 + 10P(B) − 1 → 10P(B) = 4 → P(B) = 2/5.\n  - Resposta: 2/5.\n\n- Sistema (cédulas A, B, P):\n  - 2A + B = 29; B + 2P = 43; A + 2P = 47.\n  - A = 11; B = 7; P = 18 → A+B+P = 36.\n  - Gabarito: 36.\n\n- Combinação C(n,3) = 56:\n  - Teste n = 8 → C(8,3) = 56 → n = 8.\n\n- Ângulos 11:12:13 no plano:\n  - 36k = 360 → k = 10 → 110°, 120°, 130°.\n  - Suplemento do menor: 180 − 110 = 70°.\n\n- PG em 4 dias (dobra):\n  - x + 2x + 4x + 8x = 90 → x = 6.\n  - Distâncias: 6, 12, 24, 48.\n  - Pedido: (1º+4º) − (2º+3º) = 18.\n\n- Duas PAs de 20 termos:\n  - PA1: a1=30, r=3 → a18=81, a19=84, a20=87.\n  - PA2: a1=157, r=−4 → a18=89, a19=85, a20=81.\n  - Par igual: 81 → soma: 162.\n\n## 5. Pegadinhas e Erros Comuns\n- “Cobrem todo o plano” → some 360°, não 180°.\n- “Suplemento” vs. “complemento”: suplemento = 180° − ângulo; complemento = 90° − ângulo.\n- Confundir PA com PG: “dobro” indica PG (q = 2).\n- Na contagem de divisores, esquecer de somar 1 aos expoentes.\n- Em união de eventos, esquecer de subtrair a interseção (dupla contagem).\n- Em C(n,3) = 56, tentar resolver por fatorial direto sem testar n prático (n=8 cai rápido).\n- “Últimos três termos” de uma PA com 20 termos → calcule n = 18, 19, 20; não conte “de trás” sem fórmula.\n\nDIFERENÇAS e COMPARAÇÕES\n| Situação | Tipo | Estrutura | Regra/Soma-chave | Macete |\n| --- | --- | --- | --- | --- |\n| Divisores | Fatoração | N = p1^a p2^b … | (a+1)(b+1)… | Expoente+1 e multiplica |\n| União de eventos | Probabilidade | A ∪ B | P(A)+P(B)−P(A∩B) | “Pelo menos um” = união |\n| C(n,3)=56 | Combinação | n(n−1)(n−2)/6 | Igualar a 56 | Teste n=8 |\n| Ângulos 11:12:13 | Proporção | 11k,12k,13k | 36k=360 → k=10 | Suplemento=180−menor |\n| PG (dobra) | PG r=2 | x,2x,4x,8x | Soma 15x | x=Total/15 |\n| PAs (20 termos) | PA | an=a1+(n−1)r | n=18,19,20 | Compare valores próximos |\n\n> Dica de Prova: Se travar, teste alternativas ou valores inteiros prováveis (n, k, x). Muitas questões foram pensadas para “cair” em números redondos.",
+  "resumo_bolso": "# Matemática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Fatoração em primos**: todo número natural > 1 pode ser escrito como produto de primos. Base para contar divisores.\n* **Quantidade de divisores**: se N = p₁ᵃ·p₂ᵇ·…, a quantidade é (a+1)(b+1)… (some 1 aos expoentes e multiplica).\n* **Probabilidade – união**: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n* **“Pelo menos um”**: é **união**. “Nenhum” = complementar da união, 1 − P(A ∪ B).\n* **Sistema linear 3×3**: resolver por eliminação (somar/subtrair equações para cancelar variáveis).\n* **Combinação**: ordem **não** importa. C(n,k) = n! / [(n−k)!k!].\n* **Proporção**: a:b:c → ak, bk, ck; soma = total (180° ou 360°).\n* **Ângulos**: linha reta = 180°; plano completo = 360°.  \n  Suplemento = 180° − ângulo; Complemento = 90° − ângulo.\n* **PG (q=2)**: termos tipo x, 2x, 4x, 8x… (razão 2).\n* **PA**: an = a1 + (n−1)r.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Contagem de divisores vs. achar divisores específicos\n\n| Aspecto | Contagem de divisores | Divisores com condição (ex.: múltiplos de 6) |\n| --- | --- | --- |\n| Foco | Quantos divisores N tem | Quais divisores atendem fator exigido |\n| Procedimento | Fatora N, usa (expoente+1)… | Verifica se divisor contém fatores (ex.: 6=2·3) |\n| Resultado | Número total | Subconjunto filtrado |\n\n---\n\n### União vs. Interseção (Probabilidade)\n\n| Aspecto | União A ∪ B | Interseção A ∩ B |\n| --- | --- | --- |\n| Ideia | Pelo menos um ocorre | Ambos ocorrem |\n| Fórmula | P(A)+P(B)−P(A∩B) | Fornecida ou deduzida na questão |\n| Complementar | Nenhum = 1−P(A∪B) | — |\n\n---\n\n### Combinação vs. Permutação\n\n| Aspecto | Combinação | Permutação |\n| --- | --- | --- |\n| Ordem | Não importa | Importa |\n| Exemplo | Comitê de 3 pessoas | Senha com 3 dígitos distintos |\n\n---\n\n### PA vs. PG\n\n| Aspecto | PA | PG |\n| --- | --- | --- |\n| Padrão | Soma constante r | Multiplica por q |\n| Palavra-chave | “aumenta de 3 em 3” | “dobra”, “triplica” |\n| Fórmula | an = a1 + (n−1)r | Termos como x,2x,4x,8x (q=2) |\n\n---\n\n### Ângulos 180° vs. 360°\n\n| Situação | Soma |\n| --- | --- |\n| “Linha”, “semirretas opostas” | 180° |\n| “Cobrem todo o plano”, “dão a volta” | 360° |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Contagem de divisores**\n\n* **Aplicação**: dado N fatorado em primos.  \n* Regra: N = p₁ᵃ·p₂ᵇ·… ⇒ divisores = (a+1)(b+1)…  \n* Exemplo: 72 = 2³·3² ⇒ (3+1)(2+1) = 12.\n\n---\n\n**2. Probabilidade – União / “Pelo menos um”**\n\n* **Aplicação**: eventos A e B.  \n* Regra: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).  \n* “Nenhum”: 1 − P(A ∪ B).  \n* Exemplo:  \n  Dados: P(A ∪ B) = 4/5; P(A) = 1/2; P(A ∩ B) = 1/10.  \n  4/5 = 1/2 + P(B) − 1/10.  \n  Multiplicando por 10: 8 = 5 + 10P(B) − 1 → 10P(B) = 4 → P(B) = 2/5.\n\n---\n\n**3. Combinação C(n,3) = 56**\n\n* **Aplicação**: escolher 3 sem ordem.  \n* Regra: C(n,3) = n(n−1)(n−2)/6.  \n* Exemplo: n(n−1)(n−2)/6 = 56 ⇒ n(n−1)(n−2) = 336; testar n=8 ⇒ C(8,3)=56.\n\n---\n\n**4. Proporção angular (11:12:13)**\n\n* **Aplicação**: ângulos proporcionais que fecham 180° ou 360°.  \n* Regra: (11+12+13)k = total ⇒ 36k = 180 ou 360.  \n* Exemplo (plano): 36k=360 ⇒ k=10 ⇒ 110°,120°,130°.  \n  Suplemento do menor: 180 − 110 = 70°.\n\n---\n\n**5. PG razão 2 com soma conhecida**\n\n* **Aplicação**: 4 dias dobrando, etc.  \n* Regra: x+2x+4x+8x = 15x = total ⇒ x = total/15.  \n* Exemplo: total 90 ⇒ x=6 ⇒ termos 6,12,24,48; (1º+4º) − (2º+3º) = 18.\n\n---\n\n**6. PA – últimos termos**\n\n* **Aplicação**: PA com 20 termos, pedir últimos.  \n* Regra: an = a1 + (n−1)r; usar n=18,19,20 para “últimos três”.  \n* Exemplo:  \n  PA1: a1=30, r=3 → a18=81, a19=84, a20=87.  \n  PA2: a1=157, r=−4 → a18=89, a19=85, a20=81.  \n  Par igual: 81 → soma 162.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “Cobrem todo o plano” → some 360°, não 180°.  \n* “Suplemento” vs. “complemento”: suplemento = 180° − ângulo; complemento = 90° − ângulo.  \n* Confundir PA com PG: “dobro” indica PG (q = 2).  \n* Na contagem de divisores, esquecer de somar 1 aos expoentes.  \n* Em união de eventos, esquecer de subtrair a interseção (dupla contagem).\n\n---\n\n## 📋 Checklist Final\n\n* Sei aplicar **fatoração em primos** e a fórmula (a+1)(b+1)… para contar divisores?  \n* Lembro que **“pelo menos um” = P(A ∪ B)** e **“nenhum” = 1 − P(A ∪ B)**?  \n* Sei montar e eliminar variáveis em um **sistema 3×3** rapidamente?  \n* Diferencio **combinação** (ordem não importa) de **permutação**?  \n* Reconheço que **C(8,3) = 56** e que C(n,3)=56 leva a testar n=8?  \n* Sei que “dobra” → **PG q=2**, e modelar x,2x,4x,8x com soma 15x?  \n* Sei que **linha reta = 180°**, **plano completo = 360°**, e calcular suplemento/complemento?  \n* Para PA com 20 termos, lembro de usar **n=18,19,20** para os últimos três?",
+  "mapa_mental": "# 🧮 Matemática para Concursos\n## 🧱 Divisores e Fatoração\n### 💡 Fatoração em primos\n- Número natural >1\n- Produto de primos\n- Decomposição única\n### 🧮 Contagem de divisores\n- N = p1^a p2^b …\n- Fórmula (a+1)(b+1)…\n- Usa expoente+1\n- Multiplica resultados\n### 🎯 Divisores específicos\n- Impõe fatores\n- Verifica múltiplos\n- Compara expoentes\n- Usa fatoração prévia\n\n## 🎲 Probabilidade e Combinações\n### 🔢 União e interseção\n- P(A ∪ B) fórmula\n- Soma probabilidades\n- Subtrai interseção\n- Evita dupla contagem\n### 🎯 “Pelo menos um”\n- Interpretação união\n- “Nenhum” complementar\n- P(nenhum) = 1−P(união)\n- Complementar de eventos\n### 🧮 Combinação simples\n- Ordem não importa\n- Fórmula C(n,k)\n- C(n,3) = 56\n- Teste n inteiros\n### 🔄 Combinação x permutação\n- Ordem importa? sim\n- Permutação: ordem\n- Combinação: grupos\n- Escolha pelo enunciado\n\n## 📐 Ângulos, PA e PG\n### 📏 Proporções angulares\n- Razão a:b:c\n- Soma coeficientes\n- k = total/soma\n- Ângulos ak bk ck\n### 🧭 Ângulos notáveis\n- Reta 180°\n- Plano 360°\n- Suplemento 180°−x\n- Complemento 90°−x\n### 📊 Progressão aritmética\n- Diferença constante r\n- Fórmula an\n- Últimos termos PA\n- Comparação de PAs\n### 📈 Progressão geométrica\n- Razão constante q\n- PG razão 2\n- Termos x 2x 4x\n- Soma por fator comum\n\n## 🧩 Sistemas Lineares\n### 🧮 Sistema 3×3\n- Três equações\n- Três incógnitas\n- Coeficientes alinhados\n- Solução única típica\n### 🔄 Método eliminação\n- Soma equações\n- Subtração equações\n- Cancelar variável\n- Substituição sucessiva\n### ⚠️ Cuidados algébricos\n- Sinais corretos\n- Organização colunas\n- Verificar solução\n- Evitar frações cedo",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Divisores e Fatoração",
+      "description": "Divisores e Fatoração — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a fatoração prima de **72**?",
+          "back": "$$2^3 \\times 3^2$$",
+          "hint": "Envolve potências de 2 e 3",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "fatoracao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como calcular a quantidade de divisores de um número fatorado em primos?",
+          "back": "Somar **1** a cada expoente da fatoração prima e **multiplicar** os resultados.",
+          "hint": "Operação com expoentes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisores"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Probabilidade e Contagem",
+      "description": "Probabilidade e Contagem — 6 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual expressão relaciona P(A ∪ B), P(A), P(B) e P(A ∩ B)?",
+          "back": "$$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$$",
+          "hint": "Princípio da inclusão-exclusão",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "conjuntos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a probabilidade do complemento de um evento com probabilidade quatro quintos?",
+          "back": "$$\\frac{1}{5}$$",
+          "hint": "Soma das probabilidades é 1",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "complementar"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Se P(A ∪ B)=4/5, P(A)=1/2 e P(A ∩ B)=1/10, qual é P(B)?",
+          "back": "$$\\frac{2}{5}$$",
+          "hint": "Use a fórmula da união",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "calculo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual método de contagem se aplica quando a ordem dos elementos não importa?",
+          "back": "**Combinação**.",
+          "hint": "Contraste com arranjo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "contagem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual fórmula define a combinação de n elementos tomados p a p?",
+          "back": "$$C_{n,p} = \\frac{n!}{p!(n-p)!}$$",
+          "hint": "Envolve fatoriais",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "formula"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Um supermercado oferece 56 compras de três frutas distintas. Quantas frutas estão disponíveis?",
+          "back": "**8** frutas.",
+          "hint": "Aplique a fórmula de combinação",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "aplicacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Sistemas Lineares",
+      "description": "Sistemas Lineares — 2 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é o valor da cédula branca no sistema descrito?",
+          "back": "**7**",
+          "hint": "Valor fixo do sistema",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "sistemas",
+            "logica"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a soma dos valores das três cédulas do sistema?",
+          "back": "**36**",
+          "hint": "Total do sistema",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "sistemas",
+            "logica"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Ângulos Proporcionais",
+      "description": "Ângulos Proporcionais — 3 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Qual é a soma dos ângulos formados por semirretas com origem comum?",
+          "back": "**360°**",
+          "hint": "Uma volta completa",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria",
+            "angulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Ângulos proporcionais a 11, 12 e 13 têm qual constante de proporcionalidade?",
+          "back": "**10**",
+          "hint": "Soma das partes é 360",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria",
+            "proporcao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual é o suplemento do menor ângulo entre os proporcionais a 11, 12 e 13?",
+          "back": "**70°**",
+          "hint": "Soma com o ângulo é 180",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria",
+            "suplementar"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Progressões Numéricas",
+      "description": "Progressões Numéricas — 5 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Como identificar a razão de uma progressão geométrica?",
+          "back": "Observar a relação em que cada termo duplica o anterior.",
+          "hint": "Relação entre termos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "progressao-geometrica"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual é a razão da progressão geométrica em que cada termo duplica o anterior?",
+          "back": "**2**",
+          "hint": "Fator de crescimento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "progressao-geometrica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é a razão de uma progressão aritmética cujos termos aumentam sempre três unidades?",
+          "back": "**3**",
+          "hint": "Diferença constante",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "progressao-aritmetica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual fórmula permite calcular o termo geral de uma progressão aritmética?",
+          "back": "$$a_n = a_1 + (n - 1) \\cdot r$$",
+          "hint": "Envolve o primeiro termo e razão",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "progressao-aritmetica"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Em uma progressão aritmética com primeiro termo 30 e razão 3, qual é o 18º termo?",
+          "back": "**81**",
+          "hint": "Use a fórmula do termo geral",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "progressao-aritmetica"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o método para calcular rapidamente a quantidade de divisores de um número a partir de sua fatoração em números primos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar todos os expoentes dos fatores primos e somar 1 ao resultado final",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar os expoentes e depois somar 1 ao resultado final não produz a quantidade correta de divisores. A adição de 1 deve ser feita a cada expoente individualmente antes da multiplicação."
+        },
+        {
+          "id": "b",
+          "text": "Somar 1 a cada expoente dos fatores primos e multiplicar os resultados obtidos",
+          "correct": true,
+          "explanation": "Correta. Para calcular a quantidade de divisores de um número, primeiro fatoramos o número em seus fatores primos (ex: 72 = 2^3 * 3^2). Em seguida, somamos 1 a cada expoente de cada fator primo e multiplicamos esses resultados. No exemplo de 72, (3+1) * (2+1) = 4 * 3 = 12 divisores. Este método garante que todas as combinações possíveis de potências dos fatores primos sejam consideradas, resultando na contagem exata dos divisores."
+        },
+        {
+          "id": "c",
+          "text": "Somar os expoentes de cada fator primo e multiplicar o resultado por 2",
+          "correct": false,
+          "explanation": "Incorreta. Somar os expoentes e multiplicar por 2 não é o método correto para encontrar a quantidade de divisores. Este método não considera a combinação de todos os fatores primos e seus expoentes de forma adequada."
+        },
+        {
+          "id": "d",
+          "text": "Elevar cada fator primo ao quadrado e somar todos os valores encontrados",
+          "correct": false,
+          "explanation": "Incorreta. Elevar cada fator primo ao quadrado e somar os valores encontrados não tem relação com o cálculo da quantidade de divisores de um número. Este método alteraria drasticamente os valores dos fatores e não forneceria a contagem desejada."
+        }
+      ],
+      "explanation": "Correta. Para calcular a quantidade de divisores de um número, primeiro fatoramos o número em seus fatores primos (ex: 72 = 2^3 * 3^2). Em seguida, somamos 1 a cada expoente de cada fator primo e multiplicamos esses resultados. No exemplo de 72, (3+1) * (2+1) = 4 * 3 = 12 divisores. Este método garante que todas as combinações possíveis de potências dos fatores primos sejam consideradas, resultando na contagem exata dos divisores.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em um problema de probabilidade, se a probabilidade de ocorrer pelo menos um de dois eventos A ou B é 4/5, qual é a probabilidade de não ocorrer nenhum dos dois eventos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "3/5",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de não ocorrer nenhum dos eventos é 1 menos a probabilidade de ocorrer pelo menos um. Se a probabilidade de ocorrer pelo menos um é 4/5, o complementar é 1/5, e não 3/5."
+        },
+        {
+          "id": "b",
+          "text": "2/5",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de não ocorrer nenhum dos eventos é o evento complementar da probabilidade de ocorrer pelo menos um. Se a probabilidade de ocorrer pelo menos um é 4/5, o complementar é 1/5, e não 2/5."
+        },
+        {
+          "id": "c",
+          "text": "1/5",
+          "correct": true,
+          "explanation": "Correta. A probabilidade de ocorrer pelo menos um dos eventos (A ou B) é P(A ∪ B). A probabilidade de não ocorrer nenhum dos dois eventos é o evento complementar de P(A ∪ B), ou seja, P((A ∪ B)ᶜ). Sabemos que P((A ∪ B)ᶜ) = 1 - P(A ∪ B). Se P(A ∪ B) = 4/5, então a probabilidade de não ocorrer nenhum dos dois eventos é 1 - 4/5 = 1/5."
+        },
+        {
+          "id": "d",
+          "text": "1/4",
+          "correct": false,
+          "explanation": "Incorreta. Se a probabilidade de ocorrer pelo menos um evento é 4/5, o complementar (não ocorrer nenhum) é 1 - 4/5 = 1/5, e não 1/4."
+        }
+      ],
+      "explanation": "Correta. A probabilidade de ocorrer pelo menos um dos eventos (A ou B) é P(A ∪ B). A probabilidade de não ocorrer nenhum dos dois eventos é o evento complementar de P(A ∪ B), ou seja, P((A ∪ B)ᶜ). Sabemos que P((A ∪ B)ᶜ) = 1 - P(A ∪ B). Se P(A ∪ B) = 4/5, então a probabilidade de não ocorrer nenhum dos dois eventos é 1 - 4/5 = 1/5.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Ao escolher 3 frutas diferentes em um supermercado, um cliente dispõe de 56 maneiras distintas de efetuar a compra. Quantas frutas diferentes o supermercado disponibiliza?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "7 frutas",
+          "correct": false,
+          "explanation": "Incorreta. Uma combinação de 7 frutas tomadas 3 a 3 seria C(7,3) = 7! / (3! * (7-3)!) = 7*6*5 / (3*2*1) = 35, que não corresponde a 56."
+        },
+        {
+          "id": "b",
+          "text": "8 frutas",
+          "correct": true,
+          "explanation": "Correta. Como a ordem das frutas não importa (comprar abacaxi, melancia, banana é o mesmo que comprar melancia, abacaxi, banana), trata-se de um problema de combinação. A fórmula para combinação é C(n, k) = n! / (k! * (n-k)!), onde 'n' é o número total de frutas e 'k' é o número de frutas escolhidas. Queremos encontrar 'n' tal que C(n, 3) = 56. Testando as alternativas, para n=8: C(8,3) = 8! / (3! * (8-3)!) = 8! / (3! * 5!) = (8 * 7 * 6 * 5!) / (3 * 2 * 1 * 5!) = (8 * 7 * 6) / 6 = 8 * 7 = 56. Portanto, o supermercado disponibiliza 8 frutas diferentes."
+        },
+        {
+          "id": "c",
+          "text": "9 frutas",
+          "correct": false,
+          "explanation": "Incorreta. Uma combinação de 9 frutas tomadas 3 a 3 seria C(9,3) = 9! / (3! * (9-3)!) = 9*8*7 / (3*2*1) = 3*4*7 = 84, que não corresponde a 56."
+        },
+        {
+          "id": "d",
+          "text": "6 frutas",
+          "correct": false,
+          "explanation": "Incorreta. Uma combinação de 6 frutas tomadas 3 a 3 seria C(6,3) = 6! / (3! * (6-3)!) = 6*5*4 / (3*2*1) = 20, que não corresponde a 56."
+        }
+      ],
+      "explanation": "Correta. Como a ordem das frutas não importa (comprar abacaxi, melancia, banana é o mesmo que comprar melancia, abacaxi, banana), trata-se de um problema de combinação. A fórmula para combinação é C(n, k) = n! / (k! * (n-k)!), onde 'n' é o número total de frutas e 'k' é o número de frutas escolhidas. Queremos encontrar 'n' tal que C(n, 3) = 56. Testando as alternativas, para n=8: C(8,3) = 8! / (3! * (8-3)!) = 8! / (3! * 5!) = (8 * 7 * 6 * 5!) / (3 * 2 * 1 * 5!) = (8 * 7 * 6) / 6 = 8 * 7 = 56. Portanto, o supermercado disponibiliza 8 frutas diferentes.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em um sistema monetário com cédulas brancas (B), azuis (A) e pretas (P), sabe-se que 2A + B = 29, B + 2P = 43 e 2P + A = 47. Qual é o valor de uma cédula branca somada a uma azul e uma preta (B + A + P)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "32",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "34",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "36",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "38",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Dados dois eventos A e B, se P(A ∪ B) = 4/5, P(A ∩ B) = 1/10 e P(A) = 1/2, qual é o valor da probabilidade do evento B?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2/5",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "4/5",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "1/5",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "3/5",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Murilo planeja correr 90 km em 4 dias. Em cada um dos últimos três dias, ele percorrerá o dobro da distância do dia anterior. Qual é a diferença entre o total percorrido no primeiro e quarto dias e o total percorrido no segundo e terceiro dias?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "22 km",
+          "correct": false,
+          "explanation": "Incorreta. A diferença de 22 km não corresponde ao resultado obtido a partir da progressão geométrica das distâncias e da soma total de 90 km. O valor correto da diferença é 18 km."
+        },
+        {
+          "id": "b",
+          "text": "20 km",
+          "correct": false,
+          "explanation": "Incorreta. Se a resposta fosse 20 km, a diferença entre os totais seria maior do que a calculada com base nas condições do problema. O cálculo correto das distâncias e suas somas leva a 18 km."
+        },
+        {
+          "id": "c",
+          "text": "24 km",
+          "correct": false,
+          "explanation": "Incorreta. Se a diferença fosse 24 km, isso indicaria um erro no cálculo das distâncias ou na operação final de subtração. A resolução do sistema de equações e a soma das distâncias resultam em uma diferença de 18 km."
+        },
+        {
+          "id": "d",
+          "text": "18 km",
+          "correct": true,
+          "explanation": "Correta. Para resolver este problema, é necessário determinar a distância percorrida por Murilo em cada um dos quatro dias. Seja 'x' a distância percorrida no primeiro dia. De acordo com o problema, nos últimos três dias, ele percorrerá o dobro da distância do dia anterior. Assim, as distâncias serão: Dia 1: x; Dia 2: 2x; Dia 3: 4x; Dia 4: 8x. A soma total das distâncias é de 90 km: x + 2x + 4x + 8x = 90. Somando os termos, obtemos 15x = 90, o que implica x = 6 km. Portanto, as distâncias percorridas são: Dia 1: 6 km; Dia 2: 12 km; Dia 3: 24 km; Dia 4: 48 km. A questão pede a diferença entre o total percorrido no primeiro e quarto dias e o total percorrido no segundo e terceiro dias. Total do 1º e 4º dias: 6 km + 48 km = 54 km. Total do 2º e 3º dias: 12 km + 24 km = 36 km. A diferença é 54 km - 36 km = 18 km."
+        }
+      ],
+      "explanation": "Correta. Para resolver este problema, é necessário determinar a distância percorrida por Murilo em cada um dos quatro dias. Seja 'x' a distância percorrida no primeiro dia. De acordo com o problema, nos últimos três dias, ele percorrerá o dobro da distância do dia anterior. Assim, as distâncias serão: Dia 1: x; Dia 2: 2x; Dia 3: 4x; Dia 4: 8x. A soma total das distâncias é de 90 km: x + 2x + 4x + 8x = 90. Somando os termos, obtemos 15x = 90, o que implica x = 6 km. Portanto, as distâncias percorridas são: Dia 1: 6 km; Dia 2: 12 km; Dia 3: 24 km; Dia 4: 48 km. A questão pede a diferença entre o total percorrido no primeiro e quarto dias e o total percorrido no segundo e terceiro dias. Total do 1º e 4º dias: 6 km + 48 km = 54 km. Total do 2º e 3º dias: 12 km + 24 km = 36 km. A diferença é 54 km - 36 km = 18 km.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Considerando uma progressão aritmética com primeiro termo a₁ = 30 e razão r = 3, e outra com a₁ = 157 e r = -4, ambas com 20 termos, qual é a soma dos únicos dois termos iguais encontrados entre os três últimos termos de cada sequência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "162",
+          "correct": true,
+          "explanation": "Correta. Para resolver esta questão, primeiro precisamos encontrar os três últimos termos de cada sequência. Uma progressão aritmética (PA) é definida por a_n = a_1 + (n-1)r. Para a primeira PA: a_1 = 30, r = 3, n = 20. Os três últimos termos são o 18º, 19º e 20º. a_18 = 30 + (18-1) * 3 = 30 + 17 * 3 = 30 + 51 = 81. a_19 = 81 + 3 = 84. a_20 = 84 + 3 = 87. Os três últimos termos da primeira PA são {81, 84, 87}. Para a segunda PA: a_1 = 157, r = -4, n = 20. a_18 = 157 + (18-1) * (-4) = 157 + 17 * (-4) = 157 - 68 = 89. a_19 = 89 - 4 = 85. a_20 = 85 - 4 = 81. Os três últimos termos da segunda PA são {89, 85, 81}. O único par de termos iguais entre os três últimos termos de cada sequência é 81. A questão pede a soma entre os números do único par de termos iguais. Portanto, a soma é 81 + 81 = 162."
+        },
+        {
+          "id": "b",
+          "text": "156",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos termos iguais não é 156. É necessário calcular os três últimos termos de cada progressão aritmética e identificar o termo comum para, então, somá-lo duas vezes."
+        },
+        {
+          "id": "c",
+          "text": "158",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos termos iguais não é 158. O cálculo dos termos das progressões aritméticas e a identificação do termo em comum devem ser feitos com precisão para chegar ao resultado correto."
+        },
+        {
+          "id": "d",
+          "text": "160",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos termos iguais não é 160. Após encontrar o termo comum entre as duas sequências, a soma desse termo com ele mesmo resultará em um valor diferente. O valor correto é 162."
+        }
+      ],
+      "explanation": "Correta. Para resolver esta questão, primeiro precisamos encontrar os três últimos termos de cada sequência. Uma progressão aritmética (PA) é definida por a_n = a_1 + (n-1)r. Para a primeira PA: a_1 = 30, r = 3, n = 20. Os três últimos termos são o 18º, 19º e 20º. a_18 = 30 + (18-1) * 3 = 30 + 17 * 3 = 30 + 51 = 81. a_19 = 81 + 3 = 84. a_20 = 84 + 3 = 87. Os três últimos termos da primeira PA são {81, 84, 87}. Para a segunda PA: a_1 = 157, r = -4, n = 20. a_18 = 157 + (18-1) * (-4) = 157 + 17 * (-4) = 157 - 68 = 89. a_19 = 89 - 4 = 85. a_20 = 85 - 4 = 81. Os três últimos termos da segunda PA são {89, 85, 81}. O único par de termos iguais entre os três últimos termos de cada sequência é 81. A questão pede a soma entre os números do único par de termos iguais. Portanto, a soma é 81 + 81 = 162.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "06_358753_Matemática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:29:29"
+}

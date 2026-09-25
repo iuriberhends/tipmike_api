@@ -1,0 +1,542 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 12,
+  "ordem_no_curso": "80.00",
+  "titulo": "Office 365 - Excel VI",
+  "codigo_aula": "258242",
+  "video_id": "JfIbuRLXqJo=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:24:54",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/JfIbuRLXqJo%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?in=1&a=420308%2C420303&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - Excel VI\n\n## Introdução e visão geral do problema\nEstá preparado? Libertem-se de todas as amarras. Muita gente trava nesse passeio tranquilo aqui. Por que isso acontece? Olha, eu respondo da maneira mais sincera: porque sim. Mas tem uma explicação para facilitar a sua vida. Não pareça grosso comigo.\n\nO que acontece aqui? Veja: eu estou somando aqui para ver nessa célula. Você já sabe essa música. Aqui eu travei, estavam... tirar? Eu estou somando A1 + B1. Vamos colocar valores aqui, porque sem valores muita gente trava. Que beleza!\n\nQuando eu pego essa fórmula que está aqui, somando esses dois valores, e copio para baixo, por exemplo, ele vai alterar as respectivas referências de onde eu estava. Então, estou em C1 e agora vou para C2. Veja: a célula que contém a fórmula está em A2, mas a fórmula propriamente contém A1+B1. Como estou mudando apenas e tão somente de linha, estou saindo da linha 1 para a linha 2.\n\nCerto. O que está acontecendo aqui? Uma mudança de linha. Só linha. Você entendeu: copio, poderia arrastar com a alça de preenchimento ou fazer pela alça de preenchimento. Serviu, me deu 12. Então, aqui era 1... vamos entender o que aconteceu: onde era 1 passou a ser 2, porque nós mudamos de linha.\n\nSe você preferir “fazer contas”, tem como. Então veja: essas células aqui eu vou precisar delas depois, mas vamos lá. Aqui eu estou em C1. Quando eu copiei de C1 para C2, não teve alteração de letra. Tá vendo? A letra não mudou. Eu posso colocar um zero aqui simbolizando que não teve mudança nenhuma na letra. O que representa a letra? A coluna. Não houve mudança na coluna, então continua a mesma letra. Ou seja, lá embaixo, os números vão mudar quando eu sair da linha 1 para a linha 2. Então aqui teve uma mudança de +1 na linha.\n\nBeleza. Então, +1. Mais uma linha. Agora eu vou vir em A1 e vou somar mais um: A2. B1 mais um: B2. Efeito. Vamos deixar esse exemplo aqui e agora eu vou apagar esses valores. Os valores não nos interessam mais. Ele pode perguntar qual vai ser o resultado? É óbvio que vai observar os valores que você colocar e faz o cálculo, mas agora não interessa mais fazer cálculos. Isso você já sabe fazer. Interessa a mudança propriamente: para onde eu vou.\n\n## Mudança de coluna\nAgora eu vou sair de C1 e vou para... desculpa, vou sair de C1 e vamos para D1. Vamos usar a mesma metodologia que eu fiz aqui. Se em C1 eu vou para D1, vou copiar isso aqui só para colocar aqui. Então eu tenho que: C1 era A1+B1.\n\nAgora aqui eu tenho mais uma coluna e zero mudança de linha. Não houve mudança de linha (1 para 1 ficou a mesma coisa). Se fosse 1 para 2, mudaria, aumentaria um. Beleza.\n\nMudança de coluna: muitas pessoas têm dúvida. Olha só: é só seguir a ordem do alfabeto. Se eu estou na posição A e ando uma posição, eu venho para B. Se eu estou em B e ando uma posição, venho para C. Se eu estou em A e ando, por exemplo, duas posições, eu viria para C, e assim por diante.\n\nEntão vamos lá: eu vou fazer “igual a mais uma posição”. A vira B. Número não mudou. B mais uma posição vira C. Não houve mudança de linha, então é isso aqui que eu espero lá.\n\nPoderíamos fazer a conta neste caso. Quem abrir um deles aqui, quem é A1+B1, vai dar 5. Beleza. Então, se eu copiar para o lado, 3 + 5 = 8. É o que eu esperava. Deu. Mais tranquilo até agora? Então vem comigo.\n\n## Mudança de linha e coluna ao mesmo tempo\nAgora nós faremos uma outra mudança. Vamos copiar para cá: de C1 para D2. C1 é a origem e D2 é o destino. Vou pegar isso aqui e vou completar para cá. Quais as mudanças que eu tenho aqui? Mais uma coluna e mais uma linha. Então é +1 em cada.\n\nAgora, captando: A vai virar B. B vai virar C. E 1 vai virar 2. Perfeito. A fórmula já sabemos até o resultado, mas não tem problema: 2 + 2 dá 4. Então, vamos copiar. Quem é esse cara? A1+B1. Copiei e levei para D2. Beleza. Em D2 eu tenho B2+C2, que é o esperado. Deu 2 + 2. Beleza.\n\nVoltando lá: em D2 somou. No nosso caso aqui sem valores, nada com nada dá zero. Aí na prova ele pode perguntar, por exemplo: ao copiar a fórmula contida em C1 para D2, qual será o resultado? Nesse nosso caso, considerando essa planilha sem valores, vai ser zero. Na prova pode ter valores, vai somar os valores. E ele ainda pode perguntar outra coisa, ou uma coisa e a outra: como vai ser a nova fórmula. O que também cai.\n\n## Retrocedendo referências e erro de borda\nDa mesma maneira que nós fizemos avançando, poderíamos retroceder. Eu vou fazer um exemplo. Não vou falar o que vai acontecer, mas vou fazer.\n\nPode ser aqui mesmo em A1, mas vamos continuar com o mesmo exemplo. Agora vou copiar isso para cá. Partindo da lógica que eu fiz várias vezes: onde que eu estou agora? Estou em C2. Para onde eu vou? No meu exemplo, eu vou para C1. Ou seja: a coluna não mudou (zero), mas eu estava em 2 e fui para 1. Aqui é o inverso: tenho -1 na linha.\n\nQual o problema? Eu vou tirar um da linha 1? Mas, peraí, a primeira linha é a 1. Eu estou tentando retroceder para uma linha que não existe (linha 0). Aí na hora da prova alguns não pensam: “vai dar zero, menos um, isso vai para a linha 0”. Não tem. Nunca vi. Não tem mágica. Vai dar erro.\n\nErro de referência: #REF!. Olha só. A mesma lógica se fosse para a coluna “antes do A”, por exemplo. Não dá. Se eu tentasse copiar para o lado, ia diminuir uma coluna. Não tem como diminuir antes da primeira coluna. Como não tem nada “antes de A”, vai dar erro. Poderia reduzir se eu estivesse em C1 indo para B1, aí sim. Mas sair de A1 para “antes de A” não pode.\n\nTem que ser D1 + ... apontando para outra célula válida. Beleza. Seria tranquilo se eu copiasse de B para A, mas de A para “antes de A” não dá. Colei, não deu para diminuir além do limite.\n\n## Novo exemplo aleatório para consolidar a lógica\nVamos fazer outro exemplo. Vou apagar isso aqui, deixar limpo. Vou pegar outra célula aleatória para a gente usar o que fizemos.\n\nA lógica é a mesma. Estou em C3: =D4 + H8. Totalmente aleatório, mas é isso que eu quero: você consegue entender qualquer caso. A lógica é a mesma, a regra é a mesma.\n\nEu posso fazer isso de outra maneira? Pode. Pode inventar a sua maneira, desde que tenha lógica e dê certo. Obviamente você pode ver isso de várias maneiras. Eu estou mostrando uma maneira; você vai se adequando.\n\nAgora vou copiar isso aqui, por exemplo, com duas mudanças de coluna e quatro de linha. Duas colunas vão mudar; quatro linhas vão mudar. Eu vou copiar para cá. Vou apagar primeiro aqui para ter um visual melhor.\n\nEntão, eu tenho em C3 a fórmula D4 + H8. Para onde eu vou? Vou para E6. Quais as mudanças? Você pode desenhar, se for o caso da prova. Você está em C e está indo para E: duas colunas à frente. Linhas: de 3 para 6, mais três.\n\nFeito isso, montou o caminho: onde eu estou, o que tem lá, para onde eu vou e o que vai surgir lá. Agora vou fazer os “cálculos” de referência.\n\n- Se eu estou na coluna D e ando duas colunas, vou para F.\n- Se eu estou na linha 4 e ando três linhas, vou para 7.\n- Para H8: mais duas colunas vira J, e mais três linhas vira 11.\n\nEntão a nova fórmula esperada é F7 + J11. Vamos testar. Vamos travar e testar, copiar e colar. Aqui deu um erro porque tem uma letra que está se entendendo como texto; depois a gente vê isso. Adiantando: não vai ter como fazer o cálculo usando uma forma comum quando estiver apontando para algo inválido. Mas não se preocupa com isso. Nossa intenção aqui não é o cálculo, é a mudança: F7 + J11. Tranquilo.\n\nBom, então nós temos aqui praticamente todos os tipos de exemplo: indo, vindo, erro. Não quer dizer que sempre vai dar erro; é para você entender onde vai dar.\n\n## Operadores/tipos de referência: relativa, mista e absoluta\nAgora, algo que você já deve ter visto muito em prova, mas muito mesmo: os operadores de referência, os tipos de referência. Vamos usar nossa planilha.\n\nQuando eu tenho, por exemplo, J1, essa referência é chamada de relativa. Vou explicar melhor isso. Poderia ser qualquer célula. Para que se entenda isso, vou mesclar aqui e centralizar.\n\nTipos de referência que eu tenho:\n- Relativa (A1)\n- Absoluta ($A$1)\n- Mistas ($A1 e A$1)\n\nEu vou colocar em vermelho o que “trava”: o cifrão ($). A função do cifrão é impedir que mude quem está à sua direita. É desse jeito que usa. Pode vir na prova assim. Por exemplo, “$A$” sozinho não existe; tem que estar antes da letra ou do número. São essas hipóteses aqui que eu tenho (podem variar as células, lógico, mas as posições do cifrão são essas).\n\nAcabou: o cifrão trava a referência imediatamente à sua direita. Aqui ele trava a linha (A$1). Aqui ele trava a coluna ($A1). E aqui ele trava tudo ($A$1).\n\nVamos pegar o exemplo baseado no que a gente acabou de fazer. Aquela mudança que foi essa aqui: eu vou pegar a mesma mudança e agora vou travar.\n\n## Aplicando cifrão no exemplo\nVamos colocar como hipótese o cifrão. Tem gente que quando vê o cifrão acha difícil. Nós já sabemos que o resultado seria esse aqui sem cifrão: por exemplo, F7 + J11 naquele caso. Mas não vai ser mais isso, porque agora tem cifrão.\n\nAntes era: D4 + H8. Agora vou colocar cifrão, por exemplo, em D$4 e $H8, só para ilustrar. Quando há cifrão, na hora de fazer a mudança, é mais fácil: quem tem cifrão na frente não vai mudar.\n\n- Se eu travo a linha 4 (D$4), esse 4 não muda.\n- Se eu travo a coluna H ($H8), o H não muda.\n\nPara quem não tem cifrão, continua valendo a mesma mudança: duas colunas e três linhas, por exemplo. Só que agora:\n- A parte travada não acompanha a mudança.\n- A parte solta acompanha.\n\nEntão, por exemplo:\n- D$4 com +2 colunas e +3 linhas vira F$4 na coluna (coluna muda), mas a linha fica 4 porque está travada.\n- $H8 com +2 colunas e +3 linhas vira $H11 na linha (a linha muda para 11), mas a coluna continua H porque está travada.\n\nVamos testar. Resultado bate: quatro (linha travada) mais onze (coluna travada), conforme esperado. Beleza.\n\nSe tivesse cifrão em tudo ($D$4 + $H$8) e eu mandasse copiar e colar para qualquer lugar, não vai mudar nada. Vai simplesmente repetir o que está ali em qualquer lugar do mundo que você colocar. Não precisa ter preocupação de “vai mudar, vai aumentar, vai perder”. Não vai. Está travado. Mesmo que eu copie para 20 colunas à frente, não muda. Sem aquela preocupação.\n\nEntão, encerrando este bloco: isso é muito cobrado. Esse conteúdo pode estar inserido dentro de funções na prova, porque ele pode pegar uma função com $A$1 ou A$1 e copiar de um local para outro. Você tem que estar apto/ta a resolver isso da maneira como for colocado.\n\nTodos os exemplos praticamente possíveis estão aqui: mudanças de coluna, de linha, só de linha, só de coluna. Você pode separar este bloco como o bloco das referências.\n\n## Referência entre planilhas\nE ainda eu tenho a referência entre planilhas para encerrar esse bloco.\n\nEu tenho aqui a soma de A1 com algo. O exemplo que eu gosto de falar, que torna intuitivo, é o seguinte: quando eu vou ligar do meu celular para um número em Brasília (eu moro em Brasília, DF), DDD 61. Vou ligar para a minha filha, por exemplo. Eu não preciso discar 61 e o número dela estando em Brasília. Não há necessidade, embora eu possa. Eu disco direto o número. Vai direto.\n\nBaseado nessa lógica: se eu digito A1, não tem que pensar “de onde virá isso”, qual o universo. Não cabe esse pensamento. Qual o nome dessa planilha? Se não tem nome antes, a referência é da planilha atual. Todo esse processo é: A1 é daqui, porque não tem nenhum nome antes. Tá vendo? Não tem nenhum nome. Então não precisa pensar.\n\nAgora, veja se “Teste!A1”. Pode. Tem um nome na frente: Teste. Eu vou lá na planilha Teste e procuro. Em Teste, eu tenho em A1 um valor. Dez. E aqui (na planilha atual) eu tenho vinte. Dez com vinte, trinta. Deu trinta. Vou alterar lá no Teste: colocar noventa. Aqui tinha vinte, então 90 + 20 = 110. Certo.\n\nPosso trocar a referência: ao invés de A1, colocar A2? Coloquei Teste!B2, por exemplo. Deu o próprio valor de lá. Vamos colocar um valor em Teste!B2: coloquei dez de novo, então soma trinta, e assim por diante.\n\nEu posso pegar um intervalo dessa planilha toda e fazer qualquer operação. Por exemplo: Teste!B2:D4. Coloco valores, faço o cálculo. Tudo aqui, não tem problema. Só quero que se entenda isso: eu posso usar valores de outra planilha dentro da planilha atual.\n\nSintaxe:\n- Pode ser o intervalo: Teste!B2:D4\n- Pode ser só uma célula: Teste!A1\n- Sempre: NomeDaPlanilha!Referência\n\nA exclamação fica entre o nome da planilha e a referência. Posso fazer isso dentro de qualquer fórmula. Depois a gente vai tratar melhor essa diferenciação. Posso, por exemplo, fazer =SOMA(Teste!A1; Teste!B2). Tranquilo.\n\nA única coisa que não posso fazer é o que eu já expliquei: colocar um intervalo malformado (do tipo Teste!B2 até “antes de A” ou algo inválido). Não funciona da mesma maneira.\n\n## Encerramento do bloco\nEntão este é um bloco que encerra com esse raciocínio. Eu quis falar de referências. É importante. É uma base, porque a gente trabalhou referências, trabalhou mudanças. É uma base que tem que ser consolidada.\n\nSe necessário, repita esse bloco. Pare nesse bloco várias vezes. Volte ao primeiro, ao segundo. Faça no seu tempo. Cada um tem seu tempo. Não olhe para o vizinho que aprendeu em um dia. Se você está demorando dois, três dias, não interessa. Cada um tem seu ritmo de aprendizado. Se estiver demorando demais, se estiver muito absurdo, reveja, peça ajuda, reveja algumas coisas. Será que está estudando corretamente? Não tem problema pedir ajuda.\n\nEntão é isso nesse bloco. Volto daqui a pouco dando continuidade. Agora vai ser um ritmo mais acelerado, mas vai ser mais tranquilo, porque nós já vimos a essência. Tem uns detalhezinhos ainda que eu vou passar, mas a essência já está. E nós vamos cair em funções, funções, funções, soluções e outras comparações. Beleza? Até daqui a pouco, então, no próximo.\n\n> 🎯 Dicas de prova: \n> - Copiar fórmulas altera referências relativas respeitando deslocamentos de linha e coluna.\n> - Não existem referências antes da linha 1 ou antes da coluna A; tentar retroceder além do limite gera erro #REF!.\n> - O cifrão ($) trava o elemento imediatamente à sua direita: $A1 trava a coluna; A$1 trava a linha; $A$1 trava ambos.\n> - Referências entre planilhas usam NomeDaPlanilha!Referência (ex.: Teste!A1 ou Teste!B2:D4).",
+  "transcricao_meta": {
+    "title": "Office 365 - Excel VI",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 28033,
+    "createdAt": "2026-02-06T11:04:03.410Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda referências de célula no Excel (Office 365 – Excel VI): o que são, como funcionam ao copiar/arrastar fórmulas, uso do cifrão ($) para travar linha/coluna, referências entre planilhas e como aplicar em questões.\nPrincipais pontos: \n- Tipos de referência: relativa, mista e absoluta\n- Regra do deslocamento (Δcol, Δlin) ao copiar\n- Função do cifrão: “impedir o que está à sua direita”\n- Erros comuns: #REF! ao ultrapassar limites\n- Aplicação entre planilhas: teste!A1, teste!B2:D4\n\n## 1. Base / Conceitos Fundamentais\n- **Célula**: endereçada por **coluna (letra)** + **linha (número)**, ex.: **A1**, **C2**, **E6**.\n- **Fórmulas**: começam com **=** (igual). Ex.: =A1+B1.\n- **Tipos de referência**:\n  - **Relativa**: **A1** (sem $). Muda conforme a fórmula é copiada.\n  - **Mista (coluna travada)**: **$A1**. Coluna A fixa; linha varia.\n  - **Mista (linha travada)**: **A$1**. Linha 1 fixa; coluna varia.\n  - **Absoluta**: **$A$1**. Nada muda ao copiar.\n- **Regra do deslocamento**: ao copiar/arrastar, cada referência varia conforme o deslocamento em colunas e linhas.\n  - Ex.: C3 → E6 implica Δcol=+2, Δlin=+3.\n- **Mensagem de erro**: **#REF!** (“Erro de referência”) ao ultrapassar os limites (ex.: tentar ir da linha 1 para 0 ou da coluna A para antes de A).\n\n> Dica de Prova\n> “A função do cifrão é impedir quem está à sua direita.” Grave esta frase.\n\n## 2. Como Funciona / Distinções\n- **Relativa vs. Mista vs. Absoluta**\n  - Relativa (A1): acompanha totalmente o deslocamento (coluna e linha).\n  - Mista ($A1 ou A$1): trava apenas a parte imediatamente à direita do cifrão.\n  - Absoluta ($A$1): “travou tudo” (coluna e linha não mudam).\n- **Deslocamentos típicos**:\n  - Copiar para baixo: aumenta a linha (+1 por linha).\n  - Copiar para cima: diminui a linha (−1).\n  - Copiar para a direita: avança coluna (A→B→C...).\n  - Copiar para a esquerda: retrocede coluna.\n- **Entre planilhas**:\n  - Sem nome: referência à planilha atual (ex.: A1).\n  - Com nome: **nome!célula** (ex.: **teste!A1**).\n  - Intervalo: **nome!início:fim** (ex.: **teste!B2:D4**).\n\n> Dica de Prova\n> Pense sempre em pares (Δcol, Δlin) e aplique em cada referência da fórmula.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo para prever a nova fórmula ao copiar:\n  1) Identifique origem e destino e calcule **Δcol** e **Δlin**.\n  2) Para cada referência:\n     - Se for relativa (A1): some Δcol à coluna e Δlin à linha.\n     - Se for mista:\n       - **$A1**: coluna A não muda; some Δlin à linha.\n       - **A$1**: linha 1 não muda; some Δcol à coluna.\n     - Se for absoluta ($A$1): nada muda.\n  3) Monte a nova fórmula e, só se houver valores, calcule o resultado.\n- Macete mental rápido:\n  - Escreva o deslocamento: ex.: C1→D2 = (+1, +1).\n  - Aplique em cada referência conforme os $ existentes.\n\n> Dica de Prova\n> - O que está à direita do **$** não muda.\n> - Sem mudança de letra = Δcol=0; sem mudança de número = Δlin=0.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (relativa):\n  - Em **C1**: =A1+B1\n  - Copiando para **C2** (Δ=0,+1): =A2+B2\n  - Copiando para **D1** (Δ=+1,0): =B1+C1\n  - Copiando para **D2** (Δ=+1,+1): =B2+C2\n  - Se em D2 os valores forem 2 e 2 → “2 + 2”.\n- Exemplo 2 (deslocamento maior):\n  - Origem: **C3**, destino: **E6** (Δ=+2,+3).\n  - A4 → C7; B8 → D11.\n- Exemplo 3 (mistas e absoluta):\n  - Em **E6**: =$C$2+D$2\n  - Para **J1**: Δ=+5, −5\n    - $C$2 → $C$2 (absoluta)\n    - D$2 → I$2 (coluna anda +5; linha travada)\n  - Nova fórmula: =$C$2+I$2.\n- Exemplo 4 (entre planilhas):\n  - **teste!A1** referencia a célula A1 da planilha “teste”.\n  - **teste!B2:D4** cria um intervalo na planilha “teste”.\n\n## 5. Pegadinhas e Erros Comuns\n- **#REF!** ao tentar “andar para trás” além dos limites (linha 1 → 0; coluna A → antes de A).\n- Misturar “nova fórmula” com “resultado numérico”:\n  - A banca pode pedir a nova fórmula após copiar (endereços) ou o resultado (valor). Leia o comando.\n- **Cifrão mal posicionado**:\n  - O **$** deve estar imediatamente antes da letra (coluna) ou do número (linha). Outras formas “estranhas” não existem.\n- Intervalos inválidos:\n  - Use sempre o padrão correto: **nome!célula_inicial:célula_final**. Formas “soltas” do tipo “D2 até NA” fora do padrão não funcionam.\n- Confundir “não mudou a letra/número” com “travou”:\n  - Se não houve deslocamento naquela direção, a referência pode não mudar mesmo sem cifrão. Travar é garantir que não mude independentemente do deslocamento.\n\n> Dica de Prova\n> - Verbalize: “Vou de C1 para D2: Δ=+1,+1. Agora aplico Δ em cada referência, respeitando os $”. Isso evita erros de atenção.\n\n### Tabela-resumo (quando usar cada tipo)\n- **$A$1 (absoluta)**: constantes/taxas fixas que devem repetir iguais em toda a planilha.\n- **$A1 (mista – coluna travada)**: copiando para a direita/baixo mantendo a mesma coluna de parâmetro.\n- **A$1 (mista – linha travada)**: copiando para a direita/baixo mantendo a mesma linha de parâmetro.\n- **A1 (relativa)**: fórmulas que devem se ajustar completamente ao padrão da tabela.",
+  "resumo_bolso": "# Office 365 - Excel VI\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Célula**: endereçada por **coluna (letra)** + **linha (número)**, ex.: **A1**, **C2**, **E6**.\n* **Fórmulas**: começam com **=** (igual). Ex.: `=A1+B1`.\n* **Tipos de referência**:\n  - **Relativa (A1)**: **sem $**, muda conforme a fórmula é copiada; acompanha totalmente o deslocamento (coluna e linha).\n  - **Mista – coluna travada ($A1)**: **$ antes da letra** → coluna A fixa; linha varia.\n  - **Mista – linha travada (A$1)**: **$ antes do número** → linha 1 fixa; coluna varia.\n  - **Absoluta ($A$1)**: **$ na letra e no número** → nada muda ao copiar.\n* **Regra do deslocamento (Δcol, Δlin)**: ao copiar/arrastar, cada referência varia conforme o deslocamento em colunas e linhas (par Δcol, Δlin).  \n  - Ex.: C3 → E6 implica Δcol=+2, Δlin=+3.\n* **Mensagem de erro #REF!**: “Erro de referência” ao ultrapassar os limites (ex.: tentar ir da linha 1 para 0 ou da coluna A para antes de A).\n* **Entre planilhas**:\n  - Mesma planilha: `A1`, `B2:D4`.\n  - Outra planilha: `nome!célula` ou `nome!célula_inicial:célula_final`, ex.: `teste!A1`, `teste!B2:D4`.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Referência Relativa vs Mista vs Absoluta\n\n| Aspecto | Relativa (A1) | Mista ($A1 / A$1) | Absoluta ($A$1) |\n|--------|----------------|-------------------|-----------------|\n| Comportamento ao copiar | Acompanha totalmente o deslocamento (coluna e linha) | Trava apenas a parte imediatamente à direita do $ | Nada muda ao copiar |\n| Cifrão | Não tem | Antes da letra **ou** do número | Antes da letra **e** do número |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n### 1. Regra do Deslocamento (Δcol, Δlin)\n\n1. Identifique origem e destino e calcule **Δcol** e **Δlin**.  \n   - Ex.: C3 → E6 implica Δcol=+2, Δlin=+3.\n2. Para cada referência:\n   - **Relativa (A1)**: some Δcol à coluna e Δlin à linha.\n   - **Mista**:\n     - `$A1`: coluna A não muda; some Δlin à linha.\n     - `A$1`: linha 1 não muda; some Δcol à coluna.\n   - **Absoluta ($A$1)**: nada muda.\n3. Monte a nova fórmula e, só se houver valores, calcule o resultado.\n\n**Macete mental**: escreva o deslocamento como par (Δcol, Δlin) e aplique em cada referência da fórmula.\n\n**Exemplo 1 (relativa)**  \n- Em **C1**: `=A1+B1`  \n- Copiando para **C2** (Δ=0,+1): `=A2+B2`  \n- Copiando para **D1** (Δ=+1,0): `=B1+C1`  \n- Copiando para **D2** (Δ=+1,+1): `=B2+C2`\n\n**Exemplo 2 (deslocamento maior)**  \n- Origem: **C3**, destino: **E6** (Δ=+2,+3).  \n  - A4 → C7  \n  - B8 → D11  \n\n### 2. Regra do Cifrão ($)\n\n* Frase-chave: **“A função do cifrão é impedir quem está à sua direita.”**\n  - O que está à direita do **$** não muda.\n* Aplicação:\n  - `$A1`: impede mudança da **coluna A**; linha varia.\n  - `A$1`: impede mudança da **linha 1**; coluna varia.\n  - `$A$1`: impede mudança da **coluna A e linha 1**.\n\n**Exemplo 3 (mistas e absoluta)**  \n- Em **E6**: `=$C$2+D$2`  \n- Para **J1**: Δ=+5, −5  \n  - `$C$2` → `$C$2` (absoluta)  \n  - `D$2` → `I$2` (coluna anda +5; linha travada)  \n- Nova fórmula: `=$C$2+I$2`.\n\n### 3. Deslocamentos Típicos\n\n* Copiar para baixo: aumenta a linha (+1 por linha).\n* Copiar para cima: diminui a linha (−1).\n* Copiar para a direita: avança coluna (A→B→C...).\n* Copiar para a esquerda: retrocede coluna.\n\n### 4. Referências Entre Planilhas\n\n* Sem nome: referência à planilha atual (ex.: `A1`).\n* Com nome: `nome!célula` (ex.: `teste!A1`).\n* Intervalo: `nome!início:fim` (ex.: `teste!B2:D4`).\n\n**Exemplo 4 (entre planilhas)**  \n- `teste!A1` referencia a célula A1 da planilha “teste”.  \n- `teste!B2:D4` cria um intervalo na planilha “teste”.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **#REF! ao ultrapassar limites**  \n   - Surge ao tentar “andar para trás” além dos limites (linha 1 → 0; coluna A → antes de A).\n\n2. **Misturar “nova fórmula” com “resultado numérico”**  \n   - A banca pode pedir a nova fórmula após copiar (endereços) ou o resultado (valor). Leia o comando.\n\n3. **Cifrão mal posicionado**  \n   - O **$** deve estar imediatamente antes da letra (coluna) ou do número (linha). Outras formas “estranhas” não existem.\n\n4. **Intervalos inválidos entre planilhas**  \n   - Use sempre o padrão: `nome!célula_inicial:célula_final`. Formas “soltas” do tipo “D2 até NA” fora do padrão não funcionam.\n\n5. **Confundir “não mudou” com “travou”**  \n   - Se não houve deslocamento naquela direção, a referência pode não mudar mesmo sem cifrão. Travar é garantir que não mude independentemente do deslocamento.\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar os tipos de referência: **A1**, **$A1**, **A$1**, **$A$1** e o comportamento de cada uma ao copiar?\n* Calculo corretamente **Δcol** e **Δlin** de origem para destino e aplico o par (Δcol, Δlin) em cada referência?\n* Lembro que **“a função do cifrão é impedir quem está à sua direita”** (coluna ou linha)?\n* Sei escrever e interpretar referências **entre planilhas** (`A1`, `nome!A1`, `nome!B2:D4`)?\n* Consigo diferenciar, no enunciado, quando a banca pede **a nova fórmula** (endereços) e quando pede o **resultado numérico** ou uma **mensagem de erro (#REF!)**?",
+  "mapa_mental": "# 💻 Office 365 – Excel VI\n## 🎯 Referências de Célula\n### 💡 Conceitos básicos\n- Célula coluna+linha\n- Endereço A1 padrão\n- Fórmulas iniciam =\n- Referência de célula\n- Erro #REF! limites\n### 🧮 Tipos de referência\n- Relativa A1\n- Mista $A1\n- Mista A$1\n- Absoluta $A$1\n- Comportamento ao copiar\n### 📊 Regra do deslocamento\n- Par Δcol Δlin\n- Copiar para baixo\n- Copiar para cima\n- Copiar direita\n- Copiar esquerda\n\n## 🛡️ Cifrão e Travamento\n### 💲 Função do cifrão\n- Travar coluna\n- Travar linha\n- Travar ambos\n- Afeta direita do $\n- Controle deslocamento\n### 🔢 Comportamento por tipo\n- Relativa muda tudo\n- $A1 coluna fixa\n- A$1 linha fixa\n- $A$1 nada muda\n- Sem $ segue Δ\n### ⚠️ Erros e cuidados\n- #REF! ultrapassar borda\n- Linha abaixo de 1\n- Coluna antes de A\n- Cifrão posição correta\n- Travar x não deslocar\n\n## 🌐 Referências Entre Planilhas\n### 📄 Estrutura básica\n- Planilha atual A1\n- Outra planilha nome!A1\n- Intervalo nome!A1:B3\n- Nome antes do !\n- Mesmo arquivo\n### 📋 Intervalos e sintaxe\n- Início:fim obrigatório\n- Coluna contínua\n- Linha contínua\n- Intervalo 3D não aqui\n- Formato único válido\n### 📝 Uso em provas\n- Identificar planilha origem\n- Identificar célula destino\n- Verificar tipo referência\n- Aplicar Δcol Δlin\n- Distinguir fórmula x resultado\n\n## 🧠 Estratégias de Prova\n### 🔍 Passos de análise\n- Localizar origem destino\n- Calcular Δcol Δlin\n- Verificar cifrões\n- Aplicar Δ em cada termo\n- Reescrever fórmula final\n### 🧾 Tabela de uso\n- $A$1 valores fixos\n- $A1 parâmetro coluna\n- A$1 parâmetro linha\n- A1 padrão tabela\n- Mistos para matrizes\n### 🚨 Armadilhas frequentes\n- Confundir tipo referência\n- Ignorar Δcol Δlin\n- Achar que não mudou travou\n- Misturar endereço e valor\n- Intervalo sintaxe errada",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Referências Relativas",
+      "description": "Referências Relativas — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se ajustam as referências ao copiar uma fórmula para outra célula?",
+          "back": "Altera as respectivas **referências** de onde a fórmula estava.",
+          "hint": "Pense no comportamento dinâmico das coordenadas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Ao copiar uma fórmula apenas para baixo, que parte da referência se altera?",
+          "back": "A **linha**.",
+          "hint": "Considere o eixo vertical da planilha",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Ao copiar uma fórmula para a direita, como avançam as colunas referenciadas?",
+          "back": "Avançam conforme a **ordem do alfabeto**.",
+          "hint": "Considere o eixo horizontal da planilha",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Como calcular o deslocamento aplicado a uma referência copiada?",
+          "back": "Contando a quantidade de posições de **linhas e colunas** entre a célula de origem e a de destino.",
+          "hint": "É um cálculo de distância entre coordenadas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Em que situação copiar uma fórmula gera erro de referência?",
+          "back": "Erro de referência (exclamação) ao tentar retroceder para uma linha ou coluna anterior à **primeira**.",
+          "hint": "Ocorre ao tentar acessar índices negativos",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "erros"
+          ],
+          "type": "exception"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Referências Travadas",
+      "description": "Referências Travadas — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual é a função do cifrão em uma referência de célula?",
+          "back": "Impedir a mudança da referência imediatamente à sua **direita**.",
+          "hint": "É o operador de travamento",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Como se caracteriza uma referência mista?",
+          "back": "Aquela que possui uma parte **relativa** e outra **travada** por cifrão.",
+          "hint": "Combina dois estados de referência",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual parte permanece fixa na referência A$1?",
+          "back": "A **linha** (1).",
+          "hint": "Observe a posição do cifrão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Referências Entre Planilhas",
+      "description": "Referências Entre Planilhas — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual símbolo separa o nome da planilha da referência de célula?",
+          "back": "**Exclamação** (!).",
+          "hint": "É um caractere de pontuação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "planilhas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual estrutura identifica uma célula de outra planilha em uma fórmula?",
+          "back": "Nome da planilha seguido de **exclamação** e da referência da célula.",
+          "hint": "Sintaxe de endereçamento externo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "planilhas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Que tipos de elementos podem ser referenciados de outra planilha?",
+          "back": "Células isoladas ou **intervalos**.",
+          "hint": "Pense em unidades simples e conjuntos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "planilhas"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Excel, ao copiar uma fórmula de uma célula para outra, o que determina se as referências das células serão alteradas automaticamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O formato de número aplicado às células envolvidas no cálculo",
+          "correct": false,
+          "explanation": "Incorreta. O formato de número (como moeda, porcentagem ou data) altera apenas a forma como o valor é exibido na célula, não influenciando o comportamento das referências de células (se elas serão alteradas ou permanecerão fixas) quando a fórmula é copiada para outra localização."
+        },
+        {
+          "id": "b",
+          "text": "O tipo de dado armazenado nas células referenciadas pela fórmula",
+          "correct": false,
+          "explanation": "Incorreta. O tipo de dado (texto, número, data, etc.) armazenado nas células referenciadas é crucial para o resultado do cálculo da fórmula. No entanto, ele não determina se a referência da célula em si (A1, $A$1, etc.) será alterada ou permanecerá a mesma ao ser copiada para uma nova célula. Esse comportamento é intrínseco ao tipo de referência definido na fórmula."
+        },
+        {
+          "id": "c",
+          "text": "A presença de formatação condicional nas células de origem e destino",
+          "correct": false,
+          "explanation": "Incorreta. A formatação condicional aplica estilos visuais (cores, fontes) às células com base em regras predefinidas, mas não tem qualquer efeito sobre a lógica de ajuste das referências de células em fórmulas durante o processo de cópia. É uma ferramenta de visualização, não de cálculo."
+        },
+        {
+          "id": "d",
+          "text": "O tipo de referência utilizada na fórmula, que pode ser relativa, absoluta ou mista",
+          "correct": true,
+          "explanation": "Correta. No Excel, o comportamento das referências de células ao copiar uma fórmula é determinado pelo tipo de referência utilizada. As referências relativas (ex: A1) se ajustam automaticamente conforme a nova posição da fórmula. As referências absolutas (ex: $A$1) permanecem fixas, independentemente de onde a fórmula é copiada. Já as referências mistas (ex: $A1 ou A$1) fixam apenas a coluna ou a linha, respectivamente, permitindo o ajuste do outro componente."
+        }
+      ],
+      "explanation": "Correta. No Excel, o comportamento das referências de células ao copiar uma fórmula é determinado pelo tipo de referência utilizada. As referências relativas (ex: A1) se ajustam automaticamente conforme a nova posição da fórmula. As referências absolutas (ex: $A$1) permanecem fixas, independentemente de onde a fórmula é copiada. Já as referências mistas (ex: $A1 ou A$1) fixam apenas a coluna ou a linha, respectivamente, permitindo o ajuste do outro componente.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a função do símbolo cifrão ($) quando utilizado em referências de células no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Converter automaticamente valores numéricos para o formato de moeda do sistema",
+          "correct": false,
+          "explanation": "Incorreta. A conversão de valores numéricos para o formato de moeda é uma função de formatação de células, acessada por meio das opções de formatação. O cifrão em uma referência de célula não realiza essa conversão; sua finalidade é unicamente controlar a mutabilidade das referências ao copiar fórmulas."
+        },
+        {
+          "id": "b",
+          "text": "Indicar que o valor da célula está formatado como moeda",
+          "correct": false,
+          "explanation": "Incorreta. Embora o símbolo monetário '$' seja frequentemente associado a valores em moeda, no contexto das referências de células do Excel, o cifrão não indica formatação de moeda. Sua função é puramente ligada ao controle de como as referências se comportam durante a cópia de fórmulas."
+        },
+        {
+          "id": "c",
+          "text": "Impedir a alteração da referência que está imediatamente à sua direita durante a cópia",
+          "correct": true,
+          "explanation": "Correta. O símbolo cifrão ($), quando colocado antes da letra da coluna ou do número da linha em uma referência de célula (ex: $A1, A$1, $A$1), tem a função de 'travar' ou 'fixar' aquele componente específico da referência. Isso impede que a coluna ou a linha se altere quando a fórmula é copiada para outras células, mantendo a referência absoluta para o componente precedido pelo cifrão."
+        },
+        {
+          "id": "d",
+          "text": "Marcar células que contêm fórmulas financeiras ou cálculos monetários",
+          "correct": false,
+          "explanation": "Incorreta. O uso do cifrão para fixar referências é uma funcionalidade geral do Excel e se aplica a qualquer tipo de fórmula, não sendo restrito a cálculos financeiros ou monetários. Ele serve para controlar a alteração de referências, independentemente do propósito da fórmula."
+        }
+      ],
+      "explanation": "Correta. O símbolo cifrão ($), quando colocado antes da letra da coluna ou do número da linha em uma referência de célula (ex: $A1, A$1, $A$1), tem a função de 'travar' ou 'fixar' aquele componente específico da referência. Isso impede que a coluna ou a linha se altere quando a fórmula é copiada para outras células, mantendo a referência absoluta para o componente precedido pelo cifrão.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "O que acontece quando se tenta copiar uma fórmula de C2 para C1, sendo que a fórmula original referencia células da linha 1?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A fórmula é convertida em valor fixo para evitar inconsistências",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não converte fórmulas em valores fixos automaticamente em situações de referência inválida. O objetivo é alertar o usuário sobre o problema para que ele possa corrigi-lo, em vez de mascarar a inconsistência com um valor fixo."
+        },
+        {
+          "id": "b",
+          "text": "O Excel exibe um erro de referência (#REF!) porque não existe linha anterior à linha 1",
+          "correct": true,
+          "explanation": "Correta. Quando uma fórmula com referências relativas (como `=A1+B1` em C2) é copiada para uma célula 'acima' da linha 1 (como C1), o Excel tenta ajustar as referências proporcionalmente. Assim, A1 se tornaria A0 e B1 se tornaria B0. Como não existe a linha 0 em uma planilha, o Excel não consegue resolver essas referências e exibe o erro `#REF!` (referência), indicando uma referência inválida ou inexistente."
+        },
+        {
+          "id": "c",
+          "text": "A fórmula é copiada normalmente, mas os valores são zerados",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não simplesmente zera os valores quando uma referência se torna inválida. Em vez disso, ele indica explicitamente que há um problema com a referência, o que é um comportamento mais informativo para o usuário."
+        },
+        {
+          "id": "d",
+          "text": "As referências são automaticamente ajustadas para a última linha da planilha",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não possui um mecanismo de 'ajuste para a última linha' quando uma referência se torna negativa ou ultrapassa os limites superiores da planilha. O comportamento padrão para referências inválidas é a exibição de um erro."
+        }
+      ],
+      "explanation": "Correta. Quando uma fórmula com referências relativas (como `=A1+B1` em C2) é copiada para uma célula 'acima' da linha 1 (como C1), o Excel tenta ajustar as referências proporcionalmente. Assim, A1 se tornaria A0 e B1 se tornaria B0. Como não existe a linha 0 em uma planilha, o Excel não consegue resolver essas referências e exibe o erro `#REF!` (referência), indicando uma referência inválida ou inexistente.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao copiar uma fórmula de C3 (=D4+E8) para E6, considerando referências relativas, qual será a nova fórmula resultante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "=E5+F9, pois apenas a primeira referência é ajustada proporcionalmente",
+          "correct": false,
+          "explanation": "Incorreta. Em uma fórmula com referências relativas, todas as referências se ajustam de acordo com o deslocamento da cópia. Não é apenas a primeira referência que é ajustada, e o ajuste é proporcional ao deslocamento da célula, não apenas 'proporcionalmente' de forma arbitrária. Os valores E5 e F9 não correspondem ao deslocamento correto."
+        },
+        {
+          "id": "b",
+          "text": "=D4+E8, pois as referências permanecem fixas em cópias diagonais",
+          "correct": false,
+          "explanation": "Incorreta. Referências relativas no Excel sempre se ajustam quando a fórmula é copiada para uma nova localização, independentemente de o deslocamento ser horizontal, vertical ou diagonal. Apenas referências absolutas (com cifrão em ambos os componentes, ex: $D$4) permanecem fixas."
+        },
+        {
+          "id": "c",
+          "text": "=F7+G11, pois houve deslocamento de duas colunas e três linhas",
+          "correct": true,
+          "explanation": "Correta. Para determinar a nova fórmula, calculamos o deslocamento da célula de origem (C3) para a célula de destino (E6). O deslocamento horizontal é de 2 colunas para a direita (de C para E). O deslocamento vertical é de 3 linhas para baixo (de 3 para 6). Aplicando esses deslocamentos às referências relativas na fórmula original (=D4+E8): - Para D4: D + 2 colunas = F; 4 + 3 linhas = 7. Resulta em F7. - Para E8: E + 2 colunas = G; 8 + 3 linhas = 11. Resulta em G11. Portanto, a nova fórmula em E6 será =F7+G11."
+        },
+        {
+          "id": "d",
+          "text": "=F6+G10, pois o ajuste considera apenas a posição final da célula",
+          "correct": false,
+          "explanation": "Incorreta. O ajuste das referências relativas não considera apenas a posição final da célula de destino, mas sim a *diferença* de posição (deslocamento) entre a célula de origem e a de destino, aplicando essa diferença a cada referência na fórmula. Os valores F6 e G10 não correspondem ao cálculo correto do deslocamento."
+        }
+      ],
+      "explanation": "Correta. Para determinar a nova fórmula, calculamos o deslocamento da célula de origem (C3) para a célula de destino (E6). O deslocamento horizontal é de 2 colunas para a direita (de C para E). O deslocamento vertical é de 3 linhas para baixo (de 3 para 6). Aplicando esses deslocamentos às referências relativas na fórmula original (=D4+E8): - Para D4: D + 2 colunas = F; 4 + 3 linhas = 7. Resulta em F7. - Para E8: E + 2 colunas = G; 8 + 3 linhas = 11. Resulta em G11. Portanto, a nova fórmula em E6 será =F7+G11.",
+      "difficulty": "medium",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma fórmula que utiliza a referência $D4, o que ocorre ao copiar essa fórmula para diferentes posições da planilha?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Tanto a coluna quanto a linha permanecem fixas, impedindo qualquer alteração",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere a uma referência absoluta, que seria `$D$4`, onde tanto a coluna quanto a linha são fixadas pelo cifrão. Na referência `$D4`, apenas a coluna 'D' é fixa, enquanto a linha '4' é relativa e se ajusta."
+        },
+        {
+          "id": "b",
+          "text": "O número 4 permanece fixo enquanto a letra D se ajusta conforme o deslocamento horizontal",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição corresponde a uma referência mista diferente, `D$4`, onde o número da linha '4' permanece fixo (devido ao cifrão antes dele), e a letra da coluna 'D' se ajusta conforme o deslocamento horizontal. É o oposto do que ocorre com `$D4`."
+        },
+        {
+          "id": "c",
+          "text": "A referência se comporta como relativa, ajustando ambos os componentes proporcionalmente",
+          "correct": false,
+          "explanation": "Incorreta. Uma referência que se comporta como totalmente relativa, ajustando ambos os componentes (coluna e linha) proporcionalmente, seria `D4` (sem cifrões). A presença do cifrão em `$D4` impede que um dos componentes (a coluna) se ajuste, caracterizando-a como uma referência mista e não totalmente relativa."
+        },
+        {
+          "id": "d",
+          "text": "A coluna D permanece fixa enquanto o número da linha se ajusta conforme o deslocamento vertical",
+          "correct": true,
+          "explanation": "Correta. A referência `$D4` é um exemplo de referência mista. O cifrão ($) antes da letra 'D' fixa a coluna, tornando-a absoluta. Isso significa que, ao copiar a fórmula para qualquer lugar na planilha, a coluna 'D' na referência permanecerá inalterada. Por outro lado, a ausência do cifrão antes do número '4' indica que a linha é relativa. Assim, se a fórmula for copiada para uma linha diferente, o número da linha na referência se ajustará automaticamente ao deslocamento vertical."
+        }
+      ],
+      "explanation": "Correta. A referência `$D4` é um exemplo de referência mista. O cifrão ($) antes da letra 'D' fixa a coluna, tornando-a absoluta. Isso significa que, ao copiar a fórmula para qualquer lugar na planilha, a coluna 'D' na referência permanecerá inalterada. Por outro lado, a ausência do cifrão antes do número '4' indica que a linha é relativa. Assim, se a fórmula for copiada para uma linha diferente, o número da linha na referência se ajustará automaticamente ao deslocamento vertical.",
+      "difficulty": "medium",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a diferença fundamental entre uma referência mista e uma referência absoluta no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A referência mista utiliza um cifrão, enquanto a absoluta utiliza dois cifrões separados",
+          "correct": false,
+          "explanation": "Incorreta. Embora a descrição sintática esteja parcialmente correta (referência mista usa um cifrão e absoluta usa dois), a pergunta busca a *diferença fundamental* de comportamento. A alternativa (a) descreve o efeito funcional da \"trava\" do cifrão, que é a essência da distinção entre os tipos de referência."
+        },
+        {
+          "id": "b",
+          "text": "A referência mista trava apenas um componente (coluna ou linha), enquanto a absoluta trava ambos",
+          "correct": true,
+          "explanation": "Correta. A referência mista, como A$1 ou $A1, \"trava\" (fixa) apenas um de seus componentes (a linha ou a coluna, respectivamente), permitindo que o outro se ajuste. Já a referência absoluta, como $A$1, \"trava\" ambos os componentes (linha e coluna), impedindo qualquer alteração ao ser copiada para outras células."
+        },
+        {
+          "id": "c",
+          "text": "A referência mista ajusta valores automaticamente, enquanto a absoluta requer ajuste manual",
+          "correct": false,
+          "explanation": "Incorreta. Nenhuma das referências (relativa, mista ou absoluta) requer ajuste manual quando copiadas. O software de planilha ajusta automaticamente as partes relativas das referências. Referências absolutas, por sua natureza, não se ajustam, portanto, não necessitam de ajuste manual; elas simplesmente permanecem fixas."
+        },
+        {
+          "id": "d",
+          "text": "A referência mista permite cálculos entre planilhas, enquanto a absoluta restringe à planilha atual",
+          "correct": false,
+          "explanation": "Incorreta. A capacidade de realizar cálculos entre planilhas não é uma distinção entre referências mistas e absolutas. Ambas podem ser usadas em fórmulas que referenciam células em diferentes planilhas, utilizando a sintaxe `NomeDaPlanilha!Célula` (por exemplo, `Planilha2!A1`)."
+        }
+      ],
+      "explanation": "Correta. A referência mista, como A$1 ou $A1, \"trava\" (fixa) apenas um de seus componentes (a linha ou a coluna, respectivamente), permitindo que o outro se ajuste. Já a referência absoluta, como $A$1, \"trava\" ambos os componentes (linha e coluna), impedindo qualquer alteração ao ser copiada para outras células.",
+      "difficulty": "medium",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Considerando uma fórmula em C2 que referencia $D$4, ao copiá-la para qualquer outra célula da planilha, qual será o comportamento observado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A referência permanecerá sempre como D4, independentemente da posição de destino",
+          "correct": true,
+          "explanation": "Correta. A referência `$D$4` é uma referência absoluta. O cifrão (`$`) antes da letra da coluna (`D`) e antes do número da linha (`4`) \"trava\" ambos os componentes. Isso significa que, ao copiar a fórmula para qualquer outra célula na planilha, a referência `D4` não será alterada e continuará apontando para a célula `D4`."
+        },
+        {
+          "id": "b",
+          "text": "A referência gerará erro se a cópia ultrapassar os limites da área de dados",
+          "correct": false,
+          "explanation": "Incorreta. Copiar uma fórmula com uma referência absoluta válida (`$D$4`) para qualquer célula da planilha não causará um erro. Erros como `#REF!` (referência inválida) ocorrem quando a célula referenciada é excluída ou se torna inacessível, não simplesmente por ultrapassar limites de dados ao copiar uma referência absoluta."
+        },
+        {
+          "id": "c",
+          "text": "A referência se ajustará apenas se a cópia for feita na mesma coluna",
+          "correct": false,
+          "explanation": "Incorreta. Uma referência absoluta, como `$D$4`, não se ajusta sob nenhuma condição de cópia, seja na mesma coluna, na mesma linha ou em qualquer outra posição. Ela permanece fixa, apontando sempre para a mesma célula."
+        },
+        {
+          "id": "d",
+          "text": "A referência se ajustará proporcionalmente à distância entre origem e destino",
+          "correct": false,
+          "explanation": "Incorreta. O ajuste proporcional à distância entre a célula de origem e a de destino é característico de uma referência relativa (por exemplo, `D4` sem cifrões). Uma referência absoluta, como `$D$4`, é projetada para não se ajustar."
+        }
+      ],
+      "explanation": "Correta. A referência `$D$4` é uma referência absoluta. O cifrão (`$`) antes da letra da coluna (`D`) e antes do número da linha (`4`) \"trava\" ambos os componentes. Isso significa que, ao copiar a fórmula para qualquer outra célula na planilha, a referência `D4` não será alterada e continuará apontando para a célula `D4`.",
+      "difficulty": "hard",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Ao copiar uma fórmula de C3 para E6, observa-se que houve um deslocamento de duas colunas para a direita e três linhas para baixo. Se a fórmula original continha a referência D$4, qual será a lógica de ajuste aplicada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A coluna D avançará duas posições para F, enquanto a linha 4 permanecerá inalterada devido ao cifrão",
+          "correct": true,
+          "explanation": "Correta. A referência `D$4` é mista, com a linha 4 \"travada\" (absoluta) pelo cifrão e a coluna D relativa. Ao copiar de C3 para E6, há um deslocamento de +2 colunas (C para E) e +3 linhas (3 para 6). Aplicando essa lógica: a coluna D (relativa) avança 2 posições, tornando-se F. A linha 4 (absoluta) permanece inalterada devido ao cifrão. Assim, a nova referência será F$4."
+        },
+        {
+          "id": "b",
+          "text": "A linha 4 avançará três posições para 7, enquanto a coluna D permanecerá fixa",
+          "correct": false,
+          "explanation": "Incorreta. O cifrão na referência `D$4` \"trava\" a linha 4, impedindo que ela se ajuste. Portanto, a linha 4 não avançaria para 7. A coluna D, por ser relativa, se ajustaria, o que contradiz a segunda parte da afirmação."
+        },
+        {
+          "id": "c",
+          "text": "Ambos os componentes permanecerão fixos, resultando em D$4 na nova posição",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreveria o comportamento de uma referência absoluta (`$D$4`), onde ambos os componentes (coluna e linha) estariam fixos. Na referência `D$4`, apenas a linha está fixada."
+        },
+        {
+          "id": "d",
+          "text": "O cifrão será removido automaticamente e ambos os componentes serão ajustados",
+          "correct": false,
+          "explanation": "Incorreta. O cifrão é parte integrante da sintaxe da referência mista e não é removido automaticamente ao copiar a fórmula. Sua função é justamente manter um dos componentes fixo, enquanto o outro se ajusta."
+        }
+      ],
+      "explanation": "Correta. A referência `D$4` é mista, com a linha 4 \"travada\" (absoluta) pelo cifrão e a coluna D relativa. Ao copiar de C3 para E6, há um deslocamento de +2 colunas (C para E) e +3 linhas (3 para 6). Aplicando essa lógica: a coluna D (relativa) avança 2 posições, tornando-se F. A linha 4 (absoluta) permanece inalterada devido ao cifrão. Assim, a nova referência será F$4.",
+      "difficulty": "hard",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Em uma situação onde se utiliza a referência Teste!A1 em uma fórmula, o que representa cada componente dessa sintaxe?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "'Teste' é o nome da planilha de origem, '!' é o separador e 'A1' é a célula referenciada",
+          "correct": true,
+          "explanation": "Correta. Em softwares de planilha eletrônica como o Excel, a sintaxe `NomeDaPlanilha!Célula` é utilizada para referenciar uma célula em uma planilha diferente daquela onde a fórmula está sendo inserida. Assim, 'Teste' é o nome da planilha de origem, '!' é o operador que separa o nome da planilha da referência da célula, e 'A1' é a célula específica referenciada dentro da planilha 'Teste'."
+        },
+        {
+          "id": "b",
+          "text": "'Teste' é uma função personalizada, '!' é o operador de negação e 'A1' é o argumento",
+          "correct": false,
+          "explanation": "Incorreta. 'Teste' neste contexto é o nome de uma planilha, não uma função personalizada. O '!' é um separador de referência de planilha, não um operador de negação. 'A1' é uma referência de célula, não um argumento genérico de função."
+        },
+        {
+          "id": "c",
+          "text": "'Teste' é uma macro definida, '!' é o delimitador de execução e 'A1' é o parâmetro",
+          "correct": false,
+          "explanation": "Incorreta. 'Teste' não representa uma macro definida neste formato de referência de célula. O '!' não é um delimitador de execução de macro, e 'A1' é uma referência de célula, não um parâmetro de macro."
+        },
+        {
+          "id": "d",
+          "text": "'Teste' é um intervalo nomeado, '!' é o operador de interseção e 'A1' é a célula inicial",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível nomear intervalos, a sintaxe `NomeDoIntervalo!Célula` não é padrão para referências de intervalos nomeados. O '!' não é um operador de interseção (que geralmente é um espaço) e 'A1' é a célula específica, não apenas uma célula inicial em um contexto de interseção."
+        }
+      ],
+      "explanation": "Correta. Em softwares de planilha eletrônica como o Excel, a sintaxe `NomeDaPlanilha!Célula` é utilizada para referenciar uma célula em uma planilha diferente daquela onde a fórmula está sendo inserida. Assim, 'Teste' é o nome da planilha de origem, '!' é o operador que separa o nome da planilha da referência da célula, e 'A1' é a célula específica referenciada dentro da planilha 'Teste'.",
+      "difficulty": "hard",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "12_258242_Office 365 - Excel VI.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:51:12"
+}

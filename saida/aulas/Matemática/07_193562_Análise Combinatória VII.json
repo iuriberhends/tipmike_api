@@ -1,0 +1,497 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 7,
+  "ordem_no_curso": "69.00",
+  "titulo": "Análise Combinatória VII",
+  "codigo_aula": "193562",
+  "video_id": "oW1pRb91lMo=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:46:32",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/oW1pRb91lMo%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=404273&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória VII\n\n## Treino com Anagramas: palavra “VIVER” (vogais juntas)\nAgora, apesar de continuar falando sobre anagramas, vamos treinar o que aprendemos com questões. Concurso, questão número 1, diz o seguinte: um anagrama é uma permutação de letras de uma palavra. Por exemplo, “viver” é um anagrama da palavra “reviv”? Não, calma. Por exemplo, “reviver” não; quero “viver”. Beleza. Com relação aos anagramas da palavra “VIVER”, existem mais de 20 anagramas em que as vogais estão juntas. Fizemos isso aqui, só que agora com letras repetidas, ok? Ajudem aí: vogais juntas.\n\nO que a gente faz normalmente? Eu quero que as vogais estejam juntas. Toda vez que fala “letras que devem ficar juntas”, não interessa quais sejam, a gente imagina que elas formam um único bloco, um único símbolo, como se fosse uma pessoa só.\n\nEntão vamos imaginar o seguinte. Na palavra VIVER, temos as letras: V, I, V, E, R. As vogais são I e E. Se eu junto as vogais num bloco (IE), eu passo a ter:\n- Bloco (IE)\n- V\n- V\n- R\n\nOu seja, quatro “entidades”. Contando: 1, 2, 3, 4. Normalmente, permutaria 4! = 24. Só que tem um detalhe: há repetição da letra V (dois Vs). Então dividimos por 2! pelas repetições: 24 / 2 = 12.\n\nMas falta o último detalhe: dentro do bloco das vogais, elas podem estar em qualquer ordem (IE ou EI). Como a questão não fixou ordem, multiplicamos por 2. Então: 12 × 2 = 24. São mais de 20, certíssimo.\n\nFiquem espertos: quando as vogais ficam juntas, eu posso mudar a posição delas dentro do bloco. Vários detalhes.\n\n## Anagramas “VIVER”: começam com vogal e terminam com consoante\nPróxima questão. Palavra “VIVER”. Existem mais de 20 anagramas que começam com vogal e terminam com consoante?\n\nA palavra tem 5 letras: V, I, V, E, R. Temos duas restrições:\n- Começa com vogal (pode ser I ou E) → 2 possibilidades.\n- Termina com consoante (pode ser V ou R) → 3 possibilidades, mas cuidado com repetições e contagem do miolo.\n\nSugestão: comece pelas restrições. Fixando início com vogal (2 opções) e final com consoante (3 opções), sobrará o miolo com 3 posições e letras restantes, levando em conta que há dois Vs no total.\n\nVamos estruturar: as letras são {I, E, V, V, R}.\n- Início: vogal → {I, E} (2 opções).\n- Fim: consoante → {V, R}. Dependendo do uso do V no final, o miolo muda de multiconjunto.\n\nContando casos e dividindo pelas repetições de V (quando necessário), obtemos 18 no total para essa configuração. E como trocar V com V não muda nada, a divisão por 2! aparece quando o miolo tem dois Vs. Resultado final: 18. Tem mais de 20? Não, então a afirmação “mais de 20” estaria incorreta para essa segunda questão. Fiquem atentos: trocar V por V não gera arranjo distinto.\n\n## Anagramas “VIVER”: vogais juntas (revisão do raciocínio)\nOutra variação: “existem mais de 20 anagramas de VIVER em que as letras V estão juntas”. Se quero V’s juntos, faço o bloco (VV) como um símbolo. Então, símbolos:\n- (VV)\n- I\n- E\n- R\n\nSão 4 símbolos distintos, 4! = 24. Não há divisão por repetição agora, porque fundimos os dois Vs num único bloco, que é “diferente” de V isolado. Também não preciso dividir por nada dentro do bloco VV, pois não há ordem interna (V e V são idênticos). Logo, 24. Mais de 20, ok.\n\nMesma lógica vale quando o bloco é de vogais (IE): ao criar um bloco, você cria um novo símbolo. Só divide quando existirem símbolos iguais trocando de posição.\n\n## Anagramas “BOMBA” com B na extrema esquerda\nQuestão: “BOMBA” tem 5 letras, com B repetido duas vezes. Quantos anagramas com B na extrema esquerda?\n\nFixando B no extremo esquerdo, sobram 4 posições para {O, M, B, A}, com dois Bs no total da palavra, mas como já fixei um B à esquerda, resta apenas um B no conjunto restante. Então as 4 posições restantes são O, M, B, A, todos distintos? Não, ainda temos um B, mas só um. Logo, 4! = 24. Não há divisão por repetição nas 4 posições, pois nesse miolo só há um B. Resposta: 24.\n\nSe a intenção for “B aparece na extrema esquerda e o outro B pode estar em qualquer posição”, já está contemplado nas permutações do miolo.\n\n## Anagramas “MAGALI”: total e afirmações\nPalavra “MAGALI”: letras M, A, G, A, L, I. São 6 letras com A repetido 2 vezes.\n- Total de anagramas: 6! / 2! = 720 / 2 = 360. Se alguém disser “sete, seis, vinte” ou “seis fatorial puro”, está errado. O correto é 360.\n\nAgora, “as vogais e as consoantes alternando em 36 anagramas”. Em MAGALI, vogais = {A, A, I} (3 vogais), consoantes = {M, G, L} (3 consoantes). Podemos alternar em duas formas: V-C-V-C-V-C e C-V-C-V-C-V. Vamos contar um dos padrões e depois dobrar, levando em conta a repetição de A:\n- Arranjos de vogais (A, A, I): 3!/2! = 3\n- Arranjos de consoantes (M, G, L): 3! = 6\n- Para um padrão (por exemplo, V-C-V-C-V-C): 3 × 6 = 18\n- Como pode começar por vogal ou por consoante: 18 + 18 = 36\n\nEntão a afirmação “36” está correta. Repare que dividimos por 2! por causa das vogais A repetidas.\n\nAgora: “20% dos anagramas têm as vogais juntas”. Vamos calcular:\n- Total: 360.\n- Vogais juntas (A, A, I): formo um bloco (AAI). Símbolos: (AAI), M, G, L → 4 símbolos distintos → 4! = 24.\n- Mas dentro do bloco das vogais, elas podem estar em quantas ordens? AAI tem 3 letras com A repetido → 3!/2! = 3 ordens. Logo, total com vogais juntas = 24 × 3 = 72.\n- 72 é 20% de 360? 72/360 = 1/5 = 20%. Certo.\n\n> 🎯 Dicas de prova: \n> - Total de anagramas com letras repetidas: use n! dividido pelo produto dos fatoriais das multiplicidades.\n> - “Letras juntas” → crie bloco como um símbolo; só divida por repetições se sobrar símbolos idênticos fora do bloco.\n> - Alternância V/C: conte arranjos de vogais e consoantes separadamente, multiplique, e considere os dois padrões (começando por V e por C), quando aplicável.\n\n## Insight sobre anagramas “PROVAVELMENTE”: quantos se repetem\nVamos para uma questão mais teórica e muito cobrada: palavra “PROVAVELMENTE”. Quando a banca fala “são realizados todos os anagramas (todas as permutações possíveis, incluindo repetições por letras iguais). Quantos deles são idênticos (repetidos)?”.\n\nIdeia-chave: quando você gera todas as permutações considerando as letras como distinguíveis e depois “colapsa” letras iguais, vários anagramas coincidem. O número de anagramas idênticos que colapsam é exatamente o valor do denominador que você usaria no total de anagramas com repetição.\n\nEm geral:\n- Total distinto = n! / (m1! m2! ...), onde mi são as multiplicidades de cada letra repetida.\n- O fator “m1! m2! ...” é justamente quantas permutações diferentes do multiconjunto original colapsam no mesmo anagrama. Ou seja, “quantos ficam idênticos”.\n\nVamos ilustrar com um exemplo simples.\n\nExemplo rápido com “ANA”:\n- Letras: A, N, A → 3 letras, com A repetido 2 vezes.\n- Total distinto: 3! / 2! = 3.\n- Se eu permutar tudo como se A’s fossem distinguíveis, teria 3! = 6 arranjos.\n- Quantos são idênticos por colapso das letras iguais? Exatamente 2! = 2. Ou seja, cada arranjo distinto corresponde a 2 arranjos “rotulados” que viram o mesmo anagrama. O denominador dá o fator de repetição.\n\nPortanto, quando a banca perguntar “quantos anagramas ficam idênticos (se repetem) considerando todas as permutações possíveis?”, olhe para o denominador m1! m2! ... das repetições. Ele determina quantas versões colapsam num mesmo anagrama.\n\nAplicando a “PROVAVELMENTE”: conte as letras, identifique as que repetem e o denominador dá quantos anagramas idênticos colapsam. Se, por exemplo, tivermos letras que se repetem 3 vezes, 2 vezes, 2 vezes, etc., o fator será 3! × 2! × 2! ... Esse produto é o número de anagramas rotulados que se tornam idênticos após ignorar rótulos das letras iguais.\n\n> 🎯 Dicas de prova:\n> - Perguntou “quantos anagramas se repetem (idênticos)?” → responda com o produto dos fatoriais das multiplicidades das letras repetidas (o denominador).\n> - Quer o total distinto? → n! dividido por esse produto.\n\n## Encerramento e organização do curso\nShow de bola. Fechamos essa parte de anagramas com letras repetidas. Eu falei para vocês: fizemos questões com números, códigos binários, figuras geométricas, arranjos de dígitos, fomos caminhando juntos, separando casos, e fechamos com essas ideias. Daqui a pouco, a gente entra em probabilidades. Vamos devagar e sempre, do jeito mais didático possível.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória VII",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 35845,
+    "createdAt": "2026-02-05T13:45:18.148Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: anagramas com e sem repetição, vogais juntas, alternância vogal–consoante, posições fixas (início/fim), e contagem de “repetições” de um mesmo arranjo no universo expandido.\nPrincipais pontos:\n- Ajuste por letras repetidas com fatoriais.\n- Técnicas de bloco (“vogais juntas” e “letras iguais juntas”).\n- Alternância V–C com ou sem padrão inicial fixado.\n- Fixação de posições extremas e recontagem de repetições.\n- “Quantas vezes um arranjo se repete?” = denominador.\n\n## 1. Base / Conceitos Fundamentais\n- **Anagrama**: reordenação das letras de uma palavra.\n- **Permutação com repetição**: se a palavra tem n letras, com repetições a, b, c, … (quantidades de cada letra repetida), o total de anagramas distintos é n!/(a! b! c! …).\n- **Bloco**: quando se exige “juntas” (ex.: vogais juntas), agrupamos os itens exigidos em um único símbolo para contar a ordem externa; as reordenações internas são multiplicadas depois.\n- **Alternância V–C**: disposição em que vogais e consoantes aparecem alternadas. Só é possível se |V−C| ≤ 1.\n- **Arranjos “repetidos” no universo expandido**: ao tratar letras repetidas como distintas (expandir) e depois colapsar, cada arranjo distinto aparece exatamente a! b! c! … vezes (o denominador).\n\n## 2. Como Funciona / Distinções\n- **Total de anagramas vs. “quantos se repetem”**:\n  - Total distintos: n!/(a! b! c! …).\n  - Repetição por classe (no expandido): a! b! c! ….\n- **Vogais juntas vs. Alternadas**:\n  - Juntas: formar bloco de vogais → contar símbolos externos → multiplicar pelas permutações internas das vogais.\n  - Alternadas: verificar se é possível (|V−C| ≤ 1), escolher padrões possíveis (V–C–V–… e/ou C–V–C–…), arranjar vogais entre si e consoantes entre si (ajustando por repetições); somar padrões viáveis.\n- **Fixar posições (começa por X/termina em Y)**:\n  - Fixe as extremidades, depois conte o “miolo”.\n  - Reavalie repetições no miolo: a repetição pode mudar de lugar ou até desaparecer naquela parte.\n- **Bloco com letras iguais**:\n  - Se as letras iguais são coladas e tratadas como um único símbolo (ex.: VV), não se divide por 2! por essa repetição dentro do bloco na contagem externa. Só dividiria se houvesse outro símbolo idêntico trocável.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo padrão:\n  1. **Leia as restrições** e comece por elas.\n  2. **Agrupe em bloco** quando pedirem “juntas”.\n  3. **Conte símbolos externos**: use fatorial do total de símbolos e divida por repetições entre símbolos efetivos.\n  4. **Permutações internas**: multiplique pelas permutações dentro do(s) bloco(s) (ajustadas por repetições).\n  5. **Fixou posições?** Recontar o que sobra e verificar repetições remanescentes.\n  6. **Alternância**: cheque viabilidade (|V−C| ≤ 1), determine padrões possíveis (1 ou 2), arranje V e C separadamente, ajuste por repetições e some padrões.\n- Macetes:\n  - “Aumentou multiplicando (n!)”? Corrige “dividindo” pelas repetições.\n  - Alternadas sem especificar quem começa → conte os dois padrões se ambos viáveis.\n  - Bloco vira “um símbolo”. Não divida por repetições internas do bloco na contagem externa.\n\n> Dica de Prova: Sempre reavalie as repetições após fixar início/fim ou formar blocos. Divida apenas onde há itens efetivamente indistinguíveis trocando de lugar.\n\n## 4. Exemplos e Casos Resolvidos\n- Caso A — Palavra “viver”: vogais juntas\n  - Letras: v, i, v, e, r (5 letras; v×2; vogais: i, e).\n  - Bloco de vogais (ie/ei) = 1 símbolo. Símbolos: [V], v, v, r → 4 símbolos, com v×2.\n  - Contagem externa: 4!/2! = 12.\n  - Internas do bloco: 2! = 2.\n  - Total: 12 × 2 = 24.\n\n> Dica de Prova: “Vogais juntas” sem ordem específica exige multiplicar pelas permutações internas das vogais.\n\n- Caso B — “viver”: começam com vogal e terminam com consoante\n  - Primeira letra: 2 opções (i ou e).\n  - Última letra: 3 opções (v, v, r).\n  - Contar o miolo (3 posições) caso a caso, reavaliando quantos v ficaram no meio.\n  - Resultado indicado: 18.\n\n> Dica de Prova: Não aplique 2! no meio automaticamente; veja se o miolo tem de fato 2 v.\n\n- Caso C — “viver”: as duas letras v juntas (bloco VV)\n  - Símbolos: VV, i, e, r → 4 distintos.\n  - Total: 4! = 24.\n  - Sem divisão por 2!: VV é um único símbolo.\n\n- Caso D — Palavra “bomba”: B na extrema esquerda\n  - Letras: b, o, m, b, a (b×2).\n  - Fixe B na esquerda. Restam b, o, m, a → 4! = 24.\n  - A repetição efetiva desaparece no restante (só um b sobrou).\n\n- Caso E — Palavra “Magali”: total de anagramas\n  - M, a, g, a, l, i (a×2; n=6).\n  - Total: 6!/2! = 720/2 = 360.\n\n- Caso F — “Magali”: vogais e consoantes alternando\n  - Vogais: a, a, i (a×2); Consoantes: M, g, l.\n  - Padrões possíveis: V–C–V–C–V–C e C–V–C–V–C–V (ambos viáveis).\n  - Arranjos de vogais: 3!/2! = 3; consoantes: 3! = 6 → 18 por padrão.\n  - Se a questão não fixar quem começa, total = 18 × 2 = 36.\n  - Se contar apenas um padrão (começando por V ou por C), total = 18.\n\n> Dica de Prova: O valor “dezoito” corresponde a um único padrão; “trinta e seis” quando contam os dois padrões.\n\n- Caso G — “Ana”: totais e repetições\n  - A, N, A (A×2; n=3).\n  - Distintos: 3!/2! = 3.\n  - Repetição por classe no expandido (3! = 6): denominador = 2! → cada arranjo aparece 2 vezes.\n\n- Exemplo-ideia — “Maringá”: vogais juntas\n  - Aplicando bloco de vogais + permutações internas das vogais → total citado: 72.\n  - Se o total geral fosse 360, percentualmente: 72/360 = 20%.\n\n## 5. Pegadinhas e Erros Comuns\n- Dividir “duas vezes embaixo” sem necessidade: só divida por 2! onde há itens efetivamente indistinguíveis na camada que você está contando.\n- Esquecer de multiplicar pelas permutações internas do bloco quando “juntas” sem ordem exigida.\n- Alternância: somar dois padrões quando a questão já fixou quem começa; ou deixar de somar quando não fixou.\n- Fixou extremidades? Recalcule repetições no miolo; não carregue a divisão 2! por inércia.\n- Confundir “anagramas distintos” com “quantas vezes um arranjo se repete no expandido”. Distintos = n!/(a!b!…); repetições por classe = a!b!….\n- Tratar um bloco de letras iguais (ex.: VV) como se ainda exigisse divisão por 2! na contagem externa — errado: virou um símbolo único.\n- “Nunca se esqueça”: comece sempre pelas restrições; junte, conte, divida pelas repetições necessárias e, por fim, multiplique pelas internações (quando houver).\n\n> Dica de Prova: A quantidade de “anagramas que se repetem” (idênticos no expandido) é exatamente o denominador da fórmula. Se trocar qual letra repete mantendo as multiplicidades, esse número não muda.",
+  "resumo_bolso": "# Análise Combinatória VII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Anagrama**: qualquer reordenação das letras de uma palavra.\n* **Permutação com repetição**: palavra com n letras, com repetições a, b, c, … → **anagramas distintos** =  \n  \\[\n  \\frac{n!}{a!\\,b!\\,c!\\,\\dots}\n  \\]\n* **Bloco**: quando se exige “juntas” (ex.: vogais juntas), agrupa-se o conjunto exigido em **1 símbolo** para contar a ordem externa; as reordenações internas são multiplicadas depois.\n* **Alternância V–C**: disposição em que vogais e consoantes aparecem alternadas. Só é possível se **|V − C| ≤ 1**.\n* **Arranjos “repetidos” no universo expandido**: ao tratar letras repetidas como distintas (expandir) e depois colapsar, cada arranjo distinto aparece exatamente **a! b! c! …** vezes (o denominador).\n* **Bloco de letras iguais** (ex.: VV): se as letras iguais são coladas e tratadas como um único símbolo, **não se divide por 2!** por essa repetição na contagem externa; só dividiria se houvesse outro símbolo idêntico trocável.\n* **Fixação de posições** (começa/termina com X): fixa extremidades, conta o **miolo** com as letras restantes e **reavalia repetições** (podem mudar ou desaparecer).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Total de anagramas distintos vs. “quantas vezes um arranjo se repete”\n\n| Aspecto | Total de anagramas distintos | Repetição por classe no expandido |\n|--------|------------------------------|-----------------------------------|\n| Fórmula | n!/(a! b! c! …) | a! b! c! … |\n| Interpretação | Quantos anagramas diferentes existem | Em n! arranjos (universo expandido), quantas vezes cada um se repete |\n| Ligação com o enunciado | “Quantos anagramas da palavra X?” | “Quantas vezes um mesmo arranjo se repete no universo expandido?” |\n\n---\n\n### Vogais juntas vs. Vogais e consoantes alternadas\n\n| Aspecto | Vogais juntas (bloco) | Alternância V–C |\n|--------|------------------------|-----------------|\n| Ideia | Agrupar todas as vogais em 1 bloco | Posição de V e C alternadas |\n| Passos principais | 1) Formar bloco de vogais; 2) Contar símbolos externos (com repetições); 3) Multiplicar pelas permutações internas das vogais (ajustadas por repetições) | 1) Verificar se |V−C| ≤ 1; 2) Definir padrões possíveis (V–C–… e/ou C–V–…); 3) Arranjar vogais entre si e consoantes entre si (ajustando por repetições); 4) Somar padrões viáveis |\n| Observação | Bloco vira um símbolo na contagem externa | Se o enunciado não fixa quem começa, somar os padrões viáveis; se fixa, usar só o padrão correspondente |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Permutação com repetição**\n\n* **Aplicação**: anagramas de palavra com letras repetidas.\n* \\[\n  \\text{Distintos} = \\frac{n!}{a!\\,b!\\,c!\\,\\dots}\n  \\]\n* **Exemplo**: “Magali” (6 letras, a×2): 6!/2! = 360.\n\n---\n\n**2. Repetições no universo expandido**\n\n* **Aplicação**: quando se considera n! arranjos tratando letras repetidas como distintas.\n* Cada anagrama distinto aparece **a! b! c! …** vezes.\n* **Exemplo**: “Ana” (A×2): distintos = 3!/2! = 3; no total 3! = 6, cada um aparece 2! = 2 vezes.\n\n---\n\n**3. Vogais juntas (bloco)**\n\n* **Aplicação**: “vogais juntas” sem ordem interna fixada.\n* Passos:\n  1. Formar 1 bloco com todas as vogais.\n  2. Contar permutações dos símbolos externos (incluindo o bloco), dividindo por repetições externas.\n  3. Multiplicar pelas permutações internas das vogais (dividindo por repetições internas).\n* **Exemplo**: “viver” (v×2; vogais i,e):  \n  Símbolos: [IE], v, v, r → 4 símbolos, v×2 → 4!/2! = 12; internas: 2! = 2 → total 24.\n\n---\n\n**4. Alternância vogal–consoante**\n\n* **Aplicação**: “vogais e consoantes alternadas”.\n* Passos:\n  1. Contar V e C; checar **|V−C| ≤ 1**.\n  2. Padrões possíveis:  \n     - Se V = C → 2 padrões (V–C–… e C–V–…).  \n     - Se V = C+1 → começa em V (1 padrão).  \n     - Se C = V+1 → começa em C (1 padrão).\n  3. Para cada padrão: arranjar vogais entre si (ajustando repetições) × arranjar consoantes entre si.\n  4. Somar padrões viáveis.\n* **Exemplo**: “Magali” (V: a,a,i; C: M,g,l → V=C=3):  \n  Vogais: 3!/2! = 3; consoantes: 3! = 6 → 18 por padrão.  \n  Se a questão não fixar quem começa → 2 padrões → 36.  \n  Se contar apenas um padrão (começando por V ou por C) → 18.\n\n---\n\n**5. Fixação de posições extremas**\n\n* **Aplicação**: “começam com X”, “terminam com Y”.\n* Passos:\n  1. Fixar a(s) letra(s) pedida(s) nas extremidades.\n  2. Contar o **miolo** com as letras restantes.\n  3. Reavaliar repetições no miolo (a repetição pode mudar de lugar ou desaparecer).\n* **Exemplo**: “bomba” (b×2), B na extrema esquerda:  \n  Fixa B; sobram b,o,m,a → 4! = 24 (a repetição efetiva desaparece no restante).\n\n---\n\n**6. Bloco com letras iguais (VV, AA, etc.)**\n\n* **Aplicação**: “as duas letras v juntas”.\n* Regra: bloco de letras iguais = **1 símbolo único** na contagem externa → **não dividir** por fatorial dessa repetição.\n* **Exemplo**: “viver”, VV juntas: símbolos VV, i, e, r → 4 distintos → 4! = 24 (sem /2!).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Dividir “por hábito” sempre que vê duas letras iguais: só divida por 2! onde há itens efetivamente indistinguíveis na camada que você está contando (externa ou interna).\n2. Esquecer de multiplicar pelas permutações internas do bloco quando o enunciado pede “juntas” sem ordem específica.\n3. Alternância: somar dois padrões quando a questão já fixou quem começa; ou deixar de somar quando não fixou.\n4. Fixar extremidades e carregar o mesmo denominador (ex.: 2!) no miolo sem recontar as repetições.\n5. Confundir “anagramas distintos” (n!/(a!b!…)) com “quantas vezes um arranjo se repete no expandido” (a!b!…).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **total de anagramas distintos** (n!/(a!b!…)) de **repetições por classe no expandido** (a!b!…)?  \n* Sei aplicar **bloco**: juntar quando pedem “juntas”, contar símbolos externos (com repetições) e depois multiplicar pelas **permutações internas**?  \n* Lembro que **bloco de letras iguais (VV)** vira **um símbolo**, sem divisão por 2! na contagem externa?  \n* Em **alternância V–C**, verifico **|V−C| ≤ 1**, identifico se há **1 ou 2 padrões** e somo apenas os padrões compatíveis com o enunciado?  \n* Ao **fixar início/fim**, estou **recontando repetições no miolo**, sem carregar divisões (como 2!) por inércia?",
+  "mapa_mental": "# 🧮 Análise Combinatória VII\n## 🎯 Anagramas e Permutações\n### 💡 Conceitos básicos\n- Anagrama\n- Permutação simples\n- Permutação com repetição\n- Fatorial n!\n### 🧮 Fórmula com repetição\n- Total letras n\n- Multiplicidades a, b, c\n- Fórmula n!/(a!b!c!)\n- Letras distintas\n### 🔢 Universo expandido\n- Letras repetidas distintas\n- Total expandido n!\n- Colapso por classes\n- Repetições a!b!c!\n\n## 🔄 Técnicas de Contagem\n### 📦 Método do bloco\n- Itens “juntos”\n- Agrupar em símbolo\n- Contagem externa\n- Permutações internas\n### 🧩 Fixação de posições\n- Fixar início\n- Fixar fim\n- Contar miolo\n- Reavaliar repetições\n### 🧱 Bloco com iguais\n- Letras iguais coladas\n- Bloco símbolo único\n- Sem divisão interna\n- Divisão só externos\n\n## 🔤 Vogais e Consoantes\n### 🔁 Vogais juntas\n- Identificar vogais\n- Formar bloco vogais\n- Permutações vogais\n- Ajuste por repetição\n### 🔄 Alternância V–C\n- Condição |V−C|≤1\n- Padrão V–C–V…\n- Padrão C–V–C…\n- Arranjar V e C\n### 🧮 Contagem alternada\n- Verificar viabilidade\n- Um ou dois padrões\n- Ajustar repetições\n- Somar padrões válidos\n\n## ⚠️ Erros Frequentes\n### 🧮 Divisões indevidas\n- Dividir “por inércia”\n- Repetição inexistente\n- Camada incorreta\n- Bloco tratado errado\n### 🔢 Distintos x repetições\n- Anagramas distintos\n- Repetições por classe\n- Denominador fórmula\n- Mesma multiplicidade\n### 📝 Estratégia de prova\n- Ler restrições primeiro\n- Formar blocos cedo\n- Contar externos\n- Multiplicar internos",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Anagramas Básicos",
+      "description": "Anagramas Básicos — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que é um anagrama de uma palavra?",
+          "back": "Diferentes posições das letras de uma palavra.",
+          "hint": "Refere-se à permutação de elementos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "anagramas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual fórmula calcula anagramas de uma palavra sem letras repetidas?",
+          "back": "Fatorial da quantidade total de letras.",
+          "hint": "Pense na operação de permutação simples",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "fatorial"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Repetições em Anagramas",
+      "description": "Repetições em Anagramas — 1 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Como calcular anagramas distintos quando há letras repetidas?",
+          "back": "Fatorial do total de letras dividido pelo fatorial das repetições de cada letra.",
+          "hint": "Envolve a correção por redundância",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "permutacao-repeticao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Agrupamento de Letras",
+      "description": "Agrupamento de Letras — 4 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Ao exigir letras juntas, como elas são tratadas na contagem?",
+          "back": "São tratadas como apenas um símbolo ou uma única letra.",
+          "hint": "Técnica de simplificação de contagem",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "agrupamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual fator contabiliza as ordens internas das letras agrupadas?",
+          "back": "O fatorial da quantidade de letras agrupadas.",
+          "hint": "Refere-se à permutação interna do bloco",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "agrupamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Em que situação a divisão por letras repetidas deixa de ser aplicada após um agrupamento?",
+          "back": "Quando o grupo formado cria um símbolo novo e distinto.",
+          "hint": "Trata-se de uma nuance de contagem",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "excecao"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-7",
+          "front": "Como combinar a contagem das unidades externas com as ordens internas de um agrupamento?",
+          "back": "Multiplicando a contagem das unidades externas pelas ordens internas do agrupamento.",
+          "hint": "Princípio fundamental da contagem",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "principio-multiplicativo"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Restrições de Posição",
+      "description": "Restrições de Posição — 3 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual estratégia inicial atende melhor a anagramas com restrições de posição?",
+          "back": "Começar preenchendo as posições que possuem restrições.",
+          "hint": "Priorização de restrições",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "estrategia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Como determinar os padrões possíveis em anagramas com vogais e consoantes alternadas?",
+          "back": "Calculando separadamente as possibilidades para as vogais e para as consoantes.",
+          "hint": "Divisão de subproblemas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "alternancia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Como proceder quando duas sequências de alternância são possíveis?",
+          "back": "Somar as situações de ambas as sequências possíveis.",
+          "hint": "Princípio fundamental da contagem",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "principio-aditivo"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No cálculo de anagramas de uma palavra, quando é necessário dividir o resultado pelo fatorial de um número?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quando a palavra contém letras repetidas que podem ser trocadas de posição entre si sem gerar um anagrama diferente",
+          "correct": true,
+          "explanation": "Correta. A divisão pelo fatorial de um número é necessária no cálculo de anagramas quando a palavra possui letras repetidas. Isso ocorre porque a troca de posição entre letras idênticas não gera um novo anagrama distinto, e a divisão corrige a contagem excessiva dessas permutações. Por exemplo, na palavra \"ANA\", os dois 'A's são indistinguíveis, então permutações que apenas trocam a posição dos 'A's não contam como anagramas diferentes."
+        },
+        {
+          "id": "b",
+          "text": "Quando a palavra possui vogais e consoantes que devem alternar suas posições de forma obrigatória",
+          "correct": false,
+          "explanation": "Incorreta. A alternância de vogais e consoantes envolve calcular as permutações para cada grupo (vogais e consoantes) e, em seguida, combinar essas permutações, considerando as possíveis configurações de início (vogal ou consoante). A divisão por fatorial é aplicada apenas se houver letras repetidas dentro dos grupos de vogais ou consoantes, mas não é uma regra geral para a condição de alternância."
+        },
+        {
+          "id": "c",
+          "text": "Quando é solicitado que determinadas letras fiquem juntas formando um bloco inseparável na palavra",
+          "correct": false,
+          "explanation": "Incorreta. Quando letras devem ficar juntas, elas são tratadas como um único bloco ou \"superletra\". O cálculo envolve permutar esse bloco com as demais letras e, em seguida, multiplicar pelo número de permutações internas das letras dentro do bloco, e não uma divisão pelo fatorial do número de letras do bloco para corrigir repetições."
+        },
+        {
+          "id": "d",
+          "text": "Quando a palavra possui letras que devem permanecer em posições fixas durante a formação dos anagramas",
+          "correct": false,
+          "explanation": "Incorreta. Fixar letras em posições específicas reduz o número de elementos a serem permutados, mas não exige uma divisão por fatorial para corrigir repetições. A divisão por fatorial é usada para eliminar a contagem excessiva de arranjos idênticos causados por elementos repetidos."
+        }
+      ],
+      "explanation": "Correta. A divisão pelo fatorial de um número é necessária no cálculo de anagramas quando a palavra possui letras repetidas. Isso ocorre porque a troca de posição entre letras idênticas não gera um novo anagrama distinto, e a divisão corrige a contagem excessiva dessas permutações. Por exemplo, na palavra \"ANA\", os dois 'A's são indistinguíveis, então permutações que apenas trocam a posição dos 'A's não contam como anagramas diferentes.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao calcular anagramas com a restrição de que determinadas letras devem ficar juntas, qual procedimento deve ser adotado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividir o fatorial total pelo número de letras que devem permanecer juntas no anagrama",
+          "correct": false,
+          "explanation": "Incorreta. A divisão pelo fatorial de um número é utilizada para corrigir a contagem de permutações quando há letras repetidas na palavra, não para agrupar letras que devem permanecer juntas. Este procedimento não se aplica corretamente à restrição de letras adjacentes."
+        },
+        {
+          "id": "b",
+          "text": "Considerar essas letras como um único símbolo, calcular a permutação do conjunto reduzido e depois multiplicar pelas permutações internas do grupo",
+          "correct": true,
+          "explanation": "Correta. Para calcular anagramas em que um grupo de letras deve permanecer junto, o procedimento correto é tratar esse grupo como um único \"bloco\" ou \"superletra\". Primeiramente, calcula-se a permutação dos elementos (o bloco e as letras restantes) e, em seguida, multiplica-se esse resultado pelas permutações possíveis das letras *dentro* do bloco. Isso garante que o grupo se mantenha unido, mas permite a variação de sua ordem interna."
+        },
+        {
+          "id": "c",
+          "text": "Calcular normalmente todas as permutações e depois subtrair os casos em que as letras não estão adjacentes",
+          "correct": false,
+          "explanation": "Incorreta. Calcular o total de permutações e subtrair os casos indesejados (letras não adjacentes) é uma técnica válida em alguns problemas de combinatória, mas geralmente é mais complexa e trabalhosa do que o método de \"bloco\" para a restrição de letras juntas. Não é o procedimento padrão ou mais eficiente para essa situação específica."
+        },
+        {
+          "id": "d",
+          "text": "Fixar a primeira letra do grupo na posição inicial e permutar apenas as demais letras da palavra",
+          "correct": false,
+          "explanation": "Incorreta. Fixar a primeira letra do grupo na posição inicial limita drasticamente as possibilidades e não reflete a condição de que as letras devem ficar juntas em *qualquer* posição da palavra, movendo-se como um bloco. Além disso, não considera as permutações internas do grupo, caso as letras dentro dele possam ser rearranjadas."
+        }
+      ],
+      "explanation": "Correta. Para calcular anagramas em que um grupo de letras deve permanecer junto, o procedimento correto é tratar esse grupo como um único \"bloco\" ou \"superletra\". Primeiramente, calcula-se a permutação dos elementos (o bloco e as letras restantes) e, em seguida, multiplica-se esse resultado pelas permutações possíveis das letras *dentro* do bloco. Isso garante que o grupo se mantenha unido, mas permite a variação de sua ordem interna.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em uma palavra com letras repetidas, o que representa o denominador da fração utilizada no cálculo de anagramas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A diferença entre o total de permutações e o número de anagramas que começam com vogal",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa mistura conceitos de cálculo de anagramas com repetição e restrições de início. O denominador não tem relação com a diferença entre o total de permutações e os anagramas que começam com vogal; ele é exclusivo para lidar com a indistinguibilidade de letras repetidas."
+        },
+        {
+          "id": "b",
+          "text": "A quantidade de vezes que cada anagrama idêntico aparece ao considerar todas as permutações possíveis",
+          "correct": true,
+          "explanation": "Correta. Em permutações com repetição, o denominador (o produto dos fatoriais das quantidades de cada letra repetida) representa o número de vezes que cada anagrama *distinto* seria gerado se as letras repetidas fossem tratadas como diferentes. Ao dividir pelo fatorial dessas repetições, estamos \"descontando\" as permutações internas das letras idênticas que não resultam em um novo anagrama visualmente distinto."
+        },
+        {
+          "id": "c",
+          "text": "O número total de anagramas distintos que podem ser formados com a palavra original",
+          "correct": false,
+          "explanation": "Incorreta. O número total de anagramas distintos é o resultado final da operação, ou seja, o quociente da divisão (o numerador dividido pelo denominador), e não apenas o denominador. O denominador serve para ajustar a contagem, eliminando as repetições."
+        },
+        {
+          "id": "d",
+          "text": "O número de posições disponíveis para alocar as letras repetidas na formação dos anagramas",
+          "correct": false,
+          "explanation": "Incorreta. O denominador não indica o número de posições disponíveis. Ele quantifica as permutações internas de letras idênticas que, se consideradas distintas, levariam a uma contagem exagerada do número de anagramas."
+        }
+      ],
+      "explanation": "Correta. Em permutações com repetição, o denominador (o produto dos fatoriais das quantidades de cada letra repetida) representa o número de vezes que cada anagrama *distinto* seria gerado se as letras repetidas fossem tratadas como diferentes. Ao dividir pelo fatorial dessas repetições, estamos \"descontando\" as permutações internas das letras idênticas que não resultam em um novo anagrama visualmente distinto.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Quando um problema solicita anagramas em que vogais e consoantes devem alternar posições, sem especificar a ordem inicial, qual procedimento é correto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular apenas os casos iniciando com vogal, pois a alternância naturalmente contempla todas as possibilidades",
+          "correct": false,
+          "explanation": "Incorreta. Se a ordem inicial não é especificada, significa que tanto a sequência \"vogal-consoante-vogal...\" quanto a sequência \"consoante-vogal-consoante...\" são válidas, desde que a estrutura da palavra permita ambas. Calcular apenas os casos que iniciam com vogal ignoraria uma parte significativa das possibilidades."
+        },
+        {
+          "id": "b",
+          "text": "Permutar vogais e consoantes separadamente, multiplicar os resultados e dividir por dois para eliminar duplicações",
+          "correct": false,
+          "explanation": "Incorreta. Permutar vogais e consoantes separadamente e multiplicar os resultados é um passo correto. No entanto, dividir por dois para \"eliminar duplicações\" não é o método apropriado para a alternância. A divisão por dois seria relevante se houvesse uma simetria exata que tornasse um padrão idêntico ao outro, o que não é o caso aqui."
+        },
+        {
+          "id": "c",
+          "text": "Fixar as vogais em posições ímpares e as consoantes em posições pares, calculando apenas essa configuração",
+          "correct": false,
+          "explanation": "Incorreta. Fixar as vogais em posições ímpares e as consoantes em posições pares é uma restrição específica de posição, que não abrange todas as formas de alternância. A alternância pode começar tanto com vogal quanto com consoante, e as posições ímpares/pares podem ser ocupadas por qualquer um dos grupos, dependendo da letra inicial."
+        },
+        {
+          "id": "d",
+          "text": "Calcular os anagramas começando com vogal e depois multiplicar por dois para incluir os casos iniciando com consoante",
+          "correct": true,
+          "explanation": "Correta. Quando a ordem inicial (vogal ou consoante) não é especificada, é necessário considerar ambas as possibilidades. Calcula-se o número de anagramas que começam com vogal (seguindo o padrão alternado) e, em seguida, multiplica-se esse resultado por dois para incluir o número de anagramas que começam com consoante (seguindo o mesmo padrão alternado), desde que a quantidade de vogais e consoantes permita ambas as configurações."
+        }
+      ],
+      "explanation": "Correta. Quando a ordem inicial (vogal ou consoante) não é especificada, é necessário considerar ambas as possibilidades. Calcula-se o número de anagramas que começam com vogal (seguindo o padrão alternado) e, em seguida, multiplica-se esse resultado por dois para incluir o número de anagramas que começam com consoante (seguindo o mesmo padrão alternado), desde que a quantidade de vogais e consoantes permita ambas as configurações.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao calcular anagramas com restrições de posição inicial e final simultaneamente, qual é a abordagem correta?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Somar as possibilidades de cada extremidade e multiplicar pelo fatorial das letras intermediárias",
+          "correct": false,
+          "explanation": "Incorreta. Somar as possibilidades de cada extremidade é um erro conceitual em combinatória, pois as escolhas para a posição inicial e final são eventos sequenciais e independentes, que devem ser multiplicados, não somados. O Princípio Multiplicativo é fundamental para esses casos."
+        },
+        {
+          "id": "b",
+          "text": "Calcular o fatorial total e subtrair os casos em que as restrições não são atendidas",
+          "correct": false,
+          "explanation": "Incorreta. Embora a técnica de calcular o total e subtrair os casos indesejados (Princípio da Inclusão-Exclusão ou contagem complementar) seja válida em combinatória, ela geralmente é mais complexa e menos direta do que a aplicação do Princípio Multiplicativo para restrições de posição inicial e final. A abordagem direta (alternativa 'a') é mais eficiente e menos suscetível a erros para este tipo de problema."
+        },
+        {
+          "id": "c",
+          "text": "Fixar primeiro a letra final, calcular todas as permutações, e depois dividir pelo número de possibilidades da posição inicial",
+          "correct": false,
+          "explanation": "Incorreta. Fixar apenas a letra final e calcular \"todas as permutações\" é um erro, pois as letras restantes também têm restrições. Além disso, dividir pelo número de possibilidades da posição inicial não é um procedimento matemático válido para resolver esse tipo de problema. O Princípio Multiplicativo é o mais adequado."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar o número de opções para a posição inicial pelo número de opções para a posição final, depois permutar as letras restantes considerando eventuais repetições",
+          "correct": true,
+          "explanation": "Correta. A abordagem mais eficiente e correta para restrições simultâneas de posição inicial e final é aplicar o Princípio Multiplicativo. Primeiro, determina-se o número de opções para a posição inicial e o número de opções para a posição final. Em seguida, calcula-se a permutação das letras restantes (que ocupam as posições intermediárias), levando em conta quaisquer repetições entre elas. O produto desses três valores (opções iniciais * opções finais * permutações do meio) fornece o total de anagramas com as restrições."
+        }
+      ],
+      "explanation": "Correta. A abordagem mais eficiente e correta para restrições simultâneas de posição inicial e final é aplicar o Princípio Multiplicativo. Primeiro, determina-se o número de opções para a posição inicial e o número de opções para a posição final. Em seguida, calcula-se a permutação das letras restantes (que ocupam as posições intermediárias), levando em conta quaisquer repetições entre elas. O produto desses três valores (opções iniciais * opções finais * permutações do meio) fornece o total de anagramas com as restrições.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Para determinar que porcentagem do total de anagramas satisfaz determinada condição, qual operação deve ser realizada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular a razão entre o total de anagramas e os anagramas com a condição, depois subtrair de cem",
+          "correct": false,
+          "explanation": "Incorreta. Calcular a razão entre o total de anagramas e os anagramas com a condição (total/parte) e depois subtrair de cem não corresponde ao método correto para encontrar a porcentagem da parte em relação ao todo. A razão deve ser parte/total."
+        },
+        {
+          "id": "b",
+          "text": "Subtrair o número de anagramas com a condição do total e dividir por cem",
+          "correct": false,
+          "explanation": "Incorreta. Subtrair o número de anagramas que satisfazem a condição do total e dividir por cem não resulta em uma porcentagem significativa da parte em relação ao todo. Essa operação não segue a definição de cálculo percentual."
+        },
+        {
+          "id": "c",
+          "text": "Dividir o número de anagramas que satisfazem a condição pelo total de anagramas possíveis, multiplicando o resultado por cem",
+          "correct": true,
+          "explanation": "Correta. Para determinar a porcentagem que uma parte representa de um todo, a operação fundamental é dividir o valor da parte pelo valor do todo e, em seguida, multiplicar o resultado por 100. Isso expressa a proporção em uma escala percentual."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar o número de anagramas com a condição pelo total de anagramas e dividir por cem",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o número de anagramas que satisfazem a condição pelo total de anagramas resultaria em um valor muito maior do que o total, não representando uma porcentagem. A divisão por cem após essa multiplicação também não corrigiria o erro conceitual."
+        }
+      ],
+      "explanation": "Correta. Para determinar a porcentagem que uma parte representa de um todo, a operação fundamental é dividir o valor da parte pelo valor do todo e, em seguida, multiplicar o resultado por 100. Isso expressa a proporção em uma escala percentual.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Quando se forma um bloco com letras que devem ficar juntas em uma palavra, por que não se divide pelo fatorial das letras repetidas que estão dentro desse bloco ao calcular a permutação do conjunto reduzido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque a divisão pelas repetições internas do bloco só deve ocorrer após multiplicar pelas permutações internas, mantendo a independência dos cálculos",
+          "correct": true,
+          "explanation": "Incorreta. A divisão pelas repetições internas do bloco é parte integrante do cálculo das permutações internas do bloco, e não uma etapa que ocorre de forma independente ou \"após multiplicar pelas permutações internas\". O cálculo de permutações internas e externas são etapas distintas, mas a divisão por repetições internas é intrínseca ao cálculo do arranjo do bloco."
+        },
+        {
+          "id": "b",
+          "text": "Porque a correção por repetição já foi aplicada no cálculo inicial do fatorial total antes de agrupar as letras",
+          "correct": false,
+          "explanation": "Incorreta. A correção por repetição é aplicada no contexto de cada cálculo de permutação (seja do conjunto total, do conjunto reduzido ou das permutações internas do bloco), e não é algo que já foi \"aplicado no cálculo inicial do fatorial total antes de agrupar as letras\" de forma a eliminar a necessidade de considerá-las posteriormente. Cada etapa de cálculo de permutação com repetição exige sua própria correção."
+        },
+        {
+          "id": "c",
+          "text": "Porque as letras dentro do bloco, mesmo repetidas, são consideradas distintas quando o bloco é tratado como símbolo único na permutação externa",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de que as letras dentro do bloco são consideradas distintas, mesmo repetidas, não é o motivo para não dividir o fatorial do conjunto reduzido. A razão é que o bloco é visto como um elemento único. As repetições internas são tratadas no cálculo da permutação interna do bloco, se houver variações possíveis."
+        },
+        {
+          "id": "d",
+          "text": "Porque ao criar o bloco, as letras repetidas dentro dele passam a ser tratadas como um único símbolo indivisível, eliminando a necessidade de correção por repetição nessa etapa",
+          "correct": false,
+          "explanation": "Correta. Quando um bloco de letras é formado para que permaneça junto, ele é tratado como uma única unidade ou símbolo distinto no cálculo das permutações externas. As letras repetidas que estão *dentro* desse bloco não causam divisões no fatorial do conjunto reduzido (o bloco mais as outras letras), pois o bloco, como um todo, já é considerado um elemento único e indivisível. A correção por repetições internas ao bloco é aplicada apenas nas permutações *dentro* do próprio bloco."
+        }
+      ],
+      "explanation": "Incorreta. A divisão pelas repetições internas do bloco é parte integrante do cálculo das permutações internas do bloco, e não uma etapa que ocorre de forma independente ou \"após multiplicar pelas permutações internas\". O cálculo de permutações internas e externas são etapas distintas, mas a divisão por repetições internas é intrínseca ao cálculo do arranjo do bloco.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Ao calcular anagramas onde vogais devem estar em posições alternadas com consoantes, e tanto vogais quanto consoantes possuem letras repetidas, qual é o procedimento completo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular o fatorial total, dividir pelas repetições de vogais e consoantes, e multiplicar pelo número de posições alternadas possíveis",
+          "correct": false,
+          "explanation": "Incorreta. Calcular o fatorial total da palavra e dividir pelas repetições de vogais e consoantes resultaria no número total de anagramas sem qualquer restrição de alternância. Multiplicar esse valor pelo \"número de posições alternadas possíveis\" é uma abordagem imprecisa e não se alinha com o método combinatório para alternância de grupos."
+        },
+        {
+          "id": "b",
+          "text": "Permutar vogais e consoantes sem considerar repetições, multiplicar os resultados, dividir por dois e depois dividir pelo produto das repetições",
+          "correct": false,
+          "explanation": "Incorreta. Permutar vogais e consoantes sem considerar repetições levaria a uma superestimação do número de anagramas, pois não descontaria os arranjos idênticos causados pelas letras repetidas. A divisão por dois e depois pelo produto das repetições de forma genérica não é o método correto para lidar com as repetições em cada grupo."
+        },
+        {
+          "id": "c",
+          "text": "Permutar as vogais dividindo por suas repetições, permutar as consoantes dividindo por suas repetições, multiplicar os dois resultados e depois multiplicar por dois para contemplar as duas ordens de alternância possíveis",
+          "correct": true,
+          "explanation": "Correta. O procedimento envolve três passos principais: primeiro, calcula-se o número de permutações das vogais entre si, considerando quaisquer repetições entre elas. Segundo, calcula-se o número de permutações das consoantes entre si, também considerando suas repetições. O produto desses dois resultados representa as formas de arranjar vogais e consoantes internamente. Por fim, multiplica-se esse produto por dois, pois a sequência alternada pode começar com uma vogal (V C V C...) ou com uma consoante (C V C V...), desde que o número de vogais e consoantes permita ambas as configurações de alternância."
+        },
+        {
+          "id": "d",
+          "text": "Fixar as vogais em posições específicas, permutar as consoantes nas posições restantes dividindo por suas repetições, e depois somar com o caso inverso",
+          "correct": false,
+          "explanation": "Incorreta. Fixar as vogais em posições específicas e permutar as consoantes nas restantes é uma abordagem que restringe excessivamente as possibilidades e não cobre todos os arranjos alternados possíveis. O método mais eficaz e completo é calcular as permutações internas de cada grupo e depois considerar as ordens de alternância."
+        }
+      ],
+      "explanation": "Correta. O procedimento envolve três passos principais: primeiro, calcula-se o número de permutações das vogais entre si, considerando quaisquer repetições entre elas. Segundo, calcula-se o número de permutações das consoantes entre si, também considerando suas repetições. O produto desses dois resultados representa as formas de arranjar vogais e consoantes internamente. Por fim, multiplica-se esse produto por dois, pois a sequência alternada pode começar com uma vogal (V C V C...) ou com uma consoante (C V C V...), desde que o número de vogais e consoantes permita ambas as configurações de alternância.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "07_193562_Análise Combinatória VII.pdf",
+  "coletado_em": "2026-09-23T21:02:20"
+}

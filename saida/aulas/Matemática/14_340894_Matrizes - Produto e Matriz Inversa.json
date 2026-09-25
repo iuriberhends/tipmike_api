@@ -1,0 +1,597 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 14,
+  "ordem_no_curso": "137.00",
+  "titulo": "Matrizes - Produto e Matriz Inversa",
+  "codigo_aula": "340894",
+  "video_id": "MRxyaSECEpI=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:34:55",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/MRxyaSECEpI%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408807%2C408810%2C408811%2C425185%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Matrizes - Produto e Matriz Inversa\n\n## Introdução e retomada\nVamos dar continuidade à nossa aula de Matemática 2022. Estamos vendo matrizes, certo? Deve ser nosso último vídeo de matrizes agora, porque é um desafio que ficou da aula passada. Quem está ao vivo pode ir acompanhando e mandando perguntas no chat que eu respondo.\n\nNós já vimos adição, subtração, classificação das matrizes, multiplicação e igualdade de matrizes. Agora eu trouxe um novo desafio, muito legal. Vem comigo.\n\n## Desafio: produto A·A^T e soma dos elementos\nSeja a matriz A de ordem 2×2. Vamos considerar B = A·A^T, ou seja, B é o produto da matriz A pela sua transposta. A questão pede: determine a soma de todos os elementos da matriz B. Beleza?\n\nPrimeiro, relembrando: a transposta troca linha por coluna. Então, se A é\na b\nc d\na transposta A^T será\na c\nb d\n\nLogo, B = A·A^T é:\n- Primeiro elemento (linha 1, coluna 1): a·a + b·b = a^2 + b^2\n- Segundo elemento (linha 1, coluna 2): a·c + b·d\n- Terceiro elemento (linha 2, coluna 1): c·a + d·b\n- Quarto elemento (linha 2, coluna 2): c·c + d·d = c^2 + d^2\n\nEscrevendo B de forma organizada:\n[a^2 + b^2, a·c + b·d\n c·a + d·b, c^2 + d^2]\n\nAgora, a questão pede a soma de todos os elementos de B. Vamos somar:\n(a^2 + b^2) + (a·c + b·d) + (c·a + d·b) + (c^2 + d^2)\n\nObserve que a·c + c·a = 2ac, e b·d + d·b = 2bd. Então a soma fica:\na^2 + b^2 + c^2 + d^2 + 2ac + 2bd\n\nRepare que:\n- a^2 + 2ac + c^2 = (a + c)^2\n- b^2 + 2bd + d^2 = (b + d)^2\n\nEntão a soma total dos elementos de B é:\n(a + c)^2 + (b + d)^2\n\nPerfeito. Encontramos os quatro elementos e somamos de maneira organizada. A resposta final para a soma é (a + c)^2 + (b + d)^2.\n\n## Produto de matrizes: exemplo prático\nVamos a um exemplo de multiplicação de matrizes. Eu quero A·B, não B·A, porque multiplicação de matrizes não possui a propriedade comutativa, lembra disso?\n\nConsidere:\nA =\n3 2\n0 1\n\ne\nB =\n0 1 2\n1 0 2\n\nVamos multiplicar A (2×2) por B (2×3), resultando em uma matriz 2×3. Faço os “pontilhados” mentalmente: linha de A com coluna de B.\n\n- Elemento (1,1): 3·0 + 2·1 = 0 + 2 = 2\n- Elemento (1,2): 3·1 + 2·0 = 3 + 0 = 3\n- Elemento (1,3): 3·2 + 2·2 = 6 + 4 = 10\n- Elemento (2,1): 0·0 + 1·1 = 0 + 1 = 1\n- Elemento (2,2): 0·1 + 1·0 = 0 + 0 = 0\n- Elemento (2,3): 0·2 + 1·2 = 0 + 2 = 2\n\nMatriz resultante:\n2 3 10\n1 0 2\n\nBem tranquilo. Show de bola.\n\n## Matriz inversa: ideia geral e condições\nAgora, vamos para um assunto muito importante: matriz inversa. Vou fazer primeiro do jeito convencional. É trabalhoso, mas é bom saber, porque cai em questões teóricas.\n\nA analogia com números: o inverso de 2 é 1/2; de a é a^(-1) = 1/a (quando a ≠ 0). Não existe inverso de zero, porque não existe divisão por zero.\n\nCom matrizes, a matriz inversa A^(-1) é aquela que satisfaz:\nA·A^(-1) = I\n\nonde I é a matriz identidade (diagonal principal com 1 e demais elementos 0). Importante: só existe inversa para matrizes quadradas e com determinante diferente de zero.\n\n> 🎯 **Dicas de prova:** Para existir inversa, a matriz deve ser quadrada e seu determinante deve ser diferente de zero.\n\nIdentidade 2×2 é:\n1 0\n0 1\n\nResumindo as condições para A ter inversa:\n- A é quadrada.\n- det(A) ≠ 0.\n\nO determinante de uma matriz 2×2 é simples: para\na b\nc d\ntemos det(A) = ad − bc.\n\n## Cálculo da inversa (método convencional via igualdade A·A^(-1) = I)\nVamos calcular a inversa de\nA =\n4 1\n3 0\n\nPrimeiro, verifique as condições:\n- É 2×2 (quadrada).\n- det(A) = 4·0 − 1·3 = −3 ≠ 0. Então possui inversa.\n\nAgora, pelo método convencional:\nSeja A^(-1) =\na b\nc d\n\nImponha A·A^(-1) = I:\n4 1   a b   =   1 0\n3 0   c d       0 1\n\nMultiplicando:\n- (1,1): 4a + 1c = 1\n- (1,2): 4b + 1d = 0\n- (2,1): 3a + 0c = 0\n- (2,2): 3b + 0d = 1\n\nSistema:\n1) 4a + c = 1\n2) 4b + d = 0\n3) 3a = 0\n4) 3b = 1\n\nDe 3): a = 0. De 4): b = 1/3.\nDe 1): 4·0 + c = 1 → c = 1.\nDe 2): 4·(1/3) + d = 0 → d = −4/3.\n\nLogo,\nA^(-1) =\n0     1/3\n1   −4/3\n\nTrabalhoso? Sim, mas garantido e ajuda a entender igualdade de matrizes e geração de sistemas.\n\n## Observações finais e método prático\nIsso aqui é o jeito convencional, importante para teoria e para algumas provas. Em muitas questões práticas, usamos um método mais direto para 2×2:\nSe A =\na b\nc d\ncom det(A) = ad − bc ≠ 0, então\nA^(-1) = (1/det(A)) ·\n d  −b\n−c   a\n\nNesse exemplo:\ndet(A) = −3\nCofatores trocando a↔d e sinal de b,c:\n 0  −1\n−3   4\nMultiplicando por 1/(−3):\n0     1/3\n1   −4/3\nque bate com o que encontramos pelo método convencional.\n\n> 🎯 **Dicas de prova:** Para matrizes 2×2, memorize a forma fechada da inversa: A^(-1) = (1/(ad − bc))·[d, −b; −c, a], com ad − bc ≠ 0.\n\nFica a dica: em questões teóricas, podem pedir as condições de existência da inversa e a relação A·A^(-1) = I. Em questões práticas, para 2×2, use a fórmula direta. Vou voltar daqui a pouco com mais exercícios para consolidar e fechar a parte de matriz inversa. Não saiam daí!",
+  "transcricao_meta": {
+    "title": "Matrizes - Produto e Matriz Inversa",
+    "subject": "Conhecimentos Específicos",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 27879,
+    "createdAt": "2026-02-05T18:55:10.608Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: produto de matrizes (incluindo com transposta), matriz identidade, determinante 2×2, condições de inversibilidade e cálculo da matriz inversa (método convencional e atalho para 2×2).\nPrincipais pontos:\n- A multiplicação de matrizes não é comutativa.\n- Inversa só existe para matrizes quadradas com det ≠ 0.\n- Fórmula prática para inversa 2×2: trocar diagonal principal, mudar o sinal da secundária e dividir por det(A).\n\n## 1. Base / Conceitos Fundamentais\n- **Matriz**: arranjo retangular de números. Ordem m×n (m linhas, n colunas).\n- **Matriz quadrada**: n×n.\n- **Diagonal principal**: do canto superior esquerdo ao inferior direito.\n- **Diagonal secundária**: do canto superior direito ao inferior esquerdo.\n- **Matriz identidade (I)**: quadrada; 1 na diagonal principal e 0 fora dela. É o neutro da multiplicação.\n- **Matriz transposta (A^T)**: obtida trocando linhas por colunas.\n- **Determinante 2×2**: para A = [a b; c d], det(A) = ad − bc.\n- **Matriz inversa (A^{-1})**: matriz tal que A·A^{-1} = I e A^{-1}·A = I.\n\n## 2. Como Funciona / Distinções\n- **Multiplicação de matrizes**:\n  - Definida quando o nº de colunas de A = nº de linhas de B.\n  - Elemento (i, j) de A·B: produto escalar da i-ésima linha de A com a j-ésima coluna de B.\n  - Não é comutativa: em geral, A·B ≠ B·A.\n- **Transposta vs Inversa**:\n  - A^T reorganiza elementos; A^{-1} “desfaz” A na multiplicação.\n  - Em geral, A^T ≠ A^{-1}.\n- **Condição de inversibilidade**:\n  - Necessária: ser quadrada.\n  - Suficiente (para existir inversa): det(A) ≠ 0.\n  - Se det(A) = 0 → matriz singular → não possui inversa.\n\n> Dica de prova: Antes de qualquer conta de inversa, cheque: é quadrada? det ≠ 0?\n\n## 3. Aplicação Prática / Técnicas\n- **Multiplicação de matrizes (procedimento rápido)**:\n  - Regra: “linha de A com coluna de B”.\n  - Some os produtos correspondentes para cada posição de cruzamento.\n- **Produto com a transposta**:\n  - A·A^T é sempre simétrica: (i, j) = (j, i).\n- **Determinante 2×2**:\n  - ad − bc (produto da diagonal principal menos o da secundária).\n- **Inversa 2×2 (método prático)**:\n  - Se det(A) ≠ 0 e A = [a b; c d], então:\n    - A^{-1} = (1/det(A)) · [d −b; −c a].\n  - Macete: “troca a diagonal principal; muda o sinal da secundária; divide por det”.\n- **Inversa (método convencional/algebraico)**:\n  - Suponha A^{-1} = [A B; C D].\n  - Monte A·A^{-1} = I.\n  - Faça a multiplicação e iguale elemento a elemento (igualdade de matrizes).\n  - Resolva o sistema para A, B, C, D.\n\n> Dica de prova: Se a banca pedir o “procedimento”, use o método convencional. Se só pedir o resultado e for 2×2, aplique o atalho.\n\n## 4. Exemplos e Casos Resolvidos\n- **Produto A·B**:\n  - A = [3 2; 0 1], B = [0 1; 2 1].\n  - (1,1): 3·0 + 2·2 = 4\n  - (1,2): 3·1 + 2·1 = 5\n  - (2,1): 0·0 + 1·2 = 2\n  - (2,2): 0·1 + 1·1 = 1\n  - Resultado: [4 5; 2 1]\n\n> Dica de prova: Atenção à ordem A·B. Trocar a ordem altera o resultado.\n\n- **Produto A·A^T (A = [a b; c d])**:\n  - A^T = [a c; b d]\n  - A·A^T = [a^2 + b^2, ab + cd; ab + cd, c^2 + d^2] (simétrica).\n  - Soma dos elementos: (a^2 + b^2) + (c^2 + d^2) + 2(ab + cd).\n    - Pode reorganizar usando quadrados notáveis:\n      - (a + c)^2 = a^2 + 2ac + c^2\n      - (b + d)^2 = b^2 + 2bd + d^2\n\n- **Inversa 2×2 (método convencional)**:\n  - A = [4 1; 3 0]; det(A) = 4·0 − 1·3 = −3 ≠ 0 → inversível.\n  - Suponha A^{-1} = [A B; C D] e imponha A·A^{-1} = I:\n    - 4A + 1C = 1\n    - 4B + 1D = 0\n    - 3A + 0C = 0 → A = 0\n    - 3B + 0D = 1 → B = 1/3\n    - C = 1\n    - D = −4/3\n  - A^{-1} = [0 1/3; 1 −4/3]\n  - Conferindo pelo atalho:\n    - A^{-1} = (1/−3) · [0 −1; −3 4] = [0 1/3; 1 −4/3].\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir A^T com A^{-1}: são operações diferentes.\n- Tentar inverter matriz não quadrada: impossível.\n- Ignorar o determinante: se det = 0, não há inversa.\n- Erros de ordem na multiplicação: A·B ≠ B·A, e a compatibilidade de dimensões importa.\n- Sinais na inversa 2×2: esquece de trocar sinais da diagonal secundária.\n- Determinante 2×2: inverter a regra; lembre-se: ad − bc (não bc − ad).\n\n> Dica de prova: Ao pedir “calcule a inversa”, muitas bancas testam antes se você valida det ≠ 0. Perde-se tempo tentando inverter matriz singular.\n\n> Dica de prova: A·A^T é sempre simétrica. Se o resultado não for simétrico, há erro de conta.",
+  "resumo_bolso": "# Matrizes - Produto e Matriz Inversa\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Matriz m×n**: arranjo retangular; m linhas, n colunas.\n* **Matriz quadrada**: n×n.\n* **Diagonal principal**: do canto sup. esquerdo ao inf. direito.\n* **Diagonal secundária**: do canto sup. direito ao inf. esquerdo.\n* **Matriz identidade (I)**: quadrada; 1 na diagonal principal e 0 fora dela; neutro da multiplicação.\n* **Matriz transposta (Aᵀ)**: obtida trocando linhas por colunas.\n* **Determinante 2×2**: A = [a b; c d] ⇒ det(A) = ad − bc.\n* **Matriz inversa (A⁻¹)**: A·A⁻¹ = I e A⁻¹·A = I; só existe se A for quadrada e det(A) ≠ 0.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Transposta (Aᵀ) vs Inversa (A⁻¹)\n\n| Aspecto         | Aᵀ                         | A⁻¹                                  |\n|-----------------|---------------------------|--------------------------------------|\n| Operação        | Reorganiza elementos      | “Desfaz” A na multiplicação         |\n| Existência      | Sempre existe             | Só se A for quadrada e det(A) ≠ 0   |\n| Relação geral   | Em geral Aᵀ ≠ A⁻¹         | Em geral A⁻¹ ≠ Aᵀ                    |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Produto de Matrizes**\n\n* **Aplicação**: A(m×n)·B(n×p) definido se nº de colunas de A = nº de linhas de B.\n* **Regra**: (A·B)ᵢⱼ = (linha i de A) · (coluna j de B) = Σₖ aᵢₖ·bₖⱼ.\n* **Propriedades**:\n  * Não comutativo: em geral A·B ≠ B·A.\n\n**2. Produto com Transposta**\n\n* **Aplicação**: A·Aᵀ.\n* **Regra**: A·Aᵀ é sempre **simétrica**: (i, j) = (j, i).\n* **Exemplo**: A = [a b; c d] ⇒  \n  Aᵀ = [a c; b d]  \n  A·Aᵀ = [a² + b², ab + cd; ab + cd, c² + d²] (simétrica).\n\n**3. Determinante 2×2**\n\n* **Regra**: A = [a b; c d] ⇒ det(A) = ad − bc (diag. principal − diag. secundária).\n\n**4. Condição de Inversibilidade**\n\n* Necessária: A quadrada.  \n* Suficiente: det(A) ≠ 0.  \n* det(A) = 0 ⇒ matriz singular ⇒ não possui inversa.\n\n**5. Inversa 2×2 – Fórmula Prática**\n\n* **Aplicação**: A = [a b; c d], det(A) ≠ 0.\n* **Regra**:  \n  A⁻¹ = (1/det(A)) · [d  −b; −c  a].  \n* Macete do resumo: “troca a diagonal principal; muda o sinal da secundária; divide por det”.\n\n**6. Inversa 2×2 – Método Convencional**\n\n* Suponha A⁻¹ = [A B; C D].\n* Monte A·A⁻¹ = I.\n* Faça a multiplicação e iguale elemento a elemento.\n* Resolva o sistema para A, B, C, D.\n* **Exemplo**:  \n  A = [4 1; 3 0]; det(A) = 4·0 − 1·3 = −3 ≠ 0.  \n  Suponha A⁻¹ = [A B; C D] e imponha A·A⁻¹ = I:  \n  4A + 1C = 1  \n  4B + 1D = 0  \n  3A + 0C = 0 → A = 0  \n  3B + 0D = 1 → B = 1/3  \n  C = 1  \n  D = −4/3  \n  A⁻¹ = [0 1/3; 1 −4/3].\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir Aᵀ com A⁻¹: são operações diferentes; em geral Aᵀ ≠ A⁻¹.\n* Tentar inverter matriz não quadrada: impossível.\n* Ignorar o determinante: se det = 0, não há inversa.\n* Erros de ordem na multiplicação: A·B ≠ B·A, e a compatibilidade de dimensões importa.\n* Determinante 2×2: inverter a regra; lembre-se: ad − bc (não bc − ad).\n\n---\n\n## 📋 Checklist Final\n\n* Sei aplicar a regra “linha de A com coluna de B” e checar se nº colunas de A = nº linhas de B?\n* Lembro que a multiplicação de matrizes **não é comutativa** (A·B ≠ B·A)?\n* Sei identificar rapidamente se uma matriz **pode** ter inversa (é quadrada e det(A) ≠ 0)?\n* Memorizei a fórmula da **inversa 2×2** (trocar diagonal principal, mudar sinais da secundária, dividir por det(A))?\n* Sei distinguir claramente **Aᵀ** de **A⁻¹** em enunciados?",
+  "mapa_mental": "# 🧮 Matrizes: Produto e Inversa\n## 🎯 Fundamentos de Matrizes\n### 💡 Conceitos básicos\n- Matriz m×n\n- Matriz quadrada\n- Linhas e colunas\n- Ordem da matriz\n### 🧾 Diagonais principais\n- Diagonal principal\n- Diagonal secundária\n- Elementos diagonais\n- Fora da diagonal\n### 🆔 Matriz identidade\n- Matriz quadrada\n- Uns na principal\n- Zeros fora\n- Elemento neutro\n### 🔁 Matriz transposta\n- Troca linhas\n- Vira colunas\n- Notação Aᵀ\n- Ordem n×m\n### 📐 Determinante 2×2\n- Fórmula ad − bc\n- Matriz 2×2\n- Valor escalar\n- Sinal importante\n\n## 🔢 Produto de Matrizes\n### 🧮 Definição produto\n- Condição colunas=linhas\n- A m×n, B n×p\n- Resultado m×p\n- Compatibilidade dimensões\n### 📊 Cálculo elemento\n- Linha de A\n- Coluna de B\n- Produtos correspondentes\n- Soma dos produtos\n### 🚫 Não comutatividade\n- Geral A·B ≠ B·A\n- Ordem importa\n- Dimensões diferentes\n- Produto pode não existir\n### 🔁 Produto com transposta\n- A·Aᵀ definido\n- Matriz simétrica\n- Elementos (i,j)=(j,i)\n- Verificação de erro\n\n## 🔄 Matriz Inversa\n### 📖 Conceito de inversa\n- Matriz A⁻¹\n- A·A⁻¹=I\n- A⁻¹·A=I\n- Operação reversa\n### ⚖️ Condições de inversibilidade\n- Matriz quadrada\n- Determinante ≠ 0\n- det=0 singular\n- Sem inversa singular\n### 🧮 Inversa 2×2\n- A=[a b; c d]\n- det=ad−bc\n- Troca diagonal principal\n- Muda sinais secundária\n- Divide por det(A)\n### 📋 Método convencional\n- Supor A⁻¹ desconhecida\n- Produto A·A⁻¹=I\n- Igualdade elementos\n- Sistema de equações\n\n## ⚠️ Erros Frequentes\n### 🚨 Confusões conceituais\n- Confundir Aᵀ e A⁻¹\n- Inverter não quadrada\n- Ignorar determinante\n- Esquecer condição det≠0\n### 🧮 Falhas em contas\n- Trocar ordem A·B\n- Dimensões incompatíveis\n- Erro em ad−bc\n- Sinais na inversa 2×2",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Transposição Matricial",
+      "description": "Transposição Matricial — 1 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como a transposição reorganiza as linhas e colunas de uma matriz?",
+          "back": "A linha vira coluna e a coluna vira linha.",
+          "hint": "Pense na troca de eixos.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "transposicao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Produto de Matrizes",
+      "description": "Produto de Matrizes — 3 cards",
+      "cards": [
+        {
+          "id": "card-2",
+          "front": "Como se calcula cada entrada do produto de duas matrizes?",
+          "back": "Multiplicando as linhas da primeira matriz pelas colunas da segunda e somando os produtos dos elementos correspondentes.",
+          "hint": "Envolve o produto escalar de vetores.",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "produto-matricial"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual propriedade dos números não é válida, em geral, para a multiplicação de matrizes?",
+          "back": "A propriedade comutativa.",
+          "hint": "A ordem dos fatores altera o produto.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "propriedades"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-4",
+          "front": "Como se expressa a soma dos elementos de uma matriz produto formada por uma matriz e sua transposta?",
+          "back": "O quadrado da soma dos elementos da matriz original (e variações equivalentes de quadrados da soma).",
+          "hint": "Relacionado a produtos notáveis.",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "produto-matricial"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Matriz Inversa",
+      "description": "Matriz Inversa — 6 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual relação define a matriz inversa de uma matriz quadrada?",
+          "back": "A matriz multiplicada pela sua inversa resulta na matriz identidade ($A \\cdot A^{-1} = I$).",
+          "hint": "O resultado é o elemento neutro.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-inversa"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Quais valores aparecem na diagonal principal da matriz identidade?",
+          "back": "Todos iguais a **um** (e os demais iguais a zero).",
+          "hint": "É a matriz identidade.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-identidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual formato uma matriz deve ter para possuir uma matriz inversa?",
+          "back": "Ser uma matriz **quadrada**.",
+          "hint": "Número de linhas igual ao de colunas.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-inversa"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual condição deve satisfazer o determinante para existir a matriz inversa?",
+          "back": "O determinante deve ser **diferente de zero**.",
+          "hint": "Condição de não singularidade.",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "determinante"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Como é calculado o determinante de uma matriz de ordem dois?",
+          "back": "Multiplicando os elementos da diagonal principal menos a multiplicação dos elementos da diagonal secundária.",
+          "hint": "Regra de Sarrus simplificada.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "determinante"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Por que o determinante nulo impede a existência da matriz inversa?",
+          "back": "Porque exigiria divisão por zero, o que não existe na matemática.",
+          "hint": "Relacionado à operação de divisão.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-inversa"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Cálculo da Inversa",
+      "description": "Cálculo da Inversa — 2 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Qual matriz é introduzida como incógnita no método convencional de inversão?",
+          "back": "A matriz inversa (representada por incógnitas como $A, B, C, D$).",
+          "hint": "Representa os elementos desconhecidos.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "metodo-inversao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Em que sistema se transforma a igualdade usada no método convencional de inversão?",
+          "back": "Um **sistema de equações**.",
+          "hint": "Forma de resolver igualdades matriciais.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "metodo-inversao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a propriedade que NÃO é válida para a multiplicação de matrizes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A multiplicação de matrizes exige compatibilidade dimensional, onde o número de colunas da primeira matriz deve ser igual ao número de linhas da segunda",
+          "correct": false,
+          "explanation": "Esta afirmação é correta e descreve uma condição essencial para que a multiplicação de matrizes seja possível. Para multiplicar uma matriz A (m x n) por uma matriz B (p x q), é necessário que o número de colunas de A (n) seja igual ao número de linhas de B (p). Caso contrário, a operação não pode ser realizada."
+        },
+        {
+          "id": "b",
+          "text": "A multiplicação de matrizes é associativa, permitindo reagrupar os fatores sem alterar o resultado",
+          "correct": false,
+          "explanation": "Esta afirmação descreve uma propriedade válida da multiplicação de matrizes. A propriedade associativa significa que a ordem em que as multiplicações são realizadas não altera o produto final, desde que a sequência das matrizes seja mantida. Portanto, (A × B) × C é igual a A × (B × C)."
+        },
+        {
+          "id": "c",
+          "text": "A multiplicação de matrizes pode resultar em uma matriz com dimensões diferentes das matrizes originais",
+          "correct": false,
+          "explanation": "Esta afirmação é correta. Se uma matriz A tem dimensão m × n e uma matriz B tem dimensão n × p, o produto A × B resultará em uma matriz C de dimensão m × p. As dimensões da matriz resultante (m x p) podem ser diferentes das dimensões das matrizes originais (m x n e n x p), especialmente se m ≠ n ou n ≠ p."
+        },
+        {
+          "id": "d",
+          "text": "A multiplicação de matrizes é comutativa, ou seja, A × B sempre resulta no mesmo valor que B × A",
+          "correct": true,
+          "explanation": "Esta é a propriedade que não é válida para a multiplicação de matrizes. Ao contrário da multiplicação de números reais, a ordem dos fatores na multiplicação de matrizes geralmente importa. A × B não é necessariamente igual a B × A. Em muitos casos, B × A sequer é definida se A × B for, devido às regras de compatibilidade dimensional."
+        }
+      ],
+      "explanation": "Esta é a propriedade que não é válida para a multiplicação de matrizes. Ao contrário da multiplicação de números reais, a ordem dos fatores na multiplicação de matrizes geralmente importa. A × B não é necessariamente igual a B × A. Em muitos casos, B × A sequer é definida se A × B for, devido às regras de compatibilidade dimensional.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Como é obtida a matriz transposta de uma matriz A?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Transformando as linhas da matriz original em colunas e as colunas em linhas",
+          "correct": true,
+          "explanation": "Esta é a definição precisa de uma matriz transposta. Para obter a transposta de uma matriz A (denotada como Aᵀ), as linhas da matriz original se tornam as colunas da matriz transposta, e, consequentemente, as colunas da matriz original se tornam as linhas da matriz transposta. Por exemplo, se o elemento aᵢⱼ está na linha i e coluna j de A, ele estará na linha j e coluna i de Aᵀ."
+        },
+        {
+          "id": "b",
+          "text": "Trocando apenas os elementos da diagonal principal pelos elementos da diagonal secundária",
+          "correct": false,
+          "explanation": "Esta operação não define a matriz transposta. A transposição afeta todos os elementos da matriz, não apenas os das diagonais. Trocar elementos entre as diagonais principal e secundária é uma operação diferente, que pode ser relevante em contextos específicos, mas não para a transposta."
+        },
+        {
+          "id": "c",
+          "text": "Invertendo a ordem dos elementos em cada linha da matriz original",
+          "correct": false,
+          "explanation": "Inverter a ordem dos elementos dentro de cada linha alteraria a matriz de uma forma não padronizada e não produziria a matriz transposta. A transposição envolve a troca de papéis entre linhas e colunas, não a inversão de elementos dentro de uma linha."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicando todos os elementos da matriz por -1 e mantendo suas posições originais",
+          "correct": false,
+          "explanation": "Esta descrição corresponde à operação de obter a matriz oposta ou negativa de uma matriz, onde cada elemento é multiplicado por -1. Não se refere à transposição, que envolve a alteração da posição dos elementos."
+        }
+      ],
+      "explanation": "Esta é a definição precisa de uma matriz transposta. Para obter a transposta de uma matriz A (denotada como Aᵀ), as linhas da matriz original se tornam as colunas da matriz transposta, e, consequentemente, as colunas da matriz original se tornam as linhas da matriz transposta. Por exemplo, se o elemento aᵢⱼ está na linha i e coluna j de A, ele estará na linha j e coluna i de Aᵀ.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a característica fundamental da matriz identidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É uma matriz quadrada cujos elementos da diagonal secundária são todos iguais a 1 e os demais elementos são iguais a 0",
+          "correct": false,
+          "explanation": "Esta afirmação está incorreta. A matriz identidade padrão tem 1s na diagonal principal, não na diagonal secundária. Uma matriz com 1s na diagonal secundária e 0s em outros lugares é um tipo específico de matriz, mas não é a matriz identidade convencional."
+        },
+        {
+          "id": "b",
+          "text": "É uma matriz quadrada cujos elementos da diagonal principal são todos iguais a 1 e os demais elementos são iguais a 0",
+          "correct": true,
+          "explanation": "Esta afirmação descreve corretamente a matriz identidade. É uma matriz quadrada (mesmo número de linhas e colunas) onde todos os elementos localizados na diagonal principal (do canto superior esquerdo ao inferior direito) são iguais a 1, e todos os outros elementos fora dessa diagonal são iguais a 0. Ela atua como o elemento neutro na multiplicação de matrizes, assim como o número 1 na multiplicação de números reais."
+        },
+        {
+          "id": "c",
+          "text": "É uma matriz quadrada onde todos os elementos são iguais, formando uma estrutura simétrica uniforme",
+          "correct": false,
+          "explanation": "Esta afirmação é incorreta. Na matriz identidade, os elementos não são todos iguais. Existem 1s na diagonal principal e 0s nas demais posições, o que não forma uma estrutura onde \"todos os elementos são iguais\"."
+        },
+        {
+          "id": "d",
+          "text": "É uma matriz retangular onde todos os elementos são iguais a 1, independentemente de sua posição",
+          "correct": false,
+          "explanation": "Esta afirmação está incorreta. A matriz identidade é sempre uma matriz quadrada, e não retangular. Além disso, apenas os elementos da diagonal principal são 1; os demais elementos são 0, não todos 1."
+        }
+      ],
+      "explanation": "Esta afirmação descreve corretamente a matriz identidade. É uma matriz quadrada (mesmo número de linhas e colunas) onde todos os elementos localizados na diagonal principal (do canto superior esquerdo ao inferior direito) são iguais a 1, e todos os outros elementos fora dessa diagonal são iguais a 0. Ela atua como o elemento neutro na multiplicação de matrizes, assim como o número 1 na multiplicação de números reais.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a relação fundamental que define a matriz inversa de uma matriz A?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A multiplicação da matriz A pela sua inversa resulta na matriz identidade",
+          "correct": true,
+          "explanation": "Esta é a relação fundamental que define a matriz inversa. Para uma matriz quadrada A, sua inversa (denotada por A⁻¹) é uma matriz tal que o produto de A por A⁻¹ (e também A⁻¹ por A) resulta na matriz identidade (I). Ou seja, A × A⁻¹ = A⁻¹ × A = I. A matriz identidade atua como o \"1\" na álgebra de matrizes."
+        },
+        {
+          "id": "b",
+          "text": "A multiplicação da matriz A pela sua inversa resulta na própria matriz A elevada ao quadrado",
+          "correct": false,
+          "explanation": "Esta afirmação está incorreta. A multiplicação de uma matriz A pela sua inversa não resulta em A². A relação fundamental da inversa é que ela \"desfaz\" a operação de A, retornando à identidade, não elevando a matriz ao quadrado."
+        },
+        {
+          "id": "c",
+          "text": "A soma da matriz A com sua inversa resulta na matriz identidade",
+          "correct": false,
+          "explanation": "Esta afirmação está incorreta. A relação que define a matriz inversa é baseada na multiplicação, não na soma. A soma de uma matriz com sua inversa não resulta na matriz identidade; na verdade, a soma de uma matriz com sua oposta (ou negativa) resulta na matriz nula."
+        },
+        {
+          "id": "d",
+          "text": "A multiplicação da matriz A pela sua inversa resulta em uma matriz nula, onde todos os elementos são zero",
+          "correct": false,
+          "explanation": "Esta afirmação está incorreta. Se o produto de uma matriz pela sua inversa resultasse em uma matriz nula, isso implicaria que a matriz original não teria uma inversa no sentido usual, ou que a matriz original seria a matriz nula, o que não é o caso para a definição de inversa. A matriz nula é o elemento neutro da adição, não da multiplicação."
+        }
+      ],
+      "explanation": "Esta é a relação fundamental que define a matriz inversa. Para uma matriz quadrada A, sua inversa (denotada por A⁻¹) é uma matriz tal que o produto de A por A⁻¹ (e também A⁻¹ por A) resulta na matriz identidade (I). Ou seja, A × A⁻¹ = A⁻¹ × A = I. A matriz identidade atua como o \"1\" na álgebra de matrizes.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao multiplicar duas matrizes, como é determinado cada elemento da matriz resultante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividindo os elementos da primeira matriz pelos elementos correspondentes da segunda matriz",
+          "correct": false,
+          "explanation": "A divisão de matrizes não é uma operação definida da mesma forma que a multiplicação ou adição. Não se divide elemento por elemento. Além disso, esta descrição não tem relação com o processo de multiplicação de matrizes."
+        },
+        {
+          "id": "b",
+          "text": "Subtraindo os elementos da segunda matriz dos elementos correspondentes da primeira matriz",
+          "correct": false,
+          "explanation": "Esta descrição corresponde à operação de subtração de matrizes, onde os elementos de mesma posição são subtraídos. Assim como na adição, esta é uma operação elemento a elemento e não se aplica à multiplicação de matrizes."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicando os elementos da linha da primeira matriz pelos elementos correspondentes da coluna da segunda matriz e somando esses produtos",
+          "correct": true,
+          "explanation": "Esta é a descrição correta de como cada elemento da matriz resultante é calculado na multiplicação de matrizes. Para obter o elemento Cᵢⱼ (que está na linha i e coluna j da matriz produto C = A × B), multiplica-se cada elemento da linha i da matriz A pelos elementos correspondentes da coluna j da matriz B, e então somam-se todos esses produtos. Este método é conhecido como \"produto escalar\" entre a linha e a coluna."
+        },
+        {
+          "id": "d",
+          "text": "Somando os elementos correspondentes das duas matrizes na mesma posição",
+          "correct": false,
+          "explanation": "Esta descrição corresponde à operação de adição de matrizes, onde os elementos de mesma posição são somados. Na multiplicação de matrizes, o processo é mais complexo e envolve produtos e somas, não apenas somas diretas de elementos correspondentes."
+        }
+      ],
+      "explanation": "Esta é a descrição correta de como cada elemento da matriz resultante é calculado na multiplicação de matrizes. Para obter o elemento Cᵢⱼ (que está na linha i e coluna j da matriz produto C = A × B), multiplica-se cada elemento da linha i da matriz A pelos elementos correspondentes da coluna j da matriz B, e então somam-se todos esses produtos. Este método é conhecido como \"produto escalar\" entre a linha e a coluna.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Por que não existe a inversa de uma matriz cujo determinante é igual a zero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque matrizes com determinante zero são sempre matrizes retangulares, e apenas matrizes quadradas podem ter inversas",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Porque o cálculo da matriz inversa envolve divisão pelo determinante, e não existe divisão por zero na matemática",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Porque matrizes com determinante zero possuem todos os elementos iguais a zero, tornando impossível qualquer operação",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Porque o determinante zero indica que a matriz possui dimensões incompatíveis para o cálculo da inversa",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Quais são as duas condições necessárias para que uma matriz possua inversa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz deve ser quadrada e seu determinante deve ser diferente de zero",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "A matriz deve ser retangular e todos os seus elementos devem ser positivos",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "A matriz deve ser simétrica e a soma de seus elementos deve ser diferente de zero",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "A matriz deve ter ordem maior que 2×2 e seu determinante deve ser igual a 1",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No método convencional para calcular a matriz inversa, após estabelecer a relação A × A⁻¹ = I, qual é o procedimento matemático utilizado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcula-se o determinante da matriz e divide-se cada elemento da matriz identidade por esse valor",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Realiza-se a divisão elemento por elemento da matriz identidade pela matriz original",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Transpõe-se a matriz original e multiplica-se pela matriz identidade para obter a inversa diretamente",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Efetua-se a multiplicação de matrizes e aplica-se a igualdade de matrizes, gerando um sistema de equações lineares",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Como é calculado o determinante de uma matriz de ordem 2×2?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Soma-se o produto dos elementos da diagonal principal com o produto dos elementos da diagonal secundária",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Subtrai-se o produto dos elementos da diagonal secundária do produto dos elementos da diagonal principal",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Divide-se o produto dos elementos da diagonal principal pelo produto dos elementos da diagonal secundária",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Multiplica-se o produto dos elementos da diagonal principal pelo produto dos elementos da diagonal secundária",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando o produto B = A × A^T para uma matriz A de ordem 2×2, qual é a forma simplificada da soma de todos os elementos da matriz B?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "(a + c)² + (b + d)², agrupando elementos por colunas e aplicando produtos notáveis",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "a² + b² + c² + d² + 2(ab + cd), sem considerar os termos cruzados entre linhas diferentes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "(a + b)² + (c + d)², agrupando elementos por linhas e aplicando produtos notáveis",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "2(a² + b² + c² + d²), dobrando a soma dos quadrados de todos os elementos",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "14_340894_Matrizes - Produto e Matriz Inversa.pdf",
+  "coletado_em": "2026-09-23T21:00:10"
+}

@@ -1,0 +1,488 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 17,
+  "ordem_no_curso": "115.00",
+  "titulo": "Geometria Analítica - Equação de Reta por Determinantes",
+  "codigo_aula": "327057",
+  "video_id": "UB2WS7orJJE=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:30:29",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/UB2WS7orJJE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=425236%2C408909%2C403878%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Geometria Analítica - Equação de Reta por Determinantes\n\n## Introdução e Aquecimento com Determinantes para Área de Triângulo\nVamos treinar um pouco mais. Vem comigo. Solta aqui, Pixote. Show. Queria treinar o cálculo da área do triângulo por determinantes. Não fizeram sobre coeficientes? Então vamos devagar, devagar e sempre. Vamos calcular áreas de triângulos que tenham os vértices dados.\n\nVamos treinar para calcular a área. Vou copiar aqui as coordenadas: (4, 0), (0, 6) e (1, 0). Beleza? Montamos a matriz:\n\n[ 4  0  1 ]  \n[ 0  6  1 ]  \n[ 0  0  1 ]\n\nAgora eu vou repetir as duas primeiras colunas ao lado. Beleza? Sabendo que esse determinante tem que ser diferente de zero. Pode ser zero? Não, porque se der zero, nós não teremos área. Então, com certeza, esse determinante tem que ser diferente de zero, correto? Se ele for igual a zero é porque os pontos são colineares, beleza? Então, se a questão pedir a área do triângulo, obrigatoriamente o determinante não pode ser zero. Jamais.\n\nVem comigo. Olha só: da esquerda para a direita primeiro. Depois o outro sentido. Explicando: 0 vezes 4 vezes 1 dá 0, mais... 0 vezes 1 vezes 0 dá 0, mais 1 vezes 0 vezes 6 dá 6. Menos (sempre menos no sentido contrário): 1 vezes 0 vezes 0 dá 0, mais 4 vezes 1 vezes 0 dá 0, mais 0 vezes 6 vezes 1 dá 0. No final vai dar 6? Calma, vamos fechar direitinho:\n\n- Indo: 4·6·1 = 24; os outros produtos dão 0.  \n- Voltando: 1·6·0 = 0; 1·0·4 = 0; 1·0·0 = 0.\n\nEntão o determinante dá 24. Só que, pelo desenvolvimento que fiz aqui, ficou com sinal negativo no retorno: menos 24. Correto: 24 em módulo.\n\nSó que nós queremos a área desse triângulo formado por esses vértices. A fórmula da área é o módulo do determinante sobre 2. Aqui nós temos −24. O módulo de −24 sobre 2 dá 24/2 = 12. Então essa área é 12 unidades de área, correto? Essa é a resposta: 12. Show de bola. Vamos para a próxima questão.\n\n## Segunda Questão de Área por Determinantes\nInteressante também essa questão. Ela pede para a gente determinar a área do triângulo pelos mesmos passos.\n\nMontemos os pontos e a matriz. Vou só organizar: três pontos, por exemplo (3, 2), (5, 1), (−2, 6). Completa com 1 na terceira coluna. Repito as duas primeiras colunas e aplico a regra de Sarrus.\n\nIndo no sentido principal:  \n- 3·1·1 = 3  \n- 2·(−2)·1 = −4  \n- 1·5·6 = 30  \nSoma: 3 − 4 + 30 = 29\n\nVoltando no sentido contrário:  \n- 1·1·(−2) = −2  \n- 3·6·1 = 18  \n- 2·5·1 = 10  \nSoma: −2 + 18 + 10 = 26\n\nDeterminante: 29 − 26 = 3.\n\nÁrea = |3|/2 = 3/2 unidades de área. Beleza? Bem tranquila. Só confere os produtos: tudo certo. Show de bola.\n\n## Terceira Questão: Triângulo Retângulo e Área por Determinantes\nPróxima questão, questão 3. Essa é interessante: os pontos (2, 3), (5, 3) e (2, 7) são vértices de um triângulo retângulo. Beleza. Podemos fazer por geometria plana? Poderíamos, mas vamos fazer por determinantes, que fica prático.\n\nPontos: (2, 3), (5, 3), (2, 7). Copio as duas primeiras colunas à frente e aplico Sarrus.\n\nIndo:  \n- 2·3·1 = 6  \n- 3·2·1 = 6  \n- 1·5·7 = 35  \nSoma: 6 + 6 + 35 = 47\n\nVoltando:  \n- 1·3·2 = 6  \n- 2·7·1 = 14  \n- 3·5·1 = 15  \nSoma: 6 + 14 + 15 = 35\n\nDeterminante: 47 − 35 = 12. Diferente de zero, então não são colineares. Como eu quero a área, vai ser |12|/2 = 6. Seis unidades de área. Correto. Trabalho bem tranquilo.\n\n## Problema Contextual: Estacas na Praia e Área do Triângulo\nVamos fechar a parte de área com mais uma: IDECAN. Uma criança foi brincar na praia de “marcar território” com três estacas cravadas na areia. O pai resolve indicar coordenadas cartesianas, dadas em metros, dos pontos onde as estacas foram colocadas. Depois, pede para resolver a área delimitada pelo triângulo formado pelos três pontos. O valor encontrado nos cálculos foi de...\n\nTemos os pontos (0, 0), (6, 2) e (1, 4). Existe uma ordem para colocar na matriz? Não. Tanto faz. Só para deixar claro: não existe “primeiro, segundo, terceiro” obrigatório na matriz. Pode colocar qualquer um em qualquer linha. O que pode mudar, às vezes, é o sinal do determinante (positivo ou negativo), por uma propriedade de determinantes ao trocar linhas/colunas. Mas como a área é dada em módulo, não vai fazer diferença, porque no final tomamos o valor absoluto.\n\nEntão posso colocar, por exemplo, (0, 0), (6, 2), (1, 4). Repito as duas primeiras colunas e vamos multiplicar:\n\nIndo:  \n- 0·2·1 = 0  \n- 0·1·6 = 0  \n- 1·4·0 = 0  \nSoma: 0\n\nVoltando:  \n- 1·2·1 = 2  \n- 0·4·6 = 0  \n- 0·1·0 = 0  \nSoma: 2\n\nDeterminante: 0 − 2 = −2.\n\nEntão fica −2. Nós queremos a área, então tomamos o módulo: |−2|/2 = 1. A área é 1 unidade de área. Função do módulo: o que é positivo permanece positivo e o que é negativo vira positivo. Até porque não tem como ter área negativa. Portanto, a área é 1 unidade de área. Correto? Bem suave. Parte feita.\n\n## Transição: Equação da Reta por Determinantes\nBeleza. Essa era a ideia que a gente queria. Show de bola.\n\nAgora: como encontrar a equação da reta usando determinantes? Por exemplo, nós já vimos a equação geral e a reduzida, beleza? Se eu tenho dois pontos, eu quero a equação da reta que passa por esses dois pontos. Por determinantes também fica muito legal de encontrar.\n\nEu sempre digo: toda vez que se pede equação da reta em Geometria Analítica, tem que aparecer x e y na expressão. Então, se você quer a equação da reta, vai ter que aparecer x e y, correto? Mais à frente, quando for cônica, circunferência, também vão aparecer x e y. Qualquer equação vai ter x e y, beleza?\n\nAgora, com dois pontos, vamos entender direitinho no plano cartesiano. Digamos que os pontos sejam (4, 3) e (0, 7). Eu quero que você encontre a equação da reta que passa por esses dois pontos.\n\nPor determinantes, é assim: monta a matriz com as três linhas: primeiro a linha com x, y e 1; depois, as duas linhas com os dois pontos dados, cada um com 1 no final. Completa como antes. Só que tem o seguinte: agora, quando você quer a equação da reta por determinantes, o determinante tem que ser igual a zero. Por quê? Porque x, y está sobre a mesma reta dos dois pontos dados; é a ideia de colinearidade entre (x, y), (4, 3) e (0, 7). Então:\n\n| x  y  1 |  \n| 4  3  1 | = 0  \n| 0  7  1 |\n\nRepito as duas primeiras colunas e aplico Sarrus:\n\nIndo:  \n- x·3·1 = 3x  \n- y·1·0 = 0  \n- 1·4·7 = 28  \nSoma: 3x + 28\n\nVoltando:  \n- 1·3·0 = 0  \n- x·1·7 = 7x  \n- y·4·1 = 4y  \nSoma: 7x + 4y\n\nIgual a zero: (3x + 28) − (7x + 4y) = 0\n\nOrganizando: 3x + 28 − 7x − 4y = 0  \n−4x − 4y + 28 = 0\n\nPodemos simplificar para ficar mais bonitinho: divide tudo por 4.  \n−x − y + 7 = 0\n\nEquação geral: −x − y + 7 = 0. Se quiser, multiplica por −1: x + y − 7 = 0.\n\nSe eu quiser na forma reduzida, isolo o y:  \nx + y − 7 = 0 → y = −x + 7.\n\nOlha que massa! Confere com o que vimos nas aulas anteriores:\n- O coeficiente angular é −1, negativo, então o gráfico é decrescente.\n- O coeficiente linear é 7: toca o eixo y em 7.\n\nSe eu quiser o intercepto em x, uso a reduzida: y = −x + 7. Basta fazer y = 0: 0 = −x + 7 → x = 7. Então no gráfico, os interceptos são (0, 7) e (7, 0). Muito legal.\n\nInformações que você vai aprimorar treinando: vamos continuar com aplicações, questões de concurso. Pode deixar: a gente segue treinando esta matriz e a técnica com determinantes para você passar no concurso.",
+  "transcricao_meta": {
+    "title": "Geometria Analítica - Equação de Reta por Determinantes",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 23656,
+    "createdAt": "2026-02-06T05:42:16.868Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: equação da reta por determinantes e área de triângulo via determinante.\nPrincipais pontos:\n- Montagem da matriz 3×3 com coluna de 1.\n- Condição de colinearidade: determinante = 0.\n- Área do triângulo: |det|/2 (módulo).\n- Transformações entre formas da reta: Ax + By + C = 0 e y = mx + b.\n- Interceptos e coeficiente angular.\n\n## 1. Base / Conceitos Fundamentais\n- **Determinante 3×3 (com coluna de 1)**:\n  | x1 y1 1 |\n  | x2 y2 1 |\n  | x3 y3 1 |\n- **Colinearidade**: três pontos são colineares se e somente se o determinante da matriz acima for igual a 0.\n- **Área do triângulo**: dada por área = |det|/2, com det da matriz formada pelos três pontos. Usa-se módulo porque área não é negativa.\n- **Equação da reta (forma geral)**: Ax + By + C = 0.\n- **Equação da reta (forma reduzida)**: y = mx + b, onde m é o **coeficiente angular** e b é o **intercepto em y**.\n\n## 2. Como Funciona / Distinções\n- **Área vs. Equação da reta por determinantes**:\n  - Área de triângulo por 3 pontos: calcule o determinante e use |det|/2. Necessariamente det ≠ 0 para existir triângulo.\n  - Equação da reta por 2 pontos: imponha colinearidade de (x, y) com os dois pontos dados, montando a matriz com a primeira linha (x, y, 1) e igualando o determinante a 0.\n- **Ordem dos pontos**:\n  - Área: trocar a ordem muda o sinal do determinante, mas o módulo elimina o efeito no resultado.\n  - Equação da reta: qualquer ordem funciona; igualará a 0 de todo modo.\n- **Formas da reta**:\n  - Forma geral Ax + By + C = 0 sai naturalmente do determinante.\n  - Forma reduzida y = mx + b exige isolar y. Útil para ler m e b rapidamente.\n- **Interceptos**:\n  - Em Ax + By + C = 0: intercepto em x = −C/A (se A ≠ 0) e intercepto em y = −C/B (se B ≠ 0).\n  - Em y = mx + b: intercepto em y é b; intercepto em x obtido pondo y = 0.\n\n## 3. Aplicação Prática / Técnicas\n- **Regra de Sarrus (3×3)**:\n  - Some os produtos das diagonais no “sentido principal” e subtraia os do “sentido contrário”.\n  - Macete visual: repita as duas primeiras colunas à direita da matriz.\n- **Equação da reta por determinantes (passo a passo)**:\n  1) Dê dois pontos P1(x1, y1), P2(x2, y2).\n  2) Monte a matriz:\n     | x  y  1 |\n     | x1 y1 1 |\n     | x2 y2 1 |\n  3) Calcule o determinante e iguale a 0.\n  4) Expanda e simplifique para obter Ax + By + C = 0.\n  5) Se quiser, isole y para y = mx + b.\n- **Verificação**:\n  - Substitua os pontos dados na equação encontrada; a igualdade deve zerar (na forma geral) ou satisfazer y = mx + b.\n- **Área do triângulo (passo a passo)**:\n  1) Três pontos A(x1, y1), B(x2, y2), C(x3, y3).\n  2) Forme a matriz 3×3 com coluna de 1.\n  3) Calcule det pela Sarrus.\n  4) Área = |det|/2.\n  5) Se det = 0, pontos colineares → área 0.\n\n> Dica de Prova\n> - Equação da reta por determinantes: sempre iguale o determinante a 0.\n> - Área de triângulo: nunca esqueça do módulo e de dividir por 2.\n\n## 4. Exemplos e Casos Resolvidos\n- **Equação da reta passando por (4, 3) e (0, 7)**:\n  - Determinante:\n    | x  y  1 |\n    | 4  3  1 | = 0\n    | 0  7  1 |\n  - Expansão: x(3 − 7) − y(4 − 0) + 1(4·7 − 0·3) = 0\n  - −4x − 4y + 28 = 0 → divida por 4: −x − y + 7 = 0\n  - Reduzida: y = −x + 7\n  - m = −1 (reta decrescente), b = 7.\n  - Interceptos: (0, 7) e (7, 0).\n\n> Dica de Prova\n> - Na forma Ax + By + C = 0: x-intercept = −C/A e y-intercept = −C/B (se A e B ≠ 0).\n\n- **Área de triângulo (casos típicos)**:\n  - Exemplo 1: det = −24 → área = |−24|/2 = 12.\n  - Exemplo 2: det = −22 → área = |−22|/2 = 11.\n  - Observação: a ordem dos pontos pode inverter o sinal, mas a área usa |det|.\n\n## 5. Pegadinhas e Erros Comuns\n- Esquecer de:\n  - Igualar o determinante a 0 ao buscar a equação da reta.\n  - Usar módulo e dividir por 2 ao calcular a área.\n- Trocar sinais ao expandir o determinante (Sarrus): altera m, b e interceptos.\n- Confundir fórmulas de interceptos:\n  - Em Ax + By + C = 0: x-intercept = −C/A, y-intercept = −C/B.\n  - Em y = mx + b: b é o intercepto em y; para x-intercept, faça y = 0.\n- Interpretar det = 0 de área como “triângulo existente”: na verdade, det = 0 implica colinearidade, logo área 0 (sem triângulo).\n- Tentar usar forma reduzida em reta vertical (B = 0): y = mx + b não existe; use a forma geral.\n\n> Dica de Prova\n> - Se a questão pede “área do triângulo”, automaticamente det ≠ 0. Se det = 0, são colineares.\n> - “Tem que aparecer x e y”: na equação obtida por determinantes, verifique que x e y estão presentes antes de simplificar.\n\n### Comparações Essenciais (resumo)\n- Área de triângulo por 3 pontos:\n  - Usa determinante com os 3 pontos.\n  - Resultado: área = |det|/2.\n- Colinearidade:\n  - det = 0.\n- Equação da reta por 2 pontos:\n  - Monte a matriz com (x, y, 1) e os 2 pontos.\n  - Igualar determinante a 0 → Ax + By + C = 0.\n- Formas:\n  - Geral: sai direto do determinante.\n  - Reduzida: isole y para ler m e b rapidamente.",
+  "resumo_bolso": "# Geometria Analítica - Equação de Reta por Determinantes\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Matriz 3×3 com coluna de 1** (pontos P1, P2, P3):\n  \\[\n  \\begin{vmatrix}\n  x_1 & y_1 & 1\\\\\n  x_2 & y_2 & 1\\\\\n  x_3 & y_3 & 1\n  \\end{vmatrix}\n  \\]\n* **Colinearidade**: 3 pontos são colineares ⇔ determinante da matriz 3×3 (com 1) **= 0**.\n* **Área do triângulo** por 3 pontos:  \n  \\[\n  \\text{Área} = \\dfrac{|\\,\\det\\,|}{2}\n  \\]\n  det ≠ 0 para existir triângulo.\n* **Equação da reta – forma geral**: **Ax + By + C = 0**.\n* **Equação da reta – forma reduzida**: **y = mx + b**, com:\n  * m = **coeficiente angular**\n  * b = **intercepto em y**.\n* **Interceptos na forma geral** Ax + By + C = 0:\n  * intercepto em x: **−C/A** (se A ≠ 0)\n  * intercepto em y: **−C/B** (se B ≠ 0).\n* **Interceptos na forma reduzida** y = mx + b:\n  * intercepto em y: **b**\n  * intercepto em x: faça **y = 0 ⇒ x = −b/m** (se m ≠ 0).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Área de Triângulo vs Equação da Reta (Determinantes)\n\n| Aspecto | Área de Triângulo | Equação da Reta |\n|--------|--------------------|------------------|\n| Pontos usados | 3 pontos A, B, C | 2 pontos P1, P2 + ponto genérico (x, y) |\n| Matriz | 3 linhas com (xi, yi, 1) | 1ª linha (x, y, 1); 2ª e 3ª com P1, P2 |\n| Condição | det ≠ 0 (triângulo) | det = 0 (colinearidade) |\n| Resultado | Área = |det|/2 | Equação Ax + By + C = 0 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Determinante 3×3 (Regra de Sarrus)**\n\n* **Aplicação**: qualquer determinante 3×3, inclusive o da reta e o da área.\n* **Regra**:\n  * Repita as 2 primeiras colunas à direita.\n  * **Soma** dos produtos das diagonais no “sentido principal”.\n  * **Subtraia** a soma dos produtos das diagonais no “sentido contrário”.\n\n---\n\n**2. Equação da reta por 2 pontos (determinantes)**\n\n* **Aplicação**: reta que passa por P1(x1, y1) e P2(x2, y2).\n* **Passos**:\n  1. Monte:\n     \\[\n     \\begin{vmatrix}\n     x & y & 1\\\\\n     x_1 & y_1 & 1\\\\\n     x_2 & y_2 & 1\n     \\end{vmatrix} = 0\n     \\]\n  2. Calcule o determinante (Sarrus) e iguale a 0.\n  3. Simplifique → **Ax + By + C = 0**.\n  4. Se quiser, isole y → **y = mx + b**.\n* **Exemplo**: P1(4,3), P2(0,7)  \n  det = 0 ⇒ −4x − 4y + 28 = 0 ⇒ −x − y + 7 = 0 ⇒ y = −x + 7.\n\n---\n\n**3. Área do triângulo por 3 pontos**\n\n* **Aplicação**: A(x1, y1), B(x2, y2), C(x3, y3).\n* **Passos**:\n  1. Monte:\n     \\[\n     \\det =\n     \\begin{vmatrix}\n     x_1 & y_1 & 1\\\\\n     x_2 & y_2 & 1\\\\\n     x_3 & y_3 & 1\n     \\end{vmatrix}\n     \\]\n  2. Calcule det (Sarrus).\n  3. Área = **|det|/2**.\n* **Exemplos**:\n  * det = −24 ⇒ Área = |−24|/2 = 12.\n  * det = −22 ⇒ Área = |−22|/2 = 11.\n\n---\n\n**4. Colinearidade de 3 pontos**\n\n* **Aplicação**: testar se A, B, C estão na mesma reta.\n* **Regra**:\n  \\[\n  \\begin{vmatrix}\n  x_1 & y_1 & 1\\\\\n  x_2 & y_2 & 1\\\\\n  x_3 & y_3 & 1\n  \\end{vmatrix} = 0 \\Rightarrow \\text{colineares}\n  \\]\n* Se det = 0 ⇒ não há triângulo, área = 0.\n\n---\n\n**5. Transformação entre formas da reta**\n\n* **Aplicação**: ler m, b, interceptos.\n* **Regra**:\n  * De **Ax + By + C = 0** para **y = mx + b**:\n    * Isolar y: By = −Ax − C ⇒ y = (−A/B)x − C/B (B ≠ 0).\n    * Logo, **m = −A/B**, **b = −C/B**.\n* **Exemplo**: −x − y + 7 = 0 ⇒ y = −x + 7 (m = −1, b = 7).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Esquecer de igualar o determinante a 0 ao buscar a equação da reta.\n* Esquecer de usar módulo e dividir por 2 ao calcular a área.\n* Trocar sinais ao expandir o determinante (Sarrus), alterando m, b e interceptos.\n* Confundir fórmulas de interceptos:\n  * Em Ax + By + C = 0: x-intercept = −C/A, y-intercept = −C/B.\n  * Em y = mx + b: b é o intercepto em y; para x-intercept, faça y = 0.\n* Interpretar det = 0 de área como “triângulo existente”: det = 0 implica colinearidade, logo área 0 (sem triângulo).\n\n---\n\n## 📋 Checklist Final\n\n* Sei montar a matriz 3×3 com coluna de 1 para:\n  * [ ] 3 pontos (área / colinearidade)\n  * [ ] 2 pontos + (x, y) (equação da reta)\n* Lembro que:\n  * [ ] **Reta** por determinantes → sempre igualar o determinante a 0.\n  * [ ] **Área** de triângulo → Área = |det|/2 e, para existir triângulo, det ≠ 0.\n* Conferi:\n  * [ ] Transformação Ax + By + C = 0 ⇔ y = mx + b.\n  * [ ] Fórmulas de interceptos em cada forma.\n* Antes de marcar:\n  * [ ] Verifico sinais na Sarrus (principal – contrário).\n  * [ ] Testo a reta substituindo os pontos dados (a igualdade deve ser satisfeita).",
+  "mapa_mental": "# 🧮 Geometria Analítica – Reta por Determinantes\n## 🎯 Fundamentos\n### 💡 Determinante 3×3\n- Matriz 3×3\n- Coordenadas x y\n- Coluna de uns\n- Regra de Sarrus\n- Sinal do determinante\n### 📏 Colinearidade\n- Três pontos alinhados\n- Determinante igual zero\n- Matriz com três pontos\n- Ordem irrelevante\n- Teste de alinhamento\n### 📐 Área do triângulo\n- Três pontos distintos\n- Determinante diferente zero\n- Área módulo det\n- Fórmula área = |det|/2\n- Colinearidade área zero\n\n## 🧾 Equações da Reta\n### 🧱 Forma geral\n- Expressão Ax + By + C = 0\n- Coeficientes A B C\n- Intercepto x −C/A\n- Intercepto y −C/B\n- Reta vertical uso geral\n### 📉 Forma reduzida\n- Expressão y = mx + b\n- Coeficiente angular m\n- Intercepto em y b\n- Intercepto x com y=0\n- Não vale reta vertical\n### 🔄 Relação formas\n- Isolar y na geral\n- Obter m e b\n- Mesma reta formas\n- Leitura rápida coeficientes\n- Conversão prova objetiva\n\n## 🔢 Reta por Determinantes\n### 🧮 Montagem matriz\n- Dois pontos dados\n- Linha genérica x y 1\n- Matriz 3×3 completa\n- Determinante igual zero\n- Obtenção Ax + By + C\n### 📊 Propriedades reta\n- Passagem pelos pontos\n- Substituição zera expressão\n- Colinearidade garantida\n- Independência ordem pontos\n- Presença x e y na equação\n### ⚠️ Erros frequentes reta\n- Não igualar a zero\n- Sinais trocados Sarrus\n- Esquecer variável x\n- Esquecer variável y\n- Confundir formas geral reduzida\n\n## 📐 Área via Determinante\n### 🧮 Matriz do triângulo\n- Três pontos A B C\n- Coordenadas nas linhas\n- Coluna final de uns\n- Determinante pela Sarrus\n- Módulo do determinante\n### 📊 Fórmula da área\n- Área = |det|/2\n- Unidade quadrada\n- Ordem pontos muda sinal\n- Módulo corrige sinal\n- det = 0 sem triângulo\n### ⚠️ Erros frequentes área\n- Esquecer módulo\n- Esquecer divisão por 2\n- Interpretar det = 0 triângulo\n- Confundir teste colinearidade\n- Misturar fórmulas reta área",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Área por Determinante",
+      "description": "Área por Determinante — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como organizar as coordenadas de três pontos na matriz usada para calcular a área?",
+          "back": "Dispor as coordenadas dos três pontos nas duas primeiras colunas e repetir os valores na terceira coluna com o número **1**.",
+          "hint": "Pense na estrutura da matriz 3x3",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "determinantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual expressão fornece a área de um triângulo a partir do determinante das coordenadas?",
+          "back": "Área = **|D| / 2**",
+          "hint": "Envolve uma divisão por dois",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "area-triangulo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Que valor deve assumir o determinante para três pontos formarem um triângulo de área não nula?",
+          "back": "Diferente de zero",
+          "hint": "Relacionado à existência de área",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "determinantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Que relação entre três pontos é indicada por um determinante igual a zero?",
+          "back": "Pontos **colineares**",
+          "hint": "Alinhamento geométrico",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "colinearidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "O que ocorre com o sinal do determinante quando a ordem dos pontos é trocada?",
+          "back": "O sinal do determinante é **invertido**.",
+          "hint": "Propriedade das filas da matriz",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "propriedades-determinante"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Reta por Determinantes",
+      "description": "Reta por Determinantes — 4 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual linha da matriz representa o ponto genérico usado na equação da reta?",
+          "back": "A primeira linha com **x e y**.",
+          "hint": "Variáveis da reta",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "equacao-reta"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como montar o determinante que representa a reta por dois pontos conhecidos?",
+          "back": "Iniciar com o ponto genérico (x, y) e inserir as coordenadas dos **dois pontos conhecidos**, completando a terceira coluna com **1**.",
+          "hint": "Pense na matriz 3x3 com variáveis",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "equacao-reta"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual condição deve ser imposta ao determinante para obter a equação da reta?",
+          "back": "Igualar o determinante a **zero**.",
+          "hint": "Condição de alinhamento",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "equacao-reta"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Quantos pontos distintos são necessários para determinar uma reta pelo método dos determinantes?",
+          "back": "**Dois** pontos distintos",
+          "hint": "Postulado de Euclides",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "equacao-reta"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Formas da Equação",
+      "description": "Formas da Equação — 6 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual é a forma geral da equação de uma reta no plano cartesiano?",
+          "back": "**ax + by + c = 0**",
+          "hint": "Equação linear completa",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "equacao-reta"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a forma reduzida da equação de uma reta?",
+          "back": "**y = ax + b**",
+          "hint": "Forma isolando a variável y",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "equacao-reta"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Na forma y=ax+b, qual coeficiente indica a inclinação da reta?",
+          "back": "Coeficiente **a**",
+          "hint": "Taxa de variação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "coeficientes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Na forma y=ax+b, qual termo indica a interseção com o eixo y?",
+          "back": "Termo **b**",
+          "hint": "Valor quando x é zero",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "coeficientes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Que comportamento tem uma reta cujo coeficiente angular é negativo?",
+          "back": "Função **decrescente**",
+          "hint": "Direção da reta no plano",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "funcao-afim"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Para a≠0, qual expressão fornece a abscissa do ponto onde y=ax+b corta o eixo x?",
+          "back": "**-b / a**",
+          "hint": "Raiz da função",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-analitica",
+            "funcao-afim"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a fórmula utilizada para calcular a área de um triângulo quando são conhecidas as coordenadas cartesianas de seus três vértices?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A área é igual ao módulo do determinante da matriz formada pelas coordenadas dos vértices, dividido por dois",
+          "correct": true,
+          "explanation": "Correta. Para calcular a área de um triângulo cujos vértices são dados por coordenadas cartesianas, utiliza-se o método do determinante. A fórmula estabelece que a área é a metade do valor absoluto (módulo) do determinante da matriz 3x3 construída com as coordenadas dos vértices e uma coluna de números '1'. O módulo garante que a área seja sempre positiva, e a divisão por dois é uma constante da fórmula para triângulos."
+        },
+        {
+          "id": "b",
+          "text": "A área é igual ao determinante da matriz formada pelas coordenadas dos vértices",
+          "correct": false,
+          "explanation": "Incorreta. A área de um triângulo, por sua natureza geométrica, é sempre um valor positivo. O determinante da matriz formada pelas coordenadas dos vértices pode resultar em um valor negativo, indicando a orientação dos vértices (sentido horário ou anti-horário), mas não representa diretamente a área. Além disso, a fórmula completa exige uma divisão por dois."
+        },
+        {
+          "id": "c",
+          "text": "A área é igual ao dobro do módulo do determinante da matriz formada pelas coordenadas dos vértices",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa sugere uma multiplicação por dois em vez da divisão por dois, o que resultaria em um valor de área incorreto, sendo o quádruplo da área verdadeira se comparado à alternativa correta. A fórmula padrão exige a divisão do módulo do determinante por dois."
+        },
+        {
+          "id": "d",
+          "text": "A área é igual à raiz quadrada do determinante da matriz formada pelas coordenadas dos vértices",
+          "correct": false,
+          "explanation": "Incorreta. A raiz quadrada do determinante não é a operação matemática correta para determinar a área de um triângulo a partir de suas coordenadas. Além disso, se o determinante resultasse em um valor negativo, a raiz quadrada não seria um número real, o que é inconsistente com a natureza da área."
+        }
+      ],
+      "explanation": "Correta. Para calcular a área de um triângulo cujos vértices são dados por coordenadas cartesianas, utiliza-se o método do determinante. A fórmula estabelece que a área é a metade do valor absoluto (módulo) do determinante da matriz 3x3 construída com as coordenadas dos vértices e uma coluna de números '1'. O módulo garante que a área seja sempre positiva, e a divisão por dois é uma constante da fórmula para triângulos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao calcular o determinante de uma matriz 3x3 formada pelas coordenadas de três pontos no plano cartesiano, qual é o significado geométrico quando o resultado é igual a zero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os três pontos estão alinhados, sendo colineares, e não formam um triângulo",
+          "correct": true,
+          "explanation": "Correta. Na geometria analítica, se o determinante da matriz formada pelas coordenadas de três pontos (utilizado para calcular a área do triângulo) resulta em zero, isso indica que a área do triângulo é nula. Geometricamente, uma área nula para um triângulo significa que os três pontos não formam uma figura triangular, mas sim que estão situados sobre a mesma linha reta, ou seja, são colineares."
+        },
+        {
+          "id": "b",
+          "text": "Os três pontos formam um triângulo isósceles com base paralela ao eixo das abscissas",
+          "correct": false,
+          "explanation": "Incorreta. Assim como na alternativa anterior, um determinante zero implica que os pontos são colineares e não formam um triângulo. Consequentemente, eles não podem formar um triângulo isósceles ou qualquer outro tipo de triângulo que possua uma área diferente de zero."
+        },
+        {
+          "id": "c",
+          "text": "Os três pontos formam um triângulo retângulo com catetos de mesma medida",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante é zero, os pontos são colineares e não formam um triângulo. Portanto, eles não podem formar um triângulo retângulo, que é uma figura com área positiva e ângulos específicos. Um triângulo retângulo exige três pontos não colineares."
+        },
+        {
+          "id": "d",
+          "text": "Os três pontos formam um triângulo equilátero de área máxima",
+          "correct": false,
+          "explanation": "Incorreta. Quando o determinante calculado para a área de um triângulo é zero, significa que não há área, o que contradiz a ideia de \"área máxima\". Além disso, o valor zero não implica que o triângulo seja equilátero; pelo contrário, implica que não há triângulo."
+        }
+      ],
+      "explanation": "Correta. Na geometria analítica, se o determinante da matriz formada pelas coordenadas de três pontos (utilizado para calcular a área do triângulo) resulta em zero, isso indica que a área do triângulo é nula. Geometricamente, uma área nula para um triângulo significa que os três pontos não formam uma figura triangular, mas sim que estão situados sobre a mesma linha reta, ou seja, são colineares.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Para encontrar a equação geral de uma reta que passa por dois pontos conhecidos utilizando determinantes, qual deve ser a primeira linha da matriz 3x3 construída?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A primeira linha deve conter os coeficientes angular e linear da reta, seguidos do número 1",
+          "correct": false,
+          "explanation": "Incorreta. Os coeficientes angular e linear são propriedades da reta que se deseja encontrar (ou que podem ser extraídos da equação geral da reta), e não são elementos que compõem a matriz inicial para o cálculo do determinante neste método. A matriz é formada pelas coordenadas dos pontos e uma coluna de '1's."
+        },
+        {
+          "id": "b",
+          "text": "A primeira linha deve conter as coordenadas do ponto médio entre os dois pontos conhecidos, seguidas do número 1",
+          "correct": false,
+          "explanation": "Incorreta. Embora o ponto médio esteja na reta, ele é um ponto específico. Para obter a equação geral da reta, é necessário um ponto genérico (x, y) que represente qualquer ponto pertencente à reta. A inclusão do ponto médio na matriz não resultaria na equação geral da reta."
+        },
+        {
+          "id": "c",
+          "text": "A primeira linha deve conter as variáveis x e y genéricas, seguidas do número 1",
+          "correct": true,
+          "explanation": "Correta. Para encontrar a equação geral de uma reta que passa por dois pontos conhecidos (P1 e P2) usando determinantes, um terceiro ponto genérico (P = (x, y)) é introduzido. Esses três pontos (P, P1 e P2) devem ser colineares para que P esteja na reta. A matriz 3x3 é construída com as coordenadas desses três pontos e uma terceira coluna de '1's, e seu determinante é igualado a zero, refletindo a condição de colinearidade. A primeira linha, então, é tipicamente (x, y, 1)."
+        },
+        {
+          "id": "d",
+          "text": "A primeira linha deve conter as coordenadas do primeiro ponto conhecido, seguidas do número 0",
+          "correct": false,
+          "explanation": "Incorreta. A terceira coluna da matriz, ao usar o método do determinante para colinearidade ou área, deve ser preenchida com '1's para manter a consistência matemática da operação do determinante. Utilizar '0' alteraria fundamentalmente o cálculo e não produziria a equação correta da reta. Além disso, as coordenadas do primeiro ponto já serão usadas em outra linha da matriz."
+        }
+      ],
+      "explanation": "Correta. Para encontrar a equação geral de uma reta que passa por dois pontos conhecidos (P1 e P2) usando determinantes, um terceiro ponto genérico (P = (x, y)) é introduzido. Esses três pontos (P, P1 e P2) devem ser colineares para que P esteja na reta. A matriz 3x3 é construída com as coordenadas desses três pontos e uma terceira coluna de '1's, e seu determinante é igualado a zero, refletindo a condição de colinearidade. A primeira linha, então, é tipicamente (x, y, 1).",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao utilizar o método de determinantes para encontrar a equação de uma reta que passa por dois pontos, qual deve ser o valor do determinante da matriz formada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante deve ser positivo, indicando que a reta possui coeficiente angular crescente",
+          "correct": false,
+          "explanation": "Incorreta. Embora o sinal do determinante (antes de aplicar o módulo) possa indicar a orientação dos vértices de um triângulo, para a finalidade de encontrar a equação de uma reta, o determinante deve ser exatamente zero. Uma reta é uma linha unidimensional, e os pontos nela são colineares, o que implica uma área nula e, consequentemente, um determinante zero."
+        },
+        {
+          "id": "b",
+          "text": "O determinante deve ser igual a zero, pois qualquer ponto (x, y) sobre a reta torna os três pontos colineares",
+          "correct": true,
+          "explanation": "Correta. O método de determinantes para encontrar a equação de uma reta baseia-se no princípio de que três pontos são colineares (ou seja, estão na mesma reta) se a \"área\" do triângulo que eles formariam é zero. Ao construir uma matriz com as coordenadas dos dois pontos conhecidos e um ponto genérico (x, y), e uma coluna de '1's, o determinante dessa matriz é igualado a zero. Essa igualdade a zero garante que o ponto genérico (x, y) está alinhado com os outros dois, definindo assim a equação da reta."
+        },
+        {
+          "id": "c",
+          "text": "O determinante deve ser igual ao coeficiente angular da reta multiplicado por dois",
+          "correct": false,
+          "explanation": "Incorreta. O determinante da matriz formada para encontrar a equação da reta não é diretamente igual ao coeficiente angular da reta, nem a um múltiplo dele. O coeficiente angular é um parâmetro que pode ser derivado da equação geral da reta, que por sua vez é obtida ao igualar o determinante a zero."
+        },
+        {
+          "id": "d",
+          "text": "O determinante deve ser igual a um, representando a inclinação unitária da reta no plano",
+          "correct": false,
+          "explanation": "Incorreta. O valor do determinante não é igual a um para este propósito. A inclinação unitária da reta (coeficiente angular igual a 1) é uma característica específica de algumas retas, mas não é o valor do determinante que se busca para a equação geral. O determinante é utilizado para verificar a colinearidade, e para isso, deve ser zero."
+        }
+      ],
+      "explanation": "Correta. O método de determinantes para encontrar a equação de uma reta baseia-se no princípio de que três pontos são colineares (ou seja, estão na mesma reta) se a \"área\" do triângulo que eles formariam é zero. Ao construir uma matriz com as coordenadas dos dois pontos conhecidos e um ponto genérico (x, y), e uma coluna de '1's, o determinante dessa matriz é igualado a zero. Essa igualdade a zero garante que o ponto genérico (x, y) está alinhado com os outros dois, definindo assim a equação da reta.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Considere que foi calculado o determinante de uma matriz formada pelas coordenadas de três vértices de um triângulo, resultando em -22. Após aplicar a fórmula completa para área, qual será o valor final obtido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor final será 44 unidades de área, pois multiplica-se o módulo por 2 antes de finalizar",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa não apenas omite a divisão por dois, mas também realiza uma multiplicação por dois, o que é o inverso da operação correta. Se o módulo de -22 é 22, multiplicá-lo por 2 resultaria em 44, o que está incorreto para a área do triângulo."
+        },
+        {
+          "id": "b",
+          "text": "O valor final será 11 unidades de área, pois aplica-se o módulo de -22 e divide-se por 2",
+          "correct": true,
+          "explanation": "Correta. A fórmula para calcular a área de um triângulo a partir do determinante de seus vértices é Área = |Determinante| / 2. Se o determinante resultou em -22, primeiro aplicamos o módulo (valor absoluto), que transforma -22 em 22. Em seguida, dividimos esse valor por 2. Assim, a área será 22 / 2 = 11 unidades de área."
+        },
+        {
+          "id": "c",
+          "text": "O valor final será -11 unidades de área, mantendo o sinal negativo para indicar orientação",
+          "correct": false,
+          "explanation": "Incorreta. A área, por definição, é uma medida de superfície e, portanto, é sempre um valor positivo. Embora o determinante possa ser negativo (indicando a orientação dos vértices no plano), o resultado final da área deve ser sempre positivo, o que é garantido pela aplicação do módulo na fórmula."
+        },
+        {
+          "id": "d",
+          "text": "O valor final será 22 unidades de área, pois o módulo transforma em positivo sem divisão",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa aplica corretamente o módulo ao determinante (-22 se torna 22), mas omite a etapa crucial de dividir o resultado por dois, que faz parte integrante da fórmula da área de um triângulo utilizando o determinante. A área seria 11, não 22."
+        }
+      ],
+      "explanation": "Correta. A fórmula para calcular a área de um triângulo a partir do determinante de seus vértices é Área = |Determinante| / 2. Se o determinante resultou em -22, primeiro aplicamos o módulo (valor absoluto), que transforma -22 em 22. Em seguida, dividimos esse valor por 2. Assim, a área será 22 / 2 = 11 unidades de área.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Após obter a equação geral de uma reta na forma 3x - 7y + 28 = 0 pelo método de determinantes, qual será a equação reduzida correspondente e o que ela revela sobre o comportamento gráfico da reta?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A equação reduzida é y = (-3/7)x + 4, indicando uma reta decrescente que intercepta o eixo y em 4",
+          "correct": false,
+          "explanation": "Incorreta. A equação reduzida obtida da equação geral 3x - 7y + 28 = 0 é y = (3/7)x + 4. O coeficiente angular correto é 3/7 (positivo), não -3/7. Um coeficiente angular positivo (3/7) indica uma reta crescente, e não decrescente. Embora a interceptação do eixo 'y' esteja correta (b = 4), a inclinação da reta e o coeficiente angular estão incorretos nesta alternativa."
+        },
+        {
+          "id": "b",
+          "text": "A equação reduzida é y = (3/7)x - 4, indicando uma reta crescente que intercepta o eixo y em -4",
+          "correct": false,
+          "explanation": "Incorreta. A equação reduzida obtida da equação geral 3x - 7y + 28 = 0 é y = (3/7)x + 4. O coeficiente linear (b), que é o ponto de interceptação com o eixo 'y', é 4, e não -4. Embora o coeficiente angular (3/7) e a indicação de reta crescente estejam corretos, o valor da interceptação do eixo 'y' está incorreto nesta alternativa."
+        },
+        {
+          "id": "c",
+          "text": "A equação reduzida é y = (7/3)x + 28, indicando uma reta crescente que intercepta o eixo y em 28",
+          "correct": false,
+          "explanation": "Incorreta. A equação reduzida correta para 3x - 7y + 28 = 0 é y = (3/7)x + 4. Nesta alternativa, tanto o coeficiente angular quanto o coeficiente linear estão incorretos. O coeficiente angular não é 7/3, mas sim 3/7, e o ponto de interceptação com o eixo 'y' não é 28, mas sim 4. A inversão dos termos do coeficiente angular e o erro no coeficiente linear invalidam esta alternativa."
+        },
+        {
+          "id": "d",
+          "text": "A equação reduzida é y = (3/7)x + 4, indicando uma reta crescente que intercepta o eixo y em 4",
+          "correct": true,
+          "explanation": "Correta. Para obter a equação reduzida (y = mx + b) a partir da equação geral (Ax + By + C = 0), é necessário isolar a variável 'y'. Dada a equação 3x - 7y + 28 = 0, primeiramente isolamos o termo com 'y': -7y = -3x - 28. Em seguida, dividimos todos os termos por -7: y = (-3x / -7) + (-28 / -7), o que simplifica para y = (3/7)x + 4. Nesta forma, o coeficiente angular (m) é 3/7, que é positivo, indicando que a reta é crescente. O coeficiente linear (b) é 4, que representa o ponto onde a reta intercepta o eixo 'y'."
+        }
+      ],
+      "explanation": "Correta. Para obter a equação reduzida (y = mx + b) a partir da equação geral (Ax + By + C = 0), é necessário isolar a variável 'y'. Dada a equação 3x - 7y + 28 = 0, primeiramente isolamos o termo com 'y': -7y = -3x - 28. Em seguida, dividimos todos os termos por -7: y = (-3x / -7) + (-28 / -7), o que simplifica para y = (3/7)x + 4. Nesta forma, o coeficiente angular (m) é 3/7, que é positivo, indicando que a reta é crescente. O coeficiente linear (b) é 4, que representa o ponto onde a reta intercepta o eixo 'y'.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "17_327057_Geometria Analítica - Equação de Reta por Determinantes.pdf",
+  "coletado_em": "2026-09-23T21:00:38"
+}

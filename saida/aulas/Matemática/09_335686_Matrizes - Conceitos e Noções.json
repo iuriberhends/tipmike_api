@@ -1,0 +1,555 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 9,
+  "ordem_no_curso": "132.00",
+  "titulo": "Matrizes - Conceitos e Noções",
+  "codigo_aula": "335686",
+  "video_id": "dsrO7tyg0gM=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:35:12",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/dsrO7tyg0gM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408802%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matrizes - Conceitos e Noções\n\n## Contexto da Questão e Objetivo da Aula\nOlha só que legal: vamos trabalhar com a aplicação de uma questão de concurso. Só que essa questão falou da quantidade de vagas para o cargo de assistente de planejamento em certo concurso público, representada pelo cofator da matriz A. No momento, eu não quero que você se preocupe com o cofator. Esquece isso aqui agora.\n\nEssa questão é só para você perceber como é importante nós sabermos construir uma matriz. Realmente, não interessa para a gente o cofator nesse momento. O que me interessa é que você tem que saber construir essa matriz. Lá na frente eu volto com vocês e a gente mexe com isso. Beleza? Eu acho interessante, como consequência de matriz, a gente montar primeiro. Vamos para o efeito prático: uma matriz de ordem 3 por 3.\n\n## Construção da Matriz a partir de uma Lei de Formação\nNós teremos: a11, a12, a13; a21, a22, a23; a31, a32, a33. Beleza? Nossa matriz é 3 por 3.\n\nAgora, cada elemento desse segue uma lei de formação. A lei é: a_ij = 2i − 6j. Nós iremos aplicar em cada entrada.\n\n- a11 = 2·1 − 6·1 = 2 − 6 = −4\n- a12 = 2·1 − 6·2 = 2 − 12 = −10\n- a13 = 2·1 − 6·3 = 2 − 18 = −16\n\nAgora a linha 2:\n- a21 = 2·2 − 6·1 = 4 − 6 = −2\n- a22 = 2·2 − 6·2 = 4 − 12 = −8\n- a23 = 2·2 − 6·3 = 4 − 18 = −14\n\nContinuando, linha 3:\n- a31 = 2·3 − 6·1 = 6 − 6 = 0\n- a32 = 2·3 − 6·2 = 6 − 12 = −6\n- a33 = 2·3 − 6·3 = 6 − 18 = −12\n\nEntão a nossa matriz A é:\n-4  −10  −16\n-2   −8  −14\n 0   −6  −12\n\nShow de bola. Está aí nossa matriz 3 por 3. Isso é treino mesmo, para você entender perfeitamente como sair da forma “condensada” (a lei de formação) para a forma geométrica (a matriz escrita).\n\n> 🎯 **Dicas de prova:** Antes de chegar em determinantes, você precisa saber interpretar a notação a_ij e construir a matriz a partir da lei de formação.\n\n## Importância das Classificações de Matrizes\nAgora que a gente já conhece a matriz, vamos aprender quais são as suas classificações ou tipos. É importantíssimo, porque tem operações que eu só vou conseguir fazer dependendo do tipo de matriz. Por exemplo, determinantes não são de qualquer matriz. Por isso, nesta etapa eu preciso entender quais são esses tipos. É bem simples. Olha só.\n\nAs matrizes são classificadas:\n- Pelo número de linhas\n- Pelo número de colunas\n- Pelos tipos de elementos que elas apresentam\n- Pela disposição desses elementos dentro da matriz\n\nNão é somente a quantidade de linhas e colunas. Por exemplo, há matrizes em que todos os elementos fora da diagonal principal são zero. Isso nos leva a casos como identidade, diagonal, triangular etc. Então vale olhar linhas, colunas, tipos de elementos e posição dos elementos.\n\n## Matriz Coluna\nMatriz coluna são aquelas que apresentam apenas uma coluna e várias linhas. Denomina-se matriz coluna aquela que possui m linhas e apenas uma coluna.\n\nExemplo:\nA = [a11; a21; a31; a41; a51]\nOu seja, muitas linhas por uma coluna. Nesse caso, é chamada de matriz coluna por possuir apenas uma coluna.\n\n## Matriz Linha\nDe maneira análoga, matriz linha é aquela que apresenta apenas uma linha e várias colunas. Posso ter n colunas, mas só uma linha.\n\nExemplo:\n[a11 a12 a13 a14 …]\nTranquilo demais.\n\n## Matriz Quadrada\nEssa é importantíssima. A matriz quadrada vai ser referência quando formos aprender determinantes. Só podemos calcular determinantes de matriz quadrada.\n\nMatriz quadrada é aquela em que a quantidade de linhas é igual à quantidade de colunas. A forma geométrica dela fica semelhante a um quadrado, porque base e altura são iguais.\n\nExemplos:\n- 2 por 3 (duas linhas e três colunas) não é quadrada; parece um retângulo.\n- 3 por 3 é quadrada. Por exemplo:\n1 2 3\n4 5 6\n7 8 9\n\nQuando a matriz é quadrada, podemos calcular o número de elementos por n^2, porque o número de linhas é igual ao número de colunas. Em uma 3 por 3, 3×3 = 9 elementos.\n\nOutra forma de visualizar uma matriz quadrada:\nPrimeira linha: a11, a12, a13\nSegunda linha: a21, a22, a23\nTerceira linha: a31, a32, a33\n\nNas matrizes quadradas, temos duas características importantíssimas:\n- Diagonal principal\n- Diagonal secundária\n\nIsso só existe em matriz quadrada; retangular não tem essa estrutura. Fica esperto, porque adiante, em propriedades e determinantes, isso vai ser importante. Lembre:\n- Diagonal principal: vai da esquerda para a direita “descendo”.\n- Diagonal secundária: a outra diagonal (da direita para a esquerda “descendo”).\n\n## Matrizes Triangulares\nMatriz triangular é aquela em que os elementos acima ou abaixo da diagonal principal são iguais a zero.\n\n- Triangular superior: os elementos abaixo da diagonal principal são zero; acima podem ser quaisquer números.\n- Triangular inferior: os elementos acima da diagonal principal são zero; abaixo podem ser quaisquer números.\n\nLembre que falar em diagonal principal implica matriz quadrada.\n\nExemplo de triangular superior:\n[1  2  3\n 0  4  5\n 0  0  6]\nAqui, abaixo da diagonal principal é tudo zero; acima há números.\n\n> 🎯 **Dicas de prova:** Em matriz triangular superior, a_ij = 0 quando i > j. Em matriz triangular inferior, a_ij = 0 quando i < j.\n\nPara triangular inferior, pense no “espelho”:\n[1  0  0\n 7  4  0\n 8  9  6]\nAqui, acima da diagonal principal é tudo zero; abaixo há números.\n\nUma forma de memorizar:\n- Se é triangular superior, o “triângulo de baixo” é zero.\n- Se é triangular inferior, o “triângulo de cima” é zero.\n\n## Matriz Diagonal\nUma matriz será diagonal quando todos os elementos que não estão na diagonal principal forem zero. Ou seja, ela é simultaneamente triangular superior e triangular inferior.\n\nExemplo (4 por 4):\n[2  0  0  0\n 0  3  0  0\n 0  0  4  0\n 0  0  0  5]\nTriângulo superior: zero. Triângulo inferior: zero. Na diagonal principal, os elementos podem ser diferentes de zero e não precisam ser iguais entre si.\n\n## Matriz Escalar\nSe, dentro de uma matriz diagonal, eu coloco todos os elementos da diagonal principal iguais entre si, eu tenho uma matriz escalar.\n\nExemplo:\n[4  0  0\n 0  4  0\n 0  0  4]\nÉ diagonal e todos os elementos da diagonal principal são iguais. Continua sendo quadrada, diagonal e agora também escalar.\n\nReforçando:\n- Em diagonal: fora da diagonal principal é tudo zero; na diagonal, podem ser números quaisquer.\n- Em escalar: além de diagonal, os elementos da diagonal principal são todos iguais.\n\n## Encerramento e Próximos Passos\nEssa é a ideia: classificar matrizes. Tem mais classificações e muita coisa legal. Depois vamos para as operações. É um assunto muito legal, sem dor de cabeça. É questão de você guardar as informações.\n\nPrimeiro, entender o que são as matrizes. Depois, vamos operar essas matrizes. Eu fecho aqui por hoje e depois volto com vocês. Isso entra também em Álgebra Linear. Como já falei, é um assunto muito cobrado quando aparece nos editais, envolvendo problemas na área de métodos geométricos e matriciais. Não saia daí!",
+  "transcricao_meta": {
+    "title": "Matrizes - Conceitos e Noções",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 29030,
+    "createdAt": "2026-02-07T12:35:00.548Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: conceitos essenciais de matrizes, leitura de notação a_{ij} e lei de formação; distinções entre tipos de matrizes (linha, coluna, quadrada, retangular) e diagonais; classificação de matrizes especiais (triangular superior/inferior, diagonal, escalar); passos práticos para montar e classificar matrizes; exemplos resolvidos e pegadinhas típicas de prova.\nPrincipais pontos: \n- Só matrizes quadradas têm diagonais e permitem determinante.\n- Triangularidade se decide por zeros acima/abaixo da diagonal principal.\n- Lei de formação é a base para preencher entradas a_{ij}.\n\n## 1. Base / Conceitos Fundamentais\n- **Matriz**: tabela retangular de números organizada em **m** linhas e **n** colunas (ordem m×n).\n- **Elemento a_{ij}**: número na linha i e coluna j.\n- **Lei de formação**: regra que define cada entrada da matriz em função dos índices i e j (ex.: a_{ij} = 2i − 6j).\n- **Matriz linha**: 1×n (uma linha).\n- **Matriz coluna**: m×1 (uma coluna).\n- **Matriz quadrada**: n×n (mesmo nº de linhas e colunas). Número de elementos = n².\n- **Matriz retangular**: m×n com m ≠ n.\n- **Diagonal principal**: posições a_{11}, a_{22}, a_{33}, … (i = j), sentido da esquerda para a direita.\n- **Diagonal secundária**: da direita para a esquerda (a_{1n}, a_{2(n−1)}, …). Só faz sentido em matriz quadrada.\n\n> Dica de prova\n> - Determinante só existe para **matriz quadrada**. Se não for quadrada, descarte alternativas que falem de determinante/diagonais.\n\n## 2. Como Funciona / Distinções\n- Quadrada vs Retangular:\n  - Quadrada (n×n): tem diagonais e pode ter determinante.\n  - Retangular (m ≠ n): não se fala em diagonal principal/secundária nem determinante.\n- Diagonais:\n  - Principal: i = j. Secundária: índices somam n+1.\n- Triangulares (sempre quadradas):\n  - **Triangular superior**: zeros abaixo da diagonal principal → a_{ij} = 0 quando i > j.\n  - **Triangular inferior**: zeros acima da diagonal principal → a_{ij} = 0 quando i < j.\n- Casos particulares:\n  - **Matriz diagonal**: a_{ij} = 0 se i ≠ j (tudo fora da diagonal principal é zero). É ao mesmo tempo triangular superior e inferior.\n  - **Matriz escalar**: diagonal com todos os elementos iguais (e fora da diagonal tudo zero). É caso particular de diagonal.\n\n> Dica de prova\n> - Sequência lógica: Escalar ⊂ Diagonal ⊂ (Triangular superior ∩ Triangular inferior) ⊂ Quadrada.\n\n## 3. Aplicação Prática / Técnicas\n- Para construir a matriz pela lei de formação:\n  1) Identifique a ordem m×n.\n  2) Liste os pares (i, j) válidos.\n  3) Substitua i e j na lei de formação para cada entrada.\n  4) Preencha por linhas (ou colunas) mantendo atenção aos sinais.\n- Para classificar rapidamente:\n  1) Verifique se é quadrada. Se não, descarte “triangular/diagonal/escalar”.\n  2) Identifique a diagonal principal (i = j).\n  3) Olhe a metade “errada”:\n     - Superior: confira abaixo da diagonal se é tudo zero.\n     - Inferior: confira acima da diagonal se é tudo zero.\n  4) Se for zero dos dois lados (fora da diagonal), é diagonal.\n  5) Se diagonal e todos da diagonal principal iguais, é escalar.\n- Macetes de memorização:\n  - “i > j” está abaixo da diagonal; “i < j” está acima.\n  - Ordem m×n: m é vertical (linhas), n é horizontal (colunas).\n  - Em n×n, nº de elementos = n² (ex.: 3×3 → 9).\n\n## 4. Exemplos e Casos Resolvidos\n- Construção por lei de formação (3×3):\n  - Dados índices: linha 1 → a_{11}, a_{12}, a_{13}; linha 2 → a_{21}, a_{22}, a_{23}; linha 3 → a_{31}, a_{32}, a_{33}.\n  - Ex.: a_{ij} = 2i − 6j\n    - a_{11} = 2·1 − 6·1 = −4; a_{12} = −10; a_{13} = −16\n    - a_{21} = −2; a_{22} = −8; a_{23} = −14\n    - a_{31} = 0; a_{32} = −6; a_{33} = −12\n- Classificação:\n  - Matriz coluna m×1: [a_{11}; a_{21}; a_{31}; a_{41}; a_{51}].\n  - Matriz linha 1×n: [a_{11} a_{12} a_{13} …].\n  - Triangular superior 3×3: a_{21} = 0, a_{31} = 0, a_{32} = 0 (abaixo da diagonal é zero; acima pode ser 2, 3, 4, …).\n  - Triangular inferior 3×3: a_{12} = 0, a_{13} = 0, a_{23} = 0 (acima da diagonal é zero; abaixo pode ser 1, 2, 3, …).\n  - Diagonal 4×4: fora da diagonal tudo 0; na diagonal, por exemplo, 0, 3, 4, 0.\n  - Escalar: fora da diagonal tudo 0; na diagonal todos iguais (ex.: todos 2).\n\n## 5. Pegadinhas e Erros Comuns\n- Trocar i por j ao aplicar a lei de formação.\n- Achar diagonal em matriz retangular. Diagonais (e determinante) só em matrizes quadradas.\n- Confundir “i > j” (abaixo) com “i < j” (acima). Isso inverte superior/inferior.\n- Considerar que diagonal exige elementos não nulos. Errado: na diagonal podem existir zeros.\n- Esquecer que:\n  - Toda matriz diagonal é triangular superior e inferior.\n  - Matriz escalar é um tipo de diagonal (diagonal com todos iguais).\n- Contagem de elementos: em n×n, são n² (ex.: 4×4 → 16). Cai em questões rápidas.\n\n> Dica de prova\n> - Passo relâmpago: verifique quadrada → olhe zeros acima/abaixo → diag. fora zero → checar igualdade na diagonal (escalar).\n> - Encontrou um único elemento “indevido” (não-zero onde deveria ser zero)? Já elimina a classificação triangular correspondente.",
+  "resumo_bolso": "# Matrizes - Conceitos e Noções\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Matriz (ordem m×n)**: tabela retangular de números organizada em **m linhas** e **n colunas**.\n* **Elemento a₍ᵢⱼ₎**: número na **linha i** e **coluna j**.\n* **Lei de formação**: regra que define cada entrada da matriz em função de i e j (ex.: **a₍ᵢⱼ₎ = 2i − 6j**).\n* **Matriz linha**: ordem **1×n** (uma única linha).\n* **Matriz coluna**: ordem **m×1** (uma única coluna).\n* **Matriz quadrada**: **n×n** (mesmo nº de linhas e colunas); nº de elementos = **n²**.\n* **Matriz retangular**: **m×n com m ≠ n**.\n* **Diagonal principal**: elementos com **i = j** (a₁₁, a₂₂, a₃₃, …), da esquerda para a direita.\n* **Diagonal secundária**: da direita para a esquerda (a₁ₙ, a₂(ₙ−1), …); só faz sentido em **matriz quadrada**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Matriz Quadrada vs Matriz Retangular\n\n| Aspecto      | Matriz Quadrada (n×n)                          | Matriz Retangular (m×n, m ≠ n)                    |\n|--------------|-----------------------------------------------|---------------------------------------------------|\n| Ordem        | Linhas = colunas                              | Linhas ≠ colunas                                  |\n| Diagonais    | Tem diagonais principal e secundária          | Não se fala em diagonal principal/secundária      |\n| Determinante | Pode ter determinante                         | Não se fala em determinante                       |\n\n---\n\n### Triangular Superior vs Triangular Inferior\n\n(Apenas para **matriz quadrada**)\n\n| Aspecto            | Triangular Superior                                  | Triangular Inferior                                  |\n|--------------------|------------------------------------------------------|------------------------------------------------------|\n| Zeros              | **Abaixo** da diagonal principal                     | **Acima** da diagonal principal                      |\n| Condição em a₍ᵢⱼ₎  | a₍ᵢⱼ₎ = 0 se **i > j**                               | a₍ᵢⱼ₎ = 0 se **i < j**                               |\n\n---\n\n### Diagonal vs Escalar\n\n| Aspecto              | Matriz Diagonal                                   | Matriz Escalar                                      |\n|----------------------|---------------------------------------------------|-----------------------------------------------------|\n| Fora da diagonal     | **Tudo 0** (i ≠ j ⇒ a₍ᵢⱼ₎ = 0)                    | **Tudo 0** (i ≠ j ⇒ a₍ᵢⱼ₎ = 0)                      |\n| Na diagonal principal| Pode ter valores quaisquer (inclusive zeros)      | **Todos os elementos da diagonal são iguais**       |\n| Relação              | Diagonal é triangular superior e inferior         | Caso particular de matriz diagonal                  |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Ordem e contagem de elementos**\n\n* **Aplicação**: matriz quadrada n×n.\n* **Regra**: nº de elementos = **n²**.\n* **Exemplo**: 4×4 → 16 elementos.\n\n---\n\n**2. Diagonal principal e secundária (quadrada n×n)**\n\n* **Aplicação**: identificação de diagonais.\n* **Regra**:  \n  * Principal: **i = j**.  \n  * Secundária: **i + j = n + 1**.\n* **Exemplo**: 3×3 → secundária: a₁₃, a₂₂, a₃₁.\n\n---\n\n**3. Triangular Superior**\n\n* **Aplicação**: classificar matriz quadrada.\n* **Regra**: a₍ᵢⱼ₎ = 0 se **i > j** (zeros abaixo da diagonal principal).\n* **Exemplo**: em 3×3, a₂₁ = 0, a₃₁ = 0, a₃₂ = 0.\n\n---\n\n**4. Triangular Inferior**\n\n* **Aplicação**: classificar matriz quadrada.\n* **Regra**: a₍ᵢⱼ₎ = 0 se **i < j** (zeros acima da diagonal principal).\n* **Exemplo**: em 3×3, a₁₂ = 0, a₁₃ = 0, a₂₃ = 0.\n\n---\n\n**5. Lei de formação a₍ᵢⱼ₎**\n\n* **Aplicação**: montar matriz a partir de fórmula.\n* **Regra**: para cada par (i, j) válido, substituir i e j na expressão.\n* **Exemplo**: a₍ᵢⱼ₎ = 2i − 6j, 3×3 → calcular de a₁₁ até a₃₃.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Achar diagonal ou determinante em matriz retangular (2×3, 3×5 etc.). Diagonais e determinante só em matrizes quadradas.\n2. Trocar i por j ao aplicar a lei de formação.\n3. Confundir “i > j” (abaixo da diagonal) com “i < j” (acima da diagonal), invertendo superior/inferior.\n4. Considerar que matriz diagonal exige elementos não nulos na diagonal (na diagonal podem existir zeros).\n5. Esquecer que toda matriz diagonal é triangular superior e inferior, e que matriz escalar é um tipo de diagonal.\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar a **ordem m×n** e, em matriz **n×n**, contar elementos como **n²**?\n* Lembro que **só matriz quadrada** tem **diagonais** e permite **determinante**?\n* Sei usar **i = j** (principal) e **i + j = n + 1** (secundária) em matriz n×n?\n* Diferencio **triangular superior (i > j ⇒ a₍ᵢⱼ₎ = 0)** de **triangular inferior (i < j ⇒ a₍ᵢⱼ₎ = 0)**?\n* Sei que **diagonal** tem tudo fora da diagonal principal igual a 0 e que **escalar** é diagonal com todos os elementos da diagonal principal iguais?\n* Consigo aplicar corretamente a **lei de formação a₍ᵢⱼ₎** sem trocar i (linha) e j (coluna)?",
+  "mapa_mental": "# 🧮 Matrizes – Conceitos e Noções\n\n## 🎯 Fundamentos de Matrizes\n### 💡 Definição e Ordem\n- Tabela numérica\n- Formato retangular\n- Ordem m×n\n- Linhas m\n- Colunas n\n### 🔢 Elementos e Índices\n- Elemento aᵢⱼ\n- Linha i\n- Coluna j\n- Par ordenado (i,j)\n- Contagem n² (n×n)\n### 🧮 Lei de Formação\n- Regra aᵢⱼ\n- Função de i,j\n- Preenchimento sistemático\n- Atenção sinais\n- Não trocar índices\n\n## 📊 Tipos de Matrizes\n### 📏 Formato Geral\n- Matriz linha\n- Matriz coluna\n- Matriz quadrada\n- Matriz retangular\n- Ordem m≠n\n### 🔢 Matrizes Quadradas\n- Ordem n×n\n- Diagonais definidas\n- Determinante possível\n- n² elementos\n- Base classificações\n### 📐 Diagonais\n- Diagonal principal\n- Índices i=j\n- Diagonal secundária\n- Índices somam n+1\n- Só em quadradas\n\n## 🧱 Matrizes Especiais\n### 🔺 Triangulares\n- Sempre quadradas\n- Triangular superior\n- Zeros abaixo diagonal\n- Triangular inferior\n- Zeros acima diagonal\n### 📉 Matriz Diagonal\n- Fora diagonal zero\n- i≠j implica zero\n- Quadrada obrigatória\n- Superior e inferior\n- Subconjunto quadradas\n### 🎯 Matriz Escalar\n- Diagonal especial\n- Diagonal igual\n- Fora diagonal zero\n- Subconjunto diagonal\n- Cadeia inclusões\n\n## 📝 Técnicas e Erros de Prova\n### 🧮 Construção por Lei\n- Identificar ordem\n- Listar pares (i,j)\n- Substituir na lei\n- Preencher por linhas\n- Conferir sinais\n### 🔍 Classificação Rápida\n- Verificar quadrada\n- Localizar diagonal\n- Checar zeros acima\n- Checar zeros abaixo\n- Testar diagonal escalar\n### ⚠️ Erros Frequentes\n- Trocar i e j\n- Diagonal em retangular\n- Confundir i>j / i<j\n- Exigir diagonal não nula\n- Esquecer inclusões especiais",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Estrutura Matricial",
+      "description": "Estrutura Matricial — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual lei de formação define os elementos da matriz aᵢⱼ apresentada?",
+          "back": "2i - 6j",
+          "hint": "Envolve índices de linha e coluna",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "lei-formacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como as matrizes são classificadas quanto à quantidade de linhas e colunas?",
+          "back": "Pelo número de linhas e o número de colunas, bem como pelos tipos de elementos que elas apresentam e suas disposições",
+          "hint": "Pense na estrutura dimensional",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "classificacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Classificação Básica",
+      "description": "Classificação Básica — 3 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual condição define uma matriz quadrada?",
+          "back": "A quantidade de linhas é igual à quantidade de colunas",
+          "hint": "Compare as dimensões",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-quadrada"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Como se calcula a quantidade de elementos de uma matriz quadrada de ordem n?",
+          "back": "n²",
+          "hint": "Relacionado à ordem n",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-quadrada"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Como se classifica uma matriz com apenas uma coluna?",
+          "back": "Matriz coluna",
+          "hint": "Nome baseado na forma",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "tipos-matriz"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Diagonais",
+      "description": "Diagonais — 1 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual é a direção da diagonal principal de uma matriz quadrada?",
+          "back": "Da esquerda para a direita",
+          "hint": "Orientação espacial",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "diagonal-principal"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Matrizes Especiais",
+      "description": "Matrizes Especiais — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual condição caracteriza uma matriz triangular superior?",
+          "back": "Os elementos acima ou abaixo da diagonal principal são iguais a zero",
+          "hint": "Foco nos elementos fora da diagonal",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-triangular"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "O que define uma matriz diagonal?",
+          "back": "Matriz em que todos os elementos que não estão na diagonal principal são iguais a zero",
+          "hint": "Condição para elementos fora da diagonal",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-diagonal"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual propriedade dos elementos da diagonal principal define uma matriz escalar?",
+          "back": "Os elementos da diagonal principal são todos iguais",
+          "hint": "Propriedade específica dos valores",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "matriz-escalar"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a característica fundamental de uma matriz coluna?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apresenta apenas uma coluna e pode ter múltiplas linhas",
+          "correct": true,
+          "explanation": "Correta. Uma matriz coluna, por definição, é aquela que possui uma única coluna, mas pode ter um número variável de linhas. Isso significa que seus elementos são organizados verticalmente."
+        },
+        {
+          "id": "b",
+          "text": "Apresenta número igual de linhas e colunas",
+          "correct": false,
+          "explanation": "Incorreta. Esta é a definição de uma matriz quadrada, onde o número de linhas é igual ao número de colunas, o que não se aplica necessariamente a uma matriz coluna."
+        },
+        {
+          "id": "c",
+          "text": "Apresenta apenas uma linha e pode ter múltiplas colunas",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição corresponde a uma matriz linha, que possui apenas uma linha e múltiplas colunas, não a uma matriz coluna."
+        },
+        {
+          "id": "d",
+          "text": "Apresenta elementos nulos fora da diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. Embora uma matriz coluna possa conter elementos nulos, esta não é sua característica fundamental ou definidora. A característica principal é a sua estrutura de uma única coluna."
+        }
+      ],
+      "explanation": "Correta. Uma matriz coluna, por definição, é aquela que possui uma única coluna, mas pode ter um número variável de linhas. Isso significa que seus elementos são organizados verticalmente.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma matriz quadrada, qual é a relação entre o número de linhas e o número de colunas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número de linhas é igual ao número de colunas",
+          "correct": true,
+          "explanation": "Correta. Uma matriz quadrada é definida como aquela em que o número de linhas (m) é igual ao número de colunas (n), ou seja, m = n. Esta característica é crucial para diversas operações e propriedades matriciais, como o cálculo de determinantes."
+        },
+        {
+          "id": "b",
+          "text": "O número de linhas é sempre maior que o número de colunas",
+          "correct": false,
+          "explanation": "Incorreta. Esta condição descreve uma matriz retangular específica, mas não uma matriz quadrada. Em uma matriz quadrada, a igualdade entre linhas e colunas é fundamental."
+        },
+        {
+          "id": "c",
+          "text": "O número de colunas é sempre maior que o número de linhas",
+          "correct": false,
+          "explanation": "Incorreta. Assim como na alternativa 'a', esta condição descreve uma matriz retangular específica, não uma matriz quadrada."
+        },
+        {
+          "id": "d",
+          "text": "O número de linhas é o dobro do número de colunas",
+          "correct": false,
+          "explanation": "Incorreta. Esta é uma relação numérica arbitrária que não define uma matriz quadrada. A definição exige a igualdade entre o número de linhas e colunas."
+        }
+      ],
+      "explanation": "Correta. Uma matriz quadrada é definida como aquela em que o número de linhas (m) é igual ao número de colunas (n), ou seja, m = n. Esta característica é crucial para diversas operações e propriedades matriciais, como o cálculo de determinantes.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Como é denominada a matriz que possui apenas uma linha e múltiplas colunas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Matriz quadrada",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz quadrada tem o número de linhas igual ao número de colunas, não se limitando a uma única linha."
+        },
+        {
+          "id": "b",
+          "text": "Matriz coluna",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz coluna possui apenas uma coluna e múltiplas linhas, o oposto do que é descrito na pergunta."
+        },
+        {
+          "id": "c",
+          "text": "Matriz linha",
+          "correct": true,
+          "explanation": "Correta. Uma matriz linha é caracterizada por ter uma única linha e um número qualquer de colunas. Seus elementos são dispostos horizontalmente."
+        },
+        {
+          "id": "d",
+          "text": "Matriz diagonal",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz diagonal é um tipo específico de matriz quadrada onde todos os elementos fora da diagonal principal são zero, o que não se relaciona diretamente com a característica de ter apenas uma linha."
+        }
+      ],
+      "explanation": "Correta. Uma matriz linha é caracterizada por ter uma única linha e um número qualquer de colunas. Seus elementos são dispostos horizontalmente.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual tipo de matriz é requisito obrigatório para o cálculo de determinantes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Matriz coluna com elementos não nulos",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz coluna, por não ser quadrada (a menos que seja uma matriz 1x1), não possui determinante no sentido tradicional. A presença de elementos não nulos não altera essa condição."
+        },
+        {
+          "id": "b",
+          "text": "Matriz retangular com mais linhas que colunas",
+          "correct": false,
+          "explanation": "Incorreta. Determinantes só podem ser calculados para matrizes quadradas. Matrizes retangulares, mesmo com mais linhas que colunas, não possuem determinante."
+        },
+        {
+          "id": "c",
+          "text": "Matriz quadrada com número de linhas igual ao número de colunas",
+          "correct": true,
+          "explanation": "Correta. O cálculo do determinante é uma operação exclusiva de matrizes quadradas, ou seja, aquelas em que o número de linhas é idêntico ao número de colunas. Isso é uma regra fundamental da álgebra linear."
+        },
+        {
+          "id": "d",
+          "text": "Matriz linha com elementos dispostos em ordem crescente",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz linha, assim como a matriz coluna, não é quadrada (a menos que seja uma matriz 1x1) e, portanto, não possui determinante. A ordem crescente dos elementos é irrelevante para essa propriedade."
+        }
+      ],
+      "explanation": "Correta. O cálculo do determinante é uma operação exclusiva de matrizes quadradas, ou seja, aquelas em que o número de linhas é idêntico ao número de colunas. Isso é uma regra fundamental da álgebra linear.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma matriz quadrada, qual é a característica da diagonal principal?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Contém apenas elementos nulos em matrizes de ordem ímpar",
+          "correct": false,
+          "explanation": "Incorreta. A presença de elementos nulos na diagonal principal não é uma característica definidora para todas as matrizes quadradas, nem está restrita a ordens ímpares. Em matrizes como a matriz identidade, por exemplo, os elementos da diagonal principal são 1."
+        },
+        {
+          "id": "b",
+          "text": "Contém elementos que são sempre iguais entre si",
+          "correct": false,
+          "explanation": "Incorreta. Os elementos da diagonal principal não precisam ser iguais entre si. Eles podem ser quaisquer valores numéricos, como visto em diversas matrizes, a menos que se trate de um tipo específico como a matriz escalar ou identidade."
+        },
+        {
+          "id": "c",
+          "text": "Estende-se do canto superior direito ao canto inferior esquerdo",
+          "correct": false,
+          "explanation": "Incorreta. A diagonal secundária de uma matriz quadrada estende-se do canto superior direito ao canto inferior esquerdo. A diagonal principal segue a direção oposta."
+        },
+        {
+          "id": "d",
+          "text": "Estende-se do canto superior esquerdo ao canto inferior direito",
+          "correct": true,
+          "explanation": "Correta. A diagonal principal de uma matriz quadrada é formada pelos elementos cujos índices de linha e coluna são iguais (a_ii). Ela se estende do canto superior esquerdo ao canto inferior direito da matriz."
+        }
+      ],
+      "explanation": "Correta. A diagonal principal de uma matriz quadrada é formada pelos elementos cujos índices de linha e coluna são iguais (a_ii). Ela se estende do canto superior esquerdo ao canto inferior direito da matriz.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em uma matriz triangular superior, qual é a condição para que um elemento aij seja igual a zero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quando o índice da linha i é múltiplo do índice da coluna j",
+          "correct": false,
+          "explanation": "Incorreta. A relação de multiplicidade entre os índices da linha e da coluna não define a condição para que um elemento seja zero em uma matriz triangular superior. A condição é estritamente baseada na comparação de grandeza entre os índices i e j."
+        },
+        {
+          "id": "b",
+          "text": "Quando o índice da linha i é maior que o índice da coluna j",
+          "correct": true,
+          "explanation": "Correta. Em uma matriz triangular superior, por definição, todos os elementos abaixo da diagonal principal são iguais a zero. Esses são os elementos aij onde o índice da linha (i) é maior que o índice da coluna (j)."
+        },
+        {
+          "id": "c",
+          "text": "Quando o índice da linha i é menor que o índice da coluna j",
+          "correct": false,
+          "explanation": "Incorreta. Em uma matriz triangular superior, os elementos aij iguais a zero são aqueles em que o índice da linha (i) é maior que o índice da coluna (j). Quando i < j, os elementos estão acima da diagonal principal e podem ser não nulos, formando o triângulo superior."
+        },
+        {
+          "id": "d",
+          "text": "Quando o índice da linha i é igual ao índice da coluna j",
+          "correct": false,
+          "explanation": "Incorreta. Quando o índice da linha (i) é igual ao índice da coluna (j), o elemento aij está na diagonal principal. Os elementos da diagonal principal podem ser nulos ou não nulos em uma matriz triangular superior, não sendo a condição para que um elemento seja zero."
+        }
+      ],
+      "explanation": "Correta. Em uma matriz triangular superior, por definição, todos os elementos abaixo da diagonal principal são iguais a zero. Esses são os elementos aij onde o índice da linha (i) é maior que o índice da coluna (j).",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a principal diferença entre uma matriz diagonal e uma matriz escalar?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz diagonal possui ordem maior que três, enquanto a matriz escalar possui ordem menor ou igual a três",
+          "correct": false,
+          "explanation": "Incorreta. A ordem da matriz (número de linhas e colunas) não é um critério de distinção entre matriz diagonal e matriz escalar. Ambas podem ter qualquer ordem n x n, desde que sejam quadradas."
+        },
+        {
+          "id": "b",
+          "text": "A matriz diagonal possui elementos não nulos apenas na diagonal principal, enquanto a matriz escalar possui todos os elementos da diagonal principal iguais entre si",
+          "correct": true,
+          "explanation": "Correta. Uma matriz diagonal é uma matriz quadrada onde todos os elementos fora da diagonal principal são zero, mas os elementos da diagonal principal podem ser quaisquer valores (inclusive zero). Já uma matriz escalar é um tipo específico de matriz diagonal onde todos os elementos da diagonal principal são iguais entre si (mas não necessariamente iguais a um, como na matriz identidade)."
+        },
+        {
+          "id": "c",
+          "text": "A matriz diagonal possui elementos nulos acima da diagonal principal, enquanto a matriz escalar possui elementos nulos abaixo da diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a matriz diagonal quanto a matriz escalar possuem elementos nulos acima e abaixo da diagonal principal. A distinção entre elas não se baseia na posição dos elementos nulos, mas sim na natureza dos elementos da diagonal principal."
+        },
+        {
+          "id": "d",
+          "text": "A matriz diagonal possui elementos da diagonal principal crescentes, enquanto a matriz escalar possui elementos da diagonal principal decrescentes",
+          "correct": false,
+          "explanation": "Incorreta. Não há uma regra que determine que os elementos da diagonal principal de uma matriz diagonal sejam crescentes ou que os de uma matriz escalar sejam decrescentes. Os valores dos elementos da diagonal principal podem ser quaisquer números, desde que respeitem as definições de cada tipo de matriz."
+        }
+      ],
+      "explanation": "Correta. Uma matriz diagonal é uma matriz quadrada onde todos os elementos fora da diagonal principal são zero, mas os elementos da diagonal principal podem ser quaisquer valores (inclusive zero). Já uma matriz escalar é um tipo específico de matriz diagonal onde todos os elementos da diagonal principal são iguais entre si (mas não necessariamente iguais a um, como na matriz identidade).",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando uma matriz A de ordem 3×3 com lei de formação aij = 2i - 6j, qual seria o valor do elemento a₂₃?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "-14",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o valor do elemento a₂₃, aplicamos a lei de formação aij = 2i - 6j. Substituindo i por 2 e j por 3, temos a₂₃ = 2(2) - 6(3) = 4 - 18 = -14."
+        },
+        {
+          "id": "b",
+          "text": "-8",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo correto é 2(2) - 6(3) = 4 - 18 = -14. O valor -8 seria obtido se, por exemplo, o elemento fosse a₂₂ (2(2) - 6(2) = 4 - 12 = -8)."
+        },
+        {
+          "id": "c",
+          "text": "-4",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo correto é 2(2) - 6(3) = 4 - 18 = -14. O valor -4 seria obtido se, por exemplo, o elemento fosse a₁₁ (2(1) - 6(1) = 2 - 6 = -4)."
+        },
+        {
+          "id": "d",
+          "text": "-10",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo correto é 2(2) - 6(3) = 4 - 18 = -14. O valor -10 seria obtido, por exemplo, se a operação fosse 2(2) - 6(2) = 4 - 12 = -8, ou 2(3) - 6(2) = 6 - 12 = -6, dependendo dos índices."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o valor do elemento a₂₃, aplicamos a lei de formação aij = 2i - 6j. Substituindo i por 2 e j por 3, temos a₂₃ = 2(2) - 6(3) = 4 - 18 = -14.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a condição necessária e suficiente para que uma matriz seja simultaneamente triangular superior e triangular inferior?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz deve ser uma matriz identidade, com elementos da diagonal principal iguais a um",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz identidade é um caso particular de matriz diagonal onde todos os elementos da diagonal principal são iguais a um. Embora seja simultaneamente triangular superior e inferior, a condição não exige que os elementos da diagonal principal sejam necessariamente um; eles podem ser quaisquer números diferentes de zero (ou até zero, desde que os demais sejam zero)."
+        },
+        {
+          "id": "b",
+          "text": "A matriz deve ser uma matriz diagonal, com todos os elementos fora da diagonal principal iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Uma matriz é triangular superior se todos os elementos abaixo da diagonal principal são zero. Uma matriz é triangular inferior se todos os elementos acima da diagonal principal são zero. Para que uma matriz seja simultaneamente triangular superior e triangular inferior, todos os elementos que não estão na diagonal principal (ou seja, tanto os acima quanto os abaixo) devem ser zero. Esta é exatamente a definição de uma matriz diagonal."
+        },
+        {
+          "id": "c",
+          "text": "A matriz deve ser uma matriz nula, com todos os elementos iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz nula, onde todos os elementos são zero, é de fato simultaneamente triangular superior e inferior, e também diagonal. No entanto, a condição de ser simultaneamente triangular superior e inferior não implica que todos os elementos devam ser zero; apenas os elementos fora da diagonal principal precisam ser zero."
+        },
+        {
+          "id": "d",
+          "text": "A matriz deve ser uma matriz escalar, com elementos da diagonal principal iguais entre si",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz escalar é um tipo de matriz diagonal onde todos os elementos da diagonal principal são iguais entre si. Embora seja simultaneamente triangular superior e inferior, a condição não exige que os elementos da diagonal principal sejam iguais; eles podem ser diferentes, desde que os elementos fora da diagonal sejam zero."
+        }
+      ],
+      "explanation": "Correta. Uma matriz é triangular superior se todos os elementos abaixo da diagonal principal são zero. Uma matriz é triangular inferior se todos os elementos acima da diagonal principal são zero. Para que uma matriz seja simultaneamente triangular superior e triangular inferior, todos os elementos que não estão na diagonal principal (ou seja, tanto os acima quanto os abaixo) devem ser zero. Esta é exatamente a definição de uma matriz diagonal.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando as propriedades estruturais das matrizes, qual afirmação caracteriza corretamente a relação entre matriz escalar e matriz identidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz escalar possui elementos da diagonal principal variáveis, enquanto a matriz identidade possui elementos da diagonal principal constantes",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a matriz escalar quanto a matriz identidade possuem elementos da diagonal principal constantes em relação aos outros elementos da diagonal principal (no caso da escalar, todos são o mesmo valor; no caso da identidade, todos são 1). A diferença é que na matriz escalar, essa constante pode ser qualquer número, enquanto na identidade, deve ser 1."
+        },
+        {
+          "id": "b",
+          "text": "Toda matriz escalar é uma matriz identidade multiplicada por um escalar, mas a matriz identidade não pode ser obtida a partir de uma matriz escalar",
+          "correct": false,
+          "explanation": "Incorreta. A matriz identidade é uma matriz escalar, então ela pode ser obtida a partir da definição de matriz escalar. Além disso, uma matriz escalar é uma matriz diagonal onde os elementos da diagonal principal são iguais, e uma matriz identidade é uma matriz escalar onde esses elementos são 1. Portanto, toda matriz identidade é uma matriz escalar."
+        },
+        {
+          "id": "c",
+          "text": "Matriz escalar e matriz identidade são denominações equivalentes para o mesmo tipo de estrutura matricial",
+          "correct": false,
+          "explanation": "Incorreta. Matriz escalar e matriz identidade não são denominações equivalentes. A matriz identidade é um caso especial de matriz escalar, onde o escalar é 1. Uma matriz escalar pode ter qualquer valor constante na diagonal principal, enquanto a identidade exige que seja 1."
+        },
+        {
+          "id": "d",
+          "text": "Toda matriz identidade é uma matriz escalar particular onde todos os elementos da diagonal principal são iguais a um, mas nem toda matriz escalar é uma matriz identidade",
+          "correct": true,
+          "explanation": "Correta. Uma matriz identidade é uma matriz escalar específica onde todos os elementos da diagonal principal são iguais a 1. Ou seja, a matriz identidade é um subconjunto das matrizes escalares. No entanto, uma matriz escalar pode ter elementos da diagonal principal iguais a qualquer constante (por exemplo, todos 5s), e essa matriz não seria uma matriz identidade."
+        }
+      ],
+      "explanation": "Correta. Uma matriz identidade é uma matriz escalar específica onde todos os elementos da diagonal principal são iguais a 1. Ou seja, a matriz identidade é um subconjunto das matrizes escalares. No entanto, uma matriz escalar pode ter elementos da diagonal principal iguais a qualquer constante (por exemplo, todos 5s), e essa matriz não seria uma matriz identidade.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "09_335686_Matrizes - Conceitos e Noções.pdf",
+  "coletado_em": "2026-09-23T20:59:23"
+}

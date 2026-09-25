@@ -1,0 +1,575 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 17,
+  "ordem_no_curso": "19.00",
+  "titulo": "Conjunto dos Números Complexos",
+  "codigo_aula": "267539",
+  "video_id": "I40/wvi2qDs=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:38:23",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/I40%2Fwvi2qDs%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=425070%2C425071%2C425072%2C425074%2C425075%2C425076%2C425073&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Complexos\n\n## Apresentação do Tema e Objetivos da Aula\nVamos dar continuidade à nossa matriz de Matemática e falar de um assunto muito importante: o conjunto dos números complexos. É um dos conjuntos numéricos que precisamos aprender. Já vimos os naturais, os inteiros, os racionais e os irracionais. Esses são os principais, ok? \n\nMas existe um detalhe: surgiu um outro conjunto numérico para resolver um problema específico. Para resolver esse problema, criou-se esse novo conjunto porque apareceu a tal da parte imaginária. Então, vamos começar agora com o conjunto dos números complexos.\n\nCom isso, poderemos trabalhar operações, módulo, conjugado, representações algébricas, geométricas e trigonométricas — tudo aquilo que envolve concurso público. Quando o edital traz “números complexos”, não tem mistério: é importante demais. Se você não tiver conhecimento, não tem como responder. Mas é um assunto gostoso de aprender, não é complicado. Vamos levar questões para você ficar craque comigo. Vamos começar.\n\n## O que são Números Complexos?\n“Números complexos” assusta pelo nome, parece complicado, mas não é por isso. Falamos em “complexos” porque esse número possui duas partes. Ele é formado por uma parte real e por uma parte imaginária. É isso que faz um número ser complexo: ele é formado por duas partes.\n\nA parte real é aquela que nós já aprendemos no conjunto dos números reais — lembra? Os reais englobam naturais, inteiros, racionais e irracionais. A união de todos esses forma o conjunto dos reais. E agora entra uma outra parte que compõe o número complexo: a novidade para a gente, a parte imaginária.\n\nO que os concursos pedem? As bancas querem:\n- Operações: soma, subtração, multiplicação, divisão, potenciação e radiciação.\n- Modo (módulo) do número complexo.\n- Conjugado do número complexo.\n- Representações: algébrica, trigonométrica e geométrica (no plano de Argand-Gauss, que é o plano cartesiano).\n\nNosso objetivo aqui é entender todos esses procedimentos por meio de um número complexo. Show de bola. Há muitas questões teóricas em concursos sobre parte real, parte imaginária, operações, módulo e representações. Vamos começar.\n\n## Revisão dos Conjuntos Numéricos Reais\nSem teoria não dá para lugar nenhum. A união dos conjuntos dos números naturais, inteiros, racionais e irracionais forma os reais. Então, se eu tenho naturais, inteiros, racionais e irracionais, a união de tudo isso são os reais. Historicamente, os conjuntos surgiram conforme necessidades:\n- Primeiro, os naturais (contagem).\n- Depois, negativos para representar dívidas, formando os inteiros.\n- Depois, frações — os racionais.\n- E números não periódicos — os irracionais.\nIsso tudo formou os reais.\n\nMas aconteceu um detalhe importante: na busca de novas descobertas, os matemáticos se depararam com uma situação ao resolver uma equação do segundo grau. Vamos ver.\n\n## Motivação: Equação do Segundo Grau com Delta Negativo\nVamos resolver uma equação do segundo grau. Trabalhávamos no conjunto dos reais e pintou a situação do discriminante (delta) negativo. Usando a fórmula de Bhaskara, quando chegamos em x = (-b ± √Δ) / (2a), apareceu a raiz de um número negativo. Você aprendeu que raiz de número negativo não existe nos reais. Dentro dos reais, a solução seria “conjunto vazio”: não tem solução.\n\nMas e aí? Acabaram nossos estudos? Não. Números complexos são importantíssimos, por exemplo, para eletrônica. Componentes, curvas — muita coisa depende de complexos.\n\nSurgiu então a ideia: precisamos resolver esse problema fora dos reais. Criou-se um novo número para lidar com raízes de negativos.\n\n## Definição do Número Imaginário i\nForam vários matemáticos desenvolvendo essa ideia (Cardano e outros). Por definição, criaram o número imaginário i, tal que:\n- i² = -1.\n\nAceite isso: é uma definição que resolve o problema. A partir daí, conseguimos tratar raízes de números negativos.\n\nVeja o problema que tínhamos: √(-16).\n- Escrevemos -16 = (-1)·16.\n- Substituímos -1 por i²: √(i²·16).\n- Aí fica: √(i²)·√(16) = ±i·4 = ±4i.\n\nPronto! Aquilo que não tinha solução nos reais passa a ter solução nos complexos:\n- √(-16) = ±4i.\n\nPodemos então continuar a equação do segundo grau e encontrar as raízes no conjunto dos complexos. Supondo que tenhamos chegado em x = (-2 ± 4i)/2 = -1 ± 2i. Agora temos duas raízes: -1 + 2i e -1 - 2i.\n\nEssas raízes não pertencem aos inteiros, nem aos racionais; pertencem ao conjunto dos complexos, denotado por C.\n\n## Interpretação: Parte Real e Parte Imaginária\nPor que “número complexo”? Porque possui duas partes:\n- Parte real.\n- Parte imaginária.\n\nNo exemplo:\n- Em -1 + 2i: a parte real é -1; a parte imaginária é 2 (o coeficiente de i).\n- Em -1 - 2i: a parte real é -1; a parte imaginária é -2.\n\nImportante: “parte imaginária” refere-se ao coeficiente que multiplica i. Se você colocar só o número com i, lembre-se de identificar o coeficiente (por exemplo, 2 em 2i, -2 em -2i).\n\n## Contexto Histórico (Concursos Cobram!)\nHistoricamente, o estudo dos complexos se consolidou graças à contribuição de Girolamo Cardano (século XVI). Ele mostrou que, mesmo com termo negativo dentro da raiz quadrada, era possível obter soluções para equações do segundo grau. Isso foi muito importante porque, até então, não se admitia extrair raiz quadrada de número negativo.\n\nDepois de Cardano, outros matemáticos avançaram e formalizaram rigorosamente o tema. Esse contexto histórico cai em concursos, especialmente em prefeituras e bancos examinadores que gostam de teoria.\n\nOs complexos formam um conjunto “maior” no sentido de abranger os reais e permitir operações e soluções adicionais. Assim como aprendemos operações com naturais, inteiros, racionais e reais, vamos aprender operações com complexos: soma, subtração, multiplicação, divisão, potenciação e radiciação.\n\n> 🎯 **Dicas de prova:** Bancas cobram definição de i, identificação de parte real e imaginária, operações, módulo, conjugado e representações (algébrica, trigonométrica e geométrica).\n\n## Potências de i: Padrão Cíclico\nÉ importante entender as potências de i. Tudo parte da definição i² = -1.\n\nVamos construir:\n- i⁰ = 1 (qualquer número elevado a zero é 1).\n- i¹ = i.\n- i² = -1 (definição).\n- i³ = i²·i = (-1)·i = -i.\n- i⁴ = i²·i² = (-1)·(-1) = 1.\n- i⁵ = i⁴·i = 1·i = i.\n- i⁶ = i⁴·i² = 1·(-1) = -1.\n- i⁷ = i⁶·i = (-1)·i = -i.\n\nObserve o padrão que se repete de quatro em quatro expoentes:\n1, i, -1, -i, e depois volta: 1, i, -1, -i...\n\nIsso é fundamental para agilizar cálculos.\n\n> 🎯 **Dicas de prova:** Potências de i repetem em ciclos de 4: \n> i⁰ = 1, i¹ = i, i² = -1, i³ = -i, i⁴ = 1, e assim por diante.\n\n## Técnica Rápida: Redução Módulo 4\nComo calcular i^n para expoentes grandes, tipo i^27, i^270, i^2007, i^27.010?\n\nEm vez de expandir, use a divisão por 4 para achar o resto:\n- Divida n por 4 e observe o resto r.\n- O valor de i^n é igual a i^r, com a convenção:\n  - r = 0 → i^n = 1\n  - r = 1 → i^n = i\n  - r = 2 → i^n = -1\n  - r = 3 → i^n = -i\n\nExemplo: i^54.\n- 54 ÷ 4 = 13, resto 2.\n- Então i^54 = i² = -1.\n\nPronto, rápido e direto.\n\n> 🎯 **Dicas de prova:** Para i^n, use o resto da divisão de n por 4. Restos 0, 1, 2, 3 correspondem a 1, i, -1, -i, respectivamente.\n\n## Encerramento do Bloco\nA partir de agora, no próximo bloco, vamos fazer várias questões usando essas ideias. Eu gosto de começar com o conceito, porque muitas vezes a pessoa até resolve, mas não sabe explicar ou reconhecer a teoria quando aparece uma questão teórica.\n\nConcurso público está diferente, com desafios. Métodos são importantes, mas sem conteúdo você não sai do lugar. O conteúdo é o combustível. Pelo menos agora você sabe o que é, de onde veio e o que significam os símbolos. Isso cai.\n\nVamos voltar para treinar potências de i. Não saia daí — estou voltando agora.",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Complexos",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 38158,
+    "createdAt": "2026-02-05T14:05:20.228Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda o conjunto dos **números complexos**: motivação, definição de **i** e sua **parte real** e **parte imaginária**; resolução de equações do 2º grau com **Δ < 0**; cálculo rápido de **potências de i**; noções essenciais de **conjugado**, **módulo** e representações (algébrica, trigonométrica e geométrica no **plano de Argand-Gauss**).\nPrincipais pontos: \n- i² = −1 e √(−n) = √n · i\n- Raízes complexas surgem quando o discriminante Δ é negativo\n- Potências de i seguem ciclo de 4 via resto da divisão por 4\n\n## 1. Base / Conceitos Fundamentais\n- **Números complexos**: ampliam os reais para permitir soluções de equações com √(número negativo).\n- **Definição de i**: número imaginário fundamental tal que **i² = −1**.\n- **Forma algébrica**: z = a + bi, onde:\n  - **parte real**: a ∈ ℝ\n  - **parte imaginária**: b ∈ ℝ (o termo imaginário é b·i)\n- **Conjuntos numéricos**: Naturais ⊂ Inteiros ⊂ Racionais ⊂ Reais ⊂ Complexos.\n- **Plano de Argand-Gauss**: representação geométrica de z = a + bi como ponto (a, b).\n\n> Dica de Prova\n> - Parte real é o coeficiente “sem i”; parte imaginária é o coeficiente que multiplica i (ex.: em −1 + 2i, real = −1, imaginário = 2).\n\n## 2. Como Funciona / Distinções\n- **Reais vs Complexos**:\n  - Nos reais, √(negativo) não existe.\n  - Nos complexos, definimos **i² = −1**, logo √(−n) = √n · i.\n- **Raízes de equação do 2º grau**:\n  - Fórmula de Bhaskara: x = (−b ± √Δ) / (2a), com **Δ = b² − 4ac**.\n  - Se **Δ < 0** → raízes complexas conjugadas: a ± bi.\n- **Potências de i** (ciclo de 4):\n  - i⁰ = 1, i¹ = i, i² = −1, i³ = −i, i⁴ = 1 (reinicia).\n  - Governadas por n mod 4:\n    - n ≡ 0 → 1\n    - n ≡ 1 → i\n    - n ≡ 2 → −1\n    - n ≡ 3 → −i\n\n> Dica de Prova\n> - Se Δ < 0, espere resposta no formato a ± bi (raízes conjugadas).\n> - Para √(−m), troque por √m · i imediatamente.\n\n## 3. Aplicação Prática / Técnicas\n- **Resolver equação do 2º grau com Δ < 0**:\n  1) Calcule Δ = b² − 4ac.\n  2) Se Δ < 0, escreva √Δ = √(|Δ|) · i.\n  3) Aplique x = (−b ± √Δ)/(2a) e simplifique.\n- **Potências de i (macete do resto por 4)**:\n  - Passos:\n    1) Pegue o expoente n.\n    2) Divida por 4 e encontre o resto r.\n    3) Associe r: 0 → 1; 1 → i; 2 → −1; 3 → −i.\n- **Operações básicas com z = a + bi e w = c + di**:\n  - Soma/Subtração: (a ± c) + (b ± d)i.\n  - Multiplicação: (ac − bd) + (ad + bc)i, usando i² = −1.\n  - Divisão: z/w = [(a + bi)(c − di)]/(c² + d²) = [(ac + bd) + (bc − ad)i]/(c² + d²).\n- **Conjugado e módulo**:\n  - Conjugado: z̄ = a − bi.\n  - Módulo: |z| = √(a² + b²).\n  - z · z̄ = a² + b² = |z|².\n\n> Dica de Prova\n> - Para dividir complexos, multiplique numerador e denominador pelo conjugado do denominador.\n> - Em multiplicações, lembre: i² = −1 é o atalho para simplificar.\n\n## 4. Exemplos e Casos Resolvidos\n- **Equação com Δ < 0**:\n  - x² + 2x + 5 = 0\n  - Δ = 2² − 4·1·5 = 4 − 20 = −16\n  - x = (−2 ± √(−16))/2 = (−2 ± 4i)/2 = −1 ± 2i.\n- **Potências de i**:\n  - i^54: 54 ÷ 4 → resto 2 → i^54 = −1.\n  - i^27: 27 ÷ 4 → resto 3 → i^27 = −i.\n  - i^270: 270 ÷ 4 → resto 2 → −1.\n  - i^2007: 2007 ÷ 4 → resto 3 → −i.\n  - i^100000: 100000 ÷ 4 → resto 0 → 1.\n  - i^27010: 27010 ÷ 4 → resto 2 → −1.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - i^0 = 1 (não 0).\n> - Não esqueça: i² = −1. Em multiplicações, substitua cedo para evitar erro de sinal.\n> - Ao ver √(−n), reescreva como √n · i. Não deixe a raiz de negativo “crua”.\n> - Em divisão, só racionalize com o conjugado do denominador. Esquecer esse passo gera fração incorreta.\n> - Raízes de equação com Δ < 0 vêm em pares conjugados a ± bi.\n> - Parte imaginária é o coeficiente b (em a + bi). Dizer que “2i é a parte imaginária” está errado: a parte imaginária é 2.\n\n> Pegadinha Histórica\n> - Associação nominal: **Girolamo Cardano** ligado ao avanço na aceitação de raízes de negativos no século XVI (por volta de 1515). Se houver menção, aponte i² = −1 como marco conceitual.",
+  "resumo_bolso": "# Conjunto dos Números Complexos\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Número complexo**: amplia os reais para permitir soluções de equações com √(número negativo).\n* **Unidade imaginária i**: definida por **i² = −1**.\n* **Forma algébrica**: z = a + bi, onde:\n  * **parte real**: a ∈ ℝ\n  * **parte imaginária**: b ∈ ℝ (o termo imaginário é b·i; em −1 + 2i → parte real = −1, parte imaginária = 2).\n* **Plano de Argand-Gauss**: representação geométrica de z = a + bi como ponto (a, b).\n* **Conjuntos numéricos**: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ.\n* **Conjugado**: z̄ = a − bi.\n* **Módulo**: |z| = √(a² + b²).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Números Reais vs Números Complexos\n\n| Aspecto | Reais (ℝ) | Complexos (ℂ) |\n| --- | --- | --- |\n| **Raiz de negativo** | √(negativo) não existe | √(−n) = √n · i, com i² = −1 |\n\n### Raízes Reais vs Raízes Complexas (2º grau)\n\n| Aspecto | Δ ≥ 0 | Δ < 0 |\n| --- | --- | --- |\n| **Tipo de raiz** | Reais | Complexas conjugadas |\n| **Forma esperada** | números reais | a ± bi |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Definição de i e raiz de número negativo**\n\n* **Regra**: i² = −1.\n* **Transformação útil**: √(−n) = √n · i (n > 0).\n\n---\n\n**2. Fórmula de Bhaskara com Δ < 0**\n\n* **Regra**: x = (−b ± √Δ)/(2a), com Δ = b² − 4ac.\n* **Se Δ < 0**:\n  * escreva √Δ = √(|Δ|) · i;\n  * as raízes são complexas conjugadas no formato **a ± bi**.\n* **Exemplo**:  \n  x² + 2x + 5 = 0  \n  Δ = 2² − 4·1·5 = 4 − 20 = −16  \n  x = (−2 ± √(−16))/2 = (−2 ± 4i)/2 = −1 ± 2i.\n\n---\n\n**3. Potências de i (ciclo de 4)**\n\n* **Valores básicos**:  \n  i⁰ = 1; i¹ = i; i² = −1; i³ = −i; i⁴ = 1 (reinicia).\n* **Regra do resto por 4** (n inteiro ≥ 0):  \n  - n ≡ 0 (mod 4) → iⁿ = 1  \n  - n ≡ 1 (mod 4) → iⁿ = i  \n  - n ≡ 2 (mod 4) → iⁿ = −1  \n  - n ≡ 3 (mod 4) → iⁿ = −i\n* **Exemplos**:  \n  - i⁵⁴: 54 ÷ 4 → resto 2 → i⁵⁴ = −1.  \n  - i²⁷: 27 ÷ 4 → resto 3 → i²⁷ = −i.  \n  - i²⁷⁰: 270 ÷ 4 → resto 2 → −1.  \n  - i²⁰⁰⁷: 2007 ÷ 4 → resto 3 → −i.  \n  - i¹⁰⁰⁰⁰⁰: 100000 ÷ 4 → resto 0 → 1.  \n  - i²⁷⁰¹⁰: 27010 ÷ 4 → resto 2 → −1.\n\n---\n\n**4. Operações com z = a + bi, w = c + di**\n\n* **Soma/Subtração**:  \n  z ± w = (a ± c) + (b ± d)i.\n* **Multiplicação**:  \n  z·w = (ac − bd) + (ad + bc)i, usando i² = −1.\n* **Divisão**:  \n  z / w = (a + bi)/(c + di)  \n  = [(a + bi)(c − di)]/(c² + d²)  \n  = [(ac + bd) + (bc − ad)i]/(c² + d²).\n\n---\n\n**5. Conjugado e módulo**\n\n* **Conjugado**: z̄ = a − bi.\n* **Módulo**: |z| = √(a² + b²).\n* **Relação**: z · z̄ = a² + b² = |z|².\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. i⁰ = 1 (não 0).\n2. Ao ver √(−n), reescreva como √n · i; não deixe a raiz de negativo “crua”.\n3. Se Δ < 0, as raízes vêm em pares conjugados a ± bi.\n4. Parte imaginária é o coeficiente b em a + bi (em −1 + 2i, é 2, não 2i).\n5. Em divisão de complexos, multiplique numerador e denominador pelo conjugado do denominador.\n\n---\n\n## 📋 Checklist Final\n\n* Sei que **i² = −1** e usar **√(−n) = √n · i**?\n* Diferencio o que acontece com as raízes quando **Δ < 0** (raízes complexas conjugadas a ± bi)?\n* Consigo aplicar a fórmula de Bhaskara escrevendo **√Δ = √(|Δ|) · i** quando Δ < 0?\n* Sei usar o **ciclo de 4** das potências de i via resto da divisão por 4?\n* Sei identificar **parte real** e **parte imaginária** em z = a + bi?\n* Sei somar, multiplicar e dividir complexos usando o **conjugado do denominador**?\n* Sei calcular **conjugado** (a − bi), **módulo** (√(a² + b²)) e usar **z·z̄ = |z|²**?",
+  "mapa_mental": "# 🧮 Conjunto dos Números Complexos\n## 🎯 Fundamentos dos Complexos\n### 💡 Unidade imaginária i\n- Definição i² = −1\n- Raiz de negativo\n- √(−n) = √n·i\n- Extensão dos reais\n### 💡 Forma algébrica z\n- z = a + bi\n- Parte real a\n- Parte imaginária b\n- a,b pertencem aos reais\n### 💡 Conjuntos numéricos\n- Naturais\n- Inteiros\n- Racionais\n- Reais\n- Complexos\n### 💡 Plano Argand-Gauss\n- Ponto (a,b)\n- Eixo real horizontal\n- Eixo imaginário vertical\n- Vetor posição z\n\n## 🧮 Operações e Propriedades\n### 💡 Operações algébricas\n- Soma complexos\n- Subtração complexos\n- Multiplicação complexos\n- Divisão complexos\n### 💡 Conjugado complexo\n- z̄ = a − bi\n- Simetria eixo real\n- Produto z·z̄\n- z·z̄ = |z|²\n### 💡 Módulo complexo\n- |z| = √(a² + b²)\n- Distância à origem\n- Módulo não negativo\n- Relação com conjugado\n\n## 🧮 Equações e Potências de i\n### 💡 Bhaskara e Δ < 0\n- Fórmula geral\n- Δ = b² − 4ac\n- Δ < 0 sem raiz real\n- Raízes complexas\n- Par conjugado a ± bi\n### 💡 Potências de i\n- Ciclo de quatro\n- i⁰ = 1\n- i¹ = i\n- i² = −1\n- i³ = −i\n### 💡 Resto por 4\n- Expoente n\n- n mod 4\n- Resto 0 → 1\n- Resto 1 → i\n- Resto 2 → −1\n- Resto 3 → −i\n\n## ⚠️ Erros Frequentes em Provas\n### ⚠️ Interpretação de partes\n- Parte real sem i\n- Parte imaginária coeficiente\n- Não usar 2i como parte\n- Atenção ao sinal\n### ⚠️ Raiz de número negativo\n- Evitar √(−n) direto\n- Reescrever √n·i\n- Usar i² = −1 cedo\n- Cuidado com sinais\n### ⚠️ Divisão e racionalização\n- Conjugado denominador\n- Produto numerador conjugado\n- Denominador real c² + d²\n- Forma padrão a + bi",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Estrutura Complexa",
+      "description": "Estrutura Complexa — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que define a estrutura de um número complexo?",
+          "back": "Formado por uma parte real e uma parte imaginária.",
+          "hint": "Composto por dois componentes distintos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como os números reais se relacionam com o conjunto dos números complexos?",
+          "back": "Os reais compõem uma das partes do conjunto dos números complexos.",
+          "hint": "Os reais são um subconjunto",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "conjuntos-numericos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual união de conjuntos numéricos forma o conjunto dos números reais?",
+          "back": "A união dos naturais, inteiros, racionais e irracionais.",
+          "hint": "São quatro conjuntos numéricos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-reais",
+            "conjuntos-numericos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "No número -1 + 2i, quais valores correspondem às suas duas partes?",
+          "back": "Parte real igual a -1 e parte imaginária igual a 2.",
+          "hint": "Identifique o termo isolado e o termo com i",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "forma-algebrica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-5",
+          "front": "Em qual condição do discriminante uma equação do 2º grau não tem solução real?",
+          "back": "Discriminante (delta) negativo.",
+          "hint": "Relacione com o valor de delta",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "equacao-segundo-grau",
+            "discriminante"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Origem dos Complexos",
+      "description": "Origem dos Complexos — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Que problema matemático impulsionou a criação dos números complexos?",
+          "back": "A resolução de uma equação do segundo grau com raiz quadrada de número negativo.",
+          "hint": "Envolve raízes de números negativos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "historia-matematica"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual matemático contribuiu inicialmente para o estudo dos números complexos?",
+          "back": "Girolamo Cardano.",
+          "hint": "Nome de um matemático renascentista",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "historia-matematica"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Unidade Imaginária",
+      "description": "Unidade Imaginária — 3 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual símbolo representa a unidade imaginária?",
+          "back": "i",
+          "hint": "Uma letra minúscula",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "unidade-imaginaria"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual igualdade define a unidade imaginária?",
+          "back": "i² = -1",
+          "hint": "O quadrado da unidade",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "unidade-imaginaria"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Como expressar √(-16) usando a unidade imaginária?",
+          "back": "4i",
+          "hint": "Extraia a raiz do número positivo e adicione i",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "operacoes"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Potências de i",
+      "description": "Potências de i — 3 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Qual é o valor de i⁰?",
+          "back": "1",
+          "hint": "Qualquer número elevado a zero",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "potencias-i"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "A cada quantas potências os valores de i voltam a se repetir?",
+          "back": "A cada 4 potências.",
+          "hint": "É um ciclo numérico pequeno",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "potencias-i"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Como determinar uma potência elevada a um expoente grande usando a repetição das potências de i?",
+          "back": "Dividir o expoente por 4 e usar o resto como a nova potência de i.",
+          "hint": "Use a operação de resto da divisão",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-complexos",
+            "potencias-i"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a definição fundamental da unidade imaginária i que permite trabalhar com números complexos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "i² = -1",
+          "correct": true,
+          "explanation": "Correta. A definição fundamental da unidade imaginária 'i' é que seu quadrado é igual a -1 (i² = -1). Essa definição foi crucial para a criação dos números complexos, permitindo a existência de raízes quadradas de números negativos, algo impossível no conjunto dos números reais."
+        },
+        {
+          "id": "b",
+          "text": "i² = 1",
+          "correct": false,
+          "explanation": "Incorreta. Se a unidade imaginária 'i' fosse tal que i² = 1, isso implicaria que i seria igual a 1 ou -1. Ambos são números reais, e a introdução de 'i' teve como objetivo justamente expandir o conjunto numérico para além dos reais, a fim de resolver equações como x² + 1 = 0."
+        },
+        {
+          "id": "c",
+          "text": "i² = 0",
+          "correct": false,
+          "explanation": "Incorreta. Se i² = 0, isso significaria que i = 0. O zero é um número real e não introduziria uma nova categoria de números para lidar com a raiz quadrada de números negativos, que é a principal motivação para a existência da unidade imaginária."
+        },
+        {
+          "id": "d",
+          "text": "i² = i",
+          "correct": false,
+          "explanation": "Incorreta. Se i² = i, ao rearranjar a equação, teríamos i² - i = 0, o que implica i(i - 1) = 0. As soluções para essa equação seriam i = 0 ou i = 1. Ambas as soluções são números reais e não definem uma unidade imaginária que expanda o sistema numérico."
+        }
+      ],
+      "explanation": "Correta. A definição fundamental da unidade imaginária 'i' é que seu quadrado é igual a -1 (i² = -1). Essa definição foi crucial para a criação dos números complexos, permitindo a existência de raízes quadradas de números negativos, algo impossível no conjunto dos números reais.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual conjunto numérico possui a maior cardinalidade, abrangendo todos os demais conjuntos numéricos estudados na matemática básica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto dos números irracionais, pois contém números que não podem ser expressos como frações",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números irracionais (I) é composto por números que não podem ser expressos como frações de dois inteiros (por exemplo, √2, π). Ele é um subconjunto dos números reais e, portanto, não abrange os números racionais, inteiros, naturais ou complexos, tendo uma cardinalidade menor que os reais e os complexos."
+        },
+        {
+          "id": "b",
+          "text": "O conjunto dos números complexos, pois engloba todos os números reais e imaginários",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números complexos (C) é o mais abrangente na matemática básica. Ele engloba todos os números reais (que são complexos com parte imaginária igual a zero) e todos os números imaginários (que são complexos com parte real igual a zero, ou números complexos com ambas as partes não nulas). A hierarquia dos conjuntos numéricos é N ⊂ Z ⊂ Q ⊂ R ⊂ C."
+        },
+        {
+          "id": "c",
+          "text": "O conjunto dos números reais, pois resulta da união dos racionais com os irracionais",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números reais (R), que é a união dos racionais com os irracionais, abrange a maioria dos números que encontramos no cotidiano. No entanto, ele é um subconjunto do conjunto dos números complexos e não inclui números com uma parte imaginária não nula, como 5i ou 3 - 4i."
+        },
+        {
+          "id": "d",
+          "text": "O conjunto dos números racionais, pois inclui todos os números que podem ser expressos como frações",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números racionais (Q) é um subconjunto dos números reais e não abrange os números irracionais (como √2 ou π) nem os números complexos (como 2 + 3i). Portanto, não possui a maior cardinalidade entre os conjuntos numéricos estudados na matemática básica."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números complexos (C) é o mais abrangente na matemática básica. Ele engloba todos os números reais (que são complexos com parte imaginária igual a zero) e todos os números imaginários (que são complexos com parte real igual a zero, ou números complexos com ambas as partes não nulas). A hierarquia dos conjuntos numéricos é N ⊂ Z ⊂ Q ⊂ R ⊂ C.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual foi a principal motivação histórica para a criação do conjunto dos números complexos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A busca por representar geometricamente todos os números racionais em um plano cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. A representação geométrica dos números (reais em uma reta, e complexos em um plano) é uma ferramenta importante, mas a busca por essa representação não foi a causa inicial para a criação dos números complexos. A representação no plano de Argand-Gauss surgiu como uma forma de visualizar esses novos números após sua conceituação."
+        },
+        {
+          "id": "b",
+          "text": "A necessidade de resolver equações do segundo grau que apresentavam discriminante negativo",
+          "correct": true,
+          "explanation": "Correta. A principal motivação histórica para o desenvolvimento dos números complexos foi a necessidade de encontrar soluções para equações polinomiais, especialmente as equações do segundo grau, como x² + 1 = 0, ou aquelas que resultavam em um discriminante negativo (Δ < 0) na fórmula de Bhaskara. No conjunto dos números reais, raízes quadradas de números negativos não têm solução, o que levou à criação da unidade imaginária 'i' e, consequentemente, dos números complexos."
+        },
+        {
+          "id": "c",
+          "text": "A impossibilidade de realizar operações de multiplicação com números irracionais",
+          "correct": false,
+          "explanation": "Incorreta. Operações de multiplicação com números irracionais são perfeitamente definidas e realizáveis dentro do conjunto dos números reais. Por exemplo, a multiplicação de √2 por √8 resulta em √16, que é 4. A dificuldade não estava nessas operações."
+        },
+        {
+          "id": "d",
+          "text": "A dificuldade em trabalhar com frações que possuíam denominadores negativos",
+          "correct": false,
+          "explanation": "Incorreta. A dificuldade em trabalhar com frações com denominadores negativos não foi uma motivação para a criação dos números complexos. Frações como 1/(-2) são facilmente compreendidas e operadas, sendo equivalentes a -1/2, e não representam uma lacuna no sistema numérico que exigisse a introdução de um novo conjunto."
+        }
+      ],
+      "explanation": "Correta. A principal motivação histórica para o desenvolvimento dos números complexos foi a necessidade de encontrar soluções para equações polinomiais, especialmente as equações do segundo grau, como x² + 1 = 0, ou aquelas que resultavam em um discriminante negativo (Δ < 0) na fórmula de Bhaskara. No conjunto dos números reais, raízes quadradas de números negativos não têm solução, o que levou à criação da unidade imaginária 'i' e, consequentemente, dos números complexos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Por que os números complexos recebem essa denominação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque representam situações complexas da física quântica e da engenharia avançada",
+          "correct": false,
+          "explanation": "Incorreta. Embora os números complexos sejam ferramentas indispensáveis em áreas avançadas como a física quântica e a engenharia elétrica, o nome não foi dado por sua aplicação em 'situações complexas'. A utilidade em tais campos foi descoberta após a sua formalização e compreensão."
+        },
+        {
+          "id": "b",
+          "text": "Porque envolvem operações matemáticas de alta complexidade computacional",
+          "correct": false,
+          "explanation": "Incorreta. A denominação 'complexo' não se refere à dificuldade das operações matemáticas ou à complexidade computacional. Embora a matemática complexa possa ser desafiadora, o nome está ligado à estrutura do número em si, não ao esforço para calculá-lo."
+        },
+        {
+          "id": "c",
+          "text": "Porque resultam de equações que possuem múltiplas soluções simultâneas",
+          "correct": false,
+          "explanation": "Incorreta. A característica de equações possuírem múltiplas soluções não é exclusiva dos números complexos e não é a razão para sua denominação. Equações polinomiais de grau 'n' podem ter até 'n' soluções (reais ou complexas), mas o termo 'complexo' para o número em si deriva de sua estrutura de duas partes."
+        },
+        {
+          "id": "d",
+          "text": "Porque são formados por duas partes distintas: uma parte real e uma parte imaginária",
+          "correct": true,
+          "explanation": "Correta. Os números complexos são assim chamados porque são compostos, ou seja, formados por duas partes distintas e interligadas: uma parte real e uma parte imaginária. Um número complexo 'z' é expresso na forma 'a + bi', onde 'a' é a parte real e 'b' é o coeficiente da parte imaginária, que multiplica a unidade imaginária 'i'. Essa 'composição' ou 'complexidade' de duas partes é a origem do termo."
+        }
+      ],
+      "explanation": "Correta. Os números complexos são assim chamados porque são compostos, ou seja, formados por duas partes distintas e interligadas: uma parte real e uma parte imaginária. Um número complexo 'z' é expresso na forma 'a + bi', onde 'a' é a parte real e 'b' é o coeficiente da parte imaginária, que multiplica a unidade imaginária 'i'. Essa 'composição' ou 'complexidade' de duas partes é a origem do termo.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em um número complexo da forma z = a + bi, onde a e b são números reais, qual é a parte imaginária do número z = -1 + 2i?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2i",
+          "correct": false,
+          "explanation": "Incorreta. 2i é o termo imaginário completo do número complexo. A 'parte imaginária' de um número complexo é definida como o coeficiente real que multiplica a unidade imaginária 'i', não incluindo o próprio 'i'."
+        },
+        {
+          "id": "b",
+          "text": "i",
+          "correct": false,
+          "explanation": "Incorreta. 'i' representa a unidade imaginária, onde i² = -1. A parte imaginária de um número complexo é o coeficiente numérico (um número real) que acompanha essa unidade imaginária."
+        },
+        {
+          "id": "c",
+          "text": "-1",
+          "correct": false,
+          "explanation": "Incorreta. Em um número complexo da forma z = a + bi, a parte real é o termo 'a' que não está multiplicado pela unidade imaginária 'i'. No número z = -1 + 2i, o valor -1 corresponde à parte real."
+        },
+        {
+          "id": "d",
+          "text": "2",
+          "correct": true,
+          "explanation": "Correta. Em um número complexo z = a + bi, 'a' é a parte real e 'b' é a parte imaginária. No número z = -1 + 2i, comparando com a forma geral, a parte real 'a' é -1 e a parte imaginária 'b' é 2. A parte imaginária é sempre um número real."
+        }
+      ],
+      "explanation": "Correta. Em um número complexo z = a + bi, 'a' é a parte real e 'b' é a parte imaginária. No número z = -1 + 2i, comparando com a forma geral, a parte real 'a' é -1 e a parte imaginária 'b' é 2. A parte imaginária é sempre um número real.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Considerando as potências sucessivas da unidade imaginária i, qual é o padrão de repetição observado nos resultados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os valores se repetem a cada duas potências consecutivas, alternando entre i e -i",
+          "correct": false,
+          "explanation": "Incorreta. O padrão de repetição das potências da unidade imaginária 'i' não se limita a dois valores. Ele envolve quatro resultados distintos antes de começar a se repetir."
+        },
+        {
+          "id": "b",
+          "text": "Os valores se repetem a cada três potências consecutivas, formando um ciclo trigonométrico",
+          "correct": false,
+          "explanation": "Incorreta. O ciclo de repetição das potências de 'i' possui quatro termos, não três. Embora números complexos possam ser representados na forma trigonométrica, o ciclo das potências não é de três termos."
+        },
+        {
+          "id": "c",
+          "text": "Os valores se repetem a cada quatro potências consecutivas, formando o ciclo 1, i, -1, -i",
+          "correct": true,
+          "explanation": "Correta. As potências de 'i' seguem um ciclo de quatro valores: i⁰ = 1, i¹ = i, i² = -1 e i³ = -i. Após i³, o padrão se repete (i⁴ = 1, i⁵ = i, e assim por diante)."
+        },
+        {
+          "id": "d",
+          "text": "Os valores se repetem a cada seis potências consecutivas, incluindo valores fracionários",
+          "correct": false,
+          "explanation": "Incorreta. O ciclo de repetição das potências de 'i' é de quatro termos, não de seis. Além disso, os valores do ciclo (1, i, -1, -i) não são fracionários."
+        }
+      ],
+      "explanation": "Correta. As potências de 'i' seguem um ciclo de quatro valores: i⁰ = 1, i¹ = i, i² = -1 e i³ = -i. Após i³, o padrão se repete (i⁴ = 1, i⁵ = i, e assim por diante).",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Para calcular i⁵⁴ de forma eficiente, qual técnica deve ser aplicada considerando as propriedades das potências de i?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividir o expoente por 4 e utilizar o resto da divisão para identificar a potência equivalente no ciclo básico",
+          "correct": true,
+          "explanation": "Correta. Como o ciclo de repetição das potências de 'i' é de quatro termos (1, i, -1, -i), dividir o expoente por 4 e usar o resto da divisão (0, 1, 2 ou 3) nos permite identificar qual desses quatro valores corresponde à potência original. Por exemplo, i⁵⁴ é equivalente a i elevado ao resto da divisão de 54 por 4."
+        },
+        {
+          "id": "b",
+          "text": "Dividir o expoente por 2 e analisar se o quociente é par ou ímpar para determinar o sinal",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o expoente por 2 não é suficiente para determinar o valor exato da potência de 'i', pois o ciclo de repetição é de quatro termos, não de dois. Por exemplo, i² e i⁴ são ambos potências pares, mas têm valores diferentes (-1 e 1, respectivamente)."
+        },
+        {
+          "id": "c",
+          "text": "Converter o expoente para a forma fatorial e aplicar as propriedades dos números complexos conjugados",
+          "correct": false,
+          "explanation": "Incorreta. Converter o expoente para a forma fatorial ou usar propriedades de números complexos conjugados são métodos inadequados e desnecessariamente complexos para simplificar potências de 'i'. A abordagem mais direta e eficiente é a divisão pelo ciclo de 4."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar o expoente por i e simplificar usando a propriedade distributiva das potências",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o expoente por 'i' não é uma operação válida para simplificar potências da unidade imaginária. O expoente deve ser um número inteiro."
+        }
+      ],
+      "explanation": "Correta. Como o ciclo de repetição das potências de 'i' é de quatro termos (1, i, -1, -i), dividir o expoente por 4 e usar o resto da divisão (0, 1, 2 ou 3) nos permite identificar qual desses quatro valores corresponde à potência original. Por exemplo, i⁵⁴ é equivalente a i elevado ao resto da divisão de 54 por 4.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é o valor de i⁵⁴ após aplicar o método de divisão do expoente por 4?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "-1",
+          "correct": true,
+          "explanation": "Correta. Para calcular i⁵⁴, dividimos o expoente 54 por 4. O resultado é 13 com resto 2 (54 = 4 × 13 + 2). Portanto, i⁵⁴ é equivalente a i², e por definição, i² = -1."
+        },
+        {
+          "id": "b",
+          "text": "1",
+          "correct": false,
+          "explanation": "Incorreta. O valor 1 seria obtido se o resto da divisão do expoente por 4 fosse 0 (equivalente a i⁰ ou i⁴, i⁸, etc.)."
+        },
+        {
+          "id": "c",
+          "text": "-i",
+          "correct": false,
+          "explanation": "Incorreta. O valor '-i' seria obtido se o resto da divisão do expoente por 4 fosse 3 (equivalente a i³ ou i⁷, i¹¹, etc.)."
+        },
+        {
+          "id": "d",
+          "text": "i",
+          "correct": false,
+          "explanation": "Incorreta. O valor 'i' seria obtido se o resto da divisão do expoente por 4 fosse 1 (equivalente a i¹ ou i⁵, i⁹, etc.)."
+        }
+      ],
+      "explanation": "Correta. Para calcular i⁵⁴, dividimos o expoente 54 por 4. O resultado é 13 com resto 2 (54 = 4 × 13 + 2). Portanto, i⁵⁴ é equivalente a i², e por definição, i² = -1.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Ao transformar √(-16) em uma expressão com a unidade imaginária, qual é o procedimento correto para separar a parte negativa da raiz?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Expressar -16 como o produto (-1) × 16 e aplicar a propriedade da raiz do produto, substituindo √(-1) por i²",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja correto expressar -16 como (-1) × 16, a substituição de √(-1) por i² está errada. Por definição, a unidade imaginária 'i' é igual a √(-1), enquanto i² é igual a -1."
+        },
+        {
+          "id": "b",
+          "text": "Fatorar -16 em (-4) × 4 e aplicar a distributividade da raiz sobre a multiplicação",
+          "correct": false,
+          "explanation": "Incorreta. Fatorar -16 em (-4) × 4 e aplicar a distributividade da raiz diretamente dessa forma pode levar a erros e não é a maneira padrão de introduzir a unidade imaginária. A base da definição de 'i' é a raiz quadrada de -1, que precisa ser isolada."
+        },
+        {
+          "id": "c",
+          "text": "Expressar -16 como o produto i² × 16 e aplicar a propriedade da raiz do produto, obtendo i√16",
+          "correct": true,
+          "explanation": "Correta. O procedimento correto envolve reconhecer que -1 pode ser substituído por i² (já que i² = -1). Assim, √(-16) pode ser reescrito como √(16 × i²). Aplicando a propriedade da raiz de um produto, temos √16 × √i², o que resulta em 4 × i, ou 4i."
+        },
+        {
+          "id": "d",
+          "text": "Converter -16 para a forma polar e extrair a raiz usando o teorema de De Moivre",
+          "correct": false,
+          "explanation": "Incorreta. Converter para a forma polar e usar o teorema de De Moivre é um método para calcular raízes de números complexos em geral, mas é excessivamente complexo para a simples transformação de √(-16) e não é o procedimento mais direto para separar a parte negativa da raiz usando a unidade imaginária."
+        }
+      ],
+      "explanation": "Correta. O procedimento correto envolve reconhecer que -1 pode ser substituído por i² (já que i² = -1). Assim, √(-16) pode ser reescrito como √(16 × i²). Aplicando a propriedade da raiz de um produto, temos √16 × √i², o que resulta em 4 × i, ou 4i.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "17_267539_Conjunto dos Números Complexos.pdf",
+  "coletado_em": "2026-09-23T20:53:26"
+}

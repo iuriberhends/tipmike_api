@@ -1,0 +1,360 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 21,
+  "ordem_no_curso": "97.00",
+  "titulo": "Geometria Espacial - Cilindros III",
+  "codigo_aula": "160384",
+  "video_id": "939OTTBM7YM=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:47:33",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/939OTTBM7YM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?r=TODAS&a=403898&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Espacial - Cilindros III\n\n## Introdução e organização do curso\nVamos dar continuidade. Como eu falo para vocês, antes fazemos a parte teórica, depois o treinamento e, por fim, o aprofundamento. Estamos regravando algumas aulas antigas para deixar a matriz totalmente atualizada para vocês. O padrão da nossa matriz de matemática está assim: parte teórica, parte de treinamento e depois o aprofundamento, beleza? Neste momento estamos trabalhando com cilindros. Depois vamos falar de prismas e assim por diante. \n\nGente, as questões são tranquilas. Não são tão difíceis. Tem que treinar mesmo.\n\n## Questão 1 – Caldeirão cilíndrico (capacidade em litros)\nUm caldeirão da figura tem 40 cm de diâmetro e 36 cm de altura. Pergunta-se a sua capacidade, em litros, aproximadamente. \n\nEssa figura é um cilindro. Se o diâmetro é 40, o raio é 20 cm. A altura é 36 cm. Queremos a capacidade em litros. Como a questão fala “aproximadamente”, podemos usar um valor aproximado de π. Pode ser 3, 3,1, 3,14, 3,15… Como as alternativas geralmente estão bem espaçadas, qualquer uma dessas aproximações vai levar à mesma alternativa no final.\n\nVamos ao volume do cilindro: V = πr²h.\n- r = 20 cm, h = 36 cm.\n- r² = 400; 400 × 36 = 14.400.\n\nSe eu usar π ≈ 3,1, fica V ≈ 3,1 × 14.400 = 44.640 cm³. Podemos também pensar no ajuste da vírgula para facilitar a conta: 3,1 × 14.400 = 31 × 1.440 = 44.640.\n\nIsso está em centímetros cúbicos. Para transformar em litros: 1 dm³ = 1 litro e 1 dm³ = 1.000 cm³. Então, 44.640 cm³ = 44,64 dm³ = 44,64 litros. Aproximando, fica 45 litros.\n\n> 🎯 Dicas de prova: Quando a questão pedir “aproximadamente” e não fixar o valor de π, pode usar 3, 3,1, 3,14 etc. Como as alternativas são espaçadas, a alternativa correta não muda.\n\nResposta: aproximadamente 45 litros.\n\n## Questão 2 – Tanque cilíndrico e deslocamento de água (volume das peças)\nUm tanque na forma de cilindro circular reto tem altura 1,5 m e área da base 12 m². Ele estava com 9 m³ de água. Foram colocadas peças de aço, totalmente submersas. O nível subiu 50 cm (0,5 m). Qual o volume do material colocado?\n\nDesenhe mentalmente: o cilindro com área da base 12 m². O nível da água subiu 0,5 m. O volume deslocado é um “pequeno cilindro” com:\n- área da base = 12 m²,\n- altura = 0,5 m.\n\nLogo, o volume das peças (igual ao volume deslocado) é:\nV = Ab × h = 12 × 0,5 = 6 m³.\n\nPerceba: volume é espaço ocupado. O que a peça ocupou lá embaixo corresponde exatamente ao volume que a água subiu lá em cima.\n\nResposta: 6 m³.\n\n## Questão 3 – Canecas cilíndricas (altura para comportar 800 mL)\nUma empresa vai fabricar 1.000 canecas cilíndricas. O diâmetro da caneca é 10 cm (logo, raio 5 cm). Por simplificação, adotaremos π = 3,2 (poderia ser 3, ou 3,14, mas vamos seguir a instrução dada). Cada caneca deve comportar 800 mL. Sabemos que 1 cm³ = 1 mL. Pergunta: qual altura cada caneca deve ter?\n\nVolume do cilindro: V = πr²h.\n- V = 800 cm³ (pois 800 mL),\n- r = 5 cm → r² = 25,\n- π = 3,2.\n\nEntão:\n800 = 3,2 × 25 × h\n3,2 × 25 = 80\n800 = 80h\nh = 10 cm.\n\nResposta: altura de 10 cm.\n\n## Questão 4 – Cone e relação com cilindro (variação percentual do volume)\nA questão traz a fórmula do volume do cone circular reto: V = (1/3)πr²h. Vou aproveitar para lembrar uma estratégia útil: o volume do cone é um terço do volume do cilindro de mesma base e altura. Visualmente, pense num cilindro e “retire” um cone congruente: o cone ocupa um terço do espaço do cilindro. O mesmo raciocínio vale para prisma e pirâmide: a pirâmide tem 1/3 do volume do prisma de mesma base e altura.\n\nAgora, a questão pede: se aumentarmos o raio em 10% e reduzirmos a altura em 20%, ocorre uma redução de mais de 3% no volume?\n\nComo a resposta está em porcentagem, podemos simular valores simples. Vamos tomar r = 10 e h = 10 (unidades quaisquer), só para facilitar. Depois aplicamos as variações:\n- Novo raio: 10 → 11 (aumento de 10%).\n- Nova altura: 10 → 8 (redução de 20%).\n\nCálculo dos volumes (mantendo o fator (1/3)π como comum):\n- V1 ∝ r²h = 10² × 10 = 100 × 10 = 1.000.\n- V2 ∝ 11² × 8 = 121 × 8 = 968.\n\nA fração (1/3)π é comum aos dois volumes, então podemos compará-los por 1.000 e 968. A redução foi de 32 em 1.000, ou seja, 3,2%.\n\nLogo, a redução é de 3,2%, que é “mais de 3%”.\n\nResposta: verdadeiro. A redução do volume é de aproximadamente 3,2%.\n\n## Questão 5 – Barril cilíndrico (capacidade aproximada)\nUm barril cilíndrico circular reto tem diâmetro 60 cm (raio 30 cm) e altura 1 m. Para manter a unidade consistente, vamos trabalhar tudo em centímetros: 1 m = 100 cm. Então r = 30 cm e h = 100 cm. Queremos a capacidade em litros, aproximadamente.\n\nVolume do cilindro: V = πr²h = π × 30² × 100 = π × 900 × 100 = 90.000π cm³.\n\nSe usarmos π ≈ 3, obtemos 270.000 cm³. Como 1.000 cm³ = 1 litro, isso dá 270 litros. Sabemos que π é maior que 3, então o valor real será um pouco maior que 270. A alternativa correta deve ser a primeira acima de 270, isto é, 280 litros (se as alternativas forem espaçadas, como costuma acontecer).\n\n> 🎯 Dicas de prova: Se a questão pede “aproximadamente” e não fixa π, usar π = 3 facilita a conta. Depois ajuste pelo bom senso: como π > 3, a resposta real será um pouco maior que o resultado com 3.\n\nResposta: aproximadamente 280 litros.\n\n## Encerramento\nFechamos a parte de cilindros por aqui. No próximo vídeo, seguimos com prismas, depois retornamos e avançamos para cones, esferas e troncos de cone. Vai ser muito legal. Dá para acompanhar o raciocínio o tempo todo.",
+  "transcricao_meta": {
+    "title": "Geometria Espacial - Cilindros III",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 48763,
+    "createdAt": "2026-02-06T13:53:08.916Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: volume de cilindros, conversões de unidades para litros, deslocamento de volume em recipientes cilíndricos, determinação de dimensões a partir da capacidade, e variações percentuais do volume (incluindo comparação com cones).\nPrincipais pontos: \n- Fórmula central V = πr²h e relação diâmetro–raio.\n- Conversões cm³ ↔ dm³ (litros) e m³ ↔ L.\n- Técnicas rápidas: uso de π em “aproximadamente”, cancelamento de fatores comuns, simulação para porcentagens.\n- Pegadinhas clássicas: unidades misturadas, raio ao quadrado, dados supérfluos.\n\n## 1. Base / Conceitos Fundamentais\n- Cilindro circular reto: sólido com duas bases circulares congruentes e paralelas, altura perpendicular às bases.\n- Raio e diâmetro: diâmetro = 2·raio. Sempre obtenha o raio antes de calcular.\n- Volume do cilindro: V = πr²h.\n- Volume do cone: Vcone = (1/3)πr²h. Relação: Vcone = (1/3)·Vcil, se base e altura forem as mesmas.\n- Unidades de volume:\n  - 1 cm³ = 1 mL\n  - 1 dm³ = 1 L\n  - 1 m³ = 1000 L\n  - 1 dm = 10 cm → 1 dm³ = 1000 cm³\n- Aproximações de π quando a questão diz “aproximadamente”: 3, 3,1 ou 3,14 são aceitáveis conforme espaçamento das alternativas.\n\n## 2. Como Funciona / Distinções\n- Cilindro vs. Cone:\n  - Fórmulas diferem por um fator constante (cone tem 1/3). Em variações percentuais ou comparações relativas, constantes como π e 1/3 podem ser canceladas.\n- Unidades alvo:\n  - Trabalhando em mL: use cm e cm³.\n  - Trabalhando em L: prefira dm e dm³ (ou m e m³, convertendo no fim para L).\n- “Aproximadamente”:\n  - π=3 fornece um piso; como π real > 3, o valor real será maior. Em alternativas espaçadas, escolha o próximo acima do cálculo com π=3.\n\n> Dica de Prova\n> - Antes de qualquer conta, padronize as unidades (cm com cm; m com m). Depois converta para L se necessário.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo padrão para volume de cilindro:\n  1) Converter diâmetro em raio (r = d/2).\n  2) Padronizar unidades lineares (cm ou m).\n  3) Aplicar V = πr²h.\n  4) Converter o resultado para a unidade pedida (cm³ → L dividindo por 1000; m³ → L multiplicando por 1000).\n- Deslocamento de água (recipiente cilíndrico):\n  - Volume deslocado = Área da base × variação de altura (V = A·Δh).\n  - Volume do material inserido = volume de água deslocada.\n- Determinação de altura a partir da capacidade:\n  - Dado V e r, isole h: h = V/(πr²).\n- Variações percentuais no volume (cilindro ou cone):\n  - Volume ∝ r²h.\n  - Se r → r·(1+a) e h → h·(1+b), então fator do volume = (1+a)²·(1+b).\n  - Variação % = [(fator) − 1]·100%.\n- Simulação eficiente (quando as alternativas são percentuais):\n  - Escolha r e h fáceis (ex.: 10), aplique as variações, compare r²h antes e depois. Cancele π e 1/3 (se cone).\n\n> Dica de Prova\n> - Em perguntas percentuais, compare apenas r²h. Ignorar π (e 1/3 no cone) acelera sem erro.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (FGV): Caldeirão cilíndrico\n  - Dados: d=40 cm → r=20 cm; h=36 cm.\n  - V ≈ 3,1·(20)²·36 = 3,1·400·36 = 3,1·14400 = 44640 cm³.\n  - Em litros: 44640 cm³ = 44,64 L ≈ 45 L.\n  - Observação: “aproximadamente” permite π=3,1; unidade pedida era em L.\n\n- Exemplo 2 (Universidade Federal de Goiânia – Centro de Seleção): Submersão\n  - A base do tanque tem A=12 m²; Δh=0,5 m (50 cm).\n  - Vdeslocado = A·Δh = 12·0,5 = 6 m³.\n  - Observação: volume inicial (9 m³) é dado para confundir; não entra no cálculo do deslocamento.\n\n- Exemplo 3: Caneca cilíndrica (capacidade 800 mL)\n  - 1 cm³ = 1 mL → V = 800 cm³; r=5 cm; π=3,2.\n  - πr² = 3,2·25 = 80 → 800 = 80·h → h=10 cm.\n  - Observação: em mL, mantenha medidas em cm.\n\n- Exemplo 4: Cilindro com r=30 cm e h=1 m\n  - Padronize: h=100 cm.\n  - V ≈ 3·(30)²·100 = 3·900·100 = 270000 cm³ = 270 L.\n  - Como π>3, o volume real > 270 L; se alternativas forem espaçadas, marque 280 L.\n\n- Exemplo 5: Variação percentual (raio +10%, altura −20%)\n  - Fator: (1,1)²·0,8 = 1,21·0,8 = 0,968 → queda de 3,2%.\n  - Conclusão: “redução de mais de 3%” é verdadeira.\n\n## 5. Pegadinhas e Erros Comuns\n- Misturar unidades lineares: r em cm e h em m. Sempre unifique antes.\n- Esquecer que o raio influencia ao quadrado (r²). Não some percentuais diretamente.\n- Ignorar que 1 L = 1 dm³ = 1000 cm³; e 1 cm³ = 1 mL.\n- Não observar “aproximadamente”: perder tempo com π=3,1415… sem necessidade.\n- Usar todos os dados fornecidos: muitas questões trazem valores supérfluos (ex.: volume inicial do tanque).\n- Converter para m³/L no fim com unidade errada. Em cm → cm³; em m → m³.\n- Trocar cone por cilindro em variações: o fator 1/3 do cone cancela em comparação percentual; não altera a conclusão.\n\n> Dica de Prova\n> - “Aproximadamente” + alternativas espaçadas: use π=3 e selecione o primeiro valor acima do resultado, pois π real é maior que 3.\n\n> Dica de Prova\n> - Deslocamento em recipientes cilíndricos: pense direto em V = A·Δh. Não deixe dados extras te distraírem.\n\n> Dica de Prova\n> - Para mL, use cm; para L, use dm (ou m e depois converta para L). Releia a unidade pedida antes de marcar.\n\nComparações rápidas (X vs Y):\n- Cilindro vs Cone (para variação percentual): compare r²h; π e 1/3 são comuns e cancelam.\n- cm³ vs L:\n  - cm³ → L: dividir por 1000.\n  - m³ → L: multiplicar por 1000.\n- Diâmetro vs Raio: sempre transforme d em r (r = d/2) antes do volume.\n\nMacetes numéricos:\n- Multiplicações com vírgula: 3,1×14400 = 31×1440/10 para agilizar.\n- Simulação em percentuais: r=10→11; h=10→8. Compare 1000 vs 968 → 3,2% de redução.",
+  "resumo_bolso": "# Geometria Espacial - Cilindros III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Cilindro circular reto**: sólido com duas bases circulares congruentes e paralelas, altura **perpendicular** às bases.\n* **Relação raio–diâmetro**: **d = 2r** → sempre obter **r** antes de usar a fórmula.\n* **Volume do cilindro**: **V = πr²h**.\n* **Volume do cone**: **Vcone = (1/3)πr²h** → com mesma base e altura: **Vcone = (1/3)Vcil**.\n* **Proporcionalidade do volume** (cilindro ou cone): **V ∝ r²h** (π e 1/3 são constantes que podem ser canceladas em comparações).\n* **Unidades de volume**:  \n  - 1 cm³ = **1 mL**  \n  - 1 dm³ = **1 L**  \n  - 1 m³ = **1000 L**  \n  - 1 dm = 10 cm → 1 dm³ = **1000 cm³**\n* **Unidades alvo**:  \n  - Trabalhando em **mL** → usar **cm e cm³**.  \n  - Trabalhando em **L** → preferir **dm e dm³** (ou m e m³, convertendo no fim).\n* **π em “aproximadamente”**: usar **3**, **3,1** ou **3,14** conforme espaçamento das alternativas; como **π > 3**, o valor real é **maior** que o obtido com π=3.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Cilindro vs Cone (em comparações e variações)\n\n| Aspecto | Cilindro | Cone |\n|--------|----------|------|\n| Fórmula | V = πr²h | V = (1/3)πr²h |\n| Constante | π | (1/3)π |\n| Em variação % / comparação relativa | Constantes **podem ser canceladas** | Constantes **podem ser canceladas** |\n\n| Aspecto | Cilindro | Cone |\n|--------|----------|------|\n| Relação entre volumes (mesma base e altura) | – | Volume é **1/3** do cilindro com mesma base e altura |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Volume do cilindro**\n\n* **Regra**: **V = πr²h**.\n* **Aplicação**: qualquer cilindro circular reto.\n* **Passos padrão**:  \n  1) Converter diâmetro em raio (**r = d/2**).  \n  2) Padronizar unidades lineares (cm ou m).  \n  3) Aplicar **V = πr²h**.  \n  4) Converter o resultado para a unidade pedida (cm³ → L dividindo por 1000; m³ → L multiplicando por 1000).\n* **Exemplo** (FGV – caldeirão cilíndrico):  \n  d=40 cm → r=20 cm; h=36 cm.  \n  V ≈ 3,1·(20)²·36 = 3,1·400·36 = 3,1·14400 = 44640 cm³ = 44,64 L ≈ 45 L.\n\n---\n\n**2. Volume do cone**\n\n* **Regra**: **Vcone = (1/3)πr²h**.\n* **Aplicação**: comparação com cilindro de mesma base e altura → **Vcone = (1/3)Vcil**.\n\n---\n\n**3. Conversões de volume**\n\n* **Regras**:  \n  - **1 cm³ = 1 mL**  \n  - **1 dm³ = 1 L = 1000 cm³**  \n  - **1 m³ = 1000 L**\n* **Exemplo** (cilindro com r=30 cm e h=1 m):  \n  Padronize: h=100 cm.  \n  V ≈ 3·(30)²·100 = 3·900·100 = 270000 cm³ = 270 L.  \n  Como π>3, o volume real > 270 L; se alternativas forem espaçadas, pode-se marcar 280 L.\n\n---\n\n**4. Deslocamento em recipiente cilíndrico**\n\n* **Regra**: **Vdeslocado = A_base · Δh**.\n* **Aplicação**: aumento de nível de água ao mergulhar objeto; volume do material inserido = volume de água deslocada.\n* **Exemplo** (UFG – submersão):  \n  A base do tanque tem A=12 m²; Δh=0,5 m.  \n  Vdeslocado = 12·0,5 = 6 m³.  \n  O volume inicial (9 m³) é dado para confundir; não entra no cálculo do deslocamento.\n\n---\n\n**5. Altura a partir da capacidade**\n\n* **Regra**: **h = V / (πr²)**.\n* **Aplicação**: dado volume (L ou mL) e raio, achar h.\n* **Exemplo** (caneca cilíndrica – 800 mL):  \n  1 cm³ = 1 mL → V = 800 cm³; r=5 cm; π=3,2.  \n  πr² = 3,2·25 = 80 → 800 = 80·h → h=10 cm.\n\n---\n\n**6. Variação percentual do volume**\n\n* **Regra geral**: **V ∝ r²h**.  \n  Se r → r·(1+a) e h → h·(1+b):  \n  **fator do volume = (1+a)²·(1+b)**  \n  **Variação % = [(fator − 1)·100%]**.\n* **Exemplo** (raio +10%, altura −20%):  \n  fator = (1,1)²·0,8 = 1,21·0,8 = 0,968 → queda de 3,2%.  \n  Conclusão: “redução de mais de 3%” é verdadeira.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Misturar unidades lineares (r em cm e h em m). Sempre unifique antes; depois converta para L ou mL.\n2. Esquecer que o raio entra ao quadrado (r²) e somar percentuais diretamente em variações de volume.\n3. Ignorar que **1 L = 1 dm³ = 1000 cm³** e **1 cm³ = 1 mL**, errando conversões.\n4. Não observar “aproximadamente” e perder tempo com π=3,1415… quando 3, 3,1 ou 3,14 são suficientes.\n5. Usar todos os dados fornecidos: muitas questões trazem valores supérfluos (ex.: volume inicial do tanque) que não entram no cálculo.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **cilindro** de **cone** em termos de fórmula e da relação **Vcone = (1/3)Vcil** (mesma base e altura)?\n* Lembrei que **Vcil = πr²h** e que devo **sempre** transformar **d em r** antes de calcular?\n* Fixei as conversões: **1 cm³ = 1 mL**, **1 dm³ = 1 L = 1000 cm³**, **1 m³ = 1000 L**?\n* Sei que, em **variação percentual**, devo trabalhar com o fator **(1+a)²·(1+b)** e comparar só **r²h**, cancelando π (e 1/3 no cone)?\n* Estou atento a:  \n  - padronizar unidades **antes** da conta,  \n  - usar π simples em questões com “aproximadamente”,  \n  - em deslocamento em cilindros, pensar direto em **V = A·Δh** e ignorar dados supérfluos?",
+  "mapa_mental": "# 🧮 Geometria Espacial – Cilindros III\n## 🎯 Fundamentos do Cilindro\n### 💡 Definições básicas\n- Cilindro circular reto\n- Bases circulares paralelas\n- Altura perpendicular\n- Raio e diâmetro\n- Diâmetro igual 2r\n### 🧮 Fórmulas principais\n- Volume cilindro V=πr²h\n- Volume cone V=(1/3)πr²h\n- Relação cone–cilindro\n- Volume proporcional r²h\n- Fator constante cancelável\n### 📏 Unidades de volume\n- 1 cm³ igual 1 mL\n- 1 dm³ igual 1 L\n- 1 m³ igual 1000 L\n- 1 dm igual 10 cm\n- 1 dm³ igual 1000 cm³\n\n## 📊 Unidades e Conversões\n### 🔢 Conversões chave\n- cm³ para mL\n- dm³ para L\n- m³ para L\n- cm³ para L\n- Fator mil ou milésimo\n### 📐 Escolha de unidade\n- Trabalhar em mL\n- Usar cm e cm³\n- Trabalhar em L\n- Usar dm e dm³\n- Usar m e m³\n### 🧮 Uso de π\n- π aproximadamente 3\n- π aproximadamente 3,1\n- π aproximadamente 3,14\n- Escolha conforme alternativas\n- π real maior que 3\n\n## ⚙️ Técnicas de Cálculo\n### 🧮 Passos do volume\n- Obter raio via diâmetro\n- Padronizar unidades lineares\n- Aplicar V=πr²h\n- Converter unidade final\n- Conferir unidade pedida\n### 📏 Altura e capacidade\n- Volume conhecido\n- Raio conhecido\n- Isolar altura h\n- h=V/(πr²)\n- Atenção às unidades\n### 🔄 Variações percentuais\n- Volume proporcional r²h\n- Raio com fator (1+a)\n- Altura com fator (1+b)\n- Fator volume (1+a)²(1+b)\n- Variação percentual final\n\n## ⚠️ Erros e Pegadinhas\n### 🚨 Unidades e dados\n- Mistura cm e m\n- Não padronizar antes\n- Esquecer 1 L=1 dm³\n- Esquecer 1000 cm³\n- Usar dado supérfluo\n### ⚠️ Fórmulas e fatores\n- Esquecer raio ao quadrado\n- Somar percentuais direto\n- Trocar cone por cilindro\n- Ignorar fator 1/3\n- Não cancelar constantes\n### 📝 Estratégias de prova\n- Padronizar antes da conta\n- Ignorar π em comparações\n- Ignorar 1/3 em cone\n- Usar π simples em “aprox.”\n- Focar r²h em percentuais",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Propriedades do Cilindro",
+      "description": "Propriedades do Cilindro — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Que ângulo a geratriz de um **cilindro circular reto** forma com a base?",
+          "back": "Noventa graus.",
+          "hint": "Refere-se à perpendicularidade.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como obter o raio de um cilindro a partir do seu diâmetro?",
+          "back": "Dividir o diâmetro por dois.",
+          "hint": "Relação entre corda máxima e raio.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "medidas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a fórmula do volume de um cilindro circular?",
+          "back": "Volume igual a pi vezes o raio ao quadrado vezes a altura.",
+          "hint": "Área da base multiplicada pela altura.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "volume"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Unidades e Capacidade",
+      "description": "Unidades e Capacidade — 2 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual equivalência relaciona metro cúbico e litro?",
+          "back": "Um decímetro cúbico equivale a um litro.",
+          "hint": "Unidade de volume de um cubo de 10cm de lado.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "conversao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Um caldeirão tem diâmetro de 40 cm e altura de 36 cm. Qual sua capacidade aproximada?",
+          "back": "Quarenta e cinco litros.",
+          "hint": "Aplicação da fórmula do volume.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "aplicacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Deslocamento de Volume",
+      "description": "Deslocamento de Volume — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "O que representa o volume de água deslocado quando um objeto fica totalmente submerso?",
+          "back": "O espaço ocupado pelas peças correspondente à água que subiu.",
+          "hint": "Princípio de Arquimedes.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "deslocamento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Um tanque tem área da base de 12 m² e o nível sobe 0,5 m. Qual volume foi deslocado?",
+          "back": "Seis metros cúbicos.",
+          "hint": "Produto da área pela variação de altura.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "deslocamento"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Relações entre Sólidos",
+      "description": "Relações entre Sólidos — 1 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual fração do volume de um cilindro equivale ao volume de um cone com mesma base e altura?",
+          "back": "Um terço do volume do cilindro.",
+          "hint": "Relação entre sólidos de mesma base.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cone"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Escalonamento Volumétrico",
+      "description": "Escalonamento Volumétrico — 2 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Como representar um aumento de 10% no raio de um sólido?",
+          "back": "Multiplicar o raio por um vírgula um.",
+          "hint": "Fator de escala decimal.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "proporcionalidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Aumentando o raio em 10% e reduzindo a altura em 20%, qual é a redução percentual do volume?",
+          "back": "Três vírgula dois por cento.",
+          "hint": "Considere o fator (1,1)^2 * 0,8.",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "variacao-percentual"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a relação de equivalência entre unidades de volume e capacidade no sistema métrico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um milímetro cúbico equivale a um litro de capacidade",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Um milímetro cúbico (mm³) é uma unidade de volume extremamente pequena, equivalente a 0,001 mililitro ou 0,000001 litro. Não há equivalência direta com um litro."
+        },
+        {
+          "id": "b",
+          "text": "Um centímetro cúbico equivale a um litro de capacidade",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Um centímetro cúbico (cm³) equivale a um mililitro (mL), e não a um litro. Considerando que 1 L = 1.000 mL, um centímetro cúbico é uma unidade de volume muito menor que um litro."
+        },
+        {
+          "id": "c",
+          "text": "Um decímetro cúbico equivale a um litro de capacidade",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. A relação fundamental entre volume e capacidade no sistema métrico é que um decímetro cúbico (dm³) equivale a um litro (L). Esta equivalência é amplamente utilizada em diversas áreas, desde a química até a engenharia."
+        },
+        {
+          "id": "d",
+          "text": "Um metro cúbico equivale a um litro de capacidade",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Um metro cúbico (m³) equivale a 1.000 litros de capacidade. A relação de 1 m³ = 1.000 L é fundamental para conversões de volume e capacidade."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. A relação fundamental entre volume e capacidade no sistema métrico é que um decímetro cúbico (dm³) equivale a um litro (L). Esta equivalência é amplamente utilizada em diversas áreas, desde a química até a engenharia.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Um tanque cilíndrico contém inicialmente 9 m³ de água. Ao submergir completamente peças de aço no tanque, o nível da água sobe 50 cm. Sabendo que a área da base do tanque é de 12 m², qual é o volume das peças submersas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O volume das peças corresponde a 4,5 m³, calculado pela metade do produto da área da base pela altura elevada",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O cálculo proposto não corresponde à forma correta de determinar o volume de um cilindro, que é a área da base multiplicada pela altura. A menção de \"metade do produto\" e \"altura elevada\" não se aplica ao cálculo do volume deslocado."
+        },
+        {
+          "id": "b",
+          "text": "O volume das peças corresponde a 3 m³, calculado pela diferença entre o volume final e inicial da água",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O volume das peças não é calculado pela diferença entre o volume final e inicial da água, pois o volume inicial de 9 m³ é uma informação irrelevante para determinar o volume das peças. O que importa é o deslocamento de água causado pelas peças."
+        },
+        {
+          "id": "c",
+          "text": "O volume das peças corresponde a 12 m³, calculado pelo produto da área da base pela altura total do tanque",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O volume das peças não é calculado pelo produto da área da base pela altura total do tanque. A altura total do tanque (1,5 m) e o volume inicial de água (9 m³) são dados que não são necessários para determinar o volume das peças, apenas o deslocamento de água é relevante."
+        },
+        {
+          "id": "d",
+          "text": "O volume das peças corresponde a 6 m³, calculado pelo produto da área da base pela altura que a água subiu",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. O volume das peças submersas é igual ao volume de água deslocado. Esse volume de água deslocado pode ser calculado multiplicando a área da base do tanque pela altura que o nível da água subiu. A altura subida de 50 cm equivale a 0,5 m. Assim, o volume é 12 m² * 0,5 m = 6 m³."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. O volume das peças submersas é igual ao volume de água deslocado. Esse volume de água deslocado pode ser calculado multiplicando a área da base do tanque pela altura que o nível da água subiu. A altura subida de 50 cm equivale a 0,5 m. Assim, o volume é 12 m² * 0,5 m = 6 m³.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Uma caneca cilíndrica possui 10 cm de diâmetro e deve comportar 800 ml de líquido. Considerando π = 3,2 e que 1 cm³ = 1 ml, qual deve ser a altura da caneca?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A altura deve ser de 10 cm, obtida pela razão entre o volume e o produto de π pelo raio ao quadrado",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. O volume de um cilindro é dado por V = πr²h. Com um diâmetro de 10 cm, o raio (r) é 5 cm. O volume desejado é 800 mL, que equivale a 800 cm³ (já que 1 cm³ = 1 mL). Usando π = 3,2, temos 800 cm³ = 3,2 * (5 cm)² * h. Isso resulta em 800 = 3,2 * 25 * h, ou 800 = 80 * h. Portanto, h = 800 / 80 = 10 cm."
+        },
+        {
+          "id": "b",
+          "text": "A altura deve ser de 12 cm, obtida multiplicando-se o raio pelo fator de conversão volumétrica",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. A multiplicação do raio por um fator de conversão volumétrica não é a forma correta de calcular a altura de um cilindro. A fórmula para o volume de um cilindro relaciona a área da base (πr²) com a altura (h)."
+        },
+        {
+          "id": "c",
+          "text": "A altura deve ser de 5 cm, obtida dividindo-se o volume desejado pela área da base circular",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Para um diâmetro de 10 cm, o raio é de 5 cm. A área da base seria π * (5 cm)², que é 25π cm². Dividindo 800 mL (800 cm³) por 25π cm², o resultado não seria 5 cm. Utilizando π = 3,2, a área da base seria 3,2 * 25 = 80 cm², e a altura seria 800 cm³ / 80 cm² = 10 cm."
+        },
+        {
+          "id": "d",
+          "text": "A altura deve ser de 8 cm, obtida pela razão entre o volume e o produto de π pelo raio ao quadrado",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O cálculo proposto é a razão entre o volume e o produto de π pelo raio ao quadrado, que é a fórmula correta para a altura de um cilindro (h = V / (πr²)). No entanto, com os valores fornecidos (V = 800 mL = 800 cm³, r = 5 cm, π = 3,2), a altura seria 800 / (3,2 * 5²) = 800 / (3,2 * 25) = 800 / 80 = 10 cm, não 8 cm."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. O volume de um cilindro é dado por V = πr²h. Com um diâmetro de 10 cm, o raio (r) é 5 cm. O volume desejado é 800 mL, que equivale a 800 cm³ (já que 1 cm³ = 1 mL). Usando π = 3,2, temos 800 cm³ = 3,2 * (5 cm)² * h. Isso resulta em 800 = 3,2 * 25 * h, ou 800 = 80 * h. Portanto, h = 800 / 80 = 10 cm.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Um cone circular reto tem seu raio aumentado em 10% e sua altura reduzida em 20%. Qual é o efeito aproximado sobre o volume do cone após essas alterações?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O volume aumenta em aproximadamente 2%, pois o aumento quadrático do raio compensa parcialmente a redução linear da altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O cálculo do novo volume demonstra uma redução, não um aumento. O aumento do raio em 10% (r' = 1.1r) e a redução da altura em 20% (h' = 0.8h) levam a um novo volume V' = (1/3)π(1.1r)²(0.8h) = (1/3)π(1.21r²)(0.8h) = 0.968 * (1/3)πr²h = 0.968V. Isso representa uma redução de 3,2%, não um aumento."
+        },
+        {
+          "id": "b",
+          "text": "O volume reduz em aproximadamente 3,2%, pois a redução da altura supera proporcionalmente o aumento do raio ao quadrado",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. Seja V o volume original do cone, dado por V = (1/3)πr²h. Com as alterações, o novo raio r' será 1.1r (aumento de 10%) e a nova altura h' será 0.8h (redução de 20%). O novo volume V' será V' = (1/3)π(r')²h' = (1/3)π(1.1r)²(0.8h) = (1/3)π(1.21r²)(0.8h) = (1/3)πr²h * (1.21 * 0.8) = V * 0.968. Isso significa que o novo volume é 96,8% do volume original, ou seja, houve uma redução de 100% - 96,8% = 3,2%."
+        },
+        {
+          "id": "c",
+          "text": "O volume reduz em aproximadamente 10%, pois a redução da altura é proporcionalmente maior que o aumento do raio",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. A redução do volume é de 3,2%, não 10%. Embora a altura tenha uma redução de 20%, o aumento de 10% no raio tem um impacto maior devido ao termo r² na fórmula do volume, o que atenua a redução geral do volume."
+        },
+        {
+          "id": "d",
+          "text": "O volume permanece praticamente constante, pois o aumento do raio compensa exatamente a redução da altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O volume não permanece constante. A alteração do raio afeta o volume quadraticamente (r²), enquanto a altura afeta linearmente. Portanto, um aumento de 10% no raio e uma redução de 20% na altura não se cancelam para manter o volume inalterado."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. Seja V o volume original do cone, dado por V = (1/3)πr²h. Com as alterações, o novo raio r' será 1.1r (aumento de 10%) e a nova altura h' será 0.8h (redução de 20%). O novo volume V' será V' = (1/3)π(r')²h' = (1/3)π(1.1r)²(0.8h) = (1/3)π(1.21r²)(0.8h) = (1/3)πr²h * (1.21 * 0.8) = V * 0.968. Isso significa que o novo volume é 96,8% do volume original, ou seja, houve uma redução de 100% - 96,8% = 3,2%.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "21_160384_Geometria Espacial - Cilindros III.pdf",
+  "coletado_em": "2026-09-23T21:08:33"
+}

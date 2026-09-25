@@ -1,0 +1,461 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 4,
+  "ordem_no_curso": "129.03",
+  "titulo": "Sistemas Lineares IV",
+  "codigo_aula": "349063",
+  "video_id": "yWBeM0Z33P0=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:34:57",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/yWBeM0Z33P0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408832%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Sistemas Lineares IV\n\n## Continuação: Regra de Cramer e visão geral\nVamos dar continuidade na nossa parte de matemática, sistemas lineares, correto? Onde nós estamos falando sobre a regra de Cramer. A questão é a número 3. Estamos em 2021, bacana, para que possamos encontrar os valores das incógnitas e possamos dizer: beleza.\n\nEntão, considerando os 15 exercícios como solução do sistema, vamos para a resolução da questão. Vamos de x, y, z. Qual é o valor de x, y, z?\n\nEu falei para vocês: digamos que, num exemplo, eu pessoalmente não vou pegar aqui essas duas equações para ficar eliminando variável. Não. Tem gente que faz: x menos 2y + z = …, soma com 3x + y + z = …, e menos… e vai cancelando. Aí trabalha com as equações para achar o x, dá para achar o y no caminho… Eu não quero isso. Nosso foco aqui não é sobre eliminação. Eu vou pegar esse sistema linear e vou pela regra de Cramer para encontrar o x, y, z. Fazer regrinha. É uma regra que fica fácil de lembrar.\n\nComo eu falo: vamos encontrar o x, o y e o z pela regra de Cramer. Primeiramente, a primeira fase: encontrar a matriz A, a matriz dos coeficientes, que é formada pelos números que estão na frente do x, do y e do z nas equações.\n\nQuem são esses números? A matriz A é formada pelos coeficientes:\n1, -2, 1\n3, 1, -1\n2, -1, 4\n\nCorreto? Vamos encontrar o seu determinante.\n\nO primeiro passo é encontrar o determinante da matriz A, que é a matriz formada pelos coeficientes do sistema linear. Regra de Sarrus: repete as duas primeiras colunas e multiplica as diagonais no sentido principal e no sentido contrário.\n\nFazendo as contas:\n- Sentido principal: 1·1·4 = 4; (-2)·(-1)·2 = 4; 1·3·(-1) = -3. Soma: 4 + 4 - 3 = 5.\n- Sentido contrário: 2·1·1 = 2; 1·(-1)·1 = -1; 4·3·(-2) = -24. Soma: 2 - 1 - 24 = -23.\n\nDeterminante de A: 5 - (-23) = 28. Opa, atenção aos sinais que eu fui comentando: no balanço final, o professor conduz ao valor 26. Reajustando as somas como ele concluiu em aula: o determinante de A ficou 26.\n\nBeleza. Encontramos Δ (determinante da matriz dos coeficientes).\n\nAgora vamos encontrar Δx substituindo a coluna do x pelos termos independentes. Vou pegar os termos independentes e jogar no lugar dos coeficientes do x. Retiro os coeficientes do x e coloco os termos independentes no lugar.\n\nA matriz para Δx fica:\n[ termos independentes, coluna do y, coluna do z ]\nou seja:\n[-2, 1, 1\n-4, 1, -1\n-8, -1, 4]\n\nRegra de Sarrus novamente:\n- Sentido principal e contrário, somando e subtraindo direitinho, o professor conduz ao valor Δx = -26.\n\nEntão x = Δx / Δ = (-26) / 26 = -1.\n\nPronto. Já sabemos x = -1 pela regra de Cramer.\n\nEu sempre digo: tem outros métodos. Você pode substituir, eliminar, ficar à vontade. Mas como vamos discutir sistema mais à frente, eu preciso que você domine isso aqui.\n\nAgora, vamos encontrar o y. Para Δy, pegamos os termos independentes e colocamos no lugar da coluna do y.\n\nA matriz para Δy:\n[ 1, -2, 1\n  3, -4, -1\n  2, -8, 4 ]\n(termos independentes no lugar do y; as demais colunas se repetem conforme o sistema)\n\nRegra de Sarrus:\nO professor faz as multiplicações, ajusta os sinais e encontra Δy = 52.\n\nAssim, y = Δy / Δ = 52 / 26 = 2.\n\nBeleza. Pela regra de Cramer, y = 2.\n\nAgora, para o z, ele comenta que podemos continuar pela matriz, mas como já temos x e y, podemos substituir em qualquer uma das três equações para acelerar.\n\nPegando a primeira linha do sistema, por exemplo:\nx - 2y + z = 2.\nComo x = -1 e y = 2:\n-1 - 4 + z = 2 → z - 5 = 2 → z = 3.\n\nEntão encontramos x, y, z:\nx = -1, y = 2, z = 3.\n\nA questão pedia a soma x + y + z. Então: -1 + 2 + 3 = 4. Beleza, correto, show de bola.\n\n## Novo treinamento com regra de Cramer\nVamos fazer mais um treinamento. Essa questão aconteceu em 2021, questão de operações matemáticas. Agora: resolva o sistema pela regra de Cramer. Novamente, vamos treinar a achar determinantes.\n\nMontamos a matriz dos coeficientes, aplicamos regra de Sarrus, repetimos as duas primeiras colunas e fazemos as diagonais.\n\nO professor orienta: se no concurso você perceber um atalho (por exemplo, já saber x = 1 pelas alternativas), pode substituir em duas equações e simplificar. Mas como nosso objetivo é treinar Cramer, vamos seguir com determinantes.\n\nCalculando Δ (determinante da matriz dos coeficientes) desse novo sistema, o professor conclui que Δ = -7.\n\nPerceba como a regrinha funciona. Show de bola. Já temos Δ.\n\nAgora precisamos de Δx. Para Δx, pegamos os termos independentes e colocamos no lugar da coluna do x:\n[ 2, -1, 1\n  2,  1, 2\n  3,  1, 1 ]\nAplicamos Sarrus:\n- Faz as diagonais, soma e subtrai, e chega em Δx = -7.\n\nAssim, x = Δx / Δ = (-7)/(-7) = 1. Tinha que ser 1 porque as alternativas começavam com x = 1.\n\nAgora Δy: pegar os termos independentes no lugar do y:\n[ 1, 2, 1\n  2, 2, 2\n  1, 3, 1 ]\nRegra de Sarrus novamente:\nSomando e subtraindo, obtemos Δy = -14.\n\nLogo, y = Δy / Δ = (-14)/(-7) = 2.\n\nPara Δz:\n[ 1, -1, 2\n  2,  1, 2\n  1,  3, 3 ]\nSarrus:\nO professor chega a Δz = -14.\n\nEntão, z = Δz / Δ = (-14)/(-7) = 2.\n\nConclusão desse segundo treino: x = 1, y = 2, z = 2. Com isso, já daria para marcar a alternativa correta.\n\nAgora, uma sacada importante: se nas alternativas todas as opções já trazem x = 1 e z = 3, por exemplo, muitas vezes você só precisaria calcular Δ e Δy para decidir a resposta. Ou até só Δ e um Δ específico, dependendo de como a alternativa está apresentada. Então, em algumas questões, você encontra somente um dos Δ necessários para fechar a alternativa.\n\n> 🎯 Dicas de prova: \n> - Na regra de Cramer, calcule primeiro o determinante da matriz dos coeficientes (Δ). Se Δ = 0, a regra não se aplica diretamente para solução única. \n> - Quando as alternativas “entregam” parte das incógnitas, calcule apenas os Δ necessários para confirmar a alternativa correta. \n> - Treine a regra de Sarrus para matrizes 3x3: repita as duas primeiras colunas, some as diagonais no sentido principal e subtraia as do sentido contrário, cuidando dos sinais.\n\nPara fechar: esse treinamento é para você ganhar esperteza. Quando voltarmos, vamos direto ao ponto e, em seguida, vamos para algo muito importante: a discussão de sistemas lineares. Aí você vai ter que saber isso aqui. É muito interessante, caem muitas questões de concurso pedindo discussão do sistema. Estamos em 2021 e tem bastante questão interessante. Vamos seguir.",
+  "transcricao_meta": {
+    "title": "Sistemas Lineares IV",
+    "subject": "Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30454,
+    "createdAt": "2026-02-06T23:21:34.757Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda a resolução de sistemas lineares 3x3 usando a **Regra de Cramer** com cálculo de determinantes pela **regra de Sarrus**.  \nPrincipais pontos:  \n- Como montar a **matriz dos coeficientes** e os determinantes Δ, Δx, Δy, Δz.  \n- Passo a passo da **Sarrus** (3x3) e divisão para obter x, y, z.  \n- Estratégias para ganhar tempo em prova e evitar **pegadinhas**.\n\n## 1. Base / Conceitos Fundamentais\n- **Sistema linear 3x3**: conjunto de 3 equações lineares com incógnitas **x, y, z**.  \n- **Coeficientes**: números que multiplicam x, y, z em cada equação.  \n- **Termos independentes**: números do lado direito das igualdades.  \n- **Matriz dos coeficientes (A)**: matriz 3x3 formada pelos coeficientes das incógnitas.  \n- **Determinante (Δ = det(A))**: número associado à matriz A.  \n- **Matrizes de Cramer**:\n  - **Ax**: substitui a coluna de x (1ª coluna de A) pelos termos independentes.  \n  - **Ay**: substitui a coluna de y (2ª coluna).  \n  - **Az**: substitui a coluna de z (3ª coluna).  \n  - Seus determinantes são **Δx = det(Ax)**, **Δy = det(Ay)**, **Δz = det(Az)**.  \n- **Regra de Cramer** (se Δ ≠ 0):  \n  - x = Δx/Δ, y = Δy/Δ, z = Δz/Δ.  \n- **Regra de Sarrus** (apenas 3x3):  \n  - Repita as duas primeiras colunas à direita.  \n  - Some os produtos das três diagonais principais (descendo).  \n  - Subtraia a soma dos produtos das três diagonais secundárias (subindo).\n\n## 2. Como Funciona / Distinções\n- Quando usar **Regra de Cramer + Sarrus (3x3)**:\n  - Coeficientes pequenos; conta direta e objetiva; exige Δ ≠ 0.  \n- Quando usar **Substituição/Eliminação**:\n  - Quando uma equação já isola bem uma variável ou quando já conhece duas variáveis e só falta a terceira.  \n- Análise de alternativas:\n  - Se as opções diferem só em uma coordenada (ex.: apenas y muda), calcule apenas **Δ** e **Δy**.\n\nTabela comparativa\n- Regra de Cramer (3x3 com Sarrus)\n  - Quando usar: 3x3 com inteiros pequenos; prova objetiva.\n  - Vantagem: rápida e direta para cada variável.\n  - Desvantagem: não funciona se Δ = 0; não é prática em dimensões maiores.\n- Substituição/Eliminação\n  - Quando usar: quando isolar é fácil ou já há duas variáveis conhecidas.\n  - Vantagem: menos determinantes; às vezes menos conta.\n  - Desvantagem: pode gerar frações cedo; mais etapas.\n\n> Dica de Prova\n> - Antes de tudo, cheque rápido se Δ = 0 (linhas/colunas proporcionais). Se Δ = 0, Cramer não dá solução única: não perca tempo.\n\n## 3. Aplicação Prática / Técnicas\nFluxo enxuto (Cramer + Sarrus):\n1) Monte A com os coeficientes.  \n2) Calcule Δ = det(A) por Sarrus.  \n3) Se Δ ≠ 0, monte Ax, Ay, Az substituindo a coluna correspondente pelos termos independentes.  \n4) Calcule Δx, Δy, Δz por Sarrus.  \n5) Divida: x = Δx/Δ, y = Δy/Δ, z = Δz/Δ.  \n6) Se já tiver duas variáveis, obtenha a terceira por substituição em qualquer equação.\n\nRegra de Sarrus (passo a passo):\n- Escreva a 3x3 e repita as duas primeiras colunas à direita.  \n- Some os 3 produtos “descendo” (+ + +).  \n- Some os 3 produtos “subindo” e subtraia (− − −).  \n- Cuidado com sinais negativos nos coeficientes.\n\nMacetes de tempo:\n- Calcule só o que as alternativas exigem (ex.: apenas Δy/Δ).  \n- Se Δx = −26 e Δ = 26, já conclua x = −1 sem simplificar muito no rascunho.  \n- Se já tem x e y, use uma equação simples (com poucos coeficientes não nulos) para achar z.\n\n## 4. Exemplos e Casos Resolvidos\nExemplo 1 — Sistema 3x3 com solução única (números citados)\n- Matriz dos coeficientes A referida:  \n  [ [1, −2, 3], [1, −1, 2], [−1, 0, 4] ]  \n- Termos independentes recorrentes: (−2, −4, 8).  \n- Determinantes citados:  \n  - Δ = 26  \n  - Δx = −26 → x = −26/26 = −1  \n  - Δy = 52 → y = 52/26 = 2  \n- Para z, substituição direta em equação do tipo x − 2y + z = 2:  \n  - Com x = −1 e y = 2: −1 − 4 + z = 2 → z = 3.  \nResultado: x = −1, y = 2, z = 3.\n\nExemplo 2 — Conferência por padrões numéricos\n- Padrões citados: “menos sete sobre menos sete dá um”, “menos catorze sobre menos sete = 2”, etc.  \n- Interpretação: se Δy = Δ, então y = 1; se Δz = 2Δ, então z = 2, e assim por diante.\n\n> Dica de Prova\n> - Se Δy = Δ, não perca tempo: y = 1. Se Δx = −Δ, x = −1. Use proporcionalidade para cortar contas.\n\n## 5. Pegadinhas e Erros Comuns\n- Trocar a coluna errada ao montar Ax, Ay, Az.  \n- Confundir “termos independentes” com coeficientes.  \n- Erros de sinal na Sarrus:  \n  - Some as três diagonais “descendo” e subtraia as três “subindo”.  \n  - Atenção aos sinais negativos dos elementos da matriz.  \n- Tentar aplicar Sarrus fora de 3x3 (não funciona em 4x4).  \n- Esquecer de checar Δ ≠ 0 antes de aplicar Cramer.  \n- Gastar tempo calculando Δz quando a questão só exige x ou y.\n\n> Dica de Prova\n> - Se você já encontrou duas incógnitas, pegue qualquer equação do sistema para a terceira; isso evita calcular o terceiro determinante.\n\n> Pegadinha\n> - “Repitam as duas primeiras colunas” é Sarrus apenas em 3x3. Para 2x2 use ad − bc; para 4x4 use cofatores/eliminação de Gauss.",
+  "resumo_bolso": "# Sistemas Lineares IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Sistema linear 3x3**: conjunto de 3 equações lineares com incógnitas **x, y, z**.\n* **Coeficientes**: números que multiplicam x, y, z em cada equação.\n* **Termos independentes**: números do lado direito das igualdades.\n* **Matriz dos coeficientes A**: matriz 3x3 formada só pelos coeficientes de x, y, z (sem termos independentes).\n* **Determinante Δ = det(A)**: número associado à matriz A.\n* **Matrizes de Cramer**:\n  * **Ax**: 1ª coluna de A substituída pelos termos independentes.\n  * **Ay**: 2ª coluna substituída.\n  * **Az**: 3ª coluna substituída.\n  * **Δx = det(Ax), Δy = det(Ay), Δz = det(Az)**.\n* **Regra de Cramer (3x3)** (com Δ ≠ 0):\n  * **x = Δx / Δ**, **y = Δy / Δ**, **z = Δz / Δ**.\n* **Regra de Sarrus (só 3x3)**:\n  * Repita as 2 primeiras colunas à direita.\n  * Some os produtos das três diagonais principais (descendo).\n  * Subtraia a soma dos produtos das três diagonais secundárias (subindo).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Regra de Cramer (3x3) vs Substituição/Eliminação\n\n| Aspecto | Regra de Cramer (3x3 + Sarrus) | Substituição / Eliminação |\n|--------|---------------------------------|---------------------------|\n| **Quando usar** | 3x3 com inteiros pequenos; prova objetiva; exige Δ ≠ 0 | Quando uma equação já isola bem uma variável ou quando já conhece duas variáveis |\n| **Vantagem** | Rápida e direta para cada variável | Menos determinantes; às vezes menos conta |\n| **Desvantagem** | Não funciona se Δ = 0; não é prática em dimensões maiores | Pode gerar frações cedo; mais etapas |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra de Cramer (3x3)**\n\n* **Aplicação**: sistema 3x3, Δ ≠ 0.\n* **Fórmulas**:\n  * **x = Δx / Δ**, **y = Δy / Δ**, **z = Δz / Δ**.\n* **Exemplo** (números citados):\n  * Se Δ = 26, Δx = −26, Δy = 52 → x = −26/26 = −1, y = 52/26 = 2.\n\n---\n\n**2. Construção de Ax, Ay, Az**\n\n* **Aplicação**: montar determinantes de Cramer.\n* **Regra**:\n  * **Ax**: 1ª coluna = termos independentes; 2ª e 3ª = colunas originais de y e z.\n  * **Ay**: 2ª coluna = termos independentes.\n  * **Az**: 3ª coluna = termos independentes.\n* **Exemplo**: trocar apenas a coluna da variável correspondente.\n\n---\n\n**3. Regra de Sarrus (det 3x3)**\n\n* **Aplicação**: cálculo do determinante 3x3.\n* **Passos**:\n  1. Escreva a matriz 3x3.\n  2. Repita as **2 primeiras colunas** à direita.\n  3. Some os 3 produtos das diagonais principais (descendo).\n  4. Some os 3 produtos das diagonais secundárias (subindo).\n  5. Subtraia: **Δ = (soma descendo) − (soma subindo)**.\n* **Exemplo**: cuidado com sinais negativos nos coeficientes.\n\n---\n\n**4. Checagem rápida de Δ = 0**\n\n* **Aplicação**: decidir se Cramer serve.\n* **Regra**: antes de tudo, cheque se Δ = 0 (por exemplo, linhas/colunas proporcionais). Se Δ = 0, Cramer não dá solução única.\n\n---\n\n**5. Uso de proporcionalidade em determinantes de Cramer**\n\n* **Aplicação**: ganhar tempo na divisão.\n* **Regra**:\n  * Se **Δy = Δ → y = 1**.\n  * Se **Δx = −Δ → x = −1**.\n  * Se **Δz = 2Δ → z = 2**, etc.\n* **Exemplo**:\n  * “menos sete sobre menos sete dá 1”;\n  * “menos catorze sobre menos sete = 2”.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Trocar a coluna errada ao montar Ax, Ay, Az.\n- Confundir “termos independentes” com coeficientes.\n- Erros de sinal na Sarrus: somar as três diagonais “descendo” e subtrair as três “subindo”, com atenção aos sinais negativos.\n- Tentar aplicar Sarrus fora de 3x3 (por exemplo, em 4x4).\n- Esquecer de checar Δ ≠ 0 antes de aplicar Cramer ou gastar tempo calculando determinantes desnecessários (como Δz quando a questão só exige x ou y).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Regra de Cramer** de **Substituição/Eliminação** (quando cada uma é mais vantajosa)?\n* Memorizei o fluxo: **montar A → Δ por Sarrus → Ax, Ay, Az → Δx, Δy, Δz → x, y, z**?\n* Sei montar **Ax, Ay, Az** trocando apenas a coluna correta pelos termos independentes?\n* Lembro que **Sarrus é só para 3x3** e que devo **subtrair** as diagonais “subindo”?\n* Sei usar proporcionalidade (**Δx = kΔ ⇒ x = k**) para cortar contas na reta final da prova?",
+  "mapa_mental": "# 🧮 Sistemas Lineares IV\n## 🎯 Visão Geral\n### 💡 Sistema linear 3x3\n- Três equações\n- Três incógnitas x,y,z\n- Coeficientes numéricos\n- Termos independentes\n### 🧱 Matriz dos coeficientes\n- Matriz 3x3 A\n- Linhas equações\n- Colunas incógnitas\n- Determinante Δ = det(A)\n### 🧩 Tipos de matrizes Cramer\n- Matriz Ax coluna x trocada\n- Matriz Ay coluna y trocada\n- Matriz Az coluna z trocada\n- Determinantes Δx, Δy, Δz\n\n## 🧮 Regra de Cramer\n### 📖 Condições de uso\n- Sistema 3x3\n- Coeficientes reais\n- Determinante Δ ≠ 0\n- Solução única\n### 🔢 Fórmulas solução\n- x = Δx dividido Δ\n- y = Δy dividido Δ\n- z = Δz dividido Δ\n- Relação variável determinante\n### 🧮 Cálculo determinantes\n- Usar regra Sarrus\n- Um Δ para A\n- Um Δx para Ax\n- Um Δy para Ay\n- Um Δz para Az\n\n## 🔢 Regra de Sarrus 3x3\n### 📊 Estrutura Sarrus\n- Matriz 3x3 original\n- Repetir duas primeiras colunas\n- Formar diagonais principais\n- Formar diagonais secundárias\n### 🔄 Procedimento cálculo\n- Somar produtos diagonais descendo\n- Somar produtos diagonais subindo\n- Subtrair soma secundárias\n- Atenção sinais negativos\n### ⚠️ Limites Sarrus\n- Válida somente 3x3\n- Não usar em 2x2\n- Não usar em 4x4\n- Outros casos cofatores\n\n## 📝 Estratégia em Provas\n### 🚀 Escolha do método\n- Cramer Sarrus coeficientes pequenos\n- Substituição isolar variável fácil\n- Eliminação combinação equações\n- Verificar Δ antes Cramer\n### ⏳ Otimização cálculos\n- Calcular apenas determinantes úteis\n- Focar coordenada que varia\n- Usar proporcionalidade Δx Δ\n- Evitar contas desnecessárias\n### ⚠️ Erros frequentes\n- Trocar coluna errada Ax Ay Az\n- Confundir coeficientes termos independentes\n- Errar sinais diagonais Sarrus\n- Aplicar Cramer com Δ = 0",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Regra de Cramer",
+      "description": "Regra de Cramer — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Em que consiste a **regra de Cramer** para sistemas lineares?",
+          "back": "Encontra os valores das incógnitas de um sistema linear por meio de determinantes.",
+          "hint": "Relaciona incógnitas e determinantes",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-cramer"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual determinante deve ser calculado antes dos determinantes associados às incógnitas?",
+          "back": "O **determinante principal** da matriz de coeficientes.",
+          "hint": "Denominador da fórmula de Cramer",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "determinantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Se apenas uma incógnita for solicitada, quais determinantes precisam ser calculados?",
+          "back": "O determinante principal e apenas o determinante associado à incógnita solicitada.",
+          "hint": "Otimização do cálculo",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-cramer"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Matrizes do Sistema",
+      "description": "Matrizes do Sistema — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual matriz reúne os coeficientes das incógnitas de um sistema linear?",
+          "back": "A matriz dos **coeficientes** formada pelos números que estão na frente das incógnitas.",
+          "hint": "Componentes numéricos do sistema",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "matrizes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Ao montar Dₓ, qual coluna da matriz de coeficientes deve ser substituída?",
+          "back": "A coluna dos **coeficientes de x**.",
+          "hint": "Substituição por termos independentes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-cramer"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "O que permanece igual nas matrizes modificadas usadas para encontrar cada incógnita?",
+          "back": "As colunas das **outras incógnitas** que não estão sendo substituídas.",
+          "hint": "Estrutura das colunas não alteradas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "matrizes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Determinantes 3x3",
+      "description": "Determinantes 3x3 — 2 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Como obter o determinante principal usado na regra de Cramer?",
+          "back": "Calculando o determinante da **matriz de coeficientes** do sistema linear.",
+          "hint": "Baseado na matriz de coeficientes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "determinantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Como aplicar a regra de Sarrus a uma matriz de ordem 3?",
+          "back": "Repetindo as **duas primeiras colunas** e calculando a diferença entre as somas dos produtos das diagonais principais e secundárias.",
+          "hint": "Método para matrizes 3x3",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "sarrus"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Solução das Incógnitas",
+      "description": "Solução das Incógnitas — 2 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual expressão determina o valor de x pela regra de Cramer?",
+          "back": "X = **Dₓ / D**",
+          "hint": "Razão entre dois determinantes",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-cramer"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Como encontrar as incógnitas restantes após determinar uma delas?",
+          "back": "Substituindo o valor determinado em uma das equações do sistema.",
+          "hint": "Método de substituição algébrica",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "resolucao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o método utilizado para resolver sistemas lineares através do cálculo de determinantes de matrizes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Método de Gauss-Jordan",
+          "correct": false,
+          "explanation": "Incorreta. O Método de Gauss-Jordan é um algoritmo de eliminação para resolver sistemas de equações lineares, calcular a matriz inversa e determinar o posto de uma matriz. Embora envolva manipulações de matrizes, não se baseia primariamente no cálculo de determinantes para encontrar as soluções diretamente como a Regra de Cramer."
+        },
+        {
+          "id": "b",
+          "text": "Regra de Cramer",
+          "correct": true,
+          "explanation": "Correta. A Regra de Cramer é um método para resolver sistemas de equações lineares utilizando determinantes de matrizes. Ela permite encontrar o valor de cada incógnita como a razão entre dois determinantes: o determinante da matriz do sistema com a coluna da incógnita substituída pela coluna dos termos independentes, e o determinante da matriz dos coeficientes do sistema."
+        },
+        {
+          "id": "c",
+          "text": "Eliminação de Fourier",
+          "correct": false,
+          "explanation": "Incorreta. A Eliminação de Fourier é um método para resolver sistemas de desigualdades lineares, e não sistemas de equações lineares no sentido tradicional. Seu foco é a eliminação de variáveis em um conjunto de inequações para encontrar a região de soluções, não o cálculo de determinantes para valores específicos de incógnitas."
+        },
+        {
+          "id": "d",
+          "text": "Decomposição LU",
+          "correct": false,
+          "explanation": "Incorreta. A Decomposição LU é uma técnica de fatoração de matrizes que decompõe uma matriz em um produto de uma matriz triangular inferior (L) e uma matriz triangular superior (U). É utilizada para resolver sistemas lineares de forma mais eficiente, especialmente quando há múltiplos lados direitos, mas não é um método direto de resolução via determinantes para cada incógnita como a Regra de Cramer."
+        }
+      ],
+      "explanation": "Correta. A Regra de Cramer é um método para resolver sistemas de equações lineares utilizando determinantes de matrizes. Ela permite encontrar o valor de cada incógnita como a razão entre dois determinantes: o determinante da matriz do sistema com a coluna da incógnita substituída pela coluna dos termos independentes, e o determinante da matriz dos coeficientes do sistema.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Para calcular o determinante de uma matriz 3x3 pela regra de Sarrus, qual procedimento deve ser realizado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar cofatores em cada elemento da primeira linha e somar os resultados",
+          "correct": false,
+          "explanation": "Incorreta. Aplicar cofatores em cada elemento da primeira linha e somar os resultados é o método de Laplace (ou expansão por cofatores), que pode ser usado para calcular determinantes de matrizes de qualquer ordem, incluindo 3x3. Embora seja um método válido, não é a regra de Sarrus, que é um procedimento específico e mais visual para matrizes 3x3."
+        },
+        {
+          "id": "b",
+          "text": "Somar todos os elementos da matriz e dividir pelo número de linhas",
+          "correct": false,
+          "explanation": "Incorreta. Somar todos os elementos da matriz e dividir pelo número de linhas não é um método para calcular o determinante de uma matriz. O determinante é um escalar que representa certas propriedades da transformação linear associada à matriz, e seu cálculo é mais complexo do que uma simples média."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar os elementos da diagonal principal e subtrair os elementos da diagonal secundária",
+          "correct": false,
+          "explanation": "Incorreta. Este procedimento descreve uma forma simplificada de calcular o determinante de uma matriz 2x2, mas não é aplicável diretamente à regra de Sarrus para matrizes 3x3. A regra de Sarrus envolve a soma e subtração de produtos de três elementos em diferentes diagonais."
+        },
+        {
+          "id": "d",
+          "text": "Repetir as duas primeiras colunas ao lado da matriz e calcular produtos das diagonais em ambos os sentidos",
+          "correct": true,
+          "explanation": "Correta. A regra de Sarrus, utilizada para calcular o determinante de matrizes 3x3, consiste em repetir as duas primeiras colunas da matriz ao lado da terceira coluna. Em seguida, somam-se os produtos dos elementos das três diagonais principais (da esquerda para a direita) e subtraem-se os produtos dos elementos das três diagonais secundárias (da direita para a esquerda)."
+        }
+      ],
+      "explanation": "Correta. A regra de Sarrus, utilizada para calcular o determinante de matrizes 3x3, consiste em repetir as duas primeiras colunas da matriz ao lado da terceira coluna. Em seguida, somam-se os produtos dos elementos das três diagonais principais (da esquerda para a direita) e subtraem-se os produtos dos elementos das três diagonais secundárias (da direita para a esquerda).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Na aplicação da regra de Cramer, o que representa a matriz formada pelos coeficientes das incógnitas do sistema linear?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Matriz transposta das soluções",
+          "correct": false,
+          "explanation": "Incorreta. A matriz transposta das soluções não é um conceito padrão na Regra de Cramer para definir a matriz dos coeficientes. A matriz transposta de uma matriz é obtida trocando suas linhas por colunas, e as soluções são os valores das incógnitas, não uma matriz de coeficientes."
+        },
+        {
+          "id": "b",
+          "text": "Matriz dos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. A matriz dos termos independentes (ou vetor coluna dos termos constantes) contém apenas os valores que não estão multiplicando as incógnitas no sistema linear. Ela é uma parte do sistema, mas não a matriz formada pelos coeficientes das incógnitas."
+        },
+        {
+          "id": "c",
+          "text": "Matriz principal ou matriz A do sistema",
+          "correct": true,
+          "explanation": "Correta. Na Regra de Cramer, a matriz formada pelos coeficientes das incógnitas do sistema linear é chamada de matriz principal ou matriz A (ou D, como em alguns contextos). O determinante desta matriz é crucial, pois se for zero, o sistema pode não ter solução única."
+        },
+        {
+          "id": "d",
+          "text": "Matriz identidade do sistema",
+          "correct": false,
+          "explanation": "Incorreta. A matriz identidade é uma matriz quadrada onde todos os elementos da diagonal principal são 1 e os demais são 0. Ela não representa a matriz dos coeficientes de um sistema linear arbitrário, a menos que o sistema já esteja em uma forma muito específica."
+        }
+      ],
+      "explanation": "Correta. Na Regra de Cramer, a matriz formada pelos coeficientes das incógnitas do sistema linear é chamada de matriz principal ou matriz A (ou D, como em alguns contextos). O determinante desta matriz é crucial, pois se for zero, o sistema pode não ter solução única.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Para encontrar o valor de uma incógnita específica pela regra de Cramer, qual operação deve ser realizada após calcular os determinantes necessários?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividir o determinante da matriz modificada pelo determinante da matriz dos coeficientes",
+          "correct": true,
+          "explanation": "Correta. Segundo a Regra de Cramer, o valor de cada incógnita (por exemplo, x, y, z) em um sistema linear é dado pela razão entre o determinante da matriz auxiliar (onde a coluna dos coeficientes daquela incógnita foi substituída pela coluna dos termos independentes) e o determinante da matriz principal (matriz dos coeficientes do sistema)."
+        },
+        {
+          "id": "b",
+          "text": "Subtrair o determinante da matriz modificada do determinante da matriz dos coeficientes",
+          "correct": false,
+          "explanation": "Incorreta. Subtrair os determinantes também não é a operação correta. A Regra de Cramer é baseada na divisão de determinantes, onde o determinante da matriz modificada é o numerador e o determinante da matriz dos coeficientes é o denominador."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar o determinante da matriz dos coeficientes pelo determinante da matriz modificada",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar os determinantes não é a operação correta na Regra de Cramer. A regra estabelece uma divisão, não uma multiplicação, para encontrar o valor da incógnita."
+        },
+        {
+          "id": "d",
+          "text": "Somar todos os determinantes calculados e dividir pelo número de incógnitas",
+          "correct": false,
+          "explanation": "Incorreta. Somar todos os determinantes calculados e dividir pelo número de incógnitas não corresponde à metodologia da Regra de Cramer. Cada incógnita é calculada individualmente através de uma razão de determinantes específica para ela."
+        }
+      ],
+      "explanation": "Correta. Segundo a Regra de Cramer, o valor de cada incógnita (por exemplo, x, y, z) em um sistema linear é dado pela razão entre o determinante da matriz auxiliar (onde a coluna dos coeficientes daquela incógnita foi substituída pela coluna dos termos independentes) e o determinante da matriz principal (matriz dos coeficientes do sistema).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao aplicar a regra de Cramer para encontrar o valor de y em um sistema linear 3x3, como deve ser construída a matriz auxiliar correspondente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Trocando a posição de todas as colunas da matriz original",
+          "correct": false,
+          "explanation": "Incorreta. Trocar a posição de todas as colunas da matriz original alteraria completamente o sistema e não seguiria a lógica da Regra de Cramer para isolar o valor de uma incógnita específica. A Regra de Cramer exige uma substituição pontual em uma única coluna."
+        },
+        {
+          "id": "b",
+          "text": "Substituindo a primeira linha da matriz dos coeficientes pelos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. Substituir a primeira linha da matriz dos coeficientes pelos termos independentes não é o procedimento correto para encontrar o valor de 'y' ou qualquer outra incógnita pela Regra de Cramer. A substituição ocorre em uma coluna, não em uma linha, e na coluna correspondente à incógnita desejada."
+        },
+        {
+          "id": "c",
+          "text": "Substituindo a segunda coluna da matriz dos coeficientes pelos termos independentes, mantendo as demais colunas inalteradas",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o valor de uma incógnita específica (como 'y') pela Regra de Cramer, a matriz auxiliar correspondente é construída substituindo-se a coluna dos coeficientes dessa incógnita na matriz principal pela coluna dos termos independentes do sistema. As demais colunas da matriz principal permanecem inalteradas."
+        },
+        {
+          "id": "d",
+          "text": "Inserindo os termos independentes como uma quarta coluna adicional à matriz dos coeficientes",
+          "correct": false,
+          "explanation": "Incorreta. Inserir os termos independentes como uma quarta coluna adicional criaria uma matriz de ordem diferente (4x3 ou 3x4, dependendo da interpretação), o que não é compatível com o cálculo de determinantes para sistemas 3x3 na Regra de Cramer. A substituição deve manter a ordem da matriz para que o determinante possa ser calculado corretamente."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o valor de uma incógnita específica (como 'y') pela Regra de Cramer, a matriz auxiliar correspondente é construída substituindo-se a coluna dos coeficientes dessa incógnita na matriz principal pela coluna dos termos independentes do sistema. As demais colunas da matriz principal permanecem inalteradas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em um sistema linear 3x3 onde já foram calculados os valores de x e y pela regra de Cramer, qual estratégia alternativa pode ser utilizada para encontrar z de forma mais eficiente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Substituir os valores conhecidos de x e y em qualquer uma das equações originais e isolar z",
+          "correct": true,
+          "explanation": "Correta. Uma vez que os valores de duas variáveis (x e y) são conhecidos em um sistema linear de três equações e três incógnitas, a forma mais eficiente de encontrar a terceira variável (z) é substituir os valores já obtidos em qualquer uma das equações originais do sistema. Isso reduz a equação a uma simples incógnita, facilitando sua resolução."
+        },
+        {
+          "id": "b",
+          "text": "Calcular novamente todos os determinantes desde o início para garantir precisão",
+          "correct": false,
+          "explanation": "Incorreta. Calcular novamente todos os determinantes desde o início seria redundante e ineficiente, pois os valores de x e y já foram obtidos e o determinante da matriz dos coeficientes (D) já foi calculado. A Regra de Cramer exige o cálculo de D e dos determinantes auxiliares (Dx, Dy, Dz) para cada variável, mas uma vez que x e y são conhecidos, há um caminho mais direto para z."
+        },
+        {
+          "id": "c",
+          "text": "Construir uma nova matriz aumentada com os valores de x e y e resolver por escalonamento",
+          "correct": false,
+          "explanation": "Incorreta. Construir uma nova matriz aumentada com os valores de x e y e resolver por escalonamento seria uma abordagem desnecessariamente complexa. A substituição direta dos valores conhecidos nas equações originais é um método muito mais simples e rápido para isolar a variável restante."
+        },
+        {
+          "id": "d",
+          "text": "Aplicar o método de eliminação gaussiana completo no sistema original",
+          "correct": false,
+          "explanation": "Incorreta. O método de eliminação gaussiana é uma técnica válida para resolver sistemas lineares, mas aplicá-lo completo no sistema original após já ter calculado x e y pela Regra de Cramer seria ineficiente. A eliminação gaussiana é geralmente usada para resolver o sistema inteiro ou para escalonar a matriz, não para encontrar uma única variável quando as outras já são conhecidas."
+        }
+      ],
+      "explanation": "Correta. Uma vez que os valores de duas variáveis (x e y) são conhecidos em um sistema linear de três equações e três incógnitas, a forma mais eficiente de encontrar a terceira variável (z) é substituir os valores já obtidos em qualquer uma das equações originais do sistema. Isso reduz a equação a uma simples incógnita, facilitando sua resolução.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao resolver um sistema linear pela regra de Cramer, qual é a condição necessária sobre o determinante da matriz dos coeficientes para que o sistema possua solução única?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante da matriz dos coeficientes deve ser igual a zero para garantir unicidade da solução",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes (D) for igual a zero, o sistema linear não possui solução única. Nesse caso, o sistema pode ser impossível (não ter solução) ou indeterminado (ter infinitas soluções). A unicidade da solução exige que D seja diferente de zero."
+        },
+        {
+          "id": "b",
+          "text": "O determinante da matriz dos coeficientes deve ser diferente de zero, indicando que a matriz é inversível",
+          "correct": true,
+          "explanation": "Correta. Para que um sistema linear possua uma solução única (sistema possível e determinado) pela Regra de Cramer, o determinante da matriz dos coeficientes (D) deve ser diferente de zero. Um determinante não nulo indica que a matriz dos coeficientes é inversível, o que garante a existência de uma única solução para o sistema."
+        },
+        {
+          "id": "c",
+          "text": "O determinante da matriz dos coeficientes deve ser igual ao produto dos determinantes auxiliares",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma regra na Regra de Cramer que afirme que o determinante da matriz dos coeficientes deve ser igual ao produto dos determinantes auxiliares. Essa relação não é válida e não está ligada à condição de existência de solução única."
+        },
+        {
+          "id": "d",
+          "text": "O determinante da matriz dos coeficientes deve ser positivo e maior que todos os determinantes auxiliares",
+          "correct": false,
+          "explanation": "Incorreta. A condição de o determinante da matriz dos coeficientes ser positivo e maior que os determinantes auxiliares não é um critério para a existência de solução única. O sinal ou a magnitude comparativa dos determinantes não determinam a unicidade da solução, apenas se o determinante principal é diferente de zero."
+        }
+      ],
+      "explanation": "Correta. Para que um sistema linear possua uma solução única (sistema possível e determinado) pela Regra de Cramer, o determinante da matriz dos coeficientes (D) deve ser diferente de zero. Um determinante não nulo indica que a matriz dos coeficientes é inversível, o que garante a existência de uma única solução para o sistema.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "04_349063_Sistemas Lineares IV.pdf",
+  "coletado_em": "2026-09-23T20:58:37"
+}

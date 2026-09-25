@@ -1,0 +1,409 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 7,
+  "ordem_no_curso": "129.05",
+  "titulo": "Sistemas Lineares VII",
+  "codigo_aula": "349484",
+  "video_id": "HY0JYPJQmjQ=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:34:16",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/HY0JYPJQmjQ%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408828%2C408830%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Sistemas Lineares VII\n\n## Desafios finais em Sistemas Lineares\nVamos dar continuidade aos sistemas lineares. Agora, para finalizar mesmo, algumas questões legais vão começar a ser um desafio. Isso mesmo: são desafios.\n\nOlha o seguinte, nosso desafio: estamos em 2021. Observe o sistema. A questão fala sobre verificar se o sistema tem solução única. A possível solução indicada é (2, 0, 0). Vamos verificar: se você substituir em qualquer das equações, por exemplo, cinco vezes dois, mais quatro vezes zero, mais três vezes zero… Realmente fecha. Olha só que interessante, a solução funciona. A questão fala que é a solução única, mas a gente já percebe, substituindo nas três equações, que funciona.\n\nAgora, vamos testar outra possibilidade: e se for (1, 5/4, 0)? Primeiro, substituindo: cinco vezes um, mais quatro vezes cinco quartos, mais três vezes zero. Quatro por quatro cancela, fica cinco. Então dá cinco mais cinco, dez. Bate. Aqui também vai dar certo. Então percebam: não tem como ser solução única.\n\nVeja a nota da questão: x pode ser 2 com y = 0 e z = 0, e também x pode ser 1 com y = 5/4 e z = 0. Em ambos os casos, os termos independentes batem. O segundo é o dobro do primeiro nos coeficientes, e da primeira para a terceira só trocou sinais, mantendo proporções. Então, realmente, você vai ter também como solução (1, 5/4, 0).\n\nO que podemos falar desse sistema? Ele é possível, porque encontramos soluções diferentes que funcionam. Mas ele não é determinado. Não pode ser impossível, porque já encontramos soluções.\n\nNesse momento, vamos deixar anotado: já sabemos que é possível, e ainda suspeitamos que seja indeterminado (pode ter muitas soluções). Só para garantir, vamos lembrar como descobrimos se é possível e indeterminado: usando determinantes.\n\n> 🎯 Dicas de prova: Um sistema é possível e determinado quando Δ ≠ 0. Se Δ = 0 e algum Δi ≠ 0, o sistema é impossível. Se Δ = 0 e todos os Δi = 0, o sistema é possível e indeterminado.\n\n## Determinantes e propriedades\nA matriz dos coeficientes é formada pelos coeficientes do sistema. Vamos montar a matriz A:\n- Primeira linha: 5, 4, 3\n- Segunda linha: 10, 8, 6\n- Terceira linha: −5, −4, −3\n\nEu quero o determinante dessa matriz. Observe as propriedades: a segunda linha é o dobro da primeira; a terceira é −1 vezes a primeira. Quando duas linhas (ou colunas) são proporcionais, o determinante é zero. Então, Δ = 0.\n\nAgora, olhando para os determinantes auxiliares Δx, Δy, Δz: pegue os termos independentes e substitua na respectiva coluna. Por exemplo, ao analisar colunas, vemos que a segunda coluna é proporcional à primeira (multiplicada por 2,5), o que mantém o determinante nulo. Podemos também relacionar linhas: a terceira é −1 vezes a primeira, a segunda é 2 vezes a primeira. Logo, todos os Δi também vão a zero.\n\nConclusão: Δ = 0 e todos os Δi = 0, então o sistema é possível e indeterminado. Isso explica múltiplas soluções, como vimos.\n\n## Aplicações e questões\nOlha só que legal: Sistema de equações lineares. É correto afirmar que o sistema não possui solução? Vamos analisar um caso com matriz de coeficientes A = [[2, 4], [3, 6]] e termos independentes b.\n\nCalcule o determinante de A: 2·6 − 4·3 = 12 − 12 = 0. Para não possuir solução (ser impossível), precisamos que Δ = 0 e algum Δi ≠ 0. Vamos montar, por exemplo, Δx substituindo a coluna de x pelos termos independentes (6 e 9, ou o que a questão der). Fazendo as contas, obtemos situações do tipo 0/0 ou número/0. Se ao substituir b obtemos Δx ≠ 0 com Δ = 0, então é impossível. Se obtivermos 0/0, é possível e indeterminado. Aqui, observando a proporcionalidade (as linhas de A são proporcionais), quando b também é proporcional no mesmo fator, teremos 0/0; quando não for proporcional, teremos número/0. Portanto, a afirmação “não possui solução” só é verdadeira quando b não respeita a mesma proporção.\n\n> 🎯 Dicas de prova: Para 2×2, se as linhas (ou colunas) de A são proporcionais (Δ = 0) e b é proporcional na mesma razão, o sistema é possível e indeterminado (0/0). Se b não é proporcional, é impossível (número/0). Se Δ ≠ 0, é possível e determinado.\n\nConclusões das alternativas:\n- “Possui uma única solução”: falso quando Δ = 0.\n- “É homogêneo”: falso se os termos independentes não forem todos zero.\n- “Possui infinitas soluções”: verdadeiro apenas quando Δ = 0 e todos Δi = 0.\n\n## Parâmetro para sistema impossível\nAgora, crack: para que o sistema linear (com matriz de coeficientes dada) seja impossível, precisamos Δ = 0 e algum Δi ≠ 0. A questão coloca um parâmetro k (ou c) nos termos independentes: reorganizamos o vetor b para envolver k, e calculamos o Δi correspondente. A condição de impossibilidade exige:\n- Δ = 0\n- Pelo menos um Δi ≠ 0\n\nFazendo as contas: ao montar Δ (pelos coeficientes), obtemos 0. Montando Δx (ou Δy) substituindo a coluna pelos termos independentes com k, chegamos a uma expressão do tipo 27k − 36 (exemplo didático) diferente de zero. Isolando, k ≠ 80, por exemplo, conforme o cálculo numérico que aparece. A ideia é: encontre o valor que anularia o Δi e exclua-o; para os demais valores, Δi ≠ 0 e Δ = 0, logo impossível.\n\n> 🎯 Dicas de prova: Sistema impossível se Δ = 0 e algum Δi ≠ 0. Ao achar Δi em função do parâmetro, imponha Δi ≠ 0 e mantenha Δ = 0.\n\nTambém garantimos que, ao calcular o determinante “de baixo” (Δ) com a matriz de coeficientes, ele zere. Já o “de cima” (Δi) precisa ser diferente de zero. Se Δi = 0, seria possível e indeterminado; se Δ ≠ 0, seria possível e determinado.\n\n## Interpretação gráfica\nQuestão geográfica (gráfica) é muito boa. Em sistemas de 1º grau com duas variáveis, cada equação representa uma reta.\n\n- Retas coincidentes: infinitas soluções (toda a reta é solução).\n- Retas concorrentes (inclusive perpendiculares, que são um caso particular): uma única solução (o ponto de interseção).\n- Retas paralelas distintas: nenhuma solução (sistema impossível).\n\nPortanto:\n- “Tem infinitas soluções”: só se as retas forem coincidentes.\n- “Tem apenas uma solução”: só se forem concorrentes (inclusive perpendiculares).\n- “Não possui solução”: se forem paralelas e distintas.\n\n> 🎯 Dicas de prova: Coincidentes → possível e indeterminado. Concorrentes → possível e determinado. Paralelas distintas → impossível.\n\n## Condição para solução única em sistema homogêneo\nFechando: condição para que o sistema\n[coeficientes 3×3 com parâmetro a]\nseja homogêneo (todos termos independentes iguais a zero) e tenha solução única. Sistema homogêneo sempre tem a solução trivial (0, 0, 0). Para ter solução única (apenas a trivial), precisamos que Δ ≠ 0.\n\nEntão, basta calcular o determinante da matriz de coeficientes em função de a. Usando a Regra de Sarrus:\n- Somamos os produtos das diagonais principais e subtraímos os das secundárias.\n- Chegamos a uma expressão do tipo Δ(a) = (2a + …) − (… + …), simplificando para algo como 3 − a, por exemplo.\n- Conclusão: Δ(a) ≠ 0 implica a ≠ 1 (exemplo conforme o cálculo). Logo, para ter solução única no sistema homogêneo, a deve ser diferente de 1.\n\n> 🎯 Dicas de prova: Sistema homogêneo tem solução única se e somente se o determinante da matriz dos coeficientes for diferente de zero. Se Δ = 0, há infinitas soluções (não-triviais).\n\nResposta final desse bloco: para que o sistema seja possível e determinado (solução única), basta que Δ ≠ 0. No exemplo do cálculo, isso equivale a a ≠ 1.\n\nMuito legal mesmo. Vamos fechar aqui. Essa faixa está de bom tamanho. Fizemos várias aplicações, e isso aqui não passa disso em prova. Show de bola, muito legal. Até o nosso próximo assunto: fechamos sistemas lineares, vamos nos aproximando de matrizes. Quase no fim da base. Muita coisa boa. A gente está feliz por isso, podendo ajudar vocês. Abraçaço, valeu demais.",
+  "transcricao_meta": {
+    "title": "Sistemas Lineares VII",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30517,
+    "createdAt": "2026-02-06T12:33:40.813Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: classificação de sistemas lineares (2x2 e 3x3) via determinantes e interpretação geométrica; uso de Δ, Δx, Δy (Cramer) para distinguir SPU, SPI e SI; propriedade de determinantes com linhas/colunas proporcionais; técnica com parâmetro para tornar o sistema impossível; Regra de Sarrus (3x3); sistema homogêneo.\nPrincipais pontos: \n- Δ ≠ 0 ⇒ solução única (SPU).\n- Δ = 0 e todos Δi = 0 ⇒ infinitas soluções (SPI).\n- Δ = 0 e algum Δi ≠ 0 ⇒ sem solução (SI).\n- Linhas/colunas proporcionais ⇒ determinante = 0.\n\n## 1. Base / Conceitos Fundamentais\n- Sistema linear: conjunto de equações lineares em x, y, z, ...\n- Matriz de coeficientes: matriz formada pelos coeficientes das incógnitas.\n- Determinante (Δ): determinante da matriz de coeficientes.\n- Determinantes auxiliares (Δx, Δy, Δz): obtidos substituindo a coluna da incógnita pelo vetor dos termos independentes.\n- Classificação:\n  - SPU (possível e determinado): única solução.\n  - SPI (possível e indeterminado): infinitas soluções.\n  - SI (impossível): nenhuma solução.\n- Sistema homogêneo: todos termos independentes iguais a 0 (sempre tem a solução trivial).\n- Interpretação geométrica (2x2):\n  - Retas concorrentes (inclui perpendiculares) ⇒ 1 solução.\n  - Retas coincidentes ⇒ infinitas soluções.\n  - Retas paralelas ⇒ nenhuma solução.\n\n## 2. Como Funciona / Distinções\n- Critério via determinantes (Cramer):\n  - Δ ≠ 0 ⇒ SPU.\n  - Δ = 0 e todos Δi = 0 (“zero sobre zero”) ⇒ SPI.\n  - Δ = 0 e algum Δi ≠ 0 (“número sobre zero” — divisão por zero não existe) ⇒ SI.\n- Determinante e proporcionalidade:\n  - Se duas linhas ou duas colunas são proporcionais ⇒ Δ = 0.\n  - Ex.: Coluna 2 = 2,5 × Coluna 1; Linha 2 = 2 × Linha 1; Linha 3 = (−2) × Linha 1.\n- Comparação geométrica × determinante (2x2):\n  - Concorrentes ⇔ Δ ≠ 0 ⇒ SPU.\n  - Coincidentes ⇔ Δ = 0 e Δi = 0 ⇒ SPI.\n  - Paralelas ⇔ Δ = 0 e algum Δi ≠ 0 ⇒ SI.\n- Sistema homogêneo:\n  - Δ ≠ 0 ⇒ única solução (trivial).\n  - Δ = 0 ⇒ infinitas soluções (além da trivial).\n\n> Dica de prova\n> - Para “solução única”, basta: determinante da matriz de coeficientes ≠ 0 (não precisa olhar numeradores).\n\n## 3. Aplicação Prática / Técnicas\n- Classificação rápida (2x2 ou 3x3):\n  1) Monte a matriz de coeficientes e calcule Δ.\n  2) Se Δ ≠ 0 ⇒ SPU (pare aqui).\n  3) Se Δ = 0 ⇒ calcule Δx, Δy (e Δz se 3x3):\n     - Todos Δi = 0 ⇒ SPI.\n     - Algum Δi ≠ 0 ⇒ SI.\n- Checagem por proporcionalidade (atalho):\n  - Antes de expandir, verifique se há linhas/colunas proporcionais ⇒ Δ = 0.\n  - Só então calcule Δi para decidir SPI ou SI.\n- Tornar o sistema impossível ajustando parâmetro k:\n  1) Force Δ = 0 (por proporcionalidade ou cálculo).\n  2) Monte um Δi substituindo a coluna da incógnita pelos termos independentes (com k).\n  3) Impor Δi ≠ 0 ⇒ resolve para k ⇒ garante SI.\n- Regra de Sarrus (determinante 3x3):\n  1) Escreva a matriz de ordem 3 e repita as duas primeiras colunas à direita.\n  2) Δ = (soma dos 3 produtos das diagonais principais) − (soma dos 3 produtos das diagonais secundárias).\n\n> Dica de prova\n> - Achou um único Δi ≠ 0 com Δ = 0? Já conclua SI; não precisa calcular os demais Δj.\n\n## 4. Exemplos e Casos Resolvidos\n- Proporcionalidade entre linhas:\n  - Matriz de coeficientes com linhas [5, 4, 3], [10, 8, 6], [−5, −4, −3].\n  - Linha 2 = 2 × Linha 1; Linha 3 = (−1) × Linha 1 ⇒ Δ = 0.\n  - Se, ao substituir a coluna de x pelos termos independentes, obtiver Δx = 0 e igualmente Δy = 0 (e Δz = 0, se 3x3) ⇒ SPI.\n  - Se algum Δi ≠ 0 (p. ex., 12, 80, 972) ⇒ SI.\n- Proporcionalidade entre colunas:\n  - Segunda coluna = 2,5 × primeira coluna ⇒ Δ = 0.\n  - Conclua SPI se todos Δi = 0; SI se algum Δi ≠ 0.\n- Interpretação geométrica (2x2):\n  - Retas perpendiculares (90 graus) são concorrentes ⇒ Δ ≠ 0 ⇒ SPU.\n  - Retas paralelas ⇒ Δ = 0 e algum Δi ≠ 0 ⇒ SI.\n  - Retas coincidentes ⇒ Δ = 0 e todos Δi = 0 ⇒ SPI.\n- Parâmetro para SI (esqueleto):\n  - Construa Δ = 0 (ex.: colunas proporcionais).\n  - Em Δx com termo k, obtenha expressão ≠ 0 (ex.: 12k − 972 ≠ 0 ⇒ k ≠ 81) para garantir SI.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir Δ = 0 com “sem solução”. Precisa avaliar os Δi:\n  - “zero sobre zero” ⇒ SPI.\n  - “número sobre zero” ⇒ SI.\n- Trocar a matriz inteira pelos termos independentes nos Δi. O correto é substituir apenas a coluna da incógnita correspondente.\n- Ignorar proporcionalidade óbvia e perder tempo com cofatores/Sarrus.\n- Erro de sinal na Regra de Sarrus ao subtrair as diagonais secundárias.\n- Achar que perpendiculares mudam a classificação: perpendiculares ⊂ concorrentes ⇒ solução única.\n- Sistema homogêneo “sem solução” não existe: sempre tem ao menos a trivial.\n- Ao buscar k para SI, esquecer que é necessário simultaneamente Δ = 0 e algum Δi ≠ 0; se todos Δi = 0 ⇒ vira SPI, não SI.\n\n> Dica de prova\n> - Resumo-relâmpago:\n>   - Δ ≠ 0 ⇒ SPU.\n>   - Δ = 0 e todos Δi = 0 ⇒ SPI.\n>   - Δ = 0 e algum Δi ≠ 0 ⇒ SI.\n>   - Linhas/colunas proporcionais ⇒ Δ = 0.",
+  "resumo_bolso": "# Sistemas Lineares VII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Sistema linear**: conjunto de equações lineares em x, y, z, ...\n* **Matriz de coeficientes**: matriz formada pelos coeficientes das incógnitas.\n* **Determinante (Δ)**: determinante da matriz de coeficientes.\n* **Determinantes auxiliares (Δx, Δy, Δz)**: obtidos substituindo a coluna da incógnita pelo vetor dos termos independentes.\n* **Classificação**:\n  - **SPU (possível e determinado)**: única solução.\n  - **SPI (possível e indeterminado)**: infinitas soluções.\n  - **SI (impossível)**: nenhuma solução.\n* **Sistema homogêneo**: todos termos independentes iguais a 0 (sempre tem a solução trivial).\n* **Interpretação geométrica (2x2)**:\n  - Retas concorrentes (inclui perpendiculares) ⇒ 1 solução.\n  - Retas coincidentes ⇒ infinitas soluções.\n  - Retas paralelas ⇒ nenhuma solução.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### SPU vs SPI vs SI (via determinantes de Cramer)\n\n| Aspecto | SPU | SPI | SI |\n|--------|-----|-----|----|\n| Δ | ≠ 0 | = 0 | = 0 |\n| Δi (todos) | não precisa olhar | todos = 0 | algum ≠ 0 |\n| Nº de soluções | única | infinitas | nenhuma |\n\n---\n\n### Concorrentes vs Paralelas vs Coincidentes (2x2)\n\n| Aspecto | Concorrentes | Paralelas | Coincidentes |\n|--------|--------------|-----------|--------------|\n| Interpretação geométrica | 1 ponto de interseção | nenhuma interseção | infinitos pontos em comum |\n| Classificação | SPU | SI | SPI |\n| Determinantes | Δ ≠ 0 | Δ = 0 e algum Δi ≠ 0 | Δ = 0 e todos Δi = 0 |\n\n---\n\n### Sistema Geral vs Sistema Homogêneo\n\n| Aspecto | Geral | Homogêneo |\n|--------|-------|-----------|\n| Termos independentes | podem ser ≠ 0 | todos = 0 |\n| Solução trivial | pode ou não ser solução | sempre é solução |\n| Δ ≠ 0 | SPU (única solução) | SPU (única solução = trivial) |\n| Δ = 0 | SPI ou SI (depende dos Δi) | SPI (infinitas soluções, além da trivial) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra de Cramer (classificação)**\n\n* **Aplicação**: sistemas 2x2 ou 3x3.\n* **Regra**:\n  - Δ ≠ 0 ⇒ SPU.\n  - Δ = 0 e todos Δi = 0 (“zero sobre zero”) ⇒ SPI.\n  - Δ = 0 e algum Δi ≠ 0 (“número sobre zero”) ⇒ SI.\n\n---\n\n**2. Proporcionalidade ⇒ Δ = 0**\n\n* **Aplicação**: qualquer ordem.\n* **Regra**: se duas linhas ou duas colunas são proporcionais ⇒ Δ = 0.\n* **Exemplos**:\n  - Coluna 2 = 2,5 × Coluna 1.\n  - Linha 2 = 2 × Linha 1.\n  - Linha 3 = (−2) × Linha 1.\n\n---\n\n**3. Atalho para SPU**\n\n* **Aplicação**: classificação rápida.\n* **Regra**: para “solução única”, basta determinante da matriz de coeficientes ≠ 0 (não precisa olhar numeradores).\n\n---\n\n**4. Regra de Sarrus (3x3)**\n\n* **Aplicação**: determinante de matriz 3x3.\n* **Regra**:\n  1) Escreva a matriz de ordem 3 e repita as duas primeiras colunas à direita.\n  2) Δ = (soma dos 3 produtos das diagonais principais) − (soma dos 3 produtos das diagonais secundárias).\n\n---\n\n**5. Parâmetro k para tornar o sistema SI**\n\n* **Aplicação**: questões com parâmetro.\n* **Regra**:\n  1) Force Δ = 0 (por proporcionalidade ou cálculo).\n  2) Monte um Δi substituindo a coluna da incógnita pelos termos independentes (com k).\n  3) Imponha Δi ≠ 0 e resolva para k ⇒ garante SI.\n* **Exemplo**: em Δx com termo k, obter expressão ≠ 0 (ex.: 12k − 972 ≠ 0 ⇒ k ≠ 81) para garantir SI.\n\n---\n\n**6. Sistema homogêneo**\n\n* **Aplicação**: todos termos independentes = 0.\n* **Regra**:\n  - Δ ≠ 0 ⇒ única solução (trivial).\n  - Δ = 0 ⇒ infinitas soluções (além da trivial).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir Δ = 0 com “sem solução”: é preciso avaliar os Δi (“zero sobre zero” ⇒ SPI; “número sobre zero” ⇒ SI).\n2. Trocar a matriz inteira pelos termos independentes nos Δi; o correto é substituir apenas a coluna da incógnita correspondente.\n3. Ignorar proporcionalidade óbvia e perder tempo com cofatores/Sarrus.\n4. Errar o sinal na Regra de Sarrus ao subtrair as diagonais secundárias.\n5. Achar que sistema homogêneo pode ser “sem solução”: sempre tem ao menos a trivial.\n\n---\n\n## 📋 Checklist Final\n\n* Sei usar Cramer: Δ ≠ 0 ⇒ SPU; Δ = 0 e todos Δi = 0 ⇒ SPI; Δ = 0 e algum Δi ≠ 0 ⇒ SI?\n* Lembro que linhas/colunas proporcionais ⇒ Δ = 0?\n* Consigo relacionar geometria (concorrentes, paralelas, coincidentes) com SPU, SI e SPI?\n* Sei que sistema homogêneo sempre tem solução trivial e nunca é SI?\n* Em questões com parâmetro k, lembro que preciso de Δ = 0 e algum Δi ≠ 0 para garantir SI?",
+  "mapa_mental": "# 🧮 Sistemas Lineares VII\n## 🎯 Conceitos Fundamentais\n### 💡 Sistema Linear\n- Equações lineares\n- Incógnitas x, y, z\n- Matriz coeficientes\n- Vetor termos independentes\n### 🧮 Determinantes\n- Determinante Δ\n- Determinantes Δx, Δy\n- Determinante Δz\n- Matriz quadrada\n### 📖 Classificação Sistemas\n- SPU solução única\n- SPI infinitas soluções\n- SI nenhuma solução\n- Critério via Δ\n\n## 🧩 Critério de Cramer\n### 🔢 Condições Gerais\n- Δ diferente zero SPU\n- Δ igual zero analisar Δi\n- Δ igual zero todos Δi zero SPI\n- Δ igual zero algum Δi diferente zero SI\n### 🧮 Determinantes Auxiliares\n- Substituição coluna incógnita\n- Coluna termos independentes\n- Cálculo Δx\n- Cálculo Δy, Δz\n### ⚠️ Erros Frequentes Cramer\n- Confundir Δ zero com SI\n- Trocar todas colunas por termos\n- Ignorar Δ diferente zero\n- Esquecer análise Δi\n\n## 📊 Propriedades e Cálculo de Δ\n### 📐 Proporcionalidade\n- Linhas proporcionais Δ zero\n- Colunas proporcionais Δ zero\n- Múltiplos escalares\n- Atalho classificação\n### 🧮 Regra de Sarrus 3x3\n- Repetir duas colunas\n- Produtos diagonais principais\n- Produtos diagonais secundárias\n- Diferença somas diagonais\n### ⚠️ Erros em Determinantes\n- Erro sinais Sarrus\n- Não ver proporcionalidade\n- Cálculo desnecessário Δi\n- Confundir linhas colunas\n\n## 🗺️ Interpretação e Casos Especiais\n### 📐 Interpretação Geométrica 2x2\n- Retas concorrentes SPU\n- Retas coincidentes SPI\n- Retas paralelas SI\n- Perpendiculares concorrentes\n### 🧮 Sistema Homogêneo\n- Termos independentes zero\n- Solução trivial sempre\n- Δ diferente zero única solução\n- Δ zero infinitas soluções\n### 🎯 Parâmetro e Classificação\n- Impor Δ igual zero\n- Construir Δi com parâmetro\n- Condição Δi diferente zero SI\n- Δi todos zero SPI",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Classificação Algébrica",
+      "description": "Classificação Algébrica — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quais são as três classificações possíveis de um sistema linear?",
+          "back": "Possível e determinado, possível e indeterminado, e impossível.",
+          "hint": "São três tipos de resultados",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "classificacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição algébrica garante que um sistema linear tenha solução única?",
+          "back": "Determinante da matriz dos coeficientes diferente de zero.",
+          "hint": "Envolve a matriz dos coeficientes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "cramer"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "O que caracteriza algebricamente um sistema linear impossível?",
+          "back": "Determinante dos coeficientes igual a zero e determinante da incógnita diferente de zero.",
+          "hint": "O determinante da incógnita é o diferencial",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "determinantes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual relação entre os determinantes indica que um sistema linear é possível e indeterminado?",
+          "back": "Determinante dos coeficientes igual a zero e determinante da incógnita igual a zero.",
+          "hint": "Ambos os determinantes são nulos",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "determinantes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Determinantes",
+      "description": "Determinantes — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual propriedade torna nulo o determinante quando duas linhas são proporcionais?",
+          "back": "O determinante é nulo.",
+          "hint": "Propriedade de dependência linear",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "determinantes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como se obtém o determinante associado a uma incógnita pelo método de Cramer?",
+          "back": "Substitui-se a coluna dos coeficientes da incógnita pelos termos independentes.",
+          "hint": "Troca de colunas na matriz",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "cramer"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "O que deve ser comparado para verificar se os termos independentes são compatíveis com os coeficientes?",
+          "back": "Os termos independentes com os coeficientes.",
+          "hint": "Análise de compatibilidade",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "consistencia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Interpretação Geométrica",
+      "description": "Interpretação Geométrica — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual interpretação geométrica corresponde a duas retas que se intersectam em um único ponto?",
+          "back": "Retas concorrentes.",
+          "hint": "Interseção em um único ponto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "geometria"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual interpretação geométrica corresponde a duas retas coincidentes?",
+          "back": "Retas coincidentes.",
+          "hint": "Retas que ocupam o mesmo espaço",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "geometria"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-10",
+          "front": "Como distinguir graficamente um sistema possível determinado de um possível indeterminado?",
+          "back": "O determinado possui solução única (concorrentes); o indeterminado possui infinitas soluções (coincidentes).",
+          "hint": "Compare o número de pontos de interseção",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "geometria"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-11",
+          "front": "Por que duas retas perpendiculares representam um caso particular de retas concorrentes?",
+          "back": "Formam um ângulo de noventa graus, sendo um caso particular de retas concorrentes.",
+          "hint": "Ângulo de 90 graus",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "geometria"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Sistemas Homogêneos",
+      "description": "Sistemas Homogêneos — 3 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "O que define um sistema linear homogêneo?",
+          "back": "Sistema cujos termos independentes são todos iguais a zero.",
+          "hint": "O vetor constante é nulo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "homogeneos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual solução todo sistema linear homogêneo possui?",
+          "back": "Solução trivial (zero, zero, zero).",
+          "hint": "Solução que sempre existe",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "homogeneos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Quando um sistema homogêneo admite infinitas soluções?",
+          "back": "Determinante da matriz dos coeficientes igual a zero.",
+          "hint": "O determinante principal é zero",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "homogeneos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um sistema linear homogêneo, qual é a característica que define esse tipo de sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todos os termos independentes são iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Um sistema linear é classificado como homogêneo quando todos os seus termos independentes, ou seja, os valores à direita do sinal de igualdade em cada equação, são iguais a zero. Isso implica que a solução trivial (todas as variáveis iguais a zero) é sempre uma solução para esses sistemas."
+        },
+        {
+          "id": "b",
+          "text": "O determinante da matriz dos coeficientes é sempre diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. O determinante da matriz dos coeficientes de um sistema homogêneo pode ser diferente de zero (indicando solução única, a trivial) ou igual a zero (indicando infinitas soluções). A afirmação de que é 'sempre diferente de zero' está incorreta, pois isso só ocorre em sistemas homogêneos determinados."
+        },
+        {
+          "id": "c",
+          "text": "A matriz dos coeficientes possui apenas elementos positivos",
+          "correct": false,
+          "explanation": "Incorreta. A matriz dos coeficientes pode conter elementos positivos, negativos ou zero. Não há uma regra que determine que todos os elementos devem ser positivos para um sistema ser homogêneo. A homogeneidade se refere apenas aos termos independentes."
+        },
+        {
+          "id": "d",
+          "text": "Todos os coeficientes das variáveis são iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Em um sistema homogêneo, os coeficientes das variáveis (os números que multiplicam as incógnitas) podem ser quaisquer valores reais, não necessariamente zero. Se todos os coeficientes fossem zero, as equações seriam 0 = 0, o que não define um sistema com incógnitas."
+        }
+      ],
+      "explanation": "Correta. Um sistema linear é classificado como homogêneo quando todos os seus termos independentes, ou seja, os valores à direita do sinal de igualdade em cada equação, são iguais a zero. Isso implica que a solução trivial (todas as variáveis iguais a zero) é sempre uma solução para esses sistemas.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Quando duas retas no plano cartesiano são paralelas, qual é a classificação do sistema linear formado por suas equações?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sistema determinado com solução única no ponto médio entre as retas",
+          "correct": false,
+          "explanation": "Incorreta. Um sistema determinado com solução única implica que as retas se cruzam em um ponto. Retas paralelas não se cruzam, e a ideia de um 'ponto médio' como solução não se aplica ao conceito de solução de um sistema linear, que busca pontos em comum entre as equações."
+        },
+        {
+          "id": "b",
+          "text": "Sistema impossível, pois as retas não se interceptam em nenhum ponto",
+          "correct": true,
+          "explanation": "Correta. Quando duas retas no plano cartesiano são paralelas e distintas, elas nunca se interceptam. Em um sistema linear, a solução corresponde aos pontos de intersecção das retas. Se não há intersecção, não há solução, classificando o sistema como impossível."
+        },
+        {
+          "id": "c",
+          "text": "Sistema possível e indeterminado, pois as retas possuem coeficientes proporcionais",
+          "correct": false,
+          "explanation": "Incorreta. Um sistema possível e indeterminado possui infinitas soluções, o que geometricamente ocorre quando as retas são coincidentes (uma sobre a outra). Retas paralelas distintas não são coincidentes e não possuem pontos em comum."
+        },
+        {
+          "id": "d",
+          "text": "Sistema possível e determinado, pois as retas mantêm distância constante",
+          "correct": false,
+          "explanation": "Incorreta. Um sistema possível e determinado tem uma única solução, o que geometricamente significa que as retas se interceptam em um único ponto. Retas paralelas não se interceptam, portanto, não podem formar um sistema possível e determinado."
+        }
+      ],
+      "explanation": "Correta. Quando duas retas no plano cartesiano são paralelas e distintas, elas nunca se interceptam. Em um sistema linear, a solução corresponde aos pontos de intersecção das retas. Se não há intersecção, não há solução, classificando o sistema como impossível.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Considerando as propriedades de determinantes, o que ocorre quando duas linhas ou duas colunas de uma matriz são proporcionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante é igual ao produto dos elementos da diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. O produto dos elementos da diagonal principal é o determinante apenas para matrizes triangulares (superiores ou inferiores) ou diagonais. Para uma matriz geral com linhas ou colunas proporcionais, o determinante é zero, independentemente do produto da diagonal principal."
+        },
+        {
+          "id": "b",
+          "text": "O determinante é igual à soma dos elementos das linhas proporcionais",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos elementos das linhas proporcionais não é uma propriedade que determine o valor do determinante. O determinante é calculado por métodos específicos (como a regra de Sarrus para matrizes 3x3 ou o desenvolvimento por cofatores), e a proporcionalidade de linhas/colunas é uma condição que o anula."
+        },
+        {
+          "id": "c",
+          "text": "O determinante é igual a zero",
+          "correct": true,
+          "explanation": "Correta. Uma propriedade fundamental dos determinantes afirma que se uma matriz possui duas linhas ou duas colunas proporcionais (ou idênticas), seu determinante é igual a zero. Isso ocorre porque uma linha ou coluna pode ser expressa como um múltiplo escalar de outra, indicando uma dependência linear que anula o determinante."
+        },
+        {
+          "id": "d",
+          "text": "O determinante assume o valor da razão de proporcionalidade entre as linhas",
+          "correct": false,
+          "explanation": "Incorreta. O determinante não assume o valor da razão de proporcionalidade. Esta é uma propriedade específica dos determinantes, conforme a qual a proporcionalidade entre linhas ou colunas tem um efeito direto no seu valor."
+        }
+      ],
+      "explanation": "Correta. Uma propriedade fundamental dos determinantes afirma que se uma matriz possui duas linhas ou duas colunas proporcionais (ou idênticas), seu determinante é igual a zero. Isso ocorre porque uma linha ou coluna pode ser expressa como um múltiplo escalar de outra, indicando uma dependência linear que anula o determinante.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Para que um sistema linear seja classificado como possível e indeterminado, qual condição deve ser satisfeita em relação aos determinantes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante da matriz dos coeficientes deve ser igual a zero e pelo menos um determinante auxiliar deve ser diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes (D) for igual a zero e pelo menos um determinante auxiliar (Dx, Dy, Dz, etc.) for diferente de zero, o sistema é classificado como impossível (sem solução)."
+        },
+        {
+          "id": "b",
+          "text": "O determinante da matriz dos coeficientes deve ser diferente de zero e os determinantes auxiliares devem ser iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes (D) for diferente de zero, o sistema é possível e determinado (solução única), independentemente dos determinantes auxiliares. Esta condição descreve um sistema com solução única, não infinitas soluções."
+        },
+        {
+          "id": "c",
+          "text": "Todos os determinantes devem ser diferentes de zero, mas com sinais opostos",
+          "correct": false,
+          "explanation": "Incorreta. A condição de todos os determinantes serem diferentes de zero, mesmo com sinais opostos, não leva a um sistema possível e indeterminado. Para ter infinitas soluções, a condição fundamental é que o determinante principal e todos os auxiliares sejam nulos."
+        },
+        {
+          "id": "d",
+          "text": "Tanto o determinante da matriz dos coeficientes quanto todos os determinantes auxiliares devem ser iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Para que um sistema linear seja possível e indeterminado (ou seja, possua infinitas soluções), é necessário que tanto o determinante da matriz dos coeficientes (D) quanto todos os determinantes auxiliares (Dx, Dy, Dz, etc., formados pela substituição da coluna de coeficientes pela coluna dos termos independentes) sejam iguais a zero. Isso é conhecido como a condição 0/0 na Regra de Cramer, indicando uma dependência linear entre as equações."
+        }
+      ],
+      "explanation": "Correta. Para que um sistema linear seja possível e indeterminado (ou seja, possua infinitas soluções), é necessário que tanto o determinante da matriz dos coeficientes (D) quanto todos os determinantes auxiliares (Dx, Dy, Dz, etc., formados pela substituição da coluna de coeficientes pela coluna dos termos independentes) sejam iguais a zero. Isso é conhecido como a condição 0/0 na Regra de Cramer, indicando uma dependência linear entre as equações.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "07_349484_Sistemas Lineares VII.pdf",
+  "coletado_em": "2026-09-23T20:59:05"
+}

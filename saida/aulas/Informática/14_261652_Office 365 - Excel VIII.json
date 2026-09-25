@@ -1,0 +1,718 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 14,
+  "ordem_no_curso": "82.00",
+  "titulo": "Office 365 - Excel VIII",
+  "codigo_aula": "261652",
+  "video_id": "v7NZRiSO90o=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:21:03",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/v7NZRiSO90o%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?in=1&a=420326&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - Excel VIII\n\n## Retomada da Linha do Excel e Funções de Contagem por Critério\nVamos então de volta com nossa linha do Excel. Trezentos e sessenta e cinco comigo na tela, aquele material, relembrando.\n\nEntão, você pode vir a adotar, a cada uma das partes, que esse cara de “dois meses” é um intervalo no qual vou fazer média. Mas eu dependo desse intervalo para análise: critério para o primeiro intervalo, outro critério para análise, critério para outras leis. Estão lá. E vamos para o próximo, que é o CONT.SE. Também tem que ficar atento.\n\nInfelizmente, algumas bancas vão levar para casa conta. Se alguma coisa do tipo não vão mudar, passa a função. Então tem que saber. Tem que saber o nome. CONT.SE por você. Como eu disse, infelizmente, algumas bancas vão fazer isso. Não acho que é algo muito útil para avaliação, mas quem sou eu. O banco cobra, logo, que eu acho... bem.\n\nCONT.SE de A até F, onde não é para somar, é para contar valores maiores ou iguais a quatro. Maiores ou iguais estão? Vou contar um, dois, três, quatro. Encontrei quatro valores. Repito: não é para somar, é para contar.\n\nCONT.SES é para contar combinações; tem que ter um “match” dos dois. Aqui, então, de A1 até A16: o valor tem que ser maior que quatro. E de B1 até B6 tem que ser menor que cinco. Já não é? Então não deu match, não vou contar. Tem que contar a combinação agora; não é isolado contar um aqui e outro aqui. Não: é a combinação.\n\nTrês não é maior que quatro, pula. Este aqui, 95, não... isso aqui é maior. Igual a quatro não é menor que cinco? Sim. Outra combinação: maior ou igual a quatro e menor que cinco. Outra combinação. Então encontrei três combinações. Pensa assim: vou procurar combinações. Tem três combinações e vou contá-las como combinações: uma, duas, três, e não os números isolados.\n\n## CONT.NÚM e Regras de Contagem Numérica\nCONT.NÚM. Agora é dedutível, acredito eu. CONT.NÚM conta números. Último critério, que era numérico também. Mas agora eu só vou contar se for número: um, dois, três... números. E um “00” não é número? Pode até falar, mas só para lembrar que não conta. Não pode ser número negativo? Pode, não tem problema. Só tem que ser número.\n\nE se for VERDADEIRO? Lembra que eu falei: VERDADEIRO não vai ser contado. Em uma função de contagem, ele não vai assumir o seu valor numérico “efeito”, então não tem como contar. Aqui: três números.\n\nOutra opção de continuar: vamos de A1 até A4, então tem um, dois, três, quatro números. Quatro números, que é o três... Alguns vão querer pegar o “quatro” e somar com “três” para dar sete. Não. Lembre-se de que a finalidade da função é contar números. Então eu tenho quatro números, e o três avulso ali. Esse “três” aí o cara quis colocar ali dentro. Ele vai contar também. Então cinco números: um, dois, três, quatro, e o três que está aqui — que pode ser qualquer outro número que ele vai contar. Inclusive, pode ser um que já tenha lá dentro, como “dois”, por exemplo. Ele vai contar o número, ponto. Simples assim: CONT.NÚM conta números.\n\n## MÍNIMO, MENOR e Índices\nMIN: retorna o menor valor do intervalo. Para A1:A12, o menor valor do intervalo é doze? Não: aqui, o menor valor do intervalo... menor valor do intervalo.\n\nAgora, com MENOR eu vou conseguir estabelecer qual o “k-ésimo” menor valor. Eu quero interpretar esse três aqui como o quê? Vou interpretá-lo como “terceiro”. O que é o terceiro menor valor? De A1 até A16, quem é o primeiro menor valor? Dois. O segundo? Três. E tem outros dois. Então primeiro, segundo... tanto faz a ordem que eu vou contá-los — não interessa. Então, primeiro, segundo, terceiro... e três quase que ocorreu; o outro “dois” não pôde. Tem que ter essa atenção, porque, se eu quisesse o segundo menor valor, o primeiro é o dois e o segundo é o dois. Vai ser dois. Sacou?\n\nE se eu quisesse o primeiro menor valor, vai ser igual à função MÍNIMO? Sim. Porque ele vai coincidir aqui. É como trocar um botão: ele vai trazer o menor valor, que é a mesma coisa do MÍNIMO. Mas geralmente vai vir na prova com um índice, como, por exemplo, “o quarto menor valor”. Primeiro aqui vai ser um, né? Primeiro, segundo, dois; terceiro... e o quarto, sim. Beleza. Se eu trocar aqui pelo “dois”, já vai mudar. Beleza. A lição mudou, porque o conjunto acaba não sendo tão tranquilo.\n\n## MÁXIMO e MAIOR com Índices e Repetições\nMÁXIMO é o maior valor. Trinta e dois. MÁXIMO é o maior valor. Então vou lá para o MÁXIMO: trinta e dois. Tranquilo, MÁXIMO trinta e dois mesmo.\n\nA lógica do MENOR agora: o MAIOR vai seguir a mesma lógica do MENOR. Esse “dois” vai ser o índice também. Vai contar se houver números repetidos. Então, quem é o primeiro maior valor? Sessenta. E o segundo? Quarenta. Aqui não tem repetição, então sem problemas. Se houver valores repetidos, vou contá-los também.\n\n## MEDIANA: Conceito, Ímpar x Par e Exemplo\nSimples assim. Vem para a MEDIANA. Mediana é o valor que está no meio do intervalo. Algumas vezes a mediana vai coincidir com a média, mas eu não devo calcular a média do intervalo — a função MEDIANA não é para calcular a média.\n\nAlgumas questões de prova vão trazer pegadinha: “Para calcular a média do intervalo, utiliza-se a função MEDIANA”. Não é. Você vai ver que, nesse intervalo, a mediana vai coincidir com a média, mas não é ela que é para usar para média. Pode não dar a mesma coisa.\n\nO que é preciso fazer para calcular a mediana manualmente? No Excel, eu posso digitar o intervalo em qualquer ordem, mas, para calcular manualmente, vou ordenar em ordem crescente. Então: um, dois, três, quatro, cinco. Aí eu vou ter dois valores à esquerda e dois valores à direita, e sobra um valor no meio. Esse valor no meio é a minha mediana, é o valor central do intervalo.\n\nPerceba que, com quantidade ímpar de valores, sempre vai sobrar um no meio. Se eu tenho sete pessoas, por exemplo, três para um lado, três para o outro, uma no meio. Fácil.\n\nAh, mas e quando a quantidade é par? A quantidade de valores não precisa estar numa ordem tão “bonita”, mas vamos assim. Poderia ser, por exemplo: quatro, seis, oito, dez, doze. Está em ordem crescente? Pronto. Oito vai ser o valor do meio quando forem cinco valores. Se você colocar aqui dentro no Excel, ele vai calcular — pode falar de cálculo. Você vai pegar a mediana colocando o valor do meio, para qualquer ordem. Pode começar com cem, duzentos, trezentos, quinhentos, oitocentos: a mediana será o do meio quando a quantidade for ímpar.\n\nOutra hipótese: cálculo da mediana com quantidade par. Nessa hipótese aqui, no cálculo da mediana, porque eu tenho agora dois, quatro valores, para fazer o cálculo manualmente: três, três, cinco e sete. Aqui percebe-se que não tem um valor central visível. Então, o que eu vou fazer? Vou pegar os dois valores do meio — presta atenção — só os dois do meio, e vou calcular a média deles. Três e cinco: oito, dividido por dois, dá quatro. Só nesses dois, manualmente, calculei, deu quatro.\n\nMesma coisa de antes, mudando para cinco e sete. Poderia ser outro sete: se forem números repetidos, vão contar. Aqui tem que ser um número maior? Está na ordem. Então eu vou calcular a média desses dois: sete e oito, quinze; por dois, sete e meio. Beleza.\n\nNo Excel, claro, você pode digitar em qualquer ordem e a função MEDIANA resolve. Se aumentar a quantidade, tem que realocar mentalmente a posição para o cálculo manual. Enfim, essa é a lógica que eu quero que você pegue. Que beleza. Vão conseguir.\n\n> 🎯 **Dicas de prova:** MEDIANA é o valor central; em quantidade par de elementos, é a média aritmética dos dois centrais. Pegadinha comum: MEDIANA não é sinônimo de MÉDIA.\n\n## MODA: Unimodal, Amodal, Bimodal e Polimodal\nModa é o valor que mais se repete. Como se eu perguntasse: o que está na moda? No meu caso, não convém conversar de moda. A moda é o que mais se repete.\n\nEntão, olha: quantas vezes eu tenho “oito”? Uma. “Cinco”? Uma vez. “Quatro”? Uma vez. Ou seja, eu tenho uma situação aqui amodal: não há moda. Está? Então ele retorna “N/D” (não disponível). O nome na estatística para isso é amodal. Beleza. Vamos seguir.\n\nOutra opção de moda: dez uma vez, sete duas vezes, doze uma vez, nove uma vez. Agora está fácil: agora tem uma moda, que é o sete.\n\nOutra situação: vinte duas vezes, dezesseis uma vez e nove duas vezes. Então eu tenho uma situação bimodal. Bimodal.\n\nAgora, presta atenção: essa situação aqui poderia ser polimodal. O que é isso? Mais de duas modas. O entendimento no Excel: podemos falar que seria o mesmo tipo de análise — identificar os valores mais frequentes. Beleza, seria do mesmo jeito.\n\nPara aqueles que não estudaram: chegaram na prova sem estudar, o que essas pessoas podem pensar? “Cara, eu acho que vai ser o vinte, porque é um valor que aparece primeiro.” Mas essa pessoa também poderia pensar: “Não, pode ser o nove, porque o nove é o menor dos valores que aparecem.” E aí, vamos descobrir.\n\nEntão, deu vinte. Apareceu vinte aqui. Beleza, calculei certo, deu vinte. Agora tenho que saber o porquê. É porque ele é maior? Porque ele aparece primeiro? Vamos descobrir trocando. Colocaram nove aqui; o nove vai passar a ser o novo que aparece três vezes. Mas agora vou colocar um “vinte” a mais. Veja: se voltasse a “vinte”, eu descobriria a lógica. Será que ele pega o maior valor? Se continuar sendo o nove, como já está aí — porque tinha três noves — é porque ele pega o primeiro valor que aparece? Então, pela lógica, ao pegar o primeiro, ele pega o primeiro que se repete. Vou gravar aqui: numa situação bimodal ou polimodal, quando houver duas ou mais modas, memorize que o Excel pega o valor que aparece primeiro (na lista, considerando a forma como a função específica de moda trabalha nas versões que retornam um único valor). Eu vou gravar isso dessa maneira. Não grave errado.\n\n## RAIZ e Uso Típico\nVem comigo e vamos para o cálculo da RAIZ. Aqui simplesmente ele vai calcular a raiz quadrada do número. Então, raiz quadrada de 25 é 5; de 64 é 8; e por diante, 16 é 4. Pronto.\n\nA RAIZ, como eu disse, também é uma outra função que, assim como anteriormente a fatorial, provavelmente não vai vir isolada. É muito, muito, muito raro. Não lembro a última vez, mas tem que saber.\n\n## CONCATENAR e Operador de Concatenação (&)\nConcatenar: o que é concatenar? Concatenar é juntar. CONCATENAR(A1;B1) ou A1 & B1. Aqui, não se admitem dois pontos; tem que ser ponto e vírgula quando for argumentos de função. Para cada situação interna, vai juntar dois ou três trechos. Mas ele juntou “mesmo tipo”.\n\nSe eu pegar aqui e, igual a isso aqui, mais — sei lá — 5, por exemplo, vai dar 28? Vai? A partir de agora, o número está inserido aqui como um só número de caracteres. Antes eram dois ou três separados; agora “23” virou “23” como texto. Se fizer um cálculo direto, não vai usar como número, a não ser que converta. “23”. Beleza. Vamos para outra situação.\n\nTambém com texto: também posso concatenar. Perceba que aqui eu tenho um artifício que usa aspas. Como já disse, quando uso aspas, o Excel interpreta o que está dentro das aspas, em alguns contextos, como texto. Em outros, ele vai precisar das aspas em critérios específicos. Aqui vai interpretar como texto. E o que eu tenho aqui? Nada: tenho um espaço. Por quê? Porque, por padrão, ele vai juntar sem espaço. “JeffersonHomólogo” vira “JeffersonHomólogo” tudo grudado. E com números, “2” e “3” como número e, com texto, a mesma coisa. Então, caso queira dar esse espaço entre “Jefferson” e “Homólogo”, eu coloco o artifício das aspas: “ ”.\n\nGran finale: se eu tirar o espaço, vai juntar tudo literalmente: “JeffersonBuco”. Quem tem prova, às vezes ele fala assim: pega esse texto, por exemplo, “joao”, e... não vou adiantar demais. Depois tem aqui o operador de concatenação. Eu quero juntar com “@gmail.com”. Eu posso até colocar esse domínio dentro de um local fixo, que seria uma célula. Beleza. Então eu posso localizar e colocar o texto. Isso é bacana para juntar com texto: já façam “fulano” @ “dominio.com”, por exemplo. Beleza.\n\nLei não vai conseguir... Outra função com concatenar, já trazendo um pouco de tudo que nós vimos: o uso do próprio “&”. Aqui eu tenho “cinco” e “seis”. Veja que eu fiz aqui: isso que está entre aspas vai ser considerado como texto — não tem cálculo, tem função. O “&” você acabou de ver que é um operador de concatenação. Vai juntar junto, ao quê? Esses “cinco” e “seis” vão aparecer como texto. Igual, vai parecer um texto. Vai calcular? “Cinco mais seis, onze.” Poderia juntar direto com o valor “onze”? Poderia. Eu fiz aqui só para ficar mais didático para fazer somas. Poderia colocar “11” direto, que não tem problema. Beleza.\n\nEntão, nesse caso, interpreta como texto. “Cinco” mais “seis” está igual a “onze”. Beleza. Vamos continuar.\n\n> 🎯 **Dicas de prova:** O operador & concatena textos. Para inserir espaços, use “ ” entre aspas. CONCATENAR usa ponto e vírgula para separar argumentos. Números concatenados viram texto (“2” & “3” = “23”).\n\n## Função SE: Teste Lógico, Verdadeiro/Falso e Fluxo\nAgora nós vamos entrar na função SE. “Se” tal coisa acontecer... Quantas vezes, na nossa vida, a gente fica se lamentando pelo “se”: “se eu tivesse estudado mais”, “se eu não tivesse marcado a alternativa errada”, “se eu não tivesse casado”, “se eu tivesse atravessado a rua”... Enfim, nossa vida a cada segundo é tempo de mudar tudo. Vamos entender o SE assim.\n\nEntão, novamente, aqui está a função. Você pode vir aqui, descer, e anotar que cada uma das coisas: quem deu o maior, quem deu o menor, lembra-se que vai variar. Aqui vai ser sempre uma comparação: maior, menor, igual; proposta aprovada, reprovada — pode ter. Calculo dentro de várias opções.\n\nEntão, no SE, eu sempre vou ter um teste lógico aqui, que é uma comparação: maior, menor, igual. Ao invés de um valor simples, eu poderia ter o cálculo de uma MÉDIA, de uma SOMA, um FATORIAL, uma MODA — o que seja — resulta em um valor. No final, eu vou ter um valor X, Y, Z, comparado. Vai ter um operador qualquer: maior, menor, maior ou igual, menor ou igual, diferente, igual. Sempre vai resultar nisso: sempre vou adotar uma comparação.\n\nEssa comparação, esse teste lógico, pode ser VERDADEIRO ou pode ser FALSO. Se é verdade ou se é falso — como você queira.\n\nEntão venho aqui e analiso: D1 é maior que D2? D1 é maior que D2? Eu descubro que isso aqui é o quê? Essa comparação foi feita ali. Isso aqui é FALSO. Ora, o que é o meu “se_falso”? Se falso, retorna “menor”. Está falso? Se falso, “menor”. Alguém comigo? “Menor”.\n\nVamos trocar agora. Agora tenho um valor que é maior. D1 é maior. Pois então isso aqui passa a ser o quê? “Maior”. Beleza. Então, se o teste é verdadeiro, o que diz a condição? Se verdade, “maior”. Então vou trocar, tirar aqui “maior” no lugar certo.\n\nEsse é o princípio básico, é a nossa parte aqui para entender a função. Você tem que lembrar dessa sentença, porque esse SE pode ser muito mais complexo do que está aqui, mas sem entender esse mundinho aqui eu não vou entender o que vem daqui em diante — não tenha dúvida disso. Beleza.\n\n> 🎯 **Dicas de prova:** Função SE(testelogico; valor_se_verdadeiro; valor_se_falso). O testelogico é sempre uma comparação que resulta em VERDADEIRO ou FALSO. Os retornos podem ser textos, números ou outras funções.\n\nEu vou até encerrar esse bloco aqui um pouquinho antes, para voltar falando de outros “SEs”, para não interromper outras estruturas com a função SE: teste lógico, quando são verdade, quando são falsas. Belezinha? Então volta daqui a um pouquinho, próximo bloco, dando continuidade aos “SEs”.",
+  "transcricao_meta": {
+    "title": "Office 365 - Excel VIII",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 24165,
+    "createdAt": "2026-02-05T21:03:26.216Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda funções essenciais do Excel (Office 365) para provas: contagem por critérios, ordens (menor/maior), medidas de tendência central (mediana e moda), raiz quadrada, concatenação de textos e a função SE (IF).\nPrincipais pontos: \n- Como contar corretamente (CONT.SE/CONT.SES/CONT.NÚM) e não confundir com soma.\n- Diferenças entre MÍNIMO/MENOR e MÁXIMO/MAIOR, MEDIANA vs MÉDIA, MODA (uni/bi/polimodal).\n- Concatenação com & e uso de aspas, e a lógica do SE com testes verdadeiros/falsos.\n\n## 1. Base / Conceitos Fundamentais\n- **Contagem vs Soma**: Funções de contagem retornam quantidades (número de ocorrências), não somam valores.\n- **Critérios (condições)**: Expressões como \">4\", \"<=5\", \"<>X\" que filtram dados.\n- **Ordens (k-ésimo)**: Posição ordenada de valores (1º, 2º, 4º menor/maior).\n- **Medidas de tendência central**: \n  - **MEDIANA**: valor central (ou média dos dois centrais) do conjunto ordenado.\n  - **MODA**: valor(ores) mais frequente(s).\n- **Concatenação**: Ato de juntar textos usando o operador **&** ou funções de texto; aspas definem texto literal.\n- **Teste lógico**: Comparação que resulta em **VERDADEIRO** ou **FALSO**.\n- **Função SE**: Estrutura condicional SE(teste_lógico; valor_se_verdadeiro; valor_se_falso).\n\n## 2. Como Funciona / Distinções\n- Contagens:\n  - **CONT.SE**: 1 intervalo + 1 critério.\n  - **CONT.SES**: múltiplos intervalos + múltiplos critérios aplicados simultaneamente (AND).\n  - **CONT.NÚM**: conta apenas números em um intervalo.\n  - Diferença-chave: CONT.SES não “soma critérios isolados”; todos os critérios devem ser atendidos ao mesmo tempo.\n- Mínimos e máximos:\n  - **MÍNIMO/MÁXIMO** retornam o menor/maior do conjunto.\n  - **MENOR/MAIOR** com k retornam o k-ésimo valor. k=1 equivale a MÍNIMO/MÁXIMO.\n  - Valores repetidos ocupam posições (k) diferentes.\n- MEDIANA vs MÉDIA:\n  - **MEDIANA** é posição; **MÉDIA** é soma dividida pela quantidade. Podem coincidir, mas são conceitos distintos.\n- MODA:\n  - **Unimodal**: 1 valor mais frequente.\n  - **Bimodal**: 2 valores mais frequentes.\n  - **Polimodal**: mais de 2 modas.\n  - Em funções simples de moda, quando há várias modas, pode retornar o primeiro valor com maior frequência encontrado.\n- Concatenação:\n  - **&** junta textos sem espaço por padrão.\n  - Aspas \" \" inserem espaço literal; tudo entre aspas é texto.\n  - Números concatenados são tratados como texto no resultado.\n- SE (IF):\n  - Estrutura fixa: teste → se_verdadeiro → se_falso.\n  - Operadores: >, <, >=, <=, =, <>.\n  - O teste pode envolver funções (SOMA, MÉDIA, etc.), desde que resulte em algo comparável.\n\n## 3. Aplicação Prática / Técnicas\n- Contagens por critério:\n  - Maior ou igual a 4 e menor que 5: CONT.SES(intervalo;\">=4\";intervalo;\"<5\")\n  - Apenas números: CONT.NÚM(intervalo)\n  - Um único critério: CONT.SE(intervalo;\">4\")\n- Ordens:\n  - 2º menor: MENOR(intervalo;2)\n  - 4º menor: MENOR(intervalo;4)\n  - 2º maior: MAIOR(intervalo;2)\n- Mediana:\n  - Ímpar quantidade: pegue o do meio após ordenar.\n  - Par quantidade: média dos dois centrais.\n  - Função direta: MEDIANA(intervalo)\n- Moda:\n  - Identifique frequências; se múltiplas modas, atenção ao retorno da função simples.\n- Raiz quadrada:\n  - RAIZ(25) → 5; RAIZ(64) → 8; RAIZ(16) → 4\n- Concatenação:\n  - Inserir espaço: \"A\" & \" \" & \"B\" → \"A B\"\n  - E-mail: A1 & \"@gmail.com\"\n  - Texto + cálculo: \"Total: \" & (SOMA(A1:A3))\n  - Critérios como texto: \">5\" (entre aspas)\n- SE (IF):\n  - Aprovação por valor: SE(B2>=1000;\"proposta aprovada\";\"reprovada\")\n  - Comparação de cálculo: SE(SOMA(A1:A3)>100;\"OK\";\"Ajustar\")\n  - Comparação direta: SE(5+6=11;\"Verdadeiro\";\"Falso\")\n\n> Dica de Prova\n> - Em CONT.SES os critérios são AND: todos precisam ser satisfeitos.\n> - Para espaço na concatenação, inclua \" \" explicitamente.\n> - No SE, memorize a ordem dos argumentos: teste; se_verdadeiro; se_falso.\n\n## 4. Exemplos e Casos Resolvidos\n- Contar entre 4 (inclusive) e 5 (exclusive):\n  - CONT.SES(A2:A100;\">=4\";A2:A100;\"<5\")\n- Segundo menor valor com repetidos:\n  - Intervalo: {2,2,3,7}. MENOR(intervalo;2) → 2 (repetição conta na ordem)\n- Mediana:\n  - {1,4,5} → MEDIANA = 4 (valor central)\n  - {1,4,5,9} → MEDIANA = (4+5)/2 = 4,5\n- Moda:\n  - {3,3,5,5,7} → bimodal (3 e 5). Função simples pode retornar o primeiro que atingir maior frequência (ex.: 3).\n- Concatenação de e-mail:\n  - \"joao\" & \"@gmail.com\" → \"joao@gmail.com\"\n- SE com rótulos:\n  - SE(B2>=1000;\"proposta aprovada\";\"reprovada\")\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - Funções de contagem não somam. Elas apenas contam quantas células atendem ao(s) critério(s).\n\n- CONT.SES não “conta por critério separado”; é combinação simultânea (AND).\n- Em MENOR/MAIOR, “2º menor” não significa “o menor diferente do menor”; repetidos ocupam posições k sucessivas.\n- MEDIANA não é MÉDIA. Ordene antes de localizar o(s) central(is) ao fazer manualmente.\n- MODA em listas com múltiplas modas: função simples pode retornar apenas o primeiro pico.\n- Concatenação não insere espaço automaticamente; precisa de \" \".\n- Tudo entre aspas vira texto; \"5+6\" não calcula.\n- Critérios devem estar entre aspas: \">4\", \"<=5\", \"<>X\".\n- Zeros: em CONT.NÚM, zero conta como número. Não confunda com vazios.\n\n> Dica de Prova\n> - Operadores de comparação: >, <, >=, <=, =, <>. O teste lógico no SE sempre retorna VERDADEIRO ou FALSO.\n> - Separador de argumentos pode ser ponto e vírgula (;) conforme regional do Excel.\n\n> Pegadinha\n> - Em concatenação, números combinados sem aspas viram texto no resultado final (\"2\" & \"3\" → \"23\"); se precisa calcular, faça a conta fora e concatene o resultado: \"Resultado: \" & (2+3).",
+  "resumo_bolso": "# Office 365 - Excel VIII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Contagem ≠ Soma**: Funções de contagem retornam quantidades (número de ocorrências), não somam valores.\n* **Critério**: condições como \">4\", \"<=5\", \"<>X\" filtram o que será contado/avaliado.\n* **Ordens (k-ésimo)**: MENOR/MAIOR com **k** retornam o 1º, 2º, 3º… valor ordenado.\n* **MÍNIMO/MÁXIMO**: menor/maior absoluto do conjunto (equivalem a k=1 em MENOR/MAIOR).\n* **MEDIANA**: valor central (ou média dos 2 centrais) do conjunto **ordenado**.\n* **MODA**: valor(ores) mais frequente(s): unimodal, bimodal, polimodal.\n* **Concatenação**: juntar textos com **&**; aspas definem texto literal (incluindo espaços).\n* **Teste lógico**: comparação que devolve **VERDADEIRO** ou **FALSO**.\n* **Função SE**: `SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)`.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### CONT.SE vs CONT.SES vs CONT.NÚM\n\n| Aspecto              | CONT.SE                               | CONT.SES                                                   | CONT.NÚM                            |\n|----------------------|----------------------------------------|------------------------------------------------------------|-------------------------------------|\n| Critérios            | 1 intervalo + 1 critério              | Vários intervalos + vários critérios                       | Sem critério                        |\n| Lógica               | 1 condição                            | Vários critérios aplicados simultaneamente (**AND**)       | Conta qualquer número               |\n| Tipo de dado         | Qualquer (texto/número)               | Qualquer, por intervalo                                   | Apenas números (inclui zero)        |\n| Uso típico           | “>4”                                  | “>=4” **e** “<5”                                           | Quantidade de células numéricas     |\n| Diferencial          | Contagem simples por 1 condição       | Combinação de critérios ao mesmo tempo                     | Ignora textos/vazios                |\n\n---\n\n### MÍNIMO/MÁXIMO vs MENOR/MAIOR\n\n| Aspecto        | MÍNIMO / MÁXIMO                       | MENOR / MAIOR                                  |\n|----------------|---------------------------------------|------------------------------------------------|\n| Retorno        | Menor/maior valor do conjunto        | k-ésimo menor/maior                            |\n| Parâmetro k    | Não tem                              | Exige k (posição na ordem)                     |\n| Equivalência   | —                                    | k=1 → igual a MÍNIMO/MÁXIMO                    |\n| Repetidos      | Ocupam posições na ordem, mas não mudam o extremo | Cada repetido ocupa uma posição k    |\n| Diferencial    | Extremos absolutos                   | “Ranking” de posição (2º, 3º, 4º, …)           |\n\n---\n\n### MEDIANA vs MÉDIA\n\n| Aspecto        | MEDIANA                                           | MÉDIA                                  |\n|----------------|---------------------------------------------------|----------------------------------------|\n| Conceito       | Valor central do conjunto **ordenado**           | Soma ÷ quantidade                      |\n| Conjunto ímpar | Elemento do meio                                 | —                                      |\n| Conjunto par   | Média dos 2 centrais                             | —                                      |\n| Sensível a extremos? | Menos sensível                             | Mais sensível                          |\n| Diferencial    | Posição                                          | Cálculo aritmético                     |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. CONT.SE**\n\n* **Aplicação**: contar células que atendem a **1 critério**.  \n* **Sintaxe**: `CONT.SE(intervalo; critério)`  \n* **Exemplo**: `CONT.SE(A2:A100;\">4\")`.\n\n---\n\n**2. CONT.SES**\n\n* **Aplicação**: contar células que atendem a **vários critérios ao mesmo tempo (AND)**.  \n* **Sintaxe**: `CONT.SES(intervalo1; critério1; intervalo2; critério2; ...)`  \n* **Exemplo**: `CONT.SES(A2:A100;\">=4\";A2:A100;\"<5\")` → entre 4 (incl.) e 5 (excl.).\n\n---\n\n**3. CONT.NÚM**\n\n* **Aplicação**: contar apenas **números** em um intervalo (zero conta).  \n* **Sintaxe**: `CONT.NÚM(intervalo)`  \n* **Exemplo**: `CONT.NÚM(B2:B100)`.\n\n---\n\n**4. MENOR / MAIOR**\n\n* **Aplicação**: obter o **k-ésimo** menor/maior.  \n* **Sintaxe**: `MENOR(intervalo;k)` / `MAIOR(intervalo;k)`  \n* **Exemplos**:  \n  * `MENOR(A1:A10;2)` → 2º menor.  \n  * `MAIOR(A1:A10;4)` → 4º maior.\n\n---\n\n**5. MEDIANA**\n\n* **Aplicação**: valor central (ou média dos centrais) do conjunto.  \n* **Sintaxe**: `MEDIANA(intervalo)`  \n* **Exemplos**:  \n  * `MEDIANA(A1:A3)` com {1,4,5} → 4.  \n  * `MEDIANA(A1:A4)` com {1,4,5,9} → (4+5)/2 = 4,5.\n\n---\n\n**6. MODA (conceito)**\n\n* **Aplicação**: identificar valor(ores) mais frequente(s).  \n* **Tipos**: unimodal (1), bimodal (2), polimodal (>2).  \n* **Comportamento**: em listas com várias modas, a função simples pode retornar o primeiro valor com maior frequência.\n\n---\n\n**7. RAIZ**\n\n* **Aplicação**: raiz quadrada.  \n* **Sintaxe**: `RAIZ(número)`  \n* **Exemplos**: `RAIZ(25)` → 5; `RAIZ(64)` → 8; `RAIZ(16)` → 4.\n\n---\n\n**8. Concatenação com &**\n\n* **Aplicação**: juntar textos/números em uma única cadeia de texto.  \n* **Regras**:  \n  * **&** não insere espaço automático; use `\" \"` para espaço.  \n  * Tudo entre aspas é texto; números concatenados viram texto no resultado.  \n* **Exemplos**:  \n  * `\"A\" & \" \" & \"B\"` → `\"A B\"`  \n  * `A1 & \"@gmail.com\"` → e-mail  \n  * `\"Total: \" & SOMA(A1:A3)` → texto + resultado numérico  \n  * Critério: `\">5\"` (sempre entre aspas).\n\n---\n\n**9. SE (IF)**\n\n* **Aplicação**: decisão condicional.  \n* **Sintaxe**: `SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)`  \n* **Operadores**: `>`, `<`, `>=`, `<=`, `=`, `<>`.  \n* **Exemplos**:  \n  * `SE(B2>=1000;\"proposta aprovada\";\"reprovada\")`  \n  * `SE(SOMA(A1:A3)>100;\"OK\";\"Ajustar\")`  \n  * `SE(5+6=11;\"Verdadeiro\";\"Falso\")`.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Funções de contagem (**CONT.SE**, **CONT.SES**, **CONT.NÚM**) **não somam** valores; apenas contam ocorrências.\n2. Em **CONT.SES**, os critérios são combinados com **AND** (todos precisam ser satisfeitos).\n3. Em **MENOR/MAIOR**, “2º menor” não significa “menor diferente do menor”; valores repetidos ocupam posições k sucessivas.\n4. **MEDIANA** não é **MÉDIA**; MEDIANA é posição no conjunto ordenado, MÉDIA é soma ÷ quantidade.\n5. Em concatenação, não há espaço automático; inclua `\" \"` e lembre que tudo entre aspas é texto (inclusive critérios como `\">4\"`).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **CONT.SE**, **CONT.SES** e **CONT.NÚM** (1 critério, múltiplos critérios AND, apenas números)?\n* Fixei que **MÍNIMO/MÁXIMO** retornam extremos e **MENOR/MAIOR** retornam o k-ésimo valor (com repetidos ocupando posições)?\n* Sei que **MEDIANA** exige conjunto **ordenado** e não é a mesma coisa que **MÉDIA**?\n* Lembro que **MODA** pode ser uni/bi/polimodal e que a função simples pode retornar só a **primeira** moda?\n* Memorizei: concatenação com **&** não cria espaço; preciso de `\" \"` e critérios sempre entre aspas?\n* Sei escrever corretamente o **SE**: `teste_lógico; valor_se_verdadeiro; valor_se_falso`, usando operadores `> < >= <= = <>`?\n* Estou atento de que funções de contagem **não somam**, apenas contam ocorrências?",
+  "mapa_mental": "# 💻 Office 365 – Excel VIII\n## 🎯 Funções de Contagem\n### 💡 Conceitos Gerais\n- Contagem x soma\n- Quantidade de células\n- Critérios condicionais\n- Resultado numérico\n### 🔢 CONT.SE\n- Um intervalo\n- Um critério\n- Critério entre aspas\n- Comparadores > < =\n### 🔢 CONT.SES\n- Vários intervalos\n- Vários critérios\n- Lógica E simultânea\n- Não soma critérios\n### 🔢 CONT.NÚM\n- Conta números\n- Inclui zero\n- Ignora texto\n- Intervalo único\n\n## 🧮 Ordens e Tendência Central\n### 📊 Mínimos e Máximos\n- MÍNIMO menor valor\n- MÁXIMO maior valor\n- MENOR com k\n- MAIOR com k\n- Repetidos ocupam posições\n### 📈 MEDIANA x MÉDIA\n- MEDIANA posição central\n- Conjunto ordenado\n- Quantidade ímpar\n- Quantidade par\n- MÉDIA soma dividido\n### 📊 MODA\n- Valor mais frequente\n- Unimodal\n- Bimodal\n- Polimodal\n- Pode retornar primeira moda\n\n## 🔢 Outras Funções Numéricas\n### 🧮 RAIZ QUADRADA\n- Função RAIZ\n- Radicando numérico\n- Resultado positivo\n- Não aceita texto\n\n## 📝 Texto e Concatenação\n### 💬 Conceitos de Texto\n- Texto entre aspas\n- Números como texto\n- Critérios como texto\n- Separador regional\n### 🔗 Concatenação com &\n- Operador &\n- Junta conteúdos\n- Sem espaço automático\n- Espaço \" \"\n- Resultado texto\n### ⚠️ Cuidados Concatenação\n- \"5+6\" não calcula\n- Cálculo fora das aspas\n- Número vira texto\n- Ordem dos elementos\n\n## ⚙️ Função SE (Condicional)\n### 💡 Teste Lógico\n- Comparação valores\n- Resultado VERDADEIRO\n- Resultado FALSO\n- Operadores > < =\n- Operadores >= <= <>\n### 📋 Estrutura SE\n- SE(teste_lógico;…\n- Valor se verdadeiro\n- Valor se falso\n- Pode usar funções\n- Pode usar textos\n### ⚠️ Pontos de Prova\n- Ordem dos argumentos\n- Teste sempre lógico\n- Critérios entre aspas\n- Integração com SOMA\n- Integração com MÉDIA",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Contagem Estatística",
+      "description": "Contagem Estatística — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual função do Excel conta células que atendem a um critério?",
+          "back": "CONT.SE",
+          "hint": "Foca em contagem condicional",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-estatisticas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como se expressa, em um critério, a condição de valor maior ou igual a 4?",
+          "back": ">=4",
+          "hint": "Sintaxe de operadores relacionais",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores-logicos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual função conta apenas valores numéricos em um intervalo?",
+          "back": "CONT.NÚM",
+          "hint": "Foca em contagem de números",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-estatisticas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Como valores lógicos são tratados pela contagem de números em um intervalo?",
+          "back": "Não são contados como valores numéricos.",
+          "hint": "Comportamento de tipos de dados",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "tipos-de-dados"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Ordem Estatística",
+      "description": "Ordem Estatística — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "O que determina o índice usado pela função que busca o menor valor?",
+          "back": "A posição do menor valor desejado (k-ésimo).",
+          "hint": "Refere-se à função MENOR",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-estatisticas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como valores repetidos influenciam a busca do k-ésimo menor valor?",
+          "back": "São contados normalmente conforme a ordem do índice.",
+          "hint": "Tratamento de duplicatas em ranking",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-estatisticas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual função do Excel retorna o maior valor de um intervalo?",
+          "back": "MÁXIMO",
+          "hint": "Foca em valor máximo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-estatisticas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Medidas Estatísticas",
+      "description": "Medidas Estatísticas — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "O que representa a mediana de um conjunto de valores?",
+          "back": "O valor central do intervalo.",
+          "hint": "Conceito estatístico de posição",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "estatistica"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Como se obtém manualmente a mediana quando há quantidade ímpar de valores?",
+          "back": "Organizar os valores em ordem crescente e selecionar o valor do meio.",
+          "hint": "Procedimento de ordenação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "estatistica"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a diferença entre mediana e média aritmética?",
+          "back": "A mediana representa o valor central do intervalo, enquanto a média aritmética é obtida pela função média.",
+          "hint": "Distinção entre conceitos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "estatistica"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-11",
+          "front": "Como se denomina uma distribuição com duas modas?",
+          "back": "Bimodal",
+          "hint": "Terminologia estatística",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "estatistica"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Texto e Matemática",
+      "description": "Texto e Matemática — 5 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual operação matemática é realizada pela função de raiz quadrada?",
+          "back": "Cálculo da raiz quadrada de um número.",
+          "hint": "Operação aritmética básica",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-matematicas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "O que significa concatenar textos ou valores no Excel?",
+          "back": "Juntar textos ou valores.",
+          "hint": "Ação de unir cadeias",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "manipulacao-texto"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual separador deve ser usado entre argumentos da função CONCATENAR?",
+          "back": "Ponto e vírgula.",
+          "hint": "Sintaxe de separação de argumentos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "sintaxe-formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Como o Excel interpreta um conteúdo colocado entre aspas em uma fórmula?",
+          "back": "Como texto.",
+          "hint": "Regra de formatação de strings",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "sintaxe-formulas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual operador do Excel também pode ser usado para concatenar conteúdos?",
+          "back": "E comercial (&)",
+          "hint": "Operador de concatenação alternativo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "manipulacao-texto"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Testes Lógicos",
+      "description": "Testes Lógicos — 4 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Qual é o resultado possível de um teste lógico em uma fórmula?",
+          "back": "Verdadeiro ou falso.",
+          "hint": "Resultado booleano",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "logica-booleana"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual função do Excel escolhe resultados conforme o teste lógico?",
+          "back": "SE",
+          "hint": "Função de desvio condicional",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Que papel exerce o teste lógico dentro da função condicional?",
+          "back": "Uma comparação que resulta em verdadeiro ou falso.",
+          "hint": "Componente da função SE",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-20",
+          "front": "Quais tipos de expressão podem fornecer o valor comparado em um teste lógico?",
+          "back": "Valores, cálculos ou funções.",
+          "hint": "Elementos de uma expressão",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "logica-booleana"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a finalidade da função CONT.NÚM no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Contar quantos valores numéricos existem em um intervalo de células",
+          "correct": true,
+          "explanation": "Correta. A função `CONT.NÚM` (ou `COUNT` em inglês) do Excel foi projetada especificamente para contar a quantidade de células em um intervalo que contêm valores numéricos. Ela ignora células vazias, valores lógicos, textos e erros."
+        },
+        {
+          "id": "b",
+          "text": "Identificar o maior valor numérico presente em um intervalo de células",
+          "correct": false,
+          "explanation": "Incorreta. Para identificar o maior valor numérico em um intervalo de células, a função correta é a `MÁXIMO` (ou `MAX` em inglês). A `CONT.NÚM` não busca o valor máximo, mas sim a quantidade de números."
+        },
+        {
+          "id": "c",
+          "text": "Calcular a média aritmética dos números em um intervalo de células",
+          "correct": false,
+          "explanation": "Incorreta. A função utilizada para calcular a média aritmética dos números em um intervalo de células é a `MÉDIA` (ou `AVERAGE` em inglês). A `CONT.NÚM` não realiza cálculos de média."
+        },
+        {
+          "id": "d",
+          "text": "Somar todos os valores numéricos presentes em um intervalo de células",
+          "correct": false,
+          "explanation": "Incorreta. A função `SOMA` (ou `SUM` em inglês) é a responsável por somar todos os valores numéricos em um intervalo de células. A `CONT.NÚM` tem outra finalidade."
+        }
+      ],
+      "explanation": "Correta. A função `CONT.NÚM` (ou `COUNT` em inglês) do Excel foi projetada especificamente para contar a quantidade de células em um intervalo que contêm valores numéricos. Ela ignora células vazias, valores lógicos, textos e erros.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Na função CONT.SE, qual é o comportamento quando se estabelece um critério de contagem com múltiplas condições simultâneas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função conta as combinações de valores que atendem simultaneamente a todas as condições estabelecidas",
+          "correct": true,
+          "explanation": "Correta. Quando se trabalha com múltiplas condições simultâneas, a função `CONT.SES` (ou `COUNTIFS` em inglês) é utilizada. Ela verifica se cada item no intervalo atende a *todas* as condições estabelecidas para os respectivos intervalos. Apenas os itens que satisfazem a todas as condições ao mesmo tempo são contados."
+        },
+        {
+          "id": "b",
+          "text": "A função soma os valores que atendem a cada condição separadamente",
+          "correct": false,
+          "explanation": "Incorreta. A função `CONT.SES` (e `CONT.SE`) tem como objetivo contar, não somar. A função que realiza a soma de valores com base em múltiplas condições é a `SOMASES` (ou `SUMIFS` em inglês)."
+        },
+        {
+          "id": "c",
+          "text": "A função retorna erro quando há mais de uma condição no critério",
+          "correct": false,
+          "explanation": "Incorreta. O Excel oferece a função `CONT.SES` (ou `COUNTIFS` em inglês) para lidar com múltiplas condições de contagem, o que significa que ela não retorna um erro, mas sim o resultado esperado da contagem."
+        },
+        {
+          "id": "d",
+          "text": "A função conta apenas os valores que atendem à primeira condição especificada",
+          "correct": false,
+          "explanation": "Incorreta. Para múltiplas condições, o Excel utiliza a função `CONT.SES` (ou `COUNTIFS` em inglês), que avalia todas as condições especificadas. A contagem só ocorre se a célula ou o conjunto de células atender a *todas* as condições, não apenas à primeira."
+        }
+      ],
+      "explanation": "Correta. Quando se trabalha com múltiplas condições simultâneas, a função `CONT.SES` (ou `COUNTIFS` em inglês) é utilizada. Ela verifica se cada item no intervalo atende a *todas* as condições estabelecidas para os respectivos intervalos. Apenas os itens que satisfazem a todas as condições ao mesmo tempo são contados.",
+      "difficulty": "medium",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Na função MENOR, quando há valores repetidos no intervalo, como o Excel procede na contagem para determinar a posição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Retorna erro quando identifica valores duplicados no intervalo",
+          "correct": false,
+          "explanation": "Incorreta. A função `MENOR` é projetada para operar com conjuntos de dados que podem conter valores duplicados e não retorna erro nesses casos. Ela simplesmente encontra o k-ésimo menor valor, considerando todas as ocorrências."
+        },
+        {
+          "id": "b",
+          "text": "Agrupa os valores repetidos e os considera como uma única posição",
+          "correct": false,
+          "explanation": "Incorreta. A função `MENOR` não agrupa valores repetidos como uma única posição. Para que o resultado seja preciso na identificação do k-ésimo menor, cada instância de um número é contada separadamente na ordenação."
+        },
+        {
+          "id": "c",
+          "text": "Ignora os valores repetidos e considera apenas valores únicos na ordenação",
+          "correct": false,
+          "explanation": "Incorreta. A função `MENOR` (ou `SMALL` em inglês) não ignora valores repetidos. Cada ocorrência de um valor, mesmo que seja repetida, é tratada como um elemento distinto na sequência ordenada."
+        },
+        {
+          "id": "d",
+          "text": "Conta cada ocorrência de valores repetidos individualmente na sequência ordenada",
+          "correct": true,
+          "explanation": "Correta. A função `MENOR` (ou `SMALL` em inglês) considera cada ocorrência de valores repetidos individualmente ao determinar a posição. Por exemplo, em uma lista como {2, 3, 3, 5}, o 2º menor valor é 3 e o 3º menor valor também é 3. Ela não os agrupa nem os ignora, tratando cada um como um elemento único para fins de ordenação e contagem de posição."
+        }
+      ],
+      "explanation": "Correta. A função `MENOR` (ou `SMALL` em inglês) considera cada ocorrência de valores repetidos individualmente ao determinar a posição. Por exemplo, em uma lista como {2, 3, 3, 5}, o 2º menor valor é 3 e o 3º menor valor também é 3. Ela não os agrupa nem os ignora, tratando cada um como um elemento único para fins de ordenação e contagem de posição.",
+      "difficulty": "hard",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a diferença fundamental entre as funções MÉDIA e MEDIANA?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "MÉDIA retorna sempre um número inteiro, enquanto MEDIANA pode retornar valores decimais",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a `MÉDIA` quanto a `MEDIANA` podem retornar valores decimais. A `MÉDIA` frequentemente resulta em decimal, e a `MEDIANA` pode ser decimal se for a média dos dois valores centrais em um conjunto par de dados, ou se os próprios dados forem decimais."
+        },
+        {
+          "id": "b",
+          "text": "MÉDIA calcula a soma dividida pela quantidade de valores, enquanto MEDIANA identifica o valor central do intervalo ordenado",
+          "correct": true,
+          "explanation": "Correta. A diferença fundamental é que a `MÉDIA` (ou `AVERAGE` em inglês) calcula o valor médio de um conjunto de dados somando todos os valores e dividindo pelo número de valores. A `MEDIANA` (ou `MEDIAN` em inglês), por outro lado, identifica o valor central de um conjunto de dados após ele ser ordenado em ordem crescente ou decrescente."
+        },
+        {
+          "id": "c",
+          "text": "MÉDIA ignora valores repetidos, enquanto MEDIANA os considera na ordenação",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as funções consideram todos os valores numéricos presentes no intervalo, incluindo os repetidos. A `MÉDIA` os inclui na soma e na contagem total, e a `MEDIANA` os considera na ordenação para encontrar o valor central."
+        },
+        {
+          "id": "d",
+          "text": "MÉDIA considera apenas valores numéricos, enquanto MEDIANA aceita também valores de texto",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as funções, `MÉDIA` e `MEDIANA`, são projetadas para operar com valores numéricos. Elas ignoram células que contêm texto, valores lógicos ou estão vazias em seus cálculos."
+        }
+      ],
+      "explanation": "Correta. A diferença fundamental é que a `MÉDIA` (ou `AVERAGE` em inglês) calcula o valor médio de um conjunto de dados somando todos os valores e dividindo pelo número de valores. A `MEDIANA` (ou `MEDIAN` em inglês), por outro lado, identifica o valor central de um conjunto de dados após ele ser ordenado em ordem crescente ou decrescente.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Como a função MEDIANA calcula o resultado quando o intervalo contém uma quantidade par de valores?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Arredonda para o número inteiro mais próximo dos valores centrais",
+          "correct": false,
+          "explanation": "Incorreta. A função `MEDIANA` calcula a média exata dos dois valores centrais e retorna esse valor, que pode ser decimal. Ela não realiza arredondamento automático para o número inteiro mais próximo, a menos que o resultado da média já seja um inteiro."
+        },
+        {
+          "id": "b",
+          "text": "Retorna o valor imediatamente inferior ao ponto médio do intervalo",
+          "correct": false,
+          "explanation": "Incorreta. A função `MEDIANA` não retorna apenas o valor imediatamente inferior. O objetivo da mediana é encontrar uma medida de tendência central, que em um conjunto par de dados é a média dos dois valores do meio."
+        },
+        {
+          "id": "c",
+          "text": "Retorna o primeiro dos dois valores centrais encontrados",
+          "correct": false,
+          "explanation": "Incorreta. Retornar apenas o primeiro dos dois valores centrais não seria uma representação estatisticamente precisa da mediana para um conjunto par de dados, especialmente se os dois valores centrais forem diferentes. A prática padrão é calcular a média deles."
+        },
+        {
+          "id": "d",
+          "text": "Calcula a média aritmética dos dois valores centrais do intervalo ordenado",
+          "correct": true,
+          "explanation": "Correta. Quando o intervalo contém uma quantidade par de valores, a função `MEDIANA` (ou `MEDIAN` em inglês) primeiro ordena todos os números. Em seguida, ela identifica os dois valores que se encontram exatamente no centro dessa sequência ordenada e calcula a média aritmética desses dois valores para determinar a mediana."
+        }
+      ],
+      "explanation": "Correta. Quando o intervalo contém uma quantidade par de valores, a função `MEDIANA` (ou `MEDIAN` em inglês) primeiro ordena todos os números. Em seguida, ela identifica os dois valores que se encontram exatamente no centro dessa sequência ordenada e calcula a média aritmética desses dois valores para determinar a mediana.",
+      "difficulty": "medium",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em uma distribuição polimodal no Excel, qual critério a função MODO utiliza para retornar um único valor?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Retorna o maior valor dentre os que possuem frequência máxima",
+          "correct": false,
+          "explanation": "Incorreta. A função MODO do Excel não retorna o maior valor entre aqueles que possuem a frequência máxima em uma distribuição polimodal. O critério de desempate adotado pela função é retornar o primeiro valor que aparece na lista de dados, dentre aqueles que se repetem com a maior frequência."
+        },
+        {
+          "id": "b",
+          "text": "Retorna o primeiro valor com frequência máxima que aparece no intervalo",
+          "correct": true,
+          "explanation": "Correta. Conforme o comportamento padrão do Excel, em distribuições com mais de uma moda (polimodais), a função MODO (ou MODO.ÚNICO, dependendo da versão e função específica) retorna o primeiro valor que encontra no intervalo de dados que possui a maior frequência de ocorrência."
+        },
+        {
+          "id": "c",
+          "text": "Calcula a média aritmética de todos os valores com frequência máxima",
+          "correct": false,
+          "explanation": "Incorreta. A função MODO não calcula a média aritmética. Sua finalidade é identificar o valor que mais se repete (a moda). Calcular a média dos valores modais seria uma operação estatística diferente, que não é realizada pela função MODO."
+        },
+        {
+          "id": "d",
+          "text": "Retorna o valor com frequência máxima que está mais próximo da mediana",
+          "correct": false,
+          "explanation": "Incorreta. A função MODO não utiliza a proximidade com a mediana como critério de desempate para valores com frequência máxima em uma distribuição polimodal. O cálculo da mediana e da moda são conceitos estatísticos distintos e a função MODO segue a regra de retornar o primeiro valor encontrado."
+        }
+      ],
+      "explanation": "Correta. Conforme o comportamento padrão do Excel, em distribuições com mais de uma moda (polimodais), a função MODO (ou MODO.ÚNICO, dependendo da versão e função específica) retorna o primeiro valor que encontra no intervalo de dados que possui a maior frequência de ocorrência.",
+      "difficulty": "hard",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a função do operador & (e comercial) no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar formatação condicional a células específicas",
+          "correct": false,
+          "explanation": "Incorreta. A aplicação de formatação condicional é uma funcionalidade de estilo e apresentação do Excel, acessada através de menus específicos, e não é controlada por um operador dentro de fórmulas."
+        },
+        {
+          "id": "b",
+          "text": "Realizar operações de multiplicação entre valores numéricos",
+          "correct": false,
+          "explanation": "Incorreta. O operador utilizado para multiplicação no Excel é o asterisco (*). O e comercial (&) possui uma função diferente na manipulação de dados."
+        },
+        {
+          "id": "c",
+          "text": "Concatenar ou juntar conteúdos de células ou textos",
+          "correct": true,
+          "explanation": "Correta. O operador e comercial (&) no Excel é utilizado para concatenar, ou seja, para unir ou juntar o conteúdo de duas ou mais células, textos ou valores em uma única sequência de caracteres. É uma alternativa à função CONCATENAR ou CONCAT."
+        },
+        {
+          "id": "d",
+          "text": "Comparar valores para verificar se são iguais",
+          "correct": false,
+          "explanation": "Incorreta. A comparação de igualdade entre valores no Excel é realizada pelo operador de igual (=). O operador e comercial (&) não tem essa finalidade."
+        }
+      ],
+      "explanation": "Correta. O operador e comercial (&) no Excel é utilizado para concatenar, ou seja, para unir ou juntar o conteúdo de duas ou mais células, textos ou valores em uma única sequência de caracteres. É uma alternativa à função CONCATENAR ou CONCAT.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Quando se utiliza aspas duplas em uma fórmula do Excel, como o conteúdo entre aspas é interpretado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Como um valor numérico que será convertido automaticamente",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Excel possa, em algumas situações, tentar converter textos que parecem números em valores numéricos para operações, o propósito principal das aspas duplas é indicar um texto literal. Para valores numéricos, as aspas duplas não são utilizadas, a menos que se queira tratá-los como texto."
+        },
+        {
+          "id": "b",
+          "text": "Como texto literal que não será calculado ou processado como fórmula",
+          "correct": true,
+          "explanation": "Correta. No Excel, qualquer conteúdo inserido entre aspas duplas dentro de uma fórmula é interpretado como uma cadeia de texto literal (string). Isso significa que o Excel exibirá exatamente o que está entre aspas, sem tentar calculá-lo como um número, referenciá-lo como uma célula ou interpretá-lo como parte de uma função."
+        },
+        {
+          "id": "c",
+          "text": "Como um comando especial que ativa funções avançadas",
+          "correct": false,
+          "explanation": "Incorreta. Aspas duplas não ativam comandos especiais ou funções avançadas. Elas servem para delimitar textos literais, que podem ser usados como argumentos para funções ou para concatenação."
+        },
+        {
+          "id": "d",
+          "text": "Como uma referência a outra célula da planilha",
+          "correct": false,
+          "explanation": "Incorreta. Referências a células são indicadas diretamente pelo nome da coluna e linha (ex: A1, B2) ou por nomes definidos, sem o uso de aspas duplas."
+        }
+      ],
+      "explanation": "Correta. No Excel, qualquer conteúdo inserido entre aspas duplas dentro de uma fórmula é interpretado como uma cadeia de texto literal (string). Isso significa que o Excel exibirá exatamente o que está entre aspas, sem tentar calculá-lo como um número, referenciá-lo como uma célula ou interpretá-lo como parte de uma função.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a estrutura básica da função SE no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "SE(intervalo; critério; soma_intervalo)",
+          "correct": false,
+          "explanation": "Incorreta. Esta estrutura é característica de funções como CONT.SE (para contar com base em um critério) ou SOMASES (para somar com base em múltiplos critérios), e não da função SE, que é uma função condicional."
+        },
+        {
+          "id": "b",
+          "text": "SE(condição1; condição2; resultado)",
+          "correct": false,
+          "explanation": "Incorreta. Embora a função SE envolva condições, sua sintaxe padrão não é SE(condição1; condição2; resultado). Ela opera com um único teste lógico e dois resultados possíveis (um para verdadeiro e outro para falso)."
+        },
+        {
+          "id": "c",
+          "text": "SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)",
+          "correct": true,
+          "explanation": "Correta. A estrutura básica da função SE no Excel é SE(teste_lógico; valor_se_verdadeiro; valor_se_falso). O teste_lógico é uma condição que pode ser verdadeira ou falsa. Se for verdadeira, a função retorna o valor_se_verdadeiro; caso contrário, retorna o valor_se_falso."
+        },
+        {
+          "id": "d",
+          "text": "SE(valor_inicial; valor_final; incremento)",
+          "correct": false,
+          "explanation": "Incorreta. Essa estrutura não corresponde à sintaxe da função SE. Ela se assemelha mais a parâmetros para funções de série ou progressão, que não é o caso da função condicional SE."
+        }
+      ],
+      "explanation": "Correta. A estrutura básica da função SE no Excel é SE(teste_lógico; valor_se_verdadeiro; valor_se_falso). O teste_lógico é uma condição que pode ser verdadeira ou falsa. Se for verdadeira, a função retorna o valor_se_verdadeiro; caso contrário, retorna o valor_se_falso.",
+      "difficulty": "easy",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No teste lógico da função SE, além de valores fixos, o que mais pode ser utilizado para comparação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Resultados de outras funções como MÉDIA, SOMA, MÁXIMO ou cálculos complexos",
+          "correct": true,
+          "explanation": "Correta. O teste lógico da função SE pode incluir não apenas valores fixos ou referências a células, mas também o resultado de outras funções do Excel (como MÉDIA, SOMA, MÁXIMO, MÍNIMO, entre outras) ou cálculos aritméticos e lógicos complexos, desde que o resultado final seja um valor booleano (VERDADEIRO ou FALSO)."
+        },
+        {
+          "id": "b",
+          "text": "Exclusivamente textos entre aspas duplas",
+          "correct": false,
+          "explanation": "Incorreta. Embora textos entre aspas duplas possam ser utilizados em comparações dentro do teste lógico (ex: A1=\"Texto\"), eles não são o único tipo de dado permitido. O teste lógico é versátil e aceita uma ampla gama de tipos de dados e expressões."
+        },
+        {
+          "id": "c",
+          "text": "Apenas referências diretas a células individuais",
+          "correct": false,
+          "explanation": "Incorreta. Embora referências diretas a células sejam comumente usadas, o teste lógico da função SE pode ser muito mais abrangente, incluindo resultados de cálculos e outras funções, não se limitando apenas a referências diretas."
+        },
+        {
+          "id": "d",
+          "text": "Somente valores numéricos inteiros positivos",
+          "correct": false,
+          "explanation": "Incorreta. O teste lógico não se restringe a valores numéricos inteiros positivos. Ele pode envolver números decimais, negativos, textos (entre aspas), datas, e qualquer tipo de dado que possa ser comparado para gerar um resultado VERDADEIRO ou FALSO."
+        }
+      ],
+      "explanation": "Correta. O teste lógico da função SE pode incluir não apenas valores fixos ou referências a células, mas também o resultado de outras funções do Excel (como MÉDIA, SOMA, MÁXIMO, MÍNIMO, entre outras) ou cálculos aritméticos e lógicos complexos, desde que o resultado final seja um valor booleano (VERDADEIRO ou FALSO).",
+      "difficulty": "medium",
+      "topic": "Excel",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "14_261652_Office 365 - Excel VIII.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:51:31"
+}

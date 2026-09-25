@@ -1,0 +1,425 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 2,
+  "ordem_no_curso": "64.00",
+  "titulo": "Análise Combinatória II",
+  "codigo_aula": "193041",
+  "video_id": "1dpHVZzQMbU=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:37:29",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/1dpHVZzQMbU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=425315%2C425187&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória II\n\n## Introdução e foco da aula\nBeleza! Agora vai começar a parte prática do nosso primeiro bloco. Quero que você guarde o seguinte: só você pode guardar esses pensamentos e interpretações. Vamos falar de agrupamentos em que a ordem importa. Como é que eu percebo que estou criando agrupamentos em que a ordem importa? Quando a formação altera a natureza do agrupamento: formar filas, formar senhas, formar códigos, criar matrículas, protocolos, classificações e assim por diante.\n\nNúmeros únicos, senhas, códigos, filas — o que é importante? Você pode ter uma palavra diferente da usada pela banca no dia da prova, e tudo bem. O que você vai fazer é criar um exemplo seu, no cantinho, para se perguntar: a ordem importa aqui? Estou falando de pessoas que formam a fila? Crie um pequeno exemplo.\n\nPor exemplo, quando eu falo para você: André, Beto e Daniel. A fila André–Beto–Daniel é a mesma que Daniel–Beto–André? Não é. Então, crie um exemplo e perceba: são diferentes.\n\nNós teremos momentos de aprofundamento. Hoje vamos falar do básico, porque mais à frente podem aparecer detalhes maldosos da banca. Às vezes a questão vem com cargos: conselheiro, auditor, diretor, chefe, secretário, subsecretário. André, Bete, Caio… A ordem muda o cargo atribuído. Uma coisa é ser secretário, outra é ser diretor-chefe. É por isso que eu gosto de fazer exemplo. A banca, às vezes, é maldosa. Falou “filas”? Fila, praticamente sempre, importa a ordem.\n\nAgora, por exemplo, custa fazer isso? Não. Faça uma questão esperta. Somos mais espertos. Observe: “André, Bety, Caio, Daniel” e “Bety, Caio, André, Beto” — é a mesma fila? Não. São diferentes. Recomponha: ordem importa.\n\nQuando eu falar “a ordem importa”, é porque altera a natureza do agrupamento. Eu posso estar usando as mesmas pessoas, mas a fila é diferente. Se eu tivesse uma senha: 1-2-3. A senha 2-3-1 é a mesma? Não. A ordem importa, porque altera a natureza do acesso: não é o mesmo código. Em matrículas e protocolos, na classificação “André, Bete, Caio” versus “Caio, Bete, André”, são classificações diferentes.\n\nNo dia do concurso, pegue a palavra que a banca colocou e se pergunte: o que ela está agrupando? O que ela está montando? São muitas situações hoje em dia. Mas, nesse momento, faça o seguinte: crie um exemplo no cantinho e pergunte para você mesmo: a ordem é importante? Ela altera a natureza? Cria um novo agrupamento? Se sim, a ordem importa.\n\nQuando a ordem importa, aquilo nos remete a possibilidades. O melhor, para nós, é preencher com possibilidades. E aí entra a palavra mágica: possibilidades. Quando formos ao princípio multiplicativo e aditivo, você vai apenas multiplicar no cenário de ordem que importa.\n\nEntão, sempre que eu estiver criando um agrupamento e perceber que, naquele momento, a banca agrupou de forma que a ordem é importante, você vai multiplicar.\n\nA ordem importa? Tem uma única operação: multiplicar. Lá na frente, quando formos para o “braço direito” (casos em que a ordem não importa), teremos duas palavras-chave e outras operações, mas agora, com ordem importando, é multiplicar. Quando a ordem importar, multiplicamos as possibilidades. Mais tarde, veremos diferenças quando a ordem não importar. Por ora, aprendemos: quando a ordem importa, trabalhamos com multiplicação. As possibilidades podem ser somadas ou multiplicadas, mas neste momento, focaremos em questões em que a ordem importa, então, via de regra, multiplicamos. Acontece apenas uma operação: multiplica. Se houver partição de casos, podemos somar casos e, dentro de cada caso, multiplicar — mas a operação central aqui é multiplicar.\n\nVamos fazer exemplos e depois questões de concursos públicos. Vem comigo.\n\n## Conjunto base e primeira questão: números de três algarismos distintos\nEu vou trabalhar com números. Tenho um conjunto A formado pelos algarismos 1, 2, 3, 4 e 5. Pergunta: quantos números de três algarismos distintos podem ser formados com esses elementos?\n\nQuando formamos números com os algarismos do conjunto, usamos seus elementos. A primeira perguntinha: quantos números de três algarismos distintos podem ser formados?\n\nPrimeiro passo: o que estou formando? Equipes? Não. Filas? Não. Estou formando números. Números: a ordem importa. Crie um exemplo: 345 é o mesmo que 543? Não. 345 e 453 são diferentes. Logo, a ordem importa e vamos multiplicar.\n\n> 🎯 Dicas de prova: Formação de números, filas, senhas, códigos, protocolos e classificações geralmente indicam que a ordem importa. Nessas situações, você multiplica as possibilidades.\n\nFormando números de três algarismos distintos com 1, 2, 3, 4, 5:\n\n- Segundo passo: a ordem importa, então faremos uma única operação: multiplicar.\n- Estruture as casas: centenas, dezenas, unidades. Em cada posição, entram possibilidades, não números escritos.\n\nSó entram possibilidades. Para a casa das centenas, tenho 5 possibilidades (qualquer um dos 5 algarismos). Para a casa das dezenas, como os algarismos devem ser distintos, tenho 4 possibilidades (já usei um). Para a casa das unidades, sobram 3 possibilidades.\n\nMultiplicando as possibilidades: 5 × 4 × 3 = 60. Temos 60 números de três algarismos distintos formados pelos algarismos 1, 2, 3, 4 e 5.\n\nReforço: nos tracinhos das casas não entram “números”, entram possibilidades. Não confunda o algarismo “5” com “5 possibilidades”. Nós multiplicamos possibilidades.\n\n## Variação: números pares de três algarismos distintos\nAgora, a letra seguinte dessa mesma questão: quantos números de três algarismos distintos, formados com 1, 2, 3, 4 e 5, são pares?\n\nPrimeiro passo: continua sendo formação de números, então a ordem importa e vamos multiplicar. Mas temos uma restrição: ser par. Como reconheço um número par? Pelo último algarismo. Logo, a restrição está na unidade.\n\nRegra de ouro: toda vez que houver restrição, comece por ela. Se a restrição está no final, comece pelo final.\n\n- Na última posição (unidade), para ser par, com o conjunto {1,2,3,4,5}, as possibilidades são 2 ou 4. Portanto, 2 possibilidades.\n- Preenchida a unidade, sobram 4 algarismos para a centena.\n- Preenchida a centena, sobram 3 para a dezena.\n\nMultiplicando: 2 × 4 × 3 = 24.\n\nLogo, existem 24 números pares de três algarismos distintos com esses algarismos.\n\nComo no total tínhamos 60 números distintos, podemos obter os ímpares por complemento: 60 − 24 = 36. Portanto, 36 são ímpares.\n\n## Cálculo direto dos ímpares (confirmação)\nSe quisermos calcular diretamente os ímpares, a restrição é: último algarismo ímpar. No conjunto {1,2,3,4,5}, ímpares são 1, 3, 5.\n\n- Unidade: 3 possibilidades (1, 3 ou 5).\n- Depois, para a centena: dos 5 algarismos iniciais, um já foi para a unidade, então 4 possibilidades.\n- Para a dezena: sobram 3.\n\nMultiplicando: 3 × 4 × 3 = 36. Confere com o complemento.\n\n## Variação: múltiplos de 5 (três algarismos distintos)\nQuantos são múltiplos de 5, com três algarismos distintos, usando {1,2,3,4,5}?\n\nComo reconheço múltiplos de 5? Pelo último algarismo ser 0 ou 5. No nosso conjunto não há 0, mas há 5. Então a restrição é: unidade = 5.\n\nRegra: comece pela restrição.\n\n- Unidade: 1 possibilidade (5).\n- Centena: 4 possibilidades (sobram 1,2,3,4).\n- Dezena: 3 possibilidades.\n\nMultiplicando: 1 × 4 × 3 = 12. Logo, 12 são múltiplos de 5 entre os 60 números distintos.\n\nReforço: aqui não entra “o número 5”; entra “1 possibilidade”. Nós multiplicamos possibilidades.\n\n## Caso sem restrição de distinção: algarismos podem repetir\nAgora, suponha que a questão mude: “Quantos números de três algarismos podem ser formados com {1,2,3,4,5}?”, sem exigir algarismos distintos. Ou seja, repetição permitida.\n\nA ordem continua importando (formação de números), então multiplicamos possibilidades:\n\n- Centena: 5 possibilidades.\n- Dezena: 5 possibilidades (pode repetir).\n- Unidade: 5 possibilidades.\n\nResultado: 5 × 5 × 5 = 125.\n\nCompare:\n- Com algarismos distintos: 60 números.\n- Com repetição permitida: 125 números.\n\nPerceba como a presença ou ausência da palavra “distintos” muda totalmente as possibilidades de cada casa.\n\n## Encerramento do bloco prático\nTá legal. O foco aqui foi fixar a ideia de possibilidades, ordem que importa e começar sempre pela restrição. Agora, no próximo bloco, a gente entra forte nas questões de concurso. Em cada questão, vamos interpretar primeiro. Eu posso repetir esse processo quantas vezes precisar, porque isso aqui é raciocínio, é interpretação. Quanto mais eu falo, mais você vai ouvir, e na hora a ficha cai. Vamos seguir.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória II",
+    "subject": "Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36226,
+    "createdAt": "2026-01-30T14:23:35.475Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda a contagem por posições usando o princípio multiplicativo em Análise Combinatória, com foco em formação de números de 3 algarismos a partir do conjunto {1, 2, 3, 4, 5}.  \nPrincipais pontos:  \n- A ordem importa → multiplicar possibilidades (princípio multiplicativo).  \n- Como lidar com restrições (paridade, múltiplos de 5, “algarismos distintos”).  \n- Diferença entre com repetição e sem repetição.  \n- Uso de complemento para fechar a contagem.\n\n## 1. Base / Conceitos Fundamentais\n- **Princípio multiplicativo (Princípio Fundamental da Contagem)**: quando um processo ocorre em etapas independentes, o total é o produto das possibilidades de cada etapa.\n- **Posições**: em números de 3 algarismos, trabalhamos com **centena | dezena | unidade**.\n- **Ordem importa**: filas, senhas, códigos, matrículas, protocolos, classificações, números — trocar a ordem muda o objeto.\n- **Algarismos distintos**: sem repetição; a cada escolha, o conjunto de opções diminui (sem reposição).\n- **Com repetição**: a mesma opção pode ser usada em mais de uma posição (com reposição).\n- **Paridade pelo último dígito**: número é par se a unidade é par; ímpar se a unidade é ímpar.\n- **Múltiplos de 5**: terminam em 0 ou 5. Se não há 0 disponível, só 5 é possível.\n\n> Dica de Prova: “Formar números/filas/códigos/matrículas/protocolos/classificação” → a ordem importa → use multiplicação.\n\n## 2. Como Funciona / Distinções\n- **Com repetição vs. sem repetição**\n  - Com repetição: mesmas possibilidades por posição (ex.: 5, 5, 5).\n  - Sem repetição (distintos): possibilidades caem em cascata (ex.: 5 → 4 → 3).\n- **Sem restrição vs. com restrição**\n  - Sem restrição: comece pela primeira posição.\n  - Com restrição localizada (ex.: “par”, “múltiplo de 5” → unidade): comece pela posição da restrição.\n- **Multiplicar possibilidades x multiplicar números**\n  - Multiplique o número de opções por posição, não os algarismos em si.\n- **Complemento**\n  - Quando um subconjunto é mais fácil de contar (ex.: pares), conte-o e subtraia do total para obter o restante (ex.: ímpares).\n\n> Dica de Prova: “Onde estiver a restrição, comece por ali.” Restrição na unidade? Comece pela unidade.\n\n## 3. Aplicação Prática / Técnicas\nPasso a passo geral para formar números de 3 algarismos com A = {1, 2, 3, 4, 5}:\n1) Identifique se a ordem importa: sim (números) → multiplicar.\n2) Ache o total de possibilidades por posição.\n3) Verifique se pode repetir:\n   - Com repetição: a mesma quantidade se repete por posição.\n   - Distintos: diminui a cada escolha.\n4) Se houver restrição (par, ímpar, múltiplo de 5), comece pela posição correspondente (geralmente unidade).\n5) Multiplique as possibilidades por posição.\n6) Se necessário, use complemento para fechar a conta.\n\nMacetes:\n- Distintos sem restrição: pense “5 → 4 → 3”.\n- Paridade: foque só na unidade (pares {2, 4}; ímpares {1, 3, 5}).\n- Múltiplos de 5: termina em 0 ou 5; sem 0, fixa 5 na unidade.\n- Provas adoram pedir “quantos números de três algarismos distintos podem ser formados” ou “quantos números pares...”. Estruture por posições.\n\n## 4. Exemplos e Casos Resolvidos\nExemplo A — Três algarismos distintos com A = {1, 2, 3, 4, 5}\n- Centena: 5\n- Dezena: 4\n- Unidade: 3\n- Total: 5 × 4 × 3 = 60\n\nExemplo B — Números pares de três algarismos distintos com A = {1, 2, 3, 4, 5}\n- Unidade (par): 2 possibilidades (2 ou 4)\n- Centena: 4\n- Dezena: 3\n- Total: 2 × 4 × 3 = 24\n\nExemplo C — Números ímpares de três algarismos distintos com A = {1, 2, 3, 4, 5}\n- Unidade (ímpar): 3 possibilidades (1, 3, 5)\n- Centena: 4\n- Dezena: 3\n- Total: 3 × 4 × 3 = 36\n- Checagem por complemento: 60 − 24 = 36\n\nExemplo D — Múltiplos de 5 de três algarismos distintos com A = {1, 2, 3, 4, 5}\n- Unidade: 5 (1 possibilidade)\n- Centena: 4\n- Dezena: 3\n- Total: 1 × 4 × 3 = 12\n\nExemplo E — Com repetição permitida (três algarismos) com A = {1, 2, 3, 4, 5}\n- Centena: 5\n- Dezena: 5\n- Unidade: 5\n- Total: 5 × 5 × 5 = 125\n- Exemplos possíveis: 111, 112, 222, 345, 354\n\nTabela-resumo (distintos vs. repetição):\n- Distintos, sem restrição: 60\n- Distintos, pares: 24\n- Distintos, ímpares: 36\n- Distintos, múltiplos de 5: 12\n- Com repetição, sem restrição: 125\n\n> Dica de Prova: Itens simétricos (ex.: unidade = 2 ou 4) geram o mesmo subtotal. Calcule um caso e multiplique pelo número de casos.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “multiplicar possibilidades” com “multiplicar algarismos”. Você multiplica quantidades de opções por posição.\n- Ignorar a restrição na posição correta. Paridade e múltiplo de 5 se decidem na unidade: comece por ela.\n- Esquecer “algarismos distintos” e permitir repetição indevida, ou o contrário. Leia o enunciado: “distintos/sem repetição” vs. “podem repetir”.\n- Tratar problema de ordem como combinação. Números/filas/códigos têm ordem → princípio multiplicativo.\n- Esquecer que não há 0 no conjunto. Para múltiplos de 5, sem 0, a unidade só pode ser 5.\n- Não usar complemento quando é mais simples. Se já achou pares, ímpares = total − pares.\n\n> Dica de Prova: Se o total sem restrição já foi calculado (ex.: 60), e a banca pede o “resto” (ex.: ímpares), use complemento para ganhar tempo.",
+  "resumo_bolso": "# Análise Combinatória II\n\n---\n\n## 📌 Conceitos-Chave\n\n* Princípio multiplicativo: processo em etapas independentes → total = produto das possibilidades por posição.\n* Posições em números de 3 algarismos: centena | dezena | unidade.\n* Ordem importa: trocar a ordem muda o objeto (números, filas, códigos, matrículas, protocolos, classificações).\n* Algarismos distintos: sem repetição; possibilidades diminuem a cada escolha (sem reposição).\n* Com repetição: a mesma opção pode ser usada em mais de uma posição (com reposição).\n* Paridade pelo último dígito: par se unidade ∈ {2,4}; ímpar se unidade ∈ {1,3,5}.\n* Múltiplos de 5: terminam em 0 ou 5; sem 0 disponível, só 5 é possível.\n* Complemento: conte o subconjunto mais simples e subtraia do total para obter o restante.\n* Onde estiver a restrição, comece pela posição correspondente (geralmente a unidade).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Com repetição vs. Sem repetição\n\n| Aspecto | Com repetição | Sem repetição (distintos) |\n| --- | --- | --- |\n| Contagem por posição | mesmas quantidades por posição | quantidades decrescem (sem reposição) |\n| Exemplo base (3 alg.) | 5 × 5 × 5 | 5 × 4 × 3 |\n| Dependência entre escolhas | não há | há (esgota opções) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Princípio Multiplicativo\n- Aplicação: formação por etapas independentes em que a ordem importa.\n- Exemplo: 3 posições com 5, 4, 3 opções → 5 × 4 × 3.\n\n2. Distintos, sem restrição (3 alg., A = {1,2,3,4,5})\n- Exemplo: 5 × 4 × 3 = 60.\n\n3. Distintos, par\n- Unidade: 2 possibilidades (2 ou 4); depois 4 e 3 → 2 × 4 × 3 = 24.\n\n4. Distintos, ímpar\n- Unidade: 3 possibilidades (1, 3, 5); depois 4 e 3 → 3 × 4 × 3 = 36.\n- Por complemento: 60 − 24 = 36.\n\n5. Distintos, múltiplos de 5 (sem 0 no conjunto)\n- Unidade: 5 (1); depois 4 e 3 → 1 × 4 × 3 = 12.\n\n6. Com repetição permitida, sem restrição\n- Exemplo: 5 × 5 × 5 = 125.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Confundir “multiplicar possibilidades” com “multiplicar algarismos”.\n- Ignorar a restrição na posição correta (paridade e múltiplo de 5 na unidade).\n- Esquecer “algarismos distintos” e permitir repetição indevida, ou o contrário.\n- Tratar problema de ordem como combinação.\n- Assumir que existe 0 no conjunto para múltiplos de 5 quando não há.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei “com repetição” de “sem repetição (distintos)”?\n* Sem restrição e distintos → 5 × 4 × 3 = 60?\n* Pares → unidade {2,4}; ímpares → unidade {1,3,5}?\n* Sem 0 no conjunto → múltiplos de 5 terminam em 5?\n* Onde houver restrição, começo por essa posição?\n* Sei usar complemento quando é mais simples?",
+  "mapa_mental": "# 🧮 Análise Combinatória II – Posições\n## 🎯 Princípios Básicos\n### 💡 Princípio Multiplicativo\n- Etapas independentes\n- Produto das etapas\n- Contagem por posições\n- Ordem sempre importa\n### 🔢 Posições Numéricas\n- Centena\n- Dezena\n- Unidade\n- Ordem define número\n### 🧱 Tipos de Escolha\n- Algarismos distintos\n- Sem repetição\n- Com repetição\n- Com reposição\n## 📊 Estrutura dos Problemas\n### 🧩 Ordem Importa\n- Números\n- Filas\n- Códigos\n- Matrículas\n- Protocolos\n### ⚙️ Com x Sem Repetição\n- Mesmas opções por posição\n- Opções caem em cascata\n- Padrão 5 5 5\n- Padrão 5 4 3\n### 📜 Restrições Clássicas\n- Paridade na unidade\n- Múltiplo de 5\n- Algarismos distintos\n- Sem restrição\n## 🧮 Técnicas de Contagem\n### 🔢 Estratégia por Posições\n- Identificar posições\n- Contar opções por posição\n- Começar pela restrição\n- Multiplicar possibilidades\n### 🧮 Paridade e Múltiplos\n- Pares na unidade\n- Ímpares na unidade\n- Pares {2,4}\n- Ímpares {1,3,5}\n- Múltiplos de 5\n### ➖ Método do Complemento\n- Total sem restrição\n- Subconjunto mais simples\n- Total menos subconjunto\n- Obter conjunto restante\n## 🚨 Erros Frequentes em Provas\n### ⚠️ Interpretação Errada\n- Ignorar “distintos”\n- Ignorar “podem repetir”\n- Confundir ordem irrelevante\n- Usar combinação indevida\n### ⚠️ Contagem Incorreta\n- Multiplicar algarismos\n- Não multiplicar opções\n- Esquecer posição da restrição\n- Começar pela posição errada\n### ⚠️ Detalhes do Conjunto\n- Ausência do zero\n- Unidade não pode zero\n- Múltiplo de 5 sem zero\n- Não usar complemento",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Princípio Multiplicativo",
+      "description": "Princípio Multiplicativo — 1 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se obtém o total de formações com etapas sucessivas?",
+          "back": "Multiplicando as **possibilidades** de cada etapa.",
+          "hint": "Operação aritmética básica",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principio-multiplicativo"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Formações Ordenadas",
+      "description": "Formações Ordenadas — 3 cards",
+      "cards": [
+        {
+          "id": "card-2",
+          "front": "Como identificar se a ordem altera um agrupamento?",
+          "back": "Verificando se a inversão dos elementos altera a **natureza** ou o resultado do agrupamento.",
+          "hint": "Critério de diferenciação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "agrupamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Por que 345 e 543 representam formações diferentes?",
+          "back": "Porque a ordem dos algarismos altera o valor e a **natureza** do número formado.",
+          "hint": "Aplicação do critério de ordem",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "agrupamento"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-4",
+          "front": "Com os algarismos de 1 a 5, quantos números distintos de três algarismos podem ser formados?",
+          "back": "Sessenta números.",
+          "hint": "Cálculo: 5 x 4 x 3",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "arranjo"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Repetição de Algarismos",
+      "description": "Repetição de Algarismos — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "O que a expressão “algarismos distintos” exige em uma formação numérica?",
+          "back": "A proibição de reutilizar um algarismo já empregado nas posições anteriores.",
+          "hint": "Restrição de uso de elementos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "restricao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Quando a distinção não é exigida, como cada posição pode usar os algarismos?",
+          "back": "Utilizando todas as **possibilidades** do conjunto em cada posição, permitindo repetição.",
+          "hint": "Ausência de restrição",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "repeticao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Restrições Numéricas",
+      "description": "Restrições Numéricas — 4 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual algarismo de um número determina sua paridade?",
+          "back": "O último algarismo.",
+          "hint": "Posição de menor valor posicional",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "paridade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Quais algarismos podem ocupar a última posição de um número par formado de 1 a 5?",
+          "back": "O dois e o quatro.",
+          "hint": "Subconjunto de {1, 2, 3, 4, 5}",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "paridade"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Como reconhecer um múltiplo de cinco pela sua representação decimal?",
+          "back": "Terminando em zero ou cinco.",
+          "hint": "Critério de divisibilidade",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "divisibilidade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Em qual posição deve começar a contagem quando há uma restrição numérica?",
+          "back": "Na posição que possui a **restrição**.",
+          "hint": "Prioridade de preenchimento",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "restricao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em análise combinatória, quando a ordem dos elementos altera a natureza do agrupamento formado, qual operação deve ser utilizada para calcular o total de possibilidades?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se aplicar a subtração entre o total de elementos e as posições ocupadas",
+          "correct": false,
+          "explanation": "Incorreta. A subtração não é uma operação fundamental para calcular o total de possibilidades em análise combinatória neste contexto. Ela pode ser usada para determinar o número de elementos restantes após algumas escolhas, mas não para o cálculo direto do número de agrupamentos. Por exemplo, se há 5 elementos e 3 posições, subtrair 5-3=2 não representa o total de agrupamentos possíveis."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se aplicar exclusivamente a multiplicação das possibilidades disponíveis em cada posição",
+          "correct": true,
+          "explanation": "Correta. Em análise combinatória, quando a ordem dos elementos é crucial para diferenciar os agrupamentos (caracterizando um arranjo ou permutação), o princípio fundamental da contagem, também conhecido como princípio multiplicativo, é aplicado. Isso significa que o número total de possibilidades é obtido multiplicando-se o número de opções disponíveis para cada posição sucessivamente."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se aplicar tanto multiplicação quanto adição, dependendo da quantidade de restrições",
+          "correct": false,
+          "explanation": "Incorreta. Embora ambos os princípios (multiplicativo e aditivo) possam ser usados em problemas de combinatória, a afirmação de que a escolha entre eles depende \"da quantidade de restrições\" é imprecisa. A multiplicação é usada para eventos que ocorrem em sequência, formando um agrupamento, enquanto a adição é para eventos alternativos. As restrições podem influenciar o número de possibilidades em cada etapa, mas não alteram a natureza fundamental da operação (multiplicação para agrupamentos ordenados)."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se aplicar a soma das possibilidades e posteriormente dividir pelo número de posições",
+          "correct": false,
+          "explanation": "Incorreta. A soma das possibilidades é utilizada quando os eventos são mutuamente exclusivos (princípio aditivo), ou seja, quando uma situação ou outra pode ocorrer, e não quando as escolhas são sequenciais e interdependentes para formar um único agrupamento. A divisão pelo número de posições não se aplica a este cenário de contagem de agrupamentos ordenados."
+        }
+      ],
+      "explanation": "Correta. Em análise combinatória, quando a ordem dos elementos é crucial para diferenciar os agrupamentos (caracterizando um arranjo ou permutação), o princípio fundamental da contagem, também conhecido como princípio multiplicativo, é aplicado. Isso significa que o número total de possibilidades é obtido multiplicando-se o número de opções disponíveis para cada posição sucessivamente.",
+      "difficulty": "easy",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual característica permite identificar que um agrupamento deve ser resolvido considerando que a ordem dos elementos é relevante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quando o agrupamento resulta em filas, senhas, códigos ou classificações que se alteram com a mudança de posição",
+          "correct": true,
+          "explanation": "Correta. A relevância da ordem é a característica distintiva de arranjos e permutações na análise combinatória. Se a troca de posição de dois elementos dentro de um agrupamento gera um agrupamento diferente, então a ordem importa. Exemplos claros incluem a formação de filas (André, Beto é diferente de Beto, André), senhas (123 é diferente de 321), códigos (matrículas, placas de veículos) e classificações (primeiro, segundo, terceiro lugar)."
+        },
+        {
+          "id": "b",
+          "text": "Quando o agrupamento envolve a formação de equipes ou grupos sem hierarquia definida",
+          "correct": false,
+          "explanation": "Incorreta. A formação de equipes ou grupos sem hierarquia definida é um exemplo clássico de combinação, onde a ordem dos elementos não importa. Por exemplo, uma equipe formada por João e Maria é a mesma que uma equipe formada por Maria e João. Nesses casos, a ordem não altera a natureza do agrupamento."
+        },
+        {
+          "id": "c",
+          "text": "Quando o agrupamento permite que os mesmos elementos sejam utilizados em qualquer ordem sem distinção",
+          "correct": false,
+          "explanation": "Incorreta. Se os elementos podem ser utilizados em qualquer ordem sem distinção, isso indica que a ordem não é relevante. Essa é a definição de combinação, onde o foco está na seleção dos elementos, e não na sua disposição."
+        },
+        {
+          "id": "d",
+          "text": "Quando o agrupamento envolve apenas a seleção de elementos sem considerar sua disposição",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere à combinação, onde a ordem dos elementos selecionados não é levada em conta. A questão busca a característica que indica que a ordem é relevante, ou seja, que a disposição dos elementos faz diferença."
+        }
+      ],
+      "explanation": "Correta. A relevância da ordem é a característica distintiva de arranjos e permutações na análise combinatória. Se a troca de posição de dois elementos dentro de um agrupamento gera um agrupamento diferente, então a ordem importa. Exemplos claros incluem a formação de filas (André, Beto é diferente de Beto, André), senhas (123 é diferente de 321), códigos (matrículas, placas de veículos) e classificações (primeiro, segundo, terceiro lugar).",
+      "difficulty": "easy",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Ao formar números de três algarismos distintos utilizando os elementos do conjunto {1, 2, 3, 4, 5}, qual procedimento deve ser adotado para preencher as posições?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Colocar nas posições o resultado da soma dos elementos disponíveis dividido pelo número de posições",
+          "correct": false,
+          "explanation": "Incorreta. Esta operação (soma seguida de divisão) não corresponde a nenhum método padrão de contagem em análise combinatória para formação de agrupamentos ordenados com ou sem repetição. O cálculo de possibilidades em cada posição é feito pela contagem direta dos elementos que podem ocupá-la."
+        },
+        {
+          "id": "b",
+          "text": "Colocar nas posições sempre o total de elementos do conjunto, independentemente das posições já preenchidas",
+          "correct": false,
+          "explanation": "Incorreta. Este procedimento seria correto apenas se a repetição de algarismos fosse permitida. Como a condição é que os algarismos sejam \"distintos\", um algarismo utilizado em uma posição não pode ser usado novamente, o que significa que o número de possibilidades diminui a cada posição preenchida."
+        },
+        {
+          "id": "c",
+          "text": "Colocar nas posições a quantidade de elementos disponíveis, reduzindo uma unidade a cada posição preenchida",
+          "correct": true,
+          "explanation": "Correta. Para formar números com algarismos distintos, cada algarismo usado em uma posição não pode ser reutilizado nas posições seguintes. Assim, para a primeira posição, há o total de elementos disponíveis. Para a segunda, há um elemento a menos, e assim sucessivamente. Por exemplo, com {1, 2, 3, 4, 5} para três algarismos distintos, teríamos 5 opções para a primeira posição, 4 para a segunda e 3 para a terceira, resultando em 5 * 4 * 3 = 60 números."
+        },
+        {
+          "id": "d",
+          "text": "Colocar nas posições o número de elementos elevado à potência correspondente à quantidade de algarismos",
+          "correct": false,
+          "explanation": "Incorreta. Elevar o número de elementos à potência do número de posições (por exemplo, 5^3) é o método correto para calcular o total de agrupamentos quando a repetição de elementos é permitida. No entanto, a questão especifica \"algarismos distintos\", o que invalida este método."
+        }
+      ],
+      "explanation": "Correta. Para formar números com algarismos distintos, cada algarismo usado em uma posição não pode ser reutilizado nas posições seguintes. Assim, para a primeira posição, há o total de elementos disponíveis. Para a segunda, há um elemento a menos, e assim sucessivamente. Por exemplo, com {1, 2, 3, 4, 5} para três algarismos distintos, teríamos 5 opções para a primeira posição, 4 para a segunda e 3 para a terceira, resultando em 5 * 4 * 3 = 60 números.",
+      "difficulty": "easy",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao calcular quantos números pares de três algarismos distintos podem ser formados com os elementos {1, 2, 3, 4, 5}, por qual posição deve-se iniciar o preenchimento e por quê?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se iniciar pela posição das unidades, pois é onde está localizada a restrição de paridade",
+          "correct": true,
+          "explanation": "Correta. Em problemas de análise combinatória com restrições, é uma estratégia fundamental começar a contagem pela posição que possui a restrição. Para que um número seja par, seu último algarismo (a unidade) deve ser par. No conjunto {1, 2, 3, 4, 5}, os algarismos pares são 2 e 4. Ao preencher a unidade primeiro, garantimos que a condição de paridade seja atendida, e as escolhas subsequentes para as outras posições serão feitas com base nos elementos restantes, evitando contagens incorretas."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se iniciar pela posição das centenas, pois é a posição de maior valor posicional no número",
+          "correct": false,
+          "explanation": "Incorreta. Embora iniciar pela posição de maior valor posicional (centenas) seja uma prática comum quando não há restrições específicas, neste caso, existe uma restrição de paridade. Se a restrição afeta uma posição específica (como a paridade afeta a unidade), deve-se começar por ela para garantir que todas as condições sejam satisfeitas."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se iniciar pela posição das dezenas, pois é a posição intermediária que facilita o cálculo",
+          "correct": false,
+          "explanation": "Incorreta. Iniciar pela posição das dezenas não oferece nenhuma vantagem lógica ou metodológica para resolver problemas com restrição de paridade na unidade. Essa abordagem poderia complicar o cálculo, pois as escolhas para as dezenas afetariam as opções para as unidades e centenas de forma menos direta."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se iniciar simultaneamente por todas as posições, distribuindo as possibilidades de forma equilibrada",
+          "correct": false,
+          "explanation": "Incorreta. A contagem em análise combinatória é um processo sequencial. Não é possível \"iniciar simultaneamente\" o preenchimento das posições, pois as escolhas em uma posição afetam as possibilidades nas outras, especialmente quando há restrições e a distinção de elementos. O princípio multiplicativo exige a contagem das opções para cada etapa em ordem."
+        }
+      ],
+      "explanation": "Correta. Em problemas de análise combinatória com restrições, é uma estratégia fundamental começar a contagem pela posição que possui a restrição. Para que um número seja par, seu último algarismo (a unidade) deve ser par. No conjunto {1, 2, 3, 4, 5}, os algarismos pares são 2 e 4. Ao preencher a unidade primeiro, garantimos que a condição de paridade seja atendida, e as escolhas subsequentes para as outras posições serão feitas com base nos elementos restantes, evitando contagens incorretas.",
+      "difficulty": "medium",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao formar números de três algarismos com o conjunto {1, 2, 3, 4, 5}, qual é a diferença fundamental entre exigir algarismos distintos e permitir repetição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Com algarismos distintos, cada posição mantém o mesmo número de possibilidades; com repetição, as possibilidades diminuem progressivamente",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte completamente a lógica. Quando os algarismos devem ser distintos, cada algarismo usado não pode ser repetido, o que diminui as possibilidades para as posições subsequentes. Quando a repetição é permitida, o número de possibilidades permanece o mesmo para cada posição."
+        },
+        {
+          "id": "b",
+          "text": "Com algarismos distintos, as possibilidades diminuem a cada posição preenchida; com repetição, todas as posições mantêm o mesmo número de possibilidades",
+          "correct": true,
+          "explanation": "Correta. Esta é a diferença fundamental. Quando os algarismos são distintos (sem repetição), um elemento usado em uma posição não pode ser usado nas outras, reduzindo o número de escolhas disponíveis para as posições seguintes. Por exemplo, para 3 algarismos com 5 opções, teríamos 5 * 4 * 3. Quando a repetição é permitida, cada posição tem o mesmo número total de opções, pois um elemento pode ser reutilizado. Assim, para 3 algarismos com 5 opções e repetição, teríamos 5 * 5 * 5 (ou 5^3)."
+        },
+        {
+          "id": "c",
+          "text": "Com algarismos distintos, o resultado final é sempre menor que o número de elementos; com repetição, é sempre maior que o dobro",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é imprecisa e não representa uma diferença fundamental no método de cálculo. O resultado final, seja com ou sem repetição, depende do número de elementos e do número de posições. Por exemplo, se o número de posições for 1, o resultado é o mesmo. A relação de \"menor que o número de elementos\" ou \"maior que o dobro\" não é uma regra geral para diferenciar os dois cenários."
+        },
+        {
+          "id": "d",
+          "text": "Com algarismos distintos, deve-se aplicar adição entre as possibilidades; com repetição, deve-se aplicar multiplicação",
+          "correct": false,
+          "explanation": "Incorreta. Em ambos os casos (com ou sem repetição, para formar um agrupamento ordenado), o princípio fundamental da contagem (multiplicação) é aplicado entre as possibilidades de cada posição. A adição seria usada apenas se houvesse diferentes casos mutuamente exclusivos para formar o número, e não entre as posições de um mesmo número."
+        }
+      ],
+      "explanation": "Correta. Esta é a diferença fundamental. Quando os algarismos são distintos (sem repetição), um elemento usado em uma posição não pode ser usado nas outras, reduzindo o número de escolhas disponíveis para as posições seguintes. Por exemplo, para 3 algarismos com 5 opções, teríamos 5 * 4 * 3. Quando a repetição é permitida, cada posição tem o mesmo número total de opções, pois um elemento pode ser reutilizado. Assim, para 3 algarismos com 5 opções e repetição, teríamos 5 * 5 * 5 (ou 5^3).",
+      "difficulty": "medium",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Sabendo que com o conjunto {1, 2, 3, 4, 5} podem ser formados 60 números de três algarismos distintos, e que 24 deles são pares, qual raciocínio permite determinar a quantidade de números ímpares sem realizar novo cálculo completo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Somar a quantidade de números pares com o total e dividir por dois, aplicando a média aritmética das possibilidades",
+          "correct": false,
+          "explanation": "Incorreta. A soma da quantidade de números pares com o total, dividida por dois ((24 + 60) / 2 = 42), representa uma média aritmética e não um método para calcular a quantidade de números ímpares em um problema de contagem. Essa abordagem não se alinha com os princípios da combinatória para determinar subconjuntos complementares."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar a quantidade de números pares por dois e subtrair do total, pois a proporção de ímpares é sempre o dobro",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de que a proporção de números ímpares é \"sempre o dobro\" da quantidade de números pares não é uma regra matemática universalmente aplicável em combinatória. A relação entre a quantidade de números pares e ímpares depende dos algarismos disponíveis e das condições específicas de formação dos números. No exemplo, 24 multiplicado por dois é 48, e 60 menos 48 resultaria em 12, o que não corresponde à quantidade correta de números ímpares."
+        },
+        {
+          "id": "c",
+          "text": "Dividir o total de números formados pela quantidade de elementos do conjunto, obtendo a proporção de números ímpares",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o total de números formados (60) pela quantidade de algarismos no conjunto original (5) não é um método válido para determinar a quantidade de números ímpares. Essa operação (60 / 5 = 12) não tem fundamento em princípios combinatórios ou aritméticos para a contagem de subconjuntos com características específicas como a paridade."
+        },
+        {
+          "id": "d",
+          "text": "Aplicar a operação de subtração entre o total de números formados e a quantidade de números pares, resultando em 36 números ímpares",
+          "correct": true,
+          "explanation": "Correta. Em problemas de contagem, se um conjunto total de elementos pode ser dividido em duas categorias mutuamente exclusivas e exaustivas (como números pares e ímpares), a quantidade de elementos em uma categoria pode ser encontrada subtraindo-se a quantidade da outra categoria do total. Neste caso, a quantidade de números ímpares é obtida pela diferença entre o total de números formados (60) e a quantidade de números pares (24), resultando em 36 números ímpares. Este é um princípio básico da teoria dos conjuntos e da lógica de contagem por complemento."
+        }
+      ],
+      "explanation": "Correta. Em problemas de contagem, se um conjunto total de elementos pode ser dividido em duas categorias mutuamente exclusivas e exaustivas (como números pares e ímpares), a quantidade de elementos em uma categoria pode ser encontrada subtraindo-se a quantidade da outra categoria do total. Neste caso, a quantidade de números ímpares é obtida pela diferença entre o total de números formados (60) e a quantidade de números pares (24), resultando em 36 números ímpares. Este é um princípio básico da teoria dos conjuntos e da lógica de contagem por complemento.",
+      "difficulty": "hard",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "02_193041_Análise Combinatória II.pdf",
+  "coletado_em": "2026-09-23T21:01:33"
+}

@@ -1,0 +1,618 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 19,
+  "ordem_no_curso": "95.00",
+  "titulo": "Geometria Espacial - Cilindros",
+  "codigo_aula": "160380",
+  "video_id": "dzZrICrP0+8=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:41:57",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/dzZrICrP0%2B8%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?r=TODAS&a=403898&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Espacial - Cilindros\n\n## Abertura e Contexto da Aula\nVamos dar continuidade à nossa matriz de Matemática. Estamos regravando partes da matriz, especialmente a parte de Geometria Espacial. Este é o primeiro vídeo de sólidos, e hoje vamos começar falando de cilindros: definição, área lateral, volume, fazer algumas questões de treinamento, questões de aprofundamento, e depois partimos para prismas, paralelepípedo e cubo. Pode sair tanto cilindro reto quanto oblíquo; vai ficar bem legal. Vamos passar por todos os principais sólidos geométricos. Inicia agora a nossa parte de Geometria Espacial com cilindros.\n\nGeralmente, essa parte cai bastante em concursos públicos. A nossa matriz, com certeza, traz várias questões, muito treinamento, muita coisa para o serviço.\n\n## Introdução às Figuras Espaciais\nFiguras geométricas espaciais básicas são as principais que veremos, especialmente as que mais caem em concursos públicos. O primeiro sólido é o cilindro.\n\nAgora entramos em três dimensões, o famoso 3D. São três dimensões: comprimento, largura e altura, beleza?\n\nImagine um plano. Nesse plano, construiremos um círculo. Temos também um segmento de reta s, que não é paralelo ao plano e não está contido nele. Ele pode ser perpendicular ou não; pode ser reto ou oblíquo, não tem problema. O que ele não pode é ser paralelo ao plano nem pertencer a ele.\n\nSabemos que em um plano existem infinitos pontos e, consequentemente, infinitas retas. O que aprendemos em Geometria Plana vamos usar agora na Geometria Espacial. Algumas figuras planas vão gerar figuras espaciais.\n\n## Construção do Cilindro Circular\nTemos:\n- Um plano.\n- Uma circunferência de raio r contida nesse plano.\n- Um segmento de reta s que não é paralelo nem contido nesse plano.\n\nUm cilindro circular é a reunião de todos os segmentos congruentes e paralelos a s, com uma extremidade no círculo. É como colocar vários segmentos paralelos apoiados sobre a circunferência, preenchendo toda a borda, gerando a superfície do cilindro. Assim, teremos um círculo “embaixo” (base inferior) e outro “em cima” (base superior), formando o sólido.\n\nEsse segmento s não pertence ao plano, correto? Vamos colocando vários deles com extremidade na circunferência. Todos esses segmentos de reta paralelos entre si geram o cilindro circular.\n\nUm cilindro é uma superfície no espaço 3D, mas podemos considerar “o cilindro” como a região sólida contida pela superfície. Quando nos referirmos ao cilindro como sólido, escreveremos “cilindro” (sólido). Quando for a superfície, simplesmente escrevemos cilindro.\n\nA reta que contém o segmento s é denominada geratriz, porque ela gera o cilindro. A curva no plano é a diretriz (a circunferência base).\n\nQuanto à inclinação de s em relação ao plano:\n- Se s for perpendicular ao plano, o cilindro é reto.\n- Se não for perpendicular, é oblíquo.\n\nA geratriz é o segmento “de lado” que varre a diretriz. No cilindro reto, ela coincide com a altura. No cilindro oblíquo, não coincide.\n\n## Reto x Oblíquo, Geratriz x Altura, Diretriz\nAtenção para não confundir:\n- As retas “de lado” são as geratrizes.\n- A diretriz é a curva da base (circunferência).\n- No cilindro reto, a geratriz coincide com a altura, pois temos 90° com a base.\n- No cilindro oblíquo, a geratriz não é a altura, pois não forma 90° com a base.\n\nLembrem: altura, em qualquer figura, é sempre perpendicular (90°) à base.\n\n## Elementos Geométricos do Cilindro\nÉ importante saber o nome de cada elemento, porque nas questões isso aparece muito.\n\n- Bases: regiões planas limitadas pela diretriz (círculos). Temos base superior e base inferior.\n- Eixo: segmento de reta que liga o centro das duas bases.\n- Altura: distância entre os planos paralelos que contêm as bases. No cilindro reto, coincide com a geratriz; no oblíquo, não.\n- Geratriz: os segmentos paralelos que “varrem” a diretriz e geram a superfície lateral.\n- Diretriz: a circunferência da base.\n\nSobre ângulos:\n- Ângulo reto: 90°.\n- Ângulo agudo: entre 0° e 90°.\n- Ângulo obtuso: entre 90° e 180°.\n\nNo oblíquo, a geratriz forma um ângulo agudo com o plano da base; portanto, não é altura.\n\n## Superfície Lateral e Planificação\nSuperfície lateral: conjunto de todos os pontos do espaço que não estão nas bases, obtidos pelo deslocamento da geratriz sempre apoiada sobre a diretriz.\n\nPense em cortar a “lata” do cilindro com uma tesoura e abrir. Ao planificar, obtemos:\n- Um retângulo (superfície lateral).\n- Dois círculos (as bases).\n\nA planificação do cilindro cai bastante em concursos. Na planificação, saímos do 3D (comprimento, largura e altura) para o 2D (comprimento e largura).\n\n- O retângulo correspondente à área lateral tem:\n  - Uma dimensão igual ao comprimento da diretriz (circunferência): 2πr.\n  - A outra dimensão igual à geratriz (que, no cilindro reto, é a altura).\n\nEntão:\n- Área da base (cada círculo): πr².\n- Área lateral (retângulo): (2πr) × geratriz. No reto, (2πr) × h.\n\nSe for oblíquo, a dimensão vertical do retângulo é a geratriz; se for reto, é a altura (e geratriz = altura).\n\n## Área Total do Cilindro\nSuperfície total (área total) é a reunião da área lateral com as áreas das duas bases:\n- AT = AL + 2 × AB\n- AB = πr²\n- AL = 2πr × h (no cilindro reto) ou 2πr × g (caso a geratriz seja pedida explicitamente)\n\nLogo, no cilindro reto:\n- AT = 2πr² + 2πrh\n\nColocando em evidência:\n- AT = 2πr(r + h)\n\n> 🎯 Dicas de prova: Muitas bancas apresentam a área total fatorada como 2πr(r + h). Saiba identificar e manipular fatorações simples.\n\n## Seção Meridiana\nSecção meridiana de um cilindro é a região poligonal obtida pela interseção de um plano vertical que passa pelo eixo (centro) do cilindro. Visualmente, é como cortar o cilindro “ao meio” com uma chapa vertical passando pelo eixo.\n\nEssa secção, no cilindro reto, é um retângulo de largura igual ao diâmetro (2r) e altura h.\n\n## Classificação dos Cilindros\n- Cilindro circular oblíquo: apresenta geratrizes oblíquas em relação aos planos das bases.\n- Cilindro circular reto: geratrizes perpendiculares aos planos das bases. Também é chamado cilindro de revolução, pois pode ser gerado pela rotação de um retângulo em torno de um de seus lados.\n\nNo cilindro reto (de revolução), a geratriz coincide com a altura.\n\n- Cilindro equilátero: é um cilindro de revolução cuja secção meridiana é um quadrado. Nesse caso:\n  - h = diâmetro = 2r\n  - Geratriz = altura = 2r\n\n> 🎯 Dicas de prova: No cilindro equilátero, use h = 2r para simplificar fórmulas de área e volume.\n\n## Observações Importantes para Problemas\nNo oblíquo, não confunda geratriz com altura. Para volume, precisamos da altura (distância entre os planos das bases). Muitas vezes, será necessário usar Pitágoras para encontrar a altura a partir da geratriz e de algum deslocamento horizontal, quando dado.\n\n## Volume do Cilindro\nVolume é o espaço ocupado. Para o cilindro:\n- V = área da base × altura\n- V = πr² × h\n\nLembre que π é irracional (aprox. 3,1415…).\n\n> 🎯 Dicas de prova: Em cilindro reto, h pode aparecer como a própria geratriz. Em cilindro oblíquo, cuidado: h ≠ geratriz.\n\n## Recapitulação de Áreas\n- Área da base: AB = πr²\n- Área lateral (reto): AL = 2πrh\n- Área total (reto): AT = 2πr² + 2πrh = 2πr(r + h)\n\nEsses temas aparecem muito: calcular área lateral, área total e volume. Saber identificar o que é altura, o que é geratriz e o que é diretriz evita erros comuns.\n\n## Encerramento\nVamos fechar aqui porque daqui a pouco começamos o treinamento, com questões para praticar e aprofundar. Estou voltando com mais Geometria Espacial para vocês. Nesse primeiro momento, cilindros.",
+  "transcricao_meta": {
+    "title": "Geometria Espacial - Cilindros",
+    "subject": "Conhecimentos Específicos",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 43669,
+    "createdAt": "2026-02-11T02:47:01.966Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: conceitos e partes do cilindro, diferenças entre cilindro reto e oblíquo, planificação, fórmulas de área/volume, secção meridiana e casos especiais (cilindro de revolução e cilindro equilátero).\nPrincipais pontos: \n- Altura é sempre a distância perpendicular entre as bases.\n- No cilindro reto, geratriz = altura; no oblíquo, geratriz ≠ altura.\n- Planificação: lateral vira retângulo (2πr × h) e surgem 2 círculos (πr²).\n\n## 1. Base / Conceitos Fundamentais\n- **Tridimensional (3D)**: figura em três dimensões; conecta-se à geometria plana via planificação e secções.\n- **Definição por geração (literal)**:\n  - \"Um cilindro circular é a reunião de todos os segmentos congruentes e paralelos a ser com a extremidade no círculo.\"\n  - \"A reta que contém o segmento a ser [...] denominada geraatriz.\"\n  - \"A curva que fica no plano é a diretriz.\"\n- **Cilindro (superfície) vs ‘cilindro’ (sólido)**:\n  - \"Um cilindro é uma superfície no espaço [...] mas pode considerar o cilindro como região sólida [...].\"\n  - Quando sólido, usar aspas: **‘cilindro’**; sem aspas, refere-se à superfície.\n- **Partes e elementos**:\n  - **Bases**: dois círculos congruentes e paralelos (base superior e base inferior).\n  - **Eixo**: \"segmento de reta que liga o centro das bases do cilindro.\"\n  - **Altura (h)**: \"distância entre dois planos paralelos que contêm as bases do cilindro\" (perpendicular).\n  - **Geraatriz (g)**: segmento paralelo que “varre” a diretriz gerando a superfície lateral.\n  - **Diretriz**: circunferência da base.\n  - **Superfície lateral**: \"conjunto de todos os pontos do espaço que não estejam nas bases, obtido pelo deslocamento da geraatriz sempre apoiada sobre a curva diretriz.\"\n- **Medidas planares essenciais**:\n  - Comprimento da circunferência: 2πr\n  - Área do círculo (base): πr²\n  - π ≈ 3,1415…\n\n> Dica de Prova\n> - Circunferência (contorno) ≠ círculo (região). Diretriz é a circunferência; base é o círculo.\n\n## 2. Como Funciona / Distinções\n- **Classificação pelo ângulo da geratriz com o plano das bases**:\n  - **Cilindro reto (cilindro de revolução)**:\n    - Geratriz perpendicular ao plano das bases (ângulo de noventa graus).\n    - \"No cilindro reto, a geraatriz coincide com a altura.\"\n  - **Cilindro oblíquo**:\n    - Geratriz não é perpendicular (ângulo agudo entre zero e noventa graus ou obtuso entre noventa e cento e oitenta graus).\n    - \"No cilindro oblíquo, a geraatriz não coincide com a altura.\"\n- **Cilindro equilátero** (caso especial do reto):\n  - Secção meridiana é um quadrado.\n  - Relações: g = diâmetro = 2r; como é reto, g = h, logo h = 2r.\n\nTabela – Reto vs Oblíquo vs Equilátero\n- Cilindro reto: g = h; secção meridiana é retângulo (2r × h).\n- Cilindro oblíquo: g ≠ h; secção meridiana não é retângulo simples (tipicamente paralelogramo).\n- Cilindro equilátero: g = h = 2r; secção meridiana é quadrado.\n\n> Dica de Prova\n> - “Cilindro de revolução” é sinônimo de cilindro reto.\n> - “Secção meridiana é um quadrado” → conclua imediatamente: h = 2r.\n\n## 3. Aplicação Prática / Técnicas\n- **Planificação do cilindro**:\n  - Lateral → retângulo de dimensões 2πr (largura) × h (altura, no reto).\n  - Bases → 2 círculos congruentes (πr² cada).\n- **Fórmulas essenciais**:\n  - **Área da base (Ab)**: πr²\n  - **Área lateral (Al)**:\n    - Geral (usando a dimensão “altura” do retângulo de planificação): \n      - Reto: Al = 2πr · h\n      - Se o enunciado usar geratriz para abertura (comum em alguns materiais): Al = 2πr · g; no reto, g = h\n  - **Área total (At)**: Al + 2·Ab\n    - Reto: At = 2πr·h + 2πr² = 2πr(r + h)\n  - **Volume (V)**: V = Ab × h = πr² × h\n- **Roteiro rápido para questões**:\n  1) Classifique: reto, oblíquo ou equilátero.\n  2) Identifique a altura verdadeira (perpendicular). No oblíquo, calcule h (muitas vezes com Teorema de Pitágoras).\n  3) Calcule o que pedem:\n     - Al → 2πr·h (reto) ou 2πr·g (se a lateral for “aberta” pela geratriz dada).\n     - At → 2πr² + Al (prefira fatorar: 2πr(r + h) no reto).\n     - V → πr²·h.\n  4) Verifique se a banca usou forma fatorada (extraia 2πr).\n\n> Dica de Prova\n> - Em cilindro oblíquo, para volume, sempre use a altura perpendicular h, não a geratriz g.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (reto – áreas e volume):\n  - Dados: r = 3, h = 10.\n  - Ab = πr² = 9π\n  - Al = 2πr·h = 2π·3·10 = 60π\n  - At = 2·Ab + Al = 18π + 60π = 78π = 2πr(r + h) = 2π·3·(3 + 10) = 78π\n  - V = πr²·h = 9π·10 = 90π\n- Exemplo 2 (oblíquo – encontrar h via Pitágoras para volume):\n  - Dados: r = 4, geratriz g = 13; a projeção horizontal entre as bases forma triângulo retângulo com h.\n  - Supondo deslocamento horizontal d = 12 (dado do enunciado): h² + d² = g² → h² + 144 = 169 → h = 5.\n  - V = πr²·h = π·16·5 = 80π.\n  - Se pedirem Al e a lateral for “aberta” pela geratriz: Al = 2πr·g = 2π·4·13 = 104π.\n- Exemplo 3 (equilátero – atalho):\n  - Dado: r = 5; equilátero → h = 2r = 10.\n  - V = πr²·h = π·25·10 = 250π.\n  - Al = 2πr·h = 2π·5·10 = 100π.\n  - At = 2πr² + Al = 2π·25 + 100π = 150π = 2πr(r + h) = 2π·5·(5 + 10) = 150π.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - Altura é sempre perpendicular entre os planos das bases. No reto: h = g; no oblíquo: h ≠ g.\n> - Planificação: largura do retângulo é 2πr (perímetro da base), não r.\n> - “Cilindro” (superfície) ≠ ‘cilindro’ (sólido). A banca pode testar a terminologia.\n> - Secção meridiana:\n>   - Reto: retângulo 2r × h (área = 2r·h; perímetro = 2(2r + h)).\n>   - Equilátero: quadrado → conclua h = 2r de imediato.\n> - Em oblíquos, para volume use h; para área lateral, atenção ao que o enunciado considera para “altura” do retângulo na planificação (em muitos contextos didáticos usa-se g para “abrir” a lateral). Leia o enunciado com cuidado.\n\n## 1. Base / Conceitos Fundamentais (Resumo-relâmpago)\n- Cilindro: superfície gerada por geratriz deslocando-se sobre a diretriz (circunferência). ‘Cilindro’ com aspas = sólido.\n- Partes: bases (círculos), eixo, altura (perpendicular), geratriz, superfície lateral.\n- Medidas planas: 2πr, πr².\n\n## 2. Como Funciona / Distinções (Resumo-relâmpago)\n- Reto: g ⟂ base → g = h.\n- Oblíquo: g não ⟂ base → g ≠ h.\n- Equilátero (reto): secção quadrada → h = 2r.\n\n## 3. Técnicas (Resumo-relâmpago)\n- V = πr²·h\n- Al = 2πr·h (reto) | 2πr·g (se a abertura usar g)\n- At = 2πr² + Al = 2πr(r + h) no reto\n- Sempre cheque se é reto/oblíquo e identifique h corretamente.",
+  "resumo_bolso": "# Geometria Espacial - Cilindros\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Cilindro circular**: superfície gerada pela **geratriz** (segmento) que se desloca paralelamente, apoiada na **diretriz** (circunferência da base).\n* **‘Cilindro’ (sólido)**: região sólida limitada pela superfície cilíndrica + duas bases circulares. Sem aspas = superfície; com aspas = sólido.\n* **Bases**: dois **círculos** congruentes e paralelos (não confundir com circunferência).\n* **Diretriz**: **circunferência** da base (contorno).\n* **Geratriz (g)**: segmento paralelo que “varre” a diretriz gerando a superfície lateral.\n* **Altura (h)**: distância **perpendicular** entre os planos das bases.\n* **Eixo**: segmento que liga os centros das bases.\n* **Superfície lateral**: conjunto de pontos gerados pelo deslocamento da geratriz, excluídas as bases.\n* **Medidas planas básicas**: circunferência = 2πr; área do círculo (base) = πr².\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Cilindro reto (de revolução) vs Cilindro oblíquo vs Cilindro equilátero\n\n| Aspecto | Reto (de revolução) | Oblíquo | Equilátero |\n|--------|----------------------|---------|------------|\n| Geratriz x base | g ⟂ plano das bases | g não ⟂ plano das bases | g ⟂ plano das bases |\n| Relação g, h | g = h | g ≠ h | g = h = 2r |\n| Secção meridiana | Retângulo 2r × h | Paralelogramo (não retângulo simples) | Quadrado (lado = 2r) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Área da base (Ab)**  \n* Ab = **πr²**.  \n\n---\n\n**2. Área lateral (Al)**  \n\n* Planificação: lateral vira retângulo com uma dimensão = **perímetro da base (2πr)**.  \n* Cilindro reto:  \n  * Al = **2πr · h**.  \n* Quando a abertura usa a geratriz:  \n  * Al = **2πr · g**; no reto, g = h.  \n\n---\n\n**3. Área total (At)**  \n\n* Fórmula geral: **At = Al + 2·Ab**.  \n* Cilindro reto:  \n  * At = 2πr·h + 2πr² = **2πr(r + h)**.  \n\n---\n\n**4. Volume (V)**  \n\n* V = **Ab · h = πr² · h** (h sempre perpendicular).  \n\n---\n\n**5. Cilindro equilátero**\n\n* Cilindro reto cuja secção meridiana é um **quadrado**.  \n* Relações: **g = diâmetro = 2r**; como é reto, **g = h**, logo **h = 2r**.  \n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Altura é sempre a distância **perpendicular** entre os planos das bases. No reto: **h = g**; no oblíquo: **h ≠ g**.\n* Na planificação, a **largura** do retângulo lateral é **2πr** (perímetro da base), não r.\n* “Cilindro” (superfície) ≠ **‘cilindro’** (sólido).\n* “Cilindro de revolução” é sinônimo de **cilindro reto**.\n* “Secção meridiana é um quadrado” → conclua imediatamente: **h = 2r** (cilindro equilátero).\n\n---\n\n## 📋 Checklist Final\n\n* Identifiquei corretamente **bases**, **eixo**, **altura (h)**, **geratriz (g)**, **diretriz** e **superfície lateral**.\n* Sei diferenciar **cilindro reto**, **oblíquo** e **equilátero** (relação entre g e h e forma da secção meridiana).\n* Lembro que, na **planificação**, a lateral é um retângulo 2πr × h (ou 2πr × g, conforme o enunciado) e surgem 2 bases circulares (πr² cada).\n* Para qualquer cilindro, uso **V = πr²·h**, sempre com **h perpendicular** às bases.\n* Para cilindro reto, uso **Al = 2πr·h** e **At = Al + 2·Ab = 2πr(r + h)**; se for **equilátero**, aplico o atalho **h = 2r**.",
+  "mapa_mental": "# 🧮 Geometria Espacial – Cilindros\n## 🎯 Conceitos Fundamentais\n### 💡 Definição e Natureza\n- Sólido tridimensional\n- Superfície cilíndrica\n- Região sólida \"cilindro\"\n- Diretriz circunferência\n- Geratriz segmento paralelo\n### 🧱 Partes do Cilindro\n- Bases circulares\n- Círculos congruentes\n- Eixo centros das bases\n- Altura distância perpendicular\n- Superfície lateral\n### 📏 Medidas Planas\n- Raio r\n- Diâmetro 2r\n- Circunferência 2πr\n- Área base πr²\n- Constante π\n\n## 🗺️ Classificações e Secções\n### 🎯 Reto x Oblíquo\n- Cilindro reto\n- Geratriz perpendicular\n- Reto: g = h\n- Cilindro oblíquo\n- Oblíquo: g ≠ h\n### 🧮 Cilindro Equilátero\n- Caso especial reto\n- Secção quadrada\n- Relação h = 2r\n- g = h = 2r\n- Secção 2r × 2r\n### 📐 Secção Meridiana\n- Plano eixo\n- Reto: retângulo\n- Medidas 2r e h\n- Equilátero: quadrado\n- Oblíquo: paralelogramo\n\n## 📊 Planificação e Fórmulas\n### 🔄 Planificação\n- Lateral retângulo\n- Dimensões 2πr × h\n- Bases dois círculos\n- Área círculo πr²\n- Relação plano–espacial\n### 🧮 Áreas Principais\n- Área base Ab = πr²\n- Área lateral Al\n- Reto: Al = 2πrh\n- Geral: Al = 2πrg\n- Área total At\n### 📊 Área Total e Volume\n- At = Al + 2Ab\n- Reto: At = 2πr(r + h)\n- Volume V = Ab·h\n- V = πr²h\n- Volume usa altura h",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Conceitos do Cilindro",
+      "description": "Conceitos do Cilindro — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como é definido um cilindro circular?",
+          "back": "A reunião de todos os segmentos **congruentes e paralelos** à geratriz, com extremidade no círculo da base.",
+          "hint": "Pense na união de segmentos paralelos.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a função da **geratriz** na formação de um cilindro?",
+          "back": "Gerar o **cilindro** por meio do deslocamento de segmentos paralelos apoiados sobre a diretriz.",
+          "hint": "É o elemento que gera o sólido.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "O que representa a **diretriz** de um cilindro?",
+          "back": "A **curva** que fica no plano da base.",
+          "hint": "Localizada no plano da base.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Quantas bases possui um cilindro circular?",
+          "back": "Duas.",
+          "hint": "Quantidade numérica simples.",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Elementos do Cilindro",
+      "description": "Elementos do Cilindro — 1 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como é definida a altura de um cilindro?",
+          "back": "A distância entre dois **planos paralelos** que contêm as bases do cilindro.",
+          "hint": "Distância entre dois planos.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Áreas e Volume",
+      "description": "Áreas e Volume — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual é a fórmula da área de cada base circular de raio r?",
+          "back": "$\\pi r^2$",
+          "hint": "Fórmula geométrica básica do círculo.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a fórmula da área lateral de um cilindro de raio r e geratriz g?",
+          "back": "$2\\pi r g$",
+          "hint": "Envolve o perímetro da base.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Como se calcula o volume de um cilindro?",
+          "back": "O produto da **área da base** pela altura.",
+          "hint": "Princípio de Cavalieri.",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Classificação dos Cilindros",
+      "description": "Classificação dos Cilindros — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é a diferença entre um cilindro circular reto e um oblíquo?",
+          "back": "No reto a **geratriz** é perpendicular às bases; no oblíquo, não.",
+          "hint": "Ângulo da geratriz com a base.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-10",
+          "front": "Por qual outro nome é conhecido o cilindro circular reto?",
+          "back": "Cilindro de **revolução**.",
+          "hint": "Termo associado a rotação.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Em um cilindro circular reto, qual relação existe entre geratriz e altura?",
+          "back": "A **geratriz** coincide com a altura.",
+          "hint": "Comparação de medidas lineares.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Quando um cilindro circular reto é classificado como equilátero?",
+          "back": "Possuir a secção meridiana em forma de **quadrado**.",
+          "hint": "Forma geométrica da seção.",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Seções do Cilindro",
+      "description": "Seções do Cilindro — 1 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Que tipo de região plana resulta da seção meridiana de um cilindro?",
+          "back": "Uma região **poligonal**.",
+          "hint": "Classificação da figura resultante.",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindros"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a fórmula correta para calcular o volume de um cilindro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "V = πrh², onde r é o raio da base e h é a altura",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula V = πrh² está incorreta para o cálculo do volume de um cilindro. A altura (h) deve ser multiplicada pela área da base (πr²), e não elevada ao quadrado em conjunto com o raio."
+        },
+        {
+          "id": "b",
+          "text": "V = πr²h, onde r é o raio da base e h é a altura",
+          "correct": true,
+          "explanation": "Correta. A fórmula para o volume de um cilindro é a área da base multiplicada pela altura. Como a base de um cilindro circular é um círculo, sua área é πr², e, portanto, o volume é V = πr²h."
+        },
+        {
+          "id": "c",
+          "text": "V = 2πrh, onde r é o raio da base e h é a altura",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula V = 2πrh representa a área lateral de um cilindro, e não o seu volume. A área lateral descreve a superfície curva do cilindro, enquanto o volume descreve o espaço tridimensional que ele ocupa."
+        },
+        {
+          "id": "d",
+          "text": "V = πr³, onde r é o raio da base",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula V = πr³ não corresponde ao cálculo do volume de um cilindro. Essa fórmula é mais similar à do volume de uma esfera (4/3πr³) ou pode ser confundida com alguma potência do raio sem a dimensão da altura, o que a torna incorreta para o cilindro."
+        }
+      ],
+      "explanation": "Correta. A fórmula para o volume de um cilindro é a área da base multiplicada pela altura. Como a base de um cilindro circular é um círculo, sua área é πr², e, portanto, o volume é V = πr²h.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em um cilindro, qual é o nome dado à curva que fica no plano da base?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Secção meridiana",
+          "correct": false,
+          "explanation": "Incorreta. A secção meridiana é a figura plana obtida ao cortar o cilindro por um plano que passa pelo seu eixo. Em um cilindro reto, a secção meridiana é um retângulo, mas ela não é a curva que fica no plano da base."
+        },
+        {
+          "id": "b",
+          "text": "Eixo",
+          "correct": false,
+          "explanation": "Incorreta. O eixo de um cilindro é o segmento de reta que liga os centros das duas bases. Ele representa a linha central do cilindro, não a curva de sua base."
+        },
+        {
+          "id": "c",
+          "text": "Geratriz",
+          "correct": false,
+          "explanation": "Incorreta. A geratriz é o segmento de reta que, ao se deslocar paralelamente a si mesmo, gera a superfície lateral do cilindro. Ela representa a 'altura' ou o 'lado' do cilindro, mas não a curva da base."
+        },
+        {
+          "id": "d",
+          "text": "Diretriz",
+          "correct": true,
+          "explanation": "Correta. A diretriz é a curva plana que define o formato da base do cilindro. Em um cilindro circular, a diretriz é a circunferência da base."
+        }
+      ],
+      "explanation": "Correta. A diretriz é a curva plana que define o formato da base do cilindro. Em um cilindro circular, a diretriz é a circunferência da base.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quantas bases possui um cilindro circular?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Nenhuma base, apenas superfície lateral",
+          "correct": false,
+          "explanation": "Incorreta. Um cilindro é um sólido geométrico que, por definição, é delimitado por duas bases e uma superfície lateral. A ausência de bases caracterizaria uma superfície aberta ou uma figura diferente."
+        },
+        {
+          "id": "b",
+          "text": "Uma base circular",
+          "correct": false,
+          "explanation": "Incorreta. Um cilindro possui duas bases, uma superior e outra inferior, e não apenas uma."
+        },
+        {
+          "id": "c",
+          "text": "Duas bases circulares paralelas e congruentes",
+          "correct": true,
+          "explanation": "Correta. Um cilindro circular possui duas bases que são círculos, localizadas em planos paralelos e que são congruentes (têm o mesmo raio e forma)."
+        },
+        {
+          "id": "d",
+          "text": "Três bases circulares",
+          "correct": false,
+          "explanation": "Incorreta. Um cilindro possui apenas duas bases, não três. A ideia de três bases pode ser confundida com outras figuras geométricas como pirâmides ou prismas de base triangular, mas não se aplica a cilindros."
+        }
+      ],
+      "explanation": "Correta. Um cilindro circular possui duas bases que são círculos, localizadas em planos paralelos e que são congruentes (têm o mesmo raio e forma).",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "O que caracteriza um cilindro circular reto em relação à posição da geratriz?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A geratriz é perpendicular ao plano da base, formando 90 graus",
+          "correct": true,
+          "explanation": "Correta. Em um cilindro circular reto, a geratriz é perpendicular ao plano da base, formando um ângulo de 90 graus. Isso significa que a altura do cilindro é igual ao comprimento da geratriz."
+        },
+        {
+          "id": "b",
+          "text": "A geratriz está contida no plano da base",
+          "correct": false,
+          "explanation": "Incorreta. A geratriz não pode estar contida no plano da base, pois ela é o segmento que conecta as duas bases do cilindro, formando a superfície lateral. Se estivesse contida na base, o cilindro não teria altura."
+        },
+        {
+          "id": "c",
+          "text": "A geratriz é paralela ao plano da base",
+          "correct": false,
+          "explanation": "Incorreta. Se a geratriz fosse paralela ao plano da base, não haveria formação de um sólido tridimensional com altura, mas sim uma figura plana ou uma linha. A geratriz conecta os pontos correspondentes nas duas bases."
+        },
+        {
+          "id": "d",
+          "text": "A geratriz forma um ângulo agudo com o plano da base",
+          "correct": false,
+          "explanation": "Incorreta. A geratriz formar um ângulo agudo com o plano da base é uma característica de um cilindro oblíquo, onde a geratriz não é perpendicular à base."
+        }
+      ],
+      "explanation": "Correta. Em um cilindro circular reto, a geratriz é perpendicular ao plano da base, formando um ângulo de 90 graus. Isso significa que a altura do cilindro é igual ao comprimento da geratriz.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "O que diferencia um cilindro oblíquo de um cilindro reto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "No cilindro oblíquo, a geratriz não é perpendicular ao plano da base, enquanto no cilindro reto a geratriz forma 90 graus com a base",
+          "correct": true,
+          "explanation": "Correta. A principal diferença entre um cilindro oblíquo e um cilindro reto reside na inclinação da geratriz em relação ao plano da base. No cilindro oblíquo, a geratriz não é perpendicular à base (forma um ângulo diferente de 90 graus), enquanto no cilindro reto, a geratriz é perpendicular à base, formando um ângulo de 90 graus."
+        },
+        {
+          "id": "b",
+          "text": "No cilindro oblíquo, as bases são elípticas, enquanto no cilindro reto são circulares",
+          "correct": false,
+          "explanation": "Incorreta. Em ambos os tipos de cilindro (reto ou oblíquo), as bases são circulares. A forma elíptica pode aparecer em seções transversais oblíquas do cilindro, mas não nas suas bases que o definem."
+        },
+        {
+          "id": "c",
+          "text": "No cilindro oblíquo, as bases têm raios diferentes, enquanto no cilindro reto as bases têm o mesmo raio",
+          "correct": false,
+          "explanation": "Incorreta. Tanto no cilindro oblíquo quanto no cilindro reto, as bases são circulares e congruentes (têm o mesmo raio). A diferença não está no raio das bases, mas na inclinação da geratriz."
+        },
+        {
+          "id": "d",
+          "text": "No cilindro oblíquo, a altura é maior que a geratriz, enquanto no cilindro reto são iguais",
+          "correct": false,
+          "explanation": "Incorreta. No cilindro oblíquo, a altura (distância perpendicular entre as bases) é sempre menor que o comprimento da geratriz, pois a geratriz é inclinada. No cilindro reto, a altura é igual ao comprimento da geratriz, pois ela é perpendicular à base. A afirmação inverte essa relação para o cilindro oblíquo."
+        }
+      ],
+      "explanation": "Correta. A principal diferença entre um cilindro oblíquo e um cilindro reto reside na inclinação da geratriz em relação ao plano da base. No cilindro oblíquo, a geratriz não é perpendicular à base (forma um ângulo diferente de 90 graus), enquanto no cilindro reto, a geratriz é perpendicular à base, formando um ângulo de 90 graus.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quando a planificação da superfície lateral de um cilindro é realizada, qual figura geométrica plana é obtida?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um quadrado cujos lados correspondem ao diâmetro da base do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. Um quadrado é um tipo específico de retângulo onde todos os lados são iguais. A planificação de um cilindro só resultaria em um quadrado se a altura (geratriz) fosse igual ao comprimento da circunferência da base, o que não é uma característica geral de todos os cilindros. Além disso, os lados do quadrado não corresponderiam apenas ao diâmetro, mas sim ao comprimento da circunferência e à geratriz."
+        },
+        {
+          "id": "b",
+          "text": "Um paralelogramo cujos lados correspondem aos raios das bases do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. Um paralelogramo é uma figura com lados opostos paralelos, mas a planificação da superfície lateral de um cilindro é especificamente um retângulo, onde os ângulos são retos. Além disso, os lados do paralelogramo não corresponderiam aos raios, mas sim ao comprimento da circunferência e à geratriz."
+        },
+        {
+          "id": "c",
+          "text": "Um trapézio cujas bases paralelas correspondem às circunferências das bases do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. A planificação da superfície lateral de um cilindro não resulta em um trapézio. Um trapézio possui apenas um par de lados paralelos, o que não corresponde à estrutura de um cilindro."
+        },
+        {
+          "id": "d",
+          "text": "Um retângulo cuja base corresponde ao comprimento da circunferência e a altura corresponde à geratriz",
+          "correct": true,
+          "explanation": "Correta. Ao \"abrir\" a superfície lateral de um cilindro, como se fosse um rótulo de lata, obtém-se um retângulo. A base desse retângulo corresponde ao comprimento da circunferência da base do cilindro (2πr), e a altura do retângulo corresponde à geratriz (ou altura, em cilindros retos) do cilindro."
+        }
+      ],
+      "explanation": "Correta. Ao \"abrir\" a superfície lateral de um cilindro, como se fosse um rótulo de lata, obtém-se um retângulo. A base desse retângulo corresponde ao comprimento da circunferência da base do cilindro (2πr), e a altura do retângulo corresponde à geratriz (ou altura, em cilindros retos) do cilindro.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "O que caracteriza um cilindro equilátero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É um cilindro de revolução cuja secção meridiana é um quadrado, com a geratriz igual ao diâmetro da base",
+          "correct": true,
+          "explanation": "Correta. Um cilindro equilátero é um cilindro de revolução (ou seja, reto) cuja secção meridiana (o corte feito por um plano vertical que passa pelo centro do cilindro) é um quadrado. Isso implica que a altura (geratriz) do cilindro é igual ao diâmetro da base (2r)."
+        },
+        {
+          "id": "b",
+          "text": "É um cilindro cuja altura é igual ao raio da base",
+          "correct": false,
+          "explanation": "Incorreta. Um cilindro cuja altura é igual ao raio da base não é a definição de cilindro equilátero. A relação no cilindro equilátero envolve o diâmetro da base e a altura/geratriz."
+        },
+        {
+          "id": "c",
+          "text": "É um cilindro cujas bases têm áreas iguais à área lateral",
+          "correct": false,
+          "explanation": "Incorreta. Embora a relação entre áreas possa ser calculada, a definição de cilindro equilátero é geométrica, baseada na forma de sua secção meridiana e na relação entre sua altura e o diâmetro da base, e não na igualdade entre a área da base e a área lateral."
+        },
+        {
+          "id": "d",
+          "text": "É um cilindro cuja geratriz é o dobro da altura",
+          "correct": false,
+          "explanation": "Incorreta. A geratriz ser o dobro da altura não define um cilindro equilátero. No cilindro equilátero, a geratriz (que é igual à altura por ser um cilindro reto) é igual ao diâmetro da base, ou seja, duas vezes o raio."
+        }
+      ],
+      "explanation": "Correta. Um cilindro equilátero é um cilindro de revolução (ou seja, reto) cuja secção meridiana (o corte feito por um plano vertical que passa pelo centro do cilindro) é um quadrado. Isso implica que a altura (geratriz) do cilindro é igual ao diâmetro da base (2r).",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "O que é a secção meridiana de um cilindro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É a região circular obtida pela interseção de um plano horizontal que passa pelo centro do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. A secção meridiana é obtida por um plano vertical, não horizontal. Um plano horizontal que passa pelo centro resultaria em um círculo, que é a própria base do cilindro, e não uma secção meridiana."
+        },
+        {
+          "id": "b",
+          "text": "É a região poligonal obtida pela interseção de um plano vertical que passa pelo centro do cilindro com o cilindro",
+          "correct": true,
+          "explanation": "Correta. A secção meridiana de um cilindro é a figura plana resultante da interseção do cilindro com um plano que contém o eixo do cilindro. Para um cilindro circular, essa secção é um retângulo (no caso de cilindro reto) ou um paralelogramo (no caso de cilindro oblíquo), cujos lados são a geratriz e o diâmetro da base."
+        },
+        {
+          "id": "c",
+          "text": "É a região anular formada pela diferença entre as áreas das duas bases do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. A região anular formada pela diferença entre as áreas das bases não tem relação com a secção meridiana. Essa descrição se refere a uma coroa circular, que é uma figura plana, e não a um corte tridimensional do cilindro."
+        },
+        {
+          "id": "d",
+          "text": "É a superfície lateral do cilindro quando planificada em um plano",
+          "correct": false,
+          "explanation": "Incorreta. A superfície lateral planificada é um retângulo (para cilindros retos) ou um paralelogramo (para cilindros oblíquos), mas não é chamada de secção meridiana. A secção meridiana é um corte, não uma planificação."
+        }
+      ],
+      "explanation": "Correta. A secção meridiana de um cilindro é a figura plana resultante da interseção do cilindro com um plano que contém o eixo do cilindro. Para um cilindro circular, essa secção é um retângulo (no caso de cilindro reto) ou um paralelogramo (no caso de cilindro oblíquo), cujos lados são a geratriz e o diâmetro da base.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Por que um cilindro circular reto também é chamado de cilindro de revolução?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque pode ser construído pela rotação de um trapézio em torno de sua base maior",
+          "correct": false,
+          "explanation": "Incorreta. A rotação de um trapézio em torno de sua base maior ou menor pode gerar um tronco de cone ou outras figuras, mas não um cilindro circular reto. Para gerar um cilindro, a figura a ser rotacionada deve ser um retângulo."
+        },
+        {
+          "id": "b",
+          "text": "Porque pode ser gerado pela rotação de um retângulo em torno de um de seus lados",
+          "correct": true,
+          "explanation": "Correta. Um cilindro circular reto pode ser gerado pela rotação de um retângulo em torno de um de seus lados como eixo. O lado que serve de eixo se torna a altura do cilindro, e o outro lado se torna o raio da base."
+        },
+        {
+          "id": "c",
+          "text": "Porque pode ser obtido pela rotação de um triângulo retângulo em torno de um de seus catetos",
+          "correct": false,
+          "explanation": "Incorreta. A rotação de um triângulo retângulo em torno de um de seus catetos gera um cone, e não um cilindro."
+        },
+        {
+          "id": "d",
+          "text": "Porque pode ser formado pela revolução de um círculo ao longo de uma trajetória circular",
+          "correct": false,
+          "explanation": "Incorreta. A revolução de um círculo ao longo de uma trajetória circular geraria uma figura como um toro (anel), e não um cilindro simples."
+        }
+      ],
+      "explanation": "Correta. Um cilindro circular reto pode ser gerado pela rotação de um retângulo em torno de um de seus lados como eixo. O lado que serve de eixo se torna a altura do cilindro, e o outro lado se torna o raio da base.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Em um cilindro oblíquo, qual é a relação entre a geratriz e a altura?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A geratriz coincide com a altura, pois ambas são perpendiculares à base",
+          "correct": false,
+          "explanation": "Incorreta. A geratriz coincide com a altura apenas em cilindros retos, onde a geratriz é perpendicular às bases. Em um cilindro oblíquo, a geratriz é inclinada em relação às bases."
+        },
+        {
+          "id": "b",
+          "text": "A geratriz é sempre o dobro da altura, independentemente da inclinação",
+          "correct": false,
+          "explanation": "Incorreta. Não há uma relação fixa de que a geratriz seja o dobro da altura em cilindros oblíquos. A relação entre geratriz e altura depende do ângulo de inclinação da geratriz em relação à base."
+        },
+        {
+          "id": "c",
+          "text": "A geratriz não coincide com a altura, sendo necessário aplicar o teorema de Pitágoras para calcular a altura quando se conhece a geratriz",
+          "correct": true,
+          "explanation": "Correta. Em um cilindro oblíquo, a geratriz é inclinada em relação às bases, formando um ângulo diferente de 90 graus. A altura é a distância perpendicular entre as bases. Assim, a geratriz, a altura e a projeção da geratriz na base formam um triângulo retângulo, permitindo o uso do teorema de Pitágoras para relacionar essas medidas."
+        },
+        {
+          "id": "d",
+          "text": "A geratriz é sempre menor que a altura, pois forma um ângulo obtuso com a base",
+          "correct": false,
+          "explanation": "Incorreta. Em um cilindro oblíquo, a geratriz é sempre maior que a altura. A altura é a distância perpendicular entre as bases, enquanto a geratriz é a medida da linha inclinada que conecta as bases."
+        }
+      ],
+      "explanation": "Correta. Em um cilindro oblíquo, a geratriz é inclinada em relação às bases, formando um ângulo diferente de 90 graus. A altura é a distância perpendicular entre as bases. Assim, a geratriz, a altura e a projeção da geratriz na base formam um triângulo retângulo, permitindo o uso do teorema de Pitágoras para relacionar essas medidas.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "19_160380_Geometria Espacial - Cilindros.pdf",
+  "coletado_em": "2026-09-23T21:08:16"
+}

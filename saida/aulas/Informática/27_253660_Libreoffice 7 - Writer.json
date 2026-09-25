@@ -1,0 +1,280 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 27,
+  "ordem_no_curso": "60.00",
+  "titulo": "Libreoffice 7 - Writer",
+  "codigo_aula": "253660",
+  "video_id": "BIv5PZBcw6o=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:29:57",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/BIv5PZBcw6o%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405129%2C405131%2C420467&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Libreoffice 7 - Writer\n\n## Apresentação e Mentalidade de Estudo\nEu sou o Jefferson Bogo, professor de Informática do Gran Cursos Online. Está aqui meu nome, a disciplina e aquela frase que eu gosto muito: “A excelência, portanto, não é um feito, mas um hábito.” A partir dessa ideia, você vai aplicar o processo jesuítico: repetição com correção até a exaustão nos leva à perfeição. Para você que está estudando, repetição com correção até a exaustão também leva à aprovação.\n\nEntão vamos com fé e com muita energia para termos uma aula bem proveitosa. Vem comigo para conhecer o tema da nossa aula.\n\n## Visão Geral do Pacote LibreOffice\nHoje vamos abordar o pacote LibreOffice. Na verdade, vou falar de um dos programas do pacote. Se não deu para entender ainda: pacote é um conjunto que contém vários programas. Vou te apresentar três deles aqui. Existem outros, mas a ênfase em concursos está nesses três, porque é importante conhecer o pacote, saber suas diferenças em relação ao Microsoft Office. Mesmo que no seu edital não traga o outro pacote, é quase impossível não fazer a comparação, porque o Office é mais conhecido e, às vezes, mais usado.\n\nPara não alongar demais: o pacote tem programas que talvez você já tenha usado, ou pelo menos visto ou ouvido falar. Para concurso, são imprescindíveis. Cai muito. Mas, como eu disse, pode vir no seu edital só o pacote LibreOffice. Então, vem comigo nesse passeio.\n\nDentro do LibreOffice:\n- Temos o Writer, que é um editor de textos, similar ao Word do Office. Caso não tenha o Word no seu edital, não se preocupe: é só para comparação, para você entender que é um programa para escrever e editar textos.\n- Temos o Calc, similar ao Excel, para trabalhar com planilhas eletrônicas.\n- E temos o Impress, similar ao PowerPoint, para apresentações — como esta que estou usando agora.\n\nComo eu disse, a ênfase são esses três principais programas. Não são os únicos. Mas a nossa aula de hoje é sobre o Writer, um editor de textos — um programa para escrever textos. E quando eu falo “escrever textos”, eu também posso colocar imagens. Não é um programa próprio para edição avançada de imagens, mas você pode inserir imagens e fazer outras coisas.\n\nEle permite criar, editar e também apenas ler um documento (se você recebeu de alguém e quer abrir para ler). “Pode usar o Writer para abrir?” Pode — vai depender da extensão do arquivo.\n\nSe você ainda não sabe muito sobre extensões, acompanha, porque daqui a pouco vou trabalhar as principais extensões com que ele lida e o que é uma extensão. Adiantando: a extensão diz ao Windows (ou ao sistema operacional) com qual programa o arquivo será aberto. Se estiver vinculado ao Writer, vai abrir com o Writer; pode estar vinculado a outro programa também.\n\n## Formas de Iniciar o LibreOffice e o Writer\nVou minimizar aqui e te mostrar duas maneiras básicas de iniciar:\n\n- Pelo atalho geral do LibreOffice na Área de Trabalho. Ao abrir por ele, você pode escolher entre os programas do pacote (Writer, Calc, Impress, etc.). Aparece uma janela inicial com essas opções. Vou fechá-la.\n- Buscando diretamente pelo Writer no menu Iniciar e abrindo-o. Quando abro direto pelo atalho do Writer, ele já entra no Writer, sem a tela inicial do pacote.\n\nIsso não é enfeite, não: são coisas que podem cair na prova.\n\n> 🎯 Dicas de prova: Abrindo pelo atalho do pacote LibreOffice, aparece a tela inicial com a escolha dos programas. Abrindo pelo atalho direto do Writer, o Writer abre diretamente.\n\nSe eu quiser, posso fixar o Writer na barra de tarefas (recurso do Windows) com o botão direito e “Fixar na barra de tarefas”. Vou fechar aqui sem salvar. Criei um ícone lá embaixo — isso é do Windows, não do programa. Esse ícone fixado abre o Writer com um único clique. Já o atalho do pacote abre a janela do pacote.\n\nNão vamos perder tempo aqui; vou abrir várias vezes para te mostrar um PDF que vai estar disponível para você acompanhar a aula. Deixa eu explicar: neste material, algumas páginas já estão preenchidas; em outras, há campos a serem preenchidos. Objetivo: você pode imprimir e, depois de assistir à aula, tentar preencher sozinho; ou preencher junto durante a aula e depois sozinho. Faça como preferir. Se não quiser imprimir, não tem problema — é um recurso a mais, não imprescindível.\n\n## Tela Inicial do Writer e Elementos da Interface\nAcompanha comigo esta tela. Coloquei “Tela inicial” — é justamente esta que está aqui no programa. Muitos detalhes sobre ela podem ser cobrados em prova.\n\n- 1) Barra de Título: Exibe o nome do documento e do programa. Pode parecer óbvio, mas eu já vi prova mostrando a janela de um programa e perguntando qual é. Se a pessoa não sabe olhar a barra de título, erra. Aqui aparece algo como “Sem título 1 — LibreOffice Writer”.\n\nEu vou dar mais um destaque: quando eu falar “clicar”, considera botão esquerdo do mouse (padrão de prova). Se for botão direito, eu aviso. No botão direito na barra de título, aparecem opções como Restaurar, Mover, Minimizar, Maximizar e Fechar janela. Duplo clique na barra de título alterna entre Restaurar e Maximizar. No canto direito, temos:\n- Fechar (X),\n- Maximizar/Restaurar (dois quadradinhos quando maximizado; um quadrado quando restaurado),\n- Minimizar (traço).\n\n- 2) Barra de Menus: Arquivo, Editar, Exibir, Inserir, Formatar, Estilos, Tabela, Formulário, Ferramentas, Janela e Ajuda. Ao longo da aula, vamos abrir esses menus e dar foco nas funcionalidades mais cobradas.\n\nEu sempre deixo claro: nossa aula é 100% focada em concursos. Meu objetivo não é que você saia daqui um especialista em usar o Writer no dia a dia. Pode te ajudar, claro, mas a ênfase é prova. É impossível cobrir cada detalhe — ficaríamos uma semana só nisso. Pode cair algo que eu não falei? Pode. Às vezes o examinador procura um botão que ninguém usa, só por maldade. A gente foca no que é cobrado.\n\nSe surgir atalho ou detalhe que não esteja no slide, anote. Se eu não falei e caiu na prova, paciência; você pode aprofundar. Não entendeu algo? Fórum de dúvidas — estou junto com você nessa.\n\nUm ponto importante: no LibreOffice há muitas funções redundantes — a mesma opção em menus diferentes. A banca pode cobrar de um menu ou de outro. É bom saber dessas redundâncias quando for relevante.\n\n- 3) Barra de Ferramentas Padrão: Ícones gerais, pode ser personalizada.\n- 4) Barra de Formatação: Fonte, tamanho, negrito, itálico, sublinhado, tachado, etc. Saber o nome exato da barra não é imprescindível, mas ajuda.\n- Barras de rolagem: para rolar o documento vertical e, se necessário, horizontalmente.\n- 7) Página (área de edição): a área onde você escreve e edita o documento.\n- 8) Barra de Status (embaixo): pode ser personalizada com o botão direito; mostra informações como número de páginas, estilo de página, idioma, e o nível de zoom.\n- 9) Zoom: por exemplo, de 20% a 600%.\n\n> 🎯 Dicas de prova: No Writer, o zoom vai de 20% até 600%.\n\nAo final deste bloco, vamos resolver questões. E eu sempre recomendo: resolva mais questões além das da aula. Use o Gran Questões, vá atrás de mais itens.\n\nVou tirar um pouco o zoom aqui — eu sei que o zoom grande pode atrapalhar algumas pessoas. Se incomodar, peço desculpas, mas preciso usar.\n\n## Características do LibreOffice 7 e Licença\nAgora, na próxima página do material, temos “Principais características do LibreOffice 7”. Você pode preencher, se quiser.\n\n- Tipo de licença: Software livre. Isso já é suficiente para muitas questões. Se seu edital cobrar, vale lembrar: software livre é aquele em que tenho acesso ao código-fonte (a “receita”). O LibreOffice é um exemplo de software livre.\n\n> 🎯 Dicas de prova: O Writer é parte do LibreOffice, que é software livre. Não é software proprietário.\n\n## Extensões de Arquivo e Conceitos\nExtensão padrão: todo arquivo tem um nome ponto extensão. A extensão não precisa ter exatamente três letras; pode ter mais. A extensão indica ao sistema operacional de que tipo de arquivo se trata e com qual programa abrir.\n\nVou clicar em Salvar. Detalhe interessante: quando há algo para salvar, o ícone de disquete fica com um asterisco/vermelho (indicando alterações não salvas). Lá embaixo, na barra de status, também aparece o aviso.\n\nPor padrão, o Writer salva em Documentos do usuário. Eu vou alterar a pasta só para facilitar na demonstração. A extensão padrão do Writer é ODT (do inglês OpenDocument Text), um formato aberto (padrão ODF — OpenDocument Format). É uma extensão aberta: qualquer um pode implementar suporte.\n\n> 🎯 Dicas de prova: A extensão padrão do Writer é .odt (OpenDocument Text), do padrão ODF (formato aberto).\n\n“É a única extensão com que o Writer trabalha?” Não. Ele trabalha com outras também. Daqui a pouco falo mais.\n\n## Compatibilidade com Microsoft Word (DOC/DOCX)\nO Writer é compatível com arquivos do Word?\n\nSim. Ele abre e salva documentos DOC e DOCX.\n\nVou usar a opção “Salvar como” para mostrar. Consigo escolher “Microsoft Word 2007–365 (.docx)” e salvar nesse formato. Dá para ver ali na lista de tipos outras extensões suportadas. Você pode anotar.\n\n> 🎯 Dicas de prova: O Writer abre e salva em DOC e DOCX. Pode ocorrer perda de formatação ao abrir/salvar entre formatos diferentes (tanto do Word no Writer quanto vice-versa).\n\nNem tudo são flores. Em documentos muito complexos, a chance de mudar algo na formatação é maior. Em documentos simples, costuma não ter problema.\n\n## Nome Padrão na Barra de Título\nO Writer utiliza “Sem título 1”, “Sem título 2”, “Sem título 3” como nome padrão para novos documentos ainda não salvos. Se eu tentar salvar com um nome que já existe na mesma pasta e mesma extensão, ele avisa sobre conflito: não é permitido ter dois arquivos com o mesmo nome, no mesmo local, com a mesma extensão.\n\n> 🎯 Dicas de prova: Não é possível ter dois arquivos com o mesmo nome, no mesmo local, e com a mesma extensão.\n\n## PDFs: Exportar, Salvar e Ler\nArquivos no formato PDF: muita gente acha que não podem ser editados. O Writer, por si só, não é editor de PDF, mas o LibreOffice tem ferramentas que permitem exportar para PDF e existem outros programas que editam PDF. PDF não é imutável por definição.\n\nOlha só os caminhos no Writer:\n- Botão “Exportar diretamente como PDF” na barra de ferramentas.\n- Arquivo > Exportar.\n- Arquivo > Exportar como > Exportar como PDF.\n\nHá também formatos como EPUB (para leitores eletrônicos), que priorizam a fonte e a leitura em diferentes dispositivos, facilitando a leitura em telas variadas. O PDF mantém a estrutura estática, o que pode dificultar um pouco a leitura em telas pequenas; por isso o EPUB é interessante para leitura em e-readers e celulares.\n\nO LibreOffice às vezes apresenta muitas opções avançadas nas janelas de exportação; não vamos aprofundar no que não é cobrado com frequência, mas é bom você saber onde exportar e como.\n\nAgora, um detalhe importante de prova: “Salvar como” não oferece a opção PDF no Writer. Para gerar PDF, usa-se Exportar/Exportar como.\n\n> 🎯 Dicas de prova: Para salvar o documento em PDF no Writer, o caminho correto é Arquivo > Exportar como > Exportar como PDF (ou o botão “Exportar diretamente como PDF”). “Salvar como” não disponibiliza a opção PDF.\n\nNote que, no fim das contas, você está “salvando” um arquivo PDF, mas a função usada é Exportar/Exportar como PDF.\n\nObservação final sobre PDF: o Writer salva como PDF, mas não o utiliza como formato nativo de edição. Para abrir/editar um PDF, é necessário um leitor/editor compatível. Dentro do LibreOffice há recursos como abrir certos PDFs no Draw para edição básica, mas, para prova, foque em: o Writer exporta para PDF; abrir/editar PDF plenamente requer software apropriado.\n\n> 🎯 Dicas de prova: O Writer exporta documentos para PDF, mas a edição de PDF não é função nativa do Writer. Para abrir/editar PDFs, usa-se software/leitor/editor compatível (no LibreOffice, geralmente o Draw).\n\nPronto. Esse foi o nosso primeiro bloco da aula do Writer. Já já damos continuidade ao nosso passeio e ao aprendizado com o LibreOffice 7. Até daqui a pouco.",
+  "transcricao_meta": {
+    "title": "Libreoffice 7 - Writer",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 39950,
+    "createdAt": "2026-02-12T01:49:25.151Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: LibreOffice 7 Writer para concursos: interface, abertura/inicialização, extensões e associações, comandos de salvar/abrir/exportar, compatibilidade com Word, PDF e zoom.\nPrincipais pontos: \n- Diferenças “Salvar/Salvar como” vs “Exportar (como PDF)”\n- Partes da janela e nomes exatos de menus/barras\n- Associações de extensão e compatibilidade .docx (com possíveis perdas)\n- Limites de zoom e pegadinhas de prova (PDF não é imutável; caminho correto para PDF)\n\n## 1. Base / Conceitos Fundamentais\n- LibreOffice: pacote de produtividade de **software livre** (código-fonte aberto). \n- Programas principais:\n  - **Writer**: editor de textos (similar ao Word).\n  - **Calc**: planilhas (similar ao Excel).\n  - **Impress**: apresentações (similar ao PowerPoint).\n- Sistema operacional: disponível para **Windows** e **Linux**.\n- Extensão de arquivo: “sobrenome” após o ponto que indica o tipo/associação do arquivo no sistema.\n- PDF: formato que preserva layout; leitura universal; não é nativamente editável no Writer.\n\n> Dica de Prova\n> - Similaridades que caem: Writer ↔ Word; Calc ↔ Excel; Impress ↔ PowerPoint.\n\n## 2. Como Funciona / Distinções\n- Iniciar o Writer (duas maneiras):\n  - Pelo atalho do pacote LibreOffice (abre o lançador com Writer, Calc, Impress…).\n  - Pelo atalho direto do Writer (abre o editor imediatamente).\n- Clique:\n  - “Clicar” = padrão é o **botão esquerdo**.\n  - “Botão direito” será explicitado (menu de contexto).\n- Interface do Writer (partes principais):\n  - **Barra de título**: nome do documento (ex.: “novo documento sem título Um”) + programa. Botões: **minimizar**, **maximizar**/**restaurar**, **fechar a janela**.\n  - **Barra de menus**: “Arquivo”, “editar”, “exibir”, “inserir”, “formatar”, “estilos”, “tabela”, “formulário”, “ferramentas”, “janela”, “ajuda”.\n  - **Barra de ferramentas padrão**: atalhos frequentes.\n  - **Barra de formatação**: negrito, itálico, sublinhado, taxado etc.\n  - **Página propriamente**: área de edição.\n  - **Barra de rolagem/deslocamento**: navegação vertical/horizontal.\n  - **Barra de status**: página atual/total, controle de zoom.\n- Estados da janela:\n  - Janela maximizada → botão mostra “restaurar” (dois quadradinhos).\n  - Janela restaurada → botão mostra “maximizar” (um quadrado).\n- Redundância de comandos:\n  - A mesma função pode estar em mais de um menu/caminho.\n- Extensões e associação:\n  - Ao dar duplo clique, “vai depender da extensão do arquivo” e da associação no sistema para abrir no Writer.\n- Compatibilidade com Word:\n  - Writer abre e salva **.docx**; pode ocorrer **perda de formatação**, especialmente em documentos complexos.\n- Zoom:\n  - Exibição pode mencionar “20% a 600%”, mas o limite real é **500%**.\n\n> Dica de Prova\n> - Nomes exatos dos menus: “Arquivo”, “editar”, “exibir”, “inserir”, “formatar”, “estilos”, “tabela”, “formulário”, “ferramentas”, “janela”, “ajuda”.\n> - Zoom máximo: 500% (não 600%).\n\n## 3. Aplicação Prática / Técnicas\n- Salvar e versões:\n  - Ícone de disquete indica alterações.\n  - Não podem existir dois arquivos com o mesmo nome, no mesmo local, com a mesma extensão.\n- Exportar para PDF:\n  - Caminho correto:\n    - Botão “exportar diretamente como PDF”; ou\n    - Menu: Arquivo > Exportar como > Exportar como PDF; ou\n    - Arquivo > Exportar (para acessar opções).\n  - “Salvar como” NÃO oferece PDF no Writer. Se a questão trouxer “Arquivo > Salvar como > PDF”, está ERRADO.\n- PDF vs formatos refluíveis (ex.: ePub):\n  - PDF: preserva layout; leitura igual em qualquer dispositivo; menos prático em telas pequenas.\n  - Leitores eletrônicos (ePub): priorizam leitura (reflow do texto).\n- Edição de PDF:\n  - PDF “não é imutável”: pode ser editado por softwares específicos. O Writer não edita PDF nativamente.\n- Passo a passo para gerar PDF (macete):\n  1) Arquivo > Exportar como > Exportar como PDF (ou “exportar diretamente como PDF”).\n  2) Ajustar opções (por exemplo, priorizar fonte independente do dispositivo).\n  3) Confirmar Exportar/Salvar.\n\n> Dica de Prova\n> - “Por padrão” = comportamento original do programa (ex.: formato nativo, opções sugeridas).\n> - Writer cria arquivos em formato PDF (exporta), mas não ABRE PDFs: é necessário leitor/editor específico.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: Abrir documento do Word no Writer\n  - Ação: Arquivo > Abrir > selecione .docx.\n  - Resultado esperado: abre normalmente; “pode acontecer perda de formatação”.\n- Exemplo 2: Gerar PDF do seu texto\n  - Ação: Arquivo > Exportar como > Exportar como PDF.\n  - Verificação: arquivo .pdf criado no local escolhido.\n  - Pegadinha evitada: NÃO usar “Salvar como” para PDF.\n- Exemplo 3: Reconhecer interface na tela da prova\n  - Identifique: “barra de título” com “novo documento sem título Um”, “barra de menus” com “Arquivo… ajuda”, “barra de status” com controle de zoom.\n- Exemplo 4: Checar zoom máximo\n  - Ação: aumentar o zoom pela barra de status.\n  - Resultado: máximo efetivo 500%.\n\n## 5. Pegadinhas e Erros Comuns\n- “Arquivo > Salvar como > PDF” no Writer: errado. O correto é Exportar (como) PDF.\n- Zoom “600%”: errado. Limite é 500%.\n- “PDF é imutável”: falso. Pode ser editado por softwares próprios; o Writer não edita.\n- Confundir fechar documento com “fechar a janela”: botões da barra de título afetam a janela do programa.\n- Extensão/associação: ao clicar duas vezes, abrirá conforme a extensão associada; não necessariamente no Writer.\n- Duplicidade de nomes: não pode dois arquivos com o mesmo nome, no mesmo local e mesma extensão.\n- Redundância de menus: o mesmo comando pode estar em mais de um menu; a banca pode aceitar mais de um caminho correto — leia o enunciado.\n\n> Dica de Prova\n> - Se o enunciado disser apenas “clique”, considere botão esquerdo. Se for “botão direito”, virá explicitado.\n> - Saber o nome das barras “não é imprescindível, mas é bom” — identificação visual cai muito.\n\n### Observações Literais Relevantes (preservar grafia/termos citados)\n- Menus: “Arquivo”, “editar”, “exibir”, “inserir”, “formatar”, “estilos”, “tabela”, “formulário”, “ferramentas”, “janela”, “ajuda”.\n- Elementos da interface: “novo documento sem título Um”, “barra de títulos”, “restaurar”, “maximizar”, “minimizar”, “fechar a janela”, “barra de ferramentas padrão”.\n- Ícones/botões: “disquete”, “exportar diretamente como”, “Exportar”, “PDF”.\n- Frases ênfase do instrutor:\n  - “Nossa aula é cem por cento focada para concursos.”\n  - “Saber o nome dessas barras não é imprescindível, mas é bom.”\n  - “Observação Pode acontecer perda de formatação.”\n  - “não pode ter dois arquivos com o mesmo nome no mesmo local, com a mesma extensão.”\n  - “PDF … não é imutável.”\n  - “priorizar a fonte independente do dispositivo.”\n\n### Comparações (X vs Y)\n- Writer vs Word / Calc vs Excel / Impress vs PowerPoint\n- Exportar (como PDF) vs Salvar/Salvar como:\n  - Exportar: gera PDF.\n  - Salvar/Salvar como: não oferece PDF no Writer.\n- PDF vs ePub:\n  - PDF: preserva layout.\n  - ePub: reflow, facilita leitura.\n\n> Dica de Prova\n> - Se aparecer “Vai depender da extensão do arquivo”, a questão aborda associação de arquivos no sistema operacional.",
+  "resumo_bolso": "# Libreoffice 7 - Writer\n\n---\n\n## 📌 Conceitos-Chave\n\n* **LibreOffice**: pacote de produtividade de **software livre** (código-fonte aberto), disponível para **Windows** e **Linux**.\n* Programas principais:\n  * **Writer**: editor de textos (similar ao **Word**).\n  * **Calc**: planilhas (similar ao **Excel**).\n  * **Impress**: apresentações (similar ao **PowerPoint**).\n* **Extensão de arquivo**: “sobrenome” após o ponto que indica o tipo/associação do arquivo no sistema.\n* **PDF**: formato que preserva layout; leitura universal; **não é nativamente editável no Writer**.\n* **Compatibilidade .docx**: Writer **abre e salva .docx**, podendo ocorrer **perda de formatação**, especialmente em documentos complexos.\n* **Zoom**: a exibição pode mencionar “20% a 600%”, mas o **limite real é 500%**.\n* **Clique**: “clicar” = padrão é o **botão esquerdo**; “botão direito” será explicitado.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Writer vs Word (e outros)\n\n| Aspecto | Writer | Word |\n|--------|--------|------|\n| Pacote | LibreOffice | Microsoft Office |\n| Licença | **Software livre** | Proprietário |\n| Compatibilidade | Abre/salva .docx com possível perda de formatação | Nativo .docx |\n\n> Comparações clássicas de prova:  \n> **Writer ↔ Word**, **Calc ↔ Excel**, **Impress ↔ PowerPoint**.\n\n---\n\n### Exportar (como PDF) vs Salvar / Salvar como\n\n| Aspecto | Exportar (como PDF) | Salvar / Salvar como |\n|--------|----------------------|----------------------|\n| Caminho | Botão **“exportar diretamente como PDF”**; ou **Arquivo > Exportar como > Exportar como PDF**; ou **Arquivo > Exportar** | Arquivo > **Salvar** / **Salvar como** |\n| Resultado | Gera **arquivo .pdf** | Gera arquivo no **formato nativo** ou outro formato disponível, **não PDF** no Writer |\n| Uso típico | Distribuição, preservando layout | Edição contínua do documento |\n\n---\n\n### PDF vs Formatos refluíveis (ePub)\n\n| Aspecto | PDF | ePub (e similares) |\n|--------|-----|---------------------|\n| Layout | **Preserva layout**; leitura igual em qualquer dispositivo; menos prático em telas pequenas | Texto com **reflow** (se adapta à tela), priorizando leitura |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra de nomes de arquivos**\n\n* **Regra**: **“não pode ter dois arquivos com o mesmo nome no mesmo local, com a mesma extensão.”**\n* **Exemplo**: “prova.odt” e “prova.odt” na mesma pasta → impossível; “prova.odt” e “prova.pdf” → permitido.\n\n---\n\n**2. Associação de arquivos (extensão)**\n\n* **Regra**: ao dar duplo clique, a abertura **“vai depender da extensão do arquivo”** e da associação do sistema operacional.\n* **Exemplo**: .odt associado ao Writer; um .docx pode abrir no Word, mesmo com LibreOffice instalado.\n\n---\n\n**3. Geração de PDF no Writer**\n\n* **Caminhos corretos**:\n  * Botão **“exportar diretamente como PDF”**; ou\n  * **Arquivo > Exportar como > Exportar como PDF**; ou\n  * **Arquivo > Exportar** (para acessar opções).\n* “Salvar como” **NÃO** oferece PDF no Writer.\n\n---\n\n**4. Zoom**\n\n* **Regra**: a interface pode mencionar “20% a 600%”, mas o **limite efetivo é 500%**.\n\n---\n\n**5. Compatibilidade com Word (.docx)**\n\n* **Regra**: Writer **abre** e **salva** arquivos **.docx**; **“pode acontecer perda de formatação”**, especialmente em documentos complexos.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **“Arquivo > Salvar como > PDF” no Writer**  \n   *Errado*: “Salvar como” não oferece PDF no Writer.  \n   *Correto*: usar **Exportar** (como PDF).\n\n2. **Zoom “600%”**  \n   *Errado*: considerar 600% como limite.  \n   *Correto*: limite efetivo é **500%**.\n\n3. **“PDF é imutável”**  \n   *Errado*: afirmar que não pode ser editado.  \n   *Correto*: **“PDF … não é imutável.”** Pode ser editado por softwares específicos; o Writer não edita PDF nativamente.\n\n4. **“Writer cria PDFs e também abre PDFs”**  \n   *Errado*: dizer que o Writer abre PDFs.  \n   *Correto*: o Writer **cria arquivos em formato PDF (exporta), mas não ABRE PDFs**; é necessário leitor/editor específico.\n\n5. **“Ao dar duplo clique em um arquivo de texto, ele sempre abrirá no Writer se o LibreOffice estiver instalado.”**  \n   *Errado*: ignorar a associação de arquivos.  \n   *Correto*: a abertura **“vai depender da extensão do arquivo”** e da associação do sistema.\n\n---\n\n## 📋 Checklist Final\n\n* Sei o **caminho exato** para gerar PDF (Exportar, nunca “Salvar como PDF” no Writer)?\n* Memorizei os **menus na ordem**: Arquivo, editar, exibir, inserir, formatar, estilos, tabela, formulário, ferramentas, janela, ajuda?\n* Lembro que o **zoom máximo** é **500%** (e não 600%)?\n* Fixei que o Writer **abre/salva .docx**, mas **pode acontecer perda de formatação**?\n* Sei que **PDF não é imutável**, mas o **Writer não edita PDF nativamente**?\n* Consigo apontar na tela: **barra de título**, **barra de menus**, **barra de ferramentas padrão**, **barra de formatação**, **barra de status**?\n* Lembro que **não pode ter dois arquivos com o mesmo nome no mesmo local, com a mesma extensão**?\n* Sei que, se o enunciado disser só “clique”, é **botão esquerdo**?\n* Associei Writer ↔ Word, Calc ↔ Excel, Impress ↔ PowerPoint (comparações clássicas de prova)?\n* Guardei que a abertura por duplo clique **“vai depender da extensão do arquivo”** e da associação do sistema operacional?",
+  "mapa_mental": "# 💻 LibreOffice 7 Writer\n## 🎯 Visão Geral\n### 💡 Pacote LibreOffice\n- Software livre\n- Código aberto\n- Writer textos\n- Calc planilhas\n- Impress apresentações\n### 💡 Writer x Outros\n- Writer x Word\n- Calc x Excel\n- Impress x PowerPoint\n- Windows e Linux\n- Foco concursos\n### 💡 Extensões Arquivo\n- Conceito extensão\n- Associação sistema\n- Duplo clique abre\n- Mesmo nome proibido\n- Mesmo local extensão\n\n## 🖥️ Interface e Comandos\n### 💡 Partes da Janela\n- Barra de título\n- Barra de menus\n- Barras de ferramentas\n- Página edição\n- Barra de status\n### 💡 Barra de Menus\n- Arquivo editar exibir\n- Inserir formatar estilos\n- Tabela formulário ferramentas\n- Janela ajuda\n- Redundância comandos\n### 💡 Janelas e Cliques\n- Minimizar maximizar fechar\n- Restaurar janela\n- Clique botão esquerdo\n- Botão direito contexto\n- Fechar janela programa\n\n## 📁 Arquivos e Compatibilidade\n### 📜 Formatos Nativos\n- Formato padrão Writer\n- Ícone disquete alterações\n- Salvar documento\n- Salvar como cópia\n- Proibição nomes idênticos\n### 📜 Compatibilidade Word\n- Abrir .docx\n- Salvar .docx\n- Possível perda formatação\n- Documentos complexos críticos\n- Associação não garante Writer\n### 💾 PDF e Outros\n- PDF preserva layout\n- Leitura universal\n- Não imutável\n- Writer não edita PDF\n- PDF x ePub reflow\n\n## 📤 Exportação e Zoom\n### 📋 Exportar PDF\n- Arquivo Exportar como\n- Exportar como PDF\n- Exportar diretamente PDF\n- Arquivo Exportar opções\n- Ajustar opções PDF\n### 🛑 Erros Comuns PDF\n- Salvar como não PDF\n- Arquivo Salvar como errado\n- Writer cria PDF\n- Writer não abre PDF\n- Softwares específicos edição\n### 🔍 Zoom e Exibição\n- Controle barra status\n- Zoom mínimo padrão\n- Zoom máximo 500%\n- 600% informação incorreta\n- Exibição não confiável",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "LibreOffice e Programas",
+      "description": "LibreOffice e Programas — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual programa do LibreOffice é voltado à edição de textos?",
+          "back": "Writer",
+          "hint": "É o processador de textos do pacote",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "libreoffice",
+            "writer"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual programa do LibreOffice é destinado ao trabalho com planilhas eletrônicas?",
+          "back": "Calc",
+          "hint": "É o componente para cálculos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "libreoffice",
+            "calc"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual programa do LibreOffice é usado para criar apresentações?",
+          "back": "Impress",
+          "hint": "É o componente para slides",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "libreoffice",
+            "impress"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Arquivos e Formatos",
+      "description": "Arquivos e Formatos — 6 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual é a função da extensão de um arquivo?",
+          "back": "Diz ao Windows ou ao sistema operacional com qual programa o arquivo deve ser aberto.",
+          "hint": "Relacionado à associação de programas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é a extensão padrão de documentos do LibreOffice Writer?",
+          "back": ".odt",
+          "hint": "Sigla de três letras",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "extensoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "O que caracteriza o formato ODF?",
+          "back": "Formato de documento aberto associado ao software livre.",
+          "hint": "Sigla para Open Document Format",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "libreoffice",
+            "formatos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "O que define um software livre?",
+          "back": "Programa em que se tem acesso ao código-fonte.",
+          "hint": "Refere-se à liberdade de modificação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Ao abrir um arquivo DOCX no Writer, qual efeito pode ocorrer?",
+          "back": "Pode ocorrer perda de formatação.",
+          "hint": "Problema de compatibilidade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "compatibilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Em quais condições dois arquivos não podem ter o mesmo nome?",
+          "back": "No mesmo local, com a mesma extensão.",
+          "hint": "Regra de sistema de arquivos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "arquivos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Interface do Writer",
+      "description": "Interface do Writer — 4 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual botão aparece na janela maximizada para retornar ao tamanho anterior?",
+          "back": "Restaurar",
+          "hint": "Ação de reduzir a janela",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "interface",
+            "janelas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual botão aparece na janela restaurada para ocupar toda a tela?",
+          "back": "Maximizar",
+          "hint": "Ação de expandir a janela",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "interface",
+            "janelas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual barra reúne ícones que podem ser personalizados no LibreOffice?",
+          "back": "Barra de ferramentas padrão",
+          "hint": "Local de acesso rápido a funções",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual é a faixa de zoom disponível no LibreOffice Writer?",
+          "back": "De 20% a 600%",
+          "hint": "São dois valores numéricos",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "visualizacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Exportação em PDF",
+      "description": "Exportação em PDF — 2 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Qual caminho de menu permite exportar um documento do Writer em PDF?",
+          "back": "Arquivo > Exportar > Exportar como PDF",
+          "hint": "Sequência de cliques no menu",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "exportacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual é a limitação do Writer ao lidar diretamente com arquivos PDF?",
+          "back": "Não é capaz de abri-los diretamente, sendo necessário outro software.",
+          "hint": "Limitação de formato de arquivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "pdf"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": null,
+  "pdf_degravacao": "27_253660_Libreoffice 7 - Writer.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:53:29"
+}

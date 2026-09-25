@@ -1,0 +1,830 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 3,
+    "titulo": "5. Conceitos básicos e modos de utilização de tecnologias, ferramentas, aplicativos e procedimentos associados à Internet e intranet. /\n\n6. Correio eletrônico. / 7. Computação em nuvem"
+  },
+  "ordem": 2,
+  "ordem_no_curso": "16.00",
+  "titulo": "Internet - Rede de Computadores II",
+  "codigo_aula": "253605",
+  "video_id": "sbzjIhpfZG4=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:24:49",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/sbzjIhpfZG4%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405153,397511,419912,419955,397523,419862&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Internet - Rede de Computadores II\n\n## Topologia em Estrela: Hub x Switch\nVamos lá, de volta. Analisando a topologia em estrela, joguem na tela. Quando nós temos o famoso hub — que, como eu disse, praticamente não é mais usado, mas pode ser que alguém tenha por aí — ele faz aquilo que chamamos de “gritar no corredor”. Ele manda para todo mundo.\n\nJá o switch é mais inteligente. Depois vamos ver que temos os switches camada 2 e os camada 3, também chamados de configuráveis. De qualquer forma, sendo um ou outro, o switch manda só para quem é o destinatário lá, beleza.\n\nSem contar que, no switch, nós podemos fazer outras configurações, como criar VLANs. O que é isso? É uma separação. O equipamento físico é um só, mas há uma separação lógica das portas em tipos. Vou criar ali tantas portas — tem que ser números para esta VLAN, já digo e indico — aqui eu vou deixar tantas portas para o setor financeiro, por exemplo, vai ser a rede “financeiro”, e tantas portas para o setor de “carregar” (logística). Um pode ou não se comunicar com o outro, mas, normalmente, não vão ter comunicação entre eles. Então separo essas redes logicamente.\n\n## Topologia Sem Fio (Wireless)\nEntão, a topologia sem fio, o wireless, basicamente, a ideia é que eu não tenho fio. E aí nós temos várias tecnologias, como nós já vimos, para a propagação do sinal.\n\nEssa imagem aqui (a clássica do “sinalzinho” em ondas) é a mais usada e a mais correta possível para simbolizar a transmissão sem fio, porque ela dá uma ideia mais ou menos direcional. Mas, na verdade, lembra quando você joga uma pedra num lago? A propagação vai ser assim para tudo que é lado. Joga uma pedrinha e você vê as ondinhas se formando, indo para todos os lados.\n\nNa transmissão wireless vai ser assim. Obviamente, quando bate em um obstáculo, dependendo da intensidade do sinal, ele pode passar enfraquecendo. Enfraqueceu muito, nem passa. Chegou fraco? Acabou.\n\nJoga na tela e vamos embora.\n\n## Padrões IEEE 802.11 (Wi‑Fi)\nLembra que eu falei de padronizações? Vamos falar da tecnologia Wi‑Fi, que é sem dúvida uma das mais cobradas quando se fala em wireless na prova: o IEEE.\n\nÉ normatizado pelo IEEE, o Instituto de Engenheiros Elétricos e Eletrônicos, que cria normas e padrões. Não é o único; temos vários órgãos pelo mundo que criam normas e padrões para vários contextos diferentes. Mas um deles é o IEEE, que normatizou as transmissões sem fio Wi‑Fi pelo protocolo 802.11. Beleza?\n\nEntão, 802.11 normatiza as transmissões sem fio Wi‑Fi. Depois de criado o 802.11, foram surgindo melhorias e eles foram acrescentando letrinhas depois para indicar essas melhorias — seja na velocidade, no alcance, na utilização de múltiplas antenas. Enfim, várias coisas foram mudando.\n\nVamos começar:\n- 802.11a: velocidade de 54 Mbps e usava a frequência de 5 GHz.\n- 802.11b: vou falar a partir de agora só a letrinha final. O “b” transmitia a 11 Mbps e usava a frequência de 2,4 GHz.\n- 802.11g: 54 Mbps também, usando 2,4 GHz.\n- 802.11n: aí a velocidade foi para 450 Mbps com a frequência 2,4 GHz. Introduziu-se a tecnologia MIMO (Multiple Input, Multiple Output). Basicamente, vamos ter várias antenas com possibilidade de entrada e saída simultânea dos dados. Várias entradas, várias saídas; melhorou muito a performance dos dispositivos.\n- A partir do 802.11n, houve um acréscimo considerável na velocidade.\n- 802.11ac: velocidade foi para 1300 Mbps. Você pode encontrar essa velocidade sendo representada como 1,3 Gbps, porque 1300 Mbps correspondem a 1,3 Gbps. Usando frequências de 5 GHz.\n- 802.11ax: velocidades teóricas muito maiores; você pode alcançar até cerca de 10 Gbps em cenários ideais. Usando a frequência de 5 GHz. Você vai encontrar dispositivos que usam mais de uma frequência — dual band: 2,4 e 5 GHz — e, obviamente, ele vai trabalhar com tecnologias distintas conforme o caso.\n\n> 🎯 Dicas de prova: IEEE 802.11 é o padrão do Wi‑Fi; “a” e “ac/ax” operam tipicamente em 5 GHz; “b/g/n” podem operar em 2,4 GHz; “n” introduziu MIMO.\n\n## Frequências 2,4 GHz x 5 GHz\nFalando da frequência em si, qual a diferença?\n\n- 2,4 GHz: permite maior alcance do sinal. Aquela ideia de ultrapassar mais paredes. Porém, sofre muito mais interferências. Por quê? Temos vários equipamentos domésticos que trabalham nessa frequência. Os canais são mais limitados. Seu vizinho usando 2,4, seu telefone sem fio e outras coisas vão causar conflito. Pode causar interferência a tal ponto que a sua rede mal funcione ou funcione muito lenta.\n\n- 5 GHz: vai ter um alcance menor, só que com uma “clareza” maior, menos interferência — quase nula dependendo do contexto.\n\nBasicamente, essas são as diferenças. Joguem na tela e vamos continuar.\n\n## Criptografia no Wi‑Fi\nAgora, proteção. Quando eu uso transmissão sem fio, é interessante que eu use criptografia. O que é criptografia? É a codificação dos dados. Ou seja, quando os meus dados vão transitar — nesse caso, pelo ar. No cabo é um pouco mais difícil de interceptar; é bem mais trabalhoso. Já no ar, o cara passando do lado da sua casa pode pegar seu sinal tranquilamente e interceptar os dados.\n\nA criptografia é uma forma de codificar, como se você estivesse falando em códigos.\n\nUm dos primeiros protocolos desenvolvidos para implementar segurança foi o WEP. Só que ele hoje é considerado inseguro. Utilizando-se um ataque chamado de força bruta — tentativa e erro para adivinhar a senha — ele é suscetível e pode ser quebrado. Então, é considerado inseguro.\n\nHouve uma melhoria: o WPA. Como ele é uma melhoria daquilo que era ruim, ficou “menos pior”. Brincando, mas melhorou bastante. Ainda assim, é considerado inseguro atualmente.\n\nDepois, uma outra versão — embora tenha o mesmo nome — trouxe outro algoritmo criptográfico: o WPA2, que melhorou consideravelmente. Esse é considerado seguro (especialmente com AES). É como se fosse uma nova versão mesmo, não apenas uma melhoria do anterior.\n\n> 🎯 Dicas de prova: WEP é inseguro; WPA é melhoria, mas hoje insuficiente; WPA2 (com AES) é o recomendado/seguro.\n\n## Malha (Mesh) Wi‑Fi em Casa\nNão sei se já aconteceu na sua casa. Para representar o tal do “mesh”, que é a ideia de malha — isso pode ser feito com fio também, mas fica mais complicado e caro — é muito mais usado sem fio hoje em dia.\n\nVamos simbolizar na sua casa. Você pega seu celular e tem seu roteador transmitindo. Você vai andando pela casa e o sinal acaba ou fica muito fraco. Suponha que você não tenha dados móveis. Aí você pensa em colocar um repetidor no meio do caminho. O repetidor recebe o sinal e amplifica o sinal. Só que você vai criar uma outra rede. Pode ser o mesmo nome e a mesma senha, mas geralmente os dispositivos fazem a troca de forma não tão inteligente; você pode ter que trocar manualmente: “rede 1” e “rede 2”.\n\nNo mesh é diferente. É um exemplo básico para entender: ele vai permitir um roteamento muito mais inteligente dos dados. Os equipamentos do mesh conversam entre si. Quando você sai de um nó e o sinal está ficando fraco, ele já faz a troca para o outro, sem você perceber. Sempre você vai ter, na área coberta, o melhor sinal. Se um equipamento está afogado com tráfego, ele passa pelo outro também. Consegue fazer essas trocas inteligentes na transmissão dos dados, de forma muito rápida. Você não percebe que está saindo de uma rede para outra.\n\nSe sua casa é gigante, você montou o mesh, mas lá no fundo ainda não está legal, você adiciona um novo equipamento. É muito simples e prático: adiciona o equipamento na rede e ele vai propagar o sinal que já vinha dos outros. Vai cobrir a maioria da sua casa. Joga na tela.\n\n## Noções Básicas de Transmissão de Dados\nAcessando o aplicativo para estudar, você pode baixar as aulas e depois assistir em qualquer lugar.\n\nNoções básicas de transmissão de dados: na rede, os dados fluem de um canto para o outro. É como uma conversa, literalmente.\n\n- Simplex: flui em um único sentido. Um transmite e o outro recebe. É aquele caso em que só vai. Representação comum: rádio (você só recebe).\n- Half-duplex: a comunicação pode fluir nos dois sentidos, porém não ao mesmo tempo. Ou vai ou vem. A fala alterna entre A e B.\n- Full-duplex: a comunicação pode ir e vir ao mesmo tempo. A pode falar e receber simultaneamente, e B também.\n\nAcredito que ficou claro com os desenhos e animações. Vamos seguir.\n\n## Questões sobre Topologias\nDefinições. Topologia física de rede representa o leiaute no qual estão conectados computadores e outros componentes. Lembre-se: existe a topologia lógica também, que é como os dados vão trafegar lá dentro.\n\nTopologia em estrela consiste em equipamentos conectados a um nó central. Esse nó central, como eu disse, é chamado de concentrador. É responsável por controlar o tráfego de dados. O nó central geralmente é o switch, que é responsável por analisar os pacotes e gerenciar sua distribuição. O switch faz esse papel.\n\nNa topologia estrela, os nós não são conectados em série, como no barramento. No barramento, em cada extremidade do cabo existia um terminador. No estrela, não. Então, se aparecer “terminadores nas extremidades” para estrela, corta.\n\nOutra forma: anel. No anel, o fluxo de dados pode ser unidirecional e os nós são interligados formando um ciclo. Não confundir com conectados em série com terminadores de barramento ou com uso de hub específico. Cuidado com as pegadinhas: se falar em “extremidades do cabo com terminadores”, isso é barramento, não anel nem estrela.\n\n## Classificação de Redes: LAN, MAN, WAN\nAtenda às afirmações sobre redes de computadores:\n1) LAN é uma rede local que atua em área limitada, como uma loja. Correto.\n2) MAN abrange grandes espaços, como uma cidade. Correto.\n3) WAN consegue abranger grande área geográfica, como um país e até entre países. Correto.\n\n> 🎯 Dicas de prova: LAN = local; MAN = metropolitana (cidade/região); WAN = ampla (país/continentes).\n\n## Como a Rede Funciona: Protocolos e Portas\nComo a rede funciona? Nós já vimos muitas coisas. Vamos aprofundar um pouquinho mais. Joga na tela.\n\nUm computador sozinho não faz uma rede; precisa de dois ou mais. Para que eles conversem, precisamos de uma linguagem comum. Para que exista diálogo, todos têm que falar a mesma língua — ou ter tradução.\n\nPara que os computadores conversem, eles têm que falar a mesma língua: protocolos. Falar “uma língua” no singular é perigoso, porque temos um conjunto de protocolos. Quando eu quero enviar um e‑mail, temos protocolos próprios. É como se tivéssemos uma linguagem universal (o conjunto TCP/IP) e “dialetos” por serviço:\n- Para e‑mail, um dialeto (SMTP, IMAP, POP3).\n- Para páginas web, outro (HTTP, HTTPS).\n\nToda a comunicação vai ser controlada por portas lógicas. Quando eu falar números, por exemplo: porta 80. A do cliente (origem) é aleatória (porta efêmera), mas a do servidor é padronizada:\n- HTTP: 80\n- HTTPS: 443\n\nImagine um prédio: cada porta representa um serviço. O servidor pode oferecer vários serviços; ele sabe o que você quer pela porta de destino.\n\n> 🎯 Dicas de prova: HTTP usa porta 80; HTTPS usa 443; portas de origem do cliente são efêmeras/aleatórias; o conjunto TCP/IP é a “linguagem universal” da Internet.\n\nDá uma olhada nessa tentativa de comunicação: não há, de fato, comunicação porque não estão falando o mesmo idioma. Para evitar esse tipo de coisa, computadores vão usar os mesmos protocolos, independentemente do sistema operacional. Na rede, eles usam os mesmos protocolos padronizados, variando conforme o serviço utilizado.\n\n## Modelo OSI (Referência)\nVamos para o modelo OSI — Open Systems Interconnection. Esse cara é um modelo lógico, de referência, que ajudou muito como estudo. É um modelo ideal.\n\nA ideia de camadas: o modelo tem sete camadas. Uma camada conversa com a imediatamente acima e a imediatamente abaixo. Por exemplo, a camada 2 fala com a 1 e a 3, mas não com a 4 diretamente. E cada camada foca no seu papel, como numa linha de produção. Cada etapa encaixa sua parte e passa adiante, como uma boneca russa: vai encapsulando e, no destino, vai “desmontando”.\n\nAs sete camadas:\n- 7: Aplicação\n- 6: Apresentação\n- 5: Sessão\n- 4: Transporte\n- 3: Rede\n- 2: Enlace (MAC)\n- 1: Física\n\nO modelo realmente usado é o TCP/IP (vamos falar dele já já), mas o OSI cai como comparação.\n\n> 🎯 Dicas de prova: Modelo OSI tem 7 camadas (Aplicação, Apresentação, Sessão, Transporte, Rede, Enlace, Física). Questões podem confundir serviços/camadas do OSI com o modelo TCP/IP.\n\nDaqui a pouquinho eu volto para continuarmos nossa jornada.",
+  "transcricao_meta": {
+    "title": "Internet - Rede de Computadores II",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36343,
+    "createdAt": "2026-02-06T01:14:21.598Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda redes de computadores com foco prático para prova: topologias e equipamentos (hub, switch, VLAN, Layer 3), Wi‑Fi (IEEE 802.11, frequências 2,4/5 GHz, MIMO), segurança sem fio (WEP/WPA/WPA2), redes mesh vs repetidor, modos de comunicação (simplex/half/full duplex), tipos de redes (LAN/MAN/WAN), portas e protocolos (HTTP/HTTPS), e modelos em camadas (OSI vs TCP/IP).\nPrincipais pontos: \n- Diferenças entre hub, switch Layer 2 e switch Layer 3; VLANs.\n- Comparação dos padrões 802.11 e bandas 2,4 GHz vs 5 GHz; MIMO.\n- Segurança Wi‑Fi: WEP/WPA/WPA2 e suas vulnerabilidades.\n- Modelo OSI (sete camadas), encapsulamento e regra N ↔ N±1.\n\n## 1. Base / Conceitos Fundamentais\n- Rede e alcance:\n  - LAN, MAN, WAN: escopos do menor para o maior alcance.\n- Modos de comunicação:\n  - Simplex: unidirecional.\n  - Half‑duplex: bidirecional não simultâneo.\n  - Full‑duplex: bidirecional simultâneo.\n- Topologias:\n  - Topologia física: leiaute de cabos/equipamentos.\n  - Topologia lógica: como os dados trafegam.\n  - Estrela, barramento (com terminadores), anel (ciclo).\n- Equipamentos e camadas:\n  - Hub (concentrador): repassa para todos (broadcast).\n  - Switch Layer 2 (camada dois): encaminha por MAC (destinatário).\n  - Switch Layer 3 (configurável): agrega funções de roteamento entre redes/VLANs.\n- VLANs (Virtual LANs): separação lógica de portas em redes distintas no mesmo switch.\n- Protocolos e portas:\n  - TCP/IP: suíte principal da Internet.\n  - HTTP: porta 80; HTTPS: porta 443.\n  - Porta de origem (cliente): aleatória; destino (servidor): padronizada.\n- Wi‑Fi e padrões:\n  - IEEE (Instituto de Engenheiros Elétricos e Eletrônicos) normatizou as transmissões sem fio Wi‑Fi pelo protocolo 802.11.\n  - Sufixos: a, b, g, n, ac, ax; “velocidades teóricas”.\n  - Frequências: 2,4 GHz e 5 GHz.\n  - MIMO (Multiple Input Multiple Output): múltiplas antenas para ganho de desempenho.\n- Segurança Wi‑Fi:\n  - Criptografia no ar.\n  - WEP, WPA, WPA2.\n- Modelo em camadas:\n  - OSI (Open Systems Interconnection): modelo de referência com sete camadas.\n  - Regra: uma camada conversa apenas com a imediatamente acima e abaixo (N ↔ N±1).\n  - Encapsulamento: “boneca russa”.\n\n## 2. Como Funciona / Distinções\n- Hub vs Switch vs Switch Layer 3:\n  - Hub: broadcast para todos; mais colisões; “o famoso” dispositivo que “não é mais usado”.\n  - Switch L2 (camada dois): aprende MACs; envia somente ao destino; reduz broadcast.\n  - Switch L3: além de L2, realiza roteamento entre redes/VLANs (Layer 3 / “leite três” citado).\n- VLANs:\n  - Isolam domínios de broadcast logicamente no mesmo switch; exigem roteamento (Switch L3/roteador) para comunicação entre VLANs.\n- Topologias:\n  - Estrela: dispositivos ligados ao nó central (hub/switch).\n  - Barramento: único cabo; precisa de terminadores.\n  - Anel: interligação em ciclo; fluxo tipicamente unidirecional.\n- Wi‑Fi 2,4 GHz vs 5 GHz:\n  - 2,4 GHz: maior alcance/penetração; mais interferência; menos canais.\n  - 5 GHz: menor alcance; menos interferência; mais canais; desempenho mais estável.\n- Padrões 802.11 (evolução de capacidade):\n  - 802.11a: 54 Mb/s em 5 GHz.\n  - 802.11b: 11 Mb/s em 2,4 GHz.\n  - 802.11g: 54 Mb/s em 2,4 GHz.\n  - 802.11n: até 450 Mb/s; 2,4 GHz (há variantes 5 GHz); introduziu-se aí a tecnologia MIMO.\n  - 802.11ac: até 1.300 Mb/s (≈1,3 Gb/s) em 5 GHz.\n  - 802.11ax: até 10 Gb/s (teórico); versões dual band.\n- Repetidor vs Rede mesh:\n  - Repetidor: amplia o sinal; pode exigir troca manual de rede (handoff ruim).\n  - Mesh: nós conversam entre si; handoff automático e balanceamento de tráfego.\n- Modelo OSI vs TCP/IP:\n  - OSI: referência didática de sete camadas.\n  - TCP/IP: modelo efetivamente usado (estrutura com menos camadas).\n  - A camada dois “fala com a um e com a três, mas não fala com a quatro”.\n\n## 3. Aplicação Prática / Técnicas\n- Identificação rápida em prova:\n  - HTTP → porta 80; HTTPS → porta 443.\n  - Cliente usa porta de origem aleatória; servidor usa porta do serviço.\n  - Hub = broadcast; Switch L2 = unicast por MAC; Switch L3 = roteia entre VLANs.\n- Escolha de frequência Wi‑Fi:\n  - Precisa atravessar paredes/maior alcance → 2,4 GHz.\n  - Precisa de desempenho/menos interferência → 5 GHz.\n- Padrões 802.11:\n  - Associe sufixos às velocidades/frequências mais cobradas: a/g (54 Mb/s), b (11 Mb/s), n (450 Mb/s), ac (1.300 Mb/s), ax (até 10 Gb/s teórico).\n- Segurança Wi‑Fi:\n  - Evite WEP/WPA; prefira WPA2.\n- Topologia correta:\n  - Barramento exige terminadores; estrela não.\n  - Anel forma ciclo; frequentemente unidirecional.\n- Modelo em camadas (memória):\n  - Camada 7 a 1 (aplicação, apresentação, “exceção”, transporte, rede, “Maxi”, física).\n  - Encapsulamento e regra N ↔ N±1 (sem pular camadas).\n\n> Dica de Prova: Em VLANs, comunicação entre VLANs diferentes só ocorre via roteamento (Switch L3/roteador). Questões costumam explorar esse detalhe.\n\n## 4. Exemplos e Casos Resolvidos\n- VLANs:\n  - Portas 1–10 → VLAN Financeiro; 11–20 → VLAN RH. Dispositivos não se veem por padrão. Para comunicação, configure roteamento inter‑VLAN em Switch L3.\n- Portas e serviços:\n  - Acesso a www em HTTP: cliente sai por porta de origem aleatória → servidor recebe na porta 80.\n  - Acesso a www em HTTPS: servidor responde na porta 443 (criptografado).\n- Frequência e alcance:\n  - Escritório com muitas paredes de alvenaria: priorize 2,4 GHz para cobertura; complemente com 5 GHz para alta taxa em áreas abertas.\n- Mesh vs repetidor:\n  - Em uma casa de dois andares, repetidor pode criar SSID2 e exigir troca manual; mesh entrega handoff automático para o ponto com melhor sinal.\n\n## 5. Pegadinhas e Erros Comuns\n- Terminador é do barramento, não da estrela.\n- Hub “grita no corredor” (broadcast); switch L2 envia apenas ao destinatário via MAC.\n- Switch Layer 3 realiza roteamento entre VLANs; switch L2 não.\n- “Velocidades teóricas” do 802.11 não refletem taxas reais (interferência/distância reduzem).\n- 2,4 GHz tem maior alcance, mas mais interferência; 5 GHz tem menor alcance, porém menos interferência e mais canais.\n- WEP e WPA são considerados inseguros; marque WPA2 como seguro.\n- Porta do cliente é aleatória; as portas 80/443 pertencem ao servidor.\n- Camadas do OSI: “a camada dois fala com a um e com a três, mas não com a quatro” (não há pulo de camadas).\n- Não confunda modelo OSI (sete camadas) com TCP/IP (modelo usado propriamente, estrutura distinta).\n- Padrões 802.11:\n  - 802.11b = 11 Mb/s (2,4 GHz); 802.11a/g = 54 Mb/s; 802.11n = 450 Mb/s; 802.11ac = 1.300 Mb/s; 802.11ax = até 10 Gb/s (teórico).\n\n> Dica de Prova: Se a questão disser “normatizou as transmissões sem fio Wi‑Fi pelo protocolo oitocentos e dois ponto onze”, associe ao IEEE 802.11 e esteja pronto para relacionar sufixos (a, b, g, n, ac, ax) às velocidades e frequências.\n\n> Dica de Prova: “Simplex … flui em um único sentido”, “half‑duplex … nos dois sentidos, mas não ao mesmo tempo”, “full‑duplex … pode ir e vir ao mesmo tempo”. Palavra‑chave: unidirecional, bidirecional não simultâneo, bidirecional simultâneo.\n\n> Dica de Prova: Propagação Wi‑Fi é omnidirecional (como jogar uma pedra num lago). Obstáculos atenuam; se enfraquecer muito, o sinal nem passa.\n\n### Comparações essenciais (tabela rápida)\n- Padrões 802.11\n  - 802.11a: 54 Mb/s, 5 GHz\n  - 802.11b: 11 Mb/s, 2,4 GHz\n  - 802.11g: 54 Mb/s, 2,4 GHz\n  - 802.11n: 450 Mb/s, 2,4 GHz (há 5 GHz); MIMO\n  - 802.11ac: 1.300 Mb/s, 5 GHz\n  - 802.11ax: até 10 Gb/s (teórico), 5 GHz/dual band\n- Bandas\n  - 2,4 GHz: alcance/penetração maior; mais interferência; menos canais.\n  - 5 GHz: alcance menor; menos interferência; mais canais.\n- Equipamentos\n  - Hub: broadcast.\n  - Switch L2: por MAC (unicast ao destino).\n  - Switch L3: roteia entre VLANs.\n- Segurança Wi‑Fi\n  - WEP → vulnerável a força bruta.\n  - WPA → melhoria, ainda inseguro.\n  - WPA2 → seguro.",
+  "resumo_bolso": "# Internet - Rede de Computadores II\n\n---\n\n## 📌 Conceitos‑Chave\n\n* **LAN / MAN / WAN**: escopos de rede do menor para o maior alcance.\n* **Simplex / Half / Full‑duplex**: simplex = unidirecional; half‑duplex = bidirecional não simultâneo; full‑duplex = bidirecional simultâneo.\n* **Topologia física x lógica**: física = leiaute de cabos/equipamentos; lógica = como os dados trafegam.\n* **Topologias clássicas**: estrela (dispositivos ligados a um nó central, como hub/switch), barramento (único cabo + terminadores), anel (ciclo, fluxo tipicamente unidirecional).\n* **Hub**: concentrador que repassa quadros em broadcast para todas as portas; gera mais colisões; praticamente em desuso.\n* **Switch Layer 2**: opera na camada 2; aprende endereços **MAC**; encaminha somente ao destinatário (unicast), reduzindo broadcast.\n* **Switch Layer 3**: além das funções de L2, realiza roteamento entre redes/VLANs (função de roteador).\n* **VLAN**: separação lógica de portas de um mesmo switch em redes distintas; isola domínios de broadcast e exige roteamento para comunicação entre VLANs.\n* **TCP/IP**: suíte principal de protocolos da Internet.\n* **HTTP/HTTPS**: HTTP usa porta 80; HTTPS usa porta 443. Cliente usa porta de origem aleatória; servidor usa porta padronizada do serviço.\n* **Wi‑Fi (IEEE 802.11)**: família de padrões (a, b, g, n, ac, ax) que define redes sem fio; trabalha em 2,4 GHz e/ou 5 GHz; taxas são “velocidades teóricas”.\n* **MIMO (Multiple Input Multiple Output)**: uso de múltiplas antenas para ganho de desempenho; introduzido no 802.11n.\n* **Segurança Wi‑Fi**: WEP, WPA e WPA2; criptografia “no ar”; WEP/WPA vulneráveis, WPA2 recomendado.\n* **Modelo OSI**: modelo de referência com sete camadas.\n* **Modelo TCP/IP**: modelo efetivamente usado na Internet, com menos camadas (agrupadas).\n* **Regra N ↔ N±1**: em modelos em camadas, cada camada conversa apenas com a imediatamente acima e abaixo (sem “pular” camadas).\n* **Encapsulamento**: processo em camadas aninhadas, comparado a “boneca russa”.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Hub vs Switch Layer 2 vs Switch Layer 3\n\n| Aspecto              | Hub                                           | Switch Layer 2                                  | Switch Layer 3                                           |\n|----------------------|-----------------------------------------------|------------------------------------------------|----------------------------------------------------------|\n| Camada (modelo)      | Física / não interpreta endereços             | Camada 2 (enlace)                              | Camada 2 + funções de camada 3 (rede)                   |\n| Encaminhamento       | Broadcast para todas as portas                | Por MAC (unicast ao destino conhecido)         | Por MAC + roteamento entre redes/VLANs                  |\n| Colisões             | Muitas (meio compartilhado)                   | Reduzidas em relação ao hub                    | Reduzidas                                               |\n| Uso típico           | Dispositivo “não mais usado” em novos projetos | Padrão em LANs comutadas                       | Ambientes com múltiplas redes/VLANs (roteamento interno) |\n\n---\n\n### Topologia Estrela vs Barramento vs Anel\n\n| Aspecto        | Estrela                                   | Barramento                                   | Anel                                         |\n|----------------|-------------------------------------------|----------------------------------------------|----------------------------------------------|\n| Estrutura      | Dispositivos ligados a um nó central      | Único cabo compartilhado                     | Dispositivos interligados em ciclo           |\n| Equip. típico  | Hub/Switch                                | Cabo coaxial + **terminadores**              | Anel lógico/físico                           |\n| Característica | Falha no nó central pode afetar toda rede | Rompe cabo → segmento afetado; exige terminadores | Fluxo tipicamente unidirecional em ciclo |\n\n---\n\n### 2,4 GHz vs 5 GHz (Wi‑Fi)\n\n| Aspecto          | 2,4 GHz                                              | 5 GHz                                                  |\n|------------------|------------------------------------------------------|--------------------------------------------------------|\n| Alcance          | Maior alcance / melhor penetração em obstáculos      | Menor alcance                                          |\n| Interferência    | Maior (muitos dispositivos usam essa faixa)          | Menor interferência                                    |\n| Canais           | Menos canais disponíveis                             | Mais canais disponíveis                                |\n| Uso típico       | Cobertura ampla / atravessar paredes                 | Desempenho mais estável / ambientes congestionados    |\n\n---\n\n### Repetidor vs Rede Mesh\n\n| Aspecto        | Repetidor                                   | Mesh                                                |\n|----------------|---------------------------------------------|-----------------------------------------------------|\n| Funcionamento  | Amplia o sinal de outro ponto de acesso     | Vários nós conversam entre si formando uma malha    |\n| Handoff        | Pode exigir troca manual de rede/SSID       | Handoff automático entre nós                        |\n| Tráfego        | Sem inteligência de malha                   | Balanceamento de tráfego entre os nós               |\n\n---\n\n### OSI vs TCP/IP\n\n| Aspecto      | OSI (7 camadas)                              | TCP/IP                                              |\n|--------------|----------------------------------------------|-----------------------------------------------------|\n| Natureza     | Modelo de referência didático                | Modelo efetivamente usado na Internet               |\n| Estrutura    | Sete camadas bem definidas                   | Menos camadas (algumas funções são agrupadas)       |\n| Comunicação  | Regra N ↔ N±1 (ex.: camada 2 fala com 1 e 3) | Também segue o princípio de comunicação entre camadas adjacentes |\n\n---\n\n### Padrões IEEE 802.11 (Wi‑Fi)\n\n| Padrão    | Velocidade teórica       | Frequência          | Observações                         |\n|-----------|--------------------------|---------------------|-------------------------------------|\n| 802.11a   | 54 Mb/s                  | 5 GHz               |                                     |\n| 802.11b   | 11 Mb/s                  | 2,4 GHz             |                                     |\n| 802.11g   | 54 Mb/s                  | 2,4 GHz             |                                     |\n| 802.11n   | Até 450 Mb/s             | 2,4 GHz (há 5 GHz)  | Introduziu tecnologia **MIMO**      |\n| 802.11ac  | Até 1.300 Mb/s (≈1,3 Gb/s) | 5 GHz             |                                     |\n| 802.11ax  | Até 10 Gb/s (teórico)    | Dual band (2,4/5 GHz) |                                     |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra N ↔ N±1 (Modelo em Camadas)**  \n* Cada camada conversa apenas com a imediatamente acima e abaixo.  \n* Exemplo: no OSI, a camada 2 fala com a 1 e com a 3, mas não com a 4 (não há “pulo” de camadas).\n\n---\n\n**2. Portas HTTP/HTTPS**\n\n* HTTP: porta **80** (servidor).  \n* HTTPS: porta **443** (servidor).  \n* Cliente: usa porta de origem **aleatória**; servidor: porta de destino padronizada (80/443).\n\n---\n\n**3. Comunicação entre VLANs**\n\n* VLANs diferentes não se veem por padrão.  \n* Comunicação entre VLANs exige **roteamento** (Switch Layer 3 ou roteador).\n\n---\n\n**4. Modos de Comunicação**\n\n* **Simplex**: fluxo em um único sentido (unidirecional).  \n* **Half‑duplex**: fluxo nos dois sentidos, mas não ao mesmo tempo (bidirecional não simultâneo).  \n* **Full‑duplex**: pode enviar e receber ao mesmo tempo (bidirecional simultâneo).\n\n---\n\n**5. Padrões IEEE 802.11 (Wi‑Fi)**\n\n* **802.11a**: 54 Mb/s, 5 GHz.  \n* **802.11b**: 11 Mb/s, 2,4 GHz.  \n* **802.11g**: 54 Mb/s, 2,4 GHz.  \n* **802.11n**: até 450 Mb/s, 2,4 GHz (há variantes 5 GHz), introduziu **MIMO**.  \n* **802.11ac**: até 1.300 Mb/s (≈1,3 Gb/s), 5 GHz.  \n* **802.11ax**: até 10 Gb/s (teórico), versões dual band.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Terminador é característico da topologia **barramento**, não da estrela.\n2. Switch Layer 3 realiza **roteamento entre VLANs**; switch Layer 2 não.\n3. 2,4 GHz tem **maior alcance**, porém **mais interferência**; 5 GHz tem **menor alcance**, porém **menos interferência** e **mais canais**.\n4. WEP e WPA são considerados **inseguros**; em prova, marque **WPA2** como opção segura.\n5. Porta do cliente é **aleatória**; as portas **80/443** pertencem ao **servidor** (HTTP/HTTPS).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **hub**, **switch L2** e **switch L3** (broadcast x MAC x roteamento entre VLANs)?\n* Lembrei que **VLANs isolam domínios de broadcast** e que comunicação entre VLANs exige **roteamento**?\n* Fixei **HTTP/80** e **HTTPS/443**, e que a porta do **cliente é aleatória**?\n* Memorizei **2,4 GHz vs 5 GHz** (alcance x interferência x quantidade de canais)?\n* Associei corretamente os padrões **802.11 (a/b/g/n/ac/ax)** às principais **velocidades** e **frequências**?\n* Sei que **terminador = barramento**, e que a topologia em estrela não usa terminadores?\n* Gravei que **WEP/WPA são inseguros** e que **WPA2** é o padrão seguro mais cobrado?\n* Recordei a regra **N ↔ N±1** (uma camada fala apenas com a imediatamente acima e abaixo)?\n* Sei diferenciar **repetidor** de **rede mesh** (handoff e balanceamento de tráfego)?\n* Lembro que **OSI** é modelo **didático de sete camadas** e **TCP/IP** é o modelo **efetivamente usado** na Internet?",
+  "mapa_mental": "# 💻 Internet – Redes de Computadores II\n\n## 🌐 Tipos de Redes e Comunicação\n### 🗺️ Abrangência de Rede\n- LAN\n- MAN\n- WAN\n### 🗣️ Modos de Comunicação\n- Simplex unidirecional\n- Half‑duplex alternado\n- Full‑duplex simultâneo\n### 🧬 Topologias de Rede\n- Topologia física\n- Topologia lógica\n- Estrela\n- Barramento\n- Anel\n\n## 🔌 Equipamentos, VLANs e Portas\n### 🧩 Equipamentos de Rede\n- Hub broadcast\n- Switch camada 2\n- Switch camada 3\n- Encaminhamento por MAC\n- Roteamento entre redes\n### 🧱 VLANs Lógicas\n- VLAN virtual LAN\n- Segmentação lógica\n- Isolamento broadcast\n- Comunicação via roteador\n- Switch camada 3\n### 🔢 Portas e Protocolos\n- Suíte TCP IP\n- HTTP porta 80\n- HTTPS porta 443\n- Porta origem cliente\n- Porta destino servidor\n\n## 📡 Wi‑Fi, Padrões e Segurança\n### 🌐 Padrões IEEE 802.11\n- IEEE 802.11 Wi‑Fi\n- Sufixos a b g n ac ax\n- Velocidades teóricas\n- Banda 2,4 GHz\n- Banda 5 GHz\n### 📶 Bandas e Tecnologias\n- 2,4 GHz maior alcance\n- 2,4 GHz mais interferência\n- 5 GHz menor alcance\n- 5 GHz mais canais\n- MIMO múltiplas antenas\n### 🛡️ Segurança Wi‑Fi\n- Criptografia sem fio\n- WEP inseguro\n- WPA inseguro\n- WPA2 recomendado\n- Ataques força bruta\n\n## 🧱 Modelos em Camadas\n### 🧩 Modelo OSI\n- Sete camadas\n- Comunicação N com N±1\n- Sem pulo de camadas\n- Encapsulamento dados\n- Boneca russa\n### 🌍 Modelo TCP IP\n- Modelo prático Internet\n- Menos camadas\n- Comparação com OSI\n- Associação por provas\n### 🔄 Conceitos Transversais\n- Encapsulamento protocolo\n- Endereço MAC camada 2\n- Endereço lógico rede\n- Separação funções camadas\n- Interoperabilidade sistemas",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Topologias de Rede",
+      "description": "Topologias de Rede — 6 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se organiza a **topologia em estrela**?",
+          "back": "Consiste em equipamentos conectados a um **nó central**.",
+          "hint": "Estrutura física centralizada",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "topologia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual equipamento costuma ocupar a posição central em uma topologia estrela?",
+          "back": "**Switch**.",
+          "hint": "Dispositivo de camada 2",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "hardware"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a função do equipamento central na topologia estrela?",
+          "back": "Analisar pacotes e gerenciar a **distribuição** dos dados apenas para o destinatário.",
+          "hint": "Ação de encaminhamento seletivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "hardware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Que recurso separa logicamente portas de um único equipamento físico?",
+          "back": "Redes virtuais (**VLANs**).",
+          "hint": "Segmentação lógica",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "vlan"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual requisito físico existe nas extremidades do cabo em uma topologia em barramento?",
+          "back": "Possuir um **terminador** em cada extremidade.",
+          "hint": "Componente de final de linha",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "topologia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como ocorre o fluxo de dados em uma topologia em anel?",
+          "back": "Unidirecional.",
+          "hint": "Sentido do tráfego",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "topologia"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Classificação de Redes",
+      "description": "Classificação de Redes — 1 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Que área geográfica caracteriza uma LAN?",
+          "back": "Área limitada como uma **loja**.",
+          "hint": "Sigla para rede local",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "lan"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Tecnologias Wi-Fi",
+      "description": "Tecnologias Wi-Fi — 6 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Em que norma IEEE se baseiam as transmissões Wi-Fi?",
+          "back": "**IEEE 802.11**.",
+          "hint": "Padrão de rede sem fio",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual velocidade e frequência são associadas ao padrão 802.11a?",
+          "back": "**54 Mbps** e frequência de **5 GHz**.",
+          "hint": "Especificação de performance",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual tecnologia de múltiplas antenas foi introduzida pelo padrão 802.11n?",
+          "back": "Tecnologia **MIMO**.",
+          "hint": "Sigla para múltiplas antenas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Quais frequências podem ser utilizadas por dispositivos 802.11ax?",
+          "back": "Frequências de **2,4 GHz** e **5 GHz**.",
+          "hint": "Padrão Wi-Fi 6",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual faixa oferece maior alcance e atravessa melhor obstáculos: 2,4 GHz ou 5 GHz?",
+          "back": "**2,4 GHz** oferece maior alcance e atravessa melhor obstáculos; **5 GHz** possui alcance menor, mas com maior intensidade e clareza.",
+          "hint": "Trade-off de propagação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-13",
+          "front": "Por que a faixa de 2,4 GHz sofre mais interferências?",
+          "back": "Devido ao uso por vários equipamentos domésticos e canais mais limitados.",
+          "hint": "Fator de saturação espectral",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Segurança Sem Fio",
+      "description": "Segurança Sem Fio — 4 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "O que é criptografia aplicada à transmissão de dados?",
+          "back": "Codificação dos **dados** para trânsito seguro.",
+          "hint": "Processo de ofuscação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca-redes",
+            "criptografia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual protocolo de segurança Wi-Fi é considerado inseguro por ser vulnerável à força bruta?",
+          "back": "**WEP**.",
+          "hint": "Protocolo legado obsoleto",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca-redes",
+            "wifi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual protocolo surgiu como melhoria do WEP, mas ainda é considerado inseguro?",
+          "back": "**WPA**.",
+          "hint": "Sucessor do WEP",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "seguranca-redes",
+            "wifi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual protocolo trouxe um novo algoritmo criptográfico e é considerado seguro?",
+          "back": "**WPA2**.",
+          "hint": "Padrão de segurança robusto",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca-redes",
+            "wifi"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Redes Sem Fio",
+      "description": "Redes Sem Fio — 2 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "O que faz um repetidor em uma rede sem fio?",
+          "back": "Recebe o sinal e o **amplifica**.",
+          "hint": "Função de regeneração",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "hardware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-19",
+          "front": "Como uma rede mesh realiza a troca entre pontos de acesso?",
+          "back": "Os equipamentos conversam entre si e realizam a **troca automática** para o ponto com melhor sinal.",
+          "hint": "Topologia de auto-organização",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "wifi"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-6",
+      "title": "Comunicação e Protocolos",
+      "description": "Comunicação e Protocolos — 4 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Qual modo permite comunicação em apenas um sentido?",
+          "back": "**Simplex**.",
+          "hint": "Sentido único",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "transmissao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Como funciona a comunicação em half-duplex?",
+          "back": "A comunicação ocorre nos dois sentidos, mas de forma alternada (ou vai, ou vem).",
+          "hint": "Sentido alternado",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "transmissao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-22",
+          "front": "Que modo permite transmitir e receber simultaneamente?",
+          "back": "**Full-duplex**.",
+          "hint": "Sentido simultâneo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "transmissao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual porta é padronizada para páginas web sem criptografia?",
+          "back": "Porta **80**.",
+          "hint": "Serviço HTTP padrão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "protocolos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-7",
+      "title": "Modelo OSI",
+      "description": "Modelo OSI — 4 cards",
+      "cards": [
+        {
+          "id": "card-24",
+          "front": "Qual é a finalidade do modelo de referência OSI?",
+          "back": "Servir como **modelo de referência** e estudo para redes.",
+          "hint": "Finalidade didática",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "modelo-osi"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-25",
+          "front": "Quantas camadas compõem o modelo OSI?",
+          "back": "**Sete** camadas.",
+          "hint": "Quantidade de níveis",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "modelo-osi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-26",
+          "front": "Qual camada do modelo OSI é responsável pela transmissão dos dados?",
+          "back": "Camada **física**.",
+          "hint": "Nível de hardware puro",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "modelo-osi"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-27",
+          "front": "Com quais camadas uma camada OSI se comunica diretamente?",
+          "back": "Com as camadas imediatamente **acima e abaixo**.",
+          "hint": "Regra de adjacência",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes-computadores",
+            "modelo-osi"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal característica da transmissão de dados em modo simplex?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A comunicação ocorre nos dois sentidos, mas apenas um dispositivo pode transmitir por vez",
+          "correct": false,
+          "explanation": "Incorreta. A comunicação em modo half-duplex (semiduplex) permite que os dados fluam nos dois sentidos, mas apenas um dispositivo pode transmitir por vez, alternando a direção do fluxo de dados. Esta alternativa descreve, portanto, o modo half-duplex, e não o simplex."
+        },
+        {
+          "id": "b",
+          "text": "A comunicação flui em apenas um único sentido, com um dispositivo transmitindo e outro apenas recebendo",
+          "correct": true,
+          "explanation": "Correta. O modo de transmissão simplex é caracterizado por um fluxo de dados unidirecional, onde um dispositivo atua exclusivamente como transmissor e o outro, como receptor. Não há possibilidade de inversão de papéis ou comunicação no sentido contrário. Um exemplo prático é a transmissão de rádio ou televisão, onde o receptor apenas escuta e não pode enviar informações de volta."
+        },
+        {
+          "id": "c",
+          "text": "A comunicação alterna entre os dispositivos em intervalos regulares de tempo predefinidos",
+          "correct": false,
+          "explanation": "Incorreta. A alternância de transmissão entre dispositivos em intervalos regulares de tempo predefinidos é uma técnica de multiplexação por divisão de tempo (TDM) ou uma forma de gerenciar a comunicação em modos como o half-duplex, mas não define a característica fundamental do modo simplex. A essência do simplex é a unidirecionalidade permanente do fluxo de dados, independentemente de intervalos de tempo."
+        },
+        {
+          "id": "d",
+          "text": "A comunicação pode ocorrer simultaneamente nos dois sentidos, permitindo transmissão e recepção ao mesmo tempo",
+          "correct": false,
+          "explanation": "Incorreta. A comunicação que ocorre simultaneamente nos dois sentidos, permitindo transmissão e recepção ao mesmo tempo, é a característica do modo full-duplex (duplex completo). Um exemplo comum é uma conversa telefônica, onde ambos os interlocutores podem falar e ouvir ao mesmo tempo."
+        }
+      ],
+      "explanation": "Correta. O modo de transmissão simplex é caracterizado por um fluxo de dados unidirecional, onde um dispositivo atua exclusivamente como transmissor e o outro, como receptor. Não há possibilidade de inversão de papéis ou comunicação no sentido contrário. Um exemplo prático é a transmissão de rádio ou televisão, onde o receptor apenas escuta e não pode enviar informações de volta.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual organização é responsável pela normatização das transmissões Wi-Fi através do padrão 802.11?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "correct": true,
+          "explanation": "Correta. O Institute of Electrical and Electronics Engineers (IEEE) é a organização profissional que estabelece e mantém os padrões técnicos para diversas áreas da engenharia elétrica e eletrônica. A família de padrões 802.11, que define as especificações para redes locais sem fio (WLAN), popularmente conhecidas como Wi-Fi, é desenvolvida e normatizada pelo IEEE."
+        },
+        {
+          "id": "b",
+          "text": "International Telecommunication Union (ITU)",
+          "correct": false,
+          "explanation": "Incorreta. A International Telecommunication Union (ITU) é uma agência especializada das Nações Unidas que lida com questões de tecnologias da informação e comunicação (TIC). Suas responsabilidades incluem a alocação do espectro de radiofrequência e o desenvolvimento de padrões globais de telecomunicações, mas ela não é a responsável direta pela normatização técnica do padrão 802.11 para Wi-Fi."
+        },
+        {
+          "id": "c",
+          "text": "Internet Engineering Task Force (IETF)",
+          "correct": false,
+          "explanation": "Incorreta. A Internet Engineering Task Force (IETF) é a principal organização responsável por desenvolver e promover padrões abertos da Internet, como os protocolos TCP/IP, HTTP e SMTP. Seu foco está na arquitetura e operação da Internet, e não na normatização das redes locais sem fio (Wi-Fi)."
+        },
+        {
+          "id": "d",
+          "text": "International Organization for Standardization (ISO)",
+          "correct": false,
+          "explanation": "Incorreta. A International Organization for Standardization (ISO) é uma organização global que desenvolve e publica uma vasta gama de padrões internacionais, incluindo o Modelo OSI (Open Systems Interconnection) para redes de computadores. No entanto, ela não é a entidade responsável pela normatização específica das transmissões Wi-Fi."
+        }
+      ],
+      "explanation": "Correta. O Institute of Electrical and Electronics Engineers (IEEE) é a organização profissional que estabelece e mantém os padrões técnicos para diversas áreas da engenharia elétrica e eletrônica. A família de padrões 802.11, que define as especificações para redes locais sem fio (WLAN), popularmente conhecidas como Wi-Fi, é desenvolvida e normatizada pelo IEEE.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a principal vantagem da frequência de 2,4 GHz em relação à frequência de 5 GHz em redes Wi-Fi?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Melhor qualidade de sinal em ambientes com múltiplos dispositivos conectados simultaneamente",
+          "correct": false,
+          "explanation": "Incorreta. Em ambientes com múltiplos dispositivos conectados simultaneamente, a frequência de 5 GHz geralmente proporciona melhor qualidade de sinal e desempenho. Isso ocorre porque ela tem mais canais disponíveis e menos congestionamento, o que ajuda a evitar colisões e a manter a estabilidade da conexão para vários usuários, enquanto a banda de 2,4 GHz pode ficar saturada."
+        },
+        {
+          "id": "b",
+          "text": "Maior velocidade de transmissão de dados e menor latência nas conexões",
+          "correct": false,
+          "explanation": "Incorreta. A frequência de 5 GHz é que geralmente oferece maior velocidade de transmissão de dados e menor latência, devido à sua capacidade de suportar maiores larguras de banda e ter menos congestionamento. A frequência de 2,4 GHz, por outro lado, é mais lenta em termos de velocidade máxima teórica."
+        },
+        {
+          "id": "c",
+          "text": "Maior alcance do sinal e melhor capacidade de ultrapassar obstáculos físicos",
+          "correct": true,
+          "explanation": "Correta. A frequência de 2,4 GHz, por ter um comprimento de onda maior, possui uma capacidade superior de penetrar obstáculos físicos, como paredes e móveis, e, consequentemente, oferece um maior alcance de sinal. Isso a torna mais adequada para cobrir áreas maiores e atravessar barreiras em ambientes internos, em comparação com a frequência de 5 GHz."
+        },
+        {
+          "id": "d",
+          "text": "Menor interferência de equipamentos domésticos e maior número de canais disponíveis",
+          "correct": false,
+          "explanation": "Incorreta. A frequência de 5 GHz é que tende a sofrer menor interferência de equipamentos domésticos comuns (como fornos de micro-ondas, telefones sem fio e dispositivos Bluetooth) e oferece um maior número de canais não sobrepostos. A banda de 2,4 GHz é conhecida por ser mais suscetível a essas interferências e ter menos canais distintos."
+        }
+      ],
+      "explanation": "Correta. A frequência de 2,4 GHz, por ter um comprimento de onda maior, possui uma capacidade superior de penetrar obstáculos físicos, como paredes e móveis, e, consequentemente, oferece um maior alcance de sinal. Isso a torna mais adequada para cobrir áreas maiores e atravessar barreiras em ambientes internos, em comparação com a frequência de 5 GHz.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a principal diferença entre um hub e um switch em uma topologia em estrela?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O hub suporta velocidades superiores a 1 Gbps, enquanto o switch é limitado a 100 Mbps",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação está equivocada em relação às capacidades de velocidade. Hubs são tecnologias mais antigas e geralmente limitados a 10 ou 100 Mbps. Switches modernos, por outro lado, são projetados para alto desempenho e suportam amplamente velocidades de 1 Gbps (Gigabit Ethernet) e até 10 Gbps ou mais, sendo a escolha padrão para redes atuais."
+        },
+        {
+          "id": "b",
+          "text": "O hub analisa os pacotes e envia apenas para o destinatário correto, enquanto o switch transmite para todos os dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação inverte as funcionalidades dos dispositivos. Na realidade, é o switch que analisa os pacotes (ou quadros, na camada de enlace) e os envia seletivamente ao destinatário correto. O hub, por sua vez, retransmite os dados para todos os dispositivos conectados, sem análise de destino."
+        },
+        {
+          "id": "c",
+          "text": "O hub transmite os dados para todos os dispositivos conectados, enquanto o switch envia apenas para o destinatário específico",
+          "correct": true,
+          "explanation": "Correta. A principal distinção entre um hub e um switch reside na sua inteligência de encaminhamento de dados. O hub, um dispositivo da camada física (Camada 1 do Modelo OSI), atua como um repetidor e simplesmente retransmite todos os dados recebidos para todas as portas conectadas, sem discernimento. Já o switch, um dispositivo da camada de enlace de dados (Camada 2 do Modelo OSI), é mais \"inteligente\": ele aprende os endereços MAC dos dispositivos em cada porta e, ao receber um quadro de dados, o encaminha de forma seletiva apenas para a porta onde o destinatário específico está conectado, otimizando o tráfego da rede."
+        },
+        {
+          "id": "d",
+          "text": "O hub opera na camada de rede, enquanto o switch opera exclusivamente na camada física",
+          "correct": false,
+          "explanation": "Incorreta. O hub opera na camada física (Camada 1 do Modelo OSI), lidando apenas com sinais elétricos ou ópticos. O switch, por sua vez, opera na camada de enlace de dados (Camada 2 do Modelo OSI), onde utiliza endereços MAC para tomar decisões de encaminhamento. Nenhum deles opera exclusivamente na camada de rede (Camada 3) para suas funções básicas, embora existam switches de camada 3 que incorporam funcionalidades de roteamento."
+        }
+      ],
+      "explanation": "Correta. A principal distinção entre um hub e um switch reside na sua inteligência de encaminhamento de dados. O hub, um dispositivo da camada física (Camada 1 do Modelo OSI), atua como um repetidor e simplesmente retransmite todos os dados recebidos para todas as portas conectadas, sem discernimento. Já o switch, um dispositivo da camada de enlace de dados (Camada 2 do Modelo OSI), é mais \"inteligente\": ele aprende os endereços MAC dos dispositivos em cada porta e, ao receber um quadro de dados, o encaminha de forma seletiva apenas para a porta onde o destinatário específico está conectado, otimizando o tráfego da rede.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual tecnologia foi introduzida no padrão 802.11n para melhorar significativamente o desempenho das redes Wi-Fi?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "MIMO (Multiple Input Multiple Output), permitindo múltiplas antenas com entrada e saída simultânea",
+          "correct": true,
+          "explanation": "Correta. A tecnologia MIMO (Multiple Input Multiple Output) foi a inovação mais significativa introduzida com o padrão 802.11n. Ela permite que os dispositivos Wi-Fi utilizem múltiplas antenas tanto para transmitir quanto para receber dados simultaneamente, criando múltiplos fluxos espaciais de informação. Isso resulta em um aumento substancial da velocidade de transmissão, do alcance e da confiabilidade da conexão sem fio, otimizando o uso do espectro de rádio e permitindo taxas de dados muito mais altas."
+        },
+        {
+          "id": "b",
+          "text": "Beamforming, que direciona o sinal especificamente para cada dispositivo conectado",
+          "correct": false,
+          "explanation": "Incorreta. O 'beamforming' (formação de feixe) é uma tecnologia que foi introduzida e aprimorada com o 802.11n (e padrões subsequentes). Ela permite que as antenas do roteador direcionem o sinal de rádio para um dispositivo específico, melhorando a intensidade e o alcance da conexão. Contudo, embora importante, a principal tecnologia responsável pela significativa melhoria de desempenho em termos de taxa de transferência no 802.11n foi o MIMO."
+        },
+        {
+          "id": "c",
+          "text": "QoS (Quality of Service), priorizando o tráfego de dados conforme a aplicação",
+          "correct": false,
+          "explanation": "Incorreta. O QoS (Quality of Service) é um conjunto de mecanismos que permite priorizar certos tipos de tráfego de rede (como voz e vídeo) para garantir um desempenho adequado para aplicações sensíveis à latência. Embora o 802.11n incorpore e aprimore o QoS (com o padrão 802.11e), ele não foi a tecnologia *primária* que trouxe a melhoria significativa no desempenho geral da taxa de transferência da rede, que é a principal contribuição do MIMO."
+        },
+        {
+          "id": "d",
+          "text": "Channel Bonding, combinando canais adjacentes para aumentar a largura de banda disponível",
+          "correct": false,
+          "explanation": "Incorreta. O 'channel bonding' (agregação de canais) foi uma característica introduzida no 802.11n que permite combinar dois canais de 20 MHz para formar um canal de 40 MHz, efetivamente dobrando a largura de banda disponível e, consequentemente, a velocidade de transmissão. Embora tenha contribuído para o aumento do desempenho, a tecnologia MIMO é considerada a inovação mais fundamental e impactante para as melhorias significativas de desempenho e capacidade trazidas pelo padrão 802.11n."
+        }
+      ],
+      "explanation": "Correta. A tecnologia MIMO (Multiple Input Multiple Output) foi a inovação mais significativa introduzida com o padrão 802.11n. Ela permite que os dispositivos Wi-Fi utilizem múltiplas antenas tanto para transmitir quanto para receber dados simultaneamente, criando múltiplos fluxos espaciais de informação. Isso resulta em um aumento substancial da velocidade de transmissão, do alcance e da confiabilidade da conexão sem fio, otimizando o uso do espectro de rádio e permitindo taxas de dados muito mais altas.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em relação aos protocolos de segurança para redes Wi-Fi, qual afirmação está correta?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O WPA2 utiliza o mesmo algoritmo criptográfico do WPA, sendo apenas uma atualização de versão",
+          "correct": false,
+          "explanation": "Incorreta. O WPA2 (Wi-Fi Protected Access II) não utiliza o mesmo algoritmo criptográfico do WPA. Ele introduziu o AES (Advanced Encryption Standard) com o modo CCMP (Counter Mode with Cipher Block Chaining Message Authentication Code Protocol) como seu algoritmo principal de criptografia, que é significativamente mais forte e seguro que o TKIP utilizado no WPA original. Portanto, não é apenas uma atualização de versão, mas uma mudança fundamental na tecnologia de criptografia."
+        },
+        {
+          "id": "b",
+          "text": "O WPA representa uma melhoria do WEP, mas ainda é considerado vulnerável a ataques",
+          "correct": true,
+          "explanation": "Correta. O WPA (Wi-Fi Protected Access) foi desenvolvido como uma melhoria provisória sobre o WEP. Embora tenha introduzido recursos de segurança mais robustos, como o protocolo TKIP (Temporal Key Integrity Protocol) e autenticação de usuários, o TKIP foi posteriormente identificado como vulnerável a certas explorações, tornando o WPA também suscetível a ataques, especialmente em redes com senhas fracas. Por isso, ele é considerado uma melhoria, mas ainda vulnerável."
+        },
+        {
+          "id": "c",
+          "text": "O WEP é resistente a ataques de força bruta devido ao seu algoritmo de criptografia avançado",
+          "correct": false,
+          "explanation": "Incorreta. O WEP é, na verdade, extremamente suscetível a ataques de força bruta e outras vulnerabilidades. Seu algoritmo de criptografia, baseado em RC4 e um vetor de inicialização (IV) curto, apresenta falhas que permitem que atacantes capturem e analisem pacotes para descobrir a chave de criptografia em pouco tempo. Ele não é, de forma alguma, resistente a ataques de força bruta."
+        },
+        {
+          "id": "d",
+          "text": "O WEP é considerado seguro e recomendado para uso em ambientes corporativos modernos",
+          "correct": false,
+          "explanation": "Incorreta. O WEP (Wired Equivalent Privacy) é um protocolo de segurança obsoleto e notoriamente inseguro para redes Wi-Fi. Ele é facilmente vulnerável a ataques de força bruta e outras técnicas, o que o torna inadequado e não recomendado para uso em ambientes corporativos modernos, onde a segurança é primordial."
+        }
+      ],
+      "explanation": "Correta. O WPA (Wi-Fi Protected Access) foi desenvolvido como uma melhoria provisória sobre o WEP. Embora tenha introduzido recursos de segurança mais robustos, como o protocolo TKIP (Temporal Key Integrity Protocol) e autenticação de usuários, o TKIP foi posteriormente identificado como vulnerável a certas explorações, tornando o WPA também suscetível a ataques, especialmente em redes com senhas fracas. Por isso, ele é considerado uma melhoria, mas ainda vulnerável.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a principal vantagem da topologia mesh (malha) em redes sem fio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Permite que os equipamentos conversem entre si e façam trocas inteligentes de conexão automaticamente",
+          "correct": true,
+          "explanation": "Correta. A principal vantagem da topologia mesh é sua inteligência na gestão da conexão. Os equipamentos (nós) da rede mesh são projetados para se comunicar entre si, roteando o tráfego de dados de forma dinâmica e otimizada. Quando um dispositivo se move e o sinal de um nó enfraquece, a rede mesh automaticamente e de forma transparente transfere a conexão para o nó mais próximo com melhor sinal, garantindo uma experiência de usuário contínua e sem interrupções. Essa capacidade de \"conversar entre si\" e realizar trocas inteligentes de conexão é o cerne da sua funcionalidade."
+        },
+        {
+          "id": "b",
+          "text": "Aumenta a velocidade de transmissão em até dez vezes comparado com topologias tradicionais",
+          "correct": false,
+          "explanation": "Incorreta. A topologia mesh otimiza a cobertura e a confiabilidade da rede, criando múltiplos caminhos para os dados e distribuindo o sinal de forma mais eficiente. No entanto, ela não garante um aumento de velocidade de transmissão em um fator fixo e elevado, como \"dez vezes\". A velocidade real ainda é determinada por outros fatores, como o padrão Wi-Fi utilizado (ex: 802.11ac, 802.11ax), a largura de banda disponível e a qualidade do sinal em cada ponto da rede."
+        },
+        {
+          "id": "c",
+          "text": "Reduz significativamente o custo de implementação ao utilizar menos equipamentos de rede",
+          "correct": false,
+          "explanation": "Incorreta. A topologia mesh (malha) geralmente envolve a implantação de múltiplos nós (equipamentos) que se interconectam para formar uma rede robusta e com ampla cobertura. Essa abordagem, embora ofereça benefícios significativos, tende a aumentar o custo inicial de implementação em comparação com redes que utilizam um único ponto de acesso."
+        },
+        {
+          "id": "d",
+          "text": "Elimina completamente a necessidade de configuração manual dos dispositivos conectados",
+          "correct": false,
+          "explanation": "Incorreta. Embora as redes mesh simplifiquem o gerenciamento de roaming e a otimização de rotas, a configuração inicial da rede e dos dispositivos que se conectarão a ela ainda exige alguma forma de intervenção, seja manual ou por meio de aplicativos e interfaces de gerenciamento. Não se elimina completamente a necessidade de configuração."
+        }
+      ],
+      "explanation": "Correta. A principal vantagem da topologia mesh é sua inteligência na gestão da conexão. Os equipamentos (nós) da rede mesh são projetados para se comunicar entre si, roteando o tráfego de dados de forma dinâmica e otimizada. Quando um dispositivo se move e o sinal de um nó enfraquece, a rede mesh automaticamente e de forma transparente transfere a conexão para o nó mais próximo com melhor sinal, garantindo uma experiência de usuário contínua e sem interrupções. Essa capacidade de \"conversar entre si\" e realizar trocas inteligentes de conexão é o cerne da sua funcionalidade.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é o conceito fundamental de portas lógicas na comunicação de rede?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Definem a prioridade de processamento das requisições no servidor de destino",
+          "correct": false,
+          "explanation": "Incorreta. A prioridade de processamento das requisições em um servidor é geralmente gerenciada por mecanismos de Qualidade de Serviço (QoS) ou por configurações do sistema operacional e do software do servidor. Esses mecanismos permitem priorizar determinados tipos de tráfego ou requisições com base em políticas definidas, mas essa função não é atribuída às portas lógicas, que têm a função de direcionamento de serviço."
+        },
+        {
+          "id": "b",
+          "text": "Identificam o tipo de serviço solicitado, permitindo que o servidor direcione a requisição corretamente",
+          "correct": true,
+          "explanation": "Correta. No contexto da comunicação de rede, as portas lógicas são números que servem como identificadores para diferentes serviços ou aplicações em um dispositivo (host). Por exemplo, a porta 80 é padronizada para o serviço HTTP (navegação web), enquanto a porta 25 é usada para SMTP (envio de e-mails). Quando um servidor recebe uma requisição em uma porta específica, ele sabe qual serviço deve ser acionado para processar essa requisição, direcionando-a corretamente para a aplicação correspondente. É como se cada serviço tivesse uma \"porta de entrada\" numerada no servidor."
+        },
+        {
+          "id": "c",
+          "text": "Estabelecem o nível de criptografia utilizado na comunicação entre os dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. Embora algumas portas sejam convencionalmente associadas a serviços que utilizam criptografia (como a porta 443 para HTTPS, que usa TLS/SSL), a porta em si não estabelece o nível de criptografia. O nível de segurança e o protocolo de criptografia (como TLS, SSL, SSH) são definidos e implementados pelos protocolos de aplicação e transporte que operam sobre essas portas, e não pela porta lógica isoladamente."
+        },
+        {
+          "id": "d",
+          "text": "Determinam a velocidade de transmissão dos dados entre cliente e servidor",
+          "correct": false,
+          "explanation": "Incorreta. A velocidade de transmissão dos dados em uma rede é determinada por diversos fatores físicos e lógicos, como a capacidade da infraestrutura (cabeamento, equipamentos de rede), a largura de banda do canal, o padrão de rede utilizado (ex: Ethernet, Wi-Fi 802.11n/ac/ax) e a capacidade dos dispositivos envolvidos. As portas lógicas, por sua vez, são responsáveis por identificar o serviço, não por definir a velocidade da conexão."
+        }
+      ],
+      "explanation": "Correta. No contexto da comunicação de rede, as portas lógicas são números que servem como identificadores para diferentes serviços ou aplicações em um dispositivo (host). Por exemplo, a porta 80 é padronizada para o serviço HTTP (navegação web), enquanto a porta 25 é usada para SMTP (envio de e-mails). Quando um servidor recebe uma requisição em uma porta específica, ele sabe qual serviço deve ser acionado para processar essa requisição, direcionando-a corretamente para a aplicação correspondente. É como se cada serviço tivesse uma \"porta de entrada\" numerada no servidor.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No modelo OSI de sete camadas, qual é o princípio fundamental de comunicação entre as camadas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Cada camada pode se comunicar diretamente com qualquer outra camada do modelo",
+          "correct": false,
+          "explanation": "Incorreta. O modelo OSI (Open Systems Interconnection) é estruturado de forma hierárquica e modular. O princípio fundamental é que cada camada se comunica apenas com as camadas adjacentes (imediatamente acima e abaixo) para trocar informações e serviços. A comunicação direta entre camadas não adjacentes não é permitida, o que garante a independência e a modularidade de cada nível."
+        },
+        {
+          "id": "b",
+          "text": "Todas as camadas compartilham informações simultaneamente para otimizar o processamento dos dados",
+          "correct": false,
+          "explanation": "Incorreta. O modelo OSI não prevê o compartilhamento simultâneo de informações entre todas as camadas. Pelo contrário, o processo de comunicação envolve o encapsulamento de dados: cada camada adiciona suas próprias informações de controle (cabeçalhos e/ou rodapés) aos dados da camada superior antes de passá-los para a camada inferior. Esse processo é sequencial e hierárquico, não simultâneo entre todas as camadas."
+        },
+        {
+          "id": "c",
+          "text": "As camadas pares se comunicam diretamente entre si, enquanto as ímpares processam os dados localmente",
+          "correct": false,
+          "explanation": "Incorreta. Não há uma distinção de comunicação baseada na paridade das camadas (pares ou ímpares) no modelo OSI. A comunicação vertical é sempre entre camadas adjacentes, independentemente de serem pares ou ímpares. A comunicação horizontal (lógica) ocorre entre a mesma camada em sistemas diferentes, como se estivessem se comunicando diretamente, mas fisicamente os dados sempre descem e sobem as camadas em cada sistema."
+        },
+        {
+          "id": "d",
+          "text": "Cada camada se comunica apenas com as camadas imediatamente acima e abaixo, sem conhecer as funções das demais",
+          "correct": true,
+          "explanation": "Correta. Este é o princípio central do modelo OSI. Cada camada é projetada para realizar um conjunto específico de funções e interage apenas com a camada imediatamente superior (para oferecer serviços) e com a camada imediatamente inferior (para solicitar serviços). As camadas não precisam conhecer os detalhes internos ou as funcionalidades das outras camadas não adjacentes, apenas como interagir com suas vizinhas diretas. Isso permite que as camadas sejam desenvolvidas e modificadas de forma independente, desde que as interfaces com as camadas adjacentes sejam mantidas."
+        }
+      ],
+      "explanation": "Correta. Este é o princípio central do modelo OSI. Cada camada é projetada para realizar um conjunto específico de funções e interage apenas com a camada imediatamente superior (para oferecer serviços) e com a camada imediatamente inferior (para solicitar serviços). As camadas não precisam conhecer os detalhes internos ou as funcionalidades das outras camadas não adjacentes, apenas como interagir com suas vizinhas diretas. Isso permite que as camadas sejam desenvolvidas e modificadas de forma independente, desde que as interfaces com as camadas adjacentes sejam mantidas.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Por que o modelo OSI é considerado um modelo de referência e não o modelo efetivamente implementado nas redes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Foi descontinuado pelos órgãos de padronização em favor de modelos mais eficientes",
+          "correct": false,
+          "explanation": "Incorreta. O modelo OSI não foi descontinuado. Pelo contrário, ele continua sendo uma ferramenta pedagógica e de análise extremamente valiosa no campo das redes de computadores. Sua estrutura lógica e detalhada é fundamental para o entendimento de como as redes funcionam e para a comparação entre diferentes tecnologias e protocolos, mesmo que o modelo TCP/IP seja o padrão de implementação predominante."
+        },
+        {
+          "id": "b",
+          "text": "Não contempla protocolos de segurança essenciais para as comunicações modernas",
+          "correct": false,
+          "explanation": "Incorreta. O modelo OSI é uma estrutura conceitual que define as funções que devem ser realizadas em cada camada, mas não especifica os protocolos em si. Protocolos de segurança (como TLS/SSL, IPsec) podem ser e são integrados em diferentes camadas do modelo OSI ou TCP/IP, dependendo de sua funcionalidade. Portanto, o modelo OSI não falha em contemplar segurança, mas sim oferece um framework para onde a segurança pode ser implementada."
+        },
+        {
+          "id": "c",
+          "text": "Apresenta complexidade excessiva que inviabiliza sua implementação prática em equipamentos de rede",
+          "correct": false,
+          "explanation": "Incorreta. Embora o modelo OSI seja mais detalhado e conceitualmente complexo que o TCP/IP, a complexidade não é o único fator que inviabilizou sua implementação prática generalizada. A principal razão é histórica: o TCP/IP já estava consolidado. A complexidade do OSI, com suas sete camadas distintas, tornaria a implementação mais onerosa e talvez menos flexível do que o modelo TCP/IP, que é mais pragmático e com menos camadas."
+        },
+        {
+          "id": "d",
+          "text": "Foi desenvolvido após a implementação do TCP/IP e serve principalmente para fins didáticos e comparativos",
+          "correct": true,
+          "explanation": "Correta. O modelo OSI (Open Systems Interconnection) foi desenvolvido pela ISO (International Organization for Standardization) como um modelo conceitual e ideal para padronizar as comunicações de rede. No entanto, ele foi formalizado após o surgimento e a ampla adoção do conjunto de protocolos TCP/IP, que já estava em uso e se tornou o padrão de fato da Internet. Por essa razão, o modelo OSI é hoje utilizado principalmente como uma ferramenta didática e de referência para explicar as funcionalidades das redes, comparar diferentes arquiteturas de rede e auxiliar na solução de problemas, mas não é o modelo efetivamente implementado como um conjunto de protocolos em equipamentos de rede."
+        }
+      ],
+      "explanation": "Correta. O modelo OSI (Open Systems Interconnection) foi desenvolvido pela ISO (International Organization for Standardization) como um modelo conceitual e ideal para padronizar as comunicações de rede. No entanto, ele foi formalizado após o surgimento e a ampla adoção do conjunto de protocolos TCP/IP, que já estava em uso e se tornou o padrão de fato da Internet. Por essa razão, o modelo OSI é hoje utilizado principalmente como uma ferramenta didática e de referência para explicar as funcionalidades das redes, comparar diferentes arquiteturas de rede e auxiliar na solução de problemas, mas não é o modelo efetivamente implementado como um conjunto de protocolos em equipamentos de rede.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "02_253605_Internet - Rede de Computadores II.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:59:01"
+}

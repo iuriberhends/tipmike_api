@@ -1,0 +1,198 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 13,
+  "ordem_no_curso": "136.00",
+  "titulo": "Matrizes - Operações - Multiplicação II",
+  "codigo_aula": "339141",
+  "video_id": "rtuDU7yXWFQ=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:04",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/rtuDU7yXWFQ%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408807%2C408810%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Matrizes - Operações - Multiplicação II\n\n## Continuação do Exemplo 2: Elementos pontuais da matriz produto\nVamos dar continuidade àquela questão, o Exemplo 2. A ideia aqui é explicar como encontrar apenas elementos pontuais da matriz produto. A questão diz o seguinte: temos duas matrizes A e B com leis de formação dadas; A tem elementos a_ij = i² e B tem elementos b_ij = i − j ao quadrado, ou seja, b_ij = (i − j)². A matriz produto C = A × B é 3×3.\n\nNós queremos calcular elementos específicos de C: primeiro C_{3,1} e depois C_{1,3}. A pergunta é: o que é C_{3,1}? Aprendemos que C_{3,1} é a multiplicação combinada (produto escalar) dos elementos da terceira linha de A com os elementos da primeira coluna de B.\n\nEu não tenho aqui as matrizes completas escritas, mas não tem problema. O que eu preciso são as leis de formação para obter os elementos necessários.\n\nSabemos que:\n- A tem três linhas e três colunas, e a_ij = i².\n- B tem três linhas e três colunas, e b_ij = (i − j)².\n\nPrimeiro, vamos achar os elementos da terceira linha de A:\n- a_{3,1} = 3² = 9\n- a_{3,2} = 3² = 9\n- a_{3,3} = 3² = 9\n\nAgora, os elementos da primeira coluna de B:\n- b_{1,1} = (1 − 1)² = 0\n- b_{2,1} = (2 − 1)² = 1\n- b_{3,1} = (3 − 1)² = 4\n\nEntão C_{3,1} = 9·0 + 9·1 + 9·4 = 0 + 9 + 36 = 45.\n\nAgora vamos para C_{1,3}, que é a primeira linha de A com a terceira coluna de B. A primeira linha de A:\n- a_{1,1} = 1² = 1\n- a_{1,2} = 1² = 1\n- a_{1,3} = 1² = 1\n\nA terceira coluna de B:\n- b_{1,3} = (1 − 3)² = 4\n- b_{2,3} = (2 − 3)² = 1\n- b_{3,3} = (3 − 3)² = 0\n\nLogo, C_{1,3} = 1·4 + 1·1 + 1·0 = 5.\n\nA questão quer o produto desses dois elementos: C_{3,1} × C_{1,3} = 45 × 5 = 225. Questão trabalhosa, mas direta. O ponto importante é identificar corretamente quais elementos usar:\n- C_{3,1}: terceira linha de A com primeira coluna de B.\n- C_{1,3}: primeira linha de A com terceira coluna de B.\n\n## Exemplo 3: Comparando elementos de A²\nOutra questão interessante segue a mesma ideia. Queremos trabalhar com a matriz A e analisar A² = A × A, onde A é 3×3. O foco é comparar elementos específicos de A²: o elemento (2,3), denotado (A²)_{2,3}, e o elemento (2,2), denotado (A²)_{2,2}. A ideia é verificar uma desigualdade entre eles.\n\nA matriz A é dada (no enunciado) como 3×3 com números do tipo 2, 4, 10, 20, 0, 2, 40, etc. Vamos considerar A explícita para multiplicar A por A. Copiamos A duas vezes (mesma matriz nas duas posições do produto), pois queremos A².\n\nQueremos apenas dois elementos da matriz resultante:\n- (A²)_{2,3}: segunda linha de A com terceira coluna de A.\n- (A²)_{2,2}: segunda linha de A com segunda coluna de A.\n\nFazendo as multiplicações pertinentes (segunda linha por terceira coluna para (2,3); segunda linha por segunda coluna para (2,2)), obtemos valores que, ao final, permitem a comparação. O item do enunciado afirma algo como: (A²)_{2,3} = 1040 e (A²)_{2,2} = 140, de modo que (A²)_{2,3} − (A²)_{2,2} = 900, que é maior que 500. A conclusão do item está correta.\n\nA leitura cuidadosa da ordem das linhas e colunas é fundamental. A matriz produto A² é 3×3, e os índices i, j variam de 1 a 3. O cálculo é pontual: foca-se apenas nas posições pedidas, sem precisar fazer toda a matriz.\n\n## Transposta e ordem na multiplicação: A^T × A versus A × A^T\nAgora, uma questão legal sobre transposta. Considerando a matriz A de ordem 3×2, por exemplo:\nA =\n[1 0]\n[0 1]\n[0 1]\n\n(Essa é só para ilustrar o raciocínio com zeros e uns, enfatizando a estrutura 3×2.)\n\nA transposta A^T terá ordem 2×3. Lembrem: transpor é trocar linhas por colunas. Linha vira coluna e vice-versa.\n\nPonto crucial: multiplicação de matrizes não é comutativa. A × A^T é diferente de A^T × A, tanto na ordem quanto, muitas vezes, no resultado.\n\nAqui o enunciado pede explicitamente A^T × A (transposta vezes A), e não A × A^T. Vamos analisar a ordem:\n- A^T é 2×3.\n- A é 3×2.\n- Então A^T × A é possível (os “de dentro” coincidem: 3 e 3) e o resultado será 2×2 (os “de fora”).\n\nIsso já elimina alternativas cuja ordem não seja 2×2. Uma tática inteligente em prova é calcular apenas o primeiro elemento da matriz produto para identificar a alternativa correta, quando possível.\n\nMontando A e A^T de modo coerente com o enunciado, multiplicamos A^T (2×3) por A (3×2) e obtemos a matriz 2×2 resultante. Pelo padrão de zeros e uns do exemplo trabalhado, os produtos parciais mostram que:\n- O primeiro elemento (1,1) da matriz produto é 2.\n- Os demais elementos podem ser verificados rapidamente; há elementos que saem zero pelas linhas/colunas com muitos zeros.\n\nCom isso, identificamos a alternativa correta como a que apresenta uma matriz 2×2 com o primeiro elemento igual ao valor encontrado e padrão consistente com os demais cálculos. O importante aqui é:\n- Respeitar a ordem: A^T × A não é a mesma coisa que A × A^T.\n- Usar a ordem para determinar a dimensão do resultado.\n- Otimizar o cálculo checando só o(s) elemento(s) necessário(s).\n\nEsses detalhes fazem diferença em prova. Não é para trocar a ordem “porque parece a mesma coisa”. A banca costuma inverter de propósito para ver se você está atento.\n\n> 🎯 **Dicas de prova:** Multiplicação de matrizes não é comutativa. Verifique sempre as dimensões: se A é m×n, então A^T é n×m. Em A^T × A, o resultado é n×n; em A × A^T, o resultado é m×m. Muitas vezes dá para eliminar alternativas só pela ordem da matriz resultante.\n\nFinalizando este bloco: no próximo, vem um desafio com A^T × A novamente, e depois vamos entrar em matriz inversa. Vou mostrar dois jeitos: o convencional (algébrico) e um prático, rápido, que salva de verdade. É bom conhecer os dois. O prático é ótimo para prova, mas entender o convencional dá base para não cair em pegadinhas. Vamos devagar e sempre, reforçando fundamentos e propriedades, porque é isso que diferencia você na concorrência.",
+  "transcricao_meta": {
+    "title": "Matrizes - Operações - Multiplicação II",
+    "subject": "Conhecimentos Específicos",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 26378,
+    "createdAt": "2026-02-05T17:43:38.715Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda multiplicação de matrizes com foco em: cálculo de entradas específicas, dimensões e compatibilidade, produtos com transposta e potências (A²).\nPrincipais pontos: \n- A ordem importa (não comuta).\n- Dimensão do produto via “os de dentro” e “os de fora”.\n- Cálculo direto de elementos S(i,j) sem montar a matriz inteira.\n\n## 1. Base / Conceitos Fundamentais\n- Matriz m×n: m linhas, n colunas.\n- Elemento S(i,j) ou A(i,j): entrada na linha i, coluna j (ex.: A3,1).\n- Multiplicação de matrizes (M_{m×n} · N_{p×q}):\n  - Existe se n = p (“os de dentro” iguais).\n  - Resultado é m×q (“os de fora”).\n- Transposta (A^T): troca linhas por colunas. Se A é 3×2, A^T é 2×3.\n- Potência A²: A · A (só definida se A for quadrada).\n- Não comutatividade: em geral, A·B ≠ B·A.\n\n> Dica de Prova\n> - “A vezes B” é diferente de “B vezes A”. A ordem importa e muda a dimensão.\n\n## 2. Como Funciona / Distinções\n- Linha × Coluna: S(i,j) do produto = (linha i da 1ª) · (coluna j da 2ª).\n- A·A^T vs A^T·A:\n  - Se A = 3×2: A·A^T = 3×3; A^T·A = 2×2. Resultados diferentes.\n- Índices definidos por fórmulas:\n  - Se o enunciado diz i,j ∈ {1,2,3}, a matriz é 3×3.\n  - Cuidado com sinais: “−j²” é negativo do quadrado (o quadrado é não negativo, o sinal vem de fora).\n\nTabela rápida: Dimensões em produtos com transposta\n- A (3×2)\n  - A·A^T: 3×3\n  - A^T·A: 2×2\n\n> Dica de Prova\n> - Só pela dimensão, elimine alternativas erradas antes de calcular qualquer elemento.\n\n## 3. Aplicação Prática / Técnicas\n- Para calcular S(i,j) rapidamente:\n  1) Identifique a linha i da 1ª matriz e a coluna j da 2ª.\n  2) Multiplique elemento a elemento e some (produto escalar).\n- Para itens que pedem apenas alguns elementos (ex.: S2,3, S2,2):\n  - Não monte a matriz inteira. Pegue só as partes necessárias.\n- Teste de compatibilidade:\n  - Verifique “os de dentro” (colunas da 1ª = linhas da 2ª).\n  - Se não batem, o produto não existe.\n- Estratégia de prova (economia de tempo):\n  1) Confirme a ordem exata do produto (ex.: A^T·A).\n  2) Use dimensões para eliminar.\n  3) Se necessário, calcule apenas o elemento (1,1) para decidir entre as alternativas restantes.\n- Construção por fórmulas:\n  - Ex.: A(i,j) = i² → na linha 3: A3,1 = A3,2 = A3,3 = 9 (“nove, nove, nove”).\n  - Ex.: B(i,j) = i − j² → atenção aos sinais (−j²).\n\n> Dica de Prova\n> - Em produtos pedidos como “A transposta vezes A”, escreva A^T·A, nunca A·A^T. Trocar a ordem muda tudo.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: Entradas específicas do produto S = A·B\n  - Dados típicos:\n    - A com A(i,j) = i² → linha 3: 9, 9, 9.\n    - B com B(i,j) = i − j² (exemplo de construção por fórmula).\n  - Cálculo:\n    - S3,1: 3ª linha de A × 1ª coluna de B → somatório dos produtos.\n    - S3,3: 3ª linha de A × 3ª coluna de B → somatório dos produtos.\n  - Observação: valores como “quarenta e cinco” e “cinco” podem surgir conforme os elementos de B. O processo é sempre o mesmo: linha × coluna.\n  - Se pedirem S3,1 × S3,3, primeiro calcule cada um e depois multiplique.\n\n- Exemplo 2: A² (A·A) e diferença entre entradas\n  - Se A é 3×3, então A² é 3×3.\n  - Para S2,3: 2ª linha de A × 3ª coluna de A.\n  - Para S2,2: 2ª linha de A × 2ª coluna de A.\n  - Resultados citados: S2,3 = 1040 (“mil e quarenta”), S2,2 = 140 (“cento e quarenta”).\n  - Diferença: 1040 − 140 = 900 (“novecentos”) > “quinhentos” → item verdadeiro.\n\n- Exemplo 3: Dimensão decide\n  - Se A = 2×3:\n    - A·A^T = 2×2\n    - A^T·A = 3×3\n  - Se a alternativa mostra 2×2, está se referindo a A·A^T; se 3×3, a A^T·A.\n\n> Dica de Prova\n> - Muitas questões são vencidas ao identificar a dimensão correta. Calcular o (1,1) resolve empates entre alternativas.\n\n## 5. Pegadinhas e Erros Comuns\n- Trocar a ordem: A·A^T ≠ A^T·A. A multiplicação de matrizes não possui a propriedade comutativa.\n- Ignorar compatibilidade: tentar multiplicar quando “os de dentro” não batem (ex.: 2×3 · 2×3).\n- Sinal em “−j²”: o quadrado é positivo; o sinal negativo fica fora. Não confunda com (−j)².\n- Perder tempo montando a matriz toda quando só pedem S3,1, S3,3, S2,3, S2,2 etc.\n- Esquecer que i,j dados “maiores ou iguais a 1 e menores ou iguais a 3” implicam matriz 3×3 e índices de 1 a 3.\n\n> Dica de Prova\n> - A banca pode “pedir o contrário”: se o enunciado for A^T·A e você fizer A·A^T, erra a questão. Confira a ordem antes de operar.",
+  "resumo_bolso": "# Matrizes - Operações - Multiplicação II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Matriz m×n**: m linhas, n colunas; índices i (linha), j (coluna) → A(i,j) ou Aᵢⱼ.\n* **Elemento S(i,j)**: entrada na linha i, coluna j (ex.: S3,1, S2,3).\n* **Produto M_{m×n} · N_{p×q}**: só existe se **n = p** (“os de dentro” iguais); resultado é **m×q** (“os de fora”).\n* **Elemento do produto S(i,j)**: linha i da 1ª matriz × coluna j da 2ª (produto escalar + soma).\n* **Transposta Aᵀ**: troca linhas por colunas; se A é 3×2, Aᵀ é 2×3.\n* **Potência A²**: A·A; só definida se A for **quadrada**.\n* **Não comutatividade**: em geral **A·B ≠ B·A**; a ordem importa e muda a dimensão.\n* **Índices por intervalo**: i,j ∈ {1,2,3} ou 1 ≤ i,j ≤ 3 → matriz **3×3** (índices de 1 a 3).\n* **Construção por fórmula**: A(i,j) depende de i e/ou j; atenção a sinais em expressões como **i − j²** (−j² = −(j²)).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### A·Aᵀ vs Aᵀ·A\n\n| Aspecto              | A·Aᵀ                          | Aᵀ·A                          |\n|----------------------|-------------------------------|-------------------------------|\n| Dimensão (A 3×2)     | 3×3                           | 2×2                           |\n| Dimensão (A 2×3)     | 2×2                           | 3×3                           |\n| Ordem do produto     | A vezes A transposta          | A transposta vezes A          |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra de existência do produto**\n\n* **Condição**: M_{m×n} · N_{p×q} só existe se **n = p** (“os de dentro”).\n* **Exemplo**: 2×3 · 3×4 → existe (3 = 3); 2×3 · 2×3 → não existe (3 ≠ 2).\n\n---\n\n**2. Regra da dimensão do produto**\n\n* Se o produto existe, o resultado é **m×q** (“os de fora”).\n* **Exemplo**: 2×3 · 3×4 → resultado 2×4.\n\n---\n\n**3. Cálculo de S(i,j)**\n\n* S(i,j) do produto = (linha i da 1ª matriz) · (coluna j da 2ª matriz).\n* Procedimento: multiplique elemento a elemento e some (produto escalar).\n* Uso típico: calcular S3,1, S3,3, S2,3, S2,2 sem montar a matriz inteira.\n\n---\n\n**4. Dimensões com transposta**\n\n* Se A é 3×2, então Aᵀ é 2×3.\n* Exemplos:\n  * A (3×2): A·Aᵀ = 3×3; Aᵀ·A = 2×2.\n  * A (2×3): A·Aᵀ = 2×2; Aᵀ·A = 3×3.\n* Em provas, muitas alternativas podem ser eliminadas apenas pela dimensão.\n\n---\n\n**5. Construção por fórmula de índices**\n\n* Ex.: A(i,j) = i² → na linha 3: A3,1 = A3,2 = A3,3 = 9.\n* Ex.: B(i,j) = i − j² → atenção: −j² = −(j²), o quadrado é não negativo e o sinal vem de fora.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Trocar a ordem: **A·Aᵀ ≠ Aᵀ·A**; a multiplicação de matrizes não é comutativa.\n* Ignorar compatibilidade: tentar multiplicar quando “os de dentro” não batem (ex.: 2×3 · 2×3).\n* Confundir o sinal em **−j²** com (−j)².\n* Perder tempo montando a matriz toda quando só pedem S3,1, S3,3, S2,3, S2,2 etc.\n* Errar a ordem em produtos com transposta: enunciado pede **Aᵀ·A** e o candidato faz **A·Aᵀ**.\n\n---\n\n## 📋 Checklist Final\n\n* Sei verificar se M·N existe usando os **“de dentro”** (colunas da 1ª = linhas da 2ª)?\n* Lembro que o resultado tem dimensão dos **“de fora”** (m×q)?\n* Diferencio **A·Aᵀ** de **Aᵀ·A** em termos de dimensão e ordem?\n* Estou atento à **ordem exata** do produto (A·B ≠ B·A; Aᵀ·A ≠ A·Aᵀ)?\n* Sei calcular **S(i,j)** usando apenas a **linha i** da 1ª e a **coluna j** da 2ª?\n* Lembro que i,j em {1,2,3} ou 1 ≤ i,j ≤ 3 indicam matriz **3×3**?\n* Estou cuidando do sinal em expressões como **i − j²** (−j² = −(j²))?\n* Em A², lembro que só faz sentido se A é **quadrada** e que S2,3 e S2,2 vêm de 2ª linha × 3ª/2ª coluna?\n* Em questões de múltipla escolha, vou primeiro:\n  1) Checar a **ordem** do produto;\n  2) Usar **dimensões** para eliminar alternativas;\n  3) Se precisar, calcular só o elemento **(1,1)** ou a entrada pedida?",
+  "mapa_mental": "# 🧮 Matrizes – Multiplicação II\n## 🎯 Fundamentos da Multiplicação\n### 💡 Conceitos básicos\n- Matriz m×n\n- Linhas e colunas\n- Elemento A(i,j)\n- Índices i,j\n- Matriz quadrada\n### 🧮 Definição do produto\n- Produto M·N\n- Condição n=p\n- “De dentro” iguais\n- Dimensão m×q\n- Resultado m×q\n### 🔢 Propriedades gerais\n- Não comutativa\n- A·B ≠ B·A\n- Associação permitida\n- Distributiva na soma\n- Ordem fundamental\n\n## 📊 Dimensões e Transposta\n### 🔁 Matriz transposta\n- Definição A^T\n- Troca linha/coluna\n- Ordem n×m\n- Quadrada permanece\n- Notação padrão\n### 📐 Dimensões em produtos\n- A m×n\n- A·A^T: m×m\n- A^T·A: n×n\n- Dimensão decide\n- Eliminação alternativas\n### ⚠️ Compatibilidade e erros\n- Verificar “de dentro”\n- Produto inexistente\n- Exemplo 2×3·2×3\n- Ordem do produto\n- A·A^T ≠ A^T·A\n\n## 🧮 Cálculo de Elementos\n### 📌 Regra linha×coluna\n- S(i,j) do produto\n- Linha i da 1ª\n- Coluna j da 2ª\n- Produto escalar\n- Soma dos termos\n### 🎯 Cálculo pontual\n- Focar S(i,j)\n- Não montar produto\n- Escolher linha/coluna\n- Economia de tempo\n- Elemento (1,1) chave\n### 🧾 Matrizes por fórmula\n- A(i,j) por expressão\n- Construção por i,j\n- Intervalo índices\n- Matriz 3×3 típica\n- Atenção aos sinais\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Ordem e compatibilidade\n- Troca A·B/B·A\n- Confusão A^T·A\n- Confusão A·A^T\n- Ignorar dimensões\n- Produto impossível\n### 🧮 Sinais e potências\n- Interpretação −j²\n- Quadrado não negativo\n- Diferença (−j)²\n- Sinal externo\n- Cuidados algébricos\n### 📝 Estratégias de prova\n- Conferir ordem produto\n- Checar compatibilidade\n- Usar só dimensões\n- Calcular mínimo possível\n- Evitar matriz completa",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Transposição e Ordem",
+      "description": "Transposição e Ordem — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que ocorre com as linhas e colunas de uma matriz ao formar sua transposta?",
+          "back": "Inversão de linhas por colunas.",
+          "hint": "Pense na troca de posições dos elementos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "transposta"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a ordem de Aᵀ quando A tem ordem 3×2?",
+          "back": "2×3",
+          "hint": "Considere a inversão das dimensões",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "ordem-matriz"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como se relacionam, em geral, os produtos AB e BA?",
+          "back": "Não são comutativos.",
+          "hint": "Refere-se à ordem dos fatores",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "multiplicacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a ordem da matriz resultante do produto entre uma matriz transposta de ordem 2×3 e uma matriz de ordem 3×2?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2×3",
+          "correct": false,
+          "explanation": "Incorreta. A matriz transposta de ordem 2x3 (2 linhas e 3 colunas) é multiplicada por uma matriz de ordem 3x2 (3 linhas e 2 colunas). O número de linhas da primeira matriz é 2 e o número de colunas da segunda é 2. Portanto, a matriz resultante terá ordem 2x2, e não 2x3."
+        },
+        {
+          "id": "b",
+          "text": "3×2",
+          "correct": false,
+          "explanation": "Incorreta. A matriz transposta de ordem 2x3 (2 linhas e 3 colunas) é multiplicada por uma matriz de ordem 3x2 (3 linhas e 2 colunas). O número de linhas da primeira matriz é 2 e o número de colunas da segunda é 2. Portanto, a matriz resultante terá ordem 2x2, e não 3x2."
+        },
+        {
+          "id": "c",
+          "text": "2×2",
+          "correct": true,
+          "explanation": "Correta. Para que a multiplicação de matrizes A (m x n) por B (p x q) seja possível, o número de colunas da primeira matriz (n) deve ser igual ao número de linhas da segunda matriz (p). A matriz resultante terá a ordem m x q. Neste caso, a matriz transposta de ordem 2x3 (2 linhas e 3 colunas) é multiplicada por uma matriz de ordem 3x2 (3 linhas e 2 colunas). Assim, (2x3) x (3x2) resulta em uma matriz de ordem 2x2."
+        },
+        {
+          "id": "d",
+          "text": "3×3",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz transposta de ordem 2x3 tem 2 linhas e 3 colunas. Uma matriz de ordem 3x2 tem 3 linhas e 2 colunas. Ao multiplicar (2x3) por (3x2), a matriz resultante terá 2 linhas e 2 colunas, e não 3x3. A ordem da matriz resultante é determinada pelo número de linhas da primeira matriz e o número de colunas da segunda."
+        }
+      ],
+      "explanation": "Correta. Para que a multiplicação de matrizes A (m x n) por B (p x q) seja possível, o número de colunas da primeira matriz (n) deve ser igual ao número de linhas da segunda matriz (p). A matriz resultante terá a ordem m x q. Neste caso, a matriz transposta de ordem 2x3 (2 linhas e 3 colunas) é multiplicada por uma matriz de ordem 3x2 (3 linhas e 2 colunas). Assim, (2x3) x (3x2) resulta em uma matriz de ordem 2x2.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Na multiplicação de matrizes, qual propriedade NÃO é válida, exigindo atenção especial à ordem dos fatores?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A propriedade comutativa, pois A×B pode ser diferente de B×A mesmo quando ambas as multiplicações são possíveis",
+          "correct": true,
+          "explanation": "Correta. A propriedade comutativa (A×B = B×A) geralmente não é válida na multiplicação de matrizes. Isso significa que a ordem dos fatores é crucial e, mesmo que ambas as multiplicações (A×B e B×A) sejam definidas, os resultados podem ser diferentes ou até mesmo uma das multiplicações pode ser indefinida enquanto a outra é possível. Este é um ponto fundamental na álgebra matricial."
+        },
+        {
+          "id": "b",
+          "text": "A propriedade associativa, pois (A×B)×C é diferente de A×(B×C) em qualquer situação",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade associativa é válida na multiplicação de matrizes, ou seja, (A×B)×C = A×(B×C), desde que as operações sejam possíveis em termos de ordem das matrizes. Esta propriedade permite agrupar as matrizes de diferentes formas sem alterar o resultado final."
+        },
+        {
+          "id": "c",
+          "text": "A propriedade do elemento neutro, pois não existe matriz identidade que preserve o resultado da multiplicação",
+          "correct": false,
+          "explanation": "Incorreta. O elemento neutro da multiplicação de matrizes é a matriz identidade (I). Para qualquer matriz A, A×I = I×A = A, desde que as ordens sejam compatíveis. Portanto, a propriedade do elemento neutro existe e é válida na multiplicação de matrizes."
+        },
+        {
+          "id": "d",
+          "text": "A propriedade distributiva em relação à adição, pois A×(B+C) não pode ser expandido como A×B + A×C",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade distributiva em relação à adição é válida na multiplicação de matrizes, ou seja, A×(B+C) = A×B + A×C e (A+B)×C = A×C + B×C, desde que as operações sejam definidas. Esta propriedade é fundamental para a manipulação de expressões matriciais."
+        }
+      ],
+      "explanation": "Correta. A propriedade comutativa (A×B = B×A) geralmente não é válida na multiplicação de matrizes. Isso significa que a ordem dos fatores é crucial e, mesmo que ambas as multiplicações (A×B e B×A) sejam definidas, os resultados podem ser diferentes ou até mesmo uma das multiplicações pode ser indefinida enquanto a outra é possível. Este é um ponto fundamental na álgebra matricial.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Para que seja possível realizar a multiplicação entre duas matrizes A e B, resultando na matriz produto C = A×B, qual condição deve ser obrigatoriamente satisfeita?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número de elementos totais da matriz A deve ser igual ao número de elementos totais da matriz B, independentemente da distribuição em linhas e colunas",
+          "correct": false,
+          "explanation": "Incorreta. O número total de elementos das matrizes não é o critério para a possibilidade de multiplicação. A condição é estritamente relacionada à compatibilidade das dimensões internas (colunas da primeira e linhas da segunda) das matrizes envolvidas na operação."
+        },
+        {
+          "id": "b",
+          "text": "O número de colunas da matriz A deve ser igual ao número de linhas da matriz B, e a matriz resultante terá ordem determinada pelo número de linhas de A e colunas de B",
+          "correct": true,
+          "explanation": "Correta. Para que o produto de duas matrizes A e B seja definido, o número de colunas da matriz A deve ser igual ao número de linhas da matriz B. Se A é uma matriz m x n e B é uma matriz n x p, então a matriz resultante C = A×B terá ordem m x p. Esta é a regra básica para a multiplicação de matrizes."
+        },
+        {
+          "id": "c",
+          "text": "O número de linhas da matriz A deve ser igual ao número de linhas da matriz B, e a matriz resultante terá ordem determinada pelo número de colunas de ambas",
+          "correct": false,
+          "explanation": "Incorreta. A condição para a multiplicação de matrizes não se baseia na igualdade do número de linhas de ambas as matrizes. O critério fundamental é a compatibilidade entre o número de colunas da primeira e o número de linhas da segunda."
+        },
+        {
+          "id": "d",
+          "text": "Ambas as matrizes devem ter a mesma ordem, e a matriz resultante terá necessariamente a mesma ordem das matrizes originais",
+          "correct": false,
+          "explanation": "Incorreta. Não é necessário que ambas as matrizes tenham a mesma ordem para que a multiplicação seja possível. Por exemplo, uma matriz 2x3 pode ser multiplicada por uma matriz 3x4. A matriz resultante terá ordem 2x4. A condição é a igualdade entre o número de colunas da primeira e o número de linhas da segunda."
+        }
+      ],
+      "explanation": "Correta. Para que o produto de duas matrizes A e B seja definido, o número de colunas da matriz A deve ser igual ao número de linhas da matriz B. Se A é uma matriz m x n e B é uma matriz n x p, então a matriz resultante C = A×B terá ordem m x p. Esta é a regra básica para a multiplicação de matrizes.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "13_339141_Matrizes - Operações - Multiplicação II.pdf",
+  "coletado_em": "2026-09-23T21:00:00"
+}

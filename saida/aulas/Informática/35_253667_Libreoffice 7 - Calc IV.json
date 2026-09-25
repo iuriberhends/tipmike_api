@@ -1,0 +1,655 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 35,
+  "ordem_no_curso": "67.00",
+  "titulo": "Libreoffice 7 - Calc IV",
+  "codigo_aula": "253667",
+  "video_id": "yiuP50g2Q60=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:35:18",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/yiuP50g2Q60%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420520%2C420521%2C420472%2C420474&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Libreoffice 7 - Calc IV\n\n## Operadores de Referência: introdução\nVamos continuar nosso estudo do LibreOffice 7 Calc, na tela comigo. Então nós temos aqui o operador de referência. Na verdade, vários. Você está vendo que eu até falei de interseção. Começamos com dois pontos, que significa “até”. Veja.\n\nQuando eu me deparo com isso, eu tenho que entender o gesto, mas tem funções que não, não tanto. Dois pontos é “até”. Já o ponto e vírgula vai ter outra função. Como é que eu sei quando é um, quando é outro? Estudando. Não tem fórmula mágica para você descobrir quando é uma coisa ou outra. Então vem comigo.\n\n## Soma com intervalo “A1:A3”\nVamos aumentar aqui. Uso do que? Na própria tabelinha: soma de A1 até A3. Soma de A1 até A3.\n\nVeja, só para melhorar a visualização: o que isso indica? Isso indica para somar de A1 até A3, ou seja, tendo valores próximos, como aqui. Por exemplo, se até A4 aqui eu tiver 1, 8, qualquer coisa do tipo fora do intervalo, eles não vão ser usados. Isso é muito comum em prova: estão ali valores próximos e a tendência é do candidato pegar todo mundo. Quem está mandando? Somar de A1 até A3. E se tiver um valor aqui já fora da área, esquece. Só A1, A2 e A3. 5 com 6... acabou. Esses demais valores, como já disse, não quero saber deles. Vamos deixar coladinho aqui.\n\n## Separando intervalos com ponto e vírgula\nBem, aqui eu tenho agora a seguinte situação: soma A2;A4. Veja que eu vou trabalhar várias somas. Como eu disse, o ponto e vírgula vai ser usado em outras circunstâncias de forma diferente. Vai ser um separador de argumentos dentro da função em outras funções, dependendo do contexto.\n\nSoma A2 e A4. Quem é que eu quero somar? A2 (vale 6) e A4 (vale 4). 6 e 4, 10. Agora, soma A1 até A3. Vamos somar de A1 até A3: 8. Nenhum A2... A1 até A2... São mais 6... Vamos para o total aqui. 14.\n\nAgora: soma A2:B4. A2 até B4, essa galera toda aqui. 6 e 4, 10. 15, 22, 25. Total aqui 25. Então vem comigo: soma de A2 até B4!\n\nBom, deu para perceber que é de extrema importância conhecer os operadores, a diferença, qual o intervalo de que estou falando. Perceba que está aumentando a complexidade. Antes eram intervalos bem bonitinhos; agora já está começando a misturar, e a tendência é essa. Vai ficar muito mais difícil que isso? Não. Mas é como cai na prova.\n\n> 🎯 Dicas de prova: A prova frequentemente mistura intervalos e separadores (dois pontos e ponto e vírgula). Identifique exatamente o que está sendo pedido: intervalo contínuo (A1:A3) ou valores/intervalos separados (A2;A4;B1:B3).\n\nTodos os exemplos aqui, praticamente todos, são da forma como você verá na prova. Pode não ter nome de “Batatinha” com “Cebolinha”. Muitas vezes a prova nem tem coluna, só os valores e “some”. Eu crio exemplos mais didáticos e lúdicos aqui, mas não é isso que vem na prova, normalmente. Posso criá-los para que você entenda. Mas você tem que estar pronto para o mundo real, para a situação real. Beleza? Não cola? Continuo aqui, vem comigo.\n\n## Operador de interseção “!”\nOlha como eu estava aqui. Vem esta prova que é boba, vem figura: soma de A1 até C4!B2:B5. E o que é a exclamação mesmo nesse contexto? Fica ligado.\n\nOlha lá no PDF: interseção. Interseção, para mim, é o que há de comum entre os intervalos. Sabe aquela ideia do círculo? Quando dois círculos se cruzam, há uma interseção entre eles: o que é comum entre eles.\n\nEntão, o que há em comum já vai mudar o resultado. Entre A1 até C4 e, de novo, entre A1 até C4, beleza. E B2 até B5. Então eu tenho essa área comum. Essa área que eu tenho valores em comum. Vamos marcar: 2, 5, 7... 11, 17, 18... Somando todo mundo daqui. Esses valores aqui são a interseção do intervalo. Está vendo os retângulos? Tem um retângulo vermelhinho e tem o retângulo azul. O que têm em comum entre eles é a interseção. E se não tiver nada em comum, não vai dar nada, porque esse cálculo quer unicamente o que está em comum. Não havendo nada em comum, resultado zero. Segue o baile. Interseção é o que há em comum.\n\nAgora vamos para a parte aqui que muita gente acha difícil. Num primeiro momento é difícil; num segundo, um pouco menos; num terceiro, menos ainda. É aquela história: não é igual quando você vai competir, seja lá o que for fazer da sua vida — arte marcial, balé, qualquer coisa? Normalmente você começa perdendo. Quem começa campeão? Quase ninguém. Por trás de todo campeão tem muito treino. A lógica é: se você cria um bloqueio do tipo “isso é impossível”, você não aprende. Talvez até não faça sentido na sua cabeça agora. Entenda que essa é uma função automatizada e que o programa vai fazer isso para te ajudar. Esquece “por quê” e “como”: entenda como funciona. Vem comigo.\n\n## Cópia de fórmulas e referências relativas\nCálculo simples, para começar. Eu tenho, por exemplo, B1 + C1 + D1 = 5 (valores só para ilustrar). Vou colocar valores aqui. Depois eu não vou trabalhar mais com valores, sinto muito. Só esses aqui.\n\nO Calc faz o quê para me ajudar? Se eu copiar usando as alças de preenchimento, vai dar a mesma coisa relativa. Se eu copiar para essa direção sem travar, de novo: lembre-se de que o conteúdo da célula não é “5”; 5 é o resultado de um cálculo. Quando eu copio, eu estou copiando o conteúdo, que é a fórmula.\n\nQuando eu copio daqui para baixo, eu estou mudando a linha: estava em C1, vou para C2. O que mudou? A coluna é a mesma; a linha passou de 1 para 2. A letra refere-se à coluna. Como a coluna não mudou, apenas a linha aumenta: 1 mais 1, 2. Então, embaixo, vou ter A2 + B2. Se eu copiar isso aqui daqui para cá (para a direita), o valor muda porque agora está somando A2+C2, etc.\n\nVeja comigo. Outro exemplo: e se aqui eu tivesse A4 + B5? Se eu copiar isso para baixo, simples: o que vai mudar? Estou em C1 e indo para C2? Pense assim: separar por componentes. C1 para C2: mudou a linha em +1. Já as colunas (A e B) continuam A e B, mas as linhas mudam de 4 para 5, de 5 para 6, e por aí vai. Você pode pensar “+1 linha” nos índices. Então A5 + B6, e assim sucessivamente.\n\nAgora, vou copiar ainda na mesma coluna, duas linhas abaixo: de C1 para C4. O que aumenta de 1 para 4? +3 linhas. Então some +3 às linhas das referências: 4 vira 7, 5 vira 8, e por aí vai. Por enquanto, eu mudei apenas de linha.\n\nAgora, curiosidade: e se eu pegasse essa célula e tentasse copiar para a coluna à esquerda da coluna A? Você está indo para a esquerda; para a esquerda, diminuindo coluna. Tem alguma coluna antes de A? Não tem. Então vai dar erro de referência. Só para você saber que, em alguns casos, não é possível. Erro de referência porque não tem como ir menos do que A — é a primeira coluna.\n\nVoltando ao exemplo: vamos supor que eu quero copiar uma fórmula duas colunas para a direita e uma linha para baixo. De onde eu estou? Suponha que estou em B2 e vou para D3. O que mudou? Colunas: +2 (B para D). Linhas: +1 (2 para 3). Então, para cada referência, ajusta-se coluna em +2 posições e linha em +1 posição. Importante: quando você aumenta coluna em “duas posições”, você não soma “+2” na letra; você anda duas letras no alfabeto: A→C, B→D, C→E, etc. Já os números (linhas) somam normalmente: 4 + 2 = 6, 3 + 2 = 5, e assim por diante.\n\n> 🎯 Dicas de prova: Em cópia de fórmulas, a coluna se desloca por letras (andar posições no alfabeto), e a linha se desloca por números (somar/subtrair). Podem te perguntar a nova fórmula resultante após colar em outra célula.\n\nIsso aqui cai demais em prova de concurso. Pode pedir a nova fórmula na nova célula, o resultado, ou as duas coisas. Normalmente vai pedir a nova fórmula. Quando copia e cola, pode aumentar ou diminuir a coluna/letra, quando for possível. Se eu mudasse a origem e fosse para a esquerda, poderia diminuir uma posição (D→C, C→B, etc.). Os números não alteram se eu ficar na mesma linha.\n\n## Tipos de referência: relativa, mista e absoluta\nContinuando, vamos trabalhar com os operadores que vão travar, que vão bloquear os tipos de referência.\n\nOlha só: eu posso usar o cifrão ($). Acompanhe comigo. Quando eu uso cifrão, ele impede que a referência que está imediatamente à sua direita mude. Exemplo: $C$3 trava coluna C e linha 3; $C3 trava C e permite variar a linha; C$3 trava a linha 3 e permite variar a coluna.\n\nQuando eu copio para baixo, se eu tiver C$4 + E$2, a coluna pode mudar se não tiver cifrão, e a linha não muda quando tem cifrão antes do número. Repare: isso é uma referência mista, porque parte dela está absoluta (travada) e parte está relativa (muda). Eu ainda poderia torná-la totalmente absoluta, usando $ antes da coluna e antes da linha: $C$3. Presta atenção na posição do cifrão. Tem questão de prova que coloca o cifrão no lugar errado, depois do número, por exemplo — não tem como. Referência totalmente absoluta é com $ antes da letra e $ antes do número.\n\nEntão, para onde quer que eu copie, ela não muda nunca. Sempre será a mesma coisa.\n\nRecapitulando os tipos:\n- A1: referência relativa (coluna e linha variam).\n- $A$1: referência absoluta (nada varia).\n- $A1 ou A$1: referência mista (parte varia, parte não).\n\n> 🎯 Dicas de prova: Identifique quando a questão quer o endereço resultante após copiar. Lembre: $ trava a parte imediatamente à direita. $A trava a coluna; $1 trava a linha.\n\nSão os tipos de referência que posso trabalhar no Calc. Tem que entender isso. Volte se for preciso, porque a gente vai fazer exercícios. Isso aqui cai muito em prova, muito cobrado.\n\n## Referência entre planilhas\nVem comigo: referência entre células nós já vimos. Agora vamos fazer referência entre planilhas. O que eu estou fazendo aqui? Estou somando A1 + Teste.A1. De onde? Quando não tem nenhum nome na frente (só A1), é da planilha atual.\n\n💬 História: Eu sempre explico com telefone. Quando vou ligar para alguém na minha cidade (mesmo DDD), eu não preciso colocar o DDD. Agora, se eu vou ligar para o estado vizinho, eu coloco o DDD. Dentro dessa lógica, se a célula é da mesma planilha, uso só A1. Se for de outra planilha, eu anteponho o nome da planilha e ponto: Teste.A1.\n\nEntão, veja: A1 desta planilha que estou (nome dela “Referência entre planilhas”) e Teste.A1. Se aqui é 20 e lá em Teste.A1 é 10, total dá 30. Se eu for em “Teste” e trocar o valor para 70 e voltar, vira 90 (20 + 70).\n\nPosso também usar referência direta: =Teste.C3. “Eu quero que isso aqui seja igual a C3 daquela outra planilha.” Coloco um valor em Teste.C3 (por exemplo, 25) e ele aparece aqui. Sintaxe: NomeDaPlanilha.Posição (Teste.C3).\n\nFunciona dentro de funções também: =SOMA(Teste.C3; A1). A ordem não altera: A1 + Teste.C3 é a mesma coisa.\n\n## Funções principais: início prático com SOMA\nAgora vamos começar a parte mais prática ainda. Até aqui, um pouco de teoria. Vamos juntar teoria com prática. Vou trabalhar as principais funções. Repito o que falei no início da aula: não é só isso que pode cair na prova, mas aqui está a ênfase. Depois que você souber isso, você cobre mais de 90% das questões de prova, um apanhado estatístico de muitos anos. A banca pode surpreender? Pode. Mas a maioria não vai saber o mirabolante. Agora, quando cobra isso aqui e você não sabe, você fica atrás de muita gente. Vem comigo.\n\nSOMA número 1. Soma simples: SOMA(A1:A3). Você já está cansado de saber o que é e como faz. É prática. Talvez, em alguns casos, já esteja fácil demais porque você está ficando melhor.\n\nSOMA de A1 a A3: estou somando 2 e 3, 5, com 5... Se eu trocasse aqui para ponto e vírgula (A1;A3), já sabe que vai dar 7 (2 e 5). Vou deixar o original com intervalo.\n\nCaso queira anotar observações, fique à vontade. Se aparecer “####” ou texto cortando a célula, é porque não está cabendo o conteúdo da célula. Ajuste a largura da coluna.\n\n## Verdadeiro e Falso em operações\nVamos trabalhar com as palavras VERDADEIRO e FALSO. Você já viu essas palavras anteriormente: podem ser resultado de uma função lógica, de uma comparação (2=2 → VERDADEIRO; 2=3 → FALSO). Agora, você tem que saber que no Calc essas palavras assumem valores numéricos: VERDADEIRO vale 1 e FALSO vale 0. Isso vem da lógica binária: 0 desligado/falso; 1 ligado/verdadeiro.\n\nComo assim? Vem comigo:\n- =SOMA(A1:A3), onde A2 é VERDADEIRO e A3 é FALSO: você poderia pensar que vai dar 2 (só números), mas dá 3, porque VERDADEIRO conta como 1 e FALSO como 0.\n- =A1*A3: se A3 é FALSO (0), o resultado é 0.\n- =A1+A2: se A2 é VERDADEIRO (1), soma normalmente, resultando em 3, por exemplo.\n\n> 🎯 Dicas de prova: VERDADEIRO = 1, FALSO = 0 quando usados em cálculos. Às vezes, eles aparecem como resultado de uma função lógica; outras vezes, o examinador usa diretamente para somar/multiplicar. Fique atento.\n\nSe eu tiver um texto “zero” (texto literal) em um intervalo, a SOMA ignora texto (não causa erro). Já VERDADEIRO altera o resultado (+1).\n\n## SOMA com lista e com intervalos múltiplos\nNúmero 2: agora temos a situação com ponto e vírgula para somar itens não contíguos: =SOMA(A1;A3). Deu 7 (2 e 5). Muitas vezes, um cálculo assim vai estar num emaranhado de números e opções; você precisa caçar o que realmente está sendo somado.\n\nRefresque: ponto e vírgula separa argumentos. Dois pontos cria intervalo.\n\n## SOMA de colunas e linhas inteiras\nSOMA de A:A. O que eu vou ter aqui? Toda a coluna A. Coloquei só três valores, mas onde tiver valor na coluna A, vai somar. Se eu colocar um valor a mais mais abaixo, ele entra no cálculo automaticamente.\n\nSe eu copiar e mudar para A:B (A:B), vai pegar toda a coluna A e toda a coluna B. Coloque dois valores e ele soma tudo.\n\nSOMA de 1:1. Mesma lógica, só que para linha. Vai somar toda a linha 1. Se eu colocar outro valor em qualquer célula da linha 1, ele passa a ser considerado no somatório.\n\nAnote no material as observações que achar interessantes para o seu resumo.\n\n## Encerramento do bloco\nBom, então vem comigo. Vou encerrar mais esse bloco. Daqui a pouquinho volto, dando continuidade na nossa sequência, preenchendo as nossas funções e aprendendo cada vez mais. Você está melhorando, estou gostando de ver. Siga em frente, siga direto. Daqui a pouco aguardo você.",
+  "transcricao_meta": {
+    "title": "Libreoffice 7 - Calc IV",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 38668,
+    "createdAt": "2026-02-04T17:26:16.458Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: referências de célula no Calc (relativa, mista, absoluta), operadores de referência (intervalo, separador, interseção), cópia e deslocamento de fórmulas, referências entre planilhas, uso de VERDADEIRO/FALSO em cálculos e intervalos por coluna/linha inteira.\nPrincipais pontos:\n- Diferença entre “:” (intervalo) e “;” (separador de argumentos).\n- Como o deslocamento altera referências e como “$” trava coluna/linha.\n- VERDADEIRO=1 e FALSO=0 em operações; textos não somam.\n\n## 1. Base / Conceitos Fundamentais\n- Referência de célula:\n  - Referência relativa: A1 (muda coluna/linha quando copiada).\n  - Referência mista: $A1 (coluna travada) ou A$1 (linha travada).\n  - Referência absoluta: $A$1 (nada muda ao copiar).\n- Operadores e símbolos:\n  - “:” (dois pontos): intervalo contínuo. Ex.: A1:A3.\n  - “;” (ponto e vírgula): separador de argumentos de função. Ex.: SOMA(A2;A4).\n  - “!” (exclamação): usado no contexto didático para interseção entre áreas; retorna apenas a parte comum.\n  - “$” (cifrão): trava o elemento imediatamente à direita (coluna ou linha).\n  - “+”, “*”, “=”: operadores aritméticos usuais.\n- Intervalos especiais:\n  - A:A (coluna inteira A), A:B (colunas A até B),\n  - 1:1 (linha inteira 1), 1:2 (linhas 1 até 2).\n- Valores lógicos:\n  - VERDADEIRO = 1, FALSO = 0 (quando usados em contas).\n  - Texto puro (ex.: \"zero\") não entra na soma.\n- Referência entre planilhas:\n  - Local: A1.\n  - Outra planilha: nomeDaPlanilha.célula (ex.: teste.C3).\n\n## 2. Como Funciona / Distinções\n- “:” vs “;” em funções:\n  - “:” cria intervalo contínuo (retângulo). “;” lista argumentos independentes (células isoladas, números, outros intervalos).\n  - Ex.: SOMA(A1:A3) soma A1+A2+A3; SOMA(A2;A4) soma A2 e A4.\n- Interseção de intervalos:\n  - Considera somente a área comum; se não houver sobreposição, resultado = 0 (não é erro).\n- Cópia de fórmulas (referências relativas):\n  - Ao copiar, o Calc ajusta as referências pela diferença de colunas/linhas entre origem e destino.\n  - Antes da coluna A não existe; copiar que “sairia” de A resulta em erro de referência.\n- Referência relativa, mista e absoluta:\n  - Relativa (A1): muda coluna e linha.\n  - Mista ($A1 ou A$1): apenas a parte sem “$” muda.\n  - Absoluta ($A$1): nada muda.\n- Entre planilhas:\n  - Sem nome antes do ponto (.) → planilha atual.\n  - Com nome antes do ponto → referencia outra planilha (ex.: teste.A1).\n- Linha/coluna inteira:\n  - A:A, A:B, 1:1, 1:2 incluem todas as células dessas faixas e se atualizam com novos dados.\n- VERDADEIRO/FALSO e textos:\n  - VERDADEIRO e FALSO entram como 1 e 0 em operações.\n  - Textos não são somados; \"zero\" entre aspas é texto e é ignorado.\n\n> Dica de Prova: A banca (ex.: FGV) explora a “nova fórmula” após copiar. Observe cuidadosamente o deslocamento e os cifrões.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo para prever a nova fórmula ao copiar:\n  1. Identifique origem e destino; calcule deslocamento:\n     - Colunas: conte letras (A→C = +2; D→B = −2).\n     - Linhas: subtraia números (2→5 = +3; 7→4 = −3).\n  2. Aplique o deslocamento apenas nas partes relativas.\n  3. Partes com “$” não mudam (a parte à direita do “$” está travada).\n  4. Reescreva exatamente a nova expressão.\n- Macete do cifrão:\n  - $A1: A não muda; número muda.\n  - A$1: número 1 não muda; coluna muda.\n  - $A$1: nada muda.\n- Usando intervalos:\n  - SOMA(A1:C3): soma retângulo A1 até C3.\n  - SOMA(A:A): soma toda a coluna A.\n  - SOMA(1:1): soma toda a linha 1.\n  - Misture argumentos com “;”: SOMA(A1:A3; C1; 10; teste.B2:B5).\n- Lógicos em contas:\n  - Substitua VERDADEIRO→1 e FALSO→0 e calcule normalmente.\n  - Se “VERDADEIRO”/“FALSO” estiverem como texto (entre aspas), ignore na soma.\n- Interseção (contexto didático):\n  - Se dois intervalos não se sobrepõem, resultado 0.\n  - Se há sobreposição, opere apenas sobre a parte comum.\n\n> Dica de Prova: Em deslocamento combinado (“copiar duas colunas para cá e uma linha para baixo”), aplique +2 em colunas e +1 em linhas em todas as referências relativas da fórmula.\n\n## 4. Exemplos e Casos Resolvidos\n- Intervalo vs argumentos:\n  - SOMA(A1:A3) → soma A1 + A2 + A3.\n  - SOMA(A2;A4) → soma A2 e A4 (não é intervalo).\n- Cópia na mesma coluna (mudando linha):\n  - Em C1: =A1+C1. Copiando para C2 → =A2+C2 (linha +1).\n- Cópia mudando colunas:\n  - Copiar duas colunas à direita e uma linha abaixo:\n    - A4 + C5 em origem → em destino: C5 + E6 (A→C, C→E; 4→5, 5→6).\n- Erro de referência:\n  - Deslocar uma referência de A para “antes de A” gera erro de referência.\n- Entre planilhas:\n  - =A1 + teste.C3 soma A1 da planilha atual com C3 da planilha “teste”.\n  - Ordem não importa: teste.C3 + A1 = A1 + teste.C3.\n- Linha/coluna inteira:\n  - SOMA(A:B) soma tudo das colunas A e B.\n  - SOMA(1:2) soma todas as colunas das linhas 1 e 2.\n- Lógicos:\n  - 2 + VERDADEIRO + 5 = 8.\n  - 1 × FALSO = 0.\n  - SOMA(A1:A3) com A1=2, A2=VERDADEIRO, A3=FALSO → 3.\n  - 2 + \"zero\" + 5 = 7 (texto ignorado).\n\n> Dica de Prova: Se a questão pedir “total aqui vinte e cinco”, confira se usou SOMA correta (intervalo) e se não confundiu com argumentos separados.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “;” com “:”\n  - “;” separa argumentos; “:” cria intervalo. SOMA(A2;A4) ≠ SOMA(A2:A4).\n- Cópia para antes da coluna A:\n  - Não existe coluna anterior a A → erro de referência.\n- Ignorar o travamento com “$”:\n  - Sem “$”, tudo muda; com “$”, a parte à direita fica fixa. Não existe “$” depois da letra/número.\n- Interseção inexistente:\n  - Não é erro; resulta em 0 (não há células comuns).\n- Textos em soma:\n  - \"zero\" (texto) não altera o total; VERDADEIRO/FALSO (valores lógicos) alteram.\n- Intervalos grandes (A:A, 1:1):\n  - Incluem dados futuros; cuidado ao interpretar o que entra no cálculo.\n- Prova pedindo “nova fórmula” ou “resultado”:\n  - Podem cobrar a expressão final exata ou apenas o valor numérico; treine ambos.\n\n> Dica de Prova: FGV costuma explorar “tipos de referência” e “cifrão”. Regra de ouro: “$” trava a parte à direita; aplique o deslocamento só nas partes sem “$”.",
+  "resumo_bolso": "# Libreoffice 7 - Calc IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Referência relativa (A1)**: muda coluna e linha quando copiada.\n* **Referência mista ($A1 / A$1)**: só a parte sem “$” se desloca; a parte com “$” fica fixa.\n* **Referência absoluta ($A$1)**: nem coluna nem linha mudam ao copiar.\n* **“:” (intervalo)**: cria faixa contínua (retângulo). Ex.: A1:A3, A1:C3.\n* **“;” (separador)**: separa argumentos independentes em funções. Ex.: SOMA(A2;A4).\n* **Interseção de áreas**: operação que pega só a parte comum entre dois intervalos; se não houver sobreposição → resultado 0 (não é erro).\n* **“$” (cifrão)**: trava o elemento imediatamente à direita (coluna ou linha).\n* **Valores lógicos**: VERDADEIRO = 1, FALSO = 0 em contas; textos (entre aspas) não entram na soma.\n* **Referência entre planilhas**: planilhaAtual.A1 ou outraPlanilha.C3 (ex.: teste.C3).\n* **Intervalos de linha/coluna inteira**: A:A, A:B, 1:1, 1:2 incluem todas as células daquelas faixas (atuais e futuras).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Referência Relativa vs Mista vs Absoluta\n\n| Aspecto | Relativa (A1) | Mista ($A1 / A$1) | Absoluta ($A$1) |\n|--------|----------------|-------------------|-----------------|\n| Coluna | Muda | Muda se **sem** $ | Não muda |\n| Linha  | Muda | Muda se **sem** $ | Não muda |\n| Uso típico | Fórmulas copiadas em tabela | Travar só linha ou só coluna | Travar célula fixa |\n| Diferencial | Tudo acompanha deslocamento | Parte fixa, parte móvel | Totalmente fixa |\n\n---\n\n### “:” (intervalo) vs “;” (separador de argumentos)\n\n| Aspecto | “:” (dois pontos) | “;” (ponto e vírgula) |\n|--------|--------------------|-----------------------|\n| Função | Cria intervalo contínuo | Lista argumentos independentes |\n| Exemplo | SOMA(A1:A3) | SOMA(A2;A4) |\n| Resultado | Soma A1+A2+A3 | Soma A2 + A4 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra do Cifrão “$”**\n\n* Aplicação: travar coluna/linha em referências ao copiar.\n* $A1 → coluna A fixa, linha varia.  \n* A$1 → linha 1 fixa, coluna varia.  \n* $A$1 → nada varia.\n\n---\n\n**2. Regra de Deslocamento ao Copiar Fórmulas**\n\n* Ao copiar, o Calc ajusta as referências pela diferença de colunas/linhas entre origem e destino.\n* Passos:\n  1. Calcule o deslocamento:  \n     - Colunas: conte letras (A→C = +2; D→B = −2).  \n     - Linhas: subtraia números (2→5 = +3; 7→4 = −3).\n  2. Aplique o deslocamento apenas nas partes relativas (sem “$”).\n\n---\n\n**3. Intervalos Especiais (coluna/linha inteira)**\n\n* A:A → coluna A inteira.  \n* A:B → colunas A até B.  \n* 1:1 → linha 1 inteira.  \n* 1:2 → linhas 1 até 2.\n* Exemplo: SOMA(A:B) soma tudo das colunas A e B.\n\n---\n\n**4. Valores Lógicos em Operações**\n\n* VERDADEIRO = 1; FALSO = 0.  \n* Textos (ex.: \"zero\") não entram na soma.\n* Exemplo: SOMA(A1:A3) com A1=2, A2=VERDADEIRO, A3=FALSO → 3.\n\n---\n\n**5. Referência entre Planilhas**\n\n* A1 → célula na planilha atual.  \n* teste.C3 → célula C3 da planilha “teste”.  \n* Exemplo: =A1 + teste.C3.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “;” separa argumentos; “:” cria intervalo. SOMA(A2;A4) soma apenas A2 e A4, não o intervalo A2 até A4.\n* Copiar referência que “sairia” antes da coluna A gera erro de referência (não existe coluna anterior a A).\n* Sem “$”, tudo muda ao copiar; com “$”, a parte à direita fica fixa.\n* Interseção inexistente entre dois intervalos não gera erro: resulta em 0.\n* \"zero\" (texto) não altera o total; VERDADEIRO/FALSO (valores lógicos) entram como 1 e 0.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei claramente referência relativa, mista e absoluta e sei o que o “$” trava?\n* Sei quando usar “:” (intervalo) e “;” (separador de argumentos) em funções?\n* Consigo aplicar a regra de deslocamento (Δcoluna, Δlinha) para prever a nova fórmula após copiar?\n* Lembro que VERDADEIRO=1, FALSO=0 e que textos (ex.: \"zero\") não somam?\n* Sei interpretar A:A, A:B, 1:1, 1:2 e que incluem todas as células dessas faixas, inclusive futuras?\n* Sei montar referências entre planilhas (ex.: teste.C3) e distinguir planilha atual de outra planilha?",
+  "mapa_mental": "# 💻 LibreOffice Calc 7 – Referências IV\n## 🎯 Tipos de Referência\n### 💡 Referência Relativa\n- Padrão A1\n- Muda coluna\n- Muda linha\n- Ajuste ao copiar\n### 💡 Referência Absoluta\n- Formato $A$1\n- Coluna fixa\n- Linha fixa\n- Não muda ao copiar\n### 💡 Referência Mista\n- Formato $A1\n- Formato A$1\n- Coluna fixa\n- Linha fixa\n- Parte relativa\n\n## 🧮 Operadores e Intervalos\n### 💻 Operadores de Referência\n- Dois pontos :\n- Intervalo contínuo\n- Retângulo células\n- Ponto e vírgula ;\n- Separador argumentos\n### 💻 Intervalos Especiais\n- Coluna inteira A:A\n- Colunas A:B\n- Linha inteira 1:1\n- Linhas 1:2\n- Atualizam novos dados\n### 💻 Interseção de Áreas\n- Área comum intervalos\n- Sem sobreposição\n- Resultado zero\n- Sem erro cálculo\n- Contexto didático\n### 💻 Operadores Aritméticos\n- Sinal igual =\n- Adição +\n- Multiplicação *\n- Combinação funções\n- Expressões fórmulas\n\n## 📊 Cópia e Deslocamento\n### 🔄 Comportamento ao Copiar\n- Deslocamento colunas\n- Deslocamento linhas\n- Ajuste referências\n- Antes coluna A\n- Erro referência\n### 🔄 Cifrão $\n- Trava elemento\n- À direita do $\n- Coluna travada\n- Linha travada\n- Sem $ tudo muda\n### 🔄 Referência Entre Planilhas\n- Célula local A1\n- Nome.planilha.célula\n- Exemplo teste.A1\n- Sem nome planilha\n- Planilha atual\n\n## 🧮 Valores Lógicos em Cálculos\n### 📊 VERDADEIRO e FALSO\n- VERDADEIRO igual 1\n- FALSO igual 0\n- Participam operações\n- Afetam resultados\n- Importante em funções\n### 📊 Textos em Operações\n- Texto ignorado soma\n- \"zero\" como texto\n- Não altera total\n- Diferente valor numérico\n- Diferença prova\n### ⚠️ Cuidados de Prova\n- Tipo referência\n- Uso cifrão\n- Intervalo versus argumentos\n- Interseção zero\n- Linha coluna inteiras",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Operadores de Referência",
+      "description": "Operadores de Referência — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a função do operador de dois-pontos em uma referência do Calc?",
+          "back": "Significa **até**.",
+          "hint": "Indica um intervalo de células",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual resultado produz a interseção quando os intervalos não têm células em comum?",
+          "back": "Resultado **zero**.",
+          "hint": "Ocorre quando não há intersecção",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "operadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como o ponto e vírgula atua na lista de argumentos de uma função?",
+          "back": "Atua como **separador de argumentos** dentro da função.",
+          "hint": "Usado para separar parâmetros",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "calc",
+            "funcoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "O que diferencia um intervalo contínuo de referências separadas por ponto e vírgula?",
+          "back": "O intervalo contínuo utiliza dois-pontos para abranger um conjunto sequencial, enquanto as referências separadas por ponto e vírgula indicam células ou intervalos específicos isolados.",
+          "hint": "Contraste entre intervalo e lista",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Referências de Células",
+      "description": "Referências de Células — 7 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como uma referência relativa se ajusta quando a fórmula é copiada?",
+          "back": "Ajusta-se alterando as letras das colunas ou números das linhas conforme a direção da cópia.",
+          "hint": "Comportamento padrão ao arrastar",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Quais componentes podem variar em uma referência relativa?",
+          "back": "A coluna e a **linha**.",
+          "hint": "São dois os eixos de variação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "O que caracteriza uma referência absoluta no Calc?",
+          "back": "Referência que **não muda** ao ser copiada, mantendo fixos os componentes indicados pelo cifrão.",
+          "hint": "O oposto de relativa",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Como se comporta uma referência mista ao ser copiada?",
+          "back": "Parte da referência permanece fixa e parte se ajusta conforme a direção da cópia.",
+          "hint": "Combinação de tipos de referência",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Na referência `$A4`, qual componente permanece fixo durante a cópia?",
+          "back": "A **coluna A**.",
+          "hint": "Observe a posição do cifrão",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual erro pode ocorrer ao copiar uma referência para uma coluna anterior à coluna A?",
+          "back": "Erro de **referência**.",
+          "hint": "Relacionado a limites de planilha",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "calc",
+            "erros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual símbolo torna absoluta a linha ou a coluna de uma referência?",
+          "back": "O **cifrão** ($).",
+          "hint": "Símbolo de fixação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Planilhas e Funções",
+      "description": "Planilhas e Funções — 4 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Como indicar, em uma fórmula, uma célula localizada em outra planilha?",
+          "back": "Utilizando o nome da planilha seguido de ponto e a referência da célula.",
+          "hint": "Uso de identificador de aba",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "O que ocorre com o resultado quando o valor da célula referenciada em outra planilha muda?",
+          "back": "O resultado é atualizado automaticamente.",
+          "hint": "Comportamento de vínculo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "planilhas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "Como a função SOMA trata textos presentes no intervalo calculado?",
+          "back": "Textos presentes no intervalo não interferem no cálculo e não geram erro.",
+          "hint": "Tratamento de dados não numéricos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "funcoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Que extensão de células é usada para somar uma coluna inteira?",
+          "back": "A notação de **letra até letra**.",
+          "hint": "Notação de coluna inteira",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "referencias"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Valores Lógicos",
+      "description": "Valores Lógicos — 1 cards",
+      "cards": [
+        {
+          "id": "card-16",
+          "front": "Qual valor numérico o Calc atribui a VERDADEIRO em cálculos?",
+          "back": "O valor numérico **um**.",
+          "hint": "Equivalência booleana",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "logica"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No LibreOffice Calc, qual operador é utilizado para indicar um intervalo contínuo de células, como por exemplo de A1 até A10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Barra vertical (|)",
+          "correct": false,
+          "explanation": "Incorreta. A barra vertical (|) não é um operador de referência de intervalo no LibreOffice Calc. Ela é comumente utilizada em outras linguagens de programação ou contextos como operador lógico 'OU' ou para indicar \"pipe\" em comandos de sistemas operacionais, mas não para intervalos de células."
+        },
+        {
+          "id": "b",
+          "text": "Dois pontos (:)",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Calc, o operador de dois pontos (:) é o símbolo padrão para indicar um intervalo contínuo de células. Por exemplo, 'A1:A10' refere-se a todas as células da coluna A, da linha 1 até a linha 10, de forma inclusiva."
+        },
+        {
+          "id": "c",
+          "text": "Ponto e vírgula (;)",
+          "correct": false,
+          "explanation": "Incorreta. O ponto e vírgula (;) é utilizado no LibreOffice Calc para separar argumentos em uma função, ou seja, para indicar células ou intervalos não contíguos que devem ser incluídos em um cálculo, como em SOMA(A1;C1)."
+        },
+        {
+          "id": "d",
+          "text": "Vírgula (,)",
+          "correct": false,
+          "explanation": "Incorreta. A vírgula (,) pode ser usada em algumas configurações regionais para separar argumentos em funções, similar ao ponto e vírgula, mas não é o operador para definir um intervalo contínuo de células. No padrão brasileiro, o separador de argumentos é o ponto e vírgula."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Calc, o operador de dois pontos (:) é o símbolo padrão para indicar um intervalo contínuo de células. Por exemplo, 'A1:A10' refere-se a todas as células da coluna A, da linha 1 até a linha 10, de forma inclusiva.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o valor numérico que a palavra VERDADEIRO assume quando utilizada em operações matemáticas no LibreOffice Calc?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Nulo",
+          "correct": false,
+          "explanation": "Incorreta. A palavra VERDADEIRO não assume um valor nulo. Ela tem um valor numérico definido de 1 para fins de cálculo, o que a torna diferente de um valor nulo ou vazio."
+        },
+        {
+          "id": "b",
+          "text": "Dois",
+          "correct": false,
+          "explanation": "Incorreta. A palavra VERDADEIRO assume o valor 1, não 2, em operações matemáticas no LibreOffice Calc. O valor 2 não é um valor padrão para VERDADEIRO ou FALSO."
+        },
+        {
+          "id": "c",
+          "text": "Um",
+          "correct": true,
+          "explanation": "Correta. Em operações matemáticas no LibreOffice Calc (e em muitas outras planilhas eletrônicas), a palavra VERDADEIRO é interpretada como o valor numérico 1. Isso permite que expressões lógicas sejam usadas diretamente em cálculos aritméticos."
+        },
+        {
+          "id": "d",
+          "text": "Zero",
+          "correct": false,
+          "explanation": "Incorreta. No LibreOffice Calc, a palavra VERDADEIRO não assume o valor numérico zero. O valor zero é atribuído à palavra FALSO."
+        }
+      ],
+      "explanation": "Correta. Em operações matemáticas no LibreOffice Calc (e em muitas outras planilhas eletrônicas), a palavra VERDADEIRO é interpretada como o valor numérico 1. Isso permite que expressões lógicas sejam usadas diretamente em cálculos aritméticos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Ao copiar uma fórmula que contém referências relativas de uma célula para outra no LibreOffice Calc, o que acontece com as referências?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As referências são removidas e substituídas por valores constantes",
+          "correct": false,
+          "explanation": "Incorreta. As referências não são removidas nem substituídas por valores constantes. O objetivo das referências relativas é justamente permitir que a fórmula se adapte à sua nova localização, mantendo a lógica de cálculo em relação às células vizinhas."
+        },
+        {
+          "id": "b",
+          "text": "As referências são ajustadas automaticamente conforme a nova posição",
+          "correct": true,
+          "explanation": "Correta. Quando uma fórmula com referências relativas é copiada para outra célula, o LibreOffice Calc ajusta automaticamente essas referências com base na nova posição da fórmula. Por exemplo, se a fórmula em B1 for '=A1' e for copiada para B2, ela se tornará '=A2', mantendo a mesma distância e direção em relação à nova célula."
+        },
+        {
+          "id": "c",
+          "text": "As referências são convertidas em valores absolutos",
+          "correct": false,
+          "explanation": "Incorreta. A conversão em valores absolutos ocorre apenas se o cifrão ($) for usado na referência original (ex: '$A$1'). Referências relativas são ajustadas, não convertidas em absolutas, a menos que o usuário as altere manualmente ou use uma função específica para isso."
+        },
+        {
+          "id": "d",
+          "text": "As referências permanecem fixas, mantendo as células originais",
+          "correct": false,
+          "explanation": "Incorreta. Referências relativas, por definição, não permanecem fixas. Se o objetivo fosse manter as células originais, seriam usadas referências absolutas, indicadas pelo cifrão ($)."
+        }
+      ],
+      "explanation": "Correta. Quando uma fórmula com referências relativas é copiada para outra célula, o LibreOffice Calc ajusta automaticamente essas referências com base na nova posição da fórmula. Por exemplo, se a fórmula em B1 for '=A1' e for copiada para B2, ela se tornará '=A2', mantendo a mesma distância e direção em relação à nova célula.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No LibreOffice Calc, qual símbolo é utilizado para criar uma referência absoluta que impede a alteração de uma coordenada ao copiar a fórmula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Cifrão ($)",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Calc, o cifrão ($) é o símbolo utilizado para criar referências absolutas. Ao colocar um cifrão antes da letra da coluna (ex: '$A') ou antes do número da linha (ex: '$1'), ou ambos (ex: '$A$1'), impede-se que essa parte da referência seja alterada quando a fórmula é copiada para outras células."
+        },
+        {
+          "id": "b",
+          "text": "Asterisco (*)",
+          "correct": false,
+          "explanation": "Incorreta. O asterisco (*) é utilizado como operador de multiplicação ou como caractere curinga em pesquisas e filtros no LibreOffice Calc, mas não para criar referências absolutas."
+        },
+        {
+          "id": "c",
+          "text": "Hashtag (#)",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de hashtag (#) não é utilizado para criar referências absolutas no LibreOffice Calc. Em algumas planilhas, pode indicar um erro ou ser usado em referências estruturadas de tabelas, mas não para fixar coordenadas de células."
+        },
+        {
+          "id": "d",
+          "text": "Arroba (@)",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de arroba (@) não é utilizado para criar referências absolutas no LibreOffice Calc. Ele pode ser encontrado em outras aplicações ou contextos, mas não tem essa função em planilhas eletrônicas."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Calc, o cifrão ($) é o símbolo utilizado para criar referências absolutas. Ao colocar um cifrão antes da letra da coluna (ex: '$A') ou antes do número da linha (ex: '$1'), ou ambos (ex: '$A$1'), impede-se que essa parte da referência seja alterada quando a fórmula é copiada para outras células.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Considerando a fórmula =SOMA(A2;A4) no LibreOffice Calc, quais células serão somadas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apenas as células A2 e A4, excluindo A3",
+          "correct": true,
+          "explanation": "Correta. A função =SOMA(A2;A4) no LibreOffice Calc utiliza o ponto e vírgula (;) como separador de argumentos. Isso significa que a função somará apenas os valores contidos nas células especificadas individualmente, que são A2 e A4. A célula A3, que estaria entre A2 e A4 em um intervalo contínuo, é excluída do cálculo por não ter sido explicitamente listada como um argumento separado."
+        },
+        {
+          "id": "b",
+          "text": "Todas as células do intervalo contínuo de A2 até A4, incluindo A3",
+          "correct": false,
+          "explanation": "Incorreta. O ponto e vírgula (;) é um separador de argumentos, não um operador de intervalo contínuo. Se fosse um intervalo contínuo, seria =SOMA(A2:A4)."
+        },
+        {
+          "id": "c",
+          "text": "Todas as células da coluna A que contenham valores numéricos",
+          "correct": false,
+          "explanation": "Incorreta. Esta opção descreveria a função =SOMA(A:A), que somaria todas as células da coluna A. A fórmula =SOMA(A2;A4) especifica células pontuais."
+        },
+        {
+          "id": "d",
+          "text": "As células A2, A3 e A4, mais todas as células adjacentes com valores",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula =SOMA(A2;A4) não inclui todas as células adjacentes com valores. Ela é muito específica, somando apenas as células A2 e A4, sem considerar células adjacentes não especificadas ou um intervalo mais amplo."
+        }
+      ],
+      "explanation": "Correta. A função =SOMA(A2;A4) no LibreOffice Calc utiliza o ponto e vírgula (;) como separador de argumentos. Isso significa que a função somará apenas os valores contidos nas células especificadas individualmente, que são A2 e A4. A célula A3, que estaria entre A2 e A4 em um intervalo contínuo, é excluída do cálculo por não ter sido explicitamente listada como um argumento separado.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No LibreOffice Calc, qual é a diferença entre uma referência do tipo $A$1 e uma referência do tipo A$1?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "$A$1 é totalmente absoluta, enquanto A$1 permite alteração da coluna mas não da linha",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Calc, o símbolo de cifrão ($) antes da letra da coluna ou do número da linha \"trava\" (torna absoluta) essa parte da referência. Assim, $A$1 é uma referência absoluta tanto para a coluna (A) quanto para a linha (1), ou seja, ela não muda ao ser copiada. Já A$1 é uma referência mista, onde a coluna (A) é relativa (pode mudar ao ser copiada horizontalmente), mas a linha (1) é absoluta (permanece fixa ao ser copiada verticalmente)."
+        },
+        {
+          "id": "b",
+          "text": "Ambas são referências relativas com comportamentos idênticos",
+          "correct": false,
+          "explanation": "Incorreta. As referências $A$1 e A$1 possuem comportamentos distintos. $A$1 é absoluta em ambas as coordenadas, enquanto A$1 é mista, com a linha absoluta e a coluna relativa. Referências relativas puras seriam A1."
+        },
+        {
+          "id": "c",
+          "text": "$A$1 trava apenas a coluna, enquanto A$1 trava coluna e linha",
+          "correct": false,
+          "explanation": "Incorreta. $A$1 trava tanto a coluna quanto a linha, tornando-a totalmente absoluta. A$1 trava apenas a linha, permitindo que a coluna seja alterada. A afirmação inverte as características das referências."
+        },
+        {
+          "id": "d",
+          "text": "$A$1 permite alteração da linha, enquanto A$1 é totalmente relativa",
+          "correct": false,
+          "explanation": "Incorreta. $A$1 é uma referência totalmente absoluta, o que significa que nem a linha nem a coluna se alteram ao ser copiada. A$1 é uma referência mista, onde a linha é absoluta, mas a coluna é relativa."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Calc, o símbolo de cifrão ($) antes da letra da coluna ou do número da linha \"trava\" (torna absoluta) essa parte da referência. Assim, $A$1 é uma referência absoluta tanto para a coluna (A) quanto para a linha (1), ou seja, ela não muda ao ser copiada. Já A$1 é uma referência mista, onde a coluna (A) é relativa (pode mudar ao ser copiada horizontalmente), mas a linha (1) é absoluta (permanece fixa ao ser copiada verticalmente).",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao utilizar a sintaxe Teste.A3 em uma fórmula do LibreOffice Calc, o que essa notação representa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma macro personalizada que processa dados da célula A3",
+          "correct": false,
+          "explanation": "Incorreta. Macros são sequências de comandos automatizados e não são representadas por essa sintaxe de referência de célula. Essa notação é uma referência direta a um dado em uma planilha específica."
+        },
+        {
+          "id": "b",
+          "text": "Uma função especial chamada Teste aplicada à célula A3",
+          "correct": false,
+          "explanation": "Incorreta. No LibreOffice Calc, a notação 'NomeDaPlanilha.Célula' não indica uma função, mas sim uma referência a uma célula específica em outra planilha. Funções teriam parênteses após o nome, como SOMA(A1:B5)."
+        },
+        {
+          "id": "c",
+          "text": "Uma referência à célula A3 localizada em uma planilha chamada Teste",
+          "correct": true,
+          "explanation": "Correta. A sintaxe 'NomeDaPlanilha.Célula' (neste caso, Teste.A3) é a forma padrão no LibreOffice Calc para referenciar uma célula específica (A3) que está localizada em uma planilha diferente, cujo nome é 'Teste'."
+        },
+        {
+          "id": "d",
+          "text": "Um intervalo nomeado que abrange desde Teste até A3",
+          "correct": false,
+          "explanation": "Incorreta. Um intervalo nomeado é definido de outra forma no Calc (por exemplo, usando o menu Dados > Definir Intervalo) e não é representado por essa sintaxe. Essa notação refere-se a uma única célula em outra planilha."
+        }
+      ],
+      "explanation": "Correta. A sintaxe 'NomeDaPlanilha.Célula' (neste caso, Teste.A3) é a forma padrão no LibreOffice Calc para referenciar uma célula específica (A3) que está localizada em uma planilha diferente, cujo nome é 'Teste'.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No LibreOffice Calc, o que representa a fórmula =SOMA(A:A)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Soma apenas as células preenchidas na primeira linha da coluna A",
+          "correct": false,
+          "explanation": "Incorreta. A notação A:A não se restringe à primeira linha; ela abrange todas as células da coluna A, desde a primeira até a última linha disponível na planilha."
+        },
+        {
+          "id": "b",
+          "text": "Soma as células de A1 até A10 por padrão",
+          "correct": false,
+          "explanation": "Incorreta. Não há um padrão de soma automática até A10 para essa sintaxe. A:A refere-se à coluna inteira, independentemente da quantidade de dados ou do número de linhas."
+        },
+        {
+          "id": "c",
+          "text": "Gera um erro de referência por sintaxe inválida",
+          "correct": false,
+          "explanation": "Incorreta. A sintaxe A:A para referenciar uma coluna inteira é válida e amplamente utilizada no LibreOffice Calc e em outras planilhas eletrônicas, não gerando erro de referência."
+        },
+        {
+          "id": "d",
+          "text": "Soma todos os valores numéricos presentes em toda a coluna A",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Calc, a sintaxe 'Coluna:Coluna' (como A:A) dentro de uma função de soma indica que a função deve considerar todos os valores numéricos presentes em todas as células da coluna especificada. Portanto, =SOMA(A:A) somará todos os números em toda a coluna A."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Calc, a sintaxe 'Coluna:Coluna' (como A:A) dentro de uma função de soma indica que a função deve considerar todos os valores numéricos presentes em todas as células da coluna especificada. Portanto, =SOMA(A:A) somará todos os números em toda a coluna A.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando uma fórmula em B2 que contém =A1+C4, ao copiá-la para a célula D5, qual será a nova fórmula resultante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "=B2+D5",
+          "correct": false,
+          "explanation": "Incorreta. A nova fórmula não será =B2+D5, pois as referências internas da fórmula original (A1 e C4) se ajustam, não a célula de origem (B2) ou destino (D5) da cópia."
+        },
+        {
+          "id": "b",
+          "text": "=A4+C7",
+          "correct": false,
+          "explanation": "Incorreta. A referência C4 se deslocaria para E7, não C7. O deslocamento da coluna é de 2 posições (de B para D), e o deslocamento da linha é de 3 posições (de 2 para 5). Assim, A1 (coluna 1, linha 1) se torna C4 (coluna 3, linha 4), e C4 (coluna 3, linha 4) se torna E7 (coluna 5, linha 7)."
+        },
+        {
+          "id": "c",
+          "text": "=A1+C4",
+          "correct": false,
+          "explanation": "Incorreta. As referências A1 e C4 são relativas, o que significa que elas se ajustam automaticamente com base na nova posição da célula onde a fórmula é colada. Se fossem absolutas (ex: $A$1), permaneceriam inalteradas."
+        },
+        {
+          "id": "d",
+          "text": "=C4+E7",
+          "correct": true,
+          "explanation": "Correta. Ao copiar a fórmula de B2 para D5, a referência relativa A1 se desloca 2 colunas para a direita (de B para D, então A para C) e 3 linhas para baixo (de 2 para 5, então 1 para 4), tornando-se C4. Da mesma forma, C4 se desloca 2 colunas para a direita (de B para D, então C para E) e 3 linhas para baixo (de 2 para 5, então 4 para 7), tornando-se E7. Portanto, a nova fórmula será =C4+E7."
+        }
+      ],
+      "explanation": "Correta. Ao copiar a fórmula de B2 para D5, a referência relativa A1 se desloca 2 colunas para a direita (de B para D, então A para C) e 3 linhas para baixo (de 2 para 5, então 1 para 4), tornando-se C4. Da mesma forma, C4 se desloca 2 colunas para a direita (de B para D, então C para E) e 3 linhas para baixo (de 2 para 5, então 4 para 7), tornando-se E7. Portanto, a nova fórmula será =C4+E7.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Ao copiar uma fórmula contendo a referência $B2 da célula C3 para a célula E5, qual será a nova referência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "$B2, mantendo-se inalterada por ser referência absoluta completa",
+          "correct": false,
+          "explanation": "Incorreta. A referência $B2 não é uma referência absoluta completa. O cifrão ($) antes do 'B' trava apenas a coluna, tornando-a absoluta, mas o '2' sem cifrão indica que a linha é relativa e será ajustada ao copiar a fórmula."
+        },
+        {
+          "id": "b",
+          "text": "$B4, pois a coluna permanece fixa mas a linha é ajustada",
+          "correct": true,
+          "explanation": "Correta. A referência $B2 é uma referência mista. O cifrão antes do 'B' ($B) significa que a coluna B permanece fixa, mesmo ao copiar a fórmula horizontalmente. No entanto, o '2' sem cifrão indica que a linha é relativa. Ao copiar a fórmula de C3 para E5, a linha se desloca 2 posições para baixo (de 3 para 5), então a linha 2 da referência original se torna 4. Assim, a nova referência será $B4."
+        },
+        {
+          "id": "c",
+          "text": "$D4, pois ambas as coordenadas são ajustadas proporcionalmente",
+          "correct": false,
+          "explanation": "Incorreta. A coluna é travada pelo cifrão, então ela não se ajusta para D. Apenas a linha se ajusta. A referência $B2 significa que a coluna B é absoluta e a linha 2 é relativa."
+        },
+        {
+          "id": "d",
+          "text": "B2, pois o cifrão é removido ao copiar para outra posição",
+          "correct": false,
+          "explanation": "Incorreta. O cifrão não é removido ao copiar. Ele serve justamente para manter a parte da referência (coluna ou linha) travada. Se o cifrão estivesse presente, ele continuaria na nova referência."
+        }
+      ],
+      "explanation": "Correta. A referência $B2 é uma referência mista. O cifrão antes do 'B' ($B) significa que a coluna B permanece fixa, mesmo ao copiar a fórmula horizontalmente. No entanto, o '2' sem cifrão indica que a linha é relativa. Ao copiar a fórmula de C3 para E5, a linha se desloca 2 posições para baixo (de 3 para 5), então a linha 2 da referência original se torna 4. Assim, a nova referência será $B4.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "35_253667_Libreoffice 7 - Calc IV.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:54:41"
+}

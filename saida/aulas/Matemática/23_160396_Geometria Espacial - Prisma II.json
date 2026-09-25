@@ -1,0 +1,416 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 23,
+  "ordem_no_curso": "99.00",
+  "titulo": "Geometria Espacial - Prisma II",
+  "codigo_aula": "160396",
+  "video_id": "gxiWLdgZ2Ks=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:41:52",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/gxiWLdgZ2Ks%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?r=TODAS&a=403896&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Espacial - Prisma II\n\n## Continuidade do Bloco e Contexto\nVamos dar continuidade às nossas questões de prisma. No bloco passado, já falamos um pouco da parte teórica e fizemos uma questão de treinamento. Agora vamos fazer algumas questões de treinamento e fixação e, ao final, questões de 2019, com algumas de aprofundamento. A direção aqui é você ficar craque em geometria espacial, especialmente em prismas. Vem comigo.\n\n## Paralelepípedo reto-retângulo: dimensões e diagonal do sólido\nQuestão do Cebraspe, interessante: paralelepípedo reto-retângulo. Ele tem as seguintes dimensões, todas em centímetros: comprimento 40, largura 12 e altura 18. É um sólido reto, ou seja, as arestas formam 90 graus com a base, perpendicular à base. Julgue os itens a partir dessa figura.\n\nPrimeiro item: a diagonal do paralelepípedo (a que passa por dentro do sólido, não a da base) mede 50 cm. Para encontrar a diagonal do paralelepípedo precisamos, primeiro, da diagonal da base.\n\n- Diagonal da base (hipotenusa de um triângulo retângulo com catetos 40 e 12):\n  d_base^2 = 40^2 + 12^2 = 1600 + 144 = 1744.\n  Não vou extrair a raiz agora porque vou usar d_base^2 no próximo passo.\n\n- Diagonal do paralelepípedo (hipotenusa de um triângulo retângulo com catetos d_base e a altura 18):\n  d_sólido^2 = 18^2 + d_base^2 = 324 + 1744 = 2068.\n  Portanto, d_sólido = raiz de 2068.\n\nAgora, o item afirma que mede menos de 50 cm. Raiz de 2500 é 50. Como 2068 < 2500, então raiz de 2068 < 50. Logo, a diagonal é menor que 50 cm. O item está correto quanto a “menor que 50”, mas observe: o valor exato é √2068, não 50.\n\n> 🎯 **Dicas de prova:** Para a diagonal do paralelepípedo reto-retângulo: d = √(a^2 + b^2 + c^2). Aqui, √(40^2 + 12^2 + 18^2) = √2068.\n\n## Diagonais de faces: verificação de valor proposto\nSegundo item: a medida da diagonal de uma das faces seria 36√13. Vamos conferir.\n\nRedesenhando o paralelepípedo com 40 (comprimento), 12 (largura) e 18 (altura):\n\n- Face frente/fundo (40 × 18): diagonal_1^2 = 40^2 + 18^2 = 1600 + 324 = 1924. Então diagonal_1 = √1924.\n- Face lateral (12 × 18): diagonal_2^2 = 12^2 + 18^2 = 144 + 324 = 468. Então diagonal_2 = √468.\n\nAgora, vamos simplificar as raízes.\n\nPara √1924:\n- 1924 = 4 × 13 × 37 = 2^2 × 13 × 37.\n- √1924 = 2√(13 × 37) = 2√481. Não é 36√13.\n\nPara √468:\n- 468 = 2^2 × 3^2 × 13.\n- √468 = 2 × 3 × √13 = 6√13.\n\nO item dizia 36√13. Nenhuma das faces tem diagonal 36√13. Temos 6√13 na face 12 × 18 e 2√481 na face 40 × 18. Logo, o item está errado.\n\n> 🎯 **Dicas de prova:** Simplificação de raízes por fatoração em primos ajuda a comparar valores sem calculadora.\n\n## Área total do paralelepípedo\nTerceiro item: área total. Com dimensões 40 (C), 12 (L) e 18 (H):\n\nAT = 2(CL + CH + LH) = 2(40×12 + 40×18 + 12×18)\n= 2(480 + 720 + 216) = 2 × 1416 = 2832 cm².\n\nA área total é 2832 cm².\n\n## Volume do paralelepípedo\nVolume = área da base × altura = (40 × 12) × 18 = 480 × 18 = 8640 cm³. Correto: 8640 cm³.\n\n## Problema de piscina: capacidade em litros e largura desconhecida\nQuestão da Funrio: construir uma piscina com 1 metro de profundidade, 2,5 metros de comprimento e capacidade de 8000 litros. A medida da largura deve ser quanto?\n\nRelação importante entre capacidade e volume:\n- 1 m³ = 1000 L.\n- Logo, 8000 L = 8 m³.\n\nVolume = comprimento × largura × profundidade:\n2,5 × x × 1 = 8 ⇒ 2,5x = 8 ⇒ x = 8 / 2,5 = 80/25 = 3,2 m.\n\nResposta: largura 3,2 metros.\n\n> 🎯 **Dicas de prova:** Sempre unificar unidades. Se dimensões estão em metros, transforme litros em m³: 1 m³ = 1000 L.\n\n## Planificação de caixa sem tampa: volume em litros\nPlanificação de uma caixa de presentes sem tampa. Dimensões em centímetros. Quer o volume em litros.\n\nIdentificando base e altura pela planificação:\n- Base: 15 × 7 cm.\n- Altura das paredes: 5 cm.\n\nVolume em cm³: V = 15 × 7 × 5 = 525 cm³.\n\nTransformação para litros:\n- 1 cm³ = 1 mL.\n- 1000 cm³ = 1 L.\n- Portanto, 525 cm³ = 0,525 L.\n\nResposta: 0,525 litro.\n\n> 🎯 **Dicas de prova:** cm³ para L é direto: divida por 1000. 525 cm³ = 0,525 L.\n\n## Observações finais e estratégia de estudo\nPerceba que não é só geometria: você precisa também de:\n- Transformação de unidades (sistema legal de medidas).\n- Fatoração em primos para simplificar raízes.\n- Comparação de raízes sem extrair completamente quando o item só pede desigualdade.\n- Reconhecer relações de capacidade e volume: 1 m³ = 1000 L; 1 dm³ = 1 L; 1 cm³ = 1 mL.\n\nEu sempre digo: matemática é treino. Façam as questões de fixação, depois as de aprofundamento. Se surgir dúvida, chama no fórum; estou acompanhando e respondendo. Treino constante é o que consolida.",
+  "transcricao_meta": {
+    "title": "Geometria Espacial - Prisma II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 42691,
+    "createdAt": "2026-02-12T18:10:04.350Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda:\n- Cálculo de diagonais em paralelepípedo reto retângulo (base, face e do sólido).\n- Área total e volume de prismas retos retangulares.\n- Conversões entre volume e capacidade (cm³, dm³, m³, L).\nPrincipais pontos: \n- Uso estratégico do Teorema de Pitágoras.\n- Comparação por quadrados sem extrair raiz.\n- Conversões corretas: 1 m³ = 1000 L; 1 dm³ = 1 L; 1 cm³ = 1 mL.\n\n## 1. Base / Conceitos Fundamentais\n- **Prisma reto retangular (paralelepípedo reto retângulo)**: sólido com 6 faces retangulares; arestas perpendiculares entre si.\n- **Diagonais**:\n  - **Diagonal da base (db)**: diagonal do retângulo da base.\n  - **Diagonal de face**: diagonal de qualquer face lateral/frontal.\n  - **Diagonal do paralelepípedo (D)**: liga vértices opostos, atravessando o sólido (diagonal espacial).\n- **Teorema de Pitágoras**: hipotenusa² = cateto₁² + cateto₂².\n- **Unidades e capacidade**:\n  - Volume: m³, dm³, cm³.\n  - Capacidade: L, mL.\n  - Equivalências: 1 m³ = 1000 L; 1 dm³ = 1 L; 1 cm³ = 1 mL.\n\n## 2. Como Funciona / Distinções\n- **Qual diagonal usar**:\n  - Base: usa as duas dimensões da base (ex.: 40 e 12).\n  - Face: usa as duas dimensões da face específica (ex.: 40 e 18; ou 12 e 18).\n  - Paralelepípedo: usa a altura e a diagonal da base.\n- **Área**:\n  - **Área total (AT)** de paralelepípedo: AT = 2(ab + bc + ac). Inclui TODAS as 6 faces.\n  - **Área lateral**: exclui as bases.\n- **Volume**:\n  - V = Abase × h (para prismas).\n  - Converter unidades antes de substituir, quando o enunciado mistura m, cm com L.\n- **Volume x Capacidade**:\n  - Volume é medida geométrica (m³, dm³, cm³).\n  - Capacidade é “quanto cabe” (L, mL). Converter entre eles quando necessário.\n\n## 3. Aplicação Prática / Técnicas\n- **Pitágoras em 3D (paralelepípedo)**:\n  1) Calcule db² = a² + b².\n  2) Calcule D² = h² + db². Compare quadrados para decidir “maior/menor que” sem extrair raiz.\n- **Diagonais de faces**:\n  - dface² = lado₁² + lado₂². Simplifique raízes por fatores primos.\n- **Fatoração em primos (para simplificar √)**:\n  - Divisibilidade: 2 (par), 3 (soma dos algarismos múltipla de 3), 5 (termina em 0/5), 7, 11, 13, ...\n  - Cada par de fatores iguais sai do radical.\n- **Área total**:\n  - Some os produtos par a par (ab, bc, ac), depois multiplique por 2.\n- **Volume e conversões**:\n  - Se dimensões em metros e capacidade em litros: converta L → m³ (divida por 1000).\n  - Se dimensões em centímetros e resposta em litros: cm³ → L (divida por 1000).\n- **Divisão com decimais**:\n  - Transforme 2,5 em fração: 2,5 = 25/10. Em 8 ÷ 2,5, multiplique ambos por 10: 80 ÷ 25 = 3,2.\n\n> Dica de prova: Para julgar “D < 50 cm”, compare D² com 50². Se D² < 2500, então D < 50. Evita raiz desnecessária.\n\n## 4. Exemplos e Casos Resolvidos\n1) Paralelepípedo (40 cm, 12 cm, 18 cm)\n- Diagonal da base:\n  - db² = 40² + 12² = 1600 + 144 = 1744.\n- Diagonal do paralelepípedo:\n  - D² = 18² + db² = 324 + 1744 = 2068.\n  - 50² = 2500 → 2068 < 2500 → D < 50 cm.\n- Diagonais de faces:\n  - Face 40×18: d₁² = 40² + 18² = 1600 + 324 = 1924 = 4×481 → d₁ = 2√481.\n  - Face 12×18: d₂² = 12² + 18² = 144 + 324 = 468 = 2²×3²×13 → d₂ = 6√13.\n\n2) Área total (mesmas dimensões)\n- AT = 2(ab + bc + ac)\n  - ab = 40×18 = 720\n  - bc = 12×18 = 216\n  - ac = 40×12 = 480\n  - Soma = 720 + 216 + 480 = 1416\n  - AT = 2×1416 = 2832 cm².\n\n3) Volume (mesmas dimensões)\n- V = 40×12×18 = 8640 cm³.\n\n4) Piscina (Funrio) – achar a largura\n- Dados: comprimento = 2,5 m; altura = 1 m; capacidade = 8000 L = 8 m³.\n- 8 = 2,5 × x × 1 → x = 8 ÷ 2,5 = 80 ÷ 25 = 3,2 m.\n- Largura = 3,2 m.\n\n5) Caixa sem tampa (planificação)\n- Base 15×7 → Abase = 105 cm²; altura = 5 cm.\n- V = 105 × 5 = 525 cm³ = 0,525 L.\n\n> Dica de prova: Em planificações, identifique corretamente qual retângulo é a base e qual dimensão funciona como altura ao “dobrar”.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “diagonal de face” com “diagonal da base” ou “do sólido”.\n- Esquecer de comparar quadrados para evitar raiz quando a questão pede apenas relação de grandeza.\n- Errar conversão de capacidade/volume:\n  - 1 dm³ = 1 L; 1 cm³ = 1 mL; 1 m³ = 1000 L.\n  - “8 mil litros” ≠ “8 mil m³”. Correto: 8000 L = 8 m³.\n- Em área total, esquecer de incluir as duas bases (ou, em área lateral, incluí-las indevidamente).\n- Tratar salto cúbico como fator 10 (correto é fator 1000 por nível cúbico).\n- Em raiz, não formar pares nos fatores primos; deixar de simplificar quando há 2², 3², etc.\n- Em divisão com decimais, deslocar a vírgula só em um dos termos (deve ser em ambos).\n\n> Dica de prova: Se a assertiva diz “diagonal de face = 36√13” e você obteve 6√13 para aquela face, a assertiva está errada. Verifique sempre quais lados compõem a face testada.\n\n> Dica de prova: Identifique primeiro “qual diagonal” está sendo pedida; isso define quais medidas entram no Pitágoras e evita confusão entre base, face e espaço.",
+  "resumo_bolso": "# Geometria Espacial - Prisma II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Paralelepípedo reto retângulo (prisma reto retangular)**: sólido com 6 faces retangulares; arestas perpendiculares entre si.\n* **Diagonal da base (db)**: diagonal do retângulo da base; usa as duas dimensões da base (ex.: 40 e 12).\n* **Diagonal de face**: diagonal de qualquer face lateral/frontal; usa as duas dimensões da face específica (ex.: 40 e 18; ou 12 e 18).\n* **Diagonal do paralelepípedo (D)**: diagonal espacial que liga vértices opostos; usa a altura e a diagonal da base.\n* **Área total (AT)**: soma das áreas de TODAS as 6 faces do paralelepípedo; AT = 2(ab + bc + ac).\n* **Área lateral**: soma das áreas das faces laterais; exclui as bases.\n* **Volume (V)**: V = Abase × h (para qualquer prisma).\n* **Volume x Capacidade**:\n  * Volume: medida geométrica (m³, dm³, cm³).\n  * Capacidade: “quanto cabe” (L, mL).\n* **Teorema de Pitágoras**: hip² = cat₁² + cat₂²; base para diagonais de base, de face e do sólido.\n* **Comparação por quadrados**: para julgar “D < k”, compare D² com k², evitando extrair raiz.\n* **Equivalências importantes**: 1 m³ = 1000 L; 1 dm³ = 1 L; 1 cm³ = 1 mL.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Diagonal da Base x Diagonal de Face x Diagonal do Sólido\n\n| Aspecto        | Diagonal da Base (db)               | Diagonal de Face                            | Diagonal do Sólido (D)                      |\n|----------------|--------------------------------------|---------------------------------------------|---------------------------------------------|\n| Onde está      | No retângulo da base                | Em uma face lateral/frontal                 | Atravessa o sólido (diagonal espacial)      |\n| Medidas usadas | Duas dimensões da base (ex.: 40,12) | Duas dimensões da face (ex.: 40,18 ou 12,18)| Altura e diagonal da base (h e db)          |\n| Relação usada  | db² = a² + b²                        | dface² = lado₁² + lado₂²                    | D² = h² + db²                               |\n\n---\n\n### Volume x Capacidade\n\n| Aspecto    | Volume                       | Capacidade                 |\n|------------|-----------------------------|----------------------------|\n| Natureza   | Medida geométrica           | Medida de “quanto cabe”   |\n| Unidades   | m³, dm³, cm³                | L, mL                      |\n| Conversões | 1 m³ = 1000 L; 1 dm³ = 1 L  | 1 cm³ = 1 mL               |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Diagonal da base (db)**  \n* **Regra**: db² = a² + b².  \n* **Exemplo** (40 cm, 12 cm, 18 cm):  \n  - db² = 40² + 12² = 1600 + 144 = 1744.\n\n---\n\n**2. Diagonal de face (dface)**  \n* **Regra**: dface² = lado₁² + lado₂².  \n* **Exemplos** (40 cm, 12 cm, 18 cm):  \n  - Face 40×18: d₁² = 40² + 18² = 1600 + 324 = 1924 = 4×481 → d₁ = 2√481.  \n  - Face 12×18: d₂² = 12² + 18² = 144 + 324 = 468 = 2²×3²×13 → d₂ = 6√13.\n\n---\n\n**3. Diagonal do paralelepípedo (D)**  \n* **Regra (Pitágoras em 3D)**:  \n  1) db² = a² + b²  \n  2) D² = h² + db²  \n* **Exemplo** (40 cm, 12 cm, 18 cm):  \n  - db² = 1744  \n  - D² = 18² + 1744 = 324 + 1744 = 2068.\n\n---\n\n**4. Comparação sem raiz (D < k?)**  \n* **Regra**: compare quadrados: D < k ⇔ D² < k².  \n* **Exemplo** (40 cm, 12 cm, 18 cm):  \n  - D² = 2068; 50² = 2500 → 2068 < 2500 → D < 50 cm.\n\n---\n\n**5. Área total do paralelepípedo (AT)**  \n* **Regra**: AT = 2(ab + bc + ac).  \n* **Exemplo** (40 cm, 12 cm, 18 cm):  \n  - ab = 40×18 = 720  \n  - bc = 12×18 = 216  \n  - ac = 40×12 = 480  \n  - Soma = 720 + 216 + 480 = 1416  \n  - AT = 2×1416 = 2832 cm².\n\n---\n\n**6. Volume do prisma (V)**  \n* **Regra**: V = Abase × h.  \n* **Exemplos**:  \n  - Paralelepípedo 40×12×18: V = 40×12×18 = 8640 cm³.  \n  - Caixa sem tampa: base 15×7 → Abase = 105 cm²; altura = 5 cm → V = 105×5 = 525 cm³ = 0,525 L.\n\n---\n\n**7. Conversões de volume/capacidade**\n\n* **Regras**:  \n  - 1 m³ = 1000 L  \n  - 1 dm³ = 1 L  \n  - 1 cm³ = 1 mL  \n* **Exemplos**:  \n  - 8000 L = 8 m³.  \n  - 525 cm³ = 525 mL = 0,525 L.\n\n---\n\n**8. Divisão com decimais (para achar dimensão)**  \n* **Regra**: em divisões como 8 ÷ 2,5, multiplique numerador e denominador por 10, 100...  \n* **Exemplo (piscina)**:  \n  - Dados: comprimento = 2,5 m; altura = 1 m; capacidade = 8000 L = 8 m³.  \n  - 8 = 2,5 × x × 1 → x = 8 ÷ 2,5 = (8×10) ÷ (2,5×10) = 80 ÷ 25 = 3,2 m.\n\n---\n\n**9. Simplificação de raízes por fatores primos**\n\n* **Regra**: fatorar o radicando; cada par de fatores iguais sai do radical.  \n* **Exemplo**:  \n  - 468 = 2²×3²×13 → √468 = 2×3√13 = 6√13.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir “diagonal de face” com “diagonal da base” ou “diagonal do sólido”; identifique primeiro qual diagonal a questão pede.\n* Esquecer de comparar quadrados (D² e k²) para evitar extração de raiz quando a questão pede apenas relação de grandeza.\n* Errar conversões de volume/capacidade:  \n  - 1 dm³ = 1 L; 1 cm³ = 1 mL; 1 m³ = 1000 L.  \n  - “8000 L = 8000 m³” é falso; correto: 8000 L = 8 m³.\n* Em área total, esquecer de incluir as duas bases ou, em área lateral, incluí-las indevidamente.\n* Em divisão com decimais, deslocar a vírgula em apenas um dos termos; deve-se multiplicar ambos por 10, 100...\n\n---\n\n## 📋 Checklist Final\n\n* Identifiquei corretamente **qual diagonal** a questão pede (base, face ou sólido) antes de aplicar Pitágoras?  \n* Lembro que, no paralelepípedo, **db² = a² + b²** e **D² = h² + db²**, podendo comparar **D²** com **k²** sem extrair raiz?  \n* Sei montar **AT = 2(ab + bc + ac)** e diferenciar **área total** de **área lateral**?  \n* Estou seguro nas conversões: 1 m³ = 1000 L; 1 dm³ = 1 L; 1 cm³ = 1 mL?  \n* Sei usar **V = Abase × h** e fazer conversões entre cm³, m³ e L (inclusive com divisões envolvendo decimais)?",
+  "mapa_mental": "# 📘 Geometria Espacial – Prisma II\n## 🎯 Prisma reto retangular\n### 💡 Conceitos básicos\n- Seis faces retangulares\n- Arestas perpendiculares\n- Prisma reto\n- Paralelepípedo retângulo\n### 🧮 Elementos principais\n- Arestas da base\n- Altura do prisma\n- Faces laterais\n- Vértices opostos\n### 📊 Medidas usuais\n- Comprimento\n- Largura\n- Altura\n- Unidades lineares\n\n## 🧮 Diagonais e Pitágoras\n### 💡 Tipos de diagonais\n- Diagonal da base\n- Diagonal de face\n- Diagonal espacial\n- Vértices não adjacentes\n### 🧮 Fórmulas de diagonais\n- db² = a² + b²\n- dface² = lado₁² + lado₂²\n- D² = h² + db²\n- Triângulo retângulo\n### 🔢 Uso do Pitágoras\n- Hipotenusa ao quadrado\n- Soma catetos²\n- Aplicação em 3D\n- Comparar quadrados\n### ⚠️ Cuidados frequentes\n- Base x face x espaço\n- Escolha da face\n- Medidas corretas\n- Sem extrair raiz\n\n## 📐 Área e Volume do Prisma\n### 📏 Área total e lateral\n- AT = 2(ab + bc + ac)\n- Seis faces incluídas\n- Área lateral sem bases\n- Produtos par a par\n### 🧮 Volume do prisma\n- V = Abase × h\n- Produto das arestas\n- Unidade cúbica\n- Volume geométrico\n### 🔢 Fatoração e raízes\n- Fatores primos\n- Testes divisibilidade\n- Pares de fatores\n- Simplificar radicais\n\n## 📊 Volume e Capacidade\n### 💧 Unidades de volume\n- m³\n- dm³\n- cm³\n- Conversão cúbica\n### 💧 Unidades de capacidade\n- Litro L\n- Mililitro mL\n- 1 dm³ = 1 L\n- 1 cm³ = 1 mL\n### 🔄 Conversões principais\n- 1 m³ = 1000 L\n- L para m³ ÷1000\n- cm³ para L ÷1000\n- Ajuste antes do cálculo\n### ⚠️ Erros comuns\n- Confundir L e m³\n- Fator 10 x fator 1000\n- Misturar volume/capacidade\n- Ignorar unidade pedida",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Prismas Retangulares",
+      "description": "Prismas Retangulares — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual relação angular define um paralelepípedo reto-retângulo?",
+          "back": "Forma noventa graus com a base (perpendicular).",
+          "hint": "Refere-se à inclinação das arestas laterais",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "paralelepipedo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual sequência de cálculos determina a diagonal de um paralelepípedo?",
+          "back": "Aplicar o Teorema de Pitágoras duas vezes: primeiro para encontrar a diagonal da base, depois para encontrar a diagonal do paralelepípedo usando a diagonal da base e a altura.",
+          "hint": "Envolve o teorema de Pitágoras aplicado duas vezes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "diagonal"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Em um paralelepípedo de 40 cm, 12 cm e 18 cm, quanto vale o quadrado da diagonal da base?",
+          "back": "1.744",
+          "hint": "Soma dos quadrados das dimensões 40 e 12",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "calculo-numerico"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Como comparar a diagonal espacial desse paralelepípedo com 50 cm sem extrair a raiz?",
+          "back": "Verificar que a raiz quadrada do valor obtido para o quadrado da diagonal (2.068) é menor que 2.500 (raiz de 2.500 é 50).",
+          "hint": "Compare o quadrado da diagonal com 50 ao quadrado",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "comparacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Diagonais das Faces",
+      "description": "Diagonais das Faces — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é o quadrado da diagonal da face com dimensões 40 cm e 18 cm?",
+          "back": "1.924",
+          "hint": "Soma dos quadrados de 40 e 18",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "face"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual forma simplificada representa a diagonal da face de dimensões 40 cm e 18 cm?",
+          "back": "2 **√481**",
+          "hint": "Extraia o fator quadrado da raiz de 1924",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "simplificacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Áreas e Volumes",
+      "description": "Áreas e Volumes — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual é a área total de um paralelepípedo com dimensões 40 cm, 12 cm e 18 cm?",
+          "back": "2.832 cm²",
+          "hint": "Soma das áreas das três faces distintas vezes dois",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "area-total"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Como se calcula o volume de um prisma?",
+          "back": "Área da base vezes a altura.",
+          "hint": "Princípio fundamental de Cavalieri",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "volume"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual largura deve ter uma piscina de 1 m de profundidade e 2,5 m de comprimento para conter 8 m³?",
+          "back": "3,2 metros",
+          "hint": "Use a fórmula do volume do paralelepípedo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "aplicacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Conversões de Volume",
+      "description": "Conversões de Volume — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual equivalência relaciona metro cúbico e litro?",
+          "back": "1 metro cúbico equivale a 1.000 litros (ou 1 decímetro cúbico equivale a 1 litro).",
+          "hint": "Relaciona volume com capacidade de líquidos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "conversao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Como converter 525 cm³ para litros?",
+          "back": "Converter centímetros cúbicos para decímetros cúbicos (ou litros), deslocando a vírgula para obter 0,525 litros.",
+          "hint": "Lembre-se da relação entre cm³ e dm³",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "conversao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Radicais e Fatores",
+      "description": "Radicais e Fatores — 3 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual critério permite verificar se um número é divisível por 3?",
+          "back": "Somar os algarismos; se a soma for divisível por 3, o número também é.",
+          "hint": "Propriedade da soma dos dígitos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisibilidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual procedimento simplifica uma raiz quadrada cujo radicando possui fatores quadrados?",
+          "back": "Decompor o radicando em fatores primos e simplificar extraindo os termos com expoente par/quadrado de dentro do radical.",
+          "hint": "Fatoração do radicando",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "radiciacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "O que é a planificação de um sólido geométrico?",
+          "back": "Representação bidimensional de uma figura tridimensional por meio de suas dobraduras.",
+          "hint": "Desdobramento de superfícies",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "planificacao"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um paralelepípedo reto-retângulo, qual é o procedimento correto para calcular a diagonal do sólido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar as três dimensões e extrair a raiz cúbica do produto obtido",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Multiplicar as três dimensões e extrair a raiz cúbica do produto resultaria na aresta de um cubo de volume equivalente ao paralelepípedo, e não na diagonal do sólido. O cálculo da diagonal envolve a soma dos quadrados das dimensões, como explicado pelo Teorema de Pitágoras."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar o teorema de Pitágoras diretamente nas três dimensões (comprimento, largura e altura) em uma única operação",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta porque não é possível aplicar o Teorema de Pitágoras diretamente em três dimensões de uma só vez para calcular a diagonal de um paralelepípedo. O teorema se aplica a triângulos retângulos, que são figuras bidimensionais. A diagonal do sólido envolve um processo em duas etapas, utilizando o teorema duas vezes."
+        },
+        {
+          "id": "c",
+          "text": "Somar as três dimensões e aplicar a raiz quadrada do resultado",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Somar as três dimensões e aplicar a raiz quadrada não corresponde a nenhuma fórmula geométrica para o cálculo da diagonal de um paralelepípedo. A diagonal é calculada a partir da soma dos quadrados das dimensões, não da soma das dimensões."
+        },
+        {
+          "id": "d",
+          "text": "Calcular primeiro a diagonal da base usando Pitágoras com duas dimensões, depois usar esse resultado como cateto junto com a altura para encontrar a diagonal do sólido",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. O método para calcular a diagonal de um paralelepípedo reto-retângulo (ou prisma reto) envolve duas aplicações do Teorema de Pitágoras. Primeiro, calcula-se a diagonal da base, que é um retângulo, usando suas duas dimensões (comprimento e largura) como catetos. Em seguida, essa diagonal da base é utilizada como um dos catetos de um novo triângulo retângulo, onde o outro cateto é a altura do paralelepípedo. A hipotenusa desse segundo triângulo é a diagonal do sólido. Matematicamente, se as dimensões são a, b e c, a diagonal da base (d_base) é d_base² = a² + b². A diagonal do sólido (D) é D² = d_base² + c², ou seja, D² = a² + b² + c²."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. O método para calcular a diagonal de um paralelepípedo reto-retângulo (ou prisma reto) envolve duas aplicações do Teorema de Pitágoras. Primeiro, calcula-se a diagonal da base, que é um retângulo, usando suas duas dimensões (comprimento e largura) como catetos. Em seguida, essa diagonal da base é utilizada como um dos catetos de um novo triângulo retângulo, onde o outro cateto é a altura do paralelepípedo. A hipotenusa desse segundo triângulo é a diagonal do sólido. Matematicamente, se as dimensões são a, b e c, a diagonal da base (d_base) é d_base² = a² + b². A diagonal do sólido (D) é D² = d_base² + c², ou seja, D² = a² + b² + c².",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a relação correta entre volume e capacidade no sistema métrico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1 metro cúbico equivale a 100 litros e 1 centímetro cúbico equivale a 10 mililitros",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. A equivalência entre metro cúbico e litro, e entre centímetro cúbico e mililitro, não é a apresentada. As relações são de 1000 litros para 1 metro cúbico e 1 mililitro para 1 centímetro cúbico."
+        },
+        {
+          "id": "b",
+          "text": "1 metro cúbico equivale a 500 litros e 1 decímetro cúbico equivale a 0,5 litros",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. As relações de equivalência entre volume e capacidade no sistema métrico são padronizadas e não correspondem aos valores fracionados apresentados. As relações corretas são 1 m³ = 1000 L e 1 dm³ = 1 L."
+        },
+        {
+          "id": "c",
+          "text": "1 metro cúbico equivale a 1000 litros e 1 decímetro cúbico equivale a 1 litro",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. No sistema métrico, 1 metro cúbico (m³) equivale a 1000 litros, e 1 decímetro cúbico (dm³) equivale a 1 litro. Essa é uma relação fundamental para a conversão entre volume (espaço ocupado) e capacidade (quantidade de líquido que pode ser contida)."
+        },
+        {
+          "id": "d",
+          "text": "1 metro cúbico equivale a 10000 litros e 1 centímetro cúbico equivale a 100 mililitros",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. As equivalências apresentadas estão incorretas. 1 metro cúbico equivale a 1000 litros, não 10000, e 1 centímetro cúbico equivale a 1 mililitro, não 100 mililitros."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. No sistema métrico, 1 metro cúbico (m³) equivale a 1000 litros, e 1 decímetro cúbico (dm³) equivale a 1 litro. Essa é uma relação fundamental para a conversão entre volume (espaço ocupado) e capacidade (quantidade de líquido que pode ser contida).",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Uma piscina em forma de paralelepípedo tem 2,5 metros de comprimento, 1 metro de profundidade e capacidade para 8000 litros. Qual é a largura dessa piscina?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "3,2 metros",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. Para resolver a questão, primeiro é preciso converter a capacidade da piscina de litros para metros cúbicos. Sabendo que 1 metro cúbico (m³) equivale a 1000 litros, 8000 litros correspondem a 8 m³. A fórmula do volume de um paralelepípedo é Volume = comprimento × largura × profundidade. Substituindo os valores conhecidos: 8 m³ = 2,5 m × largura × 1 m. Assim, 8 = 2,5 × largura. Dividindo 8 por 2,5, obtemos largura = 3,2 metros."
+        },
+        {
+          "id": "b",
+          "text": "3,5 metros",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. A largura de 3,5 metros não corresponde ao cálculo do volume da piscina com a capacidade e dimensões fornecidas. É fundamental realizar a conversão de unidades de capacidade para volume antes de aplicar a fórmula."
+        },
+        {
+          "id": "c",
+          "text": "4,0 metros",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. O valor de 4,0 metros não é obtido a partir da aplicação correta da fórmula do volume e da conversão de unidades. O cálculo leva a um resultado diferente."
+        },
+        {
+          "id": "d",
+          "text": "2,8 metros",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Ao realizar os cálculos com a conversão correta de litros para metros cúbicos e aplicar a fórmula do volume, o resultado da largura não é 2,8 metros."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. Para resolver a questão, primeiro é preciso converter a capacidade da piscina de litros para metros cúbicos. Sabendo que 1 metro cúbico (m³) equivale a 1000 litros, 8000 litros correspondem a 8 m³. A fórmula do volume de um paralelepípedo é Volume = comprimento × largura × profundidade. Substituindo os valores conhecidos: 8 m³ = 2,5 m × largura × 1 m. Assim, 8 = 2,5 × largura. Dividindo 8 por 2,5, obtemos largura = 3,2 metros.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Para simplificar a raiz quadrada de um número que não possui raiz exata, qual técnica matemática deve ser aplicada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividir o número por sua metade e extrair a raiz do quociente obtido",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Dividir um número por sua metade e extrair a raiz do quociente não é uma técnica para simplificar raízes quadradas não exatas. Essa operação não tem base matemática para a simplificação de radicais."
+        },
+        {
+          "id": "b",
+          "text": "Decompor o número em fatores primos, identificar os expoentes pares que podem sair do radical e manter sob a raiz os fatores com expoentes ímpares",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. A técnica para simplificar a raiz quadrada de um número que não possui raiz exata é a fatoração em números primos. Ao decompor o número em seus fatores primos, agrupam-se os fatores com expoentes iguais ao índice da raiz (neste caso, 2 para raiz quadrada). Fatores com expoentes pares podem ser \"retirados\" do radical, dividindo-se o expoente pelo índice, enquanto os fatores com expoentes ímpares (ou que não formam pares) permanecem sob a raiz. Por exemplo, a raiz quadrada de 72 é simplificada como √(2³ × 3²) = √(2² × 2 × 3²) = 2 × 3 × √2 = 6√2."
+        },
+        {
+          "id": "c",
+          "text": "Aplicar logaritmos para transformar a operação de radiciação em uma divisão simples",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Aplicar logaritmos pode ser útil para cálculos complexos envolvendo potências e raízes, mas não é a técnica primária ou mais direta para simplificar a forma de um radical não exato. A simplificação de radicais é feita pela fatoração em primos, como descrito na alternativa correta."
+        },
+        {
+          "id": "d",
+          "text": "Aproximar o número para o quadrado perfeito mais próximo e calcular a diferença percentual",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Aproximar o número para o quadrado perfeito mais próximo e calcular a diferença percentual é uma técnica para estimar o valor da raiz, mas não para simplificá-la em sua forma radical, que é o que a questão pede. A simplificação busca uma representação mais exata e reduzida do radical."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. A técnica para simplificar a raiz quadrada de um número que não possui raiz exata é a fatoração em números primos. Ao decompor o número em seus fatores primos, agrupam-se os fatores com expoentes iguais ao índice da raiz (neste caso, 2 para raiz quadrada). Fatores com expoentes pares podem ser \"retirados\" do radical, dividindo-se o expoente pelo índice, enquanto os fatores com expoentes ímpares (ou que não formam pares) permanecem sob a raiz. Por exemplo, a raiz quadrada de 72 é simplificada como √(2³ × 3²) = √(2² × 2 × 3²) = 2 × 3 × √2 = 6√2.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "23_160396_Geometria Espacial - Prisma II.pdf",
+  "coletado_em": "2026-09-23T21:08:50"
+}

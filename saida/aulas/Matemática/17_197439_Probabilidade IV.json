@@ -1,0 +1,618 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 17,
+  "ordem_no_curso": "79.00",
+  "titulo": "Probabilidade IV",
+  "codigo_aula": "197439",
+  "video_id": "fPHkLJJG6bY=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:41:47",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/fPHkLJJG6bY%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=404275%2C425322%2C425327&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Probabilidade IV\n\n## Comentários Iniciais e Material da Disciplina\nCopa beleza. Estou sempre criterioso, explico com cuidado. Na propriedade... Estamos fazendo, e quando finalmente eu fizer uma coletânea de questões, aí é outra coisa. Mandou o material do nosso modelo, identificações, graças a Deus, completinho, bonitinho, separado por capítulos.\n\nEntão, além da aula, você tem ao todo o conteúdo comentado para consolidar de verdade e de forma definitiva a Probabilidade. O nosso exemplo... fico feliz, porque é muito trabalhoso. Vocês sabem o quanto dá trabalho fazer aquilo ali. Eu faço com muito carinho para vocês, sabendo que realmente vai surtir efeito.\n\n## Problema do Vendedor: “Pelo menos uma venda”\nOlha aqui: o vendedor tem potencial de venda de 60%. Em cada cliente, ele tenta: cliente 1, cliente 2 e cliente 3. A pergunta é: qual a probabilidade de ele realizar pelo menos uma venda?\n\nO primeiro passo é verificar: vender é 0,6. Então, não vender só pode ser 0,4. Beleza, correto? Olha só: 0,4.\n\nPelo menos uma venda, ao menos uma... Ele realizar pelo menos uma venda. Para resolver isso, pense assim: eu tenho três clientes. Quem vendeu para um, vendeu pelo menos uma. Quem vendeu para dois, vendeu pelo menos uma. Quem vendeu para três, vendeu pelo menos uma.\n\nSó que tem um detalhe. Se você for fazer do jeito convencional, olha o que acontece. Cliente 1, cliente 2, cliente 3. Eu vou visitar os três clientes. Eu posso:\n- vender, vender, vender\n- vender, vender, não vender\n- vender, não vender, vender\n- vender, não vender, não vender\n- não vender, vender, vender\n- não vender, vender, não vender\n- não vender, não vender, vender\n- não vender, não vender, não vender\n\nSe você pensar bem, nós temos oito situações. Como é que eu sei que são oito? Volta lá na análise combinatória: são 3 clientes, e para cada cliente você pode vender ou não vender (2 possibilidades). Então 2^3 = 8 possibilidades. Bonito, né? Começa a buscar informações já estudadas. Você tem oito possibilidades para realizar as vendas a clientes.\n\nMas realizar pelo menos uma venda... olha a trabalheira para quem não sabe a propriedade do complementar. O que a pessoa faz? Soma as probabilidades de todas as situações que servem. São oito possibilidades. Dessas, servem sete (todas, menos “não vender, não vender, não vender”). Ela teria que calcular linha a linha e somar tudo. Pode até fazer em casa como teste: multiplica cada situação e depois soma.\n\nO que nós percebemos? Só não serve uma situação: quando ele não vende, não vende e não vende. Por que é que você está multiplicando em cada linha? Porque, quando não tem algo em comum simultâneo (interseção impossível no mesmo cliente: vender e não vender ao mesmo tempo), os eventos entre clientes são independentes, então multiplica-se dentro de cada cenário.\n\nO legal aqui: a probabilidade de não realizar nenhuma venda (não vender nos três) é 0,4 × 0,4 × 0,4 = 0,064. Então, em vez de fazer essa parafernália toda, nós fazemos o complementar:\n- P(pelo menos uma venda) = 1 − P(nenhuma venda) = 1 − 0,064 = 0,936.\n\nIsso dá 0,936. Em porcentagem, 93,6%. Um vendedor com 60% de chance de vender por cliente, visitando três clientes, tem 93,6% de probabilidade de realizar pelo menos uma venda. Por quê? Porque eu pego o todo (1) e tiro o que não serve (nenhuma venda). Só não serve quando ele não vende para nenhum.\n\n> 🎯 **Dicas de prova:** “Pelo menos um” geralmente é mais rápido pelo complementar: 1 menos a probabilidade de “nenhum”.\n\nSe tiver quatro clientes, você teria 2^4 = 16 possibilidades. Realizar pelo menos uma venda daria 1 menos a chance de vender zero: 1 − 0,4^4 = 1 − 0,0256 = 0,9744 (97,44%). Em vez de calcular tudo que serve, promova a exclusão: pegue o todo e tire o que não serve.\n\nAtenção nesses detalhes, que são importantíssimos na hora do concurso. Quando começarem com “pelo menos um”, “ao menos um”, perceba que servem muitas coisas; as bancas às vezes complicam com muitas situações. Muitas vezes só não serve uma ou duas situações, e o complementar mata.\n\n## Propriedades Básicas e Fundamentos\nVamos fazer o seguinte: propriedade mais aquecida. Nós já sabemos disso aqui.\n\nPropriedade 5: a probabilidade de um evento é um número real situado no intervalo [0, 1]. Só para constar: probabilidade está entre 0 e 1. Um evento nulo tem probabilidade 0; um evento certo tem probabilidade 1. Beleza.\n\nAgora, o seguinte: quando tem algo em comum; quando não tem nada em comum; perceber condicional; perceber complementar. Se você fizer isso aqui, você mata todas as questões de probabilidade.\n\nVai ter mais aulas ainda. Neste momento, estou introduzindo o conteúdo, jogando para você conhecer. Depois, vamos consolidar com treinamento e aprofundar, como temos feito aqui também.\n\n## “Algo em comum” (União e Interseção) vs “Nada em comum” (Soma simples)\nFala o seguinte, questão de concurso. Tenho uma questão de probabilidade e percebi que há “algo em comum”. Se tem algo em comum, eu quero que você pense: quero uma coisa ou outra (união), e posso ter ao mesmo tempo (interseção). Exemplo: quero um número múltiplo de 2 ou de 3; posso ter números múltiplos de ambos (interseção).\n\nSe eu tiver mais de um evento, preste atenção: quando é “uma coisa ou outra” com algo em comum, use união e interseção. Quando não tem nada em comum, some diretamente.\n\n> Se A e B têm interseção possível:\n- P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n\n> Se são categorias mutuamente exclusivas (nada em comum):\n- P(A ∪ B) = P(A) + P(B).\n\nExemplos de “nada em comum”:\n- Urna com bolas brancas e vermelhas: uma bola não pode ser branca e vermelha ao mesmo tempo.\n- Concurso com cargos distintos e exclusivos (técnico, analista, delegado, escrivão): um candidato não ocupa dois cargos simultaneamente.\n\nQuando é um evento só (tirar uma bola, jogar um dado, lançar uma moeda), acabou. Quando são mais eventos (sortear três policiais; selecionar pessoas sucessivamente), surgem multiplicações (eventos sucessivos) e somas (casos alternativos), conforme “tem algo em comum” ou não.\n\nSe algo tem interseção (pode acontecer junto), use união/interseção. Se não tem interseção possível, some as probabilidades dos casos.\n\n## Diagrama e Reconhecimento de Estruturas\nQuando eu percebo que tem algo em comum, começo pelo diagrama (Venn) porque ele me ajuda a organizar o todo: quem está só em A, só em B, e em A ∩ B. Exemplo: pessoa que cometeu homicídio e roubo; pode ter alguém que cometeu ambos, então há interseção.\n\nEntão, o grande lance: percebeu que têm algo em comum? Faça o diagrama. Percebeu que não têm nada em comum (homens e mulheres; bolas brancas e pretas; cargos exclusivos)? Então é soma simples (para alternativas) e multiplicação (para eventos sucessivos).\n\n## Urna: 3 Brancas e 4 Pretas – Sorteio de 3 Sem Reposição\nTemos uma urna com 3 bolas brancas e 4 pretas (total 7). Vamos sortear três bolas aleatoriamente, sem reposição.\n\nPergunta (letra A): qual a probabilidade de serem duas brancas e uma preta?\n\nSem reposição. Eu quero duas bolas brancas e uma preta. Isso pode ocorrer em qualquer ordem. Vamos por etapas:\n- Primeiro, calcule a probabilidade em uma ordem específica: branca, branca, preta.\n  - P(B1) = 3/7.\n  - P(B2 | B1) = 2/6.\n  - P(P3 | B1,B2) = 4/5.\n  - Multiplicando: (3/7) × (2/6) × (4/5) = (3×2×4)/(7×6×5) = 24/210 = 4/35.\n\nMas eu não disse “nesta ordem”. Eu disse “duas brancas e uma preta”, qualquer ordem. As ordens possíveis são:\n- B,B,P\n- B,P,B\n- P,B,B\n\nSão 3 ordens. Cada ordem tem a mesma probabilidade 4/35. Então:\n- Probabilidade total = 3 × (4/35) = 12/35.\n\nGuarde o detalhe: quando tiver eventos sucessivos e a ordem não é especificada, conte as ordens possíveis na análise combinatória e multiplique.\n\n> 🎯 **Dicas de prova:** Em retiradas sem reposição:\n- Se a ordem importa no cálculo base, mas o enunciado pede “qualquer ordem”, multiplique pelo número de arranjos distintos dos resultados (por exemplo, duas brancas idênticas e uma preta: 3!/2!1! = 3 ordens).\n\nPergunta (letra B): duas pretas e uma branca.\n- Pela simetria, trocando papéis:\n  - Uma ordem específica P,P,B: (4/7) × (3/6) × (3/5) = (4×3×3)/(7×6×5) = 36/210 = 6/35.\n  - Ordens distintas: P,P,B; P,B,P; B,P,P → 3 ordens.\n  - Probabilidade total = 3 × (6/35) = 18/35.\n\n## Mesma cor (três da mesma cor)\nAgora: qual a probabilidade das três bolas serem da mesma cor?\n\nSer da mesma cor significa:\n- três brancas, ou\n- três pretas.\n\nCalcule cada caso:\n- Três brancas: (3/7) × (2/6) × (1/5) = 6/210 = 1/35.\n- Três pretas: (4/7) × (3/6) × (2/5) = 24/210 = 4/35.\n\nSome (pois são casos alternativos e mutuamente exclusivos):\n- 1/35 + 4/35 = 5/35 = 1/7.\n\nContextualizando para pessoas: três homens e quatro mulheres; sortear três pessoas sem reposição; probabilidade de serem do mesmo sexo. Mesma ideia: três homens ou três mulheres. O raciocínio é idêntico, mudando o contexto.\n\n## Resumo de Fundamentos Operacionais\n- Quando é um evento só: calcule diretamente a fração “casos favoráveis/total”.\n- Quando são eventos sucessivos e não há reposição: atualize numerador e denominador a cada etapa.\n- “Pelo menos um”: use o complementar sempre que possível (1 − P(nenhum)).\n- “Algo em comum”: use união/interseção (diagrama de Venn ajuda).\n- “Nada em comum”: soma simples para alternativas; multiplicação para sucessões.\n- Ordem não especificada em sucessões: multiplique pelo número de ordens distintas (análise combinatória).\n\n> 🎯 **Dicas de prova:** \n- “Pelo menos um” → pense em “1 − nenhum”.\n- Verbalizações do enunciado como “ou” com sobreposição possível → P(A) + P(B) − P(A ∩ B).\n- Categorias mutuamente exclusivas → P(A ∪ B) = P(A) + P(B).\n- Retiradas sem reposição → eventos sucessivos: multiplique as probabilidades condicionais.\n- “Qualquer ordem” → multiplique pelo número de arranjos distintos.\n\n## Encerramento do Bloco\nAgora começam as aplicações com questões de concurso. No próximo bloco, pancadaria de exercícios, mas sempre fundamentando: quando soma, quando multiplica, quando usa união, quando usa interseção, quando apela para o complementar. Esses são os fundamentos principais. Desenvolvendo raciocínio, você vai perceber que dá para matar muitas questões.\n\nBeleza? Então estou voltando agora, e no próximo bloco a gente toma essas questões e vai com tudo.",
+  "transcricao_meta": {
+    "title": "Probabilidade IV",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 40908,
+    "createdAt": "2026-02-05T18:28:32.748Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: probabilidade em eventos sucessivos, união/interseção/condicional/complementar, princípio multiplicativo (análise combinatória) e sorteios “sem reposição”.\nPrincipais pontos:\n- Aplique o **complementar** em “pelo menos um”.\n- Diferencie **união (OU)**, **interseção (E)**, **condicional** e **independência**.\n- Em sorteios **sem reposição**, atualize os denominadores e ajuste pela **ordem** (fixa vs qualquer).\n\n## 1. Base / Conceitos Fundamentais\n- **Evento**: resultado ou conjunto de resultados de um experimento aleatório.\n- **União (A ∪ B)**: “A ou B” (pelo menos um ocorre).\n- **Interseção (A ∩ B)**: “A e B” (ocorrem juntos).\n- **Condicional P(A|B)**: probabilidade de A dado que B ocorreu.\n- **Complementar Aᶜ**: “A não ocorre”; P(A) = 1 − P(Aᶜ).\n- **Independência**: ocorrência de um evento não altera a probabilidade do outro; se independentes, P(A ∩ B) = P(A)P(B).\n- **Princípio multiplicativo** (análise combinatória): total de possibilidades quando as etapas são independentes em contagem; ex.: 2 opções por cliente em n clientes → 2^n.\n- **Sem reposição**: após cada retirada, o total diminui (ex.: 7 → 6 → 5); há dependência entre etapas.\n\n## 2. Como Funciona / Distinções\n- “OU” vs “E”:\n  - **OU (união)**: P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se forem disjuntos, some direto.\n  - **E (interseção)**: em eventos independentes, multiplique probabilidades; em dependentes, use condicionais.\n- **Independência** x **Exclusão mútua**:\n  - Independentes podem ocorrer juntos (multiplica).\n  - Mutuamente exclusivos não ocorrem juntos (interseção = 0).\n- **Ordem importa?**\n  - “Nessa ordem”: calcule a sequência específica (não multiplica por permutações).\n  - “Qualquer ordem”: some todas as sequências equivalentes (ou multiplique pela contagem de ordens).\n- **Reposição** x **Sem reposição**:\n  - Com reposição: denominador constante.\n  - Sem reposição: denominadores e numeradores variam a cada etapa.\n- **“Pelo menos um”**:\n  - Não enumere todos os casos favoráveis; use o **complementar**: 1 − P(nenhum).\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo geral para eventos sucessivos:\n  1. Identifique se há **independência** ou **dependência** (sem reposição → dependência).\n  2. Verifique **ordem**: “nessa ordem” vs “qualquer ordem”.\n  3. Traduza “OU/E” em união/interseção; ajuste pela interseção quando necessário.\n  4. Para “pelo menos um”, aplique o **complementar**: 1 − P(nenhum).\n  5. Em “qualquer ordem”, conte permutações:\n     - Com repetição (ex.: B, B, P): número de ordens = 3!/2! = 3.\n     - Todas distintas (ex.: A, B, C): 3! = 6.\n- Urnas sem reposição (produto fracionado):\n  - Atualize a cada etapa: ex. 3/7 → 2/6 → 1/5 (para 3 retiradas iniciais de brancas).\n- Macete de combinação para “todos iguais” (dois tipos A/B):\n  - P = [C(a, k) + C(b, k)] / C(n, k), onde a + b = n, sorteio de k.\n\n> Dica de Prova\n> - “Pelo menos um/ao menos um”: pense imediatamente em complementar.\n> - “Qualquer ordem” em sorteios múltiplos: ajuste pelo número de ordens; “nessa ordem”: não ajuste.\n> - “Sem reposição”: denominadores decrescem; não use denominador fixo.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 — Pelo menos uma venda (complementar)\n  - Enunciado: Vendedor visita 3 clientes (cliente 1, 2, 3). P(venda) = 0,6 por cliente, independentes. P(pelo menos uma venda)?\n  - P(não vender a um cliente) = 0,4.\n  - P(nenhuma venda) = 0,4 × 0,4 × 0,4 = 0,064.\n  - P(pelo menos uma) = 1 − 0,064 = 0,936 = 93,6%.\n  - Generalização: com n clientes, P = 1 − (0,4)^n. Ex.: n = 4 → 1 − (0,4)^4 = 1 − 0,0256 = 0,9744 (97,44%).\n\n> Dica de Prova\n> - Em 3 clientes há 2 × 2 × 2 = 8 possibilidades; só “não vende, não vende, não vende” não serve. O complementar pega direto essa linha.\n\n- Exemplo 2 — Urna: 3 brancas (B), 4 pretas (P), 3 retiradas sem reposição\n  - Duas brancas e uma preta (qualquer ordem):\n    - Uma ordem específica (B, B, P): (3/7) × (2/6) × (4/5) = 4/35.\n    - Ordens: 3!/2! = 3 → P = 3 × 4/35 = 12/35.\n  - Duas pretas e uma branca (qualquer ordem):\n    - Uma ordem (P, P, B): (4/7) × (3/6) × (3/5) = 6/35.\n    - Ordens: 3 → P = 18/35.\n  - Três da mesma cor:\n    - BBB: (3/7)(2/6)(1/5) = 1/35.\n    - PPP: (4/7)(3/6)(2/5) = 4/35.\n    - Mesma cor: 1/35 + 4/35 = 5/35 = 1/7.\n\n- Exemplo 3 — Mesmo sexo (analogia direta)\n  - Grupo: 3 homens, 4 mulheres (7 no total). Sortear 3 sem reposição.\n  - P(3 do mesmo sexo) = P(3 homens) + P(3 mulheres) = 1/35 + 4/35 = 1/7.\n  - Via combinações: [C(3,3) + C(4,3)] / C(7,3) = (1 + 4) / 35 = 1/7.\n\n## 5. Pegadinhas e Erros Comuns\n- “Pelo menos um”:\n  - Erro: somar “exatamente 1 + exatamente 2 + …” manualmente.\n  - Correto: complementar 1 − P(nenhum).\n- “OU”:\n  - Erro: somar sem subtrair interseção quando não são disjuntos.\n  - Correto: P(A ∪ B) = P(A) + P(B) − P(A ∩ B).\n- Independência x exclusão mútua:\n  - Erro: confundir e multiplicar eventos mutuamente exclusivos (interseção = 0).\n- Ordem:\n  - Erro: esquecer fator de permutação em “qualquer ordem”.\n  - Erro: multiplicar por permutações quando a questão diz “nessa ordem”.\n- Sem reposição:\n  - Erro: manter denominador fixo (como se houvesse reposição).\n  - Correto: ajustar 7 → 6 → 5 e numeradores conforme retiradas.\n- Contagem total de cenários:\n  - Lembre: com n etapas binárias (ex.: vender/não vender), há 2^n possibilidades (3 clientes → 8; 4 → 16).\n\n> Dica de Prova\n> - Em sorteios “sem reposição”, multiplique probabilidades condicionais na sequência; para “qualquer ordem”, multiplique pelo número de ordens equivalentes ao final.\n> - Se apenas uma ou poucas sequências “não servem”, calcule o que não serve e subtraia de 1: mais rápido e limpo.\n\nDIFERENÇAS e COMPARAÇÕES\n| Conceito/Situação | Quando usar | Fórmula/Regra |\n| União (A ∪ B) | “A ou B” | P(A) + P(B) − P(A ∩ B) |\n| Interseção (A ∩ B) | “A e B” | Independentes: P(A)P(B); Dependentes: P(A)P(B|A) |\n| Condicional | Efeito de um evento no outro | P(A|B) = P(A ∩ B)/P(B) |\n| Complementar | “Pelo menos um”, “não ocorrer” | P(A) = 1 − P(Aᶜ) |\n| Ordem “nessa ordem” | Sequência específica | Não contar permutações |\n| Ordem “qualquer ordem” | Resultado agregado (ex.: 2 brancas e 1 preta) | Multiplicar pela contagem de ordens |\n| Sem reposição | Etapas dependentes | Denominadores decrescentes; produto sequencial |\n| Princípio multiplicativo | Contagem de cenários | Total = produto das opções por etapa (ex.: 2^n) |",
+  "resumo_bolso": "# Probabilidade IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* Evento: resultado ou conjunto de resultados de um experimento aleatório.\n* União (A ∪ B): “A ou B” (pelo menos um ocorre).\n* Interseção (A ∩ B): “A e B” (ocorrem juntos).\n* Condicional P(A|B): probabilidade de A dado que B ocorreu.\n* Complementar Aᶜ: “A não ocorre”; P(A) = 1 − P(Aᶜ).\n* Independência: ocorrência de um evento não altera a probabilidade do outro; se independentes, P(A ∩ B) = P(A)P(B).\n* Princípio multiplicativo (análise combinatória): total de possibilidades = produto das opções por etapa (ex.: 2^n).\n* Sem reposição: dependência entre etapas; denominadores e numeradores variam a cada retirada.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Independência vs Exclusão mútua\n\n- Independentes podem ocorrer juntos (usa-se multiplicação).\n- Mutuamente exclusivos não ocorrem juntos (interseção = 0).\n\n### “Nessa ordem” vs “Qualquer ordem”\n\n- Nessa ordem: calcule a sequência específica (não contar permutações).\n- Qualquer ordem: some todas as sequências equivalentes (ou multiplique pela contagem de ordens).\n\n### Reposição vs Sem reposição\n\n- Com reposição: denominador constante.\n- Sem reposição: denominadores decrescentes; produto sequencial com dependência.\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. União de eventos\n- P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se forem disjuntos, some direto.\n\n2. Interseção\n- Independentes: P(A ∩ B) = P(A)P(B).\n- Dependentes: P(A ∩ B) = P(A)P(B|A).\n\n3. Condicional\n- P(A|B) = P(A ∩ B)/P(B).\n\n4. Complementar (“pelo menos um”)\n- P(≥1) = 1 − P(0).\n\n5. Ordem — permutações em “qualquer ordem”\n- Com repetição, ex.: B,B,P → 3!/2! = 3.\n- Todas distintas, ex.: A,B,C → 3! = 6.\n\n6. Urnas sem reposição (produto fracionado)\n- Atualize a cada etapa: ex. 3/7 → 2/6 → 1/5.\n\n7. Combinação “todos iguais” (dois tipos A/B)\n- P = [C(a, k) + C(b, k)] / C(n, k), com a + b = n.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Pelo menos um”: não some casos “exatamente 1 + 2 + …”; use o complementar 1 − P(nenhum).\n2. “OU”: não some P(A)+P(B) sem ajustar a interseção quando não são disjuntos.\n3. Independência x exclusão mútua: não multiplique probabilidades de eventos mutuamente exclusivos.\n4. Ordem: não esqueça o fator de permutação em “qualquer ordem” e não o use em “nessa ordem”.\n5. Sem reposição: não mantenha denominador fixo; ajuste 7 → 6 → 5 e numeradores.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei independência de exclusão mútua?\n* Em “pelo menos um”, usei o complementar 1 − P(nenhum)?\n* Em “OU”, ajustei pela interseção quando necessário?\n* Identifiquei “nessa ordem” vs “qualquer ordem” e ajustei por permutações corretamente?\n* Em “sem reposição”, atualizei denominadores e numeradores a cada retirada?\n* Usei P(A ∩ B) = P(A)P(B|A) quando há dependência?",
+  "mapa_mental": "# 🎲 Probabilidade IV\n## 🎯 Conceitos Centrais\n### 💡 Eventos e Operações\n- Evento aleatório\n- Espaço amostral\n- União A ∪ B\n- Interseção A ∩ B\n- Evento complementar\n### 🧮 Probabilidade Básica\n- Probabilidade clássica\n- Casos favoráveis\n- Casos possíveis\n- Probabilidade total\n- Regra complementar\n### 📊 Tipos de Probabilidade\n- Probabilidade conjunta\n- Probabilidade marginal\n- Probabilidade condicional\n- P(A∩B) relação\n- P(A|B) relação\n\n## 🧮 Regras e Fórmulas\n### 📜 União e Interseção\n- A ou B\n- P(A∪B) fórmula\n- Soma menos interseção\n- Eventos disjuntos\n- Interseção zero\n### ⚙️ Condicional e Independência\n- P(A|B) fórmula\n- P(A∩B)/P(B)\n- Eventos independentes\n- P(A∩B)=P(A)P(B)\n- Teste de independência\n### 🧮 Complementar e “Pelo Menos”\n- Evento complementar Aᶜ\n- P(A)=1−P(Aᶜ)\n- “Pelo menos um”\n- 1−P(nenhum)\n- Evitar soma extensa\n\n## 🔄 Eventos Sucessivos\n### ⚙️ Princípio Multiplicativo\n- Etapas sucessivas\n- Opções por etapa\n- Produto das opções\n- 2^n cenários binários\n- Contagem de sequências\n### 🔁 Reposição e Dependência\n- Com reposição\n- Denominador constante\n- Sem reposição\n- Denominadores decrescentes\n- Eventos dependentes\n### 🔢 Ordem e Permutações\n- “Nessa ordem”\n- Sequência específica\n- “Qualquer ordem”\n- Multiplicar permutações\n- Fatorial e repetições\n\n## 🚨 Erros Frequentes em Provas\n### ⚠️ União e Interseção\n- Somar sem interseção\n- Confundir OU/E\n- Ignorar disjunção\n- Interseção indevida\n- Fórmula correta A∪B\n### ⚠️ Independência e Exclusão\n- Confundir conceitos\n- Exclusão mútua\n- Interseção igual zero\n- Não multiplicar exclusivos\n- Testar com P(A∩B)\n### ⚠️ Sucessivos e Complementar\n- Esquecer complementar\n- “Pelo menos um” errado\n- Ordem ignorada\n- Denominador fixo indevido\n- Não ajustar sem reposição",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Probabilidade Complementar",
+      "description": "Probabilidade Complementar — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual estratégia simplifica o cálculo da probabilidade de ocorrer pelo menos uma vez?",
+          "back": "Utilizar a **exclusão**, subtraindo do universo total a probabilidade de o evento não ocorrer.",
+          "hint": "Pense no evento complementar",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "calculo-complementar"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Como calcular a probabilidade de nenhuma ocorrência em n tentativas?",
+          "back": "Multiplicar a probabilidade de não ocorrência em cada tentativa.",
+          "hint": "Refere-se a eventos independentes",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "eventos-independentes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a probabilidade de pelo menos uma venda em três visitas, com chance de 60% por visita?",
+          "back": "Aproximadamente **93,6%** (ou 0,913), calculada subtraindo de 1 a probabilidade de nenhuma venda em três tentativas ($0,4^3$).",
+          "hint": "Aplicação do cálculo complementar",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Fundamentos Probabilísticos",
+      "description": "Fundamentos Probabilísticos — 2 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual intervalo contém necessariamente a probabilidade de qualquer evento?",
+          "back": "Entre **0 e 1** (sendo um número real).",
+          "hint": "É a escala normalizada",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "conceitos-fundamentais"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é a probabilidade atribuída a um evento certo?",
+          "back": "**1** (ou 100%).",
+          "hint": "O valor máximo da escala",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "conceitos-fundamentais"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Análise Combinatória",
+      "description": "Análise Combinatória — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Quantos resultados podem existir quando cada um de n eventos tem duas possibilidades?",
+          "back": "$2^n$ possibilidades.",
+          "hint": "Relacionado a potências de base dois",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "analise-combinatoria"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como o princípio multiplicativo calcula o total de possibilidades sucessivas?",
+          "back": "Multiplicando o número de possibilidades de cada evento sucessivo.",
+          "hint": "Base para contagem de possibilidades",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "principio-multiplicativo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Quantas possibilidades existem para vender ou não vender a três clientes?",
+          "back": "**8** possibilidades ($2^3$), referentes às duas opções (vender ou não vender) para cada um dos três clientes.",
+          "hint": "Aplicação do princípio multiplicativo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "analise-combinatoria"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Operações Com Eventos",
+      "description": "Operações Com Eventos — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual operação representa a ocorrência de pelo menos um entre dois eventos?",
+          "back": "A **união** de eventos.",
+          "hint": "Conectivo lógico associado",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "operacoes-logicas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Em que condição as probabilidades de dois eventos podem ser somadas diretamente?",
+          "back": "Quando os eventos **não têm nada em comum** (sem intersecção).",
+          "hint": "Termo técnico: eventos disjuntos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "eventos-mutuamente-exclusivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Como calcular a probabilidade da união de eventos que possuem resultados em comum?",
+          "back": "Utilizando o **diagrama** para identificar a intersecção.",
+          "hint": "Ferramenta visual de conjuntos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "teoria-dos-conjuntos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Sorteios Sucessivos",
+      "description": "Sorteios Sucessivos — 2 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual operação combina as probabilidades de resultados sucessivos sem reposição?",
+          "back": "A **multiplicação**.",
+          "hint": "Conectivo lógico associado",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "operacoes-logicas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Como ajustar o cálculo quando uma sequência de resultados pode ocorrer em qualquer ordem?",
+          "back": "Multiplicando o resultado pela **análise combinatória** correspondente ao número de ordens possíveis.",
+          "hint": "Necessário para permutações",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "analise-combinatoria"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em probabilidade, quando dois eventos não possuem elementos em comum (são mutuamente exclusivos), qual operação deve ser utilizada para calcular a probabilidade de ocorrer um evento OU outro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se multiplicar as probabilidades individuais de cada evento",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar as probabilidades é a operação utilizada quando se busca a ocorrência simultânea de eventos independentes (evento 'E' outro), não quando se busca a ocorrência de um evento 'OU' outro em eventos mutuamente exclusivos."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se calcular a interseção entre os conjuntos e depois multiplicar",
+          "correct": false,
+          "explanation": "Incorreta. A interseção entre conjuntos representa os elementos em comum. Se os eventos são mutuamente exclusivos, por definição, não há elementos em comum, e a interseção seria vazia ou zero. Multiplicar probabilidades de eventos mutuamente exclusivos após uma interseção nula não faz sentido para calcular a probabilidade de 'OU'."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se somar as probabilidades individuais de cada evento",
+          "correct": true,
+          "explanation": "Correta. Quando dois eventos são mutuamente exclusivos, ou seja, não podem ocorrer ao mesmo tempo, a probabilidade de que um OU outro ocorra é a soma das probabilidades individuais de cada evento. Por exemplo, a probabilidade de tirar um 2 OU um 4 em um lançamento de dado é a soma da probabilidade de tirar um 2 com a probabilidade de tirar um 4, pois esses eventos não têm elementos em comum."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se aplicar a probabilidade condicional entre os eventos",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade condicional é utilizada quando a ocorrência de um evento afeta a probabilidade de outro evento, ou seja, quando há dependência entre eles. Para eventos mutuamente exclusivos, que não podem ocorrer juntos, a probabilidade condicional não é a operação apropriada para calcular a probabilidade de 'OU'."
+        }
+      ],
+      "explanation": "Correta. Quando dois eventos são mutuamente exclusivos, ou seja, não podem ocorrer ao mesmo tempo, a probabilidade de que um OU outro ocorra é a soma das probabilidades individuais de cada evento. Por exemplo, a probabilidade de tirar um 2 OU um 4 em um lançamento de dado é a soma da probabilidade de tirar um 2 com a probabilidade de tirar um 4, pois esses eventos não têm elementos em comum.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Quando se deseja calcular a probabilidade de ocorrência simultânea de dois eventos independentes (um evento E outro evento), qual operação matemática deve ser aplicada às probabilidades individuais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se calcular a média aritmética entre as probabilidades",
+          "correct": false,
+          "explanation": "Incorreta. A média aritmética das probabilidades não representa a probabilidade de ocorrência simultânea. A média é uma medida de tendência central e não se aplica ao cálculo de probabilidades combinadas de eventos independentes."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se multiplicar as probabilidades individuais de cada evento",
+          "correct": true,
+          "explanation": "Correta. Para eventos independentes, a probabilidade de que um evento E outro evento ocorram é o produto de suas probabilidades individuais. Por exemplo, se a probabilidade de um vendedor fazer uma venda para o cliente A é de 0,6 e para o cliente B é de 0,6, a probabilidade de ele vender para A E para B (assumindo independência) é 0,6 * 0,6 = 0,36. Esse princípio é fundamental na teoria da probabilidade para eventos que não se influenciam mutuamente."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se subtrair a probabilidade do segundo evento da probabilidade do primeiro",
+          "correct": false,
+          "explanation": "Incorreta. Subtrair probabilidades não é a operação utilizada para calcular a ocorrência simultânea de eventos. A subtração é comumente empregada para encontrar a probabilidade de um evento não ocorrer ou para calcular a probabilidade de 'pelo menos um' evento por exclusão."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se somar as probabilidades e dividir pelo número de eventos",
+          "correct": false,
+          "explanation": "Incorreta. Somar probabilidades e dividir pelo número de eventos não é a forma correta de calcular a probabilidade de ocorrência simultânea de eventos independentes. Essa abordagem não reflete a diminuição da probabilidade de múltiplos eventos ocorrerem juntos."
+        }
+      ],
+      "explanation": "Correta. Para eventos independentes, a probabilidade de que um evento E outro evento ocorram é o produto de suas probabilidades individuais. Por exemplo, se a probabilidade de um vendedor fazer uma venda para o cliente A é de 0,6 e para o cliente B é de 0,6, a probabilidade de ele vender para A E para B (assumindo independência) é 0,6 * 0,6 = 0,36. Esse princípio é fundamental na teoria da probabilidade para eventos que não se influenciam mutuamente.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em uma urna contendo bolas de diferentes cores, ao realizar sorteios sucessivos sem reposição, o que acontece com o espaço amostral após cada retirada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O espaço amostral aumenta proporcionalmente ao número de retiradas",
+          "correct": false,
+          "explanation": "Incorreta. O espaço amostral não aumenta. Pelo contrário, a remoção de itens da urna reduz o número total de possibilidades para os eventos seguintes."
+        },
+        {
+          "id": "b",
+          "text": "O espaço amostral permanece constante, pois a probabilidade não se altera",
+          "correct": false,
+          "explanation": "Incorreta. O espaço amostral não permanece constante em sorteios sem reposição. A cada retirada, o número total de itens disponíveis na urna diminui, o que altera as probabilidades para as retiradas subsequentes."
+        },
+        {
+          "id": "c",
+          "text": "O espaço amostral se mantém inalterado apenas se houver reposição parcial",
+          "correct": false,
+          "explanation": "Incorreta. O espaço amostral só se manteria inalterado se houvesse reposição total, ou seja, se o item retirado fosse devolvido à urna. A ausência de reposição (ou reposição parcial, se fosse o caso) implica sempre uma alteração no espaço amostral."
+        },
+        {
+          "id": "d",
+          "text": "O espaço amostral diminui, pois o elemento retirado não retorna à urna",
+          "correct": true,
+          "explanation": "Correta. Em sorteios sucessivos sem reposição, o elemento retirado não é devolvido à urna. Consequentemente, o número total de elementos no espaço amostral diminui a cada retirada. Essa redução afeta as probabilidades dos eventos subsequentes, tornando-os dependentes da ordem e dos resultados das retiradas anteriores."
+        }
+      ],
+      "explanation": "Correta. Em sorteios sucessivos sem reposição, o elemento retirado não é devolvido à urna. Consequentemente, o número total de elementos no espaço amostral diminui a cada retirada. Essa redução afeta as probabilidades dos eventos subsequentes, tornando-os dependentes da ordem e dos resultados das retiradas anteriores.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é o intervalo numérico em que qualquer probabilidade de um evento deve necessariamente estar situada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Entre 0 e infinito, dependendo da complexidade do espaço amostral",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade é sempre um valor finito e limitado superiormente por 1. Um intervalo de 0 a infinito não se aplica à definição de probabilidade, que é uma medida da chance de ocorrência de um evento."
+        },
+        {
+          "id": "b",
+          "text": "Entre -1 e 1, incluindo valores negativos para eventos impossíveis",
+          "correct": false,
+          "explanation": "Incorreta. Probabilidades não podem ser valores negativos. O valor 0 representa um evento impossível e o valor 1 representa um evento certo, mas não há probabilidades abaixo de zero."
+        },
+        {
+          "id": "c",
+          "text": "Entre 0 e 1, sendo 0 para evento impossível e 1 para evento certo",
+          "correct": true,
+          "explanation": "Correta. A probabilidade de qualquer evento é um número real que varia de 0 a 1, inclusive. Um valor de 0 indica que o evento é impossível de ocorrer, enquanto um valor de 1 indica que o evento é certo de ocorrer. Todos os outros eventos têm probabilidades entre 0 e 1. Por exemplo, a probabilidade de tirar 'cara' em uma moeda justa é 0,5."
+        },
+        {
+          "id": "d",
+          "text": "Entre 1 e 100, representando a escala percentual de ocorrência",
+          "correct": false,
+          "explanation": "Incorreta. Embora as probabilidades possam ser expressas em porcentagem (multiplicando por 100), o intervalo fundamental em sua forma decimal é de 0 a 1, não de 1 a 100. Além disso, a escala percentual não é o intervalo numérico em que a probabilidade 'está situada' intrinsecamente."
+        }
+      ],
+      "explanation": "Correta. A probabilidade de qualquer evento é um número real que varia de 0 a 1, inclusive. Um valor de 0 indica que o evento é impossível de ocorrer, enquanto um valor de 1 indica que o evento é certo de ocorrer. Todos os outros eventos têm probabilidades entre 0 e 1. Por exemplo, a probabilidade de tirar 'cara' em uma moeda justa é 0,5.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Quando uma questão solicita a probabilidade de ocorrer 'pelo menos um' evento em múltiplas tentativas, qual estratégia de resolução é mais eficiente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Utilizar o princípio da exclusão, subtraindo de 1 a probabilidade de nenhum evento ocorrer",
+          "correct": true,
+          "explanation": "Correta. A estratégia mais eficiente para calcular a probabilidade de 'pelo menos um' evento ocorrer é usar o princípio da probabilidade complementar ou exclusão. Isso envolve calcular a probabilidade de que o evento NÃO ocorra em NENHUMA das tentativas e subtrair esse valor de 1 (que representa a probabilidade total do universo de possibilidades). Por exemplo, se a probabilidade de um vendedor fazer uma venda é 0,6, a probabilidade de não fazer a venda é 0,4. Se ele visita 3 clientes, a probabilidade de não fazer nenhuma venda é 0,4 * 0,4 * 0,4 = 0,064. A probabilidade de fazer 'pelo menos uma' venda é 1 - 0,064 = 0,936."
+        },
+        {
+          "id": "b",
+          "text": "Calcular diretamente todas as possibilidades favoráveis e somá-las individualmente",
+          "correct": false,
+          "explanation": "Incorreta. Calcular todas as possibilidades favoráveis individualmente e somá-las pode ser extremamente trabalhoso e propenso a erros, especialmente quando o número de tentativas é grande. Essa abordagem é menos eficiente para o cenário de 'pelo menos um'."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar a probabilidade de um evento pela quantidade de tentativas realizadas",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a probabilidade de um evento pela quantidade de tentativas não é uma fórmula válida para 'pelo menos um'. Essa operação não considera as diferentes combinações de sucessos e falhas, nem a natureza independente ou dependente das tentativas."
+        },
+        {
+          "id": "d",
+          "text": "Aplicar a fórmula da combinação simples ao número total de eventos possíveis",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula da combinação simples é utilizada para determinar o número de maneiras de escolher itens de um conjunto sem considerar a ordem, mas não é a ferramenta direta para calcular a probabilidade de 'pelo menos um' evento. Embora possa ser parte de cálculos mais complexos, a estratégia de exclusão é mais direta para essa pergunta específica."
+        }
+      ],
+      "explanation": "Correta. A estratégia mais eficiente para calcular a probabilidade de 'pelo menos um' evento ocorrer é usar o princípio da probabilidade complementar ou exclusão. Isso envolve calcular a probabilidade de que o evento NÃO ocorra em NENHUMA das tentativas e subtrair esse valor de 1 (que representa a probabilidade total do universo de possibilidades). Por exemplo, se a probabilidade de um vendedor fazer uma venda é 0,6, a probabilidade de não fazer a venda é 0,4. Se ele visita 3 clientes, a probabilidade de não fazer nenhuma venda é 0,4 * 0,4 * 0,4 = 0,064. A probabilidade de fazer 'pelo menos uma' venda é 1 - 0,064 = 0,936.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao sortear 3 bolas de uma urna contendo 3 bolas brancas e 4 bolas pretas, sem reposição, desejando obter exatamente 2 brancas e 1 preta em qualquer ordem, por que é necessário multiplicar o resultado por 3?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque o fatorial de 3 elementos sempre deve ser aplicado em sorteios sem reposição",
+          "correct": false,
+          "explanation": "Incorreta. O fatorial de 3 (3!) é 6, não 3. Além disso, o uso do fatorial para determinar o número de ordens é aplicável quando os elementos são todos distintos. Neste caso, como há repetição de cores (duas brancas), a forma correta de calcular o número de permutações de 'BBP' é 3!/2! = 3. A multiplicação por 3 é, portanto, o número de permutações distintas das cores, e não diretamente o fatorial de 3."
+        },
+        {
+          "id": "b",
+          "text": "Porque há 3 ordens diferentes possíveis de obter esse resultado (branca-branca-preta, branca-preta-branca, preta-branca-branca)",
+          "correct": true,
+          "explanation": "Correta. Quando a questão pede um resultado específico (duas brancas e uma preta) 'em qualquer ordem', é preciso considerar todas as sequências possíveis que levam a esse resultado. As três ordens possíveis são: branca-branca-preta (BBP), branca-preta-branca (BPB) e preta-branca-branca (PBB). Cada uma dessas ordens tem a mesma probabilidade de ocorrência, e, como são eventos mutuamente exclusivos, a probabilidade total é a soma das probabilidades de cada ordem, o que equivale a multiplicar a probabilidade de uma ordem específica pelo número de ordens possíveis."
+        },
+        {
+          "id": "c",
+          "text": "Porque a probabilidade deve ser ajustada pelo número total de cores disponíveis",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade já considera o número total de cores e suas quantidades na urna ao calcular as frações para cada sorteio. A multiplicação por 3 está relacionada à permutação das ordens de ocorrência das cores, e não a um ajuste pelo número total de cores disponíveis."
+        },
+        {
+          "id": "d",
+          "text": "Porque existem 3 bolas brancas disponíveis na urna inicialmente",
+          "correct": false,
+          "explanation": "Incorreta. O número de bolas brancas disponíveis (3) é um dado do problema, mas não é a razão pela qual se multiplica por 3 no final. A multiplicação por 3 refere-se às diferentes ordens em que as bolas podem ser sorteadas para atender à condição de 'duas brancas e uma preta'."
+        }
+      ],
+      "explanation": "Correta. Quando a questão pede um resultado específico (duas brancas e uma preta) 'em qualquer ordem', é preciso considerar todas as sequências possíveis que levam a esse resultado. As três ordens possíveis são: branca-branca-preta (BBP), branca-preta-branca (BPB) e preta-branca-branca (PBB). Cada uma dessas ordens tem a mesma probabilidade de ocorrência, e, como são eventos mutuamente exclusivos, a probabilidade total é a soma das probabilidades de cada ordem, o que equivale a multiplicar a probabilidade de uma ordem específica pelo número de ordens possíveis.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em problemas de probabilidade envolvendo eventos sucessivos onde não há especificação de ordem, qual ferramenta da análise combinatória deve ser considerada para determinar as diferentes sequências possíveis?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O princípio fundamental da contagem aplicado ao produto das probabilidades individuais",
+          "correct": false,
+          "explanation": "Incorreta. O princípio fundamental da contagem é utilizado para calcular o número total de possibilidades ou o número de sequências específicas. No entanto, quando há eventos sucessivos e a ordem não é especificada, mas há repetição de elementos (como duas bolas brancas e uma preta), é necessário ajustar esse princípio para contabilizar as permutações das ordens possíveis."
+        },
+        {
+          "id": "b",
+          "text": "O arranjo simples multiplicado pela probabilidade do primeiro evento",
+          "correct": false,
+          "explanation": "Incorreta. O arranjo simples é usado quando a ordem importa e os elementos são distintos. No caso de elementos repetidos e quando se busca o número de sequências distintas para um resultado específico (como duas brancas e uma preta), a permutação com repetição é mais adequada. Multiplicar pela probabilidade do primeiro evento não resolve a questão das diferentes ordens."
+        },
+        {
+          "id": "c",
+          "text": "A combinação simples dividida pelo número de eventos favoráveis",
+          "correct": false,
+          "explanation": "Incorreta. A combinação simples é utilizada quando a ordem dos elementos não importa de forma alguma e se está selecionando um subconjunto de elementos de um conjunto maior. Neste contexto, a ordem de sorteio das bolas afeta a sequência, mesmo que o resultado final (duas brancas e uma preta) seja o mesmo. A combinação não é a ferramenta apropriada para determinar as diferentes sequências ordenadas."
+        },
+        {
+          "id": "d",
+          "text": "A permutação dos elementos considerando as repetições existentes entre eles",
+          "correct": true,
+          "explanation": "Correta. Em problemas de probabilidade envolvendo eventos sucessivos e a necessidade de determinar as diferentes sequências possíveis sem especificação de ordem, mas com repetição de elementos, a permutação com repetição (ou a contagem direta das ordens distintas) é a ferramenta adequada. Por exemplo, para 'duas brancas e uma preta', as ordens possíveis são BBP, BPB, PBB. Isso pode ser calculado usando a fórmula de permutação com repetição (n! / (n1! * n2! * ...)), onde n é o número total de elementos e n1, n2, etc., são as contagens de elementos repetidos. No caso, 3! / (2! * 1!) = 3."
+        }
+      ],
+      "explanation": "Correta. Em problemas de probabilidade envolvendo eventos sucessivos e a necessidade de determinar as diferentes sequências possíveis sem especificação de ordem, mas com repetição de elementos, a permutação com repetição (ou a contagem direta das ordens distintas) é a ferramenta adequada. Por exemplo, para 'duas brancas e uma preta', as ordens possíveis são BBP, BPB, PBB. Isso pode ser calculado usando a fórmula de permutação com repetição (n! / (n1! * n2! * ...)), onde n é o número total de elementos e n1, n2, etc., são as contagens de elementos repetidos. No caso, 3! / (2! * 1!) = 3.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Quando se trabalha com diagramas de Venn em probabilidade e identifica-se que há elementos em comum entre os conjuntos, qual operação representa a probabilidade de ocorrer um evento OU outro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A união dos conjuntos, calculada por P(A) + P(B) - P(A ∩ B)",
+          "correct": true,
+          "explanation": "Correta. Em teoria dos conjuntos e probabilidade, quando se deseja calcular a probabilidade de ocorrer o evento A OU o evento B, e esses eventos possuem elementos em comum (interseção), utiliza-se a fórmula da união de conjuntos: P(A ∪ B) = P(A) + P(B) - P(A ∩ B). A subtração de P(A ∩ B) é necessária para evitar a contagem duplicada dos elementos que pertencem a ambos os eventos."
+        },
+        {
+          "id": "b",
+          "text": "A interseção dos conjuntos, calculada por P(A) × P(B)",
+          "correct": false,
+          "explanation": "Incorreta. A interseção dos conjuntos, calculada por P(A ∩ B), representa a probabilidade de ocorrer o evento A E o evento B simultaneamente. Quando os eventos são independentes, P(A ∩ B) = P(A) × P(B). Esta operação não corresponde à probabilidade de ocorrer um evento OU outro quando há elementos em comum."
+        },
+        {
+          "id": "c",
+          "text": "O complementar da união, calculado por 1 - P(A ∪ B)",
+          "correct": false,
+          "explanation": "Incorreta. O complementar da união, 1 - P(A ∪ B), representa a probabilidade de que NEM A NEM B ocorram. Não é a operação para calcular a probabilidade de ocorrer A OU B."
+        },
+        {
+          "id": "d",
+          "text": "A diferença simétrica, calculada por P(A) + P(B) sem ajustes",
+          "correct": false,
+          "explanation": "Incorreta. A soma simples P(A) + P(B) seria correta apenas se os eventos A e B fossem mutuamente exclusivos (ou seja, não tivessem elementos em comum, P(A ∩ B) = 0). Quando há elementos em comum, somar P(A) + P(B) sem ajustes resultaria em uma contagem excessiva da probabilidade dos elementos na interseção."
+        }
+      ],
+      "explanation": "Correta. Em teoria dos conjuntos e probabilidade, quando se deseja calcular a probabilidade de ocorrer o evento A OU o evento B, e esses eventos possuem elementos em comum (interseção), utiliza-se a fórmula da união de conjuntos: P(A ∪ B) = P(A) + P(B) - P(A ∩ B). A subtração de P(A ∩ B) é necessária para evitar a contagem duplicada dos elementos que pertencem a ambos os eventos.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Em uma urna com 3 bolas brancas e 4 pretas, ao sortear 3 bolas sem reposição, qual é o procedimento correto para calcular a probabilidade de todas serem da mesma cor?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular apenas (3/7 × 2/6 × 1/5) pois a cor branca tem menor quantidade",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa considera apenas a probabilidade de todas as bolas serem brancas. A questão pede a probabilidade de todas serem da 'mesma cor', o que inclui a possibilidade de todas serem pretas. Além disso, a afirmação de que a cor branca tem menor quantidade não justifica ignorar a outra possibilidade."
+        },
+        {
+          "id": "b",
+          "text": "Calcular (3/7 × 2/6 × 1/5) + (4/7 × 3/6 × 2/5) considerando as duas possibilidades mutuamente exclusivas",
+          "correct": true,
+          "explanation": "Correta. Para calcular a probabilidade de todas as bolas serem da mesma cor, deve-se considerar duas situações mutuamente exclusivas: todas brancas OU todas pretas. A probabilidade de todas serem brancas é (3/7 * 2/6 * 1/5), pois há 3 bolas brancas de um total de 7, depois 2 de 6, e 1 de 5, sem reposição. A probabilidade de todas serem pretas é (4/7 * 3/6 * 2/5), pois há 4 bolas pretas de um total de 7, depois 3 de 6, e 2 de 5, sem reposição. Como são eventos mutuamente exclusivos ('ou'), as probabilidades são somadas."
+        },
+        {
+          "id": "c",
+          "text": "Calcular (7/7 × 6/6 × 5/5) e subtrair as probabilidades de cores diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Calcular (7/7 × 6/6 × 5/5) resulta em 1, que é a probabilidade total de sortear três bolas. Subtrair as probabilidades de cores diferentes seria uma abordagem válida (probabilidade total menos o que não serve), mas a forma apresentada está incorreta e não especifica como as 'probabilidades de cores diferentes' seriam calculadas de forma eficiente."
+        },
+        {
+          "id": "d",
+          "text": "Calcular (3/7 × 3/7 × 3/7) + (4/7 × 4/7 × 4/7) mantendo o denominador constante",
+          "correct": false,
+          "explanation": "Incorreta. Esta formulação assume que há reposição (o denominador permanece 7) e que a ordem não importa, o que não é o caso para sorteios sem reposição. Além disso, não reflete o processo de diminuição do número de bolas e de bolas de uma cor específica a cada sorteio."
+        }
+      ],
+      "explanation": "Correta. Para calcular a probabilidade de todas as bolas serem da mesma cor, deve-se considerar duas situações mutuamente exclusivas: todas brancas OU todas pretas. A probabilidade de todas serem brancas é (3/7 * 2/6 * 1/5), pois há 3 bolas brancas de um total de 7, depois 2 de 6, e 1 de 5, sem reposição. A probabilidade de todas serem pretas é (4/7 * 3/6 * 2/5), pois há 4 bolas pretas de um total de 7, depois 3 de 6, e 2 de 5, sem reposição. Como são eventos mutuamente exclusivos ('ou'), as probabilidades são somadas.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Em problemas envolvendo sorteio sem reposição de uma urna com elementos de categorias distintas (como bolas brancas e pretas), por que não se utiliza diagrama de Venn para resolver?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque os eventos são mutuamente exclusivos, não havendo interseção entre as categorias, tornando desnecessária a representação por diagramas",
+          "correct": true,
+          "explanation": "Correta. Diagramas de Venn são utilizados para representar a relação entre conjuntos e suas interseções, especialmente quando há elementos em comum. Em um problema de sorteio de bolas de uma urna, as categorias (bolas brancas e bolas pretas) são mutuamente exclusivas; uma bola não pode ser branca e preta ao mesmo tempo. Portanto, não há interseção entre esses conjuntos no contexto de uma única bola, tornando o diagrama de Venn desnecessário para representar a relação entre as cores das bolas."
+        },
+        {
+          "id": "b",
+          "text": "Porque o diagrama de Venn só se aplica a problemas com reposição de elementos",
+          "correct": false,
+          "explanation": "Incorreta. Diagramas de Venn podem ser aplicados tanto em problemas com reposição quanto sem reposição, dependendo do que se deseja analisar. A questão da reposição afeta o cálculo das probabilidades, mas não a aplicabilidade do diagrama para representar a sobreposição de características."
+        },
+        {
+          "id": "c",
+          "text": "Porque a quantidade de elementos é insuficiente para justificar o uso de representação gráfica",
+          "correct": false,
+          "explanation": "Incorreta. A quantidade de elementos não é o fator determinante para o uso de diagramas de Venn. A relevância está na existência ou não de sobreposição entre os conjuntos que se deseja representar."
+        },
+        {
+          "id": "d",
+          "text": "Porque os eventos são dependentes e o diagrama só representa eventos independentes",
+          "correct": false,
+          "explanation": "Incorreta. Diagramas de Venn podem representar tanto eventos dependentes quanto independentes, desde que se queira visualizar a relação de pertinência e sobreposição entre eles. A dependência ou independência dos eventos afeta o cálculo das probabilidades (por exemplo, P(A ∩ B) = P(A) * P(B|A) para eventos dependentes, ou P(A ∩ B) = P(A) * P(B) para eventos independentes), mas não impede a representação visual dos conjuntos."
+        }
+      ],
+      "explanation": "Correta. Diagramas de Venn são utilizados para representar a relação entre conjuntos e suas interseções, especialmente quando há elementos em comum. Em um problema de sorteio de bolas de uma urna, as categorias (bolas brancas e bolas pretas) são mutuamente exclusivas; uma bola não pode ser branca e preta ao mesmo tempo. Portanto, não há interseção entre esses conjuntos no contexto de uma única bola, tornando o diagrama de Venn desnecessário para representar a relação entre as cores das bolas.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "17_197439_Probabilidade IV.pdf",
+  "coletado_em": "2026-09-23T21:03:55"
+}

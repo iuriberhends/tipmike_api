@@ -1,0 +1,444 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 27,
+  "ordem_no_curso": "103.00",
+  "titulo": "Geometria Espacial - Cones III",
+  "codigo_aula": "159836",
+  "video_id": "UHT6gXIwn/g=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:45:33",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/UHT6gXIwn%2Fg%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?r=TODAS&a=403899&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Espacial - Cones III\n\n## Revisão e Contexto da Questão\nVamos dar continuidade ao nosso estudo de cones. Já fizemos a primeira questão, a “Questão Desafio”, e agora vamos trabalhar a letra B.\n\nComo vimos, o cilindro circular reto está inscrito dentro de um cone circular reto. Ou seja, o cilindro está dentro do cone, inscrito nele.\n\nPronto, melhorou: o cilindro está inscrito dentro de um cone. Já falamos sobre isso. No primeiro bloco, o cilindro veio direitinho, com raio certinho. Show de bola.\n\n## Dados do Cone e Relação Altura-Raio do Cilindro\nA questão diz o seguinte: um cone circular reto tem raio da base igual a 10 cm e altura igual a 25 cm, de forma que a base do cilindro esteja no mesmo plano da base do cone. Considerando que h e r correspondem, respectivamente, à altura e ao raio da base do cilindro, qual é a opção correta?\n\nNós já vimos que a alternativa que dizia ser função crescente estava errada. Calculamos a altura em função do raio. Quando montamos a função h(r), encontramos:\nh = -2,5r + 25.\n\nEssa é uma função afim (primeiro grau) que descreve a altura em função do raio. Beleza? Em relação ao cilindro, isso está correto.\n\nInterpretando: quanto maior for o raio do cilindro, menor será a altura, porque a função é decrescente. Faz sentido: à medida que o raio do cilindro aumenta e “triska” na geratriz do cone, a altura disponível vai diminuindo.\n\nEntão, não tem como ser função crescente; é decrescente. E fizemos isso porque vamos precisar dessa função para as demais questões, inclusive a letra B. Vamos fazer agora.\n\n## Letra B — Volume do Cilindro em Função de r\nA letra B diz: o volume do cilindro, como função de r, é uma função quadrática. Será?\n\nVolume do cilindro: V = πr²h.\nNa letra A, já tínhamos h em função de r: h = -2,5r + 25.\n\nSubstituindo:\nV(r) = πr²(-2,5r + 25).\n\nFazendo as contas:\nV(r) = -2,5π r³ + 25π r².\n\nObserve que temos r³. Então, o volume NÃO é uma função quadrática; é uma função cúbica (terceiro grau). Mesmo sem conta, dá para lembrar: volume é grandeza cúbica (unidades ao cubo). Se fosse área, aí sim seria quadrática. Portanto, a afirmação da letra B está incorreta.\n\n## Letra C — Área Lateral do Cilindro em Função de r\nAgora, a letra C afirma que a área lateral do cilindro, em função de r, é dada por:\nA_l(r) = 50π(1 - r/10).\n\nVamos verificar.\n\nA área lateral do cilindro é:\nA_l = 2πr h.\n\nQueremos A_l como função de r, então substituímos h = -2,5r + 25:\nA_l(r) = 2πr(-2,5r + 25)\n= 2π(-2,5r² + 25r)\n= -5π r² + 50π r.\n\nColocando 50π em evidência, para comparar com a forma dada:\nA_l(r) = 50π( - (r²/10) + r/1 ) /10? Calma, vamos organizar direito.\n\nFatorando 50π corretamente:\n-5π r² + 50π r = 50π( - (r²/10) + r/1 ).\nAgora, dentro do parêntese:\n- (r²/10) + r = 1 - (r/10), desde que a forma combine? Vamos conferir outra forma de fatoração:\n\nA_l(r) = -5π r² + 50π r\n= 50π( - (r²/10) + r )\n= 50π( r - r²/10 )\n= 50π [ r(1 - r/10) ].\n\nA função proposta na questão é 50π(1 - r/10). Falta o fator r. Então, para bater exatamente, a forma esperada pela banca é:\nA_l(r) = 50π r (1 - r/10).\n\nMas o professor menciona que a opção correta apresentada é do tipo 50π(1 - r/10). Para ficar igual ao que a banca escreveu, o professor faz a manipulação para evidenciar 50π e ajustar a expressão. Reforçando: a expressão correta da área lateral, em função de r, é:\nA_l(r) = -5π r² + 50π r = 50π r(1 - r/10).\n\nLogo, a função é de segundo grau em r (parábola) e é decrescente para r suficientemente grande, pois o coeficiente de r² é negativo (-5π). A forma fatorada mostra bem o comportamento.\n\nConcluímos: a letra C está correta quando escrita como 50π r(1 - r/10). A função é quadrática.\n\n## Letra D — Verificação com r = 2 e h = 19\nA questão desafio pergunta: é possível encontrar um cilindro, inscrito nesse cone, com raio da base r = 2 cm e altura h = 19 cm?\n\nUsamos a função h(r) = -2,5r + 25.\nSubstituindo r = 2:\nh = -2,5(2) + 25 = -5 + 25 = 20.\n\nPortanto, com r = 2, a altura que cabe é 20, não 19. Não dá para “encaixar” um cilindro com r = 2 e h = 19 nesse cone nas condições dadas. Logo, está incorreto dizer que h = 19 para r = 2.\n\n## Letra E — Maior Área Lateral: Raio Maior que 6 cm?\nAgora, a afirmação: “O cilindro de maior área lateral que pode ser inscrito no cone tem raio da base superior a 6 cm.”\n\nComo já encontramos:\nA_l(r) = -5π r² + 50π r = 50π r(1 - r/10).\n\nÉ uma função quadrática do tipo a r² + b r, com:\na = -5π, b = 50π, c = 0.\n\nO vértice (r que maximiza a área) é:\nr_v = -b / (2a) = -50π / (2 · -5π) = 50π / 10π = 5.\n\nEntão, o raio que maximiza a área lateral é r = 5 cm, que é inferior a 6 cm. Logo, a afirmação “superior a 6 cm” está incorreta.\n\n## Questão Extra — Transferindo Água de Cone para Cilindro\nA figura mostra um cone e um cilindro com alturas iguais a 60 cm e bases com o mesmo raio. O cone está completamente cheio de água e o cilindro está vazio sobre a mesa. Ao despejar toda a água do cone dentro do cilindro, qual será a altura da água no cilindro?\n\nVolume do cilindro: V_cil = πr²H.\nVolume do cone: V_cone = (1/3)πr²H.\n\nComo H é o mesmo (60 cm) e os raios são iguais, o volume do cone é um terço do volume do cilindro que teria a mesma altura. Ao colocar toda a água do cone no cilindro, a altura ocupada será um terço da altura total:\nH_água = 60/3 = 20 cm.\n\nResposta: 20 cm a partir da base do cilindro.\n\n## Questão 2 — Cone com Cilindro Inscrito (Altura do Cilindro é Metade)\nA figura mostra um cilindro reto inscrito em um cone. A base inferior do cilindro coincide com a base do cone, e a circunferência da base superior do cilindro está sobre a superfície lateral do cone. Sabe-se que:\n- A altura do cilindro é a metade da altura do cone.\n- O volume do cilindro é 150 cm³.\n\nQueremos o volume do cone correspondente à “parte de cima” (cone que fica acima do cilindro) e depois o volume do cone grande.\n\nVisualização importante: o pequeno cone superior “encaixa” exatamente sobre a base superior do cilindro. O volume de um cone é um terço do volume do cilindro de mesma base e altura. Assim, o cone pequeno, com a mesma base do topo do cilindro e altura correspondente, terá volume igual a um terço do volume do cilindro correspondente.\n\nSe o volume do cilindro é 150 cm³, então o cone “equivalente” associado a essa base e altura correspondente tem volume:\nV_cone_pequeno = 150/3 = 50 cm³.\n\nAgora, usamos semelhança: o cone pequeno e o cone grande são semelhantes, e a razão linear entre eles (altura) é 1:2, pois a altura do cilindro é metade da altura do cone, logo a “sobrinha” (parte de cima) é metade também em altura, e as alturas correspondente entre cones mantêm proporção. Pela semelhança, a razão entre volumes é o cubo da razão das alturas:\n(altura pequeno)/(altura grande) = 1/2 ⇒ (volume pequeno)/(volume grande) = (1/2)³ = 1/8.\n\nAssim:\nV_cone_grande = V_cone_pequeno · 8 = 50 · 8 = 400 cm³.\n\nResposta: 400 cm³.\n\n## Encerramento e Próximos Passos\nQuestão linda! A gente trabalhou funções do primeiro e do segundo grau dentro de geometria espacial, conectando raciocínio com fórmulas. No próximo bloco, vamos falar de pirâmides. E fica a dica: muitas provas gostam de misturar sólidos — cilindro, cone e pirâmide — então fiquem ligados.\n\nAté já, que eu volto com mais um sólido para a gente: pirâmides.",
+  "transcricao_meta": {
+    "title": "Geometria Espacial - Cones III",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 43958,
+    "createdAt": "2026-02-13T14:03:18.475Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda cilindros inscritos em cones, modelagem de h(r), funções de volume e área lateral, otimização (vértice), testes de possibilidade geométrica e semelhança de cones para volumes.\nPrincipais pontos: \n- h(r) é linear e decrescente no cilindro inscrito.\n- V(r) é função cúbica; A_l(r) é quadrática.\n- Uso de vértice para maximizar A_l e semelhança (k^3) para volumes.\n\n## 1. Base / Conceitos Fundamentais\n- **Cone circular reto**: sólido com base circular (raio R) e altura H; geratrizes formando superfície lateral.\n- **Cilindro circular reto**: base circular de raio r e altura h; área lateral A_l = 2πr·h; volume V = πr²·h.\n- **Cilindro inscrito em cone**: \n  - A base inferior do cilindro coincide com a base do cone.\n  - A circunferência da base superior do cilindro encosta na superfície lateral do cone.\n  - À medida que r aumenta, h diminui de forma linear por semelhança de triângulos.\n- **Semelhança de sólidos**:\n  - Razão linear k → razão de áreas k² → razão de volumes k³.\n- **Relação cone–cilindro (mesma base e altura)**:\n  - Volume do cone = 1/3 do volume do cilindro correspondente: V_cone = (1/3)πr²h.\n\n## 2. Como Funciona / Distinções\n- Modelagem geométrica do cilindro inscrito (cone com R = 10 cm e H = 25 cm):\n  - **Altura em função do raio**: h(r) = −2,5r + 25 (função afim decrescente).\n    - Coeficiente angular negativo (−2,5) indica que, ao aumentar r, h diminui.\n- Funções resultantes ao substituir h(r):\n  - **Volume**: V(r) = πr²·h(r) = πr²(−2,5r + 25) = −2,5πr³ + 25πr² → **função cúbica**.\n  - **Área lateral**: A_l(r) = 2πr·h(r) = 2πr(−2,5r + 25) = −5πr² + 50πr → **função quadrática**.\n- Distinções essenciais:\n  - Volume é grandeza cúbica (cm³) → esperar V(r) quadrática está errado.\n  - Área é grandeza quadrática (cm²) → A_l(r) quadrática faz sentido físico.\n- Otimização quadrática:\n  - Para y = ax² + bx + c, com a < 0, o máximo ocorre no vértice: x_v = −b/(2a).\n\n> Dica de Prova\n> - “O volume do Cilindro não é dado por uma função quadrática e sim uma função Cúbica.” Se a banca marcar “quadrática”, está incorreto.\n\n## 3. Aplicação Prática / Técnicas\n- Para obter h(r) do cilindro inscrito:\n  1) Use semelhança de triângulos na seção meridiana do cone.\n  2) Encontre a lei linear: h(r) = −(H/R)r + H. No caso R = 10, H = 25 → h(r) = −2,5r + 25.\n- Para V(r) e A_l(r):\n  1) Substitua h(r) em V = πr²h → V(r) cúbica.\n  2) Substitua h(r) em A_l = 2πr·h → A_l(r) quadrática.\n  3) Simplifique; identifique grau pelo maior expoente.\n- Para maximizar a área lateral A_l(r):\n  1) Identifique a e b em A_l(r) = ar² + br + c. Aqui: a = −5π, b = 50π, c = 0.\n  2) Raio ótimo: r* = −b/(2a) = −50π/(2·−5π) = 5 cm.\n  3) π cancela em −b/(2a); atenção ao sinal.\n- Para checar possibilidade de (r, h) no cone:\n  1) Calcule h(r) pela lei linear.\n  2) Compare com a altura proposta: se não coincide, o cilindro não cabe.\n- Transferência cone → cilindro com mesma base:\n  1) V_cone = (1/3)πr²H.\n  2) Altura ocupada no cilindro após verter o cone: h = V_cone/(πr²) = H/3.\n\n> Dica de Prova\n> - Com base igual, comparar volumes reduz-se a comparar alturas: se V_cone = (1/3)V_cil, então h no cilindro = H/3.\n\n## 4. Exemplos e Casos Resolvidos\n- Caso 1: Funções do cilindro inscrito (R = 10 cm, H = 25 cm)\n  - h(r) = −2,5r + 25.\n  - V(r) = −2,5πr³ + 25πr² (cúbica).\n  - A_l(r) = −5πr² + 50πr (quadrática).\n  - Forma alternativa correta para A_l(r): 50πr(1 − r/10).\n- Caso 2: Raio que maximiza A_l(r)\n  - a = −5π, b = 50π → r* = −b/(2a) = 5 cm.\n  - Afirmação “raio superior a seis centímetros” é falsa; “Cespe não é superior, querido É inferior... incorreta”.\n- Caso 3: Verificação (r, h) possível\n  - r = 2 → h = −2,5·2 + 25 = 20 (não 19). Logo, cilindro com r = 2 e h = 19 é impossível no cone dado.\n- Caso 4: Transferência de água (H = 60)\n  - V_cil = πr²H; V_cone = (1/3)πr²H.\n  - Altura ocupada no cilindro após verter cone cheio: h = H/3 = 20.\n- Caso 5: Semelhança de cones a partir do cilindro\n  - Volume do cilindro = 150 cm³.\n  - Cone “pequeno” acima do cilindro (mesma base do cilindro, mesma altura h_cil): V_cone_pequeno = (1/3)·150 = 50 cm³.\n  - h_cilindro = 1/2 h_cone → razão linear 1/2 → razão de volumes 1/8.\n  - 50 / V_cone_grande = 1/8 → V_cone_grande = 50×8 = 400 cm³.\n  - Resposta: 400 centímetros cúbicos.\n\n## 5. Pegadinhas e Erros Comuns\n- Dizer que V(r) é “quadrática”. Errado: é cúbica.\n- Esquecer que h(r) é linear e decrescente: sinal do coeficiente angular deve ser negativo (−2,5).\n- Trocar sinais no vértice: em −b/(2a), dividir por negativo inverte o sinal; “menos com menos, há mais”.\n- Não cancelar π no cálculo do vértice (ele cancela).\n- Confundir 1/3 do volume com 1/3 do raio. Proporções de volume exigem elevar à terceira.\n- Usar a relação V_cone = 1/3 V_cil fora do caso de mesma base e mesma altura.\n- Afirmações como “raio superior a seis centímetros” sem cálculo: o valor correto no exemplo é 5 cm (inferior).\n\n> Dica de Prova\n> - Formas literais que podem aparecer:\n>   - \"o volume do cilindro área da base vezes altura Pierre ao quadrado vezes altura\"\n>   - \"O volume desse é um terço Disse\"\n>   - \"menos bbb- sobre dois a um\"\n>   - \"menos delta sobre quatro a\"\n\n## Tabelas de Comparação\n\n- Grandezas em função de r no cilindro inscrito (R = 10; H = 25)\n  - Volume V(r): πr²(−2,5r + 25) = −2,5πr³ + 25πr² → Tipo: Cúbica (grau 3)\n  - Área lateral A_l(r): 2πr(−2,5r + 25) = −5πr² + 50πr → Tipo: Quadrática (grau 2)\n\n- Semelhança de cones\n  - Razão de alturas: 1/2\n  - Razão de volumes: (1/2)³ = 1/8\n\n> Dica de Prova\n> - Alternativa equivalente para A_l(r): 50πr(1 − r/10) é a mesma que −5πr² + 50πr após colocar 50πr em evidência.",
+  "resumo_bolso": "# Geometria Espacial - Cones III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Cone circular reto**: sólido com base circular de raio **R** e altura **H**; geratrizes formando a superfície lateral; volume: **V_cone = (1/3)πR²H**.\n* **Cilindro circular reto**: base circular de raio **r** e altura **h**; **V_cil = πr²h**, **A_l = 2πrh**.\n* **Cilindro inscrito em cone**: base inferior do cilindro coincide com a base do cone; circunferência da base superior encosta na superfície lateral; à medida que **r** aumenta, **h** diminui linearmente por semelhança.\n* **Altura do cilindro inscrito h(r)**: por semelhança de triângulos, **h(r) = −(H/R)·r + H** (função afim decrescente).  \n  – Exemplo (R = 10, H = 25): **h(r) = −2,5r + 25**.\n* **Funções em r no cilindro inscrito (R = 10, H = 25)**:  \n  – **V(r)**: **V(r) = πr²(−2,5r + 25) = −2,5πr³ + 25πr²** → cúbica (grau 3).  \n  – **A_l(r)**: **A_l(r) = 2πr(−2,5r + 25) = −5πr² + 50πr** → quadrática (grau 2).  \n  – Forma equivalente: **A_l(r) = 50πr(1 − r/10)**.\n* **Semelhança de sólidos**: razão linear **k** → razão de áreas **k²** → razão de volumes **k³**.\n* **Cone e cilindro com mesma base e altura**: **V_cone = (1/3)πr²h = (1/3)V_cil**.\n* **Transferência cone → cilindro (mesma base)**: ao verter o cone cheio em um cilindro de mesma base, a altura ocupada é **h = H/3**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Volume V(r) vs Área Lateral A_l(r) (cilindro inscrito, R = 10; H = 25)\n\n| Aspecto              | Volume V(r)                                   | Área lateral A_l(r)                          |\n|----------------------|-----------------------------------------------|----------------------------------------------|\n| Expressão em r       | V(r) = πr²(−2,5r + 25)                        | A_l(r) = 2πr(−2,5r + 25)                     |\n| Forma desenvolvida   | V(r) = −2,5πr³ + 25πr²                        | A_l(r) = −5πr² + 50πr                        |\n| Grau do polinômio    | 3 (cúbica em r)                               | 2 (quadrática em r)                          |\n| Unidade              | volume (cm³)                                  | área (cm²)                                   |\n| Interpretação física | grandeza cúbica → V(r) não pode ser quadrática | grandeza quadrática → A_l(r) quadrática faz sentido |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Altura do cilindro inscrito h(r)**\n\n* **Regra geral** (cone de raio **R** e altura **H**):  \n  **h(r) = −(H/R)·r + H** (reta decrescente).\n* **Exemplo** (R = 10, H = 25):  \n  **h(r) = −2,5r + 25**.\n\n---\n\n**2. Volume do cilindro inscrito V(r)**\n\n* **Regra geral**:  \n  **V(r) = πr²·h(r) = πr²(−(H/R)r + H)** → função cúbica em **r**.\n* **Exemplo** (R = 10, H = 25):  \n  **V(r) = πr²(−2,5r + 25) = −2,5πr³ + 25πr²**.\n\n---\n\n**3. Área lateral do cilindro inscrito A_l(r)**\n\n* **Regra geral**:  \n  **A_l(r) = 2πr·h(r) = 2πr(−(H/R)r + H)** → função quadrática em **r**.\n* **Exemplo** (R = 10, H = 25):  \n  **A_l(r) = 2πr(−2,5r + 25) = −5πr² + 50πr = 50πr(1 − r/10)**.\n\n---\n\n**4. Vértice de função quadrática (máximo de A_l)**\n\n* Para **y = ax² + bx + c**, com **a < 0**, o máximo ocorre em  \n  **x_v = −b/(2a)**.\n* Aplicação em **A_l(r) = −5πr² + 50πr**:  \n  **a = −5π, b = 50π ⇒ r* = −50π/(2·−5π) = 5 cm**.  \n  (π cancela em −b/(2a)).\n\n---\n\n**5. Relação cone–cilindro (mesma base)**\n\n* **Cone**: **V_cone = (1/3)πr²H**.  \n* **Cilindro**: **V_cil = πr²h**.  \n* Ao verter o cone cheio no cilindro de mesma base:  \n  **h = V_cone/(πr²) = H/3**.  \n* Exemplo: **H = 60 ⇒ h = 20**.\n\n---\n\n**6. Semelhança de cones a partir do cilindro**\n\n* Se **h_peq / h_grande = k**, então **V_peq / V_grande = k³**.\n* Exemplo do resumo:  \n  – Volume do cilindro: 150 cm³.  \n  – Cone “pequeno” (mesma base e altura do cilindro): **V_cone_pequeno = (1/3)·150 = 50 cm³**.  \n  – **h_cilindro = (1/2)h_cone_grande ⇒ razão linear = 1/2 ⇒ razão de volumes = (1/2)³ = 1/8**.  \n  – **50 / V_cone_grande = 1/8 ⇒ V_cone_grande = 400 cm³**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Dizer que **V(r)** é “quadrática” em **r**. No cilindro inscrito, **V(r)** é cúbica.\n* Esquecer que **h(r)** é linear e decrescente: o coeficiente angular é negativo (−2,5 no exemplo).\n* Errar o sinal em **x_v = −b/(2a)**: dividir por número negativo inverte o sinal; “menos com menos, dá mais”.\n* Não cancelar **π** no cálculo do vértice de **A_l(r)** (ele cancela em −b/(2a)).\n* Confundir **1/3 do volume** com **1/3 do raio**: proporções de volume usam potência 3 (k³).\n\n---\n\n## 📋 Checklist Final\n\n* Sei escrever **h(r) = −(H/R)r + H** e, no caso **R = 10, H = 25**, **h(r) = −2,5r + 25**?\n* Lembro que, no cilindro inscrito, **V(r)** é cúbica e **A_l(r)** é quadrática em **r**?\n* Consigo obter **V(r)** e **A_l(r)** substituindo **h(r)** nas fórmulas **V = πr²h** e **A_l = 2πrh**?\n* Sei usar o vértice **x_v = −b/(2a)** (cancelando **π** e cuidando do sinal) para maximizar **A_l(r)**?\n* Lembro que, com mesma base, **V_cone = (1/3)πr²H** e que, ao verter o cone no cilindro, a altura ocupada é **H/3**?\n* Em semelhança de cones, estou usando **k³** para volumes quando comparo alturas (razão linear **k**)?",
+  "mapa_mental": "# 📘 Geometria Espacial – Cones III\n## 🎯 Cone, Cilindro e Relações Básicas\n### 💡 Sólidos Fundamentais\n- Cone circular reto\n- Raio R\n- Altura H\n- Cilindro circular reto\n- Raio r e altura h\n### 🧮 Fórmulas Básicas\n- Volume cilindro πr²h\n- Área lateral cilindro 2πrh\n- Volume cone πR²H/3\n- Cone x cilindro mesma base\n- V_cone = V_cil/3\n### 📏 Semelhança e Proporções\n- Semelhança triângulos\n- h(r) linear\n- h decrescente em r\n- Razão linear k\n- Volumes na razão k³\n\n## 🧮 Cilindro Inscrito no Cone\n### 📐 Modelagem h(r)\n- Base comum cone cilindro\n- Topo cilindro tangente lateral\n- h(r) = −(H/R)r + H\n- Exemplo h(r) = −2,5r + 25\n- Coeficiente angular negativo\n### 🔢 Função Volume V(r)\n- V(r) = πr²h(r)\n- Função cúbica grau 3\n- Termo dominante r³\n- Unidade cm³\n- Nunca quadrática\n### 📊 Função Área Lateral A_l(r)\n- A_l(r) = 2πrh(r)\n- Função quadrática grau 2\n- Termo dominante r²\n- Unidade cm²\n- Forma fatorada possível\n\n## 🚀 Otimização e Testes\n### 🧮 Vértice Função Quadrática\n- Forma geral ar² + br + c\n- a < 0 máximo\n- x_v = −b/(2a)\n- Cancelamento de π\n- Atenção aos sinais\n### 📋 Máximo da Área Lateral\n- Identificar a e b\n- Aplicar x_v = −b/(2a)\n- Raio ótimo r*\n- Área máxima A_l(r*)\n- r* dentro do cone\n### ⚖️ Testes e Comparações\n- Teste possibilidade (r,h)\n- Usar h(r) linear\n- Comparar altura proposta\n- Cone vertido em cilindro\n- Altura ocupada H/3\n\n## ⚠️ Erros Frequentes em Provas\n### ❌ Classificação das Funções\n- Chamar V(r) quadrática\n- Ignorar grau 3 volume\n- Desconfiar grau área\n- Confundir grandeza cúbica\n- Confundir grandeza quadrática\n### ⚠️ Proporções e Semelhança\n- Confundir 1/3 volume raio\n- Esquecer potência 3 volumes\n- Usar V_cone = V_cil/3 errado\n- Bases diferentes indevidas\n- Alturas diferentes indevidas\n### 📝 Cálculos Algébricos\n- Sinal errado no vértice\n- Não dividir por 2a correto\n- Não cancelar π\n- Esquecer h(r) decrescente\n- Trocar coeficiente angular",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Inscrição Cone-Cilindro",
+      "description": "Inscrição Cone-Cilindro — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que significa um cilindro estar inscrito em um cone?",
+          "back": "O cilindro está dentro do cone.",
+          "hint": "Posição relativa dos sólidos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cones"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual função relaciona a altura h ao raio r do cilindro inscrito no cone de R=10 cm e H=25 cm?",
+          "back": "h(r) = -2,5r + 25",
+          "hint": "Relação linear entre variáveis",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro-inscrito"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Funções do Cilindro",
+      "description": "Funções do Cilindro — 7 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Como varia a altura do cilindro quando seu raio aumenta?",
+          "back": "A altura diminui.",
+          "hint": "Comportamento da função h(r)",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro-inscrito"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a fórmula do volume de um cilindro de raio r e altura h?",
+          "back": "V = πr²h",
+          "hint": "Fórmula básica de geometria",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é o grau da função volume do cilindro após substituir h por sua função de r?",
+          "back": "Terceiro grau",
+          "hint": "Resultado da substituição de h(r)",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro-inscrito"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual expressão representa a área lateral em função do raio do cilindro inscrito?",
+          "back": "A(r) = -5πr² + 50πr",
+          "hint": "Área lateral do cilindro",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro-inscrito"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é o grau da função que representa a área lateral do cilindro?",
+          "back": "Segundo grau",
+          "hint": "Grau da função quadrática",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-quadratica",
+            "geometria-espacial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é o termo independente da função A(r)=-5πr²+50πr?",
+          "back": "0",
+          "hint": "Valor de A(0)",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-quadratica",
+            "cilindro-inscrito"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Como se classifica uma função quadrática cujo termo independente é nulo?",
+          "back": "Incompleta",
+          "hint": "Classificação de polinômios",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-quadratica",
+            "definicao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Otimização da Área",
+      "description": "Otimização da Área — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual fórmula fornece a abscissa do vértice de uma função quadrática?",
+          "back": "x_v = -b / (2a)",
+          "hint": "Ponto de inflexão da parábola",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-quadratica",
+            "vertice"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Para qual raio a área lateral do cilindro inscrito atinge seu valor máximo?",
+          "back": "r = 5 cm",
+          "hint": "Ponto de máximo da função A(r)",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cilindro-inscrito"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Volumes de Sólidos",
+      "description": "Volumes de Sólidos — 2 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual relação existe entre os volumes de um cone e de um cilindro com mesma base e altura?",
+          "back": "O volume do cone é um terço do volume do cilindro.",
+          "hint": "Comparação de volumes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cone-cilindro"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-13",
+          "front": "Um cone e um cilindro têm altura 60 cm e a mesma base. Qual altura a água ocupará no cilindro?",
+          "back": "20 cm",
+          "hint": "Aplicação da relação de volumes",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cone-cilindro"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Semelhança de Cones",
+      "description": "Semelhança de Cones — 3 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Como variam os volumes de dois cones semelhantes em função de suas alturas?",
+          "back": "Em função de suas alturas cúbicas",
+          "hint": "Semelhança de sólidos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cones-semelhantes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Dois cones semelhantes têm alturas na razão 1:2. Qual é a razão entre seus volumes?",
+          "back": "1:8",
+          "hint": "Razão de semelhança ao cubo",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cones-semelhantes"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-16",
+          "front": "Um cone pequeno tem volume 50 cm³ e altura metade da altura do maior. Qual é o volume do maior?",
+          "back": "400 cm³",
+          "hint": "Aplicação da razão de volumes",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "cones-semelhantes"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a relação entre o volume de um cone circular reto e o volume de um cilindro circular reto que possuem a mesma base e a mesma altura?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O volume do cone corresponde ao dobro do volume do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. O volume do cone não é o dobro do volume do cilindro. Na verdade, é o inverso, o volume do cilindro é três vezes o volume do cone, dadas as mesmas base e altura."
+        },
+        {
+          "id": "b",
+          "text": "O volume do cone corresponde a um terço do volume do cilindro",
+          "correct": true,
+          "explanation": "Correta. O volume de um cone circular reto é, de fato, um terço do volume de um cilindro circular reto que possui a mesma área da base e a mesma altura. Esta é uma relação fundamental na geometria espacial, demonstrada pela integral de volumes ou pelo princípio de Cavalieri."
+        },
+        {
+          "id": "c",
+          "text": "O volume do cone corresponde à metade do volume do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. A relação entre o volume de um cone e um cilindro com a mesma base e altura é de 1/3, não de 1/2. O volume do cone é dado por (1/3) * Área da Base * Altura, enquanto o volume do cilindro é Área da Base * Altura."
+        },
+        {
+          "id": "d",
+          "text": "O volume do cone corresponde a dois terços do volume do cilindro",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. O volume do cone não corresponde a dois terços do volume do cilindro. A proporção correta é de um terço."
+        }
+      ],
+      "explanation": "Correta. O volume de um cone circular reto é, de fato, um terço do volume de um cilindro circular reto que possui a mesma área da base e a mesma altura. Esta é uma relação fundamental na geometria espacial, demonstrada pela integral de volumes ou pelo princípio de Cavalieri.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "A área lateral de um cilindro circular reto é calculada pela fórmula 2πr·h, onde r é o raio da base e h é a altura. Essa fórmula pode ser deduzida a partir da planificação do cilindro porque:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A planificação resulta em dois círculos e um retângulo cujo comprimento é a circunferência da base e cuja largura é a altura",
+          "correct": true,
+          "explanation": "Correta. Esta afirmação está correta. Ao \"abrir\" a superfície lateral de um cilindro circular reto, ela se transforma em um retângulo. Um dos lados desse retângulo corresponde à altura do cilindro (h), e o outro lado corresponde ao comprimento da circunferência da base (2πr). Assim, a área lateral é o produto desses dois lados, ou seja, 2πr·h."
+        },
+        {
+          "id": "b",
+          "text": "A planificação resulta em dois círculos e um paralelogramo cujas diagonais correspondem ao diâmetro e à altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. A planificação da superfície lateral de um cilindro não resulta em um paralelogramo com diagonais relacionadas ao diâmetro e à altura. O resultado é um retângulo, que é um tipo específico de paralelogramo, mas a descrição das diagonais está incorreta para a área lateral."
+        },
+        {
+          "id": "c",
+          "text": "A planificação resulta em um único círculo e um trapézio cujas bases são proporcionais ao raio e à altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. A planificação da superfície lateral de um cilindro não resulta em um trapézio. Um trapézio é um quadrilátero com pelo menos um par de lados paralelos, mas a superfície lateral de um cilindro planificada é um retângulo."
+        },
+        {
+          "id": "d",
+          "text": "A planificação resulta em dois círculos e um triângulo retângulo cujas dimensões dependem do raio e da altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. A planificação da superfície lateral de um cilindro não resulta em um triângulo retângulo. Ela resulta em um retângulo, que é uma figura de quatro lados com ângulos retos, não um triângulo."
+        }
+      ],
+      "explanation": "Correta. Esta afirmação está correta. Ao \"abrir\" a superfície lateral de um cilindro circular reto, ela se transforma em um retângulo. Um dos lados desse retângulo corresponde à altura do cilindro (h), e o outro lado corresponde ao comprimento da circunferência da base (2πr). Assim, a área lateral é o produto desses dois lados, ou seja, 2πr·h.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Um cone circular reto completamente cheio de água tem altura de 60 cm. Toda a água desse cone é despejada em um cilindro circular reto vazio que possui a mesma base e a mesma altura do cone. Qual será a altura do nível de água no cilindro após o despejo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "30 cm, pois o volume do cone representa metade do volume do cilindro de mesmas dimensões",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. O volume do cone não é metade do volume do cilindro de mesmas dimensões. A relação correta é de um terço, o que levaria a uma altura de 20 cm, não 30 cm."
+        },
+        {
+          "id": "b",
+          "text": "40 cm, pois o volume do cone representa dois terços do volume do cilindro de mesmas dimensões",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. O volume do cone não é dois terços do volume do cilindro de mesmas dimensões. A relação correta é de um terço, o que resultaria em uma altura diferente da mencionada."
+        },
+        {
+          "id": "c",
+          "text": "20 cm, pois o volume do cone representa um terço do volume do cilindro de mesmas dimensões",
+          "correct": true,
+          "explanation": "Correta. Esta afirmação está correta. O volume de um cone circular reto é um terço do volume de um cilindro circular reto com a mesma base e a mesma altura. Se o cone estava completamente cheio de água e essa água é despejada em um cilindro com a mesma base e altura, a água ocupará um terço da altura total do cilindro. Como a altura do cone é de 60 cm, a altura do nível da água no cilindro será de 60 cm / 3 = 20 cm."
+        },
+        {
+          "id": "d",
+          "text": "15 cm, pois o volume do cone representa um quarto do volume do cilindro de mesmas dimensões",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. O volume do cone não é um quarto do volume do cilindro de mesmas dimensões. A relação correta é de um terço, o que resultaria em uma altura diferente."
+        }
+      ],
+      "explanation": "Correta. Esta afirmação está correta. O volume de um cone circular reto é um terço do volume de um cilindro circular reto com a mesma base e a mesma altura. Se o cone estava completamente cheio de água e essa água é despejada em um cilindro com a mesma base e altura, a água ocupará um terço da altura total do cilindro. Como a altura do cone é de 60 cm, a altura do nível da água no cilindro será de 60 cm / 3 = 20 cm.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Um cilindro circular reto está inscrito em um cone circular reto, com a base inferior do cilindro sobre a base do cone. Sabe-se que a altura do cilindro é metade da altura do cone e que o volume do cilindro é 150 cm³. Para determinar o volume do cone completo, deve-se considerar que existe um cone menor na parte superior. Qual é o volume do cone completo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "350 cm³, pois somando o volume do cilindro com o volume do cone superior obtém-se essa medida",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. Embora se some o volume do cilindro com o volume do cone superior, o valor de 350 cm³ não é o resultado correto. A proporção entre os cones (pequeno e grande) e o volume do cilindro deve ser calculada utilizando as relações de semelhança."
+        },
+        {
+          "id": "b",
+          "text": "300 cm³, pois o cone completo tem o dobro do volume do cilindro inscrito",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. Não há uma regra geral que diga que o cone completo tem o dobro do volume do cilindro inscrito nessas condições. A relação entre volumes de sólidos semelhantes é cúbica, e a altura do cilindro é metade da altura do cone, o que implica uma relação específica de proporção, não simplesmente o dobro."
+        },
+        {
+          "id": "c",
+          "text": "450 cm³, pois o volume do cone é três vezes o volume do cilindro de mesma base e altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é incorreta. O volume do cone não é simplesmente três vezes o volume do cilindro de mesma base e altura, pois o cilindro está inscrito, e não possui a mesma base e altura do cone maior. A relação de volume entre o cone e o cilindro de mesmas dimensões é de 1/3, mas aqui as dimensões não são as mesmas."
+        },
+        {
+          "id": "d",
+          "text": "400 cm³, pois a relação entre as alturas do cone pequeno e do cone grande estabelece uma proporção cúbica entre seus volumes",
+          "correct": true,
+          "explanation": "Correta. Esta afirmação está correta. A situação descreve um cone maior e um cone menor (formado acima do cilindro inscrito) que são semelhantes. A altura do cilindro é metade da altura do cone grande (H/2). Isso significa que o cone pequeno, na parte superior, tem altura H - H/2 = H/2. Portanto, a razão entre as alturas do cone pequeno e do cone grande é (H/2) / H = 1/2. Para sólidos semelhantes, a razão entre seus volumes é o cubo da razão entre suas alturas. Assim, Volume_pequeno / Volume_grande = (1/2)³. O volume do cone pequeno é um terço do volume do cilindro que ele \"encaixa\" (cilindro com altura H/2 e raio da base do cone pequeno), que por sua vez é 1/3 do volume do cilindro de 150 cm³ se o cilindro tivesse a altura H/2. No entanto, o volume do cilindro inscrito é 150 cm³. A altura do cilindro é H/2. O volume do cone pequeno é 1/3 do volume de um cilindro de mesma base e altura do cone pequeno. Como o cilindro inscrito tem altura H/2 e volume 150 cm³, o volume do cone pequeno será 1/3 * (volume de um cilindro de altura H/2 e raio da base do cone pequeno). Considerando que a altura do cilindro é H/2 e o volume do cilindro é 150 cm³, o volume do cone pequeno (com altura H/2) é 1/3 do volume de um cilindro de mesma base e altura, que seria 150/3 = 50 cm³. Portanto, Volume_pequeno = 50 cm³. Usando a relação Volume_pequeno / Volume_grande = (1/2)³, temos 50 / Volume_grande = 1/8. Assim, Volume_grande = 50 * 8 = 400 cm³."
+        }
+      ],
+      "explanation": "Correta. Esta afirmação está correta. A situação descreve um cone maior e um cone menor (formado acima do cilindro inscrito) que são semelhantes. A altura do cilindro é metade da altura do cone grande (H/2). Isso significa que o cone pequeno, na parte superior, tem altura H - H/2 = H/2. Portanto, a razão entre as alturas do cone pequeno e do cone grande é (H/2) / H = 1/2. Para sólidos semelhantes, a razão entre seus volumes é o cubo da razão entre suas alturas. Assim, Volume_pequeno / Volume_grande = (1/2)³. O volume do cone pequeno é um terço do volume do cilindro que ele \"encaixa\" (cilindro com altura H/2 e raio da base do cone pequeno), que por sua vez é 1/3 do volume do cilindro de 150 cm³ se o cilindro tivesse a altura H/2. No entanto, o volume do cilindro inscrito é 150 cm³. A altura do cilindro é H/2. O volume do cone pequeno é 1/3 do volume de um cilindro de mesma base e altura do cone pequeno. Como o cilindro inscrito tem altura H/2 e volume 150 cm³, o volume do cone pequeno será 1/3 * (volume de um cilindro de altura H/2 e raio da base do cone pequeno). Considerando que a altura do cilindro é H/2 e o volume do cilindro é 150 cm³, o volume do cone pequeno (com altura H/2) é 1/3 do volume de um cilindro de mesma base e altura, que seria 150/3 = 50 cm³. Portanto, Volume_pequeno = 50 cm³. Usando a relação Volume_pequeno / Volume_grande = (1/2)³, temos 50 / Volume_grande = 1/8. Assim, Volume_grande = 50 * 8 = 400 cm³.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "27_159836_Geometria Espacial - Cones III.pdf",
+  "coletado_em": "2026-09-23T21:09:24"
+}

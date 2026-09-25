@@ -1,0 +1,476 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 25,
+  "ordem_no_curso": "145.00",
+  "titulo": "Binômio de Newton II",
+  "codigo_aula": "351639",
+  "video_id": "FDykJLJ5lD0=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:41:17",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/FDykJLJ5lD0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408720%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Binômio de Newton II\n\n## Retomando a ideia do método\nNo vídeo passado, no primeiro bloquinho, nós aprendemos o porquê do nome e como o método funciona. Está ótimo isso, ótimo mesmo. Está comigo?\n\nIsso aqui pode parecer agitado, mas representa uma coisa que pode provocar a gente a dar uma olhadinha. Queremos então uma revisão, beleza?\n\nEntão, por que é bom esse método? Porque independe do grau do binômio. O grau zero, um, dois, três, quatro… Eu consigo desenvolver com tranquilidade. Antes a gente ficava refém até o grau três. Agora, se vocês sabem colocar os coeficientes binomiais, beleza.\n\nVejam: temos ali dentro dos parênteses, correto? E eu vou centralizar decrescendo o expoente de A e crescendo o de B. E os coeficientes binomiais em cima, sempre começando em zero até chegar no final. Só aqui pra gente poder registrar.\n\nSe você deixar registrado: A elevado a zero, nós já vimos. Só vai zero, zero; 1, 0; 1, 2; 0, 1, 2. A quantidade de termos no binômio responde a n+1. Correto? Para formar o desenvolvimento do binômio, os coeficientes seguem a lógica do triângulo de Pascal, indo de cima para baixo.\n\nEles respondem sempre: dois termos, coeficientes com soma dois; três termos, coeficientes com soma três; embaixo vão aumentando. As potências de A decrescem: a^n, a^(n-1), a^(n-2), …, até a^0. E as de B crescem: b^0, b^1, b^2, …, b^n. Correto?\n\nAté aqui, os coeficientes binomiais são tranquilos. Depois que descobriu como montar o desenvolvimento do binômio e quantos termos serão, a gente faz copiando o padrão. Às vezes, confunde e coloca o B na frente do A; atenção: é sempre o A primeiro no binômio se ele estiver primeiro, correto.\n\nDepois disso, fazemos o quê? O A vem decrescendo: n, n-1, n-2…; e o B vem crescendo: 0, 1, 2… Começa do zero: b^0, b^1, b^2. Pronto.\n\nVocê só vai resolver agora se você resolver termo a termo: A^n vezes B^0, e assim por diante, calculando cada produto. E você já chega nos termos. E aqui, de maneira genérica, embaixo, não só para a carreira de estado punitivo, para você não esquecer: show de bola. Só podemos reescrever a expressão como somatória.\n\nEntão eu posso ter todo esse desenvolvimento do binômio e colocar por meio de uma fórmula. Vai ser assim: (a + b)^n vai ser um somatório, com k começando em zero até n, dos coeficientes binomiais.\n\nOu seja: C(n, k) vezes a^(n-k) vezes b^k. A potência de A decresce e a de B cresce. Beleza, correto? Essa é a fórmula do binômio de Newton.\n\nCom essa fórmula, resolvemos qualquer binômio. Beleza, show de bola, perfeito. Já mostramos como é que funciona (a + b)^2 com as fórmulas que já aprendemos.\n\n## Aplicação em concursos: identificar coeficiente de um termo\nBeleza. Agora, questão de concurso. Como é que isso aparece? Todos ansiosos para saber disso? Para que você saiba: digamos que aparece um binômio com expoente alto. Vai ficar gigante, né? Obrigado. Como é que eu vou fazer? O enunciado pode pedir para desenvolver tudo. Para mim, não. Normalmente vai ser mais específico.\n\nEla menciona: “Eu quero o quinto termo”, “o segundo termo”, ou “qual é o coeficiente do termo que tenha B?”, “qual é o coeficiente do termo que tenha B^2?”, beleza? Aí você vai e desenvolve. No (a + b)^2, por exemplo, você acha a^2 + 2ab + b^2. Sabemos que aqui há um termo, aqui outro, e aqui outro. São termos separados por sinais de mais ou menos.\n\nEntão, qual desses termos tem B? Pode ser 2ab. É um termo que tem um b. Concordo: ele tem o b multiplicando o a. Qual é o coeficiente do termo que tem b? Você fala: o coeficiente é 2, beleza.\n\nO que são os coeficientes? São os números que estão na frente, certo? Então, o coeficiente é 2. Se a pergunta muda: “Qual o coeficiente do termo que tem a^2?” Procure o termo. Achou: a^2. Qual o coeficiente? Não aparece número, é 1. Qual o coeficiente do termo que tem b^2? Também 1. Suave demais.\n\nMas, se você tem um binômio onde o grau é altíssimo, o que vai acontecer? Você não consegue desenvolver tudo. A pergunta pode ser: “Qual o coeficiente do termo que tem a^3?”, por exemplo. Você percebe que dá para encontrar o coeficiente direto com o termo geral. Porque questões chatas assim pedem exatamente isso: usar o termo geral.\n\nO termo geral é como em progressão aritmética: se me pedem o centésimo termo, eu não preciso desenvolver a PA inteira. Existe fórmula do termo geral. Mesma lógica em PG. Então, aqui também: no desenvolvimento do binômio, você consegue encontrar o termo desejado direto.\n\n## Fórmula do termo geral\nE o termo geral? Olha só. O termo geral T_(k+1) é dado por C(n, k) a^(n-k) b^k. Vou te mostrar. Esse é o termo geral para o binômio de Newton. Com essa fórmula eu consigo encontrar qualquer termo no desenvolvimento.\n\nPor exemplo: perguntaram o coeficiente de x^4 no polinômio que vem do desenvolvimento de (x + 2)^6. Se você quiser, pode fazer o desenvolvimento longo: coeficientes 6C0, 6C1, …, 6C6, potências de x decrescendo de 6 a 0 e de 2 crescendo de 0 a 6. Pode fazer assim, sem problema. Mas será que eu consigo ir direto ao coeficiente de x^4? Sim, com o termo geral.\n\nNesse caso, (x + 2)^6 gera um polinômio com vários termos. Vai ter x^4 multiplicado por algum número. Esse número é o coeficiente. É isso que a questão quer: quem é o número na frente de x^4? Esse número é o coeficiente, beleza?\n\nOnde eu quero chegar: precisamos do termo geral. Vamos fazer uma questão para treinar. Vai pedir coeficiente. De boa, tá bom.\n\n## Exemplo guiado: coeficiente de x^4 em (x + 2)^6\nBeleza. Fala comigo só para acumular isso. Sabemos: nosso binômio é (x + 2)^6. Perceba o seguinte: aqui o a é x, o b é 2, e o n é 6. Na fórmula do termo geral do binômio de Newton:\n\nT_(k+1) = C(6, k) x^(6-k) 2^k.\n\nAtenção agora: o k+1 indica a posição do termo no desenvolvimento. Além de encontrarmos o coeficiente do x^4, nós também conseguimos determinar qual é a posição do termo.\n\nEu quero o coeficiente do x^4. Então, no termo geral, o expoente de x tem que ser 4: 6 − k = 4. Daí, k = 2. Pronto. Neste momento a questão praticamente acaba. Porque agora eu substituo k = 2:\n\nT_3 = C(6, 2) x^(6−2) 2^2 = C(6, 2) x^4 4.\n\nC(6, 2) = 6!/(4!2!) = 15. Então o coeficiente é 15 × 4 = 60.\n\nConclusão: o termo com x^4 é o terceiro termo, e o coeficiente do x^4 é 60. Show.\n\n> 🎯 Dicas de prova: Para achar o coeficiente do termo com x^m em (x + b)^n, resolva 6 − k = m (no geral, n − k = m), ache k, e calcule C(n, k) b^k.\n\nEssa é a ideia. O caminho é esse. É um assunto que não é tão comum em muitas provas gerais, mas aparece bastante em algumas bancas e em carreiras específicas.\n\n## Onde isso cai mais\nIsso costuma aparecer mais em concursos de professor de matemática e em carreiras militares (Forças Armadas). Acontece muito. Está bom? Show de bola.\n\nVamos fazer mais uma comigo, seguindo a mesma sequência, receita de bolo.\n\n## Segundo exemplo: coeficiente de x^3 em (3x + 2)^5\nDiz assim: no desenvolvimento desse binômio (3x + 2)^5, teremos um polinômio com vários termos. A pergunta de novo: qual o coeficiente de x^3?\n\nPasso a passo:\n- Identificar: a = 3x, b = 2, n = 5.\n- Termo geral: T_(k+1) = C(5, k) (3x)^(5−k) 2^k.\n\nEu quero o termo que tenha x^3. Então faço o x aparecer sozinho no expoente: (3x)^(5−k) = 3^(5−k) x^(5−k). Para ter x^3, preciso 5 − k = 3, logo k = 2.\n\nSubstituindo k = 2:\nT_3 = C(5, 2) (3x)^(3) 2^2\n= C(5, 2) 3^3 x^3 4.\n\nC(5, 2) = 10. Então o coeficiente é 10 × 27 × 4 = 1080.\n\nConclusão: é o terceiro termo, e o coeficiente de x^3 é 1080.\n\n> 🎯 Dicas de prova: Quando o termo do binômio tem um fator constante junto do x, como (3x + 2), lembre-se de elevar tanto o 3 quanto o x: (3x)^(n−k) = 3^(n−k) x^(n−k). O coeficiente final inclui C(n, k) e também essa potência do 3 e a potência do 2.\n\n## Encerramento e próximos passos\nComecem a acostumar com o termo geral. No começo é muita informação: propriedades de potenciação, combinação, arrumação dos expoentes. Mas vai ficando natural com prática.\n\nNo próximo vídeo, trago mais duas questões, inclusive de banca em alta como FGV. É isso mesmo: você não precisa desenvolver tudo quando o grau é alto; pode ir direto ao termo específico com o termo geral. Essa técnica economiza tempo e evita erro.\n\nCoeficiente é o número que multiplica o termo pedido. Achou o k por n − k = expoente desejado, calcula C(n, k) e as potências das constantes. Pronto.",
+  "transcricao_meta": {
+    "title": "Binômio de Newton II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 34995,
+    "createdAt": "2026-02-04T21:00:38.069Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda o Binômio de Newton focando em: termo geral, como identificar o termo que contém x^m e como calcular rapidamente seu coeficiente, sem expandir todo o binômio. \nPrincipais pontos: \n- Fórmula do termo geral e leitura de posições (k vs k+1) \n- Igualação de expoentes para achar o índice do termo \n- Cálculo de combinações e tratamento de constantes/sinais nos termos.\n\n## 1. Base / Conceitos Fundamentais\n- **Binômio de Newton**: desenvolvimento de (a + b)^n em n+1 termos.\n- **Termo geral**: para (a + b)^n, o termo de posição k+1 é:\n  - T_{k+1} = C(n, k) · a^(n−k) · b^k, com k = 0, 1, 2, …, n.\n- **Coeficiente binomial**: C(n, k) = n! / [k!(n−k)!] e C(n, k) = C(n, n−k).\n- **Contagem de expoentes**:\n  - Expoente de a: começa em n e decresce.\n  - Expoente de b: começa em 0 e cresce.\n- **Coeficiente do termo com x^m**: é o número (e fatores constantes, inclusive letras como a, b, desde que não contenham x) que multiplica x^m; não inclui x.\n\n> Dica de Prova: “Termo k+1” significa k começa em 0. O 1º termo é k=0; o 3º termo é k=2.\n\n## 2. Como Funciona / Distinções\n- (Ax + B)^n:\n  - a = Ax (carrega o x), b = B (constante). \n  - Expoente do x vem de a^(n−k). Logo, expoente(x) = n−k.\n- (A + Bx)^n:\n  - a = A (constante), b = Bx (carrega o x).\n  - Expoente do x vem de b^k. Logo, expoente(x) = k.\n- Sinal no binômio:\n  - (Ax − B)^n: considere b = −B. O sinal do termo depende da paridade de k.\n- Posição do termo vs expoente desejado:\n  - Para obter x^m, determine k resolvendo a equação do expoente do x (n−k = m ou k = m, conforme onde está o x).\n  - A posição será T_{k+1}; não confundir “m” (expoente desejado) com “k” (índice do termo).\n\n> Dica de Prova: Identifique primeiro onde está o x (no primeiro ou no segundo termo). Isso define se o expoente do x é n−k ou k.\n\n## 3. Aplicação Prática / Técnicas\nPasso a passo (receita de bolo) para o coeficiente do termo com x^m:\n1) Escreva o termo geral: T_{k+1} = C(n, k) · a^(n−k) · b^k.\n2) Isole como o x aparece (em a, em b ou em ambos).\n3) Monte o expoente do x em função de k.\n4) Igualar ao m desejado para achar k.\n5) Identifique o termo: T_{k+1}.\n6) Calcule C(n, k).\n7) Multiplique pelos fatores numéricos de a^(n−k) e b^k que não têm x (inclusive sinais).\n8) O resultado é o coeficiente de x^m.\n\nMacete ultra-rápido quando o x está apenas no primeiro termo (Ax + B)^n:\n- Quer x^m: k = n − m\n- Coeficiente = C(n, m) · A^m · B^(n−m)\n\nMacete quando o x está apenas no segundo termo (A + Bx)^n:\n- Quer x^m: k = m\n- Coeficiente = C(n, m) · A^(n−m) · B^m\n\n> Dica de Prova: Se B < 0, inclua (−1)^k no coeficiente via B^k.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: (ax + b)^6, coeficiente do termo com x^4.\n  - x está no primeiro termo → expoente(x) = n−k = 6−k.\n  - 6 − k = 4 → k = 2 → termo T_3 (terceiro).\n  - Coeficiente = C(6, 2) · a^4 · b^2 = 15 · a^4 · b^2.\n\n- Exemplo 2: (2x + 1)^6, coeficiente do termo com x^4.\n  - 6 − k = 4 → k = 2.\n  - C(6, 2) = 15; fator numérico de a^(n−k) = (2)^(4) = 16; b^2 = 1.\n  - Coeficiente = 15 · 16 = 240.\n\n- Exemplo 3: (3 + 2x)^5, coeficiente do termo com x^3.\n  - x está no segundo termo → expoente(x) = k.\n  - k = 3 → termo T_4 (quarto).\n  - C(5, 3) = 10; 3^(5−3) = 3^2 = 9; (2)^3 = 8.\n  - Coeficiente = 10 · 9 · 8 = 720.\n\n- Exemplo 4: (x − 2)^6, coeficiente do termo com x^4.\n  - 6 − k = 4 → k = 2 (par → sinal positivo).\n  - C(6, 2) = 15; (−2)^2 = 4.\n  - Coeficiente = 15 · 4 = 60.\n\n> Dica de Prova: Use C(n, m) em vez de C(n, n−m) se facilitar a conta. Ex.: C(6, 2) = C(6, 4) = 15.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir posição do termo com expoente: termo pedido é T_{k+1}; não use k como “número do termo” sem somar 1.\n- Trocar k por m: k é índice do termo; m é o expoente desejado de x.\n- Esquecer fatores numéricos de a^(n−k) e b^k (ex.: 2^k, 3^(n−k)); são eles que transformam 10 em 720.\n- Ignorar sinais: em (Ax − B)^n, termos com k ímpar ficam negativos.\n- Achar k “no olho”: sempre iguale os expoentes do x com base em onde está o x no binômio.\n- Expandir tudo: desnecessário; o termo geral leva direto ao termo desejado.\n- Erro em combinação: lembre C(n, k) = n! / [k!(n−k)!] e a simetria C(n, k) = C(n, n−k).\n\n> Dica de Prova: Se o problema citar “termo geral” ou “somatória” e pedir “coeficiente do x^m”, normalmente basta achar k e calcular C(n, k) vezes os fatores constantes. Não inclua x no coeficiente.",
+  "resumo_bolso": "# Binômio de Newton II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Binômio de Newton**: desenvolvimento de **(a + b)^n** em **n+1 termos**.\n* **Termo geral**: para **(a + b)^n**, o termo de posição **k+1** é:\n  * **T_{k+1} = C(n, k) · a^(n−k) · b^k**, com **k = 0, 1, 2, …, n**.\n* **Coeficiente binomial**:\n  * **C(n, k) = n! / [k!(n−k)!]**.\n  * **Simetria**: **C(n, k) = C(n, n−k)**.\n* **Contagem de expoentes**:\n  * Expoente de **a**: começa em **n** e **decresce**.\n  * Expoente de **b**: começa em **0** e **cresce**.\n* **Coeficiente do termo com x^m**: é o número (e fatores constantes, inclusive letras como a, b, desde que não contenham x) que multiplica **x^m**; não inclui o próprio x.\n* **Leitura de posição**:\n  * “**Termo k+1**” significa que **k começa em 0**.\n  * 1º termo → k = 0; 3º termo → k = 2.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### (Ax + B)^n vs (A + Bx)^n\n\n| Aspecto | (Ax + B)^n | (A + Bx)^n |\n|--------|------------|------------|\n| Onde está o x | No **primeiro termo** (a = Ax) | No **segundo termo** (b = Bx) |\n| Expoente do x | Vem de **a^(n−k)** → expoente(x) = **n−k** | Vem de **b^k** → expoente(x) = **k** |\n| Equação para x^m | **n − k = m** | **k = m** |\n| Posição do termo | T_{k+1} (com k obtido da equação do expoente) | T_{k+1} (com k obtido da equação do expoente) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Termo geral do binômio**\n\n* **Aplicação**: qualquer **(a + b)^n**.\n* **Regra**:  \n  **T_{k+1} = C(n, k) · a^(n−k) · b^k**, com **k = 0, 1, …, n**.\n\n---\n\n**2. Receita geral para coeficiente de x^m**\n\n* **Passos**:\n  1) Escreva o termo geral: **T_{k+1} = C(n, k) · a^(n−k) · b^k**.  \n  2) Isole como o **x** aparece (em **a**, em **b** ou em ambos).  \n  3) Monte o **expoente do x** em função de **k**.  \n  4) Igualar ao **m** desejado para achar **k**.  \n  5) Identifique o termo: **T_{k+1}**.  \n  6) Calcule **C(n, k)**.  \n  7) Multiplique pelos **fatores numéricos** de **a^(n−k)** e **b^k** que não têm x (inclusive sinais).  \n  8) O resultado é o **coeficiente de x^m**.\n\n---\n\n**3. Macete quando o x está só no primeiro termo (Ax + B)^n**\n\n* **Quer x^m**:\n  * x está em **a = Ax** → expoente(x) = **n−k**.\n  * **n − k = m → k = n − m**.\n  * **Coeficiente = C(n, m) · A^m · B^(n−m)**.\n\n---\n\n**4. Macete quando o x está só no segundo termo (A + Bx)^n**\n\n* **Quer x^m**:\n  * x está em **b = Bx** → expoente(x) = **k**.\n  * **k = m**.\n  * **Coeficiente = C(n, m) · A^(n−m) · B^m**.\n\n---\n\n**5. Sinal em (Ax − B)^n**\n\n* Considere **b = −B**.\n* O sinal do termo depende da **paridade de k** (via **(−B)^k** ou **(−1)^k**).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir **posição do termo** com expoente: o termo pedido é **T_{k+1}**; não use **k** como “número do termo” sem somar 1.\n* Trocar **k** por **m**: **k** é índice do termo; **m** é o expoente desejado de x.\n* Esquecer fatores numéricos de **a^(n−k)** e **b^k** (como 2^k, 3^(n−k)); são eles que transformam um valor simples em outro bem maior.\n* Ignorar sinais: em **(Ax − B)^n**, termos com **k ímpar** ficam negativos.\n* Tentar achar **k “no olho”** ou expandir tudo: sempre iguale os expoentes do x com base em onde está o x no binômio.\n\n---\n\n## 📋 Checklist Final\n\n* Sei escrever e usar o **termo geral**: **T_{k+1} = C(n, k) · a^(n−k) · b^k**?\n* Sei diferenciar **(Ax + B)^n** de **(A + Bx)^n** quanto à origem do expoente do x (**n−k** ou **k**)?\n* Lembro que a **posição do termo** é **T_{k+1}**, com **k começando em 0**?\n* Sei montar a equação do expoente do x (**n−k = m** ou **k = m**) para achar **k**?\n* Estou atento aos **fatores numéricos** e ao **sinal** (incluindo o efeito de **(−B)^k** quando houver termo negativo)?\n* Lembro da **simetria** **C(n, k) = C(n, n−k)** para facilitar contas?",
+  "mapa_mental": "# 🧮 Binômio de Newton II\n## 🎯 Estrutura do Binômio\n### 💡 Conceito de binômio\n- Potência de soma\n- (a + b)^n\n- n inteiro não negativo\n### 🧮 Termo geral\n- T_{k+1} = C(n,k)a^{n−k}b^k\n- k de 0 a n\n- n+1 termos\n### 🔢 Coeficiente binomial\n- C(n,k) = n!/[k!(n−k)!]\n- Simetria C(n,k)=C(n,n−k)\n- Valores inteiros\n## 📊 Expoentes e Posições\n### 📈 Variação dos expoentes\n- Expoente de a: n até 0\n- Expoente de b: 0 até n\n- Soma dos expoentes = n\n### 🔢 Posição do termo\n- T_{k+1} ↔ índice k\n- 1º termo: k=0\n- k = posição−1\n### 🧮 Expoente do x\n- Coeficiente: parte sem x\n- x apenas em a\n- x apenas em b\n- x em ambos\n## 🧮 Casos Clássicos com x\n### 📌 Caso (Ax + B)^n\n- a = Ax\n- b = B\n- expoente(x) = n−k\n- k = n−m\n- posição T_{n−m+1}\n### 📌 Caso (A + Bx)^n\n- a = A\n- b = Bx\n- expoente(x) = k\n- k = m\n- posição T_{m+1}\n### 📌 Caso (Ax − B)^n\n- b = −B\n- Sinal via (−1)^k\n- k par: termo positivo\n- k ímpar: termo negativo\n## 🧮 Coeficiente do x^m\n### 📝 Procedimento geral\n- Escrever termo geral\n- Identificar onde está x\n- Expressar expoente(x) por k\n- Igualar a m e achar k\n- Determinar T_{k+1}\n### 🧮 Cálculo do coeficiente\n- Calcular C(n,k)\n- Calcular fatores numéricos\n- Considerar potências de A,B\n- Considerar sinais\n### 🚀 Macetes de prova\n- (Ax + B)^n: k = n−m\n- Coef = C(n,m)A^mB^{n−m}\n- (A + Bx)^n: k = m\n- Coef = C(n,m)A^{n−m}B^m\n## ⚠️ Erros Frequentes\n### 🚨 Índices e posições\n- Confundir k com posição\n- Esquecer +1 em T_{k+1}\n- Trocar k por m\n### ⚠️ Fatores e sinais\n- Ignorar fatores numéricos\n- Esquecer potências de A,B\n- Ignorar (−1)^k\n### 🛑 Estratégia inadequada\n- Achar k “no olho”\n- Expandir todo binômio\n- Errar fórmula de C(n,k)",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Estrutura do Binômio",
+      "description": "Estrutura do Binômio — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quantos termos possui o desenvolvimento de (a+b)^n?",
+          "back": "n + 1",
+          "hint": "Relacione com o expoente n",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "desenvolvimento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como varia o expoente de a no desenvolvimento de (a+b)^n?",
+          "back": "Decrescente",
+          "hint": "Pense na ordem do primeiro termo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "expoentes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Termo Geral",
+      "description": "Termo Geral — 4 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual é a fórmula do termo geral de (a+b)^n?",
+          "back": "T_{r+1} = \\binom{n}{r} \\cdot a^{n-r} \\cdot b^r",
+          "hint": "Envolve combinatória e potências",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "termo-geral"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual posição ocupa o termo associado ao índice r no termo geral?",
+          "back": "r + 1",
+          "hint": "É um deslocamento de uma unidade",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "posicionamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Como determinar o índice r a partir da posição de um termo?",
+          "back": "Subtrair 1 da posição do termo",
+          "hint": "Operação inversa à do cartão anterior",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "posicionamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como determinar r quando se busca um termo com b elevado a uma potência específica?",
+          "back": "Igualando o expoente de b à potência específica",
+          "hint": "Observe o expoente da variável b",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "calculo-r"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Coeficientes e Aplicações",
+      "description": "Coeficientes e Aplicações — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "O que representa o número que multiplica um termo no desenvolvimento binomial?",
+          "back": "Coeficiente",
+          "hint": "Termo técnico da álgebra",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "terminologia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "No desenvolvimento de (x+2)^6, qual é o coeficiente de x^4?",
+          "back": "60",
+          "hint": "Aplique a fórmula do termo geral",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "aplicacao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Como encontrar diretamente um coeficiente sem desenvolver todos os termos?",
+          "back": "Utilizando a fórmula do termo geral",
+          "hint": "Refere-se à ferramenta central do tema",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "binomio-newton",
+            "metodologia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No desenvolvimento de um binômio pelo método apresentado, qual é a característica fundamental que permite sua aplicação independentemente do grau do binômio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A limitação de aplicação apenas para binômios de grau inferior a cinco, devido à complexidade dos cálculos",
+          "correct": false,
+          "explanation": "Incorreta. O método do Binômio de Newton é aplicável a binômios de qualquer grau, não havendo limitação a graus inferiores a cinco. A complexidade dos cálculos aumenta com o grau, mas a aplicabilidade do método permanece."
+        },
+        {
+          "id": "b",
+          "text": "A necessidade de desenvolver completamente todos os termos do binômio antes de identificar qualquer coeficiente específico",
+          "correct": false,
+          "explanation": "Incorreta. O método do Binômio de Newton, especialmente através do termo geral, permite encontrar um coeficiente ou termo específico sem a necessidade de desenvolver completamente todos os termos do binômio, o que seria impraticável para graus elevados."
+        },
+        {
+          "id": "c",
+          "text": "A utilização de uma fórmula geral que relaciona coeficientes binomiais, expoentes decrescentes de um termo e expoentes crescentes de outro termo",
+          "correct": true,
+          "explanation": "Correta. A característica fundamental do desenvolvimento binomial é a utilização de uma fórmula geral, conhecida como Teorema do Binômio de Newton, que emprega coeficientes binomiais (combinações), expoentes decrescentes para o primeiro termo e expoentes crescentes para o segundo termo. Essa fórmula permite calcular qualquer termo ou o desenvolvimento completo, independentemente do grau (expoente) do binômio."
+        },
+        {
+          "id": "d",
+          "text": "A obrigatoriedade de utilizar apenas números inteiros positivos como base dos termos do binômio",
+          "correct": false,
+          "explanation": "Incorreta. A base dos termos do binômio (a e b) pode ser composta por números reais (positivos, negativos, racionais, irracionais) ou até mesmo expressões algébricas, não se limitando a números inteiros positivos. O método funciona para diversas naturezas de 'a' e 'b'."
+        }
+      ],
+      "explanation": "Correta. A característica fundamental do desenvolvimento binomial é a utilização de uma fórmula geral, conhecida como Teorema do Binômio de Newton, que emprega coeficientes binomiais (combinações), expoentes decrescentes para o primeiro termo e expoentes crescentes para o segundo termo. Essa fórmula permite calcular qualquer termo ou o desenvolvimento completo, independentemente do grau (expoente) do binômio.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No desenvolvimento de um binômio da forma (a + b)^n, como se comportam os expoentes dos termos a e b ao longo dos termos sucessivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os expoentes de a crescem de zero até n, enquanto os expoentes de b decrescem de n até zero",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação inverte o comportamento dos expoentes. Os expoentes de 'a' decrescem, enquanto os de 'b' crescem, e não o contrário."
+        },
+        {
+          "id": "b",
+          "text": "Os expoentes de ambos os termos permanecem constantes e iguais ao grau do binômio",
+          "correct": false,
+          "explanation": "Incorreta. Os expoentes dos termos 'a' e 'b' não permanecem constantes. Eles variam em cada termo do desenvolvimento do binômio."
+        },
+        {
+          "id": "c",
+          "text": "Os expoentes de ambos os termos crescem simultaneamente, mantendo sempre a soma igual a 2n",
+          "correct": false,
+          "explanation": "Incorreta. Embora a soma dos expoentes de 'a' e 'b' em cada termo seja sempre igual a 'n', eles não crescem simultaneamente. Um decresce enquanto o outro cresce. Além disso, a soma não é 2n, mas sim n."
+        },
+        {
+          "id": "d",
+          "text": "Os expoentes de a decrescem de n até zero, enquanto os expoentes de b crescem de zero até n",
+          "correct": true,
+          "explanation": "Correta. No desenvolvimento de (a + b)^n, o expoente do primeiro termo 'a' começa em 'n' e decresce em uma unidade a cada termo, até chegar a zero. Concomitantemente, o expoente do segundo termo 'b' começa em zero e cresce em uma unidade a cada termo, até atingir 'n'. A soma dos expoentes de 'a' e 'b' em cada termo é sempre igual a 'n'."
+        }
+      ],
+      "explanation": "Correta. No desenvolvimento de (a + b)^n, o expoente do primeiro termo 'a' começa em 'n' e decresce em uma unidade a cada termo, até chegar a zero. Concomitantemente, o expoente do segundo termo 'b' começa em zero e cresce em uma unidade a cada termo, até atingir 'n'. A soma dos expoentes de 'a' e 'b' em cada termo é sempre igual a 'n'.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a expressão correta para representar o desenvolvimento completo de um binômio (a + b)^n utilizando notação de somatório?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Somatório de k=0 até n de C(n,k) × a^k × b^(n-k)",
+          "correct": false,
+          "explanation": "Incorreta. Nesta expressão, o expoente de 'a' é 'k' e o de 'b' é 'n-k'. Embora a soma dos expoentes esteja correta (k + n-k = n), a ordem padrão no Teorema do Binômio de Newton para (a+b)^n geralmente associa o expoente decrescente ao primeiro termo 'a' e o expoente crescente ao segundo termo 'b'."
+        },
+        {
+          "id": "b",
+          "text": "Somatório de k=0 até n de C(n,k) × a^(n-k) × b^k",
+          "correct": true,
+          "explanation": "Correta. A expressão correta para o desenvolvimento de um binômio (a + b)^n utilizando notação de somatório é o somatório de k=0 até n de C(n,k) multiplicado por a elevado a (n-k) e por b elevado a k. Onde C(n,k) é o coeficiente binomial, (n-k) é o expoente do primeiro termo 'a' (que decresce de n a 0) e 'k' é o expoente do segundo termo 'b' (que cresce de 0 a n)."
+        },
+        {
+          "id": "c",
+          "text": "Somatório de k=0 até n-1 de C(k,n) × a^(k+1) × b^(n-k-1)",
+          "correct": false,
+          "explanation": "Incorreta. Esta expressão apresenta índices e expoentes incorretos, como o somatório indo até n-1, o coeficiente binomial C(k,n) (o correto seria C(n,k)), e a forma dos expoentes a^(k+1) e b^(n-k-1) que não correspondem ao padrão do Teorema do Binômio de Newton."
+        },
+        {
+          "id": "d",
+          "text": "Somatório de k=1 até n de C(n,k) × a^n × b^k",
+          "correct": false,
+          "explanation": "Incorreta. Esta expressão está incorreta por vários motivos: o somatório começa de k=1 (deveria ser k=0), o expoente de 'a' é fixo em 'n' (deveria variar), e o expoente de 'b' é 'k' (o que seria o correto se 'a' tivesse expoente 'n-k')."
+        }
+      ],
+      "explanation": "Correta. A expressão correta para o desenvolvimento de um binômio (a + b)^n utilizando notação de somatório é o somatório de k=0 até n de C(n,k) multiplicado por a elevado a (n-k) e por b elevado a k. Onde C(n,k) é o coeficiente binomial, (n-k) é o expoente do primeiro termo 'a' (que decresce de n a 0) e 'k' é o expoente do segundo termo 'b' (que cresce de 0 a n).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em um binômio elevado a uma potência, o que representa o coeficiente de um termo específico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número que multiplica a parte literal do termo, determinado pelo número binomial correspondente",
+          "correct": true,
+          "explanation": "Correta. Em um binômio elevado a uma potência, o coeficiente de um termo específico é o número que multiplica a parte literal (as variáveis com seus respectivos expoentes) desse termo. Esse número é determinado pelo coeficiente binomial C(n,k) na fórmula do termo geral do Binômio de Newton."
+        },
+        {
+          "id": "b",
+          "text": "A soma dos expoentes das variáveis presentes no termo",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos expoentes das variáveis em um termo específico é sempre igual ao grau do binômio (n), mas essa soma não é o coeficiente. O coeficiente é o fator numérico."
+        },
+        {
+          "id": "c",
+          "text": "O valor do expoente ao qual o binômio está elevado",
+          "correct": false,
+          "explanation": "Incorreta. O expoente ao qual o binômio está elevado (n) é o grau do binômio, não o coeficiente de um termo específico. O coeficiente é um valor numérico que precede a parte literal do termo."
+        },
+        {
+          "id": "d",
+          "text": "O produto dos valores numéricos das bases do binômio",
+          "correct": false,
+          "explanation": "Incorreta. O produto dos valores numéricos das bases do binômio (a e b) não define o coeficiente de um termo específico. O coeficiente é calculado a partir do número binomial e, se 'a' ou 'b' forem números, esses valores também influenciarão o coeficiente numérico final."
+        }
+      ],
+      "explanation": "Correta. Em um binômio elevado a uma potência, o coeficiente de um termo específico é o número que multiplica a parte literal (as variáveis com seus respectivos expoentes) desse termo. Esse número é determinado pelo coeficiente binomial C(n,k) na fórmula do termo geral do Binômio de Newton.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Para encontrar um termo específico no desenvolvimento de (a + b)^n sem desenvolver todo o binômio, qual é a fórmula do termo geral?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "T(k+1) = C(n,k+1) × a^(n-k-1) × b^(k+1), onde k varia de 1 até n",
+          "correct": false,
+          "explanation": "Incorreta. Esta expressão utiliza C(n,k+1) e expoentes (n-k-1) e (k+1), o que não corresponde à fórmula padrão do termo geral, que utiliza C(n,k) e os expoentes (n-k) e k para o (k+1)-ésimo termo."
+        },
+        {
+          "id": "b",
+          "text": "T(k) = C(n,k) × a^k × b^(n-k), onde k representa a posição do termo menos um",
+          "correct": false,
+          "explanation": "Incorreta. Embora o coeficiente binomial C(n,k) esteja correto, os expoentes de 'a' e 'b' estão trocados em relação à convenção padrão, onde 'a' tem expoente decrescente (n-k) e 'b' tem expoente crescente (k). Além disso, a definição de 'k' como 'posição do termo menos um' é mais adequada para a fórmula T(k+1)."
+        },
+        {
+          "id": "c",
+          "text": "T(k+1) = C(n,k) × a^(n-k) × b^k, onde k varia de 0 até n",
+          "correct": true,
+          "explanation": "Correta. A fórmula do termo geral é T(k+1) = C(n,k) × a^(n-k) × b^k. Nesta fórmula, 'n' é o grau do binômio, 'k' é o índice do termo (começando em 0 para o primeiro termo), (k+1) indica a posição do termo, (n-k) é o expoente do primeiro termo ('a') e 'k' é o expoente do segundo termo ('b'). Esta fórmula permite encontrar qualquer termo específico sem desenvolver todo o binômio."
+        },
+        {
+          "id": "d",
+          "text": "T(k) = C(k,n) × a^(n-k+1) × b^(k-1), onde k representa a posição exata do termo",
+          "correct": false,
+          "explanation": "Incorreta. Esta expressão apresenta uma notação incorreta para o coeficiente binomial C(k,n) e expoentes (n-k+1) e (k-1) que não correspondem à fórmula padrão do termo geral."
+        }
+      ],
+      "explanation": "Correta. A fórmula do termo geral é T(k+1) = C(n,k) × a^(n-k) × b^k. Nesta fórmula, 'n' é o grau do binômio, 'k' é o índice do termo (começando em 0 para o primeiro termo), (k+1) indica a posição do termo, (n-k) é o expoente do primeiro termo ('a') e 'k' é o expoente do segundo termo ('b'). Esta fórmula permite encontrar qualquer termo específico sem desenvolver todo o binômio.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No desenvolvimento de (x + 2)^6, para encontrar o coeficiente do termo que contém x^4, qual deve ser o valor de k na fórmula do termo geral T(k+1) = C(6,k) × x^(6-k) × 2^k?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "k = 2, pois 6 - k = 4 resulta em k = 2",
+          "correct": true,
+          "explanation": "Correta. A fórmula do termo geral para o binômio de Newton é T(k+1) = C(n,k) * a^(n-k) * b^k. No binômio (x + 2)^6, temos a = x, b = 2 e n = 6. O termo que contém x^4 significa que o expoente de x deve ser 4. Assim, (n - k) = 4. Substituindo n por 6, temos 6 - k = 4, o que resulta em k = 2."
+        },
+        {
+          "id": "b",
+          "text": "k = 3, pois representa a metade do grau do binômio",
+          "correct": false,
+          "explanation": "Incorreta. O valor de k não é determinado pela metade do grau do binômio, a menos que seja uma coincidência para um termo específico. O valor de k é encontrado ao igualar o expoente desejado da variável (n-k) ao expoente da variável no termo geral."
+        },
+        {
+          "id": "c",
+          "text": "k = 4, pois o expoente de x deve ser igual a 4",
+          "correct": false,
+          "explanation": "Incorreta. O valor de k não é diretamente o expoente de x. Na fórmula do termo geral, o expoente de x é (n - k), onde n é o grau do binômio. Portanto, igualar k a 4 estaria incorreto, pois o expoente de x é (6 - k)."
+        },
+        {
+          "id": "d",
+          "text": "k = 6, pois é o grau total do binômio",
+          "correct": false,
+          "explanation": "Incorreta. O valor de k não é o grau total do binômio. O grau total do binômio é 'n', que neste caso é 6. O 'k' representa o índice do termo na combinação e o expoente do segundo termo do binômio, variando de 0 a n."
+        }
+      ],
+      "explanation": "Correta. A fórmula do termo geral para o binômio de Newton é T(k+1) = C(n,k) * a^(n-k) * b^k. No binômio (x + 2)^6, temos a = x, b = 2 e n = 6. O termo que contém x^4 significa que o expoente de x deve ser 4. Assim, (n - k) = 4. Substituindo n por 6, temos 6 - k = 4, o que resulta em k = 2.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao calcular o número binomial C(6,2) que aparece no desenvolvimento de um binômio, qual é o procedimento correto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "C(6,2) = 6!/(4! + 2!) = 720/26 ≈ 27,7",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo está incorreto tanto na fórmula quanto na soma dos fatoriais no denominador. A fórmula correta exige a multiplicação dos fatoriais k! e (n-k)!, não a soma, e a divisão de n! por esse produto."
+        },
+        {
+          "id": "b",
+          "text": "C(6,2) = 6!/(2! × 4!) = (6 × 5)/(2 × 1) = 15",
+          "correct": true,
+          "explanation": "Correta. O número binomial C(n,k), também conhecido como combinação de n elementos tomados k a k, é calculado pela fórmula C(n,k) = n! / (k! * (n-k)!). Para C(6,2), temos n=6 e k=2. Assim, C(6,2) = 6! / (2! * (6-2)!) = 6! / (2! * 4!) = (6 * 5 * 4 * 3 * 2 * 1) / ((2 * 1) * (4 * 3 * 2 * 1)). Simplificando, cancelamos 4! do numerador e denominador, resultando em (6 * 5) / (2 * 1) = 30 / 2 = 15."
+        },
+        {
+          "id": "c",
+          "text": "C(6,2) = 6!/(2! × 3!) = (6 × 5 × 4)/(2 × 1) = 60",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo está incorreto na parte do fatorial no denominador. A fórmula correta para o número binomial é C(n,k) = n! / (k! * (n-k)!), não 6! / (2! * 3!)."
+        },
+        {
+          "id": "d",
+          "text": "C(6,2) = (6 × 2)/(4!) = 12/24 = 0,5",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula utilizada para o cálculo está completamente errada. Não se trata de uma simples multiplicação e divisão de números, mas sim do uso de fatoriais conforme a definição de combinação."
+        }
+      ],
+      "explanation": "Correta. O número binomial C(n,k), também conhecido como combinação de n elementos tomados k a k, é calculado pela fórmula C(n,k) = n! / (k! * (n-k)!). Para C(6,2), temos n=6 e k=2. Assim, C(6,2) = 6! / (2! * (6-2)!) = 6! / (2! * 4!) = (6 * 5 * 4 * 3 * 2 * 1) / ((2 * 1) * (4 * 3 * 2 * 1)). Simplificando, cancelamos 4! do numerador e denominador, resultando em (6 * 5) / (2 * 1) = 30 / 2 = 15.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No desenvolvimento de (2x + 3)^5, qual é a relação entre o valor de k e a posição do termo no polinômio resultante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor de k é sempre o dobro da posição do termo menos um",
+          "correct": false,
+          "explanation": "Incorreta. Não há uma relação matemática geral que estabeleça que k seja o dobro da posição do termo menos um. A relação é simplesmente que a posição do termo é (k+1)."
+        },
+        {
+          "id": "b",
+          "text": "A posição do termo é dada por n - k, onde n é o grau do binômio",
+          "correct": false,
+          "explanation": "Incorreta. A relação n-k representa o expoente do primeiro termo do binômio no termo geral, não a posição do termo. A posição do termo é determinada pelo índice k na expressão T(k+1)."
+        },
+        {
+          "id": "c",
+          "text": "O valor de k é sempre igual à posição do termo no desenvolvimento",
+          "correct": false,
+          "explanation": "Incorreta. O valor de k na fórmula do termo geral T(k+1) = C(n,k) * a^(n-k) * b^k representa o índice da combinação e o expoente do segundo termo, mas a posição do termo no desenvolvimento é (k+1), não k. Por exemplo, quando k=0, temos o primeiro termo."
+        },
+        {
+          "id": "d",
+          "text": "A posição do termo é dada por k + 1, onde k varia de 0 até o grau do binômio",
+          "correct": true,
+          "explanation": "Correta. Na fórmula do termo geral do Binômio de Newton, T(k+1) é a notação para o termo na posição (k+1). O valor de k começa em 0 para o primeiro termo e vai até n (o grau do binômio) para o último termo. Portanto, se k=0, o termo é T(1), o primeiro termo. Se k=1, o termo é T(2), o segundo termo, e assim por diante."
+        }
+      ],
+      "explanation": "Correta. Na fórmula do termo geral do Binômio de Newton, T(k+1) é a notação para o termo na posição (k+1). O valor de k começa em 0 para o primeiro termo e vai até n (o grau do binômio) para o último termo. Portanto, se k=0, o termo é T(1), o primeiro termo. Se k=1, o termo é T(2), o segundo termo, e assim por diante.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "25_351639_Binômio de Newton II.pdf",
+  "coletado_em": "2026-09-23T21:05:09"
+}

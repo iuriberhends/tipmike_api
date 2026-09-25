@@ -1,0 +1,746 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 23,
+  "ordem_no_curso": "88.00",
+  "titulo": "Office 365 - PowerPoint IV",
+  "codigo_aula": "277129",
+  "video_id": "j3/65ghu8Ok=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:23:55",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/j3%2F65ghu8Ok%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405124&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Office 365 - PowerPoint IV\n\n## Formato PDF e compatibilidade\nEstamos de volta ao nosso lindo Office 365 PowerPoint, continuando o nosso material. Acabamos de ver o número 3. Compatibilidade. Agora, número 4: formato PDF. É extremamente importante que você saiba — isso é cobrado em prova — que usando o PowerPoint eu consigo salvar a minha apresentação não só para executar normalmente, mas também salvá-la como PDF. Vou fazer isso aqui também.\n\nComo essa apresentação não foi salva, eu poderia ir direto em Arquivo > Salvar e daria no mesmo caminho. Mas vou por Arquivo > Salvar como > Procurar e, no campo Tipo, ao invés de PPTX, escolher a extensão PDF. Tem o PDF e também tem o XPS, que é bem menos cobrado. Raramente cai. Acho que vi uma vez ou outra em prova. A Microsoft criou o XPS para competir com o PDF, mas hoje é muito raro. Então, foca em PDF.\n\nAlém de Salvar como, também posso usar Arquivo > Exportar e escolher Criar documento PDF. Como eu disse, a Microsoft colocou isso para competir com o PDF. Ao exportar, vai aparecer “Criar PDF”, é só clicar.\n\nAinda existe a opção de “imprimir como PDF” (impressora PDF). Então você pode escolher PDF ou XPS. O que interessa é saber os caminhos e, principalmente, o propósito do PDF. PDF significa “formato de documento portátil” (portable document format, em inglês). Para que serve? Compatibilidade. Quando eu abrir uma apresentação do PowerPoint em outro software (por exemplo, LibreOffice), pode haver perda de formatação. Para evitar isso e manter o formato sempre igual, eu salvo como PDF.\n\nAlgumas pessoas pensam que PDF é “para não ser editado”. Mito. Existem vários editores de PDF, inclusive gratuitos. O Word do pacote Office, por exemplo, já edita PDF há bastante tempo. O nosso Office 365 vai editar tranquilamente.\n\nA ideia é: pegar uma apresentação, salvar como PDF, e a pessoa poderá abrir em qualquer lugar, mesmo sem o pacote Office instalado, mantendo exatamente a mesma estrutura. Vai “congelar” o layout; não vai perder formatação.\n\nRevisando: onde eu faço? Já mostrei. O que é PDF? Já mostrei. Beleza. No formato PDF, o PowerPoint salva apresentações, mas não é capaz de abrir PDFs nativamente para edição no PowerPoint; para abrir/ler PDF você usa outro software, como o Adobe Reader, o navegador Edge, entre outros milhares leitores/editores que existem por aí. Temos muitas opções.\n\n> 🎯 Dicas de prova: É cobrado que você saiba salvar a apresentação como PDF: Arquivo > Salvar como > Tipo: PDF, ou Arquivo > Exportar > Criar PDF. PDF serve para manter a formatação (compatibilidade). XPS existe, mas cai raramente.\n\n## Correção ortográfica (sublinhados, autocorreção e configurações)\nVamos ao número 5: correção. Como ela é feita? Vou digitar aqui a palavra “ERRADO” em maiúsculas. O PowerPoint sublinhou automaticamente em vermelho. Esse sublinhado vermelho indica um possível erro ortográfico. Não quer dizer que toda palavra sublinhada tem erro; pode ser que a palavra não seja reconhecida pelo PowerPoint. É uma indicação de possível erro.\n\nOnde configuro isso? Arquivo > Opções > Revisão de Texto. Uma das opções marcadas por padrão é “Ignorar palavras em MAIÚSCULAS”. Nesse caso, se estivesse habilitada, “ERRADO” (em maiúsculas) não seria indicada como possível erro ortográfico. Eu já desmarquei essa opção, então ele passa a indicar.\n\nAinda em Revisão de Texto, temos “Opções de Autocorreção”. Importante você ter essa noção: ele corrige automaticamente erros comuns. Por exemplo, trocar “teh” por “the” (analogia), ou coisas como trocar acentuação comum que você erra por hábito. A autocorreção ajusta automaticamente vários erros frequentes de digitação e acentuação.\n\nTambém existem opções para verificação ortográfica e gramatical, como ocultar erros de ortografia e gramática para que não apareçam as marcações. E é importante ressaltar: essas indicações de erro aparecem no modo de edição. Em modo de apresentação, não aparecem. Então não vai ficar “feio” durante a apresentação.\n\nVamos cometer outros erros aqui: por exemplo, “subir para cima” (pleonasmo) e um erro de concordância. Você deve saber que, no Office 365 PowerPoint, diferente do Word (editor de textos), a indicação de erros gramaticais pode não aparecer da mesma forma. Se eu for em Revisão e clicar Verificação Ortográfica, ele vai checar e propor alterações para ortografia.\n\nO ponto central aqui: o PowerPoint não faz correção gramatical completa; o foco é correção ortográfica. Grava isso: ele não faz correção gramatical, apenas ortográfica. Então, em material de prova, anota:\n\n> 🎯 Dicas de prova: Correção ortográfica: sublinhado vermelho. Correção gramatical: não é feita no PowerPoint.\n\nVocê pode até listar tipos de erros para lembrar: possíveis erros ortográficos recebem sublinhado vermelho; erros gramaticais não são corrigidos no PowerPoint.\n\n## Área de transferência: itens armazenados\nNúmero 6: área de transferência. A afirmação “armazena somente” é muito restritiva. Por padrão, quando você copia algo (por exemplo, a palavra “eles”), fica um item na área de transferência. Então, por padrão, temos apenas um item.\n\nO que posso fazer? Vá em Guia Página Inicial > Grupo Área de Transferência e clique no iniciador (o pequeno botão no canto do grupo) para abrir o painel da área de transferência. A partir daí, cada cópia que eu fizer vai sendo armazenada no painel, até 24 itens. Se eu copiar de outro local (web, por exemplo), ele mostra o ícone indicando a origem. Então conseguimos armazenar até 24 itens quando a área de transferência do Office está ativada.\n\nNo material, preencha: “Armazena somente 1 item por padrão”. Observação: “É possível armazenar até 24 itens ativando a Área de Transferência do Office”. Onde ativa? Página Inicial > Área de Transferência > Iniciador do grupo.\n\n> 🎯 Dicas de prova: Por padrão, 1 item. Com a Área de Transferência do Office ativada, até 24 itens.\n\n## Compatibilidade com sistema operacional\nNúmero 7: compatibilidade com sistema operacional. O PowerPoint é compatível com Windows. Existe versão para Mac também. Em prova, quase não cobram Mac; geralmente focam no Windows. E, por padrão, não é compatível com Linux. Sempre tem jeitos alternativos (camadas, soluções adaptadas), mas o que interessa para prova: compatível com Windows; não é compatível com Linux por padrão.\n\n> 🎯 Dicas de prova: Compatível com Windows. Existe para Mac. Não é compatível com Linux por padrão.\n\n## Seleção de texto: mouse e teclado\nVou criar um texto para demonstrar seleção no PowerPoint. Aumentei o zoom e ajustei o texto na caixa de texto para visualização.\n\n- Clique simples: posiciona o cursor dentro da palavra (você vê a “bolinha amarela” de referência do cursor). Um clique posiciona.\n- Duplo clique: seleciona a palavra.\n- Triplo clique: seleciona o parágrafo.\n\nAgora, seleção com teclado usando Shift + setas. Posiciono o cursor e:\n- Shift + Seta para a direita/esquerda: a cada clique, seleciona um caractere naquela direção.\n- Shift + Seta para cima/baixo: estende a seleção até a linha acima/abaixo.\n\nEle sempre seleciona a partir da posição inicial do cursor, na direção que você pressiona.\n\nShift + End: leva a seleção do cursor até o final da linha. Então, Shift + End estende até o fim da linha.\n\nShift + Home: estende a seleção do cursor até o início da linha. Resumindo: End vai ao fim da linha, Home vai ao início, sempre a partir da posição do cursor.\n\nCtrl + Shift + End: seleciona do cursor até o final do texto dentro daquela caixa de texto. Cuidado: no PowerPoint trabalhamos muito com caixas de texto. Se houver duas caixas, o Ctrl + Shift + End atua apenas na caixa onde está o cursor.\n\nPara ficar claro: o texto de cima pode estar em outra caixa. Quando a caixa está selecionada, você vê as bordas. A seleção com Ctrl + Shift + End é do ponto atual até o fim do texto daquela caixa. Se cair na prova algo envolvendo múltiplas caixas, lembre desse detalhe.\n\nConsequentemente, Ctrl + Shift + Home é o contrário: seleciona do ponto atual até o início do texto daquela caixa. Pode haver mais de um parágrafo dentro da caixa, sem problema.\n\nAgora, Shift + clique com o mouse: muito usado no Windows. Eu clico no ponto inicial e, mantendo Shift, clico no ponto final desejado. Ele seleciona a partir da posição inicial do cursor até a posição onde eu clico. Posso fazer de baixo para cima ou de cima para baixo, determinando exatamente onde começa e onde termina.\n\nCom Ctrl + clique (seleção múltipla), posso selecionar palavras ou trechos aleatoriamente: selecionar pedaços em diferentes pontos, inclusive em outra caixa de texto, mantendo Ctrl e clicando para adicionar blocos à seleção.\n\n> 🎯 Dicas de prova:  \n> - Clique simples: posiciona.  \n> - Duplo clique: seleciona palavra.  \n> - Triplo clique: seleciona parágrafo.  \n> - Shift + setas: estende por caractere/linha.  \n> - Shift + End/Home: até fim/início da linha.  \n> - Ctrl + Shift + End/Home: até fim/início do texto da caixa.  \n> - Shift + clique: seleciona do ponto A ao ponto B.  \n> - Ctrl + clique: seleção múltipla de trechos.\n\n## Observações sobre foco de estudo\nUma dica geral: algumas funcionalidades e atalhos caem mais que outras. O passeio que fizemos pelos recursos gerais do PowerPoint costuma ser muito cobrado. Certos detalhes caem menos, mas podem aparecer. Não estude apenas o que “cai mais”, porque sempre há risco de aparecer algo fora do comum. Porém, dá para perceber tendências: o que a banca cobra toda prova, vale enfatizar.\n\n## Teclas de atalho: Novo e Abrir\nSeparei algumas teclas de atalho do menu Arquivo.\n\n- Ctrl + N: abre uma nova apresentação (novo documento). Se cair em prova como “abre um novo documento”, está ok.\n- Arquivo > Novo faz a mesma coisa (a função Novo pode estar também na Barra de Ferramentas de Acesso Rápido, se você adicionar).\n- Ctrl + O (ou F12, dependendo da configuração da banca/versão para Abrir): abre uma apresentação que já está salva (um arquivo existente). Aqui, “Abrir” é acessar um arquivo já existente.\n\nFechamos esse bloco por aqui. Já já damos continuidade à nossa união do PowerPoint 365. Até daqui a pouco.",
+  "transcricao_meta": {
+    "title": "Office 365 - PowerPoint IV",
+    "subject": "Conhecimentos de Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30048,
+    "createdAt": "2026-02-04T19:49:56.011Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: exportação para PDF/XPS no PowerPoint, correção ortográfica, Área de Transferência, seleção de texto (mouse/teclado) e atalhos de menu Arquivo.\nPrincipais pontos: \n- Por que e como salvar em PDF/XPS; mito sobre “PDF não editável”.\n- Correção ortográfica (sublinhado vermelho) e configurações-chave.\n- Área de Transferência: 1 item vs 24 itens quando ativada.\n- Seleção eficiente de texto (cliques e atalhos) e diferenças entre linha, parágrafo e caixa de texto.\n\n## 1. Base / Conceitos Fundamentais\n- **PowerPoint (Office 365)**: editor de apresentações do pacote Office.\n- **PDF**: formato portátil para preservar layout/formatos ao compartilhar. Lido por “Adobe Reader”, “navegador Edge” e outros.\n- **XPS**: formato alternativo ao PDF, pouco utilizado.\n- **Correção ortográfica**: indica possíveis erros com sublinhado vermelho; não realiza correção gramatical.\n- **Área de Transferência**: guarda itens copiados/recortados. Padrão: 1 item; painel ativado: até vinte e quatro itens.\n- **Compatibilidade**: disponível para Windows e Mac; não é por padrão compatível com Linux.\n\n## 2. Como Funciona / Distinções\n- PDF vs XPS:\n  - **PDF**: padrão de mercado, alta compatibilidade; recomendado em provas.\n  - **XPS**: alternativa histórica, raramente cobrada.\n- Verificação:\n  - **Ortográfica**: sublinhado vermelho para possíveis erros.\n  - **Gramatical**: não é feita no PowerPoint.\n- Seleção por extensão:\n  - **Linha**: Shift + Home/End.\n  - **Parágrafo**: triplo clique.\n  - **Caixa de texto**: Ctrl + Shift + Home/End (limites do texto da caixa ativa).\n- Área de Transferência:\n  - **Sem painel**: armazena só o último item.\n  - **Com painel ativado**: até 24 itens, com origem visível.\n\n> Dica de Prova\n> - “PDF mantém formatação” é a resposta-padrão para compatibilidade. \n> - “PDF não editável” é mito: há editores, inclusive no pacote Office.\n\n## 3. Aplicação Prática / Técnicas\n- Salvar/Exportar como PDF:\n  - Arquivo > Salvar como > Tipo > PDF ou XPS.\n  - Arquivo > Exportar > Criar um documento PDF.\n  - Arquivo > Imprimir > Impressora PDF.\n- Configurar correção:\n  - Arquivo > Opções > Revisão de texto:\n    - Marcar/desmarcar “Ignorar palavras maiúsculas”.\n    - Ajustar “Opções de Autocorreção”.\n  - Revisão > Verificar ortografia para revisar toda a apresentação.\n- Área de Transferência (24 itens):\n  - Página Inicial > Área de Transferência > abrir painel.\n  - Copiar/recortar para popular até vinte e quatro itens.\n- Seleção com mouse:\n  - Clique simples: posiciona o cursor.\n  - Duplo clique: seleciona a palavra.\n  - Triplo clique: seleciona o parágrafo.\n- Seleção com teclado:\n  - Shift + setas: estende seleção (direita/esquerda: 1 carácter; cima/baixo: até linha adjacente).\n  - Shift + End/Home: até fim/início da linha.\n  - Ctrl + Shift + End/Home: até fim/início do texto na caixa ativa.\n  - Shift + clique: do cursor ao ponto clicado (contíguo).\n  - Ctrl + clique: seleção não contígua (palavras/trechos separados).\n- Atalhos do menu Arquivo:\n  - Ctrl + N: Novo (abre nova apresentação).\n  - Ctrl + O ou F12: Abrir (busca arquivo existente).\n\n> Dica de Prova\n> - “Ignorar palavras maiúsculas” ativa por padrão: desmarque para verificar títulos em MAIÚSCULAS.\n\n## 4. Exemplos e Casos Resolvidos\n- Caso 1: Enviar slides por e-mail sem “quebrar” layout.\n  - Solução: Arquivo > Exportar > Criar um documento PDF. Resultado: mantém fontes/layout ao abrir em “Adobe Reader” ou “navegador Edge”.\n- Caso 2: Títulos em CAIXA ALTA não mostram erro.\n  - Solução: Arquivo > Opções > Revisão de texto > desmarcar “Ignorar palavras maiúsculas”. Rodar Revisão > Verificar ortografia.\n- Caso 3: Preciso colar várias figuras/textos alternando entre slides.\n  - Solução: Página Inicial > Área de Transferência > abrir painel. Copiar até vinte e quatro itens e colar conforme necessário.\n- Caso 4: Selecionar rapidamente do cursor até o fim do texto da caixa.\n  - Solução: Ctrl + Shift + End.\n- Caso 5: Selecionar rapidamente o parágrafo inteiro.\n  - Solução: Triplo clique sobre qualquer palavra do parágrafo.\n\n## 5. Pegadinhas e Erros Comuns\n- “PDF não é editável”: falso. Existem vários editores (inclusive no pacote Office).\n- Confundir verificação:\n  - Sublinhado vermelho = possível erro ortográfico (não certeza).\n  - Correção gramatical: não é feita pelo PowerPoint.\n- “Ignorar palavras maiúsculas”:\n  - Padrão marcado: títulos em MAIÚSCULAS não mostram sublinhado. Desmarque para verificar.\n- Área de Transferência:\n  - Sem painel: só 1 item. Para até vinte e quatro itens, é obrigatório abrir/ativar o painel em Página Inicial > Área de Transferência.\n- Seleção:\n  - Shift + Home/End afeta apenas a linha atual (não o parágrafo).\n  - Ctrl + Shift + Home/End limita-se à caixa de texto ativa, não ao slide inteiro.\n  - Ctrl + clique é necessário para seleção não contígua; Shift + clique é sempre contíguo.\n- XPS:\n  - Cai pouco; se aparecer, responde como alternativa ao PDF para preservação de layout.\n- Compatibilidade:\n  - “Por padrão compatível”: Windows e Mac. Não marque Linux.\n\n> Dica de Prova\n> - Perguntas típicas: “Quantos itens a Área de Transferência guarda?” Resposta: 1 por padrão; até 24 ao ativar o painel.\n> - “Atalho para novo vs abrir”: Ctrl + N (Novo); Ctrl + O ou F12 (Abrir).\n> - “Seleção rápida do parágrafo”: triplo clique.\n> - “Seleção até o fim do texto da caixa”: Ctrl + Shift + End.",
+  "resumo_bolso": "# Office 365 - PowerPoint IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **PDF**: formato portátil para **preservar layout/formatos ao compartilhar**; lido por **Adobe Reader**, **navegador Edge** e outros.\n* **XPS**: formato **alternativo ao PDF**, **pouco utilizado**.\n* **“PDF não editável”**: mito; **existem editores**, inclusive **no pacote Office**.\n* **Correção ortográfica no PowerPoint**: indica **possíveis erros** com **sublinhado vermelho**; **não realiza correção gramatical**.\n* **Área de Transferência**: guarda itens copiados/recortados; **1 item por padrão**; com painel ativado, **até 24 itens**.\n* **Compatibilidade PowerPoint**: disponível **para Windows e Mac**; **não é por padrão compatível com Linux**.\n* **Seleção de texto**:\n  * **Triplo clique**: seleciona o **parágrafo**.\n  * **Shift + Home/End**: seleciona até **início/fim da linha atual**.\n  * **Ctrl + Shift + Home/End**: seleciona até **início/fim do texto da caixa ativa**.\n* **Atalhos de menu Arquivo**:\n  * **Ctrl + N**: **Novo** (nova apresentação).\n  * **Ctrl + O** ou **F12**: **Abrir** apresentação existente.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### PDF vs XPS\n\n| Aspecto              | PDF                                                | XPS                                      |\n|----------------------|----------------------------------------------------|------------------------------------------|\n| Uso em provas        | Padrão de mercado, **alta compatibilidade**       | Alternativa histórica, **raramente cobrada** |\n| Finalidade           | Preservar layout/formatos ao compartilhar         | Alternativa ao PDF para preservação de layout |\n| Cobrança em concurso | Muito associado à resposta-padrão em questões     | Citado como **alternativa** ao PDF       |\n\n---\n\n### Verificação Ortográfica vs Gramatical\n\n| Aspecto          | Ortográfica (PowerPoint)                              | Gramatical (PowerPoint)          |\n|------------------|-------------------------------------------------------|----------------------------------|\n| O que faz        | Sublinha em **vermelho** possíveis erros ortográficos | **Não é realizada**              |\n| Natureza         | “Possível erro”, não certeza absoluta                 | Inexistente no PowerPoint        |\n\n---\n\n### Área de Transferência: Padrão vs Painel\n\n| Aspecto              | Sem painel aberto                      | Com painel aberto                                  |\n|----------------------|----------------------------------------|----------------------------------------------------|\n| Capacidade           | **1 item** (último copiado/recortado) | **Até 24 itens**                                   |\n| Visibilidade         | Não mostra lista                       | Lista com **origem visível** de cada item         |\n| Como ativar          | —                                      | Página Inicial > **Área de Transferência** > abrir painel |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Exportar/Salvar como PDF/XPS**\n\n* **Aplicação**: quando a questão falar em **manter formatação/layout ao compartilhar/imprimir**.\n* **Caminhos**:\n  * Arquivo > **Salvar como** > Tipo > **PDF** ou **XPS**.\n  * Arquivo > **Exportar** > **Criar um documento PDF**.\n  * Arquivo > **Imprimir** > **Impressora PDF**.\n* **Exemplo**: enviar slides por e-mail sem “quebrar” layout → Arquivo > Exportar > Criar um documento PDF; abre corretamente em Adobe Reader ou navegador Edge.\n\n---\n\n**2. Correção Ortográfica – Configurações-chave**\n\n* **Aplicação**: revisar ortografia de toda a apresentação.\n* **Caminho**:\n  * Arquivo > **Opções** > **Revisão de texto**:\n    * Marcar/desmarcar **“Ignorar palavras maiúsculas”**.\n    * Ajustar **Opções de Autocorreção**.\n  * Guia **Revisão** > **Verificar ortografia**.\n* **Exemplo**: títulos em CAIXA ALTA não mostram erro → desmarcar “Ignorar palavras maiúsculas” e rodar Revisão > Verificar ortografia.\n\n---\n\n**3. Área de Transferência – até 24 itens**\n\n* **Aplicação**: quando a questão falar em **armazenar vários itens copiados**.\n* **Regra**:\n  * **Sem painel**: armazena **só o último item**.\n  * **Com painel ativado**: armazena **até 24 itens**, com origem visível.\n* **Caminho**: Página Inicial > **Área de Transferência** > abrir painel.\n* **Exemplo**: copiar várias figuras/textos e colar alternadamente entre slides → abrir o painel e popular até vinte e quatro itens.\n\n---\n\n**4. Seleção com Mouse**\n\n* **Aplicação**: questões sobre “cliques” para selecionar.\n* **Regras**:\n  * **Clique simples**: posiciona o cursor.\n  * **Duplo clique**: seleciona a **palavra**.\n  * **Triplo clique**: seleciona o **parágrafo**.\n* **Exemplo**: “selecionar rapidamente o parágrafo inteiro” → **triplo clique** sobre qualquer palavra do parágrafo.\n\n---\n\n**5. Seleção com Teclado (linha, parágrafo, caixa de texto)**\n\n* **Movimento incremental**:\n  * **Shift + setas**: estende a seleção (direita/esquerda: 1 carácter; cima/baixo: até a linha adjacente).\n* **Linha**:\n  * **Shift + End**: do cursor até o **fim da linha**.\n  * **Shift + Home**: do cursor até o **início da linha**.\n* **Caixa de texto (texto da caixa ativa)**:\n  * **Ctrl + Shift + End**: do cursor até o **fim do texto da caixa ativa**.\n  * **Ctrl + Shift + Home**: do cursor até o **início do texto da caixa ativa**.\n* **Seleção contígua vs não contígua**:\n  * **Shift + clique**: seleção **contígua** do cursor ao ponto clicado.\n  * **Ctrl + clique**: seleção **não contígua** (palavras/trechos separados).\n* **Exemplo**: “selecionar rapidamente do cursor até o fim do texto da caixa” → **Ctrl + Shift + End**.\n\n---\n\n**6. Atalhos do Menu Arquivo**\n\n* **Ctrl + N**: **Novo** (abre nova apresentação).\n* **Ctrl + O** ou **F12**: **Abrir** (busca arquivo existente).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **“PDF não é editável”**: falso. Existem vários editores de PDF, **inclusive no pacote Office**.\n2. **Confundir verificação ortográfica com gramatical**: sublinhado vermelho indica **possível erro ortográfico**; o PowerPoint **não faz correção gramatical**.\n3. **“Ignorar palavras maiúsculas”**: vem **marcado por padrão**; títulos em MAIÚSCULAS podem não mostrar sublinhado até você desmarcar essa opção.\n4. **Área de Transferência**: sem painel, guarda **só 1 item**; para **até 24 itens**, é obrigatório **abrir/ativar o painel** em Página Inicial > Área de Transferência.\n5. **Seleção com teclado**:  \n   * **Shift + Home/End** afeta **apenas a linha atual**, não o parágrafo.  \n   * **Ctrl + Shift + Home/End** limita-se ao **texto da caixa ativa**, não ao slide inteiro.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **PDF** de **XPS** (PDF = padrão de mercado; XPS = alternativa pouco usada)?\n* Lembrei que “**PDF não editável**” é mito e que há editores **inclusive no Office**?\n* Sei que o PowerPoint faz **apenas verificação ortográfica** (sublinhado vermelho), **sem correção gramatical**?\n* Fixei que a **Área de Transferência** guarda **1 item por padrão** e **até 24** ao **ativar o painel**?\n* Sei configurar:\n  * Arquivo > **Opções > Revisão de texto** (incluindo **“Ignorar palavras maiúsculas”** e **Opções de Autocorreção**)?\n  * Guia **Revisão > Verificar ortografia** para revisar toda a apresentação?\n* Dominei a **seleção de texto**:\n  * **Triplo clique** = parágrafo;\n  * **Shift + Home/End** = até início/fim da **linha atual**;\n  * **Ctrl + Shift + Home/End** = até início/fim do **texto da caixa ativa**;\n  * **Shift + setas**, **Shift + clique** (contígua) e **Ctrl + clique** (não contígua)?\n* Memorizei os atalhos:\n  * **Ctrl + N** = Novo;\n  * **Ctrl + O** ou **F12** = Abrir?",
+  "mapa_mental": "# 💻 PowerPoint 365 – PowerPoint IV\n## 📄 PDF e XPS\n### 💡 Conceitos PDF/XPS\n- PDF preserva formatação\n- PDF padrão mercado\n- XPS formato alternativo\n- XPS pouco cobrado\n- Compatível Windows Mac\n### 🔄 Formas de Exportar\n- Arquivo Salvar como PDF\n- Arquivo Exportar PDF\n- Arquivo Imprimir PDF\n- Preserva layout fontes\n- Uso para compartilhamento\n### ⚠️ Pontos de Prova\n- PDF editável sim\n- PDF não editável mito\n- XPS alternativa histórica\n- Foco resposta PDF\n- Preservação formatação chave\n\n## 📝 Correção Ortográfica\n### 💡 Funcionamento Básico\n- Sublinhado vermelho erro\n- Verifica ortografia apenas\n- Sem correção gramatical\n- Atuação por palavra\n- Integração guia Revisão\n### ⚙️ Configurações Principais\n- Arquivo Opções Revisão\n- Ignorar palavras maiúsculas\n- Opções Autocorreção\n- Verificar ortografia apresentação\n- Ajustes idioma revisão\n### ⚠️ Itens de Prova\n- Ignorar maiúsculas padrão\n- Títulos caixa alta ignorados\n- Necessário desmarcar opção\n- Sublinhado possível erro\n- Não confundir gramática\n\n## 📋 Área de Transferência\n### 💡 Conceito e Limites\n- Armazena itens copiados\n- Padrão apenas um item\n- Painel até 24 itens\n- Mostra origem conteúdo\n- Reutilização múltipla\n### ⚙️ Uso do Painel\n- Página Inicial Área Transferência\n- Abrir painel lateral\n- Copiar popular lista\n- Colar itens selecionados\n- Limpar itens painel\n### ⚠️ Questões Frequentes\n- Um item sem painel\n- Vinte e quatro com painel\n- Painel obrigatório múltiplos\n- Diferença copiar recortar\n- Atalho colar padrão\n\n## ⌨️ Seleção e Atalhos\n### 🖱️ Seleção Mouse\n- Clique posiciona cursor\n- Duplo clique palavra\n- Triplo clique parágrafo\n- Seleção visual rápida\n- Combinação com teclado\n### ⌨️ Seleção Teclado\n- Shift setas caracteres\n- Shift Home fim linha\n- Shift End início linha\n- Ctrl Shift Home caixa início\n- Ctrl Shift End caixa fim\n### 🎯 Atalhos Menu Arquivo\n- Ctrl N novo arquivo\n- Ctrl O abrir arquivo\n- F12 abrir arquivo\n- Atalhos cobrados provas\n- Foco memorização rápida",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Formato PDF",
+      "description": "Formato PDF — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual formato de arquivo preserva a estrutura visual de uma apresentação?",
+          "back": "PDF",
+          "hint": "Formato de intercâmbio universal",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "O que significa a sigla PDF?",
+          "back": "Formato de documento portátil",
+          "hint": "Tradução literal da sigla",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como salvar uma apresentação no formato PDF pelo comando Salvar como?",
+          "back": "Ir em Arquivo, Salvar Como, procurar e escolher a extensão PDF no tipo",
+          "hint": "Caminho de menu padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "procedimentos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual recurso permite editar arquivos PDF?",
+          "back": "Office",
+          "hint": "Ecossistema de produtividade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "edicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual sistema operacional não é compatível por padrão com o PowerPoint?",
+          "back": "Linux",
+          "hint": "Sistema de código aberto",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "compatibilidade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Revisão de Texto",
+      "description": "Revisão de Texto — 5 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "O que indica o sublinhado vermelho em uma palavra no PowerPoint?",
+          "back": "Possível erro ortográfico",
+          "hint": "Indicador visual de revisão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "revisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual opção vem ativada por padrão para palavras escritas em maiúsculas?",
+          "back": "Ignorar palavras maiúsculas",
+          "hint": "Configuração de verificação",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "revisao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Que recurso substitui automaticamente erros comuns durante a digitação?",
+          "back": "Autocorreção",
+          "hint": "Ferramenta de correção ativa",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "revisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Em qual modo do PowerPoint aparecem as indicações de erros de ortografia?",
+          "back": "Modo de edição",
+          "hint": "Estado de trabalho do arquivo",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual tipo de correção o PowerPoint não realiza?",
+          "back": "Correção gramatical",
+          "hint": "Limitação do motor de texto",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "revisao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Área de Transferência",
+      "description": "Área de Transferência — 3 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Quantos itens a área de transferência armazena por padrão?",
+          "back": "Um item",
+          "hint": "Comportamento padrão do sistema",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "area-transferencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual é o limite de itens da área de transferência quando ativada?",
+          "back": "24 itens",
+          "hint": "Capacidade máxima do recurso",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "area-transferencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Como acessar a área de transferência pela faixa de opções?",
+          "back": "Guia Página Inicial, grupo Área de Transferência",
+          "hint": "Localização na interface",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "area-transferencia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Seleção de Texto",
+      "description": "Seleção de Texto — 7 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "O que um clique simples em uma palavra faz no texto?",
+          "back": "Posiciona o cursor",
+          "hint": "Ação de navegação no texto",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "selecao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "O que o duplo clique em uma palavra seleciona?",
+          "back": "A palavra",
+          "hint": "Ação de seleção de unidade",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "selecao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Como o Shift combinado com uma seta altera a seleção de texto?",
+          "back": "Estende a seleção na direção da seta clicada",
+          "hint": "Modificador de seleção",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "selecao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual atalho estende a seleção até o fim da linha?",
+          "back": "Shift + Fim",
+          "hint": "Atalho de navegação rápida",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual atalho seleciona do cursor até o fim do texto da caixa?",
+          "back": "Ctrl + Shift + Fim",
+          "hint": "Atalho de seleção global",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Como selecionar um trecho contínuo até um ponto específico do texto?",
+          "back": "Shift + Clique",
+          "hint": "Combinação de teclado e mouse",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "selecao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-20",
+          "front": "Como selecionar trechos não contíguos em uma caixa de texto?",
+          "back": "Seleção mais Ctrl",
+          "hint": "Seleção múltipla de partes",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "selecao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Atalhos de Arquivo",
+      "description": "Atalhos de Arquivo — 2 cards",
+      "cards": [
+        {
+          "id": "card-21",
+          "front": "Qual atalho cria uma nova apresentação no PowerPoint?",
+          "back": "Ctrl + O",
+          "hint": "Comando de criação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual atalho abre uma apresentação já salva?",
+          "back": "Ctrl + A ou Ctrl + 12",
+          "hint": "Comando de recuperação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "atalhos"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal finalidade de salvar uma apresentação no formato PDF?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Reduzir significativamente o tamanho do arquivo para facilitar o compartilhamento",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível otimizar arquivos PDF para reduzir seu tamanho, essa não é a principal finalidade do formato. A característica central do PDF é a preservação da formatação e a portabilidade do documento, não primariamente a redução de seu volume."
+        },
+        {
+          "id": "b",
+          "text": "Permitir a execução automática de animações e transições em qualquer dispositivo",
+          "correct": false,
+          "explanation": "Incorreta. O formato PDF é predominantemente estático e não foi projetado para suportar a execução de animações e transições interativas presentes em apresentações dinâmicas como as do PowerPoint. Para manter esses elementos, a apresentação geralmente precisaria ser salva em um formato de vídeo ou no formato original do software de criação (como PPTX)."
+        },
+        {
+          "id": "c",
+          "text": "Manter a formatação original da apresentação independentemente do software utilizado para visualização",
+          "correct": true,
+          "explanation": "Correta. A principal finalidade do PDF (Portable Document Format) é garantir que a apresentação mantenha sua formatação, fontes e layout originais, independentemente do software, hardware ou sistema operacional utilizado para sua visualização. Isso assegura que o documento será exibido exatamente como foi criado, sem distorções ou perdas de estrutura."
+        },
+        {
+          "id": "d",
+          "text": "Impedir completamente a edição do documento por qualquer software",
+          "correct": false,
+          "explanation": "Incorreta. Embora o formato PDF seja frequentemente utilizado para preservar a integridade visual de um documento, ele não impede completamente a edição. Existem diversos softwares, muitos deles gratuitos, que permitem a edição de arquivos PDF, contrariando a ideia de que o formato é um bloqueio absoluto contra alterações."
+        }
+      ],
+      "explanation": "Correta. A principal finalidade do PDF (Portable Document Format) é garantir que a apresentação mantenha sua formatação, fontes e layout originais, independentemente do software, hardware ou sistema operacional utilizado para sua visualização. Isso assegura que o documento será exibido exatamente como foi criado, sem distorções ou perdas de estrutura.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No PowerPoint, qual é a indicação visual padrão para possíveis erros ortográficos durante a edição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sublinhado verde ondulado sob as palavras com possíveis erros",
+          "correct": false,
+          "explanation": "Incorreta. O sublinhado verde ondulado é comumente utilizado em processadores de texto, como o Microsoft Word, para indicar possíveis erros gramaticais ou de estilo. Para erros ortográficos no PowerPoint, a indicação visual padrão é outra."
+        },
+        {
+          "id": "b",
+          "text": "Sublinhado vermelho sob as palavras com possíveis erros",
+          "correct": true,
+          "explanation": "Correta. No Microsoft PowerPoint, a indicação visual padrão para um possível erro ortográfico é um sublinhado ondulado na cor vermelha sob a palavra. Essa marcação serve como um alerta para o usuário revisar a grafia do termo."
+        },
+        {
+          "id": "c",
+          "text": "Marcação em negrito automático nas palavras com possíveis erros",
+          "correct": false,
+          "explanation": "Incorreta. A aplicação de negrito automático não é um recurso padrão do PowerPoint para indicar erros ortográficos. O negrito é uma formatação de texto que o usuário aplica intencionalmente para dar ênfase a palavras ou frases, e não um indicador de erro."
+        },
+        {
+          "id": "d",
+          "text": "Destaque em amarelo sobre as palavras com possíveis erros",
+          "correct": false,
+          "explanation": "Incorreta. O destaque em amarelo não é a indicação visual padrão para erros ortográficos no PowerPoint. Essa cor é mais frequentemente associada a realces manuais feitos pelo usuário ou a funcionalidades específicas de revisão, e não a marcações automáticas de erros de ortografia."
+        }
+      ],
+      "explanation": "Correta. No Microsoft PowerPoint, a indicação visual padrão para um possível erro ortográfico é um sublinhado ondulado na cor vermelha sob a palavra. Essa marcação serve como um alerta para o usuário revisar a grafia do termo.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quantos itens podem ser armazenados na área de transferência do PowerPoint quando o painel da área de transferência está ativado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "24 itens",
+          "correct": true,
+          "explanation": "Correta. Quando o painel da Área de Transferência do Office é ativado, ele permite armazenar até 24 itens copiados ou recortados. Essa funcionalidade é particularmente útil para copiar múltiplos elementos e colá-los em diferentes locais ou em uma sequência específica."
+        },
+        {
+          "id": "b",
+          "text": "16 itens",
+          "correct": false,
+          "explanation": "Incorreta. A capacidade da Área de Transferência do Office, com o painel ativado, é superior a 16 itens, permitindo armazenar um número maior de elementos para cópia e colagem."
+        },
+        {
+          "id": "c",
+          "text": "32 itens",
+          "correct": false,
+          "explanation": "Incorreta. A capacidade máxima da Área de Transferência do Office, quando o painel está ativado, é de 24 itens, e não 32."
+        },
+        {
+          "id": "d",
+          "text": "12 itens",
+          "correct": false,
+          "explanation": "Incorreta. A Área de Transferência do Office, que é compartilhada entre os aplicativos do pacote como o PowerPoint, tem uma capacidade maior do que 12 itens quando seu painel está ativado."
+        }
+      ],
+      "explanation": "Correta. Quando o painel da Área de Transferência do Office é ativado, ele permite armazenar até 24 itens copiados ou recortados. Essa funcionalidade é particularmente útil para copiar múltiplos elementos e colá-los em diferentes locais ou em uma sequência específica.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual sistema operacional NÃO é compatível por padrão com o Microsoft PowerPoint?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Windows 11",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft PowerPoint é totalmente compatível com o Windows 11, a versão mais recente do sistema operacional da Microsoft, funcionando sem problemas nesse ambiente."
+        },
+        {
+          "id": "b",
+          "text": "Windows 10",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft PowerPoint é plenamente compatível com o Windows 10, sendo um dos sistemas operacionais primários para os quais o software é desenvolvido e otimizado."
+        },
+        {
+          "id": "c",
+          "text": "macOS",
+          "correct": false,
+          "explanation": "Incorreta. A Microsoft oferece uma versão completa e oficial do PowerPoint para o sistema operacional macOS da Apple, garantindo compatibilidade e funcionalidade para os usuários de computadores Mac."
+        },
+        {
+          "id": "d",
+          "text": "Linux",
+          "correct": true,
+          "explanation": "Correta. Por padrão, o Microsoft PowerPoint (e o pacote Office em geral) não possui uma versão nativa e oficialmente suportada para o sistema operacional Linux. Embora seja possível executá-lo por meio de máquinas virtuais ou camadas de compatibilidade, ele não é diretamente compatível com o Linux de forma nativa."
+        }
+      ],
+      "explanation": "Correta. Por padrão, o Microsoft PowerPoint (e o pacote Office em geral) não possui uma versão nativa e oficialmente suportada para o sistema operacional Linux. Embora seja possível executá-lo por meio de máquinas virtuais ou camadas de compatibilidade, ele não é diretamente compatível com o Linux de forma nativa.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o resultado de um duplo clique sobre uma palavra em uma caixa de texto do PowerPoint?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Abre o menu de formatação de texto",
+          "correct": false,
+          "explanation": "Incorreta. Um duplo clique sobre uma palavra não abre automaticamente um menu de formatação de texto. Geralmente, para acessar opções de formatação, o usuário utiliza o menu de contexto (clique com o botão direito do mouse) ou as ferramentas disponíveis na faixa de opções (Ribbon)."
+        },
+        {
+          "id": "b",
+          "text": "Seleciona a palavra inteira",
+          "correct": true,
+          "explanation": "Correta. Em aplicativos de edição de texto, como o PowerPoint, um duplo clique rápido sobre uma palavra tem a função de selecionar essa palavra por completo. Isso facilita a aplicação de formatação, a exclusão ou outras edições específicas na palavra."
+        },
+        {
+          "id": "c",
+          "text": "Posiciona o cursor no início da palavra",
+          "correct": false,
+          "explanation": "Incorreta. Um único clique sobre uma palavra posiciona o cursor no local clicado, permitindo iniciar a digitação a partir daquele ponto. Para selecionar a palavra inteira, é necessária uma ação diferente."
+        },
+        {
+          "id": "d",
+          "text": "Seleciona o parágrafo completo",
+          "correct": false,
+          "explanation": "Incorreta. A ação de selecionar o parágrafo completo é realizada com um triplo clique rápido sobre qualquer palavra dentro desse parágrafo, e não com um duplo clique."
+        }
+      ],
+      "explanation": "Correta. Em aplicativos de edição de texto, como o PowerPoint, um duplo clique rápido sobre uma palavra tem a função de selecionar essa palavra por completo. Isso facilita a aplicação de formatação, a exclusão ou outras edições específicas na palavra.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual combinação de teclas abre uma nova apresentação em branco no PowerPoint?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + N",
+          "correct": true,
+          "explanation": "Correta. Em programas do pacote Microsoft Office, como o PowerPoint, a combinação de teclas \"Ctrl + N\" é o atalho padrão para criar um novo documento, apresentação, planilha ou arquivo em branco. A letra 'N' remete a 'Novo'."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + P",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas \"Ctrl + P\" é o atalho padrão para abrir a caixa de diálogo de impressão. A letra 'P' remete a 'Imprimir'."
+        },
+        {
+          "id": "c",
+          "text": "Ctrl + O",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas \"Ctrl + O\" é o atalho padrão para abrir um arquivo existente. A letra 'O' remete a 'Abrir'."
+        },
+        {
+          "id": "d",
+          "text": "Ctrl + A",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas \"Ctrl + A\" é universalmente utilizada para selecionar todo o conteúdo de um documento, slide ou caixa de texto, não para criar um novo."
+        }
+      ],
+      "explanation": "Correta. Em programas do pacote Microsoft Office, como o PowerPoint, a combinação de teclas \"Ctrl + N\" é o atalho padrão para criar um novo documento, apresentação, planilha ou arquivo em branco. A letra 'N' remete a 'Novo'.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual tipo de correção o PowerPoint NÃO realiza automaticamente durante a digitação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Correção automática de maiúsculas no início de frases",
+          "correct": false,
+          "explanation": "Incorreta. A autocorreção do PowerPoint inclui, por padrão, a correção automática de maiúsculas no início de frases, garantindo que a primeira letra de uma nova frase seja capitalizada."
+        },
+        {
+          "id": "b",
+          "text": "Correção de erros ortográficos comuns",
+          "correct": false,
+          "explanation": "Incorreta. O PowerPoint, como outros programas do Microsoft Office, possui um verificador ortográfico que sublinha palavras com erros de grafia (ortográficos) em vermelho, indicando um possível erro e sugerindo correções."
+        },
+        {
+          "id": "c",
+          "text": "Correção gramatical de concordância",
+          "correct": true,
+          "explanation": "Correta. O PowerPoint, por padrão, não realiza a correção gramatical de concordância. Ele foca principalmente na correção ortográfica, ou seja, na grafia correta das palavras, mas não analisa a estrutura da frase para identificar e corrigir problemas de concordância verbal ou nominal, por exemplo."
+        },
+        {
+          "id": "d",
+          "text": "Substituição de palavras com grafia incorreta por sugestões corretas",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade de autocorreção do PowerPoint substitui automaticamente palavras com grafia incorreta ou padrões comuns de digitação por sugestões corretas, como 'teh' por 'the' ou 'vc' por 'você', se configurado."
+        }
+      ],
+      "explanation": "Correta. O PowerPoint, por padrão, não realiza a correção gramatical de concordância. Ele foca principalmente na correção ortográfica, ou seja, na grafia correta das palavras, mas não analisa a estrutura da frase para identificar e corrigir problemas de concordância verbal ou nominal, por exemplo.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a principal característica da seleção de texto utilizando Shift + Clique?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Estende a seleção da posição inicial do cursor até o ponto onde se clica",
+          "correct": true,
+          "explanation": "Correta. A principal característica de \"Shift + Clique\" é estender a seleção de texto. Primeiro, posiciona-se o cursor em um ponto inicial. Em seguida, ao manter a tecla \"Shift\" pressionada e clicar em outro ponto do texto, todo o conteúdo entre o ponto inicial do cursor e o ponto do clique será selecionado."
+        },
+        {
+          "id": "b",
+          "text": "Seleciona automaticamente palavras completas entre dois pontos",
+          "correct": false,
+          "explanation": "Incorreta. Selecionar automaticamente palavras completas é feito com um duplo clique sobre a palavra. A combinação \"Shift + Clique\" tem outra finalidade."
+        },
+        {
+          "id": "c",
+          "text": "Seleciona todo o conteúdo da caixa de texto independentemente da posição do clique",
+          "correct": false,
+          "explanation": "Incorreta. Selecionar todo o conteúdo de uma caixa de texto, independentemente da posição do clique, é feito com a combinação \"Ctrl + A\" (selecionar tudo) após ativar a caixa de texto, ou com \"Ctrl + Shift + End\" ou \"Ctrl + Shift + Home\" a partir do cursor, dependendo da direção."
+        },
+        {
+          "id": "d",
+          "text": "Permite selecionar múltiplos trechos não contíguos do texto",
+          "correct": false,
+          "explanation": "Incorreta. A seleção de múltiplos trechos não contíguos (separados) é geralmente realizada mantendo a tecla \"Ctrl\" pressionada enquanto se clica ou arrasta o mouse sobre os trechos desejados."
+        }
+      ],
+      "explanation": "Correta. A principal característica de \"Shift + Clique\" é estender a seleção de texto. Primeiro, posiciona-se o cursor em um ponto inicial. Em seguida, ao manter a tecla \"Shift\" pressionada e clicar em outro ponto do texto, todo o conteúdo entre o ponto inicial do cursor e o ponto do clique será selecionado.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a diferença fundamental entre usar Ctrl + Shift + End e Shift + End em uma caixa de texto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + Shift + End seleciona até o final do slide, enquanto Shift + End seleciona até o final da caixa",
+          "correct": false,
+          "explanation": "Incorreta. Nenhuma das combinações seleciona até o final do slide diretamente. \"Ctrl + Shift + End\" seleciona o conteúdo dentro da caixa de texto, e \"Shift + End\" seleciona até o final da linha."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + Shift + End seleciona até o final da caixa de texto, enquanto Shift + End seleciona até o final da linha",
+          "correct": true,
+          "explanation": "Correta. A combinação \"Ctrl + Shift + End\" seleciona o texto desde a posição atual do cursor até o final de todo o conteúdo da caixa de texto. Já a combinação \"Shift + End\" seleciona o texto desde a posição atual do cursor até o final da linha em que o cursor se encontra."
+        },
+        {
+          "id": "c",
+          "text": "Ambas as combinações produzem o mesmo resultado em caixas de texto",
+          "correct": false,
+          "explanation": "Incorreta. As duas combinações possuem funcionalidades distintas, como explicado, e não produzem o mesmo resultado."
+        },
+        {
+          "id": "d",
+          "text": "Ctrl + Shift + End seleciona até o final do parágrafo, enquanto Shift + End seleciona até o final da linha",
+          "correct": false,
+          "explanation": "Incorreta. Embora \"Shift + End\" selecione até o final da linha, \"Ctrl + Shift + End\" estende a seleção até o final de todo o texto dentro da caixa, e não apenas até o final do parágrafo atual."
+        }
+      ],
+      "explanation": "Correta. A combinação \"Ctrl + Shift + End\" seleciona o texto desde a posição atual do cursor até o final de todo o conteúdo da caixa de texto. Já a combinação \"Shift + End\" seleciona o texto desde a posição atual do cursor até o final da linha em que o cursor se encontra.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando o funcionamento da área de transferência com o painel ativado, qual é a vantagem prática de armazenar múltiplos itens em comparação com o comportamento padrão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Permite copiar itens de diferentes aplicativos simultaneamente sem perda de dados",
+          "correct": false,
+          "explanation": "Incorreta. Embora o painel da área de transferência permita copiar itens de diferentes aplicativos, a principal vantagem não é a capacidade de copiar simultaneamente, mas sim a de gerenciar e reutilizar múltiplos itens copiados em momentos distintos."
+        },
+        {
+          "id": "b",
+          "text": "Reduz o uso de memória RAM ao otimizar o armazenamento temporário",
+          "correct": false,
+          "explanation": "Incorreta. Armazenar múltiplos itens (até 24) na área de transferência geralmente consome mais memória RAM do que armazenar apenas um item, pois mais dados precisam ser mantidos temporariamente. A otimização não está na redução de memória, mas na funcionalidade estendida."
+        },
+        {
+          "id": "c",
+          "text": "Aumenta a velocidade de processamento das operações de copiar e colar",
+          "correct": false,
+          "explanation": "Incorreta. O painel da área de transferência não foi projetado para aumentar a velocidade das operações de copiar e colar, mas sim para oferecer maior flexibilidade e capacidade de gerenciamento dos itens temporariamente armazenados."
+        },
+        {
+          "id": "d",
+          "text": "Permite acessar e colar qualquer um dos últimos 24 itens copiados, não apenas o mais recente",
+          "correct": true,
+          "explanation": "Correta. O painel da área de transferência do Office armazena até 24 itens copiados ou recortados. Ao ativá-lo, o usuário pode visualizar todos esses itens e colar qualquer um deles, independentemente da ordem em que foram copiados, em vez de estar limitado a colar apenas o último item, como ocorre com a área de transferência padrão do sistema operacional."
+        }
+      ],
+      "explanation": "Correta. O painel da área de transferência do Office armazena até 24 itens copiados ou recortados. Ao ativá-lo, o usuário pode visualizar todos esses itens e colar qualquer um deles, independentemente da ordem em que foram copiados, em vez de estar limitado a colar apenas o último item, como ocorre com a área de transferência padrão do sistema operacional.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "23_277129_Office 365 - PowerPoint IV.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:52:53"
+}

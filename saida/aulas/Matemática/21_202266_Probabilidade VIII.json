@@ -1,0 +1,395 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 21,
+  "ordem_no_curso": "83.00",
+  "titulo": "Probabilidade VIII",
+  "codigo_aula": "202266",
+  "video_id": "gFc5lwQPfHs=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:45:22",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/gFc5lwQPfHs%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=7139&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Probabilidade VIII\n\n## Introdução e Contexto da Questão (Empresas e Fiscalização)\nVamos continuar nossa matriz sociológica, parte de probabilidade. Show de bola, vem comigo. Regular isso melhor comigo aqui, para continuar. Meus amados, continuem comigo.\n\nColoquei essa questão porque ela é de 2020, auditor fiscal. Mas não chega a ser tão difícil, dá para perceber pela questão. Mesmo sendo auditor, não tem problema.\n\nOlha só: o município possui duas mil empresas cadastradas, sendo que mil e oitocentas pagam todos os seus tributos em dia. Então nós temos aqui: duas mil empresas; mil e oitocentas pagam todos os impostos e tributos em dia.\n\nA fiscalização tributária vai colocar o nome de todas elas em uma urna e sortear uma primeira empresa para ser fiscalizada, sendo que todas têm a mesma probabilidade de serem escolhidas. A seguir, sem retorno — ou seja, o nome da primeira empresa sorteada não volta para a urna — será associada a segunda empresa para ser fiscalizada. Todas as empresas para mim são as duas mil.\n\nSabendo que mil e oitocentas pagam seus tributos e, de maneira complementar, duzentas não pagam, beleza? Então vamos lá.\n\nNessas condições, a probabilidade de sortear duas empresas para fiscalização, sendo que ambas estão com seus tributos pagos em dia, pode ser calculada pela expressão... Tranquilidade. Nós queremos sortear a primeira empresa e a segunda empresa.\n\nVocê faz uma coisa e depois outra coisa. Eu vou sortear a primeira e vou sortear a segunda. Princípio multiplicativo: você faz uma coisa e depois faz outra.\n\nQual é a pergunta? Nessas condições, qual a probabilidade de sortear duas empresas para fiscalização, sendo que ambas estão com os tributos pagos em dia?\n\nPara a primeira empresa: quantas empresas estão na urna? Todas as duas mil. Quantas servem para a gente? As que estão com os tributos pagos em dia: mil e oitocentas.\n\nPara a segunda empresa: já retiramos uma e não há reposição. Então, do total, agora temos mil novecentas e noventa e nove empresas. E quantas servem para a gente, considerando que a primeira já foi uma que paga? Agora são mil setecentas e noventa e nove.\n\nEntão a expressão é sem reposição, de duas mil empresas: primeiro 1800/2000, depois 1799/1999. Multiplicação: (1800/2000) × (1799/1999). Bem simples, sem nenhuma dificuldade. Evento sucessivo sem reposição. Aquela que eu sorteei não volta para a urna.\n\n## Somar 10, 11 ou 12 no Lançamento de Dois Dados (Introdução aos Dados)\nAgora, acumular 14 no orçamento de dois dados de seis faces... Vou colocar um pouquinho de questões com dados agora, porque aparecem em concursos questões com dados, com cartas, com moedas. É interessante. Existem também em provas de estudantes. Legal para vocês.\n\nOlha só: a questão fala do lançamento de dois dados de seis faces. Por que ele fala “de seis faces”? Porque nós temos os poliedros de Platão. Sabia disso? Nós podemos ter dados tetraedro (4 faces), octaedro (8 faces), icosaedro (20 faces). Em concurso pode aparecer “um dado de quatro faces”. Mas o comum é o de seis faces: 1, 2, 3, 4, 5, 6.\n\nOutra coisa interessante: um dado comum, normal, funciona assim — isso é importante — nas faces opostas a soma é sempre 7. Sabia? Aqui tem 1, do lado oposto 6; 2 oposto a 5; 3 oposto a 4. Ou seja: 1+6=7, 2+5=7, 3+4=7. Só curiosidade, mas guarda isso.\n\n## Probabilidade da Soma ser Maior ou Igual a 10 (Dois Dados)\nQueremos o seguinte: no lançamento de dois dados de seis faces, numerados de 1 a 6, qual é a probabilidade de a soma das faces superiores ser maior ou igual a 10? Você vai lançar dois dados, e a face superior é a que aparece.\n\nPodemos procurar as somas que dão 10, 11, 12. Eu prefiro fazer uma tabela quando estamos começando, porque a pergunta sai num estalar de dedos se a tabela estiver pronta. Demora uns 30 segundos, talvez um minuto a mais, mas você acerta todas.\n\nDois dados de seis faces: liste as faces do primeiro (1 a 6) e as do segundo (1 a 6). Todas as possíveis jogadas são 36. Nas diagonais da tabela, as somas se repetem: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.\n\nO que a questão pede? Soma maior ou igual a 10: ou seja, 10, 11, 12.\n- Soma 10: (4,6), (5,5), (6,4) → 3 resultados\n- Soma 11: (5,6), (6,5) → 2 resultados\n- Soma 12: (6,6) → 1 resultado\n\nTotal favoráveis: 6. Universo: 36. Probabilidade = 6/36 = 1/6. Em porcentagem: 1/6 × 100 = 16,6...%. Aproximadamente 16,6%, maior que 15 e menor que 17.\n\n## Pelo Menos um 6 em Dois Dados\nAgora a minha pergunta: lançando dois dados comuns, qual a probabilidade de aparecer, nas faces superiores, pelo menos um número igual a 6?\n\nVou fazer sem a tabela e depois com a tabela.\n\nSem tabela, raciocinando pelos eventos:\n- Aparece 6 no primeiro e não aparece no segundo: (1/6) × (5/6)\n- Não aparece no primeiro e aparece no segundo: (5/6) × (1/6)\n- Aparece nos dois: (1/6) × (1/6)\n\nSomando: (1/6)(5/6) + (5/6)(1/6) + (1/6)(1/6) = 5/36 + 5/36 + 1/36 = 11/36.\n\nCom a tabela, eu marcaria todas as jogadas que têm pelo menos um 6. São 11 jogadas em 36. Probabilidade 11/36. Eu, sinceramente, montaria a tabela correndo, gastaria um minuto, marcaria as casas com 6 e contaria. Resultado: 11/36. Fica mais visual e reduz erro.\n\n## Comentário sobre Três Dados\nSe fosse com três dados? Aí já complica um pouco mais. Em geral, provas trazem um ou dois dados. Três dados é menos comum, mas pode aparecer. A tabelinha ajuda muito nos de dois dados; com três, a ideia é outra (contagem combinatória das trincas), mas hoje ficamos nos dois dados.\n\n## Dado Viciado x Não Viciado (Conceitos)\nQuestão mais puxada agora. Um dado foi fabricado de forma viciada. O que é um dado não viciado? É quando cada face tem a mesma chance: com 6 faces, cada uma tem probabilidade 1/6. Assim como uma moeda não viciada tem 50% para cara e 50% para coroa. Em probabilidade, a soma das probabilidades dos eventos elementares é 1 (ou 100%).\n\nSe a moeda for viciada e eu disser que P(cara)=1/3, então P(coroa)=2/3, para somar 1. Se P(cara)=1/4, então P(coroa)=3/4. Com dados é a mesma lógica: as faces podem ter probabilidades diferentes, mas a soma de todas é 1. O que diferencia ser viciado ou não é: no não viciado, todas as faces têm a mesma probabilidade; no viciado, não.\n\n## Questão do Dado Viciado (Face 2 em Dobro da Face 1)\nA questão diz: um dado foi fabricado de forma viciada e apresenta irregularidades. Por exemplo, a probabilidade de apresentar como resultado o número 2 é o dobro da probabilidade de apresentar o número 1. Os outros números (3, 4, 5, 6) têm a probabilidade normal do dado não viciado, isto é, 1/6 cada.\n\nVamos denotar:\n- P(3)=P(4)=P(5)=P(6)=1/6\n- P(1)=x\n- P(2)=2x\n\nSabemos que a soma de todas as probabilidades é 1:\nx + 2x + 1/6 + 1/6 + 1/6 + 1/6 = 1\n3x + 4/6 = 1\n3x + 2/3 = 1\n3x = 1/3\nx = 1/9\n\nEntão:\n- P(1)=1/9\n- P(2)=2/9\n- P(3)=P(4)=P(5)=P(6)=1/6\n\nSe a pergunta for, por exemplo, “qual a probabilidade de sair a face 1?”, resposta: 1/9. Se for “qual a probabilidade de sair a face 2?”, 2/9. E assim por diante.\n\nMuito bacana essa questão, 2020, bem comum em concursos. E veja como a teoria ajuda: somar probabilidades a 1, entender dado viciado, etc. Isso é importante quando aparece em prova.\n\n> 🎯 Dicas de prova: Em modelos viciados, defina variáveis para as probabilidades desconhecidas, use as relações dadas (como “o dobro”) e a soma total igual a 1 para fechar o sistema.\n\nPronto. Lançamento de dados, moeda viciada e não viciada, eventos sucessivos sem reposição, tabela de somas para dois dados — tudo dentro do que a gente precisa. Vamos em frente.",
+  "transcricao_meta": {
+    "title": "Probabilidade VIII",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 41506,
+    "createdAt": "2026-02-05T19:15:38.190Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda:\n- Probabilidades com e sem reposição (eventos sucessivos, princípio multiplicativo).\n- Dois dados: contagem por tabela, somas ≥ 10 e “pelo menos um 6”.\n- Probabilidade total = 1, viciado vs não viciado, e modelagem com x.\n\nPrincipais pontos:\n- Ajuste “sem reposição” mexe em numerador e denominador condicionalmente.\n- Dois dados têm 36 resultados equiprováveis; use diagonais para somas.\n- “Pelo menos um” resolve mais rápido por complementar.\n- Em viciadas, complete até 1 e use proporções (kx).\n\n## 1. Base / Conceitos Fundamentais\n- **Probabilidade**: valor entre 0 e 1 (0% a 100%); a soma das probabilidades dos eventos elementares do espaço amostral é **1**.\n- **Princípio multiplicativo**: para eventos sucessivos independentes/condicionais, multiplique as probabilidades de cada etapa (ajustando se houver dependência).\n- **Com reposição vs sem reposição**:\n  - **Com reposição**: o total e as probabilidades permanecem iguais a cada etapa.\n  - **Sem reposição** (“sem retorno”): total diminui; se o primeiro sorteio foi favorável, os favoráveis também diminuem.\n- **Dado não viciado**: 6 faces com probabilidade **1/6** cada.\n- **Moeda não viciada**: 50% cara, 50% coroa.\n- **Viciada (distribuição não uniforme)**: probabilidades podem diferir, mas devem somar **1** e estar entre 0 e 1.\n\n## 2. Como Funciona / Distinções\n- **Reposição**:\n  - Com reposição: P2 = P1 (mesma fração).\n  - Sem reposição: P2 é condicional ao que saiu na 1ª etapa (ajuste numerador/denominador).\n- **Contagem em dois dados (6×6)**:\n  - Total de resultados: **36**.\n  - Somas iguais aparecem em diagonais; distribuições por soma: 2→1, 3→2, 4→3, 5→4, 6→5, 7→6, 8→5, 9→4, 10→3, 11→2, 12→1.\n- **“Pelo menos um”**:\n  - Por casos: cubra todas as possibilidades incluindo a interseção.\n  - Por complementar: mais rápido → 1 − P(“nenhum”).\n- **Viciado vs não viciado**:\n  - Não viciado: equiprobabilidades.\n  - Viciado: use relações do tipo “P(A) = k × P(B)” e a soma total = 1.\n\n## 3. Aplicação Prática / Técnicas\n- **Sem reposição (evento sucessivo)**:\n  - Passo a passo:\n    1) Identifique total e favoráveis na 1ª etapa.\n    2) Ajuste o total (−1) e, se a 1ª foi favorável, ajuste favoráveis (−1) para a 2ª etapa.\n    3) Aplique o princípio multiplicativo.\n- **Dois dados – somas por tabela**:\n  - Monte mentalmente a grade 6×6 ou memorize as contagens por soma.\n  - Para “≥ 10”: some 3 (para 10) + 2 (para 11) + 1 (para 12) = 6.\n- **“Pelo menos um 6”**:\n  - Complementar: 1 − (5/6)^2 = 11/36.\n- **Modelagem de dado viciado**:\n  - Defina P(1) = x; se “P(2) é o dobro de P(1)”, então P(2) = 2x.\n  - Some as probabilidades conhecidas (p.ex., faces 3–6 com 1/6 cada).\n  - Equação: x + 2x + conhecidas = 1 → resolva x.\n- **Checagem final**:\n  - Some as probabilidades obtidas: deve dar 1.\n  - Converta fração para porcentagem multiplicando por 100.\n\n## 4. Exemplos e Casos Resolvidos\n- **Cenário 1: duas empresas em dia, sem reposição**\n  - Universo: 2.000 empresas; em dia: 1.800; não pagam: 200.\n  - P(1ª em dia) = 1.800/2.000.\n  - P(2ª em dia | 1ª em dia) = 1.799/1.999.\n  - Resultado: P = (1.800/2.000) × (1.799/1.999).\n  > Dica de prova\n  > - “Sem reposição”/“sem retorno” → 1.999 no denominador; se a 1ª foi favorável, 1.799 no numerador.\n\n- **Cenário 2: dois dados, soma ≥ 10**\n  - Favoráveis: (4,6), (5,5), (6,4), (5,6), (6,5), (6,6) → 6 casos.\n  - P = 6/36 = 1/6 ≈ 16,67% (100/6 %).\n  > Dica de prova\n  > - Memorize: para “≥ 10” são sempre 3 + 2 + 1 = 6 casos.\n\n- **Cenário 3: dois dados, “pelo menos um 6”**\n  - Complementar: nenhum 6 → (5/6)×(5/6) = 25/36.\n  - P = 1 − 25/36 = 11/36 ≈ 30,6%.\n  > Dica de prova\n  > - “Pelo menos um” → 1 − (probabilidade de zero ocorrências).\n\n- **Cenário 4: dado viciado (P(2) = 2×P(1); demais com 1/6)**\n  - P(1) = x; P(2) = 2x; P(3)=P(4)=P(5)=P(6)=1/6.\n  - Soma: x + 2x + 4×(1/6) = 1 → 3x + 4/6 = 1 → 3x = 2/6 → x = 1/9.\n  - Respostas: P(1) = 1/9; P(2) = 2/9; demais = 1/6.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova\n> - “Sem reposição” não repete a mesma fração na 2ª etapa; ajuste 1.999/1.799 quando a 1ª foi favorável.\n> - “Pelo menos um” exige incluir também o caso “nos dois”; por isso o complementar é mais seguro.\n> - Em dois dados, o total é 36; não use 11 como total de somas possíveis.\n> - Não confunda “dobro” de probabilidade com “somar 1/6”. “Dobro” = multiplicar a probabilidade do evento de referência.\n> - Em viciadas, todas as probabilidades devem ficar entre 0 e 1 e somar 1; sempre cheque a soma.\n> - Conversão para porcentagem: multiplique a fração por 100; 1/6 ≈ 16,67%, não “16,6 exato”.\n\nTabelas: Comparações rápidas\n| Situação | Método rápido | Resultado |\n|---|---|---|\n| Duas empresas em dia (sem reposição) | (1.800/2.000) × (1.799/1.999) | Produto condicionado |\n| Dois dados: soma ≥ 10 | Contagem: 3 + 2 + 1 | 6/36 = 1/6 ≈ 16,67% |\n| Dois dados: “pelo menos um 6” | Complementar: 1 − (5/6)^2 | 11/36 ≈ 30,6% |\n| Dado viciado (P(2)=2×P(1)) | Modelagem com x e soma = 1 | P(1)=1/9; P(2)=2/9; demais=1/6 |",
+  "resumo_bolso": "# Probabilidade VIII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Probabilidade**: valor entre **0 e 1** (0% a 100%); a soma das probabilidades dos eventos elementares do espaço amostral é **1**.\n* **Princípio multiplicativo**: para eventos sucessivos independentes/condicionais, multiplique as probabilidades de cada etapa (ajustando se houver dependência).\n* **Com reposição**: o total e as probabilidades permanecem iguais a cada etapa.\n* **Sem reposição** (“sem retorno”): o total diminui; se o primeiro sorteio foi favorável, os favoráveis também diminuem.\n* **Dado não viciado**: 6 faces com probabilidade **1/6** cada.\n* **Moeda não viciada**: **50%** cara, **50%** coroa.\n* **Viciada (distribuição não uniforme)**: probabilidades podem diferir, mas devem somar **1** e estar entre 0 e 1.\n* **Dois dados**: 36 resultados equiprováveis (6×6); somas iguais aparecem em diagonais.\n* **“Pelo menos um”**: resolve mais rápido por complementar → 1 − P(“nenhum”).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Com reposição vs Sem reposição\n\n| Aspecto | Com reposição | Sem reposição |\n|---|---|---|\n| Total a cada etapa | Fica igual | Diminui (−1 por retirada) |\n| Probabilidade na 2ª etapa | Igual à 1ª (mesma fração) | Condicional ao 1º resultado (ajuste numerador/denominador) |\n| Cálculo | Mesma fração repetida | Ajusta numerador e denominador conforme o 1º resultado |\n\n---\n\n### Dado não viciado vs Dado viciado\n\n| Aspecto | Não viciado | Viciado |\n|---|---|---|\n| Faces | Todas com 1/6 | Probabilidades diferentes |\n| Modelo | Equiprovável | Relações do tipo k× entre probabilidades |\n| Cálculo | Contagem simples | Usa relações e impõe soma total = 1 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Probabilidade total**\n\n* P(Espaço amostral) = **1**; a soma das probabilidades de todos os casos possíveis é 1.\n\n---\n\n**2. Princípio multiplicativo (eventos sucessivos)**\n\n* P(A e B) = P(A) × P(B|A), em geral.\n* Se A e B forem independentes: P(A e B) = P(A) × P(B).\n\n---\n\n**3. Dois dados – somas**\n\n* Total de casos: **36**.\n* Quantidade de combinações por soma:\n  * 2→1, 3→2, 4→3, 5→4, 6→5, 7→6, 8→5, 9→4, 10→3, 11→2, 12→1.\n* Exemplo: soma ≥ 10 → 3 (para 10) + 2 (para 11) + 1 (para 12) = **6** casos → 6/36 = **1/6**.\n\n---\n\n**4. “Pelo menos um”**\n\n* Regra: P(“pelo menos um”) = **1 − P(“nenhum”)**.\n* Exemplo (dois dados, “pelo menos um 6”):  \n  P(nenhum 6) = (5/6)×(5/6) = 25/36 → P = 1 − 25/36 = **11/36**.\n\n---\n\n**5. Modelagem de dado viciado com x**\n\n* Quando a questão dá relações entre probabilidades (dobro, triplo, etc.):\n  * Defina P(face de referência) = **x**.\n  * Use relações: ex.: “P(2) é o dobro de P(1)” → P(2) = 2x.\n  * Some com as probabilidades conhecidas.\n  * Monte equação: soma = **1** → resolva x.\n* Exemplo: P(1)=x, P(2)=2x, P(3–6)=1/6 → x + 2x + 4×(1/6) = 1 → x = **1/9**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “Sem reposição” não repete a mesma fração na 2ª etapa; ajuste o denominador (total −1) e, se a 1ª foi favorável, também o numerador (favoráveis −1).\n* “Pelo menos um” exige incluir também o caso “nos dois”; por isso o complementar é mais seguro: 1 − P(“nenhum”).\n* Em dois dados, o total é **36**; não use **11** como total de somas possíveis.\n* Não confunda “dobro” de probabilidade com “somar 1/6”: “dobro” = multiplicar a probabilidade do evento de referência.\n* Em viciadas, todas as probabilidades devem ficar entre 0 e 1 e somar 1; sempre cheque a soma.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **com reposição** de **sem reposição** (ajuste de numerador e denominador na 2ª etapa)?\n* Sei aplicar o **princípio multiplicativo** em eventos sucessivos (independentes ou condicionais)?\n* Memorizei que em **dois dados** o total é **36** e a distribuição das somas (1,2,3,4,5,6,5,4,3,2,1)?\n* Lembro que “**pelo menos um**” resolve mais rápido por **complementar** (1 − P(nenhum))?\n* Sei montar **equação com x** em dados viciados usando relações do tipo k× e impondo soma = 1?\n* Conferi mentalmente que todas as probabilidades finais são coerentes (entre 0 e 1 e somando 1)?",
+  "mapa_mental": "# 🎲 Probabilidade VIII\n## 🎯 Fundamentos de Probabilidade\n### 💡 Conceitos básicos\n- Probabilidade entre 0 e 1\n- Interpretação percentual\n- Eventos elementares\n- Soma total igual 1\n### 🧮 Probabilidade clássica\n- Espaço amostral finito\n- Casos favoráveis\n- Casos possíveis\n- Razão favoráveis/possíveis\n### 🎲 Experimentos usuais\n- Dado não viciado\n- Moeda não viciada\n- Eventos equiprováveis\n- Probabilidades iguais 1/6\n\n## 🔄 Eventos Sucessivos\n### 🧮 Princípio multiplicativo\n- Eventos sucessivos\n- Produto das probabilidades\n- Independentes x dependentes\n- Ajuste condicional\n### 🔁 Com reposição\n- Total constante\n- Probabilidades constantes\n- Ensaios independentes\n- Mesma fração repetida\n### 🔂 Sem reposição\n- Total diminui\n- Favoráveis podem diminuir\n- Probabilidade condicional\n- Frações diferentes etapas\n\n## 🎲 Dois Dados\n### 📊 Espaço amostral 2 dados\n- Grade 6×6\n- 36 resultados possíveis\n- Pares ordenados\n- Equiprobabilidade\n### ➕ Somas dos dados\n- Somas 2 a 12\n- Distribuição triangular\n- Contagem por diagonais\n- Frequências por soma\n### ⚠️ “Pelo menos um”\n- Interpretação inclusiva\n- Casos múltiplos incluídos\n- Complementar mais rápido\n- 1 menos “nenhum”\n\n## 🧮 Probabilidade Total e Vícios\n### 📋 Probabilidade total\n- Soma probabilidades 1\n- Verificação de modelo\n- Eventos mutuamente exclusivos\n- Cobertura do espaço\n### 🎯 Dado viciado\n- Probabilidades diferentes\n- Não equiprovável\n- Entre 0 e 1\n- Soma ainda 1\n### 🔢 Modelagem algébrica\n- Uso de variável x\n- Relações proporcionais kx\n- Equação soma igual 1\n- Cálculo de cada face",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Amostragem Sem Reposição",
+      "description": "Amostragem Sem Reposição — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Em uma seleção sem reposição, como muda o total de elementos disponíveis após a primeira retirada?",
+          "back": "Diminui em uma unidade no total de elementos disponíveis.",
+          "hint": "Pense no efeito de retirar um item do conjunto",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "selecao-sem-reposicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a probabilidade de a primeira empresa sorteada estar em dia com os tributos?",
+          "back": "1800 / 2000",
+          "hint": "Aplique a razão entre favoráveis e totais",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "calculo-probabilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual princípio permite calcular a ocorrência conjunta de resultados sucessivos?",
+          "back": "Princípio multiplicativo",
+          "hint": "Relacionado a eventos independentes sucessivos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "principio-multiplicativo"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Lançamento De Dados",
+      "description": "Lançamento De Dados — 4 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Quantos resultados ordenados compõem o espaço amostral do lançamento de dois dados de seis faces?",
+          "back": "36",
+          "hint": "Considere o produto das faces de cada dado",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "espaco-amostral"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Quais valores de soma podem resultar do lançamento de dois dados de seis faces?",
+          "back": "De 2 a 12",
+          "hint": "Pense nos valores mínimo e máximo possíveis",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "espaco-amostral"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual é a probabilidade de obter soma maior ou igual a 10 ao lançar dois dados de seis faces?",
+          "back": "16,6%",
+          "hint": "Conte os pares favoráveis sobre o total",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "calculo-probabilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Em quais situações ocorre pelo menos um seis no lançamento de dois dados?",
+          "back": "Aparecer no primeiro e não no segundo, não aparecer no primeiro e aparecer no segundo, ou aparecer em ambos",
+          "hint": "Pense em casos excludentes e na união deles",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "eventos-compostos"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Distribuição De Probabilidade",
+      "description": "Distribuição De Probabilidade — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "O que caracteriza um dado não viciado quanto às probabilidades de suas faces?",
+          "back": "Todas as faces têm a mesma chance de acontecer",
+          "hint": "Refere-se à distribuição de chances",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "dado-nao-viciado"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a probabilidade de cada face de um dado não viciado de seis faces?",
+          "back": "1/6",
+          "hint": "Baseado na definição de equiprobabilidade",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "dado-nao-viciado"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual deve ser a soma das probabilidades de todos os resultados possíveis?",
+          "back": "1",
+          "hint": "Refere-se ao espaço amostral completo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "axiomas-probabilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual intervalo contém necessariamente qualquer probabilidade?",
+          "back": "Entre 0 e 1",
+          "hint": "É a escala normalizada de probabilidade",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "axiomas-probabilidade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Dados Viciados",
+      "description": "Dados Viciados — 2 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual é a diferença entre um dado viciado e um dado não viciado?",
+          "back": "O dado viciado apresenta chances diferentes entre as faces, enquanto o não viciado possui a mesma probabilidade para todas as faces",
+          "hint": "Contraste entre simetria e assimetria",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "dado-viciado"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-13",
+          "front": "Se a face 2 tem probabilidade dobrada e as demais são equiprováveis, qual é a probabilidade da face 2?",
+          "back": "1/9",
+          "hint": "Use a soma das probabilidades igual a 1",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "dado-viciado"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um município com 2000 empresas cadastradas, sendo 1800 com tributos pagos em dia, serão sorteadas duas empresas para fiscalização, sem reposição. Qual é a probabilidade de ambas as empresas sorteadas estarem com seus tributos pagos em dia?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "(1800/2000) × (1800/2000)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "(1800/2000) × (1799/1999)",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "(1800/2000) × (1800/1999)",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "(1800/2000) + (1799/1999)",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No lançamento de dois dados comuns de seis faces, qual é a probabilidade de a soma das faces superiores ser maior ou igual a 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1/9 ou aproximadamente 11,11%",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "1/12 ou aproximadamente 8,33%",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "1/4 ou 25%",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "1/6 ou aproximadamente 16,67%",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em uma moeda viciada, a probabilidade de sair cara é 1/3. Qual deve ser a probabilidade de sair coroa para que a distribuição de probabilidades seja válida?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2/3",
+          "correct": true,
+          "explanation": "Correta. Em qualquer distribuição de probabilidades, a soma das probabilidades de todos os eventos possíveis deve ser igual a 1 (ou 100%). Em uma moeda, os únicos resultados possíveis são cara ou coroa. Se a probabilidade de sair cara (P(Cara)) é 1/3, então a probabilidade de sair coroa (P(Coroa)) deve ser 1 - P(Cara) = 1 - 1/3 = 2/3. Assim, P(Cara) + P(Coroa) = 1/3 + 2/3 = 1."
+        },
+        {
+          "id": "b",
+          "text": "3/4",
+          "correct": false,
+          "explanation": "Incorreta. Se a probabilidade de sair coroa fosse 3/4, a soma das probabilidades de cara e coroa seria 1/3 + 3/4 = 4/12 + 9/12 = 13/12, que é maior que 1. Uma probabilidade total maior que 1 é impossível em uma distribuição válida."
+        },
+        {
+          "id": "c",
+          "text": "1/2",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de 1/2 seria válida para uma moeda não viciada, onde as chances de cara e coroa são iguais. No entanto, a questão afirma que a moeda é viciada e P(Cara) é 1/3. A soma 1/3 + 1/2 = 5/6 não é igual a 1."
+        },
+        {
+          "id": "d",
+          "text": "1/3",
+          "correct": false,
+          "explanation": "Incorreta. Se a probabilidade de sair coroa fosse 1/3, a soma das probabilidades de cara e coroa seria 1/3 + 1/3 = 2/3, o que não é igual a 1 e, portanto, não representa uma distribuição de probabilidades válida."
+        }
+      ],
+      "explanation": "Correta. Em qualquer distribuição de probabilidades, a soma das probabilidades de todos os eventos possíveis deve ser igual a 1 (ou 100%). Em uma moeda, os únicos resultados possíveis são cara ou coroa. Se a probabilidade de sair cara (P(Cara)) é 1/3, então a probabilidade de sair coroa (P(Coroa)) deve ser 1 - P(Cara) = 1 - 1/3 = 2/3. Assim, P(Cara) + P(Coroa) = 1/3 + 2/3 = 1.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Um dado viciado foi fabricado de forma que a probabilidade de apresentar o número 2 é o dobro da probabilidade de apresentar o número 1. As demais faces (3, 4, 5 e 6) mantêm a probabilidade normal de 1/6 cada. Qual é a probabilidade de obter a face 1 ao lançar este dado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1/12",
+          "correct": false,
+          "explanation": "Incorreta. Se a probabilidade da face 1 fosse 1/12, então P(2) seria 2/12 = 1/6. A soma de P(1) + P(2) seria 1/12 + 1/6 = 3/12 = 1/4. Adicionando as probabilidades das outras faces (4 * 1/6 = 2/3), a soma total seria 1/4 + 2/3 = 3/12 + 8/12 = 11/12, que não é igual a 1."
+        },
+        {
+          "id": "b",
+          "text": "1/6",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de 1/6 é a probabilidade de cada face em um dado não viciado. Para este dado viciado, as probabilidades das faces 1 e 2 são alteradas, sendo P(1) menor que 1/6."
+        },
+        {
+          "id": "c",
+          "text": "1/9",
+          "correct": true,
+          "explanation": "Correta. Em um dado de seis faces, a soma das probabilidades de todas as faces deve ser igual a 1. As faces 3, 4, 5 e 6 têm probabilidade normal de 1/6 cada. A soma dessas quatro probabilidades é 4 * (1/6) = 4/6 = 2/3. Portanto, a probabilidade restante para as faces 1 e 2 é 1 - 2/3 = 1/3. Sabemos que a probabilidade da face 2 (P(2)) é o dobro da probabilidade da face 1 (P(1)), ou seja, P(2) = 2 * P(1). Assim, P(1) + P(2) = 1/3 pode ser reescrito como P(1) + 2*P(1) = 1/3, o que resulta em 3*P(1) = 1/3. Dividindo ambos os lados por 3, obtemos P(1) = 1/9."
+        },
+        {
+          "id": "d",
+          "text": "2/9",
+          "correct": false,
+          "explanation": "Incorreta. 2/9 seria a probabilidade da face 2, pois P(2) = 2 * P(1) = 2 * (1/9) = 2/9. A questão pede a probabilidade de obter a face 1."
+        }
+      ],
+      "explanation": "Correta. Em um dado de seis faces, a soma das probabilidades de todas as faces deve ser igual a 1. As faces 3, 4, 5 e 6 têm probabilidade normal de 1/6 cada. A soma dessas quatro probabilidades é 4 * (1/6) = 4/6 = 2/3. Portanto, a probabilidade restante para as faces 1 e 2 é 1 - 2/3 = 1/3. Sabemos que a probabilidade da face 2 (P(2)) é o dobro da probabilidade da face 1 (P(1)), ou seja, P(2) = 2 * P(1). Assim, P(1) + P(2) = 1/3 pode ser reescrito como P(1) + 2*P(1) = 1/3, o que resulta em 3*P(1) = 1/3. Dividindo ambos os lados por 3, obtemos P(1) = 1/9.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "21_202266_Probabilidade VIII.pdf",
+  "coletado_em": "2026-09-23T21:04:32"
+}

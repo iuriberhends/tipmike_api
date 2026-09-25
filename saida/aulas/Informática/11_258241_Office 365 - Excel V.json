@@ -1,0 +1,606 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 11,
+  "ordem_no_curso": "79.00",
+  "titulo": "Office 365 - Excel V",
+  "codigo_aula": "258241",
+  "video_id": "YxRPF8Ye1rU=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:18:15",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/YxRPF8Ye1rU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?in=1&a=420308&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - Excel V\n\n## Regra de Formatação Condicional por Linha\nVamos lá, de volta com a nossa linha 2. Eu fiz rapidamente aqui no intervalo aquela regra que havia comentado: alterar a linha com base nesse valor aqui. Por exemplo, se eu coloco 4, toda a linha fica condicionada a esse valor. Se eu coloco 5, toda a linha também. O texto você viu que não mudou, porque para texto ainda não temos a função adequada; mais à frente, se você não conhece, veremos como fazer isso.\n\nO que eu faria, então, seria basicamente o seguinte: vou selecionar a linha que eu quero. Venho em Nova Regra, e uso uma fórmula condicionada a esse valor aqui. Então, quando for maior ou igual a 5, por exemplo, esse cara vai ficar destacado. Aqui está 4,5, então não vai atender “maior ou igual a 5”, ok? Beleza.\n\n## AutoFiltro na Guia Dados\nVamos mandar ver. Tenho aqui alguns professores do Gran Cursos Online, com seus respectivos nomes e disciplinas. Eu venho na primeira linha, que é o que me interessa, vou na guia Dados. O que vamos aplicar aqui não é um filtro simples, mas o AutoFiltro.\n\nSelecionei a primeira linha e ativei o filtro. Apareceram aqueles botõezinhos que a gente viu anteriormente. É o AutoFiltro que foi inserido: por padrão, mostra tudo. Posso classificar, posso filtrar por cor, mas o que mais nos interessa geralmente é filtrar itens específicos. Vou tirar a seleção de todos e deixar só “Gerson Bobo”, por exemplo. Só apareceu ele. Beleza. Agora vamos marcar para aparecer todos de novo: seleciona tudo. \n\nQuero filtrar por disciplina: tiro tudo e coloco “Informática”. Filtrou só a galera de Informática. “Jeferson Maurício” teria que ainda ajustar, porque o nome dele aqui pode estar diferente, mas é só para você entender a lógica de como funciona o AutoFiltro. Objetivo, tranquilo, direto. \n\nIsso aqui tem várias possibilidades. Vamos embora.\n\n## Atingir Metas (Teste de Hipóteses)\nAtingir Metas: um exemplo simples. Eu quero atingir uma meta, certo? O que seria atingir uma meta? Chegar a um valor ou calcular uma hipótese. Basicamente, é isso: eu quero chegar a um valor.\n\nVamos supor que eu tenha uma receita de 3.000, uma despesa de 1.000; portanto, me sobra líquido 2.000 reais. O que fica de fato lá na minha conta — o que já seria, na minha opinião, algo bem interessante.\n\nNa guia Dados, lá na frente, temos a opção de Previsão/Teste de Hipóteses. Vamos usar Atingir Meta. Definimos a célula para qual valor queremos chegar. A célula alvo tem que conter uma fórmula, ok? Hoje me sobra 2.000; quero que sobre 5.000. Qual célula vai sofrer variação? A da receita, por exemplo.\n\nVocê está vendo que é um exemplo pequeno e simples, mas o objetivo é entender a função. A célula alvo tem que conter uma fórmula. O valor que quero que ela chegue é 5.000. Situações mais complexas é que vão se tornar interessantes.\n\nEntão, ele calcula o necessário para chegar aos 5.000. O valor atual passa a 5.000. O que ele tem que fazer? Ajustar a receita, com base na despesa de 1.000, para me sobrar 5.000 por mês — no caso do exemplo, eleva a receita a 6.000. Tranquilo.\n\nEu vou desfazer para voltar à situação real. Atingir Meta permite que eu faça essa hipótese futura de alteração de valores. Há milhões de possibilidades aqui. Se pegou o fio da meada, começa a aplicar e fazer variações a partir dali e vai embora.\n\nEssa aula só quero deixar isso claro porque acho importante te dar um norte. Eu já falei: a gente não vê tudo de tudo, mas o que eu estou passando aqui, se você não conhece a ferramenta, já te dá a possibilidade de acertar a maioria das questões — não todas — desse assunto.\n\nFicou curioso? Pode pegar questões e se deparar com algo que foi além do que já falamos. Manda no fórum. Vamos debater. Se precisar, eu regravo o que for preciso para melhorar sua preparação. Beleza? Lembre-se: eu estou aqui para te ajudar. Tenta me ver assim, de verdade. A matéria pode não ser a preferida de muita gente, mas vamos juntos.\n\n## Auditoria de Fórmulas: Precedentes e Dependentes\nQuando eu quero rastrear o que está acontecendo, se alguém depende dessa célula ou se alguma célula precede essa, eu vou em Fórmulas > Auditoria de Fórmulas.\n\nRastrear precedentes: se alguém vem antes dessa célula. Se a célula não tem fórmula, não terá precedentes. Vamos ver se alguém depende desse valor: rastrear dependentes. Sempre tem alguém que depende de você. Tem alguém que se inspira em você — seus filhos, sua parceira, sua família, sua luta. Você estudando, tem gente que se inspira. Então vamos ver dependentes.\n\nApontou para cá: ou seja, esse valor 20 está usando o 10. O 20 depende do 10. Vamos pegar agora o 20 e pedir seus precedentes: apontou também para a outra célula. Beleza. A mesma lógica: o 20 depende desse valor.\n\nAqui eu vejo que dois valores estão gerando aquele resultado. Agora vamos pegar esse valor aqui e somar com esse outro. Portanto, deu 30. Vou voltar em Fórmulas e rastrear o precedente: de onde está vindo esse 30? Quais células estão sendo usadas? Já sei que haverá setas do 10 e do 20 apontando para cá. \n\n> 🎯 Dicas de prova: Ele pode até colocar como hipótese que estão sendo somados 10 e 20 para gerar 30, porque está tudo apontando para a célula do resultado. A questão pode perguntar: qual é a fórmula que pode estar contida na célula? \n\nVamos limpar as setas e rastrear dependentes: quem depende desse valor? Ninguém está usando. Não localizou nenhuma célula. Agora, se eu colocar nessa célula uma fórmula que usa aquela ali, mais outro valor, e depois rastrear dependentes, ele vai apontar para a nova célula. Isso pode ir ao infinito. A lógica de rastrear precedentes e dependentes é essa.\n\n## Operadores de Referência: Intervalo, União e Interseção\nVamos voltar aos operadores de referência. Lembrando: isso aqui na prova faz uma diferença enorme na hora de resolver funções. Já vi várias questões em que o ponto e vírgula não estava sendo usado como operador de referência, mas como separador de argumentos. \n\n> 🎯 Dicas de prova: Você tem que conhecer a sintaxe das funções para diferenciar quando o ponto e vírgula é operador de referência (união) ou separador de argumentos. Cada função tem sua estrutura. O ponto e vírgula pode ser usado como união de áreas em referências, ou como separador de argumentos na função. Fique atento ao contexto.\n\nVem comigo. Vamos passear.\n\nSoma de A1:A3. Pode mentalizar na prova: A1 até A3. Se houver um valor “perdido” fora do intervalo, ele não entra. Colocando de propósito: 2 e 3 dão 5; com mais 1 dá 6, porque A1:A3 soma as células adjacentes daquele intervalo. \n\nO Excel pode alertar “omitiu células adjacentes”. Você pode atualizar, pedir ajuda, ignorar. Não é necessariamente erro; pode ser o que você precisa. Nosso objetivo aqui é o concurso, não o uso oficial perfeito.\n\nPodemos totalizar outro intervalo: A1:A4, sem mistério. Também posso somar múltiplos intervalos: por exemplo, SOMA(A2:A4; C2:C4). Na prova, leia mentalmente: “soma A2 a A4 e C2 a C4”. Só esses dois intervalos. \n\nSe não bateu de cabeça, o Excel confirma. Às vezes ele reclama de omitir células adjacentes, mas repito: é uma opção, não necessariamente erro. Pode ser que você queira exatamente excluir uma coluna do meio. Tranquilo.\n\nOutra possibilidade: dá para misturar número direto com intervalos, como SOMA(A2:A4; 5). Também podemos expandir para mais intervalos e números conforme a necessidade.\n\nAgora, interseção. No Excel, os operadores são:\n- Dois pontos “:” significa até (intervalo contínuo).\n- Ponto e vírgula “;” pode indicar união de áreas em referências ou separador de argumentos, dependendo do contexto.\n- Espaço “ ” entre dois intervalos significa interseção (o que é comum entre eles).\n\nEntão, A1:A4 espaço B2:B5 pega a interseção entre esses dois intervalos. Vou marcar: o primeiro intervalo (A1:A4), o segundo (B2:B5). O que ficou em comum? A área sobreposta. É isso que a interseção pega.\n\nSe eu somar a interseção, somo apenas o que é comum. Se não tiver nada em comum — por exemplo, se um intervalo começa onde o outro termina e não há sobreposição — então não tem resultado para interseção. Na prova, se não há sobreposição, não inventa resultado: é vazio.\n\n> 🎯 Dicas de prova: Se a interseção entre dois intervalos é vazia, a referência falha e a função que usa essa referência tende a retornar erro. Leia cuidadosamente os intervalos para ver se há sobreposição real.\n\nJá vi isso em prova: um monte de número e a pessoa quer achar um resultado que não existe. Referência de células é exata.\n\n## Atitude Mental e Encerramento do Bloco\nMuita gente tem dificuldades nessa parte de referências. Eu peço que você liberte as amarras mentais. Não é só pensar positivo e pronto, mas acredito que facilita o caminho. Se não concorda, tranquilo; vamos conviver em paz com isso. Tenta começar com esse pensamento: “vou entender”. Acho que ajuda.\n\nEu vou fechar esse bloco um pouco mais curto. Daqui a pouco a gente continua esse assunto, sem interrupção lógica: começa e vai até onde der o tempo. Não estou preocupado em alongar demais, mas quero garantir que o mais importante receba atenção. As coisas que passei rápido não são irrelevantes; é que não há necessidade de aprofundar além do necessário para a lógica do concurso.\n\nEncerrando o bloco. Volto daqui a pouco.\n\nAproveita o intervalo entre um bloco e outro: pega seu café — eu gosto de café — sua água. Evita bebida alcoólica e outras coisas aí, não é o ideal. Se organiza para voltar focado e atento. Beleza?",
+  "transcricao_meta": {
+    "title": "Office 365 - Excel V",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 21826,
+    "createdAt": "2026-02-06T10:47:56.776Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda recursos-chave do Excel no contexto do Office 365: Formatação Condicional por fórmula (linha inteira), AutoFiltro, Teste de Hipóteses — Atingir Meta (Goal Seek), Auditoria de Fórmulas e Operadores de referência (dois pontos “:”, espaço “ ” para interseção e uso do ponto e vírgula “;”).\nPrincipais pontos: \n- Como configurar regras por fórmula e “ancorar” células corretamente.\n- Como filtrar, classificar e restaurar visualizações com AutoFiltro.\n- Como usar Atingir Meta exigindo célula-alvo com fórmula.\n- Como identificar precedentes e dependentes em auditoria.\n- Como interpretar “:”, “ ” e “;” nas referências e nas funções.\n\n## 1. Base / Conceitos Fundamentais\n- Formatação Condicional por fórmula: aplica formato quando uma condição booleana (VERDADEIRO/FALSO) é atendida.\n- AutoFiltro: mecanismo para filtrar/classificar dados por coluna a partir do cabeçalho.\n- Teste de Hipóteses — Atingir Meta (Goal Seek): ajusta automaticamente uma entrada para que uma célula com fórmula atinja um valor especificado.\n- Auditoria de Fórmulas: ferramentas para visualizar relações entre células (precedentes e dependentes) e remover setas.\n- Operadores de referência:\n  - “:” (dois pontos): intervalo contínuo “até”.\n  - “ ” (espaço): interseção entre intervalos (apenas o que é comum).\n  - “;” (ponto e vírgula): pode ser separador de argumentos da função ou separador/lista de referências, conforme a função e a regionalização.\n\n## 2. Como Funciona / Distinções\n- Formatação Condicional por fórmula vs. regras prontas:\n  - Fórmula: maior flexibilidade (ex.: destacar linha inteira com base em uma célula).\n  - Regras prontas: condições simples por célula.\n- AutoFiltro vs. Classificação:\n  - AutoFiltro: oculta linhas que não atendem ao critério.\n  - Classificação: reordena linhas; pode combinar com filtro.\n- Atingir Meta vs. Solver:\n  - Atingir Meta: 1 variável, 1 objetivo, rápido.\n  - Solver: múltiplas variáveis e restrições (não abordado aqui).\n- Auditoria:\n  - Precedentes: células que alimentam a fórmula atual.\n  - Dependentes: células que usam o resultado atual.\n- Operadores de referência:\n  - “:” cria um bloco contínuo (ex.: A1:A4).\n  - “ ” cruza dois blocos e retorna apenas a sobreposição (ex.: A:A 2:5 → A2:A5).\n  - “;” pode separar argumentos numa função (ex.: SOMA(A1:A3;C1:C3)), ou, em funções que aceitam múltiplas áreas, listar referências. Depende da sintaxe e da configuração regional.\n\n## 3. Aplicação Prática / Técnicas\n- Formatação Condicional (destacar linha inteira):\n  1. Selecione as linhas/área da tabela.\n  2. Página Inicial > Formatação Condicional > Nova Regra > “Usar uma fórmula para determinar…”.\n  3. Digite a condição baseada na coluna de referência (ex.: =$C2>5 ou >=5 conforme pedido).\n  4. Defina o formato (cor de preenchimento, fonte etc.) e confirme.\n  - Macete: Use $ para fixar a coluna da condição e deixar a linha relativa, aplicando à linha inteira corretamente.\n\n- AutoFiltro:\n  1. Selecione a linha de cabeçalhos.\n  2. Dados > Filtro (AutoFiltro).\n  3. Clique na seta do cabeçalho e defina critérios (valores, texto, números, por cor).\n  4. Para reexibir tudo: marque “Selecionar tudo” no menu do filtro.\n\n- Atingir Meta (Goal Seek):\n  1. Garanta que a célula-alvo tenha uma fórmula.\n  2. Dados > Previsão/Teste de hipóteses > Atingir Meta.\n  3. “Definir célula”: a célula com fórmula.\n  4. “Para o valor”: o valor desejado (ex.: 5000).\n  5. “Alterando célula”: a entrada que pode variar (ex.: Receita).\n  6. Executar e aceitar o resultado se fizer sentido.\n\n- Auditoria de Fórmulas:\n  - Fórmulas > Auditoria de Fórmulas:\n    - Rastrear precedentes: mostra de onde vêm os dados.\n    - Rastrear dependentes: mostra quem usa a célula.\n    - Remover setas: limpa as setas de auditoria.\n\n- Operadores de referência e interseção:\n  - Intervalo: A1:A4 significa A1 até A4.\n  - Interseção: A1:A4 B2:D5 retorna apenas o que está em ambos (a área comum).\n  - Linhas/colunas inteiras:\n    - C:C 2:4 → C2:C4.\n    - 3:3 A:C → A3:C3.\n  - Ponto e vírgula: atenção ao papel na função. Em SOMA, separa argumentos ÁREA1; ÁREA2.\n\n## 4. Exemplos e Casos Resolvidos\n- Formatação Condicional por fórmula:\n  - Destacar linhas com quantidade > 5: \n    - Área da tabela (ex.: A2:D100)\n    - Fórmula: =$B2>5 (B é a coluna da quantidade)\n    - Formato: preenchimento amarelo.\n  - Alternativa: maior ou igual a 5 → =$B2>=5.\n\n- AutoFiltro:\n  - Filtrar por nome “Gerson”: clique no filtro da coluna de nomes, desmarque “Selecionar tudo”, marque “Gerson”.\n  - Classificar por cor: no menu do filtro, escolha “Classificar por cor”.\n\n- Atingir Meta:\n  - Situação: Saldo = Receita − Despesa.\n  - Despesa = 1000; Saldo desejado = 5000.\n  - Atingir Meta ajusta Receita para 6000 (pois 6000 − 1000 = 5000).\n  - Lembrete: a célula Saldo deve conter fórmula (ex.: =Receita−Despesa).\n\n- Auditoria:\n  - Selecione a célula com fórmula e clique em “Rastrear precedentes”: setas apontam para as entradas usadas.\n  - Selecione uma célula de entrada e clique em “Rastrear dependentes”: setas mostram fórmulas que a utilizam.\n  - “Remover setas” para limpar.\n\n- Interseção:\n  - A1:A4 B2:B5 → A2:A4 (comum aos dois).\n  - A:A 2:5 → A2:A5.\n  - 1:4 C:E → C1:E4.\n  - Se não há sobreposição, a interseção é vazia (não retorna células).\n\n- Soma e omissão de adjacentes:\n  - SOMA(A1:A3) soma A1, A2, A3.\n  - Se a planilha sugerir incluir A4 (“células adjacentes omitidas”), avalie a intenção: pode ser correto manter A4 de fora.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova: Na Formatação Condicional, “ancore” a coluna com $ e deixe a linha relativa (ex.: =$C2>5), ou a regra não se replica corretamente na linha inteira.\n\n> Dica de prova: Atingir Meta exige célula-alvo com fórmula. Se não houver fórmula, não funciona.\n\n> Dica de prova: AutoFiltro opera por coluna; cabeçalho incorreto ou linhas fora da seleção causam filtros inconsistentes.\n\n> Dica de prova: “:” significa “até”; “ ” (espaço) significa interseção. Espaço NÃO une intervalos; ele cruza.\n\n> Dica de prova: O ponto e vírgula “;” pode ser separador de argumentos (SOMA) ou lista de referências em funções específicas. Entenda a sintaxe pedida pela questão.\n\n> Dica de prova: Alerta de “células adjacentes omitidas” não é erro obrigatório; pode ser intencional. Leia o enunciado.\n\n> Dica de prova: Interseção entre colunas e linhas inteiras é cobrada: C:C 2:5 → C2:C5. Se não há cruzamento, o resultado é vazio.\n\n> Dica de prova: Precedente “vem antes” (alimenta a fórmula); Dependente “usa depois” (consome o valor). Isso costuma cair em questões conceituais.\n\nComparações rápidas\n- Intervalo (:) vs. Interseção (espaço):\n  - \":\" cria faixa contínua; “ ” retorna apenas a área comum entre faixas.\n- AutoFiltro vs. Classificação:\n  - AutoFiltro oculta registros; classificação reordena registros.\n- Atingir Meta vs. edição manual:\n  - Atingir Meta encontra automaticamente o valor necessário para atingir a meta; edição manual é tentativa e erro.\n\nMemorize\n- “:” = até | “ ” = interseção | “;” = separador de argumentos ou lista de referências (depende da função).\n- Célula-alvo do Atingir Meta sempre com fórmula.\n- Formatação Condicional com referências corretas ($ fixando coluna).",
+  "resumo_bolso": "# Office 365 - Excel V\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Formatação Condicional por fórmula**: aplica formato quando a condição booleana (VERDADEIRO/FALSO) é atendida; permite **destacar linha inteira** com base em uma célula.\n* **AutoFiltro**: mecanismo para **filtrar/classificar dados por coluna** a partir do cabeçalho; **oculta** linhas que não atendem ao critério.\n* **Atingir Meta (Goal Seek)**: recurso de **Teste de Hipóteses** que ajusta automaticamente **uma célula de entrada** para que **uma célula com fórmula** atinja um valor especificado.\n* **Auditoria de Fórmulas**: ferramentas para visualizar relações entre células, mostrando **precedentes** (células que alimentam) e **dependentes** (células que usam o resultado), além de **remover setas**.\n* **Operador “:” (dois pontos)**: intervalo **contínuo** “até” (ex.: A1:A4).\n* **Operador “ ” (espaço)**: **interseção** de intervalos; retorna **apenas a área comum** (ex.: A:A 2:5 → A2:A5).\n* **“;” (ponto e vírgula)**: pode ser **separador de argumentos de função** e/ou **lista de referências**, conforme a função e a regionalização.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Formatação Condicional por Fórmula vs Regras Prontas\n\n| Aspecto | Fórmula | Regras Prontas |\n| --- | --- | --- |\n| **Flexibilidade** | Maior flexibilidade; permite destacar linha inteira com base em uma célula | Condições simples por célula |\n| **Base** | Expressão booleana personalizada | Modelos pré-definidos (maior que, menor que etc.) |\n| **Uso típico** | Destacar linhas por valor em 1 coluna | Destacar células isoladas |\n\n---\n\n### AutoFiltro vs Classificação\n\n| Aspecto | AutoFiltro | Classificação |\n| --- | --- | --- |\n| **Efeito** | **Oculta** linhas que não atendem ao critério | **Reordena** as linhas |\n| **Base** | Critérios por coluna (valores, texto, número, cor) | Ordem crescente/decrescente, por uma ou mais colunas |\n| **Combinação** | Pode ser combinado com classificação | Pode ser combinado com filtro |\n\n---\n\n### Atingir Meta vs Edição Manual\n\n| Aspecto | Atingir Meta | Edição manual |\n| --- | --- | --- |\n| **Processo** | Automático, encontra o valor necessário para atingir a meta | Tentativa e erro |\n| **Requisitos** | 1 célula **com fórmula** + 1 célula de entrada | Nenhum requisito técnico específico |\n| **Objetivo** | Ajustar a entrada para que a célula-alvo atinja o valor desejado | Ajuste empírico, sem automatização |\n\n---\n\n### Intervalo (:) vs Interseção (espaço)\n\n| Aspecto | “:” | “ ” (espaço) |\n| --- | --- | --- |\n| **Função** | Cria **faixa contínua** | Retorna **somente a sobreposição** |\n| **Exemplo** | A1:A4 → A1 até A4 | A1:A4 B2:D5 → apenas a área comum |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Formatação Condicional – Linha Inteira**\n\n* **Aplicação**: destacar toda a linha com base em valor de 1 coluna.\n* **Passos**:  \n  1. Selecione as linhas/área da tabela (ex.: A2:D100).  \n  2. Página Inicial > Formatação Condicional > Nova Regra > “Usar uma fórmula para determinar…”.  \n  3. Digite a condição baseada na coluna de referência (ex.: `=$C2>5` ou `=$C2>=5`, conforme pedido).  \n  4. Defina o formato (preenchimento, fonte etc.) e confirme.\n* **Macete técnico**: use **$ para fixar a coluna** da condição e deixe a linha relativa, aplicando à linha inteira corretamente.\n\n---\n\n**2. AutoFiltro**\n\n* **Aplicação**: filtrar e classificar dados **por coluna**, a partir do cabeçalho.\n* **Passos**:  \n  1. Selecione a linha de cabeçalhos.  \n  2. Dados > Filtro (AutoFiltro).  \n  3. Clique na seta do cabeçalho e defina critérios (valores, texto, números, por cor).  \n  4. Para reexibir tudo: marque **“Selecionar tudo”** no menu do filtro.\n* **Exemplo**: filtrar por nome “Gerson” → no filtro da coluna de nomes, desmarcar “Selecionar tudo” e marcar apenas “Gerson”.\n\n---\n\n**3. Atingir Meta (Goal Seek)**\n\n* **Aplicação**: encontrar valor de entrada para que uma célula com fórmula atinja um valor desejado.\n* **Passos**:  \n  1. Garanta que a **célula-alvo tenha uma fórmula**.  \n  2. Dados > Previsão/Teste de hipóteses > Atingir Meta.  \n  3. “Definir célula”: a célula com fórmula (ex.: Saldo).  \n  4. “Para o valor”: o valor desejado (ex.: 5000).  \n  5. “Alterando célula”: a entrada que pode variar (ex.: Receita).  \n  6. Executar e aceitar o resultado se fizer sentido.\n* **Exemplo**:  \n  - Saldo = Receita − Despesa.  \n  - Despesa = 1000; Saldo desejado = 5000.  \n  - Atingir Meta ajusta Receita para 6000 (6000 − 1000 = 5000).\n\n---\n\n**4. Auditoria de Fórmulas**\n\n* **Aplicação**: visualizar dependências entre células.\n* **Comandos** (guia Fórmulas):  \n  - **Rastrear precedentes**: mostra **de onde vêm** os dados da célula (células que alimentam a fórmula atual).  \n  - **Rastrear dependentes**: mostra **quem usa** a célula (células que consomem o resultado atual).  \n  - **Remover setas**: limpa as setas de auditoria.\n\n---\n\n**5. Operadores de Referência**\n\n* **“:” (até)**: cria intervalo contínuo.  \n  - Exemplos: A1:A4, C3:F10, 2:5, A:C.\n* **“ ” (interseção)**: retorna apenas a área comum entre referências.  \n  - Exemplos:  \n    - A1:A4 B2:B5 → A2:A4  \n    - A:A 2:5 → A2:A5  \n    - 3:3 A:C → A3:C3  \n    - 1:4 C:E → C1:E4\n* **“;” (ponto e vírgula)**:  \n  - Separador de argumentos: `SOMA(A1:A3;C1:C3)`.  \n  - Em funções que aceitam múltiplas áreas, pode listar referências (depende da sintaxe e da configuração regional).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **Formatação Condicional e ancoragem**  \n   - Dica de prova: “ancore” a coluna com $ e deixe a linha relativa (ex.: `=$C2>5`), ou a regra não se replica corretamente na linha inteira.\n\n2. **Atingir Meta sem fórmula**  \n   - Dica de prova: Atingir Meta exige **célula-alvo com fórmula**. Se não houver fórmula, não funciona.\n\n3. **AutoFiltro e cabeçalho**  \n   - Dica de prova: AutoFiltro opera **por coluna**; cabeçalho incorreto ou linhas fora da seleção causam filtros inconsistentes.\n\n4. **Operadores “:” e espaço**  \n   - Dica de prova: “:” significa “até”; “ ” (espaço) significa **interseção**. Espaço **não une** intervalos; ele cruza.\n\n5. **Ponto e vírgula “;”**  \n   - Dica de prova: o “;” pode ser separador de argumentos (SOMA) ou lista de referências em funções específicas. Entenda a sintaxe pedida pela questão.\n\n---\n\n## 📋 Checklist Final\n\n* Sei montar **Formatação Condicional por fórmula** para **linha inteira**, usando referências corretas (ex.: `=$C2>5`, com coluna ancorada)?\n* Lembro que o **AutoFiltro**:  \n  - atua **por coluna**,  \n  - parte do **cabeçalho**,  \n  - **oculta** linhas e restaura com **“Selecionar tudo”**?\n* Fixei que o **Atingir Meta** exige **célula-alvo com fórmula** e **uma célula de entrada** ajustável?\n* Diferencio **precedentes** (alimentam a fórmula) de **dependentes** (consomem o valor) na **Auditoria de Fórmulas**?\n* Memorizei:  \n  - **“:” = até**,  \n  - **“ ” = interseção**,  \n  - **“;” = separador de argumentos ou lista de referências**, conforme função e regionalização?",
+  "mapa_mental": "# 💻 Excel 365 V – Recursos Avançados\n\n## 🎯 Visão Geral\n### 💡 Recursos Focados\n- Formatação condicional\n- AutoFiltro colunas\n- Atingir Meta\n- Auditoria fórmulas\n- Operadores referência\n### 📖 Conceitos Booleanos\n- Verdadeiro Falso\n- Condição atendida\n- Regra aplicada\n- Fórmula lógica\n- Resultado formatação\n### 🧮 Operadores Referência\n- Dois pontos :\n- Espaço interseção\n- Ponto e vírgula ;\n- Intervalo contínuo\n- Múltiplas áreas\n\n## 🎨 Formatação Condicional\n### 💡 Por Fórmula\n- Regra personalizada\n- Condição booleana\n- Linha inteira\n- Coluna referência\n- Uso cifrão $\n### 📋 Referências Relativas\n- Coluna fixa $\n- Linha relativa\n- Exemplo $C2>5\n- Aplicação tabela\n- Expansão automática\n### ⚠️ Pontos de Prova\n- Fórmula obrigatória\n- Verdadeiro aplica\n- Falso ignora\n- Difere regras prontas\n- Atenção ancoragem\n\n## 🔍 AutoFiltro e Classificação\n### 💡 AutoFiltro\n- Filtro por coluna\n- Cabeçalho obrigatório\n- Oculta linhas\n- Critérios múltiplos\n- Restaurar visualização\n### 🔄 Classificação\n- Reordenar linhas\n- Ordem crescente\n- Ordem decrescente\n- Combinar com filtro\n- Não oculta dados\n### ⚠️ Cuidados Filtro\n- Seleção correta\n- Cabeçalhos consistentes\n- Colunas independentes\n- Filtro por cor\n- Remover filtros\n\n## 📊 Teste de Hipóteses – Atingir Meta\n### 🎯 Conceito Central\n- Teste hipóteses\n- Uma variável\n- Um objetivo\n- Ajuste automático\n- Valor desejado\n### 📋 Requisitos\n- Célula alvo fórmula\n- Célula alterada entrada\n- Valor numérico meta\n- Ligação entre células\n- Resultado calculado\n### ⚠️ Diferenças Importantes\n- Versus edição manual\n- Versus Solver\n- Processo automático\n- Sem múltiplas restrições\n- Uso provas concursos\n\n## 🧩 Auditoria e Operadores\n### 🧭 Auditoria de Fórmulas\n- Rastrear precedentes\n- Rastrear dependentes\n- Remover setas\n- Relações células\n- Análise erros\n### 🔢 Tipos de Referência\n- Intervalo A1:A4\n- Coluna inteira C:C\n- Linha inteira 2:5\n- Interseção colunas\n- Interseção linhas\n### 🧮 Ponto e Vírgula\n- Separador argumentos\n- Lista referências\n- Funções múltiplas áreas\n- Exemplo SOMA\n- Depende regionalização",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Formatação Condicional",
+      "description": "Formatação Condicional — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual condição pode acionar uma regra de formatação baseada no valor de uma célula?",
+          "back": "Quando o valor for **maior ou igual a cinco**.",
+          "hint": "Pense em um operador de comparação numérica.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao-condicional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Como aplicar uma regra de formatação condicional a uma linha inteira?",
+          "back": "Selecionar a linha, ir em **nova regra** e aplicar uma fórmula condicionada ao valor de referência.",
+          "hint": "Envolve o uso de fórmulas com referências.",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao-condicional"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Filtros de Dados",
+      "description": "Filtros de Dados — 1 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual é a finalidade do **AutoFiltro** no Excel?",
+          "back": "Permitir classificar dados e exibir registros que atendem a um valor escolhido em uma coluna.",
+          "hint": "É uma ferramenta de análise de dados.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "filtros"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Atingir Meta",
+      "description": "Atingir Meta — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Para que serve o recurso **Atingir Meta**?",
+          "back": "Chegar a um valor específico ou calcular uma hipótese.",
+          "hint": "Ferramenta de análise de hipóteses.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "atingir-meta"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual requisito deve cumprir a célula definida como alvo no Atingir Meta?",
+          "back": "Conter uma **fórmula**.",
+          "hint": "O que a célula deve conter para ser calculada?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "atingir-meta"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "O que o Atingir Meta altera para alcançar o valor definido na célula-alvo?",
+          "back": "Uma **receita** ou valor variável.",
+          "hint": "O que é ajustado para chegar ao resultado?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "atingir-meta"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Auditoria de Fórmulas",
+      "description": "Auditoria de Fórmulas — 1 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Que relação entre células é revelada ao rastrear precedentes?",
+          "back": "Células que vêm antes e são usadas em uma fórmula.",
+          "hint": "Relacionado a dependências de fórmulas.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "auditoria-formulas"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Operadores de Referência",
+      "description": "Operadores de Referência — 5 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual operador de referência representa um intervalo contínuo de células?",
+          "back": "**Dois pontos** (:).",
+          "hint": "Símbolo gráfico de pontuação.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores-referencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Que operação representa um espaço entre duas referências de intervalo?",
+          "back": "**Interseção** entre dois intervalos.",
+          "hint": "Operador de referência de conjunto.",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores-referencia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a função do ponto e vírgula na estrutura de uma função do Excel?",
+          "back": "Separador de argumentos na estrutura da função.",
+          "hint": "Sintaxe básica de qualquer função.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "sintaxe-funcoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Como interpretar o aviso sobre células adjacentes omitidas em uma fórmula?",
+          "back": "Uma opção que indica que há células adjacentes que não estão sendo usadas na fórmula.",
+          "hint": "Um alerta de verificação de erro.",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "auditoria-formulas"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual resultado produz a interseção entre intervalos sem células em comum?",
+          "back": "Não sobra nada ou não há resultado.",
+          "hint": "Resultado de uma operação lógica vazia.",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores-referencia"
+          ],
+          "type": "exception"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Excel, qual é a função do recurso 'Atingir Meta' disponível na guia Dados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Criar gráficos dinâmicos que se atualizam automaticamente quando os dados de origem são modificados pelo usuário",
+          "correct": false,
+          "explanation": "Incorreta. A criação de gráficos dinâmicos que se atualizam com as modificações dos dados de origem é uma função de ferramentas de visualização de dados, como gráficos dinâmicos ou tabelas dinâmicas, e não do recurso \"Atingir Meta\"."
+        },
+        {
+          "id": "b",
+          "text": "Estabelecer metas de formatação condicional que alteram a aparência das células conforme os valores se aproximam de um objetivo predefinido",
+          "correct": false,
+          "explanation": "Incorreta. O estabelecimento de regras que alteram a aparência das células com base em seus valores ou em condições específicas é a função da \"Formatação Condicional\" (Conditional Formatting). O \"Atingir Meta\" modifica o valor de uma célula para alcançar um resultado, não apenas sua aparência."
+        },
+        {
+          "id": "c",
+          "text": "Calcular automaticamente o valor necessário em uma célula específica para que outra célula que contém uma fórmula atinja um resultado desejado",
+          "correct": true,
+          "explanation": "Correta. O recurso \"Atingir Meta\" (Goal Seek, em inglês) do Microsoft Excel, encontrado na guia Dados, é uma ferramenta de análise \"E se\" (What-If Analysis). Sua função é determinar o valor necessário em uma célula de entrada para que uma célula que contém uma fórmula atinja um resultado específico e desejado. Por exemplo, você pode usá-lo para descobrir qual receita precisa ter para atingir um lucro alvo, ajustando apenas o valor da receita."
+        },
+        {
+          "id": "d",
+          "text": "Definir valores máximos e mínimos para células que contêm dados numéricos, impedindo a inserção de valores fora do intervalo estabelecido",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade de definir valores máximos e mínimos para células, controlando a entrada de dados e impedindo valores fora de um intervalo, é conhecida como \"Validação de Dados\" (Data Validation), e não \"Atingir Meta\"."
+        }
+      ],
+      "explanation": "Correta. O recurso \"Atingir Meta\" (Goal Seek, em inglês) do Microsoft Excel, encontrado na guia Dados, é uma ferramenta de análise \"E se\" (What-If Analysis). Sua função é determinar o valor necessário em uma célula de entrada para que uma célula que contém uma fórmula atinja um resultado específico e desejado. Por exemplo, você pode usá-lo para descobrir qual receita precisa ter para atingir um lucro alvo, ajustando apenas o valor da receita.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No contexto da auditoria de fórmulas do Excel, o que significa 'rastrear precedentes'?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Localizar erros de sintaxe nas fórmulas da planilha e sugerir correções automáticas",
+          "correct": false,
+          "explanation": "Incorreta. A localização de erros de sintaxe em fórmulas é uma função do verificador de erros do Excel, que faz parte das ferramentas de auditoria de fórmulas, mas é distinta de \"Rastrear Precedentes\"."
+        },
+        {
+          "id": "b",
+          "text": "Criar um histórico de todas as alterações realizadas nas fórmulas da planilha durante a sessão de trabalho",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não possui um recurso integrado chamado \"Rastrear Precedentes\" que crie um histórico de todas as alterações de fórmulas na planilha. Essa funcionalidade seria mais próxima de um sistema de controle de versão ou auditoria de documentos."
+        },
+        {
+          "id": "c",
+          "text": "Identificar quais células fornecem dados para a fórmula contida na célula selecionada, mostrando as células de origem",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, \"Rastrear Precedentes\" (Trace Precedents) é uma ferramenta de auditoria de fórmulas que exibe setas indicando quais células fornecem dados diretamente para a fórmula contida na célula atualmente selecionada. Isso é útil para entender a origem dos valores em um cálculo."
+        },
+        {
+          "id": "d",
+          "text": "Verificar quais células dependem do valor da célula selecionada, exibindo onde esse valor é utilizado",
+          "correct": false,
+          "explanation": "Incorreta. A função de verificar quais células dependem do valor da célula selecionada, ou seja, quais fórmulas seriam afetadas por uma mudança nessa célula, é realizada pelo recurso \"Rastrear Dependentes\" (Trace Dependents), que é o oposto de \"Rastrear Precedentes\"."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, \"Rastrear Precedentes\" (Trace Precedents) é uma ferramenta de auditoria de fórmulas que exibe setas indicando quais células fornecem dados diretamente para a fórmula contida na célula atualmente selecionada. Isso é útil para entender a origem dos valores em um cálculo.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual operador de referência no Excel é utilizado para indicar um intervalo contínuo de células?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ponto e vírgula (;), que concatena múltiplos intervalos de células em uma única referência",
+          "correct": false,
+          "explanation": "Incorreta. O ponto e vírgula (;) é usado em muitas configurações regionais do Excel como um separador de argumentos em funções ou como um operador de união para combinar referências a células ou intervalos não contíguos. Ele não indica um intervalo contínuo entre duas referências."
+        },
+        {
+          "id": "b",
+          "text": "Dois pontos (:), que indica todas as células entre duas referências, incluindo as células inicial e final",
+          "correct": true,
+          "explanation": "Correta. O operador de dois pontos (:) no Excel é utilizado para definir um intervalo contínuo de células. Por exemplo, A1:C5 refere-se a todas as células desde A1 até C5, formando um bloco retangular que inclui as células inicial e final e todas as intermediárias."
+        },
+        {
+          "id": "c",
+          "text": "Espaço em branco, que representa a união de dois ou mais intervalos de células adjacentes",
+          "correct": false,
+          "explanation": "Incorreta. Um espaço em branco entre duas referências de intervalo (por exemplo, A1:A5 B1:B5) atua como um operador de interseção, retornando apenas as células que são comuns a ambos os intervalos, e não a união de células adjacentes ou um intervalo contínuo."
+        },
+        {
+          "id": "d",
+          "text": "Vírgula (,), que especifica a interseção entre dois intervalos de células sobrepostos",
+          "correct": false,
+          "explanation": "Incorreta. A vírgula (,) é usada em algumas configurações regionais como um separador de argumentos em funções ou como um operador de união para combinar referências a células ou intervalos não contíguos. Em outras configurações, o ponto e vírgula (;) desempenha esse papel. De qualquer forma, não especifica a interseção, e sim a união de referências distintas."
+        }
+      ],
+      "explanation": "Correta. O operador de dois pontos (:) no Excel é utilizado para definir um intervalo contínuo de células. Por exemplo, A1:C5 refere-se a todas as células desde A1 até C5, formando um bloco retangular que inclui as células inicial e final e todas as intermediárias.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao utilizar o recurso 'rastrear dependentes' na auditoria de fórmulas do Excel, o que é possível identificar?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quais células compartilham o mesmo tipo de dados ou formato numérico com a célula selecionada",
+          "correct": false,
+          "explanation": "Incorreta. A identificação de células que compartilham o mesmo tipo de dados ou formato numérico não é uma função de \"Rastrear Dependentes\"; essa seria uma tarefa de análise de dados ou formatação, não de auditoria de fórmulas."
+        },
+        {
+          "id": "b",
+          "text": "Quais células fornecem valores de entrada para a fórmula contida na célula selecionada",
+          "correct": false,
+          "explanation": "Incorreta. A identificação das células que fornecem valores de entrada para a fórmula contida na célula selecionada é a função do recurso \"Rastrear Precedentes\" (Trace Precedents), não de \"Rastrear Dependentes\"."
+        },
+        {
+          "id": "c",
+          "text": "Quais células possuem formatação condicional aplicada com base no valor da célula selecionada",
+          "correct": false,
+          "explanation": "Incorreta. A verificação de células com formatação condicional baseada no valor da célula selecionada é uma análise relacionada à formatação, e não diretamente à auditoria de fluxo de dados de fórmulas realizada por \"Rastrear Dependentes\"."
+        },
+        {
+          "id": "d",
+          "text": "Quais células contêm fórmulas que utilizam o valor da célula selecionada em seus cálculos",
+          "correct": true,
+          "explanation": "Correta. Ao utilizar o recurso \"Rastrear Dependentes\" (Trace Dependents) na auditoria de fórmulas do Excel, é possível identificar visualmente, por meio de setas, quais células contêm fórmulas que utilizam o valor da célula selecionada em seus cálculos. Isso ajuda a entender o impacto de uma alteração em uma célula específica sobre outras partes da planilha."
+        }
+      ],
+      "explanation": "Correta. Ao utilizar o recurso \"Rastrear Dependentes\" (Trace Dependents) na auditoria de fórmulas do Excel, é possível identificar visualmente, por meio de setas, quais células contêm fórmulas que utilizam o valor da célula selecionada em seus cálculos. Isso ajuda a entender o impacto de uma alteração em uma célula específica sobre outras partes da planilha.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Considerando a sintaxe do Excel, o que representa o operador de espaço em branco quando utilizado entre duas referências de células em uma fórmula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A diferença entre dois intervalos, retornando as células que existem no primeiro intervalo mas não no segundo",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não possui um operador de espaço em branco para representar a diferença entre dois intervalos de células. Para operações de conjunto como diferença, geralmente são usadas funções mais complexas ou abordagens programáticas."
+        },
+        {
+          "id": "b",
+          "text": "A interseção entre dois intervalos, retornando apenas as células que são comuns a ambos os intervalos especificados",
+          "correct": true,
+          "explanation": "Correta. No Excel, quando um espaço em branco é usado entre duas referências de células ou intervalos (por exemplo, `A1:C5 B3:D7`), ele funciona como o operador de interseção. O resultado da operação é um intervalo que contém apenas as células que são comuns a ambos os intervalos especificados. Se não houver células em comum, a fórmula pode retornar um erro de valor."
+        },
+        {
+          "id": "c",
+          "text": "A união de dois intervalos, combinando todas as células de ambos os intervalos em uma única referência",
+          "correct": false,
+          "explanation": "Incorreta. A união de dois intervalos, que combina todas as células de ambos os intervalos em uma única referência (ou lista de referências), é tipicamente representada pelo operador de vírgula (,) ou ponto e vírgula (;) em funções do Excel, dependendo da configuração regional, e não por um espaço em branco."
+        },
+        {
+          "id": "d",
+          "text": "A concatenação de valores, unindo o conteúdo textual das células dos dois intervalos especificados",
+          "correct": false,
+          "explanation": "Incorreta. A concatenação de valores, que une o conteúdo textual de células, é realizada no Excel usando o operador \"e comercial\" (&) ou funções específicas como CONCATENAR (CONCAT) ou UNIRTEXTO (TEXTJOIN), e não um espaço em branco entre referências de células."
+        }
+      ],
+      "explanation": "Correta. No Excel, quando um espaço em branco é usado entre duas referências de células ou intervalos (por exemplo, `A1:C5 B3:D7`), ele funciona como o operador de interseção. O resultado da operação é um intervalo que contém apenas as células que são comuns a ambos os intervalos especificados. Se não houver células em comum, a fórmula pode retornar um erro de valor.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quando o recurso 'Atingir Meta' é utilizado no Excel, qual condição é obrigatória para que a ferramenta funcione corretamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A célula de destino deve conter uma fórmula, pois o recurso calcula retroativamente qual valor a célula variável precisa ter para que a fórmula atinja o resultado desejado",
+          "correct": true,
+          "explanation": "Correta. O recurso \"Atingir Meta\" (Goal Seek) do Excel é uma ferramenta de análise \"e se\" (what-if) que funciona de forma reversa. Para que ele determine o valor necessário em uma célula de entrada (célula variável) para alcançar um resultado específico, a célula de destino (onde se espera o resultado) deve obrigatoriamente conter uma fórmula. Essa fórmula é o ponto de partida para o cálculo retroativo do Excel."
+        },
+        {
+          "id": "b",
+          "text": "A célula de destino deve estar vazia, permitindo que o Excel insira automaticamente a fórmula necessária para atingir o objetivo",
+          "correct": false,
+          "explanation": "Incorreta. A célula de destino não pode estar vazia. Ela precisa conter uma fórmula que o Excel possa manipular para atingir o valor desejado. Se estivesse vazia, não haveria cálculo para o recurso \"Atingir Meta\" realizar."
+        },
+        {
+          "id": "c",
+          "text": "Ambas as células, de destino e variável, devem estar protegidas contra edição para garantir a integridade dos cálculos",
+          "correct": false,
+          "explanation": "Incorreta. Embora a proteção de células seja uma funcionalidade útil para manter a integridade dos dados, ela não é uma condição obrigatória para o funcionamento do \"Atingir Meta\". Na verdade, a célula variável não pode estar protegida, pois o Excel precisa alterá-la para encontrar a solução."
+        },
+        {
+          "id": "d",
+          "text": "A célula variável deve conter uma fórmula complexa que será ajustada iterativamente até convergir para o valor desejado",
+          "correct": false,
+          "explanation": "Incorreta. A célula variável, que é a célula que o Excel ajustará para atingir a meta, geralmente contém um valor de entrada e não necessariamente uma fórmula complexa. A fórmula complexa, se houver, estará na célula de destino, que é o alvo do cálculo."
+        }
+      ],
+      "explanation": "Correta. O recurso \"Atingir Meta\" (Goal Seek) do Excel é uma ferramenta de análise \"e se\" (what-if) que funciona de forma reversa. Para que ele determine o valor necessário em uma célula de entrada (célula variável) para alcançar um resultado específico, a célula de destino (onde se espera o resultado) deve obrigatoriamente conter uma fórmula. Essa fórmula é o ponto de partida para o cálculo retroativo do Excel.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "No Excel, qual é o comportamento da fórmula =SOMA(A1:A3;B2:B4) em relação aos operadores de referência utilizados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O ponto e vírgula atua como separador de argumentos, fazendo com que a função SOMA adicione todos os valores de ambos os intervalos especificados",
+          "correct": true,
+          "explanation": "Correta. No Excel, o ponto e vírgula (;) é utilizado como um separador de argumentos dentro de funções. Na fórmula =SOMA(A1:A3;B2:B4), ele indica que a função SOMA deve incluir em seu cálculo os valores do intervalo A1 até A3 E os valores do intervalo B2 até B4, somando todos eles de forma independente."
+        },
+        {
+          "id": "b",
+          "text": "O ponto e vírgula indica uma operação de subtração, calculando a diferença entre a soma do primeiro intervalo e a soma do segundo",
+          "correct": false,
+          "explanation": "Incorreta. O ponto e vírgula não é um operador aritmético de subtração. A subtração é realizada pelo sinal de menos (-)."
+        },
+        {
+          "id": "c",
+          "text": "O ponto e vírgula funciona como operador de concatenação, unindo os valores dos dois intervalos em uma única sequência textual",
+          "correct": false,
+          "explanation": "Incorreta. O ponto e vírgula não realiza concatenação de texto. Para unir textos ou valores em uma única sequência textual, o operador de concatenação é o \"e comercial\" (&)."
+        },
+        {
+          "id": "d",
+          "text": "O ponto e vírgula representa a interseção entre os dois intervalos, somando apenas as células que são comuns a ambos",
+          "correct": false,
+          "explanation": "Incorreta. O operador de interseção entre intervalos no Excel é o espaço ( ), não o ponto e vírgula. Se fosse =SOMA(A1:A3 B2:B4), o Excel somaria apenas as células que são comuns a ambos os intervalos."
+        }
+      ],
+      "explanation": "Correta. No Excel, o ponto e vírgula (;) é utilizado como um separador de argumentos dentro de funções. Na fórmula =SOMA(A1:A3;B2:B4), ele indica que a função SOMA deve incluir em seu cálculo os valores do intervalo A1 até A3 E os valores do intervalo B2 até B4, somando todos eles de forma independente.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando a auditoria de fórmulas no Excel, se uma célula não possui precedentes mas possui dependentes, qual é a característica dessa célula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A célula contém um valor constante ou entrada manual que é utilizado como referência em fórmulas de outras células",
+          "correct": true,
+          "explanation": "Correta. Se uma célula não possui precedentes, significa que seu valor não é o resultado de uma fórmula que faz referência a outras células. Ou seja, ela contém um valor inserido diretamente pelo usuário (um valor constante) ou uma fórmula que não depende de outras células. Se, ao mesmo tempo, ela possui dependentes, isso indica que outras células utilizam o valor dessa célula em suas próprias fórmulas, fazendo dela uma fonte de dados para outros cálculos."
+        },
+        {
+          "id": "b",
+          "text": "A célula está em um estado de erro circular, onde depende indiretamente de si mesma através de outras fórmulas",
+          "correct": false,
+          "explanation": "Incorreta. Um erro circular ocorre quando uma fórmula de uma célula referencia a si mesma, direta ou indiretamente. Isso implicaria a existência de precedentes (a própria célula ou outras que a levam de volta a ela) e dependentes, o que contradiz a condição de não ter precedentes."
+        },
+        {
+          "id": "c",
+          "text": "A célula contém uma fórmula que referencia outras células, mas nenhuma outra fórmula utiliza seu resultado",
+          "correct": false,
+          "explanation": "Incorreta. Se a célula contém uma fórmula que referencia outras células, ela *teria* precedentes. A condição da questão é que a célula *não possui precedentes*."
+        },
+        {
+          "id": "d",
+          "text": "A célula possui formatação condicional aplicada que afeta a aparência de outras células na planilha",
+          "correct": false,
+          "explanation": "Incorreta. A formatação condicional altera a aparência de uma célula com base em regras, mas não estabelece relações de precedência ou dependência no contexto de cálculos de fórmulas. Uma célula pode ter formatação condicional sem ter precedentes ou dependentes de cálculo."
+        }
+      ],
+      "explanation": "Correta. Se uma célula não possui precedentes, significa que seu valor não é o resultado de uma fórmula que faz referência a outras células. Ou seja, ela contém um valor inserido diretamente pelo usuário (um valor constante) ou uma fórmula que não depende de outras células. Se, ao mesmo tempo, ela possui dependentes, isso indica que outras células utilizam o valor dessa célula em suas próprias fórmulas, fazendo dela uma fonte de dados para outros cálculos.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No contexto do Excel, qual seria o resultado da fórmula =SOMA(A1:A10 B5:B15) quando não há células em comum entre os dois intervalos especificados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A fórmula retornará zero, indicando que não há valores a serem somados na área de interseção",
+          "correct": false,
+          "explanation": "Incorreta. Embora não haja valores a serem somados, o Excel não retorna zero. O retorno de zero indicaria que a interseção existe, mas seus valores resultam em zero. A ausência de interseção gera um erro de referência, não um valor numérico."
+        },
+        {
+          "id": "b",
+          "text": "A fórmula somará todos os valores de ambos os intervalos, ignorando a ausência de interseção entre eles",
+          "correct": false,
+          "explanation": "Incorreta. A soma de todos os valores de ambos os intervalos ocorreria se o operador fosse um ponto e vírgula (;) ou um sinal de mais (+) entre as referências de intervalo, que atuam como separadores de argumentos ou operadores de adição, respectivamente. O espaço é um operador de interseção."
+        },
+        {
+          "id": "c",
+          "text": "A fórmula calculará a média dos valores do primeiro intervalo e somará com a média dos valores do segundo intervalo",
+          "correct": false,
+          "explanation": "Incorreta. O operador de espaço não tem qualquer relação com o cálculo de médias. A fórmula `SOMA` é específica para somar valores, e o operador de espaço apenas define o conjunto de células sobre o qual a soma será aplicada (a interseção)."
+        },
+        {
+          "id": "d",
+          "text": "A fórmula retornará um erro de referência, pois o operador de espaço representa interseção e não há células comuns aos dois intervalos",
+          "correct": true,
+          "explanation": "Correta. No Excel, um espaço entre duas referências de intervalo atua como o operador de interseção. Se não houver células em comum entre os intervalos `A1:A10` e `B5:B15`, a interseção será vazia. Nesse caso, o Excel retornará um erro do tipo `#NULO!` (ou `#NULL!`), que indica que não há uma interseção válida para a operação."
+        }
+      ],
+      "explanation": "Correta. No Excel, um espaço entre duas referências de intervalo atua como o operador de interseção. Se não houver células em comum entre os intervalos `A1:A10` e `B5:B15`, a interseção será vazia. Nesse caso, o Excel retornará um erro do tipo `#NULO!` (ou `#NULL!`), que indica que não há uma interseção válida para a operação.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Ao aplicar o AutoFiltro em uma planilha do Excel e selecionar critérios específicos em múltiplas colunas, qual é o comportamento padrão da ferramenta?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os filtros são aplicados sequencialmente em ordem alfabética das colunas, independentemente da ordem de seleção do usuário",
+          "correct": false,
+          "explanation": "Incorreta. A ordem em que os filtros são aplicados nas colunas é definida pelo usuário. O Excel não impõe uma ordem alfabética. O resultado final do filtro será o mesmo, independentemente da sequência de aplicação, pois a lógica \"E\" garante que todas as condições sejam satisfeitas."
+        },
+        {
+          "id": "b",
+          "text": "Os filtros aplicados em diferentes colunas funcionam com lógica 'E', exibindo apenas as linhas que atendem simultaneamente a todos os critérios selecionados",
+          "correct": true,
+          "explanation": "Correta. O AutoFiltro (ou Filtro Automático) do Excel opera com uma lógica \"E\" (AND) quando critérios são aplicados em múltiplas colunas. Isso significa que uma linha só será exibida se atender *simultaneamente* a todas as condições de filtro definidas em cada uma das colunas. Por exemplo, se você filtrar por \"Departamento = Vendas\" e \"Região = Sudeste\", apenas as linhas que satisfazem ambas as condições serão mostradas."
+        },
+        {
+          "id": "c",
+          "text": "Cada filtro aplicado substitui o anterior, mantendo ativo apenas o critério da última coluna filtrada",
+          "correct": false,
+          "explanation": "Incorreta. Os filtros aplicados em diferentes colunas são cumulativos. Cada novo filtro refina o conjunto de dados já filtrado pelos critérios anteriores, em vez de substituí-los. O resultado é um subconjunto de dados que atende a todas as condições."
+        },
+        {
+          "id": "d",
+          "text": "Os filtros aplicados em diferentes colunas funcionam com lógica 'OU', exibindo as linhas que atendem a pelo menos um dos critérios selecionados",
+          "correct": false,
+          "explanation": "Incorreta. A lógica \"OU\" (OR) não é o comportamento padrão do AutoFiltro para critérios aplicados em diferentes colunas. Para aplicar uma lógica \"OU\" entre colunas, seria necessário utilizar o Filtro Avançado ou criar fórmulas mais complexas."
+        }
+      ],
+      "explanation": "Correta. O AutoFiltro (ou Filtro Automático) do Excel opera com uma lógica \"E\" (AND) quando critérios são aplicados em múltiplas colunas. Isso significa que uma linha só será exibida se atender *simultaneamente* a todas as condições de filtro definidas em cada uma das colunas. Por exemplo, se você filtrar por \"Departamento = Vendas\" e \"Região = Sudeste\", apenas as linhas que satisfazem ambas as condições serão mostradas.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "11_258241_Office 365 - Excel V.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:51:03"
+}

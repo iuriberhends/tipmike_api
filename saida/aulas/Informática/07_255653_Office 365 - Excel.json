@@ -1,0 +1,760 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 7,
+  "ordem_no_curso": "75.00",
+  "titulo": "Office 365 - Excel",
+  "codigo_aula": "255653",
+  "video_id": "CjuLHnvf6ms=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:23:18",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/CjuLHnvf6ms%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420308%2C420317%2C420303%2C420333&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Excel\n\n## Apresentação e Mentalidade de Estudo\nSou o Jefferson Bogo, professor de Informática. Vamos juntos aqui na tela. Aqui está meu nome, a disciplina e uma frase do Aristóteles que eu gosto muito: somos o que repetidamente fazemos. A excelência, portanto, não é um feito, mas um hábito.\n\nPois bem, a partir dessa frase, eu chamo de processo jesuítico: repetição com correção, até a exaustão, nos leva à perfeição. Para você que está estudando, a repetição com correção, até a exaustão, levará à aprovação também. Bom, mas cautela nessa “exaustão”. Não leve ao pé da letra. Faça exercícios e mantenha um equilíbrio na vida. Vai dar tudo certo. Beleza? Vem comigo aqui.\n\n## Introdução ao Tema e Contexto do Pacote\nVamos começar o nosso tema de hoje. Vou falar sobre o pacote Microsoft Office. Inicialmente, sobre o Microsoft Office 365 especificamente. Hoje vamos tratar do Excel dentro do pacote.\n\nComo o nome já sugere, é um pacote com vários programas. Vou me concentrar nos principais, os que mais caem em prova: Excel e PowerPoint. Beleza? Tem mais programas, mas é só para dar aquela filtrada.\n\nQual a diferença do Office 365 para outras versões “normais”? O Office 365 é um pacote por assinatura: você paga mensalmente ou anualmente. O grande diferencial é que você sempre vai ter a versão mais atual. Todos os lançamentos chegam para você.\n\nSe você tem, por exemplo, as versões 2019 ou 2021, você comprou uma versão fixa. Os recursos que elas têm não mudam. Elas recebem atualizações de segurança por um período (não para sempre): 2016, 2019, 2021, idem. Quem comprou 2016, por exemplo, vai manter atualizações de segurança por um período. Quem comprou 365, sempre: todo recurso novo vai ser atualizado.\n\nExistem modalidades de assinatura. A que eu uso me dá direito a instalar o Office 365 em cinco máquinas. Posso utilizá-lo online também. O Office online é disponibilizado gratuitamente dentro do OneDrive, com recursos básicos — não é completo. Na minha modalidade, posso instalar em cinco computadores, baixar e instalar. Como já mencionei, vai recebendo atualizações; então, recursos e funções lançados — no caso do Excel, por exemplo — que não estão disponíveis na versão 2019, estarão no 365. Basicamente é isso.\n\n## Material de Apoio e Metodologia da Aula\nVamos passear agora no Excel. Para começar a conversa, você vai receber, junto com essa aula, um material em PDF. Junto com a aula, você recebe esse material.\n\nDesde já, um alerta, ou melhor, um combinado: esse material serve como base. Muita gente tem me dado feedback. Recebi muitos retornos de pessoas que gostaram da maneira como a aula foi apresentada. Você pode usar esse PDF. Agora, neste primeiro momento, ele está todo preenchido; os elementos já estão lá. Não há muito o que anotar, mas, mesmo assim, se você quiser, pode imprimir e fazer anotações, lembretes, acrescentar informações, enriquecendo a aula. Pode também editar com um editor de PDF, se preferir.\n\nNão fique preso apenas ao que foi dito. Vai da metodologia de cada um. É um material de apoio. Você pode imprimir e preencher campos mais à frente. Repito: não é obrigatório. Você pode usar seu caderno, pode não usar nada e só assistir à aula. É opção sua. Beleza? Tem também a transcrição feita pela equipe, em PDF, uma transcrição literal: eles ouvem a aula e transcrevem. Combinado?\n\n## Tela Inicial do Excel e Primeiros Elementos\nTemos aqui a tela inicial do Excel — na verdade, já está aberto. Eu vou usar, em diversos momentos, a Lupa do Windows para apresentar alguns recursos com ênfase. Na abertura, ele traz alguns elementos que precisamos saber.\n\nEu tenho aqui alguns modelos em cima, começando pela Pasta de Trabalho em Branco. E já adianto: muita gente confunde um arquivo do Excel com planilha. Chamam o arquivo de “planilha”. Errado.\n\nTenho aqui como pesquisar, posso fixar itens, o que foi compartilhado comigo via OneDrive — a ferramenta de armazenamento em nuvem da Microsoft — e os arquivos recentes em que trabalhei. Na parte “Novo”, para abrir um novo arquivo, temos os modelos. Em “Abrir”, eu abro arquivos existentes que já estão gravados, inclusive acessando meu OneDrive. Posso acessar o que gravei no OneDrive por aqui. Há outras opções, como Conta, Comentários, Opções, que não vou trabalhar no momento.\n\nE já digo: você passou por “Opções” e não entrou, não falou muita coisa; vai falar? Cada detalhe seria humanamente impossível numa aula. Para mostrar cada função e cada coisinha, levaria semanas ou meses. De longe, essa não é a nossa intenção. A intenção aqui, no Gran Cursos Online, é voltada para sua aprovação em concurso. Então, o que vou passar aqui é para concurso.\n\n> 🎯 **Dicas de prova:** O foco é o que mais é cobrado em concursos. Nem tudo será visto, mas os tópicos com maior incidência recebem ênfase.\n\nDeixa eu esclarecer: se eu assistir a essa aula, vou passar em Excel no concurso? Não é bem assim porque podem cair coisas que nós não tratamos. Eu tento dar ênfase com base em análise, ajustando a cada aula, aprimorando, para focar no que mais é cobrado. A aula vai ficar um pouco extensa. Vou passar alguns detalhes que podem ser mais ou menos relevantes para sua prova. Eu gosto de ser transparente. Combinado entre mim e você? Beleza. Vamos partir agora para a prática.\n\n## Navegando pela Interface do Excel\nAbrindo aqui o Excel, é onde literalmente eu vou estar nessa faixa superior. Essa parte que tenho aqui, com imagem e itens apontados, nós vamos trabalhar neles. Embaixo, como falei, o material está preenchido; aponta para itens, como a Barra de Títulos, por exemplo.\n\nNa Barra de Títulos, eu vou ter vários elementos. Você está vendo aqui que estou logado. Vamos ver recursos como salvar no OneDrive, habilitar o salvamento automático. Para ativar o salvamento automático, tem que salvar no OneDrive. Aí funciona uma beleza.\n\nTem o usuário logado, os botões de controle (fechar, minimizar, maximizar). Geralmente, esses detalhes não são cobrados. Não é objetivo de prova perguntar “qual é o botão que fecha”. Nesta aula, a ênfase é outra. O que as bancas gostam é trabalhar com a Faixa de Opções.\n\nAqui, ainda na Barra de Títulos: como ativar o salvamento automático? Acabei de falar: tem que salvar no OneDrive. Temos a Faixa de Opções, que é toda essa área que contém as guias (ou abas). Nome técnico mais usado hoje é guia. Se falar “menu”, não tem problema, mas tecnicamente são guias. Toda essa área é a Faixa de Opções.\n\nEu posso alternar como essa faixa é exibida:\n- Padrão: mostra guias e comandos.\n- Ocultar automaticamente: a faixa some e só aparece quando eu clico. Some de novo quando mexo na planilha. Ganha espaço.\n- Mostrar apenas guias: aparecem só os nomes das guias; ao clicar, os comandos aparecem. Ganha mais espaço que no padrão.\n\nO padrão é mostrar guias e comandos.\n\nNa Barra de Títulos também tenho a opção de pesquisar, inclusive funções. Posso pesquisar recursos por aqui. Ela mostra o nome do arquivo. E um detalhe: quando o arquivo está salvo no OneDrive, eu posso editar o nome diretamente na Barra de Títulos com o arquivo aberto. Isso foge do comportamento padrão do Windows (no qual não se pode renomear um arquivo aberto), mas aqui é possível pela integração com a nuvem. Beleza?\n\n## Barra de Ferramentas de Acesso Rápido\nNo item 2 do material, temos a Barra de Ferramentas de Acesso Rápido, com opções padrão: salvar automaticamente, salvar (o ícone do disquete), desfazer e refazer. Posso colocar mais opções que não estão ali, como:\n- Novo (abrir uma nova pasta de trabalho)\n- Abrir\n- E outras funções\n\nTambém posso acessar “Mais Comandos” e colocar qualquer função do Excel ali, inclusive comandos de cálculo (“Calcular agora”, etc.). E posso escolher se a barra fica acima da Faixa de Opções. São detalhezinhos que é bom saber.\n\n## Faixa de Opções, Guias e Grupos\nNúmero 3 é a própria Faixa de Opções. Algumas bancas cobram o caminho completo: por exemplo, “Inserir > Gráficos” para inserir um gráfico e escolher o tipo desejado. Acontece. Não é tão frequente, mas acontece.\n\nNa guia Página Inicial, por exemplo, temos:\n- Grupo Área de Transferência\n- Grupo Fonte\n- Grupo Alinhamento (trabalhar com texto, apesar de o Excel não ser editor de texto)\n- Grupo Número (começa a chegar na finalidade dele)\n\nVamos a alguns exemplos do Grupo Número. Tenho o valor 10 formatado como número normal. Se eu clicar no formato de moeda:\n- Padrão: duas casas decimais, símbolo de R$ (padrão Brasil). Posso escolher outros símbolos: dólar americano, euro, etc.\n\nPorcentagem:\n- Aplica porcentagem por 100. Ele multiplica o número por 100 e adiciona o símbolo %. Se eu pegar o número 10, vira 1.000% (é 10 multiplicado por 100 com o símbolo).\n\nSeparador de milhares:\n- Formata com separador de milhares e coloca duas casas decimais por padrão.\n\nAumentar/diminuir casas decimais:\n- Aumentar casas decimais: a cada clique, adiciona uma casa.\n- Diminuir casas decimais: a cada clique, remove uma casa.\n- Se o número for inteiro (ex.: 1), não há casas decimais para remover; então não tem como tirar o que não existe. Cuidado com isso.\n\nAinda na Página Inicial, temos Estilos, Células, Edição. Em Inserir: grupos Tabelas, Ilustrações, Suplementos, Gráficos, Links, Comentários, Textos, Símbolos.\n\nNa guia Desenhar, não vou dar ênfase.\n\nNa guia Layout da Página, alteramos aparência com Temas, Configuração de Página, Opções de Planilha. Não é muito cobrado, mas pode cair algo.\n\nEm Fórmulas, interessa mais. Vamos trabalhar funções de outra maneira ao longo da aula. Há a Biblioteca de Funções, separadas por categoria: Pesquisa e Referência, Matemática e Trigonometria, etc. Em Nomes Definidos, vamos trabalhar depois com a Caixa de Nome (a caixinha que mostra a referência e permite nomear uma célula ou intervalo).\n\nNa Auditoria de Fórmulas, vamos trabalhar rastrear precedentes e dependentes, por exemplo.\n\nCálculo:\n- Por padrão, o cálculo é automático. Posso alterar para manual. Por quê? Às vezes a planilha é grande, com muitos cálculos; alterar um valor recalcula tudo e pode pesar no processamento. Em cenários de muitas planilhas e dados (por exemplo, empresas usando Excel como base para cálculos de folha), às vezes se usa manual.\n\nNa guia Dados: Obter e Transformar (Power Query), Consultas e Conexões, Tipos de Dados, Classificar e Filtrar, Ferramentas de Dados. Vamos trabalhar muitas opções depois. Previsão também vamos trabalhar com hipótese.\n\nNa guia Revisão: revisão de texto (correção ortográfica; não faz correção gramatical), Acessibilidade, Ideias, Idioma, Comentários. Há uma novidade recente: comentários alterados para discussões, com respostas encadeadas.\n\n💬 **História:** Recentemente usei comentários no material que fiz para o Gran. Também uso Anotações para inserir observações.\n\nProteger planilha:\n- Possível proteger para que a pessoa não altere valores. Posso liberar certas células para digitação e controlar o que será permitido. Depois mostro como restringir.\n\nNa guia Exibir (Modos de Exibição): exibições da pasta de trabalho, mostrar/ocultar, janela.\n\nMacros:\n- Macros são pequenos programas que posso gravar com VBA. Automatizam tarefas repetitivas. Posso gravar uma vez e executar quando quiser. Mas cuidado: como macros executam código, são brechas para vírus. Existe vírus de macro que pode contaminar pastas de trabalho.\n\nNão estranhe o nome “Pasta de Trabalho” do Excel. Daqui a pouco mostro o porquê. Muita gente confunde pasta de trabalho com planilha. Temos as duas coisas: dentro de uma pasta de trabalho, eu tenho planilhas. Beleza?\n\nVoltando: passeamos pela Faixa de Opções. Número 4 do material é a Caixa de Nome. Número 5 é a Barra de Fórmulas, que mostra o conteúdo da célula. Eu diria até o conteúdo real, porque o valor exibido em uma célula nem sempre é o conteúdo real (ex.: formatação ou resultado de fórmula).\n\nNúmero 6: identificação de coluna — indicadas por letras (ou combinações de letras). Número 7: identificação de linha — números. Número 9: a alça de preenchimento (o quadradinho no canto inferior direito da seleção). O número está apontando para uma célula: a interseção de uma coluna com uma linha. Esse é o conceito de célula.\n\nNúmero 10: as abas de planilha na parte inferior. Posso inserir mais planilhas, renomeá-las.\n\nNúmero 11: botão para inserir planilhas.\n\nNo final, número 13 (e, pelo jeito, pularam o 12 na figura, tudo bem): o controle de zoom para aumentar ou diminuir o nível de zoom, de 10% até 400%. A barrinha embaixo permite ajustar. No mínimo, 10%; no máximo, 400%, se o computador aguentar.\n\nFecho aqui o primeiro bloco. Devagar, a gente vai andando, mostrando e trabalhando. Vou começar a mexer na minha pasta de trabalho e, dentro dela, na planilha, daqui a pouquinho. Calma. Não é só teoria. São coisas que caem em prova. Não com tanta ênfase, mas é bom saber. Beleza?\n\nE, enquanto passeio, vou passando o que mais interessa. Quando eu parar e falar um pouco mais, pode ter certeza: é uma atenção maior. Quando eu só passo, cai bem menos. Digo e repito: não é impossível cair. O examinador pode cobrar algo que nunca caiu. Ele acha um botão que ninguém usa, acende uma luz, e coloca na prova. Como a gente não usa, não é habitual. Pode acontecer.\n\nO que eu quero dizer com isso? Aquilo que é totalmente fora da curva, a exceção da exceção, se cair, provavelmente vai ser para poucos. Agora, o básico, o trivial, o feijão com arroz — esse a gente trabalha bem.\n\nEspero que esteja conectado comigo, entendendo as dicas. Não é perda de tempo. Se você acha, desculpe, mas é necessário. Aguarde: no próximo bloco, volto dando continuidade à nossa linha no Excel 365.",
+  "transcricao_meta": {
+    "title": "Excel",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 31667,
+    "createdAt": "2026-01-30T14:26:48.359Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: interface do Excel, diferenças entre versões do Microsoft 365 e versões fixas (2016/2019/2021), navegação pela faixa de opções, elementos da pasta de trabalho/planilha/célula, formatação numérica, salvamento automático/OneDrive, opções de cálculo, comentários/anotações, macros e zoom.\nPrincipais pontos: \n- Identificar e usar corretamente a faixa de opções, grupos e comandos mais cobrados.\n- Distinguir pasta de trabalho vs planilha e conceitos de interface.\n- Pegadinhas: salvamento automático no OneDrive, renomear pela barra de títulos, opções de cálculo, comentários vs anotações.\n\n> Dica de Prova: Estude o vocabulário oficial da interface (nomes de guias, grupos e comandos) e as diferenças entre Microsoft 365 e versões fixas. Bancas como FGV exploram isso.\n\n“somos o que repetidamente fazemos A excelência, portanto, não é um feito, mas um ano, disse nos estoques”\n\n## 1. Base / Conceitos Fundamentais\n- **Excel**: aplicativo do pacote Microsoft 365 (ou versões fixas 2016/2019/2021) para planilhas, cálculos, análise e visualização de dados.\n- **Pasta de trabalho**: o arquivo do Excel (.xlsx). Contém uma ou mais planilhas.\n- **Planilha**: cada aba interna dentro da pasta de trabalho.\n- **Célula**: interseção de coluna (letras) e linha (números), ex.: B3.\n- **Barra de títulos**: mostra o nome do arquivo e usuário; contém minimizar, maximizar e fechar.\n- **Barra de fórmulas**: exibe/edita o conteúdo real da célula ativa.\n- **Caixa de Nome**: mostra a referência da célula ativa e permite definir nomes para células/intervalos.\n- **Faixa de opções (Ribbon)**: conjunto de guias (abas) e grupos de comandos.\n- **Barra de ferramentas de acesso rápido**: atalhos como salvar automaticamente, salvar, desfazer, refazer; pode ser personalizada.\n- **Alça de preenchimento**: canto inferior direito da célula para replicar séries/padrões.\n- **Zoom**: controle de exibição de 10% (mínimo) a 400% (máximo).\n\n> Dica de Prova: Arquivo = pasta de trabalho. Planilha = aba. Confundir os termos é erro clássico.\n\n## 2. Como Funciona / Distinções\n- Microsoft 365 (assinatura) vs versões fixas (2016/2019/2021):\n  - **Microsoft 365**: recebe novos recursos continuamente; integração nativa com OneDrive e colaboração; está “sempre atualizado”.\n  - **Versões fixas**: não mudam recursos após o lançamento; só atualizações de segurança por tempo limitado.\n- **Salvar automaticamente**:\n  - Só funciona quando o arquivo está salvo no **OneDrive**.\n  - Após salvar no OneDrive, a alternância de “salvar automaticamente” habilita o registro contínuo.\n- **Renomear arquivo pela barra de títulos**:\n  - Quando salvo no OneDrive, é possível renomear diretamente na barra de títulos mesmo com o arquivo aberto.\n  - Em arquivo local aberto, o sistema não permite renomear pelo explorador; no Excel, essa exceção é via OneDrive.\n- **Exibição da faixa de opções**:\n  - Ocultar automaticamente a faixa opções.\n  - Mostrar as guias.\n  - Mostrar as guias e os comandos (padrão).\n- **Opções de cálculo**:\n  - Automático (padrão): recálculo a cada alteração.\n  - Manual: útil em planilhas pesadas para evitar recálculos constantes.\n- **Comentários vs Anotações**:\n  - Comentários: conversas encadeadas.\n  - Anotações: notas simples, sem threads.\n- **Macros e VBA**:\n  - Macros: automações gravadas.\n  - VBA: linguagem para editar/criar macros mais complexas; atenção à segurança (macro vírus).\n\n> Dica de Prova: “Sempre atualizado com novos recursos” remete a Microsoft 365; “recursos não mudam” indica 2016/2019/2021.\n\n## 3. Aplicação Prática / Técnicas\n- Tela inicial:\n  - **Pasta de trabalho em branco**: cria novo arquivo.\n  - **Modelos**: planilhas pré-formatadas (pesquisar, fixar, arquivos recentes).\n  - **Novo** vs **Abrir**: criar vs acessar arquivo existente (local ou OneDrive).\n  - **Conta**, **Comentário**, **Opções**: configurações e feedback.\n- Personalizar a Barra de Acesso Rápido:\n  - Adicionar comandos como **Novo**, **Abrir**, **Calcular agora**.\n  - Mudar posição para acima da faixa de opções.\n- Navegação por guias/grupos:\n  - **Guia Página Inicial**:\n    - Grupos: **Área de Transferência**, **Fonte**, **Alinhamento**, **Número**, **Edição**.\n    - Formatação numérica:\n      - **Moeda**: aplica R$ e duas casas decimais (pode alterar para dólar/euro).\n      - **Porcentagem**: multiplica por 100 e adiciona %.\n      - **Separadores milhares**: insere separadores e duas casas.\n      - **Aumentar/Diminuir casas decimais**: ajusta casas decimais por clique.\n  - **Guia Inserir**:\n    - Grupos: **Tabelas**, **Ilustrações**, **Gráficos**, **Suplementos**, **Links**, **Comentários**, **Textos**, **Símbolos**.\n    - Caminho típico para gráfico: Guia Inserir > Grupo Gráficos > tipo.\n  - **Guia Fórmulas**:\n    - **Biblioteca de Funções**: **Pesquisa**, **Referência**, **Matemática**, **Trigonometria**.\n    - **Nomes definidos**: use a **Caixa de Nome** para nomear intervalos.\n    - **Auditoria de fórmulas**: **Rastrear precedentes** e **Rastrear dependentes**.\n    - **Opções de cálculo**: alternar entre Automático e Manual.\n  - **Guia Dados**:\n    - **Obter e Transformar Dados**, **Consultas e conexões**, **Tipos de dados**, **Classificar**, **Ferramentas de dados**, **Previsão**.\n  - **Guia Revisão**:\n    - **Correção ortográfica**, **Acessibilidade**, **Idioma**, **Comentários**, **Anotações**, **Proteger a planilha**.\n  - **Guia Exibir**:\n    - **Modos de Exibição**, **Mostrar**, **Janela**; ajuste de **Zoom** (10% a 400%).\n  - **Guia Desenhar** e **Layout da Página**:\n    - Menos cobradas; saiba **Temas** e **Configuração da página**.\n- OneDrive e salvamento automático:\n  - Salve no OneDrive para habilitar o “salvar automaticamente”.\n  - Depois, renomeie na barra de títulos se necessário.\n- Macros:\n  - Gravar macro para tarefas repetitivas; editar no **VBA** se preciso.\n  - Habilitar conteúdo ao abrir arquivos com macros confiáveis.\n\n> Dica de Prova: A sequência para inserir gráfico e o local das opções de cálculo costumam ser cobrados literalmente.\n\n## 4. Exemplos e Casos Resolvidos\n- Formatação numérica (valor: 10):\n  - Aplicar **Moeda**: 10 → R$ 10,00 (duas casas; pode trocar para dólar/euro).\n  - Aplicar **Porcentagem**: 10 → 1.000% (10 × 100).\n  - **Separador de milhares**: 10 → 10,00 com separadores (em números maiores).\n  - **Aumentar casas decimais**: 10 → 10,0 → 10,00 → 10,000 …\n  - **Diminuir casas decimais**: 10,00 → 10,0 → 10; não reduz abaixo de zero decimais.\n- Opções de cálculo:\n  - Planilha pesada: mude para **Manual**, faça edições e pressione F9 ou use **Calcular agora**.\n- Inserir gráfico:\n  - Selecione os dados > Guia **Inserir** > Grupo **Gráficos** > escolha o tipo (colunas, linhas, pizza…).\n- Renomear arquivo pelo topo:\n  - Arquivo salvo no OneDrive > clique no nome na **barra de títulos** > digite novo nome > Enter.\n- Comentários vs Anotações:\n  - Comentários para discussão entre usuários (threads).\n  - Anotações para lembretes simples sem conversas.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir **pasta de trabalho** (arquivo) com **planilha** (aba).\n- Achar que “salvar automaticamente” funciona em qualquer arquivo: requer salvar no **OneDrive** primeiro.\n- Renomear arquivo aberto: localmente não pode; via **barra de títulos** funciona quando salvo no OneDrive.\n- Faixa de opções “sumiu”: pode estar em “Ocultar automaticamente a faixa opções” ou “Mostrar as guias”.\n- **Opções de cálculo**: padrão é Automático; lembre do uso de Manual para performance e do F9/Calcular agora.\n- **Comentários** vs **Anotações**: funções distintas; banca cobra a diferença.\n- Formatação numérica:\n  - **Porcentagem** multiplica por 100 e adiciona %.\n  - **Diminuir casas decimais** não reduz abaixo de zero casas existentes.\n- Macros:\n  - “Macro” não é sinônimo de **VBA**: macro pode ser gravada sem programar; **VBA** é a linguagem por trás.\n  - Segurança: macros podem conter vírus.\n- Versões:\n  - Microsoft 365 recebe novos recursos; 2016/2019/2021 não.\n  - Questões mencionando “sempre atualizado” apontam para Microsoft 365.\n\n> Dica de Prova: “Mostrar guias e os comandos” é o modo padrão da faixa. Se a questão falar que “as guias aparecem, mas os botões somem quando não usados”, pense em “Mostrar as guias”.\n\n> Dica de Prova: Para inserir gráfico: Guia Inserir > Grupo Gráficos > tipo. Para auditar fórmulas: Guia Fórmulas > Rastrear precedentes/dependentes.\n\n> Dica de Prova: Zoom mínimo “dez por cento”, máximo “quatrocentos por cento”.",
+  "resumo_bolso": "# Office 365 - Excel\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Excel**: aplicativo do pacote Microsoft 365 (ou versões fixas 2016/2019/2021) para planilhas, cálculos, análise e visualização de dados.  \n* **Pasta de trabalho**: arquivo do Excel (.xlsx). Contém uma ou mais **planilhas**.  \n* **Planilha**: cada **aba interna** dentro da pasta de trabalho.  \n* **Célula**: interseção coluna (letras) × linha (números), ex.: **B3**.  \n* **Barra de títulos**: mostra **nome do arquivo** e usuário; contém minimizar, maximizar e fechar.  \n* **Barra de fórmulas**: mostra/edita o **conteúdo real** da célula ativa (fórmula, texto, número).  \n* **Caixa de Nome**: mostra referência da célula ativa; permite **definir nomes** para células/intervalos.  \n* **Faixa de opções (Ribbon)**: conjunto de **guias (abas)** e **grupos de comandos**.  \n* **Barra de ferramentas de acesso rápido**: atalhos como **Salvar automaticamente**, Salvar, Desfazer, Refazer; pode ser **personalizada** e ter comandos como **Novo**, **Abrir**, **Calcular agora**.  \n* **Alça de preenchimento**: canto inferior direito da célula; arrastar para **replicar séries/padrões**.  \n* **Zoom**: controle de exibição de **10% (mínimo)** a **400% (máximo)**, acessível pela **Guia Exibir**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Microsoft 365 vs Versões Fixas (2016/2019/2021)\n\n| Aspecto | Microsoft 365 | 2016 / 2019 / 2021 |\n|--------|---------------|--------------------|\n| Atualização de recursos | Recebe **novos recursos continuamente**; está **sempre atualizado** | Recursos **não mudam** após lançamento; apenas atualizações de segurança por tempo limitado |\n| Licenciamento | **Assinatura** | **Licença perpétua** (fixa) |\n| Integração | Integração nativa com **OneDrive** e colaboração | Menos foco em nuvem/colaboração |\n\n---\n\n### Comentários vs Anotações\n\n| Aspecto | Comentários | Anotações |\n|--------|------------|-----------|\n| Natureza | **Conversas encadeadas** (threads) | **Notas simples**, sem threads |\n| Uso típico | Discussão entre usuários | Lembretes pessoais |\n\n---\n\n### Pasta de Trabalho vs Planilha\n\n| Aspecto | Pasta de trabalho | Planilha |\n|--------|-------------------|----------|\n| O que é | **Arquivo** do Excel | **Aba** dentro do arquivo |\n| Extensão | .xlsx | Não tem extensão própria |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Salvamento Automático (AutoSave) e OneDrive**\n\n* Só funciona quando o arquivo está salvo no **OneDrive**.  \n* Após salvar no OneDrive, a alternância de **Salvar automaticamente** habilita o registro contínuo.\n\n---\n\n**2. Renomear pela Barra de Títulos**\n\n* Quando o arquivo está salvo no **OneDrive**, é possível **renomear diretamente na barra de títulos**, mesmo com o arquivo aberto.\n\n---\n\n**3. Exibição da Faixa de Opções**\n\n* Modos de exibição:  \n  * **Ocultar automaticamente a faixa de opções**.  \n  * **Mostrar as guias**.  \n  * **Mostrar as guias e os comandos** (**padrão**).\n\n---\n\n**4. Opções de Cálculo**\n\n* Guia **Fórmulas** > **Opções de cálculo**:  \n  * **Automático (padrão)**: recálculo a cada alteração.  \n  * **Manual**: útil em planilhas pesadas para evitar recálculos constantes; pode-se usar **F9/Calcular agora** para recalcular.\n\n---\n\n**5. Formatação Numérica (Guia Página Inicial > Grupo Número)**\n\n* **Moeda**: aplica **R$** e **2 casas decimais** (podendo alterar para dólar/euro).  \n* **Porcentagem**: **multiplica por 100** e adiciona **%**.  \n* **Separador de milhares**: insere separadores e duas casas decimais.  \n* **Aumentar/Diminuir casas decimais**: ajusta o número de casas decimais por clique; **não reduz abaixo de zero**.  \n\nExemplo (valor 10):  \n* Moeda: **10 → R$ 10,00**.  \n* Porcentagem: **10 → 1.000%** (10 × 100).  \n* Aumentar casas decimais: 10 → 10,0 → 10,00 → 10,000 …  \n* Diminuir casas decimais: 10,00 → 10,0 → 10.\n\n---\n\n**6. Inserir Gráfico**\n\n* Caminho típico: **Guia Inserir > Grupo Gráficos > tipo de gráfico** (colunas, linhas, pizza etc.).\n\n---\n\n**7. Auditoria de Fórmulas**\n\n* Guia **Fórmulas** > **Auditoria de fórmulas**:  \n  * **Rastrear precedentes**: mostra células que **alimentam** a fórmula.  \n  * **Rastrear dependentes**: mostra células que **dependem** da célula atual.\n\n---\n\n**8. Macros e VBA**\n\n* **Macros**: automações gravadas para tarefas repetitivas.  \n* **VBA**: linguagem usada para criar/editar macros mais complexas; macros podem conter **vírus**, exigindo atenção à segurança.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir **pasta de trabalho** (arquivo) com **planilha** (aba).  \n2. Achar que **Salvar automaticamente** funciona em qualquer arquivo: requer salvar no **OneDrive** primeiro.  \n3. Achar que não é possível **renomear arquivo aberto**: via **barra de títulos**, funciona quando salvo no OneDrive.  \n4. Considerar **Comentários** e **Anotações** como sinônimos: têm funções distintas (threads vs nota simples).  \n5. Tratar **macro** como sinônimo de **VBA**: macro pode ser apenas gravada; VBA é a linguagem por trás e pode envolver riscos de segurança (macro vírus).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **pasta de trabalho (arquivo)** de **planilha (aba)**?  \n* Lembrei que **Salvar automaticamente** e **renomear na barra de títulos** exigem arquivo no **OneDrive**?  \n* Memorizei os três modos de **exibição da faixa de opções** e que o padrão é **Mostrar as guias e os comandos**?  \n* Sei que o padrão de **cálculo** é **Automático** e que **Manual + F9/Calcular agora** é para planilhas pesadas?  \n* Fixei que **Porcentagem multiplica por 100**, **Moeda** aplica símbolo + 2 casas, e **Diminuir casas decimais** não passa de zero?  \n* Sei o caminho literal: **Inserir > Gráficos**, **Fórmulas > Opções de cálculo**, **Fórmulas > Rastrear precedentes/dependentes**?  \n* Diferenciei claramente **Comentários** (conversas encadeadas) de **Anotações** (nota simples)?  \n* Lembrei que **Microsoft 365** = “sempre atualizado com novos recursos” e versões **2016/2019/2021** têm recursos estáveis?  \n* Recordei que **Zoom** vai de **10% a 400%**?  \n* Sei que a **Barra de acesso rápido** é **personalizável** e pode incluir comandos como **Novo**, **Abrir**, **Salvar automaticamente**, **Calcular agora**?",
+  "mapa_mental": "# 📊 Excel no Microsoft 365\n## 🧱 Conceitos Fundamentais\n### 💻 Estrutura Arquivo\n- Pasta de trabalho\n- Extensão .xlsx\n- Planilha como aba\n- Célula linha/coluna\n- Caixa de Nome\n### 🧭 Barras Principais\n- Barra de títulos\n- Barra de fórmulas\n- Barra acesso rápido\n- Faixa de opções\n- Barra de status\n### 🔍 Recursos Básicos\n- Alça de preenchimento\n- Zoom 10% a 400%\n- Modos de exibição\n- Temas planilha\n- Configuração página\n\n## 🧮 Funcionalidades Essenciais\n### 💱 Formatação Numérica\n- Formato moeda\n- Formato porcentagem\n- Separador milhares\n- Aumentar decimais\n- Diminuir decimais\n### 🧮 Cálculo e Fórmulas\n- Cálculo automático\n- Cálculo manual\n- Calcular agora\n- Biblioteca funções\n- Auditoria fórmulas\n### 💬 Comentários e Anotações\n- Comentários encadeados\n- Anotações simples\n- Guia Revisão\n- Marcação colaboração\n- Diferença conceitual\n\n## 🧷 Interface e Guias\n### 🧩 Faixa de Opções\n- Guias principais\n- Grupos comandos\n- Mostrar guias\n- Guias e comandos\n- Ocultar automaticamente\n### 🏠 Guia Página Inicial\n- Área transferência\n- Fonte e alinhamento\n- Número formatação\n- Edição células\n- Estilos células\n### 📥 Guias Inserir e Fórmulas\n- Tabelas e gráficos\n- Ilustrações objetos\n- Textos e símbolos\n- Biblioteca funções\n- Nomes definidos\n### 📊 Guias Dados e Revisão\n- Obter transformar dados\n- Classificar filtrar\n- Ferramentas dados\n- Correção ortográfica\n- Proteger planilha\n### 👁️ Guia Exibir\n- Modos exibição\n- Mostrar elementos\n- Janela múltipla\n- Controle zoom\n- Congelar painéis\n\n## ☁️ Versões, Nuvem e Macros\n### 🧾 Versões Excel\n- Microsoft 365\n- Versões 2016/2019/2021\n- Sempre atualizado\n- Recursos estáveis\n- Atualizações segurança\n### ☁️ OneDrive e Salvamento\n- Integração OneDrive\n- Salvar automaticamente\n- Arquivo na nuvem\n- Renomear barra títulos\n- Acesso multiplataforma\n### 🤖 Macros e VBA\n- Macro gravada\n- Linguagem VBA\n- Arquivo habilitado macro\n- Segurança macros\n- Macro vírus risco",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Licenciamento do Office",
+      "description": "Licenciamento do Office — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o modelo de licenciamento do **Microsoft 365**?",
+          "back": "Por **assinatura** (pagamento mensal ou anual).",
+          "hint": "Refere-se ao modelo de pagamento recorrente",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "office-365",
+            "licenciamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Que vantagem de atualização diferencia uma assinatura de uma versão fixa?",
+          "back": "A assinatura recebe sempre a versão **mais atual** e todos os lançamentos, enquanto a versão fixa mantém recursos inalterados.",
+          "hint": "Pense na diferença entre aluguel e compra",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "office-365",
+            "atualizacao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-3",
+          "front": "Como se comportam os recursos de uma versão fixa após a compra?",
+          "back": "Os recursos **não mudam**, sofrendo apenas atualizações de segurança por um período.",
+          "hint": "O oposto de um modelo de assinatura",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "office-365",
+            "versao-fixa"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Tela e Interface",
+      "description": "Tela e Interface — 5 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual opção da tela inicial permite abrir arquivos já gravados?",
+          "back": "**Abrir**.",
+          "hint": "Ação básica de recuperação de dados",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "interface",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Onde podem ser acessados arquivos armazenados na nuvem pela tela inicial?",
+          "back": "No **OneDrive**.",
+          "hint": "Serviço de armazenamento em nuvem da Microsoft",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "interface",
+            "nuvem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual área do Excel reúne as guias e seus comandos?",
+          "back": "**Faixa de opções**.",
+          "hint": "Local onde ficam organizados os comandos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "excel",
+            "interface",
+            "comandos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "O que acontece com a faixa de opções configurada para ocultação automática?",
+          "back": "Ela é ocultada automaticamente e surge apenas quando o usuário clica nas guias.",
+          "hint": "Comportamento de visibilidade da interface",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "excel",
+            "interface",
+            "faixa-opcoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a função da barra de ferramentas de acesso rápido?",
+          "back": "Reunir comandos acessados com frequência, como **salvar**, desfazer e refazer.",
+          "hint": "Fica no topo da janela, fora das guias",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "interface",
+            "atalhos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Estrutura da Planilha",
+      "description": "Estrutura da Planilha — 5 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "O que é uma pasta de trabalho no Excel?",
+          "back": "É o **arquivo** do Excel.",
+          "hint": "Terminologia técnica para o arquivo .xlsx",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "excel",
+            "conceitos",
+            "arquivo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a relação entre uma pasta de trabalho e uma planilha?",
+          "back": "A pasta de trabalho é o arquivo que **contém** as planilhas.",
+          "hint": "Relação de continente e conteúdo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "conceitos",
+            "planilha"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-11",
+          "front": "Como as colunas do Excel são identificadas?",
+          "back": "Por **letras** ou combinação de letras.",
+          "hint": "Identificadores verticais",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "excel",
+            "interface",
+            "colunas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Como se define uma célula em uma planilha?",
+          "back": "A interseção de uma **coluna** com uma **linha**.",
+          "hint": "Unidade básica de dados",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "excel",
+            "conceitos",
+            "celula"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual recurso permite nomear uma célula ou um intervalo?",
+          "back": "**Caixa de nome**.",
+          "hint": "Fica à esquerda da barra de fórmulas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "interface",
+            "referencia"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Formatação e Cálculo",
+      "description": "Formatação e Cálculo — 6 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Que transformação o formato de porcentagem aplica a um valor?",
+          "back": "Multiplica o número por **cem** e acrescenta o símbolo de porcentagem.",
+          "hint": "Operação matemática básica de escala",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "formatacao",
+            "numeros"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "O que cada clique em aumentar casas decimais acrescenta ao número?",
+          "back": "Uma **casa decimal**.",
+          "hint": "Ação de precisão numérica",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "formatacao",
+            "decimais"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Em que situação diminuir casas decimais não altera o valor exibido?",
+          "back": "Quando o número é **inteiro** e não possui casas decimais para remover.",
+          "hint": "Estado do número que não possui fração",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "excel",
+            "formatacao",
+            "excecao"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual é o modo padrão de cálculo das fórmulas no Excel?",
+          "back": "**Automático**.",
+          "hint": "Comportamento padrão ao inserir dados",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "calculo",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Por que o cálculo manual pode ser útil em planilhas muito grandes?",
+          "back": "Para evitar o **reprocessamento** constante de valores e economizar processamento.",
+          "hint": "Relacionado ao desempenho do computador",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "excel",
+            "calculo",
+            "performance"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual elemento exibe o conteúdo real da célula selecionada?",
+          "back": "**Barra de fórmulas**.",
+          "hint": "Local onde se edita o conteúdo da célula",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "interface",
+            "formulas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Automação e Revisão",
+      "description": "Automação e Revisão — 4 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "O que é uma macro no Excel?",
+          "back": "Pequenos **programas** gravados para automatizar tarefas repetitivas.",
+          "hint": "Automatização de processos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "automacao",
+            "macros"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual risco de segurança está associado à execução de macros?",
+          "back": "Constituem **brechas para vírus** (vírus de macro).",
+          "hint": "Ameaça cibernética",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "seguranca",
+            "macros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Como os comentários podem facilitar discussões no Excel?",
+          "back": "Permitem conversas **encadeadas** e caixas de resposta entre pessoas.",
+          "hint": "Recurso de colaboração",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "colaboracao",
+            "comentarios"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual é a finalidade de proteger uma planilha?",
+          "back": "Impedir a alteração de **valores** por outros usuários.",
+          "hint": "Medida de integridade de dados",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "seguranca",
+            "protecao"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Excel 365, qual é a principal diferença em relação às versões fixas do Office (como 2016, 2019, 2021)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O Excel 365 opera por assinatura e recebe atualizações contínuas de recursos, enquanto versões fixas mantêm os recursos originais recebendo apenas atualizações de segurança por período limitado",
+          "correct": true,
+          "explanation": "Correta. A principal diferença do Microsoft Excel 365 em relação às versões fixas (como 2016, 2019, 2021) é o modelo de licenciamento por assinatura. Com o Excel 365, o usuário paga uma taxa periódica (mensal ou anual) e, em contrapartida, recebe acesso contínuo às versões mais atualizadas do software, incluindo novos recursos e funcionalidades. As versões fixas, por outro lado, são adquiridas com um pagamento único, mantendo os recursos daquela edição específica e recebendo apenas atualizações de segurança por um período determinado, sem a adição de novas funcionalidades."
+        },
+        {
+          "id": "b",
+          "text": "O Excel 365 permite apenas três instalações simultâneas, enquanto versões fixas permitem instalações ilimitadas",
+          "correct": false,
+          "explanation": "Incorreta. O número de instalações simultâneas do Excel 365 depende do plano de assinatura adquirido, sendo comum a permissão de instalação em até 5 dispositivos (PCs, Macs, tablets e smartphones) para planos domésticos. Em contraste, as licenças de versões fixas do Office geralmente permitem apenas uma instalação por licença, o que torna a afirmação sobre instalações ilimitadas para versões fixas e limitadas a três para o 365 imprecisa."
+        },
+        {
+          "id": "c",
+          "text": "O Excel 365 funciona exclusivamente online, sem possibilidade de instalação local no computador",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel 365, diferentemente do que a alternativa sugere, não funciona exclusivamente online. Ele oferece a possibilidade de instalação local no computador, além de uma versão baseada em nuvem, permitindo ao usuário escolher a modalidade de uso que melhor se adapta às suas necessidades. A característica de ser online é uma das funcionalidades, mas não a única forma de utilização."
+        },
+        {
+          "id": "d",
+          "text": "O Excel 365 possui interface completamente diferente das versões anteriores, incompatível com arquivos criados em versões fixas",
+          "correct": false,
+          "explanation": "Incorreta. A interface do Excel 365 é uma evolução das versões anteriores, mantendo a familiaridade para os usuários e garantindo a compatibilidade. O Excel 365 é totalmente compatível com arquivos criados em versões fixas anteriores do software, permitindo a abertura, edição e salvamento desses documentos sem problemas de incompatibilidade, ao contrário do que a alternativa afirma."
+        }
+      ],
+      "explanation": "Correta. A principal diferença do Microsoft Excel 365 em relação às versões fixas (como 2016, 2019, 2021) é o modelo de licenciamento por assinatura. Com o Excel 365, o usuário paga uma taxa periódica (mensal ou anual) e, em contrapartida, recebe acesso contínuo às versões mais atualizadas do software, incluindo novos recursos e funcionalidades. As versões fixas, por outro lado, são adquiridas com um pagamento único, mantendo os recursos daquela edição específica e recebendo apenas atualizações de segurança por um período determinado, sem a adição de novas funcionalidades.",
+      "difficulty": "easy",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao abrir o Microsoft Excel, qual elemento da interface exibe modelos disponíveis, arquivos recentes e opções para criar nova pasta de trabalho ou abrir arquivos existentes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A guia Arquivo no menu principal, acessível após abrir uma pasta de trabalho",
+          "correct": false,
+          "explanation": "Incorreta. A guia \"Arquivo\" (que também leva à Backstage View) é acessada após o programa já ter sido aberto e, geralmente, após uma pasta de trabalho já estar em exibição ou ser criada. A pergunta se refere ao que é exibido \"ao abrir o Microsoft Excel\", que é a tela inicial que surge antes mesmo de qualquer pasta de trabalho ser carregada ou criada, apresentando as opções iniciais de forma proativa."
+        },
+        {
+          "id": "b",
+          "text": "A barra de ferramentas de acesso rápido, localizada acima da faixa de opções",
+          "correct": false,
+          "explanation": "Incorreta. A barra de ferramentas de acesso rápido (Quick Access Toolbar) é um componente personalizável que exibe atalhos para comandos frequentemente utilizados, como salvar, desfazer e refazer. Ela não é o local onde são apresentados modelos, arquivos recentes ou as opções completas para criar uma nova pasta de trabalho ou abrir arquivos existentes."
+        },
+        {
+          "id": "c",
+          "text": "A tela inicial de abertura, apresentada antes da área de trabalho principal",
+          "correct": true,
+          "explanation": "Correta. Ao iniciar o Microsoft Excel, o programa exibe uma \"tela inicial\" (também conhecida como Backstage View) que antecede a área de trabalho principal da planilha. É nessa tela que o usuário encontra opções para criar uma nova pasta de trabalho (em branco ou a partir de modelos), acessar arquivos recentes, abrir documentos existentes de diferentes locais (como OneDrive ou computador local) e gerenciar configurações da conta."
+        },
+        {
+          "id": "d",
+          "text": "O painel de navegação lateral, disponível no modo de exibição estendido",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel não possui um \"painel de navegação lateral\" com a função descrita como um elemento padrão de sua interface de abertura. As opções para gerenciar arquivos e modelos são centralizadas na tela inicial (Backstage View) ou na guia Arquivo, e não em um painel lateral estendido."
+        }
+      ],
+      "explanation": "Correta. Ao iniciar o Microsoft Excel, o programa exibe uma \"tela inicial\" (também conhecida como Backstage View) que antecede a área de trabalho principal da planilha. É nessa tela que o usuário encontra opções para criar uma nova pasta de trabalho (em branco ou a partir de modelos), acessar arquivos recentes, abrir documentos existentes de diferentes locais (como OneDrive ou computador local) e gerenciar configurações da conta.",
+      "difficulty": "easy",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Excel, qual é a nomenclatura técnica mais adequada para os elementos que contêm conjuntos de comandos organizados na parte superior da interface, como Página Inicial, Inserir e Fórmulas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Painéis de controle ou módulos de função",
+          "correct": false,
+          "explanation": "Incorreta. \"Painéis de controle\" e \"módulos de função\" não são as nomenclaturas técnicas corretas para os elementos da interface do Excel que organizam comandos. Painéis de controle são geralmente encontrados em sistemas operacionais para configurações gerais, e módulos de função são mais relacionados à programação ou a componentes específicos de software, não à organização principal dos comandos do aplicativo."
+        },
+        {
+          "id": "b",
+          "text": "Guias ou abas da faixa de opções",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, a interface superior que organiza os comandos em seções como \"Página Inicial\", \"Inserir\", \"Fórmulas\" é conhecida como \"faixa de opções\" (Ribbon). Dentro dessa faixa, os elementos que representam cada uma dessas seções são chamados tecnicamente de \"guias\" ou \"abas\". Cada guia agrupa comandos relacionados em \"grupos\", facilitando a localização e o uso das funcionalidades."
+        },
+        {
+          "id": "c",
+          "text": "Menus suspensos ou barras de menu",
+          "correct": false,
+          "explanation": "Incorreta. \"Menus suspensos\" ou \"barras de menu\" são termos que se referem a interfaces de usuário mais antigas, onde os comandos eram acessados por meio de listas que se desdobravam. A interface moderna do Excel, a partir do Office 2007, utiliza a \"faixa de opções\" (Ribbon), que organiza os comandos de forma visualmente diferente e mais contextualizada."
+        },
+        {
+          "id": "d",
+          "text": "Categorias de ferramentas ou seções de comando",
+          "correct": false,
+          "explanation": "Incorreta. Embora os termos \"categorias de ferramentas\" ou \"seções de comando\" possam, de certa forma, descrever a função desses elementos, a nomenclatura técnica específica e amplamente aceita no contexto do Microsoft Office para esses componentes da faixa de opções é \"guias\" ou \"abas\". É importante usar a terminologia precisa para evitar ambiguidades."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, a interface superior que organiza os comandos em seções como \"Página Inicial\", \"Inserir\", \"Fórmulas\" é conhecida como \"faixa de opções\" (Ribbon). Dentro dessa faixa, os elementos que representam cada uma dessas seções são chamados tecnicamente de \"guias\" ou \"abas\". Cada guia agrupa comandos relacionados em \"grupos\", facilitando a localização e o uso das funcionalidades.",
+      "difficulty": "easy",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a função do recurso de salvamento automático no Excel 365?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sincronizar automaticamente o arquivo com todos os dispositivos conectados à mesma conta Microsoft",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Salvamento Automático facilite a sincronização do arquivo entre dispositivos ao salvar as alterações na nuvem, sua função direta e primária não é \"sincronizar automaticamente o arquivo com todos os dispositivos\". A sincronização é uma consequência do fato de o arquivo ser salvo na nuvem. A função principal do Salvamento Automático é garantir que as modificações sejam gravadas continuamente no arquivo armazenado no OneDrive ou SharePoint."
+        },
+        {
+          "id": "b",
+          "text": "Salvar automaticamente as alterações no arquivo quando este está armazenado no OneDrive",
+          "correct": true,
+          "explanation": "Correta. O recurso de \"Salvamento Automático\" (AutoSave) no Excel 365 tem como principal função salvar automaticamente e de forma contínua todas as alterações feitas no arquivo, desde que este esteja armazenado em um serviço de armazenamento em nuvem da Microsoft, como o OneDrive ou SharePoint. Isso garante que o trabalho seja salvo em tempo real, eliminando a necessidade de salvamento manual e protegendo contra perdas de dados."
+        },
+        {
+          "id": "c",
+          "text": "Criar cópias de backup automáticas em pasta específica do sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. A criação de cópias de backup automáticas em uma pasta específica do sistema operacional é uma funcionalidade de backup ou de recuperação de arquivos (AutoRecuperação), e não a função principal do \"Salvamento Automático\" (AutoSave) no Excel 365. O Salvamento Automático tem um propósito diferente, focado na sincronização contínua com a nuvem."
+        },
+        {
+          "id": "d",
+          "text": "Salvar automaticamente o arquivo no computador local a cada intervalo de tempo configurado pelo usuário",
+          "correct": false,
+          "explanation": "Incorreta. O recurso de \"Salvamento Automático\" (AutoSave) no Excel 365 não salva o arquivo automaticamente no computador local a cada intervalo de tempo. Essa função é característica do recurso de \"AutoRecuperação\" (AutoRecover), que cria cópias temporárias para evitar perda de dados em caso de falha do aplicativo. O Salvamento Automático, por sua vez, está diretamente ligado ao armazenamento em nuvem."
+        }
+      ],
+      "explanation": "Correta. O recurso de \"Salvamento Automático\" (AutoSave) no Excel 365 tem como principal função salvar automaticamente e de forma contínua todas as alterações feitas no arquivo, desde que este esteja armazenado em um serviço de armazenamento em nuvem da Microsoft, como o OneDrive ou SharePoint. Isso garante que o trabalho seja salvo em tempo real, eliminando a necessidade de salvamento manual e protegendo contra perdas de dados.",
+      "difficulty": "medium",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "No Excel, quando um arquivo está salvo no OneDrive e aberto para edição, qual operação pode ser realizada diretamente na barra de títulos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Alterar o nome do arquivo sem necessidade de fechá-lo ou usar a opção Salvar Como",
+          "correct": true,
+          "explanation": "Correta. No Excel 365, quando um arquivo está salvo no OneDrive ou SharePoint e aberto para edição, é possível alterar o nome do arquivo diretamente na barra de títulos do aplicativo. Ao clicar sobre o nome do arquivo, uma opção de renomeação é apresentada, permitindo que o usuário modifique o nome sem a necessidade de fechar o documento ou utilizar a função \"Salvar Como\". Essa funcionalidade é uma das vantagens da integração com a nuvem."
+        },
+        {
+          "id": "b",
+          "text": "Compartilhar o arquivo com outros usuários através de link direto de acesso",
+          "correct": false,
+          "explanation": "Incorreta. Embora a barra de títulos possa conter um botão de \"Compartilhar\" que permite gerar links de acesso, essa operação não é realizada \"diretamente no nome do arquivo\" na barra de títulos. A renomeação é a ação específica que pode ser feita ao clicar no nome do arquivo, enquanto o compartilhamento é acionado por um botão dedicado."
+        },
+        {
+          "id": "c",
+          "text": "Converter o formato do arquivo entre diferentes versões do Excel",
+          "correct": false,
+          "explanation": "Incorreta. A conversão do formato de um arquivo entre diferentes versões do Excel (por exemplo, de .xlsx para .xls) é uma operação que geralmente é realizada através da opção \"Salvar Como\" ou \"Exportar\" no menu \"Arquivo\", e não diretamente na barra de títulos. A barra de títulos não oferece essa funcionalidade de conversão."
+        },
+        {
+          "id": "d",
+          "text": "Configurar permissões de edição e visualização para colaboradores",
+          "correct": false,
+          "explanation": "Incorreta. A configuração de permissões de edição e visualização para colaboradores é uma funcionalidade avançada de compartilhamento e controle de acesso, que é geralmente gerenciada através do botão \"Compartilhar\" na faixa de opções ou diretamente na interface do OneDrive/SharePoint. Essa ação não é realizada clicando diretamente no nome do arquivo na barra de títulos do Excel."
+        }
+      ],
+      "explanation": "Correta. No Excel 365, quando um arquivo está salvo no OneDrive ou SharePoint e aberto para edição, é possível alterar o nome do arquivo diretamente na barra de títulos do aplicativo. Ao clicar sobre o nome do arquivo, uma opção de renomeação é apresentada, permitindo que o usuário modifique o nome sem a necessidade de fechar o documento ou utilizar a função \"Salvar Como\". Essa funcionalidade é uma das vantagens da integração com a nuvem.",
+      "difficulty": "medium",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No grupo Número da guia Página Inicial, qual é o comportamento do botão de formato de moeda quando aplicado a um valor numérico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Formata o número com separador de milhares e mantém as casas decimais originais sem adicionar símbolo",
+          "correct": false,
+          "explanation": "Incorreta. Embora o formato de moeda utilize o separador de milhares, a afirmação de que ele mantém as casas decimais originais 'sem adicionar símbolo' está errada. O principal objetivo do formato de moeda é justamente adicionar o símbolo monetário para identificar o valor como dinheiro."
+        },
+        {
+          "id": "b",
+          "text": "Converte o número para o formato monetário com símbolo da moeda local, duas casas decimais e separador de milhares",
+          "correct": true,
+          "explanation": "Correta. Ao aplicar o formato de moeda no grupo Número da guia Página Inicial, o Excel converte o valor numérico para o formato monetário padrão, que geralmente inclui o símbolo da moeda local, duas casas decimais e o separador de milhares, facilitando a leitura e padronização de valores financeiros."
+        },
+        {
+          "id": "c",
+          "text": "Multiplica o valor por cem e adiciona o símbolo de porcentagem ao final",
+          "correct": false,
+          "explanation": "Incorreta. A descrição de multiplicar o valor por cem e adicionar o símbolo de porcentagem corresponde ao comportamento do formato de porcentagem, não do formato de moeda. O formato de moeda não altera o valor numérico, apenas sua representação."
+        },
+        {
+          "id": "d",
+          "text": "Arredonda o número para o inteiro mais próximo e adiciona o prefixo monetário configurado no sistema",
+          "correct": false,
+          "explanation": "Incorreta. O formato de moeda não arredonda o número para o inteiro mais próximo por padrão; ele mantém a precisão decimal, geralmente exibindo duas casas decimais, a menos que configurado de outra forma. O prefixo monetário é adicionado, mas o arredondamento descrito não é o comportamento padrão."
+        }
+      ],
+      "explanation": "Correta. Ao aplicar o formato de moeda no grupo Número da guia Página Inicial, o Excel converte o valor numérico para o formato monetário padrão, que geralmente inclui o símbolo da moeda local, duas casas decimais e o separador de milhares, facilitando a leitura e padronização de valores financeiros.",
+      "difficulty": "easy",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao aplicar o formato de porcentagem a um valor numérico no Excel, qual operação matemática é executada automaticamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor é arredondado para o inteiro mais próximo e multiplicado por dez",
+          "correct": false,
+          "explanation": "Incorreta. O arredondamento para o inteiro mais próximo e a multiplicação por dez não são as operações matemáticas executadas ao aplicar o formato de porcentagem. A operação fundamental é a multiplicação por 100 para expressar o valor como uma parte de cem."
+        },
+        {
+          "id": "b",
+          "text": "O valor é convertido para fração decimal e exibido com duas casas após a vírgula",
+          "correct": false,
+          "explanation": "Incorreta. A conversão para fração decimal já é a base para o cálculo da porcentagem, mas o formato não apenas exibe com duas casas; ele realiza a multiplicação por 100 para a representação percentual. A exibição de casas decimais é uma formatação secundária, não a operação matemática principal."
+        },
+        {
+          "id": "c",
+          "text": "O valor é dividido por cem e o símbolo de porcentagem é adicionado",
+          "correct": false,
+          "explanation": "Incorreta. Se o valor fosse dividido por cem, um número como '50' se tornaria '0,5%', o que não é o comportamento esperado para representar 50 por cento. O Excel interpreta o número como uma fração decimal para aplicar a porcentagem."
+        },
+        {
+          "id": "d",
+          "text": "O valor é multiplicado por cem e o símbolo de porcentagem é adicionado",
+          "correct": true,
+          "explanation": "Correta. Quando o formato de porcentagem é aplicado a um valor numérico no Excel, o programa multiplica o valor por 100 e adiciona o símbolo de porcentagem (%). Por exemplo, se você digitar '0.25' e aplicar o formato de porcentagem, ele será exibido como '25%'. Se você digitar '25' e aplicar o formato de porcentagem, ele será exibido como '2500%', pois o Excel assume que '25' é um valor absoluto e o multiplica por 100 para expressá-lo como porcentagem."
+        }
+      ],
+      "explanation": "Correta. Quando o formato de porcentagem é aplicado a um valor numérico no Excel, o programa multiplica o valor por 100 e adiciona o símbolo de porcentagem (%). Por exemplo, se você digitar '0.25' e aplicar o formato de porcentagem, ele será exibido como '25%'. Se você digitar '25' e aplicar o formato de porcentagem, ele será exibido como '2500%', pois o Excel assume que '25' é um valor absoluto e o multiplica por 100 para expressá-lo como porcentagem.",
+      "difficulty": "easy",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a diferença conceitual entre pasta de trabalho e planilha no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Pasta de trabalho refere-se ao conjunto de células visíveis na tela; planilha é o arquivo salvo no disco",
+          "correct": false,
+          "explanation": "Incorreta. A pasta de trabalho é o arquivo salvo no disco, enquanto o conjunto de células visíveis na tela faz parte de uma planilha. A alternativa inverte os conceitos, atribuindo a definição de pasta de trabalho à planilha e vice-versa."
+        },
+        {
+          "id": "b",
+          "text": "Pasta de trabalho é o espaço de armazenamento temporário; planilha é o documento final exportado",
+          "correct": false,
+          "explanation": "Incorreta. A pasta de trabalho é o documento persistente que é salvo, não um espaço de armazenamento temporário. A planilha também não é o documento final exportado, mas sim uma parte editável do arquivo principal."
+        },
+        {
+          "id": "c",
+          "text": "Pasta de trabalho é a área de edição principal; planilha é o conjunto de fórmulas e funções aplicadas",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a pasta de trabalho quanto a planilha estão envolvidas na edição, mas a planilha é a área onde as fórmulas e funções são aplicadas diretamente. A pasta de trabalho é o contêiner que organiza essas planilhas."
+        },
+        {
+          "id": "d",
+          "text": "Pasta de trabalho é o arquivo completo do Excel que pode conter uma ou mais planilhas; planilha é cada aba individual dentro desse arquivo",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, a pasta de trabalho é o arquivo principal, que possui a extensão .xlsx (ou .xls em versões mais antigas). Uma pasta de trabalho pode conter uma ou mais planilhas, que são as abas individuais onde os dados são organizados em linhas e colunas. Cada planilha é uma área de trabalho separada dentro da pasta de trabalho."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, a pasta de trabalho é o arquivo principal, que possui a extensão .xlsx (ou .xls em versões mais antigas). Uma pasta de trabalho pode conter uma ou mais planilhas, que são as abas individuais onde os dados são organizados em linhas e colunas. Cada planilha é uma área de trabalho separada dentro da pasta de trabalho.",
+      "difficulty": "easy",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Por que pode ser útil alterar o modo de cálculo do Excel de automático para manual?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Para evitar erros de arredondamento em cálculos financeiros complexos",
+          "correct": false,
+          "explanation": "Incorreta. O modo de cálculo (automático ou manual) não afeta a precisão ou os erros de arredondamento inerentes aos cálculos do Excel. A precisão é determinada pela forma como o Excel armazena números e pelas funções utilizadas, não pelo momento em que os cálculos são realizados."
+        },
+        {
+          "id": "b",
+          "text": "Para impedir que outros usuários alterem valores em planilhas compartilhadas",
+          "correct": false,
+          "explanation": "Incorreta. A prevenção de alterações por outros usuários em planilhas compartilhadas é uma função de proteção de planilhas e pastas de trabalho, que envolve senhas e permissões de edição. O modo de cálculo não tem relação direta com a segurança ou o controle de acesso de usuários."
+        },
+        {
+          "id": "c",
+          "text": "Para reduzir o consumo de processamento em planilhas grandes com muitas fórmulas e dados",
+          "correct": true,
+          "explanation": "Correta. Em planilhas muito grandes, que contêm um volume significativo de dados e muitas fórmulas complexas ou interconectadas, o recálculo automático após cada alteração pode consumir muitos recursos do sistema e causar lentidão. Mudar para o modo de cálculo manual permite que o usuário controle quando os cálculos são executados (geralmente pressionando F9), otimizando o desempenho e a produtividade."
+        },
+        {
+          "id": "d",
+          "text": "Para garantir maior precisão em operações com números decimais extensos",
+          "correct": false,
+          "explanation": "Incorreta. A precisão em operações com números decimais extensos é uma característica do motor de cálculo do Excel e da forma como ele lida com a aritmética de ponto flutuante, não sendo influenciada pelo modo de cálculo automático ou manual. Esse modo apenas define o *timing* dos cálculos, não sua exatidão."
+        }
+      ],
+      "explanation": "Correta. Em planilhas muito grandes, que contêm um volume significativo de dados e muitas fórmulas complexas ou interconectadas, o recálculo automático após cada alteração pode consumir muitos recursos do sistema e causar lentidão. Mudar para o modo de cálculo manual permite que o usuário controle quando os cálculos são executados (geralmente pressionando F9), otimizando o desempenho e a produtividade.",
+      "difficulty": "hard",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Por que as macros podem representar um risco de segurança no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Macros podem ser utilizadas como vetor para vírus, executando código malicioso ao serem ativadas",
+          "correct": true,
+          "explanation": "Correta. Macros são programas ou scripts (geralmente em VBA - Visual Basic for Applications) incorporados em arquivos do Excel. Se um arquivo contiver uma macro maliciosa, ela pode ser ativada, executando comandos que podem danificar o sistema, roubar informações confidenciais, instalar outros malwares ou comprometer a segurança do computador. Por essa razão, o Excel geralmente alerta o usuário sobre a presença de macros e permite desativá-las por padrão."
+        },
+        {
+          "id": "b",
+          "text": "Macros alteram permanentemente as configurações do Excel, impossibilitando restauração",
+          "correct": false,
+          "explanation": "Incorreta. Macros podem alterar configurações do Excel, mas geralmente não de forma irreversível ou que impeça a restauração. A principal preocupação de segurança não é a alteração de configurações em si, mas a execução de código arbitrário com intenções maliciosas."
+        },
+        {
+          "id": "c",
+          "text": "Macros consomem grande quantidade de memória, podendo causar travamentos do sistema",
+          "correct": false,
+          "explanation": "Incorreta. Embora macros mal programadas possam, de fato, consumir muitos recursos e até causar travamentos, este não é o principal risco de segurança. O risco mais grave está na capacidade de execução de código malicioso."
+        },
+        {
+          "id": "d",
+          "text": "Macros compartilham automaticamente dados da planilha com servidores externos",
+          "correct": false,
+          "explanation": "Incorreta. Embora uma macro maliciosa *possa* ser programada para compartilhar dados com servidores externos, essa é uma ação específica que uma macro pode realizar, não a definição geral do risco de segurança. O risco reside na capacidade da macro de executar *qualquer* código, incluindo aquele que pode roubar ou transmitir dados, mas também outros tipos de ataques."
+        }
+      ],
+      "explanation": "Correta. Macros são programas ou scripts (geralmente em VBA - Visual Basic for Applications) incorporados em arquivos do Excel. Se um arquivo contiver uma macro maliciosa, ela pode ser ativada, executando comandos que podem danificar o sistema, roubar informações confidenciais, instalar outros malwares ou comprometer a segurança do computador. Por essa razão, o Excel geralmente alerta o usuário sobre a presença de macros e permite desativá-las por padrão.",
+      "difficulty": "medium",
+      "topic": "Microinformatica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "07_255653_Office 365 - Excel.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:50:27"
+}

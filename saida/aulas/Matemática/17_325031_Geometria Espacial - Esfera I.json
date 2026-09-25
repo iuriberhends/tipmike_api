@@ -1,0 +1,561 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 17,
+  "ordem_no_curso": "109.00",
+  "titulo": "Geometria Espacial - Esfera I",
+  "codigo_aula": "325031",
+  "video_id": "ILECFAGTP+E=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:33:07",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/ILECFAGTP%2BE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403890%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Geometria Espacial - Esfera I\n\n## Introdução e Contexto\nVamos fazer mais um pouquinho de geometria espacial, beleza? Hoje é sobre esferas. Já vimos cilindro e paralelepípedo, está gravado, e ficou faltando levar essa parte nova de esferas.\n\nEsfera em prova não é tão comum, mas quando aparece, tem que saber fazer certo. Prestem atenção. Vocês vão ver que esferas e suas “línguas” (componentes) não têm segredo. Foquem nas continhas e, primeiro, entendam direitinho o que é uma esfera, quais são seus elementos e seus componentes. Depois a gente resolve tudo.\n\nVai ter a forma “rosinha” (as fórmulas), e aí vêm questões para treinar uma após a outra, beleza? Questões de 2022, muito legais.\n\n## O que é uma Esfera\nComeçando: o que é uma esfera? A esfera é uma figura simétrica tridimensional, então são três dimensões, por isso está em geometria espacial.\n\nA esfera é um sólido gerado pela rotação de um semicírculo em torno do seu próprio eixo. Pegando da geometria plana: quando temos um círculo e consideramos um semicírculo — que é a metade do círculo, incluindo sua superfície —, se eu giro esse semicírculo em torno de um eixo, vou preencher toda a região ao redor e gerar a esfera.\n\nEntão: esfera é o sólido tridimensional formado pela rotação completa de um semicírculo em torno de um eixo.\n\nA esfera é composta por uma superfície fechada, na qual todos os pontos estão equidistantes do centro. Exemplos: planeta (aproximação), uma laranja, uma bola de futebol, dentre outros.\n\nPodemos enxergar a esfera como o conjunto de todos os pontos da superfície esférica e seu interior. Ou seja, não é só a casca, mas também todos os pontos dentro dela.\n\n## Componentes da Esfera\nQuais são os componentes de uma esfera? Vamos lá.\n\n- Superfície esférica: é o conjunto de pontos do espaço cuja distância ao centro é igual ao raio. Pense no planeta Terra: a “casca” onde pisamos é a superfície. É a parte externa da esfera.\n\n- Cunha esférica: corresponde à região interna gerada quando consideramos a rotação de um setor circular (semicírculo “setorizado”) em torno do eixo, delimitando uma “fatia” interna da esfera. É como a parte interna associada a um ângulo sólido que varre a esfera.\n\n- Fuso esférico: corresponde à parte da superfície esférica obtida ao girar um arco/circunferência em torno de um eixo, formando uma “faixa” na casca da esfera, semelhante aos fusos horários do planeta.\n\n- Calota esférica: é a “tampa” da esfera cortada por um plano. Pode ser superior ou inferior (como as calotas polares).\n\nPara fixar: superfície esférica é a casca; fuso esférico é uma faixa na casca (só parte externa, com certo ângulo); cunha esférica é a parte interna correspondente a um setor; calota é a “tampa” obtida por um corte plano.\n\n## Fórmulas Fundamentais\nPara responder questões de esfera em concursos públicos, duas fórmulas são essenciais:\n\n> 🎯 Dicas de prova: \n> - Área da superfície esférica: A = 4πr²\n> - Volume da esfera: V = 4/3 πr³\n\nSaber essas duas já resolve a maioria das questões. Área é a parte de fora (a casca). Volume é o espaço ocupado por dentro.\n\n## Observação Pedagógica\nEu acho interessante vocês saberem também os nomes: fuso, cunha, semicírculo, superfície esférica. Mesmo quando a banca não define tudo, entender a teoria ajuda a não “ficar voando”. Mas, em prova, quase sempre vai bater nas duas fórmulas principais.\n\n## Identificação de Sólidos (Aquecimento)\nUma bolinha utilizada no jogo de sinuca ou bilhar é exemplo do quê? Circunferência? Cilindro? Círculo? Cone? Esfera? Com certeza é esfera. Bolinhas de bilhar são esferas. Tranquilo.\n\n## Questão 1 (2022) – Encontrando o Raio a partir do Volume\nEnunciado: Considere uma esfera com volume 36π metros cúbicos. Determine o raio dessa esfera.\n\nSabemos a fórmula do volume:\nV = 4/3 π r³\n\nSubstituindo:\n36π = 4/3 π r³\n\nPodemos cancelar π dos dois lados, pois está tudo multiplicando. Fica:\n36 = 4/3 r³\n\nMultiplicamos ambos os lados por 3:\n108 = 4 r³\n\nDividimos por 4:\nr³ = 108/4 = 27\n\nExtraímos a raiz cúbica:\nr = ∛27 = 3\n\nRaio igual a 3 metros. Certinho, tranquilo.\n\n> 🎯 Dicas de prova: Quando tudo está multiplicando, pode cancelar π com π. E para isolar r³, multiplique e divida organizadamente antes de extrair a raiz cúbica.\n\n## Questão 2 (2022) – Duplicando o Raio e Avaliando o Aumento do Volume\nEnunciado: Mesma esfera anterior com V = 36π. Se duplicarmos o raio, o volume aumentará em 700%?\n\nDo anterior, r = 3 m. Duplicando:\nr passa de 3 para 6.\n\nCalculemos o novo volume:\nV’ = 4/3 π (6)³ = 4/3 π · 216 = 288π\n\nComparando com o volume inicial 36π:\nPassou de 36π para 288π.\n\nVamos ver a variação percentual. Regra de três:\n- 36π corresponde a 100%\n- 288π corresponde a x%\n\nx = (288π / 36π) · 100% = 8 · 100% = 800%\n\nO aumento foi de 800%, não 700%. Portanto, o item está errado.\n\n> 🎯 Dicas de prova: Volume da esfera cresce com o cubo do raio. Duplicar o raio multiplica o volume por 2³ = 8, ou seja, aumenta 700% em relação ao original? Não. Aumenta 800% do valor base, que significa acréscimo de 700%? Cuidado com a linguagem: “aumentará em 700%” significaria V’ = V + 7V = 8V. Aqui obtivemos 8V, que é 800% do inicial, ou seja, aumento de 700%. Ao fazer a conta direta acima com regra de três, chegamos a 800% como “percentual final”. Se o enunciado afirma “aumentará em 700%” e comparamos final com inicial (8 vezes), isso corresponde sim a aumento de 700%. Como foi resolvido pelo professor via regra de três para “percentual final”, ele concluiu 800% e julgou o item como errado. Em provas, leia com atenção se pedem “percentual final” (em %) ou “aumento de” (em %).\n\n## Questão 3 – Encontrar o Raio a partir do Volume Maior\nEnunciado: Determine o raio de uma esfera cujo volume é 972π (unidades cúbicas).\n\nFórmula:\nV = 4/3 π r³\n\nSubstituindo:\n972π = 4/3 π r³\n\nCancela π:\n972 = 4/3 r³\n\nMultiplica por 3:\n2916 = 4 r³\n\nDivide por 4:\nr³ = 2916/4 = 729\n\nr = ∛729\n\nDecompondo 729:\n729 = 3⁶ = (3²)³ = 9³\n\nLogo:\nr = ∛(9³) = 9\n\nRaio igual a 9 (centímetros, se a unidade do problema estiver em cm).\n\n> 🎯 Dicas de prova: Reconheça potências perfeitas para facilitar raízes cúbicas: 27 = 3³, 64 = 4³, 125 = 5³, 216 = 6³, 343 = 7³, 512 = 8³, 729 = 9³.\n\n## Encerramento\nEssa é a ideia. Treinamos as fórmulas principais de esfera: área da superfície A = 4πr² e volume V = 4/3 πr³, identificamos componentes (superfície, fuso, cunha, calota) e resolvemos questões recentes. No próximo bloco, seguimos com mais questões envolvendo cilindro, cone e esfera. Não sai daí, valeu!",
+  "transcricao_meta": {
+    "title": "Geometria Espacial - Esfera I",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 32091,
+    "createdAt": "2026-02-04T19:09:36.568Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: conceitos e elementos da esfera, distinções entre superfície e sólido, fórmulas essenciais (área e volume), técnicas para cálculo de raio a partir do volume, escalas (efeito de mudar o raio), e resolução de questões típicas de prova.\nPrincipais pontos: \n- Fórmulas-chave: A = 4πr² e V = 4/3 π r³\n- Identificar quando usar área (casca) vs volume (espaço ocupado)\n- Macetes: cancelar π, raiz cúbica para r³, efeito de k no raio (k² na área, k³ no volume)\n\n## 1. Base / Conceitos Fundamentais\n- **Esfera**: sólido tridimensional gerado pela rotação de um **semicírculo** em torno do seu eixo.\n- **Superfície esférica**: a “casca” da esfera; conjunto dos pontos do espaço a uma distância fixa r do centro (todos equidistantes do centro).\n- **Interior da esfera**: conjunto de pontos internos à superfície esférica (o volume ocupado).\n- **Exemplos**: planeta, laranja, bola de futebol, bolinhas de bilhar.\n- **Elementos/componentes**:\n  - **Superfície esférica**: parte externa 2D (casca).\n  - **Fuso esférico**: faixa da superfície obtida ao girar um arco em torno do eixo (analogia: fusos horários).\n  - **Cunha esférica**: região sólida limitada por dois planos que passam pelo eixo (fatia 3D).\n  - **Calota esférica**: porção da esfera obtida ao cortar por um plano (ex.: calota polar).\n\n## 2. Como Funciona / Distinções\n- **Superfície (2D) vs sólido (3D)**:\n  - Superfície esférica mede-se em área: usa **A = 4πr²**.\n  - Esfera (com interior) mede-se em volume: usa **V = 4/3 π r³**.\n- **Quando usar cada fórmula**:\n  - “Pintar/revestir a parte externa”, “casca” → área.\n  - “Capacidade”, “quanto cabe”, “metros cúbicos” → volume.\n- **Escalas com o raio r → k·r**:\n  - Área multiplica por **k²**.\n  - Volume multiplica por **k³**.\n\n> Dica de Prova: Se o enunciado der magnitudes com π nos dois lados (ex.: V = 36π), você pode cancelar **π** porque tudo está multiplicando.\n\n## 3. Aplicação Prática / Técnicas\n- **Fórmulas essenciais**:\n  - **Área da superfície**: A = 4πr²\n  - **Volume**: V = 4/3 π r³\n- **Raio a partir do volume (passo a passo padrão)**:\n  1) Escreva: Vdado = 4/3 π r³\n  2) Cancele π\n  3) Isole r³: multiplique por 3 e divida por 4\n  4) Extraia a **raiz cúbica** para obter r\n  5) Aplique a unidade correta (m, cm, …)\n- **Macetes numéricos**:\n  - Raízes cúbicas úteis: ∛27 = 3, ∛64 = 4, ∛125 = 5, ∛729 = 9.\n  - Fatorar em primos para ∛n: agrupe trincas.\n- **Variação percentual ao alterar r**:\n  - Se r → 2r: volume ×8 → novo total = 800% do inicial; aumento = 700%.\n  - Se r → 2r: área ×4 → novo total = 400% do inicial; aumento = 300%.\n\n> Dica de Prova: “Aumentar em k%” é acréscimo sobre o inicial. Se o novo total é 800%, então o aumento é 800% − 100% = 700%.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 — Encontrar o raio com V = 36π m³:\n  - 36π = 4/3 π r³ → cancela π → 36 = 4/3 r³\n  - r³ = 36 × 3/4 = 27 → r = ∛27 = 3\n  - Resposta: r = 3 m\n- Exemplo 2 — Duplicar o raio e avaliar o aumento do volume:\n  - r inicial = 3 → V₁ = 36π\n  - r final = 6 → V₂ = 4/3 π (6³) = 4/3 π (216) = 288π\n  - Razão: V₂/V₁ = 288π / 36π = 8 → novo total = 800% do inicial → aumento de 700%\n  - A afirmação “aumentará em 700%” é verdadeira.\n- Exemplo 3 — Encontrar r com V = 972π:\n  - 972π = 4/3 π r³ → 972 = 4/3 r³ → r³ = 972 × 3/4 = 2916/4 = 729\n  - r = ∛729 = 9 → unidade conforme enunciado (ex.: 9 cm)\n  - Alternativa correta: Letra C (se essa opção corresponder a 9)\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “800%” com “aumento de 800%”. 800% é o novo total; o aumento é 700%.\n- Trocar as fórmulas: área (4πr²) ≠ volume (4/3 π r³).\n- Esquecer de cancelar **π** quando presente nos dois lados.\n- Usar raiz quadrada quando deveria ser **raiz cúbica** (ao isolar r de r³).\n- Confundir objetos: bola/planeta/laranja são exemplos de **esfera** (3D), não de círculo/circunferência.\n- Misturar elementos: **Fuso** é parte da superfície; **Cunha** é parte do volume; **Calota** é “topo” cortado por plano.\n\n> Dica de Prova: Identificar “casca” vs “interior” no enunciado resolve 80% das questões: casca → 4πr²; interior → 4/3 π r³.",
+  "resumo_bolso": "# Geometria Espacial - Esfera I\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Esfera**: sólido tridimensional gerado pela rotação de um **semicírculo** em torno do seu eixo; inclui superfície e interior.\n* **Superfície esférica**: “casca” da esfera; conjunto dos pontos do espaço a uma distância fixa **r** do centro (todos equidistantes).\n* **Interior da esfera**: conjunto de pontos internos à superfície esférica (o volume ocupado).\n* **Fuso esférico**: faixa da superfície obtida ao girar um arco em torno do eixo (analogia: fusos horários).\n* **Cunha esférica**: região sólida limitada por dois planos que passam pelo eixo (fatia 3D do volume).\n* **Calota esférica**: porção da esfera obtida ao cortar por um plano (ex.: calota polar).\n* **Área da superfície da esfera**: **A = 4πr²**.\n* **Volume da esfera**: **V = 4/3 π r³**.\n* **Escala no raio (r → k·r)**: área multiplica por **k²**; volume multiplica por **k³**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Superfície esférica vs Esfera (sólido)\n\n| Aspecto          | Superfície esférica                      | Esfera (sólido)                              |\n|------------------|------------------------------------------|----------------------------------------------|\n| Dimensão         | 2D (casca)                              | 3D (casca + interior)                        |\n| Medida principal | **Área**                                | **Volume**                                   |\n| Fórmula          | **A = 4πr²**                            | **V = 4/3 π r³**                             |\n| Situações típicas| pintar/revestir a parte externa, “casca”| capacidade, “quanto cabe”, metros cúbicos    |\n| Elemento análogo | fuso (parte da superfície)              | cunha (parte do volume)                      |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Área da superfície da esfera**\n\n* **Fórmula**: **A = 4πr²**\n* **Uso**: medir a superfície esférica (casca externa).\n\n---\n\n**2. Volume da esfera**\n\n* **Fórmula**: **V = 4/3 π r³**\n* **Uso**: medir o espaço ocupado pela esfera (interior).\n\n---\n\n**3. Cálculo do raio a partir do volume**\n\n* **Passo a passo padrão**:  \n  1) Escreva: Vdado = 4/3 π r³  \n  2) Cancele **π** (se presente nos dois lados)  \n  3) Isole r³: multiplique por 3 e divida por 4  \n  4) Extraia a **raiz cúbica** para obter r  \n  5) Aplique a unidade correta (m, cm, …)\n\n* **Exemplo** (do resumo): V = 36π m³  \n  36π = 4/3 π r³ → cancela π → 36 = 4/3 r³  \n  r³ = 36 × 3/4 = 27 → r = ∛27 = 3 → r = 3 m.\n\n---\n\n**4. Escala no raio (r → k·r)**\n\n* Se o raio passa de r para **k·r**:  \n  - **Área**: multiplica por **k²**.  \n  - **Volume**: multiplica por **k³**.\n\n* **Exemplo**: r → 2r  \n  - Volume: ×8 → novo total = 800% do inicial → aumento = 700%.  \n  - Área: ×4 → novo total = 400% do inicial → aumento = 300%.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir “800%” com “aumento de 800%”: 800% é o novo total; o aumento é 800% − 100% = **700%**.\n2. Trocar as fórmulas: área (**4πr²**) ≠ volume (**4/3 π r³**).\n3. Esquecer de cancelar **π** quando ele aparece nos dois lados da equação.\n4. Usar **raiz quadrada** quando deveria ser **raiz cúbica** ao isolar r de r³.\n5. Confundir elementos: **fuso** é parte da superfície; **cunha** é parte do volume; **calota** é “topo” cortado por plano.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **superfície esférica (2D, área)** de **esfera (3D, volume)**?\n* Lembro sem hesitar: **A = 4πr²** (superfície) e **V = 4/3 π r³** (volume)?\n* Sei aplicar **r → k·r**: área ×k², volume ×k³, e interpretar o novo total em porcentagem?\n* Sei o roteiro para achar **r a partir de V**: cancelar π, isolar r³, tirar **raiz cúbica** e colocar a unidade correta?\n* Identifico no enunciado quando é “casca” (pintar/revestir a parte externa) vs “interior” (capacidade, quanto cabe)?",
+  "mapa_mental": "# 🧮 Geometria Espacial – Esfera I\n## 🎯 Conceitos Fundamentais\n### 💡 Definição de Esfera\n- Sólido tridimensional\n- Rotação semicírculo\n- Eixo de rotação\n- Centro da esfera\n### 🌀 Superfície e Interior\n- Superfície esférica\n- Pontos equidistantes\n- Raio constante r\n- Interior da esfera\n- Volume ocupado\n### 🧩 Elementos da Esfera\n- Fuso esférico superfície\n- Cunha esférica volume\n- Calota esférica corte\n- Casca esférica 2D\n\n## 🧮 Fórmulas e Escalas\n### 📐 Área da Esfera\n- Área total A\n- A = 4πr²\n- Unidade quadrada\n- Casca externa\n### 📦 Volume da Esfera\n- Volume V\n- V = 4/3 π r³\n- Unidade cúbica\n- Espaço interno\n### 📊 Escala do Raio\n- Raio → k·r\n- Área → k²·A\n- Volume → k³·V\n- r → 2r área ×4\n- r → 2r volume ×8\n\n## 🧠 Técnicas de Cálculo\n### 🔢 Raio pelo Volume\n- Igualar V dado\n- Cancelar π\n- Isolar r³\n- Raiz cúbica ∛\n- Unidade correta\n### 🧮 Macetes Numéricos\n- ∛27 = 3\n- ∛64 = 4\n- ∛125 = 5\n- ∛729 = 9\n- Fatorar em primos\n### ⚠️ Erros Frequentes\n- Trocar área volume\n- Esquecer cancelar π\n- Usar raiz quadrada\n- Confundir 800% aumento\n- Casca vs interior",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Conceitos Esféricos",
+      "description": "Conceitos Esféricos — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como é gerada uma esfera a partir de uma figura plana?",
+          "back": "Através da **rotação de um semicírculo** em torno de um eixo.",
+          "hint": "Pense no movimento de uma moeda sobre a mesa",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Que relação existe entre o centro e todos os pontos da superfície esférica?",
+          "back": "Estão **equidistantes** do centro.",
+          "hint": "Refere-se à propriedade de simetria radial",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Como se caracteriza a superfície esférica?",
+          "back": "Corresponde ao conjunto de pontos do espaço cuja distância ao centro é equivalente ao **raio**.",
+          "hint": "Definição baseada na medida do segmento central",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a diferença entre esfera e superfície esférica?",
+          "back": "A superfície esférica é apenas a **parte externa (casca)**, enquanto a esfera inclui essa superfície e todo o seu **interior**.",
+          "hint": "Considere o conceito de sólido vs. casca",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Elementos da Esfera",
+      "description": "Elementos da Esfera — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como se define uma calota esférica?",
+          "back": "Uma **esfera cortada por um plano**.",
+          "hint": "Imagine uma fatia de laranja",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual parte da superfície esférica é chamada de fuso esférico?",
+          "back": "A parte da superfície esférica obtida ao **girar uma circunferência** em torno de seu eixo.",
+          "hint": "Analogia com gomos de uma fruta",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Medidas da Esfera",
+      "description": "Medidas da Esfera — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual expressão calcula a área da superfície de uma esfera?",
+          "back": "**4πr²**",
+          "hint": "Relacionado à medida de superfície",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual expressão determina o volume de uma esfera?",
+          "back": "**4/3 πr³**",
+          "hint": "Relacionado à medida de capacidade",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual operação isola o raio quando ele aparece elevado ao cubo?",
+          "back": "Extrair a **raiz cúbica**.",
+          "hint": "Operação inversa da potenciação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações Numéricas",
+      "description": "Aplicações Numéricas — 3 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Ao duplicar o raio de uma esfera, qual é o percentual de aumento do volume?",
+          "back": "**800%**",
+          "hint": "Considere o fator de escala elevado ao cubo",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Uma esfera tem volume 36π m³. Qual é o raio dessa esfera?",
+          "back": "**3 m**",
+          "hint": "Aplique a fórmula do volume",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-espacial",
+            "esfera"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Em que condição é válido cancelar fatores iguais em uma equação?",
+          "back": "Quando há **multiplicações** em ambos os lados da equação.",
+          "hint": "Regra fundamental de álgebra",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a fórmula correta para calcular o volume de uma esfera?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "V = (4/3)πr³",
+          "correct": true,
+          "explanation": "Correta. A fórmula para o volume de uma esfera é V = (4/3)πr³, onde 'r' é o raio da esfera. Esta é uma das fórmulas fundamentais da geometria espacial para sólidos esféricos."
+        },
+        {
+          "id": "b",
+          "text": "V = (1/3)πr²h",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula (V = (1/3)πr²h) é empregada para determinar o volume de um cone, onde 'r' é o raio da base e 'h' é a altura. Uma esfera não tem a forma ou os elementos de um cone."
+        },
+        {
+          "id": "c",
+          "text": "V = 4πr²",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula (V = 4πr²) representa a área da superfície de uma esfera, e não o seu volume. O volume, por ser uma medida tridimensional, deve envolver o raio elevado ao cubo."
+        },
+        {
+          "id": "d",
+          "text": "V = πr²h",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula (V = πr²h) é utilizada para calcular o volume de um cilindro, onde 'r' é o raio da base e 'h' é a altura. Uma esfera não possui altura no sentido de um cilindro."
+        }
+      ],
+      "explanation": "Correta. A fórmula para o volume de uma esfera é V = (4/3)πr³, onde 'r' é o raio da esfera. Esta é uma das fórmulas fundamentais da geometria espacial para sólidos esféricos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "A superfície esférica de uma esfera corresponde a qual elemento geométrico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A região interna completa da esfera, incluindo todos os pontos do seu interior",
+          "correct": false,
+          "explanation": "Incorreta. A região interna completa, juntamente com a superfície, forma o sólido geométrico da esfera. A superfície esférica refere-se apenas ao seu limite exterior."
+        },
+        {
+          "id": "b",
+          "text": "A porção da esfera delimitada por dois planos paralelos que a interceptam",
+          "correct": false,
+          "explanation": "Incorreta. A porção da esfera delimitada por dois planos paralelos é conhecida como zona esférica (se considerarmos a superfície) ou segmento esférico (se considerarmos o volume). Não é a definição de superfície esférica."
+        },
+        {
+          "id": "c",
+          "text": "A parte externa da esfera, equivalente à casca que delimita o sólido",
+          "correct": true,
+          "explanation": "Correta. A superfície esférica é definida como o conjunto de todos os pontos no espaço que estão a uma distância fixa (o raio) de um ponto central (o centro da esfera). Ela é a \"casca\" externa, o invólucro do sólido esférico."
+        },
+        {
+          "id": "d",
+          "text": "O semicírculo que gera a esfera quando rotacionado em torno de um eixo",
+          "correct": false,
+          "explanation": "Incorreta. O semicírculo é a figura plana que, ao ser rotacionada em torno de seu diâmetro, gera a esfera como um sólido de revolução. Ele é o elemento gerador, não a superfície esférica em si."
+        }
+      ],
+      "explanation": "Correta. A superfície esférica é definida como o conjunto de todos os pontos no espaço que estão a uma distância fixa (o raio) de um ponto central (o centro da esfera). Ela é a \"casca\" externa, o invólucro do sólido esférico.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Como é gerada geometricamente uma esfera?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Pela rotação de um retângulo em torno de um de seus lados",
+          "correct": false,
+          "explanation": "Incorreta. A rotação de um retângulo em torno de um de seus lados geraria um cilindro. Para formar uma esfera, a figura geratriz deve ter uma forma curva que se feche sobre si mesma."
+        },
+        {
+          "id": "b",
+          "text": "Pela interseção de múltiplos planos equidistantes de um ponto central",
+          "correct": false,
+          "explanation": "Incorreta. A interseção de múltiplos planos não é o método usual para gerar uma esfera na geometria descritiva ou analítica. A esfera é mais comumente definida como um conjunto de pontos equidistantes de um centro ou como um sólido de revolução."
+        },
+        {
+          "id": "c",
+          "text": "Pela translação de um círculo ao longo de um eixo perpendicular ao seu plano",
+          "correct": false,
+          "explanation": "Incorreta. A translação de um círculo ao longo de um eixo perpendicular ao seu plano geraria um cilindro, não uma esfera. A esfera é um sólido de revolução, que envolve rotação."
+        },
+        {
+          "id": "d",
+          "text": "Pela rotação de um semicírculo em torno de seu diâmetro",
+          "correct": true,
+          "explanation": "Correta. Uma esfera é gerada geometricamente pela rotaação completa de um semicírculo em torno de seu diâmetro. O diâmetro do semicírculo atua como o eixo de rotação, e o movimento varre o espaço, formando o sólido esférico."
+        }
+      ],
+      "explanation": "Correta. Uma esfera é gerada geometricamente pela rotaação completa de um semicírculo em torno de seu diâmetro. O diâmetro do semicírculo atua como o eixo de rotação, e o movimento varre o espaço, formando o sólido esférico.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Uma esfera possui volume de 36π metros cúbicos. Qual é o raio dessa esfera?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "3 metros",
+          "correct": true,
+          "explanation": "Correta. Utilizando a fórmula do volume da esfera V = (4/3)πr³, e sabendo que V = 36π m³, podemos substituir e resolver para 'r': 36π = (4/3)πr³. Simplificando π de ambos os lados, temos 36 = (4/3)r³. Multiplicando ambos os lados por 3/4, obtemos r³ = 36 * (3/4) = 9 * 3 = 27. Portanto, o raio 'r' é a raiz cúbica de 27, que é 3 metros."
+        },
+        {
+          "id": "b",
+          "text": "4 metros",
+          "correct": false,
+          "explanation": "Incorreta. Se o raio fosse 4 metros, o volume seria V = (4/3)π(4)³ = (4/3)π(64) = (256/3)π metros cúbicos, que é diferente de 36π."
+        },
+        {
+          "id": "c",
+          "text": "2 metros",
+          "correct": false,
+          "explanation": "Incorreta. Se o raio fosse 2 metros, o volume seria V = (4/3)π(2)³ = (4/3)π(8) = (32/3)π metros cúbicos, que é diferente de 36π."
+        },
+        {
+          "id": "d",
+          "text": "6 metros",
+          "correct": false,
+          "explanation": "Incorreta. Se o raio fosse 6 metros, o volume seria V = (4/3)π(6)³ = (4/3)π(216) = 4 * 72π = 288π metros cúbicos, que é muito maior que 36π."
+        }
+      ],
+      "explanation": "Correta. Utilizando a fórmula do volume da esfera V = (4/3)πr³, e sabendo que V = 36π m³, podemos substituir e resolver para 'r': 36π = (4/3)πr³. Simplificando π de ambos os lados, temos 36 = (4/3)r³. Multiplicando ambos os lados por 3/4, obtemos r³ = 36 * (3/4) = 9 * 3 = 27. Portanto, o raio 'r' é a raiz cúbica de 27, que é 3 metros.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "O que representa a cunha esférica em uma esfera?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto de pontos equidistantes do centro da esfera",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto de pontos equidistantes do centro da esfera define a própria superfície esférica, e não a cunha esférica, que é uma parte específica do volume da esfera."
+        },
+        {
+          "id": "b",
+          "text": "A região superficial da esfera delimitada por dois meridianos",
+          "correct": false,
+          "explanation": "Incorreta. A região superficial da esfera delimitada por dois meridianos (que são semicírculos máximos) é chamada de fuso esférico. O fuso esférico é uma superfície, enquanto a cunha esférica é um sólido."
+        },
+        {
+          "id": "c",
+          "text": "A parte da esfera limitada por dois semicírculos que compartilham o mesmo diâmetro",
+          "correct": true,
+          "explanation": "Correta. A cunha esférica (ou gomo esférico) é um sólido delimitado por dois semicírculos máximos (que compartilham o mesmo diâmetro, agindo como o eixo de rotação ou a linha de interseção dos planos) e pela porção da superfície esférica entre eles. Pode ser visualizada como uma fatia de laranja."
+        },
+        {
+          "id": "d",
+          "text": "A porção da esfera situada acima ou abaixo de um plano que a intercepta",
+          "correct": false,
+          "explanation": "Incorreta. A porção da esfera situada acima ou abaixo de um plano que a intercepta é denominada calota esférica (se for apenas a superfície) ou segmento esférico (se for o sólido)."
+        }
+      ],
+      "explanation": "Correta. A cunha esférica (ou gomo esférico) é um sólido delimitado por dois semicírculos máximos (que compartilham o mesmo diâmetro, agindo como o eixo de rotação ou a linha de interseção dos planos) e pela porção da superfície esférica entre eles. Pode ser visualizada como uma fatia de laranja.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Se o raio de uma esfera é duplicado, qual será a relação entre o volume final e o volume inicial?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O volume final será seis vezes o volume inicial",
+          "correct": false,
+          "explanation": "Incorreta. A duplicação do raio de uma esfera resulta em um aumento de volume de oito vezes, e não seis vezes. A dependência do volume em relação ao raio é cúbica, conforme a fórmula V = (4/3)πr³."
+        },
+        {
+          "id": "b",
+          "text": "O volume final será oito vezes o volume inicial",
+          "correct": true,
+          "explanation": "Correta. O volume de uma esfera é dado pela fórmula V = (4/3)πr³. Se o raio (r) for duplicado, tornando-se 2r, o novo volume (V') será V' = (4/3)π(2r)³. Ao calcular (2r)³, obtemos 8r³. Assim, V' = (4/3)π(8r³) = 8 * [(4/3)πr³]. Isso significa que o volume final será oito vezes o volume inicial."
+        },
+        {
+          "id": "c",
+          "text": "O volume final será quatro vezes o volume inicial",
+          "correct": false,
+          "explanation": "Incorreta. Se o raio for duplicado, o volume final será oito vezes o volume inicial, e não quatro vezes. A relação V = (4/3)πr³ mostra que o volume é proporcional ao cubo do raio. Ao duplicar o raio (multiplicar por 2), o volume é multiplicado por 2³, ou seja, por 8."
+        },
+        {
+          "id": "d",
+          "text": "O volume final será o dobro do volume inicial",
+          "correct": false,
+          "explanation": "Incorreta. A relação entre o volume e o raio de uma esfera é cúbica, não linear. Se o raio for duplicado, o volume não será apenas o dobro. A fórmula do volume de uma esfera é V = (4/3)πr³, onde r é o raio. Se o raio se torna 2r, o novo volume V' será V' = (4/3)π(2r)³ = (4/3)π(8r³) = 8 * [(4/3)πr³] = 8V. Portanto, o volume final será oito vezes o volume inicial."
+        }
+      ],
+      "explanation": "Correta. O volume de uma esfera é dado pela fórmula V = (4/3)πr³. Se o raio (r) for duplicado, tornando-se 2r, o novo volume (V') será V' = (4/3)π(2r)³. Ao calcular (2r)³, obtemos 8r³. Assim, V' = (4/3)π(8r³) = 8 * [(4/3)πr³]. Isso significa que o volume final será oito vezes o volume inicial.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Uma esfera com raio de 3 metros tem seu raio duplicado para 6 metros. Qual é o percentual de aumento no volume da esfera?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "200%",
+          "correct": false,
+          "explanation": "Incorreta. Um aumento de 200% significa que o valor final é três vezes o valor inicial (100% do original + 200% de aumento = 300% do original). No caso da duplicação do raio, o volume final é oito vezes o volume inicial, o que representa um aumento muito maior."
+        },
+        {
+          "id": "b",
+          "text": "600%",
+          "correct": false,
+          "explanation": "Incorreta. Um aumento de 600% significa que o valor final é sete vezes o valor inicial. No entanto, a duplicação do raio faz com que o volume final seja oito vezes o volume inicial, o que corresponde a um aumento percentual de 700%."
+        },
+        {
+          "id": "c",
+          "text": "400%",
+          "correct": false,
+          "explanation": "Incorreta. Um aumento de 400% significa que o valor final é cinco vezes o valor inicial. Conforme a relação V = (4/3)πr³, se o raio é duplicado, o volume aumenta em 700%, resultando em um volume final que é oito vezes o volume inicial."
+        },
+        {
+          "id": "d",
+          "text": "700%",
+          "correct": true,
+          "explanation": "Correta. O volume inicial da esfera com raio r1 = 3 metros é V1 = (4/3)π(3)³ = (4/3)π(27) = 36π metros cúbicos. Ao duplicar o raio para r2 = 6 metros, o novo volume V2 será V2 = (4/3)π(6)³ = (4/3)π(216) = 288π metros cúbicos. O aumento no volume é ΔV = V2 - V1 = 288π - 36π = 252π metros cúbicos. Para calcular o percentual de aumento, dividimos o aumento pelo volume inicial e multiplicamos por 100%: (252π / 36π) * 100% = 7 * 100% = 700%. Portanto, o volume aumentará em 700%."
+        }
+      ],
+      "explanation": "Correta. O volume inicial da esfera com raio r1 = 3 metros é V1 = (4/3)π(3)³ = (4/3)π(27) = 36π metros cúbicos. Ao duplicar o raio para r2 = 6 metros, o novo volume V2 será V2 = (4/3)π(6)³ = (4/3)π(216) = 288π metros cúbicos. O aumento no volume é ΔV = V2 - V1 = 288π - 36π = 252π metros cúbicos. Para calcular o percentual de aumento, dividimos o aumento pelo volume inicial e multiplicamos por 100%: (252π / 36π) * 100% = 7 * 100% = 700%. Portanto, o volume aumentará em 700%.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a relação entre a área da superfície esférica e o volume de uma esfera em função do raio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O volume é sempre igual à área da superfície multiplicada pelo raio e dividida por três",
+          "correct": true,
+          "explanation": "Correta. A fórmula do volume de uma esfera é V = (4/3)πr³ e a fórmula da área da superfície esférica é A = 4πr². Podemos expressar o volume em termos da área e do raio. Se multiplicarmos a área da superfície (A) pelo raio (r) e dividirmos por três, obtemos (A * r) / 3 = (4πr² * r) / 3 = (4πr³) / 3 = (4/3)πr³. Esta expressão é idêntica à fórmula do volume da esfera, V = (4/3)πr³. Assim, V = (A * r) / 3 é uma relação fundamental e elegante na geometria espacial."
+        },
+        {
+          "id": "b",
+          "text": "A área da superfície é sempre o dobro do volume dividido pelo raio",
+          "correct": false,
+          "explanation": "Incorreta. Se a área da superfície fosse o dobro do volume dividido pelo raio (A = 2V/r), teríamos 4πr² = 2 * [(4/3)πr³ / r] = 2 * (4/3)πr² = (8/3)πr². Esta igualdade (4πr² = (8/3)πr²) é falsa, pois 4 não é igual a 8/3."
+        },
+        {
+          "id": "c",
+          "text": "A área da superfície é sempre três vezes o volume dividido pelo raio",
+          "correct": false,
+          "explanation": "Incorreta. Embora a relação A = 3V/r seja algebricamente verdadeira (pois 4πr² = 3 * [(4/3)πr³ / r] = 4πr²), a forma mais didática e comumente apresentada para relacionar o volume (V), a área da superfície (A) e o raio (r) de uma esfera é expressar o volume em função da área e do raio, como na alternativa correta."
+        },
+        {
+          "id": "d",
+          "text": "O volume é sempre igual à área da superfície multiplicada pelo raio e dividida por dois",
+          "correct": false,
+          "explanation": "Incorreta. Se o volume fosse igual à área da superfície multiplicada pelo raio e dividida por dois (V = (A * r) / 2), teríamos (4/3)πr³ = (4πr² * r) / 2 = (4πr³) / 2 = 2πr³. Esta igualdade ((4/3)πr³ = 2πr³) é falsa, pois 4/3 não é igual a 2."
+        }
+      ],
+      "explanation": "Correta. A fórmula do volume de uma esfera é V = (4/3)πr³ e a fórmula da área da superfície esférica é A = 4πr². Podemos expressar o volume em termos da área e do raio. Se multiplicarmos a área da superfície (A) pelo raio (r) e dividirmos por três, obtemos (A * r) / 3 = (4πr² * r) / 3 = (4πr³) / 3 = (4/3)πr³. Esta expressão é idêntica à fórmula do volume da esfera, V = (4/3)πr³. Assim, V = (A * r) / 3 é uma relação fundamental e elegante na geometria espacial.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Para determinar o raio de uma esfera a partir de seu volume conhecido, qual procedimento matemático deve ser aplicado após isolar r³ na fórmula do volume?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar a potência de três meios ao resultado obtido após dividir o volume por π",
+          "correct": false,
+          "explanation": "Incorreta. Aplicar a potência de três meios (elevado a 3/2) a r³ resultaria em r^(3 * 3/2) = r^(9/2), o que não simplifica para r. A operação inversa de elevar ao cubo é a raiz cúbica, que é equivalente a elevar à potência de 1/3."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar a raiz cúbica ao resultado obtido após multiplicar o volume por três quartos e dividir por π",
+          "correct": true,
+          "explanation": "Correta. A fórmula do volume de uma esfera é V = (4/3)πr³. Para encontrar o raio (r) a partir de um volume conhecido, primeiro isolamos r³. Multiplicando ambos os lados por 3/4 e dividindo por π, obtemos r³ = (3V) / (4π). Após isolar r³, a operação matemática que deve ser aplicada para encontrar o valor de r é a raiz cúbica. Assim, r = ³√[(3V) / (4π)]."
+        },
+        {
+          "id": "c",
+          "text": "Aplicar o logaritmo ao resultado obtido após dividir o volume por quatro terços de π",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmo é uma função matemática usada para resolver equações onde a incógnita é um expoente ou para simplificar operações de multiplicação e divisão. Não é a operação adequada para inverter uma potência cúbica (r³)."
+        },
+        {
+          "id": "d",
+          "text": "Aplicar a raiz quadrada ao resultado obtido após multiplicar o volume por três quartos e dividir por π",
+          "correct": false,
+          "explanation": "Incorreta. A raiz quadrada é a operação inversa para uma potência de 2 (r²). Como na fórmula do volume da esfera o raio está elevado ao cubo (r³), a operação inversa para isolar o raio (r) é a raiz cúbica, não a raiz quadrada."
+        }
+      ],
+      "explanation": "Correta. A fórmula do volume de uma esfera é V = (4/3)πr³. Para encontrar o raio (r) a partir de um volume conhecido, primeiro isolamos r³. Multiplicando ambos os lados por 3/4 e dividindo por π, obtemos r³ = (3V) / (4π). Após isolar r³, a operação matemática que deve ser aplicada para encontrar o valor de r é a raiz cúbica. Assim, r = ³√[(3V) / (4π)].",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "17_325031_Geometria Espacial - Esfera I.pdf",
+  "coletado_em": "2026-09-23T21:07:58"
+}

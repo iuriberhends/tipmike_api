@@ -1,0 +1,343 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 30,
+  "ordem_no_curso": "63.00",
+  "titulo": "Libreoffice 7 - Writer IV",
+  "codigo_aula": "253663",
+  "video_id": "uuV98wmA4ZA=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:22:14",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/uuV98wmA4ZA%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=406736%2C405132%2C405130%2C405129%2C406737%2C420472%2C420473%2C420466%2C420474%2C420467%2C405131%2C406734&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Libreoffice 7 - Writer IV\n\n## Exibir: modos e elementos da interface\nEntão, dando continuidade à nossa linha, vamos para Exibir agora. Como eu falei no bloco anterior, nós começamos aqui com um atalho: Ctrl+10, Ctrl+5... Na verdade, leva até a demorar um pouquinho para chegar na sua vez que... enfim, o ponto é: no menu Exibir, a tendência é que a letrinha esteja sublinhada.\n\nNão vi cair em prova ainda neste ano, mas já cobraram antes esse recurso. Vale a pena ver aqui. Em Exibir, temos os modos de exibição: como é que o documento vai ser exibido. O modo Normal é o padrão, ou seja, quando abre o documento, está nesse modo de edição. Pode servir também como Página da Web.\n\nAqui, algumas opções: barras de ferramentas, onde eu posso escolher as opções. Nem todas estão lá na formatação padrão; bastam aqui. A de Pesquisa deve estar ativada, lá embaixo Registro de Alterações também deve estar aqui. Está aqui: Registro de Alterações e a de Pesquisa; por isso eles estão aparecendo.\n\nTudo aqui tem a ver com o que está sendo exibido de alguma maneira. Vamos tirar aqui a de Pesquisa. Agora vou tirar Barras de Ferramentas e tirar também o Registro de Alterações e sair daqui de baixo.\n\nVamos continuando: Barra de Status, que é toda a informação embaixo; exibe ou não. As Réguas: também vou ter opção. Veja o atalho que não está lá no material, mas está sendo mostrado aqui para já não ficar sem falar nada: Ctrl+Shift+R para exibir as réguas. E aqui a Régua Vertical, então vem aqui na minha base.\n\nRolagem: também posso exibir ou não as barras de rolagem horizontal e vertical. Grade, Linhas de Grade: o que é isso aqui? Ao marcar Mostrar Linhas de Grade, ele vai mostrar as linhas de balizamento, que ajudam a alinhar em grade, desenvolver objetos... Com nenhum objeto aqui, vai mostrar essencialmente as linhas. Você está vendo as marcações no canto superior: essas marcações são as minhas linhas de grade. Elas me balizam, para quem quiser utilizar esses recursos. Vamos continuar.\n\nRegras, linhas de grade, alinhar à grade, desenvolver... Já falei. Marcas de formatação: aqui entra nosso primeiro atalho lá do material, Ctrl+10. Esse cara aqui, eu posso ativar pelo atalho, clicar nessa opção aqui no menu agora, ou também usar o botãozinho na barra de ferramentas. O que ele faz? Esses pontinhos azuis, por exemplo, indicam que há um espaço entre as palavras: espaço, espaço. Quando eu pressiono Enter, aparece a marca de parágrafo. Isso tudo são chamados “marcadores de formatação”, “caracteres não imprimíveis” — são alguns dos nomes que podem ser usados. Alternar marcas de formatação também é outro nome.\n\nSe eu pressionar Tab, ele mostra com essa setinha. Um detalhe interessante: diferentemente da visualização de impressão, esses caras não saem na impressão. Eles não saem na impressão, por isso o nome que eu falei, “caracteres não imprimíveis”.\n\nMuita gente prefere não trabalhar com eles porque acha que o documento fica poluído, mas aí vai do gosto. Já vimos a função: mostram ou não mostram. Ctrl+10.\n\nLimites do Texto: pode marcar os limites da tabela, figuras e gráficos. Mostrar Espaço em Branco. Mostrar Alterações, caso existam. Anotações: se existirem, posso exibi-las ou não. Anotações resolvidas podem aparecer marcadas como resolvidas ou pendentes.\n\nSombreamento de Campos: por exemplo, quando eu for explicar Mala Direta, eu posso marcar os campos para ficarem sombreados. E aí, quando eu pego um campo — que é basicamente um vínculo criado com uma base de dados — os nomes que vão ser usados lá, por exemplo “Nome”, “CPF”, vão ser inseridos no documento como campos.\n\nOcultos, Barra Lateral: essa barrinha aqui, quando abre o Writer, já vem com soluções aqui que eu posso exibir. No Navegador, posso ir para um local no documento; navegar por páginas, por anotações, por controles. Posso literalmente navegar pelo meu documento. Ele vai exibir ou não aquela barrinha ali. O atalho é F5. Esse atalho está lá no material também.\n\nEntão, recapitulando: Ctrl+10 alterna marcadores de parágrafo, caracteres não imprimíveis; F5 abre a Barra Lateral/Navegador.\n\nVamos mudar de faixa, mas ainda em Exibir: temos o atalho F5, que é justamente o Navegador, o mesmo de clicar na barra lateral. Abrindo novamente, ele abre o Navegador separado. Fechando. Em Exibir, vamos descer.\n\nFontes de Dados: atalho Ctrl+Shift+F4. Tela Inteira: Ctrl+J (varia conforme layout). Zoom: posso trabalhar Modo Página Inteira, Largura da Página, ou alterar o zoom manualmente, como vimos no começo. Quais são os níveis de zoom, até quanto posso trabalhar aqui dentro dele?\n\nVou tirar aqui os marcadores para não ficar muito poluído visualmente.\n\n## Inserir: quebras, objetos, seções\nPassamos para o próximo menu, que é o Inserir. Muitas coisas que nós já vimos vão ser encontradas aqui nas barras de ferramentas Padrão e Formatação. Já mostrei — se eu pulei algumas, mostro agora — salvar, abrir, novo documento, exportar diretamente como PDF, imprimir, visualização da impressão. São recursos com ícones interessantes para você conhecer.\n\nIndo ao menu Inserir: Inserir Quebras. Quebra de Página: vamos trabalhar um pouco com isso. Ela por si só é tranquila.\n\nTenho uma página. Suponha que, em algum momento, escrevi até aqui e não quero escrever mais nessa página. Muita gente a partir daqui vai dando Enter até chegar na próxima página. Não está totalmente errado, mas se você fizer isso — e eu não vou tirar o zoom de propósito — e ativar as marcas de formatação, vamos ver o que acontece.\n\nVamos considerar o método “tradicional” (dar Enter). Vai dar um pouquinho de trabalho até que ele mude de página. Chegamos na página 2. Agora, veja aqui nesse modo de visualização — vou deixar a página bem pequenininha. Se você volta na página 1 e começa a escrever alguma coisa, tipo “teste”, e vai dando Enter, esses Enters na primeira página vão empurrando o texto lá na segunda página. Veja a segunda página sendo empurrada.\n\nVoltei, e a partir do “teste”, na verdade eu não quero mais escrever. Vem aqui: Ctrl+Enter. Ele já inseriu a quebra de página. Já veio para a próxima página.\n\nAgora, se eu vier na primeira página e colocar “teste” de novo, dando Enter, não vai afetar a outra página. Não vai afetar; ela fica quietinha. Esse é um dos motivos para usar a quebra de página. Estou mostrando na prática para você entender. Se cobrarem na prova o que acontece e o que não acontece, você sabe.\n\nEntão, o que faz o Ctrl+Enter? Insere uma quebra de página. No nosso bloco anterior, o primeiro atalho que vimos foi o Ctrl+? e agora o Ctrl+Enter para inserir.\n\nInserir mais quebras: Inserir Quebra de Linha manual — preciso quebrar a linha. Quero quebrar a linha aqui, então uso Quebra de Linha. Quebra de Coluna: quando eu tenho duas ou mais colunas e quero, em determinado ponto, passar para a próxima coluna — mesma ideia da quebra de página, só que agora dentro das colunas.\n\nQuebra Manual: aqui posso colocar Quebra de Linha, Quebra de Coluna ou Quebra de Página. E posso escolher qual estilo eu quero na próxima página: Envelope, Estilo de Página Padrão, Índice, Notas de fim, Notas de rodapé, Página Direita, Página Esquerda, Paisagem ou Primeira Página. Não são “quebras diferentes”, e sim os tipos de quebra manual que posso aplicar e já definir o estilo da página seguinte.\n\nPosso inserir Figura, Gráfico, Multimídia. Posso buscar conteúdo da Galeria; a galeria fica aqui. Muita gente vai explorar a galeria depois. Também dá para digitalizar, inserir Áudio ou Vídeo.\n\nInserir um Objeto: basicamente uma forma, um código, um objeto incorporado.\n\nFormas: tenho formas pré-definidas — linhas, formas simples, setas, estrelas e outras — e posso inseri-las.\n\n## Inserir Seção: trabalhando partes independentes no documento\nPosso inserir uma Seção. Para que serve uma seção? Eu posso colocar o nome dessa seção e aplicar formatações distintas por seção dentro da mesma página.\n\nDeixa eu abrir um documento novo. Beleza. Agora, olha só: ideia de inserir uma quebra de seção. Vamos colocar o nome dela aqui só para mostrar que posso fazer: “Seção: Título”. Inserir.\n\nAgora insiro outra seção: vou colocar “Colunas”. E mais uma seção: “Fim”. Vai ser o fim da parada.\n\nVou deixar as marcas de tabulação para me orientar. Quando eu clico dentro, lá embaixo, na barra de status, aparece o nome da seção atual. O nome da seção que estou é “Título”. Venho para cá, e é óbvio: isso tem que fazer sentido para mim. Se eu der nome totalmente aleatório, depois nem vou lembrar. “Colunas”, “Fim”.\n\nVou trabalhar com essas três. Agora, por exemplo, em “Colunas”, vamos formatar em duas colunas. Em Formatar, por padrão é uma coluna; vou trabalhar com duas colunas. Você percebe que essa seção ficou com duas colunas. Em “Fim”, volto ao padrão. Vou tirar as marcas para visualizar melhor.\n\nNo Título, vou centralizar e colocar em negrito. Não vou enfeitar demais também. O ponto é: tenho três seções, e posso fazer formatações totalmente distintas em cada uma delas. O Título centralizado; a Seção 2 em duas colunas; a Seção 3 com outra formatação. Essa inserção de seções permite trabalhar de maneira distinta entre as seções da mesma página.\n\nDepois vou mostrar como colocar uma página na orientação Paisagem e outra na orientação Retrato, por exemplo.\n\nVoltando a Inserir: Seção, Texto de um Arquivo (para pegar texto externo). Caixa de Texto: eu desenho a caixa e coloco texto dentro; depois posso arrastar, posicionar conforme o documento. As guias aparecem para ajudar no alinhamento — é uma caixa de texto para eu trabalhar livremente.\n\nAnotação: se quiser inserir uma anotação para lembrar de alguma coisa, coloco a anotação referente àquele ponto para revisar depois.\n\nFontwork: esse ponto serve para trabalhar com fontes mais “bonitinhas” ou diferentes, caso você queira dar um visual. É bom saber esse nome, porque se ele colocar um exemplo desse na prova, você sabe qual recurso está sendo usado.\n\n> 🎯 Dicas de prova: Reconheça o “Fontwork” quando aparecer um texto com estilização artística. Saber o nome do recurso ajuda a identificar a questão.\n\nSe eu não quiser manter, posso excluir a anotação. E não seria colocar uma fonte qualquer e falar “na prova”: a pergunta pode ser “Esse texto está usando qual recurso?”. Sabendo que é o Fontwork, você acerta.\n\nPosso inserir uma Legenda também.\n\nVou tirar a caixa de texto e pegar a palavra “fim” como exemplo para o próximo.\n\n## Hiperlink: criando vínculos\nInserir Hiperlink: lembra que dá para editar com o botão direito também. Ao criar um hiperlink, posso apontar para:\n- uma página web (URL)\n- um documento\n- um servidor FTP\n- um e-mail (mailto)\n- uma âncora no próprio documento\n\nGeralmente, em prova, cobram o endereço web. Por exemplo: endereço “http://exemplo.com.br”, e o texto visível “fim”. Basicamente, é um link. Ele pede para pressionar Ctrl+Clique para seguir o link. Nesse caso, vai abrir o navegador web para levar à página (endereço inventado aqui).\n\nSe eu quiser editar, posso ir em Editar Hiperlink. Pelo botão direito, posso Remover Hiperlink, Abrir Link, Editar Hiperlink, Copiar Endereço. São opções interessantes para você conhecer.\n\nVoltando ao Inserir: Quebra de Página (Ctrl+Enter) e demais quebras. As duas são interessantes para nós.\n\nAnotação, se você quiser colocar, pode.\n\nMarcas: Caractere Especial, Marca de Formatação, Traço, Linha Horizontal... Já falei muita coisa que o Writer popularmente chama.\n\n## Sumário/Índice: criando automaticamente\nSumários e Índices: para criar um sumário, eu preciso ter entradas de índice, que são os parágrafos com estilos de título.\n\nVou pegar um documento novo. Na primeira página, escrevo “Jefferson”. Ctrl+Enter para a próxima página. Aqui embaixo escrevo “Bobo” (exemplo). Volto à primeira página, onde tem “Jefferson”.\n\nAgora, pego a palavra “Jefferson” e aplico um estilo de título. Vou colocar Título 1. Pego a palavra “Bobo” e também vou colocar Título 1 (poderia ser Título 2 para hierarquia, mas aqui vou manter Título 1).\n\nAgora, na primeira página: Inserir > Sumário e Índice > Sumário, Índice ou Bibliografia. No tipo, escolho “Sumário”. Posso nomear como “Sumário”. Marcar “Área protegida contra alterações” se quiser, aplicar ao documento inteiro, definir o nível até 10 (aqui tenho poucos níveis). Estilos, colunas, plano de fundo — tudo ajustável.\n\nDou OK e ele cria meu sumário. “Jefferson” aparece com um hiperlink interno. Ao pressionar Ctrl e clicar, ele me leva para a página onde está “Jefferson”. Também mostra em quais páginas cada título está.\n\nSe eu alterar o conteúdo e as páginas mudarem, basta vir e “Atualizar Índice/Sumário” para atualizar os números. É muito mais prático.\n\n> 🎯 Dicas de prova: Para gerar um sumário automático no Writer, aplique estilos de Título (Título 1, Título 2...) aos cabeçalhos do documento e depois use Inserir > Sumário e Índice. Para atualizar, use o comando de atualizar índice.\n\nLembre-se: a aula não é para você aprender a mexer no programa em todos os detalhes; é para entender as questões de prova. Criar um índice mostra muitos conceitos. Quando for necessário, eu aprofundo; outros eu passo mais rápido. Falando, você lembrando do que eu disse e olhando a questão, você acerta. Eu quero que vocês acertem as questões, beleza?\n\nNão fecha esse bloco. Volto já já dando continuidade no Inserir. Até daqui a pouco.",
+  "transcricao_meta": {
+    "title": "Libreoffice 7 - Writer IV",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 28110,
+    "createdAt": "2026-02-09T17:28:53.621Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda recursos do LibreOffice Writer 7 focados em Exibição, Inserção e Estrutura documental.\nPrincipais pontos: \n- Exibir elementos e modos (marcas de formatação, Navegador, barra lateral, zoom).\n- Inserir quebras (linha, coluna, página), objetos e sessões (sections).\n- Hiperlinks e Sumário/Índice baseados em Estilos.\n- Atalhos mais cobrados e diferenças entre conceitos parecidos.\n\n## 1. Base / Conceitos Fundamentais\n- **Modos de exibição**: \n  - **Modo normal**: edição padrão.\n  - **Página da web**: prévia em formato de navegação.\n- **Elementos de interface**:\n  - **Barras de ferramentas** (padrão, formatação), **barra de estados** (rodapé), **réguas** (horizontal e **régua vertical**), **rolagem** (horizontal/vertical), **barra lateral**.\n  - **Navegador**: painel para navegar por páginas, títulos, anotações, etc.\n- **Marcas de formatação** (caracteres não imprimíveis): exibição de espaços (pontos), Tab (setas), marcas de parágrafo (¶), quebras. Não são impressos.\n- **Quebras**:\n  - **Quebra de linha**: nova linha sem novo parágrafo.\n  - **Quebra de coluna**: envia o texto para a próxima coluna.\n  - **Quebra de página**: envia o conteúdo para a página seguinte.\n  - **Quebra manual**: janela que permite escolher o tipo de quebra e o estilo da próxima página.\n- **Estilos de página** (na quebra manual): **Envelope**, **Padrão**, **Índice**, **Notas de fim**, **Nota de rodapé**, **Direita**, **Esquerda**, **Paisagem**, **Primeira página**.\n- **Sessões (Sections)**: áreas com formatação própria (ex.: colunas, plano de fundo, proteção), independentes do restante do documento.\n- **Hiperlink**: vínculo para URL, documento, FTP ou e-mail (mailto). Acesso por **Ctrl + Clique**.\n- **Sumário/Índice**: estrutura automática baseada em **Estilos** de título (Título 1, Título 2...).\n\n## 2. Como Funciona / Distinções\n- **Marcas de formatação vs. Impressão**\n  - Mostrar/ocultar caracteres não imprimíveis ajuda na edição; não aparecem na impressão nem na visualização da impressão.\n- **Enter vs. Quebra de página**\n  - Enter repetido apenas “empurra” texto e causa deslocamentos; **Quebra de página (Ctrl + Enter)** fixa a paginação do próximo conteúdo.\n- **Quebra manual vs. Quebra direta**\n  - **Quebra direta (Ctrl + Enter)**: insere página seguinte sem opções.\n  - **Quebra manual**: permite escolher tipo (linha/coluna/página) e definir o estilo da próxima página.\n- **Sessão vs. Estilo de página**\n  - **Sessão**: formatação local dentro da mesma página (ex.: 2 colunas em um trecho).\n  - **Estilo de página**: afeta a página inteira (margens, cabeçalho/rodapé, orientação).\n- **Hiperlink vs. Sumário**\n  - **Hiperlink**: navegação para uma URL/arquivo/e-mail; gerido por botão direito (Abrir, Editar hyperlink, Copiar endereço, Remover hyperlink).\n  - **Sumário**: navegação interna gerada por Estilos de Título; itens são hiperlinks internos.\n- **Navegador vs. Barra lateral**\n  - **Navegador (F5)**: foco em estrutura de navegação (títulos, páginas, anotações).\n  - **Barra lateral**: painel multifunções (propriedades, estilos, navegação).\n\n## 3. Aplicação Prática / Técnicas\n- Exibir/ocultar elementos úteis\n  - Exibir > **Marcas de formatação** para diagnosticar espaços, Tabs e quebras.\n  - Exibir > **Navegador** (ou **F5**) para listar títulos e pular entre seções.\n  - Exibir > **Barra lateral** para ajustar propriedades rapidamente.\n  - Exibir > **Linhas de grade** e **Alinhar à grade** para posicionar objetos.\n- Quebras e paginação\n  - Para ir à próxima página corretamente: **Ctrl + Enter**.\n  - Inserir > **Quebra manual** > escolha:\n    - Tipo: linha, coluna, página.\n    - Estilo da próxima página (ex.: **Paisagem** para uma página horizontal).\n- Sessões (Sections)\n  - Inserir > **Seção** > nomeie (ex.: “título”, “Colunas”, “fim”).\n  - Aplique formatações locais:\n    - Seção “título”: **centralizado** e **negrito**.\n    - Seção “Colunas”: defina **duas colunas** sem afetar o restante.\n    - Misture orientações (Retrato/Paisagem) configurando estilo da página na quebra que antecede a seção.\n- Hiperlinks\n  - Inserir > **Hiperlink**:\n    - Tipo: Web/Documento/FTP/E-mail.\n    - Texto a exibir: o rótulo que aparece no documento (ex.: “fim”).\n    - Para seguir: **Ctrl + Clique**.\n    - Gerenciar: botão direito no link > Abrir, Editar hyperlink, Copiar endereço, Remover hyperlink.\n- Sumário/Índice\n  - Marque os tópicos com **Estilos**: aplique **Título 1**, **Título 2** aos cabeçalhos (ex.: selecione “Jefferson” > Título 1).\n  - Inserir > **Sumário, índice ou bibliografia** > Tipo: Sumário > selecione níveis.\n  - Atualizar quando o conteúdo/paginação mudar: botão direito no sumário > **Atualizar índice**.\n- Objetos e formas\n  - Inserir > **Figura**, **Gráfico**, **Multimídia**; **Galeria**; “digitalizar áudio ou vídeo”.\n  - Inserir > **Objeto > Formas**: linha, forma simples, estrelas.\n  - Inserir > **Caixa de texto**: desenhe, digite e posicione.\n- Anotações (comentários)\n  - Inserir > **Anotação**: comentários de revisão; podem ser exibidos/ocultados em Exibir > **Anotações** (inclui resolvidas/pendentes).\n\n## 4. Exemplos e Casos Resolvidos\n- Paginação correta sem bagunçar o layout\n  - Cenário: texto longo; precisa iniciar um novo capítulo na próxima página.\n  - Solução: posicione o cursor antes do novo capítulo > **Ctrl + Enter** (Quebra de página). Editar a página anterior não desloca o capítulo.\n- Documento com 2 colunas em um trecho\n  - Cenário: criar um boletim com corpo do texto em duas colunas e título normal.\n  - Solução: selecione o trecho > Inserir > **Seção** (nome: “Colunas”) > defina **duas colunas**. As demais seções (“título”, “fim”) permanecem com 1 coluna.\n- Hiperlink funcional para site\n  - Cenário: transformar texto “fim” em link para uma página.\n  - Solução: selecione “fim” > Inserir > **Hiperlink** > Tipo: Web > informe a URL > OK. Para abrir: **Ctrl + Clique**. Para gerenciar: botão direito > Remover hyperlink, Copiar endereço.\n- Sumário automático\n  - Cenário: marcar “Jefferson” como tópico principal.\n  - Solução: selecione “Jefferson” > aplique **Título 1** > Inserir > **Sumário, índice ou bibliografia** > Tipo: Sumário > OK. Para refletir mudanças: **Atualizar índice**.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - **F5** abre o **Navegador**.\n> - **Marcas de formatação** não são impressas, mesmo na visualização da impressão.\n> - Para seguir hiperlink no Writer: **Ctrl + Clique**.\n\n- Usar Enter para “pular” página em vez de **Quebra de página**. Resultado: paginação instável.\n- Confundir **Sessão (Section)** com **Estilo de página**:\n  - Sessão muda formatações locais (ex.: colunas) no mesmo documento.\n  - Estilo de página afeta a página inteira e sua orientação.\n- Esquecer de aplicar **Estilos de Título** antes de inserir o **Sumário**: o sumário fica vazio/incorreto.\n- Não **Atualizar índice** após mudanças: números de página desatualizados.\n- Achar que texto “com cara de link” funciona: precisa ser criado via **Hiperlink** para ser clicável.\n- Ocultar **Figuras e gráficos** em Exibir e esquecer de reativar: impressão sai sem elementos esperados.\n- Confundir atalhos citados em aulas/instalações diferentes:\n  - Confiáveis/cobrados: \n    - **F5**: Navegador.\n    - **Ctrl + Enter**: Quebra de página.\n    - **Ctrl + A**: Selecionar tudo.\n  - Citados e sujeitos a variação (confira no seu ambiente): \n    - **Ctrl + 10**: Alternar marcas de formatação.\n    - **Ctrl + Shift + 4**: Fontes de dados.\n    - **Ctrl + J**: Tela inteira.\n    - **Ctrl + E / Ctrl + L / Ctrl + T**: funções variam por idioma/layout.\n\nTabela rápida: Hiperlink vs. Sumário vs. Sessão\n- Hiperlink\n  - Finalidade: levar a URL/arquivo/e-mail.\n  - Navegação: Ctrl + Clique.\n  - Gestão: botão direito (Abrir, Editar hyperlink, Copiar endereço, Remover hyperlink).\n- Sumário\n  - Finalidade: navegação interna por títulos.\n  - Baseado em: Estilos (Título 1, Título 2...).\n  - Manutenção: Atualizar índice após mudanças.\n- Sessão\n  - Finalidade: formatações locais (ex.: 2 colunas, plano de fundo, proteção).\n  - Escopo: trecho do documento, não a página inteira.\n\n### Atalhos que você precisa lembrar\n- F5: Navegador.\n- Ctrl + Enter: Quebra de página.\n- Ctrl + A: Selecionar tudo.\n- Ctrl + 10: Alternar marcas de formatação (pode variar).\n- Ctrl + Shift + 4: Fontes de dados (citado).\n- Ctrl + J: Tela inteira (citado).",
+  "resumo_bolso": "# Libreoffice 7 - Writer IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Modos de exibição**: **Normal** (edição padrão) e **Página da Web** (prévia em formato de navegação).\n* **Elementos de interface**: **Barras de ferramentas**, **barra de estados** (rodapé), **réguas** (horizontal e **régua vertical**), **barras de rolagem**, **barra lateral**, **Navegador (F5)**.\n* **Marcas de formatação**: caracteres **não imprimíveis** (espaços, Tab, ¶, quebras); **ajudam na edição** e **não são impressos**, nem na visualização da impressão.\n* **Quebras**:\n  * **Quebra de linha**: nova linha **sem novo parágrafo**.\n  * **Quebra de coluna**: envia o texto para a **próxima coluna**.\n  * **Quebra de página (Ctrl + Enter)**: envia conteúdo para a **página seguinte** e fixa a paginação.\n  * **Quebra manual**: janela que permite escolher **tipo de quebra** (linha/coluna/página) e **estilo da próxima página**.\n* **Estilos de página** (na quebra manual): Envelope, Padrão, Índice, Notas de fim, Nota de rodapé, Direita, Esquerda, Paisagem, Primeira página.\n* **Sessões (Sections)**: áreas com **formatação própria** (ex.: colunas, plano de fundo, proteção), independentes do restante do documento.\n* **Hiperlink**: vínculo para **URL, documento, FTP ou e-mail (mailto)**; acesso com **Ctrl + Clique**; gerenciável por botão direito (Abrir, Editar hyperlink, Copiar endereço, Remover hyperlink).\n* **Sumário/Índice**: estrutura automática baseada em **Estilos de Título (Título 1, Título 2, …)**; itens funcionam como **hiperlinks internos**.\n* **Objetos e formas**: Inserir > **Figura**, **Gráfico**, **Multimídia**, **Galeria**, “digitalizar áudio ou vídeo”; Inserir > **Objeto > Formas** (linhas, formas simples, estrelas); Inserir > **Caixa de texto**.\n* **Anotações (comentários)**: Inserir > **Anotação**; exibidas/ocultadas em Exibir > **Anotações** (inclui resolvidas/pendentes).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Marcas de formatação vs Impressão\n\n| Aspecto | Marcas de formatação | Impressão |\n|--------|----------------------|-----------|\n| Visibilidade | Exibir > Marcas de formatação | Não aparecem |\n| Função | Diagnosticar espaços, Tabs, quebras | Resultado final em papel/PDF |\n\n---\n\n### Enter vs Quebra de página (Ctrl + Enter)\n\n| Aspecto | Enter repetido | Quebra de página |\n|--------|----------------|------------------|\n| Efeito | Só “empurra” texto e pode deslocar conteúdo | Inicia nova página e fixa a paginação |\n\n---\n\n### Quebra direta vs Quebra manual\n\n| Aspecto | Quebra direta (Ctrl + Enter) | Quebra manual |\n|--------|------------------------------|---------------|\n| Opções | Apenas nova página, sem configurações extras | Escolhe **tipo** (linha/coluna/página) |\n| Estilo da próxima página | Não define | Permite definir **estilo da próxima página** (ex.: Paisagem) |\n\n---\n\n### Sessão vs Estilo de página\n\n| Aspecto | Sessão (Section) | Estilo de página |\n|--------|-------------------|------------------|\n| Escopo | Trecho do documento | Página inteira |\n| Uso típico | 2 colunas em parte do texto; plano de fundo; proteção | Margens, cabeçalho/rodapé, orientação da página |\n\n---\n\n### Hiperlink vs Sumário\n\n| Aspecto | Hiperlink | Sumário |\n|--------|-----------|---------|\n| Destino | URL, arquivo, FTP, e-mail | Títulos internos |\n| Criação | Inserir > Hiperlink | Inserir > Sumário, índice ou bibliografia |\n| Base | Endereço informado; gerenciado por botão direito | **Estilos de Título** aplicados (Título 1, Título 2…) |\n\n---\n\n### Navegador vs Barra lateral\n\n| Aspecto | Navegador (F5) | Barra lateral |\n|--------|-----------------|---------------|\n| Foco | Navegação por estrutura (títulos, páginas, anotações) | Propriedades, estilos, navegação |\n| Acesso | F5 ou Exibir > Navegador | Exibir > Barra lateral |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Exibir elementos úteis**\n\n* **Marcas de formatação**: Exibir > **Marcas de formatação**.\n* **Navegador**: Exibir > **Navegador** ou **F5**.\n* **Barra lateral**: Exibir > **Barra lateral**.\n* **Linhas de grade**: Exibir > **Linhas de grade** e **Alinhar à grade** para posicionar objetos.\n\n---\n\n**2. Quebras e paginação**\n\n* **Quebra de página correta**  \n  * Regra: posicione o cursor > **Ctrl + Enter**.\n* **Quebra manual com estilo de página**  \n  * Regra: Inserir > **Quebra manual** > Tipo: **linha/coluna/página** > Estilo da próxima página (ex.: **Paisagem**).\n\n---\n\n**3. Criação e uso de Sessões (Sections)**\n\n* Regra: selecione o trecho > Inserir > **Seção** > nomeie (ex.: “título”, “Colunas”, “fim”) > configure:\n  * Seção “título”: **centralizado** e **negrito**.\n  * Seção “Colunas”: **duas colunas** sem afetar o restante.\n* Mistura de orientações: configure o **estilo da página** na quebra que antecede a seção (Retrato/Paisagem).\n\n---\n\n**4. Hiperlink funcional**\n\n* Regra: selecione o texto > Inserir > **Hiperlink** > Tipo (Web/Documento/FTP/E-mail) > informar endereço e **Texto a exibir** (ex.: “fim”) > OK.\n* Navegação: **Ctrl + Clique**.\n* Gestão: botão direito no link > Abrir, Editar hyperlink, Copiar endereço, Remover hyperlink.\n\n---\n\n**5. Sumário automático baseado em Estilos**\n\n* Regra:\n  * Aplique **Título 1, Título 2…** aos cabeçalhos (ex.: selecione “Jefferson” > Título 1).\n  * Inserir > **Sumário, índice ou bibliografia** > Tipo: **Sumário** > selecione níveis > OK.\n  * Para refletir mudanças: botão direito no sumário > **Atualizar índice**.\n\n---\n\n**6. Objetos, formas e anotações**\n\n* Objetos: Inserir > **Figura**, **Gráfico**, **Multimídia**, **Galeria**, “digitalizar áudio ou vídeo”.\n* Formas: Inserir > **Objeto > Formas** (linhas, formas simples, estrelas).\n* Caixa de texto: Inserir > **Caixa de texto** > desenhar e digitar.\n* Anotações: Inserir > **Anotação**; exibir/ocultar em Exibir > **Anotações**.\n\n---\n\n**7. Atalhos cobrados**\n\n* **F5**: abre **Navegador**.\n* **Ctrl + Enter**: **Quebra de página**.\n* **Ctrl + A**: **Selecionar tudo**.\n* **Atalhos sujeitos a variação (citados)**:\n  * **Ctrl + 10**: alternar **marcas de formatação** (pode variar).\n  * **Ctrl + Shift + 4**: **Fontes de dados**.\n  * **Ctrl + J**: **Tela inteira**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Usar **Enter repetido** para “pular” página em vez de **Quebra de página (Ctrl + Enter)** → paginação fica instável.\n2. Confundir **Sessão (Section)** com **Estilo de página**: sessão altera apenas um trecho; estilo de página afeta a página inteira e sua orientação.\n3. Inserir **Sumário** sem aplicar **Estilos de Título** → sumário vazio ou incorreto.\n4. Não **Atualizar índice** após mudanças → números de página desatualizados.\n5. Achar que texto “com cara de link” funciona como hiperlink → precisa ser criado via **Inserir > Hiperlink** para ser clicável com **Ctrl + Clique**.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Enter** de **Quebra de página (Ctrl + Enter)** para manter a paginação estável?\n* Sei usar **Quebra manual** para escolher **tipo de quebra** e **estilo da próxima página** (ex.: Paisagem)?\n* Entendi que **Sessão** aplica formatações locais (colunas, plano de fundo, proteção) e **Estilo de página** afeta a página inteira?\n* Lembro que **Sumário** depende de **Estilos de Título** e que devo **Atualizar índice** após mudanças?\n* Fixei: **F5 = Navegador**, **Ctrl + Enter = Quebra de página**, **Ctrl + A = Selecionar tudo**, **Ctrl + Clique = seguir hiperlink**?\n* Sei que **marcas de formatação não são impressas**, nem na visualização da impressão?",
+  "mapa_mental": "# 💻 LibreOffice 7 Writer IV\n## 🎯 Exibição e Interface\n### 💡 Modos de exibição\n- Layout normal\n- Página da web\n- Foco edição\n- Visualização navegação\n### 💡 Elementos da interface\n- Barras ferramentas\n- Barra de status\n- Réguas horizontal\n- Régua vertical\n- Barras rolagem\n- Barra lateral\n### 💡 Navegador F5\n- Estrutura títulos\n- Páginas documento\n- Anotações comentários\n- Navegação rápida\n### 💡 Marcas de formatação\n- Espaços visíveis\n- Tabulações setas\n- Marcas parágrafo\n- Quebras indicadas\n- Não imprimíveis\n### 💡 Zoom e grade\n- Controle zoom\n- Linhas grade\n- Alinhar grade\n- Posicionamento objetos\n\n## 🧱 Estrutura do Documento\n### 📜 Quebras e paginação\n- Quebra linha\n- Quebra coluna\n- Quebra página\n- Quebra manual\n- Ctrl + Enter\n### 📜 Estilos de página\n- Margens página\n- Cabeçalho rodapé\n- Orientação retrato\n- Orientação paisagem\n- Primeira página\n### 📜 Sessões Sections\n- Formatação local\n- Colunas trecho\n- Plano fundo\n- Proteção conteúdo\n- Escopo parcial\n### 📜 Estilos de título\n- Título 1\n- Título 2\n- Hierarquia tópicos\n- Base sumário\n- Estrutura lógica\n### 📜 Sumário automático\n- Inserir sumário\n- Base estilos\n- Níveis títulos\n- Hiperlinks internos\n- Atualizar índice\n\n## 🌐 Inserção e Objetos\n### 💻 Hiperlinks\n- URL web\n- Arquivo documento\n- FTP remoto\n- E-mail mailto\n- Ctrl + Clique\n### 💻 Gerenciar hiperlinks\n- Abrir link\n- Editar hyperlink\n- Copiar endereço\n- Remover hyperlink\n- Botão direito\n### 💻 Objetos e figuras\n- Inserir figura\n- Inserir gráfico\n- Inserir multimídia\n- Galeria objetos\n- Caixa texto\n### 💻 Formas e desenhos\n- Formas básicas\n- Linhas setas\n- Estrelas símbolos\n- Ajuste posição\n- Uso grade\n### 💻 Anotações comentários\n- Inserir anotação\n- Revisão texto\n- Exibir anotações\n- Ocultar anotações\n- Controle pendentes\n\n## 📝 Atalhos e Diferenças\n### ⚙️ Atalhos principais\n- F5 navegador\n- Ctrl + Enter\n- Ctrl + A\n- Ctrl + 10\n- Ctrl + Shift + 4\n### ⚙️ Atalhos complementares\n- Ctrl + J\n- Tela inteira\n- Variação idioma\n- Variação layout\n- Conferir ambiente\n### ⚖️ Diferenças importantes\n- Enter vs quebra\n- Sessão vs página\n- Hiperlink vs sumário\n- Marcas vs impressão\n- Sessão vs colunas",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Modos de Exibição",
+      "description": "Modos de Exibição — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o modo de exibição padrão do LibreOffice Writer?",
+          "back": "Modo normal.",
+          "hint": "Estado inicial de visualização",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual modo de exibição apresenta o documento como uma página da web?",
+          "back": "Página da web.",
+          "hint": "Focado em layout de internet",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "writer",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "O que o modo de tela inteira permite fazer no Writer?",
+          "back": "Permite trabalhar com o **zoom** em tela inteira.",
+          "hint": "Ocupa todo o monitor",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "writer",
+            "interface"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Navegação e Marcas",
+      "description": "Navegação e Marcas — 5 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual elemento da interface permite navegar por páginas, anotações e controles?",
+          "back": "**Navegador**.",
+          "hint": "Painel lateral de controle",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "navegacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "O que indicam os pontos exibidos entre palavras ao ativar as marcas de formatação?",
+          "back": "**Espaços** entre as palavras.",
+          "hint": "Símbolo entre palavras",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "formatacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual símbolo representa uma tabulação quando as marcas de formatação estão visíveis?",
+          "back": "Setinha.",
+          "hint": "Símbolo de alinhamento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "formatacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a função das marcas de formatação no Writer?",
+          "back": "Mostrar **caracteres não imprimíveis** como espaços, tabulações e marcas de parágrafo.",
+          "hint": "Termo técnico para caracteres invisíveis",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "formatacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "As marcas de formatação aparecem na impressão do documento?",
+          "back": "Não aparecem na impressão do documento.",
+          "hint": "Comportamento na saída física",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "formatacao"
+          ],
+          "type": "exception"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Quebras e Seções",
+      "description": "Quebras e Seções — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual efeito produz uma quebra de página inserida manualmente?",
+          "back": "Insere uma quebra de página sem afetar a página anterior ao adicionar novos textos.",
+          "hint": "Salto forçado de página",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "paginacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Em que situação uma quebra de coluna deve ser utilizada?",
+          "back": "Quando há duas ou mais colunas e deseja passar para a próxima coluna.",
+          "hint": "Uso em textos multi-colunados",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "paginacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Quais tipos de quebra podem ser inseridos pela opção de quebra manual?",
+          "back": "Quebra de linha, quebra de coluna e quebra de página.",
+          "hint": "São três tipos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "paginacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Para que serve uma quebra de seção no Writer?",
+          "back": "Permite aplicar formatações distintas, como número de colunas, em partes da mesma página.",
+          "hint": "Divisão lógica de formatação",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "secoes"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Inserção e Links",
+      "description": "Inserção e Links — 4 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "O que uma caixa de texto permite inserir e posicionar no documento?",
+          "back": "Inserir e posicionar textos livremente no documento.",
+          "hint": "Objeto de inserção livre",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "objetos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual recurso do Writer permite registrar um lembrete associado a um trecho?",
+          "back": "**Anotação**.",
+          "hint": "Comentário lateral",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "recursos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Quais destinos podem ser associados a um hiperlink no Writer?",
+          "back": "Endereço web, documento, servidor FTP e e-mail.",
+          "hint": "São quatro destinos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "hiperlink"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual ação do hiperlink abre uma página indicada por um endereço web?",
+          "back": "Pressionar **Ctrl + clique** sobre o link.",
+          "hint": "Atalho de teclado",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "hiperlink"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Sumários e Índices",
+      "description": "Sumários e Índices — 3 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Em que se baseia a geração automática de um sumário no Writer?",
+          "back": "Nos estilos aplicados aos títulos do documento, como Título 1.",
+          "hint": "Depende de hierarquia",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "writer",
+            "sumario"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "O que deve ser feito quando a paginação muda após a criação do sumário?",
+          "back": "**Atualizar** o índice.",
+          "hint": "Ação pós-alteração",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "sumario"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-19",
+          "front": "Que tipo de vínculo permite saltar do sumário para o trecho correspondente no documento?",
+          "back": "Hiperlink.",
+          "hint": "Mecanismo de navegação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "sumario"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": null,
+  "pdf_degravacao": "30_253663_Libreoffice 7 - Writer IV.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:53:56"
+}

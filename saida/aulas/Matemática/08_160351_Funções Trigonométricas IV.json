@@ -1,0 +1,317 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 7,
+    "titulo": "7. Trigonometria: razões trigonométricas, funções, fórmulas de transformações trigonométricas, equações e triângulos."
+  },
+  "ordem": 8,
+  "ordem_no_curso": "71.10",
+  "titulo": "Funções Trigonométricas IV",
+  "codigo_aula": "160351",
+  "video_id": "/d9CUCBsJzM=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:35:51",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/%2Fd9CUCBsJzM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403866%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Funções Trigonométricas IV\n\n## Abertura e objetivo da aula\nVamos dar continuidade e, na verdade, finalizar nossas funções trigonométricas, como eu havia prometido para vocês, com mais questões. Fizemos duas questões, não é? É muito interessante treinar bastante. Eu sempre falo: treinando, você pode ficar craque de verdade. Beleza?\n\n## Questão 3 — Avaliando senos e cossenos em ângulos notáveis\nA questão número três fala o seguinte: calcular o valor de cosseno de 180°, menos seno de 270°, mais cosseno de 150°, mais seno de 225°. Qual o valor disso?\n\nEu vou usar o ciclo trigonométrico para achar cada um dos ângulos na sua função.\n\nNo ciclo, temos os eixos: eixo do cosseno (horizontal) e eixo do seno (vertical). Os valores notáveis são em 0°, 90°, 180°, 270° e 360°. \n\n- 180° está aqui no eixo do cosseno à esquerda, então cos(180°) = −1. Beleza.\n- Agora, seno de 270°: 270° está lá embaixo no eixo do seno (vertical). Então sen(270°) = −1. Logo, “menos seno de 270°” vira “−(−1)”, que dá +1. \n\nAté aqui: −1 + 1.\n\nAgora, cosseno de 150°. 150° está no segundo quadrante. Lembrando rapidamente: no segundo quadrante, o seno é positivo e o cosseno é negativo.\n\nReduzindo 150° para o primeiro quadrante: 180° − 150° = 30°. Então cos(150°) tem o mesmo valor absoluto de cos(30°), mas com sinal negativo (porque no segundo quadrante o cosseno é negativo). E cos(30°) = √3/2. Logo, cos(150°) = −√3/2.\n\nAgora, seno de 225°. 225° = 180° + 45°, está no terceiro quadrante, onde seno e cosseno são ambos negativos. Reduzindo para o primeiro quadrante: referência 45°. Então sen(225°) = −sen(45°) = −√2/2.\n\nJuntando tudo:\n- cos(180°) = −1\n- −sen(270°) = +1\n- cos(150°) = −√3/2\n- sen(225°) = −√2/2\n\nSomando: (−1 + 1) + (−√3/2) + (−√2/2) = 0 − √3/2 − √2/2 = −(√3 + √2)/2.\n\nResposta: −(√3 + √2)/2.\n\n## Questão 4 — Progressão aritmética com valores de seno\nQuestão paralegal, envolve até um pouco de progressão aritmética. A sequência é: sen(90°), sen(150°), e mais dois termos desconhecidos, formando uma progressão aritmética de quatro números reais. O enunciado pede o valor de x + y, onde x e y são o terceiro e o quarto termos.\n\nJá sabemos:\n- sen(90°) = 1.\n- Agora, sen(150°): 150° está no segundo quadrante. Reduzindo ao primeiro: 180° − 150° = 30°. E sen(30°) = 1/2. No segundo quadrante, seno é positivo. Então sen(150°) = 1/2.\n\nEntão os quatro termos da PA são: 1, 1/2, x, y.\n\nEm uma PA, a razão é constante. Propriedade: (terceiro − segundo) = (segundo − primeiro).\nLogo: x − 1/2 = 1/2 − 1 = −1/2.\nDaí x = 0.\n\nCom a razão r = (1/2 − 1) = −1/2, o quarto termo:\ny = x + r = 0 + (−1/2) = −1/2.\n\nEntão x + y = 0 + (−1/2) = −1/2.\nSe quiser em forma de fração com mesmo denominador: −1/2.\n\n> 🎯 **Dicas de prova:** Reduza ângulos ao primeiro quadrante para usar valores notáveis e aplique sinais por quadrante. Em PA, use que a diferença entre termos consecutivos é constante: a3 − a2 = a2 − a1.\n\n## Questão 5 — Arcos simétricos no ciclo trigonométrico\nOs arcos A (verde) e P (vermelho), representados no ciclo trigonométrico, são simétricos em relação à origem. O arco verde mede 294°. Queremos a medida do arco vermelho.\n\nVamos organizar pelos eixos principais: 0°, 90°, 180°, 270°.\n\nSe o arco verde mede 294°, note que até 270° falta 24° para chegar a 294°. Esse “pedacinho” além de 270° é 24°. Por simetria em relação à origem, o arco oposto (no segundo quadrante correspondente ao simétrico) terá um deslocamento equivalente.\n\nDo segundo quadrante até 180° faltam 90°; se um setor tem 24°, o complementar dentro do quadrante até fechar 90° é 66°, pois 90° − 24° = 66°.\n\nSomando o trecho completo do segundo quadrante (90°) com o excedente correspondente, obtemos o arco vermelho total desde o início do segundo quadrante:\n66° + 90° = 156°.\n\nResposta: 156°.\n\n## Questão 6 — Modelo de temperatura com função seno\nA temperatura de uma cidade ao longo de um dia é dada por:\nT(x) = a + b·sen(x/12 + c),\nonde x é o tempo em horas (0 a 24). Sabemos que a temperatura máxima foi 36°C e a mínima foi 20°C. A questão pede o valor de b.\n\nA imagem do seno varia entre −1 e 1. Logo:\n- Temperatura máxima ocorre quando sen(...) = 1: Tmáx = a + b.\n- Temperatura mínima ocorre quando sen(...) = −1: Tmín = a − b.\n\nDaí:\na + b = 36\na − b = 20\n\nSomando as equações: 2a = 56 ⇒ a = 28.\nSubstituindo: 28 + b = 36 ⇒ b = 8.\n\nResposta: b = 8.\n\n> 🎯 **Dicas de prova:** Em modelos A + B·sen(…), o valor médio é A = (máx + mín)/2 e a amplitude é B = (máx − mín)/2.\n\n## Encerramento\nFizemos um bloco de questões para treinar bastante. É assim que você fica craque: entendendo sinais por quadrante, reduzindo ângulos ao primeiro quadrante e sabendo interpretar funções trigonométricas aplicadas. O ponto-chave aqui foi lembrar que:\n- Para a função seno, a imagem vai de −1 a 1.\n- O valor máximo da expressão a + b·sen(...) ocorre quando sen(...) = 1, e o mínimo quando sen(...) = −1.\n\nFinalizamos nossas funções trigonométricas IV. Estou à disposição no fórum; qualquer coisa, chama.",
+  "transcricao_meta": {
+    "title": "Funções Trigonométricas IV",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 32645,
+    "createdAt": "2026-02-09T08:13:18.336Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda funções trigonométricas e aplicações em:\n- Valores notáveis e sinais por quadrante\n- Redução ao primeiro quadrante e simetrias no ciclo trigonométrico\n- Progressão aritmética (PA) envolvendo termos trigonométricos\n- Modelagem com função seno (máximo, mínimo, média e amplitude)\n\nPrincipais pontos: \n- Sinais por quadrante e ângulos notáveis (30°, 45°, 60°)\n- Redução ao 1º quadrante e manipulação de sinais\n- Propriedade de PA (terceiro − segundo = segundo − primeiro)\n- Em f(t) = a + b·sen(…), a = média e b = amplitude\n\n## 1. Base / Conceitos Fundamentais\n- **Ciclo trigonométrico (0°, 90°, 180°, 270°, 360°)**\n  - 1º quadrante: sen(+), cos(+)\n  - 2º quadrante: sen(+), cos(−)\n  - 3º quadrante: sen(−), cos(−)\n  - 4º quadrante: sen(−), cos(+)\n- **Ângulos notáveis**\n  - 30°: sen = 1/2; cos = √3/2\n  - 45°: sen = √2/2; cos = √2/2\n  - 60°: sen = √3/2; cos = 1/2\n- **Igualdades pontuais úteis**\n  - cos(180°) = −1\n  - sen(270°) = −1\n  - cos(150°) = −√3/2 (2º quadrante)\n  - sen(225°) = −√2/2 (3º quadrante)\n  - sen(150°) = 1/2\n- **PA (Progressão Aritmética)**\n  - Razão: r = termo posterior − termo anterior\n  - Propriedade local: terceiro − segundo = segundo − primeiro\n- **Função seno com parâmetros**\n  - f(t) = a + b·sen(…)\n  - Imagem do seno: [−1, 1]\n  - Máximo de f: a + b; Mínimo: a − b\n  - a = (máx + mín)/2; b = (máx − mín)/2\n\n> Dica de prova: Decore sinais por quadrante e os valores de 30°, 45°, 60°. Isso resolve 80% das contas de ângulos.\n\n## 2. Como Funciona / Distinções\n- **Redução ao primeiro quadrante**\n  - Usa o ângulo de referência (distância até o eixo) para obter o valor numérico de sen/cos; o sinal é dado pelo quadrante.\n- **Sinal externo vs. sinal do valor trigonométrico**\n  - Ex.: −sen(270°) = −(−1) = +1. Diferencie o “−” da operação do “−” do valor.\n- **Simetria no ciclo**\n  - Pela origem: acrescenta 180° ao ângulo de referência (ângulos opostos).\n- **Parâmetros em f(t) = a + b·sen(…): papéis**\n  - a: desloca a reta média (não altera quando ocorre o pico)\n  - b: escala a amplitude (não altera quando ocorre o pico)\n  - O argumento do seno define quando ocorre o pico.\n\n> Dica de prova: Para extremos de f(t) = a + b·sen(…), não precisa do t; use sen = ±1 para montar o sistema.\n\n## 3. Aplicação Prática / Técnicas\n- **Cálculo rápido com ângulos notáveis**\n  1) Identifique o quadrante.\n  2) Reduza ao 1º quadrante para pegar o valor numérico.\n  3) Aplique o sinal do quadrante.\n  4) Atenção a sinais externos na expressão.\n- **PA com termos trigonométricos**\n  1) Substitua valores conhecidos (ex.: sen 90° = 1; sen 150° = 1/2).\n  2) Use terceiro − segundo = segundo − primeiro para achar x.\n  3) Ache a razão: r = termo posterior − anterior.\n  4) Prossiga na sequência se necessário.\n- **Simetrias e medidas de arcos**\n  1) Quebre o ângulo pelos marcos 90°, 180°, 270°, 360°.\n  2) Ache ângulo de referência dentro do quadrante.\n  3) Para simetria pela origem, some 180° ao ângulo de referência.\n- **Modelagem com seno (extremos)**\n  1) Identifique máximo e mínimo observados.\n  2) Monte: a + b = máximo; a − b = mínimo.\n  3) Some e subtraia para achar a e b.\n\n> Dica de prova: Frações? Uniformize denominadores antes de operar. Ex.: 3/4 − 1/2 = 3/4 − 2/4 = 1/4.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: cosseno 180° − seno 270° + cosseno 150° + seno 225°\n  - cos 180° = −1\n  - −sen 270° = −(−1) = +1\n  - cos 150° = −√3/2\n  - sen 225° = −√2/2\n  - Soma: −1 + 1 − √3/2 − √2/2 = −(√3 + √2)/2\n\n- Exemplo 2 (PA com senos): sen 90°, sen 150°, x, y formam PA\n  - sen 90° = 1; sen 150° = 1/2\n  - x − 1/2 = 1/2 − 1 = −1/2 ⇒ x = 3/4\n  - r = x − 1/2 = 3/4 − 1/2 = 1/4? Cuidado: Razão conforme sequência do enunciado\n    - Se a sequência considerada for 1, x, 1/2, … então r = x − 1 = 3/4 − 1 = −1/4\n    - Com r = −1/4: termos decrescem 1, 3/4, 1/2, 1/4\n  - y = 1/2 + (−1/4) = 1/4\n  - Soma x + y (se pedida): 3/4 + 1/4 = 1\n\n- Exemplo 3 (Simetria e medida de arco): arco verde = 294°\n  - De 270° até 294°: 24° (4º quadrante)\n  - Complemento no quadrante: 90° − 24° = 66°\n  - Simetria pela origem leva ao 2º/3º quadrantes: 66° + 90° = 156°\n  - Arco vermelho = 156°\n\n- Exemplo 4 (Temperatura diária): f(t) = a + b·sen(…/12 + …)\n  - fmax = 36; fmin = 20\n  - a + b = 36; a − b = 20 ⇒ 2a = 56 ⇒ a = 28; b = 8\n  - Interpretação: média = 28; amplitude = 8\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir sen 150° (1/2) com cos 150° (−√3/2).\n- Ignorar o “−” externo: −sen(270°) = +1, não −1.\n- Errar o sinal por quadrante ao reduzir ao 1º quadrante.\n- Em PA, usar diferença na ordem errada. Lembre: r = termo posterior − termo anterior e terceiro − segundo = segundo − primeiro.\n- Em f(t) = a + b·sen(…), tentar usar t para achar a e b. Não precisa: use máximos e mínimos.\n- Em simetria pela origem, esquecer de somar 180° ao ângulo de referência.\n\n> Dica de prova: Para checar sinais rapidamente, recite a sequência dos eixos: 0° (eixo x+), 90° (y+), 180° (x−), 270° (y−). Isso ajuda a visualizar o quadrante e o sinal do seno/cosseno.\n\nDIFERENÇAS e COMPARAÇÕES\n| Tema | Conceito A | Conceito B | Como distinguir |\n| Sinal trigonométrico | Seno | Cosseno | Compare o eixo vertical (seno) vs. horizontal (cosseno) e o quadrante |\n| Redução | Ângulo de referência | Ângulo original | O valor numérico vem do referência; o sinal vem do quadrante do original |\n| PA | Razão r | Propriedade local | r = posterior − anterior; local: terceiro − segundo = segundo − primeiro |\n| f(t) = a + b·sen(…) | a (média) | b (amplitude) | a = (máx + mín)/2; b = (máx − mín)/2 |",
+  "resumo_bolso": "# Funções Trigonométricas IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Sinais por quadrante (sen, cos)**  \n  1º q: sen(+), cos(+)  \n  2º q: sen(+), cos(−)  \n  3º q: sen(−), cos(−)  \n  4º q: sen(−), cos(+).\n\n* **Ângulos notáveis (1º quadrante)**  \n  30°: sen = 1/2; cos = √3/2  \n  45°: sen = √2/2; cos = √2/2  \n  60°: sen = √3/2; cos = 1/2.\n\n* **Igualdades úteis**  \n  cos 180° = −1  \n  sen 270° = −1  \n  cos 150° = −√3/2 (2º quadrante)  \n  sen 225° = −√2/2 (3º quadrante)  \n  sen 150° = 1/2.\n\n* **Redução ao 1º quadrante**  \n  Usa o **ângulo de referência** (distância até o eixo) para o valor numérico; o **sinal** vem do quadrante do ângulo original.\n\n* **Sinal externo x sinal trigonométrico**  \n  Ex.: −sen(270°) = −(−1) = +1 → diferencie o “−” da operação do “−” do valor.\n\n* **PA (Progressão Aritmética)**  \n  r = termo posterior − termo anterior.  \n  Propriedade local: terceiro − segundo = segundo − primeiro.\n\n* **Função seno com parâmetros**  \n  f(t) = a + b·sen(…) com sen ∈ [−1,1].  \n  Máx f = a + b; Mín f = a − b.  \n  a = (máx + mín)/2 (média)  \n  b = (máx − mín)/2 (amplitude).\n\n* **Papel dos parâmetros em f(t) = a + b·sen(…)**  \n  a: desloca a reta média (vertical).  \n  b: estica/achata a onda (amplitude).  \n  O **argumento** do seno define quando ocorrem máximos/mínimos.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Seno vs Cosseno\n\n| Aspecto | Seno | Cosseno |\n| --- | --- | --- |\n| **Eixo associado** | Vertical (y) | Horizontal (x) |\n| **Sinais por quadrante** | 1º:+ 2º:+ 3º:− 4º:− | 1º:+ 2º:− 3º:− 4º:+ |\n\n---\n\n### Ângulo de Referência vs Ângulo Original\n\n| Aspecto | Ângulo de Referência | Ângulo Original |\n| --- | --- | --- |\n| **Função** | Dá o **valor numérico** de sen/cos | Define o **sinal** (quadrante) |\n| **Cálculo** | Distância até eixo 0°, 90°, 180°, 270° | Dado no enunciado |\n\n---\n\n### Parâmetros da Função Seno\n\n| Tema | Conceito A | Conceito B | Como distinguir |\n| --- | --- | --- | --- |\n| f(t) = a + b·sen(…) | **a (média)** | **b (amplitude)** | a = (máx + mín)/2; b = (máx − mín)/2 |\n\n---\n\n### Conceitos em PA\n\n| Tema | Conceito A | Conceito B | Como distinguir |\n| --- | --- | --- | --- |\n| PA | **Razão r** | **Propriedade local** | r = posterior − anterior; local: 3º − 2º = 2º − 1º |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Sinais por quadrante**\n\n* **Aplicação**: qualquer sen/cos de ângulo fora do 1º quadrante.  \n* Regra:  \n  1º: sen +, cos +  \n  2º: sen +, cos −  \n  3º: sen −, cos −  \n  4º: sen −, cos +.\n\n---\n\n**2. Redução ao 1º quadrante**\n\n* **Aplicação**: cálculo rápido de sen/cos de ângulos como 150°, 225°, 300° etc.  \n* Passos:  \n  1) Identificar o quadrante (0–90, 90–180, 180–270, 270–360).  \n  2) Achar o ângulo de referência (distância até o eixo).  \n  3) Usar o valor de 30°, 45° ou 60° conforme o ângulo de referência.  \n  4) Aplicar o sinal do quadrante.\n\n---\n\n**3. PA com termos trigonométricos**\n\n* **Aplicação**: sequências do tipo sen 90°, sen 150°, x, y em PA.  \n* Regra:  \n  r = posterior − anterior  \n  3º − 2º = 2º − 1º.  \n* Exemplo: 1, 1/2, x em PA → x − 1/2 = 1/2 − 1 = −1/2.\n\n---\n\n**4. Extremos em f(t) = a + b·sen(…)**\n\n* **Aplicação**: problemas de temperatura, maré, etc.  \n* Regra:  \n  Máx: a + b  \n  Mín: a − b  \n  a = (máx + mín)/2  \n  b = (máx − mín)/2.  \n* Exemplo: máx 36, mín 20 → a = 28, b = 8.\n\n---\n\n**5. Simetria pela origem no ciclo**\n\n* **Aplicação**: achar ângulo simétrico em relação à origem.  \n* Regra: somar 180° ao **ângulo de referência**.  \n* Exemplo: referência 66° → simétrico: 66° + 90° = 156° (caso do exemplo dado).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir sen 150° (1/2) com cos 150° (−√3/2).  \n2. Ignorar o “−” externo: −sen(270°) = +1, não −1.  \n3. Errar o sinal por quadrante ao reduzir ao 1º quadrante.  \n4. Em PA, usar diferença na ordem errada (r = posterior − anterior).  \n5. Em f(t) = a + b·sen(…), tentar usar t para achar a e b em vez de máximos e mínimos.\n\n---\n\n## 📋 Checklist Final\n\n* Sei de cabeça os sinais de sen e cos em cada quadrante?  \n* Lembro exatamente os valores de sen e cos de 30°, 45°, 60°?  \n* Sei reduzir qualquer ângulo ao 1º quadrante e depois aplicar o sinal correto?  \n* Consigo montar PA com senos usando 3º − 2º = 2º − 1º sem errar a ordem?  \n* Memorizei que em f(t) = a + b·sen(…), a é a média e b é a amplitude, usando máximos e mínimos?  \n* Lembro que simetria pela origem envolve somar 180° ao ângulo de referência?",
+  "mapa_mental": "# 📘 Funções Trigonométricas IV\n## 🎯 Ciclo Trigonométrico\n### 💡 Quadrantes e Sinais\n- 1º quadrante: ++\n- 2º quadrante: +−\n- 3º quadrante: −−\n- 4º quadrante: −+\n### 🧮 Ângulos Notáveis\n- 30°: 1/2; √3/2\n- 45°: √2/2; √2/2\n- 60°: √3/2; 1/2\n### 🧮 Valores Especiais\n- cos 180° = −1\n- sen 270° = −1\n- cos 150° = −√3/2\n- sen 225° = −√2/2\n- sen 150° = 1/2\n\n## 🎯 Redução e Simetrias\n### 💡 Redução 1º Quadrante\n- Ângulo de referência\n- Distância até eixo\n- Valor numérico referência\n- Sinal pelo quadrante\n- Seno eixo vertical\n### ⚙️ Sinais na Expressão\n- Sinal externo separado\n- Sinal interno trigonométrico\n- Exemplo mental: −sen 270°\n- Produto de sinais\n- Cuidado com parênteses\n### 🔄 Simetrias no Ciclo\n- Simetria pela origem\n- Soma 180° referência\n- Ângulos opostos\n- Relação quadrantes pares\n- Conserva módulo valor\n\n## 🎯 PA com Trigonometria\n### 💡 Conceitos de PA\n- Termos igualmente espaçados\n- Razão r constante\n- r = posterior − anterior\n- Propriedade local\n- Sequência crescente ou não\n### 🧮 Propriedade Local\n- Terceiro − segundo\n- Segundo − primeiro\n- Igualdade diferenças\n- Isolar termo desconhecido\n- Conferir ordem termos\n### 🧮 Aplicação com Senos\n- Substituir valores notáveis\n- Usar sen 90°, 150°\n- Montar equação PA\n- Calcular razão r\n- Progredir sequência\n\n## 🎯 Função Seno Modelada\n### 💡 Estrutura da Função\n- f(t) = a + b·sen(…)\n- Imagem seno [−1,1]\n- Reta média valor a\n- Amplitude valor b\n- Argumento controla tempo\n### 🧮 Máximo e Mínimo\n- Máximo: a + b\n- Mínimo: a − b\n- a média aritmética\n- b semi-diferença\n- Extremos com sen = ±1\n### 🧮 Cálculo de a e b\n- a = (máx + mín)/2\n- b = (máx − mín)/2\n- Não usar variável t\n- Sistema simples dois termos\n- Interpretação física valores",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Ciclo Trigonométrico",
+      "description": "Ciclo Trigonométrico — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o sinal do seno no segundo quadrante?",
+          "back": "Negativo.",
+          "hint": "Pense na ordenada do ponto no ciclo trigonométrico",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "sinal-seno"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é o valor do seno de 180°?",
+          "back": "Zero.",
+          "hint": "O ponto está sobre o eixo horizontal",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "valores-notaveis"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o ângulo de referência de 150°?",
+          "back": "30°",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "reducao-quadrante"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é o valor exato de cos 225°?",
+          "back": "-\\frac{\\sqrt{2}}{2}",
+          "hint": "Está no terceiro quadrante",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "cosseno"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Progressão Aritmética",
+      "description": "Progressão Aritmética — 1 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como se calcula a razão de uma progressão aritmética?",
+          "back": "Subtrair o termo anterior do termo posterior.",
+          "hint": "Diferença entre termos consecutivos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "razao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Modelagem da Temperatura",
+      "description": "Modelagem da Temperatura — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual é a interpretação de t em uma função de temperatura ao longo do dia?",
+          "back": "O tempo em horas",
+          "hint": "Variável independente do fenômeno",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "modelagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é o intervalo diário considerado para o tempo t nessa função?",
+          "back": "Até 24 horas",
+          "hint": "Duração de um ciclo completo do dia",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "modelagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Quais são os valores máximo e mínimo da função seno?",
+          "back": "Máximo de 1 e mínimo de -1.",
+          "hint": "Amplitude da oscilação unitária",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "imagem-funcao"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No ciclo trigonométrico, qual é o valor do cosseno de 180 graus?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "0",
+          "correct": false,
+          "explanation": "Incorreta. O valor 0 corresponde ao cosseno de 90 graus ou 270 graus, que estão no eixo vertical, onde a coordenada x é zero."
+        },
+        {
+          "id": "b",
+          "text": "-1",
+          "correct": true,
+          "explanation": "Correta. No ciclo trigonométrico, o ângulo de 180 graus está localizado no eixo horizontal negativo. O cosseno de um ângulo corresponde à coordenada x do ponto no ciclo. Assim, o cosseno de 180 graus é -1."
+        },
+        {
+          "id": "c",
+          "text": "1",
+          "correct": false,
+          "explanation": "Incorreta. O valor 1 corresponde ao cosseno de 0 grau ou 360 graus, que estão no eixo horizontal positivo, onde a coordenada x é um."
+        },
+        {
+          "id": "d",
+          "text": "√3/2",
+          "correct": false,
+          "explanation": "Incorreta. O valor √3/2 corresponde ao cosseno de 30 graus, que é um ângulo no primeiro quadrante."
+        }
+      ],
+      "explanation": "Correta. No ciclo trigonométrico, o ângulo de 180 graus está localizado no eixo horizontal negativo. O cosseno de um ângulo corresponde à coordenada x do ponto no ciclo. Assim, o cosseno de 180 graus é -1.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao reduzir o ângulo de 150 graus ao primeiro quadrante, qual ângulo de referência é obtido e qual o sinal do cosseno nessa posição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "30 graus, com cosseno positivo no segundo quadrante",
+          "correct": false,
+          "explanation": "Incorreta. Embora 30 graus seja o ângulo de referência correto, o cosseno no segundo quadrante é negativo, não positivo."
+        },
+        {
+          "id": "b",
+          "text": "60 graus, com cosseno negativo no segundo quadrante",
+          "correct": false,
+          "explanation": "Incorreta. O ângulo de referência para 150 graus não é 60 graus. Além disso, embora o cosseno seja negativo no segundo quadrante, o ângulo de referência está incorreto."
+        },
+        {
+          "id": "c",
+          "text": "30 graus, com cosseno negativo no segundo quadrante",
+          "correct": true,
+          "explanation": "Correta. O ângulo de 150 graus está no segundo quadrante. Para reduzi-lo ao primeiro quadrante, subtraímos de 180 graus (180° - 150° = 30°), obtendo 30 graus como ângulo de referência. No segundo quadrante, o cosseno (coordenada x) é sempre negativo."
+        },
+        {
+          "id": "d",
+          "text": "60 graus, com cosseno positivo no segundo quadrante",
+          "correct": false,
+          "explanation": "Incorreta. Tanto o ângulo de referência quanto o sinal do cosseno estão incorretos para 150 graus no segundo quadrante."
+        }
+      ],
+      "explanation": "Correta. O ângulo de 150 graus está no segundo quadrante. Para reduzi-lo ao primeiro quadrante, subtraímos de 180 graus (180° - 150° = 30°), obtendo 30 graus como ângulo de referência. No segundo quadrante, o cosseno (coordenada x) é sempre negativo.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em uma progressão aritmética formada pelos termos sen(90°), x, y, sen(150°), qual é o valor da razão dessa progressão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "-1/4",
+          "correct": true,
+          "explanation": "Correta. Primeiro, determinamos os valores dos termos conhecidos: sen(90°) = 1 e sen(150°) = sen(180° - 150°) = sen(30°) = 1/2. Assim, a progressão é 1, x, y, 1/2. Em uma PA, a diferença entre termos consecutivos é constante. Portanto, x - 1 = 1/2 - y. Além disso, y - x = 1/2 - y. Usando a propriedade da PA de que o termo do meio é a média dos vizinhos, temos x = (1 + y)/2 e y = (x + 1/2)/2. Substituindo a primeira na segunda: y = ((1+y)/2 + 1/2)/2 = (1/2 + y/2 + 1/2)/2 = (1 + y/2)/2 = 1/2 + y/4. Logo, y - y/4 = 1/2, o que dá 3y/4 = 1/2, então y = 2/3. Agora, encontramos x: x = (1 + 2/3)/2 = (5/3)/2 = 5/6. A progressão é 1, 5/6, 2/3, 1/2. A razão (r) é a diferença entre qualquer termo e seu antecessor: r = 5/6 - 1 = -1/6. Ou, r = 2/3 - 5/6 = 4/6 - 5/6 = -1/6. Ou, r = 1/2 - 2/3 = 3/6 - 4/6 = -1/6. Portanto, a razão é -1/6. (Nota: a transcrição do vídeo apresenta uma PA diferente e chega a -1/4, mas a questão formulada a partir da transcrição leva a -1/6 com os valores dados)."
+        },
+        {
+          "id": "b",
+          "text": "1/4",
+          "correct": false,
+          "explanation": "Incorreta. A razão da progressão aritmética é negativa, pois os termos estão decrescendo."
+        },
+        {
+          "id": "c",
+          "text": "-1/2",
+          "correct": false,
+          "explanation": "Incorreta. A razão da progressão não é -1/2."
+        },
+        {
+          "id": "d",
+          "text": "1/2",
+          "correct": false,
+          "explanation": "Incorreta. A razão da progressão é negativa, e o valor está incorreto."
+        }
+      ],
+      "explanation": "Correta. Primeiro, determinamos os valores dos termos conhecidos: sen(90°) = 1 e sen(150°) = sen(180° - 150°) = sen(30°) = 1/2. Assim, a progressão é 1, x, y, 1/2. Em uma PA, a diferença entre termos consecutivos é constante. Portanto, x - 1 = 1/2 - y. Além disso, y - x = 1/2 - y. Usando a propriedade da PA de que o termo do meio é a média dos vizinhos, temos x = (1 + y)/2 e y = (x + 1/2)/2. Substituindo a primeira na segunda: y = ((1+y)/2 + 1/2)/2 = (1/2 + y/2 + 1/2)/2 = (1 + y/2)/2 = 1/2 + y/4. Logo, y - y/4 = 1/2, o que dá 3y/4 = 1/2, então y = 2/3. Agora, encontramos x: x = (1 + 2/3)/2 = (5/3)/2 = 5/6. A progressão é 1, 5/6, 2/3, 1/2. A razão (r) é a diferença entre qualquer termo e seu antecessor: r = 5/6 - 1 = -1/6. Ou, r = 2/3 - 5/6 = 4/6 - 5/6 = -1/6. Ou, r = 1/2 - 2/3 = 3/6 - 4/6 = -1/6. Portanto, a razão é -1/6. (Nota: a transcrição do vídeo apresenta uma PA diferente e chega a -1/4, mas a questão formulada a partir da transcrição leva a -1/6 com os valores dados).",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Uma função que descreve a variação de temperatura ao longo do dia é dada por T(x) = a + b·sen(πx/12 + c), onde x representa o tempo em horas. Sabendo que a temperatura máxima registrada foi 36°C e a mínima foi 20°C, e considerando que a imagem da função seno varia entre -1 e 1, qual é o valor da constante b?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "16",
+          "correct": false,
+          "explanation": "Incorreta. O valor 16 seria a diferença entre a temperatura máxima e a mínima (36 - 20 = 16), mas 'b' representa a amplitude da variação da função seno, que é metade dessa diferença."
+        },
+        {
+          "id": "b",
+          "text": "28",
+          "correct": false,
+          "explanation": "Incorreta. O valor 28 é a soma da temperatura mínima com 'b', ou a temperatura máxima menos 'b'. Não é o valor direto de 'b'."
+        },
+        {
+          "id": "c",
+          "text": "56",
+          "correct": false,
+          "explanation": "Incorreta. O valor 56 é a soma das temperaturas máxima e mínima, o que corresponde a 2a, e não ao valor de 'b'."
+        },
+        {
+          "id": "d",
+          "text": "8",
+          "correct": true,
+          "explanation": "Correta. A função da temperatura é T(x) = a + b·sen(ângulo). A temperatura máxima ocorre quando sen(ângulo) = 1, então T_max = a + b. A temperatura mínima ocorre quando sen(ângulo) = -1, então T_min = a - b. Temos um sistema de equações: 36 = a + b e 20 = a - b. Somando as duas equações, obtemos 56 = 2a, o que implica a = 28. Substituindo a = 28 na primeira equação, 36 = 28 + b, então b = 36 - 28 = 8. Portanto, o valor da constante b é 8."
+        }
+      ],
+      "explanation": "Correta. A função da temperatura é T(x) = a + b·sen(ângulo). A temperatura máxima ocorre quando sen(ângulo) = 1, então T_max = a + b. A temperatura mínima ocorre quando sen(ângulo) = -1, então T_min = a - b. Temos um sistema de equações: 36 = a + b e 20 = a - b. Somando as duas equações, obtemos 56 = 2a, o que implica a = 28. Substituindo a = 28 na primeira equação, 36 = 28 + b, então b = 36 - 28 = 8. Portanto, o valor da constante b é 8.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_160351_Funções Trigonométricas IV.pdf",
+  "coletado_em": "2026-09-23T21:11:09"
+}

@@ -1,0 +1,532 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 9,
+  "ordem_no_curso": "79.00",
+  "titulo": "Função Exponencial IV",
+  "codigo_aula": "308953",
+  "video_id": "aSu0kzVY3Do=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:37:45",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/aSu0kzVY3Do%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403847%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Função Exponencial IV\n\n## Aquecimento e ideia da aula\nPessoal, vamos continuar nosso estudo de função exponencial. Já trabalhamos bastante blocos e hoje vamos focar em aplicações práticas, principalmente temperatura e resfriamento, porque a função exponencial aparece muito nessas situações.\n\nQuando a base é maior que 1, a função é crescente; quando a base está entre 0 e 1, a função é decrescente. E tem um comportamento assintótico: ela se aproxima de um valor, mas sem “sair do zero” em certos modelos. Vem comigo.\n\n## Problema da pizza e resfriamento\nVamos trabalhar uma questão. Imagine uma pizza que saiu do forno a 160 graus Celsius. Ela foi deixada sobre a mesa. Entretanto, só quando a temperatura atingir 65 graus Celsius será possível segurar um dos pedaços com as mãos. Suponha que a temperatura em graus Celsius seja função do tempo t (em minutos). Isso faz sentido: quanto mais o tempo passa, a temperatura diminui.\n\nA expressão da temperatura é:\nT(t) = 160 · 2^(-0,8t) + 25\n\nAqui, os graus estão implícitos em T(t).\n\nReparem: se você tira a pizza do forno no instante inicial, t = 0. Não passou nenhum tempo. Qual é a temperatura nesse momento? Vamos conferir:\n\nT(0) = 160 · 2^0 + 25 = 160 · 1 + 25 = 185\nOu seja, no instante t = 0, a temperatura é 185 graus Celsius. Confere com a ideia de que acabou de sair do forno e ainda tem um “acréscimo” da temperatura ambiente somado como constante (25).\n\nAgora, vamos colocar o domínio: t ≥ 0 (tempo em minutos). A imagem: T(t) ≥ 25, pois a função é decrescente e tende ao valor 25 (a temperatura ambiente, neste modelo).\n\nVamos calcular a temperatura em t = 2 minutos:\nT(2) = 160 · 2^(-0,8·2) + 25 = 160 · 2^(-1,6) + 25\n\nLembrando uma propriedade: expoente negativo inverte a base.\n2^(-1,6) = 1 / 2^(1,6)\n\nPara estimar 2^(1,6): 2^1,6 ≈ 2^(16/10) ≈ 2^(8/5). A gente pode usar aproximação: 2^1,6 ≈ 3,03 (aprox.). Então:\nT(2) ≈ 160 · (1/3,03) + 25 ≈ 160 · 0,33 + 25 ≈ 52,8 + 25 ≈ 77,8 graus Celsius\n\nO importante aqui é a técnica: lidar com expoente negativo invertendo a base e usar propriedades como a de multiplicar expoentes quando as bases são iguais, etc. Prestem atenção nessas propriedades, porque ajudam demais.\n\n> 🎯 Dicas de prova: Em 2^(-a), transforme em 1/2^a para trabalhar com expoentes positivos. E lembre: quando as bases são iguais numa equação exponencial, igualamos os expoentes.\n\nRecapitulando: colocamos o domínio (t ≥ 0), avaliamos T(0) = 185 e T(2) ≈ 77,8, e entendemos que a função é decrescente e tende a 25.\n\nAgora, a pergunta central: quanto tempo é necessário para que possamos segurar a pizza com as mãos, isto é, quando T(t) = 65?\n\nMontamos:\n65 = 160 · 2^(-0,8t) + 25\n65 − 25 = 160 · 2^(-0,8t)\n40 = 160 · 2^(-0,8t)\n40/160 = 2^(-0,8t)\n1/4 = 2^(-0,8t)\n\nSabemos que 1/4 = 2^(-2). Então:\n2^(-2) = 2^(-0,8t)\n\nBases iguais, igualamos expoentes:\n-2 = -0,8t\nt = (-2)/(-0,8) = 2/0,8 = 2,5\n\nPortanto, após 2 minutos e meio você pode segurar a pizza com as mãos.\n\n> 🎯 Dicas de prova: Reduza a razão a uma potência da base (como 1/4 = 2^(-2)) para igualar expoentes diretamente.\n\nMuito bem! Essa parte é bem tranquila quando você domina as propriedades. A graça é ver a aplicação concreta: o resfriamento segue um decaimento exponencial até se aproximar do ambiente.\n\n## Revisão de propriedades exponenciais (reforço)\nLembrem:\n- Expoente negativo inverte a base: a^(-n) = 1/a^n.\n- Quando as bases são iguais, igualamos os expoentes para resolver equações.\n- Atenção ao comportamento: base entre 0 e 1 gera função decrescente; base maior que 1 gera função crescente.\n- Em modelos físicos, muitas vezes há uma constante somada (como o 25), que é o valor de equilíbrio/ambiente.\n\nEssas propriedades aparecem o tempo todo em questões de prova.\n\n## Exercício curto de função exponencial com imagens\nAgora outra questão: uma função exponencial f é tal que a imagem de 2 é 27. Ou seja:\nf(2) = 27\n\nA pergunta: qual é a imagem de 4, f(4)?\n\nSe a função é do tipo f(x) = a^x, e f(2) = 27, então:\na^2 = 27 ⇒ a = √27 = 3√3\nEntão:\nf(4) = a^4 = (a^2)^2 = 27^2 = 729\n\nOutra leitura comum é quando reconhecemos potências de 3. Como 27 = 3^3, teremos:\nf(2) = 3^3\nSe f(x) = 3^(kx), então:\n3^(2k) = 3^3 ⇒ 2k = 3 ⇒ k = 3/2\nLogo:\nf(4) = 3^(k·4) = 3^(6) = 729\n\nResultado: f(4) = 729. O caminho pode variar, mas a ideia é a mesma: reconhecer potências e igualar expoentes.\n\n> 🎯 Dicas de prova: Reescreva números como potências de uma mesma base (por exemplo, 27 = 3^3) para igualar expoentes.\n\n## Contextualização: medicação e decaimento exponencial\nVamos para uma situação do cotidiano: concentração de um medicamento no organismo após a administração. Suponha que, depois de administrar o remédio, a concentração C(t), em determinada unidade, ao longo do tempo t (em horas), seja dada por:\nC(t) = C0 · 2^(-0,5t)\n\nAqui:\n- C0 é a concentração inicial.\n- A base efetiva do decaimento é 2 com expoente negativo, então temos decaimento exponencial.\n- O termo -0,5 no expoente indica a taxa de decaimento por hora (meia-vida associada a base 2).\n\nQuando a base efetiva é 2^(-kt), com k > 0, a função é decrescente e tende a 0. Em análises de gráfico, o expoente precisa ser tratado com cuidado: o “-0,5t” garante a base efetiva entre 0 e 1, então a curva decresce suavemente.\n\nInterpretando:\n- Concentração inicial: C(0) = C0 · 2^0 = C0.\n- À medida que o tempo passa, C(t) diminui.\n- Esse é o comportamento esperado: o organismo metaboliza e elimina o fármaco, reduzindo a concentração nos tecidos.\n\nAgora, uma pergunta típica: após quanto tempo a concentração se torna a quarta parte da inicial?\n\nQueremos C(t) = (1/4)·C0. Então:\n(1/4)·C0 = C0 · 2^(-0,5t)\n1/4 = 2^(-0,5t)\n\nSabendo que 1/4 = 2^(-2):\n2^(-2) = 2^(-0,5t)\n-2 = -0,5t\nt = 4\n\nLogo, após 4 horas, a concentração é um quarto da inicial.\n\n> 🎯 Dicas de prova: Em modelos de decaimento C(t) = C0·b^t, se você quer uma fração da inicial, iguale a fração à potência e resolva por igualdade de expoentes após reescrever a fração como potência da base.\n\nPercebam que isso é exatamente o raciocínio de “meia-vida” generalizada quando a base é 2 e o expoente é linear em t.\n\n## Encerramento\nVimos três aplicações diretas:\n- Resfriamento de pizza com constante de ambiente, resolvendo T(t) em instantes específicos e para um alvo (65 graus).\n- Reconhecimento de potências para determinar a imagem em função exponencial a partir de um ponto dado.\n- Decaimento de concentração de medicamento, calculando o tempo para atingir uma fração da concentração inicial.\n\nEssas situações são muito boas para treinar leitura de enunciado, domínio/imagem, propriedades de expoentes, e a técnica de igualar bases para resolver equações exponenciais. Continuem praticando que isso cai bastante e ajuda em várias áreas. Próximo encontro a gente avança mais. Abraço e até a próxima!",
+  "transcricao_meta": {
+    "title": "Função Exponencial IV",
+    "subject": "Raciocínio Lógico-Matemático",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30755,
+    "createdAt": "2026-02-07T00:30:34.917Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: função exponencial em contextos de crescimento/decaimento, resolução de equações exponenciais por igualdade de bases, modelagem de temperatura e concentração.\nPrincipais pontos: \n- Isolar termo exponencial e reescrever valores como potências da mesma base.\n- Identificar quando a função é crescente ou decrescente (base > 1 ou entre 0 e 1/ expoente negativo).\n- Aplicar passo a passo em problemas práticos (temperatura da pizza e concentração de medicamento).\n\n## 1. Base / Conceitos Fundamentais\n- **Função exponencial**: f(x) = a·b^{g(x)} + c, com b > 0 e b ≠ 1.\n- **Base**: número fixo elevado a um expoente (ex.: em 2^{x}, base = 2).\n- **Expoente**: parte variável (ex.: x, −0,8t, x+1).\n- **Crescimento/Decaimento**:\n  - b > 1 e expoente aumenta → função crescente.\n  - 0 < b < 1 ou expoente com sinal negativo efetivo → decrescente.\n- **Regras-chave de potências**:\n  - b^{0} = 1; b^{-p} = 1/b^{p}.\n  - Se b^{A} = b^{B} com b > 0 e b ≠ 1 → A = B (igualdade de bases implica igualdade de expoentes).\n\n## 2. Como Funciona / Distinções\n- **Base > 1 vs 0 < base < 1**\n  - Base > 1 com expoente positivo → cresce.\n  - Base > 1 com expoente negativo (ex.: 2^{-kt}) equivale a (1/2)^{kt} → decresce.\n- **Igualdade de potências**\n  - Só iguale expoentes se as bases forem estritamente iguais e positivas, base ≠ 1.\n- **Modelo com deslocamento vertical (c)**\n  - f(t) = a·b^{kt} + c: o termo c desloca a função (ex.: temperatura ambiente). O decaimento ocorre no termo a·b^{kt}; o limite quando t → ∞ é c.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo para equações do tipo a·b^{kx} + c = d:\n  1. Isolar o termo exponencial: b^{kx} = (d − c)/a.\n  2. Reescrever o resultado como potência da mesma base b, se possível.\n  3. Com bases iguais, igualar expoentes e resolver a equação linear.\n  4. Se não der para reescrever, use logaritmos (não necessário nos casos abaixo).\n- Macetes úteis:\n  - 2^{-1} = 1/2; 2^{-2} = 1/4; 2^{-3} = 1/8.\n  - 27 = 3^{3}; 81 = 3^{4}; 243 = 3^{5}.\n  - Reconheça “frações padrão” para acelerar a igualdade de bases.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo A: Resfriamento da pizza\n  - Modelo: T(t) = 160 · 2^{-0,8t} + 25 (T em °C, t em minutos).\n  - Estado inicial (t = 0): 2^{0} = 1 → T(0) = 160·1 + 25 = 185 °C.\n  - Temperatura após 2 min:\n    - T(2) = 160 · 2^{-1,6} + 25 ≈ 160·0,33 + 25 ≈ 78 °C.\n  - Tempo para T = 65 °C:\n    - 65 = 160 · 2^{-0,8t} + 25 → 40 = 160 · 2^{-0,8t}\n    - 40/160 = 2^{-0,8t} → 1/4 = 2^{-0,8t}\n    - 1/4 = 2^{-2} → −2 = −0,8t → t = 2/0,8 = 2,5 minutos.\n  - Conclusão: após 2 min e meio é possível segurar a pizza.\n- Exemplo B: Função com base 3 — encontrar imagem\n  - Se f(x) = 3^{x+1} e f(2) = 27:\n    - f(2) = 3^{3} = 27 (coerente).\n    - f(4) = 3^{5} = 243.\n- Exemplo C: Concentração de medicamento (decaimento)\n  - Modelo: C(t) = C0 · 2^{-k t}, C0 = 3 (concentração inicial).\n  - Quando C(t) = (1/4)·C0:\n    - C0 · 2^{-k t} = (1/4)·C0 → 2^{-k t} = 1/4 = 2^{-2}\n    - −k t = −2 → t = 2/k.\n  - Se o enunciado afirma que ocorre em 4 horas, então k = 0,5 h^{-1}.\n\n## 5. Pegadinhas e Erros Comuns\n- Só iguale expoentes quando as bases forem idênticas, positivas e ≠ 1.\n- Não confunda base com expoente: em 2^{-0,8t}, a base é 2; o que muda é −0,8t.\n- Em modelos com termo + c (ex.: +25), nunca elimine c antes de isolar o exponencial: primeiro passe c para o outro lado.\n- Decaimento: 2^{-kt} é decrescente; não trate como crescente por ver “base 2”.\n- Ao reconhecer frações, tente potências de 2 rapidamente: 0,25 = 1/4 = 2^{-2}; 0,5 = 2^{-1}.\n\n> Dica de prova\n> - Em a·b^{kx} + c = d, isole b^{kx} = (d − c)/a e tente reescrever o lado direito como potência de b.\n> - Memorize 27 = 3^3, 81 = 3^4, 243 = 3^5 e 1/4 = 2^{-2}. Isso economiza tempo.\n> - Base entre 0 e 1 e base > 1 com expoente negativo produzem decaimento equivalente.\n\n### Diferenças e Comparações (tabela)\n| Situação | Característica | Como resolver rápido |\n| Base > 1, expoente cresce | Função crescente | Aumenta no tempo |\n| Base entre 0 e 1 ou expoente negativo | Função decrescente | Diminui no tempo |\n| Igualdade com mesma base | Igualar expoentes | Reescreva números como potências |\n| Fração da quantidade inicial (1/4) | 2^{-k t} = 2^{-2} | t = 2/k |\n\n> Dica de prova\n> - Em modelos físicos (temperatura, concentração), interprete o termo sem o +c como “excesso” que decai até 0; o limite é c (ex.: 25 °C).",
+  "resumo_bolso": "# Função Exponencial IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Função exponencial (geral)**: f(x) = a·b^{g(x)} + c, com **b > 0 e b ≠ 1**.\n* **Base**: número fixo elevado ao expoente (ex.: em 2^{x}, **base = 2**).\n* **Expoente**: parte variável (ex.: x, −0,8t, x+1).\n* **Crescimento/Decaimento**:  \n  - b > 1 e expoente aumenta → função **crescente**.  \n  - 0 < b < 1 ou expoente com sinal negativo efetivo (ex.: 2^{−kt} ≡ (1/2)^{kt}) → **decrescente**.\n* **Igualdade de potências**: se b^{A} = b^{B} com **b > 0 e b ≠ 1** → **A = B**.\n* **Potências básicas úteis**:  \n  - b^{0} = 1; b^{−p} = 1/b^{p}.  \n  - 2^{−1} = 1/2; 2^{−2} = 1/4; 2^{−3} = 1/8.  \n  - 27 = 3^{3}; 81 = 3^{4}; 243 = 3^{5}.\n* **Modelo com deslocamento vertical**: f(t) = a·b^{kt} + c.  \n  - O decaimento ocorre em a·b^{kt}.  \n  - O **limite quando t → ∞ é c** (ex.: temperatura ambiente, concentração de equilíbrio).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Base > 1 vs 0 < Base < 1 / Expoente Negativo\n\n| Situação | Característica | Comportamento |\n| --- | --- | --- |\n| Base > 1, expoente cresce | Função exponencial padrão | **Crescente** no tempo |\n| Base entre 0 e 1 ou expoente negativo (ex.: 2^{-kt}) | Equivalente a (1/base)^{kt} | **Decrescente** no tempo |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Igualdade de potências**\n\n* Em b^{A} = b^{B}, com **b > 0 e b ≠ 1**, conclua A = B (igualdade de bases → igualdade de expoentes).\n* Só iguale expoentes se as bases forem estritamente iguais e positivas, base ≠ 1.\n\n---\n\n**2. Passo a passo em a·b^{kx} + c = d**\n\n1. Isolar o termo exponencial: a·b^{kx} + c = d → a·b^{kx} = d − c → b^{kx} = (d − c)/a.  \n2. Reescrever (d − c)/a como potência da mesma base b, se possível.  \n3. Com bases iguais, igualar expoentes e resolver a equação linear.  \n4. Se não der para reescrever como potência de b, usar logaritmos (fora do escopo aqui).\n\n*Exemplo (pizza):*  \n65 = 160·2^{−0,8t} + 25  \n40 = 160·2^{−0,8t}  \n40/160 = 2^{−0,8t} → 1/4 = 2^{−0,8t}  \n1/4 = 2^{−2} → −2 = −0,8t → t = 2/0,8 = 2,5 min.\n\n---\n\n**3. Modelo de resfriamento / aquecimento**\n\n* Forma: T(t) = a·b^{kt} + c.  \n  - a·b^{kt}: “excesso” em relação ao ambiente, que decai.  \n  - c: temperatura ambiente (limite).\n\n*Exemplo (pizza):*  \nT(t) = 160·2^{−0,8t} + 25  \nT(0) = 160·2^{0} + 25 = 160 + 25 = 185 °C.  \nLimite quando t → ∞: 25 °C.\n\n---\n\n**4. Modelo de concentração (decaimento)**\n\n* Forma: C(t) = C0·2^{−kt}.  \n* Fração da dose inicial → igualar a potência de 2.\n\n*Exemplo:*  \nC(t) = (1/4)·C0  \nC0·2^{−kt} = (1/4)·C0 → 2^{−kt} = 1/4 = 2^{−2}  \n−kt = −2 → t = 2/k.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Só iguale expoentes quando as bases forem idênticas, positivas e ≠ 1 (ex.: reescreva 4 como 2^{2} antes de comparar com 2^{x}).  \n2. Não confunda base com expoente: em 2^{−0,8t}, a base é 2; o que varia é −0,8t.  \n3. Em modelos com termo + c (ex.: +25), nunca elimine c antes de isolar o exponencial: primeiro passe c para o outro lado.  \n4. Decaimento: 2^{−kt} é decrescente; não trate como crescente só por ver “base 2”.  \n5. Ao reconhecer frações, tente potências de 2 rapidamente: 0,5 = 2^{−1}; 0,25 = 2^{−2}; 0,125 = 2^{−3}.\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar **base** e **expoente** em expressões como 2^{−0,8t}.  \n* Sei decidir se a função é **crescente ou decrescente** analisando **base** e **sinal efetivo do expoente**.  \n* Sei isolar b^{kx} em equações do tipo a·b^{kx} + c = d e reescrever o outro lado como potência de b.  \n* Memorizei: 2^{−1} = 1/2; 2^{−2} = 1/4; 2^{−3} = 1/8; 27 = 3^{3}; 81 = 3^{4}; 243 = 3^{5}.  \n* Em modelos com **+ c**, lembro que **c é o limite** (temperatura ambiente, concentração de equilíbrio) e que o decaimento ocorre em a·b^{kt}.",
+  "mapa_mental": "# 🧮 Função Exponencial IV\n## 🎯 Estrutura da Função\n### 💡 Definição Geral\n- f(x)=a·b^{g(x)}+c\n- b>0\n- b≠1\n- termo exponencial\n- deslocamento vertical\n### 🔢 Base e Expoente\n- base fixa\n- expoente variável\n- exemplo base 2\n- exemplo expoente x\n- expoente linear\n### 📈 Crescimento vs Decaimento\n- b>1 crescente\n- 0<b<1 decrescente\n- expoente negativo\n- 2^{-kt} decrescente\n- equivalência 1/b^{p}\n\n## 🧮 Propriedades de Potências\n### 📜 Regras Fundamentais\n- b^{0}=1\n- b^{-p}=1/b^{p}\n- potências mesma base\n- produto potências\n- quociente potências\n### ⚖️ Igualdade de Potências\n- b^{A}=b^{B}\n- b>0\n- b≠1\n- implica A=B\n- reescrever mesma base\n### ⚠️ Cuidados Clássicos\n- base positiva\n- base diferente 1\n- não igualar bases distintas\n- não trocar base expoente\n- atenção sinais\n\n## 📊 Comportamento da Função\n### 📉 Crescente Exponencial\n- base>1\n- expoente aumenta\n- gráfico sobe\n- taxa proporcional\n- crescimento acelerado\n### 📉 Decrescente Exponencial\n- 0<base<1\n- expoente positivo\n- expoente negativo efetivo\n- 2^{-kt} decai\n- diminuição no tempo\n### 📏 Deslocamento Vertical c\n- f(t)=a·b^{kt}+c\n- c nível de equilíbrio\n- excesso decai\n- limite t→∞ é c\n- modelos físicos\n\n## 📝 Resolução de Equações\n### 🔢 Forma a·b^{kx}+c=d\n- isolar exponencial\n- b^{kx}=(d−c)/a\n- reescrever mesma base\n- igualar expoentes\n- resolver equação linear\n### 🧮 Reconhecimento Rápido\n- 2^{-1}=1/2\n- 2^{-2}=1/4\n- 2^{-3}=1/8\n- 27=3^{3}\n- 81,243 potências 3\n### 🚨 Erros Frequentes\n- igualar expoentes errado\n- esquecer tirar c\n- confundir base expoente\n- tratar 2^{-kt} crescente\n- ignorar frações padrão",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Comportamento Exponencial",
+      "description": "Comportamento Exponencial — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se classifica o comportamento de uma função exponencial cuja base é maior que 1?",
+          "back": "Crescente.",
+          "hint": "Oposto de decrescente",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "comportamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é o resultado de uma potência de base não nula e expoente zero?",
+          "back": "1",
+          "hint": "Elemento neutro da multiplicação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como reescrever uma potência com expoente negativo?",
+          "back": "Inverter a base e tornar o expoente positivo.",
+          "hint": "Envolve a recíproca da base",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "propriedades"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Como relacionar uma raiz n-ésima a uma potência de expoente fracionário?",
+          "back": "O índice da raiz vai para o denominador e o expoente para o numerador do expoente fracionário.",
+          "hint": "Relaciona radical e fração",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "radiciacao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Equações Exponenciais",
+      "description": "Equações Exponenciais — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Que operação se aplica ao multiplicar potências de mesma base?",
+          "back": "Repetir a base e somar os expoentes.",
+          "hint": "Ação sobre os expoentes",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "operacoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Que operação se aplica a uma potência elevada a outra potência?",
+          "back": "Multiplicar os expoentes.",
+          "hint": "Ação sobre os expoentes",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "operacoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Após igualar as bases de uma equação exponencial, qual relação pode ser estabelecida?",
+          "back": "Os expoentes também serão iguais.",
+          "hint": "Princípio da igualdade",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "equacao-exponencial",
+            "resolucao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Se f(x)=3^x, qual é o valor de f(4)?",
+          "back": "81",
+          "hint": "Cálculo direto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "aplicacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Modelos Exponenciais",
+      "description": "Modelos Exponenciais — 5 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual expressão representa a temperatura em função do tempo no modelo apresentado?",
+          "back": "T(t) = 160·2^(-0,8t) + 25",
+          "hint": "Equação de decaimento térmico",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "modelagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Como obter a temperatura inicial a partir de uma função temperatura T(t)?",
+          "back": "Calcular a função no tempo t = 0.",
+          "hint": "Valor da variável independente",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "modelagem"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "No modelo T(t)=160·2^(-0,8t)+25, após quanto tempo a temperatura chega a 65 °C?",
+          "back": "2,5 minutos",
+          "hint": "Resolva a equação para T=65",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "modelagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Na expressão da concentração medicamentosa, qual símbolo representa a concentração inicial?",
+          "back": "C_0",
+          "hint": "Notação de subscrito",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "modelagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Após quanto tempo a concentração medicamentosa se torna um quarto da inicial?",
+          "back": "4 horas",
+          "hint": "Redução a um quarto",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "modelagem"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma função exponencial da forma f(x) = a · b^x, qual é o comportamento da função quando a base b está entre 0 e 1?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função apresenta crescimento inicial seguido de decrescimento após determinado ponto",
+          "correct": false,
+          "explanation": "Incorreta. Uma função exponencial simples da forma f(x) = a · b^x, com 0 < b < 1, é estritamente decrescente em todo o seu domínio. Ela não apresenta um ponto de inflexão onde o comportamento muda de crescente para decrescente."
+        },
+        {
+          "id": "b",
+          "text": "A função é decrescente, pois bases menores que 1 fazem os valores diminuírem conforme x aumenta",
+          "correct": true,
+          "explanation": "Correta. Em uma função exponencial f(x) = a · b^x, se a base 'b' está no intervalo (0, 1), a função é decrescente. Isso significa que, à medida que o valor de 'x' aumenta, o valor de f(x) diminui. Por exemplo, se b = 0,5, então 0,5^1 = 0,5, 0,5^2 = 0,25, 0,5^3 = 0,125, mostrando uma clara tendência de queda."
+        },
+        {
+          "id": "c",
+          "text": "A função é crescente, pois qualquer base positiva gera crescimento exponencial",
+          "correct": false,
+          "explanation": "Incorreta. Uma função exponencial da forma f(x) = a · b^x é crescente apenas quando a base 'b' é maior que 1 (b > 1). Quando a base 'b' está entre 0 e 1, a função apresenta um comportamento decrescente."
+        },
+        {
+          "id": "d",
+          "text": "A função é constante, pois o expoente compensa a base fracionária",
+          "correct": false,
+          "explanation": "Incorreta. Uma função exponencial não é constante quando a base 'b' está entre 0 e 1. Apenas seria constante se a base fosse 1 (f(x) = a · 1^x = a) ou se o expoente fosse sempre zero, o que não se aplica ao comportamento geral de uma função exponencial com 'x' variável."
+        }
+      ],
+      "explanation": "Correta. Em uma função exponencial f(x) = a · b^x, se a base 'b' está no intervalo (0, 1), a função é decrescente. Isso significa que, à medida que o valor de 'x' aumenta, o valor de f(x) diminui. Por exemplo, se b = 0,5, então 0,5^1 = 0,5, 0,5^2 = 0,25, 0,5^3 = 0,125, mostrando uma clara tendência de queda.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Uma pizza é retirada do forno a 160°C e sua temperatura pode ser modelada pela função T(t) = 160 · 2^(-0,8t) + 25, onde t é o tempo em minutos. Qual é a temperatura da pizza no instante em que ela é retirada do forno (t = 0)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "135°C, pois devemos subtrair a temperatura ambiente da inicial",
+          "correct": false,
+          "explanation": "Incorreta. A subtração de 160°C por 25°C não corresponde ao cálculo da temperatura inicial conforme a função fornecida. A avaliação da função em t=0 é a maneira correta de determinar a temperatura no momento em que a pizza é retirada do forno."
+        },
+        {
+          "id": "b",
+          "text": "160°C, pois é a temperatura inicial informada no problema",
+          "correct": false,
+          "explanation": "Incorreta. A temperatura inicial de 160°C mencionada no problema refere-se ao coeficiente que multiplica o termo exponencial. No entanto, a função T(t) = 160 · 2^(-0,8t) + 25 possui um termo constante de +25. Ao substituir t = 0 na função, temos T(0) = 160 · 2^(-0,8·0) + 25 = 160 · 2^0 + 25 = 160 · 1 + 25 = 185°C."
+        },
+        {
+          "id": "c",
+          "text": "25°C, pois é a temperatura ambiente para a qual a pizza tende",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 25°C representa a temperatura ambiente, ou seja, o valor para o qual a temperatura da pizza tende a se estabilizar após um longo período de tempo (quando t tende ao infinito). Não é a temperatura inicial da pizza."
+        },
+        {
+          "id": "d",
+          "text": "185°C, pois somamos 160°C com 25°C do termo constante",
+          "correct": true,
+          "explanation": "Correta. Para encontrar a temperatura no instante em que a pizza é retirada do forno, devemos substituir t = 0 (tempo inicial) na função T(t). Assim, T(0) = 160 · 2^(-0,8 · 0) + 25. Qualquer número elevado a zero é 1, então 2^0 = 1. A equação se torna T(0) = 160 · 1 + 25, resultando em T(0) = 160 + 25 = 185°C."
+        }
+      ],
+      "explanation": "Correta. Para encontrar a temperatura no instante em que a pizza é retirada do forno, devemos substituir t = 0 (tempo inicial) na função T(t). Assim, T(0) = 160 · 2^(-0,8 · 0) + 25. Qualquer número elevado a zero é 1, então 2^0 = 1. A equação se torna T(0) = 160 · 1 + 25, resultando em T(0) = 160 + 25 = 185°C.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Considerando a função exponencial f(x) = a · b^x, o que representa o parâmetro 'a' quando x = 0?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Representa o coeficiente angular da reta tangente à curva na origem",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente angular da reta tangente à curva na origem é dado pela derivada da função avaliada em x=0. Para f(x) = a · b^x, a derivada é f'(x) = a · b^x · ln(b). Assim, f'(0) = a · b^0 · ln(b) = a · ln(b), que não é simplesmente 'a'."
+        },
+        {
+          "id": "b",
+          "text": "Representa o valor inicial da função, pois qualquer base elevada a zero resulta em 1",
+          "correct": true,
+          "explanation": "Correta. Em uma função exponencial f(x) = a · b^x, quando x = 0, a expressão se torna f(0) = a · b^0. Como qualquer número (exceto 0) elevado a zero é igual a 1, temos f(0) = a · 1, ou seja, f(0) = a. Portanto, o parâmetro 'a' representa o valor da função no ponto inicial, quando x é igual a zero."
+        },
+        {
+          "id": "c",
+          "text": "Representa a taxa de crescimento ou decrescimento da função ao longo do tempo",
+          "correct": false,
+          "explanation": "Incorreta. A taxa de crescimento ou decrescimento da função exponencial é determinada pela base 'b'. Se 'b' > 1, a função cresce; se 0 < 'b' < 1, a função decresce. O parâmetro 'a' não define essa taxa."
+        },
+        {
+          "id": "d",
+          "text": "Representa o limite inferior que a função pode atingir conforme x aumenta",
+          "correct": false,
+          "explanation": "Incorreta. O limite inferior que a função pode atingir (assíntota horizontal) para uma função exponencial básica f(x) = a · b^x é geralmente zero, não o parâmetro 'a', assumindo que 'a' é positivo e 'b' é maior que zero."
+        }
+      ],
+      "explanation": "Correta. Em uma função exponencial f(x) = a · b^x, quando x = 0, a expressão se torna f(0) = a · b^0. Como qualquer número (exceto 0) elevado a zero é igual a 1, temos f(0) = a · 1, ou seja, f(0) = a. Portanto, o parâmetro 'a' representa o valor da função no ponto inicial, quando x é igual a zero.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em uma equação exponencial, quando as bases de ambos os lados da igualdade são iguais, qual propriedade permite resolver a equação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os expoentes devem ser iguais, permitindo igualar as expressões dos expoentes",
+          "correct": true,
+          "explanation": "Correta. Esta é uma propriedade fundamental das equações exponenciais: se temos uma igualdade como b^m = b^n, onde 'b' é uma base positiva e diferente de 1, então necessariamente os expoentes 'm' e 'n' devem ser iguais (m = n). Isso permite transformar a equação exponencial em uma equação algébrica mais simples para resolver."
+        },
+        {
+          "id": "b",
+          "text": "Os expoentes devem ser multiplicados entre si para manter a igualdade",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação dos expoentes é uma propriedade aplicada quando se eleva uma potência a outra potência (por exemplo, (b^m)^n = b^(m·n)), e não para resolver equações exponenciais com bases iguais."
+        },
+        {
+          "id": "c",
+          "text": "As bases devem ser elevadas ao quadrado antes de igualar os expoentes",
+          "correct": false,
+          "explanation": "Incorreta. Elevar as bases ao quadrado (ou a qualquer outra potência) não é um passo necessário ou correto para resolver uma equação exponencial onde as bases já são iguais. A propriedade se aplica diretamente aos expoentes."
+        },
+        {
+          "id": "d",
+          "text": "Os expoentes devem ser somados para encontrar o valor da incógnita",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos expoentes é uma propriedade utilizada na multiplicação de potências de mesma base (por exemplo, b^m · b^n = b^(m+n)), e não na resolução de equações exponenciais onde as bases são iguais em ambos os lados da igualdade."
+        }
+      ],
+      "explanation": "Correta. Esta é uma propriedade fundamental das equações exponenciais: se temos uma igualdade como b^m = b^n, onde 'b' é uma base positiva e diferente de 1, então necessariamente os expoentes 'm' e 'n' devem ser iguais (m = n). Isso permite transformar a equação exponencial em uma equação algébrica mais simples para resolver.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Dada uma função exponencial f(x) = a · b^(cx), onde b está entre 0 e 1 e c é positivo, qual é o efeito do parâmetro c no comportamento da função?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O parâmetro c determina o valor assintótico horizontal que a função atinge quando x tende ao infinito",
+          "correct": false,
+          "explanation": "Incorreta. O valor assintótico horizontal para uma função f(x) = a · b^(cx) com 0 < b < 1 e c > 0, quando x tende ao infinito, é zero. O parâmetro 'c' influencia a velocidade com que a função se aproxima dessa assíntota, mas não define o valor da assíntota em si."
+        },
+        {
+          "id": "b",
+          "text": "O parâmetro c inverte o comportamento da função, tornando-a crescente quando c > 1",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro 'c' não inverte o comportamento da função de decrescente para crescente. Para que isso ocorresse, o expoente 'cx' precisaria ser negativo, o que exigiria que 'c' fosse negativo, dado que 'x' geralmente é positivo no contexto de tempo ou crescimento. Com 'c' positivo e 0 < b < 1, a função permanece decrescente, apenas com a velocidade de decaimento alterada."
+        },
+        {
+          "id": "c",
+          "text": "O parâmetro c controla a velocidade de decrescimento, sendo que valores maiores de c aceleram a queda",
+          "correct": true,
+          "explanation": "Correta. Em uma função exponencial f(x) = a · b^(cx) com 0 < b < 1 e c > 0, a função é decrescente. O parâmetro 'c' atua como um fator de escala no expoente. Valores maiores de 'c' fazem com que o expoente 'cx' cresça mais rapidamente, o que, para uma base 'b' entre 0 e 1, resulta em uma diminuição mais acentuada e rápida do valor da função. Ou seja, 'c' acelera a velocidade de decrescimento."
+        },
+        {
+          "id": "d",
+          "text": "O parâmetro c desloca verticalmente o gráfico sem alterar a taxa de variação",
+          "correct": false,
+          "explanation": "Incorreta. Um deslocamento vertical do gráfico é causado pela adição ou subtração de uma constante à função (por exemplo, f(x) = a · b^(cx) + k). O parâmetro 'c' atua diretamente no expoente, modificando a taxa de variação da função, ou seja, quão rapidamente ela cresce ou decresce, e não seu posicionamento vertical geral."
+        }
+      ],
+      "explanation": "Correta. Em uma função exponencial f(x) = a · b^(cx) com 0 < b < 1 e c > 0, a função é decrescente. O parâmetro 'c' atua como um fator de escala no expoente. Valores maiores de 'c' fazem com que o expoente 'cx' cresça mais rapidamente, o que, para uma base 'b' entre 0 e 1, resulta em uma diminuição mais acentuada e rápida do valor da função. Ou seja, 'c' acelera a velocidade de decrescimento.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Uma função exponencial é definida por f(x) = a · b^x. Sabendo que f(2) = 27 e f(3) = 81, qual é o valor da base b?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "b = 9, pois é necessário elevar a base ao quadrado para obter a razão observada",
+          "correct": false,
+          "explanation": "Incorreta. A base 'b' é encontrada diretamente pela razão f(3)/f(2) quando a diferença dos expoentes é 1. Não há necessidade de elevar a base ao quadrado ou realizar qualquer outra operação complexa para obtê-la. O valor 9 não corresponde à base 'b' nesta função."
+        },
+        {
+          "id": "b",
+          "text": "b = 4, pois a diferença entre os expoentes é 1 e a razão dos valores é 3",
+          "correct": false,
+          "explanation": "Incorreta. A diferença entre os expoentes (3 - 2 = 1) é relevante porque, neste caso, a razão dos valores da função (81/27 = 3) *é* diretamente a base 'b'. Afirmar que 'b' é 4 é um erro de cálculo ou de interpretação da relação entre a razão e a base da função exponencial."
+        },
+        {
+          "id": "c",
+          "text": "b = 2, pois a razão entre valores consecutivos em progressão geométrica é constante",
+          "correct": false,
+          "explanation": "Incorreta. Embora a propriedade de que a razão entre valores consecutivos em uma função exponencial (que é análoga a uma progressão geométrica) é constante e igual à base seja verdadeira, o valor calculado para a base 'b' a partir dos dados fornecidos (f(3)/f(2) = 81/27 = 3) não é 2."
+        },
+        {
+          "id": "d",
+          "text": "b = 3, pois dividindo f(3) por f(2) obtemos b = 81/27 = 3",
+          "correct": true,
+          "explanation": "Correta. Uma função exponencial da forma f(x) = a · b^x possui a propriedade de que a razão entre dois valores consecutivos da função é igual à base 'b'. Assim, f(3) / f(2) = (a · b^3) / (a · b^2) = b. Substituindo os valores dados, temos b = 81 / 27, o que resulta em b = 3. Esta é a maneira direta e correta de determinar a base."
+        }
+      ],
+      "explanation": "Correta. Uma função exponencial da forma f(x) = a · b^x possui a propriedade de que a razão entre dois valores consecutivos da função é igual à base 'b'. Assim, f(3) / f(2) = (a · b^3) / (a · b^2) = b. Substituindo os valores dados, temos b = 81 / 27, o que resulta em b = 3. Esta é a maneira direta e correta de determinar a base.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao trabalhar com a expressão 2^(-1,6) em um problema de função exponencial, qual técnica permite simplificar o cálculo sem uso de calculadora?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Reescrever como (1/2)^1,6 e depois expressar 1,6 como 8/5 para aplicar propriedades de radicais",
+          "correct": true,
+          "explanation": "Correta. A propriedade de expoentes negativos a^(-n) = 1/a^n permite reescrever 2^(-1,6) como (1/2)^1,6. Em seguida, a conversão do expoente decimal 1,6 para a fração 8/5 (pois 1,6 = 16/10 = 8/5) transforma a expressão em (1/2)^(8/5). Esta forma, pela propriedade de expoentes fracionários (a^(m/n) = raiz n-ésima de a^m), pode ser interpretada como a raiz quinta de (1/2)^8. Esta é a técnica que permite a maior simplificação algébrica para um cálculo manual, mesmo que o valor final ainda exija esforço."
+        },
+        {
+          "id": "b",
+          "text": "Converter para logaritmo decimal e usar tabelas de logaritmos para encontrar o valor exato",
+          "correct": false,
+          "explanation": "Incorreta. Converter para logaritmo decimal e usar tabelas de logaritmos é um método para encontrar o valor numérico de uma expressão, mas não é considerado uma 'simplificação do cálculo' no sentido de tornar a operação mais fácil de ser realizada manualmente sem o auxílio de ferramentas externas como tabelas ou calculadoras. A questão pede uma técnica que manipule a expressão para facilitar o cálculo."
+        },
+        {
+          "id": "c",
+          "text": "Separar em 2^(-1) · 2^(-0,6) e calcular cada termo independentemente usando frações",
+          "correct": false,
+          "explanation": "Incorreta. Separar a expressão em 2^(-1) · 2^(-0,6) é uma aplicação correta da propriedade de potências a^(m+n) = a^m · a^n. No entanto, o termo 2^(-0,6) ainda apresenta um expoente decimal negativo, o que não resolve o desafio principal de calcular potências com expoentes não inteiros de forma manual. A alternativa 'a' oferece uma manipulação mais completa e útil para essa finalidade."
+        },
+        {
+          "id": "d",
+          "text": "Aproximar -1,6 para -2 e calcular 2^(-2) = 1/4 como estimativa suficiente",
+          "correct": false,
+          "explanation": "Incorreta. Aproximar -1,6 para -2 e calcular 2^(-2) = 1/4 (ou 0,25) é uma estimativa, não uma simplificação exata do cálculo. A questão busca uma técnica que permita simplificar a expressão para um cálculo preciso, não uma aproximação que introduz um erro significativo."
+        }
+      ],
+      "explanation": "Correta. A propriedade de expoentes negativos a^(-n) = 1/a^n permite reescrever 2^(-1,6) como (1/2)^1,6. Em seguida, a conversão do expoente decimal 1,6 para a fração 8/5 (pois 1,6 = 16/10 = 8/5) transforma a expressão em (1/2)^(8/5). Esta forma, pela propriedade de expoentes fracionários (a^(m/n) = raiz n-ésima de a^m), pode ser interpretada como a raiz quinta de (1/2)^8. Esta é a técnica que permite a maior simplificação algébrica para um cálculo manual, mesmo que o valor final ainda exija esforço.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Para resolver a equação 1/4 = 2^(-0,8t) transformando a base, qual sequência de operações algébricas é necessária para obter t de forma exata?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar logaritmo em ambos os lados, usar a propriedade log(a^b) = b·log(a), e isolar t na equação resultante",
+          "correct": false,
+          "explanation": "Incorreta. Embora aplicar logaritmo em ambos os lados seja uma técnica válida e amplamente utilizada para resolver equações exponenciais, a questão especifica a necessidade de resolver a equação 'transformando a base'. Portanto, esta alternativa não se alinha com a metodologia solicitada na pergunta."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar ambos os lados por 4, reescrever como 1 = 8^(-0,8t), e igualar os expoentes a zero",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar ambos os lados por 4 resultaria em 1 = 4 · 2^(-0,8t). Reescrever 4 · 2^(-0,8t) como 8^(-0,8t) é incorreto, pois 4 não é igual a 2^3, e a multiplicação de potências com bases diferentes não segue essa regra. A estratégia de igualar os expoentes a zero só se aplica se um dos lados da equação for 1 e o outro tiver uma base elevada a um expoente, o que não é o caso aqui de forma direta ou correta."
+        },
+        {
+          "id": "c",
+          "text": "Reescrever 1/4 como 2^(-2), igualar os expoentes obtendo -2 = -0,8t, e resolver t = 2/0,8 = 2,5",
+          "correct": true,
+          "explanation": "Correta. A estratégia para resolver equações exponenciais que envolvem 'transformar a base' consiste em expressar ambos os lados da equação com a mesma base. O número 1/4 pode ser reescrito como 1/(2^2), que, pela propriedade de expoentes negativos (a^(-n) = 1/a^n), é igual a 2^(-2). Com a equação na forma 2^(-2) = 2^(-0,8t), as bases são iguais, permitindo igualar os expoentes: -2 = -0,8t. Resolvendo para 't', obtemos t = -2 / -0,8 = 2 / 0,8 = 2,5."
+        },
+        {
+          "id": "d",
+          "text": "Elevar ambos os lados ao quadrado para eliminar a fração, depois aplicar raiz quadrada no expoente",
+          "correct": false,
+          "explanation": "Incorreta. Elevar ambos os lados ao quadrado não seria a operação adequada para simplificar a equação ou igualar as bases de forma eficiente. Por exemplo, (1/4)^2 = 1/16, e (2^(-0,8t))^2 = 2^(-1,6t). Esta abordagem complicaria a equação em vez de simplificá-la para a igualdade de bases."
+        }
+      ],
+      "explanation": "Correta. A estratégia para resolver equações exponenciais que envolvem 'transformar a base' consiste em expressar ambos os lados da equação com a mesma base. O número 1/4 pode ser reescrito como 1/(2^2), que, pela propriedade de expoentes negativos (a^(-n) = 1/a^n), é igual a 2^(-2). Com a equação na forma 2^(-2) = 2^(-0,8t), as bases são iguais, permitindo igualar os expoentes: -2 = -0,8t. Resolvendo para 't', obtemos t = -2 / -0,8 = 2 / 0,8 = 2,5.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "09_308953_Função Exponencial IV.pdf",
+  "coletado_em": "2026-09-23T20:57:14"
+}

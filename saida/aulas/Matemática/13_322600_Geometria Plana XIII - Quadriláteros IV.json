@@ -1,0 +1,646 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 13,
+  "ordem_no_curso": "106.11",
+  "titulo": "Geometria Plana XIII - Quadriláteros IV",
+  "codigo_aula": "322600",
+  "video_id": "d0+PtX0soNU=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:40:39",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/d0%2BPtX0soNU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=425202%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Plana XIII - Quadriláteros IV\n\n## Circunferência: ideia inicial e fórmula do perímetro\nVamos dar continuidade na nossa matriz de Matemática. Estamos em Geometria Plana, nosso último tópico mais amplo sobre circunferências. Vamos falar de círculo, disco, tudo bem tranquilo.\n\nPrimeiro, circunferência. Quando eu falo circunferência, estou falando da extensão da circunferência, ou seja, seu perímetro, sua borda. A bola não é a circunferência; a circunferência é a borda, o limite.\n\nA circunferência pode ser calculada pela fórmula: C = 2·π·r. Vamos entender cada detalhe por etapas.\n\nA circunferência é essa borda formada por infinitos pontos. Temos aqui o centro da circunferência e, a partir do centro, traçamos o raio. Raio é um segmento de reta do centro até qualquer ponto da circunferência, e tem sempre a mesma medida, não muda.\n\nTemos também o diâmetro. O diâmetro nada mais é do que duas vezes o raio: d = 2·r. Então, de um lado ao outro, passando pelo centro, eu tenho raio mais raio, totalizando o diâmetro.\n\nEntão: circunferência (a borda), raio (do centro para a borda) e diâmetro (duas vezes o raio).\n\n## A constante π\nExiste uma constante importantíssima: π. Essa constante não muda. Representamos com a letra grega π.\n\nSe eu pegar, por exemplo, um barbante, medir a circunferência com esse barbante e depois medir o diâmetro (do centro até a borda, duas vezes), em qualquer circunferência que você fizer — moeda, copo, vasilha — se você pegar o valor da circunferência e dividir pelo diâmetro, sempre terá o mesmo valor: o número irracional π, aproximadamente 3,14159..., e segue para sempre. É uma dízima não periódica: não tem repetição de período, nunca acaba.\n\n> 🎯 Dicas de prova: π é a razão entre o perímetro da circunferência e seu diâmetro (π = C/d). É constante, aproximadamente 3,14.\n\nAssim, elementos importantes:\n- Circunferência (perímetro, borda): C = 2·π·r.\n- Raio: depende do tamanho da circunferência.\n- Diâmetro: d = 2·r.\n- π: constante C/d.\n\nA circunferência é a borda; o círculo ou disco é outra coisa.\n\n## Círculo (ou disco) e área\nO círculo (ou disco) é o conjunto dos pontos internos da circunferência. Quando você preenche todos os pontos internos, você cria uma superfície. Essa superfície tem nome: área.\n\nA área do disco é dada por A = π·r², lembrando que o raio é metade do diâmetro. E raio é a distância do centro a qualquer ponto da circunferência. Se for diferente, não é raio.\n\nEntão, conceitos simples:\n- Circunferência (borda/perímetro): C = 2·π·r.\n- Área do círculo (superfície interna): A = π·r².\n- Raio é metade do diâmetro.\n- π é constante (C/d).\n\n## Corda e diâmetro como corda especial\nQuando eu falo diâmetro, na verdade ele é uma corda. Corda é um segmento de reta que liga dois pontos da circunferência. Se eu ligar dois pontos quaisquer da circunferência, formei uma corda.\n\nSe essa corda passar pelo centro da circunferência, ela recebe o nome de diâmetro. O diâmetro é a maior corda da circunferência.\n\nEntão:\n- Toda corda liga dois pontos da circunferência.\n- Se a corda passa pelo centro, é diâmetro.\n- O diâmetro é a maior corda.\n\nNa prática, tem que entender nomes e conceitos: circunferência, corda, diâmetro, raio.\n\n## Propriedade: raio perpendicular à corda no ponto médio\nSe o raio, antes de tocar a circunferência, toca uma corda no seu ponto médio, esse segmento recebe um nome: apótema da circunferência (ou do círculo).\n\nVamos visualizar: tenho uma circunferência, uma corda qualquer (que não seja o diâmetro), marco o centro e traço um raio que vai até a corda e a encontra exatamente no ponto médio. Esse segmento do centro até a corda, formando um ângulo reto com a corda, é o apótema.\n\nResumo da propriedade:\n- O segmento que sai do centro e chega ao ponto médio de uma corda é perpendicular a essa corda e se chama apótema.\n- Esse apótema divide a corda em duas partes iguais.\n\nIsso pode aparecer em prova, mesmo não sendo tão comum. Mas é importante: se o raio passa pela corda no ponto médio, divide a corda em duas partes iguais e esse segmento é o apótema da circunferência (ou do círculo).\n\n## Triângulo inscrito com diâmetro como lado\nAlgo importantíssimo: se tivermos um triângulo inscrito em uma circunferência e um dos seus lados for o diâmetro, podemos afirmar que esse triângulo é retângulo.\n\nPor quê? Porque o diâmetro é a maior corda, e quando é lado do triângulo inscrito, o ângulo oposto a esse lado é reto.\n\n> 🎯 Dicas de prova: Triângulo inscrito em uma circunferência cujo lado é o diâmetro é um triângulo retângulo. O diâmetro é a hipotenusa. Aplicamos Pitágoras.\n\nEntão, nesse triângulo:\n- Hipotenusa: o diâmetro.\n- Catetos: as outras duas cordas.\n- Podemos aplicar Teorema de Pitágoras.\n\n## Setor circular: “fatia da pizza”\nAgora vamos do círculo (área) para uma parte do círculo: o setor circular, que é aquela “fatia de pizza”.\n\nNome correto: setor circular. É a região delimitada por dois raios (segmentos que partem do centro) e pelo arco correspondente na circunferência. Ao traçar dois raios a partir do centro, formamos um ângulo central; a região entre eles é o setor circular.\n\nQueremos calcular a área desse setor. Sabemos:\n- Área do círculo inteiro: A = π·r².\n- A “abertura” total do círculo: 360° (ou 2π rad).\n\nEntão, se o setor tem ângulo central α (em graus), a área do setor é proporcional a α/360 da área total:\n- Área do setor = (α/360)·π·r².\n\nExemplo: se α = 80°, então:\n- Asetor = (80/360)·π·r² = (2/9)·π·r², após simplificar por 40.\n\nObservações:\n- É diretamente proporcional: quanto maior o ângulo, maior a área do setor.\n- Se trabalhar em radianos, a fórmula fica Asetor = (θ/2)·r², pois a fração do círculo é θ/(2π), então Asetor = [θ/(2π)]·π·r² = (θ/2)·r².\n- Para calcular numericamente, você precisa do raio r e, se quiser aproximar, usar π ≈ 3,14.\n\n> 🎯 Dicas de prova: Área do setor circular:\n> - Em graus: A = (α/360)·π·r².\n> - Em radianos: A = (θ/2)·r².\n\n## Medidas de ângulos: graus e radianos (ciclo trigonométrico)\nNo ciclo trigonométrico, o círculo é dividido em quatro quadrantes, no sentido anti-horário:\n- Cada quadrante tem 90°.\n- Total: 360°.\n\nEm radianos:\n- 0\n- π/2 (90°)\n- π (180°)\n- 3π/2 (270°)\n- 2π (360°)\n\n> 🎯 Dicas de prova: 180° = π rad. Use essa equivalência para converter graus em radianos e vice-versa.\n\nPara áreas de setores:\n- Em graus: use α/360.\n- Em radianos: use θ/(2π), levando à forma compacta A = (θ/2)·r².\n\n## Encerramento\nEntão, recapitulando as ideias-chave que você vai usar nas questões:\n- Circunferência (perímetro/borda): C = 2·π·r.\n- Círculo (área): A = π·r².\n- Diâmetro: d = 2·r. É a maior corda.\n- π = C/d, constante ≈ 3,14.\n- Corda: segmento com extremos na circunferência.\n- Se a corda passa pelo centro, é diâmetro.\n- Apótema: segmento do centro à corda que a encontra no ponto médio e é perpendicular a ela.\n- Triângulo inscrito com diâmetro como lado é retângulo (diâmetro é a hipotenusa).\n- Setor circular: A = (α/360)·π·r² (graus) ou A = (θ/2)·r² (radianos).\n\nNa próxima, começamos com questões para praticar o que aprendemos. Valeu!",
+  "transcricao_meta": {
+    "title": "Geometria Plana XIII - Quadriláteros IV",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 39224,
+    "createdAt": "2026-02-04T18:58:08.936Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda circunferência e círculo (disco), elementos (raio, diâmetro, corda, apótema), ângulos e quadrantes, triângulos inscritos com diâmetro, e setor circular (definição e cálculo de área). \nPrincipais pontos: \n- Diferença entre circunferência (perímetro) e círculo (área).\n- Relações fundamentais: C = 2πr, A = πr², d = 2r, e π = C/d.\n- Técnicas para área de setor circular por proporcionalidade do ângulo e uso de Pitágoras em triângulo inscrito com diâmetro.\n\n## 1. Base / Conceitos Fundamentais\n- **Circunferência**: Borda/perímetro do círculo. Comprimento: C = 2πr.\n- **Círculo (Disco)**: Conjunto dos pontos internos da circunferência (superfície). Área: A = πr².\n- **Centro**: Ponto equidistante de todos os pontos da circunferência.\n- **Raio (r)**: Distância do centro a qualquer ponto da circunferência. Todos os raios de uma mesma circunferência são congruentes.\n- **Diâmetro (d)**: Corda que passa pelo centro; maior corda. Relação: d = 2r.\n- **Corda**: Segmento com extremidades na circunferência. Se passar pelo centro, é o diâmetro.\n- **Apótema da circunferência**: Segmento do centro ao ponto médio de uma corda; é perpendicular a essa corda.\n- **π (pi)**: Constante irracional. Definição: π = (comprimento da circunferência) / (diâmetro). Aproximação: π ≈ 3,1415…\n\n> Dica de prova: Decore as três bases: C = 2πr; A = πr²; d = 2r. A maioria das questões reduz-se a isolar r e substituir.\n\n## 2. Como Funciona / Distinções\n- **Circunferência vs Círculo**\n  - Circunferência: mede-se comprimento (perímetro).\n  - Círculo (disco): mede-se área (superfície).\n- **Corda vs Diâmetro**\n  - Toda corda tem extremos na circunferência; se passa pelo centro, vira diâmetro (e é a maior corda).\n- **Raio, Apótema e Corda**\n  - Raio até o ponto médio da corda = apótema; é perpendicular e bisseta a corda.\n- **Ângulos e Quadrantes no Círculo**\n  - Círculo completo: 360°.\n  - Quadrantes: quatro partes de 90° cada (0°–90°, 90°–180°, 180°–270°, 270°–360°).\n  - Radianos de referência: 0, π/2, π, 3π/2, 2π.\n\n> Dica de prova: Em triângulo inscrito cujo lado é o diâmetro, o triângulo é retângulo e o diâmetro é a hipotenusa.\n\n## 3. Aplicação Prática / Técnicas\n- **Isolar o raio**\n  - De C: r = C/(2π).\n  - De A: r = √(A/π).\n  - De d: r = d/2.\n- **Corda e distância ao centro (apótema)**\n  - Se a corda tem comprimento 2a e a distância ao centro é m (apótema), então r² = a² + m².\n- **Triângulo inscrito com diâmetro**\n  - Se um lado do triângulo inscrito é o diâmetro d, o triângulo é retângulo (catetos = outros lados). Use Pitágoras: a² + b² = d².\n- **Setor circular (área)**\n  - Em graus: A_setor = (θ/360°) × πr².\n  - Em radianos: A_setor = (θ/2) × r².\n  - Proporcionalidade direta: mais ângulo → mais área.\n- **Passo a passo para setor (graus)**\n  1) Identifique θ (em graus) e r.\n  2) Simplifique a fração θ/360 quando possível.\n  3) Multiplique pela área total πr².\n\n> Dica de prova: Se θ = 90°, A_setor = (1/4)πr²; se θ = 180°, A_setor = (1/2)πr²; se θ = 270°, A_setor = (3/4)πr².\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 — Comprimento e área a partir do diâmetro:\n  - Dado d = 10, então r = 5.\n  - C = 2πr = 10π. A = πr² = 25π.\n- Exemplo 2 — Corda e apótema:\n  - Corda = 12 → meia corda a = 6. Distância ao centro (apótema) m = 8.\n  - r² = a² + m² = 6² + 8² = 36 + 64 = 100 → r = 10.\n  - C = 20π; A = 100π.\n- Exemplo 3 — Triângulo inscrito com diâmetro:\n  - Diâmetro d = 13. Lados do triângulo que não são o diâmetro: 5 e b.\n  - Pitágoras: 5² + b² = 13² → 25 + b² = 169 → b² = 144 → b = 12.\n- Exemplo 4 — Setor circular (θ = 80°):\n  - A_setor = (80/360) × πr² = (2/9) × πr².\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir fórmulas:\n  - Comprimento da circunferência: 2πr (não tem r²).\n  - Área do círculo: πr² (tem r²).\n  - Setor circular usa área ⇒ envolve r²; arco não.\n- Ângulo em radianos vs graus:\n  - Se θ em radianos, use A_setor = (θ/2)r²; não divida por 360.\n- “Maior corda”:\n  - Pediram a maior corda? É o diâmetro (d = 2r).\n- π é constante:\n  - Não trate π como variável; use a aproximação pedida (3,14, 22/7) se o enunciado permitir.\n- Apótema:\n  - Em circunferência, apótema é do centro ao ponto médio da corda e é perpendicular a ela. Não confundir com apótema de polígono regular.\n- Triângulo com diâmetro:\n  - Se um lado do triângulo inscrito é o diâmetro, o ângulo oposto é 90°. Use Pitágoras diretamente.\n\n> Dica de prova: Dê preferência a expressar respostas em termos de π quando o problema não fornecer aproximação. Só numere π se for solicitado.\n\n> Dica de prova: Antes de calcular, verifique a unidade do ângulo (graus ou radianos). Isso evita aplicar a fórmula errada no setor circular.",
+  "resumo_bolso": "# Geometria Plana XIII - Quadriláteros IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Circunferência**: borda/perímetro do círculo. Comprimento: **C = 2πr**.\n* **Círculo (disco)**: conjunto dos pontos internos da circunferência (superfície). Área: **A = πr²**.\n* **Centro**: ponto equidistante de todos os pontos da circunferência.\n* **Raio (r)**: distância do centro a qualquer ponto da circunferência; todos os raios são congruentes.\n* **Diâmetro (d)**: corda que passa pelo centro; é a **maior corda**. Relação: **d = 2r**.\n* **Corda**: segmento com extremidades na circunferência; se passar pelo centro, é o **diâmetro**.\n* **Apótema da circunferência**: segmento do centro ao **ponto médio** de uma corda; é **perpendicular** à corda.\n* **π (pi)**: constante irracional. Definição: **π = C/d**. Aproximação: **π ≈ 3,1415…**.\n* **Ângulos no círculo**: círculo completo = **360°**; quadrantes: 0–90°, 90–180°, 180–270°, 270–360°.  \n  Radianos de referência: 0, **π/2**, **π**, **3π/2**, **2π**.\n* **Triângulo inscrito com lado = diâmetro**: triângulo **retângulo**, diâmetro = **hipotenusa**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Circunferência vs Círculo\n\n| Aspecto          | Circunferência                  | Círculo (Disco)                     |\n|------------------|---------------------------------|-------------------------------------|\n| O que é          | Borda / perímetro              | Região interna / superfície         |\n| Medida principal | **Comprimento**                | **Área**                            |\n| Fórmula básica   | **C = 2πr**                    | **A = πr²**                         |\n| Relação com π    | π = (comprimento)/diâmetro     | Usa π no cálculo da área            |\n\n---\n\n### Corda vs Diâmetro\n\n| Aspecto   | Corda                                   | Diâmetro                                   |\n|-----------|-----------------------------------------|--------------------------------------------|\n| Definição | Segmento com extremos na circunferência | Corda que **passa pelo centro**            |\n| Tamanho   | Pode ser menor que o diâmetro           | **Maior corda** (d = 2r)                   |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Fórmulas-base**\n\n* **Comprimento da circunferência**: **C = 2πr**\n* **Área do círculo**: **A = πr²**\n* **Diâmetro**: **d = 2r**\n* **π**: **π = C/d**\n\n**Isolando o raio**:\n* De C: **r = C / (2π)**\n* De A: **r = √(A/π)**\n* De d: **r = d/2**\n\n---\n\n**2. Corda, apótema e raio**\n\n* Corda de comprimento **2a**, distância ao centro (apótema) = **m**.  \n  Relação: **r² = a² + m²** (meia corda, apótema e raio formam triângulo retângulo).\n\n* Exemplo: corda = 12 → a = 6; apótema m = 8  \n  ⇒ **r² = 6² + 8² = 36 + 64 = 100 ⇒ r = 10**  \n  ⇒ **C = 20π; A = 100π**.\n\n---\n\n**3. Triângulo inscrito com diâmetro**\n\n* Se um lado do triângulo inscrito é o **diâmetro d**, o triângulo é **retângulo** (diâmetro = hipotenusa).  \n  Use Pitágoras: **a² + b² = d²**.\n\n* Exemplo: d = 13, lados 5 e b:  \n  **5² + b² = 13² ⇒ 25 + b² = 169 ⇒ b² = 144 ⇒ b = 12**.\n\n---\n\n**4. Setor circular – área (graus)**\n\n* Ângulo central **θ em graus**:  \n  **A_setor = (θ/360°) · πr²**\n\n* Exemplo: θ = 80°:  \n  **A_setor = (80/360) · πr² = (2/9) · πr²**.\n\n---\n\n**5. Setor circular – área (radianos)**\n\n* Ângulo central **θ em radianos**:  \n  **A_setor = (θ/2) · r²**\n\n---\n\n**6. Setores notáveis (graus)**\n\n* θ = **90°**  ⇒ **A_setor = (1/4)πr²**\n* θ = **180°** ⇒ **A_setor = (1/2)πr²**\n* θ = **270°** ⇒ **A_setor = (3/4)πr²**\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir fórmulas:  \n   - Comprimento da circunferência: **2πr** (não tem r²).  \n   - Área do círculo: **πr²** (tem r²).\n\n2. Ângulo em radianos vs graus no setor circular:  \n   - Se **θ em radianos**, use **A_setor = (θ/2)r²**; **não** divida por 360.\n\n3. “Maior corda”:  \n   - Se pedirem a **maior corda**, é o **diâmetro** (**d = 2r**).\n\n4. Apótema na circunferência:  \n   - Vai do **centro ao ponto médio da corda** e é **perpendicular** a ela; não confundir com apótema de polígono regular.\n\n5. Triângulo com lado = diâmetro:  \n   - Lado é o diâmetro ⇒ ângulo oposto é **90°** ⇒ use **Pitágoras** diretamente.\n\n---\n\n## 📋 Checklist Final\n\n* Sei distinguir **circunferência (comprimento/perímetro)** de **círculo (área/superfície)** e aplicar **C = 2πr** e **A = πr²**?\n* Lembro que **d = 2r** e que o **diâmetro é a maior corda**?\n* Sei usar **r² = a² + m²** em problemas com **corda e apótema**?\n* Reconheço que **lado do triângulo inscrito = diâmetro ⇒ triângulo retângulo** e aplico **Pitágoras (a² + b² = d²)**?\n* Sei escolher a fórmula correta de **setor circular** conforme o ângulo estar em **graus** (**(θ/360)πr²**) ou **radianos** (**(θ/2)r²**)?\n* Lembro dos **setores notáveis**: 90°, 180° e 270° com áreas **(1/4)πr²**, **(1/2)πr²** e **(3/4)πr²**?\n* Costumo **expressar respostas em termos de π** quando o enunciado não pedir aproximação numérica?",
+  "mapa_mental": "# 🧮 Geometria Plana XIII – Circunferência e Círculo\n## 🎯 Conceitos Fundamentais\n### 💡 Elementos Básicos\n- Circunferência perímetro\n- Círculo área\n- Centro equidistante\n- Raio segmento centro\n- Diâmetro maior corda\n### 📏 Segmentos Notáveis\n- Corda extremos na borda\n- Diâmetro passa centro\n- Relação d = 2r\n- Apótema até meia corda\n- Apótema perpendicular corda\n### 🔢 Constante π\n- π razão C/d\n- π irracional\n- Aproximação 3,14\n- Fórmula C = 2πr\n- Fórmula A = πr²\n\n## 🧮 Relações e Fórmulas\n### 📐 Relações Básicas\n- C = 2πr\n- A = πr²\n- d = 2r\n- r = C/(2π)\n- r = √(A/π)\n### 📊 Ângulos e Medidas\n- Volta completa 360°\n- Quadrantes 90° cada\n- Radianos 0 a 2π\n- Referência π/2 π 3π/2\n- Proporção ângulo–setor\n### 📏 Corda e Apótema\n- Corda 2a meia corda a\n- Apótema distância centro\n- Relação r² = a² + m²\n- Triângulo retângulo\n- Catetos a e m\n\n## 📐 Triângulos e Setor Circular\n### 🧱 Triângulo Inscrito\n- Lado diâmetro\n- Ângulo oposto 90°\n- Hipotenusa diâmetro\n- Catetos outros lados\n- Pitágoras a² + b² = d²\n### 🧮 Setor Circular Graus\n- Setor fração do círculo\n- Fórmula (θ/360)πr²\n- θ em graus\n- Proporção direta área\n- Casos 90° 180° 270°\n### 🧮 Setor Circular Radianos\n- θ em radianos\n- Fórmula (θ/2)r²\n- Não usar 360\n- Mesma proporcionalidade\n- Atenção unidade ângulo\n\n## ⚠️ Erros Comuns em Provas\n### 🚨 Fórmulas Confundidas\n- C usa 2πr\n- A usa πr²\n- Setor usa r²\n- Arco não usa r²\n- Maior corda diâmetro\n### ⚠️ Ângulos e π\n- Graus x radianos\n- Escolha fórmula correta\n- π não variável\n- Usar aproximação pedida\n- Preferir resposta com π\n### 📝 Conceitos Delicados\n- Apótema circunferência\n- Não confundir polígonos\n- Triângulo com diâmetro\n- Ângulo reto garantido\n- Aplicar Pitágoras direto",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Elementos da Circunferência",
+      "description": "Elementos da Circunferência — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a diferença entre **circunferência** e círculo?",
+          "back": "A circunferência é a borda (limite ou perímetro); o círculo (ou disco) é o conjunto dos pontos internos (a superfície).",
+          "hint": "Pense em borda versus preenchimento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "circunferencia"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-2",
+          "front": "Como se define o raio de uma circunferência?",
+          "back": "Um segmento de reta que sai do centro e vai até qualquer ponto da circunferência, tendo sempre a mesma medida.",
+          "hint": "É um segmento de reta",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "elementos-circulo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual relação matemática existe entre diâmetro e raio?",
+          "back": "O diâmetro equivale a duas vezes o raio ($d = 2r$).",
+          "hint": "Envolve o dobro",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "relacoes-metricas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "O que é uma corda em uma circunferência?",
+          "back": "Um segmento de reta cujos dois pontos extremos pertencem à circunferência.",
+          "hint": "Segmento interno",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "elementos-circulo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual condição transforma uma corda em diâmetro?",
+          "back": "Passar pelo centro da circunferência.",
+          "hint": "Ponto de passagem obrigatório",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "elementos-circulo"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Que nome recebe o segmento do centro ao ponto médio de uma corda?",
+          "back": "Apotema da circunferência (ou apótema do círculo).",
+          "hint": "Segmento perpendicular",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "elementos-circulo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual propriedade esse segmento tem em relação à corda?",
+          "back": "Toca a corda em seu ponto médio, dividindo-a em duas partes iguais.",
+          "hint": "Propriedade de simetria",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "propriedades"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Medidas Circulares",
+      "description": "Medidas Circulares — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual fórmula calcula o comprimento de uma circunferência?",
+          "back": "$2\\pi r$",
+          "hint": "Relacionado ao perímetro",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Como se obtém o número π a partir das medidas de uma circunferência?",
+          "back": "Dividindo o valor da circunferência pelo seu diâmetro.",
+          "hint": "É uma razão entre medidas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "constantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Que tipo de número é π quanto à sua representação decimal?",
+          "back": "Um número irracional (dízima não periódica).",
+          "hint": "Não é um número racional",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "constantes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual fórmula determina a área de um círculo?",
+          "back": "$\\pi r^2$",
+          "hint": "Relacionado à superfície",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "formulas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Setores e Ângulos",
+      "description": "Setores e Ângulos — 5 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Como se define um setor circular?",
+          "back": "A região delimitada por dois raios que partem do centro até a circunferência.",
+          "hint": "Formato de fatia de pizza",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "regioes-circulares"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual fórmula calcula a área de um setor circular com ângulo em graus?",
+          "back": "$\\frac{\\alpha \\pi r^2}{360^{\\circ}}$",
+          "hint": "Proporção da área total",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Quantos graus correspondem à volta completa de um círculo?",
+          "back": "$360^{\\circ}$",
+          "hint": "Uma volta completa",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "angulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Quantos graus mede cada quadrante de um círculo?",
+          "back": "$90^{\\circ}$",
+          "hint": "Um quarto de volta",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "angulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "A que medida em graus corresponde o ângulo π radianos?",
+          "back": "$180^{\\circ}$",
+          "hint": "Meia volta",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "conversoes"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a definição correta de circunferência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É o conjunto de pontos que formam a borda ou limite de uma figura circular, equidistantes de um ponto central",
+          "correct": true,
+          "explanation": "Correta. A circunferência é, por definição, o conjunto de todos os pontos em um plano que estão a uma distância fixa (o raio) de um ponto central. Ela representa a 'borda' ou o 'contorno' de uma figura circular."
+        },
+        {
+          "id": "b",
+          "text": "É a região interna delimitada por uma linha curva fechada, incluindo todos os pontos que estão a uma distância menor ou igual ao raio do centro",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreve o que é um círculo (ou disco), que inclui todos os pontos internos até a borda, não apenas a borda em si. A circunferência é estritamente a linha de contorno."
+        },
+        {
+          "id": "c",
+          "text": "É a medida da área total de uma figura circular, calculada multiplicando-se o raio pelo diâmetro",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa se refere ao cálculo da área de um círculo (que é πr² ou πd²/4), e não à definição da circunferência. A circunferência é uma linha, e sua medida é o comprimento, não a área."
+        },
+        {
+          "id": "d",
+          "text": "É a superfície plana formada pela união de infinitos segmentos de reta que partem do centro até a borda",
+          "correct": false,
+          "explanation": "Incorreta. A união de infinitos segmentos de reta que partem do centro até a borda descreve a formação do círculo (a área preenchida), e não apenas a circunferência. A circunferência é a linha externa, não a superfície interna."
+        }
+      ],
+      "explanation": "Correta. A circunferência é, por definição, o conjunto de todos os pontos em um plano que estão a uma distância fixa (o raio) de um ponto central. Ela representa a 'borda' ou o 'contorno' de uma figura circular.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Como é calculado o comprimento de uma circunferência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicando-se o valor de pi pelo diâmetro",
+          "correct": true,
+          "explanation": "Correta. O comprimento de uma circunferência (C), que também pode ser chamado de perímetro, é calculado pela fórmula C = πd, onde 'd' representa o diâmetro. Alternativamente, como o diâmetro (d) é o dobro do raio (r), a fórmula também pode ser expressa como C = 2πr."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicando-se o raio pelo valor de pi e dividindo por dois",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o raio por pi e dividir por dois (πr/2) não corresponde a nenhuma medida padrão do comprimento da circunferência. A fórmula correta para o comprimento é 2πr ou πd."
+        },
+        {
+          "id": "c",
+          "text": "Dividindo-se o diâmetro pelo valor de pi",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o diâmetro pelo valor de pi (d/π) não resulta no comprimento da circunferência. Na verdade, a definição de pi é a razão entre o comprimento da circunferência e seu diâmetro (π = C/d)."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicando-se o valor de pi pelo raio ao quadrado",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o valor de pi (π) pelo raio ao quadrado (πr²) é a fórmula utilizada para calcular a área de um círculo, que é a superfície interna, e não o comprimento da circunferência (a borda)."
+        }
+      ],
+      "explanation": "Correta. O comprimento de uma circunferência (C), que também pode ser chamado de perímetro, é calculado pela fórmula C = πd, onde 'd' representa o diâmetro. Alternativamente, como o diâmetro (d) é o dobro do raio (r), a fórmula também pode ser expressa como C = 2πr.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "O que representa o número pi (π) em geometria?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É o valor exato da área de um círculo unitário",
+          "correct": false,
+          "explanation": "Incorreta. Embora a área de um círculo unitário (com raio igual a 1) seja numericamente igual a pi (π * 1² = π), essa é uma consequência da definição de pi e da fórmula da área, e não a definição fundamental de pi em si. A definição primária de pi está ligada à relação entre o comprimento e o diâmetro."
+        },
+        {
+          "id": "b",
+          "text": "É a medida angular correspondente a um quadrante completo",
+          "correct": false,
+          "explanation": "Incorreta. Um quadrante completo corresponde a um ângulo de 90 graus ou π/2 radianos. Essa é uma medida angular em um sistema de coordenadas, e não a representação do número pi como uma razão constante em geometria euclidiana."
+        },
+        {
+          "id": "c",
+          "text": "É a razão entre o raio e o diâmetro de qualquer circunferência",
+          "correct": false,
+          "explanation": "Incorreta. A razão entre o raio (r) e o diâmetro (d) de qualquer circunferência é sempre 1/2, pois o diâmetro é o dobro do raio (d = 2r). O número pi (π) é uma constante diferente."
+        },
+        {
+          "id": "d",
+          "text": "É a razão constante entre o comprimento da circunferência e seu diâmetro",
+          "correct": true,
+          "explanation": "Correta. O número pi (π) é uma constante matemática irracional que representa a razão entre o comprimento de qualquer circunferência e o seu diâmetro. Essa relação C/d = π é universal para todas as circunferências, independentemente do seu tamanho."
+        }
+      ],
+      "explanation": "Correta. O número pi (π) é uma constante matemática irracional que representa a razão entre o comprimento de qualquer circunferência e o seu diâmetro. Essa relação C/d = π é universal para todas as circunferências, independentemente do seu tamanho.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a diferença fundamental entre circunferência e círculo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A circunferência inclui o centro da figura, enquanto o círculo exclui esse ponto",
+          "correct": false,
+          "explanation": "Incorreta. O centro é um ponto de referência fundamental para ambas as figuras. A circunferência é definida como o conjunto de pontos equidistantes do centro, e o círculo é a região que inclui o centro e todos os pontos a uma distância menor ou igual ao raio do centro."
+        },
+        {
+          "id": "b",
+          "text": "A circunferência é uma figura tridimensional, enquanto o círculo é bidimensional",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a circunferência quanto o círculo são figuras bidimensionais, pois se desenvolvem em um plano. Figuras tridimensionais, como uma esfera, ocupam volume no espaço."
+        },
+        {
+          "id": "c",
+          "text": "A circunferência é a linha que delimita a figura, enquanto o círculo é a região interna incluindo essa linha",
+          "correct": true,
+          "explanation": "Correta. A circunferência é a linha curva fechada que forma o contorno ou a 'borda' de uma figura circular. Já o círculo é a região plana delimitada por essa circunferência, incluindo todos os pontos internos e a própria linha da circunferência. Em outras palavras, a circunferência é o 'perímetro' e o círculo é a 'área preenchida'."
+        },
+        {
+          "id": "d",
+          "text": "A circunferência possui área mensurável, enquanto o círculo possui apenas perímetro",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação inverte os conceitos. O círculo possui área mensurável (calculada por πr²), enquanto a circunferência possui comprimento mensurável (seu perímetro, calculado por 2πr ou πd)."
+        }
+      ],
+      "explanation": "Correta. A circunferência é a linha curva fechada que forma o contorno ou a 'borda' de uma figura circular. Já o círculo é a região plana delimitada por essa circunferência, incluindo todos os pontos internos e a própria linha da circunferência. Em outras palavras, a circunferência é o 'perímetro' e o círculo é a 'área preenchida'.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "O que caracteriza uma corda em uma circunferência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É qualquer segmento de reta que une o centro da circunferência a um ponto da borda",
+          "correct": false,
+          "explanation": "Incorreta. Um segmento de reta que une o centro da circunferência a um ponto da borda é chamado de raio. O raio é um elemento fundamental, mas não é uma corda."
+        },
+        {
+          "id": "b",
+          "text": "É o segmento perpendicular ao raio que divide a circunferência em partes iguais",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição não corresponde à definição de uma corda. Embora um raio possa ser perpendicular a uma corda no seu ponto médio, essa é uma propriedade geométrica e não a definição da corda em si."
+        },
+        {
+          "id": "c",
+          "text": "É um segmento de reta que une dois pontos quaisquer da circunferência",
+          "correct": true,
+          "explanation": "Correta. Uma corda é definida como qualquer segmento de reta cujas extremidades são dois pontos distintos na circunferência. O diâmetro é um caso especial de corda, sendo a corda que passa pelo centro da circunferência e, consequentemente, a maior corda possível."
+        },
+        {
+          "id": "d",
+          "text": "É a linha curva que forma parte do perímetro da circunferência",
+          "correct": false,
+          "explanation": "Incorreta. Uma linha curva que forma parte do perímetro da circunferência é chamada de arco. A corda, por outro lado, é um segmento de reta, ou seja, uma linha reta."
+        }
+      ],
+      "explanation": "Correta. Uma corda é definida como qualquer segmento de reta cujas extremidades são dois pontos distintos na circunferência. O diâmetro é um caso especial de corda, sendo a corda que passa pelo centro da circunferência e, consequentemente, a maior corda possível.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quantos graus possui uma circunferência completa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "270 graus",
+          "correct": false,
+          "explanation": "Incorreta. 270 graus corresponde a três quartos de uma volta completa. É o equivalente a três ângulos retos somados (90 + 90 + 90 = 270)."
+        },
+        {
+          "id": "b",
+          "text": "360 graus",
+          "correct": true,
+          "explanation": "Correta. Uma circunferência completa, que representa uma volta inteira, é universalmente definida como tendo 360 graus. Este valor é fundamental para medições angulares em geometria e trigonometria, sendo a base para a divisão do círculo em quatro quadrantes de 90 graus cada."
+        },
+        {
+          "id": "c",
+          "text": "180 graus",
+          "correct": false,
+          "explanation": "Incorreta. Uma circunferência completa possui o dobro de 180 graus. 180 graus representa um semicírculo ou um ângulo raso (linha reta), que corresponde à metade de uma volta completa."
+        },
+        {
+          "id": "d",
+          "text": "400 graus",
+          "correct": false,
+          "explanation": "Incorreta. Embora existam outras unidades de medida angular, como o grado (gônio), onde uma volta completa corresponde a 400 grados, a questão especifica 'graus'. No sistema de graus, 400 graus seria mais do que uma volta completa (360 graus), representando 360 + 40 graus."
+        }
+      ],
+      "explanation": "Correta. Uma circunferência completa, que representa uma volta inteira, é universalmente definida como tendo 360 graus. Este valor é fundamental para medições angulares em geometria e trigonometria, sendo a base para a divisão do círculo em quatro quadrantes de 90 graus cada.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a característica de um triângulo inscrito em uma circunferência quando um de seus lados é o diâmetro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O triângulo é retângulo, com o ângulo reto oposto ao lado que coincide com o diâmetro",
+          "correct": true,
+          "explanation": "Correta. Conforme o Teorema de Tales, se os vértices de um triângulo estão sobre uma circunferência e um de seus lados é o diâmetro, então o ângulo oposto a esse diâmetro é um ângulo reto (90 graus). Isso ocorre porque o ângulo inscrito que subtende um semicírculo é sempre reto."
+        },
+        {
+          "id": "b",
+          "text": "O triângulo é isósceles, com dois lados de medidas iguais ao raio da circunferência",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo isósceles tem dois lados de medidas iguais. Embora um triângulo isósceles possa ser inscrito em uma circunferência, a condição de um lado ser o diâmetro não garante que os outros dois lados sejam iguais ao raio, nem que o triângulo seja isósceles. Por exemplo, os outros dois lados seriam cordas, e apenas seriam iguais se o triângulo fosse isósceles com o diâmetro como base."
+        },
+        {
+          "id": "c",
+          "text": "O triângulo é necessariamente equilátero, com todos os ângulos medindo 60 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo equilátero possui todos os seus ângulos internos medindo 60 graus. Para ser inscrito em uma circunferência, seus vértices devem estar sobre a circunferência, mas nenhum de seus lados seria o diâmetro, a menos que o triângulo fosse degenerado."
+        },
+        {
+          "id": "d",
+          "text": "O triângulo é obtusângulo, com o maior ângulo adjacente ao diâmetro",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo obtusângulo possui um ângulo interno maior que 90 graus. No caso de um triângulo inscrito com um lado sendo o diâmetro, o ângulo oposto a esse diâmetro é exatamente 90 graus, tornando-o um triângulo retângulo, e não obtusângulo."
+        }
+      ],
+      "explanation": "Correta. Conforme o Teorema de Tales, se os vértices de um triângulo estão sobre uma circunferência e um de seus lados é o diâmetro, então o ângulo oposto a esse diâmetro é um ângulo reto (90 graus). Isso ocorre porque o ângulo inscrito que subtende um semicírculo é sempre reto.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "O que representa um setor circular?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É a região delimitada por uma corda e o arco correspondente da circunferência",
+          "correct": false,
+          "explanation": "Incorreta. A região delimitada por uma corda e o arco correspondente da circunferência é chamada de segmento circular. É como se fosse uma \"fatia\" do círculo cortada por uma linha reta, em vez de partir do centro."
+        },
+        {
+          "id": "b",
+          "text": "É a região delimitada por dois raios e o arco de circunferência compreendido entre eles",
+          "correct": true,
+          "explanation": "Correta. Um setor circular é uma porção da área de um círculo delimitada por dois raios e o arco da circunferência compreendido entre eles. Pode-se visualizá-lo como uma \"fatia de pizza\" ou um \"pedaço de torta\", com o vértice no centro do círculo."
+        },
+        {
+          "id": "c",
+          "text": "É a região externa à circunferência formada pelo prolongamento de dois raios",
+          "correct": false,
+          "explanation": "Incorreta. Um setor circular é uma região interna ao círculo. O prolongamento de dois raios resultaria em duas linhas que se estendem para fora do círculo, não definindo uma área contida dentro dele."
+        },
+        {
+          "id": "d",
+          "text": "É qualquer porção da circunferência delimitada por dois pontos distintos",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere a um arco de circunferência, que é apenas uma parte da linha curva que forma o perímetro do círculo, não uma região bidimensional (área)."
+        }
+      ],
+      "explanation": "Correta. Um setor circular é uma porção da área de um círculo delimitada por dois raios e o arco da circunferência compreendido entre eles. Pode-se visualizá-lo como uma \"fatia de pizza\" ou um \"pedaço de torta\", com o vértice no centro do círculo.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Como se calcula a área de um setor circular com ângulo α (em graus) e raio r?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicando-se o ângulo α pelo raio r e dividindo por 360",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula não corresponde ao cálculo da área de um setor circular. A área de um setor envolve o raio ao quadrado (r²) e a constante pi (π), e não apenas o raio linear."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicando-se πr² por 360 e dividindo por α",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula inverte a proporção correta. Ao dividir a área total do círculo (πr²) pelo ângulo α e multiplicar por 360, o resultado seria um valor muito maior do que a área do setor, a menos que α fosse maior que 360, o que não faz sentido para um setor dentro de uma única volta."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicando-se α por 2πr e dividindo por 180",
+          "correct": false,
+          "explanation": "Incorreta. A expressão 2πr representa o comprimento da circunferência (perímetro do círculo), não a área. Além disso, a divisão por 180 não estabelece a proporção correta para a área de um setor em relação ao ângulo central."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicando-se α por πr² e dividindo por 360",
+          "correct": true,
+          "explanation": "Correta. A área de um setor circular é calculada pela proporção do ângulo central (α) em relação ao ângulo total de uma circunferência (360 graus), multiplicada pela área total do círculo (πr²). Assim, a fórmula é (α/360) * πr²."
+        }
+      ],
+      "explanation": "Correta. A área de um setor circular é calculada pela proporção do ângulo central (α) em relação ao ângulo total de uma circunferência (360 graus), multiplicada pela área total do círculo (πr²). Assim, a fórmula é (α/360) * πr².",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a natureza matemática do número pi (π)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É um número inteiro que representa a razão entre grandezas circulares",
+          "correct": false,
+          "explanation": "Incorreta. Um número inteiro é um número que não possui parte fracionária ou decimal (..., -2, -1, 0, 1, 2, ...). O valor de pi é aproximadamente 3,14159..., o que claramente não é um número inteiro. Embora seja a razão entre o comprimento de uma circunferência e seu diâmetro, essa razão não resulta em um inteiro."
+        },
+        {
+          "id": "b",
+          "text": "É um número irracional com representação decimal infinita e não periódica",
+          "correct": true,
+          "explanation": "Correta. O número pi (π) é um número irracional, o que significa que ele não pode ser expresso como uma fração simples de dois inteiros. Sua representação decimal é infinita e não apresenta um padrão repetitivo (não é periódica), continuando indefinidamente sem repetição."
+        },
+        {
+          "id": "c",
+          "text": "É um número racional que pode ser expresso como fração de dois inteiros",
+          "correct": false,
+          "explanation": "Incorreta. Um número racional pode ser expresso como uma fração de dois números inteiros (a/b, com b ≠ 0) e sua representação decimal é finita ou uma dízima periódica. O número pi (π) não pode ser representado dessa forma."
+        },
+        {
+          "id": "d",
+          "text": "É um número irracional com dízima periódica de período variável",
+          "correct": false,
+          "explanation": "Incorreta. Uma dízima periódica é uma representação decimal que possui um padrão de dígitos que se repete infinitamente (ex: 1/3 = 0,333...). O número pi é irracional justamente porque sua representação decimal é infinita *e não periódica*, ou seja, não há um padrão de repetição. A ideia de uma \"dízima periódica de período variável\" é uma contradição, pois a periodicidade implica um padrão fixo de repetição."
+        }
+      ],
+      "explanation": "Correta. O número pi (π) é um número irracional, o que significa que ele não pode ser expresso como uma fração simples de dois inteiros. Sua representação decimal é infinita e não apresenta um padrão repetitivo (não é periódica), continuando indefinidamente sem repetição.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "13_322600_Geometria Plana XIII - Quadriláteros IV.pdf",
+  "coletado_em": "2026-09-23T21:07:20"
+}

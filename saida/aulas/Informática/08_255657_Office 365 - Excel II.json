@@ -1,0 +1,746 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 8,
+  "ordem_no_curso": "76.00",
+  "titulo": "Office 365 - Excel II",
+  "codigo_aula": "255657",
+  "video_id": "nsOYE9oQLwc=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:26:24",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/nsOYE9oQLwc%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420317%2C420303%2C420333&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - Excel II\n\n## Introdução e contextualização do material\nEntão, de volta aqui com a nossa linda planilha. Vem comigo na tela para a próxima parte. Agora o nosso material é aquilo que eu falei: onde quem quiser poderá estar preenchendo o material.\n\nQuanto ao tipo de licença, nós podemos usar que o Office é proprietário. Daqui a pouco vou falar de um recurso para apagar dados, que é uma ferramenta que volta e meia cai em prova inicial.\n\nVou pegar essas células aqui e vou mesclar e centralizar. A função de mesclar é combinar todas as células em uma única só. Agora, um detalhe interessante sobre esse recurso: se eu pegar um intervalo e realizar a mesclagem pela opção principal, sem usar nenhuma outra configuração, só clicando no botão, ele vai manter apenas o conteúdo da célula superior esquerda e descartar os outros valores. Ou seja, de todas, só uma será mantida.\n\n## Licença do Office e acesso ao código\nPreenchendo aqui: licença, tipo, proprietário. Beleza. Então a licença do Office é proprietário, o que significa que eu não tenho acesso ao código-fonte dele. Portanto, o contrário do software proprietário seria o software livre, que é aquele em que eu tenho acesso ao seu código-fonte.\n\n## Extensão padrão do Excel\nExtensão padrão: agora sim eu vou tratar daquilo que eu tanto falei lá atrás. Isso é tão importante que eu vou colocar até em negrito: um arquivo do Excel. O nome do arquivo, propositalmente, eu vou passar aqui para vermelho. Então a extensão da planilha é .xlsx. Se quiser colocar “Plano 1” ou outro nome, beleza, mas a extensão propriamente é essa, a padrão. Não é a única que ele trabalha, mas é o padrão.\n\nEntão, vamos lá. Se eu vejo um arquivo do Excel, salvei com essa extensão .xlsx. Muita gente pensa “deixa eu abrir aqui essa planilha”. Eu sei que a intenção da pessoa é mexer na planilha, mas chamar o arquivo oficial de “planilha” está errado. Vem comigo aqui.\n\nVamos salvar. Vou deixar aqui e colocar “Mais opções” para abrir a janela. Vou em “Procurar”, porque aqui vai aparecer o local padrão de salvamento. Já é interessante, mas não é tão cobrado. É bom vir para a pasta Documentos, beleza?\n\nAqui está aquilo que eu estava comentando desde o começo: tipo de arquivo. Está vendo aqui o tipo “Pasta de trabalho do Excel” e a extensão padrão .xlsx? Então, o tipo “Pasta de trabalho do Excel” é o nome correto, a forma correta de se referir a um arquivo do Excel: é “pasta de trabalho do Excel”.\n\nNa prática, as pessoas não fazem, tudo bem. É igual chamar o gabinete do computador de “CPU”. CPU é só uma peça que fica lá dentro, que é importante, mas não é todo o conjunto como as pessoas falam.\n\nBeleza. Vem comigo: “Pasta de trabalho do Excel”. O que é uma pasta de trabalho do Excel? Vamos salvar aqui. Eu salvei porque uma pasta de trabalho contém uma ou mais planilhas que eu posso inserir. Depois veremos aqui. Daqui a pouco vou usar um arquivo com um monte de fórmulas, beleza?\n\nEntão, uma pasta de trabalho, que agora está salva, contém uma ou mais planilhas. Se eu quiser, posso carregar, salvar no OneDrive. Posso salvar no OneDrive, já tenho aquele efeito do salvamento automático. Posso salvar. Já está salvo lá agora.\n\nPosso vir aqui e fazer o que eu falei para você: colocar tudo mais organizado por um motivo bobo, por exemplo. E ainda tenho acesso às versões. Quando eu salvo no OneDrive, ele vai salvar versões.\n\n## Salvamento automático e histórico de versões\nPor exemplo, eu tenho uma pasta de trabalho que tem dez planilhas. Abri em um momento e apaguei dessas dez... apaguei nove. E vejam que, na verdade, agora já está habilitado o salvamento automático. Ou seja, cada detalhezinho que eu faço aqui, um ou dois cliques, já está salvo, porque ele salva automaticamente.\n\nÓbvio que há exceções de erro; não vamos tratar dessas exceções aqui. Então, eu tinha dez planilhas, abri e decidi apagar cinco, seis, sete, oito planilhas e salvei. Ou já estava salvando automático. Aí me dei conta: “Poxa, vou precisar de uma versão com as dez planilhas”. O que eu faço? Vou ao histórico de versões, pego a versão anterior. Posso salvar com outro nome, posso salvar em cima daquela que eu estou usando, fica à vontade. É muito prático. Já usei algumas vezes.\n\nQuem nunca abriu um modelo de documento ou, no caso do Excel, uma pasta de trabalho, começou a mexer e, quando se deu conta, precisava fazer um arquivo do mês específico e começou a mexer no arquivo do mês passado, salvando em cima dele? E agora não dá para desfazer mais porque já fechou. Vai lá no histórico de versões. É bem legal. Pode haver também histórico no OneDrive, não está necessariamente vinculado ao Excel local. Estou mostrando ferramentas próprias que serão úteis.\n\n> 🎯 Dicas de prova: “Pasta de trabalho do Excel” é o nome correto do arquivo (.xlsx). Planilha é o conteúdo interno; o arquivo é a pasta de trabalho.\n\n## Compatibilidade e formatos de arquivo\nDito isso, anote lá naquele materialzinho: essa é a extensão padrão, porque não é a única. Repito: o Excel trabalha com vários formatos. Sobre compatibilidade de arquivos: mesmo que no seu edital não tenha outro programa, é bom você saber isso aqui de qualquer jeito.\n\nO Excel tem compatibilidade com outros programas. Aqui a gente vai tratar especificamente do Calc. Não vamos chamar de concorrente, mas é um programa bem similar ao Excel, do pacote LibreOffice, que também é um editor de planilhas eletrônicas.\n\nEu recebi um arquivo do Calc. Qual é a extensão do Calc? O arquivo do Calc vai estar com a extensão .ods. Eu recebi esse arquivo. Consigo abrir usando o Office 365? Sim. O Excel abre .ods. Mas eu quero mandar um arquivo para alguém, e essa pessoa não tem Excel ou tem dificuldade em abrir outra extensão? Eu quero salvar com a extensão .ods. O Excel abre e salva arquivos .ods.\n\nPor exemplo, “Salvar como” ou “Salvar uma cópia”, “Procurar”... A “Pasta de trabalho do Excel” é o padrão .xlsx. Vejamos outras extensões. Precisa decorar todas? Não. Quando tem macro, isso é importante saber: .xlsm (com macros). Não é tão frequente cobrarem, não é a ênfase da edição, mas saiba. “Trabalho binário” (.xlsb). As versões anteriores, de 97 até 2003, não têm o “x” (.xls). “Delimitado por vírgula” é o CSV (.csv), normal.\n\nSalva “como” e salva a extensão total desses formatos. O que mais nos interessa: PDF. Vamos tratar daqui a pouco: “Exportar” e “Salvar como PDF”.\n\nEntão, ele abre e salva arquivos, com exceção de alguns recursos. Demos uma passeada em outras extensões também. Não vamos ficar parados nessa tela cobrando extensões. Uma observação importante: ao abrir arquivos do Calc no Excel e vice-versa, pode acontecer perda de formatação. Não é garantia que vai funcionar tudo. Existem recursos que só o Excel tem. Se você salvar usando esses recursos, eles podem não funcionar no Calc. Pode haver divergência.\n\n## Exportando para PDF e XPS\nSalvar arquivos no formato PDF: por algum motivo eu quero salvar minha planilha, ou as planilhas, como PDF. Você viu que é possível em “Salvar uma cópia”. Também é possível usando “Exportar”, que permite criar documentos PDF ou XPS. Nessas duas opções dá para salvar como PDF: no próprio “Salvar como” (escolhendo PDF) ou em “Exportar” > “Criar PDF/XPS”.\n\nVocê escolhe o local, “Mais opções” se precisar. Ao invés da extensão padrão .xlsx, escolha PDF ou XPS (formato similar da Microsoft ao PDF, que mantém o layout). Não vou falar de edição agora, mas o objetivo é manter o formato independente do computador.\n\nQuando eu salvo em PDF/XPS, a pessoa do outro lado não precisa ter Excel; precisa de um leitor de PDF/XPS. Não vai poder executar funções, fazer cálculos, nada; está tudo “estático”, como texto e layout. Mas é uma maneira útil quando o objetivo é somente apresentar.\n\nObservação: o Excel gera documentos em PDF, mas não é capaz de abri-los; é necessário outro software para essa tarefa.\n\n> 🎯 Dicas de prova: Excel gera PDF/XPS via “Salvar como” ou “Exportar”, mas não abre PDF. XPS é o formato similar da Microsoft.\n\n## Revisão ortográfica e limitações gramaticais\nTrocando de página: correção. Vamos escrever aqui errado. Geralmente a verificação vem habilitada, mas vamos conferir: Arquivo > Opções > Revisão de Texto. Por padrão vem marcada “Ignorar palavras em MAIÚSCULAS”. Como já havia mudado isso aqui usando o Word (eles usam a mesma base), desmarcou também. Ou seja, ele vai corrigir palavras em maiúsculas.\n\nNa hora do ocorrido, às vezes ele não marca algumas coisas. Vou colocar outra palavra errada. Temos dois tipos de erros: erro ortográfico (quanto à escrita) e erro gramatical (quanto à concordância).\n\nPosso usar o atalho F7 ou clicar em “Verificar ortografia”. Ele detecta o “errado”, sugere correção, eu altero e continuo. Concluído? Beleza. A partir disso, com a informação que eu tenho: o Excel não faz correção gramatical. Para mim isso é incrível, mas ele não faz correção gramatical. Repito: não é a ênfase do programa. Eu quero escrever um texto bem humorado, mas, na minha opinião, não custaria nada ter correção gramatical.\n\nPleonasmo pode acontecer. A gente está acostumado a “subir para cima”, “entrar para dentro”, “sair para fora”. Na sua apresentação escrita na planilha, muita formalidade pode ser necessária. Você pode escrever “temos que subir para cima nossas metas”. Me dou conta depois. Pode acontecer, e o chefe pega no pé. O Excel não faz correção gramatical. Fim e ponto.\n\nEntão, correção no Excel é ortográfica (sublinha erros e sugere trocas), mas não gramatical. Atalho: F7, ou o botãozinho do ABC na guia Revisão.\n\n> 🎯 Dicas de prova: Excel verifica ortografia (F7), não gramática.\n\n## Área de transferência: Excel x Office\nDigo novamente: a área de transferência do Excel armazena somente um item. Então, quando eu venho aqui, seleciono um item e copio, isso tem que estar piscando na sua cabeça na hora da prova. Um item pode ser uma palavra, uma fórmula, um texto dentro da célula, ou várias células selecionadas — mas é um item.\n\nDepois falaremos que, quando copia no Excel, não é “o que aparece” apenas; é o conteúdo. Depois tratamos disso. Por ora, vamos ser superficiais: copiou, é um item.\n\nColei, beleza. O que eu posso fazer? Posso ativar o painel da área de transferência do Office: guia Início > grupo Área de Transferência > botão para abrir o painel. Aqui estou usando a suíte, então esse painel coleta múltiplos itens (até 24). Ele mostra que foi copiado do próprio Excel; se for de outra fonte, aparece também.\n\nVocê pode parar de coletar, pode limpar, pode colocar uma observação (no painel há opções). Faça da maneira que for melhor para você.\n\n## Material de apoio e como estudar\nAlém desse PDF, eu vou mandar a pasta de trabalho que vou usar durante a aula, contendo as fórmulas já prontinhas, para caso você queira fazer junto. Mesmo se você não tiver o 365, a maioria das funções vai funcionar. Há pouquíssimas exceções. Na verdade, me lembro de uma função de cabeça que talvez não funcione em versões bem antigas, mas no geral funciona.\n\n“Como assim, se eu quiser? Professor, você tem que falar o que fazer, eu vou fazer.” Eu vou falar; só que o que eu falar pode não ser o melhor para você. Esse é um paradigma que muita gente tem medo de quebrar. É uma das dúvidas que mais recebo: “Como é que eu estudo?” Eu não te conheço, não sei se você gosta de estudar com perna para cima, para baixo, ouvindo música, no silêncio absoluto…\n\nComo descobrir a melhor maneira? Descubra testando. Não existe gabarito da maneira perfeita de estudar. O que é melhor para mim pode ser a pior forma para você.\n\nDesculpe o tempo que eu estou “perdendo” para falar isso, mas pode ser um diferencial nos estudos, em todas as matérias. Use este gesto: testar. A primeira coisa é usar o material. Quantas vezes brasileiros recebem um material e não usam? Quem estiver conectado comigo vai absorver isso e usar da maneira correta. Não tem uma receita que serve para todo mundo. Manual é uma coisa; a vida, outra.\n\n💬 História: Comprei uma cafeteira e tinham peças extras. No manual estava escrito “não usar isso aqui” porque era de uma versão anterior. Na minha versão atualizada, não se usava aquela peça. Está lá, veio, mas não é para usar. Assim é com material de estudo: você escolhe o que serve para sua versão, para sua realidade.\n\nSe você está começando agora e não sabe como estudar: veio uma planilha, tem o PDF. Não? Então assista à videoaula totalmente, só olhando e prestando atenção. Pode dar certo? Pode. O que dizem os estudiosos é que anotar ajuda mais. Mas cada um é cada um. Tem gente que planeja o dia todo e não estuda nada — a tal da procrastinação. Vídeo “Como acabar com a procrastinação”: o cara salva “para mais tarde”... Quem nunca? Não temos que ser perfeitos. Temos que fazer o feito, da melhor forma possível com o seu perfil.\n\nPerde o medo. Quando você se conhece, sabe o que quer para sua vida e o que não cabe nela. Você não aceita mais certas coisas.\n\n## Compatibilidade com sistemas operacionais\nNúmero sete: compatibilidade com sistemas operacionais. Pelo amor de Deus, é só sistema operacional, beleza? O nosso pacote é compatível com Windows. Não vou falar de outros porque raramente são cobrados em concursos. Ele é compatível com Windows. Sobre Linux: não é o foco aqui.\n\n> 🎯 Dicas de prova: Office 365/Excel é compatível com Windows. Questões de SO em concurso costumam focar nisso.\n\n## Botões e recursos na interface\nVoltando aqui: tenho alguns botões. Alguns eu já trabalhei, outros vou mostrar durante a aula, naquela ideia que falei anteriormente.\n\nJá mostrei: excluir linha ou coluna. Já mostrei classificação. Estilo de porcentagem, mostrei. Aumentar/diminuir casas decimais, mostrei. Formatação condicional eu vou mostrar durante a aula.\n\nAqui em cima você tem a barra de fórmulas. Você tem a caixa de nomes — vamos trabalhar durante a aula. Você tem a guia de funções, que vai permitir inserir funções. Tem o “Cancelar” para cancelar a inserção de valores. Sem mistério.\n\nQuem não imprimiu o PDF, pelo menos abra na tela. Sem drama. E, como eu falei, perder o medo: eu entendo quem quer alguém segurando literalmente na mão o tempo todo. Quando essa pessoa solta a mão, “agora estou sozinho”. A vida é isso. Alguém te ensina, te guia. Alguns tiveram que aprender literalmente sozinhos, largados no mundo. A vida ensina.\n\nNão é regra para todo mundo. Cada um tem uma experiência, foge à normalidade às vezes. Integração de coisas e tal... Vem comigo aqui e vamos continuar nosso passeio.\n\n## Transição para a planilha prática\nEu vou fechar essa pasta de trabalho. Não usaremos mais essa. A partir de agora vou usar essencialmente a pasta de trabalho “aula prática Excel 365”, que vai estar disponível junto com a aula.\n\nVamos começar a tratar da estrutura. Depois de falar isso aqui, eu parei porque vamos entrar mais tarde na parte de preenchimento total e outros recursos. Agora, estrutura da planilha, trabalhando já dentro da planilha.\n\n## Estrutura básica: colunas, linhas e células\nA estrutura é a seguinte:\n- As colunas A, B, C... são indicadas por uma ou mais letras.\n- As linhas são indicadas por números: 1, 2, 3, 4, 5...\n- O elemento chamado célula é indicado por uma referência: coluna + linha.\n\nCada célula apresenta um endereço único dentro da planilha. Na caixa de nomes eu posso verificar a referência da célula que estou, ou um nome se foi atribuído um nome a ela.\n\nPor exemplo, cliquei aqui em uma célula totalmente aleatória. Estou vendo agora: Célula E10. Na hora da prova, podem considerar “nome” como “referência”? Fique atento ao enunciado.\n\nCada célula tem um endereço único, dado pela coluna e pela linha. Coluna + linha, tranquilo. Isso é a base do Excel. Muita gente não sabe isso e erra na hora de analisar funções, achando as funções difíceis — e não são. Não são porque não entendem o básico.\n\nOutra coisa: a referência de uma célula é dada sempre na seguinte ordem: primeiro a coluna, depois a linha. Não há “5C”. Se eu quero ir para a célula C5, é C (coluna) + 5 (linha). Primeiro a coluna, depois a linha.\n\nIsso aqui é o básico do básico. Para começar, acabamos aqui outro bloco. Já já vamos continuar e vai começar a esquentar. Eu sei que muita gente está esperando o momento de fazer funções, mas, repito: se não entender isso, não vai andar.\n\nAté o próximo bloco. Continuamos já já!",
+  "transcricao_meta": {
+    "title": "Office 365 - Excel II",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 33502,
+    "createdAt": "2026-02-05T19:47:35.852Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: estrutura do arquivo e da planilha no Excel, mesclagem de células, salvamento e exportação (incluindo PDF), salvamento automático e histórico de versões, compatibilidade com LibreOffice Calc, correção ortográfica x gramatical, área de transferência e elementos de interface (barra de fórmulas, caixa de nomes).\nPrincipais pontos: \n- Arquivo do Excel = pasta de trabalho; planilha é parte da pasta de trabalho.\n- Mesclar e centralizar mantém apenas o conteúdo da célula superior esquerda.\n- Excel gera PDF, mas não abre PDF; faz correção ortográfica, não gramatical.\n\n## 1. Base / Conceitos Fundamentais\n- Estrutura de arquivo:\n  - Pasta de trabalho: o arquivo do Excel; contém uma ou mais planilhas.\n  - Planilha: aba dentro da pasta de trabalho.\n- Estrutura da planilha:\n  - Colunas: letras (A, B, C, …).\n  - Linhas: números (1, 2, 3, 4, 5, …).\n  - Célula: interseção coluna/linha; endereço único (ex.: E10).\n  - Ordem da referência: primeiro a coluna, depois a linha.\n- Elementos da interface:\n  - Barra de fórmulas: exibe/edita o conteúdo real da célula (valor, texto, fórmula).\n  - Caixa de nomes: mostra a referência da célula ativa (ex.: E10) ou nomes de intervalos.\n  - Botões relevantes em prova: Estilo de porcentagem, Aumentar/Diminuir casas decimais, Classificar, Formatação condicional, Cancelar (edição).\n- Licença do Excel (Office 365):\n  - Proprietário: não há acesso ao código-fonte. Contraponto: software livre permite acesso ao código-fonte.\n- Extensões e formatos (essenciais):\n  - Padrão moderno: XLSX (pasta de trabalho sem macro).\n  - PDF: formato de saída estático para distribuição/impressão.\n  - Observações usuais: há extensão específica para arquivo com macro e formato binário legado.\n\n## 2. Como Funciona / Distinções\n- Pasta de trabalho vs planilha:\n  - Pasta de trabalho = arquivo todo; planilha = uma aba dentro do arquivo.\n- Mesclar e centralizar:\n  - Combina várias células em uma única; mantém apenas o conteúdo da célula superior esquerda.\n- Correção ortográfica x gramatical:\n  - Ortográfica: verifica escrita das palavras.\n  - Gramatical: não é realizada pelo Excel (pleonasmos como “subir para cima” passam).\n- Salvamento automático e histórico de versões:\n  - Com salvamento automático ativo, cada alteração é gravada; histórico de versões permite recuperar versões anteriores.\n- Salvar/Exportar x Abrir PDF:\n  - Excel gera/exporta para PDF; não abre arquivos PDF (precisa de leitor de PDF externo).\n- Compatibilidade Excel x LibreOffice Calc:\n  - Há abertura cruzada de arquivos, mas pode ocorrer perda de formatação e recursos exclusivos do Excel podem não funcionar no Calc.\n- Área de transferência:\n  - Armazena o que foi copiado. No uso básico, 1 item por vez; com o painel da área de transferência aberto, é possível gerenciar múltiplos itens.\n\n## 3. Aplicação Prática / Técnicas\n- Referenciar células corretamente:\n  - Para identificar um endereço, leia “coluna, depois linha” (ex.: C5, não “5C”).\n  - Use a caixa de nomes para confirmar a seleção atual (ex.: intervalos).\n- Mesclar com segurança:\n  - Selecione o intervalo > Mesclar e centralizar.\n  - Antes de mesclar, mova/guarde dados das outras células, pois somente a superior esquerda será mantida.\n- Salvar como PDF:\n  - Arquivo > Salvar como > Mais opções > Tipo: PDF; ou\n  - Arquivo > Exportar > Criar PDF.\n- Recuperar versões:\n  - Com salvamento automático ativo: Arquivo > Informações > Histórico de versões > restaurar ou abrir e “salvar uma cópia”.\n- Verificar ortografia:\n  - Guia Revisão > verificar ortografia (ícone ABC).\n  - Ajustes: Arquivo > Opções > Revisão de texto (ex.: ignorar palavras maiúsculas).\n- Compatibilidade com Calc:\n  - Ao abrir no Calc, valide formatação e funcionalidades críticas (tabelas dinâmicas, recursos exclusivos).\n- Área de transferência ampliada:\n  - Abra o painel da área de transferência para visualizar/colar múltiplos itens copiados.\n\n## 4. Exemplos e Casos Resolvidos\n- Endereçamento:\n  - E10: coluna E, linha 10. C5 é válido; “5C”/“cinco C” é inválido.\n- Mesclar células:\n  - Seleciona-se A1:C1 contendo “A”, “B”, “C”. Ao mesclar, permanecerá apenas “A” (superior esquerda). “B” e “C” são descartados.\n- Salvamento e PDF:\n  - Criou planilha de orçamento e precisa enviar sem edição: Arquivo > Exportar > Criar PDF para distribuição.\n  - Excel gera o PDF; para abri-lo, use leitor de PDF.\n- Histórico de versões:\n  - Excluiu sem querer uma planilha ontem. Vá ao Histórico de versões, abra a versão desejada, “salvar uma cópia” para preservar ambas.\n- Ortografia x gramática:\n  - “errado” com grafia incorreta é sinalizado.\n  - “subir para cima” não é sinalizado (erro gramatical/pleonasmo).\n- Área de transferência:\n  - Copiou “três mil”, depois “dois, três, cinco, oito”. No básico, o último substitui o anterior. Com o painel aberto, ambos podem estar listados para colagem.\n\n## 5. Pegadinhas e Erros Comuns\n- Dica de Prova: “Arquivo do Excel” = pasta de trabalho; planilha é apenas uma aba.\n- Dica de Prova: Mesclar e centralizar mantém apenas o conteúdo da célula superior esquerda; demais são descartados.\n- Dica de Prova: Excel gera PDF, mas não abre PDF.\n- Dica de Prova: Excel faz correção ortográfica; não faz correção gramatical.\n- Dica de Prova: Ordem de referência é “coluna, linha” (ex.: C5). “Linha, coluna” é errado.\n- Dica de Prova: Área de transferência armazena “um item” no uso simples; com painel da área de transferência aberto, permite múltiplos itens.\n- Cuidado: Recursos exclusivos do Excel podem falhar no LibreOffice Calc (perda de formatação/funcionalidade).\n- Cuidado: Opção “ignorar palavras maiúsculas” pode fazer o verificador pular palavras em MAIÚSCULAS.\n- Cuidado: Chamar o arquivo de “planilha” em vez de “pasta de trabalho” costuma ser cobrado como erro conceitual.\n\nTabela rápida: Excel vs Calc\n- Abertura cruzada: Sim, com possíveis perdas de formatação.\n- Recursos exclusivos do Excel: podem não funcionar no Calc.\n- PDF: Excel gera, não abre; no ecossistema LibreOffice, há suporte consolidado para gerar/visualizar PDF.\n\nObservações essenciais de interface\n- Ações de menu:\n  - Arquivo: Salvar, Salvar como, salvar uma cópia, Exportar, Criar PDF, Opções.\n  - Revisão: verificar ortografia.\n  - Opções do Excel > Revisão de texto: ignorar palavras maiúsculas.\n- Itens visuais frequentes:\n  - ABC (verificação ortográfica), barra de fórmulas, caixa de nomes.\n\nEncerramento prático\n- Priorize: endereçamento correto (coluna→linha), diferenciação pasta de trabalho vs planilha, mesclagem segura, PDF como saída, e que o Excel corrige ortografia, não gramática.\n- Em compatibilidade, memorize: abre Calc e vice-versa, mas pode perder formatação/recursos.",
+  "resumo_bolso": "# Office 365 - Excel II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Pasta de trabalho (arquivo)**: arquivo do Excel; contém **uma ou mais planilhas**.\n* **Planilha**: **aba** dentro da pasta de trabalho; não é correto chamar o arquivo de “planilha”.\n* **Colunas**: identificadas por **letras** (A, B, C, …).\n* **Linhas**: identificadas por **números** (1, 2, 3, …).\n* **Célula**: interseção **coluna + linha**; endereço único (ex.: E10).\n* **Ordem da referência**: **primeiro coluna (letra), depois linha (número)** → C5 é válido; “5C” é inválido.\n* **Barra de fórmulas**: mostra/edita o **conteúdo real** da célula (valor, texto, fórmula).\n* **Caixa de nomes**: mostra a **referência da célula ativa** (ex.: E10) ou **nome de intervalos**.\n* **Mesclar e centralizar**: combina várias células em **uma única**, mantendo **apenas o conteúdo da célula superior esquerda**.\n* **Correção ortográfica**: Excel verifica **escrita das palavras** (ABC); **não faz correção gramatical** (pleonasmos como “subir para cima” passam).\n* **PDF no Excel**: Excel **gera/exporta PDF**, mas **não abre arquivos PDF** (usa-se leitor externo).\n* **Área de transferência**: no uso básico, armazena **1 item por vez**; com o **painel da área de transferência aberto**, permite **gerenciar múltiplos itens**.\n* **Licença / tipo de software**: Excel (Office 365) é **proprietário** (sem acesso ao código-fonte); em contraste, software livre permite acesso ao código.\n* **Formato padrão do Excel**: **.xlsx** (pasta de trabalho sem macro).\n* **Compatibilidade com LibreOffice Calc**: há **abertura cruzada**, mas com **possível perda de formatação** e **falha de recursos exclusivos do Excel**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Pasta de trabalho vs Planilha\n\n| Aspecto         | Pasta de trabalho (arquivo)        | Planilha (aba)                          |\n|-----------------|------------------------------------|-----------------------------------------|\n| Conceito        | Arquivo completo do Excel          | Parte do arquivo (uma aba)             |\n| Conteúdo        | 1 ou mais planilhas                | Células em linhas e colunas            |\n| Papel na prova  | Unidade de **salvamento/abertura** | Unidade de **trabalho dentro do arquivo** |\n\n---\n\n### Correção Ortográfica vs Gramatical\n\n| Aspecto             | Ortográfica (Excel faz)                 | Gramatical (Excel não faz)                |\n|---------------------|------------------------------------------|-------------------------------------------|\n| O que verifica      | Escrita correta das palavras            | Concordância, pleonasmo, regência etc.    |\n| Exemplo detectado   | Palavra com grafia incorreta            | —                                         |\n| Exemplo não pego    | —                                       | “subir para cima” (pleonasmo)             |\n| Ícone / acesso      | Guia Revisão → ícone **ABC**            | Não há verificador gramatical no Excel    |\n\n---\n\n### Excel vs LibreOffice Calc\n\n| Aspecto                 | Excel                                   | LibreOffice Calc                          |\n|-------------------------|-----------------------------------------|-------------------------------------------|\n| Tipo de software        | Proprietário                            | Software livre                            |\n| Formato padrão          | `.xlsx`                                | `.ods`                                    |\n| Abertura cruzada        | Abre arquivos do Calc (com riscos)     | Abre `.xlsx` (com riscos)                 |\n| Compatibilidade         | Recursos exclusivos podem falhar no Calc | Pode haver perda de formatação/recursos |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Endereçamento de Células**\n\n* Regra: **Coluna (letra) → Linha (número)**.  \n  Ex.: E10 = coluna E, linha 10; C5 é válido; “5C” é inválido.\n* Uso: para identificar corretamente o endereço de uma célula em questões.\n\n---\n\n**2. Mesclar e Centralizar**\n\n* Regra: ao mesclar um intervalo, **somente o conteúdo da célula superior esquerda é mantido**; os demais conteúdos são **descartados**.\n* Exemplo: A1=“A”, B1=“B”, C1=“C” → mesclar A1:C1 → permanece apenas “A”.\n\n---\n\n**3. PDF no Excel**\n\n* Regra: Excel **salva/exporta** em PDF (Arquivo > Salvar como > PDF ou Arquivo > Exportar > Criar PDF), mas **não abre arquivos PDF**.\n* Uso: gerar saída estática para distribuição/impressão; abertura é feita em leitor de PDF.\n\n---\n\n**4. Salvamento Automático e Histórico de Versões**\n\n* Regra: com **salvamento automático ativo**, cada alteração é gravada e o **histórico de versões** permite recuperar versões anteriores (Arquivo > Informações > Histórico de versões).\n* Exemplo: excluiu dados ontem → abra a versão anterior no histórico e use **Salvar uma cópia**.\n\n---\n\n**5. Área de Transferência**\n\n* Regra: no uso básico, a área de transferência guarda **apenas o último item copiado**; com o **painel da área de transferência aberto**, é possível **armazenar e colar múltiplos itens**.\n* Exemplo: copiou “três mil” e depois “dois, três, cinco, oito” → no uso simples, o segundo substitui o primeiro; com o painel aberto, ambos podem aparecer listados.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Chamar o **arquivo do Excel** de “planilha” em vez de **pasta de trabalho**.\n2. Afirmar que o Excel faz **correção gramatical** (ele só faz **ortográfica**).\n3. Esquecer que a ordem do endereço é **coluna, depois linha** (ex.: C5; “5C” está errado).\n4. Achar que **mesclar e centralizar** mantém o conteúdo de todas as células mescladas (mantém só a **superior esquerda**).\n5. Supor **compatibilidade total** entre Excel e LibreOffice Calc, sem perda de formatação ou recursos.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **pasta de trabalho (arquivo)** de **planilha (aba)**?\n* Fixei que **endereços de célula** são sempre **coluna → linha** (ex.: C5, não “5C”)?\n* Memorizei que **Mesclar e centralizar** mantém **apenas** a célula **superior esquerda**?\n* Lembrei que o Excel **gera/exporta PDF, mas não abre PDF**?\n* Sei que o Excel faz **correção ortográfica**, **não gramatical**?\n* Sei usar **salvamento automático** e **histórico de versões** para recuperar versões anteriores?\n* Gravei que **uso simples da área de transferência = 1 item**, **painel aberto = múltiplos itens**?\n* Estou atento à **perda de formatação/recursos** ao abrir arquivos do Excel no **LibreOffice Calc**?\n* Reconheço **barra de fórmulas** (conteúdo real) e **caixa de nomes** (endereço/nome do intervalo) na interface?",
+  "mapa_mental": "# 📊 Excel II – Office 365\n## 🧱 Estrutura Básica\n### 📁 Pasta de trabalho\n- Arquivo completo\n- Contém planilhas\n- Extensão padrão XLSX\n- Sem acesso código-fonte\n### 📄 Planilha\n- Aba da pasta\n- Grade linhas colunas\n- Várias por arquivo\n- Nome na guia\n### 🔢 Linhas e colunas\n- Colunas em letras\n- Linhas em números\n- Célula = interseção\n- Endereço único\n### 🔤 Endereçamento célula\n- Ordem coluna–linha\n- Exemplo C5 correto\n- Formato 1C incorreto\n- Caixa de nomes mostra\n### 💻 Interface principal\n- Barra de fórmulas\n- Caixa de nomes\n- Botão porcentagem\n- Casas decimais\n- Classificar dados\n\n## 🧮 Recursos e Funcionalidades\n### 🔗 Mesclar células\n- Mesclar e centralizar\n- Une várias células\n- Mantém superior esquerda\n- Demais conteúdos perdidos\n### 📝 Verificação ortográfica\n- Guia Revisão ABC\n- Corrige ortografia\n- Não corrige gramática\n- Ignorar maiúsculas opção\n### 📋 Área de transferência\n- Armazena item copiado\n- Uso simples um item\n- Painel vários itens\n- Colagem múltipla possível\n### 💾 Salvamento e versões\n- Salvar arquivo\n- Salvar como\n- Salvar uma cópia\n- Salvamento automático\n- Histórico de versões\n### 📄 PDF e exportação\n- Exportar para PDF\n- Salvar como PDF\n- Saída estática\n- Não abre PDF\n- Precisa leitor externo\n\n## 🔗 Compatibilidade e Conceitos\n### 🧩 Excel x Calc\n- Abertura cruzada\n- Possível perda formatação\n- Recursos exclusivos falham\n- Conferir funcionalidades\n### 🧾 Tipos de software\n- Software proprietário\n- Sem código-fonte\n- Software livre\n- Código-fonte acessível\n### 🎯 Conceitos cobrados\n- Arquivo = pasta trabalho\n- Planilha ≠ arquivo\n- Endereço coluna depois linha\n- Excel gera PDF\n- Só correção ortográfica",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Mesclagem de Células",
+      "description": "Mesclagem de Células — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a função do recurso **Mesclar e Centralizar** no Excel?",
+          "back": "Combinar todas as células em uma única só.",
+          "hint": "Refere-se a uma ação de unificação visual",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual conteúdo é preservado ao mesclar células com valores diferentes?",
+          "back": "O conteúdo da **célula superior esquerda**.",
+          "hint": "Pense na posição de leitura ocidental",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "mesclagem"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Arquivos do Excel",
+      "description": "Arquivos do Excel — 6 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual é a natureza da licença do Microsoft Office 365?",
+          "back": "Proprietário.",
+          "hint": "Oposto de software livre",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office-365",
+            "licenciamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "O que caracteriza uma licença de software proprietário?",
+          "back": "Licença em que o usuário **não tem acesso ao código-fonte**.",
+          "hint": "Relacionado à visibilidade do código",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "software",
+            "licenciamento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é a extensão padrão de uma pasta de trabalho do Excel?",
+          "back": "**xlsx**",
+          "hint": "Formato padrão atual",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Como é denominado oficialmente um arquivo que contém planilhas do Excel?",
+          "back": "Pasta de trabalho do Excel.",
+          "hint": "Terminologia técnica do programa",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a quantidade mínima de planilhas que uma pasta de trabalho pode conter?",
+          "back": "Uma.",
+          "hint": "Quantidade mínima absoluta",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "planilhas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual recurso do OneDrive permite recuperar uma versão anterior de uma pasta de trabalho?",
+          "back": "Histórico de versões.",
+          "hint": "Recurso de nuvem",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "onedrive",
+            "seguranca"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Compatibilidade de Formatos",
+      "description": "Compatibilidade de Formatos — 6 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é a extensão normalmente associada a arquivos do LibreOffice Calc?",
+          "back": "**ods**",
+          "hint": "Extensão do concorrente open source",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "calc",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "A qual período correspondem os arquivos do Excel no formato binário XLS?",
+          "back": "De 1997 até 2003.",
+          "hint": "Refere-se a versões legadas",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "compatibilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Que tipo de problema pode ocorrer ao abrir um arquivo do Calc no Excel?",
+          "back": "Pode haver **perda de formatação** e divergência em recursos exclusivos do Excel.",
+          "hint": "Problema de interoperabilidade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "compatibilidade"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual é a principal finalidade de exportar uma planilha para PDF?",
+          "back": "Criar documentos para visualização onde a pessoa não precisa ter o Excel instalado.",
+          "hint": "Foco na portabilidade do documento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "exportacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Quais operações de uma planilha deixam de ser executáveis após a exportação para PDF?",
+          "back": "Executar funções e cálculos.",
+          "hint": "O que o formato PDF não permite fazer?",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "pdf"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual limitação o Excel apresenta em relação a arquivos PDF?",
+          "back": "O Excel **apenas gera** documentos em formato PDF, mas não é capaz de abri-los.",
+          "hint": "Limitação de leitura do software",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "pdf"
+          ],
+          "type": "exception"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Revisão e Transferência",
+      "description": "Revisão e Transferência — 5 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual atalho inicia a verificação ortográfica no Excel?",
+          "back": "**F7**",
+          "hint": "Tecla de função padrão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é a diferença entre erro ortográfico e erro gramatical?",
+          "back": "O erro ortográfico refere-se à **escrita**, enquanto o erro gramatical refere-se à **concordância**.",
+          "hint": "Diferença entre escrita e sintaxe",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "revisao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-17",
+          "front": "Que tipo de erro o corretor do Excel verifica predominantemente?",
+          "back": "Erros ortográficos.",
+          "hint": "O que o corretor foca?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "revisao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Quantos itens a área de transferência padrão mantém simultaneamente?",
+          "back": "Somente um item.",
+          "hint": "Capacidade do sistema operacional",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows",
+            "area-transferencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual é a capacidade máxima da área de transferência do Office?",
+          "back": "24 itens.",
+          "hint": "Capacidade do pacote Office",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office-365",
+            "area-transferencia"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Estrutura da Planilha",
+      "description": "Estrutura da Planilha — 3 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Como as colunas de uma planilha do Excel são identificadas?",
+          "back": "Por uma ou mais letras.",
+          "hint": "Identificação vertical",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Como é formado o endereço de uma célula no Excel?",
+          "back": "Endereço único dado pela coluna e pela linha.",
+          "hint": "Interseção de coordenadas",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual é a ordem dos componentes em uma referência de célula?",
+          "back": "Primeiro a **coluna**, depois a **linha**.",
+          "hint": "Sintaxe de notação",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Excel, qual é a extensão padrão de arquivo utilizada para salvar uma pasta de trabalho?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": ".csv",
+          "correct": false,
+          "explanation": "Incorreta. A extensão .csv (Comma Separated Values) é um formato de arquivo de texto simples que armazena dados tabulares, onde as colunas são separadas por vírgulas (ou outro delimitador). Não é o formato padrão de uma pasta de trabalho completa do Excel, que pode conter múltiplas planilhas, formatação e fórmulas."
+        },
+        {
+          "id": "b",
+          "text": ".xlsx",
+          "correct": true,
+          "explanation": "Correta. A extensão padrão para arquivos do Microsoft Excel a partir da versão 2007 é .xlsx. O 'x' no final indica que o formato é baseado em XML (Open XML), o que proporciona melhor compatibilidade e compressão de arquivos."
+        },
+        {
+          "id": "c",
+          "text": ".xls",
+          "correct": false,
+          "explanation": "Incorreta. A extensão .xls é utilizada por versões mais antigas do Microsoft Excel (anteriores a 2007) e não é a extensão padrão atual. Embora ainda seja suportada para compatibilidade, não é a principal para novos arquivos."
+        },
+        {
+          "id": "d",
+          "text": ".ods",
+          "correct": false,
+          "explanation": "Incorreta. A extensão .ods (OpenDocument Spreadsheet) é o formato padrão para planilhas eletrônicas do LibreOffice Calc e OpenOffice Calc, e não do Microsoft Excel."
+        }
+      ],
+      "explanation": "Correta. A extensão padrão para arquivos do Microsoft Excel a partir da versão 2007 é .xlsx. O 'x' no final indica que o formato é baseado em XML (Open XML), o que proporciona melhor compatibilidade e compressão de arquivos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a nomenclatura correta para se referir a um arquivo do Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Pasta de trabalho",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, um arquivo é oficialmente chamado de \"pasta de trabalho\" (workbook). Uma pasta de trabalho pode conter uma ou mais planilhas (worksheets), que são as grades onde os dados são inseridos e manipulados."
+        },
+        {
+          "id": "b",
+          "text": "Arquivo de dados tabulares",
+          "correct": false,
+          "explanation": "Incorreta. \"Arquivo de dados tabulares\" é uma descrição funcional, mas não a nomenclatura específica que o Microsoft Excel utiliza para seus arquivos. O termo correto é \"pasta de trabalho\"."
+        },
+        {
+          "id": "c",
+          "text": "Documento de cálculo",
+          "correct": false,
+          "explanation": "Incorreta. \"Documento de cálculo\" não é a nomenclatura oficial ou comum para um arquivo do Microsoft Excel. O termo mais preciso e utilizado pelo próprio programa é \"pasta de trabalho\"."
+        },
+        {
+          "id": "d",
+          "text": "Planilha eletrônica",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Excel seja uma \"planilha eletrônica\", este é um termo genérico que descreve a categoria de software. A nomenclatura específica para um arquivo do Excel é \"pasta de trabalho\"."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, um arquivo é oficialmente chamado de \"pasta de trabalho\" (workbook). Uma pasta de trabalho pode conter uma ou mais planilhas (worksheets), que são as grades onde os dados são inseridos e manipulados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é o tipo de licença do Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Software livre com código-fonte aberto disponível para modificação",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel, como parte do pacote Microsoft Office, não é um software livre. Software livre permite o acesso e a modificação do código-fonte, o que não é o caso do Excel."
+        },
+        {
+          "id": "b",
+          "text": "Software proprietário sem acesso ao código-fonte",
+          "correct": true,
+          "explanation": "Correta. O Microsoft Excel é um software proprietário. Isso significa que a Microsoft detém os direitos autorais e de propriedade intelectual sobre o programa, e o código-fonte não é disponibilizado publicamente para que os usuários possam visualizá-lo ou modificá-lo. O uso do software é regido por uma licença de usuário final (EULA)."
+        },
+        {
+          "id": "c",
+          "text": "Software de domínio público sem restrições de distribuição",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel não é um software de domínio público. Software de domínio público não possui restrições de direitos autorais e pode ser usado e distribuído livremente por qualquer pessoa, o que contraria o modelo de licenciamento da Microsoft para o Excel."
+        },
+        {
+          "id": "d",
+          "text": "Software gratuito com licença de uso ilimitado",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel não é um software gratuito. Ele é comercializado pela Microsoft e requer a aquisição de uma licença de uso, seja por compra única ou por assinatura (como no Microsoft 365)."
+        }
+      ],
+      "explanation": "Correta. O Microsoft Excel é um software proprietário. Isso significa que a Microsoft detém os direitos autorais e de propriedade intelectual sobre o programa, e o código-fonte não é disponibilizado publicamente para que os usuários possam visualizá-lo ou modificá-lo. O uso do software é regido por uma licença de usuário final (EULA).",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Como é formado o endereço único de uma célula no Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Por coordenadas numéricas bidimensionais, como (3,5) ou (1,10)",
+          "correct": false,
+          "explanation": "Incorreta. Embora o conceito de coordenadas bidimensionais esteja presente, o Excel utiliza um sistema de letras para colunas e números para linhas, e não uma notação de pares ordenados como (3,5) ou (1,10) para o endereço da célula."
+        },
+        {
+          "id": "b",
+          "text": "Pela coluna seguida da linha, como C5 ou A10",
+          "correct": true,
+          "explanation": "Correta. O endereço único de uma célula no Microsoft Excel é formado pela letra que representa a coluna, seguida pelo número que representa a linha. Por exemplo, 'C5' refere-se à célula na coluna C e na linha 5, e 'A10' refere-se à célula na coluna A e na linha 10."
+        },
+        {
+          "id": "c",
+          "text": "Por identificadores alfanuméricos sequenciais, como CEL001 ou CEL002",
+          "correct": false,
+          "explanation": "Incorreta. Identificadores alfanuméricos sequenciais como CEL001 ou CEL002 não são o método padrão do Excel para referenciar células. O sistema utiliza a combinação de letra da coluna e número da linha para criar um endereço único e intuitivo."
+        },
+        {
+          "id": "d",
+          "text": "Pela linha seguida da coluna, como 5C ou 10A",
+          "correct": false,
+          "explanation": "Incorreta. A ordem correta para referenciar uma célula no Excel é sempre a coluna seguida da linha. Referências como 5C ou 10A não são válidas no padrão do Excel."
+        }
+      ],
+      "explanation": "Correta. O endereço único de uma célula no Microsoft Excel é formado pela letra que representa a coluna, seguida pelo número que representa a linha. Por exemplo, 'C5' refere-se à célula na coluna C e na linha 5, e 'A10' refere-se à célula na coluna A e na linha 10.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a função do recurso 'Mesclar e Centralizar' no Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Combinar o conteúdo de todas as células selecionadas em uma única célula, preservando todos os valores",
+          "correct": false,
+          "explanation": "Incorreta. O recurso 'Mesclar e Centralizar' combina as células, mas não preserva o conteúdo de todas elas. Ele mantém apenas o conteúdo da célula superior esquerda, descartando os demais."
+        },
+        {
+          "id": "b",
+          "text": "Distribuir uniformemente o conteúdo entre as células selecionadas mantendo-as separadas",
+          "correct": false,
+          "explanation": "Incorreta. O 'Mesclar e Centralizar' não distribui o conteúdo uniformemente nem mantém as células separadas. Pelo contrário, ele as une em uma única célula, e o conteúdo restante é o da célula superior esquerda."
+        },
+        {
+          "id": "c",
+          "text": "Centralizar o conteúdo de cada célula individualmente sem alterar a estrutura das células",
+          "correct": false,
+          "explanation": "Incorreta. Este recurso não centraliza o conteúdo de cada célula individualmente sem alterar a estrutura. Sua principal função é mesclar células, ou seja, transformar várias células em uma só, e então centralizar o conteúdo dessa nova célula mesclada."
+        },
+        {
+          "id": "d",
+          "text": "Combinar todas as células selecionadas em uma única célula, mantendo apenas o conteúdo da célula superior esquerda",
+          "correct": true,
+          "explanation": "Correta. A função 'Mesclar e Centralizar' no Microsoft Excel combina as células selecionadas em uma única célula maior e centraliza o conteúdo. No entanto, um detalhe importante é que, ao mesclar, apenas o conteúdo da célula superior esquerda do intervalo selecionado é mantido; os conteúdos das outras células são descartados."
+        }
+      ],
+      "explanation": "Correta. A função 'Mesclar e Centralizar' no Microsoft Excel combina as células selecionadas em uma única célula maior e centraliza o conteúdo. No entanto, um detalhe importante é que, ao mesclar, apenas o conteúdo da célula superior esquerda do intervalo selecionado é mantido; os conteúdos das outras células são descartados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "O Microsoft Excel possui compatibilidade para abrir e salvar arquivos em qual formato do LibreOffice Calc?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": ".ods (Open Document Spreadsheet)",
+          "correct": true,
+          "explanation": "Correta. O formato .ods (Open Document Spreadsheet) é o padrão para planilhas eletrônicas do LibreOffice Calc. O Microsoft Excel possui compatibilidade para abrir e salvar arquivos neste formato, permitindo a interoperabilidade entre os dois programas."
+        },
+        {
+          "id": "b",
+          "text": ".odf (Open Document Format)",
+          "correct": false,
+          "explanation": "Incorreta. O formato .odf (Open Document Format) é uma família de formatos, e não um formato específico para planilhas que o Excel abriria diretamente como compatível. O formato específico para planilhas é o .ods."
+        },
+        {
+          "id": "c",
+          "text": ".odp (Open Document Presentation)",
+          "correct": false,
+          "explanation": "Incorreta. O formato .odp é utilizado para apresentações (Open Document Presentation) no LibreOffice Impress, não sendo o formato de planilha eletrônica compatível com o Microsoft Excel."
+        },
+        {
+          "id": "d",
+          "text": ".odt (Open Document Text)",
+          "correct": false,
+          "explanation": "Incorreta. O formato .odt é utilizado para documentos de texto (Open Document Text) no LibreOffice Writer, não sendo o formato de planilha eletrônica compatível com o Microsoft Excel."
+        }
+      ],
+      "explanation": "Correta. O formato .ods (Open Document Spreadsheet) é o padrão para planilhas eletrônicas do LibreOffice Calc. O Microsoft Excel possui compatibilidade para abrir e salvar arquivos neste formato, permitindo a interoperabilidade entre os dois programas.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a capacidade do Microsoft Excel em relação ao formato PDF?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O Excel pode gerar documentos no formato PDF, mas não é capaz de abri-los",
+          "correct": true,
+          "explanation": "Correta. O Microsoft Excel pode exportar ou salvar planilhas como documentos no formato PDF. No entanto, ele não consegue abrir arquivos PDF existentes para visualização ou edição. Para abrir um PDF, é necessário um programa específico para esse formato."
+        },
+        {
+          "id": "b",
+          "text": "O Excel pode gerar, abrir e editar documentos no formato PDF nativamente",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel é capaz de gerar documentos PDF, mas não possui a funcionalidade nativa de abrir ou editar arquivos PDF diretamente em sua interface. Para isso, seria necessário um software leitor ou editor de PDF."
+        },
+        {
+          "id": "c",
+          "text": "O Excel não possui nenhuma funcionalidade relacionada ao formato PDF",
+          "correct": false,
+          "explanation": "Incorreta. O Excel possui sim funcionalidades relacionadas ao formato PDF, especificamente a capacidade de gerar documentos neste formato a partir de suas planilhas."
+        },
+        {
+          "id": "d",
+          "text": "O Excel pode abrir documentos PDF para edição, mas não pode gerá-los",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não pode abrir documentos PDF para edição. Ele apenas gera arquivos PDF a partir de suas planilhas."
+        }
+      ],
+      "explanation": "Correta. O Microsoft Excel pode exportar ou salvar planilhas como documentos no formato PDF. No entanto, ele não consegue abrir arquivos PDF existentes para visualização ou edição. Para abrir um PDF, é necessário um programa específico para esse formato.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual tipo de correção o Microsoft Excel realiza automaticamente durante a digitação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Correção gramatical de concordância, mas não correção ortográfica",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não realiza a correção gramatical de concordância. Sua principal função de revisão de texto é a ortográfica."
+        },
+        {
+          "id": "b",
+          "text": "Correção ortográfica e correção gramatical de concordância",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Excel realiza a correção ortográfica, mas não a correção gramatical de concordância de forma automática. Ele foca na grafia das palavras."
+        },
+        {
+          "id": "c",
+          "text": "Correção semântica e sintática completa do texto digitado",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não possui capacidades de correção semântica ou sintática completa. Sua ferramenta de revisão é limitada à ortografia."
+        },
+        {
+          "id": "d",
+          "text": "Correção ortográfica, mas não correção gramatical de concordância",
+          "correct": true,
+          "explanation": "Correta. O Microsoft Excel, por padrão e foco de sua funcionalidade de revisão de texto, realiza a correção ortográfica, ou seja, verifica a grafia das palavras. Ele não oferece um corretor gramatical para identificar erros de concordância verbal ou nominal, por exemplo."
+        }
+      ],
+      "explanation": "Correta. O Microsoft Excel, por padrão e foco de sua funcionalidade de revisão de texto, realiza a correção ortográfica, ou seja, verifica a grafia das palavras. Ele não oferece um corretor gramatical para identificar erros de concordância verbal ou nominal, por exemplo.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Quando ocorre a abertura de arquivos do LibreOffice Calc no Microsoft Excel ou vice-versa, qual situação pode acontecer?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Abertura apenas em modo somente leitura sem possibilidade de edição",
+          "correct": false,
+          "explanation": "Incorreta. A abertura em modo somente leitura não é a única situação; geralmente, o arquivo pode ser editado, mas com o risco de perda de formatação ou funcionalidade, como mencionado na alternativa correta."
+        },
+        {
+          "id": "b",
+          "text": "Impossibilidade total de abertura devido à incompatibilidade completa entre os formatos",
+          "correct": false,
+          "explanation": "Incorreta. Embora possa haver incompatibilidades, a impossibilidade total de abertura não é a regra, especialmente para formatos abertos como o .ods. O Excel e o Calc são projetados para ter alguma interoperabilidade."
+        },
+        {
+          "id": "c",
+          "text": "Possível perda de formatação devido a recursos específicos de cada programa",
+          "correct": true,
+          "explanation": "Correta. Ao abrir arquivos do LibreOffice Calc no Microsoft Excel (ou vice-versa), é comum que ocorra perda de formatação ou de funcionalidades específicas. Isso acontece porque cada programa possui recursos e implementações ligeiramente diferentes, e nem todos são convertidos perfeitamente entre as suítes de escritório."
+        },
+        {
+          "id": "d",
+          "text": "Conversão automática e perfeita de todos os recursos sem qualquer perda de funcionalidade",
+          "correct": false,
+          "explanation": "Incorreta. A conversão automática e perfeita de todos os recursos sem qualquer perda de funcionalidade é rara entre programas de suítes de escritório diferentes, mesmo com compatibilidade de formatos. Recursos específicos de um programa podem não ter um equivalente exato no outro."
+        }
+      ],
+      "explanation": "Correta. Ao abrir arquivos do LibreOffice Calc no Microsoft Excel (ou vice-versa), é comum que ocorra perda de formatação ou de funcionalidades específicas. Isso acontece porque cada programa possui recursos e implementações ligeiramente diferentes, e nem todos são convertidos perfeitamente entre as suítes de escritório.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a diferença fundamental entre uma pasta de trabalho e uma planilha no contexto do Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma pasta de trabalho refere-se ao conjunto de fórmulas enquanto uma planilha refere-se aos dados brutos",
+          "correct": false,
+          "explanation": "Incorreta. A pasta de trabalho não se refere especificamente a fórmulas, nem a planilha a dados brutos. Ambos podem conter dados, fórmulas, gráficos, etc. A pasta de trabalho é o contêiner das planilhas."
+        },
+        {
+          "id": "b",
+          "text": "Uma pasta de trabalho é um arquivo temporário enquanto uma planilha é o arquivo permanente salvo no disco",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a pasta de trabalho quanto a planilha são componentes de um arquivo salvo. Uma pasta de trabalho é o arquivo principal, e as planilhas são as abas dentro dela."
+        },
+        {
+          "id": "c",
+          "text": "Uma pasta de trabalho é o arquivo que contém uma ou mais planilhas dentro dele",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, uma pasta de trabalho (ou 'workbook') é o arquivo principal que o usuário salva. Este arquivo pode conter uma ou mais planilhas (ou 'worksheets'), que são as abas individuais onde os dados são inseridos e organizados. Cada planilha, por sua vez, é composta por células organizadas em linhas e colunas."
+        },
+        {
+          "id": "d",
+          "text": "Uma pasta de trabalho é utilizada para cálculos simples enquanto uma planilha é para cálculos complexos",
+          "correct": false,
+          "explanation": "Incorreta. A complexidade dos cálculos não define a diferença entre pasta de trabalho e planilha. Ambas podem ser usadas para cálculos simples ou complexos. A distinção está na hierarquia: a pasta de trabalho contém as planilhas."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, uma pasta de trabalho (ou 'workbook') é o arquivo principal que o usuário salva. Este arquivo pode conter uma ou mais planilhas (ou 'worksheets'), que são as abas individuais onde os dados são inseridos e organizados. Cada planilha, por sua vez, é composta por células organizadas em linhas e colunas.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_255657_Office 365 - Excel II.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:50:36"
+}

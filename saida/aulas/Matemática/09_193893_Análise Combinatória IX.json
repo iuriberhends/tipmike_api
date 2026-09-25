@@ -1,0 +1,464 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 9,
+  "ordem_no_curso": "71.00",
+  "titulo": "Análise Combinatória IX",
+  "codigo_aula": "193893",
+  "video_id": "4MBb7MiU3NM=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:38:54",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/4MBb7MiU3NM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=425315%2C404273&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória IX\n\n## Introdução e contexto da aula\nVamos continuar com Análise Combinatória, trabalhando com questões em que a ordem não importa. Essa questão que eu trouxe agora é muito legal, puxa um pouco o raciocínio, força um pouco. É de outubro, com doze pessoas; dentre elas, Ana e Pedro. A ideia é formar comissões de três pessoas.\n\nEu sempre digo: façam prova riscando, sublinhando de maneira organizada. E fiquem tranquilos que o curso está completo. Além disso, vocês vão receber um caderno de questões separado por assuntos, com cerca de 300 questões comentadas. Eu vou viajar para descansar, mas vou levar material para finalizar esse caderno de questões para vocês. A ideia é: além do curso completo, vocês terão um material com trezentas questões para ficar craque.\n\n## Comissões com restrição: Ana e Pedro não podem ficar juntos\nTemos doze pessoas, dentre elas Ana e Pedro. Precisamos do número de comissões de três pessoas que podem ser formadas com a condição: Ana e Pedro não podem estar juntos na mesma comissão.\n\nAqui, a ordem não importa. Então, multiplicou, divide. Mas atenção: muita gente erra porque foca só em “Ana e Pedro juntos ou separados” e esquece de mapear as situações que realmente podem acontecer. Aqui temos três tipos de comissões possíveis:\n1) Comissão com Ana e sem Pedro.\n2) Comissão com Pedro e sem Ana.\n3) Comissão sem Ana e sem Pedro.\n\nAs pessoas costumam esquecer esse terceiro tipo. Não foquem só em “Ana e Pedro”. Pode ter comissão só com Ana, só com Pedro e sem nenhum dos dois. Lógico: completar com os demais.\n\nVamos montar passo a passo.\n\n- Tipo 1: com Ana e sem Pedro. Ana está dentro, Pedro está fora. Sobram os outros dez para preencher as duas vagas restantes.\n- Tipo 2: com Pedro e sem Ana. Agora Pedro está dentro, Ana está fora. De novo, as duas vagas restantes vêm dos outros dez.\n- Tipo 3: sem Ana e sem Pedro. As três vagas são preenchidas só pelos outros dez.\n\nAgora, quantifiquemos cada tipo.\n\nTipo 1 (com Ana, sem Pedro):\n- Uma vaga é da Ana, as outras duas são escolhidas entre os outros 10.\n- Contagem: 10 × 9 ÷ 2 = 45.\n\nTipo 2 (com Pedro, sem Ana):\n- Uma vaga é do Pedro, as outras duas são escolhidas entre os outros 10.\n- Contagem: 10 × 9 ÷ 2 = 45.\n\nTipo 3 (sem Ana, sem Pedro):\n- Três vagas escolhidas entre os outros 10.\n- Contagem: 10 × 9 × 8 ÷ (3 × 2 × 1) = 120.\n\nSomando as três situações pelo princípio aditivo:\n45 + 45 + 120 = 210.\n\n> 🎯 **Dicas de prova:** Quando a ordem não importa, multiplica e divide (use combinação). Em problemas com restrições “A e B não juntos”, lembre-se de mapear todos os cenários: com A sem B, com B sem A, e sem A e sem B.\n\nObservação importante de erro comum: por que não é “11” no lugar de “10” quando Ana está dentro e Pedro fora? Porque temos 12 pessoas; usando Ana e excluindo Pedro, sobram 10, não 11. Muita gente, sem querer, põe 11 e erra.\n\n## Segmentos de reta determinados por pontos em um triângulo\nConsidere 12 pontos distintos determinados sobre os lados de um triângulo, sendo 4 pontos em cada lado. Não estamos contando os vértices do triângulo, apenas os pontos colocados sobre os lados (4 em cada lado, totalizando 12).\n\nQueremos o número máximo de segmentos de reta determinados por esses pontos. Para formar um segmento de reta precisamos de 2 pontos. Qualquer dois pontos distintos geram um segmento. A ordem dos pontos não importa: do ponto A para o B é o mesmo segmento que do B para o A.\n\nEntão, com 12 pontos, o total de segmentos é a combinação de 12 tomados 2 a 2:\n12 × 11 ÷ 2 = 66.\n\nSe você preferir uma contagem por blocos:\n- Entre lados diferentes, dá 16 por par de lados (4×4). São 3 pares de lados: 16 + 16 + 16 = 48.\n- Dentro de cada lado, os 4 pontos geram C(4,2) = 6 segmentos. São 3 lados: 6 + 6 + 6 = 18.\n- Total: 48 + 18 = 66. Bate com a combinação.\n\n> 🎯 **Dicas de prova:** Para formar um segmento, escolha 2 pontos entre N: C(N,2). Ordem não importa.\n\nComentário pedagógico: às vezes a pessoa fica condicionada a sempre multiplicar ou sempre usar fórmula. Por isso eu gosto de misturar abordagens, para forçar a interpretação. Ordem não importa? Use combinação.\n\nExtensão natural do raciocínio: se a pergunta fosse “quantos triângulos?”, aí não bastaria escolher 3 pontos quaisquer; precisaríamos garantir que não fossem colineares. Três pontos no mesmo lado não formam triângulo. Aí entrariam restrições por lado.\n\n## Exemplo simples: escolher 2 canetas\nPedro tem 10 canetas em sua coleção e vai escolher 2 para levar à escola. “Azul e branca” é a mesma escolha que “branca e azul”. A ordem não importa.\n\n- Contagem direta: 10 × 9 ÷ 2 = 45.\n\nVocê também pode escrever como combinação C(10,2) = 45.\n\n> 🎯 **Dicas de prova:** Em seleções sem ordem e sem repetição, use C(n,k). Aqui, C(10,2) = 45.\n\n## Treinamento: partidas de xadrez em todos contra todos\nEm um campeonato de xadrez, cada jogador joga com todos os outros. Foram realizadas 435 partidas. Quantos jogadores participaram?\n\nUma partida de xadrez envolve uma dupla; a ordem não cria nova partida. Se houver n jogadores, o número de partidas é C(n,2) = n(n−1)/2. Igualamos a 435:\n\nn(n − 1)/2 = 435\nn(n − 1) = 870\n\nProcuramos dois inteiros consecutivos cujo produto seja 870. Testando:\n- 29 × 30 = 870.\n\nLogo, n = 30 jogadores.\n\n> 🎯 **Dicas de prova:** Em torneios “todos contra todos”, use C(n,2) para o número de partidas. Dado o total de partidas, resolva n(n−1)/2 = total.\n\nObservação didática: você pode resolver por equação do 2º grau, mas “tentar pares consecutivos” é mais rápido quando o número é redondo.\n\n## Encerramento e orientação de estudos\nVamos continuar treinando. As questões por enquanto estão no nível de começar, depois vem a “pancada” no aprofundamento. O importante é interpretar: quando a ordem não importa, use combinação; quando houver restrições, mapeie os cenários e aplique o princípio aditivo ou multiplicativo conforme o caso.\n\nAnálise Combinatória e Probabilidade são temas recorrentes em prova. Leiam as questões com vontade de entender e resolver. Estamos quase no final e vamos destravar o que falta.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória IX",
+    "subject": "Matemática e Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 40176,
+    "createdAt": "2026-02-06T01:22:47.883Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda contagens por combinação quando a ordem não importa, com foco em:\n- Formação de comissões com restrição\n- Segmentos de reta determinados por pontos\n- Partidas “todos contra todos” e inversão para achar n\nPrincipais pontos: \n- Use combinação C(n, k) quando AB = BA (ordem não importa)\n- Some casos exclusivos (princípio aditivo) e multiplique etapas dependentes (princípio multiplicativo)\n- Em triângulos, exclua trincas colineares; em pessoas, não há repetição\n\n## 1. Base / Conceitos Fundamentais\n- Combinação C(n, k): número de maneiras de escolher k elementos de n sem considerar a ordem.\n  - Fórmula: C(n, k) = n! / (k!(n − k)!)\n  - Casos típicos: pares, duplas, partidas, apertos de mão, seleção de objetos sem ordem.\n- Princípio multiplicativo: etapas sequenciais independentes multiplicam.\n- Princípio aditivo: alternativas mutuamente exclusivas somam.\n- Palavras-gatilho de combinação: “escolher”, “dupla”, “par”, “partida”, “ordem não importa”, “mesma escolha” (AB = BA).\n- Pessoas x símbolos:\n  - Pessoas: não se repete indivíduo.\n  - Símbolos/dígitos: repetição pode ser permitida se o enunciado disser.\n\n## 2. Como Funciona / Distinções\n- Quando usar combinação (ordem NÃO importa, sem repetição):\n  - Par de pontos para reta/segmento\n  - Duas canetas escolhidas\n  - Partidas entre jogadores (A vs B = B vs A)\n  - Comissão/equipe sem cargos distintos\n- Quando ajustar contagem:\n  - Triângulos: C(n, 3) menos trincas colineares.\n  - Sequências/senhas: ordem importa; se k opções por posição e m posições, total = k^m (com repetição).\n  - Classificação 1º e 2º: ordem importa → arranjo A(n, 2) = n(n − 1)\n\nTabela rápida\n- Retas/segmentos: C(n, 2)\n- Duplas/partidas/apertos de mão: C(n, 2)\n- Triângulos (sem colinearidade): C(n, 3) − colineares\n- Escolher 1º e 2º lugares: A(n, 2)\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo padrão:\n  1) Identifique a unidade de escolha (2 pontos? 3 pontos? 2 pessoas?).\n  2) Verifique se a ordem gera nova escolha. Se não, combinação.\n  3) Conte por multiplicação sequencial (n · (n − 1) · …).\n  4) Divida por k! para remover permutações internas (k itens escolhidos).\n  5) Some casos exclusivos (restrições do enunciado).\n  6) Para triângulos, exclua trincas colineares.\n- Inversão (achar n a partir de C(n, 2) = T):\n  - n(n − 1)/2 = T → n² − n − 2T = 0\n  - n = (1 + √(1 + 8T)) / 2\n  - Procure par consecutivo cujo produto seja 2T.\n\nMacetes\n- “Daqui para lá = de lá para cá” → combinação.\n- “Com X fixo e Y proibido” → fixe X, conte combinando nas vagas restantes.\n- “Todos contra todos (uma vez)” → C(n, 2).\n- Produtos consecutivos: para M = n(n − 1), busque dois inteiros consecutivos ≈ √M.\n\n## 4. Exemplos e Casos Resolvidos\n1) Comissões de 3 pessoas com restrição (Ana e Pedro não juntos)\n- Dados: 12 pessoas, dentre elas Ana e Pedro. Regra: não podem estar juntos.\n- Casos exclusivos:\n  - Com Ana e sem Pedro: faltam 2 entre outros 10 → C(10, 2) = 10×9 / (2×1) = 45\n  - Com Pedro e sem Ana: C(10, 2) = 45\n  - Sem Ana e sem Pedro: 3 entre os outros 10 → C(10, 3) = 10×9×8 / (3×2×1) = 120\n- Total: 45 + 45 + 120 = 210\n\n2) Segmentos de reta com 12 pontos nos lados de um triângulo\n- 12 pontos distintos, 4 em cada lado, nenhum no vértice.\n- Cada par de pontos define um único segmento; AB = BA.\n- Número de segmentos: C(12, 2) = 12×11 / 2 = 66\n\n3) Canetas\n- Pedro escolhe 2 de 10 canetas.\n- 10·9 / 2! = 45 → 10C2 = 45\n\n4) Campeonato “todos contra todos”\n- Total de partidas P = C(n, 2) = n(n − 1)/2\n- Ex.: P = 435 → n(n − 1) = 870 → 29×30 = 870 → n = 30\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> “A ordem não importa” ou “é a mesma reta/mesma partida” → use combinação. Se montou por etapas, lembre de dividir por k!.\n\n- Contagem com pessoas:\n  - Não existe repetição de pessoa. Não use k^m nem permita “duplicar” indivíduo.\n- Comissão com restrição:\n  - Quando “Ana está” e “Pedro não pode”, sobram 10 (não 11). O 11 vale só antes de fixar alguém.\n- Segmentos vs. retas infinitas:\n  - Par (P1, P2) é um único segmento; não conte duas vezes (AB e BA).\n- Esquecer de excluir colineares em triângulos:\n  - 3 pontos no mesmo lado do triângulo não formam triângulo.\n- Torneio:\n  - “Todos contra todos, uma vez” → C(n, 2), não A(n, 2) nem permutação.\n  - Ao inverter para achar n, exija que 1 + 8T seja quadrado perfeito.\n- Linguagem do enunciado:\n  - “Escolher”/“formar pares/duplas” → combinação.\n  - “1º e 2º colocados”/“ordem” → arranjo; não divida se a ordem importar.\n\n> Dica de Prova\n> Para P partidas: transforme em n(n − 1) = 2P e teste números consecutivos perto de √(2P). Ex.: 2·435 = 870 → 29×30.",
+  "resumo_bolso": "# Análise Combinatória IX\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Combinação C(n, k)**: escolher k de n **sem ordem** e **sem repetição**. Fórmula: **C(n, k) = n! / (k!(n − k)!)**.\n* **Gatilho de combinação**: “**escolher**”, “**dupla/par**”, “**partida**”, “**ordem não importa**”, “**mesma escolha** (AB = BA)”.\n* **Princípio multiplicativo**: etapas **sequenciais** e **independentes** → **multiplica**.\n* **Princípio aditivo**: casos **mutuamente exclusivos** → **soma**.\n* **Pessoas x símbolos**: pessoas **não repetem**; dígitos/símbolos **podem repetir** se o enunciado permitir.\n* **Quando é combinação clássica**: par de pontos, duplas, partidas “todos contra todos”, comissão **sem cargos distintos**.\n* **Triângulos com pontos**: começa em **C(n, 3)** e **subtrai trincas colineares**.\n* **Arranjo A(n, 2)**: ordem importa (1º e 2º lugares) → **A(n, 2) = n(n − 1)**.\n* **Senhas/sequências com repetição**: ordem importa; se k opções por posição e m posições → **k^m**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Combinação C(n, k) vs Arranjo A(n, 2)\n\n| Aspecto | Combinação C(n, k) | Arranjo A(n, 2) |\n| --- | --- | --- |\n| **Ordem** | **Não importa** (AB = BA) | **Importa** (1º ≠ 2º) |\n| **Repetição** | Não repete elemento | Não repete elemento |\n| **Fórmula típica** | n! / (k!(n − k)!) | n(n − 1) (para k = 2) |\n| **Exemplo típico** | Duplas, partidas, comissões | 1º e 2º colocados |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Combinação simples**\n\n* **Regra**: **C(n, k) = n! / (k!(n − k)!)**.\n* **Aplicação**: escolher k de n, **sem ordem**, **sem repetição**.\n* **Exemplo**: 10 canetas, escolher 2 → C(10, 2) = 10·9 / 2! = 45.\n\n---\n\n**2. Segmentos de reta determinados por pontos**\n\n* **Regra**: número de segmentos com n pontos distintos → **C(n, 2)**.\n* **Aplicação**: cada par de pontos define **um único segmento** (AB = BA).\n* **Exemplo**: 12 pontos → C(12, 2) = 12·11 / 2 = 66.\n\n---\n\n**3. Triângulos formados por pontos**\n\n* **Regra**: triângulos = **C(n, 3) − (trincas colineares)**.\n* **Aplicação**: 3 pontos colineares **não** formam triângulo.\n* **Exemplo**: n pontos, sendo alguns colineares → C(n, 3) − (trincas colineares).\n\n---\n\n**4. Partidas “todos contra todos”**\n\n* **Regra direta**: P = **C(n, 2) = n(n − 1)/2**.\n* **Inversão**: dado P, achar n:\n  * n(n − 1)/2 = P → n² − n − 2P = 0\n  * **n = (1 + √(1 + 8P)) / 2**\n* **Exemplo**: P = 435 → 1 + 8·435 = 3481 = 59² → n = (1 + 59)/2 = 30.\n\n---\n\n**5. Comissão com restrição (fixar e proibir)**\n\n* **Aplicação**: “X está” e “Y não pode estar” → **fixa X**, combina nas vagas restantes, sem Y.\n* **Exemplo**: 12 pessoas (Ana, Pedro). Comissão de 3, Ana e Pedro não juntos:\n  * Com Ana, sem Pedro: C(10, 2) = 45\n  * Com Pedro, sem Ana: C(10, 2) = 45\n  * Sem Ana, sem Pedro: C(10, 3) = 120\n  * Total = 45 + 45 + 120 = 210.\n\n---\n\n**6. Macete de inversão para C(n, 2)**\n\n* **Regra**: dado T = C(n, 2), então **n(n − 1) = 2T**.\n* **Técnica**:\n  * Procure **dois inteiros consecutivos** cujo produto seja 2T.\n  * Ou use n = (1 + √(1 + 8T)) / 2.\n* **Exemplo**: T = 435 → 2T = 870 → 29·30 = 870 → n = 30.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Em contagem com pessoas, **não existe repetição de pessoa**. Não use k^m nem permita “duplicar” indivíduo.\n* Em comissão “Ana está e Pedro não pode”, ao **fixar Ana**, sobram **10** (não 11) para combinar.\n* Segmentos: cada par de pontos gera **1** segmento; não conte duas vezes (AB e BA).\n* Em triângulos com pontos nos lados, não esqueça de **excluir trincas colineares**.\n* Em torneio “todos contra todos, uma vez”, use **C(n, 2)**, não arranjo nem permutação; ao inverter, exija que 1 + 8T seja **quadrado perfeito**.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **combinação (C(n, k))** de **arranjo (A(n, 2))** quando a **ordem importa**?\n* Memorizei que **segmentos**, **duplas**, **partidas**, **apertos de mão** → **C(n, 2)**?\n* Sei que **triângulos** = **C(n, 3) − trincas colineares**?\n* Lembro que em **pessoas** não há **repetição** e que comissão com restrição exige **casos exclusivos** (somar)?\n* Sei inverter **C(n, 2)** usando **n = (1 + √(1 + 8T))/2** e checar se 1 + 8T é **quadrado perfeito**?",
+  "mapa_mental": "# 🧮 Análise Combinatória IX\n## 🎯 Combinação Simples\n### 💡 Conceito Combinação\n- Escolha sem ordem\n- Sem repetição\n- Notação C(n, k)\n- AB igual BA\n### 🧮 Fórmula Combinação\n- C(n, k) = n! / k!(n−k)!\n- Produto decrescente\n- Divide por k!\n- Remove permutações\n### 🗂️ Situações Típicas\n- Pares de pontos\n- Duplas pessoas\n- Partidas torneio\n- Apertos de mão\n- Comissão sem cargos\n\n## ⚙️ Princípios de Contagem\n### 🔢 Princípio Multiplicativo\n- Etapas sucessivas\n- Independência parcial\n- Multiplica possibilidades\n- Usa em arranjos\n### ➕ Princípio Aditivo\n- Casos exclusivos\n- Alternativas distintas\n- Soma resultados\n- Usa com restrições\n### 🧩 Escolha Correta\n- Ordem não importa\n- Combinação simples\n- Ordem importa\n- Arranjo ou permutação\n\n## 📊 Aplicações Clássicas\n### 📏 Pontos e Segmentos\n- Segmentos C(n, 2)\n- Retas C(n, 2)\n- AB = BA\n- Unidade par pontos\n### 🔺 Triângulos\n- Usa C(n, 3)\n- Exclui colineares\n- Trincas mesmo lado\n- Triângulo válido\n### 🧑‍🤝‍🧑 Comissões Pessoas\n- Sem repetição pessoa\n- Comissão sem cargo\n- Combinação direta\n- Restrições por casos\n\n## 🏆 Torneios e Inversão\n### 🤝 Todos Contra Todos\n- Cada par joga\n- Partidas C(n, 2)\n- Fórmula n(n−1)/2\n- Uma vez cada par\n### 🔄 Inversão para n\n- C(n, 2) = T\n- n(n−1) = 2T\n- Equação quadrática\n- n = (1+√(1+8T))/2\n### 🧠 Macetes Inversão\n- Produto consecutivo\n- Testar perto raiz\n- 1+8T quadrado\n- n inteiro positivo\n\n## ⚠️ Erros Frequentes\n### 🚨 Combinação x Arranjo\n- Confundir ordem\n- 1º e 2º lugares\n- Usar arranjo A(n, 2)\n- Não dividir por 2\n### 🛑 Pessoas x Símbolos\n- Pessoas sem repetição\n- Dígitos podem repetir\n- Não usar k^m pessoas\n- Atenção enunciado\n### 📜 Palavras-Gatilho\n- “Escolher” combinação\n- “Dupla” “par” C(n, 2)\n- “Todos contra todos”\n- “Ordem” arranjo",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Princípios de Contagem",
+      "description": "Princípios de Contagem — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o critério que caracteriza uma seleção em que a ordem dos elementos não altera o resultado?",
+          "back": "A ordem dos elementos não importa.",
+          "hint": "Refere-se a combinações, não arranjos.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual princípio deve ser usado para combinar resultados de alternativas mutuamente excludentes?",
+          "back": "Princípio aditivo.",
+          "hint": "Pense em alternativas excludentes.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "principios-contagem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual princípio deve ser usado quando escolhas sucessivas precisam ocorrer conjuntamente?",
+          "back": "Princípio multiplicativo.",
+          "hint": "Pense em eventos simultâneos ou sucessivos.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "principios-contagem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a diferença entre aplicar o princípio aditivo e aplicar o princípio multiplicativo?",
+          "back": "O princípio aditivo soma resultados de alternativas mutuamente excludentes, enquanto o multiplicativo combina escolhas sucessivas que ocorrem conjuntamente.",
+          "hint": "Contraste entre soma e multiplicação.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "principios-contagem"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual fórmula calcula o número de pares formados a partir de n elementos distintos?",
+          "back": "n vezes (n - 1) dividido por 2.",
+          "hint": "Relacionado a duplas de n elementos.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "formulas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Comissões Restritas",
+      "description": "Comissões Restritas — 5 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Em uma comissão de três pessoas, quais são as categorias possíveis envolvendo Ana e Pedro?",
+          "back": "Com Ana e sem Pedro; com Pedro e sem Ana; sem Ana e sem Pedro.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "estudo-caso"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Em uma comissão de três pessoas, quantas escolhas restam quando Ana é obrigatória e Pedro é excluído?",
+          "back": "10.",
+          "hint": "Cálculo de combinação simples.",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "problemas-aplicados"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Por que uma comissão com Ana, mas sem Pedro, oferece apenas dez opções para a segunda vaga?",
+          "back": "Porque restam dez pessoas disponíveis na coleção após a fixação de Ana e a exclusão de Pedro.",
+          "hint": "Foco na redução do conjunto disponível.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "raciocinio-logico"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Como devem ser combinadas as contagens das categorias de comissão envolvendo Ana e Pedro?",
+          "back": "Devem ser somadas pelo princípio aditivo.",
+          "hint": "Como agrupar resultados de casos distintos?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "principios-contagem"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Em uma comissão de três pessoas, qual condição impede a participação simultânea de Ana e Pedro?",
+          "back": "Eles não podem estar juntos em uma mesma comissão.",
+          "hint": "Restrição de exclusão mútua.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "restricoes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Retas e Triângulos",
+      "description": "Retas e Triângulos — 5 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Quantos pontos distintos são necessários para determinar uma reta?",
+          "back": "Dois pontos distintos.",
+          "hint": "Geometria plana básica.",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "geometria",
+            "conceitos-basicos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Como corrigir a contagem duplicada de um segmento quando seus extremos são escolhidos em ordens diferentes?",
+          "back": "Dividindo por 2.",
+          "hint": "Necessário quando a ordem não importa.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "procedimentos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Quantas retas podem ser determinadas por doze pontos distintos, sem outra restrição?",
+          "back": "66 retas.",
+          "hint": "Aplique a fórmula de combinação de n, 2.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "exemplos"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-14",
+          "front": "Além de três pontos, qual condição é necessária para formar um triângulo?",
+          "back": "Não ser colineares.",
+          "hint": "Condição geométrica de alinhamento.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria",
+            "triangulos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Por que três pontos colineares não determinam um triângulo?",
+          "back": "Porque pontos colineares determinam uma reta maior em vez de um triângulo.",
+          "hint": "O que ocorre quando pontos estão na mesma linha?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria",
+            "triangulos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações Combinatórias",
+      "description": "Aplicações Combinatórias — 3 cards",
+      "cards": [
+        {
+          "id": "card-16",
+          "front": "De quantas maneiras distintas podem ser escolhidas duas canetas entre dez?",
+          "back": "45 maneiras.",
+          "hint": "Combinação de 10 elementos tomados 2 a 2.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "exemplos"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-17",
+          "front": "Em um campeonato de xadrez, que relação existe entre jogadores e partidas quando cada par joga uma vez?",
+          "back": "Cada partida corresponde a uma dupla de jogadores.",
+          "hint": "Cada partida é uma escolha de par.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "modelagem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Um campeonato com 435 partidas, em que cada par de jogadores se enfrenta uma vez, tem quantos jogadores?",
+          "back": "30 jogadores.",
+          "hint": "Equação quadrática: n(n-1)/2 = 435.",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "problemas-aplicados"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um campeonato de xadrez onde cada jogador joga com todos os outros exatamente uma vez, foram realizadas 45 partidas. Quantos jogadores participaram da competição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "9 jogadores",
+          "correct": false,
+          "explanation": "Incorreta. Se houvessem 9 jogadores, o número de partidas seria C(9, 2) = (9 * 8) / 2 = 36 partidas. Este valor não corresponde às 45 partidas realizadas."
+        },
+        {
+          "id": "b",
+          "text": "12 jogadores",
+          "correct": false,
+          "explanation": "Incorreta. Se houvessem 12 jogadores, o número de partidas seria C(12, 2) = (12 * 11) / 2 = 66 partidas. Este valor excede as 45 partidas mencionadas na questão."
+        },
+        {
+          "id": "c",
+          "text": "8 jogadores",
+          "correct": false,
+          "explanation": "Incorreta. Se houvessem 8 jogadores, o número de partidas seria dado pela combinação de 8 jogadores tomados 2 a 2, ou seja, C(8, 2) = (8 * 7) / 2 = 28 partidas. Este valor é diferente das 45 partidas informadas."
+        },
+        {
+          "id": "d",
+          "text": "10 jogadores",
+          "correct": true,
+          "explanation": "Correta. Em um campeonato de xadrez onde cada jogador joga com todos os outros exatamente uma vez, a ordem dos jogadores em uma partida não importa (jogador A contra jogador B é a mesma partida que jogador B contra jogador A). Portanto, o número de partidas é dado por uma combinação de 'n' jogadores tomados 2 a 2, C(n, 2). A fórmula é C(n, 2) = n * (n - 1) / 2. Dado que foram realizadas 45 partidas, montamos a equação: n * (n - 1) / 2 = 45. Multiplicando ambos os lados por 2, temos n * (n - 1) = 90. Precisamos encontrar dois números inteiros consecutivos cujo produto seja 90. Esses números são 10 e 9 (10 * 9 = 90). Assim, o número de jogadores 'n' é 10. Portanto, 10 jogadores participaram da competição."
+        }
+      ],
+      "explanation": "Correta. Em um campeonato de xadrez onde cada jogador joga com todos os outros exatamente uma vez, a ordem dos jogadores em uma partida não importa (jogador A contra jogador B é a mesma partida que jogador B contra jogador A). Portanto, o número de partidas é dado por uma combinação de 'n' jogadores tomados 2 a 2, C(n, 2). A fórmula é C(n, 2) = n * (n - 1) / 2. Dado que foram realizadas 45 partidas, montamos a equação: n * (n - 1) / 2 = 45. Multiplicando ambos os lados por 2, temos n * (n - 1) = 90. Precisamos encontrar dois números inteiros consecutivos cujo produto seja 90. Esses números são 10 e 9 (10 * 9 = 90). Assim, o número de jogadores 'n' é 10. Portanto, 10 jogadores participaram da competição.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Pedro possui 10 canetas coloridas em sua coleção e precisa escolher exatamente 2 delas para levar à escola. De quantas maneiras distintas ele pode fazer essa escolha?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "45 maneiras",
+          "correct": true,
+          "explanation": "Correta. A escolha de canetas para levar à escola é um problema de combinação, pois a ordem em que as canetas são selecionadas não altera o par escolhido (escolher a caneta azul e depois a vermelha resulta no mesmo par de canetas que escolher a vermelha e depois a azul). A fórmula para combinações de 'n' elementos tomados 'k' a 'k' é C(n, k) = n! / (k! * (n-k)!). Neste caso, Pedro tem n = 10 canetas e precisa escolher k = 2. Aplicando a fórmula: C(10, 2) = 10! / (2! * (10-2)!) = 10! / (2! * 8!) = (10 * 9 * 8!) / (2 * 1 * 8!) = (10 * 9) / 2 = 90 / 2 = 45. Portanto, Pedro pode fazer essa escolha de 45 maneiras distintas."
+        },
+        {
+          "id": "b",
+          "text": "35 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. 35 maneiras seria o resultado de uma combinação de 7 elementos tomados 3 a 3 (C(7,3) = (7*6*5)/(3*2*1) = 35), ou de 7 elementos tomados 2 a 2 (C(7,2) = 21), mas não corresponde à combinação de 10 canetas tomadas 2 a 2."
+        },
+        {
+          "id": "c",
+          "text": "90 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. 90 maneiras seria o resultado se a ordem de escolha das canetas importasse (um arranjo simples de 10 elementos tomados 2 a 2, A(10, 2) = 10 * 9 = 90). No entanto, como a ordem não é relevante para o par de canetas escolhido, o cálculo correto é o de combinação, não de arranjo."
+        },
+        {
+          "id": "d",
+          "text": "20 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. 20 maneiras seria o resultado de um arranjo de 10 elementos tomados 2 a 2 se a ordem importasse (A(10,2) = 10 * 2 = 20, o que não é o caso), ou se fosse uma combinação de 5 elementos tomados 2 a 2 (C(5,2) = 10). Para a escolha de duas canetas onde a ordem não importa, 20 é um valor incorreto."
+        }
+      ],
+      "explanation": "Correta. A escolha de canetas para levar à escola é um problema de combinação, pois a ordem em que as canetas são selecionadas não altera o par escolhido (escolher a caneta azul e depois a vermelha resulta no mesmo par de canetas que escolher a vermelha e depois a azul). A fórmula para combinações de 'n' elementos tomados 'k' a 'k' é C(n, k) = n! / (k! * (n-k)!). Neste caso, Pedro tem n = 10 canetas e precisa escolher k = 2. Aplicando a fórmula: C(10, 2) = 10! / (2! * (10-2)!) = 10! / (2! * 8!) = (10 * 9 * 8!) / (2 * 1 * 8!) = (10 * 9) / 2 = 90 / 2 = 45. Portanto, Pedro pode fazer essa escolha de 45 maneiras distintas.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Um grupo de 12 pessoas, incluindo Ana e Pedro, precisa formar comissões de 3 pessoas. Sabendo que Ana e Pedro não podem estar juntos na mesma comissão, quantas comissões distintas podem ser formadas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "220 comissões",
+          "correct": false,
+          "explanation": "Incorreta. 220 comissões representa o número total de comissões de 3 pessoas que poderiam ser formadas a partir de 12 pessoas sem *nenhuma* restrição. No entanto, a questão especifica que Ana e Pedro não podem estar juntos na mesma comissão, o que exige a exclusão das 10 comissões em que eles aparecem juntos."
+        },
+        {
+          "id": "b",
+          "text": "200 comissões",
+          "correct": false,
+          "explanation": "Incorreta. 200 comissões também não é o resultado correto. Este valor está próximo do total de comissões sem restrições, mas não reflete a exclusão das comissões inválidas."
+        },
+        {
+          "id": "c",
+          "text": "210 comissões",
+          "correct": true,
+          "explanation": "Correta. Para resolver este problema de combinatória com restrições, podemos utilizar dois métodos. Primeiro, calculamos o número total de comissões possíveis e subtraímos as comissões que violam a restrição. Uma comissão é um agrupamento onde a ordem das pessoas não importa, então usamos combinação. O número total de comissões de 3 pessoas a partir de 12 é C(12, 3) = 12! / (3! * 9!) = (12 * 11 * 10) / (3 * 2 * 1) = 220. As comissões inválidas são aquelas em que Ana e Pedro estão juntos. Se Ana e Pedro já estão na comissão, precisamos escolher apenas mais 1 pessoa dentre as 10 pessoas restantes (12 - Ana - Pedro). Isso é C(10, 1) = 10. Portanto, o número de comissões válidas é 220 - 10 = 210. Alternativamente, podemos somar os casos válidos: 1) Ana na comissão, Pedro fora: C(10, 2) = 45 (escolhe-se 2 dos 10 restantes). 2) Pedro na comissão, Ana fora: C(10, 2) = 45 (escolhe-se 2 dos 10 restantes). 3) Nem Ana nem Pedro na comissão: C(10, 3) = (10 * 9 * 8) / (3 * 2 * 1) = 120 (escolhe-se 3 dos 10 restantes). Somando os casos: 45 + 45 + 120 = 210 comissões."
+        },
+        {
+          "id": "d",
+          "text": "180 comissões",
+          "correct": false,
+          "explanation": "Incorreta. 180 comissões não corresponde ao cálculo correto da restrição imposta. Este valor não se alinha com as possibilidades de formação de comissões sob as condições dadas."
+        }
+      ],
+      "explanation": "Correta. Para resolver este problema de combinatória com restrições, podemos utilizar dois métodos. Primeiro, calculamos o número total de comissões possíveis e subtraímos as comissões que violam a restrição. Uma comissão é um agrupamento onde a ordem das pessoas não importa, então usamos combinação. O número total de comissões de 3 pessoas a partir de 12 é C(12, 3) = 12! / (3! * 9!) = (12 * 11 * 10) / (3 * 2 * 1) = 220. As comissões inválidas são aquelas em que Ana e Pedro estão juntos. Se Ana e Pedro já estão na comissão, precisamos escolher apenas mais 1 pessoa dentre as 10 pessoas restantes (12 - Ana - Pedro). Isso é C(10, 1) = 10. Portanto, o número de comissões válidas é 220 - 10 = 210. Alternativamente, podemos somar os casos válidos: 1) Ana na comissão, Pedro fora: C(10, 2) = 45 (escolhe-se 2 dos 10 restantes). 2) Pedro na comissão, Ana fora: C(10, 2) = 45 (escolhe-se 2 dos 10 restantes). 3) Nem Ana nem Pedro na comissão: C(10, 3) = (10 * 9 * 8) / (3 * 2 * 1) = 120 (escolhe-se 3 dos 10 restantes). Somando os casos: 45 + 45 + 120 = 210 comissões.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Considere 12 pontos distintos distribuídos sobre os lados de um triângulo, de modo que cada lado contenha exatamente 4 pontos (sem considerar os vértices do triângulo). Quantos segmentos de reta distintos podem ser formados unindo dois quaisquer desses 12 pontos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "48 segmentos",
+          "correct": false,
+          "explanation": "Incorreta. 48 segmentos seria o resultado se estivéssemos contando o número de *linhas* distintas (não segmentos) formadas pelos pontos, utilizando a fórmula C(n, 2) - Σ C(p_i, 2), onde p_i são os pontos colineares. No entanto, a questão pede o número de *segmentos de reta distintos*, e para segmentos, cada par de pontos distintos forma um segmento único, mesmo que sejam colineares."
+        },
+        {
+          "id": "b",
+          "text": "66 segmentos",
+          "correct": true,
+          "explanation": "Correta. Para formar um segmento de reta, são necessários exatamente dois pontos distintos. A ordem em que esses dois pontos são escolhidos não importa, pois o segmento de reta definido pelos pontos A e B é o mesmo que o segmento definido pelos pontos B e A. Isso indica um problema de combinação simples. Temos um total de 12 pontos distintos. O número de maneiras de escolher 2 pontos a partir desses 12 é dado pela fórmula da combinação C(n, k) = n! / (k! * (n-k)!). Neste caso, n = 12 (total de pontos) e k = 2 (pontos para formar um segmento). Calculando: C(12, 2) = 12! / (2! * (12-2)!) = 12! / (2! * 10!) = (12 * 11 * 10!) / (2 * 1 * 10!) = (12 * 11) / 2 = 132 / 2 = 66. A presença de pontos colineares (4 pontos em cada lado do triângulo) não afeta a contagem de *segmentos distintos*, pois cada par de pontos distintos, mesmo que colineares, define um segmento único com extremidades bem definidas. A correção para colinearidade seria aplicada se a questão pedisse o número de *retas* distintas, onde múltiplos segmentos colineares formariam apenas uma única reta."
+        },
+        {
+          "id": "c",
+          "text": "54 segmentos",
+          "correct": false,
+          "explanation": "Incorreta. 54 segmentos não é o resultado da aplicação dos princípios de combinatória para a formação de segmentos de reta sob as condições dadas."
+        },
+        {
+          "id": "d",
+          "text": "60 segmentos",
+          "correct": false,
+          "explanation": "Incorreta. 60 segmentos não é o resultado da aplicação dos princípios de combinatória para a formação de segmentos de reta sob as condições dadas."
+        }
+      ],
+      "explanation": "Correta. Para formar um segmento de reta, são necessários exatamente dois pontos distintos. A ordem em que esses dois pontos são escolhidos não importa, pois o segmento de reta definido pelos pontos A e B é o mesmo que o segmento definido pelos pontos B e A. Isso indica um problema de combinação simples. Temos um total de 12 pontos distintos. O número de maneiras de escolher 2 pontos a partir desses 12 é dado pela fórmula da combinação C(n, k) = n! / (k! * (n-k)!). Neste caso, n = 12 (total de pontos) e k = 2 (pontos para formar um segmento). Calculando: C(12, 2) = 12! / (2! * (12-2)!) = 12! / (2! * 10!) = (12 * 11 * 10!) / (2 * 1 * 10!) = (12 * 11) / 2 = 132 / 2 = 66. A presença de pontos colineares (4 pontos em cada lado do triângulo) não afeta a contagem de *segmentos distintos*, pois cada par de pontos distintos, mesmo que colineares, define um segmento único com extremidades bem definidas. A correção para colinearidade seria aplicada se a questão pedisse o número de *retas* distintas, onde múltiplos segmentos colineares formariam apenas uma única reta.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "09_193893_Análise Combinatória IX.pdf",
+  "coletado_em": "2026-09-23T21:02:39"
+}

@@ -1,0 +1,475 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 8,
+  "ordem_no_curso": "70.00",
+  "titulo": "Análise Combinatória VIII",
+  "codigo_aula": "193892",
+  "video_id": "J5M+Xhu070o=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:33:35",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/J5M%2BXhu070o%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=425315&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória VIII\n\n## Introdução: Quando a ordem não importa\nBelezinha, vamos continuar. Agora é o seguinte: iremos ver a segunda parte. Falamos que, quando a ordem importa, é um tipo de situação; quando a ordem não importa, é outro. Na parte de anagramas com repetições, a gente dividia pelo fatorial do que estava repetindo para retirar as repetições. \n\nMas agora o foco é em agrupamentos em que a ordem não importa. Isso é muito legal. A formação de equipes, diretorias, comissões; quando falo de filmes de propaganda, times, diretorias; e, em figuras geométricas, grupos de pontos formando segmentos, triângulos, quadriláteros. Tudo isso é caso em que a ordem não importa.\n\nSe eu falar para vocês: equipe André, Beto, Caio e Daniel; ou equipe Daniel, Caio, Beto, André — é a mesma equipe. Eu falar ABC ou CBA é o mesmo time, a mesma diretoria, o mesmo grupo. Então, sempre que o agrupamento não muda sua natureza ao trocar a ordem dos elementos, a ordem não importa. Nesses casos, além de multiplicar as possibilidades, nós vamos dividir para retirar as contagens repetidas. \n\n## Exemplo 1: Equipes de 3 pessoas a partir de 5 nomes\nDigamos que temos um grupo de cinco pessoas: André, Beto, Caio, Daniel e Eva. Quantas equipes de três pessoas podem ser formadas?\n\n- Podemos escolher a primeira pessoa de 5 maneiras, a segunda de 4, a terceira de 3. \n- Como a ordem não importa, além de multiplicar, vamos dividir pelo número de permutações entre os escolhidos (3! = 3·2·1).\n\nFica: 5·4·3 / (3·2·1) = 10 equipes. Beleza, correto.\n\n## Exemplo 2: Equipes com restrição de homens e mulheres\nAgora, digamos que temos oito homens e quatro mulheres. Queremos formar equipes de cinco pessoas, com três homens e duas mulheres. Quantas equipes assim podemos formar?\n\n- Para os homens: escolher 3 dentre 8. Começo pensando em possibilidades: 8 para o primeiro, 7 para o segundo, 6 para o terceiro, e divido por 3! para retirar repetições.\n- Para as mulheres: escolher 2 dentre 4. São 4 para a primeira, 3 para a segunda, e divido por 2! para retirar repetições.\n\nPelo princípio multiplicativo, o total é:\n(8·7·6 / 3·2·1) · (4·3 / 2·1) = 56 · 6 = 336.\n\nPerceba: se a ordem importasse (fila, classificação, protocolo, matrícula, senha, código), eu só multiplicaria. Mas aqui a ordem não importa; então, além de multiplicar, eu divido para retirar as contagens repetidas. Se eu não dividir, conto a mesma equipe várias vezes. André, Beto, Caio, Adriana e Beatriz é a mesma equipe que Caio, Beto, André, Beatriz e Adriana.\n\nPensa assim: princípio multiplicativo aumenta multiplicando; para retirar repetições, eu diminuo dividindo. É a mesma lógica de anagramas com letras repetidas.\n\n## Figuras geométricas em uma circunferência\nVamos para um exemplo clássico de geometria combinatória. Imagine uma circunferência com cinco pontos marcados. Vou te fazer três perguntas:\n\n1) Quantos segmentos de reta podem ser formados usando esses 5 pontos?\n2) Quantos triângulos podem ser formados?\n3) Quantos quadriláteros podem ser formados?\n\nQuero que você sempre faça o teste do “cantinho da prova”: trocando a ordem, cria algo novo? Se não cria, a ordem não importa, então multiplica e divide.\n\n### Segmentos de reta\nPara ter um segmento, eu preciso de dois pontos.\n\n- Possibilidades: 5 para o primeiro ponto e 4 para o segundo.\n- Como o segmento AB é o mesmo que BA, a ordem não importa. Então divido por 2!.\n\nCálculo: 5·4 / (2·1) = 10 segmentos.\n\n### Triângulos\nPara formar um triângulo, preciso de três pontos não colineares. Na circunferência, qualquer trio de pontos serve.\n\n- Possibilidades: 5 para o primeiro, 4 para o segundo, 3 para o terceiro.\n- A ordem não importa (triângulo ABC é o mesmo que CBA), então divido por 3!.\n\nCálculo: 5·4·3 / (3·2·1) = 10 triângulos.\n\n### Quadriláteros\nPara formar um quadrilátero, preciso de quatro pontos. Em cinco pontos na circunferência, qualquer quatro pontos formam um quadrilátero convexo.\n\n- Possibilidades: 5 para o primeiro, 4 para o segundo, 3 para o terceiro, 2 para o quarto.\n- A ordem não importa, então divido por 4!.\n\nCálculo: 5·4·3·2 / (4·3·2·1) = 5 quadriláteros.\n\nPerceba como sempre usamos “possibilidades” para preencher os tracinhos e depois dividimos pelo fatorial do número de escolhas quando a ordem não importa.\n\n## Aperto de mãos em uma reunião\nExemplo muito comum em concursos: em uma reunião com 10 pessoas, quantos apertos de mão distintos podem ocorrer, considerando que as pessoas se cumprimentam apenas uma vez?\n\nEntre André e Beto, AB é o mesmo cumprimento que BA. Então a ordem não importa. Para um aperto de mão, eu preciso de 2 pessoas.\n\n- Possibilidades: 10 para a primeira, 9 para a segunda; divide por 2!.\n\nCálculo: 10·9 / (2·1) = 45 apertos de mão. Beleza.\n\n## Atenção às “pegadinhas” de função em equipes\nQuero que você fique esperto: às vezes a banca escreve “equipe”, “diretoria” ou “comissão”, mas especifica funções diferentes, como diretor, vice-diretor e secretário. Aí a ordem importa porque as posições são distintas. \n\nDiretor, vice e secretário sendo pessoas diferentes formam arranjos de funções. Uma coisa é: diretor André, vice Beto, secretário Caio; outra coisa é: diretor Caio, vice Beto, secretário André. São agrupamentos diferentes. Então, apesar de aparecer a palavra “equipe” ou “comissão”, se houver função, a ordem passa a importar.\n\nCrie um exemplo no cantinho para testar: trocou a posição e mudou o resultado? Então a ordem importa. Se trocou e deu a mesma coisa, a ordem não importa.\n\n## Aplicação de concurso: subcomissões\nQuestão de aplicação: O Conselho Regional de Medicina Veterinária do Amazonas possui uma diretoria executiva e um conselho com seis conselheiros efetivos e seis suplentes, sendo três mulheres no total. Além disso, tem:\n- Comissão de Assuntos Políticos com 5 membros,\n- Comissão de Grandes Animais com 6 membros,\n- Comissão de Ética, Bioética e Bem-Estar Animal com 5 membros.\n\nPergunta: Quantas subcomissões de 3 membros podem ser formadas a partir dos integrantes da Comissão de Assuntos Políticos (que tem 5 membros)?\n\nNão falaram de função, apenas “três membros”. A ordem não importa. Então:\n- Possibilidades: 5 para o primeiro, 4 para o segundo, 3 para o terceiro.\n- Divide por 3!.\n\nCálculo: 5·4·3 / (3·2·1) = 10. Não é 15, é 10. Encerrada a questão.\n\n## Encerramento: método e fórmulas\nNesse primeiro momento, estou reforçando o raciocínio: quando a ordem não importa, além de multiplicar, divide para retirar repetições. Falei de equipes, times, diretorias, comissões, figuras geométricas, aperto de mão. Depois, vamos refazer os mesmos tipos de questões usando as fórmulas de combinação para você ver a equivalência e ganhar velocidade.\n\nNo dia da prova, se der para fazer pelo princípio, eu faço porque é mais rápido. Mas também vou te mostrar como identificar quando aplicar fórmula e quando o princípio já resolve. Existem situações em que fazer pelas duas abordagens dá a mesma resposta; o importante é você reconhecer rapidamente se a ordem importa ou não. \n\nFica esperto nesses detalhes. Vou voltar imediatamente para continuar as aplicações; depois tem o treinamento e o aprofundamento. Não sai daí, valeu!",
+  "transcricao_meta": {
+    "title": "Análise Combinatória VIII",
+    "subject": "Matemática e Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 32668,
+    "createdAt": "2026-02-06T01:22:39.445Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: combinações (quando a ordem não importa), distinção ordem importa vs. não importa, e contagens clássicas em equipes, comissões e figuras geométricas (segmentos, triângulos, quadriláteros), além de apertos de mão.\nPrincipais pontos: \n- Identificar quando usar **combinação** (multiplicar e dividir) vs. só multiplicar.\n- Aplicar C(n, k) em grupos e figuras.\n- Tratar casos com categorias (ex.: homens/mulheres) e com funções/cargos.\n\n## 1. Base / Conceitos Fundamentais\n- **Princípio Multiplicativo**: etapas independentes → multiplica as opções de cada etapa.\n- **Ordem importa**: trocar posições gera resultado diferente (filas, classificações, matrículas, protocolos, senhas, códigos; anagramas sem letras repetidas).\n- **Ordem não importa**: trocar posições não muda o objeto (equipes/times, diretorias/comissões sem cargos, subcomissões, apertos de mão, figuras definidas por pontos: segmentos, triângulos, quadriláteros).\n- **Combinação**: escolher k elementos dentre n sem ordem. Fórmula: C(n, k) = n! / [k!(n − k)!]. Interpretação: multiplica as escolhas e divide por k! para retirar as permutações internas.\n- **Por que dividir?** Ao multiplicar, você conta todas as permutações internas do mesmo grupo; dividir remove repetições. Em anagramas com letras repetidas, divide-se pelos fatoriais das repetições.\n\n> Dica de Prova\n> Regra-macete: \n> - Ordem importa → só multiplicar.\n> - Ordem não importa → multiplicar e depois dividir (por k!).\n\n## 2. Como Funciona / Distinções\n- Palavras-sinal:\n  - Ordem não importa: \"equipe\", \"time\", \"grupo\", \"comissão\", \"subcomissão\", “apertos de mão”, “figuras geométricas por pontos”.\n  - Ordem importa: “fila”, “classificação”, “diretor/vice/secretário” (funções distintas), “senha/código”, “protocolo”, “anagrama” (sem letras repetidas).\n- Exceção crucial: mesmo com “equipe/comissão”, se houver cargos (diretor, vice, secretário), a ordem passa a importar (papéis distintos).\n\nTabela rápida (X vs. Y)\n- Filas/senhas/protocolos vs. Equipes/Comissões:\n  - Filas/senhas → ordem importa → permutações/arranjos → só multiplicar.\n  - Equipes/comissões (sem cargo) → ordem não importa → combinações → multiplicar e dividir por k!.\n\n> Dica de Prova\n> Faça um microexemplo: troque “André, Beto, Caio” de lugar. Se continuar o mesmo objeto, é combinação.\n\n## 3. Aplicação Prática / Técnicas\nPasso a passo (template):\n1) Identifique se a ordem importa.\n2) Se não importa, determine k (quantos elementos definem o objeto):\n   - Segmento: 2 pontos → C(n, 2)\n   - Triângulo: 3 pontos → C(n, 3)\n   - Quadrilátero: 4 pontos → C(n, 4)\n   - Equipe de k membros: C(n, k)\n3) Se houver categorias (ex.: exatamente 3 homens e 2 mulheres), use produto de combinações por categoria: C(n_h, 3) × C(n_m, 2).\n4) Conte por multiplicação direta só quando a ordem importa; se contar por etapas num caso “sem ordem”, divida por k! para retirar repetições.\n5) Simplifique cancelando fatoriais (corta, corta) para agilizar.\n\n> Dica de Prova\n> Pontos em uma circunferência: nenhum trio é colinear → pode usar diretamente C(n, 3) para triângulos e C(n, 4) para quadriláteros.\n\n## 4. Exemplos e Casos Resolvidos\n- Equipes de 3 pessoas a partir de 5\n  - Pessoas: André, Beto, Caio, Daniel, Ana.\n  - Ordem não importa: C(5, 3) = 5 × 4 × 3 / (3 × 2 × 1) = 10.\n\n- Equipe com 3 homens e 2 mulheres\n  - 8 homens e 4 mulheres; formar equipe de 5 com 3 homens + 2 mulheres.\n  - C(8, 3) × C(4, 2) = (8 × 7 × 6 / 3 × 2 × 1) × (4 × 3 / 2 × 1) = 56 × 6 = 336.\n\n- Pontos na circunferência (5 pontos)\n  - Segmentos: C(5, 2) = 5 × 4 / 2 × 1 = 10.\n  - Triângulos: C(5, 3) = 5 × 4 × 3 / 3 × 2 × 1 = 10.\n  - Quadriláteros: C(5, 4) = 5 × 4 × 3 × 2 / 4 × 3 × 2 × 1 = 5.\n\n- Apertos de mão (10 pessoas)\n  - Cada aperto é um par; ordem não importa: C(10, 2) = 10 × 9 / 2 × 1 = 45.\n\n- Subcomissão sem cargos\n  - Conselho Regional de Medicina Veterinária do Amazonas; comissão com 5 membros; formar subcomissão de 3.\n  - C(5, 3) = 10.\n\n- Diretoria com cargos (ordem importa)\n  - Cargos: diretor, vice-diretor, secretário escolhidos entre 5 pessoas.\n  - 5 × 4 × 3 (não dividir por 3!) → 60.\n\n> Dica de Prova\n> Em questões com nomes (André, Beto, Caio, etc.), teste a troca de lugares. Se o grupo não muda, divida por k!.\n\n## 5. Pegadinhas e Erros Comuns\n- Contar AB e BA como diferentes em segmentos/apertos de mão. Correto: dividir por 2!.\n- “Equipe/comissão” com cargos (diretor, vice, secretário): exige ordem; não divida por 3!.\n- Esquecer de separar por categorias (ex.: “três homens, duas mulheres”): use produto C(8, 3) × C(4, 2).\n- Não retirar repetições: multiplicar 5 × 4 × 3 em equipe de 3 e esquecer de dividir por 3!.\n- Figuras com pontos colineares: se houver pontos alinhados, alguns “triângulos/quadriláteros” não existem; no enunciado com circunferência, essa preocupação não existe.\n- Anagramas: com letras repetidas deve-se dividir pelos fatoriais das repetições; sem repetição, ordem importa e não se divide.\n\n> Dica de Prova\n> Palavra-chave “a ordem não importa” pode não aparecer literalmente; o enunciado sugere isso quando trocar pessoas de lugar não cria novo objeto (times, grupos, figuras). Se estiver “a ordem importa”, multiplique direto.",
+  "resumo_bolso": "# Análise Combinatória VIII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Princípio Multiplicativo**: etapas independentes → multiplica as opções de cada etapa.\n* **Ordem importa**: trocar posições gera resultado diferente (filas, classificações, matrículas, protocolos, senhas, códigos; anagramas sem letras repetidas).\n* **Ordem não importa**: trocar posições não muda o objeto (equipes/times, diretorias/comissões sem cargos, subcomissões, apertos de mão, figuras definidas por pontos: segmentos, triângulos, quadriláteros).\n* **Combinação C(n, k)**: escolher **k** elementos dentre **n**, **sem ordem**:  \n  C(n, k) = n! / [k!(n − k)!].\n* **Interpretação da combinação**: multiplica as escolhas e **divide por k!** para retirar as permutações internas do mesmo grupo.\n* **Por que dividir?** Ao multiplicar, você conta todas as permutações internas do mesmo grupo; dividir por k! remove essas repetições. Em anagramas com letras repetidas, divide-se pelos fatoriais das repetições.\n* **Regra-macete**:  \n  - Ordem **importa** → **só multiplicar**.  \n  - Ordem **não importa** → **multiplicar e depois dividir** (por k!).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Ordem Importa vs Ordem Não Importa\n\n| Aspecto | Ordem Importa | Ordem Não Importa |\n|--------|----------------|-------------------|\n| Exemplos típicos | filas, classificações, matrículas, protocolos, senhas, códigos; anagramas sem letras repetidas; diretor/vice/secretário (funções distintas) | equipes/times, diretorias/comissões sem cargos, subcomissões, apertos de mão, figuras definidas por pontos (segmentos, triângulos, quadriláteros) |\n| Modelo de contagem | só multiplicar (permutações/arranjos) | multiplicar e **dividir por k!** (combinações) |\n| Troca de posições | gera novo resultado | continua o mesmo objeto |\n\n---\n\n### Equipes/Comissões vs Diretoria com Cargos\n\n| Aspecto | Equipe/Comissão (sem cargos) | Diretoria (com cargos) |\n|--------|-------------------------------|-------------------------|\n| Natureza | só interessa **quem** entra | interessa **quem** e **em qual cargo** |\n| Modelo | combinação C(n, k) (multiplicar e dividir) | multiplicação direta (permutações/arranjos) |\n| Exemplo | subcomissão de 3 em 5 → C(5, 3) | diretor/vice/secretário em 5 → 5 × 4 × 3 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Combinação Simples**\n\n* **Fórmula**: C(n, k) = n! / [k!(n − k)!].\n* **Aplicação**: escolha de grupos **sem ordem** (equipes, subcomissões, figuras por pontos, pares de apertos de mão).\n* **Exemplo**: equipe de 3 entre 5 → C(5, 3) = 10.\n\n---\n\n**2. Figuras Definidas por Pontos**\n\n* **Aplicação**: figuras geométricas definidas por pontos.\n* **Regra**:  \n  - Segmentos: C(n, 2).  \n  - Triângulos: C(n, 3).  \n  - Quadriláteros: C(n, 4).\n* **Exemplo (5 pontos em circunferência)**:  \n  - Segmentos: C(5, 2) = 10.  \n  - Triângulos: C(5, 3) = 10.  \n  - Quadriláteros: C(5, 4) = 5.\n\n---\n\n**3. Categorias (Homens/Mulheres, etc.)**\n\n* **Aplicação**: exigência de quantidade específica por categoria.\n* **Regra**: produto de combinações por categoria.  \n  Ex.: “3 homens e 2 mulheres” → C(n_h, 3) × C(n_m, 2).\n* **Exemplo**: 8 homens, 4 mulheres → 3H + 2M: C(8, 3) × C(4, 2) = 56 × 6 = 336.\n\n---\n\n**4. Apertos de Mão**\n\n* **Aplicação**: cada aperto é um **par sem ordem** de pessoas.\n* **Regra**: C(n, 2).\n* **Exemplo**: 10 pessoas → C(10, 2) = 45.\n\n---\n\n**5. Diretoria com Cargos (Ordem Importa)**\n\n* **Aplicação**: cargos distintos (diretor, vice-diretor, secretário etc.).\n* **Regra**: multiplicar em cascata: n × (n−1) × (n−2) … (não dividir por k!).\n* **Exemplo**: 3 cargos em 5 pessoas → 5 × 4 × 3 = 60.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Contar AB e BA como diferentes em segmentos/apertos de mão. Correto: é o mesmo par → dividir por 2! (usar C(n, 2)).\n2. “Equipe/comissão” com cargos (diretor, vice, secretário): exige ordem; não usar combinação (não dividir por 3!).\n3. Esquecer de separar por categorias (ex.: “três homens, duas mulheres”): usar produto C(8, 3) × C(4, 2).\n4. Não retirar repetições: multiplicar 5 × 4 × 3 em equipe de 3 e esquecer de dividir por 3!.\n5. Figuras com pontos colineares: se houver pontos alinhados, alguns “triângulos/quadriláteros” não existem; em pontos na circunferência, pode usar diretamente C(n, 3) e C(n, 4).\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar **ordem importa** vs **ordem não importa** sem depender da frase explícita?\n* Lembro que **equipes/comissões sem cargos** → C(n, k) (multiplicar e dividir por k!)?\n* Lembro que **diretor/vice/secretário** → só multiplicar (ordem importa, não dividir)?\n* Fixei as fórmulas de figuras: segmentos C(n, 2), triângulos C(n, 3), quadriláteros C(n, 4)?\n* Sei montar casos com categorias: produto de combinações (ex.: C(8, 3) × C(4, 2))?\n* Em apertos de mão/pares, lembro de usar C(n, 2) e não contar AB e BA separados?\n* Sei simplificar C(n, k) cancelando fatoriais (“corta, corta”) para ganhar tempo na prova?",
+  "mapa_mental": "# 🧮 Análise Combinatória VIII\n## 🎯 Conceitos Centrais\n### 💡 Princípio Multiplicativo\n- Etapas independentes\n- Multiplica opções\n- Ordem relevante\n### 💡 Ordem Importa\n- Filas e senhas\n- Classificações\n- Cargos distintos\n- Anagramas simples\n### 💡 Ordem Não Importa\n- Equipes e times\n- Comissões sem cargo\n- Apertos de mão\n- Figuras por pontos\n## 🧮 Combinações\n### 💡 Definição Combinação\n- Escolher sem ordem\n- Subconjuntos tamanho k\n- Grupos indistintos\n- Contagem reduzida\n### 🧮 Fórmula C(n, k)\n- C(n, k) = n! / k!(n−k)!\n- n elementos totais\n- k elementos escolhidos\n- n ≥ k\n### 🧮 Multiplicar e Dividir\n- Multiplica escolhas\n- Divide por k!\n- Remove permutações\n- Evita dupla contagem\n## ⚙️ Aplicações Clássicas\n### 🧮 Grupos e Categorias\n- Equipes de k membros\n- Comissões sem cargos\n- Produto de combinações\n- Homens e mulheres\n### 🧮 Figuras Geométricas\n- Segmentos C(n, 2)\n- Triângulos C(n, 3)\n- Quadriláteros C(n, 4)\n- Pontos em circunferência\n### 🧮 Apertos de Mão\n- Pares de pessoas\n- Ordem não importa\n- Usa C(n, 2)\n- Evita AB e BA\n## ⚠️ Erros Frequentes\n### ⚠️ Confundir Ordem\n- Equipe com cargos\n- Diretor e vice\n- Ordem passa a importar\n- Não usar combinação\n### ⚠️ Não Dividir por k!\n- Contar permutações\n- AB e BA distintos\n- Grupos repetidos\n- Falta de k!\n### ⚠️ Categorias e Restrições\n- Ignorar categorias\n- Misturar homens mulheres\n- Pontos colineares\n- Anagramas com repetição",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Ordem e Agrupamentos",
+      "description": "Ordem e Agrupamentos — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual critério define se a ordem dos elementos altera um agrupamento?",
+          "back": "Quando a ordem dos elementos **não altera** a natureza ou o resultado do agrupamento.",
+          "hint": "Refere-se à natureza do agrupamento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "conceitos-fundamentais"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual operação deve ser aplicada quando a troca de posições cria novo resultado?",
+          "back": "Multiplicar.",
+          "hint": "Operação aritmética básica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "procedimento-operacional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual ajuste evita a contagem repetida de um agrupamento sem ordenação?",
+          "back": "Dividir.",
+          "hint": "Operação aritmética básica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "procedimento-operacional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Por que agrupamentos sem ordenação exigem uma divisão após a multiplicação?",
+          "back": "Para **retirar as repetições** geradas pela multiplicação, evitando contar o mesmo agrupamento mais de uma vez.",
+          "hint": "Finalidade da operação de divisão",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "logica-de-contagem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Em quais condições a troca de posições deixa de preservar o mesmo agrupamento?",
+          "back": "Quando a ordem dos elementos **cria um novo resultado**, ou seja, quando a posição importa (como em filas, códigos ou funções específicas como diretor e secretário).",
+          "hint": "O oposto da definição de combinação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "arranjo-permutacao"
+          ],
+          "type": "exception"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Figuras Geométricas",
+      "description": "Figuras Geométricas — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Quantos pontos são necessários para formar um segmento de reta?",
+          "back": "Dois pontos.",
+          "hint": "Quantidade mínima de pontos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "geometria-basica"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Com cinco pontos distintos, quantos segmentos de reta podem ser formados?",
+          "back": "10 segmentos de reta.",
+          "hint": "Aplicação de fórmula de combinação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Aperto de Mãos",
+      "description": "Aperto de Mãos — 2 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Quantas pessoas participam diretamente de um aperto de mãos?",
+          "back": "Duas pessoas.",
+          "hint": "Quantidade mínima de pessoas",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "problemas-classicos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Em uma reunião com dez pessoas, quantos apertos de mãos únicos podem ocorrer?",
+          "back": "45 apertos de mão.",
+          "hint": "Aplicação de fórmula de combinação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações Combinatórias",
+      "description": "Aplicações Combinatórias — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como representar a formação de uma equipe com três homens e duas mulheres?",
+          "back": "Combinação de 8 homens tomados 3 a 3 multiplicada pela combinação de 4 mulheres tomadas 2 a 2.",
+          "hint": "Princípio fundamental da contagem",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "principio-multiplicativo"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-11",
+          "front": "De cinco membros, quantas subcomissões distintas com três integrantes podem ser formadas?",
+          "back": "10 subcomissões.",
+          "hint": "Aplicação de fórmula de combinação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "combinatoria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em análise combinatória, qual é a principal característica que diferencia os agrupamentos do tipo combinação dos agrupamentos do tipo arranjo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Na combinação, o cálculo envolve apenas multiplicações sucessivas, enquanto no arranjo é necessário realizar divisões",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo de arranjos envolve multiplicações sucessivas. O cálculo de combinações também envolve multiplicações, mas é seguido por divisões para eliminar as contagens repetidas que surgem devido à irrelevância da ordem, ou seja, para desconsiderar as permutações internas dos elementos selecionados."
+        },
+        {
+          "id": "b",
+          "text": "Na combinação, é obrigatório utilizar todos os elementos disponíveis, enquanto no arranjo pode-se escolher apenas parte deles",
+          "correct": false,
+          "explanation": "Incorreta. Tanto na combinação quanto no arranjo, é possível selecionar apenas uma parte dos elementos disponíveis, e não obrigatoriamente todos. A escolha de todos os elementos caracteriza uma permutação, que é um caso particular de arranjo."
+        },
+        {
+          "id": "c",
+          "text": "Na combinação, a ordem dos elementos não altera a natureza do agrupamento, enquanto no arranjo a ordem é relevante",
+          "correct": true,
+          "explanation": "Correta. A distinção fundamental entre combinação e arranjo reside na relevância da ordem dos elementos. Na combinação, a ordem de seleção dos elementos não altera o agrupamento formado (ex: uma comissão de pessoas é a mesma, independentemente da ordem em que seus membros foram escolhidos). Já no arranjo, a ordem é crucial e gera agrupamentos distintos (ex: em uma senha, \"123\" é diferente de \"321\")."
+        },
+        {
+          "id": "d",
+          "text": "Na combinação, os elementos podem ser repetidos no mesmo agrupamento, enquanto no arranjo cada elemento aparece apenas uma vez",
+          "correct": false,
+          "explanation": "Incorreta. Em sua forma mais comum (combinação e arranjo simples), os elementos não podem ser repetidos dentro do mesmo agrupamento. A possibilidade de repetição é uma variação (combinação com repetição ou arranjo com repetição) e não a característica principal que os diferencia."
+        }
+      ],
+      "explanation": "Correta. A distinção fundamental entre combinação e arranjo reside na relevância da ordem dos elementos. Na combinação, a ordem de seleção dos elementos não altera o agrupamento formado (ex: uma comissão de pessoas é a mesma, independentemente da ordem em que seus membros foram escolhidos). Já no arranjo, a ordem é crucial e gera agrupamentos distintos (ex: em uma senha, \"123\" é diferente de \"321\").",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual das seguintes situações representa um problema de combinação, onde a ordem dos elementos não é relevante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Seleção de membros para compor uma comissão de ética",
+          "correct": true,
+          "explanation": "Correta. A seleção de membros para compor uma comissão de ética é um problema de combinação. Se um grupo de pessoas (por exemplo, João, Maria e Pedro) é escolhido para a comissão, a comissão é a mesma, independentemente da ordem em que foram selecionados ou listados. A ordem não atribui funções ou posições diferentes dentro da comissão."
+        },
+        {
+          "id": "b",
+          "text": "Distribuição de medalhas de ouro, prata e bronze em uma competição esportiva",
+          "correct": false,
+          "explanation": "Incorreta. A distribuição de medalhas (ouro, prata, bronze) é um problema de arranjo, pois a posição (1º, 2º, 3º lugar) é distinta e a ordem de chegada dos competidores determina um resultado diferente. O atleta que ganha ouro tem um resultado diferente do que ganha prata."
+        },
+        {
+          "id": "c",
+          "text": "Formação de senhas numéricas para acesso a um sistema bancário",
+          "correct": false,
+          "explanation": "Incorreta. Na formação de senhas numéricas, a ordem dos dígitos é fundamental (por exemplo, \"123\" é diferente de \"321\"). Isso caracteriza um problema de arranjo, onde a sequência dos elementos importa."
+        },
+        {
+          "id": "d",
+          "text": "Organização de pessoas em uma fila para atendimento prioritário",
+          "correct": false,
+          "explanation": "Incorreta. A organização de pessoas em uma fila para atendimento prioritário é um problema de arranjo (ou permutação, se todas as pessoas forem consideradas). A ordem em que as pessoas estão na fila é relevante e cria diferentes sequências de atendimento."
+        }
+      ],
+      "explanation": "Correta. A seleção de membros para compor uma comissão de ética é um problema de combinação. Se um grupo de pessoas (por exemplo, João, Maria e Pedro) é escolhido para a comissão, a comissão é a mesma, independentemente da ordem em que foram selecionados ou listados. A ordem não atribui funções ou posições diferentes dentro da comissão.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Considerando 5 pontos distintos marcados em uma circunferência, quantos segmentos de reta podem ser formados unindo quaisquer dois desses pontos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "15 segmentos de reta",
+          "correct": false,
+          "explanation": "Incorreta. O resultado de 15 segmentos de reta não corresponde ao cálculo de combinações de 5 elementos tomados 2 a 2."
+        },
+        {
+          "id": "b",
+          "text": "10 segmentos de reta",
+          "correct": true,
+          "explanation": "Correta. Para formar um segmento de reta, são necessários 2 pontos. A ordem em que esses pontos são escolhidos não importa (o segmento de A a B é o mesmo que o segmento de B a A). Portanto, trata-se de um problema de combinação simples de 5 pontos tomados 2 a 2. O cálculo é C(5,2) = 5! / (2! * (5-2)!) = 5! / (2! * 3!) = (5 * 4) / (2 * 1) = 10 segmentos de reta."
+        },
+        {
+          "id": "c",
+          "text": "20 segmentos de reta",
+          "correct": false,
+          "explanation": "Incorreta. 20 segmentos de reta seria o resultado se a ordem importasse (um arranjo de 5 tomados 2 a 2, ou seja, A(5,2) = 5 * 4 = 20). No entanto, para segmentos de reta, a ordem dos pontos não altera o segmento formado."
+        },
+        {
+          "id": "d",
+          "text": "5 segmentos de reta",
+          "correct": false,
+          "explanation": "Incorreta. A formação de 5 segmentos de reta significaria, por exemplo, unir cada ponto ao seu vizinho imediato na circunferência, o que não considera todas as uniões possíveis entre quaisquer dois pontos."
+        }
+      ],
+      "explanation": "Correta. Para formar um segmento de reta, são necessários 2 pontos. A ordem em que esses pontos são escolhidos não importa (o segmento de A a B é o mesmo que o segmento de B a A). Portanto, trata-se de um problema de combinação simples de 5 pontos tomados 2 a 2. O cálculo é C(5,2) = 5! / (2! * (5-2)!) = 5! / (2! * 3!) = (5 * 4) / (2 * 1) = 10 segmentos de reta.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em uma reunião com 10 pessoas, onde cada pessoa cumprimenta todas as outras exatamente uma vez com um aperto de mão, quantos apertos de mão ocorrerão no total?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "35 apertos de mão",
+          "correct": false,
+          "explanation": "Incorreta. 35 apertos de mão não é o resultado correto para a combinação de 10 pessoas tomadas 2 a 2."
+        },
+        {
+          "id": "b",
+          "text": "20 apertos de mão",
+          "correct": false,
+          "explanation": "Incorreta. 20 apertos de mão não é o resultado correto para a combinação de 10 pessoas tomadas 2 a 2."
+        },
+        {
+          "id": "c",
+          "text": "90 apertos de mão",
+          "correct": false,
+          "explanation": "Incorreta. 90 apertos de mão seria o resultado se a ordem importasse (um arranjo de 10 tomados 2 a 2, ou seja, A(10,2) = 10 * 9 = 90). No entanto, para apertos de mão, a ordem não cria um novo cumprimento."
+        },
+        {
+          "id": "d",
+          "text": "45 apertos de mão",
+          "correct": true,
+          "explanation": "Correta. Um aperto de mão envolve exatamente duas pessoas, e a ordem em que elas se cumprimentam não importa (se A cumprimenta B, é o mesmo aperto de mão que B cumprimenta A). Portanto, é um problema de combinação simples de 10 pessoas tomadas 2 a 2. O cálculo é C(10,2) = 10! / (2! * (10-2)!) = 10! / (2! * 8!) = (10 * 9) / (2 * 1) = 90 / 2 = 45 apertos de mão."
+        }
+      ],
+      "explanation": "Correta. Um aperto de mão envolve exatamente duas pessoas, e a ordem em que elas se cumprimentam não importa (se A cumprimenta B, é o mesmo aperto de mão que B cumprimenta A). Portanto, é um problema de combinação simples de 10 pessoas tomadas 2 a 2. O cálculo é C(10,2) = 10! / (2! * (10-2)!) = 10! / (2! * 8!) = (10 * 9) / (2 * 1) = 90 / 2 = 45 apertos de mão.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Dispondo de 8 homens e 4 mulheres, de quantas maneiras distintas é possível formar uma equipe composta por exatamente 3 homens e 2 mulheres?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "336 maneiras distintas",
+          "correct": true,
+          "explanation": "Correta. A formação da equipe é um problema de combinação, pois a ordem de escolha dos membros não altera a composição da equipe. Primeiro, calcula-se o número de maneiras de escolher 3 homens de 8: C(8,3) = 8! / (3! * 5!) = (8 * 7 * 6) / (3 * 2 * 1) = 56. Em seguida, calcula-se o número de maneiras de escolher 2 mulheres de 4: C(4,2) = 4! / (2! * 2!) = (4 * 3) / (2 * 1) = 6. Pelo Princípio Multiplicativo, o total de maneiras de formar a equipe é o produto desses resultados: 56 * 6 = 336 maneiras distintas."
+        },
+        {
+          "id": "b",
+          "text": "96 maneiras distintas",
+          "correct": false,
+          "explanation": "Incorreta. 96 maneiras distintas não é o resultado correto da multiplicação das combinações de homens e mulheres."
+        },
+        {
+          "id": "c",
+          "text": "224 maneiras distintas",
+          "correct": false,
+          "explanation": "Incorreta. 224 maneiras distintas não é o resultado correto da multiplicação das combinações de homens e mulheres."
+        },
+        {
+          "id": "d",
+          "text": "168 maneiras distintas",
+          "correct": false,
+          "explanation": "Incorreta. 168 maneiras distintas não é o resultado correto da multiplicação das combinações de homens e mulheres."
+        }
+      ],
+      "explanation": "Correta. A formação da equipe é um problema de combinação, pois a ordem de escolha dos membros não altera a composição da equipe. Primeiro, calcula-se o número de maneiras de escolher 3 homens de 8: C(8,3) = 8! / (3! * 5!) = (8 * 7 * 6) / (3 * 2 * 1) = 56. Em seguida, calcula-se o número de maneiras de escolher 2 mulheres de 4: C(4,2) = 4! / (2! * 2!) = (4 * 3) / (2 * 1) = 6. Pelo Princípio Multiplicativo, o total de maneiras de formar a equipe é o produto desses resultados: 56 * 6 = 336 maneiras distintas.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em problemas de combinação, por que é necessário dividir o resultado das multiplicações pelo fatorial do número de posições?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Para eliminar os agrupamentos que contêm elementos repetidos e garantir que cada elemento apareça apenas uma vez",
+          "correct": false,
+          "explanation": "Incorreta. Em problemas de combinação simples, os elementos já são considerados distintos e selecionados sem repetição. A divisão pelo fatorial não serve para eliminar elementos repetidos na seleção, mas sim para corrigir a contagem de agrupamentos que, embora formados pelos mesmos elementos, diferem apenas na ordem em que foram dispostos."
+        },
+        {
+          "id": "b",
+          "text": "Para compensar matematicamente a impossibilidade de reutilizar elementos já selecionados em posições anteriores",
+          "correct": false,
+          "explanation": "Incorreta. A impossibilidade de reutilizar elementos já selecionados (característica da seleção sem reposição) é naturalmente considerada na etapa de multiplicação inicial, onde o número de opções para cada escolha subsequente diminui. A divisão pelo fatorial, por sua vez, aborda a irrelevância da ordem dos elementos dentro do agrupamento formado, e não a restrição de não repetição de elementos."
+        },
+        {
+          "id": "c",
+          "text": "Para remover as contagens duplicadas de agrupamentos que diferem apenas pela ordem dos elementos",
+          "correct": true,
+          "explanation": "Correta. A essência de uma combinação é que a ordem dos elementos selecionados não importa para a formação do agrupamento. Se, por exemplo, uma equipe é composta por \"A, B e C\", essa equipe é a mesma que \"B, A e C\". Ao calcular inicialmente o número de maneiras como os elementos podem ser escolhidos e ordenados (como em um arranjo ou permutação), estamos contando cada agrupamento único múltiplas vezes. A divisão pelo fatorial do número de posições (ou elementos selecionados) remove essa supercontagem, garantindo que cada conjunto distinto de elementos seja contado apenas uma vez, independentemente da sequência em que foram escolhidos."
+        },
+        {
+          "id": "d",
+          "text": "Para ajustar o cálculo quando o número de elementos disponíveis é menor que o número de posições a preencher",
+          "correct": false,
+          "explanation": "Incorreta. Se o número de elementos disponíveis for menor que o número de posições a preencher, o problema não seria de combinação simples, pois seria impossível formar o agrupamento sem repetição ou sem elementos suficientes. A divisão pelo fatorial não está relacionada a essa condição de viabilidade do agrupamento."
+        }
+      ],
+      "explanation": "Correta. A essência de uma combinação é que a ordem dos elementos selecionados não importa para a formação do agrupamento. Se, por exemplo, uma equipe é composta por \"A, B e C\", essa equipe é a mesma que \"B, A e C\". Ao calcular inicialmente o número de maneiras como os elementos podem ser escolhidos e ordenados (como em um arranjo ou permutação), estamos contando cada agrupamento único múltiplas vezes. A divisão pelo fatorial do número de posições (ou elementos selecionados) remove essa supercontagem, garantindo que cada conjunto distinto de elementos seja contado apenas uma vez, independentemente da sequência em que foram escolhidos.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Uma banca examinadora solicita a formação de uma equipe com funções específicas: um diretor, um vice-diretor e um secretário, escolhidos entre 3 candidatos disponíveis. Neste contexto, por que a situação NÃO caracteriza um problema de combinação simples?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque o número de candidatos é igual ao número de posições a serem preenchidas, tornando o cálculo trivial",
+          "correct": false,
+          "explanation": "Incorreta. O fato de o número de candidatos ser igual ao número de posições a serem preenchidas não descaracteriza um problema de combinação ou arranjo; apenas simplifica o cálculo para uma permutação de todos os elementos. A distinção entre combinação e arranjo/permutação reside na relevância da ordem ou da função atribuída aos elementos, e não na quantidade de elementos ou posições."
+        },
+        {
+          "id": "b",
+          "text": "Porque a atribuição de funções distintas faz com que a ordem de seleção altere a natureza do agrupamento",
+          "correct": true,
+          "explanation": "Correta. Em uma combinação simples, a ordem dos elementos não importa. No entanto, quando há funções específicas (diretor, vice-diretor e secretário), a atribuição de um candidato a uma função específica é diferente de atribuí-lo a outra. Por exemplo, se André é diretor e Beto é vice-diretor, essa equipe é diferente daquela em que Beto é diretor e André é vice-diretor. A ordem de atribuição das funções é relevante, o que caracteriza um problema de arranjo (ou permutação, neste caso específico de 3 candidatos para 3 funções) e não de combinação."
+        },
+        {
+          "id": "c",
+          "text": "Porque a formação de equipes com cargos hierárquicos exige a aplicação de permutações com restrições posicionais",
+          "correct": false,
+          "explanation": "Incorreta. Embora a formação de equipes com cargos hierárquicos seja, de fato, um problema de arranjo ou permutação, a explicação de \"restrições posicionais\" não é o motivo principal pelo qual não é uma combinação simples. A diferença fundamental é que a ordem dos elementos importa devido às funções distintas que cada um ocupará, e não por restrições adicionais específicas sobre quais elementos podem ocupar certas posições. O problema é um arranjo simples, onde a ordem é relevante."
+        },
+        {
+          "id": "d",
+          "text": "Porque é necessário garantir que cada candidato ocupe exatamente uma função, impedindo repetições",
+          "correct": false,
+          "explanation": "Incorreta. A exigência de que cada candidato ocupe apenas uma função, impedindo repetições, é uma característica comum tanto de arranjos (ou permutações) quanto de combinações simples (sem reposição). Essa condição, por si só, não é o fator que distingue um problema de combinação de um problema de arranjo; o fator determinante é se a ordem dos elementos no agrupamento é relevante ou não."
+        }
+      ],
+      "explanation": "Correta. Em uma combinação simples, a ordem dos elementos não importa. No entanto, quando há funções específicas (diretor, vice-diretor e secretário), a atribuição de um candidato a uma função específica é diferente de atribuí-lo a outra. Por exemplo, se André é diretor e Beto é vice-diretor, essa equipe é diferente daquela em que Beto é diretor e André é vice-diretor. A ordem de atribuição das funções é relevante, o que caracteriza um problema de arranjo (ou permutação, neste caso específico de 3 candidatos para 3 funções) e não de combinação.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_193892_Análise Combinatória VIII.pdf",
+  "coletado_em": "2026-09-23T21:02:29"
+}

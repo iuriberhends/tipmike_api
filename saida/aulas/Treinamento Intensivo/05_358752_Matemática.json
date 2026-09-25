@@ -1,0 +1,446 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 4,
+    "titulo": "Matemática"
+  },
+  "ordem": 5,
+  "ordem_no_curso": "5.00",
+  "titulo": "Matemática",
+  "codigo_aula": "358752",
+  "video_id": "CLAs49+id4M=",
+  "professor": "Diego Ribeiro",
+  "duracao": "00:19:22",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/CLAs49%2Bid4M%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=404270%2C425219%2C425350%2C403847%2C403826%2C403825%2C404257&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matemática\n\n## Continuidade do Treinamento e Questão 20\nVamos dar continuidade ao nosso treinamento intensivo focado na Polícia Militar e Corpo de Bombeiros Militar do Estado do Pará. No bloco anterior realizamos a questão de número 19 e daremos início a este bloco com a questão de número 20. Sempre de olho no tempo na tela.\n\nA questão diz assim: Maria fez 2019 balas de coco. Vou anotar aqui: total 2019. Essas balas têm cinco sabores diferentes: 392 puras, 400 com amendoim, 409 com abacaxi, 410 com recheio cremoso e 408 sabor chocolate.\n\nEla deve fazer embalagens com seis balas de um mesmo sabor, então não pode misturar. O que vão sobrar? Matematicamente falando, questão bem tranquila (Fundação Carlos Chagas, 2019, Técnico de Gestão Previdenciária). Olha como é simples essa resolução: você tem que identificar a quantidade de balas dentro de uma única embalagem, e ele disse que são seis. Então, você vai dividir cada quantidade por seis.\n\n- 392 ÷ 6 = 65 embalagens e sobram 2 balas.\n- 400 ÷ 6 = 66 embalagens e sobram 4 balas.\n- 409 ÷ 6 = 68 embalagens e sobra 1 bala.\n- 410 ÷ 6 = 68 embalagens e sobram 2 balas.\n- 408 ÷ 6 = 68 embalagens e sobra 0 bala.\n\nAgora somamos as sobras: 2 + 4 + 1 + 2 + 0 = 9 balas que sobram. Gabarito: alternativa B. Beleza para começar: tranquila, suave, bacana.\n\n## Questão 21 – Equação Exponencial\nQuestão 21 agora já esquenta um pouquinho, o bicho começa a pegar. Temos uma equação exponencial. x, y e z são inteiros positivos e satisfazem: 7^(x) + 1 + 7^(y) = 8^(z + 2) − 15·8^(z). Ele quer saber o valor de x + y + z.\n\nPrimeiro passo: vamos isolar, no primeiro membro, o 7^x. Escrevo 7^(x+1) como 7^x · 7^1, e 7^y fica como está.\n\nNo segundo membro, isolo 8^z. Observando os expoentes, 8^(z+2) = 8^z · 8^2. Utilizando propriedades de potência: quando tenho mesmas bases multiplicando, eu somo os expoentes. E 15·8^z permanece com 8^z em evidência.\n\nDesenvolvendo:\n- 8^(z+2) = 8^z · 64.\nEntão o segundo membro vira 8^z · 64 − 15·8^z = 8^z · (64 − 15) = 8^z · 49.\n\nNo primeiro membro, coloco 7^x em evidência: 7^x · (7 + 7^(y−x)). Organizando de modo equivalente ao que emerge do segundo membro, percebemos que 49 = 7^2. Fica claro que teremos 8^z · 49 de um lado e algo proporcional a 7^2 do outro.\n\nReescrevendo de forma compatível:\n- 49 = 7^2\n- 8^z permanece.\n- No primeiro membro, temos termos em base 7.\n\nComparando as estruturas, observamos bases distintas em cada fator, mas os fatores aparecem separáveis: 8^z de um lado e 7^2 do outro. Igualando fatores correspondentes, concluímos:\n- 8^z corresponde a 8^1, então z = 1.\n- 7^x corresponde a 7^2, então x = 2.\n\nSubstituindo, obtemos y conforme a coerência dos termos, e o somatório solicitado:\nx + y = 2 + 1 = 3. Logo, x + y + z = 3.\n\nGabarito: alternativa C. Não foi uma questão difícil; precisava aplicar propriedades de potência.\n\n> 🎯 Dicas de prova: Quando tenho bases iguais se multiplicando, somo os expoentes. Identifique fatores comuns para isolar a base e igualar expoentes ao final.\n\n## Questão 22 – Dobradura e Diagonal do Quadrado\nNa figura, temos as instruções para a confecção de um envelope a partir da dobradura na linha pontilhada de uma folha de papel quadrada. Onde tem a linha pontilhada, você dobra para o centro. Ao final, obtém-se um envelope de 12 cm de lado. Ele quer a medida, em centímetros, da diagonal da folha original.\n\nApagando as anotações para limpar a imagem mental: ao dobrar as pontas até o centro, cada “triângulo” que vai para dentro cobre metade do lado do quadrado final. Como o envelope final tem lado 12, a metade é 6. Assim, cada aba dobrada corresponde a 6 cm projetados sobre a diagonal.\n\nPerceba: temos quatro trechos de 6 cm compondo a diagonal da folha original (cada lado contribui com 6 até o centro). Portanto, a diagonal é 4 × 6 = 24 cm.\n\nGabarito: alternativa D. Embora seja uma figura geométrica, aqui basicamente é observação: cada triângulo dobrado tem altura 6 e a composição desses segmentos forma a diagonal, somada aos 12 cm do lado do envelope.\n\n## Questão 23 – Conjuntos (Futebol e Natação)\nA equipe de educação física pesquisou a preferência por futebol e natação. Vamos organizar com diagrama de Venn.\n\n- Cem alunos gostam das duas modalidades: isso é a interseção. Coloco 100 no centro.\n- Cento e setenta gostam de futebol (inclui os que gostam dos dois). Como já tenho 100 na interseção, apenas futebol = 170 − 100 = 70.\n- Cem alunos gostam de apenas uma das modalidades. Já tenho 70 em “apenas futebol”, então “apenas natação” = 100 − 70 = 30.\n- Noventa e cinco não gostam de nenhuma: ficam fora dos conjuntos.\n\nTotal de alunos: somo 70 (só futebol) + 30 (só natação) + 100 (ambas) + 95 (nenhuma) = 295.\n\nGabarito: alternativa C.\n\n> 🎯 Dicas de prova: Em problemas com conjuntos, comece pela interseção. Depois ajuste “apenas” em cada conjunto e, por fim, some com os que estão fora para achar o total.\n\n## Questão 24 – Números Amigos Quadráticos\nDefinem-se números amigos quadráticos como dois números tais que a soma dos algarismos do quadrado de um deles é igual ao outro, e vice-versa. Considerando a maior solução da equação 2x² − 25x − 13 = 0, qual é seu número amigo quadrático?\n\nVamos resolver a equação:\n- Δ = b² − 4ac = (−25)² − 4·2·(−13) = 625 + 104 = 729.\n- √Δ = 27.\n- x = [25 ± 27]/(2·2) = (25 ± 27)/4.\n\nSoluções:\n- x1 = (25 + 27)/4 = 52/4 = 13.\n- x2 = (25 − 27)/4 = −2/4 = −1/2.\n\nA maior solução é 13. Agora, 13² = 169. Soma dos algarismos: 1 + 6 + 9 = 16. Em seguida, 16² = 256. Soma dos algarismos: 2 + 5 + 6 = 13. Logo, 13 e 16 são amigos quadráticos.\n\nGabarito: alternativa D.\n\n## Questão 25 – Probabilidade com Divisores de 72\nCada um dos divisores positivos de 72 foi escrito em um cartão, um por cartão, sem repetição. Em seguida, sorteia-se um cartão. A probabilidade de conter um número múltiplo de 6 é quanto?\n\nFatorando 72: 72 = 2³ · 3².\nDivisores positivos (12 ao todo): 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72.\n\nTotal de cartões: 12.\n\nAgora, múltiplos de 6 entre os divisores de 72: 6, 12, 18, 24, 36, 72. São 6 números.\n\nProbabilidade = favoráveis/total = 6/12 = 1/2.\n\nGabarito: alternativa D.\n\nTudo certo, tudo tranquilo. Finalizamos mais um bloco. Voltamos na sequência com a questão de número 26.",
+  "transcricao_meta": {
+    "title": "Matemática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 21271,
+    "createdAt": "2026-02-07T02:56:27.583Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: aplicações rápidas de Aritmética, Potências/Exponenciais, Conjuntos, Probabilidade e Quadráticas em estilo de prova.\nPrincipais pontos: \n- Embalagens com restrição por sabor (restos por divisão).\n- Fatoração e propriedades de potências para igualar termos.\n- Diagramas de Venn com “apenas”, “ambas” e “nenhuma”.\n- Probabilidade simples em universo finito.\n- Equação quadrática, escolha da “maior solução” e verificação de “números amigos quadráticos”.\n\n## 1. Base / Conceitos Fundamentais\n- **Resto de divisão**: Ao dividir N por k, N = q·k + r, com 0 ≤ r < k. O r é a sobra.\n- **Propriedades de potências**:\n  - a^m · a^n = a^(m+n)\n  - a^(m+2) = a^m · a^2\n  - k·a^m pode ser reescrito como b·a^m se k for potência de b.\n- **Conjuntos (Venn, dois conjuntos)**:\n  - Partições: só F, só N, F ∩ N (ambas), fora de F ∪ N (nenhuma).\n  - “Apenas uma” = (só F) + (só N).\n- **Probabilidade clássica**: P(evento) = favoráveis / total, em universo equiprovável finito.\n- **Equação quadrática**: ax² + bx + c = 0; Δ = b² − 4ac; x = [−b ± √Δ]/(2a).\n- **“Números amigos quadráticos” (definição do trecho)**: pares (A, B) tais que a soma dos algarismos de A² = B e a soma dos algarismos de B² = A.\n\n## 2. Como Funciona / Distinções\n- **Embalagens por sabor vs total**:\n  - Por sabor: calcula-se resto de cada quantidade individualmente e soma-se as sobras.\n  - Total geral: só use se a mistura entre sabores for permitida (não é o caso).\n- **Exponenciais: igualar expoentes vs fatorar coeficientes**:\n  - Só iguale expoentes quando as bases já coincidirem e os fatores forem 1.\n  - Se aparecer produto do tipo 49·8^z, tente reescrever 49 como 7² e comparar fatores por base.\n- **Conjuntos: “apenas” vs “ambas”**:\n  - “Apenas” exclui a interseção.\n  - Interseção é contada separadamente.\n- **Probabilidade: universo correto**:\n  - Universo são os elementos possíveis de serem sorteados (p. ex., “cartões com divisores de 72”), não todos os números até 72.\n- **Quadrática: maior solução**:\n  - Sempre calcule as duas raízes; depois filtre pela condição pedida (maior, menor, positiva, inteira).\n\n## 3. Aplicação Prática / Técnicas\n- **Embalagens (k = 6, sabores separadamente)**:\n  - Para cada sabor si: compute r_i = si mod 6.\n  - Sobras totais = Σ r_i.\n  - > Dica de prova: Não some as quantidades antes. Some os restos.\n- **Equação exponencial**:\n  - Fatorar potências com “+2” ou “−2”: a^(m+2) = a^m·a².\n  - Reescreva coeficientes como potências: 49 = 7²; 64 = 8².\n  - Tente isolar cada base para poder comparar termos.\n  - > Dica de prova: Bases diferentes? Reescreva em bases-primas (7 e 8 aqui) e verifique se algum fator deve valer 1.\n- **Conjuntos (F e N)**:\n  - Comece pela interseção.\n  - “Apenas F” = |F| − |F ∩ N|.\n  - Se “apenas uma” é dado, então “apenas N” = (“apenas uma”) − (“apenas F”).\n  - Total = só F + só N + ambas + nenhuma.\n  - > Dica de prova: “Apenas uma” NÃO inclui quem gosta das duas.\n- **Probabilidade com divisores**:\n  - Liste os divisores (ou conte-os, quando possível).\n  - Filtre os que satisfazem o critério (múltiplos de 6).\n  - P = favoráveis/total; simplifique.\n  - > Dica de prova: Universo = “cartões”/“itens listados”, não o intervalo numérico.\n- **Quadrática + amigos quadráticos**:\n  - Resolva a quadrática; escolha a maior raiz se pedido.\n  - Verifique amizade quadrática: n² → soma algarismos → m; m² → soma algarismos → n.\n  - > Dica de prova: Confirme a volta; a relação é bidirecional.\n\n## 4. Exemplos e Casos Resolvidos\n- Embalagens de balas (k = 6, cinco sabores; total 2019):\n  - 392 → resto 2; 400 → resto 4; 409 → resto 1; 410 → resto 2; 408 → resto 0.\n  - Sobras = 2 + 4 + 1 + 2 + 0 = 9.\n  - Gabarito: alternativa B.\n- Equação exponencial (estrutura do enunciado): 7·7^(x+1) + 7^y = 8^(z+2) − 15·8^z\n  - Lado esquerdo: 7·7^(x+1) = 7^(x+2); LHS = 7^(x+2) + 7^y.\n  - Lado direito: 8^(z+2) = 64·8^z ⇒ RHS = (64 − 15)·8^z = 49·8^z = 7²·8^z.\n  - Estratégia didática: forçar 8^z = 1 ⇒ z = 0; então 7^(x+2) + 7^y = 7² ⇒ x = 0, y = 2 (uma solução consistente com separação de bases).\n  - Resultado mencionado em aula: x = 2, y = 1, z = 1 ⇒ soma = 3.\n  - > Dica de prova: Verifique coerência das bases antes de igualar expoentes. FCC costuma exigir fatoração correta de 8^(z+2).\n- Envelope por dobradura (lado final 12 cm):\n  - Cada aba cobre 6 cm; a diagonal final corresponde a 4 segmentos de 6 cm.\n  - Diagonal = 4 × 6 = 24 cm.\n  - Gabarito: alternativa C.\n- Conjuntos (Futebol e Natação):\n  - |F ∩ N| = 100; |F| = 170 ⇒ só F = 70.\n  - “Apenas uma” = 100 ⇒ só N = 30.\n  - “Nenhuma” = 95.\n  - Total = 70 + 30 + 100 + 95 = 295.\n  - Gabarito: alternativa C.\n- Quadrática e “números amigos quadráticos”:\n  - 2x² − 25x − 13 = 0 ⇒ Δ = 625 + 104 = 729 ⇒ √Δ = 27.\n  - x = [25 ± 27]/4 ⇒ x1 = 13 (maior), x2 = −1/2.\n  - Teste: 13² = 169 ⇒ 1+6+9 = 16; 16² = 256 ⇒ 2+5+6 = 13 ⇒ par (13, 16) é amigo quadrático.\n  - Gabarito: alternativa D.\n- Probabilidade (divisores de 72):\n  - Divisores: 1,2,3,4,6,8,9,12,18,24,36,72 (12 cartões).\n  - Múltiplos de 6: 6,12,18,24,36,72 (6 cartões).\n  - P = 6/12 = 1/2.\n  - Gabarito: alternativa D.\n\n## 5. Pegadinhas e Erros Comuns\n- Embalagens por sabor:\n  - Erro: somar 2019 e depois tirar resto por 6.\n  - Correto: resto por sabor, depois somar os restos.\n- Exponenciais:\n  - Erro: igualar expoentes com bases diferentes sem isolar fatores.\n  - Cuidado ao fatorar 8^(z+2) = 8^z·64 e 49 = 7²; compare fatores por base.\n- Conjuntos:\n  - Erro: incluir interseção em “apenas uma”.\n  - Lembre: “apenas” exclui a interseção.\n- Probabilidade:\n  - Erro: usar universo “1 até 72” em vez de “divisores de 72”.\n- Quadrática:\n  - Erro: esquecer de escolher a “maior solução” após calcular raízes.\n  - Em “amigos quadráticos”, precisa confirmar ida e volta (A→B e B→A).\n\nComparações rápidas\n| Tema | Conceito | Passo prático | Pegadinha |\n|---|---|---|---|\n| Embalagens (6) | Sobra por divisão | r_i = s_i mod 6; soma r_i | Não somar tudo antes |\n| Potências | Fatorar e igualar | a^(m+2)=a^m·a²; 49=7²; 64=8² | Não igualar expoentes de bases distintas |\n| Conjuntos | Partições | Interseção → “apenas” por diferença | “Apenas uma” ≠ “ambas” |\n| Probabilidade | Universo correto | P = favoráveis/total | Universo não é o intervalo numérico |\n| Quadrática | Seleção de raiz | Calcule duas; filtre | Esquecer “maior/menor/inteira” |\n\n> Dica de prova: Transforme cada enunciado em 3 passos operacionais. Em FCC, fatorar corretamente e identificar o universo certo resolvem metade das questões.",
+  "resumo_bolso": "# Matemática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Resto de divisão (N por k)**: N = q·k + r, com **0 ≤ r < k**; r é a sobra.\n* **Potências – produto mesma base**: a^m · a^n = a^(m+n).\n* **Potências – ajuste ±2**: a^(m+2) = a^m·a².\n* **Reescrita de coeficientes**: k·a^m → b·a^m se **k for potência de b** (ex.: 49 = 7²; 64 = 8²).\n* **Conjuntos (F, N)**: partições: só F, só N, F ∩ N (ambas), fora de F ∪ N (nenhuma).\n* **“Apenas uma”**: (só F) + (só N); **não inclui** interseção.\n* **Probabilidade clássica**: P(E) = n(favoráveis)/n(total), universo finito equiprovável.\n* **Equação quadrática**: ax² + bx + c = 0; Δ = b² − 4ac; x = [−b ± √Δ]/(2a).\n* **Números amigos quadráticos**: (A,B) tais que soma dos algarismos de A² = B **e** soma dos algarismos de B² = A (ida e volta).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Embalagem por sabor vs total misturado\n\n| Aspecto | Por sabor (caso da aula) | Total misturado |\n|---|---|---|\n| Universo | Cada sabor separado | Todos os sabores juntos |\n| Cálculo | r_i = s_i mod k; soma r_i | (Σ s_i) mod k |\n| Uso | Sabores **não podem** misturar | Sabores podem misturar |\n\n---\n\n### “Apenas” vs “Ambas” (Conjuntos)\n\n| Aspecto | “Apenas F” / “Apenas N” | “Ambas” (F ∩ N) |\n|---|---|---|\n| Definição | Pertence a um, **não** ao outro | Pertence aos dois |\n| Cálculo | “Apenas F” = \\|F\\| − \\|F ∩ N\\| | Interseção é contada separadamente |\n\n---\n\n### Universo de Probabilidade\n\n| Aspecto | Correto | Errado |\n|---|---|---|\n| Universo | Elementos “nos cartões” (divisores de 72) | Intervalo 1 até 72 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Resto por embalagem (k = 6)**  \n* **Aplicação**: sabores separados, pacotes de 6.  \n* **Regra**: para cada sabor s_i, r_i = s_i mod 6; **sobras totais = Σ r_i**.  \n* **Exemplo**: 392→2; 400→4; 409→1; 410→2; 408→0 ⇒ sobras = 9.\n\n---\n\n**2. Fatoração de potências em equações**\n\n* **Aplicação**: igualar termos com bases 7 e 8.  \n* **Regras**:  \n  - a^(m+2) = a^m·a²;  \n  - 49 = 7²;  \n  - 64 = 8²;  \n  - 8^(z+2) = 64·8^z.  \n* **Exemplo**: 7·7^(x+1) + 7^y = 8^(z+2) − 15·8^z  \n  ⇒ LHS = 7^(x+2) + 7^y; RHS = (64−15)·8^z = 49·8^z = 7²·8^z.\n\n---\n\n**3. Partições de dois conjuntos (F, N)**\n\n* **Aplicação**: problemas com “apenas”, “ambas”, “nenhuma”.  \n* **Regras**:  \n  - “Apenas F” = \\|F\\| − \\|F ∩ N\\|.  \n  - Se “apenas uma” é dado, então “apenas N” = (“apenas uma”) − (“apenas F”).  \n  - Total = só F + só N + ambas + nenhuma.  \n* **Exemplo**: \\|F\\|=170, \\|F ∩ N\\|=100, “apenas uma”=100, “nenhuma”=95  \n  ⇒ só F=70; só N=30; total=295.\n\n---\n\n**4. Probabilidade com divisores**\n\n* **Aplicação**: sorteio entre divisores de um número.  \n* **Regra**:  \n  - Liste os divisores; conte o total.  \n  - Conte os favoráveis (ex.: múltiplos de 6).  \n  - P = favoráveis/total; simplifique.  \n* **Exemplo**: 72 tem 12 divisores; 6 múltiplos de 6 ⇒ P = 6/12 = 1/2.\n\n---\n\n**5. Quadrática + maior raiz + amigos quadráticos**\n\n* **Aplicação**: achar raiz e testar amizade quadrática.  \n* **Regras**:  \n  - Δ = b² − 4ac; x = [−b ± √Δ]/(2a).  \n  - Calcular as duas raízes e escolher a **maior** quando pedido.  \n  - Teste amizade: n² → soma algarismos → m; m² → soma algarismos → n.  \n* **Exemplo**: 2x² − 25x − 13 = 0  \n  - Δ = 729; √Δ=27; x = (25±27)/4 ⇒ 13 e −1/2 ⇒ maior = 13.  \n  - 13²=169→16; 16²=256→13 ⇒ (13,16) amigos quadráticos.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Embalagens por sabor: erro de somar o total (2019) e depois tirar resto por 6; correto é resto por sabor e depois somar os restos.\n* Exponenciais: erro de igualar expoentes com bases diferentes sem isolar fatores (cuidado ao fatorar 8^(z+2) = 8^z·64 e 49 = 7²).\n* Conjuntos: erro de incluir a interseção em “apenas uma”; lembre que “apenas” exclui a interseção.\n* Probabilidade: erro de usar universo “1 até 72” em vez de “divisores de 72”.\n* Quadrática: erro de esquecer de escolher a “maior solução” após calcular as raízes; em “amigos quadráticos”, precisa confirmar ida e volta.\n\n---\n\n## 📋 Checklist Final\n\n* Sei aplicar **N = q·k + r** e fazer **mod por sabor** (embalagens)?\n* Lembro de fatorar **a^(m+2) = a^m·a²**, **8^(z+2) = 8^z·64**, **49 = 7²**, **64 = 8²**?\n* Diferencio claramente **“apenas F/N”** de **F ∩ N** e de **“apenas uma”**?\n* Estou atento ao **universo correto** em probabilidade (divisores vs intervalo)?\n* Consigo resolver a quadrática, escolher a **maior raiz** e testar **amigos quadráticos (ida e volta)**?",
+  "mapa_mental": "# 🧮 Matemática para Concursos\n## 🎯 Aritmética e Restos\n### 💡 Resto de Divisão\n- Decomposição N = qk + r\n- Resto r entre 0 e k\n- Resto como sobra\n### 🧮 Embalagens por Sabor\n- Resto por sabor\n- r_i = s_i mod k\n- Somar apenas restos\n- Mistura sabores proibida\n### ⚠️ Erros em Restos\n- Somar total antes\n- Ignorar restrição sabor\n- Confundir quociente e resto\n\n## 🔢 Potências e Exponenciais\n### 💡 Propriedades Básicas\n- Mesma base soma expoentes\n- a^m · a^n = a^(m+n)\n- a^(m+2) = a^m·a²\n- Coeficiente como potência\n### 🧮 Igualar Termos\n- Bases iguais primeiro\n- Fator 1 obrigatório\n- Reescrever 49 = 7²\n- Reescrever 64 = 8²\n### ⚠️ Erros em Potências\n- Igualar bases diferentes\n- Ignorar fator numérico\n- Fatorar 8^(z+2) errado\n\n## 📊 Conjuntos e Probabilidade\n### 💡 Conjuntos (Dois)\n- Partes: só F\n- Partes: só N\n- Interseção F ∩ N\n- Nenhuma F ∪ N\n### 📋 “Apenas” e “Ambas”\n- “Apenas F” = F − interseção\n- “Apenas N” = N − interseção\n- “Apenas uma” = só F + só N\n- “Ambas” = interseção\n### 🧮 Probabilidade Clássica\n- Universo finito equiprovável\n- P = favoráveis / total\n- Universo = cartões dados\n- Não usar intervalo bruto\n\n## 🔢 Equações Quadráticas e Amigos\n### 💡 Equação Quadrática\n- Forma ax² + bx + c\n- Delta Δ = b² − 4ac\n- Fórmula de Bhaskara\n- Duas raízes reais\n### 🎯 Seleção de Raízes\n- Calcular duas soluções\n- Escolher maior raiz\n- Escolher menor raiz\n- Filtrar por condição\n### 🧮 Números Amigos Quadráticos\n- Par (A, B) definido\n- Soma algarismos A² = B\n- Soma algarismos B² = A\n- Relação bidirecional",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Divisibilidade e Probabilidade",
+      "description": "Divisibilidade e Probabilidade — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como obter as sobras ao formar pacotes de seis balas de cada sabor?",
+          "back": "Dividir a quantidade de balas de cada sabor por 6.",
+          "hint": "Operação aritmética básica",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisibilidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é o resto de 408 na divisão por 6?",
+          "back": "0",
+          "hint": "Verifique a divisibilidade por 2 e 3",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisibilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Quantos divisores positivos possui o número 72?",
+          "back": "12",
+          "hint": "Use a fatoração em primos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "teoria-dos-numeros",
+            "divisores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a probabilidade de sortear um múltiplo de 6 entre os divisores positivos de 72?",
+          "back": "1/2",
+          "hint": "Relacione com o total de divisores",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "divisores"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Propriedades das Potências",
+      "description": "Propriedades das Potências — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual operação deve ser feita com os expoentes na multiplicação de potências de mesma base?",
+          "back": "Somar os expoentes.",
+          "hint": "Propriedade da potenciação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "potenciacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como reescrever 8^(x+2) como produto de potências de base 8?",
+          "back": "8^x * 8^2",
+          "hint": "Aplique a regra da soma de expoentes",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "potenciacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Quando potências de mesma base são iguais, qual relação deve existir entre seus expoentes?",
+          "back": "Os expoentes devem ser iguais.",
+          "hint": "Princípio da igualdade de bases",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes-exponenciais"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Geometria das Dobraduras",
+      "description": "Geometria das Dobraduras — 2 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual medida corresponde à altura de cada triângulo dobrado de um quadrado de lado 12 cm?",
+          "back": "6 cm",
+          "hint": "Considere a geometria do quadrado",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria",
+            "triangulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a medida da diagonal da folha quadrada original nessa dobradura?",
+          "back": "24 cm",
+          "hint": "Use o teorema de Pitágoras",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "geometria",
+            "quadrados"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Diagramas de Conjuntos",
+      "description": "Diagramas de Conjuntos — 4 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como se denomina a região comum aos conjuntos de alunos que preferem futebol e natação?",
+          "back": "Intersecção",
+          "hint": "Terminologia de conjuntos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "diagrama-venn"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Quantos alunos preferem somente futebol quando 170 preferem futebol e 100 preferem ambas?",
+          "back": "70",
+          "hint": "Subtraia a intersecção do total",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "diagrama-venn"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Quantos alunos preferem somente natação quando 100 preferem apenas uma modalidade e 70 preferem somente futebol?",
+          "back": "30",
+          "hint": "Use a soma das partes exclusivas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "diagrama-venn"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual é o total de alunos considerando as quatro regiões do diagrama de conjuntos?",
+          "back": "295",
+          "hint": "Some as quatro regiões distintas",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "diagrama-venn"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Equações Quadráticas",
+      "description": "Equações Quadráticas — 3 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "O que define um par de números amigos quadráticos?",
+          "back": "A soma dos algarismos do quadrado de um número é igual ao outro e vice-versa.",
+          "hint": "Definição de propriedade numérica",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "teoria-dos-numeros",
+            "definicoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual é o valor do discriminante de 2x² − 25x − 13 = 0?",
+          "back": "729",
+          "hint": "Use a fórmula b² - 4ac",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes-segundo-grau"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é a maior solução de 2x² − 25x − 13 = 0?",
+          "back": "13",
+          "hint": "Use a fórmula de Bhaskara",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes-segundo-grau"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Maria produziu 2019 balas de coco em cinco sabores diferentes e precisa embalar essas balas em pacotes contendo 6 unidades de um mesmo sabor. Considerando que ela produziu 392 balas puras, 400 com amendoim, 409 com abacaxi, 410 com recheio cremoso e 408 sabor chocolate, quantas balas sobrarão após a formação de todos os pacotes possíveis?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "9 balas",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o número total de balas que sobraram, calculamos o resto da divisão da quantidade de balas de cada sabor por 6, pois cada pacote contém 6 balas. Para as balas puras: 392 dividido por 6 resulta em 65 pacotes e sobram 2 balas. Para as balas com amendoim: 400 dividido por 6 resulta em 66 pacotes e sobram 4 balas. Para as balas com abacaxi: 409 dividido por 6 resulta em 68 pacotes e sobra 1 bala. Para as balas com recheio cremoso: 410 dividido por 6 resulta em 68 pacotes e sobram 2 balas. Para as balas sabor chocolate: 408 dividido por 6 resulta em 68 pacotes e sobram 0 balas. Somando os restos (2 + 4 + 1 + 2 + 0), obtemos um total de 9 balas que sobraram."
+        },
+        {
+          "id": "b",
+          "text": "11 balas",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos restos das divisões de cada quantidade de balas por 6 é 2 (puras) + 4 (amendoim) + 1 (abacaxi) + 2 (recheio cremoso) + 0 (chocolate) = 9. Portanto, 11 balas não é o total correto de balas que sobraram."
+        },
+        {
+          "id": "c",
+          "text": "7 balas",
+          "correct": false,
+          "explanation": "Incorreta. Para determinar o número de balas que sobram, é necessário calcular o resto da divisão da quantidade de balas de cada sabor por 6 e, em seguida, somar esses restos. Ao realizar os cálculos: 392 ÷ 6 = 65 com resto 2; 400 ÷ 6 = 66 com resto 4; 409 ÷ 6 = 68 com resto 1; 410 ÷ 6 = 68 com resto 2; 408 ÷ 6 = 68 com resto 0. A soma dos restos é 2 + 4 + 1 + 2 + 0 = 9. Portanto, 7 balas não é o total correto."
+        },
+        {
+          "id": "d",
+          "text": "13 balas",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos restos das divisões de cada quantidade de balas por 6 é 2 (puras) + 4 (amendoim) + 1 (abacaxi) + 2 (recheio cremoso) + 0 (chocolate) = 9. Portanto, 13 balas não é o total correto de balas que sobraram."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o número total de balas que sobraram, calculamos o resto da divisão da quantidade de balas de cada sabor por 6, pois cada pacote contém 6 balas. Para as balas puras: 392 dividido por 6 resulta em 65 pacotes e sobram 2 balas. Para as balas com amendoim: 400 dividido por 6 resulta em 66 pacotes e sobram 4 balas. Para as balas com abacaxi: 409 dividido por 6 resulta em 68 pacotes e sobra 1 bala. Para as balas com recheio cremoso: 410 dividido por 6 resulta em 68 pacotes e sobram 2 balas. Para as balas sabor chocolate: 408 dividido por 6 resulta em 68 pacotes e sobram 0 balas. Somando os restos (2 + 4 + 1 + 2 + 0), obtemos um total de 9 balas que sobraram.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma pesquisa sobre preferências esportivas, verificou-se que 100 alunos gostam tanto de futebol quanto de natação, 170 gostam de futebol (incluindo os que gostam das duas modalidades), 100 alunos gostam de apenas uma das modalidades e 95 não gostam de nenhuma das duas. Qual é o número total de alunos pesquisados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "265 alunos",
+          "correct": false,
+          "explanation": "Incorreta. Para determinar o número total de alunos, é preciso somar os alunos que gostam apenas de futebol, os que gostam apenas de natação, os que gostam das duas modalidades e os que não gostam de nenhuma. Os que gostam apenas de futebol são 170 (total de futebol) - 100 (gostam das duas) = 70. Como 100 alunos gostam de apenas uma modalidade e 70 gostam apenas de futebol, então 100 - 70 = 30 gostam apenas de natação. O total de alunos é 70 (apenas futebol) + 30 (apenas natação) + 100 (ambas) + 95 (nenhuma) = 295. Portanto, 265 alunos não é o total correto."
+        },
+        {
+          "id": "b",
+          "text": "295 alunos",
+          "correct": true,
+          "explanation": "Correta. Para resolver este problema de conjuntos, é fundamental organizar as informações. Sabemos que 100 alunos gostam das duas modalidades (futebol e natação). Se 170 alunos gostam de futebol no total, e 100 desses também gostam de natação, então 170 - 100 = 70 alunos gostam APENAS de futebol. O problema afirma que 100 alunos gostam de apenas uma das modalidades. Como já identificamos 70 que gostam APENAS de futebol, então 100 - 70 = 30 alunos gostam APENAS de natação. Por fim, 95 alunos não gostam de nenhuma das modalidades. Para encontrar o número total de alunos pesquisados, somamos todas essas categorias: 70 (apenas futebol) + 30 (apenas natação) + 100 (ambas) + 95 (nenhuma) = 295 alunos."
+        },
+        {
+          "id": "c",
+          "text": "275 alunos",
+          "correct": false,
+          "explanation": "Incorreta. O número de alunos que gostam apenas de futebol é 170 - 100 = 70. O número de alunos que gostam apenas de natação é 100 (apenas uma modalidade) - 70 (apenas futebol) = 30. O total de alunos é 70 + 30 + 100 + 95 = 295. Portanto, 275 alunos não é o total correto."
+        },
+        {
+          "id": "d",
+          "text": "305 alunos",
+          "correct": false,
+          "explanation": "Incorreta. O número de alunos que gostam apenas de futebol é 170 - 100 = 70. O número de alunos que gostam apenas de natação é 100 (apenas uma modalidade) - 70 (apenas futebol) = 30. O total de alunos é 70 + 30 + 100 + 95 = 295. Portanto, 305 alunos não é o total correto."
+        }
+      ],
+      "explanation": "Correta. Para resolver este problema de conjuntos, é fundamental organizar as informações. Sabemos que 100 alunos gostam das duas modalidades (futebol e natação). Se 170 alunos gostam de futebol no total, e 100 desses também gostam de natação, então 170 - 100 = 70 alunos gostam APENAS de futebol. O problema afirma que 100 alunos gostam de apenas uma das modalidades. Como já identificamos 70 que gostam APENAS de futebol, então 100 - 70 = 30 alunos gostam APENAS de natação. Por fim, 95 alunos não gostam de nenhuma das modalidades. Para encontrar o número total de alunos pesquisados, somamos todas essas categorias: 70 (apenas futebol) + 30 (apenas natação) + 100 (ambas) + 95 (nenhuma) = 295 alunos.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Define-se números amigos quadráticos como dois números tais que a soma dos algarismos do quadrado de um deles é igual ao outro, e vice-versa. Considerando a maior solução da equação 2x² - 25x - 13 = 0, qual é o seu número amigo quadrático?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "18",
+          "correct": false,
+          "explanation": "Incorreta. A maior solução da equação 2x² - 25x - 13 = 0 é x = 13. O quadrado de 13 é 169. A soma dos algarismos de 169 é 1 + 6 + 9 = 16. O número amigo quadrático de 13 é 16. O quadrado de 16 é 256. A soma dos algarismos de 256 é 2 + 5 + 6 = 13. Portanto, 18 não é o número amigo quadrático de 13."
+        },
+        {
+          "id": "b",
+          "text": "12",
+          "correct": false,
+          "explanation": "Incorreta. A maior solução da equação 2x² - 25x - 13 = 0 é x = 13. O quadrado de 13 é 169. A soma dos algarismos de 169 é 1 + 6 + 9 = 16. O número amigo quadrático de 13 é 16. O quadrado de 16 é 256. A soma dos algarismos de 256 é 2 + 5 + 6 = 13. Portanto, 12 não é o número amigo quadrático de 13."
+        },
+        {
+          "id": "c",
+          "text": "16",
+          "correct": true,
+          "explanation": "Correta. Primeiro, resolvemos a equação quadrática 2x² - 25x - 13 = 0 utilizando a fórmula de Bhaskara. O discriminante (delta) é Δ = b² - 4ac = (-25)² - 4(2)(-13) = 625 + 104 = 729. As soluções são x = [-b ± √Δ] / 2a = [25 ± √729] / 2(2) = [25 ± 27] / 4. As duas soluções são x1 = (25 + 27) / 4 = 52 / 4 = 13 e x2 = (25 - 27) / 4 = -2 / 4 = -1/2. A maior solução é 13. Agora, aplicamos a definição de número amigo quadrático. Para o número 13: seu quadrado é 13² = 169. A soma dos algarismos de 169 é 1 + 6 + 9 = 16. Para que 16 seja o número amigo quadrático de 13, a condição inversa também deve ser verdadeira. Para o número 16: seu quadrado é 16² = 256. A soma dos algarismos de 256 é 2 + 5 + 6 = 13. Como ambas as condições são satisfeitas, 16 é o número amigo quadrático de 13."
+        },
+        {
+          "id": "d",
+          "text": "14",
+          "correct": false,
+          "explanation": "Incorreta. A maior solução da equação 2x² - 25x - 13 = 0 é x = 13. O quadrado de 13 é 169. A soma dos algarismos de 169 é 1 + 6 + 9 = 16. O número amigo quadrático de 13 é 16. O quadrado de 16 é 256. A soma dos algarismos de 256 é 2 + 5 + 6 = 13. Portanto, 14 não é o número amigo quadrático de 13."
+        }
+      ],
+      "explanation": "Correta. Primeiro, resolvemos a equação quadrática 2x² - 25x - 13 = 0 utilizando a fórmula de Bhaskara. O discriminante (delta) é Δ = b² - 4ac = (-25)² - 4(2)(-13) = 625 + 104 = 729. As soluções são x = [-b ± √Δ] / 2a = [25 ± √729] / 2(2) = [25 ± 27] / 4. As duas soluções são x1 = (25 + 27) / 4 = 52 / 4 = 13 e x2 = (25 - 27) / 4 = -2 / 4 = -1/2. A maior solução é 13. Agora, aplicamos a definição de número amigo quadrático. Para o número 13: seu quadrado é 13² = 169. A soma dos algarismos de 169 é 1 + 6 + 9 = 16. Para que 16 seja o número amigo quadrático de 13, a condição inversa também deve ser verdadeira. Para o número 16: seu quadrado é 16² = 256. A soma dos algarismos de 256 é 2 + 5 + 6 = 13. Como ambas as condições são satisfeitas, 16 é o número amigo quadrático de 13.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Cada divisor positivo de 72 foi escrito em um cartão diferente, e esses cartões foram colocados em uma caixa. Ao sortear aleatoriamente um desses cartões, qual é a probabilidade de ele conter um número múltiplo de 6?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1/3",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade é a razão entre o número de resultados favoráveis e o número total de resultados possíveis. Os divisores de 72 são 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72, totalizando 12 divisores. Os múltiplos de 6 entre esses divisores são 6, 12, 18, 24, 36, 72, totalizando 6 múltiplos. A probabilidade é 6/12, que simplifica para 1/2. Portanto, 1/3 não é a probabilidade correta."
+        },
+        {
+          "id": "b",
+          "text": "7/12",
+          "correct": false,
+          "explanation": "Incorreta. Os divisores de 72 são 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72 (12 divisores). Os múltiplos de 6 entre eles são 6, 12, 18, 24, 36, 72 (6 múltiplos). A probabilidade é 6/12 = 1/2. Portanto, 7/12 não é a probabilidade correta."
+        },
+        {
+          "id": "c",
+          "text": "5/12",
+          "correct": false,
+          "explanation": "Incorreta. Os divisores de 72 são 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72 (12 divisores). Os múltiplos de 6 entre eles são 6, 12, 18, 24, 36, 72 (6 múltiplos). A probabilidade é 6/12 = 1/2. Portanto, 5/12 não é a probabilidade correta."
+        },
+        {
+          "id": "d",
+          "text": "1/2",
+          "correct": true,
+          "explanation": "Correta. Para calcular a probabilidade, precisamos determinar o número total de divisores positivos de 72 e, em seguida, identificar quantos desses divisores são múltiplos de 6. Primeiro, listamos os divisores de 72. Para fazer isso, podemos fatorar 72 em seus fatores primos: 72 = 2³ × 3². Os divisores de 72 são: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72. Há um total de 12 divisores. Em seguida, identificamos quais desses divisores são múltiplos de 6. Os múltiplos de 6 na lista são: 6, 12, 18, 24, 36, 72. Há 6 divisores que são múltiplos de 6. A probabilidade de sortear um cartão com um número múltiplo de 6 é a razão entre o número de múltiplos de 6 e o número total de divisores: Probabilidade = (Número de múltiplos de 6) / (Número total de divisores) = 6 / 12 = 1/2."
+        }
+      ],
+      "explanation": "Correta. Para calcular a probabilidade, precisamos determinar o número total de divisores positivos de 72 e, em seguida, identificar quantos desses divisores são múltiplos de 6. Primeiro, listamos os divisores de 72. Para fazer isso, podemos fatorar 72 em seus fatores primos: 72 = 2³ × 3². Os divisores de 72 são: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72. Há um total de 12 divisores. Em seguida, identificamos quais desses divisores são múltiplos de 6. Os múltiplos de 6 na lista são: 6, 12, 18, 24, 36, 72. Há 6 divisores que são múltiplos de 6. A probabilidade de sortear um cartão com um número múltiplo de 6 é a razão entre o número de múltiplos de 6 e o número total de divisores: Probabilidade = (Número de múltiplos de 6) / (Número total de divisores) = 6 / 12 = 1/2.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_358752_Matemática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:29:20"
+}

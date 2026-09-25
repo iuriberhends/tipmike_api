@@ -1,0 +1,802 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 5,
+  "ordem_no_curso": "154.00",
+  "titulo": "Windows 7 V",
+  "codigo_aula": "326781",
+  "video_id": "v2QKU62sPlA=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:27:40",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/v2QKU62sPlA%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=405098%2C405030&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Windows 7 V\n\n## Relembrando compactação e seleção de arquivos\nVoltando, então, no Windows 7. Relembrando os programas que vimos: o Bloco de Notas e o 7-Zip. Lembrando que o Windows lida, por padrão, com extensão .zip sem precisar de programa extra, e que esses programas de compactação não trazem novas funcionalidades que não existam no Windows padrão.\n\nAgora vamos ao procedimento de compactar. Antes, relembrando o que eu falei no bloco anterior: a seleção pode começar tanto de cima quanto de baixo. Vou apertar Shift. Clicando na primeira, aperto Shift e clico na última. De cima para baixo, tanto faz. O que vai acontecer? Ele tende a selecionar da pasta que eu cliquei até a pasta que eu cliquei por último. Se eu quiser selecionar arquivos ou pastas aleatoriamente, eu uso Ctrl para selecionar aleatoriamente.\n\nDepois que eu fiz isso, clico com o botão direito e vou em Enviar para > Pasta compactada. Aí eu tenho a pasta compactada. Lembrando ainda que o Windows não é case sensitive, ou seja, ele não diferencia letras maiúsculas de minúsculas.\n\nFeito isso, supondo que eu tenha esquecido ou simplesmente queira acrescentar um arquivo a mais depois de compactar, o que eu vou fazer? Vou pegar esse arquivo e vou arrastá-lo para dentro da pasta compactada. O íconezinho, inclusive, vai indicar que ele será copiado. Porque, se cair alguma questão de prova dizendo que, ao fazer isso, você move o arquivo para dentro, está errada.\n\n> 🎯 Dicas de prova: Arrastar um arquivo para dentro de um .zip cria uma cópia dentro do .zip; o arquivo original permanece no local.\n\n## Bibliotecas no Windows 7\nEntão, feito isso, vamos falar um pouco das bibliotecas. Olha só: as bibliotecas que eu tenho por padrão no Windows são Documentos, Imagens, Músicas e Vídeos. Posso criar outras, posso apagar essas, ou mesmo renomeá-las.\n\nVamos ao conceito inicial de bibliotecas, que pode parecer confuso, mas não é: as bibliotecas não armazenam o conteúdo que lá aparece. Ou seja, quando eu clicar em Biblioteca e eu vejo pastas e arquivos lá dentro, esses arquivos não estão de fato armazenados dentro daquela biblioteca. É um espelho, é uma imagem para o arquivo original no local original.\n\nAgora vamos ao detalhe técnico, porque isso cai em várias questões de prova. Às vezes aparece: “A pasta tal está armazenada na biblioteca Imagens...” Errado. A pasta não está armazenada na biblioteca. A biblioteca não armazena. Ela só serve para visualizar o plano da coisa. Mas quando eu vejo as pastas, eu consigo acessar, editar, apagar, renomear — tudo aquilo que é possível fazer pelo Explorador de Arquivos. Então, se ele disser “não armazena, mas pode estar por meio da biblioteca”, está correto; “armazena” está errado. Tecnicamente, a biblioteca cria um atalho para pastas; não vai armazená-las.\n\nEu enfatizo isso quantas vezes for preciso. Pode ficar chato, mas eu quero que você aprenda e acerte na prova.\n\nPosso criar uma biblioteca para que tipo de local? Vamos lá. Por padrão, as bibliotecas referenciam pastas no C:. Posso criar bibliotecas para outras unidades lógicas, como D:. Pode ser de outras unidades lógicas, outros dispositivos conectados à máquina. Pode ser para unidades da rede. Para unidades da rede ou removíveis (como HDs externos), eles têm que estar conectados à máquina fisicamente; no caso da rede, os computadores têm que estar ligados para eu acessar os arquivos.\n\n“Ah, professor, eu criei a biblioteca para uma unidade removível, desconectei o dispositivo e os arquivos sumiram?” Não sumiram de lugar nenhum. Lembra: eles não ficam armazenados na biblioteca. Se armazenassem, ao criar uma biblioteca para uma pasta da minha unidade, eu estaria duplicando os arquivos e o espaço — e não é isso que acontece.\n\nOu seja, lembre-se: biblioteca não serve para backup. Na verdade, o backup deve ser feito no próprio sistema, no mesmo disco, no mesmo computador (ou onde você escolher), não via biblioteca.\n\nVisto isso tudo, vamos criar uma biblioteca. Clico numa pasta com o botão direito, escolher a unidade, incluir na biblioteca. Aqui eu posso escolher uma biblioteca que já existe (Documentos, Imagens, Músicas e Vídeos) ou criar uma. Se eu incluir numa biblioteca, por exemplo, Músicas, a gente tem que saber: quando eu crio uma biblioteca, qual padrão ela é criada? Ela herda o nome da pasta que deu origem. Nesse caso, dentro da biblioteca Músicas foi criada uma referência para a pasta selecionada. Foi criada uma biblioteca chamada conforme a pasta de origem (quando optar por Nova biblioteca), e quando eu clicar, vai ter uma imagem (referência) para as pastas — posso visualizá-las, mas os arquivos não são armazenados ali.\n\nSe eu apagar a biblioteca, já era a biblioteca, não os arquivos. Os arquivos continuam no local original. “Aqui dentro tem pastas?” Tem. “Eu consigo apagar essa pasta ‘raiz’ por aqui?” Não consigo apagar a pasta de inclusão por aqui diretamente, caso seja a pasta que define a biblioteca; o sistema não deixa apagar a referência “raiz” dali.\n\nDito isso, lembrando esses detalhes, você já vai mandar bem na prova.\n\nAgora, incluindo na biblioteca, vou criar a biblioteca agora. A biblioteca que vou criar aqui vai ser a biblioteca chamada, por exemplo, “Instituições” (nome citado no exemplo). Cliquei, criei a biblioteca, e ele criou uma biblioteca que contém uma imagem (referência) para a pasta Instituições.\n\n## Atalhos de teclado: estratégias e funções\nAgora vamos falar de atalhos de teclado. Vou tentar ser mais dinâmico: atalho e função.\n\nÉ muito comum a dúvida: “Está difícil memorizar os atalhos.” Olha, tem vários caminhos. Pode usar o Windows, pode usar o próprio programa; a maioria dos atalhos vai ser comum. Para treinar, uma estratégia: pegue uma tabela, por exemplo, Ctrl+C; anote do lado “copia o item selecionado”, cria uma cópia na área de transferência. A área de transferência é volátil: quando desligar o computador, o que está lá se perde.\n\nDepois de um tempo, pegue os atalhos e tente lembrar a função sem olhar. Mais à frente, pegue um papel em branco e tente escrever tanto o atalho quanto a função. Vai demorar? Vai. E às vezes você não vai decorar todos; aprenda a maioria e tudo bem. Lembre-se: o feito é melhor que o perfeito. Não perca muito tempo sempre revendo todos os atalhos. É pouco provável que todos caiam.\n\nCtrl+C copia o item selecionado. Lembre-se: não vai tirar de onde ele estava; cria uma cópia. Mas essa cópia só vai existir de fato quando eu colar o item.\n\nCtrl+X recorta o item. Nesse caso, ele vai sair de onde está e passar para o outro local, mas só quando colar. Se você recortar e não colar, e fizer outra ação (como copiar outro item), o arquivo continua no local de origem.\n\nSe eu copiar de uma pasta para outra, ou recortar de uma pasta para outra: recortei, cliquei na pasta destino e colei, ele sai da origem. Se eu fizer Ctrl+C na pasta A e colar na pasta B, fico com uma cópia em A e outra em B.\n\nCtrl+V cola. Então, quando eu copio ou recorto, o ato final é colar.\n\nCtrl+Z desfaz a última ação. Por exemplo, recortei e colei; se eu fizer Ctrl+Z, o arquivo volta para a pasta de origem. Vale para arquivos e pastas, lembrando restrições de cada contexto.\n\nPara renomear, posso usar F2. Outra opção: botão direito > Renomear. Outra ainda: um clique com o botão esquerdo e, depois de um pequeno intervalo, outro clique com o botão esquerdo (não é duplo clique). Assim, dá opção de renomear também.\n\nCuidado para não confundir atalhos do Word com os do Explorer. No Explorer, Ctrl+A seleciona tudo na pasta atual. Lembrando: por padrão, alguns arquivos podem estar ocultos. Eu posso tornar qualquer arquivo oculto em Propriedades. Se estiver oculto, o Ctrl+A não seleciona o que não está visível. Se eu ativar a exibição de arquivos ocultos (Exibir > Arquivos ocultos), então o Ctrl+A vai selecionar inclusive esses, e eles podem ser apagados.\n\nFica a dica: Ctrl+A seleciona tudo na pasta atual. Em nível de unidade, há outras opções pelo botão direito também.\n\nAlt+Enter abre diretamente as Propriedades do item selecionado. Em vez de botão direito > Propriedades, já vai direto.\n\nAlt+F4 fecha a janela ativa. Muita gente confunde: perguntam “atalho para atualizar a pasta?” e dizem Alt+F4; isso fecha a janela. Para atualizar, é F5.\n\nAlt+Tab alterna entre as janelas abertas, inclusive a Área de Trabalho (ela aparece como uma delas). Se eu apertar Alt+Tab uma vez e soltar, alterna entre as duas últimas janelas usadas. Se eu quiser ir para outra janela, mantenho Alt pressionado e vou navegando com Tab até a janela desejada.\n\nCtrl+Tab também alterna, mas dentro de certos programas (como abas). O comportamento depende do contexto; no Explorer clássico, Alt+Tab é quem alterna janelas do sistema.\n\nShift+F10 exibe o menu de contexto (como o botão direito do mouse), no item selecionado.\n\nAlt ativa a linha de menus dos programas que possuem menus clássicos (Arquivo, Editar, etc.). Ao pressionar Alt, aparecem letras sublinhadas nos menus. Basta pressionar a letra sublinhada para acessar. Isso vale para programas do próprio Windows e outros. Em alguns programas, além de uma letra, aparece uma combinação (letras e números).\n\nBackspace tem usos diferentes. Editando texto, apaga o caractere à esquerda do cursor. No Explorer, o Backspace volta um nível na hierarquia de pastas: se estou em “Pasta 1.2”, ele volta para “Pasta 1”. Ele não vai para “Pasta 1.1” porque 1.1 e 1.2 estão no mesmo nível. Portanto, Backspace sobe um nível, para a pasta acima.\n\nEsc (Escape) cancela ações em vários contextos. Por exemplo, quando aparece a caixa “Deseja mover o arquivo para a Lixeira?”, Esc equivale a cancelar/fechar.\n\nCtrl+Alt+Del não abre diretamente o Gerenciador de Tarefas. Ele abre a tela de segurança (bloquear, trocar usuário, sair, alterar senha, iniciar Gerenciador de Tarefas, etc.). É um atalho que permite iniciar o Gerenciador de Tarefas a partir daquela tela.\n\nO Gerenciador de Tarefas serve para gerenciar as tarefas do Windows (janelas, processos). A gente usa muito quando um programa para de funcionar (congela). Mas dá para usar mesmo com o programa funcionando.\n\nCtrl+Shift+Esc abre diretamente o Gerenciador de Tarefas, sem passar pela tela do Ctrl+Alt+Del.\n\nClicando com o botão direito na barra de tarefas também consigo iniciar o Gerenciador de Tarefas.\n\nShift em conjunto com clique na barra de tarefas: estou na Área de Trabalho, tenho a barra de tarefas com o botão do Windows e ícones dos programas fixados. Se eu mantiver Shift pressionado e clicar no ícone de um programa que já está aberto (por exemplo, o Explorer), ele abre uma nova janela daquele programa. Se fosse o Word, abriria um novo documento/janela.\n\nCtrl+Shift+N cria uma pasta nova no local onde estou (Área de Trabalho ou uma pasta, desde que seja permitido). Ele cria a pasta em branco, pronta para renomear.\n\n> 🎯 Dicas de prova: Ctrl+C copia; Ctrl+X recorta; Ctrl+V cola; Ctrl+Z desfaz; F2 renomeia; Alt+Enter abre Propriedades; Alt+F4 fecha a janela; Alt+Tab alterna janelas; Shift+F10 abre menu de contexto; Ctrl+Alt+Del abre a tela de segurança; Ctrl+Shift+Esc abre diretamente o Gerenciador de Tarefas; Ctrl+Shift+N cria nova pasta; Backspace sobe um nível no Explorer; F5 atualiza.\n\n## Tecla Windows e combinações\nA tecla Windows sozinha abre o menu Iniciar.\n\nWindows+D minimiza todas as janelas e mostra a Área de Trabalho, e ao pressionar novamente, restaura as janelas ao estado anterior. É igual ao botão “Mostrar área de trabalho” no cantinho da barra; os dois podem ser usados em conjunto.\n\nWindows+M minimiza todas as janelas, mas não restaura ao pressionar de novo. Em prova: é o atalho que permite apenas minimizar; não é possível restaurar com esse atalho.\n\nPara desfazer o Windows+M (minimizar tudo), existe Shift+Windows+M, que restaura as janelas. Então: Windows+M minimiza; Shift+Windows+M restaura.\n\nWindows+E abre o Explorador de Arquivos.\n\nWindows+R abre a janela Executar, por meio da qual posso executar programas e comandos: por exemplo, cmd abre o Prompt de Comando; msconfig configura opções do sistema; regedit abre o Editor do Registro.\n\nWindows+Home (Aero Shake por atalho): lembra do gesto de “sacudir” a janela pela barra de título? Minimiza todas as outras janelas, mantendo apenas a janela ativa visível.\n\nWindows+T alterna o foco pelos ícones da barra de tarefas (programas fixados e em execução). Ele percorre os botões da barra; com Enter ou clique, ativa a janela.\n\nWindows+Tab (no Windows 7) aciona o Flip 3D, um efeito visual em 3D para alternar entre janelas, similar ao Alt+Tab, mas com efeito em camadas. Ao usar, a janela da frente vai para trás, e assim vai, exibindo as janelas em três dimensões.\n\nWindows+L bloqueia a sessão do usuário ativo (lock). Cuidado: se não houver senha na conta, o bloqueio não é efetivo — basta clicar no usuário e volta. Posso trocar de usuário nesse momento. Ao bloquear, as tarefas não são encerradas; permanecem ativas/abertas.\n\n> 🎯 Dicas de prova: Windows+D alterna entre mostrar/restaurar a Área de Trabalho; Windows+M apenas minimiza; Shift+Windows+M restaura o que foi minimizado; Windows+E abre o Explorer; Windows+R abre Executar; Windows+Tab ativa o Flip 3D no Windows 7; Windows+L bloqueia a sessão; Windows+T navega pelos ícones da barra de tarefas.\n\n## Encerramento\nHoje era isso no bloco. Na sequência, damos continuidade no conteúdo do Windows.",
+  "transcricao_meta": {
+    "title": "Windows 7 V",
+    "subject": "Noções de Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 34404,
+    "createdAt": "2026-02-06T13:09:38.987Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: bibliotecas, compactação .zip nativa, seleção/renomeação, arquivos ocultos, operações copiar/recortar/colar/desfazer, navegação e atalhos do Windows 7, gerenciamento de janelas, barra de tarefas, Explorador/Executar, Gerenciador de Tarefas, Aero Shake, bloqueio de sessão.\nPrincipais pontos: \n- Biblioteca é espelho (não armazena arquivos).\n- Arrastar para .zip copia (não move).\n- Atalhos mais cobrados e suas distinções (Windows+D vs Windows+M; Ctrl+Shift+Esc vs Ctrl+Alt+Del).\n\n## 1. Base / Conceitos Fundamentais\n- **Windows 7: Explorador de Arquivos (Windows Explorer)**: gerencia pastas/arquivos, unidades locais (C:, D:), removíveis e de rede.\n- **Bibliotecas**: coleções virtuais que reúnem conteúdo de pastas reais (Documentos, Imagens, Músicas, Vídeos). Não armazenam conteúdo; exibem referências.\n- **Compactação nativa (.zip)**: suporte integrado a .zip; funciona como “pasta compactada”.\n- **Arquivos ocultos**: atributo de arquivo/pasta que os oculta da visualização até habilitar a exibição.\n- **Área de transferência**: onde ficam itens copiados/recortados até colar.\n- **Menu de contexto**: aberto com o botão direito; oferece ações como Propriedades, Renomear, Enviar para.\n- **Case sensitivity no Windows**: não é case sensitive em nomes de arquivos/pastas.\n\n## 2. Como Funciona / Distinções\n- Bibliotecas vs Pastas:\n  - Biblioteca: espelho/ponte para pastas reais; apagar biblioteca ≠ apagar arquivos.\n  - Pasta: local físico de armazenamento.\n- Copiar vs Recortar:\n  - Copiar (Ctrl+C): duplica; original permanece.\n  - Recortar (Ctrl+X): prepara MOVIMENTAÇÃO; só concretiza ao colar.\n- Windows+D vs Windows+M:\n  - Windows+D: minimiza todas e alterna de volta ao repetir.\n  - Windows+M: minimiza todas; retorno só com Shift+Windows+M.\n- Gerenciador de Tarefas:\n  - Ctrl+Shift+Esc: abre diretamente.\n  - Ctrl+Alt+Del: abre tela de opções (permite iniciar).\n- Alternância de janelas:\n  - Alt+Tab: alterna; Shift+Alt+Tab: ordem inversa.\n  - Flip 3D: variação visual de alternância (Windows 7).\n- Renomear vs Abrir:\n  - F2 ou clique-pausa-clique: renomeia.\n  - Duplo clique rápido: abre.\n- Ocultar vs Proteger:\n  - Ocultar só esconde; se visível, pode ser manipulado normalmente.\n- Arrastar para .zip:\n  - Copia para dentro do .zip; não move o original.\n\n## 3. Aplicação Prática / Técnicas\n- Compactar em .zip:\n  - Selecionar itens (Shift para intervalo; Ctrl para itens alternados).\n  - Botão direito → Enviar para → Pasta compactada.\n  - Para adicionar depois: arraste novos itens para o .zip (serão copiados).\n- Bibliotecas:\n  - Incluir pasta: botão direito na pasta → Incluir na biblioteca → escolha/Crie biblioteca.\n  - Podem apontar para C:, D:, unidades removíveis e de rede (conectadas).\n  - Excluir biblioteca: remove o atalho; não apaga arquivos.\n- Seleção:\n  - Ctrl+A: seleciona tudo o que está visível.\n  - Shift+clique: seleciona intervalo (ordem não importa).\n  - Ctrl+clique: múltiplos não contíguos.\n- Renomear:\n  - F2; ou botão direito → Renomear; ou clique-pausa-clique.\n- Arquivos ocultos:\n  - Ocultar: botão direito → Propriedades → marcar “Oculto”.\n  - Exibir: habilitar “Exibir arquivos ocultos”.\n- Copiar/recortar/colar/desfazer:\n  - Ctrl+C / Ctrl+X / Ctrl+V; Ctrl+Z desfaz última ação (ex.: mover).\n- Navegação:\n  - Backspace: sobe um nível (da “pasta 1.2” para “pasta 1”).\n- Janelas e barra de tarefas:\n  - Alt+F4: fecha janela ativa; na área de trabalho, abre opções de desligar.\n  - Alt+Tab / Shift+Alt+Tab: alternância entre janelas.\n  - Windows+T: percorre itens na barra de tarefas; Enter confirma.\n  - Shift+clique na barra de tarefas: nova instância do programa.\n  - Aero Shake: sacudir a janela ativa minimiza as outras.\n- Abertura rápida:\n  - Windows+E: Explorador de Arquivos.\n  - Windows+R: Executar (cmd, msconfig, regedit).\n  - Tecla Windows: abre o menu Iniciar.\n- Sessão:\n  - Windows+L: bloqueia sessão (efetivo só com senha configurada).\n- Propriedades:\n  - Alt+Enter: abre Propriedades do item.\n\n> Dica de Prova: No Windows 7, nomes de arquivos não diferenciam maiúsculas/minúsculas (não é case sensitive).\n\n## 4. Exemplos e Casos Resolvidos\n- Caso 1: Compactar e adicionar arquivo depois\n  - Selecione três arquivos → botão direito → Enviar para → Pasta compactada → arraste um quarto arquivo para dentro do .zip → resultado: o quarto arquivo é copiado para o .zip; o original permanece.\n- Caso 2: Biblioteca com pastas de C:, D: e rede\n  - Crie biblioteca “Projetos” → inclua C:\\Projetos, D:\\Arquivos\\Projetos e \\\\Servidor\\Compartilhado\\Projetos → abrir “Projetos” mostra o conteúdo dessas três pastas. Excluir a biblioteca não remove arquivos.\n- Caso 3: Recortar sem colar\n  - Ctrl+X em “Relatório.docx” → NÃO colar → fechar pasta → o arquivo continua no local original.\n- Caso 4: Restaurar janelas\n  - Windows+M → todas minimizadas → tentar Windows+M de novo não restaura → use Shift+Windows+M para restaurar.\n- Caso 5: Gerenciador de Tarefas\n  - Programa travado → Ctrl+Shift+Esc abre diretamente o Gerenciador → Finalizar tarefa.\n  - Se usar Ctrl+Alt+Del, primeiro aparece a tela de opções; depois selecione Gerenciador de Tarefas.\n\n## 5. Pegadinhas e Erros Comuns\n- “Biblioteca armazena arquivos.” Falso. É espelho/atalho para pastas reais.\n- “Excluir uma biblioteca apaga os arquivos.” Falso. Remove só a ponte.\n- “Arrastar arquivo para .zip move o arquivo.” Falso. Copia.\n- “Ctrl+Alt+Del abre o Gerenciador de Tarefas.” Sem precisão. Abre a tela de opções; direto é Ctrl+Shift+Esc.\n- “Windows+M retorna as janelas.” Falso. O retorno é Shift+Windows+M. Quem alterna ida/volta é Windows+D.\n- “Alt+F4 atualiza a pasta.” Falso. Fecha a janela ativa.\n- “Backspace vai para a pasta irmã (pasta 1.1).” Falso. Sobe um nível (para pasta 1).\n- “Arquivos ocultos estão protegidos.” Falso. São apenas invisíveis até habilitar a exibição.\n- “Ctrl+A seleciona ocultos mesmo sem exibi-los.” Falso. Só seleciona o que está visível.\n- “Windows diferencia maiúsculas/minúsculas nos nomes.” Falso. Não é case sensitive.\n\n> Dica de Prova: Memorize pares que as bancas trocam: \n> - Direto ao Gerenciador = Ctrl+Shift+Esc; tela de opções = Ctrl+Alt+Del.\n> - Minimizar/restaurar (toggle) = Windows+D; minimizar sem restaurar = Windows+M; restaurar = Shift+Windows+M.\n> - Propriedades rápido = Alt+Enter; fechar janela = Alt+F4.\n\n### Tabela rápida de atalhos mais cobrados\n- Ctrl+C / Ctrl+X / Ctrl+V / Ctrl+Z / Ctrl+A\n- F2 (renomear), Alt+Enter (Propriedades), Alt+F4 (fechar)\n- Alt+Tab / Shift+Alt+Tab (alternar janelas), Windows+T (barra de tarefas)\n- Windows+D / Windows+M / Shift+Windows+M (minimizar/restaurar)\n- Windows+E (Explorador), Windows+R (Executar), Tecla Windows (Iniciar)\n- Ctrl+Shift+Esc (Gerenciador direto), Ctrl+Alt+Del (tela de opções)\n- Windows+L (bloquear sessão), Backspace (subir nível), Esc (cancelar)\n- Shift+clique na barra de tarefas (nova instância)",
+  "resumo_bolso": "# Windows 7 V\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Windows Explorer**: gerencia pastas/arquivos, unidades locais (C:, D:), removíveis e de rede.\n* **Bibliotecas**: coleções virtuais que reúnem conteúdo de pastas reais; não armazenam arquivos, apenas referências.\n* **Pasta**: local físico de armazenamento de arquivos e subpastas.\n* **Compactação nativa (.zip)**: pasta compactada integrada ao Windows; suporte nativo a arquivos .zip.\n* **Arquivos ocultos**: atributo que oculta arquivos/pastas da visualização até habilitar a exibição.\n* **Área de transferência**: armazena temporariamente itens copiados/recortados (Ctrl+C / Ctrl+X) até o Ctrl+V.\n* **Menu de contexto**: aberto com o botão direito; ações como Propriedades, Renomear, Enviar para.\n* **Windows 7 e maiúsculas/minúsculas**: sistema não é case sensitive em nomes de arquivos/pastas.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Biblioteca vs Pasta\n\n| Aspecto | Biblioteca | Pasta |\n|--------|-----------|-------|\n| Natureza | Coleção virtual (espelho/ponte) | Local físico |\n| Conteúdo | Referências a pastas reais | Arquivos e subpastas |\n| Exclusão | Remove só a biblioteca (atalho) | Pode apagar arquivos (se não forem só atalhos) |\n| Localização | Pode apontar p/ C:, D:, rede, removíveis | Reside em um volume específico |\n\n---\n\n### Copiar vs Recortar\n\n| Aspecto | Copiar (Ctrl+C) | Recortar (Ctrl+X) |\n|--------|-----------------|-------------------|\n| Efeito | Duplica | Prepara movimentação |\n| Origem | Permanece sempre | Só some após colar |\n| Sem colar | Nada muda | Arquivo continua no local original |\n\n---\n\n### Windows+D vs Windows+M\n\n| Aspecto | Windows+D | Windows+M |\n|--------|-----------|-----------|\n| Ação | Minimiza todas e alterna com nova pressão | Minimiza todas |\n| Retorno | Pressionar de novo → restaura | Shift+Windows+M restaura |\n\n---\n\n### Ctrl+Shift+Esc vs Ctrl+Alt+Del\n\n| Aspecto | Ctrl+Shift+Esc | Ctrl+Alt+Del |\n|--------|----------------|--------------|\n| Ação | Abre diretamente o Gerenciador de Tarefas | Abre tela de opções (inclui Gerenciador) |\n\n---\n\n### Renomear vs Abrir\n\n| Ação | Resultado |\n|------|-----------|\n| F2 | Renomear item selecionado |\n| Botão direito → Renomear | Renomear |\n| Clique-pausa-clique | Renomear |\n| Duplo clique rápido | Abrir arquivo/pasta |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Seleção de arquivos**\n\n* Ctrl+A: seleciona tudo o que está visível.\n* Shift+clique: seleciona intervalo (ordem não importa).\n* Ctrl+clique: seleciona múltiplos itens não contíguos.\n\n---\n\n**2. Compactação .zip nativa**\n\n* Selecionar itens → Enviar para → Pasta compactada (.zip).\n* Para adicionar depois: arrastar novos itens para o .zip → serão copiados (original permanece).\n\n**Exemplo**: selecionar três arquivos → Enviar para → Pasta compactada → arrastar um quarto arquivo para o .zip → o quarto arquivo é copiado para o .zip; o original permanece na pasta.\n\n---\n\n**3. Ocultar arquivos**\n\n* Ocultar: botão direito → Propriedades → marcar “Oculto”.\n* Exibir: habilitar “Exibir arquivos ocultos”.\n* Arquivo oculto só entra no Ctrl+A se estiver configurado para ser exibido.\n\n---\n\n**4. Navegação e janelas**\n\n* Backspace: sobe um nível na hierarquia (pasta pai).\n* Alt+Tab / Shift+Alt+Tab: alternância entre janelas (frente / ordem inversa).\n* Alt+F4: fecha janela ativa; na área de trabalho, abre opções de desligar.\n* Windows+T: percorre itens da barra de tarefas; Enter abre.\n* Shift+clique em ícone na barra: nova instância do programa.\n* Aero Shake: sacudir a janela ativa minimiza as outras.\n\n---\n\n**5. Abertura rápida / sessão / propriedades**\n\n* Windows+E: abre o Explorador de Arquivos.\n* Windows+R: abre Executar (cmd, msconfig, regedit).\n* Tecla Windows: abre o menu Iniciar.\n* Windows+L: bloqueia sessão (efetivo com senha configurada).\n* Alt+Enter: abre Propriedades do item selecionado.\n* Ctrl+Z: desfaz a última ação (ex.: mover).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Biblioteca armazena arquivos.” Falso. É espelho/atalho para pastas reais; não guarda arquivos.\n2. “Excluir uma biblioteca apaga os arquivos.” Falso. Remove só a ponte; arquivos permanecem nas pastas originais.\n3. “Arrastar arquivo para .zip move o arquivo.” Falso. Copia para dentro do .zip; o original permanece no local.\n4. “Ctrl+Alt+Del abre o Gerenciador de Tarefas diretamente.” Sem precisão. Abre a tela de opções; acesso direto é Ctrl+Shift+Esc.\n5. “Windows+M retorna as janelas.” Falso. O retorno é Shift+Windows+M. Quem alterna ida/volta é Windows+D.\n\n---\n\n## 📋 Checklist Final\n\n* Sei que biblioteca é espelho/ponte e que excluir biblioteca não apaga arquivos?\n* Lembrei que arrastar para .zip copia, não move, e que o original permanece?\n* Fixei o trio: Windows+D (toggle), Windows+M (minimiza), Shift+Windows+M (restaura)?\n* Diferenciei Ctrl+Shift+Esc (Gerenciador direto) de Ctrl+Alt+Del (tela de opções)?\n* Gravei que arquivos ocultos não são protegidos e que Ctrl+A só pega o que está visível?\n* Lembro que Alt+F4 fecha, Alt+Enter abre Propriedades e F2 renomeia?\n* Sei que Backspace sobe um nível e que o Windows não diferencia maiúsculas/minúsculas em nomes?",
+  "mapa_mental": "# 💻 Windows 7 V\n## 📁 Explorador e Bibliotecas\n### 🗂️ Explorador de Arquivos\n- Gerenciar pastas\n- Unidades locais\n- Unidades removíveis\n- Unidades de rede\n- Menu de contexto\n### 📚 Bibliotecas\n- Coleções virtuais\n- Espelho de pastas\n- Não armazenam arquivos\n- Excluir não apaga\n- Podem incluir rede\n### 🧾 Arquivos Ocultos\n- Atributo oculto\n- Invisíveis por padrão\n- Exibir arquivos ocultos\n- Não protegem conteúdo\n- Seleção só visíveis\n\n## 🧰 Operações e Compactação\n### 📦 Compactação .zip\n- Suporte nativo\n- Pasta compactada\n- Enviar para .zip\n- Arrastar copia\n- Original permanece\n### ✂️ Copiar Recortar Colar\n- Área de transferência\n- Copiar duplica\n- Recortar movimenta\n- Colar concretiza\n- Ctrl+Z desfaz\n### 📝 Seleção e Renomear\n- Ctrl+A tudo visível\n- Shift+clique intervalo\n- Ctrl+clique múltiplos\n- F2 renomear\n- Clique pausa clique\n\n## 🪟 Janelas e Barra de Tarefas\n### 🔄 Alternância e Fechamento\n- Alt+Tab alternar\n- Shift+Alt+Tab inverso\n- Alt+F4 fechar janela\n- Backspace subir nível\n- Aero Shake minimizar\n### 📌 Barra de Tarefas\n- Windows+T percorrer\n- Enter ativar item\n- Shift+clique nova instância\n- Ícones programas fixos\n- Janelas agrupadas\n### 🧊 Aero e Flip 3D\n- Efeitos visuais\n- Transparência janelas\n- Alternância 3D\n- Destaque janela ativa\n- Recurso do Windows 7\n\n## ⌨️ Atalhos Essenciais\n### 🪟 Tecla Windows e Sistema\n- Tecla Windows Iniciar\n- Windows+E Explorador\n- Windows+R Executar\n- Windows+L bloquear sessão\n- Alt+Enter Propriedades\n### 🪟 Minimizar e Restaurar\n- Windows+D mostrar área\n- Windows+D restaurar janelas\n- Windows+M minimizar todas\n- Shift+Windows+M restaurar\n- Diferença D e M\n### 🧠 Gerenciador e Segurança\n- Ctrl+Shift+Esc Gerenciador\n- Ctrl+Alt+Del tela opções\n- Iniciar Gerenciador opções\n- Encerrar sessão\n- Trocar usuário",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Compactação de Arquivos",
+      "description": "Compactação de Arquivos — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual extensão de arquivo compactado o Windows 7 manipula nativamente?",
+          "back": "ZIP",
+          "hint": "Formato de compressão padrão do mercado",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual comando do menu de contexto cria uma pasta compactada a partir dos itens selecionados?",
+          "back": "Enviar para > Pasta compactada",
+          "hint": "Menu de contexto do explorador",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "O que ocorre ao arrastar um arquivo para dentro de uma pasta compactada ZIP?",
+          "back": "O arquivo é copiado para dentro da pasta compactada.",
+          "hint": "Comportamento padrão de pastas",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Bibliotecas do Windows",
+      "description": "Bibliotecas do Windows — 6 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual é o efeito de excluir uma biblioteca do Windows 7?",
+          "back": "A exclusão da biblioteca não apaga os arquivos originais.",
+          "hint": "Natureza lógica das bibliotecas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "bibliotecas"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-5",
+          "front": "O que uma biblioteca do Windows 7 representa em relação às pastas adicionadas a ela?",
+          "back": "Um atalho ou imagem para visualizar os arquivos, sem armazená-los de fato.",
+          "hint": "Diferença entre atalho e armazenamento",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "bibliotecas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Quais bibliotecas acompanham o Windows 7 por padrão?",
+          "back": "Documentos, imagens, músicas e vídeos",
+          "hint": "São quatro categorias de mídia",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "bibliotecas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como uma pasta é incluída em uma biblioteca existente no Windows 7?",
+          "back": "Clicar na pasta com o botão direito e selecionar a opção de incluir na biblioteca.",
+          "hint": "Ação via menu de contexto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "bibliotecas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Em quais tipos de unidade podem estar localizadas as pastas associadas a uma biblioteca?",
+          "back": "Unidades lógicas (como C:), unidades de rede e unidades removíveis",
+          "hint": "Locais de armazenamento possíveis",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "bibliotecas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual condição deve ser atendida para acessar uma pasta de unidade removível por uma biblioteca?",
+          "back": "Estar fisicamente conectada à máquina.",
+          "hint": "Requisito de hardware para acesso",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "bibliotecas"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Atalhos de Edição",
+      "description": "Atalhos de Edição — 5 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual atalho copia o item selecionado para a área de transferência?",
+          "back": "Ctrl+C",
+          "hint": "Comando de duplicação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual atalho recorta o item selecionado?",
+          "back": "Ctrl+X",
+          "hint": "Comando de movimentação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Em que momento uma cópia feita com Ctrl+C passa a existir no local de destino?",
+          "back": "Apenas no momento em que a cópia é colada.",
+          "hint": "Estado da área de transferência",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual atalho desfaz a última ação realizada no Windows 7?",
+          "back": "Ctrl+Z",
+          "hint": "Comando de reversão",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual atalho permite renomear um item selecionado no Windows Explorer?",
+          "back": "F2",
+          "hint": "Ação de edição de nome",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Seleção e Navegação",
+      "description": "Seleção e Navegação — 6 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual atalho seleciona todos os arquivos e pastas exibidos em uma pasta?",
+          "back": "Ctrl+A",
+          "hint": "Comando de seleção total",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Como selecionar vários itens não consecutivos no Windows Explorer?",
+          "back": "Usando a tecla Ctrl durante a seleção.",
+          "hint": "Tecla modificadora de seleção",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual atalho abre diretamente as propriedades do item selecionado?",
+          "back": "Alt+Enter",
+          "hint": "Acesso a metadados do arquivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual atalho fecha a janela ativa no Windows 7?",
+          "back": "Alt+F4",
+          "hint": "Comando de encerramento de janela",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual atalho alterna entre as janelas abertas exibindo suas miniaturas?",
+          "back": "Alt+Tab",
+          "hint": "Alternância visual de janelas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual tecla sobe um nível na hierarquia de pastas do Windows Explorer?",
+          "back": "Backspace",
+          "hint": "Navegação na hierarquia",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Sistema e Janelas",
+      "description": "Sistema e Janelas — 6 cards",
+      "cards": [
+        {
+          "id": "card-21",
+          "front": "Qual atalho abre diretamente o Gerenciador de Tarefas?",
+          "back": "Ctrl+Shift+Esc",
+          "hint": "Acesso ao monitor de processos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual tela é aberta pelo atalho Ctrl+Alt+Del no Windows 7?",
+          "back": "Uma tela de bloqueio e opções do sistema",
+          "hint": "Menu de segurança do sistema",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual atalho abre o Explorador de Arquivos?",
+          "back": "Windows+E",
+          "hint": "Acesso ao gerenciador de arquivos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-24",
+          "front": "Qual atalho abre a janela Executar?",
+          "back": "Windows+R",
+          "hint": "Acesso a comandos diretos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-25",
+          "front": "Qual atalho bloqueia a sessão do usuário ativo?",
+          "back": "Windows+L",
+          "hint": "Segurança de sessão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-26",
+          "front": "O que acontece com os programas abertos quando a sessão do usuário é bloqueada?",
+          "back": "Permanecem ativos e abertos.",
+          "hint": "Estado dos processos em background",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "seguranca"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a extensão padrão dos arquivos compactados no Windows?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": ".rar",
+          "correct": false,
+          "explanation": "Incorreta. Embora o formato .rar seja amplamente utilizado para compactação de arquivos, ele está associado ao software proprietário WinRAR e não é o formato padrão nativamente suportado ou criado pelo Windows para compactação. O Windows não possui ferramentas internas para criar arquivos .rar por padrão."
+        },
+        {
+          "id": "b",
+          "text": ".tar",
+          "correct": false,
+          "explanation": "Incorreta. O formato .tar (Tape Archive) é comumente usado em sistemas Unix e Linux para agrupar arquivos. Embora versões mais recentes do Windows possam ter alguma capacidade de lidar com arquivos .tar, ele não é a extensão padrão para compactação nativa do sistema operacional."
+        },
+        {
+          "id": "c",
+          "text": ".zip",
+          "correct": true,
+          "explanation": "Correta. A extensão padrão para arquivos compactados no Windows é .zip. O sistema operacional Windows oferece suporte nativo para compactar e descompactar arquivos nesse formato diretamente pelo Explorador de Arquivos, sem a necessidade de programas de terceiros."
+        },
+        {
+          "id": "d",
+          "text": ".7z",
+          "correct": false,
+          "explanation": "Incorreta. O formato .7z é o padrão do programa de compactação 7-Zip, que é uma aplicação de terceiros. O Windows não o suporta nativamente para compactação, exigindo a instalação do 7-Zip ou software similar para criar ou extrair arquivos .7z."
+        }
+      ],
+      "explanation": "Correta. A extensão padrão para arquivos compactados no Windows é .zip. O sistema operacional Windows oferece suporte nativo para compactar e descompactar arquivos nesse formato diretamente pelo Explorador de Arquivos, sem a necessidade de programas de terceiros.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao arrastar um arquivo para dentro de uma pasta compactada no Windows, o que acontece com o arquivo original?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo é convertido em formato compactado e substituído no local original",
+          "correct": false,
+          "explanation": "Incorreta. O arquivo original não é substituído por uma versão compactada em seu local de origem. Em vez disso, uma cópia do arquivo é feita e compactada dentro do arquivo .zip, mantendo o original intacto e em seu formato original."
+        },
+        {
+          "id": "b",
+          "text": "O arquivo é copiado para dentro da pasta compactada e permanece no local original",
+          "correct": true,
+          "explanation": "Correta. Quando um arquivo é arrastado e solto em um arquivo compactado (por exemplo, um arquivo .zip) no Windows Explorer, o sistema cria uma cópia desse arquivo e o adiciona ao conteúdo compactado. O arquivo original permanece inalterado em seu local de origem, sem ser removido ou modificado."
+        },
+        {
+          "id": "c",
+          "text": "O arquivo é excluído permanentemente do sistema",
+          "correct": false,
+          "explanation": "Incorreta. Arrastar um arquivo para uma pasta compactada não resulta na exclusão permanente do arquivo. O objetivo da operação é incluir o arquivo no pacote compactado, não descartá-lo do sistema."
+        },
+        {
+          "id": "d",
+          "text": "O arquivo é movido para dentro da pasta compactada e removido do local original",
+          "correct": false,
+          "explanation": "Incorreta. O comportamento padrão ao arrastar um arquivo para uma pasta compactada (como um arquivo .zip) no Windows é copiar o arquivo, não movê-lo. O arquivo original permanece em sua localização de origem."
+        }
+      ],
+      "explanation": "Correta. Quando um arquivo é arrastado e solto em um arquivo compactado (por exemplo, um arquivo .zip) no Windows Explorer, o sistema cria uma cópia desse arquivo e o adiciona ao conteúdo compactado. O arquivo original permanece inalterado em seu local de origem, sem ser removido ou modificado.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Como as bibliotecas do Windows armazenam os arquivos que aparecem nelas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As bibliotecas não armazenam os arquivos, apenas exibem referências aos arquivos em seus locais originais",
+          "correct": true,
+          "explanation": "Correta. As bibliotecas do Windows (como Documentos, Imagens, Músicas e Vídeos) são coleções virtuais. Elas não armazenam fisicamente os arquivos, mas sim exibem referências (atalhos ou 'espelhos') para os arquivos que estão armazenados em seus locais originais no disco rígido ou em unidades de rede. Dessa forma, é possível visualizar e acessar conteúdos de diferentes pastas em um único lugar, sem duplicar os dados."
+        },
+        {
+          "id": "b",
+          "text": "As bibliotecas criam cópias dos arquivos originais e os armazenam em um local específico do sistema",
+          "correct": false,
+          "explanation": "Incorreta. As bibliotecas do Windows não criam cópias físicas dos arquivos. Se o fizessem, isso levaria à duplicação de dados e ao consumo desnecessário de espaço em disco, o que não é a finalidade de uma biblioteca."
+        },
+        {
+          "id": "c",
+          "text": "As bibliotecas compactam os arquivos automaticamente para economizar espaço em disco",
+          "correct": false,
+          "explanation": "Incorreta. A função das bibliotecas não inclui a compactação automática de arquivos. A compactação é uma operação distinta que o usuário pode realizar em arquivos e pastas, mas não é uma característica intrínseca do funcionamento das bibliotecas do Windows."
+        },
+        {
+          "id": "d",
+          "text": "As bibliotecas movem os arquivos para uma pasta oculta no diretório do sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. As bibliotecas não movem arquivos para pastas ocultas. O propósito é organizar e facilitar o acesso aos arquivos, mantendo-os em suas localizações originais. Mover arquivos para pastas ocultas sem o conhecimento do usuário dificultaria o gerenciamento e a localização dos dados."
+        }
+      ],
+      "explanation": "Correta. As bibliotecas do Windows (como Documentos, Imagens, Músicas e Vídeos) são coleções virtuais. Elas não armazenam fisicamente os arquivos, mas sim exibem referências (atalhos ou 'espelhos') para os arquivos que estão armazenados em seus locais originais no disco rígido ou em unidades de rede. Dessa forma, é possível visualizar e acessar conteúdos de diferentes pastas em um único lugar, sem duplicar os dados.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual tecla deve ser pressionada para selecionar arquivos ou pastas de forma aleatória no Windows Explorer?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Shift",
+          "correct": false,
+          "explanation": "Incorreta. A tecla Shift, quando utilizada em conjunto com o clique do mouse, serve para selecionar um *intervalo contínuo* de arquivos ou pastas. Por exemplo, clicando no primeiro item, pressionando Shift e clicando no último, todos os itens entre eles são selecionados."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl",
+          "correct": true,
+          "explanation": "Correta. Para selecionar arquivos ou pastas de forma aleatória, ou seja, itens não adjacentes, no Windows Explorer, o usuário deve manter a tecla Ctrl pressionada enquanto clica individualmente em cada um dos itens desejados. Isso permite adicionar ou remover itens específicos da seleção."
+        },
+        {
+          "id": "c",
+          "text": "Tab",
+          "correct": false,
+          "explanation": "Incorreta. A tecla Tab é utilizada para navegar entre os elementos de uma interface gráfica (como botões, campos de texto) ou para criar recuos em editores de texto. Não tem função na seleção de múltiplos arquivos ou pastas no Explorador de Arquivos."
+        },
+        {
+          "id": "d",
+          "text": "Alt",
+          "correct": false,
+          "explanation": "Incorreta. A tecla Alt é frequentemente usada para acessar menus de programas ou, em combinação com outras teclas (como Alt+Tab), para alternar entre janelas abertas. Ela não é utilizada para a seleção aleatória de arquivos ou pastas no Windows Explorer."
+        }
+      ],
+      "explanation": "Correta. Para selecionar arquivos ou pastas de forma aleatória, ou seja, itens não adjacentes, no Windows Explorer, o usuário deve manter a tecla Ctrl pressionada enquanto clica individualmente em cada um dos itens desejados. Isso permite adicionar ou remover itens específicos da seleção.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "O Windows diferencia letras maiúsculas de minúsculas nos nomes de arquivos e pastas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apenas em arquivos do sistema o Windows diferencia maiúsculas de minúsculas",
+          "correct": false,
+          "explanation": "Incorreta. A característica de não diferenciar maiúsculas e minúsculas aplica-se a todos os arquivos e pastas no sistema de arquivos NTFS, incluindo tanto os arquivos de usuário quanto os arquivos do sistema. Não há uma distinção específica para arquivos do sistema nesse quesito."
+        },
+        {
+          "id": "b",
+          "text": "Sim, o Windows é case sensitive e trata maiúsculas e minúsculas como caracteres diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Ao contrário de sistemas operacionais como Linux, o Windows, em seu sistema de arquivos padrão (NTFS), não é \"case sensitive\" (sensível a maiúsculas e minúsculas) para nomes de arquivos e pastas. Isso significa que ele não diferencia entre 'Documento.txt' e 'documento.txt', tratando-os como o mesmo arquivo."
+        },
+        {
+          "id": "c",
+          "text": "A diferenciação depende da configuração regional do sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. A sensibilidade a maiúsculas e minúsculas é uma propriedade do sistema de arquivos subjacente (NTFS no Windows) e não é influenciada pelas configurações regionais do sistema operacional. Embora existam opções avançadas para habilitar a sensibilidade a maiúsculas e minúsculas em pastas específicas (como para compatibilidade com o Subsistema do Windows para Linux - WSL), o comportamento padrão e geral do Windows permanece \"case insensitive\"."
+        },
+        {
+          "id": "d",
+          "text": "Não, o Windows não é case sensitive e não diferencia entre maiúsculas e minúsculas",
+          "correct": true,
+          "explanation": "Correta. O Windows, utilizando o sistema de arquivos NTFS por padrão, é \"case insensitive\" (não sensível a maiúsculas e minúsculas) para nomes de arquivos e pastas. Isso significa que, para o sistema, um arquivo chamado 'Arquivo.txt' é considerado o mesmo que 'arquivo.txt' ou 'ARQUIVO.TXT'. Tentar criar um arquivo com o mesmo nome, mas com grafia diferente em relação a maiúsculas e minúsculas na mesma pasta, resultará em um erro ou na substituição do arquivo existente."
+        }
+      ],
+      "explanation": "Correta. O Windows, utilizando o sistema de arquivos NTFS por padrão, é \"case insensitive\" (não sensível a maiúsculas e minúsculas) para nomes de arquivos e pastas. Isso significa que, para o sistema, um arquivo chamado 'Arquivo.txt' é considerado o mesmo que 'arquivo.txt' ou 'ARQUIVO.TXT'. Tentar criar um arquivo com o mesmo nome, mas com grafia diferente em relação a maiúsculas e minúsculas na mesma pasta, resultará em um erro ou na substituição do arquivo existente.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao excluir uma biblioteca no Windows, o que acontece com os arquivos e pastas que eram exibidos nela?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os arquivos e pastas são compactados automaticamente em um arquivo ZIP",
+          "correct": false,
+          "explanation": "Incorreta. A exclusão de uma biblioteca não aciona nenhum processo automático de compactação de arquivos. A compactação é uma ação separada e manual que o usuário pode realizar, geralmente para economizar espaço ou facilitar o transporte de múltiplos arquivos."
+        },
+        {
+          "id": "b",
+          "text": "Os arquivos e pastas são excluídos permanentemente do sistema",
+          "correct": false,
+          "explanation": "Incorreta. Conforme explicado, as bibliotecas apenas apontam para os arquivos. A exclusão de uma biblioteca remove apenas o atalho ou a visualização agregada, sem afetar a integridade ou a existência dos arquivos e pastas em seus locais de armazenamento reais."
+        },
+        {
+          "id": "c",
+          "text": "Os arquivos e pastas são movidos para a Lixeira do Windows",
+          "correct": false,
+          "explanation": "Incorreta. As bibliotecas do Windows (como Documentos, Imagens, Músicas) funcionam como \"pastas virtuais\" ou agregadores de conteúdo. Elas não armazenam os arquivos fisicamente, mas sim referenciam pastas que podem estar localizadas em diferentes partes do disco rígido ou da rede. Ao excluir uma biblioteca, apenas essa referência é removida, e os arquivos originais não são movidos para a Lixeira."
+        },
+        {
+          "id": "d",
+          "text": "Os arquivos e pastas permanecem em seus locais originais intactos",
+          "correct": true,
+          "explanation": "Correta. As bibliotecas no Windows não são locais de armazenamento físico. Elas são coleções de atalhos ou links para pastas que contêm os arquivos. Portanto, quando uma biblioteca é excluída, os arquivos e pastas que ela exibia permanecem intocados em seus locais originais no sistema de arquivos."
+        }
+      ],
+      "explanation": "Correta. As bibliotecas no Windows não são locais de armazenamento físico. Elas são coleções de atalhos ou links para pastas que contêm os arquivos. Portanto, quando uma biblioteca é excluída, os arquivos e pastas que ela exibia permanecem intocados em seus locais originais no sistema de arquivos.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "O atalho Ctrl+A seleciona arquivos ocultos no Windows Explorer?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sim, mas apenas se os arquivos ocultos estiverem configurados para serem exibidos",
+          "correct": true,
+          "explanation": "Correta. O atalho Ctrl+A (Selecionar Tudo) no Windows Explorer seleciona todos os itens que estão visíveis na pasta atual. Se as configurações de exibição do sistema operacional estiverem ajustadas para mostrar arquivos e pastas ocultos (geralmente nas \"Opções de Pasta\" ou \"Opções do Explorador de Arquivos\"), então esses itens ocultos, por estarem visíveis, serão incluídos na seleção. Caso contrário, se os arquivos ocultos não estiverem sendo exibidos, eles não serão selecionados."
+        },
+        {
+          "id": "b",
+          "text": "Sim, o atalho sempre seleciona todos os arquivos, incluindo os ocultos independentemente da configuração",
+          "correct": false,
+          "explanation": "Incorreta. A seleção de arquivos ocultos pelo Ctrl+A não é independente da configuração de exibição. Se os arquivos ocultos não estiverem configurados para serem mostrados, eles não serão visíveis e, consequentemente, não serão selecionados pelo atalho."
+        },
+        {
+          "id": "c",
+          "text": "Não, arquivos ocultos nunca podem ser selecionados por atalhos de teclado",
+          "correct": false,
+          "explanation": "Incorreta. Arquivos ocultos podem ser selecionados por atalhos de teclado, desde que estejam visíveis na interface do Explorador de Arquivos. A visibilidade é a condição determinante para a seleção por atalhos como Ctrl+A."
+        },
+        {
+          "id": "d",
+          "text": "Não, o atalho Ctrl+A seleciona apenas arquivos visíveis, exceto os ocultos",
+          "correct": false,
+          "explanation": "Incorreta. O atalho Ctrl+A seleciona todos os itens visíveis em uma pasta ou janela do Explorador de Arquivos. Se os arquivos ocultos estiverem configurados para serem exibidos, eles também serão selecionados por Ctrl+A."
+        }
+      ],
+      "explanation": "Correta. O atalho Ctrl+A (Selecionar Tudo) no Windows Explorer seleciona todos os itens que estão visíveis na pasta atual. Se as configurações de exibição do sistema operacional estiverem ajustadas para mostrar arquivos e pastas ocultos (geralmente nas \"Opções de Pasta\" ou \"Opções do Explorador de Arquivos\"), então esses itens ocultos, por estarem visíveis, serão incluídos na seleção. Caso contrário, se os arquivos ocultos não estiverem sendo exibidos, eles não serão selecionados.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a diferença entre os atalhos Alt+Tab e Alt+Esc no Windows?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Alt+Tab funciona apenas com programas e Alt+Esc funciona com pastas",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os atalhos, Alt+Tab e Alt+Esc, funcionam com qualquer tipo de janela aberta no Windows, seja um programa, uma pasta do Explorador de Arquivos, ou uma janela do navegador, por exemplo."
+        },
+        {
+          "id": "b",
+          "text": "Alt+Tab exibe miniaturas das janelas e Alt+Esc alterna diretamente entre elas sem exibir miniaturas",
+          "correct": true,
+          "explanation": "Correta. O atalho Alt+Tab abre o \"Alternador de Tarefas\", que exibe miniaturas de todas as janelas abertas, permitindo ao usuário navegar visualmente entre elas. Já o Alt+Esc alterna diretamente entre as janelas abertas em uma sequência (geralmente a ordem em que foram abertas ou usadas por último), trazendo cada uma para o primeiro plano sem a exibição de miniaturas."
+        },
+        {
+          "id": "c",
+          "text": "Alt+Tab fecha janelas e Alt+Esc minimiza janelas",
+          "correct": false,
+          "explanation": "Incorreta. Alt+Tab e Alt+Esc são atalhos para alternar entre janelas, não para fechá-las ou minimizá-las. Para fechar uma janela, usa-se Alt+F4. Para minimizar, pode-se usar a tecla Windows + Seta para baixo."
+        },
+        {
+          "id": "d",
+          "text": "Alt+Tab alterna entre usuários e Alt+Esc alterna entre áreas de trabalho",
+          "correct": false,
+          "explanation": "Incorreta. Alt+Tab e Alt+Esc alternam entre janelas abertas. A alternância entre usuários é feita por meio da tela de bloqueio (Tecla Windows + L) ou do menu Ctrl+Alt+Del. A alternância entre áreas de trabalho virtuais (em versões mais recentes do Windows) é realizada com a combinação Tecla Windows + Ctrl + Seta para a esquerda/direita."
+        }
+      ],
+      "explanation": "Correta. O atalho Alt+Tab abre o \"Alternador de Tarefas\", que exibe miniaturas de todas as janelas abertas, permitindo ao usuário navegar visualmente entre elas. Já o Alt+Esc alterna diretamente entre as janelas abertas em uma sequência (geralmente a ordem em que foram abertas ou usadas por último), trazendo cada uma para o primeiro plano sem a exibição de miniaturas.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "O atalho Ctrl+Alt+Del abre diretamente o Gerenciador de Tarefas no Windows?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sim, mas apenas em versões antigas do Windows",
+          "correct": false,
+          "explanation": "Incorreta. Embora em versões muito antigas do Windows (como Windows 95/98) o Ctrl+Alt+Del pudesse abrir um utilitário similar a um gerenciador de tarefas, a funcionalidade atual e mais relevante para as versões modernas do sistema operacional é a abertura da tela de segurança com múltiplas opções."
+        },
+        {
+          "id": "b",
+          "text": "Não, o atalho apenas bloqueia o computador",
+          "correct": false,
+          "explanation": "Incorreta. Bloquear o computador é apenas uma das opções disponíveis na tela que é aberta por Ctrl+Alt+Del. Não é a única função nem a ação direta desse atalho. O atalho direto para bloquear o computador é a Tecla Windows + L."
+        },
+        {
+          "id": "c",
+          "text": "Não, o atalho abre uma tela com opções que incluem o Gerenciador de Tarefas",
+          "correct": true,
+          "explanation": "Correta. Em sistemas operacionais Windows mais recentes, a combinação Ctrl+Alt+Del abre uma tela de segurança que apresenta diversas opções ao usuário, como \"Bloquear\", \"Trocar de Usuário\", \"Sair\", \"Alterar uma Senha\" e \"Gerenciador de Tarefas\". Para acessar o Gerenciador de Tarefas, o usuário precisa clicar na opção correspondente nessa tela. O atalho direto para o Gerenciador de Tarefas é Ctrl+Shift+Esc."
+        },
+        {
+          "id": "d",
+          "text": "Sim, o atalho sempre abre diretamente o Gerenciador de Tarefas",
+          "correct": false,
+          "explanation": "Incorreta. Em versões modernas do Windows (a partir do Windows NT, incluindo XP, Vista, 7, 8, 10 e 11), o atalho Ctrl+Alt+Del não abre o Gerenciador de Tarefas diretamente. Ele abre uma \"Tela de Segurança do Windows\" que oferece várias opções, sendo uma delas o Gerenciador de Tarefas."
+        }
+      ],
+      "explanation": "Correta. Em sistemas operacionais Windows mais recentes, a combinação Ctrl+Alt+Del abre uma tela de segurança que apresenta diversas opções ao usuário, como \"Bloquear\", \"Trocar de Usuário\", \"Sair\", \"Alterar uma Senha\" e \"Gerenciador de Tarefas\". Para acessar o Gerenciador de Tarefas, o usuário precisa clicar na opção correspondente nessa tela. O atalho direto para o Gerenciador de Tarefas é Ctrl+Shift+Esc.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Ao bloquear a sessão do Windows com o atalho Windows+L, os programas e arquivos abertos são encerrados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Não, os programas e arquivos permanecem abertos e em execução",
+          "correct": true,
+          "explanation": "Correta. Ao bloquear a sessão do Windows com o atalho Tecla Windows + L, o sistema exibe a tela de login, exigindo a senha para acesso. No entanto, todos os programas, documentos e processos que estavam abertos e em execução permanecem ativos em segundo plano. Isso permite que o usuário retome seu trabalho exatamente de onde parou após desbloquear a sessão."
+        },
+        {
+          "id": "b",
+          "text": "Sim, todos os programas são encerrados automaticamente ao bloquear a sessão",
+          "correct": false,
+          "explanation": "Incorreta. A função de bloquear a sessão do Windows (Windows + L) é projetada para proteger a privacidade e a segurança do usuário quando ele se afasta do computador, sem interromper o trabalho em andamento. Nenhum programa é encerrado automaticamente."
+        },
+        {
+          "id": "c",
+          "text": "Sim, mas apenas os programas que não foram salvos são encerrados",
+          "correct": false,
+          "explanation": "Incorreta. O bloqueio da sessão não encerra programas, independentemente de seus arquivos terem sido salvos ou não. O estado de todas as aplicações é mantido intacto para que o usuário possa continuar trabalhando após o desbloqueio."
+        },
+        {
+          "id": "d",
+          "text": "Não, mas os programas entram em modo de suspensão e param de funcionar",
+          "correct": false,
+          "explanation": "Incorreta. Os programas não entram em modo de suspensão nem param de funcionar ao bloquear a sessão. Eles continuam a ser executados em segundo plano. O modo de suspensão ou hibernação são estados de economia de energia diferentes do simples bloqueio da sessão, que podem ser acionados separadamente."
+        }
+      ],
+      "explanation": "Correta. Ao bloquear a sessão do Windows com o atalho Tecla Windows + L, o sistema exibe a tela de login, exigindo a senha para acesso. No entanto, todos os programas, documentos e processos que estavam abertos e em execução permanecem ativos em segundo plano. Isso permite que o usuário retome seu trabalho exatamente de onde parou após desbloquear a sessão.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_326781_Windows 7 V.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:56:31"
+}

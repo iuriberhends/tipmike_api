@@ -1,0 +1,753 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 18,
+  "ordem_no_curso": "105.00",
+  "titulo": "Office 365 Web - Excel",
+  "codigo_aula": "291219",
+  "video_id": "scaln4boD14=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:31:34",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/scaln4boD14%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=406721%2C405030&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Office 365 Web - Excel\n\n## Revisão da Função SE\nEntão, voltando aqui, nós acabamos de ver a função SE, porque a sua estrutura é sempre a mesma. Lembre-se: sempre teremos um teste lógico, uma condição para verdade e outra para falso. Só relembrando: sempre faremos uma condição ou a outra de acordo com o resultado do teste lógico.\n\nEntão, se o teste lógico for verdadeiro, retorna o resultado de verdade; se for falso, retorna o resultado de falso. E acabou. Vamos para o 31, antes só olhando aqui, relembrando no nosso PDF, se você estiver anotando. Veja o desmembramento aqui dentro, por exemplo, de “maior de dois”. Você vai notar o quê? Que a condição é o teste lógico; se “maior”, condição verdade; “menor”, quando for falso. Só para você não perder detalhes. Vamos para o 31 agora: temos aqui outro SE.\n\nVeja que, basicamente, o que mudou é que agora temos uma função aqui dentro. Não vai mudar nada na lógica: poderíamos ter outra função, inclusive, ou seja, dois resultados oriundos de funções ou de cálculos distintos que vão ser comparados e, ao final, vão servir aqui. Logo em cima do cursor, aquilo que está amarelinho, nós temos uma comparação. Esse valor resultante da média: se ele for maior ou igual a 5, está aprovado; se não, está reprovado. Quando são verdade? Quando são falsas? Tudo depende do teste.\n\nEntão, a média de dois até dois... Se ela for maior, chegou a 5... maior ou igual a 5. Tome cuidado para não cometer um erro: tenho aqui 8 + 9 = 17; + 7 = 24; dividido por 3, a média é 8. Logo, 8 é maior do que 5. Não tem como ser maior? É “maior ou igual”. Então, nós temos aqui “aprovado”. Bastaria, nesse caso, copiar para baixo para os demais resultados.\n\nOlha a média do segundo aluno: 5 + 1 = 6; + 4 = 10; dividido por 3, dá 3,33..., aquela dízima periódica infinita. Beleza. O que nos interessa é que 3 é menor do que 5. Não é nem maior nem igual; portanto, está reprovado. Bom, já deu para entender; copiei e colei para baixo. Vamos para a função 32.\n\n## SE Aninhado (Vários Testes em Cascata)\nO que eu tenho agora? Eu tenho SEs, ou seja, condições em cascata. Lembra que eu falei? São condições. O que vai mudar aqui? Muda um pouquinho a estrutura. Olhando, você vai perceber o seguinte: vai funcionar assim — teste, condição; teste, condição... Na verdade, a condição falsa sempre vai passar para o próximo teste. Porque, se esse teste não for verdadeiro, ao contrário de antes, em que nós tínhamos um teste com uma condição verdade e uma falsa, agora eu tenho um teste cuja condição só vai ser apresentada se esse teste for verdadeiro. Se não for, eu passo para o próximo teste. Eu vou testando até encontrar um que seja verdadeiro ou, se tudo der falso, o resultado vai ser “falso”.\n\nAqui eu já tenho uma média pronta. E o texto: se A2 é menor do que 5. Então, se não, se A2 for igual a 5... se não, se A2 for menor ou igual a 8... Mas veja: para ele chegar aqui, eu não posso colocar, por exemplo, essa condição do “≤ 8” no começo, porque qualquer número menor ou igual a 8 já estaria “ótimo” e impediria as demais condições. Tem que ter uma lógica para chegar ao resultado pretendido. Se você coloca esse teste como primeiro, ele já atende à maioria dos valores. E, por último, se A2 for maior ou igual a 9, então “parabéns”. Esse até poderia vir antes dos outros, não tem problema. É uma lógica estruturada que vai seguir, mas isso aqui não precisa ser sua preocupação na hora de construir: o importante é entender como é.\n\nEu tenho: se A2 é menor que 5, “ruim”. Meu teste foi verdadeiro, deu “ruim”. Vamos trocar esse valor, copiar para mais células, e vou passar para, por exemplo, 6. Aí vamos chegando na próxima condição: como não é menor que 5, vai embora. A2 é igual a 5? Então, não. Bom, se A2 for menor ou igual a 8, “ok”. Se eu colocar um valor maior que 5, por exemplo 6, já está “ótimo” (isso é só um exemplo; “6 está ótimo” é a minha opinião, você pode escalonar conforme seus critérios). Vamos chegar no 9. Veja: 9 não é menor que 5; 9 não é igual a 5; 9 não é menor ou igual a 8; mas 9 é igual a 9. Se fosse 10, atenderia “maior que 9”. Então, “parabéns”.\n\nDepois de construir essa lógica com vários SEs, passamos para o E.\n\n## Função E\nO E é uma função lógica. Eu vou ter testes — posso ter vários. A quantidade não altera a lógica. Para que o teste lógico total seja verdadeiro, todos os testes ali devem ser verdadeiros. Se tiver dez, por exemplo, e nove forem verdadeiros e um falso, o resultado é falso. Todos os testes têm que ser verdadeiros. Beleza? Todos sabemos disso.\n\nPensa assim: para eu ser feliz em termos de carro (exemplo), eu preciso comprar esse carro e aquele carro. Se faltar uma das coisas, não estou satisfeito.\n\nVamos aos testes: A2 > 2? Sei que é verdadeiro, porque o valor é maior. Depois: A3 < 4? A3 é menor (ou adequado)? Verdadeiro também. Ora, se todos os testes foram verdadeiros, o resultado é VERDADEIRO. Agora vamos trocar: comparando o segundo para saber se era menor que 4, trocando por um valor maior, dá falso. Para o E ser falso, basta encontrar um teste falso.\n\n> 🎯 Dicas de prova: No E, basta encontrar UM teste falso para concluir que o resultado é falso. Analise um por um. Em provas, geralmente aparecem 3 a 4 testes. Encontrou um falso, o resultado final é falso; não precisa testar os demais.\n\n## Função OU\nAgora chegamos ao OU. Ele é menos criterioso: eu quero esse carro ou aquele carro — basta um dos dois para alcançar a “felicidade”. Na prática: basta uma condição verdadeira para o OU ser verdadeiro. Para que o OU seja falso, TODOS os testes devem ser falsos.\n\nVamos aos testes: A1 > 2? Não é maior? Falso. A3 ≤ 4? Não é menor nem igual? Falso também. Logo, se todos os testes forem falsos, o resultado final é FALSO. Agora vamos trocar: se A3 pode ser menor ou igual, vamos colocar valores iguais. Ao trocar e colocar 4, passo a ter um teste verdadeiro. Basta um verdadeiro para que o OU dê VERDADEIRO. Não precisa encontrar mais de um; achou um verdadeiro, já é suficiente.\n\n> 🎯 Dicas de prova: No OU, basta UM teste verdadeiro para concluir que o resultado é verdadeiro. Cuidado para não perder tempo testando todos se já achou um verdadeiro.\n\n## Função MULT (Multiplicação)\nFunção MULT (ou produto): simplesmente vai multiplicar os valores no intervalo. Tipo: de 1 até 3, 1×2×3 = 6; vezes 5 = 30 no total. MULT é mais para você conhecer, se nunca viu. As funções têm nomes que às vezes confundem: MODA calcula a moda; MEDIANA calcula a mediana; parece com média, mas não confunda. Basicamente, é isso: faça uma explicação e corra para o abraço.\n\n## PROCV (Procura Vertical)\nVamos entender o PROCV. É para fazer uma procura na vertical. Vamos exagerar nos detalhes para você ver tudo.\n\nSintaxe base: primeiro, o valor procurado (pode ser uma referência, como E11, ou um valor direto: número, letra, palavra). Suponha que E11 é o valor 2 — é o que vou procurar.\n\nSegundo, intervalo de procura: de A2 até C8 (exemplo). Todo esse intervalo vale. Atenção: o valor procurado SEMPRE é buscado na primeira coluna à esquerda do intervalo. Sempre. Então, comece o intervalo de forma que a coluna onde está o valor procurado seja a primeira coluna do intervalo. Se eu começasse o intervalo na coluna B, eu procuraria na B; se o código está na A, preciso começar pela A.\n\nDito isso: com o intervalo A2:C8, eu vou procurar na primeira coluna (A). Primeiro momento: faço a varredura nas linhas da primeira coluna até encontrar o valor (2). Cheguei na linha correta; as demais linhas não interessam mais. Agora eu varro essa linha e pego o valor na coluna desejada.\n\nO próximo argumento é o número da coluna para retorno: “1” se refere à primeira coluna dentro do intervalo, “2” à segunda, e assim por diante. Se a primeira coluna é A, então A é 1, B é 2, C é 3 etc. Se eu colocar 1, vou retornar o valor da própria coluna A; se eu colocar 2, retorno a coluna B; 3, a coluna C.\n\nPor último, o quarto argumento: 1/VERDADEIRO (aproximação) ou 0/FALSO (exato). VERDADEIRO significa que, se não encontrar exatamente, traz o mais próximo para baixo (requer dados ordenados). Se for FALSO (0), exige correspondência exata — se não existir, retorna erro.\n\nExemplo: com VERDADEIRO, se eu procurar 8 e não houver 8, ele traz o mais próximo inferior (por exemplo, 7). Com FALSO, se eu procurar 8 e não houver 8, retorna erro.\n\nVamos fazer: PROCV(E11; A2:C8; 1; 1) traz o próprio código (coluna 1). Agora, construindo outro PROCV: valor procurado E11; mesmo intervalo A2:C8; mudar coluna para 2, porque eu quero o “Produto” (está na coluna B). Coloco 0 no quarto argumento para exigir exato e mostro a diferença: com 0, se eu digitar 8 e não existir 8, não traz; com 1, traria o mais próximo.\n\nDepois, faço outro PROCV para “Quantidade” com a coluna 3. Aqui posso omitir o quarto argumento; omitir significa considerar como 1 (aproximação). É comum em prova aparecer omitido — funciona como VERDADEIRO.\n\nDica prática: ao copiar fórmulas, “trave” (fixe) intervalos com cifrões para não desalinhar referências ao colar. Trave o intervalo de busca; o valor procurado muda conforme a célula.\n\n## PROCH (Procura Horizontal)\nAgora o PROCH. A lógica muda o eixo: a busca é na horizontal. Antes, no PROCV, eu varria linhas na primeira coluna e depois ia para a coluna desejada. Aqui, no PROCH, primeiro eu varro as colunas na primeira linha do intervalo; depois, desço para a linha indicada.\n\nSintaxe semelhante: valor procurado; intervalo (por exemplo, B1:F4); número da linha de retorno; e, por fim, 0/1 para exato/aproximado (podendo omitir).\n\nExemplo: procuro o código “2” na primeira linha do intervalo. Achei “2” numa coluna; agora, quero o nome que está na segunda linha: coloco “2” como número da linha. Se eu quiser “Plano contratado”, mudo para a linha correspondente (por exemplo, 4). Se eu digitar um código “7” que não existe e estiver com 0 (exato), dá erro; se omitir (considera 1), pode trazer aproximação dependendo da ordenação.\n\nMinha sugestão: entenda como a busca percorre primeiro colunas (linha 1) e depois desce para a linha escolhida.\n\n## PROCX (PROCX/PROCXI – Procura Flexível)\nAgora, o PROCX (nas versões mais novas do Excel Desktop; no Excel para Web do 365 tende a existir, mas versões antigas não têm). Ele é uma melhoria/simplificação que une as ideias do PROCV e do PROCH. A sintaxe muda um pouco.\n\nBase da sintaxe:\n- valor_procurado\n- matriz_procurada (onde buscar esse valor)\n- matriz_retorno (de onde retornar o resultado)\n\nO valor_procurado (por exemplo, E12). Onde eu procuro? Em A2:A8 (matriz_procurada). Onde eu quero o resultado? Em B2:B8 (matriz_retorno) — pode ser a mesma coluna (quando você quer o próprio código) ou qualquer outra coluna/linha correspondente, sem a limitação do PROCV de “estar na primeira coluna”. Isso é o grande ganho: você separa matriz de busca e matriz de resultado livremente.\n\nSe eu quiser código, a matriz de retorno é a própria coluna de códigos. Se eu quiser nome do produto, a matriz de retorno é a coluna de nomes. Se eu quiser preço, coloco a coluna de preços, e assim por diante. Fica muito mais simples construir, e mais flexível.\n\nDepois dos três argumentos básicos, temos parâmetros opcionais:\n- se_não_encontrado: texto/valor para retornar quando não encontra (em vez do erro).\n- modo_correspondência:\n  - 0: correspondência exata; se não encontrar, retorna erro (padrão).\n  - -1: correspondência exata ou próximo menor (traz o item imediatamente menor).\n  - 1: correspondência exata ou próximo maior (traz o item imediatamente maior).\n  - 2: correspondência com curingas (*, ? etc.).\n- modo_pesquisa:\n  - 1: pesquisa do primeiro ao último (padrão).\n  - -1: pesquisa reversa, do último ao primeiro.\n  - 2: pesquisa binária com matriz ordenada crescente.\n  - -2: pesquisa binária com matriz ordenada decrescente.\n\nEntão, o PROCX é mais simples por um lado (estrutura clara: procurar em X, retornar de Y), mas oferece mais opções, o que também pode torná-lo mais complexo. Se você não usar os opcionais, foque na base: valor, matriz de busca, matriz de retorno.\n\n> 🎯 Dicas de prova: Foque na estrutura base do PROCX (valor_procurado; matriz_procurada; matriz_retorno). Saiba que se_não_encontrado é muito cobrado para evitar erro; e lembre os modos 0 (exato), -1 (próximo menor), 1 (próximo maior) e 2 (curingas).\n\n## Encerramento e Dicas Gerais\nEu peço que você se atenha à estrutura básica, ao essencial, de como é feita a procura. Vou encerrar esse bloco e já já damos continuidade no próximo, terminando essas funções e fazendo alguns exercícios.\n\n> 🎯 Dicas de prova: Já passei dicas em quase todos os blocos. Faça exercícios. Em funções, de 2013/2010 para cá, pouca coisa muda na execução. Não esqueça: estamos usando o programa diretamente na web, com armazenamento na nuvem (OneDrive). Salva automaticamente. Esses detalhes não podem ser esquecidos nessa aula.\n\nQuanto à execução das funções, não vai mudar praticamente nada. Você vai testar, ver a aula, fazer exercício. “Ah, mas aqui deu diferente...” Pode ser por contexto específico; 99% das coisas vão funcionar.\n\nSe procurar por materiais “Excel 365” e não encontrar, pode usar de versões 2013/2016/2019: em termos de funções básicas, muda pouco. Só não seja aquela pessoa que arruma desculpa para não praticar. Pratique um pouquinho e, até o momento, continuamos.",
+  "transcricao_meta": {
+    "title": "Office 365 Web - Excel",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 42153,
+    "createdAt": "2026-02-06T20:11:48.191Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: funções lógicas (SE, E, OU), funções estatísticas (MODA, MEDIANA, MULT), buscas no Excel Web (PROCV, PROCH, PROCX e a função de pesquisa moderna no Office 365 Web).\nPrincipais pontos: \n- Estrutura e ordem lógica das funções condicionais\n- Diferenças PROCV vs PROCH vs PROCX e parâmetros de correspondência\n- Técnicas práticas, índices, travas ($), e modos de correspondência/pesquisa (0, 1, -1, 2; 1, -1, -2, 2)\n- Pegadinhas clássicas de prova\n\n## 1. Base / Conceitos Fundamentais\n- **SE (IF)**: teste lógico → valor se verdadeiro → valor se falso.\n- **E (AND)**: só retorna **VERDADEIRO** se todos os testes forem verdadeiros.\n- **OU (OR)**: retorna **VERDADEIRO** se ao menos um teste for verdadeiro.\n- **MODA**: valor mais frequente.\n- **MEDIANA**: valor central do conjunto ordenado.\n- **MULT (MULTI citado na aula)**: produto dos valores do intervalo.\n- **PROCV (VLOOKUP)**: busca vertical; valor procurado deve estar na primeira coluna do intervalo.\n- **PROCH (HLOOKUP)**: busca horizontal; valor procurado deve estar na primeira linha do intervalo.\n- **PROCX (XLOOKUP)**: busca moderna; separa “matriz de busca” e “matriz de retorno”, sem depender da primeira coluna/linha.\n- **Pesquisa moderna (Office 365 Web)**: estrutura “pesquisa valor → matriz de busca → matriz de retorno” + parâmetros opcionais:\n  - “se não encontrada”\n  - “modo de correspondência”: 0 (exata), -1 (aprox. para baixo), 1 (aprox. para cima), 2 (curingas * e ?)\n  - “modo de pesquisa”: 1 (topo→base), -1 (base→topo), -2 (binária crescente), 2 (binária decrescente)\n- Ambiente Web: salvamento automático na nuvem.\n\n## 2. Como Funciona / Distinções\n- SE simples vs SE múltiplo:\n  - SE simples: 1 teste → 2 saídas.\n  - SE múltiplo (encadeado): se falso, passa ao próximo teste; a ordem das condições altera o resultado.\n- E vs OU:\n  - **E**: 1 falso derruba o resultado para FALSO.\n  - **OU**: 1 verdadeiro é suficiente para VERDADEIRO.\n- PROCV vs PROCH vs PROCX:\n  - PROCV: varre a primeira coluna; retorna pela posição da coluna (índice 1, 2, 3, 4...).\n  - PROCH: varre a primeira linha; retorna pela posição da linha (índice 1, 2, 3, 4...).\n  - PROCX: define diretamente “onde procurar” e “de onde retornar”; não precisa de índice; aceita “se não encontrada”.\n- Correspondência (exatidão/aproximação):\n  - PROCV/PROCH: último argumento 0/FALSO = exata; 1/VERDADEIRO (ou omitido) = aproximada (retorna o mais próximo para baixo; exige ordenação).\n  - PROCX/pesquisa moderna:\n    - 0: exata (padrão).\n    - -1: exata; se não achar, próximo menor.\n    - 1: exata; se não achar, próximo maior.\n    - 2: curingas.\n- Direção/algoritmo (modo de pesquisa em PROCX/pesquisa moderna):\n  - 1: do primeiro ao último.\n  - -1: do último ao primeiro.\n  - -2: binária crescente (exige ordenação crescente).\n  - 2: binária decrescente (exige ordenação decrescente).\n\n## 3. Aplicação Prática / Técnicas\n- SE (ex.: aprovação por média):\n  - Estrutura: SE(teste; \"aprovado\"; \"reprovado\")\n  - Teste típico: média ≥ 5 → “aprovado”; senão → “reprovado”.\n- SE múltiplo (faixas ordenadas do específico ao amplo):\n  - Exemplo de ordem correta: <5; =5; ≤8; ≥9.\n- E/OU em validações:\n  - E(cond1; cond2; ...) quando todas as condições precisam ser verdadeiras.\n  - OU(cond1; cond2; ...) quando basta uma.\n- PROCV passo a passo:\n  1) valor_procurado\n  2) intervalo (com código na primeira coluna)\n  3) índice da coluna de retorno (1=primeira, 2=segunda, 3=terceira, 4=quarta)\n  4) 0/FALSO (exata) ou 1/VERDADEIRO (aproximada)\n  - Trave o intervalo com $ (ex.: $B$2:$E$8) antes de copiar.\n- PROCH passo a passo:\n  1) valor_procurado na primeira linha\n  2) intervalo\n  3) índice da linha de retorno\n  4) 0/FALSO ou 1/VERDADEIRO\n- PROCX (ou pesquisa moderna) passo a passo:\n  1) valor_procurado (ex.: 12)\n  2) matriz de busca (ex.: B2:B8)\n  3) matriz de retorno (ex.: C2:C8 ou E2:E8)\n  4) “se não encontrada” (opcional)\n  5) modo de correspondência: 0, -1, 1, 2\n  6) modo de pesquisa: 1, -1, -2, 2\n  - Garanta que as matrizes de busca e de retorno tenham o mesmo tamanho/alinhamento.\n- Correspondência aproximada (prático):\n  - PROCV 1/VERDADEIRO ou omitido: retorna o maior valor menor ou igual (ex.: procurar 8 → retorna 7 se 8 não existir).\n  - PROCX -1: aproximação para baixo; 1: aproximação para cima.\n- Curingas (modo 2 na pesquisa moderna/PROCX):\n  - Asterisco (*) = qualquer sequência.\n  - Interrogação (?) = um caractere.\n\n## 4. Exemplos e Casos Resolvidos\n- SE (média A2:A8):\n  - SE(MÉDIA(A2:A8)≥5; \"aprovado\"; \"reprovado\")\n  - Ex.: (8+9+7)/3 = 8 → aprovado; (5+1+4)/3 = 3,33 → reprovado.\n- SE múltiplo (classificação por nota em A2):\n  - SE(A2<5; \"ruim\"; SE(A2=5; \"regular\"; SE(A2≤8; \"bom\"; \"parabéns\")))\n- E/OU:\n  - E(A1>2; A3<4) → só VERDADEIRO se todas verdadeiras.\n  - OU(A1>2; A3≤4) → VERDADEIRO se ao menos uma verdadeira.\n- PROCV (código → preço):\n  - PROCV(A11; B2:E8; 4; FALSO) → procura A11 em B2:B8; retorna 4ª coluna (preço).\n  - Troca de campo: mude o índice (2=produto; 3=quantidade; 4=preço; 5=estoque).\n- PROCH (cabeçalho na primeira linha):\n  - PROCH(\"código\"; B1:E4; 3; 0) → acha a coluna do “código” na primeira linha e retorna a linha 3 correspondente.\n- PROCV aproximado:\n  - Procurar 8 com 1/VERDADEIRO, sem 8 na tabela, e existindo 7 → retorna linha do 7.\n  - Com 0/FALSO → retorna erro (não encontrado).\n- PROCX (flexível):\n  - PROCX(12; B2:B8; C2:C8; \"não disponível\"; 0; 1) → busca exata do 12; se não achar, “não disponível”; pesquisa do topo para a base.\n  - Trocar o retorno para E2:E8 → traz preço sem contar índice.\n- Pesquisa moderna (modos avançados):\n  - -1 (aprox. para baixo): buscar 10; não existe → retorna 7 (próximo menor).\n  - 1 (aprox. para cima): buscar 1; não existe → retorna o próximo maior.\n  - -2/2 (binária): use apenas com matriz ordenada (crescente para -2; decrescente para 2).\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: Identifique logo “teste lógico → verdadeiro → falso” no SE; bancas trocam ≥ por > para derrubar limiar (ex.: 5).\n\n> Dica de Prova: Em SE múltiplo, não coloque condições amplas (ex.: ≤8) antes das específicas (=5, <5). A primeira condição verdadeira “curto-circuita” as demais.\n\n> Dica de Prova: E vs OU — Para E, um falso já torna tudo FALSO; para OU, um verdadeiro já torna tudo VERDADEIRO.\n\n> Dica de Prova: PROCV/PROCH só procuram na primeira coluna/linha do intervalo. Se o “código” não estiver ali, não encontra.\n\n> Dica de Prova: Último argumento do PROCV/PROCH omitido = aproximação (VERDADEIRO). Se a tabela não estiver ordenada, o resultado pode ser incorreto.\n\n> Dica de Prova: Índice errado em PROCV/PROCH troca o campo retornado. Confirme: 1=primeira coluna/linha; 2=segunda; 3=terceira; 4=quarta.\n\n> Dica de Prova: Em PROCX/pesquisa moderna, “modo de correspondência” (-1/1) não é direção; direção é “modo de pesquisa” (1/-1/-2/2). Não confunda.\n\n> Dica de Prova: Modos binários (-2/2) exigem ordenação correta. Se não tiver certeza, use 1 ou -1 (lineares).\n\n> Dica de Prova: Use “se não encontrada” para personalizar retorno (“não disponível”, “aprovado”, etc.) quando não houver coincidência.\n\n> Dica de Prova: No Office 365 Web, salvamento é automático. Atenção ao ambiente: fórmulas funcionam como no desktop; foque na estrutura e parâmetros.\n\n> Dica de Prova: “MULTI” mencionado pode referir-se ao produto do intervalo; na prática do Excel PT-BR a função é MULT (Produto). A banca pode usar a intenção (multiplicar intervalo).",
+  "resumo_bolso": "# Office 365 Web - Excel\n\n---\n\n## 📌 Conceitos-Chave\n\n* **SE**: `SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)` → sempre 3 blocos: teste → verdadeiro → falso.\n* **SE múltiplo (encadeado)**: um SE dentro do outro; a **primeira condição verdadeira** encerra a avaliação.\n* **E**: `E(cond1; cond2; ...)` → só dá **VERDADEIRO** se **todas** as condições forem verdadeiras.\n* **OU**: `OU(cond1; cond2; ...)` → dá **VERDADEIRO** se **pelo menos uma** condição for verdadeira.\n* **MODA**: valor **mais frequente** do conjunto.\n* **MEDIANA**: valor **central** após ordenar o conjunto.\n* **MULT**: produto dos valores de um intervalo (multiplica todos).\n* **PROCV**: busca **vertical**, valor procurado **na 1ª coluna** do intervalo; retorna coluna pelo **índice**.\n* **PROCH**: busca **horizontal**, valor procurado **na 1ª linha** do intervalo; retorna linha pelo **índice**.\n* **PROCX / pesquisa moderna**: separa **matriz de busca** e **matriz de retorno**; não depende da 1ª coluna/linha; aceita parâmetros de correspondência e pesquisa.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### SE simples vs SE múltiplo\n\n| Aspecto | SE simples | SE múltiplo (encadeado) |\n| --- | --- | --- |\n| Estrutura | 1 teste → 2 saídas | Vários testes em cascata |\n| Ordem | altera o resultado quando há mais de um teste | **ordem altera o resultado** |\n| Uso típico | aprovado/reprovado | faixas de nota, classificação |\n\n---\n\n### E vs OU\n\n| Aspecto | E | OU |\n| --- | --- | --- |\n| Resultado global | 1 **FALSO** → tudo FALSO | 1 **VERDADEIRO** → tudo VERDADEIRO |\n| Uso típico | todas as regras devem ser atendidas | basta atender uma regra |\n\n---\n\n### PROCV vs PROCH vs PROCX\n\n| Aspecto | PROCV | PROCH | PROCX / pesquisa moderna |\n| --- | --- | --- | --- |\n| Direção | vertical (colunas) | horizontal (linhas) | flexível |\n| Onde procura | **1ª coluna** do intervalo | **1ª linha** do intervalo | matriz de busca definida |\n| Retorno | por **índice de coluna** | por **índice de linha** | por **matriz de retorno** |\n| “Se não encontrada” | não nativo | não nativo | parâmetro próprio |\n\n---\n\n### Modo de correspondência vs Modo de pesquisa (PROCX / pesquisa moderna)\n\n| Aspecto | Modo de correspondência | Modo de pesquisa |\n| --- | --- | --- |\n| O que controla | tipo de coincidência (exata/aproximada/curingas) | direção/algoritmo da busca |\n| Valores | 0, -1, 1, 2 | 1, -1, -2, 2 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. SE (aprovado/reprovado)**  \n* **Aplicação**: classificação binária por média.  \n* **Regra**: `SE(média>=5; \"aprovado\"; \"reprovado\")`.  \n* **Exemplo**: `SE(MÉDIA(A2:A8)>=5; \"aprovado\"; \"reprovado\")`.\n\n---\n\n**2. SE múltiplo (faixas de nota)**  \n* **Aplicação**: “ruim / regular / bom / parabéns”.  \n* **Regra (ordem do específico → amplo)**:  \n  `SE(A2<5;\"ruim\";SE(A2=5;\"regular\";SE(A2<=8;\"bom\";\"parabéns\")))`.  \n\n---\n\n**3. PROCV**\n\n* **Aplicação**: buscar por código (coluna 1) e retornar outro campo.  \n* **Regra**: `PROCV(valor_procurado; intervalo; índice_coluna; [0/FALSO ou 1/VERDADEIRO])`.  \n* **Exemplo**: `PROCV(A11; $B$2:$E$8; 4; FALSO)` → código em A11, retorna 4ª coluna (preço).  \n\n---\n\n**4. PROCH**\n\n* **Aplicação**: cabeçalho na 1ª linha, busca horizontal.  \n* **Regra**: `PROCH(valor_procurado; intervalo; índice_linha; [0/FALSO ou 1/VERDADEIRO])`.  \n* **Exemplo**: `PROCH(\"código\"; B1:E4; 3; 0)` → acha coluna de “código” na linha 1, retorna linha 3.\n\n---\n\n**5. PROCX / Pesquisa moderna**\n\n* **Aplicação**: busca flexível (sem depender da 1ª coluna/linha).  \n* **Regra base**:  \n  `PROCX(valor_procurado; matriz_busca; matriz_retorno; [se_não_encontrada]; [modo_corresp]; [modo_pesq])`.  \n* **Modos de correspondência**:  \n  * `0` = exata (**padrão**).  \n  * `-1` = exata; se não achar, **próximo menor**.  \n  * `1` = exata; se não achar, **próximo maior**.  \n  * `2` = usa **curingas** `*` e `?`.  \n* **Modos de pesquisa**:  \n  * `1` = do **primeiro ao último**.  \n  * `-1` = do **último ao primeiro**.  \n  * `-2` = **binária crescente** (lista ordenada crescente).  \n  * `2` = **binária decrescente** (lista ordenada decrescente).  \n* **Exemplo**:  \n  `PROCX(12; B2:B8; E2:E8; \"não disponível\"; 0; 1)`.\n\n---\n\n**6. Correspondência aproximada (PROCV/PROCH)**\n\n* **Aplicação**: faixas de valores (tabelas de imposto, descontos).  \n* **Regra**: último argumento `1` ou **omitido** = aproximação.  \n* **Comportamento**: retorna o **maior valor ≤** ao procurado (exige tabela **ordenada crescente**).  \n\n---\n\n**7. Curingas (modo 2 – PROCX/pesquisa moderna)**\n\n* `*` = qualquer sequência de caracteres.  \n* `?` = exatamente **1** caractere.  \n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Último argumento do PROCV/PROCH omitido = aproximação (VERDADEIRO); para busca exata, use 0/FALSO.\n* PROCV/PROCH só procuram na primeira coluna/linha do intervalo; se o “código” não estiver ali, não encontra.\n* Em SE múltiplo, a ordem das condições altera o resultado; a primeira condição verdadeira interrompe as demais.\n* Em E, um falso já torna tudo FALSO; em OU, um verdadeiro já torna tudo VERDADEIRO.\n* Em PROCX/pesquisa moderna, -1/1 pertencem ao modo de correspondência; direção é definida pelo modo de pesquisa (1, -1, -2, 2).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **SE simples** de **SE múltiplo** e lembrei que **a ordem das condições importa**?\n* Fixei que **E** exige todas verdadeiras e **OU** aceita uma verdadeira?\n* Memorizei: PROCV/PROCH → **1ª coluna/linha** + último argumento **0=exata / 1 ou omitido=aprox.**?\n* Lembrei que PROCX/pesquisa moderna usa **matriz_busca** e **matriz_retorno** separadas + modos `0, -1, 1, 2` e `1, -1, -2, 2`?\n* Sei que modos aproximados (PROCV/PROCH com 1/omitido; PROCX -1/1) e modos binários (-2/2) exigem atenção à **ordenação da lista**?",
+  "mapa_mental": "# 💻 Office 365 Web – Excel\n## 🎯 Funções Lógicas\n### 💡 Conceito SE\n- Teste lógico\n- Valor verdadeiro\n- Valor falso\n- SE simples\n- SE encadeado\n### 💡 Conceito E\n- Todos verdadeiros\n- Um falso derruba\n- Combinação condições\n- Validação rigorosa\n- Resultado booleano\n### 💡 Conceito OU\n- Um verdadeiro basta\n- Vários testes\n- Flexibilização regra\n- Resultado booleano\n- Combinação critérios\n\n## 🧮 Funções Estatísticas\n### 💡 MODA\n- Valor frequente\n- Conjunto dados\n- Repetição máxima\n- Análise distribuição\n- Medida tendência\n### 💡 MEDIANA\n- Valor central\n- Dados ordenados\n- Divide conjunto\n- Menos sensível extremos\n- Medida posição\n### 💡 MULT\n- Produto intervalo\n- Multiplica argumentos\n- Cálculo composto\n- Série numérica\n- Resultado único\n\n## 🔍 Funções de Busca\n### 💻 PROCV e PROCH\n- PROCV vertical\n- Primeira coluna\n- Índice coluna\n- Aproximada 1\n- Exata 0\n### 💻 PROCX\n- Matriz busca\n- Matriz retorno\n- Não exige primeira\n- Parâmetro não encontrada\n- Substitui PROCV PROCH\n### 💻 Pesquisa Moderna\n- Valor pesquisado\n- Matriz busca\n- Matriz retorno\n- Mesma dimensão\n- Ambiente nuvem\n\n## ⚙️ Modos e Parâmetros\n### 🧮 Correspondência\n- 0 exata\n- 1 aproxima cima\n- -1 aproxima baixo\n- 2 curingas\n- Ordenação necessária\n### 🔄 Modo Pesquisa\n- 1 topo base\n- -1 base topo\n- -2 binária crescente\n- 2 binária decrescente\n- Exige ordenação\n### ⚠️ Erros Frequentes\n- Omitir argumento final\n- Tabela desordenada\n- Índice incorreto\n- Confundir modos\n- Primeira coluna linha",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Testes Lógicos",
+      "description": "Testes Lógicos — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual elemento inicia a avaliação da função SE no Excel?",
+          "back": "Teste lógico",
+          "hint": "É o primeiro argumento da função",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como a função SE escolhe o resultado a retornar?",
+          "back": "Executa uma condição ou a outra de acordo com o resultado do **teste lógico**",
+          "hint": "Refere-se ao mecanismo de decisão",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Em uma sequência de funções SE, o que ocorre quando um teste é falso?",
+          "back": "Passa para o próximo teste",
+          "hint": "Pense em encadeamento de condições",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual condição de média classifica um aluno como aprovado no exemplo apresentado?",
+          "back": "Média maior ou igual a **5**",
+          "hint": "Valor numérico de corte",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual resultado a função E produz quando todos os testes lógicos são verdadeiros?",
+          "back": "Verdadeiro",
+          "hint": "Condição de totalidade",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual quantidade de testes verdadeiros basta para a função OU retornar verdadeiro?",
+          "back": "Basta **um** teste verdadeiro",
+          "hint": "Condição de suficiência mínima",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual diferença lógica existe entre as funções E e OU?",
+          "back": "A função **E** exige que todos os testes sejam verdadeiros, enquanto a função **OU** retorna verdadeiro se pelo menos um teste for verdadeiro",
+          "hint": "Compare o rigor de exigência",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-logicas"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Cálculos Básicos",
+      "description": "Cálculos Básicos — 2 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Como se calcula a média aritmética de três valores em uma planilha?",
+          "back": "Soma os três valores e divide o resultado por **3**",
+          "hint": "Operação matemática básica",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "operacoes-basicas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual operação é realizada ao multiplicar todos os valores de um intervalo?",
+          "back": "Multiplicar todos os valores do intervalo",
+          "hint": "Refere-se a uma operação aritmética",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "operacoes-basicas"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Funções de Busca",
+      "description": "Funções de Busca — 12 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual diferença de orientação existe entre PROCV e PROCH?",
+          "back": "O **PROCV** faz a procura na **vertical**, enquanto o **PROCH** faz na **horizontal**",
+          "hint": "Direção de busca na planilha",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "procura-referencia"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-11",
+          "front": "Em qual parte do intervalo o PROCV procura o valor pesquisado?",
+          "back": "Na **primeira coluna** esquerda do intervalo",
+          "hint": "Localização do valor de referência",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "procura-referencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Como é numerada a coluna usada pelo PROCV para retornar um resultado?",
+          "back": "Por meio de um número que indica a **coluna** correspondente dentro do intervalo",
+          "hint": "Identificador de posição",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "procura-referencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "O que ocorre no PROCV quando o argumento de correspondência é FALSO?",
+          "back": "Não aceita valor que não seja **exato** e retorna erro quando não há coincidência",
+          "hint": "Rigidez na busca",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "procura-referencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual modalidade de correspondência o PROCV assume quando o argumento é omitido?",
+          "back": "Correspondência aproximada",
+          "hint": "Comportamento padrão da função",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procura-referencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual argumento do PROCX define a matriz que contém os valores retornados?",
+          "back": "Matriz de retorno",
+          "hint": "Destino do valor buscado",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é a finalidade do argumento opcional de valor não encontrado no PROCX?",
+          "back": "Retornar um **texto padrão** ou especificado quando nenhuma coincidência válida for encontrada",
+          "hint": "Tratamento de erro",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "O que indica o modo de correspondência 0 do PROCX?",
+          "back": "Correspondência exata",
+          "hint": "Modo de precisão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "O que o modo de correspondência -1 do PROCX retorna quando não há coincidência?",
+          "back": "Retorna o próximo item menor",
+          "hint": "Critério de proximidade",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-19",
+          "front": "Que recurso permite ao PROCX pesquisar usando curingas?",
+          "back": "Correspondência de curingas",
+          "hint": "Caracteres especiais",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual sentido de varredura corresponde ao modo de pesquisa -1 do PROCX?",
+          "back": "Pesquisa reversa começando do último item",
+          "hint": "Direção da busca",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual requisito de ordenação é necessário para a pesquisa binária crescente do PROCX?",
+          "back": "Matriz procurada em ordem **crescente**",
+          "hint": "Organização dos dados",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "procx"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Excel na Nuvem",
+      "description": "Excel na Nuvem — 2 cards",
+      "cards": [
+        {
+          "id": "card-22",
+          "front": "Onde os arquivos do Excel para a Web são armazenados durante o uso do serviço?",
+          "back": "Na nuvem no **OneDrive**",
+          "hint": "Local de armazenamento online",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel-web",
+            "armazenamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Como o Excel para a Web trata o salvamento das alterações feitas na planilha?",
+          "back": "Salva as alterações **automaticamente**",
+          "hint": "Periodicidade da gravação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel-web",
+            "armazenamento"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Na função SE do Excel, qual é a estrutura básica que deve ser seguida para sua correta utilização?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um teste lógico, uma condição para resultado verdadeiro e uma condição para resultado falso",
+          "correct": true,
+          "explanation": "Correta. A função SE (IF) no Excel segue a sintaxe: SE(teste_lógico; valor_se_verdadeiro; valor_se_falso). Isso significa que ela avalia uma condição (teste lógico) e, dependendo se essa condição é verdadeira ou falsa, retorna um dos dois resultados especificados. Por exemplo, =SE(A1>10;\"Maior\";\"Menor\") verifica se o valor em A1 é maior que 10; se for, retorna \"Maior\", caso contrário, retorna \"Menor\"."
+        },
+        {
+          "id": "b",
+          "text": "Um valor de pesquisa, uma área de dados e uma linha de resultado",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição também se alinha mais com funções de pesquisa, onde um valor é procurado em uma área de dados para retornar um resultado específico, não sendo a estrutura básica da função SE."
+        },
+        {
+          "id": "c",
+          "text": "Um intervalo de células, um critério de busca e um valor de retorno padrão",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se assemelha mais à estrutura de funções de busca como PROCV (VLOOKUP) ou PROCH (HLOOKUP), que procuram um valor em um intervalo e retornam um valor correspondente de outra coluna ou linha."
+        },
+        {
+          "id": "d",
+          "text": "Uma matriz de procura, uma coluna de referência e um modo de correspondência",
+          "correct": false,
+          "explanation": "Incorreta. Esta estrutura é típica de funções de pesquisa mais avançadas ou de funções como CORRESP (MATCH) e ÍNDICE (INDEX), que permitem encontrar a posição de um item em um intervalo e retornar um valor em uma posição específica."
+        }
+      ],
+      "explanation": "Correta. A função SE (IF) no Excel segue a sintaxe: SE(teste_lógico; valor_se_verdadeiro; valor_se_falso). Isso significa que ela avalia uma condição (teste lógico) e, dependendo se essa condição é verdadeira ou falsa, retorna um dos dois resultados especificados. Por exemplo, =SE(A1>10;\"Maior\";\"Menor\") verifica se o valor em A1 é maior que 10; se for, retorna \"Maior\", caso contrário, retorna \"Menor\".",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Na função E (AND) do Excel, qual condição deve ser satisfeita para que o resultado final seja VERDADEIRO?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Qualquer um dos testes lógicos pode retornar verdadeiro, desde que nenhum retorne erro",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja verdade que a função E (AND) retorne VERDADEIRO se todos os testes forem verdadeiros, a afirmação de que \"qualquer um dos testes lógicos pode retornar verdadeiro\" é imprecisa. Além disso, a menção de \"desde que nenhum retorne erro\" é uma condição geral para a maioria das funções, mas não a principal para o funcionamento do E (AND)."
+        },
+        {
+          "id": "b",
+          "text": "Apenas o primeiro e o último teste lógico precisam retornar verdadeiro",
+          "correct": false,
+          "explanation": "Incorreta. A função E (AND) não faz distinção entre a posição dos testes lógicos. Todos são igualmente importantes para o resultado final."
+        },
+        {
+          "id": "c",
+          "text": "Todos os testes lógicos incluídos na função devem retornar verdadeiro",
+          "correct": true,
+          "explanation": "Correta. Para que a função E (AND) retorne VERDADEIRO, é imprescindível que todas as condições (testes lógicos) fornecidas como argumentos sejam avaliadas como VERDADEIRAS. Se apenas um dos testes for falso, o resultado final da função E será FALSO. Por exemplo, =E(A1>5; B1<10) só retornará VERDADEIRO se A1 for maior que 5 E B1 for menor que 10 simultaneamente."
+        },
+        {
+          "id": "d",
+          "text": "Pelo menos metade dos testes lógicos incluídos na função devem retornar verdadeiro",
+          "correct": false,
+          "explanation": "Incorreta. A função E (AND) não opera com base em uma proporção de testes verdadeiros. Ela exige uma condição mais rigorosa."
+        }
+      ],
+      "explanation": "Correta. Para que a função E (AND) retorne VERDADEIRO, é imprescindível que todas as condições (testes lógicos) fornecidas como argumentos sejam avaliadas como VERDADEIRAS. Se apenas um dos testes for falso, o resultado final da função E será FALSO. Por exemplo, =E(A1>5; B1<10) só retornará VERDADEIRO se A1 for maior que 5 E B1 for menor que 10 simultaneamente.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a principal diferença entre a função E e a função OU no Excel em relação aos critérios de validação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função E retorna valores percentuais, enquanto a função OU retorna valores absolutos",
+          "correct": false,
+          "explanation": "Incorreta. As funções E (AND) e OU (OR) são funções lógicas e sempre retornam um valor booleano: VERDADEIRO ou FALSO. Elas não retornam valores percentuais ou absolutos diretamente, embora possam ser usadas em conjunto com outras funções que gerem esses tipos de resultados."
+        },
+        {
+          "id": "b",
+          "text": "A função E requer que todos os testes sejam verdadeiros, enquanto a função OU requer apenas um teste verdadeiro",
+          "correct": true,
+          "explanation": "Correta. A função E (AND) exige que todas as condições lógicas fornecidas sejam verdadeiras para que o resultado final seja VERDADEIRO. Se qualquer uma das condições for falsa, o resultado será FALSO. Em contraste, a função OU (OR) exige que pelo menos uma das condições lógicas fornecidas seja verdadeira para que o resultado final seja VERDADEIRO. Apenas se todas as condições forem falsas, a função OU retornará FALSO. Por exemplo, =E(A1>10; B1<5) só é verdadeiro se ambas as condições forem atendidas. Já =OU(A1>10; B1<5) é verdadeiro se A1>10 OU B1<5, ou ambas."
+        },
+        {
+          "id": "c",
+          "text": "A função E aceita apenas valores numéricos, enquanto a função OU aceita textos e números",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as funções E (AND) e OU (OR) trabalham com resultados de testes lógicos (VERDADEIRO ou FALSO), que podem ser derivados da comparação de valores numéricos, textos, datas, etc. Não há restrição de tipo de dado como sugerido."
+        },
+        {
+          "id": "d",
+          "text": "A função E processa dados em ordem crescente, enquanto a função OU processa em ordem decrescente",
+          "correct": false,
+          "explanation": "Incorreta. A ordem de processamento dos argumentos nas funções E (AND) e OU (OR) é da esquerda para a direita, mas isso não está relacionado a uma ordenação crescente ou decrescente dos dados. A lógica se baseia na avaliação de cada condição individualmente."
+        }
+      ],
+      "explanation": "Correta. A função E (AND) exige que todas as condições lógicas fornecidas sejam verdadeiras para que o resultado final seja VERDADEIRO. Se qualquer uma das condições for falsa, o resultado será FALSO. Em contraste, a função OU (OR) exige que pelo menos uma das condições lógicas fornecidas seja verdadeira para que o resultado final seja VERDADEIRO. Apenas se todas as condições forem falsas, a função OU retornará FALSO. Por exemplo, =E(A1>10; B1<5) só é verdadeiro se ambas as condições forem atendidas. Já =OU(A1>10; B1<5) é verdadeiro se A1>10 OU B1<5, ou ambas.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Na função MULT do Excel, qual operação é realizada com os valores especificados no intervalo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcula a média aritmética de todos os valores contidos no intervalo selecionado",
+          "correct": false,
+          "explanation": "Incorreta. A função que calcula a média aritmética é a MÉDIA (AVERAGE) no Excel."
+        },
+        {
+          "id": "b",
+          "text": "Soma todos os valores e divide pelo número de células no intervalo",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição corresponde à função MÉDIA (AVERAGE), que soma os valores e divide pela contagem dos itens."
+        },
+        {
+          "id": "c",
+          "text": "Multiplica todos os valores contidos no intervalo especificado",
+          "correct": true,
+          "explanation": "Correta. A função MULT (PRODUCT) no Excel tem como objetivo multiplicar todos os números fornecidos como argumentos ou contidos em um intervalo de células. Por exemplo, =MULT(A1:A3) multiplicaria os valores das células A1, A2 e A3. Se A1=2, A2=3 e A3=5, o resultado seria 2 * 3 * 5 = 30."
+        },
+        {
+          "id": "d",
+          "text": "Identifica o maior valor e o multiplica pelo menor valor do intervalo",
+          "correct": false,
+          "explanation": "Incorreta. Esta operação de identificar o maior e o menor valor e multiplicá-los não é a função da MULT (PRODUCT). Para isso, seria necessário combinar funções como MÁXIMO (MAX) e MÍNIMO (MIN) com a multiplicação."
+        }
+      ],
+      "explanation": "Correta. A função MULT (PRODUCT) no Excel tem como objetivo multiplicar todos os números fornecidos como argumentos ou contidos em um intervalo de células. Por exemplo, =MULT(A1:A3) multiplicaria os valores das células A1, A2 e A3. Se A1=2, A2=3 e A3=5, o resultado seria 2 * 3 * 5 = 30.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma função SE aninhada com múltiplas condições, como o Excel processa a sequência de testes quando a primeira condição é falsa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Passa para o próximo teste lógico na sequência até encontrar uma condição verdadeira ou chegar ao final",
+          "correct": true,
+          "explanation": "Correta. Em uma função SE (IF) aninhada, as condições são avaliadas em sequência. Se a primeira condição (teste lógico) for falsa, o Excel não retorna o valor_se_verdadeiro associado a ela, mas sim avança para a parte do valor_se_falso, que, em uma função aninhada, é outra função SE. Esse processo se repete até que uma condição verdadeira seja encontrada ou até que todos os testes tenham sido avaliados, retornando o valor_se_falso da última função SE se nenhuma condição for verdadeira. Por exemplo, =SE(A1>10;\"A\";SE(A1>5;\"B\";\"C\")) primeiro verifica se A1>10; se não for, verifica se A1>5; se também não for, retorna \"C\"."
+        },
+        {
+          "id": "b",
+          "text": "Retorna imediatamente um erro e interrompe o processamento das demais condições",
+          "correct": false,
+          "explanation": "Incorreta. Uma função SE aninhada é projetada para lidar com múltiplas condições de forma sequencial, e não para retornar um erro imediatamente, a menos que haja um erro de sintaxe ou de lógica fundamental na fórmula."
+        },
+        {
+          "id": "c",
+          "text": "Inverte a lógica de todas as condições subsequentes e reavalia desde o início",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não inverte a lógica das condições subsequentes. Ele segue a ordem estabelecida na fórmula, avaliando cada condição de forma independente até encontrar uma que seja verdadeira ou esgotar as opções."
+        },
+        {
+          "id": "d",
+          "text": "Calcula a média de todas as condições e retorna o valor mais próximo do resultado esperado",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo de média não faz parte da lógica de avaliação sequencial de uma função SE aninhada. A função SE lida com testes lógicos e resultados condicionais, não com cálculos de média entre condições."
+        }
+      ],
+      "explanation": "Correta. Em uma função SE (IF) aninhada, as condições são avaliadas em sequência. Se a primeira condição (teste lógico) for falsa, o Excel não retorna o valor_se_verdadeiro associado a ela, mas sim avança para a parte do valor_se_falso, que, em uma função aninhada, é outra função SE. Esse processo se repete até que uma condição verdadeira seja encontrada ou até que todos os testes tenham sido avaliados, retornando o valor_se_falso da última função SE se nenhuma condição for verdadeira. Por exemplo, =SE(A1>10;\"A\";SE(A1>5;\"B\";\"C\")) primeiro verifica se A1>10; se não for, verifica se A1>5; se também não for, retorna \"C\".",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Na função PROCV, em qual coluna do intervalo especificado o valor de procura é sempre buscado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Na última coluna à direita do intervalo especificado",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV não busca na última coluna à direita. A busca é sempre iniciada na primeira coluna à esquerda do intervalo."
+        },
+        {
+          "id": "b",
+          "text": "Em todas as colunas simultaneamente, retornando o primeiro valor encontrado",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV não busca em todas as colunas simultaneamente. Ela busca o valor apenas na primeira coluna do intervalo e, ao encontrá-lo, retorna o valor de uma coluna específica daquela linha."
+        },
+        {
+          "id": "c",
+          "text": "Na coluna central do intervalo, calculada automaticamente pela função",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV não busca na coluna central. Ela tem uma lógica de busca predefinida que prioriza a primeira coluna do intervalo."
+        },
+        {
+          "id": "d",
+          "text": "Na primeira coluna à esquerda do intervalo especificado",
+          "correct": true,
+          "explanation": "Correta. Conforme a sintaxe e o funcionamento da função PROCV (Procurar na Vertical), o valor de procura é sempre buscado na primeira coluna à esquerda do intervalo especificado. Uma vez encontrado, a função retorna o valor correspondente de uma coluna especificada dentro da mesma linha."
+        }
+      ],
+      "explanation": "Correta. Conforme a sintaxe e o funcionamento da função PROCV (Procurar na Vertical), o valor de procura é sempre buscado na primeira coluna à esquerda do intervalo especificado. Uma vez encontrado, a função retorna o valor correspondente de uma coluna especificada dentro da mesma linha.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é o comportamento da função PROCV quando o argumento de procura aproximada é definido como 1 (ou VERDADEIRO) e o valor procurado não existe exatamente no intervalo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Retorna o valor mais próximo para baixo (menor) em relação ao valor procurado",
+          "correct": true,
+          "explanation": "Correta. Quando o argumento de procura aproximada da função PROCV é definido como 1 (ou VERDADEIRO), se o valor procurado não for encontrado exatamente, a função retorna o valor mais próximo para baixo, ou seja, o maior valor que seja menor ou igual ao valor procurado. É importante que a primeira coluna do intervalo esteja classificada em ordem crescente para que essa funcionalidade opere corretamente."
+        },
+        {
+          "id": "b",
+          "text": "Retorna o valor imediatamente superior ao valor procurado na coluna de busca",
+          "correct": false,
+          "explanation": "Incorreta. Quando o argumento de procura aproximada (quarto argumento) é definido como 1 (ou VERDADEIRO), a função PROCV não retorna o valor imediatamente superior. Em vez disso, ela busca o valor mais próximo que seja menor ou igual ao valor procurado."
+        },
+        {
+          "id": "c",
+          "text": "Retorna a média dos valores adjacentes ao ponto onde o valor deveria estar",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV não realiza a média de valores adjacentes. Sua finalidade é localizar um valor e retornar outro valor associado a ele, com base em uma correspondência exata ou aproximada."
+        },
+        {
+          "id": "d",
+          "text": "Retorna uma mensagem de erro indicando que o valor não foi localizado",
+          "correct": false,
+          "explanation": "Incorreta. Uma mensagem de erro (como #N/D) é retornada quando o argumento de procura aproximada é 0 (ou FALSO) e o valor exato não é encontrado. Com o argumento 1 (VERDADEIRO), a função tenta encontrar uma correspondência aproximada."
+        }
+      ],
+      "explanation": "Correta. Quando o argumento de procura aproximada da função PROCV é definido como 1 (ou VERDADEIRO), se o valor procurado não for encontrado exatamente, a função retorna o valor mais próximo para baixo, ou seja, o maior valor que seja menor ou igual ao valor procurado. É importante que a primeira coluna do intervalo esteja classificada em ordem crescente para que essa funcionalidade opere corretamente.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Na função PROCH, qual é a direção inicial da varredura realizada para localizar o valor de procura?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Varre primeiro as linhas verticalmente de cima para baixo, depois as colunas horizontalmente",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCH (Procurar na Horizontal) não varre primeiro as linhas verticalmente. Sua natureza horizontal implica uma busca inicial diferente."
+        },
+        {
+          "id": "b",
+          "text": "Varre simultaneamente linhas e colunas em formato de matriz bidimensional",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCH não varre simultaneamente linhas e colunas em formato de matriz bidimensional. Ela segue uma lógica sequencial de busca horizontal na primeira linha e depois vertical na coluna encontrada."
+        },
+        {
+          "id": "c",
+          "text": "Varre diagonalmente do canto superior esquerdo ao canto inferior direito",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCH não realiza varredura diagonal. Sua operação é estritamente horizontal na primeira fase e vertical na segunda."
+        },
+        {
+          "id": "d",
+          "text": "Varre primeiro as colunas horizontalmente da esquerda para direita, depois as linhas verticalmente",
+          "correct": true,
+          "explanation": "Correta. A função PROCH (Procurar na Horizontal) é projetada para localizar um valor na primeira linha de um intervalo de dados. Portanto, a varredura inicial é feita horizontalmente, da esquerda para a direita, na primeira linha. Uma vez que o valor é encontrado, a função retorna o conteúdo de uma célula em uma linha especificada, dentro da mesma coluna onde o valor foi localizado."
+        }
+      ],
+      "explanation": "Correta. A função PROCH (Procurar na Horizontal) é projetada para localizar um valor na primeira linha de um intervalo de dados. Portanto, a varredura inicial é feita horizontalmente, da esquerda para a direita, na primeira linha. Uma vez que o valor é encontrado, a função retorna o conteúdo de uma célula em uma linha especificada, dentro da mesma coluna onde o valor foi localizado.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando uma função SE aninhada com seis condições escalonadas para classificação de notas (ruim, bom, ótimo, parabéns), por que a ordem dos testes lógicos é importante para obter o resultado correto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque o Excel processa apenas as três primeiras condições e ignora as demais por limitação de memória",
+          "correct": false,
+          "explanation": "Incorreta. O Excel não possui uma limitação de processamento para as três primeiras condições em funções SE aninhadas. A quantidade de aninhamentos é limitada pela versão do software, mas não ignora condições por padrão."
+        },
+        {
+          "id": "b",
+          "text": "Porque condições mais abrangentes colocadas primeiro podem capturar valores que deveriam ser avaliados por condições mais específicas posteriores",
+          "correct": true,
+          "explanation": "Correta. Em funções SE aninhadas, especialmente aquelas que classificam valores em faixas (como notas), a ordem dos testes lógicos é crucial. Se uma condição mais abrangente (por exemplo, 'nota >= 5') for colocada antes de uma condição mais específica (por exemplo, 'nota >= 8'), a condição abrangente pode ser satisfeita primeiro, impedindo que a condição mais específica seja avaliada. Isso resultaria em classificações incorretas, pois valores que deveriam ser 'parabéns' (>=9) ou 'ótimo' (>=8) seriam classificados como 'bom' (>=5)."
+        },
+        {
+          "id": "c",
+          "text": "Porque condições em ordem alfabética são processadas mais rapidamente pelo algoritmo de otimização do Excel",
+          "correct": false,
+          "explanation": "Incorreta. A ordem alfabética das condições não influencia a velocidade de processamento do algoritmo do Excel para funções lógicas. O desempenho é mais afetado pela complexidade das condições e pelo volume de dados, não pela ordenação textual das condições."
+        },
+        {
+          "id": "d",
+          "text": "Porque a ordem determina a prioridade de cores aplicadas às células resultantes da formatação condicional",
+          "correct": false,
+          "explanation": "Incorreta. A ordem das condições em um SE aninhado não tem relação direta com a aplicação de cores por formatação condicional. A formatação condicional é uma funcionalidade separada que pode ser baseada nos resultados da função, mas não é determinada pela ordem das condições lógicas em si."
+        }
+      ],
+      "explanation": "Correta. Em funções SE aninhadas, especialmente aquelas que classificam valores em faixas (como notas), a ordem dos testes lógicos é crucial. Se uma condição mais abrangente (por exemplo, 'nota >= 5') for colocada antes de uma condição mais específica (por exemplo, 'nota >= 8'), a condição abrangente pode ser satisfeita primeiro, impedindo que a condição mais específica seja avaliada. Isso resultaria em classificações incorretas, pois valores que deveriam ser 'parabéns' (>=9) ou 'ótimo' (>=8) seriam classificados como 'bom' (>=5).",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Na função PROCX, qual é a principal vantagem estrutural em relação às funções PROCV e PROCH no que se refere à definição de intervalos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Combina múltiplas planilhas em um único intervalo de procura sem necessidade de referências externas",
+          "correct": false,
+          "explanation": "Incorreta. A PROCX pode procurar em uma única coluna ou linha, mas não combina múltiplas planilhas em um único intervalo de procura sem referências. Para buscar em múltiplas planilhas, ainda seriam necessárias referências ou outras funções combinadas."
+        },
+        {
+          "id": "b",
+          "text": "Permite especificar separadamente o intervalo de procura e o intervalo de retorno, sem necessidade de enumerar colunas",
+          "correct": true,
+          "explanation": "Correta. A função PROCX (XLOOKUP em inglês), introduzida em versões mais recentes do Excel, oferece uma vantagem significativa sobre PROCV e PROCH ao permitir que o usuário especifique separadamente o intervalo onde o valor de procura será buscado (matriz_pesquisa) e o intervalo de onde o resultado será retornado (matriz_retorno). Isso elimina a necessidade de contar o número da coluna ou linha e permite que a coluna de retorno esteja à esquerda da coluna de procura, algo não possível com PROCV."
+        },
+        {
+          "id": "c",
+          "text": "Realiza automaticamente a transposição de dados de linhas para colunas durante a busca",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCX não realiza automaticamente a transposição de dados. Embora seja mais flexível na busca horizontal e vertical, a transposição é uma operação distinta que requer funções específicas como TRANSPOR."
+        },
+        {
+          "id": "d",
+          "text": "Executa cálculos matemáticos complexos diretamente no intervalo antes de retornar o resultado",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCX é uma função de pesquisa e referência, não de cálculo matemático complexo. Ela localiza e retorna valores, mas não executa operações aritméticas complexas diretamente nos intervalos antes de retornar o resultado."
+        }
+      ],
+      "explanation": "Correta. A função PROCX (XLOOKUP em inglês), introduzida em versões mais recentes do Excel, oferece uma vantagem significativa sobre PROCV e PROCH ao permitir que o usuário especifique separadamente o intervalo onde o valor de procura será buscado (matriz_pesquisa) e o intervalo de onde o resultado será retornado (matriz_retorno). Isso elimina a necessidade de contar o número da coluna ou linha e permite que a coluna de retorno esteja à esquerda da coluna de procura, algo não possível com PROCV.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "18_291219_Office 365 Web - Excel.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:52:07"
+}

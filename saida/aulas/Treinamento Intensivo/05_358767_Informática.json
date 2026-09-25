@@ -1,0 +1,760 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 6,
+    "titulo": "Informática"
+  },
+  "ordem": 5,
+  "ordem_no_curso": "5.00",
+  "titulo": "Informática",
+  "codigo_aula": "358767",
+  "video_id": "44YuI+RbQUs=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:26:23",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/44YuI%2BRbQUs%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=405089%2C420303%2C420615%2C405116%2C420132%2C405030&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Informática\n\n## Introdução e Mentalidade de Estudo\nSou Jefferson, professor de informática. Aquilo que eu sempre digo: “Somos o que repetidamente fazemos. A excelência, portanto, não é um feito, mas um hábito”, como disse Aristóteles. Essa frase tem tudo a ver com preparação para concurso e com a vida. Aqui, nós vamos buscar a nossa excelência enquanto estudantes. Aplicamos a essa frase o processo jesuítico: repetição com correção. A repetição nos leva à perfeição. Para você que está estudando, a repetição com correção até a exaustão vai levar à aprovação também.\n\nVeja: não é fazer algo uma única vez, mas tornar isso um hábito. Excelência não é perfeição; é fazer o melhor, dar o melhor de você no que você tem feito — estudar bem. Então vamos para o nosso treinamento intensivo.\n\nAntes de começar, vamos conhecer um pouco da nossa banca. E eu sempre falo aqui: no intensivo, a gente não vai focar somente no gabarito da questão. A mesma questão, do mesmo jeito, não vai cair. Eu procuro, dentro da questão, trazer outras possibilidades e explicar outras coisas. Caso você não saiba, tome nota. Relembre, se você já sabe, para expandir as possibilidades, conhecer a banca, entender tendências. Você vai montando sua estratégia: “Olha, isso é muito provável cair; aquilo é pouco provável”.\n\n## Windows 10 – Compartilhamento Avançado\nUm usuário, em um computador com Windows 10 em português, pretende definir configurações de compartilhamento avançadas pelo Painel de Controle. Não é algo que se faz no dia a dia; vai além do normal.\n\nQuando o compartilhamento da pasta Pública está ativado, apenas os membros do Grupo Doméstico podem acessar arquivos nas pastas públicas, e outras pessoas da rede não conseguem acessar? Aqui dá para aplicar um pouco de bom senso. Claro, bom senso não resolve tudo — não impede você de estudar —, mas ajuda. Pense: se a pasta é “Pública”, faz sentido só um determinado grupo acessar? Mesmo que seja o Grupo Doméstico, que facilita compartilhamento entre eles, dizer que só eles acessam e os demais da rede não acessam foge da lógica do “público”. Se é pública, outros poderão acessar também (considerando as configurações).\n\nDois: quando o compartilhamento de mídia está ativado, pessoas e dispositivos na rede podem acessar fotos, músicas e vídeos no computador, e o computador também pode encontrar mídias na rede? Sim. Esse é basicamente o objetivo do compartilhamento de mídia.\n\nTrês: “ainda” usar criptografia de 256 bits… No Windows, nas conexões de compartilhamento, a recomendação é usar 128 bits (mais forte dentre as opções disponíveis para a maioria dos dispositivos). Alguns dispositivos não dão suporte a criptografia mais forte; entre as opções legadas, aparecem 40 ou 56 bits. Ficar decorando números é chato, eu sei, mas o recomendado é 128 bits; 40/56 são opções legadas mais fracas.\n\nEu entrei lá em Compartilhamento: Painel de Controle > Rede e Internet > Central de Rede e Compartilhamento > Configurações de compartilhamento avançadas > Todas as redes. O compartilhamento da pasta Pública estava desativado. Em “Conexões de compartilhamento”, a opção recomendada é usar criptografia de 128 bits para dispositivos que dão suporte. Quanto mais bits, mais forte a criptografia. As outras opções aparecem como 40 ou 56 bits. E “Compartilhamento protegido por senha” ativado significa que, ao acessar a pasta compartilhada, a pessoa deve informar credenciais válidas; se não souber a senha, não acessa pela rede.\n\n## Excel – Operador de Concatenação e Função CONCATENAR\nPara concatenar — isto é, juntar conteúdo — no Microsoft Excel (ex.: 2013 em português; isso vale também para versões mais novas e para o Calc), pode-se usar a função de concatenação ou o operador & (E comercial).\n\nExiste a função CONCATENAR (nas versões mais novas, CONCAT ou TEXTJOIN também aparecem). Para juntar A2 com B2, por exemplo, posso fazer:\n- =CONCATENAR(A2;B2), ou\n- =A2&B2\n\nNesses dois casos, o resultado sai “JeffersonBogo”, sem espaço, se A2=\"Jefferson\" e B2=\"Bogo\".\n\nSe eu quiser espaço, coloco o espaço entre aspas:\n- =CONCATENAR(A2;\" \";B2), ou\n- =A2&\" \"&B2\n\nO uso de aspas duplas indica texto literal. O que está entre aspas o Excel não interpreta como cálculo.\n\nCom números: se A2=2 e B2=3, então:\n- =A2&B2 resulta no texto \"23\".\nSe eu tentar somar esse resultado com 2 diretamente, preciso ter atenção, pois “23” é texto. Para fins didáticos, pense na concatenação como “juntar caracteres”; o resultado é texto. Cálculo aritmético é outra coisa.\n\nOutro exemplo didático:\n=\"2+3 = \"&(A2+B2)\nO trecho entre aspas sai como texto “2+3 = ” e o parêntese calcula 2+3=5. Resultado final: “2+3 = 5”.\n\nEntão, o que está entre aspas volta como texto; o que está fora (referências ou expressões) pode ser calculado.\n\n## Segurança – Ransomware e Outros Malwares\nO computador do usuário foi infectado por ransomware — aquele “ranço” dos relacionamentos tóxicos, só para lembrar a dinâmica: sequestra algo e exige resgate. O ransomware pode:\n- Locker (bloqueia o computador)\n- Crypto (bloqueia o acesso aos dados, criptografando)\n\nA dinâmica é: sequestra, bloqueia algo (dados ou o próprio computador) e pede resgate, normalmente em moedas virtuais (criptomoedas). Os dados ficam inacessíveis por criptografia e é exigido pagamento para restabelecer acesso. Isso está correto.\n\nOutros conceitos:\n- Após identificar alvos, um malware pode fazer cópias de si e se enviar por e-mail. Isso pode ser feito por worm (verme) ou até por vírus, dependendo da característica de propagação.\n- Keylogger/spyware pode monitorar e capturar informações de navegação e digitação, enviando ao atacante.\n- Backdoor assegura acesso futuro ao computador comprometido, permitindo acesso remoto por protocolo de internet.\n- Bot/botnet: um computador infectado pode se tornar um zumbi (bot). Uma botnet é uma rede de computadores zumbis controlados remotamente para, por exemplo, ataques de negação de serviço (DDoS).\n\nResumo dos tipos de ransomware:\n- Crypto: criptografa e bloqueia seus dados.\n- Locker: bloqueia o acesso ao computador (interface).\n\n## Word 2013 – PDF e Compatibilidade\nFalando de Microsoft Word 2013 (editor de texto, extensão padrão .docx):\n- PDF não apenas pode ser salvo: também pode ser visualizado e, em muitos casos, editado e salvo novamente pelo próprio Word (recurso “PDF Reflow”). Se o PDF tiver senha, depende de você tê-la para abrir/editar.\n- A afirmação “PDFs só podem ser visualizados e salvos em DOCX” é falsa. Além do Word, navegadores como o Microsoft Edge (Windows 10/11) visualizam PDF nativamente. Antes (lá nas primeiras versões do Word 2010) podia exigir complemento; hoje, não mais.\n\n> 🎯 **Dicas de prova:** O Word 2013 já suporta abrir, editar (com limitações) e salvar PDFs. O Windows 10/11 possui leitor de PDF nativo via Edge.\n\n## Excel – PROCV (VLOOKUP) Passo a Passo\nTemos uma planilha no Excel 2013 mostrando microrregiões e taxas de homicídios (2004 a 2014). Na célula D19 (exemplo didático), foi usada uma fórmula que pesquisou no intervalo C2:E6 pelo valor contido em C8 (ex.: “Cajazeiras”) e exibiu o valor correspondente da taxa na terceira coluna do intervalo.\n\nA dinâmica do PROCV:\n- Primeiro argumento (valor_procurado): o que está em C8 (ex.: “Cajazeiras”). É sempre o valor que vou procurar.\n- Segundo argumento (tabela_matriz): intervalo onde procurar (ex.: C2:E6). Importante: o valor procurado deve estar na primeira coluna à esquerda do intervalo.\n- Terceiro argumento (núm_índice_coluna): número da coluna dentro do intervalo (não é a letra da coluna). Se a taxa está na 3ª coluna do intervalo, use 3. Se quisesse “População” na 2ª coluna, usaria 2.\n- Quarto argumento (procurar_intervalo): FALSO (ou 0) para correspondência exata. VERDADEIRO (ou 1) para aproximada (retorna o valor mais próximo, para baixo, em listas ordenadas).\n\nCuidados:\n- Não digite a letra da coluna (tipo “E”). Use o índice: 1, 2, 3…\n- Com FALSO, se procurar “4” e não existir “4” no intervalo, retorna #N/D. Com VERDADEIRO e a lista ordenada, “4” retornaria o mais próximo para baixo (ex.: “3”).\n\nExemplo:\n- Valor procurado: C8 = “Cajazeiras”\n- Intervalo: C2:E6\n- Índice da coluna: 3 (taxa de homicídios)\n- FALSO (correspondência exata)\n\nSe eu quisesse a População (coluna 2 do intervalo), trocaria o índice para 2 e o resultado mudaria para o valor dessa coluna na mesma linha de “Cajazeiras”.\n\n> 🎯 **Dicas de prova:** No PROCV, o valor procurado deve estar na primeira coluna do intervalo. O índice é numérico (1, 2, 3…). FALSO/0 para exato; VERDADEIRO/1 para aproximado.\n\n## Busca Avançada no Google\nUm usuário quer pesquisar por televisores com tela maior ou igual a 40 polegadas. Uma forma eficiente é usar operadores/consultas avançadas. A ideia é indicar o critério mínimo, por exemplo com notação de intervalo ou especificadores usados pelo Google Shopping/Ferramentas, mas, em busca geral, foque em operadores que funcionam amplamente:\n\n- Aspas duplas: busca por expressão exata. Ex.: \"smart TV 40 polegadas\".\n- Operador site:: restringe a um domínio. Ex.: site:exemplo.com \"smart tv\".\n- Intervalo numérico com dois pontos: 2012..2022 (para anos). Para medidas, o Google entende termos, mas nem sempre usa “>=”. Você pode combinar termos: tv 40..60 polegadas, ou usar filtros nas ferramentas de compra.\n- Sinal de menos para excluir termos: concursos pmcm Bahia -DF (remove “DF” dos resultados).\n- filetype:: define tipo de arquivo. Ex.: filetype:pdf (editais, manuais).\n- Tio (~) para termos relacionados caiu em desuso, mas a ideia de buscar sinônimos permanece via linguagem natural. Use alternativas de palavra.\n\nOutras dicas úteis:\n- O Google não é case sensitive (ignora maiúsculas/minúsculas).\n- Ortografia: se digitar errado, ele sugere correção.\n- É possível fazer cálculos, conversões (moedas, unidades) e expressões matemáticas diretamente na busca.\n\n> 🎯 **Dicas de prova:** Principais operadores: aspas para expressão exata; site: para restringir domínio; filetype: para filtrar tipo; sinal de menos para excluir termo; intervalo com “..” para números (ex.: 2012..2022).\n\nEncerramos o primeiro bloco do período intensivo. Volto já já para a continuidade.",
+  "transcricao_meta": {
+    "title": "Informática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 31453,
+    "createdAt": "2026-02-07T01:30:29.342Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: Windows 10/11 (compartilhamento e segurança), PDF no Microsoft Word 2013 e no Windows, ransomware e botnets, Microsoft Excel (concatenação e PROCV), e pesquisa avançada no Google.\nPrincipais pontos: \n- Configurações de compartilhamento (Pasta Pública, mídia, senha, criptografia 128 bits).\n- Diferença entre ransomware Locker vs Crypto e bot/botnet/zumbi/DoS.\n- Word 2013 abre/edita/salva PDF; Edge lê PDF nativamente.\n- Excel: operador de concatenação &, função CONCATENAR; PROCV com FALSO/VERDADEIRO e índice de coluna numérico.\n- Google: aspas, site:, -, .. (intervalo), filetype:.\n\n## 1. Base / Conceitos Fundamentais\n- Windows (compartilhamento):\n  - **Pasta pública**: área para compartilhamento simplificado na rede.\n  - **Compartilhamento de mídia**: expõe fotos/músicas/vídeos a dispositivos da rede.\n  - **Criptografia de compartilhamento**: protege o tráfego; recomenda-se **128 bits**.\n  - **Compartilhamento protegido por senha**: exige credenciais para acesso.\n- Segurança:\n  - **Ransomware**: malware que bloqueia sistema/dados e exige resgate.\n    - **Locker**: bloqueia o computador.\n    - **Crypto (CryptoLocker)**: criptografa arquivos/dados.\n  - **Bot**: agente malicioso controlável remotamente.\n  - **Zumbi**: computador infectado.\n  - **Botnet**: rede de zumbis, usada em **ataque de negação de serviço (DoS/DDoS)**.\n- Documentos:\n  - **PDF**: formato portátil; pode ter senha.\n  - **Word 2013**: possui “PDF Reflow” para abrir/editar/salvar PDFs.\n  - **Microsoft Edge (Windows 10/11)**: leitor nativo de PDF.\n- Excel:\n  - **Operador &**: concatena textos/valores como texto.\n  - **CONCATENAR()** (versões antigas PT-BR): função para juntar textos.\n  - **PROCV()**: procura vertical — valor deve estar na 1ª coluna do intervalo.\n- Pesquisa na web:\n  - **\"aspas\"**: expressão exata.\n  - **site:dominio**: restringe a um site/domínio.\n  - **-termo**: exclui termo.\n  - **n..m**: intervalo numérico.\n  - **filetype:extensão**: tipo de arquivo.\n\n## 2. Como Funciona / Distinções\n- Pasta pública x Grupo doméstico:\n  - Pública → aberta na rede.\n  - “Somente grupo doméstico” → falso.\n- Criptografia:\n  - **128 bits** (preferida) vs **40/56 bits** (legado). Mais bits = mais forte.\n- Ransomware:\n  - **Locker** bloqueia acesso ao sistema; **Crypto** criptografa arquivos.\n- PDF no Word 2013:\n  - Abre/edita/salva PDF; se houver senha, é necessária para abrir/editar.\n- Concatenação x Soma no Excel:\n  - =A2&B2 → “23” (texto); =A2+B2 → 5 (número).\n- PROCV:\n  - Valor procurado na 1ª coluna do intervalo.\n  - **Índice de coluna é número** relativo ao intervalo (2, 3...), não letras (B, C).\n  - **FALSO (0)**: exato; inexistente → erro **#N/A** (“não disponível”).\n  - **VERDADEIRO**: aproximado (para baixo); requer dados ordenados.\n- Operadores do Google:\n  - \"frase\" x sem aspas (mais amplo).\n  - site:gov.br restringe; -DF exclui.\n  - 2012..2022 define faixa; filetype:pdf filtra por PDFs.\n\n## 3. Aplicação Prática / Técnicas\n- Windows 10/11 (caminho de prova):\n  - Painel de Controle > Rede e Internet > Central de Rede e Compartilhamento > Configurações de compartilhamento avançadas > Todas as redes:\n    - Ativar/desativar **Pasta Pública**.\n    - Ativar **Compartilhamento protegido por senha**.\n    - Escolher **criptografia 128 bits** (preferida) ou 40/56 (legado).\n    - **Compartilhamento de mídia**: permitir que dispositivos acessem e que o PC descubra mídias na rede.\n- Excel: concatenação rápida\n  - Espaço entre valores: =A2&\" \"&B2\n  - Texto literal: use aspas duplas: \"Exemplo\".\n- Excel: PROCV passo a passo (ex.: microrregiões)\n  1. Valor_procurado: célula com o termo (ex.: S8 = \"Cajazeiras\").\n  2. Intervalo: da coluna onde está o valor para as colunas de retorno (ex.: C2:E6).\n  3. Índice_coluna: 3 para taxa; 2 para população.\n  4. Procurar_intervalo: FALSO (exato) ou VERDADEIRO (aproximado).\n  - Ex.: =PROCV(S8;C2:E6;3;FALSO) → retorna taxa (3ª coluna).\n- Google: consultas cirúrgicas\n  - \"edital PM PB\" site:gov.br filetype:pdf 2012..2022 -minuta\n  - televisores 40..60 polegadas (≥ 40 e ≤ 60)\n  - \"Cajazeiras PB\" site:ibge.gov.br\n\n## 4. Exemplos e Casos Resolvidos\n- Excel: concatenação\n  - A2=\"Jefferson\"; B2=\"boa\"\n    - =A2&B2 → \"Jeffersonboa\"\n    - =A2&\" \"&B2 → \"Jefferson boa\"\n  - A2=2; B2=3\n    - =A2&B2 → \"23\" (texto)\n    - =A2+B2 → 5 (número)\n- Excel: PROCV\n  - Intervalo C2:E6 com colunas [Microrregião | População | Taxa].\n  - S8=\"Cajazeiras\"\n    - =PROCV(S8;C2:E6;3;FALSO) → retorna Taxa.\n    - Troque 3 por 2 para retornar População.\n  - Se S8 não existir e usar FALSO → resultado: #N/A (“não disponível”).\n- Windows: interpretações corretas\n  - Pasta Pública ativada → qualquer dispositivo da rede pode acessar (não só grupo doméstico).\n  - Compartilhamento de mídia ativado → outros dispositivos acessam fotos/músicas/vídeos do PC; o PC localiza mídias na rede.\n  - Criptografia: preferir 128 bits; 40/56 para dispositivos antigos.\n- Segurança:\n  - Ransomware Locker: tela bloqueada, sistema inacessível; resgate solicitado.\n  - Ransomware Crypto (CryptoLocker): arquivos viram extensão estranha; exigência de resgate para chave.\n  - Botnet: múltiplos zumbis gerando DDoS contra um site.\n- Pesquisa Google:\n  - concurso -DF site:gov.br filetype:pdf \"edital\" 2012..2022\n\n## 5. Pegadinhas e Erros Comuns\n- Windows/Compartilhamento:\n  - “Pasta pública só para grupo doméstico” → falso.\n  - “Criptografia de duzentos e cinquenta e seis bytes” → confunde unidade; em Windows, a opção recomendada é **128 bits**. 40/56 bits são legadas.\n  - Sem senha → com “Compartilhamento protegido por senha” ativado, não acessa.\n- PDF/Word:\n  - “PDF só visualiza no Word 2013” → falso; o Word 2013 abre/edita/salva PDFs.\n  - No Windows 10/11, o **Edge** abre PDFs nativamente.\n- Excel:\n  - Usar letra de coluna no índice do PROCV → errado; use número relativo ao intervalo.\n  - PROCV com VERDADEIRO em dados não ordenados → resultados incorretos.\n  - Confundir concatenação (&) com soma (+).\n  - Esquecer aspas para textos literais ou para inserir um espaço \" \".\n- Segurança:\n  - Confundir **CryptoLocker** (criptografa arquivos) com **Locker** (bloqueia sistema).\n- Pesquisa Google:\n  - Escrever 40+ polegadas achando que define mínimo → preferir 40.. ou 40..60.\n  - Esquecer aspas para expressão exata quando necessário.\n\n> Dica de Prova: PROCV — valor na 1ª coluna do intervalo; índice é número; FALSO = exato (retorna #N/A se não achar); VERDADEIRO = aproximado (dados ordenados).\n> Dica de Prova: Locker bloqueia sistema; CryptoLocker criptografa arquivos. Guarde essa distinção.\n> Dica de Prova: Em “Todas as redes”, prefira criptografia 128 bits; 40/56 só para compatibilidade.\n> Dica de Prova: Word 2013 já edita e salva PDF (PDF Reflow). Navegadores abrem PDF nativamente no Windows 10/11.",
+  "resumo_bolso": "# Informática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Pasta Pública (Windows)**: área para compartilhamento simplificado na rede; não é exclusiva de grupo doméstico.\n* **Compartilhamento protegido por senha**: exige credenciais para acesso às pastas compartilhadas.\n* **Criptografia de compartilhamento**: protege o tráfego; Windows oferece **128 bits** (preferida) e **40/56 bits** (legado).\n* **Compartilhamento de mídia**: expõe fotos/músicas/vídeos a dispositivos da rede e permite que o PC descubra mídias na rede.\n* **Ransomware Locker**: malware que bloqueia o computador/sistema e exige resgate.\n* **Ransomware Crypto (CryptoLocker)**: malware que criptografa arquivos/dados e exige resgate pela chave.\n* **Bot / Zumbi / Botnet**: bot = agente malicioso controlável remotamente; zumbi = computador infectado; botnet = rede de zumbis usada em ataques de negação de serviço (DoS/DDoS).\n* **PDF Reflow (Word 2013)**: Word 2013 abre, edita e salva arquivos PDF; se houver senha, é necessária para abrir/editar.\n* **Leitura de PDF no Windows 10/11**: Microsoft Edge abre PDFs nativamente.\n* **Concatenação no Excel**: operador **&** e função **CONCATENAR()** juntam textos/valores como **texto**.\n* **PROCV()**: busca vertical; valor procurado deve estar na **1ª coluna do intervalo**; índice de coluna é **número** relativo ao intervalo.\n* **Operadores de pesquisa no Google**:  \n  * **\"aspas\"**: expressão exata.  \n  * **site:dominio**: restringe a um site/domínio.  \n  * **-termo**: exclui termo.  \n  * **n..m**: intervalo numérico.  \n  * **filetype:extensão**: tipo de arquivo.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Pasta Pública vs Grupo Doméstico\n\n| Aspecto | Pasta Pública | Grupo Doméstico |\n|--------|---------------|-----------------|\n| **Escopo** | Área para compartilhamento simplificado na rede; pode ser acessada por dispositivos da rede, conforme configuração | Agrupamento de PCs domésticos (não é requisito para uso da Pasta Pública) |\n| **Afirmativa de prova** | “Pasta pública só para grupo doméstico” → falso | — |\n\n---\n\n### Ransomware Locker vs CryptoLocker\n\n| Aspecto | Locker | Crypto (CryptoLocker) |\n|--------|--------|------------------------|\n| **Alvo principal** | Sistema / computador (bloqueia o acesso) | Arquivos/dados (criptografa o conteúdo) |\n\n---\n\n### Concatenação (&) vs Soma (+) no Excel\n\n| Aspecto | & | + |\n|--------|---|---|\n| **Função** | Junta textos/valores como **texto** | Soma valores numéricos |\n| **Exemplo (A2=2; B2=3)** | =A2&B2 → \"23\" | =A2+B2 → 5 |\n\n---\n\n### PROCV – FALSO vs VERDADEIRO\n\n| Aspecto | FALSO (0) | VERDADEIRO |\n|--------|-----------|------------|\n| **Tipo de busca** | Exata | Aproximada (para baixo) |\n| **Ordenação dos dados** | Não precisa ordenar | Devem estar ordenados |\n| **Se não achar (FALSO)** | Retorna **#N/A** | — |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. PROCV(valor_procurado; intervalo; índice_coluna; [procurar_intervalo])**\n\n* **Aplicação**: busca valor na **1ª coluna** do intervalo e retorna dado de outra coluna à direita.\n* **Regras**:\n  * índice_coluna = **número** (2, 3...), contando a partir da 1ª coluna do intervalo (não usar letras B, C...).\n  * **FALSO (0)** = busca exata; se não encontrar, retorna **#N/A**.\n  * **VERDADEIRO** = busca aproximada (para baixo); requer dados ordenados.\n* **Exemplo**:  \n  Intervalo C2:E6 com colunas [Microrregião | População | Taxa]; S8=\"Cajazeiras\":  \n  =PROCV(S8;C2:E6;3;FALSO) → retorna valor da 3ª coluna (Taxa).\n\n---\n\n**2. Concatenação no Excel**\n\n* **Aplicação**: juntar textos/valores em uma única célula.\n* **Formas**:\n  * =A2&B2  \n  * =CONCATENAR(A2;B2)\n  * Espaço: =A2&\" \"&B2\n* **Exemplos**:  \n  A2=\"Jefferson\"; B2=\"boa\"  \n  * =A2&B2 → \"Jeffersonboa\"  \n  * =A2&\" \"&B2 → \"Jefferson boa\"  \n  A2=2; B2=3  \n  * =A2&B2 → \"23\" (texto)  \n  * =A2+B2 → 5 (número)\n\n---\n\n**3. Compartilhamento avançado (Windows 10/11)**\n\n* **Caminho**: Painel de Controle > Rede e Internet > Central de Rede e Compartilhamento > Configurações de compartilhamento avançadas > **Todas as redes**:\n  * Ativar/desativar **Pasta Pública**.\n  * Ativar **Compartilhamento protegido por senha**.\n  * Escolher **criptografia 128 bits** (preferida) ou 40/56 bits (legado).\n  * **Compartilhamento de mídia**: permitir que dispositivos acessem mídias e que o PC descubra mídias na rede.\n\n---\n\n**4. PDF no Word 2013 e no Windows**\n\n* **Word 2013**:\n  * Possui “PDF Reflow”: abre, **edita** e salva PDFs.\n  * Se o PDF tiver senha, é necessária para abrir/editar.\n* **Windows 10/11**:\n  * **Microsoft Edge** abre PDFs nativamente.\n\n---\n\n**5. Operadores de pesquisa no Google**\n\n* **\"frase exata\"**: busca expressão exata.\n* **site:dominio**: restringe a um site/domínio (ex.: site:gov.br).\n* **-termo**: exclui termo (ex.: -DF).\n* **n..m**: intervalo numérico (ex.: 2012..2022).\n* **filetype:extensão**: tipo de arquivo (ex.: filetype:pdf).\n* **Exemplos**:\n  * \"edital PM PB\" site:gov.br filetype:pdf 2012..2022 -minuta  \n  * televisores 40..60 polegadas  \n  * \"Cajazeiras PB\" site:ibge.gov.br\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “Pasta pública só para grupo doméstico” → **falso**; é área de compartilhamento simplificado na rede.\n* “Criptografia de duzentos e cinquenta e seis bytes” → confunde unidade; no Windows, a opção recomendada é **128 bits** (40/56 bits são legadas).\n* “PDF só visualiza no Word 2013” → **falso**; o Word 2013 abre, edita e salva PDFs (PDF Reflow).\n* Usar letra de coluna no índice do PROCV (ex.: \"B\", \"C\") → **errado**; o índice é **numérico** relativo ao intervalo.\n* PROCV com **VERDADEIRO** em dados não ordenados → pode gerar resultados incorretos.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Pasta Pública** de **grupo doméstico** e lembrei que não é exclusiva deste?\n* Memorizei que a criptografia recomendada no Windows é **128 bits** e que 40/56 bits são legadas?\n* Fixei que **Word 2013** abre/edita/salva **PDF** (PDF Reflow) e que o **Edge** lê PDF nativamente no Windows 10/11?\n* Sei usar **& / CONCATENAR** e não confundo com soma (+), inclusive com exemplos numéricos e de texto?\n* Lembrei as chaves do **PROCV**: valor na 1ª coluna do intervalo; índice **numérico**; **FALSO = exato (#N/A se não achar)**; **VERDADEIRO = aproximado (dados ordenados)**?\n* Diferenciei **Locker** (bloqueia sistema) de **CryptoLocker** (criptografa arquivos)?\n* Sei o que são **bot**, **zumbi** e **botnet**, e que botnets são usadas em ataques **DoS/DDoS**?\n* Sei montar buscas no Google com **\"aspas\"**, **site:**, **-termo**, **n..m**, **filetype:**, como nos exemplos de editais e faixas numéricas?",
+  "mapa_mental": "# 💻 Informática para Concursos\n## 🪟 Windows 10/11 Compartilhamento\n### 📂 Pasta Pública\n- Área compartilhamento\n- Acesso rede local\n- Não só grupo doméstico\n- Configuração todas redes\n- Uso simplificado\n### 🔐 Compartilhamento Seguro\n- Compartilhamento com senha\n- Exige credenciais\n- Bloqueia anônimo\n- Controle de acesso\n- Boa prática segurança\n### 🛡️ Criptografia Compartilhamento\n- Criptografia 128 bits\n- Opção recomendada\n- 40/56 bits legado\n- Mais bits mais seguro\n- Compatibilidade dispositivos\n### 🎵 Compartilhamento de Mídia\n- Fotos músicas vídeos\n- Acesso por dispositivos\n- Descoberta mídias rede\n- Configuração avançada\n- Integração multimídia\n\n## 🦠 Segurança Digital\n### 💣 Ransomware Conceitos\n- Malware sequestro dados\n- Exige pagamento resgate\n- Afeta sistema arquivos\n- Impacto crítico segurança\n- Vetor comum e-mail\n### 🔒 Locker vs Crypto\n- Locker bloqueia sistema\n- Tela bloqueada acesso\n- Crypto criptografa arquivos\n- Uso chaves criptográficas\n- CryptoLocker exemplo clássico\n### 🤖 Botnet e DoS\n- Bot agente malicioso\n- Zumbi computador infectado\n- Botnet rede zumbis\n- Ataque DoS DDoS\n- Controle remoto atacante\n\n## 📄 Documentos e Planilhas\n### 📑 PDF e Word 2013\n- Formato portátil PDF\n- Pode ter senha\n- Word 2013 abre PDF\n- Word edita e salva PDF\n- Edge leitor nativo PDF\n### 📊 Excel Concatenação\n- Operador E comercial\n- Junta textos valores\n- Resultado tipo texto\n- Função CONCATENAR antiga\n- Espaço com aspas\n### 🔍 Excel PROCV\n- Busca vertical tabela\n- Valor primeira coluna\n- Índice coluna numérico\n- FALSO busca exata\n- VERDADEIRO busca aproximada\n\n## 🌐 Pesquisa Avançada Google\n### 🧠 Operadores Básicos\n- Aspas expressão exata\n- Sem aspas busca ampla\n- Hífen exclui termo\n- Intervalo n..m números\n- Combinação operadores\n### 🌍 Filtro por Site\n- Operador site dois-pontos\n- Restringe domínio específico\n- Exemplo site gov br\n- Foco órgãos oficiais\n- Redução resultados irrelevantes\n### 📁 Tipo de Arquivo\n- Operador filetype dois-pontos\n- Busca por extensão\n- Exemplo filetype pdf\n- Editais e documentos\n- Materiais estudo específicos",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Compartilhamento Windows",
+      "description": "Compartilhamento Windows — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quem pode acessar arquivos em uma pasta pública do Windows quando o compartilhamento está ativado?",
+          "back": "Membros do **grupo doméstico** e outras pessoas da rede.",
+          "hint": "Pense em grupos de acesso e rede local",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows",
+            "compartilhamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Que tipos de conteúdo ficam disponíveis na rede com o compartilhamento de mídia ativado?",
+          "back": "Fotos, músicas e vídeos.",
+          "hint": "São três tipos de arquivos multimídia",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows",
+            "midia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual nível de criptografia é recomendado para conexões de compartilhamento no Windows?",
+          "back": "**128 bits**.",
+          "hint": "Refere-se à força da chave de segurança",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows",
+            "seguranca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual requisito permite acessar uma pasta protegida por compartilhamento de senha?",
+          "back": "Conhecer e informar a **senha**.",
+          "hint": "É o mecanismo de autenticação padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows",
+            "seguranca"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Funções do Excel",
+      "description": "Funções do Excel — 8 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual função do Excel reúne conteúdos de várias células em uma única sequência?",
+          "back": "**CONCATENAR**.",
+          "hint": "Nome da função é o próprio verbo da ação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Que operador do Excel concatena diretamente conteúdos de células ou textos?",
+          "back": "E comercial (**&**).",
+          "hint": "É um símbolo gráfico de uso comum",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como o Excel interpreta um conteúdo colocado entre aspas duplas em uma fórmula?",
+          "back": "Como **texto**.",
+          "hint": "Define o tipo de dado para o Excel",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "sintaxe"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Como representar um espaço literal entre dois textos concatenados no Excel?",
+          "back": "Inserir aspas duplas com espaço entre ampersands (**& \" \" &**).",
+          "hint": "Requer o uso de aspas e operadores",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "sintaxe"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual função do Excel procura um valor verticalmente em uma tabela?",
+          "back": "**PROCV**.",
+          "hint": "Busca vertical em tabelas",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "procv"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Em qual coluna o PROCV procura o valor dentro do intervalo informado?",
+          "back": "Primeira coluna à esquerda do intervalo.",
+          "hint": "Localização da chave de busca na matriz",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "procv"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Como deve ser informado o índice da coluna no PROCV?",
+          "back": "Informar o **número** correspondente à coluna.",
+          "hint": "Formato do dado que indica a posição",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "procv"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "O que o argumento FALSO determina no PROCV?",
+          "back": "Determina busca por valor **exato**.",
+          "hint": "Define o rigor da correspondência",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "procv"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Tipos de Malware",
+      "description": "Tipos de Malware — 5 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual malware torna dados inacessíveis e exige pagamento para restaurar o acesso?",
+          "back": "**Ransomware**.",
+          "hint": "Relacionado a extorsão financeira",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual malware cria cópias de si mesmo e tenta enviá-las a outros computadores?",
+          "back": "**Worm**.",
+          "hint": "Propaga-se autonomamente pela rede",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual malware monitora navegação e digitação para enviar informações ao atacante?",
+          "back": "**Keylogger**.",
+          "hint": "Captura entradas de teclado",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual malware permite que um computador comprometido seja acessado remotamente no futuro?",
+          "back": "**Backdoor**.",
+          "hint": "Cria uma porta de acesso oculta",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-17",
+          "front": "Como é denominada uma rede de computadores infectados e controlados remotamente?",
+          "back": "**Botnet**.",
+          "hint": "Rede de máquinas zumbis",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Documentos PDF",
+      "description": "Documentos PDF — 2 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "Que operação o Word 2013 permite realizar diretamente em arquivos PDF?",
+          "back": "**Editar** e salvar diretamente em Word.",
+          "hint": "Capacidade de conversão de formato",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "pdf"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual credencial pode ser exigida para abrir um arquivo PDF protegido?",
+          "back": "**Senha**.",
+          "hint": "Mecanismo de proteção de documento",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "pdf"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Busca no Google",
+      "description": "Busca no Google — 4 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Qual operador do Google pesquisa uma expressão exatamente como foi digitada?",
+          "back": "Aspas duplas (**\" \"**).",
+          "hint": "Força a busca literal",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "pesquisa"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual operador do Google restringe os resultados a um domínio específico?",
+          "back": "site:",
+          "hint": "Limita o escopo do site",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "pesquisa"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual operador do Google exclui um termo dos resultados da pesquisa?",
+          "back": "Sinal de menos (**-**).",
+          "hint": "Operador de exclusão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "pesquisa"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual operador do Google localiza perfis ou conteúdos em redes sociais?",
+          "back": "Arroba (**@**).",
+          "hint": "Identificador de usuários em redes",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "pesquisa"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Windows 10, qual é o nível de criptografia recomendado para conexões de compartilhamento de arquivos em rede?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "256 bits, por ser o padrão obrigatório em todas as versões do Windows",
+          "correct": false,
+          "explanation": "Incorreta. Embora 256 bits seja um nível de criptografia extremamente forte e utilizado em diversas aplicações de segurança, ele não é o padrão obrigatório para todas as conexões de compartilhamento no Windows 10. O sistema operacional oferece 128 bits como a opção recomendada para dispositivos que a suportam, indicando que 256 bits pode ser uma opção disponível, mas não universalmente obrigatória ou o padrão máximo em todas as configurações de compartilhamento de rede."
+        },
+        {
+          "id": "b",
+          "text": "64 bits, por equilibrar segurança e desempenho em redes domésticas",
+          "correct": false,
+          "explanation": "Incorreta. O nível de 64 bits não é um padrão comumente recomendado para criptografia de compartilhamento de arquivos no Windows 10. A recomendação padrão visa um equilíbrio entre segurança robusta e compatibilidade, mas 64 bits não se encaixa como a opção ideal ou amplamente utilizada para esse fim."
+        },
+        {
+          "id": "c",
+          "text": "128 bits, por proporcionar maior segurança para dispositivos que suportam esse nível",
+          "correct": true,
+          "explanation": "Correta. O Windows 10, por padrão, recomenda e utiliza criptografia de 128 bits para conexões de compartilhamento de arquivos. Este nível oferece uma segurança consideravelmente maior em comparação com opções de menor bitragem, sendo adequado para a maioria dos dispositivos modernos e cenários de uso, conforme as configurações avançadas de compartilhamento de rede."
+        },
+        {
+          "id": "d",
+          "text": "40 ou 56 bits, por oferecer maior compatibilidade com dispositivos antigos",
+          "correct": false,
+          "explanation": "Incorreta. Níveis de criptografia de 40 ou 56 bits são considerados fracos e obsoletos para a segurança atual. Embora possam oferecer compatibilidade com dispositivos muito antigos, não são o nível recomendado para garantir a proteção adequada dos dados em rede, conforme as práticas de segurança modernas."
+        }
+      ],
+      "explanation": "Correta. O Windows 10, por padrão, recomenda e utiliza criptografia de 128 bits para conexões de compartilhamento de arquivos. Este nível oferece uma segurança consideravelmente maior em comparação com opções de menor bitragem, sendo adequado para a maioria dos dispositivos modernos e cenários de uso, conforme as configurações avançadas de compartilhamento de rede.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Quando o compartilhamento de pasta pública está ativado no Windows 10, qual é o comportamento esperado em relação ao acesso aos arquivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Qualquer pessoa na rede pode acessar os arquivos, independentemente de pertencer ao grupo doméstico",
+          "correct": true,
+          "explanation": "Correta. Quando o compartilhamento de pasta pública está ativado no Windows 10, o objetivo é permitir que qualquer pessoa na rede (ou seja, outros computadores conectados à mesma rede local) possa acessar os arquivos contidos nessa pasta, sem a necessidade de autenticação específica ou de pertencer a um grupo doméstico. O termo \"pública\" indica essa acessibilidade mais abrangente."
+        },
+        {
+          "id": "b",
+          "text": "Os arquivos ficam disponíveis apenas para acesso local, sem possibilidade de compartilhamento em rede",
+          "correct": false,
+          "explanation": "Incorreta. O compartilhamento de pasta pública é, por definição, uma funcionalidade de rede. Sua ativação visa justamente disponibilizar os arquivos para outros dispositivos na rede, e não restringi-los ao acesso local. Se fosse apenas para acesso local, não haveria necessidade de ativar o compartilhamento de rede."
+        },
+        {
+          "id": "c",
+          "text": "Apenas membros do grupo doméstico podem acessar os arquivos, impedindo o acesso de outras pessoas da rede",
+          "correct": false,
+          "explanation": "Incorreta. A designação \"pasta pública\" implica que seu conteúdo é acessível de forma mais ampla. Se apenas membros do grupo doméstico pudessem acessar, ela seria considerada uma pasta compartilhada dentro de um grupo específico, não uma pasta pública no sentido de acesso geral na rede."
+        },
+        {
+          "id": "d",
+          "text": "Somente o administrador do sistema pode conceder permissões individuais para cada usuário da rede",
+          "correct": false,
+          "explanation": "Incorreta. A gestão de permissões individuais é característica de compartilhamentos mais restritos ou de pastas não públicas. Uma pasta pública, por sua natureza, visa simplificar o acesso, não adicionar uma camada de controle granular por administrador para cada usuário."
+        }
+      ],
+      "explanation": "Correta. Quando o compartilhamento de pasta pública está ativado no Windows 10, o objetivo é permitir que qualquer pessoa na rede (ou seja, outros computadores conectados à mesma rede local) possa acessar os arquivos contidos nessa pasta, sem a necessidade de autenticação específica ou de pertencer a um grupo doméstico. O termo \"pública\" indica essa acessibilidade mais abrangente.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Microsoft Excel, qual operador é utilizado especificamente para concatenar (unir) o conteúdo de duas células?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O símbolo de asterisco (*), que multiplica valores numéricos e concatena textos",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de asterisco (*) no Excel é o operador de multiplicação, utilizado para calcular o produto de dois ou mais valores numéricos. Ele não realiza a concatenação de textos; tentar usá-lo com strings resultaria em um erro."
+        },
+        {
+          "id": "b",
+          "text": "O símbolo de porcentagem (%), que indica operações de junção de strings",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de porcentagem (%) no Excel é um operador que converte um número em sua representação percentual (dividindo-o por 100). Ele não possui qualquer função relacionada à junção ou concatenação de strings."
+        },
+        {
+          "id": "c",
+          "text": "O símbolo de adição (+), que além de somar números também une textos",
+          "correct": false,
+          "explanation": "Incorreta. No Microsoft Excel, o símbolo de adição (+) é utilizado exclusivamente para realizar operações aritméticas de soma com valores numéricos. Ele não tem a função de unir ou concatenar textos; tentar usá-lo com strings geralmente resultará em um erro."
+        },
+        {
+          "id": "d",
+          "text": "O símbolo e comercial (&), que realiza a operação de concatenação",
+          "correct": true,
+          "explanation": "Correta. O símbolo e comercial (&) é o operador de concatenação no Microsoft Excel. Ele é utilizado para unir (juntar) o conteúdo de duas ou mais células, ou textos literais, formando uma única string de texto. Por exemplo, `=A1&B1` uniria o texto da célula A1 com o texto da célula B1."
+        }
+      ],
+      "explanation": "Correta. O símbolo e comercial (&) é o operador de concatenação no Microsoft Excel. Ele é utilizado para unir (juntar) o conteúdo de duas ou mais células, ou textos literais, formando uma única string de texto. Por exemplo, `=A1&B1` uniria o texto da célula A1 com o texto da célula B1.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a função das aspas duplas em fórmulas do Microsoft Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Servem para delimitar intervalos de células que serão utilizados em operações matemáticas complexas",
+          "correct": false,
+          "explanation": "Incorreta. A delimitação de intervalos de células no Excel é feita utilizando-se dois pontos (:) para um intervalo contínuo (ex: A1:B5) ou ponto e vírgula (;) para separar células ou intervalos não contínuos (ex: A1;B5;C1). Aspas duplas não são usadas para essa finalidade."
+        },
+        {
+          "id": "b",
+          "text": "Definem prioridade de execução em fórmulas com múltiplas operações aritméticas encadeadas",
+          "correct": false,
+          "explanation": "Incorreta. A prioridade de execução em fórmulas com múltiplas operações aritméticas é definida pelo uso de parênteses (). As operações dentro dos parênteses são calculadas primeiro. As aspas duplas não têm papel na ordem de precedência de operadores matemáticos."
+        },
+        {
+          "id": "c",
+          "text": "Indicam que o conteúdo entre elas deve ser interpretado como texto literal, não como cálculo ou referência",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, as aspas duplas são utilizadas para indicar que o texto ou caractere contido entre elas deve ser tratado como uma string literal. Isso significa que o Excel não tentará interpretar esse conteúdo como uma referência de célula, um nome de função, um operador matemático ou qualquer outra parte de uma fórmula, mas sim como um valor de texto puro a ser exibido ou manipulado como tal."
+        },
+        {
+          "id": "d",
+          "text": "Marcam células que contêm fórmulas protegidas contra edição por outros usuários da planilha",
+          "correct": false,
+          "explanation": "Incorreta. A proteção de células ou fórmulas contra edição no Excel é uma funcionalidade de segurança da planilha, configurada através das opções de 'Proteger Planilha' ou 'Proteger Pasta de Trabalho'. Não há uso de aspas duplas dentro das fórmulas para indicar proteção."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, as aspas duplas são utilizadas para indicar que o texto ou caractere contido entre elas deve ser tratado como uma string literal. Isso significa que o Excel não tentará interpretar esse conteúdo como uma referência de célula, um nome de função, um operador matemático ou qualquer outra parte de uma fórmula, mas sim como um valor de texto puro a ser exibido ou manipulado como tal.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual tipo de malware sequestra dados ou o acesso ao computador e exige pagamento de resgate, geralmente em criptomoedas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ransomware, que bloqueia dados ou o sistema e solicita pagamento para restaurar o acesso",
+          "correct": true,
+          "explanation": "Correta. Ransomware é um tipo de software malicioso que criptografa os dados do usuário ou bloqueia o acesso ao sistema operacional, tornando-os inacessíveis. Em seguida, exige um pagamento (resgate), geralmente em criptomoedas, para que o acesso aos dados ou ao sistema seja restaurado. É um ataque direto com fins extorsivos."
+        },
+        {
+          "id": "b",
+          "text": "Trojan, que se disfarça como programa legítimo para obter acesso privilegiado ao sistema",
+          "correct": false,
+          "explanation": "Incorreta. Um Trojan (Cavalo de Troia) é um tipo de malware que se disfarça como um software legítimo ou útil para enganar o usuário e ser instalado. Uma vez dentro do sistema, ele pode abrir portas para outros ataques, roubar informações ou permitir acesso remoto, mas sua principal característica não é o bloqueio de dados para resgate, e sim a dissimulação para obter acesso."
+        },
+        {
+          "id": "c",
+          "text": "Worm, que se replica automaticamente e consome recursos do sistema até torná-lo inoperante",
+          "correct": false,
+          "explanation": "Incorreta. Um worm é um programa autorreplicante que se espalha por redes de computadores, explorando vulnerabilidades. Embora possa causar danos ao consumir recursos do sistema e propagar outros malwares, sua característica central não é o sequestro de dados para exigir pagamento."
+        },
+        {
+          "id": "d",
+          "text": "Spyware, que monitora atividades do usuário e vende informações para terceiros interessados",
+          "correct": false,
+          "explanation": "Incorreta. Spyware é um tipo de software malicioso que coleta informações sobre as atividades de um usuário sem seu conhecimento ou consentimento, como histórico de navegação ou dados digitados, e as envia para terceiros. Sua finalidade principal é a espionagem, não o bloqueio de dados para resgate."
+        }
+      ],
+      "explanation": "Correta. Ransomware é um tipo de software malicioso que criptografa os dados do usuário ou bloqueia o acesso ao sistema operacional, tornando-os inacessíveis. Em seguida, exige um pagamento (resgate), geralmente em criptomoedas, para que o acesso aos dados ou ao sistema seja restaurado. É um ataque direto com fins extorsivos.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "O que é uma botnet no contexto de segurança da informação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma técnica de backup automático que distribui cópias de arquivos em múltiplos servidores geograficamente dispersos",
+          "correct": false,
+          "explanation": "Incorreta. Uma técnica de backup automático que distribui cópias de arquivos em múltiplos servidores descreve uma estratégia de redundância e recuperação de dados, que é uma prática de segurança e gerenciamento de dados, não tendo relação com a natureza maliciosa de uma botnet."
+        },
+        {
+          "id": "b",
+          "text": "Uma rede de computadores infectados por bots que podem ser controlados remotamente para realizar ataques coordenados",
+          "correct": true,
+          "explanation": "Correta. Uma botnet é, de fato, uma rede de computadores infectados por programas maliciosos (bots) que podem ser controlados remotamente por um atacante. Esses computadores 'zumbis' são então usados para realizar atividades coordenadas, como ataques de negação de serviço distribuído (DDoS), envio de spam ou mineração de criptomoedas, sem o conhecimento de seus proprietários."
+        },
+        {
+          "id": "c",
+          "text": "Um protocolo de comunicação criptografada utilizado para proteger transações bancárias online",
+          "correct": false,
+          "explanation": "Incorreta. Um protocolo de comunicação criptografada, como SSL/TLS, é um conjunto de regras para proteger a troca de informações, enquanto uma botnet é uma rede de computadores comprometidos. São conceitos distintos na segurança da informação."
+        },
+        {
+          "id": "d",
+          "text": "Um software antivírus especializado em detectar e remover programas maliciosos de dispositivos móveis",
+          "correct": false,
+          "explanation": "Incorreta. Um software antivírus é uma ferramenta de defesa projetada para detectar, prevenir e remover programas maliciosos. Uma botnet, por outro lado, é uma infraestrutura de ataque composta por máquinas comprometidas."
+        }
+      ],
+      "explanation": "Correta. Uma botnet é, de fato, uma rede de computadores infectados por programas maliciosos (bots) que podem ser controlados remotamente por um atacante. Esses computadores 'zumbis' são então usados para realizar atividades coordenadas, como ataques de negação de serviço distribuído (DDoS), envio de spam ou mineração de criptomoedas, sem o conhecimento de seus proprietários.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "No Microsoft Word 2013, qual é a capacidade do programa em relação a arquivos PDF?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Requer instalação de plugins adicionais para qualquer tipo de interação com arquivos PDF",
+          "correct": false,
+          "explanation": "Incorreta. Para as funcionalidades básicas de visualização, edição e salvamento de arquivos PDF, o Word 2013 não requer a instalação de plugins adicionais. Essas capacidades são nativas do programa."
+        },
+        {
+          "id": "b",
+          "text": "Pode visualizar, editar e salvar arquivos PDF, além de exportar documentos nesse formato",
+          "correct": true,
+          "explanation": "Correta. O Microsoft Word 2013 e versões posteriores oferecem a capacidade de abrir arquivos PDF, convertendo-os para um formato editável. Isso permite ao usuário visualizar, fazer alterações no conteúdo e na formatação (com certas limitações, dependendo da complexidade do PDF original) e, em seguida, salvar o documento novamente como PDF ou em outro formato compatível com o Word. Além disso, a exportação de documentos do Word para PDF é uma funcionalidade padrão há várias versões."
+        },
+        {
+          "id": "c",
+          "text": "Pode apenas converter documentos Word para PDF, mas não pode abrir arquivos PDF existentes",
+          "correct": false,
+          "explanation": "Incorreta. Embora a conversão de documentos Word para PDF seja uma funcionalidade existente, a afirmação de que não pode abrir arquivos PDF existentes está incorreta para o Word 2013. A capacidade de abrir e editar PDFs foi uma das grandes novidades dessa versão."
+        },
+        {
+          "id": "d",
+          "text": "Pode apenas visualizar arquivos PDF, sem possibilidade de edição ou salvamento",
+          "correct": false,
+          "explanation": "Incorreta. A partir do Microsoft Word 2013, o programa não se limita apenas à visualização de PDFs. Ele introduziu recursos que permitem a edição e o salvamento de arquivos PDF diretamente, tratando-os como documentos editáveis."
+        }
+      ],
+      "explanation": "Correta. O Microsoft Word 2013 e versões posteriores oferecem a capacidade de abrir arquivos PDF, convertendo-os para um formato editável. Isso permite ao usuário visualizar, fazer alterações no conteúdo e na formatação (com certas limitações, dependendo da complexidade do PDF original) e, em seguida, salvar o documento novamente como PDF ou em outro formato compatível com o Word. Além disso, a exportação de documentos do Word para PDF é uma funcionalidade padrão há várias versões.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Na função PROCV do Excel, onde o valor procurado deve estar localizado dentro do intervalo especificado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Em qualquer coluna do intervalo, desde que seja especificado o índice correto",
+          "correct": false,
+          "explanation": "Incorreta. Embora o índice da coluna de retorno possa ser qualquer coluna dentro do intervalo especificado, o valor a ser *procurado* precisa estar fixamente na primeira coluna do intervalo. Se o valor estiver em outra coluna, a função não o identificará."
+        },
+        {
+          "id": "b",
+          "text": "Na primeira coluna à esquerda do intervalo, pois a função sempre busca nessa posição",
+          "correct": true,
+          "explanation": "Correta. Na função PROCV, o primeiro argumento é o valor que se procura, e o segundo argumento é o intervalo (ou matriz_tabela) onde a busca será realizada. É uma característica fundamental dessa função que o valor procurado deve estar obrigatoriamente na primeira coluna à esquerda desse intervalo. Se o valor estiver em outra coluna, a PROCV não conseguirá encontrá-lo."
+        },
+        {
+          "id": "c",
+          "text": "Na última coluna à direita do intervalo, para otimizar o tempo de busca",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV (Procurar na Vertical) tem uma regra específica: o valor que se deseja procurar deve estar localizado na primeira coluna do intervalo de células especificado. A posição do valor procurado não é flexível para otimização de tempo."
+        },
+        {
+          "id": "d",
+          "text": "Na coluna central do intervalo, para permitir buscas bidirecionais",
+          "correct": false,
+          "explanation": "Incorreta. A PROCV é uma função de busca unidirecional (vertical e da esquerda para a direita). Ela não busca em colunas centrais nem permite buscas bidirecionais. Para cenários mais complexos, onde o valor procurado pode estar em qualquer coluna, funções como ÍNDICE e CORRESP são mais adequadas."
+        }
+      ],
+      "explanation": "Correta. Na função PROCV, o primeiro argumento é o valor que se procura, e o segundo argumento é o intervalo (ou matriz_tabela) onde a busca será realizada. É uma característica fundamental dessa função que o valor procurado deve estar obrigatoriamente na primeira coluna à esquerda desse intervalo. Se o valor estiver em outra coluna, a PROCV não conseguirá encontrá-lo.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Na função PROCV do Excel, o que indica o parâmetro FALSO (ou 0) ao final da fórmula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Indica que a função deve procurar o valor aproximado mais próximo, arredondando para baixo",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro VERDADEIRO (ou 1) é que indica à função PROCV para procurar uma correspondência aproximada, que é o maior valor menor ou igual ao valor procurado. Isso exige que a primeira coluna do intervalo esteja classificada em ordem crescente."
+        },
+        {
+          "id": "b",
+          "text": "Indica que a função deve ignorar diferenças entre letras maiúsculas e minúsculas",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV, por padrão, não diferencia letras maiúsculas de minúsculas (não é 'case-sensitive') ao procurar valores de texto. O parâmetro FALSO/VERDADEIRO controla o tipo de correspondência (exata ou aproximada), não a sensibilidade a maiúsculas e minúsculas."
+        },
+        {
+          "id": "c",
+          "text": "Indica que a função deve retornar erro caso encontre múltiplas correspondências",
+          "correct": false,
+          "explanation": "Incorreta. Se a função PROCV encontrar múltiplas correspondências exatas para o valor procurado na primeira coluna, ela retornará o valor correspondente à primeira ocorrência encontrada, de cima para baixo. Ela não retorna um erro nesse caso."
+        },
+        {
+          "id": "d",
+          "text": "Indica que a função deve procurar correspondência exata do valor especificado",
+          "correct": true,
+          "explanation": "Correta. O último parâmetro da função PROCV, conhecido como `intervalo_pesquisa` ou `procurar_intervalo`, quando definido como FALSO (ou 0), instrui o Excel a buscar uma correspondência exata para o valor procurado. Se a função não encontrar uma correspondência exata, ela retornará o erro #N/D (Não Disponível)."
+        }
+      ],
+      "explanation": "Correta. O último parâmetro da função PROCV, conhecido como `intervalo_pesquisa` ou `procurar_intervalo`, quando definido como FALSO (ou 0), instrui o Excel a buscar uma correspondência exata para o valor procurado. Se a função não encontrar uma correspondência exata, ela retornará o erro #N/D (Não Disponível).",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Como realizar uma busca no Google por uma expressão exata, incluindo todas as palavras na ordem especificada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Utilizando aspas duplas \" \" ao redor da expressão desejada",
+          "correct": true,
+          "explanation": "Correta. Para realizar uma busca no Google por uma expressão exata, ou seja, para que todas as palavras apareçam na ordem especificada e sem variações, o usuário deve colocar a expressão entre aspas duplas (\"). Por exemplo, pesquisar por \"inteligência artificial\" retornará resultados que contêm essa frase específica."
+        },
+        {
+          "id": "b",
+          "text": "Utilizando chaves { } ao redor da expressão desejada",
+          "correct": false,
+          "explanation": "Incorreta. Chaves { } não são um operador de busca reconhecido pelo Google para indicar uma expressão exata. Elas não possuem uma função específica para refinar pesquisas no contexto de busca por frases ou termos exatos."
+        },
+        {
+          "id": "c",
+          "text": "Utilizando colchetes [ ] ao redor da expressão desejada",
+          "correct": false,
+          "explanation": "Incorreta. Colchetes [ ] não são o operador correto no Google para buscar uma expressão exata. Embora possam ser usados para buscar termos em documentos específicos ou para algumas variações de pesquisa, o operador para uma frase exata é diferente."
+        },
+        {
+          "id": "d",
+          "text": "Utilizando parênteses ( ) ao redor da expressão desejada",
+          "correct": false,
+          "explanation": "Incorreta. Parênteses ( ) são utilizados no Google para agrupar termos de pesquisa e definir a ordem de operações lógicas (como OR e AND), mas não para indicar uma busca por uma expressão exata. Eles são úteis para construir consultas mais complexas, combinando diferentes critérios."
+        }
+      ],
+      "explanation": "Correta. Para realizar uma busca no Google por uma expressão exata, ou seja, para que todas as palavras apareçam na ordem especificada e sem variações, o usuário deve colocar a expressão entre aspas duplas (\"). Por exemplo, pesquisar por \"inteligência artificial\" retornará resultados que contêm essa frase específica.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_358767_Informática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:30:59"
+}

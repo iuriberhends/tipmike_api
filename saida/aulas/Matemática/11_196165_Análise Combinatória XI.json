@@ -1,0 +1,467 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 11,
+  "ordem_no_curso": "73.00",
+  "titulo": "Análise Combinatória XI",
+  "codigo_aula": "196165",
+  "video_id": "rcPVzzwIaas=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:47:25",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/rcPVzzwIaas%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408836%2C408837%2C408838%2C408845%2C408847%2C404274%2C408849%2C425319%2C408834%2C425320%2C408839&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória XI\n\n## Questão 2: Assentos em Mesa Redonda com Presidente e Vice Juntos\nBeleza, estacionamento, olha só: questão dois, vamos continuar o seu 29. Questão dois diz o seguinte, bacaninha, viu? Está se fazendo uma reunião no Ministério da Fazenda. Será composta por seis pessoas: a presidenta, o vice-presidente e quatro ministros. Beleza? Então tenho seis pessoas. Dentre essas seis pessoas, nós temos a presidenta, o vice-presidente e mais quatro ministros, somando seis.\n\nDe quantas formas distintas essas seis pessoas podem se sentar em torno de uma mesa redonda, de modo que a presidenta e o vice-presidente fiquem juntos? Você lembra por que nós falamos “as pessoas ficarem juntas”? Eu quero que fiquem juntos. Imagina? Eu quero as pessoas juntas.\n\nImagina que são apenas uma peça. Então, legal aqui: mesa redonda, presidenta, vice-presidente. Eles querem ficar juntos. Quem mais? Um, dois, três, quatro ministros. Certo?\n\nVocê tem que pensar o seguinte: se eles querem ficar juntos, então, à partida, você vai considerar os dois como apenas uma pessoa. Beleza? Vamos passo a passo. Imagina o seguinte: ao invés de termos seis pessoas (uma, duas, três, quatro, cinco, seis), teremos cinco pessoas, porque os dois contam como uma só. Então teremos: um, dois, três, quatro, cinco.\n\nVeja: aprendemos que, quando as pessoas querem ficar juntas — numa fila, em qualquer lugar, não interessa — nós imaginamos que elas somam apenas uma pessoa. Beleza. Então nós temos um, dois, três, quatro e essa “peça dupla” que conta como mais um, totalizando cinco.\n\nMas daí vem outro detalhe: nós estamos trabalhando com mesa redonda. Isso é uma permutação circular. E, na permutação circular, nós sempre tiramos uma pessoa (fixa-se um lugar). Então, se agora temos cinco “pessoas”, na circular não teremos cinco!, teremos (5 − 1)!, ou seja, quatro fatorial.\n\nEntão, até aqui: (5 − 1)! = 4! = 4 × 3 × 2 × 1 = 24. A pessoa com prática marca 24… calma, que está errado se parar aqui.\n\nO que eu tinha dito? Toda vez que falam para mim “as pessoas querem ficar juntas”, e não dizem nada sobre a ordem interna, juntos pode ser em qualquer ordem. Aqui no enunciado, quero a presidenta e o vice-presidente juntos. Então, além das 24 maneiras de posicionar o bloco e os demais, eu posso trocar a ordem interna do bloco: “presidenta–vice” ou “vice–presidente”. Então eu multiplico por 2.\n\nLogo: 24 × 2 = 48. Não pode morrer na praia. Quarenta e oito. Show de bola.\n\nPreste atenção nisso: se disserem “André e Cláudio querem ficar sempre juntos nessa ordem para tirar uma selfie: André, Andreia e Beatriz nessa ordem”, aí seria ordem fixa. Mas, se não falar nada, é qualquer ordem. Então, quando falar “querem ficar juntos”, considere uma peça só; e, se não disser nada sobre ordem, multiplica por 2 para as permutações internas do bloco. Aqui: presidenta e vice, ou vice e presidenta. Portanto, 24 × 2 = 48. Show de bola.\n\n## Variação: Três Pessoas Juntas em Mesa Redonda\nSe forem três pessoas que querem ficar juntas, vem comigo. Alguém perguntou: “Se fossem três, modifica?” Vamos lá.\n\nDigamos que querem ficar juntos: presidenta, vice-presidente e o ministro da Casa Civil. Temos, então, no total: presidenta, vice-presidente e ministros 1, 2, 3 e 4.\n\nEles querem se sentar à mesa redonda, ficando juntos (os três do bloco). Consideramos os três como uma única peça. Então, como “pessoas” efetivas, teremos: o bloco (contando como 1), e os outros três ministros fora do bloco, totalizando quatro “pessoas” no círculo.\n\nPermutação circular de 4 “pessoas”: (4 − 1)! = 3! = 6.\n\nMas ainda tem o detalhe: dentro do bloco dos três (presidenta, vice, ministro), a ordem interna pode ser qualquer, pois não foi dito que alguém precisa ficar à direita de alguém. Então, internamente, temos 3! = 6 maneiras.\n\nMultiplicando: 6 (circular) × 6 (interno) = 36. Então, 36 maneiras para seis pessoas ao redor da mesa, sendo que três delas ficarão sempre juntas em qualquer ordem. Massa!\n\n## Nova Questão: Triângulos com Pontos de um Hexágono Regular e o Centro\nAgora, vamos para outra questão. Universidade Federal do Paraná, simulador para os alunos. Consideram-se sete pontos indicados na figura: seis pontos sobre o círculo, que são vértices de um hexágono regular, e o sétimo ponto coincide com o centro do círculo. A pergunta é: quantos triângulos distintos é possível construir com esses sete pontos?\n\nQuando falamos de construções de figuras geométricas por pontos, a ordem não importa. Triângulo ABC é o mesmo que ACB, etc. Então, quando a ordem não importa, nós multiplicamos e dividimos (combinamos). Aqui temos sete pontos ao todo, e para formar um triângulo precisamos de três pontos.\n\nPelo raciocínio combinatório: escolhas para os vértices seriam 7 × 6 × 5, mas como ordem não importa, dividimos por 3 × 2 × 1. Isso dá C(7, 3) = 35.\n\nAí você pensa: beleza, 35. Mas vem cá comigo: para formar um triângulo, eu preciso de três pontos não colineares. Dois pontos determinam um segmento de reta. Com três pontos quaisquer, será que sempre formo um triângulo? Não. Se os três pontos forem colineares, não formam triângulo.\n\nNo nosso desenho, há um caso especial de colinearidade: o centro do círculo e dois vértices opostos do hexágono estão na mesma reta (um diâmetro). Em um hexágono regular, existem exatamente três pares de vértices opostos. Para cada par de opostos, se eu pego esses dois vértices mais o centro, os três pontos são colineares e não formam triângulo.\n\nEntão, dentro dos 35, você está contando indevidamente esses três “triângulos” degenerados. Existem exatamente 3 combinações colineares: (centro + cada par de opostos). Logo, o total correto é 35 − 3 = 32.\n\nShow de bola.\n\n## Transição: Do Raciocínio às Fórmulas\nAgora, olha só: já falamos sobre agrupamentos e os princípios multiplicativos, fizemos questões em que a ordem importa (arranjos, permutações), com elementos diferentes e repetidos, e também quando a ordem não importa (combinações), inclusive casos de permutação circular (tira um elemento: (n − 1)!).\n\nTudo isso fizemos, inicialmente, fundamentando o raciocínio. A fórmula nada mais é do que a formalização do raciocínio. Tem gente que decora para depois entender: esquece. Aqui, a gente entende para depois guardar a fórmula — e aí você não esquece.\n\n## Permutação (Pergunta-ação)\nQuando eu “pergunto”, eu permuto: uso tudo que eu tenho e a ordem importa. Exemplo: tenho 10 pessoas em uma fila. De quantas maneiras elas podem se organizar? Uso tudo, ordem importa. É permutação: 10!.\n\nOutro exemplo: tenho cinco pessoas, quero uma fila com cinco pessoas, usando todas. Ordem importa e uso tudo. É permutação: 5! = 5 × 4 × 3 × 2 × 1 = 120.\n\nVocê pode resolver também pelo princípio multiplicativo (posições em sequência), dá no mesmo. A ideia central: ordem importa + uso de todos os elementos.\n\n> 🎯 Dicas de prova: Permutação simples de n elementos é n!.\n\n## Arranjo (Uso Parcial com Ordem)\nAgora, arranjo. A ordem importa, mas você não usa tudo o que tem. Essa é a diferença-chave.\n\nExemplo: tenho as mesmas cinco pessoas (André, Beto, Caio, Daniel e Eliel). Quero a classificação dos três primeiros colocados numa competição com 5 concorrentes. Uso 5 pessoas, mas só “arranjo” 3 posições: ordem importa. Isso é arranjo: A(5, 3).\n\nFórmula do arranjo de n tomados p a p: A(n, p) = n! / (n − p)!.\n\nAplicando: A(5, 3) = 5! / (5 − 3)! = 5! / 2! = (5 × 4 × 3 × 2 × 1) / (2 × 1) = 60. Temos 60 maneiras distintas para os três primeiros lugares.\n\n> 🎯 Dicas de prova: Arranjo é ordem importa sem usar todos os elementos: A(n, p) = n! / (n − p)!.\n\n## Combinação (Uso Parcial sem Ordem)\nCombinação: agora a ordem não importa, e geralmente não usamos tudo. Se usar tudo (n tomados n a n), a combinação é 1, porque a ordem não importa.\n\nExemplo de contexto: delegacia com 5 policiais (André, Beto, Caio, Daniel, Eliel). Queremos formar uma equipe com 3 policiais para uma missão. A ordem não importa (é equipe), e não usamos todos: combinação C(5, 3).\n\nFórmula: C(n, p) = n! / [(n − p)! p!].\n\nCalculando: C(5, 3) = 5! / (2! 3!) = (5 × 4 × 3 × 2 × 1) / [(2 × 1)(3 × 2 × 1)]. Simplificando: (5 × 4) / (2 × 1) = 10. Dá 10 equipes possíveis.\n\nNote como a última linha do cálculo “bate” com o raciocínio sem fórmula que fizemos lá atrás (multiplica e divide pelo 3! porque a ordem não importa).\n\n> 🎯 Dicas de prova: Combinação é ordem não importa e uso parcial: C(n, p) = n! / [(n − p)! p!]. Se p = n, C(n, n) = 1.\n\n## Encerramento e Próximos Passos\nQuero mostrar isso para vocês porque, no nosso próximo vídeo, vamos resolver dez questões da banca (por exemplo, 2018), questões interessantes e difíceis, aplicando as fórmulas e também pelo raciocínio, para você ficar totalmente blindado. Às vezes, as opções na prova vêm todas em forma de fórmula (permutações, arranjos, combinações), e você precisa reconhecer qual se aplica.\n\nTem versões de questões com muitas restrições. Quando há muitas restrições, a gente separa em casos e, se necessário, usa fórmula. Mas a ideia é você dominar com e sem fórmula.\n\nEntão, fechando aqui: no próximo vídeo, nossa etapa final. Vamos fazer dez questões “conforme e sem forma” e ainda colocar situações extra para te blindar, independente da banca. A ideia é excelência. Daqui a pouco estou voltando à nossa etapa final, fazer as questões com e sem fórmula, e um super desafio no final.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória XI",
+    "subject": "Matemática e Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 42077,
+    "createdAt": "2026-02-05T08:48:21.264Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: permutação (linear e circular), arranjo, combinação e aplicação em contagem de figuras geométricas (triângulos).  \nPrincipais pontos:  \n- A ordem importa? Decide entre **permutação/arranjo** vs **combinação**.  \n- Em **mesa redonda** (permutação circular), conta-se como (n − 1)!, ajustando blocos “juntos”.  \n- Em **figuras**, usar combinações e excluir casos degenerados (colinearidade).\n\n---\n\n## 1. Base / Conceitos Fundamentais\n- **Fatorial (n!)**: produto de n até 1. Ex.: 5! = 5 × 4 × 3 × 2 × 1 = 120.\n- **Permutação (P(n))**: ordenar todos os n elementos. Fórmula: n!.  \n  - Ex.: “10 pessoas numa fila” → 10!.\n- **Arranjo A(n, k)**: ordenar k elementos escolhidos dentre n (ordem importa, não usa todo o conjunto). Fórmula: n!/(n − k)!.\n- **Combinação C(n, k)**: escolher k dentre n (ordem não importa). Fórmula: n!/[k!(n − k)!].  \n  - Simetria: C(n, k) = C(n, n − k).\n- **Permutação circular (mesa redonda)**: rotações equivalentes → (n − 1)!.\n- **Bloco (juntos)**: quando pessoas “querem ficar juntas”, tratá-las como um único elemento; multiplicar pelas permutações internas do bloco (pessoas dentro do bloco podem trocar de lugar).\n  - 2 juntos → 2!; 3 juntos → 3!, etc.\n\n> Dica de prova: Decisão rápida\n> - Ordem não importa → combinação.\n> - Ordem importa e usa tudo → permutação.\n> - Ordem importa e usa parte → arranjo.\n\n---\n\n## 2. Como Funciona / Distinções\n- Permutação vs Arranjo vs Combinação:\n  - **Ordem importa?**\n    - Sim → Permutação (se usa tudo) ou Arranjo (se usa k < n).\n    - Não → Combinação.\n- Linear vs Circular:\n  - **Linear** (fila) → n! ou A(n, k).\n  - **Circular** (mesa redonda) → (n − 1)! após montar os elementos efetivos (incluindo blocos).\n- “Juntos” x “ordem interna”:\n  - “Querem ficar juntos, em qualquer ordem” → contar configurações externas × fatorial interno do bloco.\n  - Se a ordem interna for fixada (ex.: “P à direita de V”), não use o fatorial completo; ajuste ao número de ordens válidas.\n\n> Dica de prova: Palavras-chave\n> - “Fila”, “1º/2º/3º”, “classificação” → arranjo/permutação.\n> - “Equipe”, “comissão”, “grupo”, “selecionar” → combinação.\n> - “Mesa redonda” → permutação circular (n − 1)!.\n\n---\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo (decisão):\n  1) A ordem importa?\n     - Não → C(n, k).\n     - Sim → continua.\n  2) Usa todos os elementos?\n     - Sim → n! (ou circular: (n − 1)!).\n     - Não → A(n, k) = n!/(n − k)!.\n- Mesa redonda com “juntos”:\n  1) Forme o bloco dos que devem ficar juntos.\n  2) Conte quantos “elementos” ficam ao redor da mesa (blocos + demais pessoas).\n  3) Aplique (elementos − 1)!.\n  4) Multiplique pelas permutações internas do(s) bloco(s).\n- Combinações na prática:\n  - C(n, k) = (n × (n − 1) × … × (n − k + 1)) / k!.  \n  - Use simetria: C(5, 3) = C(5, 2).\n- Figuras (triângulos a partir de pontos):\n  1) Conte C(n, 3) (trincas de pontos).\n  2) Subtraia trincas colineares (não formam triângulo).\n\n> Dica de prova: “Multiplica e divide”\n> - Contou como arranjo e a ordem não deveria importar? Divida por k! para virar combinação.\n\n---\n\n## 4. Exemplos e Casos Resolvidos\n- Permutação (linear):\n  - 10 pessoas numa fila → 10!.\n  - 5 pessoas todas na fila → 5! = 120.\n- Arranjo:\n  - “5 pessoas, quero os 3 primeiros colocados” → A(5, 3) = 5!/(5 − 3)! = 5!/2! = 5 × 4 × 3 = 60.\n- Combinação:\n  - “Equipe de 3 entre 5 pessoas” → C(5, 3) = 5!/(3!2!) = 10.\n  - “Equipe com todos (k = n)” → C(n, n) = 1.\n- Permutação circular com “juntos” (mesa redonda):\n  - Seis pessoas: presidenta (P), vice (V) e 4 ministros.\n    - P e V juntos (qualquer ordem):\n      - Bloco (P,V) + 4 → 5 elementos → circular: (5 − 1)! = 4! = 24.\n      - Interno do bloco: 2! = 2.\n      - Total: 24 × 2 = 48.\n    - P, V e um ministro juntos (trio em qualquer ordem):\n      - Bloco (P,V,Mi) + 3 → 4 elementos → circular: (4 − 1)! = 3! = 6.\n      - Interno do bloco: 3! = 6.\n      - Total: 6 × 6 = 36.\n- Triângulos com 7 pontos: 6 nos vértices do hexágono regular + 1 no centro\n  - Total bruto de trincas: C(7, 3) = 35.\n  - Trincas colineares: centro + pares diametralmente opostos (há 3 pares) → 3 trincas.\n  - Triângulos: 35 − 3 = 32.\n\n---\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova: Mesa redonda\n> - Sempre ajuste para (n − 1)! após formar blocos. Não confunda com n!.\n\n> Dica de prova: “Juntos”\n> - “Querem ficar juntos” e “em qualquer ordem” → multiplique pelo fatorial interno do bloco (2! para par, 3! para trio).\n> - Se a ordem interna tiver restrição, não use o fatorial completo; conte apenas as ordens válidas.\n\n> Dica de prova: Arranjo vs Combinação\n> - “Primeiros colocados”, “pódio”, “fila” → arranjo/permutação.  \n> - “Equipe/comissão/grupo” → combinação.  \n> - Muitos erram usando arranjo quando a ordem não importa; lembre de dividir por k!.\n\n> Dica de prova: Combinação com k = n\n> - Resposta é 1. Cai muito.\n\n> Dica de prova: Triângulos por pontos\n> - Conte C(n, 3) e subtraia colineares.  \n> - No hexágono regular com centro, só são colineares: centro + pontos opostos (3 trincas).\n\n> Atenção aqui:\n> - Em circular “com blocos”, não esqueça de multiplicar pelas permutações internas (ex.: par junto: 24 × 2 e não só 24).  \n> - Em figuras, a “ordem dos vértices” não importa: use combinação, jamais arranjo.\n\n---",
+  "resumo_bolso": "# Análise Combinatória XI\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Fatorial (n!)**: produto de n até 1. Ex.: **5! = 5 × 4 × 3 × 2 × 1 = 120**.\n* **Permutação (P(n))**: ordenar **todos** os n elementos, **ordem importa**. Fórmula: **n!**.  \n  - Ex.: “10 pessoas numa fila” → **10!**.\n* **Arranjo A(n, k)**: escolher e ordenar **k dentre n**, **ordem importa**, não usa todo o conjunto. Fórmula: **n!/(n − k)!**.\n* **Combinação C(n, k)**: escolher **k dentre n**, **ordem não importa**. Fórmula: **n!/[k!(n − k)!]**.  \n  - Simetria: **C(n, k) = C(n, n − k)**.\n* **Permutação circular (mesa redonda)**: rotações equivalentes → **(n − 1)!**.\n* **Bloco “juntos”**: quando pessoas “querem ficar juntas”, tratá-las como **1 elemento**; multiplicar pelas permutações internas do bloco (2 juntos → **2!**, 3 juntos → **3!**, etc.).\n* **Triângulos por pontos**: contar **C(n, 3)** (trincas de pontos) e subtrair trincas **colineares** (não formam triângulo).\n* **Decisão rápida**:  \n  - Ordem não importa → **combinação**.  \n  - Ordem importa e usa tudo → **permutação**.  \n  - Ordem importa e usa parte → **arranjo**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Permutação vs Arranjo vs Combinação\n\n| Aspecto                | Permutação (P(n))          | Arranjo A(n, k)                      | Combinação C(n, k)                    |\n|------------------------|----------------------------|--------------------------------------|---------------------------------------|\n| Ordem                  | **Importa**                | **Importa**                          | **Não importa**                       |\n| Usa todos os elementos | **Sim**                    | **Não (k < n)**                      | Não é relevante                       |\n| Fórmula                | n!                         | n!/(n − k)!                          | n!/[k!(n − k)!]                       |\n| Situações típicas      | Fila com todos             | Pódio, 1º/2º/3º, classificação       | Equipe, comissão, grupo               |\n\n---\n\n### Linear vs Circular\n\n| Aspecto          | Linear (fila)        | Circular (mesa redonda)      |\n|------------------|----------------------|------------------------------|\n| Fórmula base     | n! ou A(n, k)        | (n − 1)!                     |\n| Posição absoluta | Importa              | Só a **ordem relativa**      |\n| Com blocos       | Conta n elementos    | Conta **elementos efetivos** |\n\n---\n\n### “Juntos” vs Ordem Interna Restrita\n\n| Aspecto                  | “Juntos, qualquer ordem”             | Ordem interna restrita              |\n|--------------------------|--------------------------------------|-------------------------------------|\n| Tratamento do bloco      | 1 elemento + **m!** interno          | 1 elemento + **apenas ordens válidas** |\n| Ex.: P e V juntos        | bloco PV, interno: **2!**            | se “P à direita de V”: **não usar 2!**, só ordens válidas |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Permutação (linear)**\n\n* **Aplicação**: ordenar **todos** os n elementos em linha.  \n* **Fórmula**: **P(n) = n!**.  \n* **Exemplos**:  \n  - 10 pessoas em fila → **10!**.  \n  - 5 pessoas todas na fila → **5! = 120**.\n\n---\n\n**2. Arranjo simples A(n, k)**\n\n* **Aplicação**: escolher e ordenar **k posições** (pódio, classificação).  \n* **Fórmula**: **A(n, k) = n!/(n − k)!**.  \n* **Exemplo**: 5 pessoas, 3 primeiros colocados → **A(5, 3) = 5!/(5 − 3)! = 5!/2! = 60**.\n\n---\n\n**3. Combinação simples C(n, k)**\n\n* **Aplicação**: formar **grupo/equipe** sem ordem.  \n* **Fórmula**: **C(n, k) = n!/[k!(n − k)!]**.  \n* **Forma prática**: **C(n, k) = (n × (n − 1) × … × (n − k + 1))/k!**.  \n* **Exemplos**:  \n  - Equipe de 3 entre 5 → **C(5, 3) = 5!/(3!2!) = 10**.  \n  - Equipe com todos (k = n) → **C(n, n) = 1**.  \n* **Simetria**: usar **C(n, k) = C(n, n − k)** (ex.: **C(5, 3) = C(5, 2)**).\n\n---\n\n**4. Permutação circular (mesa redonda)**\n\n* **Aplicação**: mesa redonda, posições equivalentes por rotação.  \n* **Fórmula**: **(n − 1)!** (após contar blocos como 1 elemento).  \n* **Exemplo**: 6 pessoas em mesa redonda → **(6 − 1)! = 5!**.\n\n---\n\n**5. Blocos “juntos” em mesa redonda**\n\n* **Aplicação**: pessoas que “devem ficar juntas” ao redor da mesa.  \n* **Regra**:  \n  1) Formar o bloco dos que devem ficar juntos.  \n  2) Contar quantos “elementos” ficam ao redor da mesa (blocos + demais pessoas).  \n  3) Aplicar **(elementos − 1)!**.  \n  4) Multiplicar pelas permutações internas do(s) bloco(s) (2! para par, 3! para trio, etc.).  \n* **Exemplo** (P, V e 4 ministros):  \n  - P e V juntos (qualquer ordem):  \n    - Bloco (P,V) + 4 → 5 elementos → circular: **(5 − 1)! = 4! = 24**.  \n    - Interno do bloco: **2! = 2**.  \n    - Total: **24 × 2 = 48**.  \n  - P, V e um ministro juntos (trio em qualquer ordem):  \n    - Bloco (P,V,Mi) + 3 → 4 elementos → circular: **(4 − 1)! = 3! = 6**.  \n    - Interno do bloco: **3! = 6**.  \n    - Total: **6 × 6 = 36**.\n\n---\n\n**6. Triângulos a partir de pontos**\n\n* **Aplicação**: contar triângulos formados por pontos dados.  \n* **Regra**:  \n  1) Total de trincas: **C(n, 3)**.  \n  2) Subtrair trincas **colineares** (não formam triângulo).  \n* **Exemplo**: 7 pontos (6 em hexágono regular + centro):  \n  - Total bruto de trincas: **C(7, 3) = 35**.  \n  - Trincas colineares: centro + pares diametralmente opostos (3 pares) → **3 trincas**.  \n  - Triângulos: **35 − 3 = 32**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **Mesa redonda**  \n   - Sempre ajuste para **(n − 1)!** após formar blocos. Não confunda com **n!**.\n\n2. **“Juntos”**  \n   - “Querem ficar juntos, em qualquer ordem” → multiplique pelo fatorial interno do bloco (2! para par, 3! para trio).  \n   - Se a ordem interna tiver restrição (ex.: “P à direita de V”), não use o fatorial completo; conte apenas as ordens válidas.\n\n3. **Arranjo vs Combinação**  \n   - “Primeiros colocados”, “pódio”, “fila” → **arranjo/permutação**.  \n   - “Equipe/comissão/grupo/selecionar” → **combinação**.  \n   - Contou como arranjo quando a ordem não deveria importar? **Divida por k!** para virar combinação.\n\n4. **Combinação com k = n**  \n   - **C(n, n) = 1**. Cai muito em prova.\n\n5. **Triângulos por pontos**  \n   - Conte **C(n, 3)** e subtraia colineares.  \n   - No hexágono regular com centro, só são colineares: centro + pontos opostos (3 trincas).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **permutação, arranjo e combinação** pela **ordem** e pelo uso de todos os elementos?  \n* Lembrei que em **mesa redonda** é sempre **(n − 1)!**, após formar os **elementos efetivos** (incluindo blocos)?  \n* Sei tratar “**juntos**”: bloco como 1 elemento **vezes fatorial interno**, ajustando se houver **restrição de ordem interna**?  \n* Associei bem as palavras-chave:  \n  - “**fila, 1º/2º/3º, classificação**” → **arranjo/permutação**;  \n  - “**equipe, comissão, grupo, selecionar**” → **combinação**?  \n* Para **triângulos por pontos**, lembro de fazer **C(n, 3)** e subtrair as **trincas colineares**?",
+  "mapa_mental": "# 🧮 Análise Combinatória XI\n## 🎯 Conceitos Fundamentais\n### 💡 Fatorial\n- Definição n!\n- Produto decrescente\n- 0! igual 1\n- Crescimento rápido\n### 💡 Permutação Simples\n- Todos elementos\n- Ordem importa\n- Fórmula n!\n- Fila linear\n### 💡 Arranjo Simples\n- Parte do conjunto\n- Ordem importa\n- Fórmula n!/(n−k)!\n- Classificações\n### 💡 Combinação Simples\n- Parte do conjunto\n- Ordem não importa\n- Fórmula n!/[k!(n−k)!]\n- Simetria C(n,k)=C(n,n−k)\n### 💡 Permutação Circular\n- Mesa redonda\n- Rotações equivalentes\n- Fórmula (n−1)!\n- Fixar referência\n### 💡 Blocos Juntos\n- Elementos agrupados\n- Tratar como único\n- Permutações internas\n- Fatorial do bloco\n\n## 🧩 Distinções Essenciais\n### 🧭 Ordem Importa?\n- Ordem irrelevante combinação\n- Ordem relevante permutação\n- Ordem relevante arranjo\n- Usa todos permutação\n- Usa parte arranjo\n### 🔄 Linear x Circular\n- Linear fila\n- Linear prateleira\n- Circular mesa\n- Circular colares\n- Ajuste (n−1)!\n### 📋 Palavras-Chave Prova\n- Fila classificação pódio\n- Equipe comissão grupo\n- Selecionar escolher sortear\n- Mesa redonda círculo\n### ⚠️ Juntos x Ordem Interna\n- Juntos qualquer ordem\n- Multiplica fatorial interno\n- Ordem interna restrita\n- Contar ordens válidas\n### ⚠️ Arranjo x Combinação\n- Confusão recorrente\n- Ordem não importa dividir\n- Dividir por k!\n- Converter arranjo combinação\n\n## 🧮 Técnicas de Cálculo\n### 🧠 Roteiro Decisão\n- Verificar ordem\n- Verificar uso total\n- Escolher permutação\n- Escolher arranjo\n- Escolher combinação\n### 🔢 Cálculo Combinações\n- Produto decrescente numerador\n- Divisão por k!\n- Usar simetria\n- Simplificar frações\n### 🔄 Mesa com Blocos\n- Formar blocos\n- Contar elementos efetivos\n- Aplicar (elementos−1)!\n- Multiplicar internos\n### 📐 Triângulos por Pontos\n- Calcular C(n,3)\n- Identificar colineares\n- Subtrair degenerados\n- Triângulos restantes\n### 🧮 Ajustes Finais\n- Erro ordem dividir\n- Conferir tipo modelo\n- Conferir restrições\n- Ignorar ordem vértices",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Permutações Circulares",
+      "description": "Permutações Circulares — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como representar, na contagem, pessoas que devem permanecer juntas?",
+          "back": "Imaginamos que eles estão somados em apenas **uma pessoa**.",
+          "hint": "Pense no método do bloco unitário",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "permutacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual expressão calcula as disposições circulares de n elementos distintos?",
+          "back": "**(n - 1)!**",
+          "hint": "Lembre-se da fixação de um elemento",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "permutacao-circular"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Quando dois elementos agrupados podem trocar de posição, qual fator deve ser incluído?",
+          "back": "Multiplicar por **2** (ou pelo fatorial do número de elementos que trocam de posição).",
+          "hint": "Considere a permutação interna do bloco",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "permutacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "De quantas formas seis pessoas podem sentar-se em círculo com presidenta e vice juntos?",
+          "back": "**48** (calculado como **(5 - 1)! × 2** ou **4! × 2**).",
+          "hint": "Aplique o método do bloco e a circularidade",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Arranjos e Permutações",
+      "description": "Arranjos e Permutações — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual critério define uma permutação na análise combinatória?",
+          "back": "A ordem importa e usa-se **tudo o que se tem**.",
+          "hint": "Pense na exaustão do conjunto",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "conceitos-fundamentais"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual é a fórmula da permutação simples de n elementos distintos?",
+          "back": "**n!**",
+          "hint": "É o fatorial do total",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "permutacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a diferença entre permutação e arranjo quanto ao uso dos elementos?",
+          "back": "Na permutação usam-se **todos** os elementos do conjunto, enquanto no arranjo usa-se apenas uma parte deles.",
+          "hint": "Compare o subconjunto utilizado",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "comparacao-teorica"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a fórmula do arranjo de n elementos tomados p a p?",
+          "back": "**n! / (n - p)!**",
+          "hint": "Envolve o fatorial da diferença",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "arranjo"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Princípios de Combinação",
+      "description": "Princípios de Combinação — 1 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Como distinguir combinação e arranjo pela influência da ordem?",
+          "back": "No arranjo a **ordem importa**, enquanto na combinação a ordem não importa.",
+          "hint": "Pense na relevância da sequência",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "comparacao-teorica"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Contagem de Triângulos",
+      "description": "Contagem de Triângulos — 4 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Quantos pontos distintos são necessários para determinar um triângulo?",
+          "back": "**Três** pontos distintos.",
+          "hint": "Quantidade mínima de vértices",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "geometria"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Por que a ordem dos vértices não altera a figura geométrica formada?",
+          "back": "A ordem não importa, pois o triângulo formado é o mesmo independentemente da troca de posição dos vértices.",
+          "hint": "Refere-se à natureza da combinação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "geometria"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual condição faz um trio de pontos deixar de formar um triângulo?",
+          "back": "Estar em **combinações colineares** (alinhados na mesma reta).",
+          "hint": "Pense na geometria da reta",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "geometria"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Com sete pontos, sendo três combinações colineares, quantos triângulos distintos podem ser formados?",
+          "back": "**32** (calculado como **35 - 3**).",
+          "hint": "Subtraia os casos impossíveis",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "analise-combinatoria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma reunião no Ministério da Fazenda, 6 pessoas (presidenta, vice-presidente e 4 ministros) devem se sentar em torno de uma mesa redonda, de modo que a presidenta e o vice-presidente fiquem juntos. Quantas são as formas distintas de organizar essa disposição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "120 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 120 maneiras corresponderia a 5! (cinco fatorial). Isso seria o número de permutações lineares de 5 elementos distintos ou a permutação circular de 6 elementos distintos ((6-1)! = 5! = 120), se não houvesse a restrição de que a presidenta e o vice-presidente ficassem juntos e se todos os 6 elementos fossem considerados individualmente para a permutação circular. No entanto, a restrição de agrupamento altera o cálculo."
+        },
+        {
+          "id": "b",
+          "text": "72 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 72 maneiras não se encaixa nas operações combinatórias corretas para este cenário. Não há uma derivação direta ou padrão que resulte em 72 a partir dos dados fornecidos e das regras de permutação circular com agrupamento."
+        },
+        {
+          "id": "c",
+          "text": "48 maneiras",
+          "correct": true,
+          "explanation": "Correta. Para resolver este problema de análise combinatória, primeiro tratamos a presidenta e o vice-presidente como um único bloco, pois eles devem ficar juntos. Isso reduz o número de elementos a serem arranjados de 6 para 5 (o bloco da presidenta/vice-presidente e os 4 ministros individuais). Para arranjos em uma mesa redonda (permutação circular), o número de maneiras é dado por (n-1)!, onde 'n' é o número de elementos. Assim, temos (5-1)! = 4! = 24 maneiras de dispor esses 5 blocos. Além disso, a presidenta e o vice-presidente podem trocar de lugar entre si dentro do bloco, o que adiciona 2! = 2 possibilidades para cada arranjo. Portanto, o número total de formas distintas é 24 (arranjos circulares) multiplicado por 2 (arranjos internos do grupo), resultando em 48 maneiras."
+        },
+        {
+          "id": "d",
+          "text": "24 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo de 24 maneiras corresponde apenas à permutação circular dos 5 \"blocos\" (o grupo da presidenta/vice-presidente e os 4 ministros) sem considerar a possibilidade de troca de posição entre a presidenta e o vice-presidente dentro do grupo. Se fossem 5 elementos distintos em uma mesa redonda, o resultado seria (5-1)! = 4! = 24. No entanto, a ordem interna do grupo importa."
+        }
+      ],
+      "explanation": "Correta. Para resolver este problema de análise combinatória, primeiro tratamos a presidenta e o vice-presidente como um único bloco, pois eles devem ficar juntos. Isso reduz o número de elementos a serem arranjados de 6 para 5 (o bloco da presidenta/vice-presidente e os 4 ministros individuais). Para arranjos em uma mesa redonda (permutação circular), o número de maneiras é dado por (n-1)!, onde 'n' é o número de elementos. Assim, temos (5-1)! = 4! = 24 maneiras de dispor esses 5 blocos. Além disso, a presidenta e o vice-presidente podem trocar de lugar entre si dentro do bloco, o que adiciona 2! = 2 possibilidades para cada arranjo. Portanto, o número total de formas distintas é 24 (arranjos circulares) multiplicado por 2 (arranjos internos do grupo), resultando em 48 maneiras.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a principal característica que diferencia uma permutação de um arranjo em análise combinatória?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Na permutação, utilizam-se todos os elementos disponíveis, enquanto no arranjo utiliza-se apenas parte dos elementos",
+          "correct": true,
+          "explanation": "Correta. A principal diferença conceitual entre permutação e arranjo simples reside na quantidade de elementos utilizados. Na permutação, todos os elementos disponíveis de um conjunto são utilizados para formar as diferentes ordenações. Por exemplo, ao permutar as letras da palavra \"ROMA\", todas as 4 letras são usadas em cada arranjo. Já no arranjo simples, apenas uma parte dos elementos disponíveis é selecionada e ordenada. Por exemplo, ao escolher 3 letras de \"ROMA\" para formar senhas de 3 letras, apenas 3 das 4 letras são usadas, e a ordem importa (ROM é diferente de RMO)."
+        },
+        {
+          "id": "b",
+          "text": "Na permutação, a ordem dos elementos não importa, enquanto no arranjo a ordem é relevante",
+          "correct": false,
+          "explanation": "Incorreta. Tanto na permutação quanto no arranjo, a ordem dos elementos é relevante. Se a ordem não importasse, estaríamos falando de uma combinação. Por exemplo, \"ABC\" é diferente de \"ACB\" em uma permutação ou arranjo, mas a equipe {A, B, C} é a mesma que {A, C, B} em uma combinação."
+        },
+        {
+          "id": "c",
+          "text": "Na permutação, os elementos podem se repetir, enquanto no arranjo não há repetição",
+          "correct": false,
+          "explanation": "Incorreta. A repetição de elementos é uma característica que pode ocorrer tanto em permutações (permutação com repetição) quanto em arranjos (arranjo com repetição), mas não é a característica principal que os distingue em suas formas simples. As definições padrão de permutação e arranjo simples assumem elementos distintos e sem repetição."
+        },
+        {
+          "id": "d",
+          "text": "Na permutação, trabalha-se com disposições circulares, enquanto no arranjo trabalha-se com disposições lineares",
+          "correct": false,
+          "explanation": "Incorreta. Permutações podem ser tanto lineares quanto circulares (permutação circular), dependendo da disposição dos elementos. Arranjos são geralmente considerados em disposições lineares, mas a natureza da disposição (linear ou circular) não é a característica fundamental que os diferencia, e sim o uso ou não de todos os elementos e a importância da ordem."
+        }
+      ],
+      "explanation": "Correta. A principal diferença conceitual entre permutação e arranjo simples reside na quantidade de elementos utilizados. Na permutação, todos os elementos disponíveis de um conjunto são utilizados para formar as diferentes ordenações. Por exemplo, ao permutar as letras da palavra \"ROMA\", todas as 4 letras são usadas em cada arranjo. Já no arranjo simples, apenas uma parte dos elementos disponíveis é selecionada e ordenada. Por exemplo, ao escolher 3 letras de \"ROMA\" para formar senhas de 3 letras, apenas 3 das 4 letras são usadas, e a ordem importa (ROM é diferente de RMO).",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em permutações circulares, qual é o procedimento correto para calcular o número de arranjos possíveis?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcula-se o fatorial do número de elementos e divide-se pelo número de posições fixas",
+          "correct": false,
+          "explanation": "Incorreta. Calcular o fatorial do número de elementos (n!) e dividir pelo número de elementos (n) é parte da lógica por trás da fórmula (n!/n = (n-1)!), mas a expressão \"número de posições fixas\" é imprecisa e pode levar a interpretações erradas. O conceito fundamental é que, em uma disposição circular, fixar um elemento elimina a redundância das rotações."
+        },
+        {
+          "id": "b",
+          "text": "Subtrai-se uma unidade do número total de elementos e calcula-se o fatorial do resultado",
+          "correct": true,
+          "explanation": "Correta. Em uma permutação circular de 'n' elementos distintos, o número de arranjos possíveis é dado por (n-1)!. Isso ocorre porque, em uma mesa redonda, não há um ponto de partida ou fim definido; as configurações são consideradas as mesmas se uma pode ser obtida da outra por rotação. Ao fixar a posição de um dos elementos, eliminamos a contagem redundante das rotações, e os (n-1) elementos restantes podem ser permutados linearmente de (n-1)! maneiras."
+        },
+        {
+          "id": "c",
+          "text": "Calcula-se o fatorial do número de elementos e multiplica-se pela quantidade de rotações possíveis",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o fatorial do número de elementos pela quantidade de rotações possíveis resultaria em uma supercontagem. A fórmula (n-1)! já é construída para evitar essa supercontagem, considerando que todas as 'n' rotações de uma mesma configuração são equivalentes e devem ser contadas como uma única disposição."
+        },
+        {
+          "id": "d",
+          "text": "Multiplica-se o número de elementos por 2 e depois aplica-se o fatorial",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o número de elementos por 2 e depois aplicar o fatorial não é o procedimento correto para permutações circulares. Essa operação não reflete a eliminação das repetições causadas pela rotação em um círculo."
+        }
+      ],
+      "explanation": "Correta. Em uma permutação circular de 'n' elementos distintos, o número de arranjos possíveis é dado por (n-1)!. Isso ocorre porque, em uma mesa redonda, não há um ponto de partida ou fim definido; as configurações são consideradas as mesmas se uma pode ser obtida da outra por rotação. Ao fixar a posição de um dos elementos, eliminamos a contagem redundante das rotações, e os (n-1) elementos restantes podem ser permutados linearmente de (n-1)! maneiras.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Considerando 7 pontos, sendo 6 vértices de um hexágono regular sobre um círculo e 1 ponto no centro, quantos triângulos distintos podem ser formados com esses pontos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "35 triângulos",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 35 triângulos representa o número total de combinações de 3 pontos a partir de 7, sem levar em conta a condição de colinearidade. Para que 3 pontos formem um triângulo, eles não podem estar alinhados. No problema, existem 3 conjuntos de 3 pontos que são colineares (os vértices opostos do hexágono e o centro), e estes não formam triângulos."
+        },
+        {
+          "id": "b",
+          "text": "28 triângulos",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 28 triângulos não corresponde ao cálculo correto para esta configuração de pontos. Este número pode surgir de C(8,3) - 8, por exemplo, mas não se aplica ao problema dado."
+        },
+        {
+          "id": "c",
+          "text": "21 triângulos",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 21 triângulos é o resultado de C(7,2) ou C(7,3) menos um número maior de casos colineares do que o real. Para formar um triângulo, são necessários 3 pontos, e a ordem de escolha dos pontos não importa, indicando um cálculo de combinação."
+        },
+        {
+          "id": "d",
+          "text": "32 triângulos",
+          "correct": true,
+          "explanation": "Correta. Para formar um triângulo, são necessários 3 pontos não colineares. Primeiro, calculamos o número total de maneiras de escolher 3 pontos quaisquer dos 7 disponíveis, sem considerar a colinearidade. Isso é uma combinação de 7 elementos tomados 3 a 3: C(7, 3) = 7! / (3! * (7-3)!) = 7! / (3! * 4!) = (7 * 6 * 5) / (3 * 2 * 1) = 35. Em seguida, identificamos os conjuntos de 3 pontos que são colineares, pois esses não formam triângulos. Os 6 vértices de um hexágono regular estão em um círculo, e o 7º ponto é o centro. Em um hexágono regular, as diagonais principais (que ligam vértices opostos) passam pelo centro. Existem 3 dessas diagonais (V1-Centro-V4, V2-Centro-V5, V3-Centro-V6). Cada uma dessas 3 diagonais é composta por 3 pontos colineares. Portanto, devemos subtrair essas 3 combinações que não formam triângulos do total. Assim, o número de triângulos distintos é 35 - 3 = 32."
+        }
+      ],
+      "explanation": "Correta. Para formar um triângulo, são necessários 3 pontos não colineares. Primeiro, calculamos o número total de maneiras de escolher 3 pontos quaisquer dos 7 disponíveis, sem considerar a colinearidade. Isso é uma combinação de 7 elementos tomados 3 a 3: C(7, 3) = 7! / (3! * (7-3)!) = 7! / (3! * 4!) = (7 * 6 * 5) / (3 * 2 * 1) = 35. Em seguida, identificamos os conjuntos de 3 pontos que são colineares, pois esses não formam triângulos. Os 6 vértices de um hexágono regular estão em um círculo, e o 7º ponto é o centro. Em um hexágono regular, as diagonais principais (que ligam vértices opostos) passam pelo centro. Existem 3 dessas diagonais (V1-Centro-V4, V2-Centro-V5, V3-Centro-V6). Cada uma dessas 3 diagonais é composta por 3 pontos colineares. Portanto, devemos subtrair essas 3 combinações que não formam triângulos do total. Assim, o número de triângulos distintos é 35 - 3 = 32.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma competição com 5 pessoas, deseja-se determinar quantas são as possibilidades de classificação para os 3 primeiros colocados. Qual conceito de análise combinatória deve ser aplicado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Permutação simples, pois todos os elementos são utilizados na ordenação",
+          "correct": false,
+          "explanation": "Incorreta. Permutação simples é utilizada quando todos os elementos disponíveis são usados na ordenação. Neste caso, há 5 pessoas, mas apenas 3 são selecionadas para as posições (1º, 2º e 3º lugar), então nem todos os elementos são utilizados."
+        },
+        {
+          "id": "b",
+          "text": "Arranjo simples, pois a ordem importa e utiliza-se apenas parte dos elementos disponíveis",
+          "correct": true,
+          "explanation": "Correta. O conceito de arranjo simples deve ser aplicado. Em uma competição, a ordem de chegada (1º, 2º, 3º lugar) é crucial e faz diferença (ser o primeiro é diferente de ser o segundo). Além disso, não todas as 5 pessoas são classificadas, apenas as 3 primeiras. Quando a ordem importa e apenas uma parte dos elementos disponíveis é utilizada, trata-se de um arranjo simples. O cálculo seria A(5, 3) = 5! / (5-3)! = 5! / 2! = (5 * 4 * 3 * 2 * 1) / (2 * 1) = 60 possibilidades."
+        },
+        {
+          "id": "c",
+          "text": "Permutação circular, pois os elementos podem ocupar diferentes posições relativas",
+          "correct": false,
+          "explanation": "Incorreta. Permutação circular é aplicada quando os elementos são dispostos em um círculo e as configurações são consideradas as mesmas se uma pode ser obtida da outra por rotação. A classificação em uma competição é uma disposição linear de posições (1º, 2º, 3º), não uma disposição circular."
+        },
+        {
+          "id": "d",
+          "text": "Combinação simples, pois a ordem não importa na formação dos grupos de classificados",
+          "correct": false,
+          "explanation": "Incorreta. Combinação simples é utilizada quando a ordem dos elementos dentro de um grupo não importa. No contexto de uma competição, a ordem de classificação é fundamental; o 1º lugar é diferente do 2º, e assim por diante. Se a ordem não importasse, estaríamos apenas selecionando um grupo de 3 pessoas, sem distinção de posição."
+        }
+      ],
+      "explanation": "Correta. O conceito de arranjo simples deve ser aplicado. Em uma competição, a ordem de chegada (1º, 2º, 3º lugar) é crucial e faz diferença (ser o primeiro é diferente de ser o segundo). Além disso, não todas as 5 pessoas são classificadas, apenas as 3 primeiras. Quando a ordem importa e apenas uma parte dos elementos disponíveis é utilizada, trata-se de um arranjo simples. O cálculo seria A(5, 3) = 5! / (5-3)! = 5! / 2! = (5 * 4 * 3 * 2 * 1) / (2 * 1) = 60 possibilidades.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Na formação de uma equipe de 3 policiais escolhidos dentre 5 disponíveis para uma operação, qual é o número de equipes distintas que podem ser formadas, considerando que a função de cada policial na equipe é a mesma?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "10 equipes distintas",
+          "correct": true,
+          "explanation": "Correta. Para determinar o número de equipes distintas quando a ordem dos indivíduos não importa (pois a função de cada policial na equipe é a mesma), utiliza-se o cálculo de combinação. Temos 5 policiais disponíveis e queremos formar equipes de 3. A fórmula da combinação é C(n, k) = n! / (k! * (n-k)!), onde 'n' é o número total de elementos e 'k' é o número de elementos a serem escolhidos. Aplicando os valores, C(5, 3) = 5! / (3! * (5-3)!) = 5! / (3! * 2!) = (5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)) = (5 * 4) / 2 = 20 / 2 = 10. Portanto, é possível formar 10 equipes distintas."
+        },
+        {
+          "id": "b",
+          "text": "15 equipes distintas",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 15 não é obtido por meio da aplicação correta dos princípios de contagem para este cenário. Se a ordem de seleção dos policiais não importa, como indicado pela natureza da equipe, a operação matemática adequada é a combinação, que resulta em 10 equipes, não 15."
+        },
+        {
+          "id": "c",
+          "text": "60 equipes distintas",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 60 seria o resultado se a ordem dos policiais na equipe fosse relevante, ou seja, se cada posição na equipe tivesse uma função distinta (por exemplo, 1º comandante, 2º navegador, 3º atirador). Nesse caso, seria um problema de arranjo (A(5, 3) = 5! / (5-3)! = 5 * 4 * 3 = 60). Contudo, a questão especifica que 'a função de cada policial na equipe é a mesma', o que elimina a importância da ordem e exige o uso de combinação."
+        },
+        {
+          "id": "d",
+          "text": "20 equipes distintas",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 20 não corresponde ao número de combinações possíveis para formar uma equipe de 3 policiais a partir de 5, onde a ordem não é relevante. Um cálculo incorreto, como (5 * 4), ou a combinação de 5 elementos tomados 2 a 2 (C(5,2)), que também resultaria em 10, não leva a 20 neste contexto."
+        }
+      ],
+      "explanation": "Correta. Para determinar o número de equipes distintas quando a ordem dos indivíduos não importa (pois a função de cada policial na equipe é a mesma), utiliza-se o cálculo de combinação. Temos 5 policiais disponíveis e queremos formar equipes de 3. A fórmula da combinação é C(n, k) = n! / (k! * (n-k)!), onde 'n' é o número total de elementos e 'k' é o número de elementos a serem escolhidos. Aplicando os valores, C(5, 3) = 5! / (3! * (5-3)!) = 5! / (3! * 2!) = (5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)) = (5 * 4) / 2 = 20 / 2 = 10. Portanto, é possível formar 10 equipes distintas.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "11_196165_Análise Combinatória XI.pdf",
+  "coletado_em": "2026-09-23T21:02:57"
+}

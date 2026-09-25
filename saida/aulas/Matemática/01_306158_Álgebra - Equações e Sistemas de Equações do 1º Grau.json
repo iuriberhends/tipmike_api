@@ -1,0 +1,496 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Álgebra: Expressões algébricas. Polinômios: operações e propriedades. Equações polinomiais e inequações relacionadas."
+  },
+  "ordem": 1,
+  "ordem_no_curso": "62.00",
+  "titulo": "Álgebra - Equações e Sistemas de Equações do 1º Grau",
+  "codigo_aula": "306158",
+  "video_id": "cPtsuXPmgDI=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:32",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/cPtsuXPmgDI%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408709%2C408710%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Equações e Sistemas de Equações do 1º Grau\n\n## Introdução e Importância do Tema\nTudo bem com vocês? Vamos dar continuidade à nossa matriz de Matemática. É um assunto muito importante: Álgebra, correto? Às vezes aparece só “Álgebra”. Às vezes aparece “Equações do Primeiro Grau”. Às vezes aparece “Sistemas de Equações do Primeiro Grau”. Então, vamos colocar tudo juntinho, porque, independente do edital, está indicado aqui qual assunto você deve aprender bem comigo.\n\nVou começar aqui, queridos. Olha só que legal: sistemas de equações do primeiro grau. Para quê? Bacana: os sistemas de equações são ferramentas muito comuns na resolução de problemas em várias áreas, tanto na Matemática quanto na Engenharia e assim por diante. E aparecem sempre em concursos e exames. Isso é comum demais.\n\nSistemas geralmente são resolvidos com certa facilidade, o que causa muitas vezes desatenção por parte do aluno. Ele não tem dificuldade para encontrar a solução do sistema, mas esquece que a dificuldade está na armação e, principalmente, na solução final da questão. Sistemas são ferramentas que, mesmo funcionando, necessitam de alguém que saiba construir com elas. Ou seja, o sistema de equações muitas vezes tem duas equações, beleza? Duas. E com elas, duas situações que você não consegue identificar de imediato sem fazer uma relação entre duas grandezas.\n\nMuitas vezes é organização: quantidades; e, muitas vezes, também valores. Por exemplo, quantidade e valor. Digamos que eu tenho canetas azuis e canetas pretas, ou carros e motos. A situação diz: “teve tantos veículos” — então você tem a quantidade. Depois, a questão fala um valor relacionado a essa quantidade — por exemplo, pneus. Carro tem quatro pneus. Moto tem dois. A montagem do raciocínio é essa: eu tenho tantos carros e tantas motos e tantos pneus no total. Quantos carros? Quantas motos?\n\nVocê sabe que à quantidade de carros você pode atribuir um valor de pneus, porque cada carro possui quatro pneus. E à quantidade de motos, dois pneus. Então, muitas vezes a questão me traz apenas a quantidade e esse valor associado à quantidade. E pergunta: “Quantas motos tem ali?” ou “Quantos carros tem ali?” e assim por diante.\n\n## Exemplo Motivador: Sistema com três tipos de vinho\nVamos a um exemplo que caiu numa prova de raciocínio lógico. Eram três tipos de vinhos: ouro, prata e prêmio. O valor do vinho prata era metade do ouro, e o valor do vinho prêmio era o dobro do vinho ouro. No total, foram compradas mil garrafas, e a arrecadação foi 350 mil. Qual o valor de cada vinho?\n\nPerceba: ele me deu a quantidade de garrafas (mil) e me deu o valor arrecadado (350 mil). Aí começou a fazer perguntas. Quando você tem essas situações, o grande lance é perceber quantidade e valor associado à quantidade. Surge um sistema de equações — e, às vezes, mais de duas equações — para relacionar essas grandezas. Isso é muito comum nas provas.\n\n## Métodos de Resolução de Sistemas: Adição e Substituição\nPara resolver sistemas de equações do primeiro grau, nós temos dois métodos:\n- Método da adição (ou soma)\n- Método da substituição\n\nVai ficar a seu critério. Vou concretizar dois exemplos bem simples para começarmos: primeiro um método, depois o outro. O grande lance não é só responder o sistema — isso é fácil, nós temos métodos —, mas saber montar o sistema a partir do enunciado.\n\n## Método da Adição (Soma): Exemplo 1\nConsidere o sistema:\n- 2x + y = 6\n- 2x + 3y = 2\n\nNo método da adição, a ideia é deixar coeficientes opostos para um dos termos, somar membro a membro e eliminar uma incógnita. Aqui, se somarmos como está, 2x não cancela. Então vamos criar sinais opostos para um dos termos. Vou multiplicar a segunda equação por -1:\n\n- Primeira: 2x + y = 6\n- Segunda multiplicada por -1: -2x - 3y = -2\n\nSomando:\n- (2x + y) + (-2x - 3y) = 6 + (-2)\n- 0x + (-2y) = 4\n- -2y = 4 → y = -2\n\nCom y encontrado, substituímos em uma das equações (vou na primeira, que é mais simples):\n- 2x + y = 6\n- 2x + (-2) = 6\n- 2x = 8 → x = 4\n\nConclusão: x = 4, y = -2.\n\nAgora, e se eu quisesse cancelar o y desde o início, em vez do x? Poderia também. Por exemplo, multiplicando a primeira equação por -3:\n- Primeira multiplicada por -3: -6x - 3y = -18\n- Segunda: 2x + 3y = 2\n\nSomando:\n- (-6x + 2x) + (-3y + 3y) = -18 + 2\n- -4x + 0y = -16 → -4x = -16 → x = 4\nDepois, substitui e encontra y = -2 do mesmo jeito. O método é flexível: você escolhe o termo a cancelar.\n\n## Método da Substituição: Exemplo 1 (mesmo sistema)\nVamos usar o mesmo sistema:\n- 2x + y = 6\n- 2x + 3y = 2\n\nIsolamos uma das incógnitas na primeira equação. Vou isolar y:\n- y = 6 - 2x\n\nAgora substituímos na segunda:\n- 2x + 3(6 - 2x) = 2\n- 2x + 18 - 6x = 2\n- -4x + 18 = 2\n- -4x = -16 → x = 4\n\nCom x = 4:\n- y = 6 - 2(4) = 6 - 8 = -2\n\nMesma solução, por outro caminho. Tranquilo.\n\n## Interpretação: montar o sistema é o grande lance\nO primeiro passo é saber resolver o sistema (adição ou substituição). Agora, o grande lance é a interpretação: montar as equações a partir do texto.\n\nUm tipo de questão clássico em prova: mistura de soluções (concentração). Por exemplo: tenho álcool com 99 graus e álcool com 60 graus, e quero obter 70 graus. Quanto devo misturar de cada um para obter uma certa quantidade final? Isso é sistema de equações. Esse tipo de modelagem aparece bastante.\n\nQuero que você tenha a sabedoria de resolver a parte mecânica (simples) e, principalmente, montar o sistema a partir de situações reais. Vamos começar com situações mais simples para treinar a interpretação, depois avançamos para questões mais fortes (2021, 2022, questões bem legais de concurso).\n\n## Exemplo Clássico: Galinhas e Porcos\nConsidere um grupo de galinhas e porcos. Existem 60 cabeças e 150 pés. O número de galinhas é o triplo de porcos? Vamos montar.\n\nEu não sei quantas galinhas (g) e quantos porcos (p) eu tenho. Cabeças: cada animal tem 1. Então:\n- g + p = 60\n\nPés: galinha tem 2, porco tem 4:\n- 2g + 4p = 150\n\nSistema montado. Agora resolvemos por adição. Vou multiplicar a primeira por -2 para cancelar o g:\n- -2g - 2p = -120\n- 2g + 4p = 150\n\nSomando:\n- 0g + 2p = 30 → p = 15\n\nCom p = 15:\n- g + 15 = 60 → g = 45\n\nO item afirma que o número de galinhas é o triplo de porcos. 45 é o triplo de 15. Certíssimo.\n\n## Exemplo Rápido: Soma e Diferença de Dois Números\nA soma de dois números é 60, e a diferença é 6. Esses números são ambos ímpares? Vamos chamar de x e y:\n\n- x + y = 60\n- x - y = 6\n\nPelo método da soma:\n- Somando as equações: 2x = 66 → x = 33\n- Substituindo: y = 60 - 33 = 27\n\nAmbos são ímpares: 33 e 27. Correto.\n\n## Encerramento parcial\nEntão, primeiro passo: dominar os métodos (adição e substituição). Segundo e mais importante: treinar a interpretação para montar o sistema. Começamos com exemplos simples para ajustar o raciocínio e, na sequência, partimos para aplicações mais legais de prova. Volto já com mais questões interessantes — não sai daí, meu querido.",
+  "transcricao_meta": {
+    "title": "Equações e Sistemas de Equações do 1º Grau",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 22358,
+    "createdAt": "2025-12-12T18:00:44.111Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: sistemas e equações do 1º grau, montagem de modelos a partir de enunciados e resolução por dois métodos clássicos: **método da adição (eliminação)** e **método da substituição**.  \nPrincipais pontos:  \n- A) Montagem correta das equações a partir de “totais” e “valores ponderados”.  \n- B) Escolha rápida do método adequado (adição vs substituição).  \n- C) Execução sem erros algébricos (distributiva, sinais, multiplicar “todo mundo”).\n\n## 1. Base / Conceitos Fundamentais\n- **Equação do 1º grau**: relação do tipo ax + by = c (linear).  \n- **Sistema de equações do 1º grau**: conjunto de 2 (ou mais) equações lineares com 2 (ou mais) incógnitas (x, y, z) que devem ser satisfeitas simultaneamente.\n- **Nomenclatura**:\n  - **Termo**: parcela como 2x, 3y, 150.\n  - **Primeiro membro**: lado antes do “=”.\n  - **Segundo membro**: lado depois do “=”.\n- **Regra de equivalência**: multiplicar uma equação por um número preserva soluções se multiplicar todos os termos de ambos os membros.\n\n## 2. Como Funciona / Distinções\n- **Método da adição (eliminação)**:\n  - Torna os coeficientes de uma variável iguais em módulo e com sinais opostos.\n  - Soma membro a membro para cancelar essa variável e reduzir a uma incógnita.\n- **Método da substituição**:\n  - Isola uma variável em uma equação e substitui na outra, obtendo equação em uma única incógnita.\n\nTabela de escolha rápida:\n- Coeficientes já “opostos” (ex.: y e −y) → Use **adição** (mais direto).\n- Uma variável com coeficiente 1 ou −1 → Use **substituição** (menos frações).\n- Coeficientes ruins/desalinhados → **adição** após escalar (evita frações cedo).\n\n> Dica de Prova: Em problemas de “total de itens” + “total ponderado” (pneus, pés, valores, concentração), a 1ª equação é a soma das quantidades; a 2ª é a soma ponderada.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo — Método da adição:\n  1) Escolha qual variável eliminar (x ou y).\n  2) Multiplique uma/ambas as equações para obter coeficientes opostos nessa variável.\n  3) Some as equações para cancelar a variável escolhida.\n  4) Resolva a equação de 1 incógnita obtida.\n  5) Substitua o valor encontrado em uma das equações originais para obter a outra incógnita.\n\n- Passo a passo — Método da substituição:\n  1) Escolha a equação mais simples.\n  2) Isole uma variável (ex.: y = 6 − 2x).\n  3) Substitua na outra equação.\n  4) Resolva a equação resultante (1 incógnita).\n  5) Retorne e calcule a outra variável.\n\n- Montagem padrão de modelagem (tradução do enunciado):\n  - Defina incógnitas com clareza.\n  - Escreva:\n    - Equação 1 (quantidades): x + y = total.\n    - Equação 2 (ponderada): peso1·x + peso2·y = total ponderado (pneus, pés, valor, teor).\n  - Resolva por adição ou substituição conforme o caso.\n\n> Dica de Prova: Prefira isolar a variável com coeficiente 1 (ou −1) para evitar frações na substituição.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo-base (coeficientes explícitos):\n  - 2x + y = 6  \n  - 2x + 3y = 2\n  - Eliminação de y: multiplique a 1ª por −3 → −6x − 3y = −18.  \n    Some com a 2ª: (−6x + 2x) + (−3y + 3y) = −18 + 2 → −4x = −16 → x = 4.  \n    Substitua: 2·4 + y = 6 → y = −2.\n\n- Galinhas e porcos (interpretação clássica):\n  - galinhas + porcos = 60\n  - 2·(galinhas) + 4·(porcos) = 150\n  - Multiplique a 1ª por −2: −2g − 2p = −120  \n    Some: (−2+2)g + (−2+4)p = −120 + 150 → 2p = 30 → p = 15  \n    Substitua: g + 15 = 60 → g = 45.\n\n- Soma e diferença:\n  - x + y = 60\n  - x − y = 6\n  - Some: 2x = 66 → x = 33 → y = 27.\n  - Macete direto: x = (S + D)/2 = (60 + 6)/2 = 33; y = (S − D)/2 = 27.\n\n- Misturas (concentração):\n  - x + y = total\n  - (c1)·x + (c2)·y = (calvo)·(total)\n  - Atenção às unidades: use todos os teores na mesma escala (ex.: porcentagem).\n\n- Vinhos ouro, prata, prêmio (relações de preço):\n  - Relações: preço(prata) = metade do ouro; preço(prêmio) = dobro do ouro.\n  - Se total de garrafas = 1000 e arrecadação = 350.000:\n    - Defina variáveis para quantidades OU valores, conforme o enunciado exigir.\n    - Exemplo de montagem por quantidades (qO, qP, qR; pO = x, pP = x/2, pR = 2x):\n      - qO + qP + qR = 1000\n      - x·qO + (x/2)·qP + (2x)·qR = 350000\n      - Necessita de mais uma relação sobre quantidades para fechar o sistema; se o enunciado trouxer (ex.: proporções de garrafas), resolva por adição/substituição.  \n    - Se o problema der as quantidades e pedir valores, substitua diretamente as relações pP = x/2 e pR = 2x na equação da arrecadação.\n\n> Dica de Prova: Em sistemas com relações “metade/dobro”, nomeie 1 preço base (x) e escreva os demais como múltiplos de x. Isso simplifica.\n\n## 5. Pegadinhas e Erros Comuns\n- Esquecer de multiplicar “todo mundo” ao escalar uma equação (multiplique termos do primeiro e do segundo membro).\n- Somar sem antes criar coeficientes opostos → não cancela variável nenhuma e perde tempo.\n- Trocar sinais ao “passar” termo para o outro lado.\n- Deixar de fazer a substituição final e não encontrar a 2ª incógnita.\n- Interpretar mal o enunciado:\n  - “Cabeças” é total de animais (quantidade), “pés” entram ponderando 2 e 4.\n  - Em misturas, manter todas as concentrações na mesma unidade.\n- Frações desnecessárias ao escolher mal a variável para isolar. Prefira coeficiente 1.\n- Em problemas de valor/quantidade (vinhos, veículos), confundir “preço” com “quantidade”. Cada frase vira uma equação: uma de soma simples e outra ponderada.\n\n> Dica de Prova: Para x + y = S e x − y = D, memorize: x = (S + D)/2 e y = (S − D)/2. Cai direto e economiza tempo.",
+  "resumo_bolso": "# Álgebra - Equações e Sistemas de Equações do 1º Grau\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Equação do 1º grau**: relação do tipo **ax + by = c** (linear), sem potências > 1.\n* **Sistema de equações do 1º grau**: conjunto de **2 (ou mais) equações lineares** com **2 (ou mais) incógnitas** (x, y, z) que devem ser satisfeitas **simultaneamente**.\n* **Termo**: cada parcela (ex.: **2x**, **3y**, **150**).\n* **1º membro**: lado **antes** do “=”.  \n  **2º membro**: lado **depois** do “=”.\n* **Regra de equivalência**: multiplicar uma equação por um número **preserva as soluções** se multiplicar **todos os termos de ambos os membros**.\n* **Método da adição (eliminação)**: torna os **coeficientes de uma variável iguais em módulo e com sinais opostos**, soma membro a membro para **cancelar essa variável** e obter equação com **1 incógnita**.\n* **Método da substituição**: **isola** uma variável em uma equação e **substitui na outra**, obtendo equação com **1 incógnita**.\n* **Modelagem “total + ponderado”**:  \n  - Eq. 1 (quantidades): **x + y = total**.  \n  - Eq. 2 (ponderada): **peso₁·x + peso₂·y = total ponderado** (pneus, pés, valor, teor etc.).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Método da Adição vs Método da Substituição\n\n| Aspecto | Adição (Eliminação) | Substituição |\n|--------|----------------------|--------------|\n| **Ideia central** | Tornar coeficientes de uma variável iguais em módulo e com sinais opostos e somar para cancelar essa variável | Isolar 1 variável em uma equação e substituir na outra |\n| **Quando é melhor** | Coeficientes já opostos ou fáceis de alinhar; coeficientes ruins/desalinhados após escalar | Alguma variável com coeficiente **1 ou −1** (evita frações) |\n| **Frações** | Escalar antes pode evitar frações cedo | Prefira isolar coeficiente 1 ou −1 para evitar frações |\n| **Passos típicos** | Escolher variável → escalar → somar → resolver 1 incógnita → substituir de volta | Escolher equação simples → isolar → substituir → resolver → voltar para achar a outra incógnita |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra de equivalência ao escalar equações**\n\n* **Aplicação**: ao preparar coeficientes para o método da adição.  \n* **Regra**: multiplicar uma equação por um número **preserva o conjunto de soluções** se multiplicar **todos os termos** do 1º e do 2º membros.  \n* **Exemplo**: 2x + y = 6 → multiplicar por −3 → −6x − 3y = −18.\n\n---\n\n**2. Escolha rápida do método**\n\n* **Aplicação**: decidir adição vs substituição em prova.  \n* **Regra** (tabela do resumo):  \n  - Coeficientes já opostos (y e −y) → **adição** (mais direto).  \n  - Coeficiente 1 ou −1 em alguma variável → **substituição** (menos frações).  \n  - Coeficientes ruins/desalinhados → **adição** após escalar (evita frações cedo).  \n* **Exemplo**:  \n  - y = 6 − 2x → substituição direta.  \n  - 2x + y = 6 e 2x + 3y = 2 → adição após escalar a 1ª por −3.\n\n---\n\n**3. Modelagem “total + ponderado”**\n\n* **Aplicação**: cabeças/pés, pneus, misturas, valores.  \n* **Regra**:  \n  - Eq. 1 (quantidades): **x + y = total**.  \n  - Eq. 2 (ponderada): **peso₁·x + peso₂·y = total ponderado** (pneus, pés, valor, teor).  \n* **Exemplo (galinhas e porcos)**:  \n  - g + p = 60  \n  - 2g + 4p = 150.\n\n---\n\n**4. Soma e diferença**\n\n* **Aplicação**: sistemas do tipo x + y = S e x − y = D.  \n* **Regra** (macete do resumo):  \n  - **x = (S + D)/2**  \n  - **y = (S − D)/2**  \n* **Exemplo**: S = 60, D = 6 → x = (60+6)/2 = 33; y = (60−6)/2 = 27.\n\n---\n\n**5. Misturas (concentração)**\n\n* **Aplicação**: problemas de mistura de soluções, teores, porcentagens.  \n* **Regra**:  \n  - x + y = total  \n  - c₁·x + c₂·y = c_final·(total)  \n  - **Todas as concentrações na mesma unidade** (todas em % ou todas em fração).  \n\n---\n\n**6. Relações “metade/dobro” em preços**\n\n* **Aplicação**: vinhos ouro/prata/prêmio, produtos com preços proporcionais.  \n* **Regra**:  \n  - Escolha 1 preço base: **pO = x**.  \n  - “Metade do ouro” → **pP = x/2**.  \n  - “Dobro do ouro” → **pR = 2x**.  \n  - Use essas relações na equação de arrecadação (preço×quantidade).  \n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Esquecer de **multiplicar todos os termos** (1º e 2º membros) ao escalar uma equação.\n* Somar equações **sem antes criar coeficientes opostos**, não cancelando variável nenhuma.\n* Trocar sinais ao “passar” termo para o outro lado da igualdade.\n* Deixar de fazer a **substituição final** e não encontrar a 2ª incógnita.\n* Interpretar mal o enunciado em problemas de valor/quantidade (cabeças/pés, misturas, vinhos):  \n  - “Cabeças” = total de animais (quantidade); “pés” entram ponderando 2 e 4.  \n  - Em misturas, manter todas as concentrações na **mesma unidade**.  \n  - Em valor/quantidade, separar equação de **quantidades** e equação **ponderada** (preço×quantidade).\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar:  \n  - **Equação do 1º grau** (ax + by = c).  \n  - **Sistema de 1º grau** (2+ equações, 2+ incógnitas, satisfeitas simultaneamente).\n* Sei montar rapidamente:  \n  - Eq. de **quantidades**: x + y = total.  \n  - Eq. **ponderada**: peso₁·x + peso₂·y = total ponderado (pneus, pés, valor, teor).\n* Sei quando usar **adição** (coeficientes opostos ou após escalar) e quando usar **substituição** (coeficiente 1 ou −1).\n* Lembro de **x = (S + D)/2** e **y = (S − D)/2** para sistemas de soma/diferença.\n* Ao escalar equações, confiro se **multipliquei todos os termos** dos dois membros e se **não errei sinais**.\n* Em misturas e problemas de valores:  \n  - uso **mesma unidade de concentração**;  \n  - verifico se a frase fala de **quantidade** ou de **preço/valor** antes de montar cada equação.",
+  "mapa_mental": "# 🧮 Álgebra – Equações e Sistemas do 1º Grau\n## 🎯 Conceitos Fundamentais\n### 💡 Equação do 1º grau\n- Forma ax + b = c\n- Equação linear\n- Incógnita única\n- Grau máximo 1\n### 💡 Sistema do 1º grau\n- Duas ou mais equações\n- Duas ou mais incógnitas\n- Solução simultânea\n- Sistema linear\n### 📖 Elementos da equação\n- Termo algébrico\n- Primeiro membro\n- Segundo membro\n- Coeficientes\n- Termo independente\n### 📜 Transformações equivalentes\n- Somar mesma expressão\n- Subtrair mesma expressão\n- Multiplicar por número\n- Dividir por número\n- Preservar soluções\n\n## 🧩 Modelagem de Problemas\n### 📝 Definição de incógnitas\n- Nomear variáveis\n- Unidades coerentes\n- Sentido do enunciado\n- Quantidade x valor\n### 🧮 Equação de quantidades\n- Soma simples\n- Total de itens\n- Cabeças animais\n- Volume total\n- Número de peças\n### 🧮 Equação ponderada\n- Pesos numéricos\n- Pés animais\n- Preço unitário\n- Teor concentração\n- Soma ponderada\n### 🎯 Padrão clássico concursos\n- Total + ponderado\n- x + y = total\n- Peso1·x + Peso2·y\n- Misturas e teores\n- Itens e valores\n\n## 🔢 Métodos de Resolução\n### ➕ Método da adição\n- Coeficientes opostos\n- Somar equações\n- Eliminar variável\n- Obter 1 incógnita\n- Resolver sistema\n### 🔁 Método da substituição\n- Isolar variável\n- Expressar em função\n- Substituir na outra\n- Equação 1 incógnita\n- Retornar e concluir\n### 📋 Escolha do método\n- Coeficientes opostos\n- Preferir adição\n- Coeficiente 1 ou −1\n- Preferir substituição\n- Evitar frações cedo\n### 🧮 Fórmulas soma/diferença\n- Sistema especial\n- x + y = S\n- x − y = D\n- x = (S + D)/2\n- y = (S − D)/2\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Manipulação algébrica\n- Esquecer distributiva\n- Não multiplicar todos\n- Erro de sinais\n- Somar sem opostos\n- Pular substituição final\n### 🚨 Interpretação do enunciado\n- Cabeças x pés\n- Quantidade x preço\n- Soma x ponderação\n- Relações metade/dobro\n- Unidades diferentes\n### ⚠️ Escolha inadequada\n- Variável ruim p/ isolar\n- Geração de frações\n- Método mais longo\n- Escala desnecessária\n- Perda de tempo",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Modelagem de Problemas",
+      "description": "Modelagem de Problemas — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza um sistema de equações do primeiro grau?",
+          "back": "Ferramentas para resolução de problemas que relacionam **duas grandezas e duas incógnitas**.",
+          "hint": "Refere-se ao número de variáveis envolvidas",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "sistemas-equacoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como definir as incógnitas ao modelar um problema com quantidades desconhecidas?",
+          "back": "Relacionando as **duas grandezas** desconhecidas do problema.",
+          "hint": "Pense no que cada letra representa no problema",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "modelagem"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Em problemas de contagem, o que representa o coeficiente de uma quantidade?",
+          "back": "Um **valor associado** à quantidade.",
+          "hint": "É o fator multiplicativo da variável",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "terminologia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Se x é o número de galinhas e y o de porcos, qual equação representa 60 cabeças?",
+          "back": "**x + y = 60**, onde x é o número de galinhas e y o de porcos.",
+          "hint": "Considere a soma total das unidades",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "problemas-aplicados"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Método da Adição",
+      "description": "Método da Adição — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é o objetivo central do método da adição em um sistema?",
+          "back": "Deixar os coeficientes de uma incógnita **opostos** para cancelá-la ao somar as equações.",
+          "hint": "O objetivo é reduzir o número de variáveis",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "metodo-adicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como ajustar os coeficientes para possibilitar o cancelamento de uma incógnita?",
+          "back": "**Multiplicando** por um número todos os termos do primeiro e do segundo membros de pelo menos uma equação.",
+          "hint": "Ação necessária para criar termos opostos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "metodo-adicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "O que resulta da soma membro a membro após o cancelamento de uma incógnita?",
+          "back": "Uma equação com uma **única incógnita**.",
+          "hint": "O resultado simplifica a estrutura da equação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "metodo-adicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Depois de encontrar uma incógnita pela adição, como obter a outra?",
+          "back": "Substituindo o valor encontrado em **uma das equações** do sistema.",
+          "hint": "Processo de retroalimentação do sistema",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "metodo-adicao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Método da Substituição",
+      "description": "Método da Substituição — 5 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é a primeira operação do método da substituição?",
+          "back": "**Isolar uma incógnita** em uma das equações.",
+          "hint": "Deixar uma variável sozinha em um lado",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "metodo-substituicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Após isolar uma incógnita, onde deve ser inserida a expressão obtida?",
+          "back": "Na **outra equação** do sistema.",
+          "hint": "Ação de troca entre equações",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "metodo-substituicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual propriedade algébrica é usada ao multiplicar um número por uma expressão entre parênteses?",
+          "back": "Propriedade **distributiva**.",
+          "hint": "Relaciona multiplicação e adição",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "propriedades-algebricas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Quais termos podem ser somados ou subtraídos diretamente em uma equação?",
+          "back": "Termos **semelhantes**.",
+          "hint": "Mesma parte literal",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "operacoes-algebricas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual é a diferença operacional entre os métodos da adição e da substituição?",
+          "back": "A adição cancela uma incógnita somando os coeficientes opostos, enquanto a substituição **isola uma incógnita** para inseri-la na outra equação.",
+          "hint": "Compare a estratégia de eliminação",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "comparacao-metodos"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No método da adição para resolução de sistemas de equações do primeiro grau, qual é o procedimento fundamental para eliminar uma das incógnitas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Isolar uma das incógnitas em qualquer equação e substituir seu valor na outra equação, reduzindo o sistema a uma equação com uma única variável",
+          "correct": false,
+          "explanation": "Incorreta. A descrição de \"isolar uma das incógnitas em qualquer equação e substituir seu valor na outra equação\" corresponde ao método da substituição, que é um método distinto do método da adição para resolver sistemas de equações. Embora ambos sejam válidos, eles empregam abordagens diferentes na etapa inicial de eliminação de uma variável."
+        },
+        {
+          "id": "b",
+          "text": "Dividir todos os termos da primeira equação pelos coeficientes da segunda equação, igualando os valores das incógnitas correspondentes",
+          "correct": false,
+          "explanation": "Incorreta. Dividir os termos de uma equação pelos coeficientes da outra não é um procedimento padrão nem eficaz para resolver sistemas de equações do primeiro grau. Tal operação geralmente resultaria em equações mais complexas ou não levaria diretamente à eliminação de uma incógnita, que é o objetivo do método da adição."
+        },
+        {
+          "id": "c",
+          "text": "Elevar ao quadrado ambos os membros das equações para transformar os coeficientes negativos em positivos e facilitar a soma direta",
+          "correct": false,
+          "explanation": "Incorreta. Elevar ao quadrado os membros de equações lineares transformaria-as em equações de segundo grau ou de grau superior, complicando drasticamente a resolução e alterando a natureza do sistema original. O método da adição é projetado para equações lineares e não envolve elevação ao quadrado como parte de seu procedimento fundamental."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar os termos de uma ou ambas as equações de modo que os coeficientes de uma das incógnitas fiquem com valores absolutos iguais e sinais opostos, permitindo o cancelamento ao somar as equações",
+          "correct": true,
+          "explanation": "Correta. O método da adição, também conhecido como método da eliminação, busca criar uma situação em que, ao somar as duas equações de um sistema, uma das incógnitas seja cancelada. Isso é alcançado multiplicando-se uma ou ambas as equações por constantes adequadas, de forma que os coeficientes de uma das variáveis se tornem opostos (por exemplo, 3x e -3x). Dessa maneira, a soma dessas variáveis resulta em zero, eliminando-a do sistema e permitindo resolver a equação resultante para a incógnita remanescente."
+        }
+      ],
+      "explanation": "Correta. O método da adição, também conhecido como método da eliminação, busca criar uma situação em que, ao somar as duas equações de um sistema, uma das incógnitas seja cancelada. Isso é alcançado multiplicando-se uma ou ambas as equações por constantes adequadas, de forma que os coeficientes de uma das variáveis se tornem opostos (por exemplo, 3x e -3x). Dessa maneira, a soma dessas variáveis resulta em zero, eliminando-a do sistema e permitindo resolver a equação resultante para a incógnita remanescente.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em um sistema de equações do primeiro grau com duas incógnitas, após encontrar o valor de uma das variáveis utilizando qualquer método de resolução, qual é o procedimento correto para determinar o valor da segunda variável?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Substituir o valor encontrado em qualquer uma das equações originais do sistema e resolver a equação resultante para encontrar a segunda incógnita",
+          "correct": true,
+          "explanation": "Correta. Uma vez que o valor de uma das incógnitas é determinado, a maneira mais eficiente e direta de encontrar o valor da segunda incógnita é substituí-lo em qualquer uma das equações originais do sistema. Como as equações originais representam as relações válidas entre as variáveis, essa substituição transforma a equação em uma expressão com apenas uma incógnita, que pode ser facilmente resolvida. Por exemplo, se em um sistema com 'x' e 'y' o valor de 'x' foi encontrado, basta inseri-lo em 'x + y = 10' para descobrir 'y'."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar novamente o método da adição nas equações originais, mas invertendo a ordem dos termos para isolar a segunda variável",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja teoricamente possível aplicar novamente o método da adição para encontrar a segunda variável, isso seria um caminho desnecessariamente longo e complexo. A substituição direta do valor já conhecido em uma das equações originais é um método muito mais simples, rápido e prático. O método da adição é mais adequado para a etapa inicial de eliminação de uma das variáveis."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar o valor encontrado pelo coeficiente da segunda incógnita na equação que apresentar o menor termo independente",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o valor encontrado por um coeficiente de outra incógnita não é um procedimento matematicamente válido para determinar o valor da segunda variável. As relações entre as incógnitas e seus coeficientes são definidas pelas equações do sistema, e a simples multiplicação não reflete essa complexidade. A escolha da equação com o menor termo independente também é irrelevante para a correção do cálculo."
+        },
+        {
+          "id": "d",
+          "text": "Somar os coeficientes de ambas as equações e dividir pelo valor já encontrado, obtendo assim a segunda incógnita",
+          "correct": false,
+          "explanation": "Incorreta. Somar os coeficientes das equações e dividir pelo valor encontrado não é uma operação algébrica que resulte no valor da segunda incógnita. Essa abordagem não tem fundamento nas propriedades dos sistemas de equações e não levaria a uma solução correta. A determinação da segunda variável exige a utilização das relações expressas nas equações do sistema."
+        }
+      ],
+      "explanation": "Correta. Uma vez que o valor de uma das incógnitas é determinado, a maneira mais eficiente e direta de encontrar o valor da segunda incógnita é substituí-lo em qualquer uma das equações originais do sistema. Como as equações originais representam as relações válidas entre as variáveis, essa substituição transforma a equação em uma expressão com apenas uma incógnita, que pode ser facilmente resolvida. Por exemplo, se em um sistema com 'x' e 'y' o valor de 'x' foi encontrado, basta inseri-lo em 'x + y = 10' para descobrir 'y'.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a característica essencial que identifica um problema que pode ser resolvido por meio de um sistema de equações do primeiro grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A necessidade de aplicar fórmulas geométricas para relacionar perímetros e áreas de figuras planas com suas dimensões",
+          "correct": false,
+          "explanation": "Incorreta. Embora sistemas de equações possam ser aplicados na resolução de problemas geométricos (por exemplo, para encontrar dimensões de figuras a partir de informações sobre perímetro e área), a necessidade de usar fórmulas geométricas não é a *característica essencial* que define um problema como resolúvel por sistemas. A essência reside na inter-relação de múltiplas grandezas desconhecidas, independentemente do contexto (geometria, finanças, física, etc.)."
+        },
+        {
+          "id": "b",
+          "text": "A ocorrência de proporções diretas entre grandezas que podem ser resolvidas mediante regra de três composta",
+          "correct": false,
+          "explanation": "Incorreta. A regra de três simples ou composta é utilizada para resolver problemas de proporcionalidade direta ou inversa envolvendo um número limitado de grandezas, onde se busca um valor desconhecido a partir de outros valores conhecidos. Problemas resolvidos por sistemas de equações, por outro lado, envolvem múltiplas incógnitas que se relacionam de forma mais complexa, exigindo a formulação de várias equações simultâneas para encontrar todos os valores desconhecidos."
+        },
+        {
+          "id": "c",
+          "text": "A presença de duas ou mais grandezas desconhecidas relacionadas por situações distintas que envolvem quantidades e valores associados a essas quantidades",
+          "correct": true,
+          "explanation": "Correta. A característica fundamental de um problema que pode ser resolvido por um sistema de equações do primeiro grau é a existência de duas ou mais quantidades desconhecidas (incógnitas) que estão interligadas por múltiplas condições ou relações distintas. Cada uma dessas condições pode ser traduzida em uma equação, e o conjunto dessas equações forma o sistema. Por exemplo, em um problema de 'galinhas e porcos', as incógnitas são o número de galinhas e o número de porcos, e as relações podem ser o total de cabeças e o total de pés."
+        },
+        {
+          "id": "d",
+          "text": "A existência de uma única equação com múltiplas variáveis que podem ser isoladas sequencialmente por operações algébricas simples",
+          "correct": false,
+          "explanation": "Incorreta. Uma única equação com múltiplas variáveis, por si só, geralmente possui infinitas soluções e não constitui um sistema de equações no sentido de ter uma solução única ou um conjunto finito de soluções. Para resolver um problema com múltiplas incógnitas de forma determinada, é necessário ter um número de equações independentes igual ao número de incógnitas, formando um sistema."
+        }
+      ],
+      "explanation": "Correta. A característica fundamental de um problema que pode ser resolvido por um sistema de equações do primeiro grau é a existência de duas ou mais quantidades desconhecidas (incógnitas) que estão interligadas por múltiplas condições ou relações distintas. Cada uma dessas condições pode ser traduzida em uma equação, e o conjunto dessas equações forma o sistema. Por exemplo, em um problema de 'galinhas e porcos', as incógnitas são o número de galinhas e o número de porcos, e as relações podem ser o total de cabeças e o total de pés.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No método da substituição para sistemas de equações, qual é a primeira etapa que deve ser realizada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Igualar os coeficientes das incógnitas em ambas as equações através de multiplicação por constantes apropriadas",
+          "correct": false,
+          "explanation": "Incorreta. Igualar os coeficientes das incógnitas em ambas as equações através de multiplicação por constantes apropriadas é uma etapa preparatória típica do método da adição. O objetivo é criar coeficientes que permitam a eliminação de uma variável quando as equações forem somadas ou subtraídas. No método da substituição, o foco é isolar uma variável para expressá-la em termos da outra."
+        },
+        {
+          "id": "b",
+          "text": "Isolar uma das incógnitas em qualquer uma das equações do sistema, expressando-a em função da outra incógnita",
+          "correct": true,
+          "explanation": "Correta. O método da substituição tem como primeira etapa fundamental isolar uma das incógnitas em uma das equações do sistema. Isso significa reescrever a equação de forma que uma variável seja expressa em função da outra (ou das outras, se houver mais de duas). Por exemplo, em um sistema com 'x' e 'y', isolar 'x' na primeira equação resultaria em 'x = expressão_com_y'. Essa 'expressão_com_y' é então substituída na segunda equação, eliminando 'x' e permitindo resolver para 'y'."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar cruzado os termos das duas equações para eliminar os denominadores existentes",
+          "correct": false,
+          "explanation": "Incorreta. \"Multiplicar cruzado\" é uma técnica comumente usada para resolver equações que envolvem frações ou proporções, com o objetivo de eliminar denominadores. Não é a etapa inicial ou fundamental do método da substituição para sistemas de equações lineares, que se concentra em isolar e substituir variáveis."
+        },
+        {
+          "id": "d",
+          "text": "Somar todas as equações do sistema para obter uma equação resultante com apenas uma incógnita",
+          "correct": false,
+          "explanation": "Incorreta. Somar todas as equações do sistema para obter uma equação resultante com apenas uma incógnita é a principal estratégia do método da adição (ou eliminação), não do método da substituição. No método da adição, o objetivo é criar coeficientes opostos para uma das variáveis antes de somar as equações para que ela seja eliminada."
+        }
+      ],
+      "explanation": "Correta. O método da substituição tem como primeira etapa fundamental isolar uma das incógnitas em uma das equações do sistema. Isso significa reescrever a equação de forma que uma variável seja expressa em função da outra (ou das outras, se houver mais de duas). Por exemplo, em um sistema com 'x' e 'y', isolar 'x' na primeira equação resultaria em 'x = expressão_com_y'. Essa 'expressão_com_y' é então substituída na segunda equação, eliminando 'x' e permitindo resolver para 'y'.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em um problema envolvendo galinhas e porcos, sabe-se que há 60 cabeças e 150 pés no total. Considerando que galinhas possuem 2 pés e porcos possuem 4 pés, qual sistema de equações representa corretamente essa situação, sendo g o número de galinhas e p o número de porcos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "g + 4p = 60 e 2g + p = 150",
+          "correct": false,
+          "explanation": "Incorreta. Assim como na alternativa 'c', as equações não modelam corretamente as características dos animais. A primeira equação, \"g + 4p = 60\", atribui incorretamente 4 \"cabeças\" aos porcos ou distorce a contagem total de cabeças. A segunda equação, \"2g + p = 150\", erra ao atribuir 1 \"pé\" aos porcos, quando deveriam ser 4, ou distorce a contagem total de pés."
+        },
+        {
+          "id": "b",
+          "text": "g + p = 150 e 2g + 4p = 60",
+          "correct": false,
+          "explanation": "Incorreta. As equações estão com os valores trocados em relação ao que representam. A primeira equação, \"g + p = 150\", sugere que o total de cabeças é 150, quando na verdade é 60. A segunda equação, \"2g + 4p = 60\", sugere que o total de pés é 60, quando na verdade é 150. Há uma inversão dos totais nas equações."
+        },
+        {
+          "id": "c",
+          "text": "g + p = 60 e 2g + 4p = 150",
+          "correct": true,
+          "explanation": "Correta. Este sistema de equações representa fielmente a situação descrita. A primeira equação, \"g + p = 60\", representa o total de cabeças: cada galinha (g) e cada porco (p) possuem uma cabeça, somando um total de 60 cabeças. A segunda equação, \"2g + 4p = 150\", representa o total de pés: cada galinha (g) possui 2 pés, resultando em 2g pés, e cada porco (p) possui 4 pés, resultando em 4p pés, somando um total de 150 pés. Este é o modelo padrão para problemas de 'animais e pés'."
+        },
+        {
+          "id": "d",
+          "text": "2g + p = 60 e g + 4p = 150",
+          "correct": false,
+          "explanation": "Incorreta. As equações não representam corretamente as quantidades de cabeças e pés por animal. A primeira equação, \"2g + p = 60\", implicaria que galinhas têm 2 cabeças ou que a soma não se refere apenas a uma cabeça por animal. A segunda equação, \"g + 4p = 150\", sugeriria que galinhas têm 1 pé e porcos têm 4 pés, ou que o total de pés é calculado de forma incorreta para as galinhas."
+        }
+      ],
+      "explanation": "Correta. Este sistema de equações representa fielmente a situação descrita. A primeira equação, \"g + p = 60\", representa o total de cabeças: cada galinha (g) e cada porco (p) possuem uma cabeça, somando um total de 60 cabeças. A segunda equação, \"2g + 4p = 150\", representa o total de pés: cada galinha (g) possui 2 pés, resultando em 2g pés, e cada porco (p) possui 4 pés, resultando em 4p pés, somando um total de 150 pés. Este é o modelo padrão para problemas de 'animais e pés'.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Dois números têm soma igual a 60 e diferença igual a 6. Aplicando o método da adição para resolver esse sistema, qual é o valor do maior desses números?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "36",
+          "correct": false,
+          "explanation": "Incorreta. Se um dos números fosse 36, para que a soma fosse 60, o outro número seria \\(60 - 36 = 24\\). A diferença entre 36 e 24 seria \\(36 - 24 = 12\\), o que não corresponde à diferença de 6 estabelecida no problema."
+        },
+        {
+          "id": "b",
+          "text": "33",
+          "correct": true,
+          "explanation": "Correta. Para resolver o sistema de equações \\(x + y = 60\\) e \\(x - y = 6\\) pelo método da adição, somamos as duas equações: \\((x + y) + (x - y) = 60 + 6\\), o que resulta em \\(2x = 66\\). Dividindo por 2, obtemos \\(x = 33\\). Substituindo \\(x = 33\\) na primeira equação, temos \\(33 + y = 60\\), de onde \\(y = 27\\). Os dois números são 33 e 27. O maior deles é 33."
+        },
+        {
+          "id": "c",
+          "text": "27",
+          "correct": false,
+          "explanation": "Incorreta. O valor 27 é o menor dos dois números encontrados (x=33, y=27). A questão pede o valor do maior número."
+        },
+        {
+          "id": "d",
+          "text": "30",
+          "correct": false,
+          "explanation": "Incorreta. Se um dos números fosse 30, para que a soma fosse 60, o outro número também teria que ser 30. Nesse caso, a diferença entre eles seria 0, e não 6, contrariando uma das condições do problema."
+        }
+      ],
+      "explanation": "Correta. Para resolver o sistema de equações \\(x + y = 60\\) e \\(x - y = 6\\) pelo método da adição, somamos as duas equações: \\((x + y) + (x - y) = 60 + 6\\), o que resulta em \\(2x = 66\\). Dividindo por 2, obtemos \\(x = 33\\). Substituindo \\(x = 33\\) na primeira equação, temos \\(33 + y = 60\\), de onde \\(y = 27\\). Os dois números são 33 e 27. O maior deles é 33.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em problemas de mistura envolvendo concentrações, deseja-se obter uma solução com concentração intermediária misturando duas soluções com concentrações diferentes. Qual é a estrutura matemática adequada para modelar esse tipo de situação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um sistema de equações onde uma equação representa a quantidade total de solução e outra representa a quantidade total de soluto, considerando as concentrações de cada componente",
+          "correct": true,
+          "explanation": "Correta. Para modelar problemas de mistura de soluções com diferentes concentrações, é fundamental utilizar um sistema de equações lineares. Uma equação representará a quantidade total (volume ou massa) da solução final como a soma das quantidades das soluções iniciais. A segunda equação representará a quantidade total de soluto na solução final, que é a soma das quantidades de soluto provenientes de cada solução inicial (calculadas multiplicando-se a quantidade de cada solução pela sua respectiva concentração). Este sistema permite determinar as quantidades necessárias de cada solução original para atingir a concentração desejada na mistura final."
+        },
+        {
+          "id": "b",
+          "text": "Uma proporção direta simples entre as concentrações das soluções originais e a concentração desejada",
+          "correct": false,
+          "explanation": "Incorreta. Embora o conceito de proporção seja inerente à concentração, uma 'proporção direta simples' não é suficiente para modelar completamente a situação. A concentração final de uma mistura é uma média ponderada das concentrações das soluções originais, onde os pesos são as quantidades de cada solução. Isso exige a consideração tanto das quantidades totais quanto das quantidades de soluto, o que é melhor representado por um sistema de equações do que por uma única proporção direta simples que ignora a interdependência das variáveis."
+        },
+        {
+          "id": "c",
+          "text": "Uma equação quadrática que relaciona as concentrações inicial e final através do quadrado das quantidades misturadas",
+          "correct": false,
+          "explanation": "Incorreta. Uma equação quadrática envolve termos ao quadrado e é utilizada para modelar relações não lineares. A relação entre quantidades e concentrações em problemas de mistura é linear, pois a quantidade de soluto é diretamente proporcional à quantidade da solução e à sua concentração. Portanto, equações quadráticas não são a estrutura adequada para este tipo de problema."
+        },
+        {
+          "id": "d",
+          "text": "Uma inequação que estabelece limites superiores e inferiores para as quantidades de cada solução a serem misturadas",
+          "correct": false,
+          "explanation": "Incorreta. Uma inequação (desigualdade) é utilizada para expressar condições de 'maior que', 'menor que', 'pelo menos' ou 'no máximo', estabelecendo limites para as variáveis. Embora um problema de mistura possa incluir restrições adicionais que seriam modeladas por inequações (por exemplo, disponibilidade limitada de uma solução), a estrutura fundamental para *determinar* as quantidades exatas para atingir uma concentração *específica* é um sistema de equações, não uma inequação. As inequações complementariam o sistema de equações se houvesse condições de otimização ou restrição de recursos."
+        }
+      ],
+      "explanation": "Correta. Para modelar problemas de mistura de soluções com diferentes concentrações, é fundamental utilizar um sistema de equações lineares. Uma equação representará a quantidade total (volume ou massa) da solução final como a soma das quantidades das soluções iniciais. A segunda equação representará a quantidade total de soluto na solução final, que é a soma das quantidades de soluto provenientes de cada solução inicial (calculadas multiplicando-se a quantidade de cada solução pela sua respectiva concentração). Este sistema permite determinar as quantidades necessárias de cada solução original para atingir a concentração desejada na mistura final.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "01_306158_Álgebra - Equações e Sistemas de Equações do 1º Grau.pdf",
+  "coletado_em": "2026-09-23T20:54:38"
+}

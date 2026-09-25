@@ -1,0 +1,123 @@
+===========================================================
+ MIKE MENTOR - subir o sistema na VPS
+ pacote de 24/09/2026
+===========================================================
+
+O Postgres esta na VPS. Entao os dados tem que chegar la: o
+mentor_carga.py le os JSON de saida\ e escreve no banco; depois
+disso o site le do BANCO, nao da pasta.
+
+
+-----------------------------------------------------------
+ O QUE COPIAR
+-----------------------------------------------------------
+
+1) esta pasta (_para_vps_sistema, 212 KB)
+
+2) a pasta saida\ inteira, do PC:
+
+       E:\MikeBacktest\MikeCode\saida\
+
+   1,2 GB:  saida\questoes\   533 MB   (107.725 questoes)
+            saida\aulas\      676 MB   (1.601 arquivos: JSON + PDF)
+
+   Ponha ao lado desta pasta, assim:
+
+       C:\mike\_para_vps_sistema\
+       C:\mike\saida\
+
+   Os PDFs (621 MB dos 1,2 GB) podem ficar pra depois: o mentor
+   funciona sem eles, so nao abre a degravacao. Se quiser adiantar,
+   copie primeiro so os .json.
+
+
+-----------------------------------------------------------
+ PASSO 1 - criar as tabelas
+-----------------------------------------------------------
+
+    python mentor_carga.py --migrar
+
+Roda os .sql de migrations\. Tem que terminar dizendo quantas
+tabelas e views criou. Se reclamar de coluna duplicada, PARE e me
+avise - foi um erro meu que ja aconteceu duas vezes.
+
+
+-----------------------------------------------------------
+ PASSO 2 - conferir antes de gastar tempo
+-----------------------------------------------------------
+
+    python mentor_carga.py --simular --saida ..\saida
+
+Le tudo e nao grava nada. Serve pra ver se achou os arquivos: se
+disser "0 aulas" ou "0 questoes", o caminho esta errado - conserte
+ANTES, senao o --tudo processa 100 mil questoes e desfaz no fim.
+
+
+-----------------------------------------------------------
+ PASSO 3 - carregar
+-----------------------------------------------------------
+
+    python mentor_carga.py --tudo --saida ..\saida
+    python mentor_tiers.py --aplicar
+
+O --tudo e idempotente (ON CONFLICT DO UPDATE): rodar de novo
+atualiza, nao duplica.
+
+
+-----------------------------------------------------------
+ PASSO 4 - conferir o que entrou
+-----------------------------------------------------------
+
+    python mentor_conferir.py
+    python conferir_edital.py --materia "Matemática"
+
+O mentor_conferir le o banco direto (psycopg2), sem API e sem
+login. O conferir_edital diz quantos itens do edital ficaram com
+questao - hoje da 9/9 em Portugues, 7/7 em Matematica e Informatica.
+
+ATENCAO: o conferir_edital ja errou tres vezes em 24/09, sempre
+dizendo "0 questoes" onde havia dezenas de milhares. Numero absurdo
+= desconfie DELE antes de desconfiar dos dados.
+
+
+-----------------------------------------------------------
+ PASSO 5 - a API
+-----------------------------------------------------------
+
+    router_mentor.py  ->  tipmike_api\routers\mentor.py
+
+Depois reinicie o servico:
+
+    C:\nssm-2.24\win64\nssm.exe restart tipmikeapi
+
+O painel fica em mentor.tipmike.br.
+
+AVISO: o router_mentor.py foi escrito e teve as colunas conferidas
+contra o schema, mas NUNCA rodou contra uma API viva. Espere ajuste
+no primeiro uso.
+
+
+-----------------------------------------------------------
+ O QUE AINDA NAO ESTA NO BANCO
+-----------------------------------------------------------
+
+1. A marca fora_edital. Das 107.725 questoes, boa parte foi
+   coletada antes do filtro do edital existir (81% de Lingua
+   Portuguesa, por exemplo). A spec manda NAO APAGAR e sim marcar.
+   Isso ainda nao foi feito.
+
+2. O indice de acerto. Todas as 107.725 estao com
+   leves_pendentes: seria uma requisicao POR QUESTAO. Vem depois,
+   em lote, so das que o mentor for usar.
+
+
+-----------------------------------------------------------
+ DSN
+-----------------------------------------------------------
+
+    postgresql://postgres:SUA_SENHA@localhost:5432/mikedb
+
+    A senha NAO vai no repositorio. Defina antes de rodar:
+        set MENTOR_DSN=postgresql://postgres:...@localhost:5432/mikedb
+
+Schema: mentor

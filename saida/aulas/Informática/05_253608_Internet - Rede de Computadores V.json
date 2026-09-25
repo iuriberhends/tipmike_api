@@ -1,0 +1,760 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 3,
+    "titulo": "5. Conceitos básicos e modos de utilização de tecnologias, ferramentas, aplicativos e procedimentos associados à Internet e intranet. /\n\n6. Correio eletrônico. / 7. Computação em nuvem"
+  },
+  "ordem": 5,
+  "ordem_no_curso": "19.00",
+  "titulo": "Internet - Rede de Computadores V",
+  "codigo_aula": "253608",
+  "video_id": "Y9pMdrprUn8=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:26:45",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/Y9pMdrprUn8%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405053,405049,420004&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Internet - Rede de Computadores V\n\n## Serviços da Internet e Navegação (Visão Geral)\nVamos lá, de volta com a nossa linha de internet, redes de computadores, falando dos principais serviços que nós temos na internet. Nunca é demais lembrar: a internet é a nossa base, é o nosso chão.\n\nSobre a internet, nós temos alguns serviços. Como eu citei no bloco anterior, falamos sobre o serviço de navegação, que vai ser um dos primeiros apresentados aqui. E eu falei da distinção temporal: a criação da internet tem um marco mais ou menos na década de 70, e o serviço de navegação, da forma como mais ou menos conhecemos hoje, evoluiu muito na década de 90.\n\nVárias questões de prova tentam misturar internet, WWW, navegação… Como queira considerar, a gente vai ter sinônimos ou simplesmente “web”. Você fala “web”, “acessar a web”, e tentam tratar como sinônimo de acessar a internet, de conectar-se à internet. Bom, veja: navegar na internet e estar conectado à internet não são a mesma coisa. Pelo menos, eu posso fazer uma conexão à internet — hoje ela é permanente, vamos dizer assim. A gente não “desconecta” mais. Antigamente, com as conexões discadas, nós literalmente fazíamos uma conexão à internet, ligávamos para o provedor — quem lembra do barulhinho? — e dependíamos da linha telefônica.\n\nHoje você tem fibra ótica, tem a própria linha telefônica usada de outras formas, enfim, outros meios de conexão. Você faz a conexão à internet, ou ela já está conectada, e você pode fazer outras coisas, embora o serviço mais utilizado seja a navegação. Então, se cair na prova aquela ideia de que são sinônimos, não são.\n\nJoga aí na tela, por favor, diretor. Essa ideia de “tudo o que eu quero” na internet: eu espero que essa imagem traduza um pouco isso. Tudo o que eu quero na internet está armazenado — de forma simbólica — em computadores que chamaremos, nesse contexto, de servidores, porque eles vão servir, vão nos entregar alguma coisa. Imagina: você acessando o Gran Cursos Online e ele entregando a aula deste cara aqui.\n\nBom, então vamos entender um pouco mais e falar propriamente da navegação, que, como eu disse, pode ser chamada de WWW (uma sigla que veremos daqui a pouco) ou simplesmente “web”, termo genérico para se referir à navegação.\n\n## Navegadores (Browsers) e Evolução do Conteúdo\nQuando eu quero navegar, eu vou precisar de um navegador. E, por incrível que pareça, você pode pensar: “isso não cai na minha prova”. Bom, não sei… já caiu várias vezes: qual é o software que possibilita a navegação? É um browser, um navegador. Eu coloquei três exemplos aqui, tem mais — a gente vai ver.\n\nPara navegar na internet, foi criado o primeiro navegador que disponibilizou o conteúdo de uma forma diferente, uma forma mais dinâmica, com conteúdo linkado, com links onde eu clico e vou para outra página, vou para outro conteúdo, dentro daquela página. Enfim, eu posso literalmente “navegar” dentro do conteúdo de forma muito dinâmica, envolvendo não só texto.\n\nAntigamente era essencialmente texto estático: era sempre o mesmo, a não ser que alguém fosse lá e atualizasse. Hoje é tudo dinâmico: tem vídeo, música, muita coisa nas páginas.\n\nEu vou precisar, como a imagem simboliza, de um navegador. Posso ter mais de um instalado na minha máquina para buscar esse conteúdo lá e trazê-lo para a minha máquina — de forma simbólica e genérica.\n\nPrincipais navegadores — ou seja, principais browsers. Você poderá encontrar em provas só o termo “browser”: “Fulano está acessando pelo browser” ou até perguntarem “o que é browser?”. E como eu disse, não dá para pensar “na minha prova não cai”. Já caiu e pode cair.\n\nEstavam lá o Internet Explorer, ou simplesmente IE. Esse cara foi descontinuado na sua versão 11. Segundo a Microsoft, não haverá mais versões do Internet Explorer. No Windows 10 ele vem na versão 11. Temos também o Microsoft Edge, que é o novo navegador da Microsoft, veio para substituir o Internet Explorer. Esse cara usa o motor do Chromium.\n\nQuem é o Chromium? É a versão livre do Google Chrome. Inclusive, mudanças de atalhos que ocorreram têm a ver com isso. Por exemplo, para abrir uma página em aba anônima no Edge é Ctrl+Shift+N. Antes era diferente. E o Mozilla Firefox.\n\nDepois, nós temos o próprio, muito conhecido, Opera, o Safari e o Tor. Esse cara a gente vai falar mais à frente, especificamente, porque ele vai permitir a navegação na internet comum — que a gente vai entender o que é — e na Deep Web. Ele é um dos navegadores que possibilitam isso.\n\nAlguns nomes podem ser citados em provas. Geralmente são cobrados como navegadores: “assinale a opção que contém apenas navegadores (browsers)”. Pode vir uma questão nessa lógica. A gente está aqui no começo, está fácil.\n\n## Modos de Navegação: Privativa/Anônima vs. Normal\nVamos falar um pouquinho desses modos de navegação: privativa e anônima, o que já caiu em prova. Joga aqui comigo.\n\nNós já tivemos em prova: “um modo de navegação anônima…”. Para entender, primeiro eu tenho que entender o que é uma navegação não anônima. Quando eu vou navegar, eu abro meu navegador — “navegar” é simplesmente acessar parte da internet. Nós navegamos na internet, a chamada Surface Web. Depois eu vou falar da Surface, da Deep (internet profunda), e vamos entender essa ideia. E ainda existe o conceito de Dark Web, que está mais embaixo ainda.\n\nEntão, na nossa internet comum, quando nós acessamos um dado, essa navegação é, de certa forma, direta entre o meu provedor e o site que eu quero acessar. Lógico, nós já sabemos: o protocolo vai passar por roteadores, pode passar por vários roteadores até chegar à máquina. Mas ela não é “escondida”. Considere assim: uma navegação transparente. O que isso quer dizer, Jefferson? Que o site, os provedores, os roteadores por onde estou passando conhecem meu endereço de origem. Todo mundo sabe quem eu sou.\n\nEntão, quando estou navegando no modo não anônimo, isso é a internet comum. Isso já é cobrado há muito tempo em prova, continua caindo e vai cair. Muita gente cai nesse “peguinha”: quando ativa o modo de navegação anônima, acha que está invisível. Vou fazer uma brincadeira: já viu quando a criança coloca a mão nos olhos e acha que a gente não está vendo? É mais ou menos como usar o modo anônimo. Você está sendo visto na internet. O que se esconde são os dados gerados na sua máquina.\n\nE ainda, lá na frente, quando falarmos sobre ameaças virtuais — entre elas os spywares (programas espiões) — já caiu em prova. Como eu disse, os conceitos não são isolados: formam uma totalidade. Lá na frente, quando chegarmos em spyware, veremos que nem isso terá proteção quando se usa modo anônimo, se o spyware estiver instalado na máquina. Beleza?\n\nEntão, objetivo: esconder os dados na máquina.\n\n💬 História: Um exemplo que eu gosto de citar: o marido que pretende fazer uma surpresa para a esposa, e a esposa é um pouco curiosa. O marido chega no computador e vai fazer a pesquisa. O que ele faz? Ativa o modo de navegação anônima. Vai lá pesquisar sobre um buquê de flores, uma cesta de café da manhã, a joia que ele vai comprar, em qual joalheria, aquele anel, aquele colar — aquela coisa toda para presentear a amada. Faz a pesquisa e fecha o navegador. Os dados gerados durante essa navegação — histórico, cookies, que vamos explicar — são automaticamente apagados; alguns sequer são gravados. Então, não ficam rastros do que ele fez. Ele sai da máquina e vai embora. A esposa vem: “deixa eu ver o que esse cabra fez”. Vai lá no atalho do histórico para ver as páginas acessadas hoje, e… não tem “página acessada hoje”. Ela olha e pensa: “ué, mas ele usou o computador”. A pessoa muito curiosa às vezes acha que a gente acessa e-mail sem “acessar a web” — e-mail pode ser via web ou via programa gerenciador de e-mails. \n\nEle navegou “totalmente anônimo” na internet? Não. Já sabemos que não. As empresas por onde ele passou, os servidores, vão saber quem é. Se ele está dentro de uma empresa, isso pode ser cobrado em prova: por exemplo, fazendo acesso por um servidor proxy. Vamos falar também. O conhecimento vai e volta, e a gente junta isso depois. Um servidor proxy é um intermediário dentro da rede entre a rede interna e a internet. A função básica dele: armazenar o cache do que é acessado na internet; traz da internet, fica ali no proxy para acelerar futuros acessos. Então, vai ficar ali dentro da sua rede: vão saber o que você fez. Se você está procurando uma surpresa para sua esposa, por exemplo, pode ficar armazenado ali. Deu para entender? A ideia de anonimato é na máquina, não na rede. Joga na tela.\n\nMais detalhes: quando eu uso o modo de navegação, ao fechar o navegador, eles apagam automaticamente:\n- o histórico,\n- os cookies,\n- os arquivos temporários,\n- e a lista de downloads.\n\nDetalhe para histórico: em prova podem dizer que o histórico “contém as páginas”. Cuidado com a redação: tecnicamente, o histórico guarda os endereços (links/URLs) dos sites que você acessou, não o conteúdo da página.\n\nOs cookies: pequenos arquivos de texto que são salvos na minha máquina. Eles contêm dados sobre a minha navegação nos sites que eu passei. Para cada site, processam informações.\n\n💬 História: Por exemplo, eu sou um cara que gosta de lavar o carro em casa. Quando tenho tempo, faço a limpeza. Eu pesquiso constantemente produtos, vejo recomendações, peço ajuda em fóruns: “será que tal selante é bom?”, e procuro um produto. Daqui a pouco, nas minhas redes sociais, começam a aparecer propagandas daquele produto, de empresas que trabalham com aquele produto. Como “adivinham”? Eles estão lendo os meus cookies. São pequenos arquivos que gravam dados: em qual site fui, o que vi naquele site, quais produtos; alguns podem armazenar o tempo que permaneci etc. Então, percebe como os cookies expõem a minha privacidade? Se eu fosse casado e fosse fazer uma surpresa, pesquisei flores, joias e tal, e começam a aparecer propagandas no navegador, a pessoa já pode sacar algo. Para não ocasionar isso, o cara ativa o modo anônimo.\n\nLembrando: os cookies ficam na máquina do usuário, não no servidor.\n\nArquivos temporários: são imagens e outros recursos dos sites que você acessa. Ficam salvos na máquina para reúso. Quando acesso o mesmo site, ele compara se a imagem que eu tenho é a mesma; se for, não precisa baixar de novo. Hoje, com internet rápida, ajuda menos, mas é isso.\n\nE a lista de downloads: pense numa lista de compras. Eu compro tomate, batata, cenoura… No final, jogo a lista fora. A lista é apagada, mas os produtos comprados não. Então, diferencie a lista do que foi baixado dos próprios arquivos. Se eu acessei a floricultura, a joalheria, e baixei catálogos, esses catálogos ficam salvos na máquina. A lista de downloads do navegador, no modo anônimo, é apagada; mas se alguém for à pasta Downloads padrão (ou à pasta onde você salvou), vai ver os arquivos.\n\nEsses dados que não são apagados no modo anônimo:\n- os próprios arquivos baixados,\n- e os favoritos/salvamentos. \n\nSe você comete a gafe de salvar como favorito o site da joalheria, aí já era, vai complicar sua vida.\n\n## Questão de Prova: Características do Modo Privativo/Anônimo\nVamos a uma questão: em navegadores como Google Chrome, Mozilla Firefox ou Microsoft Edge, a opção de abrir páginas em um modo de navegação conhecido como privativo ou anônimo tem como característica:\n\n- Ter um tempo máximo de exibição de cada página visitada? Não. Não vimos isso. Esse limite pode existir no próprio site (ex.: bancos deslogam após inatividade), não por causa do modo anônimo.\n\n- Não salvar o histórico de navegação das páginas visitadas? Sim. Essa é uma das características. Não salva o histórico.\n\n- Exigir cadastro do usuário a cada página visitada? Não tem nada a ver com o modo anônimo.\n\n- Ser exclusivo de dispositivos móveis? Não. Mas é possível usar o modo anônimo no smartphone.\n\n- Exigir digitação de senha a cada página? Também não; isso depende das regras do site, não do modo anônimo.\n\n> 🎯 Dicas de prova: O modo anônimo não salva histórico, cookies e arquivos temporários locais após o fechamento; não torna você invisível na rede; arquivos baixados e favoritos permanecem.\n\n## URL/URI e Estrutura de Endereço\nQuando vou acessar uma página na internet — e aqui vamos usar “página” como algo genérico para qualquer conteúdo: um documento, uma foto, algo armazenado lá — eu uso a URL (Uniform Resource Locator), o localizador de recursos uniforme. É um endereço que leva a um desses objetos. Vamos analisar a sua estrutura e o que devemos conhecer.\n\nInicialmente, eu tenho aqui o HTTP — o protocolo de transferência de hipertexto. Traduzindo literalmente para o português. Ele está lá na camada de aplicação e usa a porta TCP 80, que traz o conteúdo da página. Lembrando: cliente e servidor vão falar a mesma linguagem (protocolo). O cliente pede, o servidor responde via HTTP. A porta na origem é aleatória; a de destino, no servidor, é a 80 (padrão).\n\nFunção do HTTP: requisitar uma página e responder à requisição, considerando cliente e servidor. Basicamente é isso. Depois veremos mais detalhes.\n\nLembrando o paradigma no qual a internet está montada: o modelo cliente-servidor. O cliente requisita, o servidor responde e entrega o conteúdo — de forma simplória, claro.\n\nA próxima parte da URL é aquela sigla “www”. Ela não é obrigatória. Essa sigla é uma formalidade para padronizar, para que as pessoas saibam, ao visualizar, que se trata de um endereço da web e não confundir com outro contexto, como e-mail. Isso já caiu em prova. E aí, na prova, às vezes dizem que “WWW tem a ver com segurança”. Não tem. Não é um protocolo, não tem função técnica. Anote: não é um protocolo. O protocolo é o que está no começo (ex.: HTTP, HTTPS, FTP, etc.). O “www” pode inclusive não existir, e o site continuar funcionando. Se a prova disser que “para atender à internet, tem que ter WWW”, está errado.\n\nA próxima parte: o domínio do site. A quem pertence isso aqui? Seria, na teoria, o nome do site. No Brasil, todos os sites registrados no Brasil terminam com .br (registrados). Isso não significa que eles estão armazenados no Brasil. Eles podem estar hospedados em outro país. Não há obrigatoriedade de estarem fisicamente no Brasil.\n\nTodos os domínios .br são de responsabilidade do Registro.br. A atribuição do domínio de primeiro nível .br é do Registro.br. Quem é esse cara? Ele está vinculado ao CGI.br, o Comitê Gestor da Internet. Quem é o CGI? É o órgão que controla a internet no Brasil — controle no sentido de fiscalização de normas e padrões, não de imposição. É o órgão que coordena a internet no Brasil. Isso você tem que saber.\n\nQuando eu quero registrar um site no Brasil, eu verifico junto ao Registro.br se o domínio está disponível.\n\nVamos supor que eu quero registrar o domínio jeffersonbogo.pro.br — .pro é um domínio no Brasil para profissionais. Qual é o viés desses domínios? Exemplos:\n- .com.br: atividades comerciais,\n- .mil.br: forças armadas,\n- .b.br: bancos (único com uma letra),\n- .gov.br: órgãos do governo,\n- .edu.br: instituições de educação,\ne assim por diante.\n\nA intenção é separar por categoria. Eu não posso cadastrar um site comercial em .gov.br, por exemplo, porque é exclusivo para órgãos do governo. Alguns militares usam .mil.br, estritamente órgãos militares. Para educação, .edu.br. Esses principais domínios eu sugiro que você conheça.\n\n> 🎯 Dicas de prova: .gov.br (governo), .mil.br (Forças Armadas), .edu.br (educação), .com.br (comercial), .b.br (bancos), .jus.br (Poder Judiciário), .leg.br (Poder Legislativo), .mp.br (Ministério Público).\n\nQuando você for fazer concurso para um órgão específico, veja se há domínios específicos para aquela categoria: turismo, justiça (.jus.br), etc. Pode ser cobrado. Dê uma olhada no site do Registro.br. Não precisa conhecer todos, foque nos ligados ao órgão do concurso.\n\n“BR” indica o país. Não há que se falar de outros países com a nossa mesma estrutura; cada país faz seu controle interno, seu idioma muda. Existem normas internacionais — por exemplo, a IANA, que controla itens distribuídos no mundo inteiro —, mas a estrutura local (como .gov.br) é própria.\n\nPor último, na URL, vem o conteúdo/caminho do site — o que eu acessei: poderia ser um arquivo PDF, uma imagem, um documento do Word, ou simplesmente o conteúdo da página em um caminho interno (ex.: /professor/jefferson-bogo/ficha), que levaria à ficha do professor.\n\n## Principais Domínios (.br) e Exemplos\nPasseio rápido para fixar os principais:\n- .net.br: na teoria, atividades de rede/serviços (na prática, o uso pode variar).\n- .edu.br: instituições de ensino superior.\n- .bbs.br: cidades específicas (ex.: bsb.br seria para Brasília; há domínios de cidades/municípios em estruturas específicas).\n- .sampa.br (exemplo de cidade de SP), ilustra domínios ligados a localidades.\n- .gov.br: instituições do governo federal (e esferas).\n- .mil.br: Forças Armadas.\n- .ong.br: organizações não governamentais sem fins lucrativos.\n- .b.br: bancos (único com uma letra).\n- .jus.br: Poder Judiciário.\n- .leg.br: Poder Legislativo.\n- .mp.br: Ministério Público.\n\n> 🎯 Dicas de prova: associe corretamente cada domínio à sua categoria. “.b.br” é exclusivo para bancos e é o único de uma letra; “.jus.br” é Judiciário; “.leg.br” é Legislativo; “.mp.br” é Ministério Público.\n\n## Encurtadores de URL\nO que faz um encurtador de URL? Você pega uma URL grande, passa por um encurtador (existem vários), e ela fica mais curta, mais “apresentável” e talvez mais fácil de lidar.\n\nBasicamente é isso: encurtar a URL. Se cair em prova, lembre: o tamanho da URL vai ficar menor. Só isso. Não complique.\n\n> 🎯 Dicas de prova: Encurtadores não dependem de “www” para funcionar. A ausência de “www” não impede um site de funcionar. Dizer que “devem funcionar com www para evitar erro” está errado, pois “www” é formalidade e não é obrigatório.\n\nEm uma questão exemplo: “Para evitar erro de indicação do conteúdo do site, deve-se usar ‘www’.” Errado. Como falei, é uma formalidade, não obrigação. Item errado.\n\nEncerramos o bloco nessa questão para voltar já já e dar continuidade ao nosso assunto.",
+  "transcricao_meta": {
+    "title": "Internet - Rede de Computadores V",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36572,
+    "createdAt": "2026-02-05T14:16:51.455Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: Web vs. Internet, navegadores e modos de navegação, privacidade (histórico, cookies, cache), URL/HTTP/portas, domínios (.br) e governança (Registro.br/CGI.br/IANA), além de surface web/deep web/dark web e encurtadores.\nPrincipais pontos: \n- A) “Navegar na web” ≠ “estar conectado à internet”.\n- B) Modo anônimo protege só os dados locais; rede/servidor/proxy ainda veem você.\n- C) Estrutura de URL e domínios .br (quem registra, categorias, pegadinhas de prova).\n\n## 1. Base / Conceitos Fundamentais\n- **Internet (década de setenta)**: Infraestrutura global de redes interconectadas.\n- **Web (www, web – década de noventa)**: Serviço sobre a internet que usa páginas/hiperlinks.\n- **Navegador (browser)**: Software para acessar a web. Exemplos: **Google Chrome**, **Mozilla Firefox**, **Microsoft Edge**, **Opera**, **Safari**, **Tor**.\n- **Internet Explorer**: Descontinuado; parou na **versão 11**. Existia no **Windows 10**, substituído pelo **Microsoft Edge**.\n- **Microsoft Edge**: Base **Chromium**. Alternativa moderna ao IE.\n- **Modelo cliente-servidor**: Cliente requisita; servidor responde.\n- **URL (Uniform Resource Locator)**: Endereço de um recurso (página, pdf, imagem, documento do Word).\n- **HTTP (Hypertext Transfer Protocol)**: “Protocolo de transferência de hipertexto”. Opera tipicamente na **porta TCP 80** no servidor.\n- **Roteadores**: Encaminham pacotes; conhecem origens/destinos.\n- **Proxy (servidor proxy)**: Intermediário que pode registrar acessos e manter cache.\n- **Surface web, deep web, dark web**:\n  - **Surface web**: Conteúdo indexado por buscadores.\n  - **Deep web**: Não indexado (bancos de dados, intranets, conteúdos com login).\n  - **Dark web**: Subconjunto da deep web que requer softwares/protocolos específicos (ex.: **Tor**).\n\n## 2. Como Funciona / Distinções\n- **Internet vs. Web**:\n  - Internet = rede; Web = serviço que roda na internet.\n  - > Dica de Prova: “Navegar na internet” ≠ “estar conectado à internet”. Estar conectado não implica estar navegando na web.\n- **Navegação normal vs. anônima/privada**:\n  - Normal: salva **histórico**, **cookies**, **cache**.\n  - Anônima/privada: não grava/limpa ao fechar histórico, cookies e cache locais.\n  - Limites: não esconde do provedor, **roteadores**, sites ou **proxy**; não bloqueia **programas espiões (spywares)**.\n- **“www”**:\n  - Não é protocolo, nem obrigatório. É subdomínio comum para a web.\n- **Portas TCP**:\n  - **Destino** no servidor: padronizada (ex.: **80** para HTTP).\n  - **Origem** no cliente: aleatória (efêmera).\n- **Domínios .br**:\n  - Registro pelo **Registro.br** (sob o **CGI.br**). Regras e categorias nacionais.\n  - Padrões globais coordenados pela **IANA**.\n  - Registro “.br” ≠ hospedagem física no Brasil.\n\n## 3. Aplicação Prática / Técnicas\n- **Identificar a estrutura de uma URL**:\n  - 1) Protocolo (ex.: http://)\n  - 2) Domínio (ex.: exemplo.gov.br)\n  - 3) Caminho/conteúdo (ex.: /pasta/arquivo.pdf)\n  - > Dica de Prova: URL pode apontar para página, pdf, imagem ou documento do Word.\n- **Reconhecer o modo de navegação no navegador**:\n  - Modo anônimo/privado: janela própria; atalho comum: **Ctrl+Shift+N** (Chrome/Edge/Opera).\n  - Lembrete: arquivos em **Downloads** e **Favoritos** permanecem mesmo saindo do modo anônimo.\n- **Privacidade local**:\n  - Para não deixar rastro: usar navegação anônima + limpar lista de downloads e evitar salvar favoritos.\n- **Associação de portas**:\n  - Memorize: **HTTP → TCP 80 (destino)**; origem aleatória.\n- **Domínios por categoria no .br** (exemplos cobrados):\n  - **.gov.br** (governo), **.mil.br** (militares), **.b.br** (bancos), **.jud.br** (Judiciário), **.leg.br** (Legislativo), **.mp.br** (Ministério Público), **.edu.br** (educação), **.prof.br** (professores), além de genéricos como **.com.br**, **.org.br**.\n  - > Dica de Prova: Todas as categorias brasileiras terminam com **.br**.\n- **Encurtadores de URL**:\n  - Deixam a URL mais curta e redirecionam para a original. Não mudam o conteúdo do site.\n\n## 4. Exemplos e Casos Resolvidos\n- **Exemplo 1 (modo anônimo)**: Você abre uma janela privada para pesquisar presentes surpresa.\n  - Efeito: histórico, cookies e cache daquela sessão serão apagados ao fechar a janela.\n  - Atenção: seu provedor/empresa (via **proxy**) ainda pode saber os sites acessados.\n- **Exemplo 2 (downloads e favoritos)**:\n  - Você baixa um PDF no modo anônimo. Ao fechar, o arquivo continua na pasta **Downloads**. Se salvar um **favorito**, ele permanece.\n- **Exemplo 3 (HTTP e portas)**:\n  - Cliente abre http://site.com.br: o cliente usa uma porta de origem aleatória; o servidor escuta na porta **80**.\n- **Exemplo 4 (URL não é só página)**:\n  - http://dominio.gov.br/atos/edital.pdf → aponta diretamente a um PDF.\n- **Exemplo 5 (www opcional)**:\n  - http://site.com.br e http://www.site.com.br podem funcionar igualmente. “www” é formalidade, não obrigação.\n- **Exemplo 6 (categorias .br)**:\n  - Banco do Brasil: algo em “bb.com.br”; categoria “bancos” formal existe como **.b.br** (uso restrito). Órgão federal: **.gov.br**; Exército: **.mil.br**; tribunal: **.jud.br**.\n\n## 5. Pegadinhas e Erros Comuns\n- > Dica de Prova: “Modo anônimo torna o usuário invisível na internet.” ERRADO. Só evita rastros na máquina local.\n- > Dica de Prova: “Histórico guarda o conteúdo das páginas.” ERRADO. Guarda endereços (URLs) visitados.\n- > Dica de Prova: “Modo anônimo apaga arquivos em Downloads.” ERRADO. Os arquivos permanecem; apaga só a lista de downloads ao fechar.\n- > Dica de Prova: “Favoritos salvos no anônimo somem.” ERRADO. Permanecem salvos.\n- > Dica de Prova: “Modo anônimo impõe tempo máximo de exibição e exige cadastro a cada página.” ERRADO. Isso depende do site (ex.: bancos), não do modo.\n- > Dica de Prova: “www é protocolo/é obrigatório.” ERRADO. Não é protocolo nem obrigatório.\n- > Dica de Prova: “Porta 80 é de origem do cliente.” ERRADO. Porta 80 é de destino no servidor; a origem é aleatória.\n- > Dica de Prova: “Registrar .br obriga hospedar no Brasil.” ERRADO. Registro e hospedagem são independentes.\n- > Dica de Prova: “Surface web = toda a internet.” ERRADO. É a parte indexada; há deep web e dark web.\n- > Dica de Prova: “Proxy não vê navegação no anônimo.” ERRADO. Proxy pode registrar acessos e manter cache.\n\n### Tabela rápida – Conceitos próximos\n- Web vs. Internet:\n  - Internet: infraestrutura. Web: serviço sobre a internet.\n- Normal vs. Anônimo:\n  - Normal: salva histórico/cookies/cache.\n  - Anônimo: limpa dados locais ao fechar; não oculta na rede.\n- Histórico vs. Cookies vs. Cache:\n  - Histórico: URLs visitadas.\n  - Cookies: preferências/sessão.\n  - Cache (arquivos temporários): cópias para acelerar reuso.\n- Registro.br/CGI.br/IANA:\n  - Registro.br: registro de domínios “.br”.\n  - CGI.br: coordenação nacional da internet no Brasil.\n  - IANA: coordenação global de identificadores.\n\n### Extras que caem\n- **Atalho do anônimo**: **Ctrl+Shift+N** (Chrome/Edge/Opera).\n- **Navegador descontinuado**: **Internet Explorer** (última: 11). Substituído por **Microsoft Edge**.\n- **Navegadores cobrados**: **Google Chrome**, **Firefox**, **Opera**, **Safari**, **Microsoft Edge**, **Tor** (associado à dark web).\n- **“www”**: não é segurança, não é protocolo, não é obrigatório.",
+  "resumo_bolso": "# Internet - Rede de Computadores V\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Internet**: infraestrutura global de redes interligadas (década de setenta); base para vários serviços (web, e-mail, etc.).\n* **Web (www)**: serviço sobre a internet (década de noventa) que usa páginas e hiperlinks.\n* **Navegador (browser)**: software para acessar a web (Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, Safari, Tor).\n* **Internet Explorer**: navegador descontinuado, última versão **11**, existia no **Windows 10**, substituído pelo **Microsoft Edge** (base **Chromium**).\n* **Modelo cliente-servidor**: cliente faz requisição; servidor responde.\n* **URL (Uniform Resource Locator)**: endereço completo de um recurso na web (página, PDF, imagem, documento do Word).\n* **HTTP (Hypertext Transfer Protocol)**: protocolo de transferência de hipertexto; normalmente usa **porta TCP 80 (destino)** no servidor.\n* **Roteador**: equipamento de rede que encaminha pacotes entre redes, conhece origem/destino.\n* **Proxy (servidor proxy)**: servidor intermediário que pode registrar acessos e manter cache das páginas.\n* **Surface web / Deep web / Dark web**:\n  * Surface: conteúdo indexado por buscadores.\n  * Deep: não indexado (bancos de dados, intranets, áreas com login).\n  * Dark: parte da deep que exige softwares/protocolos específicos (ex.: Tor).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Internet vs Web\n\n| Aspecto | Internet | Web |\n| --- | --- | --- |\n| Conceito | Infraestrutura de redes | Serviço que roda sobre a internet |\n| Uso | Suporta vários serviços (web, e-mail, etc.) | Usa HTTP, URLs, páginas/links |\n| Diferencial | Estar conectado não implica navegar | “Navegar” normalmente = usar web |\n\n---\n\n### Navegação Normal vs Anônima/Privada\n\n| Aspecto | Normal | Anônima/Privada |\n| --- | --- | --- |\n| Histórico | Salva | Não grava / limpa ao fechar |\n| Cookies | Salva | Não mantém após fechar |\n| Cache | Salva | Limpa ao fechar |\n| Rede (ISP, proxy, sites) | Veem navegação | Também veem navegação |\n\n---\n\n### Histórico vs Cookies vs Cache\n\n| Aspecto | Histórico | Cookies | Cache |\n| --- | --- | --- | --- |\n| O que é | Lista de URLs visitadas | Pequenos arquivos com preferências/sessão | Arquivos temporários (cópias de páginas/imagens) |\n| Finalidade | Relembrar acessos | Manter login, idioma, carrinho | Acelerar carregamento |\n\n---\n\n### Surface Web vs Deep Web vs Dark Web\n\n| Aspecto | Surface | Deep | Dark |\n| --- | --- | --- | --- |\n| Indexação | Indexada por buscadores | Não indexada | Não indexada |\n| Acesso | Navegador comum | Normalmente via login/consulta | Softwares/protocolos específicos (Tor) |\n| Escopo | Parte da internet | Maior parte | Subconjunto da deep |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Porta TCP do HTTP**\n\n* **Aplicação**: Comunicação HTTP padrão.\n* **Regra**: **HTTP → porta TCP 80 (destino no servidor)**; porta de origem no cliente é aleatória (efêmera).\n* **Exemplo**: Cliente acessa `http://site.com.br` → cliente usa porta de origem aleatória; servidor escuta na 80.\n\n---\n\n**2. Estrutura básica de uma URL**\n\n* **Aplicação**: Identificar partes da URL em prova.\n* **Regra**: `protocolo://domínio/caminho/recurso`\n* **Exemplo**: `http://exemplo.gov.br/pasta/arquivo.pdf`  \n  → protocolo: **http**; domínio: **exemplo.gov.br**; caminho/recurso: **/pasta/arquivo.pdf** (pode ser página, PDF, imagem, documento do Word).\n\n---\n\n**3. Domínios .br – Governança**\n\n* **Aplicação**: Questões sobre quem coordena o .br.\n* **Regra**:\n  * **Registro.br**: registra domínios **.br**.\n  * **CGI.br**: coordena a internet no Brasil (supervisiona Registro.br).\n  * **IANA**: coordenação global de identificadores (padrões de domínios/portas).\n* **Exemplo**: `orgao.gov.br` registrado no **Registro.br**, seguindo regras do **CGI.br**, dentro da estrutura global da **IANA**.\n\n---\n\n**4. Categorias de domínios .br**\n\n* **Aplicação**: Cobrança de exemplos e terminação.\n* **Regra**: Todos os domínios brasileiros terminam em **.br**. Exemplos:\n  * **.gov.br** (governo), **.mil.br** (militares), **.b.br** (bancos), **.jud.br** (Judiciário),\n  * **.leg.br** (Legislativo), **.mp.br** (Ministério Público),\n  * **.edu.br** (educação), **.prof.br** (professores),\n  * genéricos: **.com.br**, **.org.br**.\n* **Exemplo**: Tribunal: `tjxx.jud.br`; universidade: `ufx.edu.br`.\n\n---\n\n**5. Modo Anônimo – Atalho e Persistências**\n\n* **Aplicação**: Questões sobre comportamento do modo privado.\n* **Regra**:\n  * Atalho comum: **Ctrl+Shift+N** (Chrome/Edge/Opera).\n  * Não apaga arquivos baixados em **Downloads**.\n  * Não apaga **Favoritos** salvos.\n* **Exemplo**: Baixar PDF no anônimo → arquivo continua em Downloads após fechar; lista de downloads é apagada.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- “Navegar na internet” ≡ “estar conectado à internet”.  \n- “Modo anônimo torna o usuário invisível na internet.”  \n- “Histórico guarda o conteúdo das páginas.”  \n- “Porta 80 é de origem do cliente.”  \n- “Registrar .br obriga hospedar no Brasil.”\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei claramente **Internet** (infraestrutura) de **Web** (serviço sobre a internet)?\n* Lembrei que **modo anônimo** protege só **dados locais**, não a visibilidade na rede (provedor, roteadores, sites, proxy)?\n* Fixei: **HTTP → porta TCP 80 (destino)**; **origem no cliente é aleatória**?\n* Sei que **URL** pode apontar para página, PDF, imagem ou documento do Word?\n* Memorizei que todas as categorias nacionais terminam em **.br** e são registradas no **Registro.br**, sob coordenação do **CGI.br** e padrões da **IANA**?\n* Recordei que arquivos em **Downloads** e **Favoritos** permanecem mesmo após fechar o modo anônimo?\n* Sei que **Internet Explorer** foi descontinuado (última versão **11**) e substituído pelo **Microsoft Edge (Chromium)**?\n* Associei **Tor** à **dark web** (acesso com software/protocolo específico)?",
+  "mapa_mental": "# 🌐 Internet – Rede de Computadores V\n## 🎯 Conceitos Fundamentais\n### 💡 Internet x Web\n- Internet infraestrutura global\n- Web serviço internet\n- Navegar web\n- Estar conectado\n### 💻 Navegadores\n- Google Chrome\n- Mozilla Firefox\n- Microsoft Edge\n- Opera Safari Tor\n- Internet Explorer 11\n### 🌐 Modelo Cliente-Servidor\n- Cliente requisita\n- Servidor responde\n- Roteadores encaminham\n- Proxy intermediário\n- Proxy registra acessos\n\n## 🛡️ Navegação e Privacidade\n### 🧭 Modos de Navegação\n- Navegação normal\n- Navegação anônima\n- Janela separada\n- Atalho Ctrl+Shift+N\n- Persistem downloads favoritos\n### 🔐 Dados Locais\n- Histórico URLs\n- Cookies preferências sessão\n- Cache arquivos temporários\n- Limpeza ao fechar\n- Sem rastros locais\n### ⚠️ Limites da Anonimidade\n- Não oculta IP\n- Provedor enxerga\n- Roteadores enxergam\n- Proxy enxerga\n- Spywares continuam\n\n## 🌍 Endereços, Portas e Domínios\n### 🔗 URL Estrutura\n- Protocolo http\n- Domínio principal\n- Caminho recurso\n- Pode ser página\n- Pode ser arquivo\n### 📡 HTTP e Portas\n- HTTP protocolo aplicação\n- Porta TCP 80 destino\n- Porta origem efêmera\n- Cliente servidor comunicação\n- Associação porta serviço\n### 🏛️ Domínios .br e Governança\n- Registro.br domínios\n- CGI.br coordenação Brasil\n- IANA coordenação global\n- Domínio ≠ hospedagem Brasil\n- Categorias gov mil b jud leg mp edu prof com org\n\n## 🌐 Camadas da Web e Encurtadores\n### 🕸️ Surface Deep Dark\n- Surface web indexada\n- Deep web não indexada\n- Logins bancos dados\n- Dark web subset deep\n- Tor acesso dark\n### ✂️ Encurtadores URL\n- URL reduzida\n- Redireciona original\n- Não altera conteúdo\n- Facilita compartilhamento\n- Possível ocultar destino",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Navegação Web",
+      "description": "Navegação Web — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a diferença entre estar conectado à internet e navegar na internet?",
+          "back": "Estar conectado é estabelecer um enlace permanente com a rede; navegar é utilizar o serviço de exploração de páginas na web.",
+          "hint": "Conexão é o meio; o outro é a ação.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "navegacao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual software permite acessar e explorar páginas da internet?",
+          "back": "Navegador.",
+          "hint": "É o software cliente de web.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "navegador"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Que recurso permite acessar outro conteúdo ao clicar em uma página?",
+          "back": "Link.",
+          "hint": "É um atalho clicável.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "hipertexto"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a natureza técnica da sigla WWW?",
+          "back": "Termo genérico para navegação.",
+          "hint": "Refere-se ao sistema de navegação.",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "internet",
+            "conceitos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Privacidade Local",
+      "description": "Privacidade Local — 8 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é o objetivo do modo de navegação anônima no computador do usuário?",
+          "back": "Esconder os dados gerados na máquina do usuário.",
+          "hint": "Foca na privacidade local.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "privacidade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual informação de origem permanece visível ao provedor no modo anônimo?",
+          "back": "Endereço de origem.",
+          "hint": "O que identifica a origem do tráfego?",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "privacidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "O que ocorre com o histórico quando o navegador é fechado no modo anônimo?",
+          "back": "São automaticamente apagados.",
+          "hint": "O que acontece com os dados temporários?",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "privacidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Que elemento o histórico de navegação registra sobre as páginas visitadas?",
+          "back": "Endereço.",
+          "hint": "É o localizador da página.",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "internet",
+            "navegador"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "O que são cookies armazenados pelo navegador?",
+          "back": "Pequenos arquivos de texto salvos na máquina que contêm dados sobre a navegação.",
+          "hint": "São arquivos de texto de estado.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "cookies"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Em que local os cookies são armazenados durante a navegação?",
+          "back": "Na máquina do usuário.",
+          "hint": "Onde reside o arquivo de texto?",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "cookies"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Para que servem os arquivos temporários de imagens dos sites?",
+          "back": "Ficar salvos na máquina para reúso.",
+          "hint": "Visa evitar novo download.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "cache"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "O que acontece com os arquivos baixados durante a navegação anônima?",
+          "back": "Não são apagados.",
+          "hint": "O que ocorre com arquivos salvos?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "privacidade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Protocolos e URLs",
+      "description": "Protocolos e URLs — 4 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Que elemento identifica um recurso específico na internet?",
+          "back": "URL.",
+          "hint": "É o endereço universal.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "url"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "O que significa a sigla HTTP?",
+          "back": "Protocolo de transferência de hipertexto.",
+          "hint": "Protocolo de transferência.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "protocolos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual porta TCP é padrão para o HTTP?",
+          "back": "Porta TCP 80.",
+          "hint": "É uma porta de serviço web.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "protocolos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual função o HTTP desempenha na comunicação entre cliente e servidor?",
+          "back": "Requisitar uma página de internet e responder a essa requisição.",
+          "hint": "Define a interação cliente-servidor.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "protocolos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Rede e Servidores",
+      "description": "Rede e Servidores — 2 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "O que é um proxy em uma rede de computadores?",
+          "back": "Servidor intermediário dentro da rede entre a rede e a internet.",
+          "hint": "Atua como intermediário.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "proxy"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Como o proxy pode acelerar acessos futuros a conteúdos da internet?",
+          "back": "Armazenar o request do que é acessado na internet para acelerar futuros acessos.",
+          "hint": "Usa armazenamento local de requisições.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "proxy"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Domínios Brasileiros",
+      "description": "Domínios Brasileiros — 5 cards",
+      "cards": [
+        {
+          "id": "card-19",
+          "front": "O que indica o sufixo .br em um domínio?",
+          "back": "Indica o país.",
+          "hint": "Refere-se à localização geográfica.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "dominios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "O que o sufixo .br não permite concluir sobre a hospedagem de um site?",
+          "back": "Não permite concluir que está hospedado fisicamente no Brasil.",
+          "hint": "É uma exceção sobre a localização física.",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "dominios"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual entidade é responsável pelo registro de domínios .br?",
+          "back": "Registro.br.",
+          "hint": "Entidade de registro nacional.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "dominios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual órgão coordena a internet no Brasil e fiscaliza normas e padrões?",
+          "back": "Comitê Gestor da Internet.",
+          "hint": "Órgão regulador nacional.",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "internet",
+            "governança"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "A que categoria pertence o domínio de segundo nível gov.br?",
+          "back": "Órgãos do governo.",
+          "hint": "Refere-se a entes estatais.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "dominios"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o protocolo padrão utilizado para requisitar e transferir páginas da web, operando na porta TCP 80?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "HTTP (HyperText Transfer Protocol), que permite a comunicação entre navegadores e servidores web para transferência de hipertexto",
+          "correct": true,
+          "explanation": "Correta. O HTTP (HyperText Transfer Protocol) é o protocolo fundamental para a World Wide Web (WWW). Ele define como os navegadores da web (clientes) solicitam páginas da web e como os servidores web as respondem. O HTTP opera por padrão na porta TCP 80, sendo responsável pela transferência de hipertexto e outros recursos da web."
+        },
+        {
+          "id": "b",
+          "text": "SMTP (Simple Mail Transfer Protocol), que gerencia o envio de mensagens eletrônicas entre servidores de correio",
+          "correct": false,
+          "explanation": "Incorreta. O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para o envio de e-mails entre servidores de correio eletrônico. Ele não está relacionado à requisição e transferência de páginas da web e opera em portas como a TCP 25 ou 587, não na porta 80."
+        },
+        {
+          "id": "c",
+          "text": "FTP (File Transfer Protocol), que realiza a transferência de arquivos entre cliente e servidor utilizando autenticação",
+          "correct": false,
+          "explanation": "Incorreta. O FTP (File Transfer Protocol) é um protocolo utilizado para a transferência de arquivos entre computadores em uma rede, mas não é o protocolo padrão para a requisição e transferência de páginas da web. Ele opera em portas diferentes, como a porta 21 para controle e 20 para dados, e não na porta TCP 80."
+        },
+        {
+          "id": "d",
+          "text": "DNS (Domain Name System), que traduz nomes de domínio em endereços IP para localização de recursos na rede",
+          "correct": false,
+          "explanation": "Incorreta. O DNS (Domain Name System) é um serviço de nomenclatura para computadores e outros recursos conectados à internet ou a uma rede privada. Sua principal função é traduzir nomes de domínio legíveis por humanos (como www.exemplo.com) em endereços IP numéricos (como 192.0.2.1) que os computadores usam para se localizar. Embora essencial para a navegação, o DNS não é o protocolo que transfere as páginas da web, operando na porta UDP 53."
+        }
+      ],
+      "explanation": "Correta. O HTTP (HyperText Transfer Protocol) é o protocolo fundamental para a World Wide Web (WWW). Ele define como os navegadores da web (clientes) solicitam páginas da web e como os servidores web as respondem. O HTTP opera por padrão na porta TCP 80, sendo responsável pela transferência de hipertexto e outros recursos da web.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a função principal de um navegador (browser) no contexto da internet?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Armazenar permanentemente todos os arquivos acessados pelo usuário em servidores remotos para backup automático",
+          "correct": false,
+          "explanation": "Incorreta. Embora navegadores possam armazenar alguns dados localmente (como cache), sua função principal não é armazenar permanentemente todos os arquivos acessados em servidores remotos para backup automático. Essa é uma função de serviços de armazenamento em nuvem ou backup, não do navegador em si."
+        },
+        {
+          "id": "b",
+          "text": "Interpretar e exibir conteúdo web, permitindo ao usuário acessar páginas, vídeos, imagens e outros recursos disponíveis na rede",
+          "correct": true,
+          "explanation": "Correta. A função essencial de um navegador (ou 'browser') é interpretar linguagens de marcação como HTML, CSS e JavaScript, e exibir o conteúdo resultante de forma visualmente compreensível para o usuário. Isso permite o acesso a páginas web, a visualização de vídeos, imagens, a interação com formulários e o uso de diversas aplicações online."
+        },
+        {
+          "id": "c",
+          "text": "Gerenciar exclusivamente o envio e recebimento de mensagens eletrônicas através de protocolos de correio",
+          "correct": false,
+          "explanation": "Incorreta. Enquanto alguns navegadores podem ter funcionalidades integradas para acessar serviços de e-mail baseados na web (webmail), a gestão exclusiva de envio e recebimento de mensagens eletrônicas através de protocolos de correio (como SMTP, POP3, IMAP) é a função de clientes de e-mail dedicados, e não a principal função de um navegador web."
+        },
+        {
+          "id": "d",
+          "text": "Estabelecer conexões diretas entre computadores para compartilhamento de arquivos em redes locais privadas",
+          "correct": false,
+          "explanation": "Incorreta. A função de estabelecer conexões diretas entre computadores para compartilhamento de arquivos em redes locais privadas é tipicamente realizada por sistemas operacionais e protocolos de rede locais (como SMB/CIFS em Windows ou NFS em sistemas Unix-like), e não é a função principal de um navegador, que se concentra no acesso a recursos na World Wide Web."
+        }
+      ],
+      "explanation": "Correta. A função essencial de um navegador (ou 'browser') é interpretar linguagens de marcação como HTML, CSS e JavaScript, e exibir o conteúdo resultante de forma visualmente compreensível para o usuário. Isso permite o acesso a páginas web, a visualização de vídeos, imagens, a interação com formulários e o uso de diversas aplicações online.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No contexto da navegação web, o que são cookies?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Pequenos arquivos de texto armazenados no computador do usuário contendo informações sobre sua navegação e preferências em sites visitados",
+          "correct": true,
+          "explanation": "Correta. Cookies são pequenos arquivos de texto que os sites armazenam no navegador do usuário. Eles servem para guardar informações sobre a navegação, como preferências do site, itens em um carrinho de compras, status de login e histórico de atividades, permitindo uma experiência mais personalizada e eficiente nas visitas futuras ao site."
+        },
+        {
+          "id": "b",
+          "text": "Protocolos de segurança que criptografam a comunicação entre o navegador e os servidores web",
+          "correct": false,
+          "explanation": "Incorreta. Protocolos de segurança que criptografam a comunicação são, por exemplo, o TLS (Transport Layer Security) e seu antecessor SSL (Secure Sockets Layer), que são utilizados em conjunto com o HTTP (resultando em HTTPS). Cookies são dados armazenados, não protocolos de criptografia."
+        },
+        {
+          "id": "c",
+          "text": "Programas executáveis que realizam varredura automática de vírus durante o acesso a páginas da internet",
+          "correct": false,
+          "explanation": "Incorreta. Programas executáveis que realizam varredura automática de vírus são antivírus ou softwares de segurança. Cookies são arquivos passivos de texto e não possuem a capacidade de executar varreduras ou proteger contra vírus."
+        },
+        {
+          "id": "d",
+          "text": "Componentes de hardware instalados no roteador para acelerar a velocidade de conexão com a internet",
+          "correct": false,
+          "explanation": "Incorreta. Componentes de hardware instalados no roteador para acelerar a velocidade de conexão não são cookies. Cookies são elementos de software relacionados à interação entre o navegador e os sites, não a componentes físicos de rede."
+        }
+      ],
+      "explanation": "Correta. Cookies são pequenos arquivos de texto que os sites armazenam no navegador do usuário. Eles servem para guardar informações sobre a navegação, como preferências do site, itens em um carrinho de compras, status de login e histórico de atividades, permitindo uma experiência mais personalizada e eficiente nas visitas futuras ao site.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual órgão é responsável pelo registro e gerenciamento de domínios de internet no Brasil?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ministério das Comunicações, que centraliza o controle de todos os endereços eletrônicos nacionais",
+          "correct": false,
+          "explanation": "Incorreta. O Ministério das Comunicações formula e implementa políticas públicas para o setor de comunicações, mas não centraliza o controle de todos os endereços eletrônicos nacionais. Essa função específica é do Registro.br."
+        },
+        {
+          "id": "b",
+          "text": "Registro.br, vinculado ao Comitê Gestor da Internet no Brasil (CGI.br), responsável pelo registro de domínios .br",
+          "correct": true,
+          "explanation": "Correta. No Brasil, o Registro.br é a entidade responsável pelo registro e manutenção dos nomes de domínio que usam o sufixo \".br\". Ele é um departamento do Comitê Gestor da Internet no Brasil (CGI.br), que é o órgão multissetorial responsável por estabelecer diretrizes estratégicas relacionadas ao uso e desenvolvimento da internet no país."
+        },
+        {
+          "id": "c",
+          "text": "IANA (Internet Assigned Numbers Authority), que distribui domínios para todos os países incluindo o Brasil",
+          "correct": false,
+          "explanation": "Incorreta. A IANA (Internet Assigned Numbers Authority) é uma organização global que supervisiona a alocação de endereços IP, o gerenciamento de nomes de domínio de nível superior (TLDs) e a atribuição de outros parâmetros de protocolo da internet em nível mundial. Embora a IANA seja responsável pela estrutura global de domínios, a gestão dos domínios específicos de cada país (como o \".br\") é delegada a organizações locais, como o Registro.br no caso do Brasil."
+        },
+        {
+          "id": "d",
+          "text": "ANATEL (Agência Nacional de Telecomunicações), que regula todos os serviços de comunicação e infraestrutura de rede",
+          "correct": false,
+          "explanation": "Incorreta. A ANATEL (Agência Nacional de Telecomunicações) é o órgão regulador do setor de telecomunicações no Brasil, responsável por outorgar licenças, fiscalizar serviços e garantir a qualidade das comunicações. No entanto, ela não é responsável pelo registro e gerenciamento de domínios de internet."
+        }
+      ],
+      "explanation": "Correta. No Brasil, o Registro.br é a entidade responsável pelo registro e manutenção dos nomes de domínio que usam o sufixo \".br\". Ele é um departamento do Comitê Gestor da Internet no Brasil (CGI.br), que é o órgão multissetorial responsável por estabelecer diretrizes estratégicas relacionadas ao uso e desenvolvimento da internet no país.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a característica principal do modo de navegação anônima (ou privativa) oferecido pelos navegadores?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Criptografa automaticamente toda a comunicação entre o usuário e os sites, garantindo segurança total das informações",
+          "correct": false,
+          "explanation": "Incorreta. O modo de navegação anônima não criptografa automaticamente toda a comunicação. A criptografia da comunicação é garantida pelo uso de protocolos como HTTPS (HTTP sobre TLS/SSL), que depende da configuração do site visitado e não do modo de navegação do navegador. O modo anônimo não adiciona uma camada extra de criptografia."
+        },
+        {
+          "id": "b",
+          "text": "Impede completamente o rastreamento do usuário na internet, tornando-o invisível para provedores e sites visitados",
+          "correct": false,
+          "explanation": "Incorreta. O modo de navegação anônima não impede completamente o rastreamento do usuário na internet. Ele oculta o histórico de navegação e cookies do dispositivo local, mas o provedor de internet, o empregador (se for uma rede corporativa) e os próprios sites visitados ainda podem registrar a atividade do usuário, pois o endereço IP permanece visível."
+        },
+        {
+          "id": "c",
+          "text": "Não salva localmente o histórico de navegação, cookies e arquivos temporários após o fechamento da janela do navegador",
+          "correct": true,
+          "explanation": "Correta. A principal característica do modo de navegação anônima (também conhecido como \"privativa\" ou \"incógnita\") é que ele não armazena localmente dados como histórico de navegação, cookies, dados de sites, informações inseridas em formulários e arquivos temporários (cache) após o fechamento da janela. Isso ajuda a manter a privacidade da atividade de navegação em relação a outros usuários do mesmo dispositivo."
+        },
+        {
+          "id": "d",
+          "text": "Bloqueia a instalação de programas espiões (spywares) no computador durante a sessão de navegação",
+          "correct": false,
+          "explanation": "Incorreta. O modo de navegação anônima não tem a função de bloquear a instalação de programas espiões (spywares). A proteção contra malwares e spywares é responsabilidade de softwares de segurança (antivírus, anti-malware) e de boas práticas de segurança do usuário, independentemente do modo de navegação utilizado."
+        }
+      ],
+      "explanation": "Correta. A principal característica do modo de navegação anônima (também conhecido como \"privativa\" ou \"incógnita\") é que ele não armazena localmente dados como histórico de navegação, cookies, dados de sites, informações inseridas em formulários e arquivos temporários (cache) após o fechamento da janela. Isso ajuda a manter a privacidade da atividade de navegação em relação a outros usuários do mesmo dispositivo.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em uma URL (Uniform Resource Locator), qual é a função do componente que aparece após o nome do domínio, indicando o caminho específico dentro do site?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Especifica a porta TCP através da qual o servidor web receberá as requisições do cliente",
+          "correct": false,
+          "explanation": "Incorreta. A porta TCP é um detalhe técnico da conexão entre cliente e servidor, geralmente padronizada (porta 80 para HTTP, porta 443 para HTTPS) e não é explicitamente indicada como um componente visível e variável no caminho após o nome do domínio em uma URL típica."
+        },
+        {
+          "id": "b",
+          "text": "Define o tipo de criptografia que será aplicada durante a transferência dos dados entre cliente e servidor",
+          "correct": false,
+          "explanation": "Incorreta. O tipo de criptografia (SSL/TLS) é indicado pelo protocolo (HTTPS) e não por um componente no caminho após o nome do domínio. A presença de 'https://' na URL já sinaliza o uso de criptografia."
+        },
+        {
+          "id": "c",
+          "text": "Indica o conteúdo específico ou caminho dentro da estrutura do site que está sendo acessado",
+          "correct": true,
+          "explanation": "Correta. O componente da URL que aparece após o nome do domínio, como '/caminho/para/pagina.html' ou '/produtos/categoria/item', indica o diretório ou o arquivo específico dentro da estrutura do site que o usuário deseja acessar. Este é o \"caminho\" ou \"path\" do recurso."
+        },
+        {
+          "id": "d",
+          "text": "Identifica o protocolo de comunicação que será utilizado para estabelecer a conexão com o servidor",
+          "correct": false,
+          "explanation": "Incorreta. A identificação do protocolo de comunicação (como HTTP, HTTPS, FTP) é feita pela primeira parte da URL, antes do domínio (ex: 'http://' ou 'https://')."
+        }
+      ],
+      "explanation": "Correta. O componente da URL que aparece após o nome do domínio, como '/caminho/para/pagina.html' ou '/produtos/categoria/item', indica o diretório ou o arquivo específico dentro da estrutura do site que o usuário deseja acessar. Este é o \"caminho\" ou \"path\" do recurso.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a diferença entre estar conectado à internet e navegar na internet?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Estar conectado à internet significa ter acesso físico à rede, enquanto navegar refere-se especificamente ao uso do serviço web através de navegadores",
+          "correct": true,
+          "explanation": "Correta. Estar conectado à internet significa ter uma conexão ativa com a rede global, permitindo o tráfego de dados. Já navegar na internet, ou 'web browsing', refere-se especificamente ao uso de navegadores para acessar páginas e recursos da World Wide Web, que é um dos muitos serviços disponíveis na internet."
+        },
+        {
+          "id": "b",
+          "text": "Não existe diferença técnica, pois ambos os termos descrevem exatamente a mesma ação de acessar recursos online",
+          "correct": false,
+          "explanation": "Incorreta. Existe uma diferença conceitual e prática. A internet é a infraestrutura de rede, enquanto a World Wide Web (Web) é um dos serviços que opera sobre essa infraestrutura. Pode-se estar conectado à internet para usar outros serviços, como e-mail ou jogos online, sem necessariamente estar \"navegando\" na Web."
+        },
+        {
+          "id": "c",
+          "text": "Estar conectado requer autenticação em servidores proxy, enquanto navegar dispensa qualquer tipo de validação de acesso",
+          "correct": false,
+          "explanation": "Incorreta. A autenticação em servidores proxy pode ocorrer tanto para estar conectado quanto para navegar, dependendo da configuração da rede, mas não é um fator distintivo entre os dois conceitos. Além disso, a navegação comum na internet geralmente não exige autenticação em proxy."
+        },
+        {
+          "id": "d",
+          "text": "Navegar na internet é possível apenas através de conexões com fio, enquanto estar conectado inclui também redes sem fio",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a conexão quanto a navegação na internet podem ocorrer por meio de conexões com fio (Ethernet, fibra óptica) ou sem fio (Wi-Fi, 3G/4G/5G). A forma física da conexão não é um critério para diferenciar os dois termos."
+        }
+      ],
+      "explanation": "Correta. Estar conectado à internet significa ter uma conexão ativa com a rede global, permitindo o tráfego de dados. Já navegar na internet, ou 'web browsing', refere-se especificamente ao uso de navegadores para acessar páginas e recursos da World Wide Web, que é um dos muitos serviços disponíveis na internet.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando a estrutura de domínios no Brasil, qual é a finalidade dos domínios de primeiro nível (como .com, .gov, .edu)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Determinar a velocidade de conexão que será disponibilizada para os usuários que acessarem aquele domínio",
+          "correct": false,
+          "explanation": "Incorreta. A velocidade de conexão é determinada pela infraestrutura de rede do provedor de internet e pelo tipo de conexão do usuário, e não pelo domínio de primeiro nível do site."
+        },
+        {
+          "id": "b",
+          "text": "Definir a localização geográfica exata do servidor onde o conteúdo do site está fisicamente armazenado",
+          "correct": false,
+          "explanation": "Incorreta. Embora domínios de primeiro nível de código de país (ccTLDs) como '.br' indiquem uma afiliação a um país, eles não garantem que o servidor físico esteja localizado naquele país. Um site com domínio '.br' pode estar hospedado em servidores em qualquer lugar do mundo."
+        },
+        {
+          "id": "c",
+          "text": "Estabelecer o nível de segurança e criptografia que será aplicado nas transações realizadas no site",
+          "correct": false,
+          "explanation": "Incorreta. O nível de segurança e criptografia é determinado pelo uso de protocolos como HTTPS e pela implementação de certificados SSL/TLS, e não pelo domínio de primeiro nível em si."
+        },
+        {
+          "id": "d",
+          "text": "Categorizar os sites de acordo com sua natureza ou finalidade, como comercial, governamental ou educacional",
+          "correct": true,
+          "explanation": "Correta. Os domínios de primeiro nível (Top-Level Domains - TLDs), como '.com' (comercial), '.gov' (governamental), '.edu' (educacional), '.org' (organizações não governamentais) e '.mil' (militar), servem para categorizar os sites de acordo com sua natureza, propósito ou localização geográfica (como '.br' para Brasil)."
+        }
+      ],
+      "explanation": "Correta. Os domínios de primeiro nível (Top-Level Domains - TLDs), como '.com' (comercial), '.gov' (governamental), '.edu' (educacional), '.org' (organizações não governamentais) e '.mil' (militar), servem para categorizar os sites de acordo com sua natureza, propósito ou localização geográfica (como '.br' para Brasil).",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Quando um usuário utiliza o modo de navegação anônima e realiza downloads de arquivos, o que acontece com esses arquivos após o fechamento do navegador?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os downloads são bloqueados automaticamente pelo navegador para garantir a privacidade completa do usuário",
+          "correct": false,
+          "explanation": "Incorreta. O modo de navegação anônima não bloqueia downloads. Ele permite que o usuário baixe arquivos normalmente, mas, como mencionado, não apaga esses arquivos do sistema de arquivos após o fechamento do navegador."
+        },
+        {
+          "id": "b",
+          "text": "Os arquivos são movidos para uma pasta temporária criptografada que requer senha para acesso posterior",
+          "correct": false,
+          "explanation": "Incorreta. O modo de navegação anônima não move arquivos para pastas temporárias criptografadas nem adiciona requisitos de senha para acesso a downloads. Os arquivos são salvos na pasta de downloads padrão do sistema operacional, a menos que o usuário especifique outro local."
+        },
+        {
+          "id": "c",
+          "text": "Todos os arquivos baixados são automaticamente excluídos do disco rígido junto com o histórico e cookies",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é falsa. Os arquivos baixados para o sistema de arquivos do usuário não são apagados pelo modo anônimo. Apenas os metadados e o registro da atividade de download dentro do navegador são removidos."
+        },
+        {
+          "id": "d",
+          "text": "Os arquivos baixados permanecem salvos no computador, pois o modo anônimo não apaga os downloads realizados, apenas a lista de downloads",
+          "correct": true,
+          "explanation": "Correta. O modo de navegação anônima (ou privada) tem como principal função evitar que o navegador armazene dados de navegação localmente, como histórico, cookies e dados de formulário. No entanto, os arquivos baixados para o disco rígido do computador não são automaticamente excluídos ao fechar o navegador, apenas o registro desses downloads na lista de histórico de downloads do navegador é removido."
+        }
+      ],
+      "explanation": "Correta. O modo de navegação anônima (ou privada) tem como principal função evitar que o navegador armazene dados de navegação localmente, como histórico, cookies e dados de formulário. No entanto, os arquivos baixados para o disco rígido do computador não são automaticamente excluídos ao fechar o navegador, apenas o registro desses downloads na lista de histórico de downloads do navegador é removido.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No contexto de privacidade na navegação, qual limitação o modo de navegação anônima apresenta em relação ao rastreamento do usuário?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A navegação anônima desativa temporariamente os protocolos de comunicação, impedindo que qualquer dado seja transmitido pela rede",
+          "correct": false,
+          "explanation": "Incorreta. A navegação anônima não desativa os protocolos de comunicação. Ela opera sobre os mesmos protocolos (como HTTP/HTTPS) que a navegação normal, apenas com a diferença de não registrar certas informações localmente no dispositivo do usuário."
+        },
+        {
+          "id": "b",
+          "text": "Embora oculte dados localmente na máquina do usuário, o modo anônimo não impede que provedores, servidores proxy e sites identifiquem o acesso",
+          "correct": true,
+          "explanation": "Correta. O modo de navegação anônima impede que o navegador armazene histórico de navegação, cookies, dados de sites e informações inseridas em formulários localmente no dispositivo do usuário. Contudo, ele não torna o usuário invisível na internet. Provedores de internet, servidores proxy (se utilizados) e os sites acessados ainda podem registrar o endereço IP do usuário e monitorar sua atividade na rede. Além disso, programas espiões (spyware) instalados no computador não são afetados pelo modo anônimo."
+        },
+        {
+          "id": "c",
+          "text": "O modo anônimo criptografa o endereço IP do usuário, tornando impossível sua localização geográfica por terceiros",
+          "correct": false,
+          "explanation": "Incorreta. O modo anônimo não criptografa o endereço IP do usuário. O endereço IP continua sendo visível para os servidores que hospedam os sites visitados e para os intermediários da rede. Para ocultar o endereço IP, seriam necessários outros mecanismos, como o uso de uma Rede Virtual Privada (VPN) ou o navegador Tor."
+        },
+        {
+          "id": "d",
+          "text": "O modo anônimo oculta completamente a identidade do usuário de todos os elementos da rede, incluindo provedores e administradores de rede",
+          "correct": false,
+          "explanation": "Incorreta. O modo anônimo não oculta a identidade do usuário de todos os elementos da rede. Provedores de internet (ISPs), administradores de rede (em ambientes corporativos, por exemplo) e os próprios sites visitados ainda podem registrar o endereço IP do usuário e, potencialmente, outras informações de acesso."
+        }
+      ],
+      "explanation": "Correta. O modo de navegação anônima impede que o navegador armazene histórico de navegação, cookies, dados de sites e informações inseridas em formulários localmente no dispositivo do usuário. Contudo, ele não torna o usuário invisível na internet. Provedores de internet, servidores proxy (se utilizados) e os sites acessados ainda podem registrar o endereço IP do usuário e monitorar sua atividade na rede. Além disso, programas espiões (spyware) instalados no computador não são afetados pelo modo anônimo.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_253608_Internet - Rede de Computadores V.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:59:28"
+}

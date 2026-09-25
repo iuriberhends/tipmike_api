@@ -1,0 +1,609 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 3,
+  "ordem_no_curso": "3.00",
+  "titulo": "Conjunto dos Números Inteiros",
+  "codigo_aula": "250112",
+  "video_id": "uNU2rv9UWC0=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:32",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/uNU2rv9UWC0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408662%2C403825&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Inteiros\n\n## Continuidade da Matriz e Contexto\nVamos dar continuidade à nossa matriz de Matemática Financeira. Estamos trabalhando com conjuntos numéricos. Eles fazem parte da nossa matriz, correto? E nós vamos continuar agora com o conjunto dos números inteiros. Nós vimos os naturais: o que são, quais as suas propriedades, a questão da ordem, a reta numérica, critérios de divisibilidade. Agora, vamos para o segundo conjunto numérico.\n\nEu acompanho sempre vocês, observando o chat. Vamos ao próximo conjunto numérico: o conjunto dos números inteiros. Se você estiver aí se perguntando: “quem são esses números inteiros e quem são eles?”, olha só.\n\n## Motivação: Por que inteiros?\nOs números naturais representam quantidades. Eles atendem à ideia de contagem, beleza? Uma quantidade. Mas os naturais têm limitações, correto? Só podem ser positivos. E aí surge a pergunta: como é que podemos representar, por exemplo, uma dívida? Para isso que usamos os números inteiros: em situações financeiras, como fluxo de caixa, entradas e saídas. É notável que os naturais não são suficientes para essa realidade. Entre os números inteiros, a aplicabilidade é maior do que a dos naturais. Na verdade, os naturais estão dentro dos inteiros; os naturais estão contidos neles.\n\nEntão, o conjunto dos números inteiros é igual aos números naturais unidos com os números negativos. Se eu for de zero até mais infinito, eu tenho os naturais. Se eu pegar “para trás”, eu tenho os negativos. Então, o conjunto dos números inteiros é formado pelos números negativos e pelos positivos, porém sempre inteiros. Por exemplo: …, −3, −2, −1, 0, 1, 2, 3, … Todos esses são inteiros.\n\n## Exemplo de Aplicação em Prova\nPara mostrar a importância de conhecermos esses conjuntos, vou trazer uma questão de concurso. Perguntavam a José quantos anos tinha sua filha. Ele respondeu: a idade dela é numericamente igual à maior das soluções inteiras da inequação 2x² − 6x − 70 < 0. É correto afirmar que a idade dela é um número que… (e vinham alternativas como: é divisível por 4, é quadrado perfeito, é primo etc.). Vamos entender a lógica, não é para resolver no detalhe agora; é para perceber a importância de saber quem são os números inteiros.\n\nVocê tem que resolver uma inequação do segundo grau. Resolve, encontra as raízes, monta o gráfico (concavidade para cima, porque o coeficiente de x² é positivo) e identifica onde a parábola está abaixo do eixo x (intervalo de soluções da inequação “< 0”). A pessoa encontraria, por exemplo, algo como as raízes em −2 e 17,5 (ilustrando o raciocínio). Logo, o conjunto solução real está entre −2 e 17,5, intervalo aberto.\n\nComo a banca pediu a maior das soluções inteiras, você precisa olhar para os inteiros nesse intervalo: …, −1, 0, 1, 2, 3, …, 16, 17. A maior solução inteira é 17. Então a idade da filha de José é 17 anos.\n\nAgora, vamos checar as propriedades citadas: 17 é menor que 20, mas não é divisível por 4 (pelas regras de divisibilidade por 4: termina em 00 ou os dois últimos algarismos formam número divisível por 4). Também não é quadrado perfeito (não tem raiz quadrada exata). E é primo: lembrando, número primo é aquele divisível apenas por 1 e por ele mesmo. Ou seja, quem não souber identificar inteiros perde a questão mesmo tendo feito toda a parte algébrica.\n\n> 🎯 **Atenção para prova:** Ao resolver inequações do 2º grau para “maior solução inteira”, encontre o intervalo real solução e, depois, selecione a maior opção pertencente a Z (sem frações).\n\n## Relação de Inclusão: Naturais e Inteiros\nOs inteiros compartilham várias propriedades dos naturais e acrescentam outras. Pela relação de inclusão: cada elemento dos números naturais também faz parte dos inteiros. Podemos afirmar: N está contido em Z. Ou seja, o conjunto dos números naturais é um subconjunto dos inteiros, porque além dos positivos (naturais), em Z temos também os negativos.\n\nAlém de representar quantidades positivas inteiras, os inteiros permitem representar quantidades negativas. Por essa razão, quando adicionamos ou subtraímos inteiros, o resultado ainda é inteiro. Isso é importantíssimo.\n\nNos naturais:\n- Soma de naturais dá natural.\n- Multiplicação de naturais dá natural.\n- Subtração nem sempre fica em N (ex.: 5 − 6 não está em N).\n\nNos inteiros:\n- Soma de inteiros dá inteiro.\n- Multiplicação de inteiros dá inteiro.\n- Subtração de inteiros dá inteiro (ex.: 5 − 6 = −1, que é inteiro).\n\n> 🎯 **Atenção para prova:** Em Z, as operações de soma, subtração e multiplicação são fechadas; em N, a subtração não é fechada.\n\n## Primeiro Elemento e Extensão dos Inteiros\nNos naturais, consideramos 0 como primeiro elemento (em muitas convenções). Já em Z, não há “primeiro” elemento, porque Z se estende de menos infinito a mais infinito. Então, o conjunto dos números inteiros não possui primeiro nem último elemento.\n\n## Sucessor e Antecessor em Z\nEm N, falamos de sucessor e antecessor conforme a ordem positiva. Em Z também temos essa ideia ao longo da reta numérica. Por exemplo:\n- …, −4, −3, −2, −1, 0, 1, 2, 3, …\n- O sucessor de −4 é −3; o sucessor de −3 é −2; e assim por diante.\nA reta cresce para a direita, mesmo na parte negativa.\n\n## Valor Absoluto x Valor Relativo\nIsso aqui é essencial, especialmente quando a gente pensa em matemática financeira.\n\n- Valor absoluto: é o número sem considerar o sinal. Por exemplo, |−500| = 500.\n- Valor relativo: considera o sinal. −500 indica saída, dívida, algo negativo no fluxo.\n\nNo fluxo de caixa:\n- Entradas: positivas.\n- Saídas: negativas.\n\nEntão, quando falo da ordem em Z, cuidado: uma coisa é módulo (valor absoluto), outra é o valor relativo. Na reta numérica, os números crescem para a direita. E “quanto menos negativo”, mais próximo do zero e, portanto, “maior” no sentido relativo. Dever 2 é “melhor” que dever 4, por exemplo.\n\n## Aplicações e Quadrado Perfeito (Introdução Conceitual)\nVamos a uma aplicação: “Qual o menor número inteiro positivo pelo qual devemos multiplicar 160 para obtermos um quadrado perfeito?” Antes de atacar, precisamos lembrar o que é quadrado perfeito.\n\nQuadrado perfeito é um número cuja raiz quadrada é exata. Em termos geométricos, é aquele que pode ser representado como a área de um quadrado com lados inteiros. Exemplos:\n- 1 = 1×1\n- 4 = 2×2\n- 9 = 3×3\n- 16 = 4×4\n\nPor isso, 4, 9, 16 são chamados de números quadrados perfeitos: podemos desenhar quadrados de lado 2, 3, 4, respectivamente, formando áreas exatas 4, 9, 16.\n\nEsse cuidado é importante porque, em provas, às vezes o aluno confunde propriedades de quadriláteros. Quadrado é um caso particular de retângulo e de losango, mas quando falamos de quadrado perfeito em números, estamos falando da propriedade aritmética: ter raiz quadrada inteira.\n\n> 🎯 **Atenção para prova:** Quadrado perfeito é todo número inteiro não negativo cuja fatoração possui expoentes pares em todos os seus fatores primos.\n\n## Encerramento Parcial e Direcionamento\nEntão, para fechar esta parte: os números inteiros incluem os naturais e acrescentam os negativos, permitindo modelar situações reais como dívidas e fluxos de caixa. Em Z, soma, subtração e multiplicação são operações fechadas, ao contrário de N, onde a subtração falha. Não existe primeiro elemento em Z. Temos sucessor e antecessor ao longo de toda a reta. E atenção para valor absoluto versus relativo, especialmente em contextos financeiros.\n\nVamos seguir com mais aplicações e, em seguida, atacar problemas envolvendo quadrados perfeitos e fatoração para consolidar esses conceitos.",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Inteiros",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 19781,
+    "createdAt": "2025-12-12T18:05:15.002Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: \n- Conjunto dos números inteiros (Z), reta numérica, ordem, sucessor/antecessor, valor absoluto x relativo.\n- Diferenças entre naturais (N) e inteiros (Z), fechamento de operações.\n- Aplicação prática em inequações do 2º grau e interpretações financeiras.\nPrincipais pontos: \n- N ⊂ Z; inteiros incluem negativos, zero e positivos.\n- Inteiros não têm primeiro nem último elemento; reta cresce para a direita.\n- Em 2º grau com concavidade para cima, “< 0” fica entre as raízes; atenção a “maior solução inteira”.\n\n---\n\n## 1. Base / Conceitos Fundamentais\n- **Conjunto dos números inteiros (Z)**: {..., −3, −2, −1, 0, 1, 2, 3, ...}\n  - Inteiros negativos, **zero** e inteiros positivos; não têm parte decimal.\n  - **Inclusão**: **N ⊂ Z** (os números naturais pertencem aos inteiros).\n- **Reta numérica**: representação ordenada dos inteiros; números mais à direita são maiores.\n- **Infinitude**:\n  - Em N, há “primeiro elemento” (0 ou 1, conforme convenção).\n  - Em Z, não há primeiro nem último elemento (se estende a “menos infinito” e “mais infinito”).\n- **Sucessor e antecessor**:\n  - **Sucessor**: número imediatamente à direita (a + 1).\n  - **Antecessor**: número imediatamente à esquerda (a − 1).\n- **Valor absoluto |a|**: distância ao zero (ignora sinal).\n- **Valor relativo**: considera o sinal (positivo/negativo), útil para ganhos/perdas (entradas/saídas).\n\n> Dica de prova: “O conjunto dos inteiros possui primeiro elemento?” Não. Cuidado com armadilhas usando “menor inteiro”.\n\n---\n\n## 2. Como Funciona / Distinções\n- **Quando usar N ou Z**:\n  - **N (naturais)**: contagens sem perdas (quantidades, peças, pessoas).\n  - **Z (inteiros)**: situações com déficits/saldos negativos (dívidas, temperaturas abaixo de zero, fluxo de caixa com saídas).\n- **Fechamento de operações**:\n  - Em **N**: soma e multiplicação fecham; subtração pode sair de N (5 − 6 = −1 ∉ N).\n  - Em **Z**: soma, subtração e multiplicação fecham.\n- **Ordem entre negativos**:\n  - Quanto menor o módulo, maior o número: −1 > −2 > −3.\n- **Quadrado perfeito (número)**:\n  - Tem raiz quadrada inteira; área de um quadrado de lado inteiro L é L² (ex.: 4, 9, 16).\n- **Relações entre quadriláteros (inclusão)**:\n  - Quadrado = retângulo ∩ losango; todo quadrado é paralelogramo. Definição de trapézio varia por banca.\n\n> Dica de prova: Ao comparar negativos, compare módulos: o menor módulo indica o maior número.\n\n---\n\n## 3. Aplicação Prática / Técnicas\n- **Resolver inequação do 2º grau do tipo ax² + bx + c < 0**:\n  1) Resolva a equação associada ax² + bx + c = 0 e ache as raízes r1 ≤ r2.\n  2) Se a > 0 (concavidade para cima): solução de “< 0” é o intervalo aberto (r1, r2).\n     - Se “> 0”: solução é (−∞, r1) ∪ (r2, +∞).\n  3) Se pedirem “solução inteira”, selecione os inteiros que pertencem ao intervalo.\n     - “Maior solução inteira” = maior inteiro estritamente menor que o extremo superior.\n     - “Menor solução inteira” = menor inteiro estritamente maior que o extremo inferior.\n- **Valor absoluto x relativo em finanças (fluxo de caixa)**:\n  - Entradas: positivas (+3 000).\n  - Saídas: negativas (−10 000).\n  - Se pedirem “valor absoluto”, retire o sinal (|−10 000| = 10 000).\n- **Quadrado perfeito por fatoração**:\n  - Fatorize o número; para tornar quadrado perfeito, faça com que todos os expoentes primos fiquem pares (multiplique pelo fator que “pareia”).\n\n> Dica de prova: Intervalos abertos com extremo decimal (ex.: < 17,5) pedindo “maior inteiro”: escolha o inteiro imediatamente abaixo (17, se 17,5 for extremo superior).\n\n---\n\n## 4. Exemplos e Casos Resolvidos\n- **Ordem e sucessor/antecessor**:\n  - Sucessor de −4 é −3; sucessor de 6 é 7.\n  - Antecessor de 3 é 2.\n- **Comparação entre negativos**:\n  - −1 > −2 > −3 (−1 está mais à direita).\n- **Inequação (FCC)**: “A maior das soluções inteiras de 2x² − x − 70 < 0”.\n  - Equação associada: 2x² − x − 70 = 0 → raízes r1 e r2.\n  - a = 2 > 0 → concavidade para cima → solução de “< 0” é (r1, r2).\n  - Do enunciado/intervalo indicado: x ∈ (−2, 17,5).\n  - Inteiros no intervalo: ..., −1, 0, 1, 2, ..., 17.\n  - Maior solução inteira: **17**.\n- **Valor absoluto x relativo**:\n  - |−500| = 500; −10 000 indica saída (valor relativo negativo).\n- **Quadrado perfeito**:\n  - 4 = 2², 9 = 3², 16 = 4² (posso “desenhar” quadrado com lados inteiros 2, 3, 4).\n- **Propriedades em 17**:\n  - Não é divisível por 4; não é quadrado perfeito; é número primo.\n\n---\n\n## 5. Pegadinhas e Erros Comuns\n- “Primeiro inteiro” ou “menor inteiro”: não existe menor elemento em Z.\n- Confundir pertencimento de soluções: intervalo aberto não inclui as extremidades.\n- Pedir “solução inteira” e marcar valor decimal: verifique se o número pedido é inteiro.\n- Comparação de negativos: errar por olhar apenas o valor numérico sem sinal; use posição na reta ou o módulo.\n- Subtração em N: pode sair de N; se o problema envolve subtrações que podem resultar em número negativo, o conjunto adequado é Z.\n- Trapézio: definição pode variar; leia a definição da banca.\n- Valor absoluto x relativo: a questão pode pedir o “módulo” (sem sinal) ou o “saldo” (com sinal).\n\n> Dica de prova: Em inequações do 2º grau, memorize: a > 0 → “< 0” fica ENTRE as raízes; a < 0 → “< 0” fica FORA. E, pedindo “inteiro”, ajuste ao próximo inteiro dentro do intervalo.",
+  "resumo_bolso": "# Conjunto dos Números Inteiros\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Inteiros (ℤ)**: {..., −3, −2, −1, 0, 1, 2, 3, ...}; inteiros negativos, **zero** e inteiros positivos, **sem parte decimal**.\n* **Inclusão**: **ℕ ⊂ ℤ**; os números naturais pertencem aos inteiros.\n* **Reta numérica**: representação ordenada; números mais à direita são **maiores**.\n* **Infinitude em ℤ**: não há **primeiro** nem **último** inteiro (se estende a “menos infinito” e “mais infinito”).\n* **Sucessor/Antecessor**: sucessor de a é o número imediatamente à direita (**a + 1**); antecessor é o número imediatamente à esquerda (**a − 1**).\n* **Valor absoluto |a|**: distância até o zero; ignora o sinal.\n* **Valor relativo**: considera o sinal; usado em ganhos/perdas, entradas/saídas.\n* **Ordem entre negativos**: quanto menor o módulo, maior o número: −1 > −2 > −3.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### ℕ (Naturais) vs ℤ (Inteiros)\n\n| Aspecto                  | ℕ (Naturais)                                   | ℤ (Inteiros)                                             |\n|--------------------------|-----------------------------------------------|----------------------------------------------------------|\n| Elementos típicos        | 0, 1, 2, 3, ... (ou 1, 2, 3, ... conforme banca) | ..., −3, −2, −1, 0, 1, 2, 3, ...                         |\n| Negativos                | **Não** possui                               | **Possui**                                               |\n| Primeiro elemento        | Tem (0 ou 1, depende da convenção)           | **Não tem** primeiro nem último                          |\n| Fechamento da subtração  | **Não** (5 − 6 = −1 ∉ ℕ)                      | **Sim** (soma, subtração e multiplicação fecham em ℤ)    |\n| Uso típico em problemas  | Contagens sem perda (pessoas, peças)         | Situações com déficits/saldos negativos (dívidas, temperaturas abaixo de zero, fluxo de caixa com saídas)  |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Sucessor e Antecessor em ℤ**\n\n* **Aplicação**: qualquer inteiro a.\n* Sucessor: **a + 1**; Antecessor: **a − 1**.\n* **Exemplos**: sucessor de −4 é −3; sucessor de 6 é 7; antecessor de 3 é 2.\n\n---\n\n**2. Ordem entre Inteiros Negativos**\n\n* **Aplicação**: comparação de negativos.\n* Regra: quanto **menor o módulo**, **maior** o número.\n* **Exemplo**: −1 > −2 > −3 (−1 está mais à direita na reta).\n\n---\n\n**3. Valor Absoluto |a| e Valor Relativo**\n\n* **Valor absoluto**: distância ao zero; ignora o sinal.  \n  * |a| = a se a ≥ 0; |a| = −a se a < 0.\n  * **Exemplos**: |−500| = 500; |−10 000| = 10 000.\n* **Valor relativo**: considera o sinal, indicando saldo/fluxo.  \n  * Entradas: positivas (+3 000).  \n  * Saídas: negativas (−10 000).\n\n---\n\n**4. Inequação do 2º Grau – Regra de Sinal e Solução Inteira**\n\nConsidere ax² + bx + c, raízes r₁ ≤ r₂.\n\n* **a > 0 (concavidade para cima)**  \n  * ax² + bx + c **< 0** ⇒ solução é o intervalo aberto **(r₁, r₂)**.  \n  * ax² + bx + c **> 0** ⇒ solução é **(−∞, r₁) ∪ (r₂, +∞)**.\n* **Soluções inteiras em intervalos**  \n  * “Maior solução inteira” = maior inteiro **estritamente menor** que o extremo superior (se aberto).  \n  * “Menor solução inteira” = menor inteiro **estritamente maior** que o extremo inferior (se aberto).\n* **Exemplo (FCC)**: “A maior das soluções inteiras de 2x² − x − 70 < 0”.  \n  * Equação associada: 2x² − x − 70 = 0 → raízes r₁ e r₂.  \n  * a = 2 > 0 → concavidade para cima → solução de “< 0” é (r₁, r₂).  \n  * Do enunciado/intervalo indicado: x ∈ (−2, 17,5).  \n  * Inteiros no intervalo: −1, 0, 1, 2, ..., 17.  \n  * Maior solução inteira: **17**.\n\n---\n\n**5. Quadrado Perfeito (Número Inteiro)**\n\n* **Definição**: número que tem raiz quadrada inteira; pode ser visto como área de um quadrado de lado inteiro L (L²).\n* **Exemplos**: 4 = 2², 9 = 3², 16 = 4² (quadrados com lados inteiros 2, 3, 4).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “Primeiro inteiro” ou “menor inteiro”: não existe menor elemento em ℤ.\n* Intervalo **aberto** não inclui as extremidades; cuidado ao selecionar soluções inteiras.\n* Pedir “solução inteira” e marcar valor decimal: verifique se o número pedido é inteiro.\n* Comparação de negativos: errar por olhar apenas o valor numérico sem sinal; use posição na reta ou o módulo.\n* Subtração em ℕ: pode sair de ℕ; se o problema envolve resultados negativos, o conjunto adequado é ℤ.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **ℕ** de **ℤ** (negativos, primeiro elemento, fechamento da subtração)?\n* Lembrei que **ℤ não tem menor nem maior elemento**?\n* Fixei que em inequações do 2º grau com **a > 0**, a solução de “< 0” fica **entre as raízes**?\n* Sei encontrar a **maior/menor solução inteira** escolhendo apenas inteiros **dentro do intervalo** (sem incluir extremos abertos)?\n* Estou atento à diferença entre **valor absoluto (módulo, sem sinal)** e **valor relativo (com sinal, saldo/fluxo)**?\n* Ao comparar negativos, estou usando o **módulo** ou a posição na **reta numérica** (menor módulo ⇒ maior número)?",
+  "mapa_mental": "# 🧮 Conjunto dos Números Inteiros\n## 🎯 Estrutura dos Inteiros\n### 💡 Definição de Z\n- Inteiros negativos\n- Zero\n- Inteiros positivos\n- Sem parte decimal\n### 🔢 Relação N e Z\n- N subconjunto Z\n- N naturais\n- Z inclui negativos\n- Inclusão N ⊂ Z\n### 🗺️ Reta Numérica\n- Ordenação crescente\n- Direita maior\n- Esquerda menor\n- Representação de Z\n### ♾️ Infinitude\n- Z sem primeiro\n- Z sem último\n- Extensão ao infinito\n- N com primeiro\n### ➕ Sucessor Antecessor\n- Sucessor a+1\n- Antecessor a−1\n- Vizinhos na reta\n- Um único sucessor\n### 📏 Valor Absoluto\n- Distância ao zero\n- Ignora sinal\n- Módulo |a|\n- Sempre não negativo\n### 📉 Valor Relativo\n- Considera sinal\n- Ganhos positivos\n- Perdas negativas\n- Saldos financeiros\n\n## 🧩 Propriedades e Comparações\n### 🧮 Fechamento em N\n- Soma fechada\n- Multiplicação fechada\n- Subtração não fechada\n- Exige inteiros Z\n### 🧮 Fechamento em Z\n- Soma fechada\n- Subtração fechada\n- Multiplicação fechada\n- Divisão não fechada\n### 📊 Comparação Negativos\n- Menor módulo maior\n- −1 maior que −2\n- Posição na reta\n- Uso do módulo\n### 🧱 Quadrados Perfeitos\n- Raiz inteira\n- Lado inteiro L\n- Área L²\n- Exemplos 4,9,16\n### 🧩 Fatoração Quadrado\n- Fatores primos\n- Expoentes pares\n- Ajuste por multiplicação\n- Tornar quadrado perfeito\n\n## 🚀 Aplicações em Provas\n### 🔢 Escolha N ou Z\n- Contagens em N\n- Quantidades pessoas\n- Dívidas em Z\n- Temperaturas negativas\n### 📉 Inequações 2º Grau\n- Resolver equação associada\n- Achar raízes r1,r2\n- a>0 menor que zero entre raízes\n- a>0 maior que zero fora raízes\n### 🔢 Soluções Inteiras\n- Intervalo aberto\n- Extremos não incluídos\n- Maior solução inteira\n- Menor solução inteira\n### 💰 Valor em Finanças\n- Entradas positivas\n- Saídas negativas\n- Valor absoluto sem sinal\n- Saldo valor relativo\n### ⚠️ Erros Frequentes\n- Primeiro inteiro inexistente\n- Menor inteiro inexistente\n- Confundir intervalo aberto\n- Ignorar condição inteiro",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Conjunto dos Inteiros",
+      "description": "Conjunto dos Inteiros — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que define um **número inteiro**?",
+          "back": "Conjunto formado por números negativos, zero e positivos, porém sempre inteiros.",
+          "hint": "Pense na união de três subconjuntos numéricos.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual símbolo representa o conjunto dos números inteiros?",
+          "back": "Z",
+          "hint": "Letra de origem alemã (Zahlen).",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "simbologia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual relação de inclusão existe entre os números naturais e os inteiros?",
+          "back": "Os números naturais estão contidos dentro dos inteiros.",
+          "hint": "Considere a hierarquia dos conjuntos numéricos.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "conjuntos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Que limitação dos naturais é superada pelos inteiros em situações financeiras?",
+          "back": "A representação de dívidas ou saídas.",
+          "hint": "Relacione com o conceito de saldo negativo.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "aplicacao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Operações Numéricas",
+      "description": "Operações Numéricas — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Que operação entre naturais pode resultar em um número não natural?",
+          "back": "A subtração.",
+          "hint": "Pense em subtrair um maior de um menor.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "operacoes"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-6",
+          "front": "O que ocorre ao somar dois números inteiros?",
+          "back": "O resultado sempre será um número inteiro.",
+          "hint": "Refere-se à propriedade de fechamento.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "propriedades"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Ordem na Reta",
+      "description": "Ordem na Reta — 5 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Como se comportam os inteiros ao avançar da esquerda para a direita na reta numérica?",
+          "back": "Os valores vêm aumentando.",
+          "hint": "Pense na ordem crescente dos valores.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "reta-numerica"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Como se identifica o sucessor de um número inteiro na reta numérica?",
+          "back": "O número situado imediatamente à direita na reta numérica.",
+          "hint": "Localização espacial na reta.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "reta-numerica"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é o sucessor de −4?",
+          "back": "−3, pois a reta numérica cresce para a direita.",
+          "hint": "Aplique a regra de sucessão na reta.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "reta-numerica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-10",
+          "front": "Como se caracteriza a existência de um primeiro elemento no conjunto dos inteiros?",
+          "back": "Não possui um primeiro elemento, pois estende-se até o infinito negativo.",
+          "hint": "Considere a natureza infinita do conjunto.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é o maior número inteiro entre −2 e 17,5?",
+          "back": "17",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "comparacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Valores e Aplicações",
+      "description": "Valores e Aplicações — 2 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual é a diferença entre valor absoluto e valor relativo de um número?",
+          "back": "O valor absoluto é o número sem considerar o sinal, enquanto o valor relativo leva o sinal em consideração.",
+          "hint": "Diferença baseada na presença do sinal.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "conceitos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-13",
+          "front": "Como são representadas as entradas de caixa por meio de números inteiros?",
+          "back": "Por meio de números positivos.",
+          "hint": "Pense no sinal associado a ganhos.",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "aplicacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Quadrados Perfeitos",
+      "description": "Quadrados Perfeitos — 2 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Que critério identifica um quadrado perfeito?",
+          "back": "Número cuja área possui lados de medidas inteiras iguais.",
+          "hint": "Relacione com a geometria de um quadrado.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "quadrados-perfeitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Como classificar o número 9 quanto à sua forma de quadrado perfeito?",
+          "back": "É um quadrado perfeito, pois é possível desenhar um quadrado perfeito de lado 3.",
+          "hint": "Verifique a raiz quadrada do número.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "quadrados-perfeitos"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal diferença entre o conjunto dos números naturais e o conjunto dos números inteiros?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os números naturais permitem operações de divisão, enquanto os inteiros não permitem",
+          "correct": false,
+          "explanation": "Incorreta. Nem os números naturais nem os números inteiros garantem que o resultado de uma operação de divisão será sempre um número pertencente ao mesmo conjunto. Por exemplo, 5 dividido por 2 resulta em 2,5, que não é um número natural nem um número inteiro. Para que a divisão seja sempre fechada, seria necessário o conjunto dos números racionais."
+        },
+        {
+          "id": "b",
+          "text": "Os números naturais incluem frações, enquanto os inteiros incluem apenas valores exatos",
+          "correct": false,
+          "explanation": "Incorreta. Tanto os números naturais quanto os números inteiros são conjuntos de números exatos, sem casas decimais ou frações. As frações pertencem ao conjunto dos números racionais (Q), que é um conjunto mais abrangente que inclui os inteiros e os naturais."
+        },
+        {
+          "id": "c",
+          "text": "Os números inteiros são sempre maiores que os números naturais em valor absoluto",
+          "correct": false,
+          "explanation": "Incorreta. O valor absoluto de um número é sua distância até o zero na reta numérica, sempre um valor não negativo. Muitos números naturais são também números inteiros (por exemplo, 5 é natural e inteiro, e seu valor absoluto é 5). Além disso, o valor absoluto de um número inteiro negativo (como |-5| = 5) pode ser menor que o de alguns números naturais (como 10). Portanto, não é correto afirmar que os inteiros são sempre maiores que os naturais em valor absoluto."
+        },
+        {
+          "id": "d",
+          "text": "Os números inteiros incluem números negativos, enquanto os naturais são apenas positivos",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números naturais (N) é composto por números inteiros não negativos (0, 1, 2, 3, ...), enquanto o conjunto dos números inteiros (Z) inclui todos os números naturais, seus opostos negativos e o zero (..., -3, -2, -1, 0, 1, 2, 3, ...). Assim, a principal diferença é a inclusão dos números negativos nos inteiros."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números naturais (N) é composto por números inteiros não negativos (0, 1, 2, 3, ...), enquanto o conjunto dos números inteiros (Z) inclui todos os números naturais, seus opostos negativos e o zero (..., -3, -2, -1, 0, 1, 2, 3, ...). Assim, a principal diferença é a inclusão dos números negativos nos inteiros.",
+      "difficulty": "easy",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual operação aritmética básica pode ser realizada no conjunto dos números inteiros, mas NÃO garante resultado dentro do conjunto dos números naturais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicação de dois números positivos quaisquer",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação de dois números naturais positivos (que são também inteiros) sempre resulta em um número natural positivo. Por exemplo, 3 x 5 = 15, e 15 é um número natural."
+        },
+        {
+          "id": "b",
+          "text": "Subtração de um número maior por um número menor",
+          "correct": true,
+          "explanation": "Correta. A subtração é a operação que pode ser realizada no conjunto dos números inteiros e não garante um resultado dentro do conjunto dos números naturais. Por exemplo, se subtrairmos um número natural maior de um número natural menor (como 3 - 5 = -2), o resultado (-2) é um número inteiro, mas não é um número natural. Os números naturais não incluem valores negativos."
+        },
+        {
+          "id": "c",
+          "text": "Divisão de um número par por dois",
+          "correct": false,
+          "explanation": "Incorreta. A divisão de um número par por dois (por exemplo, 6 / 2 = 3) resulta em um número inteiro. Se o número par original for um número natural, o resultado dessa divisão também será um número natural (desde que a divisão seja exata e o resultado seja positivo, o que é garantido para números pares divididos por dois)."
+        },
+        {
+          "id": "d",
+          "text": "Adição de dois números positivos quaisquer",
+          "correct": false,
+          "explanation": "Incorreta. A adição de dois números naturais positivos (que são também inteiros) sempre resulta em um número natural positivo. Por exemplo, 3 + 5 = 8, e 8 é um número natural."
+        }
+      ],
+      "explanation": "Correta. A subtração é a operação que pode ser realizada no conjunto dos números inteiros e não garante um resultado dentro do conjunto dos números naturais. Por exemplo, se subtrairmos um número natural maior de um número natural menor (como 3 - 5 = -2), o resultado (-2) é um número inteiro, mas não é um número natural. Os números naturais não incluem valores negativos.",
+      "difficulty": "easy",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em situações financeiras envolvendo entradas e saídas de caixa, qual conjunto numérico é mais adequado para representar débitos e créditos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Números racionais, pois incluem todas as frações possíveis de valores monetários",
+          "correct": false,
+          "explanation": "Incorreta. Embora valores monetários frequentemente envolvam frações (centavos, por exemplo, que são números racionais), a questão foca na representação de 'débitos e créditos', ou seja, a distinção entre valores positivos e negativos. Os números inteiros já oferecem essa capacidade fundamental. Os racionais seriam mais precisos para a representação exata de qualquer valor monetário com casas decimais, mas os inteiros são suficientes para a distinção de sinal."
+        },
+        {
+          "id": "b",
+          "text": "Números inteiros, pois permitem representar valores negativos para débitos e positivos para créditos",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números inteiros é o mais adequado para representar débitos e créditos, pois inclui tanto os números positivos (para créditos e entradas de caixa) quanto os números negativos (para débitos e saídas de caixa), além do zero para um saldo neutro. Isso permite uma representação completa da direção do fluxo financeiro."
+        },
+        {
+          "id": "c",
+          "text": "Números naturais, pois representam quantidades discretas de dinheiro",
+          "correct": false,
+          "explanation": "Incorreta. Os números naturais representam apenas quantidades positivas ou não negativas. Em situações financeiras, débitos são representados por valores negativos, o que os números naturais não conseguem expressar."
+        },
+        {
+          "id": "d",
+          "text": "Números irracionais, pois contemplam variações contínuas de valores financeiros",
+          "correct": false,
+          "explanation": "Incorreta. Os números irracionais são números com representação decimal infinita e não periódica (como π ou √2). Eles não são utilizados para representar valores monetários ou quantidades discretas em finanças, pois o dinheiro é sempre expresso em valores finitos e exatos (racionais)."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números inteiros é o mais adequado para representar débitos e créditos, pois inclui tanto os números positivos (para créditos e entradas de caixa) quanto os números negativos (para débitos e saídas de caixa), além do zero para um saldo neutro. Isso permite uma representação completa da direção do fluxo financeiro.",
+      "difficulty": "easy",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "O que caracteriza um número como sendo um quadrado perfeito?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É um número que pode ser representado geometricamente como um retângulo de lados diferentes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "É um número que possui exatamente quatro divisores distintos em sua decomposição",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "É um número que possui raiz quadrada exata e pode ser expresso como o produto de um número inteiro por ele mesmo",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "É um número que resulta da soma de dois números primos consecutivos",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Considerando a reta numérica dos números inteiros, qual afirmação está correta sobre sucessores e antecessores?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O antecessor de zero é indefinido, pois marca a transição entre positivos e negativos",
+          "correct": false,
+          "explanation": "Incorreta. O antecessor de zero é um número perfeitamente definido no conjunto dos números inteiros. O número que precede zero na reta numérica é -1. Zero é um ponto central, mas não indefinido em termos de seus vizinhos."
+        },
+        {
+          "id": "b",
+          "text": "Números negativos não possuem sucessores, apenas antecessores",
+          "correct": false,
+          "explanation": "Incorreta. Todos os números inteiros, sejam eles positivos, negativos ou o zero, possuem um sucessor e um antecessor únicos. Por exemplo, o sucessor de -5 é -4, e seu antecessor é -6."
+        },
+        {
+          "id": "c",
+          "text": "O sucessor de -4 é -3, pois na reta numérica os valores crescem para a direita",
+          "correct": true,
+          "explanation": "Correta. O sucessor de um número inteiro é o número que o sucede na ordem crescente, ou seja, o número imediatamente à sua direita na reta numérica. Para -4, o próximo número inteiro na sequência crescente é -3. A reta numérica, por convenção, tem seus valores aumentando da esquerda para a direita."
+        },
+        {
+          "id": "d",
+          "text": "O sucessor de -4 é -5, pois na reta numérica os valores decrescem para a direita",
+          "correct": false,
+          "explanation": "Incorreta. Na reta numérica, os valores crescem da esquerda para a direita. O sucessor de um número é o inteiro imediatamente à sua direita. O número -5 está à esquerda de -4, sendo, portanto, seu antecessor, não seu sucessor."
+        }
+      ],
+      "explanation": "Correta. O sucessor de um número inteiro é o número que o sucede na ordem crescente, ou seja, o número imediatamente à sua direita na reta numérica. Para -4, o próximo número inteiro na sequência crescente é -3. A reta numérica, por convenção, tem seus valores aumentando da esquerda para a direita.",
+      "difficulty": "medium",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a diferença entre valor absoluto e valor relativo de um número inteiro no contexto matemático?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor absoluto considera o sinal do número, enquanto o valor relativo ignora o sinal",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte as definições. O valor absoluto, por sua própria natureza, desconsidera o sinal, focando apenas na magnitude, enquanto o valor relativo é intrinsecamente ligado ao sinal para indicar direção ou característica. Por exemplo, para -5, o valor absoluto é 5 (sem sinal), e o valor relativo é -5 (com sinal)."
+        },
+        {
+          "id": "b",
+          "text": "O valor relativo representa a distância do número até o zero, enquanto o valor absoluto representa sua posição na reta",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte as definições. A distância de um número até o zero na reta numérica é a definição de valor absoluto. O valor relativo, por sua vez, representa o número em si, com seu sinal, indicando sua posição exata e característica (positivo ou negativo) na reta numérica."
+        },
+        {
+          "id": "c",
+          "text": "O valor absoluto é sempre maior que o valor relativo para números negativos",
+          "correct": false,
+          "explanation": "Incorreta. Embora esta afirmação seja verdadeira para números negativos (por exemplo, o valor absoluto de -5 é 5, que é maior que o valor relativo -5), ela descreve uma consequência e não a diferença fundamental ou a definição conceitual entre valor absoluto e valor relativo. A diferença reside na consideração ou não do sinal para expressar magnitude ou direção."
+        },
+        {
+          "id": "d",
+          "text": "O valor absoluto representa a magnitude do número sem considerar o sinal, enquanto o valor relativo considera o sinal indicando posição ou direção",
+          "correct": true,
+          "explanation": "Correta. O valor absoluto, também conhecido como módulo, indica a distância de um número até o zero na reta numérica, sendo sempre um valor não negativo (magnitude). Já o valor relativo é o próprio número, com seu sinal, que atribui um sentido ou contexto, como indicar um crédito (positivo) ou um débito (negativo) em uma transação financeira."
+        }
+      ],
+      "explanation": "Correta. O valor absoluto, também conhecido como módulo, indica a distância de um número até o zero na reta numérica, sendo sempre um valor não negativo (magnitude). Já o valor relativo é o próprio número, com seu sinal, que atribui um sentido ou contexto, como indicar um crédito (positivo) ou um débito (negativo) em uma transação financeira.",
+      "difficulty": "medium",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Quais operações aritméticas básicas garantem que o resultado sempre pertencerá ao conjunto dos números inteiros quando aplicadas a dois números inteiros quaisquer?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Adição, subtração e multiplicação",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números inteiros (Z) é fechado sob as operações de adição, subtração e multiplicação. Isso significa que, ao realizar qualquer uma dessas operações com dois números inteiros, o resultado será sempre um número inteiro. Por exemplo: 3 + (-5) = -2; 3 - 5 = -2; 3 * (-5) = -15. Em contraste, os números naturais não são fechados para a subtração, pois 3 - 5 = -2, e -2 não é um número natural."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicação, divisão e potenciação",
+          "correct": false,
+          "explanation": "Incorreta. Novamente, a divisão não garante que o resultado seja sempre um número inteiro. Além disso, embora a potenciação de um inteiro por um expoente inteiro positivo geralmente resulte em um inteiro, a não garantia da divisão torna esta alternativa incorreta."
+        },
+        {
+          "id": "c",
+          "text": "Adição, subtração e divisão",
+          "correct": false,
+          "explanation": "Incorreta. A divisão de dois números inteiros nem sempre resulta em um número inteiro. Por exemplo, 5 dividido por 2 resulta em 2,5, que é um número racional, mas não um inteiro. Portanto, a divisão não garante o fechamento no conjunto dos números inteiros."
+        },
+        {
+          "id": "d",
+          "text": "Subtração, multiplicação e radiciação",
+          "correct": false,
+          "explanation": "Incorreta. A radiciação (extração de raízes) de um número inteiro nem sempre resulta em um número inteiro. Por exemplo, a raiz quadrada de 2 não é um número inteiro, nem mesmo um número racional. Portanto, esta operação não garante o fechamento no conjunto dos números inteiros."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números inteiros (Z) é fechado sob as operações de adição, subtração e multiplicação. Isso significa que, ao realizar qualquer uma dessas operações com dois números inteiros, o resultado será sempre um número inteiro. Por exemplo: 3 + (-5) = -2; 3 - 5 = -2; 3 * (-5) = -15. Em contraste, os números naturais não são fechados para a subtração, pois 3 - 5 = -2, e -2 não é um número natural.",
+      "difficulty": "medium",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Em uma questão que solicita a maior solução inteira de uma inequação cujo conjunto solução é o intervalo aberto (-2, 17,5), qual seria a resposta correta?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "17, pois é o maior número inteiro contido no intervalo dado",
+          "correct": true,
+          "explanation": "Correta. O intervalo aberto (-2, 17,5) inclui todos os números reais maiores que -2 e menores que 17,5. Os números inteiros que satisfazem essa condição são -1, 0, 1, ..., 16, 17. Dentre esses, o maior número inteiro é 17. Este valor é o maior inteiro que cumpre a condição de ser menor que 17,5."
+        },
+        {
+          "id": "b",
+          "text": "18, pois é o primeiro número inteiro maior que 17,5",
+          "correct": false,
+          "explanation": "Incorreta. O intervalo solução é aberto em 17,5, o que significa que valores iguais ou maiores que 17,5 não estão incluídos no conjunto solução. Portanto, 18 está fora do intervalo (-2, 17,5) e não pode ser a resposta, pois a inequação não é satisfeita por ele."
+        },
+        {
+          "id": "c",
+          "text": "16, pois deve-se considerar uma margem de segurança em inequações",
+          "correct": false,
+          "explanation": "Incorreta. A matemática não opera com \"margens de segurança\" arbitrárias em questões de solução de inequações, a menos que tal critério seja explicitamente definido no problema. A resposta deve ser o maior inteiro que *realmente* satisfaz a condição da inequação, que neste caso é 17, não 16."
+        },
+        {
+          "id": "d",
+          "text": "17,5, pois é o limite superior do intervalo solução",
+          "correct": false,
+          "explanation": "Incorreta. A questão pede a \"maior solução *inteira*\". Embora 17,5 seja o limite superior do intervalo solução, ele não é um número inteiro. Portanto, não pode ser a resposta para a pergunta que exige um valor inteiro."
+        }
+      ],
+      "explanation": "Correta. O intervalo aberto (-2, 17,5) inclui todos os números reais maiores que -2 e menores que 17,5. Os números inteiros que satisfazem essa condição são -1, 0, 1, ..., 16, 17. Dentre esses, o maior número inteiro é 17. Este valor é o maior inteiro que cumpre a condição de ser menor que 17,5.",
+      "difficulty": "hard",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Por que o conjunto dos números inteiros não possui um primeiro elemento, diferentemente do conjunto dos números naturais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque os números inteiros se estendem infinitamente tanto para valores positivos quanto negativos",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números inteiros (Z) é infinito em ambas as direções da reta numérica. Ele se estende indefinidamente para os valores positivos (..., 3, 2, 1, 0) e para os valores negativos (-1, -2, -3, ...). Não há um número inteiro \"mais negativo\" que todos os outros, pois sempre é possível encontrar um inteiro menor (por exemplo, para -1000, -1001 é ainda menor). Portanto, não há um primeiro elemento que possa ser definido."
+        },
+        {
+          "id": "b",
+          "text": "Porque os números inteiros incluem o zero, que não é considerado um elemento inicial válido",
+          "correct": false,
+          "explanation": "Incorreta. A inclusão do zero nos números inteiros não é o motivo pelo qual eles não possuem um primeiro elemento. O zero é um número inteiro válido e, em muitas convenções, é o primeiro elemento do conjunto dos números naturais. A razão para a ausência de um primeiro elemento nos inteiros está em sua extensão para os valores negativos."
+        },
+        {
+          "id": "c",
+          "text": "Porque a definição matemática de números inteiros não permite estabelecer uma ordem total",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é falsa. O conjunto dos números inteiros possui uma ordem total, o que significa que quaisquer dois números inteiros podem ser comparados (um é maior, menor ou igual ao outro). A capacidade de ordenar os números não impede a existência de um primeiro elemento, mas a infinitude em ambas as direções é o fator determinante."
+        },
+        {
+          "id": "d",
+          "text": "Porque os números inteiros negativos formam um subconjunto separado sem conexão com os positivos",
+          "correct": false,
+          "explanation": "Incorreta. Os números inteiros negativos e positivos, juntamente com o zero, formam um único conjunto coeso (Z) e não subconjuntos separados sem conexão. Eles estão interligados pela reta numérica, onde a transição de negativos para positivos ocorre através do zero. A ausência de um primeiro elemento não se deve a uma suposta desconexão, mas sim à sua natureza infinita em ambas as direções."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números inteiros (Z) é infinito em ambas as direções da reta numérica. Ele se estende indefinidamente para os valores positivos (..., 3, 2, 1, 0) e para os valores negativos (-1, -2, -3, ...). Não há um número inteiro \"mais negativo\" que todos os outros, pois sempre é possível encontrar um inteiro menor (por exemplo, para -1000, -1001 é ainda menor). Portanto, não há um primeiro elemento que possa ser definido.",
+      "difficulty": "hard",
+      "topic": "Matemática Básica",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "03_250112_Conjunto dos Números Inteiros.pdf",
+  "coletado_em": "2026-09-23T20:51:17"
+}

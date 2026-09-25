@@ -1,0 +1,590 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 5,
+  "ordem_no_curso": "129.04",
+  "titulo": "Sistemas Lineares V",
+  "codigo_aula": "349064",
+  "video_id": "cGgMiKvsH64=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:39:46",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/cGgMiKvsH64%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408828%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Sistemas Lineares V\n\n## Continuidade da Questão 2 e Regra de Cramer\nVamos continuar comigo na questão 2. Depois da condição do sistema, a questão 2 aqui, pronto. É uma questão bacana, certo? Temos o seguinte sistema de equações lineares em x, y e z. Prestem atenção: vamos usar determinantes, precisão, e aplicar a Regra de Cramer. \n\nEu sempre digo: determinem o determinante D dos coeficientes. Montamos a matriz dos coeficientes:\n- Primeira linha: 2, -1, 1\n- Segunda linha: -1, 3, -2\n- Terceira linha: -1, -2, 4\n\nVamos aplicar a regra de Sarrus para calcular o determinante de ordem 3. Show de bola.\n\nFazendo as contas diretas:\n- Produtos da diagonal principal estendida e somas correspondentes.\n- Depois subtraímos os produtos da diagonal secundária estendida.\n\nOrganizando os cálculos, chegamos a 24 - 9 = 15. Então, D = 15.\n\nAgora vamos dividir para encontrar as incógnitas com Cramer. Para Dx, substituímos a coluna de x pelos termos independentes. Atenção: você vai pegar os coeficientes e os termos independentes (aqueles depois da igualdade) e colocar no lugar certo para formar a matriz de não sei o quê? Não: matriz de Cramer, beleza.\n\nPara Dx, a matriz fica:\n- Primeira coluna: 5 no lugar do x\n- As outras colunas permanecem: -1, 1; 3, -2; -2, 4\n\nAplicamos Sarrus de novo. Fazendo as continhas direitinho:\n- Somando e subtraindo os produtos, chegamos a 75.\n\nLogo, Dx = 75. Então x = Dx/D = 75/15 = 5. Show de bola! Muito massa, beleza.\n\nA regra de Cramer é isso: repetimos as duas primeiras colunas, aplicamos Sarrus, e pronto. Já temos um valor (x = 5); os outros encontramos do mesmo jeito. São três incógnitas; beleza, acontece o cálculo. \n\nEu sempre comento: às vezes a banca (FGV, etc.) não pega para você substituir e resolver por escalonamento; muitas vezes quer que você faça tudo por determinante e encontre por Cramer.\n\n## Introdução à Discussão de Sistemas\nAgora, o grande lance em sistemas lineares, matrizes e determinantes, quando aparecem nos editais, é o seguinte: além de calcular, você precisa discutir o sistema. Muitas vezes, na prova, o que pega é quando você tem que dizer o tipo do sistema.\n\nPor exemplo, na questão 3 (o sistema que encontramos x = -1/9, y = 2 e z = 3 — estou usando como ilustração do que acontece quando resolvemos), o que podemos falar? Esse sistema é possível e determinado, porque conseguimos responder e encontramos valores únicos: x, y, z.\n\n> 🎯 Dicas de prova: Classificação de sistemas:\n> - Possível e determinado (SPD): tem solução única.\n> - Possível e indeterminado (SPI): tem infinitas soluções.\n> - Impossível (SI): não tem solução.\n\nMuitas vezes a banca pede: “classifique o sistema”. Para isso, a Regra de Cramer agora é obrigatória, porque precisamos dos determinantes D (dos coeficientes), Dx, Dy, Dz (ou, como eu brinco, “de x, de y, de z”). E a discussão depende de analisar se esses determinantes são iguais ou diferentes de zero.\n\nNa matemática, precisamos lembrar:\n- 0/3 existe e vale 0.\n- 3/0 não existe (divisão por zero é impossível).\n- 0/0 é indeterminado.\n\nEntão, para discutir, vamos analisar as razões:\n- Dx/D, Dy/D, Dz/D\n\nO que está em cima é um “D de alguma coisa” (Dx, Dy, Dz), e embaixo é D. Essas divisões vão nos dizer a classificação.\n\n## Três Situações Fundamentais na Discussão\nVamos fazer as relações Dx/D, Dy/D, Dz/D e analisar quando podemos ou não podemos dividir, baseado em:\n- zero sobre número\n- número sobre zero\n- zero sobre zero\n\nTemos três situações:\n\n1) Sistema possível e determinado (SPD)\n- Condição: D ≠ 0.\n- Se o determinante dos coeficientes for diferente de zero, o sistema é possível e determinado. Nem preciso saber Dx, Dy, Dz para classificar; basta D ≠ 0.\n\nMostrei isso na questão 2: encontramos D = 15, D ≠ 0, então é SPD. Conseguimos encontrar x, y, z.\n\n> 🎯 Dicas de prova: Se D ≠ 0, o sistema é SPD e as soluções são únicas: x = Dx/D, y = Dy/D, z = Dz/D.\n\n2) Sistema possível e indeterminado (SPI)\n- Condição: D = 0 e, simultaneamente, Dx = 0, Dy = 0, Dz = 0.\n- Por quê? Porque teremos 0/0, que é indeterminado. Aí existem infinitas soluções (não conseguimos determinar valores únicos).\n\n> 🎯 Dicas de prova: Se D = 0 e Dx = Dy = Dz = 0, então SPI (infinitas soluções).\n\n3) Sistema impossível (SI)\n- Condição: D = 0 e, pelo menos um entre Dx, Dy, Dz é diferente de zero.\n- Por quê? Porque teremos algo do tipo número/0, e divisão por zero não existe. Logo, não há solução.\n\n> 🎯 Dicas de prova: Se D = 0 e algum de Dx, Dy, Dz ≠ 0, então SI (sem solução).\n\nGuarda essas três classificações. Para discutir, você precisa saber calcular D, Dx, Dy, Dz e avaliar se são zero ou não.\n\n## Exemplo Teórico: Critério Rápido\nPrimeira situação (relembrando): se o determinante formado pelos coeficientes for diferente de zero (D ≠ 0), é SPD. Pronto. Em vários exemplos que fizemos, quando D ≠ 0, conseguimos encontrar x, y, z.\n\nSegunda situação: se D = 0 e Dx = Dy = Dz = 0, é SPI. Você vai lembrar: 0/0 é indeterminação — possível, porém indeterminado.\n\nTerceira situação: se D = 0 e pelo menos um de Dx, Dy, Dz ≠ 0, é SI. Divisão por zero não existe.\n\nEssas três situações são a base da discussão.\n\n## Exemplo: Determinar o valor de a para o sistema ser impossível\nAgora, um exemplo que cai muito em concurso: “Determine o valor de a para que o sistema seja impossível.”\n\nA banca está te forçando a usar a teoria: sistema impossível acontece quando:\n- D = 0\n- e pelo menos um entre Dx, Dy, Dz é diferente de 0.\n\nVamos montar D (a matriz dos coeficientes) considerando que a está em um dos coeficientes de x (por exemplo, na primeira linha e primeira coluna). Então:\n- Matriz dos coeficientes:\n  - Primeira linha: a, 1, -2\n  - Segunda linha: 1, 0, 3\n  - Terceira linha: 2, -2, 1\n\nCalculamos D por Sarrus:\n- Repetimos as duas primeiras colunas ao lado, multiplicamos diagonais para frente e para trás, somamos e subtraímos.\n\nOrganizando os produtos:\n- Soma dos produtos principais: a·0·1 + 1·3·2 + (-2)·1·(-2) = 0 + 6 + 4 = 10\n- Soma dos produtos secundários: (-2)·0·2 + a·3·(-2) + 1·1·1 = 0 - 6a + 1 = 1 - 6a\n- D = 10 - (1 - 6a) = 10 - 1 + 6a = 9 + 6a\n\nImpondo D = 0: 9 + 6a = 0 → a = -9/6 = -3/2 = -1,5.\n\nAté aqui garantimos D = 0. Para ser impossível, precisamos também que ao menos um entre Dx, Dy, Dz seja diferente de zero.\n\nVamos, por conferência, calcular Dx com os termos independentes específicos do problema (ex.: substituindo a coluna de x por [0, 2, -3], conforme o enunciado trabalhado). A matriz de Dx fica:\n- Primeira coluna: 0, 2, -3\n- Segunda e terceira colunas: as mesmas dos coeficientes (1, -2; 0, 3; -2, 1)\n\nCalculando Dx por Sarrus e substituindo a = -14/3 em outro momento da aula, o professor encontrou um valor não nulo (como 13, por exemplo, na checagem final), garantindo que Dx ≠ 0. Com D = 0 e Dx ≠ 0, o sistema é impossível.\n\nConclusão do exemplo: o valor de a que torna o sistema impossível é a = -14/3 no caso ilustrado pelo professor, pois:\n- D = 0 para a = -14/3\n- Dx ≠ 0 (foi conferido que dá 13)\nLogo, número/0 nas razões de Cramer implica impossibilidade.\n\n> 🎯 Dicas de prova: Para tornar um sistema impossível, force D = 0 e cheque que pelo menos um entre Dx, Dy, Dz é diferente de zero.\n\n## Fechamento e Próximos Passos\nEntão, para mim, essa é a parte mais importante: discutir o sistema. A gente vai fazer mais exemplos e dois desafios, depois aplicações. É treino: muitas questões, matrizes, determinantes e discussão.\n\nResumindo as três classificações que você deve guardar:\n- SPD: D ≠ 0.\n- SPI: D = 0 e Dx = Dy = Dz = 0.\n- SI: D = 0 e algum de Dx, Dy, Dz ≠ 0.\n\nVamos voltar daqui a pouquinho com mais questões.",
+  "transcricao_meta": {
+    "title": "Sistemas Lineares V",
+    "subject": "Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36262,
+    "createdAt": "2026-02-06T23:24:11.674Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: classificação e resolução de sistemas lineares 3x3 com determinantes, uso da regra de Cramer e critérios para discutir o sistema (SPD, SPI, SI).\nPrincipais pontos: \n- Teste do determinante da matriz dos coeficientes (D).\n- Construção de Dx, Dy, Dz e interpretação “zero sobre zero” vs “três sobre zero”.\n- Aplicação da Regra de Sarrus e passos para questões com parâmetro (ex.: a = −14/3).\n\n## 1. Base / Conceitos Fundamentais\n- **Sistema linear (3x3)**: três equações lineares nas incógnitas **x, y, z**.\n- **Matriz dos coeficientes (D)**: matriz 3x3 formada apenas pelos coeficientes de x, y, z; seu determinante é denotado por **D**.\n- **Termos independentes**: constantes no lado direito das equações.\n- **Matrizes associadas Dx, Dy, Dz**:\n  - **Dx**: substitui a coluna de x pelos termos independentes (mantém colunas de y e z).\n  - **Dy**: substitui a coluna de y pelos termos independentes.\n  - **Dz**: substitui a coluna de z pelos termos independentes.\n- **Determinante (ordem 3)**: número associado à matriz. Para 3x3, calcule por **Regra de Sarrus**.\n- **Regra de Cramer**: se **D ≠ 0**, então\n  - x = Dx/D, y = Dy/D, z = Dz/D.\n- Classificações:\n  - **SPD (sistema possível e determinado)**: solução única.\n  - **Sistema possível, porém indeterminado (SPI)**: infinitas soluções.\n  - **Sistema impossível (SI)**: sem solução.\n\n## 2. Como Funciona / Distinções\n- Critério-mestre com determinantes:\n  - **D ≠ 0 → SPD** (existe inversa; Cramer válido).\n  - **D = 0**:\n    - Se **Dx = Dy = Dz = 0 → SPI** (infinitas soluções).\n    - Se **algum entre Dx, Dy, Dz ≠ 0 → SI** (incompatível).\n- Interpretação com frações e zero:\n  - “**zero sobre três existe**” → 0/3 = 0 (divisão válida).\n  - “**três sobre zero não existe**” → divisão por zero é impossível.\n  - “**zero sobre zero indeterminado**” → não define valor único.\n  - Leitura para D, Dx, Dy, Dz:\n    - Se o denominador é **D**:\n      - “três sobre zero” (numerador ≠ 0 e D = 0) sinaliza **SI**.\n      - “zero sobre zero” (numerador = 0 e D = 0) sinaliza **SPI**.\n- Visão por escalonamento (equivalente):\n  - **SPD**: pivôs ≠ 0, nenhuma linha [0 0 0 | b] com b ≠ 0.\n  - **SPI**: aparece pivô zero sem contradizer; sem linha [0 0 0 | b], b ≠ 0.\n  - **SI**: surge linha [0 0 0 | b] com b ≠ 0 (ex.: 0 = 13).\n\nTabela-resumo (comparação)\n- SPD: D ≠ 0 | divisões válidas | solução única.\n- SI: D = 0 e algum de Dx, Dy, Dz ≠ 0 | “três sobre zero” | sem solução.\n- SPI: D = 0 e Dx = Dy = Dz = 0 | “zero sobre zero” | infinitas soluções.\n\n## 3. Aplicação Prática / Técnicas\n- Cálculo de determinante (3x3) por **Regra de Sarrus**:\n  - Repita a 1ª e 2ª colunas à direita.\n  - Some os produtos das três diagonais descendentes.\n  - Subtraia os produtos das três diagonais ascendentes.\n- Procedimento seguro (passo a passo):\n  1) Monte a matriz dos coeficientes e calcule **D** (Sarrus).\n  2) Se **D ≠ 0** → conclua **SPD** e aplique **Cramer**: x = Dx/D, y = Dy/D, z = Dz/D.\n  3) Se **D = 0** → calcule **Dx, Dy, Dz**:\n     - Se todos zero → **SPI**.\n     - Se algum ≠ 0 → **SI**.\n- Questões com parâmetro (ex.: “determine o valor de a para que o sistema seja impossível”):\n  - Meta: tornar o sistema **SI**.\n  - Estratégia:\n    1) Encontre **a** tal que **D(a) = 0**.\n    2) Com esse **a**, calcule um associado (Dx ou Dy ou Dz). Se algum der ≠ 0, conclua **SI**.\n    3) Não é necessário calcular os três associados: um só ≠ 0 basta para SI.\n\n> Dica de Prova\n> - Antes de tudo, calcule apenas **D**. Só parta para **Dx, Dy, Dz** se **D = 0**.\n> - “D ≠ 0” mata a questão: é **SPD** e Cramer resolve direto.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplos de determinantes calculados por Sarrus no curso: valores como “quinze”, “vinte e seis”, “menos sete” apareceram como resultados de D. Em todos esses casos (D ≠ 0) → **SPD** e Cramer fornece x, y, z.\n- Exemplo com parâmetro a (impossibilidade):\n  - Condição desejada: **SI**.\n  - Foi obtido **a = menos catorze terços (a = −14/3)** tal que **D = 0**.\n  - Com esse valor, um determinante associado resultou “Treze” (≠ 0).\n  - Conclusão: **D = 0** e “algum associado ≠ 0” → **sistema impossível**.\n\n> Dica de Prova\n> - Ao “discutir o sistema”:\n>   - “zero sobre zero” → indeterminação → **SPI**.\n>   - “três sobre zero” → divisão proibida → **SI**.\n\n## 5. Pegadinhas e Erros Comuns\n- Nomenclatura incorreta: é **regra de Cramer** e **Regra de Sarrus** (evite “Kramer”, “Sarney”, “salas” etc.).\n- Confundir casos quando **D = 0**:\n  - Não é verdade que “D = 0 ⇒ sem solução”. Pode ser **SPI** se **Dx = Dy = Dz = 0**.\n- Divisões com zero:\n  - “três sobre zero” não existe → caracteriza **SI**.\n  - “zero sobre zero” é indeterminado → **SPI** (infinitas soluções).\n- Desperdício de tempo:\n  - Calcular **Dx, Dy, Dz** antes de verificar **D**.\n- Discussão por escalonamento:\n  - Cuidado com linhas do tipo [0 0 0 | b], b ≠ 0 (ex.: 0 = 13) → isso é **SI**.\n- Parâmetro para impossibilidade:\n  - Ao encontrar **a** que zera **D**, lembre: basta um associado ≠ 0 para concluir **SI** (não precisa todos).\n\n> Dica de Prova\n> - Memorize o tripé:\n>   - D ≠ 0 → **SPD**.\n>   - D = 0 e Dx = Dy = Dz = 0 → **SPI**.\n>   - D = 0 e algum de Dx, Dy, Dz ≠ 0 → **SI**.",
+  "resumo_bolso": "# Sistemas Lineares V\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Sistema linear 3x3**: três equações lineares nas incógnitas **x, y, z**.\n* **Matriz dos coeficientes (D)**: matriz 3x3 formada apenas pelos coeficientes de x, y, z; seu determinante é denotado por **D**.\n* **Termos independentes**: constantes no lado direito das equações.\n* **Matrizes associadas Dx, Dy, Dz**:\n  * **Dx**: substitui a coluna de x pelos termos independentes (mantém colunas de y e z).\n  * **Dy**: substitui a coluna de y pelos termos independentes.\n  * **Dz**: substitui a coluna de z pelos termos independentes.\n* **Determinante 3x3 (Regra de Sarrus)**: repetir 1ª e 2ª colunas, somar produtos das diagonais descendentes e subtrair produtos das diagonais ascendentes.\n* **Regra de Cramer (3x3)**: se **D ≠ 0**, então  \n  x = Dx/D, y = Dy/D, z = Dz/D.\n* Classificações:\n  * **SPD (sistema possível e determinado)**: solução única.\n  * **SPI (sistema possível e indeterminado)**: infinitas soluções.\n  * **SI (sistema impossível)**: sem solução.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### SPD vs SPI vs SI (determinantes e frações)\n\n| Aspecto                 | SPD                          | SPI                                         | SI                                           |\n|-------------------------|------------------------------|---------------------------------------------|----------------------------------------------|\n| Determinante D          | **D ≠ 0**                    | **D = 0**                                   | **D = 0**                                    |\n| Associados Dx, Dy, Dz   | Não precisam ser testados    | **Dx = Dy = Dz = 0**                        | **Algum entre Dx, Dy, Dz ≠ 0**               |\n| Leitura das frações     | “zero sobre três existe”     | “zero sobre zero” (indeterminado)          | “três sobre zero” (divisão impossível)       |\n| Nº de soluções          | Única                        | Infinitas                                   | Nenhuma                                      |\n| Cramer                  | **Válido**                   | Não se aplica (D = 0)                       | Não se aplica (D = 0)                        |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Determinante 3x3 – Regra de Sarrus**\n\n* **Aplicação**: qualquer matriz 3x3 (D, Dx, Dy, Dz).\n* **Passos**:\n  1. Monte a matriz 3x3.\n  2. Repita a 1ª e a 2ª colunas à direita.\n  3. Some os produtos das três diagonais descendentes.\n  4. Subtraia os produtos das três diagonais ascendentes.\n\n---\n\n**2. Regra de Cramer (3x3)**\n\n* **Aplicação**: **somente se D ≠ 0**.\n* **Fórmulas**:  \n  x = Dx/D, y = Dy/D, z = Dz/D.\n* Procedimento:\n  1. Calcule **D**.\n  2. Se **D ≠ 0**, conclua **SPD** e use Cramer para obter x, y, z.\n\n---\n\n**3. Critério de Classificação via Determinantes**\n\n* **Regras**:\n  * **D ≠ 0 ⇒ SPD** (existe inversa; solução única).\n  * **D = 0 e Dx = Dy = Dz = 0 ⇒ SPI** (infinitas soluções).\n  * **D = 0 e algum de Dx, Dy, Dz ≠ 0 ⇒ SI** (sistema incompatível).\n* Procedimento seguro:\n  1. Calcule **D**.\n  2. Se **D ≠ 0** → **SPD** e Cramer.\n  3. Se **D = 0** → calcule **Dx, Dy, Dz** e aplique o critério acima.\n\n---\n\n**4. Interpretação “zero sobre zero” / “três sobre zero”**\n\n* **Divisões com D no denominador**:\n  * “**zero sobre três existe**” → 0/D com D ≠ 0 é válido (valor 0).\n  * “**três sobre zero não existe**” → numerador ≠ 0 e D = 0 → divisão impossível.\n  * “**zero sobre zero indeterminado**” → numerador = 0 e D = 0 → não define valor único.\n* **Leitura para classificação**:\n  * Numerador ≠ 0 e **D = 0** (“três sobre zero”) → **SI**.\n  * Numerador = 0 e **D = 0** (“zero sobre zero”) → **SPI**.\n\n---\n\n**5. Questões com Parâmetro (para SI)**\n\n* **Meta**: tornar o sistema **impossível (SI)**.\n* **Estratégia**:\n  1. Encontre **a** tal que **D(a) = 0**.\n  2. Com esse valor de **a**, calcule **um** determinante associado (Dx ou Dy ou Dz).\n  3. Se esse associado for ≠ 0, conclua **SI** (não é necessário calcular os três).\n* **Exemplo citado**:\n  * Foi obtido **a = −14/3** tal que **D = 0**.\n  * Com esse valor, um associado resultou em **13** (≠ 0).\n  * Conclusão: **D = 0** e “algum associado ≠ 0” → **sistema impossível (SI)**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Não é verdade que **“D = 0 ⇒ sem solução”**:  \n  * Pode ser **SPI** se **Dx = Dy = Dz = 0**.  \n  * É **SI** se algum associado for ≠ 0.\n* Divisões com zero:\n  * “três sobre zero” não existe → caracteriza **SI**.\n  * “zero sobre zero” é indeterminado → **SPI** (infinitas soluções).\n* Desperdício de tempo:\n  * Calcular **Dx, Dy, Dz** antes de verificar **D**.\n* Discussão por escalonamento:\n  * Linha do tipo **[0 0 0 | b]**, com **b ≠ 0** (ex.: 0 = 13) → **SI**.\n* Nomenclatura:\n  * É **Regra de Cramer** e **Regra de Sarrus** (evite nomes trocados).\n\n---\n\n## 📋 Checklist Final\n\n* Sei montar a **matriz dos coeficientes** e calcular **D** por **Sarrus**?\n* Lembro o **tripé de classificação**?  \n  - D ≠ 0 → **SPD**  \n  - D = 0 e Dx = Dy = Dz = 0 → **SPI**  \n  - D = 0 e algum de Dx, Dy, Dz ≠ 0 → **SI**\n* Sei interpretar corretamente:  \n  - “zero sobre três existe” (0/D com D ≠ 0)  \n  - “zero sobre zero” → **SPI**  \n  - “três sobre zero” → **SI**?\n* Em questões com **parâmetro** para **SI**:  \n  - Primeiro imponho **D(a) = 0**;  \n  - Depois verifico se **algum** associado ≠ 0 (basta um)?\n* Antes da prova: fixei que **“D ≠ 0” mata a discussão** (é **SPD** e Cramer resolve direto)?",
+  "mapa_mental": "# 🧮 Sistemas Lineares V\n## 🎯 Visão Geral\n### 💡 Sistema linear 3x3\n- Três equações\n- Incógnitas x y z\n- Termos independentes\n### 🧮 Matriz dos coeficientes\n- Matriz 3x3\n- Coeficientes de x y z\n- Determinante D\n### 📊 Matrizes associadas\n- Matriz Dx\n- Matriz Dy\n- Matriz Dz\n- Coluna trocada\n- Termos independentes\n\n## 🧮 Determinantes e Cramer\n### 🔢 Determinante 3x3\n- Número associado\n- Regra de Sarrus\n- Diagonais descendentes\n- Diagonais ascendentes\n- Diferença das somas\n### 📐 Regra de Cramer\n- Condição D diferente zero\n- x igual Dx sobre D\n- y igual Dy sobre D\n- z igual Dz sobre D\n### ⚖️ Classificação sistemas\n- SPD solução única\n- SPI infinitas soluções\n- SI sem solução\n\n## ⚙️ Critérios de Classificação\n### 📋 Critério com D\n- D diferente zero SPD\n- D igual zero analisar\n- Dx Dy Dz necessários\n### 🧮 Casos D igual zero\n- Dx Dy Dz todos zero\n- Caso SPI infinitas\n- Algum associado diferente zero\n- Caso SI impossível\n### 🔢 Interpretação frações\n- Zero sobre três válido\n- Três sobre zero impossível\n- Zero sobre zero indeterminado\n- Três sobre zero indica SI\n- Zero sobre zero indica SPI\n\n## 📝 Técnicas e Parâmetros\n### 🧮 Procedimento padrão\n- Montar matriz coeficientes\n- Calcular determinante D\n- Se D diferente zero SPD\n- Aplicar Cramer diretamente\n- Se D igual zero usar Dx Dy Dz\n### 🔢 Questões com parâmetro\n- Determinar valor parâmetro\n- Impor condição D igual zero\n- Calcular associado com parâmetro\n- Associado diferente zero gera SI\n### ⚠️ Erros frequentes\n- Nome correto Cramer\n- Nome correto Sarrus\n- D igual zero não implica SI\n- Confusão SPI versus SI\n- Calcular Dx Dy Dz antes de D",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Regra de Cramer",
+      "description": "Regra de Cramer — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que representa o determinante D na regra de Cramer?",
+          "back": "Determinante dos coeficientes.",
+          "hint": "Refere-se à matriz principal",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-cramer"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual expressão determina o valor de x pela regra de Cramer?",
+          "back": "x = Dₓ / D",
+          "hint": "Razão entre dois determinantes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-cramer"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Determinantes 3x3",
+      "description": "Determinantes 3x3 — 2 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual é a ordem mínima da matriz para aplicar a regra de Sarrus?",
+          "back": "Ordem três.",
+          "hint": "É o limite inferior de ordem",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-sarrus"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Como funciona a regra de Sarrus no cálculo de um determinante de ordem três?",
+          "back": "Repetir as duas primeiras colunas e somar os produtos das diagonais principais menos os produtos das secundárias.",
+          "hint": "Envolve diagonais e repetição",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "regra-sarrus"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Classificação de Sistemas",
+      "description": "Classificação de Sistemas — 8 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Que tipo de sistema resulta quando D é diferente de zero?",
+          "back": "Sistema possível e determinado.",
+          "hint": "O determinante é não nulo",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "classificacao-sistema"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Que tipo de sistema resulta quando D, Dₓ, Dᵧ e D𝓏 são todos nulos?",
+          "back": "Sistema possível e indeterminado.",
+          "hint": "Todos os determinantes são zero",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "classificacao-sistema"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Que tipo de sistema resulta quando D é nulo e algum determinante auxiliar é não nulo?",
+          "back": "Sistema impossível.",
+          "hint": "D é zero, mas há inconsistência",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "classificacao-sistema"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "O que caracteriza um sistema possível e determinado quanto ao número de soluções?",
+          "back": "Uma única solução.",
+          "hint": "Quantidade de soluções",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "classificacao-sistema"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a interpretação de uma divisão cujo numerador e denominador são ambos nulos?",
+          "back": "Indeterminação.",
+          "hint": "Conceito de limite ou razão",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "matematica-basica",
+            "indeterminacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é o resultado de dividir zero por um número diferente de zero?",
+          "back": "Zero.",
+          "hint": "O numerador é zero",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "matematica-basica",
+            "operacoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a consequência matemática de dividir um número não nulo por zero?",
+          "back": "Não existe.",
+          "hint": "O denominador é zero",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "matematica-basica",
+            "operacoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "O que é uma solução trivial em um sistema linear?",
+          "back": "Quando todas as incógnitas são iguais a zero.",
+          "hint": "Estado das variáveis",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "sistemas-lineares",
+            "solucao-trivial"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Na resolução de sistemas lineares pelo método de Cramer, qual é a condição necessária e suficiente para que um sistema seja classificado como possível e determinado (SPD)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante da matriz dos coeficientes deve ser diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Conforme a Regra de Cramer, um sistema linear possui uma única solução (sendo, portanto, possível e determinado - SPD) se e somente se o determinante da matriz dos coeficientes (D) for diferente de zero. Se D ≠ 0, as incógnitas podem ser calculadas de forma única, como X = Dx/D, Y = Dy/D, Z = Dz/D, etc."
+        },
+        {
+          "id": "b",
+          "text": "O determinante da matriz dos coeficientes deve ser igual aos determinantes das incógnitas",
+          "correct": false,
+          "explanation": "Incorreta. O determinante da matriz dos coeficientes não precisa ser igual aos determinantes das incógnitas. A condição para um sistema ser possível e determinado é que o determinante da matriz dos coeficientes seja diferente de zero, permitindo a divisão para encontrar as incógnitas."
+        },
+        {
+          "id": "c",
+          "text": "O determinante da matriz dos coeficientes deve ser igual a zero",
+          "correct": false,
+          "explanation": "Incorreta. Para um sistema linear ser possível e determinado (SPD), o determinante da matriz dos coeficientes (D) deve ser diferente de zero. Se D = 0, o sistema é impossível ou possível e indeterminado, mas nunca SPD."
+        },
+        {
+          "id": "d",
+          "text": "Todos os determinantes (D, Dx, Dy, Dz) devem ser iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Se todos os determinantes (D, Dx, Dy, Dz) forem iguais a zero, o sistema é classificado como possível e indeterminado (SPI), ou seja, possui infinitas soluções, e não uma única solução determinada."
+        }
+      ],
+      "explanation": "Correta. Conforme a Regra de Cramer, um sistema linear possui uma única solução (sendo, portanto, possível e determinado - SPD) se e somente se o determinante da matriz dos coeficientes (D) for diferente de zero. Se D ≠ 0, as incógnitas podem ser calculadas de forma única, como X = Dx/D, Y = Dy/D, Z = Dz/D, etc.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao aplicar a regra de Cramer para encontrar o valor de uma incógnita específica em um sistema linear, qual procedimento deve ser realizado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Subtrair o determinante da coluna dos termos independentes do determinante da matriz dos coeficientes",
+          "correct": false,
+          "explanation": "Incorreta. A Regra de Cramer utiliza divisões de determinantes, e não subtrações. A subtração de determinantes não é o método correto para encontrar o valor de uma incógnita em um sistema linear."
+        },
+        {
+          "id": "b",
+          "text": "Dividir o determinante obtido substituindo a coluna correspondente à incógnita pelos termos independentes pelo determinante da matriz dos coeficientes",
+          "correct": true,
+          "explanation": "Correta. De acordo com a Regra de Cramer, o valor de cada incógnita (por exemplo, X) é obtido pela divisão do determinante da matriz auxiliar (Dx), onde a coluna dos coeficientes de X é substituída pela coluna dos termos independentes, pelo determinante da matriz dos coeficientes (D). Ou seja, X = Dx/D, Y = Dy/D, Z = Dz/D, etc."
+        },
+        {
+          "id": "c",
+          "text": "Dividir o determinante da matriz dos coeficientes pelo determinante obtido substituindo a coluna correspondente à incógnita pelos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. A ordem da divisão está invertida. Para encontrar o valor de uma incógnita, o determinante da matriz com a coluna da incógnita substituída pelos termos independentes é o numerador, e o determinante da matriz dos coeficientes é o denominador."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar o determinante da matriz dos coeficientes pelo determinante da coluna dos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. A Regra de Cramer envolve divisões de determinantes, não multiplicações. Multiplicar os determinantes não resulta no valor da incógnita."
+        }
+      ],
+      "explanation": "Correta. De acordo com a Regra de Cramer, o valor de cada incógnita (por exemplo, X) é obtido pela divisão do determinante da matriz auxiliar (Dx), onde a coluna dos coeficientes de X é substituída pela coluna dos termos independentes, pelo determinante da matriz dos coeficientes (D). Ou seja, X = Dx/D, Y = Dy/D, Z = Dz/D, etc.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em álgebra linear, qual das seguintes operações matemáticas é considerada impossível de ser realizada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Divisão de zero por um número diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. A divisão de zero por um número diferente de zero é uma operação perfeitamente possível e o resultado é sempre zero (ex: 0/3 = 0)."
+        },
+        {
+          "id": "b",
+          "text": "Adição de zero a um número qualquer",
+          "correct": false,
+          "explanation": "Incorreta. A adição de zero a um número qualquer é uma operação válida que não altera o valor do número (ex: 5 + 0 = 5). É o elemento neutro da adição."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicação de zero por um número qualquer",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação de zero por qualquer número é uma operação válida e o resultado é sempre zero (ex: 0 * 5 = 0)."
+        },
+        {
+          "id": "d",
+          "text": "Divisão de um número diferente de zero por zero",
+          "correct": true,
+          "explanation": "Correta. A divisão de um número diferente de zero por zero é uma operação matematicamente impossível. Na matemática, a divisão por zero é indefinida, pois não há um número que, multiplicado por zero, resulte em um número diferente de zero (ex: 3/0 é impossível)."
+        }
+      ],
+      "explanation": "Correta. A divisão de um número diferente de zero por zero é uma operação matematicamente impossível. Na matemática, a divisão por zero é indefinida, pois não há um número que, multiplicado por zero, resulte em um número diferente de zero (ex: 3/0 é impossível).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a interpretação matemática correta quando, na análise de um sistema linear, obtém-se a expressão zero dividido por zero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O resultado é sempre igual a zero",
+          "correct": false,
+          "explanation": "Incorreta. A expressão 0/0 não é sempre igual a zero. Assim como não é igual a um, ela representa uma situação onde o valor não pode ser determinado diretamente."
+        },
+        {
+          "id": "b",
+          "text": "A expressão indica que o sistema não possui solução",
+          "correct": false,
+          "explanation": "Incorreta. Embora 0/0 possa surgir em sistemas que não têm solução única, a expressão por si só não indica que o sistema não possui solução. Na verdade, em sistemas lineares, 0/0 geralmente indica que o sistema possui infinitas soluções (sistema possível e indeterminado), enquanto um número diferente de zero dividido por zero indica que o sistema não possui solução (sistema impossível)."
+        },
+        {
+          "id": "c",
+          "text": "A expressão representa uma indeterminação matemática",
+          "correct": true,
+          "explanation": "Correta. Em álgebra e cálculo, a expressão 'zero dividido por zero' (0/0) é uma das formas indeterminadas. Isso significa que o valor não pode ser determinado a partir da expressão em si, e mais informações (como o uso de limites) são necessárias para avaliar o comportamento da função que gerou essa forma."
+        },
+        {
+          "id": "d",
+          "text": "O resultado é sempre igual a um",
+          "correct": false,
+          "explanation": "Incorreta. A expressão 0/0 não é sempre igual a um. Ela é uma forma indeterminada que pode levar a diferentes resultados dependendo do contexto (por exemplo, em limites)."
+        }
+      ],
+      "explanation": "Correta. Em álgebra e cálculo, a expressão 'zero dividido por zero' (0/0) é uma das formas indeterminadas. Isso significa que o valor não pode ser determinado a partir da expressão em si, e mais informações (como o uso de limites) são necessárias para avaliar o comportamento da função que gerou essa forma.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Para que um sistema linear seja classificado como possível e indeterminado (SPI), quais condições devem ser simultaneamente satisfeitas em relação aos determinantes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todos os determinantes devem ser diferentes de zero, mas com valores distintos entre si",
+          "correct": false,
+          "explanation": "Incorreta. Se todos os determinantes fossem diferentes de zero, o sistema seria possível e determinado (SPD), com uma única solução, e não possível e indeterminado (SPI). A condição para SPI exige que o determinante principal seja zero."
+        },
+        {
+          "id": "b",
+          "text": "O determinante da matriz dos coeficientes deve ser igual a zero e pelo menos um dos determinantes das incógnitas deve ser diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes (D) for igual a zero, mas pelo menos um dos determinantes das incógnitas (Dx, Dy, Dz, etc.) for diferente de zero, o sistema é classificado como impossível (SI), ou seja, não possui solução."
+        },
+        {
+          "id": "c",
+          "text": "O determinante da matriz dos coeficientes e todos os determinantes das incógnitas devem ser iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Para que um sistema linear seja classificado como possível e indeterminado (SPI), o determinante da matriz dos coeficientes (D) deve ser igual a zero, E todos os determinantes das matrizes auxiliares (Dx, Dy, Dz, etc., formadas pela substituição das colunas de coeficientes pelos termos independentes) também devem ser iguais a zero. Essa condição leva à forma indeterminada 0/0 para o cálculo das incógnitas, indicando infinitas soluções."
+        },
+        {
+          "id": "d",
+          "text": "O determinante da matriz dos coeficientes deve ser diferente de zero e os determinantes das incógnitas devem ser iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes (D) for diferente de zero, o sistema é possível e determinado (SPD), com uma única solução, e não possível e indeterminado (SPI)."
+        }
+      ],
+      "explanation": "Correta. Para que um sistema linear seja classificado como possível e indeterminado (SPI), o determinante da matriz dos coeficientes (D) deve ser igual a zero, E todos os determinantes das matrizes auxiliares (Dx, Dy, Dz, etc., formadas pela substituição das colunas de coeficientes pelos termos independentes) também devem ser iguais a zero. Essa condição leva à forma indeterminada 0/0 para o cálculo das incógnitas, indicando infinitas soluções.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Na discussão de um sistema linear, por que a análise do determinante da matriz dos coeficientes é considerada prioritária em relação aos demais determinantes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque se esse determinante for diferente de zero, o sistema já é classificado como possível e determinado, independentemente dos outros determinantes",
+          "correct": true,
+          "explanation": "Correta. Na discussão de sistemas lineares pela Regra de Cramer, se o determinante da matriz dos coeficientes (D) for diferente de zero, o sistema é classificado como Sistema Possível e Determinado (SPD), o que significa que ele possui uma única solução. Nesse caso, não é necessário calcular os determinantes das incógnitas (Dx, Dy, Dz) para a classificação, pois a existência e unicidade da solução já estão garantidas."
+        },
+        {
+          "id": "b",
+          "text": "Porque os demais determinantes dependem algebricamente do valor desse determinante para serem calculados",
+          "correct": false,
+          "explanation": "Incorreta. Os determinantes das incógnitas (Dx, Dy, Dz) são calculados de forma independente do determinante da matriz dos coeficientes (D). No entanto, o valor de D é crucial para a classificação e para a aplicação da Regra de Cramer, que utiliza D no denominador para encontrar os valores das incógnitas."
+        },
+        {
+          "id": "c",
+          "text": "Porque apenas esse determinante pode ser calculado pela regra de Sarrus",
+          "correct": false,
+          "explanation": "Incorreta. A Regra de Sarrus é um método para calcular determinantes de matrizes de ordem 3, e pode ser aplicada a qualquer determinante de ordem 3, incluindo os das incógnitas (Dx, Dy, Dz), não sendo exclusiva do determinante da matriz dos coeficientes (D)."
+        },
+        {
+          "id": "d",
+          "text": "Porque esse determinante sempre possui o maior valor numérico entre todos os determinantes do sistema",
+          "correct": false,
+          "explanation": "Incorreta. O valor numérico do determinante não é um critério para sua prioridade na classificação do sistema. A prioridade reside em sua função de indicar a existência e unicade da solução."
+        }
+      ],
+      "explanation": "Correta. Na discussão de sistemas lineares pela Regra de Cramer, se o determinante da matriz dos coeficientes (D) for diferente de zero, o sistema é classificado como Sistema Possível e Determinado (SPD), o que significa que ele possui uma única solução. Nesse caso, não é necessário calcular os determinantes das incógnitas (Dx, Dy, Dz) para a classificação, pois a existência e unicidade da solução já estão garantidas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao discutir um sistema linear que contém um parâmetro desconhecido, qual estratégia deve ser empregada para determinar o valor desse parâmetro que torna o sistema impossível?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Igualar o determinante da matriz dos coeficientes a zero e verificar se os determinantes das incógnitas são diferentes de zero para esse valor",
+          "correct": true,
+          "explanation": "Correta. Para que um sistema linear seja impossível, o determinante da matriz dos coeficientes (D) deve ser igual a zero, e pelo menos um dos determinantes das incógnitas (Dx, Dy ou Dz) deve ser diferente de zero. A estratégia correta, portanto, é primeiro igualar D a zero para encontrar os valores do parâmetro que anulam o determinante principal. Em seguida, para esses valores, verifica-se se os determinantes das incógnitas são diferentes de zero, o que caracterizaria um sistema impossível."
+        },
+        {
+          "id": "b",
+          "text": "Igualar o determinante da matriz dos coeficientes a um valor diferente de zero e os demais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes (D) for diferente de zero, o sistema é possível e determinado, possuindo uma única solução. A condição para ser impossível exige que D seja zero."
+        },
+        {
+          "id": "c",
+          "text": "Calcular apenas os determinantes das incógnitas e igualá-los entre si",
+          "correct": false,
+          "explanation": "Incorreta. Calcular apenas os determinantes das incógnitas e igualá-los entre si não fornece as condições necessárias para classificar o sistema como impossível. A condição principal envolve o determinante da matriz dos coeficientes (D)."
+        },
+        {
+          "id": "d",
+          "text": "Igualar todos os determinantes a zero e resolver o sistema de equações resultante",
+          "correct": false,
+          "explanation": "Incorreta. Se todos os determinantes (D, Dx, Dy, Dz) forem iguais a zero, o sistema é classificado como possível e indeterminado, e não impossível."
+        }
+      ],
+      "explanation": "Correta. Para que um sistema linear seja impossível, o determinante da matriz dos coeficientes (D) deve ser igual a zero, e pelo menos um dos determinantes das incógnitas (Dx, Dy ou Dz) deve ser diferente de zero. A estratégia correta, portanto, é primeiro igualar D a zero para encontrar os valores do parâmetro que anulam o determinante principal. Em seguida, para esses valores, verifica-se se os determinantes das incógnitas são diferentes de zero, o que caracterizaria um sistema impossível.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando a teoria de sistemas lineares, qual é a interpretação geométrica de um sistema possível e indeterminado no espaço tridimensional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As equações representam planos paralelos distintos que não se interceptam",
+          "correct": false,
+          "explanation": "Incorreta. Planos paralelos distintos que não se interceptam representam um sistema impossível, ou seja, sem solução."
+        },
+        {
+          "id": "b",
+          "text": "As equações representam planos que se interceptam em uma reta ou são coincidentes",
+          "correct": true,
+          "explanation": "Correta. No espaço tridimensional, um sistema linear possível e indeterminado significa que há infinitas soluções. Geometricamente, isso ocorre quando os planos representados pelas equações se interceptam em uma reta (soluções infinitas) ou quando são planos coincidentes (todas as soluções de um plano são soluções dos outros, também infinitas)."
+        },
+        {
+          "id": "c",
+          "text": "As equações representam planos perpendiculares entre si",
+          "correct": false,
+          "explanation": "Incorreta. Planos perpendiculares entre si podem ter diferentes tipos de interseção (um ponto, uma reta ou nenhuma interseção, dependendo do arranjo), e essa característica geométrica por si só não define um sistema possível e indeterminado."
+        },
+        {
+          "id": "d",
+          "text": "As equações representam planos que se interceptam em um único ponto",
+          "correct": false,
+          "explanation": "Incorreta. Um sistema que representa planos que se interceptam em um único ponto é um sistema possível e determinado, ou seja, possui uma única solução."
+        }
+      ],
+      "explanation": "Correta. No espaço tridimensional, um sistema linear possível e indeterminado significa que há infinitas soluções. Geometricamente, isso ocorre quando os planos representados pelas equações se interceptam em uma reta (soluções infinitas) ou quando são planos coincidentes (todas as soluções de um plano são soluções dos outros, também infinitas).",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Em um sistema linear homogêneo (onde todos os termos independentes são zero), qual afirmação é sempre verdadeira sobre a classificação desse sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O sistema sempre será possível e indeterminado com infinitas soluções não-triviais",
+          "correct": false,
+          "explanation": "Incorreta. O sistema só será possível e indeterminado se o determinante da matriz dos coeficientes for zero. Se o determinante for diferente de zero, ele será possível e determinado, tendo apenas a solução trivial."
+        },
+        {
+          "id": "b",
+          "text": "O sistema sempre será impossível, pois não há termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. Um sistema homogêneo (todos os termos independentes são zero) sempre admite a solução trivial (todas as incógnitas iguais a zero), o que significa que nunca será impossível."
+        },
+        {
+          "id": "c",
+          "text": "O sistema sempre terá determinante da matriz dos coeficientes igual a zero",
+          "correct": false,
+          "explanation": "Incorreta. O determinante da matriz dos coeficientes de um sistema homogêneo pode ser diferente de zero, caso em que o sistema é possível e determinado (com a única solução trivial)."
+        },
+        {
+          "id": "d",
+          "text": "O sistema sempre admite pelo menos a solução trivial, podendo ser possível e determinado ou possível e indeterminado",
+          "correct": true,
+          "explanation": "Correta. Um sistema linear homogêneo sempre possui a solução trivial, onde todas as incógnitas são zero. Isso garante que o sistema é sempre possível. Ele será determinado se o determinante da matriz dos coeficientes for diferente de zero (tendo apenas a solução trivial como única solução), ou indeterminado se o determinante for zero (tendo a solução trivial e infinitas outras soluções não-triviais)."
+        }
+      ],
+      "explanation": "Correta. Um sistema linear homogêneo sempre possui a solução trivial, onde todas as incógnitas são zero. Isso garante que o sistema é sempre possível. Ele será determinado se o determinante da matriz dos coeficientes for diferente de zero (tendo apenas a solução trivial como única solução), ou indeterminado se o determinante for zero (tendo a solução trivial e infinitas outras soluções não-triviais).",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Ao analisar um sistema linear onde o determinante da matriz dos coeficientes é zero, qual procedimento adicional é necessário para completar a classificação do sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Verificar se o sistema possui mais equações do que incógnitas",
+          "correct": false,
+          "explanation": "Incorreta. A relação entre o número de equações e incógnitas é importante para a discussão de sistemas, mas não é o procedimento principal quando o determinante da matriz dos coeficientes é zero. Essa informação, por si só, não classifica o sistema como impossível ou indeterminado."
+        },
+        {
+          "id": "b",
+          "text": "Calcular os determinantes obtidos pela substituição das colunas dos coeficientes pelos termos independentes e verificar se são todos zero ou se pelo menos um é diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Quando o determinante da matriz dos coeficientes (D) é zero, o sistema não é possível e determinado. Para classificá-lo, é necessário verificar os determinantes das incógnitas (Dx, Dy, Dz). Se todos eles forem zero, o sistema é possível e indeterminado (infinitas soluções). Se pelo menos um deles for diferente de zero, o sistema é impossível (nenhuma solução)."
+        },
+        {
+          "id": "c",
+          "text": "Aplicar o método de eliminação de Gauss para reduzir a matriz à forma escalonada",
+          "correct": false,
+          "explanation": "Incorreta. O método de eliminação de Gauss é uma forma de resolver sistemas lineares e pode ser usado para classificar sistemas, mas a pergunta se refere a um procedimento adicional após a análise do determinante da matriz dos coeficientes, que é a regra de Cramer. A eliminação de Gauss é uma alternativa, mas não o procedimento adicional direto na lógica da Regra de Cramer."
+        },
+        {
+          "id": "d",
+          "text": "Verificar se os coeficientes das equações são proporcionais entre si",
+          "correct": false,
+          "explanation": "Incorreta. A proporcionalidade dos coeficientes pode indicar dependência linear entre as equações, o que está relacionado a sistemas indeterminados ou impossíveis, mas não é o procedimento direto e completo para a classificação após se constatar que o determinante da matriz dos coeficientes é zero."
+        }
+      ],
+      "explanation": "Correta. Quando o determinante da matriz dos coeficientes (D) é zero, o sistema não é possível e determinado. Para classificá-lo, é necessário verificar os determinantes das incógnitas (Dx, Dy, Dz). Se todos eles forem zero, o sistema é possível e indeterminado (infinitas soluções). Se pelo menos um deles for diferente de zero, o sistema é impossível (nenhuma solução).",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_349064_Sistemas Lineares V.pdf",
+  "coletado_em": "2026-09-23T20:58:47"
+}

@@ -1,0 +1,627 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 15,
+  "ordem_no_curso": "221.00",
+  "titulo": "Linux e Software Livre",
+  "codigo_aula": "243141",
+  "video_id": "ZoENYVQSVKA=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:25:54",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/ZoENYVQSVKA%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405048&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Linux e Software Livre\n\n## Introdução e Metodologia da Aula\nEu sou o Jefferson, do Gran Cursos Online. Vem comigo na tela. Gosto muito de uma frase: “Somos o que repetidamente fazemos. A excelência, portanto, não é um ato, mas um hábito.” Nos esportes e nos estudos é assim: repetição com correção, até a exaustão. Para você que está estudando, a repetição com correção até a exaustão vai levar à aprovação. Então, vamos praticar, repetir e corrigir até a exaustão.\n\nTem gente que não memoriza porque não vê, não escuta, não pratica. Vem comigo. Hoje, o tema é Linux e Software Livre. Na verdade, poderíamos inverter o título, porque vamos começar falando de conceitos para, depois, chegar no “livre”.\n\nOs assuntos principais da aula envolvem uma introdução ao Linux, que depois vamos aprofundar. Esse pinguim aí à direita fala: “Nós amamos a liberdade.” Daqui a pouco você vai entender por que essa frase faz sentido. Mas, antes de mais nada, precisamos entender o que é um código-fonte.\n\n## O que é Código-Fonte\nQuando falamos de programa, falamos de software, que são instruções de computador. Precisamos saber o que é código-fonte: é o que está por trás do programa, como ele é criado, sua origem. Muitas vezes usamos o programa sem ideia do que há por trás: como aquilo foi feito, qual a mecânica.\n\nTalvez não dê para entender tudo agora, mas a ideia é ampliar um pouco a visão de quem não é da área. Se você já conhece, pode ir adiantando a aula. Vamos lá.\n\nQuando vou criar um programa, eu idealizo: “Vou fazer uma calculadora, vou desenvolver um sistema da padaria do seu Zé para registrar dados, analisar, buscar, comunicar com um banco de dados...” Não importa a finalidade; por trás dele há um código-fonte, fruto de quem programou e idealizou.\n\nEsse código é escrito, literalmente, em uma linguagem de programação: C, Java, C++, entre outras. Existem milhares de linguagens. Eu uso um compilador, que é um programa usado para transformar esse código em algo executável. Existem vários compiladores. Eu escrevo na linguagem, mando compilar, e esse é o momento em que aquilo que escrevi vira, de fato, um programa, com interfaces, funcionalidades, tudo certinho. Isso aqui é uma abstração para um entendimento leve de onde vem o código.\n\nCompilei e surgiu o programa. A linguagem descreve o que o programa vai fazer e como fazer. Pode ser uma calculadora, etc.\n\n## Analogias para Entender Código-Fonte\nVamos a uma analogia mais “real”. Em vez de mostrar um trecho de código aleatório, vamos ao seu dia a dia. Pense no “código-fonte” de um bolo de chocolate molhadinho. Os “ingredientes” e o “modo de preparo” são o código. Eu, pessoalmente, não sou bom de cozinha, já me disseram que meus ingredientes ficam desbalanceados, mas vamos ao que importa.\n\nPara preparar qualquer receita, temos que seguir a receita. Até para fritar um ovo: você quebra o ovo antes de colocar na frigideira, confere se está bom, põe no óleo ou na manteiga, ajusta a quantidade de sal... Isso varia e gera sabores diferentes.\n\nQuando eu tenho acesso à receita, quem sabe cozinhar consegue preparar o prato e, se quiser, modificar: “Quero fazer assim, mudar aquilo...” Eu vou lá, preparo. “Compilar” a receita é como assar o bolo. E aí surge o bolo de chocolate molhadinho.\n\nMas e se eu não gosto de chocolate escuro e quero chocolate branco? Não dá para pegar o bolo pronto e transformar em chocolate branco. Tenho que voltar à receita e trocar os ingredientes: onde tinha chocolate normal, coloco chocolate branco, talvez mude açúcar, ajuste o forno, etc. Aí sim faço o bolo com a nova receita.\n\nFicou claro que, em qualquer caso, para eu replicar ou variar o bolo, preciso da receita. Agora, do ponto de vista comercial: se eu vou a uma confeitaria, quase certeza que eles não vão me dar a receita. É o segredo deles. Se eu sei fazer bolo e sou esperto, eu posso tentar reproduzir o sabor. Vai demandar tempo; posso chegar perto, posso nunca chegar. Talvez eu até faça melhor. Mas vou partir do zero: escrever minha receita, listar ingredientes, testar passo a passo. Tudo fica mais prático quando eu tenho acesso à receita.\n\nOu seja: “receita” é o código-fonte, “compilar” é assar o bolo. Deu para fazer o paralelo, né?\n\n## Licenças de Software: Alugar vs. Comprar, e Acesso ao Código\nAgora vamos falar de licenças de software, que têm relação direta com o acesso ao código-fonte. Pense no paralelo: alugar um carro vs. comprar um carro. Se eu compro, posso trocar bancos, pintar, mexer em coisas permitidas por lei. Se é alugado, minhas permissões são bem mais restritas: é basicamente para andar.\n\nLicença de software define legalmente o que posso fazer e o que é permitido. E um ponto básico nessas licenças: tenho ou não acesso ao código-fonte? A grande maioria não dá acesso ao código-fonte. Vamos conhecê-las.\n\n## Freeware (Gratuito, mas não Livre)\nAtenção com a palavra “free”. Em inglês, “free” pode significar “gratuito” ou “livre” (liberdade). Aqui, “freeware” é no sentido de gratuito.\n\nFreeware é software distribuído de graça, sem restrições de uso quanto ao prazo, mas sem acesso ao código-fonte. Exemplos clássicos: antivírus com versão gratuita, diversos apps, jogos free-to-play.\n\n💬 História: Tem um jogo que eu estou jogando atualmente. Ele é de graça; dá para jogar sem pagar nada. Só que, quando você quer coisinhas a mais, geralmente estéticas — trocar a roupa do personagem, uma skin, uma aparência — aí eu já me vi gastando. Às vezes, tem algo que dá uma vantagemzinha, mas a ideia aqui é captar o modelo: você usa de graça, e, se quiser recursos extras, paga.\n\nOutro exemplo: armazenamento em nuvem. Você ganha um espaço gratuito, mas, se precisar de mais, paga.\n\nIsso é “freemium”: software gratuito com opção de adquirir mais recursos pagos. Novamente: sem acesso ao código-fonte.\n\n## Software Proprietário (Licença Paga)\n“Proprietário” parece que é “meu e de mais ninguém”, mas não é bem assim. Um exemplo clássico é o Windows e o Office. Para usar, preciso de licença de uso. Às vezes o computador já vem com a licença. Se não, compra-se a licença separada. Dá para usar a mesma mídia de instalação em várias máquinas, mas cada máquina precisa da sua licença. E eu não posso pegar a minha licença e passar para outras pessoas. Pense na placa de um carro: não dá para usar a mesma placa em vários carros.\n\nNo software proprietário, você paga o direito de uso. Não tem acesso ao código-fonte.\n\n## Adware (Com Propaganda, Consentido)\nCuidado para não confundir com “adware” como ameaça. Existe um tipo de malware que mostra propagandas sem aviso, monitorando seu comportamento. Mas aqui estamos falando de “adware” como modelo de licença: o programa é gratuito, mas exibe propagandas, e você concorda com isso ao instalar. Pode mostrar anúncios dentro do próprio app ou abrir pop-ups. É combinado e faz parte da troca: uso grátis por propaganda. Não há acesso ao código-fonte.\n\n## Shareware (Versão de Teste, Por Tempo Limitado)\nShareware parte da premissa de compartilhar para teste. Você baixa para testar. Ele funciona por um tempo — com todas as funcionalidades ou parcialmente — e depois pode parar de funcionar total ou parcialmente. Geralmente o prazo é de 15 a 30 dias, podendo variar. Depois do período, você precisa comprar para continuar usando. Exemplo: antivírus que oferece 30 dias completos; depois, você compra a licença anual para manter todas as funcionalidades. Novamente: sem acesso ao código-fonte.\n\nExiste também a “trial” (versão de avaliação) com 7, 15, 30 ou 60 dias. Expirou, para de funcionar — sem conversa. Você tem que adquirir a versão completa.\n\n## Demo (Demonstração, Funcionalidade Limitada)\nQuem joga conhece bem. A versão demo é uma demonstração: geralmente uma fase, um conjunto limitado de recursos, só para você experimentar. É como liberar apenas o primeiro módulo de um curso em vídeo para você ver se gosta. Curtiu? Aí compra o completo. Não há acesso ao código-fonte.\n\n## Virada de Chave: Software Livre\nAgora, atenção: isso contradiz tudo o que vimos antes. Até aqui, não tínhamos acesso ao código-fonte. Comercialmente, parece estranho disponibilizar o código, porque todo mundo pensa em dinheiro — o capitalismo está aí. Você pode pensar: “Se eu criei um bolo, a receita é minha.” Antigamente, nas famílias, quando minha família visitava outra, minha mãe pedia a receita, e a dona da casa passava. Tinha aqueles caderninhos de receitas. Minha mãe fazia olhando o livro e anotava. Comercialmente, isso não é o padrão do software proprietário. Mas alguém veio para quebrar esse paradigma.\n\nNão pense só no dinheiro. Senão você pira e não entende o objetivo principal do software livre. Vamos ao projeto que deu origem a essa história: o GNU, que tem tudo a ver com a origem do Software Livre. Quem criou? Por quê? Vamos ver.\n\nEm concursos, alguns termos podem aparecer como sinônimos, embora tecnicamente não sejam idênticos. As bancas às vezes simplificam. Acompanhe a lógica do enunciado.\n\nNo Software Livre, “free” agora é sinônimo de liberdade, não de gratuidade. Software Livre não é necessariamente gratuito. A maioria é gratuita? Muitas vezes, sim. Mas o ponto central é a liberdade, não o preço. Em alguns contextos, você pode pagar por serviços, suporte, customização, distribuição, e ele continua sendo Software Livre.\n\n> 🎯 Dicas de prova: Software Livre não é necessariamente gratuito. Se a questão afirmar que “para ser Software Livre, tem que ser gratuito”, está errada.\n\nTécnica e historicamente, muitos projetos são abertos durante desenvolvimento e podem adotar diferentes licenças livres (GPL, LGPL, BSD, etc.). Há nuances, mas, para prova, foque nas liberdades essenciais e no acesso ao código-fonte.\n\n## Questões de Fixação (Comentadas)\nPrimeira questão: “Uma cópia de software é liberada para uso por um período de tempo para avaliação e para de funcionar após esse período. Ela é denominada...”\n- Aqui, para de funcionar após o prazo, sem possibilidade de continuar: é Trial/Shareware de avaliação. Malware (mal-ware) não tem nada a ver com licença. “Freeware” não para de funcionar por prazo. Logo, é Shareware/Trial (dependendo das alternativas).\n\nVeja que a definição poderia confundir com Shareware ou Trial. Shareware pode parar total ou parcialmente. Trial costuma parar de vez após o prazo.\n\nOutra questão: “Quando o software pode ser usado livremente, sem pagamento de licença, sem restrições quanto à funcionalidade e prazo de uso...”\n- Isso descreve Freeware (gratuito) no uso. Não é Shareware (tem prazo), nem Proprietário (exige licença paga). Software Livre também pode se encaixar em “sem pagamento”, mas a definição central do livre não é o preço, e sim a liberdade e o acesso ao código-fonte. Se a questão foca no uso gratuito sem prazo e não fala de código-fonte, geralmente está apontando para Freeware.\n\n“Dropbox é um serviço freemium”: oferece uso gratuito com cobrança por funções extras (mais armazenamento). Certo.\n\n“Definições não são padronizadas, muitos softwares podem ser enquadrados em mais de um tipo.”\n- Correto: há sobreposições de modelos (grátis com anúncios, grátis com extras pagos, teste com prazo etc.).\n\n“Shareware é distribuído livremente, não revela o código-fonte, mas possui licença para redistribuição.” \n- Cuidado: Shareware é para teste por tempo; “distribuído livremente” pode aparecer no sentido de “você pode baixar e compartilhar o instalador”, mas o ponto-chave do Shareware é o prazo/limitação. A definição da questão precisa bater no critério do tempo de uso/funcionalidade. Sem isso, fica incompleta.\n\n“Adware é distribuído gratuitamente, mas requer que o usuário visualize propaganda.”\n- Isso caracteriza Adware (com consentimento). Não confundir com adware-malware que injeta anúncios sem aviso.\n\n“Software Livre é distribuído gratuitamente e pode ser modificado.”\n- Errado como regra geral. Software Livre pode ser gratuito, mas não necessariamente. O que o define é: acesso ao código-fonte e liberdades de uso, estudo, modificação e redistribuição.\n\n> 🎯 Dicas de prova: \n> - Freeware: gratuito, sem acesso ao código-fonte.\n> - Shareware/Trial: avaliação por tempo/recursos limitados; expira ou restringe após o prazo.\n> - Adware: gratuito com anúncios (consentidos).\n> - Freemium: gratuito com recursos pagos opcionais.\n> - Proprietário: licença paga; sem acesso ao código-fonte.\n> - Software Livre: foco nas liberdades e acesso ao código-fonte; não é sinônimo de gratuito.\n\nNa continuação, seguimos com Linux e as licenças livres na prática. Até já no próximo bloco.",
+  "transcricao_meta": {
+    "title": "Linux e Software Livre",
+    "subject": "Informática Básica",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 35332,
+    "createdAt": "2026-02-05T13:26:17.391Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: software livre vs. software proprietário; modelos de distribuição/licenças (Freeware, Freemium, Shareware, Demo, Adware); fundamentos de código fonte e compilação.\nPrincipais pontos: \n- Acesso ao **código fonte** define liberdade (estudar/modificar).\n- **Modelos de licença** se distinguem por preço, tempo de uso, recursos e consentimento de anúncios.\n- **Pegadinhas**: Demo ≠ Shareware; Freeware/Freemium não são “livres”; Adware legítimo ≠ malware.\n\n## 1. Base / Conceitos Fundamentais\n- **Código fonte**: texto em linguagem de programação (ex.: Java, C, C++) que descreve o funcionamento do software.\n- **Compilador**: transforma o código fonte em executável (o programa “pronto para usar”).\n- **Software livre**: garante liberdades de usar, estudar (acesso ao código fonte), modificar e redistribuir. Pode ser gratuito ou pago.\n- **Software proprietário**: uso condicionado a contrato/licença; código fonte não disponibilizado; não é permitido modificar/redistribuir.\n- **Licença de uso**: conjunto de permissões/restrições legais sobre instalação, cópia, modificação e redistribuição.\n- Analogia do bolo:\n  - Receita = código fonte; assar = compilar; bolo = executável. Com a receita, você altera (ex.: trocar chocolate por chocolate branco). Sem a receita, reproduzir igual é difícil.\n\n> Dica de prova: “Livre” (software livre) diz respeito a liberdades, não a preço. “Grátis” (freeware) não significa “livre”.\n\n## 2. Como Funciona / Distinções\n- Proprietário vs. Livre\n  - **Proprietário**: pago por licença; código fechado; sem direito de modificar/redistribuir. Ex.: Windows, Office.\n  - **Livre**: código aberto; permite estudo/modificação/redistribuição; pode ser pago ou gratuito.\n- Freeware vs. Freemium vs. Shareware vs. Demo vs. Adware\n  - **Freeware**: gratuito, sem prazo, funcionalidades completas; código fonte não é disponibilizado. Ex.: Avast (versão gratuita).\n  - **Freemium**: uso básico gratuito; extras/recursos pagos. Ex.: Dropbox (mais espaço mediante pagamento).\n  - **Shareware (versão de avaliação)**: gratuito por tempo limitado e/ou com recursos limitados; após prazo (geralmente 15–30 dias, podendo variar), para total/parcialmente; para uso completo, paga-se.\n  - **Demo**: demonstração permanentemente limitada em recursos/conteúdo (ex.: 1 fase de jogo; editor que não salva); foco não é tempo, e sim limitação funcional.\n  - **Adware (legítimo)**: gratuito com anúncios exibidos com consentimento informado do usuário.\n  - **Adware (malware)**: sem consentimento; exibe anúncios invasivos e pode monitorar comportamento.\n\n> Dica de prova: “Período de teste que expira” → Shareware. “Funcionalidade capada sem foco em prazo” → Demo.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo para classificar o modelo:\n  1) Há acesso ao **código fonte** e permissão para modificar/redistribuir? → Software livre.\n  2) É necessário pagar **licença** para usar normalmente, sem acesso ao código? → Proprietário.\n  3) É **gratuito**?\n     - Gratuito sem prazo e com funcionalidade completa → Freeware.\n     - Gratuito básico, extras pagos → Freemium.\n     - Gratuito apenas por **tempo de teste** (para depois total/parcialmente) → Shareware.\n     - Gratuito com **funcionalidade severamente limitada** por design (independente de prazo) → Demo.\n  4) Exibe **anúncios**?\n     - Com aviso/consentimento → Adware legítimo.\n     - Sem consentimento, invasivo/monitorando → Adware (malware).\n- Licenciamento em múltiplas máquinas:\n  - Uma mídia de instalação pode servir para instalar, mas é preciso **uma licença válida por máquina** (proprietário).\n\n> Dica de prova: Se o enunciado trouxer “sem pagamento de licença, sem restrições de funcionalidade e prazo”, marque Freeware.\n\n## 4. Exemplos e Casos Resolvidos\n- Caso 1: “Software liberado por 30 dias; após isso, só abre em modo de visualização.” → Shareware (tempo limitado; após prazo, funcionalidade parcial).\n- Caso 2: “Editor gratuito que não salva nem exporta.” → Demo (limitação funcional permanente, não de tempo).\n- Caso 3: “Aplicativo gratuito com anúncios, informado na instalação.” → Adware legítimo (com consentimento).\n- Caso 4: “App começa a exibir propagandas aleatórias sem aviso e coleta dados.” → Adware (malware).\n- Caso 5: “Serviço com plano gratuito e ‘upgrade’ para mais recursos/armazenamento.” → Freemium (ex.: Dropbox).\n- Caso 6: “Programa gratuito, completo, sem prazo, sem código aberto.” → Freeware (ex.: Avast versão gratuita).\n- Caso 7: “Sistema operacional exige pagamento por licença em cada PC; código fechado.” → Software proprietário (ex.: Windows).\n\n## 5. Pegadinhas e Erros Comuns\n- “Software livre é sempre gratuito.” → Errado. Pode ser pago.\n- “Freeware é livre para modificar.” → Errado. Geralmente não fornece código fonte.\n- “Demo = Shareware.” → Errado.\n  - Limite de tempo → Shareware.\n  - Limite de conteúdo/recursos fixos → Demo.\n- “Adware sempre é malware.” → Errado. Se houver consentimento, é modelo legítimo.\n- “Comprei o software, posso modificar.” → Em proprietário, você compra a licença de uso, não o direito de modificar.\n- “Uma mídia de instalação dá direito a instalar em várias máquinas.” → Em geral, precisa de uma licença por máquina (proprietário).\n- “Definições rígidas e padronizadas.” → Bancas reconhecem que as classificações podem variar; foque nos aspectos-chave do enunciado: tempo, funcionalidade, preço, consentimento, acesso ao código.\n\n> Dica de prova: Palavras-chave guias\n> - “Período de testes/expira/15–30 dias” → Shareware.\n> - “Sem pagamento de licença e sem prazo” → Freeware.\n> - “Opção paga para extras/mais espaço” → Freemium.\n> - “Anúncios com consentimento” → Adware legítimo.\n> - “Código fonte disponível/liberdades de modificar” → Software livre.\n> - “Licença por máquina/código fechado” → Proprietário.",
+  "resumo_bolso": "# Linux e Software Livre\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Código fonte**: texto em linguagem de programação (ex.: Java, C, C++) que descreve o funcionamento do software; acesso ao código = possibilidade de estudar e modificar.\n* **Compilador**: programa que transforma código fonte em executável (programa “pronto para usar”).\n* **Software livre**: garante liberdades de **usar, estudar (acesso ao código fonte), modificar e redistribuir**; pode ser **gratuito ou pago**.\n* **Software proprietário**: uso condicionado a **contrato/licença**; código fonte **não disponibilizado**; **não é permitido** modificar/redistribuir; em geral é **pago por licença**.\n* **Licença de uso**: conjunto de **permissões/restrições legais** sobre instalação, cópia, modificação e redistribuição.\n* **Freeware**: software **gratuito**, sem prazo, com funcionalidades completas; **código fonte não é disponibilizado** (não é “livre”).\n* **Freemium**: uso básico **gratuito**, com **extras/recursos pagos** (upgrade).\n* **Shareware**: versão de **avaliação**; gratuito por **tempo limitado** e/ou com restrições; após prazo (geralmente 15–30 dias, podendo variar) passa a não funcionar ou funcionar parcialmente; para uso completo → **paga-se**.\n* **Demo**: versão de **demonstração** com **funcionalidade/conteúdo permanentemente limitado** (ex.: 1 fase de jogo; editor que não salva); foco não é tempo, e sim limitação funcional.\n* **Adware (legítimo)**: software **gratuito** que exibe **anúncios com consentimento informado** do usuário.\n* **Adware (malware)**: exibe anúncios **sem consentimento**, de forma invasiva, podendo **monitorar comportamento**.\n\n> “Livre” (software livre) diz respeito a **liberdades**, não a preço. “Grátis” (freeware) não significa “livre”.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Software Livre vs Software Proprietário\n\n| Aspecto | Software Livre | Software Proprietário |\n| --- | --- | --- |\n| Código fonte | **Disponível** | **Não disponibilizado** |\n| Modificar/redistribuir | **Permitido** | **Não é permitido** |\n| Preço | Pode ser **gratuito ou pago** | Geralmente **pago por licença** |\n| Liberdades | Usar, estudar, modificar, redistribuir | Uso restrito à licença |\n\n---\n\n### Freeware vs Software Livre\n\n| Aspecto | Freeware | Software Livre |\n| --- | --- | --- |\n| Preço | **Gratuito** | Pode ser **gratuito ou pago** |\n| Código fonte | **Não é disponibilizado** | **Disponível** |\n| Modificar/redistribuir | Em geral **não pode** | **Pode** (dentro da licença livre) |\n| Foco | Preço (**grátis**) | **Liberdades** (usar, estudar, modificar, redistribuir) |\n\n---\n\n### Freeware vs Freemium vs Shareware vs Demo\n\n| Modelo | Preço | Tempo | Limitação principal |\n| --- | --- | --- | --- |\n| Freeware | Gratuito | **Sem prazo** | Funcionalidade **completa** |\n| Freemium | Básico gratuito, extras pagos | Depende do serviço | Recursos/armazenamento extras **pagos** |\n| Shareware | Gratuito no teste | **Tempo limitado** (15–30 dias, em geral) | Após prazo, **para** ou fica **parcial** |\n| Demo | Gratuito | Normalmente sem foco em prazo | **Funcionalidade/conteúdo limitado** desde o início |\n\n---\n\n### Adware legítimo vs Adware (malware)\n\n| Aspecto | Adware legítimo | Adware (malware) |\n| --- | --- | --- |\n| Consentimento | **Informado** ao usuário | **Sem consentimento** |\n| Anúncios | Esperados, modelo de negócio | Invasivos, aleatórios |\n| Comportamento | Não precisa monitorar usuário | Pode **monitorar comportamento** |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Passo a passo para classificar o modelo**\n\n1. Há acesso ao **código fonte** e permissão para **modificar/redistribuir**?  \n   → **Software livre**.\n2. É necessário pagar **licença** para usar normalmente, **sem acesso ao código**?  \n   → **Proprietário**.\n3. É **gratuito**?\n   * Gratuito, **sem prazo** e com funcionalidade **completa** → **Freeware**.\n   * Gratuito básico, **extras pagos** → **Freemium**.\n   * Gratuito apenas por **tempo de teste** (depois para total/parcialmente) → **Shareware**.\n   * Gratuito com **funcionalidade severamente limitada** por design (independente de prazo) → **Demo**.\n4. Exibe **anúncios**?\n   * Com aviso/consentimento → **Adware legítimo**.\n   * Sem consentimento, invasivo/monitorando → **Adware (malware)**.\n\n**2. Licença por máquina (proprietário)**\n\n* Em software **proprietário**, uma mídia de instalação pode servir para instalar, mas é preciso **uma licença válida por máquina**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Software livre é sempre gratuito.” → Errado. Pode ser **pago**.\n2. “Freeware é livre para modificar.” → Errado. Geralmente **não fornece código fonte**.\n3. “Demo = Shareware.” → Errado.  \n   * Limite de **tempo** → **Shareware**.  \n   * Limite de **conteúdo/recursos fixos** → **Demo**.\n4. “Adware sempre é malware.” → Errado. Se houver **consentimento**, é modelo legítimo.\n5. “Uma mídia de instalação dá direito a instalar em várias máquinas.” → Em geral, precisa de **uma licença por máquina** (proprietário).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei claramente **software livre** (liberdades, código fonte) de **freeware** (apenas grátis) e de **proprietário** (licença restritiva)?\n* Memorizei as palavras-chave:\n  * “**período de testes/expira/15–30 dias**” → **Shareware**;\n  * “**sem pagamento de licença, sem restrições de funcionalidade e prazo**” → **Freeware**;\n  * “**opção paga para extras/mais espaço/recursos**” → **Freemium**;\n  * “**funcionalidade capada (não salva/1 fase)**” → **Demo**;\n  * “**anúncios com consentimento informado**” → **Adware legítimo**;\n  * “**anúncios sem consentimento + monitoramento**” → **Adware (malware)**;\n  * “**código fonte disponível + permissão de modificar/redistribuir**” → **Software livre**;\n  * “**licença por máquina/código fechado**” → **Proprietário**.\n* Lembro que **“livre” diz respeito a liberdades** e **“grátis” diz respeito a preço**?",
+  "mapa_mental": "# 💻 Linux e Software Livre\n## 🎯 Conceitos Fundamentais\n### 💡 Código Fonte\n- Texto em linguagem\n- Descreve funcionamento\n- Base para compilação\n- Necessário para estudo\n- Necessário para modificação\n### 💡 Compilação\n- Uso de compilador\n- Gera executável\n- Código máquina\n- Analogia bolo assar\n- Programa pronto\n### 💡 Licença de Uso\n- Permissões legais\n- Restrições legais\n- Instalação e cópia\n- Modificação e redistribuição\n- Contrato com usuário\n\n## 💻 Software Livre x Proprietário\n### 💡 Software Livre\n- Liberdade de uso\n- Liberdade de estudo\n- Liberdade de modificação\n- Liberdade de redistribuição\n- Pode ser pago\n### 💻 Software Proprietário\n- Código fechado\n- Sem acesso fonte\n- Sem modificação\n- Sem redistribuição\n- Licença por máquina\n### ⚖️ Livre x Grátis\n- Livre = liberdades\n- Grátis = preço zero\n- Freeware não livre\n- Freemium não livre\n- Compra ≠ propriedade\n\n## 📦 Modelos de Distribuição\n### 💸 Freeware\n- Gratuito permanente\n- Funcionalidade completa\n- Sem prazo uso\n- Código fechado\n- Sem modificação\n### 💸 Freemium\n- Versão básica grátis\n- Recursos extras pagos\n- Mais espaço pago\n- Funções avançadas pagas\n- Modelo híbrido\n### ⏳ Shareware\n- Versão avaliação\n- Tempo limitado\n- Recursos limitados\n- Expira ou reduz\n- Uso completo pago\n### 🎮 Demo\n- Demonstração fixa\n- Conteúdo reduzido\n- Recursos capados\n- Sem foco tempo\n- Limitação permanente\n### 📢 Adware\n- Gratuito com anúncios\n- Com consentimento\n- Modelo legítimo\n- Sem consentimento\n- Pode ser malware\n\n## 📝 Técnicas para Prova\n### 🔍 Classificação Rápida\n- Acesso código fonte\n- Exige pagamento licença\n- Gratuito sem prazo\n- Gratuito com prazo\n- Exibe anúncios\n### 🧠 Palavras-Chave\n- Período de testes\n- Funcionalidade capada\n- Sem pagamento licença\n- Opção paga extras\n- Código fonte disponível",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Código-Fonte",
+      "description": "Código-Fonte — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que é o código-fonte de um programa?",
+          "back": "A origem e o que está por trás da criação de um programa, escrito em linguagem de programação.",
+          "hint": "Refere-se à forma legível por humanos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "programacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a função de um compilador?",
+          "back": "Programa usado para criar o programa a partir do código-fonte.",
+          "hint": "Atua como um tradutor de linguagens",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "compilacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual transformação ocorre quando um código-fonte é compilado?",
+          "back": "O código escrito em linguagem de programação vira propriamente o programa com interface criada.",
+          "hint": "Pense na mudança de estado do arquivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "compilacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Licenças de Uso",
+      "description": "Licenças de Uso — 4 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "O que uma licença de uso define para o usuário de um software?",
+          "back": "O que é legalmente permitido fazer com o software.",
+          "hint": "É um contrato de direitos e deveres",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "licenciamento",
+            "software"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Como se diferenciam as permissões de um software comprado e de um alugado?",
+          "back": "O software comprado permite mudanças e uso de licença atrelada; o alugado possui permissões básicas restritas apenas para uso.",
+          "hint": "Compare a amplitude dos direitos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "licenciamento",
+            "software"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual regra se aplica ao uso do Windows em computadores diferentes?",
+          "back": "É preciso pagar uma licença de uso para cada máquina em que o Windows for instalado.",
+          "hint": "Relacionado à vinculação por hardware",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "licenciamento",
+            "windows"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual elemento distingue um software livre de um proprietário?",
+          "back": "O acesso ao código-fonte e a liberdade de uso e modificação.",
+          "hint": "Foca na transparência do desenvolvimento",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "propriedade"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Modelos de Distribuição",
+      "description": "Modelos de Distribuição — 5 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Que nome recebe o software distribuído gratuitamente, sem limite de prazo ou funções?",
+          "back": "Freeware.",
+          "hint": "Termo composto por 'free' e 'software'",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "tipos-software",
+            "distribuicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Que nome recebe o software gratuito que exibe propagandas ao usuário?",
+          "back": "Adware.",
+          "hint": "O nome deriva de 'advertisement'",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "tipos-software",
+            "distribuicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Que modelo permite testar um software por prazo limitado antes da aquisição?",
+          "back": "Shareware (versão de avaliação).",
+          "hint": "Baseado em um período de experimentação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "tipos-software",
+            "distribuicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "O que pode ocorrer com as funções de um software após o prazo de teste?",
+          "back": "Parar de funcionar total ou parcialmente.",
+          "hint": "Ocorre após o vencimento do prazo",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "tipos-software",
+            "shareware"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-12",
+          "front": "O que caracteriza uma versão demo de um jogo?",
+          "back": "Uma demonstração limitada, contendo apenas uma fase ou parte inicial do jogo.",
+          "hint": "É uma amostra reduzida do produto",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "tipos-software",
+            "demonstracao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Software Livre",
+      "description": "Software Livre — 2 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "A que se refere a liberdade no conceito de software livre?",
+          "back": "Sinônimo de liberdade e não necessariamente de gratuidade.",
+          "hint": "Diferencie custo de autonomia",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "filosofia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual possibilidade comercial é compatível com o software livre?",
+          "back": "A comercialização de software livre é compatível, pois ele não é necessariamente gratuito.",
+          "hint": "Pense na viabilidade de venda de serviços",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "comercializacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal característica que define um software freeware?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É distribuído com o código fonte aberto, permitindo modificações e redistribuição sem restrições",
+          "correct": false,
+          "explanation": "Incorreta. Esta característica define um software livre ou de código aberto (open-source software), onde o código fonte é disponibilizado e pode ser modificado e redistribuído livremente, o que não é o caso do freeware."
+        },
+        {
+          "id": "b",
+          "text": "É distribuído gratuitamente, sem custos de aquisição, mas não disponibiliza o código fonte para modificações",
+          "correct": true,
+          "explanation": "Correta. Um software freeware é caracterizado por ser distribuído gratuitamente, ou seja, sem custo de aquisição para o usuário final. No entanto, ele geralmente não disponibiliza seu código fonte, o que impede modificações ou adaptações por parte dos usuários, mantendo o controle sobre o software com o desenvolvedor."
+        },
+        {
+          "id": "c",
+          "text": "É distribuído gratuitamente, mas exibe propagandas durante sua utilização mediante acordo prévio com o usuário",
+          "correct": false,
+          "explanation": "Incorreta. Embora existam softwares freeware que exibem propagandas (conhecidos como adware), essa não é a principal característica que define o freeware. A definição central do freeware é ser gratuito, independentemente da presença de anúncios, e não disponibilizar o código fonte."
+        },
+        {
+          "id": "d",
+          "text": "É distribuído gratuitamente por um período limitado de teste, após o qual requer pagamento para continuar funcionando",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere a um software do tipo shareware. O freeware é gratuito por tempo indeterminado e não requer pagamento após um período de teste."
+        }
+      ],
+      "explanation": "Correta. Um software freeware é caracterizado por ser distribuído gratuitamente, ou seja, sem custo de aquisição para o usuário final. No entanto, ele geralmente não disponibiliza seu código fonte, o que impede modificações ou adaptações por parte dos usuários, mantendo o controle sobre o software com o desenvolvedor.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "O que caracteriza um software do tipo shareware?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É disponibilizado para teste por um período determinado, podendo funcionar com todas ou parte das funcionalidades, cessando ou limitando seu funcionamento após esse prazo",
+          "correct": true,
+          "explanation": "Correta. O software shareware é um tipo de software proprietário distribuído gratuitamente para avaliação por um período limitado de tempo ou com funcionalidades restritas. Após esse período ou para acessar todas as funcionalidades, o usuário é incentivado a adquirir a licença completa."
+        },
+        {
+          "id": "b",
+          "text": "É distribuído gratuitamente de forma permanente, com todas as funcionalidades disponíveis sem limitações de tempo",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se aplica a um software freeware ou, em alguns casos, a um software livre, mas não a um shareware, que possui limitações temporais ou funcionais."
+        },
+        {
+          "id": "c",
+          "text": "É licenciado mediante pagamento único e definitivo, garantindo uso perpétuo sem necessidade de renovação",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição refere-se à aquisição de um software proprietário completo, onde a licença é paga para uso contínuo. O shareware é a versão de avaliação que precede essa aquisição."
+        },
+        {
+          "id": "d",
+          "text": "É fornecido gratuitamente com o código fonte aberto, permitindo que usuários modifiquem e redistribuam livremente",
+          "correct": false,
+          "explanation": "Incorreta. Esta característica define um software livre ou de código aberto (open-source software), que é fundamentalmente diferente do shareware, que é um software proprietário."
+        }
+      ],
+      "explanation": "Correta. O software shareware é um tipo de software proprietário distribuído gratuitamente para avaliação por um período limitado de tempo ou com funcionalidades restritas. Após esse período ou para acessar todas as funcionalidades, o usuário é incentivado a adquirir a licença completa.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a característica essencial de um software proprietário em relação à sua licença de uso?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Disponibiliza o código fonte para modificações, mas restringe a redistribuição comercial do software modificado",
+          "correct": false,
+          "explanation": "Incorreta. Software proprietário, por definição, não disponibiliza o código fonte. A disponibilização do código fonte é uma característica do software livre ou de código aberto (open-source software)."
+        },
+        {
+          "id": "b",
+          "text": "Requer pagamento de licença individual para cada instalação, não permitindo compartilhamento ou transferência da licença entre usuários",
+          "correct": true,
+          "explanation": "Correta. A característica essencial de um software proprietário é que seu uso está condicionado à aquisição de uma licença, que normalmente é individual e intransferível. Isso significa que cada instalação ou usuário deve ter sua própria licença válida, e o compartilhamento ou transferência sem autorização é uma violação dos termos de uso."
+        },
+        {
+          "id": "c",
+          "text": "Permite uso ilimitado em múltiplas máquinas mediante aquisição de uma única licença transferível",
+          "correct": false,
+          "explanation": "Incorreta. Geralmente, as licenças de software proprietário são restritivas e não permitem uso ilimitado em múltiplas máquinas com uma única licença, a menos que seja uma licença específica para múltiplos usuários ou corporativa, que ainda assim possui suas próprias restrições e custos."
+        },
+        {
+          "id": "d",
+          "text": "Oferece período de teste gratuito com funcionalidades completas antes de exigir pagamento pela licença definitiva",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns softwares proprietários possam oferecer um período de teste gratuito (como o shareware), essa não é a *característica essencial* da licença de uso do software proprietário em si, mas sim um modelo de distribuição. A essência está na necessidade de pagamento e nas restrições impostas pela licença para o uso contínuo."
+        }
+      ],
+      "explanation": "Correta. A característica essencial de um software proprietário é que seu uso está condicionado à aquisição de uma licença, que normalmente é individual e intransferível. Isso significa que cada instalação ou usuário deve ter sua própria licença válida, e o compartilhamento ou transferência sem autorização é uma violação dos termos de uso.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a principal diferença entre uma versão demo e uma versão shareware de um software?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A versão demo apresenta apenas uma parte limitada das funcionalidades sem restrição temporal, enquanto a shareware funciona completamente ou parcialmente por período determinado",
+          "correct": true,
+          "explanation": "Correta. Uma versão demo (demonstração) tipicamente oferece uma amostra do software, com funcionalidades severamente limitadas (por exemplo, apenas os primeiros níveis de um jogo ou algumas ferramentas de um programa), mas sem restrição de tempo. Já o shareware permite o uso de todas ou grande parte das funcionalidades do software por um período determinado (por exemplo, 30 dias), após o qual o uso é bloqueado ou limitado, exigindo a compra da licença."
+        },
+        {
+          "id": "b",
+          "text": "A versão demo oferece funcionalidades completas por tempo limitado, enquanto a shareware disponibiliza apenas uma demonstração parcial sem limite de tempo",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação inverte as características. Versões demo geralmente têm funcionalidades limitadas, enquanto shareware pode ter funcionalidades completas por tempo limitado."
+        },
+        {
+          "id": "c",
+          "text": "A versão demo requer pagamento antecipado para acesso às funcionalidades básicas, enquanto a shareware é totalmente gratuita",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as versões (demo e shareware) são geralmente gratuitas para o período de teste ou demonstração inicial. O pagamento é exigido para a versão completa, não para a demo ou shareware em si."
+        },
+        {
+          "id": "d",
+          "text": "A versão demo disponibiliza o código fonte para modificações limitadas, enquanto a shareware mantém o código completamente fechado",
+          "correct": false,
+          "explanation": "Incorreta. Nem a versão demo nem a shareware de um software proprietário costumam disponibilizar o código fonte. Ambas são distribuídas em formato binário (executável) e com o código fonte fechado."
+        }
+      ],
+      "explanation": "Correta. Uma versão demo (demonstração) tipicamente oferece uma amostra do software, com funcionalidades severamente limitadas (por exemplo, apenas os primeiros níveis de um jogo ou algumas ferramentas de um programa), mas sem restrição de tempo. Já o shareware permite o uso de todas ou grande parte das funcionalidades do software por um período determinado (por exemplo, 30 dias), após o qual o uso é bloqueado ou limitado, exigindo a compra da licença.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "O que representa o código fonte de um programa de computador?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo executável final que pode ser instalado diretamente no computador sem necessidade de processamento adicional",
+          "correct": false,
+          "explanation": "Incorreta. O arquivo executável final é o produto da compilação do código fonte. Ele já está em um formato que o sistema operacional pode rodar diretamente, sem a necessidade de o usuário ter acesso ao código fonte original ou compilá-lo."
+        },
+        {
+          "id": "b",
+          "text": "A interface gráfica visível ao usuário final, contendo todos os elementos de interação e navegação do programa",
+          "correct": false,
+          "explanation": "Incorreta. A interface gráfica do usuário (GUI) é a parte visual e interativa do programa que o usuário final vê e manipula. Ela é o resultado da execução do programa, não o código fonte em si."
+        },
+        {
+          "id": "c",
+          "text": "O conjunto de instruções escritas em linguagem de programação que, após compilação, origina o programa executável com suas funcionalidades",
+          "correct": true,
+          "explanation": "Correta. O código fonte é a forma original de um programa, escrita por programadores em uma linguagem de programação (como Java, C++, Python, etc.). Ele é legível por humanos e contém as instruções detalhadas que, após um processo de tradução chamado compilação, são convertidas em um programa executável que o computador pode entender e rodar."
+        },
+        {
+          "id": "d",
+          "text": "A documentação técnica que descreve as funcionalidades e requisitos de sistema para instalação do programa",
+          "correct": false,
+          "explanation": "Incorreta. A documentação técnica descreve como o programa funciona, seus requisitos, como instalá-lo ou usá-lo. Embora seja importante, não é o código que faz o programa funcionar, mas sim um conjunto de informações sobre ele."
+        }
+      ],
+      "explanation": "Correta. O código fonte é a forma original de um programa, escrita por programadores em uma linguagem de programação (como Java, C++, Python, etc.). Ele é legível por humanos e contém as instruções detalhadas que, após um processo de tradução chamado compilação, são convertidas em um programa executável que o computador pode entender e rodar.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a relação entre software livre e gratuidade, segundo os conceitos apresentados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Software livre é necessariamente gratuito, pois a liberdade de uso implica ausência de custos de aquisição",
+          "correct": false,
+          "explanation": "Incorreta. O conceito de software livre (do inglês \"free software\") está intrinsecamente ligado à liberdade, não necessariamente ao custo. A palavra \"free\" aqui se refere a \"liberdade de expressão\", e não a \"preço zero\". Portanto, um software livre pode ser distribuído gratuitamente ou ser vendido, desde que as liberdades essenciais sejam mantidas."
+        },
+        {
+          "id": "b",
+          "text": "Software livre é sempre pago, pois os desenvolvedores precisam ser remunerados pelo trabalho de disponibilização do código fonte",
+          "correct": false,
+          "explanation": "Incorreta. Software livre não é sempre pago. Ele pode ser distribuído gratuitamente ou ser vendido. A remuneração dos desenvolvedores de software livre frequentemente advém de serviços agregados, como suporte técnico, customização, treinamento ou desenvolvimento sob demanda, e não da venda da licença do software em si, que é livre para ser redistribuído."
+        },
+        {
+          "id": "c",
+          "text": "Software livre não é necessariamente gratuito, pois o termo 'livre' refere-se à liberdade de uso e modificação, não ao custo",
+          "correct": true,
+          "explanation": "Correta. O termo \"livre\" no contexto de software livre (do inglês \"free software\") refere-se às quatro liberdades essenciais: a liberdade de executar o programa para qualquer propósito, a liberdade de estudar como o programa funciona e adaptá-lo às suas necessidades (o que requer acesso ao código fonte), a liberdade de redistribuir cópias e a liberdade de aprimorar o programa e liberar os aprimoramentos para o público. A gratuidade (do inglês \"freeware\") é uma condição de preço, não de liberdade, e não é um requisito para que um software seja considerado livre."
+        },
+        {
+          "id": "d",
+          "text": "Software livre e software gratuito são termos tecnicamente idênticos, representando programas sem custo de aquisição",
+          "correct": false,
+          "explanation": "Incorreta. Software livre e software gratuito (freeware) não são termos tecnicamente idênticos. Software gratuito significa que o software pode ser usado sem custo, mas o usuário geralmente não tem as liberdades de estudar, modificar ou redistribuir o código fonte. Já o software livre garante essas liberdades, independentemente de ser gratuito ou pago."
+        }
+      ],
+      "explanation": "Correta. O termo \"livre\" no contexto de software livre (do inglês \"free software\") refere-se às quatro liberdades essenciais: a liberdade de executar o programa para qualquer propósito, a liberdade de estudar como o programa funciona e adaptá-lo às suas necessidades (o que requer acesso ao código fonte), a liberdade de redistribuir cópias e a liberdade de aprimorar o programa e liberar os aprimoramentos para o público. A gratuidade (do inglês \"freeware\") é uma condição de preço, não de liberdade, e não é um requisito para que um software seja considerado livre.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a principal característica que diferencia o software livre dos demais tipos de licenciamento quanto ao acesso ao código fonte?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O software livre disponibiliza o código fonte, permitindo que usuários estudem, modifiquem e redistribuam o programa",
+          "correct": true,
+          "explanation": "Correta. A principal característica que define o software livre, conforme os princípios da Free Software Foundation (FSF), é a disponibilização do código fonte. Este acesso é fundamental para que os usuários possam exercer as liberdades de estudar o funcionamento do programa, modificá-lo para atender às suas necessidades e redistribuir tanto a versão original quanto as versões modificadas."
+        },
+        {
+          "id": "b",
+          "text": "O software livre mantém o código fonte fechado durante o desenvolvimento, abrindo-o apenas após a versão final ser lançada",
+          "correct": false,
+          "explanation": "Incorreta. A filosofia do software livre preconiza a transparência e a colaboração. Manter o código fonte fechado durante o desenvolvimento e abri-lo apenas na versão final não é uma prática comum ou um requisito do software livre. Pelo contrário, o acesso ao código fonte é geralmente incentivado desde as fases iniciais do projeto."
+        },
+        {
+          "id": "c",
+          "text": "O software livre restringe o acesso ao código fonte a desenvolvedores certificados mediante pagamento de taxa de licenciamento",
+          "correct": false,
+          "explanation": "Incorreta. Restringir o acesso ao código fonte a desenvolvedores certificados ou mediante pagamento de taxas de licenciamento contradiz os princípios do software livre. A liberdade de estudar e modificar o código é universal, destinada a qualquer usuário interessado, sem a necessidade de certificações ou pagamentos adicionais para acessar o código em si."
+        },
+        {
+          "id": "d",
+          "text": "O software livre oferece acesso parcial ao código fonte, limitando modificações a funcionalidades não essenciais",
+          "correct": false,
+          "explanation": "Incorreta. O software livre, por definição, não oferece acesso parcial ao código fonte. Para que as liberdades de estudo e modificação sejam plenas, o acesso ao código fonte deve ser completo e irrestrito, permitindo alterações em qualquer parte do programa, não apenas em funcionalidades não essenciais."
+        }
+      ],
+      "explanation": "Correta. A principal característica que define o software livre, conforme os princípios da Free Software Foundation (FSF), é a disponibilização do código fonte. Este acesso é fundamental para que os usuários possam exercer as liberdades de estudar o funcionamento do programa, modificá-lo para atender às suas necessidades e redistribuir tanto a versão original quanto as versões modificadas.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Como funciona o modelo de negócio freemium em relação às funcionalidades oferecidas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Fornece acesso completo mediante visualização obrigatória de propagandas, com opção de remoção mediante pagamento único",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns softwares freemium possam exibir propagandas, a visualização obrigatória de anúncios com opção de remoção mediante pagamento é uma característica mais associada ao modelo adware ou a um modelo de monetização baseado em publicidade, e não a principal definição do modelo freemium, que foca na diferenciação de funcionalidades."
+        },
+        {
+          "id": "b",
+          "text": "Disponibiliza funcionalidades básicas gratuitamente de forma permanente, cobrando por recursos adicionais ou expandidos",
+          "correct": true,
+          "explanation": "Correta. O modelo de negócio freemium (uma junção das palavras \"free\" e \"premium\") é caracterizado pela oferta de funcionalidades básicas de um produto ou serviço gratuitamente de forma permanente, enquanto cobra por recursos adicionais, funcionalidades avançadas, maior capacidade de armazenamento ou outros benefícios \"premium\"."
+        },
+        {
+          "id": "c",
+          "text": "Permite uso gratuito em uma única máquina, cobrando licenças adicionais para instalações em outros dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. Permitir o uso gratuito em uma única máquina e cobrar por licenças adicionais para outros dispositivos é uma prática comum em licenças de software proprietário ou até mesmo em algumas licenças de software gratuito, mas não é a característica que define o modelo freemium. O freemium se concentra na oferta de diferentes níveis de funcionalidade, não na quantidade de instalações."
+        },
+        {
+          "id": "d",
+          "text": "Oferece todas as funcionalidades gratuitamente por período determinado, exigindo pagamento integral após o término do teste",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se encaixa no modelo de licenciamento shareware ou trialware, onde o software é totalmente funcional por um período de teste limitado, após o qual o usuário precisa pagar para continuar utilizando-o. O modelo freemium, por outro lado, oferece uma versão básica gratuita de forma permanente."
+        }
+      ],
+      "explanation": "Correta. O modelo de negócio freemium (uma junção das palavras \"free\" e \"premium\") é caracterizado pela oferta de funcionalidades básicas de um produto ou serviço gratuitamente de forma permanente, enquanto cobra por recursos adicionais, funcionalidades avançadas, maior capacidade de armazenamento ou outros benefícios \"premium\".",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é o processo de transformação do código fonte em um programa executável?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A interpretação direta pelo sistema operacional, que converte as instruções em tempo real durante a execução",
+          "correct": false,
+          "explanation": "Incorreta. A interpretação direta pelo sistema operacional, que converte as instruções em tempo real, é o que ocorre com linguagens interpretadas (como Python ou JavaScript). Para a criação de um programa executável autônomo, que pode ser executado diretamente pelo hardware sem um interpretador, o processo é outro."
+        },
+        {
+          "id": "b",
+          "text": "A encriptação do código fonte, que protege as instruções originais enquanto mantém a funcionalidade do programa",
+          "correct": false,
+          "explanation": "Incorreta. A encriptação (ou criptografia) é um método de codificação de informações para protegê-las contra acesso não autorizado. Embora o código fonte possa ser encriptado para fins de segurança ou proteção intelectual, a encriptação não é o processo que o transforma em um programa executável. O programa executável é o resultado da tradução do código fonte, não de sua ocultação."
+        },
+        {
+          "id": "c",
+          "text": "A virtualização das instruções, criando uma camada intermediária entre o código e o hardware do computador",
+          "correct": false,
+          "explanation": "Incorreta. A virtualização envolve a criação de uma versão virtual de um recurso computacional (como um sistema operacional, servidor ou hardware). Embora máquinas virtuais possam ser ambientes onde programas executáveis são rodados, a virtualização em si não é o processo de transformar o código fonte em um programa executável. A transformação do código fonte em um formato que a máquina virtual pode executar ainda passa pela compilação."
+        },
+        {
+          "id": "d",
+          "text": "A compilação, processo no qual o código escrito em linguagem de programação é transformado em programa funcional com interface",
+          "correct": true,
+          "explanation": "Correta. A compilação é o processo de tradução do código fonte, escrito em uma linguagem de programação de alto nível (como C++, Java, Pascal), para um código de máquina ou um formato intermediário (bytecode) que pode ser diretamente executado ou facilmente processado pelo computador. Este processo resulta na criação de um programa executável funcional, muitas vezes com uma interface de usuário."
+        }
+      ],
+      "explanation": "Correta. A compilação é o processo de tradução do código fonte, escrito em uma linguagem de programação de alto nível (como C++, Java, Pascal), para um código de máquina ou um formato intermediário (bytecode) que pode ser diretamente executado ou facilmente processado pelo computador. Este processo resulta na criação de um programa executável funcional, muitas vezes com uma interface de usuário.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando as diferentes licenças de software, qual afirmação está correta sobre a disponibilização do código fonte?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Software proprietário disponibiliza o código fonte mediante pagamento de taxa adicional de licenciamento para desenvolvedores",
+          "correct": false,
+          "explanation": "Incorreta. Software proprietário, por sua natureza, não disponibiliza o código fonte ao público, mesmo mediante pagamento de taxas adicionais. O código fonte é considerado um segredo comercial e um ativo intelectual da empresa desenvolvedora, sendo mantido fechado para proteger a propriedade intelectual e o modelo de negócio."
+        },
+        {
+          "id": "b",
+          "text": "Freeware, shareware, adware, software proprietário e demo disponibilizam o código fonte para permitir customizações pelos usuários",
+          "correct": false,
+          "explanation": "Incorreta. Freeware, shareware, adware, software proprietário e demo são categorias de software que, em sua maioria, mantêm o código fonte fechado. A disponibilização do código fonte para customizações é uma característica central do software livre e de código aberto, não dessas outras categorias."
+        },
+        {
+          "id": "c",
+          "text": "Shareware e demo oferecem acesso temporário ao código fonte durante o período de avaliação, restringindo-o após a compra",
+          "correct": false,
+          "explanation": "Incorreta. Shareware e demo oferecem uma versão do programa executável para avaliação, geralmente com funcionalidades limitadas ou por um período de tempo restrito. No entanto, essas licenças *não* dão acesso ao código fonte. O objetivo é permitir que o usuário experimente o software antes de decidir comprá-lo, sem ter acesso à sua \"receita\" interna."
+        },
+        {
+          "id": "d",
+          "text": "Apenas software livre e open source garantem acesso ao código fonte, enquanto as demais licenças mantêm o código fechado",
+          "correct": true,
+          "explanation": "Correta. Software livre e software de código aberto (open source) são as categorias que garantem e exigem o acesso ao código fonte. Essa é uma de suas definições fundamentais, permitindo que os usuários e desenvolvedores estudem, modifiquem e redistribuam o software. As demais licenças, como freeware, shareware, adware, software proprietário e demo, geralmente mantêm o código fonte fechado, disponibilizando apenas o programa executável."
+        }
+      ],
+      "explanation": "Correta. Software livre e software de código aberto (open source) são as categorias que garantem e exigem o acesso ao código fonte. Essa é uma de suas definições fundamentais, permitindo que os usuários e desenvolvedores estudem, modifiquem e redistribuam o software. As demais licenças, como freeware, shareware, adware, software proprietário e demo, geralmente mantêm o código fonte fechado, disponibilizando apenas o programa executável.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "15_243141_Linux e Software Livre.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:58:06"
+}

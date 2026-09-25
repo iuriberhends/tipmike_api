@@ -1,0 +1,576 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 7,
+    "titulo": "7. Trigonometria: razões trigonométricas, funções, fórmulas de transformações trigonométricas, equações e triângulos."
+  },
+  "ordem": 4,
+  "ordem_no_curso": "67.10",
+  "titulo": "Funções Trigonométricas",
+  "codigo_aula": "163695",
+  "video_id": "068zNXOcwqY=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:41:14",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/068zNXOcwqY%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?r=TODAS&a=416508%2C408931&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Funções Trigonométricas\n\n## Aquecimento e Escopo da Aula\nOlha só que legal: funções trigonométricas, show de bola. Já falamos sobre as relações métricas e trigonométricas no triângulo retângulo. Agora é importante falarmos de funções trigonométricas. Beleza? Neste início, vamos aquecer, concentrar, e depois falaremos das diversas funções: secante, cossecante, cotangente... beleza? Vem comigo.\n\nNa unidade de medidas, já falamos que, quando usamos a unidade de medida de ângulos, ela pode ser em radianos ou em graus. Vamos falar do ciclo trigonométrico, das razões trigonométricas. É importantíssima a redução dos arcos para o primeiro quadrante, aplicando as funções. Quais são as transformações que podemos fazer? Quais são as identidades trigonométricas fundamentais, como seno ao quadrado mais cosseno ao quadrado igual a 1. E, consequentemente, vamos chegar em equações e inequações na trigonometria, no conjunto dos números reais.\n\nBem, vamos começar pela primeira função: a função seno. Queridos, esta função é o seno, beleza?\n\n## Domínio, Imagem, Amplitude e Período do Seno\nVocê sabe que, em função, nós temos domínio e imagem. Então, o nosso domínio vai ser x, número real. Quando eu aplico x na função, obtenho y. O resultado é a minha imagem, beleza? Já vimos função do primeiro grau, função do segundo grau; agora a função seno: f(x) = sen(x). Ela associa a cada número real x o número real y = sen(x). Esse é o resultado.\n\nVamos aprender alguns detalhes importantes: amplitude, domínio, período e assim por diante.\n\n- Amplitude: aqui trabalhamos com amplitude igual a 1. Ou seja, a função vai de 1 até −1. Essa amplitude é o mesmo valor do raio do círculo trigonométrico onde ela foi definida. No ciclo trigonométrico, o diâmetro é 2 e o raio é 1. Então, para cima é 1, para baixo é −1, para a direita é 1, para a esquerda é −1. Amplitude 1, beleza?\n\n- Domínio: na função seno, x pode assumir qualquer valor real. O domínio são todos os reais.\n\n- Período: o período é o comprimento de um ciclo completo do gráfico. Em radianos, de 0 a 2π. Em graus, de 0° a 360°. Então, o período do seno é 2π. É o “tempo” que ela leva para fazer todo o ciclo.\n\n- Imagem: o conjunto imagem possui valor máximo 1 e valor mínimo −1. Portanto, a imagem está no intervalo [−1, 1]. Para qualquer x real, o resultado sen(x) pertence a esse intervalo.\n\nIsso é importante para os desafios que teremos. Como de costume, teremos desafios bem legais. No final tem um desafio final. Essa percepção é cobrada em prova. Entre esses conceitos iniciais estão pontos importantíssimos para questões lá na frente, inclusive questões de alto nível: fiscal, área militar... acho interessante fazermos, tá bom?\n\nPerceba: para qualquer valor de x pertencente aos reais (nosso domínio), a imagem estará entre −1 e 1. Continuando, vamos ver características da função seno. Não tem como fugir.\n\n## Características do Seno: Sinal por Quadrante e Ciclo\nÉ uma função dos reais nos reais: f: R → R, que associa a cada número real x o seu seno.\n\nAlgumas características importantíssimas: o sinal da função seno é positivo no primeiro e no segundo quadrante, e negativo no terceiro e no quarto.\n\nVamos relembrar o ciclo trigonométrico. O ângulo cresce no sentido anti-horário.\n\n- Em graus: 0°, 90°, 180°, 270°, 360°.\n- Em radianos: 0, π/2, π, 3π/2, 2π.\n- Lembrete: π radianos equivale a 180°. Logo, π/2 é 90°, 3π/2 é 270°.\n\nTambém marcamos os ângulos notáveis em radianos: π/6, π/4, π/3, que correspondem a 30°, 45°, 60°. Eles aparecem no primeiro quadrante.\n\nQuanto aos quadrantes, sempre neste sentido:\n- Primeiro quadrante (0 a 90°),\n- Segundo quadrante (90 a 180°),\n- Terceiro quadrante (180 a 270°),\n- Quarto quadrante (270 a 360°).\n\nIndependente da função, a contagem de quadrantes é essa. O que muda é o eixo de referência.\n\nAgora, na função seno, por que o primeiro e o segundo quadrantes são positivos? Porque nossa análise do seno é feita no eixo y (vertical). Tudo o que está acima do eixo x tem projeção positiva no eixo y, e tudo o que está abaixo tem projeção negativa. Então:\n- No primeiro e segundo quadrantes, o seno é positivo.\n- No terceiro e quarto quadrantes, o seno é negativo.\n\nGuarda isso: falou em função seno, seu “olho” vai para o eixo y, porque é nele que se mede o seno.\n\n## Redução ao Primeiro Quadrante e Ângulos Notáveis\nÀs vezes, o ângulo não está no primeiro quadrante, onde temos os ângulos notáveis (30°, 45°, 60°). E nós, em concurso, precisamos reduzir o ângulo para o primeiro quadrante para usar esses valores conhecidos.\n\nOs ângulos notáveis que guardamos:\n- 30° (π/6),\n- 45° (π/4),\n- 60° (π/3).\n\nLá no triângulo retângulo, trabalhamos com esses ângulos. Agora, no ciclo, a ideia é a mesma: para avaliar sen(θ) com θ fora do primeiro quadrante, reduzimos para o primeiro quadrante e ajustamos o sinal de acordo com o quadrante original.\n\nPara lembrar a tabelinha dos valores notáveis do seno e do cosseno, usamos o macete:\n- Linhas base: 0°, 30°, 45°, 60°, 90°.\n- Sequência (para seno): 0, 1, 2, 3, 4, depois divide por 4 e tira a raiz: sen = √(0/4), √(1/4), √(2/4), √(3/4), √(4/4) = 0, 1/2, √2/2, √3/2, 1.\n- Para cosseno é a sequência invertida.\n\nAjuste que comentei: “um, dois, três; três, dois, um” e depois divide por 2 ou por 4 e tira raiz — a ideia é esse macete dos notáveis. Não dá para tirar raiz de 2 e 3, deixa como √2 e √3 mesmo, tudo bem.\n\nAssim, guardamos os valores de:\n- sen(30°) = 1/2,\n- sen(45°) = √2/2,\n- sen(60°) = √3/2.\n\nIsso está no primeiro quadrante, por isso é importante guardar.\n\n## Exemplos Diretos no Primeiro Quadrante\nVamos praticar:\n\n- π/4 → 180°/4 = 45°. sen(45°) = √2/2.\n- π/6 → 180°/6 = 30°. sen(30°) = 1/2.\n- π/3 → 180°/3 = 60°. sen(60°) = √3/2.\n\nBasta projetar no ciclo e buscar o valor no eixo do seno (eixo y).\n\n## Redução com Ajuste de Sinal: Exemplos Fora do Primeiro Quadrante\nExemplo 1: sen(7π/6)\n- 7π/6 = 210°, está no terceiro quadrante.\n- No terceiro quadrante, o seno é negativo.\n- Distância angular de 180° para 210° é 30°. Logo, a referência no primeiro quadrante é 30°.\n- Portanto, sen(210°) = −sen(30°) = −1/2.\n\nExemplo 2: sen(7π/4)\n- 7π/4 = 7×180°/4 = 315°, está no quarto quadrante.\n- No quarto quadrante, o seno é negativo.\n- De 315° para 360° faltam 45°, referência 45°.\n- Portanto, sen(315°) = −sen(45°) = −√2/2.\n\nGuarda a regra prática: reduz ao primeiro quadrante e aplica o sinal conforme o quadrante original:\n- QI: +\n- QII: +\n- QIII: −\n- QIV: −\n\n## Gráfico da Função Seno e Interpretação\nAgora, o gráfico do seno. Nossa imagem (y) vai de −1 a 1. Isso bate com o círculo trigonométrico de raio 1. O período de 0 a 2π é um ciclo completo.\n\nVamos mapear alguns pontos importantes em um período:\n- x = 0 → sen(0) = 0.\n- x = π/2 → sen(π/2) = 1.\n- x = π → sen(π) = 0.\n- x = 3π/2 → sen(3π/2) = −1.\n- x = 2π → sen(2π) = 0.\n\nVeja como isso conversa com o ciclo:\n- Primeiro e segundo quadrantes (0 a π): valores de y acima do eixo x → seno positivo.\n- Terceiro e quarto quadrantes (π a 2π): valores de y abaixo do eixo x → seno negativo.\n\nEssa leitura do gráfico derruba várias alternativas em prova só entendendo o comportamento: onde zera, onde é máximo, onde é mínimo, e o período.\n\n> 🎯 **Dicas de prova:** \n> - Imagem do seno: [−1, 1]. \n> - Período fundamental: 2π. \n> - Zeros em x = kπ (k ∈ Z). \n> - Máximo 1 em x = π/2 + 2kπ. \n> - Mínimo −1 em x = 3π/2 + 2kπ. \n> - Sinal: QI e QII positivo; QIII e QIV negativo.\n> - Reduza ângulos ao primeiro quadrante para usar 30°, 45°, 60° e ajuste o sinal pelo quadrante.\n\n## Transição para a Função Cosseno\nBeleza, show de bola com a função seno. Agora começa a função cosseno. A diferença principal é o eixo de referência: ao invés de analisarmos o eixo y (como no seno), vamos analisar o eixo x. Na função seno, o eixo y era a nossa imagem; na função cosseno, o eixo x será a nossa imagem. A função seno tem o eixo y como referência; a função cosseno terá o eixo x. Na próxima parte, seguimos com cosseno, show de bola.",
+  "transcricao_meta": {
+    "title": "Funções Trigonométricas",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 41179,
+    "createdAt": "2026-02-09T13:27:04.922Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda as funções trigonométricas com foco na **função seno**: ciclo trigonométrico, domínio, imagem, período, sinais por quadrantes, redução para o 1º quadrante, ângulos notáveis, valores principais do gráfico e técnicas rápidas de resolução.\nPrincipais pontos: \n- A) **sen²(x) + cos²(x) = 1**, \n- B) **sinal do seno por quadrante** e **redução ao 1º quadrante**, \n- C) **período 2π**, **imagem em [-1, 1]** e **tabela 30°–45°–60°**.\n\n## 1. Base / Conceitos Fundamentais\n- **Funções trigonométricas**: seno, cosseno, tangente (aqui o foco é o **seno**).\n- **Ciclo trigonométrico**: círculo de raio 1; o ângulo cresce no sentido anti-horário.\n- **Unidades angulares**:\n  - Correspondências: π ↔ 180°, π/2 ↔ 90°, 3π/2 ↔ 270°, 2π ↔ 360°.\n  - Ângulos notáveis: π/6 = 30°, π/4 = 45°, π/3 = 60°.\n- **Definições da função seno**:\n  - **Domínio**: todos os reais.\n  - **Imagem**: [-1, 1]; logo, **amplitude = 1**.\n  - **Período**: 2π (sen(x + 2π) = sen(x)).\n  - No círculo, o valor do **seno** é a **projeção no eixo y** (eixo dos senos).\n- **Identidade fundamental**: sen²(x) + cos²(x) = 1.\n\n## 2. Como Funciona / Distinções\n- **Sinal do seno por quadrante**:\n  - 1º quadrante: positivo\n  - 2º quadrante: positivo\n  - 3º quadrante: negativo\n  - 4º quadrante: negativo\n  - Regra visual: “acima do eixo x → positivo; abaixo → negativo”. Equivale a “acima/abaixo no eixo y (projeção do seno)”.\n- **Seno vs Cosseno (visão rápida)**\n\n| Conceito | Domínio | Imagem | Amplitude | Período | Eixo associado |\n|---|---|---|---|---|---|\n| Seno | Reais | [-1, 1] | 1 | 2π | eixo y (vertical) |\n\n> Dica de Prova\n> Guarde imediatamente: eixo do **seno = y**; **período 2π**; **imagem [-1, 1]**; e a identidade **sen² + cos² = 1**.\n\n## 3. Aplicação Prática / Técnicas\n- **Redução para o 1º quadrante (ângulo de referência)**:\n  1) Identifique o quadrante (em graus ou radianos).\n  2) Determine o **sinal** pelo quadrante.\n  3) Reduza ao 1º quadrante:\n     - 2º: 180° − θ (ou π − θ)\n     - 3º: θ − 180° (ou θ − π)\n     - 4º: 360° − θ (ou 2π − θ)\n  4) Aplique o valor do ângulo notável (30°, 45°, 60°).\n  5) Reaplique o **sinal** do passo 2.\n- **Tabela rápida 30°–45°–60° (senos e cossenos)**:\n  - Escreva “1, 2, 3” e “3, 2, 1”; tire raiz de todos; divida por 2.\n  - Senos: 1/2, √2/2, √3/2. Cossenos: √3/2, √2/2, 1/2.\n- **Conversões rápidas grau ↔ radiano**:\n  - π/6 ↔ 30°, π/4 ↔ 45°, π/3 ↔ 60°, 7π/6 ↔ 210°, 7π/4 ↔ 315°.\n- **Pontos notáveis do gráfico do seno (um período)**:\n  - x = 0 → 0; x = π/2 → 1; x = π → 0; x = 3π/2 → −1; x = 2π → 0.\n\n> Dica de Prova\n> Memorize só o 1º quadrante. Para os demais, reduza ao 1º e ajuste o sinal. E lembre a sequência no [0, 2π]: 0 → 1 → 0 → −1 → 0.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: sen(π/6)\n  - π/6 = 30° (1º quadrante, positivo) → sen = 1/2.\n- Exemplo 2: sen(7π/6)\n  - 7π/6 = 210° (3º quadrante, negativo).\n  - Redução: 210° − 180° = 30° → sen 30° = 1/2.\n  - Resultado: −1/2.\n- Exemplo 3: sen(7π/4)\n  - 7π/4 = 315° (4º quadrante, negativo).\n  - Redução: 360° − 315° = 45° → sen 45° = √2/2.\n  - Resultado: −√2/2.\n- Exemplo 4: sen(315°)\n  - 4º quadrante → negativo; referência: 360° − 315° = 45°.\n  - sen(315°) = −sen(45°) = −√2/2.\n\n## 5. Pegadinhas e Erros Comuns\n> Pegadinha\n> - Confundir ângulo de referência (sempre no 1º quadrante) com o quadrante original. O valor absoluto vem do ângulo de referência; o sinal vem do quadrante original.\n\n> Pegadinha\n> - Esquecer que a **imagem do seno é [-1, 1]**. Se aparecer valor fora desse intervalo, está errado.\n\n> Pegadinha\n> - Trocar eixo: **seno → eixo y** (ordenada). Cosseno usa o eixo x.\n\n> Dica de Prova\n> - Use a identidade **sen²(x) + cos²(x) = 1** para checar extremos e resolver equações simples.\n> - Em questões com radianos, identifique o quadrante antes de reduzir: por exemplo, 7π/6 (entre π e 3π/2) é 3º quadrante → seno negativo.\n\n> Dica de Prova\n> - Relembre as marcas principais do ciclo: 0, π/2, π, 3π/2, 2π e os valores do seno nesses pontos. Isso elimina distrações em múltipla escolha.",
+  "resumo_bolso": "# Funções Trigonométricas\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Função seno**: função trigonométrica básica; foco em domínio, imagem, período, sinais e ângulos notáveis.\n* **Ciclo trigonométrico**: círculo de raio 1; ângulo cresce no sentido anti-horário.\n* **Unidades angulares principais**:  \n  π ↔ 180°, π/2 ↔ 90°, 3π/2 ↔ 270°, 2π ↔ 360°.  \n  Ângulos notáveis: π/6 = 30°, π/4 = 45°, π/3 = 60°.\n* **Domínio do seno**: **ℝ** (todos os reais).\n* **Imagem do seno**: **[-1, 1]** → amplitude = 1.\n* **Período do seno**: **2π** → sen(x + 2π) = sen(x).\n* **Interpretação geométrica**: sen(x) = projeção do ponto no **eixo y** (ordenada) do ciclo trigonométrico.\n* **Identidade fundamental**: **sen²(x) + cos²(x) = 1** (sempre verdadeira).\n* **Pontos notáveis do gráfico (um período)**:  \n  x = 0 → 0; π/2 → 1; π → 0; 3π/2 → −1; 2π → 0.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Seno vs Cosseno (visão rápida)\n\n| Conceito | Domínio | Imagem   | Amplitude | Período | Eixo associado   |\n|----------|---------|----------|-----------|---------|------------------|\n| Seno     | Reais   | [-1, 1]  | 1         | 2π      | eixo y (vertical)|\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Identidade Fundamental**\n\n* **Regra**: **sen²(x) + cos²(x) = 1**.\n* **Aplicação**: checar valores extremos e resolver equações simples.\n* **Exemplo**: se sen(x) = 1, então cos(x) = 0 (pois 1² + cos² = 1).\n\n---\n\n**2. Sinal do Seno por Quadrante**\n\n* 1º quadrante (0 a 90° / 0 a π/2): **sen > 0**.  \n* 2º quadrante (90° a 180° / π/2 a π): **sen > 0**.  \n* 3º quadrante (180° a 270° / π a 3π/2): **sen < 0**.  \n* 4º quadrante (270° a 360° / 3π/2 a 2π): **sen < 0**.  \n* **Regra visual**: ponto **acima do eixo x → seno positivo**; abaixo → negativo.\n* **Exemplo**: sen(7π/6)  \n  7π/6 = 210° (3º quadrante, negativo).  \n  Redução: 210° − 180° = 30° → sen 30° = 1/2.  \n  Resultado: −1/2.\n\n---\n\n**3. Redução ao 1º Quadrante (Ângulo de Referência)**\n\n* **Passos**:\n  1) Achar o quadrante.  \n  2) Definir o **sinal** pelo quadrante.  \n  3) Reduzir ao 1º quadrante:\n     * 2º: 180° − θ (π − θ)\n     * 3º: θ − 180° (θ − π)\n     * 4º: 360° − θ (2π − θ)\n  4) Usar tabela de 30°, 45°, 60°.  \n  5) Reaplicar o **sinal** do passo 2.\n* **Exemplo**: sen(210°)  \n  210° (3º quadrante → negativo); 210° − 180° = 30° → sen 30° = 1/2 → resultado = −1/2.\n\n---\n\n**4. Tabela 30°–45°–60° (senos e cossenos)**\n\n* **Construção rápida**:\n  * Escreva: 1, 2, 3 e 3, 2, 1.  \n  * Tire raiz de todos.  \n  * Divida por 2.\n* **Senos (30°, 45°, 60°)**:  \n  30° → 1/2; 45° → √2/2; 60° → √3/2.\n* **Cossenos (30°, 45°, 60°)**:  \n  30° → √3/2; 45° → √2/2; 60° → 1/2.\n* **Exemplo**: sen(π/6) = sen(30°) = 1/2.  \n* **Exemplo**: sen(π/3) = sen(60°) = √3/2.\n\n---\n\n**5. Conversões Rápidas Grau ↔ Radiano**\n\n* π/6 ↔ 30°  \n* π/4 ↔ 45°  \n* π/3 ↔ 60°  \n* 7π/6 ↔ 210° (3º quadrante)  \n* 7π/4 ↔ 315° (4º quadrante)\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir ângulo de referência (sempre no 1º quadrante) com o quadrante original: o valor absoluto vem do ângulo de referência; o sinal vem do quadrante original.\n* Esquecer que a **imagem do seno é [-1, 1]**: se aparecer valor fora desse intervalo, está errado.\n* Trocar eixo: **seno → eixo y** (ordenada). Cosseno usa o eixo x.\n* Deixar de usar a identidade **sen²(x) + cos²(x) = 1** para checar extremos e resolver equações simples.\n* Em radianos, não identificar o quadrante antes de reduzir (ex.: 7π/6 está entre π e 3π/2 → 3º quadrante → seno negativo).\n\n---\n\n## 📋 Checklist Final\n\n* Memorizei **domínio (ℝ)**, **imagem ([-1, 1])**, **período (2π)** e **eixo (y)** da função seno?\n* Lembro de cor a identidade **sen²(x) + cos²(x) = 1**?\n* Sei montar em segundos a tabela de senos e cossenos de **30°, 45°, 60°**?\n* Sei fazer **redução ao 1º quadrante** (2º: 180° − θ; 3º: θ − 180°; 4º: 360° − θ) e depois aplicar o **sinal do quadrante**?\n* Consigo localizar rapidamente o quadrante de ângulos como **7π/6, 7π/4** e usar isso para acertar o **sinal do seno**?\n* Lembro os pontos-chave do gráfico do seno em [0, 2π]: **0 → 1 → 0 → −1 → 0**?",
+  "mapa_mental": "# 📘 Funções Trigonométricas – Seno\n## 🎯 Fundamentos do Seno\n### 💡 Conceitos básicos\n- Funções seno cosseno\n- Função seno foco\n- Ciclo trigonométrico\n- Raio unitário\n- Sentido anti-horário\n### 🧮 Unidades angulares\n- Grau radiano\n- π igual 180°\n- π/2 igual 90°\n- 3π/2 igual 270°\n- 2π igual 360°\n### 🔢 Ângulos notáveis\n- π/6 igual 30°\n- π/4 igual 45°\n- π/3 igual 60°\n- Primeiro quadrante\n- Memorização rápida\n### 🧮 Definição do seno\n- Domínio reais\n- Imagem menos1 1\n- Amplitude igual1\n- Período 2π\n- Projeção eixo y\n### 📊 Identidade fundamental\n- sen²x mais cos²x\n- Igual a 1\n- Relação pitagórica\n- Uso em equações\n- Verificação extremos\n\n## 📊 Propriedades e Sinais\n### 🧭 Sinal por quadrante\n- Primeiro quadrante positivo\n- Segundo quadrante positivo\n- Terceiro quadrante negativo\n- Quarto quadrante negativo\n- Acima eixo x positivo\n### 🔁 Seno e cosseno\n- Mesmo domínio\n- Mesma imagem\n- Mesma amplitude\n- Mesmo período\n- Eixos diferentes\n### 🧮 Dados essenciais\n- Seno eixo y\n- Período igual 2π\n- Imagem intervalo fechado\n- Identidade sen² cos²\n- Ciclo completo 0 2π\n\n## 🧮 Técnicas de Prova\n### 🔄 Redução 1º quadrante\n- Identificar quadrante\n- Determinar sinal\n- Reduzir ao primeiro\n- Usar ângulo notável\n- Reaplicar sinal\n### 🧮 Tabela 30°45°60°\n- Sequência 1 2 3\n- Sequência 3 2 1\n- Raiz sobre termos\n- Divisão por 2\n- Senos cossenos pareados\n### 🔢 Conversão grau radiano\n- 30° π/6\n- 45° π/4\n- 60° π/3\n- 210° 7π/6\n- 315° 7π/4\n### 📈 Pontos do gráfico\n- 0 seno 0\n- π/2 seno 1\n- π seno 0\n- 3π/2 seno menos1\n- 2π seno 0\n\n## ⚠️ Erros Frequentes\n### 🚨 Ângulo de referência\n- Sempre primeiro quadrante\n- Valor absoluto referência\n- Sinal quadrante original\n- Não confundir posições\n- Atenção em radianos\n### 🛑 Intervalo da imagem\n- Imagem menos1 1\n- Valor fora impossível\n- Checagem rápida\n- Eliminação alternativas\n- Extremos mais1 menos1\n### ⚠️ Eixo associado\n- Seno eixo y\n- Cosseno eixo x\n- Projeção vertical\n- Ciclo trigonométrico\n- Marcas 0 π 2π",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Fundamentos do Seno",
+      "description": "Fundamentos do Seno — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que a função seno associa a cada número real x?",
+          "back": "Associa a cada número real **x** o seu **seno**.",
+          "hint": "É a relação fundamental da trigonometria",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "definicao-seno"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é o domínio da função seno?",
+          "back": "Todos os **reais**.",
+          "hint": "Pense no conjunto numérico de entrada",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "dominio"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o valor da amplitude da função seno?",
+          "back": "**1**.",
+          "hint": "Refere-se ao valor máximo da função",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "amplitude"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Ciclo Trigonométrico",
+      "description": "Ciclo Trigonométrico — 5 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual equivalência relaciona π radianos e graus?",
+          "back": "**180°**.",
+          "hint": "Equivale a meia volta no ciclo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "conversao-angulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Em que sentido crescem os ângulos no ciclo trigonométrico?",
+          "back": "Sentido **anti-horário**.",
+          "hint": "Oposto ao movimento dos ponteiros",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "ciclo-trigonometrico"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Como se ordenam os quadrantes no ciclo trigonométrico?",
+          "back": "Primeiro, segundo, terceiro e quarto.",
+          "hint": "São quatro regiões no plano cartesiano",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "ciclo-trigonometrico"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Em quais quadrantes a função seno é positiva?",
+          "back": "Primeiro e segundo quadrante.",
+          "hint": "Acima do eixo horizontal",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "sinal-seno"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual identidade trigonométrica relaciona seno e cosseno?",
+          "back": "Seno ao quadrado mais cosseno ao quadrado igual a 1.",
+          "hint": "Baseada no Teorema de Pitágoras",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "identidade-fundamental"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Redução Angular",
+      "description": "Redução Angular — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Quais são os três ângulos notáveis usados na redução ao primeiro quadrante?",
+          "back": "**30°**, **45°** e **60°**.",
+          "hint": "Ângulos agudos básicos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "angulos-notaveis"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Para qual quadrante os ângulos devem ser reduzidos?",
+          "back": "Primeiro quadrante.",
+          "hint": "Onde os valores são todos positivos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "reducao-quadrantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é o valor de sen 210°?",
+          "back": "-1/2",
+          "hint": "Aplique a redução ao primeiro quadrante",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "calculo-seno"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o conjunto imagem da função seno?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto dos números reais entre -1 e 1, incluindo esses valores",
+          "correct": true,
+          "explanation": "Correta. A imagem da função seno (sen(x)) é o conjunto de todos os valores que a função pode assumir. No ciclo trigonométrico, o seno é representado pela projeção no eixo vertical (eixo y), que varia de -1 a 1. Portanto, o conjunto imagem da função seno é o intervalo real fechado [-1, 1]."
+        },
+        {
+          "id": "b",
+          "text": "O conjunto dos números reais entre -π e π, incluindo esses valores",
+          "correct": false,
+          "explanation": "Incorreta. O intervalo [-π, π] representa valores angulares ou de domínio, não o conjunto imagem da função seno, que se refere aos valores que a função pode assumir."
+        },
+        {
+          "id": "c",
+          "text": "O conjunto dos números reais entre 0 e 2π, incluindo esses valores",
+          "correct": false,
+          "explanation": "Incorreta. O intervalo [0, 2π] representa um período completo da função seno, ou seja, valores do domínio (ângulos), e não o conjunto imagem da função, que é o intervalo dos valores resultantes."
+        },
+        {
+          "id": "d",
+          "text": "O conjunto dos números reais entre 0 e 1, incluindo esses valores",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto imagem da função seno inclui valores negativos, indo de -1 a 1, não apenas de 0 a 1."
+        }
+      ],
+      "explanation": "Correta. A imagem da função seno (sen(x)) é o conjunto de todos os valores que a função pode assumir. No ciclo trigonométrico, o seno é representado pela projeção no eixo vertical (eixo y), que varia de -1 a 1. Portanto, o conjunto imagem da função seno é o intervalo real fechado [-1, 1].",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a amplitude da função seno no ciclo trigonométrico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A amplitude é 2, correspondendo ao diâmetro do círculo trigonométrico",
+          "correct": false,
+          "explanation": "Incorreta. A amplitude de uma função trigonométrica é a metade da diferença entre o valor máximo e o valor mínimo da função. Para a função seno, os valores máximo e mínimo são 1 e -1, respectivamente. A amplitude é (1 - (-1))/2 = 1. O diâmetro do ciclo trigonométrico é 2, mas a amplitude é a metade disso."
+        },
+        {
+          "id": "b",
+          "text": "A amplitude é π, correspondendo à metade da circunferência do círculo",
+          "correct": false,
+          "explanation": "Incorreta. π (pi) está relacionado ao comprimento da semicircunferência ou a um ângulo de 180 graus, e não diretamente à amplitude da função seno, que é um valor escalar representando a variação vertical."
+        },
+        {
+          "id": "c",
+          "text": "A amplitude é 1, correspondendo ao raio do círculo trigonométrico",
+          "correct": true,
+          "explanation": "Correta. A amplitude da função seno é 1. No ciclo trigonométrico, que é um círculo de raio unitário, o valor máximo que o seno atinge é 1 e o valor mínimo é -1. A amplitude é definida como a metade da diferença entre o valor máximo e o valor mínimo da função, ou seja, (1 - (-1))/2 = 1. Isso corresponde ao raio do círculo trigonométrico."
+        },
+        {
+          "id": "d",
+          "text": "A amplitude é 0,5, correspondendo à metade do raio do círculo",
+          "correct": false,
+          "explanation": "Incorreta. A amplitude da função seno é 1, não 0,5. O valor 0,5 seria a metade do raio, o que não corresponde à amplitude da função seno padrão."
+        }
+      ],
+      "explanation": "Correta. A amplitude da função seno é 1. No ciclo trigonométrico, que é um círculo de raio unitário, o valor máximo que o seno atinge é 1 e o valor mínimo é -1. A amplitude é definida como a metade da diferença entre o valor máximo e o valor mínimo da função, ou seja, (1 - (-1))/2 = 1. Isso corresponde ao raio do círculo trigonométrico.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quais são os ângulos notáveis utilizados no primeiro quadrante do ciclo trigonométrico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "20°, 40° e 80°",
+          "correct": false,
+          "explanation": "Incorreta. Os ângulos 20°, 40° e 80° não são considerados ângulos notáveis no ciclo trigonométrico, pois seus valores trigonométricos não são expressos de forma simples ou exata como os de 30°, 45° e 60°."
+        },
+        {
+          "id": "b",
+          "text": "15°, 30° e 60°",
+          "correct": false,
+          "explanation": "Incorreta. Embora 30° e 60° sejam ângulos notáveis, 15° não é considerado um ângulo notável primário no contexto da tabela trigonométrica fundamental (30°, 45°, 60°)."
+        },
+        {
+          "id": "c",
+          "text": "45°, 60° e 90°",
+          "correct": false,
+          "explanation": "Incorreta. 90° é um ângulo quadrantal, mas não é incluído no conjunto dos ângulos notáveis primários (30°, 45°, 60°) que formam a base para cálculos de redução de quadrante."
+        },
+        {
+          "id": "d",
+          "text": "30°, 45° e 60°",
+          "correct": true,
+          "explanation": "Correta. Os ângulos notáveis mais frequentemente utilizados no primeiro quadrante do ciclo trigonométrico, cujos valores de seno, cosseno e tangente são facilmente memorizáveis, são 30°, 45° e 60° (ou π/6, π/4 e π/3 radianos, respectivamente)."
+        }
+      ],
+      "explanation": "Correta. Os ângulos notáveis mais frequentemente utilizados no primeiro quadrante do ciclo trigonométrico, cujos valores de seno, cosseno e tangente são facilmente memorizáveis, são 30°, 45° e 60° (ou π/6, π/4 e π/3 radianos, respectivamente).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em quais quadrantes do ciclo trigonométrico a função seno apresenta valores positivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função seno é positiva no terceiro e quarto quadrantes",
+          "correct": false,
+          "explanation": "Incorreta. A função seno é negativa tanto no terceiro quanto no quarto quadrantes, pois a projeção no eixo y está abaixo do eixo x em ambos os casos."
+        },
+        {
+          "id": "b",
+          "text": "A função seno é positiva no primeiro e segundo quadrantes",
+          "correct": true,
+          "explanation": "Correta. No ciclo trigonométrico, o seno é representado pela coordenada y de um ponto na circunferência. No primeiro quadrante (0° a 90°), a coordenada y é positiva. No segundo quadrante (90° a 180°), a coordenada y também é positiva. Portanto, a função seno apresenta valores positivos no primeiro e segundo quadrantes."
+        },
+        {
+          "id": "c",
+          "text": "A função seno é positiva no primeiro e terceiro quadrantes",
+          "correct": false,
+          "explanation": "Incorreta. A função seno é positiva no primeiro quadrante, mas negativa no terceiro quadrante. No terceiro quadrante, a projeção no eixo y (seno) está abaixo do eixo x."
+        },
+        {
+          "id": "d",
+          "text": "A função seno é positiva no segundo e quarto quadrantes",
+          "correct": false,
+          "explanation": "Incorreta. A função seno é positiva no segundo quadrante, mas negativa no quarto quadrante. No quarto quadrante, a projeção no eixo y (seno) está abaixo do eixo x."
+        }
+      ],
+      "explanation": "Correta. No ciclo trigonométrico, o seno é representado pela coordenada y de um ponto na circunferência. No primeiro quadrante (0° a 90°), a coordenada y é positiva. No segundo quadrante (90° a 180°), a coordenada y também é positiva. Portanto, a função seno apresenta valores positivos no primeiro e segundo quadrantes.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o eixo do ciclo trigonométrico utilizado para representar os valores da função seno?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O eixo radial, que representa os valores de secante",
+          "correct": false,
+          "explanation": "Incorreta. O eixo radial se refere ao raio do círculo e não é um eixo específico para representar os valores da função seno. Os valores de seno são projetados nos eixos cartesianos (x e y)."
+        },
+        {
+          "id": "b",
+          "text": "O eixo vertical (eixo y), que representa os valores de seno",
+          "correct": true,
+          "explanation": "Correta. No ciclo trigonométrico, a função seno de um ângulo é definida como a coordenada y (vertical) do ponto na circunferência unitária correspondente a esse ângulo. Portanto, o eixo vertical (eixo y) é o eixo que representa os valores da função seno."
+        },
+        {
+          "id": "c",
+          "text": "O eixo das abscissas, que representa os valores de tangente",
+          "correct": false,
+          "explanation": "Incorreta. O eixo das abscissas é o eixo x, que representa o cosseno. A tangente é uma razão entre seno e cosseno e não é diretamente representada por um único eixo no ciclo trigonométrico da mesma forma que seno e cosseno."
+        },
+        {
+          "id": "d",
+          "text": "O eixo horizontal (eixo x), que representa os valores de cosseno",
+          "correct": false,
+          "explanation": "Incorreta. O eixo horizontal (eixo x) no ciclo trigonométrico é utilizado para representar os valores da função cosseno, não da função seno."
+        }
+      ],
+      "explanation": "Correta. No ciclo trigonométrico, a função seno de um ângulo é definida como a coordenada y (vertical) do ponto na circunferência unitária correspondente a esse ângulo. Portanto, o eixo vertical (eixo y) é o eixo que representa os valores da função seno.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Por que é necessário reduzir ângulos de outros quadrantes para o primeiro quadrante ao calcular funções trigonométricas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque a redução para o primeiro quadrante elimina a necessidade de considerar sinais negativos",
+          "correct": false,
+          "explanation": "Incorreta. A redução para o primeiro quadrante não elimina a necessidade de considerar sinais negativos; pelo contrário, ela exige que se preste atenção aos sinais. Após reduzir o ângulo para o primeiro quadrante, é crucial determinar o sinal correto da função trigonométrica com base no quadrante original do ângulo. Por exemplo, o seno é negativo no terceiro e quarto quadrantes, mesmo que o ângulo de referência no primeiro quadrante tenha um seno positivo."
+        },
+        {
+          "id": "b",
+          "text": "Porque os valores trigonométricos são sempre maiores no primeiro quadrante do que nos demais",
+          "correct": false,
+          "explanation": "Incorreta. Os valores das funções trigonométricas não são necessariamente maiores no primeiro quadrante. Por exemplo, o seno de 90° (no limite do primeiro quadrante) é 1, enquanto o seno de 270° (no limite do terceiro e quarto quadrantes) é -1. A magnitude dos valores pode ser a mesma em diferentes quadrantes, mas o sinal pode mudar, e o conceito de 'maior' ou 'menor' precisa considerar o sinal. A redução é sobre a magnitude do ângulo de referência, não sobre a magnitude do valor da função."
+        },
+        {
+          "id": "c",
+          "text": "Porque os ângulos notáveis, cujos valores trigonométricos são conhecidos, estão localizados no primeiro quadrante",
+          "correct": true,
+          "explanation": "Correta. A redução de ângulos para o primeiro quadrante é uma técnica fundamental na trigonometria. Ela permite que se utilize os valores dos ângulos notáveis (30°, 45°, 60°), que são memorizados ou facilmente consultados, para determinar os valores das funções trigonométricas de ângulos em qualquer outro quadrante. Essa redução simplifica os cálculos, já que as relações trigonométricas nesses ângulos são bem estabelecidas."
+        },
+        {
+          "id": "d",
+          "text": "Porque o primeiro quadrante é o único onde as funções trigonométricas existem matematicamente",
+          "correct": false,
+          "explanation": "Incorreta. As funções trigonométricas são definidas para todos os números reais (e complexos), o que significa que elas existem matematicamente em todos os quadrantes do ciclo trigonométrico, não apenas no primeiro. A necessidade de redução é uma ferramenta para simplificar o cálculo e a compreensão, não uma condição de existência."
+        }
+      ],
+      "explanation": "Correta. A redução de ângulos para o primeiro quadrante é uma técnica fundamental na trigonometria. Ela permite que se utilize os valores dos ângulos notáveis (30°, 45°, 60°), que são memorizados ou facilmente consultados, para determinar os valores das funções trigonométricas de ângulos em qualquer outro quadrante. Essa redução simplifica os cálculos, já que as relações trigonométricas nesses ângulos são bem estabelecidas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao analisar o gráfico da função seno, qual característica permite identificar que o primeiro e segundo quadrantes têm valores positivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os valores estão abaixo do eixo horizontal no gráfico cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. Se os valores estivessem abaixo do eixo horizontal no gráfico cartesiano, isso indicaria que a função seno possui valores negativos. No ciclo trigonométrico, os valores do seno são negativos no terceiro e quarto quadrantes, correspondendo à parte da curva que está abaixo do eixo x no gráfico da função seno."
+        },
+        {
+          "id": "b",
+          "text": "Os valores estão acima do eixo horizontal no gráfico cartesiano",
+          "correct": true,
+          "explanation": "Correta. No gráfico da função seno (y = sen(x)), os valores positivos da função são representados pelos pontos que estão acima do eixo horizontal (eixo x). Observando o ciclo trigonométrico, o seno é a coordenada 'y' do ponto na circunferência. No primeiro e segundo quadrantes, a coordenada 'y' é positiva, o que se reflete no gráfico da função seno, onde a curva está acima do eixo x nesses intervalos de ângulos."
+        },
+        {
+          "id": "c",
+          "text": "Os valores estão à esquerda do eixo vertical no gráfico cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. Conforme explicado na alternativa 'a', o posicionamento em relação ao eixo vertical (eixo y) no gráfico da função seno indica a natureza do ângulo (positivo ou negativo), não diretamente o sinal do valor da função seno em um quadrante específico. Para determinar o sinal do seno, deve-se observar sua posição em relação ao eixo horizontal (eixo x)."
+        },
+        {
+          "id": "d",
+          "text": "Os valores estão à direita do eixo vertical no gráfico cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. No gráfico cartesiano da função seno (y = sen(x)), o eixo horizontal (eixo x) representa os ângulos (ou arcos), e o eixo vertical (eixo y) representa os valores do seno. O fato de os valores estarem à direita ou à esquerda do eixo vertical (eixo y) indica se o ângulo é positivo ou negativo, mas não diretamente o sinal do valor da função seno em um quadrante específico. O sinal do seno é determinado pela sua projeção no eixo y."
+        }
+      ],
+      "explanation": "Correta. No gráfico da função seno (y = sen(x)), os valores positivos da função são representados pelos pontos que estão acima do eixo horizontal (eixo x). Observando o ciclo trigonométrico, o seno é a coordenada 'y' do ponto na circunferência. No primeiro e segundo quadrantes, a coordenada 'y' é positiva, o que se reflete no gráfico da função seno, onde a curva está acima do eixo x nesses intervalos de ângulos.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é o valor do seno de 210° (ou 7π/6 radianos)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor é -1/2, pois 210° reduz-se a 30° no primeiro quadrante, mas com sinal negativo por estar no terceiro quadrante",
+          "correct": true,
+          "explanation": "Correta. Para calcular o seno de 210°, primeiro identificamos que ele está no terceiro quadrante (entre 180° e 270°). O ângulo de referência no primeiro quadrante é obtido fazendo 210° - 180° = 30°. O seno de 30° é 1/2. Como o seno é negativo no terceiro quadrante, o seno de 210° é -1/2."
+        },
+        {
+          "id": "b",
+          "text": "O valor é √3/2, pois 210° corresponde ao ângulo complementar de 60°",
+          "correct": false,
+          "explanation": "Incorreta. O valor √3/2 é o seno de 60°, não de 30°. Além disso, 210° está no terceiro quadrante, onde o seno é negativo, e o conceito de ângulo complementar (que soma 90°) não se aplica diretamente aqui para a redução ao primeiro quadrante. O ângulo de referência é 30°, não 60°."
+        },
+        {
+          "id": "c",
+          "text": "O valor é 1/2, pois 210° está no terceiro quadrante onde o seno é positivo",
+          "correct": false,
+          "explanation": "Incorreta. O ângulo de 210° (ou 7π/6 radianos) está no terceiro quadrante. No terceiro quadrante, a função seno é negativa, pois sua projeção no eixo vertical (eixo y) é para baixo do eixo horizontal. Portanto, o valor não pode ser 1/2 positivo."
+        },
+        {
+          "id": "d",
+          "text": "O valor é -√3/2, pois 210° está no terceiro quadrante e corresponde a 60° reduzido",
+          "correct": false,
+          "explanation": "Incorreta. Embora o seno de 210° seja de fato negativo por estar no terceiro quadrante, a redução não corresponde a 60°. O ângulo de referência é 30° (210° - 180° = 30°). O valor de seno de 60° é √3/2, o que levaria a um resultado de -√3/2, que está incorreto para o seno de 210°."
+        }
+      ],
+      "explanation": "Correta. Para calcular o seno de 210°, primeiro identificamos que ele está no terceiro quadrante (entre 180° e 270°). O ângulo de referência no primeiro quadrante é obtido fazendo 210° - 180° = 30°. O seno de 30° é 1/2. Como o seno é negativo no terceiro quadrante, o seno de 210° é -1/2.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando o ciclo trigonométrico, qual é a relação entre o comprimento da circunferência e o período da função seno?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O período da função seno corresponde a um quarto do comprimento da circunferência, ou seja, π/2 radianos",
+          "correct": false,
+          "explanation": "Incorreta. O período de π/2 radianos (ou 90°) é muito curto para a função seno. Em π/2, a função seno atinge seu valor máximo (1) e em π atinge 0 novamente, mas ainda não completou um ciclo completo de seus valores, que inclui tanto os positivos quanto os negativos."
+        },
+        {
+          "id": "b",
+          "text": "O período da função seno corresponde à metade do comprimento da circunferência, ou seja, π radianos",
+          "correct": false,
+          "explanation": "Incorreta. O período da função seno é o intervalo no qual o gráfico da função se repete completamente. Este intervalo corresponde a uma volta completa no ciclo trigonométrico, que é o comprimento total da circunferência, não a metade."
+        },
+        {
+          "id": "c",
+          "text": "O período da função seno corresponde ao dobro do comprimento da circunferência, ou seja, 4π radianos",
+          "correct": false,
+          "explanation": "Incorreta. O período da função seno é 2π radianos. Dobrar esse valor para 4π radianos representaria duas voltas completas no ciclo trigonométrico, mas o período é definido como o menor intervalo em que a função se repete."
+        },
+        {
+          "id": "d",
+          "text": "O período da função seno corresponde ao comprimento total da circunferência, ou seja, 2π radianos",
+          "correct": true,
+          "explanation": "Correta. O período da função seno (f(x) = sen(x)) é 2π radianos (ou 360°). Isso significa que o gráfico da função seno se repete a cada 2π unidades no eixo x. No ciclo trigonométrico, 2π radianos representa uma volta completa na circunferência, retornando ao ponto inicial e completando um ciclo de valores para a função seno."
+        }
+      ],
+      "explanation": "Correta. O período da função seno (f(x) = sen(x)) é 2π radianos (ou 360°). Isso significa que o gráfico da função seno se repete a cada 2π unidades no eixo x. No ciclo trigonométrico, 2π radianos representa uma volta completa na circunferência, retornando ao ponto inicial e completando um ciclo de valores para a função seno.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a função trigonométrica representada pelo eixo horizontal (eixo x) no ciclo trigonométrico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função cosseno é representada pelo eixo horizontal",
+          "correct": true,
+          "explanation": "Correta. No ciclo trigonométrico, a função cosseno de um ângulo é definida como a coordenada 'x' do ponto na circunferência unitária. Portanto, o eixo horizontal (eixo x) representa os valores do cosseno."
+        },
+        {
+          "id": "b",
+          "text": "A função seno é representada pelo eixo horizontal",
+          "correct": false,
+          "explanation": "Incorreta. No ciclo trigonométrico, a função seno é representada pela coordenada 'y' do ponto na circunferência, ou seja, pelo eixo vertical."
+        },
+        {
+          "id": "c",
+          "text": "A função tangente é representada pelo eixo horizontal",
+          "correct": false,
+          "explanation": "Incorreta. A função tangente é representada por uma reta tangente ao ciclo trigonométrico no ponto (1,0) ou (-1,0), e não diretamente por um dos eixos principais."
+        },
+        {
+          "id": "d",
+          "text": "A função secante é representada pelo eixo horizontal",
+          "correct": false,
+          "explanation": "Incorreta. A função secante é o inverso do cosseno (1/cos(x)) e não é diretamente representada por um dos eixos principais do ciclo trigonométrico."
+        }
+      ],
+      "explanation": "Correta. No ciclo trigonométrico, a função cosseno de um ângulo é definida como a coordenada 'x' do ponto na circunferência unitária. Portanto, o eixo horizontal (eixo x) representa os valores do cosseno.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "04_163695_Funções Trigonométricas.pdf",
+  "coletado_em": "2026-09-23T21:10:35"
+}

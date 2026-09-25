@@ -1,0 +1,595 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Álgebra: Expressões algébricas. Polinômios: operações e propriedades. Equações polinomiais e inequações relacionadas."
+  },
+  "ordem": 6,
+  "ordem_no_curso": "67.00",
+  "titulo": "Álgebra - Equações e Sistemas de Equações do 2º Grau III",
+  "codigo_aula": "307944",
+  "video_id": "QO81es21fPc=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:51:58",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/QO81es21fPc%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408717%2C403840%2C403842%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Equações e Sistemas de Equações do 2º Grau III\n\n## Aprofundando equações do 2º grau\nEu queria continuar o nosso aprofundamento nas equações do segundo grau. A questão aqui é muito boa, superinteressante. Em matemática, boa parte das soluções com relação à equação de segundo grau acontecem quando a gente consegue enquadrar a expressão nos parâmetros certos.\n\nNós temos aqui uma expressão que precisa se enquadrar como uma equação do segundo grau. Olha para isso: x ao quadrado mais 2x ao quadrado, menos 10x, mais 7. Isso aqui, se você observar, dá para organizar. Se o a e o c forem iguais aqui, então a gente consegue trabalhar como equação do segundo grau. Observa: tem x ao quadrado mais x ao quadrado lá em cima; é exatamente aquilo.\n\nEntão, será que isso está certo? Vamos visualizar. A questão é: isso aqui é uma expressão que eu quero transformar numa equação do segundo grau em x. Em cima, eu tenho x ao quadrado, pelo menos 5x... então vamos salvar essa equação do segundo grau.\n\nEu posso reescrever assim: x ao quadrado menos 5x + 3. Isso é levado ao quadrado? Calma, queridos, não pode ser assim do nada. Vamos com calma. Em vez de pensar nessa forma direta, eu vou decupar isso.\n\nVocê concorda comigo que 2x ao quadrado é como se fosse x ao quadrado + x ao quadrado? Olha a viagem, concorda? E você concorda comigo que x ao quadrado + x ao quadrado mantém a forma ao quadrado somando termos semelhantes? Sim ou não? x ao quadrado + x ao quadrado, beleza.\n\nLê mais uma vez comigo. Você concorda comigo que −10x tem que ser −5x −5x? Dez dividido em dois pedaços. Agora, divide ao meio: −5x −5x. Concorda comigo? E 7 eu posso falar que é 3 + 3 + 1. Concorda comigo? 3 + 3 + 1 = 7. Por que eu fiz isso?\n\nPorque eu percebi que, se eu pegar esses dois termos com esse outro, eu consigo formar estruturas que se completam. Fica assim: x ao quadrado − 5x + 3, mais x ao quadrado − 5x + 3, mais 1. Concorda comigo? Que jogada boa!\n\nEntão, nós temos: (x ao quadrado − 5x + 3) + (x ao quadrado − 5x + 3) + 1. Isso vira 2(x ao quadrado − 5x + 3) + 1. Mas eu quero levar para uma forma que me permita completar quadrado. Observa comigo: x ao quadrado − 5x + ? Para completar quadrado, eu penso em x ao quadrado − 5x + (25/4) = (x − 5/2)^2. Só que os nossos termos aqui estão “espalhados” em duas cópias e com +1 ao final. Então a ideia é reagrupar do jeito certo.\n\nO que aconteceu? A gente lembrou aquela parte lá de cima: reorganizamos os termos para enxergar uma forma de quadrado perfeito. E chegamos numa equação do segundo grau em x: um quadrado mais 2px + 1 = 0, no formato de completar quadrado.\n\nBeleza, eu quero dois números que, no método da soma e produto (o velho “fazer a bacia”), tenham:\n- soma com sinal trocado igual a 2p\n- e produto igual a 1\n\nPodem ser −1 e −1: menos um vezes menos um dá +1, e a soma dá −2, que com o sinal trocado dá +2. Então temos uma raiz dupla. Nesse caso, só tem uma abordagem: são duas raízes iguais.\n\nBeleza, queridos.\n\n## Problema de conjuntos: condomínio e sala de jogos\nEm uma reunião do condomínio, discutimos a respeito das linhas que comporiam o novo salão de jogos. Entre as opções, estavam mesa de pebolim, outra mesa e mais uma opção. A figura (imaginária aqui) representa o seguinte conjunto: conjunto A, o conjunto dos 17 condôminos que queriam a mesa de pebolim. O conjunto B tem 25 condôminos que queriam outra opção. O conjunto C tem 18 condôminos de uma terceira opção. E, dentre os 40 condôminos que participaram da reunião, apenas 5 não queriam uma nova sala de jogos.\n\nEntão, temos um universo de 40 condôminos. Aqui fora do diagrama, ficam os 5 que não queriam a nova sala. Logo, dentro do diagrama (A ∪ B ∪ C) temos 35 pessoas.\n\nÉ uma questão de conjuntos. A ideia é aplicar operações com conjuntos para depois levar a uma equação do segundo grau. Vamos por partes.\n\n- n(A) = 17\n- n(B) = 25\n- n(C) = 18\n- n(A ∪ B ∪ C) = 35\n\nPodemos organizar algebricamente usando as interseções:\n- Seja x = n(A ∩ B ∩ C) (a interseção tripla)\n- Seja dAB = n(A ∩ B) − x\n- Seja dAC = n(A ∩ C) − x\n- Seja dBC = n(B ∩ C) − x\n\nA soma dos elementos de A ∪ B ∪ C, por princípio da inclusão-exclusão:\nn(A) + n(B) + n(C) − n(A ∩ B) − n(A ∩ C) − n(B ∩ C) + n(A ∩ B ∩ C) = 35\n\nEm números:\n17 + 25 + 18 − [n(A ∩ B) + n(A ∩ C) + n(B ∩ C)] + x = 35\n\nSomando A, B e C: 17 + 25 + 18 = 60.\nFica: 60 − [somatório das duplas] + x = 35\nEntão: [somatório das duplas] − x = 25\n\nAgora, pensando nas regiões internas, quando somamos A + B + C (60), somamos as interseções duplas duas vezes cada e a tripla três vezes. Para bater com 35 (que conta cada pessoa uma vez), precisamos ajustar essas sobrecontagens. Visualmente, raciocinando de modo prático: como temos 60 “votos” distribuídos e apenas 35 pessoas, o excesso é 25. Esse excesso é exatamente a soma das sobreposições: as interseções duplas somadas, menos a correção da tripla duas vezes. Esse raciocínio nos leva ao mesmo balanço: [duplas] − x = 25.\n\nSeguindo com a contagem prática (o professor “pés no chão”):\n- Se lá dentro são 35 e a soma nominal 17 + 25 + 18 = 60, o que está a mais (60 − 35 = 25) é justamente a soma de quantas pessoas foram contadas repetidas vezes nas interseções.\n- Distribuindo esse excesso pelas interseções e ajustando a tripla, chegamos à necessidade de encontrar a interseção tripla.\n\nPela análise das áreas e das correções sucessivas (somamos três vezes a tripla, subtraímos uma vez ao ajustar, ainda sobram duas “sobras” da tripla no excesso 25), concluímos que a interseção tripla vale 3. Ou seja:\nn(A ∩ B ∩ C) = 3.\n\nCom isso, conseguimos montar as demais interseções e regiões, se necessário, e tirar os parâmetros que vão para a equação do segundo grau da próxima etapa.\n\n## Ligando o problema de conjuntos à equação do 2º grau\nA questão pede, ao final, uma equação do segundo grau cuja solução deve ser checada entre números naturais. Depois que identificamos as regiões do diagrama e os totais corretos, substituímos esses valores na estrutura pedida: os coeficientes tornam-se os “Dezinho, Mazinho, Andrezinho e Cezinho” (a, b, c), conforme a modelagem da questão.\n\nMontamos a equação do segundo grau e analisamos as raízes. A questão diz que “as soluções são números naturais”. Vamos pensar sem fazer conta pesada: se na forma x^2 − 7x − 18 (ilustração do raciocínio) eu quero dois números que somados deem +7 e multiplicados deem −18, dá para existir dois naturais positivos? Não. Para somar dois números naturais positivos e dar positivo até dá, mas para o produto ser negativo, um deles teria que ser negativo. Logo, não são ambos naturais positivos.\n\nGeneralizando o argumento da aula: se o coeficiente b e o produto c impõem um cenário em que a soma teria que ser negativa, é impossível obter duas soluções naturais positivas, porque a soma de dois naturais positivos nunca é negativa. Portanto, nesta situação apresentada, não há soluções naturais. Esse é o ponto: a leitura lógica evita conta desnecessária.\n\n> 🎯 Atenção para prova: Se a questão exigir soluções naturais e o arranjo de soma e produto implicar sinais incompatíveis (por exemplo, soma negativa para dois naturais), conclua imediatamente que não há soluções naturais, sem fazer conta longa.\n\n## Modelagem de arrecadação: preço, quantidade e equação do 2º grau\nAgora vamos para uma questão aplicada, de modelagem matemática, que eu gosto muito.\n\nUma loja vende um produto a R$ 50, e a cada mês são vendidas 500 unidades. Para cada real reduzido no preço unitário, ocorre aumento de 25 unidades vendidas por mês. Queremos a arrecadação em função da redução no preço.\n\nArrecadação é quantidade vendida vezes preço unitário.\n\n- Preço atual: 50\n- Quantidade atual: 500\n- Arrecadação atual: 500 × 50 = 25.000\n\nSe reduzirmos x reais no preço:\n- Novo preço: 50 − x\n- A cada real reduzido, vendemos 25 unidades a mais. Então a nova quantidade: 500 + 25x\n\nLogo, a arrecadação como função de x:\nR(x) = (500 + 25x)(50 − x)\n\nExpandindo:\nR(x) = 500×50 + 500(−x) + 25x×50 − 25x^2\nR(x) = 25.000 − 500x + 1.250x − 25x^2\nR(x) = 25.000 + 750x − 25x^2\n\nPronto. Temos uma função quadrática de arrecadação em função da redução x. Isso é modelagem matemática direta de uma situação cotidiana.\n\n> 🎯 Atenção para prova: Em problemas de preço e demanda linear, a arrecadação R(x) = (preço)(quantidade) vira uma função quadrática. O vértice dá o ponto de arrecadação máxima.\n\nE assim seguimos: a cada assunto, a gente treina, conecta a álgebra com situações reais e você vai ganhando mais domínio de matemática.",
+  "transcricao_meta": {
+    "title": "Equações e Sistemas de Equações do 2º Grau III",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 26876,
+    "createdAt": "2025-12-12T18:25:22.651Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda:\n- Equações e sistemas do 2º grau aplicados a contagem e conjuntos.\n- Princípio da inclusão-exclusão em problemas com três conjuntos.\n- Modelagem de arrecadação com preço variável que leva a uma função quadrática.\nPrincipais pontos: \n- Ajustar o universo ativo antes de somar grupos.\n- Condições para raízes naturais em equações do 2º grau.\n- Montagem e maximização de uma função arrecadação A(x) = (preço)(quantidade).\n\n## 1. Base / Conceitos Fundamentais\n- Equação do 2º grau: ax² + bx + c = 0 (a ≠ 0). Raízes por Bhaskara: x = [−b ± √(b² − 4ac)]/(2a).\n- Raízes naturais: números inteiros positivos (1, 2, 3, …); não aceitam valores negativos ou fracionários quando representam “quantidades de pessoas/itens”.\n- Inclusão-exclusão (três conjuntos A, B, C):\n  |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|.\n- Universo ativo: total relevante após excluir quem não participa (ex.: 40 condomínios no total; 5 não querem sala → |A ∪ B ∪ C| = 35).\n- Modelagem linear de variação:\n  - Preço: P(x) = P0 − x (x reais de redução).\n  - Quantidade: Q(x) = Q0 + kx (aumenta k unidades por real reduzido).\n  - Arrecadação: A(x) = Q(x)·P(x) → função quadrática concava (a < 0).\n\n## 2. Como Funciona / Distinções\n- Soma de grupos vs. união:\n  - Somar |A| + |B| + |C| conta interseções mais de uma vez. A união correta exige subtrair as interseções duplas e somar a tripla.\n- Raízes naturais vs. reais:\n  - Para duas raízes naturais positivas: b < 0, c > 0 e Δ deve ser quadrado perfeito.\n  - Se c < 0, raízes têm sinais opostos → não podem ser ambas naturais.\n- Máximo de arrecadação:\n  - Em A(x) quadrática com a < 0, o máximo ocorre no vértice x* = −b/(2a).\n  - Redução “x reais” é absoluta (não é percentual).\n\n## 3. Aplicação Prática / Técnicas\n- Conjuntos (três grupos):\n  1) Defina o universo ativo: total − quem está fora (ex.: 40 − 5 = 35).\n  2) Aplique inclusão-exclusão para ligar totais e interseções.\n  3) Se houver dados de interseções ou relações entre elas, substitua e reduza para 1 variável.\n  4) Cheque que a soma das regiões “internas” bate o universo ativo (35).\n- Equação do 2º grau (raízes naturais):\n  - Checagem rápida:\n    - b < 0? c > 0? Δ é quadrado perfeito?\n    - r + s = −b; r·s = c; r, s ∈ N.\n  - Fatoração quando a = 1: procure números que somam b e multiplicam c; complete o quadrado quando conveniente.\n- Arrecadação:\n  1) Escreva P(x) = P0 − x, Q(x) = Q0 + kx.\n  2) A(x) = (Q0 + kx)(P0 − x). Expanda: ax² + bx + c.\n  3) Para x específico, substitua diretamente.\n  4) Para máxima arrecadação, use x* = −b/(2a); calcule P(x*), Q(x*), A(x*).\n\n> Dica de prova: Em problemas de contagem com “apenas k não queriam”, fixe primeiro |A ∪ B ∪ C| = total − k. Em segundos, isso evita tudo sair 40 quando deveria ser 35.\n\n## 4. Exemplos e Casos Resolvidos\n- Conjuntos (condomínios):\n  - Total = 40, “apenas 5 não queriam” → |A ∪ B ∪ C| = 35.\n  - Supondo |A| = 17, |B| = 18, |C| = 25 (exemplo típico do enunciado): 17 + 18 + 25 = 60.\n  - Excesso sobre 35: 60 − 35 = 25 → ajustado pelas interseções: \n    35 = 60 − (|A∩B| + |A∩C| + |B∩C|) + |A∩B∩C|.\n  - Com dados adicionais (p.ex., duas interseções conhecidas), isole a variável restante e resolva. Se surgir equação do 2º grau, resolva e mantenha a raiz natural coerente com contagens.\n- Checagem de raízes naturais:\n  - x² − 6x + 8 = 0 → r + s = 6, rs = 8 → 2 e 4 → raízes naturais.\n  - x² + 5x + 6 = 0 → r + s = −5 (negativo), rs = 6 → impossível r, s naturais positivos. Logo, não atende “raízes naturais”.\n- Arrecadação (loja):\n  - P0 = 50, Q0 = 500, k = 25.\n  - A(x) = (500 + 25x)(50 − x) = −25x² + 750x + 25.000.\n  - Para x = 2 (preço 48): Q = 550, A = 550 × 48 = 26.400.\n  - Máximo: x* = −750/(2·−25) = 15 → P* = 35; Q* = 875; A* = 30.625.\n\n> Dica de prova: Em A(x) = −25x² + 750x + 25.000, não precisa derivar: use vértice. Em 10 s você acha x* = 15.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir total com união: total = 40; união = 35 (porque 5 estão fora). Usar 40 na união gera inconsistência.\n- Somar grupos sem corrigir sobreposições: 17 + 18 + 25 = 60 > 35 não é “erro”; indica interseções a ajustar via inclusão-exclusão.\n- Usar raízes negativas ou fracionárias para “quantidade de pessoas”: inválido. Mantenha apenas naturais.\n- Incompatibilidade de sinais:\n  - “Raízes naturais positivas” com b ≥ 0 e c > 0 → r + s = −b ≤ 0, inviável. Reconheça impossibilidade sem contas longas.\n  - c < 0 implica sinais opostos nas raízes → não serve para duas naturais positivas.\n- Confundir redução em reais com redução percentual: aqui x é em reais, linear, não em %.\n- Trocar os sentidos da variação: preço diminui (−x), quantidade aumenta (+kx). Inverter sinais altera toda a função A(x).\n- Contagem líquida em sequências de “somei 3 vezes, subtraí 1”: pense coeficiente líquido (3 − 1 = 2). Se 2x = 6 → x = 3.\n\n> Atenção: Ao final, some todas as regiões internas dos conjuntos e confira se dá 35 (não 40). Essa conferência rápida evita erro de gabarito.\n\n> Dica de prova: Para “raízes naturais”, faça o filtro relâmpago: b < 0, c > 0 e Δ quadrado perfeito. Se falhar, descarte sem perder tempo.",
+  "resumo_bolso": "# Álgebra - Equações e Sistemas de Equações do 2º Grau III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Equação do 2º grau**: ax² + bx + c = 0 (a ≠ 0). Raízes: x = [−b ± √(b² − 4ac)]/(2a).\n* **Raízes naturais**: inteiros positivos (1, 2, 3, …); em contagens de pessoas/itens, não aceitar raízes negativas ou fracionárias.\n* **Inclusão-exclusão (3 conjuntos A, B, C)**:  \n  |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|.\n* **Universo ativo**: total relevante após excluir quem não participa. Ex.: 40 no total, 5 não querem → |A ∪ B ∪ C| = 35.\n* **Modelagem linear de variação**:  \n  P(x) = P0 − x (preço cai x reais).  \n  Q(x) = Q0 + kx (quantidade aumenta k unidades por real reduzido).\n* **Arrecadação**: A(x) = Q(x)·P(x) = (Q0 + kx)(P0 − x) → função quadrática côncava (a < 0).\n* **Condição para 2 raízes naturais positivas**: b < 0, c > 0 e Δ quadrado perfeito.\n* **Sinais das raízes**: c < 0 ⇒ raízes com sinais opostos → não podem ser ambas naturais positivas.\n* **Máximo da arrecadação**: em A(x) com a < 0, máximo no vértice: x* = −b/(2a).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Soma de grupos vs União de conjuntos\n\n| Aspecto | Soma | União (|A ∪ B ∪ C|) |\n| --- | --- | --- |\n| **O que é** | |A| + |B| + |C| | Número de elementos em pelo menos um dos conjuntos |\n| **Contagem de interseções** | Conta interseções mais de uma vez | Corrige sobrecontagem com inclusão-exclusão |\n\n---\n\n### Raízes naturais vs Raízes reais quaisquer\n\n| Aspecto | Raízes naturais | Raízes reais |\n| --- | --- | --- |\n| **Domínio** | N* = {1, 2, 3, …} | ℝ |\n| **Sinais possíveis** | Ambas > 0 (quando o problema exige naturais positivas) | Podem ser negativas ou fracionárias |\n| **Condições úteis** | b < 0, c > 0, Δ quadrado perfeito | Apenas Δ ≥ 0 |\n\n---\n\n### Redução em reais vs Redução percentual\n\n| Aspecto | Redução em reais (x) | Redução percentual |\n| --- | --- | --- |\n| **Modelo** | P(x) = P0 − x | P = P0(1 − p) |\n| **Interpretação** | x é valor absoluto em reais | p é fração/percentual de desconto |\n| **Neste conteúdo** | Usado na modelagem de A(x) | Não utilizado aqui |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Inclusão-Exclusão (3 conjuntos)**\n\n* Fórmula:  \n  |A ∪ B ∪ C| = |A| + |B| + |C| − |A∩B| − |A∩C| − |B∩C| + |A∩B∩C|.\n* Exemplo (condomínios): universo ativo 35, somas 17 + 18 + 25 = 60 →  \n  35 = 60 − (|A∩B| + |A∩C| + |B∩C|) + |A∩B∩C|.\n\n---\n\n**2. Universo ativo**\n\n* Regra: |A ∪ B ∪ C| = total − quem está fora.\n* Exemplo: 40 condomínios, “apenas 5 não queriam” → |A ∪ B ∪ C| = 40 − 5 = 35.\n\n---\n\n**3. Filtro para raízes naturais positivas**\n\n* Para equações do 2º grau com exigência de “raízes naturais”:\n  - b < 0  \n  - c > 0  \n  - Δ quadrado perfeito  \n  - r + s = −b; r·s = c; r, s ∈ N.\n* Exemplo: x² − 6x + 8 = 0 → r + s = 6, rs = 8 → raízes 2 e 4 (naturais).\n\n---\n\n**4. Sinais das raízes pelo termo c e por b**\n\n* c < 0 ⇒ raízes com sinais opostos → não servem para duas naturais positivas.\n* “Raízes naturais positivas” com b ≥ 0 e c > 0 é inviável, pois r + s = −b ≤ 0.\n* Exemplo: x² + 5x + 6 = 0 → r + s = −5 (negativo) → não há duas naturais positivas.\n\n---\n\n**5. Função arrecadação e máximo**\n\n* Passos:\n  1) P(x) = P0 − x; Q(x) = Q0 + kx.  \n  2) A(x) = (Q0 + kx)(P0 − x) = ax² + bx + c (a < 0).  \n  3) Para x específico, substitua em A(x).  \n  4) Máxima arrecadação em x* = −b/(2a); depois calcule P(x*), Q(x*), A(x*).\n* Exemplo:  \n  P0 = 50, Q0 = 500, k = 25.  \n  A(x) = (500 + 25x)(50 − x) = −25x² + 750x + 25.000.  \n  Para x = 2: Q = 550, A = 26.400.  \n  Máximo: x* = −750/(2·−25) = 15 → P* = 35; Q* = 875; A* = 30.625.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir total com união: total = 40; união = 35 (porque 5 estão fora). Usar 40 como |A ∪ B ∪ C| gera inconsistência.\n2. Interpretar 17 + 18 + 25 = 60 > 35 como “conta errada”: na verdade indica sobreposição a ser ajustada via inclusão-exclusão.\n3. Usar raízes negativas ou fracionárias para “quantidade de pessoas/itens”: inválido; mantenha apenas raízes naturais.\n4. Supor que equações com c < 0 podem ter duas raízes naturais positivas: c < 0 implica sinais opostos nas raízes.\n5. Confundir redução em reais com redução percentual: aqui x é valor em reais, não porcentagem.\n\n---\n\n## 📋 Checklist Final\n\n* Ajustei o universo ativo antes de aplicar inclusão-exclusão (ex.: 40 − 5 = 35)?\n* Usei corretamente |A ∪ B ∪ C| = |A| + |B| + |C| − interseções duplas + interseção tripla?\n* A equação que analiso para “raízes naturais” satisfaz b < 0, c > 0 e Δ quadrado perfeito?\n* Já descartei rapidamente casos com c < 0 ou b ≥ 0 quando o enunciado exige duas raízes naturais positivas?\n* Modelei corretamente P(x), Q(x), A(x) e usei o vértice x* = −b/(2a) para achar a máxima arrecadação?",
+  "mapa_mental": "# 🧮 Álgebra – Equações e Sistemas do 2º Grau III\n## 🎯 Equações do 2º Grau\n### 💡 Estrutura Geral\n- Forma ax² + bx + c\n- Condição a ≠ 0\n- Coeficientes reais\n- Variável real x\n### 🧮 Fórmula de Bhaskara\n- Δ = b² − 4ac\n- Raízes x = (−b ± √Δ)/(2a)\n- Δ > 0 duas raízes\n- Δ = 0 raiz dupla\n- Δ < 0 sem raízes reais\n### 🔢 Raízes Naturais\n- Naturais positivos\n- r + s = −b/a\n- r·s = c/a\n- b < 0 e c > 0\n- Δ quadrado perfeito\n\n## 📊 Conjuntos e Inclusão-Exclusão\n### 💡 Três Conjuntos\n- Conjuntos A B C\n- União A ∪ B ∪ C\n- Interseções duplas\n- Interseção tripla\n- Cardinalidades |·|\n### 🧮 Fórmula Inclusão-Exclusão\n- |A ∪ B ∪ C|\n- Soma |A| |B| |C|\n- Subtrai duplas\n- Soma tripla\n- Ajuste sobrecontagem\n### 🎯 Universo Ativo\n- Total do enunciado\n- Excluir quem está fora\n- União = total ativo\n- Conferência final soma\n- Coerência com 2º grau\n\n## 📉 Função Quadrática de Arrecadação\n### 💰 Modelagem Linear\n- Preço P(x) = P₀ − x\n- Quantidade Q(x) = Q₀ + kx\n- x em reais\n- k aumento por real\n- Variação linear\n### 🧮 Função Arrecadação\n- A(x) = P(x)Q(x)\n- Produto linear-linear\n- Forma ax² + bx + c\n- Coeficiente a < 0\n- Gráfico côncavo abaixo\n### 📈 Máximo da Arrecadação\n- Vértice x* = −b/(2a)\n- A(x*) valor máximo\n- P(x*) preço ótimo\n- Q(x*) quantidade ótima\n- x* redução ótima\n\n## ⚠️ Condições e Erros Frequentes\n### 🔍 Condições de Raízes\n- Duas naturais positivas\n- b < 0 obrigatório\n- c > 0 obrigatório\n- Δ quadrado perfeito\n- c < 0 sinais opostos\n### 🚨 Erros com Conjuntos\n- Confundir total união\n- Ignorar universo ativo\n- Somar sem interseções\n- Não checar 35 final\n- Sobrecontagem não erro\n### 🚫 Erros na Arrecadação\n- Confundir reais e %\n- Inverter sinais P Q\n- Esquecer a < 0\n- Ignorar vértice máximo\n- Interpretar raiz negativa",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Equações Quadráticas",
+      "description": "Equações Quadráticas — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a forma geral de uma **equação do segundo grau**?",
+          "back": "$ax^2 + bx + c = 0$",
+          "hint": "Estrutura algébrica fundamental",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacao-segundo-grau"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição o coeficiente de x² deve satisfazer nessa equação?",
+          "back": "O coeficiente de $x^2$ deve ser **diferente de zero**.",
+          "hint": "Condição de existência da função",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Como são chamados os números que multiplicam x², x e o termo independente?",
+          "back": "Coeficientes (**$a$, $b$ e $c$**).",
+          "hint": "São três letras usuais",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "O que determina o grau de uma equação polinomial?",
+          "back": "O **maior expoente** da variável.",
+          "hint": "Relacionado à potência",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "polinomios"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Como se reconhece o termo independente de uma equação quadrática?",
+          "back": "É o termo **constante** que não acompanha a variável $x$.",
+          "hint": "Não possui variável associada",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Relações de Raízes",
+      "description": "Relações de Raízes — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "O que significa uma solução de uma equação?",
+          "back": "O valor que torna a equação **verdadeira**.",
+          "hint": "Propriedade de validade da igualdade",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "raizes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Em uma equação quadrática mônica, qual é a relação entre as raízes e o coeficiente de x?",
+          "back": "A soma das raízes é o oposto do **coeficiente de $x$**.",
+          "hint": "Relações de Girard",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "relacoes-girard"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual característica as raízes devem ter para serem números naturais?",
+          "back": "Devem ser **inteiras e positivas**.",
+          "hint": "Subconjunto dos números inteiros",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "algebra",
+            "conjuntos-numericos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Operações com Conjuntos",
+      "description": "Operações com Conjuntos — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "O que representa a interseção entre dois conjuntos?",
+          "back": "Os elementos **comuns** entre os conjuntos.",
+          "hint": "Operação entre conjuntos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "operacoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Como calcular a cardinalidade da união de dois conjuntos?",
+          "back": "Somar a cardinalidade dos conjuntos e subtrair a **interseção**.",
+          "hint": "Princípio da inclusão-exclusão",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "cardinalidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Por que a interseção é subtraída ao calcular a união de dois conjuntos?",
+          "back": "Para evitar a **contagem dupla** dos elementos comuns.",
+          "hint": "Evitar contagem repetida",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos",
+            "cardinalidade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Em um grupo de 40 condomínios, 5 são excluídos. Quantos permanecem no conjunto considerado?",
+          "back": "Permanecem **35** condomínios.",
+          "hint": "Operação aritmética simples",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "problemas"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Modelagem de Receitas",
+      "description": "Modelagem de Receitas — 5 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Como se calcula a arrecadação de uma loja a partir das vendas?",
+          "back": "Multiplicando a **quantidade vendida** pelo **preço unitário**.",
+          "hint": "Fórmula de receita",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "modelagem"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "Uma loja vende 500 unidades a R$ 50. Qual é a arrecadação mensal inicial?",
+          "back": "R$ **25.000**",
+          "hint": "Cálculo de produto",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "algebra",
+            "modelagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-15",
+          "front": "Após reduzir x reais no preço, qual expressão representa o novo preço unitário?",
+          "back": "$50 - x$",
+          "hint": "Subtração de variável",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "modelagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual expressão representa a arrecadação mensal após reduzir x reais no preço?",
+          "back": "$(500 + 25x)(50 - x)$",
+          "hint": "Produto de binômios",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "modelagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-17",
+          "front": "Por que o modelo da arrecadação mensal resulta em uma equação do segundo grau?",
+          "back": "Porque a multiplicação de binômios com a variável resulta em um termo de **segundo grau ($x^2$)**.",
+          "hint": "Propriedade distributiva",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "modelagem"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma equação do segundo grau da forma ax² + bx + c = 0, qual condição é essencial para que a equação seja classificada como do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O coeficiente a deve ser diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Para que uma equação seja classificada como do segundo grau (ou quadrática), o coeficiente do termo de maior grau, que é x², não pode ser nulo. Se 'a' fosse igual a zero, o termo ax² desapareceria, e a equação se tornaria bx + c = 0, que é uma equação de primeiro grau (linear)."
+        },
+        {
+          "id": "b",
+          "text": "Os coeficientes a, b e c devem ser números inteiros",
+          "correct": false,
+          "explanation": "Incorreta. Os coeficientes 'a', 'b' e 'c' de uma equação do segundo grau podem ser quaisquer números reais, não se limitando apenas a números inteiros. Eles podem ser frações, decimais ou até números irracionais, e a equação ainda manterá seu grau."
+        },
+        {
+          "id": "c",
+          "text": "O coeficiente c deve ser sempre positivo",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente 'c' (o termo constante) pode ser positivo, negativo ou zero. Por exemplo, a equação x² - 4 = 0 é do segundo grau, e seu coeficiente 'c' é negativo. A equação x² + 2x = 0 também é do segundo grau, e seu coeficiente 'c' é zero."
+        },
+        {
+          "id": "d",
+          "text": "O coeficiente b deve ser maior que o coeficiente c",
+          "correct": false,
+          "explanation": "Incorreta. A relação de grandeza entre os coeficientes 'b' e 'c' não determina o grau da equação. O coeficiente 'b' pode ser maior, menor ou igual a 'c', e a equação ainda será do segundo grau, desde que 'a' seja diferente de zero."
+        }
+      ],
+      "explanation": "Correta. Para que uma equação seja classificada como do segundo grau (ou quadrática), o coeficiente do termo de maior grau, que é x², não pode ser nulo. Se 'a' fosse igual a zero, o termo ax² desapareceria, e a equação se tornaria bx + c = 0, que é uma equação de primeiro grau (linear).",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao resolver uma equação do segundo grau utilizando o método da soma e produto das raízes, quais relações devem ser satisfeitas para encontrar dois números que representam as raízes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dois números que somados resultam em a/b e multiplicados resultam em a/c",
+          "correct": false,
+          "explanation": "Incorreta. As relações a/b e a/c não correspondem às fórmulas estabelecidas pelas relações de Girard para a soma e o produto das raízes de uma equação do segundo grau."
+        },
+        {
+          "id": "b",
+          "text": "Dois números que somados resultam em c/b e multiplicados resultam em b/a",
+          "correct": false,
+          "explanation": "Incorreta. As relações c/b e b/a não representam as fórmulas corretas para a soma e o produto das raízes de uma equação do segundo grau, conforme as relações de Girard."
+        },
+        {
+          "id": "c",
+          "text": "Dois números que somados resultam em -b/a e multiplicados resultam em c/a",
+          "correct": true,
+          "explanation": "Correta. As relações de Girard, que estabelecem o método da soma e produto das raízes para equações do segundo grau na forma ax² + bx + c = 0, indicam que a soma das raízes (x1 + x2) é igual a -b/a e o produto das raízes (x1 * x2) é igual a c/a. Encontrar dois números que satisfaçam essas duas condições simultaneamente permite determinar as raízes da equação."
+        },
+        {
+          "id": "d",
+          "text": "Dois números que somados resultam em b/a e multiplicados resultam em -c/a",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa apresenta os sinais invertidos para a soma e o produto das raízes. A soma correta é -b/a (o oposto do coeficiente 'b' dividido por 'a'), e o produto correto é c/a (o coeficiente 'c' dividido por 'a')."
+        }
+      ],
+      "explanation": "Correta. As relações de Girard, que estabelecem o método da soma e produto das raízes para equações do segundo grau na forma ax² + bx + c = 0, indicam que a soma das raízes (x1 + x2) é igual a -b/a e o produto das raízes (x1 * x2) é igual a c/a. Encontrar dois números que satisfaçam essas duas condições simultaneamente permite determinar as raízes da equação.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Considerando uma equação do tipo (y + 1)² + 2(y + 1) + 1 = 0, qual estratégia pode ser utilizada para simplificar a resolução?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Realizar uma substituição de variável, fazendo z = y + 1, transformando em uma equação em função de z",
+          "correct": true,
+          "explanation": "Correta. A substituição de variável é uma técnica poderosa para simplificar equações complexas. Ao identificar uma expressão que se repete, como (y + 1) neste caso, e atribuir a ela uma nova variável (z = y + 1), a equação original (y + 1)² + 2(y + 1) + 1 = 0 se transforma em z² + 2z + 1 = 0. Esta nova equação é mais simples de resolver e, após encontrar o valor de 'z', basta retornar à substituição para encontrar o valor de 'y'."
+        },
+        {
+          "id": "b",
+          "text": "Dividir toda a equação pelo termo (y + 1) para eliminar a variável composta",
+          "correct": false,
+          "explanation": "Incorreta. Dividir a equação por (y + 1) é uma operação arriscada. Primeiramente, se (y + 1) for igual a zero, a divisão é indefinida. Além disso, ao dividir por uma expressão que contém a variável, pode-se perder uma das raízes da equação original. A estratégia correta para lidar com termos repetidos é a substituição, não a divisão indiscriminada."
+        },
+        {
+          "id": "c",
+          "text": "Aplicar diretamente a fórmula de Bhaskara sem realizar simplificações prévias",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível expandir a equação (y + 1)² + 2(y + 1) + 1 = 0 para y² + 2y + 1 + 2y + 2 + 1 = 0, resultando em y² + 4y + 4 = 0, e então aplicar a fórmula de Bhaskara, essa abordagem envolve mais passos algébricos e é mais propensa a erros do que a substituição de variável, que simplifica a estrutura da equação antes da resolução."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar todos os termos pelo conjugado da expressão (y + 1)",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar pelo conjugado é uma técnica utilizada principalmente para racionalizar denominadores que contêm radicais ou para simplificar expressões com números complexos. A expressão (y + 1) não possui um 'conjugado' no contexto de simplificação de equações algébricas dessa forma, e essa operação não seria útil para a resolução."
+        }
+      ],
+      "explanation": "Correta. A substituição de variável é uma técnica poderosa para simplificar equações complexas. Ao identificar uma expressão que se repete, como (y + 1) neste caso, e atribuir a ela uma nova variável (z = y + 1), a equação original (y + 1)² + 2(y + 1) + 1 = 0 se transforma em z² + 2z + 1 = 0. Esta nova equação é mais simples de resolver e, após encontrar o valor de 'z', basta retornar à substituição para encontrar o valor de 'y'.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em um problema onde 40 condôminos participam de uma reunião e apenas 5 não querem uma nova sala de jogos, sendo que 17 querem mesa de pebolim, 18 querem sinuca e alguns querem ambas, como deve ser interpretada a região que representa os condôminos interessados em pelo menos uma das opções?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A interseção dos conjuntos de interessados em pebolim e sinuca deve totalizar 35 condôminos",
+          "correct": false,
+          "explanation": "Incorreta. A interseção dos conjuntos (P ∩ S) representa os condôminos que querem *ambas* as opções (pebolim E sinuca), e não aqueles que querem 'pelo menos uma' opção. O valor de 35 se refere ao total de pessoas que manifestaram interesse em alguma das atividades propostas, o que é a definição de união de conjuntos."
+        },
+        {
+          "id": "b",
+          "text": "A diferença entre os conjuntos de interessados em pebolim e sinuca deve totalizar 35 condôminos",
+          "correct": false,
+          "explanation": "Incorreta. A diferença entre os conjuntos (P - S ou S - P) representa os condôminos que querem uma opção *exclusivamente* (por exemplo, pebolim, mas não sinuca, ou vice-versa). Isso não corresponde ao total de interessados em 'pelo menos uma' opção, que engloba tanto os que querem uma, quanto os que querem ambas."
+        },
+        {
+          "id": "c",
+          "text": "O complemento dos conjuntos de interessados em pebolim e sinuca deve totalizar 35 condôminos",
+          "correct": false,
+          "explanation": "Incorreta. O complemento dos conjuntos de interessados (P ∪ S)' seria o grupo de condôminos que não querem *nenhuma* das opções de jogos. De acordo com o problema, esse grupo é de 5 condôminos (40 total - 35 interessados). O valor de 35 representa o conjunto de pessoas que *querem* alguma coisa, ou seja, a união."
+        },
+        {
+          "id": "d",
+          "text": "A união dos conjuntos de interessados em pebolim e sinuca deve totalizar 35 condôminos",
+          "correct": true,
+          "explanation": "Correta. O problema informa que 40 condôminos participaram da reunião e 5 não queriam uma nova sala de jogos. Isso significa que o número de condôminos que queriam pelo menos uma das opções de jogos é 40 - 5 = 35. Em teoria de conjuntos, 'pelo menos uma das opções' corresponde à união dos conjuntos de interessados em pebolim (P) e sinuca (S), ou seja, P ∪ S. Portanto, a união desses conjuntos deve totalizar 35 condôminos."
+        }
+      ],
+      "explanation": "Correta. O problema informa que 40 condôminos participaram da reunião e 5 não queriam uma nova sala de jogos. Isso significa que o número de condôminos que queriam pelo menos uma das opções de jogos é 40 - 5 = 35. Em teoria de conjuntos, 'pelo menos uma das opções' corresponde à união dos conjuntos de interessados em pebolim (P) e sinuca (S), ou seja, P ∪ S. Portanto, a união desses conjuntos deve totalizar 35 condôminos.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao resolver uma equação do segundo grau x² - 7x + c = 0, onde se afirma que as soluções são números naturais, qual análise permite concluir sobre a viabilidade das raízes sem calcular o discriminante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Analisar se o coeficiente linear é divisível pelo coeficiente quadrático",
+          "correct": false,
+          "explanation": "Incorreta. A divisibilidade do coeficiente linear (-7) pelo coeficiente quadrático (1) não é um critério que, por si só, garanta que as raízes da equação sejam números naturais. Essa divisibilidade é sempre verdadeira quando o coeficiente quadrático é 1, mas as raízes podem ser irracionais ou complexas dependendo do valor de 'c'."
+        },
+        {
+          "id": "b",
+          "text": "Calcular apenas o produto das raízes e verificar se resulta em número natural par",
+          "correct": false,
+          "explanation": "Incorreta. A análise apenas do produto das raízes e sua paridade não é suficiente. Por exemplo, um produto par como 10 pode ter raízes (2, 5) que somam 7, ou (1, 10) que somam 11. A paridade do produto não garante que as raízes sejam naturais nem que a condição da soma seja atendida. É necessário que ambas as condições (soma e produto) sejam satisfeitas por números naturais."
+        },
+        {
+          "id": "c",
+          "text": "Determinar se o termo independente é um quadrado perfeito maior que o coeficiente linear",
+          "correct": false,
+          "explanation": "Incorreta. A condição de o termo independente (c) ser um quadrado perfeito maior que o coeficiente linear (b) não é um critério válido para determinar se as raízes são naturais. Por exemplo, na equação x² - 7x + 12 = 0, as raízes são 3 e 4 (naturais), mas c=12 não é um quadrado perfeito. Em contrapartida, na equação x² - 7x + 9 = 0, c=9 é um quadrado perfeito, mas as raízes não são naturais."
+        },
+        {
+          "id": "d",
+          "text": "Verificar se a soma das raízes (-b/a) é positiva e se o produto (c/a) permite decomposição em dois naturais que satisfaçam ambas as condições",
+          "correct": true,
+          "explanation": "Correta. Para uma equação do segundo grau na forma x² + bx + c = 0, a soma das raízes é -b/a e o produto das raízes é c/a. No caso de x² - 7x + c = 0, a=1 e b=-7. Assim, a soma das raízes é -(-7)/1 = 7, e o produto é c/1 = c. Se as soluções são números naturais (inteiros não negativos), a soma (7) deve ser positiva, o que é verdade. Além disso, o produto (c) deve ser um número que pode ser fatorado em dois números naturais cuja soma seja 7. Por exemplo, se c=10, as raízes são 2 e 5 (2+5=7, 2*5=10), que são naturais. Esta análise das relações de soma e produto (relações de Girard) permite verificar a viabilidade das raízes sem calcular o discriminante."
+        }
+      ],
+      "explanation": "Correta. Para uma equação do segundo grau na forma x² + bx + c = 0, a soma das raízes é -b/a e o produto das raízes é c/a. No caso de x² - 7x + c = 0, a=1 e b=-7. Assim, a soma das raízes é -(-7)/1 = 7, e o produto é c/1 = c. Se as soluções são números naturais (inteiros não negativos), a soma (7) deve ser positiva, o que é verdade. Além disso, o produto (c) deve ser um número que pode ser fatorado em dois números naturais cuja soma seja 7. Por exemplo, se c=10, as raízes são 2 e 5 (2+5=7, 2*5=10), que são naturais. Esta análise das relações de soma e produto (relações de Girard) permite verificar a viabilidade das raízes sem calcular o discriminante.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em uma situação onde a soma de dois números naturais deve resultar em um valor negativo, qual conclusão matemática pode ser estabelecida?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É possível se considerarmos o conjunto dos números naturais estendido aos inteiros negativos",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa altera a premissa da questão. Se considerarmos o conjunto dos números naturais estendido aos inteiros negativos, não estamos mais trabalhando exclusivamente com números naturais. A questão especifica 'dois números naturais', que por definição não incluem valores negativos."
+        },
+        {
+          "id": "b",
+          "text": "É impossível que dois números naturais somados resultem em um valor negativo, pois números naturais são não-negativos",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números naturais (N) é composto por números inteiros não-negativos (0, 1, 2, 3, ...). A soma de quaisquer dois números naturais sempre resultará em um número natural, que por definição é não-negativo. Portanto, é matematicamente impossível que a soma de dois números naturais resulte em um valor negativo."
+        },
+        {
+          "id": "c",
+          "text": "É possível se aplicarmos propriedades de módulo aos números naturais antes da soma",
+          "correct": false,
+          "explanation": "Incorreta. A aplicação de propriedades de módulo (valor absoluto) a números naturais não permitiria um resultado negativo. O módulo de um número natural é o próprio número natural (ex: |5| = 5). Somar esses valores continuaria a produzir um número não-negativo. O módulo tem a função de tornar o valor positivo, não negativo."
+        },
+        {
+          "id": "d",
+          "text": "É possível se um dos números naturais for suficientemente pequeno em relação ao outro",
+          "correct": false,
+          "explanation": "Incorreta. A magnitude de um número natural não altera sua propriedade fundamental de ser não-negativo. Mesmo que um número natural seja 'suficientemente pequeno' (como 0 ou 1), a soma com outro número natural sempre produzirá um resultado não-negativo. Por exemplo, 1 + 2 = 3, que é positivo, e 0 + 5 = 5, também positivo."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números naturais (N) é composto por números inteiros não-negativos (0, 1, 2, 3, ...). A soma de quaisquer dois números naturais sempre resultará em um número natural, que por definição é não-negativo. Portanto, é matematicamente impossível que a soma de dois números naturais resulte em um valor negativo.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em um problema de modelagem matemática onde uma loja vende 500 unidades de um produto a R$ 50,00 cada, e para cada R$ 1,00 de redução no preço há um aumento de 25 unidades vendidas, qual expressão representa a nova arrecadação mensal em função da redução x no preço?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "(50 - 25x)(500 + x)",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa atribui erroneamente a relação de variação. A redução no preço é de 'x' reais no valor unitário (50 - x), e não de 25x. Da mesma forma, o aumento na quantidade é de 25 unidades por real de redução (500 + 25x), e não de apenas 'x' unidades (500 + x). A expressão não segue a proporção dada no problema."
+        },
+        {
+          "id": "b",
+          "text": "(50 + x)(500 - 25x)",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte as operações. O preço unitário deve ser reduzido (50 - x), e não aumentado (50 + x). Consequentemente, a quantidade vendida deve ser aumentada (500 + 25x), e não reduzida (500 - 25x), conforme as condições do problema."
+        },
+        {
+          "id": "c",
+          "text": "(50 - x)(500 + 25x)",
+          "correct": true,
+          "explanation": "Correta. A arrecadação total é o produto do preço unitário pela quantidade de unidades vendidas. O preço inicial é R$ 50,00 e, com uma redução de 'x' reais, o novo preço unitário se torna (50 - x). A quantidade inicial é de 500 unidades e, para cada R$ 1,00 de redução, há um aumento de 25 unidades vendidas. Assim, para 'x' reais de redução, o aumento será de 25x unidades, totalizando (500 + 25x) unidades. Multiplicando o novo preço pela nova quantidade, obtemos a expressão da arrecadação: (50 - x)(500 + 25x)."
+        },
+        {
+          "id": "d",
+          "text": "50(500 + 25x) - x",
+          "correct": false,
+          "explanation": "Incorreta. Esta expressão não representa corretamente a arrecadação. A arrecadação é o produto do preço unitário pela quantidade vendida. A forma 50(500 + 25x) - x sugere que o preço base de R$ 50,00 é mantido para a nova quantidade, e apenas um valor 'x' é subtraído do total, o que não reflete a redução do preço unitário em função de 'x'."
+        }
+      ],
+      "explanation": "Correta. A arrecadação total é o produto do preço unitário pela quantidade de unidades vendidas. O preço inicial é R$ 50,00 e, com uma redução de 'x' reais, o novo preço unitário se torna (50 - x). A quantidade inicial é de 500 unidades e, para cada R$ 1,00 de redução, há um aumento de 25 unidades vendidas. Assim, para 'x' reais de redução, o aumento será de 25x unidades, totalizando (500 + 25x) unidades. Multiplicando o novo preço pela nova quantidade, obtemos a expressão da arrecadação: (50 - x)(500 + 25x).",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Em um problema envolvendo três conjuntos A, B e C, onde |A| = 17, |B| = 18, |C| = 20, e o universo contém 40 elementos dos quais 5 não pertencem a nenhum dos três conjuntos, qual equação relaciona as interseções quando se conhece que |A ∩ B ∩ C| = x?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "17 × 18 × 20 - |A ∩ B| - |A ∩ C| - |B ∩ C| + x = 35",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inicia a equação de forma incorreta ao multiplicar os tamanhos dos conjuntos (|A| × |B| × |C|) em vez de somá-los. O Princípio da Inclusão-Exclusão é baseado na soma dos elementos de cada conjunto, ajustada pelas interseções, e não em um produto."
+        },
+        {
+          "id": "b",
+          "text": "17 + 18 + 20 - |A ∩ B| - |A ∩ C| - |B ∩ C| + x = 35",
+          "correct": true,
+          "explanation": "Correta. Para determinar o número de elementos na união de três conjuntos (A U B U C), utiliza-se o Princípio da Inclusão-Exclusão. A fórmula é: |A U B U C| = |A| + |B| + |C| - (|A ∩ B| + |A ∩ C| + |B ∩ C|) + |A ∩ B ∩ C|. Dado que o universo tem 40 elementos e 5 não pertencem a nenhum dos conjuntos, a união dos três conjuntos (|A U B U C|) é 40 - 5 = 35. Substituindo os valores fornecidos e |A ∩ B ∩ C| = x na fórmula, obtemos: 35 = 17 + 18 + 20 - (|A ∩ B| + |A ∩ C| + |B ∩ C|) + x. Reorganizando, temos a equação apresentada: 17 + 18 + 20 - |A ∩ B| - |A ∩ C| - |B ∩ C| + x = 35."
+        },
+        {
+          "id": "c",
+          "text": "(17 + 18 + 20)/3 - |A ∩ B| - |A ∩ C| - |B ∩ C| + 2x = 35",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa apresenta múltiplos erros. A soma dos tamanhos dos conjuntos individuais não deve ser dividida por 3. Além disso, o coeficiente da interseção tripla (|A ∩ B ∩ C|) é 2x, quando deveria ser apenas x, conforme a fórmula padrão do Princípio da Inclusão-Exclusão para três conjuntos."
+        },
+        {
+          "id": "d",
+          "text": "17 + 18 + 20 + |A ∩ B| + |A ∩ C| + |B ∩ C| - x = 35",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio da Inclusão-Exclusão estabelece que as interseções duplas (|A ∩ B|, |A ∩ C|, |B ∩ C|) devem ser subtraídas para corrigir a contagem excessiva dos elementos que pertencem a mais de um conjunto. Esta alternativa as soma, o que está incorreto. Além disso, o termo da interseção tripla (|A ∩ B ∩ C|) deveria ser somado, e não subtraído, para corrigir a subtração excessiva."
+        }
+      ],
+      "explanation": "Correta. Para determinar o número de elementos na união de três conjuntos (A U B U C), utiliza-se o Princípio da Inclusão-Exclusão. A fórmula é: |A U B U C| = |A| + |B| + |C| - (|A ∩ B| + |A ∩ C| + |B ∩ C|) + |A ∩ B ∩ C|. Dado que o universo tem 40 elementos e 5 não pertencem a nenhum dos conjuntos, a união dos três conjuntos (|A U B U C|) é 40 - 5 = 35. Substituindo os valores fornecidos e |A ∩ B ∩ C| = x na fórmula, obtemos: 35 = 17 + 18 + 20 - (|A ∩ B| + |A ∩ C| + |B ∩ C|) + x. Reorganizando, temos a equação apresentada: 17 + 18 + 20 - |A ∩ B| - |A ∩ C| - |B ∩ C| + x = 35.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "06_307944_Álgebra - Equações e Sistemas de Equações do 2º Grau III.pdf",
+  "coletado_em": "2026-09-23T20:55:23"
+}

@@ -1,0 +1,461 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 6,
+  "ordem_no_curso": "6.00",
+  "titulo": "Conjunto dos Números Racionais II",
+  "codigo_aula": "252659",
+  "video_id": "aSOjci077Bs=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:28:04",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/aSOjci077Bs%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408667%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Racionais II\n\n## Comparação de Frações com Denominadores Iguais\nMas querendo “doze vírgula”, belezinha… Então, assim: se eu tenho dois números racionais nas frações, eu posso muito bem igualar os denominadores e comparar. Ou cruzar. Só que, se eu conseguir igualar os denominadores, melhor pra mim. Fica mais fácil.\n\nA fração maior vai ser quem? A que realizou mais partes. Então, por exemplo: de 20 partes, quem recebeu 8 é maior do que quem recebeu 7, que é maior do que quem recebeu 6. O maior é o que recebeu mais partes. O menor é o que recebeu a menor quantidade. O intermediário recebeu uma quantidade intermediária. Beleza?\n\nOu seja, se eu quero comparar frações, se for possível tornar os denominadores iguais, faça isso. Porque muitas vezes nossos denominadores não são números naturais simples; podem ser inteiros, racionais, raízes quadradas, até irracionais. Se eu tiver condições de fazer com que fiquem iguais, melhor pra mim.\n\n## Dízimas Periódicas: Intuição e Conceito\nAgora, situação que acontece muito: quando a pessoa se depara com dízimas no meio de uma conta. Aí fica desesperada, porque a questão vem com isso de propósito. Já vi banca fazer isso, Fundação Carlos Chagas, uma situação chatíssima. Mas devolvo a pergunta pra você: as dízimas periódicas são que formato mesmo?\n\nEsse “probleminha” chamado dízima periódica significa que, de período em período, uma certa quantidade de algarismos está se repetindo. Uma dízima é um decimal que não termina, vai, vai, vai e nunca acaba. Só que na periódica existe uma sequência de números que se repete. O período é justamente essa parte que se repete.\n\nEntão, dízima periódica não é “superior” a dízima não-periódica; é só outro tipo: periódica. Você percebe que um conjunto de algarismos está se repetindo infinitamente, separados por um período fixo. Continua comigo.\n\n## Quando um Número é Racional\nUm número será racional quando for possível colocá-lo em forma de fração. Isso nós sabemos. Se eu tenho a/b, em que a pertence aos inteiros e b pertence aos inteiros, com b diferente de zero, então a/b pertence aos racionais. Beleza?\n\nPor exemplo:\n- 0,3 não é dízima; parou. Pertence aos racionais?\n- Sim, porque 0,3 = 3/10.\n\nSe você conseguir colocar o número decimal em forma de fração, ele é racional. 0,12 = 12/100. Numerador inteiro, denominador inteiro. Então 0,12 pertence aos racionais. 0,325 = 325/1000. É só contar quantas casas depois da vírgula: 1 casa → 10; 2 casas → 100; 3 casas → 1000; e assim por diante. Tranquilo.\n\n## Transformando Dízimas Periódicas em Fração (Dica Prática)\nAgora, a grande questão: e as dízimas periódicas? Será que pertencem aos racionais? Conseguimos transformá-las em frações? Conseguimos!\n\nOlha a dica:\n- Faça de conta que não fosse dízima periódica. Esquece, por um instante, a “barrinha” do período.\n- Exemplo: 0,3̅. Pense como 0,3 = 3/10. Depois, para transformar corretamente a dízima periódica, use o padrão de subtração pelo “9” (ou 99, 999, conforme o tamanho do período).\n\nMais direto:\n- 0,3̅ = 3/9 = 1/3.\n- 0,12̅ (período “12”) = 12/99. Você pode simplificar.\n- 0,325̅ (período “325”) = 325/999.\n\nOu seja, quando for dízima periódica simples, você coloca o bloco do período no numerador e, no denominador, tantos 9 quanto o tamanho do período.\n\n> 🎯 Atenção para prova: Toda dízima periódica é número racional. Sempre dá para representar como fração de inteiros com denominador diferente de zero.\n\nLogo:\n- 0,333… = 3/9 = 1/3 pertence aos racionais.\n- 0,121212… = 12/99 pertence aos racionais.\n- 0,325325… = 325/999 pertence aos racionais.\n\nTodas as dízimas periódicas pertencem aos racionais.\n\n## Dízima com Zeros Antes do Período\nAgora, cuidado com dízima periódica com zeros antes do período, como 0,003̅ (período “3” começando depois de zeros). A dica é:\n- Esqueça os zeros iniciais e trate primeiro o período como no caso simples: 3/9.\n- Depois, “desloque” pela quantidade de zeros antes do período, multiplicando o denominador por potências de 10.\n\nExemplo prático:\n- 0,0̅6 (período “6” começando logo após um zero) → primeiro 0,6̅ = 6/9 = 2/3; como há um zero antes do período no número original (0,06̅), desloca duas casas: 2/3 ÷ 100 = 2/300 = 1/150.  \nDe forma algébrica clássica, dá no mesmo resultado.\n\nOutra forma rápida, seguindo a “regra dos 9 e 0”:\n- Se o período tem k algarismos e há m algarismos não-periódicos após a vírgula, então:\n  Fração = (número formado por “não-periódicos+período” − número formado só pelos “não-periódicos”) / (99…9 com k noves seguido de 00…0 com m zeros).\n\nExemplo: 0,08̅6  \n- Não-periódico: “08”; período: “6”.  \n- Numerador: 086 − 08 = 86 − 8 = 78.  \n- Denominador: 9 (um nove, pois período tem 1 algarismo) seguido de 00 (dois zeros, pois há 2 não-periódicos) → 900.  \n- Fração: 78/900 = 13/150.\n\nEssa técnica resolve todos os casos de dízima mista.\n\n## Exercício de Prova (FCC): Soma e Triplo de Dízimas\nAgora, vamos a uma questão no estilo Fundação Carlos Chagas. Temos vários decimais com dízimas. Por exemplo:\n- 0,8̅ (oito com período no 8),\n- 0,71̅ (período “71”),\n- 0,04̅2 (período no 2, com zeros antes).\n\nA questão pede: o triplo da soma desses números decimais é igual a quanto? A ideia não é fazer conta “no escuro”; a ideia é transformar tudo em fração e somar.\n\nVamos desmembrar cada um:\n- 0,8̅ = 8/9.\n- 0,71̅ = 71/99.\n- 0,04̅2: aqui temos zeros antes do período. Use a regra:\n  - Não-periódico: “04”; período: “2”.\n  - Numerador: 042 − 04 = 42 − 4 = 38.\n  - Denominador: 9 (período de 1 algarismo) seguido de 00 (dois não-periódicos) → 900.\n  - Então 0,04̅2 = 38/900 = 19/450.\n\nAgora some:\n- 8/9 + 71/99 + 19/450.\n- Mínimo múltiplo comum conveniente pode ser 9900. Faça as reduções ou escolha um denominador comum prático (dá para ir por etapas). Some os numeradores e, no fim, multiplique o resultado por 3 (o “triplo da soma”).\n\nO importante aqui é o método:\n1) transformar cada dízima em fração;\n2) somar as frações;\n3) multiplicar por 3.\n\nNo exemplo que mostrei em aula, ao somar três dízimas periódicas e multiplicar por 3, obtivemos um número inteiro. Isso é ótimo para conferir conta: quando você pega expressões com dízimas, transforma corretamente em fração e opera direitinho, frequentemente aparecem simplificações que levam a inteiros.\n\n> 🎯 Atenção para prova: Para dízima periódica simples, use “período sobre 9…9”. Para dízima mista, use a regra “(não-periódico+período − não-periódico) sobre (99…9 seguido de 00…0)”.\n\n## Fechamento e Próximos Passos\nPessoal, estamos caminhando com calma. É isso mesmo: continhas. Trabalhamos números decimais e dízimas, e vimos como trazê-las para os conjuntos numéricos. Sem pressa.\n\nNo próximo encontro, vamos conversar sobre conjuntos irracionais, racionais e reais ao mesmo tempo, e finalizar os conjuntos numéricos para depois entrar em outros tópicos importantes. O primeiro passo é entender a ferramenta de trabalho: saber fazer as contas. O que “mata” o aluno é o básico. Entende o conceito, mas na hora de operar, erra. Isso não vai acontecer mais: agora vocês sabem.",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Racionais II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 16661,
+    "createdAt": "2025-12-12T18:20:48.616Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda:\n- O que são números racionais e como identificá-los.\n- Como comparar frações e decimais.\n- Conversão de decimais exatos e dízimas periódicas em fração (inclusive com zeros antes do período).\n- Técnicas para somar frações e trabalhar com expressões envolvendo dízimas.\nPrincipais pontos: \n- Decimal exato e dízima periódica são racionais.\n- Período com k dígitos → denominador com k noves.\n- Zeros antes do período exigem multiplicar o denominador por potências de 10.\n\n## 1. Base / Conceitos Fundamentais\n- **Números racionais (Q)**: todo número que pode ser escrito como fração a/b, com a e b inteiros e b ≠ 0.\n- **Fração**: a/b, com:\n  - **Numerador (a)**: quantidade de partes.\n  - **Denominador (b)**: em quantas partes iguais o todo foi dividido.\n- **Decimais exatos**: terminam. São racionais.\n  - 0,3 = 3/10; 0,12 = 12/100; 0,325 = 325/1000.\n- **Dízima periódica**: decimal infinito com repetição de um bloco (período).\n  - 0,(3) = 0,333…; 0,(12) = 0,121212…\n  - Sempre é racional.\n\n> Dica de prova: “Se dá para escrever como fração de inteiros com denominador ≠ 0, então é racional.”\n\n## 2. Como Funciona / Distinções\n- Comparação de frações:\n  - **Mesmo denominador**: compare pelo numerador (maior numerador → fração maior).\n  - **Denominadores diferentes**: se possível, torne iguais (por MMC) e compare numeradores.\n- Decimais exatos vs. dízimas:\n  - **Exato**: converte contando casas decimais (10, 100, 1000…).\n  - **Dízima periódica pura 0,(P)**: período P com k dígitos → P/99…9 (k noves).\n  - **Dízima com parte não periódica (zeros antes)**: ajusta multiplicando o denominador por 10^m, onde m = número de zeros entre a vírgula e o início do período.\n\n> Dica de prova: Período “06” tem 2 dígitos; use 99 no denominador (não 9). Zeros antes do período não “somem”: geram fator 10 no denominador.\n\n## 3. Aplicação Prática / Técnicas\n- Conversão de decimal exato:\n  - Regra: casas decimais → potências de 10 no denominador; depois simplifique.\n  - Exemplos:\n    - 0,3 = 3/10\n    - 0,12 = 12/100 = 3/25\n    - 0,325 = 325/1000 = 13/40\n- Conversão de dízima periódica (período puro):\n  - Período com k dígitos (P): P/(10^k − 1).\n    - 0,(3) → 3/9 = 1/3\n    - 0,(12) → 12/99 = 4/33\n- Dízima com zeros antes do período:\n  - Macete “esquece o zero” para montar a fração do período e, no final, multiplique o denominador por 10^m.\n  - Passo a passo:\n    1) Identifique o período P e conte k (dígitos do período).\n    2) Conte m zeros entre a vírgula e o início do período.\n    3) Fração-base: P/(10^k − 1).\n    4) Ajuste: denominador × 10^m.\n    5) Simplifique.\n  - Exemplos:\n    - 0,0(3): P=3, k=1 → 3/9; m=1 → 3/(9×10) = 3/90 = 1/30\n    - 0,00(06): P=6, k=2 → 6/99; m=2 → 6/(99×100) = 6/9900 = 1/1650\n- Soma de frações:\n  - Mesmo denominador: mantém denominador e soma numeradores.\n  - Denominadores diferentes: use MMC, reescreva e some.\n- Expressões do tipo “o triplo da soma”:\n  - Primeiro some, depois multiplique por 3.\n  - Preferência: converter cada termo em fração simples (10, 100, 1000, 9, 99, 999), somar e, por fim, multiplicar.\n\n> Dica de prova: Para dízimas, padronize denominadores com 9, 99, 999… e ajuste por potências de 10 conforme os zeros antes do período.\n\n## 4. Exemplos e Casos Resolvidos\n- Comparação com denominadores iguais:\n  - 8/20 > 7/20 > 6/20 (mesmo tamanho de pedaço; quem tem mais pedaços é maior).\n- Dízima pura:\n  - 0,(3) → 3/9 = 1/3\n  - 0,(12) → 12/99 = 4/33\n- Dízima com zeros antes:\n  - 0,0333… = 0,0(3) → 3/90 = 1/30\n  - 0,00333… = 3/900 = 1/300\n  - 0,0666… = 6/90 = 1/15\n  - 0,(06) → 6/99 = 2/33\n  - 0,0(06) → 6/(99×10) = 6/990 = 1/165\n- Soma com mesmo denominador:\n  - 78/90 + 64/90 + 38/90 = (78+64+38)/90 = 180/90 = 2.\n\n> Dica de prova: Se a soma dos numeradores virar múltiplo do denominador, o resultado é inteiro (ótimo para checagem rápida).\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “decimal infinito sem repetição” (irracional) com dízima periódica (racional). Se há padrão que se repete, é racional.\n- Tratar período “06” como se fosse “6”. Período com 2 dígitos → 99 no denominador.\n- Esquecer de ajustar pelos zeros antes do período. Cada zero multiplica o denominador por 10.\n- Trocar denominadores já iguais por outros via MMC desnecessariamente. Se já são iguais, some numeradores direto.\n- Errar a ordem nas expressões: “o triplo da soma” → some antes, multiplique depois.\n- Simplificação final esquecida: sempre reduza a fração à forma irredutível.\n\n> Dica de prova: Regra geral compacta para 0,(P) com zeros antes: 0,00…0(P) = P / [(10^k − 1) × 10^m], onde k = dígitos do período e m = zeros antes do período. Simplifique no final.",
+  "resumo_bolso": "# Conjunto dos Números Racionais II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Número racional (Q)**: todo número que pode ser escrito como **a/b**, com **a, b ∈ ℤ** e **b ≠ 0**.\n* **Fração a/b**: **a = numerador** (quantidade de partes), **b = denominador** (em quantas partes iguais o todo foi dividido).\n* **Decimal exato**: decimal que **termina**; sempre racional. Converte-se contando **casas decimais → 10, 100, 1000…** no denominador.\n* **Dízima periódica**: decimal **infinito** com **repetição de um bloco (período)**; sempre racional.\n* **Dízima periódica pura 0,(P)**: período começa **logo após a vírgula**.\n* **Dízima com zeros antes do período**: há **parte não periódica só de zeros** entre a vírgula e o início do período.\n* **Comparação de frações**:\n  - Mesmos denominadores → compara numeradores.\n  - Denominadores diferentes → iguala denominadores (MMC) e compara numeradores.\n* **Soma de frações**:\n  - Mesmo denominador → soma numeradores, mantém denominador.\n  - Diferentes → MMC dos denominadores, reescreve, soma.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Decimal Exato vs Dízima Periódica\n\n| Aspecto | Decimal Exato | Dízima Periódica |\n|--------|----------------|------------------|\n| **Forma** | Termina | Infinito com repetição (período) |\n| **Conversão** | Contar casas decimais → 10, 100, 1000… | Período com k dígitos → denominador com k noves (10^k − 1) |\n| **Racionalidade** | Sempre racional | Sempre racional |\n\n---\n\n### Dízima Pura 0,(P) vs Dízima com Zeros Antes 0,00…0(P)\n\n| Aspecto | Dízima Pura 0,(P) | Dízima com Zeros Antes 0,00…0(P) |\n|--------|--------------------|-----------------------------------|\n| **Início do período** | Imediato após vírgula | Após m zeros |\n| **Denominador-base** | 10^k − 1 (k = dígitos de P) | (10^k − 1) × 10^m |\n| **Efeito dos zeros** | Nenhum | Cada zero → ×10 no denominador |\n\n---\n\n### Período “6” vs Período “06”\n\n| Aspecto | Período “6” | Período “06” |\n|--------|--------------|--------------|\n| **k (dígitos)** | 1 | 2 |\n| **Denominador-base** | 9 | 99 |\n| **Exemplo** | 0,(3) = 3/9 | 0,(06) = 6/99 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Decimal Exato → Fração**\n\n* **Aplicação**: qualquer decimal que **termina**.\n* **Regra**: se tem **n casas decimais**, então  \n  **x = número sem vírgula / 10^n**, depois **simplificar**.\n* **Exemplos**:\n  - 0,3 = 3/10\n  - 0,12 = 12/100 = 3/25\n  - 0,325 = 325/1000 = 13/40\n\n---\n\n**2. Dízima Periódica Pura 0,(P)**\n\n* **Aplicação**: período começa **logo após a vírgula**.\n* **Regra**: se P tem **k dígitos**, então  \n  **0,(P) = P / (10^k − 1)**.\n* **Exemplos**:\n  - 0,(3) → 3/9 = 1/3\n  - 0,(12) → 12/(10²−1) = 12/99 = 4/33\n\n---\n\n**3. Dízima com Zeros Antes do Período 0,00…0(P)**\n\n* **Aplicação**: há **m zeros** entre vírgula e início do período.\n* **Regra geral compacta**:  \n  **0,00…0(P) = P / [(10^k − 1) × 10^m]**,  \n  onde **k = dígitos do período**, **m = zeros antes do período**.\n* **Exemplos**:\n  - 0,0(3): P=3, k=1, m=1 → 3 / [(10¹−1)×10¹] = 3/(9×10) = 3/90 = 1/30\n  - 0,00(06): P=6, k=2, m=2 → 6 / [(10²−1)×10²] = 6/(99×100) = 1/1650\n\n---\n\n**4. Comparação de Frações**\n\n* **Aplicação**: decidir qual é maior.\n* **Regra**:\n  - Mesmos denominadores: **maior numerador → fração maior**.\n  - Diferentes: usar **MMC dos denominadores**, reescrever, comparar numeradores.\n* **Exemplo**: 8/20 > 7/20 > 6/20.\n\n---\n\n**5. Soma de Frações**\n\n* **Aplicação**: somar frações em expressões.\n* **Regra**:\n  - Mesmo denominador: (a/b + c/b) = (a+c)/b.\n  - Diferentes: MMC, reescrever, somar.\n* **Exemplo**: 78/90 + 64/90 + 38/90 = 180/90 = 2.\n\n---\n\n**6. Expressões do Tipo “o Triplo da Soma”**\n\n* **Aplicação**: frases como “o triplo da soma de …”.\n* **Regra**: **primeiro somar**, depois **multiplicar**.  \n  Representação: 3 × (a + b).\n* **Exemplo**: “o triplo da soma de 1/2 e 1/3” = 3 × (1/2 + 1/3).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Confundir “decimal infinito sem repetição” (irracional) com dízima periódica (racional). Se há padrão que se repete, é racional.\n- Tratar período “06” como se fosse “6”. Período com 2 dígitos → 99 no denominador.\n- Esquecer de ajustar pelos zeros antes do período. Cada zero multiplica o denominador por 10.\n- Errar a ordem nas expressões: “o triplo da soma” → some antes, multiplique depois.\n- Esquecer a simplificação final: sempre reduza a fração à forma irredutível.\n\n---\n\n## 📋 Checklist Final\n\n* Sei identificar **racionais**: consigo escrever como **a/b, b ≠ 0**?\n* Diferencio **decimal exato** de **dízima periódica**?\n* Sei que **período com k dígitos → denominador com k noves (10^k − 1)**?\n* Memorizei: **0,(P) = P / (10^k − 1)** (k = dígitos de P)?\n* Memorizei: **0,00…0(P) = P / [(10^k − 1) × 10^m]**?\n* Lembro que **período “06” usa 99**, não 9?\n* Lembro que **cada zero antes do período → ×10 no denominador**?\n* Sei comparar frações: **mesmo denominador → numerador**, diferentes → **MMC**?\n* Em “o triplo da soma”, faço **soma primeiro, depois multiplico**?\n* Ao final, **sempre simplifico** a fração?",
+  "mapa_mental": "# 🧮 Conjunto dos Números Racionais II\n## 🎯 Conceitos Fundamentais\n### 💡 Números racionais Q\n- Forma a/b\n- a,b inteiros\n- b diferente de zero\n- Inclui frações\n- Inclui decimais\n### 💡 Fração básica\n- Numerador a\n- Denominador b\n- Partes iguais\n- Representa razão\n- Número racional\n### 💡 Decimais racionais\n- Decimal exato\n- Dízima periódica\n- Período repetido\n- Decimal infinito\n- Sempre racional\n\n## 🧮 Decimais e Dízimas\n### 🔢 Decimal exato → fração\n- Casas decimais\n- Denominador 10ⁿ\n- Contar casas\n- Escrever fração\n- Simplificar fração\n### 🔢 Dízima periódica pura\n- Forma 0,(P)\n- Período P\n- k dígitos período\n- Denominador 10ᵏ−1\n- P/(10ᵏ−1)\n### 🔢 Dízima com zeros\n- Zeros antes período\n- m zeros contados\n- Fração-base P/(10ᵏ−1)\n- Denominador×10ᵐ\n- Fórmula geral\n\n## ⚖️ Comparação e Operações\n### ⚖️ Comparar frações\n- Mesmo denominador\n- Compara numeradores\n- Diferentes denominadores\n- Usar MMC\n- Tornar equivalentes\n### ➕ Soma de frações\n- Mesmo denominador\n- Soma numeradores\n- Diferentes denominadores\n- MMC denominadores\n- Simplificação final\n### 🧮 Expressões algébricas\n- Ordem das operações\n- Soma antes produto\n- Triplo da soma\n- Padronizar denominadores\n- Trabalhar com dízimas\n\n## 🚨 Erros Frequentes em Provas\n### ⚠️ Classificação racional\n- Dízima é racional\n- Infinito sem padrão\n- Número irracional\n- Identificar repetição\n- Cuidado interpretação\n### ⚠️ Período e zeros\n- Período “06” completo\n- Dois dígitos período\n- Usar 99 correto\n- Ajuste por zeros\n- Multiplicar por 10ᵐ\n### ⚠️ Técnicas e simplificação\n- MMC desnecessário\n- Denominadores iguais\n- Ordem incorreta\n- Esquecer simplificar\n- Forma irredutível",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Números Racionais",
+      "description": "Números Racionais — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que define um **número racional**?",
+          "back": "Será racional quando for possível colocar em forma de fração a/b, onde a e b pertencem aos inteiros e o **b é diferente de zero**.",
+          "hint": "Envolve a estrutura de uma fração a/b",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como representar 0,3 na forma de fração?",
+          "back": "Três décimos (**3/10**).",
+          "hint": "Pense na leitura decimal do número",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "conversao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Comparação de Frações",
+      "description": "Comparação de Frações — 3 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Como comparar frações que possuem o mesmo denominador?",
+          "back": "Manter o denominador e **comparar os numeradores**.",
+          "hint": "Foque apenas na parte superior da fração",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "comparacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual estratégia facilita a comparação de frações com denominadores diferentes?",
+          "back": "Fazer com que os **denominadores fiquem iguais**.",
+          "hint": "Busque um denominador comum",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "comparacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Em uma fração, o que indica um numerador maior quando os denominadores são iguais?",
+          "back": "Indica que a fração é **maior**.",
+          "hint": "Pense na proporcionalidade da fração",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "comparacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Dízimas Periódicas",
+      "description": "Dízimas Periódicas — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "O que caracteriza uma dízima periódica?",
+          "back": "Um número em que um conjunto de números ou quantidade está se **repetindo infinitamente** de período em período.",
+          "hint": "Refere-se a um comportamento infinito",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "dizima-periodica"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Como converter 0,333... em uma fração?",
+          "back": "Escrever o algarismo que se repete sobre **nove** (**3/9**).",
+          "hint": "Use o denominador padrão para dízimas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "conversao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Decimais e Frações",
+      "description": "Decimais e Frações — 3 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual procedimento transforma um decimal exato em fração?",
+          "back": "Colocar o número sobre uma potência de dez correspondente à **quantidade de casas decimais**.",
+          "hint": "Baseie-se na contagem de casas decimais",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "conversao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Como determinar o denominador de um decimal exato convertido em fração?",
+          "back": "Contar quantas casas há após a vírgula: uma casa é dez, duas é cem, três é mil, e assim por diante.",
+          "hint": "Relacione casas decimais com potências de 10",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "conversao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a relação entre uma dízima periódica e o conjunto dos números racionais?",
+          "back": "Todas as dízimas periódicas pertencem ao conjunto dos **números racionais**, pois podem ser representadas na forma de fração.",
+          "hint": "Verifique se é possível converter em fração",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "classificacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a condição necessária para que um número seja classificado como racional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número deve ser representável na forma de fração a/b, onde a e b são números inteiros e b é diferente de zero",
+          "correct": true,
+          "explanation": "Correta. A definição formal de um número racional é que ele pode ser expresso como uma fração (razão) de dois números inteiros, onde o denominador não é zero. Isso inclui números inteiros (ex: 5 = 5/1), decimais exatos (ex: 0.5 = 1/2) e dízimas periódicas (ex: 0.333... = 1/3)."
+        },
+        {
+          "id": "b",
+          "text": "O número deve ser representável como uma raiz quadrada exata de qualquer número natural",
+          "correct": false,
+          "explanation": "Incorreta. A representação como raiz quadrada exata de um número natural (como √4 = 2) resulta em um número inteiro, que é racional. No entanto, muitos números racionais não são raízes quadradas exatas, e muitas raízes quadradas de números naturais não são exatas (como √2) e, portanto, são irracionais. A definição de número racional é mais ampla e não se restringe a essa forma."
+        },
+        {
+          "id": "c",
+          "text": "O número deve ser representável apenas como um número inteiro positivo ou negativo",
+          "correct": false,
+          "explanation": "Incorreta. Embora os números inteiros (positivos, negativos e zero) sejam um subconjunto dos números racionais, a condição para ser racional é mais abrangente, incluindo também frações e decimais exatos ou periódicos."
+        },
+        {
+          "id": "d",
+          "text": "O número deve ser representável como uma dízima não periódica com infinitas casas decimais",
+          "correct": false,
+          "explanation": "Incorreta. Números representáveis como dízimas não periódicas com infinitas casas decimais são classificados como números irracionais, e não racionais. Exemplos incluem π (Pi) e a raiz quadrada de 2."
+        }
+      ],
+      "explanation": "Correta. A definição formal de um número racional é que ele pode ser expresso como uma fração (razão) de dois números inteiros, onde o denominador não é zero. Isso inclui números inteiros (ex: 5 = 5/1), decimais exatos (ex: 0.5 = 1/2) e dízimas periódicas (ex: 0.333... = 1/3).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Como se representa o número decimal 0,12 na forma de fração?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "12/1000",
+          "correct": false,
+          "explanation": "Incorreta. A fração 12/1000 representa o número decimal 0,012, pois o denominador 1000 indica três casas decimais. O número 0,12 possui apenas duas casas decimais."
+        },
+        {
+          "id": "b",
+          "text": "1/12",
+          "correct": false,
+          "explanation": "Incorreta. A fração 1/12 resulta em uma dízima periódica (0,08333...), que não é equivalente a 0,12. Além disso, a conversão de decimais exatos para frações segue a regra das potências de 10 no denominador."
+        },
+        {
+          "id": "c",
+          "text": "12/100",
+          "correct": true,
+          "explanation": "Correta. Para converter um número decimal exato em fração, o número sem a vírgula (12, neste caso) torna-se o numerador, e o denominador é uma potência de 10 com tantos zeros quantas forem as casas decimais (duas casas decimais em 0,12, então 100)."
+        },
+        {
+          "id": "d",
+          "text": "12/10",
+          "correct": false,
+          "explanation": "Incorreta. A fração 12/10 representa o número decimal 1,2, pois o denominador 10 indica uma casa decimal. O número 0,12 possui duas casas decimais."
+        }
+      ],
+      "explanation": "Correta. Para converter um número decimal exato em fração, o número sem a vírgula (12, neste caso) torna-se o numerador, e o denominador é uma potência de 10 com tantos zeros quantas forem as casas decimais (duas casas decimais em 0,12, então 100).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a principal característica que diferencia uma dízima periódica de uma dízima não periódica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A dízima periódica possui algarismos que diminuem gradualmente até chegar a zero",
+          "correct": false,
+          "explanation": "Incorreta. Os algarismos de uma dízima periódica se repetem infinitamente e não diminuem gradualmente até zero. Essa descrição se assemelha mais a uma sequência convergente, mas não a uma dízima periódica."
+        },
+        {
+          "id": "b",
+          "text": "A dízima periódica apresenta um conjunto de algarismos que se repete infinitamente após a vírgula",
+          "correct": true,
+          "explanation": "Correta. A característica fundamental de uma dízima periódica é a repetição infinita e regular de um ou mais algarismos (o período) após a vírgula, como em 0,333... (período 3) ou 0,121212... (período 12)."
+        },
+        {
+          "id": "c",
+          "text": "A dízima periódica possui apenas uma casa decimal após a vírgula",
+          "correct": false,
+          "explanation": "Incorreta. Uma dízima periódica pode ter uma, duas ou mais casas decimais no seu período de repetição. Por exemplo, 0,121212... é uma dízima periódica com duas casas decimais no período, e 0,123123... tem três."
+        },
+        {
+          "id": "d",
+          "text": "A dízima periódica apresenta algarismos que seguem uma progressão aritmética crescente",
+          "correct": false,
+          "explanation": "Incorreta. A repetição dos algarismos em uma dízima periódica é um padrão fixo e constante (o período), não uma progressão aritmética crescente. Por exemplo, em 0,333..., o algarismo 3 se repete, mas não segue uma progressão."
+        }
+      ],
+      "explanation": "Correta. A característica fundamental de uma dízima periódica é a repetição infinita e regular de um ou mais algarismos (o período) após a vírgula, como em 0,333... (período 3) ou 0,121212... (período 12).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Todas as dízimas periódicas pertencem ao conjunto dos números racionais porque:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "São resultado de divisões que produzem resto zero após algumas operações",
+          "correct": false,
+          "explanation": "Incorreta. Divisões que resultam em resto zero após algumas operações geram números decimais exatos (finitos), como 1/4 = 0,25. As dízimas periódicas surgem de divisões onde o resto se repete, mas nunca chega a zero."
+        },
+        {
+          "id": "b",
+          "text": "Podem ser representadas na forma de fração com numerador e denominador inteiros",
+          "correct": true,
+          "explanation": "Correta. A capacidade de transformar qualquer dízima periódica em uma fração (razão) de dois números inteiros, com o denominador diferente de zero, é a condição que as classifica como números racionais. Este processo é conhecido como encontrar a fração geratriz."
+        },
+        {
+          "id": "c",
+          "text": "Representam sempre números inteiros disfarçados em forma decimal",
+          "correct": false,
+          "explanation": "Incorreta. Dízimas periódicas não representam necessariamente números inteiros. Por exemplo, 0,333... é igual a 1/3, que não é um número inteiro. Elas são frações, que podem ou não resultar em inteiros."
+        },
+        {
+          "id": "d",
+          "text": "Possuem um número finito de casas decimais após a vírgula",
+          "correct": false,
+          "explanation": "Incorreta. As dízimas periódicas, por definição, possuem um número infinito de casas decimais que se repetem. Números com um número finito de casas decimais são decimais exatos, que também são racionais, mas a característica de \"finito\" não se aplica às dízimas periódicas."
+        }
+      ],
+      "explanation": "Correta. A capacidade de transformar qualquer dízima periódica em uma fração (razão) de dois números inteiros, com o denominador diferente de zero, é a condição que as classifica como números racionais. Este processo é conhecido como encontrar a fração geratriz.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Para transformar a dízima periódica 0,333... em fração, qual é o procedimento correto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplica-se o período por 10 e divide-se por 100, resultando em 30/100",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o período por 10 e dividir por 100 não é o método correto para converter uma dízima periódica em fração. A fração 30/100 também representa o número decimal exato 0,3."
+        },
+        {
+          "id": "b",
+          "text": "Soma-se o período consigo mesmo até obter um número inteiro como numerador",
+          "correct": false,
+          "explanation": "Incorreta. Não existe um procedimento matemático válido para transformar uma dízima periódica em fração somando o período consigo mesmo até obter um numerador inteiro. O método envolve manipulação algébrica ou a regra prática dos noves no denominador."
+        },
+        {
+          "id": "c",
+          "text": "Considera-se o período (3) como numerador e coloca-se 10 como denominador, resultando em 3/10",
+          "correct": false,
+          "explanation": "Incorreta. A fração 3/10 representa o número decimal exato 0,3, e não a dízima periódica 0,333.... O denominador 10 é usado para decimais exatos com uma casa decimal."
+        },
+        {
+          "id": "d",
+          "text": "Considera-se o período (3) como numerador e coloca-se 9 como denominador, resultando em 3/9",
+          "correct": true,
+          "explanation": "Correta. Para dízimas periódicas simples (onde o período começa imediatamente após a vírgula), o procedimento é colocar o período (o algarismo ou grupo de algarismos que se repete) no numerador e tantos noves no denominador quantos forem os algarismos do período. Assim, 0,333... é 3/9, que simplifica para 1/3."
+        }
+      ],
+      "explanation": "Correta. Para dízimas periódicas simples (onde o período começa imediatamente após a vírgula), o procedimento é colocar o período (o algarismo ou grupo de algarismos que se repete) no numerador e tantos noves no denominador quantos forem os algarismos do período. Assim, 0,333... é 3/9, que simplifica para 1/3.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Para somar dízimas periódicas diferentes, qual estratégia matemática é mais eficiente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Separar a parte inteira da parte decimal de cada dízima e somar separadamente antes de recombinar",
+          "correct": false,
+          "explanation": "Incorreta. Embora a separação da parte inteira da parte decimal possa parecer intuitiva, a parte decimal de uma dízima periódica é infinita. Somá-las separadamente como decimais infinitos é inviável e não simplifica o cálculo para um resultado exato. A precisão requer a conversão para frações geratrizes, e não apenas a separação das partes."
+        },
+        {
+          "id": "b",
+          "text": "Arredondar cada dízima para duas casas decimais e realizar a soma diretamente dos valores aproximados",
+          "correct": false,
+          "explanation": "Incorreta. Arredondar dízimas periódicas para um número fixo de casas decimais introduz um erro de aproximação. A soma de valores aproximados resultará em uma aproximação do valor real, e não no resultado exato que se espera ao trabalhar com números racionais."
+        },
+        {
+          "id": "c",
+          "text": "Converter cada dízima periódica em sua fração geratriz correspondente, encontrar denominador comum e realizar a soma das frações",
+          "correct": true,
+          "explanation": "Correta. Dízimas periódicas são números racionais e, portanto, podem ser representadas como frações (frações geratrizes). Converter cada dízima em sua fração geratriz permite somar esses números de forma exata, encontrando um denominador comum e operando com os numeradores. Esta é a abordagem mais precisa para somar dízimas periódicas diferentes."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar cada dízima por 10 até eliminar o período e depois somar os valores resultantes",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar uma dízima periódica por 10 (ou qualquer potência de 10) não elimina o período, apenas desloca a vírgula. A técnica de multiplicar por potências de 10 é um passo no processo de encontrar a fração geratriz, mas não permite a soma direta dos valores resultantes sem a conversão adequada para frações, o que levaria a um resultado incorreto."
+        }
+      ],
+      "explanation": "Correta. Dízimas periódicas são números racionais e, portanto, podem ser representadas como frações (frações geratrizes). Converter cada dízima em sua fração geratriz permite somar esses números de forma exata, encontrando um denominador comum e operando com os numeradores. Esta é a abordagem mais precisa para somar dízimas periódicas diferentes.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao decompor a dízima periódica 0,8666... em parcelas, qual é a forma correta de representação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "0,8 + 0,0666..., separando a parte finita da parte periódica",
+          "correct": true,
+          "explanation": "Correta. A dízima periódica 0,8666... é uma dízima composta, pois possui uma parte não periódica (o algarismo '8') e uma parte periódica (o algarismo '6' que se repete). A decomposição correta para fins de cálculo ou conversão para fração geratriz envolve separar essas duas partes: a parte não periódica como um decimal exato (0,8) e a parte periódica como uma dízima periódica simples (0,0666...)."
+        },
+        {
+          "id": "b",
+          "text": "0,86 + 0,0066..., considerando as duas primeiras casas como finitas",
+          "correct": false,
+          "explanation": "Incorreta. Na dízima 0,8666..., apenas o '6' é o período. A parte '8' é não periódica. Considerar '0,86' como uma parte finita e '0,0066...' como a parte periódica é incorreto porque o segundo '6' já faz parte do período, não sendo uma parte finita que precede a dízima simples. A parte não periódica é apenas o '8'."
+        },
+        {
+          "id": "c",
+          "text": "0,8666 + 0,0000..., truncando a dízima em quatro casas decimais",
+          "correct": false,
+          "explanation": "Incorreta. Truncar uma dízima periódica significa cortá-la em um determinado número de casas decimais, o que a transforma em um número decimal exato e introduz um erro de aproximação. Uma dízima periódica é, por definição, infinita, e truncá-la ignoraria a repetição contínua do algarismo periódico, resultando em uma representação imprecisa."
+        },
+        {
+          "id": "d",
+          "text": "0,9 - 0,0334..., utilizando complemento decimal para facilitar o cálculo",
+          "correct": false,
+          "explanation": "Incorreta. A representação 0,9 - 0,0334... não é uma decomposição direta ou padronizada da dízima 0,8666... em suas partes constituintes (parte não periódica e parte periódica). Além disso, 0,0334... não representa de forma clara a parte periódica da dízima original, nem simplifica o processo de conversão para fração geratriz."
+        }
+      ],
+      "explanation": "Correta. A dízima periódica 0,8666... é uma dízima composta, pois possui uma parte não periódica (o algarismo '8') e uma parte periódica (o algarismo '6' que se repete). A decomposição correta para fins de cálculo ou conversão para fração geratriz envolve separar essas duas partes: a parte não periódica como um decimal exato (0,8) e a parte periódica como uma dízima periódica simples (0,0666...).",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "06_252659_Conjunto dos Números Racionais II.pdf",
+  "coletado_em": "2026-09-23T20:51:43"
+}

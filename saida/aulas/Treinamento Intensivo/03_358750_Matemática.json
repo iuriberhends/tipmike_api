@@ -1,0 +1,538 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 4,
+    "titulo": "Matemática"
+  },
+  "ordem": 3,
+  "ordem_no_curso": "3.00",
+  "titulo": "Matemática",
+  "codigo_aula": "358750",
+  "video_id": "AL61ec0I+ts=",
+  "professor": "Diego Ribeiro",
+  "duracao": "00:27:48",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/AL61ec0I%2Bts%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403869%2C425313%2C404259%2C403825%2C404257&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matemática\n\n## Continuidade do Treinamento e Introdução da Questão 10\nSalve, salve, futuros policiais e bombeiros militares do Estado da Bahia. Professor Diego Ribeiro. Vamos dar continuidade ao nosso treinamento intensivo. No bloco anterior, finalizamos a questão de número 9. Daremos início à questão de número 10. Lembrando: somente questões C para você se preparar pro seu concurso. Vem comigo, vamos embora. No material, a questão 10 diz assim: Ana e Beatriz são as únicas mulheres que fazem parte de um grupo de sete pessoas. Então, meu total é sete pessoas. As únicas mulheres: duas mulheres e cinco homens.\n\nO número de comissões de três pessoas que poderão ser formadas com essas sete pessoas, de maneira que Ana e Beatriz não estejam juntas em qualquer comissão formada, é igual a...? Qual é o entendimento? Eu tenho um grupo de sete pessoas. Dentre essas sete, eu tenho duas mulheres, Ana e Beatriz. Eu quero saber a quantidade de comissões. Já sei que é análise combinatória, questão de contagem.\n\nE aí eu faço a pergunta: o que eu quero formar é uma reorganização (uma mistura do que eu tenho) ou é uma escolha, uma seleção? Não é mistura, porque eu não vou organizar as sete pessoas; eu vou escolher três dentre sete. Então já descarta a permutação. Lembra: permutação é sempre quando eu tenho uma reorganização, uma mistura de tudo que eu tenho. Como é escolha, só pode ser combinação ou arranjo. E a questão traz a palavra “comissão”. Comissão, equipe, time, onde não há função específica. Cuidado! Eu já vi aluno dizendo: “Professor, sempre que for comissão, time, equipe, então é combinação.” Não, nem sempre. Se essa comissão/equipe/time tiver funções específicas, deixa de ser combinação e passa a ser arranjo, porque a ordem vai importar. Nesse caso, não há função específica: uma comissão é um trio em que todos fazem a mesma coisa. Então a ordem de escolha não importa.\n\nOlha aqui: se eu escolho A, B, C, é a mesma comissão que B, C, A; é a mesma comissão. São iguais. Significa que a ordem não importa. Se a ordem não importa, combinação. Beleza.\n\nPrimeiro, quero saber quantas comissões eu consigo formar com três pessoas. É uma combinação de 7, 3 a 3. Pela fórmula: 7! / (7−3)! 3! = 7! / 4! 3!. Desenvolvendo: 7×6×5×4! / 4!×3! → corta o 4!. E 3! = 3×2×1 = 6. Simplificando, fica 7×5 = 35.\n\nPresta muita atenção: 35 é o número de comissões que eu consigo formar sem qualquer restrição. Todavia, a questão impôs uma restrição.\n\n> 🎯 Dicas de prova: Quando houver restrição do tipo “não podem ficar juntos”, calcule o total e subtraia os casos proibidos.\n\nQual foi a restrição? Ele não quer Ana e Beatriz juntas. Muito mais simples partir do seguinte pressuposto: quando eu tenho o total de alguma coisa e tiro aquilo que eu não quero, eu encontro o que eu quero. O que eu quero: Ana e Beatriz separadas. Para isso, encontro o total (35) e tiro o que eu não quero: elas juntas.\n\nÉ mais fácil calcular assim: eu não quero elas juntas. Num trio, se Ana e Beatriz estão juntas, eu trato Ana e Beatriz como um bloco (uma caixinha), como se fosse uma única “pessoa”. Essa é uma possibilidade: Ana e Beatriz juntas. Para a terceira vaga: como já excluí Ana e Beatriz (ocupando duas posições), me resta um total de 5 pessoas. Pelo princípio multiplicativo, 5×1 = 5.\n\nIsso significa que eu tenho 5 comissões com Ana e Beatriz juntas. Só que eu não quero isso. Então 35 (total) menos 5 (casos que eu não quero) = 30. Pode marcar o gabarito: letra C de coragem. Eu tenho um total de 30 comissões em que Ana e Beatriz não estão juntas. Somente isso.\n\nConseguiram identificar o raciocínio? Primeiro calculei a quantidade de comissões possíveis; depois tirei aquilo que eu não quero: 35 total menos 5 comissões em que elas estão juntas, dando 30. Questão bacana, questão 10.\n\n## Questão 11 – Probabilidade com Condicionamento\nVamos agora para a questão 11. Em uma empresa com 400 funcionários, 30% ganham acima de cinco salários mínimos. 30% de 400 dá 120. Então 120 ganham acima. Logo, 70% ganham igual ou inferior a cinco salários (não precisa a questão especificar, porque o total é sempre 100%). Então 400 − 120 = 280: duzentos e oitenta ganham menos ou igual a cinco salários.\n\nVou começar a estruturar a questão. Não estou resolvendo; estou organizando os dados, traduzindo para a linguagem matemática. O quadro de funcionários é formado por 180 homens e 220 mulheres. Sendo que 160 mulheres ganham no máximo (menor ou igual) cinco salários mínimos. Desses 280 que ganham menos ou igual, 160 são mulheres. Então 120 são homens que ganham menos ou igual a cinco salários. Como o total de homens é 180, 180 − 120 = 60: sessenta homens ganham acima de cinco salários. Como os que ganham acima são 120, as outras 60 são mulheres.\n\nBeleza. Estruturei tudo:\n- Total: 400.\n- Acima de 5 SM: 120 (60 homens, 60 mulheres).\n- Menos ou igual a 5 SM: 280 (120 homens, 160 mulheres).\n- Homens: 180. Mulheres: 220.\n\nA questão quer: escolhendo aleatoriamente um funcionário e verificando que é homem, a probabilidade desse homem ganhar mais que cinco salários. Probabilidade é o que eu quero dividido pelo que eu tenho. Ou, do jeitinho que todo mundo fala: eventos favoráveis sobre eventos possíveis.\n\nComo ele disse que foi verificado que é homem, o meu universo não é 400, e sim 180. Cuidado! Erro comum é pegar sempre o total da empresa. A questão restringiu: “sabendo que é homem”. Então o espaço amostral é apenas o conjunto dos homens. Entre os homens, quantos ganham mais que cinco salários? 60. Probabilidade = 60/180. Simplificando, corta zero, 6/18 = 1/3. Gabarito: letra C de coragem, assim como na questão 10.\n\n> 🎯 Dicas de prova: Quando a questão condiciona (“sabendo que é homem”, “sabendo que é aprovado”), ajuste o denominador ao universo condicionado.\n\n## Questão 12 – Sistema com Viagens de Balsa\nQuestão 12: uma balsa pode transportar no máximo ou dez carros pequenos ou seis caminhonetes em uma viagem. O balseiro nunca mistura carros pequenos com caminhonetes. Numa viagem é só carros ou só caminhonetes. E ele só faz a travessia com capacidade máxima. Ou vão 10 carros, ou vão 6 caminhonetes. Em determinado dia, ele fez 5 viagens e transportou ao todo 42 veículos. O número de caminhonetes transportadas nesse dia foi...?\n\nVou fazer o seguinte: vou chamar:\n- x = número de viagens com carros.\n- y = número de viagens com caminhonetes.\n\nEu sei que o número total de viagens foi 5: x + y = 5.\nE o total de veículos foi 42: 10x + 6y = 42.\n\nDuas equações, duas variáveis. Da primeira: x = 5 − y. Substituindo na segunda:\n10(5 − y) + 6y = 42 → 50 − 10y + 6y = 42 → −4y = −8 → y = 2.\n\nEntão foram 2 viagens com caminhonetes e, como total são 5, x = 3 viagens com carros. Conferindo:\n- Carros: 3 viagens × 10 = 30 carros.\n- Caminhonetes: 2 viagens × 6 = 12 caminhonetes.\n30 + 12 = 42. Bateu. Ele quer o número de caminhonetes: 12. Pode marcar a letra B de brabo.\n\nEssa questão não é difícil. Ela exige que você traduza corretamente todas as informações e, de preferência, na ordem cronológica. Você percebe que eu vou lendo a questão e já vou traduzindo, criando equações e esquemas. Toda questão de matemática e raciocínio lógico necessita de tradução. Não é como português ou direito, que muitas vezes você resolve mentalmente. Aqui, você precisa ter uma visão geral do problema.\n\nTraduzindo, fica assim:\n- Total de viagens: x + y = 5.\n- Cada viagem de carro leva 10: 10x.\n- Cada viagem de caminhonete leva 6: 6y.\n- Total de veículos: 10x + 6y = 42.\n\nPronto.\n\n## Questão 13 – Sequência Lógica de Dias da Semana\nQuestão 13: Namora (Luiz) foi ao dentista no dia 24 de maio, uma terça-feira, e deve retornar na segunda-feira do mês de agosto. Luiz deverá retornar ao dentista no dia...?\n\nÉ sequência lógica trabalhando dias da semana. O interessante é organizar. Como começou no dia 24 de maio (terça-feira), vou marcar: terça, quarta, quinta, sexta, sábado, domingo, segunda. Os meses envolvidos: maio, junho, julho e agosto. Dias de cada mês:\n- Maio: 31 dias.\n- Junho: 30 dias.\n- Julho: 31 dias.\n- Agosto: 31 dias.\n\nEu preciso identificar o total de dias até a próxima visita e, principalmente, o dia da semana ao final de julho para entrar em agosto certinho. Do dia 24 de maio até 31 de maio são 8 dias (contando 24 até 31). Depois somo junho (30) e julho (31). Então: 8 + 30 + 31 = 69 dias.\n\nA semana tem 7 dias. Faço 69 ÷ 7 = 9 semanas, resto 6. Esse resto 6 é que define o deslocamento do dia da semana.\n\nPartindo de terça (24/5), avançando 69 dias: cada 7 dias cai no mesmo dia; o resto 6 desloca seis casas: terça → quarta (1), quinta (2), sexta (3), sábado (4), domingo (5), segunda (6). Mas aqui eu uso o raciocínio focando no final de julho: o 31 de julho cai num domingo. Consequentemente, 1º de agosto cai numa segunda-feira.\n\nDetalhe: ele quer a segunda-feira do mês de agosto. O dia 1º de agosto é a primeira segunda. A segunda segunda-feira é 8 de agosto (somando 7). Gabarito: 8 de agosto.\n\n> 🎯 Dicas de prova: Em contagem de dias para descobrir o dia da semana, use divisão por 7 e o resto determina o deslocamento no calendário.\n\n## Questão 14 – Álgebra de Idades\nQuestão 14: Hoje, Zuleide tem o triplo da idade de Roberta. Daqui a dez anos, a idade de Roberta será a metade da idade de Zuleide. Sendo assim, necessariamente...\n\nVamos traduzir. Hoje:\n- Seja Z = idade de Zuleide hoje.\n- Seja R = idade de Roberta hoje.\n\n“Zuleide tem o triplo da idade de Roberta”: Z = 3R.\n\nDaqui a 10 anos:\n- Zuleide: Z + 10.\n- Roberta: R + 10.\n\n“A idade de Roberta será a metade da idade de Zuleide”: R + 10 = (Z + 10)/2.\n\nMultiplicando por 2: 2R + 20 = Z + 10 → 2R + 10 = Z.\n\nMas Z = 3R. Substituindo: 2R + 10 = 3R → 10 = R → R = 10. Logo, Z = 3R = 30.\n\nEle quer a relação necessária: R = 10 (idade de Roberta hoje) e Z = 30 (idade de Zuleide hoje). Portanto, necessariamente, a idade de Roberta hoje é 10 anos. Gabarito da questão 14: letra C de coragem.\n\nFinalizamos mais um bloco desse treinamento intensivo. Voltamos na sequência com a questão de número 15. Não sai daí.",
+  "transcricao_meta": {
+    "title": "Matemática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30617,
+    "createdAt": "2026-02-11T15:13:16.731Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: \n- Combinatória (combinações com restrição), \n- Probabilidade condicionada, \n- Sistemas lineares aplicados (balsa e idades), \n- Contagem de dias em calendário.\n\nPrincipais pontos:\n- Comissão sem cargos → combinação; com cargos → arranjo.\n- Probabilidade condicionada altera o total (universo).\n- “No máximo” significa “≤”.\n- Traduza textos para equações claras antes de resolver.\n\n## 1. Base / Conceitos Fundamentais\n- **Combinação C(n,k)**: escolhe k elementos de n, sem importar a ordem. Fórmula: C(n,k) = n!/(k!(n−k)!).\n- **Arranjo/Permutação**: ordem importa (há funções/cargos).\n- **Princípio Multiplicativo**: total de possibilidades = produto das escolhas independentes.\n- **Probabilidade**: P = casos favoráveis / casos possíveis.\n- **Probabilidade condicionada**: restringe o universo a uma condição (ex.: “sendo homem” → universo = número de homens).\n- **Sistema linear 2×2**: duas equações, duas variáveis; técnicas: substituição ou eliminação.\n- **Calendário (ciclo semanal)**: dias da semana repetem a cada 7; use divisão por 7 e o resto para deslocar o dia.\n\n## 2. Como Funciona / Distinções\n- Combinação vs Arranjo:\n  - Comissão/equipe sem função específica → **Combinação** (ordem não importa).\n  - Comissão com cargos (presidente/vice) → **Arranjo** (ordem importa).\n- Probabilidade simples vs condicionada:\n  - Simples: universo total do problema.\n  - Condicionada: universo reduzido ao evento dado (ex.: “sabendo que é homem”).\n- Sistemas aplicados:\n  - “Capacidade máxima” e “não mistura” em transporte → equações de viagens e de itens transportados.\n  - Problemas de idades: alinhe as idades no mesmo “tempo” (hoje, daqui a x anos) antes de relacionar.\n- Calendário:\n  - Conte os dias do intervalo; divida por 7 → resto indica o deslocamento do dia da semana.\n  - “Próxima segunda” pode ser diferente de “primeira segunda do mês” dependendo do enunciado.\n\n## 3. Aplicação Prática / Técnicas\n- Combinação com restrição “não juntos”:\n  1. Calcule o total sem restrição via C(n,k).\n  2. Conte os casos indesejados (ex.: pessoas “A+B” como bloco).\n  3. Subtraia: desejados = total − indesejados.\n- Probabilidade condicionada:\n  1. Organize totais por categoria (homens/mulheres; faixas salariais).\n  2. Aplique a condição para redefinir o denominador.\n  3. Conte os favoráveis dentro do universo condicionado.\n- Sistema balsa (capacidade máxima, não mistura):\n  1. Defina variáveis x (carros) e y (caminhonetes).\n  2. Monte: x + y = total de viagens; 10x + 6y = total de veículos.\n  3. Resolva por substituição/eliminação; interprete o pedido.\n- Idades:\n  1. Defina variáveis (z, r).\n  2. Escreva as relações no tempo exato pedido (ex.: “daqui a 10 anos”).\n  3. Traga tudo para o mesmo tempo e resolva o sistema.\n- Calendário:\n  1. Some os dias restantes do mês inicial + meses completos + mês final (se houver).\n  2. Divida por 7; use o resto para deslocar o dia da semana inicial.\n  3. Valide o dia alvo (ex.: confirmar que 1/8 é segunda).\n\n## 4. Exemplos e Casos Resolvidos\n- Questão 10 – Combinação com restrição (Ana e Beatriz separadas)\n  - Comissão de 3 entre 7 (ordem não importa): C(7,3) = 35.\n  - Indesejados (Ana+Beatriz juntas): trate como bloco + 1 dos 5 restantes → 5 comissões.\n  - Desejados: 35 − 5 = 30.\n  - Gabarito: 30 (letra C).\n  > Dica de Prova: “Comissão/equipe/time” sem função específica → Combinação. Com cargos definidos → Arranjo.\n\n- Questão 11 – Probabilidade condicionada (funcionário é homem)\n  - Total: 400. 30% > 5 salários → 120; então ≤ 5: 280.\n  - Homens: 180; Mulheres: 220. Dado: mulheres ≤ 5 = 160 → homens ≤ 5 = 120.\n  - Homens > 5: 180 − 120 = 60.\n  - Universo condicionado (homens): 180. P = 60/180 = 1/3.\n  - Gabarito: 1/3 (letra C).\n  > Dica de Prova: Condicionou? Ajuste o denominador ao universo condicionado.\n\n- Questão 12 – Sistema (balsa, capacidade máxima)\n  - x + y = 5; 10x + 6y = 42.\n  - x = 3, y = 2 → caminhonetes: 2 × 6 = 12.\n  - Gabarito: 12 (letra B).\n  > Dica de Prova: “Nunca mistura” + “capacidade máxima” → sempre duas equações: viagens e total transportado.\n\n- Calendário – Retorno ao dentista\n  - Consulta: 24/5 (terça). Contagem até final de julho: 8 (maio) + 30 (junho) + 31 (julho) = 69.\n  - 69 ÷ 7 = 9 semanas, resto 6 → desloca 6 dias: 31/7 é domingo → 1/8 é segunda → próxima segunda: 8/8.\n  - Resposta: 8 de agosto.\n  > Dica de Prova: Resto 0 mantém o mesmo dia da semana; resto r desloca r dias à frente.\n\n- Idades – Zuleide e Roberta\n  - Hoje: z = 3r; Daqui a 10 anos: r + 10 = (z + 10)/2.\n  - 2(r + 10) = z + 10 → 2r + 20 = z + 10; substitui z = 3r → r = 10; z = 30.\n  - Resposta: Roberta tem 10 anos.\n  > Dica de Prova: Monte a equação no tempo futuro antes de substituir relações do presente.\n\n## 5. Pegadinhas e Erros Comuns\n- “Comissão” nem sempre é combinação: se tiver cargos/funções, a ordem importa (arranjo).\n- Restrição “não juntos”: não esqueça de subtrair os casos com o “bloco” A+B.\n- Probabilidade condicionada: não use o total global como denominador; use o universo condicionado (ex.: 180 em vez de 400).\n- “No máximo” = “≤” (inclui o limite).\n- Balsa: “nunca mistura” e “capacidade máxima” implicam números fixos por viagem; não invente viagens parcialmente cheias.\n- Idades: não substitua relações do presente antes de levar todas as idades ao mesmo “tempo”.\n- Calendário: confundir “próxima segunda” com “primeira segunda do mês” muda a resposta.\n\nDIFERENÇAS e COMPARAÇÕES\n| Situação | Ordem importa? | Ferramenta |\n| Comissão/equipe sem cargo | Não | Combinação |\n| Comissão com cargos | Sim | Arranjo |\n| Probabilidade simples | — | Usa total global |\n| Probabilidade condicionada | — | Usa universo condicionado |\n\n> Dica de Prova: Antes de calcular, identifique o modelo (combinação/arranjo, simples/condicionada, sistema/contagem). Essa triagem evita 80% dos erros.",
+  "resumo_bolso": "# Matemática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Combinação C(n,k)**: escolhe k elementos de n, sem importar a ordem. Fórmula: C(n,k) = n! / (k!(n−k)!).\n* **Arranjo/Permutação**: escolhe com ordem/importância (há funções/cargos).\n* **Princípio Multiplicativo**: total de possibilidades = produto das escolhas independentes.\n* **Probabilidade**: P(E) = casos favoráveis / casos possíveis (universo total).\n* **Probabilidade condicionada**: restringe o universo a uma condição dada (novo denominador).\n* **Sistema linear 2×2**: 2 equações, 2 incógnitas; use substituição ou eliminação.\n* **Sistemas aplicados (balsa)**: “capacidade máxima” e “não mistura” → equações de viagens e de itens transportados.\n* **Problemas de idades**: alinhe as idades no mesmo “tempo” (hoje, daqui a x anos) antes de relacionar.\n* **Calendário (ciclo semanal)**: dias da semana repetem a cada 7; use divisão por 7 e o resto para deslocar o dia.\n* **“No máximo”**: interpreta-se como “≤” (inclui o limite).\n* **Tradução para equações**: antes de resolver, traduza o texto do enunciado em equações claras.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Combinação vs Arranjo\n\n| Aspecto | Combinação | Arranjo |\n| --- | --- | --- |\n| **Ordem** | Não importa | Importa (cargos, posições) |\n| **Exemplo típico** | Comissão/equipe sem função específica | Comissão com cargos (presidente/vice) |\n| **Ferramenta** | C(n,k) | Arranjo/permutação |\n\n---\n\n### Probabilidade Simples vs Condicionada\n\n| Aspecto | Simples | Condicionada |\n| --- | --- | --- |\n| **Universo** | Total do problema | Reduzido pelo evento dado |\n| **Denominador** | Total global | Universo condicionado (ex.: só homens) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Combinação com restrição “não juntos” (A e B separados)**\n\n* Passos:  \n  1. Calcule o total sem restrição: C(n,k).  \n  2. Conte os casos indesejados tratando A+B como bloco.  \n  3. Desejados = total − indesejados.\n* Exemplo (Questão 10): 7 pessoas, comissão de 3, Ana e Beatriz separadas →  \n  Total: C(7,3) = 35.  \n  Indesejados (Ana+Beatriz juntas): bloco (A+B) + 1 dos 5 restantes → 5.  \n  Desejados: 35 − 5 = 30.\n\n---\n\n**2. Probabilidade Condicionada**\n\n* Passos:  \n  1. Organize os totais por categoria (homens/mulheres; faixas salariais).  \n  2. Aplique a condição para redefinir o denominador (universo condicionado).  \n  3. Conte os favoráveis dentro desse universo.\n* Exemplo (Questão 11): P(funcionário ganha >5 salários | é homem)  \n  Total: 400; >5 salários: 120; ≤5 salários: 280.  \n  Homens: 180; mulheres: 220; mulheres ≤5: 160 → homens ≤5: 120.  \n  Homens >5: 180 − 120 = 60.  \n  Universo condicionado (homens): 180 → P = 60/180 = 1/3.\n\n---\n\n**3. Sistema da Balsa (capacidade máxima, não mistura)**\n\n* Passos:  \n  1. Defina variáveis x (viagens com carros) e y (viagens com caminhonetes).  \n  2. Monte o sistema:  \n     * x + y = total de viagens.  \n     * 10x + 6y = total de veículos transportados.  \n  3. Resolva por substituição/eliminação e interprete o que a questão pede.\n* Exemplo (Questão 12):  \n  x + y = 5; 10x + 6y = 42 → x = 3, y = 2.  \n  Caminhonetes transportadas: 2 × 6 = 12.\n\n---\n\n**4. Idades com relação em tempos diferentes**\n\n* Passos:  \n  1. Defina variáveis (ex.: z para Zuleide, r para Roberta).  \n  2. Escreva as relações no tempo exato pedido (ex.: “daqui a 10 anos”).  \n  3. Traga tudo para o mesmo tempo e resolva o sistema.\n* Exemplo (Zuleide e Roberta):  \n  Hoje: z = 3r.  \n  Daqui a 10 anos: r + 10 = (z + 10)/2.  \n  2(r + 10) = z + 10 → 2r + 20 = z + 10.  \n  Substituindo z = 3r → 2r + 20 = 3r + 10 → r = 10; z = 30.\n\n---\n\n**5. Contagem de dias em Calendário**\n\n* Passos:  \n  1. Some os dias restantes do mês inicial + meses completos + mês final (se houver).  \n  2. Divida por 7; use o resto para deslocar o dia da semana inicial.  \n  3. Valide o dia alvo pedido no enunciado.\n* Exemplo (retorno ao dentista):  \n  Consulta: 24/5 (terça).  \n  Dias até 31/7: 8 (maio) + 30 (junho) + 31 (julho) = 69.  \n  69 ÷ 7 = 9 semanas, resto 6 → desloca 6 dias: 31/7 é domingo.  \n  1/8 é segunda → próxima segunda: 8/8.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Comissão/equipe/time” nem sempre é combinação: se tiver cargos/funções, a ordem importa (arranjo).\n2. Restrição “não juntos”: não esqueça de subtrair os casos com o “bloco” A+B.\n3. Probabilidade condicionada: não use o total global como denominador; use o universo condicionado (ex.: 180 em vez de 400).\n4. Balsa: “nunca mistura” e “capacidade máxima” implicam números fixos por viagem; não invente viagens parcialmente cheias.\n5. Idades: não substitua relações do presente antes de levar todas as idades ao mesmo “tempo”.\n\n---\n\n## 📋 Checklist Final\n\n* Identifiquei se é **combinação** (sem cargos) ou **arranjo** (com cargos/funções)?\n* Em “não juntos”, fiz **total − indesejados (bloco A+B)**?\n* Em probabilidade condicionada, ajustei o **denominador** para o universo condicionado?\n* Em problemas de **balsa**, montei as duas equações: nº de viagens e total transportado?\n* Em **idades**, alinhei todas as idades no mesmo tempo antes de resolver o sistema?\n* Em **calendário**, somei os dias, dividi por 7 e usei apenas o **resto** para o deslocamento?\n* Interpretei corretamente “**no máximo**” como “≤” (inclui o limite)?\n* Traduzi o texto do enunciado em **equações claras** antes de começar a resolver?",
+  "mapa_mental": "# 🧮 Matemática para Concursos\n## 🎯 Combinatória\n### 💡 Conceitos básicos\n- Combinação C(n,k)\n- Arranjo simples\n- Permutação\n- Princípio multiplicativo\n- Ordem dos elementos\n### 🧮 Combinação\n- Escolha sem ordem\n- Fórmula n! k!(n−k)!\n- Comissão sem cargos\n- Equipes sem função\n- Subconjuntos k elementos\n### 🧮 Arranjo e permutação\n- Escolha com ordem\n- Comissão com cargos\n- Funções específicas\n- Distribuição em cargos\n- Comparação com combinação\n### ⚠️ Restrições usuais\n- Elementos não juntos\n- Bloco de elementos\n- Total menos indesejados\n- Interpretação “no máximo”\n- Interpretação “pelo menos”\n\n## 🎯 Probabilidade\n### 💡 Probabilidade simples\n- Casos favoráveis\n- Casos possíveis\n- Espaço amostral\n- Eventos complementares\n- Interpretação percentual\n### 🔢 Probabilidade condicionada\n- Universo reduzido\n- Novo denominador\n- Condição dada\n- Tabela por categorias\n- Relação com probabilidade\n### ⚠️ Erros frequentes\n- Denominador incorreto\n- Ignorar condição\n- Confundir simples e condicionada\n- Não atualizar totais\n- Interpretação “no máximo”\n\n## 🎯 Sistemas Lineares\n### 💡 Conceitos gerais\n- Sistema 2×2\n- Duas equações\n- Duas variáveis\n- Métodos resolução\n- Solução única\n### 🧮 Métodos de resolução\n- Substituição\n- Eliminação\n- Isolamento variável\n- Comparação equações\n- Verificação solução\n### 🚤 Aplicações típicas\n- Problemas de idades\n- Relações no tempo\n- Mesmo instante temporal\n- Problema da balsa\n- Capacidade máxima\n\n## 🎯 Calendário e Dias\n### 🗓️ Ciclo semanal\n- Período 7 dias\n- Divisão por 7\n- Resto como deslocamento\n- Mesmo dia resto zero\n- Contagem de dias\n### 🧮 Contagem de datas\n- Dias restantes mês\n- Meses completos\n- Mês final parcial\n- Soma total dias\n- Deslocamento semanal\n### ⚠️ Cuidados de interpretação\n- Próxima segunda\n- Primeira segunda mês\n- Inclusão do dia inicial\n- Intervalos fechados\n- Leitura do enunciado",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Análise Combinatória",
+      "description": "Análise Combinatória — 6 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a diferença entre permutação e seleção de elementos?",
+          "back": "A permutação envolve a reorganização ou mistura de todos os elementos, enquanto a seleção (combinação ou arranjo) escolhe parte deles.",
+          "hint": "Pense na ordem dos elementos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "conceitos-basicos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual modalidade de contagem representa a escolha de pessoas sem funções específicas?",
+          "back": "Combinação.",
+          "hint": "A ordem não importa",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "contagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a fórmula da combinação de n elementos tomados p a p?",
+          "back": "C(n,p) = n! / [(n - p)! · p!]",
+          "hint": "Envolve fatorial",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Quantas comissões de três pessoas podem ser formadas a partir de sete pessoas?",
+          "back": "35 comissões.",
+          "hint": "Aplique a fórmula de combinação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "aplicacao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-5",
+          "front": "Como calcular o total de casos permitidos quando uma restrição proíbe alguns casos?",
+          "back": "Subtrair o total de casos indesejados (restritos) do total geral de possibilidades.",
+          "hint": "Pense no conjunto complementar",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "metodologia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como contar as comissões de três pessoas em que Ana e Beatriz ficam juntas?",
+          "back": "5 comissões.",
+          "hint": "Fixe os elementos obrigatórios",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "restricoes"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Probabilidade Condicional",
+      "description": "Probabilidade Condicional — 4 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual é a fórmula clássica da probabilidade de um evento?",
+          "back": "Número de eventos favoráveis dividido pelo total de eventos.",
+          "hint": "Razão entre partes e todo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "definicoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Sabendo que a pessoa sorteada é homem, qual deve ser o espaço amostral?",
+          "back": "O conjunto exclusivo dos homens (180 homens).",
+          "hint": "O universo de possibilidades muda",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "espaco-amostral"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Em uma empresa com 400 funcionários, quantos ganham acima de cinco salários mínimos se são 30%?",
+          "back": "120 funcionários.",
+          "hint": "Cálculo de porcentagem simples",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "porcentagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-10",
+          "front": "Entre 180 homens, 60 ganham acima de cinco salários mínimos. Qual é a probabilidade desse evento?",
+          "back": "1/3",
+          "hint": "Simplifique a fração",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "probabilidade",
+            "aplicacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Modelagem de Problemas",
+      "description": "Modelagem de Problemas — 3 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Se x é o número de viagens com carros e y o de caminhonetes, qual equação expressa cinco viagens?",
+          "back": "x + y = 5",
+          "hint": "Equação de primeiro grau",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "sistemas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Se cada viagem leva 10 carros ou 6 caminhonetes, qual equação representa 42 veículos?",
+          "back": "10x + 6y = 42",
+          "hint": "Equação com coeficientes",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "sistemas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "Quantas caminhonetes foram transportadas em cinco viagens que totalizaram 42 veículos?",
+          "back": "12 caminhonetes.",
+          "hint": "Resolva o sistema de equações",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "sistemas"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Calendário e Ciclos",
+      "description": "Calendário e Ciclos — 4 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Quantos dias têm os meses de maio, julho e agosto?",
+          "back": "Maio tem 31 dias, julho tem 31 dias e agosto tem 31 dias.",
+          "hint": "Calendário gregoriano",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "calendario"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Quantos dias tem o mês de junho?",
+          "back": "30 dias.",
+          "hint": "Calendário gregoriano",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "calendario"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é o efeito do resto na divisão do intervalo de dias por sete?",
+          "back": "Define os dias restantes da semana após o agrupamento em semanas completas.",
+          "hint": "Divisão euclidiana",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-17",
+          "front": "Na contagem de 69 dias, qual é o quociente e o resto da divisão por sete?",
+          "back": "Quociente de 9 semanas e resto de 6 dias.",
+          "hint": "Use a divisão por 7",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Equações de Idades",
+      "description": "Equações de Idades — 3 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "Se Z e R são as idades atuais, como representar que Zuleide tem o triplo de Roberta?",
+          "back": "Z = 3R",
+          "hint": "Tradução de linguagem natural",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-19",
+          "front": "Como representar a relação entre as idades futuras de Roberta e Zuleide após dez anos?",
+          "back": "R + 10 = (Z + 10) / 2",
+          "hint": "Considere o deslocamento temporal",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-20",
+          "front": "Hoje, Zuleide tem o triplo da idade de Roberta. Qual é a idade atual de Roberta?",
+          "back": "6 anos.",
+          "hint": "Resolva o sistema de idades",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacoes"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma comissão formada por pessoas sem funções específicas, qual é o método de contagem mais adequado para calcular o número de grupos possíveis?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Arranjo, pois é necessário considerar a sequência de seleção dos participantes",
+          "correct": false,
+          "explanation": "Incorreta. O arranjo é aplicado quando a ordem dos elementos é relevante para a formação do grupo. Se a comissão tivesse cargos específicos (como presidente, secretário, tesoureiro), a ordem de escolha faria diferença, mas como não há funções específicas, a ordem é irrelevante."
+        },
+        {
+          "id": "b",
+          "text": "Princípio multiplicativo, pois cada posição deve ser preenchida independentemente",
+          "correct": false,
+          "explanation": "Incorreta. O princípio multiplicativo é uma ferramenta fundamental de contagem, mas é mais geral. Para a formação de comissões sem funções específicas, onde a ordem não importa, a combinação é o método específico que já incorpora a correção para evitar a contagem excessiva que o princípio multiplicativo sozinho geraria se aplicado diretamente a posições indistinguíveis."
+        },
+        {
+          "id": "c",
+          "text": "Permutação, pois envolve a reorganização de todos os elementos disponíveis",
+          "correct": false,
+          "explanation": "Incorreta. A permutação é utilizada quando a ordem dos elementos importa e todos os elementos são rearranjados. No caso de uma comissão sem funções específicas, a ordem em que as pessoas são escolhidas não altera a composição do grupo, e geralmente se seleciona um subconjunto de um grupo maior."
+        },
+        {
+          "id": "d",
+          "text": "Combinação, pois a ordem de escolha dos membros não altera a composição do grupo",
+          "correct": true,
+          "explanation": "Correta. A combinação é o método de contagem apropriado quando a ordem dos elementos não importa. Em uma comissão, um grupo de pessoas é formado independentemente da sequência em que seus membros são selecionados. Por exemplo, uma comissão composta por João, Maria e Pedro é a mesma comissão que Pedro, João e Maria."
+        }
+      ],
+      "explanation": "Correta. A combinação é o método de contagem apropriado quando a ordem dos elementos não importa. Em uma comissão, um grupo de pessoas é formado independentemente da sequência em que seus membros são selecionados. Por exemplo, uma comissão composta por João, Maria e Pedro é a mesma comissão que Pedro, João e Maria.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao calcular probabilidades condicionais, qual é o procedimento correto quando o enunciado restringe o universo amostral a um subconjunto específico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Utilizar sempre o total geral de elementos como denominador, independentemente da restrição apresentada",
+          "correct": false,
+          "explanation": "Incorreta. Em probabilidades condicionais, o denominador (o universo amostral) é alterado para refletir a condição imposta. Se a questão especifica que um evento já ocorreu ou que a seleção se deu dentro de um subgrupo, o total geral de elementos não é mais o espaço amostral relevante."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar a probabilidade total pelo fator de restrição indicado no problema",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a probabilidade total por um \"fator de restrição\" não é o procedimento padrão para calcular probabilidades condicionais. A abordagem correta envolve a redefinição do espaço amostral e a aplicação da fórmula da probabilidade condicional, que é a probabilidade da interseção dos eventos dividida pela probabilidade do evento que já ocorreu."
+        },
+        {
+          "id": "c",
+          "text": "Considerar apenas os elementos do subconjunto especificado como novo espaço amostral para o cálculo",
+          "correct": true,
+          "explanation": "Correta. A probabilidade condicional (P(A|B)) calcula a probabilidade de um evento A ocorrer, dado que um evento B já ocorreu. Nesse cenário, o espaço amostral é reduzido ao subconjunto de resultados em que B ocorreu, e o número de casos favoráveis para A é contado dentro desse novo espaço amostral (B)."
+        },
+        {
+          "id": "d",
+          "text": "Dividir o espaço amostral original pela quantidade de restrições impostas no enunciado",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o espaço amostral original pela quantidade de restrições não tem fundamento na teoria da probabilidade. A restrição implica uma mudança qualitativa no espaço amostral, não apenas uma divisão numérica arbitrária."
+        }
+      ],
+      "explanation": "Correta. A probabilidade condicional (P(A|B)) calcula a probabilidade de um evento A ocorrer, dado que um evento B já ocorreu. Nesse cenário, o espaço amostral é reduzido ao subconjunto de resultados em que B ocorreu, e o número de casos favoráveis para A é contado dentro desse novo espaço amostral (B).",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em problemas de contagem com restrições que impedem determinados elementos de aparecerem juntos, qual estratégia é mais eficiente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Criar múltiplas equações para cada possibilidade e resolver o sistema resultante",
+          "correct": false,
+          "explanation": "Incorreta. Criar múltiplas equações para cada possibilidade e resolver um sistema resultante geralmente não é a abordagem mais eficiente para problemas de contagem com restrições de \"não juntos\". Essa estratégia pode ser excessivamente complexa e desnecessária para a maioria desses tipos de problemas."
+        },
+        {
+          "id": "b",
+          "text": "Determinar o total de possibilidades sem restrições e subtrair as configurações indesejadas",
+          "correct": true,
+          "explanation": "Correta. Para problemas de contagem onde certos elementos não podem aparecer juntos, a estratégia mais eficiente é calcular o número total de possibilidades sem nenhuma restrição e, em seguida, subtrair o número de possibilidades em que os elementos proibidos aparecem juntos. Essa abordagem simplifica o cálculo, pois é frequentemente mais fácil contar o \"total\" e o \"indesejado\" do que todas as variações do \"desejado\"."
+        },
+        {
+          "id": "c",
+          "text": "Calcular diretamente apenas as configurações permitidas, desconsiderando as proibidas",
+          "correct": false,
+          "explanation": "Incorreta. Calcular diretamente apenas as configurações permitidas pode ser excessivamente complexo e propenso a erros, especialmente quando as restrições geram muitas condições diferentes para as configurações válidas. Em muitos casos, é mais trabalhoso identificar e contar todas as possibilidades permitidas do que identificar as proibidas."
+        },
+        {
+          "id": "d",
+          "text": "Aplicar o princípio da inclusão-exclusão somando todas as combinações válidas",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Princípio da Inclusão-Exclusão seja uma ferramenta poderosa para problemas de contagem complexos com múltiplas condições sobrepostas, para uma restrição simples de \"não juntos\", a estratégia de \"total menos o indesejado\" é geralmente mais direta e menos propensa a erros de cálculo."
+        }
+      ],
+      "explanation": "Correta. Para problemas de contagem onde certos elementos não podem aparecer juntos, a estratégia mais eficiente é calcular o número total de possibilidades sem nenhuma restrição e, em seguida, subtrair o número de possibilidades em que os elementos proibidos aparecem juntos. Essa abordagem simplifica o cálculo, pois é frequentemente mais fácil contar o \"total\" e o \"indesejado\" do que todas as variações do \"desejado\".",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Para determinar em qual dia da semana cairá uma data futura, após calcular o número total de dias e dividi-lo por 7, o que representa o resto dessa divisão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A quantidade de dias adicionais que devem ser contados a partir do dia inicial para encontrar o dia da semana desejado",
+          "correct": true,
+          "explanation": "Correta. A semana possui sete dias, e os dias da semana se repetem a cada sete dias. Ao dividir o número total de dias entre duas datas por sete, o resto dessa divisão indica quantos dias \"extras\" precisam ser contados a partir do dia da semana da data inicial para chegar ao dia da semana da data final. Por exemplo, se o resto for 0, o dia da semana é o mesmo; se for 1, é o dia seguinte, e assim por diante."
+        },
+        {
+          "id": "b",
+          "text": "O total de finais de semana que ocorrerão no período analisado",
+          "correct": false,
+          "explanation": "Incorreta. O resto da divisão por sete não fornece o total de finais de semana. O número de finais de semana é determinado pelo número de semanas completas e pela posição dos dias restantes em relação ao início da semana, não apenas pelo valor do resto."
+        },
+        {
+          "id": "c",
+          "text": "A diferença entre o número de dias úteis e não úteis no intervalo calculado",
+          "correct": false,
+          "explanation": "Incorreta. O resto da divisão por sete não tem relação com a diferença entre dias úteis e não úteis. Essa classificação depende de convenções sociais e laborais, enquanto o resto da divisão por sete se refere à posição cíclica dos dias na semana."
+        },
+        {
+          "id": "d",
+          "text": "O número de semanas completas transcorridas entre as duas datas consideradas",
+          "correct": false,
+          "explanation": "Incorreta. O quociente da divisão do número total de dias por sete representa o número de semanas completas transcorridas. O resto, por outro lado, indica os dias adicionais que não formam uma semana completa."
+        }
+      ],
+      "explanation": "Correta. A semana possui sete dias, e os dias da semana se repetem a cada sete dias. Ao dividir o número total de dias entre duas datas por sete, o resto dessa divisão indica quantos dias \"extras\" precisam ser contados a partir do dia da semana da data inicial para chegar ao dia da semana da data final. Por exemplo, se o resto for 0, o dia da semana é o mesmo; se for 1, é o dia seguinte, e assim por diante.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Atualmente, a idade de Paula é o quádruplo da idade de Carla. Daqui a 8 anos, a idade de Carla será a metade da idade de Paula. Qual é a idade atual de Carla?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "4 anos, pois satisfaz a relação de proporcionalidade entre as idades atuais e futuras",
+          "correct": true,
+          "explanation": "Correta. Se a idade atual de Carla é 4 anos, então a idade atual de Paula é 4 * 4 = 16 anos. Daqui a 8 anos, Carla terá 4 + 8 = 12 anos, e Paula terá 16 + 8 = 24 anos. A condição \"a idade de Carla será a metade da idade de Paula\" é satisfeita, pois 12 é a metade de 24."
+        },
+        {
+          "id": "b",
+          "text": "12 anos, pois representa um quarto da idade atual de Paula conforme estabelecido",
+          "correct": false,
+          "explanation": "Incorreta. Se a idade atual de Carla fosse 12 anos, Paula teria 4 * 12 = 48 anos. Daqui a 8 anos, Carla teria 12 + 8 = 20 anos, e Paula teria 48 + 8 = 56 anos. A condição de que a idade de Carla seria a metade da idade de Paula (20 = 56/2) não seria satisfeita, pois 20 não é a metade de 56. Além disso, embora a relação inicial seja que a idade de Carla é um quarto da de Paula, 12 anos não é o valor que satisfaz ambas as condições do problema."
+        },
+        {
+          "id": "c",
+          "text": "8 anos, pois corresponde ao intervalo de tempo mencionado no problema",
+          "correct": false,
+          "explanation": "Incorreta. A idade atual de Carla não é necessariamente igual ao intervalo de tempo mencionado no problema. Se a idade atual de Carla fosse 8 anos, Paula teria 4 * 8 = 32 anos. Daqui a 8 anos, Carla teria 8 + 8 = 16 anos, e Paula teria 32 + 8 = 40 anos. A condição de que a idade de Carla seria a metade da idade de Paula (16 = 40/2) não seria satisfeita, pois 16 não é a metade de 40."
+        },
+        {
+          "id": "d",
+          "text": "6 anos, pois equilibra as condições impostas para o momento presente e futuro",
+          "correct": false,
+          "explanation": "Incorreta. Se a idade atual de Carla fosse 6 anos, Paula teria 4 * 6 = 24 anos. Daqui a 8 anos, Carla teria 6 + 8 = 14 anos, e Paula teria 24 + 8 = 32 anos. A condição de que a idade de Carla seria a metade da idade de Paula (14 = 32/2) não seria satisfeita, pois 14 não é a metade de 32."
+        }
+      ],
+      "explanation": "Correta. Se a idade atual de Carla é 4 anos, então a idade atual de Paula é 4 * 4 = 16 anos. Daqui a 8 anos, Carla terá 4 + 8 = 12 anos, e Paula terá 16 + 8 = 24 anos. A condição \"a idade de Carla será a metade da idade de Paula\" é satisfeita, pois 12 é a metade de 24.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "03_358750_Matemática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:29:01"
+}

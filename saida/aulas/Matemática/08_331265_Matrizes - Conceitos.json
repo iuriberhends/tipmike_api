@@ -1,0 +1,490 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 8,
+  "ordem_no_curso": "131.00",
+  "titulo": "Matrizes - Conceitos",
+  "codigo_aula": "331265",
+  "video_id": "62roNDEWtdg=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:32:40",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/62roNDEWtdg%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408803%2C408804%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matrizes - Conceitos\n\n## Introdução e Importância do Tema\nVamos dar continuidade à nossa parte de matrizes em matemática. É um assunto muito importante dentro de Álgebra Linear. Muitas vezes, em concursos, aparecem questões de matrizes, determinantes e sistemas lineares; alguns editais cobram somente matrizes.\n\nA ideia hoje é mostrar aquilo que é essencial saber. Este primeiro encontro vai ser apenas teoria. Tem que saber a teoria e entender o que é uma matriz, uma malha. Muitas vezes esse assunto também é visto dentro de raciocínio lógico.\n\nMatrizes aparecem em problemas de diversas áreas, inclusive em contextos biomédicos e matriciais. A matriz é importantíssima tanto em matemática quanto em raciocínio lógico, beleza?\n\n## Objetivo da Aula e Plano\nVamos começar, meus queridos. A ideia é vermos matrizes, também chamadas de malhas. Primeiro, o conceito do que se trata e, consequentemente, as suas operações. É importante sabermos como a matriz é construída, os tipos e as classificações. Isso vai ser fundamental para conteúdos posteriores, como determinantes e, se você for estudar, sistemas lineares.\n\n## Conceito de Matriz (Malha)\nMatriz, ou malha, nada mais é do que uma estrutura bidimensional em que:\n- Todos os elementos são do mesmo tipo.\n- Cada elemento está associado a uma posição na matriz.\n- Cada elemento também pode ser denominado como “entrada”.\n\nO elemento será localizado por um número de linha e um número de coluna situados na malha, ou na matriz.\n\nPor exemplo, eu tenho aqui a matriz A. Quando você cria uma matriz, você cria uma malha. A matriz é representada sempre por uma letra maiúscula, sempre, sempre! Então, a matriz possui uma denominação: matriz A, matriz B, matriz C, qualquer letra maiúscula.\n\nDentro dessa matriz, você tem elementos: a11, a12, a13, …, a1n; depois a21, a22, a23, …, a2n; e assim por diante até a m1, a m2, …, a mn. Ou seja, você percorre linha por linha.\n\n## Linhas, Colunas e Ordem da Matriz\nA matriz é bidimensional, certo? Ela tem uma quantidade de linhas e uma quantidade de colunas.\n\n- Linhas: primeira linha, segunda linha, terceira linha, …, enésima linha.\n- Colunas: primeira coluna, segunda coluna, terceira coluna, …, enésima coluna.\n\nDizemos que uma matriz possui uma ordem m por n: m linhas por n colunas. Essa simbologia indica a ordem da matriz. O m é o número de linhas; o n é o número de colunas. Beleza? Então, linhas e colunas formam a estrutura da matriz.\n\nCada elemento (ou entrada) é identificado pela sua posição. A matriz tem ordem, e cada elemento também tem sua posição.\n\nOs elementos da matriz são representados por letras minúsculas (aij), enquanto a matriz, por letra maiúscula (A). O “i” e o “j” representam a posição do elemento dentro da matriz.\n\nPor exemplo, o elemento a13 significa: está na primeira linha e na terceira coluna. Já o elemento a32 está na terceira linha e segunda coluna. Sempre nessa ordem: primeiro linhas, depois colunas. Sempre linhas, depois colunas, tá bom? Eu generalizo como m linhas e n colunas.\n\n## Exemplo 1: Identificando Posições em uma Matriz 2x2\nConsidere a matriz B:\n- B = [ [2, 3],\n        [0, 5] ]\n\nEssa matriz possui 2 linhas e 2 colunas. Vamos identificar elementos:\n- b12: primeira linha, segunda coluna (aqui é 3).\n- b21: segunda linha, primeira coluna (aqui é 0).\n- b22: segunda linha, segunda coluna (aqui é 5).\n- b11: primeira linha, primeira coluna (aqui é 2).\n\nSó para deixar claro: matrizes não precisam ser sempre 2x2 ou 3x3. Uma matriz 2x2 é um tipo importante, a gente vai ver o porquê, mas podemos ter ordens diferentes.\n\n## Exemplo 2: Matriz 3x2\nConsidere a matriz:\n- A = [ [2, 3],\n        [-1, 0],\n        [7,  a] ]\n\nEssa matriz tem 3 linhas por 2 colunas. Os elementos aij seriam:\n- a11, a12\n- a21, a22\n- a31, a32\n\nIsso é uma malha onde você conhece os elementos, cada um com sua respectiva posição dentro da matriz.\n\n## Formas de Representação: Geométrica e Notação Condensada\nÉ importante saber representar uma matriz porque, em muitas questões de concursos, a matriz pode aparecer não de maneira geométrica (em “grade”), mas por uma anotação condensada, chamada de notação condensada.\n\nComo representar uma matriz?\n- Forma geométrica: aquela em grade, com linhas e colunas, como já mostrei.\n- Notação condensada: usamos algo como A = (aij), com indicação da ordem, por exemplo, A = (aij)3x3. Aqui, você deve interpretar que:\n  - A é a matriz.\n  - aij são os elementos.\n  - A ordem é 3x3.\n\nCom isso, você deve ter condições de interpretar e representar a forma geométrica a partir da forma condensada.\n\n## Construindo a Matriz a partir da Notação Condensada e Lei de Formação\nMesmo na notação condensada, podemos construir a matriz. A banca pode criar uma “lei de formação” para os elementos, isto é, uma fórmula que define cada aij. Existem inúmeras leis de formação; vai depender do examinador. Associado à notação condensada, a regra diz como calcular cada termo.\n\nVamos ao primeiro exemplo mais simples para entender o processo.\n\n## Exemplo 3: Matriz 2x2 com Lei de Formação Simples\nDada a matriz A de ordem 2x2, com elementos aij definidos por:\n- aij = i − j\n\nVamos construir a matriz A.\n\nPrimeiro, montamos a estrutura 2x2 (linhas e colunas):\n- A =\n  [ [a11, a12],\n    [a21, a22] ]\n\nAgora aplicamos a lei de formação aij = i − j em cada posição:\n\n- a11: i=1, j=1 → 1 − 1 = 0\n- a12: i=1, j=2 → 1 − 2 = −1\n- a21: i=2, j=1 → 2 − 1 = 1\n- a22: i=2, j=2 → 2 − 2 = 0\n\nResultado:\n- A =\n  [ [0,  -1],\n    [1,   0] ]\n\nSaímos da notação condensada, aplicamos a lei de formação e criamos a matriz. Daqui em diante, podemos fazer várias operações, dependendo da prova.\n\n## Exemplo 4: Matriz 2x2 com Lei de Formação por Casos\nAgora, um exemplo mais puxado. Considere a matriz A de ordem 2x2, em que os elementos aij são definidos por uma lei de formação por casos:\n\n- Se i ≥ j, então aij = i + 2j\n- Se i < j, então aij = i − j\n\nVamos calcular elemento por elemento:\n\n- a11: i=1, j=1. Temos i ≥ j, então usamos aij = i + 2j:\n  a11 = 1 + 2·1 = 3.\n\n- a12: i=1, j=2. Temos i < j, então usamos aij = i − j:\n  a12 = 1 − 2 = −1.\n\n- a21: i=2, j=1. Temos i ≥ j, então usamos aij = i + 2j:\n  a21 = 2 + 2·1 = 4.\n\n- a22: i=2, j=2. Temos i ≥ j, então usamos aij = i + 2j:\n  a22 = 2 + 2·2 = 6.\n\nResultado:\n- A =\n  [ [3,  -1],\n    [4,   6] ]\n\nPerceba o procedimento: para cada entrada aij, você verifica a condição (se i ≥ j ou se i < j) e aplica a fórmula correspondente.\n\n## Encerramento e Próximos Passos\nEntão, neste bloco, vimos:\n- O que é matriz (malha), a ideia de bidimensionalidade.\n- Linhas, colunas, posição do elemento e ordem m×n.\n- Representação geométrica e notação condensada.\n- Como, a partir de uma lei de formação, construir a matriz elemento a elemento.\n- Fizemos um exemplo simples e um mais puxado com lei por casos.\n\nEu sempre digo: em muitas questões, a banca não traz a forma geométrica. Ela traz a notação condensada e, às vezes, uma lei de formação. Você é obrigado a interpretar, construir a matriz geométrica e, só então, começar a responder à questão. Essa habilidade de “ler e escrever” a notação é fundamental em matemática. Se você não reconhecer símbolos e notações, não adianta: não consegue nem começar.\n\nNa próxima conversa, vou mostrar quais são os tipos de matrizes e como elas podem ser classificadas. É gostoso de ver, não tem dificuldade: é fazer uma, duas, três vezes que fixa. Aqui não tem pegadinha; é interpretação e aplicação direta da regra. Vamos seguir nessa sequência. Estou voltando já, não saia daí.",
+  "transcricao_meta": {
+    "title": "Matrizes - Conceitos",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 27368,
+    "createdAt": "2026-02-06T12:52:30.663Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: definição e notação de matrizes, ordem m × n, leitura de posições (a_ij), notação condensada A = (a_ij) e construção por lei de formação (inclusive por casos).\nPrincipais pontos: \n- Linhas antes de colunas (m × n) e índices i, j. \n- Representação: matriz em maiúscula; elementos em minúscula com índices. \n- Passos para montar matriz a partir de leis de formação (inclusive condicionais).\n\n## 1. Base / Conceitos Fundamentais\n- **Matriz (ou malha)**: estrutura bidimensional com elementos organizados em **linhas** e **colunas**.\n- **Elementos/entradas**: valores nas posições da matriz. Cada elemento é identificado por **dois índices**: **i** (linha) e **j** (coluna).\n- **Representação**:\n  - Matriz por letra maiúscula: **A**, **B**.\n  - Elementos por letra minúscula com índices: **a_ij**, **b_ij**.\n  - Notação condensada: **A = (a_ij)** de ordem **m × n**.\n- **Ordem m × n**: \n  - m = número de linhas; n = número de colunas.\n  - Exemplos: 3 × 3, 2 × 2, 3 × 2, 1 × 1.\n- **Posição**:\n  - a_11: 1ª linha, 1ª coluna; a_12: 1ª linha, 2ª coluna; …; a_33: 3ª linha, 3ª coluna (em 3 × 3).\n  - Para **B** 2 × 2: b_11, b_12; b_21, b_22.\n\n> Dica de Prova\n> “Linhas depois colunas” sempre. Ordem, índices e leitura de posição caem muito.\n\n## 2. Como Funciona / Distinções\n- **Forma geométrica x Notação condensada**:\n  - Forma geométrica: escrita em “tabela”, com todas as entradas visíveis.\n  - Notação condensada: A = (a_ij), com ou sem uma **lei de formação** para calcular cada a_ij.\n- **Lei de formação**:\n  - Única: a_ij definido por uma única expressão (ex.: a_ij = i − j).\n  - Por casos (condicional): a_ij definido por regras diferentes conforme relação entre i e j (ex.: se i ≥ j, usa uma fórmula; se i < j, outra).\n\n> Dica de Prova\n> Em leis “por casos”, o ponto de corte (i = j) costuma entrar no caso “≥” ou “≤” conforme escrito. Se o enunciado disser “i ≥ j”, a diagonal (i = j) entra nesse caso.\n\n## 3. Aplicação Prática / Técnicas\n- **Leitura e montagem da estrutura**:\n  1) Identifique a **ordem m × n**.\n  2) Esboce a “tabela” listando as posições: a_11, a_12, …, a_mn.\n- **Cálculo por lei de formação**:\n  - Substitua i e j na fórmula dada para cada posição.\n  - Respeite a prioridade de operações (multiplicações antes de somas/subtrações).\n- **Fluxo para leis condicionais**:\n  1) Para cada (i, j), compare i e j.\n  2) Escolha a fórmula correta do caso.\n  3) Substitua i e j e calcule.\n- **Checklist rápido**:\n  - Ordem correta? (m linhas, n colunas)\n  - Posições listadas corretamente?\n  - Condição aplicada corretamente (i ≥ j ou i < j)?\n  - Operações na ordem certa?\n\n> Dica de Prova\n> Antes de calcular, escreva as quatro posições de uma 2 × 2 ou as seis de uma 3 × 2. Reduz erro de troca de índice.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 — Lei única:\n  - Dada A = (a_ij) de ordem 3 × 3 com a_ij = i − j:\n    - a_11 = 1 − 1 = 0\n    - a_12 = 1 − 2 = −1\n    - a_21 = 2 − 1 = 1\n    - … (proceda para todas as posições até a_33 = 3 − 3 = 0)\n\n- Exemplo 2 — Lei por casos (2 × 2):\n  - Se i ≥ j → a(i,j) = i + 2j; se i < j → a(i,j) = i − j\n  - a(1,1): 1 ≥ 1 → 1 + 2·1 = 3\n  - a(1,2): 1 < 2 → 1 − 2 = −1\n  - a(2,1): 2 ≥ 1 → 2 + 2·1 = 4\n  - a(2,2): 2 ≥ 2 → 2 + 2·2 = 6\n  - Resultado: A = [ [3, −1], [4, 6] ]\n\n- Exemplo 3 — Estrutura 3 × 2:\n  - A com 3 linhas e 2 colunas: posições a_11, a_12; a_21, a_22; a_31, a_32.\n  - Índices: i ∈ {1,2,3}, j ∈ {1,2}. Aplique a lei fornecida no enunciado (quando houver).\n\n> Dica de Prova\n> Em 3 × 2, existem 6 posições. Conte-as antes de começar para não “pular” nenhuma ao aplicar a lei.\n\n## 5. Pegadinhas e Erros Comuns\n- Inverter ordem m × n (trocar linhas por colunas).\n- Trocar índices i e j ao localizar a posição do elemento.\n- Ignorar a condição da lei por casos (ex.: aplicar i − j quando i ≥ j).\n- Esquecer que i = j pertence ao caso “i ≥ j” quando assim definido.\n- Errar a prioridade de operações: calcular 1 + 2·1 como (1 + 2)·1 em vez de 1 + (2·1).\n- Não listar previamente as posições, levando a omissões ou duplicações.\n- Confundir notação: matriz em maiúscula e elementos em minúscula com índices.\n\n> Dica de Prova\n> Substitua explicitamente i e j na lei de formação em cada posição e circule a condição usada (≥ ou <). Evita metade dos erros.",
+  "resumo_bolso": "# Matrizes - Conceitos\n\n---\n\n## 📌 Conceitos-Chave\n\n* Matriz m × n: arranjo bidimensional com m linhas e n colunas; lê-se “linhas antes de colunas”.\n* Elemento a_ij: valor na i-ésima linha e j-ésima coluna.\n* Notação: matriz em maiúscula (A, B); elementos em minúscula com índices (a_ij, b_ij).\n* Notação condensada: A = (a_ij) de ordem m × n; pode vir acompanhada de uma lei de formação.\n* Exemplos de posições: em 3 × 3 → a_11, a_12, …, a_33; em 2 × 2 para B → b_11, b_12; b_21, b_22.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Forma geométrica vs Notação condensada\n\n| Aspecto | Forma geométrica | Notação condensada |\n| --- | --- | --- |\n| Definição | Escrita em “tabela”, todas as entradas visíveis. | A = (a_ij), com ordem m × n e, quando houver, lei de formação. |\n\n### Lei única vs Lei por casos\n\n| Aspecto | Lei única | Lei por casos |\n| --- | --- | --- |\n| Definição | Uma expressão vale para todo (i, j), ex.: a_ij = i − j. | Expressões variam conforme relação entre i e j, ex.: se i ≥ j, uma fórmula; se i < j, outra. |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Ordem m × n\n- m = número de linhas; n = número de colunas.\n\n2. Localização de a_ij\n- a_ij está na i-ésima linha e j-ésima coluna.\n\n3. Notação condensada\n- A = (a_ij) de ordem m × n; pode ser acompanhada de lei de formação.\n\n4. Lei de formação única\n- a_ij definido por uma única expressão (ex.: a_ij = i − j).\n\n5. Lei de formação por casos\n- Regras diferentes conforme i e j (ex.: se i ≥ j, usa uma fórmula; se i < j, outra). Em enunciados com “i ≥ j”, a diagonal (i = j) entra nesse caso.\n\n6. Prioridade de operações\n- Multiplicações antes de somas/subtrações ao substituir i e j.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Inverter ordem m × n (trocar linhas por colunas).\n- Trocar i e j ao localizar a posição do elemento.\n- Ignorar a condição da lei por casos.\n- Esquecer que i = j pertence ao caso “i ≥ j” quando assim definido.\n- Errar a prioridade de operações ao calcular cada a_ij.\n\n---\n\n## 📋 Checklist Final\n\n* Ordem correta identificada? (m linhas, n colunas)\n* Posições listadas corretamente antes de calcular?\n* Condição aplicada corretamente na lei por casos (≥, ≤, <, >), incluindo a diagonal quando indicado?\n* Substituição de i e j feita sem trocas?\n* Prioridade de operações respeitada ao calcular cada a_ij?\n* Notação registrada como A = (a_ij) de ordem m × n?",
+  "mapa_mental": "# 🧮 Matrizes – Conceitos\n## 🎯 Visão Geral\n### 💡 Definição Matriz\n- Tabela bidimensional\n- Linhas e colunas\n- Elementos numéricos\n### 🔢 Elementos e Índices\n- Elementos a_ij\n- Índice i linha\n- Índice j coluna\n- Par ordenado (i,j)\n### 🧾 Representação Padrão\n- Matriz maiúscula\n- Elementos minúsculos\n- A = (a_ij)\n- Ordem m × n\n\n## 📊 Ordem e Posições\n### 🔢 Ordem m × n\n- m linhas\n- n colunas\n- Leitura m por n\n- Linhas antes colunas\n### 📍 Posição do Elemento\n- a_11 primeira posição\n- i linha correspondente\n- j coluna correspondente\n- Leitura linha coluna\n### 🧮 Contagem de Entradas\n- Total m·n\n- Matrizes quadradas\n- Matrizes retangulares\n- Matriz 1 × 1\n\n## 🧩 Formas de Escrita\n### 📐 Forma Geométrica\n- Disposição em tabela\n- Entradas visíveis\n- Organização por linhas\n- Organização por colunas\n### 🧾 Notação Condensada\n- A = (a_ij)\n- Indicação ordem\n- Intervalo índices i\n- Intervalo índices j\n### 📜 Lei de Formação\n- Fórmula para a_ij\n- Dependência i e j\n- Construção sistemática\n- Uso em provas\n\n## ⚙️ Leis de Formação\n### 🔢 Lei Única\n- Expressão única\n- Função de i\n- Função de j\n- Cálculo direto\n### 🔀 Lei por Casos\n- Condições i e j\n- Caso i ≥ j\n- Caso i < j\n- Ponto corte i = j\n### 📝 Procedimento Cálculo\n- Identificar ordem\n- Listar posições\n- Verificar condição\n- Substituir i e j\n- Respeitar operações\n\n## 🚨 Erros Frequentes\n### ⚠️ Índices e Ordem\n- Inverter m e n\n- Trocar i e j\n- Ler coluna antes linha\n- Confundir posição\n### ⚠️ Leis por Casos\n- Ignorar condição\n- Errar caso i = j\n- Aplicar fórmula errada\n- Não comparar índices\n### ⚠️ Operações Algébricas\n- Ordem operações\n- Soma antes produto\n- Erros de sinal\n- Cálculo apressado",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Fundamentos Matriciais",
+      "description": "Fundamentos Matriciais — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que é uma matriz em álgebra linear?",
+          "back": "Uma estrutura **bidimensional** onde todos os elementos são do mesmo tipo e cada elemento está associado a uma posição.",
+          "hint": "É uma estrutura de dados bidimensional",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Que relação existe entre os elementos de uma matriz?",
+          "back": "Cada elemento está associado a uma posição da matriz, sendo localizado por um número de linha e de coluna.",
+          "hint": "Pense em coordenadas cartesianas",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "elementos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Quais são os valores mínimos possíveis para linhas e colunas de uma matriz?",
+          "back": "Pelo menos uma linha e uma coluna.",
+          "hint": "Pense no limite inferior de contagem",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "dimensoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Como se indica a ordem de uma matriz?",
+          "back": "Por **m linhas por n colunas** ($m \\times n$).",
+          "hint": "Refere-se ao formato m por n",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "ordem"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Índices e Posições",
+      "description": "Índices e Posições — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual convenção define a leitura dos índices de uma entrada matricial?",
+          "back": "Primeiro as **linhas** e depois as **colunas**.",
+          "hint": "Siga a ordem alfabética dos eixos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "notacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como são nomeadas as entradas de uma matriz?",
+          "back": "Por **letras minúsculas**.",
+          "hint": "Pense na caixa das letras",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "notacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como são nomeadas as matrizes?",
+          "back": "Por **letras maiúsculas**.",
+          "hint": "Pense na caixa das letras",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "notacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Representações Matriciais",
+      "description": "Representações Matriciais — 3 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual é a diferença entre as formas geométrica e condensada de uma matriz?",
+          "back": "A forma geométrica apresenta a malha com todos os seus elementos dispostos, enquanto a forma condensada traz a notação matemática e a lei de formação da matriz.",
+          "hint": "Comparação entre representação visual e algébrica",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "representacao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-9",
+          "front": "O que caracteriza a forma geométrica de uma matriz?",
+          "back": "A disposição de uma estrutura bidimensional com linhas e colunas mostrando explicitamente seus elementos.",
+          "hint": "É a forma explícita de visualização",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "representacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "O que determina o valor de cada entrada em uma matriz condensada?",
+          "back": "Uma **lei de formação** (ou fórmula aritmética) baseada nos índices de linha e coluna.",
+          "hint": "É a regra matemática aplicada",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "lei-formacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em álgebra linear, uma matriz é uma estrutura bidimensional composta por elementos organizados em linhas e colunas. Qual é a convenção utilizada para representar a ordem de uma matriz?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número total de elementos dividido pelo número de linhas",
+          "correct": false,
+          "explanation": "Incorreta. O número total de elementos dividido pelo número de linhas resultaria no número de colunas, mas não representa a ordem completa da matriz, que é uma descrição de suas dimensões (linhas por colunas)."
+        },
+        {
+          "id": "b",
+          "text": "O número de diagonais seguido pelo número de elementos não nulos",
+          "correct": false,
+          "explanation": "Incorreta. O número de diagonais e a contagem de elementos não nulos são características específicas de certos tipos de matrizes ou de suas propriedades, mas não definem a ordem fundamental da matriz, que se refere à sua dimensão geral."
+        },
+        {
+          "id": "c",
+          "text": "O número de colunas seguido pelo número de linhas, separados por vírgula",
+          "correct": false,
+          "explanation": "Incorreta. A convenção padrão em álgebra linear para a ordem de uma matriz é o número de linhas seguido pelo número de colunas. Inverter essa ordem resultaria em uma representação ambígua ou incorreta da estrutura da matriz."
+        },
+        {
+          "id": "d",
+          "text": "O número de linhas seguido pelo número de colunas, separados por multiplicação",
+          "correct": true,
+          "explanation": "Correta. A ordem de uma matriz é tradicionalmente expressa como o número de linhas (m) multiplicado pelo número de colunas (n), denotado como m × n. Essa notação indica a dimensão da estrutura bidimensional da matriz."
+        }
+      ],
+      "explanation": "Correta. A ordem de uma matriz é tradicionalmente expressa como o número de linhas (m) multiplicado pelo número de colunas (n), denotado como m × n. Essa notação indica a dimensão da estrutura bidimensional da matriz.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Na notação matricial, existe uma convenção para diferenciar a representação da matriz como um todo e seus elementos individuais. Como são representados, respectivamente, a matriz e seus elementos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz é representada por letra minúscula e seus elementos por letras maiúsculas",
+          "correct": false,
+          "explanation": "Incorreta. A convenção estabelecida em matemática para matrizes é o oposto: a matriz como um todo é representada por uma letra maiúscula, e seus elementos individuais são representados por letras minúsculas."
+        },
+        {
+          "id": "b",
+          "text": "A matriz é representada por letra maiúscula e seus elementos por letras minúsculas",
+          "correct": true,
+          "explanation": "Correta. Em álgebra linear, a matriz como um todo é geralmente denotada por uma letra maiúscula (ex: A, B, C), enquanto seus elementos individuais são representados por letras minúsculas com índices que indicam sua posição (ex: a_ij, b_kl)."
+        },
+        {
+          "id": "c",
+          "text": "A matriz é representada por símbolo grego e seus elementos por letras latinas",
+          "correct": false,
+          "explanation": "Incorreta. Não há uma convenção geral que utilize símbolos gregos para representar a matriz e letras latinas para seus elementos. A padronização é com letras latinas maiúsculas para a matriz e minúsculas para os elementos."
+        },
+        {
+          "id": "d",
+          "text": "Tanto a matriz quanto seus elementos são representados por letras maiúsculas com índices diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Embora a matriz e seus elementos tenham índices, a distinção entre maiúsculas e minúsculas é crucial para diferenciar a entidade matricial do seu conteúdo individual. Usar apenas maiúsculas para ambos pode gerar confusão."
+        }
+      ],
+      "explanation": "Correta. Em álgebra linear, a matriz como um todo é geralmente denotada por uma letra maiúscula (ex: A, B, C), enquanto seus elementos individuais são representados por letras minúsculas com índices que indicam sua posição (ex: a_ij, b_kl).",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Considere um elemento genérico de uma matriz representado por a_ij. O que os índices i e j indicam sobre a posição desse elemento?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O índice i indica o valor do elemento e o índice j indica sua ordem de grandeza",
+          "correct": false,
+          "explanation": "Incorreta. Os índices i e j são indicadores de posição (endereçamento) dentro da matriz, e não representam o valor do elemento ou sua ordem de grandeza. O valor do elemento é o próprio a_ij."
+        },
+        {
+          "id": "b",
+          "text": "O índice i indica a coluna e o índice j indica a linha onde o elemento está localizado",
+          "correct": false,
+          "explanation": "Incorreta. A convenção padrão para os índices de um elemento a_ij em uma matriz é que o primeiro índice (i) se refere à linha e o segundo índice (j) se refere à coluna. Inverter essa ordem é um erro comum."
+        },
+        {
+          "id": "c",
+          "text": "O índice i indica a linha e o índice j indica a coluna onde o elemento está localizado",
+          "correct": true,
+          "explanation": "Correta. Em notação matricial, o índice 'i' sempre indica a linha em que o elemento está localizado, e o índice 'j' sempre indica a coluna. Assim, a_ij representa o elemento na i-ésima linha e j-ésima coluna da matriz."
+        },
+        {
+          "id": "d",
+          "text": "Ambos os índices indicam a distância do elemento em relação à diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. Os índices i e j indicam a posição absoluta do elemento na matriz (linha e coluna), e não sua distância em relação à diagonal principal, que é uma propriedade específica de matrizes quadradas."
+        }
+      ],
+      "explanation": "Correta. Em notação matricial, o índice 'i' sempre indica a linha em que o elemento está localizado, e o índice 'j' sempre indica a coluna. Assim, a_ij representa o elemento na i-ésima linha e j-ésima coluna da matriz.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Uma matriz pode ser apresentada de diferentes formas. Qual é a principal característica da forma geométrica de representação de uma matriz?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os elementos são listados em sequência linear com separadores indicando mudanças de linha",
+          "correct": false,
+          "explanation": "Incorreta. A listagem de elementos em sequência linear com separadores pode ser uma forma de representação vetorial ou de armazenamento de dados, mas não a forma geométrica típica de uma matriz, que enfatiza a estrutura bidimensional."
+        },
+        {
+          "id": "b",
+          "text": "Os elementos são apresentados visualmente organizados em linhas e colunas delimitadas por colchetes ou parênteses",
+          "correct": true,
+          "explanation": "Correta. A forma geométrica de representação de uma matriz é a visualização direta de seus elementos organizados em uma grade retangular de linhas e colunas, geralmente delimitada por colchetes [ ] ou parênteses ( )."
+        },
+        {
+          "id": "c",
+          "text": "Os elementos são descritos apenas por meio de uma fórmula algébrica sem representação visual",
+          "correct": false,
+          "explanation": "Incorreta. A descrição dos elementos por meio de uma fórmula algébrica é característica da notação condensada ou de uma lei de formação, e não da representação geométrica, que é visual."
+        },
+        {
+          "id": "d",
+          "text": "Os elementos são representados por coordenadas cartesianas em um plano bidimensional",
+          "correct": false,
+          "explanation": "Incorreta. A representação por coordenadas cartesianas é utilizada para pontos em um plano ou espaço, mas não é a forma padrão para exibir uma matriz em álgebra linear. A matriz em si é uma organização de números, não um conjunto de pontos graficados."
+        }
+      ],
+      "explanation": "Correta. A forma geométrica de representação de uma matriz é a visualização direta de seus elementos organizados em uma grade retangular de linhas e colunas, geralmente delimitada por colchetes [ ] ou parênteses ( ).",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "A notação condensada é uma forma alternativa de representar matrizes. Quando uma matriz A de ordem m×n é apresentada na forma A = (a_ij)_m×n, o que essa notação está indicando?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Que a matriz possui elementos a_ij distribuídos em m colunas e n linhas, com valores predeterminados",
+          "correct": false,
+          "explanation": "Incorreta. A ordem m×n indica m linhas e n colunas, não o contrário. Além disso, a notação condensada apenas define a estrutura e os elementos, não necessariamente que os valores são predeterminados; eles podem ser definidos por uma regra."
+        },
+        {
+          "id": "b",
+          "text": "Que a matriz possui apenas elementos nulos exceto nas posições indicadas por m e n",
+          "correct": false,
+          "explanation": "Incorreta. A notação condensada não implica que a matriz possui apenas elementos nulos. Ela é uma forma genérica de descrever a matriz e seus elementos, independentemente de seus valores serem nulos ou não."
+        },
+        {
+          "id": "c",
+          "text": "Que a matriz possui elementos a_ij distribuídos em m linhas e n colunas, cuja determinação pode depender de uma lei de formação",
+          "correct": true,
+          "explanation": "Correta. A notação condensada A = (a_ij)_m×n indica que a matriz A tem m linhas e n colunas, e que cada elemento a_ij está localizado na i-ésima linha e j-ésima coluna. A determinação do valor de cada a_ij pode ser dada por uma lei de formação ou regra específica."
+        },
+        {
+          "id": "d",
+          "text": "Que a matriz é resultado da multiplicação de m elementos por n elementos em sequência",
+          "correct": false,
+          "explanation": "Incorreta. A notação m×n refere-se às dimensões da matriz (linhas por colunas), e não a uma operação de multiplicação de elementos. A matriz é uma estrutura, não um produto simples de quantidades."
+        }
+      ],
+      "explanation": "Correta. A notação condensada A = (a_ij)_m×n indica que a matriz A tem m linhas e n colunas, e que cada elemento a_ij está localizado na i-ésima linha e j-ésima coluna. A determinação do valor de cada a_ij pode ser dada por uma lei de formação ou regra específica.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Uma matriz B de ordem 2×2 é definida pela lei de formação b_ij = i - j. Qual é o valor do elemento b_21?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O elemento b_21 tem valor 3, pois está na segunda linha e primeira coluna, resultando em 2 + 1",
+          "correct": false,
+          "explanation": "Incorreta. A lei de formação especificada é b_ij = i - j, e não b_ij = i + j. Se fosse i + j, o resultado seria 2 + 1 = 3, mas a fórmula dada é de subtração, não de adição."
+        },
+        {
+          "id": "b",
+          "text": "O elemento b_21 tem valor 0, pois está na segunda linha e primeira coluna, resultando em 1 - 1",
+          "correct": false,
+          "explanation": "Incorreta. O elemento b_21 indica que i=2 e j=1. Aplicando a lei de formação b_ij = i - j, teríamos 2 - 1 = 1, e não 0. O valor 0 seria obtido se i e j fossem iguais, como em b_11 ou b_22."
+        },
+        {
+          "id": "c",
+          "text": "O elemento b_21 tem valor -1, pois está na segunda linha e primeira coluna, resultando em 2 - 1",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo do elemento b_21 utilizando a lei de formação b_ij = i - j resultaria em 2 - 1 = 1, não -1. A alternativa apresenta o cálculo correto da posição, mas o resultado final está incorreto."
+        },
+        {
+          "id": "d",
+          "text": "O elemento b_21 tem valor 1, pois está na segunda linha e primeira coluna, resultando em 2 - 1",
+          "correct": true,
+          "explanation": "Correta. Para determinar o valor do elemento b_21 em uma matriz definida pela lei de formação b_ij = i - j, substituímos os valores de i (linha) e j (coluna) na fórmula. O elemento b_21 está na segunda linha (i=2) e na primeira coluna (j=1). Assim, b_21 = 2 - 1 = 1."
+        }
+      ],
+      "explanation": "Correta. Para determinar o valor do elemento b_21 em uma matriz definida pela lei de formação b_ij = i - j, substituímos os valores de i (linha) e j (coluna) na fórmula. O elemento b_21 está na segunda linha (i=2) e na primeira coluna (j=1). Assim, b_21 = 2 - 1 = 1.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Uma matriz pode ter ordem 1×1, contendo apenas um elemento. Qual é a restrição mínima para a existência de uma matriz válida?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz deve ter pelo menos uma linha e uma coluna, sendo m ≥ 1 e n ≥ 1",
+          "correct": true,
+          "explanation": "Correta. Para que uma matriz seja válida, ela deve ter pelo menos uma linha e uma coluna. Isso significa que o número de linhas (m) deve ser maior ou igual a 1 (m ≥ 1) e o número de colunas (n) também deve ser maior ou igual a 1 (n ≥ 1). Uma matriz 1x1, por exemplo, que contém apenas um elemento, é perfeitamente válida."
+        },
+        {
+          "id": "b",
+          "text": "A matriz deve ter número igual de linhas e colunas para manter a propriedade de bidimensionalidade",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz não precisa ter o mesmo número de linhas e colunas para ser considerada bidimensional. Matrizes retangulares, onde o número de linhas é diferente do número de colunas (por exemplo, 2x3 ou 3x2), são estruturas bidimensionais válidas e amplamente utilizadas em matemática e suas aplicações."
+        },
+        {
+          "id": "c",
+          "text": "A matriz deve ter no mínimo duas linhas e duas colunas para ser considerada uma estrutura bidimensional válida",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz não precisa ter no mínimo duas linhas e duas colunas para ser válida. Existem matrizes de uma única linha ou uma única coluna, como a matriz linha ou a matriz coluna, e até mesmo matrizes 1x1."
+        },
+        {
+          "id": "d",
+          "text": "A matriz deve ter no mínimo três elementos distribuídos em pelo menos duas dimensões",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma restrição de que uma matriz deva ter no mínimo três elementos. Uma matriz 1x1, por exemplo, possui apenas um elemento e é uma matriz válida. A definição fundamental está na organização dos elementos em linhas e colunas, com a restrição mínima de pelo menos uma linha e uma coluna."
+        }
+      ],
+      "explanation": "Correta. Para que uma matriz seja válida, ela deve ter pelo menos uma linha e uma coluna. Isso significa que o número de linhas (m) deve ser maior ou igual a 1 (m ≥ 1) e o número de colunas (n) também deve ser maior ou igual a 1 (n ≥ 1). Uma matriz 1x1, por exemplo, que contém apenas um elemento, é perfeitamente válida.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Na construção de uma matriz a partir de notação condensada com lei de formação condicional, qual é o procedimento correto para determinar qual fórmula aplicar a cada elemento?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se avaliar os índices i e j de cada elemento específico e verificar qual condição é satisfeita antes de aplicar a fórmula correspondente",
+          "correct": true,
+          "explanation": "Correta. Em uma lei de formação condicional, o procedimento correto é analisar os índices 'i' (linha) e 'j' (coluna) de cada elemento específico da matriz. Com base nesses valores, verifica-se qual das condições estabelecidas na lei de formação é satisfeita, e então aplica-se a fórmula correspondente a essa condição para calcular o valor do elemento."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se aplicar sempre a primeira condição apresentada e verificar posteriormente se o resultado é coerente com a estrutura da matriz",
+          "correct": false,
+          "explanation": "Incorreta. Aplicar sempre a primeira condição sem verificar a validade pode levar a resultados incorretos, pois a lei de formação condicional exige que cada condição seja testada individualmente para cada elemento. A coerência com a estrutura só pode ser verificada após a aplicação correta da regra."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se aplicar alternadamente as fórmulas condicionais seguindo a ordem de preenchimento dos elementos da esquerda para direita",
+          "correct": false,
+          "explanation": "Incorreta. A aplicação alternada das fórmulas condicionais sem considerar os índices 'i' e 'j' de cada elemento não segue a lógica da lei de formação condicional. A escolha da fórmula é determinada pela relação entre 'i' e 'j' para aquele elemento específico, e não por uma ordem sequencial de preenchimento."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se calcular a média aritmética das duas fórmulas condicionais e aplicar o resultado a todos os elementos indistintamente",
+          "correct": false,
+          "explanation": "Incorreta. Calcular a média aritmética das fórmulas condicionais é um procedimento matematicamente incorreto para a construção de matrizes com leis de formação condicionais. Cada elemento deve seguir estritamente uma das condições e sua respectiva fórmula, não uma combinação delas."
+        }
+      ],
+      "explanation": "Correta. Em uma lei de formação condicional, o procedimento correto é analisar os índices 'i' (linha) e 'j' (coluna) de cada elemento específico da matriz. Com base nesses valores, verifica-se qual das condições estabelecidas na lei de formação é satisfeita, e então aplica-se a fórmula correspondente a essa condição para calcular o valor do elemento.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_331265_Matrizes - Conceitos.pdf",
+  "coletado_em": "2026-09-23T20:59:14"
+}

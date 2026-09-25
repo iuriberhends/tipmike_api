@@ -1,0 +1,795 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 8,
+  "ordem_no_curso": "8.00",
+  "titulo": "Windows 10 III",
+  "codigo_aula": "253597",
+  "video_id": "93r62dg7w9I=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:28:51",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/93r62dg7w9I%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405101&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Windows 10 III\n\n## Continuação do tema e opções de desligamento\nEntão, continuando nossa linha do Windows 10. Nós vimos as opções para desligar, reiniciar, suspender e hibernar. Gravem as diferenças entre elas. Só reforçando o que acabamos de ver no bloco anterior: é muito importante você conhecer cada uma dessas opções.\n\nVolta e meia você vai se deparar com questões, principalmente sobre suspender e hibernar. Essencialmente, essas duas funções são muito cobradas.\n\n## Pesquisa Instantânea na barra de tarefas\nDando continuidade, nós temos a Pesquisa Instantânea. Se você reparou lá embaixo, na barra de tarefas, eu destaquei um pedaço e trouxe aproximado. Você repara que temos o botão Iniciar, com o logotipo do Windows, depois a barra para fazer a pesquisa, e aquele botãozinho que vamos ver depois, junto com a visualização de tarefas. Ao fazer uma pesquisa, ela é dinâmica.\n\nComo assim dinâmica? Conforme eu vou digitando um termo, começando uma palavra, ele vai trazendo possíveis resultados. Pode ser que você não encontre de cara o que quer, então veja que os resultados são separados por categorias. Ele traz a melhor correspondência para aquilo que estou digitando. Ali embaixo, você vê que ele já vai trazendo automaticamente sugestões de continuidade do que estou escrevendo.\n\nEle separa por categorias: aplicativos, documentos e também a opção de “pesquisar na web”. E aqui vem uma ênfase importante: quando a pesquisa for feita na web, não é no que está na máquina.\n\n> 🎯 Dicas de prova: A pesquisa feita pela barra do Windows 10, quando vai para a web, sempre será feita no navegador Microsoft Edge e usando o motor de buscas Bing, mesmo que você tenha alterado o navegador padrão para outro (como Chrome ou Firefox) e trocado o motor de busca dentro do Edge.\n\nGravem isso. Se você fizer essas alterações, vai perceber que, usando a busca do Windows, ele vai abrir o Edge e usar o Bing. É assim mesmo.\n\nConforme eu digito, a busca é dinâmica e vai trazendo possíveis resultados.\n\n## Cortana: assistente digital\nAinda sobre a Pesquisa Instantânea, tem a opção de fazer uma busca usando a assistente digital, a Cortana. Eu posso chamá-la por voz, ativar comandos de voz, caso eu queira, ou fazer a busca normal digitando.\n\nA Cortana pode me ajudar, por exemplo, a abrir um aplicativo: “Abra tal aplicativo”. Posso agendar uma tarefa: “Agende reunião amanhã às 10 horas”. Ela vai gravar na minha agenda padrão, no Outlook, por exemplo.\n\n💬 História: Eu uso bastante assistente de voz porque estou treinando outro idioma. Deixo meu celular nesse idioma e treino comandos simples: acionar alarmes, pedir a hora, perguntar o que está agendado hoje na agenda e assim por diante.\n\nA Cortana faz esse papel também. Além disso, faz pesquisas na internet. Se não for algo que está no computador que ela entenda, ela vai pesquisar direto usando aquilo que falei sobre o Edge e o Bing, e vai trazer as respostas.\n\nSobre habilitar o botão da Cortana: por padrão, pode não aparecer na barra de tarefas. O que eu fiz? Clico com o botão direito na barra e marco “Mostrar botão Cortana”. Aí aparece o ícone da Cortana ali embaixo. Esse detalhe costuma cair em prova: às vezes colocam a imagem e dizem que aquele botão é para abrir o navegador. Não é. Esse botão é para interagir com a Cortana. Fiquem atentos.\n\n> 🎯 Dicas de prova: “Mostrar botão Cortana” é habilitado com o botão direito na barra de tarefas. O ícone serve para interagir com a Cortana, não para abrir navegador.\n\nComo eu disse, detalhes fazem diferença na prova. A Cortana fica “escutando” (se configurado) e sugere o que pode fazer, como “crie um lembrete para as 8 da manhã”. Se ela não encontrar algo local, pesquisa direto na web usando Edge + Bing.\n\n## Questão sobre “Enviar para” no Explorador\nQuestão típica: “Ao utilizar o recurso Enviar para, disponível a partir do clique com o botão direito do mouse sobre uma pasta no Windows 10 Pro em português e selecionar a área de trabalho, o comportamento padrão é…”. Muita gente brinca comigo quando eu falo “padrão por padrão”, mas está aqui nas questões.\n\nLembra do que mostrei no bloco anterior? Com o botão direito na área de trabalho (em local sem ícone) aparecem opções específicas. Dentro de “Enviar para”, quando escolho “Área de trabalho”, aparece no menu “Área de trabalho (criar atalho)”.\n\n> 🎯 Dicas de prova: Enviar para > Área de trabalho cria um atalho para a pasta. Não move, não copia a pasta, e não compacta. O texto do menu costuma aparecer como “Área de trabalho (criar atalho)”.\n\n## Prompt de comando e comandos\nOutra questão: “No Windows 10, um usuário foi orientado a abrir o Prompt de Comando digitando um comando no campo de busca e pressionando Enter. Qual comando deverá ser digitado?”. Algumas alternativas incorretas aparecem, como “msconfig” (que existe, mas não é o prompt) e outras. O que nos interessa aqui é entender o conceito de Shell.\n\nShell é uma classe de programas que interpreta comandos. No Windows, o Prompt de Comando (cmd) e o PowerShell são exemplos de Shell. Não confunda com “kernel” (núcleo do sistema). O kernel é como se fosse o motor do carro; sem Shell você não interage diretamente.\n\nShell é uma interface não gráfica. Aquela “tela preta com letras brancas” onde digitamos comandos (copiar, apagar, criar pasta, listar diretório etc.). Não é comum bancas cobrarem listagens extensas de comandos do cmd ou do PowerShell. Pode cair? Pode, mas é raríssimo. Priorize o que cai mais.\n\n## Questão: Hibernar x Desligar\nOutra questão: “Hibernar e Desligar são opções de desligamento do Windows 10.” Verdade. E qual a diferença prática?\n\nQuando eu uso Hibernar, antes de desligar o computador ele salva tudo que está aberto e então desliga. Ao ligar novamente, volta tudo do jeito que estava. Quando eu uso Desligar, ele fecha os programas (pode perguntar se quero salvar algo) e desliga. Ao ligar, não volta o estado anterior.\n\nAmbas poupam energia porque o computador fica desligado. Não tem mistério: desligou, não está gastando.\n\n## Questão: O que é a Cortana\nConsiderando o Windows 10 em português, instalação padrão: Cortana se refere ao assistente digital da Microsoft. Não é tecnologia de acesso à internet em alta velocidade, não é antivírus, não é um novo navegador. O novo navegador é o Edge (e o antigo era o Internet Explorer, que está sendo descontinuado em várias versões).\n\n## Ícones fixados na barra de tarefas\nNa barra de tarefas do Windows 10, podem ser colocados ícones dos aplicativos usados com frequência, agilizando sua abertura.\n\nComo fixar um aplicativo que está no menu Iniciar? Clique nele, depois “Mais” e então “Fixar na barra de tarefas”. Essa é a sequência.\n\n> 🎯 Dicas de prova: Menu Iniciar > botão direito no aplicativo > Mais > Fixar na barra de tarefas.\n\nMuita coisa que eu mostro aqui parece trivial à primeira vista, mas as questões cobram esses detalhes. O objetivo de resolver questões junto com a aula é exatamente mostrar a necessidade de saber esses caminhos sem neurose, focando no que a banca cobra.\n\nDicas de estudo: quando a banca é definida, foque no estilo dela ao longo do tempo, inclusive versões anteriores. Não ande num trilho estreito, mas também não se perca olhando para todos os lados. Resolva exercícios. Se surgir algo que não falei em aula, mande no fórum de dúvidas. Estou aqui para te ajudar.\n\n## Explorador de Arquivos (Windows Explorer)\nAgora vamos falar de um dos programas do Windows. O Windows é um sistema operacional constituído por vários softwares. O Explorador de Arquivos (antes Windows Explorer) é um desses programas.\n\nO que ele faz? Permite explorar e gerenciar arquivos. Apagar, renomear, mover de uma pasta para outra, criar pastas, criar arquivos e por aí vai. Também permite mapear unidades de rede.\n\nMapear unidade de rede, tecnicamente, é criar um atalho com letra de unidade para uma pasta compartilhada na rede. Exemplo: na sua casa há dois computadores na mesma rede; você precisa acessar uma pasta compartilhada no outro. Em vez de navegar toda vez, você mapeia a pasta, atribui uma letra (como Z:) e acessa direto.\n\n> 🎯 Dicas de prova: O Explorador de Arquivos gerencia arquivos locais e de rede. Não se limita ao que está na máquina.\n\nConectou um pendrive? Você gerencia pelo Explorador: copiar, apagar, mover. Vamos aos detalhes mais importantes.\n\n## Acesso Rápido\nVeja o ícone de estrelinha: Acesso Rápido. Ele lista pastas usadas com frequência e, abaixo, arquivos recentes (os últimos 20; ao ultrapassar, substitui os mais antigos).\n\nVocê pode fixar pastas manualmente no Acesso Rápido. Não depende só de frequência de uso. Acesse a pasta, botão direito e fixe em Acesso Rápido.\n\nTambém é possível não exibir pastas frequentes nem itens recentes, ajustando as opções.\n\nNo menu Arquivo do Explorador, temos opções como abrir nova janela, abrir Prompt de Comando, abrir PowerShell, alterar opções de pasta e pesquisa, ajuda e fechar. Não precisa decorar tudo à primeira vista; observe o que sua banca costuma cobrar.\n\nReforce seu estudo olhando o que é mais frequente: atalhos, funcionalidades (copiar, recortar, colar), Cortana, Acesso Rápido, layout de exibição etc.\n\n## Guias do Explorador: Início, Compartilhar e Exibir\nSeparei as guias para você acompanhar.\n\n- Guia Início: copiar, recortar, colar, fixar no Acesso Rápido, mover para, renomear, nova pasta/novo item, propriedades, histórico de versões (se ativado), e opções de seleção. Um atalho interessante é “Copiar caminho” do arquivo/pasta, útil quando você precisa do caminho absoluto (C:\\Usuários\\SeuNome\\Documentos\\...).\n\n- Guia Compartilhar: enviar por e-mail, compactar, imprimir, gravar em disco (se houver gravador), enviar por fax, compartilhar entre usuários da máquina ou em rede, definir/remover permissões e acesso.\n\n- Guia Exibir: painel de navegação (à esquerda), painel de visualização (pré-visualização à direita), e layout de exibição.\n\nSobre layout, nomes que já vi em prova:\n- Ícones extra grandes\n- Ícones grandes\n- Ícones médios\n- Ícones pequenos\n- Lista\n- Detalhes\n- Blocos\n- Conteúdo\n\n> 🎯 Dicas de prova: Saiba identificar e nomear os modos de exibição (layout) na guia Exibir.\n\n## Mostrar/Ocultar e itens ocultos\nEm Exibir > Mostrar/ocultar, destaque para “Itens ocultos”. Clicando com o botão direito em um arquivo ou pasta, em Propriedades, você pode marcar o atributo “Oculto”. Se fizer isso em uma pasta, o sistema pode perguntar se quer ocultar também todo o conteúdo.\n\nEnquanto a opção “Itens ocultos” estiver desmarcada, esses itens não aparecem. É uma forma simples de impedir que um usuário menos experiente apague algo importante. Usuário avançado, sabendo da opção, marca “Itens ocultos” e os visualiza normalmente. Ou seja, não é um “esconderijo” de segurança.\n\nEm seleções de “Selecionar tudo”, se “Itens ocultos” estiver desmarcado, os arquivos ocultos não entram na seleção e não seriam apagados com uma exclusão em massa, por exemplo.\n\nOutra forma prática é a opção “Ocultar itens selecionados”, que aplica o atributo oculto sem precisar ir em Propriedades.\n\n## Encerramento do bloco\nPastas e diretórios são sinônimos no contexto do Windows. Eu vou deixar esse conteúdo exatamente a partir daqui para o próximo bloco. Encerramos este bloco e já já voltamos para continuar exatamente neste ponto.",
+  "transcricao_meta": {
+    "title": "Windows 10 III",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 39064,
+    "createdAt": "2026-02-04T21:07:54.098Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda recursos do Windows 10 focados em prova: pesquisa instantânea e Cortana, barra de tarefas, Explorador de Arquivos (Início, Compartilhar, Exibir), Acesso Rápido, caminhos (absoluto/“copiar o caminho”), mapeamento de unidade de rede, criação de atalhos e opções de energia (Hibernar vs Desligar).\nPrincipais pontos: \n- A pesquisa do Windows 10 abre no Edge com Bing, independentemente do navegador padrão.\n- No Explorador, várias ações exigem item selecionado e há dependências como “Histórico” e unidade gravadora.\n- Hibernar preserva o estado; Desligar não.\n\n## 1. Base / Conceitos Fundamentais\n- Windows 10 (“Windows dez”): sistema operacional com foco em produtividade via barra de tarefas, menu iniciar, pesquisa instantânea e Explorador de Arquivos.\n- Barra de tarefas: área com ícones, botão iniciar, campo de pesquisa e opção de mostrar o botão da Cortana.\n- Pesquisa instantânea: resultados aparecem conforme digita (apps, documentos, web).\n- Cortana: assistente digital da Microsoft integrada à pesquisa.\n- Explorador de Arquivos (Windows Explorer): gerenciador de arquivos/pastas locais e de rede.\n- Acesso Rápido: exibe locais frequentes e arquivos recentes (até vinte).\n- Caminho absoluto: inicia na raiz da unidade (ex.: C:\\Usuários\\Gefferson\\Documentos).\n- Unidade de rede/mapear unidade: atribuir letra/atalho a pastas compartilhadas em rede.\n- Atributo “oculto”: marca itens para não aparecerem quando “Itens ocultos” está desmarcado.\n- Opções de energia: Hibernar, Desligar, Suspender (menção). Foco da prova: Hibernar vs Desligar.\n\n## 2. Como Funciona / Distinções\n- Pesquisa do Windows vs navegador padrão:\n  - Ao pesquisar pela barra/Start, a abertura da web é sempre no Edge com Bing.\n  - Trocar o navegador padrão para Google Chrome ou Firefox, ou trocar o motor de buscas dentro do Edge, não muda esse comportamento.\n- Cortana vs navegador/antivírus:\n  - Cortana é assistente digital; não é navegador, não é antivírus (Windows Defender é o antivírus nativo).\n- Explorador: local vs rede\n  - Gerencia arquivos locais, em pendrive e em pastas compartilhadas (rede). Não é limitado a “arquivos locais”.\n- Acesso Rápido: automáticos vs fixados\n  - Automático: locais frequentes/arquivos recentes (até vinte, substituindo os mais antigos).\n  - Manual: pode “fixar pasta atual em acesso rápido” (independe do uso).\n- Hibernar vs Desligar:\n  - Hibernar: salva o estado (programas/arquivos abertos) no disco e desliga; ao ligar, volta igual; não consome energia enquanto hibernado.\n  - Desligar: fecha programas (pode perguntar para salvar) e desliga; ao ligar, inicia limpo; não preserva o estado.\n- Itens ocultos vs segurança:\n  - Ocultar afeta visibilidade, não segurança; “Selecionar todos” não inclui ocultos quando invisíveis.\n\n## 3. Aplicação Prática / Técnicas\n- Fixar aplicativos na barra de tarefas:\n  - Menu iniciar > botão direito no app > “fixar na barra de tarefas”.\n- Mostrar o botão da Cortana:\n  - Barra de tarefas > botão direito > marcar “mostrar o botão Cortana”.\n- Pesquisa instantânea:\n  - Digite no campo da barra de tarefas; resultados por categoria aparecem dinamicamente; abrirá o Edge com Bing para resultados web.\n- Criar atalho na área de trabalho:\n  - Explorador > botão direito sobre pasta > Enviar para > Área de trabalho (criar atalhos).\n  - Na área de trabalho, algumas opções de contexto só aparecem ao clicar em área vazia.\n- Acesso Rápido:\n  - Acessar a pasta > botão direito > “fixa pasta atual em acesso rápido”.\n  - Para “copiar o caminho”: selecione o item > “Copiar o caminho”.\n- Operações na Guia Início:\n  - Transferência: copiar, recortar, colar, mover para.\n  - Organizar: renomear.\n  - Novo: nova pasta, novo item.\n  - Abrir: abrir, propriedades, editar (quando aplicável), histórico (requer Histórico de Arquivos ativado).\n  - Opções de seleção: selecionar todos etc.\n- Compartilhar:\n  - Enviar por e-mail, compactar, imprimir, gravar disco (exige unidade gravadora), via fax.\n  - Compartilhar/remover acesso; “Segurança avançada” para permissões detalhadas.\n- Exibir:\n  - Painel de navegação e de visualização.\n  - Layouts: Detalhes, Conteúdo, Ícones pequenos/médios/grandes/extra grandes.\n  - Mostrar/Ocultar: “Itens ocultos” e “Ocultar itens selecionados”.\n- Ocultar itens:\n  - Botão direito > Propriedades > marcar atributo “oculto”.\n  - Em pastas: escolher aplicar a toda a pasta e conteúdo.\n  - Com “Itens ocultos” desmarcado: itens somem; não são selecionados por “Selecionar todos”.\n- Mapear unidade de rede:\n  - Explorador > mapear unidade de rede > escolher letra e caminho da pasta compartilhada.\n\n## 4. Exemplos e Casos Resolvidos\n- Pesquisa abre no Edge com Bing:\n  - Cenário: navegador padrão definido como Google Chrome. A digitar “C: dois pontos” ou app na pesquisa, resultados web abrem no Edge com Bing. Mesmo alterando o motor dentro do Edge, a busca do Windows permanece Edge + Bing.\n- “Enviar para > Área de trabalho (criar atalhos)”:\n  - Ao clicar em “Enviar para ... área de trabalho (criar atalhos)”, cria-se um atalho da pasta. Não move nem copia o conteúdo.\n- Acesso Rápido com fixação manual:\n  - Mesmo sem uso frequente, acesse a pasta “C:\\Usuários\\Gefferson\\Documentos” > botão direito > “fixa pasta atual em acesso rápido” para fixá-la.\n- Ocultar e exclusão em massa:\n  - Com “Itens ocultos” desmarcado, o comando “Selecionar todos” não seleciona os ocultos. Ao excluir, os ocultos permanecem.\n- Hibernar vs Desligar:\n  - Hibernar: estava editando arquivo; ao hibernar, tudo volta exatamente como antes ao ligar.\n  - Desligar: ao desligar, o sistema fecha programas (pode pedir para salvar); ao ligar, nada é restaurado.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova: Pesquisa do Windows 10 abre a web sempre no Edge com Bing, mesmo com navegador padrão alterado ou com motor trocado dentro do Edge.\n\n> Dica de prova: “Cortana = antivírus” (Windows Defender) ou “Cortana = novo navegador” é falso. Cortana é assistente digital.\n\n> Dica de prova: Explorador gerencia também arquivos em rede (pastas compartilhadas, unidade de rede), não só locais.\n\n> Dica de prova: “Acesso rápido depende apenas do uso” é falso; é possível fixar pastas manualmente.\n\n> Dica de prova: “Área de trabalho (criar atalhos)” cria atalho. Não move nem copia.\n\n> Dica de prova: “Histórico” na Guia Início só aparece/funciona se o Histórico de Arquivos estiver ativado.\n\n> Dica de prova: “Gravar disco” exige unidade gravadora; se não houver, a opção pode estar ausente/inativa.\n\n> Dica de prova: Itens ocultos não são selecionados por “Selecionar todos” quando invisíveis.\n\n> Dica de prova: Hibernar salva estado e volta igual; Desligar não salva o estado. Ambos deixam a máquina sem consumo (desligada).\n\n> Dica de prova (enunciado literal): “Na barra de tarefas do Windows dez, podem ser colocados os ícones dos aplicativos utilizados com a frequência, agilizando-se a abertura desses aplicativos quando necessário.” Verdadeiro.\n\n## Tabela de Comparações Essenciais\n- Pesquisa do Windows vs Navegador padrão\n  - Pesquisa do Windows: Edge + Bing (fixo em prova).\n  - Navegador padrão: usado ao abrir links diretamente em apps/navegador, não via busca do Windows.\n- Hibernar vs Desligar\n  - Hibernar: preserva sessão; volta igual; sem consumo enquanto hibernado.\n  - Desligar: encerra e limpa sessão; não preserva estado.\n- Itens ocultos vs proteção\n  - Ocultar: só visibilidade; não protege. “Itens ocultos” revela tudo.\n  - Segurança: gerencie permissões em “Compartilhar” > “Segurança avançada”.\n\n## Vocabulário e Itens de Interface (memorize os nomes)\n- Barra de tarefas, botão iniciar, pesquisa instantânea, “mostrar o botão Cortana”.\n- Explorador de Arquivos: Início (Transferência, Organizar, Novo, Abrir, Opções de seleção), Compartilhar (enviar por e-mail, compactar, imprimir, gravar disco, via fax), Exibir (Painel de navegação, Painel de visualização, Detalhes, Conteúdo, Ícones pequenos/médios/grandes/extra grandes, Itens ocultos, Ocultar itens selecionados).\n- Acesso Rápido, “fixa pasta atual em acesso rápido”, “Copiar o caminho”.\n- “Enviar para > Área de trabalho (criar atalhos)”.\n- Mapear unidade de rede; unidade de rede; pastas compartilhadas.\n- Caminhos: C:\\Usuários\\Gefferson\\Documentos (absoluto). “C:” (dois pontos).\n- Navegadores citados: Edge, Internet Explorer, Google Chrome, Fire Fox.\n- Serviços/marcas: Microsoft, Bing, Windows Defender.\n- Termos literais citados (atenção a confusões de prova): “Aedes” (referido como navegador antigo), “pronto de comandos”/“prompt de comando”, “Shell”/PowerShell (“Paulo Axel”), “TMZ config” e “PMDB” (incorretos).",
+  "resumo_bolso": "# Windows 10 III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Windows 10**: sistema operacional com foco em produtividade via **barra de tarefas**, **menu iniciar**, **pesquisa instantânea** e **Explorador de Arquivos**.\n* **Barra de tarefas**: área com **ícones**, **botão iniciar**, **campo de pesquisa** e opção de **“mostrar o botão Cortana”**.\n* **Pesquisa instantânea**: resultados aparecem conforme digita (apps, documentos, web); buscas que vão para a web **abrem no Edge com Bing**, independentemente do navegador padrão ou do motor configurado no Edge.\n* **Cortana**: **assistente digital** da Microsoft integrada à pesquisa; **não é navegador** nem **antivírus** (antivírus nativo citado: **Windows Defender**).\n* **Explorador de Arquivos**: gerenciador de **arquivos/pastas locais, pendrive e rede** (pastas compartilhadas, unidade de rede mapeada).\n* **Guias do Explorador**:\n  * **Início**: copiar, recortar, colar, mover, renomear, nova pasta/novo item, abrir, propriedades, histórico (requer **Histórico de Arquivos** ativado), opções de seleção (ex.: **Selecionar todos**).\n  * **Compartilhar**: enviar por e-mail, compactar, imprimir, **gravar disco** (exige unidade gravadora), via fax, compartilhar/remover acesso, **Segurança avançada**.\n  * **Exibir**: painel de navegação, painel de visualização, layouts (Detalhes, Conteúdo, Ícones pequenos/médios/grandes/extra grandes), **Itens ocultos**, **Ocultar itens selecionados**.\n* **Acesso Rápido**: exibe **locais frequentes** e **arquivos recentes (até 20)**; permite **fixar pasta atual em acesso rápido** manualmente.\n* **Caminho absoluto**: inicia na raiz da unidade (ex.: **C:\\Usuários\\Gefferson\\Documentos**).\n* **Copiar o caminho**: comando do Explorador que copia o caminho completo do item selecionado.\n* **Unidade de rede / Mapear unidade de rede**: atribuir **letra** a pastas compartilhadas em rede para acesso facilitado.\n* **Atributo “oculto”**: marca itens para não aparecerem quando **“Itens ocultos”** está desmarcado; itens invisíveis **não são selecionados** por **“Selecionar todos”**.\n* **Criação de atalho na área de trabalho**: Explorador > botão direito no item > **Enviar para > Área de trabalho (criar atalhos)** → cria **atalho**, não move nem copia o conteúdo.\n* **Opções de energia**: destaque para **Hibernar vs Desligar**:\n  * **Hibernar**: salva o estado (programas/arquivos abertos) no disco, desliga e volta igual; sem consumo enquanto hibernado.\n  * **Desligar**: fecha programas (pode pedir para salvar), desliga e inicia “limpo”; não preserva o estado.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Pesquisa do Windows vs Navegador Padrão\n\n| Aspecto | Pesquisa do Windows | Navegador Padrão |\n| --- | --- | --- |\n| **Origem** | Campo de pesquisa / Menu Iniciar | Abertura de links, arquivos HTML etc. |\n| **Navegador usado para web** | **Sempre Edge** | O que o usuário definiu (Chrome, Firefox, etc.) |\n| **Motor de busca** | **Sempre Bing** (em prova) | Configurável (Google, Bing, etc.) |\n\n---\n\n### Cortana vs Navegador vs Antivírus\n\n| Aspecto | Cortana | Navegador (Edge, Chrome…) | Antivírus (Windows Defender) |\n| --- | --- | --- | --- |\n| **Função principal** | Assistente digital integrada à pesquisa | Navegar na web | Proteção contra malware |\n| **Classificação** | Não é navegador | Navegador | Software de segurança |\n\n---\n\n### Explorador: Local vs Rede\n\n| Aspecto | Apenas locais | Explorador de Arquivos (real) |\n| --- | --- | --- |\n| **Escopo** | Só arquivos no próprio computador | Arquivos locais, em **pendrive** e em **pastas compartilhadas/unidade de rede** |\n\n---\n\n### Acesso Rápido: Automático vs Fixado\n\n| Aspecto | Automático | Fixado manualmente |\n| --- | --- | --- |\n| **Conteúdo** | Locais frequentes + **até 20 arquivos recentes** | Pastas escolhidas pelo usuário |\n| **Dependência de uso** | Depende do uso | Independe do uso (permanece fixado) |\n\n---\n\n### Hibernar vs Desligar\n\n| Aspecto | Hibernar | Desligar |\n| --- | --- | --- |\n| **Estado da sessão** | **Salva** no disco (programas/arquivos abertos) | **Não preserva**; fecha tudo |\n| **Retorno** | Volta **igual** ao que estava | Inicia “limpo” |\n| **Energia enquanto desligado** | Não consome | Não consome |\n\n---\n\n### Itens Ocultos vs Segurança\n\n| Aspecto | Itens ocultos | Segurança/permissões |\n| --- | --- | --- |\n| **Efeito principal** | Afeta **visibilidade** na interface | Controla **acesso** (ler/gravar) |\n| **Seleção em massa** | Invisíveis não entram em **“Selecionar todos”** | Independe de visibilidade |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra da Pesquisa Web do Windows 10**\n\n* **Aplicação**: qualquer busca pela **barra de tarefas** ou **Menu Iniciar** que resulte em pesquisa web.\n* **Comportamento fixo em prova**: abre **sempre no Edge usando Bing**, mesmo se:\n  * o navegador padrão for **Chrome/Firefox**;\n  * o motor de busca dentro do Edge tiver sido alterado.\n* **Exemplo**: navegador padrão = Chrome; ao pesquisar “concursos” na barra, os resultados web abrem no **Edge com Bing**.\n\n---\n\n**2. Regra do Acesso Rápido**\n\n* **Aplicação**: painel inicial do Explorador de Arquivos.\n* **Automático**: mostra **locais frequentes** e **até 20 arquivos recentes**, substituindo os mais antigos.\n* **Manual**: botão direito na pasta > **“fixa pasta atual em acesso rápido”** (independe de uso).\n* **Exemplo**: a pasta `C:\\Usuários\\Gefferson\\Documentos` pode ser fixada mesmo sem ser usada com frequência.\n\n---\n\n**3. Regra de Criação de Atalho na Área de Trabalho**\n\n* **Aplicação**: criar atalho de pasta/arquivo.\n* **Caminho**: Explorador > botão direito no item > **Enviar para > Área de trabalho (criar atalhos)**.\n* **Efeito**: **cria um atalho**, **não move nem copia** o conteúdo original.\n* **Exemplo**: pasta em `D:\\Dados` → atalho na área de trabalho; a pasta continua em `D:\\Dados`.\n\n---\n\n**4. Regra de Itens Ocultos e Seleção**\n\n* **Aplicação**: arquivos/pastas com atributo **“oculto”**.\n* **Com “Itens ocultos” desmarcado**:\n  * itens ocultos **não aparecem**;\n  * **não são incluídos** em **“Selecionar todos”**.\n* **Exemplo**: ocultar um arquivo e depois usar “Selecionar todos” + excluir → o arquivo oculto permanece.\n\n---\n\n**5. Regra do Histórico e Gravação de Disco**\n\n* **Histórico (Guia Início)**: só aparece/funciona se o **Histórico de Arquivos** estiver **ativado**.\n* **Gravar disco (Guia Compartilhar)**: exige **unidade gravadora**; se não houver, a opção pode não aparecer ou ficar inativa.\n* **Exemplo**: notebook sem gravador de DVD → “Gravar disco” pode não estar disponível.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Pesquisa do Windows 10 abre a web **sempre no Edge com Bing**, mesmo com navegador padrão alterado ou com motor trocado dentro do Edge.\n* Afirmar que **“Cortana = antivírus (Windows Defender)”** ou **“Cortana = novo navegador”** é **falso**; Cortana é **assistente digital**.\n* Dizer que o **Explorador** gerencia apenas arquivos locais é **falso**; ele também trabalha com **pastas compartilhadas e unidade de rede mapeada**.\n* Afirmar que **“Acesso Rápido depende apenas do uso”** é **falso**; é possível **fixar pastas manualmente**.\n* Dizer que **“Área de trabalho (criar atalhos)” move ou copia** o item é **falso**; a opção **apenas cria um atalho**.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Pesquisa do Windows** de **navegador padrão** (Edge + Bing x navegador definido pelo usuário)?\n* Memorizei que **Cortana** é **assistente digital**, não navegador nem antivírus (Windows Defender)?\n* Lembrei que o **Explorador de Arquivos** gerencia arquivos **locais, em pendrive e em rede (pastas compartilhadas/unidade de rede)**?\n* Fixei que o **Acesso Rápido** tem parte **automática (locais frequentes + até 20 arquivos recentes)** e parte **fixada manualmente**?\n* Sei usar **“Enviar para > Área de trabalho (criar atalhos)”** sabendo que **só cria atalho**, sem mover/copiar o conteúdo?\n* Recordei que **itens ocultos** não aparecem nem são incluídos em **“Selecionar todos”** quando **“Itens ocultos”** está desmarcado?\n* Lembrei das dependências: **Histórico** (requer **Histórico de Arquivos** ativado) e **Gravar disco** (requer **unidade gravadora**)?\n* Sei comparar **Hibernar x Desligar** quanto à **preservação do estado da sessão** e ao **retorno da máquina**?",
+  "mapa_mental": "# 💻 Windows 10 III\n## 🎯 Interface e Pesquisa\n### 🧭 Barra de tarefas\n- Botão iniciar\n- Ícones aplicativos\n- Fixar aplicativos\n- Campo de pesquisa\n- Mostrar botão Cortana\n### 🔍 Pesquisa instantânea\n- Resultados imediatos\n- Apps e documentos\n- Pesquisa na web\n- Abre Edge obrigatório\n- Motor Bing fixo\n### 🤖 Cortana\n- Assistente digital\n- Integrada à pesquisa\n- Não é navegador\n- Não é antivírus\n- Relacionada Microsoft\n\n## 📂 Explorador de Arquivos\n### 🗂️ Conceitos gerais\n- Gerenciador arquivos\n- Pastas locais\n- Dispositivos removíveis\n- Pastas em rede\n- Unidade de rede\n### 📌 Acesso Rápido\n- Locais frequentes\n- Arquivos recentes\n- Limite vinte itens\n- Fixar pasta manual\n- Independente do uso\n### 🧭 Caminhos e atalhos\n- Caminho absoluto\n- Raiz da unidade\n- Copiar o caminho\n- Enviar para área\n- Criar atalhos\n\n## 🧰 Guias do Explorador\n### 🏠 Guia Início\n- Copiar recortar colar\n- Mover para pasta\n- Renomear itens\n- Nova pasta item\n- Abrir propriedades histórico\n### 📤 Guia Compartilhar\n- Enviar por e-mail\n- Compactar arquivo\n- Imprimir documento\n- Gravar disco exigido\n- Segurança avançada\n### 👁️ Guia Exibir\n- Painel navegação\n- Painel visualização\n- Modos de layout\n- Itens ocultos visíveis\n- Ocultar itens selecionados\n\n## 🛡️ Ocultação e Energia\n### 🕶️ Itens ocultos\n- Atributo oculto\n- Propriedades do arquivo\n- Aplicar à pasta\n- Não selecionado todos\n- Não aumenta segurança\n### 🔌 Opções de energia\n- Hibernar sistema\n- Desligar sistema\n- Suspender menção\n- Sem consumo desligado\n- Configurações energia\n### 🌙 Hibernar vs Desligar\n- Hibernar salva sessão\n- Estado no disco\n- Retorno igual anterior\n- Desligar encerra tudo\n- Início limpo posterior",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Pesquisa E Cortana",
+      "description": "Pesquisa E Cortana — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como a **pesquisa instantânea** apresenta resultados enquanto o usuário digita?",
+          "back": "Trazendo automaticamente possíveis resultados e sugestões conforme o usuário digita.",
+          "hint": "Ocorre em tempo real durante a digitação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "pesquisa"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Em que categorias os resultados da pesquisa instantânea são organizados?",
+          "back": "Melhor correspondência e aplicativos.",
+          "hint": "São dois grupos principais",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "pesquisa"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual navegador é aberto pela pesquisa na web do Windows 10?",
+          "back": "Microsoft Edge",
+          "hint": "É o navegador padrão do sistema",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "navegador"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual mecanismo de busca é usado nessa pesquisa na web?",
+          "back": "Bing",
+          "hint": "É o motor de busca da Microsoft",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "pesquisa"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual assistente digital pode realizar buscas e comandos de voz no Windows 10?",
+          "back": "Cortana",
+          "hint": "Nome da assistente virtual da Microsoft",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "cortana"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Que tarefa a assistente digital pode executar com um aplicativo?",
+          "back": "Abrir o aplicativo, a exemplo da assistente abrir uma unidade aplicativo.",
+          "hint": "Ação básica de inicialização de software",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "cortana"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual recurso é ativado ao exibir o botão específico na barra de tarefas?",
+          "back": "Cortana",
+          "hint": "O botão na barra de tarefas ativa este recurso",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "cortana"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Arquivos E Pastas",
+      "description": "Arquivos E Pastas — 7 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "O que é criado ao usar Enviar para > Área de trabalho em uma pasta?",
+          "back": "Criar atalhos",
+          "hint": "É um objeto de acesso direto",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual sequência fixa um aplicativo do menu Iniciar na barra de tarefas?",
+          "back": "Clicar no menu Iniciar, clicar com o botão direito no aplicativo e selecionar Fixar na barra de tarefas.",
+          "hint": "Procedimento via menu de contexto",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Que tipo de recurso o Explorador de Arquivos gerencia no Windows 10?",
+          "back": "Gerenciador de arquivos",
+          "hint": "Ferramenta de organização de diretórios",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-11",
+          "front": "O que significa mapear uma unidade de rede?",
+          "back": "Atribuir uma letra a uma unidade de rede, criando um atalho para ela.",
+          "hint": "Relacionado a recursos compartilhados em rede",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "rede"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual é a finalidade do Acesso rápido no Explorador de Arquivos?",
+          "back": "Exibir pastas frequentemente usadas e arquivos recentes.",
+          "hint": "Focado em produtividade e histórico",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual limite de arquivos recentes é exibido no Acesso rápido?",
+          "back": "20 arquivos",
+          "hint": "É um número redondo entre 15 e 25",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Como uma pasta pode ser mantida no Acesso rápido independentemente do uso frequente?",
+          "back": "Clicar na pasta com o botão direito e selecionar Fixar pasta atual em Acesso rápido.",
+          "hint": "Ação de manter fixo no menu lateral",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Explorador De Arquivos",
+      "description": "Explorador De Arquivos — 5 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual painel exibe uma prévia do conteúdo selecionado?",
+          "back": "Painel de visualização",
+          "hint": "Permite ver o conteúdo sem abrir o arquivo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Em qual região da janela fica o painel de navegação?",
+          "back": "À esquerda",
+          "hint": "Posição lateral padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "explorador-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual atributo faz um arquivo ou pasta deixar de aparecer normalmente?",
+          "back": "Atributo oculto",
+          "hint": "Propriedade de visibilidade do arquivo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "O que ocorre quando itens ocultos não estão sendo exibidos?",
+          "back": "Eles não aparecem quando a opção de exibir itens ocultos está desmarcada.",
+          "hint": "Comportamento de exibição condicional",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "arquivos"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-19",
+          "front": "O que acontece com itens ocultos ao selecionar todos os itens sem exibi-los?",
+          "back": "Os itens ocultos não são selecionados caso não estejam sendo exibidos.",
+          "hint": "Relacionado à visibilidade na seleção",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "arquivos"
+          ],
+          "type": "exception"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Sistema E Desligamento",
+      "description": "Sistema E Desligamento — 7 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Qual é a função de um shell em relação aos comandos do sistema?",
+          "back": "Interpretar comandos do sistema.",
+          "hint": "Atua como tradutor de comandos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "shell"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-21",
+          "front": "Que tipo de interface é o Prompt de Comando?",
+          "back": "Interface não gráfica",
+          "hint": "Oposto de interface gráfica",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "prompt"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-22",
+          "front": "Como o shell se relaciona com o núcleo do sistema operacional?",
+          "back": "O shell atua em volta do núcleo, interpretando e passando comandos para ele.",
+          "hint": "Posição em relação ao kernel",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "shell"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual é a natureza do Windows 10 quanto à sua composição?",
+          "back": "Um sistema operacional constituído por vários softwares.",
+          "hint": "Definição estrutural básica",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-24",
+          "front": "O que é preservado quando o computador entra em hibernação?",
+          "back": "Tudo o que está aberto.",
+          "hint": "Estado de energia que mantém a sessão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-25",
+          "front": "O que ocorre com os programas abertos ao escolher Desligar?",
+          "back": "O sistema fecha os programas abertos sem salvar nada antes de desligar.",
+          "hint": "Risco de perda de dados não salvos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-26",
+          "front": "Qual é o efeito energético comum da hibernação e do desligamento?",
+          "back": "Poupam grande quantidade de energia.",
+          "hint": "Objetivo comum de ambos os estados",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Windows 10, qual é a principal diferença entre as opções Hibernar e Desligar?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Hibernar fecha todos os programas automaticamente, enquanto Desligar mantém os programas em execução",
+          "correct": false,
+          "explanation": "Incorreta. Ao contrário, o modo \"Hibernar\" não fecha os programas; ele salva o estado atual do sistema, incluindo todos os programas abertos e seus dados, para que possam ser restaurados. A opção \"Desligar\" é que encerra os programas automaticamente."
+        },
+        {
+          "id": "b",
+          "text": "Hibernar salva o estado atual do sistema antes de desligar, enquanto Desligar encerra os programas sem salvar o estado",
+          "correct": true,
+          "explanation": "Correta. A opção \"Hibernar\" salva o conteúdo da memória RAM no disco rígido e desliga o computador, permitindo que o usuário retome o trabalho exatamente de onde parou ao ligar novamente. Já a opção \"Desligar\" encerra todos os programas e o sistema operacional, sem salvar o estado de trabalho, exigindo que o usuário inicie tudo do zero na próxima vez."
+        },
+        {
+          "id": "c",
+          "text": "Hibernar desliga apenas o monitor e periféricos, enquanto Desligar encerra completamente o sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. A opção \"Hibernar\" desliga o sistema operacional completamente após salvar seu estado. O comportamento de desligar apenas o monitor e periféricos, mantendo o sistema em baixo consumo de energia e a memória RAM ativa, é característico do modo \"Suspender\" (ou \"Sleep\"), e não de \"Hibernar\"."
+        },
+        {
+          "id": "d",
+          "text": "Hibernar consome mais energia que Desligar, pois mantém a memória RAM ativa",
+          "correct": false,
+          "explanation": "Incorreta. O modo \"Hibernar\" desliga o computador completamente após salvar o estado da memória no disco, o que significa que a memória RAM não permanece ativa. Assim, o consumo de energia é mínimo, similar ao de um desligamento completo, e não mais alto do que o desligamento."
+        }
+      ],
+      "explanation": "Correta. A opção \"Hibernar\" salva o conteúdo da memória RAM no disco rígido e desliga o computador, permitindo que o usuário retome o trabalho exatamente de onde parou ao ligar novamente. Já a opção \"Desligar\" encerra todos os programas e o sistema operacional, sem salvar o estado de trabalho, exigindo que o usuário inicie tudo do zero na próxima vez.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a função principal do Explorador de Arquivos no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Realizar backup automático de arquivos e pastas do sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Explorador de Arquivos possa ser usado para copiar arquivos manualmente para um local de backup, sua função principal não é realizar backups automáticos. O Windows 10 possui ferramentas específicas para backup, como o \"Histórico de Arquivos\" ou serviços de armazenamento em nuvem como o OneDrive."
+        },
+        {
+          "id": "b",
+          "text": "Gerenciar arquivos e pastas, permitindo operações como copiar, mover, renomear e excluir",
+          "correct": true,
+          "explanation": "Correta. O Explorador de Arquivos (anteriormente conhecido como Windows Explorer) é a ferramenta gráfica principal do Windows 10 para navegar, organizar e manipular arquivos e pastas. Ele permite realizar operações essenciais como copiar, mover, renomear, excluir, criar novas pastas e pesquisar itens no sistema de arquivos local e em redes."
+        },
+        {
+          "id": "c",
+          "text": "Monitorar o desempenho do sistema e otimizar o uso de memória RAM",
+          "correct": false,
+          "explanation": "Incorreta. Monitorar o desempenho do sistema e otimizar o uso de memória RAM são funções de ferramentas como o Gerenciador de Tarefas ou utilitários de otimização de sistema. O Explorador de Arquivos foca na gestão do conteúdo do disco e não no desempenho dos recursos do hardware."
+        },
+        {
+          "id": "d",
+          "text": "Navegar exclusivamente em páginas da internet e sites de compartilhamento de arquivos",
+          "correct": false,
+          "explanation": "Incorreta. A navegação em páginas da internet e sites de compartilhamento de arquivos é a função de um navegador web (como o Microsoft Edge, Google Chrome ou Mozilla Firefox), e não do Explorador de Arquivos. Embora o Explorador possa acessar recursos de rede, sua interface não é otimizada para navegação web."
+        }
+      ],
+      "explanation": "Correta. O Explorador de Arquivos (anteriormente conhecido como Windows Explorer) é a ferramenta gráfica principal do Windows 10 para navegar, organizar e manipular arquivos e pastas. Ele permite realizar operações essenciais como copiar, mover, renomear, excluir, criar novas pastas e pesquisar itens no sistema de arquivos local e em redes.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quando uma pesquisa é realizada através da barra de pesquisa do Windows 10 e direcionada para a web, quais são o navegador e o motor de busca utilizados por padrão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Microsoft Edge e Bing",
+          "correct": true,
+          "explanation": "Correta. Por padrão, quando uma pesquisa é iniciada na barra de pesquisa do Windows 10 e direcionada para a web, o sistema utiliza o navegador Microsoft Edge para abrir os resultados e o motor de busca Bing para realizar a pesquisa. Isso ocorre mesmo que o usuário tenha configurado outro navegador ou motor de busca como padrão para outras atividades."
+        },
+        {
+          "id": "b",
+          "text": "Google Chrome e Google",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Google Chrome e o motor de busca Google sejam amplamente utilizados, eles não são os produtos padrão da Microsoft no Windows 10. A Microsoft integra seus próprios produtos como padrão."
+        },
+        {
+          "id": "c",
+          "text": "Internet Explorer e Yahoo",
+          "correct": false,
+          "explanation": "Incorreta. O Internet Explorer é um navegador legado e não é o padrão para pesquisas web no Windows 10. O motor de busca Yahoo não é o padrão da Microsoft para o sistema operacional."
+        },
+        {
+          "id": "d",
+          "text": "Mozilla Firefox e DuckDuckGo",
+          "correct": false,
+          "explanation": "Incorreta. O Mozilla Firefox e o DuckDuckGo são navegadores e motores de busca alternativos, respectivamente, mas não são os padrões configurados pela Microsoft no Windows 10."
+        }
+      ],
+      "explanation": "Correta. Por padrão, quando uma pesquisa é iniciada na barra de pesquisa do Windows 10 e direcionada para a web, o sistema utiliza o navegador Microsoft Edge para abrir os resultados e o motor de busca Bing para realizar a pesquisa. Isso ocorre mesmo que o usuário tenha configurado outro navegador ou motor de busca como padrão para outras atividades.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a finalidade da assistente virtual Cortana no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Proteger o sistema contra vírus e malwares através de varreduras automáticas",
+          "correct": false,
+          "explanation": "Incorreta. A proteção do sistema contra vírus e malwares é a função do Windows Defender (agora Microsoft Defender Antivirus), que é o software antivírus integrado ao Windows 10, e não da Cortana."
+        },
+        {
+          "id": "b",
+          "text": "Sincronizar arquivos entre diferentes dispositivos através de armazenamento em nuvem",
+          "correct": false,
+          "explanation": "Incorreta. A sincronização de arquivos entre diferentes dispositivos, especialmente através de armazenamento em nuvem, é uma funcionalidade oferecida por serviços como o OneDrive (da Microsoft) ou outras plataformas de nuvem, e não é a finalidade principal da Cortana."
+        },
+        {
+          "id": "c",
+          "text": "Executar comandos de voz, realizar pesquisas, agendar tarefas e abrir aplicativos",
+          "correct": true,
+          "explanation": "Correta. A Cortana é a assistente virtual do Windows 10, projetada para auxiliar o usuário em diversas tarefas. Suas funcionalidades incluem a execução de comandos de voz, realização de pesquisas (tanto no sistema quanto na web), agendamento de lembretes e tarefas, abertura de aplicativos e fornecimento de informações gerais."
+        },
+        {
+          "id": "d",
+          "text": "Gerenciar exclusivamente as atualizações do sistema operacional e drivers",
+          "correct": false,
+          "explanation": "Incorreta. O gerenciamento de atualizações do sistema operacional e drivers é realizado pelo Windows Update, um componente específico do Windows 10 para essa finalidade, e não pela assistente virtual Cortana."
+        }
+      ],
+      "explanation": "Correta. A Cortana é a assistente virtual do Windows 10, projetada para auxiliar o usuário em diversas tarefas. Suas funcionalidades incluem a execução de comandos de voz, realização de pesquisas (tanto no sistema quanto na web), agendamento de lembretes e tarefas, abertura de aplicativos e fornecimento de informações gerais.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o comportamento padrão ao utilizar o recurso 'Enviar para' com a opção 'Área de trabalho' sobre uma pasta no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Cria um atalho da pasta na área de trabalho",
+          "correct": true,
+          "explanation": "Correta. Ao utilizar o recurso \"Enviar para\" com a opção \"Área de trabalho (criar atalho)\" (ou apenas \"Área de trabalho\" em algumas versões, que subentende a criação de atalho) sobre uma pasta no Windows 10, o comportamento padrão é criar um atalho para a pasta selecionada na área de trabalho. O atalho é um link que aponta para o local original da pasta, sem duplicar ou mover os arquivos."
+        },
+        {
+          "id": "b",
+          "text": "Compacta a pasta em formato ZIP e salva na área de trabalho",
+          "correct": false,
+          "explanation": "Incorreta. Existe uma opção no menu \"Enviar para\" para \"Pasta compactada (zipada)\", que cria um arquivo ZIP. No entanto, a opção \"Área de trabalho\" não compacta a pasta; ela tem uma função diferente."
+        },
+        {
+          "id": "c",
+          "text": "Move a pasta original para a área de trabalho, removendo-a do local anterior",
+          "correct": false,
+          "explanation": "Incorreta. A opção \"Enviar para\" -> \"Área de trabalho\" não move a pasta original. Mover um item implicaria removê-lo do local de origem, o que não acontece com essa funcionalidade."
+        },
+        {
+          "id": "d",
+          "text": "Cria uma cópia completa da pasta na área de trabalho",
+          "correct": false,
+          "explanation": "Incorreta. Criar uma cópia completa da pasta na área de trabalho não é o comportamento padrão da opção \"Enviar para\" -> \"Área de trabalho\". Para criar uma cópia, o usuário precisaria usar as funções \"Copiar\" e \"Colar\" ou arrastar o item com a tecla Ctrl pressionada."
+        }
+      ],
+      "explanation": "Correta. Ao utilizar o recurso \"Enviar para\" com a opção \"Área de trabalho (criar atalho)\" (ou apenas \"Área de trabalho\" em algumas versões, que subentende a criação de atalho) sobre uma pasta no Windows 10, o comportamento padrão é criar um atalho para a pasta selecionada na área de trabalho. O atalho é um link que aponta para o local original da pasta, sem duplicar ou mover os arquivos.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No Windows 10, o que acontece quando o usuário altera o navegador padrão para Google Chrome e o motor de busca do Edge para Google, mas realiza uma pesquisa através da barra de pesquisa do sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A pesquisa será realizada no Microsoft Edge utilizando o motor de busca Google",
+          "correct": false,
+          "explanation": "Incorreta. Embora a pesquisa seja de fato realizada no Microsoft Edge (conforme o comportamento padrão da barra de pesquisa do Windows 10 para buscas na web), o motor de busca utilizado será o Bing. O sistema prioriza sua própria integração com o Bing para essas buscas, mesmo que o motor de busca do Edge tenha sido alterado para Google."
+        },
+        {
+          "id": "b",
+          "text": "A pesquisa será realizada no Google Chrome utilizando o motor de busca Google",
+          "correct": false,
+          "explanation": "Incorreta. Apesar de o Google Chrome poder ser definido como navegador padrão e o Google como motor de busca dentro do Edge, a barra de pesquisa do Windows 10 possui um comportamento específico. As pesquisas iniciadas por essa barra ignoram as configurações de navegador padrão e motor de busca, direcionando a busca para o Microsoft Edge e utilizando o motor de busca Bing, que é o serviço de busca da Microsoft."
+        },
+        {
+          "id": "c",
+          "text": "A pesquisa será realizada no Google Chrome utilizando o motor de busca Bing",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa combina incorretamente os elementos. A pesquisa na barra do sistema sempre abrirá o Microsoft Edge para buscas na web, não o Google Chrome, mesmo que este seja o navegador padrão. Além disso, o motor de busca padrão para essas pesquisas é o Bing, não o Google, mesmo que o Google tenha sido configurado dentro do Edge."
+        },
+        {
+          "id": "d",
+          "text": "A pesquisa será realizada no Microsoft Edge utilizando o motor de busca Bing",
+          "correct": true,
+          "explanation": "Correta. No Windows 10, a barra de pesquisa do sistema operacional tem uma integração nativa com o ecossistema Microsoft. Isso significa que, independentemente de o usuário ter configurado outro navegador como padrão ou alterado o motor de busca dentro do Microsoft Edge, as pesquisas realizadas diretamente pela barra de pesquisa do sistema sempre serão processadas pelo Microsoft Edge e utilizarão o motor de busca Bing."
+        }
+      ],
+      "explanation": "Correta. No Windows 10, a barra de pesquisa do sistema operacional tem uma integração nativa com o ecossistema Microsoft. Isso significa que, independentemente de o usuário ter configurado outro navegador como padrão ou alterado o motor de busca dentro do Microsoft Edge, as pesquisas realizadas diretamente pela barra de pesquisa do sistema sempre serão processadas pelo Microsoft Edge e utilizarão o motor de busca Bing.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a característica da pesquisa instantânea na barra de pesquisa do Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Limita os resultados a aplicativos instalados, excluindo documentos e configurações",
+          "correct": false,
+          "explanation": "Incorreta. A pesquisa do Windows 10 é abrangente e não restringe os resultados apenas a aplicativos instalados. Ela inclui uma vasta gama de itens, como documentos, pastas, configurações do sistema, e-mails, eventos do calendário e resultados da web, oferecendo uma experiência de busca unificada."
+        },
+        {
+          "id": "b",
+          "text": "Realiza buscas apenas em arquivos armazenados localmente no disco rígido",
+          "correct": false,
+          "explanation": "Incorreta. A pesquisa instantânea do Windows 10 é multifuncional e não se limita a arquivos locais. Ela busca resultados em diversas fontes, incluindo aplicativos, configurações do sistema, histórico da web e até mesmo informações da assistente virtual Cortana, se ativada."
+        },
+        {
+          "id": "c",
+          "text": "Requer que o usuário pressione Enter para iniciar a busca e exibir resultados",
+          "correct": false,
+          "explanation": "Incorreta. A pesquisa instantânea é projetada para ser interativa e proativa. Ela começa a mostrar resultados relevantes assim que o usuário começa a digitar, eliminando a necessidade de pressionar a tecla Enter para iniciar a busca. Pressionar Enter geralmente finaliza a busca e abre o item mais relevante ou a página completa de resultados."
+        },
+        {
+          "id": "d",
+          "text": "Apresenta resultados dinamicamente conforme o usuário digita, organizados por categorias",
+          "correct": true,
+          "explanation": "Correta. A principal característica da pesquisa instantânea na barra de pesquisa do Windows 10 é sua natureza dinâmica. Conforme o usuário digita, o sistema exibe resultados em tempo real, organizando-os automaticamente por categorias relevantes, como 'Melhor correspondência', 'Aplicativos', 'Documentos', 'Web', entre outras, sem a necessidade de pressionar Enter para iniciar a busca."
+        }
+      ],
+      "explanation": "Correta. A principal característica da pesquisa instantânea na barra de pesquisa do Windows 10 é sua natureza dinâmica. Conforme o usuário digita, o sistema exibe resultados em tempo real, organizando-os automaticamente por categorias relevantes, como 'Melhor correspondência', 'Aplicativos', 'Documentos', 'Web', entre outras, sem a necessidade de pressionar Enter para iniciar a busca.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No contexto do Windows 10, o que caracteriza um Shell e quais são exemplos dessa classe de programas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Shell é o núcleo do sistema operacional responsável pelo gerenciamento de hardware; exemplos incluem Kernel e BIOS",
+          "correct": false,
+          "explanation": "Incorreta. O Kernel é o núcleo do sistema operacional, responsável pelo gerenciamento de hardware e recursos, enquanto o BIOS (Sistema Básico de Entrada/Saída) é um firmware que inicializa o hardware. Um Shell, por outro lado, é uma interface de usuário que permite a interação com o Kernel, mas não é o Kernel em si nem o BIOS."
+        },
+        {
+          "id": "b",
+          "text": "Shell é um protocolo de rede para comunicação entre dispositivos; exemplos incluem TCP/IP e HTTP",
+          "correct": false,
+          "explanation": "Incorreta. Protocolos de rede como TCP/IP e HTTP são conjuntos de regras que governam a comunicação de dados entre dispositivos em uma rede. Eles operam em uma camada de comunicação e não são interfaces de usuário para o sistema operacional, que é a função de um Shell."
+        },
+        {
+          "id": "c",
+          "text": "Shell é uma interface que interpreta comandos do usuário; exemplos incluem Prompt de Comando e PowerShell",
+          "correct": true,
+          "explanation": "Correta. Um 'Shell' (também conhecido como interpretador de comandos) é a camada de interface entre o usuário e o sistema operacional. Sua função é interpretar os comandos que o usuário digita ou que estão contidos em scripts, e então executá-los, interagindo com o núcleo do sistema (Kernel). No Windows 10, o Prompt de Comando (CMD) e o PowerShell são exemplos de Shells de linha de comando, que permitem aos usuários gerenciar o sistema por meio de texto."
+        },
+        {
+          "id": "d",
+          "text": "Shell é um sistema de arquivos para organização de dados; exemplos incluem NTFS e FAT32",
+          "correct": false,
+          "explanation": "Incorreta. NTFS (New Technology File System) e FAT32 (File Allocation Table 32) são sistemas de arquivos, que definem como os dados são armazenados, organizados e recuperados em um dispositivo de armazenamento. Eles são componentes do sistema operacional relacionados ao armazenamento, mas não são Shells, que são interfaces para a execução de comandos."
+        }
+      ],
+      "explanation": "Correta. Um 'Shell' (também conhecido como interpretador de comandos) é a camada de interface entre o usuário e o sistema operacional. Sua função é interpretar os comandos que o usuário digita ou que estão contidos em scripts, e então executá-los, interagindo com o núcleo do sistema (Kernel). No Windows 10, o Prompt de Comando (CMD) e o PowerShell são exemplos de Shells de linha de comando, que permitem aos usuários gerenciar o sistema por meio de texto.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No Explorador de Arquivos do Windows 10, quais são os layouts de exibição disponíveis no grupo 'Layout' da guia Exibir?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Simples, Avançado, Profissional e Clássico",
+          "correct": false,
+          "explanation": "Incorreta. Os termos 'Simples', 'Avançado', 'Profissional' e 'Clássico' não são utilizados para descrever os layouts de exibição de arquivos e pastas no Explorador de Arquivos do Windows 10. Esses termos são geralmente empregados para categorizar modos de operação, níveis de funcionalidade ou estilos de interface em outros contextos."
+        },
+        {
+          "id": "b",
+          "text": "Ícones pequenos, Ícones médios, Ícones grandes, Ícones extra grandes, Lista, Detalhes, Lado a lado e Conteúdo",
+          "correct": true,
+          "explanation": "Correta. No Explorador de Arquivos do Windows 10, a guia 'Exibir' oferece um grupo 'Layout' com diversas opções para organizar a visualização de arquivos e pastas. As opções completas incluem: 'Ícones extra grandes', 'Ícones grandes', 'Ícones médios', 'Ícones pequenos', 'Lista', 'Detalhes', 'Lado a lado' e 'Conteúdo'. Cada uma dessas visualizações ajusta a forma como os itens são apresentados, mostrando mais ou menos informações, ou diferentes tamanhos de ícones."
+        },
+        {
+          "id": "c",
+          "text": "Lista, Detalhes, Miniaturas e Grade",
+          "correct": false,
+          "explanation": "Incorreta. Embora 'Lista', 'Detalhes' e 'Miniaturas' (que se enquadra nos ícones) sejam opções válidas, a alternativa não é completa e inclui 'Grade', que não é um nome de layout padrão específico no Explorador de Arquivos do Windows 10 para essa função. As opções de layout são mais numerosas e com nomes específicos."
+        },
+        {
+          "id": "d",
+          "text": "Compacto, Normal, Expandido e Personalizado",
+          "correct": false,
+          "explanation": "Incorreta. As opções 'Compacto', 'Normal', 'Expandido' e 'Personalizado' não correspondem aos layouts de exibição de arquivos e pastas no Explorador de Arquivos do Windows 10. Estes termos são mais frequentemente associados a configurações de densidade de informações ou a modos de exibição em outros softwares ou partes da interface do usuário."
+        }
+      ],
+      "explanation": "Correta. No Explorador de Arquivos do Windows 10, a guia 'Exibir' oferece um grupo 'Layout' com diversas opções para organizar a visualização de arquivos e pastas. As opções completas incluem: 'Ícones extra grandes', 'Ícones grandes', 'Ícones médios', 'Ícones pequenos', 'Lista', 'Detalhes', 'Lado a lado' e 'Conteúdo'. Cada uma dessas visualizações ajusta a forma como os itens são apresentados, mostrando mais ou menos informações, ou diferentes tamanhos de ícones.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No Windows 10, o Explorador de Arquivos permite gerenciar arquivos localizados em quais tipos de locais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Arquivos locais e arquivos em unidades de rede compartilhadas",
+          "correct": true,
+          "explanation": "Correta. O Explorador de Arquivos do Windows 10 é projetado para gerenciar uma ampla gama de locais de armazenamento. Isso inclui arquivos e pastas localizados no disco rígido interno da máquina, em unidades de estado sólido (SSDs), em dispositivos de armazenamento removíveis (como pendrives e cartões de memória) e, crucialmente, em unidades de rede compartilhadas, permitindo o acesso a recursos em outros computadores conectados à mesma rede."
+        },
+        {
+          "id": "b",
+          "text": "Apenas arquivos armazenados no disco rígido local da máquina",
+          "correct": false,
+          "explanation": "Incorreta. O Explorador de Arquivos é uma ferramenta de gerenciamento de arquivos abrangente e não se limita a arquivos armazenados apenas no disco rígido local. Ele permite o acesso e a manipulação de dados em uma variedade de locais de armazenamento."
+        },
+        {
+          "id": "c",
+          "text": "Exclusivamente arquivos sincronizados com serviços de armazenamento em nuvem",
+          "correct": false,
+          "explanation": "Incorreta. O Explorador de Arquivos pode, de fato, exibir e gerenciar arquivos sincronizados com serviços de armazenamento em nuvem (como o OneDrive, que é integrado ao Windows). No entanto, essa não é sua função exclusiva; sua capacidade de gerenciamento abrange todos os locais de armazenamento acessíveis ao sistema, incluindo locais, de rede e removíveis, além da nuvem."
+        },
+        {
+          "id": "d",
+          "text": "Somente arquivos em dispositivos de armazenamento removíveis como pendrives",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Explorador de Arquivos gerencie arquivos em dispositivos de armazenamento removíveis, essa não é sua única ou exclusiva função. Ele é a interface principal para interagir com todos os tipos de armazenamento acessíveis ao sistema, incluindo os locais internos e de rede."
+        }
+      ],
+      "explanation": "Correta. O Explorador de Arquivos do Windows 10 é projetado para gerenciar uma ampla gama de locais de armazenamento. Isso inclui arquivos e pastas localizados no disco rígido interno da máquina, em unidades de estado sólido (SSDs), em dispositivos de armazenamento removíveis (como pendrives e cartões de memória) e, crucialmente, em unidades de rede compartilhadas, permitindo o acesso a recursos em outros computadores conectados à mesma rede.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_253597_Windows 10 III.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:57:01"
+}

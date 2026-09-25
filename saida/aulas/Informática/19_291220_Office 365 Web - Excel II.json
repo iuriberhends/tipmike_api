@@ -1,0 +1,662 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 19,
+  "ordem_no_curso": "106.00",
+  "titulo": "Office 365 Web - Excel II",
+  "codigo_aula": "291220",
+  "video_id": "dNikXLKp8wE=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:29:36",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/dNikXLKp8wE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=406721%2C405030&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Office 365 Web - Excel II\n\n## Parte inteira e contagem de valores\nOlha só, a próxima função: agora, “INT” (ou parte inteira) pega literalmente a parte inteira do número. Por exemplo, se eu tiver 9,9999, ele só retorna 9. Poderia ser 8,9 também: é só a parte inteira, para não haver confusão. Sete? Mesma lógica. Beleza? É a parte inteira do número. \n\nValores: a função CONT.VALORES conta valores. O que ela conta? Qualquer valor. Não conta vazio e não conta apenas números: conta qualquer conteúdo. Se eu tenho um intervalo com cinco células contendo valores e uma célula vazia, o resultado será 5. Se eu colocar ali “@” (ou qualquer caractere), passa a contar 6. Estando vazia, não conta, simples assim.\n\nAgora, o contrário de CONT.VAZIO: ele conta quem está vazio. Então, quantas estão vazias? Uma, duas células vazias: CONT.VAZIO retorna 2. Beleza?\n\n## Arredondamento e diferença para truncamento\nTemos a função ARRED que vai arredondar. Eu posso inserir o valor diretamente e indicar quantas casas decimais quero. Por exemplo, para um número com muitas casas, se eu coloco 2, ele arredonda para duas casas: 2,37 continua 2,37. \n\nAgora, atenção para a diferença que eu comentei lá entre TRUNC (ou INT) e ARRED: TRUNC pega a parte inteira, não importam as casas decimais; já o ARRED olha a casa seguinte para decidir se sobe. Se eu peço 2 casas, a terceira casa serve de base: se for maior ou igual a 5, ele arredonda para cima. Exemplo: se o valor tiver “...375”, com 2 casas, vira 2,38. Se eu pedir 3 casas e a quarta for ≥ 5, também sobe. Se eu diminuir para 4 casas quando a quinta é menor, continua igual. Cuidado com isso, é basicamente o ponto-chave aqui.\n\n## Orientações sobre dúvidas e uso do “Fórum de Dúvidas”\nVamos fazer alguns exercícios? Já dei a dica no bloco anterior. Havendo dúvidas, use o Fórum de Dúvidas para que você não permaneça com a dúvida. Às vezes eu recebo “Professor, está difícil” — eu considero como um desabafo, não exatamente uma dúvida. Mantém a calma, isso faz parte. Se quiser mandar o desabafo, tudo bem, eu tento ajudar com dicas: “não tenta isso, tenta aquilo”. \n\nAgora, dúvida mesmo é: “Fiz a função, achei que era isso mais aquilo, deu aquilo; qual a lógica disso?”. Vamos nessa.\n\n## Questão 1 — Funções lógicas e intervalo entre 3 e 8\nVocê está diante de uma planilha do Microsoft Excel e precisa realizar uma operação lógica: se o valor da célula A2 estiver entre os inteiros 3 e 8, a célula em que você está operando deve retornar VERDADEIRO; caso contrário, FALSO. \n\nAnalisando as sintaxes: algumas opções trazem “entre”, o que não existe na função SE. Outras trocam operadores ou faltam ponto e vírgula para separar condições. Pela sintaxe já dá para eliminar: “SE(A2≥3; VERDADEIRO; ... SE A2≥8; FALSO...)” não resolve a ideia de “entre”. \n\nA forma correta é testar as duas condições com E:\n- A2 ≥ 3\n- A2 ≤ 8\n\nSe ambas verdadeiras, retorna VERDADEIRO; senão, FALSO. A alternativa correta é a que usa SE(E(A2>=3;A2<=8);VERDADEIRO;FALSO).\n\n> 🎯 Dicas de prova: Em Excel, “entre” se expressa com E(condição mínima; condição máxima). Não existe operador “entre”.\n\n## Questão 2 — SOMASE e SE com comparação entre células\nPlanilha com A1, A2, B2 preenchidas com 10, 30, 20 e 40, respectivamente. \n\n- Fórmula SOMASE(A1:B2; “>20”) soma valores maiores que 20. Então 10 e 20 ficam de fora; entram 30 e 40. Resultado: 70.\n- Na segunda, é um SE que compara A1 > A2 (20 > 30 é falso). Como a condição é falsa, retorna o valor alternativo, que era B2. Resultado: 40.\n\nRespostas: 70 e 40. Não é difícil; treine para ganhar visual do que está acontecendo.\n\n## Questão 3 — Média de casos por dia (intervalo correto)\nImagem mostra uma planilha sobre casos positivos de COVID-19. A fórmula em E8 calcula a média de casos por dia do intervalo D2:D16 (por exemplo), já que E8 é a própria média mostrada. Opções com BR, porcentagem, ou médias duplicadas não se aplicam. A correta usa a faixa de dias com casos (de 2 até 16): MÉDIA(D2:D16). A letra E era a correta na descrição.\n\n## Questão 4 — Funcionalidade para preencher seguindo padrão\nQual funcionalidade preenche células seguindo um padrão ou com base em dados de outra célula? Não é “Colar especial”, nem “Referência cruzada”. É o AutoPreenchimento (alça de preenchimento). Ele se baseia nos valores próximos para continuar a sequência. Essa é a resposta.\n\n## Validação de dados — Lista suspensa\nNo Microsoft 365, para criar lista suspensa nas células B2:B4 com as entradas padronizadas “Masculino” e “Feminino”, use Validação de Dados no modo Lista, escolhendo a fonte dos dados. Assim, o conteúdo será preenchido a partir da seleção.\n\n## Separar nome e sobrenome em colunas\nRecurso para separar nomes completos em “Nome” e “Sobrenome”: Dados > Texto para Colunas. Você escolhe o delimitador (espaço, ponto e vírgula, tabulação, etc.). \n\n💬 História: Antigamente eu pegava a fatura do cartão e vinha tudo numa coluna só: nome da instituição, valor, data. Eu selecionava a coluna e usava Texto para Colunas, separando por ponto e vírgula ou tabulação. Funciona bem, mas se você usar “espaço” como delimitador, tudo que tiver espaço será separado — então cuidado com nomes compostos.\n\n## PROCV (VLOOKUP) — Estrutura e busca na primeira coluna\nUm técnico criou planilha no Calc (LibreOffice). A lógica vale para Excel também. PROCV(A5;A4:D17;4;[aprox]):\n\n- O valor procurado é A5.\n- A matriz de procura é A4:D17.\n- A busca é sempre na primeira coluna da matriz (coluna A desse intervalo).\n- O índice de coluna 4 retorna o valor da 4ª coluna da linha encontrada.\n- Aproximação pode ser usada se a primeira coluna estiver ordenada; se você tem o valor exato, pode usar FALSO/0.\n\nEntão, encontrou o A5 na primeira coluna, retornou o valor da 4ª coluna daquela linha (ex.: 9784-3652...). Se for aproximação, precisa estar ordenado.\n\n## CONT.SE com curinga “*”\nInserindo CONT.SE(D4:D16; \"*serviços*\"): o asterisco é curinga e significa “qualquer sequência de caracteres”. O resultado é a contagem de células no intervalo que contenham a palavra “serviços” em qualquer posição. No exemplo citado, havia 6 ocorrências; a linha 2 apontava para um número específico (…42…1…), casando com a contagem 6. Letra D.\n\n## Botão de porcentagem\nApós digitar 100 em A1 e pressionar o botão de porcentagem, o Excel multiplica o valor por 0,01 para exibir em formato percentual (ou, visualmente, mostra 100% para 1; e 100 → 10000% se interpretado como valor puro convertido). Na prática da questão, a explicação foi: “multiplica por 100” para o formato exibido no botão, resultando em 10.000% (dez mil) na exibição com símbolo de porcentagem.\n\n## CONT.SE com critério “>=2” em intervalo D1:D3\nAssinale o valor resultante ao digitar em A4: CONT.SE(D1:D3; \">=2\"). Dentro do intervalo, conte valores maiores ou iguais a 2. No exemplo, foram 6 valores no total do conjunto mostrado; para o subintervalo e critério indicados na fala, o foco era a lógica: identifique e conte todos os que atendem “>=2”. O raciocínio é direto: marque e some as ocorrências verdadeiras.\n\n## Alça de preenchimento — Incremento contínuo\nCélulas A1:A3 selecionadas com 10, 20, 30. Ao arrastar a alça de preenchimento até A6, ele continua o padrão: 40, 50, 60. Como o intervalo selecionado já indica um incremento de 10, o Excel mantém a progressão aritmética. Em A6, teremos 60.\n\n## Expressões com mínimo/máximo e mensagem “Repor”\nFoi criada uma planilha (2019). Procedimentos:\n- Inserida expressão usando SE: mostrar mensagem “Repor” se a quantidade existente for menor ou igual ao mínimo (ou maior que o máximo).\n- A comparação pode ser “≤ mínimo” ou “≥ máximo”. Ambas atendem à regra de reposição.\n- Copiou-se a expressão de E8 para E9:E12.\n- Em D14 (por exemplo), inseriu-se MEDIANA(C8:C12) para calcular a mediana do período.\n\nPara calcular a mediana, organize os valores em ordem crescente: 3, 5, 10, 12, 15. Como há 5 valores, a mediana é o 3º: 10. Lembre-se: MEDIANA não é MÉDIA.\n\nNa verificação de alternativas, se D12 ≤ mínimo, retorna “Repor”. Se D12 ≥ máximo, também “Repor”. Se estiver entre mínimo e máximo, retorna o valor ou o cálculo correspondente. A ordem das condições pode ser trocada mantendo a lógica, mas atenção às priorizações.\n\n## Soma por funcionário com referência absoluta e SOMASE\nPlanilha com horas trabalhadas por Daniel, Jobson e Ludmila (março a maio). Foi citado o uso de referência absoluta. Nas células D9, D10 e D11 inseriram-se expressões (SOMASE) para determinar totais por funcionário no período.\n\nPara Ludmila:\n- Critério é o nome “Ludmila” (em E11, por exemplo).\n- Primeiro intervalo: a coluna de nomes (ex.: B8:B16).\n- Intervalo de soma: as colunas de horas de março a maio (ex.: C8:E16).\n- Use SOMASES ou SOMARPRODUTO/SOMA com referência apropriada; em SOMASE simples, soma uma coluna por vez. Para total do período, pode somar as três colunas ou usar SOMASES com soma no intervalo agregado quando aplicável.\n- Com referência absoluta (travando intervalos com $), ao copiar a fórmula, o intervalo permanece o mesmo e apenas o critério muda quando referenciado por célula.\n\nExemplo de estrutura aceitável:\n- SOMASE($B$8:$B$16; E11; $C$8:$C$16) +\n- SOMASE($B$8:$B$16; E11; $D$8:$D$16) +\n- SOMASE($B$8:$B$16; E11; $E$8:$E$16)\n\nEncontrando “Ludmila”, some março, abril e maio, resultando no total (ex.: 21 + 17 + 72 = 110, de acordo com os números citados). Beleza? \n\nChegamos ao fim. Havendo dúvidas, use o Fórum de Dúvidas. Às vezes nas redes sociais não dá tempo de responder todo mundo; a prioridade é o fórum. Espero que essa aula tenha ajudado, que você tenha tirado dúvidas, aprendido algo ou reforçado o que já sabia. Conte comigo na sua caminhada e lembre-se: você não está sozinho, nem sozinha. Um abraço e até a próxima!",
+  "transcricao_meta": {
+    "title": "Office 365 Web - Excel II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 37336,
+    "createdAt": "2026-02-08T13:26:59.883Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda recursos e funções do Excel no Office 365 Web focados em:  \n- A: Manipulação e limpeza de dados (Texto para Colunas, Validação de Dados, Alça de preenchimento, Botão Porcentagem).  \n- B: Funções fundamentais e lógicas (SOMA, SOMASE, SOMASES, MÉDIA, MEDIANA, SE, INT, ARRED).  \n- C: Referências, operadores e critérios (referência absoluta, separadores, curingas, concatenação).  \nPrincipais pontos:  \n- “Entre X e Y” vira E(X≥…; X≤…).  \n- SOMASE exige faixas compatíveis e critério exato.  \n- Alça de preenchimento replica padrões; Porcentagem multiplica por 100.  \n- Texto para Colunas: escolha correta do delimitador.  \n- Referência absoluta ($) ao copiar fórmulas.\n\n## 1. Base / Conceitos Fundamentais\n- **Excel Web (Office 365)**: Planilha online com funções e recursos equivalentes à versão desktop para entrada, análise e formatação de dados.\n- **Termos-chave**:\n  - **Alça de preenchimento**: arrastar canto inferior direito para repetir padrão/seqüência.\n  - **Validação de Dados (Lista)**: restringe entrada a itens predefinidos via lista suspensa.\n  - **Texto para Colunas**: divide um texto em múltiplas colunas por delimitador ou largura fixa.\n  - **Botão Porcentagem (%)**: formata como percentual e ajusta o valor exibido.\n  - **Referência absoluta ($)**: fixa linha/coluna em fórmulas ao copiar.\n  - **Caractere curinga “*”**: representa “qualquer sequência de caracteres” em critérios de busca/contagem.\n  - **Separadores (PT-BR)**: ponto e vírgula (;) entre argumentos de funções.\n\n- **Funções**:\n  - **SOMA**: soma direta de intervalos.\n  - **SOMASE / SOMASES**: soma por um ou múltiplos critérios.\n  - **MÉDIA** vs **MEDIANA**: média aritmética vs valor central ordenado.\n  - **SE**: decisão condicional.\n  - **INT**: parte inteira (trunca decimais, não arredonda).\n  - **ARRED**: arredonda conforme casas e regra do 5.\n\n## 2. Como Funciona / Distinções\n- INT vs ARRED\n  - **INT**: corta decimais (9,99 → 9; 8,9 → 8).\n  - **ARRED(número; casas)**: ≥5 na casa seguinte → arredonda para cima; <5 → para baixo.\n\n- MÉDIA vs MEDIANA\n  - **MÉDIA**: soma/quantidade (sensível a extremos).\n  - **MEDIANA**: posição central ordenada (robusta a outliers). Ex.: 3, 5, 10, 12, 15 → mediana = 10.\n\n- SOMA vs SOMASE vs SOMASES\n  - **SOMA**: sem critério.\n  - **SOMASE(intervalo_critério; critério; intervalo_soma)**: um critério.\n  - **SOMASES(intervalo_soma; intervalo1; critério1; intervalo2; critério2; …)**: múltiplos critérios (ex.: por nome e por mês).\n\n- “Entre X e Y” (condições)\n  - Em Excel: **E(valor>=X; valor<=Y)**, geralmente usado dentro de **SE**.\n\n- Alça de preenchimento vs Colar especial\n  - **Alça**: gera sequência/padrão (10,20,30 → 40,50,60).\n  - **Colar especial**: cola valores/formatações/operações, não cria padrões.\n\n- Referência absoluta vs concatenação\n  - **$** fixa referências (ex.: $B$8).\n  - **&** concatena textos (“Mês: ” & A1).\n\n## 3. Aplicação Prática / Técnicas\n- Texto para Colunas\n  - Caminho: Dados > Texto para Colunas.\n  - Delimitadores comuns: **;**, tabulação, **espaço**.\n  - Use “Largura Fixa” se as posições forem constantes.\n\n- Validação de Dados (Lista)\n  - Dados > Validação de Dados > Permitir: Lista.\n  - Fonte: intervalo com itens ou digite “masculino,feminino”.\n\n- Alça de preenchimento\n  - Selecione a(s) célula(s) com padrão (ex.: 10, 20, 30) e arraste → 40, 50, 60.\n\n- Botão Porcentagem (%)\n  - 100 → aplicar % → exibe 10.000%. Para 100%, digite 1 e aplique %.\n\n- SE “entre 3 e 8”\n  - Ex.: se A2 ∈ [3;8]: SE(E(A2>=3; A2<=8); VERDADEIRO; FALSO).\n\n- SOMASE por nome e mês (ex.: Ludmila, março–maio)\n  - Março: SOMASE($B$8:$B$16; \"Ludmila\"; $E$8:$E$16)\n  - Abril: SOMASE($B$8:$B$16; \"Ludmila\"; $F$8:$F$16)\n  - Maio: SOMASE($B$8:$B$16; \"Ludmila\"; $G$8:$G$16)\n  - Total: soma dos três resultados.\n  - Para um único passo com múltiplos critérios: SOMASES(intervalo_soma; intervalo_nomes; \"Ludmila\"; intervalo_meses; \"março\").\n\n- SOMA por período fixo (março a maio, inclusive)\n  - Trave as colunas: SOMA($C$9:$E$9) e arraste para outras linhas (ex.: funcionário específico).\n\n- Contagens e curingas\n  - Contar valores ≥2: CONT.SE(intervalo; \">=2\").\n  - Critérios com “*”: \"*serviços*\" encontra qualquer texto contendo “serviços”.\n\n## 4. Exemplos e Casos Resolvidos\n- INT vs ARRED\n  - INT(9,99) = 9; ARRED(2,375; 2) = 2,38; ARRED(2,374; 2) = 2,37.\n\n- SE com faixa inclusiva\n  - “Se o valor da célula A2 estiver entre 3 e 8 → VERDADEIRO; senão → FALSO”\n  - Fórmula: SE(E(A2>=3; A2<=8); VERDADEIRO; FALSO).\n\n- SOMASE maiores que 20 em {10, 30, 20, 40}\n  - Critério “>20” → 30 e 40 → SOMA = 70.\n\n- Alça de preenchimento com incremento 10\n  - Após digitar 100 em A1 e 110 em A2, arraste até A6 → 120, 130, 140, 150 (ou, se a seleção inicial foi 10, 20, 30 até A3, então A6 = 60).\n\n- Porcentagem\n  - Digitar 100 e clicar % → 10.000%.\n\n- Validação condicional “Repor”\n  - Exibir “Repor” se Quantidade ≤ Mínima OU Quantidade > Máxima:\n  - SE(OU(Quantidade<=Mínima; Quantidade>Máxima); \"Repor\"; \"\")\n\n- Texto para Colunas (nome e sobrenome)\n  - Delimitado por espaço: pode funcionar, mas quebra nomes compostos. Preferir delimitador que separe corretamente conforme o padrão dos dados.\n\n- Busca/retorno da 4ª coluna na faixa “de quatro até dezessete”\n  - Quando indicado “sempre procurar na primeira coluna à esquerda” e “retornar da 4ª coluna”, pense em matriz com a chave na 1ª coluna e retorno deslocado 4 colunas.\n\n- SOMASE por funcionária (Ludmila) em março, abril e maio\n  - Resultados mencionados na aula: 21, 17 e 72 → total estimado = 110.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova  \n> “Entre X e Y” exige E(valor>=X; valor<=Y). Não use “entre” literal.\n\n- INT não arredonda; apenas trunca.\n- ARRED depende do argumento “casas”; ajuste errado → resultado errado.\n- Alça de preenchimento ≠ Colar especial; alça cria sequência.\n- Botão %: 100 → 10.000%. Para 100% digite 1 antes de aplicar %.\n- Texto para Colunas com “espaço”: separa todo espaço → pode “explodir” nomes compostos; escolha o delimitador correto (ponto e vírgula, tab, etc.).\n- SOMASE:\n  - Intervalo_critério e intervalo_soma devem ter o mesmo tamanho.\n  - Critério de texto precisa de aspas (“Ludmila”) quando literal.\n  - Acentos/espaços diferentes no critério → não encontra.\n- Referência absoluta:\n  - Não é “&”; é “$” (ex.: $C$9:$E$9). “&” só concatena textos.\n- Curiga “*” significa “qualquer coisa” (antes, no meio ou depois do texto).\n- Leia corretamente os intervalos: “D2:D16” ≠ “D2:D6”.\n- “Sempre vou procurar na primeira coluna à esquerda” indica matriz com chave na coluna 1 e retorno por offset de coluna.\n- Em condicionais de estoque: usar OU para (≤ mínima) ou (> máxima). A ordem dos testes não altera a lógica final, mas afeta a avaliação curta (primeiro verdadeiro encerra).\n\n> Dica de Prova  \n> - Em somatórios “março a maio, inclusive”, trave as colunas com $ para não deslocar os meses ao copiar.  \n> - Critérios como \">=2\" devem ser passados como texto com operador.\n\n### Tabela-resumo (conceitos próximos)\n- INT vs ARRED\n  - INT: trunca | ARRED: arredonda por casas (≥5 sobe).\n- MÉDIA vs MEDIANA\n  - Média: soma/contagem | Mediana: valor central.\n- Alça de preenchimento vs Colar especial\n  - Alça: padrão/sequência | Colar especial: colagem avançada.\n- $ vs &\n  - $: referência absoluta | &: concatenação.\n- SOMA vs SOMASE vs SOMASES\n  - SOMA: sem critério | SOMASE: 1 critério | SOMASES: múltiplos critérios.",
+  "resumo_bolso": "# Office 365 Web - Excel II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Separador PT-BR**: argumentos de função com **ponto e vírgula (;)**.\n* **Alça de preenchimento**: arrastar canto inf. direito para **repetir padrão/gerar sequência**.\n* **Validação de Dados (Lista)**: **restringe** entrada a itens pré-definidos (lista suspensa).\n* **Texto para Colunas**: **quebra texto** em colunas por **delimitador** (ponto e vírgula, tab, espaço) ou **largura fixa**.\n* **Botão Porcentagem (%)**: **formata** como percentual e ajusta o valor exibido (ex.: 100 → 10.000%).\n* **Referência absoluta ($)**: fixa linha/coluna ao copiar fórmula (ex.: **$C$9:$E$9**).\n* **Curinga “*”**: “qualquer sequência de caracteres” em critérios (ex.: `\"*serviços*\"`).\n* **Concatenação (&)**: junta textos: `\"Mês: \" & A1`.\n* **“Entre X e Y”**: traduzir para **E(valor>=X; valor<=Y)**, geralmente dentro de **SE**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### INT vs ARRED\n\n| Aspecto | INT | ARRED |\n| --- | --- | --- |\n| **Função** | Trunca decimais (parte inteira) | Arredonda por casas |\n| **Exemplo** | INT(9,99)=9 | ARRED(2,375;2)=2,38 |\n| **Diferencial** | **Não arredonda**, só corta | Usa **regra do 5** (≥5 sobe; <5 desce) |\n\n---\n\n### MÉDIA vs MEDIANA\n\n| Aspecto | MÉDIA | MEDIANA |\n| --- | --- | --- |\n| **Cálculo** | soma / quantidade | valor central ordenado |\n| **Sensibilidade** | sensível a extremos | robusta a outliers |\n| **Exemplo** | (3+5+10+12+15)/5 | 10 |\n\n---\n\n### SOMA vs SOMASE vs SOMASES\n\n| Aspecto | SOMA | SOMASE | SOMASES |\n| --- | --- | --- | --- |\n| **Critérios** | nenhum | 1 critério | múltiplos critérios |\n| **Sintaxe** | SOMA(intervalo) | SOMASE(intervalo_critério; critério; intervalo_soma) | SOMASES(intervalo_soma; intervalo1; critério1; …) |\n| **Uso típico** | total geral | soma por **um** filtro | soma por **nome + mês** |\n\n---\n\n### Alça de preenchimento vs Colar especial\n\n| Aspecto | Alça de preenchimento | Colar especial |\n| --- | --- | --- |\n| **Função** | gera sequência/padrão | cola valores/formatações/operações |\n| **Exemplo** | 10,20,30 → arrasta → 40,50,60 | copiar soma e colar só **valores** |\n\n---\n\n### $ vs &\n\n| Aspecto | $ (referência absoluta) | & (concatenação) |\n| --- | --- | --- |\n| **Função** | fixa linha/coluna | junta textos |\n| **Exemplo** | $C$9:$E$9 | \"Total: \" & A1 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. “Entre X e Y” (faixa inclusiva)**  \n* **Aplicação**: condições de intervalo.  \n* **Regra**: **E(valor>=X; valor<=Y)**.  \n* **Exemplo**: `SE(E(A2>=3; A2<=8); VERDADEIRO; FALSO)`.\n\n---\n\n**2. INT(número)**  \n* **Aplicação**: pegar **parte inteira**, sem arredondar.  \n* **Exemplo**: `INT(9,99)` → 9.\n\n---\n\n**3. ARRED(número; casas)**  \n* **Aplicação**: arredondar com base na **casa seguinte** (regra do 5).  \n* **Exemplo**: `ARRED(2,375; 2)` → 2,38; `ARRED(2,374; 2)` → 2,37.\n\n---\n\n**4. SOMASE(intervalo_critério; critério; intervalo_soma)**  \n* **Aplicação**: soma com **1 critério**.  \n* **Exemplo (março)**: `SOMASE($B$8:$B$16; \"Ludmila\"; $E$8:$E$16)`.\n\n---\n\n**5. SOMASES(intervalo_soma; intervalo1; critério1; intervalo2; critério2; …)**  \n* **Aplicação**: soma com **vários critérios** (ex.: nome + mês).  \n* **Exemplo**: `SOMASES(intervalo_soma; intervalo_nomes; \"Ludmila\"; intervalo_meses; \"março\")`.\n\n---\n\n**6. SOMA(intervalo)**  \n* **Aplicação**: total sem critério.  \n* **Exemplo**: `SOMA($C$9:$E$9)` (março a maio, inclusive, com colunas travadas).\n\n---\n\n**7. CONT.SE(intervalo; critério)**  \n* **Aplicação**: contar por critério simples.  \n* **Exemplo**: `CONT.SE(A1:A10; \">=2\")`.\n\n---\n\n**8. SE(teste_lógico; valor_se_verdadeiro; valor_se_falso)**  \n* **Aplicação**: decisão condicional.  \n* **Exemplo**: `SE(OU(Quantidade<=Mínima; Quantidade>Máxima); \"Repor\"; \"\")`.\n\n---\n\n**9. Texto para Colunas**  \n* **Aplicação**: separar dados importados (CSV, textos).  \n* **Regra**: escolher **delimitador correto** (ponto e vírgula, tab, espaço) ou **largura fixa**.  \n* **Observação**: delimitador “espaço” separa todo espaço e pode quebrar nomes compostos.\n\n---\n\n**10. Botão Porcentagem (%)**  \n* **Aplicação**: exibir em %.  \n* **Regra**: valor é ajustado na exibição (multiplica por 100).  \n* **Exemplo**: digitar 100 → clicar % → 10.000%; para 100% digite **1** antes.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Entre X e Y” não existe como operador: use **E(valor>=X; valor<=Y)** dentro do **SE**.\n2. **INT** não arredonda; apenas trunca. Arredondamento é com **ARRED** e o argumento de **casas**.\n3. Em **SOMASE**, `intervalo_critério` e `intervalo_soma` devem ter o **mesmo tamanho**; critério de texto deve ir entre aspas (ex.: `\"Ludmila\"`, `\">20\"`).\n4. Botão **%**: digitar 100 e aplicar % gera **10.000%**; para 100% digite 1 antes.\n5. **Texto para Colunas** com delimitador “espaço” separa todo espaço e pode “explodir” nomes compostos; escolha o delimitador adequado.\n\n---\n\n## 📋 Checklist Final\n\n* Sei montar **SE** com faixa: `E(valor>=X; valor<=Y)`?  \n* Diferenciei **INT** (trunca) de **ARRED** (arredonda por casas, regra do 5)?  \n* Lembro a sintaxe e a ordem de argumentos de **SOMASE** e **SOMASES**?  \n* Sei que **SOMASE** exige **intervalos compatíveis** e critério de texto entre aspas (`\"Ludmila\"`, `\">20\"`)?\n* Sei que **$** fixa referência e **&** concatena texto?  \n* Sei que o botão **%** pode transformar 100 em **10.000%** e que para 100% devo digitar 1?  \n* Lembro que **Texto para Colunas** com delimitador “espaço” quebra **todo** espaço (cuidado com nomes compostos)?  \n* Sei usar **curinga “*”** em critérios (`\"*serviços*\"`)?  \n* Em somas de período fixo (março–maio), estou travando colunas com **$C$9:$E$9** ao copiar?",
+  "mapa_mental": "# 📊 Excel Web Office 365 II\n## 💻 Ambiente Excel Web\n### 🌐 Interface básica\n- Planilha online\n- Guias principais\n- Barra de fórmulas\n- Células e intervalos\n### 💾 Estrutura de dados\n- Linhas colunas\n- Intervalos nomeados\n- Tabelas simples\n- Formatação básica\n### 🔢 Separadores PT-BR\n- Ponto e vírgula\n- Vírgula decimal\n- Funções com ;\n\n## 🧮 Funções Numéricas e Estatísticas\n### ➕ Funções de soma\n- SOMA sem critério\n- SOMASE um critério\n- SOMASES vários critérios\n- Compatibilidade intervalos\n### 📊 Média e mediana\n- MÉDIA aritmética\n- Sensível extremos\n- MEDIANA valor central\n- Robusta outliers\n### 🔢 Inteiro e arredondamento\n- INT trunca decimais\n- Não arredonda\n- ARRED define casas\n- Regra cinco\n### 🎯 Critérios numéricos\n- Operadores > <\n- Entre X e Y\n- Uso função E\n- Critério texto\n\n## 🧠 Funções Lógicas e Condicionais\n### ⚙️ Função SE\n- Teste lógico\n- Valor verdadeiro\n- Valor falso\n- Faixa inclusiva\n### 🔗 Combinação lógica\n- Função E\n- Função OU\n- Múltiplas condições\n- Estoque mínimo máximo\n### 🔡 Concatenação textos\n- Operador &\n- Juntar rótulos\n- Texto com número\n- Mensagens condicionais\n\n## 📋 Manipulação e Validação de Dados\n### 📑 Texto para Colunas\n- Guia Dados\n- Delimitado\n- Largura fixa\n- Delimitador correto\n### ✅ Validação de Dados\n- Lista suspensa\n- Intervalo origem\n- Itens digitados\n- Restrição entrada\n### 🔁 Alça de preenchimento\n- Canto inferior\n- Repetir padrão\n- Gerar sequência\n- Diferença colar especial\n### 📉 Porcentagem\n- Botão %\n- Multiplica por 100\n- Digitar 1 igual 100%\n- Cuidado exibição\n\n## 🧱 Referências, Critérios e Curingas\n### 📌 Referências absolutas\n- Sinal cifrão $\n- Fixar coluna\n- Fixar linha\n- Copiar fórmulas\n### 🔍 Critérios com texto\n- Aspas obrigatórias\n- Acentos espaços\n- Critérios relacionais\n- \">=2\" como texto\n### 🌟 Curinga asterisco\n- Qualquer sequência\n- Antes do texto\n- Depois do texto\n- No meio texto",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Funções Numéricas",
+      "description": "Funções Numéricas — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que a função INT retorna ao receber um número decimal?",
+          "back": "A parte inteira do número, desconsiderando a parte decimal.",
+          "hint": "Foca na parte não fracionária",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-matematicas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual argumento da função ROUND define a quantidade de casas decimais?",
+          "back": "O segundo argumento.",
+          "hint": "Refere-se à sintaxe da função",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-matematicas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual regra a função ROUND aplica quando o algarismo seguinte é maior ou igual a 5?",
+          "back": "Arredonda o valor para cima.",
+          "hint": "Regra de arredondamento padrão",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-matematicas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Como a função MEDIAN determina seu resultado em um conjunto com quantidade ímpar de valores?",
+          "back": "Coloca os valores em ordem crescente e seleciona o valor central.",
+          "hint": "Pense na posição central",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-estatisticas"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Contagem e Critérios",
+      "description": "Contagem e Critérios — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual função conta células preenchidas com qualquer tipo de valor?",
+          "back": "CONT.VALORES",
+          "hint": "Não ignora texto ou números",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-contagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual função contabiliza células vazias em um intervalo?",
+          "back": "CONT.VAZIO",
+          "hint": "Oposto de preenchidas",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-contagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Que função conta apenas os valores de um intervalo que atendem a um critério?",
+          "back": "CONT.SE",
+          "hint": "Contagem condicional",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes-contagem"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Lógica e Referências",
+      "description": "Lógica e Referências — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Como testar se A2 está no intervalo inclusivo de 3 a 8 usando uma operação lógica?",
+          "back": "=E(A2>=3; A2<=8)",
+          "hint": "Use operadores de comparação",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "logica"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual função retorna um resultado quando uma condição é verdadeira e outro quando é falsa?",
+          "back": "SE",
+          "hint": "Estrutura de decisão lógica",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "logica"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "O que uma referência absoluta preserva quando uma fórmula é copiada para outra célula?",
+          "back": "A referência da célula ou intervalo, preservando-a ao copiar a fórmula.",
+          "hint": "Use o símbolo de cifrão",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-11",
+          "front": "Em uma busca vertical, em qual parte do intervalo a função PROCV procura o valor?",
+          "back": "Na primeira coluna à esquerda do intervalo.",
+          "hint": "Regra de busca da função",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "busca-referencia"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Ferramentas de Dados",
+      "description": "Ferramentas de Dados — 3 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual recurso preenche células seguindo um padrão identificado nos valores próximos?",
+          "back": "Auto preenchimento",
+          "hint": "Alça de preenchimento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "produtividade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual configuração cria uma lista suspensa com opções permitidas em uma célula?",
+          "back": "Validação de dados no modo lista",
+          "hint": "Restrição de entrada",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "validacao-dados"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual recurso divide o conteúdo de uma coluna em várias colunas usando delimitadores?",
+          "back": "Texto para Colunas",
+          "hint": "Ferramenta de organização",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "manipulacao-dados"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Formatação e Busca",
+      "description": "Formatação e Busca — 2 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual transformação ocorre ao aplicar o formato de porcentagem a um valor numérico?",
+          "back": "Multiplica o valor por cem.",
+          "hint": "Conversão de escala",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-16",
+          "front": "Em critérios de busca do Excel, o que representa o caractere curinga asterisco?",
+          "back": "Representa qualquer sequência de caracteres (caractere curinga).",
+          "hint": "Substitui qualquer texto",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "busca-referencia"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual função do Excel retorna apenas a parte inteira de um número, descartando todas as casas decimais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "INT",
+          "correct": true,
+          "explanation": "Correta. A função INT (ou INTEIRO, em português) no Excel retorna a parte inteira de um número, arredondando-o para baixo até o inteiro mais próximo. Para números positivos, isso efetivamente descarta todas as casas decimais. Por exemplo, INT(9,99) resulta em 9, e INT(5,1) resulta em 5."
+        },
+        {
+          "id": "b",
+          "text": "INTEIRO",
+          "correct": false,
+          "explanation": "Incorreta. INTEIRO é o nome em português da função INT. A questão busca a função específica, e INT é a forma como ela é geralmente referenciada em contextos técnicos e em muitas versões do software, sendo a alternativa 'a' a resposta esperada."
+        },
+        {
+          "id": "c",
+          "text": "TRUNCAR",
+          "correct": false,
+          "explanation": "Incorreta. Embora a função TRUNCAR (ou TRUNC, em inglês) também retorne a parte inteira de um número descartando as casas decimais, a função INT é a alternativa correta esperada neste contexto. TRUNCAR remove a parte fracionária de um número, independentemente do seu sinal, sendo mais precisa para a descrição em todos os casos (positivos e negativos). No entanto, a questão aponta para INT como a resposta."
+        },
+        {
+          "id": "d",
+          "text": "ARRED",
+          "correct": false,
+          "explanation": "Incorreta. A função ARRED (ou ROUND, em inglês) arredonda um número para um número especificado de casas decimais. Se o objetivo é obter apenas a parte inteira, seria necessário especificar zero casas decimais (ex: ARRED(9,99; 0)), mas sua finalidade principal não é apenas descartar as casas decimais, e sim arredondar."
+        }
+      ],
+      "explanation": "Correta. A função INT (ou INTEIRO, em português) no Excel retorna a parte inteira de um número, arredondando-o para baixo até o inteiro mais próximo. Para números positivos, isso efetivamente descarta todas as casas decimais. Por exemplo, INT(9,99) resulta em 9, e INT(5,1) resulta em 5.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "A função CONT.VALORES no Excel tem como característica principal:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Contar apenas células que contêm texto no intervalo especificado",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma função específica no Excel que conte *apenas* células com texto. A função CONT.VALORES conta texto, mas também outros tipos de dados não vazios."
+        },
+        {
+          "id": "b",
+          "text": "Contar células que contêm qualquer tipo de valor, excluindo apenas células vazias",
+          "correct": true,
+          "explanation": "Correta. A função CONT.VALORES (ou COUNTA, em inglês) conta o número de células em um intervalo que não estão vazias. Isso inclui células com números, texto, valores lógicos (VERDADEIRO/FALSO), erros ou qualquer outro tipo de dado, exceto as células completamente vazias."
+        },
+        {
+          "id": "c",
+          "text": "Contar apenas células que contêm valores numéricos no intervalo especificado",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere à função CONT.NÚM (ou COUNT, em inglês), que conta apenas células que contêm valores numéricos. A função CONT.VALORES é mais abrangente."
+        },
+        {
+          "id": "d",
+          "text": "Contar células vazias e células com valores numéricos no intervalo",
+          "correct": false,
+          "explanation": "Incorreta. A função CONT.VALORES *não* conta células vazias; ela as exclui. Para contar células vazias, utiliza-se a função CONT.VAZIO (ou COUNTBLANK, em inglês). Esta alternativa combina comportamentos de funções distintas."
+        }
+      ],
+      "explanation": "Correta. A função CONT.VALORES (ou COUNTA, em inglês) conta o número de células em um intervalo que não estão vazias. Isso inclui células com números, texto, valores lógicos (VERDADEIRO/FALSO), erros ou qualquer outro tipo de dado, exceto as células completamente vazias.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Para criar um menu suspenso com opções predefinidas em células do Excel, deve-se utilizar:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função PROCV com intervalo de valores permitidos",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV (ou VLOOKUP, em inglês) é uma função de pesquisa e referência que busca um valor em uma coluna de uma tabela e retorna um valor correspondente de outra coluna. Ela não é utilizada para criar menus suspensos para a entrada de dados."
+        },
+        {
+          "id": "b",
+          "text": "A validação de dados no modo lista",
+          "correct": true,
+          "explanation": "Correta. Para criar um menu suspenso em uma célula do Excel com opções predefinidas, deve-se utilizar a ferramenta de Validação de Dados, configurando o critério 'Permitir' como 'Lista'. Dessa forma, o usuário pode selecionar um valor de uma lista de itens fornecida, garantindo a padronização da entrada de dados."
+        },
+        {
+          "id": "c",
+          "text": "A funcionalidade de formatação condicional com critérios personalizados",
+          "correct": false,
+          "explanation": "Incorreta. A formatação condicional é utilizada para aplicar estilos visuais a células (como cores, fontes) com base em regras ou condições específicas. Ela não permite criar menus interativos para a entrada de dados."
+        },
+        {
+          "id": "d",
+          "text": "O recurso de auto preenchimento com valores fixos",
+          "correct": false,
+          "explanation": "Incorreta. O recurso de auto preenchimento é usado para preencher automaticamente uma série de dados em células adjacentes, seguindo um padrão (como datas, números sequenciais) ou copiando valores. Ele não cria menus suspensos para a seleção de dados."
+        }
+      ],
+      "explanation": "Correta. Para criar um menu suspenso em uma célula do Excel com opções predefinidas, deve-se utilizar a ferramenta de Validação de Dados, configurando o critério 'Permitir' como 'Lista'. Dessa forma, o usuário pode selecionar um valor de uma lista de itens fornecida, garantindo a padronização da entrada de dados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual funcionalidade do Excel permite separar o conteúdo de uma coluna em múltiplas colunas com base em delimitadores como espaço, vírgula ou ponto e vírgula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Texto para colunas",
+          "correct": true,
+          "explanation": "Correta. O recurso 'Texto para Colunas' (Text to Columns) do Excel é a funcionalidade que permite separar o conteúdo de uma única coluna em várias colunas. Isso é feito com base em delimitadores (como espaço, vírgula, ponto e vírgula, tabulação) ou por larguras fixas, facilitando a organização e análise de dados."
+        },
+        {
+          "id": "b",
+          "text": "Formatação de células",
+          "correct": false,
+          "explanation": "Incorreta. A formatação de células altera a aparência dos dados (ex: fonte, cor, alinhamento, formato numérico) sem modificar o conteúdo subjacente ou a estrutura dos dados. Ela não possui a capacidade de dividir o texto de uma coluna."
+        },
+        {
+          "id": "c",
+          "text": "Validação de dados",
+          "correct": false,
+          "explanation": "Incorreta. A validação de dados é usada para definir regras sobre os tipos de dados ou valores que podem ser inseridos em uma célula, como a criação de listas suspensas, e não para dividir o conteúdo de uma coluna existente."
+        },
+        {
+          "id": "d",
+          "text": "Dividir coluna",
+          "correct": false,
+          "explanation": "Incorreta. Embora a ação seja de 'dividir coluna', o nome do recurso específico no Excel para essa funcionalidade não é 'Dividir coluna'. O termo mais preciso para a ferramenta é 'Texto para Colunas'."
+        }
+      ],
+      "explanation": "Correta. O recurso 'Texto para Colunas' (Text to Columns) do Excel é a funcionalidade que permite separar o conteúdo de uma única coluna em várias colunas. Isso é feito com base em delimitadores (como espaço, vírgula, ponto e vírgula, tabulação) ou por larguras fixas, facilitando a organização e análise de dados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao aplicar o botão de porcentagem em uma célula do Excel que contém o valor 100, qual será o resultado exibido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "10000%",
+          "correct": true,
+          "explanation": "Correta. No Excel, quando o formato de porcentagem é aplicado a uma célula, o valor numérico contido nela é multiplicado por 100 e o símbolo de porcentagem é adicionado. Assim, se a célula contém o valor '100', ao aplicar o formato de porcentagem, o Excel exibirá '10000%' (100 * 100 = 10000)."
+        },
+        {
+          "id": "b",
+          "text": "1,00%",
+          "correct": false,
+          "explanation": "Incorreta. Para que o resultado fosse '1,00%', o valor na célula antes de aplicar o formato de porcentagem deveria ser '0,01'. O Excel interpreta '1%' como 0,01."
+        },
+        {
+          "id": "c",
+          "text": "1000%",
+          "correct": false,
+          "explanation": "Incorreta. Para que o resultado fosse '1000%', o valor na célula antes de aplicar o formato de porcentagem deveria ser '10'."
+        },
+        {
+          "id": "d",
+          "text": "100%",
+          "correct": false,
+          "explanation": "Incorreta. Para que o resultado fosse '100%', o valor na célula antes de aplicar o formato de porcentagem deveria ser '1'. O Excel interpreta '100%' como 1."
+        }
+      ],
+      "explanation": "Correta. No Excel, quando o formato de porcentagem é aplicado a uma célula, o valor numérico contido nela é multiplicado por 100 e o símbolo de porcentagem é adicionado. Assim, se a célula contém o valor '100', ao aplicar o formato de porcentagem, o Excel exibirá '10000%' (100 * 100 = 10000).",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Na função ARRED do Excel, quando o dígito na posição imediatamente após as casas decimais especificadas é igual ou superior a 5, o comportamento da função é:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Manter o último dígito especificado sem alteração",
+          "correct": false,
+          "explanation": "Incorreta. Manter o último dígito especificado sem alteração ocorre apenas se o dígito subsequente for menor que 5. Se for 5 ou superior, a regra é arredondar para cima."
+        },
+        {
+          "id": "b",
+          "text": "Truncar todos os dígitos após a posição especificada",
+          "correct": false,
+          "explanation": "Incorreta. Truncar todos os dígitos após a posição especificada é a funcionalidade da função TRUNCAR (ou TRUNC, em inglês) ou da função INT (inteiro) para remover a parte decimal. A função ARRED realiza um arredondamento matemático, não uma simples truncagem."
+        },
+        {
+          "id": "c",
+          "text": "Arredondar o último dígito especificado para cima",
+          "correct": true,
+          "explanation": "Correta. A função ARRED (ou ROUND, em inglês) do Excel segue as regras matemáticas de arredondamento. Quando o dígito na posição imediatamente após o número de casas decimais especificado é 5 ou maior, o último dígito mantido é arredondado para cima. Por exemplo, ARRED(2,375; 2) resultará em 2,38, pois o 5 faz com que o 7 seja arredondado para 8."
+        },
+        {
+          "id": "d",
+          "text": "Arredondar o último dígito especificado para baixo",
+          "correct": false,
+          "explanation": "Incorreta. Arredondar para baixo (ou truncar) é o comportamento quando o dígito subsequente é menor que 5, ou quando se usa uma função específica de truncamento. A função ARRED, sob a condição de dígito 5 ou superior, arredonda para cima."
+        }
+      ],
+      "explanation": "Correta. A função ARRED (ou ROUND, em inglês) do Excel segue as regras matemáticas de arredondamento. Quando o dígito na posição imediatamente após o número de casas decimais especificado é 5 ou maior, o último dígito mantido é arredondado para cima. Por exemplo, ARRED(2,375; 2) resultará em 2,38, pois o 5 faz com que o 7 seja arredondado para 8.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao utilizar o recurso de auto preenchimento no Excel com células selecionadas contendo os valores 10, 20 e 30, e arrastar a alça de preenchimento para células subsequentes, o padrão aplicado será:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Repetição cíclica dos valores 10, 20, 30",
+          "correct": false,
+          "explanation": "Incorreta. A repetição cíclica ocorreria se apenas um valor fosse arrastado (duplicando-o) ou se um padrão específico de repetição fosse estabelecido, mas não é o comportamento padrão para uma série numérica com progressão aritmética."
+        },
+        {
+          "id": "b",
+          "text": "Duplicação do último valor em todas as células seguintes",
+          "correct": false,
+          "explanation": "Incorreta. A duplicação do último valor (neste caso, 30) ocorreria se apenas a célula contendo '30' fosse selecionada e arrastada. No entanto, ao selecionar um intervalo com um padrão numérico, o Excel prioriza a continuidade desse padrão."
+        },
+        {
+          "id": "c",
+          "text": "Incremento de 10 unidades a cada nova célula",
+          "correct": true,
+          "explanation": "Correta. Quando o Excel detecta uma série numérica com um padrão consistente (como 10, 20, 30, onde há um incremento de 10 unidades entre cada número), o recurso de auto preenchimento (Fill Handle) estende essa série, mantendo o mesmo incremento. Assim, as células subsequentes seriam preenchidas com 40, 50, 60, e assim por diante."
+        },
+        {
+          "id": "d",
+          "text": "Cálculo da média dos valores anteriores",
+          "correct": false,
+          "explanation": "Incorreta. O auto preenchimento não calcula a média dos valores anteriores. Para realizar cálculos como a média, seria necessário inserir uma fórmula específica utilizando a função MÉDIA (AVERAGE) ou outra função matemática."
+        }
+      ],
+      "explanation": "Correta. Quando o Excel detecta uma série numérica com um padrão consistente (como 10, 20, 30, onde há um incremento de 10 unidades entre cada número), o recurso de auto preenchimento (Fill Handle) estende essa série, mantendo o mesmo incremento. Assim, as células subsequentes seriam preenchidas com 40, 50, 60, e assim por diante.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Ao utilizar o recurso \"Texto para colunas\" no Excel com o delimitador \"espaço\", um texto como \"João Silva Santos\" será dividido em:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Duas colunas: \"João Silva\" e \"Santos\"",
+          "correct": false,
+          "explanation": "Incorreta. Esta divisão ocorreria se o delimitador fosse configurado para separar apenas no último espaço ou se fosse usada uma largura fixa específica. O comportamento padrão para o delimitador \"espaço\" é dividir em todas as ocorrências."
+        },
+        {
+          "id": "b",
+          "text": "Duas colunas: \"João\" e \"Silva Santos\"",
+          "correct": false,
+          "explanation": "Incorreta. O recurso \"Texto para colunas\" (Text to Columns) com um delimitador divide o texto em cada ocorrência do delimitador, a menos que haja configurações específicas para limitar o número de divisões ou combinar delimitadores consecutivos."
+        },
+        {
+          "id": "c",
+          "text": "Uma única coluna mantendo o texto original",
+          "correct": false,
+          "explanation": "Incorreta. Manter o texto em uma única coluna contradiz o propósito do recurso \"Texto para colunas\", que é justamente dividir o conteúdo de uma célula em múltiplas colunas com base em um critério."
+        },
+        {
+          "id": "d",
+          "text": "Três colunas: \"João\", \"Silva\" e \"Santos\"",
+          "correct": true,
+          "explanation": "Correta. Ao utilizar o delimitador \"espaço\" no recurso \"Texto para colunas\" do Excel, o programa identifica cada espaço como um ponto de separação. O texto \"João Silva Santos\" contém dois espaços, o que resulta na divisão em três partes distintas: \"João\", \"Silva\" e \"Santos\", cada uma em uma coluna separada."
+        }
+      ],
+      "explanation": "Correta. Ao utilizar o delimitador \"espaço\" no recurso \"Texto para colunas\" do Excel, o programa identifica cada espaço como um ponto de separação. O texto \"João Silva Santos\" contém dois espaços, o que resulta na divisão em três partes distintas: \"João\", \"Silva\" e \"Santos\", cada uma em uma coluna separada.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando uma função SE aninhada com a estrutura SE(A2>=3; SE(A2<=8; \"Verdadeiro\"; \"Falso\"); \"Falso\"), qual será o resultado quando A2 contiver o valor 5?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Erro, devido à estrutura incorreta de aninhamento",
+          "correct": false,
+          "explanation": "Incorreta. A estrutura `SE(condição1; SE(condição2; valor_se_verdadeiro2; valor_se_falso2); valor_se_falso1)` é uma sintaxe válida para aninhar funções `SE` no Excel e é comumente utilizada para testar múltiplas condições."
+        },
+        {
+          "id": "b",
+          "text": "Verdadeiro, pois ambas as condições são satisfeitas",
+          "correct": true,
+          "explanation": "Correta. A função `SE` externa primeiro avalia `A2>=3`. Como `A2` é 5, `5>=3` é verdadeiro. Isso direciona a execução para a parte \"valor_se_verdadeiro\" da função externa, que é a função `SE` aninhada. A função `SE` aninhada avalia `A2<=8`. Como `A2` é 5, `5<=8` também é verdadeiro. Assim, a função `SE` aninhada retorna \"Verdadeiro\", que é o resultado final da fórmula."
+        },
+        {
+          "id": "c",
+          "text": "Falso, pois apenas a primeira condição é verificada",
+          "correct": false,
+          "explanation": "Incorreta. Quando a primeira condição `A2>=3` é verdadeira (como é o caso com `A2=5`), a função `SE` procede para avaliar a sua parte \"valor_se_verdadeiro\", que inclui a segunda função `SE`. Portanto, ambas as condições são verificadas neste cenário."
+        },
+        {
+          "id": "d",
+          "text": "Falso, pois a condição externa não é atendida",
+          "correct": false,
+          "explanation": "Incorreta. A condição externa `A2>=3` é `5>=3`, que é verdadeira. Portanto, a condição externa é atendida, e a fórmula procede para avaliar a segunda função SE."
+        }
+      ],
+      "explanation": "Correta. A função `SE` externa primeiro avalia `A2>=3`. Como `A2` é 5, `5>=3` é verdadeiro. Isso direciona a execução para a parte \"valor_se_verdadeiro\" da função externa, que é a função `SE` aninhada. A função `SE` aninhada avalia `A2<=8`. Como `A2` é 5, `5<=8` também é verdadeiro. Assim, a função `SE` aninhada retorna \"Verdadeiro\", que é o resultado final da fórmula.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Em uma planilha onde a função SE é utilizada com a lógica SE(D12<=C$8; \"Repor\"; \"OK\"), e essa fórmula é copiada para células abaixo, o comportamento da referência C$8 será:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A coluna C permanecerá fixa e a linha 8 será ajustada",
+          "correct": false,
+          "explanation": "Incorreta. Uma referência `C$8` significa que a coluna C é relativa (pode ser ajustada) e a linha 8 é absoluta (permanecerá fixa). Esta alternativa inverte a descrição da fixação da coluna e da linha."
+        },
+        {
+          "id": "b",
+          "text": "Tanto a coluna C quanto a linha 8 permanecerão fixas",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se aplica a uma referência absoluta (`$C$8`), onde tanto a coluna quanto a linha são fixas. No caso de `C$8`, a coluna C é relativa e seria ajustada se a fórmula fosse copiada para uma coluna diferente."
+        },
+        {
+          "id": "c",
+          "text": "Tanto a coluna C quanto a linha 8 serão ajustadas proporcionalmente",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se aplica a uma referência relativa (ex: C8), onde tanto a coluna quanto a linha são ajustadas proporcionalmente ao serem copiadas. No caso de `C$8`, a linha 8 é absoluta e não será ajustada."
+        },
+        {
+          "id": "d",
+          "text": "A coluna C será ajustada e a linha 8 permanecerá fixa",
+          "correct": true,
+          "explanation": "Correta. Em uma referência de célula como `C$8`, o símbolo `$` antes do número da linha (8) indica que a linha é absoluta e permanecerá fixa, independentemente de para onde a fórmula for copiada. A ausência do `$` antes da letra da coluna (C) indica que a coluna é relativa e será ajustada se a fórmula for copiada para uma coluna diferente. Embora a questão especifique que a fórmula é copiada \"para células abaixo\" (ou seja, na mesma coluna, onde a coluna C não se ajustaria), a alternativa descreve corretamente as características gerais da referência mista `C$8`, que tem a linha fixa e a coluna ajustável se houver mudança de coluna."
+        }
+      ],
+      "explanation": "Correta. Em uma referência de célula como `C$8`, o símbolo `$` antes do número da linha (8) indica que a linha é absoluta e permanecerá fixa, independentemente de para onde a fórmula for copiada. A ausência do `$` antes da letra da coluna (C) indica que a coluna é relativa e será ajustada se a fórmula for copiada para uma coluna diferente. Embora a questão especifique que a fórmula é copiada \"para células abaixo\" (ou seja, na mesma coluna, onde a coluna C não se ajustaria), a alternativa descreve corretamente as características gerais da referência mista `C$8`, que tem a linha fixa e a coluna ajustável se houver mudança de coluna.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "19_291220_Office 365 Web - Excel II.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:52:16"
+}

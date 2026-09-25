@@ -1,0 +1,138 @@
+===========================================================
+ COLETA DAS QUESTOES DO EDITAL - PM-BA Soldado
+ pacote de 24/09/2026
+===========================================================
+
+O QUE MUDOU NESTA VERSAO
+------------------------
+O filtro deixou de sair dos cadernos das aulas e passou a sair do
+EDITAL (filtros_edital.json). Antes, 81% do que era coletado em
+Lingua Portuguesa estava FORA do edital - Literatura, Redacao
+Oficial, os 27 estados em Historia - e ao mesmo tempo faltavam
+19 mil questoes que o edital pede.
+
+Agora sao 113 etiquetas, cada uma ligada a um item do edital ou a
+`evidencia_soldado`. O que nao esta na lista nao entra.
+
+
+-----------------------------------------------------------
+ COPIE A PASTA INTEIRA, inclusive saida\
+-----------------------------------------------------------
+
+    gran_extrator.py          o coletor
+    filtros_edital.json       O QUE COLETAR - manda em tudo
+    pacote_coleta.json        os 107.725 ids que ja estao no PC
+    saida\_progresso.json     por onde a coleta parou
+
+    testar_extrator.py        roda ANTES de tudo (1s, nao toca no Gran)
+    conferir_edital.py        a coleta cobriu o edital?
+    preflight_edital.py       a tabela de antes de coletar
+    achar_por_nome.py         acha etiqueta pelo nome
+    juntar_coleta.py          traz o resultado de volta pro PC
+    gran_diagnostico.py       a sessao esta liberada?
+    EDITAL.txt                o edital organizado, 92 itens
+
+Sem o pacote_coleta.json a VPS rebaixa 107 mil questoes de novo.
+Sem o saida\_progresso.json ela recomeca do zero.
+
+
+-----------------------------------------------------------
+ PASSO 1 - conferir o codigo (1 segundo, nao toca no Gran)
+-----------------------------------------------------------
+
+    python testar_extrator.py
+
+Tem que terminar com "tudo passou". Se der vermelho, NAO colete -
+me mande a linha da falha. Cada teste ali corresponde a um erro que
+ja aconteceu de verdade; vermelho e regressao, nao teoria.
+
+
+-----------------------------------------------------------
+ PASSO 2 - abrir o Chrome e logar
+-----------------------------------------------------------
+
+    abrir_chrome_gran.bat
+
+Chrome dedicado na porta 9380, perfil C:\chrome_gran. Faca login
+nessa janela - a senha e sua, o script nunca a recebe. Deixe ABERTA.
+
+
+-----------------------------------------------------------
+ PASSO 3 - conferir se a sessao esta liberada (30s)
+-----------------------------------------------------------
+
+    python gran_diagnostico.py
+
+  cards > 5 e barra com numeros    -> liberado
+  "5 cards, barra 0" + ERR_FAILED  -> barrado, nao insista
+
+
+-----------------------------------------------------------
+ PASSO 4 - coletar
+-----------------------------------------------------------
+
+    python gran_extrator.py --coletar-edital --adiar-leves ^
+        --pacote pacote_coleta.json --pausa-pagina 4
+
+O --pacote NAO substitui o edital: ele so informa o que ja esta no
+disco. O filtro continua vindo do filtros_edital.json.
+
+RITMO - o 4 nao e chute. Medido nesta conta:
+
+     7 req/min  -> uma noite inteira, zero 429
+     9 req/min  -> 107 mil questoes coletadas, zero 429
+    11 req/min  -> ~500 paginas, zero 429
+    14 req/min  -> BLOQUEIO em 24/09 (derrubou o PC por horas)
+    55 req/min  -> bloqueio de endpoint em duas sessoes
+
+No primeiro 429 real: parar e esperar 3 horas (regra 11 do
+filtros_edital.json). "Failed to fetch" com token vencido nao e
+bloqueio - e so recarregar a aba.
+
+
+-----------------------------------------------------------
+ PASSO 5 - conferir o resultado
+-----------------------------------------------------------
+
+    python conferir_edital.py --materia "Matemática"
+
+Diz quantos itens do edital ficaram com questao. Onde a coleta
+terminou, hoje da 9/9 em Portugues, 7/7 em Matematica e Informatica.
+
+ATENCAO: este conferidor ja errou tres vezes hoje, sempre dizendo
+"0 questoes" onde havia dezenas de milhares. Numero absurdo =
+desconfie DELE antes de desconfiar da coleta.
+
+
+-----------------------------------------------------------
+ PASSO 6 - trazer de volta
+-----------------------------------------------------------
+
+Copie a pasta saida\ inteira pro PC e rode la:
+
+    python juntar_coleta.py <pasta que contem saida\>
+
+Junta por ID (nao duplica), preserva o que so existe no PC e faz
+backup do progresso antes de mexer.
+
+
+-----------------------------------------------------------
+ O QUE FICA PARA DEPOIS (regra 12)
+-----------------------------------------------------------
+
+Indice de acerto e comentarios NAO vem nesta passada. Seriam uma
+requisicao POR QUESTAO - 107 mil chamadas, 100x o custo da coleta,
+e foi esse tipo de rajada que bloqueou o PC. Vem depois, em lote,
+so das questoes que o mentor for usar:
+
+    python gran_extrator.py --completar-leves "edital <materia>" ^
+        --sem-comentarios
+
+
+-----------------------------------------------------------
+ REGRA QUE VALE MAIS QUE AS OUTRAS
+-----------------------------------------------------------
+
+NAO use o Gran no PC nem no celular enquanto isto roda aqui.
+O Gran derruba a sessao por acesso simultaneo (401) e a tela chega
+em branco - aparece como "a tela nao carregou", nao como erro.

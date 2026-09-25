@@ -1,0 +1,402 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 4,
+    "titulo": "Matemática"
+  },
+  "ordem": 7,
+  "ordem_no_curso": "7.00",
+  "titulo": "Matemática",
+  "codigo_aula": "358754",
+  "video_id": "OyMCm6ytNnU=",
+  "professor": "Diego Ribeiro",
+  "duracao": "00:30:00",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/OyMCm6ytNnU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408707%2C404275%2C403868%2C404277%2C403825%2C404257&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matemática\n\n## Questão 33 — Probabilidade: aluno loiro\nSalve, futuros policiais militares e bombeiros militares do estado da Bahia. Professor Ribeiro na área. Vamos dar continuidade ao nosso treinamento intensivo. No bloco anterior, fizemos a questão 32; agora, neste bloco, questão 33. Sem perder tempo, na tela.\n\nA questão diz: um grupo de alunos é formado por 11 meninos e 14 meninas. Sabe-se que metade das meninas são loiras, ao passo que apenas 3 meninos são loiros. Dessa forma, ao selecionar ao acaso um aluno, qual a probabilidade de que ele seja um menino loiro?\n\nOlha lá: já sei que é probabilidade. Probabilidade é o que eu quero dividido pelo que eu tenho. Beleza? Vamos traduzir matematicamente.\n\nO grupo é formado por 11 meninos (vou chamar de homens) e 14 mulheres. Total de 25 pessoas. Metade das meninas são loiras: de 14, temos 7 loiras e 7 não loiras. Apenas 3 meninos são loiros. Se eu tenho 11 meninos, significa que 8 não são loiros. Esse é nosso esquema.\n\nDessa forma, ao selecionar ao acaso um aluno, a probabilidade de que ele seja um menino loiro: meninos loiros eu tenho 3. Probabilidade é o que eu quero (3) dividido pelo que eu tenho (25). Em um universo de 25, 3/25 = 0,12, ou 12%.\n\nGabarito previsto na alternativa D, de “amor”, de “apaixonado pela matemática”. Como não se apaixonar por essa disciplina? Probabilidade: sempre pensem nisso. Probabilidade é o que eu quero dividido pelo que eu tenho. Imagina um dado: o dado tem 6 faces, é o total (o que eu tenho). A probabilidade de sair o número 1 é 1/6. Simples.\n\n## Questão 34 — Técnica de contagem: comissão (combinações)\nQuestão 34, vem comigo: em uma escola, uma comissão é formada por 2 professores, 2 técnicos e 2 alunos. Candidataram-se 4 professores, 5 técnicos e 7 alunos. O número de maneiras distintas para a eleição dos membros dessa comissão?\n\nOlha pra mim: vou trabalhar técnica de contagem. Preciso saber se é arranjo ou combinação. A questão falou “comissão”. Via de regra, comissão é combinação, porque se não há funções específicas (presidente, tesoureiro, etc.), a ordem não importa. Se houvesse funções específicas, seria arranjo, porque a ordem importaria. Aqui não falou nada de titular/ajudante ou oficial/reserva. Então é combinação.\n\n- Professores: tenho 4 e escolho 2 → C(4,2)\n- Técnicos: tenho 5 e escolho 2 → C(5,2)\n- Alunos: tenho 7 e escolho 2 → C(7,2)\n\nFórmula da combinação: C(n,k) = n! / [(n − k)! k!]. Mas a gente tem atalho, a técnica do tracinho: por exemplo, C(4,2) = (4 × 3) / 2! = 6. C(5,2) = (5 × 4) / 2! = 10. C(7,2) = (7 × 6) / 2! = 21.\n\nMultiplicando: 6 × 10 × 21 = 1260.\n\nGabarito: alternativa D. Bacana. Cuidado: no tracinho, sempre desce em contagem regressiva no numerador e divide por k! no final.\n\nPara mostrar que o tracinho é atalho da fórmula, por exemplo:\nC(4,2) = 4! / (2! 2!) = (4 × 3 × 2!) / (2! × 2) = (4 × 3) / 2 = 6.\n\nOutro exemplo: C(7,3). No tracinho, três vagas: 7 × 6 × 5 / 3! = 210 / 6 = 35. Ou montando contagem: 7, 6, 5 no numerador e divide por 3, 2, 1.\n\nLembrando: se for arranjo A(7,3), aí não tem divisão por 3!, fica 7 × 6 × 5 = 210.\n\n## Questão 35 — Progressão aritmética: gotas de água\nEm um experimento, uma planta recebe, a cada dia, 5 gotas a mais de água do que no dia anterior. Já sei que tenho uma PA de razão r = 5. No 65º dia, recebeu 374 gotas. No primeiro dia do experimento, recebeu quanto?\n\nAplicando a fórmula do termo geral da PA: a_n = a_1 + (n − 1)r.\n\nTenho a_65 = a_1 + 64 × 5. E a_65 = 374. Então:\n374 = a_1 + 320 ⇒ a_1 = 374 − 320 = 54.\n\nNo primeiro dia, 54 gotas. Gabarito: alternativa E, de excelente. Questão padrão de PA.\n\n## Questão 36 — Contagem com restrição: fornecedores exatos\nUma peça é fabricada com três componentes diferentes. Os fornecedores A, B, C, D possuem esses três componentes. O fabricante quer comprar componentes de exatamente dois fornecedores, sorteados aleatoriamente. Quantas maneiras diferentes de fazer essa compra?\n\nVamos pelo princípio fundamental de contagem. Sem restrição, para 3 peças e 4 fornecedores: 4 × 4 × 4 = 64.\n\nMas a restrição é “exatamente dois fornecedores”: não pode ser apenas um, nem três ou quatro. Considerando as três peças:\n\n- Para a primeira peça: 4 possibilidades.\n- Para a segunda: 3 possibilidades (qualquer uma das outras três empresas para garantir que haja dois fornecedores possíveis ao final).\n- Para a terceira: mantenho as mesmas 3 possibilidades, porque devo permitir repetições que mantenham exatamente dois fornecedores no total (ou repete a da primeira ou a da segunda).\n\nAplicando o princípio multiplicativo: 4 × 3 × 3 = 36.\n\nGabarito: 36. Princípio fundamental de contagem resolve.\n\n## Questão 37 — Estratégia de probabilidade: dados de 10 faces vs. dado de 20 faces\nEm cada rodada de um jogo, o jogador lê uma carta-desafio e deve decidir: ou joga dois dados com 10 faces cada (d10 e d10) ou joga um único dado com 20 faces (d20). Todos os dados são equiprováveis. O objetivo é cumprir o desafio da carta. Numa determinada rodada, a carta pede obter mais do que 7.\n\nQual a melhor estratégia?\n\n- Com o d20: valores possíveis de 1 a 20. “Maior que 7” são 13 resultados (8 a 20). Probabilidade = 13/20 = 0,65 = 65%.\n\n- Com dois d10: cada dado tem 10 possibilidades, total 100 pares. Vamos trabalhar o complementar: “soma menor ou igual a 7”.\n  Listando as somas ≤ 7:\n\n  • Com 1 no primeiro dado: (1,1) a (1,6) → 6 possibilidades  \n  • Com 2: (2,1) a (2,5) → 5 possibilidades  \n  • Com 3: (3,1) a (3,4) → 4 possibilidades  \n  • Com 4: (4,1) a (4,3) → 3 possibilidades  \n  • Com 5: (5,1) a (5,2) → 2 possibilidades  \n  • Com 6: (6,1) → 1 possibilidade\n\n  Total do complementar: 6 + 5 + 4 + 3 + 2 + 1 = 21. Logo, “soma > 7” = 100 − 21 = 79. Probabilidade = 79/100 = 79%.\n\nConclusão: jogar os dois d10 é melhor, pois 79% > 65%. A matemática ajuda a ganhar o jogo!\n\n## Questão 38 — Contagem: senhas de três algarismos divisíveis por 3 com centena igual a 5\nRafael quer criar uma senha de três algarismos, divisível por 3, e com a centena igual a 5. Logo, a faixa é de 500 a 599. Para ser divisível por 3, a soma dos algarismos deve ser múltipla de 3.\n\n500 não é divisível por 3 (5 + 0 + 0 = 5). O primeiro que atende é 501 (5 + 0 + 1 = 6). Vamos do 501 até o último da faixa que seja divisível por 3. Testando o final: 599 → 5 + 9 + 9 = 23 (não). 598 → 5 + 9 + 8 = 22 (não). 597 → 5 + 9 + 7 = 21 (sim). Então, de 501 até 597, de 3 em 3.\n\nPara contar quantos termos: use a fórmula do número de termos de uma PA:\nn = [(último − primeiro)/razão] + 1 = (597 − 501)/3 + 1 = 96/3 + 1 = 32 + 1 = 33.\n\nLogo, há 33 senhas possíveis. Gabarito: 33.\n\nDica geral: pegue o último e o primeiro que atendem, subtraia, divida pela razão do passo (3, se múltiplos de 3) e some 1 para incluir o primeiro.\n\n## Questão 39 — Idades: pai e filho\nPai e filho fazem aniversário no mesmo dia. Hoje, a idade do pai é três anos a menos que quatro vezes a idade do filho. Daqui a 20 anos, a idade do pai será um ano a mais que o dobro da idade do filho. Quando o filho tinha 5 anos de idade, a idade do pai era igual a quantos anos?\n\nVamos traduzir. Seja P a idade do pai hoje e F a idade do filho hoje.\n\nHoje: P = 4F − 3.  \nDaqui a 20 anos: P + 20 = 2(F + 20) + 1.\n\nSubstituindo a primeira na segunda:\n4F − 3 + 20 = 2F + 40 + 1  \n4F + 17 = 2F + 41  \n2F = 24 ⇒ F = 12.\n\nEntão, hoje o filho tem 12 anos. Pela relação P = 4F − 3:\nP = 4 × 12 − 3 = 48 − 3 = 45. A diferença de idades é 33 anos.\n\nQuando o filho tinha 5 anos, o pai tinha 33 a mais: 5 + 33 = 38.\n\nGabarito: 38.\n\nA gente encerra esse bloco e volta na sequência com a questão de número 40. Não sai daí!",
+  "transcricao_meta": {
+    "title": "Matemática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 34875,
+    "createdAt": "2026-02-07T03:20:04.166Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda probabilidade básica, análise combinatória (combinação vs arranjo), princípio fundamental da contagem, progressão aritmética (PA) e problemas aplicados (dados, senhas divisíveis por 3, idades).\nPrincipais pontos: \n- Como identificar “universo” e “casos favoráveis” em probabilidade e usar o complementar.\n- Diferença prática entre Combinação e Arranjo, com macetes de cálculo.\n- Aplicações do PFC com e sem restrição.\n- Uso do termo geral da PA para achar termos e contar elementos em intervalos.\n\n## 1. Base / Conceitos Fundamentais\n- Probabilidade: Probabilidade = (o que eu quero) / (o que eu tenho).\n- Espaço equiprovável: eventos com chances iguais (ex.: dados honestos).\n- Combinação: escolhas sem ordem; C(n, p) = n! / [(n − p)! p!].\n- Arranjo: escolhas com ordem; contagem regressiva sem dividir por p!.\n- Princípio Fundamental da Contagem (PFC): multiplica-se o número de opções de cada etapa.\n- PA (progressão aritmética): termo geral an = a1 + (n − 1)r.\n- Divisibilidade por 3: um número é divisível por 3 se a soma dos algarismos é múltipla de 3.\n\n## 2. Como Funciona / Distinções\n- Combinação vs Arranjo:\n  - Comissão sem cargos → Combinação (ordem não importa).\n  - Comissão com cargos (presidente, secretário) → Arranjo (ordem importa).\n- Contagem direta vs complementar em probabilidade:\n  - Quando os casos favoráveis são muitos/complexos, use “o que quero = total − (o que não quero)”.\n- PFC com e sem restrição:\n  - Sem restrição: multiplica todas as possibilidades.\n  - Com restrição (ex.: exatamente dois fornecedores): dividir por casos válidos (escolha de fornecedores + distribuição).\n- PA em contagens:\n  - Para contar múltiplos em intervalo: quantidade = (último − primeiro)/razão + 1.\n\n> Dica de Prova: “Tem função específica?” → Arranjo. “Sem função?” → Combinação. Em caso de dúvida, teste com um exemplo pequeno para perceber se trocar a ordem gera novo resultado.\n\n## 3. Aplicação Prática / Técnicas\n- Probabilidade:\n  - Passo 1: Identifique o universo (total de casos).\n  - Passo 2: Conte os casos favoráveis.\n  - Passo 3: Se a contagem direta for longa, use o complementar: total − casos indesejados.\n- Combinação (técnica do tracinho):\n  - Preencha p tracinhos com contagem regressiva a partir de n.\n  - Divida por p! ao final: C(n, p) ≈ (n × (n−1) × …)/p!.\n  - Atalhos úteis: C(4,2) = 4×3/2!, C(5,2) = 5×4/2!, C(7,2) = 7×6/2!.\n- Arranjo:\n  - Multiplique apenas em contagem regressiva, sem dividir por p!.\n- PFC com “exatamente dois fornecedores” (3 peças, 4 fornecedores):\n  - Escolha o par de fornecedores: C(4,2).\n  - Distribua 2–1 entre 3 peças: 2 × C(3,2).\n  - Produto final: C(4,2) × [2 × C(3,2)].\n- PA:\n  - Para achar o primeiro termo: a1 = an − (n − 1)r.\n  - Para contar termos múltiplos de k entre A e B: encontre o primeiro e o último no intervalo e aplique (último − primeiro)/k + 1.\n- Idades (sistemas):\n  - Modele hoje e no futuro/passado.\n  - Use que a diferença de idades é constante para responder tempos diferentes.\n\n> Dica de Prova: Em problemas de idade, após achar as idades atuais, some/subtraia a diferença constante para qualquer época. Evita reabrir o sistema.\n\n## 4. Exemplos e Casos Resolvidos\n- Probabilidade simples:\n  - Ex.: 25 alunos, 3 meninos loiros → P = 3/25 = 12%.\n- Comissão sem função (Combinação):\n  - Professores: C(4,2)=6; Técnicos: C(5,2)=10; Alunos: C(7,2)=21 → total = 6×10×21 = 1260.\n- Arranjo vs Combinação:\n  - C(7,3) = 7×6×5/3! = 35; A(7,3) = 7×6×5 = 210.\n- PFC com restrição “exatamente dois fornecedores”:\n  - Total = C(4,2) × [2 × C(3,2)] = 6 × 6 = 36.\n- PA (termo geral):\n  - an = a1 + (n − 1)r; dado a65=374, r=5 → a1 = 374 − 64×5 = 374 − 320 = 54.\n- Estratégia com dados (Q37):\n  - d20: P(>7) = 13/20 = 65%.\n  - Dois d10: total 100; “não quero” somas ≤ 7 → 21 casos; favoráveis = 79 → 79%.\n  - Melhor: dois d10 (79%).\n- Senhas divisíveis por 3 com centenas = 5 (Q38):\n  - Intervalo 500–599; primeiros/últimos divisíveis: 501 e 597.\n  - Contagem: (597−501)/3 + 1 = 96/3 + 1 = 33.\n  - Gabarito: D.\n- Idades (Q39):\n  - P = 4F − 3; P + 20 = 2(F + 20) + 1.\n  - F = 12, P = 45; diferença = 33.\n  - Quando F=5 → P = 5 + 33 = 38. Gabarito: D.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir combinação com arranjo quando houver cargos/funções específicas.\n- Esquecer de dividir por p! nas combinações ao usar a técnica do tracinho.\n- Contagem por “total e tira casos” sem controle e perda de casos ou dupla contagem.\n- Em probabilidade com dois dados, tentar listar casos favoráveis grandes sem usar o complementar.\n- Em PA, esquecer o +1 na fórmula da contagem de termos.\n- Em idade, refazer sistema para tempos diferentes em vez de usar a diferença de idades constante.\n- Em dados e moedas, assumir resultados não equiprováveis sem menção (ex.: dado viciado). Sempre considere equiprovável se nada for dito.\n\n> Dica de Prova: Palavras-chave “exatamente”, “ao menos”, “no máximo” mudam totalmente a contagem. Traduza para desigualdades/conjuntos antes de contar.\n\n> Dica de Prova: Em problemas de dois dados com somas, memorize que as somas de 2 a 7 têm 1,2,3,4,5,6 combinações respectivamente (até 7), totalizando 21 para ≤7. Ajuda a agilizar o complementar.\n\n> Dica de Prova: Em “comissão”, se o enunciado disser “titular e suplente”, a ordem importa (Arranjo), mesmo que sejam “dois nomes”.",
+  "resumo_bolso": "# Matemática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Probabilidade**: Probabilidade = (o que eu quero) / (o que eu tenho). Em espaço equiprovável (ex.: dado honesto).\n* **Complementar em probabilidade**: quando os casos favoráveis são muitos/complexos, use “o que quero = total − (o que não quero)”.\n* **Combinação C(n,p)**: escolha **sem ordem**. Fórmula: C(n,p) = n! / [(n−p)! p!]. Técnica do tracinho: p tracinhos em contagem regressiva a partir de n e divide por p!.\n* **Arranjo A(n,p)**: escolha **com ordem**. Contagem regressiva, sem dividir por p!.\n* **PFC (Princípio Fundamental da Contagem)**: multiplica-se o número de opções de cada etapa (com ou sem restrição).\n* **PA (progressão aritmética)**: termo geral an = a1 + (n−1)r. Razão r constante.\n* **Contagem em PA (múltiplos em intervalo)**: quantidade = (último − primeiro)/razão + 1.\n* **Divisibilidade por 3**: número é divisível por 3 se a soma dos algarismos é múltipla de 3.\n* **Idades**: diferença de idades é constante; após achar as idades atuais, use essa diferença para outras épocas.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Combinação vs Arranjo\n\n| Aspecto | Combinação C(n,p) | Arranjo A(n,p) |\n|--------|-------------------|----------------|\n| Ordem | **Não** importa | **Importa** |\n| Fórmula prática | Tracinhos regressivos ÷ p! | Tracinhos regressivos, sem dividir |\n| Situação típica | Comissão **sem cargos** | Comissão **com cargos/funções** |\n| Exemplo 7,3 | C(7,3) = 7×6×5/3! = 35 | A(7,3) = 7×6×5 = 210 |\n\n> Dica de Prova: “Tem função específica?” → Arranjo. “Sem função?” → Combinação.\n\n---\n\n### Contagem Direta vs Complementar (Probabilidade)\n\n| Aspecto | Direta | Complementar |\n|--------|--------|--------------|\n| Ideia | Conta só os favoráveis | Usa “o que quero = total − (o que não quero)” |\n| Uso típico | Casos favoráveis poucos/simples | Casos favoráveis muitos/complexos |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Probabilidade**\n\n* Passos:  \n  1) Identifique o universo (total de casos).  \n  2) Conte os casos favoráveis.  \n  3) Se a contagem direta for longa, use o complementar: total − casos indesejados.\n* Em espaço equiprovável (dados honestos, sorteios): P(E) = favoráveis / total.\n* Complementar: P(E) = 1 − P(Eᶜ).\n\n**2. Combinação C(n,p)**\n\n* Aplicação: “escolher”, “formar comissão” **sem função/cargo**.\n* Fórmula: C(n, p) = n! / [(n − p)! p!].\n* Técnica do tracinho:  \n  p tracinhos, começa em n e vai descendo; divide por p!.  \n  Atalhos: C(4,2) = 4×3/2!, C(5,2) = 5×4/2!, C(7,2) = 7×6/2!.\n* Exemplo: C(7,2) = 7×6 / 2! = 21.\n\n**3. Arranjo A(n,p)**\n\n* Aplicação: “ordenar”, “cargos”, “funções específicas”.\n* Contagem regressiva sem divisão.  \n* Exemplo: A(7,3) = 7×6×5.\n\n**4. PFC com restrição “exatamente dois fornecedores” (3 peças, 4 fornecedores)**\n\n* Escolha o par de fornecedores: C(4,2).  \n* Distribua 2–1 entre 3 peças: 2 × C(3,2).  \n* Produto final: C(4,2) × [2 × C(3,2)] = 6 × 6 = 36.\n\n**5. PA – Termo Geral**\n\n* Fórmula: an = a1 + (n−1)r.  \n* Para achar o primeiro termo: a1 = an − (n − 1)r.  \n  Ex.: a65=374, r=5 → a1 = 374 − 64×5 = 54.\n\n**6. Contar múltiplos em intervalo (PA)**\n\n* Para contar termos múltiplos de k entre A e B:  \n  1) Encontre o primeiro múltiplo ≥ A.  \n  2) Encontre o último múltiplo ≤ B.  \n  3) Quantidade = (último − primeiro)/k + 1.  \n* Ex.: 500–599, divisíveis por 3: 501 e 597 → (597−501)/3 + 1 = 33.\n\n**7. Estratégia com dados (exemplos)**\n\n* d20: P(>7) = 13/20 = 65%.  \n* Dois d10: total 100; “não quero” somas ≤ 7 → 21 casos; favoráveis = 79 → 79%.  \n* Melhor opção no exemplo: dois d10 (79%).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir combinação com arranjo quando houver cargos/funções específicas (ex.: presidente, secretário).\n2. Esquecer de dividir por p! nas combinações ao usar a técnica do tracinho.\n3. Em probabilidade com dois dados, tentar listar todos os casos favoráveis grandes sem usar o complementar.\n4. Em PA, esquecer o +1 na fórmula da contagem de termos: (último − primeiro)/razão + 1.\n5. Em idade, refazer sistema para tempos diferentes em vez de usar a diferença de idades constante.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Combinação** (sem ordem, divide por p!) de **Arranjo** (com ordem, sem divisão)?\n* Sei identificar quando usar **contagem direta** e quando usar o **complementar** em probabilidade?\n* Sei aplicar o **PFC com restrição “exatamente dois fornecedores”** (C(4,2) × [2 × C(3,2)])?\n* Fixei a fórmula da **PA** (an = a1 + (n−1)r) e a contagem de termos: (último − primeiro)/razão + 1?\n* Em problemas de **idades**, estou usando a diferença constante em vez de reabrir sistemas para cada época?",
+  "mapa_mental": "# 🧮 Matemática para Concursos\n## 🎯 Probabilidade Básica\n### 💡 Conceitos Centrais\n- Espaço amostral\n- Casos favoráveis\n- Espaço equiprovável\n- Probabilidade clássica\n- Probabilidade complementar\n### 🧮 Cálculo de Probabilidade\n- P = favoráveis/total\n- Universo finito\n- Eventos simples\n- Eventos compostos\n- Complementar 1 − P\n### ⚠️ Cuidados Frequentes\n- Equiprovável implícito\n- Evitar dupla contagem\n- Total menos indesejados\n- Palavras-chave “ao menos”\n- Palavras-chave “no máximo”\n\n## 🔢 Análise Combinatória\n### 💡 Princípio Fundamental Contagem\n- Etapas sucessivas\n- Multiplicação opções\n- Com restrição\n- Sem restrição\n- Divisão por casos\n### 🧮 Combinação Simples\n- Ordem não importa\n- Fórmula C(n,p)\n- Fatorial n!\n- Técnica tracinhos\n- Divisão por p!\n### 🧮 Arranjo Simples\n- Ordem importa\n- Contagem regressiva\n- Sem dividir p!\n- Funções específicas\n- Titular e suplente\n\n## 📊 Progressão Aritmética\n### 💡 Conceitos de PA\n- Termo geral an\n- Primeiro termo a1\n- Razão r constante\n- Sequência linear\n- Diferença sucessiva\n### 🧮 Fórmulas Importantes\n- an = a1+(n−1)r\n- a1 = an−(n−1)r\n- Contagem termos\n- Último conhecido\n- Múltiplos em intervalo\n### 🔢 Múltiplos e Divisibilidade\n- Divisível por 3\n- Soma algarismos\n- Primeiro múltiplo\n- Último múltiplo\n- Quantidade = (u−p)/r+1\n\n## 👥 Problemas Clássicos\n### 🧮 Senhas e Números\n- Algarismos fixos\n- Intervalo numérico\n- Divisibilidade aplicada\n- Contagem por PA\n- Uso PFC\n### 🎲 Dados e Moedas\n- Dado honesto\n- Dois dados soma\n- Tabela 6×6\n- Complementar ≤7\n- Probabilidade comparativa\n### 👤 Idades em Provas\n- Sistema de equações\n- Idades atuais\n- Diferença constante\n- Passado e futuro\n- Evitar novo sistema",
+  "flashcards": null,
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um experimento, uma planta recebe diariamente cinco gotas a mais de água do que havia recebido no dia anterior. Se no sexagésimo quinto dia ela recebeu 374 gotas, quantas gotas foram fornecidas no primeiro dia do experimento?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "54 gotas",
+          "correct": true,
+          "explanation": "Correta. Trata-se de uma Progressão Aritmética (PA) com razão r = 5. O termo geral de uma PA é dado por a_n = a_1 + (n-1) * r. No problema, temos o sexagésimo quinto dia (n = 65) e a quantidade de gotas recebidas nesse dia (a_65 = 374). Substituindo os valores na fórmula: 374 = a_1 + (65-1) * 5. Isso simplifica para 374 = a_1 + 64 * 5, ou seja, 374 = a_1 + 320. Subtraindo 320 de ambos os lados, encontramos a_1 = 374 - 320 = 54. Portanto, no primeiro dia do experimento, foram fornecidas 54 gotas."
+        },
+        {
+          "id": "b",
+          "text": "52 gotas",
+          "correct": false,
+          "explanation": "Incorreta. A aplicação da fórmula da Progressão Aritmética (PA) a_1 = a_n - (n-1) * r, substituindo a_65 = 374, n = 65 e r = 5, não produz 52 gotas como o primeiro termo."
+        },
+        {
+          "id": "c",
+          "text": "50 gotas",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo da Progressão Aritmética (PA) com os dados fornecidos (a_65 = 374, n = 65, r = 5) não leva a este resultado. A fórmula a_1 = a_n - (n-1) * r deve ser aplicada corretamente."
+        },
+        {
+          "id": "d",
+          "text": "48 gotas",
+          "correct": false,
+          "explanation": "Incorreta. Ao aplicar a fórmula da Progressão Aritmética (PA) a_n = a_1 + (n-1) * r, onde a_n é o termo n, a_1 é o primeiro termo, n é a posição do termo e r é a razão, com a_65 = 374, n = 65 e r = 5, o cálculo resulta em um valor diferente para a_1."
+        }
+      ],
+      "explanation": "Correta. Trata-se de uma Progressão Aritmética (PA) com razão r = 5. O termo geral de uma PA é dado por a_n = a_1 + (n-1) * r. No problema, temos o sexagésimo quinto dia (n = 65) e a quantidade de gotas recebidas nesse dia (a_65 = 374). Substituindo os valores na fórmula: 374 = a_1 + (65-1) * 5. Isso simplifica para 374 = a_1 + 64 * 5, ou seja, 374 = a_1 + 320. Subtraindo 320 de ambos os lados, encontramos a_1 = 374 - 320 = 54. Portanto, no primeiro dia do experimento, foram fornecidas 54 gotas.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Um grupo é formado por 11 meninos e 14 meninas. Sabe-se que metade das meninas são loiras e apenas 3 meninos são loiros. Ao selecionar ao acaso uma pessoa desse grupo, qual é a probabilidade aproximada de que seja um menino loiro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "8%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade é calculada pela razão entre o número de casos favoráveis e o número total de casos possíveis. Para um menino loiro, o número de casos favoráveis é 3. O número total de alunos é 11 meninos + 14 meninas = 25. A probabilidade é 3/25, que não corresponde a 8%."
+        },
+        {
+          "id": "b",
+          "text": "16%",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo da probabilidade (casos favoráveis / total de casos) para um menino loiro é 3/25, que resulta em 12%, não 16%."
+        },
+        {
+          "id": "c",
+          "text": "12%",
+          "correct": true,
+          "explanation": "Correta. A probabilidade de um evento é a razão entre o número de resultados favoráveis e o número total de resultados possíveis. No problema, o número total de alunos é a soma de meninos e meninas: 11 meninos + 14 meninas = 25 alunos. O número de casos favoráveis é a quantidade de meninos loiros, que é 3. Assim, a probabilidade de selecionar um menino loiro ao acaso é de 3/25. Para converter essa fração em porcentagem, multiplicamos por 100: (3/25) * 100 = 12%."
+        },
+        {
+          "id": "d",
+          "text": "20%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de selecionar um menino loiro é 3/25, o que equivale a 12%, e não 20%. O cálculo correto da razão entre o número de meninos loiros e o total de alunos não leva a este percentual."
+        }
+      ],
+      "explanation": "Correta. A probabilidade de um evento é a razão entre o número de resultados favoráveis e o número total de resultados possíveis. No problema, o número total de alunos é a soma de meninos e meninas: 11 meninos + 14 meninas = 25 alunos. O número de casos favoráveis é a quantidade de meninos loiros, que é 3. Assim, a probabilidade de selecionar um menino loiro ao acaso é de 3/25. Para converter essa fração em porcentagem, multiplicamos por 100: (3/25) * 100 = 12%.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Rafael deseja criar uma senha de três algarismos que seja divisível por 3 e tenha o algarismo das centenas igual a 5. Quantas senhas diferentes ele pode criar nessas condições?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "33 senhas",
+          "correct": true,
+          "explanation": "Correta. As senhas devem ser números de três algarismos, começar com 5 (algarismo das centenas igual a 5) e ser divisíveis por 3. Isso significa que as senhas variam de 500 a 599. Para que um número seja divisível por 3, a soma de seus algarismos deve ser um múltiplo de 3. O primeiro número que satisfaz as condições é 501 (5+0+1=6, que é divisível por 3). O último número que satisfaz as condições é 597 (5+9+7=21, que é divisível por 3). Para encontrar a quantidade de números em uma Progressão Aritmética (PA), usamos a fórmula (último termo - primeiro termo) / razão + 1. Neste caso, a razão é 3 (pois são múltiplos de 3). Então, (597 - 501) / 3 + 1 = 96 / 3 + 1 = 32 + 1 = 33. Portanto, Rafael pode criar 33 senhas diferentes."
+        },
+        {
+          "id": "b",
+          "text": "30 senhas",
+          "correct": false,
+          "explanation": "Incorreta. O número de senhas que atendem às condições é maior que 30. É necessário identificar o primeiro e o último número divisível por 3 na faixa de 500 a 599 e, em seguida, contar quantos múltiplos de 3 existem nesse intervalo."
+        },
+        {
+          "id": "c",
+          "text": "32 senhas",
+          "correct": false,
+          "explanation": "Incorreta. O total de senhas possíveis que satisfazem as condições de serem números de três algarismos, com o algarismo das centenas igual a 5 e divisíveis por 3, não é 32. O cálculo deve considerar o primeiro e o último número da sequência e a razão da PA."
+        },
+        {
+          "id": "d",
+          "text": "31 senhas",
+          "correct": false,
+          "explanation": "Incorreta. O método de contagem de números em uma Progressão Aritmética (PA) entre dois limites, incluindo ambos, resulta em um número maior que 31 para as senhas que começam com 5 e são divisíveis por 3."
+        }
+      ],
+      "explanation": "Correta. As senhas devem ser números de três algarismos, começar com 5 (algarismo das centenas igual a 5) e ser divisíveis por 3. Isso significa que as senhas variam de 500 a 599. Para que um número seja divisível por 3, a soma de seus algarismos deve ser um múltiplo de 3. O primeiro número que satisfaz as condições é 501 (5+0+1=6, que é divisível por 3). O último número que satisfaz as condições é 597 (5+9+7=21, que é divisível por 3). Para encontrar a quantidade de números em uma Progressão Aritmética (PA), usamos a fórmula (último termo - primeiro termo) / razão + 1. Neste caso, a razão é 3 (pois são múltiplos de 3). Então, (597 - 501) / 3 + 1 = 96 / 3 + 1 = 32 + 1 = 33. Portanto, Rafael pode criar 33 senhas diferentes.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em uma escola, uma comissão será formada por 2 professores, 2 técnicos e 2 alunos. Candidataram-se 4 professores, 5 técnicos e 7 alunos. Considerando que não há funções específicas dentro da comissão, de quantas maneiras distintas ela pode ser formada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1.120 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O número de maneiras distintas de formar a comissão é determinado pelo produto das combinações de escolha em cada categoria, e este valor não é 1.120."
+        },
+        {
+          "id": "b",
+          "text": "1.260 maneiras",
+          "correct": true,
+          "explanation": "Correta. O problema envolve a formação de uma comissão sem funções específicas, o que indica o uso de combinações simples, pois a ordem de escolha dos membros não importa. Devemos calcular as combinações para cada grupo e multiplicar os resultados. 1. Para professores: 4 candidatos, escolher 2. C(4, 2) = 4! / (2! * (4-2)!) = (4 * 3 * 2!) / (2 * 1 * 2!) = (4 * 3) / 2 = 6 maneiras. 2. Para técnicos: 5 candidatos, escolher 2. C(5, 2) = 5! / (2! * (5-2)!) = (5 * 4 * 3!) / (2 * 1 * 3!) = (5 * 4) / 2 = 10 maneiras. 3. Para alunos: 7 candidatos, escolher 2. C(7, 2) = 7! / (2! * (7-2)!) = (7 * 6 * 5!) / (2 * 1 * 5!) = (7 * 6) / 2 = 21 maneiras. O número total de maneiras distintas de formar a comissão é o produto dessas combinações: 6 * 10 * 21 = 1.260 maneiras."
+        },
+        {
+          "id": "c",
+          "text": "1.050 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo das combinações para cada categoria (professores, técnicos e alunos) e a multiplicação dos resultados não levam a 1.050 maneiras. É fundamental usar a fórmula de combinação C(n, k) = n! / (k! * (n-k)!)."
+        },
+        {
+          "id": "d",
+          "text": "1.400 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação das combinações de professores (6), técnicos (10) e alunos (21) resulta em 1.260, e não em 1.400 maneiras. O cálculo precisa ser preciso em cada etapa."
+        }
+      ],
+      "explanation": "Correta. O problema envolve a formação de uma comissão sem funções específicas, o que indica o uso de combinações simples, pois a ordem de escolha dos membros não importa. Devemos calcular as combinações para cada grupo e multiplicar os resultados. 1. Para professores: 4 candidatos, escolher 2. C(4, 2) = 4! / (2! * (4-2)!) = (4 * 3 * 2!) / (2 * 1 * 2!) = (4 * 3) / 2 = 6 maneiras. 2. Para técnicos: 5 candidatos, escolher 2. C(5, 2) = 5! / (2! * (5-2)!) = (5 * 4 * 3!) / (2 * 1 * 3!) = (5 * 4) / 2 = 10 maneiras. 3. Para alunos: 7 candidatos, escolher 2. C(7, 2) = 7! / (2! * (7-2)!) = (7 * 6 * 5!) / (2 * 1 * 5!) = (7 * 6) / 2 = 21 maneiras. O número total de maneiras distintas de formar a comissão é o produto dessas combinações: 6 * 10 * 21 = 1.260 maneiras.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Pai e filho fazem aniversário no mesmo dia. Hoje, a idade do pai é três anos a menos que quatro vezes a idade do filho. Daqui a exatos 20 anos, a idade do pai será um ano a mais que o dobro da idade do filho. Qual era a idade do pai quando o filho tinha 5 anos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "37 anos",
+          "correct": false,
+          "explanation": "Incorreta. A idade do pai quando o filho tinha 5 anos é obtida a partir da diferença de idade constante entre eles. O resultado de 37 anos não é consistente com as informações fornecidas e a resolução do sistema de equações."
+        },
+        {
+          "id": "b",
+          "text": "35 anos",
+          "correct": false,
+          "explanation": "Incorreta. A resolução do sistema de equações que representa as idades do pai e do filho no presente e no futuro não leva a este resultado. É necessário determinar as idades atuais e, a partir delas, calcular a idade do pai em um momento passado."
+        },
+        {
+          "id": "c",
+          "text": "38 anos",
+          "correct": true,
+          "explanation": "Correta. Vamos definir P como a idade atual do pai e F como a idade atual do filho. As informações fornecidas podem ser traduzidas em um sistema de equações: 1. Hoje: A idade do pai é três anos a menos que quatro vezes a idade do filho. P = 4F - 3. 2. Daqui a 20 anos: A idade do pai (P+20) será um ano a mais que o dobro da idade do filho (F+20). P + 20 = 2(F + 20) + 1. Agora, substituímos a primeira equação na segunda: (4F - 3) + 20 = 2(F + 20) + 1. 4F + 17 = 2F + 40 + 1. 4F + 17 = 2F + 41. 4F - 2F = 41 - 17. 2F = 24. F = 12. A idade atual do filho é 12 anos. Substituímos F = 12 na primeira equação para encontrar a idade atual do pai: P = 4(12) - 3. P = 48 - 3. P = 45. A idade atual do pai é 45 anos. A diferença de idade entre pai e filho é 45 - 12 = 33 anos. Essa diferença permanece constante ao longo do tempo. Quando o filho tinha 5 anos, o pai tinha 5 + 33 = 38 anos."
+        },
+        {
+          "id": "d",
+          "text": "36 anos",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo das idades atuais do pai e do filho, e subsequentemente a idade do pai quando o filho tinha 5 anos, não corresponde a 36 anos. A montagem correta das equações e sua resolução são cruciais."
+        }
+      ],
+      "explanation": "Correta. Vamos definir P como a idade atual do pai e F como a idade atual do filho. As informações fornecidas podem ser traduzidas em um sistema de equações: 1. Hoje: A idade do pai é três anos a menos que quatro vezes a idade do filho. P = 4F - 3. 2. Daqui a 20 anos: A idade do pai (P+20) será um ano a mais que o dobro da idade do filho (F+20). P + 20 = 2(F + 20) + 1. Agora, substituímos a primeira equação na segunda: (4F - 3) + 20 = 2(F + 20) + 1. 4F + 17 = 2F + 40 + 1. 4F + 17 = 2F + 41. 4F - 2F = 41 - 17. 2F = 24. F = 12. A idade atual do filho é 12 anos. Substituímos F = 12 na primeira equação para encontrar a idade atual do pai: P = 4(12) - 3. P = 48 - 3. P = 45. A idade atual do pai é 45 anos. A diferença de idade entre pai e filho é 45 - 12 = 33 anos. Essa diferença permanece constante ao longo do tempo. Quando o filho tinha 5 anos, o pai tinha 5 + 33 = 38 anos.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Uma peça é fabricada com três componentes diferentes. Os fornecedores A, B, C e D possuem esses três componentes. O fabricante deseja comprar os componentes de exatamente dois fornecedores sorteados aleatoriamente. De quantas maneiras diferentes ele pode fazer essa compra?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "30 maneiras",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "48 maneiras",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "24 maneiras",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "36 maneiras",
+          "correct": true,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em problemas de análise combinatória, quando se deve utilizar combinação em vez de arranjo para calcular o número de agrupamentos possíveis?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quando a ordem de escolha dos elementos é relevante para o resultado final",
+          "correct": false,
+          "explanation": "Incorreta. Quando a ordem de escolha dos elementos é relevante para o resultado final, deve-se utilizar o arranjo (ou permutação, em casos específicos), e não a combinação. A combinação é utilizada quando a ordem não importa."
+        },
+        {
+          "id": "b",
+          "text": "Quando há repetição de elementos permitida na formação dos grupos",
+          "correct": false,
+          "explanation": "Incorreta. A possibilidade de repetição de elementos na formação dos grupos geralmente leva a outro tipo de cálculo, como a combinação com repetição ou arranjo com repetição, que são variações das técnicas básicas. A combinação simples (sem repetição) é para quando os elementos são distintos e não podem ser escolhidos mais de uma vez."
+        },
+        {
+          "id": "c",
+          "text": "Quando há funções específicas atribuídas a cada elemento do grupo",
+          "correct": false,
+          "explanation": "Incorreta. A atribuição de funções específicas a cada elemento do grupo implica que a ordem de escolha é relevante (ex: presidente, vice-presidente). Nesses casos, utiliza-se o arranjo, pois a troca de posição entre os elementos com funções distintas gera um novo agrupamento. A combinação é para quando as posições são indistinguíveis."
+        },
+        {
+          "id": "d",
+          "text": "Quando a ordem de escolha dos elementos não interfere no resultado final",
+          "correct": true,
+          "explanation": "Correta. A combinação é utilizada em problemas de análise combinatória quando a ordem em que os elementos são escolhidos ou organizados não altera o agrupamento final. Por exemplo, ao formar uma comissão de pessoas, a ordem em que as pessoas são selecionadas para a comissão não muda a composição da comissão em si. Se temos um conjunto de 'n' elementos e queremos formar grupos de 'k' elementos sem que a ordem importe, usamos a fórmula da combinação C(n, k) = n! / (k! * (n-k)!)."
+        }
+      ],
+      "explanation": "Correta. A combinação é utilizada em problemas de análise combinatória quando a ordem em que os elementos são escolhidos ou organizados não altera o agrupamento final. Por exemplo, ao formar uma comissão de pessoas, a ordem em que as pessoas são selecionadas para a comissão não muda a composição da comissão em si. Se temos um conjunto de 'n' elementos e queremos formar grupos de 'k' elementos sem que a ordem importe, usamos a fórmula da combinação C(n, k) = n! / (k! * (n-k)!).",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Para determinar quantos números existem em uma sequência aritmética finita, qual procedimento deve ser aplicado quando se conhece o primeiro termo, o último termo e a razão da progressão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Subtrair o primeiro termo do último, multiplicar pela razão e somar uma unidade",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a diferença entre o último e o primeiro termo pela razão não faz parte da fórmula para encontrar o número de termos em uma PA. Essa operação não tem significado matemático para este propósito."
+        },
+        {
+          "id": "b",
+          "text": "Subtrair o primeiro termo do último, dividir pela razão e somar uma unidade",
+          "correct": true,
+          "explanation": "Correta. Para determinar o número de termos (n) em uma progressão aritmética (PA) finita, conhecendo o primeiro termo (a1), o último termo (an) e a razão (r), a fórmula geral do termo an = a1 + (n-1)r pode ser rearranjada para encontrar n. Ao isolar n, obtemos n = ((an - a1) / r) + 1. Este procedimento é conhecido como \"fórmula do termo geral\" ou \"fórmula do número de termos\" e é amplamente utilizado em matemática. Por exemplo, para encontrar quantos números divisíveis por 3 existem entre 501 e 597, onde a1=501, an=597 e r=3, teríamos n = ((597 - 501) / 3) + 1 = (96 / 3) + 1 = 32 + 1 = 33 números."
+        },
+        {
+          "id": "c",
+          "text": "Dividir o último termo pela razão e subtrair o primeiro termo",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o último termo pela razão e subtrair o primeiro termo não é o procedimento correto. Essa abordagem ignora a estrutura da progressão aritmética e a relação entre seus termos e a razão."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar a diferença entre os termos pela razão e adicionar o primeiro termo",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a diferença entre os termos pela razão e adicionar o primeiro termo não leva ao número de termos. Esta seria uma forma incorreta de tentar aplicar a fórmula do termo geral, mas com operações equivocadas."
+        }
+      ],
+      "explanation": "Correta. Para determinar o número de termos (n) em uma progressão aritmética (PA) finita, conhecendo o primeiro termo (a1), o último termo (an) e a razão (r), a fórmula geral do termo an = a1 + (n-1)r pode ser rearranjada para encontrar n. Ao isolar n, obtemos n = ((an - a1) / r) + 1. Este procedimento é conhecido como \"fórmula do termo geral\" ou \"fórmula do número de termos\" e é amplamente utilizado em matemática. Por exemplo, para encontrar quantos números divisíveis por 3 existem entre 501 e 597, onde a1=501, an=597 e r=3, teríamos n = ((597 - 501) / 3) + 1 = (96 / 3) + 1 = 32 + 1 = 33 números.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Em um jogo, o jogador pode escolher entre lançar dois dados de 10 faces ou um dado de 20 faces. O desafio é obter um resultado superior a 7. Considerando que todas as faces têm probabilidades iguais, qual estratégia oferece maior probabilidade de sucesso?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Lançar o dado de 20 faces, pois oferece 75% de probabilidade de sucesso",
+          "correct": false,
+          "explanation": "Incorreta. O dado de 20 faces oferece 65% de probabilidade de sucesso, não 75%. Além disso, mesmo que fosse 75%, ainda seria inferior aos 79% oferecidos pelos dois dados de 10 faces."
+        },
+        {
+          "id": "b",
+          "text": "Lançar os dois dados de 10 faces, pois oferece 79% de probabilidade de sucesso",
+          "correct": true,
+          "explanation": "Correta. A melhor estratégia é lançar os dois dados de 10 faces, pois oferece uma probabilidade de sucesso de 79%. Para os dois dados de 10 faces, o espaço amostral total é 10 * 10 = 100 resultados. O desafio é obter um resultado superior a 7. É mais fácil calcular o evento complementar: a soma ser menor ou igual a 7. As somas possíveis são: 2 (1+1), 3 (1+2, 2+1), 4 (1+3, 2+2, 3+1), 5 (1+4, 2+3, 3+2, 4+1), 6 (1+5, 2+4, 3+3, 4+2, 5+1), 7 (1+6, 2+5, 3+4, 4+3, 5+2, 6+1). Total de resultados menores ou iguais a 7 é 1+2+3+4+5+6 = 21. Assim, o número de resultados que não cumprem o desafio é 21. O número de resultados que cumprem o desafio (soma > 7) é 100 - 21 = 79. A probabilidade de sucesso é 79/100 = 0,79 = 79%. Comparando 79% com 65%, a estratégia dos dois dados de 10 faces é superior."
+        },
+        {
+          "id": "c",
+          "text": "Lançar o dado de 20 faces, pois oferece 65% de probabilidade de sucesso",
+          "correct": false,
+          "explanation": "Incorreta. Embora o dado de 20 faces ofereça uma probabilidade de sucesso de 65%, esta não é a maior probabilidade. A probabilidade de sucesso com o dado de 20 faces é calculada como o número de resultados maiores que 7 (8, 9, ..., 20, total de 13 resultados) dividido pelo total de resultados possíveis (20), ou seja, 13/20 = 0,65 = 65%."
+        },
+        {
+          "id": "d",
+          "text": "Ambas as estratégias oferecem a mesma probabilidade de aproximadamente 70%",
+          "correct": false,
+          "explanation": "Incorreta. As probabilidades de sucesso não são as mesmas. Como calculado, a probabilidade para o dado de 20 faces é de 65%, enquanto para os dois dados de 10 faces é de 79%."
+        }
+      ],
+      "explanation": "Correta. A melhor estratégia é lançar os dois dados de 10 faces, pois oferece uma probabilidade de sucesso de 79%. Para os dois dados de 10 faces, o espaço amostral total é 10 * 10 = 100 resultados. O desafio é obter um resultado superior a 7. É mais fácil calcular o evento complementar: a soma ser menor ou igual a 7. As somas possíveis são: 2 (1+1), 3 (1+2, 2+1), 4 (1+3, 2+2, 3+1), 5 (1+4, 2+3, 3+2, 4+1), 6 (1+5, 2+4, 3+3, 4+2, 5+1), 7 (1+6, 2+5, 3+4, 4+3, 5+2, 6+1). Total de resultados menores ou iguais a 7 é 1+2+3+4+5+6 = 21. Assim, o número de resultados que não cumprem o desafio é 21. O número de resultados que cumprem o desafio (soma > 7) é 100 - 21 = 79. A probabilidade de sucesso é 79/100 = 0,79 = 79%. Comparando 79% com 65%, a estratégia dos dois dados de 10 faces é superior.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Ao calcular a probabilidade de um evento complementar em situações com múltiplas possibilidades, qual é a vantagem metodológica de trabalhar com o complemento em vez do evento direto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Facilita a contagem quando o número de casos desfavoráveis é menor que o de casos favoráveis",
+          "correct": true,
+          "explanation": "Correta. A vantagem metodológica de trabalhar com o evento complementar (ou evento 'não A') é que, em muitas situações, o número de casos desfavoráveis (ou seja, os casos que não cumprem a condição desejada) é significativamente menor e mais fácil de contar do que o número de casos favoráveis. Uma vez que a probabilidade do evento complementar é calculada, a probabilidade do evento direto é simplesmente 1 menos a probabilidade do complementar (P(A) = 1 - P(não A)). Isso simplifica o processo de contagem e cálculo, especialmente em espaços amostrais grandes ou quando a definição do evento direto é complexa."
+        },
+        {
+          "id": "b",
+          "text": "Elimina a necessidade de conhecer o espaço amostral total do experimento",
+          "correct": false,
+          "explanation": "Incorreta. O conhecimento do espaço amostral total do experimento é fundamental para calcular probabilidades, seja do evento direto ou do complementar. A probabilidade é sempre a razão entre o número de casos favoráveis (ou desfavoráveis) e o total de casos possíveis no espaço amostral."
+        },
+        {
+          "id": "c",
+          "text": "Permite aumentar a precisão dos cálculos ao considerar mais variáveis simultaneamente",
+          "correct": false,
+          "explanation": "Incorreta. Trabalhar com o evento complementar não aumenta a precisão dos cálculos, nem considera mais variáveis simultaneamente. A precisão é inerente aos dados e ao método, e o complemento é uma técnica para simplificar a contagem de casos favoráveis."
+        },
+        {
+          "id": "d",
+          "text": "Reduz a margem de erro ao trabalhar com frações menores no numerador",
+          "correct": false,
+          "explanation": "Incorreta. Trabalhar com o evento complementar não reduz a margem de erro. A margem de erro, se houver, estaria associada à precisão dos dados ou à interpretação do problema, não à técnica de usar o complemento. Além disso, as frações podem ser menores ou maiores dependendo do problema, mas o objetivo principal é a simplificação da contagem, não o tamanho da fração."
+        }
+      ],
+      "explanation": "Correta. A vantagem metodológica de trabalhar com o evento complementar (ou evento 'não A') é que, em muitas situações, o número de casos desfavoráveis (ou seja, os casos que não cumprem a condição desejada) é significativamente menor e mais fácil de contar do que o número de casos favoráveis. Uma vez que a probabilidade do evento complementar é calculada, a probabilidade do evento direto é simplesmente 1 menos a probabilidade do complementar (P(A) = 1 - P(não A)). Isso simplifica o processo de contagem e cálculo, especialmente em espaços amostrais grandes ou quando a definição do evento direto é complexa.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "07_358754_Matemática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:29:37"
+}

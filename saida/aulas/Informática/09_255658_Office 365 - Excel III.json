@@ -1,0 +1,697 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 9,
+  "ordem_no_curso": "77.00",
+  "titulo": "Office 365 - Excel III",
+  "codigo_aula": "255658",
+  "video_id": "jEf/FkKwEKk=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:27:44",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/jEf%2FFkKwEKk%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420317%2C420303%2C420333&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - Excel III\n\n## Retomada e estrutura da planilha\nAgora estamos de volta com a nossa linda planilha. São três e cinco comigo na tela. Aqui nós estamos analisando ainda a estrutura. Vamos colocar alguns valores: dois, três, e vamos trabalhar com esses valores.\n\nVamos voltar para a minha parte inicial, então aumentar o uso da planilha. Depois eu vou usar os recursos do Windows. Beleza.\n\nOlha só: eu digitei “=A1+A2”. Então veja que ele marcou A1 mais A2 de cara. Você já percebe a sacada? Fiquem atentos: para fazer cálculos, uma das maneiras — porque não é a única — é colocar o sinal de igual. Eu sempre falo para as pessoas: cuidado com o contexto, como as coisas são escritas, como estão sendo cobradas. Cuidado com o contexto, não seja muito radical nas análises. Tem que ter o sinal de igual para fazer o cálculo, mas não é a única maneira. De uma forma ou de outra, ele vai acabar aparecendo.\n\nVocê vai ver que, quando coloco “=”, eu estou usando o endereço das células. Ou seja, eu estou pegando aqueles valores lá — dois e três — para calcular, nesse caso, uma soma. Então o total aqui é cinco, sem novidades. Beleza.\n\nAgora, nada me impede de fazer assim: hoje eu quero fazer uma conta rapidamente, não quero colocar valores dentro de células para depois usar as referências. Quero fazer aquele cálculo rápido também. Beleza. Aqui eu já vou aproveitar o ensejo e falar o que eu havia comentado antes sobre o valor que aparece e o conteúdo da célula.\n\nQuando eu clico na célula, uma única vez, não dá para saber se esse valor três está sendo calculado de alguma forma, ou vindo de outra célula. Você tem que olhar para a barra de fórmulas. Aqui ele me diz que “3” é o conteúdo. Nesta célula, “2” é o conteúdo. Agora, esses “5” não são o conteúdo: a célula tem uma fórmula “=A1+A2”. Essa é a primeira coisa: esse “5” é resultado dessa soma 2 + 3.\n\nAgora veja a diferença. Nesses dois cálculos aqui, quando eu troco esse “2” por “5”, por exemplo, só vai alterar esse resultado com referência, porque aqui eu estou apontando para a célula: “pega o valor daqui e soma com o valor daqui”. Então, trocou aqui, altera o resultado. Aqui, no outro caso em que eu digitei números direto na fórmula, nós chamamos de constantes. Quando coloco o valor lá dentro, chamamos de constante para aquela operação. Esse valor teria que vir aqui e alterar manualmente. Então aqui, ao invés de alterar o “2”, alterei o “3”, mas é só para exemplificar, uma hipótese para você vislumbrar isso.\n\nEu digo para as pessoas: quando falei lá da parte prática, que pode ser melhor e tal, se você for usar Excel para estudar e fizer bem isso, você pode criar situações além dessas que coloquei aqui, criar sua própria planilha, colocando coisas do seu dia a dia que você quer somar, controlar, buscar. A gente vai ter funções próprias para fazer buscas. Coloque coisas que estão em conexão contigo. Isso pode ser muito bom, cria conexões neurais.\n\n💬 História: Eu já usei planilha para decidir se eu ia sair ou não com tal pessoa. Sei lá, você coloca uma variável “like”, “decisão”, o que você quiser colocar. E já usei PROCV para procurar coisas que eu tenho em casa.\n\nDeixa eu pensar em algo que eu tenho bastante para procurar nos meus itens: eu faço em casa uma lavagem detalhada no carro como hobby, então tenho muitos produtos de limpeza de carros — produto de limpeza interna, limpeza da roda, de tudo. Eu usava PROCV para procurar esses produtos e controlar a quantidade. Colocava o código do produto para a roda, por exemplo, e via a quantidade que eu tinha em estoque. Parece neurótico? Sim, mas serve para você controlar as taças que tem em casa, a quantidade de garrafas de vinho — quem gosta de vinho — café… Traga para o seu dia a dia de alguma forma.\n\nVocê pode fazer uma planilhinha, colocando valores de manutenção e vou procurar, vou somar, enfim. Vai criando situações. Beleza, recado dado.\n\n## Referências vs. constantes e cenário do dólar\nSe você já viu as fórmulas, aqui é uma forma de pensar na utilidade da referência: não colocar constantes. Imagine que estou tomando muitas linhas — trezentas, quatrocentas, quinhentas, setecentas linhas — usando o valor do dólar, por exemplo. Então, numa célula coloco o valor do dólar do dia. Supondo que esses valores nas outras células estão sendo multiplicados por esse dólar: ao invés de entrar em cada uma e trocar o “5” por “6”, por exemplo, basta vir aqui na célula do dólar e trocar o valor. Como todas apontam para essa célula, não estão usando “5” dentro, mas uma referência, tudo se atualiza.\n\nCerto? Então estaria apontando para A1, por exemplo. O dólar aumentou, foi para seis. Outrora, caiu absurdamente, foi para três. Caiu mais ainda, foi para dois. Pronto. Deu para sacar?\n\nIsso pode parecer perda de tempo para quem já está mais avançado, mas para quem está começando, ou está no meio, eu sugiro dar o máximo de atenção para esses detalhes. Porque daqui para frente tudo vai apontar para tudo. Nós vamos usar isso aqui em toda a nossa caminhada nessa aula, essa base. Se você não captar bem essa base, quando eu falar de mudar, de copiar de um lado para o outro, você vai se perder totalmente. Eu não quero isso. Quero você conectado comigo. Vem lá comigo.\n\nFalamos um pouquinho da estrutura — não tudo. Nós voltaremos a falar da estrutura, hoje é uma base introdutória.\n\n## Operadores matemáticos e precedência\nPode parecer besteira o que eu vou falar, mas como é essencialmente uma ferramenta para fazer cálculos, o Excel vai seguir as regras matemáticas. Pode parecer besteira, mas você pode se deparar com uma situação de dúvida: “ele vai fazer isso ou aquilo?”. Pode até parecer mais lógico que ele faça outra coisa às vezes, mas se você lembrar das regras matemáticas, pronto. Talvez você não lembre; por isso, a gente vai relembrar. Não tem problema.\n\nEsse apóstrofo que tem aqui na frente poderia ser outro símbolo qualquer: ele é colocado simplesmente na frente de um cálculo para não acontecer o cálculo, para ficar parado “2+6”. Não tem finalidade de cálculo.\n\n- Soma: uso o “+”. Dois mais seis, oito.\n- Subtração: sinal de menos, sem novidades.\n\nA multiplicação já tem uma novidade para quem não conhece o operador: é o asterisco (*) e não “x”. Se eu colocar “x”, o Excel vai indicar possíveis correções e dizer que há erro, perguntando se quero corrigir. A correção é colocar o operador correto, no nosso caso, o asterisco.\n\n- Divisão: é dada pela barra (/), sem novidades.\n- Exponenciação: matematicamente você escreveria o expoente em cima. No Excel, usamos o acento circunflexo (^). Então “2^3”. Lembre-se:\n  - O número que vem depois do circunflexo é o expoente.\n  - O anterior é a base.\n  - “2^3” significa multiplicar 2 por ele mesmo 3 vezes: 2×2×2 = 8.\n  - Se trocar a base ou o expoente, troca o valor.\n\nPorcentagem: algumas opções de cálculo.\n- Dez por cento de cem: “=10%*100” resulta em 10.\n- Se eu quero acrescentar 10% ao próprio 100: “=100*10% + 100” resulta em 110.\n\nAqui você já começa a ver a precedência:\n- A multiplicação tem prioridade sobre a soma. Mesmo que a soma apareça antes na expressão, primeiro ele multiplica, depois soma.\n\nPara tirar 10% de 100:\n- Não faça “=100-100*10%” pensando em primeiro subtrair; ele vai multiplicar primeiro e depois subtrair, resultando em 90. Correto.\n\nDe forma geral, a precedência é:\n- Parênteses primeiro.\n- Depois potenciação.\n- Depois multiplicação e divisão (mesma prioridade).\n- Depois soma e subtração (mesma prioridade).\n\nEntre multiplicação e divisão, não há prioridade entre elas; resolvemos na ordem em que aparecem, da esquerda para a direita. Isso já caiu em prova.\n\nExemplo: “=6+4/2”\n- Muita gente soma primeiro (6+4=10) e depois divide por 2, mas está errado.\n- Correto: primeiro 4/2=2; depois 6+2=8.\n\nSe eu quero somar primeiro, uso parênteses: “=(6+4)/2”. Aí muda a prioridade.\n\nOutro exemplo com parênteses e multiplicação:\n- “=(6+4*2)/2”\n- Dentro dos parênteses, primeiro multiplica: 4*2=8; depois soma: 6+8=14; depois divide por 2: 7.\n\nSem parênteses, com mesma prioridade:\n- “=4*2/2+6”\n- Resolvo da esquerda para a direita entre * e /: 4*2=8; 8/2=4; 4+6=10.\n\n> 🎯 Dicas de prova: Entre multiplicação e divisão não há prioridade; resolva da esquerda para a direita. O mesmo vale para soma e subtração.\n\nCuidado para não errar na hora da prova.\n\n## Operadores lógicos (comparação)\nAgora, operadores lógicos, que podem ser tratados na sua prova como operadores de comparação. O nome não é para ficar neurótico: operadores lógicos ou de comparação, o importante é entender como é feita a comparação e o resultado.\n\nNo Excel, toda comparação resulta em VERDADEIRO ou FALSO. Não tem meio-termo.\n\nExemplos:\n- “=3>2” → VERDADEIRO. Se der erro de exibição, pode ser falta de espaço na coluna; ajuste a largura (duplo clique ou arrastar).\n- “=2<1” → FALSO.\n- “=4>=4” → VERDADEIRO. Lembre: “>=” é nesta ordem. Não existe “=>”. Igual vem depois do maior ou menor. Detalhe importante.\n\n> 🎯 Dicas de prova: “>=” e “<=” devem estar nessa ordem. Se inverter, está errado.\n\n- “=4>4” → FALSO.\n- “=4=4” → VERDADEIRO.\n- “=7<=6” → FALSO (não é menor, nem igual).\n\nDiferente “<>”:\n- “=7<>9” → VERDADEIRO, porque são diferentes.\n- Só será FALSO quando forem iguais (“=7<>7” → FALSO).\n\nIgualdade “=”:\n- Serve para comparar resultados. Em muitos contextos, você pode querer saber se dois valores são iguais.\n\n💬 História: Eu sempre trago para contexto financeiro: se sua renda é igual à sua despesa, não é o ideal, mas também não é o pior (que é quando a despesa é maior que a receita). Pelo menos você não entra no vermelho. Se conseguiu gastar exatamente o que ganha, já é um dado para análise.\n\n- “=8=9” → FALSO. É o contrário do “<>”; só dá VERDADEIRO quando forem iguais.\n\nIsso são os operadores de comparação.\n\nAgora, tem gente que gosta de pular etapas. Eu luto jiu-jitsu. O cara vê na TV as finalizações e quer fazer o golpe apoteótico, mas não entende que precisa de base: equilíbrio, pegada no quimono, etc. Quer pular as etapas. Eu não sou professor intermediário ainda, mas para quem está começando, já tem uma base para passar por isso. Todo mundo tem muito a aprender; até faixa preta continua aprendendo. Você está entendendo o que eu queria falar? Não pula etapa para irmos para função.\n\nEssas comparações dificilmente caem isoladas na prova; muito mais vezes você vai encontrá-las dentro de uma função. Se você não sabe resolver de forma isolada, vai sofrer dentro da função. Muitas vezes o resultado VERDADEIRO ou FALSO influencia matematicamente.\n\nEm alguns contextos, a palavra VERDADEIRO pode valer numericamente 1; e FALSO, 0. Isso pode influenciar no resultado. Se VERDADEIRO vale 1, então “5 + VERDADEIRO” pode virar 6 em certo contexto. Sacou? Então fica comigo nesse passeio, não fica pulando. A não ser que você já tenha uma base muito boa; aí, tudo bem, vai para o final e passa no concurso.\n\n## Alça de preenchimento\nAlça de preenchimento não é comigo qual é? O objetivo aqui é preencher as células adjacentes.\n\nPrimeiro, quando eu pego a borda da célula (os cantinhos) e arrasto, eu estou movendo o conteúdo. Isso muda a referência e equivale a recortar e colar.\n\nAgora, a alça de preenchimento: é aquele quadradinho no canto inferior direito da célula. Quando posiciono o cursor ali, ele muda de formato para uma cruz fina. Serve para preencher as células adjacentes — para baixo, para a direita, para cima ou para a esquerda. Não arrasta em diagonal.\n\n- Com número único:\n  - Para baixo ou para a direita: por padrão, repete o número.\n  - Para cima ou para a esquerda: também repete.\n- Para continuar sequência com um único número: use a tecla Ctrl.\n  - Quando eu aperto Ctrl, aparece um “+” no cursor. Mantendo Ctrl pressionado ao arrastar, ele continua a sequência: 1, 2, 3, 4…\n  - Para cima com Ctrl: diminui 2, 1, 0, -1, -2…\n\nOutra opção de sequência:\n- Digite dois números da sequência (1 na primeira, 2 na segunda) e arraste a partir do conjunto: ele infere o padrão e continua 3, 4, 5…\n- Dá para criar sequências com passo 2: 2, 4; arrasta e ele segue 6, 8, 10… Para cima, diminui seguindo a mesma lógica: 8, 6, 4, 2, 0, -2…\n\nCom texto + número:\n- “Casa 1” para baixo: ele continua “Casa 2”, “Casa 3”, “Casa 4”… Para cima, diminui: “Casa 0”, “Casa 1”, “Casa 2”… Não negativará o número em alguns casos; observe o comportamento.\n\nPadrão geral:\n- Para baixo e para a direita: aumenta sequência.\n- Para cima e para a esquerda: diminui sequência.\n- Se arrastar um único número sem Ctrl: repete.\n- Se arrastar dois números em sequência: continua a sequência.\n- Se usar Ctrl com um único número: força a sequência.\n\nHá também a Análise Rápida (quando você seleciona um intervalo): formatação condicional, gráficos, totais (soma, média, contagem), tabelas e minigráficos. Não é nosso foco agora, mas fica o registro.\n\nDias da semana:\n- Com pelo menos três letras (abreviado) ou por extenso: “Seg”, “Ter”, “Qua”… Para cima, ele volta: “Dom”, “Sáb”...\nMeses:\n- Abreviado com três letras ou por extenso: “Julho, Agosto, Setembro, Outubro…”. Para esquerda/para cima, ele volta: “Junho, Maio…”.\n\nDurante a aula, também vou tratar o que acontece quando há uma fórmula e você arrasta usando a alça de preenchimento (referências relativas, absolutas, etc.). Há outras hipóteses, mas eu preferi afunilar para o essencial aqui. Uma questão ou outra pode cair fora disso, mas 99% está concentrado aqui.\n\nBeleza? Então fico por hora. Voltamos no próximo bloco dando continuidade à nossa trilha. Se está morno para você, vai esquentar. Confia. Até o próximo bloco, valeu.",
+  "transcricao_meta": {
+    "title": "Office 365 - Excel III",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36548,
+    "createdAt": "2026-02-04T19:00:24.253Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: cálculos no Excel com “=”, diferenças entre constantes e referências, operadores e ordem de precedência, porcentagens e exponenciação, operadores de comparação (VERDADEIRO/FALSO), e alça de preenchimento (séries numéricas, texto+ número, dias/meses), além de macetes e pegadinhas de prova.\nPrincipais pontos: \n- Sempre iniciar fórmulas com “=”, preferir referências a constantes para atualizar cálculos automaticamente.\n- Ordem de operações: parênteses > ^ > */ (esquerda→direita) > +− (esquerda→direita).\n- Alça de preenchimento: direção define aumento/diminuição; Ctrl cria sequência a partir de um único número; texto+ número incrementa o número.\n\n## 1. Base / Conceitos Fundamentais\n- Barra de fórmulas: exibe o conteúdo real (constante, fórmula, referência).\n- Início de cálculo: digite “=” para que o Excel calcule.\n- Constantes vs Referências:\n  - Constante: número fixo na fórmula (ex.: =2+3).\n  - Referência: endereço de célula (ex.: =A1+A2). Mudou A1/A2, muda o resultado.\n- Operadores aritméticos:\n  - Soma: +\n  - Subtração: -\n  - Multiplicação: asterisco (*) — NUNCA use “x”\n  - Divisão: barra (/)\n  - Exponenciação: acento circunflexo (^)\n  - Porcentagem: símbolo % aplicado a números (ex.: 10%).\n- Operadores de comparação (retornam lógico): >, <, >=, <=, =, <>.\n\n## 2. Como Funciona / Distinções\n- Referências x constantes:\n  - Referências tornam a planilha dinâmica (mude A1, tudo atualiza).\n  - Constantes exigem correção manual em cada fórmula.\n- Ordem de operações (precedência):\n  1) Parênteses\n  2) Exponenciação (^)\n  3) Multiplicação (*) e Divisão (/) — mesma prioridade; resolver da esquerda p/ direita\n  4) Soma (+) e Subtração (-) — mesma prioridade; resolver da esquerda p/ direita\n- VERDADEIRO/FALSO em comparações:\n  - Toda comparação resulta em VERDADEIRO ou FALSO.\n  - Em alguns contextos, VERDADEIRO=1 e FALSO=0 (coerção numérica).\n- Alça de preenchimento:\n  - Canto inferior direito da célula (cursor “+” fino).\n  - Direção: para baixo/direita aumenta; para cima/esquerda diminui.\n  - Um valor só: repete; com Ctrl: cria sequência.\n  - Dois valores: infere o passo e continua a sequência.\n  - Texto+ número (“casa 1”): incrementa/decrementa o número.\n  - Séries reconhecidas: dias da semana, meses (com 3+ letras ou por extenso).\n\n## 3. Aplicação Prática / Técnicas\n- Cálculo básico:\n  - =A1+A2 (referências)\n  - =2+3 (constantes)\n  - =5*4 (use *)\n  - =2^3 (potência)\n- Porcentagens:\n  - 10% de 100: =100*10% → 10\n  - Acrescentar 10%: =100 + 100*10% → 110\n  - Tirar 10%: =100 - 100*10% → 90\n- Controle de precedência com parênteses:\n  - 6 + 4 ÷ 2 → 8\n  - (6 + 4) ÷ 2 → 5\n  - 4×2=8; 8+6=14; 14÷2=7 → 7\n- Comparações:\n  - 3>2 → VERDADEIRO\n  - 4>=4 → VERDADEIRO\n  - 7<>9 → VERDADEIRO\n  - 7<=6 → FALSO\n- Usando VERDADEIRO/FALSO em contas:\n  - 5 + VERDADEIRO → 6 (quando houver coerção; comum com duplo negativo ou em SOMARPRODUTO).\n- Alça de preenchimento:\n  - Número único:\n    - Arrastar: repete\n    - Arrastar com Ctrl: 1, 2, 3...\n  - Dois números (passo 2): 2, 4 → arraste → 6, 8, 10\n  - Direção:\n    - Para baixo/direita: aumenta (2, 4, 6…)\n    - Para cima/esquerda: diminui (… 6, 4, 2)\n  - Texto+ número: “casa 1”, “casa 2” → “casa 3”, “casa 4”…\n  - Dias/meses:\n    - “seg”, “ter”, “qua”… ou “Julho”, “Agosto”, “Setembro”, “Outubro”…\n\n## 4. Exemplos e Casos Resolvidos\n- Referência dinâmica (cotação do dólar):\n  - A1: cotação (ex.: 5)\n  - Em várias células: =PreçoEmReais*A1\n  - Alterou A1 para 6, 3, 2… todas as fórmulas atualizam.\n- Ordem de operações:\n  - 6 + 4 ÷ 2\n    - Correto: 4 ÷ 2 = 2; 6 + 2 = 8\n  - (6 + 4) ÷ 2\n    - Parênteses primeiro: 10 ÷ 2 = 5\n  - 4 × 2 ÷ 2 + 6\n    - Esquerda→direita: 4×2=8; 8÷2=4; 4+6=10\n- Potências:\n  - =2^2 → 4; =2^3 → 8; =2^5 → 32; =2^6 → 64\n- Porcentagem aplicada:\n  - =100*10% → 10\n  - =100+100*10% → 110\n  - =100-100*10% → 90\n- Comparações típicas:\n  - 4 > 4 → FALSO; 4 = 4 → VERDADEIRO; logo 4 >= 4 → VERDADEIRO\n  - 7 = 6 → FALSO; 7 < 6 → FALSO; logo 7 <= 6 → FALSO\n  - 7 <> 7 → FALSO; 7 <> 9 → VERDADEIRO\n- Alça:\n  - Dois valores: 2, 4 → arraste para baixo → 6, 8, 10\n  - Um valor com Ctrl: 1 → arraste com Ctrl → 2, 3, 4…\n  - Texto+ número: “casa 1” → arraste → “casa 2”, “casa 3”…\n  - Dias: “seg” → arraste → “ter”, “qua”, “qui”…\n  - Meses: “Julho” → arraste → “Agosto”, “Setembro”, “Outubro”…\n\n## 5. Pegadinhas e Erros Comuns\n- Dica de Prova: Para calcular, comece com “=”. Sem “=”, o Excel não avalia a expressão.\n- Dica de Prova: Use asterisco (*) para multiplicação. “x” causa erro.\n- Dica de Prova: Multiplicação e divisão têm a mesma prioridade; resolva da esquerda para a direita. Idem para soma e subtração.\n- Dica de Prova: Parênteses mudam a prioridade. Se quer “somar antes”, envolva em parênteses.\n- Dica de Prova: 100 − 100*10% = 90 (primeiro a multiplicação). (100 − 100)*10% = 0 é errado para “tirar 10%”.\n- Dica de Prova: Na barra de fórmulas você distingue constante de resultado de fórmula.\n- Dica de Prova: Em comparações, “>=” e “<=” têm o igual depois. “=>” e “=<” estão errados.\n- Dica de Prova: “<>” (diferente) só é FALSO quando os valores são iguais.\n- Dica de Prova: Alça de preenchimento:\n  - Um valor arrastado repete; com Ctrl vira sequência.\n  - Dois valores determinam o passo.\n  - Para baixo/direita aumenta; para cima/esquerda diminui.\n  - Texto+ número incrementa o número; não “negativa” automaticamente ao subir (pode ir até 0, depois 1, 2…).\n- Dica de Prova: Arrastar pela borda move o conteúdo (equivalente a recortar/colar); alça é o canto inferior direito para preencher.",
+  "resumo_bolso": "# Office 365 - Excel III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Fórmula**: sempre começa com **“=”**; sem “=” o Excel trata como texto/constante, não calcula.\n* **Constante**: valor fixo digitado na fórmula (**=2+3**); para alterar o cálculo, é preciso editar cada fórmula.\n* **Referência**: endereço de célula (**=A1+A2**); mudou o valor em A1/A2, o resultado se atualiza automaticamente.\n* **Barra de fórmulas**: mostra o **conteúdo real** da célula (constante, fórmula, referência), não apenas o resultado.\n* **Operadores aritméticos**:  \n  + (soma), − (subtração), * (multiplicação – **nunca “x”**), / (divisão), ^ (potência), % (porcentagem).\n* **Operadores de comparação**: >, <, >=, <=, =, <> → retornam **VERDADEIRO** ou **FALSO**.\n* **Precedência de operadores**:  \n  1) Parênteses  \n  2) Exponenciação (^)  \n  3) Multiplicação (*) e Divisão (/) – mesma prioridade, **esquerda→direita**  \n  4) Soma (+) e Subtração (−) – mesma prioridade, **esquerda→direita**\n* **VERDADEIRO/FALSO em contas**: em alguns contextos, **VERDADEIRO=1**, **FALSO=0** (coerção numérica).\n* **Alça de preenchimento**: pequeno quadrado no canto inferior direito da célula (cursor “+” fino); arrastar para repetir ou criar séries.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Constante vs Referência\n\n| Aspecto              | Constante                         | Referência                           |\n|----------------------|-----------------------------------|--------------------------------------|\n| Conteúdo da fórmula  | Número fixo (ex.: =2+3; =100*10%)| Endereço de célula (ex.: =A1+A2; =A1*10%) |\n| Atualização          | **Manual** em cada fórmula       | **Automática** ao mudar a célula     |\n| Flexibilidade        | Baixa                            | Alta (planilha dinâmica)             |\n\n---\n\n### Multiplicação/Divisão vs Soma/Subtração\n\n| Aspecto            | * e /                             | + e −                                |\n|--------------------|-----------------------------------|--------------------------------------|\n| Prioridade         | Maior                             | Menor                                |\n| Ordem entre si     | Mesma; **esquerda→direita**       | Mesma; **esquerda→direita**          |\n| Controle por ()    | Parênteses podem alterar a ordem  | Parênteses podem forçar soma antes   |\n\n---\n\n### Alça de Preenchimento: Um Valor vs Dois Valores\n\n| Aspecto           | Um valor                          | Dois valores                         |\n|-------------------|-----------------------------------|--------------------------------------|\n| Arrastar simples  | Repete o valor                    | Cria sequência com base no “passo”  |\n| Arrastar com Ctrl | Cria sequência (1,2,3…)           | Mantém o padrão de passo             |\n| Direção           | Baixo/direita aumenta (em série)  | Cima/esquerda diminui (em série)     |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra do “=” para cálculo**\n\n* **Aplicação**: qualquer operação que deva ser calculada pelo Excel.\n* **Exemplo**: digitar **=2+3** → resultado 5; digitar **2+3** (sem =) → texto “2+3”.\n\n---\n\n**2. Ordem de Precedência**\n\n* **Aplicação**: expressões com mais de um operador.\n* **Regra**: () → ^ → * / (esq→dir) → + − (esq→dir).\n* **Exemplo**:  \n  6 + 4 ÷ 2 → 4 ÷ 2 = 2; 6 + 2 = **8**.  \n  (6 + 4) ÷ 2 → 10 ÷ 2 = **5**.\n\n---\n\n**3. Porcentagem**\n\n* **Aplicação**: cálculos de “x% de”, “acrescentar/tirar %”.\n* **Exemplo**:  \n  10% de 100: **=100*10% → 10**  \n  Acrescentar 10%: **=100+100*10% → 110**  \n  Tirar 10%: **=100-100*10% → 90**\n\n---\n\n**4. Operadores de Comparação**\n\n* **Aplicação**: testes lógicos simples.\n* **Regra**:  \n  > maior que; < menor que; >= maior ou igual; <= menor ou igual; = igual; <> diferente.\n* **Exemplo**:  \n  3 > 2 → VERDADEIRO  \n  4 >= 4 → VERDADEIRO  \n  7 <> 9 → VERDADEIRO  \n  7 <= 6 → FALSO\n\n---\n\n**5. VERDADEIRO/FALSO em contas**\n\n* **Aplicação**: uso de resultados lógicos em expressões numéricas (quando houver coerção).\n* **Exemplo**:  \n  5 + VERDADEIRO → 6 (quando VERDADEIRO é tratado como 1 e FALSO como 0).\n\n---\n\n**6. Alça de Preenchimento**\n\n* **Aplicação**: repetir valores, criar séries numéricas, dias/meses, texto+número.\n* **Regras principais**:\n  * Um valor: arrastar → **repete**; arrastar com **Ctrl** → sequência (1,2,3…).\n  * Dois valores: Excel infere o **passo** (ex.: 2,4 → 6,8,10…).\n  * Direção: **baixo/direita aumenta**, **cima/esquerda diminui**.\n  * Texto+ número: incrementa/decrementa **apenas o número** (“casa 1”, “casa 2”…).\n  * Séries internas: dias da semana (“seg”, “ter”, “qua”…), meses (“Julho”, “Agosto”, “Setembro”…).\n* **Exemplo**:  \n  “seg” → arrastar para baixo → “ter”, “qua”, “qui”…  \n  “casa 1” → arrastar → “casa 2”, “casa 3”…  \n  2, 4 → arrastar → 6, 8, 10  \n  1 (com Ctrl) → arrastar → 2, 3, 4…\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Para calcular, comece com **“=”**. Sem “=”, o Excel não avalia a expressão.\n* Use **asterisco (*)** para multiplicação. Usar “x” causa erro.\n* Multiplicação e divisão têm a mesma prioridade; resolva da **esquerda para a direita**. Idem para soma e subtração.\n* 100 − 100*10% = **90** (primeiro a multiplicação). (100 − 100)*10% = 0 é errado para “tirar 10%”.\n* Em comparações, **>=** e **<=** têm o igual depois; “=>” e “=<” estão errados. “<>” (diferente) só é FALSO quando os valores são iguais.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **constante** de **referência** e sei que referências tornam a planilha dinâmica?\n* Memorizei a **ordem de precedência** e o uso de **parênteses** para forçar a ordem?\n* Sei que **toda fórmula começa com “=”** e que multiplicação é sempre com **“*”**?\n* Fixei que **100 − 100*10% = 90** e que (100 − 100)*10% = 0 não representa “tirar 10%”?\n* Lembro que **um valor + alça** repete, **um valor + Ctrl + alça** cria sequência, e **dois valores** definem o passo?\n* Sei que **>, <, >=, <=, =, <>** são os operadores válidos e que o resultado é sempre **VERDADEIRO/FALSO**?\n* Lembro que dias/meses e **texto+ número** são reconhecidos pela alça de preenchimento e que a direção (baixo/direita x cima/esquerda) define aumento/diminuição?",
+  "mapa_mental": "# 💻 Excel III – Cálculos e Preenchimento\n## 🎯 Fórmulas e Elementos\n### 💡 Conceitos básicos\n- Barra de fórmulas\n- Conteúdo real\n- Resultado exibido\n- Início com igual\n- Expressão calculável\n### 🔢 Constantes x referências\n- Constante numérica\n- Valor fixo\n- Referência de célula\n- Planilha dinâmica\n- Atualização automática\n### 🧮 Operadores aritméticos\n- Soma mais\n- Subtração menos\n- Multiplicação asterisco\n- Divisão barra\n- Potência circunflexo\n### 🧮 Porcentagens\n- Símbolo porcentagem\n- Parte de cem\n- Multiplicação percentual\n- Aumento percentual\n- Desconto percentual\n### ⚖️ Operadores comparação\n- Maior menor\n- Maior igual\n- Menor igual\n- Igual simples\n- Diferente menormaior\n\n## ⚙️ Precedência e Lógica\n### 📜 Ordem de operações\n- Parênteses primeiro\n- Potência depois\n- Multiplicação divisão\n- Soma subtração\n- Esquerda para direita\n### 🧠 Controle com parênteses\n- Alterar prioridade\n- Agrupar parcelas\n- Evitar ambiguidades\n- Resultados distintos\n- Provas de concurso\n### 🔢 Valores lógicos\n- Resultado lógico\n- Verdadeiro falso\n- Comparações numéricas\n- Coerção numérica\n- Verdadeiro igual um\n\n## 🔄 Alça de Preenchimento\n### 📋 Conceito geral\n- Canto inferior\n- Cursor cruz fina\n- Arrastar células\n- Preenchimento automático\n- Reconhecimento padrão\n### 🔄 Sequências numéricas\n- Um valor repete\n- Um valor Ctrl sequência\n- Dois valores passo\n- Aumentar direção\n- Diminuir direção\n### 📝 Texto e séries\n- Texto mais número\n- Incremento numérico\n- Dias da semana\n- Meses do ano\n- Abreviações válidas\n\n## ⚠️ Erros e Pegadinhas\n### 🛑 Sintaxe fórmulas\n- Falta sinal igual\n- Uso letra xis\n- Ordem ignorada\n- Parênteses ausentes\n- Operador invertido\n### ⚠️ Comparações\n- Sinal maiorigual\n- Sinal menorigual\n- Sinal diferente\n- Igualdade lógica\n- Falso verdadeiro\n### 🚨 Alça e movimentação\n- Alça preenchimento\n- Borda movimentação\n- Direção sequência\n- Texto não negativo\n- Passo determinado",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Fórmulas e Referências",
+      "description": "Fórmulas e Referências — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual sinal normalmente inicia uma expressão calculada no Excel?",
+          "back": "Sinal de **igual** (=).",
+          "hint": "É o caractere de início de fórmula",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "excel",
+            "formulas",
+            "sintaxe"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como distinguir um valor constante do resultado de uma fórmula em uma célula?",
+          "back": "A constante exibe o próprio valor na célula, enquanto a fórmula exibe o resultado do cálculo realizado.",
+          "hint": "Pense na diferença entre dado e processamento",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "formulas",
+            "conceitos-basicos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-3",
+          "front": "Onde verificar a fórmula ou o conteúdo completo de uma célula selecionada?",
+          "back": "Na **barra de fórmulas**.",
+          "hint": "Fica acima da grade de células",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "interface",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é o efeito de alterar uma célula usada como referência por uma fórmula?",
+          "back": "O resultado da fórmula é alterado automaticamente.",
+          "hint": "O Excel é dinâmico",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "formulas",
+            "referencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual vantagem existe em referenciar uma célula com um valor usado em várias fórmulas?",
+          "back": "Permite alterar o valor em um único local sem precisar modificar manualmente cada fórmula.",
+          "hint": "Relacionado à manutenção de planilhas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "formulas",
+            "eficiencia"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Operadores Matemáticos",
+      "description": "Operadores Matemáticos — 4 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual operador do Excel representa a adição?",
+          "back": "Sinal de **mais** (+).",
+          "hint": "Operador aritmético básico",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "operadores",
+            "matematica"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a ordem geral de precedência dos operadores matemáticos no Excel?",
+          "back": "1. Parênteses\n2. Exponenciação\n3. Multiplicação e divisão\n4. Adição e subtração",
+          "hint": "São quatro níveis de prioridade",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "excel",
+            "formulas",
+            "precedencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Como os operadores de mesma precedência são resolvidos em uma expressão do Excel?",
+          "back": "Da **esquerda para a direita**.",
+          "hint": "Direção de leitura ocidental",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "formulas",
+            "precedencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Como os parênteses alteram a ordem de cálculo em uma expressão do Excel?",
+          "back": "Alteram a ordem de cálculo, tendo **prioridade total** sobre as regras de precedência.",
+          "hint": "Recurso de agrupamento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "formulas",
+            "precedencia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Comparações Lógicas",
+      "description": "Comparações Lógicas — 3 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Quais resultados uma comparação realizada no Excel pode produzir?",
+          "back": "**Verdadeiro** ou **Falso**.",
+          "hint": "São valores lógicos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "logica",
+            "comparacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual sequência de símbolos representa a condição “maior ou igual” no Excel?",
+          "back": "Maior seguido de igual (>=).",
+          "hint": "Combinação de dois símbolos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "operadores",
+            "comparacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Em que situação uma comparação de desigualdade retorna FALSO?",
+          "back": "Quando os dois valores comparados são iguais.",
+          "hint": "Ocorre quando a condição é de desigualdade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "logica",
+            "comparacao"
+          ],
+          "type": "exception"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Preenchimento Automático",
+      "description": "Preenchimento Automático — 7 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual é a finalidade da alça de preenchimento do Excel?",
+          "back": "Preencher **células adjacentes**.",
+          "hint": "Automatização de dados",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "interface",
+            "preenchimento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Onde fica a alça de preenchimento em uma célula selecionada?",
+          "back": "No canto inferior direito da célula.",
+          "hint": "Localização geométrica na célula",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "interface",
+            "preenchimento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Em quais direções a alça de preenchimento pode ser arrastada?",
+          "back": "Para baixo, para a direita, para cima ou para a esquerda (nunca em diagonais).",
+          "hint": "São quatro direções cardinais",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "interface",
+            "preenchimento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "O que ocorre, por padrão, ao arrastar uma única célula numérica pela alça de preenchimento?",
+          "back": "Repete o número.",
+          "hint": "Comportamento padrão do Excel",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "preenchimento",
+            "sequencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Como usar a alça de preenchimento para continuar uma sequência numérica com apenas um valor?",
+          "back": "Mantendo a tecla **Ctrl** pressionada ao arrastar.",
+          "hint": "Tecla de modificação de comportamento",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "excel",
+            "preenchimento",
+            "atalhos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-18",
+          "front": "Como o Excel determina o padrão de uma sequência iniciada com dois valores?",
+          "back": "Calcula a proporção da diferença entre os dois valores iniciais para continuar a progressão.",
+          "hint": "Baseado em cálculo aritmético",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "excel",
+            "preenchimento",
+            "sequencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-19",
+          "front": "Quais tipos de nomes de dias o Excel reconhece para continuar uma sequência?",
+          "back": "Dias da semana abreviados com pelo menos três letras ou por extenso.",
+          "hint": "Relacionado a formato de data",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "excel",
+            "preenchimento",
+            "formatacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Excel, qual é o símbolo utilizado para indicar que uma operação de multiplicação será realizada em uma fórmula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "X (letra x maiúscula)",
+          "correct": false,
+          "explanation": "Incorreta. Embora o 'X' seja um símbolo comum para multiplicação na matemática convencional, em programas de planilha eletrônica como o Microsoft Excel, ele não é reconhecido como um operador de multiplicação. Utilizar 'X' em uma fórmula resultaria em um erro ou faria com que o Excel interpretasse o conteúdo como texto."
+        },
+        {
+          "id": "b",
+          "text": "* (asterisco)",
+          "correct": true,
+          "explanation": "Correta. Em programas de planilha eletrônica, como o Microsoft Excel, o asterisco (*) é o símbolo padrão e universalmente aceito para representar a operação de multiplicação em fórmulas. Por exemplo, para multiplicar o valor da célula A1 pelo valor da célula B1, a fórmula seria escrita como `=A1*B1`."
+        },
+        {
+          "id": "c",
+          "text": "× (símbolo de multiplicação)",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo matemático '×' é a representação gráfica correta para a multiplicação. No entanto, o Excel, assim como a maioria dos softwares de computador, utiliza caracteres ASCII mais simples para os operadores matemáticos. Portanto, o símbolo '×' não é o operador correto para multiplicação em fórmulas do Excel, sendo o asterisco (*) o substituto funcional."
+        },
+        {
+          "id": "d",
+          "text": ". (ponto)",
+          "correct": false,
+          "explanation": "Incorreta. O ponto (.) é utilizado no Excel principalmente como separador decimal em algumas configurações regionais ou como parte de nomes de arquivos e URLs, mas não possui função como operador de multiplicação em fórmulas. Seu uso em um cálculo resultaria em erro de sintaxe."
+        }
+      ],
+      "explanation": "Correta. Em programas de planilha eletrônica, como o Microsoft Excel, o asterisco (*) é o símbolo padrão e universalmente aceito para representar a operação de multiplicação em fórmulas. Por exemplo, para multiplicar o valor da célula A1 pelo valor da célula B1, a fórmula seria escrita como `=A1*B1`.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao digitar uma fórmula no Excel, qual símbolo deve ser utilizado para iniciar o cálculo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "@ (arroba)",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de arroba (@) é usado em algumas funções específicas do Excel, especialmente em referências de tabela estruturada para indicar 'esta linha' (por exemplo, `[@Coluna1]`) ou em algumas funções para referenciar um item específico. Contudo, não é o símbolo utilizado para iniciar uma fórmula."
+        },
+        {
+          "id": "b",
+          "text": "# (hashtag ou cerquilha)",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de cerquilha (#) no Excel é frequentemente associado a mensagens de erro (como #VALOR!, #DIV/0!, #NOME?) ou é utilizado para referenciar tabelas estruturadas (por exemplo, `Tabela1[#Tudo]`). Ele não tem a função de iniciar um cálculo em uma célula."
+        },
+        {
+          "id": "c",
+          "text": "= (sinal de igual)",
+          "correct": true,
+          "explanation": "Correta. Em programas de planilha eletrônica como o Microsoft Excel, o sinal de igual (=) é o caractere fundamental e obrigatório que deve ser digitado no início de qualquer conteúdo de célula para que o Excel o interprete como uma fórmula e realize um cálculo. Sem ele, o conteúdo seria tratado como texto ou um número literal."
+        },
+        {
+          "id": "d",
+          "text": "+ (sinal de adição)",
+          "correct": false,
+          "explanation": "Incorreta. Embora em alguns casos o Excel possa converter automaticamente um sinal de adição (+) inicial em um sinal de igual (=) para iniciar uma fórmula (ex: `+A1+B1` se torna `=A1+B1`), o sinal de adição não é o símbolo padrão nem o mais recomendado para iniciar um cálculo. O uso do sinal de igual (=) é a prática correta e explícita para indicar o início de uma fórmula."
+        }
+      ],
+      "explanation": "Correta. Em programas de planilha eletrônica como o Microsoft Excel, o sinal de igual (=) é o caractere fundamental e obrigatório que deve ser digitado no início de qualquer conteúdo de célula para que o Excel o interprete como uma fórmula e realize um cálculo. Sem ele, o conteúdo seria tratado como texto ou um número literal.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Excel, qual é a diferença fundamental entre utilizar referências de células e valores constantes em uma fórmula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Valores constantes processam os cálculos mais rapidamente do que referências de células devido ao menor uso de memória",
+          "correct": false,
+          "explanation": "Incorreta. A diferença de desempenho entre o uso de referências de células e valores constantes é geralmente desprezível para a maioria das operações no Excel. A flexibilidade e a capacidade de atualização automática das referências de células superam qualquer mínima diferença de velocidade de processamento ou uso de memória, que raramente seria perceptível ao usuário."
+        },
+        {
+          "id": "b",
+          "text": "Valores constantes permitem cálculos mais complexos do que referências de células, pois não dependem de outras células",
+          "correct": false,
+          "explanation": "Incorreta. A complexidade de um cálculo no Excel é determinada pela lógica da fórmula, pelas funções utilizadas e pela estrutura dos dados, e não pelo uso de constantes ou referências. Referências de células são, na verdade, essenciais para construir modelos dinâmicos e complexos que precisam se adaptar a diferentes conjuntos de dados sem a necessidade de reescrever as fórmulas."
+        },
+        {
+          "id": "c",
+          "text": "Referências de células ocupam mais espaço de armazenamento no arquivo do que valores constantes inseridos diretamente",
+          "correct": false,
+          "explanation": "Incorreta. Na realidade, o armazenamento de referências de células é muito eficiente. O Excel armazena a referência (por exemplo, 'A1'), que é um dado pequeno. Um valor constante, por outro lado, é o próprio valor numérico ou textual. A diferença no espaço de armazenamento é mínima e não é um fator relevante para a escolha entre os dois métodos."
+        },
+        {
+          "id": "d",
+          "text": "Referências de células atualizam automaticamente o resultado quando os valores originais são alterados, enquanto constantes exigem alteração manual da fórmula",
+          "correct": true,
+          "explanation": "Correta. Esta é a diferença fundamental e a principal vantagem das referências de células. Quando uma fórmula utiliza referências (como `=A1+B1`), se os valores nas células A1 ou B1 forem alterados, o resultado da fórmula é automaticamente recalculado e atualizado. Por outro lado, se a fórmula contiver valores constantes (como `=10+5`), qualquer mudança desejada nesses valores exigirá a edição manual da fórmula, o que pode ser trabalhoso em planilhas grandes."
+        }
+      ],
+      "explanation": "Correta. Esta é a diferença fundamental e a principal vantagem das referências de células. Quando uma fórmula utiliza referências (como `=A1+B1`), se os valores nas células A1 ou B1 forem alterados, o resultado da fórmula é automaticamente recalculado e atualizado. Por outro lado, se a fórmula contiver valores constantes (como `=10+5`), qualquer mudança desejada nesses valores exigirá a edição manual da fórmula, o que pode ser trabalhoso em planilhas grandes.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é o resultado possível de uma operação de comparação utilizando operadores lógicos no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Verdadeiro ou Falso, representando o resultado da comparação",
+          "correct": true,
+          "explanation": "Correta. No Excel, as operações de comparação utilizando operadores lógicos (como `=`, `>`, `<`, `>=`, `<=`, `<>`) sempre resultam em um valor booleano: VERDADEIRO se a condição comparada for satisfeita, ou FALSO se a condição não for satisfeita. Por exemplo, a fórmula `=5>3` resultará em VERDADEIRO, enquanto `=5<3` resultará em FALSO."
+        },
+        {
+          "id": "b",
+          "text": "Um número inteiro positivo ou negativo, dependendo da comparação realizada",
+          "correct": false,
+          "explanation": "Incorreta. Embora números inteiros possam ser o resultado de cálculos matemáticos, as operações de comparação com operadores lógicos (como igual a, maior que, menor que) não retornam números inteiros diretamente. Elas produzem um tipo de dado específico que representa a veracidade da condição."
+        },
+        {
+          "id": "c",
+          "text": "Uma mensagem de texto descrevendo o resultado da operação de comparação",
+          "correct": false,
+          "explanation": "Incorreta. O Excel retorna os valores lógicos 'VERDADEIRO' ou 'FALSO' como tipos de dados booleanos. Embora esses valores possam ser exibidos como texto nas células, eles são internamente tratados como valores lógicos que podem ser usados em outras funções e cálculos, e não como mensagens de texto descritivas arbitrárias."
+        },
+        {
+          "id": "d",
+          "text": "Um valor percentual que indica o grau de similaridade entre os elementos comparados",
+          "correct": false,
+          "explanation": "Incorreta. Um valor percentual é o resultado de um cálculo que expressa uma proporção de 100 e não está diretamente relacionado ao resultado de uma operação de comparação lógica. O Excel não gera um percentual para indicar similaridade em comparações lógicas."
+        }
+      ],
+      "explanation": "Correta. No Excel, as operações de comparação utilizando operadores lógicos (como `=`, `>`, `<`, `>=`, `<=`, `<>`) sempre resultam em um valor booleano: VERDADEIRO se a condição comparada for satisfeita, ou FALSO se a condição não for satisfeita. Por exemplo, a fórmula `=5>3` resultará em VERDADEIRO, enquanto `=5<3` resultará em FALSO.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao utilizar a alça de preenchimento no Excel, qual é o comportamento padrão ao arrastar uma célula contendo apenas um número para baixo ou para a direita?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O número é incrementado automaticamente em uma unidade a cada célula preenchida",
+          "correct": false,
+          "explanation": "Incorreta. O incremento automático em uma unidade ocorre em situações específicas. Por exemplo, se a célula contiver um texto seguido de um número (ex: 'Item 1', ao arrastar, gera 'Item 2', 'Item 3'), ou se a célula contiver uma data. Para que um número puro seja incrementado, é necessário arrastar a alça de preenchimento enquanto a tecla `Ctrl` está pressionada, ou selecionar duas células com uma sequência (ex: 1 e 2) e arrastar ambas."
+        },
+        {
+          "id": "b",
+          "text": "O número é repetido nas células adjacentes sem alteração de valor",
+          "correct": true,
+          "explanation": "Correta. Quando uma célula contém apenas um número (por exemplo, '10') e a alça de preenchimento (o pequeno quadrado no canto inferior direito da célula selecionada) é arrastada para células adjacentes (para baixo, para cima, para a direita ou para a esquerda) sem o uso de qualquer tecla modificadora como `Ctrl`, o comportamento padrão do Excel é preencher as células com o mesmo número, repetindo o valor original. Isso é útil para duplicar rapidamente um valor em uma série de células."
+        },
+        {
+          "id": "c",
+          "text": "O número é multiplicado por dois a cada célula subsequente",
+          "correct": false,
+          "explanation": "Incorreta. Não existe um comportamento padrão de multiplicação por dois ao arrastar a alça de preenchimento com um único número. Para criar uma série com multiplicação ou qualquer outro padrão matemático, seria necessário estabelecer uma sequência lógica em pelo menos duas células adjacentes (ex: 2 e 4) e arrastar ambas, ou usar uma fórmula específica."
+        },
+        {
+          "id": "d",
+          "text": "O número é convertido em formato de texto nas células de destino",
+          "correct": false,
+          "explanation": "Incorreta. A alça de preenchimento não altera o tipo de dado de número para texto por padrão. Ela mantém o tipo de dado original (número) nas células preenchidas. A conversão para texto só ocorreria se a célula original já contivesse texto ou uma combinação de texto e número que não fosse reconhecida como um padrão de série numérica pelo Excel."
+        }
+      ],
+      "explanation": "Correta. Quando uma célula contém apenas um número (por exemplo, '10') e a alça de preenchimento (o pequeno quadrado no canto inferior direito da célula selecionada) é arrastada para células adjacentes (para baixo, para cima, para a direita ou para a esquerda) sem o uso de qualquer tecla modificadora como `Ctrl`, o comportamento padrão do Excel é preencher as células com o mesmo número, repetindo o valor original. Isso é útil para duplicar rapidamente um valor em uma série de células.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Considerando a precedência de operadores no Excel, qual operação será executada primeiro na fórmula =6+4/2?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As operações serão executadas simultaneamente, da esquerda para a direita",
+          "correct": false,
+          "explanation": "Incorreta. As operações não são executadas simultaneamente quando possuem diferentes níveis de precedência. O Excel segue uma ordem específica, onde operações de maior precedência são calculadas antes das de menor precedência, mesmo que apareçam à direita na fórmula."
+        },
+        {
+          "id": "b",
+          "text": "A divisão (4/2), resultando em 2, que será somado a 6",
+          "correct": true,
+          "explanation": "Correta. De acordo com a hierarquia de operadores matemáticos, a divisão (/) possui precedência maior que a adição (+). Assim, na fórmula `=6+4/2`, o Excel primeiro calcula `4/2`, que resulta em `2`. Em seguida, este resultado é somado a `6`, totalizando `8`."
+        },
+        {
+          "id": "c",
+          "text": "A fórmula gerará um erro por falta de parênteses para definir a ordem",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula não gerará um erro. O Excel possui uma ordem de precedência de operadores padrão que é aplicada automaticamente. Os parênteses são utilizados para *alterar* essa ordem padrão, caso o usuário deseje que uma operação de menor precedência seja executada antes de uma de maior precedência."
+        },
+        {
+          "id": "d",
+          "text": "A adição (6+4), resultando em 10, que será dividido por 2",
+          "correct": false,
+          "explanation": "Incorreta. No Excel, a precedência de operadores matemáticos estabelece que a divisão é realizada antes da adição. Portanto, a adição (6+4) não seria a primeira operação a ser executada."
+        }
+      ],
+      "explanation": "Correta. De acordo com a hierarquia de operadores matemáticos, a divisão (/) possui precedência maior que a adição (+). Assim, na fórmula `=6+4/2`, o Excel primeiro calcula `4/2`, que resulta em `2`. Em seguida, este resultado é somado a `6`, totalizando `8`.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Como os parênteses afetam a ordem de execução das operações em uma fórmula do Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os parênteses forçam a execução prioritária das operações contidas neles, alterando a precedência natural",
+          "correct": true,
+          "explanation": "Correta. Os parênteses têm a capacidade de agrupar operações e garantir que elas sejam resolvidas primeiro, antes de qualquer outra parte da fórmula. Isso permite ao usuário sobrepor a precedência padrão dos operadores. Por exemplo, em `=(6+4)/2`, a adição é executada primeiro, diferentemente de `6+4/2` onde a divisão seria prioritária."
+        },
+        {
+          "id": "b",
+          "text": "Os parênteses duplicam o resultado das operações contidas neles antes de prosseguir com o restante do cálculo",
+          "correct": false,
+          "explanation": "Incorreta. Os parênteses não duplicam o resultado das operações. Sua única função é controlar a ordem em que as operações são avaliadas, garantindo que um conjunto de cálculos seja tratado como uma única unidade antes de ser usado no restante da fórmula."
+        },
+        {
+          "id": "c",
+          "text": "Os parênteses invertem a ordem de precedência, fazendo com que adição e subtração sejam executadas primeiro",
+          "correct": false,
+          "explanation": "Incorreta. Os parênteses não invertem a ordem de precedência de forma generalizada. Eles apenas garantem que as operações *dentro* deles sejam resolvidas primeiro. A precedência entre os operadores *dentro* dos parênteses ainda é mantida (por exemplo, multiplicação antes da adição, se ambas estiverem dentro dos parênteses)."
+        },
+        {
+          "id": "d",
+          "text": "Os parênteses servem apenas para organização visual, sem alterar a ordem de cálculo das operações",
+          "correct": false,
+          "explanation": "Incorreta. Embora os parênteses possam contribuir para a clareza visual de uma fórmula, sua função primordial e mais importante é alterar a ordem de cálculo. Eles forçam a execução das operações contidas neles antes de outras operações fora dos parênteses, independentemente da precedência natural dessas operações."
+        }
+      ],
+      "explanation": "Correta. Os parênteses têm a capacidade de agrupar operações e garantir que elas sejam resolvidas primeiro, antes de qualquer outra parte da fórmula. Isso permite ao usuário sobrepor a precedência padrão dos operadores. Por exemplo, em `=(6+4)/2`, a adição é executada primeiro, diferentemente de `6+4/2` onde a divisão seria prioritária.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No contexto de fórmulas do Excel, qual é a principal diferença entre arrastar uma célula pela borda e arrastar pela alça de preenchimento?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Arrastar pela borda move o conteúdo, enquanto arrastar pela alça de preenchimento preenche células adjacentes",
+          "correct": true,
+          "explanation": "Correta. Quando se arrasta uma célula pela borda (o cursor se transforma em uma seta de quatro pontas), o conteúdo e a formatação da célula selecionada são movidos para o novo local. Já ao arrastar pela alça de preenchimento (o pequeno quadrado no canto inferior direito da célula, que muda o cursor para uma cruz fina), o Excel copia o conteúdo ou estende uma sequência lógica (como números, datas, dias da semana) para as células adjacentes, preenchendo-as."
+        },
+        {
+          "id": "b",
+          "text": "Arrastar pela borda formata as células, enquanto arrastar pela alça de preenchimento apenas copia valores",
+          "correct": false,
+          "explanation": "Incorreta. Arrastar pela borda move todo o conteúdo da célula, incluindo sua formatação, não apenas formata as células. A alça de preenchimento, além de copiar valores, também pode estender séries lógicas e copiar fórmulas com ajustes de referências."
+        },
+        {
+          "id": "c",
+          "text": "Arrastar pela borda duplica o conteúdo, enquanto arrastar pela alça de preenchimento o divide entre as células",
+          "correct": false,
+          "explanation": "Incorreta. Nenhuma das ações de arrastar duplica ou divide o conteúdo da forma descrita. Arrastar pela borda realiza uma operação de mover, enquanto a alça de preenchimento realiza cópias ou preenchimento de séries."
+        },
+        {
+          "id": "d",
+          "text": "Arrastar pela borda copia o conteúdo, enquanto arrastar pela alça de preenchimento move o conteúdo",
+          "correct": false,
+          "explanation": "Incorreta. Arrastar pela borda move o conteúdo da célula (equivalente a recortar e colar), não o copia (a menos que a tecla Ctrl seja pressionada simultaneamente). Arrastar pela alça de preenchimento serve para copiar ou estender séries, não para mover o conteúdo."
+        }
+      ],
+      "explanation": "Correta. Quando se arrasta uma célula pela borda (o cursor se transforma em uma seta de quatro pontas), o conteúdo e a formatação da célula selecionada são movidos para o novo local. Já ao arrastar pela alça de preenchimento (o pequeno quadrado no canto inferior direito da célula, que muda o cursor para uma cruz fina), o Excel copia o conteúdo ou estende uma sequência lógica (como números, datas, dias da semana) para as células adjacentes, preenchendo-as.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a ordem completa de precedência de operadores matemáticos no Excel, do maior para o menor nível de prioridade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Adição e subtração, multiplicação e divisão, porcentagem, exponenciação",
+          "correct": false,
+          "explanation": "Incorreta. Esta ordem está incorreta. Adição e subtração têm a menor prioridade, enquanto porcentagem e exponenciação têm prioridades mais altas."
+        },
+        {
+          "id": "b",
+          "text": "Exponenciação, multiplicação e divisão, adição e subtração, porcentagem",
+          "correct": false,
+          "explanation": "Incorreta. Embora a exponenciação tenha alta prioridade, a porcentagem é geralmente avaliada antes dela. A posição da adição e subtração também está incorreta em relação à porcentagem."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicação e divisão, exponenciação, porcentagem, adição e subtração",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação e divisão não são as operações de maior precedência. A porcentagem e a exponenciação são avaliadas antes da multiplicação e divisão."
+        },
+        {
+          "id": "d",
+          "text": "Porcentagem, exponenciação, multiplicação e divisão, adição e subtração",
+          "correct": true,
+          "explanation": "Correta. A ordem de precedência dos operadores matemáticos no Excel, do maior para o menor nível de prioridade, é a seguinte: 1º) Porcentagem (%), 2º) Exponenciação (^), 3º) Multiplicação (*) e Divisão (/), e 4º) Adição (+) e Subtração (-). Operadores com a mesma precedência (como multiplicação e divisão, ou adição e subtração) são avaliados da esquerda para a direita na fórmula."
+        }
+      ],
+      "explanation": "Correta. A ordem de precedência dos operadores matemáticos no Excel, do maior para o menor nível de prioridade, é a seguinte: 1º) Porcentagem (%), 2º) Exponenciação (^), 3º) Multiplicação (*) e Divisão (/), e 4º) Adição (+) e Subtração (-). Operadores com a mesma precedência (como multiplicação e divisão, ou adição e subtração) são avaliados da esquerda para a direita na fórmula.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Em determinados contextos de fórmulas do Excel, como os valores lógicos VERDADEIRO e FALSO podem influenciar matematicamente um resultado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "VERDADEIRO e FALSO não possuem valor numérico e geram erro quando utilizados em operações matemáticas",
+          "correct": false,
+          "explanation": "Incorreta. Pelo contrário, VERDADEIRO e FALSO possuem, sim, valor numérico implícito (1 e 0, respectivamente) e não geram erro quando usados em operações matemáticas. O Excel realiza a conversão automaticamente para permitir a participação desses valores em cálculos."
+        },
+        {
+          "id": "b",
+          "text": "VERDADEIRO equivale a 100% e FALSO equivale a 0%, sendo utilizados apenas em cálculos percentuais",
+          "correct": false,
+          "explanation": "Incorreta. Embora 100% seja numericamente 1 e 0% seja 0, a equivalência de VERDADEIRO/FALSO a 1 e 0 não se limita apenas a cálculos percentuais. Ela se aplica a qualquer operação aritmética onde o Excel necessite de um valor numérico a partir de um valor lógico."
+        },
+        {
+          "id": "c",
+          "text": "VERDADEIRO equivale numericamente a 1 e FALSO equivale a 0, podendo participar de operações aritméticas",
+          "correct": true,
+          "explanation": "Correta. No Excel, em contextos que envolvem operações aritméticas, os valores lógicos VERDADEIRO e FALSO são convertidos implicitamente em valores numéricos. VERDADEIRO é tratado como 1 (um) e FALSO é tratado como 0 (zero). Essa característica permite que resultados de testes lógicos sejam diretamente utilizados em cálculos, por exemplo, para somar ou contar ocorrências que atendem a uma determinada condição."
+        },
+        {
+          "id": "d",
+          "text": "VERDADEIRO equivale a -1 e FALSO equivale a 1, invertendo a lógica binária convencional",
+          "correct": false,
+          "explanation": "Incorreta. A equivalência padrão no Excel é VERDADEIRO = 1 e FALSO = 0. A atribuição de -1 e 1 não corresponde à forma como o Excel trata os valores lógicos em operações aritméticas."
+        }
+      ],
+      "explanation": "Correta. No Excel, em contextos que envolvem operações aritméticas, os valores lógicos VERDADEIRO e FALSO são convertidos implicitamente em valores numéricos. VERDADEIRO é tratado como 1 (um) e FALSO é tratado como 0 (zero). Essa característica permite que resultados de testes lógicos sejam diretamente utilizados em cálculos, por exemplo, para somar ou contar ocorrências que atendem a uma determinada condição.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "09_255658_Office 365 - Excel III.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:50:45"
+}

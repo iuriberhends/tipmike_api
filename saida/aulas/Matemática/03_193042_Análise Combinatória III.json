@@ -1,0 +1,588 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 3,
+  "ordem_no_curso": "65.00",
+  "titulo": "Análise Combinatória III",
+  "codigo_aula": "193042",
+  "video_id": "PtucPLm5xjQ=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:46:32",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/PtucPLm5xjQ%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=403868%2C404273&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória III\n\n## Aquecimento e proposta da aula\nVamos continuar comigo agora. Tem várias questões. Ainda há coisas que eu quero mostrar, alguns detalhes. O básico é isso mesmo. Então, em cada questão, a gente vai treinar o que nós aprendemos. Venham comigo, por favor.\n\nAplicações. Questão. Olha só. Julgue o item relativo a formas de contagem e medidas de contagem.\n\n## Questão 1 — Geração de senhas com restrições\nSuponha que, para se cadastrar no sistema, o candidato deva gerar uma senha de cinco caracteres. A ordem importa. Quando a ordem importa, não é soma; é uma operação apenas: multiplicação. Beleza?\n\nA senha tem cinco caracteres. De modo que:\n- os dois primeiros caracteres estejam entre as dez primeiras letras do alfabeto;\n- as duas letras iniciais sejam diferentes entre si;\n- o terceiro e o quarto caracteres sejam algarismos de 0 a 9, também diferentes entre si;\n- o último caractere seja escolhido do conjunto {$, #, @, *, &}, ou seja, cinco possibilidades.\n\nEntão, recapitulando:\n- Para os dois primeiros: apenas as dez primeiras letras do alfabeto, e precisam ser diferentes.\n- Terceiro e quarto: algarismos de 0 a 9, também sem repetição.\n- Último: um símbolo entre $, #, @, *, &.\n\nNessas condições, é possível gerar 40.500 senhas? Vamos contar.\n\n- Letras: dez possibilidades para a primeira posição e, como as letras têm que ser diferentes, nove para a segunda.\n- Algarismos: dez possibilidades para o terceiro caractere e nove para o quarto, pois não pode repetir.\n- Símbolos: cinco possibilidades para a última posição.\n\nComo senha é formada por caractere 1, caractere 2, caractere 3, caractere 4 e caractere 5, a gente multiplica as possibilidades: 10 × 9 × 10 × 9 × 5 = 40.500. Certíssimo! Show de bola.\n\n> 🎯 **Dicas de prova:** Quando a ordem importa, use o princípio multiplicativo. Em senhas, placas, códigos, a regra padrão é permitir repetição a menos que a questão proíba explicitamente.\n\nVamos para a próxima.\n\n## Avisos rápidos sobre o curso\nPara quem está no nosso chat: teremos aulas às 14h, hoje, quarta, quinta e sexta. Quem puder participar, participe. Mesmo que eu não possa interagir o tempo todo, vocês são convidados. Nosso combinado é por aqui às 14h durante a semana.\n\n## Questão 2 — Placas antigas de veículos\nAs placas antigas dos veículos eram formadas por três letras seguidas de quatro algarismos. É como se fosse uma senha: cada placa representa um veículo diferente. Quando a ordem importa, a operação mais comum é multiplicar possibilidades.\n\nA questão pede: o número de placas que podem ser formadas quando:\n- as três primeiras posições são letras A, B, C disponíveis (ou seja, o alfabeto restrito a {A, B, C});\n- as letras podem repetir (não foi proibido);\n- os quatro algarismos devem ser pares, sem repetição.\n\nVamos organizar:\n- Letras: pode repetir, então, para cada uma das três posições, temos 3 possibilidades. Logo, 3 × 3 × 3.\n- Algarismos pares: {0, 2, 4, 6, 8}. São 5 possibilidades, sem repetição, para quatro posições:\n  - 1ª posição numérica: 5 possibilidades\n  - 2ª: 4\n  - 3ª: 3\n  - 4ª: 2\n\nMultiplicando:\n- Letras: 3 × 3 × 3 = 27\n- Algarismos: 5 × 4 × 3 × 2 = 120\n- Total: 27 × 120 = 3.240\n\nResposta: 3.240 placas.\n\n> Observação importante: quando falamos de pessoas, não há repetição de indivíduos; quando falamos de letras e números, se não houver proibição, pode repetir. Se a questão não falar nada, repete. Se falar “sem repetição”, aí sim restringe.\n\n## Questão 3 — Bandeira com quatro faixas e três cores\nDaniel quer pintar uma bandeira composta de quatro faixas coloridas, com as cores disponíveis: verde, preto e azul. A pintura deve ser feita de modo que faixas vizinhas não tenham a mesma cor.\n\nPrimeiro, interprete a restrição: vizinhas não podem ter a mesma cor. A ordem importa: trocou a ordem, é outra bandeira. Então usamos o princípio multiplicativo.\n\nVamos contar posição por posição:\n- 1ª faixa: 3 possibilidades (verde, preto ou azul).\n- 2ª faixa: não pode repetir a cor da primeira, então 2 possibilidades.\n- 3ª faixa: não pode repetir a cor da segunda, então 2 possibilidades.\n- 4ª faixa: não pode repetir a cor da terceira, então 2 possibilidades.\n\nMultiplicando: 3 × 2 × 2 × 2 = 24.\n\nResposta: 24 formas de pintar a bandeira.\n\n> 🎯 **Dicas de prova:** Quando a restrição é “vizinhos diferentes” em uma sequência, a contagem típica é C × (C−1) × (C−1) × ... onde C é o número de cores.\n\nAlguns podem confundir com combinação, mas aqui a ordem altera o resultado: bandeiras com as mesmas cores em ordens diferentes são bandeiras distintas.\n\n## Transição para Anagramas\nVamos entrar em anagramas. Anagramas com letras distintas: quando a ordem importa, multiplicamos. Vamos treinar com a palavra “lógica”.\n\nAnagramas são reorganizações das letras da palavra. Se todas as letras são distintas, cada nova permutação gera um novo anagrama.\n\n## Anagramas — Palavra “lógica”\nA palavra “lógica” tem 6 letras e, pelo contexto aqui, vamos tratá-las como distintas. Para formar anagramas sem restrições:\n\n- 6 × 5 × 4 × 3 × 2 × 1 = 720 anagramas.\n\nAgora, vamos aplicar restrições clássicas.\n\n### a) Quantos anagramas começam com vogal?\nVogais da palavra: O, I, A (3 vogais). Comece pela restrição.\n\n- 1ª posição: 3 possibilidades (vogais).\n- Sobram 5 letras distintas para as demais: 5 × 4 × 3 × 2 × 1 = 120.\n\nTotal: 3 × 120 = 360.\n\n### b) Quantos anagramas começam com vogal e terminam com consoante?\nConsoantes: L, G, C (3 consoantes). Duas restrições (início e fim).\n\n- 1ª posição (vogal): 3 possibilidades.\n- 6 letras no total; usamos 2 (uma vogal no início e uma consoante no fim). Sobram 4 posições internas.\n- Posições internas: 4 × 3 × 2 × 1 = 24.\n- Para a última posição (consoante): 3 possibilidades, mas atenção: não use a mesma já utilizada nas internas. A lógica correta é fixar início e fim primeiro:\n  - Início: 3 (vogais).\n  - Fim: 3 (consoantes).\n  - Meio: sobram 4 letras para as 4 posições internas: 4! = 24.\n\nTotal: 3 × 24 × 3 = 216.\n\nResposta: 216.\n\n### c) Quantos anagramas têm as letras L e G juntas?\nQuando duas letras devem ficar juntas, tratamos o par como um único bloco. E lembramos que dentro do bloco a ordem pode ser LG ou GL, então multiplicamos por 2 no final.\n\n- Transforme “L” e “G” em um bloco: agora temos 5 “símbolos” para permutar (o bloco + as outras 4 letras).\n- Permutações dos 5 símbolos: 5! = 120.\n- Arranjos internos do bloco LG/GL: 2.\n\nTotal: 120 × 2 = 240.\n\n### d) Quantos anagramas têm as vogais juntas?\nVogais: O, I, A. Trate o conjunto de vogais como um bloco. Dentro do bloco, as vogais podem permutar entre si de 3! maneiras.\n\n- Símbolos: bloco das vogais + 3 consoantes = 4 símbolos.\n- Permutações dos 4 símbolos: 4! = 24.\n- Arranjos internos das vogais: 3! = 6.\n\nTotal: 24 × 6 = 144.\n\nShow de bola. Essas ideias rendem bastante e aparecem muito em provas.\n\n> 🎯 **Dicas de prova:** \n> - “Juntos” vira bloco. Se não fixar a ordem dentro do bloco, multiplique pelo número de permutações internas.\n> - Comece sempre pelas restrições (posição inicial/final, “vizinhos diferentes”, “sem repetição”).\n> - Em anagramas com todas as letras distintas, sem restrições, é simplesmente n!.\n\n## Encerramento do bloco\nVamos continuar com mais questões de anagramas e, depois, fotografias. Muita coisa pela frente, muitos detalhes. Ainda teremos desafios. Eu quero que você passe no concurso. Aqui é treino de verdade: não é para ser facinho; é para te preparar de verdade.\n\nDaqui a pouco eu volto com nossa matriz. Na quarta, finalizamos este bloco; depois, probabilidade. Seguimos firmes. A aprovação vem com consistência.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória III",
+    "subject": "Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 42481,
+    "createdAt": "2026-01-30T14:23:39.515Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda contagem por princípio multiplicativo na Análise Combinatória aplicada a:\n- Senhas com restrições, placas de veículos e bandeiras (vizinhança).\n- Anagramas com e sem restrições (vogais/consoantes, blocagem).\nPrincipais pontos: \n- Identificar quando a ordem importa e aplicar o princípio multiplicativo.\n- Tratar repetição vs. sem repetição corretamente.\n- Resolver anagramas com blocagem e restrições nas extremidades.\n- Evitar pegadinhas clássicas (0 como par, repetição não citada, cardinalidade do conjunto de símbolos).\n\n---\n\n## 1. Base / Conceitos Fundamentais\n- **Princípio multiplicativo (produto)**: Quando uma construção é feita em etapas sucessivas e a ordem importa, multiplicamos as possibilidades de cada etapa.\n- **Ordem importa x não importa**:\n  - Importa: senhas, placas, sequências por posição, anagramas (letras distintas). Use multiplicação.\n  - Não importa: combinações (não é o foco aqui).\n- **Repetição**:\n  - Pessoas/itens únicos e sem reposição: normalmente sem repetição (se usar, “consome” o elemento).\n  - Letras/números: se o enunciado não proibir, podem repetir. Se disser “diferentes”, “sem repetição”, então não podem.\n- **Algarismos pares**: 0, 2, 4, 6, 8 (5 opções).\n- **Anagrama**: reordenação das letras de uma palavra. Com letras todas distintas, total = n!.\n\n> Dica de Prova\n> - Multiplicamos possibilidades, não números aleatórios.\n> - Comece SEMPRE pelas restrições (posições fixadas, proibições, vizinhança, categorias vogal/consoante).\n\n---\n\n## 2. Como Funciona / Distinções\n- **Somar x Multiplicar**:\n  - Multiplicar: etapas simultâneas encadeadas (posição 1 e 2 e 3...).\n  - Somar: casos mutuamente exclusivos (ou A ou B), tratados separadamente.\n- **Repetição**:\n  - “Sem repetição”, “diferentes” → subtraia 1 a cada escolha subsequente do mesmo conjunto.\n  - Silêncio do enunciado para letras/números → repetição permitida.\n- **Vizinhança vs. “todos diferentes”**:\n  - Vizinhança diferente: cada posição só não pode repetir a anterior (ex.: bandeira).\n  - “Todos diferentes”: nenhuma posição repete qualquer usada anteriormente.\n- **Blocagem em anagramas**:\n  - Se letras “devem ficar juntas”, trate-as como 1 bloco (símbolo), permute os blocos e multiplique pelas permutações internas do bloco (k! se não há ordem fixa).\n- **Extremidades com categorias**:\n  - “Começa com vogal”, “termina com consoante” → conte as opções nas pontas e permute o miolo.\n\n---\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo geral:\n  1. Liste as restrições explícitas: “diferentes”, “sem repetição”, “vizinhas diferentes”, “começa/termina com…”.\n  2. Comece pelas posições com restrição mais forte (pontas, posições fixas).\n  3. Defina o conjunto de escolhas em cada posição e ajuste por itens já usados.\n  4. Multiplique as possibilidades de cada etapa.\n  5. Em anagramas com blocagem, reduza o total de símbolos e multiplique por permutações internas do bloco.\n- Macetes:\n  - Cadeia com k cores e n posições, vizinhas diferentes: total = k × (k−1)^(n−1).\n  - Anagramas de n letras distintas: n!.\n  - “Vogais juntas” (3 vogais, 3 consoantes): 4! × 3! (bloco das vogais + consoantes; depois ordem interna das vogais).\n  - “Começa com vogal e termina com consoante”: (nº de vogais) × (nº de consoantes) × (fatorial do restante).\n\n> Dica de Prova\n> - 0 é algarismo par e pode ocupar a primeira posição, salvo proibição (ex.: “não pode iniciar com 0”).\n\n---\n\n## 4. Exemplos e Casos Resolvidos\n- Senha de 5 caracteres:\n  - 1ª e 2ª posições: letras entre as “dez” primeiras do alfabeto, diferentes entre si → 10 × 9.\n  - 3ª e 4ª: algarismos de “zero a nove”, diferentes entre si → 10 × 9.\n  - 5ª: símbolo no conjunto {$, @, *, &} → 4.\n  - Total: 10 × 9 × 10 × 9 × 4 = 32.400.\n  > Dica de Prova\n  > - Se o total dado for “quarenta mil e quinhentos”, isso exigiria 5 símbolos. Com 4 símbolos, o correto é 32.400.\n\n- Placas antigas: “três letras” seguidas de “quatro algarismos”\n  - Letras permitidas: “ABC” (sem proibição de repetição) → 3 × 3 × 3 = 27.\n  - Algarismos pares “zero, dois, quatro, seis e oito” sem repetição → 5 × 4 × 3 × 2 = 120.\n  - Total: 27 × 120 = 3.240.\n\n- Bandeira de “quatro faixas” com 3 cores (“verde, preto e azul”), vizinhas diferentes\n  - 1ª: 3; 2ª: 2; 3ª: 2; 4ª: 2 → 3 × 2 × 2 × 2 = 24.\n  > Dica de Prova\n  > - Macete: 3 × 2^3 = 24.\n\n- Anagramas de “lógica” (6 letras distintas)\n  - Total sem restrições: 6! = 720.\n  - “Começam com vogal”: 3 × 5! = 3 × 120 = 360.\n  - “Começam com vogal e terminam com consoante”: 3 × 3 × 4! = 9 × 24 = 216.\n  - “Vogais juntas” (o, i, a): blocagem → 4! × 3! = 24 × 6 = 144.\n  - “Duas letras juntas” (exemplo genérico, p.ex., E e L): 5! × 2! = 120 × 2 = 240.\n  > Dica de Prova\n  > - Se o enunciado pedisse “em ordem alfabética” no bloco, não multiplicaria pelo fatorial interno do bloco.\n\n---\n\n## 5. Pegadinhas e Erros Comuns\n- “Não falou nada sobre repetição” com letras/números → pode repetir. Só retire possibilidade quando o enunciado impõe “sem repetição” ou “diferentes”.\n- Contar 0 como par: “zero” é par e pode ser usado, inclusive na primeira posição, se não houver proibição.\n- Vizinhança x todos diferentes: “vizinhos diferentes” não exige que todas as posições sejam distintas, apenas que não repita a anterior.\n- Blocagem: esquecer de multiplicar pelas permutações internas do bloco quando a ordem não é fixada.\n- Trocar soma por produto: em sequências por posição, use produto; só some quando separar casos mutuamente exclusivos.\n- Conjunto de símbolos na senha: verificar a cardinalidade correta. Com {$, @, *, &} são 4 símbolos → 32.400, não “quarenta mil e quinhentos”.\n- “Dez primeiras letras” e “zero a nove”: interpretar literalmente como 10 opções em cada conjunto.\n- Termos literais e condições:\n  - “os dois primeiros caracteres estejam entre as dez primeiras letras, mas sejam diferentes”\n  - “o terceiro e o quarto caracteres seja algarismos de zero a nove, mas diferentes”\n  - “o último caractere” dentre {$, @, *, &}\n  - “os algarismos pares sem repetição”\n  - “as cores vizinhas não podem ser a mesma cor”\n\n> Dica de Prova\n> - Comece sempre pelas restrições mais fortes (extremidades, proibições, vizinhança). Isso evita contagem dupla e facilita o produto correto.\n\n---\n\nComparações rápidas\n\n| Situação | Ordem importa? | Repetição | Como contar | Resultado citado |\n| Senha: letras (10 primeiras) diferentes, dígitos 0–9 diferentes, símbolo em {$, @, *, &} | Sim | Letras e dígitos: sem repetição internamente; símbolo: escolha única | 10 × 9 × 10 × 9 × 4 | 32.400 |\n| Placa: “ABC” e 4 pares sem repetição | Sim | Letras: podem repetir; pares: sem repetição | 3^3 × 5 × 4 × 3 × 2 | 3.240 |\n| Bandeira: 4 faixas, 3 cores, vizinhas diferentes | Sim | Não repetir a cor da faixa anterior | 3 × 2 × 2 × 2 = 3 × 2^3 | 24 |\n| “lógica” total | Sim | Letras distintas | 6! | 720 |\n| “lógica” começa com vogal | Sim | — | 3 × 5! | 360 |\n| “lógica” começa com vogal e termina com consoante | Sim | — | 3 × 3 × 4! | 216 |\n| “lógica” vogais juntas | Sim | — | 4! × 3! | 144 |\n| “duas letras” juntas (genérico) | Sim | — | 5! × 2! | 240 |",
+  "resumo_bolso": "# Análise Combinatória III\n\n---\n\n## 📌 Conceitos-Chave\n\n* Princípio multiplicativo: construção por etapas sucessivas em que a ordem importa → multiplicar as possibilidades por posição.\n* Ordem importa: senhas, placas, sequências posicionais, anagramas de letras distintas → usar produto.\n* Repetição: letras/números repetem se o enunciado não proibir; “diferentes/sem repetição” → reduzir 1 a cada escolha do mesmo conjunto.\n* Algarismos pares: 0, 2, 4, 6, 8 (5 opções). 0 pode iniciar salvo proibição explícita.\n* Anagrama: reordenação; com letras todas distintas → n!.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Vizinhança Diferente vs Todos Diferentes\n\n| Aspecto | Vizinhança Diferente | Todos Diferentes |\n| --- | --- | --- |\n| Escopo da proibição | Não repetir a imediatamente anterior | Não repetir nenhuma já usada |\n| Contagem típica | k × (k−1)^(n−1) | k × (k−1) × (k−2) × … |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Cadeia com n posições e k cores, vizinhas diferentes\n* Total: k × (k−1)^(n−1).\n* Exemplo: 4 faixas e 3 cores → 3 × 2^3 = 24.\n\n2. Anagramas com blocagem (letras distintas)\n* “Devem ficar juntas”: tratar o conjunto como 1 bloco, permutar blocos e multiplicar pelas permutações internas (k!).\n\n3. Extremidades por categoria\n* “Começa com vogal e termina com consoante”: (nº de vogais) × (nº de consoantes) × (fatorial do restante).\n\n4. Produto vs soma\n* Produto: etapas encadeadas por posição.\n* Soma: casos mutuamente exclusivos (ou A ou B) tratados separadamente.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei “vizinhos diferentes” de “todos diferentes”?\n* Memorizei k × (k−1)^(n−1) para vizinhança diferente?\n* Em blocagem, tratei o grupo como 1 símbolo e multipliquei pelas permutações internas quando a ordem não é fixa?\n* Tratei silêncio do enunciado para letras/dígitos como repetição permitida?\n* Fixei pontas primeiro (ex.: começa com vogal, termina com consoante) antes de permutar o miolo?",
+  "mapa_mental": "# 🧮 Análise Combinatória III\n## 🎯 Fundamentos da Contagem\n### 💡 Princípio Multiplicativo\n- Etapas sucessivas\n- Ordem relevante\n- Produto das etapas\n- Sequências por posição\n- Anagramas distintos\n### 🔢 Ordem x Repetição\n- Ordem importa\n- Ordem não importa\n- Com repetição\n- Sem repetição\n- Elementos distintos\n### 🧩 Conceitos-Chave\n- Algarismos pares\n- Zero é par\n- Anagrama definição\n- Fatorial n!\n- Conjunto de símbolos\n\n## ⚙️ Regras e Distinções\n### ➕ Soma x Produto\n- Casos exclusivos\n- Ou A ou B\n- Etapas encadeadas\n- E1 e E2 e E3\n- Separar casos\n### 🔁 Tipos de Repetição\n- “Sem repetição”\n- “Diferentes entre si”\n- Ajuste menos um\n- Silêncio permite\n- Letras e dígitos\n### 🎨 Vizinhança e Blocagem\n- Vizinhos diferentes\n- Todos diferentes\n- Cadeia com cores\n- Blocagem anagramas\n- Bloco como símbolo\n### 🅰️ Vogais e Consoantes\n- Categorias de letras\n- Extremidades fixadas\n- Começa com vogal\n- Termina consoante\n- Miolo permutado\n\n## 🧮 Técnicas de Cálculo\n### 📋 Roteiro Geral\n- Listar restrições\n- Priorizar extremidades\n- Definir conjuntos\n- Ajustar usados\n- Multiplicar etapas\n### 📊 Fórmulas Úteis\n- Cadeia k cores\n- k × (k−1)^(n−1)\n- Anagramas n letras\n- n! total\n- Vogais juntas\n### 🔠 Padrões Clássicos\n- Vogais em bloco\n- Consoantes separadas\n- Blocos múltiplos\n- Ordem interna bloco\n- Fatorial interno\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Interpretação do Enunciado\n- Repetição omitida\n- Zero excluído indevidamente\n- Vizinhança confundida\n- Soma x produto trocados\n- Cardinalidade errada\n### 🧱 Armadilhas em Anagramas\n- Esquecer blocagem\n- Ignorar fatorial interno\n- Ordem fixa no bloco\n- Letras distintas supostas\n- Extremos mal contados\n### 📝 Estratégia de Resolução\n- Começar restrições fortes\n- Verificar conjuntos\n- Conferir pares e zeros\n- Separar casos antes\n- Revisar produto final",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Princípios de Contagem",
+      "description": "Princípios de Contagem — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual princípio calcula resultados formados por escolhas sucessivas?",
+          "back": "Princípio **multiplicativo**.",
+          "hint": "Refere-se a eventos independentes",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principios-contagem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual operação combina possibilidades de casos mutuamente exclusivos?",
+          "back": "Soma.",
+          "hint": "Opção entre alternativas",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principios-contagem"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Senhas e Placas",
+      "description": "Senhas e Placas — 4 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Quantas opções existem para o último caractere de uma senha com cinco símbolos especiais?",
+          "back": "**5** possibilidades (cifrão, jogo da velha, arroba, asterisco ou E comercial).",
+          "hint": "Conte os símbolos listados",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "senhas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-4",
+          "front": "Quantas opções há para a segunda letra entre dez letras, sem repetição?",
+          "back": "**9** possibilidades.",
+          "hint": "Considere a exclusão do primeiro",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "senhas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-5",
+          "front": "Quantas senhas podem ser formadas com as restrições apresentadas no enunciado?",
+          "back": "**40.500** senhas.",
+          "hint": "Resultado final de um cálculo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "senhas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual era o formato das placas antigas: letras e algarismos em que sequência?",
+          "back": "**Três letras** seguidas de **quatro algarismos**.",
+          "hint": "Padrão de placas veiculares",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "placas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Repetição e Restrições",
+      "description": "Repetição e Restrições — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Quando nada é dito sobre repetição de letras ou números, qual regra deve ser adotada?",
+          "back": "Admitir que **pode repetir**.",
+          "hint": "Padrão de contagem sem restrição",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "regras-gerais"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Quantas sequências de quatro algarismos pares são possíveis sem repetição?",
+          "back": "**120** sequências (5 × 4 × 3 × 2).",
+          "hint": "Fatorial decrescente de pares",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "algarismos"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Quantas placas resultam dessas restrições sobre letras e algarismos?",
+          "back": "**3.240** placas.",
+          "hint": "Resultado de um cálculo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "placas"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Bandeiras Coloridas",
+      "description": "Bandeiras Coloridas — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual restrição deve ser satisfeita entre faixas vizinhas de uma bandeira?",
+          "back": "Não ter a vizinha com a **mesma cor**.",
+          "hint": "Regra de adjacência cromática",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "pintura"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "De quantas formas quatro faixas podem ser pintadas com três cores sem repetir a cor vizinha?",
+          "back": "**24** formas.",
+          "hint": "Resultado de um cálculo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "pintura"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Anagramas",
+      "description": "Anagramas — 5 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Quantos anagramas possui a palavra **LÓGICA**, cujas seis letras são distintas?",
+          "back": "**720** anagramas.",
+          "hint": "Fatorial de seis",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "Quantos anagramas de **LÓGICA** começam com uma vogal?",
+          "back": "**360** anagramas.",
+          "hint": "Fixe uma vogal na primeira posição",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-14",
+          "front": "Quantos anagramas de **LÓGICA** começam com vogal e terminam com consoante?",
+          "back": "**216** anagramas.",
+          "hint": "Fixe extremos e permute o centro",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-15",
+          "front": "Como deve ser tratada uma dupla de letras que precisa permanecer junta em um anagrama?",
+          "back": "Colar as letras para formarem um **único bloco** (símbolo ou pessoa).",
+          "hint": "Técnica de agrupamento",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-16",
+          "front": "Quantas ordens internas são possíveis para um bloco de duas letras mantidas juntas?",
+          "back": "**2** ordens internas (vezes 2).",
+          "hint": "Permutação de dois elementos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No contexto de análise combinatória, quando se deseja formar senhas ou placas de veículos utilizando letras e algarismos, qual é o princípio fundamental que deve ser aplicado para calcular o total de possibilidades?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se somar as possibilidades de cada posição quando há restrições de repetição, pois cada caractere representa uma escolha independente",
+          "correct": false,
+          "explanation": "Incorreta. A soma é utilizada no Princípio Aditivo, que se aplica quando há opções mutuamente exclusivas (OU uma coisa OU outra). Em problemas de formação de senhas ou placas, as escolhas para cada posição são sequenciais e formam um único resultado, não opções alternativas. Restrições de repetição afetam o número de possibilidades para as posições seguintes, mas o princípio geral de combinação das escolhas continua sendo multiplicativo."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se aplicar a fórmula de combinação simples, uma vez que a ordem dos caracteres não altera a identidade da senha formada",
+          "correct": false,
+          "explanation": "Incorreta. Em senhas e placas, a ordem dos caracteres é crucial (por exemplo, \"ABC\" é diferente de \"CBA\"). A combinação simples é usada quando a ordem dos elementos não importa (como na escolha de um grupo de pessoas). Quando a ordem importa, trata-se de um problema de arranjo ou permutação, que são casos específicos do Princípio Fundamental da Contagem."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se calcular o fatorial do número total de caracteres disponíveis e dividir pelo número de posições a serem preenchidas",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo do fatorial do número total de caracteres (n!) é usado para permutações de 'n' elementos distintos. Dividir esse valor pelo número de posições a serem preenchidas não corresponde a uma fórmula padrão da análise combinatória para este tipo de problema, nem considera adequadamente as restrições de repetição ou as diferentes possibilidades para cada posição."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se multiplicar as possibilidades de cada posição quando a senha é formada pela escolha de um caractere E outro E outro, aplicando o princípio fundamental da contagem",
+          "correct": true,
+          "explanation": "Correta. Este é o Princípio Fundamental da Contagem (PFC), também conhecido como Princípio Multiplicativo. Ele é aplicado quando a formação de um objeto, como uma senha ou placa, envolve uma sequência de decisões independentes. O número total de maneiras de formar o objeto é o produto do número de opções para cada decisão. A conjunção \"E\" indica que as escolhas para cada posição são feitas em sequência e combinadas para formar um único resultado."
+        }
+      ],
+      "explanation": "Correta. Este é o Princípio Fundamental da Contagem (PFC), também conhecido como Princípio Multiplicativo. Ele é aplicado quando a formação de um objeto, como uma senha ou placa, envolve uma sequência de decisões independentes. O número total de maneiras de formar o objeto é o produto do número de opções para cada decisão. A conjunção \"E\" indica que as escolhas para cada posição são feitas em sequência e combinadas para formar um único resultado.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em problemas de contagem envolvendo formação de códigos, quando o enunciado estabelece que determinados elementos devem ser diferentes entre si, qual procedimento deve ser adotado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Divide-se o total de possibilidades pelo fatorial do número de elementos repetidos para eliminar as contagens duplicadas",
+          "correct": false,
+          "explanation": "Incorreta. Dividir pelo fatorial do número de elementos repetidos é uma técnica utilizada em permutações com repetição (ou anagramas com letras repetidas), onde a ordem importa, mas há elementos idênticos que, se trocados de lugar, não geram uma nova sequência. No entanto, o problema aqui é sobre elementos que devem ser *diferentes* em cada posição, não sobre elementos idênticos dentro de um conjunto."
+        },
+        {
+          "id": "b",
+          "text": "Aplica-se a fórmula de arranjo com repetição, multiplicando o número de elementos disponíveis pelo número de posições",
+          "correct": false,
+          "explanation": "Incorreta. Arranjo com repetição (ou variação com repetição) é usado quando a repetição *é permitida*. O enunciado especifica que os elementos devem ser *diferentes entre si*, o que significa que a repetição *não é permitida*. Multiplicar o número de elementos disponíveis pelo número de posições (n^k) seria o cálculo para arranjos com repetição, o oposto do que a restrição exige."
+        },
+        {
+          "id": "c",
+          "text": "Reduz-se em uma unidade o número de possibilidades a cada nova posição preenchida, pois o elemento já utilizado não pode ser repetido",
+          "correct": true,
+          "explanation": "Correta. Este é o procedimento padrão para lidar com restrições de \"sem repetição\" ou \"elementos diferentes\". Por exemplo, se há 10 opções para a primeira posição e uma delas é escolhida, restam 9 opções para a segunda posição, 8 para a terceira, e assim por diante. Isso garante que cada elemento seja único dentro da sequência formada, como ocorre em arranjos ou permutações sem repetição."
+        },
+        {
+          "id": "d",
+          "text": "Mantém-se o mesmo número de possibilidades para todas as posições, pois a restrição de diferença não afeta a contagem total",
+          "correct": false,
+          "explanation": "Incorreta. A restrição de que elementos devem ser diferentes (ou \"sem repetição\") impacta diretamente o número de possibilidades para as posições subsequentes. Se um elemento já foi usado em uma posição, ele não pode ser usado novamente, o que reduz as opções para as próximas posições. Manter o mesmo número de possibilidades implicaria que a repetição é permitida."
+        }
+      ],
+      "explanation": "Correta. Este é o procedimento padrão para lidar com restrições de \"sem repetição\" ou \"elementos diferentes\". Por exemplo, se há 10 opções para a primeira posição e uma delas é escolhida, restam 9 opções para a segunda posição, 8 para a terceira, e assim por diante. Isso garante que cada elemento seja único dentro da sequência formada, como ocorre em arranjos ou permutações sem repetição.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Ao formar placas de veículos compostas por três letras seguidas de quatro algarismos, sendo que as letras podem ser apenas A, B e C (podendo repetir) e os algarismos devem ser pares (0, 2, 4, 6, 8) sem repetição, qual é o raciocínio correto para determinar o número total de placas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplica-se 3 × 3 × 3 para as letras e 5 × 5 × 5 × 5 para os algarismos, pois ambos permitem repetição conforme o enunciado",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta porque falha em aplicar a restrição de \"sem repetição\" para os algarismos. O enunciado especifica claramente que os algarismos devem ser \"sem repetição\". Portanto, não se pode multiplicar 5 × 5 × 5 × 5 para os algarismos, pois isso implicaria que a repetição é permitida."
+        },
+        {
+          "id": "b",
+          "text": "Multiplica-se 3 × 3 × 3 para as letras e 5 × 4 × 3 × 2 para os algarismos, considerando que letras podem repetir mas algarismos não",
+          "correct": true,
+          "explanation": "Correta. Para as três posições de letras, há 3 opções (A, B, C) para cada uma, e como a repetição é permitida, temos 3 × 3 × 3 = 27 possibilidades. Para as quatro posições de algarismos, os algarismos pares disponíveis são 0, 2, 4, 6, 8 (um total de 5 algarismos). Como a repetição *não é permitida*, o número de opções diminui a cada escolha: 5 para a primeira posição, 4 para a segunda, 3 para a terceira e 2 para a quarta. Assim, para os algarismos, temos 5 × 4 × 3 × 2 = 120 possibilidades. O número total de placas é o produto das possibilidades das letras e dos algarismos, ou seja, 27 × 120 = 3240. Isso demonstra a aplicação correta do Princípio Fundamental da Contagem com e sem repetição."
+        },
+        {
+          "id": "c",
+          "text": "Aplica-se arranjo simples para as letras (A₃,₃) e combinação para os algarismos (C₅,₄), pois a ordem importa apenas para as letras",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa contém múltiplos erros. Primeiro, para as letras, como a repetição é permitida, não se aplica arranjo simples (A₃,₃), que é para elementos distintos sem repetição. O correto seria 3^3. Segundo, a ordem *importa* tanto para as letras quanto para os algarismos em uma placa de veículo (ex: \"0246\" é diferente de \"6420\"). Portanto, combinação (C₅,₄), que é usada quando a ordem não importa, está incorreta para os algarismos. O correto para os algarismos, sem repetição e com ordem importando, seria um arranjo (A₅,₄)."
+        },
+        {
+          "id": "d",
+          "text": "Soma-se 3 + 3 + 3 para as letras e multiplica-se por 5 × 4 × 3 × 2 para os algarismos, aplicando operações distintas para cada tipo",
+          "correct": false,
+          "explanation": "Incorreta. A soma (3 + 3 + 3) não é o método correto para calcular as possibilidades das letras. A formação da placa envolve a escolha de uma letra *E* outra letra *E* outra letra, o que requer o Princípio Multiplicativo. Somar as possibilidades seria correto apenas se a escolha fosse \"ou a primeira letra ou a segunda ou a terceira\", o que não faz sentido no contexto de formação de uma sequência de caracteres."
+        }
+      ],
+      "explanation": "Correta. Para as três posições de letras, há 3 opções (A, B, C) para cada uma, e como a repetição é permitida, temos 3 × 3 × 3 = 27 possibilidades. Para as quatro posições de algarismos, os algarismos pares disponíveis são 0, 2, 4, 6, 8 (um total de 5 algarismos). Como a repetição *não é permitida*, o número de opções diminui a cada escolha: 5 para a primeira posição, 4 para a segunda, 3 para a terceira e 2 para a quarta. Assim, para os algarismos, temos 5 × 4 × 3 × 2 = 120 possibilidades. O número total de placas é o produto das possibilidades das letras e dos algarismos, ou seja, 27 × 120 = 3240. Isso demonstra a aplicação correta do Princípio Fundamental da Contagem com e sem repetição.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em uma bandeira composta por quatro faixas horizontais que devem ser pintadas com três cores disponíveis (verde, preto e azul), com a restrição de que faixas vizinhas não podem ter a mesma cor, qual é o método correto para calcular o número de formas distintas de pintura?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Para a primeira faixa há 3 possibilidades; para a segunda há 2; para a terceira há 1; e para a quarta não há mais opções, resultando em 3 × 2 × 1",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Para cada faixa há sempre 3 possibilidades, pois a restrição de cores vizinhas não afeta o número total de escolhas disponíveis, resultando em 3⁴",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Para a primeira faixa há 3 possibilidades; para cada faixa seguinte há 2 possibilidades (qualquer cor exceto a da faixa imediatamente anterior), resultando em 3 × 2 × 2 × 2",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Aplica-se permutação com repetição, dividindo o total de arranjos pelo número de cores repetidas em posições não adjacentes",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Ao calcular o número de anagramas da palavra LÓGICA que começam com vogal e terminam com consoante, qual é o procedimento correto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Fixa-se uma vogal no início (3 possibilidades) e uma consoante no final (3 possibilidades), restando 4 posições com 4 letras disponíveis para arranjar, resultando em 3 × 3 × 4!",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Multiplica-se o número de vogais pelo número de consoantes e eleva-se ao número de posições restantes, resultando em (3 × 3)⁴",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Calcula-se primeiro todos os anagramas possíveis (6!) e depois subtrai-se aqueles que não começam com vogal nem terminam com consoante",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Fixa-se uma vogal no início (3 possibilidades) e uma consoante no final (3 possibilidades), restando 4 letras para permutar nas posições intermediárias, resultando em 3 × 4! × 3",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em problemas de análise combinatória, quando se trabalha com possibilidades e não com números específicos, qual é a distinção fundamental que deve ser compreendida?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Possibilidades são aplicáveis apenas quando há restrições no problema, enquanto números são usados em situações sem limitações",
+          "correct": false,
+          "explanation": "Incorreta. O conceito de possibilidades é fundamental em todos os problemas de análise combinatória, com ou sem restrições. As restrições apenas modificam o número de possibilidades para certas posições, tornando a contagem mais específica, mas não são uma condição para o uso do conceito."
+        },
+        {
+          "id": "b",
+          "text": "Possibilidades representam as diferentes opções disponíveis para cada posição, enquanto números representam quantidades absolutas que não variam conforme o contexto",
+          "correct": true,
+          "explanation": "Correta. Em análise combinatória, as \"possibilidades\" referem-se ao número de escolhas ou opções disponíveis para preencher uma determinada posição ou realizar uma etapa. Essas possibilidades podem mudar a cada nova escolha, especialmente em cenários sem repetição. Já os \"números\" (ou elementos do conjunto) são os itens que compõem essas possibilidades, mas não são a contagem direta das opções para cada etapa. Por exemplo, se há 10 letras (números de elementos), mas uma já foi usada e não pode repetir, a próxima posição terá 9 possibilidades, não 10."
+        },
+        {
+          "id": "c",
+          "text": "Possibilidades devem sempre ser somadas entre as posições, enquanto números devem ser multiplicados para obter o resultado final",
+          "correct": false,
+          "explanation": "Incorreta. Em problemas de análise combinatória onde as escolhas são sequenciais e independentes (como preencher posições de uma senha ou arranjar itens), o Princípio Multiplicativo é aplicado, ou seja, as possibilidades de cada etapa são multiplicadas para obter o total de arranjos possíveis. A soma é utilizada quando as opções são mutuamente exclusivas (situação 'ou', não 'e')."
+        },
+        {
+          "id": "d",
+          "text": "Possibilidades e números são conceitos equivalentes em análise combinatória, podendo ser utilizados de forma intercambiável em qualquer situação",
+          "correct": false,
+          "explanation": "Incorreta. Possibilidades e números não são conceitos equivalentes. Os números representam o conjunto de elementos disponíveis (ex: 10 algarismos de 0 a 9), enquanto as possibilidades representam a quantidade de escolhas que podem ser feitas a partir desse conjunto para uma posição específica, considerando as regras do problema (ex: 10 possibilidades para a primeira posição, 9 para a segunda se não houver repetição)."
+        }
+      ],
+      "explanation": "Correta. Em análise combinatória, as \"possibilidades\" referem-se ao número de escolhas ou opções disponíveis para preencher uma determinada posição ou realizar uma etapa. Essas possibilidades podem mudar a cada nova escolha, especialmente em cenários sem repetição. Já os \"números\" (ou elementos do conjunto) são os itens que compõem essas possibilidades, mas não são a contagem direta das opções para cada etapa. Por exemplo, se há 10 letras (números de elementos), mas uma já foi usada e não pode repetir, a próxima posição terá 9 possibilidades, não 10.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao calcular anagramas da palavra LÓGICA em que as vogais (O, I, A) devem permanecer juntas, mas podem se permutar entre si, qual é o raciocínio completo para determinar o total?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Considera-se o bloco de vogais como um único elemento junto com as 3 consoantes (4 elementos no total), calcula-se 4!, e multiplica-se por 3! para as permutações internas das vogais, resultando em 24 × 6 = 144",
+          "correct": true,
+          "explanation": "Correta. Para resolver problemas de anagramas com elementos que devem permanecer juntos, a estratégia é tratar o grupo de elementos (neste caso, as vogais O, I, A) como um único bloco. A palavra LÓGICA tem 6 letras, sendo 3 vogais (O, I, A) e 3 consoantes (L, G, C). Se as 3 vogais formam um bloco, temos agora 4 \"elementos\" para permutar: o bloco (OIA), L, G, C. O número de permutações desses 4 elementos é 4! (4 x 3 x 2 x 1 = 24). Além disso, as vogais dentro do bloco (O, I, A) podem permutar entre si. O número de permutações internas das 3 vogais é 3! (3 x 2 x 1 = 6). Pelo Princípio Multiplicativo, o total de anagramas é o produto dessas duas permutações: 4! x 3! = 24 x 6 = 144."
+        },
+        {
+          "id": "b",
+          "text": "Soma-se o número de vogais ao número de consoantes e eleva-se ao fatorial, resultando em (3 + 3)! = 720",
+          "correct": false,
+          "explanation": "Incorreta. A expressão (3 + 3)! = 6! = 720 calcula o número total de anagramas da palavra LÓGICA sem nenhuma restrição. Não considera a condição de que as vogais devem permanecer juntas, apenas que todas as 6 letras são permutadas."
+        },
+        {
+          "id": "c",
+          "text": "Calcula-se o total de anagramas (6!) e divide-se por 2, pois as vogais representam metade das letras da palavra, resultando em 720 ÷ 2 = 360",
+          "correct": false,
+          "explanation": "Incorreta. Calcular o total de anagramas (6! = 720) e dividir por 2 não tem fundamento combinatório para a condição de que as vogais devem estar juntas. A divisão por 2 seria relevante, por exemplo, se houvesse alguma simetria ou repetição específica que cortasse o número de arranjos pela metade, o que não é o caso aqui."
+        },
+        {
+          "id": "d",
+          "text": "Fixa-se a posição das três vogais no início da palavra, calcula-se 3! para suas permutações, e multiplica-se por 3! para as consoantes restantes, resultando em 6 × 6 = 36",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa impõe a restrição adicional de que as vogais devem estar no *início* da palavra, o que não é solicitado pelo problema. A condição é que as vogais estejam juntas, mas o bloco de vogais pode ocupar qualquer posição na palavra (início, meio ou fim)."
+        }
+      ],
+      "explanation": "Correta. Para resolver problemas de anagramas com elementos que devem permanecer juntos, a estratégia é tratar o grupo de elementos (neste caso, as vogais O, I, A) como um único bloco. A palavra LÓGICA tem 6 letras, sendo 3 vogais (O, I, A) e 3 consoantes (L, G, C). Se as 3 vogais formam um bloco, temos agora 4 \"elementos\" para permutar: o bloco (OIA), L, G, C. O número de permutações desses 4 elementos é 4! (4 x 3 x 2 x 1 = 24). Além disso, as vogais dentro do bloco (O, I, A) podem permutar entre si. O número de permutações internas das 3 vogais é 3! (3 x 2 x 1 = 6). Pelo Princípio Multiplicativo, o total de anagramas é o produto dessas duas permutações: 4! x 3! = 24 x 6 = 144.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Em um problema onde se formam códigos com restrições específicas em posições determinadas (como início com vogal ou final com consoante), por que se deve sempre começar pelas restrições ao resolver?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque as restrições determinam se o problema deve ser resolvido por arranjo ou combinação, definindo a fórmula a ser aplicada",
+          "correct": false,
+          "explanation": "Incorreta. A determinação se um problema deve ser resolvido por arranjo (permutação) ou combinação depende fundamentalmente se a ordem dos elementos importa ou não. As restrições posicionais (como \"início com vogal\") são um detalhe do cálculo *dentro* de um arranjo ou permutação, mas não definem a escolha entre arranjo e combinação em si."
+        },
+        {
+          "id": "b",
+          "text": "Porque as restrições sempre envolvem números menores, facilitando os cálculos iniciais e reduzindo a probabilidade de erros aritméticos",
+          "correct": false,
+          "explanation": "Incorreta. Embora as restrições possam, de fato, resultar em um número menor de possibilidades para as posições iniciais, a principal razão para começar por elas não é a facilidade aritmética, mas sim a garantia da correção lógica do cálculo. A prioridade é a validade das escolhas, não a magnitude dos números envolvidos."
+        },
+        {
+          "id": "c",
+          "text": "Porque começar pelas posições sem restrição pode gerar contagens duplicadas que precisariam ser eliminadas posteriormente por divisão",
+          "correct": false,
+          "explanation": "Incorreta. Começar pelas posições sem restrição não gera \"contagens duplicadas\" no sentido de permutações repetidas (como em anagramas com letras idênticas). O risco é que, ao preencher as posições irrestritas primeiro, pode-se esgotar as opções de forma que as restrições das posições finais se tornem impossíveis de serem cumpridas, levando a um cálculo incorreto do total de arranjos válidos (geralmente um superestimado)."
+        },
+        {
+          "id": "d",
+          "text": "Porque as restrições reduzem o número de possibilidades disponíveis para as demais posições, e começar por elas garante que a contagem considere corretamente as limitações impostas",
+          "correct": true,
+          "explanation": "Correta. Em problemas de análise combinatória com restrições posicionais, como \"começar com vogal\" ou \"terminar com consoante\", a estratégia mais eficiente e correta é preencher as posições restritas primeiro. Isso porque as escolhas feitas para essas posições limitam as opções para as posições subsequentes. Ao começar pelas restrições, garante-se que as condições impostas sejam satisfeitas desde o início, evitando a contagem de arranjos inválidos e simplificando o cálculo das possibilidades restantes."
+        }
+      ],
+      "explanation": "Correta. Em problemas de análise combinatória com restrições posicionais, como \"começar com vogal\" ou \"terminar com consoante\", a estratégia mais eficiente e correta é preencher as posições restritas primeiro. Isso porque as escolhas feitas para essas posições limitam as opções para as posições subsequentes. Ao começar pelas restrições, garante-se que as condições impostas sejam satisfeitas desde o início, evitando a contagem de arranjos inválidos e simplificando o cálculo das possibilidades restantes.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico e Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "03_193042_Análise Combinatória III.pdf",
+  "coletado_em": "2026-09-23T21:01:42"
+}

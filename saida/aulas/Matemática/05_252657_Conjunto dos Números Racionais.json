@@ -1,0 +1,576 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 5,
+  "ordem_no_curso": "5.00",
+  "titulo": "Conjunto dos Números Racionais",
+  "codigo_aula": "252657",
+  "video_id": "Egp7grQyi0A=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:30:42",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/Egp7grQyi0A%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408673%2C408675%2C408674%2C408670%2C408668%2C408669%2C408667%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Racionais\n\n## Início e contexto dos conjuntos numéricos\nTudo bem com vocês? Vamos dar utilidade à nossa matriz matemática. Nós vamos ver os conjuntos numéricos. Isso é importantíssimo, é o início da nossa matéria. A matéria-prima da nossa ferramenta de trabalho são os números e, aqui, vai iniciar um novo conjunto de números. Nós já vimos os naturais e as suas propriedades, já vimos os inteiros e as suas propriedades. Agora, o acordo é o dos números racionais. Beleza comigo? Terceiro conjunto numérico, show de bola: conjunto dos números racionais.\n\nQuando eu falar em racionais, você pode interpretar como racionais ou até mesmo fracionários. É o conjunto de todas as possíveis expressões do tipo a sobre b, onde a e b são números inteiros. Representando esse conjunto por Q, olha só como é que eu vou representar, qual vai ser a notação do conjunto dos números racionais: primeiramente, ele vai ser uma fração. Mas é uma fração qualquer? Não. É uma fração com as seguintes características: temos o numerador e temos o denominador. Como é que eu sei que essa fração pertence ao conjunto dos racionais? Se esses dois números, tanto a quanto b, pertencem aos números inteiros, ao conjunto anterior, e um detalhe importantíssimo: além de pertencerem aos inteiros, somente o b, o denominador, tem que ser diferente de zero.\n\nPor quê? Porque, na matemática, fazer dois sobre zero… melhor, pelo contrário, zero sobre dois: eu não tenho nada, quero dividir em duas partes; quanto cada parte vai ter? Zero. Então zero sobre dois existe na matemática. Agora, eu tenho dois objetos e quero dividir para ninguém, para zero. Tem como isso acontecer? Não. Isso não existe. Então, na matemática, não existe divisão por zero. Qualquer número sobre alguém (denominador diferente de zero), tudo bem. Agora, dois sobre zero, meu denominador é zero; isso, na verdade, nem existe na matemática. Bom, então nós não podemos dividir por zero. Show de bola, vamos continuar.\n\n## Operações possíveis em cada conjunto\nQuando nos números naturais, nós já vimos: o que interessa são aquelas operações, aquelas propriedades, às vezes cai em concurso. No conjunto dos números naturais, podemos realizar operações como adição e multiplicação. No conjunto dos inteiros, aumentou um pouco: além da adição e da multiplicação, reapareceu a subtração. Porque, nos naturais, a gente soma e multiplica; no curso numérico seguinte, os inteiros, além de somar e multiplicar, introduzem a subtração.\n\nAgora aparece um novo conjunto, mais seguro: os números racionais, fracionários. Temos os números necessários para também representar o resultado das divisões. Você vai perceber que, ao decorrer dos conjuntos numéricos, nos naturais só somava e multiplicava; aí percebemos que existem graus negativos, que podemos ficar devendo algum valor — isso motivou o conjunto dos inteiros. Aí aparecem os racionais para fazer o quê? As divisões. Beleza?\n\nEntão, a cada vez, somar, subtrair, multiplicar e dividir números racionais terá como resultado um número racional. Tem muitas questões de concurso em que aparece: “sempre inteiro”? Não. Uma expressão com dois racionais pode ser só racional. Então, a partir do momento em que você for realizar operações, cada vez mais vamos aumentando o nosso conjunto de valores: antes naturais, depois inteiros, agora racionais. E com os racionais aos interessados — isso significa que, finalmente, temos um conjunto em que todas as operações básicas (somar, subtrair, multiplicar e dividir) são bem definidas e aceitas.\n\nPor isso, muitas vezes em editais aparece “conjuntos racionais” falando mais dos racionais, e temos que lembrar a coordenação: não só tem racionais, mas os naturais estão contidos nos inteiros, e os inteiros estão contidos nos racionais. Beleza? É importantíssimo.\n\n> 🎯 Atenção para prova: Nos racionais, a + b, a − b, a × b e a ÷ b (com b ≠ 0) resultam em números racionais.\n\n## Sucessor e antecessor nos diferentes conjuntos\nOutra coisa importante, aprofundando: nos naturais, é possível encontrar um sucessor. O natural possui um sucessor: depois do 0, o natural é 1; depois do 2, é 3. Beleza. Nos inteiros, ele possui um sucessor e um antecessor: o sucessor do 0 é 1, e o antecessor é −1. Então, percebi que tanto nos naturais quanto nos inteiros… Nos naturais, eu tenho sucessor; antecessor, nem sempre, porque começa no zero, então o zero não tem antecessor. Mas, nos inteiros, todos têm tanto o sucessor quanto o antecessor. Beleza.\n\nAgora, pergunta para você: e os racionais? Será que eles possuem um sucessor, até mesmo um antecessor definido? Vamos pensar em um número racional como 0, por exemplo. Qual o próximo número racional depois do 0? Se estivéssemos restritos aos naturais ou inteiros, o sucessor seria simplesmente 1. No entanto, no conjunto dos racionais, podemos representar frações de unidade. Para encontrar o sucessor de 0, deveríamos considerar uma fração do tipo a sobre b que represente a parte da unidade mais próxima de 0. Olha só: entre 0 e 1 eu posso ter 1/2. Poderia? Poderia. Poderia colocar 1/4? Poderia. Poderia colocar 1/8, 1/16, 1/32, 1/64, 1/128, 1/256… E aí você vai sempre encontrando alguém no meio.\n\nEntão, posso ter, na verdade, infinitos números entre 0 e 1. Você vai tendo a metade da metade, tendendo a zero, mas percebe que, por mais que divida, você não chega no 0. Logo, eu não posso falar que temos um sucessor no conjunto dos números racionais, porque posso ter infinitas frações ali entre dois números. Isso é importantíssimo, cai em concurso: nos racionais, não existe sucessor definido. Entre dois racionais quaisquer, sempre existem infinitas frações, infinitas partições. Beleza, queridos? Show de bola.\n\nPortanto, os números racionais não têm sucessor. Ou seja, se pegamos qualquer racional, não existe um que esteja na “porção seguinte” sem que existam outros entre eles. Se você escolher dois racionais, por mais próximos que estejam, existirão infinitas frações entre eles.\n\n## Dificuldade de ordem e comparação de racionais\nVamos agora para uma prática que cai bastante: como comparar números racionais? Às vezes até em demonstrações há dificuldade em determinar qual é menor, qual é maior. Por exemplo, qual é maior: 4/9 ou 3/7? Como fazer isso?\n\nEu gosto desse método: multiplica em cruz. Da esquerda para a direita:\n- 4 × 7 = 28\n- 3 × 9 = 27\n\nQuem é maior? 28 é maior que 27. Então, 4/9 > 3/7. Não precisamos dividir nada, é direto. Isso acontece muito em provas, estatística, questões de comparação.\n\n> 🎯 Atenção para prova: Para comparar a/b e c/d (com b, d > 0), compare ad e bc. Se ad > bc, então a/b > c/d.\n\n## Exercício de ordem crescente (FGV)\nVem comigo em uma questão prática (FGV): considere as frações\n- a = 2/5\n- b = 3/10\n- c = 7/20\n\nPediram ordem crescente, da menor para a maior.\n\nPodemos comparar de dois em dois com o método cruzado:\n- Compare a e b: 2/5 vs 3/10\n  - 2 × 10 = 20\n  - 5 × 3 = 15\n  - 20 > 15 → a > b\n\nAgora compare b e c: 3/10 vs 7/20\n  - 3 × 20 = 60\n  - 10 × 7 = 70\n  - 60 < 70 → b < c → c > b\n\nFalta comparar a e c: 2/5 vs 7/20\n  - 2 × 20 = 40\n  - 5 × 7 = 35\n  - 40 > 35 → a > c\n\nJuntando as relações:\n- a > c e c > b e a > b\n- Ordem crescente: b < c < a\n- Portanto: 3/10 < 7/20 < 2/5\n\nBeleza? Prefeito. Comparar de dois em dois com a cruzadinha funciona muito.\n\n## Outra estratégia: igualar denominadores (frações equivalentes)\nTambém dá para fazer de outro jeito, que eu gosto quando temos várias frações: igualar os denominadores. Ajuda a visualizar “partes do inteiro” com o mesmo tamanho.\n\nPense assim: no 3/7, o 7 significa em quantas partes o inteiro foi dividido (partes iguais) e o 3 quantas partes foram usadas. Para comparar 2/5, 3/10 e 7/20, é interessante que todos tenham a mesma quantidade de partes. Os denominadores são 5, 10 e 20. O 20 serve como denominador comum.\n\n- Transformar 2/5 para denominador 20: multiplica em cima e embaixo por 4 → 8/20\n- Transformar 3/10 para denominador 20: multiplica em cima e embaixo por 2 → 6/20\n- O c já é 7/20\n\nAgora ficou fácil comparar:\n- a = 8/20\n- b = 6/20\n- c = 7/20\n\nLogo, ordem crescente: 6/20 < 7/20 < 8/20, ou seja, b < c < a. Mesma conclusão do método cruzado. Quando você iguala os denominadores, a leitura fica mais tranquila.\n\n## Situações com potências no denominador\nEm alguns concursos, aparecem frações com denominadores elevados a potências, por exemplo:\n- 1/4^11 e 3/4^11\n- Ou até 1/3^20 vs 1/2^? (situações análogas)\n\nQuando a base do denominador é a mesma, fica direto: 3/4^11 é maior que 1/4^11, porque o denominador é igual e o numerador 3 > 1.\n\nQuando as bases diferem e os expoentes dificultam igualar denominadores, você pode:\n- Tentar transformar para potências comparáveis,\n- Trazer para a mesma base se possível,\n- Ou usar aproximações/ordem por crescimento de potências (sabendo que, para 0 < x < 1, x^n diminui quando n aumenta).\n\nEssas ideias aparecem muito em probabilidade e estatística, quando surgem eventos com potências de frações.\n\n> 🎯 Atenção para prova: Se 0 < a < 1, então a^m > a^n quando m < n; e, para base comum no denominador, compare apenas os numeradores.\n\n## Fechamento\nEntão, recapitulando:\n- Q é o conjunto dos racionais: a/b, com a, b inteiros e b ≠ 0.\n- Nos racionais, as quatro operações são fechadas e bem definidas.\n- Não existe sucessor nem antecessor imediato nos racionais: entre dois racionais há infinitos racionais.\n- Para comparar frações: método do produto cruzado é rápido; igualar denominadores dá visão clara.\n- Em questões com potências, use propriedades de potências e comparações cuidadosas.\n\nShow de bola, queridos. Volto a dizer: entender o que é fração — partes iguais de um inteiro — ajuda muito. Quando você traduz “denominador = em quantas partes o todo foi dividido” e “numerador = quantas partes foram tomadas”, comparar fica muito mais natural.",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Racionais",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 19516,
+    "createdAt": "2025-12-12T18:07:47.580Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: definição e propriedades dos **números racionais (Q)**, distinções em relação a **N** e **Z**, técnicas para **comparar e ordenar frações**, e **macetes** para provas.\nPrincipais pontos: \n- a/b com a, b ∈ Z e b ≠ 0; \n- fechamento das operações em Q; \n- comparação por **produto cruzado** e por **denominador comum (MMC)**; \n- densidade de Q e inexistência de sucessor.\n\n## 1. Base / Conceitos Fundamentais\n- **Números racionais (Q)**: Todo número que pode ser escrito como **a/b**, com a, b ∈ **inteiros (Z)** e **b ≠ 0**.\n- **Fração (a/b)**:\n  - **Numerador (a)**: partes consideradas.\n  - **Denominador (b)**: em quantas partes iguais a unidade foi dividida. Exige-se **b ≠ 0**.\n- **Pertinência**:\n  - Se a, b ∈ Z e b ≠ 0, então a/b ∈ Q.\n  - Exemplos: 0/2 = 0 (válido). 2/0 (não existe; proibido).\n\n> Dica de Prova: A banca adora “b ≠ 0”. 2/0 não é número; 0/2 é racional.\n\n- **Relação com outros conjuntos**:\n  - **N ⊂ Z ⊂ Q**.\n  - Operações:\n    - Em **N**: soma e multiplicação fechadas.\n    - Em **Z**: inclui subtração (negativos).\n    - Em **Q**: representa divisões; fechado para soma, subtração, multiplicação e divisão (desde que não se divida por zero).\n\n- **Densidade de Q**:\n  - Entre dois racionais quaisquer, há infinitos racionais. Ex.: entre 0 e 1: 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, 1/256, ...\n  - Não há “próximo” racional (sem sucessor/antecessor imediato).\n\n> Dica de Prova: “Sucessor em Q” não existe. Sempre cabe outra fração entre duas.\n\n## 2. Como Funciona / Distinções\n- **Racionais vs Inteiros/Naturais**:\n  - Inteiros e naturais podem ser escritos como fração: 5 = 5/1; 0 = 0/1. Portanto, pertencem a Q.\n- **Fração equivalente**:\n  - Multiplicar/dividir numerador e denominador pelo mesmo fator mantém o valor. Ex.: 2/5 = 4/10 = 8/20.\n\n> Dica de Prova: Fração equivalente exige o mesmo fator no numerador e no denominador. Só um deles → valor muda (erro).\n\n- **Comparação de frações**:\n  - Duas vias corretas:\n    - **Produto cruzado**: a/b ? c/d comparando a×d e b×c (com b, d > 0).\n    - **Denominador comum (MMC)**: reescrever as frações com mesmo denominador e comparar numeradores.\n\n## 3. Aplicação Prática / Técnicas\n- **Produto cruzado** (duas frações a/b e c/d, b, d > 0):\n  - Se a×d > b×c → a/b > c/d.\n  - Se a×d < b×c → a/b < c/d.\n  - Rápido para pares.\n\n- **Igualar denominadores (MMC)**:\n  - Passo a passo:\n    1) Liste as frações.\n    2) Encontre um múltiplo comum dos denominadores (preferir o **MMC**).\n    3) Transforme cada fração multiplicando numerador e denominador pelo mesmo fator.\n    4) Compare apenas os numeradores.\n    5) Retorne à forma original para escrever a ordem.\n  - Ideal para 3 ou mais frações.\n\n> Dica de Prova: Para 2 frações, produto cruzado é mais veloz. Para 3+, MMC reduz erros.\n\n- **Situações com potências**:\n  - Se o denominador é muito grande (ex.: 4^11), a fração tende a ser muito pequena.\n  - Quando não for viável igualar denominadores, compare ordens de grandeza ou tente reescrever potências com bases relacionadas.\n\n## 4. Exemplos e Casos Resolvidos\n- **Comparação direta por produto cruzado**:\n  - 4/9 vs 3/7:\n    - 4×7 = 28 e 3×9 = 27 → 28 > 27 → 4/9 > 3/7.\n\n- **Ordenação (ordem crescente) por produto cruzado e por MMC**:\n  - Frações: 2/5, 3/10, 7/20.\n  - Via produto cruzado (pares):\n    - 2/5 vs 3/10: 2×10 = 20; 5×3 = 15 → 20 > 15 → 2/5 > 3/10.\n    - 3/10 vs 7/20: 3×20 = 60; 10×7 = 70 → 60 < 70 → 3/10 < 7/20.\n    - 2/5 vs 7/20: 2×20 = 40; 5×7 = 35 → 40 > 35 → 2/5 > 7/20.\n    - Conclusão: 3/10 < 7/20 < 2/5.\n  - Via denominador comum (20):\n    - 2/5 → 8/20; 3/10 → 6/20; 7/20 → 7/20.\n    - 6/20 < 7/20 < 8/20 → 3/10 < 7/20 < 2/5.\n\n- **Sequência densa em Q**:\n  - Entre 0 e 1: 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, 1/256, ... nunca acaba; não há sucessor.\n\n## 5. Pegadinhas e Erros Comuns\n- b = 0 em a/b: não pertence a Q; divisão por zero não existe.\n- Comparar frações “pelo maior denominador” ou “pelo maior numerador” isoladamente: errado. Use **produto cruzado** ou **MMC**.\n- Esquecer de multiplicar numerador e denominador pelo mesmo fator ao gerar frações equivalentes.\n- Supor “sucessor” em Q: não existe sucessor imediato.\n- Sinal no denominador:\n  - Padronize b > 0 para usar produto cruzado sem confusão. Se houver sinais, ajuste a fração: a/(-b) = (−a)/b.\n\n> Dica de Prova: Ao ordenar várias frações, escreva a conversão para o denominador comum ao lado. Evita troca de posição na volta para as frações originais.\n\n> Dica de Prova: Em comparação por produto cruzado, faça as multiplicações mentalmente organizando pares (a×d e b×c) e compare antes de qualquer simplificação desnecessária.",
+  "resumo_bolso": "# Conjunto dos Números Racionais\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Número racional (Q)**: Todo número que pode ser escrito como **a/b**, com **a, b ∈ Z** e **b ≠ 0**.\n* **Fração a/b**:\n  - **a = numerador**: partes consideradas.\n  - **b = denominador**: em quantas partes iguais a unidade foi dividida; exige-se **b ≠ 0**.\n* **Pertinência em Q**:\n  - Se **a, b ∈ Z** e **b ≠ 0 ⇒ a/b ∈ Q**.  \n  - Exemplos: **0/2 = 0** (válido, racional); **2/0** (não existe; proibido).\n* **Inclusão de conjuntos e fechamento das operações**:\n  - **N ⊂ Z ⊂ Q**.\n  - Em **N**: soma e multiplicação são fechadas.\n  - Em **Z**: inclui subtração (números negativos).\n  - Em **Q**: representa divisões; fechado para **soma, subtração, multiplicação e divisão**, desde que **não se divida por zero**.\n* **Densidade de Q**:\n  - Entre **dois racionais quaisquer** existem **infinitos racionais**.  \n    Ex.: entre 0 e 1: 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128, 1/256, ...\n  - Não há “próximo” racional (sem sucessor/antecessor imediato).\n* **Frações equivalentes**: Multiplicar ou dividir **numerador e denominador pelo mesmo fator ≠ 0** mantém o valor.  \n  Ex.: 2/5 = 4/10 = 8/20.\n* **Comparação de frações (métodos corretos)**:\n  - **Produto cruzado**: comparar **a×d** com **b×c** (com **b, d > 0**).\n  - **Denominador comum (MMC)**: reescrever com mesmo denominador e comparar numeradores.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### N vs Z vs Q\n\n| Aspecto | N (Naturais) | Z (Inteiros) | Q (Racionais) |\n|--------|--------------|--------------|---------------|\n| Elementos típicos | 0, 1, 2, 3, ... | ..., −2, −1, 0, 1, 2, ... | 1/2, −3/4, 5, 0, ... |\n| Forma | inteiros não negativos | inteiros positivos, negativos e 0 | **a/b**, a, b ∈ Z, b ≠ 0 |\n| Operações fechadas | +, × | +, −, × | +, −, ×, ÷ (b ≠ 0) |\n| Relação | ⊂ Z | ⊂ Q | contém N e Z |\n\nInteiros e naturais podem ser escritos como fração: **5 = 5/1**, **0 = 0/1**, logo pertencem a **Q**.\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Definição formal de Q**\n\n* Regra: **Q = {a/b | a, b ∈ Z e b ≠ 0}**.  \n* Exemplo: 7 = 7/1 ∈ Q; 2/0: não é número (fora de Q).\n\n---\n\n**2. Frações equivalentes**\n\n* Regra: **a/b = (a·k)/(b·k)**, com **k ≠ 0**.  \n* Exemplo: 3/4 = 6/8 (k = 2).\n\n---\n\n**3. Comparação por produto cruzado**\n\n* Aplicação: Comparar **duas** frações **a/b** e **c/d**, com **b, d > 0**.  \n* Regra:\n  - Se **a·d > b·c ⇒ a/b > c/d**.\n  - Se **a·d < b·c ⇒ a/b < c/d**.\n* Exemplo: 4/9 ? 3/7 → 4·7 = 28; 3·9 = 27 ⇒ 4/9 > 3/7.\n\n---\n\n**4. Comparação por denominador comum (MMC)**\n\n* Aplicação: Ordenar **3 ou mais** frações.  \n* Regra (passos):\n  1) Encontrar um **múltiplo comum** (preferir o **MMC**) dos denominadores.  \n  2) Transformar cada fração: multiplicar numerador e denominador pelo mesmo fator.  \n  3) Comparar **apenas numeradores** e depois voltar às frações originais.  \n* Exemplo: 2/5, 3/10, 7/20 → denom. 20: 8/20, 6/20, 7/20 ⇒ 3/10 < 7/20 < 2/5.\n\n---\n\n**5. Densidade de Q (inexistência de sucessor)**\n\n* Regra: Dado **p/q** e **r/s**, existe sempre outro racional entre eles, por exemplo:  \n  **(p/q + r/s)/2**. Logo, **não existe sucessor imediato em Q**.  \n* Exemplo: entre 1/2 e 3/4: (1/2 + 3/4)/2 = (2/4 + 3/4)/2 = 5/4 ÷ 2 = 5/8.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **b = 0 em a/b**: não pertence a Q; divisão por zero não existe.\n2. Achar que inteiro/natural “não é racional” por não parecer fração; todo inteiro/natural pode ser escrito como **a/1**, logo pertence a **Q**.\n3. Comparar frações “pelo maior denominador” ou “pelo maior numerador” isoladamente: errado; use **produto cruzado** ou **MMC**.\n4. Esquecer de multiplicar numerador e denominador pelo mesmo fator ao gerar frações equivalentes.\n5. Supor “sucessor” em Q: não existe sucessor/antecessor imediato; o conjunto é denso.\n\n---\n\n## 📋 Checklist Final\n\n* Sei escrever a definição de **Q** com a condição **b ≠ 0**?  \n* Lembro que **N ⊂ Z ⊂ Q** e que **todo inteiro/natural pode ser escrito como a/1**?  \n* Sei aplicar **frações equivalentes** multiplicando **numerador e denominador pelo mesmo fator ≠ 0**?  \n* Sei comparar **2 frações** por **produto cruzado** e **3 ou mais frações** por **MMC**?  \n* Fixei que **em Q não existe sucessor imediato** e que **entre dois racionais há infinitos outros**?",
+  "mapa_mental": "# 🧮 Conjunto dos Números Racionais (Q)\n\n## 🎯 Conceitos Fundamentais\n### 💡 Definição de Q\n- Forma a/b\n- a, b inteiros\n- b diferente de zero\n- Representa divisão\n### 🧩 Fração e Partes\n- Numerador a\n- Denominador b\n- Partes iguais\n- Proibido b = 0\n### 📚 Relação entre Conjuntos\n- N subconjunto Z\n- Z subconjunto Q\n- N em forma n/1\n- Z em forma z/1\n\n## ⚙️ Propriedades e Estrutura\n### 🧱 Fechamento em Q\n- Soma fechada\n- Subtração fechada\n- Multiplicação fechada\n- Divisão fechada (b≠0)\n### 🔁 Frações Equivalentes\n- Mesmo valor\n- Multiplicar ambos\n- Dividir ambos\n- Mesmo fator\n### 🌐 Densidade em Q\n- Infinitos entre dois\n- Sem sucessor imediato\n- Sem antecessor imediato\n- Intervalos densos\n\n## 🧮 Comparação e Ordenação\n### 🔢 Produto Cruzado\n- a/b e c/d\n- b, d positivos\n- Compara a×d\n- Compara b×c\n### 📊 Denominador Comum\n- Usa múltiplo comum\n- Preferir MMC\n- Igualar denominadores\n- Comparar numeradores\n### 📉 Estratégias de Prova\n- Duas frações: cruzado\n- Três ou mais: MMC\n- Padronizar b > 0\n- Evitar comparação isolada\n\n## ⚠️ Erros Frequentes\n### 🚫 Divisão por Zero\n- b = 0 impossível\n- a/0 não pertence Q\n- 0/b é racional\n- Proibido denominador zero\n### ❌ Comparação Ingênua\n- Maior numerador isolado\n- Maior denominador isolado\n- Ignorar sinais\n- Ignorar densidade\n### 📝 Sinais e Padrões\n- Denominador positivo\n- a/(-b) = (-a)/b\n- Ajustar antes de comparar\n- Manter forma padrão",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Critérios dos Racionais",
+      "description": "Critérios dos Racionais — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Que tipo de número deve ser o numerador de uma fração racional?",
+          "back": "Número **inteiro**.",
+          "hint": "Refere-se ao conjunto Z",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "definicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição o denominador deve satisfazer para a fração ser válida?",
+          "back": "Ser **diferente de zero**.",
+          "hint": "Regra de existência da divisão",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "restricao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Que tipo de resultado surge das operações básicas entre números racionais?",
+          "back": "Um número **racional**.",
+          "hint": "Propriedade de fechamento",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "propriedades"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Inclusão e Densidade",
+      "description": "Inclusão e Densidade — 2 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Como se relacionam os conjuntos dos naturais, inteiros e racionais por inclusão?",
+          "back": "Os **naturais** estão contidos nos inteiros, e os **inteiros** estão contidos nos racionais.",
+          "hint": "Pense na hierarquia dos conjuntos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "conjuntos-numericos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-5",
+          "front": "Por que um número racional não possui sucessor imediato?",
+          "back": "Porque existem **infinitas frações** entre quaisquer dois números racionais.",
+          "hint": "Propriedade de densidade",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "propriedades"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Estrutura das Frações",
+      "description": "Estrutura das Frações — 1 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "O que indica o denominador em uma fração?",
+          "back": "Em **quantas partes** o inteiro foi dividido.",
+          "hint": "Função da parte inferior da fração",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "definicao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Comparação de Frações",
+      "description": "Comparação de Frações — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Como comparar a/b e c/d quando os denominadores são positivos?",
+          "back": "Multiplicando **em cruz** ($a \\cdot d$ e $b \\cdot c$) da esquerda para a direita.",
+          "hint": "Método do produto cruzado",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "comparacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a ordem crescente de 2/5, 3/10 e 7/20?",
+          "back": "**3/10, 2/5 e 7/20**, pois igualando os denominadores a 20 obtêm-se 6/20, 8/20 e 7/20.",
+          "hint": "Aplicação prática de comparação",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "exercicio"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Entre 4/9 e 3/7, qual fração é maior?",
+          "back": "**4/9**, pois na multiplicação cruzada resulta em 28 contra 27 de 3/7.",
+          "hint": "Aplicação prática de comparação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "exercicio"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Frações Equivalentes",
+      "description": "Frações Equivalentes — 1 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como ampliar uma fração sem alterar seu valor?",
+          "back": "Multiplicando o numerador e o denominador pelo **mesmo número**.",
+          "hint": "Princípio da equivalência",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "numeros-racionais",
+            "procedimento"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a característica fundamental que define um número racional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É um número que possui sempre um sucessor imediato definido na reta numérica",
+          "correct": false,
+          "explanation": "Incorreta. Essa é uma característica dos números naturais e inteiros, mas não dos racionais. O conjunto dos números racionais é denso, o que significa que entre quaisquer dois números racionais distintos, sempre existe um número infinito de outros números racionais. Portanto, não é possível definir um \"sucessor imediato\" para um número racional."
+        },
+        {
+          "id": "b",
+          "text": "É um número que resulta exclusivamente de operações de adição e subtração entre números naturais",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação descreve parcialmente o conjunto dos números inteiros, que são formados pelos números naturais e seus opostos (negativos), e que são fechados para adição e subtração. No entanto, os números racionais incluem frações e decimais, que não são gerados exclusivamente por essas operações entre naturais."
+        },
+        {
+          "id": "c",
+          "text": "É um número que representa apenas quantidades positivas e pode ser dividido em partes iguais",
+          "correct": false,
+          "explanation": "Incorreta. Números racionais podem representar quantidades negativas (por exemplo, -1/2 ou -3). A capacidade de ser dividido em partes iguais é uma propriedade mais geral de números que podem ser expressos como frações, mas a restrição a apenas quantidades positivas está incorreta para o conjunto dos racionais."
+        },
+        {
+          "id": "d",
+          "text": "É um número que pode ser expresso como a razão entre dois números inteiros, sendo o denominador diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Um número racional é, por definição, aquele que pode ser expresso como uma fração, ou seja, a razão entre dois números inteiros (a/b), onde o denominador (b) deve ser diferente de zero. Esta é a característica fundamental que o define e o distingue de outros conjuntos numéricos."
+        }
+      ],
+      "explanation": "Correta. Um número racional é, por definição, aquele que pode ser expresso como uma fração, ou seja, a razão entre dois números inteiros (a/b), onde o denominador (b) deve ser diferente de zero. Esta é a característica fundamental que o define e o distingue de outros conjuntos numéricos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Por que não existe divisão por zero na matemática?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque a divisão por zero geraria um número irracional que não pertence ao conjunto dos racionais",
+          "correct": false,
+          "explanation": "Incorreta. A divisão por zero não gera um número irracional. Um número irracional é um número real que não pode ser expresso como uma fração de dois inteiros. A divisão por zero, em vez disso, leva a uma expressão indefinida ou indeterminada, não a um tipo específico de número."
+        },
+        {
+          "id": "b",
+          "text": "Porque não é possível distribuir uma quantidade para nenhuma parte ou pessoa, tornando a operação sem significado",
+          "correct": true,
+          "explanation": "Correta. A divisão pode ser entendida como a distribuição de uma quantidade em partes iguais. Se tentamos distribuir uma quantidade (o dividendo) em zero partes (o divisor), a operação não faz sentido prático. Matematicamente, se 'a/0 = x', então 'a = 0 * x'. Se 'a' for diferente de zero, a equação 'a = 0' é uma contradição. Se 'a' for zero ('0/0'), '0 = 0 * x' é verdade para qualquer 'x', tornando o resultado indeterminado. Em ambos os casos, não há um resultado único e bem definido."
+        },
+        {
+          "id": "c",
+          "text": "Porque o resultado seria um número negativo impossível de representar geometricamente",
+          "correct": false,
+          "explanation": "Incorreta. A impossibilidade da divisão por zero não está relacionada ao sinal do resultado ou à sua representação geométrica. O problema é de definição matemática e coerência lógica da operação."
+        },
+        {
+          "id": "d",
+          "text": "Porque o zero é considerado um número neutro que anula qualquer operação matemática",
+          "correct": false,
+          "explanation": "Incorreta. Embora o zero seja o elemento neutro da adição e um elemento absorvente na multiplicação (qualquer número multiplicado por zero resulta em zero), essas propriedades não são a razão direta pela qual a divisão por zero é indefinida. A indefinição surge da incapacidade de encontrar um quociente que satisfaça a relação inversa da multiplicação."
+        }
+      ],
+      "explanation": "Correta. A divisão pode ser entendida como a distribuição de uma quantidade em partes iguais. Se tentamos distribuir uma quantidade (o dividendo) em zero partes (o divisor), a operação não faz sentido prático. Matematicamente, se 'a/0 = x', então 'a = 0 * x'. Se 'a' for diferente de zero, a equação 'a = 0' é uma contradição. Se 'a' for zero ('0/0'), '0 = 0 * x' é verdade para qualquer 'x', tornando o resultado indeterminado. Em ambos os casos, não há um resultado único e bem definido.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual operação aritmética básica foi introduzida especificamente pelo conjunto dos números inteiros?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A potenciação, possibilitando elevar números a expoentes inteiros",
+          "correct": false,
+          "explanation": "Incorreta. A potenciação, que é uma forma de multiplicação repetida, já era definida para expoentes naturais. Embora os números inteiros permitam a definição de expoentes negativos (resultando em frações, como 2^-1 = 1/2), a operação de potenciação em si não foi introduzida fundamentalmente pelos inteiros, mas sim expandida por eles."
+        },
+        {
+          "id": "b",
+          "text": "A multiplicação, permitindo calcular produtos de quantidades negativas",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação já existia no conjunto dos números naturais. O conjunto dos números inteiros apenas estendeu a operação para incluir números negativos, mas não a introduziu como uma nova operação fundamental."
+        },
+        {
+          "id": "c",
+          "text": "A subtração, permitindo representar diferenças e valores negativos",
+          "correct": true,
+          "explanation": "Correta. No conjunto dos números naturais, a subtração nem sempre é possível (ex: 3 - 5 não tem resultado natural). Com a introdução dos números inteiros, que incluem os números negativos, a operação de subtração torna-se sempre possível, resultando em um número inteiro (ex: 3 - 5 = -2). Isso permite representar dívidas, temperaturas abaixo de zero, entre outros conceitos."
+        },
+        {
+          "id": "d",
+          "text": "A divisão, possibilitando a distribuição equitativa de valores",
+          "correct": false,
+          "explanation": "Incorreta. A divisão, em sua forma completa (que pode resultar em frações), é uma operação que é fechada no conjunto dos números racionais, não nos inteiros. Embora algumas divisões sejam possíveis dentro dos inteiros (ex: 6 ÷ 2 = 3), muitas não são (ex: 3 ÷ 2 não é um inteiro)."
+        }
+      ],
+      "explanation": "Correta. No conjunto dos números naturais, a subtração nem sempre é possível (ex: 3 - 5 não tem resultado natural). Com a introdução dos números inteiros, que incluem os números negativos, a operação de subtração torna-se sempre possível, resultando em um número inteiro (ex: 3 - 5 = -2). Isso permite representar dívidas, temperaturas abaixo de zero, entre outros conceitos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a relação de inclusão entre os conjuntos numéricos naturais, inteiros e racionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os números inteiros contêm os racionais, mas os naturais formam um conjunto separado",
+          "correct": false,
+          "explanation": "Incorreta. Os números inteiros não contêm todos os números racionais (por exemplo, 0,75 é racional, mas não inteiro). Além disso, os números naturais não formam um conjunto separado, mas sim um subconjunto dos números inteiros."
+        },
+        {
+          "id": "b",
+          "text": "Os números racionais estão contidos nos inteiros, e os inteiros estão contidos nos naturais",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte a relação de inclusão correta. Por exemplo, 1/2 é um número racional, mas não é um inteiro. Da mesma forma, -5 é um número inteiro, mas não é um número natural."
+        },
+        {
+          "id": "c",
+          "text": "Os números naturais estão contidos nos inteiros, e os inteiros estão contidos nos racionais",
+          "correct": true,
+          "explanation": "Correta. A hierarquia dos conjuntos numéricos é a seguinte: os números naturais (N) são um subconjunto dos números inteiros (Z), e os números inteiros (Z) são um subconjunto dos números racionais (Q). Isso significa que todo número natural é também um inteiro, e todo número inteiro é também um racional (pois pode ser escrito como uma fração com denominador 1)."
+        },
+        {
+          "id": "d",
+          "text": "Os três conjuntos são independentes e não possuem elementos em comum",
+          "correct": false,
+          "explanation": "Incorreta. Os conjuntos numéricos não são independentes; eles possuem uma relação de inclusão clara e muitos elementos em comum. Por exemplo, o número 7 é um número natural, um inteiro e um racional."
+        }
+      ],
+      "explanation": "Correta. A hierarquia dos conjuntos numéricos é a seguinte: os números naturais (N) são um subconjunto dos números inteiros (Z), e os números inteiros (Z) são um subconjunto dos números racionais (Q). Isso significa que todo número natural é também um inteiro, e todo número inteiro é também um racional (pois pode ser escrito como uma fração com denominador 1).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual conjunto numérico permite realizar todas as quatro operações básicas (adição, subtração, multiplicação e divisão)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto dos números inteiros, pois inclui valores positivos e negativos",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números inteiros é fechado para adição, subtração e multiplicação, mas não para a divisão. Por exemplo, 5 dividido por 2 resulta em 2,5, que não é um número inteiro."
+        },
+        {
+          "id": "b",
+          "text": "O conjunto dos números primos, pois permite decomposição fatorial completa",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números primos (como {2, 3, 5, 7, ...}) não é fechado para nenhuma das quatro operações básicas. Por exemplo, 2 + 3 = 5 (primo), mas 2 + 5 = 7 (primo), e 3 + 5 = 8 (não primo); 2 × 3 = 6 (não primo); 5 ÷ 2 não é primo. Os números primos são importantes para a teoria dos números, mas não para a completude das operações básicas."
+        },
+        {
+          "id": "c",
+          "text": "O conjunto dos números naturais, pois é o mais fundamental da matemática",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números naturais é fechado para adição e multiplicação, mas não para subtração (ex: 3-5) ou divisão (ex: 3÷2), pois os resultados nem sempre são naturais."
+        },
+        {
+          "id": "d",
+          "text": "O conjunto dos números racionais, pois incorpora as operações de divisão de forma completa",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números racionais é o primeiro conjunto numérico em que todas as quatro operações aritméticas básicas (adição, subtração, multiplicação e divisão, exceto a divisão por zero) são fechadas. Isso significa que, ao operar quaisquer dois números racionais (com a exceção da divisão por zero), o resultado será sempre um número racional. Essa propriedade o torna um \"campo\" matemático."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números racionais é o primeiro conjunto numérico em que todas as quatro operações aritméticas básicas (adição, subtração, multiplicação e divisão, exceto a divisão por zero) são fechadas. Isso significa que, ao operar quaisquer dois números racionais (com a exceção da divisão por zero), o resultado será sempre um número racional. Essa propriedade o torna um \"campo\" matemático.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Por que não é possível determinar um sucessor imediato para um número racional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque os números racionais são discretos e possuem intervalos fixos que variam conforme o denominador",
+          "correct": false,
+          "explanation": "Incorreta. Os números racionais não são discretos; eles são densos. Conjuntos discretos, como os números inteiros, possuem elementos separados por intervalos fixos e bem definidos. A densidade dos racionais contrasta com essa característica, pois não há um \"próximo\" elemento imediatamente após outro."
+        },
+        {
+          "id": "b",
+          "text": "Porque entre quaisquer dois números racionais sempre existem infinitas frações, impossibilitando definir o próximo número",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números racionais é denso, o que significa que entre quaisquer dois números racionais distintos, sempre existe um número racional intermediário. Essa propriedade impede a determinação de um \"sucessor imediato\" ou \"próximo número\", pois é sempre possível encontrar infinitos outros racionais entre eles, tornando a ideia de um sucessor único indefinida."
+        },
+        {
+          "id": "c",
+          "text": "Porque os números racionais formam um conjunto finito que se repete ciclicamente",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números racionais é infinito, não finito. Ele contém uma quantidade ilimitada de elementos. Além disso, a ideia de que um conjunto se \"repete ciclicamente\" não se aplica aos números racionais no contexto de sucessores."
+        },
+        {
+          "id": "d",
+          "text": "Porque o sucessor de um racional depende da operação aritmética utilizada para calculá-lo",
+          "correct": false,
+          "explanation": "Incorreta. A impossibilidade de determinar um sucessor imediato para um número racional é uma característica fundamental do conjunto em si, decorrente de sua densidade, e não depende de qual operação aritmética é utilizada. A definição de sucessor refere-se à ordenação dos elementos no conjunto."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números racionais é denso, o que significa que entre quaisquer dois números racionais distintos, sempre existe um número racional intermediário. Essa propriedade impede a determinação de um \"sucessor imediato\" ou \"próximo número\", pois é sempre possível encontrar infinitos outros racionais entre eles, tornando a ideia de um sucessor único indefinida.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é o método correto para comparar duas frações com numeradores e denominadores diferentes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar cruzado: o numerador da primeira pelo denominador da segunda e vice-versa, comparando os produtos",
+          "correct": true,
+          "explanation": "Correta. O método da multiplicação cruzada é uma técnica eficaz e amplamente utilizada para comparar duas frações. Para comparar a/b e c/d (com b e d positivos), multiplica-se a*d e b*c. Se a*d > b*c, então a/b > c/d. Este método permite a comparação direta sem a necessidade de encontrar um denominador comum ou converter para decimal."
+        },
+        {
+          "id": "b",
+          "text": "Dividir o numerador pelo denominador de cada fração e comparar os resultados decimais obtidos",
+          "correct": false,
+          "explanation": "Correta, mas pode ser menos eficiente. Embora seja um método válido, dividir o numerador pelo denominador e comparar os resultados decimais pode ser trabalhoso, especialmente se as divisões resultarem em dízimas periódicas ou exigirem alta precisão, dificultando a comparação sem uma calculadora."
+        },
+        {
+          "id": "c",
+          "text": "Somar os numeradores e denominadores separadamente, comparando as frações resultantes",
+          "correct": false,
+          "explanation": "Incorreta. Somar os numeradores e denominadores separadamente não é um método válido para comparar frações. Essa operação altera completamente a proporção original das frações e leva a conclusões incorretas sobre seus valores relativos."
+        },
+        {
+          "id": "d",
+          "text": "Subtrair o denominador do numerador em cada fração e comparar as diferenças obtidas",
+          "correct": false,
+          "explanation": "Incorreta. Subtrair o denominador do numerador em cada fração altera o valor da fração e não fornece uma base correta para a comparação dos valores originais das frações. O resultado dessa operação não reflete a relação de grandeza entre as frações."
+        }
+      ],
+      "explanation": "Correta. O método da multiplicação cruzada é uma técnica eficaz e amplamente utilizada para comparar duas frações. Para comparar a/b e c/d (com b e d positivos), multiplica-se a*d e b*c. Se a*d > b*c, então a/b > c/d. Este método permite a comparação direta sem a necessidade de encontrar um denominador comum ou converter para decimal.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Ao igualar os denominadores de frações diferentes, qual procedimento deve ser obrigatoriamente seguido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar apenas o denominador pelo fator necessário, mantendo o numerador inalterado para preservar a proporção",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar apenas o denominador de uma fração por um fator, mantendo o numerador inalterado, altera o valor da fração original. Para que a fração continue representando a mesma proporção do todo, qualquer modificação no denominador deve ser acompanhada por uma modificação proporcional no numerador."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar tanto o numerador quanto o denominador pelo mesmo fator, gerando uma fração equivalente",
+          "correct": true,
+          "explanation": "Correta. Para igualar os denominadores de frações diferentes e manter seus valores originais, é fundamental multiplicar tanto o numerador quanto o denominador da fração pelo mesmo fator. Esse procedimento cria uma fração equivalente, que possui um denominador diferente, mas representa a mesma quantidade ou proporção do valor original."
+        },
+        {
+          "id": "c",
+          "text": "Adicionar o mesmo valor ao numerador e denominador para manter a equivalência matemática",
+          "correct": false,
+          "explanation": "Incorreta. Adicionar o mesmo valor ao numerador e ao denominador de uma fração não resulta em uma fração equivalente. Essa operação altera a proporção e, consequentemente, o valor da fração. Por exemplo, 1/2 não é igual a (1+1)/(2+1) = 2/3."
+        },
+        {
+          "id": "d",
+          "text": "Dividir o numerador e o denominador pelo máximo divisor comum antes de qualquer transformação",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o numerador e o denominador pelo máximo divisor comum (MDC) é um procedimento utilizado para simplificar uma fração, reduzindo-a à sua forma irredutível. Embora seja uma etapa útil para facilitar cálculos, não é o método para igualar denominadores entre frações diferentes, mas sim para simplificá-las."
+        }
+      ],
+      "explanation": "Correta. Para igualar os denominadores de frações diferentes e manter seus valores originais, é fundamental multiplicar tanto o numerador quanto o denominador da fração pelo mesmo fator. Esse procedimento cria uma fração equivalente, que possui um denominador diferente, mas representa a mesma quantidade ou proporção do valor original.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Em uma fração a/b, qual é o significado matemático do denominador?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Representa a quantidade de partes iguais em que o inteiro foi dividido",
+          "correct": true,
+          "explanation": "Correta. Em uma fração a/b, o denominador (b) representa a quantidade de partes iguais em que um inteiro, ou uma unidade, foi dividido. Ele estabelece a referência do todo, indicando o tamanho de cada porção, enquanto o numerador (a) indica quantas dessas porções estão sendo consideradas."
+        },
+        {
+          "id": "b",
+          "text": "Estabelece o limite máximo que o numerador pode atingir na fração",
+          "correct": false,
+          "explanation": "Incorreta. O denominador não estabelece um limite máximo para o numerador. Em frações impróprias, o numerador pode ser maior que o denominador (ex: 5/3), o que significa que a fração representa um valor maior que um inteiro."
+        },
+        {
+          "id": "c",
+          "text": "Determina o valor absoluto que será subtraído do numerador",
+          "correct": false,
+          "explanation": "Incorreta. O denominador não determina um valor a ser subtraído do numerador. Pelo contrário, ele está intrinsecamente ligado à operação de divisão, indicando que o numerador está sendo dividido em \"b\" partes."
+        },
+        {
+          "id": "d",
+          "text": "Indica o número de operações necessárias para obter o resultado final",
+          "correct": false,
+          "explanation": "Incorreta. O denominador não indica o número de operações matemáticas necessárias. Sua função é conceitual, definindo a base da divisão de um todo em partes iguais."
+        }
+      ],
+      "explanation": "Correta. Em uma fração a/b, o denominador (b) representa a quantidade de partes iguais em que um inteiro, ou uma unidade, foi dividido. Ele estabelece a referência do todo, indicando o tamanho de cada porção, enquanto o numerador (a) indica quantas dessas porções estão sendo consideradas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando a evolução dos conjuntos numéricos, qual necessidade prática motivou a criação do conjunto dos números racionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A necessidade de realizar divisões e representar partes fracionárias de unidades",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números racionais (Q) surgiu da necessidade prática de representar partes de um todo e de realizar operações de divisão que não resultavam em números inteiros. Os números naturais (para contagem) e inteiros (incluindo negativos) eram insuficientes para expressar frações, proporções e os resultados de divisões não exatas, como dividir uma pizza em três partes iguais."
+        },
+        {
+          "id": "b",
+          "text": "A necessidade de calcular raízes quadradas de números primos",
+          "correct": false,
+          "explanation": "Incorreta. A necessidade de calcular raízes quadradas de números que não são quadrados perfeitos (como números primos) levou à descoberta e formalização dos números irracionais, não dos racionais. Números irracionais, por definição, não podem ser expressos como uma fração de dois inteiros."
+        },
+        {
+          "id": "c",
+          "text": "A necessidade de solucionar equações algébricas de segundo grau",
+          "correct": false,
+          "explanation": "Incorreta. A necessidade de solucionar equações algébricas de segundo grau levou à expansão dos conjuntos numéricos para além dos racionais, incluindo os números irracionais (para raízes não exatas, como x²=2) e, posteriormente, os números complexos (para raízes de números negativos, como x²=-1). Os racionais sozinhos não são suficientes para todas as soluções de equações de segundo grau."
+        },
+        {
+          "id": "d",
+          "text": "A necessidade de representar medidas exatas de grandezas físicas como comprimento e massa",
+          "correct": false,
+          "explanation": "Incorreta. Embora os números racionais sejam utilizados para representar medidas, a principal motivação para a sua formalização não foi a busca por \"medidas exatas\" de grandezas físicas de forma exclusiva. Medidas exatas podem envolver números irracionais (como π ou √2), que não são racionais. A necessidade fundamental foi a de expressar porções de um todo."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números racionais (Q) surgiu da necessidade prática de representar partes de um todo e de realizar operações de divisão que não resultavam em números inteiros. Os números naturais (para contagem) e inteiros (incluindo negativos) eram insuficientes para expressar frações, proporções e os resultados de divisões não exatas, como dividir uma pizza em três partes iguais.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_252657_Conjunto dos Números Racionais.pdf",
+  "coletado_em": "2026-09-23T20:51:35"
+}

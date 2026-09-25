@@ -1,0 +1,368 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 19,
+  "ordem_no_curso": "140.00",
+  "titulo": "Determinantes - Propriedades",
+  "codigo_aula": "342306",
+  "video_id": "D1p9Ukbd+O0=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:40:19",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/D1p9Ukbd%2BO0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408819%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Determinantes - Propriedades\n\n## Introdução e Primeira Propriedade\nVamos agora para as nossas propriedades dos determinantes. O que aparecer lá fora, só o certo. Uma propriedade, estando aqui, a gente fica tranquilo. Olha só: a primeira propriedade dos determinantes.\n\nPrimeira propriedade: observe a matriz e verifique o seguinte. Se os elementos de uma linha ou de uma coluna são todos iguais a zero, o valor do determinante também será zero. Correto?\n\nEntão, se tivermos uma linha ou uma coluna iguais a zero, o determinante também será zero. Por exemplo, nessa matriz aqui, se eu quero o determinante dela, vai ser zero. Mas por quê? Porque essa linha é toda zero.\n\nVamos fazer o seguinte para ficar bem fixado: vamos mostrar isso para vocês. Será que é verdade mesmo, Josimar, se tiver uma matriz de ordem 3, ou ordem 2, ou qualquer ordem? Pode ser qualquer ordem, desde que seja quadrada, porque para se calcular determinantes, um dos pré-requisitos é a matriz ser quadrada. Então vamos provar.\n\nPela propriedade: se a linha inteira é zero, o determinante é zero. Vamos pegar uma matriz de ordem 3 e calcular pela regra de Sarrus. Repetimos as duas primeiras colunas, multiplicamos as diagonais principais e secundárias… No final, realmente dá zero. Então, essa propriedade é verdadeira.\n\nConclusão da primeira propriedade: se tivermos uma matriz cujas linhas ou colunas forem todas iguais a zero, o determinante será zero.\n\n## Segunda Propriedade\nTeremos questões com isso, podem ficar tranquilos. Depois de aprender aqui, vamos para as questões e vocês vão aplicar tudo. A segunda propriedade fala assim: caso ocorra igualdade de elementos entre duas linhas ou duas colunas, o determinante será nulo, será zero.\n\nPode ser qualquer ordem. Se tivermos uma matriz em que, por exemplo, as linhas são iguais, digamos: primeira linha (-1, 2, 9) e segunda linha (-1, 2, 9). Temos duas linhas iguais. Poderiam ser duas colunas iguais também. Pela segunda propriedade, o determinante será zero.\n\nShow de bola. Podemos demonstrar com a regra de Sarrus outra vez, só para confirmar. Montamos a matriz, repetimos as duas primeiras colunas, multiplicamos as diagonais, somamos, subtraímos… No final, tudo cancela e dá zero. Realmente a propriedade é verdadeira.\n\nReforçando: se uma matriz tem linhas ou colunas iguais, o seu determinante é zero. Beleza pura, show de bola!\n\n## Terceira Propriedade\nJá vimos: 1) linha ou coluna toda zero implica determinante zero; 2) linhas ou colunas iguais implicam determinante zero. Terceira propriedade: caso ocorram duas linhas ou duas colunas proporcionais, o determinante também é zero.\n\nQuando falo em proporcionalidade, é multiplicação ou divisão por uma constante. Não é somar ou subtrair. Proporcionalidade é: você aumenta multiplicando por um número (por 3, por 4, por 5...) ou diminui dividindo (por 2, por 3...). Então, quando duas linhas (ou duas colunas) são proporcionais, significa que a segunda pode ser obtida multiplicando ou dividindo a primeira por uma constante.\n\nOlha a matriz: compare a primeira linha com a segunda. De 2 para 4 e 6, e de 4 para 8 e 12: estão em proporção. Posso ver “da primeira para a segunda” multiplicando por 2, ou “da segunda para a primeira” dividindo por 2. Em qualquer direção, é proporcionalidade. Conclusão: o determinante é zero.\n\nSe você aplicar a regra de Sarrus nessa matriz, repetir as duas primeiras colunas e fazer as contas, vai dar zero de novo. Sempre zero. Sempre zero quando houver linhas ou colunas proporcionais.\n\n## Quarta Propriedade\nVamos para a quarta propriedade. Essa aqui é muito útil.\n\nQuarta propriedade: ao multiplicarmos todos os elementos de uma linha ou de uma coluna de uma matriz por uma constante real, o determinante fica multiplicado por essa mesma constante.\n\nExemplo: se o determinante era 3, e eu multiplico todos os elementos da primeira linha por 2, o novo determinante passa a ser 6. Por que isso é importante? Porque em muitas questões de concurso eles não dão a matriz completa, só dizem: “Dada a matriz A, det(A) = 3. Se multiplicarmos a terceira coluna por 2, qual o novo determinante?” Não tem como fazer conta de elemento por elemento, você é forçado a saber a propriedade: multiplicar uma única linha ou coluna por k multiplica o determinante por k.\n\nVamos provar com um exemplo numérico para ficar claro. Suponha uma matriz 2x2 com det(A) = 14. Se eu multiplicar a segunda coluna por 3, o novo determinante será 42, porque o determinante foi multiplicado por 3. Fazendo a conta direta, bate certinho.\n\nConclusão da quarta propriedade: multiplicou uma linha ou uma coluna por uma constante k, o novo determinante fica multiplicado por k.\n\n## Quinta Propriedade\nAgora a quinta propriedade. Importante, importantíssima, muito utilizada em prova.\n\nCaso a matriz quadrada seja toda multiplicada por uma constante real k (ou seja, cada elemento da matriz é multiplicado por k), o determinante passa a ser multiplicado por k elevado à ordem da matriz.\n\nEm outras palavras: det(k·A) = k^n · det(A), onde n é a ordem da matriz.\n\nExemplo ilustrativo: quero det(3·A). Às vezes é mais fácil multiplicar a matriz A por 3 primeiro (elemento a elemento) e depois calcular o determinante. Se A for 2x2 e det(A) = 5, então det(3·A) = 3^2 · 5 = 9 · 5 = 45. Você não precisa conhecer os elementos da matriz; basta saber a ordem e o determinante original.\n\nIsso cai muito em concurso: “Dada uma matriz A de ordem 3, com det(A) = 2. Encontre det(2·A).” Você aplica direto: det(2·A) = 2^3 · 2 = 8 · 2 = 16.\n\nPerceba a diferença entre a quarta e a quinta propriedade:\n- Quarta: multiplica apenas uma linha ou uma coluna por k, então o determinante multiplica por k.\n- Quinta: multiplica a matriz inteira por k, então o determinante multiplica por k^n (n = ordem).\n\n> 🎯 Dicas de prova: \n> - Linhas/colunas inteiras iguais a zero: det = 0. \n> - Duas linhas/colunas iguais: det = 0. \n> - Duas linhas/colunas proporcionais: det = 0. \n> - Multiplicar uma ÚNICA linha/coluna por k: det é multiplicado por k. \n> - Multiplicar a MATRIZ TODA por k: det é multiplicado por k^n.\n\nReforçando: quando a questão não fornece os elementos, mas informa a ordem da matriz e o det(A), ela está te forçando a usar a propriedade. Se for multiplicação de uma única linha/coluna, use a quarta. Se for multiplicação da matriz inteira, use a quinta.\n\nPara fechar, mais um contraste prático:\n- Se eu te der a matriz A explicitamente, você pode multiplicar pelos elementos e calcular o determinante direto, sem usar a quinta propriedade.\n- Mas se eu disser apenas “det(A) = 5” e pedir “det(3·A)” sem dar A, você é obrigado a usar a quinta propriedade: det(3·A) = 3^n · det(A).\n\nEssa é a ideia. Essas propriedades são fundamentais e caem demais. Na próxima, seguimos com mais aplicações e mais propriedades.",
+  "transcricao_meta": {
+    "title": "Determinantes - Propriedades",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 33856,
+    "createdAt": "2026-02-06T20:57:46.819Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda as principais propriedades de determinantes usadas em prova: linhas/colunas nulas, iguais e proporcionais; efeito de multiplicar linha/coluna por constante; e o efeito de escalar a matriz inteira (det(kA)).  \nPrincipais pontos:  \n- Zeros, igualdade e proporcionalidade entre linhas/colunas zeram o determinante.  \n- Multiplicar UMA linha/coluna por k multiplica o determinante por k.  \n- Multiplicar a MATRIZ INTEIRA por k multiplica o determinante por k^n (n = ordem).\n\n## 1. Base / Conceitos Fundamentais\n- Determinante: número associado a uma matriz quadrada (n×n). Só existe para matrizes quadradas.\n- Notação: det(A) ou |A|.\n- Ordem: tamanho da matriz n×n (ex.: 2×2, 3×3).\n- Operações por linha/coluna: alterar elementos de uma linha/coluna específica.\n\n## 2. Como Funciona / Distinções\n- Linha/coluna nula vs iguais vs proporcionais:\n  - Linha/coluna toda zero → det = 0.\n  - Duas linhas/colunas iguais → det = 0.\n  - Duas linhas/colunas proporcionais (uma é k vezes a outra, k ≠ 0) → det = 0.\n- Escalar uma linha/coluna vs escalar a matriz inteira:\n  - UMA linha/coluna × k → det novo = k × det antigo.\n  - r linhas/colunas × k (cada) → det novo = k^r × det antigo.\n  - Matriz inteira kA (todas as n linhas) → det(kA) = k^n × det(A).\n\n> Dica de Prova\n> • Linha/coluna por k → ×k.  \n> • r linhas por k → ×k^r.  \n> • Matriz inteira por k → ×k^n.  \n> • Igualdade ou proporcionalidade entre duas linhas/colunas sempre zera o determinante.\n\n## 3. Aplicação Prática / Técnicas\n- Check-list antes de calcular:\n  1) Há linha/coluna toda zero? → det = 0.  \n  2) Existem duas linhas/colunas iguais? → det = 0.  \n  3) Existem duas linhas/colunas proporcionais? → det = 0.  \n  4) Enunciado alterou apenas uma linha/coluna por k? → multiplique o det por k.  \n  5) Enunciado fala em kA (matriz inteira escalada)? → use k^n × det(A).\n\n- Quando usar det(kA) = k^n det(A):\n  - Quando forem dados apenas det(A), a ordem n e o fator k, sem elementos da matriz. Não há como expandir: aplique a fórmula diretamente.\n\n- Macetes rápidos:\n  - Contagem de “linhas escaladas”: cada linha escalada por k aplica um fator k no det. Em kA, são n linhas escaladas simultaneamente → k^n.\n  - Proporcionalidade é por multiplicação/divisão constantes (nunca por soma/subtração).\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (linha/coluna nula):\n  - Matriz 3×3 com uma linha “0 0 0” → det = 0 imediatamente.\n\n- Exemplo 2 (linhas iguais):\n  - Se L1 = L3, então det = 0.\n\n- Exemplo 3 (linhas proporcionais):\n  - L2 = 2 × L1 → det = 0.\n\n- Exemplo 4 (uma coluna multiplicada por constante):\n  - det(A) = 14. Multiplicou a 2ª coluna por 3 → novo det = 3 × 14 = 42.\n\n- Exemplo 5 (uma linha multiplicada por constante):\n  - det(A) = 194. Multiplicou a 1ª linha por 2 → novo det = 2 × 194 = 388.\n\n- Exemplo 6 (matriz inteira escalada):\n  - A é 2×2, det(A) = 5. det(3A) = 3^2 × 5 = 45.\n  - A é 3×3, det(A) = 2. det(2A) = 2^3 × 2 = 16.\n\n- Exemplo 7 (r linhas escaladas, não a matriz toda):\n  - A é 4×4, det(A) = d. 1ª e 4ª linhas × 3 → novo det = 3^2 × d = 9d.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> • “Proporcional” não é somar/subtrair; é multiplicar por uma constante em todos os elementos.\n\n> Dica de Prova\n> • Se multiplicar a matriz inteira por k, o fator é k^n; se mexer em UMA linha/coluna, o fator é só k.\n\n> Dica de Prova\n> • Enunciados que não mostram os elementos da matriz e pedem det(kA): não tente calcular “no braço”; aplique det(kA) = k^n det(A).\n\n> Dica de Prova\n> • Igualdade entre duas linhas/colunas ou presença de uma linha/coluna nula faz o determinante ser zero: identifique isso antes de iniciar qualquer conta.\n\n> Dica de Prova\n> • Regra de Sarrus só vale para 3×3 e é para cálculo direto; aqui, o foco é reconhecer padrões para concluir rapidamente sem expandir.",
+  "resumo_bolso": "# Determinantes - Propriedades\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Determinante**: número associado a **matriz quadrada n×n**; só existe para matriz quadrada.\n* **Notação**: **det(A)** ou **|A|**.\n* **Ordem**: tamanho da matriz n×n (ex.: 2×2, 3×3); usada no expoente de **k^n** em det(kA).\n* **Linha/coluna nula**: todos os elementos = 0 → determinante **zera**.\n* **Linhas/colunas iguais**: duas linhas/colunas idênticas → determinante **zera**.\n* **Linhas/colunas proporcionais**: uma é **k vezes** a outra (k ≠ 0) → determinante **zera**.\n* **Escalar UMA linha/coluna por k**: novo det = **k × det antigo**.\n* **Escalar r linhas/colunas por k**: novo det = **k^r × det antigo**.\n* **Escalar a matriz inteira (kA)**: novo det = **k^n × det(A)**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Linha/coluna nula vs iguais vs proporcionais\n\n| Aspecto | Linha/coluna nula | Linhas/colunas iguais | Linhas/colunas proporcionais |\n|--------|-------------------|------------------------|------------------------------|\n| Definição | Todos os elementos = 0 | Duas linhas/colunas com mesmos elementos | Uma é k vezes a outra (k ≠ 0) |\n| Efeito | det = **0** | det = **0** | det = **0** |\n\n---\n\n### Escalar UMA linha/coluna vs escalar a matriz inteira (kA)\n\n| Aspecto | Escalar 1 linha/coluna por k | Escalar r linhas/colunas por k | Escalar matriz inteira kA |\n|--------|------------------------------|---------------------------------|---------------------------|\n| O que muda | Só 1 linha/coluna | r linhas/colunas | Todas as n linhas (matriz toda) |\n| Fator no det | × **k** | × **k^r** | × **k^n** |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Linha/coluna nula**\n\n* **Regra**: se qualquer linha ou coluna é **toda zero**, então **det(A) = 0**.\n* **Exemplo**: matriz 3×3 com uma linha “0 0 0” → det = 0.\n\n---\n\n**2. Linhas/colunas iguais**\n\n* **Regra**: se **Lᵢ = Lⱼ** ou **Cᵢ = Cⱼ**, então **det(A) = 0**.\n* **Exemplo**: se L1 = L3, então det = 0.\n\n---\n\n**3. Linhas/colunas proporcionais**\n\n* **Regra**: se **Lⱼ = k·Lᵢ** (k ≠ 0) ou **Cⱼ = k·Cᵢ**, então **det(A) = 0**.\n* **Exemplo**: L2 = 2 × L1 → det = 0.\n\n---\n\n**4. Escalar UMA linha/coluna por k**\n\n* **Regra**: multiplicar **apenas uma** linha ou coluna por k → novo det = **k·det(A)**.\n* **Exemplo**: det(A) = 14; 2ª coluna ×3 → novo det = 3·14 = 42.  \n* **Exemplo**: det(A) = 194; 1ª linha ×2 → novo det = 2·194 = 388.\n\n---\n\n**5. Escalar r linhas/colunas por k**\n\n* **Regra**: multiplicar **r linhas/colunas** por k (cada) → novo det = **k^r·det(A)**.\n* **Exemplo**: A 4×4, det(A) = d; 1ª e 4ª linhas ×3 → novo det = 3²·d = 9d.\n\n---\n\n**6. Escalar a matriz inteira: det(kA) = k^n·det(A)**\n\n* **Regra**: A é n×n; multiplicar **todos** os elementos por k (kA) → **det(kA) = k^n det(A)**.\n* **Exemplo**:  \n  • A 2×2, det(A) = 5 → det(3A) = 3²·5 = 45.  \n  • A 3×3, det(A) = 2 → det(2A) = 2³·2 = 16.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. “Proporcional” não é somar/subtrair; é multiplicar por uma constante em todos os elementos.\n2. Se multiplicar a matriz inteira por k, o fator é **k^n**; se mexer em UMA linha/coluna, o fator é só **k**.\n3. Enunciados que não mostram os elementos da matriz e pedem det(kA): aplique **det(kA) = k^n det(A)**.\n4. Igualdade, proporcionalidade entre duas linhas/colunas ou presença de linha/coluna nula faz o determinante ser zero: identifique isso antes de iniciar qualquer conta.\n5. Regra de Sarrus é para cálculo direto em 3×3; aqui o foco é usar propriedades para concluir rapidamente sem expandir.\n\n---\n\n## 📋 Checklist Final\n\n* Há linha/coluna toda zero? → **det = 0**.\n* Existem duas linhas/colunas iguais? → **det = 0**.\n* Existem duas linhas/colunas proporcionais (uma = k·outra)? → **det = 0**.\n* O enunciado alterou apenas **uma** linha/coluna por k? → det novo = **k·det(A)**.\n* O enunciado alterou **r** linhas/colunas por k? → det novo = **k^r·det(A)**.\n* O enunciado fala em **kA** (matriz inteira escalada)? → use **det(kA) = k^n·det(A)**.",
+  "mapa_mental": "# 🧮 Determinantes – Propriedades\n## 🎯 Fundamentos\n### 💡 Conceitos básicos\n- Matriz quadrada\n- Determinante det(A)\n- Notação |A|\n- Ordem n×n\n### 🔢 Operações elementares\n- Operações por linha\n- Operações por coluna\n- Alterar elementos\n- Escalar linhas\n### 🧭 Visão em prova\n- Foco propriedades\n- Cálculo indireto\n- Reconhecer padrões\n- Evitar expansão\n\n## 🧱 Linhas e Colunas Especiais\n### 🛑 Linha/coluna nula\n- Todos elementos zero\n- Qualquer linha nula\n- Qualquer coluna nula\n- Determinante igual zero\n### 🧷 Linhas/colunas iguais\n- Duas linhas iguais\n- Duas colunas iguais\n- Repetição completa\n- Determinante igual zero\n### 📉 Linhas proporcionais\n- Multiplicação por constante\n- k diferente de zero\n- Duas linhas proporcionais\n- Duas colunas proporcionais\n- Determinante igual zero\n\n## 🔢 Escalonamento por Constante\n### 📊 Uma linha/coluna\n- Uma linha vezes k\n- Uma coluna vezes k\n- Novo det igual k·det\n- Fator linear k\n### 📈 r linhas/colunas\n- r linhas vezes k\n- r colunas vezes k\n- Novo det k^r·det\n- Contagem de linhas\n### 📉 Matriz inteira kA\n- Todas linhas vezes k\n- Ordem n da matriz\n- det(kA) igual k^n·det(A)\n- Fator exponencial k^n\n\n## ⚠️ Estratégia em Provas\n### 📝 Check-list rápido\n- Linha nula presente\n- Linhas iguais existem\n- Linhas proporcionais\n- Linha escalada por k\n- Matriz kA mencionada\n### 🚨 Erros frequentes\n- Confundir soma com proporção\n- Esquecer expoente n\n- Ignorar ordem da matriz\n- Tentar expandir kA\n### 🎯 Atalhos mentais\n- Uma linha → fator k\n- r linhas → k^r\n- Matriz inteira → k^n\n- Igualdade zera det\n- Proporcionalidade zera det",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Nulidade do Determinante",
+      "description": "Nulidade do Determinante — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Em que condição uma matriz quadrada tem determinante nulo por causa de uma linha ou coluna?",
+          "back": "Quando os elementos de uma linha ou coluna são iguais a zero.",
+          "hint": "Pense no elemento neutro da soma",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "propriedades"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é o efeito de duas linhas ou colunas iguais sobre o determinante?",
+          "back": "O determinante será nulo (zero).",
+          "hint": "Pense na dependência linear",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "propriedades"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Como se reconhece a proporcionalidade entre os elementos de duas linhas ou colunas?",
+          "back": "Verificando se os elementos entre duas linhas ou colunas aumentam por multiplicação ou diminuem por divisão.",
+          "hint": "Pense na relação de escala",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "proporcionalidade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual operação caracteriza a proporcionalidade entre duas linhas ou colunas?",
+          "back": "Multiplicação ou divisão.",
+          "hint": "São operações aritméticas básicas",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "proporcionalidade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Operações em Linhas",
+      "description": "Operações em Linhas — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é o efeito de multiplicar uma única linha ou coluna por uma constante?",
+          "back": "O determinante fica multiplicado por essa constante.",
+          "hint": "O efeito é linear",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "operacoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "O que distingue multiplicar uma linha ou coluna de multiplicar a matriz inteira por uma constante?",
+          "back": "Multiplicar uma linha ou coluna multiplica o determinante por essa constante, enquanto multiplicar a matriz inteira eleva a constante à ordem da matriz.",
+          "hint": "Considere a ordem da matriz",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "comparacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Escala da Matriz",
+      "description": "Escala da Matriz — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual fórmula relaciona det(cA) ao determinante de A para uma matriz de ordem n?",
+          "back": "det(cA) = c^n \\cdot det(A)",
+          "hint": "Envolve potenciação",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "formula"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Se det(A)=3 e uma coluna é multiplicada por 2, qual é o novo determinante?",
+          "back": "6",
+          "hint": "Aplicação direta da propriedade linear",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "exercicio"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Se A é de ordem 2, det(A)=5 e a matriz é multiplicada por 3, qual é det(3A)?",
+          "back": "45",
+          "hint": "Aplique a regra da constante elevada à ordem",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "determinantes",
+            "exercicio"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o valor do determinante de uma matriz quadrada quando todos os elementos de uma linha ou coluna são iguais a zero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante será igual a zero",
+          "correct": true,
+          "explanation": "Correta. Uma das propriedades fundamentais dos determinantes estabelece que, se uma matriz quadrada possui uma linha ou uma coluna cujos elementos são todos zero, o seu determinante será nulo. Isso ocorre porque, ao calcular o determinante utilizando o método de Laplace, por exemplo, expandindo ao longo dessa linha ou coluna de zeros, cada termo da soma será multiplicado por zero, resultando em um determinante igual a zero."
+        },
+        {
+          "id": "b",
+          "text": "O determinante será igual ao produto dos elementos da diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. O determinante ser igual ao produto dos elementos da diagonal principal é uma propriedade válida apenas para matrizes triangulares (superior, inferior ou diagonal). Para uma matriz com uma linha ou coluna de zeros, o determinante será zero, o que pode coincidir com o produto da diagonal principal se um dos elementos da diagonal for zero, mas não é a regra geral para esta condição."
+        },
+        {
+          "id": "c",
+          "text": "O determinante será igual a um",
+          "correct": false,
+          "explanation": "Incorreta. O determinante de uma matriz com uma linha ou coluna de zeros não é necessariamente um. O valor um é tipicamente associado à matriz identidade ou a outras matrizes com propriedades específicas, mas não a esta condição."
+        },
+        {
+          "id": "d",
+          "text": "O determinante será igual à soma dos elementos das demais linhas",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma propriedade dos determinantes que relacione o seu valor à soma dos elementos das demais linhas quando uma linha ou coluna é composta apenas por zeros. O determinante é calculado de forma mais complexa, envolvendo produtos e somas de elementos."
+        }
+      ],
+      "explanation": "Correta. Uma das propriedades fundamentais dos determinantes estabelece que, se uma matriz quadrada possui uma linha ou uma coluna cujos elementos são todos zero, o seu determinante será nulo. Isso ocorre porque, ao calcular o determinante utilizando o método de Laplace, por exemplo, expandindo ao longo dessa linha ou coluna de zeros, cada termo da soma será multiplicado por zero, resultando em um determinante igual a zero.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Segundo as propriedades dos determinantes, o que acontece quando uma matriz apresenta duas linhas ou duas colunas com elementos proporcionais entre si?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante será igual ao quociente da razão de proporcionalidade",
+          "correct": false,
+          "explanation": "Incorreta. O quociente da razão de proporcionalidade não determina o valor do determinante. A proporcionalidade entre linhas ou colunas tem um efeito específico e direto no determinante, que não é a obtenção de um quociente."
+        },
+        {
+          "id": "b",
+          "text": "O determinante será zero",
+          "correct": true,
+          "explanation": "Correta. Uma propriedade importante dos determinantes afirma que, se uma matriz quadrada possui duas linhas ou duas colunas que são linearmente dependentes (ou seja, uma é múltipla da outra, caracterizando a proporcionalidade), o seu determinante é zero. Isso pode ser demonstrado aplicando operações elementares de linha ou coluna para anular uma dessas linhas ou colunas, sem alterar o valor do determinante."
+        },
+        {
+          "id": "c",
+          "text": "O determinante será igual ao produto da constante de proporcionalidade pelos elementos",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar uma linha ou coluna por uma constante k multiplica o determinante por k. No entanto, ter duas linhas ou colunas proporcionais é uma condição diferente e não resulta no produto da constante de proporcionalidade pelos elementos como o determinante final."
+        },
+        {
+          "id": "d",
+          "text": "O determinante será igual à soma dos elementos proporcionais",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos elementos proporcionais não é uma propriedade que defina o valor do determinante. O cálculo do determinante envolve produtos e diferenças de produtos de elementos, e a condição de proporcionalidade leva a um resultado nulo, não a uma soma."
+        }
+      ],
+      "explanation": "Correta. Uma propriedade importante dos determinantes afirma que, se uma matriz quadrada possui duas linhas ou duas colunas que são linearmente dependentes (ou seja, uma é múltipla da outra, caracterizando a proporcionalidade), o seu determinante é zero. Isso pode ser demonstrado aplicando operações elementares de linha ou coluna para anular uma dessas linhas ou colunas, sem alterar o valor do determinante.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Quando todos os elementos de uma linha ou coluna de uma matriz quadrada são multiplicados por uma constante k, como fica o novo determinante em relação ao determinante original?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O novo determinante será igual ao determinante original elevado à constante k",
+          "correct": false,
+          "explanation": "Incorreta. A elevação à potência 'k' não é a forma como a multiplicação de uma linha ou coluna por uma constante afeta o determinante. A relação é linear em termos de multiplicação pela constante, não exponencial."
+        },
+        {
+          "id": "b",
+          "text": "O novo determinante será igual ao determinante original dividido pela constante k",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o determinante original pela constante 'k' seria o equivalente a multiplicar por 1/k. A propriedade correta indica uma multiplicação direta pelo fator 'k', não uma divisão."
+        },
+        {
+          "id": "c",
+          "text": "O novo determinante será igual ao determinante original multiplicado pela constante k",
+          "correct": true,
+          "explanation": "Correta. Uma das propriedades fundamentais dos determinantes estabelece que, se todos os elementos de uma única linha ou de uma única coluna de uma matriz são multiplicados por uma constante 'k', o determinante da nova matriz será 'k' vezes o determinante da matriz original. Esta propriedade é crucial para simplificar cálculos e entender o comportamento dos determinantes sob transformações elementares."
+        },
+        {
+          "id": "d",
+          "text": "O novo determinante será igual ao determinante original somado à constante k",
+          "correct": false,
+          "explanation": "Incorreta. A operação de multiplicação de uma linha ou coluna por uma constante não afeta o determinante por meio de adição. A relação é multiplicativa, não aditiva."
+        }
+      ],
+      "explanation": "Correta. Uma das propriedades fundamentais dos determinantes estabelece que, se todos os elementos de uma única linha ou de uma única coluna de uma matriz são multiplicados por uma constante 'k', o determinante da nova matriz será 'k' vezes o determinante da matriz original. Esta propriedade é crucial para simplificar cálculos e entender o comportamento dos determinantes sob transformações elementares.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em uma matriz A de ordem 3×3, cujo determinante é igual a 4, se multiplicarmos todos os elementos da segunda coluna por 5, qual será o valor do novo determinante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O novo determinante será igual a 9",
+          "correct": false,
+          "explanation": "Incorreta. O valor 9 seria obtido se a constante (5) fosse somada ao determinante original (4), o que não corresponde à propriedade de multiplicação de uma coluna por uma constante."
+        },
+        {
+          "id": "b",
+          "text": "O novo determinante será igual a 500",
+          "correct": false,
+          "explanation": "Incorreta. O valor 500 seria o resultado se a matriz inteira fosse multiplicada por 5 (5³ × 4 = 125 × 4 = 500), e não apenas uma de suas colunas. A ordem da matriz é 3, então a constante seria elevada ao cubo se toda a matriz fosse escalada."
+        },
+        {
+          "id": "c",
+          "text": "O novo determinante será igual a 125",
+          "correct": false,
+          "explanation": "Incorreta. O valor 125 é 5 elevado à terceira potência (5³), que é a constante elevada à ordem da matriz. No entanto, este valor deve ser multiplicado pelo determinante original, e não é o determinante final por si só. Além disso, esta regra se aplica quando a matriz inteira é multiplicada por uma constante, não apenas uma coluna."
+        },
+        {
+          "id": "d",
+          "text": "O novo determinante será igual a 20",
+          "correct": true,
+          "explanation": "Correta. Conforme a propriedade dos determinantes, se uma única linha ou coluna de uma matriz é multiplicada por uma constante 'k', o determinante da nova matriz é 'k' vezes o determinante da matriz original. Neste caso, o determinante original é 4 e a segunda coluna é multiplicada por 5. Portanto, o novo determinante será 5 × 4 = 20."
+        }
+      ],
+      "explanation": "Correta. Conforme a propriedade dos determinantes, se uma única linha ou coluna de uma matriz é multiplicada por uma constante 'k', o determinante da nova matriz é 'k' vezes o determinante da matriz original. Neste caso, o determinante original é 4 e a segunda coluna é multiplicada por 5. Portanto, o novo determinante será 5 × 4 = 20.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Dada uma matriz A de ordem 4×4 com determinante igual a 3, qual será o valor do determinante da matriz resultante 2A, aplicando as propriedades dos determinantes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante será igual a 48, pois a constante elevada à ordem da matriz multiplica o determinante original",
+          "correct": true,
+          "explanation": "Correta. Para uma matriz quadrada A de ordem 'n' e uma constante 'k', o determinante da matriz 'kA' é dado pela fórmula det(kA) = k^n × det(A). Neste caso, a matriz A tem ordem n=4, o determinante original é 3 e a constante k é 2. Assim, o novo determinante será 2^4 × 3 = 16 × 3 = 48."
+        },
+        {
+          "id": "b",
+          "text": "O determinante será igual a 24, pois a constante ao quadrado multiplica o determinante original",
+          "correct": false,
+          "explanation": "Incorreta. A constante não é elevada apenas ao quadrado; ela deve ser elevada à ordem da matriz. Se a ordem da matriz fosse 2, então 2² × 3 = 12 seria o resultado. Contudo, a matriz é de ordem 4, exigindo que a constante seja elevada à quarta potência."
+        },
+        {
+          "id": "c",
+          "text": "O determinante será igual a 6, pois a constante multiplica o determinante original",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação estaria correta se apenas uma linha ou coluna da matriz A fosse multiplicada pela constante 2. No entanto, a notação '2A' indica que todos os elementos da matriz A foram multiplicados por 2."
+        },
+        {
+          "id": "d",
+          "text": "O determinante será igual a 12, pois a constante é multiplicada pela ordem da matriz",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a constante pela ordem da matriz e depois pelo determinante (2 × 4 × 3 = 24) não é a propriedade correta para a multiplicação de uma matriz por uma constante. A constante deve ser elevada à ordem da matriz."
+        }
+      ],
+      "explanation": "Correta. Para uma matriz quadrada A de ordem 'n' e uma constante 'k', o determinante da matriz 'kA' é dado pela fórmula det(kA) = k^n × det(A). Neste caso, a matriz A tem ordem n=4, o determinante original é 3 e a constante k é 2. Assim, o novo determinante será 2^4 × 3 = 16 × 3 = 48.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "19_342306_Determinantes - Propriedades.pdf",
+  "coletado_em": "2026-09-23T21:00:57"
+}

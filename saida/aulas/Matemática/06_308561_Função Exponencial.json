@@ -1,0 +1,454 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 6,
+  "ordem_no_curso": "76.00",
+  "titulo": "Função Exponencial",
+  "codigo_aula": "308561",
+  "video_id": "cLt+jHXjsHU=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:05",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/cLt%2BjHXjsHU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403847%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Função Exponencial\n\n## Introdução\nVamos dar continuidade à nossa matriz matemática, e agora a uma noção muito importante, muito legal para várias disciplinas e aplicações do dia a dia. É preciso entender perfeitamente o conceito de função. Vem comigo ver: vamos focar na função exponencial.\n\nPrimeira coisa: toda relação de dependência em que uma incógnita varia em função do valor da outra é denominada função. Ou seja, se uma variável depende da outra, temos uma função. Se eu defino x e calculo y a partir dele, eu tenho uma função.\n\nQuando essa relação de dependência tem a parte variável representada no expoente, nós encontramos a função exponencial. Prestem atenção nisso.\n\n## O que caracteriza uma função exponencial\nObservem: numa função exponencial, o x (a variável independente) aparece no expoente, e a base é um número real positivo diferente de 1. Então percebam: o x pode assumir vários valores, mas quem está dentro dos parênteses, elevado a x, é a base da potência. Isso é a função exponencial.\n\nUm ponto importante: vamos precisar perceber bem isso agora e, depois, aplicar na vida prática e nos exercícios conceituais.\n\n> 🎯 **Dicas de prova:** Em função exponencial, a variável aparece no expoente, e a base deve ser real positiva e diferente de 1.\n\n## O problema do tabuleiro de xadrez\nEm uma brincadeira com o irmão Jessé, Lucas pediu que ele enchesse o tabuleiro de xadrez com grãos de arroz, colocando na primeira casa 2, na segunda 4, na terceira 8, e assim por diante. Quando chegou à 64ª casa, ele resolveu calcular quantos grãos seriam necessários para cumprir a tarefa e viu que seria impossível.\n\nComo se trata de uma função, a sequência fica assim:\n- Primeira casa: 2\n- Segunda: 4\n- Terceira: 8\n- Quarta: 16\n- Quinta: 32\n- Sexta: 64\n- ... e assim por diante, até a 64ª casa\n\nEle percebeu que os valores seguem potências de 2: 2¹, 2², 2³, 2⁴, 2⁵, 2⁶, 2⁷, 2⁸... até a 64ª potência. Dependendo da casinha, o valor vai aumentando sempre como potência de 2. Isso não é função quadrática nem uma equação diferencial; é uma função exponencial, porque a base é sempre a mesma (2), e o que muda é o expoente (a posição da casa).\n\n> 🎯 **Dicas de prova:** Crescimento tipo “dobrar a cada passo” é típico de função exponencial: base fixa, expoente variando.\n\n## Entendendo a lei de formação e a base\nEntão, quando eu digo 2 elevado a x, estou dizendo que o resultado depende de x, como se x fosse a “casa” do tabuleiro. Se eu quero o valor na quinta casinha, eu faço 2⁵. Se eu quero na casa 64, vou ter 2⁶⁴. Concluímos: trata-se de uma função exponencial.\n\nAgora, é interessante saber:\n- Qual é a lei de formação\n- Quais as condições de existência\n- E como a base influencia o comportamento (crescente ou decrescente)\n\nNuma função exponencial, a base a deve satisfazer: a > 0 e a ≠ 1.\n\n> 🎯 **Dicas de prova:** Na função exponencial f(x) = a^x, exige-se a > 0 e a ≠ 1.\n\n## Domínio e imagem; papel da base\nOlha só: a função exponencial f(x) = a^x tem:\n- Domínio: todos os números reais\n- Imagem: números reais positivos (0, +∞)\n\nO mais importante aqui é a base do expoente: ela precisa ser positiva e diferente de 1. Isso é crucial para determinar se a função é crescente ou decrescente.\n\nResumindo as condições da base a:\n- a > 0\n- a ≠ 1\n\nE quanto ao comportamento:\n- Se a > 1, a função é crescente.\n- Se 0 < a < 1, a função é decrescente.\n\n> 🎯 **Dicas de prova:** a > 1 ⇒ crescente; 0 < a < 1 ⇒ decrescente.\n\nExistem muitas questões de concurso sobre isso. Prestem atenção: a base sendo maior que 1 ou entre 0 e 1 muda completamente o gráfico e o comportamento da função.\n\n## Crescimento, decrescimento e exemplos do cotidiano\nQuando a base a é maior do que 1, a função exponencial é crescente. Quando 0 < a < 1, ela é decrescente. Pronto. Isso resolve uma família enorme de questões.\n\nExemplos de função exponencial crescente:\n- Juros compostos\n- Crescimento populacional (em certos modelos)\n- Processos de duplicação\n\nE função exponencial decrescente:\n- Decaimento radioativo\n- Processos de resfriamento (em certos modelos)\n- Depreciação com fator fixo menor que 1\n\nO comportamento “cresce ou decresce” depende da base, sempre.\n\n## Juros compostos como função exponencial\nIsso aqui é muito legal para entender juros compostos, capital, montante, taxa e tempo. A fórmula clássica:\n- Montante M = C · (1 + i)^t\n  - C: capital inicial\n  - i: taxa por período (em decimal)\n  - t: número de períodos\n\nPor causa disso, juros compostos são uma aplicação direta de função exponencial: a base é (1 + i), o expoente é o tempo t.\n\nVamos fazer um teste. Digamos que você invista um capital C a uma taxa de 10% ao mês. Transformando 10% para decimal: i = 0,10. Então a base é 1 + 0,10 = 1,10, que é maior que 1. Logo, a função é crescente. No segundo mês, o montante será C · 1,10²; no 12º mês, C · 1,10¹², e assim por diante.\n\nIsso aparece muito em concursos e no cotidiano: financiamentos, investimentos, crescimento de dívida, etc. Saber potência é fundamental aqui.\n\n> 🎯 **Dicas de prova:** Em juros compostos, use M = C · (1 + i)^t. Base 1 + i > 1 implica função crescente.\n\n## Outro exemplo prático de crescimento exponencial\nQuando a base é maior do que 1, cada novo período multiplica o valor por esse fator fixo. Isso explica por que pequenos percentuais, com o tempo, geram crescimentos grandes. Em economia, demografia e finanças, essa ideia aparece sempre.\n\n## Condição para a função ser crescente ou decrescente (revisão)\nRecapitulando com foco:\n- Função exponencial é crescente se a > 1.\n- É decrescente se 0 < a < 1.\n- A variável está no expoente; a base é constante e positiva, diferente de 1.\n\n> 🎯 **Dicas de prova:** Verifique a base. a > 1 ⇒ crescente; 0 < a < 1 ⇒ decrescente. a ≤ 0 ou a = 1 não servem para função exponencial.\n\n## Exercício: determinar quando uma função é crescente ou decrescente\nVamos aplicar. Considere f(x) = a^(g(x)). Eu quero que essa função seja decrescente. O que eu preciso? Que a base da potência seja um número entre 0 e 1. Em outras palavras: 0 < a < 1.\n\nAgora, imagine um caso concreto que aparece muito: uma função do tipo f(x) = 6^(x − 2). Aqui, a base é 6 e é maior que 1, então, com essa base, a função é crescente. Mas se, em algum problema, a base não for constante 6 e, sim, algo que dependa de uma outra variável (por exemplo, 6^(k x − 2)), e eu quiser que a função seja decrescente, eu precisaria que essa “base efetiva” (o fator que multiplica a cada incremento unitário de x) fosse entre 0 e 1.\n\nNuma formulação típica de exercícios, pode vir assim: “Quais valores de um parâmetro tornam a função 6^(ax + b) crescente ou decrescente?” A resposta se guia pelo fator que acompanha x no expoente apenas quando a base varia? Não: cuidado. O que determina crescente/decrescente é a base da potência, não o coeficiente do x no expoente, quando a base é constante. Para 6^(ax + b), como a base é 6 (> 1), a função é sempre crescente em x, pois aumentar x aumenta o expoente e, com base > 1, o valor cresce.\n\nJá quando escrevem algo como (k)^(x − 2), aí sim: quem manda é k. Será crescente se k > 1, decrescente se 0 < k < 1.\n\n> 🎯 **Dicas de prova:** Em f(x) = b^(ax + c), se b > 1, a função é crescente em x (a inclinação do expoente não inverte o crescimento). Em f(x) = k^x, quem manda é k: k > 1 ⇒ crescente; 0 < k < 1 ⇒ decrescente.\n\n## Inequações para tornar a função decrescente\nSuponha agora que eu quero que a função seja decrescente e a expressão da base dependa de alguma condição que eu posso ajustar. A condição geral para decrescer é:\n- 0 < base < 1\n\nEntão, se a base for uma expressão, digamos B(x) = (algo), e o enunciado quer garantir que a função seja decrescente, eu preciso impor:\n- 0 < B < 1\n\nDaí monto um sistema de desigualdades, resolvo passo a passo:\n- B > 0\n- B < 1\n\nFaço as manipulações algébricas com cuidado, lembrando:\n- Ao multiplicar ou dividir por número negativo, inverto o sentido da desigualdade.\n- Isolo a variável com atenção.\n\nConcluo o intervalo de valores que torna a base entre 0 e 1, garantindo decrescimento da função exponencial.\n\n> 🎯 **Dicas de prova:** Para garantir função exponencial decrescente, imponha 0 < base < 1 e resolva o sistema de desigualdades.\n\n## Resolvendo um sistema típico\nExemplo de procedimento:\n- Dada uma base expressa por algo como (x + 2)/6, e quero que a função seja decrescente:\n  - Impor 0 < (x + 2)/6 < 1\n  - Multiplicar tudo por 6: 0 < x + 2 < 6\n  - Subtrair 2: −2 < x < 4\n  - Pronto: nesse intervalo, a base fica entre 0 e 1, e a função é decrescente.\n\nA lógica é sempre essa: transformar “quero decrescente” em “quero base entre 0 e 1” e resolver a dupla desigualdade.\n\n## Encerramento\nEntão, fechando: entendemos o que é função exponencial, identificamos a variável no expoente, reforçamos as condições da base (a > 0 e a ≠ 1), e vimos quando a função é crescente (a > 1) ou decrescente (0 < a < 1). Aplicamos isso a juros compostos, progressões de duplicação e exercícios de desigualdades para garantir crescimento ou decrescimento.\n\nVocês vão ver muito isso em provas e no cotidiano. Saber trabalhar com potências, converter porcentagens e resolver desigualdades é essencial para dominar essa parte do conteúdo. Show de bola!",
+  "transcricao_meta": {
+    "title": "Função Exponencial",
+    "subject": "Raciocínio Lógico-Matemático",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 22576,
+    "createdAt": "2026-02-05T21:08:41.180Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: definição e propriedades de **função exponencial**, critérios de **crescência/decrescência** pela **base da potência**, aplicações típicas (tabuleiro de xadrez, **progressão geométrica**, **juros compostos**), técnicas para resolver **desigualdades** que garantem o comportamento da função, e pegadinhas frequentes.\nPrincipais pontos: \n- Condições da base: **a > 0** e **a ≠ 1**.\n- Monotonicidade: **a > 1 → crescente**; **0 < a < 1 → decrescente**.\n- Modelagem prática e resolução por **sistema**: 0 < base < 1 (decrescente) ou base > 1 (crescente).\n\n## 1. Base / Conceitos Fundamentais\n- **Função**: relação de dependência em que o valor de uma variável depende do valor da outra.\n- **Função exponencial**: f(x) = a^x\n  - **Base (a)**: constante real com condições obrigatórias: **a > 0** e **a ≠ 1**.\n  - **Expoente (x)**: variável real.\n  - **Domínio**: todos os reais.\n  - **Imagem**: valores positivos (f(x) > 0).\n- **Base da potência**: número “elevado” (a); **expoente**: x.\n- **Progressão geométrica**: quando cada termo multiplica por uma razão fixa (ex.: ×2), modelada por potências (a^n).\n\n## 2. Como Funciona / Distinções\n- Critério de monotonicidade de f(x) = a^x:\n  - **a > 1** → função **crescente** (x aumenta, f(x) aumenta).\n  - **0 < a < 1** → função **decrescente** (x aumenta, f(x) diminui).\n- Casos inválidos:\n  - **a = 1**: não é função exponencial relevante (constante 1).\n  - **a ≤ 0**: inválido no escopo padrão da função exponencial real.\n  \nTabela (Comparação)\n- a > 1: Crescente | Aumenta com x\n- 0 < a < 1: Decrescente | Diminui com x\n- a = 1: Constante (descartado)\n- a ≤ 0: Inválido\n\n> Dica de Prova\n> Memorize: “Exponencial válida” exige a > 0 e a ≠ 1. A base manda no comportamento.\n\n## 3. Aplicação Prática / Técnicas\n- Para garantir que a função seja **decrescente**:\n  - Modele como sistema: **0 < base < 1**.\n  - Resolva em duas partes:\n    - 0 < base\n    - base < 1\n  - Use operações em desigualdades:\n    - Multiplicar/dividir por número positivo: mantém o sentido.\n    - Multiplicar/dividir por número negativo: inverte o sentido.\n\n- Para garantir que a função seja **crescente**:\n  - Exija: **base > 1** e a ≠ 1 já é atendido.\n  \n- Conversão de percentuais (em aplicações financeiras):\n  - dez por cento = 10% = 0,10\n  - 20% = 0,20\n  - Em **juros compostos**: base = 1 + taxa (em decimal). Se 10%: base = 1,10 (> 1) → função crescente.\n\n- Macete de identificação rápida:\n  - Ache a **base** do tipo a^x (por exemplo, f(x) = 6^(x) tem base 6).\n  - Verifique as condições da base.\n  - Classifique imediata e corretamente: a > 1 ou 0 < a < 1.\n\n> Dica de Prova\n> Se o enunciado disser “quero que a função seja decrescente”, traduza imediatamente para “0 < base < 1” e monte como sistema. Se disser “crescente”, traduza para “base > 1”.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: Tabuleiro de xadrez (progressão geométrica)\n  - Sequência nas casas: 2, 4, 8, 16, 32, 64, ...\n  - Na n-ésima casa: valor = 2^n (potências de 2: 2¹, 2², 2³, 2⁴, 2⁵, 2⁶, 2⁷, 2⁸, ... 2⁶⁴).\n  - Conclusão: crescimento explosivo (função exponencial com razão 2).\n\n- Exemplo 2: f(x) = 6^(x)\n  - Base a = 6 → a > 1.\n  - Classificação: **crescente**. Domínio: ℝ. Imagem: (0, +∞).\n\n- Exemplo 3: Garantir função decrescente com base fracionária\n  - Desejo: f(x) = a^x seja decrescente → 0 < a < 1.\n  - Escolha de base: a = 0,6 (entre zero e um) → decrescente.\n\n- Exemplo 4: Determinar intervalo de x para função decrescente\n  - Base(x) = (x + 2)/6. Exigir 0 < base < 1.\n    - Parte 1: 0 < (x + 2)/6 → x + 2 > 0 → x > −2.\n    - Parte 2: (x + 2)/6 < 1 → x + 2 < 6 → x < 4.\n    - Conclusão: −2 < x < 4.\n  - Observação: 6 é positivo, então o sentido das desigualdades se mantém.\n\n- Exemplo 5: Juros compostos\n  - Taxa = 20% = 0,20. Base = 1 + 0,20 = 1,20.\n  - a = 1,20 > 1 → função **crescente**: o montante cresce com o tempo.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir **base** com **expoente**: a monotonicidade depende de a, não de x.\n- Esquecer que **0 < a < 1** torna a função **decrescente** (comportamento “invertido”).\n- Tratar **a = 1** como exponencial válida: é constante e foge do modelo cobrado.\n- Usar base **≤ 0** em ℝ: inválido para a^x com x real.\n- Errar o sentido de desigualdade ao multiplicar/dividir:\n  - Por positivo: mantém.\n  - Por negativo: inverte.\n- Misturar porcentagem com decimal: sempre converta 10% → 0,10; 20% → 0,20 antes de montar a base (1 + taxa).\n- Ignorar as condições simultâneas para decrescência: precisa satisfazer 0 < base e base < 1 ao mesmo tempo.\n\n> Dica de Prova\n> Em questões que pedem “decrescente”, pense “entre zero e um”. Em “crescente”, pense “maior que um”. Monte como sistema quando a base depende de x.",
+  "resumo_bolso": "# Função Exponencial\n\n---\n\n## 📌 Conceitos-Chave\n\n* Função exponencial: f(x) = a^x com base real a e expoente real x; domínio: ℝ; imagem: (0, +∞).\n* Condições da base: a > 0 e a ≠ 1.\n* Monotonicidade: a > 1 → crescente; 0 < a < 1 → decrescente.\n* a = 1: função constante f(x) = 1 (descartada no modelo cobrado).\n* a ≤ 0: inválido no escopo padrão da função exponencial real.\n* A base define o comportamento (crescente/decrescente), não o expoente.\n* Progressão geométrica: modelada por potências (a^n).\n* Juros compostos: base = 1 + taxa (em decimal).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n| Aspecto | a > 1 | 0 < a < 1 |\n| --- | --- | --- |\n| Crescência | Crescente | Decrescente |\n| Comportamento | Aumenta com x | Diminui com x |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Condição de validade da exponencial real\n- a > 0 e a ≠ 1.\n\n2. Critério de monotonicidade\n- a > 1 → crescente; 0 < a < 1 → decrescente.\n\n3. Decrescência com base dependente de x\n- Exigir 0 < base(x) < 1 e resolver como sistema.\n\n4. Crescência com base dependente de x\n- Exigir base(x) > 1.\n\n5. Operações com desigualdades\n- Multiplicar/dividir por número positivo: mantém o sentido.\n- Multiplicar/dividir por número negativo: inverte o sentido.\n\n6. Conversão percentual → decimal (aplicações financeiras)\n- Ex.: 10% → 0,10; 20% → 0,20; em juros compostos: base = 1 + taxa.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Confundir base com expoente ao classificar a função.\n- Tratar a = 1 como exponencial válida.\n- Usar base ≤ 0 no modelo real.\n- Errar o sentido da desigualdade ao multiplicar/dividir por número negativo.\n- Esquecer que decrescência exige 0 < base < 1 como sistema simultâneo.\n\n---\n\n## 📋 Checklist Final\n\n- Diferenciei crescente (a > 1) de decrescente (0 < a < 1)?\n- Lembro que a > 0 e a ≠ 1 são obrigatórios?\n- Sei montar 0 < base(x) < 1 como sistema para decrescência?\n- Sei que multiplicar/dividir por negativo inverte desigualdade?\n- Converto taxa % para decimal antes de montar base = 1 + taxa?",
+  "mapa_mental": "# 🧮 Função Exponencial\n## 🎯 Conceitos Básicos\n### 💡 Definição Geral\n- Função real\n- Forma f(x)=a^x\n- Base constante a\n- Expoente variável x\n### 🧱 Condições da Base\n- a>0\n- a≠1\n- a=1 constante\n- a≤0 inválida\n### 📊 Domínio e Imagem\n- Domínio reais\n- Imagem positivos\n- f(x)>0 sempre\n- Sem zeros\n\n## 📈 Crescência e Decrescência\n### 🎚️ Critério pela Base\n- a>1 crescente\n- 0<a<1 decrescente\n- Base define gráfico\n- Expoente não define\n### 🔢 Tabela Comportamento\n- a>1 cresce\n- 0<a<1 decresce\n- a=1 constante\n- a≤0 sem definição\n### 🧮 Desigualdades na Base\n- 0<base<1 decrescente\n- Base>1 crescente\n- Sistema para base\n- Condições simultâneas\n\n## 🧩 Aplicações Clássicas\n### 📐 Progressão Geométrica\n- Termos por potência\n- Razão constante\n- Forma a·q^n\n- Ligação exponencial\n### 💰 Juros Compostos\n- Base=1+taxa\n- Taxa em decimal\n- 10%=0,10\n- 20%=0,20\n### 🧭 Modelagem em Provas\n- Identificar base\n- Verificar condições\n- Classificar crescente\n- Classificar decrescente\n\n## ⚠️ Erros Frequentes\n### 🚨 Conceituais\n- Confundir base expoente\n- Aceitar a=1\n- Usar a≤0\n- Ignorar f(x)>0\n### 📉 Desigualdades\n- Esquecer 0<base\n- Esquecer base<1\n- Não montar sistema\n- Errar inversão sinal\n### 📋 Percentuais\n- Não converter %\n- Misturar 10% e 0,10\n- Base sem 1+taxa\n- Taxa em fração errada",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Conceito E Base",
+      "description": "Conceito E Base — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a forma geral da lei de uma função cuja variável está no expoente?",
+          "back": "$f(x) = a^x$",
+          "hint": "Formato algébrico padrão",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "O que distingue uma função exponencial de uma função polinomial?",
+          "back": "A variável independente encontra-se no expoente.",
+          "hint": "Localização da variável",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "comparacao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual condição deve satisfazer a base de uma função exponencial?",
+          "back": "Ser maior que zero.",
+          "hint": "Restrição de sinal",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "restricoes-base"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Além da positividade, qual restrição a base de uma função exponencial deve obedecer?",
+          "back": "Ser diferente de 1.",
+          "hint": "Valor proibido",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "restricoes-base"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é o domínio da variável independente em uma função exponencial real?",
+          "back": "Os números reais.",
+          "hint": "Conjunto numérico",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "dominio"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Monotonicidade",
+      "description": "Monotonicidade — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Em que condição uma função exponencial é crescente?",
+          "back": "A base ser maior que 1.",
+          "hint": "Comparação com a unidade",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "comportamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual elemento da lei exponencial determina se a função cresce ou decresce?",
+          "back": "A base.",
+          "hint": "Parâmetro da base",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "comportamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Que propriedade caracteriza a sequência gerada por multiplicações sucessivas pelo mesmo fator?",
+          "back": "Progressão geométrica.",
+          "hint": "Conceito de sequência",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "sequencias"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Juros Compostos",
+      "description": "Juros Compostos — 2 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual expressão representa o montante de um capital aplicado a juros compostos?",
+          "back": "$M = C \\cdot (1 + i)^t$",
+          "hint": "Aplicação financeira",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "juros-compostos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Como deve ser convertida uma taxa percentual antes de usá-la em uma potência?",
+          "back": "Converter para a forma decimal dividindo por 100.",
+          "hint": "Operação aritmética",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcao-exponencial",
+            "calculo-financeiro"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma função exponencial, qual é a principal característica que a diferencia de outros tipos de funções?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A variável independente está localizada no expoente da potência",
+          "correct": true,
+          "explanation": "Correta. A principal característica que define uma função exponencial, na forma geral f(x) = a^x, é que a variável independente (x) aparece no expoente, enquanto a base (a) é uma constante numérica. Isso a diferencia de funções como as lineares (onde a variável é multiplicada por uma constante) ou quadráticas (onde a variável é elevada a um expoente constante na base)."
+        },
+        {
+          "id": "b",
+          "text": "A variável independente aparece no denominador de uma fração",
+          "correct": false,
+          "explanation": "Incorreta. Quando a variável independente aparece no denominador de uma fração (por exemplo, f(x) = 1/x), a função é classificada como racional. Funções racionais têm comportamentos assintóticos e gráficos distintos das funções exponenciais."
+        },
+        {
+          "id": "c",
+          "text": "A variável independente está sempre multiplicada por uma constante",
+          "correct": false,
+          "explanation": "Incorreta. Esta é uma característica comum em funções lineares (por exemplo, f(x) = mx + b, onde 'm' é uma constante multiplicando a variável 'x'), não em funções exponenciais. Em uma função exponencial, a variável está no expoente, não sendo multiplicada diretamente por uma constante."
+        },
+        {
+          "id": "d",
+          "text": "A variável independente está elevada ao quadrado na base da função",
+          "correct": false,
+          "explanation": "Incorreta. Se a variável independente está elevada ao quadrado na base (por exemplo, f(x) = x^2), a função é quadrática. Em uma função exponencial, a base é uma constante e a variável é que atua como expoente."
+        }
+      ],
+      "explanation": "Correta. A principal característica que define uma função exponencial, na forma geral f(x) = a^x, é que a variável independente (x) aparece no expoente, enquanto a base (a) é uma constante numérica. Isso a diferencia de funções como as lineares (onde a variável é multiplicada por uma constante) ou quadráticas (onde a variável é elevada a um expoente constante na base).",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a condição de existência para a base de uma função exponencial?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base deve ser um número racional entre menos um e um",
+          "correct": false,
+          "explanation": "Incorreta. A base de uma função exponencial não pode ser negativa (por exemplo, -0.5) e não precisa ser racional. A condição de ser um número racional entre -1 e 1 incluiria valores negativos e o zero, que são proibidos para a base de uma função exponencial."
+        },
+        {
+          "id": "b",
+          "text": "A base deve ser maior que zero e diferente de um",
+          "correct": true,
+          "explanation": "Correta. Para que uma função f(x) = a^x seja considerada exponencial, a base 'a' deve ser um número real maior que zero (a > 0) e diferente de um (a ≠ 1). A condição 'a > 0' garante que a função seja bem definida para todos os valores reais de x (evitando raízes de números negativos, por exemplo). A condição 'a ≠ 1' exclui a função constante f(x) = 1, que não exibe o crescimento ou decaimento característico das funções exponenciais."
+        },
+        {
+          "id": "c",
+          "text": "A base deve ser maior ou igual a um e menor que dez",
+          "correct": false,
+          "explanation": "Incorreta. Esta condição é muito restritiva. Ela exclui bases válidas entre 0 e 1 (como 0.5) e inclui a base 1, que é inválida. A base de uma função exponencial pode ser qualquer número real positivo, exceto 1."
+        },
+        {
+          "id": "d",
+          "text": "A base deve ser um número inteiro positivo qualquer",
+          "correct": false,
+          "explanation": "Incorreta. Embora a base deva ser positiva, não precisa ser um número inteiro. Além disso, a base não pode ser igual a 1, mesmo que seja um inteiro positivo, pois f(x) = 1^x resultaria em uma função constante (f(x) = 1), não exponencial."
+        }
+      ],
+      "explanation": "Correta. Para que uma função f(x) = a^x seja considerada exponencial, a base 'a' deve ser um número real maior que zero (a > 0) e diferente de um (a ≠ 1). A condição 'a > 0' garante que a função seja bem definida para todos os valores reais de x (evitando raízes de números negativos, por exemplo). A condição 'a ≠ 1' exclui a função constante f(x) = 1, que não exibe o crescimento ou decaimento característico das funções exponenciais.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No problema do tabuleiro de xadrez onde se colocam grãos de arroz dobrando a quantidade a cada casa (2, 4, 8, 16...), qual tipo de função matemática modela essa situação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Função linear, pois há uma relação de proporcionalidade direta",
+          "correct": false,
+          "explanation": "Incorreta. Uma função linear representa um crescimento constante por adição (aumenta sempre a mesma quantidade por unidade de tempo ou passo). No problema do xadrez, a quantidade de grãos *dobra*, o que é um crescimento multiplicativo e muito mais rápido do que o linear."
+        },
+        {
+          "id": "b",
+          "text": "Função exponencial, pois a base permanece constante e o expoente varia",
+          "correct": true,
+          "explanation": "Correta. A situação descrita, onde a quantidade de grãos dobra a cada casa (2, 4, 8, 16...), é um exemplo clássico de progressão geométrica. Isso é modelado por uma função exponencial, onde a base (neste caso, 2, representando o dobro) permanece constante e o número da casa (a variável independente) atua como expoente (f(n) = 2^n)."
+        },
+        {
+          "id": "c",
+          "text": "Função quadrática, pois os valores crescem de forma acelerada",
+          "correct": false,
+          "explanation": "Incorreta. Embora as funções quadráticas apresentem um crescimento acelerado, o padrão de 'dobrar a cada casa' é característico de um crescimento multiplicativo constante, o que é modelado por uma função exponencial, não quadrática. Uma função quadrática tem a variável elevada ao quadrado na base (ex: f(x) = x²), enquanto aqui a variável está no expoente."
+        },
+        {
+          "id": "d",
+          "text": "Função logarítmica, pois envolve potências sucessivas de um número",
+          "correct": false,
+          "explanation": "Incorreta. Funções logarítmicas são o inverso das funções exponenciais. Elas são usadas para encontrar o expoente necessário para atingir um determinado valor, e não para modelar diretamente o crescimento multiplicativo que ocorre na situação apresentada."
+        }
+      ],
+      "explanation": "Correta. A situação descrita, onde a quantidade de grãos dobra a cada casa (2, 4, 8, 16...), é um exemplo clássico de progressão geométrica. Isso é modelado por uma função exponencial, onde a base (neste caso, 2, representando o dobro) permanece constante e o número da casa (a variável independente) atua como expoente (f(n) = 2^n).",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Na fórmula de juros compostos M = C(1 + i)^t, onde M é o montante, C é o capital, i é a taxa e t é o tempo, por que essa fórmula representa uma função exponencial?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque o montante cresce proporcionalmente ao tempo de aplicação",
+          "correct": false,
+          "explanation": "Incorreta. O montante em juros compostos não cresce *proporcionalmente* ao tempo, o que caracterizaria um crescimento linear. Em vez disso, ele cresce de forma acelerada, pois os juros incidem sobre o capital inicial mais os juros já acumulados, configurando um crescimento exponencial."
+        },
+        {
+          "id": "b",
+          "text": "Porque o capital inicial é multiplicado pela taxa de juros",
+          "correct": false,
+          "explanation": "Incorreta. Embora o capital inicial seja multiplicado por um fator que inclui a taxa de juros, esta afirmação é uma descrição parcial e não explica a natureza exponencial da função. A multiplicação inicial ocorre também em juros simples; o que torna a função exponencial é a forma como o tempo afeta o expoente, e não apenas a multiplicação pela taxa."
+        },
+        {
+          "id": "c",
+          "text": "Porque a variável tempo aparece como expoente de uma base constante",
+          "correct": true,
+          "explanation": "Correta. A fórmula M = C(1 + i)^t representa uma função exponencial porque a variável independente, que é o tempo (t), está localizada no expoente da potência. A base da potência, (1 + i), é uma constante para uma taxa de juros 'i' fixa. Essa estrutura é a definição fundamental de uma função exponencial, refletindo o efeito dos juros sobre juros ao longo do tempo."
+        },
+        {
+          "id": "d",
+          "text": "Porque a taxa de juros é aplicada de forma linear sobre o capital",
+          "correct": false,
+          "explanation": "Incorreta. Se a taxa de juros fosse aplicada de forma linear sobre o capital, estaríamos falando de juros simples (M = C * (1 + i * t)), onde o crescimento do montante é linear com o tempo. Nos juros compostos, a taxa é aplicada sobre o montante acumulado, resultando em um crescimento exponencial."
+        }
+      ],
+      "explanation": "Correta. A fórmula M = C(1 + i)^t representa uma função exponencial porque a variável independente, que é o tempo (t), está localizada no expoente da potência. A base da potência, (1 + i), é uma constante para uma taxa de juros 'i' fixa. Essa estrutura é a definição fundamental de uma função exponencial, refletindo o efeito dos juros sobre juros ao longo do tempo.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a característica de crescimento de uma função exponencial quando sua base é maior que um?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função é decrescente, pois valores maiores na base reduzem o resultado",
+          "correct": false,
+          "explanation": "Incorreta. Pelo contrário, quando a base (a) de uma função exponencial f(x) = a^x é maior que 1, a função é crescente. Isso significa que, à medida que a variável independente (x) aumenta, o valor da função também aumenta, e de forma acelerada. A função é decrescente apenas quando a base está entre 0 e 1 (0 < a < 1)."
+        },
+        {
+          "id": "b",
+          "text": "A função oscila entre valores positivos e negativos conforme o expoente",
+          "correct": false,
+          "explanation": "Incorreta. Uma função exponencial com base positiva (a > 0) sempre produzirá valores positivos, independentemente do valor do expoente 'x'. Portanto, ela não oscila entre valores positivos e negativos. A oscilação é característica de outros tipos de funções, como as trigonométricas."
+        },
+        {
+          "id": "c",
+          "text": "A função é crescente, apresentando aumento progressivo dos valores",
+          "correct": true,
+          "explanation": "Correta. Para uma função exponencial f(x) = a^x, se a base 'a' é maior que 1 (a > 1), a função é classificada como crescente. Isso implica que, conforme os valores da variável 'x' aumentam, os valores de f(x) também aumentam de maneira progressiva e acelerada, como observado em fenômenos de crescimento populacional ou juros compostos."
+        },
+        {
+          "id": "d",
+          "text": "A função permanece constante, independentemente do valor do expoente",
+          "correct": false,
+          "explanation": "Incorreta. Uma função exponencial só permaneceria constante se sua base fosse igual a 1 (1^x = 1), o que é uma condição excluída pela definição de função exponencial. Se a base é maior que 1, a função é crescente, não constante."
+        }
+      ],
+      "explanation": "Correta. Para uma função exponencial f(x) = a^x, se a base 'a' é maior que 1 (a > 1), a função é classificada como crescente. Isso implica que, conforme os valores da variável 'x' aumentam, os valores de f(x) também aumentam de maneira progressiva e acelerada, como observado em fenômenos de crescimento populacional ou juros compostos.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Para que uma função exponencial seja decrescente, qual condição deve ser satisfeita em relação à sua base?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base deve estar entre zero e um, excluindo esses valores extremos",
+          "correct": true,
+          "explanation": "Correta. Para que uma função exponencial da forma f(x) = a^x seja decrescente, a base 'a' deve satisfazer a condição de ser maior que zero e menor que um (0 < a < 1). Nesses casos, à medida que o expoente 'x' aumenta, o valor da função f(x) diminui. Por exemplo, na função f(x) = (1/2)^x, para x=1, f(x)=0.5; para x=2, f(x)=0.25, mostrando um decréscimo."
+        },
+        {
+          "id": "b",
+          "text": "A base deve ser igual a zero ou igual a um",
+          "correct": false,
+          "explanation": "Incorreta. Se a base for igual a zero (a=0), a função 0^x é indefinida para x ≤ 0 e é 0 para x > 0, o que não se enquadra na definição de função exponencial. Se a base for igual a um (a=1), a função 1^x é sempre igual a 1 para qualquer x, resultando em uma função constante, e não uma função exponencial decrescente."
+        },
+        {
+          "id": "c",
+          "text": "A base deve ser maior que um e menor que dez",
+          "correct": false,
+          "explanation": "Incorreta. Uma função exponencial é definida pela forma f(x) = a^x. Se a base 'a' for maior que 1 (e menor que 10, que é uma condição irrelevante para a característica de ser crescente ou decrescente), a função será crescente. Isso significa que, à medida que 'x' aumenta, o valor de f(x) também aumenta."
+        },
+        {
+          "id": "d",
+          "text": "A base deve ser um número negativo qualquer",
+          "correct": false,
+          "explanation": "Incorreta. Para que uma expressão seja considerada uma função exponencial válida, sua base deve ser sempre um número positivo. Se a base fosse negativa, a função não estaria definida para todos os números reais, especialmente para expoentes fracionários (como, por exemplo, a raiz quadrada de um número negativo, que não é um número real)."
+        }
+      ],
+      "explanation": "Correta. Para que uma função exponencial da forma f(x) = a^x seja decrescente, a base 'a' deve satisfazer a condição de ser maior que zero e menor que um (0 < a < 1). Nesses casos, à medida que o expoente 'x' aumenta, o valor da função f(x) diminui. Por exemplo, na função f(x) = (1/2)^x, para x=1, f(x)=0.5; para x=2, f(x)=0.25, mostrando um decréscimo.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Dada a função f(x) = (6 - 2a)^x, para que valores de 'a' essa função será decrescente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "a deve ser maior que 2 e menor que 3",
+          "correct": false,
+          "explanation": "Incorreta. Embora o limite superior (a < 3) esteja correto, o limite inferior (a > 2) não está. A condição correta para a base ser menor que 1 é que 'a' seja maior que 5/2 (ou 2.5). Se 'a' fosse, por exemplo, 2.1 (que está entre 2 e 3), a base seria 6 - 2(2.1) = 6 - 4.2 = 1.8. Uma base de 1.8 tornaria a função crescente, não decrescente."
+        },
+        {
+          "id": "b",
+          "text": "a deve ser maior que 5/2 e menor que 3",
+          "correct": false,
+          "explanation": "Correta. Para que uma função exponencial f(x) = b^x seja decrescente, sua base 'b' deve satisfazer a condição 0 < b < 1. Na função dada, a base é (6 - 2a). Assim, precisamos que 0 < (6 - 2a) < 1. Resolvendo a primeira parte, 6 - 2a > 0, obtemos -2a > -6, o que implica a < 3. Resolvendo a segunda parte, 6 - 2a < 1, obtemos -2a < -5, o que implica a > 5/2. Combinando as duas condições, 'a' deve ser maior que 5/2 e menor que 3 (5/2 < a < 3). Este intervalo garante que a base da função estará entre 0 e 1, tornando-a decrescente."
+        },
+        {
+          "id": "c",
+          "text": "a deve ser maior que 3 e menor que 6",
+          "correct": false,
+          "explanation": "Incorreta. Se 'a' fosse maior que 3, a base (6 - 2a) seria um número negativo. Por exemplo, se a=4, a base seria 6 - 2(4) = 6 - 8 = -2. Funções exponenciais não podem ter base negativa, pois isso resultaria em valores não reais para certos expoentes, como frações."
+        },
+        {
+          "id": "d",
+          "text": "a deve ser maior que 1/3 e menor que 5/2",
+          "correct": true,
+          "explanation": "Incorreta. Para que a função seja decrescente, a base (6 - 2a) deve estar entre 0 e 1. A condição 0 < (6 - 2a) < 1 leva a 'a' ser maior que 5/2 e menor que 3. O intervalo apresentado nesta alternativa (1/3 < a < 5/2) não corresponde a essa condição. Por exemplo, se a=2, a base seria 6 - 2(2) = 2, o que tornaria a função crescente, não decrescente."
+        }
+      ],
+      "explanation": "Incorreta. Para que a função seja decrescente, a base (6 - 2a) deve estar entre 0 e 1. A condição 0 < (6 - 2a) < 1 leva a 'a' ser maior que 5/2 e menor que 3. O intervalo apresentado nesta alternativa (1/3 < a < 5/2) não corresponde a essa condição. Por exemplo, se a=2, a base seria 6 - 2(2) = 2, o que tornaria a função crescente, não decrescente.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "06_308561_Função Exponencial.pdf",
+  "coletado_em": "2026-09-23T20:56:45"
+}

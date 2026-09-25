@@ -1,0 +1,625 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 10,
+  "ordem_no_curso": "106.08",
+  "titulo": "Geometria Plana X - Quadriláteros",
+  "codigo_aula": "321952",
+  "video_id": "CZBwKl1UNQ4=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:32:57",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/CZBwKl1UNQ4%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=425202%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Plana X - Quadriláteros\n\n## Introdução e classificação geral\nVamos lá, meus queridos. Continuem aqui com a nossa matriz de Matemática. Quadriláteros: quadri, quatro lados. Falem comigo: quadriláteros. Beleza? É importantíssimo!\n\nComo é que nós podemos classificar os quadriláteros? A classificação das figuras que têm quatro lados é a seguinte: eles podem ser trapézios ou podem ser não trapézios. Os nomes às vezes confundem, mas é isso mesmo: podemos classificar dessas duas formas, correto.\n\nVocê pode pensar: “Mas trapézio... eu lembro daquela figura mais ou menos assim...” Calma. O grande lance, quando classificamos os quadriláteros, é que o que define a sua forma são as propriedades. Então é importante perceber as propriedades, beleza?\n\n## Diagonais em quadriláteros\nTendo um quadrilátero, suas diagonais... Vamos relembrar o que é uma diagonal. É o seguinte: eu tenho aqui os vértices desse quadrilátero A, B, C, D. A e B são vértices consecutivos, um após o outro. Quando eu pego um vértice e ligo a um outro vértice que não é consecutivo, eu crio entre eles um segmento de reta. Esse segmento é a diagonal.\n\nPor exemplo, se eu pego A e C, são vértices não consecutivos. Ligo e crio uma diagonal AC. Do mesmo modo, posso pegar B e D, que também são não consecutivos, ligar e criar a diagonal BD. Dessa forma, nós temos as diagonais.\n\n## Diagonais iguais ou diferentes\nAlguns quadriláteros têm diagonais com a mesma medida, como ocorre, por exemplo, com o quadrado. No quadrado, tanto uma diagonal quanto a outra são idênticas, têm a mesma medida.\n\nPodemos ter, porém, diagonais diferentes, como veremos no losango daqui a pouco.\n\nMas primeiro, vamos falar sobre os trapézios, correto? Vamos organizar: primeiro falamos dos quadriláteros que são trapézios e, depois, dos quadriláteros que não são trapézios. Então os quadriláteros podem ser trapézios e não trapézios. Vamos falar primeiramente dos trapézios.\n\n## Trapézios: definição e tipos\nQuando falo trapézio, queridos, estou dizendo: pelo menos dois lados de um quadrilátero, se forem paralelos, já caracterizam um trapézio. Beleza? Então, por exemplo, se eu tenho um lado aqui e outro lá em cima paralelos, isso já é um trapézio. Esses dois lados paralelos são as bases.\n\nSe, além disso, as laterais (os lados não paralelos) forem congruentes, ou seja, do mesmo tamanho, teremos um trapézio isósceles. Nesse caso, chamo a base de cima de base menor e a de baixo de base maior, corretos? As laterais iguais caracterizam o “isósceles”. Por que é trapézio? Porque tem pelo menos duas bases paralelas: base menor e base maior. E por que isósceles? Porque as laterais são iguais.\n\nQual seria a altura dessa figura? A altura é sempre perpendicular à base. Aqui, a altura é um segmento pontilhado que liga as bases em 90 graus. Então, para ser trapézio: pelo menos dois lados paralelos. Se as laterais forem iguais, é trapézio isósceles.\n\nOutro tipo importante: trapézio retângulo. O trapézio retângulo tem, além das bases paralelas (base menor e base maior), uma das laterais formando ângulo de 90 graus com as bases. Na verdade, os dois ângulos adjacentes a essa lateral são retos (90°). É por isso que chamamos de trapézio retângulo. Aqui não temos simetria como no isósceles, mas temos um lado perpendicular às bases.\n\nPor fim, temos o trapézio escaleno. No trapézio escaleno, as bases continuam sendo paralelas (base maior e base menor), mas as laterais são distintas, não são congruentes. E, de novo, não podemos esquecer: a altura é sempre perpendicular à base. No trapézio retângulo, uma das laterais coincide com a própria altura, justamente por formar 90° com as bases.\n\n## Fórmula da área do trapézio\nImportantíssimo: a área do trapézio, independente do tipo (isósceles, retângulo, escaleno), é dada por:\n- base maior + base menor, tudo isso vezes a altura, dividido por 2.\nEm outras palavras: área = (B + b) × h / 2. Lembrando: a altura é perpendicular às bases.\n\n## Paralelogramos: definição e exemplos\nAgora, vamos falar sobre paralelogramos. Quem são os paralelogramos? Lembrem: no trapézio, só as bases (dois lados) são paralelas. Nos paralelogramos, os lados opostos são iguais e paralelos. Por isso, exemplos de paralelogramos são: quadrado, retângulo e losango.\n\nNo quadrado, o lado oposto é igual e paralelo; no retângulo, idem; no losango, idem. Então podemos afirmar: todo quadrado é um paralelogramo; todo retângulo é um paralelogramo; todo losango é um paralelogramo. Por quê? Porque seus lados opostos, além de iguais, são paralelos. Isso caracteriza um paralelogramo.\n\nQuadrados, retângulos e losangos são paralelogramos porque cumprem as exigências de lados opostos iguais e paralelos.\n\n## Propriedades importantes dos paralelogramos\nVamos a características importantes dos paralelogramos:\n- A soma de dois ângulos consecutivos é 180°. Por exemplo, em um retângulo: 90 + 90 = 180. Em qualquer paralelogramo, ângulos consecutivos somam 180°.\n- A soma dos ângulos internos de qualquer quadrilátero é 360°. Isso vem da fórmula 180° × (n − 2) para polígonos. Para n = 4: 180° × (4 − 2) = 360°.\n- As diagonais de um paralelogramo se cortam no ponto médio (dividem-se ao meio). No quadrado, no retângulo e no losango, as diagonais se cortam ao meio. No trapézio, em geral, as diagonais não se cortam ao meio.\n- Nos paralelogramos, os lados opostos são congruentes (iguais) e os ângulos opostos também são congruentes (iguais).\n\nExistem três tipos de paralelogramo que estamos destacando: retângulo, quadrado e losango. Registrem isso.\n\n## Diagrama de inclusão dos quadriláteros e raciocínio lógico\nAgora uma situação muito interessante que cai em prova, inclusive em Raciocínio Lógico, usando esses conceitos de Geometria.\n\n> 🎯 Dicas de prova: Entender as relações de inclusão entre quadriláteros é fundamental. Saber quem está contido em quem evita erros em proposições do tipo “todo X é Y”.\n\nEu gosto do diagrama de inclusão dos quadriláteros:\n- O conjunto maior abrange os trapézios (quem está “fora” desse subconjunto específico de paralelogramos é, ainda assim, um quadrilátero; mas pensem no diagrama: trapézios formam um conjunto).\n- Dentro dos quadriláteros, temos o conjunto dos paralelogramos.\n- Dentro de paralelogramos, temos os losangos e os retângulos como subconjuntos.\n- A interseção entre losango e retângulo é o quadrado.\n\nCom esse diagrama, respondemos proposições:\n- Todo paralelogramo é um trapézio? Pelo diagrama proposto (considerando trapézio como “tem pelo menos um par de lados paralelos”), sim: o conjunto dos paralelogramos está contido no dos trapézios, então todo paralelogramo é um trapézio.\n- Todo quadrado é um losango? Sim, pois o quadrado está na interseção entre retângulo e losango.\n- Todo quadrado é um retângulo? Sim, pelas propriedades compartilhadas.\n- Nem todo retângulo é quadrado. Isso também é verdade: o retângulo tem ângulos retos, mas não necessariamente lados iguais.\n- Todo quadrado é um paralelogramo? Sim.\n- Todo quadrado é um trapézio (no sentido de “pelo menos um par de lados paralelos”)? Sim, dentro desse esquema de inclusão.\n\nEsse diagrama quebra muitas ideias erradas. Em provas de Raciocínio Lógico, às vezes aparecem proposições apenas com essas inclusões, e muita gente erra por não ter esse mapa mental.\n\n> 🎯 Dicas de prova: Todo quadrado é retângulo e losango; todo retângulo e todo losango são paralelogramos; todo paralelogramo é trapézio (se trapézio for considerado como tendo pelo menos um par de lados paralelos). Nem todo retângulo é quadrado, nem todo losango é quadrado.\n\nEm materiais e PDFs, eu gosto de reunir uma tabela com propriedades:\n- O quadrado tem as propriedades do retângulo e do losango simultaneamente, e mais algumas.\n- O retângulo tem ângulos retos e lados opostos iguais e paralelos.\n- O losango tem quatro lados iguais e lados opostos paralelos.\n- Paralelogramos têm lados opostos paralelos e congruentes; diagonais que se cortam ao meio; ângulos consecutivos suplementares.\n\nPor isso:\n- Todo quadrado é retângulo e losango, logo é paralelogramo, e, no sentido amplo, é também trapézio.\n- O trapézio, por sua vez, não necessariamente tem todas as propriedades dos paralelogramos.\n\n## Encerramento e próxima etapa\nGente, esse bloquinho agora sim finaliza a teoria. Chega de tanta teoria. No próximo encontro, faremos questões envolvendo os quadriláteros para ficarmos craques. Ainda veremos a parte de circunferência, se estiver no seu edital, para fechar mais.\n\nÉ devagarzinho, passo a passo. Quem quer correr demais acaba tendo que refazer. Eu prefiro ir devagar e sempre, pegando cada detalhe. Você vai só uma vez, querido, e depois é só treinar. Daqui a pouco eu volto com mais questões. Agora vem a parte prática sobre os quadriláteros. Show de bola!",
+  "transcricao_meta": {
+    "title": "Geometria Plana X - Quadriláteros",
+    "subject": "Matemática, Estatística e Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 28672,
+    "createdAt": "2026-02-05T23:03:25.433Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: quadriláteros, classificação em trapézios e paralelogramos, propriedades-chave de ângulos, lados e diagonais, fórmulas e técnicas para resolver questões.\nPrincipais pontos: \n- Soma dos ângulos internos: trezentos e sessenta.\n- Trapézio: “as bases sempre paralelas”; área = “base maior, mais base menor vez altura sobre dois”.\n- Paralelogramo: lados opostos paralelos e congruentes; diagonais cortam-se no ponto médio; ângulos consecutivos somam cento e oitenta graus.\n\n## 1. Base / Conceitos Fundamentais\n- Quadriláteros: polígonos com 4 lados.\n- Diagonal: segmento que liga vértices não consecutivos.\n- Soma dos ângulos internos de qualquer quadrilátero: trezentos e sessenta (ou 180° × (n − 2) com n = 4).\n- Trapézio: quadrilátero com pelo menos um par de lados paralelos. “As bases sempre paralelas.”\n  - Partes: base maior, base menor, laterais (lados não paralelos), altura (perpendicular à base, noventa graus).\n- Paralelogramo: quadrilátero com dois pares de lados opostos paralelos. Caracterização: “os seus lados opostos, além de ser iguais, eles são paralelos.”\n  - Exemplos: retângulo, losango, quadrado.\n\n## 2. Como Funciona / Distinções\n- Trapézio vs Paralelogramo:\n  - Trapézio: apenas um par de lados paralelos (as bases).\n  - Paralelogramo: dois pares de lados opostos paralelos e congruentes; ângulos consecutivos suplementares; diagonais cortam-se no ponto médio.\n- Inclusões verdadeiras:\n  - Todo quadrado é um paralelogramo; todo retângulo é um paralelogramo; todo losango é um paralelogramo.\n  - Todo quadrado é um retângulo e é um losango.\n- Tipos de trapézio:\n  - Trapézio isósceles: “se essas laterais forem iguais”.\n  - Trapézio retângulo: uma lateral faz noventa graus com a base → coincide com a altura.\n  - Trapézio escaleno: laterais não paralelas com comprimentos diferentes.\n- Propriedades angulares:\n  - Paralelogramo: ângulos consecutivos somam cento e oitenta graus; ângulos opostos são congruentes.\n  - Qualquer quadrilátero: soma dos ângulos internos trezentos e sessenta.\n- Diagonais:\n  - Paralelogramo: cortam-se no ponto médio (se interceptam ao meio).\n  - Trapézio (em geral): não se cortam no meio.\n\n## 3. Aplicação Prática / Técnicas\n- Identificação rápida:\n  - Viu só um par de lados paralelos? É candidato a trapézio. Cheque se o outro par não é paralelo.\n  - Viu dois pares de lados opostos paralelos/iguais? É paralelogramo → pode ser retângulo, losango ou quadrado.\n- Área do trapézio: memorize a forma literal para prova — “base maior, mais base menor vez altura sobre dois”.\n- Ângulos em paralelogramos:\n  - Se um ângulo é α, o consecutivo é 180° − α; o oposto é α.\n- Cadeia de classificação via propriedades:\n  - Lados opostos paralelos e congruentes → paralelogramo.\n  - + quatro ângulos retos → retângulo.\n  - + quatro lados congruentes → losango.\n  - Retângulo + losango simultaneamente → quadrado.\n- Altura:\n  - Trapézio: traçar perpendicular à base; no trapézio retângulo, uma lateral já é a altura.\n- Diagonais:\n  - Se “cortam-se ao meio” → é paralelogramo (inclui quadrado, retângulo, losango). Se não, pode ser trapézio.\n\n## 4. Exemplos e Casos Resolvidos\n- Ex. 1 (Soma dos ângulos internos):\n  - Três ângulos de um quadrilátero: 80°, 100°, 90°. Quarto ângulo = 360° − (80 + 100 + 90) = 90°.\n- Ex. 2 (Ângulos consecutivos em losango/paralelogramo):\n  - Um ângulo mede 110°. Consecutivo = 180° − 110° = 70°. Oposto = 110°.\n- Ex. 3 (Classificação por paralelismo):\n  - Figura com apenas um par de lados paralelos → trapézio. Se laterais iguais → trapézio isósceles; se uma lateral faz 90° com base → trapézio retângulo.\n- Ex. 4 (Diagonais):\n  - Se diagonais se cortam no ponto médio, mesmo com comprimentos diferentes → paralelogramo (pode ser losango, retângulo ou não). Se não cortam ao meio → não é paralelogramo; pode ser trapézio.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: “Pelo menos dois lados paralelos” define trapézio; paralelogramo exige dois pares de lados opostos paralelos e iguais.\n\n- Falso: “Todo o paralelogramo é um trapézio” e “todo o quadrado é um trapézio” (pela definição clássica de trapézio com apenas um par de lados paralelos).\n- Confundir altura com lado:\n  - No trapézio, a altura é qualquer segmento perpendicular às bases; no trapézio retângulo, uma lateral coincide com a altura (noventa graus).\n- Diagonais:\n  - “Diagonais se cortam ao meio” é propriedade de paralelogramo; no trapézio comum isso não ocorre.\n- Ângulos:\n  - Esquecer que “a soma dos dois ângulos consecutivos é cento e oitenta graus” apenas em paralelogramos; não é regra geral do trapézio.\n- Inclusões:\n  - Verdades para lembrar: “todo o quadrado é um paralelogramo”, “todo o retângulo é um paralelogramo”, “todo o losango é um paralelogramo”, “todo o quadrado é um retângulo”, “todo o quadrado é um losango”.\n- Terminologia:\n  - Bases do trapézio são os lados paralelos (base maior e base menor). Laterais são os não paralelos.\n\n> Dica de Prova: Memorize a cadeia segura: Quadrado ⊂ Retângulo ⊂ Paralelogramo e Quadrado ⊂ Losango ⊂ Paralelogramo. Quadrado = interseção de Retângulo com Losango.",
+  "resumo_bolso": "# Geometria Plana X - Quadriláteros\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Quadrilátero**: polígono com **4 lados**; soma dos ângulos internos = **360°** (ou 180° × (n − 2) com n = 4).\n* **Diagonal**: segmento que liga **vértices não consecutivos**.\n* **Trapézio**: quadrilátero com **pelo menos um par de lados paralelos** → “**as bases sempre paralelas**” (base maior e base menor).\n* **Partes do trapézio**: base maior, base menor, **laterais** (lados não paralelos), **altura** (segmento **perpendicular à base**, 90°).\n* **Paralelogramo**: quadrilátero com **dois pares de lados opostos paralelos**; caracterização: “**os seus lados opostos, além de ser iguais, eles são paralelos**”.\n* **Exemplos de paralelogramo**: **retângulo, losango, quadrado**.\n* **Ângulos em qualquer quadrilátero**: soma dos ângulos internos = **360°**.\n* **Ângulos em paralelogramo**: **consecutivos suplementares** (somam 180°); **opostos congruentes**.\n* **Diagonais do paralelogramo**: **cortam-se no ponto médio** (se interceptam ao meio).\n* **Trapézio isósceles**: laterais não paralelas **iguais**.\n* **Trapézio retângulo**: **uma lateral faz 90° com a base** → coincide com a altura.\n* **Trapézio escaleno**: laterais não paralelas com **comprimentos diferentes**.\n* **Diagonais no trapézio comum**: em geral **não se cortam ao meio**.\n* **Área do trapézio**: “**base maior, mais base menor vez altura sobre dois**”.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Trapézio vs Paralelogramo\n\n| Aspecto                    | Trapézio                                                                 | Paralelogramo                                                                 |\n|---------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------------------------|\n| Definição                 | Quadrilátero com **pelo menos um par** de lados paralelos (as bases)    | Quadrilátero com **dois pares** de lados opostos paralelos                   |\n| Versão “clássica” em prova| “**Apenas um par** de lados paralelos (as bases)”                       | **Dois pares** de lados opostos paralelos e **congruentes**                  |\n| Lados opostos             | Só as bases são paralelas                                               | Lados opostos **paralelos e iguais**                                         |\n| Ângulos consecutivos      | Não há regra geral                                                       | **Suplementares** (somam 180°)                                               |\n| Diagonais                 | Em geral **não** se cortam ao meio                                      | **Cortam-se no ponto médio** (se interceptam ao meio)                        |\n| Exemplos / subtipos       | Isósceles, retângulo, escaleno                                          | Pode ser **retângulo, losango ou quadrado**                                  |\n| Inclusões                 | Não é dito que contenha paralelogramo                                   | Todo **quadrado, retângulo e losango** é paralelogramo                       |\n\n---\n\n### Inclusões entre quadrado, retângulo e losango\n\n| Afirmativa                                      | Situação no resumo original |\n|-------------------------------------------------|-----------------------------|\n| Todo **quadrado** é **paralelogramo**           | Verdadeira                  |\n| Todo **retângulo** é **paralelogramo**          | Verdadeira                  |\n| Todo **losango** é **paralelogramo**            | Verdadeira                  |\n| Todo **quadrado** é **retângulo**               | Verdadeira                  |\n| Todo **quadrado** é **losango**                 | Verdadeira                  |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Soma dos ângulos internos do quadrilátero**\n\n* **Regra**: \\( S = 180^\\circ \\times (n - 2) \\), com n = 4 → **S = 360°**.\n* **Aplicação**: achar ângulo faltante: **360° − soma dos demais**.\n* **Exemplo**: 80° + 100° + 90° → faltante = 360° − (80 + 100 + 90) = **90°**.\n\n---\n\n**2. Área do trapézio**\n\n* **Regra**: \\( A = \\dfrac{(B + b)\\cdot h}{2} \\)  \n  → “**base maior, mais base menor vez altura sobre dois**”.\n* **Aplicação**: qualquer trapézio (isósceles, retângulo, escaleno).\n\n---\n\n**3. Ângulos em paralelogramo**\n\n* **Regra**:  \n  – Ângulos **consecutivos**: somam **180°** (são suplementares).  \n  – Ângulos **opostos**: são **congruentes**.\n* **Aplicação**: dado um ângulo, achar consecutivo e oposto.\n* **Exemplo**: se um ângulo é α, o consecutivo é **180° − α**; o oposto é **α**.  \n  – Ex.: α = 110° → consecutivo = 70°; oposto = **110°**.\n\n---\n\n**4. Critério de paralelogramo pelas diagonais**\n\n* **Regra**: se as diagonais **se cortam no ponto médio** (“se interceptam ao meio”), a figura é **paralelogramo** (pode ser retângulo, losango ou quadrado).\n* **Aplicação**: questões em que se informa que as diagonais são divididas em partes iguais no ponto de interseção.\n* **Contraponto**: se **não** cortam ao meio → **não é paralelogramo**; pode ser trapézio.\n\n---\n\n**5. Cadeia de classificação**\n\n* **Regra**:  \n  – Lados opostos paralelos e congruentes → **paralelogramo**.  \n  – + **quatro ângulos retos** → **retângulo**.  \n  – + **quatro lados congruentes** → **losango**.  \n  – **Retângulo + losango simultaneamente** → **quadrado**.\n* **Inclusões seguras**:  \n  – **Quadrado ⊂ Retângulo ⊂ Paralelogramo**.  \n  – **Quadrado ⊂ Losango ⊂ Paralelogramo**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **Definição de trapézio em prova**  \n   *Falso*: “Pelo menos dois lados paralelos” define trapézio.  \n   *Correto*: trapézio é quadrilátero com **pelo menos um par** de lados paralelos; em muitas questões, usam a definição clássica de **apenas um par** de lados paralelos (as bases).\n\n2. **“Todo paralelogramo é trapézio” / “todo quadrado é trapézio”**  \n   *Falso* pela definição clássica de trapézio com **apenas um par** de lados paralelos.  \n   Paralelogramo tem **dois pares** de lados opostos paralelos e iguais.\n\n3. **Ângulos consecutivos em qualquer quadrilátero**  \n   *Erro*: achar que “a soma dos dois ângulos consecutivos é 180°” vale para **qualquer quadrilátero**.  \n   *Correto*: essa propriedade é **exclusiva de paralelogramos**.\n\n4. **Diagonais se cruzam x cortam-se ao meio**  \n   *Erro*: pensar que “se as diagonais se cortam, então é paralelogramo”.  \n   *Correto*: é preciso que **“se cortem ao meio”** (ponto médio de ambas); no trapézio comum isso **não ocorre**.\n\n5. **Confundir altura com lado no trapézio**  \n   *Erro*: tratar qualquer lateral como altura.  \n   *Correto*: a **altura** é qualquer segmento **perpendicular às bases**; só no **trapézio retângulo** uma lateral coincide com a altura (faz 90° com a base).\n\n---\n\n## 📋 Checklist Final\n\n* Sei que **quadrilátero** é polígono com **4 lados** e soma dos ângulos internos = **360°**?\n* Lembro a definição de **diagonal** (liga vértices não consecutivos)?\n* Diferencio **trapézio** (pelo menos um par de lados paralelos; bases sempre paralelas) de **paralelogramo** (dois pares de lados opostos paralelos e iguais)?\n* Sei identificar **trapézio isósceles**, **retângulo** e **escaleno** pelas laterais e ângulos?\n* Memorizei a **fórmula da área do trapézio**: “**base maior, mais base menor vez altura sobre dois**”?\n* Lembro que em **paralelogramo**:  \n  – ângulos consecutivos somam **180°**;  \n  – ângulos opostos são **congruentes**;  \n  – diagonais **se cortam no ponto médio**?\n* Sei que, se as diagonais **se cortam ao meio**, a figura é **paralelogramo** (pode ser quadrado, retângulo ou losango)?\n* Fixei as inclusões:  \n  – Todo **quadrado, retângulo e losango** é **paralelogramo**;  \n  – Todo **quadrado** é **retângulo** e **losango** ao mesmo tempo?",
+  "mapa_mental": "# 🧮 Geometria Plana X – Quadriláteros\n## 🎯 Conceitos Gerais\n### 💡 Quadriláteros\n- Polígonos 4 lados\n- 4 ângulos internos\n- 2 diagonais\n- Soma ângulos 360°\n### 🧮 Fórmula Ângulos\n- Soma interna\n- 180° × (n − 2)\n- n = 4\n- Resultado 360°\n### 📐 Diagonais\n- Vértices não consecutivos\n- Segmentos internos\n- 2 por quadrilátero\n- Propriedades classificatórias\n\n## 📏 Trapézios\n### 💡 Definição Trapézio\n- Quadrilátero convexo\n- Pelo menos 1 par paralelo\n- Bases paralelas\n- Laterais não paralelas\n### 🧱 Partes Trapézio\n- Base maior\n- Base menor\n- Laterais oblíquas\n- Altura perpendicular\n### 🧮 Área Trapézio\n- Fórmula área\n- (B + b) · h / 2\n- B base maior\n- b base menor\n- h altura\n### 🧩 Tipos Trapézio\n- Trapézio isósceles\n- Trapézio retângulo\n- Trapézio escaleno\n- Classificação laterais\n### 📐 Propriedades Trapézio\n- Bases paralelas\n- Diagonais gerais\n- Não cortam ao meio\n- Altura qualquer perpendicular\n\n## 🔷 Paralelogramos\n### 💡 Definição Paralelogramo\n- Quadrilátero convexo\n- 2 pares lados paralelos\n- Lados opostos congruentes\n- Bases opostas paralelas\n### 📐 Propriedades Lados\n- Lados opostos iguais\n- Lados opostos paralelos\n- Perímetro por lados\n- Não exige ângulo reto\n### 📐 Propriedades Ângulos\n- Ângulos consecutivos 180°\n- Ângulos opostos congruentes\n- Par adjacente suplementar\n- Soma total 360°\n### 🔢 Propriedades Diagonais\n- Diagonais se cruzam\n- Cortam-se ao meio\n- Mesmo ponto médio\n- Critério paralelogramo\n### 🧬 Subtipos Paralelogramo\n- Retângulo\n- Losango\n- Quadrado\n- Paralelogramo genérico\n\n## 🧩 Relações e Classificações\n### 🧭 Inclusões Importantes\n- Todo retângulo paralelogramo\n- Todo losango paralelogramo\n- Todo quadrado paralelogramo\n- Quadrado retângulo e losango\n### 🧱 Cadeia Classificatória\n- Lados opostos paralelos\n- Lados opostos congruentes\n- Paralelogramo identificado\n- + 4 ângulos retos → retângulo\n- + 4 lados congruentes → losango\n### 🧠 Dicas de Prova\n- Trapézio 1 par paralelo\n- Paralelogramo 2 pares paralelos\n- Diagonais ao meio → paralelogramo\n- Quadrado interseção\n- Retângulo ∩ losango",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Quadriláteros Básicos",
+      "description": "Quadriláteros Básicos — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quantos lados possui um quadrilátero?",
+          "back": "Quatro lados.",
+          "hint": "Refere-se ao prefixo do nome da figura",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "quadrilateros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como se define a diagonal de um quadrilátero?",
+          "back": "Segmento de reta que une dois vértices não consecutivos.",
+          "hint": "Pense na conexão entre pontos opostos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "quadrilateros"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Trapézios",
+      "description": "Trapézios — 7 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual critério classifica um quadrilátero como trapézio?",
+          "back": "Possuir pelo menos dois lados paralelos.",
+          "hint": "Pense na condição de paralelismo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Como são chamadas as bases de um trapézio?",
+          "back": "Base menor e base maior.",
+          "hint": "São dois elementos de tamanhos distintos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual propriedade adicional define um trapézio isósceles?",
+          "back": "As laterais são congruentes (iguais).",
+          "hint": "O nome sugere simetria lateral",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual propriedade dos lados caracteriza um trapézio retângulo?",
+          "back": "Uma das laterais é perpendicular (90 graus) às bases.",
+          "hint": "O nome remete a um ângulo específico",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Como deve estar orientada a altura de um trapézio em relação às bases?",
+          "back": "Sempre perpendicular à base.",
+          "hint": "Pense na relação angular com a base",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Por que uma lateral pode representar a altura no trapézio retângulo?",
+          "back": "Porque uma das suas laterais forma 90 graus com a base, coincidindo com a altura.",
+          "hint": "Pense na definição de trapézio retângulo",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a fórmula da área de um trapézio?",
+          "back": "(Base maior + base menor) vezes a altura sobre 2.",
+          "hint": "Envolve a média das bases e a altura",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Paralelogramos",
+      "description": "Paralelogramos — 3 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual relação define um paralelogramo quanto aos lados opostos?",
+          "back": "Os lados opostos são iguais e paralelos.",
+          "hint": "Pense na posição relativa dos lados",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "paralelogramo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a soma dos ângulos consecutivos de um paralelogramo?",
+          "back": "180 graus.",
+          "hint": "Pense na soma de ângulos suplementares",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "paralelogramo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Como se comportam as diagonais de um paralelogramo?",
+          "back": "Cortam-se no ponto médio.",
+          "hint": "Pense na bisseção das diagonais",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "paralelogramo"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Ângulos e Inclusões",
+      "description": "Ângulos e Inclusões — 2 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Quais são os três tipos de paralelogramo destacados no conteúdo?",
+          "back": "Retângulo, quadrado e losango.",
+          "hint": "São três figuras clássicas",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "paralelogramo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual relação de inclusão existe entre quadrado e retângulo?",
+          "back": "Todo quadrado é um retângulo, pois possui as mesmas propriedades.",
+          "hint": "Pense na hierarquia das formas",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "quadrado-retangulo"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal característica que define um quadrilátero como trapézio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Possui pelo menos dois lados paralelos entre si",
+          "correct": true,
+          "explanation": "Correta. A característica definidora de um trapézio é possuir, no mínimo, um par de lados opostos paralelos. Esses lados paralelos são chamados de bases do trapézio."
+        },
+        {
+          "id": "b",
+          "text": "Possui todos os ângulos internos medindo noventa graus",
+          "correct": false,
+          "explanation": "Incorreta. Um quadrilátero com todos os ângulos internos medindo noventa graus é um retângulo ou um quadrado. Um trapézio pode ter ângulos internos variados; apenas o trapézio retângulo possui dois ângulos internos de noventa graus."
+        },
+        {
+          "id": "c",
+          "text": "Possui diagonais que se cruzam perpendicularmente",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade de ter diagonais que se cruzam perpendicularmente é específica de quadriláteros como o losango e o quadrado. Trapézios em geral não apresentam essa característica."
+        },
+        {
+          "id": "d",
+          "text": "Possui todos os lados com medidas iguais",
+          "correct": false,
+          "explanation": "Incorreta. Um quadrilátero com todos os lados de medidas iguais é um losango ou um quadrado. Um trapézio, em sua forma mais geral, não exige que todos os lados tenham a mesma medida, apenas que um par de lados seja paralelo."
+        }
+      ],
+      "explanation": "Correta. A característica definidora de um trapézio é possuir, no mínimo, um par de lados opostos paralelos. Esses lados paralelos são chamados de bases do trapézio.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a fórmula para calcular a área de um trapézio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Base maior multiplicada pela base menor, dividido pela altura",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a base maior pela base menor e dividir pela altura não corresponde à fórmula correta para o cálculo da área de um trapézio, nem de qualquer outra figura geométrica padrão."
+        },
+        {
+          "id": "b",
+          "text": "Soma de todos os lados multiplicada pela altura",
+          "correct": false,
+          "explanation": "Incorreta. A soma de todos os lados de uma figura geométrica é o seu perímetro. Multiplicar o perímetro pela altura não resulta na área de um trapézio."
+        },
+        {
+          "id": "c",
+          "text": "Base multiplicada pela altura",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula 'Base multiplicada pela altura' é utilizada para calcular a área de paralelogramos, como retângulos, e não se aplica diretamente a trapézios. Para triângulos, a fórmula é (Base * Altura) / 2."
+        },
+        {
+          "id": "d",
+          "text": "Base maior mais base menor, multiplicado pela altura, dividido por dois",
+          "correct": true,
+          "explanation": "Correta. A área de um trapézio é calculada somando-se as medidas da base maior (B) e da base menor (b), multiplicando-se o resultado pela altura (h) – que é a distância perpendicular entre as bases – e dividindo-se tudo por dois. A fórmula é: Área = ((B + b) * h) / 2."
+        }
+      ],
+      "explanation": "Correta. A área de um trapézio é calculada somando-se as medidas da base maior (B) e da base menor (b), multiplicando-se o resultado pela altura (h) – que é a distância perpendicular entre as bases – e dividindo-se tudo por dois. A fórmula é: Área = ((B + b) * h) / 2.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a soma dos ângulos internos de qualquer quadrilátero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Trezentos e sessenta graus",
+          "correct": true,
+          "explanation": "Correta. A soma dos ângulos internos de qualquer polígono pode ser determinada pela fórmula (n - 2) * 180°, onde 'n' representa o número de lados do polígono. Para um quadrilátero, que possui 4 lados, a soma é (4 - 2) * 180° = 2 * 180° = 360°."
+        },
+        {
+          "id": "b",
+          "text": "Quatrocentos e cinquenta graus",
+          "correct": false,
+          "explanation": "Incorreta. Quatrocentos e cinquenta graus não é a soma dos ângulos internos de um quadrilátero. Esta soma é sempre fixa em 360 graus para qualquer figura de quatro lados."
+        },
+        {
+          "id": "c",
+          "text": "Duzentos e setenta graus",
+          "correct": false,
+          "explanation": "Incorreta. Duzentos e setenta graus não corresponde à soma dos ângulos internos de um quadrilátero ou de qualquer polígono regular."
+        },
+        {
+          "id": "d",
+          "text": "Cento e oitenta graus",
+          "correct": false,
+          "explanation": "Incorreta. Cento e oitenta graus é a soma dos ângulos internos de um triângulo, que é um polígono de três lados, não de um quadrilátero."
+        }
+      ],
+      "explanation": "Correta. A soma dos ângulos internos de qualquer polígono pode ser determinada pela fórmula (n - 2) * 180°, onde 'n' representa o número de lados do polígono. Para um quadrilátero, que possui 4 lados, a soma é (4 - 2) * 180° = 2 * 180° = 360°.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em um trapézio, como deve ser posicionada a altura em relação às bases?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Perpendicular às bases, formando ângulo de noventa graus",
+          "correct": true,
+          "explanation": "Correta. A altura de um trapézio é definida como a distância perpendicular entre suas duas bases paralelas. Isso significa que a linha que representa a altura deve formar um ângulo de noventa graus com as bases."
+        },
+        {
+          "id": "b",
+          "text": "Diagonal às bases, formando ângulo de quarenta e cinco graus",
+          "correct": false,
+          "explanation": "Incorreta. Uma linha diagonal conecta vértices não adjacentes e não é a altura. A altura é um segmento de reta que liga as bases de forma perpendicular."
+        },
+        {
+          "id": "c",
+          "text": "Inclinada às bases, formando ângulo de sessenta graus",
+          "correct": false,
+          "explanation": "Incorreta. Uma linha inclinada às bases não pode ser considerada a altura. A altura é sempre a menor distância entre as bases, e essa menor distância é obtida apenas quando a linha é perpendicular a ambas."
+        },
+        {
+          "id": "d",
+          "text": "Paralela às bases, mantendo a mesma direção",
+          "correct": false,
+          "explanation": "Incorreta. Uma linha paralela às bases não representa a altura, pois a altura é uma medida de distância e, em geometria, a distância entre duas linhas paralelas é sempre medida perpendicularmente."
+        }
+      ],
+      "explanation": "Correta. A altura de um trapézio é definida como a distância perpendicular entre suas duas bases paralelas. Isso significa que a linha que representa a altura deve formar um ângulo de noventa graus com as bases.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a principal diferença entre um trapézio e um paralelogramo quanto aos lados paralelos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O trapézio não possui lados paralelos, enquanto o paralelogramo possui dois lados paralelos",
+          "correct": false,
+          "explanation": "Incorreta. Por definição, um trapézio possui lados paralelos (suas bases). A afirmação de que não possui lados paralelos está incorreta."
+        },
+        {
+          "id": "b",
+          "text": "O trapézio possui apenas dois lados paralelos, enquanto o paralelogramo possui dois pares de lados paralelos",
+          "correct": true,
+          "explanation": "Correta. A principal diferença reside na quantidade de pares de lados paralelos. Um trapézio é um quadrilátero que possui *apenas um par* de lados paralelos (as bases). Já um paralelogramo é um quadrilátero que possui *dois pares* de lados opostos paralelos."
+        },
+        {
+          "id": "c",
+          "text": "O trapézio possui três lados paralelos, enquanto o paralelogramo possui apenas um par de lados paralelos",
+          "correct": false,
+          "explanation": "Incorreta. Um trapézio é um quadrilátero, portanto, tem quatro lados, e não três lados paralelos. Um paralelogramo possui dois pares de lados paralelos, não apenas um."
+        },
+        {
+          "id": "d",
+          "text": "O trapézio possui todos os lados paralelos, enquanto o paralelogramo possui apenas dois lados paralelos",
+          "correct": false,
+          "explanation": "Incorreta. Um trapézio possui apenas um par de lados paralelos, não todos. Um paralelogramo possui dois pares de lados paralelos, não apenas dois lados paralelos em geral."
+        }
+      ],
+      "explanation": "Correta. A principal diferença reside na quantidade de pares de lados paralelos. Um trapézio é um quadrilátero que possui *apenas um par* de lados paralelos (as bases). Já um paralelogramo é um quadrilátero que possui *dois pares* de lados opostos paralelos.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual propriedade das diagonais é característica dos paralelogramos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As diagonais possuem sempre a mesma medida",
+          "correct": false,
+          "explanation": "Incorreta. As diagonais possuem sempre a mesma medida apenas em retângulos e quadrados. Em um paralelogramo genérico ou em um losango (que não seja quadrado), as diagonais têm comprimentos diferentes."
+        },
+        {
+          "id": "b",
+          "text": "As diagonais são sempre perpendiculares entre si",
+          "correct": false,
+          "explanation": "Incorreta. As diagonais são sempre perpendiculares entre si apenas em casos específicos de paralelogramos, como o losango e o quadrado. Em um paralelogramo genérico (como um retângulo que não é quadrado ou um paralelogramo que não é losango), as diagonais geralmente não formam um ângulo de 90 graus na sua intersecção."
+        },
+        {
+          "id": "c",
+          "text": "As diagonais se cortam no ponto médio, dividindo-se mutuamente ao meio",
+          "correct": true,
+          "explanation": "Correta. Esta é uma propriedade fundamental e definidora dos paralelogramos. A simetria inerente a essas figuras, que possuem dois pares de lados opostos paralelos e congruentes, faz com que suas diagonais se encontrem exatamente no ponto central de cada uma, bissecando-se mutuamente. Isso significa que o ponto de intersecção divide cada diagonal em dois segmentos de igual comprimento."
+        },
+        {
+          "id": "d",
+          "text": "As diagonais são paralelas às bases do paralelogramo",
+          "correct": false,
+          "explanation": "Incorreta. As diagonais de um paralelogramo são segmentos de reta que conectam vértices não adjacentes. Por definição, elas não são paralelas às bases, mas sim as cruzam. As bases de um paralelogramo são os lados paralelos."
+        }
+      ],
+      "explanation": "Correta. Esta é uma propriedade fundamental e definidora dos paralelogramos. A simetria inerente a essas figuras, que possuem dois pares de lados opostos paralelos e congruentes, faz com que suas diagonais se encontrem exatamente no ponto central de cada uma, bissecando-se mutuamente. Isso significa que o ponto de intersecção divide cada diagonal em dois segmentos de igual comprimento.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Segundo a classificação dos quadriláteros, quais figuras geométricas são consideradas paralelogramos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Triângulo equilátero, triângulo isósceles e triângulo escaleno",
+          "correct": false,
+          "explanation": "Incorreta. Triângulos são polígonos com três lados, enquanto paralelogramos são quadriláteros (quatro lados). Portanto, triângulos (equilátero, isósceles, escaleno) não podem ser classificados como paralelogramos."
+        },
+        {
+          "id": "b",
+          "text": "Trapézio isósceles, trapézio retângulo e trapézio escaleno",
+          "correct": false,
+          "explanation": "Incorreta. Trapézios (isósceles, retângulo, escaleno) são quadriláteros que possuem apenas um par de lados opostos paralelos (as bases). Eles não possuem dois pares de lados opostos paralelos, o que os distingue dos paralelogramos."
+        },
+        {
+          "id": "c",
+          "text": "Quadrado, retângulo e losango",
+          "correct": true,
+          "explanation": "Correta. Um paralelogramo é um quadrilátero que possui dois pares de lados opostos paralelos. O quadrado, o retângulo e o losango são todos casos especiais de paralelogramos que atendem a essa definição e possuem propriedades adicionais. Por exemplo, o quadrado é um retângulo e um losango ao mesmo tempo."
+        },
+        {
+          "id": "d",
+          "text": "Pentágono regular, hexágono regular e octógono regular",
+          "correct": false,
+          "explanation": "Incorreta. Pentágonos, hexágonos e octógonos são polígonos com cinco, seis e oito lados, respectivamente. Paralelogramos são quadriláteros, ou seja, polígonos com quatro lados. Assim, essas figuras não se enquadram na categoria de paralelogramos."
+        }
+      ],
+      "explanation": "Correta. Um paralelogramo é um quadrilátero que possui dois pares de lados opostos paralelos. O quadrado, o retângulo e o losango são todos casos especiais de paralelogramos que atendem a essa definição e possuem propriedades adicionais. Por exemplo, o quadrado é um retângulo e um losango ao mesmo tempo.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Por que todo quadrado pode ser classificado como um paralelogramo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque possui diagonais perpendiculares, propriedade exclusiva dos paralelogramos",
+          "correct": false,
+          "explanation": "Incorreta. Embora o quadrado possua diagonais perpendiculares, essa não é uma propriedade exclusiva dos paralelogramos em geral (apenas dos losangos e, consequentemente, dos quadrados). A característica definidora de um paralelogramo está nos seus lados paralelos, não nas diagonais perpendiculares."
+        },
+        {
+          "id": "b",
+          "text": "Porque possui lados opostos paralelos e congruentes, atendendo à definição de paralelogramo",
+          "correct": true,
+          "explanation": "Correta. A definição fundamental de um paralelogramo é que ele possui dois pares de lados opostos paralelos. Um quadrado, por ter todos os quatro lados congruentes e todos os ângulos internos retos, automaticamente satisfaz a condição de ter lados opostos paralelos e congruentes. Isso o inclui na categoria de paralelogramos."
+        },
+        {
+          "id": "c",
+          "text": "Porque possui todos os ângulos diferentes, assim como os paralelogramos em geral",
+          "correct": false,
+          "explanation": "Incorreta. Um quadrado possui todos os ângulos internos iguais (todos de 90 graus), e não diferentes. Além disso, a propriedade de ter ângulos diferentes não é uma característica geral dos paralelogramos; eles possuem ângulos opostos iguais e ângulos consecutivos suplementares."
+        },
+        {
+          "id": "d",
+          "text": "Porque possui apenas dois lados paralelos, característica essencial dos paralelogramos",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação \"possui apenas dois lados paralelos\" descreve um trapézio, não um paralelogramo. Um paralelogramo possui dois pares de lados paralelos, totalizando quatro lados paralelos em pares opostos."
+        }
+      ],
+      "explanation": "Correta. A definição fundamental de um paralelogramo é que ele possui dois pares de lados opostos paralelos. Um quadrado, por ter todos os quatro lados congruentes e todos os ângulos internos retos, automaticamente satisfaz a condição de ter lados opostos paralelos e congruentes. Isso o inclui na categoria de paralelogramos.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando as propriedades dos quadriláteros, por que nem todo retângulo pode ser classificado como quadrado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque o retângulo não possui lados opostos paralelos, enquanto o quadrado possui essa propriedade",
+          "correct": false,
+          "explanation": "Incorreta. O retângulo, assim como o quadrado, é um tipo de paralelogramo. Por definição, todos os paralelogramos possuem lados opostos paralelos. Portanto, a afirmação de que o retângulo não possui lados opostos paralelos está incorreta."
+        },
+        {
+          "id": "b",
+          "text": "Porque o retângulo pode ter lados adjacentes com medidas diferentes, enquanto o quadrado exige todos os lados congruentes",
+          "correct": true,
+          "explanation": "Correta. Um retângulo é um paralelogramo com todos os ângulos internos retos (90 graus). Um quadrado é um retângulo que, além disso, possui todos os lados congruentes (iguais em medida). Portanto, um retângulo pode ter dois lados adjacentes com medidas diferentes (por exemplo, um retângulo de 2x4 cm), o que o impede de ser um quadrado, pois um quadrado requer que todos os seus quatro lados sejam iguais."
+        },
+        {
+          "id": "c",
+          "text": "Porque o retângulo possui diagonais perpendiculares, enquanto o quadrado possui diagonais não perpendiculares",
+          "correct": false,
+          "explanation": "Incorreta. As diagonais de um quadrado são perpendiculares. As diagonais de um retângulo não são necessariamente perpendiculares, a menos que o retângulo seja um quadrado. Assim, a afirmação inverte as propriedades e está incorreta."
+        },
+        {
+          "id": "d",
+          "text": "Porque o retângulo possui ângulos internos diferentes de noventa graus, enquanto o quadrado possui todos os ângulos retos",
+          "correct": false,
+          "explanation": "Incorreta. Tanto o retângulo quanto o quadrado possuem todos os ângulos internos iguais a noventa graus. Esta afirmação é factualmente incorreta, pois a definição de retângulo inclui ter todos os ângulos retos."
+        }
+      ],
+      "explanation": "Correta. Um retângulo é um paralelogramo com todos os ângulos internos retos (90 graus). Um quadrado é um retângulo que, além disso, possui todos os lados congruentes (iguais em medida). Portanto, um retângulo pode ter dois lados adjacentes com medidas diferentes (por exemplo, um retângulo de 2x4 cm), o que o impede de ser um quadrado, pois um quadrado requer que todos os seus quatro lados sejam iguais.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a justificativa para que as diagonais de um paralelogramo se cortem no ponto médio, propriedade que não se aplica aos trapézios em geral?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O paralelogramo possui diagonais perpendiculares, garantindo o corte no ponto médio",
+          "correct": false,
+          "explanation": "Incorreta. As diagonais de um paralelogramo são perpendiculares apenas em casos específicos (losangos e quadrados), não em todos os paralelogramos. A perpendicularidade das diagonais não é a razão pela qual elas se cortam no ponto médio; a bisseção é uma propriedade geral de todos os paralelogramos, independentemente da perpendicularidade das diagonais."
+        },
+        {
+          "id": "b",
+          "text": "O paralelogramo possui todos os ângulos iguais, modificando a posição do ponto de intersecção",
+          "correct": false,
+          "explanation": "Incorreta. Embora os paralelogramos possuam ângulos opostos iguais, e ângulos consecutivos suplementares, a afirmação de que \"todos os ângulos são iguais\" é verdadeira apenas para retângulos e quadrados. A igualdade de todos os ângulos não é a justificativa primária para a bisseção das diagonais, que se baseia mais na simetria gerada pelos lados paralelos e congruentes."
+        },
+        {
+          "id": "c",
+          "text": "O paralelogramo possui apenas um par de lados paralelos, alterando o ponto de intersecção das diagonais",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de que o paralelogramo possui \"apenas um par de lados paralelos\" descreve um trapézio, não um paralelogramo. Um paralelogramo possui dois pares de lados paralelos. A alteração no ponto de intersecção das diagonais nos trapézios ocorre justamente pela falta do segundo par de lados paralelos."
+        },
+        {
+          "id": "d",
+          "text": "O paralelogramo possui dois pares de lados opostos paralelos e congruentes, criando simetria que garante o corte das diagonais no ponto médio",
+          "correct": true,
+          "explanation": "Correta. A propriedade de que as diagonais de um paralelogramo se bissecam (cortam-se no ponto médio) é uma consequência direta da sua definição: ter dois pares de lados opostos paralelos e congruentes. Essa configuração gera uma simetria central na figura, onde o ponto de intersecção das diagonais atua como centro de simetria, garantindo que cada diagonal seja dividida em duas partes iguais. Em contraste, os trapézios possuem apenas um par de lados paralelos, o que não confere a simetria necessária para que suas diagonais se bissequem mutuamente."
+        }
+      ],
+      "explanation": "Correta. A propriedade de que as diagonais de um paralelogramo se bissecam (cortam-se no ponto médio) é uma consequência direta da sua definição: ter dois pares de lados opostos paralelos e congruentes. Essa configuração gera uma simetria central na figura, onde o ponto de intersecção das diagonais atua como centro de simetria, garantindo que cada diagonal seja dividida em duas partes iguais. Em contraste, os trapézios possuem apenas um par de lados paralelos, o que não confere a simetria necessária para que suas diagonais se bissequem mutuamente.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "10_321952_Geometria Plana X - Quadriláteros.pdf",
+  "coletado_em": "2026-09-23T21:06:53"
+}

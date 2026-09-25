@@ -1,0 +1,676 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 20,
+  "ordem_no_curso": "85.00",
+  "titulo": "Office 365 - PowerPoint",
+  "codigo_aula": "274261",
+  "video_id": "tgAnf2TH77Y=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:31:41",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/tgAnf2TH77Y%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?in=1&a=420410%2C420407%2C420413&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - PowerPoint\n\n## Introdução e Mentalidade de Estudo\nEstá aqui meu nome, a disciplina e essa frase que eu gosto muito: “Somos o que repetidamente fazemos. A excelência, portanto, não é um ato, mas um hábito”, disse Aristóteles. Pois bem, a partir dessa frase eu chamo de processos resolvidos: repetição com correção até a exaustão leva à perfeição. Para você que está estudando, a repetição com correção leva à aprovação também.\n\nUma pequena aspas aqui: você deve dormir bem, se alimentar bem e fazer exercícios, tudo moderadamente, para ter um melhor rendimento. Lembre-se: quantidade não é necessariamente qualidade. Tomar energético demais e virar noites inteiras, quase nunca. Dito isso, vem comigo.\n\nVamos ao tema da nossa aula, onde trataremos do Microsoft Office 365, especificamente do PowerPoint. O pacote Office 365 é uma versão por assinatura. Eu pago uma mensalidade, que pode ser paga anualmente, para utilizar. Lembrando que, assim, eu tenho direito às atualizações enquanto estiver pagando a assinatura — não apenas as de segurança, mas atualizações constantes no programa e no campo visual. Hoje você está usando uma interface; amanhã você abre, atualiza, e já está com outro layout, outros botões, novidades que não tinha antes e que foram corrigidas. Está sempre sendo atualizado.\n\nQuando você compra uma versão “estática” do pacote Office — por exemplo, o Office 2016 — ele é atualizado por um período para atualizações de segurança. Novas ferramentas geralmente não são lançadas dentro desse pacote. Ele para de ser atualizado quando chegam versões como 2019, 2021, e assim por diante. Comprou o 2019? Chega um momento que não é mais atualizado, acaba o ciclo, ficam só correções de segurança, sem recursos novos. Aqui no 365, é constante.\n\nQuando você assina o 365, você pode utilizar em mais de um dispositivo e ganha um espaço maior de armazenamento no OneDrive. De graça você tem um espaço pequeno; pagando, a capacidade é muito maior, dependendo da assinatura. Você pode instalar em até cinco máquinas. Por exemplo, no meu caso, eu uso na minha máquina, no computador do estúdio, em outra máquina — tudo legalmente, com pagamento anual da mensalidade.\n\nBem, dito isso, o que é o PowerPoint e a que se propõe? Exatamente ao que estou fazendo aqui: o que você está vendo neste momento é uma apresentação de slides. Aqui eu estou usando a função principal da ferramenta, que é a apresentação de slides. Ele é uma ferramenta para criação e edição de slides, que vão virar uma apresentação, como está sendo feito agora: estou apresentando a você os slides que eu havia criado.\n\nVou sair da apresentação de slides para a gente ver alguns detalhes no material.\n\n## Material de Apoio (PDF) e Forma de Estudo\nVoltei aqui para um arquivo PDF que vai estar disponível juntamente com a aula. Qual é o objetivo desse material? Eu gosto de explicar desde o começo, para não haver dúvidas. Não gosto da ideia de “vou ser prejudicado porque não tenho impressora” ou “não tenho muito dinheiro”. Absolutamente não. Muita gente usa esse material como apoio para estudar, fazer um resumo, anotações. Neste primeiro momento, a tela pode estar com poucos campos preenchidos, mas você pode pegar os campos em branco e ir anotando. Leva para o trabalho, onde você não vai estar usando o computador ou o celular, e usa como guia das aulas. E, sim, dá para assistir offline.\n\nO objetivo é dar essa oportunidade. Depois dessa primeira passada, haverá várias páginas com campos para preencher. A ideia é: na primeira vez, você preenche junto comigo; em uma próxima oportunidade, num momento de estudo ou revisão, você tenta preencher alguns campos sozinho.\n\nSe você não quiser usar o PDF, não tem problema. Assiste à aula: tudo o que eu vou falar está sendo mostrado aqui. Não há prejuízo algum.\n\n## Tela Inicial do PowerPoint e Observação Importante sobre o Foco da Aula\nVamos à primeira tela, que é importante conhecer — embora a primeira tela que mostrei não seja de fato a inicial. Vou encerrar o PowerPoint e abrir novamente para você ver. Abri pelo atalho fixado na barra de tarefas, para localizar mais rápido.\n\nA tela que aparece ao abrir não é uma apresentação direta. Já vi bancas cobrando isso. Vou aproveitar para reforçar algo que pode se repetir durante a aula: nossa aula é 100% focada em concursos. Pode haver frustração se você veio com o objetivo de criar uma apresentação para um trabalho amanhã e eu pular um recurso de design passo a passo. Não é esse o objetivo. O objetivo é mostrar as coisas tal como a maioria das bancas cobra em concurso. Isso quer dizer que, assistindo às aulas, você vai acertar todas as questões de qualquer banca? Sendo bem sincero: não. Há coisas muito específicas ou abordagens que podem cair e eu não vou tratar. Mas pode acreditar que a maioria das funções importantes eu vou tratar aqui, e você vai estar preparado.\n\nMinha dica: fure a bolha da aula. Assista supondo que você não tenha base nenhuma ou tenha base mínima/média/avançada, mas não focada para concursos. Depois, vá para questões e resolva. Se você perceber um padrão de questões de 2 ou 3 bancas que eu não tratei, use o fórum de dúvidas: me mande, vamos conversar. Diga “você não tratou disso e estou vendo que pode cair”. Eu posso explicar, e se for o caso eu regravo. Isso é para você entender o panorama da aula e deixar claro qual é nossa proposta.\n\nDito isso, a tela inicial é esta aqui. Nela, eu tenho modelos na parte de cima. Aqui embaixo, tenho “Usados recentemente”, “Fixados”, “Compartilhado comigo” — esse “Compartilhado” é via OneDrive (armazenamento em nuvem). À esquerda há mais funcionalidades: a própria página “Inicial”, “Novo”, “Abrir”, entre outras. “Conta” mostra informações da assinatura e atualizações. “Comentários”, se houver. Vamos agora para “Apresentação em branco”.\n\n## Apresentação em Branco e Expectativas\nCriei uma apresentação em branco. Aqui aparecem as “Ideias de Design”. No slide em branco, eu crio tudo: coloco imagem de fundo, animações etc. Repito: pode haver frustração se você veio para aprender passo a passo a criar uma apresentação visualmente incrível. Há milhões de vídeos e tutoriais no YouTube para isso. Nosso foco é questões de concursos.\n\nVamos ao nosso PDF. Nele há uma numeração com itens, como “botões de controle”. Você pode olhar e pensar: “não reconheço esse botão”. O PDF não é interativo, então quando eu clicar aqui na tela, você vai ver na prática.\n\nVou habilitar um realce do cursor para você acompanhar melhor: vai aparecer uma bolinha amarela no mouse para ver onde estou clicando.\n\n## Janela do PowerPoint: Botões de Controle e Estados\nQuando eu clico na janela e vejo no canto direito os dois quadradinhos, isso indica que a janela está maximizada. Se eu clicar em “Restaurar”, ela vai para um tamanho menor (meio da tela). Aí o botão vira um único quadrado (Maximizar). Além disso, ficam ativos os outros controles de janela: ajustar tamanho, minimizar, maximizar e fechar.\n\nEntão, nos “botões de controle”, eu tenho essas opções. Vale anotar? Sim, mas não é para decorar cada atalho; é para ter noção do que existe ali. Coisas mais importantes, eu vou enfatizar.\n\n## Barra de Título e Salvamento Automático (AutoSave)\nDois cliques na área da barra de título também maximizam/restauram a janela. Logo à esquerda, posso ter a Barra de Ferramentas de Acesso Rápido (Quick Access). À direita, aparece “Salvamento automático” (AutoSave). Para ligar o AutoSave, o arquivo precisa estar salvo no OneDrive. Meu nome aparece no canto superior porque estou logado com minha conta do Office 365; com isso, estou logado no OneDrive. Se você não estiver logado, ao tentar salvar ou compartilhar no OneDrive, ele vai pedir login.\n\nO AutoSave salva automaticamente as alterações conforme ocorrem, sem depender de você lembrar de salvar. Mas para isso, primeiro salve a apresentação no OneDrive. Quando tento ativar, ele mostra a mensagem explicando que salvará as alterações conforme ocorrem. Como eu já estou logado, consigo ativar.\n\n## Barra de Ferramentas de Acesso Rápido: Personalização\nNa Barra de Acesso Rápido, posso marcar/desmarcar ferramentas como “Novo” (criar nova apresentação), “Abrir”, “Salvar”, “Iniciar a apresentação”, entre outras. Posso personalizar: se eu quero uma função que não está ali, vou em “Mais comandos...” e posso colocar qualquer função do PowerPoint, inclusive por guia (por exemplo, Visualização de Impressão, Mesclar, etc.). Não é para decorar tudo; é para saber que você pode adicionar mais opções.\n\nHá também a opção “Mostrar abaixo da Faixa de Opções”. Por padrão, a Barra de Acesso Rápido fica acima da Faixa de Opções; posso movê-la para baixo. E agora existe a opção de ocultar totalmente a Barra de Ferramentas de Acesso Rápido — foi adicionada em atualização recente. Se eu quiser, tiro a barra; simplesmente não aparece.\n\n## Barra de Título: Itens Principais\nNo topo, além dos botões de controle e do AutoSave, tenho:\n- Nome da apresentação e do programa (PowerPoint)\n- Caixa de pesquisa (“Diga-me o que você deseja fazer”): posso pesquisar funções; se eu digitar “negrito”, ele mostra a função e aplica se tiver texto selecionado\n- Minha conta (dados do usuário logado)\n- Comentários (especialmente úteis quando o arquivo é compartilhado)\n- Compartilhar (integração com OneDrive)\n\n## Compartilhamento pelo OneDrive\nAo clicar em Compartilhar, aparece a tela para carregar sua apresentação no OneDrive, se ainda não estiver lá. Alternativamente, posso anexar uma cópia, mas o prático é salvar no OneDrive para edição simultânea.\n\nDepois de salvar no OneDrive, o AutoSave fica habilitado e o Compartilhar também. Posso:\n- Informar os e-mails das pessoas\n- Enviar um link e definir permissões\n\nOpções do link:\n- Qualquer pessoa com o link pode editar (posso mudar)\n- Especificar pessoas\n- Permitir edição ou não (somente exibição)\n- Definir data de validade do link\n- Definir senha\n\nQuem receber o link poderá editar simultaneamente via OneDrive, mesmo que não tenha a mesma assinatura local — o trabalho acontece na nuvem.\n\n## Menu Arquivo (Backstage)\nVoltando ao PDF: o número 3 era a Barra de Título, número 4 os botões de controle, número 5 o Menu Arquivo. Uma observação: a Microsoft chama de “guia” ou “aba”. Já vi gente errando chamando de “menu Página Inicial”. Tecnicamente hoje é “guia” ou “aba”, mas se a questão usar “menu” no contexto certo, não costuma ser o alvo.\n\nNo Menu Arquivo, tenho:\n- Página inicial (com modelos e recentes)\n- Novo (atalho Ctrl+N para nova apresentação)\n- Abrir (Ctrl+O): procurar no “Este PC”, no OneDrive, locais recentes, pesquisar pelo nome\n- Informações\n- Salvar / Salvar como\n- Imprimir\n- Compartilhar (a mesma janela que vimos)\n- Exportar (por exemplo, salvar como PDF)\n- Fechar apresentação\n- Conta\n- Comentários (se houver)\n- Opções (configurações do PowerPoint)\n\n> 🎯 Dicas de prova: “Backstage” é a área do Menu Arquivo; “Guia/Aba” são as guias como Página Inicial, Inserir, Design etc. Saber o caminho de “Exportar para PDF” costuma aparecer.\n\n## Faixa de Opções (Ribbon): Guia Página Inicial\nA Faixa de Opções é composta por guias/abas. Dentro de cada guia, há grupos. Na guia Página Inicial, por exemplo, eu tenho:\n- Grupo Desfazer/Refazer\n- Grupo Área de Transferência (Recortar, Copiar, Colar)\n- Grupo Slides\n- Grupo Fonte\n- Grupo Parágrafo\n- Grupo Desenho\n- Grupo Edição\n- Grupo Voz\n- Grupo Designer (dependendo da versão/atualização)\n\n## Guia Inserir\nMuito importante para a prova. Dentro dela, há grupos como:\n- Slides (Novo Slide — redundância com Página Inicial, o que é comum na interface)\n- Tabelas\n- Imagens\n- Ilustrações\n- Suplementos (irrelevante para prova na maioria dos casos)\n- Links (mais interessante, pode ser cobrado)\n- Comentários\n- Texto (WordArt, Caixa de Texto etc.)\n- Símbolos\n- Mídia (inserir vídeo, áudio, gravar — recursos bem interessantes no PowerPoint)\n\n## Guia Desenhar\nFerramentas de desenho na tela: caneta, régua, texto manuscrito, uso com touch. Nunca vi muito sendo cobrado, mas pode aparecer. Eu não daria ênfase alta para prova, mas não descarto.\n\n## Guia Design\nAqui temos temas e variantes. Você pode escolher um tema pronto. Às vezes a banca coloca um print e pergunta algo contextual, mas decorar nomes de temas tem probabilidade mínima de cair.\n\nO que é relevante:\n- Tamanhos de slide: dois padrões principais, 4:3 (mais quadrado, pouco usado hoje, mas pode cair) e 16:9 (mais retangular)\n- Personalizar tamanho do slide\n- Formatando plano de fundo: preenchimento sólido, imagem etc.\n\n> 🎯 Dicas de prova: Saber alternar entre 4:3 e 16:9 e onde fica “Formatar plano de fundo” (guia Design) é comum.\n\nEu sei que esse vaivém de telas pode confundir; tento fazer devagar. Se eu acelerar, desculpas.\n\nAs “Ideias de Design” podem surgir quando você insere conteúdo, imagens, textos. Se quiser desativar, feche o painel. Para reativar, vá à guia Design e clique em Ideias de Design.\n\n## Guia Transições\nEm Transições, eu configuro a transição de slides. Muita gente confunde transição com animação.\n\nVou criar dois slides em branco. No primeiro, coloco a palavra “Teste” para diferenciar do segundo. Começo a apresentação: aparece o primeiro slide; avanço e vou para o segundo; termino e volto ao modo de edição.\n\nAgora, aplico uma transição. No primeiro slide, escolho “Empurrão”. No segundo, escolho “Apagar”. Inicio a apresentação de novo: a transição acontece quando o slide aparece. Isso é transição — o efeito que ocorre na passagem de um slide para o outro.\n\n> 🎯 Dicas de prova: Transição é entre slides; Animação é dentro do slide (em objetos como texto, imagens, formas).\n\n## Guia Animações\nPara mostrar animação, vou inserir uma imagem e também usar o texto “Teste”.\n\n- No texto “Teste”, aplico a animação “Aparecer”.\n- Na imagem, aplico a animação “Girar”.\n\nInicio a apresentação:\n- Primeiro, ocorre a transição do slide ao entrar.\n- Em cima do “Teste”, inicialmente nada aparece; ao clicar, executa a animação “Aparecer”.\n- Em seguida, a imagem executa sua animação (Girar), conforme a ordem definida.\n\nTransição é o efeito na entrada/saída dos slides; animação é o efeito aplicado aos elementos dentro do slide (texto, imagem, forma, gráfico etc.).\n\nPor enquanto, encerramos este bloco. Já já eu volto no próximo bloco, continuando da guia Transições para Animações, falando um pouco mais sobre cada uma delas.",
+  "transcricao_meta": {
+    "title": "Office 365 - PowerPoint",
+    "subject": "Noções de Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 43125,
+    "createdAt": "2026-02-05T13:38:21.396Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda o uso do PowerPoint no contexto do Microsoft Office 365 (por assinatura), interface e comandos essenciais, salvamento automático e compartilhamento via OneDrive, além das diferenças entre Transições e Animações (com aplicação prática).\nPrincipais pontos: \n- Diferença entre Office 365 (assinatura) e versões estáticas (2016/2019/2021).\n- Requisitos para “Salvar automaticamente” e colaboração.\n- Interface: botões de janela, Barra de Ferramentas de Acesso Rápido, Menu Arquivo, guias e grupos.\n- Distinções e aplicação de Transições vs Animações.\n\n## 1. Base / Conceitos Fundamentais\n- **Microsoft Office 365 (por assinatura)**: serviço com pagamento mensal ou anual que dá direito às **atualizações constantes** (novas ferramentas, recursos e segurança) enquanto a assinatura estiver ativa.\n- **Versões estáticas (Office 2016/2019/2021)**: recebem **apenas atualizações de segurança**; não ganham ferramentas novas após o lançamento.\n- **OneDrive**: armazenamento em nuvem integrado ao Office 365. Permite **Salvar automaticamente** e **Compartilhar** apresentações com edição simultânea.\n- **PowerPoint (Office 365)**: editor de apresentações com guias (Aba) e grupos na **Faixa de Opções**.\n- **Transição**: efeito entre slides.\n- **Animação**: efeito aplicado a elementos dentro do slide (texto/imagem/forma).\n\n> Dica de prova: “Salvar automaticamente” só funciona quando o arquivo está salvo no OneDrive e você está logado na sua conta do Office 365.\n\n## 2. Como Funciona / Distinções\n- Office 365 (assinatura) vs Versões estáticas:\n  - Atualizações: \n    - 365: constantes (ferramentas novas + segurança).\n    - Estáticas: só segurança.\n  - Pagamento:\n    - 365: mensalidade ou anual.\n    - Estáticas: compra única.\n  - Instalações por usuário:\n    - 365: até **cinco instalações** (cinco máquinas).\n  - Integração com **OneDrive**:\n    - 365: total (inclui benefícios de espaço e colaboração).\n    - Estáticas: limitada.\n\n> Dica de prova: Assinatura ativa = direito às atualizações. Versão 2016/2019/2021 = sem recursos novos após o ciclo.\n\n- Interface da Janela (canto superior direito):\n  - **Minimizar**: envia para a barra de tarefas.\n  - **Restaurar/Maximizar**: alterna tamanho; se aparecem **dois quadradinhos**, está maximizada; ao restaurar vira **um quadrado** (Maximizar).\n  - **Fechar**: encerra a janela.\n\n- Guias e Grupos (Faixa de Opções):\n  - **Guia Página Inicial**: \n    - Grupos: **Desfazer/Refazer**, **Área de Transferência**, **Fonte** (ex.: negrito), **Parágrafo**, **Desenho**, **Editando**, **Voz**.\n  - **Guia Inserir**:\n    - Grupos: **Tabelas**, **Imagens**, **Ilustrações**, **Suplementos**, **Comentários**, **Texto**, **Símbolos**, **Mídia**, **Desenhar**.\n  - **Guia Design**:\n    - **Temas/Variantes**, **Tamanho do Slide** (4:3 e 16:9), **Formatar plano de fundo**, **Designer (Ideias de Design)**.\n  - **Guia Transições**: efeitos entre slides.\n  - **Guia Animações**: efeitos em elementos; inclui **Grupo Visualizar** para prévia.\n\n> Dica de prova: “Página Inicial” é uma GUIA/ABA, não “menu”. “Menu” aplica-se ao **Arquivo** (Backstage).\n\n- Menu Arquivo (Backstage):\n  - **Novo**, **Abrir**, **Salvar/Salvar como** (inclui OneDrive), **Imprimir**, **Exportar** (ex.: **PDF**), **Compartilhar**, **Fechar**, **Conta**, **Opções**.\n  - “Compartilhar” aparece tanto no botão da barra superior quanto no Menu Arquivo.\n\n- Barra de Ferramentas de Acesso Rápido:\n  - Ícones frequentes (Novo, Abrir, Iniciar Apresentação, Desfazer/Refazer).\n  - Pode ficar acima/abaixo da Faixa de Opções; pode ser personalizada em “Mais comandos...”.\n\n- Telas iniciais e abertura:\n  - Tela inicial mostra modelos, arquivos recentes, itens fixados e compartilhados (OneDrive).\n  - “Apresentação em branco” inicia um arquivo vazio; pode aparecer “Ideias de Design”.\n\n> Pegadinha: Abrir o PowerPoint não inicia automaticamente uma apresentação; você escolhe um modelo ou “Apresentação em branco”.\n\n## 3. Aplicação Prática / Técnicas\n- Fixar o PowerPoint na barra de tarefas (Windows):\n  - Abrir o PowerPoint > botão direito no ícone > **Fixar na barra de tarefas**.\n  - Efeito: acesso rápido para abrir.\n\n- Ativar Salvamento Automático e Compartilhar:\n  1) Salve a apresentação no **OneDrive**.\n  2) Verifique o **Salvar automaticamente** (On) na barra de título.\n  3) Clique em **Compartilhar** (barra superior ou Menu Arquivo).\n  4) Escolha enviar convite por e-mail ou gerar link.\n  5) Defina permissões:\n     - “Qualquer pessoa pública pode editar” OU “Especificar as pessoas”.\n     - Marque/Desmarque **Permitir edição**.\n     - Opcional: **data de validade** e **senha** para o link.\n  6) Colaboradores precisam usar o OneDrive (conta Microsoft; não precisa ser paga para editar o compartilhado).\n\n> Dica de prova: Salvamento e colaboração só habilitam quando a apresentação está no OneDrive E você está logado.\n\n- Exportar para PDF:\n  - **Arquivo > Exportar > Criar PDF/XPS**.\n  - Não confundir com “Salvar como” (nas versões atuais a banca cobra “Exportar”).\n\n- Ajustar Tamanho do Slide:\n  - **Guia Design > Tamanho do Slide**: padrões 4:3 e 16:9.\n\n- Transições (entre slides):\n  1) Selecione o slide.\n  2) **Guia Transições** > escolha o efeito (ex.: **Empurrão**, **Apagar**).\n  3) Inicie a apresentação para ver a troca entre slides.\n\n- Animações (em elementos do slide):\n  1) Selecione o elemento (texto/imagem/forma).\n  2) **Guia Animações** > escolha o efeito (ex.: **Aparecer**, **Virar**, **Rodopiar**).\n  3) Use o **Grupo Visualizar** para pré-visualizar; teste durante a apresentação.\n\n> Macete: “Se mexe o slide na troca” = Transição. “Se mexe um item dentro do slide” = Animação.\n\n## 4. Exemplos e Casos Resolvidos\n- Office 365 vs versão estática:\n  - Pergunta típica: “Qual modelo recebe novas ferramentas com o tempo?” \n    - Resposta: **Microsoft Office 365 (por assinatura)**. Versões 2016/2019/2021 não recebem recursos novos.\n- Salvamento Automático:\n  - Pergunta: “Por que o botão ‘Salvar automaticamente’ está desativado?”\n    - Resposta: O arquivo não foi salvo no **OneDrive** ou o usuário não está logado.\n- Compartilhamento:\n  - Situação: Preciso liberar edição a pessoas específicas com validade e senha.\n    - Passos: Compartilhar > “Especificar as pessoas” > marcar **Permitir edição** > definir **data de validade** e **senha**.\n- Tamanho do Slide:\n  - Pergunta: “Onde alterar para 16:9?”\n    - Resposta: **Guia Design > Tamanho do Slide**.\n- Transição vs Animação:\n  - Situação: Efeito “Empurrão” entre slides e texto “teste” aparecendo dentro do slide.\n    - Correto: “Empurrão” = **Transição**; “Aparecer” no texto = **Animação**.\n\n## 5. Pegadinhas e Erros Comuns\n- Chamar **Página Inicial** de “menu”. Correto: é **Guia/Aba**.\n- Achar que “Salvar automaticamente” funciona em arquivo local. Precisa estar no **OneDrive** e logado.\n- Confundir **Exportar (PDF)** com “Salvar como”. Bancas preferem “Exportar” nas versões atuais.\n- Ignorar redundância de comandos (ex.: **Compartilhar** existe no botão superior e no **Menu Arquivo**).\n- Confundir Transição (entre slides) com Animação (no elemento).\n- Interpretar a “cartela preta” do fim da apresentação como efeito. É a tela de encerramento, não é transição/ani mação.\n- Botões de janela:\n  - Dois quadradinhos = janela maximizada (botão de ação é Restaurar).\n  - Um quadrado = janela restaurada (botão de ação é Maximizar).\n\n> Dica de prova: “Cinco instalações” é benefício típico da assinatura do Office 365. “Direito às atualizações” depende de assinatura ativa.\n\n> Dica de prova: A tela inicial do PowerPoint exibe modelos, recentes e itens do OneDrive; abrir o app ≠ iniciar apresentação automaticamente.\n\n> Dica de prova: “Somos o que repetidamente fazemos; a excelência, portanto, não é um feito.” — citação frequentemente usada em materiais; não confunda com comandos do PowerPoint.",
+  "resumo_bolso": "# Office 365 - PowerPoint\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Office 365 (assinatura)**: serviço com pagamento **mensal ou anual** que dá direito a **atualizações constantes** (novas ferramentas, recursos e segurança) enquanto a assinatura estiver ativa.\n* **Versões estáticas (2016/2019/2021)**: recebem **apenas atualizações de segurança**; não ganham ferramentas novas após o lançamento.\n* **OneDrive**: armazenamento em nuvem integrado ao Office 365; permite **Salvar automaticamente** e **Compartilhar** apresentações com **edição simultânea**.\n* **PowerPoint (Office 365)**: editor de apresentações com **Guias/Abas** e **grupos** na **Faixa de Opções**.\n* **Transição**: efeito **entre slides**.\n* **Animação**: efeito aplicado a **elementos dentro do slide** (texto, imagem, forma).\n* **Menu Arquivo (Backstage)**: contém **Novo, Abrir, Salvar/Salvar como (inclui OneDrive), Imprimir, Exportar (PDF), Compartilhar, Fechar, Conta, Opções**; é o que a banca costuma chamar de **menu**.\n* **Barra de Ferramentas de Acesso Rápido**: ícones frequentes (Novo, Abrir, Iniciar Apresentação, Desfazer/Refazer); pode ficar **acima ou abaixo** da Faixa de Opções e ser **personalizada** em “Mais comandos...”.\n* **Tela inicial do PowerPoint**: mostra **modelos, arquivos recentes, itens fixados e compartilhados (OneDrive)**; você escolhe “Apresentação em branco” para iniciar um arquivo vazio.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Office 365 (assinatura) vs Office 2016/2019/2021 (estático)\n\n| Aspecto                  | Office 365 (assinatura)                                  | Versões 2016/2019/2021 (estáticas)              |\n|--------------------------|----------------------------------------------------------|-------------------------------------------------|\n| Atualizações             | **Constantes** (novas ferramentas, recursos e segurança) | **Só segurança**, sem recursos novos            |\n| Pagamento                | **Mensal ou anual**                                      | **Compra única**                                |\n| Instalações por usuário  | Até **5 instalações** (cinco máquinas)                   | Licença tradicional por máquina                 |\n| Integração OneDrive      | **Total** (espaço + colaboração + salvar automático)     | **Limitada**                                    |\n| Condição para evoluir    | Assinatura ativa = direito às atualizações               | Versão “congelada” em recursos após o ciclo     |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra do Salvar Automaticamente**\n\n* **Só funciona se**:\n  * o arquivo estiver **salvo no OneDrive**; e\n  * o usuário estiver **logado** na conta do Office 365.\n* Se o botão “Salvar automaticamente” estiver desativado → arquivo não está no OneDrive **ou** o usuário não está logado.\n\n---\n\n**2. Regra de Atualizações**\n\n* **Office 365 (assinatura)**: enquanto a assinatura estiver ativa → direito a **novas ferramentas, recursos e segurança**.\n* **Office 2016/2019/2021 (estáticas)**: recebem **apenas atualizações de segurança**, sem novos recursos após o lançamento.\n* Em prova, se a pergunta for “qual modelo recebe novas ferramentas com o tempo?” → **Microsoft Office 365 (por assinatura)**.\n\n---\n\n**3. Salvamento Automático e Compartilhar (colaboração)**\n\n1) Salve a apresentação no **OneDrive**.  \n2) Verifique o **Salvar automaticamente** (On) na barra de título.  \n3) Clique em **Compartilhar** (barra superior ou **Menu Arquivo > Compartilhar**).  \n4) Escolha:\n   * enviar convite por e-mail ou\n   * gerar link.\n5) Defina permissões:\n   * “Qualquer pessoa pública pode editar” **ou** “Especificar as pessoas”;\n   * marcar/desmarcar **Permitir edição**;\n   * opcional: **data de validade** e **senha** para o link.\n6) Colaboradores usam o **OneDrive** (conta Microsoft; não precisa ser paga para editar o arquivo compartilhado).\n\n---\n\n**4. Exportar para PDF**\n\n* **Caminho**: **Arquivo > Exportar > Criar PDF/XPS**.  \n* Em provas, costuma-se cobrar **Exportar**, não “Salvar como”.\n\n---\n\n**5. Tamanho do Slide**\n\n* **Caminho**: **Guia Design > Tamanho do Slide**.  \n* Padrões: **4:3** e **16:9** (por exemplo, para projetores widescreen).\n\n---\n\n**6. Transições (entre slides)**\n\n1) Selecione o slide.  \n2) **Guia Transições** > escolha o efeito (ex.: **Empurrão**, **Apagar**).  \n3) Inicie a apresentação para ver a troca entre slides.\n\n---\n\n**7. Animações (em elementos do slide)**\n\n1) Selecione o elemento (texto, imagem, forma).  \n2) **Guia Animações** > escolha o efeito (ex.: **Aparecer**, **Virar**, **Rodopiar**).  \n3) Use o **Grupo Visualizar** para pré-visualizar; teste durante a apresentação.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Chamar **Página Inicial** de “menu”.  \n   * Correto: **Página Inicial** é **Guia/Aba**; **Menu** aplica-se ao **Arquivo (Backstage)**.\n\n2. Achar que **“Salvar automaticamente”** funciona em arquivo local.  \n   * Correto: precisa estar no **OneDrive** e com usuário **logado**.\n\n3. Confundir **Exportar (PDF)** com “Salvar como”.  \n   * Correto: **Arquivo > Exportar > Criar PDF/XPS**.\n\n4. Confundir **Transição** (entre slides) com **Animação** (no elemento).  \n   * Macete do material: “Se mexe o slide na troca” = Transição; “Se mexe um item dentro do slide” = Animação.\n\n5. Achar que abrir o PowerPoint já inicia automaticamente uma apresentação em branco.  \n   * Correto: abre a **tela inicial** com modelos, recentes e itens do OneDrive; você escolhe “Apresentação em branco”.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Office 365 (assinatura)** de **2016/2019/2021 (estático)** em:\n  * Atualizações (novos recursos x só segurança)?\n  * Forma de pagamento (mensal/anual x compra única)?\n  * Instalações por usuário (até 5 no 365)?\n  * Integração com **OneDrive** (total x limitada)?\n* Memorizei a **regra do Salvar automaticamente** (arquivo no OneDrive + usuário logado)?\n* Sei o caminho de:\n  * **Exportar para PDF**: **Arquivo > Exportar > Criar PDF/XPS**?\n  * **Tamanho do Slide**: **Guia Design > Tamanho do Slide** (4:3 e 16:9)?\n* Estou seguro em **Transição vs Animação** (entre slides x dentro do slide)?\n* Lembro que:\n  * **Página Inicial** é **Guia/Aba** e **Arquivo** é o **Menu (Backstage)**?\n  * **Barra de Ferramentas de Acesso Rápido** pode ser movida (acima/abaixo) e personalizada?\n  * A **tela inicial** mostra modelos, recentes e itens do OneDrive, e eu escolho “Apresentação em branco”?",
+  "mapa_mental": "# 💻 Office 365 – PowerPoint\n## 🎯 Conceitos Fundamentais\n### 💡 Office 365 Assinatura\n- Pagamento recorrente\n- Atualizações constantes\n- Novos recursos\n- Cinco instalações\n- Assinatura ativa\n### 💡 Versões Estáticas\n- Office 2016\n- Office 2019\n- Office 2021\n- Atualização segurança\n- Sem novos recursos\n### 💡 OneDrive Integração\n- Armazenamento nuvem\n- Salvar automaticamente\n- Compartilhamento online\n- Edição simultânea\n- Conta Microsoft\n\n## 🧩 Interface PowerPoint\n### 💻 Janela Aplicativo\n- Botão minimizar\n- Restaurar maximizar\n- Fechar janela\n- Dois quadradinhos\n- Um quadrado\n### 🧭 Faixa de Opções\n- Guias superiores\n- Grupos comandos\n- Ícones ferramentas\n- Personalização parcial\n- Termo correto guia\n### 🧰 Barra Acesso Rápido\n- Novo arquivo\n- Abrir arquivo\n- Desfazer refazer\n- Iniciar apresentação\n- Mais comandos\n### 📂 Menu Arquivo Backstage\n- Novo abrir\n- Salvar salvar como\n- Imprimir exportar\n- Compartilhar fechar\n- Conta opções\n### 🧱 Guias Principais\n- Guia Página Inicial\n- Guia Inserir\n- Guia Design\n- Guia Transições\n- Guia Animações\n### 📑 Grupos Importantes\n- Área transferência\n- Fonte parágrafo\n- Desenho editando\n- Tabelas imagens\n- Temas variantes\n\n## ☁️ Nuvem, Salvamento, Compartilhar\n### 💾 Salvamento Automático\n- Arquivo no OneDrive\n- Usuário logado\n- Botão salvar automático\n- Atualização contínua\n- Requisito assinatura\n### 🤝 Compartilhamento OneDrive\n- Botão compartilhar\n- Enviar convite\n- Gerar link\n- Permitir edição\n- Pessoas específicas\n### 🔐 Opções Link\n- Qualquer pessoa\n- Especificar pessoas\n- Data validade\n- Senha link\n- Conta gratuita\n### 📤 Exportar Arquivo\n- Arquivo exportar\n- Criar PDF XPS\n- Não salvar como\n- Formato avaliação\n- Impressão estática\n\n## 🎬 Apresentações, Transições, Animações\n### 📏 Tamanho do Slide\n- Guia Design\n- Tamanho do slide\n- Padrão 4:3\n- Padrão 16:9\n- Ajuste apresentação\n### 🔄 Transições Slides\n- Entre slides\n- Guia Transições\n- Efeito troca\n- Aplicar slide\n- Visualizar apresentação\n### ✨ Animações Objetos\n- Dentro slide\n- Texto imagem forma\n- Guia Animações\n- Grupo visualizar\n- Diferença transição",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Licenciamento Microsoft",
+      "description": "Licenciamento Microsoft — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o modelo de licenciamento do **Microsoft 365**?",
+          "back": "Versão do pacote Office por **assinatura**.",
+          "hint": "Refere-se ao modelo de pagamento recorrente",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "office-365",
+            "licenciamento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Em que condição o assinante do Microsoft 365 recebe atualizações do PowerPoint?",
+          "back": "Enquanto estiver **pagando** a mensalidade.",
+          "hint": "Relacionado à vigência do contrato",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office-365",
+            "assinatura"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o limite de instalações mencionado para uma assinatura do Microsoft 365?",
+          "back": "Até **cinco** máquinas.",
+          "hint": "É um número inteiro pequeno",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office-365",
+            "instalacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a principal diferença de atualização entre o Microsoft 365 e uma versão estática do Office?",
+          "back": "O Microsoft 365 possui atualizações **constantes**, enquanto a versão estática recebe apenas atualizações de segurança e para de ser atualizada.",
+          "hint": "Contraste entre fluxo contínuo e estático",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "office-365",
+            "atualizacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Interface PowerPoint",
+      "description": "Interface PowerPoint — 5 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Para que serve o **PowerPoint**?",
+          "back": "Ferramenta para criação e edição de **slides** que virarão uma apresentação.",
+          "hint": "O produto final é uma sequência visual",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual tela é exibida ao abrir o PowerPoint antes de iniciar uma apresentação?",
+          "back": "Tela de **modelos** e opções recentes.",
+          "hint": "Ponto de partida para novos arquivos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como a Microsoft denomina tecnicamente a área identificada por “Arquivo” no PowerPoint?",
+          "back": "**Guia** ou aba.",
+          "hint": "Terminologia da interface de faixas",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Como se organizam internamente os comandos de uma guia da faixa de opções?",
+          "back": "Organizados em **grupos** internos.",
+          "hint": "Estrutura de organização da faixa de opções",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "interface"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a função da caixa de pesquisa do PowerPoint?",
+          "back": "Pesquisar **funções**.",
+          "hint": "Ferramenta de busca de comandos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "interface"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Arquivos e Nuvem",
+      "description": "Arquivos e Nuvem — 5 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual serviço é usado pelo Microsoft 365 para armazenar apresentações na nuvem?",
+          "back": "**OneDrive**.",
+          "hint": "Serviço de armazenamento da Microsoft",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "office-365",
+            "nuvem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Onde uma apresentação precisa ser salva para habilitar o salvamento automático?",
+          "back": "No **OneDrive**.",
+          "hint": "Local de armazenamento obrigatório",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "office-365",
+            "salvamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Como o salvamento automático se comporta durante a edição de uma apresentação?",
+          "back": "Salva **automaticamente** as alterações conforme ocorrem.",
+          "hint": "Ocorre em tempo real",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office-365",
+            "salvamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual condição permite editar simultaneamente uma apresentação compartilhada?",
+          "back": "Estar com a apresentação salva no **OneDrive**.",
+          "hint": "Requisito de localização do arquivo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "office-365",
+            "colaboracao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "Quais permissões podem ser definidas ao compartilhar um link de apresentação?",
+          "back": "Permitir a edição, definir data de validade e definir uma **senha**.",
+          "hint": "São três tipos de restrições de acesso",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office-365",
+            "compartilhamento"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Layout e Design",
+      "description": "Layout e Design — 2 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual proporção corresponde ao formato retangular de slide mais usado no PowerPoint?",
+          "back": "**16:9**.",
+          "hint": "Padrão de tela widescreen",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "configuracao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Em que situação o PowerPoint pode apresentar ideias de design?",
+          "back": "Conforme se copiam **imagens** para a apresentação.",
+          "hint": "Recurso de inteligência visual",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "design"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Efeitos Visuais",
+      "description": "Efeitos Visuais — 1 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Qual é a diferença entre transição e animação no PowerPoint?",
+          "back": "A transição ocorre quando o **slide** aparece, enquanto a animação é aplicada aos **elementos** de um slide.",
+          "hint": "Diferença entre o todo e as partes",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "animacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft PowerPoint 365, qual é a principal característica que diferencia o modelo de assinatura em relação às versões estáticas tradicionais do pacote Office?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O armazenamento em nuvem é opcional e requer pagamento adicional separado da assinatura",
+          "correct": false,
+          "explanation": "Incorreta. O armazenamento em nuvem no OneDrive, geralmente de 1 TB por usuário, é um benefício padrão e integrado à maioria dos planos de assinatura do Microsoft 365. Não é um serviço opcional que requer pagamento adicional separado da assinatura."
+        },
+        {
+          "id": "b",
+          "text": "O usuário recebe atualizações constantes de recursos e funcionalidades enquanto mantiver a assinatura ativa",
+          "correct": true,
+          "explanation": "Correta. A principal característica do modelo de assinatura do Microsoft 365 é o acesso contínuo a atualizações de recursos, funcionalidades e melhorias de desempenho, além das correções de segurança, enquanto a assinatura estiver ativa. Isso garante que o usuário esteja sempre com a versão mais recente do software."
+        },
+        {
+          "id": "c",
+          "text": "As atualizações são limitadas exclusivamente a correções de segurança durante todo o período de uso",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é falsa. A limitação a apenas atualizações de segurança é mais comum em versões estáticas (licença perpétua) do Office, após um período de suporte. O modelo de assinatura do Microsoft 365 oferece atualizações constantes de funcionalidades, não apenas de segurança."
+        },
+        {
+          "id": "d",
+          "text": "O programa permite instalação em apenas uma máquina por licença adquirida",
+          "correct": false,
+          "explanation": "Incorreta. Uma das vantagens do Microsoft 365 é justamente a flexibilidade de instalação. Dependendo do plano de assinatura (como o Microsoft 365 Personal ou Family), o usuário pode instalar os aplicativos em múltiplas máquinas (computadores, tablets e celulares) com uma única licença."
+        }
+      ],
+      "explanation": "Correta. A principal característica do modelo de assinatura do Microsoft 365 é o acesso contínuo a atualizações de recursos, funcionalidades e melhorias de desempenho, além das correções de segurança, enquanto a assinatura estiver ativa. Isso garante que o usuário esteja sempre com a versão mais recente do software.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Na tela inicial do PowerPoint 365, o que é exibido quando o programa é aberto, antes de iniciar uma apresentação específica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "São exibidos modelos, apresentações recentes e opções para criar ou abrir arquivos",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Aparece diretamente o modo de apresentação de slides em tela cheia",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Uma apresentação em branco é aberta automaticamente para edição imediata",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "O programa solicita obrigatoriamente a escolha de um tema antes de prosseguir",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual recurso permite que as alterações feitas em uma apresentação sejam salvas automaticamente sem intervenção manual do usuário?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O sistema de Versionamento Local, que cria cópias periódicas na pasta de documentos",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "A ferramenta de Sincronização Offline, ativada automaticamente em qualquer localização de arquivo",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "O recurso de Salvamento Automático, que requer que o arquivo esteja armazenado no OneDrive",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "A função de Backup Incremental, disponível nas configurações avançadas do programa",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No menu Arquivo do PowerPoint, qual opção permite criar uma cópia da apresentação em formato PDF?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A opção Compartilhar, que converte automaticamente para PDF antes do envio",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "A opção Publicar, exclusiva para geração de documentos em formatos não editáveis",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "A opção Exportar, que oferece a conversão para diversos formatos incluindo PDF",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "A opção Salvar Como, selecionando o formato PDF na lista de tipos de arquivo disponíveis",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o requisito fundamental para utilizar o recurso de compartilhamento com edição simultânea no PowerPoint 365?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo deve ser convertido para formato de compatibilidade antes de habilitar o compartilhamento",
+          "correct": false,
+          "explanation": "Incorreta. Os formatos de arquivo modernos do PowerPoint (.pptx) já são otimizados para colaboração e edição simultânea. Converter o arquivo para um formato de compatibilidade mais antigo (.ppt), por exemplo, poderia, na verdade, limitar ou desabilitar alguns dos recursos de coautoria."
+        },
+        {
+          "id": "b",
+          "text": "É necessário configurar uma rede local compartilhada entre os computadores dos colaboradores",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreve um método de compartilhamento de arquivos em ambiente de rede local. O recurso de compartilhamento com edição simultânea do PowerPoint 365 é baseado em serviços de nuvem (OneDrive/SharePoint) e não exige a configuração de uma rede local."
+        },
+        {
+          "id": "c",
+          "text": "Todos os usuários devem possuir a mesma versão do PowerPoint instalada em seus dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. Embora a compatibilidade seja melhor com versões mais recentes, não é um requisito fundamental que todos os usuários possuam exatamente a mesma versão instalada do PowerPoint. A edição simultânea funciona bem entre diferentes plataformas (aplicativo de desktop, versão web) desde que o arquivo esteja na nuvem."
+        },
+        {
+          "id": "d",
+          "text": "A apresentação deve estar salva no OneDrive e os colaboradores precisam ter acesso ao serviço de nuvem",
+          "correct": true,
+          "explanation": "Correta. Para que o recurso de compartilhamento com edição simultânea (coautoria) funcione no PowerPoint 365, a apresentação deve estar salva em um serviço de nuvem da Microsoft, como o OneDrive ou SharePoint. Além disso, os colaboradores precisam ter acesso a esse serviço e as permissões de edição adequadas."
+        }
+      ],
+      "explanation": "Correta. Para que o recurso de compartilhamento com edição simultânea (coautoria) funcione no PowerPoint 365, a apresentação deve estar salva em um serviço de nuvem da Microsoft, como o OneDrive ou SharePoint. Além disso, os colaboradores precisam ter acesso a esse serviço e as permissões de edição adequadas.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Na estrutura organizacional do PowerPoint, como são denominadas as divisões internas que compõem cada guia da faixa de opções?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Segmentos, que dividem as ferramentas por ordem alfabética e frequência de uso",
+          "correct": false,
+          "explanation": "Incorreta. As divisões internas das guias não são chamadas de segmentos, e sua organização não é primariamente por ordem alfabética ou frequência de uso. Elas são organizadas por grupos de funcionalidades relacionadas para facilitar a localização e o uso das ferramentas."
+        },
+        {
+          "id": "b",
+          "text": "Grupos, que reúnem conjuntos de funcionalidades relacionadas dentro de cada guia",
+          "correct": true,
+          "explanation": "Correta. A interface da Faixa de Opções (Ribbon) do Microsoft PowerPoint, assim como outros aplicativos do Microsoft Office, organiza suas funcionalidades em \"Guias\" (como \"Página Inicial\", \"Inserir\", \"Design\", etc.). Dentro de cada guia, as ferramentas são logicamente agrupadas em \"Grupos\", que contêm botões e comandos relacionados. Por exemplo, na guia \"Página Inicial\", existem grupos como \"Área de Transferência\", \"Slides\", \"Fonte\", \"Parágrafo\", entre outros."
+        },
+        {
+          "id": "c",
+          "text": "Painéis, que organizam ferramentas relacionadas em seções expansíveis e retráteis",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns programas utilizem painéis para organizar funcionalidades, no contexto da Faixa de Opções do Microsoft PowerPoint, as divisões internas das guias não são chamadas de painéis. Painéis geralmente se referem a áreas flutuantes ou fixas na interface que exibem informações ou opções adicionais, como o Painel de Animação ou o Painel de Formatação."
+        },
+        {
+          "id": "d",
+          "text": "Módulos, que representam categorias independentes de recursos do programa",
+          "correct": false,
+          "explanation": "Incorreta. O termo \"módulos\" não é a denominação padrão para as divisões internas das guias na Faixa de Opções do PowerPoint. Módulos são mais comumente associados a componentes de software ou seções maiores de um programa, não à organização granular das ferramentas dentro de uma guia."
+        }
+      ],
+      "explanation": "Correta. A interface da Faixa de Opções (Ribbon) do Microsoft PowerPoint, assim como outros aplicativos do Microsoft Office, organiza suas funcionalidades em \"Guias\" (como \"Página Inicial\", \"Inserir\", \"Design\", etc.). Dentro de cada guia, as ferramentas são logicamente agrupadas em \"Grupos\", que contêm botões e comandos relacionados. Por exemplo, na guia \"Página Inicial\", existem grupos como \"Área de Transferência\", \"Slides\", \"Fonte\", \"Parágrafo\", entre outros.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Quais são os dois tamanhos padrão de slide disponíveis no PowerPoint para configuração de apresentações?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Formato 4:3 (mais quadrado) e formato 16:9 (mais retangular), baseados em proporções de tela",
+          "correct": true,
+          "explanation": "Correta. Os dois tamanhos padrão de slide no PowerPoint são o formato 4:3, que é uma proporção mais quadrada e historicamente utilizada em monitores e projetores mais antigos, e o formato 16:9, que é uma proporção widescreen mais retangular e amplamente adotada por monitores modernos, televisores e projetores atuais, sendo o padrão para a maioria das apresentações contemporâneas. Essas proporções se referem à relação entre a largura e a altura do slide."
+        },
+        {
+          "id": "b",
+          "text": "Formato Paisagem (horizontal) e formato Retrato (vertical), baseados na orientação do slide",
+          "correct": false,
+          "explanation": "Incorreta. Paisagem e Retrato referem-se à orientação do slide (horizontal ou vertical), não aos seus tamanhos padrão de proporção. O PowerPoint utiliza predominantemente a orientação paisagem como padrão para apresentações, mas os tamanhos padrão (4:3 e 16:9) são sobre a proporção da tela."
+        },
+        {
+          "id": "c",
+          "text": "Formato Compacto (800x600px) e formato HD (1920x1080px), baseados em resoluções de vídeo",
+          "correct": false,
+          "explanation": "Incorreta. Embora o PowerPoint trabalhe com resoluções de pixels, os termos \"Compacto\" e \"HD\" não são os nomes padrão dos formatos de slide. As proporções 4:3 e 16:9 podem corresponder a diversas resoluções (por exemplo, 800x600 pixels é 4:3; 1920x1080 pixels é 16:9), mas os formatos padrão são definidos pelas proporções, não por resoluções específicas ou termos genéricos como \"Compacto\"."
+        },
+        {
+          "id": "d",
+          "text": "Formato A4 (210x297mm) e formato Carta (216x279mm), baseados em padrões de impressão",
+          "correct": false,
+          "explanation": "Incorreta. Embora o PowerPoint permita configurar o tamanho do slide para impressão em formatos como A4 ou Carta, estes não são os tamanhos padrão de proporção de tela para apresentações digitais. Esses formatos são mais relevantes para a saída impressa do que para a exibição em tela."
+        }
+      ],
+      "explanation": "Correta. Os dois tamanhos padrão de slide no PowerPoint são o formato 4:3, que é uma proporção mais quadrada e historicamente utilizada em monitores e projetores mais antigos, e o formato 16:9, que é uma proporção widescreen mais retangular e amplamente adotada por monitores modernos, televisores e projetores atuais, sendo o padrão para a maioria das apresentações contemporâneas. Essas proporções se referem à relação entre a largura e a altura do slide.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a diferença fundamental entre transição de slides e animação no PowerPoint?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Transição afeta apenas textos e formas geométricas, enquanto animação é exclusiva para imagens e vídeos",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação inverte e restringe incorretamente o escopo de ambos os recursos. Transições afetam o slide como um todo, não apenas textos ou formas. Animações podem ser aplicadas a qualquer objeto dentro de um slide, incluindo textos, formas, imagens, gráficos, vídeos e áudios."
+        },
+        {
+          "id": "b",
+          "text": "Transição ocorre automaticamente em intervalos fixos, enquanto animação requer acionamento manual durante a apresentação",
+          "correct": false,
+          "explanation": "Incorreta. Tanto as transições quanto as animações podem ser configuradas para ocorrer automaticamente após um determinado tempo ou mediante um clique do mouse. Não é uma regra que as transições sejam sempre automáticas ou que as animações sempre exijam acionamento manual. A configuração de tempo e acionamento é flexível para ambos."
+        },
+        {
+          "id": "c",
+          "text": "Transição é configurada na guia Animações, enquanto animação é configurada na guia Design",
+          "correct": false,
+          "explanation": "Incorreta. As transições são configuradas na guia \"Transições\" da Faixa de Opções do PowerPoint, e as animações são configuradas na guia \"Animações\". A guia \"Design\" é utilizada para temas, variantes e formatação do plano de fundo dos slides, não para efeitos de movimento."
+        },
+        {
+          "id": "d",
+          "text": "Transição é o efeito aplicado quando se passa de um slide para outro, enquanto animação é o efeito aplicado a elementos dentro de um slide",
+          "correct": true,
+          "explanation": "Correta. Esta é a distinção fundamental. Uma transição é um efeito visual ou sonoro que ocorre quando um slide sai da tela e o próximo slide entra durante a apresentação. Por exemplo, um slide pode \"empurrar\" o anterior para fora da tela. Já uma animação é um efeito aplicado a objetos individuais (como textos, imagens, formas, gráficos) dentro de um slide, controlando como eles aparecem, desaparecem, se movem ou enfatizam durante a exibição do slide."
+        }
+      ],
+      "explanation": "Correta. Esta é a distinção fundamental. Uma transição é um efeito visual ou sonoro que ocorre quando um slide sai da tela e o próximo slide entra durante a apresentação. Por exemplo, um slide pode \"empurrar\" o anterior para fora da tela. Já uma animação é um efeito aplicado a objetos individuais (como textos, imagens, formas, gráficos) dentro de um slide, controlando como eles aparecem, desaparecem, se movem ou enfatizam durante a exibição do slide.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Ao compartilhar uma apresentação do PowerPoint 365 através de link, quais configurações de segurança podem ser aplicadas para controlar o acesso?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Especificação de pessoas autorizadas, definição de data de validade do link e configuração de senha de acesso",
+          "correct": true,
+          "explanation": "Correta. Ao compartilhar uma apresentação do PowerPoint 365 (que geralmente utiliza o OneDrive ou SharePoint para armazenamento em nuvem), é possível especificar exatamente quem pode acessar o link (por exemplo, \"qualquer pessoa com o link\", \"pessoas na sua organização\" ou \"pessoas específicas\"). Além disso, pode-se definir uma data de validade para o link, após a qual ele não funcionará mais, e também configurar uma senha para que apenas aqueles que a possuírem possam abrir o arquivo, mesmo tendo o link. Essas opções oferecem um controle robusto sobre a segurança do acesso."
+        },
+        {
+          "id": "b",
+          "text": "Exclusivamente a criptografia automática do arquivo e o registro de log de todos os acessos realizados",
+          "correct": false,
+          "explanation": "Incorreta. A criptografia automática do arquivo não é uma configuração de segurança diretamente controlada pelo usuário ao gerar um link de compartilhamento simples no PowerPoint 365, embora os dados no OneDrive/SharePoint sejam criptografados em trânsito e em repouso. O registro de log de acessos é uma funcionalidade de auditoria mais avançada, geralmente disponível para administradores de TI em ambientes corporativos e não para usuários comuns ao compartilhar um link. A palavra \"exclusivamente\" também torna a alternativa falsa, pois ignora outras opções de segurança."
+        },
+        {
+          "id": "c",
+          "text": "Somente a limitação do número de visualizações permitidas e o bloqueio de download do arquivo",
+          "correct": false,
+          "explanation": "Incorreta. A limitação do número de visualizações permitidas não é uma configuração padrão e amplamente disponível para links de compartilhamento no PowerPoint 365. Embora o bloqueio de download possa ser uma opção em algumas configurações de compartilhamento, a alternativa \"somente\" a torna incorreta, pois há outras configurações de segurança mais comuns e importantes."
+        },
+        {
+          "id": "d",
+          "text": "Apenas a definição de permissões de leitura ou edição para os destinatários do link",
+          "correct": false,
+          "explanation": "Incorreta. Embora a definição de permissões de leitura ou edição seja uma funcionalidade importante, ela não é a única configuração de segurança disponível ao compartilhar um link no PowerPoint 365. Existem outras opções para um controle de acesso mais granular."
+        }
+      ],
+      "explanation": "Correta. Ao compartilhar uma apresentação do PowerPoint 365 (que geralmente utiliza o OneDrive ou SharePoint para armazenamento em nuvem), é possível especificar exatamente quem pode acessar o link (por exemplo, \"qualquer pessoa com o link\", \"pessoas na sua organização\" ou \"pessoas específicas\"). Além disso, pode-se definir uma data de validade para o link, após a qual ele não funcionará mais, e também configurar uma senha para que apenas aqueles que a possuírem possam abrir o arquivo, mesmo tendo o link. Essas opções oferecem um controle robusto sobre a segurança do acesso.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a função do recurso \"Ideias de Design\" no PowerPoint 365 e como ele pode ser acessado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Analisa a qualidade visual dos slides e sugere correções de cores, acessível pela guia Revisão",
+          "correct": false,
+          "explanation": "Incorreta. A função principal das \"Ideias de Design\" é propor layouts e designs, não analisar a \"qualidade visual\" de forma corretiva ou sugerir apenas correções de cores. A guia \"Revisão\" é utilizada para verificação ortográfica, gramatical, comentários, tradução, entre outras ferramentas de revisão de conteúdo, e não para sugestões de design."
+        },
+        {
+          "id": "b",
+          "text": "Gera sugestões automáticas de layout e design baseadas no conteúdo inserido, acessível pela guia Design",
+          "correct": true,
+          "explanation": "Correta. O recurso \"Ideias de Design\" (Designer) do PowerPoint 365 é uma ferramenta inteligente que, ao analisar o conteúdo de um slide (texto, imagens, gráficos), oferece automaticamente diversas sugestões de layouts e designs visualmente atraentes para aprimorar a apresentação. Ele pode ser acessado principalmente pela guia \"Design\" na Faixa de Opções, ou aparecer automaticamente como um painel lateral ao adicionar conteúdo a um slide."
+        },
+        {
+          "id": "c",
+          "text": "Oferece modelos prontos de apresentações completas por categoria, acessível na tela inicial do programa",
+          "correct": false,
+          "explanation": "Incorreta. Embora o PowerPoint ofereça modelos prontos de apresentações na tela inicial, o recurso \"Ideias de Design\" é diferente. Ele atua dentro de uma apresentação já em andamento, fornecendo sugestões de design para slides individuais com base no conteúdo, e não modelos de apresentações completas."
+        },
+        {
+          "id": "d",
+          "text": "Permite criar temas personalizados do zero com assistente passo a passo, acessível pelo menu Arquivo",
+          "correct": false,
+          "explanation": "Incorreta. O recurso \"Ideias de Design\" não é para criar temas personalizados do zero. Ele sugere designs com base em temas existentes ou no conteúdo. A criação de temas personalizados envolve outras funcionalidades e não é acessada pelo menu \"Arquivo\", que lida com operações de arquivo como salvar, abrir, imprimir."
+        }
+      ],
+      "explanation": "Correta. O recurso \"Ideias de Design\" (Designer) do PowerPoint 365 é uma ferramenta inteligente que, ao analisar o conteúdo de um slide (texto, imagens, gráficos), oferece automaticamente diversas sugestões de layouts e designs visualmente atraentes para aprimorar a apresentação. Ele pode ser acessado principalmente pela guia \"Design\" na Faixa de Opções, ou aparecer automaticamente como um painel lateral ao adicionar conteúdo a um slide.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "20_274261_Office 365 - PowerPoint.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:52:25"
+}

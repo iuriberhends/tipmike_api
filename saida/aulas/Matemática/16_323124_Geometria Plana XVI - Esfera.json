@@ -1,0 +1,547 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 16,
+  "ordem_no_curso": "106.13",
+  "titulo": "Geometria Plana XVI - Esfera",
+  "codigo_aula": "323124",
+  "video_id": "Rtrr+rEUTuk=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:26:16",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/Rtrr%2BrEUTuk%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=425202%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Plana XVI - Esfera\n\n## Continuidade do Curso e Introdução ao Tema da Aula\nTudo bem com vocês? Vamos dar continuidade à nossa matriz de matemática. Estamos vendo geometria plana, finalzinho, finalzinho mesmo, na parte de círculo e circunferência. A gente quer trabalhar com a superfície, aquela bonitinha, tudo certinho. Show de bola.\n\nVamos começar aqui com um tema que, embora faça parte de outras frentes, é muito interessante. Caiu na PF e fala sobre áreas sombreadas, aquelas floradas cinzentas. Essa questão está no nosso treinamento, beleza? Show de bola, treinamento muito bom. Questão número 1, de 2022. É uma questão interessante que envolve duas figuras importantes.\n\n## Identificação das Figuras: Trapézio e Semicírculos\nO que nós já aprendemos vai nos ajudar. Observando a figura, primeiro nós temos um trapézio, de cabeça para baixo. Certo? Vou destacar a parte amarelinha como a base maior, e também temos semicírculos na parte superior da figura. Legal.\n\nA questão pede para considerarmos um valor de π. Às vezes as bancas pedem para considerar π = 3. Não tem nenhum problema, tá? Mesmo π sendo irracional (3,1415...), a banca pode pedir π = 3, e seguimos com isso.\n\nA questão fala: “Área da figura em centímetros quadrados.” Temos duas áreas aqui: vou chamar de área 1 e área 2. A área 2 é a do trapézio; a área 1 é a dos semicírculos. Vamos calcular na ordem em que estão posicionadas: a área 2 está mais embaixo.\n\n## Cálculo da Área 2 (Trapézio)\nA área do trapézio é dada por:\n- Área = (base maior + base menor) × altura / 2.\n\nA base maior é a parte amarelinha: 8 + 8 = 16.\nA base menor é 6.\nA altura é 8, que é o próprio raio (altura do trapézio).\n\nEntão:\n- Área 2 = (16 + 6) × 8 / 2\n- Área 2 = 22 × 8 / 2\n- Área 2 = 22 × 4\n- Área 2 = 88 cm².\n\nBeleza? Tá aqui nossa área da faixa amarelinha.\n\n## Cálculo da Área 1 (Semicírculos)\nAgora vamos aos semicírculos. A área do círculo é πr². Como queremos a metade (semicírculo), dividimos por 2.\n\nAqui, π = 3 (como a banca pediu) e r = 8.\n\n- Área do semicírculo = πr² / 2\n- Área = 3 × 8² / 2\n- Área = 3 × 64 / 2\n- Área = 3 × 32\n- Área = 96 cm².\n\nBeleza? Então a área dos semicírculos é 96 cm².\n\n## Área Total da Figura\nSomando as duas:\n- Área total = 88 + 96\n- Área total = 184 cm².\n\nResposta: 184 cm². Letra correspondente na prova. Reparem que envolveu círculo/semicírculo e trapézio, conteúdo que vimos em quadriláteros. Questão muito legal, interessantíssima. A banca é excelente.\n\n## Triângulo Inscrito em Circunferência com Diâmetro\nFiz até uma observação em bloco passado com vocês: quando temos um triângulo inscrito em uma circunferência e um dos lados é o diâmetro, o triângulo é retângulo.\n\nPensa comigo: tenho uma circunferência, traço um triângulo ABC tal que um dos lados é o diâmetro (duas vezes o raio). O que posso afirmar com certeza? Esse triângulo é retângulo e o ângulo oposto ao diâmetro mede 90 graus. As bancas, muitas vezes, não dizem isso explicitamente. É conhecimento teórico essencial.\n\nNão tem como fugir: se você não tem teoria, não adianta ter pressa. Questão é aplicação direta do que a gente aprende.\n\n## Aplicação em Logotipo e Ângulos Internos\nVamos à questão do logotipo de uma empresa. A figura representa uma circunferência de centro O (identificável porque há segmentos iguais saindo do centro — raios). Temos um triângulo com vértices sobre a circunferência. Se um dos lados do triângulo é o diâmetro, então o triângulo é retângulo, e já sabemos que há um ângulo de 90 graus.\n\nA questão diz que, para uso em documentos, o logotipo pode ser aumentado ou diminuído mantendo-se as medidas dos ângulos internos do triângulo. E informa: o ângulo B mede quatro quintos do ângulo C. A pergunta: qual é a medida do menor ângulo do triângulo?\n\nSabemos:\n- Soma dos ângulos internos de um triângulo é 180°.\n- Um dos ângulos é 90° (por ser triângulo inscrito com lado igual ao diâmetro).\n- Portanto, os outros dois ângulos somam 90°.\n\nSe B = 4/5 de C, e B + C = 90°, montamos o sistema:\n- B = 4/5 C\n- B + C = 90°\n\nSubstituindo:\n- 4/5 C + C = 90\n- (4/5 C + 5/5 C) = 90\n- 9/5 C = 90\n- C = 90 × 5/9\n- C = 450/9\n- C = 50°.\n\nEntão B = 4/5 × 50° = 40°.\nTemos o triângulo com ângulos: 90°, 50° e 40°.\nO menor ângulo é 40°.\n\n> 🎯 **Dicas de prova:** Triângulo inscrito em circunferência com um lado igual ao diâmetro é sempre retângulo (ângulo oposto ao diâmetro mede 90°).\n\n## Setor Circular e Regra de Três (Distribuição de Pessoas)\nQuestão 3: “Uma empresa tem 18 empregados com curso superior e 42 sem curso superior.” Não estamos falando em porcentagem, são valores absolutos. Total: 18 + 42 = 60 pessoas.\n\nA figura é um setor circular. A volta completa tem 360°. Então 60 pessoas correspondem a 360°. Queremos saber quantos graus correspondem a 18 pessoas.\n\nRegra de três direta:\n- 60 pessoas → 360°\n- 18 pessoas → x°\n\nx = 18 × 360 / 60\nx = 18 × 6\nx = 108°.\n\nÂngulo de 108° não é reto (não é 90°), é obtuso (entre 90° e 180°). Show de bola.\n\n## Perímetro da Circunferência\nQuestão 4: analisar a circunferência considerando π = 3,14. O perímetro (comprimento da circunferência) é:\n- C = 2πr.\n\nSe r = 4, então:\n- C = 2 × 3,14 × 4\n- C = 6,28 × 4\n- C = 25,12.\n\nPerímetro da circunferência: 25,12 (unidades de comprimento). Beleza? Show.\n\n## Encerramento e Próximo Bloco\nNo próximo bloco, fechamos geometria plana. Graças a Deus, questão final de teoria e um desafio para encerrarmos, um pouco mais puxado. Foi uma questão de professor de matemática do ano passado, SEFAZ Alagoas. Quem pode mais pode menos. Estamos aqui para preparar você de verdade. Estou voltando agora. Valeu!",
+  "transcricao_meta": {
+    "title": "Geometria Plana XVI - Esfera",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 26482,
+    "createdAt": "2026-02-07T09:07:23.848Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: esfera, círculo e circunferência em problemas de geometria plana aplicados a concursos.\nPrincipais pontos:\n- Cálculo de áreas em figuras compostas (trapézio + semicírculo) e setor circular\n- Propriedades de triângulo inscrito em circunferência (diâmetro → ângulo reto)\n- Perímetro da circunferência e uso correto de π\n- Proporções em gráficos de pizza (setor circular) e classificação de ângulos\n- Macetes e pegadinhas frequentes de prova\n\n## 1. Base / Conceitos Fundamentais\n- **Circunferência**: conjunto de pontos a uma distância fixa (raio r) de um centro.\n- **Círculo**: região interna da circunferência.\n- **Raio (r)**: distância do centro a um ponto da circunferência.\n- **Diâmetro (d)**: segmento que passa pelo centro e liga dois pontos da circunferência; d = 2r.\n- **Semicírculo**: metade do círculo (ângulo central de 180°).\n- **Setor circular**: “fatia” do círculo delimitada por dois raios e um arco; ângulo central θ (em graus).\n- **Trapézio**: quadrilátero com duas bases paralelas; altura é a distância entre as bases.\n- **Triângulo inscrito**: triângulo com vértices na circunferência.\n- **Ângulos**:\n  - **Reto**: 90°\n  - **Agudo**: entre 0° e 90°\n  - **Obtuso**: entre 90° e 180°\n- **Constante π**:\n  - Se a banca determinar, use o valor indicado (ex.: π = 3).\n  - Na ausência de instrução, use 3,14 ou deixe em π.\n\nFórmulas-chave:\n- **Área do círculo**: A = πr²\n- **Área do semicírculo**: A = (πr²)/2\n- **Comprimento da circunferência**: C = 2πr = πd\n- **Área do trapézio**: A = (B + b) × h ÷ 2\n- **Soma dos ângulos internos do triângulo**: 180°\n\n## 2. Como Funciona / Distinções\n- **Raio vs. Diâmetro**:\n  - r é metade do d; trocas indevidas dobram/partem pela metade áreas e perímetros.\n- **Círculo vs. Circunferência**:\n  - Círculo tem área; circunferência tem comprimento (perímetro).\n- **Triângulo inscrito com lado = diâmetro**:\n  - Ângulo oposto é reto (90°). Facilita achar ângulos restantes: eles somam 90°.\n- **Setor circular (proporção)**:\n  - O ângulo do setor é proporcional ao valor do grupo: θ = 360° × (parte/total).\n\nTabela rápida\n- Círculo: calcula-se área (πr²)\n- Circunferência: calcula-se perímetro (2πr)\n- Semicírculo: metade da área do círculo\n- Setor: fração da área/ângulo do círculo (proporcional a θ/360°)\n\n## 3. Aplicação Prática / Técnicas\n- Áreas em figura composta:\n  1) Separe a figura em partes simples (ex.: trapézio + semicírculo).\n  2) Identifique corretamente r, d, bases e altura.\n  3) Aplique fórmulas e some/subtraia as áreas conforme o enunciado.\n  4) Se a banca fixar π, substitua no início.\n- Triângulo inscrito com diâmetro:\n  1) Marque o ângulo oposto ao diâmetro como 90°.\n  2) Se houver proporções entre ângulos agudos, monte sistema com B + C = 90°.\n  3) Resolva por substituição.\n- Setor circular (gráfico de pizza):\n  1) 360° ↔ total.\n  2) Graus por unidade = 360°/total.\n  3) Ângulo do grupo = (graus por unidade) × quantidade.\n  4) Classifique o ângulo (agudo/reto/obtuso), se pedido.\n- Circunferência (perímetro):\n  1) Verifique se o dado é r ou d.\n  2) Use C = 2πr ou C = πd.\n  3) Substitua π conforme instrução da banca.\n\n> Dica de prova: Simplifique antes de multiplicar. Ex.: (18 × 360)/60 = 18 × 6 = 108, reduzindo erro.\n\n## 4. Exemplos e Casos Resolvidos\n- Figura composta: trapézio + semicírculo\n  - Dados: B = 16, b = 6, h = 8, r = 8, π = 3.\n  - Área do trapézio: (16 + 6) × 8 ÷ 2 = 22 × 4 = 88 cm².\n  - Área do semicírculo: (πr²)/2 = (3 × 8²)/2 = 192/2 = 96 cm².\n  - Área total = 88 + 96 = 184 cm².\n  > Dica de prova: Se a altura coincide com o raio na figura, confirme a perpendicularidade entre as bases.\n\n- Triângulo inscrito com lado = diâmetro\n  - Se AB é diâmetro, então ∠C = 90°.\n  - Dados: B = 4/5 de C; B + C = 90°.\n  - (4/5)C + C = 90 → (9/5)C = 90 → C = 50°; B = 40°.\n  > Dica de prova: Em triângulo retângulo, os ângulos agudos sempre somam 90°.\n\n- Setor circular (proporção de pessoas)\n  - Total: 60 pessoas → 360°.\n  - 1 pessoa → 360/60 = 6°.\n  - 18 pessoas → 18 × 6° = 108° → ângulo obtuso (entre 90° e 180°).\n  > Dica de prova: Reto é exatamente 90°. 108° é obtuso.\n\n- Comprimento da circunferência\n  - r = 4; π = 3,14.\n  - C = 2πr = 2 × 3,14 × 4 = 25,12 (mesmas unidades do raio).\n  > Dica de prova: Se fornecerem d, use C = πd para agilizar.\n\n## 5. Pegadinhas e Erros Comuns\n- Usar π = 3,14 quando a banca exige π = 3 (ou vice-versa). Leia o enunciado.\n- Confundir raio com diâmetro:\n  - Em áreas: r ao quadrado; errar r por d muda por um fator 4.\n  - Em perímetros: C dobra se trocar r por d incorretamente.\n- Esquecer que semicírculo é metade da área do círculo.\n- Ignorar a perpendicularidade no trapézio ao assumir h = r sem verificar a figura.\n- Em triângulo com diâmetro, não marcar o ângulo reto no vértice oposto ao diâmetro.\n- Em gráficos de pizza, pular a etapa “graus por unidade” e errar a proporção.\n- Classificação de ângulos: marcar 108° como reto. Reto = exatamente 90°.\n\n> Dica de prova: Em triângulo retângulo, calcule o terceiro ângulo como 90° − (outro agudo). É mais rápido que fazer 180° − (90° + x).",
+  "resumo_bolso": "# Geometria Plana XVI - Esfera\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Circunferência**: conjunto de pontos a uma distância fixa (raio r) de um centro.\n* **Círculo**: região interna da circunferência.\n* **Raio (r)**: distância do centro a um ponto da circunferência.\n* **Diâmetro (d)**: segmento que passa pelo centro e liga dois pontos da circunferência; **d = 2r**.\n* **Semicírculo**: metade do círculo; ângulo central **180°**.\n* **Setor circular**: “fatia” do círculo; delimitada por **dois raios e um arco**; ângulo central **θ** (em graus).\n* **Trapézio**: quadrilátero com **duas bases paralelas (B, b)**; **altura h** = distância entre as bases.\n* **Triângulo inscrito**: triângulo com vértices na circunferência.\n* **Classificação de ângulos**:\n  - **Agudo**: entre 0° e 90°\n  - **Reto**: 90°\n  - **Obtuso**: entre 90° e 180°\n* **π**:\n  - Se a banca determinar, use o valor indicado (ex.: π = 3).\n  - Se não indicar, use **3,14** ou deixe em **π**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Círculo vs Circunferência\n\n| Aspecto | Círculo | Circunferência |\n|--------|---------|----------------|\n| **Objeto** | Região interna | Conjunto de pontos a distância r de um centro |\n| **Medida típica** | **Área** | **Comprimento (perímetro)** |\n| **Fórmula** | A = πr² | C = 2πr = πd |\n\n---\n\n### Raio vs Diâmetro\n\n| Aspecto | Raio (r) | Diâmetro (d) |\n|--------|----------|--------------|\n| **Definição** | Centro → ponto da circunferência | Ponto → centro → ponto |\n| **Relação** | r = d/2 | d = 2r |\n\n---\n\n### Semicírculo vs Setor Circular\n\n| Aspecto | Semicírculo | Setor Circular |\n|--------|-------------|----------------|\n| **Ângulo central** | 180° | θ qualquer (em graus) |\n| **Área** | (πr²)/2 | Fração da área do círculo proporcional a θ/360° |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Área do círculo**\n\n* **Regra**: A = **πr²**\n\n---\n\n**2. Área do semicírculo**\n\n* **Regra**: A = **(πr²)/2**\n\n---\n\n**3. Comprimento da circunferência**\n\n* **Regra**: C = **2πr = πd**\n\n---\n\n**4. Área do trapézio**\n\n* **Regra**: A = **(B + b)·h / 2**\n\n---\n\n**5. Soma dos ângulos internos do triângulo**\n\n* **Regra**: A soma dos ângulos internos de um triângulo é **180°**.\n\n---\n\n**6. Setor circular (proporção)**\n\n* **Regra**: θ = **360° · (parte/total)**\n\n---\n\n**7. Triângulo inscrito com lado = diâmetro**\n\n* **Regra**: se um lado é **diâmetro**, o ângulo oposto é **reto (90°)**; os outros dois ângulos somam **90°**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Usar **π = 3,14** quando a banca exige **π = 3** (ou vice-versa). Leia o enunciado.\n2. Confundir **raio** com **diâmetro** nas fórmulas, alterando área e perímetro.\n3. Esquecer que **semicírculo** é **metade da área do círculo**.\n4. Em triângulo com lado = diâmetro, não marcar o ângulo reto no vértice oposto.\n5. Em gráficos de pizza, pular a etapa “**graus por unidade**” e errar a proporção.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **círculo (área)** de **circunferência (perímetro)**?\n* Conferi sempre se o dado é **raio ou diâmetro** antes de aplicar a fórmula?\n* Lembrei que **semicírculo = (πr²)/2** e que o **setor** é proporcional a **θ/360°**?\n* Fixei que **lado = diâmetro ⇒ ângulo oposto = 90°** e os outros dois ângulos somam 90°?\n* Estou atento ao **valor de π exigido** e à etapa “**graus por unidade**” em gráficos de pizza?",
+  "mapa_mental": "# 🧮 Geometria Plana XVI – Esfera, Círculo e Circunferência\n## 🎯 Conceitos Fundamentais\n### 💡 Elementos da Circunferência\n- Centro\n- Raio r\n- Diâmetro d\n- Cordas\n- Arco\n### 💡 Figuras Associadas\n- Circunferência\n- Círculo\n- Semicírculo\n- Setor circular\n- Trapézio\n### 💡 Tipos de Ângulos\n- Ângulo reto\n- Ângulo agudo\n- Ângulo obtuso\n- Ângulo central\n- Ângulo inscrito\n### 🧮 Constante π\n- Valor indicado banca\n- Uso de 3\n- Uso de 3,14\n- Manter em π\n\n## 🧮 Fórmulas Essenciais\n### 🧮 Medidas Lineares\n- Comprimento circunferência\n- C = 2πr\n- C = πd\n- Relação r e d\n### 🧮 Áreas Principais\n- Área círculo πr²\n- Área semicírculo πr²/2\n- Área setor proporcional\n- Área trapézio\n### 🧮 Relações em Triângulos\n- Soma ângulos 180°\n- Triângulo retângulo\n- Ângulos agudos 90°\n- Lado diâmetro\n- Ângulo oposto reto\n\n## 📊 Proporções e Setores\n### 📊 Setor Circular\n- Parte sobre total\n- Regra θ = 360°×parte/total\n- Fração da área\n- Fração do arco\n### 📊 Gráfico de Pizza\n- Total 360°\n- Graus por unidade\n- Ângulo do grupo\n- Comparação entre grupos\n### 📊 Classificação de Ângulos\n- Menor que 90° agudo\n- Igual a 90° reto\n- Entre 90° e 180° obtuso\n- Uso em setores\n\n## ⚠️ Erros Frequentes em Provas\n### ⚠️ Uso de π\n- Ignorar valor dado\n- Trocar 3 por 3,14\n- Alterar resultado final\n- Não simplificar frações\n### ⚠️ Raio e Diâmetro\n- Confundir r com d\n- Erro fator 2 perímetro\n- Erro fator 4 área\n- Dados mal identificados\n### ⚠️ Figuras Compostas\n- Não separar figuras\n- Altura mal identificada\n- Semicírculo não metade\n- h diferente de r\n### ⚠️ Triângulo Inscrito\n- Lado diâmetro ignorado\n- Não marcar 90°\n- Somar ângulos errado\n- Esquecer agudos 90°\n### ⚠️ Gráficos de Pizza\n- Pular graus unidade\n- Proporção incorreta\n- Classificar ângulo errado\n- Confundir reto e obtuso",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Áreas Circulares",
+      "description": "Áreas Circulares — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual expressão calcula a área de um círculo de raio r?",
+          "back": "pi vezes o raio ao quadrado",
+          "hint": "Relacione com a constante circular",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "circunferencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Como se obtém a área de um semicírculo de raio r?",
+          "back": "A área do círculo completo dividida por dois",
+          "hint": "Pense na metade da área total",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "circunferencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual expressão calcula o comprimento de uma circunferência de raio r?",
+          "back": "Duas vezes pi vezes o raio",
+          "hint": "É uma medida linear, não quadrática",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "circunferencia"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Triângulos Inscritos",
+      "description": "Triângulos Inscritos — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "O que caracteriza um triângulo inscrito em uma circunferência?",
+          "back": "Um triângulo cujos vértices pertencem à circunferência",
+          "hint": "Observe a posição dos vértices",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "triangulo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Que classificação recebe o triângulo inscrito cujo lado é um diâmetro?",
+          "back": "Triângulo retângulo",
+          "hint": "O diâmetro atua como hipotenusa",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "triangulo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual relação existe entre o diâmetro e o raio de uma circunferência?",
+          "back": "O diâmetro corresponde a duas vezes o raio",
+          "hint": "O diâmetro passa pelo centro",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "circunferencia"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Áreas Compostas",
+      "description": "Áreas Compostas — 2 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual expressão calcula a área de um trapézio com bases B e b e altura h?",
+          "back": "Base maior mais base menor vezes a altura sobre dois",
+          "hint": "Envolve a média das bases",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "trapezio"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Como calcular a área total de uma figura formada por regiões sem sobreposição?",
+          "back": "A soma das áreas das regiões sem sobreposição",
+          "hint": "Princípio da aditividade",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "area"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Ângulos E Setores",
+      "description": "Ângulos E Setores — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é a soma das medidas dos ângulos internos de um triângulo?",
+          "back": "Cento e oitenta graus",
+          "hint": "Equivale a um ângulo raso",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "triangulo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual intervalo de medidas define um ângulo obtuso?",
+          "back": "De noventa até cento e oitenta graus",
+          "hint": "Maior que o ângulo reto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "angulos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a medida angular correspondente a uma volta completa?",
+          "back": "Trezentos e sessenta graus",
+          "hint": "É o dobro de um ângulo raso",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria-plana",
+            "angulos"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a fórmula correta para calcular a área de um trapézio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "(base maior × base menor) × altura ÷ 2",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar as bases (base maior × base menor) não corresponde ao cálculo da área de um trapézio. A fórmula correta envolve a soma das bases, não o produto, pois a ideia é encontrar uma 'base média' para a figura."
+        },
+        {
+          "id": "b",
+          "text": "(base maior + base menor) × altura ÷ 2",
+          "correct": true,
+          "explanation": "Correta. A área de um trapézio é calculada pela média aritmética das medidas das bases (base maior e base menor) multiplicada pela altura. A fórmula (base maior + base menor) × altura ÷ 2 expressa exatamente essa relação, representando a área como se fosse um retângulo com a base equivalente à média das bases do trapézio e a mesma altura."
+        },
+        {
+          "id": "c",
+          "text": "(base maior + base menor) × altura",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula (base maior + base menor) × altura está incompleta para o cálculo da área do trapézio. Falta a divisão por 2, que é essencial para obter a medida correta da superfície. Sem a divisão, o resultado seria o dobro da área de um trapézio ou a área de um paralelogramo formado por dois trapézios idênticos."
+        },
+        {
+          "id": "d",
+          "text": "base maior × altura + base menor × altura ÷ 2",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula (base maior × altura + base menor × altura ÷ 2) mistura operações de forma inadequada. Ela não segue o princípio de cálculo da área do trapézio, que exige a soma das bases antes da multiplicação pela altura e da divisão por dois. Parece uma combinação incorreta de áreas de retângulos e triângulos."
+        }
+      ],
+      "explanation": "Correta. A área de um trapézio é calculada pela média aritmética das medidas das bases (base maior e base menor) multiplicada pela altura. A fórmula (base maior + base menor) × altura ÷ 2 expressa exatamente essa relação, representando a área como se fosse um retângulo com a base equivalente à média das bases do trapézio e a mesma altura.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Como se calcula a área de um semicírculo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "π × diâmetro² ÷ 2",
+          "correct": false,
+          "explanation": "Incorreta. Embora o diâmetro esteja relacionado ao raio (diâmetro = 2 × raio), a substituição direta na fórmula de área de um semicírculo levaria a π × (diâmetro/2)² ÷ 2, que simplifica para π × (diâmetro²/4) ÷ 2 = π × diâmetro² ÷ 8. Portanto, dividir por 2 diretamente o diâmetro ao quadrado está incorreto."
+        },
+        {
+          "id": "b",
+          "text": "π × raio² ÷ 2",
+          "correct": true,
+          "explanation": "Correta. Um semicírculo é, por definição, a metade de um círculo. Sabendo que a área de um círculo completo é π × raio², a área de um semicírculo é logicamente a metade desse valor, ou seja, (π × raio²) ÷ 2."
+        },
+        {
+          "id": "c",
+          "text": "π × raio² ÷ 4",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula π × raio² ÷ 4 calcula a área de um quarto de círculo, ou seja, um quadrante, e não de um semicírculo. Um semicírculo representa metade da área total de um círculo."
+        },
+        {
+          "id": "d",
+          "text": "2 × π × raio² ÷ 3",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula 2 × π × raio² ÷ 3 não corresponde à área de um semicírculo nem de qualquer outra fração comum de um círculo. Ela não se alinha com os princípios da geometria para o cálculo de áreas de figuras circulares."
+        }
+      ],
+      "explanation": "Correta. Um semicírculo é, por definição, a metade de um círculo. Sabendo que a área de um círculo completo é π × raio², a área de um semicírculo é logicamente a metade desse valor, ou seja, (π × raio²) ÷ 2.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a soma dos ângulos internos de qualquer triângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "180 graus",
+          "correct": true,
+          "explanation": "Correta. De acordo com um teorema fundamental da geometria euclidiana, a soma das medidas dos ângulos internos de qualquer triângulo é sempre igual a 180 graus. Este princípio é válido para todos os tipos de triângulos, sejam eles equiláteros, isósceles, escalenos, retângulos, acutângulos ou obtusângulos."
+        },
+        {
+          "id": "b",
+          "text": "360 graus",
+          "correct": false,
+          "explanation": "Incorreta. 360 graus é a soma dos ângulos internos de um quadrilátero (como um quadrado ou retângulo) ou a medida de uma volta completa em um círculo, mas não a soma dos ângulos internos de um triângulo."
+        },
+        {
+          "id": "c",
+          "text": "90 graus",
+          "correct": false,
+          "explanation": "Incorreta. 90 graus é a medida de um ângulo reto. A soma dos ângulos internos de um triângulo não é 90 graus; em um triângulo retângulo, por exemplo, a soma dos dois ângulos agudos é 90 graus, mas a soma dos três ângulos é sempre maior."
+        },
+        {
+          "id": "d",
+          "text": "120 graus",
+          "correct": false,
+          "explanation": "Incorreta. 120 graus não é a soma dos ângulos internos de um triângulo. Essa medida não possui relevância específica para a soma dos ângulos de um triângulo em geometria euclidiana."
+        }
+      ],
+      "explanation": "Correta. De acordo com um teorema fundamental da geometria euclidiana, a soma das medidas dos ângulos internos de qualquer triângulo é sempre igual a 180 graus. Este princípio é válido para todos os tipos de triângulos, sejam eles equiláteros, isósceles, escalenos, retângulos, acutângulos ou obtusângulos.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a medida do perímetro de uma circunferência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2 × π × raio²",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula 2 × π × raio² é uma combinação incorreta de elementos da área e do perímetro. A presença do raio ao quadrado (raio²) indica uma medida de área, mas não corresponde à área do círculo nem ao seu perímetro."
+        },
+        {
+          "id": "b",
+          "text": "π × raio",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula π × raio representa a metade do perímetro de uma circunferência. O perímetro completo (circunferência) exige que o produto de π e o raio seja multiplicado por dois."
+        },
+        {
+          "id": "c",
+          "text": "π × raio²",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula π × raio² é utilizada para calcular a área de um círculo, ou seja, a medida da superfície interna, e não o comprimento de sua borda (perímetro ou circunferência)."
+        },
+        {
+          "id": "d",
+          "text": "2 × π × raio",
+          "correct": true,
+          "explanation": "Correta. O perímetro de uma circunferência, também conhecido como seu comprimento, é dado pela fórmula 2 × π × raio. Esta fórmula relaciona o raio da circunferência com a distância total ao redor dela. Alternativamente, pode ser expressa como π × diâmetro, já que o diâmetro é o dobro do raio."
+        }
+      ],
+      "explanation": "Correta. O perímetro de uma circunferência, também conhecido como seu comprimento, é dado pela fórmula 2 × π × raio. Esta fórmula relaciona o raio da circunferência com a distância total ao redor dela. Alternativamente, pode ser expressa como π × diâmetro, já que o diâmetro é o dobro do raio.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Quando um triângulo está inscrito em uma circunferência e um de seus lados coincide com o diâmetro da circunferência, qual é a característica desse triângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É um triângulo obtusângulo com um ângulo maior que 120 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo obtusângulo possui um ângulo maior que 90 graus. No caso de um triângulo inscrito em uma circunferência com um lado sendo o diâmetro, o ângulo oposto ao diâmetro é precisamente 90 graus, tornando-o um triângulo retângulo, e não um obtusângulo."
+        },
+        {
+          "id": "b",
+          "text": "É um triângulo isósceles com dois ângulos iguais de 45 graus",
+          "correct": false,
+          "explanation": "Incorreta. Embora um triângulo inscrito com um lado sendo o diâmetro possa ser isósceles (se os outros dois lados forem iguais, resultando em ângulos de 45 graus), essa não é uma característica obrigatória. A propriedade definidora é que ele é um triângulo retângulo, independentemente de ser isósceles ou escaleno."
+        },
+        {
+          "id": "c",
+          "text": "É um triângulo equilátero com todos os ângulos medindo 60 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo equilátero possui todos os lados e ângulos iguais a 60 graus. Se um de seus lados coincidisse com o diâmetro de uma circunferência, o ângulo oposto a esse diâmetro seria de 90 graus, o que contradiz a definição de um triângulo equilátero."
+        },
+        {
+          "id": "d",
+          "text": "É um triângulo retângulo com um ângulo de 90 graus",
+          "correct": true,
+          "explanation": "Correta. Este é um resultado fundamental da geometria, conhecido como Teorema de Tales aplicado a círculos. Quando um triângulo é inscrito em uma circunferência de tal forma que um de seus lados é o diâmetro, o ângulo oposto a esse diâmetro (o vértice na circunferência) sempre medirá 90 graus, caracterizando-o como um triângulo retângulo."
+        }
+      ],
+      "explanation": "Correta. Este é um resultado fundamental da geometria, conhecido como Teorema de Tales aplicado a círculos. Quando um triângulo é inscrito em uma circunferência de tal forma que um de seus lados é o diâmetro, o ângulo oposto a esse diâmetro (o vértice na circunferência) sempre medirá 90 graus, caracterizando-o como um triângulo retângulo.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em um trapézio com base maior medindo 16 cm, base menor medindo 6 cm e altura de 8 cm, qual é a área dessa figura?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "64 cm²",
+          "correct": false,
+          "explanation": "Incorreta. A área de um trapézio é calculada pela fórmula A = ((Base Maior + Base Menor) * Altura) / 2. Substituindo os valores, temos A = ((16 + 6) * 8) / 2 = (22 * 8) / 2 = 176 / 2 = 88 cm². O valor de 64 cm² não corresponde a essa aplicação da fórmula."
+        },
+        {
+          "id": "b",
+          "text": "76 cm²",
+          "correct": false,
+          "explanation": "Incorreta. A área de um trapézio é calculada pela fórmula A = ((Base Maior + Base Menor) * Altura) / 2. Substituindo os valores, temos A = ((16 + 6) * 8) / 2 = (22 * 8) / 2 = 176 / 2 = 88 cm². O valor de 76 cm² não é o resultado correto."
+        },
+        {
+          "id": "c",
+          "text": "88 cm²",
+          "correct": true,
+          "explanation": "Correta. A área de um trapézio é determinada pela média das bases multiplicada pela altura. A fórmula é A = ((Base Maior + Base Menor) * Altura) / 2. Com uma base maior de 16 cm, uma base menor de 6 cm e uma altura de 8 cm, o cálculo é A = ((16 + 6) * 8) / 2 = (22 * 8) / 2 = 176 / 2 = 88 cm²."
+        },
+        {
+          "id": "d",
+          "text": "96 cm²",
+          "correct": false,
+          "explanation": "Incorreta. A área de um trapézio é calculada pela fórmula A = ((Base Maior + Base Menor) * Altura) / 2. Substituindo os valores, temos A = ((16 + 6) * 8) / 2 = (22 * 8) / 2 = 176 / 2 = 88 cm². O valor de 96 cm² não é o resultado da aplicação correta da fórmula."
+        }
+      ],
+      "explanation": "Correta. A área de um trapézio é determinada pela média das bases multiplicada pela altura. A fórmula é A = ((Base Maior + Base Menor) * Altura) / 2. Com uma base maior de 16 cm, uma base menor de 6 cm e uma altura de 8 cm, o cálculo é A = ((16 + 6) * 8) / 2 = (22 * 8) / 2 = 176 / 2 = 88 cm².",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em uma empresa com 60 funcionários, sendo 18 com curso superior e 42 sem curso superior, qual é a medida do ângulo central de um setor circular que representa os funcionários com curso superior em um gráfico circular completo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "108 graus",
+          "correct": true,
+          "explanation": "Correta. Para representar uma proporção em um gráfico circular, o ângulo do setor é calculado dividindo-se o número de elementos da categoria pelo número total de elementos e multiplicando-se o resultado por 360 graus. Neste caso, a proporção de funcionários com curso superior é 18/60. Assim, o ângulo central é (18/60) * 360° = 0,3 * 360° = 108°."
+        },
+        {
+          "id": "b",
+          "text": "90 graus",
+          "correct": false,
+          "explanation": "Incorreta. O ângulo de 90 graus representa um quarto do círculo (360° / 4 = 90°), o que corresponderia a 15 funcionários (60 / 4 = 15). No entanto, há 18 funcionários com curso superior, não 15."
+        },
+        {
+          "id": "c",
+          "text": "72 graus",
+          "correct": false,
+          "explanation": "Incorreta. Para calcular o ângulo central de um setor circular, divide-se a quantidade da categoria pelo total e multiplica-se por 360 graus. No caso, 18 funcionários com curso superior de um total de 60 funcionários resulta em (18/60) * 360° = (3/10) * 360° = 108°. O valor de 72 graus é obtido se a proporção fosse 1/5 do total (12/60)."
+        },
+        {
+          "id": "d",
+          "text": "120 graus",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 120 graus representa um terço do círculo (360° / 3 = 120°), o que corresponderia a 20 funcionários (60 / 3 = 20). Contudo, a categoria em questão possui 18 funcionários, não 20."
+        }
+      ],
+      "explanation": "Correta. Para representar uma proporção em um gráfico circular, o ângulo do setor é calculado dividindo-se o número de elementos da categoria pelo número total de elementos e multiplicando-se o resultado por 360 graus. Neste caso, a proporção de funcionários com curso superior é 18/60. Assim, o ângulo central é (18/60) * 360° = 0,3 * 360° = 108°.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Em um triângulo retângulo inscrito em uma circunferência, sabendo que um dos ângulos agudos mede 4/5 do outro ângulo agudo, qual é a medida do menor ângulo desse triângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "30 graus",
+          "correct": false,
+          "explanation": "Incorreta. Em um triângulo retângulo, a soma dos dois ângulos agudos é 90 graus. Se um ângulo fosse 30 graus, o outro seria 60 graus. No entanto, 30 graus não é 4/5 de 60 graus (4/5 * 60 = 48)."
+        },
+        {
+          "id": "b",
+          "text": "45 graus",
+          "correct": false,
+          "explanation": "Incorreta. Se um ângulo agudo fosse 45 graus, o outro também teria que ser 45 graus para que a soma fosse 90 graus. Contudo, 45 graus não é 4/5 de 45 graus (4/5 * 45 = 36)."
+        },
+        {
+          "id": "c",
+          "text": "40 graus",
+          "correct": true,
+          "explanation": "Correta. Um triângulo inscrito em uma circunferência cujo diâmetro é um de seus lados é sempre um triângulo retângulo. Assim, um dos ângulos é 90 graus, e a soma dos outros dois ângulos agudos é 90 graus. Se um ângulo agudo é 'x' e o outro é 'y', temos x + y = 90°. Se um mede 4/5 do outro, por exemplo, x = (4/5)y. Substituindo, (4/5)y + y = 90° => (9/5)y = 90° => y = 50°. Consequentemente, x = (4/5) * 50° = 40°. Os ângulos agudos são 40° e 50°, e o menor deles é 40°."
+        },
+        {
+          "id": "d",
+          "text": "50 graus",
+          "correct": false,
+          "explanation": "Incorreta. Se um ângulo agudo fosse 50 graus, o outro teria que ser 40 graus para que a soma fosse 90 graus. Neste caso, o menor ângulo seria 40 graus, não 50 graus. Além disso, 50 graus não é 4/5 de 40 graus (4/5 * 40 = 32)."
+        }
+      ],
+      "explanation": "Correta. Um triângulo inscrito em uma circunferência cujo diâmetro é um de seus lados é sempre um triângulo retângulo. Assim, um dos ângulos é 90 graus, e a soma dos outros dois ângulos agudos é 90 graus. Se um ângulo agudo é 'x' e o outro é 'y', temos x + y = 90°. Se um mede 4/5 do outro, por exemplo, x = (4/5)y. Substituindo, (4/5)y + y = 90° => (9/5)y = 90° => y = 50°. Consequentemente, x = (4/5) * 50° = 40°. Os ângulos agudos são 40° e 50°, e o menor deles é 40°.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Uma figura composta por um trapézio de área 88 cm² e um semicírculo de área 96 cm² possui área total de:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "184 cm²",
+          "correct": true,
+          "explanation": "Correta. Para encontrar a área total de uma figura composta por múltiplas formas geométricas, basta somar as áreas individuais de cada uma dessas formas. Neste caso, a área total é a soma da área do trapézio (88 cm²) e da área do semicírculo (96 cm²), ou seja, 88 cm² + 96 cm² = 184 cm²."
+        },
+        {
+          "id": "b",
+          "text": "168 cm²",
+          "correct": false,
+          "explanation": "Incorreta. A área total de uma figura composta é a soma das áreas de suas partes. Somando 88 cm² (trapézio) e 96 cm² (semicírculo), o resultado é 184 cm². O valor de 168 cm² não corresponde a essa soma."
+        },
+        {
+          "id": "c",
+          "text": "192 cm²",
+          "correct": false,
+          "explanation": "Incorreta. A área total de uma figura composta é a soma das áreas de suas partes. Somando 88 cm² (trapézio) e 96 cm² (semicírculo), o resultado é 184 cm². O valor de 192 cm² não é o resultado da soma das áreas fornecidas."
+        },
+        {
+          "id": "d",
+          "text": "176 cm²",
+          "correct": false,
+          "explanation": "Incorreta. A área total de uma figura composta é a soma das áreas de suas partes. Somando 88 cm² (trapézio) e 96 cm² (semicírculo), o resultado é 184 cm². O valor de 176 cm² não é o resultado correto da soma."
+        }
+      ],
+      "explanation": "Correta. Para encontrar a área total de uma figura composta por múltiplas formas geométricas, basta somar as áreas individuais de cada uma dessas formas. Neste caso, a área total é a soma da área do trapézio (88 cm²) e da área do semicírculo (96 cm²), ou seja, 88 cm² + 96 cm² = 184 cm².",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "16_323124_Geometria Plana XVI - Esfera.pdf",
+  "coletado_em": "2026-09-23T21:07:48"
+}

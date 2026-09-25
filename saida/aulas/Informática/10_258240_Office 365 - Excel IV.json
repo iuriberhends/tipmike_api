@@ -1,0 +1,739 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 10,
+  "ordem_no_curso": "78.00",
+  "titulo": "Office 365 - Excel IV",
+  "codigo_aula": "258240",
+  "video_id": "qDiKv2AyyvM=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:27:58",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/qDiKv2AyyvM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?in=1&a=420308%2C420304%2C420305%2C420306%2C420307&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Office 365 - Excel IV\n\n## Continuação: Alça de Preenchimento e Prática\nVamos lá, de volta com a nossa linda Excel 365 na tela. Então, há pouco falamos sobre a alça de preenchimento. Lembrando, reforçando: caso você queira preencher, vem aqui, faz as anotações. Tendo curiosidade, use a alça de preenchimento, que é uma metodologia de estudo também. Pode ser aplicada e, como já disse anteriormente, vai te fazer bem no sentido de te ajudar. \n\nMelhora o uso do Excel. Já falei também: não precisa ser o 365. Noventa e nove por cento das funções aqui vão funcionar iguais nas versões anteriores, dá para praticar. Quer usar o preenchimento, tem curiosidade com número antes, número positivo, algo do tipo? Só não inventa demais. Se for fazer, tenta se basear em coisa que já serviu de prova. Viu algo que não está aqui, mas estava lá? Bacana.\n\nHavendo dúvida, usa fora da dúvida: anota. Nota é sempre bom para depois você revisar, porque já tem esses parâmetros. Vamos continuar nossa linha aqui na planilha. Estamos saindo aos poucos dos preços, continuando, e você vai observar que muita coisa que tem aqui na planilha propriamente também vai estar disponível para você. Você pode utilizar essa própria planilha, fazer adaptações e tal. Muita coisa que está aqui não vai ter necessariamente no PDF. Você pode usar um campo à parte para fazer suas anotações.\n\n## Fórmulas: Referências, Constantes e Média\nMudando agora, isso ainda é alça de preenchimento? Não só, porque vimos algumas coisas sobre fórmula aqui. Uma definição: fórmulas são equações que executam cálculos sobre valores da planilha. Bem simples, indireto, objetivo. Onde podemos usar, como já visto. Só relembrando então as referências, que são os endereços. Aqui, quando aplicamos, sempre a coluna depois a linha. Vale ressaltar, isso é importante.\n\nPosso usar uma referência com uma constante. Posso usar só constante, só referências, sem problema. Coloquei duas fórmulas vazias aqui embaixo para calcular, se tiver interesse, a soma desses valores aqui, hoje, de A1 até A5: 1, 5, 4, 9, 12, 14, 15. Coloca o resultado aqui, que vai ser o mesmo cálculo. Porém, como a soma está entre parênteses, damos prioridade aos parênteses. Como já vimos também: somamos 15, dividido por 5 dá 3. Você já deve saber que isso aqui é o cálculo da média do intervalo.\n\nExiste a função MÉDIA, que a gente vai ver também, para calcular isso, mas podemos fazer esse cálculo da média de outras formas. É interessante você ter essa noção. Nada mais, é até mais prático do que teórico agora, porque já vimos a teoria.\n\nPara relembrar: =A1+A2. Não estou somando “um mais dois”, e sim os valores contidos nessas células. Se eu alterar aqueles valores, vai trazer uma operação automática para o resultado aqui. Por exemplo, 5 é o valor exibido nessa célula, mas não é o que está contido de fato; quando eu clico e vou lá na barra de fórmulas, eu vejo o que está contido. Outra maneira: duplo clique ativa a célula e posso ver o conteúdo real, que pode ser diferente do que está sendo exibido.\n\nAqui embaixo, tenho a soma de duas constantes. Se eu trocar 5 e 3 para 9, o valor lá embaixo troca para 11, porque 9+2=11. Já embaixo, estou somando 2 e 3, então deu 5. Veja que não há “operação automática” de referência nesse caso porque estou usando constantes. Beleza — só relembrar mesmo, porque praticamente tudo isso aqui nós já vínhamos vendo. Beleza… intervalo… vou parar de falar “beleza”. Vem pra cá.\n\n## Intervalos e Operadores de Referência\nNós não usamos intervalo “solto”, só para você saber. Pode parecer meio louco porque ele colocou e se entrosa, mas não se usa assim. Quero te alertar: não usamos intervalos dessa maneira. Não tem utilidade “sozinhos”; eles são aplicados dentro de uma função.\n\nVeja: eu posso tentar colocar uma fórmula =A1:A5… não funciona, não tem utilidade sozinho. Logo, no material, vem a definição do que são funções. Funções são fórmulas. Se ele coloca lá “a fórmula tal” mostrando uma condição, você sabe: soma, média, condição… é tudo fórmula, e não tem problema chamar assim.\n\nSobre intervalos, tem uma observação que você vai notar. Vou falar como podem iniciar. Até agora estamos usando sinal de igual. Vou passar variações. Nessa tabelinha você tem operadores de referência. Vamos estudá-los na sequência. Por ora, só para entender: quando temos intervalo, usamos o operador de referência dois pontos “:”, que significa “até”. Então A1:A5 indica A1 até A5. Vamos usar aqui literalmente A1 até A5.\n\nÉ muito comum em prova: tem valores na planilha e o que está em amarelo é o que vai ser somado, calculado, vai ser feita a média, enfim — independente da função, o que vai ser feito é sobre aquele intervalo. Se tem um valor aqui fora (um zero embaixo, um aqui, um ali), esses valores ao redor não são usados. Os valores fora não são usados. Só para deixar claro e não haver confusão.\n\nQuando o intervalo vem de B2… então veja, ele começa em B2 até B6. Estamos “colhendo” aquilo de acordo com a conta. Não vai ao mesmo verde. Eu sou um homem do verde com eles — não é o mesmo verde, perceberam? Beleza: então B2 até B6. Se houvesse um valor em B1, por exemplo, não seria pego. Se houvesse um valor em B7, idem. É só essa galera aqui dentro.\n\nAgora, intervalo de B2 até E6. Tudo isso aqui. Toda essa galera vai ser azul. Vou tentar pegar o mesmo azul… vou tentar, mas não vou conseguir. Quase nem se fala, mas deu para gravar aqui.\n\nComo eu faço a seleção dos intervalos? Você vai tomar o cuidado de analisar isso na hora da prova para não pegar valores errados. Falei rapidamente dos intervalos e, na sequência, depois falamos aqui de gráficos, solidariedade e tal. Vou tratar de novo disso dentro das funções, porque vou falar dos operadores de referência propriamente. Dois pontos “:” a gente já viu que é “até”. \n\nPosso até colocar um exemplo fora: se eu colocasse B1;D7 (usando outro operador, ponto e vírgula, que veremos depois), indicaria células não contíguas. Mas por enquanto, foco no “:”.\n\nSe eu dissesse B1 e B7 (não contíguos), seriam esses dois caras somente. Daqui a pouco a gente volta — fica tranquilo.\n\n## Gráficos: Inserção Rápida e Tipos\nAqui na parte de gráficos: é uma parte um pouco chata, e aí eu volto. Montar gráfico é tranquilo. Quando você seleciona um intervalo, aqui embaixo você já tem o botãozinho de Análise Rápida (atalho Ctrl+Q). Ele vai te dar algumas opções, já passei por elas. Entre elas, alguns gráficos. Você pode vir aqui, e, por exemplo, mesmo sem ter o exato gráfico que você quer, ele já monta um para você de maneira muito rápida, muito prática.\n\nBeleza, já colocou mais gráfico. Você vai ver que há a opção de “Mais Gráficos”. E onde isso pode ficar chato? Justamente porque é muito fácil de montar, então algumas bancas exploravam nome e aparência.\n\nOutra maneira: seleciona o intervalo, vai na guia Inserir, grupo Gráficos. Tem vários gráficos. Vou mostrar mais um para você observar melhor.\n\nQuando é que isso pode ficar mais chato em prova? Vamos abrir “Mais Gráficos” > “Todos os Gráficos” > “Modelos”. Você está vendo colunas e linhas. Diminuiu a frequência disso ser cobrado nos últimos anos. Há três, quatro anos, era mais frequente a banca cobrar distinção visual e nomenclatura.\n\nComo pode se tornar chato numa prova? Algumas bancas mostram um gráfico de barras e dizem que é gráfico de colunas, por exemplo. Fica parecido, confunde. Então eu vou fazer um passeio, mas peço que você dê uma olhada nas últimas provas da sua banca e veja se isso está acontecendo. A grande maioria das bancas não tem mais cobrado isso com esse nível de detalhe, que, na minha opinião, fica um pouco chato.\n\nVocê vai olhar alguns gráficos: os nomes são bem diferentes, a imagem deles é diferente. Alguns são mais fáceis de gravar, outros mais parecidos.\n\nVamos ao passeio:\n- Colunas: coluna agrupada, coluna empilhada, coluna 100% empilhada, coluna 3D agrupada, 3D empilhada, 3D 100% empilhada, e coluna 3D (formas 3D).\n- Linhas: linha normal, linha empilhada, linha 100% empilhada, linhas com marcadores, linha empilhada com marcadores, 100% empilhada com marcadores, linha 3D.\n- Pizza: pizza, pizza 3D, “barra de pizza” e rosca (rosca é outra forma, mas cai junto no grupo de pizza/barras de setores).\n- Barras: barras agrupadas, empilhadas, 100% empilhadas, 3D agrupadas, 3D empilhadas, 3D 100% empilhadas.\n- Área: área, área empilhada, 100% empilhada, área 3D, 3D empilhada, 3D 100% empilhada.\n- Dispersão (XY): com linhas suaves e marcadores, com linhas suaves, com linhas retas e marcadores, com linhas retas; bolhas; bolhas 3D.\n- Mapa: mapa (quando disponível).\n- Ações: alta, baixa e fechamento; abertura, alta, baixa, fechamento; volume + alta, baixa, fechamento; volume + abertura, alta, baixa, fechamento.\n- Superfície: superfície, superfície 3D, delineada, contorno delineado.\n- Radar: radar, radar com marcadores, radar preenchido.\n- Hierarquia: mapa de árvore, explosão solar.\n- Estatísticos: histograma, Pareto, caixa (boxplot), caixa estreita.\n- Financeiros e outros: cascata, funil, combinação.\n\nDesses todos, posso afirmar que os mais recorrentes, quando cai, são colunas. Os outros são exceção quando cobrados. Foque mais nesses, se quiser, mas não é que “só vai cair” isso.\n\nInseriu o gráfico? Posso copiar esse gráfico, colar em outro lugar. Posso editar quase tudo: cor das linhas, rótulos, título do gráfico (chamar de “Notas”, por exemplo), exibir valores dentro do gráfico, ajustar escala do eixo (de 2 em 2, de 3 em 3, de 2012 até quando eu quiser), enfim, praticamente tudo.\n\nSe eu alterar um dado da planilha (por exemplo, nota “árvore” que está representada em laranja, valor 2 pontos, e passar essa nota para 9), o gráfico troca dinamicamente. Isso acontece. Mas não é de longe o assunto mais cobrado em Excel. É algo que a gente tem que saber, ter noção.\n\n## Validação de Dados: Regras, Mensagens e Listas\nAgora, vamos para a validação de dados. Por padrão, toda a planilha dentro do meu arquivo (pasta de trabalho) está desbloqueada — não há proteção nas células, como proteger inclusive com senha, impedindo que a pessoa digite. Isso é outro assunto e pode ser combinado com validação. Meu objetivo inicial aqui é definir, por exemplo, para o campo “Nome”, algum tipo de restrição.\n\nVou usar a guia Dados. Em Ferramentas de Dados, temos Validação de Dados. Nas Configurações, “Permitir”: a princípio, qualquer valor (texto, número, positivo, negativo, etc.). Vou delimitar o comprimento do texto. Além de poder personalizar (quase infinitas possibilidades), vou colocar “menor ou igual a”. Máximo: 7 caracteres. Posso definir título e mensagem de entrada para instrução de preenchimento:\n\nInsira seu nome. Mensagem de entrada: Máximo de 7 letras do nome da pessoa. Se tiver mais de 7 letras, paciência.\n\nAlerta de erro: estilo pode ser “Parar”, “Aviso”, “Informação”. Posso deixar “Informação”, título “Erro”, mensagem “Já falei: só até 7 letras.” Pronto. Quando clicar na célula, aparece a informação. Máximo 7 letras.\n\nIsso acontece quando clico na célula que tem validação. Posso definir para um intervalo também. Só a título de exemplo: vou digitar meu nome. Um, dois, três, quatro, cinco, seis, sete, oito caracteres. Oito caracteres para “Jefferson”. Vamos ver: não deixa — já falei, só até 7 letras. Se eu colocar o apelido “Jef”, ficou. Embora meu nome não tenha apelido oficial, muita gente me chama assim. Beleza.\n\nVamos colocar outro nome… já falei, só até 7 letras. Está deixando ficar? Às vezes fica como “aviso/informação” dependendo do estilo que escolhi. Ideal seria “Parar”, se eu não quero permitir mesmo.\n\nAlgo parecido eu posso fazer para “Idade”. Dados > Validação de Dados. Em vez de “Qualquer valor”, escolho “Número inteiro”. Não pode ser decimal (regra que estou criando). Entre: Mínimo e Máximo. Supondo um contexto de concurso militar: mínimo 18, máximo 30. Mensagem de entrada: insira sua idade. Alerta de erro: posso colocar “A idade mínima é 18”. \n\nTestando: 17 anos — esse valor não corresponde às restrições. 18 anos — ok. 20 anos — beleza. 31 anos — fora, mensagem. Posso personalizar as mensagens.\n\nOutra possibilidade: lista para “Estado”. Vou tirar a regra anterior e criar outra. Em vez de digitar tudo, vou montar a fonte da lista na própria planilha (poderia ser em outra). Exemplo de lista: Santa Catarina, Paraná, São Paulo, Rio Grande do Sul (e por aí vai). A ideia é que no campo “Estado” a pessoa não digite nada livremente; ela vai escolher a partir de uma lista (combo box).\n\nGuia Dados > Validação de Dados > Configurações > Permitir: Lista. Fonte: seleciono o intervalo onde coloquei os estados. Ok. Apareceu o seletor na célula. Não tem como a pessoa digitar outra coisa: tem que escolher Santa Catarina, Paraná, São Paulo, etc. Isso evita erro de digitação. Se ela escolher errado, problema dela — mas pelo menos não escreve “Snta Catariina”.\n\n## Formatação Condicional: Regras e Fórmulas\nPara encerrar este bloco: formatação condicional. Ao selecionar um intervalo, na Análise Rápida, você já tem opções rápidas:\n- Barras de dados (escalonam conforme o valor; 4,5 é menor, barra menor; 8 é maior, barra maior),\n- Escala de cores,\n- Conjunto de ícones (subiu/ desceu),\n- Regras dos primeiros 10%, maiores que, etc.\n\nSó para saber que existe. Agora, formalmente: guia Página Inicial > Formatação Condicional. Você tem:\n- Regras de realce (maior que, menor que, entre…),\n- Regras dos primeiros/últimos,\n- Barras de dados,\n- Escalas de cor,\n- Conjunto de ícones,\n- Nova Regra…\n\nVou criar uma nova regra. “Formatar apenas células que contêm” ou “Usar uma fórmula para determinar quais células devem ser formatadas”. Vamos usar a fórmula, mas há muitas opções — escolha a que melhor atende a sua regra.\n\nUsar uma fórmula: “Formatar valores em que esta fórmula é verdadeira”. Exemplo: quando essa célula for maior ou igual a 5, formatar. Defino a formatação: fonte, borda, número, preenchimento. Em prova, normalmente cai preenchimento/cor, mas saiba que pode cair fonte, borda, etc.\n\nColoco preenchimento verde para notas maior ou igual a 5 (aprovado). Apliquei, funcionou. Se eu trocar para 4, por exemplo, não entra nessa regra. Então crio mais uma regra: quando for menor que 5, preenchimento vermelho (reprovado). Agora tenho as duas possibilidades: <5 vermelho, >=5 verde. \n\nPosso aplicar isso a mais de uma célula de uma vez, alterando uma célula alvo e aplicando a regra a toda a linha, por exemplo (usando fórmulas com referências relativas/absolutas). Se eu quiser resultado independente por célula, faço regra por célula ou ajusto o intervalo de aplicação.\n\nPosso também criar regra para um campo “Situação”. Nova regra > Usar uma fórmula: quando essa célula for igual a “Aprovado”, formatar em azul. Caso eu queira copiar essa regra para as demais células, preciso desbloquear a referência tirando o cifrão ($) para que a fórmula se ajuste ao copiar.\n\nVeja que essa regra da “Situação” não está condicionada automaticamente à nota; eu teria que ter outra fórmula que preenchesse “Aprovado/Reprovado” com base na nota. Depois, a formatação condicional reagiria a isso. Mas a lógica você já captou: o avaliador quer mudar cor/estilo/fonte de acordo com o valor contido na célula ou no resultado de uma fórmula. \n\nNo próximo bloco, daremos continuidade à nossa linha no Excel.",
+  "transcricao_meta": {
+    "title": "Office 365 - Excel IV",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 34452,
+    "createdAt": "2026-02-04T19:00:16.995Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: fórmulas e referências no Excel, intervalos e prioridade de operadores, gráficos (inserção, tipos e pegadinhas), Validação de Dados, e Formatação Condicional.\nPrincipais pontos: \n- Diferença entre referências/constantes e exibição/conteúdo\n- Uso correto de intervalos e função média\n- Identificação de tipos de gráficos (colunas x barras) e inserção\n- Configuração de Validação de Dados e Formatação Condicional\n\n## 1. Base / Conceitos Fundamentais\n- **Fórmulas**: Equações que calculam valores. Sempre começam com “=”.\n- **Referências**: Endereços de células, como **A1**, **B2**. Primeiro coluna (letra), depois linha (número).\n- **Constantes**: Valores digitados diretamente (ex.: 2, 5, “texto”).\n- **Operador de referência “:”**: Significa “até” para criar intervalos (ex.: **A1:A5** = de A1 até A5).\n- **Funções**: “Fórmulas prontas” do Excel (ex.: **média**).\n- **Exibição x Conteúdo**: O valor exibido pode ser resultado; o conteúdo real pode ser a fórmula, visível na barra de fórmulas.\n\n> Dica de Prova: Alterar um valor referenciado recalcula automaticamente o resultado da fórmula e também atualiza gráficos ligados àquele intervalo.\n\n## 2. Como Funciona / Distinções\n- **Referências vs. Constantes**\n  - Pode usar só constantes: =2+3\n  - Só referências: =A1+B1\n  - Mistos: =A1+2\n- **Prioridade de operadores**\n  - Parênteses têm prioridade. Ex.: =(A1+A5)/5 primeiro soma, depois divide.\n- **Intervalos**\n  - **A1:A5** usa apenas as células entre A1 e A5; valores fora (ex.: A6) não entram.\n  - “=A1:A5” isolado não é útil; intervalos são usados em funções (ex.: MÉDIA(A1:A5)).\n- **Colunas x Barras (gráficos)**\n  - **Colunas**: barras verticais.\n  - **Barras**: barras horizontais.\n\n> Pegadinha: A banca pode exibir um gráfico de barras (horizontal) e nomear como “colunas”. Fique atento à orientação.\n\n- **Validação de Dados x Formatação Condicional**\n  - **Validação**: controla o que pode ser digitado/selecionado.\n  - **Formatação Condicional**: altera aparência com base em condições; não bloqueia entrada.\n\n## 3. Aplicação Prática / Técnicas\n- **Média**\n  - Manual: =(A1+A2+A3+A4+A5)/5\n  - Função: =MÉDIA(A1:A5) — preferível e mais cobrada.\n- **Seleção de intervalos**\n  - Clique e arraste; confirme o endereço (ex.: **B2:B16** — não inclui **B1** nem **B17**).\n- **Análise Rápida**\n  - Selecione o intervalo > botão Análise Rápida (atalho com Ctrl ao selecionar) > sugestões de gráficos e formatações.\n- **Inserir gráficos**\n  - Análise Rápida > Gráficos; ou\n  - Guia **Inserir** > grupo **gráficos** > **Mais gráficos** > **Todos os gráficos** > **modelos**.\n  - Edite título (ex.: “notas”), cores, rótulos.\n- **Validação de Dados**\n  - Acesso: guia **Dados** > **validação de dados** > **configurações**.\n  - Tipos úteis:\n    - **Qualquer valor**\n    - **Comprimento do texto** (ex.: máximo 7)\n    - **Número inteiro** (pode usar “entre” para faixa)\n    - **Lista** (gera combo box a partir de um intervalo de **fonte**)\n  - Mensagens:\n    - **Mensagem de entrada** (ex.: “Insira seu nome”)\n    - **Alerta de erro** (defina título/erro; estilos Parar/Aviso/Informação)\n- **Formatação Condicional**\n  - Acesso: Página Inicial > **Formatação Condicional** (ou Análise Rápida).\n  - Tipos rápidos: **barra de dados**, **escala de cores**, **conjunto de ícones**, **regras de realce**, **primeiros/últimos**.\n  - Personalização:\n    - “Formatar apenas células que contêm”\n    - “Usar uma fórmula para determinar quais células devem ser formatadas”\n  - Referências absolutas/relativas:\n    - Remova o **cifrão** ($) se pretende copiar a regra para outras células.\n\n## 4. Exemplos e Casos Resolvidos\n- **Intervalos e função média**\n  - Dado **A1:A5** com valores “três mil a cinco” entradas: use =MÉDIA(A1:A5).\n  - B2 até B16: =MÉDIA(B2:B16). Não inclui **B1** ou **B17**.\n- **Validação de nome (comprimento do texto)**\n  - Dados > Validação de dados > Comprimento do texto > menor ou igual a > 7.\n  - Mensagem de entrada: Título: “Insira seu nome”; Mensagem: instrução.\n  - Teste: “Jefferson” (9) → “Alerta de erro”.\n- **Validação de idade (número inteiro e faixa)**\n  - Número inteiro > “entre” > mínimo 18, máximo 30 (concursos militares).\n  - 16/17 → erro; 20 → válido; 31 → erro.\n- **Validação com lista (estados)**\n  - Crie intervalo com: Santa Catarina, Paraná, São Paulo, Rio Grande do Sul.\n  - Validação: Lista > Fonte = intervalo. A célula vira **combo box**.\n- **Formatação Condicional (notas)**\n  - Regra 1: valor ≥ 5 → azul (aprovado).\n  - Regra 2: valor < 5 → vermelho (reprovado).\n  - Para texto: célula = “aprovado” → azul.\n  - Se usar fórmula (ex.: =A2>=5), ajuste referências (sem $) antes de copiar.\n\n- **Gráficos mais cobrados**\n  - Priorize **colunas** para comparação de categorias (ex.: notas por aluno).\n  - Editar o título para “notas”. Alterar dados recalcula o gráfico automaticamente.\n\n## 5. Pegadinhas e Erros Comuns\n- Intervalos:\n  - Ler “B2:B16” como “B2 até B16”. Itens fora (B1, B17) não entram.\n  - Não usar “=A1:A5” sozinho esperando resultado.\n- Prioridade:\n  - Sem parênteses, divisão/multiplicação vêm antes de soma/subtração.\n- Exibição x Conteúdo:\n  - O que aparece pode ser “noventa e nove por cento”, mas o conteúdo é a fórmula/valor subjacente.\n- Gráficos:\n  - Confusão entre **colunas** (vertical) e **barras** (horizontal).\n  - A banca pode pedir identificação correta da categoria: “coluna agrupada”, “coluna empilhada”, “coluna cem por cento empilhada”, “coluna 3D agrupada”, “3D empilhadas”, “3D cem por cento empilhadas”, “coluna 3D”; “linhas”, “linha empilhada”, “linha cem por cento empilhada”, “linhas com marcadores”, “linha empilhada com marcadores”, “linha cem por cento empilhada com marcadores”, “linha 3D”; “pizza”, “pizza 3D”, “pizza de fixa”, “barra de pizza”, “rosca”; “barras agrupadas”, “barras empilhadas”, “barras cem por cento empilhadas”, “3D agrupadas”, “3D empilhadas”, “3D cem por cento empilhadas”; “área”, “área empilhada”, “área cem por cento empilhada”, “área 3D”, “3D empilhadas”, “3D cem por cento empilhar”; “dispersão com linhas suaves e marcadores”, “dispersão com linhas suaves”, “dispersão com linhas retas e marcadores”, “dispersão com linhas retas”; “bolhas”, “bolhas 3D”; “Mapa”, “Mapa Coroplético”; “Ações” (“alta e baixa e fechamento”, “abertura alta baixa fechamento”, “volume alta, baixa fechamento”, “volume, abertura alta baixa e fechamento”); “superfície 3D”, “superfície delineada”, “Contorno delineado”; “radar”, “Radar com marcadores”, “radar preenchido”; “Mapa de árvore”, “Explosão solar”, “Pareto”, “Caixa”, “Caixa estreita”, “Cascata”, “combinação”.\n- Validação:\n  - “Comprimento do texto” conta todos os caracteres (inclui espaços).\n  - “Número inteiro” rejeita decimais (18,5 inválido).\n  - Em “Lista”, a **fonte** deve ser um intervalo válido; caso contrário, a seta não funciona.\n- Formatação Condicional:\n  - Referências absolutas ($A$1) não se ajustam ao copiar; remova o **cifrão** quando quiser replicar regras.\n  - Ordem das regras pode afetar o resultado; combine “≥ 5” e “< 5” para cobrir todos os casos.\n\n> Dica de Prova: Os tipos de gráfico “colunas” são os mais recorrentes. Os demais são exceção, mas podem aparecer em nomenclatura. Atenção à orientação (vertical x horizontal) e ao título do gráfico (“notas”) quando o enunciado pedir identificação.\n\n> Dica de Prova: “Análise Rápida”, “Inserir”, “gráficos”, “Mais gráficos”, “Todos os gráficos”, “modelos” são termos de interface que a banca pode usar em questões de passos/menus.",
+  "resumo_bolso": "# Office 365 - Excel IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Fórmula**: Equação que calcula valores. Sempre começa com **=**.\n* **Referência**: Endereço de célula (**A1**, **B2**); primeiro **coluna (letra)**, depois **linha (número)**.\n* **Constante**: Valor digitado diretamente na célula (ex.: 2, 5, \"texto\").\n* **Operador “:” (intervalo)**: Significa “até” para criar intervalos (ex.: **A1:A5** = de A1 até A5).\n* **Função**: “Fórmula pronta” do Excel, ex.: **MÉDIA(A1:A5)**.\n* **Exibição x Conteúdo**: O valor exibido pode ser resultado; o conteúdo real (fórmula/valor) aparece na **barra de fórmulas**.\n* **Validação de Dados**: Controla o que pode ser digitado/selecionado em uma célula.\n* **Formatação Condicional**: Altera a aparência das células com base em condições, mas **não bloqueia** a entrada de dados.\n* **Gráfico de Colunas**: Barras **verticais**.\n* **Gráfico de Barras**: Barras **horizontais**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Referências vs Constantes\n\n| Aspecto | Referências | Constantes |\n|--------|-------------|------------|\n| **Origem do valor** | Vem de outra célula (A1, B2) | Digitado diretamente na fórmula/célula |\n| **Atualização** | Muda se a célula referenciada mudar | Fica fixa até ser editada |\n| **Exemplo** | =A1+B1 | =2+3 |\n\n> Dica: Alterar um valor referenciado recalcula automaticamente o resultado da fórmula e também atualiza gráficos ligados àquele intervalo.\n\n---\n\n### Validação de Dados vs Formatação Condicional\n\n| Aspecto | Validação de Dados | Formatação Condicional |\n|--------|--------------------|------------------------|\n| **Função principal** | Controla o que pode ser digitado/selecionado | Destaca visualmente conforme condição |\n| **Bloqueia valor inválido?** | Sim (conforme configuração) | Não, apenas altera aparência |\n\n---\n\n### Colunas vs Barras (Gráficos)\n\n| Aspecto | Colunas | Barras |\n|--------|---------|--------|\n| **Orientação** | Barras **verticais** | Barras **horizontais** |\n\n> Pegadinha: A banca pode exibir um gráfico de barras (horizontal) e nomear como “colunas”. Fique atento à orientação.\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Estrutura básica de fórmula**\n\n* Sempre iniciar com **=**.\n* Exemplos: `=A1+2`, `=MÉDIA(A1:A5)`.\n\n---\n\n**2. Prioridade de operadores**\n\n* Parênteses têm prioridade sobre as demais operações.\n* Exemplo: `=(A1+A5)/5` → primeiro soma, depois divide.\n\n---\n\n**3. Intervalos com “:”**\n\n* Representam um conjunto contínuo de células.\n* Exemplo: `A1:A5` usa apenas as células entre A1 e A5; valores fora (ex.: A6) não entram.\n* Intervalos são usados em funções: `=MÉDIA(A1:A5)`.\n\n---\n\n**4. Função MÉDIA**\n\n* Calcula a média aritmética de um conjunto de células.\n* Exemplo manual: `=(A1+A2+A3+A4+A5)/5`.\n* Exemplo com função: `=MÉDIA(A1:A5)` (forma preferível e mais cobrada).\n\n---\n\n**5. Seleção de intervalos**\n\n* Clique e arraste para selecionar; confira o endereço.\n* Exemplo: **B2:B16** não inclui **B1** nem **B17**.\n\n---\n\n**6. Inserção de gráficos**\n\n* A partir de intervalo selecionado:\n  * **Análise Rápida** > **Gráficos**; ou\n  * Guia **Inserir** > grupo **Gráficos** > **Mais gráficos** > **Todos os gráficos** > **Modelos**.\n* Alterar dados na planilha recalcula o gráfico automaticamente.\n\n---\n\n**7. Validação de Dados – Tipos úteis**\n\n* Acesso: guia **Dados** > **Validação de Dados** > **Configurações**.\n* Tipos:\n  * **Qualquer valor**\n  * **Comprimento do texto** (ex.: máximo 7)\n  * **Número inteiro** (pode usar “entre” para faixa)\n  * **Lista** (gera combo box a partir de um intervalo de **fonte**)\n\n---\n\n**8. Validação – Mensagens**\n\n* **Mensagem de entrada**: orienta o usuário (ex.: “Insira seu nome”).\n* **Alerta de erro**: define título/mensagem e estilo (Parar, Aviso, Informação) para valores inválidos.\n\n---\n\n**9. Formatação Condicional – Acesso e tipos**\n\n* Acesso: guia **Página Inicial** > **Formatação Condicional** (ou **Análise Rápida**).\n* Tipos rápidos:\n  * **Barra de dados**\n  * **Escala de cores**\n  * **Conjunto de ícones**\n  * **Regras de realce**\n  * **Primeiros/últimos**\n\n---\n\n**10. Formatação Condicional – Personalização**\n\n* Opções:\n  * “Formatar apenas células que contêm”\n  * “Usar uma fórmula para determinar quais células devem ser formatadas”\n* Ajuste de referências:\n  * Remova o **cifrão** ($) quando quiser copiar a regra para outras células.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Ler “B2:B16” como se incluísse B1 ou B17 — o intervalo é **somente** de B2 até B16.\n2. Usar `=A1:A5` sozinho esperando resultado numérico — intervalos devem ser usados em funções (ex.: `=MÉDIA(A1:A5)`).\n3. Confundir **colunas** (barras verticais) com **barras** (barras horizontais) em gráficos.\n4. Achar que Formatação Condicional bloqueia a digitação — ela apenas altera a aparência.\n5. Em Formatação Condicional, manter referências absolutas ($A$1) quando a regra será copiada — o cifrão impede o ajuste automático.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **referências** de **constantes** e sei que alterar uma referência recalcula fórmulas e gráficos ligados ao intervalo?\n* Memorizei que **intervalos** usam “:” (A1:A5) e que `=A1:A5` sozinho não é útil, devendo ser usado em funções como **MÉDIA**?\n* Fixei a **prioridade**: parênteses antes das demais operações?\n* Sei identificar **colunas (vertical)** x **barras (horizontal)** e a pegadinha de a banca trocar os nomes?\n* Lembro que **Validação de Dados** controla o que pode ser digitado e **Formatação Condicional** só muda aparência?\n* Sei configurar na Validação:  \n  – **Comprimento do texto** (ex.: máximo 7);  \n  – **Número inteiro entre** valores (ex.: 18 e 30);  \n  – **Lista** com intervalo de estados (combo box)?\n* Lembro que **Mensagem de entrada** orienta o usuário e **Alerta de erro** define o que acontece com valor inválido?\n* Sei os caminhos de menu:  \n  – Validação: **Dados > Validação de Dados > Configurações**;  \n  – Formatação Condicional: **Página Inicial > Formatação Condicional**;  \n  – Gráficos: **Análise Rápida** ou **Inserir > Gráficos > Mais gráficos > Todos os gráficos > Modelos**?\n* Fixei que o **conteúdo real** está na **barra de fórmulas**, não necessariamente no que é exibido na célula?",
+  "mapa_mental": "# 💻 Excel IV – Fórmulas, Gráficos e Validações\n\n## 🎯 Conceitos Fundamentais\n### 💡 Fórmulas e Funções\n- Fórmulas iniciam \"=\"\n- Operadores matemáticos\n- Funções pré-definidas\n- Função MÉDIA\n- Recalcular automático\n### 💡 Referências e Constantes\n- Referência de célula\n- Coluna letra\n- Linha número\n- Constantes numéricas\n- Constantes texto\n### 💡 Exibição x Conteúdo\n- Conteúdo na célula\n- Fórmula na barra\n- Resultado exibido\n- Alterar valor base\n- Atualizar gráficos\n\n## 🧮 Operadores e Intervalos\n### ⚙️ Prioridade de Operadores\n- Parênteses primeiro\n- Potência depois\n- Multiplicar dividir\n- Somar subtrair\n- Ordem esquerda-direita\n### 📐 Intervalos de Células\n- Operador dois-pontos\n- Intervalo contínuo\n- A1:A5 significa até\n- Usado dentro funções\n- Fora intervalo excluído\n### 🧮 Cálculo de Média\n- Soma dividido quantidade\n- Média manual fórmula\n- MÉDIA(intervalo)\n- Intervalo correto\n- Evitar células extras\n\n## 📊 Gráficos no Excel\n### 📊 Tipos Principais\n- Colunas verticais\n- Barras horizontais\n- Linhas séries\n- Pizza proporções\n- Área preenchida\n### 🧭 Inserção de Gráficos\n- Selecionar intervalo\n- Botão Análise Rápida\n- Guia Inserir gráficos\n- Mais gráficos modelos\n- Editar título gráfico\n### 🧱 Categorias de Gráficos\n- Colunas agrupadas\n- Colunas empilhadas\n- Colunas cem por cento\n- Colunas 3D variantes\n- Barras agrupadas empilhadas\n\n## 📋 Validação e Formatação\n### 📜 Validação de Dados\n- Guia Dados validação\n- Qualquer valor padrão\n- Número inteiro faixa\n- Comprimento do texto\n- Lista com intervalo\n### 🛡️ Mensagens de Validação\n- Mensagem de entrada\n- Texto orientação\n- Alerta de erro\n- Estilo Parar\n- Aviso Informação\n### 🎨 Formatação Condicional\n- Guia Página Inicial\n- Regras de realce\n- Barras de dados\n- Escalas de cores\n- Conjuntos de ícones\n### 🎯 Regras Avançadas\n- Formatar células que\n- Fórmula lógica personalizada\n- Referência relativa\n- Referência absoluta\n- Remover cifrão dólar",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Fórmulas E Referências",
+      "description": "Fórmulas E Referências — 8 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que são fórmulas no Excel?",
+          "back": "Equações que executam cálculos sobre valores da planilha.",
+          "hint": "São equações de cálculo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "formulas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como é formada a referência de uma célula no Excel?",
+          "back": "Sempre a **coluna** depois a **linha**.",
+          "hint": "Pense na ordem alfabética e numérica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Que tipo de valor pode ser inserido diretamente em uma fórmula?",
+          "back": "Constantes.",
+          "hint": "Valores fixos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a prioridade de cálculo dada aos parênteses em uma fórmula?",
+          "back": "Dão **prioridade** aos parênteses.",
+          "hint": "Ordem de precedência matemática",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "formulas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Como calcular a média de valores sem usar a função MÉDIA?",
+          "back": "Somar os valores e dividir pelo total de elementos.",
+          "hint": "Operações aritméticas básicas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "calculos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "O que indica o operador de referência dois-pontos no Excel?",
+          "back": "Indica **até**.",
+          "hint": "Operador de intervalo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Em que contexto os intervalos de células são aplicados no Excel?",
+          "back": "Aplicados dentro de uma **função**.",
+          "hint": "Onde são usados os intervalos?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "funcoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Onde consultar o conteúdo real de uma célula que exibe um resultado?",
+          "back": "Na **barra de fórmulas** ou por duplo clique na célula.",
+          "hint": "Local de edição de células",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "interface"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Gráficos Excel",
+      "description": "Gráficos Excel — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Como criar rapidamente um gráfico a partir de um intervalo selecionado?",
+          "back": "Usando o botão de **análise rápida** ou pela guia Inserir.",
+          "hint": "Recurso de automação visual",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "graficos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Em qual guia do Excel ficam os gráficos inseridos manualmente?",
+          "back": "Guia **Inserir**.",
+          "hint": "Guia de adição de objetos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "graficos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Quais variações principais existem para gráficos de colunas?",
+          "back": "Coluna agrupada, coluna empilhada, coluna cem por cento empilhada, 3D agrupada, 3D empilhadas e 3D cem por cento empilhadas.",
+          "hint": "São seis variações",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "graficos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "O que acontece com um gráfico quando os valores de sua fonte são alterados?",
+          "back": "O gráfico troca **dinamicamente**.",
+          "hint": "Comportamento de atualização",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "graficos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Validação De Dados",
+      "description": "Validação De Dados — 5 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual é a finalidade da validação de dados no Excel?",
+          "back": "Definir algum tipo de **restrição** ou impedir erro de digitação.",
+          "hint": "Controle de entrada de dados",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "validacao-dados"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual configuração restringe a quantidade máxima de caracteres em uma célula?",
+          "back": "Delimitar o **comprimento do texto** definindo um valor máximo.",
+          "hint": "Configuração de limite de texto",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "validacao-dados"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Quais limites podem ser definidos para restringir valores de idade?",
+          "back": "Definir um número inteiro **entre um mínimo e um máximo**.",
+          "hint": "Limites numéricos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "validacao-dados"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-16",
+          "front": "Como criar uma lista de escolhas para uma célula usando validação de dados?",
+          "back": "Utilizando a opção **lista** na validação de dados e selecionando a fonte.",
+          "hint": "Seleção de opções pré-definidas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "validacao-dados"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual é a função da fonte de uma lista na validação de dados?",
+          "back": "O **intervalo** que contém os dados da escolha.",
+          "hint": "Origem dos dados da lista",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "validacao-dados"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Formatação Condicional",
+      "description": "Formatação Condicional — 5 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "O que é formatação condicional no Excel?",
+          "back": "Formatar valores em que a fórmula é verdadeira, alterando cor, preenchimento e estilo conforme o conteúdo.",
+          "hint": "Alteração visual baseada em regras",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao-condicional"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-19",
+          "front": "Como aplicar formatação condicional usando uma fórmula?",
+          "back": "Criar uma nova regra selecionando a opção de usar uma fórmula.",
+          "hint": "Uso de lógica personalizada",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao-condicional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-20",
+          "front": "Que condição pode destacar valores iguais ou superiores a cinco?",
+          "back": "Quando a célula for **maior ou igual a cinco**.",
+          "hint": "Operador de comparação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao-condicional"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-21",
+          "front": "Como destacar valores inferiores a cinco com uma regra condicional?",
+          "back": "Criar uma regra condicional quando o valor for **menor do que cinco**.",
+          "hint": "Operador de comparação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formatacao-condicional"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-22",
+          "front": "O que deve ser alterado em uma referência para copiar a regra condicional entre células?",
+          "back": "Desbloquear e **tirar o cifrão**.",
+          "hint": "Referência absoluta vs relativa",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Excel, qual é o operador de referência utilizado para indicar um intervalo contínuo de células?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dois pontos (:)",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, o operador de dois pontos (:) é o padrão para definir um intervalo contínuo de células. Por exemplo, \"A1:C5\" refere-se a todas as células da coluna A, linha 1, até a coluna C, linha 5, formando um bloco retangular de células."
+        },
+        {
+          "id": "b",
+          "text": "Ponto e vírgula (;)",
+          "correct": false,
+          "explanation": "Incorreta. O ponto e vírgula (;) é utilizado como separador de argumentos em funções, ou como separador de listas em algumas configurações regionais do Excel, mas não para indicar um intervalo contínuo de células."
+        },
+        {
+          "id": "c",
+          "text": "Barra vertical (|)",
+          "correct": false,
+          "explanation": "Incorreta. A barra vertical (|) não é um operador padrão para referência de intervalos contínuos de células no Excel. Ela não possui uma função definida para essa finalidade no contexto de referências de células."
+        },
+        {
+          "id": "d",
+          "text": "Vírgula (,)",
+          "correct": false,
+          "explanation": "Incorreta. A vírgula (,) é usada para separar referências de células individuais ou intervalos não contíguos em uma fórmula ou função. Por exemplo, \"SOMA(A1, C5)\" somaria apenas o conteúdo das células A1 e C5."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, o operador de dois pontos (:) é o padrão para definir um intervalo contínuo de células. Por exemplo, \"A1:C5\" refere-se a todas as células da coluna A, linha 1, até a coluna C, linha 5, formando um bloco retangular de células.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No Excel, o que caracteriza uma fórmula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Conjunto de dados organizados em linhas e colunas para análise estatística",
+          "correct": false,
+          "explanation": "Incorreta. Um conjunto de dados organizado em linhas e colunas descreve uma planilha ou uma tabela de dados, que é o ambiente onde as fórmulas atuam, mas não a definição de uma fórmula em si."
+        },
+        {
+          "id": "b",
+          "text": "Equação que executa cálculos sobre valores da planilha",
+          "correct": true,
+          "explanation": "Correta. Uma fórmula no Excel é uma equação que realiza cálculos, manipula dados ou retorna informações em uma célula. Toda fórmula começa com um sinal de igual (=) e pode incluir referências de células, operadores matemáticos, funções e constantes."
+        },
+        {
+          "id": "c",
+          "text": "Ferramenta exclusiva para criação de gráficos e tabelas dinâmicas",
+          "correct": false,
+          "explanation": "Incorreta. Embora fórmulas possam ser usadas na criação de dados para gráficos e tabelas dinâmicas, uma fórmula não é uma ferramenta exclusiva para essas finalidades. Ela tem uma aplicação muito mais ampla no cálculo e manipulação de dados."
+        },
+        {
+          "id": "d",
+          "text": "Recurso de formatação que altera a aparência visual das células",
+          "correct": false,
+          "explanation": "Incorreta. Um recurso de formatação altera a aparência visual das células (como cor, fonte, bordas), mas não executa cálculos. A formatação condicional, por exemplo, é um recurso de formatação que aplica estilos com base em condições, e não uma fórmula."
+        }
+      ],
+      "explanation": "Correta. Uma fórmula no Excel é uma equação que realiza cálculos, manipula dados ou retorna informações em uma célula. Toda fórmula começa com um sinal de igual (=) e pode incluir referências de células, operadores matemáticos, funções e constantes.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No sistema de referência de células do Excel, qual é a ordem correta de identificação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Número da linha seguido por outro número da linha",
+          "correct": false,
+          "explanation": "Incorreta. O número da linha seguido por outro número da linha (por exemplo, '12') identifica apenas uma linha, não uma célula específica que também incluiria uma letra de coluna."
+        },
+        {
+          "id": "b",
+          "text": "Letra da coluna seguida pelo número da linha",
+          "correct": true,
+          "explanation": "Correta. No sistema de referência de células do Excel, a ordem correta de identificação é a letra da coluna seguida pelo número da linha. Por exemplo, 'A1' refere-se à célula na primeira coluna (A) e na primeira linha (1), 'B5' à célula na segunda coluna (B) e na quinta linha (5)."
+        },
+        {
+          "id": "c",
+          "text": "Número da linha seguido pela letra da coluna",
+          "correct": false,
+          "explanation": "Incorreta. A ordem inversa (número da linha seguido pela letra da coluna) não corresponde ao sistema de referência padrão do Excel, conhecido como estilo de referência A1."
+        },
+        {
+          "id": "d",
+          "text": "Letra da coluna seguida por outra letra da coluna",
+          "correct": false,
+          "explanation": "Incorreta. A letra da coluna seguida por outra letra da coluna (por exemplo, 'AA') identifica apenas uma coluna, não uma célula específica que também incluiria um número de linha."
+        }
+      ],
+      "explanation": "Correta. No sistema de referência de células do Excel, a ordem correta de identificação é a letra da coluna seguida pelo número da linha. Por exemplo, 'A1' refere-se à célula na primeira coluna (A) e na primeira linha (1), 'B5' à célula na segunda coluna (B) e na quinta linha (5).",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual recurso do Excel permite criar uma lista suspensa (combo box) para seleção de valores predefinidos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Função PROCV com referências absolutas",
+          "correct": false,
+          "explanation": "Incorreta. A função PROCV (ou VLOOKUP em inglês) é uma função de pesquisa que busca um valor em uma coluna de um intervalo e retorna um valor correspondente de outra coluna. Ela é utilizada para recuperar dados, não para criar uma lista suspensa para seleção de valores."
+        },
+        {
+          "id": "b",
+          "text": "Validação de Dados com critério de lista",
+          "correct": true,
+          "explanation": "Correta. O recurso de Validação de Dados, encontrado na guia 'Dados', permite definir regras para os tipos de dados que podem ser inseridos em uma célula. Ao escolher o critério 'Lista', é possível criar uma lista suspensa (também conhecida como 'combo box' ou 'dropdown list') a partir de um conjunto de valores predefinidos, que podem estar em um intervalo de células ou digitados diretamente."
+        },
+        {
+          "id": "c",
+          "text": "Tabela Dinâmica com filtros personalizados",
+          "correct": false,
+          "explanation": "Incorreta. As Tabelas Dinâmicas são ferramentas poderosas para resumir, analisar, explorar e apresentar dados. Embora possuam filtros que permitem selecionar dados, eles são usados para manipular a visualização da tabela e não para criar uma lista suspensa de entrada de dados em uma célula comum da planilha."
+        },
+        {
+          "id": "d",
+          "text": "Formatação Condicional com regras de realce",
+          "correct": false,
+          "explanation": "Incorreta. A Formatação Condicional aplica um formato específico a uma célula ou intervalo de células com base em uma ou mais condições. Ela altera a aparência visual, mas não cria uma lista suspensa interativa para seleção de valores."
+        }
+      ],
+      "explanation": "Correta. O recurso de Validação de Dados, encontrado na guia 'Dados', permite definir regras para os tipos de dados que podem ser inseridos em uma célula. Ao escolher o critério 'Lista', é possível criar uma lista suspensa (também conhecida como 'combo box' ou 'dropdown list') a partir de um conjunto de valores predefinidos, que podem estar em um intervalo de células ou digitados diretamente.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma fórmula do Excel, qual é o efeito de utilizar parênteses?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Bloquear a célula contra edições futuras",
+          "correct": false,
+          "explanation": "Incorreta. O bloqueio de células contra edições futuras é uma funcionalidade de proteção de planilha, que é configurada separadamente das fórmulas e não tem relação com o uso de parênteses dentro delas."
+        },
+        {
+          "id": "b",
+          "text": "Transformar a fórmula em uma função nomeada",
+          "correct": false,
+          "explanation": "Incorreta. Parênteses são usados para delimitar os argumentos de uma função, mas não transformam a fórmula em uma função nomeada. Funções já possuem seus próprios nomes (ex: SOMA, MÉDIA)."
+        },
+        {
+          "id": "c",
+          "text": "Converter valores numéricos em formato de texto",
+          "correct": false,
+          "explanation": "Incorreta. A conversão de valores numéricos para formato de texto é realizada por funções específicas (como a função TEXTO) ou por meio das opções de formatação de célula, não pelo uso de parênteses em uma expressão aritmética."
+        },
+        {
+          "id": "d",
+          "text": "Definir a prioridade de execução das operações",
+          "correct": true,
+          "explanation": "Correta. Em uma fórmula do Excel, assim como na matemática, os parênteses definem a ordem de precedência das operações. As operações dentro dos parênteses são sempre executadas primeiro, antes de outras operações fora deles, garantindo que o cálculo siga a lógica desejada."
+        }
+      ],
+      "explanation": "Correta. Em uma fórmula do Excel, assim como na matemática, os parênteses definem a ordem de precedência das operações. As operações dentro dos parênteses são sempre executadas primeiro, antes de outras operações fora deles, garantindo que o cálculo siga a lógica desejada.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a principal diferença entre o conteúdo de uma célula e o valor exibido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conteúdo sempre mostra números, enquanto o valor exibido mostra apenas texto",
+          "correct": false,
+          "explanation": "Incorreta. O conteúdo de uma célula pode ser qualquer tipo de dado (texto, número, data, hora) ou uma fórmula. O valor exibido é o resultado final desse conteúdo. Não há uma regra que restrinja o conteúdo apenas a números e o valor exibido apenas a texto."
+        },
+        {
+          "id": "b",
+          "text": "O conteúdo é visível apenas para o proprietário da planilha",
+          "correct": false,
+          "explanation": "Incorreta. O conteúdo de uma célula é visível para qualquer usuário que tenha acesso à planilha e que selecione a célula, sendo exibido na barra de fórmulas. A visibilidade não é restrita apenas ao proprietário da planilha, a menos que haja proteção de planilha com senha para ocultar fórmulas, o que é uma funcionalidade de segurança, não uma característica intrínseca da exibição do conteúdo."
+        },
+        {
+          "id": "c",
+          "text": "O conteúdo pode ser uma fórmula, enquanto o valor exibido é o resultado dessa fórmula",
+          "correct": true,
+          "explanation": "Correta. A principal diferença reside no fato de que o conteúdo de uma célula pode ser uma fórmula (por exemplo, `=SOMA(A1:A5)`), que é a instrução para um cálculo. O valor exibido na célula, por sua vez, é o resultado desse cálculo (por exemplo, `15`). Se o conteúdo for um valor direto (sem fórmula), o conteúdo e o valor exibido serão idênticos."
+        },
+        {
+          "id": "d",
+          "text": "O valor exibido é sempre maior que o conteúdo armazenado",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma relação de tamanho intrínseca entre o valor exibido e o conteúdo armazenado. Uma fórmula complexa pode ser um conteúdo longo, mas resultar em um valor exibido simples (um único número). Da mesma forma, um conteúdo simples (um número) será o mesmo valor exibido."
+        }
+      ],
+      "explanation": "Correta. A principal diferença reside no fato de que o conteúdo de uma célula pode ser uma fórmula (por exemplo, `=SOMA(A1:A5)`), que é a instrução para um cálculo. O valor exibido na célula, por sua vez, é o resultado desse cálculo (por exemplo, `15`). Se o conteúdo for um valor direto (sem fórmula), o conteúdo e o valor exibido serão idênticos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Na Formatação Condicional, qual é o propósito de utilizar Barras de Dados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Visualizar proporcionalmente os valores das células através de barras coloridas dentro delas",
+          "correct": true,
+          "explanation": "Correta. O propósito das Barras de Dados, uma funcionalidade da Formatação Condicional no Excel, é fornecer uma representação visual proporcional dos valores numéricos dentro de um intervalo de células. Cada célula recebe uma barra colorida cujo comprimento é determinado pela magnitude do seu valor em relação aos outros valores do conjunto, permitindo uma rápida percepção das tendências e comparações."
+        },
+        {
+          "id": "b",
+          "text": "Ordenar automaticamente os dados em ordem crescente ou decrescente",
+          "correct": false,
+          "explanation": "Incorreta. As Barras de Dados são um recurso visual e não realizam a ordenação automática dos dados. A função de ordenar dados é encontrada em outras ferramentas do Excel, como o recurso \"Classificar\", que reorganiza as linhas ou colunas com base em critérios definidos pelo usuário."
+        },
+        {
+          "id": "c",
+          "text": "Proteger células com valores acima de determinado limite",
+          "correct": false,
+          "explanation": "Incorreta. A proteção de células é uma funcionalidade de segurança do Excel, que impede alterações ou exibe avisos quando uma célula é modificada. Ela é configurada separadamente da Formatação Condicional e não tem relação direta com o uso de Barras de Dados, que são um recurso visual para análise de dados."
+        },
+        {
+          "id": "d",
+          "text": "Criar gráficos de barras independentes em uma nova planilha",
+          "correct": false,
+          "explanation": "Incorreta. As Barras de Dados são uma ferramenta de visualização de dados que opera diretamente dentro das células selecionadas. Elas não criam gráficos de barras externos ou independentes em outras planilhas; seu objetivo é enriquecer a apresentação visual dos dados no local."
+        }
+      ],
+      "explanation": "Correta. O propósito das Barras de Dados, uma funcionalidade da Formatação Condicional no Excel, é fornecer uma representação visual proporcional dos valores numéricos dentro de um intervalo de células. Cada célula recebe uma barra colorida cujo comprimento é determinado pela magnitude do seu valor em relação aos outros valores do conjunto, permitindo uma rápida percepção das tendências e comparações.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a diferença fundamental entre um gráfico de Colunas e um gráfico de Barras no Excel?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Gráficos de Colunas exibem dados verticalmente, enquanto gráficos de Barras exibem horizontalmente",
+          "correct": true,
+          "explanation": "Correta. A diferença fundamental entre gráficos de Colunas e gráficos de Barras no Excel reside na orientação da exibição dos dados. Os gráficos de Colunas utilizam barras verticais para representar os valores, com as categorias geralmente dispostas no eixo horizontal. Em contraste, os gráficos de Barras empregam barras horizontais, com as categorias posicionadas no eixo vertical."
+        },
+        {
+          "id": "b",
+          "text": "Gráficos de Colunas são dinâmicos, enquanto gráficos de Barras são estáticos",
+          "correct": false,
+          "explanation": "Incorreta. No Excel, tanto os gráficos de Colunas quanto os gráficos de Barras são dinâmicos. Isso significa que, se os dados de origem forem alterados, o gráfico será automaticamente atualizado para refletir essas modificações. A capacidade de atualização automática não é exclusiva de um tipo em detrimento do outro."
+        },
+        {
+          "id": "c",
+          "text": "Gráficos de Colunas são tridimensionais, enquanto gráficos de Barras são bidimensionais",
+          "correct": false,
+          "explanation": "Incorreta. Tanto os gráficos de Colunas quanto os gráficos de Barras podem ser criados nas versões bidimensional (2D) ou tridimensional (3D) no Excel. A dimensionalidade é uma opção de estilo que pode ser aplicada a ambos os tipos, e não uma característica distintiva entre eles."
+        },
+        {
+          "id": "d",
+          "text": "Gráficos de Colunas aceitam apenas valores positivos, enquanto gráficos de Barras aceitam negativos",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os tipos de gráficos são capazes de representar tanto valores positivos quanto negativos. A exibição de valores negativos é feita estendendo as barras na direção oposta ao eixo de zero, seja para baixo (em colunas) ou para a esquerda (em barras)."
+        }
+      ],
+      "explanation": "Correta. A diferença fundamental entre gráficos de Colunas e gráficos de Barras no Excel reside na orientação da exibição dos dados. Os gráficos de Colunas utilizam barras verticais para representar os valores, com as categorias geralmente dispostas no eixo horizontal. Em contraste, os gráficos de Barras empregam barras horizontais, com as categorias posicionadas no eixo vertical.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Na Formatação Condicional, ao criar uma nova regra baseada em fórmula, o que determina se a formatação será aplicada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A fórmula deve referenciar células de outras planilhas",
+          "correct": false,
+          "explanation": "Incorreta. Embora a fórmula possa referenciar células localizadas em outras planilhas ou até mesmo em outras pastas de trabalho, a aplicação da formatação não depende da origem da referência. O critério determinante continua sendo o resultado lógico (VERDADEIRO ou FALSO) da fórmula para a célula em que a regra está sendo avaliada."
+        },
+        {
+          "id": "b",
+          "text": "A fórmula deve conter pelo menos uma função de texto",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula utilizada na formatação condicional pode conter qualquer tipo de função (matemática, lógica, de texto, de data/hora, etc.), desde que o resultado final da sua avaliação seja um valor lógico (VERDADEIRO ou FALSO). Não há uma exigência específica para a inclusão de funções de texto."
+        },
+        {
+          "id": "c",
+          "text": "A fórmula deve retornar um valor numérico maior que zero",
+          "correct": false,
+          "explanation": "Incorreta. Para que uma regra de formatação condicional baseada em fórmula seja ativada, o resultado da fórmula não precisa ser um valor numérico maior que zero. O que é esperado é um valor lógico que indique se a condição é verdadeira ou falsa para a célula em questão."
+        },
+        {
+          "id": "d",
+          "text": "A fórmula deve retornar o valor lógico VERDADEIRO",
+          "correct": true,
+          "explanation": "Correta. Ao criar uma regra de formatação condicional que utiliza uma fórmula, a formatação será aplicada à célula se e somente se a avaliação dessa fórmula resultar no valor lógico VERDADEIRO (ou TRUE, em inglês). Se a fórmula retornar FALSO (ou FALSE), a formatação não será aplicada."
+        }
+      ],
+      "explanation": "Correta. Ao criar uma regra de formatação condicional que utiliza uma fórmula, a formatação será aplicada à célula se e somente se a avaliação dessa fórmula resultar no valor lógico VERDADEIRO (ou TRUE, em inglês). Se a fórmula retornar FALSO (ou FALSE), a formatação não será aplicada.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Na Validação de Dados, qual é a diferença prática entre configurar o Alerta de Erro como 'Parar' versus 'Aviso'?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "'Parar' exclui a célula da planilha, enquanto 'Aviso' apenas oculta o conteúdo",
+          "correct": false,
+          "explanation": "Incorreta. As opções de alerta de erro na Validação de Dados servem para controlar a interação do usuário com a entrada de dados inválidos, não para manipular a estrutura da planilha. Nenhuma delas exclui células ou oculta conteúdo; elas apenas gerenciam a aceitação ou rejeição de dados."
+        },
+        {
+          "id": "b",
+          "text": "'Parar' envia notificação por email, enquanto 'Aviso' registra em log",
+          "correct": false,
+          "explanation": "Incorreta. A Validação de Dados é uma ferramenta de controle de entrada de dados no âmbito da planilha. Ela não possui funcionalidades para enviar notificações por e-mail ou registrar eventos em logs do sistema. Essas seriam tarefas mais avançadas, que geralmente requerem programação (como VBA) ou integração com outros sistemas."
+        },
+        {
+          "id": "c",
+          "text": "'Parar' impede completamente a entrada de dados inválidos, enquanto 'Aviso' permite que o usuário prossiga após confirmação",
+          "correct": true,
+          "explanation": "Correta. Na Validação de Dados do Excel, o estilo de Alerta de Erro 'Parar' (Stop) é o mais rigoroso: ele impede completamente a inserção de dados que não atendam aos critérios definidos, exigindo que o usuário corrija a entrada ou cancele a operação. Em contraste, o estilo 'Aviso' (Warning) é mais flexível: ele exibe uma mensagem de alerta sobre a entrada inválida, mas permite que o usuário escolha entre aceitar o dado inválido, corrigi-lo ou cancelar a entrada."
+        },
+        {
+          "id": "d",
+          "text": "'Parar' aplica formatação vermelha, enquanto 'Aviso' aplica formatação amarela",
+          "correct": false,
+          "explanation": "Incorreta. As opções de alerta de erro ('Parar', 'Aviso', 'Informação') controlam o comportamento do Excel em relação à entrada de dados inválidos e a mensagem exibida. A aplicação de formatação visual, como cores (vermelha, amarela), é uma função da Formatação Condicional, que é uma ferramenta distinta da Validação de Dados."
+        }
+      ],
+      "explanation": "Correta. Na Validação de Dados do Excel, o estilo de Alerta de Erro 'Parar' (Stop) é o mais rigoroso: ele impede completamente a inserção de dados que não atendam aos critérios definidos, exigindo que o usuário corrija a entrada ou cancele a operação. Em contraste, o estilo 'Aviso' (Warning) é mais flexível: ele exibe uma mensagem de alerta sobre a entrada inválida, mas permite que o usuário escolha entre aceitar o dado inválido, corrigi-lo ou cancelar a entrada.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "10_258240_Office 365 - Excel IV.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:50:54"
+}

@@ -1,0 +1,573 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 14,
+  "ordem_no_curso": "82.02",
+  "titulo": "Logaritmo e Funções Logarítmicas V",
+  "codigo_aula": "454198",
+  "video_id": "/Nm4IcmaYL4=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:28:16",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/%2FNm4IcmaYL4%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403851&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Logaritmo e Funções Logarítmicas V\n\n## Aquecimento e Objetivo da Aula\nVamos finalizar com mais algumas questões. A verdade é que, quando se fala em funções logarítmicas, muitas vezes aparecem outras funções juntas: função composta, e vale ver um pouquinho de inequação também. Por quê? Porque, quando se fala em funções logarítmicas, acontece com frequência de colocarem situações mais dentro da nossa realidade, no nosso contexto. Aí eu preciso de mais recursos matemáticos, entendeu? Vamos lá, vem comigo, que tá bem legal. Essa aqui é muito interessante, até um pouquinho puxada, mas vamos com tudo. É assim mesmo, sem moleza.\n\n## Domínio de Função Logarítmica com Base Variável e Argumento Quadrático\nOlha que interessante: o intervalo de números reais que contém todos os pontos do domínio da função logarítmica f(x) = log de (−x² − x + 6), na base (x + 1). Eu quero saber o domínio dessa função.\n\nQuando eu pergunto o domínio, estou perguntando: quem são os valores que x pode receber? Relembrando os conceitos iniciais: em função, x vai pro f(x); eu tenho o domínio (x) e o contradomínio (f(x)). Aqui é uma função logarítmica. O que ele quer é o domínio, ou seja, os valores de x possíveis. Por isso as alternativas são todas em função de x, porque o domínio é o x. O f(x) é o contradomínio. Beleza? Show de bola.\n\nComo é que eu faço? Quais são os valores que x pode receber? Entra a condição de existência. Onde é que eu tenho x? Eu tenho x na base (x + 1) e tenho x no logaritmando (−x² − x + 6).\n\nVocê lembra qual é a condição de existência? Temos que fazer a condição de existência tanto do logaritmando quanto da base.\n\n- Para a base (x + 1): tem que ser maior que zero e diferente de 1.\n- Para o logaritmando (−x² − x + 6): tem que ser maior que zero.\n\nPra começar, pra base x + 1:\n\n- x + 1 ≠ 1 ⇒ x ≠ 0\n- x + 1 > 0 ⇒ x > −1\n\nEssas duas informações vieram da base: a base tem que ser diferente de 1 e maior que zero. Massa.\n\nAgora, pro logaritmando, pela condição de existência:\n- −x² − x + 6 > 0\n\nIsso é uma inequação do segundo grau. Caramba! Tem que saber assuntos anteriores. Vamos resolver.\n\nPrimeiro, igualo a zero para encontrar as raízes da equação associada:\n−x² − x + 6 = 0\n\nMultiplico por −1 para facilitar:\nx² + x − 6 = 0\n\nFatorando por soma e produto: dois números que somem −1 (na equação original com sinal ajustado) e multipliquem −6 são −3 e 2. Logo, as raízes são x = −3 e x = 2.\n\nComo na inequação original o coeficiente de x² é negativo (a < 0), a parábola tem concavidade para baixo. Precisamos de −x² − x + 6 > 0, isto é, a região “de cima”, entre as raízes. Então a solução da inequação é:\n-3 < x < 2\n\nAté aqui, juntamos:\n- x ≠ 0\n- x > −1\n- −3 < x < 2\n\nAgora vamos encontrar a interseção dessas três condições. Visualmente, marcando nas retas:\n\n- x ≠ 0: tudo, exceto o 0.\n- x > −1: do −1 para a direita, aberto em −1.\n- −3 < x < 2: intervalo aberto entre −3 e 2.\n\nA interseção comum às três é:\n-1 < x < 2, com x ≠ 0\n\nOu seja, de −1 até 2, excluindo o zero. Essa é a resposta. Letra D. Questão bonita, difícil para concurso público, um pouquinho acima da média.\n\nO que eu quero que você entenda aqui? As condições:\n- A base tem que ser diferente de 1 e maior que 0.\n- O logaritmando tem que ser maior que 0.\n- Resolvemos uma inequação do 2º grau, e depois fizemos a interseção de todas as condições para achar o domínio, que é sempre em x. Quem entra “na bolinha”, digamos assim, são os valores entre −1 e 2, e o zero não pode entrar. Esse é o nosso domínio.\n\nObservação importante de edital:\n- Se no seu edital não tiver inequações, pode pular essa questão.\n- Se tiver funções logarítmicas e inequações de 1º e 2º graus, continue nela.\n- Ela envolve mais de um assunto: condições de existência de logaritmo e inequação do 2º grau.\n\n## Modelo de Resfriamento: Logaritmos na Prática\nEssa aqui é mais suave e mais “cara de logaritmo” mesmo. Um bolo é retirado do forno e começa a resfriar segundo a expressão:\nT(t) = 30 + 150 · a^(−0,05 t), com a > 1,\nsendo T(t) a temperatura do bolo e t o tempo decorrido em minutos.\n\nQueremos a alternativa que corresponde ao tempo em que o bolo atinge a metade da temperatura inicial (quando foi retirado do forno, t = 0). Use, se necessário:\n- log de 2 na base a = 0,7\n- log de 5 na base a = 1,6\n\nPrimeiro, a temperatura inicial T(0):\nT(0) = 30 + 150 · a^0 = 30 + 150 · 1 = 180 (graus Celsius)\n\nQueremos o tempo para atingir metade disso, ou seja, 90 graus. Então resolvemos:\n90 = 30 + 150 · a^(−0,05 t)\n\nIsolando:\n90 − 30 = 150 · a^(−0,05 t)\n60 = 150 · a^(−0,05 t)\n60/150 = a^(−0,05 t)\n2/5 = a^(−0,05 t)\n\nAplicando log na base a dos dois lados:\nlog_a(2/5) = −0,05 t\n\nPropriedade de log na divisão: log_a(2/5) = log_a(2) − log_a(5) = 0,7 − 1,6 = −0,9\n\nEntão:\n−0,9 = −0,05 t\n0,9 = 0,05 t\nt = 0,9 / 0,05 = 18\n\nTempo em minutos: 18 minutos. A galera vai ter que esperar dezoito minutinhos pra esse bolo chegar a 90 graus. Essa foi mais tranquila, bem de logaritmo mesmo.\n\n## Encerramento\nQuestão 3 também é linda, mais logaritmo, trabalhosa, excelente. Tem também um pouquinho de função composta, função dentro de função. Se tiver função composta no seu edital, continua com ela também. E tem o conceito da função logarítmica. Show de bola. Já tínhamos três blocos pra trás e mais dois agora com exercícios; ficou de bom tamanho. Vamos com tudo. Não é comum cair muita questão de funções logarítmicas porque são trabalhosas, mas, se tiver, estamos juntos. Um grande abraço e até o próximo conteúdo. Valeu!",
+  "transcricao_meta": {
+    "title": "Logaritmo e Funções Logarítmicas V",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 29946,
+    "createdAt": "2026-02-06T23:40:03.246Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda domínio de funções logarítmicas e aplicação de logaritmos em função exponencial de resfriamento.\nPrincipais pontos: \n- Condições de existência do logaritmo (base e argumento)\n- Interseção de restrições para obter domínio\n- Isolamento do termo exponencial e uso de logaritmos com mudança/simplificação via propriedades\n\n## 1. Base / Conceitos Fundamentais\n- **Função logarítmica**: f(x) = log_b(A), com:\n  - **Base** b > 0 e b ≠ 1\n  - **Argumento** A > 0\n- **Domínio**: conjunto de valores de x que tornam a expressão válida (aplicando todas as restrições simultaneamente).\n- **Propriedades de log**:\n  - log_b(M/N) = log_b(M) − log_b(N)\n  - Se b > 1 e 0 < M < 1, então log_b(M) < 0.\n- **Função exponencial em modelos físicos**: T(t) = T_ambiente + diferença_inicial · a^{kt}, com a > 1; se k < 0, há decaimento.\n\n## 2. Como Funciona / Distinções\n- **Base do log vs. argumento**:\n  - Base impõe duas restrições independentes: b > 0 e b ≠ 1.\n  - Argumento precisa ser estritamente positivo: A(x) > 0.\n- **Inequação quadrática no argumento**:\n  - Para A(x) = −x² − x + 6 > 0:\n    - Multiplique por (−1) e inverta o sinal: x² + x − 6 < 0.\n    - Use raízes e concavidade para localizar onde é positivo/negativo.\n- **Interseção de condições**:\n  - O domínio é a interseção de todos os conjuntos obtidos (intervalos e exclusões pontuais).\n- **Logs dados em base específica**:\n  - Se são fornecidos valores como log_a(2) e log_a(5), prefira reescrever razões 2/5 ou 5/2 para usar subtração/soma de logs diretamente na mesma base.\n\n## 3. Aplicação Prática / Técnicas\n- Domínio de f(x) = log_{x+1}(−x² − x + 6):\n  1) Base x+1:\n     - x+1 > 0 → x > −1\n     - x+1 ≠ 1 → x ≠ 0\n  2) Argumento:\n     - −x² − x + 6 > 0 ⇔ x² + x − 6 < 0\n     - Raízes de x² + x − 6 = 0: x = −3 e x = 2\n     - Como o coef. de x² em −x² − x + 6 é negativo (parábola côncava para baixo), a > 0 entre as raízes: x ∈ (−3, 2)\n  3) Interseção:\n     - (−3, 2) ∩ (−1, ∞) = (−1, 2)\n     - Exclua x = 0: domínio final (−1, 2) com x ≠ 0\n\n- Resfriamento: T(t) = 30 + 150·a^(−0,005 t). Metade da temperatura inicial:\n  1) T(0) = 30 + 150·a^0 = 180\n  2) Metade: T(t) = 90\n  3) Isolar exponencial:\n     - 30 + 150·a^(−0,005 t) = 90 → 150·a^(−0,005 t) = 60 → a^(−0,005 t) = 2/5\n  4) Aplicar log na base a:\n     - log_a(2/5) = −0,005 t\n     - log_a(2/5) = log_a(2) − log_a(5)\n  5) Substituir dados: log_a(2) = 0,7 e log_a(5) = 1,6\n     - 0,7 − 1,6 = −0,9 = −0,005 t → t = 180 → 18 minutos\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (Domínio): f(x) = log_{x+1}(−x² − x + 6)\n  - Base: x > −1 e x ≠ 0\n  - Argumento: x ∈ (−3, 2)\n  - Interseção: (−1, 2), excluindo 0\n  - Domínio: x ∈ (−1, 2), x ≠ 0\n  - Alternativa: letra d\n\n- Exemplo 2 (Resfriamento do bolo):\n  - Dados: T(t) = 30 + 150·a^(−0,005 t), T(0) = 180, metade = 90\n  - a^(−0,005 t) = 2/5\n  - log_a(2) = 0,7; log_a(5) = 1,6\n  - t = 180 → 18 minutos\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova\n> Domínio de log sempre exige: base > 0, base ≠ 1, argumento > 0. Faça a interseção no final.\n\n- **Esquecer a condição base ≠ 1**: aqui, x+1 ≠ 1 → x ≠ 0; 0 deve ser excluído mesmo estando no intervalo.\n- **Sinal ao inverter inequação**: ao multiplicar por −1, inverta o sentido (x² + x − 6 < 0).\n- **Concavidade errada**: −x² − x + 6 tem concavidade para baixo; o “> 0” fica entre as raízes (−3, 2).\n- **Intervalo “bonito” com ponto proibido**: (−1, 2) mas sem 0.\n- **Sinal dos logs**: se 2/5 < 1, então log_a(2/5) < 0; combine com o coeficiente −0,005 para obter t > 0.\n- **Base dos logs fornecidos**: use a mesma base dos valores dados (log_a), evitando mudanças desnecessárias.\n\n> Dica de prova\n> Quando a questão fornecer log_a(2) e log_a(5), pense em 2/5 ou 5/2 para aplicar diretamente log_a(2) − log_a(5) ou o inverso.\n\n> Dica de prova\n> Em inequações quadráticas, identifique rápido: raízes, concavidade, e intervalo onde a expressão é positiva/negativa; depois intersecte com demais condições.\n\nTabelas (comparações rápidas):\n- Base vs. Argumento no log:\n  - Base: x+1 > 0 e x+1 ≠ 1 → x > −1 e x ≠ 0\n  - Argumento: −x² − x + 6 > 0 → x ∈ (−3, 2)\n  - Domínio final: interseção → (−1, 2), excluindo 0\n\n- Resfriamento:\n  - Meta: T(t) = 90\n  - Isolar exponencial: a^(−0,005 t) = 2/5\n  - Log e substituição: log_a(2) − log_a(5) = −0,9\n  - Tempo: t = 180 → 18 minutos",
+  "resumo_bolso": "# Logaritmo e Funções Logarítmicas V\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Função logarítmica**: f(x) = log_b(A), com **base** b > 0, b ≠ 1 e **argumento** A > 0.\n* **Domínio de função log**: conjunto de valores de x que tornam a expressão válida, aplicando simultaneamente: base > 0, base ≠ 1 e argumento > 0.\n* **Base do log**: impõe duas restrições independentes (b > 0 e b ≠ 1).\n* **Argumento do log**: expressão em x que deve ser **estritamente positiva**: A(x) > 0.\n* **Propriedade de quociente**: log_b(M/N) = log_b(M) − log_b(N).\n* **Sinal do log**: se b > 1 e 0 < M < 1, então log_b(M) < 0.\n* **Função exponencial em modelos físicos (resfriamento)**: T(t) = T_ambiente + diferença_inicial · a^{kt}, com a > 1; se k < 0, há decaimento (a função se aproxima de T_ambiente).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Base do log vs Argumento do log\n\n| Aspecto              | Base (b)                         | Argumento (A(x))                          |\n|----------------------|----------------------------------|-------------------------------------------|\n| Condição principal   | b > 0 e b ≠ 1                    | A(x) > 0                                  |\n| Tipo de restrição    | Intervalo + exclusão pontual     | Inequação (linear/quadrática etc.)        |\n| Origem do domínio    | Expressão que está na base       | Expressão dentro de log_b( … )            |\n| Tratamento típico    | Resolver > 0 e ≠ 1 separadamente | Resolver inequação e achar intervalo      |\n| Papel no domínio     | Gera intervalo e ponto proibido  | Gera intervalo onde o log está definido   |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Condições de existência do log**\n\n* **Aplicação**: qualquer f(x) = log_{g(x)}(h(x)).\n* **Regra**:\n  * g(x) > 0\n  * g(x) ≠ 1\n  * h(x) > 0\n* **Exemplo**: f(x) = log_{x+1}(−x² − x + 6)  \n  * Base x+1:\n    * x+1 > 0 → x > −1\n    * x+1 ≠ 1 → x ≠ 0\n  * Argumento:\n    * −x² − x + 6 > 0\n\n---\n\n**2. Inequação quadrática no argumento**\n\n* **Aplicação**: argumento do log é polinômio de 2º grau.\n* **Regra** (para −x² − x + 6 > 0):\n  * Multiplica por −1 e inverte o sinal: x² + x − 6 < 0.\n  * Raízes de x² + x − 6 = 0: x = −3 e x = 2.\n  * Como o coeficiente de x² em −x² − x + 6 é negativo (parábola côncava para baixo), a expressão é > 0 **entre** as raízes: x ∈ (−3, 2).\n* **Exemplo**: domínio do argumento: (−3, 2).\n\n---\n\n**3. Interseção de condições (domínio)**\n\n* **Aplicação**: juntar base e argumento.\n* **Regra**:\n  * Base x+1: x > −1 e x ≠ 0.\n  * Argumento: x ∈ (−3, 2).\n  * Domínio = (−3, 2) ∩ (−1, ∞) = (−1, 2); excluir x = 0.\n* **Exemplo**: f(x) = log_{x+1}(−x² − x + 6) → domínio: x ∈ (−1, 2), x ≠ 0.\n\n---\n\n**4. Propriedade de quociente para logs dados**\n\n* **Aplicação**: quando a questão fornece log_a(2), log_a(5) etc.\n* **Regra**:\n  * log_a(2/5) = log_a(2) − log_a(5).\n* **Exemplo**:\n  * log_a(2) = 0,7; log_a(5) = 1,6 → log_a(2/5) = 0,7 − 1,6 = −0,9.\n\n---\n\n**5. Modelo de resfriamento com log**\n\n* **Aplicação**: T(t) = 30 + 150·a^{−0,005 t}, achar t para metade da temperatura inicial.\n* **Passos**:\n  1) T(0) = 30 + 150·a^0 = 180.\n  2) Metade: T(t) = 90.\n  3) 30 + 150·a^{−0,005 t} = 90 → 150·a^{−0,005 t} = 60 → a^{−0,005 t} = 2/5.\n  4) Aplicar log na base a: log_a(2/5) = −0,005 t.\n  5) Substituir: log_a(2/5) = log_a(2) − log_a(5) = 0,7 − 1,6 = −0,9 → −0,9 = −0,005 t → t = 180 → 18 minutos.\n* **Exemplo**: tempo para metade da temperatura inicial = 18 minutos.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Esquecer a condição base ≠ 1: aqui, x+1 ≠ 1 → x ≠ 0; 0 deve ser excluído mesmo estando no intervalo (−1, 2).\n- Errar o sinal ao multiplicar a inequação por −1: −x² − x + 6 > 0 ⇔ x² + x − 6 < 0.\n- Interpretar errado a concavidade: em −x² − x + 6 (concavidade para baixo), o “> 0” fica entre as raízes (−3, 2).\n- Aceitar o intervalo “bonito” sem tirar o ponto proibido: domínio (−1, 2), mas sem 0.\n- Ignorar que 2/5 < 1: se 2/5 < 1, então log_a(2/5) < 0; combinado com o coeficiente −0,005 resulta em t > 0.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei claramente **base** (b > 0, b ≠ 1) de **argumento** (A(x) > 0)?\n* Sei montar o domínio de log_{x+1}(−x² − x + 6): (−1, 2) com x ≠ 0?\n* Lembrei de **inverter o sinal** ao multiplicar a inequação por −1 (x² + x − 6 < 0)?\n* Sei usar **log_a(2)** e **log_a(5)** para obter log_a(2/5) = 0,7 − 1,6 = −0,9?\n* Lembrei que, no exemplo de resfriamento, o tempo para metade da temperatura inicial é **t = 180 s = 18 min**?",
+  "mapa_mental": "# 🧮 Logaritmo e Funções Logarítmicas V\n## 🎯 Fundamentos de Logaritmos\n### 💡 Condições de Existência\n- Base maior que zero\n- Base diferente de um\n- Argumento positivo\n- Domínio como interseção\n### 📖 Função Logarítmica\n- Expressão log_b(A)\n- Variável no argumento\n- Variável na base\n- Relação com exponencial\n### 📊 Propriedades Essenciais\n- Log de quociente\n- log_b(M/N) = diferença\n- Log de número menor que um\n- Sinal negativo do log\n\n## 🧩 Domínio de Funções Logarítmicas\n### 📝 Separação das Restrições\n- Condições da base\n- Condições do argumento\n- Intervalos parciais\n- Exclusões pontuais\n### 🔢 Inequação Quadrática\n- Transformação por menos um\n- Inversão do sinal\n- Raízes da quadrática\n- Uso da concavidade\n### 🧮 Interseção de Conjuntos\n- Intervalo da base\n- Intervalo do argumento\n- Interseção final\n- Ponto proibido interno\n\n## 🔄 Modelos Exponenciais e Logs\n### 📉 Função Exponencial Física\n- Temperatura ambiente\n- Diferença inicial\n- Base maior que um\n- Expoente negativo decaimento\n### 🧮 Isolamento do Exponencial\n- Igualar valor alvo\n- Isolar termo exponencial\n- Obter razão numérica\n- Verificar se menor que um\n### 🔢 Uso de Logaritmos Dados\n- Aplicar log mesma base\n- Log de razão 2/5\n- Diferença log_a(2) e log_a(5)\n- Determinação do tempo\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Condições do Log\n- Esquecer base diferente de um\n- Ignorar argumento positivo\n- Domínio sem interseção\n- Intervalo com ponto proibido\n### ⚠️ Manipulação Algébrica\n- Não inverter sinal\n- Concavidade equivocada\n- Intervalo fora das raízes\n- Sinal do log de fração\n### 📋 Estratégias de Prova\n- Listar restrições primeiro\n- Resolver inequação rapidamente\n- Intersectar ao final\n- Usar logs fornecidos direto",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Domínio Logarítmico",
+      "description": "Domínio Logarítmico — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que representa o domínio de uma função?",
+          "back": "Os valores que o **x** pode receber.",
+          "hint": "Refere-se ao conjunto de entrada da função",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "dominio"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição deve ser satisfeita pelo argumento de um logaritmo real?",
+          "back": "Deve ser **maior que zero**.",
+          "hint": "Relacionado à restrição de positividade",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "condicao-existencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual condição adicional a base de um logaritmo deve satisfazer?",
+          "back": "Deve ser **maior que zero** e **diferente de um**.",
+          "hint": "São duas restrições distintas",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "condicao-existencia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Para que valores de x a base x + 1 é diferente de 1?",
+          "back": "Diferente de **zero**.",
+          "hint": "Considere a definição de base logarítmica",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "base"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual desigualdade resulta da exigência de positividade da base x + 1?",
+          "back": "x **maior que menos um**.",
+          "hint": "Aplique a restrição de base positiva",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "base"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Como se combinam as condições obtidas para determinar o domínio de uma função logarítmica?",
+          "back": "Por meio da **interseção** que é comum entre as situações analisadas.",
+          "hint": "Operação lógica entre conjuntos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "dominio"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é o domínio de f(x) = log₍ₓ₊₁₎(−x² − x + 6)?",
+          "back": "De **menos um até dois** e o zero não pertence.",
+          "hint": "Considere as restrições da base e do logaritmando",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "dominio"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Inequações Quadráticas",
+      "description": "Inequações Quadráticas — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual inequação deve ser resolvida para garantir a existência de log₍ₓ₊₁₎(−x² − x + 6)?",
+          "back": "−x² − x + 6 > 0",
+          "hint": "Aplique a condição de existência do logaritmando",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "inequacao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Quais são as raízes da equação x² + x − 6 = 0?",
+          "back": "**−3 e 2**",
+          "hint": "Use a fórmula de Bhaskara ou soma e produto",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "equacao-segundo-grau"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Como o sinal do coeficiente de x² determina a concavidade da parábola?",
+          "back": "Coeficiente negativo determina parábola com **concavidade para baixo**.",
+          "hint": "Pense no comportamento gráfico da parábola",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "parabola"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é o conjunto-solução de −x² − x + 6 > 0?",
+          "back": "x pertence aos reais tal que **x é maior que menos três e menor do que dois**.",
+          "hint": "Use as raízes encontradas anteriormente",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "inequacao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Modelos Exponenciais",
+      "description": "Modelos Exponenciais — 5 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "O que representa t = 0 no modelo de resfriamento do bolo?",
+          "back": "O momento em que o bolo é **retirado do forno**.",
+          "hint": "Estado inicial do processo",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual temperatura inicial resulta de T(t) = 30 + 150·0,5ᵗ no instante t = 0?",
+          "back": "**180 °C**",
+          "hint": "Substitua t por zero na função dada",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual temperatura corresponde à metade da temperatura inicial de 180 °C?",
+          "back": "**90 °C**",
+          "hint": "Cálculo aritmético simples",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelagem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual equação permite encontrar o instante em que o bolo atinge 90 °C?",
+          "back": "90 = 30 + 150 · 0,5ᵗ",
+          "hint": "Iguale a função ao valor alvo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual tempo resolve 0,6 = 150·0,5ᵗ no modelo de resfriamento?",
+          "back": "**18 minutos**",
+          "hint": "Resolva a equação exponencial resultante",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "modelagem"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Propriedades Logarítmicas",
+      "description": "Propriedades Logarítmicas — 2 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Qual propriedade transforma o logaritmo de um quociente em uma diferença?",
+          "back": "A divisão de um logaritmo vira uma **subtração**.",
+          "hint": "Propriedade fundamental dos logaritmos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedades"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Como calcular logₐ(2/5) sabendo que logₐ2 = 0,7 e logₐ5 = 1,6?",
+          "back": "Subtraindo **logₐ2 − logₐ5**, resultando em 0,7 − 1,6.",
+          "hint": "Aplique a propriedade do quociente",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedades"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a condição de existência para a base de um logaritmo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base deve ser maior que zero e diferente de um",
+          "correct": true,
+          "explanation": "Correta. A base de um logaritmo, representada por 'b' em log_b(x), deve ser sempre um número real positivo (b > 0) e diferente de um (b ≠ 1). Essas são condições fundamentais para que o logaritmo seja bem definido no conjunto dos números reais. Se a base fosse 1, log_1(x) seria indefinido para x ≠ 1 e trivial para x = 1, perdendo a utilidade da função. Se a base fosse zero ou negativa, a função logarítmica não teria um comportamento consistente ou seria indefinida para a maioria dos números reais."
+        },
+        {
+          "id": "b",
+          "text": "A base deve ser maior que um e diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. Embora a base seja diferente de zero, ela não precisa ser exclusivamente maior que um. A base pode estar entre zero e um (0 < b < 1), o que resulta em um logaritmo decrescente. A condição de ser maior que um é apenas uma das possibilidades para a base, não a única."
+        },
+        {
+          "id": "c",
+          "text": "A base deve ser maior ou igual a zero e diferente de um",
+          "correct": false,
+          "explanation": "Incorreta. A base de um logaritmo não pode ser igual a zero. Se a base fosse zero (b=0), a expressão 0^y não seria capaz de gerar todos os números positivos, tornando o logaritmo indefinido. A condição correta é estritamente maior que zero (b > 0)."
+        },
+        {
+          "id": "d",
+          "text": "A base deve ser positiva e pode assumir qualquer valor incluindo um",
+          "correct": false,
+          "explanation": "Incorreta. A base de um logaritmo não pode assumir o valor um. Conforme explicado, se a base fosse um, a função logarítmica não seria bem definida ou perderia seu propósito matemático. A condição é que a base seja positiva E diferente de um."
+        }
+      ],
+      "explanation": "Correta. A base de um logaritmo, representada por 'b' em log_b(x), deve ser sempre um número real positivo (b > 0) e diferente de um (b ≠ 1). Essas são condições fundamentais para que o logaritmo seja bem definido no conjunto dos números reais. Se a base fosse 1, log_1(x) seria indefinido para x ≠ 1 e trivial para x = 1, perdendo a utilidade da função. Se a base fosse zero ou negativa, a função logarítmica não teria um comportamento consistente ou seria indefinida para a maioria dos números reais.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma função logarítmica, o logaritmando (argumento do logaritmo) deve satisfazer qual condição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve ser estritamente maior que zero para que o logaritmo exista",
+          "correct": true,
+          "explanation": "Correta. Para que uma função logarítmica log_b(x) seja definida no conjunto dos números reais, o logaritmando 'x' deve ser estritamente maior que zero (x > 0). Isso ocorre porque qualquer número real positivo elevado a qualquer expoente real sempre resultará em um número positivo. Consequentemente, o logaritmo só pode 'retornar' números positivos."
+        },
+        {
+          "id": "b",
+          "text": "Deve ser maior ou igual a zero para que o logaritmo exista",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmando (ou argumento do logaritmo) deve ser estritamente maior que zero, não podendo ser igual a zero. O logaritmo de zero é indefinido em qualquer base, pois não existe nenhum número real 'y' tal que b^y = 0 para uma base b > 0 e b ≠ 1."
+        },
+        {
+          "id": "c",
+          "text": "Deve ser menor que zero para que o logaritmo seja definido",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmando deve ser maior que zero, não menor que zero. Se o logaritmando fosse menor que zero, a função não seria definida no conjunto dos números reais, como explicado anteriormente."
+        },
+        {
+          "id": "d",
+          "text": "Deve ser diferente de zero, podendo ser positivo ou negativo",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmando não pode ser negativo. O logaritmo de um número negativo é indefinido no conjunto dos números reais, pois uma base positiva elevada a qualquer potência real nunca resultará em um número negativo. Logaritmos de números negativos envolvem números complexos, o que não é a definição padrão para o domínio de funções logarítmicas em contextos de cálculo real."
+        }
+      ],
+      "explanation": "Correta. Para que uma função logarítmica log_b(x) seja definida no conjunto dos números reais, o logaritmando 'x' deve ser estritamente maior que zero (x > 0). Isso ocorre porque qualquer número real positivo elevado a qualquer expoente real sempre resultará em um número positivo. Consequentemente, o logaritmo só pode 'retornar' números positivos.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Ao resolver uma inequação do segundo grau com coeficiente principal negativo e desigualdade do tipo 'maior que zero', qual região da parábola deve ser considerada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A região à esquerda da menor raiz, pois os valores decrescem mantendo-se positivos",
+          "correct": false,
+          "explanation": "Incorreta. Similarmente à alternativa anterior, a região à esquerda da menor raiz, para uma parábola com concavidade para baixo, também corresponde a valores da função que são negativos, não satisfazendo a condição de ser 'maior que zero'."
+        },
+        {
+          "id": "b",
+          "text": "A região à direita da maior raiz, pois os valores crescem indefinidamente nessa direção",
+          "correct": false,
+          "explanation": "Incorreta. Para uma parábola com concavidade para baixo, a região à direita da maior raiz corresponde a valores da função que são negativos (abaixo do eixo x), o que não satisfaz a condição de ser 'maior que zero'."
+        },
+        {
+          "id": "c",
+          "text": "A região interna entre as raízes, pois a concavidade voltada para baixo torna os valores internos positivos",
+          "correct": true,
+          "explanation": "Correta. Em uma inequação do segundo grau do tipo ax² + bx + c > 0, quando o coeficiente principal 'a' é negativo (a < 0), a parábola tem concavidade voltada para baixo. Nesse caso, os valores da função são positivos (ou seja, a parábola está acima do eixo x) apenas na região que se encontra entre as duas raízes reais da equação. Essa é a 'região interna' entre as raízes."
+        },
+        {
+          "id": "d",
+          "text": "A região externa às raízes, pois a concavidade voltada para baixo torna os valores externos positivos",
+          "correct": false,
+          "explanation": "Incorreta. Para uma parábola com concavidade para baixo (coeficiente principal negativo), a região externa às raízes corresponde aos valores da função que são negativos. Se a inequação busca valores 'maiores que zero', essa região não seria a correta."
+        }
+      ],
+      "explanation": "Correta. Em uma inequação do segundo grau do tipo ax² + bx + c > 0, quando o coeficiente principal 'a' é negativo (a < 0), a parábola tem concavidade voltada para baixo. Nesse caso, os valores da função são positivos (ou seja, a parábola está acima do eixo x) apenas na região que se encontra entre as duas raízes reais da equação. Essa é a 'região interna' entre as raízes.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao aplicar logaritmo em ambos os lados de uma equação exponencial, qual propriedade permite transformar uma divisão dentro do logaritmo em uma subtração?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A propriedade do logaritmo do produto, que transforma multiplicação em adição de logaritmos",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade do logaritmo do produto (log_b(x * y) = log_b(x) + log_b(y)) transforma uma multiplicação em uma adição de logaritmos, não uma divisão em subtração."
+        },
+        {
+          "id": "b",
+          "text": "A propriedade da mudança de base, que permite reescrever logaritmos em bases diferentes",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade da mudança de base permite reescrever um logaritmo de uma base para outra (log_b(x) = log_c(x) / log_c(b)), o que envolve uma divisão de logaritmos, mas seu propósito não é transformar uma divisão interna ao logaritmando em uma subtração de logaritmos."
+        },
+        {
+          "id": "c",
+          "text": "A propriedade do logaritmo do quociente, que transforma divisão em subtração de logaritmos",
+          "correct": true,
+          "explanation": "Correta. A propriedade do logaritmo do quociente estabelece que o logaritmo de uma divisão é igual à diferença dos logaritmos do numerador e do denominador. Matematicamente, log_b(x / y) = log_b(x) - log_b(y). Esta é a propriedade utilizada para simplificar expressões logarítmicas que envolvem divisões, convertendo-as em subtrações."
+        },
+        {
+          "id": "d",
+          "text": "A propriedade do logaritmo da potência, que permite trazer o expoente como coeficiente",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade do logaritmo da potência (log_b(x^n) = n * log_b(x)) permite que o expoente de um logaritmando seja movido para a frente do logaritmo como um coeficiente, mas não lida com a transformação de divisão em subtração."
+        }
+      ],
+      "explanation": "Correta. A propriedade do logaritmo do quociente estabelece que o logaritmo de uma divisão é igual à diferença dos logaritmos do numerador e do denominador. Matematicamente, log_b(x / y) = log_b(x) - log_b(y). Esta é a propriedade utilizada para simplificar expressões logarítmicas que envolvem divisões, convertendo-as em subtrações.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Para determinar o domínio de uma função logarítmica que possui logaritmando e base contendo a variável, qual procedimento deve ser adotado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve-se somar as condições de existência do logaritmando e da base para obter o domínio completo",
+          "correct": false,
+          "explanation": "Incorreta. 'Somar' as condições de existência não é um procedimento matemático válido para determinar o domínio de uma função. O domínio é o conjunto de valores que satisfazem todas as restrições simultaneamente, o que é obtido através da operação de interseção entre os conjuntos de soluções de cada condição."
+        },
+        {
+          "id": "b",
+          "text": "Deve-se analisar apenas a condição de existência do logaritmando, pois a base é sempre constante",
+          "correct": false,
+          "explanation": "Incorreta. Analisar apenas a condição de existência do logaritmando é insuficiente. A base de um logaritmo também possui condições de existência que devem ser satisfeitas (ser positiva e diferente de um), e estas condições podem depender da variável 'x'."
+        },
+        {
+          "id": "c",
+          "text": "Deve-se considerar apenas os valores que tornam a base maior que um, ignorando o logaritmando",
+          "correct": false,
+          "explanation": "Incorreta. Considerar apenas os valores que tornam a base maior que um é incompleto, pois a base também pode estar entre zero e um (0 < base < 1). Além disso, ignorar a condição do logaritmando levaria a um domínio incorreto."
+        },
+        {
+          "id": "d",
+          "text": "Deve-se encontrar a interseção das condições de existência tanto do logaritmando quanto da base",
+          "correct": true,
+          "explanation": "Correta. Para determinar o domínio de uma função logarítmica onde tanto o logaritmando quanto a base dependem da variável 'x', é necessário que todas as condições de existência sejam satisfeitas simultaneamente. Isso significa que se deve encontrar o conjunto de valores de 'x' que satisfazem a condição do logaritmando (ser estritamente maior que zero) E as condições da base (ser estritamente maior que zero E diferente de um). A interseção desses conjuntos de soluções resultará no domínio completo da função."
+        }
+      ],
+      "explanation": "Correta. Para determinar o domínio de uma função logarítmica onde tanto o logaritmando quanto a base dependem da variável 'x', é necessário que todas as condições de existência sejam satisfeitas simultaneamente. Isso significa que se deve encontrar o conjunto de valores de 'x' que satisfazem a condição do logaritmando (ser estritamente maior que zero) E as condições da base (ser estritamente maior que zero E diferente de um). A interseção desses conjuntos de soluções resultará no domínio completo da função.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Dada uma função de resfriamento na forma T(t) = a + b·e^(-kt), onde T representa temperatura e t representa tempo, como se determina a temperatura inicial no instante t = 0?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deriva-se a função em relação ao tempo e avalia-se a derivada em t = 0",
+          "correct": false,
+          "explanation": "Incorreta. Derivar a função em relação ao tempo (T'(t)) e avaliar essa derivada em t = 0 nos daria a taxa inicial de variação da temperatura, ou seja, quão rapidamente a temperatura estava mudando no instante inicial. A derivada de T(t) = a + b·e^(-kt) é T'(t) = -kb·e^(-kt). Avaliando em t=0, T'(0) = -kb, que é a inclinação da curva de temperatura no ponto inicial, não a temperatura em si."
+        },
+        {
+          "id": "b",
+          "text": "Substitui-se t por zero na função, resultando em T(0) = a + b, pois e^0 = 1",
+          "correct": true,
+          "explanation": "Correta. Para determinar a temperatura inicial de um processo de resfriamento, que é o estado no tempo zero, basta substituir a variável de tempo (t) por 0 na função. Dada a função T(t) = a + b·e^(-kt), ao fazer t = 0, temos T(0) = a + b·e^(-k·0). Como qualquer número (exceto 0) elevado à potência de 0 é igual a 1 (e^0 = 1), a expressão se simplifica para T(0) = a + b·1, ou seja, T(0) = a + b. Este é um princípio fundamental da avaliação de funções em um ponto específico."
+        },
+        {
+          "id": "c",
+          "text": "Iguala-se a função a zero e resolve-se para encontrar o valor inicial de temperatura",
+          "correct": false,
+          "explanation": "Incorreta. Igualar a função a zero (T(t) = 0) e resolver para t significa encontrar o momento em que a temperatura do bolo atingiria zero. Isso não representa a temperatura inicial, mas sim um ponto específico no tempo onde a temperatura alcança um valor nulo. Além disso, dependendo dos parâmetros 'a' e 'b', a temperatura pode nunca chegar a zero, ou pode não ser fisicamente plausível."
+        },
+        {
+          "id": "d",
+          "text": "Calcula-se o limite da função quando t tende ao infinito, obtendo a temperatura de equilíbrio",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo do limite da função quando t tende ao infinito (t → ∞) não fornece a temperatura inicial, mas sim a temperatura de equilíbrio ou assintótica do sistema. Em funções de resfriamento como esta, com k > 0, o termo exponencial e^(-kt) tende a zero quando t cresce indefinidamente. Assim, o limite da função seria T(t) → a, representando a temperatura ambiente ou final à qual o objeto se aproxima, e não a temperatura no início do processo."
+        }
+      ],
+      "explanation": "Correta. Para determinar a temperatura inicial de um processo de resfriamento, que é o estado no tempo zero, basta substituir a variável de tempo (t) por 0 na função. Dada a função T(t) = a + b·e^(-kt), ao fazer t = 0, temos T(0) = a + b·e^(-k·0). Como qualquer número (exceto 0) elevado à potência de 0 é igual a 1 (e^0 = 1), a expressão se simplifica para T(0) = a + b·1, ou seja, T(0) = a + b. Este é um princípio fundamental da avaliação de funções em um ponto específico.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao resolver um sistema de condições para determinar o domínio de uma função logarítmica complexa, obtêm-se três restrições: x ≠ 0, x > -1 e -3 < x < 2. Qual é o conjunto solução que satisfaz simultaneamente todas essas condições?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto solução é o intervalo (-1, 0) unido com (0, 2), pois x deve ser maior que -1 e diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. Embora a representação do conjunto solução como (-1, 0) unido com (0, 2) esteja matematicamente correta e seja equivalente a 'o intervalo (-1, 2) excluindo o zero', a justificativa fornecida ('pois x deve ser maior que -1 e diferente de zero') é incompleta. Ela não explica como o limite superior de 2 é estabelecido, que deriva da condição -3 < x < 2. A alternativa 'a' oferece uma explicação mais abrangente ao mencionar a interseção das três restrições."
+        },
+        {
+          "id": "b",
+          "text": "O conjunto solução é o intervalo (-1, 2) excluindo o zero, pois representa a interseção das três restrições",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o conjunto solução que satisfaz simultaneamente todas as três restrições (x ≠ 0, x > -1 e -3 < x < 2), é necessário determinar a interseção desses conjuntos. Primeiro, vamos considerar as desigualdades: x > -1 e -3 < x < 2. A interseção dessas duas condições é o intervalo (-1, 2), pois qualquer valor maior que -1 e menor que 2 satisfaz ambas. Em seguida, aplicamos a restrição x ≠ 0 a este intervalo. Isso significa que o número 0 deve ser excluído do intervalo (-1, 2). Portanto, o conjunto solução final é o intervalo (-1, 2) com a exclusão do zero, o que pode ser representado como (-1, 0) U (0, 2)."
+        },
+        {
+          "id": "c",
+          "text": "O conjunto solução é o intervalo (-3, -1) unido com (-1, 2), pois x deve estar entre -3 e 2 excluindo -1",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto solução (-3, -1) unido com (-1, 2) está incorreto por várias razões. Primeiro, ele exclui o valor -1, mas a condição x > -1 já implica que -1 não está incluído. Mais importante, ele inclui o intervalo (-3, -1), que contém valores como -2, que não satisfazem a condição x > -1. Além disso, ele não exclui o zero, que é uma das condições dadas."
+        },
+        {
+          "id": "d",
+          "text": "O conjunto solução é o intervalo (-3, 2) excluindo o zero, pois abrange todos os valores possíveis",
+          "correct": false,
+          "explanation": "Incorreta. O intervalo (-3, 2) excluindo o zero não é o conjunto solução correto. Embora ele satisfaça a condição -3 < x < 2 e x ≠ 0, ele falha em satisfazer completamente a condição x > -1. Por exemplo, um valor como x = -2 estaria dentro de (-3, 2) excluindo 0, mas não satisfaz x > -1, tornando-o inválido para o domínio da função."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o conjunto solução que satisfaz simultaneamente todas as três restrições (x ≠ 0, x > -1 e -3 < x < 2), é necessário determinar a interseção desses conjuntos. Primeiro, vamos considerar as desigualdades: x > -1 e -3 < x < 2. A interseção dessas duas condições é o intervalo (-1, 2), pois qualquer valor maior que -1 e menor que 2 satisfaz ambas. Em seguida, aplicamos a restrição x ≠ 0 a este intervalo. Isso significa que o número 0 deve ser excluído do intervalo (-1, 2). Portanto, o conjunto solução final é o intervalo (-1, 2) com a exclusão do zero, o que pode ser representado como (-1, 0) U (0, 2).",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "14_454198_Logaritmo e Funções Logarítmicas V.pdf",
+  "coletado_em": "2026-09-23T20:58:00"
+}

@@ -1,0 +1,510 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 15,
+  "ordem_no_curso": "15.00",
+  "titulo": "Conjunto dos Números Irracionais e Reais II",
+  "codigo_aula": "264355",
+  "video_id": "hqLrMPYZt/M=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:30:45",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/hqLrMPYZt%2FM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408676%2C408678%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Irracionais e Reais II\n\n## Introdução e retomada\nVamos continuar. Todas as aplicações da primeira parte do treinamento podem ser utilizadas aqui. Vou fazer duas aplicações da primeira parte.\n\nTenho uma questão interessante que envolve as propriedades e operações fundamentais com números naturais, inteiros, racionais e irracionais. Beleza? Julguem a seguinte questão. Ela é um pouco puxada. Faz parte das nossas funções.\n\n## Algoritmo da Divisão (revisão)\nA tendência é que, no conjunto dos números inteiros, nós trabalhemos com o algoritmo da divisão. Lembram? Aquele que a tia ensinou, usado muito na lógica: o algoritmo da divisão. Resolvemos muitas questões com ele.\n\nNo algoritmo da divisão, temos: dividendo = divisor × quociente + resto. Lembra? Aqui é o nosso dividendo, aqui é o nosso divisor, aqui é o nosso quociente e aqui é o resto. Beleza? Então, temos as partes da divisão.\n\nQuando mudamos para a linguagem de concurso, o algoritmo da divisão, segundo os números inteiros, garante que, dados inteiros a e b (com b ≠ 0), existem inteiros q e r tais que a = bq + r, com o resto r satisfazendo certas condições. E é isso que vai ser cobrado.\n\nVai ser assim: é só ajustar a posição aqui. A carga que coloquei melhor foi: a = bq + r. Você concorda comigo? Há uma prova real. A tia ensinou: se você pegar esse produto e somar o resto, volta ao dividendo.\n\nPor exemplo: oito dividido por três. Três vezes dois, seis, e sobra dois. A prova real: quociente vezes divisor mais o resto, voltando ao dividendo. Dois vezes três, seis; seis mais dois, oito. Prova real. Só para mostrar.\n\nNa teoria de conjuntos numéricos, o resto r atende: r é maior ou igual a zero e menor que o módulo do divisor. O divisor pode ser positivo ou negativo, beleza? Isso precisa ser verificado. Está certo? Poucas observações.\n\nQuando você faz uma divisão, o dividendo vai ser igual ao divisor vezes o quociente, mais o resto. Correto? O resto deve ser maior ou igual a zero e menor do que o módulo do divisor. Beleza? Tem que ser menor do que o divisor em módulo, que é quem está dividindo. Com certeza.\n\n## Diferença entre inteiros e racionais na divisão\nContinuando: “O número que é o quociente é o resto da divisão de…” — calma, vamos por partes.\n\nQuando os números racionais são dados, é sempre possível encontrar um número racional que “zere” o resto, isto é, que complete a divisão. Em termos práticos: se eu quero dividir e obter resto zero, nos racionais eu consigo.\n\nEntenda o seguinte: se eu pego oito dividido por três, no conjunto dos inteiros, eu paro no quociente dois e resto dois. Por quê? Porque dentro dos inteiros eu não posso continuar com vírgula. Não existe “dois vírgula alguma coisa” ali. Então, oito por três, nos inteiros, dá quociente dois e resto dois.\n\nPense: você tem oito moedas e três crianças. Não dá para dizer “2,666…” moedas para cada criança quando estamos nos inteiros. Você dá duas para cada e sobram duas. Isso é a divisão com resto. Dentro dos inteiros, isso acontece.\n\nJá nos racionais, é sempre possível continuar a divisão até obter uma representação exata em fração ou decimal. Por exemplo: dez por quatro. Dez dividido por quatro dá dois e resto dois. Mas, nos racionais, eu posso escrever 10/4 = 2,5. Resto zero na forma decimal/fração. Então, dentro dos racionais, eu consigo “zerar” o resto representando como número racional. Dentro dos inteiros, nem sempre isso acontece.\n\n> 🎯 Dicas de prova: No algoritmo da divisão de inteiros, o resto r satisfaz 0 ≤ r < |divisor|. Nos racionais, toda divisão a/b (b ≠ 0) pode ser representada como um número racional, sem “resto” no sentido da divisão euclidiana.\n\nEssa questão é um pouco puxada, mas muito top. Quando você começa a fazer concurso, pergunte: em qual conjunto numérico estou trabalhando? Muitas questões transitam entre racionais e inteiros. Você recebe duas opções: racional e inteiro. E a interpretação muda a resposta.\n\n## Questão interpretativa sobre inteiros\nA questão fala: existem exatamente quatro números inteiros para os quais a expressão 14/(2n) + 1 (ajustando a leitura) resulta em número inteiro. A ideia é: escolher valores inteiros para n de modo que 14/(2n) seja inteiro; somar 1 não muda a integralidade.\n\nSe 14/(2n) é inteiro, então 2n deve ser um divisor de 14. Os divisores positivos de 14 são 1, 2, 7, 14. Logo, 2n ∈ {1, 2, 7, 14} e também seus negativos. Assim, n ∈ {±1/2, ±1, ±7/2, ±7}. Mas n precisa ser inteiro, então filtramos: 2n = 2 → n = 1; 2n = -2 → n = -1; 2n = 14 → n = 7; 2n = -14 → n = -7. São exatamente quatro valores inteiros: n = 1, -1, 7, -7.\n\nTestando:\n- n = 1: 14/2 = 7; 7 + 1 = 8 (inteiro).\n- n = -1: 14/(-2) = -7; -7 + 1 = -6 (inteiro).\n- n = 7: 14/14 = 1; 1 + 1 = 2 (inteiro).\n- n = -7: 14/(-14) = -1; -1 + 1 = 0 (inteiro).\n\nPerfeito. São quatro inteiros: 1, -1, 7, -7.\n\n> 🎯 Dicas de prova: Se a fração k/(m·n) precisa ser inteira, imponha que m·n seja divisor de k. Trabalhe com os divisores (positivos e negativos) e filtre n inteiro.\n\n## Aplicação 1 – Frações em contexto (bolão)\nVamos ao treinamento envolvendo todos os conjuntos numéricos. Questão 1: Maria, Marcela e Karine juntaram dinheiro para fazer um bolão na loteria. Karine deu 18 reais, Marcela deu 30 reais e Maria deu 42 reais. Se obtiverem sucesso na aposta, a fração do bolo que cabe a cada uma será de quanto?\n\nSomando as contribuições: 18 + 30 + 42 = 90 reais. A fração para cada uma é o que deu sobre o total:\n- Karine: 18/90. Simplificando por 18: 1/5.\n- Marcela: 30/90. Simplificando por 30 ou por 3 duas vezes: 1/3.\n- Maria: 42/90. Simplificando por 6: 7/15.\n\nEntão:\n- Karine: 1/5 do prêmio,\n- Marcela: 1/3 do prêmio,\n- Maria: 7/15 do prêmio.\n\nEstamos trabalhando com números racionais, representados por frações.\n\n## Aplicação 2 – Proporção de percurso\nQuestão 2: O percurso total é de 798 metros. O atleta percorreu 1/3 do percurso em 2 minutos. Qual a distância percorrida em 2 minutos?\n\nÉ diretamente 1/3 de 798:\n798 ÷ 3 = 266. Logo, 266 metros em 2 minutos.\n\nSimples, operando com racionais e inteiros dentro de uma proporção.\n\n## Aplicação 3 – Planejamento de refeição\nQuestão 3: Para uma grande quantidade de pessoas, metade da comida será composta de carne, um terço de arroz, e o resto de acompanhamentos. Se serão comprados 12 kg de carne, quanto de arroz será utilizado?\n\nMetade do total é carne. Se metade é 12 kg, então o total é 24 kg. Um terço do total é arroz:\n1/3 de 24 = 8 kg de arroz.\n\nSe quiser ir além: acompanhamentos = total − (carne + arroz) = 24 − (12 + 8) = 4 kg.\n\nShow. A ideia é essa: trabalhar proporções com frações (números racionais) aplicadas a contextos reais.\n\n## Encerramento\nAgora vamos avançando aos poucos, equilibrando as aplicações. Daqui a pouco entram questões mais profundas com reais e irracionais, além de naturais, inteiros e frações, para despertar essa interpretação em vocês. Não saiam daí!",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Irracionais e Reais II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 26989,
+    "createdAt": "2026-01-30T14:25:29.428Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: algoritmo da divisão em Z, prova real, distinções entre inteiros (Z), racionais (Q) e reais (R), e aplicação prática de frações/proporções.\nPrincipais pontos:\n- A igualdade a = b × q + r e a condição do resto 0 ≤ r < |b|.\n- Quando parar com quociente e resto (em Z) vs escrever como fração/decimal (em Q).\n- Técnicas para partilha proporcional e interpretação de frações do total.\n\n## 1. Base / Conceitos Fundamentais\n- **Conjuntos numéricos**:\n  - **Naturais (N)**: 0, 1, 2, 3, ...\n  - **Inteiros (Z)**: ..., −2, −1, 0, 1, 2, ...\n  - **Racionais (Q)**: números que podem ser escritos como fração a/b, com a, b ∈ Z, b ≠ 0 (ex.: 18/90, 1/3, 7/15).\n  - **Irracionais (I)**: decimais infinitos não periódicos; não são fração de inteiros (ex.: √2, π).\n  - **Reais (R)**: Q ∪ I (todos os pontos da reta real).\n- **Algoritmo da divisão (em Z)**:\n  - Para inteiros a (dividendo) e b ≠ 0 (divisor), existem inteiros q (quociente) e r (resto) tais que:\n    - a = b × q + r\n    - Condição do resto: 0 ≤ r < |b|.\n- **Prova real**:\n  - Checagem: quociente × divisor + resto deve retornar o dividendo.\n\n> Dica de prova: Memorize 0 ≤ r < |b|. Questões sobre “restos possíveis” cobram exatamente esse intervalo.\n\n- **Nomenclatura**: dividendo (a), divisor (b), quociente (q), resto (r).\n\n## 2. Como Funciona / Distinções\n- Inteiros (Z) vs Racionais (Q) na divisão:\n  - Em **Z**: não há “vírgula”. Você obtém q e r e para. Ex.: 8 por 3 → 8 = 3 × 2 + 2 (q = 2, r = 2).\n  - Em **Q**: sempre expressa como fração/decimal. Ex.: 8/3 = 2,666..., 10/4 = 2,5.\n- Restos em Z:\n  - Unique pair (q, r) garantido pela condição 0 ≤ r < |b|.\n- Inteiros, racionais e reais:\n  - Q inclui frações como 18/90, 1/3, 7/15.\n  - I não se escreve como fração de inteiros (ex.: √2).\n  - R engloba Q e I.\n\n> Dica de prova: Se o enunciado disser “no conjunto dos inteiros”, pense em q e r. Se disser “nos racionais”, escreva em fração/decimal (resto 0 quando a divisão é exata).\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo do algoritmo da divisão (em Z):\n  1) Encontre o quociente inteiro q.\n  2) Calcule r = a − b × q.\n  3) Verifique 0 ≤ r < |b|.\n  4) Faça a prova real: b × q + r = a.\n- “a/(2k+1) é inteiro”:\n  1) Liste divisores inteiros de a que sejam ímpares (pois 2k+1 é ímpar).\n  2) Resolva 2k+1 = d para cada divisor ímpar d.\n- Partilha proporcional:\n  1) Calcule o total arrecadado (soma).\n  2) Fração de cada um = contribuição/total.\n  3) Simplifique as frações.\n- Frações do total (metade, terço, etc.):\n  - “Metade” = 1/2 do total; “um terço” = 1/3 do total.\n  - Se uma parte é dada numericamente (ex.: metade = 12), recupere o total (total = 2 × 12), depois aplique as demais frações.\n\n> Dica de prova: Em proporções, some primeiro para achar o total; só depois monte parte/total e simplifique.\n\n## 4. Exemplos e Casos Resolvidos\n- Algoritmo da divisão e prova real:\n  - “oito por três”: 8 = 3 × 2 + 2. Prova real: 3 × 2 + 2 = 8.\n  - 10 por 4 em Z: 10 = 4 × 2 + 2 (q = 2, r = 2). Em Q: 10/4 = 2,5 (resto 0).\n- Inteiros vs racionais:\n  - “20 por 6” em Z: 20 = 6 × 3 + 2 (q = 3, r = 2). Em Q: 20/6 = 10/3.\n- Expressão “14 sobre dois k mais um” é inteiro:\n  - 14/(2k+1) inteiro ⇒ 2k+1 divisor ímpar de 14: ±1, ±7.\n  - Soluções: 2k+1 = 1 → k = 0; = −1 → k = −1; = 7 → k = 3; = −7 → k = −4.\n  - k ∈ {−4, −1, 0, 3}.\n- Partilha proporcional (bolão com Márcia, Marcela e Maria):\n  - Contribuições: 18, 30, 42 → total 90.\n  - Frações: 18/90 = 1/5; 30/90 = 1/3; 42/90 = 7/15.\n- Proporção distância-tempo:\n  - Percurso total 798 m; em 2 min percorre 1/3 do total.\n  - 1/3 × 798 = 798/3 = 266 → 266 m em 2 min.\n- Composição de refeição:\n  - Metade do total é carne, 1/3 é arroz, resto acompanhamentos.\n  - Carne = 12 kg = metade → total = 24 kg.\n  - Arroz = 1/3 × 24 = 8 kg.\n  - Acompanhamentos = 24 − 12 − 8 = 4 kg.\n\n## 5. Pegadinhas e Erros Comuns\n- Resto fora do intervalo: usar r ≥ |b| ou r < 0. Lembre: 0 ≤ r < |b|.\n- Confundir Z com Q:\n  - Em Z, não existe “2 vírgula alguma coisa”; pare no quociente inteiro e resto.\n  - Em Q, sempre pode escrever como fração/decimal.\n- Divisores inválidos em 14/(2k+1):\n  - 2k+1 é ímpar; não use divisores pares (±2, ±14).\n- Proporções/partilhas:\n  - Trocar “valor recebido” por “valor contribuído”. A fração é contribuição/total.\n  - Esquecer de simplificar frações (pode errar comparações).\n- Frações do total:\n  - Não identificar o total antes de aplicar as partes.\n  - Unidades inconsistentes (reais, metros, quilogramas).\n\n> Dica de prova: Ao ver “julgue a seguir”, “pensa comigo”, identifique rapidamente o conjunto em jogo (Z ou Q), a forma de resposta esperada (q e r vs fração), e aplique a prova real para validar.\n\n> Dica de prova: Em “o resto vai ser maior ou igual a zero e vai ser menor do que o divisor”, lembre do valor absoluto do divisor quando este for negativo: 0 ≤ r < |divisor|.\n\n> Dica de prova: Em “pode ser menos seis”, “pode ser sete”, “pode ser menos sete”, “pode ser zero”, cheque se atendem à condição pedida (ex.: ser divisor, pertencer ao conjunto indicado, respeitar paridade).",
+  "resumo_bolso": "# Conjunto dos Números Irracionais e Reais II\n\n---\n\n## 📌 Conceitos-Chave\n\n* N (Naturais): 0, 1, 2, 3, ...\n* Z (Inteiros): ..., −2, −1, 0, 1, 2, ...\n* Q (Racionais): números a/b, a, b ∈ Z, b ≠ 0; exemplos: 18/90, 1/3, 7/15; decimais finitos ou periódicos.\n* I (Irracionais): decimais infinitos não periódicos (ex.: √2, π); não são fração de inteiros.\n* R (Reais): Q ∪ I.\n* Algoritmo da divisão em Z: para a ∈ Z e b ∈ Z\\{0}, existem q, r ∈ Z tais que a = b × q + r, com 0 ≤ r < |b|.\n* Prova real: checagem b × q + r = a.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Divisão em Z vs Representação em Q\n\n| Aspecto | Z (inteiros) | Q (racionais) |\n| --- | --- | --- |\n| Resultado | q (inteiro) e r (0 ≤ r < |b|) | Fração/decimal |\n| Forma | a = b × q + r | a/b (possível simplificar/decimalizar) |\n| Exemplo 8 ÷ 3 | 8 = 3 × 2 + 2 | 8/3 = 2,666... |\n| Exemplo 10 ÷ 4 | 10 = 4 × 2 + 2 | 10/4 = 2,5 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Condição do resto (divisão em Z)\n- 0 ≤ r < |b| e a = b × q + r.\n- Exemplo: 20 ÷ 6: 20 = 6 × 3 + 2.\n\n2. Unicidade de (q, r)\n- Com 0 ≤ r < |b|, o par (q, r) é único.\n\n3. Identificação do conjunto na resposta\n- “Em Z”: responda com q e r.\n- “Em Q”: escreva como fração/decimal.\n- “Em R”: admite irracionais.\n\n4. Inteireza de a/(2k+1)\n- 2k+1 deve ser divisor ímpar de a.\n- Exemplo com a = 14: divisores ímpares ±1, ±7 → k ∈ {−4, −1, 0, 3}.\n\n5. Partilha proporcional\n- Fração de cada um = contribuição/total; depois simplifique.\n- Exemplo: 18, 30, 42 → total 90 → 1/5, 1/3, 7/15.\n\n6. Frações do total\n- Recuperar o total antes de aplicar partes.\n- Exemplo: metade = 12 kg → total 24 kg → 1/3 do total = 8 kg.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Resto fora do intervalo 0 ≤ r < |b| (use |b| se b < 0).\n- Confundir Z com Q: dar decimal quando pediram q e r.\n- Em 14/(2k+1), usar divisores pares (2k+1 é ímpar).\n- Em partilhas, usar “valor recebido” no lugar de “contribuição”.\n- Aplicar frações sem antes achar o total e manter unidades coerentes.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei divisão em Z (q e r) de representação em Q (fração/decimal)?\n* Memorizei 0 ≤ r < |b| e fiz a prova real b × q + r = a?\n* Sei identificar Q vs I e que R = Q ∪ I?\n* Para a/(2k+1) inteiro, verifiquei divisores ímpares do numerador?\n* Em partilhas, somei primeiro para obter o total e depois calculei contribuição/total e simplifiquei?",
+  "mapa_mental": "# 🧮 Conjunto dos Números Irracionais e Reais II\n## 🎯 Conjuntos Numéricos\n### 💡 Visão Geral\n- Conjunto naturais N\n- Conjunto inteiros Z\n- Conjunto racionais Q\n- Conjunto irracionais I\n- Conjunto reais R\n### 🔢 Naturais e Inteiros\n- Naturais 0,1,2,...\n- Inteiros negativos\n- Inteiros zero\n- Inteiros positivos\n### 🧮 Racionais Q\n- Forma a sobre b\n- a,b inteiros\n- b diferente zero\n- Decimal finito\n- Decimal periódico\n### 📖 Irracionais I\n- Decimal infinito\n- Decimal não periódico\n- Não é fração\n- Exemplos raiz dois\n- Exemplos pi\n### 📊 Reais R\n- União Q e I\n- Reta real\n- Densidade numérica\n- Inclusões N⊂Z⊂Q⊂R\n\n## 🧮 Algoritmo da Divisão em Z\n### 💡 Estrutura da Divisão\n- Dividendo a\n- Divisor b diferente zero\n- Quociente inteiro q\n- Resto inteiro r\n- Igualdade a=bq+r\n### ⚖️ Condição do Resto\n- Zero menor igual r\n- r menor módulo b\n- Intervalo fechado aberto\n- Par ordenado único\n- Resto sempre não negativo\n### 📝 Prova Real\n- Divisor vezes quociente\n- Soma com resto\n- Retorna dividendo\n- Verificação obrigatória\n- Detecção de erro\n### 🔢 Z versus Q\n- Em Z quociente resto\n- Sem vírgula em Z\n- Em Q fração decimal\n- Divisão exata resto zero\n- Indicação conjunto pedido\n\n## 📊 Racionais, Irracionais e Reais\n### 💡 Caracterização Q\n- Frações inteiras\n- Decimais exatos\n- Decimais periódicos\n- Inclusão inteiros em Q\n- Inclusão naturais em Q\n### 📖 Caracterização I\n- Não fração inteira\n- Raízes não exatas\n- Constantes transcendentais\n- Posição na reta\n- Complemento de Q em R\n### 🧮 Estrutura de R\n- Reais racionais\n- Reais irracionais\n- Todos pontos reta\n- Comparação numérica\n- Intervalos reais\n\n## 📊 Frações e Proporções\n### 🧮 Frações do Total\n- Parte sobre total\n- Metade um meio\n- Terço um terço\n- Recuperar total\n- Unidades coerentes\n### 📋 Partilha Proporcional\n- Soma contribuições\n- Fração contribuição total\n- Simplificação frações\n- Comparação participações\n- Proporção valor recebido\n### ⚠️ Erros Frequentes\n- Resto negativo\n- Resto maior igual divisor\n- Confusão Z e Q\n- Divisor ímpar esquecido\n- Frações não simplificadas",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Algoritmo da Divisão",
+      "description": "Algoritmo da Divisão — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a relação entre dividendo, divisor, quociente e resto?",
+          "back": "Dividendo igual ao produto do **quociente** pelo **divisor** mais o **resto**.",
+          "hint": "Relaciona os quatro termos da divisão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "algoritmo-divisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição o resto deve satisfazer em uma divisão inteira?",
+          "back": "O resto deve ser maior ou igual a zero e menor do que o divisor.",
+          "hint": "São duas restrições numéricas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "algoritmo-divisao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Como identificar o quociente em uma divisão pelo algoritmo da divisão?",
+          "back": "O resultado da divisão inteira que, multiplicado pelo divisor e somado ao resto, reconstrói o dividendo.",
+          "hint": "É o termo que reconstrói o dividendo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "algoritmo-divisao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Na divisão inteira de 8 por 3, qual é o quociente?",
+          "back": "O quociente é **2**, pois 3 vezes 2 mais o resto 2 resulta no dividendo 8.",
+          "hint": "Aplique a prova real da divisão",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Inteiros e Racionais",
+      "description": "Inteiros e Racionais — 5 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como são definidos os números racionais?",
+          "back": "Números que podem ser representados por uma **fração**.",
+          "hint": "Pense na forma de representação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual é a principal diferença entre dividir números inteiros e dividir números racionais?",
+          "back": "Nos números inteiros a divisão pode parar deixando resto não exato, enquanto nos racionais é sempre possível continuar a divisão obtendo um número racional.",
+          "hint": "Considere a continuidade da operação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "comparacao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-7",
+          "front": "Que conjunto numérico contém os números positivos e negativos sem parte decimal?",
+          "back": "Números **inteiros**.",
+          "hint": "Conjunto sem frações ou decimais",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Por que 8 dividido por 3 não produz um resultado inteiro?",
+          "back": "Porque no conjunto dos inteiros a divisão para ao gerar resto, não existindo parte decimal.",
+          "hint": "O que acontece com o resto nos inteiros?",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-inteiros",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-9",
+          "front": "Que tipo de número resulta de uma divisão exata entre números racionais?",
+          "back": "Número **racional**.",
+          "hint": "O resultado mantém a natureza do conjunto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "propriedades"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Frações e Proporções",
+      "description": "Frações e Proporções — 5 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como determinar a fração correspondente à participação de alguém em um total arrecadado?",
+          "back": "Dividir a contribuição individual pelo **total arrecadado**.",
+          "hint": "É uma razão entre partes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "proporcionalidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Em um total de 90 reais, qual fração representa uma contribuição de 18 reais?",
+          "back": "A fração **1/5**, obtida simplificando 18 sobre 90 por 18.",
+          "hint": "Simplifique a razão encontrada",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Um atleta percorre um terço de 798 metros. Qual distância ele percorre?",
+          "back": "**266 metros**, calculados multiplicando um terço por 798.",
+          "hint": "Multiplique a fração pelo total",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "Se 12 kg correspondem à metade de uma quantidade, qual é o total?",
+          "back": "**24 kg**, obtidos multiplicando 12 kg por 2.",
+          "hint": "Inverta a operação de divisão",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-14",
+          "front": "Se o arroz corresponde a um terço de 24 kg de comida, qual é a quantidade de arroz?",
+          "back": "**8 kg**, calculados como um terço de 24 kg.",
+          "hint": "Calcule a parte do todo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "numeros-racionais",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No algoritmo da divisão entre números inteiros, qual é a relação correta entre o resto (r) e o divisor (d)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O resto deve ser sempre maior ou igual a zero e estritamente menor que o módulo do divisor",
+          "correct": true,
+          "explanation": "Correta. No algoritmo da divisão euclidiana para números inteiros, o resto (r) deve ser sempre um valor não negativo e estritamente menor que o valor absoluto do divisor (d). Essa condição, expressa como 0 ≤ r < |d|, garante a unicidade do quociente e do resto em uma divisão."
+        },
+        {
+          "id": "b",
+          "text": "O resto deve ser sempre maior que o divisor e menor que o dividendo",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação está incorreta porque o resto deve ser sempre *menor* que o módulo do divisor, não maior. Por exemplo, ao dividir 5 por 7, o resto é 5, que é menor que o dividendo, mas maior que o divisor não faz sentido neste contexto."
+        },
+        {
+          "id": "c",
+          "text": "O resto deve ser sempre menor ou igual ao divisor e maior que o dividendo",
+          "correct": false,
+          "explanation": "Incorreta. O resto deve ser *estritamente menor* que o módulo do divisor, e não 'menor ou igual'. Se o resto fosse igual ao divisor, a divisão não estaria completa, e o quociente poderia ser aumentado em uma unidade. Além disso, o resto não precisa ser maior que o dividendo; na verdade, é geralmente menor."
+        },
+        {
+          "id": "d",
+          "text": "O resto deve ser sempre igual a zero ou igual ao divisor",
+          "correct": false,
+          "explanation": "Incorreta. O resto não precisa ser apenas zero ou igual ao divisor. Ele pode assumir qualquer valor inteiro de 0 até o módulo do divisor menos 1. Por exemplo, na divisão de 7 por 3, o resto é 1, que não é zero nem 3."
+        }
+      ],
+      "explanation": "Correta. No algoritmo da divisão euclidiana para números inteiros, o resto (r) deve ser sempre um valor não negativo e estritamente menor que o valor absoluto do divisor (d). Essa condição, expressa como 0 ≤ r < |d|, garante a unicidade do quociente e do resto em uma divisão.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a principal diferença entre divisões no conjunto dos números inteiros e no conjunto dos números racionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "No conjunto dos racionais, é sempre possível obter resto zero na divisão, enquanto no conjunto dos inteiros nem sempre isso ocorre",
+          "correct": true,
+          "explanation": "Correta. No conjunto dos números racionais, a divisão (exceto por zero) é sempre 'exata' no sentido de que o resultado pode ser expresso como uma fração ou decimal, e, se considerarmos a 'divisão completa', o resto é zero. Por exemplo, 7 ÷ 2 = 3,5. Já no conjunto dos números inteiros, a divisão euclidiana frequentemente produz um resto diferente de zero, como em 7 ÷ 2, que resulta em quociente 3 e resto 1."
+        },
+        {
+          "id": "b",
+          "text": "No conjunto dos racionais, não é possível realizar divisões com números negativos, diferentemente dos inteiros",
+          "correct": false,
+          "explanation": "Incorreta. É perfeitamente possível realizar divisões com números negativos no conjunto dos números racionais. Por exemplo, (-1/2) ÷ (1/4) = -2. O conjunto dos racionais é fechado para a divisão (exceto por zero), incluindo números negativos."
+        },
+        {
+          "id": "c",
+          "text": "No conjunto dos inteiros, o divisor deve ser sempre maior que o dividendo, enquanto nos racionais não há essa restrição",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é falsa para ambos os conjuntos. Em divisões de números inteiros, o divisor pode ser menor que o dividendo (ex: 10 ÷ 2 = 5). Da mesma forma, nos racionais, o divisor pode ser menor que o dividendo (ex: 1/2 ÷ 1/4 = 2)."
+        },
+        {
+          "id": "d",
+          "text": "No conjunto dos inteiros, toda divisão resulta em um número negativo, enquanto nos racionais resulta em número positivo",
+          "correct": false,
+          "explanation": "Incorreta. O sinal do resultado de uma divisão, seja entre inteiros ou racionais, depende dos sinais do dividendo e do divisor. Por exemplo, 6 ÷ 2 = 3 (positivo) e -6 ÷ 2 = -3 (negativo). Não há uma regra que determine que todas as divisões em um conjunto resultem em números negativos e no outro em positivos."
+        }
+      ],
+      "explanation": "Correta. No conjunto dos números racionais, a divisão (exceto por zero) é sempre 'exata' no sentido de que o resultado pode ser expresso como uma fração ou decimal, e, se considerarmos a 'divisão completa', o resto é zero. Por exemplo, 7 ÷ 2 = 3,5. Já no conjunto dos números inteiros, a divisão euclidiana frequentemente produz um resto diferente de zero, como em 7 ÷ 2, que resulta em quociente 3 e resto 1.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Considerando a expressão 14/(2x) + 1, quantos valores inteiros de x tornam o resultado dessa expressão um número inteiro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Três valores inteiros",
+          "correct": false,
+          "explanation": "Incorreta. Há mais de três valores inteiros para 'x' que satisfazem a condição. Os divisores inteiros de 7 são 1, -1, 7 e -7. Cada um desses valores de 'x' fará com que 7/x seja um inteiro, e consequentemente, 7/x + 1 também será um inteiro."
+        },
+        {
+          "id": "b",
+          "text": "Cinco valores inteiros",
+          "correct": false,
+          "explanation": "Incorreta. A análise dos divisores inteiros de 7 revela que há exatamente quatro valores para 'x' (1, -1, 7, -7) que tornam a expressão um número inteiro, não cinco. Não há outro divisor inteiro de 7 além desses."
+        },
+        {
+          "id": "c",
+          "text": "Dois valores inteiros",
+          "correct": false,
+          "explanation": "Incorreta. Existem mais de dois valores inteiros para 'x' que tornam a expressão um número inteiro. Para que 14/(2x) + 1 seja um número inteiro, a fração 14/(2x) (que simplifica para 7/x) deve ser um número inteiro. Isso significa que 'x' deve ser um divisor inteiro de 7."
+        },
+        {
+          "id": "d",
+          "text": "Quatro valores inteiros",
+          "correct": true,
+          "explanation": "Correta. Para que a expressão 14/(2x) + 1 resulte em um número inteiro, a parte fracionária 14/(2x) deve ser um número inteiro. Simplificando a fração, obtemos 7/x. Para que 7/x seja um inteiro, 'x' deve ser um divisor inteiro de 7. Os divisores inteiros de 7 são: 1, -1, 7 e -7. Portanto, existem exatamente quatro valores inteiros para 'x'."
+        }
+      ],
+      "explanation": "Correta. Para que a expressão 14/(2x) + 1 resulte em um número inteiro, a parte fracionária 14/(2x) deve ser um número inteiro. Simplificando a fração, obtemos 7/x. Para que 7/x seja um inteiro, 'x' deve ser um divisor inteiro de 7. Os divisores inteiros de 7 são: 1, -1, 7 e -7. Portanto, existem exatamente quatro valores inteiros para 'x'.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Na prova real do algoritmo da divisão, qual é a relação matemática que deve ser satisfeita?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividendo = quociente + divisor + resto",
+          "correct": false,
+          "explanation": "Incorreta. A prova real da divisão não envolve a soma do quociente, divisor e resto. A relação fundamental da divisão euclidiana é baseada na multiplicação e soma."
+        },
+        {
+          "id": "b",
+          "text": "Dividendo = quociente + divisor × resto",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta porque a ordem das operações está equivocada. O quociente deve ser multiplicado pelo divisor, e o resto é adicionado a esse produto, não o contrário."
+        },
+        {
+          "id": "c",
+          "text": "Dividendo = quociente × divisor + resto",
+          "correct": true,
+          "explanation": "Correta. A relação matemática fundamental do algoritmo da divisão, também conhecida como prova real, afirma que o dividendo é igual ao produto do quociente pelo divisor, somado ao resto. Matematicamente, isso é expresso como Dividendo = Quociente × Divisor + Resto. Por exemplo, se dividirmos 17 por 3, o quociente é 5 e o resto é 2. A prova real seria 17 = 5 × 3 + 2, que é 17 = 15 + 2, confirmando a igualdade."
+        },
+        {
+          "id": "d",
+          "text": "Dividendo = quociente × resto + divisor",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte os papéis do divisor e do resto na multiplicação. O correto é multiplicar o quociente pelo divisor, e não pelo resto."
+        }
+      ],
+      "explanation": "Correta. A relação matemática fundamental do algoritmo da divisão, também conhecida como prova real, afirma que o dividendo é igual ao produto do quociente pelo divisor, somado ao resto. Matematicamente, isso é expresso como Dividendo = Quociente × Divisor + Resto. Por exemplo, se dividirmos 17 por 3, o quociente é 5 e o resto é 2. A prova real seria 17 = 5 × 3 + 2, que é 17 = 15 + 2, confirmando a igualdade.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Três pessoas fizeram um bolão de loteria: a primeira contribuiu com R$ 18,00, a segunda com R$ 30,00 e a terceira com R$ 42,00. Qual fração do prêmio total caberá à pessoa que contribuiu com R$ 30,00?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1/4 do prêmio total",
+          "correct": false,
+          "explanation": "Incorreta. A fração 1/4 do prêmio total não corresponde a nenhuma das contribuições. 1/4 de R$ 90,00 seria R$ 22,50, valor que não foi contribuído por nenhuma das pessoas."
+        },
+        {
+          "id": "b",
+          "text": "2/5 do prêmio total",
+          "correct": false,
+          "explanation": "Incorreta. A fração 2/5 do prêmio total não corresponde à contribuição de R$ 30,00. 2/5 de R$ 90,00 seria R$ 36,00, um valor diferente da contribuição em questão."
+        },
+        {
+          "id": "c",
+          "text": "1/3 do prêmio total",
+          "correct": true,
+          "explanation": "Correta. Para determinar a fração do prêmio, primeiro calculamos o valor total arrecadado no bolão: R$ 18,00 + R$ 30,00 + R$ 42,00 = R$ 90,00. A pessoa em questão contribuiu com R$ 30,00. Assim, a fração do prêmio que lhe cabe é a razão entre sua contribuição e o total arrecadado: 30/90. Simplificando essa fração, dividimos o numerador e o denominador por 30, resultando em 1/3. Portanto, a pessoa que contribuiu com R$ 30,00 terá direito a 1/3 do prêmio total."
+        },
+        {
+          "id": "d",
+          "text": "1/5 do prêmio total",
+          "correct": false,
+          "explanation": "Incorreta. A fração 1/5 do prêmio total corresponderia à contribuição de R$ 18,00 (18/90 = 1/5). A pessoa que contribuiu com R$ 30,00 tem uma fração diferente do prêmio."
+        }
+      ],
+      "explanation": "Correta. Para determinar a fração do prêmio, primeiro calculamos o valor total arrecadado no bolão: R$ 18,00 + R$ 30,00 + R$ 42,00 = R$ 90,00. A pessoa em questão contribuiu com R$ 30,00. Assim, a fração do prêmio que lhe cabe é a razão entre sua contribuição e o total arrecadado: 30/90. Simplificando essa fração, dividimos o numerador e o denominador por 30, resultando em 1/3. Portanto, a pessoa que contribuiu com R$ 30,00 terá direito a 1/3 do prêmio total.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em uma refeição preparada para muitas pessoas, metade da comida será composta de carne e um terço será de arroz. Se foram comprados 12 quilogramas de carne, quantos quilogramas de arroz serão utilizados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "10 quilogramas",
+          "correct": false,
+          "explanation": "Incorreta. A quantidade de arroz é calculada como um terço do total de comida. Com base nos 12 quilogramas de carne (que é metade do total), o total é 24 quilogramas. Um terço de 24 é 8 quilogramas, não 10 quilogramas."
+        },
+        {
+          "id": "b",
+          "text": "8 quilogramas",
+          "correct": true,
+          "explanation": "Correta. O problema informa que a carne corresponde à metade do total da comida. Se 12 quilogramas são a metade, então o total de comida preparada é 2 vezes 12, ou seja, 24 quilogramas. Em seguida, é dito que o arroz corresponde a um terço desse total. Portanto, para encontrar a quantidade de arroz, calcula-se um terço de 24 quilogramas, que é 24 dividido por 3, resultando em 8 quilogramas."
+        },
+        {
+          "id": "c",
+          "text": "6 quilogramas",
+          "correct": false,
+          "explanation": "Incorreta. Se 12 quilogramas de carne representam metade do total, o total de comida é 24 quilogramas. Um terço de 24 quilogramas é 8 quilogramas, não 6 quilogramas."
+        },
+        {
+          "id": "d",
+          "text": "12 quilogramas",
+          "correct": false,
+          "explanation": "Incorreta. A carne representa metade do total e o arroz representa um terço do total. Essas frações são diferentes, o que significa que as quantidades em quilogramas também serão diferentes. Se a carne é 12 quilogramas, o arroz não pode ser 12 quilogramas, pois isso implicaria que ambos representam a mesma proporção do total, o que não é o caso."
+        }
+      ],
+      "explanation": "Correta. O problema informa que a carne corresponde à metade do total da comida. Se 12 quilogramas são a metade, então o total de comida preparada é 2 vezes 12, ou seja, 24 quilogramas. Em seguida, é dito que o arroz corresponde a um terço desse total. Portanto, para encontrar a quantidade de arroz, calcula-se um terço de 24 quilogramas, que é 24 dividido por 3, resultando em 8 quilogramas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual das seguintes afirmações caracteriza corretamente os números racionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "São números que podem ser expressos apenas na forma decimal finita, excluindo dízimas periódicas",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é falsa porque as dízimas periódicas são um tipo de número racional. Por exemplo, 1/3 é uma dízima periódica (0,333...) e é, por definição, um número racional, pois pode ser expresso como uma fração de dois inteiros."
+        },
+        {
+          "id": "b",
+          "text": "São números que podem ser representados por uma fração com numerador e denominador inteiros, sendo o denominador diferente de zero",
+          "correct": true,
+          "explanation": "Correta. A definição fundamental de um número racional é que ele pode ser expresso como uma razão ou quociente entre dois números inteiros, p/q, onde o numerador (p) e o denominador (q) são números inteiros e o denominador (q) é diferente de zero. Isso inclui números inteiros (que podem ser escritos como p/1), decimais finitos (como 0,5 = 1/2) e dízimas periódicas (como 0,333... = 1/3)."
+        },
+        {
+          "id": "c",
+          "text": "São números que resultam exclusivamente de divisões exatas entre números naturais consecutivos",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação é restritiva demais e incorreta. Números racionais não se limitam a divisões exatas (por exemplo, 1/3 é racional e não resulta em divisão exata no sistema decimal) e não precisam ser entre números naturais consecutivos. Por exemplo, -5/2 é um número racional, mas envolve números inteiros negativos e não consecutivos."
+        },
+        {
+          "id": "d",
+          "text": "São números que representam apenas quantidades positivas e podem ser escritos como razão entre números primos",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação contém duas incorreções. Primeiramente, números racionais podem ser negativos (por exemplo, -2/5 é racional). Em segundo lugar, não é necessário que sejam escritos como razão entre números primos; eles são definidos como a razão entre quaisquer dois números inteiros (com o denominador diferente de zero). Por exemplo, 4/8 é racional e pode ser simplificado para 1/2, mas 4 e 8 não são primos."
+        }
+      ],
+      "explanation": "Correta. A definição fundamental de um número racional é que ele pode ser expresso como uma razão ou quociente entre dois números inteiros, p/q, onde o numerador (p) e o denominador (q) são números inteiros e o denominador (q) é diferente de zero. Isso inclui números inteiros (que podem ser escritos como p/1), decimais finitos (como 0,5 = 1/2) e dízimas periódicas (como 0,333... = 1/3).",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "15_264355_Conjunto dos Números Irracionais e Reais II.pdf",
+  "coletado_em": "2026-09-23T20:53:07"
+}

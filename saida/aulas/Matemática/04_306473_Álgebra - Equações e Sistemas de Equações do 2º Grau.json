@@ -1,0 +1,562 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Álgebra: Expressões algébricas. Polinômios: operações e propriedades. Equações polinomiais e inequações relacionadas."
+  },
+  "ordem": 4,
+  "ordem_no_curso": "65.00",
+  "titulo": "Álgebra - Equações e Sistemas de Equações do 2º Grau",
+  "codigo_aula": "306473",
+  "video_id": "3J9HUGAGoyw=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:34:19",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/3J9HUGAGoyw%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408717%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Equações e Sistemas de Equações do 2º Grau\n\n## Introdução e enquadramento do tema\nVamos avançar. O assunto agora é muito legal, correto? Vamos para equações e sistemas de equações do segundo grau. Eu quero deixar claro que essa faixa, especificamente, pode ser aplicada em outras situações também. Nós queremos ver mais aplicações, funções, aquela parte mais mecânica. Se você está fazendo alguma aplicação, tá legal.\n\nEu tenho uma equação do segundo grau, uma preocupação do segundo grau. Olha só: tem a sua caminha, tem condição de existência.\n\n## Condição de existência e forma geral\nPresta atenção: a equação geral do segundo grau é ax² + bx + c = 0. Por que vamos ter equação do segundo grau? Porque, como diz o nome, obrigatoriamente tem que haver o termo ao quadrado. Se não tiver o termo ao quadrado, não é equação do segundo grau; vira equação do primeiro grau. Então, para que seja uma equação do segundo grau, tem que se enquadrar na forma ax² + bx + c = 0.\n\nEssas letras representam os coeficientes. Detalhe importantíssimo: o coeficiente a não pode ser zero. Pode ser positivo, pode ser negativo, não tem problema; mas o a, aquele que multiplica o x², não pode ser zero. Porque, se a = 0, o termo x² desaparece e vira equação do primeiro grau.\n\nPor exemplo, x² + 3x + 2 = 0 é do segundo grau. Se você faz 0·x² + 3x + 2 = 0, vira do primeiro grau. Por isso a condição de existência: o termo que multiplica o x² não pode ser zero. O b e o c podem ser zero, sem problema.\n\n## Número de raízes e grau do polinômio\nOutra coisa importante: numa equação do primeiro grau, temos apenas uma raiz. Quando temos uma equação do segundo grau, temos duas raízes. O grau determina a quantidade de raízes: primeiro grau, uma raiz; segundo grau, duas raízes; terceiro grau, três raízes, beleza? Então, a princípio, para segundo grau, temos duas raízes, dois valores que tornam a equação igual a zero.\n\n## Exemplo com soma e produto (fatoração por inspeção)\nEu quero encontrar os valores que tornam a equação igual a zero. Por exemplo, x² + 7x + 10 = 0. Aqui, os coeficientes são a = 1, b = 7, c = 10.\n\nEu quero dois valores que, substituídos, zerem a equação. Esses valores são as raízes. É possível encontrar as raízes também pela ideia da soma e do produto: dois números que somados dão o termo do meio (com sinal trocado, já já eu ajusto isso) e que multiplicados dão o termo independente.\n\nAqui eu quero dois números que somados dêem 7 e que multiplicados dêem 10. Quem são? 2 e 5. Dois mais cinco dá 7; dois vezes cinco dá 10. Então as raízes são x = -2 e x = -5, lembrando do sinal trocado na fatoração.\n\nVamos verificar substituindo:\n- Para x = -2: (-2)² + 7·(-2) + 10 = 4 - 14 + 10 = 0. Perfeitamente.\n- Para x = -5: (-5)² + 7·(-5) + 10 = 25 - 35 + 10 = 0. Perfeitamente.\n\nAté aqui: para termos equação do segundo grau, precisamos dos coeficientes com a ≠ 0. Podemos ter duas raízes. E é importante saber encontrar as raízes de forma convencional (fórmula) e também sem ela (soma e produto).\n\n## Fórmula de Bhaskara e o discriminante\nPara encontrar as raízes, podemos usar a famosa fórmula de Bhaskara. Para isso, você vai encontrar o discriminante, o famoso Delta: Δ = b² - 4ac. É importante, porque o discriminante influencia diretamente nas raízes.\n\nDepois de encontrar o Δ, você vai para x = (-b ± √Δ) / (2a). Assim, obtemos as duas raízes.\n\nNão vamos descartar essa forma, ela é muito útil. Mas às vezes, por soma e produto, é mais rápido. O importante é entender o papel do discriminante.\n\n> 🎯 **Atenção para prova:** Δ = b² - 4ac decide o tipo de raízes:\n> - Se Δ > 0, duas raízes reais distintas.\n> - Se Δ = 0, duas raízes reais iguais (raiz dupla).\n> - Se Δ < 0, não há raízes reais (raízes complexas).\n\nEntão, o valor do Delta é decisivo: maior que zero, raízes distintas; igual a zero, raízes iguais; menor que zero, não há raízes reais.\n\n## Soma e produto das raízes (relações de Viète)\nSe não queremos usar Bhaskara, podemos usar soma e produto. As relações são:\n- Soma das raízes: x₁ + x₂ = -b/a.\n- Produto das raízes: x₁·x₂ = c/a.\n\nIsso vem de fatorar a equação ax² + bx + c = a(x - x₁)(x - x₂) e comparar coeficientes. Então:\n- Soma = -b/a.\n- Produto = c/a.\n\n> 🎯 **Atenção para prova:** Em ax² + bx + c = 0, vale x₁ + x₂ = -b/a e x₁·x₂ = c/a.\n\n## Aplicação das relações de soma e produto\nVamos usar num modelo: x² + 9x + 14 = 0. Duas raízes reais. A soma das raízes é -b/a = -9/1 = -9. O produto é c/a = 14/1 = 14.\n\nEu quero dois números que, somados, dêem -9 e, multiplicados, dêem 14. Quem são? -7 e -2. -7 + (-2) = -9; (-7)·(-2) = 14. Solução encontrada. Então:\n- Raízes: x = 2 e x = 7 com sinal trocado na fatoração, ou, dito corretamente como raízes da equação x² + 9x + 14 = 0, são x₁ = -7 e x₂ = -2.\n\nBeleza, show de bola. Essa é a jogada.\n\n## Observações sobre método e agilidade\nÀs vezes você pode ficar travado procurando os números da soma e produto. Não tem problema. Use Bhaskara quando preferir, especialmente quando os números não saem fácil. As relações de soma e produto são ótimas quando os coeficientes são mais amigáveis.\n\nO importante é ter critério: se Δ > 0, duas raízes reais distintas; se Δ = 0, raízes reais iguais; se Δ < 0, sem raízes reais. Você pode aplicar isso também em funções quadráticas para analisar interseções, gráficos, e por aí vai.\n\n## Encerramento da parte conceitual\nEntão, reforçando:\n- Condição de existência: a ≠ 0.\n- Podemos resolver por Bhaskara ou por soma e produto.\n- O discriminante Δ decide o tipo de raiz.\n- Soma e produto: -b/a e c/a, respectivamente.\n\nSe travar na soma e produto, vai de Bhaskara. Se sair rápido, usa soma e produto. Nos próximos exercícios, a gente treina mais casos, inclusive quando não dá para fatorar “de cabeça” e quando as raízes não são inteiras.",
+  "transcricao_meta": {
+    "title": "Equações e Sistemas de Equações do 2º Grau",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 14895,
+    "createdAt": "2025-12-12T18:22:55.135Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda equações e sistemas do 2º grau: definição e identificação, discriminante (delta), métodos de resolução (Bhaskara e soma–produto), montagem rápida de equações a partir de enunciados, casos especiais (b=0, c=0), e análise do número de raízes. Principais pontos: a ≠ 0, Δ = b² − 4ac, soma das raízes = −b/a e produto = c/a.\n\n## 1. Base / Conceitos Fundamentais\n- Equação do 2º grau: ax² + bx + c = 0, com a, b, c ∈ ℝ e a ≠ 0.\n- Coeficientes: a é o do termo ao quadrado; b é o linear; c é o termo constante. b e/ou c podem ser zero sem deixar de ser 2º grau.\n- Raiz (solução): valor de x que zera a expressão ax² + bx + c.\n\n> Dica de prova: verifique primeiro se a ≠ 0. Se a = 0, é equação do 1º grau (ax + b = 0), que tem uma única raiz real.\n\n## 2. Como Funciona / Distinções\n- Discriminante (delta): Δ = b² − 4ac.\n  - Δ > 0: duas raízes reais distintas.\n  - Δ = 0: duas raízes reais iguais (raiz dupla).\n  - Δ < 0: não há raízes reais.\n- Fórmulas das raízes (Bhaskara): x = [−b ± √Δ] / (2a).\n- Relações soma e produto (para ax² + bx + c = 0):\n  - Soma das raízes: x1 + x2 = −b/a.\n  - Produto das raízes: x1·x2 = c/a.\n- 1º grau vs 2º grau:\n  - 1º grau (ax + b = 0): exatamente 1 raiz real.\n  - 2º grau (ax² + bx + c = 0, a ≠ 0): até 2 raízes reais (podem coincidir) conforme Δ.\n\n> Dica de prova: se a questão pede apenas “quantas raízes reais?”, calcule somente o sinal de Δ.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo geral:\n  1) Identifique a, b, c e confirme a ≠ 0.\n  2) Se quiser só o número de raízes: avalie o sinal de Δ.\n  3) Para encontrar as raízes:\n     - Tente soma–produto quando os coeficientes são simples (especialmente a = 1).\n     - Caso contrário, calcule Δ e aplique Bhaskara.\n  4) Verifique substituindo as soluções na equação (tem que dar zero).\n\n- Técnica soma–produto (fatoração rápida, principalmente quando a = 1):\n  - Procure dois números que somem −b e multipliquem c.\n  - Fatora como (x − r1)(x − r2) = 0 → x = r1, r2.\n\n- Casos especiais que simplificam:\n  - c = 0: ax² + bx = x(ax + b) = 0 → x = 0 e x = −b/a.\n  - b = 0: ax² + c = 0 → x = ±√(−c/a) (existe solução real apenas se −c/a ≥ 0).\n\n- Montagem rápida a partir de “soma e produto de dois números”:\n  - Se dois números têm soma S e produto P, a equação cujas raízes são esses números é:\n    t² − S·t + P = 0.\n  - Discriminante: Δ = S² − 4P. Se Δ for quadrado perfeito, raízes racionais inteiras.\n\n> Dica de prova: apareceu “somados dão S” e “multiplicados dão P”? Monte t² − S·t + P = 0 e resolva. Se “produto é negativo”, P < 0 (os sinais das raízes são opostos).\n\n- Outros sistemas comuns:\n  - Soma S e diferença D: x + y = S e x − y = D → x = (S + D)/2 e y = (S − D)/2 (dispensa 2º grau).\n  - Relações com quadrados: modele em uma incógnita e reduza a 2º grau.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo A (soma–produto, a = 1):\n  - x² + 9x + 14 = 0.\n  - Dois números que somam −9 e multiplicam 14: −2 e −7.\n  - Fatoração: (x − 2)(x − 7) = 0 → x = 2 e x = 7.\n  - Checagem: 2 + 7 = 9 (soma = −b), 2·7 = 14 (produto = c).\n\n- Exemplo B (só quantidade de raízes):\n  - ax² + bx + c, com Δ = b² − 4ac.\n  - Se Δ < 0, concluir: não há raízes reais, sem calcular x.\n\n- Exemplo C (soma e produto dados):\n  - Dois números com soma 9 e produto 14.\n  - t² − 9t + 14 = 0 → Δ = 81 − 56 = 25 → t = (9 ± 5)/2 → t = 7 e t = 2.\n\n- Exemplo D (produto negativo):\n  - Soma 5, produto −14.\n  - t² − 5t − 14 = 0 → Δ = 25 + 56 = 81 → t = (5 ± 9)/2 → t = 7 e t = −2.\n\n- Exemplo E (impossibilidade em ℝ):\n  - Soma 11, produto 2007.\n  - t² − 11t + 2007 = 0 → Δ = 121 − 8028 < 0 → não há soluções reais.\n\n- Exemplo F (caso c = 0):\n  - 2x² − 6x = 0 → x(2x − 6) = 0 → x = 0 ou x = 3.\n\n- Exemplo G (caso b = 0):\n  - 3x² − 27 = 0 → 3x² = 27 → x² = 9 → x = ±3.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir grau: se não há termo x² (a = 0), é 1º grau. Não aplique Bhaskara em 1º grau.\n- Sinal da soma nas fatorações: a soma das raízes é −b/a. Se b = +9, a soma é −9.\n- Produto negativo: raízes com sinais opostos. O P na equação t² − S·t + P = 0 é o valor real do produto (negativo mesmo), não mude o sinal indevidamente.\n- Exigir apenas “quantas raízes reais”: não perca tempo calculando as raízes, basta o sinal de Δ.\n- Δ não quadrado perfeito: se pedirem raízes inteiras/naturais e Δ não for quadrado perfeito, conclua que não existem tais inteiros/naturais.\n- Dados distratores no enunciado: ignore nomes, datas e lugares; extraia apenas S (soma), P (produto) e relações úteis.\n- Equações com b = 0 ou c = 0: simplificam muito; use fatoração direta ou extração de raiz quando possível.\n- Verificação: sempre que possível, substitua a solução obtida; resultado deve ser zero.\n\n> Dica de prova: memorize três linhas-chave\n- a ≠ 0 para ser 2º grau.\n- Δ > 0: duas; Δ = 0: dupla; Δ < 0: nenhuma real.\n- Soma = −b/a; Produto = c/a.",
+  "resumo_bolso": "# Álgebra - Equações e Sistemas de Equações do 2º Grau\n\n---\n\n## 📌 Conceitos-Chave\n\n* Equação do 2º grau: ax² + bx + c = 0, com a, b, c ∈ ℝ e a ≠ 0.\n* Coeficientes: a (quadrático), b (linear), c (constante); b e/ou c podem ser zero sem deixar de ser 2º grau.\n* Raiz: valor de x que zera ax² + bx + c.\n* Discriminante (Δ): Δ = b² − 4ac determina o número de raízes reais.\n* Fórmula de Bhaskara: x = [−b ± √Δ]/(2a).\n* Relações de soma e produto: x1 + x2 = −b/a; x1·x2 = c/a.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n| Aspecto | 1º grau (ax + b = 0) | 2º grau (ax² + bx + c = 0, a ≠ 0) |\n| --- | --- | --- |\n| Raízes reais | Exatamente 1 raiz real | Até 2 raízes reais (podem coincidir) conforme Δ |\n\n> Dica: Se a = 0, a equação é de 1º grau (não use Bhaskara).\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Discriminante (Δ)\n- Δ = b² − 4ac\n- Interpretação: Δ > 0 → duas reais distintas; Δ = 0 → raiz dupla; Δ < 0 → nenhuma real.\n\n2. Bhaskara\n- x = [−b ± √(b² − 4ac)]/(2a)\n\n3. Soma–Produto (Vieta)\n- x1 + x2 = −b/a; x1·x2 = c/a\n- Fatoração rápida (especialmente a = 1): procure números que somem −b e multipliquem c.\n\n4. Montagem por S e P\n- Se dois números têm soma S e produto P: t² − S·t + P = 0\n- Δ = S² − 4P; se Δ é quadrado perfeito, raízes racionais inteiras.\n\n5. Casos especiais\n- c = 0: ax² + bx = x(ax + b) = 0 → x = 0 e x = −b/a.\n- b = 0: ax² + c = 0 → x = ±√(−c/a) (existe solução real se −c/a ≥ 0).\n\n6. Sistemas com soma e diferença\n- x + y = S e x − y = D → x = (S + D)/2; y = (S − D)/2.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Não confundir 2º grau com 1º grau: se a = 0, é 1º grau; não use Bhaskara.\n- Sinal da soma: soma das raízes = −b/a; se b = +9, a soma é −9.\n- Produto negativo: raízes com sinais opostos; em t² − S·t + P = 0, mantenha P negativo se o produto for negativo.\n- Quando pedirem apenas “quantas raízes reais?”, avalie só o sinal de Δ.\n- Se Δ não é quadrado perfeito e pedirem raízes inteiras/naturais, conclua que não existem tais raízes.\n\n---\n\n## 📋 Checklist Final\n\n* Confirmei que a ≠ 0 para ser 2º grau?\n* Lembro de Δ = b² − 4ac e sua interpretação?\n* Sei aplicar Bhaskara corretamente com denominador 2a?\n* Memorizei: soma = −b/a e produto = c/a?\n* Identifiquei casos rápidos: a = 1 (soma–produto), b = 0, c = 0?\n* Para “somam S e multiplicam P”, montei t² − S·t + P e calculei Δ = S² − 4P?\n* Quando pedem só a quantidade de raízes, verifiquei apenas o sinal de Δ?\n* Verifiquei soluções substituindo na equação (deve zerar)?",
+  "mapa_mental": "# 🧮 Álgebra – Equações e Sistemas do 2º Grau\n\n## 🎯 Estrutura da Equação do 2º Grau\n### 💡 Conceito de equação\n- Forma ax²+bx+c=0\n- Coeficientes reais\n- Condição a ≠ 0\n- Grau da equação\n- Raiz ou solução\n### 🧩 Coeficientes a, b, c\n- Coeficiente quadrático a\n- Coeficiente linear b\n- Termo constante c\n- Possibilidade b=0\n- Possibilidade c=0\n### 🔢 Comparação 1º x 2º grau\n- Equação 1º grau\n- Forma ax+b=0\n- Uma raiz real\n- Equação 2º grau\n- Até duas raízes\n\n## 🧮 Discriminante e Raízes\n### 📊 Discriminante Δ\n- Fórmula Δ=b²−4ac\n- Δ>0 duas raízes\n- Δ=0 raiz dupla\n- Δ<0 sem raiz real\n- Análise só do sinal\n### 📐 Fórmula de Bhaskara\n- Expressão x=[−b±√Δ]/2a\n- Uso quando geral\n- Necessidade de Δ\n- Cálculo das raízes\n- Verificação na equação\n### 🔢 Soma e produto\n- Soma x₁+x₂=−b/a\n- Produto x₁·x₂=c/a\n- Vieta para 2º grau\n- Relação com fatoração\n- Uso em questões teóricas\n\n## ⚙️ Técnicas de Resolução\n### 🧮 Método soma–produto\n- Preferência a=1\n- Procurar dois números\n- Soma igual −b\n- Produto igual c\n- Fatoração (x−r₁)(x−r₂)\n### 🧮 Casos especiais\n- Caso c=0: ax²+bx\n- Fator comum x\n- Raiz zero garantida\n- Caso b=0: ax²+c\n- Condição −c/a ≥ 0\n### 🧮 Montagem por soma e produto\n- Números com soma S\n- Números com produto P\n- Equação t²−St+P=0\n- Discriminante S²−4P\n- Produto negativo P<0\n\n## 🔄 Sistemas e Modelagem\n### 🔢 Sistemas com soma e diferença\n- Sistema x+y=S\n- Sistema x−y=D\n- Fórmula x=(S+D)/2\n- Fórmula y=(S−D)/2\n- Evita 2º grau\n### 🧮 Modelagem em 2º grau\n- Relações com quadrados\n- Redução a uma incógnita\n- Obtenção ax²+bx+c=0\n- Aplicar Δ ou Bhaskara\n- Uso de soma–produto\n### ⚠️ Condições de existência\n- Δ<0 sem solução real\n- Δ quadrado perfeito\n- Raízes inteiras possíveis\n- Produto negativo sinais\n- Sinais das raízes ligados P",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Equação Quadrática",
+      "description": "Equação Quadrática — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a forma geral de uma equação do 2º grau?",
+          "back": "$$ax^2 + bx + c = 0$$",
+          "hint": "Estrutura algébrica polinomial",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacao-segundo-grau"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição deve satisfazer o coeficiente do termo quadrático?",
+          "back": "O coeficiente **a** não pode ser zero.",
+          "hint": "Restrição de existência do grau",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a função do coeficiente a na forma geral da equação?",
+          "back": "Multiplica o termo ao quadrado.",
+          "hint": "Posição relativa ao expoente 2",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "O que caracteriza uma raiz de uma equação?",
+          "back": "Valor que torna a equação igual a zero.",
+          "hint": "Conceito de solução nula",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "raizes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Como as raízes de uma equação se relacionam com os zeros da função?",
+          "back": "As raízes correspondem aos **zeros da função**.",
+          "hint": "Equivalência entre conceitos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "raizes"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Discriminante",
+      "description": "Discriminante — 4 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Como se calcula o discriminante de uma equação do 2º grau?",
+          "back": "$$\\Delta = b^2 - 4ac$$",
+          "hint": "Operação com coeficientes",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "discriminante"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "O que indica um discriminante positivo sobre as raízes reais?",
+          "back": "Indica duas **raízes reais e distintas**.",
+          "hint": "Análise do sinal do delta",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "discriminante"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual método fornece as raízes a partir dos coeficientes e do discriminante?",
+          "back": "Fórmula de Bhaskara",
+          "hint": "Nome do procedimento clássico",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "bhaskara"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a fórmula usada para calcular as raízes pela fórmula de Bhaskara?",
+          "back": "$$x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$$",
+          "hint": "Expressão algébrica completa",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "bhaskara"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Relações de Viète",
+      "description": "Relações de Viète — 1 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Quais relações permitem encontrar as raízes sem aplicar a fórmula de Bhaskara?",
+          "back": "Relações de **soma e produto** das raízes.",
+          "hint": "Método alternativo de resolução",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "soma-produto"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a condição de existência para que uma equação seja classificada como equação do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O coeficiente 'a' deve ser diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Para que uma equação seja classificada como do segundo grau, ela deve possuir um termo com a variável elevada ao quadrado (x²). Se o coeficiente 'a' (que multiplica x²) for igual a zero, esse termo desaparece, e a equação se reduz a uma equação do primeiro grau (bx + c = 0). Assim, a condição fundamental é que 'a' seja diferente de zero."
+        },
+        {
+          "id": "b",
+          "text": "O coeficiente 'b' deve ser diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente 'b' pode ser igual a zero. Por exemplo, a equação x² - 9 = 0 é uma equação do segundo grau completa, mas o coeficiente 'b' é zero. Sua ausência não altera o grau da equação."
+        },
+        {
+          "id": "c",
+          "text": "O coeficiente 'c' deve ser diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente 'c' (o termo independente) também pode ser igual a zero. Um exemplo é a equação x² + 5x = 0, que é uma equação do segundo grau com 'c' igual a zero. A presença ou ausência do termo 'c' não define o grau da equação."
+        },
+        {
+          "id": "d",
+          "text": "Todos os coeficientes devem ser diferentes de zero",
+          "correct": false,
+          "explanation": "Incorreta. Conforme explicado, apenas o coeficiente 'a' precisa ser diferente de zero. Os coeficientes 'b' e 'c' podem ser nulos sem que a equação perca sua classificação de segundo grau. Por exemplo, x² = 0 é uma equação do segundo grau onde b=0 e c=0."
+        }
+      ],
+      "explanation": "Correta. Para que uma equação seja classificada como do segundo grau, ela deve possuir um termo com a variável elevada ao quadrado (x²). Se o coeficiente 'a' (que multiplica x²) for igual a zero, esse termo desaparece, e a equação se reduz a uma equação do primeiro grau (bx + c = 0). Assim, a condição fundamental é que 'a' seja diferente de zero.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Quantas raízes possui uma equação do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Duas raízes",
+          "correct": true,
+          "explanation": "Correta. Uma equação do segundo grau (ax² + bx + c = 0) sempre possui duas raízes no conjunto dos números complexos. Essas raízes podem ser: duas raízes reais e distintas (quando o discriminante é positivo), duas raízes reais e iguais (quando o discriminante é zero), ou duas raízes complexas conjugadas (quando o discriminante é negativo)."
+        },
+        {
+          "id": "b",
+          "text": "Nenhuma raiz",
+          "correct": false,
+          "explanation": "Incorreta. Mesmo que uma equação do segundo grau não possua raízes reais (por exemplo, x² + 1 = 0), ela ainda possui duas raízes complexas (i e -i). Portanto, sempre há duas raízes no domínio dos números complexos."
+        },
+        {
+          "id": "c",
+          "text": "Três raízes",
+          "correct": false,
+          "explanation": "Incorreta. Uma equação do segundo grau não pode ter três raízes. A quantidade de raízes de uma equação polinomial é determinada pelo seu grau. Três raízes seriam características de uma equação do terceiro grau."
+        },
+        {
+          "id": "d",
+          "text": "Uma raiz",
+          "correct": false,
+          "explanation": "Incorreta. Embora uma equação do segundo grau possa ter uma raiz real com multiplicidade dois (quando o discriminante é zero), a teoria fundamental da álgebra estabelece que uma equação polinomial de grau 'n' possui 'n' raízes no conjunto dos números complexos. Para o segundo grau, 'n' é 2."
+        }
+      ],
+      "explanation": "Correta. Uma equação do segundo grau (ax² + bx + c = 0) sempre possui duas raízes no conjunto dos números complexos. Essas raízes podem ser: duas raízes reais e distintas (quando o discriminante é positivo), duas raízes reais e iguais (quando o discriminante é zero), ou duas raízes complexas conjugadas (quando o discriminante é negativo).",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "O que representa o discriminante (delta) em uma equação do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A expressão b² - 4ac que determina a natureza das raízes",
+          "correct": true,
+          "explanation": "Correta. O discriminante, geralmente representado pela letra grega delta (Δ), é a expressão b² - 4ac. Ele é um componente essencial da fórmula resolutiva de Bhaskara e é utilizado para determinar a natureza das raízes de uma equação do segundo grau. Se Δ > 0, há duas raízes reais e distintas; se Δ = 0, há duas raízes reais e iguais; e se Δ < 0, há duas raízes complexas conjugadas."
+        },
+        {
+          "id": "b",
+          "text": "O coeficiente que multiplica o termo de maior grau",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente que multiplica o termo de maior grau (x²) é o 'a'. O discriminante é um valor numérico calculado a partir dos coeficientes 'a', 'b' e 'c', e não um coeficiente em si."
+        },
+        {
+          "id": "c",
+          "text": "A soma das raízes da equação",
+          "correct": false,
+          "explanation": "Incorreta. A soma das raízes de uma equação do segundo grau (ax² + bx + c = 0) é dada pela relação S = -b/a, conforme as Relações de Girard (ou relações de Viète). O discriminante não representa essa soma."
+        },
+        {
+          "id": "d",
+          "text": "O produto das raízes da equação",
+          "correct": false,
+          "explanation": "Incorreta. O produto das raízes de uma equação do segundo grau (ax² + bx + c = 0) é dado pela relação P = c/a, também pelas Relações de Girard. O discriminante não corresponde ao produto das raízes."
+        }
+      ],
+      "explanation": "Correta. O discriminante, geralmente representado pela letra grega delta (Δ), é a expressão b² - 4ac. Ele é um componente essencial da fórmula resolutiva de Bhaskara e é utilizado para determinar a natureza das raízes de uma equação do segundo grau. Se Δ > 0, há duas raízes reais e distintas; se Δ = 0, há duas raízes reais e iguais; e se Δ < 0, há duas raízes complexas conjugadas.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "O que acontece com uma equação do segundo grau quando o coeficiente 'a' é igual a zero?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A equação não possui solução",
+          "correct": false,
+          "explanation": "Incorreta. Uma equação do primeiro grau (bx + c = 0), que é o que resulta quando 'a' é zero, geralmente possui uma única solução (x = -c/b), desde que 'b' seja diferente de zero. Apenas em casos específicos (se b=0 e c≠0) ela não teria solução, mas não é a regra geral."
+        },
+        {
+          "id": "b",
+          "text": "A equação possui infinitas soluções",
+          "correct": false,
+          "explanation": "Incorreta. Uma equação do primeiro grau (bx + c = 0) possui uma única solução, a menos que tanto 'b' quanto 'c' sejam zero, o que resultaria em 0 = 0 e infinitas soluções. No entanto, a consequência direta e mais comum de 'a' ser zero é a formação de uma equação de primeiro grau com uma única solução."
+        },
+        {
+          "id": "c",
+          "text": "A equação se torna do terceiro grau",
+          "correct": false,
+          "explanation": "Incorreta. Se o coeficiente 'a' for zero, o termo x² é eliminado, o que diminui o grau da equação, não o aumenta. Para que fosse do terceiro grau, a equação precisaria ter um termo x³."
+        },
+        {
+          "id": "d",
+          "text": "A equação se torna do primeiro grau",
+          "correct": true,
+          "explanation": "Correta. Uma equação do segundo grau tem a forma ax² + bx + c = 0. Se 'a' é igual a zero, o termo ax² se anula (0 * x² = 0), e a equação se transforma em bx + c = 0. Esta é a forma geral de uma equação do primeiro grau (linear), desde que 'b' seja diferente de zero."
+        }
+      ],
+      "explanation": "Correta. Uma equação do segundo grau tem a forma ax² + bx + c = 0. Se 'a' é igual a zero, o termo ax² se anula (0 * x² = 0), e a equação se transforma em bx + c = 0. Esta é a forma geral de uma equação do primeiro grau (linear), desde que 'b' seja diferente de zero.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a fórmula para calcular a soma das raízes de uma equação do segundo grau ax² + bx + c = 0?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "S = -c/a",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula S = -c/a não representa nem a soma nem o produto das raízes de uma equação do segundo grau. O produto é c/a, e a soma é -b/a."
+        },
+        {
+          "id": "b",
+          "text": "S = -b/a",
+          "correct": true,
+          "explanation": "Correta. As Relações de Girard, também conhecidas como relações de Viète, estabelecem que, para uma equação quadrática na forma padrão ax² + bx + c = 0, a soma das raízes (x₁ + x₂) é dada pela razão do oposto do coeficiente 'b' pelo coeficiente 'a', ou seja, S = -b/a."
+        },
+        {
+          "id": "c",
+          "text": "S = c/a",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula S = c/a representa o produto das raízes (P) de uma equação do segundo grau (ax² + bx + c = 0), e não a soma."
+        },
+        {
+          "id": "d",
+          "text": "S = b/a",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula S = b/a não corresponde à soma das raízes. O sinal negativo é um componente crucial da relação de Girard para a soma das raízes."
+        }
+      ],
+      "explanation": "Correta. As Relações de Girard, também conhecidas como relações de Viète, estabelecem que, para uma equação quadrática na forma padrão ax² + bx + c = 0, a soma das raízes (x₁ + x₂) é dada pela razão do oposto do coeficiente 'b' pelo coeficiente 'a', ou seja, S = -b/a.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quando o discriminante (delta) é maior que zero, qual é a natureza das raízes da equação do segundo grau?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma única raiz real",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de \"uma única raiz real\" é geralmente associada a equações do primeiro grau. Para equações do segundo grau, quando há apenas um valor numérico que satisfaz a equação, o termo correto é \"duas raízes reais e iguais\", o que ocorre quando o discriminante é zero."
+        },
+        {
+          "id": "b",
+          "text": "Duas raízes reais e distintas",
+          "correct": true,
+          "explanation": "Correta. De acordo com a teoria das equações do segundo grau, quando o discriminante (Δ), calculado como b² - 4ac, é maior que zero (Δ > 0), a equação possui duas raízes reais e distintas. Isso significa que existem dois valores numéricos diferentes e pertencentes ao conjunto dos números reais que satisfazem a equação."
+        },
+        {
+          "id": "c",
+          "text": "Duas raízes reais e iguais",
+          "correct": false,
+          "explanation": "Incorreta. Quando o discriminante (delta) é igual a zero (Δ = 0), a equação do segundo grau possui duas raízes reais que são idênticas, ou seja, uma raiz real com multiplicidade 2."
+        },
+        {
+          "id": "d",
+          "text": "Não existem raízes reais",
+          "correct": false,
+          "explanation": "Incorreta. A condição para que não existam raízes reais é que o discriminante seja menor que zero (Δ < 0). Nesse caso, as raízes são números complexos conjugados, não pertencentes ao conjunto dos números reais."
+        }
+      ],
+      "explanation": "Correta. De acordo com a teoria das equações do segundo grau, quando o discriminante (Δ), calculado como b² - 4ac, é maior que zero (Δ > 0), a equação possui duas raízes reais e distintas. Isso significa que existem dois valores numéricos diferentes e pertencentes ao conjunto dos números reais que satisfazem a equação.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual método permite encontrar as raízes de uma equação do segundo grau sem utilizar a fórmula de Bhaskara?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Método da substituição direta",
+          "correct": false,
+          "explanation": "Incorreta. O método da substituição direta consiste em testar valores específicos para a incógnita para verificar se satisfazem a equação, ou em substituir uma variável por uma expressão em um sistema. Não é um método sistemático para *encontrar* as raízes de uma equação do segundo grau de forma geral."
+        },
+        {
+          "id": "b",
+          "text": "Método da soma e produto das raízes",
+          "correct": true,
+          "explanation": "Correta. O método da soma e produto das raízes, também conhecido como Relações de Girard para equações quadráticas, permite encontrar as raízes (x₁ e x₂) de uma equação do tipo ax² + bx + c = 0 através das relações x₁ + x₂ = -b/a e x₁ * x₂ = c/a, sem a necessidade de aplicar a fórmula de Bhaskara."
+        },
+        {
+          "id": "c",
+          "text": "Método da derivação",
+          "correct": false,
+          "explanation": "Incorreta. A derivação é uma operação do cálculo diferencial utilizada para determinar a taxa de variação de uma função. Embora seja uma ferramenta fundamental em matemática, ela não é empregada diretamente para encontrar as raízes de uma equação do segundo grau, que são os pontos onde a função se anula."
+        },
+        {
+          "id": "d",
+          "text": "Método da integração",
+          "correct": false,
+          "explanation": "Incorreta. A integração é uma operação do cálculo integral, que é o inverso da derivação e serve para calcular áreas sob curvas ou para encontrar a função original a partir de sua derivada. Assim como a derivação, a integração não é um método direto para resolver equações do segundo grau e encontrar suas raízes."
+        }
+      ],
+      "explanation": "Correta. O método da soma e produto das raízes, também conhecido como Relações de Girard para equações quadráticas, permite encontrar as raízes (x₁ e x₂) de uma equação do tipo ax² + bx + c = 0 através das relações x₁ + x₂ = -b/a e x₁ * x₂ = c/a, sem a necessidade de aplicar a fórmula de Bhaskara.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Para a equação x² + 9x + 14 = 0, aplicando o método da soma e produto, quais são as raízes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2 e 7",
+          "correct": false,
+          "explanation": "Incorreta. Embora o produto 2 * 7 = 14 esteja correto, a soma 2 + 7 = 9. O valor esperado para a soma das raízes é -b/a, que neste caso é -9. Portanto, 2 e 7 não são as raízes da equação."
+        },
+        {
+          "id": "b",
+          "text": "-1 e -14",
+          "correct": false,
+          "explanation": "Incorreta. A soma de -1 e -14 é -15, que não corresponde à soma esperada de -9. Embora o produto (-1) * (-14) = 14 esteja correto, a condição da soma não é satisfeita."
+        },
+        {
+          "id": "c",
+          "text": "-2 e -7",
+          "correct": true,
+          "explanation": "Correta. Para a equação x² + 9x + 14 = 0, temos a=1, b=9 e c=14. Pelo método da soma e produto, a soma das raízes (x₁ + x₂) deve ser -b/a = -9/1 = -9. O produto das raízes (x₁ * x₂) deve ser c/a = 14/1 = 14. Os números -2 e -7 satisfazem ambas as condições: (-2) + (-7) = -9 e (-2) * (-7) = 14."
+        },
+        {
+          "id": "d",
+          "text": "1 e 14",
+          "correct": false,
+          "explanation": "Incorreta. A soma de 1 e 14 é 15, o que não corresponde à soma esperada de -9. Embora o produto 1 * 14 = 14 esteja correto, a condição da soma não é satisfeita."
+        }
+      ],
+      "explanation": "Correta. Para a equação x² + 9x + 14 = 0, temos a=1, b=9 e c=14. Pelo método da soma e produto, a soma das raízes (x₁ + x₂) deve ser -b/a = -9/1 = -9. O produto das raízes (x₁ * x₂) deve ser c/a = 14/1 = 14. Os números -2 e -7 satisfazem ambas as condições: (-2) + (-7) = -9 e (-2) * (-7) = 14.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Para que uma equação do tipo x² + bx + c = 0 tenha raízes inteiras, qual condição deve ser satisfeita em relação ao discriminante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O discriminante deve ser um número primo",
+          "correct": false,
+          "explanation": "Incorreta. Um número primo (como 2, 3, 5, 7, etc.) não é, em geral, um quadrado perfeito. Para que a raiz quadrada do discriminante seja um número inteiro, o discriminante precisa ser um quadrado perfeito, o que não é uma característica de todos os números primos."
+        },
+        {
+          "id": "b",
+          "text": "O discriminante deve ser um múltiplo de 4",
+          "correct": false,
+          "explanation": "Incorreta. Ser um múltiplo de 4 não é uma condição suficiente para que o discriminante resulte em raízes inteiras. Por exemplo, 8 e 12 são múltiplos de 4, mas suas raízes quadradas (√8 e √12) não são números inteiros. A condição essencial é ser um quadrado perfeito."
+        },
+        {
+          "id": "c",
+          "text": "O discriminante deve ser um quadrado perfeito",
+          "correct": true,
+          "explanation": "Correta. A fórmula para encontrar as raízes de uma equação do segundo grau é x = (-b ± √Δ) / 2a. Para que as raízes sejam inteiras, é fundamental que √Δ resulte em um número inteiro. Isso só ocorre se o discriminante (Δ) for um quadrado perfeito (ou seja, 0, 1, 4, 9, 16, 25, etc.). Além disso, o numerador (-b ± √Δ) deve ser divisível por 2a para que o resultado final seja um número inteiro."
+        },
+        {
+          "id": "d",
+          "text": "O discriminante deve ser um número par",
+          "correct": false,
+          "explanation": "Incorreta. Embora muitos quadrados perfeitos sejam números pares (como 4, 16, 36), ser um número par por si só não garante que sua raiz quadrada seja um número inteiro (por exemplo, √2, √6, √8 não são inteiros). Além disso, quadrados perfeitos ímpares (como 1, 9, 25) também podem levar a raízes inteiras."
+        }
+      ],
+      "explanation": "Correta. A fórmula para encontrar as raízes de uma equação do segundo grau é x = (-b ± √Δ) / 2a. Para que as raízes sejam inteiras, é fundamental que √Δ resulte em um número inteiro. Isso só ocorre se o discriminante (Δ) for um quadrado perfeito (ou seja, 0, 1, 4, 9, 16, 25, etc.). Além disso, o numerador (-b ± √Δ) deve ser divisível por 2a para que o resultado final seja um número inteiro.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando a equação 2x² - 8x + 8 = 0, qual procedimento simplifica a resolução antes de aplicar qualquer método de solução?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Subtrair 8 de ambos os lados da equação",
+          "correct": false,
+          "explanation": "Incorreta. Subtrair 8 de ambos os lados da equação resultaria em 2x² - 8x = -8. Embora seja uma operação algebricamente válida, ela não simplifica a equação para a resolução de raízes de forma tão eficaz quanto a divisão pelo MDC, pois os coeficientes ainda seriam relativamente grandes e a equação não estaria na forma padrão ax² + bx + c = 0 com coeficientes menores."
+        },
+        {
+          "id": "b",
+          "text": "Elevar todos os termos ao quadrado",
+          "correct": false,
+          "explanation": "Incorreta. Elevar todos os termos de uma equação ao quadrado altera drasticamente a equação original, transformando-a em uma equação de grau superior (neste caso, x⁴), o que a tornaria mais complexa e poderia introduzir soluções espúrias (raízes estranhas)."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar todos os termos por 2",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar todos os termos por 2 resultaria em 4x² - 16x + 16 = 0. Isso aumentaria os valores dos coeficientes, tornando os cálculos mais trabalhosos em vez de simplificá-los, contrariando o objetivo de facilitar a resolução."
+        },
+        {
+          "id": "d",
+          "text": "Dividir todos os coeficientes pelo máximo divisor comum",
+          "correct": true,
+          "explanation": "Correta. A equação 2x² - 8x + 8 = 0 possui coeficientes 2, -8 e 8. O Máximo Divisor Comum (MDC) entre esses coeficientes é 2. Dividir todos os termos da equação por 2 resulta em x² - 4x + 4 = 0. Esta nova equação é equivalente à original, mas com coeficientes menores, o que simplifica significativamente os cálculos em qualquer método de resolução (Bhaskara, soma e produto, ou fatoração)."
+        }
+      ],
+      "explanation": "Correta. A equação 2x² - 8x + 8 = 0 possui coeficientes 2, -8 e 8. O Máximo Divisor Comum (MDC) entre esses coeficientes é 2. Dividir todos os termos da equação por 2 resulta em x² - 4x + 4 = 0. Esta nova equação é equivalente à original, mas com coeficientes menores, o que simplifica significativamente os cálculos em qualquer método de resolução (Bhaskara, soma e produto, ou fatoração).",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "04_306473_Álgebra - Equações e Sistemas de Equações do 2º Grau.pdf",
+  "coletado_em": "2026-09-23T20:55:05"
+}

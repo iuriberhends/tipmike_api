@@ -1,0 +1,373 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática Básica",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Álgebra: Expressões algébricas. Polinômios: operações e propriedades. Equações polinomiais e inequações relacionadas."
+  },
+  "ordem": 9,
+  "ordem_no_curso": "41.00",
+  "titulo": "Inequações do 2º Grau III",
+  "codigo_aula": "245220",
+  "video_id": "uXuKEdgCRWw=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:35:47",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/uXuKEdgCRWw%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408771%2C408775&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Inequações do 2º Grau III\n\n## Relembrando o método em duas etapas\nVamos dar continuidade ao tema de inequações do 2º grau. Já fizemos dois vídeos mostrando o procedimento padrão. O treinamento é o mesmo, beleza? Aqueles dois passos:\n\n1) Transformar a inequação em uma equação e encontrar as raízes.\n2) Construir o gráfico, analisar os sinais e verificar a desigualdade.\n\nBeleza comigo? Vamos para a questão: “Assinale a alternativa que apresenta a solução da inequação x² − 9x + 14 < 0”.\n\nVamos fazer o seguinte, queridos: deixar x² − 9x + 14 < 0 do jeitinho certo. Então nós temos a nossa inequação, show de bola.\n\nPrimeiro passo: transformar a inequação em equação e encontrar as raízes. x² − 9x + 14 = 0. Como já falei para vocês, encontrar as raízes nós já vimos nos vídeos de equações do 2º grau. Aqui, os coeficientes são a = 1, b = −9, c = 14.\n\nEu quero dois números que somados dêem −9 e que multiplicados dêem 14. Quem são eles? −2 e −7. Porque −2 + (−7) = −9 e (−2)·(−7) = 14. No final, invertemos os sinais para as raízes: 2 e 7.\n\nPronto: primeiro passo feito. Transformamos em equação e encontramos as raízes 2 e 7.\n\nSegundo passo agora: construir o gráfico e analisar os sinais. Para construir o gráfico, olho para a inequação original: a = 1 > 0, então concavidade para cima. As mesmas raízes: 2 e 7, bolinha aberta (porque é “<” e não “≤”).\n\nGráfico mental: entre 2 e 7 a parábola fica abaixo do eixo (negativa); fora desse intervalo, fica acima (positiva). A desigualdade é “< 0”, então queremos a parte negativa, que é entre as raízes.\n\nSolução: x ∈ ℝ tal que x > 2 e, simultaneamente, x < 7. Em outras palavras, o conjunto solução é (2, 7). Bolinha aberta nos 2 e 7, então intervalo com parênteses.\n\nIsso conecta com conjuntos numéricos: representar na reta numérica, com colchetes quando fechado, parênteses quando aberto. É por isso que, lá no módulo de conjuntos, eu ensino como representar direitinho — tudo planejado para os assuntos se apoiarem.\n\n> 🎯 **Dicas de prova:** Parênteses indicam extremo não incluso (bolinha aberta). Colchetes indicam extremo incluso (bolinha fechada).\n\nEntão, a solução é x ∈ (2, 7). Se fosse bolinha fechada, seria com colchetes.\n\n## Aplicação 1: idade e maior solução inteira\nQuestão: “José foi perguntado quantos anos tinha sua filha e respondeu: a idade dela é numericamente igual à maior das soluções inteiras da inequação 2x² − 31x − 70 < 0. Afirma-se que a idade é um número: menor que 10, divisível por 4, múltiplo de 6, quadrado perfeito, primo...”\n\nA inequação é 2x² − 31x − 70 < 0.\n\nVamos seguir nossos passos.\n\nPrimeiro passo: transformar em equação e encontrar as raízes.\n2x² − 31x − 70 = 0.\n\nAgora, a = 2, não é 1. Lá no curso, quando a ≠ 1 e vamos usar soma e produto, a gente multiplica a equação por um fator para “ajustar” e depois divide no final. Aqui, fazemos o método da soma e produto adaptado: multiplico a·c = 2·(−70) = −140 e procuro dois números que somem −31 e multipliquem −140.\n\nEsses números são −35 e 4. Montamos: x² − 31x − 140 = 0 “equivalente” no método auxiliar, fatoramos com −35 e 4, e no final ajustamos dividindo por 2:\n\nAs raízes ficam x = −4/2 = −2 e x = 35/2 = 17,5.\n\nResumo do primeiro passo: raízes em −2 e 17,5.\n\nSegundo passo: gráfico e sinais. a = 2 > 0, concavidade para cima, bolinha aberta (porque “< 0”). Parte negativa entre as raízes.\n\nSolução da inequação: x ∈ (−2, 17,5).\n\nA questão pede a maior solução inteira. Entre −2 e 17,5, o maior inteiro é 17 (17,5 não é inteiro). Então a filha de José tem 17 anos.\n\nAgora, verifique as alternativas: 17 é menor que 10? Não. Divisível por 4? Não. Múltiplo de 6? Não. Quadrado perfeito? Não. Primo? 17 é primo. Show de bola: resposta “número primo”.\n\n> 🎯 **Dicas de prova:** Em intervalos abertos, a “maior solução inteira” é o maior inteiro estritamente menor que o extremo direito se este não for inteiro.\n\n## Aplicação 2: combinação de inequações (1º e 2º graus)\nQuestão (estilo FCC/2018): No conjunto dos reais, considere as inequações:\n- Inequação 2 (primeiro grau): x + 6 > −x + 10\n- Inequação (segundo grau): 5x − 7 > x² − x + 1\n\nAfirmam: “x é solução da inequação 2 e também será solução da outra inequação se, e somente se, for solução da equação que está nas alternativas...” A ideia é: achar o conjunto solução de cada uma e ver a interseção.\n\nVamos relembrar e resolver primeiro a inequação 2 (primeiro grau):\nx + 6 > −x + 10\nPassa letra para um lado, número para o outro:\nx + x > 10 − 6\n2x > 4\nx > 2\n\nPrimeiro grau resolvido: raiz “limite” 2, bolinha aberta em 2, solução x > 2.\n\nAgora a inequação do segundo grau:\n5x − 7 > x² − x + 1\n\nVamos transformar e organizar direitinho. Passando tudo para um lado:\n0 > x² − x + 1 − (5x − 7)\n0 > x² − x + 1 − 5x + 7\n0 > x² − 6x + 8\nOu, escrevendo no formato padrão:\nx² − 6x + 8 < 0\n\nEssa é a inequação que devemos analisar.\n\nPrimeiro passo: transformar em equação e achar raízes:\nx² − 6x + 8 = 0\nDois números que somem −6 e multipliquem 8: −2 e −4. Raízes: 2 e 4.\n\nSegundo passo: sinais. a = 1 > 0, concavidade para cima, bolinha aberta (porque “< 0”). Parte negativa entre 2 e 4.\n\nSolução: 2 < x < 4.\n\nAgora, combinando com a inequação 2 (x > 2), a interseção é a mesma: 2 < x < 4. Então queremos um x que seja maior que 2 e que esteja entre 2 e 4. Por exemplo, x = 3 serve às duas.\n\nPara conferir rapidamente com substituições: 3 satisfaz x > 2. No segundo grau:\n5·3 − 7 = 8 e 3² − 3 + 1 = 7, então 8 > 7, ok.\n\nPortanto, o conjunto que atende simultaneamente é x ∈ (2, 4). Qualquer equação/alternativa equivalente a “2 < x < 4” ou que tenha 3 como solução válida dentro do intervalo está correta.\n\n> 🎯 **Dicas de prova:** Sempre traga a inequação para a forma f(x) < 0 ou f(x) > 0 antes de analisar sinais. Bolinha aberta para “<” e “>”; bolinha fechada para “≤” e “≥”.\n\nEncerrando: ficou de bom tamanho esta sequência de três aulas de inequações do 2º grau. Nosso objetivo é regravar e atualizar, trazendo excelência para o curso. Valeu demais, até o próximo assunto no nosso curso de matemática!",
+  "transcricao_meta": {
+    "title": "Inequações do 2º Grau III",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 33339,
+    "createdAt": "2026-02-09T15:14:04.219Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: inequações do 2º grau, análise de sinais via gráfico da parábola e interseção com inequações do 1º grau.\nPrincipais pontos:\n- Como resolver inequações quadráticas de forma rápida e segura.\n- Quando a solução fica “entre” ou “fora” das raízes.\n- Representação correta do conjunto-solução (parênteses/colchetes; bolinha aberta/fechada) e interseção com 1º grau.\n\n## 1. Base / Conceitos Fundamentais\n- **Inequação do 2º grau**: expressão do tipo ax² + bx + c ⋚ 0 (com a ≠ 0).\n- **Equação associada**: ax² + bx + c = 0 (usada para obter as raízes).\n- **Raízes (r1, r2)**: valores de x que zeram a expressão quadrática.\n- **Concavidade**: dada por o sinal de a.\n  - a > 0: parábola abre para cima.\n  - a < 0: parábola abre para baixo.\n- **Sinal da parábola**:\n  - a > 0: entre as raízes o valor da quadrática é negativo; fora delas é positivo.\n  - a < 0: entre as raízes é positivo; fora é negativo.\n- **Representação do conjunto-solução**:\n  - < ou >: não inclui extremos → parênteses ( ) e “bolinha aberta”.\n  - ≤ ou ≥: inclui extremos → colchetes [ ] e “bolinha fechada”.\n\n> Dica de Prova: Bancas como FGV e Fundação Carlos Chagas variam a notação: “bolinha aberta/fechada” ↔ “parênteses/colchetes”.\n\n## 2. Como Funciona / Distinções\n- **1º grau vs 2º grau**\n  - 1º grau (ax + b ⋚ 0): isola-se x; gráfico é reta; solução costuma ser semirreta (ex.: x > 2).\n  - 2º grau (ax² + bx + c ⋚ 0): obter raízes; usar concavidade; solução pode ser intervalo entre raízes ou regiões externas.\n- **Quando a solução é “entre” as raízes?**\n  - Para a > 0 e desigualdade “< 0” → entre as raízes: (r1, r2).\n  - Para a > 0 e “> 0” → fora das raízes: (-∞, r1) ∪ (r2, +∞).\n  - Inverte o padrão quando a < 0.\n- **Interseção de condições**\n  - Se o enunciado exigir que x satisfaça simultaneamente duas condições (ex.: uma de 1º grau e outra de 2º grau), a solução é a interseção dos conjuntos.\n\n> Dica de Prova: Expressões com “se, e somente se” pedem a interseção dos conjuntos de solução.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo para inequações do 2º grau:\n  1) Leve tudo para um lado e compare com 0.\n  2) Resolva a equação associada ax² + bx + c = 0 e encontre as raízes (use Bhaskara para segurança, ou fatoração/soma e produto quando a = 1).\n  3) Determine a concavidade (sinal de a) e trace mentalmente o gráfico.\n  4) Analise o sinal por intervalos definidos pelas raízes.\n  5) Aplique o símbolo da desigualdade para selecionar “entre” ou “fora” das raízes.\n  6) Ajuste a inclusão dos extremos conforme <, >, ≤, ≥ (parênteses/colchetes e bolinha aberta/fechada).\n- Técnica com soma e produto:\n  - Funciona diretamente quando a = 1.\n  - Se a ≠ 1, prefira Bhaskara. Se adaptar para a = 1, lembre de “desfazer” o fator no final para obter as raízes corretas.\n\n> Dica de Prova: “Menor que zero” com a > 0 e duas raízes reais distintas → solução é sempre o intervalo entre as raízes com parênteses.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1: x^2 - 9x + 14 < 0\n  - Equação associada: x^2 - 9x + 14 = 0 → raízes 2 e 7.\n  - a = 1 > 0; “< 0” → entre as raízes.\n  - Solução: (2, 7).\n  - Representação: parênteses; bolinha aberta em 2 e 7.\n\n- Exemplo 2: 2x^2 - 31x - 70 < 0\n  - Equação associada: 2x^2 - 31x - 70 = 0.\n  - Raízes: −2 e 17,5 (via fatoração ajustada: pares −35 e 4).\n  - a = 2 > 0; “< 0” → entre as raízes.\n  - Solução: (−2, 17,5).\n  - Se pedir “maior solução inteira”: 17.\n\n> Dica de Prova: 17 é número primo. Se aparecer opção “não é primo”, está errada.\n\n- Exemplo 3 (interseção 1º e 2º grau):\n  - x + 6 > -x + 10 → 2x > 4 → x > 2.\n  - x² - 6x + 8 < 0 → (x − 2)(x − 4) < 0 → 2 < x < 4.\n  - Interseção: 2 < x < 4.\n  - Valor que satisfaz as duas: x = 3.\n\n## 5. Pegadinhas e Erros Comuns\n- Trocar a região: “< 0” com a > 0 é entre as raízes, não fora.\n- Confundir inclusão do extremo: < ou > não inclui; ≤ ou ≥ inclui.\n- Esquecer de comparar com zero antes de analisar sinal (induz erros).\n- Errar a soma e produto quando a ≠ 1; usar Bhaskara evita retrabalho.\n- Seleção de inteiros: respeite limites decimais (ex.: 17,5 → maior inteiro é 17).\n- Confundir primalidade: 17 é primo.\n\n> Dica de Prova: Alternativas que só diferem por parênteses/colchetes são comuns. Confira a presença do “igual” (≤, ≥).",
+  "resumo_bolso": "# Inequações do 2º Grau III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Inequação do 2º grau**: expressão do tipo ax² + bx + c ⋚ 0, com **a ≠ 0**; sempre comparar com **0** antes de analisar sinal.\n* **Equação associada**: ax² + bx + c = 0 → usada para obter as raízes.\n* **Raízes (r₁, r₂)**: valores de x que zeram (anulam) a expressão quadrática.\n* **Concavidade**: dada pelo **sinal de a**:\n  * a > 0 → parábola abre para cima.\n  * a < 0 → parábola abre para baixo.\n* **Sinal da parábola (a > 0)**:\n  * **entre** r₁ e r₂ → expressão **negativa**.\n  * **fora** de r₁ e r₂ → expressão **positiva**.\n* **Sinal da parábola (a < 0)**:\n  * **entre** r₁ e r₂ → expressão **positiva**.\n  * **fora** de r₁ e r₂ → expressão **negativa**.\n* **Representação do conjunto-solução**:\n  * < ou > → não inclui extremos → parênteses ( ) e “bolinha aberta”.\n  * ≤ ou ≥ → inclui extremos → colchetes [ ] e “bolinha fechada”.\n* **Interseção de condições**: se x deve satisfazer **simultaneamente** duas inequações (por exemplo, de 1º e 2º grau), a solução é a **interseção** dos conjuntos.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Inequação de 1º grau vs Inequação de 2º grau\n\n| Aspecto | 1º grau (ax + b ⋚ 0) | 2º grau (ax² + bx + c ⋚ 0) |\n| --- | --- | --- |\n| **Gráfico** | Reta | Parábola |\n| **Técnica principal** | Isolar x | Raízes + concavidade + sinal por intervalos |\n| **Forma da solução** | Geralmente semirreta (ex.: x > 2) | Intervalo entre raízes ou união de intervalos externos |\n| **Equação associada** | ax + b = 0 | ax² + bx + c = 0 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra “entre” ou “fora” das raízes (a > 0)**\n\n* **Aplicação**: Inequações com **a > 0** e duas raízes reais distintas.\n* **Regra**:\n  * ax² + bx + c **< 0** → solução **entre** r₁ e r₂: (r₁, r₂).\n  * ax² + bx + c **> 0** → solução **fora**: (-∞, r₁) ∪ (r₂, +∞).\n\n**Exemplo 1**  \nx² - 9x + 14 < 0  \nEquação associada: x² - 9x + 14 = 0 → raízes 2 e 7.  \na = 1 > 0; “< 0” → entre as raízes.  \nSolução: (2, 7) → parênteses; bolinha aberta em 2 e 7.\n\n---\n\n**2. Regra “entre” ou “fora” das raízes (a < 0)**\n\n* **Aplicação**: Inequações com **a < 0** e duas raízes reais distintas.\n* **Regra** (padrão invertido em relação a a > 0):\n  * ax² + bx + c **< 0** → solução **fora** das raízes.\n  * ax² + bx + c **> 0** → solução **entre** as raízes.\n\n---\n\n**3. Inclusão dos extremos (parênteses/colchetes)**\n\n* **Aplicação**: Ao escrever o conjunto-solução em intervalo.\n* **Regra**:\n  * < ou > → não inclui extremos → parênteses ( ) e bolinhas **abertas**.\n  * ≤ ou ≥ → inclui extremos → colchetes [ ] e bolinhas **fechadas**.\n\n---\n\n**4. Técnica geral para inequações do 2º grau**\n\n* **Passos**:\n  1. Levar tudo para um lado: ax² + bx + c ⋚ 0.\n  2. Resolver ax² + bx + c = 0 (Bhaskara para segurança, ou fatoração/soma e produto quando a = 1).\n  3. Determinar a concavidade (sinal de a) e imaginar o gráfico da parábola.\n  4. Analisar o **sinal** em cada intervalo definido pelas raízes.\n  5. Usar o símbolo da desigualdade (<, >, ≤, ≥) para decidir se a solução fica “entre” ou “fora” das raízes.\n  6. Ajustar parênteses/colchetes e bolinha aberta/fechada conforme a presença de “igual”.\n\n**Exemplo 2**  \n2x² - 31x - 70 < 0  \nEquação associada: 2x² - 31x - 70 = 0.  \nRaízes: −2 e 17,5 (via fatoração ajustada).  \na = 2 > 0; “< 0” → entre as raízes.  \nSolução: (−2, 17,5).  \nSe pedir “maior solução inteira”: 17.\n\n---\n\n**5. Soma e produto (a = 1)**\n\n* **Aplicação**: Equações associadas com **a = 1**.\n* **Regra**:\n  * Procurar dois números que **somem** b e **multipliquem** c.\n* **Observação**: Se a ≠ 1, prefira Bhaskara; se adaptar a técnica de soma e produto, é preciso “desfazer” o fator de x² ao final para obter as raízes corretas.\n\n**Exemplo 3 (interseção 1º e 2º grau)**  \nx + 6 > -x + 10 → 2x > 4 → x > 2.  \nx² - 6x + 8 < 0 → (x − 2)(x − 4) < 0 → 2 < x < 4.  \nInterseção: 2 < x < 4.  \nUm valor que satisfaz as duas: x = 3.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Trocar a região: para **a > 0** e “< 0”, a solução é o intervalo **entre** as raízes, não fora.\n* Confundir inclusão do extremo: **< ou >** não inclui; **≤ ou ≥** inclui (parênteses vs colchetes; bolinha aberta vs fechada).\n* Esquecer de comparar com zero antes de analisar o sinal da expressão (levar tudo para um lado e igualar a 0).\n* Errar a técnica de soma e produto quando **a ≠ 1**; usar Bhaskara evita retrabalho.\n* Em seleção de inteiros, respeitar limites decimais (ex.: em (−2, 17,5), a maior solução inteira é 17; 17 é primo).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **inequação de 1º grau** (reta, isola x) de **2º grau** (parábola, raízes + concavidade)?\n* Memorizei: para **a > 0**, “< 0” → **entre** raízes; “> 0” → **fora** das raízes?\n* Lembrei que, para **a < 0**, o padrão “entre/fora” **inverte**?\n* Estou atento à inclusão dos extremos: **<, > → ( ) / bolinha aberta**; **≤, ≥ → [ ] / bolinha fechada**?\n* Antes de analisar sinal, conferi se a inequação está na forma **ax² + bx + c ⋚ 0**?\n* Em interseção de condições (1º e 2º grau ou duas inequações), estou pegando **apenas** a parte comum dos intervalos?\n* Sei aplicar rapidamente **soma e produto** quando **a = 1** e usar **Bhaskara** quando **a ≠ 1**?\n* Em perguntas sobre “maior solução inteira”, estou respeitando **limites decimais** e lembrando que **17 é primo**?",
+  "mapa_mental": "# 🧮 Inequações do 2º Grau III\n## 🎯 Conceitos Fundamentais\n### 💡 Estrutura Quadrática\n- Forma ax²+bx+c\n- a diferente de zero\n- Inequação quadrática\n- Equação associada\n### 📊 Raízes e Concavidade\n- Raízes r1 e r2\n- Sinal de a\n- a>0 abre cima\n- a<0 abre baixo\n### 🧩 Sinal da Parábola\n- Intervalos pelas raízes\n- a>0 entre negativo\n- a>0 fora positivo\n- a<0 entre positivo\n- a<0 fora negativo\n### 🔢 Notação Conjunto-Solução\n- Intervalos reais\n- Parênteses extremos fora\n- Colchetes extremos dentro\n- Bolinha aberta exclui\n- Bolinha fechada inclui\n\n## 🧮 Regras de Resolução\n### 🧭 Passos Principais\n- Isolar zero\n- Resolver equação associada\n- Calcular raízes reais\n- Verificar concavidade\n- Analisar sinais por intervalos\n### 🎯 Escolha Entre/Fora\n- Símbolo desigualdade\n- Menor que zero\n- Maior que zero\n- Intervalo entre raízes\n- Regiões externas raízes\n### 📐 Métodos para Raízes\n- Fórmula de Bhaskara\n- Soma e produto\n- Uso direto a=1\n- Fatoração conveniente\n- Ajuste quando a≠1\n\n## 🔗 Interseções e Comparações\n### ⚖️ 1º Grau x 2º Grau\n- Inequação linear\n- Gráfico reta\n- Solução semirreta\n- Quadrática usa parábola\n- Intervalos múltiplos\n### 🔄 Interseção de Condições\n- Conjuntos solução\n- Condições simultâneas\n- Interseção conjuntos\n- Operador “e”\n- “Se e somente se”\n### 🧱 Representação em Provas\n- União intervalos\n- Interseção intervalos\n- Notação intervalar\n- Eixo real marcado\n- Coerência símbolo–intervalo\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Trocas de Região\n- Confundir entre/fora\n- Ignorar concavidade\n- Aplicar padrão errado\n- Esquecer duas raízes\n- Desconsiderar inexistência raízes\n### 🛑 Extremos e Notação\n- Trocar parênteses/colchetes\n- Ignorar sinal de igualdade\n- Bolinha aberta/fechada\n- Não comparar com zero\n- Intervalo mal escrito\n### 📝 Cálculo das Raízes\n- Soma produto com a≠1\n- Erros na Bhaskara\n- Sinal incorreto coeficientes\n- Arredondamento indevido\n- Inteiros dentro intervalo",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Método dos Sinais",
+      "description": "Método dos Sinais — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual sequência resolve uma inequação do 2º grau pelo método gráfico?",
+          "back": "1. Transformar a inequação em uma equação e encontrar as raízes;\n2. Construir o gráfico e analisar os sinais.",
+          "hint": "São duas etapas sequenciais",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "metodo-grafico"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "O que define a concavidade da parábola associada a uma inequação do 2º grau?",
+          "back": "O sinal do **coeficiente de x²**.",
+          "hint": "Olhe para o termo de maior grau",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "parabola"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a concavidade quando o coeficiente de x² é positivo?",
+          "back": "Concavidade para **cima**.",
+          "hint": "Pense na abertura da boca da parábola",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "parabola"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Em uma tabela de sinais, qual região deve ser escolhida para uma desigualdade estrita negativa?",
+          "back": "A região **negativa** (abaixo do eixo x).",
+          "hint": "Considere a posição em relação ao eixo horizontal",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "tabela-sinais"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Raízes e Fatoração",
+      "description": "Raízes e Fatoração — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como se escolhem os dois números no método da soma e do produto?",
+          "back": "Encontrar dois números cuja soma resulte no coeficiente **b** e o produto resulte no coeficiente **c** (quando a = 1).",
+          "hint": "Relacione com os coeficientes da equação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "soma-produto"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Quando o coeficiente de x² não é 1, qual produto deve ser usado no método da soma e do produto?",
+          "back": "Multiplicar o coeficiente a pelo termo c (produto ac).",
+          "hint": "Ajuste necessário para a > 1",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "soma-produto"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Após encontrar os números auxiliares com coeficiente líder diferente de 1, qual ajuste deve ser feito?",
+          "back": "Dividir os valores obtidos pelo coeficiente líder **a**.",
+          "hint": "Etapa final do método de Bhaskara simplificado",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "soma-produto"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Quais são as raízes de x² − 9x + 14 = 0?",
+          "back": "x = 2 e x = 7",
+          "hint": "Aplique soma e produto",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Intervalos e Soluções",
+      "description": "Intervalos e Soluções — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual é a diferença entre o extremo de uma desigualdade estrita e o de uma não estrita?",
+          "back": "A desigualdade estrita utiliza **bolinha aberta** (sem inclusão do extremo), enquanto a não estrita utiliza bolinha fechada.",
+          "hint": "Refere-se à representação gráfica dos extremos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "intervalos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é a solução de x² − 6x + 8 < 0?",
+          "back": "2 < x < 7",
+          "hint": "Encontre as raízes e analise o sinal",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é o maior número inteiro pertencente ao intervalo (−2, 17,5)?",
+          "back": "17",
+          "hint": "O intervalo é aberto",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "intervalos"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Soluções Simultâneas",
+      "description": "Soluções Simultâneas — 3 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Como se identifica um número que resolve simultaneamente duas inequações?",
+          "back": "Um valor que pertence simultaneamente ao conjunto solução de ambas as inequações.",
+          "hint": "Conceito de conjunto solução comum",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "sistemas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual operação entre conjuntos representa a solução comum de duas inequações?",
+          "back": "A **intersecção**.",
+          "hint": "Operação fundamental da teoria dos conjuntos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "sistemas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual número inteiro satisfaz simultaneamente x > 2 e 2 < x < 4?",
+          "back": "3",
+          "hint": "Verifique a sobreposição dos intervalos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "inequacoes",
+            "sistemas"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Ao resolver uma inequação do segundo grau, qual é a sequência correta de passos a ser seguida?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Isolar a variável, passar todos os termos para um lado, fatorar a expressão e identificar os intervalos positivos",
+          "correct": false,
+          "explanation": "Incorreta. Isolar a variável, passar termos para um lado e fatorar a expressão são técnicas mais comumente aplicadas na resolução de equações ou inequações do primeiro grau, ou em casos específicos de fatoração de expressões quadráticas. Para inequações do segundo grau, a abordagem gráfica ou de análise de sinais baseada nas raízes é a mais didática e completa, pois a fatoração por si só não indica os intervalos de sinal da função."
+        },
+        {
+          "id": "b",
+          "text": "Transformar a inequação em equação, encontrar as raízes, construir o gráfico e analisar os sinais conforme a desigualdade",
+          "correct": true,
+          "explanation": "Correta. A resolução de inequações do segundo grau segue esta sequência lógica: primeiro, transforma-se a inequação em uma equação para encontrar suas raízes (pontos onde a função cruza o eixo x). Em seguida, constrói-se um gráfico da parábola (que representa a função quadrática) para visualizar a concavidade e a posição das raízes. Finalmente, analisa-se o sinal da função nos intervalos definidos pelas raízes, de acordo com a desigualdade original (menor que, maior que, menor ou igual a, maior ou igual a zero), para determinar o conjunto solução."
+        },
+        {
+          "id": "c",
+          "text": "Calcular o discriminante, aplicar a fórmula de Bhaskara, verificar a concavidade e determinar o conjunto solução",
+          "correct": false,
+          "explanation": "Incorreta. Calcular o discriminante e aplicar a fórmula de Bhaskara são métodos para encontrar as raízes de uma equação do segundo grau, que é o primeiro passo. No entanto, esta alternativa omite a etapa crucial de analisar os sinais da função por meio do gráfico ou de uma tabela de sinais, o que é fundamental para resolver a inequação e determinar os intervalos de solução, não apenas a concavidade."
+        },
+        {
+          "id": "d",
+          "text": "Determinar os coeficientes, calcular as raízes pela soma e produto, construir a tabela de sinais e inverter a desigualdade",
+          "correct": false,
+          "explanation": "Incorreta. Determinar os coeficientes e calcular as raízes pela soma e produto são métodos válidos para encontrar as raízes (quando o coeficiente 'a' é 1 ou pode ser simplificado), o que faz parte do primeiro passo. No entanto, a construção da tabela de sinais é uma alternativa ao gráfico para analisar os sinais, mas a ideia de 'inverter a desigualdade' não é um passo geral e pode levar a erros se não for aplicada com critérios específicos (como ao multiplicar por um número negativo)."
+        }
+      ],
+      "explanation": "Correta. A resolução de inequações do segundo grau segue esta sequência lógica: primeiro, transforma-se a inequação em uma equação para encontrar suas raízes (pontos onde a função cruza o eixo x). Em seguida, constrói-se um gráfico da parábola (que representa a função quadrática) para visualizar a concavidade e a posição das raízes. Finalmente, analisa-se o sinal da função nos intervalos definidos pelas raízes, de acordo com a desigualdade original (menor que, maior que, menor ou igual a, maior ou igual a zero), para determinar o conjunto solução.",
+      "difficulty": "easy",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao resolver uma inequação do segundo grau onde o coeficiente 'a' é diferente de 1, qual procedimento deve ser adotado para aplicar o método da soma e produto das raízes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Fatorar a expressão colocando 'a' em evidência, calcular as raízes considerando apenas os termos restantes e ajustar o resultado final",
+          "correct": false,
+          "explanation": "Incorreta. Fatorar a expressão colocando 'a' em evidência é uma forma de simplificar a equação, mas não é o procedimento padrão para aplicar o método da soma e produto quando 'a' é diferente de 1. O método da soma e produto, em sua forma mais simples, busca dois números cuja soma é -b/a e cujo produto é c/a. A adaptação para 'a' diferente de 1 envolve uma transformação específica do produto, como descrito na alternativa correta, para que a soma e produto se apliquem a uma equação auxiliar com 'a' = 1."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar diretamente a fórmula de Bhaskara sem nenhuma transformação prévia, pois o método independe do valor de 'a'",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula de Bhaskara é universal e pode ser aplicada diretamente, independentemente do valor de 'a'. Contudo, a pergunta especifica o 'método da soma e produto', que, embora derivado da fórmula de Bhaskara, tem uma aplicação mais direta quando 'a' = 1. Para 'a' diferente de 1, uma adaptação (como a descrita na alternativa correta) é necessária para usar o método da soma e produto de forma eficaz."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar todos os termos da equação pelo coeficiente 'a', encontrar as raízes pelo método tradicional e, ao final, dividir as raízes encontradas por 'a'",
+          "correct": true,
+          "explanation": "Correta. Quando o coeficiente 'a' é diferente de 1 e se deseja usar o método da soma e produto, uma técnica comum é multiplicar o termo independente 'c' pelo coeficiente 'a'. Resolve-se a nova equação (com 'a' igual a 1), e as raízes encontradas devem ser divididas pelo 'a' original para obter as raízes corretas da equação inicial. Isso permite aplicar a lógica da soma e produto, que é mais intuitiva para equações com 'a' = 1."
+        },
+        {
+          "id": "d",
+          "text": "Dividir todos os termos da equação por 'a' antes de iniciar qualquer cálculo, transformando o coeficiente principal em 1",
+          "correct": false,
+          "explanation": "Incorreta. Dividir todos os termos da equação por 'a' é uma abordagem válida e frequentemente utilizada para transformar o coeficiente principal em 1, simplificando a equação para a aplicação da fórmula de Bhaskara ou do método da soma e produto. No entanto, a alternativa não menciona que, se for para usar soma e produto, a equação deve ser 'reconstruída' mentalmente ou por transformação para que o produto das raízes seja o novo 'c' e a soma o 'b' original, o que não é o mesmo que simplesmente dividir e aplicar soma e produto diretamente na equação modificada sem ajustes posteriores."
+        }
+      ],
+      "explanation": "Correta. Quando o coeficiente 'a' é diferente de 1 e se deseja usar o método da soma e produto, uma técnica comum é multiplicar o termo independente 'c' pelo coeficiente 'a'. Resolve-se a nova equação (com 'a' igual a 1), e as raízes encontradas devem ser divididas pelo 'a' original para obter as raízes corretas da equação inicial. Isso permite aplicar a lógica da soma e produto, que é mais intuitiva para equações com 'a' = 1.",
+      "difficulty": "medium",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em um problema que envolve a interseção de soluções de duas inequações distintas (uma do primeiro grau e outra do segundo grau), qual é o procedimento correto para determinar um valor que satisfaça ambas as condições simultaneamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Resolver cada inequação separadamente, identificar os intervalos solução de cada uma e selecionar um valor que pertença à interseção dos dois conjuntos solução",
+          "correct": true,
+          "explanation": "Correta. Para que um valor satisfaça duas ou mais condições simultaneamente, ele deve pertencer à interseção dos conjuntos solução de cada condição. Resolver cada inequação separadamente permite determinar o conjunto de valores que satisfaz cada uma. A interseção desses conjuntos resultará no conjunto de valores que satisfazem todas as inequações ao mesmo tempo."
+        },
+        {
+          "id": "b",
+          "text": "Igualar as duas inequações, resolver a equação resultante e verificar se o valor encontrado satisfaz pelo menos uma das inequações originais",
+          "correct": false,
+          "explanation": "Incorreta. Igualar as duas inequações as transformaria em uma equação, o que não é a forma correta de encontrar valores que satisfaçam ambas as inequações. Além disso, verificar se o valor encontrado satisfaz 'pelo menos uma' das inequações não garante que ele satisfaça 'ambas', que é o requisito do problema."
+        },
+        {
+          "id": "c",
+          "text": "Somar as duas inequações termo a termo, resolver a inequação resultante e verificar se o valor encontrado pertence ao intervalo da inequação de maior grau",
+          "correct": false,
+          "explanation": "Incorreta. Somar as duas inequações termo a termo não é um procedimento matematicamente válido para encontrar a solução conjunta de um sistema de inequações. As operações permitidas em inequações são diferentes das equações e devem ser aplicadas com cautela para não alterar o sentido da desigualdade ou o conjunto solução. A abordagem correta envolve a análise individual de cada inequação e a busca pela interseção de seus conjuntos solução."
+        },
+        {
+          "id": "d",
+          "text": "Resolver cada inequação separadamente, identificar os intervalos solução de cada uma e selecionar qualquer valor que pertença à união dos dois conjuntos solução",
+          "correct": false,
+          "explanation": "Incorreta. Selecionar qualquer valor que pertença à união dos dois conjuntos solução não garante que o valor satisfaça ambas as condições simultaneamente. A união incluiria valores que satisfazem apenas uma das inequações, o que não é o objetivo de encontrar uma solução que atenda a 'ambas as condições'."
+        }
+      ],
+      "explanation": "Correta. Para que um valor satisfaça duas ou mais condições simultaneamente, ele deve pertencer à interseção dos conjuntos solução de cada condição. Resolver cada inequação separadamente permite determinar o conjunto de valores que satisfaz cada uma. A interseção desses conjuntos resultará no conjunto de valores que satisfazem todas as inequações ao mesmo tempo.",
+      "difficulty": "hard",
+      "topic": "Matemática e Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "09_245220_Inequações do 2º Grau III.pdf",
+  "coletado_em": "2026-09-23T20:55:49"
+}

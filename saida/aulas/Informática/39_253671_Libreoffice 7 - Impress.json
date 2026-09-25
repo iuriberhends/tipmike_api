@@ -1,0 +1,683 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 39,
+  "ordem_no_curso": "71.00",
+  "titulo": "Libreoffice 7 - Impress",
+  "codigo_aula": "253671",
+  "video_id": "IFozKJzgt7A=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:28:20",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/IFozKJzgt7A%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405133&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Libreoffice 7 - Impress\n\n## Abertura e filosofia de estudo\nSou o Jefferson, professor de informática. Olha só: não está aqui meu nome, a disciplina e essa frase que eu gosto muito — “Somos o que repetidamente fazemos. A excelência, portanto, não é um feito, mas um hábito.” Isso vem de um princípio jesuítico: repetição com correção até a exaustão nos leva à perfeição. Para você que está estudando: repetição com correção, até a exaustão, leva à aprovação.\n\n## Tema da aula e comparação de suítes\nVamos ao tema da nossa aula. Hoje vamos falar do pacote LibreOffice 7, especificamente do programa Impress. É inevitável comparar com o concorrente, mesmo que a sua prova não cobre diretamente a comparação. Muitas vezes, a prova pode trazer essa comparação. Então, durante a aula, talvez eu fale do PowerPoint, que é o paralelo do Impress.\n\nDe um lado temos o pacote Office (com o PowerPoint, essencialmente) e do outro o LibreOffice 7, onde:\n- Writer corresponde ao Word,\n- Calc corresponde ao Excel,\n- Impress corresponde ao PowerPoint — que é o nosso foco hoje.\n\nO Impress é um programa para criar e editar apresentações, os famosos slides. Vou criar os slides e realizar a apresentação.\n\n## Material de apoio e método\nEu vou usar um arquivo que ficará disponível para você. Algumas pessoas gostam de preencher o material durante ou após a aula e usar como revisão. Fica a dica.\n\nEste aqui é um PDF que você está recebendo junto. Vou começar pela tela inicial.\n\n## Tela inicial e modelos\nAo abrir o programa, aparece uma tela “Selecione o modelo”. Se eu quiser começar a partir de um modelo já existente, ele me dá temas disponíveis. Posso pesquisar um tema, filtrar por categorias. Exemplos: Plantas, Biografada, Azul brilhante. São ideias úteis quando você está sem inspiração para montar a apresentação.\n\nEu sempre falo nas minhas aulas: esta disciplina é voltada para concursos. O objetivo aqui é acertar as questões sobre o programa na prova. Vou ser o mais objetivo possível. Se eu fosse entrar em todos os detalhes do programa, a aula ficaria extremamente cansativa. Eu foco no que mais cai.\n\n> 🎯 Dicas de prova: A banca tende a repetir certos tópicos. Se surgir um atalho que eu não comentei e ele aparecer nos exercícios, vale a pena anotar. Se alguma coisa começar a cair muito, eu faço outra aula só disso.\n\nPronto. Chegamos na tela em que vamos trabalhar propriamente.\n\n## Layout da interface: barras e ícones\nSe você abrir, vai ver o Impress com barras de ferramentas. Barra de ferramentas padrão. A de Desenho pode não estar aparecendo; você pode ativar em Exibir > Barras de ferramentas. Coloque também Formatação de texto. Essas são as barras que mais caem na prova. Os ícones às vezes estão ocultos; vamos expor os principais.\n\nA maioria dos ícones que caem são estes da barra padrão e da formatação. No PDF, você vai ver elementos numerados — vamos trabalhar sobre esse leiaute, que é base de muitas questões, e depois vamos às funções práticas.\n\n## Botão de controle e barra de títulos\n1) Botão de controle (canto superior esquerdo da janela do sistema): clicando com o botão esquerdo ou direito, as opções são as mesmas — Restaurar (quando a janela está maximizada), Mover/Redimensionar (quando restaurada), Minimizar, Maximizar e Fechar. É um panorama rápido, para você não decorar à toa, mas saber o que existe.\n\n2) Barra de títulos: toda a extensão no topo. Mostra o nome do arquivo (se não salvei, fica “Sem título”) e o nome do programa.\n\n3) Botões de controle (canto superior direito): Fechar, Restaurar/Maximizar e Minimizar. Ao fechar, se houver alterações, o Impress pergunta se deseja salvar. Salvar, Não salvar ou Cancelar.\n\n4) Barra de menus: muito importante. Muitas questões cobram funções pelos caminhos nos menus.\n- Cada menu tem uma letra sublinhada. Com Alt + a letra, você abre o menu.\n- Arquivo: opções de criação/salvamento/exportação, etc.\n- Editar\n- Exibir: modos de exibição, Mestre de slides. Importante saber o caminho.\n- Inserir: inserir elementos na apresentação.\n- Formatar: muitas opções; há redundâncias (mesma função em mais de um menu/caminho).\n- Slide (organização de slides: alinhar, agrupar, novo slide, duplicar slide).\n- Apresentação de slides: iniciar a apresentação (atalhos, iniciar do primeiro slide).\n- Ferramentas: ortografia, verificação ortográfica automática, dicionário de sinônimos, idioma, autocorreção, personalizar.\n- Janela: nova janela, fechar, listar janelas abertas.\n- Ajuda: ver versão (LibreOffice 7).\n\n> 🎯 Dicas de prova: Saber onde estão as opções nos menus cai muito. Por exemplo, inserir slide está em Inserir, ainda que você também consiga por um botão/ícone.\n\n5 e 6) Barras de ferramentas Padrão e Formatação: é importante saber que certas funções estão na barra padrão e outras na de formatação.\n\n## Áreas da tela de edição\n7) Slide (área principal): onde você digita e organiza título e conteúdo.\n\n8) Painel esquerdo: miniaturas dos slides. Aqui você pode inserir, duplicar, copiar, colar, reordenar e deletar slides.\n\n9) Barra lateral: painel com propriedades/contexto (aparece à direita). Várias ferramentas contextuais.\n\n10 e 11) Barra de status e zoom: porcentagem de zoom (de 5% a 3000%). Clique duplo abre a janela de zoom.\n\n## Licença do LibreOffice\nTipo de licença: software livre.\n\nO que isso significa? Temos acesso ao código-fonte (como a “receita de um bolo”). Provavelmente a sua prova não entra a fundo nesse detalhe dentro do tópico Impress, a menos que o edital cobre licenças. Aí seria outra aula.\n\n> 🎯 Dicas de prova: LibreOffice é software livre. Não confundir com “software proprietário”.\n\n## Extensões e salvamento\nQuando salvo, o arquivo tem um nome e uma extensão. No Windows, por padrão, a extensão pode ficar oculta. No Impress, ao salvar:\n- Menu Arquivo > Salvar ou Salvar como. O local padrão costuma ser a pasta Documentos do usuário.\n- Você pode salvar com senha (criptografar para abertura).\n\nExtensão padrão do Impress: ODP (OpenDocument Presentation).\n\n> 🎯 Dicas de prova: Extensão padrão do Impress é .odp.\n\nNo Salvar como, observe outras extensões disponíveis:\n- Apresentação (ODP)\n- Modelo de apresentação (OTP)\n- Desenho (ODG)\n- PDF (via Exportar — veja abaixo)\n- Formatos do Microsoft PowerPoint: PPTX (2007–365), PPT (97–2003), entre outros.\n\nÉ interessante ter uma ideia das extensões possíveis.\n\n## Compatibilidade com PowerPoint\nMesmo que no seu edital conste apenas LibreOffice, a prova pode cobrar compatibilidade com formatos do PowerPoint.\n\nNo Explorador de Arquivos, ative “mostrar extensões de arquivos” para visualizar .pptx, .ppt, etc.\n\n- PPS/PPSX: abre diretamente em modo de apresentação no PowerPoint. No Impress, você pode abrir, mas o comportamento é abrir para edição conforme a configuração.\n- PPT/PPTX: abre em modo de edição.\n\nO Impress abre e salva apresentações do PowerPoint (PPT/PPTX).\n\n> 🎯 Dicas de prova: O Impress abre e salva nos formatos do PowerPoint. Pode haver perda de formatação na conversão entre suítes (ida e volta).\n\nObservação importante: pode acontecer alguma perda de formatação ao abrir um arquivo do Impress no PowerPoint e vice-versa. Não é regra, mas é possível.\n\n## Nome padrão “Sem título”\nAo criar um novo arquivo, o nome padrão vem como “Sem título X” (X é um número variável: 1, 2, 3...). Como aqui eu já salvei antes, pode aparecer uma numeração diferente.\n\n## PDF: exportar x salvar como\nPDF significa Portable Document Format (formato de documento portátil). Portabilidade não quer dizer “impossível de editar”, e sim ser aberto em vários sistemas e dispositivos.\n\nAtenção: no Impress, a opção “Salvar como” não lista PDF. Para gerar PDF:\n- Use o ícone Exportar diretamente como PDF na barra padrão, ou\n- Arquivo > Exportar, ou Arquivo > Exportar como > Exportar como PDF.\n\nVocê terá várias opções: todas as páginas, intervalo, somente slides selecionados, compactação de imagens, marca d’água, segurança (senhas), etc. No final, o resultado é um arquivo PDF.\n\n> 🎯 Dicas de prova: O Impress gera PDF via Exportar/Exportar como PDF (não aparece em Arquivo > Salvar como). O Impress gera PDFs, mas não os abre para edição; é necessário um leitor de PDF (ex.: Adobe Reader) para visualização.\n\n## Correção ortográfica e gramatical\nFerramentas de correção:\n- Sublinhar vermelho: possível erro ortográfico.\n- Erros gramaticais/concordância: o Impress não apresenta sugestões gramaticais como faz para ortografia. Ele pode não sublinhar gramática do mesmo modo.\n\nCom o botão direito sobre a palavra sublinhada em vermelho, o programa sugere correções, permite Ignorar ou Adicionar ao dicionário. Se você adicionar “errado” ao dicionário, da próxima vez não aparece como erro. Isso é útil para nomes próprios, times, nomes próprios com grafia específica (ex.: Gabrielli).\n\nFerramentas > Ortografia (atalho F7): abre a caixa para revisar e corrigir.\n\nVerificação ortográfica automática: ao desativar, some o sublinhado, mas o erro continua existindo. Usando F7, ainda serão apresentados os erros.\n\n> 🎯 Dicas de prova: \n> - Verificação ortográfica automática liga/desliga o sublinhado, mas não corrige.\n> - F7 abre a verificação ortográfica.\n> - Ortografia: sublinhado vermelho; gramática: o Impress não apresenta correções gramaticais detalhadas como sugestão.\n\nCorreção, em resumo:\n- Ortografia: sublinhado vermelho, correções pelo botão direito ou F7.\n- Gramatical: não apresenta correções; pode não sinalizar como a ortografia.\n\n## Encerramento do bloco\nVou encerrar aqui o primeiro bloco desta aula. Voltamos já para continuar.",
+  "transcricao_meta": {
+    "title": "Libreoffice 7 - Impress",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36216,
+    "createdAt": "2026-02-04T22:22:09.919Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda o uso do LibreOffice 7 – Impress para provas de concursos.\nPrincipais pontos: \n- Interface e menus que mais caem (caminhos corretos).\n- Diferenças entre Salvar, Salvar como, Exportar e PDF.\n- Correção ortográfica e dicionários.\n- Compatibilidade com PowerPoint e pegadinhas clássicas.\n\n## 1. Base / Conceitos Fundamentais\n- **LibreOffice 7 – Impress**: aplicativo do pacote LibreOffice para apresentações (equivalente ao PowerPoint do Office).\n  - Suite: **Writer** (texto), **Calc** (planilhas), **Impress** (apresentações).\n- Licença: **Ele é um software livre**; “nós temos acesso ao código fonte”.\n- Abertura do programa:\n  - Tela “**selecionar modelo**”: escolher tema/modelo ou iniciar em branco.\n- Arquivo = nome + “ponto” + extensão.\n  - Por padrão, “**o induz oculta a extensão**” no sistema operacional.\n- Local padrão de salvamento: “**local padrão para salvamento na pasta Documentos do usuário**”.\n\n## 2. Como Funciona / Distinções\n- Interface (layout que cai em prova):\n  - 1. **Botão de controle** (canto superior esquerdo): menu da janela.\n  - 2. **Barra de títulos**: nome do arquivo (ex.: “documento sem título” até salvar).\n  - 3. **Botões de controle**: minimizar, maximizar/restaurar, fechar.\n  - 4. **Barra de menus**: “Arquivo”, “Editar”, “Exibir”, “Inserir”, “Formatar”, “Apresentação de slides”, “Ferramentas”, “Janela”, “Ajuda”.\n  - 5. **Barra de ferramentas padrão** e 6. **Barra de formatação**.\n  - 7. **Área do slide** (edição).\n  - 8. **Painel esquerdo** (miniaturas).\n  - 9. **Barra lateral** (propriedades).\n  - 10. **Barra inferior (status)**.\n  - 11. **Zoom (porcentagem)**: de 5% até 3000% (clique duplo abre opções).\n- Estados da janela:\n  - Maximizada → aparece “**Restaurar**”.\n  - Restaurada → habilita “**Mover**” e “**Alterar tamanho**”.\n- Acesso por teclado:\n  - **Alt + letra sublinhada** do menu (ex.: Alt + A para “Arquivo”).\n- Redundância de funções:\n  - Mesmo comando pode estar em menus diferentes e em ícones de barra.\n\nTabela — Salvar x Salvar como x Exportar x Exportar como PDF\n- Salvar: atualiza o arquivo no formato atual.\n- Salvar como: define novo nome/local/formato. PDF não aparece aqui.\n- Exportar: gera outro formato (pode escolher PDF).\n- Exportar como PDF / Exportar diretamente como PDF: gera **PDF** com/sem opções avançadas.\n\nCompatibilidade com PowerPoint\n- “Abre e salva apresentações” do PowerPoint:\n  - “noventa e sete até dois mil e três” (PPT) e “de dois mil e sete até o três mil” (PPTX).\n  - “a exibição do povo ponte” (PPS/PPSX) abre em modo de apresentação.\n  - “ele vai abrir o arquivo no modo de edição” quando for PPT/PPTX.\n- “pode acontecer Uma perda de formatação” ao converter/abrir/salvar entre suites.\n\nCorreção ortográfica e gramatical\n- Ortografia: sublinhado vermelho automático; clique direito mostra “correções possíveis, correções, ignorar ou adicionais ao dicionário”.\n- Gramatical (concordância/pleonasmo): não apresenta sugestões automáticas.\n- “Ferramentas, ortografia, atalho sete”: abre a caixa de revisão.\n- “verificação ortográfica automática”: desligar remove o sublinhado, mas “ortografia” continua detectando.\n\n## 3. Aplicação Prática / Técnicas\n- Caminhos de menu que mais caem:\n  - Inserir slide: “Inserir” → “Slide”.\n  - Mudar modo: “Exibir” → “Mestre”.\n  - Iniciar apresentação: “Apresentação de slides” → “iniciar na primeira slide”.\n  - Ortografia: “Ferramentas” → “ortografia” e “verificação ortográfica automática”.\n- Operações nos slides (painel esquerdo):\n  - Inserir, duplicar, copiar, recortar, colar, deletar, trocar a ordem (arrastar).\n- PDF no Impress:\n  - “Arquivo” → “Exportar” → escolha PDF ou\n  - “Arquivo” → “Exportar como” → “Exportar como PDF” ou\n  - Ícone “exportar diretamente como PDF”.\n  - Opções comuns: páginas selecionadas, compactação de imagens, marca d’água, segurança, “definir senhas”.\n- Estados e salvamento:\n  - Disquete com ponto/bolinha e mensagem “**documento foi modificado Clique para salvar**” indicam alterações.\n  - Ao fechar com mudanças: “salvar documento” com “salvar”, “não salvar”, “cancelar”.\n- Dicionário:\n  - “adicionais ao dicionário” para nomes próprios (Jefferson, Gabrielli/Gabrielle, Gabriel).\n  - Após adicionar, “não vai mais aparecer como erro”.\n- Leitura de PDF:\n  - “apenas gera, mas não é capaz de abri los, sendo necessário outro software” (ex.: Adobe Reader/Adobe Ryder).\n\n## 4. Exemplos e Casos Resolvidos\n- Exportar para PDF com senha:\n  - Arquivo > Exportar como > Exportar como PDF > Segurança > “definir senhas” > salvar.\n- Inserir e reordenar slides:\n  - Inserir > Slide; no painel esquerdo, arraste para cima/baixo para trocar a ordem.\n- Verificação ortográfica:\n  - Com “verificação ortográfica automática” ativa → palavras erradas com sublinhado vermelho; clique direito → “correções possíveis” ou “adicionais ao dicionário”.\n  - Com a verificação automática desativada → sem sublinhado, mas Ferramentas > ortografia (atalho sete) lista os erros.\n- Abrir arquivo do PowerPoint:\n  - Abrir PPS/PPSX → “ele vai abrir automaticamente no modo de apresentação”.\n  - Abrir PPT/PPTX → “ele abre o arquivo no modo de edição”.\n  - Lembre: “pode acontecer Uma perda de formatação”.\n\n## 5. Pegadinhas e Erros Comuns\n- PDF em “Salvar como”: errado. O correto é “Exportar” ou “Exportar como PDF”.\n- “Sem título” como nome padrão: “não é padrão sem título” (atenção à variação “Documento sem título” exibida na barra de títulos antes de salvar).\n- Impress não abre formatos proprietários: falso. Ele “abre e salva apresentações” do PowerPoint (com possível perda de formatação).\n- Confusão “Mestre”: está em “Exibir”, não em “Inserir” ou “Formatar”.\n- Estados de janela:\n  - Maximizada → “Restaurar”.\n  - Restaurada → “Mover/Alterar tamanho” aparecem.\n- Ortografia x gramática:\n  - Sublinhado vermelho indica erro ortográfico.\n  - Erros gramaticais não têm sugestões no clique direito.\n- Fechamento com alterações:\n  - Memorize as três opções: “salvar”, “não salvar”, “cancelar”.\n- Extensões:\n  - Nem sempre “três” letras; pode ter mais. O sistema “o induz oculta a extensão” por padrão.\n- PDF no Impress:\n  - “apenas gera, mas não é capaz de abri los” — para ver, use leitor externo.\n- Comparação entre menus e barras:\n  - O mesmo comando pode estar em mais de um lugar (menus e ícones). A banca cobra o caminho correto.\n\n> Dica de Prova\n> - Menus e caminhos: Exibir → Mestre; Inserir → Slide; Apresentação de slides → iniciar na primeira slide; Ferramentas → ortografia/verificação ortográfica automática.\n> - PDF: Arquivo → Exportar como → Exportar como PDF (não via “Salvar como”).\n> - Ao fechar com alterações: aparecerá “salvar documento” com “salvar”, “não salvar”, “cancelar”.\n> - Compatibilidade: “abre e salva apresentações” do PowerPoint, mas “pode acontecer Uma perda de formatação”.\n\n> Dica de Prova\n> - Atalho pelo teclado para acessar menus: Alt + letra sublinhada.\n> - Zoom: “de cinco até três mil por cento”.\n> - “Ele é um software livre” e “nós temos acesso ao código fonte”: caem literalmente.\n\n> Dica de Prova\n> - Em PPS/PPSX (“a exibição do povo ponte”), “ele vai abrir automaticamente no modo de apresentação”.\n> - Em PPT/PPTX, “ele abre o arquivo no modo de edição”.\n\n> Dica de Prova\n> - Clique direito em palavra sublinhada: “correções possíveis, correções, ignorar ou adicionais ao dicionário”.\n> - Desativar “verificação ortográfica automática” remove o sublinhado, mas “Ferramentas, ortografia, atalho sete” continua apontando os erros.",
+  "resumo_bolso": "# Libreoffice 7 - Impress\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Impress**: módulo do LibreOffice para **apresentações** (equivalente ao PowerPoint).\n* **Suite LibreOffice**: **Writer** (texto), **Calc** (planilhas), **Impress** (apresentações).\n* **Licença**: **software livre**, “**nós temos acesso ao código fonte**”.\n* **Abertura**: tela “**selecionar modelo**” (modelo/tema ou apresentação em branco).\n* **Arquivo**: nome + “.” + extensão; o sistema **“o induz oculta a extensão”** por padrão.\n* **Pasta padrão**: salvamento inicial na pasta **Documentos do usuário**.\n* **Leitor de PDF**: Impress **gera PDF, mas não é capaz de abri-los**, sendo necessário outro software (ex.: Adobe Reader).\n* **Compatibilidade**: **abre e salva apresentações** PPT (97–2003), PPTX (2007–…), PPS/PPSX (exibição), com possível **perda de formatação**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Salvar vs Salvar como vs Exportar vs Exportar como PDF\n\n| Aspecto | Salvar | Salvar como | Exportar | Exportar como PDF |\n|--------|--------|-------------|----------|--------------------|\n| Função | Atualiza o mesmo arquivo no formato atual | Novo nome/local/formato | Gera **outro formato** | Gera **PDF** |\n| PDF? | Não | **PDF não aparece aqui** | Pode escolher PDF | PDF direto (com/sem opções avançadas) |\n| Uso típico | Trabalho em andamento | Criar cópia/versão | Converter para outros formatos (inclui PDF) | PDF com/sem opções avançadas |\n\n---\n\n### PPT/PPTX vs PPS/PPSX (PowerPoint)\n\n| Aspecto | PPT / PPTX | PPS / PPSX |\n|--------|------------|------------|\n| Abertura no Impress | “**ele abre o arquivo no modo de edição**” | “**ele vai abrir automaticamente no modo de apresentação**” |\n| Observação | Pode haver perda de formatação | Pode haver perda de formatação |\n\n---\n\n### Ortografia vs Gramática\n\n| Aspecto | Ortografia | Gramática |\n|--------|------------|-----------|\n| Indicação | Sublinhado **vermelho** automático | Não há sublinhado específico |\n| Clique direito | “**correções possíveis, correções, ignorar ou adicionais ao dicionário**” | Não traz sugestões automáticas |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Interface – Partes que caem**\n\n* **Botão de controle** (canto sup. esq.): menu da janela.\n* **Barra de títulos**: mostra nome (ex.: “**documento sem título**” até salvar; atenção à variação “Documento sem título”).\n* **Botões de controle**: minimizar, maximizar/restaurar, fechar.\n* **Barra de menus**: Arquivo, Editar, Exibir, Inserir, Formatar, Apresentação de slides, Ferramentas, Janela, Ajuda.\n* **Barra de ferramentas padrão** e **Barra de formatação**.\n* **Área do slide**: edição principal.\n* **Painel esquerdo**: miniaturas (inserir, duplicar, copiar, recortar, colar, deletar, trocar a ordem arrastando).\n* **Barra lateral**: propriedades.\n* **Barra inferior (status)**: informações do documento.\n* **Zoom**: de **5% até 3000%** (clique duplo abre opções).\n\n**2. Estados da janela**\n\n* **Maximizada** → aparece o botão **“Restaurar”**.\n* **Restaurada** → menu da janela permite **“Mover”** e **“Alterar tamanho”**.\n\n**3. Acesso por teclado**\n\n* **Alt + letra sublinhada** do menu (ex.: Alt + A para **Arquivo**).\n\n**4. Caminhos de menu cobrados**\n\n* **Inserir slide**: **Inserir → Slide**.\n* **Modo Mestre**: **Exibir → Mestre**.\n* **Iniciar apresentação**: **Apresentação de slides → iniciar na primeira slide**.\n* **Ortografia**: **Ferramentas → Ortografia** (atalho “sete”).\n* **Verificação ortográfica automática**: **Ferramentas → Verificação ortográfica automática**.\n\n**5. PDF no Impress**\n\n* **Arquivo → Exportar** → escolher **PDF**.\n* **Arquivo → Exportar como → Exportar como PDF**.\n* **Ícone**: **Exportar diretamente como PDF**.\n* Opções: páginas selecionadas, compactação de imagens, marca d’água, **Segurança → definir senhas**.\n\n**6. Estado de salvamento**\n\n* Ícone de disquete com **ponto/bolinha** + mensagem “**documento foi modificado Clique para salvar**” = há alterações.\n* Ao fechar com mudanças: caixa “**salvar documento**” com **salvar / não salvar / cancelar**.\n\n**7. Dicionário**\n\n* Clique direito em palavra sublinhada → “**adicionais ao dicionário**” para nomes próprios etc.\n* Depois de adicionar, **não vai mais aparecer como erro**.\n\n**8. Verificação ortográfica**\n\n* Com **verificação ortográfica automática** ativa → palavras erradas com sublinhado vermelho; clique direito → “correções possíveis, correções, ignorar ou adicionais ao dicionário”.\n* Com a verificação automática desativada → sem sublinhado, mas **Ferramentas → Ortografia (atalho sete)** continua apontando os erros.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **PDF em “Salvar como”**: errado. O correto é usar **Arquivo → Exportar** (escolher PDF) ou **Arquivo → Exportar como → Exportar como PDF** (ou ícone).\n2. **Impress não abre formatos do PowerPoint**: falso. Ele **abre e salva apresentações** do PowerPoint (PPT, PPTX, PPS, PPSX), mas **pode acontecer uma perda de formatação**.\n3. **Local do “Mestre”**: não está em Inserir nem em Formatar; o caminho correto é **Exibir → Mestre**.\n4. **Verificação ortográfica automática**: desativar **não** desliga a correção; apenas remove o sublinhado, e **Ferramentas → Ortografia (atalho sete)** continua detectando erros.\n5. **PDF no Impress**: o programa **apenas gera, mas não é capaz de abri-los** — para visualizar, use um leitor externo (ex.: Adobe Reader).\n\n---\n\n## 📋 Checklist Final\n\n* Sei diferenciar **Salvar / Salvar como / Exportar / Exportar como PDF**?\n* Lembro que **PDF não aparece em “Salvar como”**?\n* Memorizei: **PPT/PPTX → edição**; **PPS/PPSX → apresentação**?\n* Fixei os caminhos:  \n  - **Inserir → Slide**  \n  - **Exibir → Mestre**  \n  - **Apresentação de slides → iniciar na primeira slide**  \n  - **Ferramentas → Ortografia / Verificação ortográfica automática**\n* Lembro que o Impress é **software livre** e “**nós temos acesso ao código fonte**”?\n* Sei que o Impress **gera PDF, mas não é capaz de abri-los** (precisa de leitor externo)?\n* Lembro das três opções ao fechar com alterações: **salvar / não salvar / cancelar**?\n* Sei que o **zoom** vai de **5% até 3000%**?\n* Sei usar “**adicionais ao dicionário**” e que erros gramaticais **não** têm sugestão automática?",
+  "mapa_mental": "# 💻 LibreOffice 7 – Impress\n## 🎯 Visão Geral\n### 💡 Conceito Impress\n- Apresentações eletrônicas\n- Parte do LibreOffice\n- Equivalente ao PowerPoint\n- Arquivo = nome + extensão\n### 🧾 Licença Software\n- Software livre\n- Código-fonte aberto\n- Uso gratuito\n- Formato aberto ODP\n### 🗂️ Abertura e Modelos\n- Tela selecionar modelo\n- Modelos prontos\n- Apresentação em branco\n- Aplicar tema depois\n### 💾 Salvamento Padrão\n- Pasta Documentos usuário\n- Extensão ODP padrão\n- Extensões ocultas sistema\n- Nome temporário sem título\n## 🧭 Interface e Navegação\n### 🪟 Elementos da Janela\n- Botão controle janela\n- Barra de títulos\n- Botões minimizar maximizar fechar\n- Barra de status inferior\n### 🧱 Áreas de Trabalho\n- Área principal do slide\n- Painel esquerdo miniaturas\n- Barra lateral propriedades\n- Barras ferramentas e formatação\n### 📜 Barra de Menus\n- Arquivo Editar Exibir\n- Inserir Formatar\n- Apresentação de slides\n- Ferramentas Janela Ajuda\n### 🪟 Estados da Janela\n- Janela maximizada\n- Botão Restaurar visível\n- Janela restaurada\n- Mover e redimensionar\n### ⌨️ Acesso por Teclado\n- Alt + letra sublinhada\n- Atalho menus principais\n- Navegação sem mouse\n- Redundância menus ícones\n### 🔍 Zoom Apresentação\n- Controle barra inferior\n- Intervalo 5 a 3000 por cento\n- Clique duplo opções zoom\n- Ajustar visualização slide\n## 📂 Arquivos e Formatos\n### 💾 Salvar e Salvar Como\n- Salvar atualiza arquivo\n- Mantém mesmo formato\n- Salvar como novo nome\n- Novo local ou formato\n### 📤 Exportar e PDF\n- Exportar outros formatos\n- Escolher PDF na exportação\n- Exportar como PDF direto\n- Opções avançadas PDF\n### 📑 Opções PDF\n- Páginas selecionadas\n- Compactação imagens\n- Marca d’água\n- Senhas e segurança\n### 📚 Leitura de PDF\n- Impress apenas gera PDF\n- Não abre arquivos PDF\n- Necessário leitor externo\n- Exemplo leitor de PDF\n### 🔄 Compatibilidade PowerPoint\n- Abre PPT 97 a 2003\n- Abre PPTX 2007 em diante\n- Abre PPS PPSX apresentação\n- Possível perda formatação\n## ✏️ Slides e Apresentação\n### ➕ Gerenciamento de Slides\n- Inserir slide menu Inserir\n- Duplicar e copiar slide\n- Recortar colar slide\n- Excluir slide selecionado\n### 🔁 Organização de Slides\n- Painel esquerdo miniaturas\n- Arrastar para reordenar\n- Alterar sequência apresentação\n- Seleção múltipla slides\n### 🧩 Modos de Exibição\n- Exibir Mestre slides\n- Edição normal\n- Organização de slides\n- Visualização apresentação\n### 🎥 Apresentação de Slides\n- Iniciar na primeira slide\n- Menu Apresentação de slides\n- Abrir PPS PPSX apresentação\n- Abrir PPT PPTX edição\n### 💾 Estado de Salvamento\n- Ícone disquete com ponto\n- Mensagem documento modificado\n- Clique para salvar alterações\n- Indicador arquivo atualizado\n### 🚪 Fechamento com Alterações\n- Caixa salvar documento\n- Opção salvar\n- Opção não salvar\n- Opção cancelar\n## 📝 Ortografia e Dicionários\n### 🧠 Verificação Ortográfica\n- Sublinhado vermelho erros\n- Clique direito sugestões\n- Opção ignorar palavra\n- Opção adicionar dicionário\n### 🧮 Ferramentas de Ortografia\n- Menu Ferramentas Ortografia\n- Atalho teclado F7\n- Lista de erros encontrados\n- Correção passo a passo\n### 🔁 Verificação Automática\n- Verificação ortográfica automática\n- Sublinhado ligado desligado\n- Desligar não impede análise\n- Ferramentas Ortografia continua\n### 📚 Dicionários Personalizados\n- Adicionar nomes próprios\n- Palavras técnicas específicas\n- Não marcadas como erro\n- Gerenciamento dicionários\n### ⚖️ Ortografia x Gramática\n- Ortografia sublinhado vermelho\n- Erros gramaticais sem marca\n- Sem sugestões gramática\n- Foco apenas escrita palavras",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Conceitos do Impress",
+      "description": "Conceitos do Impress — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a finalidade principal do LibreOffice Impress?",
+          "back": "Criar e editar apresentações de **slides**.",
+          "hint": "É a função central do software",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "impress",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "O que caracteriza o LibreOffice como software livre?",
+          "back": "Possuir acesso ao **código-fonte**.",
+          "hint": "Relacionado à liberdade de modificação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Arquivos e PDF",
+      "description": "Arquivos e PDF — 7 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "Qual é a extensão padrão de uma apresentação do Impress?",
+          "back": "ODF",
+          "hint": "Sigla do formato nativo do LibreOffice",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "impress",
+            "formatos-arquivo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Quais apresentações o Impress consegue abrir e salvar além do formato ODF?",
+          "back": "Apresentações do **PowerPoint**.",
+          "hint": "Software proprietário da Microsoft",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "compatibilidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Que problema pode ocorrer ao abrir uma apresentação do PowerPoint no Impress?",
+          "back": "Perda de **formatação**.",
+          "hint": "Ocorre na transição entre softwares distintos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "compatibilidade"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-6",
+          "front": "Em qual menu do Impress fica o comando para exportar uma apresentação como PDF?",
+          "back": "Menu **Arquivo** (ou **Exportar Como**).",
+          "hint": "Onde se gerencia o ciclo de vida do arquivo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "impress",
+            "menus"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual software é necessário para abrir um PDF gerado pelo Impress?",
+          "back": "Leitor de PDF (como o **Adobe Reader**).",
+          "hint": "Software de leitura de documentos portáteis",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "impress",
+            "exportacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a pasta padrão para salvar arquivos do usuário no Impress?",
+          "back": "Pasta **Documentos**.",
+          "hint": "Local padrão do sistema operacional",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "impress",
+            "gerenciamento-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Que proteção pode ser configurada durante o salvamento de uma apresentação?",
+          "back": "Configuração de **senha** para abertura.",
+          "hint": "Medida de segurança de acesso",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "impress",
+            "seguranca"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Interface do Impress",
+      "description": "Interface do Impress — 5 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Que informação aparece na barra de títulos do Impress?",
+          "back": "Nome do **arquivo** em uso e do **programa**.",
+          "hint": "Fica no topo da janela",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "impress",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Como acessar um menu usando sua letra sublinhada no Impress?",
+          "back": "Pressionar a tecla **Alt** junto com a letra sublinhada.",
+          "hint": "Tecla de atalho de sistema",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "atalhos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual é a função do painel esquerdo na edição de uma apresentação?",
+          "back": "Exibir a **miniatura dos slides**.",
+          "hint": "Onde se visualiza a estrutura da apresentação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "interface"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual intervalo de zoom está disponível na barra de status do Impress?",
+          "back": "De **5%** a **3000%**.",
+          "hint": "Limites de escala de visualização",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "impress",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Que estado da janela é indicado pela opção Restaurar no botão de controle?",
+          "back": "Indica que a janela está **maximizada**.",
+          "hint": "Botão de controle de janela",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "impress",
+            "interface"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Revisão Textual",
+      "description": "Revisão Textual — 4 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Como o Impress sinaliza automaticamente um possível erro ortográfico?",
+          "back": "Com sublinhado **vermelho**.",
+          "hint": "Cor de alerta visual",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "revisao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "O que acontece ao desativar a verificação ortográfica automática?",
+          "back": "Retira o sublinhado vermelho da palavra sem alterar sua condição de erro.",
+          "hint": "Efeito na interface vs. efeito no dado",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "revisao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-17",
+          "front": "Que opções aparecem ao clicar com o botão direito em uma palavra marcada?",
+          "back": "Correções possíveis, ignorar ou adicionar ao dicionário.",
+          "hint": "Ações de contexto sobre o erro",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "revisao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Como o Impress trata erros gramaticais de concordância?",
+          "back": "Não apresenta sugestões de correção.",
+          "hint": "Limitação do motor de correção",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "impress",
+            "revisao"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o tipo de licença do LibreOffice?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Software shareware com período de teste limitado e posterior pagamento obrigatório",
+          "correct": false,
+          "explanation": "Incorreta. Shareware é um tipo de software que permite um período de teste gratuito ou funcionalidades limitadas, exigindo pagamento para uso contínuo ou acesso completo. O LibreOffice é totalmente funcional e gratuito, sem essas restrições."
+        },
+        {
+          "id": "b",
+          "text": "Software proprietário com código fechado e distribuição comercial exclusiva",
+          "correct": false,
+          "explanation": "Incorreta. O LibreOffice não é um software proprietário. Software proprietário implica que o código-fonte é fechado e sua utilização, modificação ou redistribuição é restrita por licenças comerciais, o que não se aplica ao LibreOffice."
+        },
+        {
+          "id": "c",
+          "text": "Software freeware com distribuição gratuita mas código fonte protegido",
+          "correct": false,
+          "explanation": "Incorreta. Freeware é um software distribuído gratuitamente, mas geralmente sem acesso ao código-fonte e sem as liberdades de modificação e redistribuição. Embora o LibreOffice seja gratuito, sua distinção principal é ser 'livre' no sentido de liberdade, não apenas de custo, com código-fonte aberto."
+        },
+        {
+          "id": "d",
+          "text": "Software livre com acesso ao código fonte disponível para modificação",
+          "correct": true,
+          "explanation": "Correta. O LibreOffice é um software livre, o que significa que os usuários têm a liberdade de executar, estudar, distribuir e modificar o programa. O acesso ao código-fonte é uma característica fundamental do software livre, permitindo à comunidade inspecioná-lo e aprimorá-lo."
+        }
+      ],
+      "explanation": "Correta. O LibreOffice é um software livre, o que significa que os usuários têm a liberdade de executar, estudar, distribuir e modificar o programa. O acesso ao código-fonte é uma característica fundamental do software livre, permitindo à comunidade inspecioná-lo e aprimorá-lo.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a extensão padrão dos arquivos criados no LibreOffice Impress?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": ".odp",
+          "correct": true,
+          "explanation": "Correta. A extensão padrão para apresentações criadas no LibreOffice Impress é \".odp\", que significa \"OpenDocument Presentation\". Este é um formato de arquivo aberto e padrão internacional para documentos de escritório, promovido pela Open Document Format (ODF)."
+        },
+        {
+          "id": "b",
+          "text": ".pdf",
+          "correct": false,
+          "explanation": "Incorreta. A extensão \".pdf\" (Portable Document Format) é utilizada para apresentação e troca de documentos de forma independente de software, hardware ou sistema operacional. Embora o LibreOffice Impress possa exportar apresentações para PDF, ele não é o formato padrão para edição e o Impress não abre arquivos PDF para edição diretamente."
+        },
+        {
+          "id": "c",
+          "text": ".pptx",
+          "correct": false,
+          "explanation": "Incorreta. A extensão \".pptx\" é o formato padrão para apresentações criadas no Microsoft PowerPoint a partir da versão 2007. Embora o LibreOffice Impress possa abrir e salvar arquivos nesse formato, ele não é sua extensão nativa."
+        },
+        {
+          "id": "d",
+          "text": ".ppt",
+          "correct": false,
+          "explanation": "Incorreta. A extensão \".ppt\" é o formato padrão para apresentações criadas no Microsoft PowerPoint nas versões anteriores a 2007. Assim como o \".pptx\", o LibreOffice Impress pode trabalhar com arquivos \".ppt\", mas não é seu formato nativo."
+        }
+      ],
+      "explanation": "Correta. A extensão padrão para apresentações criadas no LibreOffice Impress é \".odp\", que significa \"OpenDocument Presentation\". Este é um formato de arquivo aberto e padrão internacional para documentos de escritório, promovido pela Open Document Format (ODF).",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual elemento da interface do LibreOffice Impress exibe miniaturas dos slides da apresentação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Painel lateral direito com ferramentas de formatação",
+          "correct": false,
+          "explanation": "Incorreta. O painel lateral direito, também conhecido como Barra Lateral, contém diversas ferramentas e painéis para formatação, propriedades do slide, transições e animações. Sua função principal não é exibir as miniaturas de todos os slides."
+        },
+        {
+          "id": "b",
+          "text": "Barra de status localizada na parte inferior da janela",
+          "correct": false,
+          "explanation": "Incorreta. A barra de status, localizada na parte inferior da janela, exibe informações sobre o documento atual, como o número do slide, o idioma e o zoom, mas não as miniaturas dos slides."
+        },
+        {
+          "id": "c",
+          "text": "Barra de ferramentas padrão localizada abaixo dos menus",
+          "correct": false,
+          "explanation": "Incorreta. A barra de ferramentas padrão, geralmente localizada abaixo da barra de menus, contém ícones para funções comuns como salvar, abrir, copiar, colar e desfazer. Ela não é utilizada para exibir miniaturas dos slides."
+        },
+        {
+          "id": "d",
+          "text": "Painel esquerdo com visualização em miniatura dos slides",
+          "correct": true,
+          "explanation": "Correta. O painel esquerdo da interface do LibreOffice Impress é dedicado à exibição das miniaturas dos slides. Esta área permite ao usuário visualizar todos os slides da apresentação em sequência, facilitando a navegação, a reordenação, a duplicação e a exclusão de slides."
+        }
+      ],
+      "explanation": "Correta. O painel esquerdo da interface do LibreOffice Impress é dedicado à exibição das miniaturas dos slides. Esta área permite ao usuário visualizar todos os slides da apresentação em sequência, facilitando a navegação, a reordenação, a duplicação e a exclusão de slides.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Como o LibreOffice Impress indica visualmente um possível erro ortográfico em uma palavra?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ícone de alerta ao lado da palavra com erro",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns sistemas ou softwares possam usar ícones de alerta para indicar problemas, o LibreOffice Impress não utiliza um ícone específico ao lado da palavra para erros ortográficos. A indicação visual padrão é o sublinhado ondulado."
+        },
+        {
+          "id": "b",
+          "text": "Sublinhado vermelho ondulado abaixo da palavra",
+          "correct": true,
+          "explanation": "Correta. O LibreOffice Impress, assim como outros aplicativos do pacote LibreOffice (Writer, Calc), utiliza um sublinhado vermelho ondulado para indicar um possível erro ortográfico em uma palavra. Este é um padrão comum em processadores de texto e editores de apresentação para alertar o usuário sobre a necessidade de revisão."
+        },
+        {
+          "id": "c",
+          "text": "Destaque em amarelo sobre o texto da palavra",
+          "correct": false,
+          "explanation": "Incorreta. Destaques em amarelo são geralmente utilizados para realçar texto ou para indicar comentários e anotações, não para erros ortográficos. Para erros, o padrão é o sublinhado vermelho ondulado."
+        },
+        {
+          "id": "d",
+          "text": "Fonte em vermelho para toda a palavra incorreta",
+          "correct": false,
+          "explanation": "Incorreta. A alteração da cor da fonte para vermelho em toda a palavra incorreta não é o método padrão utilizado pelo LibreOffice Impress para indicar erros ortográficos. A cor vermelha na fonte é uma opção de formatação de texto que o usuário pode aplicar manualmente."
+        }
+      ],
+      "explanation": "Correta. O LibreOffice Impress, assim como outros aplicativos do pacote LibreOffice (Writer, Calc), utiliza um sublinhado vermelho ondulado para indicar um possível erro ortográfico em uma palavra. Este é um padrão comum em processadores de texto e editores de apresentação para alertar o usuário sobre a necessidade de revisão.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual indicador visual na interface do LibreOffice Impress sinaliza que o documento foi modificado e não foi salvo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Bolinha vermelha no ícone de disquete e ícone específico na barra de status",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Impress, quando um documento é modificado e ainda não foi salvo, uma pequena bolinha vermelha aparece sobre o ícone de disquete (Salvar) na barra de ferramentas padrão. Adicionalmente, na barra de status (parte inferior da janela), um ícone de disquete com um ponto vermelho (ou uma indicação textual como \"Documento modificado\") é exibido, alertando o usuário para a necessidade de salvar as alterações."
+        },
+        {
+          "id": "b",
+          "text": "Mudança de cor da barra de menus para tonalidade alaranjada",
+          "correct": false,
+          "explanation": "Incorreta. A mudança de cor da barra de menus para indicar o status de salvamento não é uma funcionalidade padrão do LibreOffice Impress ou de outras aplicações de escritório. As cores da interface são geralmente para personalização ou para indicar modos específicos do programa."
+        },
+        {
+          "id": "c",
+          "text": "Asterisco vermelho ao lado do nome do arquivo na barra de títulos",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns programas utilizem um asterisco na barra de títulos para indicar modificações não salvas, esta não é a forma como o LibreOffice Impress sinaliza essa condição."
+        },
+        {
+          "id": "d",
+          "text": "Mensagem intermitente na parte superior da tela de edição",
+          "correct": false,
+          "explanation": "Incorreta. Mensagens intermitentes na tela de edição não são um indicador padrão para documentos não salvos no LibreOffice Impress. As sinalizações são mais sutis e localizadas nos elementos da interface."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Impress, quando um documento é modificado e ainda não foi salvo, uma pequena bolinha vermelha aparece sobre o ícone de disquete (Salvar) na barra de ferramentas padrão. Adicionalmente, na barra de status (parte inferior da janela), um ícone de disquete com um ponto vermelho (ou uma indicação textual como \"Documento modificado\") é exibido, alertando o usuário para a necessidade de salvar as alterações.",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual programa do pacote LibreOffice é o equivalente ao Microsoft PowerPoint?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "LibreOffice Draw para montagem de apresentações gráficas",
+          "correct": false,
+          "explanation": "Incorreta. O LibreOffice Draw é um editor de gráficos vetoriais, utilizado para criar desenhos, fluxogramas e diagramas. Embora lide com elementos gráficos, não é a ferramenta principal para a montagem de apresentações no formato de slides."
+        },
+        {
+          "id": "b",
+          "text": "LibreOffice Impress para criação e edição de apresentações",
+          "correct": true,
+          "explanation": "Correta. O LibreOffice Impress é o aplicativo de apresentações do pacote LibreOffice, sendo o equivalente direto do Microsoft PowerPoint. Sua finalidade principal é a criação e edição de slides para apresentações multimídia, como explicitamente mencionado na aula: \"O que esse cara ele é um programa para criar e editar apresentações famosos clientes\"."
+        },
+        {
+          "id": "c",
+          "text": "LibreOffice Calc para desenvolvimento de slides animados",
+          "correct": false,
+          "explanation": "Incorreta. O LibreOffice Calc é o programa de planilha eletrônica do pacote LibreOffice, equivalente ao Microsoft Excel. Sua função é para cálculos, análise de dados e criação de gráficos, não para o desenvolvimento de slides animados."
+        },
+        {
+          "id": "d",
+          "text": "LibreOffice Writer para criação de apresentações multimídia",
+          "correct": false,
+          "explanation": "Incorreta. O LibreOffice Writer é o processador de texto do pacote LibreOffice, equivalente ao Microsoft Word. Ele é utilizado para a criação e edição de documentos de texto, e não para apresentações multimídia."
+        }
+      ],
+      "explanation": "Correta. O LibreOffice Impress é o aplicativo de apresentações do pacote LibreOffice, sendo o equivalente direto do Microsoft PowerPoint. Sua finalidade principal é a criação e edição de slides para apresentações multimídia, como explicitamente mencionado na aula: \"O que esse cara ele é um programa para criar e editar apresentações famosos clientes\".",
+      "difficulty": "easy",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "O LibreOffice Impress é capaz de abrir e salvar apresentações criadas no Microsoft PowerPoint?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apenas abre apresentações do PowerPoint mas não permite salvá-las nesse formato",
+          "correct": false,
+          "explanation": "Incorreta. A aula esclarece que o Impress não apenas abre, mas também permite salvar apresentações no formato do PowerPoint, ou seja, ele \"abre e salva apresentações\" nesses formatos."
+        },
+        {
+          "id": "b",
+          "text": "Apenas salva no formato PowerPoint mas não consegue abrir arquivos criados nesse programa",
+          "correct": false,
+          "explanation": "Incorreta. A aula contradiz essa afirmação, pois o Impress pode tanto abrir quanto salvar arquivos no formato PowerPoint. A capacidade de abrir arquivos de outros programas é uma característica fundamental do LibreOffice para garantir a compatibilidade."
+        },
+        {
+          "id": "c",
+          "text": "Sim, o LibreOffice Impress abre e salva apresentações em formatos do PowerPoint, podendo ocorrer perda de formatação",
+          "correct": true,
+          "explanation": "Correta. Conforme explicado na aula, o LibreOffice Impress é capaz de abrir e salvar apresentações nos formatos do Microsoft PowerPoint (como .ppt, .pptx). No entanto, é importante notar que, devido às diferenças entre as suítes de escritório, pode ocorrer uma \"perda de formatação\" durante a conversão ou ao abrir arquivos de um programa no outro, conforme mencionado na observação da aula: \"Uma perda de formatação ao abrir um arquivo do Incra, no Piauí, ponte e vice versa.\""
+        },
+        {
+          "id": "d",
+          "text": "Não, o LibreOffice Impress trabalha exclusivamente com formatos próprios sem compatibilidade com outros programas",
+          "correct": false,
+          "explanation": "Incorreta. O LibreOffice Impress, assim como outros programas da suíte LibreOffice, é conhecido por sua interoperabilidade e compatibilidade com formatos de outros softwares de escritório, incluindo o Microsoft PowerPoint. A afirmação de trabalhar exclusivamente com formatos próprios não procede."
+        }
+      ],
+      "explanation": "Correta. Conforme explicado na aula, o LibreOffice Impress é capaz de abrir e salvar apresentações nos formatos do Microsoft PowerPoint (como .ppt, .pptx). No entanto, é importante notar que, devido às diferenças entre as suítes de escritório, pode ocorrer uma \"perda de formatação\" durante a conversão ou ao abrir arquivos de um programa no outro, conforme mencionado na observação da aula: \"Uma perda de formatação ao abrir um arquivo do Incra, no Piauí, ponte e vice versa.\"",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Como o LibreOffice Impress permite exportar uma apresentação para o formato PDF?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Somente através de plugins externos instalados separadamente no sistema",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade de exportação para PDF é nativa do LibreOffice Impress, ou seja, já vem integrada ao programa. Não é necessário instalar plugins externos para realizar essa tarefa."
+        },
+        {
+          "id": "b",
+          "text": "Através do ícone de exportação direta, menu Arquivo > Exportar ou Arquivo > Exportar Como",
+          "correct": true,
+          "explanation": "Correta. A aula detalha que o LibreOffice Impress oferece múltiplas formas de exportar uma apresentação para PDF. Isso pode ser feito através de um ícone de \"exportação direta como PDF\" na barra de ferramentas, ou pelas opções no menu \"Arquivo > Exportar\" e \"Arquivo > Exportar Como\", onde se pode selecionar o formato PDF. Essas opções fornecem um controle mais granular sobre as configurações de exportação do PDF."
+        },
+        {
+          "id": "c",
+          "text": "Apenas utilizando o atalho de teclado específico para conversão em PDF",
+          "correct": false,
+          "explanation": "Incorreta. Embora atalhos de teclado possam existir para algumas funções, a aula não indica que a exportação para PDF seja *apenas* por atalho. Pelo contrário, ela enfatiza as opções de menu e o ícone de exportação direta como os métodos principais."
+        },
+        {
+          "id": "d",
+          "text": "Exclusivamente através do menu Arquivo > Salvar Como, selecionando PDF na lista de formatos",
+          "correct": false,
+          "explanation": "Incorreta. A aula destaca que, ao tentar salvar como PDF via \"Arquivo > Salvar Como\", a opção PDF não está diretamente disponível na lista de formatos. O processo para exportar para PDF é diferente, utilizando funcionalidades específicas de exportação."
+        }
+      ],
+      "explanation": "Correta. A aula detalha que o LibreOffice Impress oferece múltiplas formas de exportar uma apresentação para PDF. Isso pode ser feito através de um ícone de \"exportação direta como PDF\" na barra de ferramentas, ou pelas opções no menu \"Arquivo > Exportar\" e \"Arquivo > Exportar Como\", onde se pode selecionar o formato PDF. Essas opções fornecem um controle mais granular sobre as configurações de exportação do PDF.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a limitação do LibreOffice Impress em relação a arquivos PDF?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Abre arquivos PDF mas não permite exportar apresentações nesse formato",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa contradiz diretamente o que foi ensinado. O Impress *não* abre arquivos PDF, mas *permite* exportar apresentações para esse formato, utilizando as opções de exportação mencionadas anteriormente."
+        },
+        {
+          "id": "b",
+          "text": "Requer conexão com internet para realizar exportação em PDF",
+          "correct": false,
+          "explanation": "Incorreta. A exportação para PDF no LibreOffice Impress é uma funcionalidade local e não requer conexão com a internet para ser realizada. Todas as operações de exportação e manipulação de arquivos são processadas no próprio computador do usuário."
+        },
+        {
+          "id": "c",
+          "text": "Exporta para PDF mas não é capaz de abrir arquivos nesse formato",
+          "correct": true,
+          "explanation": "Correta. Conforme explicitado na aula, o LibreOffice Impress \"apenas gera documento com formato PDF, mas não é capaz de abri-los\". Isso significa que, embora o Impress possa criar e salvar arquivos PDF a partir de suas apresentações, ele não funciona como um leitor de PDF. Para visualizar um arquivo PDF, seria necessário um software específico para essa finalidade, como o Adobe Reader ou outro leitor de PDF."
+        },
+        {
+          "id": "d",
+          "text": "Não consegue exportar apresentações com mais de cinquenta slides para PDF",
+          "correct": false,
+          "explanation": "Incorreta. A aula não menciona qualquer limitação de número de slides para a exportação de apresentações para o formato PDF. O LibreOffice Impress é projetado para lidar com apresentações de diversos tamanhos."
+        }
+      ],
+      "explanation": "Correta. Conforme explicitado na aula, o LibreOffice Impress \"apenas gera documento com formato PDF, mas não é capaz de abri-los\". Isso significa que, embora o Impress possa criar e salvar arquivos PDF a partir de suas apresentações, ele não funciona como um leitor de PDF. Para visualizar um arquivo PDF, seria necessário um software específico para essa finalidade, como o Adobe Reader ou outro leitor de PDF.",
+      "difficulty": "medium",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é o comportamento do LibreOffice Impress ao tentar fechar uma janela com alterações não salvas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apresenta diálogo com opções para salvar, não salvar ou cancelar o fechamento",
+          "correct": true,
+          "explanation": "Correta. A aula descreve precisamente este comportamento: ao tentar fechar uma janela com alterações não salvas, o programa \"vai me perguntar se eu quero salvar pelas alterações\". Ele apresenta um diálogo com as opções de \"salvar ou não salvar ou cancelar\" o fechamento, dando ao usuário a chance de decidir o que fazer com o trabalho não salvo."
+        },
+        {
+          "id": "b",
+          "text": "Cria backup temporário e fecha, permitindo recuperação apenas na próxima abertura",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns programas possam ter recursos de recuperação automática ou backup, o comportamento padrão e explícito descrito na aula ao tentar fechar uma janela com alterações não salvas é a apresentação de um diálogo de confirmação, não a criação automática de um backup temporário seguido do fechamento sem interação."
+        },
+        {
+          "id": "c",
+          "text": "Fecha imediatamente sem aviso, descartando todas as alterações realizadas",
+          "correct": false,
+          "explanation": "Incorreta. O LibreOffice Impress, como a maioria dos softwares de produtividade, implementa mecanismos de segurança para evitar a perda acidental de dados. Ele não fecha a janela imediatamente descartando alterações sem avisar o usuário."
+        },
+        {
+          "id": "d",
+          "text": "Salva automaticamente as alterações e fecha a janela sem interação do usuário",
+          "correct": false,
+          "explanation": "Incorreta. O programa não salva automaticamente as alterações ao tentar fechar a janela. Ele sempre solicita a interação do usuário para confirmar se as alterações devem ser salvas, descartadas ou se a ação de fechar deve ser cancelada."
+        }
+      ],
+      "explanation": "Correta. A aula descreve precisamente este comportamento: ao tentar fechar uma janela com alterações não salvas, o programa \"vai me perguntar se eu quero salvar pelas alterações\". Ele apresenta um diálogo com as opções de \"salvar ou não salvar ou cancelar\" o fechamento, dando ao usuário a chance de decidir o que fazer com o trabalho não salvo.",
+      "difficulty": "hard",
+      "topic": "Noções de Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "39_253671_Libreoffice 7 - Impress.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:55:18"
+}

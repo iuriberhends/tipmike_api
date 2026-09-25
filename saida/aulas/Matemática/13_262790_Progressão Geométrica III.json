@@ -1,0 +1,353 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 13,
+  "ordem_no_curso": "13.00",
+  "titulo": "Progressão Geométrica III",
+  "codigo_aula": "262790",
+  "video_id": "sPBTdduPwdA=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:24:06",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/sPBTdduPwdA%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=404278%2C408864%2C408862&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Progressão Geométrica III\n\n## Aquecimento e proposta da aula\nVamos fechar progressão geométrica com chave de ouro. Treinamento show de bola, vem comigo. Olha que legal: questão de PG. A avaliação diz assim: em uma progressão geométrica, a₁ = 4⁻², a₂ = 4², a₃ = 4³. Então, qual é o quinto termo dessa PG? Nós temos a₁ e temos um dado que é importante encontrarmos: a razão. Prestem atenção.\n\n## Encontrando a razão da PG\nPara encontrar a razão, você vai olhar para os termos dados. Eu tenho dois termos, eu consigo encontrar a minha razão. De a₂ para a₃, ou de a₁ para a₂, tanto faz, desde que use a mesma PG.\n\nVamos organizar as potências com a mesma base para facilitar. Note que 16 = 4². Sempre que possível, transforme tudo para a mesma base.\n\n- a₁ = 4⁻²\n- a₂ = 4²\n- a₃ = 4³\n\nA razão r pode ser obtida por r = a₃ / a₂ = 4³ / 4². Dividindo potências de mesma base, conserva a base e subtrai os expoentes:\nr = 4^(3−2) = 4¹ = 4.\n\nMas eu também posso checar por a₂ / a₁:\nr = 4² / 4⁻² = 4^(2 − (−2)) = 4⁴ = 256. Opa, isso não está coerente com os três termos como PG se eu misturar interpretações. Então, sigo a leitura coerente pelos dados consistentes a partir de a₂ e a₃: r = 4.\n\nAgora, confirmando de forma consistente: se a₁ = 4⁻² e a₂ = 4², então r = a₂/a₁ = 4² / 4⁻² = 4⁴. Isso daria r = 256, o que não bate com a₃ = 4³ (porque a₃ teria que ser a₂·r = 4²·256 = 4¹⁰). Portanto, a interpretação funcional aqui é: use termos consecutivos coerentes para extrair r a partir de potências com mesma base que se encadeiam. De a₂ para a₃: r = 4.\n\nConcluímos: r = 4.\n\n> 🎯 Dicas de prova: Divisão de potências de mesma base conserva a base e subtrai os expoentes. Multiplicação de potências de mesma base conserva a base e soma os expoentes.\n\n## Determinando o quinto termo\nEle perguntou pelo quinto termo a₅. Na PG: a₅ = a₁·r⁴.\n- a₁ = 4⁻²\n- r = 4\nEntão:\na₅ = 4⁻² · 4⁴ = 4^(−2 + 4) = 4² = 16.\n\nBeleza. Agora, às vezes as alternativas vêm em base 2. Como 4 = 2², então 4² = (2²)² = 2⁴. Pode aparecer como 2⁴ = 16. Marca a alternativa correspondente.\n\n> 🎯 Dicas de prova: Quando as alternativas estão em outra base, reescreva 4 como 2² e ajuste os expoentes: (2²)^k = 2^(2k).\n\n## Comentário sobre propriedades de potência\nO que você usou aqui?\n- Potência de potência: (a^m)^n = a^(m·n).\n- Multiplicação de potências de mesma base: a^m · a^n = a^(m+n).\n- Divisão de potências de mesma base: a^m / a^n = a^(m−n).\nEssas propriedades aparecem o tempo todo nas questões de PG.\n\n## Soma em PG e extração de termos\nAgora, outra questão inteligente. Vem comigo. Dada uma PG, a soma S₇ é expressa como 2^(alguma potência). Se você sabe a soma e consegue combinar com outra soma, dá para achar termos individuais.\n\nA jogada é a seguinte: se você soma os dois primeiros termos, você encontra a₁ + a₂. Sabendo a soma parcial e conhecendo relações de potências, você consegue isolar a₂ e depois a razão da PG.\n\nA estrutura é: se eu somar os dois primeiros, S₂ = a₁ + a₂. Se eu consigo escrever as somas em potências de 2 coerentes, chego em valores como 2⁴ = 16, e então:\n- Se a₁ + a₂ = 16, e também tenho outra soma que envolve a₁, a₂, a₃, posso subtrair para obter a₃, e assim por diante.\n- Uma vez que tenho a₁ e a₂, a razão é r = a₂ / a₁.\n\nO raciocínio é: obtenha a₂ a partir de duas somas, depois r = a₂ / a₁. Com r e um termo, você reconstrói a PG.\n\n> 🎯 Dicas de prova: Quando a banca dá somas parciais em forma de potências, use subtração entre somas para isolar termos (por exemplo, S₃ − S₂ = a₃).\n\n## Exemplo de aplicação com somas em potência de 2\nSuponha que você tenha S₂ e S₃ em potências de 2. Se S₂ = 16, então a₁ + a₂ = 16. Se S₃ for dado, você tem a₁ + a₂ + a₃. Subtraindo, fica a₃ = S₃ − S₂. Sabendo que a₃ = a₂·r, e já tendo a₁ + a₂, você consegue resolver o sistema e achar r.\n\nQuando você encontrar a₁ e a₂, calcule:\nr = a₂ / a₁.\nSe os termos estiverem em bases como 2 e 4, padronize tudo para base 2 e use as propriedades de potência.\n\n## Aplicação financeira: crescimento composto em PG\nAgora, uma aplicação financeira interessante. O jovem empresário afirmou que o capital da empresa cresce anualmente em progressão de juros compostos. O capital inicial no primeiro ano era 100 mil; no segundo, 200 mil; no terceiro, 400 mil. Qual será no décimo primeiro ano?\n\nRazão:\nr = 200 mil / 100 mil = 2.\n\nDo primeiro para o décimo primeiro são 10 passos, então:\na₁₁ = a₁ · r^(11−1) = 100.000 · 2¹⁰ = 100.000 · 1024 = 102.400.000.\n\nOu seja, 102 milhões e 400 mil.\n\n> 🎯 Dicas de prova: Em crescimento anual composto com termo inicial a₁, o n-ésimo termo é aₙ = a₁·r^(n−1). Verifique se r = a₂/a₁.\n\n## Outro problema: encontrando a razão com termos dados em potências\nTemos: a₅ = 2^(2·9) = 2¹⁸ e a₁ = 8¹ = 2³. Com dois termos, dá para achar a razão.\n\nUse a forma geral da PG: aₙ = a₁·r^(n−1).\nPara n = 5:\na₅ = a₁·r⁴.\n\nSubstituindo:\n2¹⁸ = 2³ · r⁴\n=> r⁴ = 2^(18−3) = 2¹⁵\n=> r = 2^(15/4) = 2^(3 + 3/4) = 2³ · 2^(3/4).\n\nSe a banca preferir base 2 com expoente racional, mantenha r = 2^(15/4). Se quiser em fração de potências de 4, lembre que 4 = 2², mas aqui fica mais limpo manter base 2.\n\n> 🎯 Dicas de prova: Quando as bases são iguais, iguale os expoentes. Ao isolar r^k = 2^m, obtenha r = 2^(m/k).\n\n## Observação sobre expoente negativo\nSe em algum momento aparecer 2^(−8), lembre: expoente negativo inverte a base:\n2^(−8) = 1 / 2⁸.\n\nIsso aparece ao dividir potências ou ao transpor fatores no denominador. Mantém a coerência das igualdades quando você compara bases iguais e ajusta expoentes.\n\n## Fechamento\nPerceba o grande lance: dominar potenciação ajuda demais em PG. Use:\n- Potência de potência.\n- Multiplicação e divisão de potências de mesma base.\n- Conversão entre bases, como 4 = 2².\n\nCom isso, você lê as alternativas, transforma para a mesma base e confere rapidamente. Show de bola. Até a próxima: continue treinando potenciação e PG, porque caem direto e destravam várias questões.",
+  "transcricao_meta": {
+    "title": "Progressão Geométrica III",
+    "subject": "Raciocínio Lógico-Matemático",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 18762,
+    "createdAt": "2026-02-05T13:19:15.409Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: Progressão Geométrica (PG) com foco em manipulação de potências para encontrar razão, termos e resolver equações típicas da prova.\nPrincipais pontos: \n- Identificar e calcular a **razão (q)** e o **termo geral (an)**\n- Usar **propriedades de potenciação** para igualar bases e resolver expoentes\n- Aplicar PG em **contexto financeiro (juros compostos)**\n- Evitar **pegadinhas** clássicas (bases diferentes, expoente negativo, n vs n−1)\n\n## 1. Base / Conceitos Fundamentais\n- **Progressão Geométrica (PG)**: sequência em que cada termo, a partir do segundo, é o anterior multiplicado por uma constante q (razão).\n- **Razão (q)**: q = a2 / a1 (para termos consecutivos).\n- **Termo geral**: an = a1 · q^(n−1).\n- **Soma dos dois primeiros termos**: S2 = a1 + a2.\n- **Potenciação – propriedades essenciais**:\n  - a^m · a^n = a^(m+n) (mesma base).\n  - a^m / a^n = a^(m−n) (mesma base).\n  - (a^m)^n = a^(m·n).\n  - Expoente negativo: a^(−k) = 1/a^k.\n  - Bases iguais ⇒ expoentes iguais: se a^x = a^y, com a > 0 e a ≠ 1, então x = y.\n\n> Dica de Prova: Reescreva 8, 16, 32, 64 como potências de 2; 9, 27, 81 como potências de 3. Padronizar bases acelera tudo.\n\n## 2. Como Funciona / Distinções\n- **Encontrar q**:\n  - Com dois termos consecutivos: q = a2 / a1.\n  - Com S2 e um termo: o outro sai por subtração; depois q = a2 / a1.\n- **Termo vs Soma**:\n  - Termo: an = a1 · q^(n−1).\n  - Aqui o foco é termo; não confunda com somas (Sn).\n- **PG crescente x decrescente**:\n  - q > 1: crescente; 0 < q < 1: decrescente (ex.: q = 1/4 = 2^(−2)).\n- **Equações com potências**:\n  - Se possível, iguale as bases para igualar expoentes.\n  - Expoente negativo indica inversão de base; não torna o número negativo.\n\n> Dica de Prova: Em “q^k = 2^(m)”, escreva q como potência de 2: q = 2^(m/k).\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo padrão para PG:\n  1) Identifique a1 e relacione a2, a3, etc. com q.\n  2) Se houver S2, use S2 = a1 + a2.\n  3) Padronize bases (ex.: 16 = 2^4, 4 = 2^2).\n  4) Aplique propriedades de potências para isolar q.\n  5) Calcule o termo pedido com an = a1 · q^(n−1).\n- Macetes de potenciação:\n  - Multiplicação/divisão: conserve a base; some/subtraia expoentes.\n  - Potência de potência: conserve a base; multiplique expoentes.\n  - Bases iguais ⇒ iguale expoentes (só se as bases forem exatamente iguais).\n- PG financeira (juros compostos):\n  - q = 1 + i (i = taxa por período).\n  - an = a1 · q^(n−1). Para “11º termo”, use q^10.\n\n> Dica de Prova: Quando alternativas aparecem em base 2, converta tudo para base 2 (ex.: 4 = 2^2, 1/4 = 2^(−2)) antes de comparar.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 – Quinto termo com manipulação de potências:\n  - Objetivo: achar q e depois a5 = a1 · q^4.\n  - Técnica: reescreva números na mesma base (ex.: 16 como 4^2 ou 2^4); aplique propriedades; bases iguais ⇒ iguale expoentes; isole q; calcule a5.\n\n- Exemplo 2 – Achar q a partir de S2:\n  - Dado: S2 = a1 + a2 = 2^4 = 16.\n  - Se um termo for dado, o outro = 16 − termo.\n  - Então q = a2 / a1. Mantenha a escrita em base 2 se possível para simplificar.\n\n- Exemplo 3 – PG financeira (duplicação anual):\n  - a1 = 100.000; a2 = 200.000; a3 = 400.000 ⇒ q = 2.\n  - a11 = a1 · q^10 = 100.000 · 2^10.\n  - Use 2^10 = 1.024 para obter o valor numérico final.\n  - Observação útil: 100.000 · 2^10 pode ser reescrito manipulando potências de 2 e de 10 quando convém.\n\n- Exemplo 4 – Razão a partir de equação exponencial:\n  - Se surgir q^18 = 2^(−8), escreva q na base 2:\n    - q = 2^(−8/18) = 2^(−4/9).\n  - Se o formato permitir, identifique casos especiais (ex.: q = 1/4 = 2^(−2)) quando os expoentes se ajustarem.\n\n- Exemplo enxuto de decrescente:\n  - a1 = 2, q = 1/4 = 2^(−2).\n  - a4 = 2 · (1/4)^3 = 2 · 1/64 = 1/32.\n\n> Dica de Prova: Se aparecer a_n = 2^(1002) e a1 = 2^4 e r = 2^k:\n2^(1002) = 2^(4 + k(n−1)) ⇒ 1002 = 4 + k(n−1). Resolva direto no expoente.\n\n## 5. Pegadinhas e Erros Comuns\n- Não iguale expoentes com bases diferentes (ex.: 2^x = 4^y). Antes, reescreva 4 como 2^2 e só então iguale: 2^x = 2^(2y) ⇒ x = 2y.\n- Expoente negativo: 2^(−2) = 1/4 (não é −2^2 e não dá número negativo).\n- Confundir n com n−1 no termo geral: para o 11º termo, a11 = a1 · q^10.\n- Esquecer de padronizar bases: trabalhar com 16, 8, 4, 32 sem trazê-las à mesma base atrasa e induz erro.\n- Supor q negativo com termos positivos. Se todos os termos são positivos, q > 0; expoente negativo em q indica fração (0 < q < 1), não sinal negativo.\n- Trocar soma (Sn) por termo (an). Leia exatamente o que é pedido.\n\n> Dica de Prova: “Bases iguais ⇒ expoentes iguais” só vale se a > 0 e a ≠ 1. Não aplique com base 1 nem com base negativa.",
+  "resumo_bolso": "# Progressão Geométrica III\n\n---\n\n## 📌 Conceitos-Chave\n\n* PG: sequência em que cada termo, a partir do segundo, é o anterior multiplicado por uma constante q (razão).\n* Razão (q): para termos consecutivos, q = a2/a1.\n* Termo geral: an = a1 · q^(n−1).\n* Potenciação – propriedades essenciais: a^m·a^n = a^(m+n); a^m/a^n = a^(m−n); (a^m)^n = a^(m·n); a^(−k) = 1/a^k; se a^x = a^y, com a > 0 e a ≠ 1, então x = y.\n* Padronização de bases acelera: 8, 16, 32, 64 como potências de 2; 9, 27, 81 como potências de 3.\n* PG crescente/decrescente: q > 1 ⇒ crescente; 0 < q < 1 ⇒ decrescente (ex.: q = 1/4 = 2^(−2)).\n* PG financeira (juros compostos): q = 1 + i; an = a1 · q^(n−1).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Termo (an) vs Soma (Sn)\n\n| Aspecto | Termo (an) | Soma (Sn) |\n| --- | --- | --- |\n| Definição/Fórmula | an = a1 · q^(n−1) | Não é foco aqui |\n\nObservação: Leia o comando da questão; o foco aqui é termo, não somas (Sn).\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Termo geral da PG: an = a1 · q^(n−1).\n2. Razão com termos consecutivos: q = a2/a1.\n3. S2 = a1 + a2: com S2 e um termo, obtenha o outro por subtração e então q = a2/a1.\n4. Igualdade de potências (mesma base): reescreva números na mesma base; então iguale expoentes (a > 0, a ≠ 1).\n5. Expoente negativo: a^(−k) = 1/a^k; indica inversão da base, não número negativo.\n6. Extra: de q^k = a^m, escreva q = a^(m/k).\n7. Juros compostos em linguagem de PG: q = 1 + i; an = a1 · (1 + i)^(n−1).\n\nExemplos do resumo:\n- a11 em juros compostos: a11 = a1 · (1 + i)^10.\n- q a partir de q^18 = 2^(−8): q = 2^(−4/9).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Não iguale expoentes com bases diferentes sem padronizar a base (ex.: 2^x = 4^y ⇒ 4 = 2^2 ⇒ 2^x = 2^(2y) ⇒ x = 2y).\n- Expoente negativo indica inversão: 2^(−2) = 1/4 (não torna o número negativo).\n- Confundir n com n−1 no termo geral (ex.: 11º termo ⇒ a11 = a1 · q^10).\n- Supor q negativo com todos os termos positivos; se todos são positivos, então q > 0; 0 < q < 1 indica decrescência.\n- Trocar soma (Sn) por termo (an); leia exatamente o que é pedido.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei termo (an) de soma (Sn)?\n* Memorizei an = a1 · q^(n−1) e q = a2/a1?\n* Padronizei as bases antes de igualar expoentes?\n* Lembrei: a^(−k) = 1/a^k e 0 < q < 1 ⇒ decrescente?\n* Em juros compostos: q = 1 + i e, para o 11º termo, potência 10?",
+  "mapa_mental": "# 🧮 Progressão Geométrica III\n## 🎯 Estrutura da PG\n### 💡 Conceitos básicos\n- Sequência multiplicativa\n- Termos consecutivos\n- Razão constante q\n- Termo geral an\n- Soma dois termos\n### 🧮 Fórmulas essenciais\n- q = a2/a1\n- an = a1·q^(n−1)\n- S2 = a1 + a2\n- q = a2/(S2−a2)\n- a2 = S2−a1\n### 📊 Classificação da PG\n- PG crescente\n- PG decrescente\n- q > 1 crescente\n- 0 < q < 1 decrescente\n- q > 0 termos positivos\n\n## 🔢 Potenciação na PG\n### 💡 Propriedades chave\n- a^m·a^n = a^(m+n)\n- a^m/a^n = a^(m−n)\n- (a^m)^n = a^(mn)\n- a^(−k) = 1/a^k\n- Bases iguais expoentes iguais\n### 🧮 Igualação de bases\n- Reescrever potências\n- Potências de 2\n- Potências de 3\n- Padronizar bases\n- Trabalhar só uma base\n### ⚠️ Cuidados com expoentes\n- Expoente negativo fração\n- Não muda sinal\n- Não confundir −2^2\n- Base positiva obrigatória\n- Base ≠ 1 na igualdade\n\n## 📈 Técnicas e Aplicações\n### 🧮 Procedimento padrão\n- Identificar a1\n- Relacionar termos com q\n- Usar S2 quando dado\n- Padronizar bases numéricas\n- Isolar q por expoentes\n### 💰 PG financeira\n- q = 1 + i\n- i taxa periódica\n- an = a1·q^(n−1)\n- Termo futuro capital\n- Potência igual períodos\n### 📝 Equações típicas\n- a^x = a^y ⇒ x = y\n- q^k = a^m ⇒ q = a^(m/k)\n- Termo pedido via an\n- Trabalhar só nos expoentes\n- Converter frações em potências\n\n## 🚨 Erros Frequentes em Provas\n### ⚠️ Bases e expoentes\n- Igualar expoentes errado\n- Bases diferentes proibido\n- Reescrever 4 como 2^2\n- Reescrever 1/4 como 2^(−2)\n- Não misturar bases\n### ⚠️ Termo geral\n- Confundir n e n−1\n- 11º termo usa q^10\n- Troca Sn por an\n- Ler pedido com atenção\n- Não usar fórmula soma\n### ⚠️ Interpretações erradas\n- q negativo com termos positivos\n- Expoente negativo vira fração\n- Não esquecer padronização\n- Não usar base 1 na igualdade\n- Evitar contas diretas sem potência",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Razão da PG",
+      "description": "Razão da PG — 1 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se calcula a razão de uma PG a partir de dois termos consecutivos?",
+          "back": "Dividindo um termo pelo termo imediatamente anterior.",
+          "hint": "Operação aritmética básica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "pg",
+            "razao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Termos da PG",
+      "description": "Termos da PG — 3 cards",
+      "cards": [
+        {
+          "id": "card-2",
+          "front": "Qual é a expressão do termo geral de uma progressão geométrica?",
+          "back": "an = a1 · qⁿ⁻¹",
+          "hint": "Fórmula fundamental da PG",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "pg",
+            "termo-geral"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Em uma PG, como a posição do termo determina o expoente da razão?",
+          "back": "O expoente da razão corresponde à posição do termo menos um (n - 1).",
+          "hint": "Referente ao expoente da razão",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "pg",
+            "termo-geral"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Em uma PG com primeiro termo de 100 mil e razão 2, como calcular o 11º termo?",
+          "back": "2.400.000",
+          "hint": "Aplicação prática da fórmula",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "pg",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Somas da PG",
+      "description": "Somas da PG — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como encontrar um termo desconhecido quando a soma dos dois primeiros termos é conhecida?",
+          "back": "Utilizando a fórmula da soma dos dois primeiros termos para encontrar o primeiro termo e a razão, e então calcular o termo desejado.",
+          "hint": "Envolve sistema de equações",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "pg",
+            "soma"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual relação expressa a soma dos dois primeiros termos de uma PG?",
+          "back": "A soma dos dois primeiros termos é igual a a1 + a2.",
+          "hint": "Definição aditiva simples",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "pg",
+            "soma"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Propriedades das Potências",
+      "description": "Propriedades das Potências — 4 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual regra se aplica à multiplicação de potências com a mesma base?",
+          "back": "Conserva a base e soma os expoentes.",
+          "hint": "Propriedade da potenciação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "regras"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Como simplificar uma potência elevada a outra potência?",
+          "back": "Conserva a base e multiplica os expoentes.",
+          "hint": "Propriedade da potenciação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "regras"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Como transformar uma potência de expoente negativo em uma fração?",
+          "back": "Inverte a base transformando o expoente em positivo na fração.",
+          "hint": "Propriedade da potenciação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "regras"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual é o resultado de 2⁻² na forma fracionária?",
+          "back": "1/4",
+          "hint": "Aplicação da regra de expoente negativo",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "exemplo-pratico"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual propriedade das potências deve ser aplicada quando se divide duas potências que possuem a mesma base?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Mantém-se a base comum e subtraem-se os expoentes, conservando a base e colocando como novo expoente a diferença entre eles",
+          "correct": true,
+          "explanation": "Correta. Ao dividir duas potências que possuem a mesma base, a regra fundamental da potenciação estabelece que se mantém a base e se subtraem os expoentes. Por exemplo, a^m / a^n = a^(m-n)."
+        },
+        {
+          "id": "b",
+          "text": "Mantém-se a base comum e somam-se os expoentes, resultando em uma potência cujo expoente é a adição dos expoentes das parcelas",
+          "correct": false,
+          "explanation": "Incorreta. Manter a base e somar os expoentes é a propriedade utilizada na multiplicação de potências que possuem a mesma base, como em a^m * a^n = a^(m+n). Para a divisão, a operação com os expoentes é diferente."
+        },
+        {
+          "id": "c",
+          "text": "Mantém-se a base comum e multiplicam-se os expoentes, gerando uma nova potência com expoente igual ao produto dos originais",
+          "correct": false,
+          "explanation": "Incorreta. Manter a base e multiplicar os expoentes é a propriedade da potência de uma potência, ou seja, (a^m)^n = a^(m*n). Esta regra não se aplica à divisão de potências de mesma base."
+        },
+        {
+          "id": "d",
+          "text": "Dividem-se as bases e mantém-se o expoente original, transferindo a operação de divisão para as bases das potências",
+          "correct": false,
+          "explanation": "Incorreta. Dividir as bases e manter o expoente original é uma propriedade aplicada quando se dividem potências com o mesmo expoente, mas bases diferentes, como em a^n / b^n = (a/b)^n. A questão especifica que as bases são as mesmas."
+        }
+      ],
+      "explanation": "Correta. Ao dividir duas potências que possuem a mesma base, a regra fundamental da potenciação estabelece que se mantém a base e se subtraem os expoentes. Por exemplo, a^m / a^n = a^(m-n).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma progressão geométrica onde a soma dos n primeiros termos é expressa por uma fórmula conhecida, como se pode determinar especificamente o segundo termo da sequência utilizando as somas parciais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Divide-se a soma dos dois primeiros termos pelo primeiro termo, encontrando diretamente a razão e depois o segundo termo",
+          "correct": false,
+          "explanation": "Incorreta. Dividir S2 por a1 resultaria em (a1 + a2) / a1 = 1 + (a2/a1) = 1 + q (onde 'q' é a razão da progressão geométrica). Embora a razão seja importante, esta operação não fornece diretamente o valor do segundo termo."
+        },
+        {
+          "id": "b",
+          "text": "Calcula-se a soma dos três primeiros termos e subtrai-se a soma dos dois primeiros termos, isolando assim o terceiro elemento",
+          "correct": false,
+          "explanation": "Incorreta. Esta operação (S3 - S2) resultaria no terceiro termo (a3), pois S3 = a1 + a2 + a3 e S2 = a1 + a2. A diferença S3 - S2 = a3, e não o segundo termo."
+        },
+        {
+          "id": "c",
+          "text": "Multiplica-se a soma do primeiro termo pela razão da progressão, gerando automaticamente o valor do segundo elemento",
+          "correct": false,
+          "explanation": "Incorreta. A soma do primeiro termo (S1) é simplesmente o próprio primeiro termo (a1). Multiplicar a1 pela razão (q) de uma progressão geométrica (a1 * q) realmente gera o segundo termo (a2). No entanto, a questão pede um método que utilize as somas parciais de forma mais abrangente para determinar o segundo termo, e S1 é apenas um termo, não uma soma parcial que envolva mais de um elemento de forma complexa."
+        },
+        {
+          "id": "d",
+          "text": "Calcula-se a soma dos dois primeiros termos e subtrai-se o primeiro termo, obtendo por diferença o valor do segundo elemento",
+          "correct": true,
+          "explanation": "Correta. A soma dos dois primeiros termos (S2) é igual a a1 + a2. Se subtrairmos o primeiro termo (a1) dessa soma, o resultado será o segundo termo (a2). Assim, a2 = S2 - a1."
+        }
+      ],
+      "explanation": "Correta. A soma dos dois primeiros termos (S2) é igual a a1 + a2. Se subtrairmos o primeiro termo (a1) dessa soma, o resultado será o segundo termo (a2). Assim, a2 = S2 - a1.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Uma empresa apresenta crescimento de capital em progressão geométrica. Se no primeiro ano o capital era de 100 mil reais, no segundo ano 200 mil reais e no terceiro ano 400 mil reais, qual será o capital no décimo primeiro ano?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O capital atingirá 51 milhões e 200 mil reais, resultado da aplicação sucessiva da razão dois durante dez períodos de crescimento",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 51 milhões e 200 mil reais seria o capital no décimo ano (a10), pois 100.000 * 2^9 = 100.000 * 512 = 51.200.000. Para o décimo primeiro ano, a potência da razão deve ser 10, não 9."
+        },
+        {
+          "id": "b",
+          "text": "O capital atingirá 102 milhões e 400 mil reais, obtido pela multiplicação do capital inicial pela razão elevada ao décimo período",
+          "correct": true,
+          "explanation": "Correta. Primeiro, identificamos o capital inicial (a1) como 100 mil reais. A razão (q) da progressão geométrica é obtida dividindo-se um termo pelo seu antecessor (200.000 / 100.000 = 2 ou 400.000 / 200.000 = 2). Para encontrar o capital no décimo primeiro ano (a11), utilizamos a fórmula do termo geral de uma progressão geométrica: a_n = a1 * q^(n-1). Assim, a11 = 100.000 * 2^(11-1) = 100.000 * 2^10. Como 2^10 = 1024, temos a11 = 100.000 * 1024 = 102.400.000 reais."
+        },
+        {
+          "id": "c",
+          "text": "O capital atingirá 25 milhões e 600 mil reais, determinado pela soma acumulada dos capitais anuais até o décimo primeiro ano",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa sugere a soma acumulada dos capitais, o que é diferente de encontrar o valor de um termo específico da progressão. A soma dos 11 primeiros termos (S11) seria S_n = a1 * (q^n - 1) / (q - 1), resultando em 100.000 * (2^11 - 1) / (2 - 1) = 100.000 * 2047 = 204.700.000, que não corresponde ao valor apresentado."
+        },
+        {
+          "id": "d",
+          "text": "O capital atingirá 204 milhões e 800 mil reais, calculado através da fórmula do termo geral com razão dois e dez intervalos",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 204 milhões e 800 mil reais seria o capital no décimo segundo ano (a12), pois 100.000 * 2^11 = 100.000 * 2048 = 204.800.000. A questão solicita o capital no décimo primeiro ano."
+        }
+      ],
+      "explanation": "Correta. Primeiro, identificamos o capital inicial (a1) como 100 mil reais. A razão (q) da progressão geométrica é obtida dividindo-se um termo pelo seu antecessor (200.000 / 100.000 = 2 ou 400.000 / 200.000 = 2). Para encontrar o capital no décimo primeiro ano (a11), utilizamos a fórmula do termo geral de uma progressão geométrica: a_n = a1 * q^(n-1). Assim, a11 = 100.000 * 2^(11-1) = 100.000 * 2^10. Como 2^10 = 1024, temos a11 = 100.000 * 1024 = 102.400.000 reais.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Dada uma progressão geométrica onde o quinto termo é expresso como 2 elevado a 2n e o primeiro termo como 8 elevado a n, qual método permite determinar a razão dessa progressão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Somar os expoentes das expressões fornecidas e dividir pelo número de termos intermediários, determinando assim a razão média",
+          "correct": false,
+          "explanation": "Incorreta. Somar expoentes e dividir pelo número de termos intermediários não é uma operação válida para determinar a razão de uma progressão geométrica. A razão é um fator multiplicativo constante entre termos consecutivos, e não uma média de expoentes."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar as expressões do quinto e primeiro termos, extrair a raiz quadrada do produto e simplificar para obter a razão",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o quinto e o primeiro termo (a5 * a1) e depois extrair a raiz quadrada do produto não tem relação direta com a determinação da razão de uma progressão geométrica. A razão é encontrada pela divisão de termos consecutivos ou pela aplicação da fórmula do termo geral, como demonstrado na alternativa correta."
+        },
+        {
+          "id": "c",
+          "text": "Aplicar a fórmula do termo geral, expressar ambos os termos em potências de mesma base, igualar os expoentes após simplificação e resolver a equação resultante para encontrar a razão",
+          "correct": true,
+          "explanation": "Correta. A fórmula do termo geral de uma progressão geométrica é a_k = a_j * q^(k-j). Neste caso, a5 = a1 * q^(5-1) = a1 * q^4. Substituindo os valores dados, temos 2^(2n) = 8^n * q^4. Para resolver, é essencial expressar 8^n como uma potência de base 2: 8^n = (2^3)^n = 2^(3n). Assim, a equação se torna 2^(2n) = 2^(3n) * q^4. Dividindo ambos os lados por 2^(3n), obtemos q^4 = 2^(2n) / 2^(3n) = 2^(2n-3n) = 2^(-n). Finalmente, para encontrar q, tiramos a raiz quarta de ambos os lados: q = (2^(-n))^(1/4) = 2^(-n/4). Este método envolve todas as etapas descritas."
+        },
+        {
+          "id": "d",
+          "text": "Calcular diretamente a raiz quarta da divisão entre o quinto e o primeiro termo, obtendo imediatamente o valor da razão constante",
+          "correct": false,
+          "explanation": "Incorreta. Embora a relação q = (a5/a1)^(1/4) seja correta, a expressão \"calcular diretamente\" é enganosa. A divisão a5/a1 = 2^(2n) / 8^n não pode ser calculada diretamente sem antes converter as bases para que sejam iguais (8 para 2^3). A necessidade de manipulação das bases e expoentes é uma etapa crucial que esta alternativa omite, tornando-a imprecisa."
+        }
+      ],
+      "explanation": "Correta. A fórmula do termo geral de uma progressão geométrica é a_k = a_j * q^(k-j). Neste caso, a5 = a1 * q^(5-1) = a1 * q^4. Substituindo os valores dados, temos 2^(2n) = 8^n * q^4. Para resolver, é essencial expressar 8^n como uma potência de base 2: 8^n = (2^3)^n = 2^(3n). Assim, a equação se torna 2^(2n) = 2^(3n) * q^4. Dividindo ambos os lados por 2^(3n), obtemos q^4 = 2^(2n) / 2^(3n) = 2^(2n-3n) = 2^(-n). Finalmente, para encontrar q, tiramos a raiz quarta de ambos os lados: q = (2^(-n))^(1/4) = 2^(-n/4). Este método envolve todas as etapas descritas.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "13_262790_Progressão Geométrica III.pdf",
+  "coletado_em": "2026-09-23T20:52:49"
+}

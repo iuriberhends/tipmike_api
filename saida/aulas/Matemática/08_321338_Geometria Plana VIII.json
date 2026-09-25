@@ -1,0 +1,352 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 8,
+  "ordem_no_curso": "106.06",
+  "titulo": "Geometria Plana VIII",
+  "codigo_aula": "321338",
+  "video_id": "cs5dkquWohM=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:38:44",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/cs5dkquWohM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403877%2C403878%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Plana VIII\n\n## Questão 7 – Semelhança de Triângulos e Proporcionalidade\nVamos lá comigo. Questão sete, também bacana. Olha para a figura: temos dois triângulos. A armação metálica tem o formato dado pela figura. Nessas condições, queremos a medida da altura. Altura é perpendicular à base, noventa graus, perfeito.\n\nEstou vendo dois triângulos aqui. Posso pensar no triângulo maior (amarelo) e no triângulo menor (verdinho). Os ângulos internos são iguais, perfeitamente viável. No triângulo verdinho, temos alfa, beta e noventa graus. No triângulo amarelo, repetimos: aqui vai ser beta também, aqui noventa, e o alfa serve para os dois, tanto para o menor quanto para o maior. Então podemos afirmar com certeza que esses dois triângulos são semelhantes. Por que semelhantes? Porque possuem ângulos internos iguais. E, se os ângulos internos são iguais, seus lados serão obrigatoriamente proporcionais. Show.\n\nEntão, fazer: a base de um está para a base do outro, a altura de um está para a altura do outro. Fechou o pacote. Base do menor está para base do maior, assim como a altura do menor está para a altura do maior.\n\nO enunciado dá: base do menor igual a 2 m; base do maior igual a 2 + 1,5 m; altura do menor igual a 80 cm. Opa, cuidado com unidades: aqui tudo está em metros, mas a altura do menor veio em centímetros. Vamos padronizar. Oitenta centímetros é 0,8 m. Tem que usar essa altura em metros.\n\nSubstituindo na proporção:\n- Base do menor: 2\n- Base do maior: 2 + 1,5 = 3,5\n- Altura do menor: 0,8\n- Altura do maior: h\n\nFica: 2/3,5 = 0,8/h.\n\nCruza:\n2h = 0,8 × 3,5.\n0,8 × 3,5 = 2,8.\nEntão 2h = 2,8 → h = 2,8/2 = 1,4 m.\n\nResposta: 1,4 m, letra B. Show de bola.\n\nAgora é o momento que a gente vai dar uma aprofundada até demais. Essa questão aconteceu em 2022. Foi pesada, um desafio. Vamos juntos sem pressa. Relações trigonométricas? Não, aqui seguimos na semelhança, mas a banca exigiu uma montagem cuidadosa.\n\n## Montagem da Situação – Poste, Lâmpada, Objeto e Parede\nTemos um plano horizontal e um poste vertical com uma lâmpada lá em cima. O objeto também é vertical, com 2 m de altura. Há uma parede vertical. O plano que contém o poste e o objeto é perpendicular ao plano da parede. Ou seja, tudo certinho com ângulos de 90 graus entre esses planos e elementos.\n\nPrimeira situação: o objeto está equidistante do poste e da parede. Existe um momento em que esse objeto está à mesma distância do poste e da parede. Nessa posição, a parte de sua sombra projetada na parede mede 50 cm.\n\nPensa assim: há uma lâmpada no topo do poste. A luz projeta uma sombra do objeto. Quando o objeto está equidistante do poste e da parede, a sombra “pega” um pedaço da parede que mede 50 cm de altura. Vamos marcar que essa altura projetada na parede é 0,5 m.\n\nSegunda situação: quando a distância do objeto até a parede é o triplo da distância do objeto ao poste, a sombra projetada no chão mede 3,2 m.\n\nA pergunta: qual a distância, em metros, entre o poste com a lâmpada e a parede?\n\nResumindo:\n- Objeto tem 2 m de altura.\n- Situação 1 (equidistante): sombra na parede = 0,5 m.\n- Situação 2 (distância à parede = 3 × distância ao poste): sombra no chão = 3,2 m.\n- Queremos: distância do poste (com a lâmpada) até a parede.\n\nQuestão pesada, mas vamos com calma.\n\n## Estratégia – Criar Triângulos Semelhantes na Situação 1\nPrimeiro objetivo: descobrir a altura do poste (com a lâmpada). Para isso, vou trabalhar a Situação 1, aquela da equidistância, porque nela conseguimos formar dois triângulos semelhantes claros: um “menor” (do objeto e sua sombra na parede) e um “maior” (do poste com lâmpada e a parede).\n\nEu preciso “completar” as linhas para formar dois triângulos retângulos semelhantes, um maior e um menor. A questão nos deu a altura do objeto (2 m) e a sombra na parede (0,5 m). Isso gera dois triângulos alinhados por ângulos iguais.\n\nTriângulo menor (verdinho):\n- Altura: 2 m (objeto).\n- Projeção vertical (sombra na parede): 0,5 m.\n\nTriângulo maior (amarelo):\n- Altura: H (altura do poste com a lâmpada).\n- Projeção vertical correspondente na parede: vamos associar pela semelhança usando as bases que vamos nomear.\n\nPela semelhança dos triângulos, montamos a proporção entre alturas e bases. Denotemos:\n- Base do triângulo menor = a.\n- Base do triângulo maior = d (a distância completa na situação 1), mas vamos estruturar de forma que caia numa razão simples.\n\nVamos escrever diretamente a proporção de alturas para bases, aproveitando que os ângulos internos são iguais:\nAltura do maior / Altura do menor = Base do maior / Base do menor.\nMas aqui é mais conveniente relacionar as medidas que temos: elevação 2 m e projeção 0,5 m geram uma razão 2/0,5 = 4 para o triângulo do objeto.\n\nTrabalhando a forma algébrica que o professor conduziu:\n- Denote a base do menor por a e a do maior por d.\n- A semelhança levou a: 2/0,5 = (H)/(0,5 + algo proporcional). Para manter a linha do professor, ele isolou a relação entre as bases a e d a partir de alturas 2 e 0,5 e chegou a uma relação linear a = d/3. Ou seja:\na = d/3.\n\nReescrevendo: d = 3a.\nEssa relação será útil para a etapa seguinte (ela aparece como “três a”).\n\nConclusão parcial da Situação 1:\n- Base do menor = a.\n- Base do maior = 3a.\n- Com essa razão, seguimos para determinar H usando outra proporção com as alturas.\n\n## Determinando a Altura do Poste (H)\nAgora, usando a relação entre o triângulo “grandão” (amarelo) e o “intermediário” (verdinho), o professor monta:\n- Base do maior = 3a + 4a = 7a (ele decompõe posições/segmentos por construção de semelhança).\n- Base do menor (intermediário) = 3a + a = 4a.\n- Altura do menor (intermediário) = 2 m (do objeto).\n- Altura do maior = H (altura do poste).\n\nProporção:\nBase do maior / Base do menor = Altura do maior / Altura do menor\n7a / 4a = H / 2\n7/4 = H/2\nH = (7/4) × 2 = 14/4 = 3,5 m.\n\nAltura do poste com a lâmpada: 3,5 m. Excelente.\n\n## Situação 2 – Sombra no Chão e Triplo das Distâncias\nAgora vamos para a segunda figura. Já sabemos:\n- Altura do poste (lâmpada): 3,5 m.\n- Altura do objeto: 2 m.\n- Sombra do objeto no chão: 3,2 m.\n- A distância do objeto à parede é o triplo da distância do objeto ao poste. Ou seja, se do objeto ao poste é x, do objeto à parede é 3x, e a distância total poste–parede é x + 3x = 4x. É isso que queremos ao final.\n\nVamos montar dois triângulos semelhantes agora usando a sombra no chão:\n- Triângulo menor (do objeto): altura 2 m, base 3,2 m (sombra no chão).\n- Triângulo maior (do poste): altura 3,5 m, base será x + 3,2 m (do poste até a ponta da sombra, passando pelo objeto; o professor nomeia essa base como “x + 3,2”).\n\nProporção pela semelhança:\nAltura do maior / Altura do menor = Base do maior / Base do menor\n3,5 / 2 = (x + 3,2) / 3,2\n\nMultiplicando em cruz:\n2(x + 3,2) = 3,5 × 3,2\n2x + 6,4 = 11,2\n2x = 11,2 − 6,4 = 4,8\nx = 2,4 m.\n\nIsso é a distância do objeto ao poste na Situação 2. Como a distância do objeto à parede é o triplo, dá 7,2 m. A distância total entre poste e parede é 4x:\n4 × 2,4 = 9,6 m.\n\nResposta final: 9,6 m. Bravo.\n\n## Comentários Finais\nQuestão pesada, de montagem, exigiu:\n- Padronização de unidades (cm → m).\n- Criação de triângulos semelhantes coerentes com a figura.\n- Uso consistente das proporções entre alturas e bases.\n- Duas etapas: primeiro determinar a altura do poste (3,5 m), depois usar a segunda situação (sombra no chão 3,2 m e relação 3:1) para achar a distância poste–parede (9,6 m).\n\nEu sempre digo: em prova, gerencie o tempo. Se estiver justo, pule e volte depois. Mas estudando, vale enfrentar desafios como esse para ficar craque em semelhança de triângulos e modelagem geométrica.",
+  "transcricao_meta": {
+    "title": "Geometria Plana VIII",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 37371,
+    "createdAt": "2026-02-04T17:20:42.535Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: semelhança de triângulos aplicada a sombras/projeções, montagem de proporções e uso do Teorema de Tales em problemas de poste, lâmpada, parede e objeto. \nPrincipais pontos: \n- Identificação de triângulos semelhantes (ângulos internos iguais).\n- Montagem correta das razões (altura com altura; base com base).\n- Resolução prática com multiplicação em cruz e conversão de unidades.\n\n## 1. Base / Conceitos Fundamentais\n- **Triângulos semelhantes**: têm os mesmos ângulos internos; seus lados correspondentes são proporcionais.\n- **Correspondência de lados**: mantenha a ordem “maior/menor = maior/menor” e “altura com altura, base com base”.\n- **Teorema de Tales (visão prática)**: em feixes de retas paralelas cortadas por transversais, segmentos correspondentes são proporcionais. Aqui, os “raios de luz” definem direções comuns que geram triângulos semelhantes.\n- **Cenário padrão de sombras**:\n  - Solo: plano horizontal.\n  - Parede: plano vertical.\n  - Poste e objeto: verticais (perpendiculares ao solo).\n  - Fonte de luz no topo do poste (ponto) gera raios retilíneos → triângulos retângulos comparáveis.\n- **Unidades**: 50 cm = 0,5 m; 80 cm = 0,8 m. Padronize antes de calcular.\n\n## 2. Como Funciona / Distinções\n- **Condição de semelhança**: confirme ângulos iguais (90° comuns; outro ângulo comum pela direção do raio de luz).\n- **Quando “completar” figuras**: se não houver dois triângulos com a mesma “pontinha” (vértice do raio de luz), complemente a figura para formar o triângulo maior e o menor e viabilizar a comparação.\n- **Bases e alturas**:\n  - Altura: medida vertical (postes/objetos).\n  - Base: distância horizontal (sombras no chão) ou projeções horizontais até a parede.\n- **Casos do enunciado**:\n  - Objeto equidistante do poste e da parede → parte da sombra na parede = 50 cm (0,5 m).\n  - Objeto com distância à parede = 3 × distância ao poste → sombra no chão = 3,2 m.\n- **Semelhança vs Tales**: ambos levam às mesmas proporções; use a que for mais direta para a figura.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo geral:\n  1) Converta todas as unidades (cm → m).\n  2) Identifique os triângulos semelhantes (mesma “pontinha” do raio; ambos retângulos).\n  3) Marque correspondências: altura maior ↔ altura menor; base maior ↔ base menor.\n  4) Monte a proporção: altura_maior/altura_menor = base_maior/base_menor (ou a recíproca consistente).\n  5) Faça a multiplicação em cruz (produto dos meios = produto dos extremos).\n  6) Isole a incógnita (“passa, divide”), sem arredondar antes da hora.\n  7) Interprete o que se pede: às vezes é x; outras, x + constante; ou múltiplo de x.\n- Macetes:\n  - Prefira frações simples ao lidar com 0,5; por exemplo, 0,5 = 1/2 → facilita simplificações.\n  - Mantenha a ordem “maior/menor” em toda a proporção para evitar permutas acidentais.\n  - Se aparecer decomposição em partes (a, 3a, etc.), cancele a incógnita comum quando ela estiver multiplicando todos os termos.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (armação metálica: semelhança direta)\n  - Triângulo menor (verdinho): base = 2; altura = 0,8 m.\n  - Triângulo maior (amarelo): base = 2 + 1,5 = 3,5; altura = h.\n  - Proporção: base_menor/base_maior = altura_menor/altura_maior\n    - 2/3,5 = 0,8/h → 2h = 0,8 × 3,5 = 2,8 → h = 2,8/2 = 1,4 m.\n  - Resultado: h = 1,4 m.\n  > Dica de Prova: Confirme 80 cm = 0,8 m antes de montar a razão; erro de unidade derruba o h.\n\n- Exemplo 2 (altura do poste via decomposição e razão 7/4)\n  - Dados: objeto = 2 m; parte de sombra na parede = 0,5 m.\n  - Montagem conduz à relação entre segmentos: a = d/3 (a é 1/3 de d).\n  - Composição do maior: 3a + 3a + a = 7a; do menor: 3a + 4a (partes compatíveis).\n  - Razão entre maior e menor: 7a/(3a + 4a) = 7/4.\n  - Altura do poste: (7/4) × 2 = 14/4 = 3,5 m.\n  > Dica de Prova: O “a” cancela porque multiplica todos os termos. Resultado-chave: altura do poste = 3,5 m.\n\n- Exemplo 3 (distância do poste à parede usando sombra 3,2 m)\n  - Triângulo maior (poste): altura = 3,5; base = x + 3,2.\n  - Triângulo menor (objeto): altura = 2; base = 3,2.\n  - Proporção: 3,5/2 = (x + 3,2)/3,2.\n  - Cruzando: 3,5 × 3,2 = 2(x + 3,2) → 11,2 = 2x + 6,4 → 2x = 4,8 → x = 2,4 m.\n  - Interpretação: x é a distância do poste até a parede em linha reta no solo.\n  > Dica de Prova: Não confundir 3,2 com 3.2 na calculadora; 3,5 × 3,2 = 11,2.\n\n- Exemplo 4 (distância final como múltiplo)\n  - Se a distância pedida for um múltiplo de x (por exemplo, “4 vezes x”): 4 × 2,4 = 9,6 m (e não 1,6).\n  > Dica de Prova: Leia o pedido final. Muitas questões pedem “a distância total” que é x somado ou multiplicado.\n\n## 5. Pegadinhas e Erros Comuns\n- Trocar correspondências: altura do maior com base do menor. Sempre alinhe altura com altura, base com base.\n- Quebra da ordem na razão: usar maior/menor de um lado e menor/maior do outro. Mantenha a mesma ordem.\n- Unidades: esquecer que 50 cm = 0,5 m; 80 cm = 0,8 m.\n- Arredondar cedo: mantenha exatos 3,5; 3,2; 11,2; 6,4 até o final.\n- Ignorar a construção: sem a mesma “pontinha” (vértice comum dos raios), não há semelhança direta; complete o triângulo maior.\n- Interpretar errado o que se pede: às vezes a resposta não é x, mas x + 3,2, ou 4x.\n- Confusão com vírgula/ponto na calculadora: 3,2 ≠ 32; 0,5 = 1/2.\n\n> Dica de Prova: Antes de “cruzar”, verbalize a razão: “altura do maior está para altura do menor assim como base do maior está para base do menor”. Se a frase não fizer sentido com seus valores, você trocou correspondências.\n\n> Dica de Prova: Se a figura mencionar “equidistante do poste e da parede”, use a simetria para identificar segmentos iguais; frequentemente isso gera uma base de 0,5 m na parede e simplifica a proporção.\n\nResultados-chave para memorizar:\n- Conversões: 50 cm = 0,5 m; 80 cm = 0,8 m.\n- Altura do poste: 3,5 m.\n- Distância poste–parede em caso resolvido: x = 2,4 m; se pedirem 4x → 9,6 m.",
+  "resumo_bolso": "# Geometria Plana VIII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Triângulos semelhantes**: têm os mesmos ângulos internos; seus lados correspondentes são proporcionais.\n* **Condição de semelhança (sombras)**: ambos retângulos (90° comuns) e compartilham o ângulo do raio de luz (mesma “pontinha”).\n* **Correspondência de lados**: mantenha a ordem “maior/menor = maior/menor” e “altura com altura; base com base”.\n* **Teorema de Tales (visão prática)**: em feixes de retas paralelas cortadas por transversais, segmentos correspondentes são proporcionais; aqui, os “raios de luz” definem direções comuns que geram triângulos semelhantes.\n* **Cenário padrão de sombras**:\n  - Solo: plano horizontal.\n  - Parede: plano vertical.\n  - Poste e objeto: verticais (perpendiculares ao solo).\n  - Fonte de luz no topo do poste gera raios retilíneos → triângulos retângulos comparáveis.\n* **Bases**: distâncias horizontais (sombras no chão ou projeções horizontais até a parede).\n* **Alturas**: medidas verticais (postes/objetos).\n* **Unidades**: padronize antes de calcular: 50 cm = 0,5 m; 80 cm = 0,8 m.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Semelhança de Triângulos vs Teorema de Tales\n\n| Aspecto | Semelhança de Triângulos | Teorema de Tales |\n|--------|---------------------------|------------------|\n| **O que compara** | Triângulos inteiros (ângulos iguais; lados proporcionais). | Segmentos em feixes de paralelas cortadas por transversais. |\n| **Aplicação aqui** | Usa os triângulos formados pelo poste/objeto, solo/parede e raio de luz. | Usa os segmentos determinados pelos raios de luz (paralelos) e solo/parede (transversais). |\n\nAmbos levam às mesmas proporções; use o que for mais direto para a figura.\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Proporção básica em triângulos semelhantes (sombras)**\n\n* **Aplicação**: qualquer par de triângulos semelhantes (poste/objeto, chão/parede).\n* **Regra**:  \n  \\[\n  \\frac{\\text{altura maior}}{\\text{altura menor}} = \\frac{\\text{base maior}}{\\text{base menor}}\n  \\]\n  (ou a recíproca, mantendo a mesma ordem).\n\n---\n\n**2. Multiplicação em cruz**\n\n* **Aplicação**: resolver proporções numéricas.\n* **Regra**: produto dos meios = produto dos extremos.\n\n---\n\n**3. Conversão de unidades**\n\n* **Aplicação**: antes de montar qualquer razão.\n* **Regra**:  \n  50 cm = 0,5 m; 80 cm = 0,8 m.  \n  0,5 pode ser escrito como 1/2 para facilitar simplificações.\n\n---\n\n**4. Decomposição em partes proporcionais (uso do “a”)**\n\n* **Aplicação**: quando segmentos são dados como múltiplos de um mesmo “a”.\n* **Regra**: se todos os termos têm “a” multiplicando, ele pode ser cancelado na razão.  \n  Exemplo do resumo:  \n  Razão entre maior e menor:  \n  \\[\n  \\frac{7a}{3a + 4a} = \\frac{7}{4}\n  \\]\n\n---\n\n**5. Distância total como função de x**\n\n* **Aplicação**: quando o enunciado pede múltiplos ou somas de x.\n* **Regra**: primeiro calcule x; depois aplique o pedido (x + constante, kx etc.).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Trocar correspondências: ligar altura do maior com base do menor. Sempre alinhe altura com altura e base com base.\n2. Quebrar a ordem na razão: usar maior/menor de um lado e menor/maior do outro. Mantenha a mesma ordem em toda a proporção.\n3. Esquecer conversão de unidades: 50 cm = 0,5 m; 80 cm = 0,8 m.\n4. Arredondar cedo: mantenha valores exatos (3,5; 3,2; 11,2; 6,4) até o final.\n5. Interpretar errado o que se pede: às vezes a resposta não é x, mas x + 3,2 ou 4x; leia o pedido final.\n\n---\n\n## 📋 Checklist Final\n\n* Convertei todas as unidades (cm → m) antes de montar as razões (50 cm → 0,5 m; 80 cm → 0,8 m)?\n* Identifiquei corretamente os triângulos semelhantes (90° comuns e mesma “pontinha” do raio de luz)?\n* Mantive a correspondência correta: altura maior/altura menor = base maior/base menor (ou recíproca consistente)?\n* Usei multiplicação em cruz (produto dos meios = produto dos extremos) sem arredondar antes da hora?\n* Verifiquei se a resposta pedida é x, x + constante ou múltiplo de x (por exemplo, 4x)?",
+  "mapa_mental": "# 📐 Geometria Plana VIII\n## 🎯 Semelhança de Triângulos\n### 💡 Conceito básico\n- Ângulos correspondentes iguais\n- Lados proporcionais\n- Triângulos retângulos\n- Vértice comum luz\n### 🧮 Correspondência de lados\n- Altura com altura\n- Base com base\n- Ordem maior/menor\n- Proporções consistentes\n### 📏 Condições de semelhança\n- Um ângulo reto comum\n- Outro ângulo comum raio\n- Feixe de paralelas\n- Transversais cortando\n\n## 🧮 Teorema de Tales e Proporções\n### 📜 Teorema de Tales\n- Retas paralelas\n- Transversais secantes\n- Segmentos proporcionais\n- Aplicação em sombras\n### 🧮 Montagem de razões\n- Altura_maior/altura_menor\n- Base_maior/base_menor\n- Produto meios/extremos\n- Isolamento incógnita\n### 📊 Unidades e frações\n- Padronizar em metros\n- 50 cm = 0,5 m\n- 80 cm = 0,8 m\n- 0,5 igual 1/2\n\n## 🌗 Sombras e Projeções\n### 🗺️ Cenário geométrico\n- Solo plano horizontal\n- Parede plano vertical\n- Poste objeto verticais\n- Raios retilíneos luz\n### 📐 Bases e alturas\n- Altura medida vertical\n- Base distância horizontal\n- Sombra no chão\n- Projeção na parede\n### 🧱 Construção de figuras\n- Completar triângulo maior\n- Vértice comum obrigatório\n- Equidistante poste parede\n- Decomposição em partes\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Proporções incorretas\n- Altura com base\n- Ordem maior/menor trocada\n- Razões invertidas parciais\n- Falta de correspondência\n### ⚠️ Unidades e cálculos\n- Mistura cm com m\n- Arredondar antes da hora\n- Erro vírgula decimal\n- 3,2 diferente 32\n### 📝 Interpretação do enunciado\n- Resposta não é x\n- Soma x mais constante\n- Múltiplo pedido tipo 4x\n- Ignorar dados simetria",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Triângulos Semelhantes",
+      "description": "Triângulos Semelhantes — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se reconhece que dois triângulos são semelhantes pela análise dos ângulos?",
+          "back": "Possuem os **ângulos internos iguais**.",
+          "hint": "Refere-se à medida angular interna",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "triangulos-semelhantes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Que consequência métrica resulta da igualdade dos ângulos correspondentes?",
+          "back": "Os **lados serão obrigatoriamente proporcionais**.",
+          "hint": "Refere-se à relação entre comprimentos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "proporcionalidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Nos triângulos semelhantes, como se relacionam as razões entre bases e entre alturas?",
+          "back": "A razão entre as bases é igual à razão entre as **alturas**.",
+          "hint": "Compare com a razão das bases",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "proporcionalidade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual construção geométrica permite obter dois triângulos comparáveis em um problema de sombras?",
+          "back": "Completar a figura formando um **triângulo maior** e um **triângulo menor**.",
+          "hint": "Pense na visualização espacial",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "construcao-geometrica"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Proporções e Medidas",
+      "description": "Proporções e Medidas — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual cuidado com as unidades deve preceder a montagem de uma proporção?",
+          "back": "Converter todas as medidas para a mesma unidade, como **metros**.",
+          "hint": "É um passo de padronização métrica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "conversao-unidades"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como converter 80 centímetros para metros?",
+          "back": "**0,8 metros**.",
+          "hint": "Divisão por cem",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "conversao-unidades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como encontrar um termo desconhecido de uma proporção usando meios e extremos?",
+          "back": "Multiplicando os **meios pelos extremos**.",
+          "hint": "Propriedade fundamental das proporções",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "proporcionalidade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Na proporção 2/3,5 = 0,8/x, qual é o valor de x?",
+          "back": "**1,4** metros.",
+          "hint": "Aplique a regra de três simples",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Projeções e Sombras",
+      "description": "Projeções e Sombras — 5 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "O que significa um objeto ser equidistante do poste e da parede?",
+          "back": "Estar a **mesma distância** do poste e da parede.",
+          "hint": "Definição de igualdade espacial",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual relação geométrica existe entre o plano do poste e do objeto e o plano da parede?",
+          "back": "São **perpendiculares**.",
+          "hint": "Ângulo de noventa graus",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "relacoes-espaciais"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Em um cenário com objeto equidistante do poste e da parede, qual medida da sombra na parede foi considerada?",
+          "back": "**Cinquenta centímetros**.",
+          "hint": "Dado numérico específico do problema",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Com objeto de 2 m, sombra no chão de 3,2 m e parede-objeto igual a 3 vezes objeto-poste, qual a altura do poste?",
+          "back": "**3,5** metros.",
+          "hint": "Requer montagem de equação de semelhança",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "No mesmo cenário, qual é a distância entre o poste e a parede?",
+          "back": "**9,6** metros.",
+          "hint": "Soma das distâncias parciais",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "geometria-plana",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em triângulos semelhantes, qual é a relação fundamental entre seus elementos geométricos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os ângulos internos são iguais e os lados correspondentes são proporcionais",
+          "correct": true,
+          "explanation": "Correta. A semelhança de triângulos é definida por duas condições essenciais: os ângulos internos correspondentes devem ser iguais, garantindo que os triângulos tenham a mesma forma, e os lados correspondentes devem ser proporcionais, indicando que um triângulo é uma ampliação ou redução do outro."
+        },
+        {
+          "id": "b",
+          "text": "Os perímetros são iguais e as áreas são proporcionais aos ângulos",
+          "correct": false,
+          "explanation": "Incorreta. Em triângulos semelhantes, os perímetros não são necessariamente iguais; eles são proporcionais na mesma razão dos lados correspondentes. As áreas são proporcionais ao quadrado da razão de semelhança dos lados, e não diretamente aos ângulos."
+        },
+        {
+          "id": "c",
+          "text": "As alturas são iguais e as bases mantêm razão constante de 1:2",
+          "correct": false,
+          "explanation": "Incorreta. As alturas de triângulos semelhantes não são necessariamente iguais; elas são proporcionais na mesma razão dos lados correspondentes. A relação entre as bases não é fixada em 1:2, mas sim pela razão de proporcionalidade específica da semelhança entre os triângulos."
+        },
+        {
+          "id": "d",
+          "text": "Os lados correspondentes são iguais e os ângulos são proporcionais",
+          "correct": false,
+          "explanation": "Incorreta. Se os lados correspondentes fossem iguais, os triângulos seriam congruentes, não apenas semelhantes. Além disso, em triângulos semelhantes, os ângulos correspondentes são iguais, e não proporcionais."
+        }
+      ],
+      "explanation": "Correta. A semelhança de triângulos é definida por duas condições essenciais: os ângulos internos correspondentes devem ser iguais, garantindo que os triângulos tenham a mesma forma, e os lados correspondentes devem ser proporcionais, indicando que um triângulo é uma ampliação ou redução do outro.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Ao trabalhar com medidas em problemas geométricos, um estudante encontra uma altura expressa em 80 centímetros, mas precisa relacioná-la com outras medidas dadas em metros. Qual é o procedimento correto para a conversão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dividir por 10, resultando em 8 metros",
+          "correct": false,
+          "explanation": "Incorreta. Dividir por 10 converteria centímetros para decímetros (1 dm = 10 cm), não para metros. O resultado de 80 cm dividido por 10 seria 8 decímetros, e não 8 metros."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar por 100, resultando em 8000 metros",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar por 100 converteria metros para centímetros. Para converter centímetros para metros, o procedimento correto é dividir por 100. Multiplicar 80 cm por 100 resultaria em 8000 cm, não metros."
+        },
+        {
+          "id": "c",
+          "text": "Dividir por 100, resultando em 0,8 metros",
+          "correct": true,
+          "explanation": "Correta. Para converter uma medida de comprimento de centímetros para metros, é necessário dividir o valor em centímetros por 100, uma vez que 1 metro equivale a 100 centímetros. Assim, 80 cm divididos por 100 resultam em 0,8 metros."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar por 10, resultando em 800 metros",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar por 10 converteria decímetros para metros, ou seria um erro de fator de conversão. 80 cm multiplicados por 10 resultariam em 800 cm, não metros."
+        }
+      ],
+      "explanation": "Correta. Para converter uma medida de comprimento de centímetros para metros, é necessário dividir o valor em centímetros por 100, uma vez que 1 metro equivale a 100 centímetros. Assim, 80 cm divididos por 100 resultam em 0,8 metros.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em um problema envolvendo projeção de sombras e semelhança de triângulos, um objeto de 2 metros de altura projeta uma sombra na parede. Para determinar a altura de um poste que também projeta sombra, qual propriedade matemática deve ser aplicada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A média aritmética das alturas corresponde à média geométrica das projeções",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma propriedade geométrica em triângulos semelhantes que relacione a média aritmética das alturas com a média geométrica das projeções de sombras. A semelhança de triângulos se fundamenta na proporcionalidade dos lados e na igualdade dos ângulos."
+        },
+        {
+          "id": "b",
+          "text": "A razão entre as alturas dos objetos é igual à razão entre suas respectivas sombras projetadas",
+          "correct": true,
+          "explanation": "Correta. Em situações de projeção de sombras sob uma mesma fonte de luz, os objetos verticais e suas sombras formam triângulos retângulos semelhantes. A propriedade fundamental de triângulos semelhantes estabelece que a razão entre quaisquer lados correspondentes é constante. Portanto, a razão da altura de um objeto para a altura de outro objeto é igual à razão de suas respectivas sombras projetadas."
+        },
+        {
+          "id": "c",
+          "text": "A soma das alturas é proporcional à diferença entre as sombras projetadas",
+          "correct": false,
+          "explanation": "Incorreta. Esta relação não se baseia nos princípios da semelhança de triângulos. A semelhança estabelece proporcionalidade entre os lados correspondentes, não entre somas ou diferenças de elementos de forma arbitrária."
+        },
+        {
+          "id": "d",
+          "text": "O produto das alturas é equivalente ao quociente das sombras no plano horizontal",
+          "correct": false,
+          "explanation": "Incorreta. O produto das alturas e o quociente das sombras não representam a relação de proporcionalidade correta em triângulos semelhantes. A relação fundamental é a igualdade entre as razões dos lados correspondentes."
+        }
+      ],
+      "explanation": "Correta. Em situações de projeção de sombras sob uma mesma fonte de luz, os objetos verticais e suas sombras formam triângulos retângulos semelhantes. A propriedade fundamental de triângulos semelhantes estabelece que a razão entre quaisquer lados correspondentes é constante. Portanto, a razão da altura de um objeto para a altura de outro objeto é igual à razão de suas respectivas sombras projetadas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_321338_Geometria Plana VIII.pdf",
+  "coletado_em": "2026-09-23T21:06:34"
+}

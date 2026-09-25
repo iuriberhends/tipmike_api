@@ -1,0 +1,830 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 1,
+  "ordem_no_curso": "150.00",
+  "titulo": "Windows 7",
+  "codigo_aula": "325359",
+  "video_id": "vtsmGK4HmfE=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:28:09",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/vtsmGK4HmfE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=405098%2C405030&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Windows 7\n\n## Abertura e Contextualização do Curso\nEntão, hoje nós trataremos aqui do Windows 7, beleza? Aqui estão meu nome, a disciplina e essa frase que eu gosto muito: “Somos o que repetidamente fazemos. A excelência, portanto, não é um ato, mas um hábito.” A partir dessa frase, nós temos o processo jesuítico: repetição com correção até a exaustão nos leva à perfeição. Para você que está estudando, a repetição com correção, até a exaustão, leva à aprovação. \n\nMas, claro, vamos colocar aspas nesse “exaustão”: você deve dormir, se alimentar e praticar exercícios na medida do possível e de maneira moderada. “Exaustão” não é ficar acordado a noite toda, não é tomar remédios sem orientação médica para ficar acordado.\n\nVoltando ao tema da nossa aula, trataremos aqui do sistema operacional Windows 7. Dá certo.\n\n## Por que Windows 7 ainda cai em prova?\nNós temos Windows 8, 8.1, 10 e ainda o 11. Aí vem a pergunta: “Mas o Windows 7 ainda cai em prova?” Se você está estudando esta aula, provavelmente está no seu edital ou é uma possibilidade indicada pelo professor de que é possível ser cobrado na sua prova. Então, nós ainda temos questões de Windows 7.\n\nÉ importante: proporcionalmente, entre o 7, 10 e 11, o peso vai mudando, mas o 7 ainda cai. Você já tem que aprender. Entre 7, 10, 8 e 8.1, eles se comunicam; o que acaba sendo mais cobrado é 7, 10 e 8/8.1. Mas essa não é uma preocupação para ter na hora de estudar: se está no edital, estude. O 7 não “acabou”. Beleza? Então, sem divergências, vem comigo.\n\n## Expectativa realista sobre o conteúdo\nVamos dar uma passeada e, antes de mais nada, colocar as cartas na mesa: “Já só assistindo às aulas de Windows 7 eu saberei tudo e vou acertar todas as questões do universo?” Olha, sendo sincero: infelizmente, não. Não tem como falar tudo de tudo, nem passar todos os detalhes possivelmente cobrados em prova. Sempre há um detalhezinho.\n\nO que eu procuro fazer nas minhas aulas: trazer questões atuais, manter o que é mais cobrado e, mesmo que algo não caia constantemente, se cai de vez em quando, eu procuro colocar aqui. Então é uma amostragem. Sendo bem sincero: quer ficar comigo? Vamos começar nosso passeio pelo Windows 7.\n\n## Versões do Windows 7\nVamos falar das versões do Windows 7. Foi lançado em versões e aí vem a dúvida: “Eu preciso ir no site da Microsoft e olhar cada detalhezinho de cada versão?” Não. Mas eu sugiro que você tenha pelo menos uma leve noção.\n\n- Starter: como o nome sugere (para quem fala inglês), é o início. É a versão mais básica.\n- Home Basic e Home Premium: começam a melhorar um pouquinho, têm um pouco mais de recursos; a Premium melhora ainda mais.\n- Professional: aqui já melhora mais; não é a mais completa, mas traz recursos importantes para uso profissional.\n- Enterprise: versão corporativa, com recursos voltados para empresas.\n- Ultimate: top, top, top. A mais completa de todas. Essa versão tem tudo.\n\nDe vez em quando cai em prova: ele pode cobrar alguma coisa do tipo “esta versão tem X, aquela não tem Y” ou simplesmente listar versões. Saber reconhecer os nomes já ajuda.\n\n## O que é sistema operacional?\nQuais são as principais características, enquanto sistema operacional? O que é um sistema operacional? É ele que controla a máquina. É preciso tê-lo na máquina. O computador até liga sem o sistema, mas para na checagem do BIOS/UEFI, que vem instalado na placa-mãe, e não tem mais o que fazer. Eu não consigo editar um texto, não consigo navegar. É o sistema operacional que gerencia a máquina, tanto a parte física (hardware) quanto a parte lógica (programas) que eu quero usar, como navegadores, editores de texto, etc.\n\nO Windows 7 já traz consigo um conjunto de programas nativos. Lá no finalzinho eu trago os programas, mas já quero trazer essa visão: o sistema vem com um pacote de programas nativos. Eu posso instalar outros por fora. Você tem que saber, pelo menos, o que vem com ele e o que é externo. Não precisa saber todos os mínimos detalhes, mas ter noção. Por exemplo: o Paint vem? O Windows Media Player? Hoje em dia, o Internet Explorer já não vem no Windows 11, etc. No 7, vinha. Mais adiante falo.\n\nDe modo geral, ele é produzido pela Microsoft. Você pode ver em prova a sigla MS: MS Windows 7, MS Office, etc.\n\n## Sistema de arquivos (file system) no Windows 7\nO sistema de arquivos usado no Windows 7, por padrão — e vou repetir muito durante a aula essa expressão “por padrão” — é o NTFS. “Por padrão” e “nativo” aqui vão ser praticamente sinônimos: é o que vem quando você não mexe em nada.\n\nPor exemplo: por padrão, usamos o botão esquerdo do mouse para selecionar e executar. Se a questão disser “clicou no botão”, vai considerar o esquerdo, a não ser que o enunciado fale explicitamente “botão direito”. É possível inverter no Painel de Controle? É. Mas aí você alterou o padrão.\n\n💬 História: Quando eu estava no Windows 10 instalado na minha máquina, por causa de uma incompatibilidade deu um problema. Isso tudo para lembrar: configurações e padrões importam. A gente altera e depois esquece o que era o padrão e confunde na prova.\n\nSistema de arquivos: pense no disco rígido como uma pista pavimentada. Imagine que eu vou criar um estacionamento e vou dividir as marcações. No nosso sistema de arquivos, as “vagas” (unidades de alocação) são todas iguais. O file system interfere nisso e em outras coisas, como segurança. O que você precisa saber para prova: qual é o padrão do Windows 7? NTFS. Nem sempre a prova vai perguntar o porquê.\n\nPara níveis mais avançados (técnico em informática), as questões vão mais a fundo. Aqui, a gente foca no essencial para a maioria dos editais.\n\nNós temos basicamente dois sistemas de arquivos que você pode usar no Windows 7: NTFS (padrão) e FAT32 (possível, mas não padrão). Existem outros, mas para nossa prova, foque nesses.\n\n- NTFS: padrão do Windows 7. Tem recursos de segurança, permissões, criptografia (EFS), melhor gerenciamento e menor fragmentação.\n- FAT32: é possível usar, mas não é padrão. Limitação de tamanho máximo por arquivo em 4 GB. Não oferece EFS. Apresenta maior fragmentação de dados.\n\nFragmentação: o disco é dividido em pedaços (clusters). Quando um arquivo é gravado em partes espalhadas, demora mais para ler/gravar. O FAT32 tende a fragmentar mais.\n\n> 🎯 Dicas de prova: \n> - O sistema de arquivos padrão (nativo) do Windows 7 é o NTFS.\n> - FAT32 permite arquivos de no máximo 4 GB.\n> - EFS (criptografia de arquivos) só no NTFS.\n> - FAT32 tende a ter maior fragmentação.\n\nQuestão exemplo: “Qual o sistema de arquivos utilizado pelo Windows 10?” Serve para nós: do Windows 7 em diante, o padrão é NTFS (7, 8, 8.1, 10, 11). Existem outros por curiosidade (exFAT, FAT32), mas não são o padrão em instalação do sistema.\n\n## Multitarefa e preempção (prioridades)\nPrincipais características: ele é multitarefa — capacidade de executar várias tarefas ao mesmo tempo. Associado a isso, temos a preempção (preemptivo): o Windows é multitarefa preemptivo. O sistema separa as tarefas de acordo com prioridade e pode interromper/finalizar se necessário para manter a estabilidade.\n\nAs tarefas estão escalonadas. Quando uma tarefa de baixa prioridade dá problema, é mais fácil eliminá-la. Sobre números de prioridade: quanto menor o número (próximo de zero), maior a prioridade; quanto maior o número, menor a prioridade. Dentro da lógica do sistema, isso ajuda a manter o funcionamento geral.\n\n> 🎯 Dicas de prova:\n> - Windows 7 é multitarefa preemptivo (multitarefa + preempção).\n\n## Multiusuário e contas no Windows 7\nEle é multiusuário. Há divergência conceitual em um ou outro autor que exige uso simultâneo para ser “multiusuário”, mas a maioria dos autores considera multiusuário a capacidade de ter várias contas cadastradas no sistema, ainda que se use uma por vez. No Windows 7, usamos uma conta por vez, mas podemos alternar usuários mantendo sessões ativas.\n\nVem comigo: no Windows 7 nós temos tipos de conta:\n- Administrador: mais poderes. Configurações restritas ao administrador.\n- Padrão: poderes limitados para uso cotidiano.\n- Convidado: por padrão, vem desativada. O administrador pode ativar. É bem restrita.\n\nEu posso ter várias contas do tipo Administrador e várias do tipo Padrão. Não é obrigatório ter conta do tipo Padrão, mas é obrigatório ter pelo menos uma Administrador. Na instalação, a conta criada já é Administrador. Depois você pode criar outras, de qualquer tipo.\n\n“Por que usar usuário padrão se o administrador é mais poderoso?” Por segurança. A própria Microsoft recomenda usar o computador no dia a dia como usuário padrão. Se alguém invadir quando você está logado como administrador, essa pessoa também terá privilégios totais. Com padrão, você restringe um pouco — não tanto quanto no Linux com o root, mas ajuda a reduzir danos.\n\nNo Painel de Controle você cria e gerencia contas. Caminhos como: Painel de Controle > Contas de Usuário e Segurança da Família > Contas de Usuário > Gerenciar. Ali você vê, por exemplo, contas “Jefferson”, “Bob” etc., e quem é administrador ou padrão. A conta Convidado costuma aparecer desativada.\n\nOrdem hierárquica de privilégios:\n- Administradores (iguais entre si em poderes).\n- Usuário padrão.\n- Convidado (menos privilégios).\n\nConvidado é para uso temporário: uma visita usa e tudo fica restrito àquela conta. Não altera configurações do sistema, não mexe nos documentos dos outros, não desinstala programas. Usuário padrão, em regra geral, também não desinstala programas compartilhados para todos.\n\nAo criar uma conta, aparecem as opções “Usuário padrão” e “Administrador”. Qual vem marcada?\n\n> 🎯 Dicas de prova:\n> - Por padrão, uma nova conta é criada como Usuário Padrão no Windows 7.\n\nIsso não quer dizer que não é possível criar diretamente como Administrador; é possível. Também é possível, depois, converter uma conta padrão em administrador e vice-versa.\n\nAlguns privilégios exclusivos de Administrador:\n- Adicionar/remover contas de usuário.\n- Ativar/desativar itens de segurança (ex.: Firewall do Windows, UAC).\n- Alterar data e hora do sistema (afeta segurança e sincronização).\n- Instalar/desinstalar programas compartilhados para todos.\n\nDica prática: se você só tem uma conta Administrador e quer excluí-la, não consegue enquanto estiver nela. Crie outra Administrador, saia totalmente da primeira, entre na segunda e só então exclua a anterior.\n\n## Itens de segurança: Firewall e UAC\nO Firewall do Windows é um filtro que bloqueia conexões indevidas que chegam à máquina e controla as que saem para a Internet. Quem consegue ativar/desativar? Administrador.\n\nO UAC (User Account Control – Controle de Conta de Usuário) é um sistema de avisos/elevação que monitora alterações que impactam o sistema. Ele possui quatro níveis: Desligado, Baixo, Médio e Alto, que determinam a quantidade e o tipo de avisos.\n\nA ideia é: quando não é você que está fazendo a alteração e aparece um aviso, você já desconfia. Desconecta, faz uma limpeza, verifica o que está acontecendo. Esse monitoramento ajuda a prevenir mudanças indevidas.\n\n> 🎯 Dicas de prova:\n> - Firewall e UAC: ativação/ajustes exigem privilégios de Administrador.\n> - UAC tem quatro níveis (Desligado, Baixo, Médio, Alto).\n\n💬 História: Eu já recebi alertas bancários de compras feitas durante um período em que eu estava dando aula — claramente fraude. Se eu dependesse de olhar o extrato depois, perceberia só no fechamento da fatura. A notificação imediata ajuda a agir rápido. O UAC, guardadas as proporções, cumpre papel semelhante dentro do sistema: te avisar no momento da alteração.\n\n## Interface gráfica e modo texto (Shell)\nPrincipais características ainda: ele roda em ambiente gráfico. Isso é extremamente importante. O ambiente gráfico é o que vemos no Windows Explorer: janelas, ícones, botões, pastas, arquivos. É intuitivo, até para quem não tem tanta experiência: clicar, abrir e ver o conteúdo.\n\n> 🎯 Dicas de prova:\n> - Por padrão, o Windows 7 roda em ambiente gráfico (GUI).\n\nMas é possível utilizar o Windows 7 em ambiente não gráfico? Sim. É o modo texto, via Shell. O Windows tem Shells, como o Prompt de Comando (cmd.exe) e o PowerShell.\n\nO que é um Shell? É uma classe de programas cujo objetivo é interpretar comandos. O ícone do Prompt de Comando já foi cobrado em prova. A janela é não gráfica no sentido de interação: apesar do cursor do mouse aparecer, tudo que você faz ali é por comandos.\n\nExemplos de comandos no Prompt:\n- dir: visualizar o conteúdo do diretório.\n- md (ou mkdir): criar diretório.\n- del/rmdir: apagar arquivos/pastas.\n- cd: entrar/sair de pastas.\n\nTudo o que eu quiser fazer ali terá que ser feito por meio de comando. Precisa conhecer os comandos e sua sintaxe. Esse ambiente não gráfico é chamado de “linha de comando”.\n\nAlém do cmd, temos o PowerShell, que é mais poderoso, aceita mais comandos, inclusive cmdlets e alguns comandos herdados.\n\nBom, vou fechar esse bloco aqui e volto já já dando continuidade à nossa união do Windows 7. Até já.",
+  "transcricao_meta": {
+    "title": "Windows 7",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 36565,
+    "createdAt": "2026-02-05T15:44:10.782Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda fundamentos do Windows 7, tipos de contas e segurança (UAC), sistemas de arquivos (NTFS vs FAT32), multitarefa preemptiva com prioridades e uso do ambiente gráfico vs. Shell (Prompt de Comando/PowerShell).\nPrincipais pontos: \n- NTFS é o sistema de arquivos padrão/nativo; FAT32 limita arquivos a 4 GB e não tem EFS.\n- Multitarefa preemptiva: número de prioridade menor (próximo de 0) = maior prioridade.\n- Conta Convidado vem desativada; nova conta é criada como usuário padrão por padrão; UAC tem 4 níveis.\n\n## 1. Base / Conceitos Fundamentais\n- **Sistema Operacional (SO)**: Software que gerencia hardware e programas; fornece recursos e aplicativos nativos (padrão).\n- **Windows 7 (MS Windows 7)**: SO da Microsoft, foco de concurso; pode aparecer referência a **MS Office** em contexto de aplicativos.\n- **Interface**:\n  - **Ambiente gráfico (GUI)**: Janelas, ícones, mouse; Windows Explorer (Explorador) é a interface padrão.\n  - **Ambiente não gráfico (modo texto / Shell)**: Interação por linha de comando (Prompt de Comando ou PowerShell).\n- **Shell**: Programa que interpreta comandos (cmd.exe/Prompt de Comando; PowerShell).\n- **Multiusuário**: Suporta várias contas cadastradas no sistema (uso alternado).\n- **Tipos de conta**:\n  - **Administrador**: privilégios máximos.\n  - **Usuário padrão**: restrito, recomendado para uso diário.\n  - **Convidado**: por padrão desativada, privilégios mínimos.\n- **UAC (User Account Control)**: Controle de Contas de Usuário; monitora alterações e pede autorização. Níveis: desligado, baixo, médio, alto.\n- **Sistema de arquivos**: Estrutura lógica para organizar/gravar dados em disco. No Windows 7, o padrão/nativo é **NTFS**; **FAT32** é compatível.\n\n## 2. Como Funciona / Distinções\n- **Multitarefa preemptiva**:\n  - O Windows 7 executa várias tarefas, escalonando por prioridade.\n  - Regra de prioridade: número menor (tendendo a **0**) = prioridade mais alta; número maior = prioridade menor.\n  - Tarefas de baixa prioridade podem ser interrompidas/finalizadas para preservar as críticas.\n- **Contas e privilégios**:\n  - Por padrão, nova conta é criada como **usuário padrão**.\n  - **Convidado** vem desativada; só administrador ativa.\n  - Apenas **administrador**: cria/remove contas, ativa/desativa firewall e UAC, altera data/hora do sistema.\n  - Segurança: usar administrador no dia a dia amplia impacto de invasões; preferir usuário padrão.\n- **UAC**:\n  - Níveis mais altos geram mais prompts.\n  - Surgimento de aviso sem ação do usuário indica possível atividade indevida.\n- **Sistemas de arquivos**:\n  - **NTFS (padrão/nativo)** vs **FAT32 (compatível, não padrão)**:\n    - NTFS: permissões avançadas, EFS (criptografia), menos fragmentação, limites práticos maiores por arquivo.\n    - FAT32: limite de 4 GB por arquivo, sem EFS, maior fragmentação.\n- **Ambiente gráfico vs Shell**:\n  - Gráfico: intuitivo, cliques, janelas, Windows Explorer.\n  - Shell (Prompt/PowerShell): comandos digitados; PowerShell é mais poderoso e flexível para automação que o Prompt.\n\nTabela comparativa (X vs Y):\n- Sistemas de arquivos\n  - NTFS (padrão/nativo): suporta EFS; sem limite de 4 GB por arquivo; menor fragmentação; segurança avançada.\n  - FAT32 (opção compatível): arquivo máx. 4 GB; sem EFS; maior fragmentação; segurança limitada.\n- Interface\n  - Gráfico: padrão; uso por ícones e janelas.\n  - Shell: linha de comando; mais poder no PowerShell.\n\n> Dica de Prova: “Qual o sistema de arquivos utilizado/padrão no Windows 7?” Resposta: NTFS.\n\n## 3. Aplicação Prática / Técnicas\n- **Gerenciar contas**:\n  - Caminho: painel de controle → contas de usuário e segurança familiar → contas de usuário → gerenciar.\n  - Excluir administrador único não é possível: crie outra conta admin → saia → entre na nova → exclua a anterior.\n- **Configurar UAC**:\n  - Ajuste o nível conforme necessidade: desligado/baixo/médio/alto (mais alto = mais avisos).\n- **Operar no Shell (Prompt/PowerShell)**:\n  - Comandos básicos:\n    - dir: lista conteúdo do diretório atual.\n    - cd: navega entre pastas (cd Nome / cd ..).\n    - md: cria diretório.\n    - rd: remove diretório vazio.\n  - Sequência clássica (criar-entrar-listar-voltar-apagar):\n    - md Pasta → cd Pasta → dir → cd .. → rd Pasta.\n- **Boas práticas de segurança**:\n  - Usar **usuário padrão** para rotina; elevar privilégios quando necessário (UAC).\n  - Manter **Convidado** desativada, salvo uso pontual.\n- **Sistemas de arquivos**:\n  - Ao formatar/instalar, preferir **NTFS** para segurança e recursos.\n  - Evitar **FAT32** quando precisar armazenar arquivos > 4 GB ou usar EFS.\n\n> Dica de Prova: “Por padrão, uma conta criada no Windows 7 é do tipo usuário padrão.” E “Convidado vem desativada.”\n\n## 4. Exemplos e Casos Resolvidos\n- Ex. 1 — Questão: “O Windows 7 é multitarefa preemptiva?” \n  - Resposta: Sim. Ele escalona tarefas por prioridade; menor número (0) = maior prioridade.\n- Ex. 2 — Questão: “Qual o sistema de arquivos padrão do Windows 7 e seu limite por arquivo?” \n  - Resposta: NTFS é o padrão; limite prático elevado. O FAT32 (compatível, não padrão) limita a 4 GB por arquivo.\n- Ex. 3 — Questão: “Uma conta criada no Windows 7, por padrão, é de que tipo?” \n  - Resposta: Usuário padrão.\n- Ex. 4 — Questão: “A conta Convidado vem habilitada?” \n  - Resposta: Não, por padrão vem desativada.\n- Ex. 5 — Questão: “Quais os níveis do UAC?” \n  - Resposta: Desligado, baixo, médio e alto (mais alto = mais prompts).\n- Ex. 6 — Caso prático (Shell):\n  - Criar pasta, listar e apagar via Prompt:\n    - md Projetos → cd Projetos → dir → cd .. → rd Projetos.\n- Ex. 7 — Caso prático (exclusão de admin):\n  - Única conta admin não pode ser excluída enquanto logada. Criar segunda conta admin → trocar → excluir primeira.\n\n## 5. Pegadinhas e Erros Comuns\n- NTFS vs FAT32:\n  - Não confundir “padrão/nativo” (NTFS) com “compatível” (FAT32).\n  - FAT32 tem limite de 4 GB por arquivo e não suporta EFS.\n- Multitarefa:\n  - Prioridade numérica: menor número (0) = maior prioridade; maior número = menor prioridade.\n- Multiusuário:\n  - O Windows 7 é considerado multiusuário por suportar várias contas, mesmo que uma por vez. Não confundir com multi-sessão simultânea.\n- Contas:\n  - Por padrão, nova conta é “usuário padrão”; Convidado vem desativada.\n  - Não é possível excluir a única conta administrador ativa/logada.\n- UAC:\n  - Quatro níveis; mais alto = mais avisos. Aviso espontâneo sem ação do usuário é sinal de possível malware.\n- Interface:\n  - “Windows 7 só funciona no ambiente gráfico” — falso. Ele permite modo texto via Shell (Prompt de Comando/PowerShell).\n- PowerShell:\n  - É mais poderoso que o Prompt; não confundir com serem “iguais”. PowerShell aceita mais comandos e recursos de automação.\n\n> Dica de Prova: Se a questão falar em “padrão” ou “nativo” no Windows 7, pense em: NTFS como sistema de arquivos; GUI (interface gráfica) como modo de uso; conta Convidado desativada; nova conta como usuário padrão.",
+  "resumo_bolso": "# Windows 7\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Sistema Operacional (SO)**: Software que gerencia hardware e programas; fornece recursos e aplicativos nativos (padrão).\n* **Windows 7**: SO da Microsoft, foco de concurso.\n* **Interface gráfica (GUI)**: Janelas, ícones, mouse; **Windows Explorer (Explorador)** é a interface padrão.\n* **Shell (modo texto)**: Programa que interpreta comandos em linha de comando (**Prompt de Comando / cmd.exe** e **PowerShell**).\n* **Multiusuário**: Suporta várias contas cadastradas no sistema (uso alternado, não necessariamente simultâneo).\n* **Tipos de conta**:\n  * **Administrador**: privilégios máximos.\n  * **Usuário padrão**: restrito, recomendado para uso diário; é o padrão de criação de nova conta.\n  * **Convidado**: por padrão desativada, privilégios mínimos.\n* **UAC (User Account Control)**: Controle de Contas de Usuário; monitora alterações e pede autorização. Possui 4 níveis: desligado, baixo, médio, alto (níveis mais altos geram mais prompts).\n* **Sistema de arquivos**: Estrutura lógica para organizar/gravar dados em disco. No Windows 7, o sistema de arquivos **padrão/nativo é o NTFS**; **FAT32** é apenas compatível (não padrão).\n* **Multitarefa preemptiva**: O Windows 7 executa várias tarefas, escalonando por prioridade numérica: **número menor (tendendo a 0) = maior prioridade**; número maior = menor prioridade.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### NTFS vs FAT32\n\n| Aspecto | NTFS (padrão/nativo) | FAT32 (compatível, não padrão) |\n|--------|-----------------------|---------------------------------|\n| Padrão no Win7 | **Sim** | Não |\n| Limite por arquivo | Limites práticos elevados (sem limite de 4 GB) | **4 GB** por arquivo |\n| Criptografia (EFS) | **Suporta EFS** | **Não** suporta EFS |\n| Fragmentação | Menor | Maior |\n| Segurança | Permissões avançadas, segurança aprimorada | Segurança limitada |\n\n---\n\n### Interface Gráfica vs Shell\n\n| Aspecto | GUI (Windows Explorer) | Shell (Prompt/PowerShell) |\n|--------|------------------------|---------------------------|\n| Tipo | Gráfico | Texto / linha de comando |\n| Uso | Ícones, janelas, mouse | Comandos digitados |\n| Padrão | **Sim** | Não |\n| Poder | Intuitivo para o usuário | **PowerShell** mais poderoso e flexível para automação que o Prompt |\n\n---\n\n### Administrador vs Usuário Padrão vs Convidado\n\n| Aspecto | Administrador | Usuário padrão | Convidado |\n|--------|---------------|----------------|-----------|\n| Criação/remoção de contas | **Pode** | Não | Não |\n| Ativar/desativar firewall/UAC | **Pode** | Não | Não |\n| Alterar data/hora do sistema | **Pode** | Não | Não |\n| Padrão de nova conta | Não | **Sim** | Não |\n| Estado inicial | Ativo (ao menos uma conta) | Ativo (quando criada) | **Desativado** |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Regra de Prioridade (Multitarefa Preemptiva)**\n\n* **Aplicação**: Escalonamento de tarefas no Windows 7.\n* **Regra**: **Número de prioridade menor (tendendo a 0) = maior prioridade**; número maior = menor prioridade.\n* **Exemplo**: Em disputa de CPU, uma tarefa com prioridade 2 tem prioridade maior que uma tarefa com prioridade 10.\n\n---\n\n**2. Criação de Conta no Windows 7**\n\n* **Aplicação**: Questões sobre tipos de conta.\n* **Regra**: Por padrão, uma nova conta é criada como **usuário padrão**.\n* **Exemplo**: “Uma conta criada no Windows 7, por padrão, é de que tipo?” → **Usuário padrão**.\n\n---\n\n**3. Conta Convidado**\n\n* **Aplicação**: Estado inicial e privilégios.\n* **Regra**: A conta **Convidado vem desativada por padrão** e possui privilégios mínimos; **apenas administrador** pode ativá-la.\n* **Exemplo**: “A conta Convidado vem habilitada?” → **Não, por padrão vem desativada.**\n\n---\n\n**4. Níveis do UAC**\n\n* **Aplicação**: Segurança e prompts de confirmação.\n* **Regra**: O UAC possui **4 níveis**: desligado, baixo, médio e alto; **níveis mais altos geram mais prompts**.\n* **Exemplo**: “Quais os níveis do UAC?” → Desligado, baixo, médio e alto (mais alto = mais avisos).\n\n---\n\n**5. Limite de Arquivo no FAT32**\n\n* **Aplicação**: Questões sobre sistemas de arquivos.\n* **Regra**: **FAT32 limita o tamanho de cada arquivo a 4 GB** e **não suporta EFS**; o NTFS (padrão) não tem esse limite de 4 GB e suporta EFS.\n* **Exemplo**: “Qual o sistema de arquivos padrão do Windows 7 e seu limite por arquivo?” → **NTFS é o padrão; limite prático elevado. O FAT32 (compatível, não padrão) limita a 4 GB por arquivo.**\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **NTFS vs FAT32**  \n   Não confundir “padrão/nativo” (NTFS) com “compatível” (FAT32). FAT32 tem limite de 4 GB por arquivo e não suporta EFS.\n\n2. **Prioridade na multitarefa**  \n   Prioridade numérica: **menor número (0) = maior prioridade**; maior número = menor prioridade.\n\n3. **Multiusuário**  \n   O Windows 7 é multiusuário por suportar várias contas, mesmo que uma por vez; não confundir com múltiplas sessões simultâneas.\n\n4. **Contas**  \n   Por padrão, nova conta é **usuário padrão**; **Convidado vem desativada**. Não é possível excluir a única conta administrador ativa/logada.\n\n5. **Interface / Shell**  \n   É falso dizer que o Windows 7 “só funciona no ambiente gráfico”: ele permite modo texto via **Shell (Prompt de Comando/PowerShell)**. PowerShell é mais poderoso que o Prompt.\n\n---\n\n## 📋 Checklist Final\n\n* Memorizei que o **sistema de arquivos padrão/nativo do Windows 7 é o NTFS** e que o **FAT32 é apenas compatível**, limita arquivos a **4 GB** e **não suporta EFS**?\n* Sei que na **multitarefa preemptiva** do Windows 7 o **menor número de prioridade (tendendo a 0) indica maior prioridade**?\n* Fixei que **nova conta é criada como usuário padrão** e que a **conta Convidado vem desativada**, com ativação apenas por administrador?\n* Lembro que o **UAC** tem **4 níveis (desligado, baixo, médio, alto)** e que **níveis mais altos geram mais prompts**?\n* Diferencio **GUI (Windows Explorer, padrão, gráfico)** de **Shell (Prompt/PowerShell, linha de comando)** e sei que o **PowerShell é mais poderoso e flexível para automação que o Prompt**?",
+  "mapa_mental": "# 💻 Windows 7\n## 🎯 Conceitos Fundamentais\n### 💡 Sistema Operacional\n- Gerência hardware\n- Gerência programas\n- Recursos nativos\n- Multiusuário\n### 💡 Windows 7\n- Sistema Microsoft\n- Interface padrão GUI\n- Suporte Shell texto\n- Foco concursos\n### 💡 Interface Gráfica\n- Janelas ícones\n- Mouse cliques\n- Windows Explorer\n- Ambiente padrão\n### 💡 Shell Texto\n- Linha comando\n- Prompt Comando\n- PowerShell\n- Interpretação comandos\n### 💡 Multiusuário\n- Várias contas\n- Uso alternado\n- Perfis distintos\n- Configurações separadas\n\n## 👥 Contas e Segurança\n### 👤 Tipos de Conta\n- Administrador\n- Usuário padrão\n- Convidado desativado\n- Nova conta padrão\n### 🛡️ Privilégios Administrador\n- Criar remover contas\n- Ativar desativar UAC\n- Ativar desativar firewall\n- Alterar data hora\n### 🧩 Conta Convidado\n- Vem desativada\n- Privilégios mínimos\n- Ativação pelo admin\n- Uso eventual\n### 🧱 Boas Práticas Conta\n- Uso diário padrão\n- Evitar admin direto\n- Redução riscos\n- Menor impacto invasão\n### 🛡️ UAC Conceito\n- Controle contas usuário\n- Monitora alterações\n- Solicita autorização\n- Elevação privilégios\n### 🧱 Níveis UAC\n- Desligado\n- Baixo\n- Médio\n- Alto\n### 🚨 UAC Segurança\n- Nível alto mais avisos\n- Aviso sem ação suspeito\n- Indício malware\n- Reforço proteção\n\n## 💾 Sistemas de Arquivos\n### 💽 Conceito Geral\n- Organização dados\n- Estrutura lógica disco\n- Pastas arquivos\n- Suporte permissões\n### 💽 NTFS Características\n- Sistema padrão\n- Sistema nativo\n- Permissões avançadas\n- Menor fragmentação\n### 🔐 NTFS Recursos\n- Suporte EFS\n- Segurança granular\n- Grandes arquivos\n- Limites elevados\n### 💿 FAT32 Características\n- Sistema compatível\n- Não padrão\n- Segurança limitada\n- Maior fragmentação\n### 🔢 FAT32 Limitações\n- Arquivo máximo 4GB\n- Sem EFS\n- Menos recursos\n- Uso pendrives\n### ⚖️ NTFS vs FAT32\n- NTFS mais seguro\n- NTFS mais moderno\n- FAT32 mais simples\n- Escolha provas NTFS\n\n## ⚙️ Funcionamento e Interface\n### 🔄 Multitarefa Preemptiva\n- Várias tarefas\n- Escalonamento automático\n- Interrupção tarefas\n- Preserva críticas\n### 🔢 Prioridades Tarefas\n- Número menor maior\n- Próximo zero alta\n- Número maior menor\n- Ordem execução\n### 🖥️ Ambiente Gráfico\n- Uso intuitivo\n- Ícones janelas\n- Operação mouse\n- Padrão usuário\n### ⌨️ Ambiente Shell\n- Comandos digitados\n- Prompt básico\n- PowerShell avançado\n- Automação scripts\n### 🧩 Prompt vs PowerShell\n- Ambos Shell\n- PowerShell mais poderoso\n- Mais comandos\n- Mais recursos",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Edições do Windows 7",
+      "description": "Edições do Windows 7 — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual edição do Windows 7 era a mais básica?",
+          "back": "Starter",
+          "hint": "É a versão de entrada",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "edicoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual edição do Windows 7 reunia todos os recursos disponíveis?",
+          "back": "Ultimate",
+          "hint": "Contém todos os recursos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "edicoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual edição do Windows 7 acrescentava recursos voltados ao ambiente corporativo?",
+          "back": "Professional",
+          "hint": "Foco em ambiente de trabalho",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "edicoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Quais eram as edições intermediárias do Windows 7 entre Starter e Ultimate?",
+          "back": "Home Basic e Home Premium",
+          "hint": "São duas edições",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "edicoes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Sistemas de Arquivos",
+      "description": "Sistemas de Arquivos — 6 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual sistema de arquivos era usado por padrão no Windows 7?",
+          "back": "NTFS",
+          "hint": "Sigla de New Technology File System",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual sistema de arquivos podia ser escolhido como alternativa no Windows 7?",
+          "back": "FAT32",
+          "hint": "Legado de sistemas anteriores",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é o tamanho máximo de um arquivo no sistema FAT32?",
+          "back": "4 GB",
+          "hint": "Limite de tamanho de arquivo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual sistema de arquivos apresenta maior fragmentação de dados?",
+          "back": "FAT32, devido ao tamanho e à alocação de espaços em pequenos pedaços no disco rígido",
+          "hint": "Relacionado à alocação de blocos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "arquivos"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual recurso de segurança não fica disponível ao escolher FAT32?",
+          "back": "Criptografia",
+          "hint": "Recurso de proteção de dados",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "seguranca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "O que é um sistema de arquivos?",
+          "back": "Conjunto de estruturas lógicas que permite ao sistema operacional ter acesso e controlar os dados gravados no disco",
+          "hint": "Estrutura lógica de controle",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "conceitos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Recursos do Sistema",
+      "description": "Recursos do Sistema — 7 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Qual é a função principal de um sistema operacional?",
+          "back": "Gerenciar a máquina, tanto a parte física quanto os demais programas",
+          "hint": "Intermediário entre usuário e hardware",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Que tipo de programas acompanha nativamente o Windows 7?",
+          "back": "Programas nativos",
+          "hint": "Termo genérico para softwares nativos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "software"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "O que caracteriza um sistema operacional multitarefa?",
+          "back": "Capacidade de executar várias tarefas ao mesmo tempo",
+          "hint": "Concorrência de processos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "O que caracteriza a multitarefa preemptiva?",
+          "back": "Capacidade operacional de separar as tarefas executadas de acordo com a sua prioridade",
+          "hint": "Gestão de prioridades pelo SO",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Na escala de prioridades, qual número representa a maior prioridade?",
+          "back": "0",
+          "hint": "É o valor numérico mínimo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "processos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Como a prioridade se comporta quando o número associado à tarefa aumenta?",
+          "back": "A prioridade diminui quando o número aumenta",
+          "hint": "Relação inversamente proporcional",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "processos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Como a maioria dos autores conceitua um sistema multiusuário?",
+          "back": "Capacidade de ter várias contas de usuário cadastradas no sistema",
+          "hint": "Gestão de identidades",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "usuarios"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Contas e Segurança",
+      "description": "Contas e Segurança — 7 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "Qual tipo de conta do Windows 7 possui mais privilégios?",
+          "back": "Administrador",
+          "hint": "Poder total sobre o sistema",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "usuarios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual tipo de conta do Windows 7 é criado por padrão?",
+          "back": "Usuário padrão",
+          "hint": "Nível de acesso padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "usuarios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Quem pode ativar a conta de convidado no Windows 7?",
+          "back": "Administrador",
+          "hint": "Quem gerencia permissões?",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "usuarios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual tipo de conta deve ser usado preferencialmente nas tarefas diárias?",
+          "back": "Usuário padrão",
+          "hint": "Recomendação de segurança",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "usuarios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual conta possui o menor nível de privilégios no Windows 7?",
+          "back": "Convidado",
+          "hint": "Acesso extremamente limitado",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "usuarios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual é a finalidade do Controle de Contas de Usuário?",
+          "back": "Emitir avisos ao tentar alterar configurações ou instalar programas no sistema",
+          "hint": "Mecanismo de proteção contra alterações",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "seguranca"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-24",
+          "front": "Quantos níveis de alerta possui o Controle de Contas de Usuário?",
+          "back": "4",
+          "hint": "Quantidade de níveis",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "seguranca"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Interface e Comandos",
+      "description": "Interface e Comandos — 4 cards",
+      "cards": [
+        {
+          "id": "card-25",
+          "front": "Em qual ambiente o Windows 7 opera por padrão?",
+          "back": "Ambiente gráfico",
+          "hint": "Interface visual",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-26",
+          "front": "Como é chamado o ambiente não gráfico baseado na digitação de comandos?",
+          "back": "Modo texto",
+          "hint": "Interface baseada em caracteres",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-27",
+          "front": "O que é um shell?",
+          "back": "Classe de programas cujo objetivo é interpretar comandos",
+          "hint": "Interpretador de comandos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "interface"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-28",
+          "front": "Qual comando exibe o conteúdo de um diretório no Prompt de Comando?",
+          "back": "DIR",
+          "hint": "Comando de listagem",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-7",
+            "comandos"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o sistema de arquivos padrão utilizado pelo Windows 7?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "HFS+",
+          "correct": false,
+          "explanation": "Incorreta. O HFS+ (Hierarchical File System Plus) é o sistema de arquivos primário utilizado pelo macOS (anteriormente Mac OS X) da Apple. Ele não é utilizado nativamente pelo Windows 7."
+        },
+        {
+          "id": "b",
+          "text": "NTFS",
+          "correct": true,
+          "explanation": "Correta. O NTFS (New Technology File System) é o sistema de arquivos padrão e mais avançado utilizado pelo Windows 7. Ele oferece recursos como segurança aprimorada através de permissões de arquivo e pasta, suporte a arquivos de grande tamanho, tolerância a falhas, compactação e criptografia de arquivos, além de ser mais eficiente no uso do espaço em disco em comparação com sistemas de arquivos mais antigos."
+        },
+        {
+          "id": "c",
+          "text": "FAT32",
+          "correct": false,
+          "explanation": "Incorreta. Embora o FAT32 (File Allocation Table 32) possa ser utilizado em unidades formatadas no Windows 7, ele não é o sistema de arquivos padrão. O FAT32 é um sistema de arquivos mais antigo, com limitações significativas, como o tamanho máximo de arquivo de 4 GB e o tamanho máximo de partição de 2 TB, além de não oferecer os mesmos recursos de segurança e tolerância a falhas do NTFS."
+        },
+        {
+          "id": "d",
+          "text": "EXT4",
+          "correct": false,
+          "explanation": "Incorreta. O EXT4 (Fourth Extended Filesystem) é o sistema de arquivos padrão para muitas distribuições do sistema operacional Linux. Ele não é utilizado nativamente pelo Windows 7."
+        }
+      ],
+      "explanation": "Correta. O NTFS (New Technology File System) é o sistema de arquivos padrão e mais avançado utilizado pelo Windows 7. Ele oferece recursos como segurança aprimorada através de permissões de arquivo e pasta, suporte a arquivos de grande tamanho, tolerância a falhas, compactação e criptografia de arquivos, além de ser mais eficiente no uso do espaço em disco em comparação com sistemas de arquivos mais antigos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual tipo de conta de usuário vem selecionado por padrão ao criar uma nova conta no Windows 7?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Administrador",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja possível criar uma conta de administrador, ela não é a opção padrão ao adicionar um novo usuário. A conta de administrador possui controle total sobre o sistema, podendo instalar software, alterar configurações do sistema, criar e excluir outras contas de usuário, entre outras ações. Por questões de segurança, é aconselhável usar uma conta de usuário padrão para as tarefas diárias e a conta de administrador apenas quando necessário."
+        },
+        {
+          "id": "b",
+          "text": "Convidado",
+          "correct": false,
+          "explanation": "Incorreta. A conta de convidado é uma conta de usuário altamente restrita, destinada a acesso temporário, e geralmente vem desativada por padrão no Windows 7. Ela não permite a instalação de programas, alteração de configurações do sistema ou acesso a arquivos pessoais de outros usuários. Além disso, ela não é a opção padrão para criação de novas contas."
+        },
+        {
+          "id": "c",
+          "text": "Usuário Padrão",
+          "correct": true,
+          "explanation": "Correta. Ao criar uma nova conta de usuário no Windows 7, a opção \"Usuário Padrão\" é selecionada por padrão. Esta configuração é uma medida de segurança recomendada, pois limita as ações que o usuário pode realizar, como instalar programas, alterar configurações críticas do sistema ou acessar arquivos de outros usuários, sem a necessidade de uma senha de administrador. Isso ajuda a proteger o sistema contra softwares maliciosos e alterações indesejadas."
+        },
+        {
+          "id": "d",
+          "text": "Usuário Avançado",
+          "correct": false,
+          "explanation": "Incorreta. Não existe um tipo de conta de usuário chamado \"Usuário Avançado\" no Windows 7. Os tipos principais de contas de usuário são Administrador, Usuário Padrão e Convidado."
+        }
+      ],
+      "explanation": "Correta. Ao criar uma nova conta de usuário no Windows 7, a opção \"Usuário Padrão\" é selecionada por padrão. Esta configuração é uma medida de segurança recomendada, pois limita as ações que o usuário pode realizar, como instalar programas, alterar configurações críticas do sistema ou acessar arquivos de outros usuários, sem a necessidade de uma senha de administrador. Isso ajuda a proteger o sistema contra softwares maliciosos e alterações indesejadas.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual recurso do Windows 7 tem como objetivo filtrar conexões indevidas que chegam e saem da máquina?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Firewall",
+          "correct": true,
+          "explanation": "Correta. O Firewall do Windows 7 é um componente de segurança que monitora e controla o tráfego de rede de entrada e saída, com base em regras de segurança predefinidas ou configuradas pelo usuário. Seu principal objetivo é proteger o sistema contra acessos não autorizados e softwares maliciosos, bloqueando conexões que não atendam aos critérios de segurança."
+        },
+        {
+          "id": "b",
+          "text": "BitLocker",
+          "correct": false,
+          "explanation": "Incorreta. O BitLocker é um recurso de criptografia de disco completo disponível em algumas edições do Windows 7 (Ultimate e Enterprise). Sua função é proteger os dados armazenados no disco rígido, criptografando todo o volume, impedindo o acesso não autorizado mesmo que o computador seja perdido ou roubado. Ele não filtra conexões de rede."
+        },
+        {
+          "id": "c",
+          "text": "Windows Update",
+          "correct": false,
+          "explanation": "Incorreta. O Windows Update é um serviço que fornece atualizações de software para o sistema operacional Windows e outros componentes da Microsoft. Seu objetivo é manter o sistema seguro e atualizado, corrigindo vulnerabilidades e adicionando novos recursos, mas não atua como um filtro de conexões de rede."
+        },
+        {
+          "id": "d",
+          "text": "Windows Defender",
+          "correct": false,
+          "explanation": "Incorreta. O Windows Defender no Windows 7 é um software antimalware (antispyware) que detecta e remove programas espiões e outros softwares indesejados. Embora seja uma ferramenta de segurança, sua função principal não é filtrar conexões de rede, mas sim proteger contra ameaças de software. Em versões mais recentes do Windows, o Windows Defender evoluiu para o Windows Security, que integra diversas funções de segurança, incluindo antivírus e firewall."
+        }
+      ],
+      "explanation": "Correta. O Firewall do Windows 7 é um componente de segurança que monitora e controla o tráfego de rede de entrada e saída, com base em regras de segurança predefinidas ou configuradas pelo usuário. Seu principal objetivo é proteger o sistema contra acessos não autorizados e softwares maliciosos, bloqueando conexões que não atendam aos critérios de segurança.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é o ambiente de interação padrão do Windows 7?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Linha de comando",
+          "correct": false,
+          "explanation": "Incorreta. A linha de comando (como o Prompt de Comando ou PowerShell) é uma forma de interagir com o sistema operacional digitando comandos de texto. Embora o Windows 7 possua e suporte a linha de comando para tarefas específicas e usuários avançados, ela não é o ambiente de interação padrão para o uso diário."
+        },
+        {
+          "id": "b",
+          "text": "Shell script",
+          "correct": false,
+          "explanation": "Incorreta. Um \"shell script\" é um programa ou roteiro (script) escrito para ser executado por um interpretador de linha de comando (shell). Embora o Windows 7 suporte a execução de scripts (como arquivos .bat ou scripts PowerShell), um shell script é uma ferramenta para automatização de tarefas, não um ambiente de interação padrão do usuário."
+        },
+        {
+          "id": "c",
+          "text": "Modo texto",
+          "correct": false,
+          "explanation": "Incorreta. O modo texto refere-se a interfaces que exibem apenas caracteres de texto, sem elementos gráficos como imagens ou janelas. Sistemas operacionais mais antigos ou ambientes de recuperação podem operar em modo texto, mas o Windows 7, por padrão, opera em modo gráfico."
+        },
+        {
+          "id": "d",
+          "text": "Interface gráfica (GUI)",
+          "correct": true,
+          "explanation": "Correta. O Windows 7, como a maioria dos sistemas operacionais modernos para usuários finais, utiliza uma interface gráfica (GUI - Graphical User Interface) como seu ambiente de interação padrão. Isso significa que os usuários interagem com o sistema por meio de elementos visuais como ícones, janelas, menus e botões, usando um mouse e teclado, o que torna o sistema mais intuitivo e fácil de usar."
+        }
+      ],
+      "explanation": "Correta. O Windows 7, como a maioria dos sistemas operacionais modernos para usuários finais, utiliza uma interface gráfica (GUI - Graphical User Interface) como seu ambiente de interação padrão. Isso significa que os usuários interagem com o sistema por meio de elementos visuais como ícones, janelas, menus e botões, usando um mouse e teclado, o que torna o sistema mais intuitivo e fácil de usar.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual característica do Windows 7 permite executar várias tarefas simultaneamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multitarefa",
+          "correct": true,
+          "explanation": "Correta. A multitarefa é a característica do sistema operacional que permite a execução aparente de várias tarefas ou programas ao mesmo tempo. O Windows 7 é um sistema operacional multitarefa, o que significa que ele pode alternar rapidamente entre diferentes processos e programas, dando a impressão de que todos estão sendo executados simultaneamente, mesmo em um processador de núcleo único. Isso é fundamental para a produtividade do usuário, que pode, por exemplo, navegar na internet enquanto ouve música e edita um documento."
+        },
+        {
+          "id": "b",
+          "text": "Multiprogramação",
+          "correct": false,
+          "explanation": "Incorreta. Multiprogramação é um conceito mais antigo em sistemas operacionais que se refere à capacidade de manter múltiplos programas na memória principal ao mesmo tempo, alternando entre eles para maximizar a utilização da CPU. É um precursor da multitarefa e está mais relacionado à gestão de recursos da CPU em um contexto de tempo compartilhado, mas o termo mais abrangente e adequado para a execução simultânea de várias tarefas pelo usuário é \"multitarefa\"."
+        },
+        {
+          "id": "c",
+          "text": "Multiprocessamento",
+          "correct": false,
+          "explanation": "Incorreta. O multiprocessamento refere-se à capacidade de um sistema de usar múltiplos processadores (CPUs) ou núcleos de processador para executar tarefas em paralelo. Embora o Windows 7 suporte multiprocessamento, essa é uma característica de hardware e do sistema operacional em gerenciar esse hardware, e não a característica geral que permite a execução simultânea de várias tarefas do ponto de vista do usuário. A multitarefa pode ocorrer mesmo em sistemas com um único processador."
+        },
+        {
+          "id": "d",
+          "text": "Multithreading",
+          "correct": false,
+          "explanation": "Incorreta. Multithreading é a capacidade de um único processo ou programa de executar várias partes de seu código (threads) simultaneamente ou em paralelo. É uma forma de paralelismo dentro de um único aplicativo, não a capacidade do sistema operacional de executar vários programas diferentes. Embora o Windows 7 suporte multithreading em aplicativos, não é a característica que descreve a execução de \"várias tarefas\" (programas) pelo sistema."
+        }
+      ],
+      "explanation": "Correta. A multitarefa é a característica do sistema operacional que permite a execução aparente de várias tarefas ou programas ao mesmo tempo. O Windows 7 é um sistema operacional multitarefa, o que significa que ele pode alternar rapidamente entre diferentes processos e programas, dando a impressão de que todos estão sendo executados simultaneamente, mesmo em um processador de núcleo único. Isso é fundamental para a produtividade do usuário, que pode, por exemplo, navegar na internet enquanto ouve música e edita um documento.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a limitação do sistema de arquivos FAT32 em relação ao tamanho máximo de cada arquivo individual?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2 GB",
+          "correct": false,
+          "explanation": "Incorreta. A limitação de 2 GB é incorreta para o sistema de arquivos FAT32. Embora existam sistemas de arquivos mais antigos com restrições de tamanho de arquivo menores, o FAT32 especificamente permite arquivos de até 4 GB."
+        },
+        {
+          "id": "b",
+          "text": "4 GB",
+          "correct": true,
+          "explanation": "Correta. O sistema de arquivos FAT32 possui uma limitação intrínseca que impede que qualquer arquivo individual exceda 4 GB de tamanho. Essa característica é uma das principais razões para a sua substituição por sistemas de arquivos mais modernos, como o NTFS, em discos rígidos de computadores atuais."
+        },
+        {
+          "id": "c",
+          "text": "8 GB",
+          "correct": false,
+          "explanation": "Incorreta. O limite de 8 GB é incorreto para o sistema de arquivos FAT32. Este valor excede a capacidade máxima de um único arquivo que pode ser armazenado em um volume formatado com FAT32."
+        },
+        {
+          "id": "d",
+          "text": "16 GB",
+          "correct": false,
+          "explanation": "Incorreta. A limitação de 16 GB é incorreta para o sistema de arquivos FAT32. Arquivos com esse tamanho não podem ser armazenados individualmente em partições FAT32 devido às suas restrições arquitetônicas."
+        }
+      ],
+      "explanation": "Correta. O sistema de arquivos FAT32 possui uma limitação intrínseca que impede que qualquer arquivo individual exceda 4 GB de tamanho. Essa característica é uma das principais razões para a sua substituição por sistemas de arquivos mais modernos, como o NTFS, em discos rígidos de computadores atuais.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual recurso de segurança do Windows 7 emite avisos quando o usuário tenta realizar alterações no sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Windows Defender",
+          "correct": false,
+          "explanation": "Incorreta. O Windows Defender (atualmente Microsoft Defender Antivirus) é um programa antivírus e antimalware. Sua função principal é detectar, prevenir e remover softwares maliciosos, não emitir avisos para alterações legítimas ou intencionais do usuário no sistema."
+        },
+        {
+          "id": "b",
+          "text": "BitLocker",
+          "correct": false,
+          "explanation": "Incorreta. O BitLocker é uma funcionalidade de criptografia de disco completo, projetada para proteger os dados armazenados em volumes de disco, criptografando-os. Sua finalidade é a proteção da confidencialidade dos dados, não a emissão de avisos sobre alterações nas configurações do sistema."
+        },
+        {
+          "id": "c",
+          "text": "UAC (Controle de Contas de Usuário)",
+          "correct": true,
+          "explanation": "Correta. O Controle de Contas de Usuário (UAC - User Account Control) é um recurso de segurança do Windows 7 que solicita permissão ao usuário (ou uma senha de administrador) antes de permitir que programas ou o próprio usuário realizem alterações que possam afetar a segurança do sistema. Ele serve como uma barreira para impedir ações não autorizadas ou acidentais que possam comprometer a integridade do sistema operacional."
+        },
+        {
+          "id": "d",
+          "text": "Windows Firewall",
+          "correct": false,
+          "explanation": "Incorreta. O Windows Firewall é um componente de segurança que monitora e controla o tráfego de rede de entrada e saída, protegendo o computador contra acessos não autorizados e ataques externos. Ele não está diretamente envolvido na emissão de avisos para alterações internas do sistema feitas pelo usuário."
+        }
+      ],
+      "explanation": "Correta. O Controle de Contas de Usuário (UAC - User Account Control) é um recurso de segurança do Windows 7 que solicita permissão ao usuário (ou uma senha de administrador) antes de permitir que programas ou o próprio usuário realizem alterações que possam afetar a segurança do sistema. Ele serve como uma barreira para impedir ações não autorizadas ou acidentais que possam comprometer a integridade do sistema operacional.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual Shell do Windows 7 é considerado mais poderoso e aceita mais comandos, incluindo alguns oriundos do Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Command Shell",
+          "correct": false,
+          "explanation": "Incorreta. \"Command Shell\" é um termo genérico para qualquer interface de linha de comando. No contexto do Windows 7, o Prompt de Comando seria um exemplo, mas não é o shell mais poderoso ou que aceita comandos oriundos do Linux de forma nativa como o PowerShell."
+        },
+        {
+          "id": "b",
+          "text": "Bash Shell",
+          "correct": false,
+          "explanation": "Incorreta. O Bash Shell (Bourne Again SHell) é o shell padrão em muitos sistemas operacionais baseados em Unix e Linux. Ele não é um shell nativo do Windows 7. Embora o Windows Subsystem for Linux (WSL) permita a execução de ambientes Linux, incluindo Bash, em versões mais recentes do Windows, isso não se aplica nativamente ao Windows 7."
+        },
+        {
+          "id": "c",
+          "text": "Prompt de Comando",
+          "correct": false,
+          "explanation": "Incorreta. O Prompt de Comando (cmd.exe) é o interpretador de linha de comando clássico do Windows, com um conjunto de comandos mais limitado e menos recursos de automação e integração com o sistema em comparação com o PowerShell. Ele não é considerado o shell mais poderoso do Windows 7."
+        },
+        {
+          "id": "d",
+          "text": "PowerShell",
+          "correct": true,
+          "explanation": "Correta. O PowerShell é um ambiente de linha de comando e linguagem de script mais avançado que o Prompt de Comando tradicional do Windows. Ele oferece acesso a uma gama muito maior de funcionalidades do sistema operacional e permite a automação de tarefas complexas, além de possuir uma sintaxe que incorpora conceitos e comandos semelhantes aos encontrados em sistemas baseados em Linux, tornando-o mais versátil para administradores de sistemas."
+        }
+      ],
+      "explanation": "Correta. O PowerShell é um ambiente de linha de comando e linguagem de script mais avançado que o Prompt de Comando tradicional do Windows. Ele oferece acesso a uma gama muito maior de funcionalidades do sistema operacional e permite a automação de tarefas complexas, além de possuir uma sintaxe que incorpora conceitos e comandos semelhantes aos encontrados em sistemas baseados em Linux, tornando-o mais versátil para administradores de sistemas.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual comando é utilizado no Prompt de Comando do Windows 7 para visualizar o conteúdo de um diretório?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "DIR",
+          "correct": true,
+          "explanation": "Correta. O comando `DIR` (abreviação de \"directory\") é o comando padrão e mais comum no Prompt de Comando do Windows 7 (e em versões anteriores do MS-DOS e Windows) para listar o conteúdo de um diretório, exibindo arquivos e subdiretórios presentes na localização atual ou especificada."
+        },
+        {
+          "id": "b",
+          "text": "CD",
+          "correct": false,
+          "explanation": "Incorreta. O comando `CD` (abreviação de \"Change Directory\") é usado para mudar o diretório de trabalho atual. Por exemplo, `CD C:\\Usuarios` alteraria o diretório atual para a pasta \"Usuarios\" na unidade C, mas não lista seu conteúdo."
+        },
+        {
+          "id": "c",
+          "text": "DEL",
+          "correct": false,
+          "explanation": "Incorreta. O comando `DEL` (abreviação de \"Delete\") é usado para excluir um ou mais arquivos de um diretório. Sua função é de remoção, e não de visualização do conteúdo."
+        },
+        {
+          "id": "d",
+          "text": "MKDIR",
+          "correct": false,
+          "explanation": "Incorreta. O comando `MKDIR` (ou `MD`, abreviação de \"Make Directory\") é utilizado para criar um novo diretório (pasta) no sistema de arquivos. Ele não tem a função de visualizar o conteúdo de um diretório existente."
+        }
+      ],
+      "explanation": "Correta. O comando `DIR` (abreviação de \"directory\") é o comando padrão e mais comum no Prompt de Comando do Windows 7 (e em versões anteriores do MS-DOS e Windows) para listar o conteúdo de um diretório, exibindo arquivos e subdiretórios presentes na localização atual ou especificada.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Por que a Microsoft recomenda o uso de conta de Usuário Padrão em vez de Administrador no dia a dia?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Para economizar recursos do sistema e melhorar o desempenho geral",
+          "correct": false,
+          "explanation": "Incorreta. O tipo de conta de usuário (padrão ou administrador) não tem um impacto perceptível na economia de recursos do sistema ou na melhoria do desempenho geral. O desempenho é mais influenciado pelo hardware, software em execução e otimização do sistema."
+        },
+        {
+          "id": "b",
+          "text": "Para limitar os privilégios disponíveis em caso de invasão do sistema, reduzindo potenciais danos",
+          "correct": true,
+          "explanation": "Correta. A Microsoft recomenda o uso de uma conta de Usuário Padrão no dia a dia como uma medida de segurança. Ao operar com privilégios limitados, o potencial de dano causado por malware, vírus ou erros acidentais do usuário é significativamente reduzido. Se o sistema for comprometido, o software malicioso terá suas ações restritas às permissões da conta padrão, impedindo alterações críticas no sistema operacional ou o acesso a dados sensíveis de outros usuários, um conceito conhecido como \"princípio do privilégio mínimo\"."
+        },
+        {
+          "id": "c",
+          "text": "Para facilitar o gerenciamento de múltiplos usuários na mesma máquina",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Windows permita a criação de múltiplas contas de usuário, a escolha entre conta padrão e administrador não facilita intrinsecamente o gerenciamento de múltiplos usuários. Na verdade, tarefas de gerenciamento de usuários (como criar, excluir ou modificar contas) geralmente exigem privilégios de administrador."
+        },
+        {
+          "id": "d",
+          "text": "Para permitir atualizações automáticas sem intervenção do usuário",
+          "correct": false,
+          "explanation": "Incorreta. As atualizações automáticas do sistema operacional são executadas por serviços do Windows que operam com privilégios elevados, independentemente do tipo de conta que o usuário está utilizando. O uso de uma conta padrão não é um requisito para que as atualizações automáticas funcionem."
+        }
+      ],
+      "explanation": "Correta. A Microsoft recomenda o uso de uma conta de Usuário Padrão no dia a dia como uma medida de segurança. Ao operar com privilégios limitados, o potencial de dano causado por malware, vírus ou erros acidentais do usuário é significativamente reduzido. Se o sistema for comprometido, o software malicioso terá suas ações restritas às permissões da conta padrão, impedindo alterações críticas no sistema operacional ou o acesso a dados sensíveis de outros usuários, um conceito conhecido como \"princípio do privilégio mínimo\".",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "01_325359_Windows 7.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:55:55"
+}

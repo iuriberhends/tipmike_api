@@ -1,0 +1,323 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 15,
+  "ordem_no_curso": "77.00",
+  "titulo": "Probabilidade II",
+  "codigo_aula": "196858",
+  "video_id": "eV/90gMgxkI=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:34:56",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/eV%2F90gMgxkI%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=404275%2C425322&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Probabilidade II\n\n## Introdução ao Exercício da Urna\nVamos continuar aqui comigo. Nessa parte dois, eu trouxe exemplos. Olha só, vamos fazer assim: está aqui um exemplo.\n\nPensem numa urna qualquer que possui 20 bolas numeradas de 1 a 20. Beleza? Então a urna possui 20 bolas numeradas de 1 a 20.\n\nPrimeira pergunta: ao sortear uma bola dessa urna, vamos avaliar as perguntinhas.\n\n- Letra A: qual a probabilidade de sair um número múltiplo de 2?\n- Letra B: qual a probabilidade de sair um número múltiplo de 3?\n- Letra C: qual a probabilidade de sair um número múltiplo de 2 ou de 3?\n\nO primeiro passo é o seguinte: a pergunta fala “possui 20 bolas numeradas de 1 a 20”. Nessa urna, qual a probabilidade, qual a chance de sair:\n- um múltiplo de 2,\n- depois um múltiplo de 3,\n- depois um múltiplo de 2 ou de 3?\n\nComo é que respondemos essas três? Nós queremos probabilidades. Embaixo, sempre vai o espaço amostral, tudo o que nós temos, nosso universo. Colocamos embaixo tudo que importa para a questão.\n\n## Reconhecendo a Estrutura (Múltiplos e Diagrama)\nPercebam: eu falei muito de 2 e falei de 3, e depois de “múltiplo de 2 ou 3”. Então, atenção: aqui cabe um diagrama de Venn.\n\nPrimeiro passo: a urna tem bolas numeradas de 1 a 20, correto? Em 1 a 20 eu posso ter:\n- bolas numeradas com múltiplos de 2,\n- bolas numeradas com múltiplos de 3,\n- e posso ter bolas que são múltiplos de 2 e 3 ao mesmo tempo,\n- e também posso ter bolas que não são múltiplos nem de 2 nem de 3.\n\nQuando há algo em comum, eu gosto muito de diagrama, porque qualquer pergunta que você fizer, o diagrama me ajuda a responder. Muitas vezes questões escondem relações, e o diagrama faz aparecer.\n\nEntão vamos montar o diagrama com o universo {1, 2, ..., 20}.\n\n- De 1 a 20, quantos são múltiplos de 2? Contando de 2 em 2: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. Temos 10 múltiplos de 2.\n- De 1 a 20, quantos são múltiplos de 3? 3, 6, 9, 12, 15, 18. Temos 6 múltiplos de 3.\n- Quem são múltiplos de 2 e de 3 ao mesmo tempo? São os múltiplos de 6 (pois 2 e 3 são primos entre si): 6, 12, 18. São 3.\n\nLogo, no diagrama:\n- Interseção (2 ∩ 3): 3 elementos (6, 12, 18).\n- Apenas múltiplos de 2: total de 10 menos os 3 da interseção = 7.\n- Apenas múltiplos de 3: total de 6 menos os 3 da interseção = 3.\n- Fora dos dois conjuntos (nem de 2 nem de 3): do total 20, já temos 7 + 3 + 3 = 13 dentro; então restam 7 fora.\n\nAgora, com o diagrama pronto, podemos responder qualquer pergunta:\n- ser múltiplo de 2,\n- ser múltiplo de 3,\n- ser múltiplo de 2 e 3,\n- ser múltiplo de 2 ou 3,\n- não ser múltiplo de 2,\n- não ser múltiplo de 3,\n- apenas múltiplo de 2,\n- apenas múltiplo de 3,\ne assim por diante.\n\n## Resolvendo as Primeiras Perguntas\nPrimeira pergunta (Letra A): probabilidade de sair um múltiplo de 2.\n- Espaço amostral: 20 bolas.\n- Favoráveis: múltiplos de 2 = 10.\n- Probabilidade = 10/20 = 1/2. Se quiser em porcentagem: 50%.\n\nSegunda pergunta (Letra B): probabilidade de sair um múltiplo de 3.\n- Espaço amostral: 20.\n- Favoráveis: múltiplos de 3 = 6.\n- Probabilidade = 6/20 = 3/10 = 30%.\n\nTerceira pergunta (Letra C): probabilidade de sair múltiplo de 2 ou de 3.\nAtenção ao “ou”. “Ou” aqui é união, e já vimos que há interseção. Não podemos somar 10 + 6 diretamente, pois contaríamos a interseção duas vezes. No diagrama, a união é:\n- 7 (apenas 2) + 3 (interseção) + 3 (apenas 3) = 13.\n- Probabilidade = 13/20 = 65%.\n\n> 🎯 **Dicas de prova:** Quando aparecer “ou” e houver interseção entre os conjuntos, use N(A ∪ B) = N(A) + N(B) − N(A ∩ B). Se não houver nada em comum (eventos disjuntos), aí sim a soma direta funciona.\n\nPara comparar: probabilidade de sair par ou ímpar é soma direta, porque não há interseção entre “par” e “ímpar”. Já “múltiplo de 2 ou de 3” tem interseção (múltiplos de 6), então a união precisa do ajuste.\n\n## Perguntas com Negação (Não múltiplo de 2, não múltiplo de 3)\nAgora vamos às perguntas com “não”.\n\nProbabilidade de NÃO ser múltiplo de 2:\n- Do diagrama, quem não é múltiplo de 2? Os 3 (apenas 3) e os 7 (fora dos dois). Total 3 + 7 = 10.\n- Probabilidade = 10/20 = 1/2 = 50%.\n\nProbabilidade de NÃO ser múltiplo de 3:\n- Quem não é múltiplo de 3? Os 7 (apenas 2) e os 7 (fora). Total 7 + 7 = 14.\n- Probabilidade = 14/20 = 7/10 = 70%.\n\n## “Apenas”, “Somente”, “Exclusivamente”\nPalavras como “apenas”, “somente”, “exclusivamente” trazem restrição.\n\nProbabilidade de ser APENAS múltiplo de 2:\n- Favoráveis: a região “apenas 2” do diagrama = 7.\n- Probabilidade = 7/20.\n\nProbabilidade de ser APENAS múltiplo de 3:\n- Favoráveis: a região “apenas 3” = 3.\n- Probabilidade = 3/20.\n\n> 🎯 **Dicas de prova:** “Apenas/somente/exclusivamente” exclui a interseção. Não confunda com “ou” inclusivo (união), que inclui a interseção.\n\n## Observação sobre Soma vs União\nSe a pergunta for algo como: “quantas pessoas são técnicos ou jornalistas?”, e não há sobreposição (ex.: grupos distintos), você soma diretamente. Mas quando há interseção (como múltiplos de 2 e de 3), você usa a fórmula da união. Essa diferença cai bastante.\n\n## Probabilidade Condicional (Introdução)\nAgora, vamos dar uma voltinha legal: probabilidade condicional.\n\nConsiderando que a bola retirada é múltiplo de 2, qual a probabilidade de ela possuir também número múltiplo de 3?\n\nEssa é a ideia do “considerando que”, “sabendo que”, “dado que”. Isso restringe o universo. O primeiro passo em probabilidade é sempre identificar o espaço amostral. Aqui, a condição “é múltiplo de 2” restringe o universo aos múltiplos de 2.\n\n- Universo original: 20 bolas.\n- Condição: “é múltiplo de 2”. Novo espaço amostral = apenas os múltiplos de 2 (10 elementos: 7 apenas-2 + 3 interseção).\n- Evento de interesse: “também múltiplo de 3” dentro desse novo universo. Ou seja, os múltiplos de 6 (a interseção), que são 3.\n\nProbabilidade condicional:\n- Favoráveis (dentro do universo restrito): 3.\n- Universo restrito: 10.\n- P = 3/10 = 30%.\n\n> 🎯 **Dicas de prova:** Palavras como “considerando que”, “sabendo que”, “dado que” indicam probabilidade condicional. Ajuste o denominador para o tamanho do conjunto condicionado (o novo espaço amostral).\n\n## Encerramento do Bloco\nEntão, resumindo o que trabalhamos nesse momento:\n- Evento múltiplo de 2, evento múltiplo de 3.\n- Interseção = múltiplos de 6.\n- União para “ou”.\n- Negação para “não”.\n- “Apenas/somente/exclusivamente” exclui a interseção.\n- Probabilidade condicional: restrinja o universo à condição.\n\nNos próximos blocos, vamos para aplicações, questões de concursos, treinamentos e desafios. Daqui a pouco eu volto.",
+  "transcricao_meta": {
+    "title": "Probabilidade II",
+    "subject": "Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30669,
+    "createdAt": "2026-02-05T20:10:10.738Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: probabilidade com conjuntos (união, interseção, complemento), contagem via diagrama de Venn, “ou” inclusivo vs exclusivo e probabilidade condicional (restrição do espaço amostral).\nPrincipais pontos:\n- A) Organizar casos com Venn e usar inclusão-exclusão.\n- B) Ler corretamente “apenas/somente/exclusivamente” e “ou”.\n- C) Em condicional, mudar o denominador: P(B|A) = |A ∩ B| / |A|.\n\n## 1. Base / Conceitos Fundamentais\n- **Universo (Ω)**: conjunto de todos os resultados possíveis. Ex.: 20 bolas numeradas de 1 a 20.\n- **Evento**: subconjunto de Ω. Ex.: “múltiplo de 2”.\n- **Probabilidade**: P(E) = casos favoráveis / casos possíveis (no universo considerado).\n- **União (A ∪ B)**: “A ou B” (ou inclusivo).\n- **Interseção (A ∩ B)**: “A e B”.\n- **Complemento (Ā)**: “não A”.\n- **Probabilidade condicional**: P(B|A) = |A ∩ B| / |A|. A condição restringe o universo aos casos de A.\n\n> Dica de prova: Em RLM, “ou” é normalmente inclusivo. Só trate como exclusivo se o enunciado deixar isso explícito.\n\n## 2. Como Funciona / Distinções\n- **“Ou” inclusivo vs exclusivo**:\n  - Inclusivo: A ou B ou ambos (usa união com subtração da interseção).\n  - Exclusivo: A ou B, mas não ambos (usa “apenas A” + “apenas B”).\n- **“Apenas/Somente/Exclusivamente A”**: elementos de A que não estão em B → |A| − |A ∩ B|.\n- **Quando somar direto?**\n  - Se A ∩ B = ∅ (disjuntos), |A ∪ B| = |A| + |B|.\n  - Se A ∩ B ≠ ∅, use inclusão-exclusão: |A ∪ B| = |A| + |B| − |A ∩ B|.\n- **Condicional**:\n  - Frase-gatilho: “considerando que”, “dado que”, “sabendo que”.\n  - Denominador vira |A| (o conjunto da condição).\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo (com Venn):\n  1) Liste |A|, |B| e |A ∩ B|.\n  2) Preencha o diagrama: interseção primeiro; depois “apenas A” = |A| − |A ∩ B|; “apenas B” = |B| − |A ∩ B|.\n  3) Cheque “fora” = |Ω| − (apenas A + apenas B + interseção).\n  4) Calcule P = favoráveis/denominador correto (Ω ou restrito).\n- Macetes:\n  - Mínimo múltiplo comum: “múltiplos de 2 e 3” → múltiplos de 6.\n  - Complemento rápido: P(não A) = 1 − P(A).\n  - Condicional: P(B|A) = |A ∩ B| / |A| (troque o denominador!).\n\n## 4. Exemplos e Casos Resolvidos\nConsidere Ω = {1, 2, ..., 20}.\n\n- Conjuntos básicos:\n  - **Múltiplos de 2**: 10 números → {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}.\n  - **Múltiplos de 3**: 6 números → {3, 6, 9, 12, 15, 18}.\n  - **Interseção (2 e 3)**: múltiplos de 6 → {6, 12, 18} (3 números).\n\nPreenchimento do Venn:\n- Apenas 2: 10 − 3 = 7\n- Apenas 3: 6 − 3 = 3\n- 2 e 3: 3\n- Fora: 20 − (7 + 3 + 3) = 7\n\nCálculos principais:\n- P(múltiplo de 2) = 10/20 = 1/2 = 50%\n- P(múltiplo de 3) = 6/20 = 3/10 = 30%\n- P(múltiplo de 2 ou de 3) = (10 + 6 − 3)/20 = 13/20\n- P(não múltiplo de 2) = 1 − 1/2 = 1/2 = 50% (ou 7 + 3 = 10 → 10/20)\n- P(não múltiplo de 3) = 1 − 3/10 = 7/10 = 70%\n\n“Apenas/somente/exclusivamente”:\n- P(apenas múltiplo de 2) = 7/20 = 35%\n- P(apenas múltiplo de 3) = 3/20 = 15%\n\nCondicional:\n- Pergunta: “Considerando que a bola é múltiplo de 2, qual a probabilidade de também ser múltiplo de 3?”\n  - Universo restrito = múltiplos de 2 → 10 elementos.\n  - Favoráveis = múltiplos de 6 → 3.\n  - P = 3/10 = 30% se considerar 10 múltiplos de 2.\n  - Observação: alguns materiais listam 9 múltiplos de 2 (erro de contagem ao omitir o 20). O correto é 10. Se, por hipótese, o universo condicional fosse 9, então seria 3/9 = 1/3. Na lista correta (1 a 20), é 3/10.\n\n> Dica de prova: Antes de aplicar condicional, reconte o conjunto da condição. Em 1 a 20, múltiplos de 2 são 10 (não 9).\n\nComparação rápida (união):\n- Par ou ímpar (disjuntos): soma direta → 10 + 10 = 20.\n- Múltiplo de 2 ou 3 (com interseção): 10 + 6 − 3 = 13.\n\n## 5. Pegadinhas e Erros Comuns\n- Esquecer a interseção ao calcular “A ou B”: somar 10 + 6 e não subtrair 3 → errado.\n- Tratar “ou” como exclusivo sem o enunciado indicar.\n- Ignorar palavras de restrição: “apenas/somente/exclusivamente” → esquece de tirar a interseção.\n- Errar o denominador na condicional: usar 20 em vez de |A|.\n- Contagem incorreta dos conjuntos básicos:\n  - Em 1 a 20, múltiplos de 2 são 10 (inclui 20).\n  - Interseção de 2 e 3 são múltiplos de 6 (MMC), não some “dois e três” separadamente.\n- Converter para porcentagem sem simplificar corretamente a fração (ou errar casas decimais).\n\n> Dica de prova: Leia o enunciado sublinhando “apenas”, “ou”, “dado que”. Decida o tipo (união, interseção, complemento, condicional) ANTES de calcular.",
+  "resumo_bolso": "# Probabilidade II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Universo (Ω)**: conjunto de todos os resultados possíveis. Probabilidade sempre é relativa ao universo considerado. Ex.: 20 bolas numeradas de 1 a 20.\n* **Evento**: subconjunto de Ω (condição de interesse). Ex.: “múltiplo de 2”.\n* **Probabilidade**: P(E) = casos favoráveis / casos possíveis (no universo em uso).\n* **União (A ∪ B)**: “A ou B” (ou **inclusivo**: A, B ou ambos).\n* **Interseção (A ∩ B)**: “A e B” (elementos comuns).\n* **Complemento (Ā)**: “não A”.\n* **Probabilidade condicional**: P(B|A) = |A ∩ B| / |A| → a condição restringe o universo aos casos de A.\n* **Frases-gatilho de condicional**: “considerando que”, “dado que”, “sabendo que”.\n* **“Apenas/somente/exclusivamente A”**: elementos de A que não estão em B → |A| − |A ∩ B|.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### “Ou” Inclusivo vs “Ou” Exclusivo\n\n| Aspecto | “Ou” Inclusivo | “Ou” Exclusivo |\n|--------|-----------------|----------------|\n| **Significado** | A ou B **ou ambos** | A ou B, **mas não ambos** |\n| **Conjunto** | A ∪ B | “apenas A” ∪ “apenas B” |\n| **Cálculo típico** | |A ∪ B| = \\|A\\| + \\|B\\| − \\|A ∩ B\\| | \\|A\\| − \\|A ∩ B\\| + \\|B\\| − \\|A ∩ B\\| |\n| **Uso em prova** | Padrão em RLM (assuma inclusivo) | Só se o enunciado deixar **explícito** |\n\n> Em RLM, “ou” é normalmente inclusivo. Só trate como exclusivo se o enunciado deixar isso explícito.\n\n---\n\n### União vs Interseção\n\n| Aspecto | União (A ∪ B) | Interseção (A ∩ B) |\n|--------|---------------|---------------------|\n| **Leitura** | “A ou B” | “A e B” |\n| **Quando somar direto** | Se A ∩ B = ∅ (disjuntos) | – |\n| **Fórmula geral** | \\|A ∪ B\\| = \\|A\\| + \\|B\\| − \\|A ∩ B\\| | Contar apenas os elementos comuns |\n\n---\n\n### Evento Simples vs Condicional\n\n| Aspecto | Evento Simples | Condicional P(B|A) |\n|--------|----------------|---------------------|\n| **Universo** | Ω original | Universo restrito a A |\n| **Denominador** | \\|Ω\\| | \\|A\\| |\n| **Leitura** | “probabilidade de B” | “probabilidade de B, dado que A ocorreu” |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Probabilidade básica**\n\n* **Aplicação**: qualquer evento E em um universo Ω finito.\n* **Regra**: P(E) = |E| / |Ω|.\n\n---\n\n**2. União de dois eventos**\n\n* **Aplicação**: “A ou B” (ou inclusivo).\n* **Regra geral**: |A ∪ B| = |A| + |B| − |A ∩ B|.\n* **Caso disjunto**: se A ∩ B = ∅ → |A ∪ B| = |A| + |B|.\n\n---\n\n**3. Interseção via MMC (múltiplos)**\n\n* **Aplicação**: “múltiplos de m e de n”.\n* **Regra**: A ∩ B = múltiplos do mínimo múltiplo comum (MMC(m,n)).\n* **Exemplo**: 2 e 3 → MMC = 6 → {6, 12, 18} (3 elementos).\n\n---\n\n**4. Complemento**\n\n* **Aplicação**: “não A”.\n* **Regra**: P(Ā) = 1 − P(A).\n\n---\n\n**5. “Apenas/somente/exclusivamente”**\n\n* **Aplicação**: “apenas A” (sem B).\n* **Regra**: |apenas A| = |A| − |A ∩ B|.\n\n---\n\n**6. Probabilidade condicional**\n\n* **Aplicação**: “dado que A”, “considerando que A”, “sabendo que A”.\n* **Regra**: P(B|A) = |A ∩ B| / |A| (troque o denominador para o conjunto da condição).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Esquecer a interseção ao calcular “A ou B”: usar |A| + |B| sem subtrair |A ∩ B|.\n2. Tratar “ou” como exclusivo sem o enunciado indicar isso.\n3. Ignorar palavras de restrição: “apenas/somente/exclusivamente” e não tirar a interseção.\n4. Errar o denominador na condicional: usar |Ω| em vez de |A|.\n5. Contar errado os conjuntos básicos em 1 a 20 (múltiplos de 2, de 3 e de 6).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **união (ou)** de **interseção (e)**?\n* Lembrei que, em RLM, “ou” é **inclusivo**, salvo indicação contrária?\n* Sei aplicar **|A ∪ B| = |A| + |B| − |A ∩ B|** e quando posso somar direto (A ∩ B = ∅)?\n* Fixei que “apenas/somente/exclusivamente A” = **|A| − |A ∩ B|**?\n* Em condicional, estou trocando o denominador para **|A|** (conjunto da condição)?\n* Sei que, em 1–20, múltiplos de 2 são 10, de 3 são 6 e a interseção (2 e 3) são múltiplos de 6 (3 elementos)?\n* Lembro de usar **MMC** para interseção de conjuntos de múltiplos?\n* Antes de calcular, identifico se é **união, interseção, complemento ou condicional**?",
+  "mapa_mental": "# 🎲 Probabilidade II\n## 🎯 Fundamentos de Probabilidade\n### 💡 Conceitos básicos\n- Universo Ω\n- Evento\n- Casos favoráveis\n- Casos possíveis\n- Probabilidade clássica\n### 🧮 Operações com conjuntos\n- União A ∪ B\n- Interseção A ∩ B\n- Complemento Ā\n- Eventos disjuntos\n- Eventos não disjuntos\n### 📊 Fórmulas essenciais\n- P(E) = favoráveis/possíveis\n- P(Ā) = 1 − P(A)\n- P(A ∪ B) geral\n- P(A ∪ B) disjuntos\n- P(A ∩ B) relação\n\n## 🧮 Conjuntos e Diagrama de Venn\n### 📖 Interpretação de “ou”\n- Ou inclusivo\n- Ou exclusivo\n- União com interseção\n- Apenas A\n- Apenas B\n### 📋 Inclusão-exclusão\n- |A ∪ B| fórmula\n- |A ∩ B| uso\n- Soma direta disjuntos\n- Ajuste interseção\n- Contagem no universo\n### 📝 Técnica com Venn\n- Listar |A| e |B|\n- Usar |A ∩ B|\n- Calcular apenas A\n- Calcular apenas B\n- Calcular fora Ω\n\n## 🔢 Probabilidade Condicional\n### 💡 Conceito condicional\n- Restrição do universo\n- Espaço amostral A\n- Casos em A ∩ B\n- P(B|A) definição\n- Denominador |A|\n### 📜 Leitura no enunciado\n- “Considerando que”\n- “Dado que”\n- “Sabendo que”\n- Identificar condição\n- Trocar denominador\n### ⚠️ Erros frequentes\n- Manter Ω no denominador\n- Ignorar condição\n- Confundir união/interseção\n- Tratar “ou” exclusivo\n- Esquecer complemento",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Espaço Amostral",
+      "description": "Espaço Amostral — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se estrutura o cálculo de uma probabilidade simples?",
+          "back": "Tudo o que se tem no universo (embaixo) dividido por aquilo que serve (em cima).",
+          "hint": "Relacione numerador e denominador",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "O que deve compor o denominador quando não há restrição no sorteio?",
+          "back": "O total de elementos do universo (o total de bolas).",
+          "hint": "Refere-se ao espaço amostral",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "espaco-amostral"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o primeiro passo para resolver uma questão de probabilidade?",
+          "back": "Identificar o espaço amostral e de onde se vai tirar o que serve.",
+          "hint": "É a etapa de delimitação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "metodologia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Como determinar a quantidade de resultados fora de um evento?",
+          "back": "Subtrair os elementos do evento do total do universo.",
+          "hint": "Pense no evento complementar",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "evento-complementar"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Múltiplos Numéricos",
+      "description": "Múltiplos Numéricos — 2 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Quantos números de 1 a 20 são múltiplos de 2?",
+          "back": "10",
+          "hint": "Considere a divisão inteira",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "multiplos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Que números de 1 a 20 são simultaneamente múltiplos de 2 e de 3?",
+          "back": "Os múltiplos de 6 (6, 12 e 18).",
+          "hint": "Pense no mínimo múltiplo comum",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "multiplos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "União e Interseção",
+      "description": "União e Interseção — 4 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual operação de conjuntos corresponde à palavra “ou” em probabilidade?",
+          "back": "União",
+          "hint": "Conectivo lógico de soma",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "teoria-conjuntos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual operação de conjuntos corresponde à ocorrência simultânea de dois eventos?",
+          "back": "Intersecção",
+          "hint": "Conectivo lógico de intersecção",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "teoria-conjuntos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Quando as quantidades de dois eventos podem ser somadas diretamente?",
+          "back": "Quando os eventos não têm elementos em comum.",
+          "hint": "Refere-se a eventos disjuntos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "eventos-mutuamente-exclusivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "O que indicam os termos “apenas”, “somente” e “exclusivamente” em um evento?",
+          "back": "Restrições de exclusividade em um evento.",
+          "hint": "Indicam exclusão de intersecções",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "interpretacao-texto"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Probabilidade Condicional",
+      "description": "Probabilidade Condicional — 3 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Que efeito uma condição imposta ao sorteio produz no espaço amostral?",
+          "back": "Restringe o espaço amostral.",
+          "hint": "Ocorre em probabilidade condicional",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "probabilidade-condicional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Como deve ser definido o espaço amostral após informar que o resultado é múltiplo de 2?",
+          "back": "Considerar apenas os números múltiplos de 2 como o universo.",
+          "hint": "Aplicação de restrição",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "probabilidade-condicional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "Em uma urna com números de 1 a 20, qual é a probabilidade de múltiplo de 3 dado múltiplo de 2?",
+          "back": "3/10 (ou 30%)",
+          "hint": "Aplique a fórmula da condicional",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "exercicio-pratico"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma urna com 20 bolas numeradas de 1 a 20, quantas bolas possuem números múltiplos de 2?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "10 bolas",
+          "correct": true,
+          "explanation": "Correta. Para determinar a quantidade de bolas com números múltiplos de 2 entre 1 e 20, dividimos o total de bolas pelo número 2. Assim, 20 / 2 = 10. Isso significa que há 10 números pares nesse intervalo, que são: 2, 4, 6, 8, 10, 12, 14, 16, 18 e 20."
+        },
+        {
+          "id": "b",
+          "text": "8 bolas",
+          "correct": false,
+          "explanation": "Incorreta. Para encontrar o número de múltiplos de 2 em um conjunto de 1 a 20, basta dividir o maior número (20) pelo múltiplo desejado (2). O resultado é 10, não 8. Os múltiplos de 2 são 2, 4, 6, 8, 10, 12, 14, 16, 18, 20."
+        },
+        {
+          "id": "c",
+          "text": "15 bolas",
+          "correct": false,
+          "explanation": "Incorreta. Quinze bolas é um valor que está muito acima da quantidade real de múltiplos de 2 no intervalo de 1 a 20. O cálculo direto (20 dividido por 2) mostra que há apenas 10 múltiplos."
+        },
+        {
+          "id": "d",
+          "text": "12 bolas",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo correto para identificar os múltiplos de 2 entre 1 e 20 resulta em 10 bolas, não 12. A alternativa superestima a quantidade de múltiplos."
+        }
+      ],
+      "explanation": "Correta. Para determinar a quantidade de bolas com números múltiplos de 2 entre 1 e 20, dividimos o total de bolas pelo número 2. Assim, 20 / 2 = 10. Isso significa que há 10 números pares nesse intervalo, que são: 2, 4, 6, 8, 10, 12, 14, 16, 18 e 20.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Considerando uma urna com 20 bolas numeradas de 1 a 20, qual é a probabilidade de sortear uma bola cujo número seja múltiplo de 2 ou múltiplo de 3?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "55%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de sortear uma bola que seja múltiplo de 2 ou de 3 é de 65%. A alternativa de 55% não corresponde ao resultado obtido pela aplicação do princípio da inclusão-exclusão para eventos não mutuamente exclusivos."
+        },
+        {
+          "id": "b",
+          "text": "65%",
+          "correct": true,
+          "explanation": "Correta. Para resolver esta questão, aplicamos o princípio da inclusão-exclusão para a união de dois eventos. Primeiro, identificamos os múltiplos de 2 (2, 4, 6, 8, 10, 12, 14, 16, 18, 20), totalizando 10 bolas. Em seguida, os múltiplos de 3 (3, 6, 9, 12, 15, 18), totalizando 6 bolas. Os múltiplos de ambos (múltiplos de 6) são (6, 12, 18), totalizando 3 bolas. A quantidade de bolas que são múltiplos de 2 ou de 3 é 10 (Múltiplos de 2) + 6 (Múltiplos de 3) - 3 (Múltiplos de 6, para evitar contagem duplicada) = 13 bolas. A probabilidade é de 13/20, que, ao ser convertida para porcentagem (13/20 * 100%), resulta em 65%."
+        },
+        {
+          "id": "c",
+          "text": "70%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade calculada para que uma bola seja múltiplo de 2 ou de 3 é de 65%. O valor de 70% é superior ao resultado correto e não reflete a proporção exata de bolas que satisfazem a condição."
+        },
+        {
+          "id": "d",
+          "text": "60%",
+          "correct": false,
+          "explanation": "Incorreta. Embora 60% represente uma probabilidade considerável, o cálculo exato da união dos múltiplos de 2 e 3 (Múltiplos de 2 + Múltiplos de 3 - Múltiplos de 6) resulta em 13 bolas, o que corresponde a 65% do total de 20 bolas."
+        }
+      ],
+      "explanation": "Correta. Para resolver esta questão, aplicamos o princípio da inclusão-exclusão para a união de dois eventos. Primeiro, identificamos os múltiplos de 2 (2, 4, 6, 8, 10, 12, 14, 16, 18, 20), totalizando 10 bolas. Em seguida, os múltiplos de 3 (3, 6, 9, 12, 15, 18), totalizando 6 bolas. Os múltiplos de ambos (múltiplos de 6) são (6, 12, 18), totalizando 3 bolas. A quantidade de bolas que são múltiplos de 2 ou de 3 é 10 (Múltiplos de 2) + 6 (Múltiplos de 3) - 3 (Múltiplos de 6, para evitar contagem duplicada) = 13 bolas. A probabilidade é de 13/20, que, ao ser convertida para porcentagem (13/20 * 100%), resulta em 65%.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "15_196858_Probabilidade II.pdf",
+  "coletado_em": "2026-09-23T21:03:36"
+}

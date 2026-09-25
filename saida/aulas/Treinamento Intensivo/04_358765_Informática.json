@@ -1,0 +1,718 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 6,
+    "titulo": "Informática"
+  },
+  "ordem": 4,
+  "ordem_no_curso": "4.00",
+  "titulo": "Informática",
+  "codigo_aula": "358765",
+  "video_id": "kA9SIXvcT5I=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:26:13",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/kA9SIXvcT5I%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?nivel=1&assunto=420132%2C420750%2C420303%2C419882%2C405157%2C405098%2C419984%2C405030&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Informática\n\n## Continuidade do Treinamento\nAgora vem com tudo, vamos continuar. Nosso treinamento tem sido bem intenso. No último bloco, a ideia é trazer mais questões e mais dicas.\n\n## Busca avançada no Google: exemplos práticos\nConsidere, hipoteticamente, que a Manaus Previdência realizou a seguinte pesquisa na ferramenta de busca: site:domínio ponto com “um monte de coisa” benefícios. Eu quero fazer a procura da palavra “benefícios” dentro desse site. Essa sintaxe está sendo apresentada aqui.\n\nOutro exemplo: “Manausprev agendamento -Amazon”. Eu estou procurando essas palavras, essencialmente; as duas devem ser procuradas. Beleza. Ele tirou aqui, tirou aqui, mas eu não quero essa palavra. Eu quero tirar essa palavra da busca usando o sinal de menos e a palavra que eu quero excluir dessa busca.\n\nTerceira opção de busca: filetype:pdf. Eu estou dizendo que quero um tipo de arquivo, nesse caso PDF. E aí entram os termos que estou procurando: “legislação previdenciária”. Do tipo, vem um retorno. Então, está correto afirmar o quê? Vamos dar uma olhada nas opções.\n\n“Letra A: o Google vai exibir somente resultados em que arquivos denominados ‘legislação.pdf’ e arquivos denominados ‘previdenciária’ existam.” Não. Aqui eu não estou combinando nomes de arquivos; é uma forma de combinar termos, mas não exatamente para nome de arquivo. Para combinar corretamente, eu vou usar o operador OR para combinar, usar o OR entre elas aqui, que seria em inglês, beleza.\n\nSe eu quero procurar uma coisa ou outra, aí sim: previdenciária OR legislação. Seria uma palavra ou outra. Aquele exemplo com AND (implícito) vai retornar resultados que tenham as duas palavras. Não está excluindo, como pode parecer.\n\n“Letra B: o Google vai exibir resultados contidos apenas na aba denominada ‘benefícios’ do site indicado.” Não. Ele quer procurar apenas dentro desse site (site:), e a palavra “benefícios” lá dentro. Não tem “aba” na busca. O ponto vai ser relevante na busca quando envolve letras e números? Não seria dessa forma.\n\n“Letra C: o Google vai exibir somente agendamentos associados à ‘Amazon’.” Não. Na verdade, está tirando “Amazon” da busca. O sinal de menos está excluindo “Amazon”.\n\n“Letra D: o Google vai exibir somente resultados em que ‘legislação previdenciária’ exista.” Aqui está mais coerente com a busca sem exclusão, mas atenção: ele não colocou isso como um termo único entre aspas lá. “Legislação previdenciária” são dois termos. Cuidado: pela divulgação, pode parecer uma coisa, mas não é. São dois termos. Tem que ter espaço e, se eu quiser a expressão exata, uso aspas.\n\n“Letra E: o Google vai excluir o que se refere a ‘Amazon’ dos resultados.” Perfeito. Sim. Por isso que é importante: às vezes aparece “tá beleza”, mas não é um termo só, são dois termos. Tem que ter espaço. Beleza.\n\n## Atalhos do Windows 10: alternar e fechar janelas\nQuestão: o analista utiliza um computador com Windows 10 (instalado em português) e trabalha frequentemente com diversas janelas de aplicativos abertas. Para alternar entre as janelas abertas e para fechar a janela ativa, ele utiliza, correta e respectivamente, quais atalhos?\n\nAlternar: posso usar Alt+Tab ou Alt+Esc. As duas opções são válidas. Já já eu falo a diferença entre elas.\n\nFechar a janela ativa: posso usar Alt+F4. Dependendo do contexto, em navegador com abas, Ctrl+W fecharia a aba, mas o mais comum para a janela é Alt+F4.\n\nEntão, ele utiliza, correta e respectivamente: Alt+Tab para alternar e Alt+F4 para fechar. Beleza. Caramba, olha eu induzindo ao erro. Não é Alt+Esc “para ser onde está”; para alternar, Alt+Tab, e para fechar, Alt+F4.\n\nLetra B com “Ctrl+Alt+algo” não faz sentido para essa ação. Letra C também não. Alt, no meio, acessa menus dependendo da janela, mas não é para alternar janelas.\n\nDiferença entre Alt+Tab e Alt+Esc:\n- Alt+Tab: mostra miniaturas das janelas para que eu possa alternar entre elas (pré-visualização).\n- Alt+Esc: alterna diretamente entre as janelas, sem exibir miniatura.\n\n> 🎯 Dicas de prova: Alt+Esc alterna diretamente entre as janelas, sem miniatura. Alt+Tab alterna exibindo miniaturas.\n\nAgora, com a cabeça fria: aquilo que eu já falei algumas vezes — o simples é óbvio, mas na hora da prova vira “sem miniatura” e “com miniatura” e a gente confunde.\n\n💬 História: Já aconteceu de, na hora da prova, coisas simples darem um branco. É igual quando você vai falar com aquela pessoa que faz declaração do Imposto de Renda e sai tudo errado. Eu vi esses dias um vídeo de uma pessoa tentando pedir um sanduíche em inglês…\n\n## Janela Configurações do Windows e tendência em provas\nO administrador de um computador com Windows 10 deve configurar o sistema utilizando os recursos da janela Configurações do Windows. Vamos relembrar: esse tema tem caído muito em prova.\n\nE ainda mais agora com o Windows 11, ficou mais evidente aquilo que a Microsoft já vinha falando há um bom tempo, desde que lançaram a janela Configurações: a ideia é substituir progressivamente o Painel de Controle. No Windows 11 isso está muito claro; algumas funcionalidades literalmente saíram do Painel de Controle. No Windows 10 já havia isso, mas agora está mais evidente.\n\nCoisas que antes você fazia no Painel de Controle, hoje você clica e é jogado para a janela Configurações, sem falar nada. Parece que está na mesma janela. Vamos ficar atentos a isso. A Microsoft está assumindo o futuro na janela Configurações, mas em concurso ainda caiu muito Painel de Controle.\n\nPorém, nós temos uma tendência de aumento na janela Configurações nas cobranças. Eu não estou falando pelo uso do Windows no dia a dia, e sim pelo que cai em prova. Estudar o que cai mais. Segue a mesma lógica.\n\nUma forma ágil de interagir com o Windows é por meio de atalhos de teclado. Exatamente o que a FGV cobra: o atalho.\n\n- Win+G: abre a barra de ferramentas do Xbox Game Bar, muito usada por quem joga, mas você pode, por exemplo, gravar a tela.\n- Win+C: era para abrir a Cortana no Windows 10. Hoje, no Windows 11, a cobrança tem mudado; a Cortana perdeu espaço. Em provas, o Windows 10 ainda aparece bastante.\n- Win+R: abre a janela Executar, onde posso executar diversos comandos, como msconfig (janela de configuração), regedit (Editor do Registro), etc.\n- Win+F: no Windows 10, abre o Hub de Comentários (Feedback Hub). Já caiu raramente em prova, mas existe, para você enviar feedback à Microsoft.\n\n> 🎯 Dicas de prova: Win+R abre Executar; msconfig e regedit são comandos clássicos. Win+G abre a Xbox Game Bar.\n\n## Excel: aumento percentual, referências absolutas e alça de preenchimento\nPlanilha no Excel 2010 em português, mostrando pagamento hipotético de honorários periciais. Na célula A3 foi editada uma fórmula que aplica ao valor contido na célula D3 o percentual de aumento contido na célula E1. Após a fórmula ser corretamente digitada, foi aplicada arrastando-se a alça de preenchimento (o quadradinho no canto inferior direito) para baixo, gerando os resultados automaticamente.\n\nSe eu fizer algo como =D3*E1 e arrastar para baixo, D3 vira D4 (ok), mas E1 vira E2, E3… e eu não quero isso. Eu quero que E1 fique travado. O que eu faço? Uso cifrão para referência absoluta.\n\nExemplo correto:\n- =D3*$E$1 multiplica o valor da linha (D3, D4, D5…) pelo mesmo percentual fixo em E1, porque o cifrão trava coluna e linha.\n\nSe eu quiser travar só a linha ou só a coluna:\n- $E1 trava a coluna E.\n- E$1 trava a linha 1.\n- $E$1 trava ambos.\n\nAgora, cuidado com o objetivo da fórmula. Se eu faço apenas D3*$E$1, eu estou calculando o valor do percentual (por exemplo, 10% de D3). Se a intenção é aplicar um aumento, devo somar ao valor original:\n- D3 + D3*$E$1\nou\n- D3*(1+$E$1)\n\n> 🎯 Dicas de prova: para aumento de X%, use D3*(1+$E$1). Para desconto de X%, use D3*(1-$E$1). Para travar a referência ao percentual, use $E$1.\n\nParênteses importam pela precedência: multiplicação tem prioridade sobre soma. Se fizer D3 + D3*E1, a multiplicação acontece antes, mas aqui está correto porque primeiro calculo o percentual e depois somo ao valor.\n\nA alça de preenchimento (canto inferior direito da célula) arrasta a fórmula e ajusta as referências relativas. O cifrão impede a mudança da referência, travando o endereço desejado.\n\nExemplo mental: se E1 fosse a cotação do dólar, eu não quero que mude a referência ao arrastar; por isso, $E$1.\n\n## Windows: arrastar arquivos entre pastas e unidades\nCenário: técnico no Windows 7 (em português) clica em Iniciar > Computador para visualizar as unidades. Conecta um pendrive que recebe uma letra de unidade (por exemplo, E:). Na raiz do pendrive há arquivos e pastas. Ao arrastar um arquivo da raiz do pendrive para uma pasta dentro do mesmo pendrive, o que acontece?\n\nDentro da mesma unidade lógica (mesma letra, por exemplo, E:), arrastar sem usar teclas de modificação move o arquivo. Não houve cópia; foi movimento.\n\nSe eu quiser copiar dentro da mesma unidade ao arrastar, devo pressionar e manter Ctrl enquanto arrasto.\n\nEntre unidades diferentes (por exemplo, do C: para o E:), arrastar sem teclas copia por padrão. Se eu quiser mover entre unidades diferentes, posso usar Shift enquanto arrasto.\n\nResumindo:\n- Mesma unidade (mesma letra): arrastar = mover; Ctrl+arrastar = copiar.\n- Unidades diferentes (letras diferentes): arrastar = copiar; Shift+arrastar = mover.\n- Ctrl “sempre copia” ao arrastar; Shift “sempre move”.\n\n> 🎯 Dicas de prova: arrastar entre a mesma unidade move; entre unidades diferentes copia. Use Ctrl para copiar e Shift para mover, independentemente do destino.\n\nNão confundir com exclusão: mover dentro da mesma unidade não apaga definitivamente; apenas muda o local. Exclusão com Shift+Del apaga sem ir para a Lixeira (em unidades locais compatíveis).\n\n## Segurança no e-mail: conexão segura e 2FA\nExistem recomendações para uso seguro do e-mail: criar senha adequada, não abrir links suspeitos e utilizar conexões seguras. Uma conexão é considerada segura se o endereço da página do provedor de e-mail se inicia com https.\n\n> 🎯 Dicas de prova: https utiliza a porta 443 e adiciona uma camada segura (TLS/SSL), criptografando os dados entre cliente e servidor. http utiliza a porta 80 e não é seguro.\n\nVou aproveitar para uma dica de vida: devido aos golpes cada vez mais sofisticados, a autenticação em duas etapas (2FA) via SMS perde eficácia se houver clonagem do chip. O código chegará ao chip clonado. Prefira a autenticação por aplicativo gerador de códigos (Authenticator da Microsoft, Google Authenticator, etc.). É um pouco mais seguro porque gera o código localmente, mesmo sem o chip, desde que você tenha o app configurado.\n\n> 🎯 Dicas de prova: 2FA por aplicativo de autenticação é mais seguro que por SMS. HTTPS/TLS criptografa a comunicação; se alguém interceptar, não entenderá os dados.\n\nTemos no mundo web: HTTPS (porta 443), HTTP (porta 80). Existem também versões seguras de outros protocolos, como FTPS/SFTP para transferência de arquivos, e protocolos de gerenciamento com suporte a criptografia.\n\n## Encerramento\nEntão, aqui nós vamos finalizar o nosso treinamento intensivo por hora. Deixa eu só acessar aqui o que veio na cabeça, acessar algo legislativo que quero colocar... Bom, eu espero ter colaborado de alguma maneira, ter ajudado na sua aprovação.\n\nLembre-se: havendo dúvidas, use o Fórum de Dúvidas. Você não está sozinho, não está sozinha nessa caminhada. Vou deixar também o meu Instagram, mas quero lembrar que, em caso de dúvidas, por favor, use o Fórum de Dúvidas. Jefferson Bolsas suporta o Fórum de Dúvidas. Não tentem se comunicar só pelas redes sociais porque nem sempre consigo responder todo mundo, e claro, há prioridade: mesmo que você se identifique como aluno do Gran Cursos, quem enviar primeiro e ainda estiver no horário do dia, eu respondo pelo Fórum de Dúvidas. Não mandou? Vai ser respondido assim que possível.\n\nQuando mais é isso. Bons estudos, boa prova. Vai, vença. Valeu! Um abraço de fogo. Até a próxima.",
+  "transcricao_meta": {
+    "title": "Informática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 30559,
+    "createdAt": "2026-02-07T01:32:24.221Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda:\n- Busca avançada no Google para provas da FGV.\n- Atalhos essenciais do Windows 10.\n- Excel 2010: referências relativas/absolutas e cálculo percentual.\n- Redes: LAN, MAN, WAN, VLAN.\n- Sistema de arquivos do Windows ao arrastar e soltar.\n- Segurança: HTTPS, portas, 2FA.\n\nPrincipais pontos:\n- Operadores de busca: site:, -, filetype:pdf.\n- Atalhos: Alt+Tab, Alt+Esc, Alt+F4, Ctrl+W.\n- Excel: uso do cifrão ($) e fórmula de aumento percentual.\n- VLAN é segmentação lógica (não física).\n- Mesma unidade lógica move; unidade diferente copia; Control copia sempre.\n- HTTPS usa porta 443; prefira 2FA por aplicativo.\n\n## 1. Base / Conceitos Fundamentais\n- Busca avançada (FGV)\n  - Operadores: site:, -, filetype:pdf, OR.\n- Windows 10\n  - Alternância/fechamento de janelas: Alt+Tab, Alt+Esc, Alt+F4, Ctrl+W.\n  - Cortana integra com Edge e Bing.\n- Excel 2010\n  - Referências:\n    - Relativa: A1 (muda linha e coluna ao arrastar).\n    - Absoluta: $A$1 (fixa linha e coluna).\n    - Mista: $A1 (fixa coluna), A$1 (fixa linha).\n  - Alça de preenchimento: arrasta para replicar fórmula.\n- Redes\n  - LAN, MAN, WAN: escopos de rede.\n  - VLAN: rede local virtual (segmentação lógica).\n- Sistema de arquivos Windows\n  - Unidade lógica: letra + “:” (ex.: E:).\n- Segurança\n  - http (porta 80, sem criptografia), https (porta 443, criptografado).\n  - 2FA: SMS vs aplicativo autenticador.\n\n## 2. Como Funciona / Distinções\n- Busca no Google\n  - site: restringe ao domínio.\n  - -termo exclui resultados com o termo.\n  - filetype:pdf filtra por tipo de arquivo.\n  - Termo1 Termo2 exige ambos; OR aceita um ou outro.\n- Atalhos do Windows\n  - Alt+Tab: alterna com miniaturas.\n  - Alt+Esc: alterna sem miniaturas (direto).\n  - Alt+F4: fecha janela ativa.\n  - Ctrl+W: fecha aba (navegador/alguns apps).\n- Excel: referências\n  - Sem $: desliza linha/coluna ao arrastar.\n  - $E$1: fixa E e 1 (não muda).\n  - $E1: fixa coluna E apenas.\n  - E$1: fixa linha 1 apenas.\n- Redes\n  - LAN < MAN < WAN em abrangência.\n  - VLAN separa logicamente grupos na mesma infraestrutura física.\n- Arrastar arquivos no Windows\n  - Mesma unidade lógica: move.\n  - Unidades diferentes: copia.\n  - Control pressionado: copia sempre (independe da unidade).\n- Segurança\n  - https cifra dados; http não.\n  - 2FA por SMS é vulnerável a clonagem de chip; aplicativo autenticador é mais seguro.\n\n## 3. Aplicação Prática / Técnicas\n- Busca avançada (exemplos práticos)\n  - site:manausprevidencia.am.gov.br benefícios\n  - legislação previdenciária filetype:pdf\n  - agendamento -Amazon\n  - benefícios previdenciários OR legislação\n- Windows 10 – uso rápido\n  - Alternar entre janelas abertas: Alt+Tab.\n  - “Pular” entre janelas sem visual: Alt+Esc.\n  - Fechar janela atual: Alt+F4.\n  - Fechar aba do navegador: Ctrl+W.\n- Excel 2010 – aumento percentual\n  - Cenário: E3 contém valor; E1 contém percentual (ex.: 10%).\n  - Fórmula em A3 para aumentar: =E3 + (E3*$E$1)\n  - Equivalente mais enxuta: =E3*(1+$E$1)\n  - Arraste a alça para baixo; mantenha E1 fixo com $E$1.\n- Referência mista (quando usar)\n  - Fixar só coluna: $E1 quando a coluna deve permanecer E, mas a linha pode variar.\n  - Fixar só linha: E$1 quando a linha 1 não pode variar.\n- Arrastar e soltar arquivos\n  - Mover dentro de E: para outra pasta em E: → move.\n  - Arrastar de E: para D: → copia.\n  - Segurar Control ao arrastar → sempre copia (ícone com +).\n- Segurança prática\n  - Conferir “https” no início do endereço (porta 443).\n  - Evitar clicar em links suspeitos no e-mail.\n  - Ativar 2FA e priorizar aplicativo autenticador (Instagram, Microsoft).\n  - Evite 2FA por SMS quando possível.\n\n## 4. Exemplos e Casos Resolvidos\n- Google (FGV e contexto Manaus Previdência)\n  - Procurar benefícios dentro do site: site:manausprevidencia.am.gov.br benefícios\n  - Baixar legislação em PDF: legislação previdenciária filetype:pdf\n  - Evitar resultado com Amazon: agendamento -Amazon\n- Windows 10\n  - Questão pede: “alternar entre janelas e fechar a janela ativa, respectivamente.” Resposta: Alt+Tab e Alt+F4.\n- Excel 2010\n  - E3 = 100; E1 = 10%\n  - =E3*(1+$E$1) → 100*(1+10%) = 110 (cento e dez).\n  - Sem $ em E1, ao arrastar A3 para A4, a referência E1 vira E2 (erro se E2 não tem percentual).\n- Redes\n  - Empresa única com contadores e engenheiros no mesmo switch: implementar VLANs para isolar tráfego por perfil sem separar fisicamente.\n- Sistema de arquivos\n  - Arrastar arquivo de “Documentos (C:)” para “Pendrive (E:)” → copia.\n  - Arrastar arquivo entre pastas dentro de “E:” → move.\n  - Se quiser copiar dentro da mesma unidade → segurar Control ao arrastar.\n- Segurança\n  - Webmail seguro: usar https; tráfego é cifrado (porta 443). http (porta 80) não cifra.\n  - 2FA: se o chip for clonado, SMS pode ser interceptado; preferir app autenticador.\n\n## 5. Pegadinhas e Erros Comuns\n- Busca\n  - Não usar espaços corretamente: filetype:pdf exige “:pdf” sem espaço; site:dominio também sem espaço após “:”.\n  - Achar que Termo1 Termo2 significa “ou”: por padrão é “e” implícito. Use OR para “ou”.\n- Windows\n  - Confundir Alt+Esc com Alt+Tab: Alt+Esc não mostra miniaturas.\n  - Confundir Ctrl+W com Alt+F4: Ctrl+W fecha aba, Alt+F4 fecha janela/app.\n- Excel\n  - Esquecer o $ em E1 ao arrastar: referência “anda” e gera erro.\n  - Não usar parênteses: E3 + E3*$E$1 funciona pela prioridade da multiplicação, mas em prova prefira explicitar: E3 + (E3*$E$1).\n  - Travar só coluna ou só linha por engano: verifique se precisa $E$1, $E1 ou E$1.\n- Redes\n  - Confundir VLAN com rede física separada: VLAN é lógica e pode coexistir no mesmo equipamento.\n  - LAN/MAN/WAN: lembrar da ordem por abrangência (do menor para o maior).\n- Sistema de arquivos\n  - Achar que “tipo de mídia” define mover/copiar: o que manda é a letra da unidade.\n  - Esquecer que Control copia sempre (ícone com + indica cópia).\n- Segurança\n  - Acreditar que https impede todo ataque: cifra o tráfego, mas phishing ainda é risco.\n  - Confiar em 2FA por SMS como infalível: é vulnerável a clonagem de chip; prefira app autenticador.\n\n> Dica de Prova: “Mesma letra move; letra diferente copia; Control copia sempre.”\n\n> Dica de Prova: HTTPS usa porta 443; HTTP usa porta 80. Se aparecer “porta quatro, quatro, três” é 443.\n\n> Dica de Prova: No Excel, para aumentar x%: =Valor*(1+x%). Para reduzir x%: =Valor*(1−x%).\n\n> Dica de Prova: Alt+Tab alterna com miniaturas; Alt+Esc alterna direto; Alt+F4 fecha janela; Ctrl+W fecha aba.\n\n> Dica de Prova: VLAN é divisão lógica; todos podem estar no mesmo switch físico.\n\n### Tabela-resumo rápida (comparações)\n- Alternar janelas com miniaturas: Alt+Tab\n- Alternar janelas direto (sem miniaturas): Alt+Esc\n- Fechar janela ativa: Alt+F4\n- Fechar aba ativa: Ctrl+W\n- Arrastar mesma unidade lógica: move\n- Arrastar entre unidades diferentes: copia\n- Arrastar com Control: copia sempre\n- http: porta 80, sem criptografia\n- https: porta 443, com criptografia\n- Excel: referência fixa total: $A$1; fixa coluna: $A1; fixa linha: A$1\n\n### Exemplos-chave de busca (FGV)\n- site:manausprevidencia.am.gov.br benefícios\n- legislação previdenciária filetype:pdf\n- agendamento -Amazon\n- benefícios previdenciários OR legislação\n\n### Nomes e tecnologias citados\n- Manaus Previdência; FGV; Windows 10; Excel 2010; Cortana; Bing; Instagram; Microsoft; WhatsApp.\n- Navegador “Aedes” (no contexto citado).\n- Protocolos: http, https, FTP, FTPS.\n- Redes: LAN, MAN, WAN, VLAN.",
+  "resumo_bolso": "# Informática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Operadores Google (FGV)**: refinam busca: **site:**, **-termo**, **filetype:pdf**, **OR**.\n* **Alt+Tab x Alt+Esc**: ambos alternam janelas; **Alt+Tab** alterna com miniaturas; **Alt+Esc** alterna direto, sem miniaturas.\n* **Alt+F4 x Ctrl+W**: **Alt+F4** fecha a **janela ativa**; **Ctrl+W** fecha a **aba** (navegador/alguns apps).\n* **Referência relativa (Excel)**: A1 → muda linha e coluna ao arrastar.\n* **Referência absoluta (Excel)**: $A$1 → fixa linha e coluna ao arrastar.\n* **Referência mista (Excel)**: $A1 (fixa coluna) / A$1 (fixa linha).\n* **LAN / MAN / WAN**: redes por abrangência (LAN < MAN < WAN).\n* **VLAN**: segmentação **lógica** em uma mesma infraestrutura física.\n* **Unidade lógica Windows**: identificada por **letra + “:”** (C:, D:, E:).\n* **HTTPS**: HTTP com criptografia, porta **443**; HTTP, porta **80**, sem criptografia.\n* **2FA**: SMS é vulnerável a clonagem de chip; **aplicativo autenticador** é mais seguro.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Alt+Tab vs Alt+Esc\n\n| Aspecto | Alt+Tab | Alt+Esc |\n|--------|---------|---------|\n| **Função** | Alternar entre janelas | Alternar entre janelas |\n| **Visual** | Com miniaturas | Sem miniaturas (direto) |\n\n---\n\n### Alt+F4 vs Ctrl+W\n\n| Aspecto | Alt+F4 | Ctrl+W |\n|--------|--------|--------|\n| **Alvo** | Janela/aplicativo ativo | Aba/guia ativa |\n| **Escopo** | Fecha a janela ativa | Fecha a aba, mantém programa |\n\n---\n\n### LAN / MAN / WAN / VLAN\n\n| Aspecto | LAN | MAN | WAN | VLAN |\n|--------|-----|-----|-----|------|\n| **Abrangência** | Local | Metropolitana | Ampla | Lógica, sobre LAN |\n| **Base** | Física | Física | Física | **Lógica** (virtual) |\n| **Função** | Rede local | Interliga LANs em uma cidade | Interliga MANs/LANs distantes | Separa grupos logicamente na mesma infraestrutura |\n\n---\n\n### Referência Relativa vs Absoluta vs Mista (Excel)\n\n| Tipo | Exemplo | Comportamento ao arrastar |\n|------|---------|---------------------------|\n| Relativa | A1 | Linha e coluna variam |\n| Absoluta | $A$1 | Nada varia |\n| Mista (coluna fixa) | $A1 | Coluna fixa; linha varia |\n| Mista (linha fixa) | A$1 | Linha fixa; coluna varia |\n\n---\n\n### HTTP vs HTTPS\n\n| Aspecto | HTTP | HTTPS |\n|--------|------|-------|\n| **Porta padrão** | **80** | **443** |\n| **Criptografia** | Não cifra | Cifra (canal seguro) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Busca Google – Operadores**\n\n* **site:dominio** → restringe ao domínio.  \n  *Ex.:* `site:manausprevidencia.am.gov.br benefícios`\n* **-termo** → exclui termo.  \n  *Ex.:* `agendamento -Amazon`\n* **filetype:pdf** → filtra por tipo de arquivo.  \n  *Ex.:* `legislação previdenciária filetype:pdf`\n* **Termo1 Termo2** → exige ambos os termos (AND implícito).  \n* **Termo1 OR Termo2** → aceita um **ou** outro.  \n  *Ex.:* `benefícios previdenciários OR legislação`\n\n---\n\n**2. Excel – Aumento/Redução Percentual**\n\n* **Aumentar x%**: `=Valor*(1 + x%)`  \n  *Ex.:* `=E3*(1+$E$1)`\n* **Reduzir x%**: `=Valor*(1 - x%)`\n* **Aplicação**: usar **$E$1** para manter o mesmo percentual ao arrastar.\n\n---\n\n**3. Arrastar e Soltar – Sistema de Arquivos Windows**\n\n* **Mesma unidade lógica (mesma letra)** → **move**.  \n  *Ex.:* E: → E:\n* **Unidades diferentes (letras diferentes)** → **copia**.  \n  *Ex.:* C: → E:\n* **Control pressionado ao arrastar** → **copia sempre**, independente da unidade.\n\n---\n\n**4. Atalhos Essenciais – Windows 10**\n\n* **Alt+Tab** → alternar janelas com miniaturas.  \n* **Alt+Esc** → alternar janelas sem miniaturas.  \n* **Alt+F4** → fechar janela/aplicativo ativo.  \n* **Ctrl+W** → fechar aba ativa.\n\n---\n\n**5. Segurança – HTTPS e 2FA**\n\n* **HTTP**: porta **80**, sem criptografia.  \n* **HTTPS**: porta **443**, tráfego cifrado.  \n* **2FA por SMS**: vulnerável a clonagem de chip.  \n* **Aplicativo autenticador** (Instagram, Microsoft, etc.): **mais seguro**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. **Busca Google**:  \n   *Errado*: `filetype: pdf` ou `site: dominio.com` (com espaço).  \n   *Correto*: **sem espaço** após os dois pontos → `filetype:pdf`, `site:dominio.com`.\n\n2. **Busca Google – AND x OR**:  \n   Achar que `Termo1 Termo2` significa “ou”. Por padrão é **“e” implícito**; para “ou” use **OR**.\n\n3. **Windows – Atalhos**:  \n   Confundir **Alt+Esc** com **Alt+Tab** (Alt+Esc não mostra miniaturas) ou **Ctrl+W** com **Alt+F4** (Ctrl+W fecha aba; Alt+F4 fecha janela/app).\n\n4. **Excel – Cifrão ($)**:  \n   Esquecer o **$** em E1 ao arrastar: a referência “anda” (E1 → E2 → E3...) e gera erro se as outras células não tiverem o percentual.\n\n5. **Redes – VLAN**:  \n   Confundir VLAN com rede física separada: VLAN é **lógica** e pode coexistir no mesmo equipamento.\n\n---\n\n## 📋 Checklist Final\n\n* Sei usar e diferenciar **site:**, **-termo**, **filetype:pdf**, **OR**?\n* Lembro quem mostra miniaturas: **Alt+Tab** ou **Alt+Esc**?\n* Sei que **Alt+F4** fecha janela/app e **Ctrl+W** fecha aba?\n* Fixei: **$A$1** absoluta, **$A1** coluna fixa, **A$1** linha fixa?\n* Memorizei: **mesma letra move; letra diferente copia; Control copia sempre**?\n* Associei **HTTP = 80, sem criptografia** e **HTTPS = 443, com criptografia**?\n* Lembro que **VLAN = segmentação lógica**, não rede física separada?\n* Sei que **2FA por app** é mais seguro que **2FA por SMS**?",
+  "mapa_mental": "# 💻 Informática para Concursos\n## 🔍 Busca Avançada Google\n### 🎯 Operadores Principais\n- site:dominio\n- filetype:pdf\n- exclusão com -\n- operador OR\n### 📋 Regras de Combinação\n- espaço = E\n- OR = OU\n- sem espaço após :\n- termos entre aspas\n### ⚠️ Erros Frequentes\n- confundir E com OU\n- usar espaço em site:\n- usar espaço em filetype:\n- esquecer operador OR\n\n## 🪟 Windows 10 Essencial\n### 🔄 Atalhos de Janelas\n- Alt+Tab miniaturas\n- Alt+Esc direto\n- Alt+F4 fechar janela\n- Ctrl+W fechar aba\n### 🌐 Integrações do Sistema\n- Cortana assistente\n- navegador Edge\n- buscador Bing\n- barra de tarefas\n### 📁 Arquivos e Unidades\n- unidade lógica C:\n- mesma unidade move\n- unidades diferentes copiam\n- Control arrastar copia\n\n## 📊 Excel 2010 Básico\n### 📌 Tipos de Referência\n- relativa A1\n- absoluta $A$1\n- mista $A1\n- mista A$1\n### 🧮 Fórmulas Percentuais\n- valor*(1+percentual)\n- aumento percentual\n- redução percentual\n- uso do cifrão $\n### 🔄 Preenchimento e Travamento\n- alça de preenchimento\n- deslizar referências\n- travar coluna\n- travar linha\n\n## 🌐 Redes e Segurança\n### 🌍 Tipos de Redes\n- LAN rede local\n- MAN rede metropolitana\n- WAN rede ampla\n- VLAN segmentação lógica\n### 🛡️ Protocolos e Portas\n- http porta 80\n- https porta 443\n- https criptografado\n- http sem criptografia\n### 🔐 Autenticação em Duas Etapas\n- 2FA por SMS\n- 2FA por aplicativo\n- clonagem de chip\n- app mais seguro",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Busca na Web",
+      "description": "Busca na Web — 6 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual operador restringe uma busca a resultados de um site específico?",
+          "back": "site:",
+          "hint": "Relacionado a domínio de rede",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca-web",
+            "operadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual operador limita os resultados a arquivos de determinado formato?",
+          "back": "filetype:",
+          "hint": "Relacionado a extensão de arquivo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca-web",
+            "operadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como indicar que uma busca deve localizar uma expressão exata?",
+          "back": "Aspas duplas",
+          "hint": "Sinal de pontuação gramatical",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca-web",
+            "operadores"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual operador exclui um termo dos resultados de uma busca?",
+          "back": "Sinal de menos (-)",
+          "hint": "Operação matemática de subtração",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca-web",
+            "operadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual operador recupera resultados que contenham pelo menos um entre vários termos?",
+          "back": "OR",
+          "hint": "Conjunção alternativa em inglês",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca-web",
+            "operadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual operador exige a presença conjunta de dois termos na busca?",
+          "back": "AND",
+          "hint": "Conjunção aditiva em inglês",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca-web",
+            "operadores"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Atalhos do Windows",
+      "description": "Atalhos do Windows — 2 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual atalho alterna entre janelas abertas exibindo miniaturas?",
+          "back": "Alt + Tab",
+          "hint": "Teclas de alternância",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual atalho fecha a janela ativa no Windows?",
+          "back": "Alt + F4",
+          "hint": "Teclas de encerramento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows",
+            "atalhos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Fórmulas do Excel",
+      "description": "Fórmulas do Excel — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "O que ocorre com uma referência relativa de célula quando a fórmula é copiada?",
+          "back": "Altera a referência conforme a direção da cópia.",
+          "hint": "Comportamento dinâmico no Excel",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Que notação mantém fixa a linha e a coluna de uma referência no Excel?",
+          "back": "Cifrão antes da coluna e da linha ($A$1)",
+          "hint": "Símbolo de moeda",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "referencias"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a fórmula para aplicar o percentual de C1 ao valor de A3?",
+          "back": "A3 * $C$1",
+          "hint": "Aplicação prática de referência absoluta",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "excel",
+            "formulas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual operação o Excel executa primeiro em uma expressão com soma e multiplicação?",
+          "back": "Multiplicação",
+          "hint": "Regra de precedência matemática",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "excel",
+            "operadores"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Redes de Computadores",
+      "description": "Redes de Computadores — 3 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual é a finalidade de uma VLAN em uma rede local?",
+          "back": "Dividir uma rede local em redes lógicas com base nos perfis dos usuários.",
+          "hint": "Sigla para rede local virtual",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual área de abrangência caracteriza uma LAN?",
+          "back": "Área de um prédio ou prédios vizinhos.",
+          "hint": "Sigla para rede de área local",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "conceitos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual é a finalidade de uma VPN ao conectar computadores por uma rede pública?",
+          "back": "Interligar com segurança dois ou mais computadores pela rede pública.",
+          "hint": "Sigla para rede privada virtual",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "seguranca"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Arquivos e Segurança",
+      "description": "Arquivos e Segurança — 5 cards",
+      "cards": [
+        {
+          "id": "card-16",
+          "front": "Como o Windows representa, por padrão, uma unidade lógica de armazenamento?",
+          "back": "Uma letra seguida de dois pontos (ex.: C:)",
+          "hint": "Convenção de nomenclatura de drives",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "O que ocorre ao arrastar um arquivo entre pastas da mesma unidade lógica?",
+          "back": "Move o arquivo.",
+          "hint": "Comportamento padrão de movimentação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows",
+            "arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual protocolo acessa páginas web com criptografia na comunicação?",
+          "back": "HTTPS",
+          "hint": "Protocolo de transferência segura",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "internet",
+            "protocolos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual porta é associada ao HTTPS?",
+          "back": "443",
+          "hint": "Número de porta padrão",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "protocolos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual é a segunda etapa da autenticação em dois fatores por SMS?",
+          "back": "Inserir o código recebido por SMS no celular.",
+          "hint": "Ação de confirmação do usuário",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "autenticacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual operador deve ser utilizado em uma busca no Google para excluir um termo específico dos resultados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O sinal de adição (+) antes da palavra que se deseja excluir",
+          "correct": false,
+          "explanation": "Incorreta. O sinal de adição (+) era utilizado em versões anteriores do Google para forçar a inclusão de um termo exato, mas atualmente não tem a função de exclusão. Para garantir a inclusão de uma frase exata, usa-se aspas duplas (\"termo exato\")."
+        },
+        {
+          "id": "b",
+          "text": "O sinal de menos (-) antes da palavra que se deseja excluir",
+          "correct": true,
+          "explanation": "Correta. Para excluir um termo específico dos resultados de busca no Google, deve-se utilizar o sinal de menos (-) imediatamente antes da palavra que se deseja omitir. Por exemplo, \"receita de bolo -chocolate\" buscará receitas de bolo que não contenham a palavra \"chocolate\"."
+        },
+        {
+          "id": "c",
+          "text": "O sinal de asterisco (*) antes da palavra que se deseja excluir",
+          "correct": false,
+          "explanation": "Incorreta. O sinal de asterisco (*) é um operador curinga (wildcard) que substitui uma ou mais palavras desconhecidas em uma busca. Por exemplo, \"como * um computador\" pode retornar \"como usar um computador\" ou \"como montar um computador\". Ele não serve para excluir termos."
+        },
+        {
+          "id": "d",
+          "text": "O sinal de porcentagem (%) antes da palavra que se deseja excluir",
+          "correct": false,
+          "explanation": "Incorreta. O sinal de porcentagem (%) não é um operador de busca reconhecido pelo Google para excluir termos ou para qualquer outra função específica de filtragem de resultados."
+        }
+      ],
+      "explanation": "Correta. Para excluir um termo específico dos resultados de busca no Google, deve-se utilizar o sinal de menos (-) imediatamente antes da palavra que se deseja omitir. Por exemplo, \"receita de bolo -chocolate\" buscará receitas de bolo que não contenham a palavra \"chocolate\".",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual protocolo é utilizado para garantir a segurança na comunicação entre cliente e servidor em páginas web?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "FTP",
+          "correct": false,
+          "explanation": "Incorreta. O FTP (File Transfer Protocol) é um protocolo utilizado especificamente para a transferência de arquivos entre computadores. Embora seja fundamental para sua função, ele não é o protocolo responsável pela segurança na comunicação de páginas web e, por padrão, não criptografa os dados."
+        },
+        {
+          "id": "b",
+          "text": "HTTPS",
+          "correct": true,
+          "explanation": "Correta. O HTTPS (Hypertext Transfer Protocol Secure) é a versão segura do HTTP. Ele utiliza os protocolos SSL (Secure Sockets Layer) ou TLS (Transport Layer Security) para criptografar a comunicação entre o navegador do usuário (cliente) e o servidor web. Essa criptografia garante a confidencialidade e a integridade dos dados transmitidos, protegendo informações sensíveis como senhas e dados bancários."
+        },
+        {
+          "id": "c",
+          "text": "SMTP",
+          "correct": false,
+          "explanation": "Incorreta. O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para o envio de e-mails entre servidores de correio eletrônico. Ele não está relacionado à segurança ou comunicação de páginas web em navegadores."
+        },
+        {
+          "id": "d",
+          "text": "HTTP",
+          "correct": false,
+          "explanation": "Incorreta. O HTTP (Hypertext Transfer Protocol) é o protocolo base para a comunicação na web, mas ele não oferece criptografia. As informações são transmitidas em texto simples, o que as torna vulneráveis a interceptação e leitura por terceiros mal-intencionados."
+        }
+      ],
+      "explanation": "Correta. O HTTPS (Hypertext Transfer Protocol Secure) é a versão segura do HTTP. Ele utiliza os protocolos SSL (Secure Sockets Layer) ou TLS (Transport Layer Security) para criptografar a comunicação entre o navegador do usuário (cliente) e o servidor web. Essa criptografia garante a confidencialidade e a integridade dos dados transmitidos, protegendo informações sensíveis como senhas e dados bancários.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Microsoft Excel, ao arrastar uma fórmula para outras células, qual símbolo deve ser utilizado para travar uma referência de célula e impedir que ela mude?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O símbolo de asterisco (*) antes da referência da célula",
+          "correct": false,
+          "explanation": "Incorreta. O asterisco (*) no Excel é um operador de multiplicação ou um caractere curinga em algumas funções de busca, como `PROCV` ou `CONT.SE`. Ele não tem a função de travar referências de célula."
+        },
+        {
+          "id": "b",
+          "text": "O símbolo de arroba (@) antes da referência da célula",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de arroba (@) no Excel é usado em contextos específicos, como em fórmulas de matriz dinâmica ou para referenciar itens em tabelas estruturadas (ex: `@NomeDaColuna`). Ele não serve para travar referências de célula ao copiar ou arrastar fórmulas."
+        },
+        {
+          "id": "c",
+          "text": "O símbolo de porcentagem (%) antes da referência da célula",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de porcentagem (%) no Excel é um operador que converte o número precedente em um valor percentual (dividindo-o por 100). Ele não é usado para fixar referências de célula."
+        },
+        {
+          "id": "d",
+          "text": "O símbolo de cifrão ($) antes da letra da coluna ou número da linha",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Excel, o símbolo de cifrão ($) é utilizado para criar referências absolutas ou mistas. Ao colocar o cifrão antes da letra da coluna (ex: `$A1`), da linha (ex: `A$1`), ou de ambos (ex: `$A$1`), ele \"trava\" essa parte da referência. Isso impede que a referência mude quando a fórmula é copiada ou arrastada para outras células, garantindo que ela sempre aponte para a mesma coluna, linha ou célula específica."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Excel, o símbolo de cifrão ($) é utilizado para criar referências absolutas ou mistas. Ao colocar o cifrão antes da letra da coluna (ex: `$A1`), da linha (ex: `A$1`), ou de ambos (ex: `$A$1`), ele \"trava\" essa parte da referência. Isso impede que a referência mude quando a fórmula é copiada ou arrastada para outras células, garantindo que ela sempre aponte para a mesma coluna, linha ou célula específica.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a diferença entre os atalhos Alt + Tab e Alt + Esc no Windows?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Alt + Tab abre o menu Iniciar, enquanto Alt + Esc abre a Central de Ações",
+          "correct": false,
+          "explanation": "Incorreta. O atalho para abrir o menu Iniciar é a tecla `Windows`. A Central de Ações (ou Notificações) é geralmente acessada por `Windows + A`. `Alt + Tab` e `Alt + Esc` não executam essas funções."
+        },
+        {
+          "id": "b",
+          "text": "Alt + Tab fecha a janela ativa, enquanto Alt + Esc minimiza todas as janelas",
+          "correct": false,
+          "explanation": "Incorreta. O atalho para fechar a janela ativa é `Alt + F4`. Para minimizar todas as janelas e exibir a área de trabalho, os atalhos são `Windows + D` ou `Windows + M`. `Alt + Tab` e `Alt + Esc` são atalhos para alternar entre janelas, não para fechá-las ou minimizá-las."
+        },
+        {
+          "id": "c",
+          "text": "Alt + Tab alterna entre áreas de trabalho virtuais, enquanto Alt + Esc alterna entre aplicativos em tela cheia",
+          "correct": false,
+          "explanation": "Incorreta. A alternância entre áreas de trabalho virtuais é realizada por `Windows + Ctrl + Seta para a esquerda/direita`. `Alt + Tab` e `Alt + Esc` alternam entre janelas de aplicativos, independentemente de estarem em tela cheia ou em áreas de trabalho virtuais específicas."
+        },
+        {
+          "id": "d",
+          "text": "Alt + Tab alterna entre janelas exibindo miniaturas, enquanto Alt + Esc alterna diretamente sem exibir miniaturas",
+          "correct": true,
+          "explanation": "Correta. O atalho `Alt + Tab` no Windows abre uma interface visual que exibe miniaturas de todas as janelas abertas, permitindo ao usuário navegar entre elas para selecionar qual deseja ativar. Já o `Alt + Esc` alterna entre as janelas abertas de forma sequencial, sem exibir as miniaturas, focando diretamente na próxima janela da ordem de ativação."
+        }
+      ],
+      "explanation": "Correta. O atalho `Alt + Tab` no Windows abre uma interface visual que exibe miniaturas de todas as janelas abertas, permitindo ao usuário navegar entre elas para selecionar qual deseja ativar. Já o `Alt + Esc` alterna entre as janelas abertas de forma sequencial, sem exibir as miniaturas, focando diretamente na próxima janela da ordem de ativação.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "No Windows Explorer, ao arrastar um arquivo dentro da mesma unidade lógica (mesma letra de drive), qual é o comportamento padrão do sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo é movido para o destino, sendo removido da origem",
+          "correct": true,
+          "explanation": "Correta. No Windows Explorer, quando um arquivo é arrastado e solto dentro da mesma unidade lógica (ou seja, no mesmo drive, como de uma pasta para outra dentro do C:), o comportamento padrão do sistema é *mover* o arquivo. Isso significa que o arquivo é removido de sua localização original e transferido para o novo destino."
+        },
+        {
+          "id": "b",
+          "text": "O arquivo é excluído permanentemente sem passar pela Lixeira",
+          "correct": false,
+          "explanation": "Incorreta. Arrastar um arquivo não o exclui. A exclusão permanente de um arquivo sem passar pela Lixeira é feita com o atalho `Shift + Delete`, ou esvaziando a Lixeira. O arrastar e soltar move ou copia o arquivo, dependendo do contexto."
+        },
+        {
+          "id": "c",
+          "text": "O arquivo é copiado para o destino, mantendo o original na origem",
+          "correct": false,
+          "explanation": "Incorreta. O comportamento de copiar um arquivo (mantendo o original) ocorre quando o arquivo é arrastado para uma unidade lógica diferente (ex: de C: para D:) ou quando a tecla `Ctrl` é pressionada durante o arrasto, independentemente da unidade. Dentro da mesma unidade, o padrão é mover."
+        },
+        {
+          "id": "d",
+          "text": "O arquivo é compactado e movido para o destino",
+          "correct": false,
+          "explanation": "Incorreta. O sistema operacional não compacta automaticamente um arquivo ao arrastá-lo e movê-lo. A compactação é uma ação manual que o usuário precisa iniciar, geralmente através de um menu de contexto ou aplicativo específico."
+        }
+      ],
+      "explanation": "Correta. No Windows Explorer, quando um arquivo é arrastado e solto dentro da mesma unidade lógica (ou seja, no mesmo drive, como de uma pasta para outra dentro do C:), o comportamento padrão do sistema é *mover* o arquivo. Isso significa que o arquivo é removido de sua localização original e transferido para o novo destino.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No Microsoft Excel, qual fórmula deve ser utilizada para calcular um aumento percentual sobre um valor, somando o resultado ao valor original?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "=valor * (1 + percentual)",
+          "correct": true,
+          "explanation": "Correta. Para calcular um aumento percentual e somá-lo ao valor original, a lógica é multiplicar o valor original por (1 + o percentual em formato decimal). Por exemplo, para aumentar 100 em 10% (0.10), a fórmula seria 100 * (1 + 0.10) = 100 * 1.10 = 110. Esta é a forma mais eficiente e correta de aplicar um aumento percentual no Excel, pois já incorpora o valor original e o aumento em uma única operação."
+        },
+        {
+          "id": "b",
+          "text": "=valor + (valor / percentual)",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula, ao dividir o valor pelo percentual, resultaria em um número muito alto para o aumento, que seria somado ao valor original. Por exemplo, para aumentar 100 em 10% (0.10), a conta seria 100 + (100 / 0.10) = 100 + 1000 = 1100, o que não representa um aumento de 10%."
+        },
+        {
+          "id": "c",
+          "text": "=valor + percentual",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula simplesmente adiciona o valor do percentual (em decimal ou inteiro) ao valor original, sem calcular a porcentagem do valor. Por exemplo, para aumentar 100 em 10% (0.10), a conta seria 100 + 0.10 = 100.10, o que não reflete um aumento percentual sobre o valor."
+        },
+        {
+          "id": "d",
+          "text": "=valor * percentual + 1",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula multiplica o valor original pelo percentual e depois soma 1. Por exemplo, para aumentar 100 em 10% (0.10), a conta seria 100 * 0.10 + 1 = 10 + 1 = 11. O resultado não inclui o valor original, nem representa corretamente o aumento percentual sobre ele."
+        }
+      ],
+      "explanation": "Correta. Para calcular um aumento percentual e somá-lo ao valor original, a lógica é multiplicar o valor original por (1 + o percentual em formato decimal). Por exemplo, para aumentar 100 em 10% (0.10), a fórmula seria 100 * (1 + 0.10) = 100 * 1.10 = 110. Esta é a forma mais eficiente e correta de aplicar um aumento percentual no Excel, pois já incorpora o valor original e o aumento em uma única operação.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em uma busca no Google, qual operador permite procurar termos especificamente dentro de um site determinado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "site: seguido do endereço do site",
+          "correct": true,
+          "explanation": "Correta. O operador 'site:' é o comando correto e amplamente utilizado em mecanismos de busca como o Google para limitar os resultados da pesquisa a um domínio ou subdomínio específico. Por exemplo, 'site:gov.br licitações' buscaria a palavra 'licitações' apenas dentro do site gov.br."
+        },
+        {
+          "id": "b",
+          "text": "web: seguido do endereço do site",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'web:' não é um comando reconhecido pelo Google para realizar buscas restritas a um site específico. É um termo genérico que não possui uma função de filtro de domínio na sintaxe de busca."
+        },
+        {
+          "id": "c",
+          "text": "url: seguido do endereço do site",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'url:' não é um comando padrão do Google para filtrar resultados por site. Existe o operador 'inurl:', que busca por termos específicos dentro do endereço (URL) das páginas, mas não restringe a busca a um site inteiro da forma desejada."
+        },
+        {
+          "id": "d",
+          "text": "domain: seguido do endereço do site",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'domain:' não é um comando padrão reconhecido pelo Google para restringir a busca a um site específico. Embora 'domain' se refira ao endereço de um site, a sintaxe correta para essa funcionalidade é outra."
+        }
+      ],
+      "explanation": "Correta. O operador 'site:' é o comando correto e amplamente utilizado em mecanismos de busca como o Google para limitar os resultados da pesquisa a um domínio ou subdomínio específico. Por exemplo, 'site:gov.br licitações' buscaria a palavra 'licitações' apenas dentro do site gov.br.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a tendência da Microsoft em relação ao Painel de Controle e às Configurações do Windows nas versões mais recentes do sistema operacional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Unificar ambas as ferramentas em uma nova interface chamada Central de Gerenciamento",
+          "correct": false,
+          "explanation": "Incorreta. Embora o objetivo seja a unificação e a simplificação, a Microsoft não está criando uma 'Central de Gerenciamento' como uma nova interface separada. A ideia é que o aplicativo 'Configurações' absorva as funcionalidades do Painel de Controle, tornando-se a interface principal para todas as configurações do sistema."
+        },
+        {
+          "id": "b",
+          "text": "Substituir gradualmente o Painel de Controle pelas Configurações do Windows",
+          "correct": true,
+          "explanation": "Correta. Desde o Windows 8 e, mais acentuadamente, no Windows 10 e 11, a Microsoft vem gradualmente transferindo as configurações e funcionalidades do tradicional Painel de Controle para o aplicativo 'Configurações'. O objetivo é substituir o Painel de Controle por uma interface mais moderna, unificada e otimizada para diferentes tipos de dispositivos, como telas sensíveis ao toque, alinhando-se à evolução do sistema operacional."
+        },
+        {
+          "id": "c",
+          "text": "Manter ambas as ferramentas com funcionalidades idênticas indefinidamente",
+          "correct": false,
+          "explanation": "Incorreta. A Microsoft tem uma estratégia clara de migração de funcionalidades. Manter ambas as ferramentas com funcionalidades idênticas indefinidamente contraria essa tendência, pois o objetivo é consolidar e modernizar a interface de gerenciamento do sistema."
+        },
+        {
+          "id": "d",
+          "text": "Remover completamente as Configurações e manter apenas o Painel de Controle",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa representa o oposto da estratégia da Microsoft. O aplicativo 'Configurações' é a interface mais recente e em constante desenvolvimento, sendo o Painel de Controle a ferramenta mais antiga que está sendo substituída."
+        }
+      ],
+      "explanation": "Correta. Desde o Windows 8 e, mais acentuadamente, no Windows 10 e 11, a Microsoft vem gradualmente transferindo as configurações e funcionalidades do tradicional Painel de Controle para o aplicativo 'Configurações'. O objetivo é substituir o Painel de Controle por uma interface mais moderna, unificada e otimizada para diferentes tipos de dispositivos, como telas sensíveis ao toque, alinhando-se à evolução do sistema operacional.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No contexto de redes de computadores, qual é a principal diferença entre uma LAN e uma WAN em termos de área de abrangência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "LAN abrange uma cidade, enquanto WAN abrange um bairro específico",
+          "correct": false,
+          "explanation": "Incorreta. Uma rede que abrange uma cidade é geralmente classificada como MAN (Metropolitan Area Network), que é intermediária entre LAN e WAN. LANs são menores que um bairro, e WANs são muito maiores que uma cidade."
+        },
+        {
+          "id": "b",
+          "text": "LAN e WAN possuem a mesma área de abrangência, diferindo apenas na velocidade de transmissão",
+          "correct": false,
+          "explanation": "Incorreta. Embora a velocidade de transmissão possa variar entre LANs e WANs (geralmente LANs são mais rápidas em sua área), a área de abrangência é o critério fundamental e distintivo entre elas. Afirmar que possuem a mesma área de abrangência é incorreto."
+        },
+        {
+          "id": "c",
+          "text": "LAN abrange um prédio ou prédios vizinhos, enquanto WAN abrange países e continentes",
+          "correct": true,
+          "explanation": "Correta. A principal diferença entre LAN (Local Area Network - Rede Local) e WAN (Wide Area Network - Rede de Longa Distância) reside na área geográfica que elas cobrem. Uma LAN é restrita a uma área limitada, como um único edifício, um campus universitário ou um conjunto de prédios vizinhos, oferecendo altas velocidades de conexão. Já uma WAN se estende por grandes distâncias geográficas, conectando redes em diferentes cidades, estados, países ou até continentes, como é o caso da própria Internet."
+        },
+        {
+          "id": "d",
+          "text": "LAN abrange países e continentes, enquanto WAN abrange um prédio ou prédios vizinhos",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa inverte as definições de LAN e WAN. LANs cobrem áreas pequenas, enquanto WANs abrangem grandes extensões geográficas."
+        }
+      ],
+      "explanation": "Correta. A principal diferença entre LAN (Local Area Network - Rede Local) e WAN (Wide Area Network - Rede de Longa Distância) reside na área geográfica que elas cobrem. Uma LAN é restrita a uma área limitada, como um único edifício, um campus universitário ou um conjunto de prédios vizinhos, oferecendo altas velocidades de conexão. Já uma WAN se estende por grandes distâncias geográficas, conectando redes em diferentes cidades, estados, países ou até continentes, como é o caso da própria Internet.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é o objetivo principal da autenticação em duas etapas por aplicativo de geração de códigos em comparação com a autenticação por SMS?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Reduzir o consumo de bateria do dispositivo móvel durante o processo de login",
+          "correct": false,
+          "explanation": "Incorreta. O impacto no consumo de bateria do dispositivo móvel ao gerar um código de autenticação é mínimo e não é o objetivo principal ou uma vantagem significativa dessa modalidade de segurança. A prioridade é a segurança aprimorada contra vetores de ataque específicos."
+        },
+        {
+          "id": "b",
+          "text": "Permitir acesso mais rápido sem necessidade de conexão com a internet",
+          "correct": false,
+          "explanation": "Incorreta. Embora muitos aplicativos de autenticação possam gerar códigos offline (o que é uma vantagem), o objetivo principal em termos de segurança não é o acesso mais rápido, mas sim a robustez contra certos tipos de ataque. Além disso, a necessidade de conexão com a internet para o dispositivo principal (onde o login é feito) ainda existe."
+        },
+        {
+          "id": "c",
+          "text": "Oferecer maior segurança contra clonagem de chip, pois o código é gerado localmente no dispositivo",
+          "correct": true,
+          "explanation": "Correta. A autenticação em duas etapas por aplicativo de geração de códigos (como Google Authenticator ou Microsoft Authenticator) oferece maior segurança contra a clonagem de chip (SIM swap) em comparação com a autenticação por SMS. Isso ocorre porque o código é gerado localmente no dispositivo do usuário, baseado em um algoritmo de tempo e uma chave secreta previamente configurada, e não é enviado via rede de telefonia. Assim, mesmo que um atacante clone o chip do usuário, ele não terá acesso ao dispositivo físico para gerar o código, protegendo a conta."
+        },
+        {
+          "id": "d",
+          "text": "Eliminar completamente a necessidade de senha no primeiro fator de autenticação",
+          "correct": false,
+          "explanation": "Incorreta. A autenticação em duas etapas (2FA) adiciona uma camada de segurança. Ela exige dois fatores de autenticação: geralmente algo que o usuário sabe (a senha) e algo que o usuário tem (o dispositivo com o aplicativo ou o chip). Portanto, ela não elimina a necessidade da senha, que é o primeiro fator."
+        }
+      ],
+      "explanation": "Correta. A autenticação em duas etapas por aplicativo de geração de códigos (como Google Authenticator ou Microsoft Authenticator) oferece maior segurança contra a clonagem de chip (SIM swap) em comparação com a autenticação por SMS. Isso ocorre porque o código é gerado localmente no dispositivo do usuário, baseado em um algoritmo de tempo e uma chave secreta previamente configurada, e não é enviado via rede de telefonia. Assim, mesmo que um atacante clone o chip do usuário, ele não terá acesso ao dispositivo físico para gerar o código, protegendo a conta.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "04_358765_Informática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:30:50"
+}

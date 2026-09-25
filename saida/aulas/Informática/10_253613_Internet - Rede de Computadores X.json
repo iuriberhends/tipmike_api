@@ -1,0 +1,753 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 3,
+    "titulo": "5. Conceitos básicos e modos de utilização de tecnologias, ferramentas, aplicativos e procedimentos associados à Internet e intranet. /\n\n6. Correio eletrônico. / 7. Computação em nuvem"
+  },
+  "ordem": 10,
+  "ordem_no_curso": "24.00",
+  "titulo": "Internet - Rede de Computadores X",
+  "codigo_aula": "253613",
+  "video_id": "qDlnSJizvE0=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:25:16",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/qDlnSJizvE0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420003,418340,419888,405173&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Internet - Rede de Computadores X\n\n## Continuação da Linha Internet/Web\nDe volta com a nossa linha de Internet, redes de computadores, falando da web. Joga na tela. Então, vimos a diferenciação e, continuando, vamos falar agora da Internet das Coisas, ou IoT, como queira. O que é isso?\n\n## Internet das Coisas (IoT)\nBasicamente, as coisas hoje estão ligadas à internet. Isso vai desde lâmpadas, celulares, impressoras, geladeiras, fogões e tudo mais que você lembrar. Hoje, qualquer porta-retrato digital pode ficar mostrando as fotos, por exemplo, que você posta lá no seu Instagram, nas suas redes sociais; ele fica baixando as fotos e alternando entre elas. Uma infinidade de coisas, literalmente.\n\nNo contexto do dia a dia, você tem câmeras, radares, relógios… os smartwatches que você conecta ao telefone, atende ligações, e alguns fazem isso até sem o telefone. Então, as coisas, de um modo geral, não são mais só os computadores, como tradicionalmente conhecidos; depois vieram os telefones, tablets também. Mas hoje tudo está conectado à internet.\n\nUm lance legal de comentar sobre a IoT é que, nesse contexto, os dispositivos foram projetados para a internet, mas não com foco na segurança. Não pensaram tanto nessa questão, então podem ser alvo. Podem ser objeto de invasões e serem manipulados de diversas formas: para derrubar servidores, para manipular dados da pessoa, ter acesso à rede da pessoa e por aí vai. Então, não há um foco ainda. Talvez ocorra uma transição ao longo do tempo para melhorar isso e dar mais ênfase na questão da segurança na IoT.\n\nBeleza? Então, um conceito bem simples, bem tranquilo: são as coisas ligadas à internet.\n\n## Proxy e FTP (Questões de Prova)\nEm muitas empresas, para se conectar à internet a partir da rede interna, é necessário configurar, nas opções de rede ou no seu browser, a conexão com um servidor intermediário. Este servidor administra as requisições para a internet e os procedimentos de segurança sobre elas. Como é conhecido esse servidor? Servidor proxy.\n\nLetra A de amor é o próximo: procedimento de copiar os dados via FTP. Nós já vimos que FTP é File Transfer Protocol, protocolo de transferência de arquivos, portas 20 e 21.\n\n“Protocolo para a conversão ou tradução de...” Beleza.\n\n## Deep Web e Tor\nSites públicos armazenados em servidores comerciais, indexados pelos buscadores populares, como o Google, compõem a internet acessada pela grande parte dos usuários. Entretanto, existe uma infraestrutura de rede e de navegação que expande essa possibilidade em algo conhecido como Deep Web. Um exemplo é a rede implementada pelo sistema Tor, do inglês The Onion Router, roteador cebola. Nela, os sites hospedados não serão, por exemplo, localizados pelos buscadores tradicionais.\n\nA informação da rede e o processamento de dados durante a navegação do usuário são realizados em diversos nós, pertencentes a uma estrutura de acesso em camadas, e a informação é encriptada, um conceito que já conhecemos. Os sites da rede Tor são unificados pela extensão .onion em seus domínios e são acessados pelos usuários através do browser desenvolvido a partir do Firefox.\n\nAnalise as afirmativas abaixo, valorando verdadeiro ou falso:\n\n1) O rastreamento dos dados de navegação do usuário na rede Tor, com o Tor, em sites .onion, é praticamente impossível.  \nNão podemos considerar que é de fato impossível, mas é praticamente. É difícil para caramba. Razão pela qual muita gente aproveita para cometer crimes lá ou divulgar conteúdo ilícito de uma forma geral.\n\n2) O site https://facebook… .onion pode ser acessado pelos browsers como o Firefox “normal”, que não seja o Tor.  \nO Tor é considerado uma versão do Firefox modificada para este fim. Portanto, navegadores convencionais não conseguem acessar .onion. Falso.\n\n3) A Deep Web é uma rede oculta dos mecanismos tradicionais de busca e foi provavelmente desenvolvida para uso na propagação de pornografia e venda de drogas.  \nÉ uma rede oculta dos mecanismos tradicionais de busca, beleza. Mas não foi desenvolvida para isso. O objetivo é dar anonimato às pessoas. Falso.\n\n4) Se um usuário da rede Tor acessa um site normal da web, está comprometendo a segurança dos demais usuários da rede Tor.  \nNavegadores que acessam a web podem acessar sites “normais”. Vai comprometer? Absolutamente nada. Ele vai fazer o acesso normal. Não há comprometimento. Falso.\n\n5) A estrutura descentralizada do acesso a sites na rede Tor e o processo de criptografia devem inviabilizar a realização de buscadores de conteúdo, como o Google.  \nPerfeito. Sites normais de busca não vão conseguir encontrar o conteúdo da Deep Web/Tor. Verdade.\n\nEntão ficou: verdadeiro, o resto falso, e o último verdadeiro. Quase tudo falso. Letra D.\n\n## Intranet x Extranet x Internet (Questão 31)\nLeia as afirmativas:\n\n1) Intranet: trata-se de uma rede privada dentro de uma organização, acessível apenas por membros, empregados ou terceiros com autorização.  \nBeleza. Intranet é isso.\n\n2) Internet permite acesso externo controlado para negócios específicos, educacionais ou projetos. As empresas utilizam esse sistema para manter relacionamento com parceiros, clientes e fornecedores.  \nNão, isso não é internet, é extranet.\n\n3) Extranet é uma rede mundial que tem como objetivo interligar computadores para fornecer ao usuário acesso a diversas informações.  \nIsso é definição de internet. Trocaram os conceitos.\n\nPautando-se no que já estudamos, podemos dizer que apenas o item 1 está correto, portanto, letra D.\n\n## Intranet/Internet/Extranet e Protocolos (Questão 32)\nQuanto a internet, intranet e extranet e seus principais protocolos, analise:\n\n1) A extranet é tipicamente utilizada por fornecedores, parceiros e clientes.  \nBeleza. Tipicamente é isso. Não é somente, mas é típico.\n\n2) Tanto a intranet quanto a internet e a extranet utilizam o protocolo TCP/IP. Lembrando que extranet nada mais é do que a internet com acesso externo controlado.  \nTodas vão utilizar o modelo TCP/IP. Verdade.\n\nEntão, verdade e verdade. Marcamos a letra D de amor.\n\n## Internet das Coisas (Questão 33)\nAcerca da internet das coisas, assinale a alternativa correta:\n\nA) “É uma forma mais econômica de acesso à internet, na qual geladeiras oferecem internet a celulares e computadores, dispensando roteadores.”  \nErrado. Não é um meio de conexão, como 4G, 5G ou fibra ótica.\n\nB) Como exemplo de internet das coisas, é correto citar um dispositivo que mede a temperatura ambiente interna do escritório e envia essa informação pela internet.  \nSe, inclusive, a análise desses dados (nesse caso, dados não estruturados) for feita por um sistema de Big Data, conectando a temperatura com outros dados para gerar informações, é um exemplo sim de IoT. Correto.\n\nC) “Bitcoin iniciou a era da internet das moedas e bancos virtuais sem agências.”  \nBitcoin é uma moeda virtual, uma cripto, mas não está relacionada à IoT. Errado.\n\nD) “A internet das coisas opera separadamente da internet das pessoas; por isso, não é possível enviar os dados coletados pela IoT para a nuvem.”  \nErrado. Envia para a nuvem sim.\n\nE) “A IoT tem grande aplicação em ambientes domésticos e escritórios, mas pouco em ambientes industriais.”  \nPelo contrário. Na indústria vai ser muito usada. Máquinas conectadas, sensores, controle de produção, falta de matéria-prima, tudo monitorado. Câmeras conectadas, leitura de faces, placas de carros que entram e saem, outros sensores gerando inúmeras informações para o controle industrial. Aplicação muito ampla, não “pouca”.\n\nCorreta: a alternativa do dispositivo de temperatura (B).\n\n## Pesquisa na Web: Buscadores e Operadores do Google\nVamos falar de pesquisas na web agora. Principais sites de busca: existem outros, mas sem dúvida nenhuma, o Google é o mais cobrado em provas de concurso. O Bing também pode ser citado; pertence à Microsoft. O Yahoo! também.\n\nA partir de agora vou falar estritamente do Google, de operações e de buscas usando o Google. Como eu disse, é o mais cobrado em prova.\n\n### Recurso “Estou com sorte”\nO recurso “Estou com sorte”: quando faço uma pesquisa, digito termos para a busca e isso me dá várias, às vezes milhares de opções de links. Mas quando você digita, por exemplo, “Gran Cursos Online”, o que provavelmente você quer acessar é o site do Gran Cursos Online. Vamos supor que você não conheça o link. Aí entra a estatística: quando as pessoas digitam “Gran Cursos Online”, o link mais clicado é o do Gran Cursos Online. O “Estou com sorte” entra direto no primeiro link da busca. Não aparecem opções: ele acessa o primeiro link direto.\n\nEntão, se você digitar “Gran Cursos Online” e clicar em “Estou com sorte”, vai direto para o link do Gran Cursos. Você percebeu que o “Estou com sorte” tem a ver com aquilo que a pessoa desejava e o que aconteceu? Não é sorte de alinhamento de astros: é estatística de primeiro resultado. Às vezes, o primeiro link pode ser um vídeo no YouTube que viralizou, e não o site da empresa, e a empresa tenta reverter isso com mecanismos de SEO e tal.\n\nVamos à Anatel… Usou “Estou com sorte” com esse objetivo.\n\n### Aspas duplas\nAspas duplas caem muito em prova. O que fazem? Quando uso aspas duplas, estou dizendo: eu quero exatamente esse conteúdo, nessa ordem.\n\n💬 História: O cara está estudando para concurso, vai ser aprovado, nomeado, exercer o cargo, e vai pedir a namorada em casamento. Ele quer usar o Soneto de Fidelidade, do Vinícius de Moraes. Coloca entre aspas o primeiro verso “De tudo, ao meu amor serei atento” e o Google procura exatamente essa expressão. Sem aspas, o Google dá ênfase a sites que contêm todas as palavras, mas a ordem não importa tanto. Com aspas, é do jeitinho que foi escrito. Fechou? É impossível não trazer o Soneto de Fidelidade.\n\nEntão, lembre-se:\n- Sem aspas: prioridade a páginas que contêm todas as palavras, em qualquer ordem.\n- Com aspas: exatamente aquela expressão, naquela ordem.\n\n### Operador de exclusão (sinal de menos)\nColocou “Jefferson Bola”: vai encontrar coisas sobre Jefferson e “Bola”. O sinal de menos vai tirar um termo da busca. Ex.: Jefferson -Bola. Detalhe importante que já caiu em prova: não há espaço entre o sinal de menos e a palavra excluída. Há espaço entre “Jefferson” e “-Bola”, mas entre o “-” e “Bola” não. Se escrever “carro-usado” tudo junto, não funciona como exclusão; teria que ter “carro -usado”.\n\n### Maiúsculas e minúsculas\nNa hora de fazer a procura, não importa digitar tudo em maiúsculo, tudo em minúsculo, misturado. O Google não diferencia maiúsculas de minúsculas na pesquisa.\n\n### Operador OR (OU)\nPor que digitar OR/OU? Para combinar buscas. Quando digito duas palavras sem operador, ele dá ênfase a sites que contenham as duas palavras. Quando uso OR, digo “isso ou aquilo”: pode trazer páginas com só uma palavra, só a outra, em qualquer ordem, ou as duas.\n\n### Pesquisa dentro de um site (site:)\nQuero procurar dentro de um site específico, usando o domínio. Exemplo: “Jefferson Bobo” site:grancursosonline.com.br. Aqui estou combinando aspas com site:. Sem espaço entre site: e o domínio. Poderia usar o domínio completo também (com www). Existem outros operadores; você pode conhecer mais acessando a ajuda do próprio Google: “Como pesquisar no Google”. Posso filtrar por notícias, por “Shopping” (vendas), por vídeos (vai trazer meus vídeos no Gran Cursos Online), por imagens, etc.\n\n### Intervalo de valores (..)\nIntervalo de valores: Copa do Mundo 2010..2024. Posso digitar só o início “2010..” (a partir de 2010) ou só o final “..2024” (até 2024).\n\n### Hashtags\nHashtags são as marcações que usamos para filtrar conteúdo, principalmente em redes sociais. Ex.: #boasdicas vai trazer locais que têm essa marcação.\n\n### Tipo específico de arquivo (filetype:)\nMuito cobrado em prova. Ex.: informática filetype:pdf. Sem espaço entre filetype: e a extensão. Você pode combinar com aspas e outros operadores.\n\n### Redes sociais (arroba)\nQuero saber se um fulano tem redes sociais. Sei o nome artístico entre aspas, por exemplo, “Jefferson Bobo”, e uso @jeffersonbobo para localizar perfis.\n\n### Cálculos, conversões e utilidades do Google\nO Google faz cálculos simples, como 2^3, conversões de dólar para real, unidades de medida, previsão do tempo no local, e muito mais. Uma amostragem do que ele faz. Não é tudo, mas muita coisa.\n\n> 🎯 Dicas de prova:  \n> - Aspas duplas: correspondência exata da expressão.  \n> - Sinal de menos: exclui termos, sem espaço entre “-” e a palavra.  \n> - site:: pesquisa em um domínio específico, sem espaço após os dois pontos.  \n> - filetype:: restringe por tipo de arquivo, sem espaço após os dois pontos.  \n> - .. (dois pontos seguidos): intervalo numérico.  \n> - @nome: busca em redes sociais.  \n> - Google não diferencia maiúsculas e minúsculas na busca.\n\n## Questão 34 – Forma de pesquisa mais restritiva\nQual apresenta a forma de pesquisa mais restritiva?\n\n- “Prefeitura Municipal da Estância de Cananeia” (sem aspas): não tem restrição; vai procurar todas as palavras, tratando preposições e termos descartáveis conforme o algoritmo.  \n- “Prefeitura Municipal da Estância de Cananeia” site:... (com aspas e site:): restringe bem, especificou a expressão exata e o site. Até então, é o mais restritivo.  \n- “Prefeitura Municipal da Estância de Cananeia” (com aspas, sem site:): restringe pela expressão exata, mas em qualquer site.  \n- “Prefeitura municipal da *” (asterisco): curinga substitui termos, fica genérico.  \n- “Prefeitura de Cananeia”: mais genérico ainda.\n\nGanhadora: a com aspas e site:, letra B.\n\n## Questão 35 – Símbolos/Operadores e Objetivos\nAo pesquisar no Google, é possível usar símbolos e operadores:\n\n- Pesquisar uma correspondência exata ao termo: aspas duplas.  \n- Pesquisar um termo em redes sociais: arroba (@).  \n- Excluir termos dos resultados: sinal de menos (-).  \n- Pesquisar intervalo numérico: dois pontos seguidos (..).\n\nSequência: 2, 4, 1, 3. Letra D de amor.\n\n## Encerramento do Bloco\nAmeaças virtuais é o assunto agora, bem chamativo. Vou encerrar esse bloco para que possamos voltar nessa tela tratando de ameaças. Até daqui a pouco no próximo bloco.",
+  "transcricao_meta": {
+    "title": "Internet - Rede de Computadores X",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 33587,
+    "createdAt": "2026-02-10T01:02:03.723Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: Internet vs Intranet vs Extranet, protocolos (TCP/IP, FTP), conceitos de Deep Web/Tor/.onion, fundamentos e segurança de IoT, e operadores de busca do Google.\nPrincipais pontos: \n- Diferenças conceituais (Internet x Intranet x Extranet) e uso do modelo TCP/IP\n- Tor/.onion não indexados por buscadores tradicionais; anonimato e limitações\n- IoT: envio à nuvem, Big Data, riscos de segurança\n- Google: “Estou com sorte” e operadores (aspas, -, OR, site:, filetype:, .., @)\n\n## 1. Base / Conceitos Fundamentais\n- **Internet**: Rede pública mundial que interliga computadores e serviços (HTTP/HTTPS, e-mail, etc.).\n- **Intranet**: Rede privada interna de uma organização, acesso restrito a membros/autorizados.\n- **Extranet**: Extensão controlada da intranet para acesso externo por parceiros, clientes e fornecedores.\n- **TCP/IP (modelo TCP/IP)**: Conjunto de protocolos base para comunicação em internet, intranets e extranets.\n- **FTP (File Transfer Protocol)**: Protocolo para transferência de arquivos. Portas padrão: **20 (dados)** e **21 (controle)**.\n- **Tor (The Onion Router)**: Rede/tecnologia de anonimato baseada em camadas de criptografia e roteamento “em cebola”.\n- **.onion**: Sufixo de endereços acessíveis somente por navegador compatível com **rede Tor**.\n- **IoT (Internet das Coisas)**: Dispositivos físicos conectados à internet (sensores, câmeras, lâmpadas, wearables, equipamentos industriais) coletando e trocando dados, geralmente com envio à nuvem.\n- **Big Data**: Processamento/análise de grandes volumes de dados (muitas vezes não estruturados), associado a IoT.\n- **Criptomoeda (ex.: bitcoin)**: Moeda virtual; não é tecnologia IoT.\n\n## 2. Como Funciona / Distinções\n- Internet x Intranet x Extranet:\n  - Todas usam **TCP/IP**.\n  - Internet: pública; Intranet: privada interna; Extranet: acesso externo controlado à intranet.\n- Tor/.onion:\n  - Navegação via rede Tor aplica múltiplas camadas de criptografia e roteamento descentralizado.\n  - Endereços **.onion** não são indexados por **Google**, **Bing**, **Yahoo**; exigem navegador compatível (browser baseado no **Firefox** na distribuição Tor).\n  - Rastrear navegação no Tor: não é impossível, mas é extremamente difícil.\n- IoT:\n  - Dispositivos coletam dados e enviam para **nuvem**; análises podem usar **Big Data**.\n  - Segurança muitas vezes é frágil: risco de invasão, DDoS, manipulação/roubo de dados, pivot para a rede interna.\n- Google (busca):\n  - “**Estou com sorte**”: abre diretamente o 1º resultado (pode ser **YouTube**); não melhora a busca.\n  - Não diferencia maiúsculas/minúsculas.\n\n## 3. Aplicação Prática / Técnicas\n- Operadores do Google:\n  - **\"aspas\"**: correspondência exata na ordem digitada. Ex.: \"de tudo, ao meu amor? Serei atento\"\n  - **-termo**: exclui termo. Regra: espaço antes do hífen e nenhum espaço após o hífen. Ex.: Jeffersoné -bobo\n  - **OR / ou**: retorna páginas com um termo, outro, ou ambos.\n  - **site:domínio**: restringe resultados a um domínio (sem espaço após os dois-pontos). Ex.: \"PMDF currículo\" site:granecursosonline.com.br\n  - **filetype:extensão**: filtra por tipo de arquivo (sem espaço). Ex.: informática filetype:pdf\n  - **n..m**: intervalo numérico. Ex.: Copa do Mundo 2010..2024\n  - **@usuário**: pesquisa nomes de usuário em redes sociais. Ex.: @Jeffersoné.bobo\n  - Cálculos e conversões diretas: 2^3, moedas, unidades, clima.\n- Segurança em IoT (macetes de prova):\n  - Associe IoT + sensores + nuvem + **Big Data** + uso industrial (Indústria 4.0).\n  - Reconheça riscos: dispositivos inseguros → vetores de ataque (DDoS, invasões, manipulação de dados).\n- Tor/.onion na prática de prova:\n  - **.onion** só via **rede Tor**; navegadores comuns (ex.: **Firefox** sem Tor) não acessam.\n  - Acessar sites comuns via Tor não “quebra” a segurança dos demais usuários da rede Tor.\n\n## 4. Exemplos e Casos Resolvidos\n- Internet/Intranet/Extranet (V/F):\n  - Intranet é rede privada acessível apenas por membros/autorizados — Verdadeiro.\n  - “Internet permite acesso externo controlado à rede privada” — Falso (isso é Extranet).\n  - “Extranet é a rede mundial pública” — Falso (isso é Internet).\n  - Correta: apenas a 1. Indicação usual: letra D.\n- Internet/Intranet/Extranet (outra bateria V/F):\n  - Extranet usada tipicamente por fornecedores, parceiros e clientes — Verdadeiro.\n  - Internet, Intranet e Extranet usam **TCP/IP** — Verdadeiro.\n  - Gabarito indicado: letra A.\n- Tor/.onion (V/F):\n  - “Estrutura descentralizada e criptografia inviabilizam buscadores como Google” — Verdadeiro.\n  - “Rastreamento é impossível” — Falso como impossibilidade absoluta; como “praticamente inviável”, aceita-se Verdadeiro em provas que usem esta redação.\n  - “Acessar .onion por navegador comum (ex.: Firefox sem Tor)” — Falso.\n  - “Criada para pornografia/drogas” — Falso (objetivo é anonimato/privacidade).\n  - “Acessar site comum via Tor compromete segurança de outros usuários” — Falso.\n  - Sequência citada em aula: “Quase tudo falso; correta a dos buscadores” (letra D).\n- IoT (múltipla escolha):\n  - Correto: sensores medem e enviam dados pela internet para análise (até com **Big Data**).\n  - Errados: “bitcoin = IoT”; “IoT é meio de conexão”; “não envia para nuvem”; “pouca aplicação industrial”.\n\n- Google: mais restritiva (exemplo questão 34)\n  - Combinar **\"aspas\" + site:domínio** é mais restritivo. Gabarito indicado: letra B.\n- Google: associação de símbolos (exemplo questão 35)\n  - Correspondência exata → \"aspas\"\n  - Redes sociais → \"@\"\n  - Excluir termos → \"-\"\n  - Intervalo numérico → \"..\"\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova: Troca de conceitos entre Internet, Intranet e Extranet é recorrente. Internet não é rede privada; Extranet não é a rede pública mundial.\n\n- **TCP/IP**: é base para internet, intranet e extranet. Afirmar o contrário é erro.\n- **FTP**: memorize portas **20/21**. Confundir com outras portas cai muito.\n- **Tor/.onion**:\n  - Dizer que **Google** indexa **.onion** → Falso.\n  - Dizer que é impossível rastrear Tor (absoluto) → Exagero; prefira “extremamente difícil”.\n  - Acessar .onion sem Tor → Falso.\n- **IoT**:\n  - “Não envia dados à nuvem” → Falso.\n  - “É meio de acesso (tipo 4G/5G)” → Falso.\n  - “bitcoin é IoT” → Falso.\n  - Ignorar riscos de segurança → Erro.\n- **Google operadores**:\n  - Depois dos dois-pontos em **site:** e **filetype:** não há espaço.\n  - Exclusão com “-”: precisa de espaço antes do hífen e nenhum depois. “carro-usado” não exclui “usado”; vira palavra composta.\n  - “Estou com sorte” não melhora relevância; só pula a lista e abre o 1º link (pode ser **YouTube**).\n  - Google ignora maiúsculas/minúsculas.\n\n> Dica de prova: Forma “mais restritiva” costuma combinar operadores — aspas + site: + filetype: quando aplicável.\n\n> Dica de prova: Em “tipicamente” para extranet (parceiros, clientes, fornecedores), marque verdadeiro; “tipicamente” não é exclusividade.\n\n> Dica de prova: Lembre do trio IoT + Nuvem + Big Data e das consequências de segurança (DDoS, invasões, manipulação de dados).\n\n> Dica de prova: “os sites da rede Tor são unificados pela extensão .onion” — verdadeiro.\n\n> Dica de prova: **Portas do FTP: 20 e 21**. Grave!",
+  "resumo_bolso": "# Internet - Rede de Computadores X\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Internet**: Rede pública mundial que interliga computadores e serviços (HTTP/HTTPS, e-mail, etc.).\n* **Intranet**: Rede privada interna de uma organização, acesso restrito a membros/autorizados.\n* **Extranet**: Extensão controlada da intranet para acesso externo por parceiros, clientes e fornecedores.\n* **TCP/IP**: Conjunto de protocolos base para comunicação em Internet, Intranets e Extranets.\n* **FTP**: Protocolo para transferência de arquivos. Portas padrão: **20 (dados)** e **21 (controle)**.\n* **Tor**: Rede/tecnologia de anonimato baseada em múltiplas camadas de criptografia e roteamento “em cebola”.\n* **.onion**: Sufixo de endereços acessíveis somente por navegador compatível com a **rede Tor**; não são indexados por **Google**, **Bing**, **Yahoo**.\n* **IoT (Internet das Coisas)**: Dispositivos físicos conectados à internet (sensores, câmeras, lâmpadas, wearables, equipamentos industriais) coletando e trocando dados, geralmente com envio à **nuvem**.\n* **Big Data**: Processamento/análise de grandes volumes de dados, muitas vezes associados aos dados gerados por IoT.\n* **Criptomoeda (ex.: bitcoin)**: Moeda virtual; **não é tecnologia IoT**.\n* **“Estou com sorte” (Google)**: Abre diretamente o 1º resultado (inclusive podendo ser **YouTube**); não melhora a busca.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Internet vs Intranet vs Extranet\n\n| Aspecto            | Internet                                   | Intranet                                              | Extranet                                                       |\n|--------------------|--------------------------------------------|-------------------------------------------------------|----------------------------------------------------------------|\n| Acesso             | Pública                                    | Privada interna                                       | Acesso externo controlado à intranet                          |\n| Usuários típicos   | Qualquer usuário                           | Funcionários / membros autorizados                    | Parceiros, clientes, fornecedores                              |\n| Base de protocolos | TCP/IP                                     | TCP/IP                                                | TCP/IP                                                         |\n| Finalidade         | Rede mundial de informação/serviços        | Comunicação interna, sistemas corporativos            | Compartilhar parte da intranet com externos de confiança       |\n\n---\n\n### Tor / .onion vs Web comum\n\n| Aspecto     | Tor / .onion                                                                 | Web comum (.com, .gov, etc.)                    |\n|-------------|------------------------------------------------------------------------------|-------------------------------------------------|\n| Acesso      | Exige navegador compatível com a **rede Tor**                               | Navegadores comuns (Chrome, Firefox, Edge etc.) |\n| Indexação   | Endereços **.onion** não são indexados por **Google**, **Bing**, **Yahoo**  | Indexado por buscadores                         |\n| Estrutura   | Múltiplas camadas de criptografia e roteamento descentralizado (“em cebola”)| Roteamento “normal” via provedores              |\n| Rastreio    | Rastrear navegação é **extremamente difícil**, mas não impossível absoluto  | Muito mais fácil                                |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Portas do FTP**\n\n* **Regra**: **20 = dados**, **21 = controle**.  \n* **Exemplo**: Confundir com outras portas é erro recorrente em prova.\n\n---\n\n**2. Operador de exclusão no Google: `-termo`**\n\n* **Função**: Excluir termo dos resultados.  \n* **Regra**: **Espaço antes do hífen, nenhum espaço depois**.  \n  * Ex.: `Jeffersoné -bobo` (exclui “bobo”).  \n* “carro-usado” não exclui “usado”; vira palavra composta.\n\n---\n\n**3. Operador `site:`**\n\n* **Função**: Restringir resultados a um domínio.  \n* **Regra**: **Sem espaço após os dois-pontos**.  \n  * Ex.: `\"PMDF currículo\" site:granecursosonline.com.br`.\n\n---\n\n**4. Operador `filetype:`**\n\n* **Função**: Filtrar por tipo de arquivo.  \n* **Regra**: **Sem espaço após os dois-pontos**.  \n  * Ex.: `informática filetype:pdf`.\n\n---\n\n**5. Intervalo numérico `n..m`**\n\n* **Função**: Pesquisar intervalo de anos/valores.  \n* **Regra**: Dois pontos seguidos, sem espaço: `2010..2024`.  \n* **Exemplo**: `Copa do Mundo 2010..2024`.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Troca entre **Internet**, **Intranet** e **Extranet** (Internet não é rede privada; Extranet não é a rede pública mundial).\n* Afirmar que **Internet, Intranet e Extranet não usam todas TCP/IP**.\n* Dizer que **Google** indexa endereços **.onion**.\n* Afirmar que é **impossível** rastrear usuários da rede Tor (impossibilidade absoluta).\n* Dizer que **bitcoin é IoT** ou que IoT não envia dados à nuvem / tem pouca aplicação industrial.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Internet (pública)** de **Intranet (privada interna)** e **Extranet (acesso externo controlado à intranet)**?  \n* Fixei que **Internet, Intranet e Extranet usam TCP/IP**?  \n* Memorizei **FTP = portas 20 (dados) e 21 (controle)**?  \n* Lembrei que **.onion só via rede Tor** e **não é indexado por Google/Bing/Yahoo**?  \n* Associei **IoT + sensores + nuvem + Big Data + uso industrial + riscos de segurança (DDoS, invasões, manipulação/roubo de dados, pivot para rede interna)**?  \n* Sei que **“Estou com sorte” só abre o 1º resultado**, sem melhorar relevância, e que o Google ignora maiúsculas/minúsculas?  \n* Sei usar os operadores do Google:  \n  * `\"aspas\"` = correspondência exata;  \n  * `-termo` = excluir (espaço antes do hífen, nenhum depois);  \n  * `OR` / `ou` = um termo, outro ou ambos;  \n  * `site:` = restringir domínio (sem espaço após os dois-pontos);  \n  * `filetype:` = tipo de arquivo (sem espaço após os dois-pontos);  \n  * `n..m` = intervalo numérico;  \n  * `@usuário` = pesquisa nomes de usuário em redes sociais?  \n* Em pergunta sobre “busca mais restritiva”, lembro de **combinar operadores** (ex.: `\"frase exata\" site:domínio filetype:pdf` quando aplicável)?  \n* Gravei: **“os sites da rede Tor são unificados pela extensão .onion”** → verdadeiro?",
+  "mapa_mental": "# 🌐 Internet – Rede de Computadores X\n\n## 🎯 Redes: Internet x Intranet x Extranet\n### 💡 Conceitos básicos\n- Internet rede pública\n- Intranet rede privada\n- Extranet acesso externo\n- Acesso controlado extranet\n- Uso corporativo intranet\n### 🌐 Características principais\n- Internet acesso irrestrito\n- Intranet acesso interno\n- Extranet parceiros clientes\n- Comunicação interorganizacional\n- Compartilhamento seguro\n### 📡 Protocolos de rede\n- TCP/IP pilha protocolos\n- Camada internet roteamento\n- Camada transporte TCP UDP\n- Identificação endereços IP\n- Base internet intranet extranet\n\n## 💻 Protocolos e Serviços\n### 📁 FTP e portas\n- FTP transferência arquivos\n- Porta 20 dados\n- Porta 21 controle\n- Protocolo aplicação TCP\n- Memorizar 20 21\n### 🌐 HTTP e serviços\n- HTTP páginas web\n- HTTPS conexão segura\n- Navegadores clientes web\n- Servidores hospedagem sites\n- E-mail serviço internet\n### 🧱 Camadas TCP/IP\n- Acesso rede física\n- Internet roteamento IP\n- Transporte TCP UDP\n- Aplicação serviços rede\n- Encapsulamento dados\n\n## 🕸️ Deep Web, Tor e .onion\n### 🌑 Deep Web conceito\n- Conteúdo não indexado\n- Acesso por autenticação\n- Bancos dados privados\n- Páginas internas sistemas\n- Diferente dark web\n### 🧅 Rede Tor\n- The Onion Router\n- Roteamento em camadas\n- Criptografia múltiplos nós\n- Estrutura descentralizada\n- Anonimato relativo\n### 🔗 Domínios .onion\n- Sufixo exclusivo Tor\n- Não indexado buscadores\n- Acesso só via Tor\n- Navegadores comuns incapazes\n- Foco privacidade anonimato\n\n## 🤖 IoT, Big Data e Segurança\n### 📡 Conceito IoT\n- Internet das Coisas\n- Dispositivos conectados rede\n- Sensores atuadores inteligentes\n- Comunicação máquina máquina\n- Indústria 4.0 aplicações\n### ☁️ IoT e dados\n- Envio dados nuvem\n- Armazenamento remoto contínuo\n- Análise Big Data\n- Grandes volumes dados\n- Dados estruturados não estruturados\n### 🛡️ Segurança em IoT\n- Dispositivos pouco seguros\n- Vetores ataque rede\n- DDoS dispositivos zumbis\n- Invasão manipulação dados\n- Necessidade hardening atualização\n\n## 🔍 Busca Google e Operadores\n### 🧭 Funcionamento básico\n- Ignora maiúsculas minúsculas\n- Botão Estou com sorte\n- Abre primeiro resultado\n- Não melhora relevância\n- Cálculos conversões diretas\n### 🧩 Operadores principais\n- \" \" busca exata\n- -termo exclusão palavra\n- OR alternativa termos\n- .. intervalo numérico\n- @ usuário redes\n### 📂 Filtros avançados\n- site: domínio específico\n- filetype: tipo arquivo\n- Sem espaço pós dois-pontos\n- Combinação operadores restrição\n- Aspas mais site filetype",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Internet das Coisas",
+      "description": "Internet das Coisas — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza a **Internet das Coisas (IoT)**?",
+          "back": "As **coisas** ligadas à internet.",
+          "hint": "Conceito de conectividade física",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "iot"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual vulnerabilidade de segurança é destacada em dispositivos da IoT?",
+          "back": "Não têm **foco na segurança**.",
+          "hint": "Ponto fraco estrutural",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "seguranca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como sensores industriais podem aplicar a Internet das Coisas?",
+          "back": "Máquinas conectadas com seus **sensores** para monitorar funcionamento, produção ou falta de matéria-prima.",
+          "hint": "Aplicação prática em fábricas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "iot"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-4",
+          "front": "Que tipo de informação um sensor de temperatura pode enviar pela internet?",
+          "back": "Temperatura do escritório.",
+          "hint": "Exemplo de dado coletado",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "internet",
+            "iot"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Redes Privadas",
+      "description": "Redes Privadas — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "O que define uma intranet?",
+          "back": "Rede privada de dentro de uma organização acessível apenas por membros, empregados ou terceiros com autorização de acesso.",
+          "hint": "Rede de acesso restrito",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "intranet"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual é a finalidade principal de uma extranet?",
+          "back": "Permitir acesso externo controlado para negócios específicos ou projetos educacionais com parceiros, clientes e fornecedores.",
+          "hint": "Extensão da rede privada",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "extranet"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual protocolo é utilizado por internet, intranet e extranet?",
+          "back": "**TCP/IP**",
+          "hint": "Conjunto de protocolos base",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes",
+            "protocolos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a função de um servidor proxy em uma rede corporativa?",
+          "back": "Administrar as **requisições** para a internet e os procedimentos de segurança sobre elas.",
+          "hint": "Intermediário de tráfego",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "proxy"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Rede Tor",
+      "description": "Rede Tor — 5 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "O que caracteriza a rede acessada por meio do Tor?",
+          "back": "Rede oculta dos mecanismos tradicionais de busca com acesso em camadas e **informação encriptada**.",
+          "hint": "Rede de anonimato",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "tor"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Por que sites da rede Tor não costumam aparecer em buscadores tradicionais?",
+          "back": "A estrutura **descentralizada** e a criptografia inviabilizam a localização por buscadores tradicionais.",
+          "hint": "Motivo técnico de invisibilidade",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "tor"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual extensão identifica os domínios de sites da rede Tor?",
+          "back": "**ponto onion**",
+          "hint": "Sufixo de domínio específico",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "tor"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual navegador é utilizado para acessar sites da rede Tor?",
+          "back": "Browser desenvolvido a partir do **Firefox**.",
+          "hint": "Base do software de acesso",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "internet",
+            "tor"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Como é descrita a dificuldade de rastrear a navegação de um usuário no Tor?",
+          "back": "Praticamente **impossível**.",
+          "hint": "Nível de anonimato",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "tor"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Busca no Google",
+      "description": "Busca no Google — 10 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Qual operador do Google pesquisa uma expressão exatamente na ordem digitada?",
+          "back": "**Aspas duplas**",
+          "hint": "Sinal de pontuação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Como o Google interpreta uma busca feita sem aspas?",
+          "back": "Dá **ênfase** a sites que contêm todas as palavras, sem importar tanto a ordem.",
+          "hint": "Comportamento padrão do motor",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual regra de espaçamento deve ser observada ao excluir um termo da busca?",
+          "back": "Não há **espaço** entre o sinal de menos e o termo a ser excluído.",
+          "hint": "Regra de sintaxe do sinal",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Como o Google trata letras maiúsculas e minúsculas nos termos pesquisados?",
+          "back": "Não há **diferenciação** entre letras maiúsculas e minúsculas.",
+          "hint": "Sensibilidade a caracteres",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual operador combina alternativas em uma pesquisa do Google?",
+          "back": "**OR**",
+          "hint": "Operador lógico de união",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual operador restringe a pesquisa a um site ou domínio específico?",
+          "back": "**site**",
+          "hint": "Operador de escopo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual sintaxe permite pesquisar um intervalo numérico no Google?",
+          "back": "**Dois pontos** entre os números.",
+          "hint": "Sintaxe de intervalo",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual símbolo permite pesquisar conteúdos associados a uma hashtag?",
+          "back": "**Hashtag**",
+          "hint": "Símbolo de marcação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual símbolo permite pesquisar um usuário ou perfil em redes sociais?",
+          "back": "**Arroba**",
+          "hint": "Símbolo de identificação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "O que faz o recurso “Estou com sorte” do Google?",
+          "back": "Entrar direto no **primeiro link** da busca.",
+          "hint": "Atalho de navegação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "busca",
+            "google"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "O que caracteriza a Internet das Coisas (IoT)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma forma econômica de acesso à internet que dispensa a necessidade de roteadores para conectar computadores e celulares",
+          "correct": false,
+          "explanation": "Incorreta. A Internet das Coisas não é uma forma de acesso à internet em si, mas sim um conceito que descreve como os dispositivos se conectam e interagem. Ela não substitui a necessidade de roteadores ou outras infraestruturas de rede para o acesso à internet, mas utiliza essas infraestruturas para que os dispositivos possam se comunicar."
+        },
+        {
+          "id": "b",
+          "text": "Dispositivos diversos conectados à internet, como lâmpadas, geladeiras, câmeras e relógios inteligentes, permitindo comunicação e troca de dados",
+          "correct": true,
+          "explanation": "Correta. A Internet das Coisas (IoT) é caracterizada pela interconexão de objetos físicos do cotidiano, como eletrodomésticos, veículos, sensores e outros dispositivos, que são equipados com tecnologia para coletar e trocar dados via internet. Isso permite que esses objetos 'conversem' entre si e com sistemas, gerando novas possibilidades de automação e monitoramento."
+        },
+        {
+          "id": "c",
+          "text": "Uma rede exclusiva para ambientes industriais que não pode ser aplicada em contextos domésticos ou comerciais",
+          "correct": false,
+          "explanation": "Incorreta. A Internet das Coisas possui ampla aplicação em diversos ambientes, incluindo domésticos (casas inteligentes), comerciais (varejo, escritórios) e, de forma muito significativa, em ambientes industriais (Indústria 4.0). Na indústria, a IoT é fundamental para monitoramento de máquinas, otimização de processos e manutenção preditiva, demonstrando sua versatilidade e abrangência."
+        },
+        {
+          "id": "d",
+          "text": "Um sistema de criptomoedas que permite transações financeiras sem intermediários bancários tradicionais",
+          "correct": false,
+          "explanation": "Incorreta. O Bitcoin é uma criptomoeda e um sistema de pagamento digital, que utiliza tecnologia blockchain. Embora seja uma inovação tecnológica, não está diretamente relacionado ao conceito de Internet das Coisas, que foca na interconexão de objetos físicos."
+        }
+      ],
+      "explanation": "Correta. A Internet das Coisas (IoT) é caracterizada pela interconexão de objetos físicos do cotidiano, como eletrodomésticos, veículos, sensores e outros dispositivos, que são equipados com tecnologia para coletar e trocar dados via internet. Isso permite que esses objetos 'conversem' entre si e com sistemas, gerando novas possibilidades de automação e monitoramento.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a principal característica de segurança dos dispositivos IoT mencionada no contexto técnico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Possuem sistemas de criptografia avançada que impedem qualquer tipo de invasão ou manipulação de dados",
+          "correct": false,
+          "explanation": "Incorreta. Embora a criptografia seja uma ferramenta importante na segurança da informação, muitos dispositivos IoT não possuem sistemas de criptografia avançada por padrão ou são configurados de forma inadequada, tornando-os vulneráveis a ataques."
+        },
+        {
+          "id": "b",
+          "text": "Não foram projetados com foco prioritário em segurança, podendo ser vulneráveis a invasões e manipulações",
+          "correct": true,
+          "explanation": "Correta. A principal característica de segurança dos dispositivos IoT, historicamente, é a falta de um foco prioritário em segurança durante seu projeto e fabricação. Muitos desses dispositivos são desenvolvidos com ênfase na funcionalidade e no baixo custo, resultando em vulnerabilidades que podem ser exploradas por invasores para manipulação de dados, acesso a redes ou até mesmo ataques de negação de serviço distribuída (DDoS)."
+        },
+        {
+          "id": "c",
+          "text": "São projetados com foco prioritário em segurança, incluindo múltiplas camadas de proteção contra ataques",
+          "correct": false,
+          "explanation": "Incorreta. Historicamente, o desenvolvimento inicial da IoT priorizou a funcionalidade e a conectividade em detrimento da segurança. Muitos dispositivos foram lançados no mercado sem um foco robusto em segurança, o que os torna alvos fáceis para invasões e manipulações. Embora haja um movimento crescente para melhorar a segurança na IoT, ainda não é uma característica universal."
+        },
+        {
+          "id": "d",
+          "text": "Utilizam protocolos exclusivos que os isolam completamente da rede principal, garantindo proteção total",
+          "correct": false,
+          "explanation": "Incorreta. Dispositivos IoT se conectam à internet e, portanto, não estão completamente isolados da rede principal. A utilização de protocolos exclusivos não garante proteção total, e a falta de medidas de segurança adequadas pode expor esses dispositivos a riscos cibernéticos."
+        }
+      ],
+      "explanation": "Correta. A principal característica de segurança dos dispositivos IoT, historicamente, é a falta de um foco prioritário em segurança durante seu projeto e fabricação. Muitos desses dispositivos são desenvolvidos com ênfase na funcionalidade e no baixo custo, resultando em vulnerabilidades que podem ser exploradas por invasores para manipulação de dados, acesso a redes ou até mesmo ataques de negação de serviço distribuída (DDoS).",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a função do recurso 'Estou com sorte' no Google?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Realiza uma busca aleatória entre os resultados encontrados e apresenta o link mais acessado no último mês",
+          "correct": false,
+          "explanation": "Incorreta. O 'Estou com sorte' não realiza uma busca aleatória nem prioriza links com base no acesso do último mês. Ele se baseia nos algoritmos de relevância do Google para determinar o que seria o resultado mais provável que o usuário deseja."
+        },
+        {
+          "id": "b",
+          "text": "Apresenta uma lista reduzida contendo apenas os três primeiros resultados mais relevantes da busca",
+          "correct": false,
+          "explanation": "Incorreta. O recurso 'Estou com sorte' não apresenta uma lista reduzida de resultados. Sua função é mais direta e visa a conveniência do usuário."
+        },
+        {
+          "id": "c",
+          "text": "Filtra os resultados para exibir apenas sites com certificado de segurança verificado",
+          "correct": false,
+          "explanation": "Incorreta. O 'Estou com sorte' não tem como função filtrar resultados por certificado de segurança. Sua finalidade é agilizar o acesso ao resultado mais provável da busca, independentemente de características específicas de segurança do site."
+        },
+        {
+          "id": "d",
+          "text": "Acessa diretamente o primeiro resultado da busca, sem exibir a lista de links encontrados",
+          "correct": true,
+          "explanation": "Correta. O recurso 'Estou com sorte' (I'm Feeling Lucky) do Google foi projetado para levar o usuário diretamente ao primeiro resultado da busca que o Google considera mais relevante para a consulta, sem exibir a página de resultados intermediária. A ideia é que, se o Google 'acertar' a intenção do usuário, ele economiza o tempo de navegação pela lista de links."
+        }
+      ],
+      "explanation": "Correta. O recurso 'Estou com sorte' (I'm Feeling Lucky) do Google foi projetado para levar o usuário diretamente ao primeiro resultado da busca que o Google considera mais relevante para a consulta, sem exibir a página de resultados intermediária. A ideia é que, se o Google 'acertar' a intenção do usuário, ele economiza o tempo de navegação pela lista de links.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No Google, qual é o efeito de utilizar aspas duplas em uma pesquisa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Exclui da busca todos os sites que contenham a expressão digitada entre aspas",
+          "correct": false,
+          "explanation": "Incorreta. O operador para excluir termos da busca é o sinal de menos (-) antes da palavra a ser excluída, e não as aspas duplas. As aspas duplas servem para inclusão exata, não exclusão."
+        },
+        {
+          "id": "b",
+          "text": "Prioriza resultados de sites com maior relevância, desconsiderando a ordem das palavras",
+          "correct": false,
+          "explanation": "Incorreta. As aspas duplas não têm como função principal priorizar resultados por relevância ou desconsiderar a ordem das palavras. Pelo contrário, elas impõem uma ordem exata e uma correspondência literal, o que pode, inclusive, reduzir o número de resultados encontrados se a expressão exata não for comum."
+        },
+        {
+          "id": "c",
+          "text": "Busca sites que contenham todas as palavras digitadas, independentemente da ordem em que aparecem",
+          "correct": false,
+          "explanation": "Incorreta. A busca por todas as palavras digitadas, independentemente da ordem, é o comportamento padrão do Google quando as palavras são digitadas sem aspas duplas. As aspas duplas adicionam uma restrição específica."
+        },
+        {
+          "id": "d",
+          "text": "Busca a expressão exata, na ordem especificada, conforme foi digitada entre as aspas",
+          "correct": true,
+          "explanation": "Correta. No Google, o uso de aspas duplas (\" \") em uma pesquisa tem como efeito buscar a expressão exata, na ordem precisa em que foi digitada. Isso significa que o Google procurará por páginas que contenham aquela sequência específica de palavras, sem variações na ordem ou omissão de termos. Por exemplo, \"Internet das Coisas\" buscará exatamente essa frase."
+        }
+      ],
+      "explanation": "Correta. No Google, o uso de aspas duplas (\" \") em uma pesquisa tem como efeito buscar a expressão exata, na ordem precisa em que foi digitada. Isso significa que o Google procurará por páginas que contenham aquela sequência específica de palavras, sem variações na ordem ou omissão de termos. Por exemplo, \"Internet das Coisas\" buscará exatamente essa frase.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual operador de busca do Google permite pesquisar conteúdo dentro de um site específico?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O operador 'site:' seguido do endereço do site, sem espaços entre o operador e o domínio",
+          "correct": true,
+          "explanation": "Correta. O operador 'site:' é o comando correto no Google para restringir uma pesquisa a um domínio específico. Por exemplo, 'intranet site:gov.br' buscará a palavra 'intranet' apenas em páginas do domínio gov.br. É fundamental que não haja espaço entre 'site:' e o endereço do site para que o operador funcione corretamente."
+        },
+        {
+          "id": "b",
+          "text": "O operador 'url:' seguido do endereço do site, com espaço obrigatório entre o operador e o domínio",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'url:' não é utilizado para buscar conteúdo dentro de um site específico no Google. Além disso, a regra de não haver espaço entre o operador e o termo de busca é comum para a maioria dos operadores de pesquisa do Google."
+        },
+        {
+          "id": "c",
+          "text": "O operador 'web:' seguido do endereço do site, podendo haver ou não espaço entre o operador e o domínio",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'web:' não é um comando padrão do Google para restringir buscas a um site específico. A sintaxe e o operador corretos são 'site:' sem espaço entre ele e o domínio."
+        },
+        {
+          "id": "d",
+          "text": "O operador 'domain:' seguido do endereço do site, sem espaços entre o operador e o domínio",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'domain:' não é o correto para realizar buscas dentro de um site específico no Google. O operador correto é 'site:'."
+        }
+      ],
+      "explanation": "Correta. O operador 'site:' é o comando correto no Google para restringir uma pesquisa a um domínio específico. Por exemplo, 'intranet site:gov.br' buscará a palavra 'intranet' apenas em páginas do domínio gov.br. É fundamental que não haja espaço entre 'site:' e o endereço do site para que o operador funcione corretamente.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "O que caracteriza a Deep Web em relação aos mecanismos de busca tradicionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Trata-se de uma rede paralela desenvolvida exclusivamente para instituições governamentais e militares",
+          "correct": false,
+          "explanation": "Incorreta. Embora governos e militares possam utilizar redes privadas e seguras com características semelhantes à Deep Web para suas comunicações, a Deep Web em si não foi desenvolvida exclusivamente para esses fins. Ela abrange uma vasta gama de conteúdos e atividades que não se limitam a essas esferas."
+        },
+        {
+          "id": "b",
+          "text": "É uma versão premium da internet que oferece velocidades de conexão superiores mediante pagamento de taxas específicas",
+          "correct": false,
+          "explanation": "Incorreta. A Deep Web não é uma versão premium da internet focada em velocidade de conexão. Seu propósito e características estão relacionados à privacidade, anonimato e acesso a conteúdos não indexados, e não a melhorias de desempenho de rede mediante pagamento."
+        },
+        {
+          "id": "c",
+          "text": "Representa uma infraestrutura de rede onde sites não são localizados por buscadores tradicionais, com navegação em camadas e informações criptografadas",
+          "correct": true,
+          "explanation": "Correta. A Deep Web, conforme descrito, é uma parte da internet que não é indexada pelos motores de busca convencionais. A navegação em camadas, como a proporcionada pela rede Tor, e a criptografia das informações são elementos cruciais que garantem a privacidade e o anonimato, tornando os sites inacessíveis por métodos de busca tradicionais."
+        },
+        {
+          "id": "d",
+          "text": "Consiste em sites indexados pelos buscadores tradicionais, mas que exigem autenticação de dois fatores para acesso",
+          "correct": false,
+          "explanation": "Incorreta. A Deep Web não consiste em sites indexados por buscadores tradicionais. Pelo contrário, sua característica principal é justamente a não indexação por esses mecanismos. A exigência de autenticação de dois fatores é uma medida de segurança, não uma característica definidora da Deep Web."
+        }
+      ],
+      "explanation": "Correta. A Deep Web, conforme descrito, é uma parte da internet que não é indexada pelos motores de busca convencionais. A navegação em camadas, como a proporcionada pela rede Tor, e a criptografia das informações são elementos cruciais que garantem a privacidade e o anonimato, tornando os sites inacessíveis por métodos de busca tradicionais.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Como funciona o operador de exclusão (sinal de menos) nas buscas do Google?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Deve ser digitado sem espaço entre o sinal e a palavra a ser excluída, mas com espaço antes do sinal",
+          "correct": true,
+          "explanation": "Correta. Para que o operador de exclusão funcione corretamente no Google, ele deve ser digitado com um espaço antes do sinal de menos e sem espaço entre o sinal de menos e a palavra que se deseja excluir da busca. Por exemplo: 'termo -excluir'. Isso garante que o Google interprete o sinal como um operador e remova os resultados que contenham a palavra especificada."
+        },
+        {
+          "id": "b",
+          "text": "Deve ser digitado com espaço antes e depois do sinal, seguido da palavra a ser excluída da busca",
+          "correct": false,
+          "explanation": "Incorreta. O operador de exclusão (sinal de menos) no Google não deve ser digitado com espaço antes e depois do sinal, pois isso faria com que o sinal de menos fosse interpretado como um caractere comum, e não como um operador. O espaço antes do sinal é necessário, mas não depois."
+        },
+        {
+          "id": "c",
+          "text": "Deve ser digitado colado à palavra anterior e à palavra a ser excluída, sem espaços em nenhuma posição",
+          "correct": false,
+          "explanation": "Incorreta. Digitar o sinal de menos colado à palavra anterior faria com que ele fosse interpretado como parte da palavra, e não como um operador. A ausência de espaço entre o sinal e a palavra a ser excluída está correta, mas a necessidade de um espaço antes do sinal é fundamental."
+        },
+        {
+          "id": "d",
+          "text": "Deve ser digitado entre parênteses, seguido da palavra a ser excluída, com espaços opcionais",
+          "correct": false,
+          "explanation": "Incorreta. O uso de parênteses não é o método padrão para o operador de exclusão no Google. O sinal de menos é o operador específico para essa função, e sua sintaxe exige um espaço antes e a ausência de espaço entre ele e a palavra a ser excluída."
+        }
+      ],
+      "explanation": "Correta. Para que o operador de exclusão funcione corretamente no Google, ele deve ser digitado com um espaço antes do sinal de menos e sem espaço entre o sinal de menos e a palavra que se deseja excluir da busca. Por exemplo: 'termo -excluir'. Isso garante que o Google interprete o sinal como um operador e remova os resultados que contenham a palavra especificada.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a característica da rede Tor em relação ao rastreamento de dados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O rastreamento de dados é realizado automaticamente pelas autoridades mediante solicitação judicial simples",
+          "correct": false,
+          "explanation": "Incorreta. O rastreamento de dados na rede Tor não é realizado automaticamente pelas autoridades. Devido à sua natureza de anonimato e criptografia, é um desafio significativo para as autoridades rastrear usuários da rede Tor, mesmo com ordens judiciais. Qualquer rastreamento exigiria recursos e técnicas avançadas, e não seria um processo automático ou simples."
+        },
+        {
+          "id": "b",
+          "text": "O rastreamento de dados de navegação é praticamente impossível devido à estrutura descentralizada e criptografia em camadas",
+          "correct": true,
+          "explanation": "Correta. A rede Tor (The Onion Router) é projetada para dificultar o rastreamento de dados de navegação. Isso é alcançado por meio de uma estrutura descentralizada de retransmissores (nós) operados por voluntários em todo o mundo. O tráfego de dados é criptografado em múltiplas camadas e roteado aleatoriamente por esses nós, tornando extremamente difícil para qualquer observador rastrear a origem ou o destino da comunicação. Portanto, o rastreamento é \"praticamente impossível\", mas não totalmente invulnerável."
+        },
+        {
+          "id": "c",
+          "text": "O rastreamento de dados é facilitado por meio de servidores centralizados que registram todas as atividades",
+          "correct": false,
+          "explanation": "Incorreta. O rastreamento de dados na rede Tor não é facilitado por servidores centralizados. Pelo contrário, a rede Tor é projetada com uma arquitetura descentralizada, onde o tráfego é roteado por múltiplos nós voluntários, dificultando o rastreamento e garantindo o anonimato."
+        },
+        {
+          "id": "d",
+          "text": "O rastreamento de dados de navegação é completamente impossível devido à criptografia militar implementada",
+          "correct": false,
+          "explanation": "Incorreta. Embora o rastreamento seja extremamente difícil na rede Tor, afirmar que é \"completamente impossível\" é um exagero. Nenhum sistema é 100% invulnerável. A criptografia utilizada é robusta, mas não é exclusivamente \"militar\", e a segurança deriva da arquitetura de rede e da criptografia em camadas, não apenas de um tipo específico de criptografia."
+        }
+      ],
+      "explanation": "Correta. A rede Tor (The Onion Router) é projetada para dificultar o rastreamento de dados de navegação. Isso é alcançado por meio de uma estrutura descentralizada de retransmissores (nós) operados por voluntários em todo o mundo. O tráfego de dados é criptografado em múltiplas camadas e roteado aleatoriamente por esses nós, tornando extremamente difícil para qualquer observador rastrear a origem ou o destino da comunicação. Portanto, o rastreamento é \"praticamente impossível\", mas não totalmente invulnerável.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Como o operador 'OR' funciona nas pesquisas do Google?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Combina termos de busca, retornando resultados que contenham qualquer um dos termos especificados, um deles ou ambos",
+          "correct": true,
+          "explanation": "Correta. O operador 'OR' (ou 'OU' em português, embora 'OR' seja mais comum em buscas avançadas) é utilizado para combinar termos de busca, indicando que os resultados devem conter pelo menos um dos termos especificados. Isso significa que a busca retornará páginas que contenham o primeiro termo, o segundo termo, ou ambos os termos. Ele amplia o escopo da busca, em contraste com a busca padrão que geralmente procura por todos os termos."
+        },
+        {
+          "id": "b",
+          "text": "Exige que todos os termos especificados estejam presentes simultaneamente nos resultados da busca",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'OR' não exige que todos os termos estejam presentes. Essa é a função implícita do Google quando os termos são digitados sem operadores lógicos, ou quando se utiliza o operador 'AND' (embora o 'AND' seja frequentemente implícito, o 'OR' é explícito e com função diferente)."
+        },
+        {
+          "id": "c",
+          "text": "Exclui automaticamente resultados que contenham ambos os termos especificados na mesma página",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'OR' não tem a função de excluir resultados. A exclusão é realizada pelo operador de menos ('-'). O 'OR' tem o objetivo de incluir resultados que contenham qualquer um dos termos, não de excluí-los."
+        },
+        {
+          "id": "d",
+          "text": "Prioriza resultados que contenham apenas o primeiro termo, ignorando o segundo termo especificado",
+          "correct": false,
+          "explanation": "Incorreta. O operador 'OR' não prioriza o primeiro termo nem ignora o segundo. Ele trata todos os termos conectados por 'OR' com igual importância, buscando resultados que contenham qualquer um deles, ou todos, expandindo as possibilidades de resultados."
+        }
+      ],
+      "explanation": "Correta. O operador 'OR' (ou 'OU' em português, embora 'OR' seja mais comum em buscas avançadas) é utilizado para combinar termos de busca, indicando que os resultados devem conter pelo menos um dos termos especificados. Isso significa que a busca retornará páginas que contenham o primeiro termo, o segundo termo, ou ambos os termos. Ele amplia o escopo da busca, em contraste com a busca padrão que geralmente procura por todos os termos.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a relação entre maiúsculas e minúsculas nas buscas realizadas no Google?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O Google diferencia maiúsculas de minúsculas apenas quando a busca é realizada entre aspas duplas",
+          "correct": false,
+          "explanation": "Incorreta. O Google não diferencia maiúsculas de minúsculas, independentemente de a busca ser realizada entre aspas duplas ou não. As aspas duplas servem para buscar a frase exata, mas não alteram o comportamento em relação ao 'case sensitivity' (sensibilidade a maiúsculas e minúsculas)."
+        },
+        {
+          "id": "b",
+          "text": "O Google diferencia maiúsculas de minúsculas apenas para nomes próprios e siglas específicas",
+          "correct": false,
+          "explanation": "Incorreta. A regra de não diferenciação de maiúsculas e minúsculas se aplica a todos os termos de busca, incluindo nomes próprios e siglas. O Google não faz exceções para esses casos, tratando-os da mesma forma que outras palavras."
+        },
+        {
+          "id": "c",
+          "text": "O Google não diferencia maiúsculas de minúsculas nas buscas, tratando-as de forma equivalente",
+          "correct": true,
+          "explanation": "Correta. O Google, em suas buscas padrão, não diferencia maiúsculas de minúsculas. Isso significa que uma busca por 'Brasil', 'brasil' ou 'BRASIL' retornará os mesmos resultados. O motor de busca trata todas as variações de capitalização como equivalentes, facilitando a busca para o usuário, que não precisa se preocupar com a grafia exata em termos de maiúsculas e minúsculas."
+        },
+        {
+          "id": "d",
+          "text": "O Google diferencia maiúsculas de minúsculas em todos os tipos de busca, priorizando a grafia exata",
+          "correct": false,
+          "explanation": "Incorreta. O Google não diferencia maiúsculas de minúsculas em nenhum tipo de busca. Essa é uma característica fundamental de seu algoritmo para oferecer uma experiência de busca mais flexível e abrangente."
+        }
+      ],
+      "explanation": "Correta. O Google, em suas buscas padrão, não diferencia maiúsculas de minúsculas. Isso significa que uma busca por 'Brasil', 'brasil' ou 'BRASIL' retornará os mesmos resultados. O motor de busca trata todas as variações de capitalização como equivalentes, facilitando a busca para o usuário, que não precisa se preocupar com a grafia exata em termos de maiúsculas e minúsculas.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "10_253613_Internet - Rede de Computadores X.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:00:16"
+}

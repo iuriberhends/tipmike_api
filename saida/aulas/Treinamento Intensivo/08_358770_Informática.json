@@ -1,0 +1,760 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 6,
+    "titulo": "Informática"
+  },
+  "ordem": 8,
+  "ordem_no_curso": "8.00",
+  "titulo": "Informática",
+  "codigo_aula": "358770",
+  "video_id": "NeXosovI1FQ=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:28:42",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/NeXosovI1FQ%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?nivel=1&assunto=420303%2C420074%2C420729%2C420416%2C420258%2C405078%2C420400%2C405129%2C405030&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Informática\n\n## Função MÍNIMO e MENOR no Calc/Excel\nBora lá, de volta com o nosso treinamento intensivo. Na tela.\n\nVejam então uma planilha: nas células E8, E9, E10, E11 e E12 estão preenchidos, respectivamente, com os números 21, 16, 3, 25 e 0. Vamos utilizar a função MÍNIMO. Veja que aqui a gente precisaria do sinal de igual, mas vamos relevar isso. E8 até E12. Deu E8 até E12! Não vai pegar todos esses números? Beleza. E zero? O que a função MÍNIMO faz? Retorna o menor valor. É só olhar: zero está ali. Qual é a ideia? Eu vou desenhar, mas não precisaria na hora da prova. Você ganha tempo se entender.\n\nClaro que pode haver questão diferente, trazendo outra ideia, mas aqui ele tem os valores dentro do intervalo. Quem estão ali? 21, 16, 3, 25 e 0. Ele pediu o mínimo desse intervalo e colocou o zero lá. Considere o zero também. De E8 a E12, eu quero o mínimo de E8 até E12: o zero no meio é o menor de todos. Letra certa: zero.\n\nAgora, vamos aproveitar: qual é a diferença de MÍNIMO para MENOR? Em E8 até E12, eu não vou poder “colocar um zero aqui dentro”, porque o número que vem agora é o k: é aquilo que eu quero, o primeiro menor valor. Veja que mudou. Olha que isso é bom pra prova.\n\nO que mudou? Esse “1” indica o primeiro menor valor desse intervalo. Quem é o primeiro menor valor? 3. E se eu trocar o 1 por 2? Agora eu quero o segundo menor valor, que é 8 (no nosso exemplo anterior, se houvesse 8; com os valores 0, 3, 16, 21, 25, o segundo menor é 3? Não. Vamos manter a lógica: primeiro menor é 0; segundo menor é 3; terceiro menor é 16. A dinâmica é: MENOR(intervalo; k) pega o k-ésimo menor). Se eu trocar por 3, o terceiro menor valor é 16. Já entendeu. Você pode colocar um quarto ou quinto, conforme a quantidade de valores. Nesse caso, com cinco valores, a função MENOR e a MÍNIMO têm analogia com MÁXIMO e MAIOR, respectivamente. Feito isso, vamos embora.\n\n## Atalhos de teclado no navegador\nUm oficial de trânsito está usando um computador com Windows 7 em português, com várias abas abertas no navegador, cada uma em um site. Para fechar rapidamente apenas a aba atual, a que está ativa, qual atalho?\n\nCTRL+TAB vai alternar entre abas. CTRL+X vai recortar. Não é o caso. ALT+F4 fecha a janela inteira do navegador. Então, se eu tenho uma janela com três abas (1, 2, 3, 4), ALT+F4 fecha tudo. O atalho mais cobrado para fechar apenas a aba atual é CTRL+W (mesma coisa do CTRL+F4 no navegador). Se eu estou na aba 2 e faço CTRL+W, fechou a 2, ficam a 1 e a 3. Se eu faço de novo na 3, fecha a 3. Agora, se só ficou uma e eu faço CTRL+W de novo, fecha a janela inteira. Vamos embora.\n\n## Arrastar arquivos no Windows: mover, copiar e criar atalho\nUm usuário está com uma janela do Explorador sobre parte da área de trabalho do Windows 10. Nessa janela estão arquivos da pasta Documentos, que fica na mesma partição do drive onde o Windows está instalado (por padrão, C:). Lembra daquela questão de arrastar arquivos entre unidades? Mesma partição significa mesma letra (C:, D:, etc.). Se ele arrastar um arquivo da janela do Explorador e soltar sobre a área de trabalho, o que acontece?\n\nNa mesma unidade lógica, o comportamento padrão ao arrastar é mover entre pastas. Mas arrastar da pasta Documentos para a Área de Trabalho, ambas em C:, na prática, depende do “destino” ser pasta diferente: vai mover se for entre pastas distintas dentro da mesma unidade. No caso de arrastar para a Área de Trabalho, normalmente o Windows cria uma cópia quando o destino é diferente de maneira lógica? O que interessa aqui é a técnica com modificadores:\n\n- Arrastar pressionando CTRL: copia.\n- Arrastar pressionando SHIFT: move.\n- Arrastar pressionando ALT (ou CTRL+SHIFT) e soltar: cria atalho.\n\nPegou a dinâmica? Se eu arrasto pressionando a tecla ALT, mantenho pressionado e arrasto para qualquer lugar (mesma unidade ou outra), vai criar um atalho. Só CTRL copia, só SHIFT move (forçando o comportamento). Mesma unidade lógica, padrão é mover; outra unidade lógica, padrão é copiar. Então, no caso descrito (mesma partição), mover da pasta Documentos para a Área de Trabalho. Não vai para a Lixeira; Área de Trabalho comporta arquivos, pastas e atalhos. Fixar na barra de tarefas é outra coisa: arrastar um executável ou seu atalho para a barra cria “Fixar na barra de tarefas”, permitindo abrir com um clique e ver itens recentes com o botão direito.\n\n## PowerPoint: salvar como autoapresentação e macros\nConsidere uma apresentação no PowerPoint 2010 em português, denominada “Terra”. Ele deseja salvar em formato de autoapresentação. Nesse formato, basta dar duplo clique no arquivo para que o conteúdo seja exibido automaticamente, e a transição dos slides pode ser com clique do mouse ou barra de espaço.\n\nO formato de autoapresentação é PPSX (sem macros) ou PPSM (com macros). PPTX/PPTM abrem em modo de edição. POTX/POTM são modelos. Antes de falar de macro, veja: se eu salvar como PPSX, ao abrir já começa a apresentação. Quando está nesse modo, chegou no último slide, acaba e sai. Se eu quiser editar, abro pelo PowerPoint e mando abrir o arquivo pelo botão Abrir.\n\nMacros: macros são pequenos programas escritos em VBA (Visual Basic for Applications) que automatizam tarefas. Podem formatar, calcular, executar ações ao clicar num botão, etc. Trazem risco porque existem vírus de macro. Por isso, o PowerPoint, Excel, Word podem perguntar se você quer ativar macros quando o arquivo tem macro (PPTM/PPSM). Se confiar na fonte, ativa; senão, mantenha desativado.\n\n## Malware: ransomware e outros\nUm assistente de antivírus identificou um malware que pedia resgate para liberar acesso. Isso é ransomware. Mostrar propagandas continuamente abrindo janelas do navegador é adware. Tomar controle do computador de forma remota pode estar associado a botnet/remote access trojan. Rootkit modifica arquivos do sistema operacional para ocultar sua presença. O uso excessivo de recursos deixa o sistema lento. O ponto é: ransomware sequestra e bloqueia acesso aos seus dados ou ao computador.\n\n## Função SOMASE\nNo Calc/Excel 2010, na célula D16 foi editada uma fórmula para somar apenas os valores das multas “gravíssimas”. Temos uma tabela com colunas “gravidade” (gravíssima, grave, média, etc.) e “valor”. Para fazer automaticamente, usamos SOMASE(intervalo_critério; critério; intervalo_soma).\n\n- Primeiro intervalo: onde está o critério (coluna da gravidade).\n- Critério: \"gravíssima\" (entre aspas).\n- Segundo intervalo: onde vou somar (coluna dos valores correspondentes).\n\nErro comum: trocar ponto e vírgula/argumentos ou usar intervalos que não casam. O correto é algo como:\nSOMASE(B2:B10; \"gravíssima\"; C2:C10)\nPrimeiro intervalo (B2:B10), critério (\"gravíssima\"), e intervalo da soma (C2:C10). Perfeito.\n\n## Função SE (IF): preço por tipo de veículo\nPlanilha mostra o valor cobrado pela substituição de lacre danificado em placa de motos e carros. Se for moto, o valor é 52,99; se não, 52,92. Fórmula correta:\n\n- Estrutura: SE(teste_lógico; valor_se_verdadeiro; valor_se_falso).\n- Teste lógico: D3=\"moto\" (texto entre aspas).\n- Valor verdadeiro: 52,99.\n- Valor falso: 52,92.\n\nEntão:\nSE(D3=\"moto\"; 52,99; 52,92)\nDetalhe: não esquecer as aspas em \"moto\". Cuidado para não usar dois-pontos indevidos no lugar de ponto e vírgula. Opções como comparar sem aspas estão erradas.\n\n## Correio eletrônico: cliente de e-mail, protocolos e boas práticas\nNo computador de uma empresa, um usuário pode acessar a internet e usa um cliente de e-mail (gerenciador) para o e-mail corporativo. “Sempre” que o usuário acessar a internet a rede ficará vulnerável? Cuidado com “sempre”. Pode acontecer de trazer um vírus e comprometer a rede, mas não é regra absoluta.\n\nO usuário deve configurar o cliente de e-mail para não apagar a mensagem do servidor assim que for recebida, se quiser também acessar via webmail (navegador). Quem baixa e normalmente apaga do servidor, por padrão, é POP3 (configurável para “deixar uma cópia no servidor”). Se quiser sincronização em múltiplos dispositivos, use IMAP. A senha do e-mail corporativo tende a ser a mesma, seja no cliente ou no webmail; porém, pode haver “senha de aplicativo” quando há autenticação em duas etapas. Não é necessário instalar dois navegadores: um navegador serve para internet e para webmail.\n\n## Função SE com referência relativa: descontos\nPlanilha no Excel 2010 para calcular desconto nos preços. Suponha a fórmula em D2: SE(B2>50; B2 - (B2*10%); B2) e depois arrastada para D3 e D4.\n\n- Em D2: B2 é 15? 15>50? Falso. Resultado: repete o valor de B2 (15).\n- Em D3: B3 é 30? 30>50? Falso. Resultado: 30.\n- Em D4: B4 é 60? 60>50? Verdade. Calcula 10% de 60 = 6; 60-6 = 54.\n\nResultados: 15, 30 e 54, respectivamente.\n\n## Malware: keylogger e outras classes\nUm dos efeitos mais nocivos de malware é capturar o que é digitado no teclado. Esse tipo é o keylogger (programa espião). Bot é similar a um worm, mas controlado remotamente, compondo uma botnet. Adware exibe propagandas. Spyware é o termo genérico para programa espião. Backdoor permite o retorno/acesso remoto ao sistema. Trojan clicker redireciona a navegação para sites onde o atacante ganha por acesso/clique.\n\n> 🎯 Dicas de prova: Keylogger captura as teclas; adware exibe anúncios; bot integra botnet; backdoor abre porta de acesso; ransomware sequestra dados.\n\n## Word 2010: quebras de seção\nNo Word 2010 em português, é possível inserir diversos tipos de quebras pelo botão “Quebras” na guia Layout da Página. Dois tipos de quebra de seção existentes: Próxima Página e Contínua.\n\n- Próxima Página: inicia nova seção na próxima página (ex.: mudar orientação de retrato para paisagem em páginas diferentes).\n- Contínua: inicia nova seção na mesma página (ex.: mudar de uma coluna para duas colunas a partir de um ponto do texto).\n\nAs quebras de página e de coluna também existem, mas não são quebras de seção. As quebras de seção são: Próxima Página, Contínua, Página Ímpar e Página Par.\n\n## PROCV vs. CORRESP+ÍNDICE (busca por linha)\nConsiderem uma planilha no LibreOffice Calc em português. Foi realizada uma pesquisa no intervalo de células D2:G6 pelo município correspondente à seção “76”. O que eu vou procurar é “76”. O intervalo de procura é D2:G6. O município está na terceira coluna, dentro desse intervalo. Usaria:\n\n- PROCV(valor_procurado; intervalo; índice_coluna; 0)\n- Valor procurado: 76 (por exemplo, em A6).\n- Intervalo: D2:G6.\n- Índice da coluna: 3 (contando dentro do intervalo).\n- Procurar exato: 0.\n\nEntão:\nPROCV(76; D2:G6; 3; 0)\nSe a matriz estivesse “virada” e fosse mais adequado usar linhas, poderíamos usar ÍNDICE + CORRESP quando a busca não é pela primeira coluna. Aqui, PROCV resolve se 76 estiver na primeira coluna do intervalo.\n\n## Tipos de redes: LAN, MAN, WAN\nUma rede instalada e em funcionamento, caracterizada por alcance local, rede interna de curto alcance, de acordo com a extensão geográfica, é classificada como LAN (Local Area Network). MAN é metropolitana (abrange uma cidade). WAN é ampla (abrange países/continentes). PAN é rede pessoal (dispositivos próximos, como Bluetooth).\n\n## Encerramento do bloco\nVamos para a finalização do último bloco desse treinamento intensivo. Se você pensa que pode ou que não pode, você está certo. Deixa eu reforçar: havendo dúvida sobre nosso treinamento intensivo, sobre seu estudo, de alguma maneira que eu possa auxiliar, a gente tem um fórum de dúvidas. Deixar isso bem claro para não haver reclamação.\n\n💬 História: Muita gente manda mensagem no Instagram e demora para ter resposta. Acontece: lá tem um volume muito grande. Mesmo que você se identifique como aluno, não tenho como priorizar na hora de ler as mensagens. Às vezes eu clico, mas não dá para responder naquele momento. Hoje, por exemplo, o dia inteiro gravando; o Instagram ficou de lado completamente. Postei de manhã, talvez à noite eu olhe e poste mais alguma coisa, mas não vou ler mensagens no Instagram hoje. Amanhã tem material para preparar.\n\nEntenda, por favor: o fórum de dúvidas pode passar de um dia para o outro, mas vai ser respondido. Do fundo do meu coração, espero ter ajudado, colaborado, aberto seus olhos para uma melhor estratégia de estudos, do jeito que você mais gosta. Possamos acertar tudo isso na prova. Um abraço, fiquem com Deus, valeu!",
+  "transcricao_meta": {
+    "title": "Informática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 33407,
+    "createdAt": "2026-02-07T01:29:06.498Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: atalhos e operações no Windows/Explorador de Arquivos; formatos do PowerPoint e macros; segurança (malwares, POP3, senhas/2FA); Word (quebras de sessão); Excel (MIN, MENOR, MÁX, MAIOR, SOMASE, SE, PROCV, ÍNDICE+CORRESP); redes (LAN, MAN, WAN, PAN).\nPrincipais pontos: \n- Dominar sintaxes e diferenças das funções do Excel (MIN x MENOR; SOMASE x SE; PROCV x ÍNDICE+CORRESP).\n- Saber atalhos e comportamentos ao arrastar arquivos.\n- Reconhecer extensões do PowerPoint e riscos de macros.\n- Identificar malwares e implicações de POP3/2FA.\n- Aplicar quebras de sessão corretas no Word.\n\n## 1. Base / Conceitos Fundamentais\n- Windows/Explorador:\n  - Ctrl+W: fecha a aba ativa do navegador.\n  - Alt+F4: fecha a janela inteira (todas as abas).\n  - Arrastar arquivos:\n    - Mesma unidade (ex.: C: → C:): move.\n    - Unidades diferentes (ex.: C: → D:): copia.\n    - Modificadores: Ctrl=copia; Shift=move; Alt=atalho.\n  - Barra de tarefas: arrastar ícone → fixar; botão direito → itens recentes.\n- PowerPoint (formatos):\n  - PPTX: edição sem macro.\n  - PPSX: autoapresentação sem macro.\n  - POTX: modelo sem macro.\n  - PPTM: edição com macro.\n  - PPSM: autoapresentação com macro.\n- Segurança:\n  - Ransomware: sequestro de dados por resgate.\n  - Rootkit: controle oculto, camufla presença.\n  - Outros: bot (máquina zumbi), spyware (espião), keylogger (captura teclas), backdoor (acesso oculto), Trojan/Trojan clicker (disfarçado/redireciona cliques).\n- E-mail/POP3:\n  - POP3 baixa mensagens e pode apagá-las do servidor após o download.\n  - Para ver e-mails em múltiplos dispositivos, manter cópia no servidor.\n- Senhas/2FA:\n  - Autenticação em duas etapas pode exigir “senha de aplicativo” para clientes que não suportam 2FA.\n- Word:\n  - Quebras de sessão: Próxima página; Contínua (na mesma página).\n- Redes:\n  - PAN: pessoal.\n  - LAN: local (curto alcance).\n  - MAN: metropolitana.\n  - WAN: longa distância.\n- Excel (visão geral):\n  - MIN/MÁX: menor/maior absolutos do intervalo.\n  - MENOR(intervalo; k)/MAIOR(intervalo; k): k-ésimo menor/maior.\n  - SOMASE(intervalo_critério; critério; intervalo_soma).\n  - SE(teste_lógico; valor_se_verdadeiro; valor_se_falso).\n  - PROCV(valor; tabela; coluna; [0/1]).\n  - ÍNDICE+CORRESP para buscas flexíveis.\n\n## 2. Como Funciona / Distinções\n- Excel:\n  - MIN x MENOR:\n    - MIN: “qual é o menor?”.\n    - MENOR(;k): “qual é o 1º, 2º, 3º menor?”.\n  - MÁX x MAIOR: análogo para os maiores.\n  - SOMASE x SE:\n    - SOMASE: soma condicionada por critério em intervalo.\n    - SE: retorna valores distintos conforme condição.\n  - PROCV x ÍNDICE+CORRESP:\n    - PROCV: chave na 1ª coluna da tabela; busca à direita.\n    - ÍNDICE+CORRESP: busca em qualquer direção; separa posição (CORRESP) do retorno (ÍNDICE).\n- Navegador:\n  - Ctrl+W fecha só a aba; Alt+F4 fecha a janela inteira.\n- Explorador de Arquivos:\n  - Regra padrão de arrasto depende da unidade; modificadores forçam comportamento.\n- PowerPoint:\n  - PPSX/PPSM abrem direto em apresentação; PPTX/PPTM abrem para editar.\n  - “M” nas extensões indica macro (PPTM/PPSM).\n- Segurança:\n  - Ransomware (sequestro) x Rootkit (ocultação/controle).\n  - Keylogger (captura de teclas) x Spyware (gênero amplo).\n- E-mail:\n  - POP3 com “apagar do servidor” limita acesso em outros dispositivos.\n  - 2FA pode exigir senha de aplicativo (não substitui a senha principal no webmail).\n- Word:\n  - Quebra de sessão “Próxima página” inicia nova página; “Contínua” muda configuração na mesma página.\n- Redes:\n  - “Curto alcance interno” → LAN, não MAN/WAN.\n\n## 3. Aplicação Prática / Técnicas\n- Excel: MIN/MENOR/MÁX/MAIOR\n  - MIN(E8:E12)\n  - MENOR(E8:E12; k) → k=1 (menor), 2 (2º menor), 3 (3º menor)\n  - Atenção a zeros no intervalo: podem ser o mínimo.\n- Excel: SOMASE\n  - Estrutura: SOMASE(D2:D10; \"gravíssima\"; E2:E10)\n  - Passos:\n    1) Defina intervalo_critério (onde está o texto).\n    2) Defina critério com aspas para texto.\n    3) Defina intervalo_soma com mesma dimensão.\n- Excel: SE (moto x carro)\n  - SE(D3=\"moto\"; 52,99; 52,92) [ou 55,92 conforme enunciado]\n  - Leia a lógica: “Se D3 é ‘moto’, então 52,99; senão, 52,92.”\n- Excel: Desconto condicional (10%)\n  - SE(D2>50; D2*0,9; D2) e arraste para baixo (referências relativas).\n- Excel: PROCV\n  - PROCV(76; A2:C5; 3; 0) → 0 (ou FALSO) para exato.\n  - Garanta que 76 (chave) está na 1ª coluna da tabela usada.\n- Excel: ÍNDICE + CORRESP\n  - linha := CORRESP(76; A2:A5; 0)\n  - resultado := ÍNDICE(C2:C5; linha)\n- Navegador:\n  - Fechar somente a aba: Ctrl+W.\n  - Fechar janela inteira: Alt+F4.\n- Explorador:\n  - Arrastar C:→C: move; C:→D: copia.\n  - Forçar: Ctrl copia; Shift move; Alt atalho.\n- PowerPoint:\n  - Autoapresentação: salve como PPSX (sem macro) ou PPSM (com macro).\n  - Ao abrir arquivo com macro, o sistema pode pedir para ativar: avalie o risco.\n- Word:\n  - Guia Leiaute da página > Quebras:\n    - Precisa de duas colunas no meio da página? Use “Quebra de sessão Contínua”.\n    - Precisa mudar orientações a partir da próxima página? “Próxima página”.\n- POP3/2FA:\n  - Para múltiplos dispositivos: marcar “manter cópia no servidor”.\n  - Com 2FA: gerar “senha de aplicativo” para o cliente de e-mail.\n\n## 4. Exemplos e Casos Resolvidos\n- MIN/MENOR:\n  - Intervalo E8:E12 = [21, 16, 3, 25, 0] → MIN = 0.\n  - MENOR([3, 8, 16, 21, 25]; 2) = 8; k=3 → 16.\n- SOMASE:\n  - D2:D10 (classificação), E2:E10 (valores). Somar apenas “gravíssima”:\n    - SOMASE(D2:D10; \"gravíssima\"; E2:E10)\n- SE (moto x não moto):\n  - SE(D3=\"moto\";52,99;52,92)\n- Desconto 10%:\n  - D2=15 → 15; D3=50 → 50; D4=60 → 54 (aplica 0,9).\n- PROCV:\n  - “Pesquisar seção 76 e retornar município (coluna 3)”:\n    - PROCV(76; A2:C5; 3; 0)\n- ÍNDICE+CORRESP:\n  - pos = CORRESP(76; A2:A5; 0); mun = ÍNDICE(C2:C5; pos)\n- Navegador:\n  - Na aba 2, Ctrl+W fecha só a aba 2; Alt+F4 fecharia a janela toda.\n- Explorador:\n  - Arrastar arquivo de C:\\Docs para C:\\Fotos → move.\n  - Arrastar com Ctrl de C:\\Docs para D:\\Backup → copia (já copiaria de qualquer forma por ser unidade diferente).\n- PowerPoint:\n  - Necessário abrir direto em apresentação e usar macro → salve PPSM.\n- Word:\n  - Documento com 1 coluna; no meio, precisa 2 colunas:\n    - Inserir “Quebra de sessão Contínua”, definir 2 colunas, depois outra “Contínua” para voltar a 1 coluna.\n- POP3:\n  - Se “apagar do servidor ao receber” estiver ativo, ao ler no PC o e-mail some do webmail.\n\n## 5. Pegadinhas e Erros Comuns\n- Excel:\n  - Texto SEM aspas em fórmulas (ex.: \"moto\") → erro.\n  - Separador de argumentos em PT-BR geralmente é ponto e vírgula (;), não vírgula.\n  - SOMASE com intervalos de tamanhos diferentes (D2:D10 vs E2:E5) → errado.\n  - PROCV com tabela começando na coluna errada (chave não está na 1ª coluna) → não funciona.\n  - Confundir MIN com MENOR(;k). MIN não aceita “posição”.\n- Navegador:\n  - Pedir “fechar apenas a aba” e marcar Alt+F4 → fecha tudo (errado).\n- Explorador:\n  - “Mesma partição move, outra copia” é a regra padrão; modificadores alteram isso.\n- PowerPoint:\n  - Confundir PPSX (sem macro) com PPTX (edição); para autoapresentação é PPSX/PPSM.\n  - Arquivos com macro (PPTM/PPSM) podem conter vírus de macro.\n- Segurança:\n  - “Sempre que acessar a internet ficará vulnerável” → generalização indevida.\n  - Rootkit ≠ ransomware. “Controle oculto” → rootkit; “sequestro de dados” → ransomware.\n  - “Captura de teclas” é keylogger (tipo de spyware).\n- E-mail:\n  - POP3 pode apagar do servidor após baixar → pode perder acesso em outros dispositivos se não mantiver cópia.\n  - 2FA: “senha de aplicativo” é diferente da senha principal e específica para o cliente.\n- Word:\n  - “Quebra de coluna” ≠ “quebra de sessão”.\n  - Não existe “quebra de sessão próxima tabela”.\n- Redes:\n  - “Rede interna de curto alcance” = LAN, não MAN/WAN.\n- Números ditados:\n  - “cinquenta e dois mil e nove” quando o contexto é preço 52,99 → erro de ditado.\n  - Decimal em PT-BR usa vírgula: 52,99 (não 52.99).\n\n> Dica de Prova: \n> - “Somar apenas onde o tipo é X” → SOMASE.\n> - “Se X então Y, senão Z” → SE.\n> - “Só fechar a aba” → Ctrl+W. “Fechar janela” → Alt+F4.\n> - Autoapresentação → PPSX/PPSM. “M” indica macro (PPTM/PPSM).\n> - POP3 que apaga do servidor → não verá no webmail/outros dispositivos.\n> - “Curto alcance interno” → LAN.",
+  "resumo_bolso": "# Informática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Ctrl+W**: fecha **apenas a aba ativa** do navegador.\n* **Alt+F4**: fecha **a janela inteira** (todas as abas).\n* **Arrastar arquivos (Windows/Explorador)**:  \n  - Mesma unidade (C:→C:) → **move**.  \n  - Unidades diferentes (C:→D:) → **copia**.  \n  - **Ctrl** força copiar; **Shift** força mover; **Alt** cria **atalho**.\n* **Extensões PowerPoint**:  \n  - **PPTX**: edição, **sem macro**.  \n  - **PPSX**: autoapresentação, **sem macro**.  \n  - **POTX**: modelo, **sem macro**.  \n  - **PPTM**: edição, **com macro**.  \n  - **PPSM**: autoapresentação, **com macro**.  \n  - Letra **M** = tem **macro**.\n* **Malwares**:  \n  - **Ransomware**: sequestro de dados por resgate.  \n  - **Rootkit**: controle oculto, camufla presença.  \n  - **Spyware**: programa espião em geral.  \n  - **Keylogger**: tipo de spyware que captura teclas.  \n  - **Bot**: transforma máquina em zumbi.  \n  - **Backdoor**: acesso oculto.  \n  - **Trojan / Trojan clicker**: disfarçado de legítimo / redireciona cliques.\n* **POP3**: protocolo que **baixa** e-mails; pode **apagá-los do servidor** após o download. Para usar em vários dispositivos → **manter cópia no servidor**.\n* **2FA / senha de aplicativo**: em contas com autenticação em duas etapas, clientes de e-mail que não suportam 2FA podem exigir **senha de aplicativo** (senha específica, diferente da principal).\n* **Word – Quebras de sessão**:  \n  - **Próxima página**: nova sessão em **nova página**.  \n  - **Contínua**: nova sessão **na mesma página**.\n* **Redes**:  \n  - **PAN**: rede pessoal.  \n  - **LAN**: rede local, curto alcance interno.  \n  - **MAN**: rede metropolitana.  \n  - **WAN**: rede de longa distância.\n* **Excel – Visão geral**:  \n  - **MIN / MÁX**: menor/maior valores absolutos do intervalo.  \n  - **MENOR(intervalo; k) / MAIOR(intervalo; k)**: k-ésimo menor/maior.  \n  - **SOMASE(intervalo_critério; critério; intervalo_soma)**: soma condicionada.  \n  - **SE(teste_lógico; valor_se_V; valor_se_F)**: retorna valores conforme condição.  \n  - **PROCV(valor; tabela; coluna; [0/1])**: busca vertical com chave na 1ª coluna.  \n  - **ÍNDICE + CORRESP**: combinação para buscas em qualquer direção.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### MIN x MENOR (Excel)\n\n| Aspecto | MIN | MENOR |\n| --- | --- | --- |\n| **Função** | Retorna o **menor valor** do intervalo | Retorna o **k-ésimo menor** valor |\n| **Sintaxe** | `=MIN(intervalo)` | `=MENOR(intervalo; k)` |\n\n---\n\n### MÁX x MAIOR (Excel)\n\n| Aspecto | MÁX | MAIOR |\n| --- | --- | --- |\n| **Função** | Retorna o **maior valor** do intervalo | Retorna o **k-ésimo maior** valor |\n| **Sintaxe** | `=MÁX(intervalo)` | `=MAIOR(intervalo; k)` |\n\n---\n\n### SOMASE x SE (Excel)\n\n| Aspecto | SOMASE | SE |\n| --- | --- | --- |\n| **Objetivo** | **Somar** valores que atendem a um critério | Retornar valores distintos conforme condição |\n| **Sintaxe** | `=SOMASE(intervalo_critério; critério; intervalo_soma)` | `=SE(teste_lógico; valor_se_V; valor_se_F)` |\n\n---\n\n### PROCV x ÍNDICE+CORRESP\n\n| Aspecto | PROCV | ÍNDICE+CORRESP |\n| --- | --- | --- |\n| **Chave** | Deve estar na **1ª coluna** da tabela | Pode estar em **qualquer coluna** |\n| **Direção** | Busca **apenas para a direita** | Busca em **qualquer direção** |\n| **Ideia** | Tudo em uma função | Separa posição (CORRESP) e retorno (ÍNDICE) |\n\n---\n\n### Ransomware x Rootkit\n\n| Aspecto | Ransomware | Rootkit |\n| --- | --- | --- |\n| **Ação principal** | Sequestro de dados por resgate | Controle oculto, camufla presença |\n\n---\n\n### Quebra de sessão Próxima página x Contínua (Word)\n\n| Aspecto | Próxima página | Contínua |\n| --- | --- | --- |\n| **Efeito** | Nova sessão em **nova página** | Nova sessão **na mesma página** |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. MIN / MENOR / MÁX / MAIOR**\n\n* `=MIN(intervalo)` → menor valor do intervalo (atenção a zeros).  \n* `=MENOR(intervalo; k)` → 1º, 2º, 3º menor etc.  \n* `=MÁX(intervalo)` → maior valor do intervalo.  \n* `=MAIOR(intervalo; k)` → k-ésimo maior.\n\n**Exemplo**  \nIntervalo E8:E12 = [21, 16, 3, 25, 0]:  \n* `=MIN(E8:E12)` → 0.  \n* `=MENOR(E8:E12; 2)` → 8 (considerando a lista ordenada [3, 8, 16, 21, 25]).\n\n---\n\n**2. SOMASE**\n\n* **Aplicação**: somar valores que atendem a um critério.  \n* **Sintaxe**: `=SOMASE(D2:D10; \"gravíssima\"; E2:E10)`  \n  - `D2:D10`: intervalo_critério (onde está o texto).  \n  - `\"gravíssima\"`: critério (texto entre aspas).  \n  - `E2:E10`: intervalo_soma (mesma dimensão do intervalo_critério).\n\n---\n\n**3. SE (condicional simples)**\n\n* **Aplicação**: “Se X então Y, senão Z”.  \n* **Sintaxe**: `=SE(D3=\"moto\"; 52,99; 52,92)`  \n* **Desconto 10%**: `=SE(D2>50; D2*0,9; D2)`.\n\n---\n\n**4. PROCV (busca vertical)**\n\n* **Aplicação**: localizar valor na 1ª coluna e retornar de outra coluna.  \n* **Sintaxe**: `=PROCV(76; A2:C5; 3; 0)`  \n  - `76`: valor procurado (chave).  \n  - `A2:C5`: tabela, começando pela coluna da chave.  \n  - `3`: coluna de retorno.  \n  - `0` (ou FALSO): correspondência **exata**.\n\n---\n\n**5. ÍNDICE + CORRESP**\n\n* **Aplicação**: busca flexível (qualquer direção).  \n* **Passos**:  \n  - `=CORRESP(76; A2:A5; 0)` → posição da chave.  \n  - `=ÍNDICE(C2:C5; posição)` → retorna valor correspondente.\n\n---\n\n**6. POP3**\n\n* **Regra**: se configurado para **apagar do servidor** após baixar, o e-mail some do webmail e de outros dispositivos.  \n* Para múltiplos dispositivos → marcar **manter cópia no servidor**.\n\n---\n\n**7. 2FA / Senha de aplicativo**\n\n* **Regra**: com autenticação em duas etapas, alguns clientes de e-mail exigem **senha de aplicativo**, gerada na conta e diferente da senha principal.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Texto em fórmula SEM aspas: `=SE(D3=moto;...)` → errado.  \n   Correto: `=SE(D3=\"moto\";...)`.\n2. Usar vírgula como separador de argumentos no Excel PT-BR: `=SE(A1>0,1,0)` → errado.  \n   Correto: `=SE(A1>0; 1; 0)` (usa **ponto e vírgula**).\n3. `SOMASE` com intervalos de tamanhos diferentes (ex.: D2:D10 e E2:E5) → incorreto.\n4. PROCV com tabela em que a chave **não está na 1ª coluna** → não funciona.\n5. Confundir **PPSX** (autoapresentação) com **PPTX** (edição); para autoapresentação é **PPSX/PPSM**.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **MIN/MÁX** de **MENOR/MAIOR (k-ésimo)**?\n* Sei montar **SOMASE** com intervalos do mesmo tamanho e critério entre aspas?\n* Consigo escrever **SE** com o separador correto (`;`) e textos entre aspas?\n* Lembro que **PROCV** exige chave na **1ª coluna** e só busca **para a direita**?\n* Sei usar **ÍNDICE+CORRESP** quando a chave não está na 1ª coluna?\n* Sei que **PPSX/PPSM** abrem em **autoapresentação** e que **M** indica **macro**?\n* Associei **ransomware = sequestro de dados** e **rootkit = controle oculto/camuflado**?\n* Sei que POP3 pode **apagar do servidor** e que devo marcar **manter cópia** para vários dispositivos?\n* Lembro: **Ctrl+W** fecha só a aba; **Alt+F4** fecha a janela inteira?\n* Sei escolher **Próxima página** x **Contínua** para quebras de sessão no Word?\n* Fixei: **LAN = rede interna de curto alcance**, não MAN/WAN?",
+  "mapa_mental": "# 💻 Informática para Concursos\n\n## 🪟 Windows e Navegação\n### ⌨️ Atalhos de Fechamento\n- Ctrl+W fecha aba\n- Alt+F4 fecha janela\n- Navegador e Explorer\n- Atenção enunciado\n### 📁 Arrastar Arquivos\n- Mesma unidade move\n- Unidades diferentes copia\n- Ctrl força copiar\n- Shift força mover\n- Alt cria atalho\n### 📌 Barra de Tarefas\n- Arrastar para fixar\n- Botão direito recentes\n- Fixar aplicativos\n- Acesso rápido\n\n## 📊 Pacote Office\n### 📽️ PowerPoint Formatos\n- PPTX edição sem macro\n- PPSX autoapresentação\n- POTX modelo sem macro\n- PPTM edição com macro\n- PPSM autoapresentação macro\n### 🧷 Word Quebras Sessão\n- Próxima página nova página\n- Contínua mesma página\n- Mudar colunas sessão\n- Mudar orientação sessão\n### 📈 Excel Funções Básicas\n- MIN menor absoluto\n- MÁX maior absoluto\n- MENOR intervalo;k\n- MAIOR intervalo;k\n- Atenção zeros\n### 📐 Excel Condicionais\n- SOMASE soma condicional\n- SE teste lógico\n- Critério com aspas\n- Intervalos compatíveis\n### 🔍 Excel Procura Dados\n- PROCV chave primeira coluna\n- PROCV busca direita\n- ÍNDICE retorna posição\n- CORRESP localiza linha\n- Busca qualquer direção\n\n## 🛡️ Segurança e E-mail\n### 🦠 Tipos de Malware\n- Ransomware sequestro dados\n- Rootkit controle oculto\n- Spyware espionagem geral\n- Keylogger captura teclas\n- Bot backdoor trojan\n### 📧 POP3 e Mensagens\n- POP3 baixa mensagens\n- Pode apagar servidor\n- Manter cópia servidor\n- Acesso múltiplos dispositivos\n### 🔐 Senhas e 2FA\n- Autenticação duas etapas\n- Senha de aplicativo\n- Cliente e-mail legado\n- Senha webmail diferente\n\n## 🌐 Redes de Computadores\n### 🧍 PAN Rede Pessoal\n- Dispositivos pessoais\n- Curtíssimo alcance\n- Exemplo dispositivos corpo\n### 🏠 LAN Rede Local\n- Curto alcance interno\n- Ambiente corporativo\n- Residências escritórios\n### 🏙️ MAN e WAN\n- MAN área metropolitana\n- WAN longa distância\n- Abrange cidades países",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Funções de Planilha",
+      "description": "Funções de Planilha — 6 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual função de planilha retorna o menor valor de um intervalo?",
+          "back": "MÍNIMO",
+          "hint": "É uma função estatística básica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "funcoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Na função MENOR, o que representa o argumento k?",
+          "back": "Indica a posição do menor valor (primeiro, segundo, terceiro, etc.)",
+          "hint": "Refere-se à ordem de grandeza",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "funcoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a diferença entre as funções MÍNIMO e MENOR?",
+          "back": "MÍNIMO retorna o menor valor global do intervalo; MENOR permite especificar a posição k do menor valor desejado",
+          "hint": "Compare a abrangência das funções",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "funcoes"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-4",
+          "front": "Na função SOMASE, qual intervalo é usado para testar o critério?",
+          "back": "O primeiro intervalo",
+          "hint": "Ordem dos argumentos na sintaxe",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "funcoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Na função SOMASE, qual intervalo fornece os valores que serão somados?",
+          "back": "O segundo intervalo",
+          "hint": "Ordem dos argumentos na sintaxe",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "funcoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Em uma planilha, qual função escolhe um resultado conforme uma condição lógica?",
+          "back": "SE",
+          "hint": "É uma função de decisão lógica",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "planilhas",
+            "funcoes"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Windows e Arquivos",
+      "description": "Windows e Arquivos — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual atalho fecha somente a aba ativa do navegador?",
+          "back": "Ctrl+F4",
+          "hint": "Atalho de teclado comum",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "navegadores",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Ao arrastar um arquivo entre pastas da mesma unidade lógica, qual operação ocorre por padrão?",
+          "back": "Mover",
+          "hint": "Comportamento padrão do sistema",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual efeito é obtido ao arrastar um arquivo mantendo ALT pressionado?",
+          "back": "Criar atalho",
+          "hint": "Modificador de teclado",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "sistema-operacional",
+            "arquivos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Editores de Documentos",
+      "description": "Editores de Documentos — 4 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "O que caracteriza um arquivo de apresentação salvo no formato PPS?",
+          "back": "Abre diretamente no modo de exibição de slides e fecha ao terminar",
+          "hint": "Descreve o comportamento do arquivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "powerpoint",
+            "extensoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a finalidade de uma macro em aplicativos de escritório?",
+          "back": "Automatizar tarefas",
+          "hint": "Objetivo de produtividade",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office",
+            "macros"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Em qual linguagem de programação as macros do Microsoft Office são escritas?",
+          "back": "VBA",
+          "hint": "Sigla de linguagem de script",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "office",
+            "macros"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual quebra de seção inicia a nova seção em uma página seguinte?",
+          "back": "Próxima página",
+          "hint": "Configuração de layout de página",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "processador-texto",
+            "formatacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Ameaças Digitais",
+      "description": "Ameaças Digitais — 4 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Que tipo de malware captura tudo o que é digitado no teclado?",
+          "back": "Keylogger",
+          "hint": "Termo técnico de monitoramento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual é o objetivo principal de um ransomware ao infectar um computador?",
+          "back": "Exigir resgate para liberar o acesso aos dados ou ao computador",
+          "hint": "Relacionado a extorsão digital",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-16",
+          "front": "Como o Trojan Clicker gera benefício para o atacante?",
+          "back": "Redirecionando a navegação para sites onde o atacante ganha por acesso ou clique",
+          "hint": "Mecanismo de fraude publicitária",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Que tipo de malware pode controlar um computador remotamente?",
+          "back": "Bot",
+          "hint": "Relacionado a redes zumbis",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "seguranca",
+            "malware"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Redes e Correio",
+      "description": "Redes e Correio — 6 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "Qual protocolo de e-mail baixa as mensagens para o computador do usuário?",
+          "back": "POP3",
+          "hint": "Protocolo de recebimento",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "internet",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual configuração impede que mensagens baixadas sejam apagadas do servidor?",
+          "back": "Não apagar as mensagens no servidor",
+          "hint": "Configuração de cliente de e-mail",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "email"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-20",
+          "front": "Em que situação uma senha de aplicativo pode ser usada no acesso ao e-mail?",
+          "back": "Quando há autenticação em duas etapas",
+          "hint": "Medida de segurança de acesso",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "internet",
+            "email"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-21",
+          "front": "Como é classificada uma rede cujo alcance fica restrito a uma área local?",
+          "back": "LAN",
+          "hint": "Sigla para rede local",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "topologia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual alcance geográfico caracteriza uma rede MAN?",
+          "back": "Área de uma cidade",
+          "hint": "Abrangência metropolitana",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "topologia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-23",
+          "front": "O que caracteriza uma rede PAN?",
+          "back": "Rede de curto alcance para dispositivos pessoais",
+          "hint": "Abrangência pessoal",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "topologia"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Excel 2010, qual função retorna o menor valor de um intervalo de células especificado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "MENOR",
+          "correct": false,
+          "explanation": "Incorreta. A função MENOR no Microsoft Excel retorna o k-ésimo menor valor de um conjunto de dados. Ela requer dois argumentos: o intervalo de dados e um número 'k' que especifica a posição do menor valor a ser retornado (por exemplo, 1 para o menor, 2 para o segundo menor, e assim por diante)."
+        },
+        {
+          "id": "b",
+          "text": "MÍNIMO",
+          "correct": true,
+          "explanation": "Correta. A função MÍNIMO no Microsoft Excel é projetada para retornar o menor valor numérico dentro de um conjunto de valores ou um intervalo de células. Se o intervalo contiver valores lógicos ou texto, eles serão ignorados, a menos que sejam avaliados como parte de uma fórmula matricial."
+        },
+        {
+          "id": "c",
+          "text": "VALORMIN",
+          "correct": false,
+          "explanation": "Incorreta. VALORMIN não é uma função padrão do Microsoft Excel. As funções do Excel são nomeadas de forma a indicar sua finalidade, e essa denominação não é reconhecida como uma função válida para encontrar o valor mínimo."
+        },
+        {
+          "id": "d",
+          "text": "MÍNVAL",
+          "correct": false,
+          "explanation": "Incorreta. MÍNVAL não é uma função padrão do Microsoft Excel. As funções do Excel geralmente seguem padrões de nomenclatura específicos, e essa denominação não corresponde a nenhuma função conhecida para encontrar o valor mínimo."
+        }
+      ],
+      "explanation": "Correta. A função MÍNIMO no Microsoft Excel é projetada para retornar o menor valor numérico dentro de um conjunto de valores ou um intervalo de células. Se o intervalo contiver valores lógicos ou texto, eles serão ignorados, a menos que sejam avaliados como parte de uma fórmula matricial.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No Windows 10, ao arrastar um arquivo dentro da mesma unidade lógica (mesma letra de drive), qual operação é executada por padrão?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O arquivo é movido para o destino, sendo removido da origem",
+          "correct": true,
+          "explanation": "Correta. No Windows, quando um arquivo é arrastado e solto dentro da mesma unidade lógica (por exemplo, de uma pasta para a Área de Trabalho, ambas no drive C:), a operação padrão é 'mover'. Isso significa que o arquivo é transferido para o novo local e removido do local original. Para copiar, seria necessário pressionar a tecla CTRL durante o arrasto."
+        },
+        {
+          "id": "b",
+          "text": "O arquivo é copiado para o destino, mantendo o original na origem",
+          "correct": false,
+          "explanation": "Incorreta. A cópia de um arquivo na mesma unidade lógica geralmente ocorre quando se arrasta o arquivo com a tecla CTRL pressionada. Por padrão, o arrastar e soltar na mesma unidade lógica resulta em movimentação."
+        },
+        {
+          "id": "c",
+          "text": "É criado um atalho do arquivo no destino",
+          "correct": false,
+          "explanation": "Incorreta. A criação de um atalho geralmente ocorre quando se arrasta um arquivo com a tecla ALT pressionada, ou quando se arrasta com o botão direito do mouse e seleciona a opção 'Criar atalhos aqui'. O arrasto padrão na mesma unidade lógica não cria um atalho."
+        },
+        {
+          "id": "d",
+          "text": "O arquivo é compactado e transferido para o destino",
+          "correct": false,
+          "explanation": "Incorreta. A compactação de um arquivo é uma operação separada que visa reduzir o tamanho do arquivo, e não é uma ação padrão associada ao simples arrastar e soltar no Windows. Essa ação exigiria um comando específico ou o uso de um software de compactação."
+        }
+      ],
+      "explanation": "Correta. No Windows, quando um arquivo é arrastado e solto dentro da mesma unidade lógica (por exemplo, de uma pasta para a Área de Trabalho, ambas no drive C:), a operação padrão é 'mover'. Isso significa que o arquivo é transferido para o novo local e removido do local original. Para copiar, seria necessário pressionar a tecla CTRL durante o arrasto.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Microsoft PowerPoint 2010, qual extensão de arquivo permite que a apresentação seja executada automaticamente ao dar duplo clique, sem abrir o modo de edição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": ".PPSX",
+          "correct": true,
+          "explanation": "Correta. A extensão .PPSX (PowerPoint Show) é o formato de arquivo projetado para autoapresentações no PowerPoint. Quando um arquivo .PPSX é aberto, a apresentação é iniciada diretamente no modo de exibição de slides, sem passar pelo modo de edição, ideal para apresentações que não precisam ser alteradas."
+        },
+        {
+          "id": "b",
+          "text": ".PPTX",
+          "correct": false,
+          "explanation": "Incorreta. A extensão .PPTX é o formato padrão de arquivo para apresentações do PowerPoint a partir da versão 2007. Ao abrir um arquivo .PPTX, ele é iniciado no modo de edição, permitindo modificações na apresentação."
+        },
+        {
+          "id": "c",
+          "text": ".POTX",
+          "correct": false,
+          "explanation": "Incorreta. A extensão .POTX refere-se a um modelo de apresentação do PowerPoint. Arquivos com essa extensão são usados como base para criar novas apresentações, mantendo um design e formatação consistentes, e não para execução automática."
+        },
+        {
+          "id": "d",
+          "text": ".PPTM",
+          "correct": false,
+          "explanation": "Incorreta. A extensão .PPTM indica um arquivo de apresentação do PowerPoint que contém macros. Embora possa ser executado, ele ainda pode abrir no modo de edição ou exibir avisos de segurança sobre macros, não garantindo a execução automática direta como o .PPSX."
+        }
+      ],
+      "explanation": "Correta. A extensão .PPSX (PowerPoint Show) é o formato de arquivo projetado para autoapresentações no PowerPoint. Quando um arquivo .PPSX é aberto, a apresentação é iniciada diretamente no modo de exibição de slides, sem passar pelo modo de edição, ideal para apresentações que não precisam ser alteradas.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual tipo de malware tem como característica principal bloquear o acesso aos dados do usuário e exigir pagamento de resgate para liberá-los?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Rootkit",
+          "correct": false,
+          "explanation": "Incorreta. Rootkit é um conjunto de ferramentas de software projetado para permitir acesso contínuo e privilegiado a um computador, enquanto se mantém oculto do usuário e de outros softwares. Ele não se concentra em bloquear dados para exigir resgate, mas sim em manter uma presença oculta para controle do sistema."
+        },
+        {
+          "id": "b",
+          "text": "Spyware",
+          "correct": false,
+          "explanation": "Incorreta. Spyware é um tipo de software malicioso que coleta informações sobre o usuário ou o sistema sem o seu consentimento, monitorando atividades e dados. Ele não tem como principal característica o bloqueio de acesso e a exigência de resgate."
+        },
+        {
+          "id": "c",
+          "text": "Adware",
+          "correct": false,
+          "explanation": "Incorreta. Adware é um software que exibe anúncios indesejados, muitas vezes em forma de pop-ups, durante a navegação na internet ou o uso de programas. Embora seja intrusivo, seu objetivo principal não é bloquear dados e pedir resgate."
+        },
+        {
+          "id": "d",
+          "text": "Ransomware",
+          "correct": true,
+          "explanation": "Correta. Ransomware é um tipo de malware que bloqueia o acesso a um sistema de computador ou criptografa os dados do usuário, exigindo um pagamento (resgate) para restaurar o acesso ou descriptografar os arquivos. Essa é a sua característica principal, conforme descrito na pergunta."
+        }
+      ],
+      "explanation": "Correta. Ransomware é um tipo de malware que bloqueia o acesso a um sistema de computador ou criptografa os dados do usuário, exigindo um pagamento (resgate) para restaurar o acesso ou descriptografar os arquivos. Essa é a sua característica principal, conforme descrito na pergunta.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "No contexto de segurança da informação, o que são macros e por que representam um risco potencial?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "São extensões de arquivo que permitem compactação de dados, facilitando a transmissão de vírus por e-mail",
+          "correct": false,
+          "explanation": "Incorreta. Macros não são extensões de arquivo que compactam dados. A compactação de dados é uma função diferente, geralmente realizada por programas específicos ou pelo próprio sistema operacional. Vírus podem ser transmitidos por e-mail, mas não por essa característica das macros."
+        },
+        {
+          "id": "b",
+          "text": "São programas escritos em linguagem VBA que automatizam tarefas, mas podem ser explorados por vírus específicos",
+          "correct": true,
+          "explanation": "Correta. Macros são pequenas sequências de comandos ou programas escritos em linguagens como VBA (Visual Basic for Applications) que automatizam tarefas repetitivas em aplicativos como o Microsoft Office. O risco reside no fato de que essas macros podem ser programadas com intenções maliciosas, permitindo que vírus ou outros malwares sejam executados quando o arquivo é aberto, comprometendo a segurança do sistema."
+        },
+        {
+          "id": "c",
+          "text": "São certificados digitais que validam a autenticidade de sites, mas podem ser falsificados por hackers",
+          "correct": false,
+          "explanation": "Incorreta. Macros não são certificados digitais. Certificados digitais são usados para verificar a identidade de usuários, computadores ou organizações e para garantir a segurança da comunicação online. A falsificação de certificados é uma ameaça real, mas é distinta do risco representado pelas macros."
+        },
+        {
+          "id": "d",
+          "text": "São protocolos de rede que permitem acesso remoto, possibilitando invasões ao sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. Macros não são protocolos de rede. Protocolos de rede são conjuntos de regras que governam a comunicação de dados entre dispositivos em uma rede. Embora a comunicação de rede possa ser explorada por malwares, isso não se relaciona diretamente com a funcionalidade das macros."
+        }
+      ],
+      "explanation": "Correta. Macros são pequenas sequências de comandos ou programas escritos em linguagens como VBA (Visual Basic for Applications) que automatizam tarefas repetitivas em aplicativos como o Microsoft Office. O risco reside no fato de que essas macros podem ser programadas com intenções maliciosas, permitindo que vírus ou outros malwares sejam executados quando o arquivo é aberto, comprometendo a segurança do sistema.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No Microsoft Excel 2010, qual é a diferença entre as funções MÍNIMO e MENOR quando aplicadas a um intervalo de valores?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "MÍNIMO ignora células vazias, enquanto MENOR as considera como zero",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a função MÍNIMO quanto a MENOR ignoram células vazias. Células vazias não são consideradas como zero, mas sim como valores não existentes para o cálculo dessas funções."
+        },
+        {
+          "id": "b",
+          "text": "MÍNIMO retorna valores negativos, enquanto MENOR retorna apenas valores positivos",
+          "correct": false,
+          "explanation": "Incorreta. As funções MÍNIMO e MENOR retornam o menor valor numérico presente no intervalo, independentemente de ser positivo ou negativo. Se o menor valor for negativo, ele será retornado."
+        },
+        {
+          "id": "c",
+          "text": "MÍNIMO retorna o menor valor do intervalo, enquanto MENOR permite especificar qual posição do menor valor deseja obter",
+          "correct": true,
+          "explanation": "Correta. A função MÍNIMO retorna o menor valor de um conjunto de dados. Já a função MENOR permite especificar a k-ésima menor posição, ou seja, qual o menor valor em uma determinada ordem (primeiro menor, segundo menor, etc.). Por exemplo, MENOR(A1:A10;1) é equivalente a MÍNIMO(A1:A10)."
+        },
+        {
+          "id": "d",
+          "text": "MÍNIMO considera apenas valores numéricos, enquanto MENOR também processa valores de texto",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as funções, MÍNIMO e MENOR, são projetadas para trabalhar com valores numéricos. Elas ignoram valores de texto e lógicos em seu cálculo, tratando-os como não numéricos."
+        }
+      ],
+      "explanation": "Correta. A função MÍNIMO retorna o menor valor de um conjunto de dados. Já a função MENOR permite especificar a k-ésima menor posição, ou seja, qual o menor valor em uma determinada ordem (primeiro menor, segundo menor, etc.). Por exemplo, MENOR(A1:A10;1) é equivalente a MÍNIMO(A1:A10).",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao configurar um cliente de e-mail corporativo usando protocolo POP3, qual configuração deve ser desabilitada para permitir o acesso aos e-mails tanto pelo cliente quanto pelo webmail?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A autenticação em duas etapas para acesso à conta",
+          "correct": false,
+          "explanation": "Incorreta. A autenticação em duas etapas é uma camada adicional de segurança que exige um segundo fator de verificação. Desabilitá-la reduziria a segurança, mas não impediria o acesso simultâneo via cliente e webmail; em alguns casos, pode ser necessário gerar uma 'senha de aplicativo' para clientes de e-mail."
+        },
+        {
+          "id": "b",
+          "text": "A opção de apagar mensagens do servidor após o recebimento",
+          "correct": true,
+          "explanation": "Correta. O protocolo POP3, por padrão, baixa as mensagens para o cliente de e-mail e as apaga do servidor. Se essa opção for mantida ativa, as mensagens baixadas pelo cliente de e-mail não estarão mais disponíveis no webmail. Para permitir acesso em ambos, a opção de não apagar as mensagens do servidor deve ser habilitada."
+        },
+        {
+          "id": "c",
+          "text": "A sincronização automática de pastas entre dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. A sincronização automática de pastas é uma funcionalidade que mantém as pastas atualizadas entre diferentes dispositivos ou clientes. Embora útil, desabilitá-la não impediria o acesso ao webmail, apenas significaria que as ações realizadas em um cliente não seriam automaticamente refletidas em outro ou no webmail."
+        },
+        {
+          "id": "d",
+          "text": "A opção de criptografia SSL/TLS na conexão com o servidor",
+          "correct": false,
+          "explanation": "Incorreta. A criptografia SSL/TLS é uma medida de segurança importante que protege a comunicação entre o cliente de e-mail e o servidor. Desabilitá-la comprometeria a segurança, mas não impediria o acesso ao webmail."
+        }
+      ],
+      "explanation": "Correta. O protocolo POP3, por padrão, baixa as mensagens para o cliente de e-mail e as apaga do servidor. Se essa opção for mantida ativa, as mensagens baixadas pelo cliente de e-mail não estarão mais disponíveis no webmail. Para permitir acesso em ambos, a opção de não apagar as mensagens do servidor deve ser habilitada.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No Microsoft Word 2010, qual é a diferença entre uma quebra de seção do tipo 'Próxima página' e uma do tipo 'Contínua'?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "'Próxima página' inicia a nova seção na página seguinte, enquanto 'Contínua' permite mudanças de formatação na mesma página",
+          "correct": true,
+          "explanation": "Correta. Uma quebra de seção do tipo 'Próxima página' insere uma quebra de seção e inicia a nova seção na próxima página. Isso permite aplicar diferentes formatações (como numeração de página, cabeçalhos/rodapés, orientação de página) a partir da nova página. Já a quebra de seção 'Contínua' insere uma quebra de seção e inicia a nova seção na mesma página, permitindo aplicar diferentes formatações (como número de colunas) em partes distintas de uma mesma página."
+        },
+        {
+          "id": "b",
+          "text": "'Próxima página' aplica-se apenas a documentos com múltiplas colunas, enquanto 'Contínua' funciona em qualquer layout",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os tipos de quebra de seção podem ser usados em documentos com ou sem múltiplas colunas. A quebra 'Contínua' é frequentemente usada para aplicar diferentes layouts de coluna dentro da mesma página, mas não é exclusiva para essa finalidade."
+        },
+        {
+          "id": "c",
+          "text": "'Próxima página' mantém a mesma orientação de página, enquanto 'Contínua' permite alternar entre retrato e paisagem",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os tipos de quebra de seção permitem alterar a orientação da página (retrato ou paisagem). A diferença principal é onde a nova seção começa: 'Próxima página' inicia em uma nova página, enquanto 'Contínua' permite a mudança na mesma página."
+        },
+        {
+          "id": "d",
+          "text": "'Próxima página' preserva cabeçalhos e rodapés, enquanto 'Contínua' os remove automaticamente",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os tipos de quebra de seção podem ser configurados para ter cabeçalhos e rodapés diferentes ou iguais às seções anteriores. Eles não os removem automaticamente; a remoção ou alteração depende da configuração de 'Vincular ao anterior'."
+        }
+      ],
+      "explanation": "Correta. Uma quebra de seção do tipo 'Próxima página' insere uma quebra de seção e inicia a nova seção na próxima página. Isso permite aplicar diferentes formatações (como numeração de página, cabeçalhos/rodapés, orientação de página) a partir da nova página. Já a quebra de seção 'Contínua' insere uma quebra de seção e inicia a nova seção na mesma página, permitindo aplicar diferentes formatações (como número de colunas) em partes distintas de uma mesma página.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No Microsoft Excel 2010, ao utilizar a função PROCV para buscar um valor em uma tabela, qual parâmetro determina se a busca deve encontrar uma correspondência exata?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O primeiro parâmetro, que define o valor procurado",
+          "correct": false,
+          "explanation": "Incorreta. O primeiro parâmetro da função PROCV é o 'valor_procurado', ou seja, o valor que se deseja encontrar na primeira coluna da matriz tabela."
+        },
+        {
+          "id": "b",
+          "text": "O segundo parâmetro, que especifica o intervalo da tabela",
+          "correct": false,
+          "explanation": "Incorreta. O segundo parâmetro é a 'matriz_tabela', que é o intervalo de células onde a busca será realizada e de onde o valor correspondente será retornado."
+        },
+        {
+          "id": "c",
+          "text": "O quarto parâmetro, que quando definido como 0 ou FALSO exige correspondência exata",
+          "correct": true,
+          "explanation": "Correta. O quarto parâmetro, 'intervalo_pesquisa', é opcional e determina o tipo de correspondência. Se for 0 (zero) ou FALSO, a função PROCV buscará uma correspondência exata. Se for 1 (um) ou VERDADEIRO (ou omitido), a função buscará uma correspondência aproximada, exigindo que a primeira coluna da matriz_tabela esteja classificada em ordem crescente."
+        },
+        {
+          "id": "d",
+          "text": "O terceiro parâmetro, que indica o número da coluna a retornar",
+          "correct": false,
+          "explanation": "Incorreta. O terceiro parâmetro é o 'núm_índice_coluna', que indica o número da coluna na 'matriz_tabela' de onde o valor correspondente deve ser retornado."
+        }
+      ],
+      "explanation": "Correta. O quarto parâmetro, 'intervalo_pesquisa', é opcional e determina o tipo de correspondência. Se for 0 (zero) ou FALSO, a função PROCV buscará uma correspondência exata. Se for 1 (um) ou VERDADEIRO (ou omitido), a função buscará uma correspondência aproximada, exigindo que a primeira coluna da matriz_tabela esteja classificada em ordem crescente.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual tipo de rede de computadores é caracterizada por sua abrangência local, cobrindo uma área geográfica limitada como um escritório ou edifício?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "PAN (Personal Area Network)",
+          "correct": false,
+          "explanation": "Incorreta. PAN (Personal Area Network) é uma rede de computadores de alcance muito pequeno, geralmente usada para conectar dispositivos pessoais próximos ao usuário, como fones de ouvido, smartphones e tablets, utilizando tecnologias como Bluetooth."
+        },
+        {
+          "id": "b",
+          "text": "WAN (Wide Area Network)",
+          "correct": false,
+          "explanation": "Incorreta. WAN (Wide Area Network) é uma rede de computadores que abrange uma área geográfica extensa, como estados, países ou até continentes, conectando múltiplas LANs e MANs."
+        },
+        {
+          "id": "c",
+          "text": "MAN (Metropolitan Area Network)",
+          "correct": false,
+          "explanation": "Incorreta. MAN (Metropolitan Area Network) é uma rede de computadores que abrange uma área geográfica maior que uma LAN, tipicamente uma cidade ou campus universitário, mas menor que uma WAN."
+        },
+        {
+          "id": "d",
+          "text": "LAN (Local Area Network)",
+          "correct": true,
+          "explanation": "Correta. LAN (Local Area Network) é uma rede de computadores caracterizada por sua abrangência local, conectando dispositivos em uma área geográfica limitada, como uma residência, um escritório, um prédio ou um campus pequeno. É uma rede interna de curto alcance."
+        }
+      ],
+      "explanation": "Correta. LAN (Local Area Network) é uma rede de computadores caracterizada por sua abrangência local, conectando dispositivos em uma área geográfica limitada, como uma residência, um escritório, um prédio ou um campus pequeno. É uma rede interna de curto alcance.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_358770_Informática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:31:25"
+}

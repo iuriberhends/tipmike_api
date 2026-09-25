@@ -1,0 +1,439 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 7,
+    "titulo": "7. Trigonometria: razões trigonométricas, funções, fórmulas de transformações trigonométricas, equações e triângulos."
+  },
+  "ordem": 3,
+  "ordem_no_curso": "93.00",
+  "titulo": "Trigonometria - Triângulo Retângulo III",
+  "codigo_aula": "160377",
+  "video_id": "mloLVbmevwY=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:45:22",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/mloLVbmevwY%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408921&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Trigonometria - Triângulo Retângulo III\n\n## Continuação: Relações no Triângulo Retângulo\nVamos dar continuidade, beleza? Relações métricas e trigonométricas no triângulo retângulo. Vamos partir para as relações trigonométricas. As métricas já foram, tá legal, show de bola. Agora, nas relações trigonométricas, você vai ter que guardar uma tabelinha com os ângulos notáveis. São importantes porque, quando comparamos duas grandezas por meio de uma divisão, estamos no conceito de razão.\n\nRazão, aqui, segundo a forma como aparece em editais, pode surgir como relações trigonométricas ou razões trigonométricas. Você vai perceber que faremos divisões, razões, utilizando ângulos e funções.\n\nEu já falei o seguinte para vocês: a palavra “razão” é etimologicamente ligada ao termo ratio, do latim, que significa, entre outras coisas, rateio, repartição, razão e assim por diante.\n\n## Definições no Triângulo Retângulo\nImaginem um triângulo retângulo: aqui está a hipotenusa, aqui é cateto e aqui é cateto também, com ângulo de 90 graus. Agora, esse cateto pode receber os nomes de cateto oposto e cateto adjacente dependendo do ângulo que estamos analisando.\n\n- Se o ângulo de análise for aqui, este cateto será o oposto a esse ângulo e o outro será o adjacente. \n- Se mudarmos o ângulo de análise para o outro agudo, o que era adjacente pode virar oposto e vice-versa. \n- A hipotenusa não muda.\n\nTemos os ângulos do triângulo: um é 90° e os outros dois são agudos. Vamos chamá-los de alfa e beta. Na função, representarei por alfa e beta. Esses ângulos agudos estão entre 0° e 90°, e a soma deles é sempre 90°, porque com o ângulo reto somam 180°.\n\n## Funções Trigonométricas: Seno, Cosseno e Tangente (em função de α)\nComo começar essas funções? Olha só, quero que você perceba o seguinte: função seno, função cosseno e função tangente. Guarde isso.\n\n- Seno do ângulo analisado: razão entre cateto oposto e hipotenusa.\n- Cosseno do ângulo analisado: razão entre cateto adjacente e hipotenusa.\n- Tangente do ângulo analisado: razão entre cateto oposto e cateto adjacente.\n\nEntão, trabalhando com o ângulo alfa:\n- seno(α) = cateto oposto / hipotenusa\n- cos(α) = cateto adjacente / hipotenusa\n- tg(α) = cateto oposto / cateto adjacente\n\nGuarda isso, beleza?\n\n## Funções Trigonométricas (em função de β)\nAgora, de maneira bem rápida, em função de beta:\n- seno(β) = cateto oposto a β / hipotenusa\n- cos(β) = cateto adjacente a β / hipotenusa\n- tg(β) = cateto oposto a β / cateto adjacente\n\nA hipotenusa não muda nunca.\n\n## Ângulos Notáveis e a Tabela\nÉ importantíssimo saber os ângulos notáveis. Por quê? Porque, sem eles, complica lá na frente. Quem são os ângulos notáveis? 30°, 45° e 60°. Você precisa saber seno, cosseno e tangente desses ângulos. São os principais, e com eles você encontra valores de outros ângulos a partir de relações posteriores.\n\nComo guardar rapidamente? Vai depender do jeito que cada um memoriza. Eu vou te mostrar um macete que eu uso há muito tempo e funciona.\n\nConcentra, gente: vamos montar três linhas (seno, cosseno, tangente) para 30°, 45° e 60°. Aumentando os ângulos nessa ordem: 30°, 45°, 60°.\n\n- Para seno: pense na sequência 1, 2, 3; depois 1, 2, 3; e depois 3, 2, 1. Divida todo mundo por 2 e extraia a raiz só do numerador. Em 45°, raiz de 2 sobre 2; em 30°, 1/2; em 60°, raiz de 3 sobre 2.\n- Para cosseno: a mesma lógica, só que “espelhando” os valores do seno: 60° vira 1/2; 45° continua raiz de 2 sobre 2; 30° vira raiz de 3 sobre 2.\n- Para tangente: use a relação tg = sen/cos. Por exemplo:\n  - tg 45° = (√2/2) / (√2/2) = 1\n  - tg 30° = (1/2) / (√3/2) = 1/√3 = √3/3 após racionalizar\n  - tg 60° = (√3/2) / (1/2) = √3\n\nMatematicamente, 1/√3 fica esquisito no denominador. Então racionalizamos: multiplica em cima e embaixo por √3, fica √3/3.\n\nRepetindo o macete: \n- Faça 1, 2, 3; 3, 2, 1.\n- Divida todos por 2.\n- Tire raiz só do numerador.\n- Para tangente, divida seno por cosseno.\n\nNós veremos funções trigonométricas no ciclo trigonométrico mais à frente; serão três aulas também. E lembre: tg = sen/cos. Se você aprendeu seno e cosseno, a tangente é só dividir.\n\n## Exemplo de Cálculo com a Tabela\nVem comigo:\n- tg 60° = (√3/2) / (1/2) = √3\n- tg 30° = (1/2) / (√3/2) = 1/√3 = √3/3 após racionalização\n\nProntinho. Decorando essa tabelinha, você ganha velocidade.\n\n## Exercício de Fixação 1\nDetermine seno, cosseno e tangente dos ângulos agudos do triângulo abaixo. Primeiro, do ângulo α; depois, de β.\n\nPara o ângulo α:\n- seno(α) = cateto oposto / hipotenusa = 4/5\n- cos(α) = cateto adjacente / hipotenusa = 3/5\n- tg(α) = cateto oposto / cateto adjacente = 4/3\n\nAgora, para o ângulo β (trocando quem é oposto e adjacente em relação a β):\n- seno(β) = cateto oposto a β / hipotenusa = 3/5\n- cos(β) = cateto adjacente a β / hipotenusa = 4/5\n- tg(β) = cateto oposto a β / cateto adjacente a β = 3/4\n\n## Exemplo 2\nSabendo que sen(α) = 1/2 e que o triângulo é retângulo, determine x, y, z. Ele diz que a hipotenusa está envolvida. Podemos usar a definição:\n\nsen(α) = cateto oposto / hipotenusa = 1/2.\nSe o cateto oposto é 8, então:\n1/2 = 8 / hipotenusa ⇒ hipotenusa = 16.\n\nProporção: produto dos extremos igual ao dos meios. Achamos hipotenusa = 16. Show de bola.\n\n## Exemplo 3 (ângulo não notável)\nNo triângulo retângulo da figura, determine as medidas pedidas, com ângulo de 65°. Ele forneceu sen(65°) e cos(65°) porque 65° não é notável.\n\n- Temos cateto oposto ao ângulo de 65° como incógnita x e hipotenusa 9. Então:\n  sen(65°) = x/9 ⇒ x = 9·sen(65°) = 9·0,91 = 8,19.\n\n- Para o cateto adjacente (chamemos de y):\n  cos(65°) = y/9 ⇒ y = 9·cos(65°) = 9·0,42 = 3,78.\n\nBeleza.\n\n## Exemplo 4 (com 60° e uso de ângulo notável)\nConsiderando triângulo retângulo ABC, determine as medidas indicadas sabendo que sen(60°) = √3/2.\n\nAnálise: o cateto oposto a 60° vale 12√3 e a hipotenusa é a que queremos. Pela definição:\nsen(60°) = cateto oposto / hipotenusa = √3/2 = (12√3)/a.\n\nPodemos cancelar √3 dos dois lados:\n(√3/2) = (12√3)/a ⇒ 1/2 = 12/a ⇒ a = 24.\n\nAgora, para o cateto adjacente b, usamos cosseno:\ncos(60°) = b/24 = 1/2 ⇒ b = 12.\n\nLogo, a = 24 e b = 12. Show!\n\n## Triângulo Retângulo Isósceles\nSabe-se que em um triângulo retângulo isósceles temos um ângulo reto e dois lados congruentes (os catetos). Se cada um mede 30 cm, determine a hipotenusa.\n\nComo é retângulo e isósceles, os ângulos agudos são iguais. A soma dos ângulos agudos é 90°, logo cada um mede 45°. Podemos usar:\n\n- Pela trigonometria: sen(45°) = 30/hipotenusa = √2/2 ⇒ hipotenusa = 30·2/√2 = 60/√2 ⇒ racionalizando: 60√2/2 = 30√2.\n\n- Outra solução mais rápida: é a diagonal de um quadrado de lado 30. A diagonal de um quadrado é lado·√2. Então hipotenusa = 30√2. Mesma resposta.\n\nPerceba que, muitas vezes, há mais de um caminho. O importante é a lógica e a eficiência.\n\n## Aplicações\n\nTriângulo retângulo com hipotenusa 20 m, cateto adjacente ao ângulo α medindo 6 m. Sabendo que sen(α) = 0,8, determine o perímetro.\n\nAnálise: pelo seno,\nsen(α) = cateto oposto / hipotenusa = x/20 = 0,8 ⇒ x = 16 m (cateto oposto).\n\nAgora, podemos usar o “coringa” (trio pitagórico 3-4-5 escalado). De 5 para 20 multiplicou por 4, então os catetos são 3·4 = 12 e 4·4 = 16. Já temos 16 (bateu) e 12. Perímetro = 20 + 16 + 12 = 48 m.\n\n💬 História: Eu sempre falo: não é decorar caminho, é entender a lógica. Em concurso, muitas vezes o caminho mais curto resolve mais rápido. No meu livro Fundamentos e Métodos, eu bato nessa tecla. Hoje, o examinador cobra raciocínio. Use o coringa quando facilitar.\n\n## Questão 2 (catetos dados em função e ângulo de 45°)\nOs catetos de um triângulo retângulo medem, respectivamente, “cem metros” e “z metros” (um deles é dado por z−2, com o ângulo oposto medindo 45°). Sendo um ângulo de 45°, o outro também é 45° (triângulo retângulo isósceles), pois temos metade de um quadrado: lados iguais. Assim, se um cateto é z−2 e o outro é z, pela isoscelia, z−2 = z. Interpretando a igualdade dos catetos, queremos o perímetro em função de z.\n\nVamos usar seno de 45° para obter a hipotenusa h em função de z:\nsen(45°) = cateto oposto / hipotenusa = z/h = √2/2 ⇒ h = 2z/√2 = z√2.\n\nRacionalizando foi desnecessário aqui porque já simplificamos direto: h = z√2.\n\nPerímetro = z + (z−2) + z√2 = 2z−2 + z√2.\nColocando z em evidência: P = z(2 + √2) − 2.\n\nSe considerarmos ambos os catetos iguais (situação clássica do 45°-45°-90°), então o enunciado indicaria lados iguais, e a hipotenusa seria z√2. Em seguida, somaríamos os lados para o perímetro conforme as medidas apresentadas. A estrutura final apresentada na aula consolidou como:\nPerímetro = z + z + z√2 = z(2 + √2)\nou, quando os enunciados trazem expressões específicas (tipo z e z−2), ajustar conforme a igualdade dos catetos e concluir a soma.\n\n## Encerramento\nAs funções trigonométricas que vimos hoje: seno, cosseno e tangente. Perceba que muitas questões permitem usar:\n- Relações métricas (Pitágoras, trios pitagóricos)\n- Ou relações trigonométricas (sen, cos, tg)\n- Às vezes, qualquer uma das duas funciona, e os resultados batem.\n\n> 🎯 Dicas de prova: \n> - Saiba de cor os ângulos notáveis (30°, 45°, 60°) com seus senos, cossenos e tangentes.\n> - Lembre que tg = sen/cos.\n> - Em triângulo retângulo isósceles: ângulos agudos de 45° e hipotenusa = lado·√2.\n> - Evite radical no denominador: racionalize.\n\nVamos rever funções no ciclo trigonométrico nas próximas aulas. Treinem no Fórum de Dúvidas, e eu vou colocar material complementar de trigonometria para vocês. Se esforcem direitinho. Fechou? Bons estudos e até o próximo assunto, firme e forte!",
+  "transcricao_meta": {
+    "title": "Trigonometria - Triângulo Retângulo III",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 43928,
+    "createdAt": "2026-02-17T12:10:52.575Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda as razões/relações trigonométricas no triângulo retângulo, com foco em:\n- Conceitos: seno, cosseno, tangente; hipotenusa, cateto oposto/adjacente; ângulos α e β.\n- Distinções: quando usar seno/cosseno/tangente; ângulos notáveis vs. genéricos; α e β complementares.\n- Técnicas: montar proporções, isolar variáveis, racionalizar, usar Pitágoras e calcular perímetro.\nPrincipais pontos: \n- sen = oposto/hipotenusa, cos = adjacente/hipotenusa, tan = oposto/adjacente.\n- α + β = 90°; valores de 30°, 45°, 60° devem estar memorizados.\n- Escolha a função pela combinação de lados conhecidos; racionalize resultados com raiz no denominador.\n\n## 1. Base / Conceitos Fundamentais\n- **Triângulo retângulo**: possui um **ângulo reto (90°)**. Os outros são ângulos agudos, chamados **alfa (α)** e **beta (β)**, com a relação: **α + β = 90°**.\n- **Lados**:\n  - **Hipotenusa**: lado oposto ao ângulo reto; é o maior lado. Não depende do ângulo de referência.\n  - **Cateto oposto**: em relação ao ângulo analisado (α ou β), é o lado oposto a ele.\n  - **Cateto adjacente**: em relação ao ângulo analisado, é o lado que encosta no ângulo (exceto a hipotenusa).\n- **Razões trigonométricas (definições)**:\n  - **seno de θ (sen θ)** = cateto oposto / hipotenusa\n  - **cosseno de θ (cos θ)** = cateto adjacente / hipotenusa\n  - **tangente de θ (tan θ)** = cateto oposto / cateto adjacente\n- **Ângulos notáveis (tem que saber)**:\n  - sen 30° = 1/2, sen 45° = √2/2, sen 60° = √3/2\n  - cos 30° = √3/2, cos 45° = √2/2, cos 60° = 1/2\n  - tan 30° = √3/3, tan 45° = 1, tan 60° = √3\n\n> Dica de prova: α e β são complementares. Vale: sen α = cos β, cos α = sen β e tan α = 1/tan β.\n\n## 2. Como Funciona / Distinções\n- **Dependência do ângulo de referência**:\n  - Trocou de **α** para **β**? Trocam-se “oposto” e “adjacente”. A **hipotenusa** não muda.\n- **Quando usar cada função**:\n  - Conhece **oposto e hipotenusa** → use **seno**.\n  - Conhece **adjacente e hipotenusa** → use **cosseno**.\n  - Conhece **oposto e adjacente** (sem hipotenusa) → use **tangente**.\n- **Ângulos notáveis vs. genéricos**:\n  - **30°, 45°, 60°**: use os valores exatos da tabela.\n  - **Genéricos (ex.: 65°)**: use valores aproximados fornecidos (ex.: sen(65°) ≈ 0,91; cos(65°) ≈ 0,42) ou calculadora, conforme a questão.\n- **Triângulo retângulo isósceles (45°-45°-90°)**:\n  - Catetos iguais; hipotenusa = cateto·√2.\n\n> Dica de prova: Em 3-4-5 (clássico), para um ângulo, sen = 4/5 e cos = 3/5; para o complementar, invertem.\n\n## 3. Aplicação Prática / Técnicas\n- **Montar proporções e isolar**:\n  - A partir de sen θ = oposto/hipotenusa, cos θ = adjacente/hipotenusa, tan θ = oposto/adjacente, crie a proporção com o lado conhecido.\n  - “O que está dividindo passa multiplicando.” Use o produto dos meios = produto dos extremos.\n- **Racionalização do denominador**:\n  - Se aparecer raiz no denominador (ex.: 1/√3), multiplique por √3/√3 → √3/3.\n  - Ex.: 2/√2 = (2√2)/2 = √2.\n- **Pitágoras (apoio)**:\n  - Quando conhecer dois lados e faltar o terceiro: a² + b² = c² (c = hipotenusa).\n- **Perímetro**:\n  - Soma dos três lados. Muitas vezes é necessário antes determinar o(s) lado(s) faltante(s) por seno/cosseno/tangente ou Pitágoras.\n- **Tabela rápida de ângulos notáveis (macete “um, dois, três, três, dois, um”)**:\n  - Escreva 1, 2, 3 (para sen) e 3, 2, 1 (para cos); divida por 2; aplique a raiz no numerador.\n  - Tan = sen/cos; racionalize se preciso.\n\n> Dica de prova: Viu √3/2? Pense 60°. Viu √2/2? Pense 45°. Viu 1/2? Pense 30°.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo A (clássico 3-4-5, em função de α e β):\n  - Para o ângulo **alfa (α)** com oposto = 4 e adjacente = 3 (hipotenusa = 5):\n    - sen α = 4/5; cos α = 3/5; tan α = 4/3\n  - Para o ângulo **beta (β)**:\n    - sen β = 3/5; cos β = 4/5; tan β = 3/4\n\n- Exemplo B (proporção com seno dado):\n  - Dado: sen α = 1/2 e cateto oposto a α = 8 → 1/2 = 8/H → H = 16.\n\n- Exemplo C (ângulo genérico 65° com hipotenusa 9):\n  - sen(65°) ≈ 0,91 → oposto = 9·0,91 = 8,19\n  - cos(65°) ≈ 0,42 → adjacente = 9·0,42 = 3,78\n\n- Exemplo D (sen(60°) = √3/2 e oposto = 12):\n  - √3/2 = 12/H → H = 24/√3 → racionalizando, H = 8√3\n  - cos(60°) = 1/2 → adjacente = (1/2)·(8√3) = 4√3\n\n- Exemplo E (triângulo retângulo isósceles):\n  - Catetos = 30 cm e 30 cm, 45°-45°-90° → hipotenusa = 30√2.\n\n- Exemplo F (perímetro com seno numérico):\n  - Dados: hipotenusa = 20 m, cateto adjacente = 6 m, sen(α) = 0,8.\n  - oposto = 0,8·20 = 16 m.\n  - Perímetro = 6 + 16 + 20 = 42 m.\n\n- Exemplo G (seno literal e hipotenusa por isolamento):\n  - sen α = 0,8; cateto oposto = 20 → sen α = oposto/hipotenusa → 0,8 = 20/H → H = 20/0,8 = 25 m.\n\n- Exemplo H (45°, perímetro em função de z):\n  - Catetos = z e z; hipotenusa = z√2.\n  - Perímetro = z + z + z√2 = z(2 + √2).\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova: Identifique PRIMEIRO quem é oposto, adjacente e hipotenusa relativamente ao ângulo de referência. Isso evita montar a razão errada.\n\n- Confundir **oposto** e **adjacente** quando muda de α para β.\n- Tentar usar valores exatos em **ângulos não notáveis** (ex.: 65°). Use os valores aproximados dados.\n- Esquecer que **α + β = 90°** e que sen e cos se trocam entre complementares.\n- Não **racionalizar** resultados com raiz no denominador (exigência comum de formatação).\n- Errar a **proporção**: lembre do “produto dos extremos é igual ao dos meios”.\n- Ignorar o atalho do **triângulo isósceles retângulo (45°-45°-90°)**: catetos iguais e hipotenusa = cateto·√2.\n- Trocar valores literais dados em enunciado:\n  - Se a questão informa explicitamente **sen α = 0,8**, use 0,8. Ex.: hipotenusa = 20/0,8 = 25 (não confundir com valores ditos por engano).\n- Não checar coerência: a **hipotenusa** deve ser o maior lado; tangente de 30° é menor que 1; tangente de 60° é maior que 1.\n\n> Dica de prova: Para tan 30° = 1/√3, apresente como √3/3 após racionalizar. Para respostas simbólicas, deixe fatores em evidência, ex.: z(2 + √2).",
+  "resumo_bolso": "# Trigonometria - Triângulo Retângulo III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Triângulo retângulo**: possui um **ângulo reto (90°)** e dois ângulos agudos, **α e β**, com **α + β = 90°** (complementares).\n* **Hipotenusa**: lado **oposto ao ângulo reto**, **maior lado**, **não depende** do ângulo de referência.\n* **Cateto oposto**: em relação ao ângulo analisado (α ou β), é o lado **oposto** a ele.\n* **Cateto adjacente**: em relação ao ângulo analisado, é o lado que **encosta** no ângulo (exceto a hipotenusa).\n* **sen θ** = cateto oposto / hipotenusa.\n* **cos θ** = cateto adjacente / hipotenusa.\n* **tan θ** = cateto oposto / cateto adjacente.\n* **Ângulos notáveis (tem que saber)**:\n  - sen 30° = 1/2, sen 45° = √2/2, sen 60° = √3/2  \n  - cos 30° = √3/2, cos 45° = √2/2, cos 60° = 1/2  \n  - tan 30° = √3/3, tan 45° = 1, tan 60° = √3\n* **Complementares (α + β = 90°)**:  \n  sen α = cos β; cos α = sen β; tan α = 1/tan β.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Seno vs Cosseno vs Tangente\n\n| Aspecto | Seno (sen θ) | Cosseno (cos θ) | Tangente (tan θ) |\n|--------|--------------|-----------------|------------------|\n| Definição | oposto / hipotenusa | adjacente / hipotenusa | oposto / adjacente |\n| Usa hipotenusa? | Sim | Sim | Não |\n| Quando usar | Conhece oposto + hipotenusa | Conhece adjacente + hipotenusa | Conhece oposto + adjacente (sem hipotenusa) |\n\n---\n\n### Ângulos Notáveis vs Ângulos Genéricos\n\n| Aspecto | Notáveis (30°, 45°, 60°) | Genéricos (ex.: 65°) |\n|--------|---------------------------|-----------------------|\n| Valores | Use valores exatos da tabela | Use valores aproximados dados ou calculadora |\n| Estratégia | Trabalhar com frações com √2, √3, 1/2 | Montar proporção com número decimal fornecido |\n\n---\n\n### Ângulo α vs Ângulo β\n\n| Aspecto | α | β |\n|--------|---|---|\n| Relação | α + β = 90° | α + β = 90° |\n| Lados | Oposto e adjacente trocam ao mudar o ângulo | Oposto e adjacente trocam ao mudar o ângulo |\n| Razões | sen α ↔ cos β; cos α ↔ sen β | sen β ↔ cos α; cos β ↔ sen α |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Razões trigonométricas no triângulo retângulo**\n\n* **Aplicação**: sempre que houver triângulo retângulo e um ângulo agudo de referência.\n* **Exemplo**: sen α = oposto/hipotenusa → 1/2 = 8/H → H = 16.\n\n---\n\n**2. Complementaridade dos ângulos**\n\n* **Aplicação**: em triângulo retângulo, sempre: **α + β = 90°**.\n* **Exemplo**: em um triângulo 3-4-5, para o ângulo α com oposto = 4 e hipotenusa = 5, sen α = 4/5; para o complementar β, cos β = 4/5.\n\n---\n\n**3. Triângulo retângulo isósceles (45°-45°-90°)**\n\n* **Aplicação**: quando os dois catetos são iguais.\n* **Regra**: hipotenusa = cateto·√2.\n* **Exemplo**: catetos 30 e 30 → hipotenusa = 30√2.\n\n---\n\n**4. Pitágoras**\n\n* **Aplicação**: quando conhecer dois lados e faltar o terceiro em triângulo retângulo.\n* **Regra**: a² + b² = c² (c = hipotenusa).\n\n---\n\n**5. Racionalização do denominador**\n\n* **Aplicação**: quando a resposta tem **raiz no denominador**.\n* **Regra**: multiplicar por **raiz/raiz**.\n* **Exemplos**:  \n  1/√3 → (1·√3)/(√3·√3) = √3/3  \n  2/√2 → (2√2)/2 = √2.\n\n---\n\n**6. Tabela rápida de sen e cos (30°, 45°, 60°)**\n\n* **Aplicação**: memorizar rapidamente antes da prova.\n* **Regra (macete “1, 2, 3; 3, 2, 1”)**:\n  - sen: (√1/2, √2/2, √3/2) → 30°, 45°, 60°\n  - cos: (√3/2, √2/2, √1/2) → 30°, 45°, 60°\n* **Exemplo**: viu √3/2 → pode ser sen 60° ou cos 30° (ver contexto).\n\n---\n\n**7. Perímetro do triângulo retângulo**\n\n* **Aplicação**: soma dos lados após achar os faltantes por razões trigonométricas ou Pitágoras.\n* **Regra**: P = cateto1 + cateto2 + hipotenusa.\n* **Exemplo**: hipotenusa = 20 m, cateto adjacente = 6 m, sen(α) = 0,8 → oposto = 0,8·20 = 16; P = 6 + 16 + 20 = 42.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Confundir **oposto** e **adjacente** quando muda de α para β; identifique primeiro o ângulo de referência.\n- Tentar usar valores exatos em **ângulos não notáveis** (ex.: 65°); use os valores aproximados fornecidos.\n- Esquecer que **α + β = 90°** e que sen e cos se trocam entre complementares.\n- Não **racionalizar** resultados com raiz no denominador (exigência comum de formatação).\n- Não checar coerência: a **hipotenusa** deve ser o maior lado; tangente de 30° é menor que 1; tangente de 60° é maior que 1.\n\n---\n\n## 📋 Checklist Final\n\n* Sei escrever **sen, cos, tan** em função de **cateto oposto, cateto adjacente e hipotenusa**?\n* Lembro que **α + β = 90°** e que **sen ↔ cos** entre complementares, com **tan α = 1/tan β**?\n* Sei escolher **seno, cosseno ou tangente** conforme os lados conhecidos (oposto/adjacente/hipotenusa)?\n* Memorizei a **tabela de 30°, 45°, 60°** e reconheço rapidamente **√3/2, √2/2, 1/2**?\n* Sei aplicar **Pitágoras** e o atalho do **triângulo 45°-45°-90° (hip = cateto·√2)**?\n* Estou atento para **racionalizar** qualquer raiz no denominador (ex.: 1/√3 → √3/3; 2/√2 → √2)?\n* Lembro de **checar se a hipotenusa é o maior lado** e se o valor da tangente faz sentido (**tan 30° < 1**, **tan 60° > 1**)?\n* Sei montar e isolar proporções do tipo **sen θ = oposto/hipotenusa**, usando a ideia de “produto dos meios = produto dos extremos”?",
+  "mapa_mental": "# 🧮 Trigonometria – Triângulo Retângulo III\n## 🎯 Estrutura do Triângulo Retângulo\n### 💡 Elementos Básicos\n- Ângulo reto 90°\n- Ângulos agudos α β\n- Relação α + β = 90°\n- Triângulo retângulo\n- Maior lado hipotenusa\n### 📏 Classificação dos Lados\n- Hipotenusa oposto 90°\n- Cateto oposto ao ângulo\n- Cateto adjacente ao ângulo\n- Oposto x adjacente\n- Referência α ou β\n### 🔁 Complementaridade α e β\n- Ângulos complementares\n- sen α = cos β\n- cos α = sen β\n- tan α · tan β = 1\n- Troca oposto adjacente\n\n## 🧮 Razões Trigonométricas\n### 💡 Definições no Triângulo\n- sen θ = oposto/hipotenusa\n- cos θ = adjacente/hipotenusa\n- tan θ = oposto/adjacente\n- Função depende ângulo\n- Hipotenusa fixa\n### 🎯 Escolha da Função\n- Oposto hipotenusa → seno\n- Adjacente hipotenusa → cosseno\n- Oposto adjacente → tangente\n- Falta hipotenusa → tangente\n- Combinação lados conhecidos\n### 🔢 Ângulos Notáveis\n- 30° 45° 60°\n- sen 30° 45° 60°\n- cos 30° 45° 60°\n- tan 30° 45° 60°\n- Memorização obrigatória\n### 📊 Tabela Rápida Notáveis\n- Sequência 1 2 3\n- Sequência 3 2 1\n- Dividir por 2\n- Raiz numerador\n- tan = sen/cos\n### 📐 Triângulo 45°-45°-90°\n- Triângulo isósceles retângulo\n- Catetos iguais\n- Hipotenusa = cateto√2\n- Ângulos 45° 45° 90°\n- Relações fixas lados\n\n## ⚙️ Técnicas de Cálculo\n### 🧮 Proporções e Isolamento\n- Montar razão correta\n- Produto meios extremos\n- Isolar lado desconhecido\n- Termo dividindo passa multiplicando\n- Conferir maior lado\n### 📏 Pitágoras e Perímetro\n- a² + b² = c²\n- c hipotenusa\n- Encontrar lado faltante\n- Perímetro soma lados\n- Usar antes razões trigonométricas\n### 📉 Racionalização\n- Raiz no denominador\n- Multiplicar por raiz/raiz\n- Exemplo 1/√3 → √3/3\n- Simplificar frações\n- Exigência respostas exatas\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Identificação de Lados\n- Confundir oposto adjacente\n- Mudar α para β\n- Não fixar hipotenusa\n- Escolher função errada\n- Montar razão invertida\n### ⚠️ Ângulos e Valores\n- Esquecer α + β = 90°\n- Trocar sen cos complementares\n- Usar exatos em ângulo genérico\n- Ignorar tabela notáveis\n- Tangente 30° menor que 1\n### 📝 Forma da Resposta\n- Não racionalizar denominador\n- Desrespeitar maior lado hipotenusa\n- Ignorar triângulo 45°-45°-90°\n- Não evidenciar fator comum\n- Não checar coerência numérica",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Razões Trigonométricas",
+      "description": "Razões Trigonométricas — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que é uma razão trigonométrica em um triângulo retângulo?",
+          "back": "Relações entre as medidas dos lados de um triângulo retângulo obtidas por meio da divisão (quociente) entre eles.",
+          "hint": "É uma operação aritmética entre lados",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "triangulo-retangulo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual critério identifica a hipotenusa em um triângulo retângulo?",
+          "back": "O **maior lado** do triângulo retângulo, situado oposto ao ângulo de 90°.",
+          "hint": "Localização em relação ao ângulo reto",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "elementos-triangulo"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como identificar o cateto oposto a um ângulo agudo?",
+          "back": "O cateto posicionado diretamente **oposto** ao ângulo agudo analisado.",
+          "hint": "Posição relativa ao ângulo de referência",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "elementos-triangulo"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a razão que define o seno de um ângulo agudo?",
+          "back": "A razão entre o **cateto oposto** e a **hipotenusa**.",
+          "hint": "Envolve dois lados específicos",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "razoes-trigonometricas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual critério orienta a escolha da razão trigonométrica em um problema?",
+          "back": "A associação entre os **dados conhecidos** do problema (lados e ângulos) e a função trigonométrica correspondente.",
+          "hint": "Baseia-se na relação entre dados e incógnitas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "resolucao-problemas"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Ângulos Notáveis",
+      "description": "Ângulos Notáveis — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Quais são os três ângulos notáveis usados no triângulo retângulo?",
+          "back": "Os ângulos de **30°, 45° e 60°**.",
+          "hint": "São três valores angulares comuns",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "angulos-notaveis"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é o valor do seno de 45°?",
+          "back": "**\\(\\frac{\\sqrt{2}}{2}\\)**",
+          "hint": "Envolve raiz quadrada de dois",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "angulos-notaveis"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Triângulo Isósceles",
+      "description": "Triângulo Isósceles — 2 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Que medida têm os ângulos agudos de um triângulo retângulo isósceles?",
+          "back": "**45°** cada um.",
+          "hint": "Soma dos ângulos agudos é 90 graus",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "triangulo-isosceles"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Como calcular a hipotenusa de um triângulo retângulo isósceles cujo cateto mede 30 cm?",
+          "back": "**30\\(\\sqrt{2}\\) cm**, obtido aplicando a razão do seno de 45° ou considerando a diagonal do quadrado.",
+          "hint": "Aplicação prática de ângulos notáveis",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações Numéricas",
+      "description": "Aplicações Numéricas — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Em um triângulo retângulo com hipotenusa 20 m e seno igual a 0,8, qual é o cateto oposto?",
+          "back": "**16 m**, calculado multiplicando a hipotenusa (20 m) pelo seno de 0,8.",
+          "hint": "Aplicação direta da definição de seno",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "aplicacao-pratica"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual procedimento elimina um radical presente no denominador de uma fração?",
+          "back": "**Racionalização**, multiplicando numerador e denominador pelo radical presente no denominador.",
+          "hint": "Técnica algébrica de simplificação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "trigonometria",
+            "algebra"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um triângulo retângulo, qual é a definição correta da função seno de um ângulo agudo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Razão entre o cateto adjacente ao ângulo e a hipotenusa",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreve a definição da função cosseno (cateto adjacente sobre hipotenusa), e não a função seno."
+        },
+        {
+          "id": "b",
+          "text": "Razão entre o cateto oposto ao ângulo e o cateto adjacente",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreve a definição da função tangente (cateto oposto sobre cateto adjacente), e não a função seno."
+        },
+        {
+          "id": "c",
+          "text": "Razão entre o cateto oposto ao ângulo e a hipotenusa",
+          "correct": true,
+          "explanation": "Correta. A função seno de um ângulo agudo em um triângulo retângulo é definida como a razão entre o comprimento do cateto oposto a esse ângulo e o comprimento da hipotenusa. Esta é a definição fundamental da função seno na trigonometria de triângulos retângulos."
+        },
+        {
+          "id": "d",
+          "text": "Razão entre a hipotenusa e o cateto oposto ao ângulo",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa apresenta a razão inversa da função seno, ou seja, a cossecante (hipotenusa sobre cateto oposto), e não a função seno."
+        }
+      ],
+      "explanation": "Correta. A função seno de um ângulo agudo em um triângulo retângulo é definida como a razão entre o comprimento do cateto oposto a esse ângulo e o comprimento da hipotenusa. Esta é a definição fundamental da função seno na trigonometria de triângulos retângulos.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o valor do seno de 30 graus?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1/2",
+          "correct": true,
+          "explanation": "Correta. O seno de 30 graus é 1/2. Este é um dos valores trigonométricos dos ângulos notáveis (30°, 45° e 60°) que são frequentemente memorizados em trigonometria."
+        },
+        {
+          "id": "b",
+          "text": "√2/2",
+          "correct": false,
+          "explanation": "Incorreta. O valor de √2/2 corresponde ao seno de 45 graus, e não ao seno de 30 graus."
+        },
+        {
+          "id": "c",
+          "text": "√3/3",
+          "correct": false,
+          "explanation": "Incorreta. O valor de √3/3 corresponde à tangente de 30 graus, e não ao seno de 30 graus."
+        },
+        {
+          "id": "d",
+          "text": "√3/2",
+          "correct": false,
+          "explanation": "Incorreta. O valor de √3/2 corresponde ao seno de 60 graus, e não ao seno de 30 graus."
+        }
+      ],
+      "explanation": "Correta. O seno de 30 graus é 1/2. Este é um dos valores trigonométricos dos ângulos notáveis (30°, 45° e 60°) que são frequentemente memorizados em trigonometria.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em um triângulo retângulo isósceles, sabendo que os catetos são congruentes, qual é a medida de cada um dos ângulos agudos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "45 graus cada um, pois a soma dos ângulos agudos é 90 graus e eles são congruentes",
+          "correct": true,
+          "explanation": "Correta. Em um triângulo retângulo, a soma dos ângulos agudos é 90 graus. Se o triângulo é isósceles, significa que os dois catetos são congruentes e, consequentemente, os ângulos opostos a esses catetos (os ângulos agudos) também são congruentes. Dividindo 90 graus por 2, obtemos 45 graus para cada ângulo agudo."
+        },
+        {
+          "id": "b",
+          "text": "50 graus cada um, pois a soma dos ângulos agudos é 100 graus em triângulos isósceles",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos ângulos agudos em um triângulo retângulo é sempre 90 graus, não 100 graus. Além disso, se fossem 50 graus cada um, a soma dos ângulos agudos seria 100 graus, o que está incorreto para um triângulo retângulo."
+        },
+        {
+          "id": "c",
+          "text": "30 graus cada um, pois a soma dos ângulos agudos deve ser 60 graus",
+          "correct": false,
+          "explanation": "Incorreta. Em um triângulo retângulo, a soma dos dois ângulos agudos é sempre 90 graus. Portanto, não poderiam ser 30 graus cada um, pois a soma seria 60 graus."
+        },
+        {
+          "id": "d",
+          "text": "60 graus cada um, pois em triângulos isósceles os ângulos da base são sempre 60 graus",
+          "correct": false,
+          "explanation": "Incorreta. Em um triângulo isósceles, os ângulos da base (opostos aos lados congruentes) são iguais. No entanto, se fossem 60 graus cada um, a soma dos três ângulos (incluindo o ângulo reto de 90 graus) excederia 180 graus, o que é impossível em um triângulo."
+        }
+      ],
+      "explanation": "Correta. Em um triângulo retângulo, a soma dos ângulos agudos é 90 graus. Se o triângulo é isósceles, significa que os dois catetos são congruentes e, consequentemente, os ângulos opostos a esses catetos (os ângulos agudos) também são congruentes. Dividindo 90 graus por 2, obtemos 45 graus para cada ângulo agudo.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em um triângulo retângulo, se o seno de um ângulo agudo é 0,8 e a hipotenusa mede 20 metros, qual é a medida do cateto oposto a esse ângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "18 metros, pois o cateto oposto é obtido subtraindo o seno do ângulo da hipotenusa",
+          "correct": false,
+          "explanation": "Incorreta. Subtrair o seno do ângulo da hipotenusa não é uma operação válida para encontrar o cateto oposto em trigonometria."
+        },
+        {
+          "id": "b",
+          "text": "16 metros, pois o cateto oposto é obtido multiplicando o seno do ângulo pela hipotenusa",
+          "correct": true,
+          "explanation": "Correta. A definição da função seno é Seno do Ângulo = Cateto Oposto / Hipotenusa. Reorganizando essa fórmula para encontrar o cateto oposto, temos Cateto Oposto = Seno do Ângulo × Hipotenusa. Assim, 0,8 × 20 metros = 16 metros."
+        },
+        {
+          "id": "c",
+          "text": "25 metros, pois o cateto oposto é obtido dividindo o seno do ângulo pela hipotenusa",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o seno do ângulo pela hipotenusa não corresponde a nenhuma relação trigonométrica conhecida para encontrar o cateto oposto."
+        },
+        {
+          "id": "d",
+          "text": "12 metros, pois o cateto oposto é obtido dividindo a hipotenusa pelo seno do ângulo",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula para o cateto oposto é Cateto Oposto = Hipotenusa × Seno do Ângulo. Dividir a hipotenusa pelo seno do ângulo resultaria na cossecante, e não no cateto oposto."
+        }
+      ],
+      "explanation": "Correta. A definição da função seno é Seno do Ângulo = Cateto Oposto / Hipotenusa. Reorganizando essa fórmula para encontrar o cateto oposto, temos Cateto Oposto = Seno do Ângulo × Hipotenusa. Assim, 0,8 × 20 metros = 16 metros.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o procedimento correto para racionalizar a expressão 1/√3?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar numerador e denominador por 3, resultando em 3/√9",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar por 3 no numerador e denominador não elimina a raiz do denominador, resultando em 3/√9, que simplifica para 3/3 = 1, o que altera o valor da expressão original."
+        },
+        {
+          "id": "b",
+          "text": "Dividir numerador e denominador por √3, resultando em √3/9",
+          "correct": false,
+          "explanation": "Incorreta. Dividir numerador e denominador por √3 resultaria em (1/√3) / (√3/√3) = (1/√3) / 1, o que não racionaliza a expressão. Se a intenção fosse dividir o numerador por √3 e o denominador por √3, o resultado seria 1/3, o que não é equivalente à expressão original."
+        },
+        {
+          "id": "c",
+          "text": "Elevar numerador e denominador ao quadrado, resultando em 1/3",
+          "correct": false,
+          "explanation": "Incorreta. Elevar o numerador e o denominador ao quadrado altera completamente o valor da expressão original, pois (1/√3)² = 1/3, que não é equivalente a 1/√3."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar numerador e denominador por √3, resultando em √3/3",
+          "correct": true,
+          "explanation": "Correta. Para racionalizar uma fração com raiz quadrada no denominador, multiplica-se o numerador e o denominador pela própria raiz. Assim, (1/√3) × (√3/√3) = √3/3. Este procedimento elimina o radical do denominador."
+        }
+      ],
+      "explanation": "Correta. Para racionalizar uma fração com raiz quadrada no denominador, multiplica-se o numerador e o denominador pela própria raiz. Assim, (1/√3) × (√3/√3) = √3/3. Este procedimento elimina o radical do denominador.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Se em um triângulo retângulo o cateto adjacente a um ângulo de 60 graus mede 6 metros e o cateto oposto mede x metros, qual é o valor aproximado de x, sabendo que a tangente de 60 graus é √3?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "2√3 metros, pois x é obtido dividindo o cateto adjacente pela tangente do ângulo",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta porque a relação trigonométrica da tangente é definida como a razão entre o cateto oposto e o cateto adjacente. Portanto, para encontrar o cateto oposto (x), devemos multiplicar o cateto adjacente pela tangente do ângulo, e não dividir."
+        },
+        {
+          "id": "b",
+          "text": "6√3 metros, pois x é obtido multiplicando o cateto adjacente pela tangente do ângulo",
+          "correct": true,
+          "explanation": "Correta. Esta alternativa está correta. A tangente de um ângulo em um triângulo retângulo é a razão entre o cateto oposto e o cateto adjacente (Tg(θ) = Cateto Oposto / Cateto Adjacente). Dada a tangente de 60 graus (√3), o cateto adjacente (6 metros) e o cateto oposto (x), temos a equação: √3 = x / 6. Multiplicando ambos os lados por 6, obtemos x = 6√3 metros. Este cálculo é direto e segue a definição da função tangente."
+        },
+        {
+          "id": "c",
+          "text": "3√3 metros, pois x é obtido dividindo o cateto adjacente por 2 e multiplicando pela tangente",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. A fórmula para encontrar o cateto oposto usando a tangente e o cateto adjacente não envolve dividir o cateto adjacente por 2. A relação é direta: cateto oposto = cateto adjacente × tangente do ângulo."
+        },
+        {
+          "id": "d",
+          "text": "12√3 metros, pois x é obtido multiplicando o cateto adjacente por 2 e pela tangente",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa está incorreta. Multiplicar o cateto adjacente por 2 antes de multiplicar pela tangente não corresponde à definição da relação trigonométrica para encontrar o cateto oposto. A relação correta é simplesmente cateto oposto = cateto adjacente × tangente do ângulo."
+        }
+      ],
+      "explanation": "Correta. Esta alternativa está correta. A tangente de um ângulo em um triângulo retângulo é a razão entre o cateto oposto e o cateto adjacente (Tg(θ) = Cateto Oposto / Cateto Adjacente). Dada a tangente de 60 graus (√3), o cateto adjacente (6 metros) e o cateto oposto (x), temos a equação: √3 = x / 6. Multiplicando ambos os lados por 6, obtemos x = 6√3 metros. Este cálculo é direto e segue a definição da função tangente.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "03_160377_Trigonometria - Triângulo Retângulo III.pdf",
+  "coletado_em": "2026-09-23T21:10:26"
+}

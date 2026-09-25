@@ -1,0 +1,676 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 3,
+  "ordem_no_curso": "101.00",
+  "titulo": "Office 365 - Word III",
+  "codigo_aula": "288966",
+  "video_id": "HYb+shFs7Xw=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:22:33",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/HYb%2BshFs7Xw%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=406720%2C405030&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Word III\n\n## Atalhos do Menu Arquivo (Guia Arquivo)\nUma de volta com a nossa aula. Joga aqui na tela e vem comigo. Nós acabamos de ver as seleções utilizando o mouse e o teclado, a sequência. Agora vamos para as teclas de atalho que eu fiz. Eu recortei aqui, tirei um print da tela e joguei dentro do Word para trabalharmos os atalhos diretamente no Word. Hoje a gente vai começar vendo os atalhos do menu Arquivo, ou Guia Arquivo. Arquivo sem neura, quanto a esses nomes. Eu já expliquei os detalhes, beleza?\n\n> 🎯 Dicas de prova: O objetivo aqui é aquilo que eu já falei: o que mais cai em concurso.\n\nCtrl+N: novo. Novo documento em branco. Eu posso colocar esse comando na barra de Ferramentas de Acesso Rápido. Por padrão, ela fica aqui em cima (ou embaixo, dependendo da sua versão). Posso mover para cima, ocultar comandos, mostrar acima da faixa de opções. Beleza.\n\nQuando eu pressiono Ctrl+N, ele abre um novo documento. Você vai notar aqui do lado que, se quiser, pode abrir também um PDF. Eu falei “abre um documento”. Já o Ctrl+O e o F12 são comandos para abrir.\n\nVamos colocar aqui: abrir. Olha o atalho: Ctrl+O para abrir. Quando eu faço Ctrl+O, ele vem para essa tela de “Abrir” do Word. E nesse “Abrir” eu vou ter várias opções. Além de abrir um documento que já existe e está gravado, eu tenho todas as opções na parte Inicial.\n\nAgora, quando eu faço um Ctrl+F12, vem comigo, ele abre essa janelinha do “Abrir” clássica. Aqui eu tenho basicamente a função de abrir.\n\n> 🎯 Dicas de prova: Caiu prova há algum tempo dizendo que, na hora de abrir um documento, eu poderia editar, criar ou gerenciar os meus arquivos do Windows. E é verdade. Nessa janela eu posso, por exemplo, renomear um arquivo sem necessariamente abri-lo. Posso excluir, criar pasta, arrastar para uma pasta. Dá para gerenciar meus arquivos na hora de abrir.\n\nEntão, resumo: Ctrl+O abre a tela moderna de Abrir; Ctrl+F12 abre a janela clássica de Abrir. Uma banca pode entrar nesse detalhe. Atualmente está assim. Não é impossível.\n\nF12: salvar como. Em algum momento, eu quero salvar como. Quando é que eu posso usar o Salvar Como? Tanto faz se o arquivo já está salvo ou não. Você pode salvá-lo no mesmo lugar (por padrão, pasta Documentos), com o mesmo nome, porém terá que trocar a extensão, porque não posso ter dois arquivos na mesma pasta com o mesmo nome e mesma extensão. Se eu tenho teste.docx e outro, você pode salvar como teste.pdf, por exemplo, sem problema.\n\nNa hora de salvar como, eu escolho:\n- o local onde vai ser salvo (padrão: Documentos),\n- o nome,\n- a extensão (por padrão, .docx).\n\nAinda tenho as Opções Gerais: posso colocar senha de proteção para abertura e para gravação. Teoricamente, podem ser senhas diferentes. Se eu colocar só senha de proteção para abertura, a pessoa consegue abrir só com senha. Se colocar de gravação, controla a edição.\n\nF12 é Salvar Como, beleza.\n\nCtrl+P: impressão. Abre a janela de impressão e suas opções: escolher impressora, quantidade de cópias, etc. O trivial que mais cai aqui dentro é a seleção de páginas.\n\n> 🎯 Dicas de prova: Em páginas, a vírgula separa páginas individuais (ex.: 1,5) e o traço indica intervalo (ex.: 5-8). Então “1,5-8” significa imprimir as páginas 1 e de 5 a 8 (5,6,7,8).\n\nA parte mais importante é lembrar que o Ctrl+P abre a janela de impressão.\n\nAgora, presta atenção no contexto. Eu abri outro documento com Ctrl+N, um documento vazio. Se eu clicar para fechar, vai apenas fechar o documento. O que vai acontecer com Ctrl+W (Fechar)? Ele fecha o documento ativo. Se houver várias janelas do Word abertas, ele fecha aquela janela; chegando na última, pode fechar só o documento. Depende do contexto.\n\n> 🎯 Dicas de prova: De um modo geral, a ação do Ctrl+W é “fechar o documento ativo”. Considere que, quando há apenas uma janela do Word, ele fecha o documento mas mantém o Word aberto.\n\nEu vou salvar o documento que ainda não estava salvo. Vou dar um nome (por exemplo, “hoje 365”), salvar na pasta Documentos, e pronto. O Ctrl+W fechou o documento, mas manteve o Word.\n\nEntrando no menu Arquivo, só para passear: Novo (já vimos), Abrir (já vimos), Informações sobre o documento, Salvar uma cópia (nada mais é do que um Salvar Como), Imprimir (já vimos), Compartilhar.\n\nAo compartilhar um arquivo salvo no OneDrive, eu posso:\n- mandar o link para a pessoa,\n- permitir ou não a edição,\n- definir quem pode acessar,\n- definir data de validade,\n- definir senha.\n\nNem todas as opções você precisa decorar, mas saber que dá para compartilhar e permitir edição simultânea é importante. Você pode copiar o link e mandar por e-mail, por exemplo. Se estiver configurado, pode enviar uma cópia do documento também. Isso é importante saber.\n\nDescendo: Exportar. Já vimos que posso exportar como PDF. Transformar (converter para página da web) pode demorar. E, por último, Fechar, que nada mais é do que o Ctrl+W.\n\nTirei essa telinha. Onde estávamos: em Abrir, Transformar em página da web. Ele dá sugestões de layout, como se eu fosse transformar o arquivo em página da web. Beleza. Vou fechar isso, não é nosso foco.\n\n## Inserir Captura e Transição para a Guia Página Inicial\nAgora vou para o próximo, que vai ser a Guia Página Inicial. Vamos aproveitar o recurso do próprio Word: Inserir > Instantâneo. Ele me dá miniaturas das janelas em execução. Posso pegar janela inteira ou fazer um Recorte de Tela, que é o que eu quero. Vou selecionar Recorte da Tela, recortar a área e ele já joga dentro do Word. Beleza.\n\nAgora estamos na Guia Página Inicial, Grupo Área de Transferência. Eu vou organizar por grupos, como eu sempre faço.\n\n## Área de Transferência\nOs atalhos estão separados por grupos:\n- Grupo Área de Transferência,\n- Grupo Fonte,\n- etc.\n\nIsso é importante para o seu estudo. Muitas bancas cobram em qual guia e em qual grupo está o recurso.\n\nGuia Página Inicial, Grupo Área de Transferência:\n- Ctrl+V: colar algo que já foi copiado ou recortado. Ao clicar no botão Colar, há opções de colagem: manter formatação, colar como imagem, Colar Especial, etc. No Colar Especial, posso retirar a formatação. Posso definir a colagem padrão daqui em diante.\n- Ctrl+Alt+V: abre a janela Colar Especial.\n\n> 🎯 Dicas de prova: No Colar Especial, uma das opções mais cobradas é “Texto não formatado” para colar sem formatação.\n\nVamos testar. Tenho um texto com negrito, itálico, sublinhado e cor vermelha. Se eu copiar (Ctrl+C) e colar (Ctrl+V), ele cola com as mesmas formatações. Isso também acontece quando copio algo da internet. Se eu usar Ctrl+Alt+V e escolher “Texto não formatado”, ele cola sem aquelas formatações. Há também um botão para “Limpar Formatação”, mas conhecer o Colar Especial é essencial.\n\n- Ctrl+C: copiar.\n- Ctrl+X: recortar. Ao contrário do Ctrl+C, que deixa a palavra no lugar, o Ctrl+X retira a palavra do local.\n- Pincel de Formatação: copiar formatação e aplicar em outro lugar. Atalhos: Ctrl+Shift+C copia a formatação; Ctrl+Shift+V cola a formatação.\n\nClicando no botão Pincel de Formatação, ao clicar em outra palavra, eu colo as formatações. Se eu clicar duas vezes no Pincel, posso aplicar a mesma formatação em várias seleções até desativar.\n\nA Área de Transferência do Word pode armazenar até 24 itens. Você pode abrir o painel e reutilizar itens copiados.\n\n## Grupo Fonte\nVamos para o Grupo Fonte. Esse botãozinho de canto (launcher) abre a janela Fonte. O atalho Ctrl+D também abre essa janela.\n\nNa janela Fonte eu tenho:\n- Tipo de fonte,\n- Estilo da fonte,\n- Tamanho,\n- Cor,\n- Estilo de sublinhado,\n- Efeitos (tachado, sobrescrito, subscrito, versalete, etc.),\n- Visualização,\n- Definir como padrão.\n\nAtalhos principais:\n- Ctrl+B: negrito.\n- Ctrl+I: itálico.\n- Ctrl+U: sublinhado.\n\nDetalhe importante: esses atalhos são de alternância (toggle). Se eu aplicar Ctrl+B, ele liga o negrito; se eu pressionar de novo, ele retira o negrito. Vale para itálico e sublinhado também. Eu não preciso selecionar a palavra inteira; basta estar com o cursor dentro da palavra. Posso selecionar também, se quiser.\n\nAgora os efeitos:\n- Tachado: não há atalho padrão direto no Word para tachado. Visualmente, aplica um traço no meio da linha. Algumas bancas mostram um texto com formatações distintas e perguntam o que foi aplicado. Você precisa reconhecer visualmente o tachado.\n- Subscrito (fica abaixo da linha): Ctrl+= (Ctrl + sinal de igual). Quando eu aplico subscrito, a palavra desce; dá a impressão de que ficou menor, mas o tamanho da fonte configurado permanece o mesmo.\n- Sobrescrito (fica acima da linha): Ctrl+Shift+= (Ctrl + Shift + sinal de igual). Agora a palavra sobe.\n\n> 🎯 Dicas de prova: Subscrito é Ctrl+=; Sobrescrito é Ctrl+Shift+=. Lembre que o tamanho da fonte definida continua sendo o mesmo; é um efeito posicional.\n\nTamanho da fonte:\n- Ctrl+Shift+> aumenta o tamanho da fonte.\n- Ctrl+Shift+< diminui o tamanho da fonte.\n\nOutro detalhe: quando você seleciona um texto com partes em tamanhos diferentes, o campo de tamanho da fonte fica em branco. O mesmo vale para tipos de fonte diferentes dentro da seleção.\n\nAlternância de maiúsculas/minúsculas:\n- Shift+F3 alterna entre:\n  1) primeira letra da frase maiúscula,\n  2) tudo minúsculo,\n  3) TUDO MAIÚSCULO.\n\nIsso aqui já caiu exatamente assim.\n\n> 🎯 Dicas de prova: Se a palavra está toda minúscula e você pressiona Shift+F3 três vezes, a alternância passa por “Primeira letra maiúscula” -> “tudo minúsculo” -> “TUDO MAIÚSCULO” e retorna ao estado original no ciclo.\n\nVamos a um exemplo com um parágrafo que tem dois períodos. Se eu selecionar o parágrafo inteiro e aplicar Shift+F3:\n- na primeira vez, todo mundo vai para MAIÚSCULO;\n- na segunda, todo mundo vai para minúsculo;\n- na terceira, apenas a primeira letra de cada período vai para maiúscula (início de frase). É a primeira letra de cada período, não a primeira letra de cada palavra.\n\nDepois do Shift+F3, podemos também usar o botão “Alterar maiúsculas/minúsculas” no grupo Fonte, que oferece opções a mais, como:\n- Primeira letra da frase maiúscula,\n- tudo minúsculo,\n- TUDO MAIÚSCULO,\n- Colocar Cada Palavra Com Inicial Maiúscula,\n- alternar maiúsculas/minúsculas.\n\nBasicamente, o botão traz as mesmas e mais algumas variações além do ciclo do Shift+F3.\n\nBom, vou encerrar esse bloco aqui, dando continuidade a esses atalhos do grupo Fonte no próximo momento.",
+  "transcricao_meta": {
+    "title": "Word III",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 29716,
+    "createdAt": "2026-01-30T18:46:58.009Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda atalhos essenciais do Word, operações do menu/guia Arquivo, e comandos da guia Página Inicial (grupos Área de Transferência e Fonte).\nPrincipais pontos: \n- Atalhos que aceleram “Novo/Abrir/Salvar/Imprimir/Fechar”\n- Colagem, recorte e formatação (incluindo “colar sem formatação” e Pincel de Formatação)\n- Efeitos de fonte, tamanhos e mudança de maiúsculas/minúsculas\n- Compartilhar, Exportar (PDF) e imprimir com seleção de páginas\n\n## 1. Base / Conceitos Fundamentais\n- **Faixa de Opções**: organiza comandos por guias e grupos.\n  - **Guia Página Inicial**\n    - **Grupo Área de Transferência**: Copiar, Recortar, Colar, Pincel de Formatação.\n    - **Grupo Fonte**: tipo/estilo/tamanho/cor da fonte, sublinhado, efeitos, janela de Fonte e “definir como padrão”.\n  - **Guia Arquivo (menu Arquivo)**: **Novo**, **Abrir**, **Salvar**, **Salvar como**, **Salvar uma cópia**, **Imprimir**, **Compartilhar**, **Exportar**, **Transformar**, **Fechar**.\n- **Extensões/formatos**: principal .docx; exportação comum: PDF.\n- **Local padrão de salvamento**: pasta Documentos.\n- **Área de transferência do Word**: armazena até 24 itens.\n- **Janela Abrir (Ctrl+O)**: painel amplo com gerenciamento de arquivos (renomear, excluir, mover, criar pasta).\n- **F12 (Salvar como)**: janela modal direta para salvar/local/nome/extensão.\n\n## 2. Como Funciona / Distinções\n- Ações do Arquivo: comparação\n  - **Ctrl+N (Novo)**: cria documento em branco sem diálogo.\n  - **Ctrl+O (Abrir)**: exibe “Abrir” com gerenciamento de arquivos (abrir/renomear/excluir/mover/criar pasta).\n  - **F12 (Salvar como)**: foca em salvar; definir local → nome → extensão (.docx por padrão).\n  - **Ctrl+P (Imprimir)**: abre janela de impressão (impressora, cópias, intervalo).\n  - **Ctrl+W (Fechar)**: fecha o documento ativo; com múltiplas janelas, fecha a atual; se não salvo, solicita salvar.\n- Salvar x Salvar como x Salvar uma cópia\n  - **Salvar**: atualiza o arquivo atual.\n  - **Salvar como/Salvar uma cópia**: grava novo arquivo mudando local/nome/extensão.\n  - Regra do sistema: não podem coexistir dois arquivos com mesmo nome e mesma extensão na mesma pasta.\n- Colagens e formatação\n  - **Ctrl+V**: cola mantendo formatação de origem.\n  - **Ctrl+Shift+V**:\n    - Como “Colar especial” → opção “Texto não formatado” (remove formatação).\n    - Após **Ctrl+Shift+C** → cola somente a formatação (Pincel de Formatação via atalho).\n- Efeitos de fonte (toggle)\n  - **Ctrl+B** negrito, **Ctrl+I** itálico, **Ctrl+U** sublinhado: alternância aplica/retira.\n  - **Ctrl+=** subscrito (desce), **Ctrl+Shift++** sobrescrito (sobe).\n  - **Ctrl+Shift+> / Ctrl+Shift+<** aumenta/diminui tamanho.\n  - Seleção com múltiplos valores → campos de tipo/tamanho de fonte aparecem em branco.\n- Maiúsculas/minúsculas\n  - **Shift+F3**: alterna por ciclos.\n    - Em uma palavra: Primeira letra maiúscula → tudo minúsculo → TUDO MAIÚSCULO.\n    - Em parágrafo com períodos: TUDO MAIÚSCULO → tudo minúsculo → primeira letra de cada período em maiúscula.\n  - Botão “Alterar Maiúsculas/Minúsculas” (Grupo Fonte): Primeira letra da frase em maiúsculo, tudo minúsculo, TUDO MAIÚSCULO, Cada Palavra Em Maiúscula, alternar.\n- Compartilhar x Exportar x Transformar\n  - **Compartilhar**: gerar link com opções de permitir edição, identificar pessoas, definir validade e senha; edição simultânea quando permitido.\n  - **Exportar**: gera **PDF**.\n  - **Transformar**: converte em página da web (menos cobrado).\n\n## 3. Aplicação Prática / Técnicas\n- Fluxo rápido de documentos\n  - Criar: Ctrl+N → digitar → F12 para nomear e salvar em .docx na pasta desejada.\n  - Abrir e gerenciar: Ctrl+O → localizar arquivo → renomear/excluir/mover/abrir conforme necessário.\n  - Salvar versões: F12 → mudar nome/ extensão (ex.: .docx para .pdf via Exportar).\n- Impressão com intervalos\n  - Caixa de páginas: usar vírgula para páginas isoladas e traço para intervalos.\n  - Ex.: “1,5-8” imprime 1,5,6,7,8.\n- Colagem e limpeza de formatação\n  - Colar mantendo estilo: Ctrl+V.\n  - Colar sem formatação: Ctrl+Shift+V → escolher “Texto não formatado” (ou padrão configurado no botão Colar).\n- Pincel de Formatação eficiente\n  - Copiar formatação: Ctrl+Shift+C → selecionar alvo → Ctrl+Shift+V.\n  - Aplicar em série: duplo clique no Pincel de Formatação.\n- Precisão em fonte\n  - Aumentar/diminuir: Ctrl+Shift+>/Ctrl+Shift+<.\n  - Subscrito/sobrescrito: Ctrl+= / Ctrl+Shift++.\n  - Abrir janela Fonte para opções detalhadas e “definir como padrão”.\n- Maiúsculas/minúsculas\n  - Ajuste rápido com Shift+F3 conforme contexto (palavra vs. parágrafo).\n\n## 4. Exemplos e Casos Resolvidos\n- Seleção de páginas para imprimir\n  - Entrada: “1,5-8” → Resultado: páginas 1,5,6,7,8.\n- “Colar sem formatação”\n  - Texto copiado da web com estilos → Ctrl+Shift+V → “Texto não formatado” → texto entra “limpo”, sem estilos de origem.\n- Pincel de Formatação\n  - Palavra “teste” com negrito e cor azul → Ctrl+Shift+C em “teste” → selecionar “Hamburgo” → Ctrl+Shift+V → “Hamburgo” recebe negrito e azul.\n- Subscrito/Sobrescrito sem alterar tamanho configurado\n  - “H2O”: “2” com Ctrl+= (desce); “x2” com Ctrl+Shift++ no “2” (sobe). Tamanho configurado permanece 11.\n- Campo de fonte/tamanho em branco\n  - Selecionar duas palavras com tamanhos “12” e “10” → campo “tamanho da fonte” aparece em branco (múltiplos valores).\n- Fechamento e salvamento\n  - Ctrl+W em documento não salvo → Word pergunta se deseja salvar; pode escolher nome, local (padrão Documentos) e extensão .docx.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: “Abrir” com Ctrl+O permite gerenciar arquivos (renomear, excluir, mover, criar pasta). F12 é “Salvar como” — foco em salvar, não em gerenciar.\n\n- “Salvar uma cópia” equivale, na prática, a “Salvar como”.\n- Não é possível ter dois arquivos com mesmo nome e mesma extensão na mesma pasta; para duplicar, altere nome ou extensão.\n- “Ctrl+V” mantém formatação; “Ctrl+Shift+V” pode:\n  - Colar “Texto não formatado” (limpo), ou\n  - Colar formatação se antecedido por “Ctrl+Shift+C”. Atenção ao contexto.\n- Negrito/Itálico/Sublinhado são alternância: apertar de novo remove.\n- Subscrito/Sobrescrito alteram posição, não o tamanho configurado da fonte.\n- Campo de fonte/tamanho em branco = múltiplos valores na seleção (correto).\n- Shift+F3:\n  - Palavra: Primeira letra maiúscula → tudo minúsculo → TUDO MAIÚSCULO.\n  - Parágrafo: atua por período; não confundir com “Cada Palavra Em Maiúscula”.\n- Impressão: vírgula separa páginas, traço indica intervalo contínuo; combinação é válida (“1,5-8”).\n\nTabela-resumo de atalhos essenciais\n- Arquivo:\n  - Ctrl+N (Novo)\n  - Ctrl+O (Abrir com gerenciamento)\n  - F12 (Salvar como)\n  - Ctrl+P (Imprimir)\n  - Ctrl+W (Fechar)\n- Área de transferência:\n  - Ctrl+C (Copiar)\n  - Ctrl+X (Recortar)\n  - Ctrl+V (Colar)\n  - Ctrl+Shift+V (Colar especial/Texto não formatado ou colar formatação após Ctrl+Shift+C)\n  - Ctrl+Shift+C (Copiar formatação)\n- Fonte:\n  - Ctrl+B (Negrito)\n  - Ctrl+I (Itálico)\n  - Ctrl+U (Sublinhado)\n  - Ctrl+= (Subscrito)\n  - Ctrl+Shift++ (Sobrescrito)\n  - Ctrl+Shift+> (Aumentar tamanho)\n  - Ctrl+Shift+< (Diminuir tamanho)\n  - Shift+F3 (Alternar maiúsculas/minúsculas)\n\n> Dica de Prova: Decore a sequência “O-P-W-N-F12” como mnemônico de uso frequente: Ctrl+O (Abrir/gerenciar), Ctrl+P (Imprimir), Ctrl+W (Fechar), Ctrl+N (Novo), F12 (Salvar como).",
+  "resumo_bolso": "# Office 365 - Word III\n\n---\n\n## 📌 Conceitos-Chave\n\n* Faixa de Opções: comandos por guias/grupos; foco aqui: Página Inicial (Área de Transferência, Fonte) e guia Arquivo.\n* Área de Transferência do Word: armazena até 24 itens; integra copiar/recortar/colar e Pincel de Formatação.\n* Guia Arquivo: Novo, Abrir, Salvar, Salvar como, Salvar uma cópia, Imprimir, Compartilhar, Exportar (PDF), Transformar, Fechar.\n* Extensões: edição .docx (padrão); exportação comum: PDF.\n* Local padrão de salvamento: pasta Documentos.\n* Janela Abrir (Ctrl+O): permite abrir/renomear/excluir/mover/criar pasta.\n* F12 (Salvar como): janela direta para salvar com local/nome/extensão.\n* Efeitos de Fonte: negrito/itálico/sublinhado, subscrito/sobrescrito, tamanho, cor, janela Fonte e “definir como padrão”.\n* Maiúsculas/Minúsculas: Shift+F3 alterna modos; botão “Alterar Maiúsculas/Minúsculas” traz opções específicas.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Salvar vs Salvar como/Salvar uma cópia\n\n| Aspecto | Salvar | Salvar como / Salvar uma cópia |\n|---|---|---|\n| Diferencial | Atualiza o arquivo atual no mesmo local/nome/extensão | Cria novo arquivo mudando local/nome/extensão |\n| Ponto de Atenção | Não pergunta novo nome/local | Exige definir novo local/nome/extensão |\n\n### Ctrl+O (Abrir) vs F12 (Salvar como)\n\n| Aspecto | Ctrl+O (Abrir) | F12 (Salvar como) |\n|---|---|---|\n| Diferencial | Gerencia arquivos: abrir/renomear/excluir/mover/criar pasta | Foco em salvar com local/nome/extensão |\n| Ponto de Atenção | Inclui funções de gerenciamento | Não gerencia: apenas escolhe onde e como salvar |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Impressão com seleção de páginas\n- Aplicação: campo Páginas da janela Imprimir.\n- Exemplo: “1,5-8” imprime 1,5,6,7,8.\n\n2. Alternância de efeitos de fonte\n- Aplicação: Ctrl+B/ Ctrl+I/ Ctrl+U alternam aplicar/retirar.\n- Exemplo: pressionar Ctrl+B duas vezes retorna ao estado sem negrito.\n\n3. Subscrito/Sobrescrito\n- Aplicação: Ctrl+= (desce), Ctrl+Shift++ (sobe).\n- Exemplo: H2O → “2” com Ctrl+=; x2 → “2” com Ctrl+Shift++.\n\n4. Colagem\n- Aplicação: Ctrl+V mantém formatação; Ctrl+Shift+V pode colar “Texto não formatado” ou somente formatação (se precedido por Ctrl+Shift+C).\n- Exemplo: texto da web → Ctrl+Shift+V → selecionar “Texto não formatado”.\n\n5. Maiúsculas/Minúsculas (Shift+F3)\n- Aplicação: cicla entre estilos conforme contexto (palavra vs. parágrafo).\n- Exemplo: palavra: Primeira Maiúscula → minúsculo → MAIÚSCULO.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- “Ctrl+O só abre arquivos.” Na verdade, também gerencia: renomear, excluir, mover, criar pasta.\n- “Ctrl+V cola texto limpo.” Na verdade, mantém formatação de origem; para limpar, use Ctrl+Shift+V → “Texto não formatado”.\n- “Subscrito/Sobrescrito mudam o tamanho da fonte.” Na verdade, alteram posição vertical; tamanho configurado permanece.\n- “Campo de tamanho de fonte vazio é erro do Word.” Na verdade, vazio indica múltiplos valores na seleção.\n- “Shift+F3 faz ‘Cada Palavra Em Maiúscula’.” Na verdade, “Cada Palavra Em Maiúscula” é pelo botão “Alterar Maiúsculas/Minúsculas”.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei Salvar de Salvar como/Salvar uma cópia?\n* Lembrei que Ctrl+O gerencia arquivos e F12 foca em salvar?\n* Memorizei colagem: Ctrl+V mantém estilo; Ctrl+Shift+V limpa ou cola formatação após Ctrl+Shift+C?\n* Sei os toggles: Ctrl+B/I/U; subscrito/sobrescrito; aumentar/diminuir tamanho?\n* Sei usar Shift+F3 vs botão “Alterar Maiúsculas/Minúsculas”?\n* Sei imprimir páginas: vírgula separa; traço cria intervalo?",
+  "mapa_mental": "# 💻 Office 365 – Word III\n## 🎯 Atalhos Essenciais\n### 🗂️ Guia Arquivo\n- Ctrl+N novo\n- Ctrl+O abrir gerenciar\n- F12 salvar como\n- Ctrl+P imprimir\n- Ctrl+W fechar\n### 📋 Área de Transferência\n- Ctrl+C copiar\n- Ctrl+X recortar\n- Ctrl+V colar formatado\n- Ctrl+Shift+V colar especial\n- Ctrl+Shift+C copiar formatação\n### ✒️ Fonte e Texto\n- Ctrl+B negrito\n- Ctrl+I itálico\n- Ctrl+U sublinhado\n- Ctrl+= subscrito\n- Ctrl+Shift++ sobrescrito\n- Ctrl+Shift+> aumentar fonte\n- Ctrl+Shift+< diminuir fonte\n- Shift+F3 maiúsculas\n\n## 💾 Operações de Arquivo\n### 📁 Conceitos Gerais\n- Faixa de opções\n- Guia Arquivo\n- Extensão .docx\n- Exportação PDF\n- Pasta Documentos padrão\n### 🧾 Salvar e Versões\n- Salvar atualizar arquivo\n- Salvar como novo arquivo\n- Salvar cópia equivalente\n- Nome extensão pasta\n- Proibição nomes idênticos\n### 📤 Compartilhar e Exportar\n- Compartilhar link edição\n- Permissões senha validade\n- Edição simultânea online\n- Exportar criar PDF\n- Transformar página web\n\n## 📝 Área de Transferência\n### 📌 Conceitos-Chave\n- Grupo Área Transferência\n- Copiar recortar colar\n- Pincel de formatação\n- Até 24 itens memória\n- Colar especial opções\n### 🔄 Colagem e Formatação\n- Ctrl+V mantém origem\n- Ctrl+Shift+V texto limpo\n- Texto não formatado\n- Ctrl+Shift+C formatação\n- Ctrl+Shift+V aplicar estilo\n### 🧹 Limpeza de Estilo\n- Remover formatação origem\n- Padronizar estilo destino\n- Uso colar especial\n- Configuração padrão colar\n- Atenção contexto atalho\n\n## 🔤 Fonte e Maiúsculas\n### ✏️ Configurações de Fonte\n- Tipo estilo tamanho\n- Cor sublinhado efeitos\n- Subscrito sobrescrito\n- Aumentar diminuir fonte\n- Janela Fonte avançada\n### 🧷 Comportamentos Especiais\n- Atalhos efeito alternância\n- Segunda pressão remove\n- Posição sem mudar tamanho\n- Seleção múltiplos tamanhos\n- Campo fonte em branco\n### 🔠 Maiúsculas/Minúsculas\n- Shift+F3 palavra ciclos\n- Primeira maiúscula\n- Tudo minúsculo\n- TUDO MAIÚSCULO\n- Parágrafo por períodos",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Comandos de Arquivo",
+      "description": "Comandos de Arquivo — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual atalho cria um novo documento em branco no Word?",
+          "back": "**Ctrl+O**",
+          "hint": "Comando de criação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual atalho abre a caixa de diálogo para abrir um documento no Word?",
+          "back": "**Ctrl+F12**",
+          "hint": "Comando de busca de arquivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Que operações de gerenciamento de arquivos podem ser feitas na caixa Abrir do Word?",
+          "back": "Renomear, excluir, criar pasta e gerenciar arquivos",
+          "hint": "São quatro operações básicas",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "gerenciamento-arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual atalho abre a janela Salvar como no Word?",
+          "back": "**F12**",
+          "hint": "Comando de gravação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Quais elementos são definidos ao usar Salvar como no Word?",
+          "back": "Local de salvamento, nome e extensão",
+          "hint": "São três parâmetros",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "salvamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual pasta é o local padrão para salvar documentos do Word?",
+          "back": "Pasta **Documentos**",
+          "hint": "Diretório padrão do sistema",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "salvamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "O que ocorre ao fechar o documento ativo quando há outras janelas do Word abertas?",
+          "back": "Fecha o documento ativo",
+          "hint": "Comportamento de janela única",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "interface"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Impressão",
+      "description": "Impressão — 1 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Em um intervalo de impressão como 1,5-8, quais páginas são impressas?",
+          "back": "Páginas 1, 5, 6, 7 e 8",
+          "hint": "Lógica de intervalos e vírgulas",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "word",
+            "impressao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Compartilhamento",
+      "description": "Compartilhamento — 2 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual recurso do Word permite restringir o compartilhamento por edição, validade ou senha?",
+          "back": "Compartilhar",
+          "hint": "Funcionalidade de colaboração",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "seguranca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual formato pode ser gerado pela opção Exportar do Word?",
+          "back": "PDF",
+          "hint": "Formato de documento portátil",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "exportacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Inserção e Colagem",
+      "description": "Inserção e Colagem — 3 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "O que a opção Recorte de Tela insere no documento do Word?",
+          "back": "Um recorte da tela",
+          "hint": "Ferramenta de captura",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "insercao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual atalho copia o conteúdo selecionado no Word?",
+          "back": "**Ctrl+C**",
+          "hint": "Comando de duplicação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual opção de Colar especial remove a formatação do conteúdo colado?",
+          "back": "Texto não formatado",
+          "hint": "Limpeza de estilo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "edicao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Formatação de Fonte",
+      "description": "Formatação de Fonte — 4 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Qual atalho copia somente a formatação de um trecho no Word?",
+          "back": "**Ctrl+Shift+C**",
+          "hint": "Comando de pincel",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual atalho aplica ou remove o negrito no Word?",
+          "back": "**Ctrl+N**",
+          "hint": "Estilo de peso da fonte",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual atalho aumenta o tamanho da fonte no Word?",
+          "back": "**Ctrl+Shift+>**",
+          "hint": "Ajuste de tipografia",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual atalho alterna entre opções de maiúsculas e minúsculas no Word?",
+          "back": "**Shift+F3**",
+          "hint": "Ciclo de caixa alta e baixa",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "atalhos"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a extensão padrão de arquivo do Microsoft Word nas versões mais recentes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": ".doc",
+          "correct": false,
+          "explanation": "Incorreta. A extensão \".doc\" foi o padrão para documentos do Microsoft Word até a versão 2003. Embora ainda possa ser aberta por versões mais recentes, não é a extensão padrão de criação para elas."
+        },
+        {
+          "id": "b",
+          "text": ".rtf",
+          "correct": false,
+          "explanation": "Incorreta. \".rtf\" (Rich Text Format) é um formato de arquivo que permite a troca de documentos formatados entre diferentes processadores de texto, preservando algumas características de formatação. Contudo, não é a extensão padrão do Microsoft Word, que utiliza o \".docx\" para aproveitar recursos mais avançados e específicos do programa."
+        },
+        {
+          "id": "c",
+          "text": ".txt",
+          "correct": false,
+          "explanation": "Incorreta. A extensão \".txt\" refere-se a arquivos de texto puro, sem qualquer tipo de formatação (negrito, itálico, cores, etc.). O Microsoft Word é um processador de texto que lida com formatação rica, sendo o \".txt\" um formato muito básico para suas funcionalidades."
+        },
+        {
+          "id": "d",
+          "text": ".docx",
+          "correct": true,
+          "explanation": "Correta. Desde o Microsoft Word 2007, a extensão padrão para documentos é \".docx\". Este formato é baseado em XML (Open XML), o que o torna mais leve, mais seguro e mais compatível com outros aplicativos e sistemas, além de ser um formato aberto."
+        }
+      ],
+      "explanation": "Correta. Desde o Microsoft Word 2007, a extensão padrão para documentos é \".docx\". Este formato é baseado em XML (Open XML), o que o torna mais leve, mais seguro e mais compatível com outros aplicativos e sistemas, além de ser um formato aberto.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual atalho de teclado alterna entre maiúsculas e minúsculas no texto selecionado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + Shift + A",
+          "correct": false,
+          "explanation": "Incorreta. O atalho `Ctrl + Shift + A` no Microsoft Word é utilizado para alternar o texto selecionado entre todas as letras maiúsculas e o formato normal (mantendo a capitalização original, se houver, ou aplicando o caso da primeira letra da frase). Não oferece o ciclo completo de maiúsculas/minúsculas como o atalho correto."
+        },
+        {
+          "id": "b",
+          "text": "Shift + F3",
+          "correct": true,
+          "explanation": "Correta. O atalho `Shift + F3` no Microsoft Word permite alternar o caso das letras do texto selecionado. Ele cicla entre três opções: a primeira letra de cada frase em maiúscula, todas as letras em minúscula e todas as letras em maiúscula. Por exemplo, 'palavra' -> 'Palavra' -> 'PALAVRA' -> 'palavra'."
+        },
+        {
+          "id": "c",
+          "text": "Ctrl + F3",
+          "correct": false,
+          "explanation": "Incorreta. O atalho `Ctrl + F3` no Word é usado para recortar texto para o Spike, que é uma área de transferência especial que permite acumular múltiplos itens para colar de uma só vez, e não para alternar o caso das letras."
+        },
+        {
+          "id": "d",
+          "text": "Alt + F3",
+          "correct": false,
+          "explanation": "Incorreta. O atalho `Alt + F3` no Word é utilizado para criar um novo bloco de construção a partir do texto selecionado. Blocos de construção são partes de conteúdo reutilizáveis, como cabeçalhos, rodapés ou caixas de texto, e não têm relação com a alteração de maiúsculas e minúsculas."
+        }
+      ],
+      "explanation": "Correta. O atalho `Shift + F3` no Microsoft Word permite alternar o caso das letras do texto selecionado. Ele cicla entre três opções: a primeira letra de cada frase em maiúscula, todas as letras em minúscula e todas as letras em maiúscula. Por exemplo, 'palavra' -> 'Palavra' -> 'PALAVRA' -> 'palavra'.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Na janela 'Colar Especial', qual opção permite colar texto sem manter a formatação original?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Texto formatado (RTF)",
+          "correct": false,
+          "explanation": "Incorreta. A opção \"Texto formatado (RTF)\" na janela 'Colar Especial' cola o texto mantendo a maior parte de sua formatação original (cores, fontes, tamanhos, negrito, itálico, etc.), pois o formato RTF (Rich Text Format) é projetado para preservar esses atributos. O objetivo da questão é remover a formatação."
+        },
+        {
+          "id": "b",
+          "text": "HTML formatado",
+          "correct": false,
+          "explanation": "Incorreta. Colar como \"HTML formatado\" significa que o texto será inserido com a formatação que ele possuía em sua origem HTML, o que é o oposto de colar sem formatação. Esta opção é útil para manter a estrutura e o estilo de conteúdo da web."
+        },
+        {
+          "id": "c",
+          "text": "Texto não formatado",
+          "correct": true,
+          "explanation": "Correta. A opção \"Texto não formatado\" na janela 'Colar Especial' é a funcionalidade ideal para colar o conteúdo de texto sem qualquer formatação original. Ao selecioná-la, apenas o texto puro é inserido, ignorando estilos de fonte, cores, tamanhos e outros atributos de formatação."
+        },
+        {
+          "id": "d",
+          "text": "Imagem (metarquivo avançado)",
+          "correct": false,
+          "explanation": "Incorreta. A opção \"Imagem (metarquivo avançado)\" cola o conteúdo como uma imagem, tornando-o não editável como texto. Embora a formatação original do texto seja visualmente preservada dentro da imagem, o resultado não é texto e não pode ser manipulado ou editado como tal."
+        }
+      ],
+      "explanation": "Correta. A opção \"Texto não formatado\" na janela 'Colar Especial' é a funcionalidade ideal para colar o conteúdo de texto sem qualquer formatação original. Ao selecioná-la, apenas o texto puro é inserido, ignorando estilos de fonte, cores, tamanhos e outros atributos de formatação.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao utilizar o recurso de compartilhamento de documentos no Microsoft Word, qual funcionalidade permite definir permissões de edição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Enviar cópia do documento por e-mail anexado",
+          "correct": false,
+          "explanation": "Incorreta. Enviar uma cópia do documento por e-mail anexado cria um arquivo independente para o destinatário. As edições feitas nessa cópia não são refletidas no documento original nem são gerenciadas de forma colaborativa pelo Word, e o remetente não controla as permissões de edição do arquivo enviado."
+        },
+        {
+          "id": "b",
+          "text": "Definir data de validade e senha de acesso ao link compartilhado",
+          "correct": true,
+          "explanation": "Correta. Ao compartilhar documentos no Microsoft Word, especialmente quando integrado a serviços de nuvem como OneDrive ou SharePoint, é possível configurar permissões detalhadas. Isso inclui a capacidade de definir se os destinatários podem apenas visualizar ou também editar o documento. Adicionalmente, pode-se estabelecer uma data de validade para o link de compartilhamento e/ou exigir uma senha para acesso, o que diretamente controla e restringe quem e por quanto tempo pode interagir com o documento, incluindo a edição."
+        },
+        {
+          "id": "c",
+          "text": "Exportar o documento como PDF protegido",
+          "correct": false,
+          "explanation": "Incorreta. Exportar o documento como PDF protegido cria um arquivo em formato PDF com restrições de edição, mas este é um formato de documento finalizado, não um recurso de compartilhamento colaborativo que permite a edição ativa no formato original do Word por outros usuários."
+        },
+        {
+          "id": "d",
+          "text": "Criar backup automático na nuvem",
+          "correct": false,
+          "explanation": "Incorreta. Criar backup automático na nuvem é uma funcionalidade de segurança e recuperação de dados que garante que o documento esteja salvo em um local remoto. Embora a nuvem seja fundamental para o compartilhamento, a ação de 'criar backup automático' por si só não define as permissões de edição para outros usuários; as permissões são configuradas especificamente no momento do compartilhamento do arquivo."
+        }
+      ],
+      "explanation": "Correta. Ao compartilhar documentos no Microsoft Word, especialmente quando integrado a serviços de nuvem como OneDrive ou SharePoint, é possível configurar permissões detalhadas. Isso inclui a capacidade de definir se os destinatários podem apenas visualizar ou também editar o documento. Adicionalmente, pode-se estabelecer uma data de validade para o link de compartilhamento e/ou exigir uma senha para acesso, o que diretamente controla e restringe quem e por quanto tempo pode interagir com o documento, incluindo a edição.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Na janela de impressão do Microsoft Word, qual é o significado da notação '1,5-8' no campo de páginas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Imprimir as páginas 1, 5 e 8 alternadamente",
+          "correct": false,
+          "explanation": "Incorreta. A notação \"1,5-8\" não indica impressão alternada. A impressão alternada geralmente é uma opção específica na caixa de diálogo de impressão (como imprimir apenas páginas ímpares ou pares) ou seria indicada por uma lista de páginas separadas por vírgulas sem hífens, se o objetivo fosse selecionar páginas não sequenciais específicas para alternar."
+        },
+        {
+          "id": "b",
+          "text": "Imprimir as páginas 1 e de 5 até 8",
+          "correct": true,
+          "explanation": "Correta. Na janela de impressão do Microsoft Word, a vírgula (`,`) é usada para separar páginas ou intervalos de páginas que não são sequenciais, agindo como um \"e\". O hífen (`-`) é usado para indicar um intervalo contínuo de páginas. Assim, \"1,5-8\" significa imprimir a página 1 E as páginas de 5 ATÉ 8 (incluindo 5, 6, 7 e 8)."
+        },
+        {
+          "id": "c",
+          "text": "Imprimir as páginas de 1 a 5 e de 5 a 8",
+          "correct": false,
+          "explanation": "Incorreta. A notação \"1,5-8\" não significa imprimir as páginas de 1 a 5 e de 5 a 8. O hífen indica um intervalo contínuo (de X a Y), e a vírgula separa itens distintos (páginas ou intervalos). Para imprimir de 1 a 5 e de 5 a 8, a notação seria \"1-5,5-8\" ou, de forma mais concisa, \"1-8\"."
+        },
+        {
+          "id": "d",
+          "text": "Imprimir as páginas 1, 5, 6, 7 e 8",
+          "correct": false,
+          "explanation": "Incorreta. Embora a lista de páginas resultantes seja correta, esta alternativa descreve o resultado, e não o significado da notação em si. A questão pede o significado da sintaxe."
+        }
+      ],
+      "explanation": "Correta. Na janela de impressão do Microsoft Word, a vírgula (`,`) é usada para separar páginas ou intervalos de páginas que não são sequenciais, agindo como um \"e\". O hífen (`-`) é usado para indicar um intervalo contínuo de páginas. Assim, \"1,5-8\" significa imprimir a página 1 E as páginas de 5 ATÉ 8 (incluindo 5, 6, 7 e 8).",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao aplicar o atalho Shift + F3 em um parágrafo com múltiplos períodos, qual é o comportamento quando o texto está todo em minúsculas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apenas a primeira letra de cada palavra fica em maiúscula",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade Shift + F3 no Microsoft Word alterna entre maiúsculas, minúsculas e a capitalização da primeira letra de cada frase. A opção de capitalizar a primeira letra de *cada palavra* (conhecida como 'Maiúsculas/Minúsculas de Título') é uma opção distinta, geralmente acessível através do botão 'Alterar Maiúsculas/Minúsculas' no grupo 'Fonte' da guia 'Página Inicial', e não é o resultado da primeira aplicação de Shift + F3 em um texto todo em minúsculas."
+        },
+        {
+          "id": "b",
+          "text": "Todo o texto fica em maiúsculas",
+          "correct": false,
+          "explanation": "Incorreta. Se o texto está todo em minúsculas, a primeira aplicação de Shift + F3 resultará na capitalização da primeira letra de cada período. Para que todo o texto ficasse em maiúsculas, seria necessária uma segunda aplicação do atalho Shift + F3 (se o texto estivesse originalmente em minúsculas)."
+        },
+        {
+          "id": "c",
+          "text": "Apenas a primeira letra do parágrafo fica em maiúscula",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade de Shift + F3, ao capitalizar a primeira letra de cada período, não se restringe apenas à primeira letra do parágrafo. Se o parágrafo contiver múltiplos períodos (frases), a primeira letra de cada um desses períodos será capitalizada."
+        },
+        {
+          "id": "d",
+          "text": "Apenas a primeira letra de cada período fica em maiúscula",
+          "correct": true,
+          "explanation": "Correta. Quando um parágrafo está completamente em minúsculas e o atalho Shift + F3 é aplicado uma vez, o Word capitaliza a primeira letra de cada período (frase) dentro do parágrafo. Este é o primeiro estado do ciclo de alternância de maiúsculas/minúsculas a partir de um texto todo em minúsculas, correspondendo ao estilo de capitalização padrão de uma frase."
+        }
+      ],
+      "explanation": "Correta. Quando um parágrafo está completamente em minúsculas e o atalho Shift + F3 é aplicado uma vez, o Word capitaliza a primeira letra de cada período (frase) dentro do parágrafo. Este é o primeiro estado do ciclo de alternância de maiúsculas/minúsculas a partir de um texto todo em minúsculas, correspondendo ao estilo de capitalização padrão de uma frase.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Na janela de abertura de arquivos do Microsoft Word, é possível realizar operações de gerenciamento de arquivos do Windows. Qual operação NÃO pode ser realizada nessa janela?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todas as operações mencionadas podem ser realizadas",
+          "correct": true,
+          "explanation": "Correta. A janela de abertura de arquivos do Microsoft Word (que é uma caixa de diálogo padrão do sistema operacional) oferece diversas funcionalidades de gerenciamento de arquivos. Conforme demonstrado, é possível renomear, excluir e criar novas pastas, além de outras operações como copiar e mover. Portanto, todas as operações listadas nas alternativas anteriores podem ser realizadas."
+        },
+        {
+          "id": "b",
+          "text": "Renomear arquivos e pastas",
+          "correct": false,
+          "explanation": "Incorreta. A janela 'Abrir' do Microsoft Word, que é parte do sistema operacional, permite renomear arquivos e pastas. Ao selecionar um arquivo ou pasta, é possível acessar o menu de contexto (geralmente com o botão direito do mouse) e escolher a opção 'Renomear'."
+        },
+        {
+          "id": "c",
+          "text": "Criar novas pastas",
+          "correct": false,
+          "explanation": "Incorreta. É possível criar novas pastas diretamente na janela 'Abrir'. Geralmente, há um botão ou uma opção no menu de contexto que permite 'Nova pasta', facilitando a organização dos arquivos antes de salvar ou abrir um documento."
+        },
+        {
+          "id": "d",
+          "text": "Excluir arquivos e pastas",
+          "correct": false,
+          "explanation": "Incorreta. Da mesma forma que a renomeação, a janela 'Abrir' oferece a funcionalidade de excluir arquivos e pastas. Ao selecionar um item, o menu de contexto permite a exclusão, movendo o item para a lixeira."
+        }
+      ],
+      "explanation": "Correta. A janela de abertura de arquivos do Microsoft Word (que é uma caixa de diálogo padrão do sistema operacional) oferece diversas funcionalidades de gerenciamento de arquivos. Conforme demonstrado, é possível renomear, excluir e criar novas pastas, além de outras operações como copiar e mover. Portanto, todas as operações listadas nas alternativas anteriores podem ser realizadas.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Ao clicar duas vezes no botão 'Pincel de Formatação', qual é o comportamento resultante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A formatação pode ser aplicada múltiplas vezes até que o pincel seja desativado manualmente",
+          "correct": true,
+          "explanation": "Correta. Ao clicar duas vezes no botão 'Pincel de Formatação', a ferramenta permanece ativa, permitindo que o usuário aplique a mesma formatação em múltiplas seleções de texto ou objetos. O pincel só será desativado quando o usuário clicar novamente no botão 'Pincel de Formatação' ou pressionar a tecla Esc."
+        },
+        {
+          "id": "b",
+          "text": "A formatação é aplicada apenas uma vez e o pincel é desativado",
+          "correct": false,
+          "explanation": "Incorreta. Clicar uma única vez no botão 'Pincel de Formatação' (Format Painter) permite aplicar a formatação copiada uma única vez. Após a aplicação, o pincel é automaticamente desativado."
+        },
+        {
+          "id": "c",
+          "text": "A formatação é copiada para a área de transferência",
+          "correct": false,
+          "explanation": "Incorreta. O 'Pincel de Formatação' copia a formatação (como fonte, tamanho, cor, negrito, itálico, etc.) para uma área temporária, mas a ação de copiar para a área de transferência do sistema (que permitiria colar o texto formatado em outro aplicativo, por exemplo) é realizada pelo comando 'Copiar' (Ctrl + C), e não pelo 'Pincel de Formatação' em si."
+        },
+        {
+          "id": "d",
+          "text": "A formatação é removida do texto original",
+          "correct": false,
+          "explanation": "Incorreta. O 'Pincel de Formatação' tem como função copiar e aplicar formatação, e não remover formatação do texto original. Para remover a formatação de um texto, utiliza-se o botão 'Limpar Toda a Formatação' (Clear All Formatting) no grupo 'Fonte' da guia 'Página Inicial'."
+        }
+      ],
+      "explanation": "Correta. Ao clicar duas vezes no botão 'Pincel de Formatação', a ferramenta permanece ativa, permitindo que o usuário aplique a mesma formatação em múltiplas seleções de texto ou objetos. O pincel só será desativado quando o usuário clicar novamente no botão 'Pincel de Formatação' ou pressionar a tecla Esc.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é o comportamento do atalho Ctrl + W quando há múltiplas janelas do Word abertas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Fecha todas as janelas do Word simultaneamente",
+          "correct": false,
+          "explanation": "Incorreta. O atalho Ctrl + W (ou Ctrl + F4) no Microsoft Word é utilizado para fechar o documento ativo, e não para fechar todas as janelas do Word simultaneamente. Para fechar todas as instâncias do programa, geralmente se usa Alt + F4 na janela principal ou a opção 'Sair' do menu 'Arquivo'."
+        },
+        {
+          "id": "b",
+          "text": "Fecha o programa Word completamente",
+          "correct": false,
+          "explanation": "Incorreta. O atalho Ctrl + W fecha o documento ativo, mas não encerra o programa Word completamente. O programa permanece em execução, mesmo que sem nenhum documento aberto, a menos que seja a única janela do Word e seja explicitamente fechado (por exemplo, com Alt + F4 ou clicando no 'X' da janela)."
+        },
+        {
+          "id": "c",
+          "text": "Fecha a janela ativa e, ao chegar na última, fecha apenas o documento mantendo o programa aberto",
+          "correct": true,
+          "explanation": "Correta. Quando há múltiplas janelas de documentos do Word abertas, o atalho Ctrl + W fecha a janela do documento que está ativa no momento. Se este for o último documento aberto em uma instância do Word, o documento será fechado, mas o programa Word em si (a janela do aplicativo sem um documento aberto) permanecerá aberto, aguardando a abertura de um novo documento ou o fechamento manual do programa."
+        },
+        {
+          "id": "d",
+          "text": "Fecha apenas o documento ativo em todas as situações",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Ctrl + W sempre feche o documento ativo, a alternativa 'b' oferece uma descrição mais completa e precisa do comportamento quando se trata do último documento aberto em uma instância do Word, o que é uma nuance importante em cenários de múltiplas janelas."
+        }
+      ],
+      "explanation": "Correta. Quando há múltiplas janelas de documentos do Word abertas, o atalho Ctrl + W fecha a janela do documento que está ativa no momento. Se este for o último documento aberto em uma instância do Word, o documento será fechado, mas o programa Word em si (a janela do aplicativo sem um documento aberto) permanecerá aberto, aguardando a abertura de um novo documento ou o fechamento manual do programa.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Na funcionalidade 'Salvar Como', qual configuração adicional pode ser definida através das opções gerais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Senhas de proteção para abertura e gravação do documento",
+          "correct": true,
+          "explanation": "Correta. Na janela 'Salvar Como' do Microsoft Word, ao acessar as 'Opções Gerais' (geralmente através do botão 'Ferramentas' ou 'Opções' na caixa de diálogo), é possível definir senhas de proteção. Essas senhas podem ser para 'senha de proteção para abertura' (impedindo que o documento seja aberto sem a senha) e 'senha de proteção para gravação' (permitindo a abertura, mas exigindo senha para fazer alterações e salvá-las)."
+        },
+        {
+          "id": "b",
+          "text": "Resolução de imagens incorporadas",
+          "correct": false,
+          "explanation": "Incorreta. A resolução de imagens incorporadas é uma configuração que pode ser ajustada no Word através das opções de compactação de imagens (acessíveis, por exemplo, ao selecionar uma imagem e ir na guia 'Formato de Imagem'), mas não é uma 'opção geral' diretamente configurável na janela 'Salvar Como'."
+        },
+        {
+          "id": "c",
+          "text": "Formato de compactação do arquivo",
+          "correct": false,
+          "explanation": "Incorreta. O formato de compactação do arquivo (que para documentos do Word é essencialmente ZIP) é uma característica inerente ao tipo de arquivo (.docx) e não uma 'opção geral' configurável pelo usuário no diálogo 'Salvar Como'. Embora o Word possa ter opções de compactação de imagens, isso não se refere ao formato de compactação do arquivo em si."
+        },
+        {
+          "id": "d",
+          "text": "Idioma padrão do documento",
+          "correct": false,
+          "explanation": "Incorreta. O idioma padrão do documento é uma propriedade do documento que pode ser definida nas configurações de idioma do Word ou nas opções de revisão, mas não é uma 'opção geral' configurável diretamente na janela 'Salvar Como' ao salvar um arquivo."
+        }
+      ],
+      "explanation": "Correta. Na janela 'Salvar Como' do Microsoft Word, ao acessar as 'Opções Gerais' (geralmente através do botão 'Ferramentas' ou 'Opções' na caixa de diálogo), é possível definir senhas de proteção. Essas senhas podem ser para 'senha de proteção para abertura' (impedindo que o documento seja aberto sem a senha) e 'senha de proteção para gravação' (permitindo a abertura, mas exigindo senha para fazer alterações e salvá-las).",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "03_288966_Office 365 - Word III.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:49:50"
+}

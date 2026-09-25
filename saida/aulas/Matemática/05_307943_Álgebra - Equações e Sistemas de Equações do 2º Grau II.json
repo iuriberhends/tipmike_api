@@ -1,0 +1,545 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Álgebra: Expressões algébricas. Polinômios: operações e propriedades. Equações polinomiais e inequações relacionadas."
+  },
+  "ordem": 5,
+  "ordem_no_curso": "66.00",
+  "titulo": "Álgebra - Equações e Sistemas de Equações do 2º Grau II",
+  "codigo_aula": "307943",
+  "video_id": "bat2psd/KLA=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:32:41",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/bat2psd%2FKLA%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408717%2C403840%2C403842%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Equações e Sistemas de Equações do 2º Grau II\n\n## Continuidade do Conteúdo e Estratégia Geral\nBeleza com vocês? Vamos seguir na somatória de matemática. Continuamente com equações e sistemas de equações do segundo grau, beleza? Na verdade, vocês foram desafiados, fizeram comigo uma matemática, álgebra, equações do segundo grau. Pureza: para o número 20 ficar passando segundo grau, quais os seus coeficientes? Naquele mesmo “soma e produto”, perfeito?\n\nAgora, o seguinte: treinamos. Fizemos um treinamento. Já não estávamos na fase de demarcação de dúvidas? Podemos usar a base para poder falar sobre isso? Vamos assumir um produto, fica mais rápido. Pode ser uma equação igual a: x² + 7x + 12, certo?\n\nO que fazemos? Quais serão as raízes da equação? Numa equação do segundo grau, o primeiro passo, a meu ver, é identificar os coeficientes. O coeficiente a é aquele que acompanha o x². O coeficiente b é o que acompanha o x. O coeficiente c é o termo independente, no caso 12. Agora, podemos fazer aquela jogadinha: eu quero dois números. Primeiramente, se a for igual a 1, passa mais rápido, fica mais “araguaia” (para ser mais rapidinho). Se o nosso coeficiente a não for igual a 1, dá um jeito a mais, mas a maioria das questões tem a = 1. Então, eu quero dois números que, somados, deem o b com o sinal trocado. Beleza? O b é 7, então eu quero somar e chegar em -7? Calma, aqui b = 7, então o “sinal trocado” é -7. E eu quero esses mesmos dois números multiplicados dando 12. Não vai esquecer: a soma tem que dar -7 e o produto tem que dar 12.\n\nGente, se esses dois números não vierem de cabeça, outra dificuldade é normal. Olha só, faça o seguinte: ser persistente. Tem gente que tem facilidade, tem gente que não tem. Então, comigo, pega um “arquivo mental” de fatores do 12: 1, 2, 3, 4, 6, 12. Relaciona: 1×12 = 12; 2×6 = 12; 3×4 = 12. Você vai pegar esses pares e somar/subtrair até chegar no -7. Devagarzinho.\n\nVocê vai testar no cantinho. Pense na multiplicação primeiro, depois joga para a soma/subtração. Por exemplo: começa com 1 e 12. Somando ou subtraindo, você consegue chegar em 7? 12 - 1 = 11, 12 + 1 = 13. Não. Então não deu certo. Passa para 2 e 6: 6 - 2 = 4, 6 + 2 = 8. Também não. Agora passa por 3 e 4: 4 + 3 = 7. Aí sim! Para dar -7 na soma, ambos precisam ser negativos: -3 e -4. E -3 × -4 = 12. Acabou: encontramos as soluções pela soma e produto.\n\nAs soluções são x = -3 e x = -4. Tá bom? Agora, fechamento: acontece mesmo de eu preferir usar Bhaskara. Não tem problema: quem quiser rever o convencional, pode continuar com ele.\n\n## Conferência pelo Método de Bhaskara\nEntão, se eu quiser fazer pelo método convencional, tudo bem. Delta: Δ = b² - 4ac. Aqui, a = 1, b = 7, c = 12. Δ = 7² - 4×1×12 = 49 - 48 = 1. Sem problema algum. x = [-b ± √Δ]/(2a) = [-7 ± 1]/2. \n\n- x₁ = (-7 + 1)/2 = -6/2 = -3.\n- x₂ = (-7 - 1)/2 = -8/2 = -4.\n\nEntão a resposta confere: -3 e -4. O importante é você acertar. A soma e produto fica mais rápida; mas as pessoas, às vezes, têm um pouco de dificuldade. Você briga com aquilo que achar melhor. O ideal é ter mais de uma carta na manga. Checar por Bhaskara também é legal.\n\n## Questão 3: Identificando Raiz entre Alternativas\nQuestão 3: uma questão interessante para treinar. “Assinale a alternativa que contém uma raiz da equação x² + 16x + 0...” Calma, vamos ajustar: a ideia é ver que b = 16 e c = 0? Quando c = 0, façam produto fatorando: fica fácil. Quando c = 0, uma das raízes é 0, porque 16×0 = 0. Então, quando o coeficiente c é zero, um dos fatores é o próprio x, e a equação pode ser escrita como x(x + 16) = 0. As raízes são x = 0 e x = -16. Beleza? Então, quando tiver c = 0, produto notável: um dos termos zera a equação facilmente.\n\n## Questão 4: Determinar constante sabendo uma raiz\n“Se -2 é uma das raízes da equação, determine o valor de k.” Vamos com a verdade: se -2 é raiz, é porque, ao substituir x = -2 na equação, o resultado dá zero. Por exemplo, numa equação do tipo x² + 7x + 2k = 0 (ajustando a estrutura que estávamos usando), se -2 for raiz, substitui:\n\n(-2)² + 7(-2) + 2k = 0\n4 - 14 + 2k = 0\n-10 + 2k = 0\n2k = 10\nk = 5\n\nA lógica é essa. De vez em quando eu falo: raiz é aquilo que, quando você substitui na equação, zera. Funcionou? É raiz. A questão pede o valor da constante: substitui a raiz dada, resolve a conta, acha k. Beleza.\n\nPara reforçar, com nosso exemplo inicial (x² + 7x + 12), testando x = -3:\n(-3)² + 7(-3) + 12 = 9 - 21 + 12 = 0. Confere. Se testarmos x = -4:\n16 - 28 + 12 = 0. Confere também.\n\n## Questão 5: Média aritmética das raízes\nJoão é professor. Teve um problema no cotidiano com o filho e disse que o castigo duraria uma certa quantidade de dias, que poderia ser encontrada através da média aritmética entre as raízes da equação: 3x² - 36x + 96 = 0.\n\nPara facilitar, perceba que todos os coeficientes são múltiplos de 3. Vamos simplificar dividindo a equação inteira por 3:\nx² - 12x + 32 = 0.\n\nAgora, soma e produto:\n- Dois números que somados dêem 12 (com sinal trocado: -12, então os números devem somar -12).\n- E multiplicados dêem 32.\n\nTestando pares de 32: 1×32, 2×16, 4×8.\n4 e 8 funcionam: -4 + -8 = -12 e (-4)×(-8) = 32.\n\nAs raízes são x = 4 e x = 8 (lembrando que na fatoração fica (x - 4)(x - 8) = 0). A média aritmética das raízes:\n(4 + 8)/2 = 12/2 = 6.\n\nResposta: 6 dias.\n\nEu gosto de deixar claro: muitas vezes eu prefiro usar Bhaskara, mas você escolhe o melhor recurso para a situação. Mudança no início dá insegurança, mas com prática, você fica confiante.\n\n## Questão 6: Maior das soluções\n“Assinale a alternativa correta: a maior das soluções da equação x² - 2x - 15 = 0.”\n\nCoeficientes: a = 1, b = -2, c = -15.\nSoma e produto:\n- Dois números que somados dêem 2 (sinal trocado de b = -2 é +2).\n- E multiplicados dêem -15.\n\nTestando: 3 e -5 funcionam, pois 3 + (-5) = -2 (opa, aqui precisamos soma +2; ajusta sinais). Tente 5 e -3: 5 + (-3) = 2 e 5×(-3) = -15. Perfeito.\n\nFatorando: (x - 5)(x + 3) = 0.\nSoluções: x = 5 e x = -3. A maior das soluções é 5.\n\nShow de bola, tranquilidade. Se eu quisesse, poderia usar Bhaskara perfeitamente e chegar ao mesmo resultado. No próximo bloco, a gente aprofunda um pouco mais, dá uma apertada no norte do conteúdo, beleza? Não saiam daí. A ideia é fazer você avançar um pouco mais. Pode ter certeza de que logo você domina.",
+  "transcricao_meta": {
+    "title": "Equações e Sistemas de Equações do 2º Grau II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 2,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 16292,
+    "createdAt": "2025-12-12T18:26:01.934Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: \n- Equações do 2º grau, coeficientes e raízes\n- Métodos de resolução: soma e produto (fatoração) e fórmula de Bhaskara\n- Teste de raiz dada, média das raízes e simplificação\nPrincipais pontos: \n- Identificar r e s por soma e produto quando a = 1\n- Usar Δ para decidir método e contar raízes\n- Atalhos: média das raízes = −b/(2a) e casos especiais (c = 0)\n\n## 1. Base / Conceitos Fundamentais\n- **Equação do segundo grau**: ax² + bx + c = 0, com **a ≠ 0**.\n- **Coeficientes**: \n  - **a** (coeficiente quadrático), **b** (coeficiente linear), **c** (termo independente).\n- **Delta (Δ)** ou discriminante: **Δ = b² − 4ac**.\n- **Raízes/soluções**: valores de x que tornam a equação “igual a zero”.\n- **Regra de sinais**:\n  - “menos vezes menos = mais”.\n  - “(−2)² = 4” (quadrado de número negativo é positivo).\n\n## 2. Como Funciona / Distinções\n- Fatoração por **soma e produto** (preferencial quando a = 1):\n  - Encontrar números r e s tais que: **r + s = −b** e **r · s = c**.\n  - x² + bx + c = (x + r)(x + s) → raízes x = −r e x = −s.\n- **Bhaskara** (universal, para qualquer a ≠ 0):\n  - Raízes: x = [−b ± √Δ]/(2a).\n  - Δ > 0 → 2 raízes reais distintas; Δ = 0 → raiz real dupla; Δ < 0 → sem raiz real.\n- **Quando usar cada um**:\n  - Soma e produto: rápido quando **a = 1** e **Δ é quadrado perfeito** (ou c tem poucos divisores).\n  - Bhaskara: quando **a ≠ 1**, quando não acha r e s inteiros rapidamente, ou quando Δ não é quadrado perfeito.\n- **Casos especiais**:\n  - Se **c = 0**: ax² + bx = x(ax + b) = 0 → raízes: x = 0 e x = −b/a.\n- **Média aritmética das raízes**:\n  - Soma das raízes S = −b/a.\n  - **Média**: M = S/2 = **−b/(2a)**.\n  - Se fosse 3º grau (fora do tema), média seria (r1 + r2 + r3)/3.\n\n## 3. Aplicação Prática / Técnicas\n- Procedimento (a = 1, soma e produto):\n  1) Liste pares de fatores de c: (1, c), (2, c/2), (4, c/4)...\n  2) Ajuste sinais para que a soma dê **−b**.\n  3) Fatora: x² + bx + c = (x + r)(x + s) = 0 → x = −r, x = −s.\n- Procedimento (geral, Bhaskara):\n  1) Calcule Δ = b² − 4ac.\n  2) Aplique x = [−b ± √Δ]/(2a).\n- Simplificação:\n  - Se a, b, c têm divisor comum (ex.: 2, 3, 6), divida toda a equação por ele para facilitar Δ e a fatoração.\n- Teste de raiz fornecida (ex.: “−2 é raiz”):\n  1) Substitua x = −2: a(−2)² + b(−2) + c = 0 → 4a − 2b + c = 0.\n  2) Confirmada a raiz, divida o polinômio por (x + 2) para achar a outra raiz.\n- Escolha da maior solução:\n  - Compare os valores numéricos: entre 3 e −5, a maior é 3.\n\n> Dica de prova: Comece por soma e produto se a = 1. Se em 3–4 tentativas não achar r e s, troque para Bhaskara.\n\n> Dica de prova: Para “média das raízes”, use direto −b/(2a). Para a = 1, é −b/2.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (fatoração direta):\n  - x² + 7x + 12 = 0\n  - Procurar r, s: r + s = −7; r·s = 12 → r = −3, s = −4.\n  - Fatoração: (x − 3)(x − 4) = 0 → raízes x = 3 e x = 4.\n  - Δ checagem: 49 − 48 = 1 (quadrado perfeito).\n- Exemplo 2 (pares de 32 e soma 12):\n  - x² − 12x + 32 = 0\n  - Pares de 32: (1,32) → 33 (não), (2,16) → 18 (não), (4,8) → 12 (serve).\n  - r = 4, s = 8 → (x − 4)(x − 8) = 0 → x = 4, x = 8.\n  - Média: (4 + 8)/2 = 6. Atalho: −b/2 = 12/2 = 6.\n- Exemplo 3 (teste de raiz −2):\n  - Se −2 é raiz de ax² + bx + c = 0 → 4a − 2b + c = 0 (relação útil para descobrir coeficientes).\n- Exemplo 4 (caso c = 0):\n  - 3x² − 6x = 0 → x(3x − 6) = 0 → x = 0 ou x = 2.\n- Exemplo 5 (Bhaskara quando soma/produto não fecha rápido):\n  - a = 1, b = −7, c = 12 → Δ = (−7)² − 4·1·12 = 49 − 48 = 1\n  - x = [7 ± 1]/2 → x = 4 e x = 3.\n\n## 5. Pegadinhas e Erros Comuns\n- Trocar o sinal na soma: é sempre “b com sinal trocado” → r + s = −b.\n- Errar potência de negativo: (−2)² = 4 (não −4).\n- Confundir “maior solução” com “maior em módulo”: entre 3 e −5, a maior é 3.\n- Esquecer de dividir todos os termos ao simplificar (inclusive o termo independente).\n- Forçar fatoração inteira quando Δ não é quadrado perfeito: vá de Bhaskara.\n- Em “média das raízes”, não confunda com produto ou soma; use −b/(2a).\n- Tentar soma e produto “puro” quando a ≠ 1 sem ajuste: prefira Bhaskara ou técnica avançada (soma e produto ajustado com a), que pode tomar tempo.\n\n> Dica de prova: Calcular Δ antes ajuda a decidir: Δ quadrado perfeito tende a indicar fatoração por inteiros; Δ < 0 evita perda de tempo, pois não há raízes reais.\n\n> Atenção: Nomes e trechos como “Josimar Padilha”, “São Paulo”, “Theresa” e marcas como “[REJECT]” não influenciam a matemática; ignore-os ao resolver.",
+  "resumo_bolso": "# Álgebra - Equações e Sistemas de Equações do 2º Grau II\n\n---\n\n## 📌 Conceitos-Chave\n\n* Equação do 2º grau: ax² + bx + c = 0, com a ≠ 0.\n* Coeficientes: a (quadrático), b (linear), c (termo independente).\n* Delta (Δ): Δ = b² − 4ac.\n* Raízes: valores de x que zeram o polinômio; podem ser 2, 1 (dupla) ou 0 reais conforme o Δ.\n* Regra de sinais: (−)·(−) = (+); (−2)² = 4 (quadrado de número negativo é positivo).\n* Soma e produto (a = 1): r + s = −b e r·s = c; x² + bx + c = (x + r)(x + s) → x = −r, x = −s.\n* Fórmula de Bhaskara: x = [−b ± √Δ]/(2a).\n* Classificação pelo Δ: Δ > 0 → 2 reais distintas; Δ = 0 → raiz dupla; Δ < 0 → sem raiz real.\n* Caso especial c = 0: ax² + bx = x(ax + b) → x = 0 e x = −b/a.\n* Média das raízes: S = −b/a; M = S/2 = −b/(2a). Para a = 1, M = −b/2.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n- Soma e produto: rápido quando a = 1 e Δ é quadrado perfeito (ou c tem poucos divisores).\n- Bhaskara: universal para qualquer a ≠ 0; use quando a ≠ 1, quando não acha r e s inteiros rapidamente ou quando Δ não é quadrado perfeito.\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Discriminante (Δ)\n- Aplicação: decidir contagem de raízes e escolher método.\n- Exemplo: a=1,b=−7,c=12 → Δ=49−48=1 → 2 raízes reais.\n\n2. Soma e Produto (a = 1)\n- Regra: r + s = −b e r·s = c; x² + bx + c = (x + r)(x + s).\n- Exemplo: x² − 12x + 32 = 0 → r=4, s=8 → (x − 4)(x − 8) → x=4,8.\n\n3. Bhaskara (geral)\n- Fórmula: x = [−b ± √(b² − 4ac)]/(2a).\n- Exemplo: a=1,b=−7,c=12 → x = [7 ± 1]/2 → 3 e 4.\n\n4. Caso c = 0\n- Fatora: ax² + bx = x(ax + b).\n- Exemplo: 3x² − 6x = 0 → x=0 e x=2.\n\n5. Média das raízes\n- Fórmula: M = −b/(2a).\n- Exemplo: x² − 12x + 32 → M = 12/2 = 6.\n\n6. Teste de raiz dada\n- Substitua o valor informado.\n- Exemplo: “−2 é raiz” → a(−2)² + b(−2) + c = 0 → 4a − 2b + c = 0.\n\n7. Simplificação prévia\n- Divida por divisor comum de a, b, c.\n- Exemplo: 2x² + 6x + 4 = 0 → dividir por 2 → x² + 3x + 2.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Trocar o sinal na soma: r + s = −b.\n- Errar potência de negativo: (−2)² = 4 (não −4).\n- Confundir “maior solução” com “maior em módulo”: compare valores reais.\n- Esquecer de dividir todos os termos ao simplificar.\n- Forçar fatoração inteira quando Δ não é quadrado perfeito: use Bhaskara.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei quando usar soma e produto (a = 1, Δ quadrado perfeito) e quando aplicar Bhaskara?\n* Sei classificar pelo Δ e evitar perda de tempo quando Δ < 0?\n* Memorizei M = −b/(2a) para média das raízes (para a = 1, −b/2)?\n* Lembro do atalho c = 0 → x = 0 e x = −b/a?\n* Sei testar raiz dada e usar 4a − 2b + c = 0 para x = −2?\n* Antes de começar, verifiquei divisor comum para simplificar a, b, c?\n* Em a = 1, tentei alguns pares de fatores de c e troquei de método se não fechou rapidamente?",
+  "mapa_mental": "# 🧮 Álgebra – Equações e Sistemas do 2º Grau II\n## 🎯 Estrutura da Equação\n### 💡 Forma geral\n- ax² + bx + c\n- a diferente de zero\n- equação quadrática\n- variável x\n### 🧱 Coeficientes\n- coeficiente a\n- coeficiente b\n- termo c\n- a quadrático\n- b linear\n### 🔢 Delta (Δ)\n- Δ = b² − 4ac\n- discriminante real\n- depende de a\n- depende de b\n- depende de c\n\n## 🧮 Raízes e Propriedades\n### 📊 Raízes reais\n- solução da equação\n- x torna zero\n- duas raízes\n- uma raiz dupla\n- sem raiz real\n### 📉 Sinais e potências\n- menos vezes menos\n- resultado positivo\n- quadrado de negativo\n- (−2)² igual 4\n- atenção aos sinais\n### 📐 Soma e média\n- soma das raízes\n- S = −b/a\n- produto das raízes\n- P = c/a\n- média M = −b/(2a)\n\n## ⚙️ Métodos de Resolução\n### 🧩 Soma e produto\n- usar quando a = 1\n- r + s = −b\n- r·s = c\n- fatoração em binômios\n- raízes −r e −s\n### 📏 Fórmula de Bhaskara\n- x = [−b ± √Δ]/2a\n- método universal\n- serve qualquer a\n- exige Δ calculado\n- raízes reais ou não\n### 📌 Escolha do método\n- a = 1 preferir soma\n- Δ quadrado perfeito\n- muitos divisores de c\n- a diferente de 1\n- Δ não perfeito\n\n## 🧷 Casos Especiais e Técnicas\n### 🧮 Caso c = 0\n- ax² + bx = 0\n- fatorar x em evidência\n- x(ax + b) = 0\n- raiz x = 0\n- raiz x = −b/a\n### ✂️ Simplificação\n- divisor comum em a b c\n- dividir toda equação\n- reduzir coeficientes\n- facilitar Δ\n- facilitar fatoração\n### 🔍 Teste de raiz dada\n- substituir valor em x\n- verificar resultado zero\n- relação entre coeficientes\n- confirmar raiz fornecida\n- obter outra raiz",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Forma da Equação",
+      "description": "Forma da Equação — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a forma padrão de uma **equação do 2º grau**?",
+          "back": "$$ax^2 + bx + c = 0$$",
+          "hint": "Estrutura algébrica fundamental",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacao-segundo-grau"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual coeficiente acompanha o termo x² na forma padrão?",
+          "back": "Coeficiente **a**",
+          "hint": "Posição na forma padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o termo independente na forma padrão de uma equação quadrática?",
+          "back": "Coeficiente **c**",
+          "hint": "Posição na forma padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "coeficientes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual condição o coeficiente do termo quadrático deve satisfazer?",
+          "back": "Ser diferente de zero",
+          "hint": "Garante o grau da equação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "restricoes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Raízes e Fatoração",
+      "description": "Raízes e Fatoração — 5 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "O que caracteriza uma raiz de uma equação do 2º grau?",
+          "back": "Valor que faz a equação ser igual a zero",
+          "hint": "Propriedade de anulação",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "raizes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como verificar algebricamente se um número é raiz de uma equação?",
+          "back": "Substituir o valor na equação e verificar se o resultado é igual a zero",
+          "hint": "Teste de veracidade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "verificacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Quantas raízes reais, no máximo, uma equação do 2º grau pode possuir?",
+          "back": "Duas raízes reais",
+          "hint": "Limite do grau da equação",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "raizes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Quais condições devem atender os dois números usados para fatorar uma equação monômia?",
+          "back": "Dois números cuja soma dê o coeficiente b com sinal trocado e cujo produto dê o coeficiente c",
+          "hint": "Relações de Girard simplificadas",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "fatoracao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Quais números fatoram a expressão x² + 7x + 12?",
+          "back": "-3 e -4",
+          "hint": "Aplicação de soma e produto",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "fatoracao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Fórmula de Bhaskara",
+      "description": "Fórmula de Bhaskara — 4 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como é calculado o discriminante de uma equação do 2º grau?",
+          "back": "$$\\Delta = b^2 - 4ac$$",
+          "hint": "Componente da fórmula de Bhaskara",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "discriminante"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual fórmula determina as raízes usando o discriminante?",
+          "back": "$$x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a}$$",
+          "hint": "Fórmula resolutiva geral",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "algebra",
+            "bhaskara"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Como os sinais do símbolo ± são usados no cálculo das raízes?",
+          "back": "O sinal de mais indica a primeira raiz e o sinal de menos indica a segunda raiz",
+          "hint": "Operação de bifurcação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "algebra",
+            "bhaskara"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "O que fazer com uma equação cujos coeficientes possuem fator comum?",
+          "back": "Simplificar dividindo todos os coeficientes pelo fator comum",
+          "hint": "Otimização de coeficientes",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "simplificacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações das Raízes",
+      "description": "Aplicações das Raízes — 3 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Como encontrar uma constante desconhecida quando uma raiz da equação é conhecida?",
+          "back": "Substituir a raiz conhecida na equação no lugar da incógnita para isolar e encontrar a constante",
+          "hint": "Substituição de variável",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "isolamento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Como calcular a média aritmética das duas raízes de uma equação quadrática?",
+          "back": "Somar as duas raízes e dividir o resultado por dois",
+          "hint": "Cálculo estatístico básico",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "algebra",
+            "estatistica"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-16",
+          "front": "Como identificar a maior solução entre as raízes reais encontradas?",
+          "back": "Comparar os valores numéricos considerando que a maior solução é o número de maior valor algébrico",
+          "hint": "Ordenação na reta real",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "algebra",
+            "comparacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o método mais rápido para resolver uma equação do segundo grau quando o coeficiente 'a' é igual a 1?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Encontrar dois números que somados resultem em 'b' com sinal trocado e multiplicados resultem em 'c'",
+          "correct": true,
+          "explanation": "Correta. Este método, conhecido como soma e produto (ou relações de Girard), é o mais eficiente quando o coeficiente 'a' é 1. Ele explora a propriedade de que a soma das raízes é igual a -b e o produto das raízes é igual a c, permitindo encontrar as raízes por inspeção ou tentativa e erro de forma mais rápida que a fórmula de Bhaskara."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar o método de completar quadrados para transformar a equação em uma forma fatorada",
+          "correct": false,
+          "explanation": "Incorreta. O método de completar quadrados é uma técnica válida para resolver equações do segundo grau e é a base para a dedução da fórmula de Bhaskara. No entanto, ele envolve manipulações algébricas para transformar a equação em um trinômio quadrado perfeito, o que geralmente o torna mais demorado do que o método de soma e produto quando o coeficiente 'a' é 1."
+        },
+        {
+          "id": "c",
+          "text": "Dividir todos os termos da equação pelo coeficiente 'a' antes de aplicar qualquer método de resolução",
+          "correct": false,
+          "explanation": "Incorreta. Dividir todos os termos da equação pelo coeficiente 'a' é uma estratégia útil quando 'a' é diferente de 1, pois transforma a equação em uma forma onde o coeficiente de x² é 1, facilitando a aplicação do método de soma e produto. Contudo, a questão já especifica que 'a' é igual a 1, tornando essa etapa desnecessária e, portanto, não mais rápida."
+        },
+        {
+          "id": "d",
+          "text": "Utilizar a fórmula de Bhaskara completa com o cálculo do discriminante delta",
+          "correct": false,
+          "explanation": "Incorreta. A fórmula de Bhaskara é um método universal para resolver equações do segundo grau, mas quando o coeficiente 'a' é igual a 1, o método de soma e produto geralmente é mais ágil, pois exige menos cálculos diretos e pode ser feito por inspeção em muitos casos."
+        }
+      ],
+      "explanation": "Correta. Este método, conhecido como soma e produto (ou relações de Girard), é o mais eficiente quando o coeficiente 'a' é 1. Ele explora a propriedade de que a soma das raízes é igual a -b e o produto das raízes é igual a c, permitindo encontrar as raízes por inspeção ou tentativa e erro de forma mais rápida que a fórmula de Bhaskara.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma equação do segundo grau na forma ax² + bx + c = 0, qual é a função das raízes da equação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As raízes representam os valores de x que tornam a expressão máxima ou mínima no gráfico da função",
+          "correct": false,
+          "explanation": "Incorreta. Os valores de x que tornam a expressão máxima ou mínima referem-se ao vértice da parábola, que é o ponto de inflexão da função quadrática. As raízes, por outro lado, são os pontos onde a função cruza o eixo horizontal (eixo x)."
+        },
+        {
+          "id": "b",
+          "text": "As raízes indicam os pontos onde a função quadrática intercepta o eixo y do plano cartesiano",
+          "correct": false,
+          "explanation": "Incorreta. Os pontos onde a função quadrática intercepta o eixo y são encontrados quando x é igual a zero. Nesse caso, o valor da função é 'c' (o termo independente), ou seja, o ponto de interceptação é (0, c). As raízes, em contraste, são os pontos de interceptação com o eixo x."
+        },
+        {
+          "id": "c",
+          "text": "As raízes são os valores de x que, quando substituídos na equação, resultam em zero",
+          "correct": true,
+          "explanation": "Correta. As raízes de uma equação do segundo grau são, por definição, os valores da variável (x) que, ao serem substituídos na equação, satisfazem a igualdade e tornam a expressão igual a zero. Graficamente, são os pontos onde a parábola intersecta o eixo das abscissas (eixo x)."
+        },
+        {
+          "id": "d",
+          "text": "As raízes determinam o vértice da parábola formada pela representação gráfica da equação",
+          "correct": false,
+          "explanation": "Incorreta. O vértice da parábola é o ponto de máximo ou mínimo da função quadrática, cuja coordenada x é dada por -b/(2a). Embora o vértice esteja relacionado com as raízes (estando no ponto médio entre elas, se existirem), as raízes não determinam diretamente o vértice, mas sim os pontos onde a parábola cruza o eixo x."
+        }
+      ],
+      "explanation": "Correta. As raízes de uma equação do segundo grau são, por definição, os valores da variável (x) que, ao serem substituídos na equação, satisfazem a igualdade e tornam a expressão igual a zero. Graficamente, são os pontos onde a parábola intersecta o eixo das abscissas (eixo x).",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Para verificar se um determinado valor é raiz de uma equação do segundo grau, qual procedimento deve ser realizado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicar a fórmula de Bhaskara e comparar o resultado obtido com o valor em questão",
+          "correct": false,
+          "explanation": "Incorreta. Embora a aplicação da fórmula de Bhaskara forneça as raízes da equação, permitindo a comparação com o valor em questão, este é um método mais trabalhoso do que a simples substituição. Para verificar se um valor é raiz, a substituição direta é o procedimento mais eficiente."
+        },
+        {
+          "id": "b",
+          "text": "Calcular o discriminante delta e verificar se o valor está entre as duas raízes possíveis",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo do discriminante (delta) serve para determinar a natureza das raízes (se são reais e distintas, reais e iguais, ou complexas), mas não para verificar se um valor específico é uma raiz. Uma raiz é um dos valores que satisfazem a equação, não um valor \"entre\" as raízes."
+        },
+        {
+          "id": "c",
+          "text": "Substituir o valor na equação e verificar se o resultado é igual a zero",
+          "correct": true,
+          "explanation": "Correta. A definição de raiz de uma equação é um valor que, quando substituído na variável da equação, torna a igualdade verdadeira. Em uma equação do segundo grau na forma ax² + bx + c = 0, isso significa que a substituição do valor deve resultar em zero."
+        },
+        {
+          "id": "d",
+          "text": "Verificar se o valor satisfaz a relação de soma e produto das raízes da equação",
+          "correct": false,
+          "explanation": "Incorreta. As relações de soma e produto das raízes são úteis para encontrar as raízes ou para verificar propriedades entre elas, mas exigem o conhecimento de ambas as raízes ou a manipulação da relação para encontrar a segunda raiz. Para verificar se um único valor é raiz, a substituição direta na equação é o método mais prático e direto."
+        }
+      ],
+      "explanation": "Correta. A definição de raiz de uma equação é um valor que, quando substituído na variável da equação, torna a igualdade verdadeira. Em uma equação do segundo grau na forma ax² + bx + c = 0, isso significa que a substituição do valor deve resultar em zero.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao resolver a equação x² + 7x + 12 = 0 pelo método de soma e produto, quais são os dois números que satisfazem as condições necessárias?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "-3 e -4, pois somados resultam em -7 e multiplicados resultam em 12",
+          "correct": true,
+          "explanation": "Correta. Para a equação x² + 7x + 12 = 0, buscamos dois números cuja soma seja -7 (o oposto do coeficiente 'b') e cujo produto seja 12 (o coeficiente 'c'). Os números -3 e -4 satisfazem ambas as condições: (-3) + (-4) = -7 e (-3) × (-4) = 12."
+        },
+        {
+          "id": "b",
+          "text": "-2 e -6, pois somados resultam em -8 e multiplicados resultam em 12",
+          "correct": false,
+          "explanation": "Incorreta. Ao somar -2 e -6, o resultado é -8, que não corresponde à soma esperada de -7 (o coeficiente 'b' com sinal trocado). Embora o produto esteja correto, a condição da soma não é satisfeita."
+        },
+        {
+          "id": "c",
+          "text": "3 e 4, pois somados resultam em 7 e multiplicados resultam em 12",
+          "correct": false,
+          "explanation": "Incorreta. A soma de 3 e 4 resulta em 7, que não é o valor esperado de -7 para a soma das raízes. A condição da soma exige o coeficiente 'b' com o sinal trocado, ou seja, -7."
+        },
+        {
+          "id": "d",
+          "text": "-1 e -12, pois somados resultam em -13 e multiplicados resultam em 12",
+          "correct": false,
+          "explanation": "Incorreta. A soma de -1 e -12 é -13, que não corresponde à soma esperada de -7. Embora o produto esteja correto, a condição da soma não é atendida."
+        }
+      ],
+      "explanation": "Correta. Para a equação x² + 7x + 12 = 0, buscamos dois números cuja soma seja -7 (o oposto do coeficiente 'b') e cujo produto seja 12 (o coeficiente 'c'). Os números -3 e -4 satisfazem ambas as condições: (-3) + (-4) = -7 e (-3) × (-4) = 12.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma equação do segundo grau onde todos os coeficientes são divisíveis por um mesmo número, qual é a vantagem de simplificar a equação antes de resolvê-la?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A simplificação é obrigatória para que a fórmula de Bhaskara possa ser aplicada corretamente",
+          "correct": false,
+          "explanation": "Incorreta. A aplicação da fórmula de Bhaskara é universal para qualquer equação do segundo grau, independentemente de seus coeficientes terem sido simplificados ou não. A simplificação é uma medida de conveniência para facilitar os cálculos, mas não é uma condição obrigatória para a correta aplicação da fórmula."
+        },
+        {
+          "id": "b",
+          "text": "A simplificação facilita os cálculos sem alterar as raízes da equação original",
+          "correct": true,
+          "explanation": "Correta. Simplificar uma equação do segundo grau dividindo todos os seus coeficientes por um divisor comum (diferente de zero) é uma prática recomendada porque reduz a magnitude dos números envolvidos, tornando os cálculos subsequentes (seja pela fórmula de Bhaskara ou pelo método de soma e produto) mais simples e menos suscetíveis a erros, sem alterar as raízes da equação original."
+        },
+        {
+          "id": "c",
+          "text": "A simplificação transforma a equação do segundo grau em uma equação do primeiro grau equivalente",
+          "correct": false,
+          "explanation": "Incorreta. A simplificação de uma equação do segundo grau por divisão de seus coeficientes por um número não nulo não altera o grau da equação. Uma equação do segundo grau permanece sendo do segundo grau, a menos que o coeficiente de x² se anule, o que a transformaria em uma equação do primeiro grau, mas nesse caso ela não seria uma equação do segundo grau inicialmente."
+        },
+        {
+          "id": "d",
+          "text": "A simplificação altera as raízes da equação, tornando-as números inteiros mais fáceis de trabalhar",
+          "correct": false,
+          "explanation": "Incorreta. A simplificação de uma equação do segundo grau, ao dividir todos os seus coeficientes por um fator comum diferente de zero, não altera suas raízes. As raízes da equação original e da equação simplificada são idênticas."
+        }
+      ],
+      "explanation": "Correta. Simplificar uma equação do segundo grau dividindo todos os seus coeficientes por um divisor comum (diferente de zero) é uma prática recomendada porque reduz a magnitude dos números envolvidos, tornando os cálculos subsequentes (seja pela fórmula de Bhaskara ou pelo método de soma e produto) mais simples e menos suscetíveis a erros, sem alterar as raízes da equação original.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Se -2 é uma das raízes da equação x² - kx + 2 = 0, qual é o valor da constante k?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "k = 1, pois o produto das raízes deve ser igual ao termo independente da equação",
+          "correct": false,
+          "explanation": "Esta alternativa está incorreta. O produto das raízes de uma equação quadrática ax² + bx + c = 0 é c/a. Na equação x² - kx + 2 = 0, o termo independente 'c' é 2 e 'a' é 1, então o produto das raízes é 2. Se uma das raízes é -2, a outra raiz (r2) deve satisfazer (-2) * r2 = 2, o que implica r2 = -1. A soma das raízes é -b/a, que é -(-k)/1 = k. Portanto, k = (-2) + (-1) = -3, e não 1. O raciocínio sobre o produto das raízes é válido, mas a conclusão sobre o valor de k está errada."
+        },
+        {
+          "id": "b",
+          "text": "k = -1, pois a soma das raízes deve ser igual ao coeficiente b com sinal trocado",
+          "correct": false,
+          "explanation": "Esta alternativa está incorreta. Embora a soma das raízes de uma equação quadrática ax² + bx + c = 0 seja de fato -b/a, na equação dada (x² - kx + 2 = 0), o coeficiente 'b' é -k e 'a' é 1. Assim, a soma das raízes é -(-k)/1 = k. Se k fosse -1, a soma das raízes seria -1. Se uma raiz é -2, a outra raiz seria -1 - (-2) = 1. Contudo, o produto das raízes é c/a = 2/1 = 2. O produto de -2 e 1 é -2, que não é igual a 2. Portanto, a suposição de que k = -1 está equivocada."
+        },
+        {
+          "id": "c",
+          "text": "k = -3, pois ao substituir x = -2 na equação e resolver, obtém-se esse valor",
+          "correct": false,
+          "explanation": "Esta alternativa está correta. Por definição, uma raiz de uma equação é o valor que, quando substituído na variável (x), torna a igualdade verdadeira. Ao substituir x = -2 na equação x² - kx + 2 = 0, obtemos (-2)² - k(-2) + 2 = 0. Isso simplifica para 4 + 2k + 2 = 0, que resulta em 6 + 2k = 0. Resolvendo para k, temos 2k = -6, e, portanto, k = -3."
+        },
+        {
+          "id": "d",
+          "text": "k = -5, pois ao substituir x = -2 e igualar a zero, a resolução resulta nesse valor",
+          "correct": true,
+          "explanation": "Esta alternativa está incorreta. Ao substituir x = -2 na equação x² - kx + 2 = 0, o cálculo correto é (-2)² - k(-2) + 2 = 0, que resulta em 4 + 2k + 2 = 0. Isso simplifica para 6 + 2k = 0, o que nos leva a 2k = -6 e, portanto, k = -3. O valor de -5 não é obtido por essa substituição."
+        }
+      ],
+      "explanation": "Esta alternativa está incorreta. Ao substituir x = -2 na equação x² - kx + 2 = 0, o cálculo correto é (-2)² - k(-2) + 2 = 0, que resulta em 4 + 2k + 2 = 0. Isso simplifica para 6 + 2k = 0, o que nos leva a 2k = -6 e, portanto, k = -3. O valor de -5 não é obtido por essa substituição.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Na equação 3x² - 36x + 96 = 0, após simplificar dividindo todos os termos por 3, qual é a média aritmética entre as raízes da equação simplificada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A média aritmética é 8, calculada pela soma das raízes 4 e 12 dividida por 2",
+          "correct": false,
+          "explanation": "Esta alternativa está incorreta. As raízes da equação simplificada x² - 12x + 32 = 0 são 4 e 8. Embora 4 seja uma das raízes, 12 não é a outra. A soma das raízes 4 e 12 seria 16, e não 12, e o produto 4 * 12 = 48, e não 32. Assim, a média aritmética calculada com raízes incorretas também está errada."
+        },
+        {
+          "id": "b",
+          "text": "A média aritmética é 6, calculada pela soma das raízes 4 e 8 dividida por 2",
+          "correct": true,
+          "explanation": "Esta alternativa está correta. Primeiramente, simplificamos a equação 3x² - 36x + 96 = 0 dividindo todos os termos por 3, resultando em x² - 12x + 32 = 0. Para encontrar as raízes dessa nova equação, utilizamos as relações de Girard (soma e produto). A soma das raízes é o oposto do coeficiente de x, ou seja, -(-12)/1 = 12. O produto das raízes é o termo independente, que é 32/1 = 32. Os números que somados dão 12 e multiplicados dão 32 são 4 e 8. Portanto, as raízes são 4 e 8. A média aritmética entre essas raízes é calculada como (4 + 8) / 2 = 12 / 2 = 6."
+        },
+        {
+          "id": "c",
+          "text": "A média aritmética é 10, calculada pela soma das raízes 6 e 14 dividida por 2",
+          "correct": false,
+          "explanation": "Esta alternativa está incorreta. As raízes da equação simplificada x² - 12x + 32 = 0 são 4 e 8. As raízes 6 e 14 não satisfazem a equação, pois 6 + 14 = 20 (o que não é 12) e 6 * 14 = 84 (o que não é 32). Consequentemente, a média aritmética baseada nessas raízes hipotéticas está incorreta."
+        },
+        {
+          "id": "d",
+          "text": "A média aritmética é 4, calculada pela soma das raízes 2 e 6 dividida por 2",
+          "correct": false,
+          "explanation": "Esta alternativa está incorreta. Após simplificar a equação 3x² - 36x + 96 = 0 dividindo por 3, obtemos x² - 12x + 32 = 0. As raízes dessa equação são 4 e 8, pois a soma delas (4 + 8) é 12 e o produto (4 * 8) é 32. As raízes 2 e 6 não satisfazem a equação simplificada, já que 2 + 6 = 8 (e não 12) e 2 * 6 = 12 (e não 32)."
+        }
+      ],
+      "explanation": "Esta alternativa está correta. Primeiramente, simplificamos a equação 3x² - 36x + 96 = 0 dividindo todos os termos por 3, resultando em x² - 12x + 32 = 0. Para encontrar as raízes dessa nova equação, utilizamos as relações de Girard (soma e produto). A soma das raízes é o oposto do coeficiente de x, ou seja, -(-12)/1 = 12. O produto das raízes é o termo independente, que é 32/1 = 32. Os números que somados dão 12 e multiplicados dão 32 são 4 e 8. Portanto, as raízes são 4 e 8. A média aritmética entre essas raízes é calculada como (4 + 8) / 2 = 12 / 2 = 6.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_307943_Álgebra - Equações e Sistemas de Equações do 2º Grau II.pdf",
+  "coletado_em": "2026-09-23T20:55:14"
+}

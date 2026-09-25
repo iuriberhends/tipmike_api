@@ -1,0 +1,525 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 14,
+  "ordem_no_curso": "14.00",
+  "titulo": "Conjunto dos Números Irracionais e Reais",
+  "codigo_aula": "264354",
+  "video_id": "aL0jEQS7sWw=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:35:00",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/aL0jEQS7sWw%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408676%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Conjunto dos Números Irracionais e Reais\n\n## Contexto e retomada\nVamos dar continuação à nossa matriz de Matemática. Estamos trabalhando conjuntos numéricos. Já falamos sobre naturais, inteiros e racionais, suas propriedades e operações. O que importa é: nossa ferramenta de trabalho na Matemática são os números. E uma parte dessa ferramenta pode ser algébrica, com letras também. \n\nAgora, muito importante: vamos para o conjunto dos irracionais.\n\n## Introdução aos Irracionais\nQuem são vocês, números irracionais? A letrinha que representa os irracionais é I. Os números racionais são representados por Q. Os irracionais não admitem serem escritos na forma de fração, em que o numerador e o denominador são inteiros e o denominador é diferente de zero. Ou seja, eu não consigo colocar um número irracional em forma de fração.\n\nExemplo: 2/3 é um número racional. Por quê? Porque o “a” pertence aos inteiros e o “b” pertence aos inteiros, com b diferente de zero. Isso é um número racional: quando eu consigo escrever como fração, com numerador inteiro e denominador inteiro, diferente de zero. Isso é ser racional.\n\nEntão, como é que eu sei que é irracional? Pela negação: se não é racional, é irracional.\n\n## Testando exemplos: raiz de 2 sobre 3\nVamos pegar um exemplo: raiz de 2 sobre 3. Será que esse número é racional ou irracional?\n\nPara ser racional, o numerador precisa ser inteiro e o denominador precisa ser inteiro, diferente de zero. Em raiz de 2 sobre 3, o denominador é 3, que é inteiro, beleza. Mas o numerador é raiz de 2. Raiz de 2 é um número inteiro? Não. Raiz de 2 é uma dízima não periódica. Se você extrair essa raiz quadrada, vai dar 1,41421356... e vai embora, sem período.\n\nEntão, como o numerador não é inteiro, não consigo escrever raiz de 2/3 como fração de inteiros no formato a/b com a e b inteiros. Logo, raiz de 2/3 é irracional. Já os racionais, nós conseguimos colocar em forma de fração.\n\n## Onde aparecem os irracionais\nEstudos em geometria reforçam a aparição de irracionais. Quando pensamos no Teorema de Pitágoras, por exemplo: a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa. Considerando um quadrado de lado 1 por 1, a diagonal será a hipotenusa de um triângulo retângulo formado pelos lados do quadrado. \n\nAplicando Pitágoras: d^2 = 1^2 + 1^2 = 2. Então d = raiz de 2. E raiz de 2 é irracional, como já falamos: é uma dízima não periódica, vai embora sem repetir. Isso é importante: dízimas periódicas pertencem aos racionais; dízimas não periódicas, como raiz de 2, pertencem aos irracionais.\n\n## Dízimas periódicas são racionais\nRelembrando: dízimas periódicas pertencem aos racionais porque conseguimos colocar em forma de fração. Por exemplo:\n- 0,353535... é uma dízima periódica. Podemos transformar em fração: 35/99. Então é racional.\n\n> 🎯 Dicas de prova: Dígitos que se repetem em padrão (dízima periódica) caracterizam números racionais.\n\nJá no caso de raiz de 2, não temos repetição periódica. É uma dízima não periódica, então não é racional.\n\n## O número π\nOutro número irracional muito usado é o π. Ele foi descoberto pela razão entre o comprimento da circunferência e o seu diâmetro. Faça a experiência em casa: pegue um barbante, meça a circunferência de qualquer objeto circular e depois divida pelo diâmetro. Independente do tamanho da circunferência, essa divisão vai dar aproximadamente 3,14159..., que é o π.\n\nPor isso, π é um número irracional: é uma dízima não periódica.\n\n> 🎯 Dicas de prova: π é irracional. Definição: π = C/d (comprimento da circunferência dividido pelo diâmetro).\n\n## O número de ouro (φ)\nOutro número importante é o número de ouro, φ, que vem da chamada “divina proporção”. Ele também é considerado irracional. Esse número aparece em contextos de estética, arte, natureza, e você vai encontrar questões sobre isso em concursos públicos. O número de ouro surge relacionado à sequência de Fibonacci.\n\nVamos lembrar a sequência de Fibonacci:\n0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...\nCada termo é a soma dos dois anteriores. Se você pegar termos consecutivos e dividir um pelo outro, por exemplo:\n- 34/21 ≈ 1,619...\n- 21/13 ≈ 1,615...\nEssas razões vão se aproximando de φ ≈ 1,618..., que é irracional.\n\nEssa proporção aparece em galáxias, corais, girassóis, formações de rochas e, historicamente, nas esculturas gregas, onde se buscava uma proporção agradável aos olhos, a “divina proporção”.\n\n> 🎯 Dicas de prova: A razão entre termos consecutivos da sequência de Fibonacci tende ao número de ouro φ (irracional).\n\n## O número e\nOutro importante é o número de Napier, o e, que surge nos estudos de logaritmos e exponenciais. Também é um número irracional. Aproximadamente, e ≈ 2,718...\n\nRecapitulando:\n- π é uma dízima não periódica → irracional.\n- φ é uma dízima não periódica → irracional.\n- e é uma dízima não periódica → irracional.\n- raiz de 2 é dízima não periódica → irracional.\n- Dízimas periódicas (como 0,353535...) → racionais.\n\n## Conjunto dos Números Reais\nA partir de agora, como já vimos os quatro conjuntos numéricos — naturais, inteiros, racionais e irracionais — vamos falar dos reais.\n\nConjuntos reais nada mais são do que a união desses quatro conjuntos. Os reais são a união dos racionais com os irracionais. Os naturais e os inteiros já estão contidos dentro dos racionais.\n\n> 🎯 Dicas de prova: R = Q ∪ I. Relações de inclusão: N ⊂ Z ⊂ Q ⊂ R, e I está fora de Q (conjuntos disjuntos entre si), mas ambos dentro de R.\n\nOs irracionais e os racionais são conjuntos separados: não têm nada em comum. Não existe número que seja racional e irracional ao mesmo tempo.\n\nTodo natural é inteiro. Todo inteiro é racional. E racionais e irracionais, juntos, formam os reais.\n\n## Questões e análises\nVamos a uma bateria de questões, por exemplo, de 2019, treinamento sobre números reais.\n\nAfirmativa 1: “É correto afirmar que todas as raízes inexatas são irracionais.”\nExemplo: raiz de 5, raiz de 2 — são inexatas e são irracionais. Mas cuidado: raiz de 4 = 2, que é um número natural, inteiro e racional. Então nem toda raiz é irracional; apenas as que não resultam em inteiros (as “inexatas” no sentido de não serem raízes exatas de quadrados perfeitos). Do jeito que a afirmativa costuma aparecer, se tomar “inexata” como “não inteira”, então sim, tendem a ser irracionais. Mas quando generaliza sem cuidado, cai em erro se confundir com raízes exatas. Como a questão colocou raiz de 4 no final, concluímos: a afirmativa é falsa.\n\nAfirmativa 2: “O resultado da multiplicação de 0,8 por 2,8 é maior que 2,87 e menor que 3,02.”\nVamos calcular: 0,8 × 2,8 = 2,24. 2,24 não é maior que 2,87. Então a afirmativa é falsa.\n\nConclusão: as duas afirmativas são falsas.\n\n## Fechamento sobre os Reais\nPara finalizar: em muitos concursos, perguntam quem são os reais. Resposta: os reais são a união dos racionais com os irracionais. Os naturais estão contidos nos inteiros, que estão contidos nos racionais. Os irracionais são disjuntos dos racionais, mas ambos pertencem aos reais.\n\nTodo natural é inteiro, todo inteiro é racional. Racionais e irracionais formam os reais.\n\nNo próximo bloco, partimos para questões de concursos públicos para consolidar o conteúdo de naturais, inteiros, racionais, irracionais e reais.",
+  "transcricao_meta": {
+    "title": "Conjunto dos Números Irracionais e Reais",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 32663,
+    "createdAt": "2026-01-30T14:26:06.429Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: conjunto dos números irracionais e reais, com foco em definição, identificação rápida, conversões de dízima, raízes, constantes especiais (π e φ), relações entre conjuntos numéricos e comparações numéricas.\nPrincipais pontos: \n- Critério de racionalidade (fração com inteiros) vs irracionalidade (decimal infinita não periódica).\n- Conversão de dízima periódica em fração e teste rápido.\n- Inclusões de conjuntos: N ⊂ Z ⊂ Q e R = Q ∪ I (com Q ∩ I = ∅).\n\n## 1. Base / Conceitos Fundamentais\n- **Números racionais (Q)**: Todo número que pode ser escrito como fração a/b, com:\n  - **numerador inteiro** e\n  - **denominador inteiro ≠ 0**.\n  - Decimais: finitos ou **dízimas periódicas**.\n- **Números irracionais (I)**: Não podem ser escritos como a/b com inteiros. Decimais: infinitos e **não periódicos**.\n- **Conjunto dos números reais (R)**: União de racionais e irracionais.\n  - R = Q ∪ I e Q ∩ I = ∅.\n- **Conjuntos numéricos e inclusão**:\n  - Naturais (N) ⊂ Inteiros (Z) ⊂ Racionais (Q) ⊂ Reais (R).\n\nTermos e exemplos essenciais:\n- Racionais: 2/3, 35/99, 0,353535...\n- Irracionais: √2, √3, π, φ (número áureo).\n- Constantes:\n  - **π**: ≈ 3,14... (decimal infinita não periódica).\n  - **φ (número áureo)**: ≈ 1,618... (irracional), ligado à sequência de Fibonacci.\n\n## 2. Como Funciona / Distinções\n- Racional vs Irracional:\n  - Fração a/b com inteiros e b ≠ 0 → racional.\n  - Não admite essa fração e decimal não periódico → irracional.\n- Dízimas:\n  - **Periódica** (repetição de bloco): sempre racional.\n  - **Não periódica**: irracional.\n- Raízes:\n  - **Raiz exata** (de quadrado perfeito): racional. Ex.: √4 = 2.\n  - **Raiz inexata** (de não quadrado perfeito): irracional. Ex.: √2, √3.\n- Relações de conjuntos:\n  - N ⊂ Z ⊂ Q; os irracionais ficam fora de Q mas dentro de R.\n  - Não existe número que seja racional e irracional ao mesmo tempo.\n\nTabela rápida\n- Forma fração a/b com inteiros e b ≠ 0: Racional\n- Decimal finito: Racional\n- Dízima periódica: Racional\n- Decimal infinito não periódico: Irracional\n- √n com n não sendo quadrado perfeito: Irracional\n- π, φ: Irracionais\n\n## 3. Aplicação Prática / Técnicas\n- Teste de racionalidade:\n  1) Tente escrever como a/b, com a, b inteiros e b ≠ 0.\n  2) Analise o decimal:\n     - Tem bloco repetindo? Racional.\n     - Não repete e não fecha como fração? Irracional.\n\n- Conversão de dízima periódica em fração:\n  - Período de 1 dígito: 0,aaaa... = a/9. Ex.: 0,777... = 7/9.\n  - Período de 2 dígitos: 0,ababab... = ab/99. Ex.: 0,353535... = 35/99.\n  - Observação: Para parte não periódica antes do período, usar a técnica geral (não exigida aqui, foque nos casos puros).\n\n- Classificação de raízes:\n  - Verifique se o radicando é quadrado perfeito.\n    - Se sim, a raiz é inteira (racional).\n    - Se não, a raiz é irracional.\n  - Frações com raiz: simplifique antes de concluir. Ex.: √9/3 = 1 (racional); já √2/3 é irracional, pois não há representação a/b com inteiros.\n\n- Reconhecimento de constantes:\n  - π: razão circunferência/diâmetro, ≈ 3,14..., irracional.\n  - φ: limite das razões de Fibonacci, ≈ 1,618..., irracional.\n\n## 4. Exemplos e Casos Resolvidos\n- 2/3: racional. Decimal = 0,666..., dízima periódica.\n- 0,353535...: racional. 0,353535... = 35/99.\n- √2: irracional. Geometria: diagonal de quadrado 1×1 tem d² = 2 → d = √2, decimal não periódica.\n- √2/3: irracional. Não há fração com inteiros equivalente.\n- √3: irracional (≈ 1,73).\n- √4: 2, racional (natural, inteiro e racional).\n- π: irracional. Definido como circunferência/diâmetro (≈ 3,14...).\n- φ: irracional. Relação com Fibonacci:\n  - 21/13 ≈ 1,61...\n  - 34/21 ≈ 1,619...\n  - As razões vão se aproximando de φ.\n- Comparações numéricas:\n  - 0,8 × 2,8 = 2,24.\n    - 2,24 < 2,87 e 2,24 < 3,02.\n    - Afirmativa “maior que 2,87 e menor que 3,02” é falsa.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova\n> Denominador zero é proibido: fração com “/0” não define número.\n\n- Confundir dízima:\n  - Dízima periódica → RACIONAL (ex.: 0,353535...).\n  - Dízima não periódica → IRRACIONAL.\n- “Toda raiz é irracional”: falso. Raiz de quadrado perfeito é racional (ex.: √4 = 2).\n- “Fração com raiz é irracional”: nem sempre. Simplifique antes (ex.: √9/3 = 1).\n- Racionais vs Irracionais:\n  - São disjuntos: um número não pode ser dos dois conjuntos.\n  - Reais = racionais ∪ irracionais.\n- Formas decimais:\n  - Decimal finito sempre é racional (pode virar fração com denominador potência de 10 simplificada).\n- Identificação de constantes:\n  - π e φ são irracionais; não aceitar aproximações como “3,14” ou “1,61” como exatas — essas aproximações são racionais, mas os números que aproximam (π e φ) são irracionais.\n\n> Dica de prova\n> Para classificar rapidamente: tente fração com inteiros; olhe se a expansão decimal repete; verifique se a raiz é de quadrado perfeito. Isso resolve a maioria das questões em segundos.",
+  "resumo_bolso": "# Conjunto dos Números Irracionais e Reais\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Racionais (Q)**: Podem ser escritos como **a/b**, com **a, b inteiros** e **b ≠ 0**. Decimais **finitos** ou **dízimas periódicas**.\n* **Irracionais (I)**: **Não** podem ser escritos como a/b com inteiros. Decimais **infinitos não periódicos**.\n* **Reais (R)**: União de racionais e irracionais. **R = Q ∪ I** e **Q ∩ I = ∅**.\n* **Inclusões**: **N ⊂ Z ⊂ Q ⊂ R**. Irracionais: **fora de Q**, mas **dentro de R**.\n* **Dízima periódica**: Decimal infinita com **bloco que se repete** (ex.: 0,353535...). **Sempre racional**.\n* **Decimal infinito não periódico**: Não fecha em padrão de repetição. **Irracional**.\n* **Raiz exata**: Raiz de **quadrado perfeito** → resultado **inteiro** → **racional** (ex.: √4 = 2).\n* **Raiz inexata**: Raiz de **não quadrado perfeito** → **irracional** (ex.: √2, √3).\n* **Constantes especiais**:\n  * **π ≈ 3,14...**: decimal infinita não periódica → **irracional**.\n  * **φ ≈ 1,618...** (número áureo): **irracional**, ligado à sequência de Fibonacci.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Racionais (Q) vs Irracionais (I)\n\n| Aspecto          | Racionais (Q)                                      | Irracionais (I)                                  |\n|------------------|----------------------------------------------------|--------------------------------------------------|\n| Forma            | a/b, a, b inteiros, b ≠ 0                          | Não admite forma a/b com inteiros               |\n| Decimal          | Finito ou dízima **periódica**                     | Infinito **não periódico**                       |\n| Exemplos típicos | 2/3, 35/99, 0,353535...                            | √2, √3, π, φ                                     |\n| Relação com R    | Subconjunto de R                                   | Subconjunto de R, mas fora de Q                 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Critério de racionalidade**\n\n* **Regra**:\n  * Se **pode** ser escrito como **a/b** (a, b inteiros, b ≠ 0) → **racional**.\n  * Se **não pode** e decimal é **infinita não periódica** → **irracional**.\n* **Exemplo**: 0,353535... → 35/99 → racional.\n\n---\n\n**2. Tabela rápida de classificação**\n\n* **Fração a/b com inteiros, b ≠ 0** → **Racional**.\n* **Decimal finito** → **Racional**.\n* **Dízima periódica** → **Racional**.\n* **Decimal infinito não periódico** → **Irracional**.\n* **√n com n não sendo quadrado perfeito** → **Irracional**.\n* **π, φ** → **Irracionais**.\n\n---\n\n**3. Conversão de dízima periódica “pura” em fração**\n\n* **Período 1 dígito**:  \n  0,aaaa... = **a/9**.  \n  Ex.: 0,777... = 7/9.\n* **Período 2 dígitos**:  \n  0,ababab... = **ab/99**.  \n  Ex.: 0,353535... = 35/99.\n\n---\n\n**4. Classificação de raízes e frações com raiz**\n\n* Verifique se o radicando é quadrado perfeito:\n  * Se **sim**, a raiz é inteira (**racional**). Ex.: √4 = 2.\n  * Se **não**, a raiz é **irracional**. Ex.: √2, √3.\n* Frações com raiz: **simplifique antes de concluir**.  \n  Ex.: √9/3 = 1 (racional); já √2/3 é irracional (não há representação a/b com inteiros).\n\n---\n\n**5. Relações entre conjuntos numéricos**\n\n* **N ⊂ Z ⊂ Q ⊂ R**.\n* **R = Q ∪ I**.\n* **Q ∩ I = ∅** (não existe número que seja racional e irracional ao mesmo tempo).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Dízima periódica → **RACIONAL** (ex.: 0,353535...). Dízima **não periódica** → **IRRACIONAL**.\n* “Toda raiz é irracional”: falso. Raiz de quadrado perfeito é racional (ex.: √4 = 2).\n* “Fração com raiz é sempre irracional”: falso. Simplifique antes (ex.: √9/3 = 1).\n* Denominador zero é proibido: fração com “/0” **não define número**.\n* π e φ são irracionais; aproximações como “3,14” ou “1,61” são **racionais** e não devem ser tomadas como valores exatos.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **racionais (Q)** de **irracionais (I)** pelo **tipo de decimal** e pela **forma a/b**?\n* Memorizei que **dízima periódica** é **sempre racional**?\n* Sei que **decimal finito** → **racional**, e **infinito não periódico** → **irracional**?\n* Lembro que **√n** é racional **só** se n for **quadrado perfeito**?\n* Fixei as relações: **N ⊂ Z ⊂ Q ⊂ R**, **R = Q ∪ I**, **Q ∩ I = ∅**?\n* Sei converter **0,aaaa... → a/9** e **0,ababab... → ab/99**?\n* Lembro que **π** e **φ** são **irracionais**, e que suas aproximações decimais são **racionais**?\n* Antes de classificar, estou checando: **fração possível? decimal repete? raiz de quadrado perfeito? fração com raiz foi simplificada?**",
+  "mapa_mental": "# 🧮 Conjunto dos Números Irracionais e Reais\n## 🎯 Conjuntos Numéricos\n### 💡 Números Naturais N\n- Contagem\n- Inclui zero\n- Subconjunto de Z\n### 💡 Números Inteiros Z\n- Positivos\n- Negativos\n- Zero\n- Subconjunto de Q\n### 💡 Números Racionais Q\n- Forma a/b inteiros\n- Denominador ≠ 0\n- Decimal finito\n- Dízima periódica\n### 💡 Números Irracionais I\n- Não forma a/b inteiros\n- Decimal infinita\n- Decimal não periódica\n- Fora de Q\n### 💡 Números Reais R\n- União Q e I\n- R = Q ∪ I\n- Q ∩ I = ∅\n- Linha real\n\n## 🧩 Critérios de Classificação\n### 💡 Critério Racionalidade\n- Escrever como a/b\n- a inteiro\n- b inteiro ≠ 0\n- Possível → racional\n- Impossível → irracional\n### 💡 Forma Decimal\n- Decimal finito → racional\n- Dízima periódica → racional\n- Infinita não periódica → irracional\n- Aproximação decimal → racional\n### 💡 Dízimas Periódicas\n- Bloco repetido\n- Período 1 dígito\n- Período 2 dígitos\n- Sempre racionais\n### 💡 Raízes Quadradas\n- Radicando quadrado perfeito\n- Raiz exata racional\n- Radicando não perfeito\n- Raiz irracional\n### 💡 Frações com Raiz\n- Simplificar primeiro\n- Raiz exata no numerador\n- Cancelamento possível\n- Resultado pode ser racional\n### 💡 Constantes Especiais\n- π irracional\n- φ irracional\n- Decimais infinitas\n- Não periódicas\n\n## 🧮 Técnicas de Prova\n### 💡 Teste Rápido Número\n- Tentar fração a/b\n- Observar decimal\n- Verificar repetição\n- Checar finitude\n### 💡 Teste Rápido Dízima\n- Identificar período\n- Período 1 → /9\n- Período 2 → /99\n- Dízima pura\n### 💡 Teste Rápido Raiz\n- Analisar radicando\n- Quadrado perfeito\n- Não perfeito\n- Classificar racionalidade\n### 💡 Relações Entre Conjuntos\n- N ⊂ Z\n- Z ⊂ Q\n- Q ⊂ R\n- I ⊂ R\n### 💡 Erros Frequentes\n- Toda raiz irracional\n- Toda fração racional\n- Confundir dízimas\n- π como 3,14 exato\n- φ como 1,61 exato",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Números Racionais",
+      "description": "Números Racionais — 2 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual condição os inteiros a e b devem satisfazer para formar a fração a/b?",
+          "back": "O numerador **a** e o denominador **b** devem pertencer aos inteiros, com **b** diferente de zero.",
+          "hint": "Pense na restrição algébrica do divisor.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-racionais"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Como são classificadas as dízimas periódicas quanto aos conjuntos numéricos?",
+          "back": "Conjunto dos números **racionais**.",
+          "hint": "Não são números irracionais.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "dizimas-periodicas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Números Irracionais",
+      "description": "Números Irracionais — 4 cards",
+      "cards": [
+        {
+          "id": "card-3",
+          "front": "O que caracteriza a escrita decimal de um número irracional?",
+          "back": "Uma dízima **aperiódica**.",
+          "hint": "O oposto de periódico.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-irracionais"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "A qual conjunto pertence √2?",
+          "back": "Conjunto dos números **irracionais**.",
+          "hint": "Não pode ser escrito como fração.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-irracionais"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é o valor de √4?",
+          "back": "**2**",
+          "hint": "Calcule a raiz quadrada exata.",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-inteiros"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-6",
+          "front": "Como é classificado o número π quanto à racionalidade?",
+          "back": "Número **irracional**.",
+          "hint": "É uma constante geométrica famosa.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-irracionais"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Conjunto dos Reais",
+      "description": "Conjunto dos Reais — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual operação entre racionais e irracionais forma o conjunto dos números reais?",
+          "back": "A **união** entre os racionais e os irracionais.",
+          "hint": "Operação de conjunto que soma tudo.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-reais"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a interseção entre os conjuntos dos racionais e dos irracionais?",
+          "back": "Conjunto **vazio**.",
+          "hint": "Existe algum número que é ambos?",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-reais"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual relação de inclusão existe entre os números naturais e os inteiros?",
+          "back": "Os números naturais estão **contidos** nos inteiros.",
+          "hint": "Pense na hierarquia dos conjuntos.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "subconjuntos"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Fibonacci e Proporção",
+      "description": "Fibonacci e Proporção — 3 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como é obtido cada termo da sequência de Fibonacci a partir dos anteriores?",
+          "back": "Somando os **dois termos anteriores**.",
+          "hint": "Pense na regra de formação aditiva.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "fibonacci"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Para qual valor se aproxima a razão entre termos consecutivos de Fibonacci?",
+          "back": "Ao **número de ouro**.",
+          "hint": "Conhecido como phi ou proporção áurea.",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "sequencias",
+            "fibonacci"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual é o comprimento da diagonal de um quadrado de lado 1?",
+          "back": "**Raiz de 2**",
+          "hint": "Aplique o Teorema de Pitágoras.",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "geometria",
+            "numeros-irracionais"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a principal característica que define um número racional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Pode ser representado por uma dízima não periódica com infinitas casas decimais",
+          "correct": false,
+          "explanation": "Incorreta. Números representados por dízimas não periódicas com infinitas casas decimais são, por definição, números irracionais. Um exemplo clássico é o número Pi (π) ou a raiz quadrada de 2."
+        },
+        {
+          "id": "b",
+          "text": "Pode ser representado por uma fração com numerador e denominador inteiros, sendo o denominador diferente de zero",
+          "correct": true,
+          "explanation": "Correta. A definição fundamental de um número racional é que ele pode ser expresso como uma razão (fração) entre dois números inteiros, onde o denominador não pode ser zero. Isso abrange números inteiros, frações e dízimas periódicas."
+        },
+        {
+          "id": "c",
+          "text": "Pode ser expresso como resultado da divisão de números irracionais por números inteiros",
+          "correct": false,
+          "explanation": "Incorreta. A divisão de números irracionais por números inteiros (ou mesmo por outros irracionais) pode resultar em um número irracional. Por exemplo, (√2) / 2 ainda é um número irracional. Para ser racional, a divisão deve ser entre inteiros, com o denominador não nulo."
+        },
+        {
+          "id": "d",
+          "text": "Pode ser obtido pela extração de raízes quadradas inexatas de números naturais",
+          "correct": false,
+          "explanation": "Incorreta. A extração de raízes quadradas inexatas de números naturais geralmente resulta em números irracionais, como a raiz quadrada de 2 ou a raiz quadrada de 3, pois suas representações decimais são dízimas infinitas e não periódicas."
+        }
+      ],
+      "explanation": "Correta. A definição fundamental de um número racional é que ele pode ser expresso como uma razão (fração) entre dois números inteiros, onde o denominador não pode ser zero. Isso abrange números inteiros, frações e dízimas periódicas.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual das seguintes afirmações caracteriza corretamente os números irracionais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "São números que incluem todas as dízimas periódicas e podem ser convertidos em frações",
+          "correct": false,
+          "explanation": "Incorreta. Dízimas periódicas são, por definição, números racionais, pois podem ser convertidas em frações. Por exemplo, 0,333... é igual a 1/3."
+        },
+        {
+          "id": "b",
+          "text": "São números que podem ser expressos como frações de numerador e denominador inteiros não nulos",
+          "correct": false,
+          "explanation": "Incorreta. Esta é a definição de números racionais, não irracionais. Números irracionais, por sua natureza, não podem ser expressos como uma razão de dois inteiros."
+        },
+        {
+          "id": "c",
+          "text": "São números que não podem ser representados em forma de fração e correspondem a dízimas não periódicas",
+          "correct": true,
+          "explanation": "Correta. A característica distintiva dos números irracionais é que eles não podem ser escritos como uma fração (razão) de dois números inteiros e, consequentemente, sua representação decimal é uma dízima infinita e não periódica."
+        },
+        {
+          "id": "d",
+          "text": "São números que pertencem ao conjunto dos inteiros e podem ser negativos ou positivos",
+          "correct": false,
+          "explanation": "Incorreta. Números inteiros (positivos ou negativos) são um subconjunto dos números racionais. Números irracionais não são inteiros, pois não possuem uma representação decimal finita ou periódica."
+        }
+      ],
+      "explanation": "Correta. A característica distintiva dos números irracionais é que eles não podem ser escritos como uma fração (razão) de dois números inteiros e, consequentemente, sua representação decimal é uma dízima infinita e não periódica.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a relação de inclusão correta entre os conjuntos numéricos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os números irracionais estão contidos nos racionais, que estão contidos nos reais",
+          "correct": false,
+          "explanation": "Incorreta. Os números irracionais (I) e racionais (Q) são conjuntos disjuntos; um não está contido no outro. A união de Q e I forma os números reais (R), mas não há inclusão de I em Q."
+        },
+        {
+          "id": "b",
+          "text": "Os números inteiros estão contidos nos naturais, que estão contidos nos irracionais",
+          "correct": false,
+          "explanation": "Incorreta. Os números naturais estão contidos nos inteiros, mas não o contrário. Além disso, os números naturais não estão contidos nos irracionais; são conjuntos disjuntos."
+        },
+        {
+          "id": "c",
+          "text": "Os números racionais estão contidos nos inteiros, que estão contidos nos naturais",
+          "correct": false,
+          "explanation": "Incorreta. Os números racionais contêm os inteiros, e os inteiros contêm os naturais. A relação de inclusão apresentada está invertida em relação à hierarquia correta."
+        },
+        {
+          "id": "d",
+          "text": "Os números naturais estão contidos nos inteiros, que estão contidos nos racionais",
+          "correct": true,
+          "explanation": "Correta. A hierarquia padrão dos conjuntos numéricos estabelece que os números naturais (N = {0, 1, 2, ...}) estão contidos nos números inteiros (Z = {..., -2, -1, 0, 1, 2, ...}), e os números inteiros, por sua vez, estão contidos nos números racionais (Q = {p/q | p ∈ Z, q ∈ Z, q ≠ 0})."
+        }
+      ],
+      "explanation": "Correta. A hierarquia padrão dos conjuntos numéricos estabelece que os números naturais (N = {0, 1, 2, ...}) estão contidos nos números inteiros (Z = {..., -2, -1, 0, 1, 2, ...}), e os números inteiros, por sua vez, estão contidos nos números racionais (Q = {p/q | p ∈ Z, q ∈ Z, q ≠ 0}).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Por que a raiz quadrada de 2 é classificada como um número irracional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque resulta em uma dízima não periódica que não pode ser expressa como fração de inteiros",
+          "correct": true,
+          "explanation": "Correta. A raiz quadrada de 2 (√2) é um número irracional porque sua representação decimal é infinita e não periódica (aproximadamente 1.41421356...). Essa característica impede que seja expressa como uma fração exata de dois números inteiros."
+        },
+        {
+          "id": "b",
+          "text": "Porque resulta em uma dízima periódica que pode ser expressa como fração de inteiros",
+          "correct": false,
+          "explanation": "Incorreta. Se a raiz quadrada de 2 resultasse em uma dízima periódica, ela seria um número racional, o que contradiz sua classificação. A dízima periódica é uma característica dos números racionais."
+        },
+        {
+          "id": "c",
+          "text": "Porque é um número negativo que não pertence aos conjuntos dos naturais",
+          "correct": false,
+          "explanation": "Incorreta. A raiz quadrada de 2 é um número positivo, não negativo. Embora não pertença aos naturais, essa não é a razão principal para ser irracional. A irracionalidade se refere à sua representação decimal e à impossibilidade de ser escrita como fração de inteiros."
+        },
+        {
+          "id": "d",
+          "text": "Porque é resultado de uma operação entre dois números racionais distintos",
+          "correct": false,
+          "explanation": "Incorreta. Embora √2 seja o resultado de uma operação (radiciação), o fato de ser uma operação entre racionais (raiz quadrada de 2) não garante que o resultado seja racional. A irracionalidade de √2 foi demonstrada por Pitágoras e é um exemplo clássico de número que não pode ser expresso como fração de inteiros."
+        }
+      ],
+      "explanation": "Correta. A raiz quadrada de 2 (√2) é um número irracional porque sua representação decimal é infinita e não periódica (aproximadamente 1.41421356...). Essa característica impede que seja expressa como uma fração exata de dois números inteiros.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "O que representa o conjunto dos números reais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto dos números inteiros excluindo os números naturais",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto dos números inteiros excluindo os naturais seria apenas os inteiros negativos. Isso é um conjunto muito restrito e não representa os números reais, que incluem todos os racionais e irracionais."
+        },
+        {
+          "id": "b",
+          "text": "O conjunto formado apenas pelos números que podem ser expressos como frações",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto formado apenas pelos números que podem ser expressos como frações é a definição do conjunto dos números racionais (Q), que é apenas uma parte dos números reais. Os irracionais não podem ser expressos dessa forma."
+        },
+        {
+          "id": "c",
+          "text": "A união exclusiva dos números naturais com os números inteiros negativos",
+          "correct": false,
+          "explanation": "Incorreta. Esta união formaria apenas um subconjunto dos inteiros (todos os inteiros, mas não todos os reais). Os números reais são muito mais abrangentes, incluindo frações e dízimas infinitas não periódicas."
+        },
+        {
+          "id": "d",
+          "text": "A união dos números racionais com os números irracionais",
+          "correct": true,
+          "explanation": "Correta. O conjunto dos números reais (R) é definido como a união de todos os números racionais (Q) e todos os números irracionais (I). Ele abrange todos os números que podem ser representados em uma reta numérica."
+        }
+      ],
+      "explanation": "Correta. O conjunto dos números reais (R) é definido como a união de todos os números racionais (Q) e todos os números irracionais (I). Ele abrange todos os números que podem ser representados em uma reta numérica.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a característica fundamental que diferencia uma dízima periódica de uma dízima não periódica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A dízima periódica resulta de divisões por números primos, enquanto a não periódica resulta de divisões por números compostos",
+          "correct": false,
+          "explanation": "Incorreta. A natureza periódica ou não periódica de uma dízima não é determinada pela primalidade ou composição dos números envolvidos na divisão. Por exemplo, 1/3 (com 3 sendo primo) resulta em uma dízima periódica (0,333...), e 1/6 (com 6 sendo composto) também resulta em uma dízima periódica (0,1666...). A classificação depende da estrutura do resto da divisão, não da fatoração dos números."
+        },
+        {
+          "id": "b",
+          "text": "A dízima periódica possui um padrão de repetição e pertence aos racionais, enquanto a não periódica não possui padrão e pertence aos irracionais",
+          "correct": true,
+          "explanation": "Correta. Uma dízima periódica é um número racional caracterizado por um padrão de algarismos que se repete infinitamente após a vírgula, permitindo sua representação como uma fração de números inteiros. Em contraste, uma dízima não periódica, como o valor da raiz quadrada de 2, não possui um padrão de repetição em suas casas decimais e, por isso, é classificada como um número irracional."
+        },
+        {
+          "id": "c",
+          "text": "A dízima periódica possui infinitas casas decimais distintas, enquanto a não periódica possui casas decimais finitas",
+          "correct": false,
+          "explanation": "Incorreta. Tanto as dízimas periódicas quanto as não periódicas possuem infinitas casas decimais. A diferença crucial reside na presença ou ausência de um padrão de repetição nessas casas decimais, não na sua finitude."
+        },
+        {
+          "id": "d",
+          "text": "A dízima periódica pode ser negativa ou positiva, enquanto a não periódica é sempre positiva",
+          "correct": false,
+          "explanation": "Incorreta. A periodicidade ou não periodicidade de uma dízima se refere à estrutura de seus algarismos após a vírgula, e não ao seu sinal. Ambos os tipos de dízimas podem ser positivos ou negativos. Por exemplo, -0,333... é uma dízima periódica negativa, e -π é uma dízima não periódica negativa."
+        }
+      ],
+      "explanation": "Correta. Uma dízima periódica é um número racional caracterizado por um padrão de algarismos que se repete infinitamente após a vírgula, permitindo sua representação como uma fração de números inteiros. Em contraste, uma dízima não periódica, como o valor da raiz quadrada de 2, não possui um padrão de repetição em suas casas decimais e, por isso, é classificada como um número irracional.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é a propriedade matemática que caracteriza o número pi (π) como irracional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É resultado da soma de frações de números inteiros consecutivos, gerando um padrão periódico",
+          "correct": false,
+          "explanation": "Incorreta. Embora existam métodos para calcular pi usando séries infinitas, a soma de frações de números inteiros consecutivos não gera pi de forma a produzir um padrão periódico. A natureza irracional de pi significa que sua expansão decimal é sempre não periódica."
+        },
+        {
+          "id": "b",
+          "text": "É definido como a razão entre a área e o raio de um círculo, produzindo sempre um número racional",
+          "correct": false,
+          "explanation": "Incorreta. A área de um círculo é dada pela fórmula A = πr², onde r é o raio. A razão entre a área e o raio de um círculo não é pi, mas sim πr. Mesmo que a intenção fosse a razão entre a área e o raio ao quadrado (A/r²), que é igual a pi, a afirmação de que isso produziria um número racional é falsa, pois pi é, por definição, um número irracional."
+        },
+        {
+          "id": "c",
+          "text": "É obtido pela razão entre a circunferência e o diâmetro de qualquer círculo, resultando em uma dízima não periódica",
+          "correct": true,
+          "explanation": "Correta. O número pi (π) é uma constante matemática que expressa a razão entre a circunferência de qualquer círculo e seu diâmetro. Essa razão é sempre constante e, fundamentalmente, sua representação decimal é infinita e não periódica, o que o classifica como um número irracional, pois não pode ser escrito como uma fração exata de dois números inteiros."
+        },
+        {
+          "id": "d",
+          "text": "É obtido pela razão entre o diâmetro e a circunferência de qualquer círculo, resultando em uma dízima finita",
+          "correct": false,
+          "explanation": "Incorreta. O número pi (π) é definido como a razão entre a circunferência e o diâmetro de um círculo, não o contrário. Além disso, a representação decimal de pi é infinita e não periódica, ou seja, não é uma dízima finita."
+        }
+      ],
+      "explanation": "Correta. O número pi (π) é uma constante matemática que expressa a razão entre a circunferência de qualquer círculo e seu diâmetro. Essa razão é sempre constante e, fundamentalmente, sua representação decimal é infinita e não periódica, o que o classifica como um número irracional, pois não pode ser escrito como uma fração exata de dois números inteiros.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando a sequência de Fibonacci (1, 1, 2, 3, 5, 8, 13, 21, 34...), qual propriedade matemática emerge quando se divide um termo pelo seu antecessor à medida que a sequência avança?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Os quocientes convergem para o número áureo (phi), que é um número irracional conhecido como divina proporção",
+          "correct": true,
+          "explanation": "Correta. À medida que se avança na sequência de Fibonacci, a razão entre um termo e seu antecessor (por exemplo, 34 dividido por 21, ou 21 dividido por 13) converge para o número áureo (phi, φ), que é aproximadamente 1,6180339887... Esse número irracional é conhecido como divina proporção e é frequentemente encontrado em padrões naturais e em obras de arte e arquitetura."
+        },
+        {
+          "id": "b",
+          "text": "Os quocientes convergem para o número pi (π), que representa a razão entre circunferência e diâmetro",
+          "correct": false,
+          "explanation": "Incorreta. O número pi (π ≈ 3,14159) é a razão entre a circunferência e o diâmetro de um círculo. Embora seja uma constante irracional importante, não é o valor para o qual convergem as razões dos termos consecutivos da sequência de Fibonacci."
+        },
+        {
+          "id": "c",
+          "text": "Os quocientes convergem para o número de Euler (e), que é um número irracional fundamental em logaritmos",
+          "correct": false,
+          "explanation": "Incorreta. O número de Euler (e ≈ 2,718) é uma constante matemática fundamental para logaritmos naturais e crescimento exponencial, mas não está relacionado à razão de termos consecutivos da sequência de Fibonacci. A convergência para 'e' ocorre em outros contextos matemáticos, como o limite de (1 + 1/n)^n quando n tende ao infinito."
+        },
+        {
+          "id": "d",
+          "text": "Os quocientes convergem para a raiz quadrada de 2, que é o primeiro número irracional descoberto historicamente",
+          "correct": false,
+          "explanation": "Incorreta. A raiz quadrada de 2 (√2 ≈ 1,41421) é um número irracional notável, historicamente um dos primeiros a serem reconhecidos como tal. No entanto, a razão entre termos consecutivos da sequência de Fibonacci converge para o número áureo, não para a raiz quadrada de 2."
+        }
+      ],
+      "explanation": "Correta. À medida que se avança na sequência de Fibonacci, a razão entre um termo e seu antecessor (por exemplo, 34 dividido por 21, ou 21 dividido por 13) converge para o número áureo (phi, φ), que é aproximadamente 1,6180339887... Esse número irracional é conhecido como divina proporção e é frequentemente encontrado em padrões naturais e em obras de arte e arquitetura.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "14_264354_Conjunto dos Números Irracionais e Reais.pdf",
+  "coletado_em": "2026-09-23T20:52:58"
+}

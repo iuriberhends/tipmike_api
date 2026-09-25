@@ -1,0 +1,469 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 16,
+  "ordem_no_curso": "16.00",
+  "titulo": "Conjuntos Numéricos - Treinamento",
+  "codigo_aula": "264356",
+  "video_id": "22WdnW7PhMQ=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:30",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/22WdnW7PhMQ%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408639%2C408662%2C408666%2C408676%2C408678%2C403825&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Treinamento\n\n## Aquecimento e contexto da aula\nVamos comigo, beleza? Finanças… essa partida, quando os números, nesses consumos, vêm naturais, internacionais, nacionais… E essa paixão por muitos momentos com vocês. Nada melhor do que fazer questões de concursos públicos, como a questão de número quatro. Vamos lá comigo!\n\n## Dízima periódica e divisão por zero\nQuestão 4: o que é uma dízima periódica? Já sabemos que as frações decimais são aquelas que podemos escrever na forma decimal. Uma dízima periódica é um número que, escrito na forma decimal, apresenta um algarismo ou um conjunto de algarismos que se repetem infinitamente. Sim ou não? Sim.\n\nE outra coisa: quando dividido por zero… amigão, para começar, não existe divisão. Na matemática, se eu pegar 3 dividido por 0, isso não existe. É importante ressaltar isso: divisão por zero não existe. Ponto final. Na matemática, divisão por zero, isso não é. Por essa observação, muito importante.\n\nVoltando: diz-se dízima periódica qualquer número não inteiro que apresenta infinitas casas decimais? Olha só, isso pode ser até uma dízima… Se eu colocar, por exemplo, a raiz de 2, ou colocar o número áureo, ou colocar o número e. Então, todos esses caras apresentam infinitas casas decimais, não são inteiros, mas não são dízimas periódicas. Raiz de 2 = 1,4142… São números que apresentam infinitas casas decimais, mas não periódicas. Na verdade, essa letra C fala de números irracionais, e não de dízimas periódicas. A gente vai reagir a isso no decorrer.\n\n## Clarificando o conceito de dízima periódica\nDízimas periódicas, beleza: lindas, módicas, as mesmas periódicas… A entrada, “é um número que pode ser escrito na forma de algarismos romanos”… nada a ver. Algarismo romano… não. Então, entrada não tem nada a ver; estamos falando de dízimas periódicas e números racionais.\n\nAlém disso, divisão por zero na matemática: não existe. Dízima periódica é um número que, na forma decimal, apresenta repetição: pode ser 0,333…, 2,444…, pode repetir apenas um número ou um bloco de números que se repete. 0,25 não é; 1,222… é uma dízima periódica.\n\nE só para registrar mais um pouquinho: quem são os outros números? A gente sempre estuda buscando mais informações, mas foco: você quer passar no concurso. Como é que passa? Compreendendo o conteúdo e praticando. Existem estratégias, mas não tem milagre que funcione em todas as questões. Os concursos estão cobrando cada vez mais conhecimento. Vamos juntos.\n\n## Frações do dia do estudante\nQuestão: analisaram a rotina diária do estudante. Descobriu-se que ele passa 5/12 do dia estudando. Beleza. Também faz atividades esportivas: 1/6 do dia. E passa 1/8 se alimentando. O resto do dia? Essa fração é o que eu quero. Qual a fração irredutível que representa a parte do dia que ele passa dormindo?\n\nQuando você tiver à sua frente frações — números racionais — como 5/12, 1/6, 1/8, uma boa é trabalhar com frações equivalentes e igualar denominadores. Fração irredutível é aquela que não tem como simplificar mais.\n\nVamos tirar o mínimo múltiplo comum dos denominadores 12, 6 e 8: MMC = 24. Por quê? 12, 6, 8 — multiplicando e testando: por 2, por 3, por 2… chegamos a 24.\n\nAgora, transformando:\n- 24 ÷ 12 = 2 → 5 × 2 = 10\n- 24 ÷ 6 = 4 → 1 × 4 = 4\n- 24 ÷ 8 = 3 → 1 × 3 = 3\n\nSomando as partes usadas: 10 + 4 + 3 = 17. O inteiro é 24/24. Se já usei 17/24, sobram 24 − 17 = 7 partes. Logo, a fração que representa o tempo dormindo é 7/24. Beleza?\n\nIsso é uma fração, um número racional. Interpretação: o denominador indica em quantas partes iguais o inteiro foi dividido; o numerador indica quantas partes foram usadas.\n\n> 🎯 Dicas de prova: Para somar frações com denominadores diferentes, iguale denominadores usando o MMC. Ao final, verifique se a fração pode ser simplificada; se não, ela já é irredutível.\n\n## Campanha de vacinação: cães e gatos\nPróxima questão: para melhorar a saúde, uma campanha de vacinação vacinou, em um dia, 280 animais. O número de gatos vacinados corresponde a 3/5 do número de cães vacinados. Quantos cães foram vacinados nesse dia?\n\nSeja C o número de cães; então gatos = (3/5)C. Total: C + (3/5)C = 280. Somando: (8/5)C = 280 → C = 280 × (5/8) = 35 × 5 = 175. Logo, 175 cães foram vacinados.\n\nSe quiser conferir gatos: (3/5) × 175 = 105. 175 + 105 = 280, fechou.\n\n> 🎯 Dicas de prova: Quando a questão diz “A corresponde a p/q de B”, traduza para A = (p/q)B. Some as partes para igualar ao total e resolva.\n\n## Conjuntos numéricos e motivação\nContinuamos: estamos fazendo questões que envolvem números, fórmulas, mas entendendo os conjuntos numéricos. Eu quero que você saiba quem são os naturais, inteiros, racionais, irracionais. Por que eu comecei com esse assunto? Porque lá na frente, quando você for para equações de segundo grau, precisa saber classificar números: uma raiz pode ser real, pode ser complexa. Apoia a base de tudo.\n\n## Problema de salário e frações\nDepois de fechar esse bloco: José gastou 2/3 de 4/5 de seu salário. Ele gastou (2/3) × (4/5) do salário: isso dá 8/15. E ainda restaram 420 reais. Nessas condições, qual o salário?\n\nSe ele gastou 8/15, restou 7/15. A questão diz: 7/15 do salário = 420. Então salário = 420 × (15/7) = 60 × 15 = 900. O salário de José é 900 reais. O que ele gastou: 8/15 de 900 = 8 × 60 = 480. Faz sentido: 900 − 480 = 420.\n\n> 🎯 Dicas de prova: Quando a questão informa “restou X”, use a fração complementar: 1 − fração gasta. Monte a equação diretamente com a parte que sobrou.\n\n## Proposições lógicas com porcentagens e primos\nQuestão de raciocínio lógico: indicar o valor lógico (V/F) das proposições e assinalar a sequência correta. Muitas questões misturam conjuntos numéricos e porcentagens. Primeiro resolvemos a matemática, depois aplicamos a lógica.\n\nProposição 1: “2% ao quadrado = 4%”. Como trabalhar? Tira o símbolo de porcentagem: 2% = 2/100. Elevando ao quadrado: (2/100)^2 = 4/10.000 = 0,0004 = 0,04%. Já 4% = 0,04. Não são iguais. Logo, a afirmação “(2%)^2 = 4%” é falsa. O correto seria (2%)^2 = 0,04%.\n\nProposição 2: transformar corretamente: 2% = 2/100; ao quadrado, numerador e denominador ao quadrado. Conclusão: 4/10.000. Essa parte, feita corretamente, é verdadeira. Portanto, a comparação “4/10.000 = 4/100” é falsa; a forma correta mostra que são diferentes.\n\n> 🎯 Dicas de prova: Ao elevar porcentagem a potência, converta para fração decimal primeiro e só então eleve. (a%)^2 = a^2 / 10.000, não a^2%.\n\nProposição 3: condicional envolvendo números primos e paridade. “Todo número primo é ímpar.” Cuidado: 2 é primo e é par. Então a proposição geral “todo primo é ímpar” é falsa. Em condicionais, lembrar: se o antecedente for verdadeiro e o consequente falso, a condicional é falsa. Exemplificando com 2 já derruba a afirmação.\n\nVamos aproveitar critérios de divisibilidade para checar primalidade de números maiores quando necessário. Por exemplo, se um número tem soma dos dígitos múltipla de 9, ele é divisível por 9 e não é primo. Isso ajuda a avaliar rapidamente.\n\nProposição 4: frações e comparações.\n- “1/2 ÷ 1/3 é menor que 1.” Divisão de frações: conserva a primeira e multiplica pelo inverso da segunda: (1/2) × (3/1) = 3/2 = 1,5. 3/2 não é menor que 1. Logo, essa afirmação é falsa.\n- “1/4 é menor que 2/3.” Para comparar, faça o cruzado: 1 × 3 = 3 e 4 × 2 = 8; como 3 < 8, temos 1/4 < 2/3. Verdadeiro.\n\nPortanto, no bloco: “(1/2 ÷ 1/3) < 1” é falso; “1/4 < 2/3” é verdadeiro.\n\n> 🎯 Dicas de prova: Para comparar a/b e c/d rapidamente, use a multiplicação cruzada: a·d ? b·c. Evita calcular frações equivalentes à toa.\n\n## Encerramento e próximos passos\nLegal, pessoal. Fizemos com vocês a parte de conjuntos numéricos e aplicamos em questões. Isso não quer dizer que eu não possa puxar outros assuntos — eu cito novamente, eu sou desse jeito mesmo: conto histórias, puxo, volto para proteger a base da área.\n\nSerão as realidades de hoje. Fica agora o maior cartão de convites para vocês: se o edital pedir, nosso próximo corpo de conteúdo é números complexos. Se o seu edital tiver números complexos, você vai continuar comigo; senão, não faz sentido forçar conteúdo que não será cobrado. Até aqui, fizemos naturais, inteiros, racionais, irracionais e reais. O próximo que vem são os números complexos — se estiver no seu edital.\n\nGrande abraço. Proposto o conteúdo, beleza? Não aprendeu? Volta e faz tudo novamente. Dúvidas? São várias. Tô à disposição no que você precisar. Valeu e até as próximas!",
+  "transcricao_meta": {
+    "title": "Treinamento",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 27937,
+    "createdAt": "2026-01-30T14:26:21.784Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: dízima periódica, classificação dos números (racionais/irracionais), frações (equivalência, simplificação, operações), porcentagem e lógica condicional.\nPrincipais pontos:\n- A dízima periódica é sempre número racional; divisão por zero é indefinida.\n- Técnicas rápidas: MMC, produto cruzado, inverso multiplicativo, conversão de porcentagem em fração.\n- Lógica: condicional só é falsa quando “V → F”.\n\n## 1. Base / Conceitos Fundamentais\n- **Números racionais**: Podem ser escritos como fração a/b (b ≠ 0). Em decimal, podem ser finitos ou dízima periódica.\n- **Dízima periódica**: Decimal com um dígito ou bloco que se repete infinitamente (ex.: 0,333..., 2,1252525...). É sempre racional.\n- **Números irracionais**: Decimais infinitos sem repetição periódica (ex.: √2, π).\n- **Divisão por zero**: Não definida. Expressões a/0 não existem na Matemática.\n- **Fração irredutível**: Numerador e denominador coprimos; não se simplifica mais.\n- **Frações equivalentes**: Mesma razão, obtidas multiplicando/dividindo numerador e denominador por um mesmo número.\n- **Porcentagem**: x% = x/100. Ex.: 2% = 2/100 = 1/50.\n- **Número primo**: Tem exatamente dois divisores positivos (1 e ele mesmo).\n\n## 2. Como Funciona / Distinções\n- Dízima periódica vs irracional:\n  - Dízima periódica: padrão repetitivo → racional.\n  - Irracional: infinito sem período → não é dízima periódica.\n- Operações com frações:\n  - Soma/subtração: usar **MMC** para igualar denominadores; operar numeradores.\n  - Multiplicação: numerador×numerador; denominador×denominador.\n  - Divisão: conservar a primeira e multiplicar pelo **inverso** da segunda.\n- Comparação de frações:\n  - Denominadores positivos: use **produto cruzado** (a/b < c/d se ad < bc).\n- Lógica condicional (Se P então Q):\n  - Verdadeira em todos os casos, exceto quando P é verdadeira e Q é falsa.\n\n> Dica de Prova: Em sequências V/F, julgue cada frase isoladamente pela Matemática antes de aplicar conectivos lógicos.\n\n## 3. Aplicação Prática / Técnicas\n- MMC rápido:\n  - Fatore denominadores e pegue os maiores expoentes de cada primo.\n- Produto cruzado:\n  - Para a/b ? c/d (b,d > 0): compare ad e bc; evita converter para decimal.\n- “Resto” de um todo:\n  - Some as partes e faça 1 − soma para achar o restante.\n- Proporções em partes:\n  - Some as partes da razão (ex.: 3:5 → total 8); divida o total pelo número de partes; distribua.\n- Porcentagem elevada a potência:\n  - (x%)² = (x/100)² = x²/10000. Não confundir com 2x%.\n- Critério de divisibilidade por 9:\n  - Soma dos algarismos múltipla de 9 → número divisível por 9 → não é primo (salvo 9 não é primo).\n- Lógica condicional:\n  - Só é FALSA quando P = V e Q = F. Se Q for verdadeira, toda a condicional é verdadeira.\n\n> Dica de Prova: Em divisão de frações, lembre “inverter e multiplicar”. Em comparação, prefira produto cruzado.\n\n## 4. Exemplos e Casos Resolvidos\n- Rotina diária (restante do dia):\n  - Estudo 5/12, esportes 1/6, alimentação 1/8 → MMC(12,6,8)=24.\n  - 5/12=10/24; 1/6=4/24; 1/8=3/24 → soma=17/24.\n  - Restante: 1 − 17/24 = 7/24 (irredutível).\n- Vacinação (proporção):\n  - Total 280; relação gatos:cães = 3:5 → 8 partes.\n  - 1 parte=280/8=35 → gatos=3×35=105; cães=5×35=175.\n- Salário:\n  - Gastou 2/3 de 4/5 → 8/15 do salário; restou 7/15 = R$ 420.\n  - Salário = 420×(15/7)=900; gasto = 8/15×900=480.\n- Porcentagem ao quadrado:\n  - (2%)² = (2/100)² = 4/10000 ≠ 4/10; logo não é 4%.\n- Divisão de frações:\n  - 1/2 ÷ 1/3 = 1/2 × 3/1 = 3/2 = 1,5.\n- Comparação:\n  - 1/4 ? 2/3 → cruzado: 1×3=3 e 4×2=8 → 3<8 → 1/4 < 2/3.\n- Número primo e divisível por 9:\n  - Se soma dos algarismos = 9, é divisível por 9 → não é primo.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir dízima periódica com irracional. Dízima periódica é racional.\n- Esquecer que divisão por zero é impossível.\n- Elevar porcentagem sem elevar o 100 no denominador: (x%)² ≠ x²%.\n- Dividir total por 3 ou 5 direto em razões 3:5; some as partes primeiro.\n- Somar frações com denominadores diferentes sem usar MMC.\n- Errar a condicional: lembrar que só é falsa em “V → F”.\n- Achar “número divisível por 3/9” como primo.\n- Não simplificar ao final para fração irredutível.\n\n> Dica de Prova: Em problemas “restou X reais” após frações de gasto, some as frações de gasto, tire o complementar até 1 e iguale ao valor dado para achar o total.",
+  "resumo_bolso": "# Conjuntos Numéricos - Treinamento\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Número racional (ℚ)**: Pode ser escrito como **a/b (b ≠ 0)**. Em decimal: **finito** ou **dízima periódica**.\n* **Dízima periódica**: Decimal com **um dígito ou bloco que se repete infinitamente** (0,333..., 2,1252525...). **Sempre racional**.\n* **Número irracional**: Decimal **infinito sem repetição periódica** (√2, π). **Não é dízima periódica**.\n* **Divisão por zero**: a/0 **não é definida**; expressão **não existe** na Matemática.\n* **Fração irredutível**: Numerador e denominador **coprimos**; não se simplifica mais.\n* **Frações equivalentes**: Mesma razão; obtidas multiplicando/dividindo **numerador e denominador por um mesmo número**.\n* **Porcentagem**: x% = **x/100**. Ex.: 2% = 2/100 = 1/50.\n* **Número primo**: Tem exatamente **dois divisores positivos**: 1 e ele mesmo.\n* **Condicional (P → Q)**: Só é **falsa** quando **P é verdadeira e Q é falsa (V → F)**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Dízima Periódica vs Número Irracional\n\n| Aspecto | Dízima Periódica | Irracional |\n|--------|------------------|-----------|\n| **Forma decimal** | Infinita **com padrão repetitivo** | Infinita **sem repetição periódica** |\n| **Classificação** | **Racional** | **Não racional** |\n| **Exemplos** | 0,777..., 1,232323... | √2, π |\n| **Diferencial** | Tem **período** → é dízima periódica | Não tem período → **não é dízima periódica** |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Operações com Frações**\n\n* **Soma/Subtração**:  \n  a/b ± c/d → usar **MMC** dos denominadores para igualá-los; depois operar os numeradores.\n* **Multiplicação**: (a/b)·(c/d) = **(a·c)/(b·d)**.\n* **Divisão**: (a/b) ÷ (c/d) = **a/b · d/c** (conservar a 1ª e multiplicar pelo **inverso** da 2ª).\n\n**2. Comparação de Frações (b,d > 0)**\n\n* a/b ? c/d → use **produto cruzado**:  \n  compare **ad** e **bc**; se ad < bc → a/b < c/d.\n\n**3. MMC Rápido**\n\n* Fatore os denominadores em **primos** e pegue os **maiores expoentes** de cada primo.\n\n**4. Proporções em Partes (a:b)**\n\n* Total T, razão a:b → partes totais = a + b.  \n  1 parte = T/(a+b);  \n  quantidade de a = a·T/(a+b); de b = b·T/(a+b).\n\n**5. “Resto” de um Todo**\n\n* Se as partes conhecidas somam **S** (em fração do todo), o restante é **1 − S**.\n\n**6. Porcentagem**\n\n* x% = x/100.  \n* Porcentagem elevada ao quadrado:  \n  (x%)² = (x/100)² = **x²/10000** (não confundir com x²%).\n\n**7. Critério de Divisibilidade por 9**\n\n* Soma dos algarismos **múltipla de 9** → número divisível por 9 → **não é primo**.\n\n**8. Lógica Condicional (P → Q)**\n\n* Verdadeira em todos os casos, **exceto** quando P = V e Q = F.  \n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir **dízima periódica** com **irracional**. Dízima periódica é **racional**.\n* Esquecer que **divisão por zero é impossível** (a/0 não existe).\n* Errar **porcentagem ao quadrado**: (x%)² = (x/100)², **não** x²%.\n* Em razão 3:5, **dividir o total por 3 ou por 5 direto** em vez de somar as partes (3+5).\n* Achar que a condicional é falsa em qualquer caso com F; lembrar que só é falsa em **V → F**.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **dízima periódica (racional)** de **irracional (sem período)**?\n* Lembrei que **divisão por zero não existe** (a/0 indefinida)?\n* Sei fazer **MMC** e **produto cruzado** para somar/comparar frações?\n* Memorizei: **somar frações → MMC**, **dividir frações → inverter e multiplicar**?\n* Fixei que **(x%)² = (x/100)²**, e que **número divisível por 9 não é primo**?\n* Lembro que a **condicional só é falsa em “V → F”**?\n* Estou lembrando de **simplificar o resultado** para fração **irredutível**?",
+  "mapa_mental": "# 🧮 Conjuntos Numéricos – Treinamento\n\n## 🎯 Classificação Numérica\n### 💡 Números racionais\n- Forma a/b\n- b diferente zero\n- Decimal finito\n- Dízima periódica\n- Inclui inteiros\n### 💡 Dízima periódica\n- Decimal infinito\n- Bloco repetitivo\n- Sempre racional\n- Conversão fração\n### 💡 Números irracionais\n- Decimal infinito\n- Sem repetição\n- Não fracionário\n- Exemplos clássicos\n### 💡 Números primos\n- Dois divisores\n- Um e ele\n- Maior que um\n- Não múltiplo nove\n\n## 🧮 Frações e Operações\n### 💡 Conceitos frações\n- Fração irredutível\n- Frações equivalentes\n- Simplificação comum\n- Denominador positivo\n### ⚙️ Operações frações\n- Soma com MMC\n- Subtração MMC\n- Multiplicação direta\n- Divisão inverso\n### 🧮 Comparação frações\n- Produto cruzado\n- a/b menor c/d\n- Comparar ad e bc\n- Evitar decimais\n\n## 📊 Porcentagem e Proporções\n### 💡 Porcentagem básica\n- x por cento\n- x sobre cem\n- Conversão fração\n- Conversão decimal\n### 🧮 Potência porcentagem\n- x% ao quadrado\n- x sobre cem\n- Quadrado numerador\n- Quadrado denominador\n### 📊 Proporções e partes\n- Razão a:b\n- Soma das partes\n- Total dividido partes\n- Distribuição proporcional\n\n## 🧠 Lógica Condicional\n### 💡 Proposição condicional\n- Se P então Q\n- P hipótese\n- Q conclusão\n- Tabela verdade\n### ⚖️ Verdade condicional\n- Verdadeira geral\n- Falsa V implica F\n- Q verdadeira valida\n- Caso crítico V F\n### ⚠️ Erros frequentes\n- Confundir dízima\n- Ignorar divisão zero\n- Errar V implica F\n- Confundir porcentagem",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Decimais e Porcentagens",
+      "description": "Decimais e Porcentagens — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se caracteriza uma **dízima periódica**?",
+          "back": "Número escrito na forma decimal que apresenta um número ou um conjunto de números que se repetem infinitamente.",
+          "hint": "Pense no comportamento das casas decimais",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "dizima-periodica"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a relação entre uma dízima periódica e os números racionais?",
+          "back": "Toda dízima periódica é um número racional.",
+          "hint": "Refere-se ao conjunto numérico que inclui frações",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-racionais"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como calcular uma potência de uma fração?",
+          "back": "Elevar tanto o numerador quanto o denominador ao quadrado.",
+          "hint": "Aplique a operação a ambos os termos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "fracoes",
+            "potenciacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Classificação Numérica",
+      "description": "Classificação Numérica — 1 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Que propriedade da representação decimal distingue um número irracional?",
+          "back": "Apresenta infinitas casas decimais, mas não é inteiro nem possui período.",
+          "hint": "Contraste com a repetição infinita",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "conjuntos-numericos",
+            "numeros-irracionais"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Operações com Frações",
+      "description": "Operações com Frações — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é o resultado matemático de uma divisão por zero?",
+          "back": "Não existe.",
+          "hint": "É uma operação indefinida na aritmética",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual procedimento permite somar frações com denominadores diferentes?",
+          "back": "Igualar os denominadores tirando o mínimo.",
+          "hint": "Envolve encontrar um múltiplo comum",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "fracoes",
+            "operacoes-basicas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Que parte de um todo é representada pelo denominador de uma fração?",
+          "back": "O todo dividido em partes iguais.",
+          "hint": "Indica a unidade de partição do inteiro",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "fracoes",
+            "conceitos-basicos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Comparações Numéricas",
+      "description": "Comparações Numéricas — 1 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual é o critério de divisibilidade por nove?",
+          "back": "A soma dos algarismos deve ser divisível por nove.",
+          "hint": "Envolve a operação de adição dos dígitos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "aritmetica",
+            "divisibilidade"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "O que caracteriza uma dízima periódica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um número que, quando dividido por zero, resulta em uma representação decimal finita",
+          "correct": false,
+          "explanation": "Incorreta. A divisão por zero é uma operação indefinida na matemática. Não é possível obter um resultado válido, seja ele finito ou infinito, ao dividir um número por zero, portanto, essa alternativa não descreve uma dízima periódica nem qualquer outro número."
+        },
+        {
+          "id": "b",
+          "text": "Um número não inteiro que apresenta infinitas casas decimais sem repetição de padrões",
+          "correct": false,
+          "explanation": "Incorreta. Um número não inteiro que apresenta infinitas casas decimais sem repetição de padrões é classificado como um número irracional (como π ou a raiz quadrada de 2), e não como uma dízima periódica. A característica essencial da dízima periódica é justamente a repetição de um padrão de algarismos."
+        },
+        {
+          "id": "c",
+          "text": "Um número escrito na forma decimal que apresenta um algarismo ou conjunto de algarismos que se repetem infinitamente",
+          "correct": true,
+          "explanation": "Correta. Uma dízima periódica é um número racional cuja representação decimal é infinita e apresenta uma sequência de um ou mais algarismos que se repete indefinidamente. Por exemplo, 1/3 é 0,333... e 5/11 é 0,454545..."
+        },
+        {
+          "id": "d",
+          "text": "Um número que pode ser escrito na forma de algarismos romanos",
+          "correct": false,
+          "explanation": "Incorreta. Algarismos romanos são um sistema de numeração para representar quantidades, não uma classificação de tipos de números como as dízimas periódicas. As dízimas periódicas referem-se à forma decimal de um número racional."
+        }
+      ],
+      "explanation": "Correta. Uma dízima periódica é um número racional cuja representação decimal é infinita e apresenta uma sequência de um ou mais algarismos que se repete indefinidamente. Por exemplo, 1/3 é 0,333... e 5/11 é 0,454545...",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a classificação correta dos números que apresentam infinitas casas decimais sem repetição de padrões, como a raiz quadrada de dois e o número pi?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Números naturais estendidos",
+          "correct": false,
+          "explanation": "Incorreta. Números naturais são os inteiros não negativos (0, 1, 2, 3...). A expressão \"números naturais estendidos\" não é uma classificação padrão para números com infinitas casas decimais não periódicas e não se aplica a este contexto."
+        },
+        {
+          "id": "b",
+          "text": "Números inteiros negativos",
+          "correct": false,
+          "explanation": "Incorreta. Números inteiros negativos são -1, -2, -3, etc. Eles não possuem casas decimais e são um subconjunto dos números inteiros, que são distintos dos números com infinitas casas decimais."
+        },
+        {
+          "id": "c",
+          "text": "Números racionais periódicos",
+          "correct": false,
+          "explanation": "Incorreta. Números racionais periódicos, também conhecidos como dízimas periódicas, são aqueles que possuem uma sequência de algarismos que se repete infinitamente após a vírgula. A questão, no entanto, refere-se a números *sem* repetição de padrões."
+        },
+        {
+          "id": "d",
+          "text": "Números irracionais",
+          "correct": true,
+          "explanation": "Correta. Números irracionais são aqueles que não podem ser expressos como uma fração de dois números inteiros (a/b, com b ≠ 0) e, em sua representação decimal, possuem infinitas casas decimais sem qualquer padrão de repetição. Exemplos clássicos são a raiz quadrada de dois (aproximadamente 1,41421356...) e o número pi (aproximadamente 3,14159265...)."
+        }
+      ],
+      "explanation": "Correta. Números irracionais são aqueles que não podem ser expressos como uma fração de dois números inteiros (a/b, com b ≠ 0) e, em sua representação decimal, possuem infinitas casas decimais sem qualquer padrão de repetição. Exemplos clássicos são a raiz quadrada de dois (aproximadamente 1,41421356...) e o número pi (aproximadamente 3,14159265...).",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Por que a divisão por zero não existe na matemática?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque é uma operação indefinida e não possui resultado válido no sistema matemático",
+          "correct": true,
+          "explanation": "Correta. A divisão por zero é considerada uma operação indefinida na matemática. Isso ocorre porque, se considerarmos a/0 = x, então a = 0 * x. Se 'a' for diferente de zero, não existe nenhum 'x' que satisfaça essa equação. Se 'a' for zero (0/0), qualquer número 'x' satisfaria a equação (0 = 0 * x), tornando o resultado indeterminado. Em ambos os casos, não há um resultado único e válido, o que inviabiliza a operação."
+        },
+        {
+          "id": "b",
+          "text": "Porque resulta em um número irracional que não pode ser representado",
+          "correct": false,
+          "explanation": "Incorreta. A divisão por zero não resulta em um número irracional. Ela é uma operação que não pode ser definida no sistema numérico, pois não há um valor que satisfaça as propriedades da multiplicação inversa."
+        },
+        {
+          "id": "c",
+          "text": "Porque produz uma dízima periódica composta que viola as propriedades dos números reais",
+          "correct": false,
+          "explanation": "Incorreta. A divisão por zero não produz uma dízima periódica composta. Dízimas periódicas são números racionais. A indefinição da divisão por zero é uma questão fundamental das operações aritméticas e não está relacionada à geração de dízimas periódicas ou à violação de propriedades específicas dos números reais dessa forma."
+        },
+        {
+          "id": "d",
+          "text": "Porque gera sempre um resultado infinitamente pequeno que não pode ser calculado",
+          "correct": false,
+          "explanation": "Incorreta. Embora o conceito de \"infinitamente pequeno\" possa estar relacionado a limites (onde um denominador se aproxima de zero), a divisão por zero em si não produz um número infinitamente pequeno. Pelo contrário, quando um número não nulo é dividido por um valor que se aproxima de zero, o resultado tende ao infinito (positivo ou negativo), mas a divisão *por* zero permanece indefinida."
+        }
+      ],
+      "explanation": "Correta. A divisão por zero é considerada uma operação indefinida na matemática. Isso ocorre porque, se considerarmos a/0 = x, então a = 0 * x. Se 'a' for diferente de zero, não existe nenhum 'x' que satisfaça essa equação. Se 'a' for zero (0/0), qualquer número 'x' satisfaria a equação (0 = 0 * x), tornando o resultado indeterminado. Em ambos os casos, não há um resultado único e válido, o que inviabiliza a operação.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao trabalhar com frações que possuem denominadores diferentes, qual é o procedimento mais adequado para facilitar operações de adição e subtração?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar todos os numeradores pelo maior denominador presente",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar os numeradores pelo maior denominador alteraria o valor das frações de forma incorreta e não as tornaria equivalentes para a soma ou subtração. O objetivo é encontrar um denominador comum, não multiplicar numeradores por denominadores."
+        },
+        {
+          "id": "b",
+          "text": "Converter todas as frações em números decimais antes de realizar as operações",
+          "correct": false,
+          "explanation": "Incorreta. Converter frações em números decimais pode ser uma opção, mas nem sempre é a mais adequada, especialmente quando as frações resultam em dízimas periódicas. Nesses casos, a conversão para decimal introduziria arredondamentos e imprecisões. O método de encontrar o MMC mantém a exatidão dos valores fracionários."
+        },
+        {
+          "id": "c",
+          "text": "Calcular o mínimo múltiplo comum dos denominadores para igualar as frações",
+          "correct": true,
+          "explanation": "Correta. Para somar ou subtrair frações com denominadores diferentes, é fundamental encontrar um denominador comum. O Mínimo Múltiplo Comum (MMC) dos denominadores é o menor número que é múltiplo de todos os denominadores, permitindo reescrever as frações com esse denominador comum sem alterar seus valores, facilitando os cálculos e mantendo a exatidão."
+        },
+        {
+          "id": "d",
+          "text": "Simplificar cada fração individualmente até obter denominadores primos",
+          "correct": false,
+          "explanation": "Incorreta. Simplificar frações é uma boa prática para reduzir os números envolvidos, mas não garante que os denominadores se tornarão iguais ou primos entre si. O objetivo principal para adição e subtração é igualar os denominadores, e o MMC é a ferramenta para isso, independentemente de os denominadores serem primos ou não."
+        }
+      ],
+      "explanation": "Correta. Para somar ou subtrair frações com denominadores diferentes, é fundamental encontrar um denominador comum. O Mínimo Múltiplo Comum (MMC) dos denominadores é o menor número que é múltiplo de todos os denominadores, permitindo reescrever as frações com esse denominador comum sem alterar seus valores, facilitando os cálculos e mantendo a exatidão.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Um estudante passa 5/12 do dia estudando, 1/6 fazendo atividades esportivas e 1/8 se alimentando. Qual fração representa o tempo restante do dia?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "1/3",
+          "correct": false,
+          "explanation": "Incorreta. A fração 1/3 é equivalente a 8/24. O tempo restante calculado a partir das atividades é 7/24, que é diferente de 1/3. Esta alternativa não representa corretamente o tempo não utilizado nas atividades listadas."
+        },
+        {
+          "id": "b",
+          "text": "11/24",
+          "correct": false,
+          "explanation": "Incorreta. A soma das frações de tempo dedicadas às atividades é 17/24. O tempo restante é 24/24 - 17/24 = 7/24. A fração 11/24 não corresponde ao tempo restante após todas as atividades mencionadas."
+        },
+        {
+          "id": "c",
+          "text": "5/12",
+          "correct": false,
+          "explanation": "Incorreta. A fração 5/12 representa apenas o tempo que o estudante passa estudando. Para encontrar o tempo restante, é necessário considerar todas as atividades e subtraí-las do total do dia."
+        },
+        {
+          "id": "d",
+          "text": "7/24",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o tempo restante, primeiro somamos as frações de tempo dedicado às atividades: 5/12 (estudando) + 1/6 (esportes) + 1/8 (alimentando). O Mínimo Múltiplo Comum (MMC) dos denominadores (12, 6, 8) é 24. Convertendo as frações para o mesmo denominador: 10/24 (5/12) + 4/24 (1/6) + 3/24 (1/8) = 17/24. O dia inteiro é representado por 24/24. Subtraindo o tempo gasto do total: 24/24 - 17/24 = 7/24. Portanto, 7/24 do dia é o tempo restante."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o tempo restante, primeiro somamos as frações de tempo dedicado às atividades: 5/12 (estudando) + 1/6 (esportes) + 1/8 (alimentando). O Mínimo Múltiplo Comum (MMC) dos denominadores (12, 6, 8) é 24. Convertendo as frações para o mesmo denominador: 10/24 (5/12) + 4/24 (1/6) + 3/24 (1/8) = 17/24. O dia inteiro é representado por 24/24. Subtraindo o tempo gasto do total: 24/24 - 17/24 = 7/24. Portanto, 7/24 do dia é o tempo restante.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao elevar uma porcentagem ao quadrado, qual é o procedimento correto para obter o resultado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar o valor percentual por dois e manter o símbolo de porcentagem",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o valor percentual por dois (2X%) é diferente de elevá-lo ao quadrado (X%)², que significa multiplicar a porcentagem por ela mesma. Por exemplo, (2%)² não é 4%, mas sim 0,04%."
+        },
+        {
+          "id": "b",
+          "text": "Converter a porcentagem em fração decimal, elevar ao quadrado e depois converter de volta para porcentagem",
+          "correct": true,
+          "explanation": "Correta. Para elevar uma porcentagem ao quadrado, é fundamental convertê-la para sua forma decimal (dividindo por 100) ou fracionária. Assim, (X%)² se torna (X/100)². Após realizar a operação de potenciação, o resultado numérico pode ser novamente expresso como porcentagem, multiplicando-o por 100. Por exemplo, (2%)² = (0,02)² = 0,0004, que, convertido de volta, é 0,04%."
+        },
+        {
+          "id": "c",
+          "text": "Somar a porcentagem com ela mesma e aplicar a regra de três simples",
+          "correct": false,
+          "explanation": "Incorreta. Somar a porcentagem com ela mesma resultaria em 2X%, que é o dobro da porcentagem, não o seu quadrado. A regra de três simples é utilizada para encontrar valores proporcionais, não para operações de potenciação."
+        },
+        {
+          "id": "d",
+          "text": "Elevar apenas o numerador ao quadrado e duplicar o número de zeros no denominador",
+          "correct": false,
+          "explanation": "Incorreta. Embora elevar o numerador ao quadrado e duplicar o número de zeros no denominador (no caso de uma fração X/100) seja um passo correto para a forma fracionária, a alternativa não especifica a conversão completa para o formato percentual final e pode ser confusa se não for aplicada rigorosamente. A forma decimal é mais direta para a operação e conversão final."
+        }
+      ],
+      "explanation": "Correta. Para elevar uma porcentagem ao quadrado, é fundamental convertê-la para sua forma decimal (dividindo por 100) ou fracionária. Assim, (X%)² se torna (X/100)². Após realizar a operação de potenciação, o resultado numérico pode ser novamente expresso como porcentagem, multiplicando-o por 100. Por exemplo, (2%)² = (0,02)² = 0,0004, que, convertido de volta, é 0,04%.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual é o critério de divisibilidade que permite verificar rapidamente se um número é divisível por 9?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A diferença entre o primeiro e o último algarismo deve resultar em múltiplo de 9",
+          "correct": false,
+          "explanation": "Incorreta. A diferença entre o primeiro e o último algarismo não é um critério para a divisibilidade por 9. Por exemplo, no número 18, a diferença é 8 - 1 = 7, que não é múltiplo de 9, mas 18 é divisível por 9."
+        },
+        {
+          "id": "b",
+          "text": "A soma de todos os algarismos do número deve ser divisível por 9",
+          "correct": true,
+          "explanation": "Correta. O critério de divisibilidade por 9 estabelece que um número é divisível por 9 se a soma de seus algarismos for um múltiplo de 9. Por exemplo, para o número 1404, a soma dos algarismos é 1 + 4 + 0 + 4 = 9. Como 9 é divisível por 9, então 1404 é divisível por 9."
+        },
+        {
+          "id": "c",
+          "text": "O número deve terminar em 0 ou 9",
+          "correct": false,
+          "explanation": "Incorreta. Esta não é uma regra de divisibilidade por 9. Por exemplo, o número 19 termina em 9, mas não é divisível por 9. O número 18 não termina em 0 ou 9, mas é divisível por 9."
+        },
+        {
+          "id": "d",
+          "text": "O último algarismo do número deve ser par e a soma dos demais ímpar",
+          "correct": false,
+          "explanation": "Incorreta. Esta não corresponde a nenhuma regra de divisibilidade padrão para o número 9. As regras de divisibilidade são baseadas em propriedades numéricas específicas, e esta combinação não é válida."
+        }
+      ],
+      "explanation": "Correta. O critério de divisibilidade por 9 estabelece que um número é divisível por 9 se a soma de seus algarismos for um múltiplo de 9. Por exemplo, para o número 1404, a soma dos algarismos é 1 + 4 + 0 + 4 = 9. Como 9 é divisível por 9, então 1404 é divisível por 9.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Para comparar duas frações com numeradores e denominadores diferentes, qual método permite identificar rapidamente qual fração é maior?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar cruzado: multiplicar o numerador da primeira pelo denominador da segunda e comparar com o produto do numerador da segunda pelo denominador da primeira",
+          "correct": true,
+          "explanation": "Correta. O método de multiplicação cruzada é eficaz para comparar frações. Para comparar a/b e c/d, multiplicamos o numerador da primeira fração (a) pelo denominador da segunda (d), obtendo 'ad'. Em seguida, multiplicamos o numerador da segunda fração (c) pelo denominador da primeira (b), obtendo 'bc'. Se 'ad' for maior que 'bc', então a/b é maior que c/d. Se 'ad' for menor que 'bc', então a/b é menor que c/d. Se 'ad' for igual a 'bc', as frações são equivalentes. Este método é rápido e matematicamente preciso."
+        },
+        {
+          "id": "b",
+          "text": "Elevar ambas as frações ao quadrado e comparar os numeradores resultantes",
+          "correct": false,
+          "explanation": "Incorreta. Elevar ambas as frações ao quadrado pode alterar a relação de grandeza se houver números negativos envolvidos, e mesmo para frações positivas, não é o método mais direto ou rápido para comparação. Além disso, a comparação dos \"numeradores resultantes\" só seria válida se os denominadores fossem igualados após a elevação ao quadrado, o que adiciona complexidade desnecessária."
+        },
+        {
+          "id": "c",
+          "text": "Somar os numeradores e denominadores de cada fração e comparar os resultados obtidos",
+          "correct": false,
+          "explanation": "Incorreta. Somar os numeradores e denominadores não é um método válido para comparar frações. Por exemplo, 1/2 (soma 3) e 2/3 (soma 5). Embora 2/3 seja maior que 1/2, a soma dos termos não indica consistentemente a relação de grandeza."
+        },
+        {
+          "id": "d",
+          "text": "Calcular a diferença entre numerador e denominador de cada fração e verificar qual diferença é menor",
+          "correct": false,
+          "explanation": "Incorreta. Calcular a diferença entre o numerador e o denominador não é um método confiável para comparar frações. Por exemplo, 1/2 tem uma diferença de 1 (2-1), e 2/3 também tem uma diferença de 1 (3-2), mas as frações não são iguais."
+        }
+      ],
+      "explanation": "Correta. O método de multiplicação cruzada é eficaz para comparar frações. Para comparar a/b e c/d, multiplicamos o numerador da primeira fração (a) pelo denominador da segunda (d), obtendo 'ad'. Em seguida, multiplicamos o numerador da segunda fração (c) pelo denominador da primeira (b), obtendo 'bc'. Se 'ad' for maior que 'bc', então a/b é maior que c/d. Se 'ad' for menor que 'bc', então a/b é menor que c/d. Se 'ad' for igual a 'bc', as frações são equivalentes. Este método é rápido e matematicamente preciso.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "16_264356_Conjuntos Numéricos - Treinamento.pdf",
+  "coletado_em": "2026-09-23T20:53:16"
+}

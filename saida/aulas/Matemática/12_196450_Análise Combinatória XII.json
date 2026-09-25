@@ -1,0 +1,395 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 12,
+  "ordem_no_curso": "74.00",
+  "titulo": "Análise Combinatória XII",
+  "codigo_aula": "196450",
+  "video_id": "n87pXWTbXtc=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:32:30",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/n87pXWTbXtc%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=403868%2C404273&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória XII\n\n## Introdução e Proposta da Aula\nPessoal, vamos continuar a nossa maravilhosa matriz de raciocínio lógico. Como prometido, já fizemos muita coisa até aqui. Agora vamos fazer uma série de questões daquilo que já aprendemos, beleza? Vamos treinar as questões, resolvendo juntos, com calma.\n\n## Questão 1 — Estante de Livros (Áreas Diferentes)\nEnunciado: Em uma biblioteca, há uma estante com livros escolares de áreas diferentes: 10 livros da área de Exatas, 8 da área de Biológicas e 12 de Humanas. De quantos modos diferentes se pode escolher um conjunto de três livros de áreas diferentes?\n\nOlha só, nós queremos escolher. A primeira pergunta que sempre temos que fazer, como já aprendemos antes: a ordem importa? Quando eu escolho um livro de Exatas, um de Biologia e um de Humanas, e no cantinho da prova eu inverto para “Humanas, Biológicas, Exatas”, a escolha é a mesma. Então a ordem não importa.\n\nComo prometido, vamos fazer de duas maneiras: sem fórmula e com fórmula.\n\n- Sem fórmula: quando a ordem não importa, nós multiplicamos as possibilidades de cada escolha, sem precisar dividir por permutações, porque aqui cada categoria é distinta (um de cada área). Então:\n  - Exatas: 10 possibilidades\n  - Biológicas: 8 possibilidades\n  - Humanas: 12 possibilidades\n  - Resultado: 10 × 8 × 12 = 960\n\n- Com fórmula: quando a ordem não importa, é combinação. Aqui é uma combinação de 10 tomados 1 (Exatas), vezes combinação de 8 tomados 1 (Biológicas), vezes combinação de 12 tomados 1 (Humanas):\n  - C(10,1) × C(8,1) × C(12,1) = 10 × 8 × 12 = 960\n\nFizemos sem fórmula e com a fórmula que aprendemos na aula passada, quando a ordem não importa é combinação. Observe que, na prática, aplicar C(n,1) dá o mesmo produto que fizemos sem fórmula. Eu quero que você saiba as duas resoluções.\n\n## Questão 2 — Chegada dos 4 Primeiros (Natação)\nEnunciado: Sete atletas disputam uma prova de natação com iguais chances de vencer. De quantos modos diferentes pode ocorrer a chegada dos quatro primeiros colocados?\n\nPrimeiro passo, mão direita e mão esquerda: a ordem importa ou não? Aqui estamos falando de classificação. A ordem importa, claro. Quando a ordem importa e usamos apenas uma parte do total, é Arranjo.\n\n- Com fórmula (Arranjo): A(7,4) = 7! / (7−4)! = 7! / 3! = 7 × 6 × 5 × 4 = 840\n- Pelo princípio multiplicativo (sem fórmula):\n  - 1º lugar: 7 possibilidades\n  - 2º lugar: 6\n  - 3º lugar: 5\n  - 4º lugar: 4\n  - Resultado: 7 × 6 × 5 × 4 = 840\n\nA mesma resposta pelos dois caminhos: 840. Começa a encaixar, né?\n\n## Questão 3 — Formação de Equipe no Grupo de Escoteiros\nEnunciado: Um grupo escoteiro conta com 20 participantes, sendo 12 meninos e 13 meninas. De quantas maneiras diferentes pode-se formar uma equipe com exatamente dois meninos e uma menina?\n\nPrimeira pergunta: a ordem importa? Não. Em equipes, trocar as pessoas de posição não muda a equipe. Quando a ordem não importa, podemos resolver pelo princípio multiplicativo ajustado (contagem sem reposição e depois dividir pelas permutações internas) ou diretamente por combinações. Vou fazer dos dois jeitos.\n\n- Sem fórmula (princípios de contagem):\n  - Escolher o primeiro menino: 12 possibilidades\n  - Escolher o segundo menino: 11 possibilidades\n  - Como a ordem dos dois meninos não importa, dividimos por 2! (equivalente à simplificação prática “12×11/2”)\n  - Para a menina: 13 possibilidades\n  - Resultado: (12 × 11 / 2) × 13 = 66 × 13 = 858\n\n- Com fórmula (combinação):\n  - C(12,2) × C(13,1) = 66 × 13 = 858\n\nMesma resposta: 858. Show de bola. Sem fórmula e com fórmula, a gente confere e treina os dois caminhos.\n\n## Questão 4 — Naturalidade e Residência de Suspeitos (Restrições)\nEnunciado (resumo): Existem quatro suspeitos. Eles nasceram, cada um, em um estado diferente entre Bahia, Pernambuco, Rio de Janeiro e São Paulo. Atualmente, residem nesses mesmos estados (o conjunto é o mesmo), mas não necessariamente no mesmo estado em que nasceram. Pergunta: a quantidade de possibilidades de naturalidade e residência dos acusados é inferior a um certo valor (a banca quer comparar com um número). Vamos calcular o total de possibilidades.\n\nAtenção ao texto: “cada um em estado diferente” refere-se à naturalidade. Para a residência, o texto diz que residem nesses mesmos estados (o conjunto de estados é o mesmo), mas não afirma que residem em estados diferentes. Ou seja, na residência não há a restrição de “todos distintos”.\n\nVamos separar em duas partes: naturalidade e residência, e depois multiplicar (princípio multiplicativo).\n\n- Naturalidade:\n  - Quatro pessoas, quatro estados, cada um em um estado diferente.\n  - Número de atribuições bijetivas: 4! = 24\n\n- Residência:\n  - Para cada suspeito, a residência pode ser qualquer um dos 4 estados (porque não exigiu distinção entre eles).\n  - Cada um tem 4 possibilidades, independentemente dos demais.\n  - Resultado: 4 × 4 × 4 × 4 = 4^4 = 256\n\n- Total de possibilidades:\n  - 24 × 256 = 6144\n\nPortanto, a quantidade de possibilidades de naturalidade e residência é 6144. Se a banca propõe que “é inferior” a um certo número pequeno, cuidado: 6144 não é inferior a números como 1024, por exemplo. Fique atento ao enunciado da comparação.\n\nObservação pedagógica: veja como aqui a forma padrão (combinações/arranjos) não se encaixa diretamente na parte da residência, porque há uma restrição diferente (ou, melhor, ausência de restrição de distinção). Em situações com restrições específicas, o princípio multiplicativo direto, modelando cada etapa, é o melhor caminho.\n\n## Encerramento\nQueridos, percebam a lógica: primeiro pergunte se a ordem importa. Se importa e usa tudo, é permutação; se importa e usa parte, é arranjo; se não importa, é combinação. E quando surgirem restrições ou estruturas mistas, o princípio multiplicativo ajuda a organizar o raciocínio. Continuem treinando pelas duas abordagens: com fórmula e sem fórmula. Isso te dá flexibilidade na prova e evita armadilhas da banca.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória XII",
+    "subject": "Matemática e Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 29182,
+    "createdAt": "2026-02-05T09:16:02.427Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: princípios de contagem, combinação, arranjo e aplicação em problemas clássicos.\nPrincipais pontos:\n- Decidir quando a ordem importa (arranjo) e quando não importa (combinação).\n- Aplicar o princípio multiplicativo em fases independentes.\n- Usar fatorial e simplificações rápidas em C(n, k).\n- Evitar pegadinhas típicas de interpretação (“áreas diferentes”, “residirem nos mesmos estados”, etc.).\n\n## 1. Base / Conceitos Fundamentais\n- **Princípios de contagem**:\n  - **Princípio multiplicativo**: se uma tarefa tem a etapas independentes com a, b, c opções, total = a × b × c.\n- **Fatorial (n!)**: produto de 1 até n. Ex.: 3! = 6; 4! = 24; 5! = 120; 10!; 12!; 13!.\n- **Combinação C(n, k)**: escolher k de n, sem ordem.\n  - Fórmula: C(n, k) = n! / [k! (n − k)!]\n  - Casos úteis: C(n, 1) = n; C(n, 2) = n(n − 1)/2.\n- **Arranjo A(n, k)**: escolher k de n, com ordem.\n  - Fórmula: A(n, k) = n! / (n − k)! = n × (n − 1) × … × (n − k + 1).\n\n## 2. Como Funciona / Distinções\n- Ordem importa?\n  - **Sim** → use **arranjo** ou conte sequencialmente (princípio multiplicativo).\n  - **Não** → use **combinação**. Se contar por multiplicação sequencial, divida pelas permutações internas (ex.: dois iguais → dividir por 2!).\n- Usa todos os elementos?\n  - Usa todos e ordem importa → permutação (n!).\n  - Usa parte e ordem importa → arranjo.\n  - Usa parte e ordem não importa → combinação.\n- Categorias diferentes:\n  - “Áreas diferentes” geralmente significa escolher 1 de cada categoria; a ordem dos escolhidos não muda o conjunto.\n\n## 3. Aplicação Prática / Técnicas\n- Simplificação de C(n, k):\n  - Corte fatoriais iguais (ex.: em C(12, 2), cortar 10!) e simplifique antes de multiplicar: 12! / [2! 10!] = (12 × 11)/2 = 66.\n- Contagem por estágios independentes:\n  - Separe o problema em fases (ex.: naturalidade e residência) e multiplique os totais de cada fase.\n- Correção por permutações internas:\n  - Ao escolher 2 meninos distintos por sequência: 12 × 11, depois dividir por 2! para remover duplicações.\n\n## 4. Exemplos e Casos Resolvidos\n- Seleção de livros de áreas diferentes (ordem não importa → combinação/produto por categorias)\n  - Enunciado: 10 livros de exatas, 8 de biológicas, 12 de humanas. Um conjunto de três livros de áreas diferentes.\n  - Raciocínio: escolher 1 de cada área.\n  - Cálculo: 10 × 8 × 12 = 960.\n  - Pela fórmula: C(10,1) × C(8,1) × C(12,1) = 10 × 8 × 12 = 960.\n> Dica de Prova: “Áreas diferentes” sinaliza “1 de cada categoria”. Não reordene; apenas multiplique as escolhas por categoria.\n\n- Chegada dos quatro primeiros colocados (ordem importa → arranjo)\n  - Enunciado: 7 atletas; “chegada dos quatro primeiros”.\n  - Raciocínio: classificação; a ordem importa.\n  - Cálculo: 7 × 6 × 5 × 4 = 840.\n  - Pela fórmula: A(7, 4) = 7! / (7 − 4)! = 7 × 6 × 5 × 4 = 840.\n> Dica de Prova: “Classificação/pódio/chegada” → arranjo ou multiplicação sequencial.\n\n- Formação de equipe com exatamente dois meninos e uma menina (ordem não importa → combinação)\n  - Enunciado: 20 participantes; 12 meninos, 13 meninas; formar equipe com 2 meninos e 1 menina.\n  - Sem fórmula (com correção): meninos 12 × 11 ÷ 2! = 66; meninas C(13,1) = 13; total = 66 × 13 = 858.\n  - Com fórmula: C(12, 2) × C(13, 1) = 66 × 13 = 858.\n> Dica de Prova: “Exatamente 2 meninos e 1 menina” → escolha por grupos e multiplique; ordem não importa.\n\n- Quatro suspeitos e quatro estados (“Bahia”, “Pernambuco”, “Rio de Janeiro”, “São Paulo”)\n  - Dados: nasceram em estados diferentes; residem atualmente nesses mesmos estados, mas o enunciado NÃO impõe residirem em estados diferentes.\n  - Naturalidade: permutação dos 4 estados → 4! = 24.\n  - Residência: para cada suspeito, 4 opções independentes → 4 × 4 × 4 × 4 = 4^4 = 256.\n  - Total: 24 × 256 = 1.024.\n> Dica de Prova: A frase “cada um em estado diferente” aplica-se ao nascimento. Como não disseram que “residem em estados diferentes”, não imponha essa restrição. Resultado correto: 1.024.\n\n## 5. Pegadinhas e Erros Comuns\n- Forçar ordem quando não há: equipes, conjuntos e “áreas diferentes” não exigem ordem. Use combinação ou produto por categorias.\n- Esquecer de dividir por permutações internas: ao selecionar 2 elementos idênticos em papel (ex.: 2 meninos), dividir por 2!.\n- Confundir fases independentes: some em vez de multiplicar. Em fases distintas e independentes (naturalidade vs. residência), use o princípio multiplicativo.\n- Impor restrições não declaradas: “residirem nesses mesmos estados” não significa “residirem em estados diferentes”.\n- Ignorar atalhos de combinação:\n  - “Combinação de doze tomados dois a dois” → C(12, 2) = 66.\n  - “Combinação de treze tomadas um” → C(13, 1) = 13.\n- Cálculos rápidos que costumam aparecer:\n  - 7 × 6 × 5 × 4 = 840.\n  - 10 × 8 = 80; 80 × 12 = 960.\n  - 6 × 11 = 66; 66 × 13 = 858.\n  - 4! = 24; 4^4 = 256; 24 × 256 = 1.024.\n> Dica de Prova: Se a banca sugerir que o total “é inferior” a 1.024 no caso dos estados, está errado. O valor correto é 1.024.\n\nDIFERENÇAS e COMPARAÇÕES\n| Situação | Ordem importa? | Ferramenta | Exemplo | Resultado |\n| — | — | — | — | — |\n| Selecionar 1 livro de cada área | Não | Combinação/produto por categorias | 10 × 8 × 12 | 960 |\n| Classificar 4 primeiros entre 7 | Sim | Arranjo ou multiplicativo sequencial | 7 × 6 × 5 × 4 | 840 |\n| Montar equipe (2 meninos, 1 menina) | Não | Combinação (ou dividir por 2!) | C(12,2) × C(13,1) | 858 |",
+  "resumo_bolso": "# Análise Combinatória XII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Princípio multiplicativo**: se uma tarefa tem etapas independentes com a, b, c opções, então o total de maneiras é **a × b × c**.\n* **Fatorial (n!)**: produto de 1 até n. Exemplos: **3! = 6**, **4! = 24**, **5! = 120**.\n* **Combinação C(n, k)**: escolher **k de n, sem ordem**.  \n  Fórmula: **C(n, k) = n! / [k!(n − k)!]**.  \n  Casos úteis: **C(n, 1) = n**, **C(n, 2) = n(n − 1)/2**.\n* **Arranjo A(n, k)**: escolher **k de n, com ordem**.  \n  Fórmula: **A(n, k) = n! / (n − k)! = n × (n − 1) × … × (n − k + 1)**.\n* **Permutação (n!)**: usa **todos** os n elementos e a **ordem importa**.\n* **Categorias diferentes**: “áreas diferentes” geralmente significa escolher **1 de cada categoria**; a ordem dos escolhidos não muda o conjunto.\n* **Correção por permutações internas**: se contar por multiplicação sequencial elementos do **mesmo tipo** (ex.: 2 meninos), deve-se **dividir por 2!**.\n* **Fases independentes** (ex.: naturalidade × residência): separe o problema em fases e **multiplique** os totais de cada fase.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Combinação vs Arranjo\n\n| Aspecto | Combinação C(n, k) | Arranjo A(n, k) |\n| --- | --- | --- |\n| Ordem | **Não** importa | **Importa** |\n| Usa parte ou todos? | Parte (k ≤ n) | Parte (k ≤ n) |\n| Fórmula | n! / [k!(n − k)!] | n! / (n − k)! |\n| Exemplo típico | Equipe, conjunto, “áreas diferentes” | Pódio, classificação, chegada |\n| Palavra-chave | “equipe”, “conjunto”, “grupo” | “classificação”, “pódio”, “chegada” |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Combinação C(n, k)**\n\n* **Aplicação**: escolher **k elementos**, **sem ordem** (equipes, subconjuntos).\n* **Exemplo**: “combinação de doze tomados dois a dois” →  \n  **C(12, 2) = 12! / (2!10!) = (12 × 11)/2 = 66**.\n\n**2. Arranjo A(n, k)**\n\n* **Aplicação**: escolher **k elementos**, **com ordem** (classificação, pódio, chegada).\n* **Exemplo**: 7 atletas, 4 primeiros lugares →  \n  **A(7, 4) = 7! / 3! = 7 × 6 × 5 × 4 = 840**.\n\n**3. Permutação (n!)**\n\n* **Aplicação**: usar **todos** os n elementos, **ordem importa**.\n* **Exemplo**: permutação dos 4 estados para naturalidade → **4! = 24**.\n\n**4. Produto por categorias**\n\n* **Aplicação**: “1 de cada área/tipo”, categorias independentes.\n* **Exemplo**: 10 exatas, 8 biológicas, 12 humanas; 1 de cada →  \n  **10 × 8 × 12 = 960 = C(10,1) × C(8,1) × C(12,1)**.\n\n**5. Correção por permutações internas**\n\n* **Aplicação**: contou sequencialmente elementos do **mesmo tipo**.\n* **Exemplo**: 2 meninos dentre 12 → **12 × 11 / 2! = 66 = C(12, 2)**.\n\n**6. Contagem por fases independentes**\n\n* **Aplicação**: problemas com etapas como naturalidade e residência.\n* **Exemplo**: 4 suspeitos, 4 estados; naturalidade em estados diferentes e residência nesses mesmos estados, sem exigir residirem em estados diferentes:  \n  Naturalidade: **4! = 24**; Residência: **4^4 = 256**; Total: **24 × 256 = 1.024**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Forçar ordem quando não há: equipes, conjuntos e “áreas diferentes” não exigem ordem. Use **combinação** ou **produto por categorias**.\n2. Esquecer de dividir por permutações internas: ao selecionar 2 elementos do mesmo tipo em sequência (ex.: 2 meninos), **divida por 2!**.\n3. Somar em vez de multiplicar em fases independentes: em fases distintas como naturalidade e residência, use o **princípio multiplicativo**.\n4. Impor restrições não declaradas: “residirem nesses mesmos estados” não significa “residirem em estados diferentes”.\n5. Ignorar atalhos de combinação e produtos clássicos:  \n   * **C(12, 2) = 66**, **C(13, 1) = 13**  \n   * **7 × 6 × 5 × 4 = 840**  \n   * **10 × 8 × 12 = 960**  \n   * **66 × 13 = 858**  \n   * **4! = 24**, **4^4 = 256**, **24 × 256 = 1.024**\n\n---\n\n## 📋 Checklist Final\n\n* Sei decidir se a **ordem importa** para escolher entre **arranjo/permutação** (ordem) e **combinação/produto por categorias** (sem ordem)?\n* Lembro que **equipe / conjunto / grupo / áreas diferentes** → **sem ordem**?\n* Lembro que **classificação / pódio / chegada** → **ordem importa** (arranjo ou multiplicação sequencial)?\n* Sei aplicar a **correção por 2!** quando contei 2 elementos do mesmo tipo em sequência?\n* Fixei os números-chave: **C(12, 2) = 66**, **C(13, 1) = 13**, **840**, **858**, **960**, **4! = 24**, **4^4 = 256**, **24 × 256 = 1.024**?",
+  "mapa_mental": "# 🧮 Análise Combinatória XII\n## 🎯 Princípios Fundamentais\n### 💡 Princípio Multiplicativo\n- Etapas independentes\n- Produto das opções\n- Fases sucessivas\n- Contagem por estágios\n### 🔢 Fatorial\n- Definição n!\n- Produto 1 até n\n- Simplificação em frações\n- Cancelamento de termos\n### 🧩 Tipos de Escolha\n- Ordem irrelevante\n- Ordem relevante\n- Uso de todos\n- Uso de parte\n## 🧮 Combinações e Arranjos\n### 📊 Combinação C(n, k)\n- Escolher sem ordem\n- Fórmula n! k!(n−k)!\n- Casos C(n,1) C(n,2)\n- Atalhos numéricos\n### 📈 Arranjo A(n, k)\n- Escolher com ordem\n- Fórmula n!(n−k)!\n- Produto decrescente\n- Relação com permutação\n### 🔁 Permutação\n- Todos os elementos\n- Ordem relevante\n- Fórmula n!\n- Permutações internas\n## ⚙️ Decisão da Ferramenta\n### 🎯 Ordem x Ferramenta\n- Ordem importa → arranjo\n- Ordem não importa → combinação\n- Classificação pódio\n- Equipes conjuntos\n### 🧱 Categorias Diferentes\n- Áreas diferentes\n- Um de cada grupo\n- Produto por categorias\n- Sem reordenação\n### 🧮 Correção por Divisão\n- Contagem sequencial bruta\n- Dividir por k!\n- Eliminar duplicidades\n- Grupos idênticos no papel\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Interpretação de Enunciado\n- Forçar ordem indevida\n- Impor restrição extra\n- Confundir fases distintas\n- Ignorar independência\n### 🧮 Erros de Cálculo\n- Não simplificar fatoriais\n- Esquecer divisão por k!\n- Trocar soma por produto\n- Errar potências simples\n### 📝 Padrões de Cobrança\n- Combinações nomeadas\n- Arranjos em classificações\n- Produto por categorias\n- Estados e residências",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Princípios de Contagem",
+      "description": "Princípios de Contagem — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual critério determina se a ordem dos elementos deve ser considerada na contagem?",
+          "back": "A **ordem** dos elementos na escolha.",
+          "hint": "Pense na relevância da sequência",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "fundamentos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Como funciona o princípio multiplicativo em etapas sucessivas de uma contagem?",
+          "back": "Multiplicando as **possibilidades** de cada etapa sucessiva.",
+          "hint": "Relacione com o produto de opções",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "principio-multiplicativo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é o efeito de trocar a posição dos integrantes de uma equipe na contagem?",
+          "back": "A troca de posição **não altera** o resultado (continua sendo a mesma equipe).",
+          "hint": "Considere a natureza do grupo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "combinacao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Combinações",
+      "description": "Combinações — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Que tipo de agrupamento representa a escolha de elementos quando a ordem não altera o resultado?",
+          "back": "**Combinação**.",
+          "hint": "Oposto de arranjo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "combinacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual fórmula calcula a combinação de n elementos tomados p a p?",
+          "back": "$C_{n,p} = \\frac{n!}{p!(n-p)!}$",
+          "hint": "Envolve fatoriais",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "combinacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Como a combinação pode ser calculada sem o uso direto da fórmula?",
+          "back": "Multiplicando e dividindo as **possibilidades** sem o uso direto da fórmula.",
+          "hint": "Pense em simplificação de frações",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "combinacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Arranjos e Permutações",
+      "description": "Arranjos e Permutações — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Que tipo de agrupamento representa a seleção ordenada de parte dos elementos disponíveis?",
+          "back": "**Arranjo**.",
+          "hint": "A sequência importa aqui",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "arranjo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a diferença entre permutação e arranjo quanto à quantidade de elementos utilizados?",
+          "back": "O **arranjo** utiliza apenas uma **parte** dos elementos disponíveis, enquanto a **permutação** utiliza **todos** os elementos.",
+          "hint": "Compare o subconjunto ao total",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "comparacao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual agrupamento deve ser usado para definir os quatro primeiros colocados entre sete atletas?",
+          "back": "**Arranjo**.",
+          "hint": "A ordem de chegada é relevante",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "arranjo"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações Combinatórias",
+      "description": "Aplicações Combinatórias — 4 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Quantas chegadas diferentes podem ocorrer com os quatro primeiros colocados de uma prova com sete atletas?",
+          "back": "**840**",
+          "hint": "Aplique a fórmula de arranjo",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "arranjo"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual agrupamento modela uma equipe formada por dois meninos e uma menina?",
+          "back": "**Combinação**.",
+          "hint": "A ordem dos membros não importa",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "combinacao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-12",
+          "front": "Quantas equipes com dois meninos e uma menina podem ser formadas com 12 meninos e 13 meninas?",
+          "back": "**858**",
+          "hint": "Use o princípio multiplicativo",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "combinacao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "Como contar a distribuição de quatro suspeitos em quatro estados de nascimento distintos?",
+          "back": "Calculando a **permutação** dos suspeitos no nascimento e multiplicando pelas **possibilidades de residência**.",
+          "hint": "Considere etapas independentes",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "analise-combinatoria",
+            "permutacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em uma biblioteca, há 10 livros de exatas, 8 livros de biológicas e 12 livros de humanas. De quantas maneiras diferentes é possível escolher um conjunto de 3 livros, sendo um de cada área?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "720 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 720 não corresponde ao produto das quantidades de livros de cada categoria (10, 8, 12). Para selecionar um livro de cada área, as opções de cada área são multiplicadas diretamente."
+        },
+        {
+          "id": "b",
+          "text": "960 maneiras",
+          "correct": true,
+          "explanation": "Correta. Para escolher um livro de cada área, aplicamos o princípio fundamental da contagem, que estabelece que o número total de maneiras de realizar uma sequência de escolhas independentes é o produto do número de opções para cada escolha. Assim, multiplicamos o número de livros de exatas (10) pelo número de livros de biológicas (8) e pelo número de livros de humanas (12). O resultado é 10 × 8 × 12 = 960 maneiras diferentes de formar o conjunto de três livros."
+        },
+        {
+          "id": "c",
+          "text": "240 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. Este valor não é obtido pela multiplicação das quantidades de livros de cada área (10 de exatas, 8 de biológicas e 12 de humanas). O princípio fundamental da contagem exige que se multiplique o número de opções disponíveis para cada escolha independente."
+        },
+        {
+          "id": "d",
+          "text": "1.200 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 1.200 não é o resultado da multiplicação das quantidades fornecidas (10 livros de exatas, 8 de biológicas e 12 de humanas). A escolha de um livro de cada área é um processo direto de multiplicação das opções para cada tipo de livro."
+        }
+      ],
+      "explanation": "Correta. Para escolher um livro de cada área, aplicamos o princípio fundamental da contagem, que estabelece que o número total de maneiras de realizar uma sequência de escolhas independentes é o produto do número de opções para cada escolha. Assim, multiplicamos o número de livros de exatas (10) pelo número de livros de biológicas (8) e pelo número de livros de humanas (12). O resultado é 10 × 8 × 12 = 960 maneiras diferentes de formar o conjunto de três livros.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma prova de natação com 7 atletas, todos com iguais chances de vitória, de quantos modos diferentes pode ocorrer a classificação dos 4 primeiros colocados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "840 modos diferentes",
+          "correct": true,
+          "explanation": "Correta. Para determinar o número de modos diferentes de classificar os 4 primeiros colocados em uma corrida com 7 atletas, utilizamos o conceito de arranjo (ou permutação simples), pois a ordem em que os atletas chegam é relevante (o 1º lugar é diferente do 2º, e assim por diante). O cálculo é feito multiplicando o número de opções para cada posição: 7 opções para o 1º lugar, 6 para o 2º, 5 para o 3º e 4 para o 4º. Assim, 7 × 6 × 5 × 4 = 840 modos diferentes."
+        },
+        {
+          "id": "b",
+          "text": "35 modos diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Este valor corresponderia a uma combinação de 7 elementos tomados 4 a 4 (C(7,4) = 35), o que seria aplicável se a ordem de chegada não importasse, ou seja, se estivéssemos apenas selecionando um grupo de 4 atletas sem se importar com suas posições. No entanto, na classificação de uma corrida, a ordem é crucial, tornando-o um problema de arranjo."
+        },
+        {
+          "id": "c",
+          "text": "210 modos diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Este valor não corresponde ao cálculo de arranjo para a situação apresentada. A classificação dos 4 primeiros colocados implica que a ordem é relevante, e o cálculo deve considerar as opções para cada posição sucessivamente (7 para o 1º, 6 para o 2º, etc.)."
+        },
+        {
+          "id": "d",
+          "text": "5.040 modos diferentes",
+          "correct": false,
+          "explanation": "Incorreta. Este valor corresponderia ao fatorial de 7 (7! = 5.040), que seria o número de maneiras de classificar todos os 7 atletas. A questão, porém, solicita apenas a classificação dos 4 primeiros colocados, o que é um subconjunto dos atletas onde a ordem é importante."
+        }
+      ],
+      "explanation": "Correta. Para determinar o número de modos diferentes de classificar os 4 primeiros colocados em uma corrida com 7 atletas, utilizamos o conceito de arranjo (ou permutação simples), pois a ordem em que os atletas chegam é relevante (o 1º lugar é diferente do 2º, e assim por diante). O cálculo é feito multiplicando o número de opções para cada posição: 7 opções para o 1º lugar, 6 para o 2º, 5 para o 3º e 4 para o 4º. Assim, 7 × 6 × 5 × 4 = 840 modos diferentes.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Um grupo escoteiro possui 12 meninos e 13 meninas. Deseja-se formar uma equipe com exatamente 2 meninos e 1 menina. De quantas maneiras diferentes essa equipe pode ser formada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "546 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 546 não corresponde ao cálculo das combinações necessárias para formar a equipe. É preciso calcular as combinações de 2 meninos de 12 e 1 menina de 13 de forma independente e, em seguida, multiplicar esses resultados."
+        },
+        {
+          "id": "b",
+          "text": "312 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. Este valor não é obtido pela combinação correta dos meninos e meninas. A seleção de membros para uma equipe, onde a ordem de escolha não altera a equipe final, exige o uso de combinações separadas para meninos e meninas, e depois a multiplicação dos resultados."
+        },
+        {
+          "id": "c",
+          "text": "1.716 maneiras",
+          "correct": false,
+          "explanation": "Incorreta. Este valor seria obtido se a ordem de escolha dos meninos importasse (arranjo), ou seja, A(12,2) * C(13,1) = (12*11) * 13 = 132 * 13 = 1716. No entanto, para formar uma equipe, a ordem dos membros escolhidos não é relevante, o que indica que se trata de uma combinação, e não de um arranjo."
+        },
+        {
+          "id": "d",
+          "text": "858 maneiras",
+          "correct": true,
+          "explanation": "Correta. Para formar uma equipe com 2 meninos e 1 menina, onde a ordem de escolha dos indivíduos não importa (pois a equipe resultante é a mesma, independentemente da ordem em que os membros são selecionados), utilizamos o conceito de combinação. Primeiro, calculamos o número de maneiras de escolher 2 meninos de um total de 12: C(12, 2) = 12! / (2! * (12-2)!) = (12 * 11) / (2 * 1) = 66. Em seguida, calculamos o número de maneiras de escolher 1 menina de um total de 13: C(13, 1) = 13! / (1! * (13-1)!) = 13. Finalmente, multiplicamos esses resultados, pois as escolhas são independentes: 66 × 13 = 858 maneiras diferentes de formar a equipe."
+        }
+      ],
+      "explanation": "Correta. Para formar uma equipe com 2 meninos e 1 menina, onde a ordem de escolha dos indivíduos não importa (pois a equipe resultante é a mesma, independentemente da ordem em que os membros são selecionados), utilizamos o conceito de combinação. Primeiro, calculamos o número de maneiras de escolher 2 meninos de um total de 12: C(12, 2) = 12! / (2! * (12-2)!) = (12 * 11) / (2 * 1) = 66. Em seguida, calculamos o número de maneiras de escolher 1 menina de um total de 13: C(13, 1) = 13! / (1! * (13-1)!) = 13. Finalmente, multiplicamos esses resultados, pois as escolhas são independentes: 66 × 13 = 858 maneiras diferentes de formar a equipe.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é o critério fundamental para decidir entre o uso de arranjo ou combinação na resolução de problemas de análise combinatória?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A natureza dos elementos envolvidos define se devem ser agrupados por arranjo (elementos homogêneos) ou por combinação (elementos heterogêneos)",
+          "correct": false,
+          "explanation": "Incorreta. A natureza dos elementos (homogêneos ou heterogêneos) não é o critério principal para distinguir arranjo de combinação. Embora a homogeneidade ou heterogeneidade possa influenciar outros aspectos da contagem (como em permutações com repetição), a decisão fundamental entre arranjo e combinação ainda se baseia na relevância da ordem dos elementos no agrupamento."
+        },
+        {
+          "id": "b",
+          "text": "O tipo de operação matemática necessária indica se será arranjo (quando envolve divisão) ou combinação (quando envolve apenas multiplicação)",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as fórmulas de arranjo e combinação envolvem operações de multiplicação e divisão de fatoriais. A distinção não está na presença ou ausência de divisão, mas sim no conceito subjacente da relevância da ordem dos elementos para a formação dos agrupamentos."
+        },
+        {
+          "id": "c",
+          "text": "A relevância da ordem dos elementos selecionados determina se deve ser usado arranjo (ordem importa) ou combinação (ordem não importa)",
+          "correct": true,
+          "explanation": "Correta. O critério mais fundamental e distintivo entre arranjo (ou permutação) e combinação na análise combinatória reside na importância da ordem dos elementos. Se a mudança na ordem dos elementos selecionados resulta em um agrupamento diferente, utiliza-se o arranjo. Por outro lado, se a ordem dos elementos não altera o agrupamento final, emprega-se a combinação. Por exemplo, escolher 3 pessoas para formar uma comissão (combinação) é diferente de escolher 3 pessoas para ocupar os cargos de presidente, vice-presidente e secretário (arranjo)."
+        },
+        {
+          "id": "d",
+          "text": "A quantidade total de elementos disponíveis determina se deve ser aplicada a fórmula de arranjo para conjuntos grandes ou combinação para conjuntos pequenos",
+          "correct": false,
+          "explanation": "Incorreta. A quantidade de elementos disponíveis, seja grande ou pequena, não é o fator determinante para escolher entre arranjo e combinação. O que realmente importa é se a ordem dos elementos selecionados é relevante para a formação do agrupamento no contexto do problema."
+        }
+      ],
+      "explanation": "Correta. O critério mais fundamental e distintivo entre arranjo (ou permutação) e combinação na análise combinatória reside na importância da ordem dos elementos. Se a mudança na ordem dos elementos selecionados resulta em um agrupamento diferente, utiliza-se o arranjo. Por outro lado, se a ordem dos elementos não altera o agrupamento final, emprega-se a combinação. Por exemplo, escolher 3 pessoas para formar uma comissão (combinação) é diferente de escolher 3 pessoas para ocupar os cargos de presidente, vice-presidente e secretário (arranjo).",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "12_196450_Análise Combinatória XII.pdf",
+  "coletado_em": "2026-09-23T21:03:06"
+}

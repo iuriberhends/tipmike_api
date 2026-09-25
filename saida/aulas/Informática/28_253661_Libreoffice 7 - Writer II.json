@@ -1,0 +1,739 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 28,
+  "ordem_no_curso": "61.00",
+  "titulo": "Libreoffice 7 - Writer II",
+  "codigo_aula": "253661",
+  "video_id": "9jB8+Uzb4fc=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:27:41",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/9jB8%2BUzb4fc%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=406736%2C405132%2C405130%2C405129%2C405107%2C420466%2C420467%2C405131%2C406734&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Libreoffice 7 - Writer II\n\n## Retomada e correção ortográfica e gramatical\nVamos lá, de volta com a nossa linha do LibreOffice 7 Writer. Na tela, acabamos de falar sobre arquivos em formato PDF, “Salvar como”, como está, como não está… Aquela coisa toda. Espero que você tenha entendido. Não entendeu? Não há problema. É um pouco confuso mesmo; às vezes, falando e até mostrando, ainda assim não dá para entender. Tenta dissolver isso. Há dúvidas não resolvidas? Não? Então prometem. Seis que fala da correção. Bem, estamos aqui para o texto.\n\nEu vou escrever aqui “errado” para ver que errado está errado mesmo. Vamos usar o bom e velho zoom para vermos melhor. Escrevi “errado” com três “r” de propósito e ele sublinhou automaticamente em vermelho. Isso pode acontecer com outras palavras que não estejam, de fato, erradas, mas estejam “fotograficamente” erradas. Então, o sublinhado vermelho, colocado automaticamente, pode indicar um erro ortográfico — e é para isso.\n\nMas, como eu disse, alguns nomes próprios, alguma coisa assim, pode acontecer também. A palavra “acabar” não está errada. “Subir para cima” — todo mundo, quando vai falar, dá uma vontade de falar “subir para cima”. Quem sobe, sobe e pronto. “Sair para fora”… Esse tipo de coisa já é outro tipo de correção. Não há aqui nenhum erro ortográfico na frase, como você percebe. Mas há um erro gramatical. Olha só: os erros ortográficos serão indicados, como eu falei, com sublinhado vermelho. Possíveis erros gramaticais — não são todos que ele vai corrigir — ele vai apresentar sugestões e serão indicados com sublinhado azul. Basicamente, são essas cores. Ele faz as duas correções e bola para frente.\n\n## Área de transferência e itens\nVamos sair daqui. Tirando o porquê desses sublinhados, vamos para a área de transferência. Nós temos aqui o armazenamento de um item só. Mas vamos considerar que “item” é qualquer seleção para não gerar confusão.\n\nVou escrever aqui “Almeida”. Esse é o meu nome, por exemplo. Está sugerindo que está errado. Nesses casos, eu uso o botão direito: “Iniciar com maiúscula”, corrigindo o início da frase para letra maiúscula.\n\nAgora “Jefferson” sublinhado em vermelho — como nós vimos. Botão direito e ele está sugerindo “Jéfferson” com acento. Meu nome não tem acento. Embora a pronúncia seja “Jé”, eu posso ignorar agora e para sempre, ou adicionar ao dicionário. Ao fazer isso, estou inserindo essa palavra no dicionário do Writer e ele não vai mais indicá-la como erro.\n\nVamos aqui de novo: eu vou pegar um item. Pode ser uma letra, uma palavra, duas palavras, três ou mais, um texto inteiro. Isso é um item. Então, para não confundir: item é aquilo que eu selecionei. Eu vou usar a opção de copiar, por exemplo, com o atalho Ctrl+C e depois Ctrl+V para colar. As opções para colar estão aqui. Sendo bem objetivo: não tem muito o que enrolar aqui.\n\nNós não temos um recurso semelhante a outro programa (no caso hoje, o Word). Eu vou evitar fazer comparações diretas para não confundir, porque no edital não traz “o que tem lá e o que tem nele”. No Writer, nós armazenamos um item de cada vez na área de transferência. Só enfatizando: um item pode ser tudo aquilo que eu falei — um texto inteiro, mil palavras, uma letrinha, um espaço, uma imagem. É um item.\n\n## Compatibilidade com sistemas operacionais\nCompatibilidade com o sistema operacional. Isso aqui é bem abordado em questões de prova e confunde um pouco. O LibreOffice aqui está executando no Windows. Você deve ter visto o Windows aparecendo alguma vez. Então, estou usando Windows. Ele é compatível com Windows também. Vamos colocar uma “barrinha”: tem também com macOS e também com Linux. Mas olha só: normalmente, em prova, eles não abordam isso profundamente. Mas vai que cai: a versão do Windows… “Ela é só para Windows?” Não. Eu tenho o pacote inteiro para ser instalado no Windows. Existe o pacote LibreOffice para ser instalado no macOS e para ser instalado no Linux.\n\n> 🎯 **Dicas de prova:** O pacote LibreOffice é compatível com Windows, macOS e Linux. Não confunda com “apenas Linux” por ser software livre.\n\nJá vi questão de prova dizendo: “O pacote LibreOffice associa-se ao Linux apenas”. Nada a ver. Pode sim, desde que use a versão específica. Para resumir: basta lembrar — tem para Windows, tem para macOS, tem para Linux. Você vai escrever no seu material: compatibilidade com Windows, macOS e Linux. Lembrando que cada um tem seu instalador. É um detalhe que não é tão necessário, quase nunca cobram, mas vai que cai na sua prova.\n\n## Seleção com o mouse: cliques simples, duplos, triplos e quádruplos\nVamos fazer a seleção com o mouse. Clique simples na palavra, clique duplo na palavra… Vou pegar um texto para base. Vou abrir um documento sem título, gerar um texto de exemplo só para ganhar tempo. Pronto, temos um texto.\n\nEu vou quebrar esse texto em dois parágrafos e vamos começar a nossa seleção. Conforme o material: clique simples na palavra. Muita gente confunde o clique simples porque acha que não acontece nada. Mas acontece. Veja: um clique posiciona o cursor. Perceba o cursor piscando dentro da palavra. Então:\n\n- Clique simples posiciona o cursor.\n- Clique duplo seleciona a palavra.\n- Cuidado: clique triplo seleciona o período (a sentença) clicado. Nesse meu parágrafo tenho dois períodos; ele seleciona apenas o período em que cliquei.\n\n> 🎯 **Dicas de prova:** Clique triplo seleciona o período, não “o parágrafo” de forma genérica. Se a questão afirmar que triplo clique “seleciona o parágrafo”, está errado — a menos que o parágrafo tenha um único período.\n\n- Clique quádruplo seleciona o parágrafo inteiro.\n\nAgora, seleção à esquerda da linha (na margem interna do texto, não fora da área de texto). Um clique simples à esquerda de uma linha posiciona o cursor antes da primeira palavra. O duplo clique à esquerda seleciona a primeira palavra da linha. O triplo clique à esquerda seleciona o período clicado. O quádruplo clique à esquerda seleciona o parágrafo todo.\n\nVocê percebe que há redundâncias: funções que se repetem conforme o contexto. É importante saber, porque isso é diferente de outros programas. Se você está acostumado a outro editor, pode errar na prova. Similaridades existem, mas nem tudo é igual. Eu não quero você cair em nenhuma pegadinha. Quero que você seja aprovada, de preferência na primeira tentativa — eu sei que na primeira é complicado, mas vamos nessa.\n\n## Seleção com as setas direcionais e modificadores\nAgora vamos fazer a seleção usando as setas direcionais. Se você não joga, provavelmente usa pouco: setinha para cima, para baixo, para a esquerda, para a direita. Vou pegar a palavra “argumento” como base, partindo dela.\n\n- Shift + Seta para a direita: seleciona um caractere à direita por clique.\n- Shift + Seta para a esquerda: seleciona um caractere à esquerda por clique.\n- Shift + Seta para cima: estende a seleção da posição atual até a linha acima.\n- Shift + Seta para baixo: estende a seleção da posição atual até a linha abaixo.\n\nAnote: esse tipo de seleção sempre parte da posição inicial do cursor, na direção aplicada.\n\n- Shift + End: seleciona da posição atual até o fim da linha.\n- Shift + Home: seleciona da posição atual até o início da linha.\n\nDe forma completa:\n- Ctrl + End: vai até o fim do texto.\n- Ctrl + Home: vai até o início do texto.\n- Shift + Ctrl + End: seleciona da posição atual até o fim do texto.\n- Shift + Ctrl + Home: seleciona da posição atual até o início do texto.\n\nAgora, Shift + clique: permite selecionar da posição inicial do cursor até a posição clicada com o mouse. Você determina o fim da seleção — para cima ou para baixo.\n\nJá Ctrl + clique: primeiro selecione algo (uma palavra, uma letra, um trecho). Mantendo Ctrl pressionado, você pode adicionar outras seleções não contíguas. Ele permite selecionar palavras ou trechos do texto aleatoriamente (seleção múltipla não adjacente).\n\n> 🎯 **Dicas de prova:** Ctrl + clique permite seleções múltiplas não contíguas; Shift + clique cria uma seleção contínua da posição inicial do cursor até o ponto clicado.\n\n## Passeio pelos menus: foco no que cai em prova\nAgora vamos iniciar um passeio pelos menus. Toda vez que eu passar num menu, mesmo que eu não dê muita atenção, tendo lá um atalho, um ícone, alguma coisa, não custa nada você dar uma parada e olhar. Você mesma vai conseguir complementar, provavelmente sem procurar recursos externos. Não dá para passar por tudo, horas e horas, e ainda assim não saberia tudinho. O objetivo é passar na prova. Eu vou falar o que mais cai.\n\nPode acontecer de, ao resolver questões, aparecer algo que não falamos aqui. Beleza. Traz dúvida e a gente trabalha quando for necessário. Às vezes é uma questão que não se repetiu mais, caiu há cinco, seis anos, e nunca mais. Minha estratégia é focar no que cai. E atalhos caem. Caem muito.\n\nVamos começar pelo menu Arquivo. Esses atalhos você já pode separar na sua lista.\n\nPara acessar os menus pelo teclado: todos eles têm uma letra sublinhada. Para Arquivo, Editar, etc. Você aperta Alt e depois a letra sublinhada do menu. Dentro do menu, as opções também têm letras sublinhadas.\n\nNo Arquivo > Novo: você pode abrir um novo documento de texto, uma planilha (Calc), uma apresentação (Impress), um desenho (Draw), uma fórmula (Math) ou banco de dados (Base), entre outras.\n\n> 🎯 **Dicas de prova:** Ctrl + N abre um novo documento de texto no Writer.\n\nEu abri um documento novo e fechei. Simples: Ctrl + N abre um novo documento. Agora, “Abrir”.\n\nPara quem manja um pouco de inglês, os atalhos muitas vezes vêm do nome em inglês da função. Mas não se preocupe se o programa estiver em português — os atalhos continuam baseados no inglês, em geral. Quem quiser associar mentalmente, ótimo. Quem não manja, tudo bem. “Open” → Ctrl + O abre um documento existente.\n\n> 🎯 **Dicas de prova:** Ctrl + O abre um documento existente.\n\n## Arquivo remoto, recentes, fechar, assistentes e modelos\nArquivo remoto: abre um arquivo que está na internet/servidor. É preciso configurar previamente um local acessível (WebDAV, FTP, serviços compatíveis) para o Writer acessar.\n\nOs mais interessantes para prova: WebDAV/servidor e FTP, além de serviços de nuvem suportados pela interface do LibreOffice.\n\nDocumentos recentes: mostra uma lista dos últimos documentos abertos; você pode limpar a lista.\n\nFechar: fecha o documento atual.\n\nAssistente: oferece modelos prontos (carta, fax, agenda etc.).\n\nModelos: abrir modelo, salvar como modelo, gerenciar modelos.\n\n## Recarregar, salvar e salvar como\nRecarregar: você salvou o documento, fez alterações e quer voltar ao estado da última gravação. Use Recarregar. Ele pergunta se deseja cancelar as alterações não salvas. Confirmando, volta ao estado do último salvamento.\n\nVou até salvar aqui. Você vê o ícone do disquete. Posso usar o de cima ou o de baixo. O atalho é Ctrl + S.\n\n> 🎯 **Dicas de prova:** Ctrl + S salva o documento. Em um documento novo, abre “Salvar como”; após nomeado, salva direto.\n\nDocumento novo, sem nome: Ctrl + S abre a janela “Salvar como”. Depois que você salvar pela primeira vez, Ctrl + S apenas grava as alterações.\n\nSalvar como: use quando quiser salvar no mesmo lugar com outro nome, ou no mesmo lugar com a mesma base de nome mas outra extensão. A qualquer momento, você pode acionar “Salvar como” pelo menu.\n\nSalvar remoto: relacionado ao arquivo remoto. Primeiro é preciso configurar o local remoto.\n\nSalvar uma cópia: é basicamente um “Salvar como” disfarçado — cria uma cópia do documento sob outro nome/local, mantendo o arquivo atual aberto como está.\n\nSalvar tudo: quando há várias janelas/documentos abertos, salva todos de uma vez.\n\nExportar / Exportar como PDF: opções de exportação.\n\nEnviar: enviar por e-mail, por exemplo, como anexo.\n\nVisualizar no navegador web: caso esteja desenvolvendo algo para ser apresentado na web.\n\n## Visualização de impressão e imprimir\nChegamos ao atalho Ctrl + Shift + O (varia conforme layout/versão; no Writer 7, a Visualização de Impressão costuma ser acessível por menu Arquivo > Visualizar). De qualquer forma, a função é visualizar como o documento vai sair impresso. Se aparecer marca de tabulação ou outro elemento na visualização, é porque será impresso. Se não aparecer, não vai.\n\nFechando a visualização, vamos ao próximo atalho: Ctrl + P para imprimir. Em Arquivo > Imprimir, você escolhe a impressora, as páginas, e a opção “Seleção” fica ativa apenas se houver algo selecionado.\n\nVocê pode indicar faixas: “1,3,6-10”, por exemplo. A vírgula separa páginas; o traço indica intervalo contínuo.\n\n> 🎯 **Dicas de prova:** Em “Páginas” da caixa de impressão, use vírgula para páginas isoladas (1,3) e traço para intervalo (6-10).\n\nVocê pode ajustar tamanho do papel, orientação e outras propriedades. Para prova, isso é suficiente. Ainda temos o atalho Ctrl + P (e, em algumas interfaces, ícone rápido ou Ficha de impressão) para a mesma função.\n\nDepois de Imprimir, há Configurar impressora (propriedades de dispositivo). Propriedades do documento: metadados — autor, local de armazenamento, título etc. Assinaturas digitais: vinculadas a certificado digital; você pode assinar digitalmente o documento.\n\nSair do LibreOffice fecha a janela — atalho Ctrl + Q.\n\n## Encerramento do bloco\nBom, espero que esteja acompanhando num ritmo legal. Você pode reduzir ou aumentar a velocidade do vídeo. Eu fecho este bloco e volto daqui a pouquinho dando continuidade ao nosso passeio. Vimos o menu Arquivo e seus atalhos, e vamos passar por quase todos os menus — não tão detalhadamente, mas no que mais cai. Até daqui a pouco!",
+  "transcricao_meta": {
+    "title": "Libreoffice 7 - Writer II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 37489,
+    "createdAt": "2026-02-09T16:34:48.472Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: uso do LibreOffice Writer 7 para seleção de texto, área de transferência, correção automática, navegação por menus/atalhos, salvar/abrir (local e remoto), visualização e impressão, propriedades e assinaturas.\nPrincipais pontos: \n- Cores de correção: vermelho (ortografia) vs azul (gramática).\n- Seleção precisa com mouse/teclado e múltiplas seleções.\n- Menu Arquivo: salvar/salvar como/salvar remoto/recarregar/exportar/imprimir.\n- Impressão: escolha de páginas com vírgula vs traço; “Seleção” só habilita com seleção ativa.\n\n## 1. Base / Conceitos Fundamentais\n- **LibreOffice Writer 7**: editor de textos do pacote **LibreOffice** (software livre), disponível para **Windows** e **Linux**.\n- **Área de transferência**: armazena 1 item por vez; item pode ser letra, palavra, frase, parágrafo, texto inteiro, espaço ou imagem.\n- **Correção automática**:\n  - **Sublinhado vermelho**: possível erro ortográfico; pode ser nome próprio.\n  - **Sublinhado azul**: possíveis erros gramaticais/estilo (ex.: redundâncias).\n- **Cursor**: ponto de inserção de texto; toda seleção por teclado parte da posição atual do cursor.\n- **Período vs Parágrafo**:\n  - **Período**: frase até o ponto final.\n  - **Parágrafo**: bloco de texto até a quebra de parágrafo.\n\n> Dica de Prova\n> - Vermelho = ortografia; Azul = gramática. Guarde as cores.\n\n## 2. Como Funciona / Distinções\n- **Cores de correção**:\n  - Vermelho: ortografia; ações pelo botão direito: “ignorar agora”, “ignorar para sempre”, “adicionar ao dicionário”.\n  - Azul: gramática/estilo; pode sugerir, nem sempre corrige.\n- **Seleção com mouse (no texto)**:\n  - Clique simples: posiciona o cursor.\n  - Duplo clique: seleciona a palavra.\n  - Triplo clique: seleciona o período.\n  - Quádruplo clique: seleciona o parágrafo.\n- **Seleção com mouse (à esquerda da linha)**:\n  - Clique simples: posiciona no início da linha.\n  - Duplo: pode selecionar a primeira palavra.\n  - Triplo: período da linha.\n  - Quádruplo: parágrafo.\n- **Seleção com teclado**:\n  - Shift + setas direita/esquerda: caractere a caractere.\n  - Shift + setas cima/baixo: expande para linha acima/abaixo.\n  - Shift + End/Home: do cursor ao fim/início da linha.\n  - Ctrl + Shift + End/Home: do cursor ao fim/início do documento.\n  - Ctrl + clique: seleciona do cursor até o ponto clicado.\n  - Ctrl (pressionado) + novas seleções: múltiplas seleções não contíguas.\n- **Acesso a menus por teclado**:\n  - Alt + letra sublinhada: abre o menu (ex.: Alt + A para “Arquivo”).\n- **Atalhos mantêm lógica do inglês**, mesmo com interface PT-BR:\n  - New → Ctrl + N; Open → Ctrl + O; Save → Ctrl + S; Print → Ctrl + P.\n\n> Pegadinha\n> - “Triplo clique seleciona o parágrafo.” Falso. O triplo seleciona o período; parágrafo é com quádruplo clique (salvo se o parágrafo tiver um único período).\n\n## 3. Aplicação Prática / Técnicas\n- **Correção ortográfica/gramatical**:\n  - Ao ver sublinhado vermelho: botão direito → decidir ignorar ou “adicionar ao dicionário” (útil para nomes próprios como “Almeida”, “Roma”, “Jeffersoné.” se for nome).\n  - Ao ver sublinhado azul: avaliar sugestão; exemplos de redundância: “subir para cima”, “sair para fora”, “Quem sobe, sobe e pronto”.\n- **Seleções rápidas**:\n  - Palavra inteira: duplo clique.\n  - Frase inteira: triplo clique.\n  - Parágrafo inteiro: quádruplo clique.\n  - Do cursor ao fim da linha: Shift + End.\n  - Do cursor ao início da linha: Shift + Home.\n  - Do cursor ao fim do texto: Ctrl + Shift + End.\n  - Do cursor ao início do texto: Ctrl + Shift + Home.\n  - Múltiplas palavras não contíguas: selecione a 1ª, mantenha Ctrl e selecione as demais.\n- **Copiar/colar**:\n  - Copiar: Ctrl + C.\n  - Colar: Ctrl + V.\n- **Fluxo de Salvar/Abrir**:\n  - Documento novo + Ctrl + S → abre “Salvar como”.\n  - Documento já salvo + Ctrl + S → salva direto.\n  - “Salvar como”: novo nome/local/extensão.\n  - “Salvar remoto”: grava em serviço remoto; depois use “Abrir” > “Remoto” para abrir de lá.\n  - “Recarregar”: descarta alterações desde o último “Salvar”.\n  - “Salvar tudo”: salva todos os documentos abertos.\n- **Exportar/Enviar/Visualizar**:\n  - “Exportar/Exportar como”: gerar cópias em outros formatos (ex.: PDF).\n  - “Visualizar no navegador web”: ver como HTML.\n  - “Visualizar impressão”: prévia fiel ao impresso; o que aparece será impresso.\n- **Impressão**:\n  - Abrir: Arquivo > Imprimir ou Ctrl + P.\n  - Escolher impressora; definir páginas:\n    - Todas.\n    - Específicas: separar com vírgula (ex.: 1, 3).\n    - Intervalo: usar traço (ex.: 3–6).\n    - Combinar: 1, 3–6.\n    - Seleção: imprime apenas o que estiver selecionado (só habilita se houver seleção).\n  - “Configurar impressora”: ajustar propriedades do dispositivo.\n- **Propriedades e Assinaturas**:\n  - “Propriedades do documento”: metadados (autor, armazenamento etc.).\n  - “Assinaturas digitais”: vincular certificado para assinar o documento.\n- **Fechar janela do Writer**: Ctrl + F4.\n\n> Dica de Prova\n> - End/Home afetam a LINHA; Ctrl + Shift + End/Home afetam o DOCUMENTO.\n\n## 4. Exemplos e Casos Resolvidos\n- Seleção por teclado a partir da palavra “argumento” (cursor no “a”):\n  - Shift + seta direita (3 vezes) → “arg”.\n  - Shift + End → do “a” ao fim da linha.\n  - Ctrl + Shift + End → do “a” ao fim do documento (se estiver na 5ª página de “dez páginas”, seleciona da 5ª até a 10ª).\n- Impressão de páginas:\n  - Campo “Páginas”: “1, 3–6” → imprime página 1, e da 3 à 6.\n- Correção:\n  - Palavra “Jeffersoné.” sublinhada em vermelho: botão direito → “adicionar ao dicionário” (se for nome) ou corrigir ortografia.\n- Seleção alternada:\n  - Selecione “Almeida”; mantenha Ctrl e selecione “Roma” e “argumento” → 3 seleções não contíguas; depois Ctrl + C para copiar tudo junto.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - Documento novo + Ctrl + S abre “Salvar como”. Depois disso, Ctrl + S salva direto.\n\n- Triplo vs quádruplo clique:\n  - Triplo → período; Quádruplo → parágrafo. Trocar isso erra a questão.\n- Linha vs documento:\n  - Shift + End/Home = linha; Ctrl + Shift + End/Home = documento.\n- Opção “Seleção” na impressão:\n  - Só habilita se houver algo selecionado. Questões cobram essa condição.\n- Vírgula vs traço em páginas:\n  - “1, 3” páginas soltas; “3–6” intervalo contínuo.\n- “Recarregar” ≠ “Desfazer”:\n  - Recarregar volta ao último arquivo salvo, descartando todas as alterações desde então; Desfazer volta passo a passo.\n- Atalhos em PT-BR:\n  - Mesmo com interface PT-BR, os atalhos seguem o inglês (N, O, S, P).\n- Software livre:\n  - Funções podem variar entre versões; se algo “não habilita”, verifique pré-requisitos (ex.: seleção ativa) e versão.\n\n> Dica de Prova\n> - Cores: vermelho = ortografia; azul = gramática. Em exemplos de redundância (“subir para cima”), o sublinhado é azul.\n\n> Pegadinha\n> - “Área de transferência armazena apenas palavras.” Falso. Pode armazenar qualquer seleção (inclui imagens e espaços).",
+  "resumo_bolso": "# Libreoffice 7 - Writer II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Writer 7**: editor de textos do LibreOffice (software livre), para **Windows** e **Linux**.\n* **Área de transferência**: guarda **1 item por vez** (letra, palavra, frase, parágrafo, texto inteiro, espaço, **imagem**).\n* **Cursor**: ponto de inserção; toda seleção por teclado parte da posição atual do cursor.\n* **Período**: frase até o **ponto final**.\n* **Parágrafo**: bloco até a **quebra de parágrafo** (Enter).\n* **Correção automática – cores**:\n  * **Vermelho**: possível erro **ortográfico** (pode ser nome próprio).\n  * **Azul**: possíveis erros **gramaticais/estilo** (ex.: redundâncias como “subir para cima”, “sair para fora”).\n* **Atalhos “em inglês”**: mesmo em PT-BR → **Ctrl+N** (New), **Ctrl+O** (Open), **Ctrl+S** (Save), **Ctrl+P** (Print).\n* **End/Home**: com **Shift** atuam na **linha**; com **Ctrl+Shift** atuam no **documento**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Vermelho vs Azul (Correção)\n\n| Aspecto | Vermelho | Azul |\n|--------|----------|------|\n| **Tipo de erro** | Ortografia | Gramática/estilo |\n| **Exemplo típico** | Nome próprio, palavra mal escrita | Redundâncias como “subir para cima”, “sair para fora” |\n| **Ação comum** | Ignorar, ignorar sempre, adicionar ao dicionário | Avaliar sugestão, pode não corrigir |\n\n---\n\n### Triplo vs Quádruplo Clique\n\n| Aspecto | Triplo clique | Quádruplo clique |\n|--------|---------------|------------------|\n| **O que seleciona** | **Período** (frase até o ponto) | **Parágrafo** inteiro |\n| **Onde** | No texto ou na área à esquerda | No texto ou na área à esquerda |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Seleção com Mouse (no texto)**  \n* **Clique simples**: posiciona cursor.  \n* **Duplo clique**: **palavra**.  \n* **Triplo clique**: **período**.  \n* **Quádruplo clique**: **parágrafo**.\n\n**2. Seleção com Mouse (margem esquerda da linha)**  \n* **Clique simples**: início da linha.  \n* **Duplo**: pode selecionar a ** primeira palavra**.  \n* **Triplo**: **período** da linha.  \n* **Quádruplo**: **parágrafo**.\n\n**3. Seleção com Teclado**\n\n* **Caractere a caractere**: Shift + setas **esquerda/direita**.  \n* **Linha acima/abaixo**: Shift + setas **cima/baixo**.  \n* **Até fim da linha**: Shift + **End**.  \n* **Até início da linha**: Shift + **Home**.  \n* **Até fim do documento**: Ctrl + Shift + **End**.  \n* **Até início do documento**: Ctrl + Shift + **Home**.  \n* **Do cursor até ponto clicado**: Ctrl + **clique**.  \n* **Múltiplas seleções não contíguas**: manter **Ctrl** pressionado e fazer novas seleções.\n\n**4. Área de Transferência / Copiar e Colar**\n\n* **Só 1 item por vez**.  \n* Pode ser **texto, espaço, imagem** etc.  \n* **Copiar**: Ctrl + C.  \n* **Colar**: Ctrl + V.\n\n**5. Menus por Teclado**\n\n* **Alt + letra sublinhada**: abre menu (ex.: Alt + A para **Arquivo**).\n\n**6. Salvar / Abrir / Recarregar**\n\n* **Documento novo + Ctrl+S** → abre **Salvar como**.  \n* **Documento já salvo + Ctrl+S** → salva direto.  \n* **Salvar como**: novo **nome/local/extensão**.  \n* **Salvar remoto**: grava em serviço remoto; abrir depois em **Abrir > Remoto**.  \n* **Recarregar**: descarta tudo desde o **último Salvar** e recarrega o arquivo.  \n* **Salvar tudo**: salva **todos** os documentos abertos.\n\n**7. Exportar / Visualizar**\n\n* **Exportar / Exportar como**: gera cópias em outros formatos (ex.: **PDF**).  \n* **Visualizar no navegador web**: exibe como **HTML**.  \n* **Visualizar impressão**: prévia **fiel** ao que será impresso.\n\n**8. Impressão (Arquivo > Imprimir ou Ctrl+P)**\n\n* **Todas**: imprime o documento inteiro.  \n* **Páginas específicas**:  \n  * Separadas por **vírgula**: 1, 3 (páginas soltas).  \n  * Intervalo com **traço**: 3–6 (contínuo).  \n  * Combinação: 1, 3–6.  \n* **Seleção**: imprime **apenas** o que estiver selecionado (só habilita se houver seleção).  \n* **Configurar impressora**: propriedades do dispositivo.\n\n**9. Propriedades / Assinaturas**\n\n* **Propriedades do documento**: metadados (autor, armazenamento etc.).  \n* **Assinaturas digitais**: vincula certificado para assinar o documento.\n\n**10. Fechar janela do Writer**\n\n* **Ctrl + F4**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* “Triplo clique seleciona o parágrafo.” → **Falso**. Triplo = **período**; parágrafo é com **quádruplo clique** (salvo parágrafo com um único período).\n* “End/Home sempre agem no documento.” → **Falso**. **Shift+End/Home** = **linha**; **Ctrl+Shift+End/Home** = **documento**.\n* “Opção ‘Seleção’ na impressão está sempre disponível.” → **Falso**. Só habilita se **houver algo selecionado**.\n* “Vírgula e traço em páginas são equivalentes.” → **Falso**. **Vírgula** = páginas soltas (1, 3); **traço** = intervalo (3–6).\n* “Área de transferência armazena apenas palavras.” → **Falso**. Pode armazenar qualquer seleção, inclusive **imagens** e **espaços**.\n\n---\n\n## 📋 Checklist Final\n\n* Fixei: **vermelho = ortografia**, **azul = gramática/estilo**?  \n* Sei que **triplo clique** = período e **quádruplo clique** = parágrafo?  \n* Lembro: **Shift+End/Home = linha**; **Ctrl+Shift+End/Home = documento**?  \n* Sei que a opção **Seleção** na impressão só aparece com **texto selecionado**?  \n* Memorizei: **Ctrl+S em documento novo** abre **Salvar como**, e depois salva direto?  \n* Sei usar **vírgula** (páginas soltas) e **traço** (intervalo) na impressão?  \n* Lembro que a **área de transferência** guarda **1 item** (inclusive imagens e espaços)?  \n* Sei que **Recarregar** descarta tudo desde o último **Salvar**?  \n* Gravei os atalhos em inglês: **Ctrl+N, Ctrl+O, Ctrl+S, Ctrl+P**?",
+  "mapa_mental": "# 💻 LibreOffice Writer 7 – Writer II\n## 🎯 Fundamentos do Writer\n### 💡 Conceitos básicos\n- Editor de textos\n- Parte do LibreOffice\n- Software livre\n- Windows e Linux\n### 📋 Área de transferência\n- Armazena 1 item\n- Texto ou imagem\n- Palavra ou parágrafo\n- Espaços também\n### 📝 Período x parágrafo\n- Período até ponto\n- Parágrafo até quebra\n- Seleções diferentes\n- Atalhos distintos\n\n## 🛡️ Correção e Navegação\n### 📖 Cores de correção\n- Vermelho ortografia\n- Azul gramática\n- Botão direito opções\n- Adicionar dicionário\n### ⚙️ Opções de correção\n- Ignorar agora\n- Ignorar sempre\n- Adicionar palavra\n- Sugestões gramática\n### ⌨️ Navegação menus\n- Alt letra sublinhada\n- Menu Arquivo\n- Menus acessíveis\n- Interface PT-BR\n### 🔤 Atalhos principais\n- Novo Ctrl N\n- Abrir Ctrl O\n- Salvar Ctrl S\n- Imprimir Ctrl P\n\n## 🖱️ Seleção de Texto\n### 🖱️ Mouse no texto\n- Clique simples cursor\n- Duplo palavra\n- Triplo período\n- Quádruplo parágrafo\n### 🖱️ Mouse área esquerda\n- Clique início linha\n- Duplo primeira palavra\n- Triplo período linha\n- Quádruplo parágrafo\n### ⌨️ Teclado básico\n- Shift setas caracteres\n- Shift cima baixo linhas\n- Shift End fim linha\n- Shift Home início linha\n### ⌨️ Teclado avançado\n- Ctrl Shift End documento\n- Ctrl Shift Home início\n- Ctrl clique seleção\n- Ctrl múltiplas seleções\n\n## 📂 Arquivo, Exportação e Impressão\n### 💾 Salvar e abrir\n- Documento novo Ctrl S\n- Abre Salvar como\n- Documento salvo Ctrl S\n- Salvar direto\n### 🌐 Salvar remoto\n- Salvar em servidor\n- Abrir remoto\n- Recarregar documento\n- Salvar tudo janelas\n### 📤 Exportar e visualizar\n- Exportar formatos\n- Exportar PDF\n- Visualizar navegador\n- Visualizar impressão\n### 🖨️ Impressão\n- Arquivo Imprimir\n- Ctrl P atalho\n- Todas páginas\n- Páginas vírgula traço\n- Opção Seleção ativa\n### 📜 Propriedades e assinaturas\n- Propriedades documento\n- Metadados autor\n- Assinatura digital\n- Certificado vinculado\n- Fechar Ctrl F4",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Revisão textual",
+      "description": "Revisão textual — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que indica o sublinhado vermelho no **Writer**?",
+          "back": "Erro ortográfico.",
+          "hint": "Refere-se a um tipo específico de erro",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "revisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual problema pode ser indicado pelo sublinhado azul no Writer?",
+          "back": "Erro gramatical.",
+          "hint": "Refere-se a um tipo específico de erro",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "revisao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como impedir que uma palavra seja novamente indicada como erro?",
+          "back": "Clicar com o botão direito e selecionar a opção para **ignorar** ou **adicionar ao dicionário**.",
+          "hint": "Ação de gerenciamento de dicionário",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "revisao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Seleção de texto",
+      "description": "Seleção de texto — 6 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual é o efeito de um clique simples sobre uma palavra no Writer?",
+          "back": "Posicionar o cursor.",
+          "hint": "Ação básica de navegação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "writer",
+            "selecao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "O que a execução de um clique duplo sobre uma palavra realiza?",
+          "back": "Selecionar a palavra.",
+          "hint": "Ação de seleção de unidade mínima",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "selecao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "O que a execução de um clique triplo seleciona no Writer?",
+          "back": "O período.",
+          "hint": "Ação de seleção de unidade textual",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "selecao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual unidade é selecionada a cada clique de Shift com a seta direita ou esquerda?",
+          "back": "Um caractere.",
+          "hint": "Ação de seleção por atalho",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "selecao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Até onde Shift+End estende a seleção no Writer?",
+          "back": "Até o fim da linha.",
+          "hint": "Ação de seleção por atalho",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "selecao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Que tipo de seleção Ctrl+clique permite realizar no Writer?",
+          "back": "Seleção de palavras ou trechos do texto aleatoriamente.",
+          "hint": "Ação de seleção não contígua",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "selecao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Arquivo e atalhos",
+      "description": "Arquivo e atalhos — 7 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual tecla deve ser combinada com a letra sublinhada para acessar um menu?",
+          "back": "Alt.",
+          "hint": "Tecla de acesso a menus",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "atalhos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual atalho cria um novo documento no Writer?",
+          "back": "Ctrl+N",
+          "hint": "Atalho de criação",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "writer",
+            "atalhos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "O que a opção Documentos recentes exibe no Writer?",
+          "back": "Uma lista dos últimos documentos abertos no programa.",
+          "hint": "Funcionalidade de histórico",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "writer",
+            "arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "O que a opção Recarregar faz em um documento já salvo?",
+          "back": "Voltar ao estado da última vez em que o documento foi salvo, cancelando as alterações.",
+          "hint": "Ação de reversão de estado",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-14",
+          "front": "Em que situação a opção Salvar como deve ser usada?",
+          "back": "Para salvar o documento com outro nome, em outro local ou com extensão diferente.",
+          "hint": "Ação de salvamento com parâmetros",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "arquivos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual é a finalidade da opção Salvar uma cópia?",
+          "back": "Criar uma cópia do documento (um salvar como disfarçado).",
+          "hint": "Ação de duplicação de arquivo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-16",
+          "front": "O que a opção Salvar tudo realiza quando há vários documentos abertos?",
+          "back": "Salvar todos os documentos abertos de uma vez.",
+          "hint": "Ação de salvamento em lote",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "writer",
+            "arquivos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Documento e impressão",
+      "description": "Documento e impressão — 6 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "O que são as propriedades de um documento?",
+          "back": "Metadados ou dados sobre o documento, como o local em que está armazenado.",
+          "hint": "Conceito de metadados",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "propriedades"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual é a finalidade de uma assinatura digital em um documento?",
+          "back": "Comprovar a identidade e a assinatura do autor.",
+          "hint": "Recurso de segurança",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "writer",
+            "seguranca"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-19",
+          "front": "O que a visualização de impressão permite verificar?",
+          "back": "Verificar como o documento sairá ao ser impresso.",
+          "hint": "Recurso de pré-visualização",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "impressao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-20",
+          "front": "Quando a opção de imprimir a seleção fica disponível?",
+          "back": "Quando há algum item selecionado no texto.",
+          "hint": "Condição de disponibilidade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "impressao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-21",
+          "front": "Como representar um intervalo de páginas na caixa de impressão?",
+          "back": "Utilizando um traço (ex: 3-6).",
+          "hint": "Sintaxe de intervalo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "impressao"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-22",
+          "front": "Como separar páginas individuais na especificação de impressão?",
+          "back": "Utilizando uma vírgula.",
+          "hint": "Sintaxe de separação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "writer",
+            "impressao"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No LibreOffice Writer, qual é a função do sublinhado vermelho que aparece automaticamente em uma palavra?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Indicar possíveis erros ortográficos detectados pelo corretor automático do programa",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, o sublinhado vermelho é uma indicação visual padrão do corretor ortográfico para sugerir que a palavra pode conter um erro de grafia, baseando-se no dicionário do programa. É uma ferramenta útil para auxiliar na revisão de textos."
+        },
+        {
+          "id": "b",
+          "text": "Destacar expressões que foram copiadas de outros documentos e precisam de citação",
+          "correct": false,
+          "explanation": "Incorreta. O sublinhado vermelho não é utilizado para destacar expressões copiadas que exigem citação. A função de citação e referência bibliográfica é realizada por outras ferramentas ou funcionalidades do editor de texto, não pelo sublinhado ortográfico."
+        },
+        {
+          "id": "c",
+          "text": "Marcar palavras que serão excluídas automaticamente na próxima revisão do documento",
+          "correct": false,
+          "explanation": "Incorreta. O sublinhado vermelho não tem a função de marcar palavras para exclusão automática. Sua finalidade é alertar sobre possíveis erros ortográficos para que o usuário possa revisá-los e corrigi-los manualmente ou através das sugestões do programa."
+        },
+        {
+          "id": "d",
+          "text": "Sinalizar termos que necessitam obrigatoriamente de formatação em negrito ou itálico",
+          "correct": false,
+          "explanation": "Incorreta. O sublinhado vermelho não está relacionado à formatação de texto em negrito ou itálico. Ele é uma ferramenta de correção ortográfica, indicando que a palavra pode estar escrita de forma incorreta."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, o sublinhado vermelho é uma indicação visual padrão do corretor ortográfico para sugerir que a palavra pode conter um erro de grafia, baseando-se no dicionário do programa. É uma ferramenta útil para auxiliar na revisão de textos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a função do sublinhado azul que pode aparecer em trechos de texto no LibreOffice Writer?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Indicar possíveis erros gramaticais detectados pelo sistema de correção do programa",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, o sublinhado azul é utilizado para sinalizar possíveis erros gramaticais ou de estilo, como concordância, regência ou pontuação, detectados pelo corretor gramatical do programa. É uma ferramenta que complementa a correção ortográfica."
+        },
+        {
+          "id": "b",
+          "text": "Identificar palavras que foram adicionadas recentemente ao dicionário personalizado do usuário",
+          "correct": false,
+          "explanation": "Incorreta. O sublinhado azul não indica palavras adicionadas ao dicionário personalizado. Palavras adicionadas ao dicionário são reconhecidas como corretas e, portanto, não recebem nenhum tipo de sublinhado de erro."
+        },
+        {
+          "id": "c",
+          "text": "Sinalizar trechos de texto que estão protegidos contra edição por outros usuários",
+          "correct": false,
+          "explanation": "Incorreta. O sublinhado azul não tem relação com a proteção de trechos de texto contra edição. A proteção de conteúdo é uma funcionalidade diferente, geralmente acessada por meio de configurações de segurança do documento."
+        },
+        {
+          "id": "d",
+          "text": "Marcar hiperlinks ativos que direcionam para páginas da internet ou outros documentos",
+          "correct": false,
+          "explanation": "Incorreta. Hiperlinks ativos são geralmente destacados com sublinhado e cor azul, mas esta formatação é aplicada a links, não a erros gramaticais. O sublinhado azul para erros gramaticais é uma função específica do corretor."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, o sublinhado azul é utilizado para sinalizar possíveis erros gramaticais ou de estilo, como concordância, regência ou pontuação, detectados pelo corretor gramatical do programa. É uma ferramenta que complementa a correção ortográfica.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No LibreOffice Writer, quantos itens podem ser armazenados simultaneamente na área de transferência padrão do programa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Dez itens no máximo, organizados em ordem cronológica de cópia",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Um único item por vez, que pode variar desde uma letra até um texto completo ou imagem",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Até cinco itens diferentes, permitindo colar qualquer um deles conforme necessário",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Quantidade ilimitada de itens, desde que não excedam o limite de memória disponível",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é o resultado de realizar um duplo clique sobre uma palavra no LibreOffice Writer?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ativa o modo de edição rápida permitindo substituir a palavra por outra digitada",
+          "correct": false,
+          "explanation": "Incorreta. O duplo clique não ativa um modo de edição rápida para substituir a palavra. A substituição é feita após a seleção, digitando a nova palavra, ou utilizando a função 'Localizar e Substituir'."
+        },
+        {
+          "id": "b",
+          "text": "Posiciona o cursor de edição imediatamente antes da primeira letra da palavra clicada",
+          "correct": false,
+          "explanation": "Incorreta. Um clique simples posiciona o cursor. Um duplo clique tem uma função diferente no LibreOffice Writer, que é a seleção da palavra."
+        },
+        {
+          "id": "c",
+          "text": "Abre o menu de contexto com opções de formatação específicas para aquela palavra",
+          "correct": false,
+          "explanation": "Incorreta. Para abrir o menu de contexto, geralmente se utiliza o clique com o botão direito do mouse, não o duplo clique. O duplo clique é específico para a seleção da palavra."
+        },
+        {
+          "id": "d",
+          "text": "Seleciona automaticamente toda a palavra sobre a qual foi realizado o duplo clique",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, realizar um duplo clique sobre uma palavra seleciona automaticamente toda aquela palavra. Esta é uma forma rápida e eficiente de selecionar palavras para formatação ou edição."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, realizar um duplo clique sobre uma palavra seleciona automaticamente toda aquela palavra. Esta é uma forma rápida e eficiente de selecionar palavras para formatação ou edição.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "No LibreOffice Writer, qual é a combinação de teclas que permite abrir um documento já existente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + A, que permite acessar rapidamente os arquivos recentes do programa",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Ctrl + A (do inglês 'All', tudo) é geralmente utilizada para selecionar todo o conteúdo do documento, e não para acessar arquivos recentes. O acesso a arquivos recentes é feito através do menu 'Arquivo'."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + N, que aciona a função de navegação entre documentos salvos no sistema",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas Ctrl + N no LibreOffice Writer é utilizada para criar um novo documento em branco, e não para navegar ou abrir documentos já existentes. 'N' vem de 'New' (novo) em inglês."
+        },
+        {
+          "id": "c",
+          "text": "Ctrl + O, que abre a janela de diálogo para localizar e abrir arquivos compatíveis",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, a combinação de teclas Ctrl + O (do inglês 'Open', abrir) abre a caixa de diálogo 'Abrir', permitindo ao usuário navegar pelos diretórios do sistema e selecionar um documento existente para ser aberto no programa."
+        },
+        {
+          "id": "d",
+          "text": "Ctrl + D, que exibe a lista de documentos disponíveis na pasta padrão do usuário",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Ctrl + D não é o atalho padrão para exibir a lista de documentos disponíveis na pasta do usuário. Esta função é realizada pelo Ctrl + O, que abre a caixa de diálogo para navegação e seleção de arquivos."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, a combinação de teclas Ctrl + O (do inglês 'Open', abrir) abre a caixa de diálogo 'Abrir', permitindo ao usuário navegar pelos diretórios do sistema e selecionar um documento existente para ser aberto no programa.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No LibreOffice Writer, o que acontece quando o usuário realiza um triplo clique sobre uma palavra em um parágrafo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ativa o modo de edição avançada permitindo aplicar formatação especial ao termo selecionado",
+          "correct": false,
+          "explanation": "Incorreta. O triplo clique é uma ação de seleção de texto e não ativa um modo de edição avançada ou permite aplicar formatação especial diretamente. A formatação é aplicada após a seleção do texto."
+        },
+        {
+          "id": "b",
+          "text": "Seleciona apenas o período em que a palavra está inserida, delimitado por pontos finais",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, um triplo clique sobre uma palavra tem a função de selecionar o período completo ao qual essa palavra pertence. Um período é geralmente delimitado por sinais de pontuação como ponto final, ponto de interrogação ou ponto de exclamação."
+        },
+        {
+          "id": "c",
+          "text": "Seleciona a palavra clicada e as três palavras adjacentes, formando um grupo de quatro palavras",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade de triplo clique no LibreOffice Writer não seleciona a palavra clicada e as três palavras adjacentes. Essa ação é específica para a seleção de um período completo."
+        },
+        {
+          "id": "d",
+          "text": "Seleciona todo o parágrafo em que a palavra está localizada, independentemente do número de períodos",
+          "correct": false,
+          "explanation": "Incorreta. No LibreOffice Writer, um triplo clique sobre uma palavra seleciona o período completo em que a palavra está inserida, e não o parágrafo inteiro. A seleção do parágrafo é feita com um quádruplo clique ou um triplo clique na margem esquerda do parágrafo."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, um triplo clique sobre uma palavra tem a função de selecionar o período completo ao qual essa palavra pertence. Um período é geralmente delimitado por sinais de pontuação como ponto final, ponto de interrogação ou ponto de exclamação.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao pressionar a combinação Shift + teclas direcionais no LibreOffice Writer, qual é o comportamento do programa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Move o cursor rapidamente pelo documento sem realizar qualquer tipo de seleção de texto",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas Shift + teclas direcionais é utilizada para realizar seleções de texto, e não apenas para mover o cursor sem seleção. Para mover o cursor sem selecionar, utiliza-se apenas as teclas direcionais."
+        },
+        {
+          "id": "b",
+          "text": "Seleciona o texto a partir da posição inicial do cursor na direção da tecla pressionada",
+          "correct": true,
+          "explanation": "Correta. Ao pressionar a tecla Shift juntamente com as teclas direcionais (setas para cima, baixo, esquerda, direita) no LibreOffice Writer, o programa estende a seleção de texto a partir da posição atual do cursor na direção indicada pela tecla direcional. Por exemplo, Shift + Seta para Direita seleciona um caractere à direita, e Shift + Seta para Baixo estende a seleção para a linha abaixo."
+        },
+        {
+          "id": "c",
+          "text": "Aplica formatação de destaque ao texto conforme o cursor se movimenta pelo documento",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Shift + teclas direcionais é para seleção de texto, não para aplicar formatação de destaque. A formatação é uma ação separada que pode ser aplicada ao texto selecionado."
+        },
+        {
+          "id": "d",
+          "text": "Alterna entre diferentes modos de visualização do documento conforme a direção escolhida",
+          "correct": false,
+          "explanation": "Incorreta. A combinação Shift + teclas direcionais não alterna entre modos de visualização. Essa função é geralmente acessada através de menus ou atalhos específicos para visualização (como Ctrl + Shift + J para Tela Cheia)."
+        }
+      ],
+      "explanation": "Correta. Ao pressionar a tecla Shift juntamente com as teclas direcionais (setas para cima, baixo, esquerda, direita) no LibreOffice Writer, o programa estende a seleção de texto a partir da posição atual do cursor na direção indicada pela tecla direcional. Por exemplo, Shift + Seta para Direita seleciona um caractere à direita, e Shift + Seta para Baixo estende a seleção para a linha abaixo.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No LibreOffice Writer, qual é a diferença entre as funções Salvar (Ctrl + S) e Salvar Como (Ctrl + Shift + S) quando aplicadas a um documento já salvo anteriormente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Salvar atualiza o arquivo existente com as alterações, enquanto Salvar Como permite criar uma cópia com nome ou formato diferente",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, a função Salvar (Ctrl + S) é utilizada para atualizar o documento existente com as alterações feitas, mantendo o mesmo nome e local. Já a função Salvar Como (Ctrl + Shift + S ou F12) permite salvar o documento com um novo nome, em um local diferente ou em um formato de arquivo distinto, criando assim uma nova versão ou cópia do documento."
+        },
+        {
+          "id": "b",
+          "text": "Salvar cria uma cópia de segurança automática, enquanto Salvar Como substitui definitivamente o arquivo original",
+          "correct": false,
+          "explanation": "Incorreta. A função Salvar não cria automaticamente uma cópia de segurança, ela sobrescreve o arquivo original. A função Salvar Como não substitui definitivamente o arquivo original, mas sim cria um novo arquivo ou permite salvar o arquivo atual com um nome ou formato diferente, sem alterar o original a menos que o usuário escolha sobrescrevê-lo explicitamente."
+        },
+        {
+          "id": "c",
+          "text": "Salvar mantém o documento aberto após gravar, enquanto Salvar Como fecha automaticamente o arquivo após a operação",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as funções, Salvar e Salvar Como, mantêm o documento aberto após a operação. O fechamento do arquivo é uma ação separada (Ctrl + W ou Ctrl + F4)."
+        },
+        {
+          "id": "d",
+          "text": "Salvar preserva a formatação original do documento, enquanto Salvar Como permite modificar estilos e layouts antes de gravar",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as funções Salvar e Salvar Como preservam a formatação do documento. A modificação de estilos e layouts é uma ação de edição e formatação, que pode ser feita antes de salvar, mas não é uma característica distintiva entre Salvar e Salvar Como."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, a função Salvar (Ctrl + S) é utilizada para atualizar o documento existente com as alterações feitas, mantendo o mesmo nome e local. Já a função Salvar Como (Ctrl + Shift + S ou F12) permite salvar o documento com um novo nome, em um local diferente ou em um formato de arquivo distinto, criando assim uma nova versão ou cópia do documento.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No LibreOffice Writer, o que ocorre quando o usuário executa a função Recarregar após ter feito alterações não salvas em um documento?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O programa solicita a criação de um novo arquivo para preservar ambas as versões do documento",
+          "correct": false,
+          "explanation": "Incorreta. A função Recarregar não solicita a criação de um novo arquivo. Ela opera sobre o arquivo atual, restaurando-o para a última versão salva e descartando as modificações não gravadas."
+        },
+        {
+          "id": "b",
+          "text": "As alterações são mescladas com a versão salva, mantendo apenas as modificações mais recentes",
+          "correct": false,
+          "explanation": "Incorreta. A função Recarregar não mescla alterações. Pelo contrário, ela descarta as alterações não salvas, voltando à versão salva anteriormente."
+        },
+        {
+          "id": "c",
+          "text": "O documento retorna ao estado da última vez que foi salvo, descartando todas as modificações posteriores",
+          "correct": true,
+          "explanation": "Correta. A função Recarregar (Arquivo > Recarregar) no LibreOffice Writer é utilizada para descartar todas as alterações não salvas no documento e restaurá-lo para o estado em que estava na última vez que foi salvo. Isso é útil quando o usuário deseja desfazer uma série de modificações e retornar a uma versão anterior do arquivo."
+        },
+        {
+          "id": "d",
+          "text": "O programa cria automaticamente uma versão de backup das alterações antes de restaurar o arquivo",
+          "correct": false,
+          "explanation": "Incorreta. A função Recarregar no LibreOffice Writer não cria automaticamente uma versão de backup das alterações. Seu propósito é reverter o documento ao estado salvo anteriormente."
+        }
+      ],
+      "explanation": "Correta. A função Recarregar (Arquivo > Recarregar) no LibreOffice Writer é utilizada para descartar todas as alterações não salvas no documento e restaurá-lo para o estado em que estava na última vez que foi salvo. Isso é útil quando o usuário deseja desfazer uma série de modificações e retornar a uma versão anterior do arquivo.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No LibreOffice Writer, ao realizar um clique simples à esquerda de uma linha (na área da margem), qual é o resultado dessa ação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Seleciona automaticamente toda a linha em que foi realizado o clique na margem",
+          "correct": false,
+          "explanation": "Incorreta. Um clique simples na área da margem esquerda não seleciona automaticamente toda a linha. Essa ação é reservada para outras combinações de cliques ou para um duplo clique na margem."
+        },
+        {
+          "id": "b",
+          "text": "Ativa a régua de tabulação permitindo ajustar margens e recuos para aquela linha",
+          "correct": false,
+          "explanation": "Incorreta. A ativação da régua de tabulação ou o ajuste de margens e recuos não são realizados com um clique simples na margem esquerda. Essas funções são acessadas por meio da régua horizontal ou de caixas de diálogo de formatação de parágrafo."
+        },
+        {
+          "id": "c",
+          "text": "Abre o menu de formatação de parágrafo com opções de alinhamento e espaçamento",
+          "correct": false,
+          "explanation": "Incorreta. Um clique simples na margem esquerda não abre o menu de formatação de parágrafo. Para acessar opções de formatação, geralmente é necessário usar o menu de contexto (clique direito) ou as barras de ferramentas e menus."
+        },
+        {
+          "id": "d",
+          "text": "Posiciona o cursor de edição no início da linha, antes da primeira palavra",
+          "correct": true,
+          "explanation": "Correta. No LibreOffice Writer, ao realizar um clique simples na área da margem esquerda, o cursor de edição é posicionado no início da linha correspondente, antes da primeira palavra. Essa ação é útil para iniciar a edição ou seleção a partir do começo da linha."
+        }
+      ],
+      "explanation": "Correta. No LibreOffice Writer, ao realizar um clique simples na área da margem esquerda, o cursor de edição é posicionado no início da linha correspondente, antes da primeira palavra. Essa ação é útil para iniciar a edição ou seleção a partir do começo da linha.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "28_253661_Libreoffice 7 - Writer II.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:53:38"
+}

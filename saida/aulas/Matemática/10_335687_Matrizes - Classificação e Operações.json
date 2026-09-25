@@ -1,0 +1,569 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 10,
+  "ordem_no_curso": "133.00",
+  "titulo": "Matrizes - Classificação e Operações",
+  "codigo_aula": "335687",
+  "video_id": "102JHINHrTI=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:26:59",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/102JHINHrTI%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408802%2C408803%2C425185%2C403825&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Matrizes - Classificação e Operações\n\n## Matriz Nula\nSeguinte: como consta nas classificações ou tipos de matrizes, vamos começar com as operações e, antes, com a base. O que vem a ser uma matriz nula? Correto: a matriz nula é aquela em que todos os elementos são iguais a zero. Isso, matriz nula.\n\nPor exemplo, a matriz A pode ser 0 em uma matriz 1 por 1, não tem problema. Matriz\n[0 0\n 0 0\n 0 0]\ndeve ser enquadrada como uma matriz 3 por 2. Correto: 3 por 2, e os elementos serão todos zero. Em 2 por 2, a mesma ideia: a, b... sim, a matriz nula. Beleza, em que todos os elementos são iguais a zero. Show de bola.\n\n## Matriz Identidade\nO que mais? Prestem atenção nisso: matriz identidade. A matriz identidade é muito importante, tem que guardar demais. Olha só: a matriz identidade é uma matriz quadrada. Então já sabemos: é aquela matriz quadrada que tem o mesmo número de linhas e colunas, correto.\n\nUma matriz identidade é uma matriz quadrada em que os elementos da diagonal principal são todos iguais a 1, e os demais elementos são todos iguais a zero. Ela é apresentada pela letra I. Então a matriz identidade tem que ser quadrada.\n\nPor exemplo:\n1 0 0\n0 1 0\n0 0 1\n\nBeleza: na matriz identidade, os elementos da diagonal principal são todos iguais a 1, e os demais iguais a zero.\n\nEngraçado que, nesse caso, vou voltar aqui à matriz escalar.\n\n## Matriz Escalar\nPor coincidência, essa matriz forma três identidades porque eu posso fazer uma matriz qualquer, por exemplo:\n2 0 0\n0 2 0\n0 0 2\n\nNessa matriz, os elementos da diagonal são todos iguais a 2. Ela não é matriz identidade; ela é matriz escalar, porque na matriz escalar todos os elementos da diagonal principal são iguais entre si, e os elementos fora da diagonal (tanto no triângulo superior quanto no inferior) são iguais a zero.\n\nPor coincidência, o exemplo anterior, além de ser escalar, seria matriz identidade apenas se, além de serem iguais entre si, fossem todos iguais a 1. Aqui não: são iguais entre si, mas valem 2. Então, resumindo: esta aqui é somente matriz escalar; aquela com 1 na diagonal é matriz escalar e identidade ao mesmo tempo.\n\nShow de bola. Recapitulando: matriz identidade é matriz quadrada cujos elementos da diagonal principal são todos iguais a 1 e os demais são iguais a zero.\n\n## Matriz Transposta\nMatriz transposta: show de bola. Fazer a transposição de uma matriz é trocar linha por coluna. Ou seja, a linha passa a ser coluna e a coluna passa a ser linha. Beleza?\n\nA representação é assim: se A é uma matriz, sua transposta é A^T. Esses pontinhos aqui indicam a transposição. Se a matriz A fosse a matriz a_ij de ordem 3 por 2, sua transposta vai ser o quê? a_ji de ordem 2 por 3. Beleza? Para visualizar melhor:\n\nPor exemplo, pegue uma matriz 3 por 2 (três linhas e duas colunas):\n[3 1\n 4 0\n 3 2]\n\nEu quero a sua matriz transposta. Muito utilizada, tem propriedades lá dentro dos determinantes também. A transposta tem propriedades importantíssimas; a gente inclui isso lá na frente.\n\nComo obter a matriz transposta A^T de A 3 por 2? Eu faço o seguinte: pego a primeira linha e transformo na primeira coluna; a segunda linha vira a segunda coluna; a terceira linha vira a terceira coluna. Agora a ordem inverteu: de 3 por 2 para 2 por 3. Isso é o que representa quando a gente pega a letra da matriz e eleva ao T. Beleza. Matriz transposta é importante demais.\n\n## Matriz Oposta\nNão acabou, calma. Matriz oposta. Meus queridos, uma matriz oposta é dada quando trocamos os sinais de todos os elementos da mesma matriz.\n\nPor exemplo, se A =\n[2  3\n -1 4]\n\nSua matriz oposta será:\n[-2 -3\n  1 -4]\n\nCorreto? Você só troca os sinais dos elementos da matriz. Vai ter uma matriz oposta. Beleza, show de bola.\n\n## Matriz Simétrica\nPara fecharmos, matriz simétrica. Teremos uma matriz simétrica quando, olha só que interessante, a matriz A for igual à sua própria transposta. Ou seja, A = A^T, matriz e transposta são iguais.\n\nPor exemplo, observação: a matriz identidade é simétrica. Como verificar? Matriz identidade:\n[1 0 0\n 0 1 0\n 0 0 1]\n\nNão precisam ser todos iguais a 1 para ser simétrica; qualquer matriz A que satisfaça A = A^T é simétrica. Mas, no caso da identidade, pegue a linha e transforme em coluna: a primeira linha vira a primeira coluna, e assim por diante. Você percebe o seguinte: as matrizes são iguais. Ou seja, a matriz e a sua transposta são idênticas, nada mudou. Então posso falar que são matrizes simétricas porque são idênticas à própria transposta.\n\nBeleza, gente! Essas são as nossas matrizes quanto aos tipos: o que são, quem são seus elementos, suas entradas, forma geométrica, os tipos de matriz — quadrada, identidade, oposta, transposta, simétrica, triangular superior e inferior, matriz coluna — pronto. Entendemos agora nossa ferramenta de trabalho, nossa matéria-prima. O que podemos fazer agora? Iremos operar essas matrizes. Beleza? Iremos operar essas matrizes.\n\n## Operações com Matrizes: Igualdade\nNós temos o seguinte: igualdade de matrizes, soma de matrizes, subtração de matrizes e multiplicação de matrizes. Está bom? Agora, cada uma direitinho, com exemplos.\n\nOperações com matrizes, beleza. A primeira operação é a igualdade. Como fazemos a igualdade? Tá bom: igualdade entre elas.\n\nSe as matrizes A e B são iguais, temos uma igualdade de matrizes. Eu quero que você me diga: quando duas matrizes são iguais?\n\nQuando as duas matrizes são iguais, obrigatoriamente elas só podem ser iguais se tiverem as mesmas ordens. Se são 2 por 2, 2 por 2. Duas matrizes serão iguais quando possuírem a mesma ordem e seus respectivos elementos também forem iguais. Isso é óbvio: se as pessoas são iguais, tudo que está nelas tem que ser igual entre si; entre as duas matrizes também.\n\n> 🎯 Dicas de prova: Duas matrizes A e B são iguais se e somente se (i) têm a mesma ordem e (ii) a_ij = b_ij para todos i, j.\n\nEntão, se A = [a_ij] e B = [b_ij], para serem iguais: a_11 = b_11, a_12 = b_12, e assim por diante, elemento a elemento, mesma posição.\n\nA partir disso, em exercícios, é comum comparar entradas correspondentes para encontrar incógnitas. Por exemplo: se numa posição temos -1 de um lado, do outro lado também deve ser -1; se em outra posição aparece 3 + a de um lado e um número do outro, igualamos para resolver a.\n\nResolvendo linearmente: se 3 + a = 0, então a = -3. E assim sucessivamente, passando termos para o outro lado, trocando sinal, até encontrar os valores pedidos. Ao final, podemos calcular expressões como a - 2a ou -3 - 2(…); é só atenção aos sinais. Show de bola.\n\nResumão aqui:\n- Mesma ordem.\n- Elementos correspondentes iguais.\n- Use igualdade de entradas para achar incógnitas.\n- Atenção a sinais ao isolar as variáveis.\n\n## Operações com Matrizes: Soma e Subtração\nUma segunda operação importantíssima é a adição e a subtração de matrizes. Olha só: para somarmos ou subtrairmos matrizes, elas têm que ter as mesmas ordens. Por quê? Porque somamos elemento com elemento da mesma posição: elemento (1,1) com (1,1), (1,2) com (1,2) e assim por diante. Se tiverem ordens diferentes, vai sobrar elemento sem par.\n\n> 🎯 Dicas de prova: Só é possível somar ou subtrair matrizes de mesma ordem; a soma/subtração é feita entrada a entrada.\n\nExemplo. Seja\nA =\n[ -1  2\n   3  0 ]\n\ne\nB =\n[  0  3\n  -1  2 ].\n\nEntão:\nA + B =\n[ (-1)+0   2+3\n    3+(-1) 0+2 ]\n=\n[ -1  5\n   2  2 ].\n\nConferindo linha a linha, coluna a coluna: perfeito.\n\nAgora a subtração. Atenção ao conjunto de sinais para não vacilar:\nA - B =\n[ (-1)-0   2-3\n   3-(-1)  0-2 ]\n=\n[ -1  -1\n   4  -2 ].\n\nTranquilidade total. De novo: para somar ou subtrair, mesma ordem. Show de bola.\n\nQuestões de concurso costumam apresentar A, B e pedir a matriz C = A + B, ou C = A - B, ou ainda combinar com escalares. Por exemplo:\nSe A =\n[2  3\n 0  0]\ne B =\n[3 -1\n 1  2],\n\nentão A + B =\n[ 2+3   3+(-1)\n  0+1   0+2 ]\n=\n[ 5  2\n  1  2 ].\n\nSó prestar atenção aos sinais e às posições.\n\nNo mais, seguimos praticando soma e subtração, e depois vem a multiplicação de matrizes, que cai um pouco mais puxado, com questões bem interessantes e até algumas aplicações. Então vimos até o momento: igualdade, soma e subtração. Ramon, tem mais um exemplo? Há pouco fizemos bloquinhos de soma e subtração; agora, por exemplo, vamos fechar esse bloco e, no próximo, entramos em multiplicação. Estou voltando.",
+  "transcricao_meta": {
+    "title": "Matrizes - Classificação e Operações",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 20554,
+    "createdAt": "2026-02-07T13:23:29.505Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: classificação de matrizes (nula, identidade, escalar, transposta, oposta, simétrica), elementos estruturais (ordem, diagonal, triângulos), e operações básicas (igualdade, soma, subtração, noções para multiplicação).\nPrincipais pontos: \n- Condições de operação dependem da ordem.\n- Diferenças entre identidade, escalar e simétrica.\n- Transposição troca linhas por colunas e muda a ordem.\n\n## 1. Base / Conceitos Fundamentais\n- **Matriz**: tabela retangular de números. \n  - **Ordem**: m×n (m linhas, n colunas), ex.: 2×3, 3×2.\n- **Diagonal principal**: elementos a11, a22, a33, ...\n- **Triângulo superior/inferior**: regiões acima/abaixo da diagonal principal.\n- Tipos clássicos:\n  - **Matriz nula**: todos os elementos = 0; pode ter qualquer ordem.\n  - **Matriz identidade (E)**: quadrada; diagonal principal = 1; demais elementos = 0.\n  - **Matriz escalar**: quadrada; diagonal principal com todos elementos iguais a k; fora da diagonal = 0. Identidade é caso particular com k = 1.\n  - **Matriz transposta (A^T)**: obtida trocando linhas por colunas; ordem m×n vira n×m.\n  - **Matriz oposta (−A)**: troca o sinal de todos os elementos de A.\n  - **Matriz simétrica**: quadrada e satisfaz A = A^T.\n\n## 2. Como Funciona / Distinções\n- Identidade vs Escalar:\n  - Toda identidade é escalar (k = 1); nem toda escalar é identidade (k ≠ 1).\n- Simétrica vs Transposta:\n  - Transposta é uma operação (A → A^T).\n  - Simétrica é uma propriedade: A = A^T (exige matriz quadrada).\n- Operações e ordem:\n  - **Igualdade/Soma/Subtração**: exigem mesma ordem.\n  - **Transposição**: altera a ordem (m×n → n×m), afetando a possibilidade de operações subsequentes.\n- Nula vs Oposta:\n  - Nula tem todos 0.\n  - Oposta inverte sinais de A; A + (−A) = nula da mesma ordem.\n\n## 3. Aplicação Prática / Técnicas\n- Igualdade de matrizes:\n  - Cheque 1) mesma ordem; 2) aij = bij para todas as posições.\n- Soma/Subtração:\n  - Condição: mesma ordem.\n  - Regra: posição a posição.\n  - Subtração: A − B = A + (−B) para evitar erro de sinais.\n- Transposição:\n  - Linha i vira coluna i. Escreva as colunas de A como linhas de A^T.\n- Teste de simetria:\n  - Compare pares (aij, aji). Se algum difere, não é simétrica.\n- Identidade/Escalar:\n  - Verifique: fora da diagonal = 0. Se diagonal é toda 1, é identidade; se é toda k, é escalar.\n\n> Dica de Prova\n> - Antes de qualquer operação, confira a ORDEM. Ordem diferente → operação impossível (para soma/subtração) ou matrizes diferentes (para igualdade).\n\n## 4. Exemplos e Casos Resolvidos\n- Igualdade:\n  - A 2×3 e B 2×3. Se a11 = b11, a12 = b12, …, a23 = b23 → A = B. Se qualquer par difere, A ≠ B.\n  - Se A é 2×3 e B é 3×2 → A ≠ B imediatamente (ordens distintas).\n- Soma:\n  - A, B de ordem 2×3. C = A + B com Cij = Aij + Bij para todas as posições (mesma linha e coluna).\n- Subtração:\n  - A, B de ordem 2×3. C = A − B com Cij = Aij − Bij; trate como A + (−B) para acertar sinais.\n- Transposta:\n  - Se A é 3×2, então A^T é 2×3. A linha 1 de A vira coluna 1 de A^T, etc.\n- Simétrica:\n  - Teste A = A^T. Ex.: E (identidade) é simétrica para qualquer ordem.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “mesma ordem” com “quadrada”:\n  - Para somar/subtrair, basta mesma ordem; não precisa ser quadrada.\n- Esquecer que a transposta muda a ordem:\n  - Após transpor, operações que exigem mesma ordem podem deixar de ser possíveis.\n- Subtração com sinais:\n  - Erros ao distribuir o “−” elemento a elemento; use A − B = A + (−B).\n- Identidade vs Escalar:\n  - Chamar de identidade uma escalar com k ≠ 1 é erro.\n- Simetria em matriz não quadrada:\n  - Só faz sentido falar em A = A^T se A for quadrada.\n- Igualdade sem checar ordem:\n  - Ordens diferentes já invalidam igualdade; não perca tempo comparando elementos.\n\n> Dica de Prova\n> - “Tem que ter as mesmas ordens” é gatilho clássico em questões de soma/subtração e igualdade.\n> - Ao ver A^T, lembre: linhas↔colunas e m×n→n×m. Isso costuma eliminar alternativas rapidamente.",
+  "resumo_bolso": "# Matrizes - Classificação e Operações\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Matriz**: tabela retangular de números, de ordem **m×n** (m linhas, n colunas).\n* **Diagonal principal**: elementos a11, a22, a33, … (índices iguais).\n* **Triângulo superior**: elementos acima da diagonal principal.\n* **Triângulo inferior**: elementos abaixo da diagonal principal.\n* **Matriz nula**: todos os elementos = 0; pode ter qualquer ordem.\n* **Matriz identidade (E)**: quadrada; diagonal principal = 1; demais elementos = 0.\n* **Matriz escalar**: quadrada; diagonal principal com todos elementos iguais a k; fora da diagonal = 0. Identidade é caso particular com k = 1.\n* **Matriz transposta (Aᵀ)**: obtida trocando linhas por colunas; ordem m×n → n×m.\n* **Matriz oposta (−A)**: troca o sinal de todos os elementos de A.\n* **Matriz simétrica**: quadrada e satisfaz A = Aᵀ.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Identidade vs Escalar\n\n| Aspecto | Identidade (E) | Escalar |\n|--------|-----------------|---------|\n| Ordem | Sempre quadrada | Sempre quadrada |\n| Diagonal principal | Todos = 1 | Todos = k (mesmo número) |\n| Fora da diagonal | Todos = 0 | Todos = 0 |\n| Relação | Caso particular de escalar com k = 1 | Geral; pode ter k ≠ 1 |\n\n---\n\n### Transposta vs Simétrica\n\n| Aspecto | Transposta (Aᵀ) | Simétrica |\n|--------|------------------|-----------|\n| Natureza | Operação: A → Aᵀ | Propriedade: A = Aᵀ |\n| Ordem | m×n → n×m | Exige matriz quadrada (n×n) |\n| Condição | Sempre existe | Só faz sentido se A for quadrada |\n\n---\n\n### Nula vs Oposta\n\n| Aspecto | Nula | Oposta (−A) |\n|--------|------|-------------|\n| Elementos | Todos = 0 | Cada elemento = −aij |\n| Ordem | Qualquer | Mesma ordem de A |\n| Relação com A | Independente de A | A + (−A) = nula da mesma ordem |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Igualdade de matrizes**\n\n* Condições:\n  * Mesma ordem (m×n).\n  * aij = bij para todas as posições.\n* Exemplo: Se A é 2×3 e B é 3×2 → A ≠ B (ordens diferentes, nem compara elementos).\n\n---\n\n**2. Soma de matrizes (A + B)**\n\n* Condição: mesma ordem.\n* Regra: (A + B)ij = Aij + Bij (posição a posição).\n* Exemplo: A, B de ordem 2×3 → Cij = Aij + Bij.\n\n---\n\n**3. Subtração de matrizes (A − B)**\n\n* Condição: mesma ordem.\n* Regra: (A − B)ij = Aij − Bij.\n* Use: A − B = A + (−B) para evitar erro de sinais.\n* Exemplo: A, B de ordem 2×3. C = A − B com Cij = Aij − Bij.\n\n---\n\n**4. Transposição (Aᵀ)**\n\n* Regra:\n  * Ordem: m×n → n×m.\n  * Linha i de A vira coluna i de Aᵀ.\n* Exemplo: Se A é 3×2, então Aᵀ é 2×3.\n\n---\n\n**5. Teste de simetria**\n\n* Condições:\n  * A deve ser quadrada.\n  * Compare pares (aij, aji); se algum difere, não é simétrica.\n* Exemplo: A identidade E é simétrica para qualquer ordem.\n\n---\n\n**6. Identidade e Escalar**\n\n* Verificação:\n  * Fora da diagonal: todos 0.\n  * Diagonal toda 1 → identidade.\n  * Diagonal toda k → escalar (se k = 1, é identidade).\n\n---\n\n**7. Nula e Oposta**\n\n* Regra:\n  * A + (−A) = matriz nula da mesma ordem.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir “mesma ordem” com “quadrada”: para somar/subtrair, basta mesma ordem; não precisa ser quadrada.\n* Esquecer que a transposta muda a ordem: após transpor, operações que exigem mesma ordem podem deixar de ser possíveis.\n* Subtração com sinais: erros ao distribuir o “−” elemento a elemento; use A − B = A + (−B).\n* Identidade vs Escalar: chamar de identidade uma escalar com k ≠ 1 é erro.\n* Simetria em matriz não quadrada: só faz sentido falar em A = Aᵀ se A for quadrada.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei identidade de escalar (toda identidade é escalar, mas nem toda escalar é identidade)?\n* Lembrei que simétrica exige A = Aᵀ e matriz quadrada?\n* Fixei que igualdade, soma e subtração exigem mesma ordem?\n* Memorizei que Aᵀ troca linhas por colunas e m×n→n×m?\n* Sei usar A − B = A + (−B) para evitar erro de sinais?\n* Lembrei que A + (−A) = matriz nula da mesma ordem?\n* Antes de qualquer operação, vou conferir a ordem das matrizes?",
+  "mapa_mental": "# 🧮 Matrizes: Classificação e Operações\n## 🎯 Fundamentos de Matrizes\n### 💡 Estrutura Básica\n- Matriz numérica\n- Tabela retangular\n- Elementos aij\n- Posição linha-coluna\n### 🧩 Ordem da Matriz\n- m linhas\n- n colunas\n- Ordem m×n\n- Matriz quadrada\n### 🔢 Diagonal e Triângulos\n- Diagonal principal\n- Elementos a11,a22,...\n- Triângulo superior\n- Triângulo inferior\n\n## 📖 Classificação de Matrizes\n### 🧮 Matrizes Especiais\n- Matriz nula\n- Matriz identidade\n- Matriz escalar\n- Matriz simétrica\n### 🧱 Matriz Nula\n- Todos elementos zero\n- Qualquer ordem\n- Elemento neutro soma\n- Oposta de si mesma\n### 🎯 Identidade e Escalar\n- Matriz identidade E\n- Quadrada obrigatória\n- Diagonal principal 1\n- Fora diagonal zero\n- Identidade ⊂ escalar\n### 🔢 Matriz Escalar\n- Quadrada obrigatória\n- Diagonal k constante\n- Fora diagonal zero\n- Caso k=1 identidade\n### 🔄 Transposta e Oposta\n- Matriz transposta Aᵗ\n- Troca linhas colunas\n- Ordem m×n vira n×m\n- Matriz oposta −A\n- Sinais invertidos\n### 🪞 Matriz Simétrica\n- Matriz quadrada\n- Condição A = Aᵗ\n- aij = aji\n- Diagonal qualquer\n\n## ⚙️ Operações com Matrizes\n### 📏 Condições de Operação\n- Igualdade mesma ordem\n- Soma mesma ordem\n- Subtração mesma ordem\n- Transposta muda ordem\n### ➕ Igualdade e Soma\n- Mesma ordem obrigatória\n- Elemento a elemento\n- aij = bij igualdade\n- aij + bij soma\n### ➖ Subtração e Oposta\n- A − B = A + (−B)\n- Mesma ordem obrigatória\n- Elemento a elemento\n- Cij = aij − bij\n### 🧮 Propriedades Importantes\n- A + (−A) nula\n- Nula mesma ordem\n- Identidade simétrica\n- Escalar simétrica\n### ⚠️ Erros Frequentes\n- Confundir mesma ordem\n- Exigir quadrada à toa\n- Ignorar ordem transposta\n- Simetria não quadrada\n- Identidade ≠ escalar k≠1",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Classificação Matricial",
+      "description": "Classificação Matricial — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual critério classifica uma matriz como nula?",
+          "back": "Todos os elementos são iguais a zero.",
+          "hint": "Pense no valor numérico neutro da adição.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "classificacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Que valores aparecem na diagonal principal de uma matriz identidade?",
+          "back": "Todos iguais a um (e os demais elementos iguais a zero).",
+          "hint": "Refere-se ao elemento neutro da multiplicação.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "classificacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual critério define uma matriz escalar?",
+          "back": "Todos os elementos da diagonal principal são iguais entre si, e o triângulo superior e o inferior são iguais a zero.",
+          "hint": "É uma generalização da matriz identidade.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "classificacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Como se verifica se uma matriz é simétrica?",
+          "back": "Verificando se a matriz é igual à sua própria transposta.",
+          "hint": "Envolve a operação de transposição.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "propriedades"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Transformações Matriciais",
+      "description": "Transformações Matriciais — 3 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Como são obtidos os elementos de uma matriz transposta?",
+          "back": "Pela troca de linha e coluna, onde a linha passa a ser coluna e a coluna passa a ser linha.",
+          "hint": "Pense na inversão de índices i e j.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "operacoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Como se relacionam as dimensões de uma matriz e de sua transposta?",
+          "back": "A ordem se inverte: se a matriz é de ordem m por n, sua transposta é de ordem n por m.",
+          "hint": "Considere a troca de linhas por colunas.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "operacoes"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual operação transforma uma matriz em sua matriz oposta?",
+          "back": "A troca dos sinais de todos os elementos da matriz.",
+          "hint": "Pense na operação aritmética de inversão de sinal.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "operacoes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Igualdade de Matrizes",
+      "description": "Igualdade de Matrizes — 2 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual requisito dimensional deve ser atendido para duas matrizes serem iguais?",
+          "back": "Possuírem as mesmas ordens.",
+          "hint": "Condição necessária para comparação de estruturas.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "igualdade"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Que relação deve existir entre os elementos correspondentes de matrizes iguais?",
+          "back": "Devem ser idênticos (iguais entre si).",
+          "hint": "Refere-se à equivalência termo a termo.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "igualdade"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Operações Matriciais",
+      "description": "Operações Matriciais — 1 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual requisito dimensional permite somar ou subtrair duas matrizes?",
+          "back": "Possuírem as mesmas ordens.",
+          "hint": "Mesmo requisito da igualdade de matrizes.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "matrizes",
+            "operacoes"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "O que caracteriza uma matriz nula?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todos os elementos da matriz são iguais entre si, podendo ser qualquer número real",
+          "correct": false,
+          "explanation": "Incorreta. Embora os elementos de uma matriz nula sejam todos iguais entre si (todos zero), a definição permite que os elementos sejam qualquer número real, o que não é o caso de uma matriz nula. Em uma matriz nula, o valor é especificamente zero para todos os elementos."
+        },
+        {
+          "id": "b",
+          "text": "Todos os elementos da matriz são iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Uma matriz nula é definida como aquela em que todos os seus elementos são iguais a zero. Independentemente de sua ordem (número de linhas e colunas), se todos os valores internos são zero, ela é classificada como nula."
+        },
+        {
+          "id": "c",
+          "text": "Apenas os elementos da diagonal secundária são iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. A condição de uma matriz nula é que todos os seus elementos sejam zero, não se restringindo apenas à diagonal secundária. Se apenas a diagonal secundária fosse zero, os outros elementos poderiam ter valores diferentes de zero, o que a descaracterizaria como matriz nula."
+        },
+        {
+          "id": "d",
+          "text": "Todos os elementos da diagonal principal são iguais a zero e os demais podem ter qualquer valor",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere à diagonal principal, mas uma matriz nula exige que absolutamente todos os elementos, e não apenas os da diagonal principal, sejam zero."
+        }
+      ],
+      "explanation": "Correta. Uma matriz nula é definida como aquela em que todos os seus elementos são iguais a zero. Independentemente de sua ordem (número de linhas e colunas), se todos os valores internos são zero, ela é classificada como nula.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a característica fundamental de uma matriz identidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É uma matriz retangular em que os elementos da diagonal principal são todos iguais a um",
+          "correct": false,
+          "explanation": "Incorreta. A matriz identidade, por definição, é sempre uma matriz quadrada, ou seja, o número de linhas deve ser igual ao número de colunas. Uma matriz retangular não pode ser uma matriz identidade."
+        },
+        {
+          "id": "b",
+          "text": "É uma matriz quadrada em que os elementos da diagonal principal são todos iguais a um e os demais elementos são todos iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Uma matriz identidade é uma matriz quadrada (mesmo número de linhas e colunas) onde os elementos da diagonal principal são todos iguais a um (1) e todos os outros elementos (fora da diagonal principal) são iguais a zero (0). Por exemplo, uma matriz identidade 2x2 é [[1, 0], [0, 1]]."
+        },
+        {
+          "id": "c",
+          "text": "É uma matriz quadrada em que os elementos da diagonal principal são iguais entre si e os demais são iguais a zero",
+          "correct": false,
+          "explanation": "Incorreta. Embora os elementos da diagonal principal sejam iguais entre si (todos iguais a 1), a condição fundamental é que eles sejam especificamente 1, e não qualquer valor igual. Além disso, os demais elementos devem ser zero, o que está correto na segunda parte da afirmação."
+        },
+        {
+          "id": "d",
+          "text": "É uma matriz quadrada em que todos os elementos são iguais a um",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz identidade tem elementos específicos na diagonal principal e zero nos demais. Se todos os elementos fossem iguais a um, ela não seria uma matriz identidade, mas sim uma matriz de uns."
+        }
+      ],
+      "explanation": "Correta. Uma matriz identidade é uma matriz quadrada (mesmo número de linhas e colunas) onde os elementos da diagonal principal são todos iguais a um (1) e todos os outros elementos (fora da diagonal principal) são iguais a zero (0). Por exemplo, uma matriz identidade 2x2 é [[1, 0], [0, 1]].",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Como se obtém a matriz transposta de uma matriz A?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Trocando as linhas pelas colunas da matriz original",
+          "correct": true,
+          "explanation": "Correta. A matriz transposta (indicada por Aᵀ ou A') é obtida ao trocar as linhas pelas colunas da matriz original. Ou seja, a primeira linha da matriz original se torna a primeira coluna da transposta, a segunda linha se torna a segunda coluna, e assim sucessivamente. Se a matriz original A tem elementos aᵢⱼ, a matriz transposta Aᵀ terá elementos aⱼᵢ."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicando todos os elementos da matriz por menos um",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar todos os elementos da matriz por menos um também resulta na matriz oposta. A transposição é uma operação que altera a estrutura da matriz, não seus valores absolutos ou sinais."
+        },
+        {
+          "id": "c",
+          "text": "Trocando os sinais de todos os elementos da matriz original",
+          "correct": false,
+          "explanation": "Incorreta. Trocar os sinais de todos os elementos da matriz original resulta na matriz oposta, não na matriz transposta. A matriz transposta envolve uma reorientação dos elementos, não uma mudança de sinal."
+        },
+        {
+          "id": "d",
+          "text": "Invertendo a ordem dos elementos da diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. Inverter a ordem dos elementos da diagonal principal não é a operação que define a matriz transposta. A transposição afeta todos os elementos da matriz, reordenando-os com base na troca de linhas por colunas."
+        }
+      ],
+      "explanation": "Correta. A matriz transposta (indicada por Aᵀ ou A') é obtida ao trocar as linhas pelas colunas da matriz original. Ou seja, a primeira linha da matriz original se torna a primeira coluna da transposta, a segunda linha se torna a segunda coluna, e assim sucessivamente. Se a matriz original A tem elementos aᵢⱼ, a matriz transposta Aᵀ terá elementos aⱼᵢ.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a condição necessária para que duas matrizes sejam consideradas iguais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Devem possuir a mesma soma total de elementos e a mesma ordem",
+          "correct": false,
+          "explanation": "Incorreta. A soma total dos elementos não é um critério para a igualdade de matrizes. Duas matrizes podem ter a mesma ordem e a mesma soma de elementos, mas serem diferentes em suas disposições internas. Por exemplo, [[1, 0], [0, 1]] e [[0, 1], [1, 0]] têm a mesma ordem e a mesma soma (2), mas são matrizes distintas."
+        },
+        {
+          "id": "b",
+          "text": "Devem possuir as mesmas ordens e seus respectivos elementos também devem ser iguais",
+          "correct": true,
+          "explanation": "Correta. Para que duas matrizes sejam consideradas iguais, duas condições devem ser atendidas: 1) elas devem ter a mesma ordem (o mesmo número de linhas e o mesmo número de colunas); e 2) todos os seus elementos correspondentes (na mesma posição i,j) devem ser idênticos. Ou seja, se A = [aᵢⱼ] e B = [bᵢⱼ], então A = B se e somente se aᵢⱼ = bᵢⱼ para todo i e j, e ambas tiverem a mesma ordem."
+        },
+        {
+          "id": "c",
+          "text": "Devem possuir elementos com os mesmos valores absolutos, independentemente dos sinais",
+          "correct": false,
+          "explanation": "Incorreta. Possuir elementos com os mesmos valores absolutos não é suficiente para a igualdade. Os sinais dos elementos também devem ser idênticos. Por exemplo, a matriz [[1, 2]] não é igual à matriz [[-1, 2]], mesmo que os valores absolutos sejam os mesmos em algumas posições."
+        },
+        {
+          "id": "d",
+          "text": "Devem possuir a mesma quantidade de elementos, independentemente da disposição",
+          "correct": false,
+          "explanation": "Incorreta. Ter a mesma quantidade de elementos não garante a igualdade. Por exemplo, uma matriz 2x3 (6 elementos) e uma matriz 3x2 (6 elementos) têm a mesma quantidade de elementos, mas são de ordens diferentes e, portanto, não podem ser iguais. A disposição dos elementos é crucial."
+        }
+      ],
+      "explanation": "Correta. Para que duas matrizes sejam consideradas iguais, duas condições devem ser atendidas: 1) elas devem ter a mesma ordem (o mesmo número de linhas e o mesmo número de colunas); e 2) todos os seus elementos correspondentes (na mesma posição i,j) devem ser idênticos. Ou seja, se A = [aᵢⱼ] e B = [bᵢⱼ], então A = B se e somente se aᵢⱼ = bᵢⱼ para todo i e j, e ambas tiverem a mesma ordem.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Quando uma matriz é considerada simétrica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quando os elementos acima e abaixo da diagonal principal têm sinais opostos",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere a uma matriz antissimétrica (ou assimétrica), onde os elementos acima e abaixo da diagonal principal têm sinais opostos (aᵢⱼ = -aⱼᵢ) e os elementos da diagonal principal são zero. Em uma matriz simétrica, os elementos correspondentes são idênticos, não opostos."
+        },
+        {
+          "id": "b",
+          "text": "Quando todos os seus elementos são iguais entre si",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz em que todos os seus elementos são iguais entre si é uma matriz constante, mas não necessariamente simétrica. Para ser simétrica, a relação com sua transposta é o critério principal."
+        },
+        {
+          "id": "c",
+          "text": "Quando a diagonal principal divide a matriz em duas partes idênticas",
+          "correct": false,
+          "explanation": "Incorreta. Embora a simetria de uma matriz possa ser visualizada em relação à sua diagonal principal (os elementos 'espelhados' são iguais), a definição formal e precisa é a igualdade entre a matriz e sua transposta. A diagonal principal não 'divide' a matriz em duas partes idênticas no sentido de que os elementos acima e abaixo dela são cópias, mas sim que aᵢⱼ = aⱼᵢ."
+        },
+        {
+          "id": "d",
+          "text": "Quando a matriz é igual à sua própria transposta",
+          "correct": true,
+          "explanation": "Correta. Uma matriz quadrada A é considerada simétrica se ela for igual à sua própria transposta (A = Aᵀ). Isso significa que os elementos aᵢⱼ são iguais aos elementos aⱼᵢ para todas as posições i e j. Em outras palavras, a matriz permanece inalterada quando suas linhas e colunas são trocadas."
+        }
+      ],
+      "explanation": "Correta. Uma matriz quadrada A é considerada simétrica se ela for igual à sua própria transposta (A = Aᵀ). Isso significa que os elementos aᵢⱼ são iguais aos elementos aⱼᵢ para todas as posições i e j. Em outras palavras, a matriz permanece inalterada quando suas linhas e colunas são trocadas.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Se uma matriz A de ordem 3×2 é transposta, qual será a ordem da matriz resultante?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A ordem se torna 2×2, pois a transposição elimina elementos excedentes",
+          "correct": false,
+          "explanation": "Incorreta. A transposição não elimina elementos. Todos os elementos da matriz original são mantidos na matriz transposta, apenas sua posição é alterada. A ordem resultante é 2x3, não 2x2, a menos que a matriz original fosse 2x2."
+        },
+        {
+          "id": "b",
+          "text": "A ordem se torna 3×3, pois a transposição transforma a matriz em quadrada",
+          "correct": false,
+          "explanation": "Incorreta. A transposição não transforma uma matriz em quadrada, a menos que a matriz original já fosse quadrada. A ordem resultante é a inversão das dimensões originais, não uma mudança arbitrária para 3x3."
+        },
+        {
+          "id": "c",
+          "text": "A ordem permanece 3×2, pois a transposição não altera as dimensões",
+          "correct": false,
+          "explanation": "Incorreta. A transposição de uma matriz altera sua ordem, invertendo o número de linhas e colunas. Se a matriz original é 3x2, sua transposta não pode manter a mesma ordem."
+        },
+        {
+          "id": "d",
+          "text": "A ordem se torna 2×3, pois as linhas passam a ser colunas e vice-versa",
+          "correct": true,
+          "explanation": "Correta. A operação de transposição de matrizes consiste em transformar as linhas da matriz original em colunas da matriz transposta e, consequentemente, as colunas da matriz original em linhas da matriz transposta. Assim, uma matriz A de ordem 3x2 (3 linhas e 2 colunas) terá sua transposta A^T de ordem 2x3 (2 linhas e 3 colunas)."
+        }
+      ],
+      "explanation": "Correta. A operação de transposição de matrizes consiste em transformar as linhas da matriz original em colunas da matriz transposta e, consequentemente, as colunas da matriz original em linhas da matriz transposta. Assim, uma matriz A de ordem 3x2 (3 linhas e 2 colunas) terá sua transposta A^T de ordem 2x3 (2 linhas e 3 colunas).",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Considerando uma matriz identidade de ordem 3×3, qual afirmação está correta sobre suas propriedades?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz identidade não pode ser considerada uma matriz escalar porque seus elementos são fixos em um",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz escalar é uma matriz diagonal em que todos os elementos da diagonal principal são iguais. Como os elementos da diagonal principal de uma matriz identidade são todos iguais a 1, ela se encaixa perfeitamente na definição de matriz escalar."
+        },
+        {
+          "id": "b",
+          "text": "A matriz identidade transposta resulta em uma matriz diferente da original",
+          "correct": false,
+          "explanation": "Incorreta. A matriz identidade é um caso especial de matriz simétrica. Uma matriz simétrica é aquela em que sua transposta é igual a ela mesma (A = A^T). Ao transpor uma matriz identidade, os elementos da diagonal principal permanecem inalterados e os elementos fora da diagonal, que já são zero, continuam zero, resultando na mesma matriz original."
+        },
+        {
+          "id": "c",
+          "text": "A matriz identidade é simultaneamente uma matriz escalar, uma matriz simétrica e sua transposta é igual a ela mesma",
+          "correct": true,
+          "explanation": "Correta. Uma matriz identidade de ordem 3x3 (ou qualquer ordem n x n) é uma matriz quadrada onde os elementos da diagonal principal são todos 1 e os demais são 0. Por ter todos os elementos da diagonal principal iguais entre si (iguais a 1) e os demais elementos nulos, ela é considerada uma matriz escalar. Além disso, ao transpor uma matriz identidade, as linhas e colunas são trocadas, mas como a matriz é simétrica em relação à sua diagonal principal (elementos a_ij = a_ji), sua transposta é igual a ela mesma, caracterizando-a como uma matriz simétrica. Portanto, a matriz identidade é simultaneamente escalar e simétrica, e sua transposta é idêntica a ela."
+        },
+        {
+          "id": "d",
+          "text": "A matriz identidade possui apenas a propriedade de ter elementos unitários na diagonal principal",
+          "correct": false,
+          "explanation": "Incorreta. Embora a matriz identidade possua elementos unitários na diagonal principal, ela também possui a propriedade de ter todos os outros elementos iguais a zero, o que lhe confere outras classificações, como matriz escalar e matriz simétrica, além de ser igual à sua própria transposta."
+        }
+      ],
+      "explanation": "Correta. Uma matriz identidade de ordem 3x3 (ou qualquer ordem n x n) é uma matriz quadrada onde os elementos da diagonal principal são todos 1 e os demais são 0. Por ter todos os elementos da diagonal principal iguais entre si (iguais a 1) e os demais elementos nulos, ela é considerada uma matriz escalar. Além disso, ao transpor uma matriz identidade, as linhas e colunas são trocadas, mas como a matriz é simétrica em relação à sua diagonal principal (elementos a_ij = a_ji), sua transposta é igual a ela mesma, caracterizando-a como uma matriz simétrica. Portanto, a matriz identidade é simultaneamente escalar e simétrica, e sua transposta é idêntica a ela.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Dadas duas matrizes A e B de mesma ordem, se A + B = C e A - B = D, qual relação matemática permite obter a matriz A a partir de C e D?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz A é obtida pela soma de C e D dividida por dois: A = (C + D)/2",
+          "correct": true,
+          "explanation": "Correta. Este é um sistema de equações matriciais. Dadas as equações A + B = C e A - B = D, podemos somar as duas equações para eliminar B: (A + B) + (A - B) = C + D. Isso simplifica para 2A = C + D. Dividindo ambos os lados por 2 (o que em matrizes significa multiplicar pelo escalar 1/2), obtemos A = (C + D)/2. Esta é a forma correta de isolar a matriz A."
+        },
+        {
+          "id": "b",
+          "text": "A matriz A é obtida pela multiplicação de C por D",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação de matrizes não é a operação correta para isolar A neste sistema de equações. A multiplicação de matrizes tem regras específicas de ordem e não se comporta como a multiplicação escalar para isolar variáveis."
+        },
+        {
+          "id": "c",
+          "text": "A matriz A é obtida pela subtração de D de C: A = C - D",
+          "correct": false,
+          "explanation": "Incorreta. Se subtrairmos D de C (C - D), teríamos (A + B) - (A - B) = A + B - A + B = 2B. Isso nos daria 2B, não A. Portanto, essa operação não resulta na matriz A."
+        },
+        {
+          "id": "d",
+          "text": "A matriz A é obtida pela média aritmética entre os elementos correspondentes de C e D multiplicada por dois",
+          "correct": false,
+          "explanation": "Incorreta. A média aritmética dos elementos correspondentes de C e D multiplicada por dois seria equivalente a (C + D)/2 elemento a elemento. No entanto, a descrição da alternativa é confusa e não representa a operação matricial correta para obter A, que é simplesmente a soma das matrizes C e D dividida por 2 (multiplicada pelo escalar 1/2)."
+        }
+      ],
+      "explanation": "Correta. Este é um sistema de equações matriciais. Dadas as equações A + B = C e A - B = D, podemos somar as duas equações para eliminar B: (A + B) + (A - B) = C + D. Isso simplifica para 2A = C + D. Dividindo ambos os lados por 2 (o que em matrizes significa multiplicar pelo escalar 1/2), obtemos A = (C + D)/2. Esta é a forma correta de isolar a matriz A.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Se uma matriz A é tal que A = -A (matriz oposta a si mesma), qual é a única matriz que satisfaz essa condição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A matriz nula, pois é a única em que todos os elementos permanecem iguais ao trocar os sinais",
+          "correct": true,
+          "explanation": "Correta. A matriz oposta de uma matriz A, denotada por -A, é obtida trocando o sinal de todos os seus elementos. Se uma matriz A é igual à sua matriz oposta (-A), isso significa que cada elemento a_ij da matriz A deve ser igual a -a_ij. A única maneira de um número ser igual ao seu negativo é se esse número for zero (x = -x implica 2x = 0, logo x = 0). Portanto, todos os elementos da matriz A devem ser zero, o que define a matriz nula. A matriz nula é a única matriz que é igual à sua própria oposta."
+        },
+        {
+          "id": "b",
+          "text": "Qualquer matriz diagonal, pois os elementos fora da diagonal são sempre zero",
+          "correct": false,
+          "explanation": "Incorreta. Uma matriz diagonal tem elementos diferentes de zero apenas na diagonal principal. Se esses elementos não forem zero, sua matriz oposta terá sinais trocados na diagonal principal, e a matriz não será igual à sua oposta (a menos que todos os elementos da diagonal também sejam zero, o que a tornaria uma matriz nula)."
+        },
+        {
+          "id": "c",
+          "text": "A matriz transposta, pois a operação de transposição equivale à mudança de sinal",
+          "correct": false,
+          "explanation": "Incorreta. A operação de transposição (A^T) envolve a troca de linhas por colunas, não a mudança de sinal dos elementos. A matriz transposta não é equivalente à matriz oposta."
+        },
+        {
+          "id": "d",
+          "text": "A matriz identidade, pois possui propriedades simétricas especiais",
+          "correct": false,
+          "explanation": "Incorreta. A matriz identidade possui elementos 1 na diagonal principal e 0 fora dela. Sua matriz oposta teria -1 na diagonal principal e 0 fora dela. Portanto, a matriz identidade não é igual à sua matriz oposta."
+        }
+      ],
+      "explanation": "Correta. A matriz oposta de uma matriz A, denotada por -A, é obtida trocando o sinal de todos os seus elementos. Se uma matriz A é igual à sua matriz oposta (-A), isso significa que cada elemento a_ij da matriz A deve ser igual a -a_ij. A única maneira de um número ser igual ao seu negativo é se esse número for zero (x = -x implica 2x = 0, logo x = 0). Portanto, todos os elementos da matriz A devem ser zero, o que define a matriz nula. A matriz nula é a única matriz que é igual à sua própria oposta.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Considerando as operações com matrizes, qual propriedade distingue a soma de matrizes da multiplicação de matrizes em relação às ordens das matrizes envolvidas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Na soma, as matrizes podem ter ordens diferentes desde que tenham o mesmo número de elementos, enquanto na multiplicação devem ter as mesmas ordens",
+          "correct": false,
+          "explanation": "Incorreta. Para a soma de matrizes, é um requisito fundamental que as matrizes tenham a mesma ordem. Ter apenas o mesmo número de elementos não garante que a soma seja possível, pois os elementos correspondentes podem não existir se as ordens forem diferentes. Para a multiplicação, as ordens não precisam ser as mesmas, mas sim a condição de que o número de colunas da primeira seja igual ao número de linhas da segunda."
+        },
+        {
+          "id": "b",
+          "text": "Na soma, apenas o número de linhas deve ser igual, enquanto na multiplicação apenas o número de colunas deve coincidir",
+          "correct": false,
+          "explanation": "Incorreta. Para a soma, tanto o número de linhas quanto o de colunas devem ser iguais. Para a multiplicação, a condição é específica: o número de colunas da primeira matriz deve ser igual ao número de linhas da segunda."
+        },
+        {
+          "id": "c",
+          "text": "Na soma, as matrizes devem ter as mesmas ordens, enquanto na multiplicação o número de colunas da primeira matriz deve ser igual ao número de linhas da segunda matriz",
+          "correct": true,
+          "explanation": "Correta. Para que a soma ou subtração de matrizes seja possível, as matrizes envolvidas devem possuir exatamente a mesma ordem (mesmo número de linhas e colunas). Isso porque a operação é feita elemento a elemento, somando ou subtraindo os elementos correspondentes. Já para a multiplicação de duas matrizes A (m x n) e B (p x q), a condição essencial é que o número de colunas da primeira matriz (n) seja igual ao número de linhas da segunda matriz (p). A matriz resultante terá ordem m x q."
+        },
+        {
+          "id": "d",
+          "text": "Tanto na soma quanto na multiplicação, as matrizes devem necessariamente ter as mesmas ordens",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação é falsa para a multiplicação de matrizes. Como explicado, a multiplicação tem uma condição de ordem diferente da soma."
+        }
+      ],
+      "explanation": "Correta. Para que a soma ou subtração de matrizes seja possível, as matrizes envolvidas devem possuir exatamente a mesma ordem (mesmo número de linhas e colunas). Isso porque a operação é feita elemento a elemento, somando ou subtraindo os elementos correspondentes. Já para a multiplicação de duas matrizes A (m x n) e B (p x q), a condição essencial é que o número de colunas da primeira matriz (n) seja igual ao número de linhas da segunda matriz (p). A matriz resultante terá ordem m x q.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "10_335687_Matrizes - Classificação e Operações.pdf",
+  "coletado_em": "2026-09-23T20:59:33"
+}

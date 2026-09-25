@@ -1,0 +1,496 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 7,
+    "titulo": "7. Trigonometria: razões trigonométricas, funções, fórmulas de transformações trigonométricas, equações e triângulos."
+  },
+  "ordem": 5,
+  "ordem_no_curso": "68.00",
+  "titulo": "Funções Trigonométricas II",
+  "codigo_aula": "160489",
+  "video_id": "WieHj87XhGA=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:44:44",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/WieHj87XhGA%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?r=TODAS&a=408932&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Funções Trigonométricas II\n\n## Introdução e objetivo da aula\nVamos dar continuidade às nossas funções em trigonometria. Agora, com cosseno. Vem comigo: a ideia é a mesma que trabalhamos no seno, só que agora na função cosseno. A função cosseno, beleza? Também vamos ver teoria, e neste bloco pode ficar só teoria, teoria, teoria.\n\nFunção cosseno: quase o mesmo pensamento do seno, só que o eixo de análise é outro. Hoje, a análise vai ser outra. Olha aqui para você ver: qual vai ser o nosso “lixo” — nosso eixo de análise. No cosseno, ele vai ser o eixo x. O y vai registrar os valores do cosseno, a mesma coisa: 0, π/2, π, 3π/2 e fechando em 2π. Colocando os valores: temos 1, 0 e −1. O positivo e o negativo interessam para a nossa análise.\n\nAgora, quem vai ser o nosso eixo x? É o domínio, que são todos os reais. E o eixo y é a imagem, que vai de −1 até 1 também. Então, resumindo:\n- Domínio do cosseno: todos os reais.\n- Imagem do cosseno: de −1 a 1.\n\nA função f(x) = cos(x) faz o quê? Ela associa cada número real x do domínio ao número y, a partir da função cosseno.\n\nAmplitude: vai ser o “raio”, no sentido de variação vertical, que é 1. O período é 2π. É o comprimento de uma volta completa na circunferência trigonométrica. Depois de 2π, 4π, e assim por diante: repete-se o ciclo.\n\n> 🎯 **Dicas de prova:** No cosseno, o domínio é R, a imagem é [−1, 1] e o período é 2π.\n\n## Sinais do cosseno por quadrante e redução ao 1º quadrante\nAs características que vimos no seno valem aqui também, com a mudança do eixo de análise. No cosseno, o eixo de análise é o eixo x. Os quadrantes continuam no sentido anti-horário: primeiro, segundo, terceiro e quarto.\n\nImportante perceber os sinais do cosseno:\n- No cosseno, o que está à direita do eixo y (x > 0) é positivo; à esquerda (x < 0) é negativo.\n- Logo, 1º e 4º quadrantes: cosseno positivo.\n- 2º e 3º quadrantes: cosseno negativo.\n\nVamos fazer a mesma estratégia que fizemos no seno: pegar qualquer arco do 2º, 3º e 4º quadrantes e reduzir para o 1º quadrante usando ângulos notáveis (30°, 45° e 60°), cuidando do sinal conforme o quadrante:\n- Se o arco está no 2º quadrante, o cosseno é negativo.\n- Se está no 3º, também é negativo.\n- Se está no 4º, é positivo.\n\nVamos aos exemplos.\n\n## Exemplos com cosseno (ângulos notáveis)\nExemplo 1: π/6\nQuero cos(π/6). π equivale a 180°, então π/6 é 30°. Sabemos pelos ângulos notáveis:\ncos(30°) = √3/2.\n\nVisualmente: projetando o ponto do ângulo de 30° no eixo x, obtemos √3/2. Para 45° (π/4): √2/2. Para 60° (π/3): 1/2. Tudo de acordo.\n\nExemplo 2: 5π/6\ncos(5π/6) = cos(150°). 150° está no 2º quadrante. Reduzo para o 1º quadrante: 180° − 150° = 30°. Então:\ncos(150°) = −cos(30°) = −√3/2.\n\nExemplo 3: 7π/6\ncos(7π/6) = cos(210°). 210° está no 3º quadrante. A distância até 180° é 30°, então a referência no 1º quadrante é 30°. No 3º quadrante, o cosseno é negativo:\ncos(210°) = −cos(30°) = −√3/2.\n\nExemplo 4: 11π/6\ncos(11π/6) = cos(330°). 330° está no 4º quadrante; a referência é 30°. No 4º quadrante, cosseno é positivo:\ncos(330°) = cos(30°) = √3/2.\n\nPortanto, saber os sinais por quadrante permite reduzir tudo para o 1º quadrante sem erro.\n\n> 🎯 **Dicas de prova:** Para reduzir ângulos notáveis, traga o arco para o 1º quadrante e ajuste apenas o sinal conforme o quadrante original.\n\n## Entendendo o gráfico do cosseno\nO gráfico do cosseno não começa na origem como o do seno: ele começa no valor máximo, em y = 1, quando x = 0. Por quê? Porque cos(0) = 1. Lembre: pegamos a circunferência trigonométrica e “desenrolamos” no plano cartesiano ao longo do eixo x (de 0 a 2π para um período). Nossa imagem é de −1 a 1.\n\nMarcando pontos importantes no período [0, 2π]:\n- x = 0 → cos(0) = 1.\n- x = π/2 → cos(π/2) = 0.\n- x = π → cos(π) = −1.\n- x = 3π/2 → cos(3π/2) = 0.\n- x = 2π → cos(2π) = 1.\n\nCada quadrante corresponde a um “pedaço” do gráfico. Repare:\n- Acima do eixo x: valores positivos (1º e 4º quadrantes).\n- Abaixo do eixo x: valores negativos (2º e 3º quadrantes).\n\nFaz todo sentido com os sinais do cosseno que discutimos.\n\n## Transição para a função tangente\nAgora vamos falar da função tangente. Vimos seno, vimos cosseno; falta a terceira principal. Depois veremos funções diversas e inversas em outra oportunidade. Em concursos, seno, cosseno e tangente são as mais comuns.\n\nA função tangente deriva de seno e cosseno:\ntan(x) = sen(x) / cos(x).\n\nDaqui já sai uma condição de existência: o denominador não pode ser zero. Logo, tan(x) não existe quando cos(x) = 0.\n\n> 🎯 **Dicas de prova:** tan(x) = sen(x)/cos(x). A tangente não existe quando cos(x) = 0.\n\n## Domínio, imagem e período da tangente\nQuando cos(x) = 0? Em x = π/2 e x = 3π/2, e, no geral, em x = π/2 + kπ, para k ∈ Z. Portanto:\n- Domínio da tangente: R, exceto x = π/2 + kπ.\n- Imagem da tangente: todos os reais (de −∞ a +∞).\n- Período da tangente: π (não é 2π).\n\nResumo:\n- No seno e no cosseno, período 2π.\n- Na tangente, período π, porque o comportamento se repete a cada meia-volta.\n\n> 🎯 **Dicas de prova:** Domínio tan(x) = R \\ {π/2 + kπ}. Imagem = R. Período = π.\n\n## Por que a imagem da tangente é R inteiro?\nPorque, à medida que x se aproxima de π/2 pela esquerda, cos(x) → 0 e o quociente sen(x)/cos(x) cresce sem limite (tende a +∞ ou −∞, dependendo do lado). Entre 0° e 90°, por exemplo, existem infinitos valores, e a tangente “varre” todos os reais, sem nunca “tocar” no ponto onde cos(x) = 0. É ideia de limite: podemos nos aproximar de π/2 indefinidamente, sem alcançar, e os valores da tangente crescem sem bound.\n\n## Sinais da tangente por quadrante e redução\nA tangente é positiva onde seno e cosseno têm o mesmo sinal, e negativa onde eles têm sinais opostos. Assim:\n- 1º quadrante: positiva.\n- 2º quadrante: negativa.\n- 3º quadrante: positiva.\n- 4º quadrante: negativa.\n\nA estratégia de redução é a mesma: reduzo para o 1º quadrante com ângulos notáveis e ajusto o sinal conforme o quadrante.\n\nExemplo rápido com notáveis:\n- tan(π/4) = tan(45°) = 1.\n\nAgora, vamos trabalhar reduções:\n\nExemplo 1: 3π/4\ntan(3π/4) = tan(135°).\nRedução: referência 45°.\nSinal no 2º quadrante: negativo.\nLogo, tan(135°) = −tan(45°) = −1.\n\nExemplo 2: 5π/4\ntan(5π/4) = tan(225°).\nReferência 45°, 3º quadrante: positivo.\nLogo, tan(225°) = +tan(45°) = 1.\n\nExemplo 3: 7π/4\ntan(7π/4) = tan(315°).\nReferência 45°, 4º quadrante: negativo.\nLogo, tan(315°) = −tan(45°) = −1.\n\n> 🎯 **Dicas de prova:** 1º e 3º quadrantes: tan > 0. 2º e 4º: tan < 0. Período π.\n\n## Entendendo o gráfico da tangente\nVamos montar a leitura do gráfico no intervalo de um período central, por exemplo, de −π/2 a π/2:\n- Assíntotas verticais em x = −π/2 e x = π/2 (não há domínio nesses pontos).\n- Em x = 0, tan(0) = 0.\n- À medida que x → π/2−, tan(x) → +∞.\n- À medida que x → −π/2+, tan(x) → −∞.\n\nDepois, de π/2 a 3π/2 repete-se o comportamento, com a mesma “curva”, por periodicidade π:\n- Assíntotas em x = π/2 e x = 3π/2.\n- Em x = π, tan(π) = 0.\n- No intervalo (π/2, π): a tangente é negativa (2º quadrante).\n- No intervalo (π, 3π/2): a tangente é positiva (3º quadrante).\n\nEssa alternância casa com os sinais por quadrante:\n- 1º: positivo.\n- 2º: negativo.\n- 3º: positivo.\n- 4º: negativo.\n\nE segue assim para todas as “janelas” deslocadas de kπ.\n\n## Encerramento e próximos passos\nEssa foi a parte teórica essencial: domínio, imagem, período e sinais nos quadrantes para cosseno e tangente, além de redução ao 1º quadrante com ângulos notáveis. No próximo vídeo, vamos trabalhar só com questões — inclusive desafios de concursos públicos e carreiras militares — para consolidar tudo isso na prática.",
+  "transcricao_meta": {
+    "title": "Funções Trigonométricas II",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 45150,
+    "createdAt": "2026-02-09T13:26:48.234Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: funções seno, cosseno e tangente (ênfase em cosseno e tangente).\nPrincipais pontos: domínio, imagem, período; sinais por quadrante; redução ao 1º quadrante; valores notáveis; condições de existência da tangente; gráficos e assíntotas.\n\n## 1. Base / Conceitos Fundamentais\n- **Função seno (sen x)**, **função cosseno (cos x)**, **função tangente (tan x)**.\n- **Definições essenciais**:\n  - **cos x**: coord. x na circunferência trigonométrica.\n  - **sen x**: coord. y na circunferência.\n  - **tan x = sen x / cos x** (existe apenas se cos x ≠ 0).\n- **Domínios**:\n  - **sen x**: todos os reais.\n  - **cos x**: todos os reais.\n  - **tan x**: R \\ {π/2 + kπ}.\n- **Imagens**:\n  - **sen x** e **cos x**: [−1, 1].\n  - **tan x**: (−∞, +∞).\n- **Períodos**:\n  - **sen x** e **cos x**: 2π.\n  - **tan x**: π.\n- **Ângulos notáveis** (referência para cálculos): 30° (π/6), 45° (π/4), 60° (π/3).\n\n> Dica de Prova\n> - Guarde: cos(30°)=√3/2, cos(45°)=√2/2, cos(60°)=1/2; tan(45°)=1.\n\n## 2. Como Funciona / Distinções\n- **Sinais por quadrante (circunferência trigonométrica)**:\n  - **cos x**: Q1 +, Q2 −, Q3 −, Q4 +.\n  - **tan x**: Q1 +, Q2 −, Q3 +, Q4 − (porque sen e cos com mesmo sinal → tan > 0).\n- **Zeros**:\n  - **cos x = 0** em x = π/2 + kπ → pontos proibidos para tan x.\n  - **tan x = 0** em x = kπ (onde sen x = 0).\n- **Período: diferença chave**\n  - sen/cos: 2π; tangente: π.\n\n> Dica de Prova\n> - Se a questão disser que “tan x não existe”, pense imediatamente em x = π/2 + kπ.\n\n## 3. Aplicação Prática / Técnicas\n- **Redução ao 1º quadrante (ângulo de referência)**:\n  1) Identifique o quadrante do ângulo.\n  2) Traga ao 1º quadrante (diferença para 0°, 90°, 180°, 270°, 360°).\n  3) Calcule usando 30°, 45°, 60°.\n  4) Ajuste o sinal conforme o quadrante original.\n- **Macetes específicos**:\n  - Cosseno:\n    - cos(180° − θ) = −cos θ\n    - cos(180° + θ) = −cos θ\n    - cos(360° − θ) = cos θ\n  - Tangente (para múltiplos ímpares de π/4):\n    - |tan((2n+1)π/4)| = 1; sinal pelo quadrante.\n- **Condição de existência da tangente**:\n  - Verifique se x ≠ π/2 + kπ antes de qualquer cálculo.\n\n> Dica de Prova\n> - Reduza primeiro módulo 2π (ou 360°) e só depois use a referência e o sinal.\n\n## 4. Exemplos e Casos Resolvidos\n- **Cosseno: pontos do gráfico em [0, 2π]**\n  - x=0 → y=1; x=π/2 → y=0; x=π → y=−1; x=3π/2 → y=0; x=2π → y=1.\n- **Cálculos com cosseno (redução e sinal)**\n  - cos(π/6)=cos(30°)=√3/2.\n  - cos(5π/6)=cos(150°)=−cos(30°)=−√3/2 (Q2, negativo).\n  - cos(7π/6)=cos(210°)=−cos(30°)=−√3/2 (Q3, negativo).\n  - cos(11π/6)=cos(330°)=cos(30°)=√3/2 (Q4, positivo).\n- **Tangente: valores notáveis e sinais**\n  - tan(π/4)=tan(45°)=1 (Q1, +).\n  - tan(3π/4)=tan(135°)=−1 (Q2, −).\n  - tan(5π/4)=tan(225°)=+1 (Q3, +).\n  - tan(7π/4)=tan(315°)=−1 (Q4, −).\n- **Domínio e assíntotas da tangente**\n  - Proibidos: x=π/2 + kπ (por ex.: π/2, 3π/2, −π/2, …).\n  - Ao se aproximar de π/2: tan x → ±∞; em π/2 não existe valor.\n\n> Dica de Prova\n> - Zeros rápidos: tan x = 0 em kπ. Use para achar interseções com o eixo x no esboço.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir período: tangente tem período **π** (não 2π).\n- Usar “acima/abaixo do eixo x” para decidir sinal do cosseno na circunferência:\n  - Para sinal por quadrante, use a circunferência: cos é positivo à direita (Q1, Q4) e negativo à esquerda (Q2, Q3).\n- Esquecer da condição de existência da tangente:\n  - Em x = π/2 + kπ, cos x = 0 → tan x não existe.\n- Reduzir ângulo sem ajustar o sinal do quadrante.\n- Trocar valores notáveis:\n  - Garanta: cos(30°)=√3/2; tan(45°)=1.\n\n> Dica de Prova\n> - Memória mínima que resolve muita coisa: \n>   - cos(30°)=√3/2, cos(45°)=√2/2, cos(60°)=1/2\n>   - tan(45°)=1\n>   - Domínio da tan: R \\ {π/2 + kπ}\n>   - Períodos: cos/sen = 2π; tan = π\n\n## Tabelas de Comparação\n\n- Propriedades essenciais\n\n| Propriedade | Seno | Cosseno | Tangente |\n| --- | --- | --- | --- |\n| Domínio | R | R | R \\ {π/2 + kπ} |\n| Imagem | [−1, 1] | [−1, 1] | (−∞, +∞) |\n| Período | 2π | 2π | π |\n| Zeros | x = kπ | x = π/2 + kπ | x = kπ |\n| Sinal por quadrante | +, +, −, − | +, −, −, + | +, −, +, − |\n\n- Tangente em múltiplos ímpares de π/4\n\n| Quadrante | Ângulo exemplo | Valor |\n| --- | --- | --- |\n| 1º | π/4 (45°) | +1 |\n| 2º | 3π/4 (135°) | −1 |\n| 3º | 5π/4 (225°) | +1 |\n| 4º | 7π/4 (315°) | −1 |",
+  "resumo_bolso": "# Funções Trigonométricas II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **cos x**: coordenada **x** na circunferência trigonométrica; domínio **R**; imagem **[−1,1]**; período **2π**.\n* **sen x**: coordenada **y** na circunferência; domínio **R**; imagem **[−1,1]**; período **2π**.\n* **tan x**: **tan x = sen x / cos x**; só existe se **cos x ≠ 0**; domínio **R \\ {π/2 + kπ}**; imagem **R**; período **π**.\n* **Ângulos notáveis**: 30° (π/6), 45° (π/4), 60° (π/3).\n* **Valores-chave**:  \n  - cos(30°)=√3/2; cos(45°)=√2/2; cos(60°)=1/2  \n  - tan(45°)=1\n* **Sinais por quadrante** (Q1, Q2, Q3, Q4):  \n  - cos: **+, −, −, +**  \n  - tan: **+, −, +, −** (mesmo sinal de sen e cos → tan > 0).\n* **Zeros importantes**:  \n  - cos x = 0 → x = **π/2 + kπ** (pontos proibidos da tan).  \n  - tan x = 0 → x = **kπ** (sen x = 0).\n* **Assíntotas da tan**: em **x = π/2 + kπ**; tan x → ±∞ ao se aproximar.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n| Aspecto | Cosseno (cos x) | Tangente (tan x) |\n| --- | --- | --- |\n| Domínio | R | R \\ {π/2 + kπ} |\n| Imagem | [−1, 1] | (−∞, +∞) |\n| Período | 2π | π |\n| Zeros | x = π/2 + kπ | x = kπ |\n| Sinal por quadrante | +, −, −, + | +, −, +, − |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Definição da tangente**\n\n* **Regra**: **tan x = sen x / cos x**; verificar sempre se **cos x ≠ 0**.\n* **Exemplo**: se x = π/2 + kπ → cos x = 0 → **tan x não existe**.\n\n---\n\n**2. Domínio e assíntotas da tangente**\n\n* **Domínio**: R \\ {π/2 + kπ}.  \n* **Assíntotas verticais**: x = π/2 + kπ (por exemplo: π/2, 3π/2, −π/2, …).  \n* **Comportamento**: ao se aproximar de π/2, tan x → ±∞; em π/2 não existe valor.\n\n---\n\n**3. Períodos**\n\n* **sen/cos**: f(x + 2π) = f(x).  \n* **tan**: tan(x + π) = tan x.\n\n---\n\n**4. Redução ao 1º quadrante**\n\n1) Identificar o quadrante do ângulo.  \n2) Trazer ao 1º quadrante (diferença para 0°, 90°, 180°, 270°, 360°).  \n3) Calcular usando 30°, 45°, 60°.  \n4) Ajustar o sinal conforme o quadrante original.\n\n---\n\n**5. Macetes de cosseno**\n\n* cos(180° − θ) = −cos θ  \n* cos(180° + θ) = −cos θ  \n* cos(360° − θ) = cos θ\n\n---\n\n**6. Tangente em múltiplos ímpares de π/4**\n\n* |tan((2n+1)π/4)| = 1; sinal pelo quadrante.\n* Exemplos:  \n  - tan(π/4)=1; tan(3π/4)=−1; tan(5π/4)=+1; tan(7π/4)=−1.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir período: tangente tem período **π** (não 2π).\n* Esquecer da condição de existência da tangente: em x = π/2 + kπ, cos x = 0 → tan x não existe.\n* Usar “acima/abaixo do eixo x” para decidir sinal do cosseno: use a circunferência (cos positivo à direita, negativo à esquerda).\n* Reduzir o ângulo ao 1º quadrante e esquecer de ajustar o sinal pelo quadrante original.\n* Trocar valores notáveis: cos(30°)=√3/2, cos(45°)=√2/2, cos(60°)=1/2, tan(45°)=1.\n\n---\n\n## 📋 Checklist Final\n\n* Sei que **tan x = sen x / cos x** e verifico se **cos x ≠ 0** (x ≠ π/2 + kπ)?\n* Lembro que os **períodos** são: sen/cos = 2π; tan = π?\n* Sei o **domínio da tangente** e onde estão as **assíntotas** (x = π/2 + kπ)?\n* Consigo usar rapidamente: **cos(180°±θ)** e **cos(360°−θ)**?\n* Memorizei: cos(30°)=√3/2; cos(45°)=√2/2; cos(60°)=1/2; tan(45°)=1?\n* Sei os **sinais por quadrante** de cos e tan e onde cada uma zera?",
+  "mapa_mental": "# 🧮 Funções Trigonométricas II\n## 🎯 Visão Geral\n### 💡 Funções básicas\n- Função seno\n- Função cosseno\n- Função tangente\n- Relação tan = sen/cos\n### 🧮 Domínio e imagem\n- Domínio seno R\n- Domínio cosseno R\n- Domínio tangente R\\{π/2+kπ}\n- Imagem sen cos [-1,1]\n- Imagem tangente R\n### 🔁 Períodos\n- Período seno 2π\n- Período cosseno 2π\n- Período tangente π\n- Comparação períodos\n- Questões de prova\n## 📊 Propriedades Essenciais\n### 🧭 Sinais por quadrante\n- Sinal seno Q1 Q2\n- Sinal seno Q3 Q4\n- Sinal cosseno Q1 Q4\n- Sinal cosseno Q2 Q3\n- Sinal tangente alternado\n### 🔢 Zeros e inexistência\n- Zeros seno kπ\n- Zeros cosseno π/2+kπ\n- Zeros tangente kπ\n- Tangente inexistente cos=0\n- Relação zeros assíntotas\n### 📐 Valores notáveis\n- Ângulos 30 45 60\n- Cos 30 raiz3/2\n- Cos 45 raiz2/2\n- Cos 60 meio\n- Tan 45 igual 1\n## 📉 Função Cosseno\n### 📈 Gráfico cosseno\n- Ponto 0 valor 1\n- Ponto π/2 valor 0\n- Ponto π valor -1\n- Ponto 3π/2 valor 0\n- Ponto 2π valor 1\n### 🔄 Redução cosseno\n- Redução primeiro quadrante\n- Cos 180 menos θ\n- Cos 180 mais θ\n- Cos 360 menos θ\n- Ajuste sinal quadrante\n### ⚠️ Erros comuns cosseno\n- Confusão sinal quadrante\n- Uso eixo x errado\n- Troca valores notáveis\n- Período confundido\n- Interpretação gráfica\n## 📉 Função Tangente\n### 📈 Gráfico tangente\n- Imagem toda reta\n- Período π repetição\n- Crescimento contínuo\n- Interseções kπ\n- Simetria origem\n### 🚧 Assíntotas tangente\n- Pontos π/2+kπ\n- Aproximação infinito\n- Domínio restrito\n- Relação cos zero\n- Esboço em provas\n### 🧮 Técnicas tangente\n- Redução módulo π\n- Múltiplos ímpares π/4\n- Módulo tangente igual 1\n- Sinal por quadrante\n- Verificar existência antes",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Função Cosseno",
+      "description": "Função Cosseno — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o domínio da função cosseno?",
+          "back": "Conjunto dos números reais",
+          "hint": "Refere-se ao conjunto numérico completo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "cosseno"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é o período fundamental da função cosseno?",
+          "back": "2π",
+          "hint": "É o intervalo de uma volta completa",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "cosseno"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual eixo cartesiano recebe os valores produzidos pela função cosseno?",
+          "back": "Eixo x",
+          "hint": "O cosseno é associado à abscissa",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "cosseno"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é o valor de cos(0)?",
+          "back": "1",
+          "hint": "Ponto de origem do ciclo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "cosseno"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Em quais quadrantes o cosseno é positivo?",
+          "back": "Primeiro e quarto quadrantes",
+          "hint": "Lado direito do ciclo trigonométrico",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "cosseno"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Redução de Ângulos",
+      "description": "Redução de Ângulos — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Como um arco de qualquer quadrante é reduzido ao primeiro quadrante?",
+          "back": "Projetar o arco utilizando os ângulos notáveis de 30°, 45° e 60° e analisar o sinal correspondente ao quadrante",
+          "hint": "Envolve projeção e análise de sinal",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "reducao-quadrantes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Como reduzir cos(5π/6) ao primeiro quadrante?",
+          "back": "-cos(30°), pois o cosseno é negativo no segundo quadrante",
+          "hint": "Aplicação prática da redução",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "reducao-quadrantes"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Função Tangente",
+      "description": "Função Tangente — 6 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual relação define a tangente em função do seno e do cosseno?",
+          "back": "sen(x) / cos(x)",
+          "hint": "Razão entre duas funções básicas",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "tangente"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual condição determina a existência da função tangente?",
+          "back": "O cosseno de x deve ser diferente de zero",
+          "hint": "Restrição algébrica da divisão",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "tangente"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Quais valores de x devem ser excluídos do domínio de tan(x)?",
+          "back": "Valores que tornam o cosseno igual a zero, como π/2 e 3π/2 (e suas voltas), pois não existe divisão por zero",
+          "hint": "Onde o cosseno se anula",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "tangente"
+          ],
+          "type": "exception"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a imagem da função tangente?",
+          "back": "De menos infinito até mais infinito",
+          "hint": "Conjunto dos números reais",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "tangente"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Que comportamento o gráfico da tangente apresenta nos valores excluídos do domínio?",
+          "back": "O gráfico tende ao infinito sem tocar nos valores excluídos",
+          "hint": "Comportamento assintótico",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "tangente"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Como calcular tan(3π/4) usando o primeiro quadrante?",
+          "back": "-tan(45°), que resulta em -1, pois a tangente é negativa no segundo quadrante",
+          "hint": "Aplicação prática da tangente",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes-trigonometricas",
+            "tangente"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o conjunto imagem da função cosseno?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "De 0 até 2π, representando um ciclo completo da função",
+          "correct": false,
+          "explanation": "Incorreta. O intervalo de 0 a 2π representa o período fundamental da função cosseno, ou seja, o comprimento de um ciclo completo da função, mas não o seu conjunto imagem. O conjunto imagem refere-se aos valores que a função pode assumir no eixo vertical (eixo y)."
+        },
+        {
+          "id": "b",
+          "text": "De -1 até 1, incluindo todos os valores reais nesse intervalo",
+          "correct": true,
+          "explanation": "Correta. O conjunto imagem da função cosseno é o intervalo fechado [-1, 1], ou seja, todos os valores reais entre -1 e 1, incluindo -1 e 1. Isso ocorre porque, no círculo trigonométrico, o cosseno é a projeção do raio no eixo horizontal (eixo x), e essa projeção varia de -1 a 1."
+        },
+        {
+          "id": "c",
+          "text": "De 0 até 1, considerando apenas valores não negativos",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto imagem da função cosseno inclui valores negativos. A projeção no eixo horizontal pode ser negativa quando o ângulo está no segundo ou terceiro quadrante."
+        },
+        {
+          "id": "d",
+          "text": "De -∞ até +∞, abrangendo todos os números reais",
+          "correct": false,
+          "explanation": "Incorreta. O conjunto imagem da função cosseno não abrange todos os números reais (de -∞ a +∞). A função cosseno é limitada, e seus valores estão restritos a um intervalo específico."
+        }
+      ],
+      "explanation": "Correta. O conjunto imagem da função cosseno é o intervalo fechado [-1, 1], ou seja, todos os valores reais entre -1 e 1, incluindo -1 e 1. Isso ocorre porque, no círculo trigonométrico, o cosseno é a projeção do raio no eixo horizontal (eixo x), e essa projeção varia de -1 a 1.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em quais quadrantes a função cosseno assume valores positivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Primeiro e quarto quadrantes, onde a projeção no eixo horizontal é positiva",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "Segundo e terceiro quadrantes, onde a função decresce continuamente",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "Terceiro e quarto quadrantes, onde a função apresenta valores crescentes",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "Primeiro e segundo quadrantes, onde a projeção no eixo horizontal é positiva",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é o valor do cosseno de 30 graus (π/6 radianos)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "√3/3, valor derivado da razão trigonométrica básica",
+          "correct": false,
+          "explanation": "Incorreta. O valor √3/3 é a tangente de 30 graus (π/6 radianos), não o cosseno. A tangente é a razão entre o seno e o cosseno de um ângulo."
+        },
+        {
+          "id": "b",
+          "text": "√2/2, valor característico de ângulos de 45 graus",
+          "correct": false,
+          "explanation": "Incorreta. O valor √2/2 é o cosseno de 45 graus (π/4 radianos), não de 30 graus. É um valor associado a ângulos notáveis, mas não ao ângulo de 30 graus."
+        },
+        {
+          "id": "c",
+          "text": "√3/2, valor obtido pela projeção no eixo horizontal",
+          "correct": true,
+          "explanation": "Correta. O cosseno de 30 graus (π/6 radianos) é √3/2. Este valor é um dos ângulos notáveis da trigonometria e pode ser visualizado pela projeção do ponto correspondente a 30 graus no círculo trigonométrico sobre o eixo horizontal (eixo x)."
+        },
+        {
+          "id": "d",
+          "text": "1/2, valor que corresponde ao cosseno de 60 graus",
+          "correct": false,
+          "explanation": "Incorreta. O valor 1/2 é o cosseno de 60 graus (π/3 radianos). O cosseno de 30 graus é diferente de 1/2."
+        }
+      ],
+      "explanation": "Correta. O cosseno de 30 graus (π/6 radianos) é √3/2. Este valor é um dos ângulos notáveis da trigonometria e pode ser visualizado pela projeção do ponto correspondente a 30 graus no círculo trigonométrico sobre o eixo horizontal (eixo x).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Por que a função tangente não existe em π/2 e 3π/2?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque nesses pontos a função atinge seus valores máximos e mínimos",
+          "correct": false,
+          "explanation": "Incorreta. A função tangente não possui valores máximos ou mínimos absolutos, pois seu conjunto imagem é de -∞ a +∞. A indefinição nesses pontos não está relacionada a extremos, mas sim à impossibilidade da operação de divisão."
+        },
+        {
+          "id": "b",
+          "text": "Porque o seno nesses pontos é igual a zero, tornando a razão indefinida",
+          "correct": false,
+          "explanation": "Incorreta. A função tangente é definida como a razão entre o seno e o cosseno (tan(x) = sen(x)/cos(x)). A tangente se torna indefinida quando o cosseno é zero, não quando o seno é zero. Quando o seno é zero (em 0, π, 2π, etc.), a tangente é zero."
+        },
+        {
+          "id": "c",
+          "text": "Porque o cosseno nesses pontos é igual a zero, impossibilitando a divisão",
+          "correct": true,
+          "explanation": "Correta. A função tangente é definida como a razão entre o seno e o cosseno (tan(x) = sen(x)/cos(x)). Uma divisão por zero é indefinida na matemática. Nos ângulos π/2 e 3π/2, o cosseno é igual a zero (cos(π/2) = 0 e cos(3π/2) = 0), tornando a tangente indefinida nesses pontos."
+        },
+        {
+          "id": "d",
+          "text": "Porque nesses ângulos a circunferência trigonométrica apresenta descontinuidade",
+          "correct": false,
+          "explanation": "Incorreta. A circunferência trigonométrica é contínua. A descontinuidade ocorre na função tangente devido à sua definição como uma razão, onde o denominador (cosseno) se anula em certos pontos, criando assíntotas verticais no gráfico da função."
+        }
+      ],
+      "explanation": "Correta. A função tangente é definida como a razão entre o seno e o cosseno (tan(x) = sen(x)/cos(x)). Uma divisão por zero é indefinida na matemática. Nos ângulos π/2 e 3π/2, o cosseno é igual a zero (cos(π/2) = 0 e cos(3π/2) = 0), tornando a tangente indefinida nesses pontos.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é o período da função tangente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "π radianos, correspondendo a meia volta na circunferência",
+          "correct": true,
+          "explanation": "Correta. O período da função tangente é π radianos. Isso significa que os valores da função se repetem a cada π radianos. Por exemplo, tan(x) = tan(x + π). No círculo trigonométrico, a tangente de um ângulo no primeiro quadrante tem o mesmo valor (e sinal) que a tangente do ângulo correspondente no terceiro quadrante, e o mesmo ocorre entre o segundo e o quarto quadrantes, com sinal oposto."
+        },
+        {
+          "id": "b",
+          "text": "4π radianos, abrangendo dois ciclos completos da função",
+          "correct": false,
+          "explanation": "Incorreta. O período de 4π radianos seria o dobro do período das funções seno e cosseno, e não corresponde ao período da função tangente. O período da tangente é menor, refletindo sua repetição mais frequente."
+        },
+        {
+          "id": "c",
+          "text": "π/2 radianos, correspondendo a um quadrante completo",
+          "correct": false,
+          "explanation": "Incorreta. O período da função tangente não é π/2 radianos. Embora π/2 seja um ponto crítico onde a função é indefinida, o padrão de repetição da função é mais longo."
+        },
+        {
+          "id": "d",
+          "text": "2π radianos, completando um ciclo na circunferência trigonométrica",
+          "correct": false,
+          "explanation": "Incorreta. O período de 2π radianos é característico das funções seno e cosseno. A função tangente tem um período diferente devido à sua natureza e comportamento no círculo trigonométrico."
+        }
+      ],
+      "explanation": "Correta. O período da função tangente é π radianos. Isso significa que os valores da função se repetem a cada π radianos. Por exemplo, tan(x) = tan(x + π). No círculo trigonométrico, a tangente de um ângulo no primeiro quadrante tem o mesmo valor (e sinal) que a tangente do ângulo correspondente no terceiro quadrante, e o mesmo ocorre entre o segundo e o quarto quadrantes, com sinal oposto.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Ao reduzir o ângulo de 210 graus (7π/6 radianos) para o primeiro quadrante, qual ângulo notável é obtido e qual o sinal do cosseno?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "45 graus com sinal negativo, considerando a projeção no eixo horizontal",
+          "correct": false,
+          "explanation": "Incorreta. O ângulo de 210 graus não corresponde a 45 graus no primeiro quadrante. A redução de 210 graus para o primeiro quadrante resulta em 30 graus. O sinal negativo está correto, mas o ângulo notável está incorreto."
+        },
+        {
+          "id": "b",
+          "text": "30 graus com sinal positivo, pois o terceiro quadrante preserva o sinal do cosseno",
+          "correct": false,
+          "explanation": "Incorreta. Ao reduzir 210 graus para o primeiro quadrante, obtém-se 30 graus (210 - 180 = 30). No entanto, o cosseno no terceiro quadrante é negativo, e não positivo. O sinal do cosseno é determinado pelo eixo das abscissas (eixo x), sendo positivo no primeiro e quarto quadrantes, e negativo no segundo e terceiro quadrantes."
+        },
+        {
+          "id": "c",
+          "text": "60 graus com sinal negativo, resultado da redução angular no terceiro quadrante",
+          "correct": false,
+          "explanation": "Incorreta. O ângulo de 210 graus está 30 graus além de 180 graus. Portanto, o ângulo notável correspondente no primeiro quadrante é 30 graus, e não 60 graus. Além disso, o cosseno é negativo no terceiro quadrante."
+        },
+        {
+          "id": "d",
+          "text": "30 graus com sinal negativo, pois o cosseno é negativo no terceiro quadrante",
+          "correct": true,
+          "explanation": "Correta. O ângulo de 210 graus (7π/6 radianos) está no terceiro quadrante. Para reduzi-lo ao primeiro quadrante, subtrai-se 180 graus (π radianos): 210° - 180° = 30°. No círculo trigonométrico, o cosseno é representado pela projeção no eixo horizontal (eixo x). No terceiro quadrante, as projeções no eixo x são negativas. Assim, o cosseno de 210° é igual ao cosseno de 30°, mas com sinal negativo, ou seja, -cos(30°)."
+        }
+      ],
+      "explanation": "Correta. O ângulo de 210 graus (7π/6 radianos) está no terceiro quadrante. Para reduzi-lo ao primeiro quadrante, subtrai-se 180 graus (π radianos): 210° - 180° = 30°. No círculo trigonométrico, o cosseno é representado pela projeção no eixo horizontal (eixo x). No terceiro quadrante, as projeções no eixo x são negativas. Assim, o cosseno de 210° é igual ao cosseno de 30°, mas com sinal negativo, ou seja, -cos(30°).",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Por que o gráfico da função tangente apresenta assíntotas verticais em π/2 + kπ (onde k é inteiro)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque nesses pontos o seno atinge seus valores extremos de 1 e -1",
+          "correct": false,
+          "explanation": "Incorreta. As assíntotas da função tangente não estão diretamente relacionadas aos valores extremos do seno. A função tangente é definida como a razão entre o seno e o cosseno (tan(x) = sen(x)/cos(x))."
+        },
+        {
+          "id": "b",
+          "text": "Porque nesses pontos o cosseno é zero, tornando a função indefinida e tendendo ao infinito",
+          "correct": true,
+          "explanation": "Correta. A função tangente é definida como a razão entre o seno e o cosseno (tan(x) = sen(x)/cos(x)). Uma divisão por zero é indefinida na matemática, resultando em assíntotas. Os valores de x para os quais o cosseno é zero são π/2, 3π/2, 5π/2, e assim por diante, ou seja, π/2 + kπ, onde k é um número inteiro. Nesses pontos, a função tangente não existe e tende ao infinito positivo ou negativo, formando as assíntotas verticais."
+        },
+        {
+          "id": "c",
+          "text": "Porque nesses pontos a função completa seu período e reinicia o ciclo",
+          "correct": false,
+          "explanation": "Incorreta. O período da função tangente é π (180 graus), o que significa que ela repete seus valores a cada π radianos. No entanto, as assíntotas verticais não marcam o reinício do ciclo, mas sim pontos onde a função se torna indefinida devido à divisão por zero."
+        },
+        {
+          "id": "d",
+          "text": "Porque nesses pontos ocorre a inversão de sinal da função tangente",
+          "correct": false,
+          "explanation": "Incorreta. Embora a função tangente mude de sinal entre os quadrantes (positivo no 1º e 3º, negativo no 2º e 4º), essa inversão não é a causa direta das assíntotas verticais. A causa é a indefinição da função quando o denominador (cosseno) é zero."
+        }
+      ],
+      "explanation": "Correta. A função tangente é definida como a razão entre o seno e o cosseno (tan(x) = sen(x)/cos(x)). Uma divisão por zero é indefinida na matemática, resultando em assíntotas. Os valores de x para os quais o cosseno é zero são π/2, 3π/2, 5π/2, e assim por diante, ou seja, π/2 + kπ, onde k é um número inteiro. Nesses pontos, a função tangente não existe e tende ao infinito positivo ou negativo, formando as assíntotas verticais.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_160489_Funções Trigonométricas II.pdf",
+  "coletado_em": "2026-09-23T21:10:43"
+}

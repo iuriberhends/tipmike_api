@@ -1,0 +1,823 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 19,
+  "ordem_no_curso": "225.00",
+  "titulo": "Linux e Software Livre V",
+  "codigo_aula": "245422",
+  "video_id": "gbeE2V0E8Aw=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:32:33",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/gbeE2V0E8Aw%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420862&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Linux e Software Livre V\n\n## Mentalidade e Motivação Inicial\nVão lá, voltou com pensamento positivo. Mas eu entendo quem não consegue ter um pensamento positivo o tempo todo. Isso não quer dizer que vai dar errado, absolutamente. Como eu falei, eu acredito que, quando você começa algo, quando você quer algo e você encerra, há uma possibilidade maior de dar certo. Isso é uma coisa minha, uma preocupação minha, que eu acho que pode fazer toda a diferença. Beleza?\n\nNão há ninguém com a “plena razão”. Não tem receita pronta de bom estudo também, beleza? Sugestões, humor, leveza ajudam.\n\nVem comigo, vem comigo. Vamos lá, começando com a questão que trata literalmente do que acabamos de ver: utilizando uma distribuição Linux.\n\n## Interpretação de Listagem e Permissões\nO usuário executou um diretório específico. Aqui vamos ver um pouco mais sobre os comandos e como sair da seguinte linha, considerando essas informações. É correto afirmar que “.pdf” não é um arquivo do tipo executável. PDF não é executável, beleza?\n\nO primeiro termo… enfim, vamos aqui. Lembra que temos duas vezes “owner/group”. O primeiro dono do arquivo; depois, o grupo. O primeiro termo difícil se refere ao diretório, enquanto o segundo se refere ao usuário — o primeiro dono. Então aqui vamos marcar o do dono; se quiser escrever, escreve “dono” e depois “grupo”. Beleza, afirmação errada aquela que confunde.\n\n“4096” se refere ao tamanho, e não à quantidade de usuários que acessam aquilo. Beleza? Tamanho. Nada, nada, nada aqui se refere a “usuários”. O que se refere são as permissões. Então está reproduzida a tripla: usuário, grupo e outros. As permissões do usuário, do grupo e dos outros, beleza.\n\nPara saber se todos do grupo podem editar, eles precisam ter a permissão adequada. Para editar, no sentido de alterar conteúdo, a permissão que dá essa possibilidade é “w” (write). É muito comum cair em prova esse detalhe.\n\n> 🎯 Dicas de prova: As letras de permissão são r (read), w (write) e x (execute), para usuário, grupo e outros, nessa ordem. Para editar arquivo, precisa ter “w”; para entrar em diretório, precisa de “x”.\n\n## Comandos de Linux: Visão Geral e Estratégia de Prova\nAgora vem o momento de desespero. Eu vou passar alguns comandos do Linux — uma gota d’água do oceano. Quase nada, mas dá para fazer uma boa prova só com isso.\n\nJunto com essa aula você vai encontrar uma tabelinha com mais comandos. Pega isso aqui e cruza com a tabela: uma coisa com a outra. Eu diria que tem grande possibilidade de você acertar a maioria das questões, porque comandos caem. Às vezes as bancas cobram comandos que nunca foram cobrados e fogem à normalidade dos concursos. Não dá para colocar todos numa tabela.\n\n“Eu quero saber todos.” Cara, posso até recomendar um site tipo “Viva o Linux”. Vai lá, pega os comandos. São muitas páginas. Tem comandos para tudo. Se você quiser aprender tudo, ótimo; para concurso, é quase inviável. Nunca digo impossível — é questão de querer, desde que seja razoável. Estou sendo bem sincero: a maioria aqui já te dá base. Quer evoluir? Pega mais comandos e mais parâmetros, porque cada comando tem muitos parâmetros.\n\nEu vou mostrar na prática. Onde eu vou digitar esses comandos? Sempre no shell, no terminal — nossa CLI, interface de linha de comando. Vários nomes podem ser cobrados. Alguns comandos serão exclusivos do superusuário; eu tenho que ter permissão de root para fazer. Se não tiver, não consigo. No material eu detalho mais.\n\nAqui eu separei comandos para trabalhar com diretórios. Quando eu quero remover arquivos e diretórios — inclusive diretórios não vazios — uso “rm”. Toda vez que o comando for em letra minúscula, tem que digitar em minúscula. Parâmetros em maiúscula, se existirem, também têm que respeitar caixa. Linux diferencia maiúsculas de minúsculas.\n\nO comando “rm” é usado para apagar arquivos e diretórios, incluindo não vazios, com parâmetros. Exemplos de opções que posso agregar: “-r”, “-f”, “-v”. Posso também indicar o caminho do arquivo. Se eu já estiver dentro da pasta que tem o arquivo, posso suprimir o caminho e só indicar o nome do arquivo ou diretório que quero apagar.\n\n“Estou no diretório home, usuário comum.” Vou apagar um arquivo da pasta em que estou. Posso forçar com “-f” e recursivo com “-r”. Várias opções, e no material complementar eu peço que você leia — sempre atualizo, coloco e tiro parâmetros conforme as bancas cobram. Não coloco todos aqui para não virar só decoreba. A ideia é você saber o que cada comando faz e os principais parâmetros.\n\n> 🎯 Dicas de prova: “rm -f” exclui sem confirmação; “rm -r” exclui diretórios recursivamente; “rm -rf” apaga tudo sem perguntar (perigoso).\n\nOutros comandos:\n- cp: para copiar arquivos. Sintaxe geral: cp [opções] origem destino.\n- mv: move ou renomeia. Serve para mover e para renomear.\n- cat: mostra o conteúdo de um arquivo (texto). Para binários, a saída não é legível.\n- more/less: paginação da saída, página por página.\n- ls: lista arquivos do diretório. Opções:\n  - -l: mostra detalhes (tamanho, data/hora, permissões, proprietário).\n  - -a: inclui arquivos ocultos.\n- cd: entra em diretório; “cd ..” sai para o diretório pai. Para entrar, precisa permissão de execução no diretório.\n- pwd: mostra o caminho absoluto (diretório atual).\n- clear: limpa a tela do terminal.\n- mkdir: cria diretório.\n- rmdir: remove diretório vazio.\n- su: altera para superusuário (mantém sessão como root até sair).\n- sudo: executa um comando como superusuário e volta para usuário normal.\n- useradd: cria novo usuário.\n- userdel: apaga usuário.\n- passwd: altera senha.\n- who: mostra usuários conectados.\n- man: mostra o manual do comando citado, com parâmetros e detalhes.\n\n> 🎯 Dicas de prova: “man comando” exibe o manual e permite verificar se o comando existe na distro.\n\n- ps: exibe lista de processos em execução.\n- kill: finaliza processos.\n- touch: cria arquivo vazio ou atualiza timestamp.\n- grep: filtra linhas pelo conteúdo (busca em texto).\n\nGerenciador de pacotes (Debian/Ubuntu e derivados):\n- apt/apt-get: atualizar índices, instalar, remover, localizar programas.\n- aptitude: alternativa para quem preferir.\n\nPermissões:\n- chmod: altera permissões de arquivos. Pode usar notação simbólica (u,g,o + r,w,x) ou octal (0–7).\n- chown: altera proprietário (e grupo, com “:grupo”).\n- zip/unzip, tar: compactar/descompactar.\n- shutdown/reboot: desligar/reiniciar.\n\nOpções comuns do shutdown:\n- -h: halt (desligar).\n- -r: reboot (reiniciar).\n- -c: cancela desligamento agendado.\n- “+10”: agenda para 10 minutos.\n\nExemplo: “shutdown -r +10” reinicia em 10 minutos. “reboot” reinicia imediatamente. “halt” ou “shutdown -h now” desliga.\n\nBusca de arquivos:\n- find: procura no sistema de arquivos conforme critérios.\n- locate: procura numa base de dados pré-gerada (precisa updatedb).\n\nExecução em segundo plano:\n- Adicionar “&” no final executa o comando em segundo plano e libera o terminal.\n\nExemplo de calendário:\n- cal 2022: mostra o calendário do ano.\n\n## Questões e Observações de Comando\nAs bancas gostam muito de “ls -l” (detalhes) e “ls -a” (ocultos). “cd” para entrar/sair. “pwd” para caminho absoluto. “clear” para limpar a tela. “mkdir”, “rmdir” e “rm -r” (atenção à diferença entre remover vazio e recursivo).\n\n> 🎯 Dicas de prova: Para entrar em diretório, precisa “x” no diretório. Sem “x”, você não entra mesmo com “r”.\n\nDF e DU:\n- df: mostra espaço livre/uso por sistema de arquivos (disco).\n- du: mostra espaço ocupado por arquivos e diretórios (no caminho atual ou indicado), somando subdiretórios.\n\n> 🎯 Dicas de prova: df ≠ du. df é por filesystem; du é por diretório/arquivos.\n\nPermissões em octal:\n- 7 = r+w+x\n- 6 = r+w\n- 5 = r+x\n- 4 = r\n- 2 = w\n- 1 = x\n- Ordem: usuário, grupo, outros.\n\nExemplo: chmod 777 arquivo — todos com leitura, escrita e execução. Muitas vezes precisa de sudo para alterar certos arquivos.\n\nSe caírem duas alternativas com “chmod 777”, prefira a que usa “sudo” quando o contexto exigir privilégios.\n\n## Comparações e Itens de Prova (Linux x Windows)\nVamos relembrar:\n- Windows é software proprietário; Linux é software livre (código-fonte acessível e modificável).\n- Diretório raiz padrão: Windows usa letras de unidade (C:\\), Linux usa “/”.\n- Administrador: no Windows é “Administrator”; no Linux é “root”. Posso ter vários usuários com sudo.\n- Interfaces gráficas: no Windows há uma padrão; no Linux posso ter várias (GNOME, KDE, XFCE, etc.).\n- Gerenciador de arquivos: Windows Explorer no Windows; no Linux há vários (Nautilus, Dolphin, Thunar, etc.).\n\nDual boot:\n- É possível instalar Linux e Windows na mesma máquina, em partições diferentes (sistemas de arquivos diferentes: NTFS no Windows, ext4 no Linux, etc.). Também é possível virtualizar (máquina virtual).\n- No dual boot, um sistema por vez. O gerenciador de boot (por exemplo, GRUB) permite escolher qual sistema carregar. Sempre há um padrão.\n\nAcesso a arquivos entre sistemas:\n- Do Linux para acessar partições Windows (NTFS), geralmente funciona por padrão nas distros mais comuns.\n- Do Windows para acessar partições Linux (ext4), normalmente precisa de software adicional. É possível, mas não nativo.\n\n> 🎯 Dicas de prova: Linux acessa NTFS por padrão nas distros populares; Windows não acessa ext4 sem software de terceiros.\n\n## Itens Típicos de Julgamento sobre Linux\n- Linux é software de código aberto (pode ser modificado e distribuído por qualquer pessoa, respeitando licenças livre/open source).\n- Em desktops domésticos é menos comum que Windows, mas em servidores é amplamente utilizado pela personalização e segurança.\n- macOS é um sistema próprio da Apple; não confundir com Linux.\n- Distribuições populares: Ubuntu, Debian, Fedora (e outras). Popularidade varia, mas essas entram como exemplos de mainstream.\n\nSobre instalação e programas:\n- Pode ser instalado em dual boot permitindo seleção do sistema na inicialização.\n- Há programas multiplataforma (Firefox, LibreOffice, etc.).\n- Linux permite acesso a compartilhamentos Windows na rede via Samba (interoperabilidade de arquivos na rede).\n\nSegurança:\n- Existem malwares para Linux, mas em geral o impacto é menor quando há separação de privilégios e boas práticas. Não é “sem vírus”, é “menos vulnerável” quando bem administrado.\n\n## Encerramento e Orientação\nChegamos ao finalzinho da aula de Linux, que envolveu também um pouco de Software Livre lá no começo. Se você precisar de ajuda, pergunta. Muita gente me pergunta “como estudo, quantas horas por matéria”. Eu não dou orientação profissional de estudos fora do escopo técnico — não acho ético. Posso falar da minha experiência e, principalmente, te ajudar no que é informática. Dentro de informática, eu tento te ajudar com clareza e transparência.\n\nResolva questões. Muitas serão decoreba de comando e parâmetro; outras exigem lógica e atenção ao contexto (permissões, sudo, df vs du, etc.). No fórum de dúvidas, vai ser um prazer ajudar.\n\nDesejo sucesso. Vai com Deus. Valeu, valeu.",
+  "transcricao_meta": {
+    "title": "Linux e Software Livre V",
+    "subject": "Informática Básica",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 42146,
+    "createdAt": "2026-02-05T16:39:27.307Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda comandos essenciais de Linux na Interface com linha de comando, permissões e usuários, processos, pacotes, busca e arquivos, além de dual boot Linux/Windows e comparações-chave. \nPrincipais pontos: \n- Diferenças entre comandos e quando usar cada um (rm, cp, mv, ls, cd, pwd, man, ps, kill, grep, apt/apt-get, chmod etc.).\n- Permissões (numéricas e simbólicas), privilégios (su vs sudo) e sensibilidade a maiúsculas/minúsculas.\n- Dual boot com GRUB, sistemas de arquivos (NTFS vs ext4), acesso cruzado de arquivos e pegadinhas clássicas de prova.\n\n## 1. Base / Conceitos Fundamentais\n- **Linux**: sistema operacional de código aberto; múltiplas distribuições (ex.: Ubuntu, Debian, Fedora).\n- **Interface com linha de comando (CLI/Terminal)**: onde se digitam os comandos. Linux diferencia letras maiúsculas e minúsculas; comandos/opções em minúsculas devem ser digitados em minúsculas.\n- **Usuário comum vs root**:\n  - **root (superusuário)**: privilégios totais.\n  - **su**: altera para o superusuário (vira root até sair).\n  - **sudo**: executa um comando como root e retorna ao usuário normal.\n- **Sistema de arquivos**:\n  - Linux: tipicamente ext4.\n  - Windows: tipicamente **NTFS**.\n  - Diretório raiz no Linux: “/”.\n  - Em Windows: “C:” (e outras letras).\n- **Gerenciador de inicialização (GRUB)**: permite escolher o sistema ao ligar (dual boot/multi boot).\n- **Sensibilidade de caixa**: “PDF não é executável por padrão” e 4096 costuma aparecer como tamanho de diretório/tamanho em bytes (não confundir com usuários/permissões).\n\n## 2. Como Funciona / Distinções\n- **Navegação e listagem**:\n  - **ls** vs **ls -l** vs **ls -a**:\n    - ls: lista nomes.\n    - ls -l: detalhado (permissões, proprietário, grupo, tamanho, data/hora, nome).\n    - ls -a: inclui ocultos.\n  - **cd DIR** entra; **cd ..** sai um nível.\n  - **pwd**: mostra caminho absoluto do diretório atual.\n- **Exibir conteúdo**:\n  - **cat**: exibe tudo de uma vez (fluxo).\n  - **more**: pagina o conteúdo.\n- **Remover**:\n  - **rm** remove arquivos.\n  - **rm -r** remove diretórios recursivamente.\n  - **rmdir** remove diretório vazio (não recursivo).\n  - Diferença crítica: rm sem -r não remove diretórios.\n- **Copiar vs mover/renomear**:\n  - **cp ORIGEM DESTINO**: copia.\n  - **mv ORIGEM DESTINO**: move ou renomeia.\n- **Permissões**:\n  - **chmod** altera permissões.\n  - Dígitos (u/g/o): leitura=4, escrita=2, execução=1; soma por posição (ex.: 777, 765, 567).\n  - Para “entrar” em diretório, é necessária permissão de execução no diretório.\n- **Ajuda e verificação**:\n  - **man COMANDO**: manual, opções e confirmação de existência do comando.\n- **Processos**:\n  - **ps**: lista processos.\n  - **kill PID**: finaliza processo pelo PID.\n- **Usuários**:\n  - **useradd**, **userdel**, **passwd** (altera senha).\n  - **who**: mostra usuários conectados.\n- **Pacotes (Debian/derivados)**:\n  - **apt / apt-get**: gerenciador de pacotes (apenas em distribuições baseadas em Debian).\n- **Busca**:\n  - Comando que “procura por arquivos e diretórios na base de dados já criada” (indexado) é diferente do que “varre o sistema de arquivos diretamente” (não indexado). O indexado é mais rápido; o que varre é mais completo no momento.\n- **Execução em segundo plano**:\n  - Adicionando “comercial e comercial” ao final, o comando roda em segundo plano, liberando o terminal.\n- **Armazenamento e uso de disco**:\n  - **DF**: mostra espaço livre em disco.\n  - Outro comando foca em “espaço ocupado por arquivos e subdiretórios no diretório atual” (não confundir com DF).\n- **Dual boot**:\n  - Possível instalar Linux e Windows na mesma máquina em partições diferentes (um sistema por vez em execução).\n  - **GRUB** permite escolher qual sistema carregar.\n  - Acesso cruzado a arquivos:\n    - Linux lê **NTFS** por padrão (se a partição estiver acessível e sem criptografia/proteções).\n    - Windows ler ext4: precisa software adicional.\n  - Compartilhamento: usar partição/drive compatível (NTFS/FAT32) ou rede (SMB/CIFS via Samba).\n\n## 3. Aplicação Prática / Técnicas\n- **Listagem e navegação rápidas**:\n  - Ver tudo, inclusive ocultos, com detalhes: ls -la\n  - Descobrir onde está: pwd\n  - Limpar tela: **clear**\n- **Rotina de cópia/renomear**:\n  - Copiar: cp origem destino\n  - Renomear/mover: mv antigo novo\n- **Remoção segura e perigosa**:\n  - Conferindo antes: rm -i arquivo\n  - Diretório e subpastas: rm -r DIR\n  - Perigoso (sem perguntas): rm -rf DIR\n- **Leitura de arquivos**:\n  - Rápida: cat arquivo\n  - Com paginação: more arquivo\n- **Permissões (chmod)**:\n  - 777: rwx para todos (usuário/grupo/outros).\n  - 765: usuário (rwx=7), grupo (rw=6), outros (r-x=5).\n  - 567: usuário (r-x=5), grupo (rw=6), outros (rwx=7).\n- **Usuários e senha**:\n  - Criar: sudo useradd usuario\n  - Remover: sudo userdel usuario\n  - Trocar senha: passwd (própria) | sudo passwd usuario (de terceiros)\n  - Ver conectados: who\n- **Processos**:\n  - Listar: ps\n  - Finalizar: kill PID\n- **Ajuda**:\n  - man comando (para ver opções, confirmar existência, entender parâmetros)\n- **Pacotes (Debian)**:\n  - Buscar/instalar/atualizar: via apt/apt-get com as opções adequadas (cai o fato de que é “distribuições baseadas em Debian”).\n- **Calendário**:\n  - Comando “local” mostra calendário, podendo exibir ano específico (ex.: dois mil vinte e dois).\n- **Agendamento/desligamento**:\n  - “menos E”: iniciar desligamento.\n  - “menos é rir”: reiniciar.\n  - “menos ser”: cancelar execução agendada.\n  - “mais dez”: executar em 10 minutos.\n- **Espaço em disco**:\n  - DF: espaço livre em disco global (atenção à distinção com comando que mostra espaço ocupado por diretórios no diretório atual).\n\n## 4. Exemplos e Casos Resolvidos\n- Listar ocultos detalhado: ls -la\n- Mostrar caminho absoluto: pwd\n- Entrar e voltar: cd projetos; cd ..\n- Criar/remover diretório vazio: mkdir teste; rmdir teste\n- Remover conteúdo recursivo com confirmação: rm -ri pasta\n- Copiar e renomear:\n  - cp relatorio.pdf backup/relatorio.pdf\n  - mv relatorio.pdf relatorio_final.pdf\n- Visualizar conteúdo grande: more logs.txt\n- Ver ajuda do rm: man rm\n- Criar arquivo vazio: touch notas.txt\n- Buscar texto em arquivos: grep “erro” *.log\n- Ver processos e matar um PID: ps; kill 1234\n- Trocar para root e voltar: su (digita senha do root); exit\n- Executar como root sem trocar de sessão: sudo apt-get update\n- Ajustar permissões:\n  - chmod 765 script.sh\n  - Entrar em diretório exige “x”: se não conseguir cd, ajuste com chmod para conceder “x”.\n- Espaço em disco: DF (espaço livre global). Para “ocupado por diretórios”, não confundir com DF.\n- Dual boot:\n  - Instalar Linux e Windows em partições diferentes, GRUB permite escolher qual iniciar. Um por vez (não simultâneo).\n- Acesso cruzado:\n  - Linux lendo NTFS por padrão; Windows lendo ext4 requer software.\n- Compartilhar em rede:\n  - Usando SMB/CIFS (Samba) entre sistemas diferentes.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: Linux diferencia maiúsculas/minúsculas. Se o comando/opção estiver em minúsculas, digite exatamente em minúsculas.\n\n- rm:\n  - rm sem -r não remove diretórios; rm -r remove diretórios não vazios.\n  - rm -f suprime confirmação; rm -rf é destrutivo (cuidado).\n- ls -l:\n  - Campo “tamanho” pode exibir 4096 (bytes); não confunda com número de usuários/permissões.\n- cd e permissões:\n  - Para entrar em diretório é necessária permissão de execução no diretório.\n- su vs sudo:\n  - su muda o contexto para root (até sair).\n  - sudo eleva apenas o comando. Em tarefas administrativas, se houver duas alternativas equivalentes, “prefira que tem um sudo” quando a ação exigir privilégios.\n- man:\n  - Serve para ver todos os parâmetros e confirmar se o comando existe. Banca cobra como fonte “oficial” de opções.\n- apt/apt-get:\n  - Válido em Debian e derivados (ex.: Ubuntu). Se a questão falar em outra família (ex.: Fedora), apt/apt-get não se aplica.\n- Busca:\n  - Ferramenta que “procura na base indexada” vs “varre o sistema”: uma é rápida e depende de índice; a outra é mais lenta mas atual no momento. Não confundir.\n- Execução em segundo plano:\n  - Acrescentar “comercial e comercial” ao final do comando faz rodar em segundo plano (libera o terminal).\n- Espaço em disco:\n  - DF mostra espaço livre em disco. Não confundir com o comando que resume “espaço ocupado por arquivos e subdiretórios no diretório atual”.\n- Dual boot:\n  - “Multi boot” = mais de dois; “dual boot” = exatamente dois.\n  - É um por vez; não simultâneo.\n  - Precisa de partições diferentes (sistemas de arquivos distintos).\n- Acesso de arquivos entre sistemas:\n  - Linux costuma ler NTFS por padrão.\n  - Windows para ler ext4 precisa de software adicional.\n- Segurança e vírus:\n  - “Não existem vírus para Linux” é falso. Existem, mas o impacto é reduzido pela separação de privilégios e políticas de contas.\n- Redes e compartilhamento:\n  - Afirmar que Linux “não permite acessar arquivos compartilhados em iOS por segurança” é falso. Em rede local, SMB/CIFS (Samba) viabiliza compartilhamento entre diferentes sistemas.\n- Sensibilidade a caixa:\n  - “Toda vez que o comando foi em letra minúscula, ele tem que ser digitado em letras minúsculas.” Item que ignora isso está errado.\n\n> Dica de Prova: Ao julgar “mostrar espaço livre em disco” → DF. Para “ocupação por diretórios/subdiretórios no diretório atual” → outro comando específico, não DF.\n\n> Dica de Prova: Em perguntas sobre reiniciar/desligar/agendar, associe:\n- “menos E” → iniciar desligamento.\n- “menos é rir” → reiniciar.\n- “menos ser” → cancelar agendamento.\n- “mais dez” → em 10 minutos.\n\n> Dica de Prova: Em permissões, memorize 4-2-1 (r-w-x) e exemplos clássicos 777, 765, 567. Se a ação exigir privilégio, prefira a alternativa com sudo.",
+  "resumo_bolso": "# Linux e Software Livre V\n\n---\n\n## 📌 Conceitos-Chave\n\n* Linux: sistema operacional de código aberto; múltiplas distribuições (Ubuntu, Debian, Fedora). Diretório raiz “/”.\n* Sensibilidade a maiúsculas/minúsculas: comandos/opções em minúsculas devem ser digitados em minúsculas.\n* Usuário comum vs root: root é superusuário; su troca para root até sair; sudo eleva apenas o comando.\n* Sistemas de arquivos: Linux tipicamente ext4; Windows tipicamente NTFS.\n* GRUB: gerenciador de boot para dual/multi boot (um sistema por vez).\n* Tamanho 4096 bytes pode aparecer em ls -l para diretórios; não confundir com outros campos.\n* Busca indexada vs varredura: indexado é mais rápido (usa base), varredura é mais atual no momento.\n* Execução em 2º plano: adicionar “&” ao final do comando.\n* Espaço em disco: DF mostra espaço livre global; há outro comando para ocupado por diretórios locais.\n* Pacotes: apt/apt-get em distribuições baseadas em Debian.\n* Acesso cruzado: Linux lê NTFS; Windows para ext4 precisa software adicional.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### rm vs rmdir\n\n| Aspecto | rm | rmdir |\n| --- | --- | --- |\n| Uso | Remove arquivos; com -r remove diretórios recursivamente | Remove apenas diretório vazio |\n| Observação | rm sem -r não remove diretórios | Falha se houver conteúdo |\n\n### su vs sudo\n\n| Aspecto | su | sudo |\n| --- | --- | --- |\n| Comportamento | Entra como root até sair (troca de sessão) | Executa um comando com privilégios e retorna |\n| Autenticação | Senha do root | Política sudoers (senha do usuário) |\n\n### ls vs ls -l vs ls -a\n\n| Aspecto | ls | ls -l | ls -a |\n| --- | --- | --- | --- |\n| Saída | Lista nomes | Lista detalhada (permissões, dono, grupo, tamanho, data) | Inclui ocultos (.) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Permissões (chmod)\n- Regra: r=4, w=2, x=1; somar para u/g/o na ordem (ex.: 777, 765, 567).\n- Observação: para entrar em diretório é necessária permissão de execução no diretório.\n\n2. Dual boot (GRUB)\n- Regra: instalar Linux e Windows em partições distintas; um por vez em execução.\n- Exemplo: GRUB permite escolher qual sistema carregar.\n\n3. Busca (indexado vs varredura)\n- Regra: indexado → mais rápido; varredura direta → mais atual no momento.\n\n4. Execução em 2º plano\n- Regra: adicionar & ao final do comando.\n\n5. Espaço em disco\n- Regra: DF mostra espaço livre em disco global; não confundir com comando que resume ocupação por diretórios no diretório atual.\n\n6. Ajuda (man)\n- Regra: usar man para ver opções e confirmar existência de comandos.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- rm sem -r não remove diretórios; rm -rf é destrutivo (sem confirmação).\n- apt/apt-get é exclusivo de distribuições baseadas em Debian (ex.: Ubuntu).\n- Dual/multi boot: apenas um sistema por vez; GRUB decide no boot.\n- Linux lê NTFS; Windows para ler ext4 precisa de software adicional.\n- DF mostra espaço livre global; não confundir com o comando de ocupação por diretórios no diretório atual.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei rm, rm -r e rmdir?\n* Memorizei 4-2-1 (r-w-x) e que para cd em diretório é preciso “x”?\n* Sei su vs sudo e quando usar cada um?\n* Sei ls, ls -l e ls -a (e que 4096 pode aparecer em diretórios)?\n* Lembro que apt/apt-get é só em Debian e derivados?\n* Sei a diferença entre busca indexada e varredura?\n* DF = espaço livre global; “ocupação por diretórios” é outro comando?\n* Dual/multi boot com GRUB e um SO por vez?\n* Linux lê NTFS; Windows para ext4 requer software?\n* “&” coloca comando em segundo plano?",
+  "mapa_mental": "# 💻 Linux e Software Livre V\n## 🎯 Conceitos Fundamentais\n### 💡 Sistema Linux\n- Sistema operacional livre\n- Distribuições variadas\n- Kernel monolítico\n- Comunidade colaborativa\n### 👤 Usuários e Privilégios\n- Usuário comum\n- Root superusuário\n- Comando su\n- Comando sudo\n### 💾 Sistema de Arquivos\n- Diretório raiz barra\n- Partições separadas\n- Tamanho blocos 4096\n- Sensível maiúsculas\n\n## 💻 Comandos Essenciais\n### 📂 Navegação e Listagem\n- ls básico\n- ls menos ele\n- ls menos a\n- cd diretório\n- pwd caminho\n### 📄 Arquivos e Diretórios\n- cat conteúdo\n- more paginação\n- rm arquivos\n- rm menos r\n- rmdir vazio\n### 🔐 Permissões e Propriedades\n- chmod numérico\n- Leitura quatro\n- Escrita dois\n- Execução um\n- Entrar exige x\n### 👥 Usuários e Sessões\n- useradd criar\n- userdel remover\n- passwd senha\n- who conectados\n- su versus sudo\n### ⚙️ Processos e Ajuda\n- ps processos\n- kill PID\n- man comando\n- clear tela\n- Segundo plano ecomercial\n\n## 📦 Pacotes, Disco e Busca\n### 📦 Gerenciamento Pacotes\n- apt Debian\n- apt-get Debian\n- Atualizar instalar\n- Não Fedora\n- Requer sudo\n### 💾 Espaço em Disco\n- df espaço livre\n- Diretórios ocupação\n- Partições montadas\n- Sistema arquivos\n- Interpretação saída\n### 🔍 Busca e Calendário\n- Busca indexada\n- Busca não indexada\n- grep textos\n- Calendário local\n- Ano específico\n\n## 🖥️ Dual Boot e Comparações\n### 🚀 Dual Boot GRUB\n- Dual boot dois\n- Multi boot vários\n- GRUB gerenciador\n- Um sistema vez\n- Partições distintas\n### 🧱 NTFS vs ext4\n- Windows NTFS\n- Linux ext4\n- Linux lê NTFS\n- Windows ext4 software\n- Partição compartilhada\n### 🛡️ Segurança e Redes\n- Vírus existem\n- Menor impacto\n- Separação privilégios\n- Samba SMB CIFS\n- Compartilhamento multiplataforma",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Permissões Linux",
+      "description": "Permissões Linux — 6 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Quais classes de usuários recebem permissões em sistemas Linux?",
+          "back": "Usuário, grupo e outros.",
+          "hint": "São três categorias de sujeitos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual permissão permite alterar o conteúdo de um arquivo Linux?",
+          "back": "Permissão de escrita.",
+          "hint": "Relacionado a modificar dados",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual permissão é necessária para entrar em um diretório Linux?",
+          "back": "Permissão de execução.",
+          "hint": "Necessário para acessar pastas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual é a função do comando chmod?",
+          "back": "Configurar as permissões de uso de arquivos e diretórios.",
+          "hint": "Verbo de alteração de atributos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "O que representa o modo 777 aplicado a um arquivo ou diretório?",
+          "back": "Permissões totais para usuário, grupo e outros.",
+          "hint": "Soma de todas as permissões",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual comando altera o proprietário de um arquivo ou diretório?",
+          "back": "chown",
+          "hint": "Relacionado a dono/posse",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Arquivos e Diretórios",
+      "description": "Arquivos e Diretórios — 10 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual comando remove arquivos e diretórios no Linux?",
+          "back": "rm",
+          "hint": "Ação de apagar",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual opção do rm remove diretórios e seus conteúdos de forma recursiva?",
+          "back": "-r",
+          "hint": "Ação em subdiretórios",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual opção do rm exclui sem solicitar confirmação?",
+          "back": "-f",
+          "hint": "Forçar sem perguntar",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual opção do rm solicita confirmação antes de excluir?",
+          "back": "-i",
+          "hint": "Modo interativo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual comando copia arquivos ou diretórios para outro local?",
+          "back": "cp",
+          "hint": "Duplicação de arquivos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Quais operações podem ser realizadas pelo comando mv?",
+          "back": "Mover ou renomear arquivos e diretórios.",
+          "hint": "Transferir ou renomear",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual comando exibe o conteúdo de um arquivo no terminal?",
+          "back": "cat",
+          "hint": "Visualizar texto",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual opção de ls mostra detalhes como tamanho, data e permissões?",
+          "back": "-l",
+          "hint": "Formato de lista longa",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual opção de ls inclui arquivos ocultos na listagem?",
+          "back": "-a",
+          "hint": "Incluir arquivos ocultos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual comando cria um novo diretório?",
+          "back": "mkdir",
+          "hint": "Criar pasta",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Navegação e Sistema",
+      "description": "Navegação e Sistema — 8 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Qual comando exibe o caminho absoluto do diretório atual?",
+          "back": "pwd",
+          "hint": "Caminho atual",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual comando permite mudar para outro diretório?",
+          "back": "cd",
+          "hint": "Navegação entre pastas",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Como executar um comando em segundo plano no shell?",
+          "back": "Adicionar o caractere & ao final do comando.",
+          "hint": "Caractere especial no fim",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "shell"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual é a diferença entre find e locate na busca por arquivos?",
+          "back": "O find busca em todo o sistema de arquivos, enquanto o locate busca em uma base de dados pré-criada.",
+          "hint": "Diferença de performance/origem",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "busca"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual comando mostra o espaço livre nos discos?",
+          "back": "df",
+          "hint": "Espaço livre",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "disco"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual comando mostra o espaço ocupado por arquivos e diretórios?",
+          "back": "du",
+          "hint": "Uso de diretórios",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "disco"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual comando exibe os processos em execução?",
+          "back": "ps",
+          "hint": "Monitoramento de tarefas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "processos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-24",
+          "front": "Qual comando exibe o manual detalhado de outro comando?",
+          "back": "man",
+          "hint": "Documentação interna",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "comandos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Linux e Software Livre",
+      "description": "Linux e Software Livre — 4 cards",
+      "cards": [
+        {
+          "id": "card-25",
+          "front": "Qual é a função do Samba em uma rede com Linux e Windows?",
+          "back": "Permitir a interação e o compartilhamento de arquivos em rede entre Linux e Windows.",
+          "hint": "Interoperabilidade de rede",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "rede"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-26",
+          "front": "Qual condição permite instalar Linux e Windows na mesma máquina?",
+          "back": "Estar em partições diferentes.",
+          "hint": "Organização do disco",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "instalacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-27",
+          "front": "Como é chamado o uso de dois sistemas operacionais instalados na mesma máquina?",
+          "back": "Dual boot.",
+          "hint": "Termo para dois sistemas",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "instalacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-28",
+          "front": "Qual é a principal diferença entre software proprietário e software livre?",
+          "back": "O software livre disponibiliza acesso ao código-fonte, enquanto o proprietário possui apenas um proprietário e não permite alteração pelo usuário.",
+          "hint": "Acesso ao código-fonte",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "software-livre",
+            "licenciamento"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é o comando utilizado no Linux para remover arquivos e diretórios, incluindo diretórios não vazios?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "del",
+          "correct": false,
+          "explanation": "Incorreta. O comando \"del\" é comumente utilizado em sistemas operacionais como DOS e Windows para excluir arquivos, mas não é um comando padrão no ambiente Linux para essa finalidade."
+        },
+        {
+          "id": "b",
+          "text": "rm",
+          "correct": true,
+          "explanation": "Correta. O comando \"rm\" (remove) é o utilitário padrão no Linux para apagar arquivos e diretórios. Para remover diretórios não vazios, é necessário usar a opção \"-r\" (recursivo) junto com o comando, como em \"rm -r nomedodiretorio\"."
+        },
+        {
+          "id": "c",
+          "text": "remove",
+          "correct": false,
+          "explanation": "Incorreta. \"Remove\" é o termo em inglês para remover, mas não é um comando executável no Linux. O comando correto para essa ação é a sua forma abreviada, \"rm\"."
+        },
+        {
+          "id": "d",
+          "text": "erase",
+          "correct": false,
+          "explanation": "Incorreta. \"Erase\" é uma palavra em inglês que significa apagar, mas não corresponde a um comando específico no Linux para remover arquivos ou diretórios. Os sistemas Linux utilizam comandos concisos e padronizados."
+        }
+      ],
+      "explanation": "Correta. O comando \"rm\" (remove) é o utilitário padrão no Linux para apagar arquivos e diretórios. Para remover diretórios não vazios, é necessário usar a opção \"-r\" (recursivo) junto com o comando, como em \"rm -r nomedodiretorio\".",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No sistema de permissões do Linux, qual comando é utilizado para alterar as permissões de acesso de arquivos e diretórios?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "chmod",
+          "correct": true,
+          "explanation": "Correta. O comando \"chmod\" (change mode) é o utilitário padrão no Linux para modificar as permissões de acesso (leitura, escrita e execução) de arquivos e diretórios para o proprietário, o grupo e outros usuários. Essas permissões são representadas por valores numéricos (modo octal) ou símbolos."
+        },
+        {
+          "id": "b",
+          "text": "chperm",
+          "correct": false,
+          "explanation": "Incorreta. \"Chperm\" não é um comando padrão no Linux para alterar permissões. A nomenclatura padrão para essa função é \"chmod\"."
+        },
+        {
+          "id": "c",
+          "text": "chown",
+          "correct": false,
+          "explanation": "Incorreta. O comando \"chown\" (change owner) é utilizado para alterar o proprietário de um arquivo ou diretório, ou seja, quem é o dono do recurso no sistema de arquivos."
+        },
+        {
+          "id": "d",
+          "text": "chgrp",
+          "correct": false,
+          "explanation": "Incorreta. O comando \"chgrp\" (change group) é usado para alterar o grupo proprietário de um arquivo ou diretório, definindo a qual grupo de usuários o recurso pertence."
+        }
+      ],
+      "explanation": "Correta. O comando \"chmod\" (change mode) é o utilitário padrão no Linux para modificar as permissões de acesso (leitura, escrita e execução) de arquivos e diretórios para o proprietário, o grupo e outros usuários. Essas permissões são representadas por valores numéricos (modo octal) ou símbolos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual comando do Linux é utilizado para copiar arquivos de um local para outro?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "mv",
+          "correct": false,
+          "explanation": "Incorreta. O comando \"mv\" (move) é utilizado para mover arquivos e diretórios de um local para outro ou para renomeá-los, não para criar uma cópia."
+        },
+        {
+          "id": "b",
+          "text": "transfer",
+          "correct": false,
+          "explanation": "Incorreta. \"Transfer\" é uma palavra que descreve a ação de mover ou copiar dados, mas não é um comando válido no sistema operacional Linux para a cópia de arquivos."
+        },
+        {
+          "id": "c",
+          "text": "copy",
+          "correct": false,
+          "explanation": "Incorreta. Embora \"copy\" seja um termo intuitivo para a ação, não é o comando padrão para copiar arquivos no Linux. Esse comando é mais comum em ambientes como DOS/Windows."
+        },
+        {
+          "id": "d",
+          "text": "cp",
+          "correct": true,
+          "explanation": "Correta. O comando \"cp\" (copy) é o utilitário padrão no Linux para copiar arquivos e diretórios. Ele permite especificar um arquivo de origem e um destino, criando uma duplicata do conteúdo."
+        }
+      ],
+      "explanation": "Correta. O comando \"cp\" (copy) é o utilitário padrão no Linux para copiar arquivos e diretórios. Ele permite especificar um arquivo de origem e um destino, criando uma duplicata do conteúdo.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual comando exibe o caminho completo do diretório atual no Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "location",
+          "correct": false,
+          "explanation": "Incorreta. \"Location\" é uma palavra em inglês que significa localização, mas não corresponde a um comando específico no Linux para mostrar o caminho do diretório atual."
+        },
+        {
+          "id": "b",
+          "text": "pwd",
+          "correct": true,
+          "explanation": "Correta. O comando \"pwd\" (print working directory) é o utilitário padrão no Linux para exibir o caminho absoluto (completo) do diretório em que o usuário está atualmente posicionado."
+        },
+        {
+          "id": "c",
+          "text": "dir",
+          "correct": false,
+          "explanation": "Incorreta. O comando \"dir\" é usado em sistemas DOS/Windows para listar o conteúdo de um diretório. No Linux, a função equivalente para listar o conteúdo é o comando \"ls\", e nenhum deles exibe o caminho completo do diretório atual."
+        },
+        {
+          "id": "d",
+          "text": "path",
+          "correct": false,
+          "explanation": "Incorreta. O termo \"path\" no Linux geralmente se refere à variável de ambiente que lista os diretórios onde o sistema procura por comandos executáveis, não ao caminho do diretório atual."
+        }
+      ],
+      "explanation": "Correta. O comando \"pwd\" (print working directory) é o utilitário padrão no Linux para exibir o caminho absoluto (completo) do diretório em que o usuário está atualmente posicionado.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual comando permite alterar para o usuário root (super usuário) no Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "admin",
+          "correct": false,
+          "explanation": "Incorreta. \"Admin\" é uma abreviação comum para administrador, mas não é um comando no Linux para alternar para o usuário root. O acesso administrativo é geralmente concedido ao usuário root ou por meio de comandos específicos."
+        },
+        {
+          "id": "b",
+          "text": "superuser",
+          "correct": false,
+          "explanation": "Incorreta. \"Superuser\" é um termo que descreve o usuário root, indicando seus privilégios elevados, mas não é um comando executável no Linux para alternar para essa conta."
+        },
+        {
+          "id": "c",
+          "text": "su",
+          "correct": true,
+          "explanation": "Correta. O comando \"su\" (substitute user ou switch user) é o utilitário padrão no Linux para alternar para outro usuário. Quando executado sem um nome de usuário específico, ele assume o usuário root por padrão, solicitando a senha do root para conceder acesso de superusuário."
+        },
+        {
+          "id": "d",
+          "text": "root",
+          "correct": false,
+          "explanation": "Incorreta. \"Root\" é o nome do usuário com privilégios máximos no Linux (o superusuário), mas não é um comando que permite alternar para essa conta. É o nome de usuário que se assume ao utilizar o comando correto."
+        }
+      ],
+      "explanation": "Correta. O comando \"su\" (substitute user ou switch user) é o utilitário padrão no Linux para alternar para outro usuário. Quando executado sem um nome de usuário específico, ele assume o usuário root por padrão, solicitando a senha do root para conceder acesso de superusuário.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual comando é utilizado para desligar ou reiniciar o computador no Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "halt",
+          "correct": false,
+          "explanation": "Incorreta. O comando `halt` é usado para parar o sistema, mas geralmente não desliga a energia do hardware. Ele deixa o sistema em um estado onde a CPU está parada, mas a máquina ainda está ligada. É menos seguro que `shutdown` para um desligamento completo e controlado."
+        },
+        {
+          "id": "b",
+          "text": "poweroff",
+          "correct": false,
+          "explanation": "Incorreta. O comando `poweroff` desliga o sistema imediatamente, mas é mais específico para desligamento e não inclui explicitamente a funcionalidade de reiniciar na sua forma mais básica, como o `shutdown` pode fazer com parâmetros. O `shutdown` é o comando mais abrangente para desligar ou reiniciar de forma controlada."
+        },
+        {
+          "id": "c",
+          "text": "shutdown",
+          "correct": true,
+          "explanation": "Correta. O comando `shutdown` é o método mais comum e recomendado para desligar ou reiniciar um sistema Linux de forma controlada. Ele permite agendar o desligamento (`shutdown -h now` para desligar imediatamente, `shutdown -r now` para reiniciar imediatamente) e notificar os usuários logados, garantindo a integridade do sistema de arquivos."
+        },
+        {
+          "id": "d",
+          "text": "turnoff",
+          "correct": false,
+          "explanation": "Incorreta. `turnoff` não é um comando padrão no Linux para desligar ou reiniciar o sistema. Embora a palavra signifique \"desligar\" em inglês, os comandos do sistema operacional Linux têm nomes específicos e padronizados."
+        }
+      ],
+      "explanation": "Correta. O comando `shutdown` é o método mais comum e recomendado para desligar ou reiniciar um sistema Linux de forma controlada. Ele permite agendar o desligamento (`shutdown -h now` para desligar imediatamente, `shutdown -r now` para reiniciar imediatamente) e notificar os usuários logados, garantindo a integridade do sistema de arquivos.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Qual parâmetro do comando 'ls' permite exibir arquivos ocultos no Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "-a",
+          "correct": true,
+          "explanation": "Correta. O parâmetro `-a` (all, ou todos) do comando `ls` é usado para listar todos os arquivos e diretórios, incluindo aqueles que são considerados ocultos (cujos nomes começam com um ponto, como `.bashrc` ou `.config`)."
+        },
+        {
+          "id": "b",
+          "text": "-h",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro `-h` (human-readable, ou legível para humanos) do comando `ls` é utilizado para exibir os tamanhos dos arquivos em um formato mais compreensível (ex: 1K, 234M, 2G), e não para mostrar arquivos ocultos."
+        },
+        {
+          "id": "c",
+          "text": "-d",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro `-d` do comando `ls` é usado para listar diretórios como arquivos regulares, ou seja, ele exibe apenas o nome do diretório em si, em vez de listar seu conteúdo. Não tem relação com arquivos ocultos."
+        },
+        {
+          "id": "d",
+          "text": "-l",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro `-l` (long listing format, ou formato de listagem longa) do comando `ls` exibe uma listagem detalhada dos arquivos e diretórios, incluindo permissões, número de links, proprietário, grupo, tamanho e data da última modificação, mas não exibe arquivos ocultos por padrão."
+        }
+      ],
+      "explanation": "Correta. O parâmetro `-a` (all, ou todos) do comando `ls` é usado para listar todos os arquivos e diretórios, incluindo aqueles que são considerados ocultos (cujos nomes começam com um ponto, como `.bashrc` ou `.config`).",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual comando exibe informações sobre o espaço livre em disco no Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "df",
+          "correct": true,
+          "explanation": "Correta. O comando `df` (disk free, ou disco livre) é o utilitário padrão do Linux para exibir a quantidade de espaço em disco disponível e usado pelos sistemas de arquivos montados. Pode ser usado com o parâmetro `-h` (`df -h`) para exibir os tamanhos em formato legível para humanos."
+        },
+        {
+          "id": "b",
+          "text": "diskfree",
+          "correct": false,
+          "explanation": "Incorreta. `diskfree` não é um comando padrão no Linux para exibir o espaço livre em disco. Os comandos do sistema Linux têm nomes específicos e padronizados para suas funcionalidades."
+        },
+        {
+          "id": "c",
+          "text": "freespace",
+          "correct": false,
+          "explanation": "Incorreta. `freespace` não é um comando padrão no Linux para exibir o espaço livre em disco. A funcionalidade de verificar o espaço em disco é provida por outro comando."
+        },
+        {
+          "id": "d",
+          "text": "space",
+          "correct": false,
+          "explanation": "Incorreta. `space` não é um comando padrão no Linux para exibir informações sobre o espaço em disco. O sistema operacional Linux utiliza comandos específicos para cada tarefa."
+        }
+      ],
+      "explanation": "Correta. O comando `df` (disk free, ou disco livre) é o utilitário padrão do Linux para exibir a quantidade de espaço em disco disponível e usado pelos sistemas de arquivos montados. Pode ser usado com o parâmetro `-h` (`df -h`) para exibir os tamanhos em formato legível para humanos.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No sistema de permissões do Linux, o que representa a notação numérica '755' quando aplicada a um arquivo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Proprietário com leitura e execução; grupo com leitura, escrita e execução; outros com leitura e escrita",
+          "correct": false,
+          "explanation": "Incorreta. A notação numérica 755 indica que o proprietário tem todas as permissões (7), e o grupo e outros usuários têm permissões de leitura e execução (5). Esta alternativa inverte as permissões entre proprietário e grupo, e atribui permissões incorretas para outros."
+        },
+        {
+          "id": "b",
+          "text": "Proprietário com leitura, escrita e execução; grupo com leitura e execução; outros com leitura e execução",
+          "correct": true,
+          "explanation": "Correta. No sistema de permissões do Linux, a notação octal '755' é decodificada da seguinte forma: o primeiro '7' (4+2+1) concede ao proprietário (owner) permissões de leitura (r), escrita (w) e execução (x); o primeiro '5' (4+0+1) concede ao grupo (group) permissões de leitura (r) e execução (x); e o segundo '5' (4+0+1) concede a outros (others) permissões de leitura (r) e execução (x)."
+        },
+        {
+          "id": "c",
+          "text": "Proprietário com leitura e escrita; grupo com leitura, escrita e execução; outros com leitura, escrita e execução",
+          "correct": false,
+          "explanation": "Incorreta. A notação numérica 755 significa que o proprietário tem permissões de leitura, escrita e execução (7), enquanto o grupo e outros usuários têm permissões de leitura e execução (5). Esta alternativa atribui permissões incorretas para o proprietário e todas as permissões para o grupo e outros, o que não corresponde a 755."
+        },
+        {
+          "id": "d",
+          "text": "Proprietário com leitura, escrita e execução; grupo com leitura e escrita; outros com leitura e execução",
+          "correct": false,
+          "explanation": "Incorreta. A notação numérica 755 significa que o proprietário tem permissões de leitura, escrita e execução (7), enquanto o grupo e outros usuários têm permissões de leitura e execução (5). Esta alternativa atribui permissão de escrita ao grupo, o que não corresponde ao dígito 5."
+        }
+      ],
+      "explanation": "Correta. No sistema de permissões do Linux, a notação octal '755' é decodificada da seguinte forma: o primeiro '7' (4+2+1) concede ao proprietário (owner) permissões de leitura (r), escrita (w) e execução (x); o primeiro '5' (4+0+1) concede ao grupo (group) permissões de leitura (r) e execução (x); e o segundo '5' (4+0+1) concede a outros (others) permissões de leitura (r) e execução (x).",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a diferença fundamental entre os comandos 'find' e 'locate' no Linux?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O find requer permissões de superusuário para execução, enquanto o locate pode ser executado por qualquer usuário",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os comandos podem ser executados por usuários comuns. No entanto, para o `find` procurar em diretórios onde o usuário não tem permissão de leitura, ele pode encontrar erros ou não listar os arquivos. Para o `locate`, o banco de dados é geralmente construído com permissões de root, mas a consulta (`locate`) pode ser feita por qualquer usuário para arquivos que ele teria permissão de ver se estivessem no banco de dados. A questão das permissões não é a diferença fundamental na *forma* como eles buscam."
+        },
+        {
+          "id": "b",
+          "text": "O find procura apenas em diretórios do usuário atual, enquanto o locate procura em todo o sistema",
+          "correct": false,
+          "explanation": "Incorreta. O comando `find` pode procurar em qualquer diretório especificado, incluindo todo o sistema de arquivos se iniciado a partir da raiz (`/`). O escopo da busca não é limitado ao diretório do usuário atual por padrão."
+        },
+        {
+          "id": "c",
+          "text": "O find localiza apenas arquivos executáveis, enquanto o locate localiza todos os tipos de arquivos",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os comandos podem localizar todos os tipos de arquivos, dependendo dos parâmetros de busca utilizados. O `find` é extremamente flexível e pode procurar por tipo, tamanho, permissões, entre outros critérios."
+        },
+        {
+          "id": "d",
+          "text": "O find procura em tempo real no sistema de arquivos, enquanto o locate procura em uma base de dados previamente criada",
+          "correct": true,
+          "explanation": "Correta. Esta é a diferença fundamental. O `find` percorre recursivamente o sistema de arquivos a partir de um ponto de partida especificado, buscando arquivos que correspondam aos critérios em tempo real. Isso o torna mais lento, mas garante resultados atualizados. O `locate`, por outro lado, consulta um banco de dados pré-indexado (geralmente atualizado por um processo chamado `updatedb`), o que o torna muito mais rápido, mas os resultados podem não refletir mudanças muito recentes no sistema de arquivos."
+        }
+      ],
+      "explanation": "Correta. Esta é a diferença fundamental. O `find` percorre recursivamente o sistema de arquivos a partir de um ponto de partida especificado, buscando arquivos que correspondam aos critérios em tempo real. Isso o torna mais lento, mas garante resultados atualizados. O `locate`, por outro lado, consulta um banco de dados pré-indexado (geralmente atualizado por um processo chamado `updatedb`), o que o torna muito mais rápido, mas os resultados podem não refletir mudanças muito recentes no sistema de arquivos.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "19_245422_Linux e Software Livre V.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:58:43"
+}

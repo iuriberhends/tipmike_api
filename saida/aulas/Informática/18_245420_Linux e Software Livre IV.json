@@ -1,0 +1,627 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 18,
+  "ordem_no_curso": "224.00",
+  "titulo": "Linux e Software Livre IV",
+  "codigo_aula": "245420",
+  "video_id": "VKWu3RTl9WE=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:29:21",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/VKWu3RTl9WE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420861&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Linux e Software Livre IV\n\n## Gerenciador de Arquivos: visão geral e nomes que caem em prova\nEntão, voltando à nossa linha, agora sobre o gerenciador de arquivos. Eu quero gerenciar meus arquivos: apagar, mover, renomear, por exemplo. São funções de gerenciamento de arquivos que você visualiza no gerenciador de arquivos do modo gráfico.\n\nVale lembrar, como eu sempre falo, que o modo padrão do Linux pode ser o modo texto. Mas muitas questões de prova têm abordado o gerenciador de arquivos citado pelo nome, não propriamente as funções. Eu tenho visto isso em prova. A aula é sempre focada naquilo que mais cai em prova.\n\nEu estou falando de gerenciamento que é totalmente possível no modo texto: acessar pastas, renomear, apagar e tal. Lembrando também que eu vou me basear no que eu posso ou não posso fazer pelas minhas permissões. Daqui a pouco a gente vai abordar isso com mais detalhes: os privilégios de cada tipo de conta de usuário no Linux.\n\nVamos aos principais gerenciadores de arquivos, incluindo os nomes que você pode encontrar na sua prova. Beleza? Pode ser citado o Dolphin, por exemplo. Veja: ele é um gerenciador de arquivos. Os nomes citados às vezes aparecem em outros contextos, mas aqui você vai lembrar deles como gerenciadores de arquivos.\n\nNo GNOME, que vai dar a interface gráfica, eu quero o Nautilus. Esses nomes são os que mais nos interessam. Dá uma pausada aí e anota esses nomes. É para ser rápido mesmo.\n\nAgora, uma questão: “Interfaces gráficas oferecem aos usuários a possibilidade de interagir com o sistema operacional.” Interação. Vale lembrar o que é interação: eu quero conversar com o sistema. Essa interação é quase o tempo todo gráfica: mouse, teclado, eu vejo uma pasta pública, abro a pasta, vejo o arquivo, clico, botão direito, renomeio, arrasto de um lado para o outro. Interação.\n\nLembre-se: ela pode ser feita no modo gráfico e no modo linha de comando. Foi visto lá atrás, só para relembrar. Interação: quero conversar por meio de um gerenciador de pastas, semelhante ao Explorador de Arquivos do Windows. É uma comparação que cai em provas. No Windows 7, 8.1, 10, é o “Explorador de Arquivos”. Antes era “Windows Explorer”.\n\nDois exemplos de gerenciadores no Linux: cuidado com confusões. Debian e Ubuntu são distribuições Linux. Não confunda com gerenciadores. Anota: distribuições Linux (coloca os nomes), interfaces gráficas para Linux (coloca os nomes), e gerenciadores de arquivos (Nautilus, Dolphin). O mundo “Debian” ou “Ubuntu” não é o Nautilus. Vamos marcar aqui: Dolphin e Nautilus. Os dois estão aí. Essa é a resposta.\n\nE Debian? Debian é distribuição. Lembrando: não vai fazer aquele tipo de marcação confusa na prova. Vale a dica: cada um tem seu método, mas não transforma a prova num mar de rabiscos que te atrapalham na hora de passar o gabarito.\n\n## Sistema de Permissões no Linux: fundamentos\nVamos falar agora do sistema de permissões. O que é o sistema de permissões? Ele se baseia naquele assunto que a gente tratou antes: separação de privilégios entre contas de usuário, em paralelo com segurança. Isso é muito cobrado em prova.\n\nO Linux é mais seguro do que o Windows? Sem dúvida. Desde que — prestem atenção — sejam respeitadas as políticas de uso de contas privilegiadas. Interpretação é tudo. A condição é essa.\n\nQuem pode tudo? Root, o usuário administrador. Usuário normal não pode tudo, é bem restrito. Eu posso atribuir a ele privilégios diferentes? Posso. Mas se eu passar todos, ele deixa de ser restrito. Não é isso que queremos o tempo todo.\n\nQuais são as permissões? Vão valer tanto para usuário normal quanto para root. O root não tem barreiras. Se o usuário normal criou um arquivo e atribuiu permissões, o root pode mudar — ele pode tudo no sistema.\n\nJá vimos a diferenciação visual dos usuários no terminal: o root tem o símbolo “#” e o usuário normal o “$”.\n\nAs permissões se relacionam ao proprietário (quem criou a pasta/arquivo) e ao grupo/outros. Se quem criou foi um usuário padrão, ele pode mudar? Pode, dentro do que lhe é permitido.\n\nPermissões:\n- r: read (ler)\n- w: write (escrever/modificar/gravar)\n- x: execute (executar/entrar)\n\nVeja: quando eu falo em permissão, é o que eu posso fazer. Ler: eu posso ver o conteúdo de um arquivo. Escrever: modificar/gravar. Executar: no contexto de pastas, é “entrar na pasta”; no contexto de arquivos executáveis, é “rodar”.\n\nEu gosto de fazer uma analogia com uma sala:\n- Ler (r): ver o conteúdo (olhar pela janela, ver o que tem dentro).\n- Executar (x): entrar na sala.\n- Escrever (w): mexer nas coisas dentro da sala (mover, alterar).\n\n> Dica importante: às vezes em prova aparecem contradições; foque no conceito: r vê conteúdo, x permite entrar (em diretório) ou executar (em arquivo), w permite modificar.\n\nAs permissões sempre são apresentadas nessa ordem, da esquerda para a direita: r w x. Se não tiver a permissão, aparece “-” no lugar. Nunca muda a ordem. Por exemplo:\n- r sempre no primeiro campo\n- w sempre no segundo\n- x sempre no terceiro\n\nSe não tenho nenhuma permissão: “---”.\nSe tenho só leitura: “r--”.\nSe tenho leitura e execução: “r-x”.\nE assim por diante.\n\n## Permissões e representação binária/numérica\nLembra que eu falei que é quase binário? Porque cada permissão é “tem” (1) ou “não tem” (0). Converter para decimal:\n- r vale 4\n- w vale 2\n- x vale 1\n- “-” vale 0 (ausência)\n\nExemplo: se eu tenho r--, isso vale 4. Se eu tenho -w-, vale 2. Se eu tenho --x, vale 1. Se eu tenho rwx, 4+2+1=7. Se eu tenho r-x, 4+1=5. Se eu tenho rw-, 4+2=6. “---” é 0.\n\nEssas permissões sempre vêm nessa ordem. Sempre. E a ausência é simbolizada por “-”.\n\n## Dono, grupo e outros: quem recebe quais permissões\nEu tenho uma conta de usuário no Linux. Nesse computador, há mais cinco contas — cinco pessoas cadastradas. Coloquei cinco professores. Desses cinco, três são de Informática, contando comigo. Então eu, mais dois professores de Informática. Eu crio um grupo chamado “informatica”.\n\n- Eu sou o dono (proprietário).\n- Os outros dois professores de Informática pertencem ao grupo “informatica”.\n- Os demais (que não são do grupo) são “outros”.\n\nÉ nessa lógica que vamos atribuir permissões: usuário (dono), grupo e outros. Cada um desses pode ter uma ou mais das três permissões, ou nenhuma. Sempre nessa ordem: dono, grupo, outros.\n\nQuando eu rodo um comando para listar permissões com detalhes, o Linux mostra algo como:\n- Primeiro caractere: tipo (arquivo regular “-” ou diretório “d”)\n- Depois, três trincas de permissões: do dono, do grupo e dos outros\n\nPor exemplo:\n- “-rwxr-x---”\n  - “-” arquivo regular\n  - “rwx” dono\n  - “r-x” grupo\n  - “---” outros\n\nSe for diretório, começa com “d”: “drwxr-xr-x”.\n\nAs permissões do dono, do grupo e dos demais são sempre nessa ordem. Não inventa a ordem.\n\n## Do texto para os números (e vice-versa)\nPara representar todas as permissões (dono, grupo, outros) com letras, precisaríamos de 9 caracteres (3 para cada). Para simplificar, usamos o sistema numérico:\n- Cada trinca vira um número de 0 a 7, somando 4 (r) + 2 (w) + 1 (x).\n- Ex.: dono rwx = 7; grupo r-x = 5; outros r-- = 4. Fica “754”.\n\nExemplos de conversão:\n- rwx (4+2+1) = 7\n- r-- (4+0+0) = 4\n- --x (0+0+1) = 1\n- rw- (4+2+0) = 6\n- r-x (4+0+1) = 5\n- --- (0+0+0) = 0\n\nAs nove letras podem ser representadas por três números, como 755, 644, 700, etc. E sempre nessa ordem: dono, grupo, outros.\n\n> 🎯 Dicas de prova: \n> - r vale 4, w vale 2, x vale 1. \n> - A ordem é sempre dono, grupo, outros. \n> - A ordem dentro de cada trinca é sempre r-w-x. \n> - “d” no início indica diretório; “-” indica arquivo regular.\n\nVeja um exemplo com diretório:\n- d---------\n  - Nada para o dono, nada para o grupo, e x para os outros? Aí não faria sentido no começo; vamos converter corretamente pela ordem:\n  - Dono: ----> 0\n  - Grupo: ----> 0\n  - Outros: --x -> 1\n  - Fica 001. Na prática, exemplos comuns em prova são 755, 644, 700, 600, etc.\n\nMais exemplos de soma:\n- Dono: r--- (4), Grupo: --- (0), Outros: --x (1) → 401 → 4+0+1 = “401”\n- Dono: r-- (4), Grupo: -w- (2), Outros: --- (0) → “420”\n- Dono: rwx (7), Grupo: r-- (4), Outros: r-x (5) → “745”\n\nÉ raro, mas em prova pode aparecer os “outros” com mais permissões que o dono. É incomum na prática, mas possível na questão.\n\n## Estudo, respiração e foco na prova\nSe travar, respira. Técnica simples: inspira pelo nariz, solta pela boca devagar, fecha os olhos, concentra na respiração e esquece o resto. Isso ajuda demais no momento da prova, porque o nervosismo atrapalha.\n\nDá uma pausa no estudo, toma um café ou água, respira. Se precisar, troca de matéria um pouco. Depois volta e revisa o conteúdo com calma. Quem vence é quem persiste.\n\nQuando estiver estudando permissão numérica:\n- 0: ---\n- 1: --x\n- 2: -w-\n- 3: -wx\n- 4: r--\n- 5: r-x\n- 6: rw-\n- 7: rwx\n\nPratique transformar letras em números e números em letras. Sem olhar no começo, pode olhar depois. Entenda por que r=4, w=2, x=1: é a soma dos “bits” de permissão.\n\nResolva muitas questões. Selecione pela banca que você vai enfrentar. Exaure o tema. Linux muda pouco nesses fundamentos, então questões antigas ajudam, especialmente sobre permissões.\n\n## Interpretando o prompt e listagem detalhada\nQuando você vê algo como:\nusuario@maquina:~$\n- “usuario” é o nome do usuário.\n- “@” separa usuário e máquina.\n- “maquina” é o hostname (por exemplo, “grancursos-online”).\n- “~” indica a pasta home do usuário.\n- “$” indica usuário comum; “#” indicaria root.\n\nPara listar com detalhes:\n- ls -l → lista com detalhes\n- ls -la → inclui ocultos\n- Na saída “-rw-r--r-- 1 dono grupo tamanho data nome”\n  - Primeiro campo: tipo e permissões\n  - Segundo: links (quantidade de links apontando para o arquivo/diretório)\n  - Terceiro: dono (usuário)\n  - Quarto: grupo\n  - Quinto: tamanho\n  - Depois: data/hora\n  - Por fim: nome\n\nAqui estou mostrando também a questão gráfica: é possível alterar permissões no modo gráfico (clicando nas propriedades do arquivo/pasta). Isso pode cair conceitualmente (“é possível alterar permissões no modo gráfico?”). Mas o que mais cai é o modo textual com letras e números.\n\n> 🎯 Dicas de prova:\n> - ls -l mostra permissões detalhadas.\n> - “d” no início: diretório; “-”: arquivo regular.\n> - Ordem das trincas: dono, grupo, outros.\n> - 7=rwx, 6=rw-, 5=r-x, 4=r--, 3=-wx, 2=-w-, 1=--x, 0=---.\n\nRespira, mantém a calma e pensa: pensamento positivo com atitude. Estudo é cuidado diário, como cuidar de uma planta. É difícil? Pode ser. Mas dá. Seja coerente: pensa, fala e faz na mesma direção. Depois do momento filosófico, a gente vai para o intervalo e já volta para a próxima parte.",
+  "transcricao_meta": {
+    "title": "Linux e Software Livre IV",
+    "subject": "Informática Básica",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 38935,
+    "createdAt": "2026-02-05T14:49:44.384Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: gerenciador de arquivos no Linux (modo gráfico) e comparação com Windows, contas e privilégios (usuário vs. root), sistema de permissões (rwx), leitura do ls -l, conversão letras↔números e interpretação do prompt.\nPrincipais pontos: \n- r-w-x sempre nessa ordem e aplicada a dono, grupo e outros.\n- Conversão octal: r=4, w=2, x=1.\n- root “pode tudo”; leitura do ls -l e do prompt.\n\n## 1. Base / Conceitos Fundamentais\n- **Linux**: Sistema operacional que pode ser usado em modo gráfico e em linha de comando (modo texto).\n- **Gerenciador de arquivos (modo gráfico)**: Ferramenta para visualizar/copiar/mover/renomear/apagar arquivos e pastas. No GNOME, o gerenciador é o **Nautilus**. Equivale ao **Explorador de Arquivos** do Windows (Windows 7, Windows 8.1, Windows 10).\n- **Interfaces gráficas**: Ex.: **GNOME** (não confundir com distribuição).\n- **Contas e privilégios**:\n  - **Usuário comum**: sujeito às permissões.\n  - **root** (usuário administrador): “pode tudo no sistema” (sem barreiras).\n- **Permissões (rwx)**:\n  - **r (read)**: ler/ver conteúdo.\n  - **w (write)**: escrever/modificar.\n  - **x (execute)**: executar arquivo; em diretórios, “entrar/abrir”.\n  - Ausência: **-** na posição correspondente.\n- **Alvos das permissões** (sempre nessa ordem, da esquerda para a direita):\n  - **dono (usuário/proprietário)**\n  - **grupo**\n  - **outros**\n\n> Dica de Prova: Não confunda: distribuição ≠ interface gráfica (ex.: GNOME) ≠ gerenciador de arquivos (ex.: Nautilus).\n\n## 2. Como Funciona / Distinções\n- **Modo gráfico vs. linha de comando**:\n  - Gráfico: usa cliques (propriedades do arquivo/pasta).\n  - Texto: comandos; cai mais em prova (interpretação e conversão de permissões).\n- **Prompt do terminal**:\n  - Formato típico: usuario@maquina:~$ \n    - **@** separa usuário e máquina.\n    - **~** indica /home/usuario.\n    - **$** usuário comum; **#** root.\n- **ls -l (listagem detalhada)**:\n  - Mostra: [tipo+permissões] [links] [dono] [grupo] [tamanho] [data] [nome].\n  - Tipo (1º caractere): **-** arquivo; **d** diretório.\n  - Depois, 9 caracteres de permissão: 3 para dono, 3 para grupo, 3 para outros.\n- **Segurança**:\n  - Linux tende a ser mais seguro que Windows se as políticas de uso de contas privilegiadas forem respeitadas.\n  - **root** pode alterar qualquer permissão; não encontra barreiras.\n\n> Dica de Prova: Ordem das trincas é fixa: dono, grupo, outros. Se vier bagunçado no enunciado, reconstrua em blocos de três.\n\n## 3. Aplicação Prática / Técnicas\n- **Leitura rápida do ls -l**:\n  1) Identifique tipo: “-” (arquivo) ou “d” (diretório).\n  2) Separe as permissões em 3 trincas: [dono][grupo][outros].\n  3) Em cada trinca, leia r-w-x (onde faltar letra, há “-”).\n- **Conversão letras → números (octal)**:\n  - Valores: **r=4**, **w=2**, **x=1**, **-=0**.\n  - Some por trinca:\n    - rwx = 7; rw- = 6; r-x = 5; r-- = 4; -wx = 3; -w- = 2; --x = 1; --- = 0.\n  - Junte os três dígitos: dono, grupo, outros (nessa ordem).\n- **Conversão números → letras**:\n  - 0=---; 1=--x; 2=-w-; 3=-wx; 4=r--; 5=r-x; 6=rw-; 7=rwx.\n  - Ex.: 756 → dono=7 (rwx), grupo=5 (r-x), outros=6 (rw-).\n- **Macetes**:\n  - “Separe de 3 em 3” sempre.\n  - Memorize o mapa do dígito: 7=rwx, 6=rw-, 5=r-x, 4=r--, 3=-wx, 2=-w-, 1=--x, 0=---.\n- **Uso prático**:\n  - Interpretação: letras explicam “quem pode o quê”.\n  - Configuração: números usados no chmod (ex.: chmod 754 arquivo).\n\n> Dica de Prova: Em diretório, “x” permite entrar/listar conteúdo; sem “x”, mesmo com “r”, a navegação pode ser bloqueada.\n\n## 4. Exemplos e Casos Resolvidos\n- **Exemplo 1 (letras → números)**:\n  - String: -rwxr-xr--\n  - Tipo: “-” (arquivo).\n  - Dono: rwx=7; Grupo: r-x=5; Outros: r--=4 → Resultado: 754.\n- **Exemplo 2 (números → letras)**:\n  - Permissão: 640\n  - Dono: 6=rw-; Grupo: 4=r--; Outros: 0=--- → rw- r-- ---.\n- **Exemplo 3 (com diretório e execução)**:\n  - String: drwxr-x--x\n  - Tipo: “d” (diretório).\n  - Dono: rwx=7; Grupo: r-x=5; Outros: --x=1 → 751.\n  - Interpretação: outros conseguem “entrar” no diretório (x) mas não ler conteúdo (sem r).\n- **Exemplo 4 (prompt)**:\n  - jeferson@gran:~$ → usuário “jeferson”, máquina “gran”, pasta /home/jeferson, usuário comum ($).\n\n> Dica de Prova: “Número de links” na saída do ls -l não é o tamanho. Tamanho vem na coluna própria (bytes).\n\n## 5. Pegadinhas e Erros Comuns\n- **Ordem imutável**:\n  - r-w-x sempre nessa ordem; “w” nunca aparece no final.\n  - Trincas sempre: dono, grupo, outros (da esquerda para a direita).\n- **Tipo vs. ausência de permissão**:\n  - Não confunda o 1º caractere (tipo: d ou -) com os “-” das permissões.\n- **root e permissões**:\n  - Permissões “valem” para todos, mas o root pode contornar/alterar (sem barreiras).\n- **Distribuição vs. interface vs. gerenciador**:\n  - GNOME = interface; Nautilus = gerenciador de arquivos do GNOME; distribuições são outra coisa.\n- **Casuística em prova**:\n  - “Outros” pode ter mais permissão que dono/grupo (julgue o que está escrito, mesmo sendo incomum).\n- **Leitura confusa**:\n  - Se o enunciado misturar a ordem, conte sempre 9 caracteres e separe em 3 blocos.\n- **Comparação com Windows**:\n  - Gerenciador de arquivos do Linux (ex.: Nautilus) ≈ Explorador de Arquivos do Windows. Não confunda termos.\n- **Interpretação de diretórios**:\n  - Sem “x” em diretório, não dá para entrar; “r” sozinho não garante navegação.\n\n> Dica de Prova: “ls -l” cai toda hora. Treine ler rapidamente: [tipo+permissões] [links] [dono] [grupo] [tamanho] [data] [nome].",
+  "resumo_bolso": "# Linux e Software Livre IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Linux**: Sistema operacional que pode ser usado em **modo gráfico** (cliques) e em **linha de comando** (modo texto); provas tendem a cobrar mais o modo texto (interpretação/conversão de permissões).\n* **Gerenciador de arquivos (modo gráfico)**: Ferramenta para visualizar/copiar/mover/renomear/apagar arquivos e pastas. No **GNOME**, o gerenciador é o **Nautilus**, equivalente ao **Explorador de Arquivos** do Windows.\n* **Interface gráfica**: Ex.: **GNOME**; **não é** distribuição Linux nem gerenciador de arquivos.\n* **Contas e privilégios**:\n  * **Usuário comum**: sujeito ao sistema de permissões.\n  * **root** (administrador): “**pode tudo no sistema**”, sem barreiras; pode alterar qualquer permissão.\n* **Permissões básicas (rwx)**:\n  * **r (read)**: ler/ver conteúdo.\n  * **w (write)**: escrever/modificar.\n  * **x (execute)**: executar arquivo; em diretórios, “entrar/abrir”.\n  * Ausência de permissão: **-** na posição correspondente.\n* **Alvos das permissões** (ordem fixa, da esquerda para a direita): **dono (usuário/proprietário)**, **grupo**, **outros**.\n* **ls -l**:\n  * Mostra: **[tipo+permissões] [links] [dono] [grupo] [tamanho] [data] [nome]**.\n  * **Tipo (1º caractere)**: **-** arquivo comum; **d** diretório.\n  * Depois do tipo, vêm **9 caracteres de permissão**: 3 para dono, 3 para grupo, 3 para outros.\n* **Prompt do terminal**:\n  * Formato típico: `usuario@maquina:~$`\n    * **@** separa usuário e máquina.\n    * **~** indica `/home/usuario`.\n    * **$** usuário comum; **#** root.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Distribuição vs Interface Gráfica vs Gerenciador de Arquivos\n\n| Aspecto | Distribuição Linux | Interface Gráfica (ex.: GNOME) | Gerenciador de Arquivos (ex.: Nautilus) |\n|--------|--------------------|----------------------------------|------------------------------------------|\n| **Função** | Conjunto de sistema (kernel + pacotes etc.) | Ambiente visual (janelas, menus, ícones) | Programa para gerenciar arquivos/pastas |\n| **Exemplo** | Ubuntu, Fedora, Debian | GNOME | Nautilus |\n| **Nível** | Sistema | Interface | Aplicativo dentro da interface |\n\n> Não confunda: **distribuição ≠ interface gráfica (GNOME) ≠ gerenciador de arquivos (Nautilus)**.  \n> Gerenciador de arquivos do Linux (ex.: Nautilus) ≈ **Explorador de Arquivos** do Windows.\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Ordem das Permissões**\n\n* Sempre leia como: **[tipo][rwx dono][rwx grupo][rwx outros]**.\n* Em cada trinca, a ordem interna é sempre **r-w-x** (onde faltar letra, entra “-”).\n\n---\n\n**2. Mapa rwx → Octal (letras → números)**\n\n* Valores: **r=4**, **w=2**, **x=1**, **-=0**.\n* Combinações por trinca:\n  * 7=rwx; 6=rw-; 5=r-x; 4=r--; 3=-wx; 2=-w-; 1=--x; 0=---.\n* Some por trinca e junte na ordem: **dono, grupo, outros**.\n\n**Exemplo 1 (letras → números)**  \n* String: `-rwxr-xr--`  \n  * Tipo: “-” (arquivo).  \n  * Dono: rwx = 7; Grupo: r-x = 5; Outros: r-- = 4 → **754**.\n\n---\n\n**3. Octal → rwx (números → letras)**\n\n* Mapa direto:  \n  0=---; 1=--x; 2=-w-; 3=-wx; 4=r--; 5=r-x; 6=rw-; 7=rwx.\n\n**Exemplo 2 (números → letras)**  \n* Permissão: **640**  \n  * Dono: 6 = rw-  \n  * Grupo: 4 = r--  \n  * Outros: 0 = --- → `rw- r-- ---`.\n\n---\n\n**4. Interpretação de Diretórios**\n\n> Em diretório, “x” permite entrar/listar conteúdo; sem “x”, mesmo com “r”, a navegação pode ser bloqueada.\n\n**Exemplo 3 (com diretório e execução)**  \n* String: `drwxr-x--x`  \n  * Tipo: “d” (diretório).  \n  * Dono: rwx = 7; Grupo: r-x = 5; Outros: --x = 1 → **751**.  \n  * Interpretação: “outros” conseguem **entrar** no diretório (x), mas não ler conteúdo (sem r).\n\n---\n\n**5. Prompt do Terminal**\n\n**Exemplo 4 (prompt)**  \n* `jeferson@gran:~$` → usuário “jeferson”, máquina “gran”, pasta `/home/jeferson`, usuário comum (`$`).\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* **Ordem imutável**:\n  * r-w-x sempre nessa ordem; “w” nunca aparece no final.\n  * Trincas sempre: **dono, grupo, outros** (da esquerda para a direita). Se o enunciado misturar, conte 9 caracteres e separe em 3 blocos.\n* **Tipo vs. ausência de permissão**:\n  * Não confunda o **1º caractere** (tipo: `d` ou `-`) com os “-” das permissões.\n* **root e permissões**:\n  * Permissões “valem” para todos, mas o **root pode contornar/alterar** (sem barreiras).\n* **Distribuição vs. interface vs. gerenciador**:\n  * GNOME = interface; Nautilus = gerenciador de arquivos do GNOME; distribuições são outra coisa.\n* **“Outros” com mais permissão**:\n  * “Outros” pode ter mais permissão que dono/grupo; julgue **literalmente** o que está na string/numeração.\n\n---\n\n## 📋 Checklist Final\n\n* Sei diferenciar **distribuição**, **interface gráfica (GNOME)** e **gerenciador de arquivos (Nautilus)**, e compará-lo ao **Explorador de Arquivos** do Windows?\n* Consigo ler a saída do **`ls -l`**, identificando **tipo**, separando as **3 trincas** (dono, grupo, outros) e aplicando a ordem interna **r-w-x**?\n* Memorizei o mapa **r=4, w=2, x=1** e as combinações **0–7 ↔ ---–rwx**, fazendo conversão letras↔números?\n* Sei interpretar permissões em **diretórios**, lembrando que **“x” é essencial para entrar/navegar**?\n* Consigo identificar, pelo **prompt** (`usuario@maquina:~$`), se estou como **usuário comum** (`$`) ou **root** (`#`)?\n* Lembro que o **root “pode tudo”** e pode alterar qualquer permissão, sendo crítico para a segurança do sistema?",
+  "mapa_mental": "# 💻 Linux e Software Livre IV\n## 🗂️ Ambiente Gráfico Linux\n### 💡 Conceitos Básicos\n- Sistema operacional\n- Modo gráfico\n- Modo texto\n- Kernel e shell\n### 🖼️ Interface Gráfica\n- GNOME interface\n- KDE interface\n- XFCE interface\n- Sessão gráfica\n### 📁 Gerenciador de Arquivos\n- Nautilus GNOME\n- Funções copiar mover\n- Renomear excluir\n- Comparação Windows\n- Explorador Arquivos\n\n## 👤 Contas e Privilégios\n### 👥 Tipos de Contas\n- Usuário comum\n- Usuário root\n- Conta sistema\n- Grupo usuários\n### 🛡️ Usuário Comum\n- Permissões limitadas\n- Área pessoal home\n- Menor risco sistema\n- Uso cotidiano\n### ⚙️ Usuário Root\n- Privilégio total\n- Sem restrições\n- Administração sistema\n- Alterar permissões\n- Uso controlado\n\n## 📜 Permissões de Arquivos\n### 🔤 Conceitos rwx\n- r leitura\n- w escrita\n- x execução\n- Sinal menos ausência\n### 👥 Alvos Permissões\n- Dono usuário\n- Grupo associado\n- Outros demais\n- Ordem fixa D G O\n### 🔢 Representação Octal\n- r igual quatro\n- w igual dois\n- x igual um\n- Trincas independentes\n- Soma por trinca\n\n## 🧾 Interpretação no Terminal\n### 💻 Prompt Terminal\n- usuario@maquina\n- Tio arroba separador\n- Til diretório home\n- Cifrão usuário comum\n- Cerquilha root\n### 📋 Comando ls -l\n- Tipo mais permissões\n- Número links\n- Dono arquivo\n- Grupo arquivo\n- Tamanho data nome\n### 📂 Tipos e Ordem\n- Hífen arquivo comum\n- d diretório\n- Nove caracteres permissão\n- Três dono\n- Três grupo\n- Três outros",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Gerenciadores de Arquivos",
+      "description": "Gerenciadores de Arquivos — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a finalidade de um gerenciador de arquivos?",
+          "back": "Gerenciar arquivos, como apagar, mover e renomear.",
+          "hint": "Pense nas ações fundamentais de organização.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "gerenciamento-arquivos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Em quais modos de interação o gerenciamento de arquivos pode ser realizado?",
+          "back": "Modo gráfico e linha de comando.",
+          "hint": "Pense nas interfaces de usuário disponíveis.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "interface-usuario"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual gerenciador de arquivos é associado ao ambiente GNOME?",
+          "back": "Nautilus.",
+          "hint": "Nome de um molusco cefalópode.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "gnome"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Permissões Linux",
+      "description": "Permissões Linux — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual é a função da permissão de leitura em um arquivo?",
+          "back": "Ver o conteúdo do arquivo.",
+          "hint": "Ação básica de acesso ao conteúdo.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é a ordem das permissões representadas pelas letras no Linux?",
+          "back": "Leitura, escrita e execução.",
+          "hint": "São três níveis de acesso padrão.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual símbolo representa a ausência de uma permissão no Linux?",
+          "back": "Hífen.",
+          "hint": "Símbolo gráfico de pontuação.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Permissões Numéricas",
+      "description": "Permissões Numéricas — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Quais valores numéricos correspondem às permissões de leitura, escrita e execução?",
+          "back": "Leitura vale 4, escrita vale 2 e execução vale 1.",
+          "hint": "Potências de dois.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Como se obtém o valor numérico de um conjunto de permissões?",
+          "back": "Somando os valores numéricos correspondentes às permissões de cada grupo.",
+          "hint": "Operação aritmética simples.",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Quantos caracteres representam as permissões de usuário, grupo e outros?",
+          "back": "Nove caracteres.",
+          "hint": "Três grupos de três permissões.",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Propriedade e Terminal",
+      "description": "Propriedade e Terminal — 5 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Quais categorias de usuários recebem permissões em um arquivo Linux?",
+          "back": "Dono, grupo e outros.",
+          "hint": "São três entidades de acesso.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "permissoes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual usuário possui privilégios administrativos amplos no Linux?",
+          "back": "Root.",
+          "hint": "Termo que significa raiz em inglês.",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "linux",
+            "usuarios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "O que o primeiro caractere `d` indica na saída detalhada de arquivos?",
+          "back": "Diretório.",
+          "hint": "Refere-se ao tipo de objeto no sistema.",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "linux",
+            "sistema-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual informação aparece após as permissões na saída detalhada de arquivos?",
+          "back": "Quantidade de links.",
+          "hint": "Contagem de referências ao arquivo.",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "linux",
+            "sistema-arquivos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "O que o símbolo `@` separa em um prompt do Linux?",
+          "back": "O nome do usuário do nome da máquina.",
+          "hint": "Separador de contexto no terminal.",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "linux",
+            "terminal"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No sistema operacional Linux, qual é a função principal de um gerenciador de arquivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Gerenciar processos em execução e alocar recursos de memória RAM",
+          "correct": false,
+          "explanation": "Incorreta. O gerenciamento de processos em execução e a alocação de recursos de memória RAM são responsabilidades do kernel do sistema operacional e de utilitários de sistema (como 'top', 'htop' ou 'ps'), não sendo funções de um gerenciador de arquivos. Estes últimos são focados na interação com o sistema de arquivos, e não com os recursos de hardware ou processos ativos."
+        },
+        {
+          "id": "b",
+          "text": "Visualizar, copiar, mover, renomear e apagar arquivos e pastas",
+          "correct": true,
+          "explanation": "Correta. A função principal de um gerenciador de arquivos, seja ele gráfico (como Nautilus, Dolphin) ou de texto (como Midnight Commander), é permitir que o usuário manipule os arquivos e diretórios do sistema. Isso inclui operações básicas como visualizar o conteúdo de pastas, copiar, mover, renomear e apagar arquivos, facilitando a organização e o acesso aos dados."
+        },
+        {
+          "id": "c",
+          "text": "Configurar permissões de rede e estabelecer conexões remotas",
+          "correct": false,
+          "explanation": "Incorreta. A configuração de permissões de rede e o estabelecimento de conexões remotas são tarefas realizadas por ferramentas específicas de gerenciamento de rede (por exemplo, 'nmcli', 'ip') ou clientes de comunicação (como SSH), e não se enquadram nas funções de um gerenciador de arquivos. Este último se concentra na organização e manipulação local de dados."
+        },
+        {
+          "id": "d",
+          "text": "Executar comandos de terminal e compilar programas em linguagem C",
+          "correct": false,
+          "explanation": "Incorreta. A execução de comandos de terminal e a compilação de programas são atividades realizadas por meio do interpretador de linha de comando (shell) ou de ferramentas de desenvolvimento, e não são a função principal de um gerenciador de arquivos. Um gerenciador de arquivos foca na interação com o sistema de arquivos de forma mais visual ou estruturada."
+        }
+      ],
+      "explanation": "Correta. A função principal de um gerenciador de arquivos, seja ele gráfico (como Nautilus, Dolphin) ou de texto (como Midnight Commander), é permitir que o usuário manipule os arquivos e diretórios do sistema. Isso inclui operações básicas como visualizar o conteúdo de pastas, copiar, mover, renomear e apagar arquivos, facilitando a organização e o acesso aos dados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o símbolo utilizado no prompt de comando do Linux para indicar que o usuário logado possui privilégios de administrador (root)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Til (~)",
+          "correct": false,
+          "explanation": "Incorreta. O til (~) no Linux é um atalho para o diretório pessoal (home directory) do usuário logado. Por exemplo, digitar 'cd ~' no terminal leva o usuário diretamente para seu diretório pessoal, mas não indica seu nível de privilégio no sistema."
+        },
+        {
+          "id": "b",
+          "text": "Cifrão ($)",
+          "correct": false,
+          "explanation": "Incorreta. O cifrão ($) é o símbolo padrão que aparece no prompt de comando do Linux para indicar que o usuário logado é um usuário comum, sem privilégios de administrador (root). Ele sinaliza que os comandos executados terão as permissões restritas do usuário atual."
+        },
+        {
+          "id": "c",
+          "text": "Jogo da velha (#)",
+          "correct": true,
+          "explanation": "Correta. No Linux, o caractere 'jogo da velha' ou 'hash' (#) no final do prompt de comando é o indicador visual padrão de que o usuário atualmente logado possui privilégios de superusuário, conhecido como 'root'. Isso significa que o usuário tem permissão irrestrita para realizar qualquer operação no sistema, incluindo aquelas que afetam a integridade ou a configuração do sistema operacional."
+        },
+        {
+          "id": "d",
+          "text": "Arroba (@)",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo de arroba (@) é frequentemente utilizado em endereços de e-mail ou para identificar um host em um endereço de rede (por exemplo, 'usuario@servidor'), mas não tem a função de indicar privilégios de administrador no prompt de comando do Linux."
+        }
+      ],
+      "explanation": "Correta. No Linux, o caractere 'jogo da velha' ou 'hash' (#) no final do prompt de comando é o indicador visual padrão de que o usuário atualmente logado possui privilégios de superusuário, conhecido como 'root'. Isso significa que o usuário tem permissão irrestrita para realizar qualquer operação no sistema, incluindo aquelas que afetam a integridade ou a configuração do sistema operacional.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No sistema de permissões do Linux, qual letra representa a permissão de leitura (read)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "d",
+          "correct": false,
+          "explanation": "Incorreta. A letra 'd' não é uma permissão de acesso no sistema de permissões do Linux. Ela é utilizada na primeira posição da string de permissões (ex: 'drwxr-xr-x') para indicar que a entrada é um diretório, distinguindo-o de um arquivo comum ou de outros tipos de arquivos especiais."
+        },
+        {
+          "id": "b",
+          "text": "r",
+          "correct": true,
+          "explanation": "Correta. No sistema de permissões do Linux, a letra 'r' (do inglês 'read') é o caractere que simboliza a permissão de leitura. Para um arquivo, essa permissão permite ao usuário visualizar seu conteúdo. Para um diretório, permite listar os arquivos e subdiretórios contidos nele."
+        },
+        {
+          "id": "c",
+          "text": "x",
+          "correct": false,
+          "explanation": "Incorreta. A letra 'x' (do inglês 'execute') representa a permissão de execução. Para arquivos, significa que o arquivo pode ser executado como um programa ou script. Para diretórios, permite ao usuário acessar o conteúdo do diretório, ou seja, entrar nele."
+        },
+        {
+          "id": "d",
+          "text": "w",
+          "correct": false,
+          "explanation": "Incorreta. A letra 'w' (do inglês 'write') representa a permissão de escrita. Esta permissão permite ao usuário modificar, salvar alterações ou excluir o arquivo, ou, no caso de um diretório, criar, renomear ou excluir arquivos dentro dele."
+        }
+      ],
+      "explanation": "Correta. No sistema de permissões do Linux, a letra 'r' (do inglês 'read') é o caractere que simboliza a permissão de leitura. Para um arquivo, essa permissão permite ao usuário visualizar seu conteúdo. Para um diretório, permite listar os arquivos e subdiretórios contidos nele.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No Linux, qual caractere é utilizado para representar a ausência de uma permissão específica ao listar permissões de arquivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Zero (0)",
+          "correct": false,
+          "explanation": "Incorreta. Embora o valor numérico '0' seja usado no modo octal das permissões (por exemplo, 'chmod 700') para representar a ausência de todas as permissões para um determinado grupo, o caractere '0' em si não é exibido na representação simbólica das permissões ('rwx')."
+        },
+        {
+          "id": "b",
+          "text": "Underline (_)",
+          "correct": false,
+          "explanation": "Incorreta. O underline (_) é um caractere que pode ser usado em nomes de arquivos ou variáveis no Linux, mas não possui um significado específico na representação das permissões de arquivos. Sua função é puramente de separação ou identificação em nomes."
+        },
+        {
+          "id": "c",
+          "text": "Asterisco (*)",
+          "correct": false,
+          "explanation": "Incorreta. O asterisco (*) é um caractere curinga (wildcard) no Linux, utilizado para representar zero ou mais caracteres em padrões de nomes de arquivos, como em 'ls *.txt' para listar todos os arquivos com a extensão '.txt'. Ele não indica a ausência de uma permissão específica."
+        },
+        {
+          "id": "d",
+          "text": "Hífen (-)",
+          "correct": true,
+          "explanation": "Correta. Ao visualizar as permissões de arquivos e diretórios no Linux (por exemplo, com o comando 'ls -l'), o hífen (-) é o caractere utilizado para indicar a ausência de uma permissão específica (leitura, escrita ou execução) para o proprietário, o grupo ou outros usuários. Por exemplo, em 'rwxrw-r--', o hífen na sexta posição indica que o grupo não tem permissão de execução, e na nona posição indica que outros não têm permissão de escrita nem de execução."
+        }
+      ],
+      "explanation": "Correta. Ao visualizar as permissões de arquivos e diretórios no Linux (por exemplo, com o comando 'ls -l'), o hífen (-) é o caractere utilizado para indicar a ausência de uma permissão específica (leitura, escrita ou execução) para o proprietário, o grupo ou outros usuários. Por exemplo, em 'rwxrw-r--', o hífen na sexta posição indica que o grupo não tem permissão de execução, e na nona posição indica que outros não têm permissão de escrita nem de execução.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "No sistema de permissões do Linux, as permissões são organizadas em três grupos distintos. Qual é a ordem correta desses grupos ao visualizar as permissões de um arquivo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Proprietário, grupo e outros",
+          "correct": true,
+          "explanation": "Correta. No sistema de permissões do Linux, as permissões são sempre apresentadas e aplicadas na seguinte ordem para os três grupos de usuários: primeiro, as permissões do proprietário (owner) do arquivo; em segundo lugar, as permissões do grupo (group) ao qual o arquivo pertence; e, por último, as permissões para outros (others), que englobam todos os demais usuários do sistema. Essa sequência é crucial para a segurança e o controle de acesso."
+        },
+        {
+          "id": "b",
+          "text": "Grupo, proprietário e outros",
+          "correct": false,
+          "explanation": "Incorreta. Esta ordem também não está de acordo com a estrutura padrão de exibição e aplicação das permissões no Linux. A sequência de grupos é fixa e universalmente reconhecida no sistema."
+        },
+        {
+          "id": "c",
+          "text": "Proprietário, outros e grupo",
+          "correct": false,
+          "explanation": "Incorreta. Esta ordem está incorreta, pois inverte a posição do grupo e dos outros. A estrutura padronizada de permissões no Linux define claramente a precedência e a sequência de cada categoria de usuário."
+        },
+        {
+          "id": "d",
+          "text": "Outros, grupo e proprietário",
+          "correct": false,
+          "explanation": "Incorreta. Esta ordem não corresponde à convenção padrão do sistema de permissões do Linux. As permissões são hierárquicas e seguem uma sequência lógica de atribuição de direitos."
+        }
+      ],
+      "explanation": "Correta. No sistema de permissões do Linux, as permissões são sempre apresentadas e aplicadas na seguinte ordem para os três grupos de usuários: primeiro, as permissões do proprietário (owner) do arquivo; em segundo lugar, as permissões do grupo (group) ao qual o arquivo pertence; e, por último, as permissões para outros (others), que englobam todos os demais usuários do sistema. Essa sequência é crucial para a segurança e o controle de acesso.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No Linux, qual comando com parâmetro é utilizado para listar arquivos e diretórios com informações detalhadas, incluindo permissões, proprietário e tamanho?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "ls -a",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro \"-a\" (de \"all\") do comando \"ls\" é utilizado para listar todos os arquivos e diretórios, incluindo aqueles ocultos (cujos nomes começam com um ponto), mas não exibe informações detalhadas como permissões, proprietário e tamanho no formato longo."
+        },
+        {
+          "id": "b",
+          "text": "ls -h",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro \"-h\" (de \"human-readable\") é utilizado para exibir os tamanhos de arquivos em um formato mais legível para humanos (como KB, MB, GB), geralmente em combinação com o parâmetro \"-l\" (ex: \"ls -lh\"). No entanto, por si só, ele não fornece todas as informações detalhadas solicitadas, como permissões e proprietário, apenas ajusta a exibição do tamanho."
+        },
+        {
+          "id": "c",
+          "text": "ls -R",
+          "correct": false,
+          "explanation": "Incorreta. O parâmetro \"-R\" (de \"recursive\") faz com que o comando \"ls\" liste o conteúdo dos diretórios de forma recursiva, ou seja, ele exibe o conteúdo dos subdiretórios e seus sub-subdiretórios, e assim por diante. Embora útil para ver a estrutura completa de um diretório, ele não é o comando específico para exibir as informações detalhadas (permissões, proprietário, tamanho) de cada item individualmente no formato longo."
+        },
+        {
+          "id": "d",
+          "text": "ls -l",
+          "correct": true,
+          "explanation": "Correta. O parâmetro \"-l\" (de \"long format\") do comando \"ls\" é o comando correto para exibir informações detalhadas sobre arquivos e diretórios. Ele mostra as permissões, o número de links, o proprietário, o grupo, o tamanho em bytes, a data da última modificação e o nome do arquivo ou diretório, conforme solicitado pela questão."
+        }
+      ],
+      "explanation": "Correta. O parâmetro \"-l\" (de \"long format\") do comando \"ls\" é o comando correto para exibir informações detalhadas sobre arquivos e diretórios. Ele mostra as permissões, o número de links, o proprietário, o grupo, o tamanho em bytes, a data da última modificação e o nome do arquivo ou diretório, conforme solicitado pela questão.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Segundo a doutrina de segurança em sistemas operacionais, qual é a principal razão pela qual o Linux é considerado mais seguro que outros sistemas, desde que sejam respeitadas determinadas condições?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Utilização obrigatória de antivírus integrado ao kernel do sistema",
+          "correct": false,
+          "explanation": "Incorreta. A segurança do Linux não se baseia na utilização obrigatória de antivírus integrado ao kernel. Embora existam soluções de segurança para Linux, a robustez do sistema deriva de outros fatores, como seu modelo de permissões e a natureza de código aberto, que permite uma rápida identificação e correção de vulnerabilidades pela comunidade."
+        },
+        {
+          "id": "b",
+          "text": "Criptografia automática de todos os arquivos armazenados no sistema",
+          "correct": false,
+          "explanation": "Incorreta. A criptografia de arquivos no Linux, embora amplamente suportada e recomendada para aumentar a segurança, não é automática para todos os arquivos por padrão. Ela geralmente requer configuração manual ou a escolha de distribuições que a implementem. Assim, não é a principal razão intrínseca pela qual o Linux é considerado mais seguro."
+        },
+        {
+          "id": "c",
+          "text": "Separação rigorosa de privilégios entre contas de usuário comum e administrador",
+          "correct": true,
+          "explanation": "Correta. Uma das principais razões para a segurança inerente do Linux reside na sua arquitetura de separação rigorosa de privilégios. Usuários comuns possuem permissões limitadas, enquanto o usuário administrador (root) detém controle total. Essa distinção dificulta que softwares maliciosos ou erros de usuários comuns afetem a integridade de todo o sistema, desde que as políticas de uso de contas privilegiadas sejam devidamente seguidas, conforme a doutrina de segurança em sistemas operacionais."
+        },
+        {
+          "id": "d",
+          "text": "Bloqueio nativo de conexões de rede não autorizadas pelo firewall",
+          "correct": false,
+          "explanation": "Incorreta. Embora o Linux ofereça ferramentas de firewall robustas (como `iptables` e `ufw`) que podem ser configuradas para bloquear conexões de rede não autorizadas, esta não é a principal razão pela qual o sistema operacional é considerado mais seguro. A segurança de rede é um aspecto importante, mas a segurança fundamental do sistema operacional Linux está mais ligada à sua arquitetura de gerenciamento de usuários e permissões."
+        }
+      ],
+      "explanation": "Correta. Uma das principais razões para a segurança inerente do Linux reside na sua arquitetura de separação rigorosa de privilégios. Usuários comuns possuem permissões limitadas, enquanto o usuário administrador (root) detém controle total. Essa distinção dificulta que softwares maliciosos ou erros de usuários comuns afetem a integridade de todo o sistema, desde que as políticas de uso de contas privilegiadas sejam devidamente seguidas, conforme a doutrina de segurança em sistemas operacionais.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando o sistema de permissões do Linux, se um arquivo possui as permissões representadas por \"rwxr-xr--\", qual é a representação numérica equivalente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "764",
+          "correct": false,
+          "explanation": "Incorreta. A representação numérica 764 corresponderia às permissões \"rwxrw-r--\", onde o proprietário tem leitura, escrita e execução (7), o grupo tem leitura e escrita (6) e outros têm apenas leitura (4)."
+        },
+        {
+          "id": "b",
+          "text": "754",
+          "correct": true,
+          "explanation": "Correta. No sistema de permissões do Linux, cada tipo de permissão possui um valor numérico: leitura ('r') vale 4, escrita ('w') vale 2 e execução ('x') vale 1. A ausência de permissão é representada por 0. As permissões são divididas em três grupos: proprietário, grupo e outros. Para \"rwxr-xr--\": o proprietário ('rwx') soma 4+2+1=7; o grupo ('r-x') soma 4+0+1=5; e outros ('r--') somam 4+0+0=4. Combinando esses valores, obtemos 754."
+        },
+        {
+          "id": "c",
+          "text": "744",
+          "correct": false,
+          "explanation": "Incorreta. A representação numérica 744 corresponde às permissões \"rwxr--r--\", onde o proprietário tem leitura, escrita e execução (7), o grupo tem apenas leitura (4) e outros têm apenas leitura (4)."
+        },
+        {
+          "id": "d",
+          "text": "774",
+          "correct": false,
+          "explanation": "Incorreta. A representação numérica 774 corresponderia às permissões \"rwxrwxr--\", onde o proprietário tem leitura, escrita e execução (7), o grupo tem leitura, escrita e execução (7) e outros têm apenas leitura (4)."
+        }
+      ],
+      "explanation": "Correta. No sistema de permissões do Linux, cada tipo de permissão possui um valor numérico: leitura ('r') vale 4, escrita ('w') vale 2 e execução ('x') vale 1. A ausência de permissão é representada por 0. As permissões são divididas em três grupos: proprietário, grupo e outros. Para \"rwxr-xr--\": o proprietário ('rwx') soma 4+2+1=7; o grupo ('r-x') soma 4+0+1=5; e outros ('r--') somam 4+0+0=4. Combinando esses valores, obtemos 754.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando o sistema de permissões do Linux, se as permissões de um arquivo são representadas numericamente como 421, qual é a representação em letras correspondente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "r---w---x",
+          "correct": true,
+          "explanation": "Correta. No sistema de permissões numéricas do Linux, cada dígito (do proprietário, grupo e outros) representa a soma dos valores das permissões: leitura (r=4), escrita (w=2) e execução (x=1). Para o número 421: o proprietário (4) tem apenas leitura ('r--'); o grupo (2) tem apenas escrita ('-w-'); e outros (1) têm apenas execução ('--x'). Combinando as representações, obtemos \"r---w---x\"."
+        },
+        {
+          "id": "b",
+          "text": "rw--wx--x",
+          "correct": false,
+          "explanation": "Incorreta. A representação \"rw--wx--x\" corresponde numericamente a 631, pois o proprietário tem 4+2=6, o grupo tem 2+1=3 e outros têm 1."
+        },
+        {
+          "id": "c",
+          "text": "rwx-w---x",
+          "correct": false,
+          "explanation": "Incorreta. A representação \"rwx-w---x\" corresponde numericamente a 721, pois o proprietário tem 4+2+1=7, o grupo tem 2 e outros têm 1."
+        },
+        {
+          "id": "d",
+          "text": "r-x-w-r--",
+          "correct": false,
+          "explanation": "Incorreta. A representação \"r-x-w-r--\" corresponde numericamente a 524, pois o proprietário tem 4+1=5, o grupo tem 2 e outros têm 4."
+        }
+      ],
+      "explanation": "Correta. No sistema de permissões numéricas do Linux, cada dígito (do proprietário, grupo e outros) representa a soma dos valores das permissões: leitura (r=4), escrita (w=2) e execução (x=1). Para o número 421: o proprietário (4) tem apenas leitura ('r--'); o grupo (2) tem apenas escrita ('-w-'); e outros (1) têm apenas execução ('--x'). Combinando as representações, obtemos \"r---w---x\".",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No Linux, quando um usuário administrador (root) deseja modificar permissões de arquivos criados por outros usuários, qual princípio do sistema de permissões permite essa ação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O root possui privilégios irrestritos sobre todos os arquivos do sistema, independentemente do proprietário",
+          "correct": true,
+          "explanation": "Correta. No Linux, o usuário `root` (também conhecido como superusuário ou administrador) possui privilégios irrestritos sobre todo o sistema de arquivos. Isso significa que o `root` pode acessar, modificar, excluir ou alterar as permissões de qualquer arquivo ou diretório, independentemente de quem seja o proprietário original ou quais permissões estejam definidas. Essa capacidade é essencial para a administração do sistema."
+        },
+        {
+          "id": "b",
+          "text": "O root pode modificar apenas arquivos de usuários que pertençam ao mesmo grupo administrativo",
+          "correct": false,
+          "explanation": "Incorreta. Os privilégios do `root` não se limitam a arquivos de usuários que pertençam ao mesmo grupo administrativo. O `root` tem autoridade sobre todos os arquivos e diretórios do sistema, sem restrições baseadas em grupos de usuários."
+        },
+        {
+          "id": "c",
+          "text": "O root necessita de permissão especial concedida pelo kernel para cada arquivo individualmente",
+          "correct": false,
+          "explanation": "Incorreta. O `root` não precisa de uma permissão especial concedida pelo kernel para cada arquivo individualmente. A sua identidade como `root` já é a permissão máxima, que lhe permite realizar operações em qualquer arquivo ou diretório sem a necessidade de solicitações adicionais ao kernel para cada ação específica."
+        },
+        {
+          "id": "d",
+          "text": "O root precisa solicitar autorização ao proprietário original antes de modificar qualquer permissão",
+          "correct": false,
+          "explanation": "Incorreta. O usuário `root` não necessita de autorização do proprietário original de um arquivo para modificar suas permissões. A natureza de superusuário do `root` confere-lhe a capacidade de ignorar as permissões normais do sistema, permitindo-lhe realizar qualquer operação sem consentimento prévio de outros usuários."
+        }
+      ],
+      "explanation": "Correta. No Linux, o usuário `root` (também conhecido como superusuário ou administrador) possui privilégios irrestritos sobre todo o sistema de arquivos. Isso significa que o `root` pode acessar, modificar, excluir ou alterar as permissões de qualquer arquivo ou diretório, independentemente de quem seja o proprietário original ou quais permissões estejam definidas. Essa capacidade é essencial para a administração do sistema.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "18_245420_Linux e Software Livre IV.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:58:34"
+}

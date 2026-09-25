@@ -1,0 +1,730 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 6,
+    "titulo": "6. Geometria e Medidas: Geometria plana: figuras geométricas, congruência, semelhança, perímetro e área. Geometria espacial: paralelismo, perpendicularismo entre retas e planos, áreas e volumes dos sólidos geométricos: prisma, pirâmide, cilindro, cone e esfera. Geometria analítica no plano: retas, circunferência e distâncias."
+  },
+  "ordem": 5,
+  "ordem_no_curso": "106.03",
+  "titulo": "Geometria Plana V",
+  "codigo_aula": "320417",
+  "video_id": "TfY96SrZ4VE=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:35:30",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/TfY96SrZ4VE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403877%2C403878%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Geometria Plana V\n\n## Introdução e objetivos da aula\nPessoal, tudo bem? Vamos dar continuidade à nossa matriz de Matemática. Estamos em Geometria Plana. Beleza? Agora começamos a parte de triângulos. Retomamos aqueles conceitos primitivos e começamos a ver a questão dos polígonos, correto? Um dos principais é o triângulo. Vamos trabalhar um pouco com ele: perímetro, área e algumas relações métricas no triângulo, que são relações de medidas. Comigo? Legal.\n\n## O que é triângulo e tipos iniciais\nTriângulos. Tipos de triângulos. Um triângulo é uma figura formada por três segmentos de reta, certo? Por exemplo, eu posso chamar os ângulos de alfa, beta e teta. Então temos uma figura com três lados e, consequentemente, três ângulos. Podemos classificar o triângulo de acordo com seus lados e também pelos seus ângulos. Não tem problema nenhum.\n\nOlha só: o que define um triângulo, primordialmente, são seus lados, mas eu também posso defini-lo por meio dos seus ângulos. Tranquilo?\n\n## Triângulo equilátero\nPrimeiro triângulo: triângulo equilátero. É o triângulo que possui todos os lados congruentes, isto é, iguais. Se o triângulo tem os lados iguais, consequentemente ele tem seus ângulos iguais. Então, em relação aos lados, equilátero significa lados iguais; em relação aos ângulos, significa ângulos internos iguais.\n\nE mais: todos os ângulos internos do triângulo equilátero medem sessenta graus. Interessante por quê? Porque sabemos que a soma dos ângulos internos de um polígono é dada por 180° × (n − 2). Para um triângulo, n = 3, então fica 180° × (3 − 2) = 180°. Logo, a soma dos ângulos internos de qualquer triângulo é 180°.\n\nSe o triângulo é equilátero e os três ângulos são iguais, chamando cada um de alfa, então 3α = 180°, portanto α = 60°. Assim, os ângulos internos do triângulo equilátero são 60°, 60°, 60°. Como todos os lados são iguais e todos os ângulos são iguais, podemos chamá-lo também de polígono regular. Beleza? Show de bola. Então:\n- Triângulo equilátero: lados iguais, ângulos iguais;\n- Soma dos ângulos internos de qualquer triângulo: 180°;\n- Caso especial: no equilátero, 60° cada ângulo;\n- É um polígono regular.\n\n## Triângulo isósceles\nClassificação quanto aos lados: triângulo isósceles. Ele possui pelo menos dois lados iguais e dois ângulos congruentes. Por exemplo, se os ângulos da base são beta e beta, e o ângulo do vértice é alfa, temos dois ângulos iguais. Os lados correspondentes a esses ângulos também serão iguais. Faz sentido: se a abertura dos dois ângulos é a mesma, os lados opostos correspondentes têm o mesmo comprimento. Assim, dois lados iguais e um diferente. Beleza.\n\nObservação muito importante: quando eu falo triângulo isósceles, não é “exatamente dois” lados iguais. É “pelo menos dois” lados iguais. Então, o triângulo equilátero, que tem três lados iguais, é um caso especial de triângulo isósceles.\n\n> 🎯 **Dicas de prova:** É correto afirmar que todo triângulo equilátero é isósceles, pois “isósceles” significa ter pelo menos dois lados iguais.\n\nNo triângulo isósceles, o ângulo formado pelos dois lados congruentes é chamado de ângulo do vértice. Os demais ângulos são denominados ângulos da base. A altura traçada a partir do vértice até a base, no isósceles, tem propriedades especiais que veremos à frente.\n\nEm resumo: em um triângulo isósceles, dois lados são iguais e um diferente. Se dois lados são iguais, os ângulos correspondentes (os ângulos da base) também são iguais. O ângulo formado pelos lados iguais é o ângulo do vértice.\n\n## Triângulo escaleno\nTriângulo escaleno: todos os lados são diferentes. Consequentemente, os ângulos internos também têm medidas diferentes. E vale reforçar: a soma dos ângulos internos de qualquer triângulo, inclusive isósceles e escaleno, é 180°. No equilátero, cada um é 60°; no isósceles, os dois da base são iguais; no escaleno, todos diferentes. Show de bola.\n\n## Classificação quanto aos ângulos\nAlém de classificar pelos lados (equilátero, isósceles, escaleno), podemos classificar pelos ângulos internos:\n- Triângulo retângulo: possui um ângulo reto (90°).\n- Triângulo acutângulo: todos os ângulos são agudos (entre 0° e 90°).\n- Triângulo obtusângulo: possui um ângulo obtuso (maior que 90° e menor que 180°).\n\nIsso é muito importante quando estudamos relações métricas e trigonométricas no triângulo.\n\n## Detalhando as classificações pelos ângulos\nTriângulo retângulo: possui um ângulo reto, 90°. Independentemente disso, a soma dos ângulos internos continua 180°.\n\nTriângulo acutângulo: todos os ângulos estão entre 0° e 90°. Por exemplo, um triângulo equilátero, com ângulos 60°, 60°, 60°, é acutângulo e também equilátero. Ele é equilátero porque os lados são iguais; é equiângulo porque os ângulos são iguais; e é acutângulo porque todos os ângulos estão entre 0° e 90°. Beleza? Show.\n\nTriângulo obtusângulo: um dos ângulos é maior que 90° e menor que 180°. Não tem como serem dois obtusos, pois a soma passaria de 180°. Então é sempre “um” obtuso.\n\n## Por que o triângulo retângulo é central\nAgora, algo muito interessante: o triângulo retângulo é “o cara” nas provas. É nele que aplicamos relações métricas e o Teorema de Pitágoras, e mais à frente as relações trigonométricas. Vamos organizar os elementos.\n\nNo triângulo retângulo:\n- A hipotenusa é o maior lado (o lado oposto ao ângulo reto).\n- Os outros dois lados são os catetos.\n- A altura relativa à hipotenusa é o segmento perpendicular traçado do vértice do ângulo reto até a hipotenusa, dividindo a hipotenusa em dois segmentos.\n\nQuando “giramos” a figura para visualizar melhor, cuidado: a altura é sempre o segmento perpendicular à base considerada. No triângulo retângulo, o cateto pode coincidir com uma altura dependendo da orientação, mas quando tratamos da altura relativa à hipotenusa, é o segmento traçado do vértice do ângulo reto até a hipotenusa, perpendicular a ela. Essa altura divide a hipotenusa em dois pedaços, que chamaremos de m e n (ou p e q, conforme a notação).\n\n## Nomeação dos elementos no triângulo retângulo\nConsidere o triângulo retângulo ABC, com ângulo reto em A. A hipotenusa é BC (maior lado). Os catetos são AB e AC. Traçando a altura relativa à hipotenusa (do ângulo reto até a hipotenusa), essa altura encontra a hipotenusa em um ponto H, dividindo-a em dois segmentos: BH = m e HC = n. A altura será h.\n\nResumo dos nomes:\n- Hipotenusa: c (BC).\n- Catetos: a e b (AB e AC).\n- Segmentos da hipotenusa: m e n.\n- Altura relativa à hipotenusa: h.\n\n## Relações métricas no triângulo retângulo\nAgora, as fórmulas que precisamos guardar. Todas podem ser demonstradas por semelhança de triângulos, mas aqui o importante é memorizar:\n\n1) Cateto ao quadrado igual ao produto da hipotenusa pelo segmento adjacente dessa hipotenusa:\n- a² = c · m\n- b² = c · n\n\n2) Altura relativa à hipotenusa ao quadrado igual ao produto dos segmentos em que a hipotenusa foi dividida:\n- h² = m · n\n\n3) Produto dos catetos igual ao produto da hipotenusa pela altura relativa:\n- a · b = c · h\n\n4) Teorema de Pitágoras:\n- c² = a² + b²\n\nEssas quatro relações são o coração das questões de relações métricas no triângulo retângulo.\n\n> 🎯 **Dicas de prova:** \n> - Cateto² = hipotenusa × projeção do cateto na hipotenusa.\n> - h² = (segmento 1) × (segmento 2) da hipotenusa.\n> - Cateto × cateto = hipotenusa × altura relativa.\n> - c² = a² + b².\n\nEssas fórmulas são frequentemente cobradas. A demonstração por semelhança é muito útil para entender e, às vezes, para resolver questões mais elaboradas.\n\n## Observações sobre semelhança de triângulos\nQuando traçamos a altura relativa à hipotenusa no triângulo retângulo, surgem dois triângulos menores, ambos retângulos, que são semelhantes entre si e semelhantes ao triângulo original. Definição útil: dois triângulos são semelhantes quando seus ângulos internos são iguais, e consequentemente seus lados são proporcionais. Usamos essa semelhança para obter todas as relações métricas acima.\n\nEsse conceito cai muito: ao perceber que os ângulos correspondentes são iguais, podemos montar proporções entre os lados e chegar às fórmulas.\n\n## Encerramento e próximos passos\nBeleza, povo? A partir de agora vamos resolver várias questões usando o que aprendemos: classificação de triângulos, especialmente o retângulo, e as relações métricas, além do Teorema de Pitágoras. Também vale saber um pouco sobre o triângulo equilátero: altura e área específicas, relações métricas próprias, que veremos depois. Estou voltando agora, não sai daí.",
+  "transcricao_meta": {
+    "title": "Geometria Plana V",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 35063,
+    "createdAt": "2026-01-30T18:49:47.565Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: conceitos fundamentais de triângulos na geometria plana, classificações por lados e por ângulos, propriedades essenciais, semelhança, relações métricas no triângulo retângulo e o Teorema de Pitágoras, além de aplicações no triângulo equilátero.\nPrincipais pontos: soma dos ângulos internos = 180°, correspondência lados iguais ↔ ângulos opostos iguais, uso correto de Pitágoras e das relações métricas (a² = c·p, b² = c·q, h² = p·q, a·b = h·c).\n\n## 1. Base / Conceitos Fundamentais\n- **Triângulo**: polígono com 3 lados e 3 ângulos internos (ex.: α, β, θ).\n- **Soma dos ângulos internos**: α + β + θ = 180°.\n- **Classificação por lados**:\n  - **Equilátero**: 3 lados iguais → 3 ângulos iguais = 60°. É polígono regular.\n  - **Isósceles**: pelo menos 2 lados iguais → ângulos da base iguais. O equilátero é caso especial de isósceles.\n  - **Escaleno**: 3 lados diferentes → 3 ângulos diferentes.\n- **Classificação por ângulos**:\n  - **Triângulo retângulo**: um ângulo reto (90°).\n  - **Triângulo acutângulo**: todos os ângulos agudos (entre 0° e 90°).\n  - **Triângulo obtusângulo**: exatamente um ângulo obtuso (> 90° e < 180°).\n\n> Dica de prova\n> - Equilátero: 60°-60°-60° e é isósceles.\n> - Em qualquer triângulo: soma dos ângulos = 180°.\n> - Classificação por ângulos é independente da classificação por lados.\n\n## 2. Como Funciona / Distinções\n- **Lados iguais ↔ ângulos opostos iguais**:\n  - Se dois lados são iguais (isósceles), os ângulos opostos a eles são iguais (ângulos da base).\n  - Se os três lados são iguais (equilátero), os três ângulos são iguais (60°).\n  - Se os três lados são diferentes (escaleno), os ângulos também são todos diferentes.\n- **Retângulo vs acutângulo vs obtusângulo**:\n  - Exatamente um ângulo de 90° → retângulo.\n  - Todos entre 0° e 90° → acutângulo (inclui equilátero).\n  - Um > 90° → obtusângulo (os outros dois são agudos).\n- **Elementos do triângulo retângulo**:\n  - **Hipotenusa**: maior lado, oposto ao ângulo reto.\n  - **Catetos**: os outros dois lados.\n  - **Altura relativa à hipotenusa (h)**: perpendicular à hipotenusa; divide a hipotenusa em dois segmentos: **p** e **q** (c = p + q).\n- **Semelhança de triângulos**:\n  - Ângulos correspondentes iguais → triângulos semelhantes → lados correspondentes proporcionais.\n  - No triângulo retângulo, a altura à hipotenusa produz dois triângulos menores semelhantes ao original, base das relações métricas.\n\n> Dica de prova\n> Viu a altura do ângulo reto dividindo a hipotenusa? Pense em três triângulos semelhantes: o original e os dois formados pela altura.\n\n## 3. Aplicação Prática / Técnicas\n- **Teorema de Pitágoras (triângulo retângulo)**: c² = a² + b².\n- **Relações métricas na altura (triângulo retângulo)**:\n  - a² = c·p\n  - b² = c·q\n  - h² = p·q\n  - a·b = h·c\n  - Identificação: p é o segmento da hipotenusa “sob” o cateto a; q é o segmento “sob” o cateto b.\n- **Passo a passo padrão em triângulo retângulo**:\n  1) Identifique quem é a hipotenusa (lado oposto ao ângulo reto) e os catetos.\n  2) Se houver altura à hipotenusa, identifique p e q (c = p + q).\n  3) Escolha a relação adequada:\n     - Falta cateto e você tem c e sua projeção? Use a² = c·p (ou b² = c·q).\n     - Dado p e q e quer h? h = √(p·q).\n     - Dados a e b e quer h? h = (a·b)/c.\n     - Faltando c, dados a e b? c = √(a² + b²).\n- **Triângulo equilátero (macetes úteis)**:\n  - Altura: h = (√3/2)·l\n  - Área: A = (l²·√3)/4\n  - A altura é também mediana e bissetriz; ao traçá-la, formam-se dois triângulos 30°-60°-90°.\n\n> Dica de prova\n> Decorar o “pacote retângulo”: a² = c·p, b² = c·q, h² = p·q, a·b = h·c, c² = a² + b².\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (classificação por lados e ângulos):\n  - Lados iguais: 7, 7, 7 → equilátero e acutângulo (60°-60°-60°).\n  - Lados: 5, 5, 8 → isósceles; ângulos? Sem dados suficientes, mas não pode ser retângulo se não houver 90°.\n- Exemplo 2 (Pitágoras):\n  - a = 6, b = 8 → c = √(6² + 8²) = √(36 + 64) = √100 = 10.\n- Exemplo 3 (cateto pela projeção):\n  - c = 13, p = 9 → a = √(c·p) = √(13·9) = √117 = 3√13.\n- Exemplo 4 (altura e produto dos catetos):\n  - a = 6, b = 8, c = 10 → h = (a·b)/c = (6·8)/10 = 48/10 = 4,8.\n- Exemplo 5 (altura pela hipotenusa dividida):\n  - p = 4, q = 9 → h = √(p·q) = √36 = 6.\n- Exemplo 6 (equilátero):\n  - l = 12 → h = (√3/2)·12 = 6√3; A = (12²·√3)/4 = (144·√3)/4 = 36√3.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de prova\n> - “Pelo menos dois lados iguais” define isósceles: inclui o equilátero.\n> - Equilátero é sempre acutângulo, mas nem todo acutângulo é equilátero.\n> - Em obtusângulo, só um ângulo pode ser > 90° (os outros são agudos).\n> - Hipotenusa é sempre o maior lado e existe apenas em triângulo retângulo.\n\n- Confundir altura relativa à hipotenusa com cateto: a altura é perpendicular à hipotenusa e divide c em p e q.\n- Trocar p e q nas fórmulas: o cateto “fala” com seu pedacinho correspondente (a² = c·p, b² = c·q).\n- Usar Pitágoras sem 90°: c² = a² + b² só vale em triângulo retângulo.\n- Esquecer a soma 180°: essencial para checar ângulos e completar medidas.\n- Tentar aplicar relações métricas (a² = c·p etc.) fora do triângulo retângulo: inválido.\n- Em equilátero, aplicar Pitágoras direto sem decompor: primeiro divida em dois triângulos 30°-60°-90°.",
+  "resumo_bolso": "# Geometria Plana V\n\n---\n\n## 📌 Conceitos-Chave\n\n- Triângulo: polígono de 3 lados; ângulos internos somam 180°.\n- Classificação por lados:\n  - Equilátero: 3 lados iguais → 3 ângulos de 60° (é regular e caso especial de isósceles).\n  - Isósceles: pelo menos 2 lados iguais → ângulos da base iguais.\n  - Escaleno: 3 lados diferentes → ângulos diferentes.\n- Classificação por ângulos:\n  - Retângulo: 1 ângulo de 90° (hipotenusa é o maior lado, oposto ao ângulo reto).\n  - Acutângulo: todos os ângulos agudos (0°–90°), inclui o equilátero.\n  - Obtusângulo: exatamente 1 ângulo obtuso (>90°); os outros dois são agudos.\n- Lados iguais ↔ ângulos opostos iguais.\n- Triângulo retângulo — elementos:\n  - Hipotenusa (c); catetos (a, b).\n  - Altura à hipotenusa (h) divide c em p e q (c = p + q).\n- Semelhança: ângulos correspondentes iguais → lados proporcionais; no retângulo, a altura à hipotenusa cria 3 triângulos semelhantes (base das relações métricas).\n- “Pacote retângulo”: c² = a² + b²; a² = c·p; b² = c·q; h² = p·q; a·b = h·c.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n- Classificação por lados vs por ângulos:\n  - Base: igualdade de lados vs medidas dos ângulos.\n  - Interseções: equilátero é acutângulo e é caso especial de isósceles.\n- Retângulo vs acutângulo vs obtusângulo:\n  - Retângulo: exatamente um ângulo de 90°.\n  - Acutângulo: todos entre 0° e 90° (inclui equilátero).\n  - Obtusângulo: um > 90° (os outros dois agudos).\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Soma dos ângulos internos\n- Regra: α + β + θ = 180°.\n- Exemplo: 70° + 50° + θ → θ = 60°.\n\n2. Teorema de Pitágoras (triângulo retângulo)\n- Regra: c² = a² + b².\n- Exemplo: a=6, b=8 → c=10.\n\n3. Relações métricas na altura (triângulo retângulo)\n- Regras: a² = c·p; b² = c·q; h² = p·q; a·b = h·c; c = p + q.\n- Identificação: p fica “sob” o cateto a; q fica “sob” o cateto b.\n- Exemplos:\n  - p=4, q=9 → h=√(p·q)=6.\n  - c=13, p=9 → a=√(c·p)=√117=3√13.\n  - a=6, b=8, c=10 → h=(a·b)/c=4,8.\n\n4. Triângulo equilátero\n- h = (√3/2)·l; A = (l²·√3)/4.\n- Exemplo: l=12 → h=6√3; A=36√3.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- “Isósceles = exatamente 2 lados iguais.” → Correto: pelo menos 2; equilátero é caso especial.\n- Usar Pitágoras sem 90° → c² = a² + b² só vale no triângulo retângulo.\n- Trocar p e q: o cateto “fala” com sua projeção (a² = c·p; b² = c·q).\n- Confundir altura à hipotenusa com cateto: h é perpendicular à hipotenusa e a divide em p e q.\n- Hipotenusa só existe em triângulo retângulo e é o maior lado.\n\n---\n\n## 📋 Checklist Final\n\n- Diferenciei isósceles (≥2 lados iguais) de equilátero (3 iguais e 60°)?\n- Memorizei o “pacote retângulo”: a²=c·p; b²=c·q; h²=p·q; a·b=h·c; c²=a²+b²?\n- Identifico p e q corretamente (cada cateto com sua projeção) e que c = p + q?\n- Sei que Pitágoras e as relações métricas só valem com 90°?\n- Lembro que a soma dos ângulos internos é 180°?\n- Para equilátero: h=(√3/2)·l e A=(l²·√3)/4?\n- Sei classificar por lados e por ângulos de forma independente?\n- No retângulo com altura à hipotenusa: reconheço os 3 triângulos semelhantes?",
+  "mapa_mental": "# 📐 Geometria Plana V – Triângulos\n## 🎯 Conceitos Fundamentais\n### 💡 Definição Triângulo\n- Polígono três lados\n- Três ângulos internos\n- Notação α β θ\n### 🧮 Soma Ângulos Internos\n- Soma 180 graus\n- Relação α+β+θ\n- Uso em cálculos\n### 🧩 Classificação por Lados\n- Equilátero três lados\n- Isósceles dois lados\n- Escaleno lados diferentes\n### 🔢 Classificação por Ângulos\n- Retângulo um ângulo 90°\n- Acutângulo todos agudos\n- Obtusângulo um obtuso\n### 📏 Equilátero Destaques\n- Três ângulos 60°\n- Polígono regular\n- Caso especial isósceles\n\n## 📊 Propriedades e Semelhança\n### 📐 Lados e Ângulos\n- Lados iguais ângulos iguais\n- Isósceles ângulos da base\n- Escaleno ângulos diferentes\n### 🧱 Triângulo Retângulo\n- Hipotenusa maior lado\n- Catetos lados restantes\n- Hipotenusa oposta 90°\n### 📏 Altura na Hipotenusa\n- Altura perpendicular c\n- Segmentos p e q\n- Relação c = p+q\n### 🧮 Semelhança Triângulos\n- Ângulos correspondentes iguais\n- Lados proporcionais\n- Três triângulos semelhantes\n\n## 🧮 Relações Métricas Retângulo\n### 📐 Teorema de Pitágoras\n- Fórmula c² = a²+b²\n- c hipotenusa\n- a b catetos\n### 📊 Relações com Projeções\n- a² = c·p\n- b² = c·q\n- h² = p·q\n- a·b = h·c\n### 🔍 Identificação Elementos\n- p projeção cateto a\n- q projeção cateto b\n- h altura hipotenusa\n### ⚠️ Condições de Uso\n- Somente triângulo retângulo\n- Exige ângulo 90°\n- Relações métricas específicas\n\n## 🔢 Triângulo Equilátero\n### 📐 Propriedades Internas\n- Três lados iguais\n- Três ângulos 60°\n- Sempre acutângulo\n### 🧮 Altura e Área\n- Altura h = (√3/2)·l\n- Área A = (l²√3)/4\n- Altura mediana bissetriz\n### 🔺 Decomposição Interna\n- Dois triângulos 30-60-90\n- Uso Pitágoras indireto\n- Relações trigonométricas implícitas",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Classificação por Lados",
+      "description": "Classificação por Lados — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Como se classifica um triângulo cujos três lados são congruentes?",
+          "back": "Triângulo equilátero.",
+          "hint": "Refere-se à igualdade dos três lados",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "classificacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual é a medida de cada ângulo interno de um triângulo equilátero?",
+          "back": "60 graus.",
+          "hint": "Soma total é 180 graus",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "angulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual condição define um triângulo isósceles quanto aos lados?",
+          "back": "Possui pelo menos dois lados iguais.",
+          "hint": "Pense no prefixo 'iso'",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "classificacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Em que sentido o triângulo equilátero é um caso particular do isósceles?",
+          "back": "Apresenta não somente dois, mas todos os três lados iguais.",
+          "hint": "Considere a definição de isósceles",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "propriedades"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Classificação por Ângulos",
+      "description": "Classificação por Ângulos — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é a soma dos ângulos internos de qualquer triângulo?",
+          "back": "180 graus.",
+          "hint": "Constante para qualquer triângulo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "angulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "O que caracteriza um triângulo retângulo quanto aos ângulos internos?",
+          "back": "Possui um ângulo reto.",
+          "hint": "Relacionado a 90 graus",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "classificacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual intervalo de medidas define um ângulo agudo?",
+          "back": "Maior que zero e menor do que 90 graus.",
+          "hint": "Menor que o ângulo reto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "geometria-plana",
+            "angulos",
+            "classificacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "O que caracteriza um triângulo acutângulo?",
+          "back": "Seus ângulos internos são agudos.",
+          "hint": "Baseado na medida dos três ângulos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "classificacao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Elementos do Triângulo",
+      "description": "Elementos do Triângulo — 5 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Como se relacionam os ângulos da base de um triângulo isósceles?",
+          "back": "São iguais.",
+          "hint": "Propriedade de simetria do isósceles",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Como se chama o ângulo formado pelos dois lados congruentes de um triângulo isósceles?",
+          "back": "Ângulo do vértice.",
+          "hint": "Oposto à base",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "nomenclatura"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a denominação dos dois ângulos opostos aos lados congruentes no triângulo isósceles?",
+          "back": "Ângulos da base.",
+          "hint": "Adjacentes ao lado desigual",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "nomenclatura"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "O que é a altura de um triângulo em relação à sua base?",
+          "back": "O ponto mais alto perpendicular à base.",
+          "hint": "Segmento perpendicular",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "elementos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Quais elementos permitem classificar um triângulo nas duas classificações apresentadas?",
+          "back": "Lados e ângulos internos.",
+          "hint": "São os dois critérios fundamentais",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "classificacao"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Semelhança e Métricas",
+      "description": "Semelhança e Métricas — 4 cards",
+      "cards": [
+        {
+          "id": "card-14",
+          "front": "Quando dois triângulos são considerados semelhantes?",
+          "back": "Quando seus ângulos internos são iguais.",
+          "hint": "Condição de proporcionalidade",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "semelhanca"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Que relação existe entre os lados correspondentes de figuras semelhantes?",
+          "back": "São proporcionais.",
+          "hint": "Razão constante entre medidas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "semelhanca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual lado recebe o nome de hipotenusa em um triângulo retângulo?",
+          "back": "O maior lado do triângulo retângulo.",
+          "hint": "Oposto ao ângulo de 90 graus",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "triangulo-retangulo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-17",
+          "front": "Como são denominados os dois lados que formam o ângulo reto?",
+          "back": "Catetos.",
+          "hint": "Lados que formam o ângulo reto",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "triangulo-retangulo"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Relações Métricas",
+      "description": "Relações Métricas — 4 cards",
+      "cards": [
+        {
+          "id": "card-18",
+          "front": "Como se relaciona o quadrado de cada cateto com a hipotenusa e sua projeção?",
+          "back": "O quadrado de cada cateto é igual ao produto da hipotenusa pela sua projeção.",
+          "hint": "Relação métrica no triângulo retângulo",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "relacoes-metricas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual relação métrica envolve o quadrado da altura relativa à hipotenusa?",
+          "back": "O quadrado da altura é igual ao produto das projeções dos catetos sobre a hipotenusa.",
+          "hint": "Envolve a altura relativa",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "relacoes-metricas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Como se relacionam os dois catetos, a altura relativa à hipotenusa e a própria hipotenusa?",
+          "back": "O produto dos catetos é igual ao produto da altura relativa à hipotenusa pela própria hipotenusa.",
+          "hint": "Relação entre catetos e altura",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "relacoes-metricas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual é a fórmula do teorema de Pitágoras?",
+          "back": "a² = b² + c²",
+          "hint": "A relação mais famosa da geometria",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "geometria-plana",
+            "triangulos",
+            "pitagoras"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a soma dos ângulos internos de qualquer triângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "270 graus",
+          "correct": false,
+          "explanation": "Incorreta. A soma dos ângulos internos de um triângulo é menor que 270 graus. Este valor não corresponde a nenhuma propriedade conhecida dos triângulos."
+        },
+        {
+          "id": "b",
+          "text": "180 graus",
+          "correct": true,
+          "explanation": "Correta. Um princípio fundamental da geometria euclidiana estabelece que a soma das medidas dos ângulos internos de qualquer triângulo é sempre 180 graus. Este é um teorema básico que se aplica a todos os tipos de triângulos, sejam eles equiláteros, isósceles, escalenos, retângulos, acutângulos ou obtusângulos."
+        },
+        {
+          "id": "c",
+          "text": "360 graus",
+          "correct": false,
+          "explanation": "Incorreta. 360 graus é a soma dos ângulos internos de um quadrilátero (polígono de quatro lados) ou a medida de um ângulo completo. Para um triângulo, a soma é exatamente a metade disso."
+        },
+        {
+          "id": "d",
+          "text": "90 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo só pode ter um ângulo de 90 graus (triângulo retângulo), mas a soma dos três ângulos internos nunca será apenas 90 graus. A soma dos ângulos agudos em um triângulo retângulo é 90 graus, mas o triângulo completo possui um terceiro ângulo."
+        }
+      ],
+      "explanation": "Correta. Um princípio fundamental da geometria euclidiana estabelece que a soma das medidas dos ângulos internos de qualquer triângulo é sempre 180 graus. Este é um teorema básico que se aplica a todos os tipos de triângulos, sejam eles equiláteros, isósceles, escalenos, retângulos, acutângulos ou obtusângulos.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Quantos lados possui um triângulo equilátero com medidas iguais?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todos os três lados possuem medidas iguais",
+          "correct": true,
+          "explanation": "Correta. A etimologia da palavra \"equilátero\" (\"equi\" = igual, \"látero\" = lado) já indica que se trata de um triângulo com todos os lados de mesma medida. Consequentemente, todos os seus ângulos internos também são iguais, medindo 60 graus cada."
+        },
+        {
+          "id": "b",
+          "text": "Dois lados possuem medidas iguais e um diferente",
+          "correct": false,
+          "explanation": "Incorreta. Esta é a definição de um triângulo isósceles. Embora um triângulo equilátero possa ser considerado um caso especial de triângulo isósceles (pois possui \"pelo menos\" dois lados iguais), a definição mais precisa de equilátero exige que todos os três lados sejam iguais."
+        },
+        {
+          "id": "c",
+          "text": "Nenhum lado possui medida igual ao outro",
+          "correct": false,
+          "explanation": "Incorreta. Esta é a definição de um triângulo escaleno, onde todos os lados têm medidas diferentes. Um triângulo equilátero é o oposto, com todos os lados iguais."
+        },
+        {
+          "id": "d",
+          "text": "Apenas um lado possui medida diferenciada dos demais",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se encaixa em um triângulo isósceles, onde dois lados são iguais e um é diferente, ou um triângulo escaleno, onde todos são diferentes. Um triângulo equilátero possui todos os lados iguais."
+        }
+      ],
+      "explanation": "Correta. A etimologia da palavra \"equilátero\" (\"equi\" = igual, \"látero\" = lado) já indica que se trata de um triângulo com todos os lados de mesma medida. Consequentemente, todos os seus ângulos internos também são iguais, medindo 60 graus cada.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a principal característica de um triângulo retângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Possui todos os ângulos internos com medidas diferentes entre si",
+          "correct": false,
+          "explanation": "Incorreta. Essa característica é típica de um triângulo escaleno, que pode ou não ser retângulo. Um triângulo retângulo pode ter dois ângulos agudos iguais (se for também isósceles, como um triângulo retângulo com ângulos de 45-45-90 graus)."
+        },
+        {
+          "id": "b",
+          "text": "Possui todos os lados com medidas proporcionais e ângulos agudos",
+          "correct": false,
+          "explanation": "Incorreta. \"Lados com medidas proporcionais\" não é uma característica definidora de um tipo de triângulo isolado, mas sim uma propriedade de triângulos semelhantes. \"Ângulos agudos\" descreve um triângulo acutângulo, que não necessariamente é retângulo."
+        },
+        {
+          "id": "c",
+          "text": "Possui dois ângulos internos obtusos e um agudo",
+          "correct": false,
+          "explanation": "Incorreta. É impossível um triângulo possuir dois ângulos obtusos (maiores que 90 graus), pois a soma de dois ângulos obtusos já excederia 180 graus, violando o teorema da soma dos ângulos internos de um triângulo. Um triângulo obtusângulo possui apenas um ângulo obtuso."
+        },
+        {
+          "id": "d",
+          "text": "Possui um ângulo interno medindo exatamente 90 graus",
+          "correct": true,
+          "explanation": "Correta. A definição fundamental de um triângulo retângulo é a presença de um ângulo reto, ou seja, um ângulo interno que mede exatamente 90 graus. Os outros dois ângulos são necessariamente agudos (menores que 90 graus) e complementares (somam 90 graus)."
+        }
+      ],
+      "explanation": "Correta. A definição fundamental de um triângulo retângulo é a presença de um ângulo reto, ou seja, um ângulo interno que mede exatamente 90 graus. Os outros dois ângulos são necessariamente agudos (menores que 90 graus) e complementares (somam 90 graus).",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Como é denominado o maior lado de um triângulo retângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Base principal",
+          "correct": false,
+          "explanation": "Incorreta. \"Base principal\" não é um termo técnico padrão para classificar lados de triângulos em geometria. A \"base\" de um triângulo é geralmente o lado sobre o qual a altura é traçada, e pode ser qualquer um dos três lados, não necessariamente o maior."
+        },
+        {
+          "id": "b",
+          "text": "Hipotenusa",
+          "correct": true,
+          "explanation": "Correta. Em um triângulo retângulo, a hipotenusa é sempre o lado oposto ao ângulo reto e é o lado de maior comprimento. Este é um conceito central no Teorema de Pitágoras, que relaciona os comprimentos dos catetos e da hipotenusa."
+        },
+        {
+          "id": "c",
+          "text": "Cateto oposto",
+          "correct": false,
+          "explanation": "Incorreta. Cateto oposto é o outro lado menor de um triângulo retângulo, também formando o ângulo reto, e sua classificação depende do ângulo agudo de referência. Não é o maior lado."
+        },
+        {
+          "id": "d",
+          "text": "Cateto adjacente",
+          "correct": false,
+          "explanation": "Incorreta. Cateto adjacente é um dos dois lados menores de um triângulo retângulo que formam o ângulo reto, e sua classificação como \"adjacente\" ou \"oposto\" depende do ângulo agudo de referência. Não é o maior lado."
+        }
+      ],
+      "explanation": "Correta. Em um triângulo retângulo, a hipotenusa é sempre o lado oposto ao ângulo reto e é o lado de maior comprimento. Este é um conceito central no Teorema de Pitágoras, que relaciona os comprimentos dos catetos e da hipotenusa.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a definição de um ângulo agudo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ângulo que mede exatamente 90 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um ângulo que mede exatamente 90 graus é denominado ângulo reto."
+        },
+        {
+          "id": "b",
+          "text": "Ângulo que mede mais de 0 grau e menos de 90 graus",
+          "correct": true,
+          "explanation": "Correta. Um ângulo agudo é definido como qualquer ângulo cuja medida é estritamente maior que 0 grau e estritamente menor que 90 graus. Por exemplo, 30, 45, 60 e 89 graus são todos ângulos agudos."
+        },
+        {
+          "id": "c",
+          "text": "Ângulo que mede exatamente 180 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um ângulo que mede exatamente 180 graus é conhecido como ângulo raso ou ângulo de meia-volta."
+        },
+        {
+          "id": "d",
+          "text": "Ângulo que mede mais de 90 graus e menos de 180 graus",
+          "correct": false,
+          "explanation": "Incorreta. Um ângulo com esta característica é chamado de ângulo obtuso, pois sua medida é maior que 90 graus e menor que 180 graus."
+        }
+      ],
+      "explanation": "Correta. Um ângulo agudo é definido como qualquer ângulo cuja medida é estritamente maior que 0 grau e estritamente menor que 90 graus. Por exemplo, 30, 45, 60 e 89 graus são todos ângulos agudos.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Por que um triângulo equilátero pode ser classificado como um caso especial de triângulo isósceles?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Porque o triângulo equilátero possui base diferenciada dos demais lados",
+          "correct": false,
+          "explanation": "Incorreta. Em um triângulo equilátero, todos os lados têm a mesma medida. Portanto, não há um lado que possa ser considerado uma 'base diferenciada' em relação aos outros. Qualquer um dos lados pode ser considerado a base, e os outros dois seriam os lados congruentes."
+        },
+        {
+          "id": "b",
+          "text": "Porque o triângulo equilátero possui apenas dois ângulos iguais, característica do isósceles",
+          "correct": false,
+          "explanation": "Incorreta. Um triângulo equilátero possui todos os três ângulos internos iguais, cada um medindo 60 graus. A característica que permite a classificação como isósceles não se baseia em ter 'apenas dois ângulos iguais', mas sim em ter 'pelo menos dois lados iguais', o que consequentemente leva a 'pelo menos dois ângulos iguais'."
+        },
+        {
+          "id": "c",
+          "text": "Porque ambos os triângulos possuem necessariamente um ângulo reto",
+          "correct": false,
+          "explanation": "Incorreta. A presença de um ângulo reto define um triângulo retângulo, e essa característica não é intrínseca nem ao triângulo equilátero (cujos ângulos são todos agudos, de 60 graus) nem à definição geral de um triângulo isósceles. Um triângulo isósceles pode ser retângulo, acutângulo ou obtusângulo, mas não é uma condição necessária."
+        },
+        {
+          "id": "d",
+          "text": "Porque o triângulo isósceles requer pelo menos dois lados iguais, e o equilátero possui três",
+          "correct": true,
+          "explanation": "Correta. A definição de triângulo isósceles é que ele possui pelo menos dois lados de igual medida (congruentes). Um triângulo equilátero, por sua vez, possui os três lados de igual medida. Como três lados iguais satisfazem a condição de 'pelo menos dois lados iguais', todo triângulo equilátero é, por definição, um caso particular de triângulo isósceles."
+        }
+      ],
+      "explanation": "Correta. A definição de triângulo isósceles é que ele possui pelo menos dois lados de igual medida (congruentes). Um triângulo equilátero, por sua vez, possui os três lados de igual medida. Como três lados iguais satisfazem a condição de 'pelo menos dois lados iguais', todo triângulo equilátero é, por definição, um caso particular de triângulo isósceles.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em um triângulo obtusângulo, quantos ângulos obtusos podem existir?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todos os três ângulos devem ser obtusos",
+          "correct": false,
+          "explanation": "Incorreta. Assim como ter dois ângulos obtusos é impossível, ter todos os três ângulos obtusos também é impossível. A soma de três ângulos obtusos excederia em muito 180 graus, violando a regra da soma dos ângulos internos de um triângulo."
+        },
+        {
+          "id": "b",
+          "text": "Nenhum ângulo obtuso, apenas ângulos agudos",
+          "correct": false,
+          "explanation": "Incorreta. A própria definição de um triângulo obtusângulo é que ele possui um ângulo obtuso, ou seja, um ângulo cuja medida é maior que 90 graus e menor que 180 graus. Se não houvesse nenhum ângulo obtuso, o triângulo seria classificado como acutângulo (todos os ângulos agudos) ou retângulo (um ângulo reto)."
+        },
+        {
+          "id": "c",
+          "text": "Exatamente um ângulo obtuso",
+          "correct": true,
+          "explanation": "Correta. Em um triângulo obtusângulo, existe exatamente um ângulo obtuso. A soma dos ângulos internos de qualquer triângulo é sempre 180 graus. Se houvesse dois ângulos obtusos, a soma deles já excederia 180 graus (por exemplo, 91 + 91 = 182 graus), o que é impossível para um triângulo. Portanto, um triângulo só pode ter um único ângulo obtuso."
+        },
+        {
+          "id": "d",
+          "text": "Pelo menos dois ângulos obtusos",
+          "correct": false,
+          "explanation": "Incorreta. É matematicamente impossível um triângulo possuir pelo menos dois ângulos obtusos. A soma de dois ângulos obtusos seria maior que 180 graus, o que contradiz a propriedade fundamental de que a soma dos ângulos internos de um triângulo é exatamente 180 graus."
+        }
+      ],
+      "explanation": "Correta. Em um triângulo obtusângulo, existe exatamente um ângulo obtuso. A soma dos ângulos internos de qualquer triângulo é sempre 180 graus. Se houvesse dois ângulos obtusos, a soma deles já excederia 180 graus (por exemplo, 91 + 91 = 182 graus), o que é impossível para um triângulo. Portanto, um triângulo só pode ter um único ângulo obtuso.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é o conceito fundamental que permite estabelecer as relações métricas em um triângulo retângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A semelhança entre triângulos formados pela altura relativa à hipotenusa",
+          "correct": true,
+          "explanation": "Correta. As relações métricas em um triângulo retângulo são estabelecidas fundamentalmente pela semelhança de triângulos. Quando a altura relativa à hipotenusa é traçada, ela divide o triângulo retângulo original em dois triângulos menores. Esses dois triângulos menores são semelhantes entre si e também semelhantes ao triângulo original. A partir dessas semelhanças (que implicam lados proporcionais), todas as relações métricas são deduzidas."
+        },
+        {
+          "id": "b",
+          "text": "A proporcionalidade inversa entre catetos e ângulos agudos",
+          "correct": false,
+          "explanation": "Incorreta. Não há uma proporcionalidade inversa geral e direta entre catetos e ângulos agudos que seja o fundamento das relações métricas. As relações trigonométricas (seno, cosseno, tangente) relacionam lados e ângulos, mas as relações métricas são mais diretamente ligadas à proporção de segmentos de reta decorrentes da semelhança de triângulos."
+        },
+        {
+          "id": "c",
+          "text": "O teorema dos ângulos complementares e suas aplicações diretas",
+          "correct": false,
+          "explanation": "Incorreta. O teorema dos ângulos complementares afirma que a soma dos dois ângulos agudos de um triângulo retângulo é 90 graus. Embora seja uma propriedade verdadeira e importante, ele não é o conceito fundamental que permite a dedução das relações métricas entre os lados e a altura em um triângulo retângulo. As relações métricas são sobre proporções de medidas de segmentos."
+        },
+        {
+          "id": "d",
+          "text": "A congruência entre todos os triângulos retângulos existentes",
+          "correct": false,
+          "explanation": "Incorreta. A congruência implica que os triângulos são idênticos em forma e tamanho. Os triângulos formados pela altura relativa à hipotenusa não são necessariamente congruentes entre si, nem são congruentes com o triângulo original. Eles são semelhantes, o que significa que têm a mesma forma (ângulos iguais), mas não necessariamente o mesmo tamanho."
+        }
+      ],
+      "explanation": "Correta. As relações métricas em um triângulo retângulo são estabelecidas fundamentalmente pela semelhança de triângulos. Quando a altura relativa à hipotenusa é traçada, ela divide o triângulo retângulo original em dois triângulos menores. Esses dois triângulos menores são semelhantes entre si e também semelhantes ao triângulo original. A partir dessas semelhanças (que implicam lados proporcionais), todas as relações métricas são deduzidas.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Em um triângulo retângulo, qual é a relação métrica que expressa o quadrado de um cateto?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O quadrado do cateto é igual ao produto da hipotenusa pela projeção desse cateto sobre ela",
+          "correct": true,
+          "explanation": "Correta. Em um triângulo retângulo, o quadrado da medida de um cateto é igual ao produto da medida da hipotenusa pela medida da projeção desse cateto sobre a hipotenusa. Por exemplo, se 'b' e 'c' são os catetos, 'a' é a hipotenusa, e 'm' e 'n' são as projeções de 'b' e 'c' sobre 'a', respectivamente, então b² = a * m e c² = a * n. Essa relação deriva da semelhança entre o triângulo original e os triângulos menores formados pela altura relativa à hipotenusa."
+        },
+        {
+          "id": "b",
+          "text": "O quadrado do cateto é igual à soma dos quadrados da altura e da hipotenusa",
+          "correct": false,
+          "explanation": "Incorreta. O quadrado de um cateto não é igual à soma dos quadrados da altura e da hipotenusa. O Teorema de Pitágoras estabelece que o quadrado da hipotenusa é igual à soma dos quadrados dos catetos (a² = b² + c²). Outras relações métricas são específicas e não correspondem a essa formulação."
+        },
+        {
+          "id": "c",
+          "text": "O quadrado do cateto é igual ao produto dos dois segmentos formados pela altura na hipotenusa",
+          "correct": false,
+          "explanation": "Incorreta. O produto dos dois segmentos formados pela altura na hipotenusa (as projeções dos catetos, 'm' e 'n') é igual ao quadrado da altura ('h'), ou seja, h² = m * n. Esta é uma relação métrica para a altura, não para o cateto."
+        },
+        {
+          "id": "d",
+          "text": "O quadrado do cateto é igual ao produto da hipotenusa pela projeção do outro cateto sobre ela",
+          "correct": false,
+          "explanation": "Incorreta. A relação métrica correta para o quadrado de um cateto envolve a projeção *desse* cateto sobre a hipotenusa, não a projeção do *outro* cateto. Se 'c' é um cateto, 'a' é a hipotenusa, e 'm' é a projeção de 'c' sobre 'a', então c² = a * m."
+        }
+      ],
+      "explanation": "Correta. Em um triângulo retângulo, o quadrado da medida de um cateto é igual ao produto da medida da hipotenusa pela medida da projeção desse cateto sobre a hipotenusa. Por exemplo, se 'b' e 'c' são os catetos, 'a' é a hipotenusa, e 'm' e 'n' são as projeções de 'b' e 'c' sobre 'a', respectivamente, então b² = a * m e c² = a * n. Essa relação deriva da semelhança entre o triângulo original e os triângulos menores formados pela altura relativa à hipotenusa.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a relação métrica que envolve a altura relativa à hipotenusa em um triângulo retângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A altura é igual à diferença entre os quadrados dos catetos",
+          "correct": false,
+          "explanation": "Incorreta. A altura não é igual à diferença entre os quadrados dos catetos. Essa formulação não corresponde a nenhuma relação métrica ou teorema conhecido que envolva a altura em um triângulo retângulo. A diferença de quadrados pode aparecer em outras manipulações algébricas, mas não como uma relação direta para a altura."
+        },
+        {
+          "id": "b",
+          "text": "A altura é igual ao produto da hipotenusa pelos catetos dividido por dois",
+          "correct": false,
+          "explanation": "Incorreta. A altura relativa à hipotenusa pode ser calculada como o produto dos catetos dividido pela hipotenusa (h = (b * c) / a). A formulação apresentada na alternativa ('o produto da hipotenusa pelos catetos dividido por dois') está incorreta e não corresponde a uma relação métrica válida para a altura."
+        },
+        {
+          "id": "c",
+          "text": "O quadrado da altura é igual ao produto das projeções dos catetos sobre a hipotenusa",
+          "correct": true,
+          "explanation": "Correta. Em um triângulo retângulo, a altura relativa à hipotenusa ('h') divide a hipotenusa em dois segmentos, que são as projeções dos catetos ('m' e 'n'). A relação métrica que conecta esses elementos é que o quadrado da altura é igual ao produto das medidas dessas duas projeções: h² = m * n. Essa relação é derivada da semelhança entre os dois triângulos retângulos menores formados pela altura."
+        },
+        {
+          "id": "d",
+          "text": "O quadrado da altura é igual à soma dos quadrados dos catetos",
+          "correct": false,
+          "explanation": "Incorreta. O quadrado da altura não é igual à soma dos quadrados dos catetos. A relação que envolve a soma dos quadrados dos catetos é o Teorema de Pitágoras, que afirma que a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa (b² + c² = a²)."
+        }
+      ],
+      "explanation": "Correta. Em um triângulo retângulo, a altura relativa à hipotenusa ('h') divide a hipotenusa em dois segmentos, que são as projeções dos catetos ('m' e 'n'). A relação métrica que conecta esses elementos é que o quadrado da altura é igual ao produto das medidas dessas duas projeções: h² = m * n. Essa relação é derivada da semelhança entre os dois triângulos retângulos menores formados pela altura.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_320417_Geometria Plana V.pdf",
+  "coletado_em": "2026-09-23T21:06:06"
+}

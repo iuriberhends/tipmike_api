@@ -1,0 +1,459 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 4,
+  "ordem_no_curso": "66.00",
+  "titulo": "Análise Combinatória IV",
+  "codigo_aula": "193398",
+  "video_id": "HefPp7alJaE=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:38:34",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/HefPp7alJaE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=404273&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Análise Combinatória IV\n\n## Continuidade da Série e Orientações Iniciais\nBeleza! Vamos dar continuidade à nossa matriz de raciocínio lógico. Nessa oportunidade, estamos vendo os princípios fundamentais da contagem e análise combinatória. Já tivemos três blocos para trás, correto? Vamos continuar com os blocos, com certeza. A aula é gravada ao vivo para que vocês possam participar. O chat pode fazer perguntas, e as sugestões pertinentes sempre enriquecem nosso recurso aqui. Se você está acompanhando o chat, mesmo que eu não possa participar às vezes, segue o fluxo: além da parte teórica, estamos fazendo questões. Beleza? Coloquei mais duas questões bacanas para a gente, só para trazer à memória os princípios fundamentais da contagem.\n\nNós fizemos três blocos para trás, show de bola. Até a terceira aula passada, fizemos exercícios em dezembro, foi muito legal. E vai ser legal hoje também. Em 2020, vimos formas de contagem. E olha que legal aqui uma menção:\n\n## Questão 1: Loja de Animais\nSuponha que, em uma loja de animais domésticos, estejam à venda seis filhotes machos e quatro filhotes fêmeas, de cão labrador. Se comprar apenas um filhote, há quantas possibilidades?\n\nSe você chega na loja e tem à sua disposição seis filhotes machos e quatro fêmeas, e quer comprar apenas um filhote, você possui quantas possibilidades? Você tem macho e fêmea como possibilidades.\n\n- Para macho, temos 6 possibilidades.\n- Para fêmea, temos 4 possibilidades.\n\nSe você vai comprar apenas um filhote, você vai comprar um macho ou uma fêmea. Uma coisa ou a outra. Princípio aditivo: 6 + 4 = 10. Não é 24. Isso é o que eu quero. Então, guarda isso; esse detalhe é importante. Por isso a prática é fundamental. Você quer uma coisa ou outra? Princípio aditivo. Show de bola.\n\n## Questão 2: Loja de Pisos\nUma loja fornece piso de cerâmica com quatro tamanhos diferentes. Em cada tamanho, existem seis opções de cores. Para a compra de peças, exatamente um tamanho e exatamente uma cor. Há mais de vinte opções de escolha?\n\nEu pergunto: você quer a compra de peças? A peça tem um tamanho específico e também uma cor específica. Então cada peça tem essas duas variáveis: tamanho e cor. Não é “tamanho ou cor”, é “tamanho e cor”.\n\n- Tamanhos: 4\n- Cores: 6\n\nQuero uma coisa e a outra: princípio multiplicativo. 4 × 6 = 24. Show! Então são mais de vinte opções, plenamente. Isso aqui é só você colocar na realidade. No dia a dia, pense: “comprei piso, tem que ter um tamanho e uma cor”. A coisa e a outra. Beleza.\n\n## Introdução a Anagramas com Condições\nVoltando: na aula passada, trabalhamos anagramas com palavras de letras diferentes. Vamos continuar e avançar para casos com letras repetidas, mas calma.\n\nCom relação à palavra “Magali”: você disse até este momento que faríamos anagramas com letras diferentes, mas “Magali” tem letras repetidas? Calma. Isso é condição. “Magali” tem dois “A”? Tem, mas a pergunta primeiro aqui é outra, porque nosso próximo passo será trabalhar com anagramas com letras repetidas. Até esse momento, trabalhamos com senhas, números, códigos, placas, tudo isso onde a ordem importa. Quando a ordem importa, multiplicamos as possibilidades. E às vezes somamos também, como vimos.\n\nAgora um anagrama com regra diferente para a palavra “Magali”. Beleza? “Magali” tem letras possivelmente repetidas, mas a questão impõe uma condição.\n\n## Questão 3: Anagramas com Bloco Fixo “MAG”\nA palavra “MAGALI” tem exatamente seis anagramas que contêm a sequência “MAG”? Olha só: eu quero a sequência “MAG”. Se eu quero a sequência, eu quero que “MAG” fique junto, nessa ordem. Igual à ideia de “ficar juntos” que vimos: juntos em uma só pessoa, mas aqui é junto nessa ordem específica.\n\nEle colocou uma palavra com possíveis letras repetidas, mas aqui não vamos dividir por repetição ainda, porque a condição fixa “MAG” como bloco.\n\nEntão eu “colo” a sequência MAG como se fosse um único símbolo. Fica assim:\n- MAG = um símbolo\n- A, L, I = outros três símbolos\n\nNo fundo, é como se tivéssemos uma palavra com quatro símbolos diferentes: [MAG], A, L, I. Sem divisão por repetição aqui, porque a questão pede a sequência MAG fixa — não pode mudar essa ordem.\n\nNúmero de anagramas:\n- Para a primeira posição, posso escolher qualquer um dos 4 símbolos.\n- Para a segunda, qualquer um dos 3 restantes.\n- Depois 2 e 1.\n\nTotal: 4 × 3 × 2 × 1 = 24 anagramas que contêm a sequência “MAG” nessa ordem. Se dentro do bloco “MAG” houvesse variação interna, aí sim teríamos divisão ou multiplicação adicional, mas não é o caso: a ordem “MAG” está fixa.\n\n## Questão 4: Dois Irmãos no Ônibus\nBanca: Fepese. Dois irmãos vão viajar em ônibus com 32 assentos. Os assentos estão dispostos em fileiras com 4 assentos, com corredor no meio separando 2 e 2. Então, duas poltronas de um lado, duas do outro, corredor no meio. 32 assentos ao todo, logo 8 fileiras (8 × 4 = 32).\n\nTodos os assentos estão disponíveis. De quantas maneiras diferentes os irmãos podem escolher seus assentos de maneira que viajem juntos? Juntos significa sem corredor separando, na mesma fileira. Não pode um de cada lado do corredor. Eles têm que sentar lado a lado.\n\nPrimeiro passo: escolher os assentos que estão juntos (pares lado a lado no mesmo lado do corredor).\n- Em cada fileira, há dois pares do lado esquerdo e dois pares do lado direito? Não. Em cada fileira, há 2 do total de 4? Aqui, lado a lado em cada lado do corredor há 1 par por lado, totalizando 2 pares por fileira.\n- Como são 8 fileiras, temos 2 pares por fileira × 8 fileiras = 16 pares de assentos juntos possíveis.\n\nEntão, 16 escolhas de pares de assentos.\n\nAgora, detalhe importante: a ordem importa. Se eu sento na janela e meu irmão no corredor é uma situação; trocar é outra. Para cada par de assentos juntos, há 2 maneiras de acomodar os irmãos (permuta entre eles).\n\nTotal: 16 × 2 = 32 maneiras.\n\nEssa é a resposta: 32. Sempre que a questão falar “juntos”, pense: juntos e considere depois a troca entre os elementos dentro do par/bloco.\n\n## Observações sobre Ordem e Multiplicação\nEsse raciocínio tem que sair naturalmente. A ordem importa em fotografia, em sentar em veículos, em senhas, códigos. Quando a ordem importa, ao trocar duas pessoas, duas letras, dois objetos, você cria um novo arranjo. Aí multiplicamos as possibilidades.\n\n## Questão 5: Dois Casais para Fotografia\nDois casais posam para uma fotografia. De quantas maneiras podem realizar a fotografia se cada casal deve permanecer junto?\n\n“Permanecer junto” de novo remete à ideia de blocos. Temos dois blocos: casal 1 e casal 2. Dentro de cada casal, pode ser nessa ordem ou na outra (duas maneiras). Entre os casais, também podemos trocar os blocos de posição.\n\n- Dentro do casal 1: 2 maneiras (troca de posições entre as duas pessoas).\n- Dentro do casal 2: 2 maneiras.\n- Entre os dois blocos (casais): 2 maneiras (casal 1 à esquerda ou casal 2 à esquerda).\n\nTotal: 2 × 2 × 2 = 8. Beleza, resposta 8. Não esqueça: além de perguntar dentro dos bloquinhos, pergunte também a troca entre os blocos.\n\n## Questão 6: Organizando Livros por Disciplina\nDigamos que você está estudando e comprou:\n- 3 livros de Física\n- 3 livros de Biologia\n- 3 livros de Matemática\n\nVocê quer organizá-los na estante mantendo os livros de mesma disciplina juntos. De quantas maneiras você pode organizar os 9 livros, sabendo que os da mesma disciplina devem ficar juntos?\n\nIdeia de fila: a ordem importa. Vamos formar três blocos: [Matemática], [Física], [Biologia]. Dentro de cada bloco, os 3 livros são distintos e podem ser permutados.\n\n- Dentro de Matemática: 3! = 6 maneiras.\n- Dentro de Física: 3! = 6 maneiras.\n- Dentro de Biologia: 3! = 6 maneiras.\n\nAgora, além de perguntar dentro de cada bloco, pergunte a ordem dos blocos:\n- Temos 3 blocos distintos, permutáveis em 3! = 6 maneiras.\n\nTotal: 6 × 6 × 6 × 6 = 6^4 = 1296 maneiras. Isso que eu quero de vocês. Percebam esse detalhe: além de organizar dentro, organizamos os blocos entre si. Muito comum em provas.\n\n## Encerramento\nBeleza, show de bola! Passou bastante tempo, e isso tem muita coisa ainda. Agora é a sua vez. No meu curso é assim: muita prática, porque o bicho pega e a vitória vem com exercício. Não saia daí.",
+  "transcricao_meta": {
+    "title": "Análise Combinatória IV",
+    "subject": "Raciocínio Lógico",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 36962,
+    "createdAt": "2026-01-30T14:23:30.212Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: princípios de contagem (aditivo e multiplicativo), técnicas de “blocos” para itens juntos, e aplicação em anagramas, assentos e arranjos de grupos.\nPrincipais pontos: \n- OU soma; E multiplica.\n- “Juntos” → tratar como bloco + considerar permutas internas.\n- Ordem importa? Multiplique etapas e considere quem pode trocar de lugar.\n\n## 1. Base / Conceitos Fundamentais\n- **Princípio Aditivo (OU)**: Use quando a escolha é entre alternativas mutuamente exclusivas. Some as quantidades.\n- **Princípio Multiplicativo (E)**: Use quando a escolha ocorre em etapas independentes/conjuntas. Multiplique as quantidades.\n- **Permutação**: Arranjo em que a ordem importa.\n- **Blocos (itens juntos)**: Quando elementos devem permanecer juntos, trate-os como um único bloco; depois, conte as permutações internas dos itens dentro do bloco.\n- **Distinção de pessoas/itens**: Se os elementos são distintos, trocas de posição geram novas configurações (conta como 2!, 3!, etc., conforme o caso).\n\n## 2. Como Funciona / Distinções\n- OU vs E:\n  - OU (alternativas exclusivas) → soma.\n  - E (características simultâneas/etapas) → multiplicação.\n- “Juntos” vs “Não especificado”:\n  - “Juntos” → bloco + permutas internas.\n  - Sem restrição → permutação normal dos elementos.\n- “Juntos sem corredor” (assentos) vs “juntos com corredor possível”:\n  - Sem corredor → apenas pares adjacentes no mesmo lado.\n  - Com corredor possível → incluir pares atravessando o corredor (se o enunciado permitir).\n- Sequência fixa em anagramas:\n  - Se exige “contém a sequência X” na ordem → X é um bloco único; não há permutação interna de X.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo geral:\n  1) Identifique se é OU (some) ou E (multiplique).\n  2) Verifique se há grupos “juntos” → forme blocos.\n  3) Conte:\n     - Permutação dos blocos/grupos.\n     - Permutação interna de cada bloco.\n     - Multiplique tudo.\n  4) Em problemas de assentos/pessoas, considere se a ordem dos indivíduos importa → multiplique por 2!, 3!, etc.\n- Macetes rápidos:\n  - “Exatamente um de cada” (tamanho E cor, por exemplo) → multiplicar.\n  - “Itens de mesma categoria juntos” → permutar blocos × produto das permutações internas.\n  - “Sequência fixa” em palavra → tratar a sequência como símbolo único; permutar símbolos.\n  - Assentos com corredor: por fileira 2 pares válidos (esq. e dir.); total de pares = número de fileiras × 2; depois × 2! para a troca entre as duas pessoas.\n\n## 4. Exemplos e Casos Resolvidos\n- Princípio Aditivo (OU):\n  - “Comprar apenas um filhote: seis filhotes machos OU quatro filhotes fêmeas.”\n  - Cálculo: 6 + 4 = 10.\n  > Dica de Prova: OU exclusivo sem sobreposição → some.\n\n- Princípio Multiplicativo (E):\n  - “Piso de cerâmica: exatamente um tamanho (4 opções) E exatamente uma cor (6 opções).”\n  - Cálculo: 4 × 6 = 24.\n  > Dica de Prova: Características simultâneas → multiplique.\n\n- Anagramas com sequência fixa:\n  - “Quantos anagramas da palavra Magali contêm a sequência Mag?”\n  - Bloco: [Mag]; letras restantes: a, l, i → 4 símbolos distintos.\n  - Cálculo: 4! = 24.\n  > Dica de Prova: “Contém a sequência X” → bloco único; não divida por repetição dentro do bloco.\n\n- Assentos em ônibus (dois irmãos juntos, sem corredor separando, mesma fileira):\n  - Layout: 8 fileiras, cada uma com 2 + corredor + 2 = 4 assentos → 32 assentos.\n  - Pares adjacentes válidos por fileira: 2 (esquerda e direita).\n  - Total de pares: 8 × 2 = 16.\n  - Troca entre irmãos: 2! = 2.\n  - Total: 16 × 2 = 32.\n  > Dica de Prova: Não conte pares atravessando o corredor.\n\n- Fotografia com dois casais (cada casal junto):\n  - Blocos: casal 1 e casal 2 → 2! para permutar blocos.\n  - Interno: cada casal tem 2! maneiras.\n  - Total: 2! × 2! × 2! = 8.\n  > Dica de Prova: Some permutações dos blocos com as internas; não esqueça o fator 2 de cada casal.\n\n- Livros por disciplina (3 de Física, 3 de Biologia, 3 de Matemática; livros de mesma disciplina juntos):\n  - Blocos: F, B, M → 3! = 6 ordens.\n  - Dentro de cada bloco: 3! para cada disciplina.\n  - Total: 3! × 3! × 3! × 3! = 6 × 6 × 6 × 6 = 1296.\n  > Dica de Prova: Se a ordem dos blocos for fixada pelo enunciado, remova o fator 3!.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir OU com E:\n  - “Um tamanho OU uma cor” ≠ “um tamanho E uma cor”. No exemplo dado, é E → multiplica.\n- Esquecer permutações internas de blocos:\n  - Casais juntos ou livros por disciplina: sempre considerar 2! por casal, 3! por bloco de 3 livros, etc.\n- Incluir pares separados pelo corredor:\n  - “Juntos sem corredor” exclui pares atravessando o corredor. Conte apenas pares na mesma metade.\n- Anagramas com sequência fixa:\n  - Não dividir por repetição dentro da sequência fixa; ela é um símbolo único na contagem.\n- Fixação indevida da ordem de blocos:\n  - Se o enunciado não fixa a primeira disciplina, conte 3! para a ordem dos blocos. Fixar sem que o enunciado diga reduz indevidamente o total.\n\n> Dica de Prova: Regra ouro — identifique primeiro se é OU (some) ou E (multiplique). Depois verifique se há “juntos” (blocos) e se a ordem interna conta (2!, 3!, ...).",
+  "resumo_bolso": "# Análise Combinatória IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Princípio Aditivo (OU)**: Use quando a escolha é entre alternativas **mutuamente exclusivas** → some as quantidades.\n* **Princípio Multiplicativo (E)**: Use quando a escolha ocorre em **etapas independentes/conjuntas** ou características simultâneas → multiplique as quantidades.\n* **Permutação**: Arranjo em que **a ordem importa**.\n* **Blocos (“itens juntos”)**: Quando elementos devem permanecer juntos, trate-os como **um único bloco**; depois conte as **permutações internas** dos itens dentro do bloco.\n* **Distinção de elementos**: Se pessoas/itens são distintos, trocas de posição geram novas configurações → fatores como **2!, 3!**, etc.\n* **Sequência fixa em anagramas**: Se o enunciado exige “contém a sequência X” na ordem, X é **um bloco único**, sem permuta interna.\n* **Assentos com corredor**: Em fileiras com 2 + corredor + 2, “juntos sem corredor” significa pares adjacentes **na mesma metade da fileira**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### OU vs E\n\n| Aspecto | OU (Princípio Aditivo) | E (Princípio Multiplicativo) |\n|--------|-------------------------|------------------------------|\n| Situação típica | Alternativas **exclusivas** | Características simultâneas / etapas |\n| Operação | **Soma** | **Multiplicação** |\n| Exemplo | “Comprar apenas um filhote: 6 machos OU 4 fêmeas” | “Exatamente um tamanho (4) E uma cor (6)” |\n\n---\n\n### “Juntos” vs Sem Restrição\n\n| Aspecto | Com “juntos” (blocos) | Sem restrição |\n|--------|------------------------|---------------|\n| Tratamento | Agrupa itens como **1 bloco** | Todos os itens livres |\n| Contagem | Permutar blocos × permutas internas | Permutação normal dos elementos |\n| Exemplo | Casais juntos na foto; livros de mesma disciplina juntos | Pessoas livres na foto; livros sem exigência de agrupamento |\n\n---\n\n### “Juntos sem corredor” vs “com corredor possível”\n\n| Aspecto | “Juntos sem corredor” | “Com corredor possível” |\n|--------|------------------------|--------------------------|\n| Pares válidos | Apenas adjacentes **no mesmo lado** da fileira | Incluir pares atravessando o corredor **se** o enunciado permitir |\n\n---\n\n### Sequência fixa vs Itens apenas “juntos”\n\n| Aspecto | Sequência fixa | Itens apenas “juntos” |\n|--------|----------------|------------------------|\n| Ordem interna | **Imposta** pelo enunciado | Pode variar |\n| Tratamento | Bloco **sem permuta interna** | Bloco **com permuta interna** |\n| Exemplo | “Contém a sequência MAG” em MAGALI | “Cada casal junto” na foto |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Princípio Aditivo (OU)**  \n* Aplicação: Alternativas **mutuamente exclusivas**.  \n* Exemplo: 6 filhotes machos OU 4 fêmeas → 6 + 4 = **10**.\n\n---\n\n**2. Princípio Multiplicativo (E)**  \n* Aplicação: Escolha de **várias características** simultâneas / etapas.  \n* Exemplo: 4 tamanhos E 6 cores → 4 × 6 = **24**.\n\n---\n\n**3. Blocos “juntos” (pessoas, livros, casais)**  \n* Aplicação: Itens que devem permanecer juntos.  \n* Regra geral:  \n  1) Formar blocos → permutar blocos.  \n  2) Multiplicar pelas **permutações internas** de cada bloco.  \n* Exemplo (2 casais na foto): blocos C1, C2 → 2! (blocos) × 2! × 2! (interno) = **8**.\n\n---\n\n**4. Sequência fixa em anagramas**  \n* Aplicação: “Contém a sequência X” na ordem.  \n* Regra: Tratar X como **1 símbolo**; não permutar dentro de X.  \n* Exemplo (MAGALI com “MAG”): símbolos: [MAG], A, L, I → 4! = **24**.\n\n---\n\n**5. Assentos em ônibus – “juntos sem corredor”**  \n* Aplicação: Duas pessoas lado a lado, **sem corredor separando**, na mesma fileira.  \n* Regra:  \n  - Por fileira: 2 pares adjacentes válidos (lado esquerdo e lado direito).  \n  - Total de pares = número de fileiras × 2.  \n  - Multiplicar por 2! (troca entre as duas pessoas).  \n* Exemplo (8 fileiras): 8 × 2 = 16 pares; 16 × 2! = **32**.\n\n---\n\n**6. Livros por disciplina “juntos”**  \n* Aplicação: Livros de mesma disciplina devem ficar juntos.  \n* Regra:  \n  - Blocos = disciplinas → permutar blocos.  \n  - Permutar livros dentro de cada bloco.  \n* Exemplo (3F, 3B, 3M): 3! (blocos) × 3! × 3! × 3! = **1296**.  \n  - Se a ordem das disciplinas for **fixa** pelo enunciado → remover o fator 3! dos blocos.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Confundir OU com E: “um tamanho OU uma cor” não é o mesmo que “um tamanho E uma cor”; no exemplo dado, é E → multiplica.\n2. Esquecer permutações internas de blocos: casais juntos ou livros por disciplina exigem 2! por casal, 3! por bloco de 3 livros, etc.\n3. Incluir pares separados pelo corredor quando o enunciado diz “juntos sem corredor”: conte apenas pares na mesma metade da fileira.\n4. Anagramas com sequência fixa: não dividir por permutações internas da sequência; ela é um símbolo único.\n5. Fixar indevidamente a ordem dos blocos (disciplinas) quando o enunciado não fixa → deve-se contar 3! para a ordem dos blocos.\n\n---\n\n## 📋 Checklist Final\n\n* Identifiquei em cada situação se é **OU (soma)** ou **E (multiplica)**?  \n* Verifiquei se há itens **“juntos”** para formar blocos e considerar as **permutações internas** (2!, 3!, ...)?  \n* Em anagramas, identifiquei se há **sequência fixa** (bloco sem permuta interna)?  \n* Em problemas de assentos, conferi se “juntos” significa **sem corredor** (mesma metade da fileira)?  \n* Em agrupamentos por disciplina/casal, considerei **ordem dos blocos** (se não for fixa) e **ordem interna** de cada bloco?",
+  "mapa_mental": "# 🧮 Análise Combinatória IV\n## 🎯 Princípios de Contagem\n### 💡 Princípio Aditivo\n- Situações alternativas\n- Casos exclusivos\n- Soma de possibilidades\n### 💡 Princípio Multiplicativo\n- Situações em etapas\n- Características simultâneas\n- Independência das etapas\n- Produto de possibilidades\n### 📝 Ordem e Distinção\n- Elementos distintos\n- Troca gera arranjo\n- Fatorial n!\n- Ordem relevante\n\n## 🧱 Técnica de Blocos\n### 💡 Itens Juntos\n- Tratar como bloco\n- Reduz número total\n- Permutação dos blocos\n- Permutação interna\n### 🧩 Sequência Fixa\n- Sequência como símbolo\n- Sem permuta interna\n- Anagramas com bloco\n- Contar símbolos distintos\n### 🪑 Assentos e Blocos\n- Pessoas lado a lado\n- Bloco em fileiras\n- Considerar corredor\n- Lados separados\n\n## 🔢 Aplicações Clássicas\n### 📊 Anagramas\n- Ordem das letras\n- Sequência obrigatória\n- Blocos de letras\n- Repetições controladas\n### 👥 Arranjos de Pessoas\n- Fileiras e cadeiras\n- Casais juntos\n- Troca dentro do casal\n- Ordem dos blocos\n### 📚 Agrupamento por Categoria\n- Livros por disciplina\n- Blocos por tipo\n- Ordem dos blocos\n- Produto dos fatoriais\n\n## ⚠️ Erros Frequentes\n### 🚨 OU vs E\n- OU exclusivo soma\n- E simultâneo multiplica\n- Não confundir contextos\n- Ler enunciado com atenção\n### 🚨 Blocos e Permutações\n- Esquecer permuta interna\n- Ignorar ordem dos blocos\n- Fixar bloco sem motivo\n- Contagem incompleta\n### 🚨 Assentos e Corredor\n- Pares mesmo lado\n- Corredor separando\n- Não cruzar corredor\n- Respeitar restrições",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Princípios de Contagem",
+      "description": "Princípios de Contagem — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual princípio rege a escolha de uma possibilidade entre categorias excludentes?",
+          "back": "Princípio **aditivo**.",
+          "hint": "Relacionado a somar opções",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principio-aditivo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual operação combina possibilidades de etapas sucessivas de uma escolha?",
+          "back": "Princípio **multiplicativo**.",
+          "hint": "Relacionado a multiplicar opções",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principio-multiplicativo"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Em uma loja com 6 machos e 4 fêmeas, quantas opções existem para comprar 1 filhote?",
+          "back": "10 opções (6 machos + 4 fêmeas), aplicando o princípio **aditivo**.",
+          "hint": "Aplicação direta de soma",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principio-aditivo"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-4",
+          "front": "Uma peça tem 4 tamanhos e 6 cores. Quantas combinações de uma peça existem?",
+          "back": "24 combinações (4 tamanhos × 6 cores), aplicando o princípio **multiplicativo**.",
+          "hint": "Aplicação direta de produto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "principio-multiplicativo"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Anagramas e Repetições",
+      "description": "Anagramas e Repetições — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "O que deve ser ajustado na contagem de anagramas quando há letras repetidas?",
+          "back": "Deve ser feita a **divisão** pela permutação das letras repetidas.",
+          "hint": "Operação matemática de redução",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Em que condição a troca de duas letras produz um novo anagrama?",
+          "back": "Quando a palavra possui **letras diferentes**.",
+          "hint": "Sobre a natureza dos elementos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "anagramas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Como tratar uma sequência de letras que deve permanecer junta em um anagrama?",
+          "back": "Considerar a sequência como um **único símbolo** (método dos blocos).",
+          "hint": "Técnica de simplificação",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "metodo-blocos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Quando letras formam um agrupamento obrigatório, que arranjo ainda pode ser considerado dentro dele?",
+          "back": "A ordenação interna do próprio agrupamento.",
+          "hint": "Refere-se ao arranjo interno",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "metodo-blocos"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Método dos Blocos",
+      "description": "Método dos Blocos — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Ao usar o método dos blocos, quais dois níveis de arranjo devem ser contados?",
+          "back": "A ordenação **interna** dos blocos e a ordenação **externa** dos blocos.",
+          "hint": "São dois níveis de contagem",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "metodo-blocos"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-10",
+          "front": "Dois casais devem permanecer juntos em uma fotografia. Quantas formações distintas existem?",
+          "back": "8 formações distintas, multiplicando a troca interna de cada casal (2 × 2) pela troca externa entre os dois casais (2).",
+          "hint": "Aplicação do método dos blocos",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "metodo-blocos"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-11",
+          "front": "Nove livros distintos formam 3 grupos por disciplina, cada grupo unido. Quantas organizações existem?",
+          "back": "1.296 organizações, multiplicando as permutações internas de cada grupo (3 × 2 × 1 = 6 para cada um dos 3 grupos) pela permutação externa dos 3 blocos (3 × 2 × 1 = 6).",
+          "hint": "Aplicação do método dos blocos",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "metodo-blocos"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Assentos e Filas",
+      "description": "Assentos e Filas — 4 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Por que a ordem dos ocupantes deve ser considerada ao distribuir pessoas em assentos?",
+          "back": "Porque a **ordem importa** em veículos e assentos, gerando um novo agrupamento ao trocar os ocupantes de lugar.",
+          "hint": "Conceito de arranjo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "arranjo"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "Um ônibus tem 32 assentos, com 4 por fileira. Quantas fileiras há?",
+          "back": "8 fileiras (32 assentos divididos por 4 assentos por fileira).",
+          "hint": "Cálculo de divisão simples",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "contagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-14",
+          "front": "Em um ônibus, quantos pares de assentos ficam juntos sem corredor entre eles?",
+          "back": "16 pares de assentos (8 fileiras vezes 2 pares sem corredor por fileira).",
+          "hint": "Cálculo de contagem espacial",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "contagem"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-15",
+          "front": "Ao ocupar dois assentos adjacentes, qual fator considera a troca de posição entre duas pessoas?",
+          "back": "A troca de posição entre as duas pessoas, multiplicando as possibilidades por 2.",
+          "hint": "Fator de permutação simples",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "combinatoria",
+            "arranjo"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No contexto da análise combinatória, qual princípio deve ser aplicado quando se deseja contar o número de possibilidades em situações onde é necessário escolher uma opção entre diferentes categorias mutuamente exclusivas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Princípio aditivo, somando-se as possibilidades de cada categoria disponível",
+          "correct": true,
+          "explanation": "Correta. O Princípio Aditivo é aplicado quando as escolhas são mutuamente exclusivas, ou seja, ao escolher uma opção, as outras são automaticamente descartadas. A palavra-chave que indica seu uso é \"OU\". Por exemplo, se você pode escolher entre 6 filhotes machos OU 4 filhotes fêmeas, o total de possibilidades é a soma das opções: 6 + 4 = 10."
+        },
+        {
+          "id": "b",
+          "text": "Princípio da permutação, calculando-se o fatorial do número total de elementos",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio da Permutação é usado para calcular o número de maneiras de ordenar um conjunto de elementos distintos. Ele não se aplica diretamente à escolha entre categorias mutuamente exclusivas, mas sim à organização de todos os elementos disponíveis."
+        },
+        {
+          "id": "c",
+          "text": "Princípio da combinação, dividindo-se o fatorial pelo produto dos fatoriais das partes",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio da Combinação é empregado para selecionar um subconjunto de elementos de um conjunto maior, onde a ordem dos elementos selecionados não importa. Não é o caso de somar possibilidades de categorias distintas."
+        },
+        {
+          "id": "d",
+          "text": "Princípio multiplicativo, multiplicando-se as possibilidades de cada categoria disponível",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio Multiplicativo é utilizado quando as escolhas são sequenciais e independentes, ou seja, a escolha de uma não impede a escolha da outra. A palavra-chave é \"E\". Por exemplo, se você escolhe um filhote macho E um filhote fêmea, as possibilidades seriam multiplicadas."
+        }
+      ],
+      "explanation": "Correta. O Princípio Aditivo é aplicado quando as escolhas são mutuamente exclusivas, ou seja, ao escolher uma opção, as outras são automaticamente descartadas. A palavra-chave que indica seu uso é \"OU\". Por exemplo, se você pode escolher entre 6 filhotes machos OU 4 filhotes fêmeas, o total de possibilidades é a soma das opções: 6 + 4 = 10.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma situação onde é necessário selecionar características que devem estar presentes simultaneamente em um único objeto (como tamanho E cor de uma peça), qual princípio fundamental da contagem deve ser utilizado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Princípio multiplicativo, pois cada característica deve estar presente ao mesmo tempo",
+          "correct": true,
+          "explanation": "Correta. O Princípio Multiplicativo é o mais adequado quando se tem uma série de decisões independentes a serem tomadas, e cada decisão afeta o número total de resultados. A palavra-chave \"E\" (tamanho E cor) indica que as escolhas são feitas em sequência ou simultaneamente, e o número total de possibilidades é o produto das opções para cada característica. Por exemplo, se há 4 tamanhos E 6 cores, o total de opções é 4 x 6 = 24."
+        },
+        {
+          "id": "b",
+          "text": "Princípio aditivo, pois as características são independentes entre si",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio Aditivo é aplicado quando as escolhas são mutuamente exclusivas (uma OU outra). Neste caso, as características (tamanho E cor) devem estar presentes simultaneamente no mesmo objeto, o que exige um princípio diferente."
+        },
+        {
+          "id": "c",
+          "text": "Princípio da inclusão-exclusão, para evitar contagem duplicada de características",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio da Inclusão-Exclusão é usado para contar elementos em uniões de conjuntos, subtraindo as intersecções para evitar a contagem duplicada. Ele não se aplica a situações de escolha simultânea de características distintas, mas sim a problemas onde há sobreposição de conjuntos."
+        },
+        {
+          "id": "d",
+          "text": "Princípio da permutação circular, considerando a ordem cíclica das características",
+          "correct": false,
+          "explanation": "Incorreta. O Princípio da Permutação Circular é específico para arranjos de elementos em um círculo, onde não há um ponto de partida ou fim definido. Não tem relevância para a seleção de características de um objeto."
+        }
+      ],
+      "explanation": "Correta. O Princípio Multiplicativo é o mais adequado quando se tem uma série de decisões independentes a serem tomadas, e cada decisão afeta o número total de resultados. A palavra-chave \"E\" (tamanho E cor) indica que as escolhas são feitas em sequência ou simultaneamente, e o número total de possibilidades é o produto das opções para cada característica. Por exemplo, se há 4 tamanhos E 6 cores, o total de opções é 4 x 6 = 24.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Ao trabalhar com anagramas de palavras que possuem uma sequência específica de letras que deve permanecer junta e na mesma ordem, qual estratégia de resolução é mais adequada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular as permutações totais e subtrair aquelas em que a sequência não aparece",
+          "correct": false,
+          "explanation": "Incorreta. Calcular as permutações totais e subtrair as indesejadas é uma abordagem válida para alguns problemas de restrição, mas é geralmente mais complexa e menos direta do que a técnica de \"bloco\" para sequências fixas. Além disso, pode ser difícil determinar o número exato de permutações indesejadas sem um método mais estruturado."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar permutação com repetição considerando todas as letras da sequência separadamente",
+          "correct": false,
+          "explanation": "Incorreta. A permutação com repetição é utilizada quando há letras idênticas na palavra original e a ordem de todas as letras importa, sem a restrição de uma sequência fixa. Não é o caso de agrupar uma parte específica da palavra."
+        },
+        {
+          "id": "c",
+          "text": "Dividir o número total de permutações pelo fatorial das letras que devem ficar juntas",
+          "correct": false,
+          "explanation": "Incorreta. Dividir pelo fatorial das letras que devem ficar juntas seria o procedimento para lidar com letras repetidas em uma permutação geral, mas não para tratar uma sequência específica que deve permanecer intacta. A divisão é para remover redundâncias, não para agrupar."
+        },
+        {
+          "id": "d",
+          "text": "Tratar a sequência fixa como um único elemento e permutar esse elemento com os demais",
+          "correct": true,
+          "explanation": "Correta. Quando uma sequência de letras deve permanecer junta e na mesma ordem, ela é tratada como um \"bloco\" ou um único elemento. Assim, o problema se reduz a permutar esse novo \"elemento\" (o bloco) com os demais elementos restantes. Por exemplo, na palavra \"MAGALI\", se \"MAG\" deve ficar junto, tratamos \"MAG\" como um único item, e permutamos com \"A\", \"L\", \"I\", resultando em 4! (fatorial de 4) permutações."
+        }
+      ],
+      "explanation": "Correta. Quando uma sequência de letras deve permanecer junta e na mesma ordem, ela é tratada como um \"bloco\" ou um único elemento. Assim, o problema se reduz a permutar esse novo \"elemento\" (o bloco) com os demais elementos restantes. Por exemplo, na palavra \"MAGALI\", se \"MAG\" deve ficar junto, tratamos \"MAG\" como um único item, e permutamos com \"A\", \"L\", \"I\", resultando em 4! (fatorial de 4) permutações.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao organizar livros de diferentes disciplinas em uma estante, sendo que os livros de cada disciplina devem permanecer agrupados, qual é o procedimento completo para determinar o número total de arranjos possíveis?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular a permutação total de todos os livros e dividir pelo produto das permutações de cada disciplina",
+          "correct": false,
+          "explanation": "Incorreta. Calcular a permutação total de todos os livros não garante que os livros de cada disciplina permaneçam juntos. A divisão pelo produto dos fatoriais é tipicamente usada em permutações com elementos repetidos, não para forçar agrupamentos específicos."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar combinação para escolher as posições dos grupos e depois permutar apenas os livros da primeira disciplina",
+          "correct": false,
+          "explanation": "Incorreta. A combinação é usada para seleção sem ordem, o que não se aplica a este problema de arranjo e organização. Além disso, permutar apenas os livros da primeira disciplina ignoraria as possibilidades de arranjo das outras disciplinas e dos grupos entre si."
+        },
+        {
+          "id": "c",
+          "text": "Permutar os livros dentro de cada disciplina, multiplicar os resultados obtidos, e então multiplicar pela permutação dos grupos de disciplinas entre si",
+          "correct": true,
+          "explanation": "Correta. Este é o procedimento padrão para problemas de arranjo com agrupamento. Primeiro, calcula-se o número de maneiras de organizar os livros dentro de cada grupo (permutação interna), pois os livros de uma mesma disciplina são diferentes. Em seguida, multiplica-se esses resultados, pois a organização de um grupo é independente da organização dos outros. Finalmente, esses grupos (disciplinas) podem ser arranjados entre si na estante, o que também é uma permutação dos grupos. Assim, a solução é o produto das permutações internas de cada grupo pela permutação dos grupos como um todo."
+        },
+        {
+          "id": "d",
+          "text": "Somar as permutações dos livros de cada disciplina e multiplicar pelo número de disciplinas disponíveis",
+          "correct": false,
+          "explanation": "Incorreta. A soma é usada para eventos mutuamente exclusivos (OU), enquanto a organização de livros dentro dos grupos E a organização dos grupos entre si são eventos sequenciais e interdependentes (E), que exigem multiplicação."
+        }
+      ],
+      "explanation": "Correta. Este é o procedimento padrão para problemas de arranjo com agrupamento. Primeiro, calcula-se o número de maneiras de organizar os livros dentro de cada grupo (permutação interna), pois os livros de uma mesma disciplina são diferentes. Em seguida, multiplica-se esses resultados, pois a organização de um grupo é independente da organização dos outros. Finalmente, esses grupos (disciplinas) podem ser arranjados entre si na estante, o que também é uma permutação dos grupos. Assim, a solução é o produto das permutações internas de cada grupo pela permutação dos grupos como um todo.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em problemas de contagem envolvendo elementos que devem permanecer juntos em qualquer ordem, qual é a diferença fundamental entre a condição \"juntos nessa ordem\" e \"juntos em qualquer ordem\" no cálculo final?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Na condição \"em qualquer ordem\" deve-se dividir o resultado pelas permutações internas, enquanto \"nessa ordem\" mantém o valor calculado",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o resultado pelas permutações internas não faria sentido, pois a capacidade de os elementos se reordenarem dentro do grupo aumenta, e não diminui, o número de possibilidades. A divisão é geralmente usada para remover redundâncias em casos de elementos idênticos, não para contabilizar arranjos adicionais."
+        },
+        {
+          "id": "b",
+          "text": "Na condição \"em qualquer ordem\" deve-se multiplicar o resultado por um fator correspondente às permutações internas dos elementos que ficam juntos, enquanto \"nessa ordem\" não requer esse ajuste",
+          "correct": true,
+          "explanation": "Correta. Quando elementos devem ficar \"juntos em qualquer ordem\", o grupo formado por esses elementos pode ter suas próprias permutações internas. Por exemplo, se A e B devem ficar juntos, eles podem ser (A, B) ou (B, A). Esse número de permutações internas (fatorial do número de elementos no grupo) deve ser multiplicado ao resultado final. Por outro lado, se devem ficar \"juntos nessa ordem\", significa que a sequência interna é fixa (ex: apenas A, B), havendo apenas 1 maneira de ordená-los internamente, e, portanto, não há multiplicação adicional por permutações internas."
+        },
+        {
+          "id": "c",
+          "text": "Ambas as condições produzem o mesmo resultado final, diferindo apenas na interpretação semântica do problema",
+          "correct": false,
+          "explanation": "Incorreta. As duas condições não produzem o mesmo resultado. A possibilidade de os elementos dentro do grupo mudarem de ordem (em qualquer ordem) aumenta o número total de arranjos possíveis em comparação com uma ordem fixa (nessa ordem)."
+        },
+        {
+          "id": "d",
+          "text": "Na condição \"nessa ordem\" deve-se aplicar combinação aos elementos agrupados, enquanto \"em qualquer ordem\" requer permutação",
+          "correct": false,
+          "explanation": "Incorreta. A combinação é um método de seleção de elementos onde a ordem não importa, e não se aplica a arranjos onde a ordem é relevante. A distinção entre \"nessa ordem\" e \"em qualquer ordem\" refere-se à permutação interna dos elementos agrupados, não à aplicação de combinação."
+        }
+      ],
+      "explanation": "Correta. Quando elementos devem ficar \"juntos em qualquer ordem\", o grupo formado por esses elementos pode ter suas próprias permutações internas. Por exemplo, se A e B devem ficar juntos, eles podem ser (A, B) ou (B, A). Esse número de permutações internas (fatorial do número de elementos no grupo) deve ser multiplicado ao resultado final. Por outro lado, se devem ficar \"juntos nessa ordem\", significa que a sequência interna é fixa (ex: apenas A, B), havendo apenas 1 maneira de ordená-los internamente, e, portanto, não há multiplicação adicional por permutações internas.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "04_193398_Análise Combinatória IV.pdf",
+  "coletado_em": "2026-09-23T21:01:52"
+}

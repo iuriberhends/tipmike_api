@@ -1,0 +1,488 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Raciocínio Lógico",
+  "modulo": {
+    "id": 5,
+    "titulo": "5. Análise Combinatória: Arranjos, Permutações e Combinações simples, Binômio de Newton e Probabilidade em espaços amostrais finitos"
+  },
+  "ordem": 16,
+  "ordem_no_curso": "78.00",
+  "titulo": "Probabilidade III",
+  "codigo_aula": "197438",
+  "video_id": "w6/Qzk/uDCg=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:34:39",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/w6%2FQzk%2FuDCg%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=404275%2C425322&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Probabilidade III\n\n## Relembrando Conceitos Básicos\nPessoal, vamos dar continuidade à nossa sequência de Raciocínio Lógico, e o assunto é probabilidade — importantíssimo, importantíssimo mesmo, como em várias provas. Já vimos algumas propriedades e, o que é importante primeiro, entendermos o nosso espaço amostral: de onde eu retiro o que vou estudar, o que serve para mim. Depois que encontro meu universo, o evento é aquilo que é favorável, correto?\n\nVimos também que nem tudo que está no universo vai me interessar. É como no Gran: tem aluno que faz cursos online, mas calma, não são todos que vão participar de carreiras policiais, ou só de carreiras fiscais, ou só de tribunais. Ou seja, vou tirar aquilo que serve para mim. Esse é o primeiro passo em probabilidade: saber de onde vou retirar o meu evento.\n\nE também vimos, nas aulas passadas, a ideia de diagrama: quando tenho conjuntos com algo em comum, faço união; se não têm nada em comum, é soma simples. Beleza?\n\nAgora eu quero frisar um pouco mais com vocês essa ideia do espaço amostral. Olha que legal: os recursos da nossa lógica e probabilidade se ajudam. Vem comigo. Vou trazer exemplos para chamar sua atenção — questões de concurso, das suas interações. Para fixar um pouco mais o bloco passado, tivemos um exemplo em que Maria ganhou de João nove pulseiras: quatro de prata e cinco de ouro. Beleza? Vamos com mais exemplos.\n\n## Exemplo 1 — Pulseiras de Prata (Probabilidade Condicional)\nMaria ganhou de Pedro onze pulseiras, oito de prata e três de ouro. Conferindo: de João, nove pulseiras — quatro de prata e cinco de ouro. De Pedro, onze pulseiras — oito de prata e três de ouro. Maria guarda todas essas pulseiras, e apenas essas, na sua pequena caixa.\n\nUma noite, arrumando-se apressadamente para ir ao cinema com o João, Maria retira ao acaso uma pulseira de sua caixinha de joias. Ela vê que retirou uma pulseira de prata. Considerando essas informações, qual é a probabilidade de que a pulseira de prata que Maria retirou seja uma das pulseiras que ganhou de João?\n\nVamos juntos. O primeiro impulso numa probabilidade é colocar tudo embaixo: “o total do que eu tenho” e, em cima, o que me serve. Mas atenção: será que “tudo que temos” é o nosso universo aqui? A questão diz que ela guarda apenas essas pulseiras na caixa: são 9 + 11 = 20 pulseiras no total. A vontade que dá é colocar 20 embaixo. E em cima? “Pulseiras de prata de João”, que seriam 4. Mas, calma.\n\nPrestem atenção nisso: a questão diz que ela retirou ao acaso e viu que a pulseira é de prata. Existe uma condição. Lembra do bloco passado? Nem sempre o universo é “tudo”. Ela retirou a pulseira e viu que é de prata. Depois vem a pergunta: qual a probabilidade de essa pulseira de prata que Maria retirou ser uma das pulseiras que ganhou de João?\n\nEntão o nosso universo não são as 20 pulseiras. São apenas as pulseiras de prata, porque há uma condição: ela viu que a pulseira é de prata. Logo, as pulseiras de ouro “dão licença”, não participam do universo.\n\nQuando existe uma condição, já falei: a condição vai para o denominador, o universo passa a ser a condição. Aqui, a condição é “pulseiras de prata”. Quantas são? De João, 4; de Pedro, 8. Total de prata = 4 + 8 = 12.\n\nO que serve para a gente? As de prata que são de João: 4. Então a probabilidade é 4/12, que simplifica para 1/3. Muita gente colocaria 20 embaixo e acharia 4/20 = 1/5, mas não é 1/5, é 1/3.\n\n> 🎯 Dicas de prova: Quando há informação observada previamente (como “ela viu que a pulseira era de prata”), estamos diante de probabilidade condicional. O universo passa a ser a condição.\n\n## Exemplo 2 — A Sopa do Restaurante (Teorema de Bayes na prática)\nQuestão de concurso: Carlos almoça diariamente um prato de sopa no mesmo restaurante. A sopa é feita aleatoriamente por um dos três cozinheiros que lá trabalham:\n- 40% das vezes por João,\n- 40% por José,\n- 20% por Maria.\n\nJoão sala a sopa demais em 10% das vezes; José, em 5%; Maria, em 20%.\n\nNum dia qualquer, Carlos pede a sopa e, ao experimentá-la, verifica que está salgada demais. Pergunta: qual a probabilidade de que essa sopa tenha sido feita por José?\n\nVamos facilitar usando 100 sopas (quando a questão só tem porcentagens, trabalhar com 100 ajuda):\n- João faz 40 sopas; José faz 40; Maria faz 20.\n\nAgora, as salgadas:\n- João: 10% de 40 = 4 sopas salgadas.\n- José: 5% de 40 = 2 sopas salgadas.\n- Maria: 20% de 20 = 4 sopas salgadas.\n\nTotal de sopas salgadas = 4 + 2 + 4 = 10.\n\nPerceba: já sabemos que a sopa está salgada. Existe uma condição. Então o nosso universo são as sopas salgadas (10). O que a pergunta quer? A probabilidade de a sopa salgada ter sido feita por José: são 2 sopas salgadas de José entre as 10 salgadas. Probabilidade = 2/10 = 0,2 = 20%.\n\n> 🎯 Dicas de prova: Condicional de novo. Primeiro restringe ao conjunto “salgada”, depois seleciona “feita por José”. É a ideia do Teorema de Bayes, muito cobrada.\n\nMuitos não percebem isso e colocam “tudo que eu tenho” no denominador. Tem que estar sensível à condição. Nos últimos concursos, vi muito isso se repetir, e a banca pega bastante em probabilidade condicional.\n\n## Exemplo 3 — Atraso no Trabalho (Condicional com “ou” exclusivo)\nBeatriz é servidora do Ministério da Fazenda e costuma se deslocar de casa para o trabalho de carro próprio ou de ônibus. Lembra das duas primeiras aulas? Esse “ou” aqui não é união com interseção; não tem nada em comum. Não tem como ela ir de carro e de ônibus simultaneamente no mesmo deslocamento. Então é “ou” exclusivo — soma simples, eventos disjuntos.\n\nSabe-se que:\n- 90% das vezes ela vai de carro;\n- 10% das vezes, de ônibus.\n\nVamos supor 100 deslocamentos:\n- De carro: 90 vezes.\n- De ônibus: 10 vezes.\n\nQuando vai de ônibus, ela chega atrasada em 30% das vezes:\n- 30% de 10 = 3 atrasos de ônibus; 7 não atrasos de ônibus.\n\nQuando vai de carro, ela atrasa em 10% das vezes:\n- 10% de 90 = 9 atrasos de carro; 81 não atrasos de carro.\n\nAgora, em um dia determinado, Beatriz chegou atrasada ao trabalho. Condição: atrasou. O nosso universo, então, são os atrasos: 9 (carro) + 3 (ônibus) = 12 atrasos.\n\nA pergunta: qual a probabilidade de que, nesse dia, ela tenha ido de ônibus? Entre os atrasos (12), os de ônibus são 3. Probabilidade = 3/12 = 1/4 = 0,25 = 25%.\n\n> 🎯 Dicas de prova: Identifique se o “ou” é exclusivo (não há interseção) ou inclusivo (há interseção), e fique atento à condição (“chegou atrasada”). O denominador vira o total sob a condição.\n\n## Propriedade do Complementar\nAgora, uma propriedade que facilita demais situações que seriam extensas: a soma das probabilidades de um evento com a de seu complementar é igual a 1. Em símbolos: P(A) + P(Aᶜ) = 1.\n\n“Complementar” é aquilo que falta para o meu todo (o universo). Se a probabilidade de acertar o alvo é 1/3, então a probabilidade de não acertar é 2/3. Faz sentido, porque 1/3 + 2/3 = 1.\n\nEssa propriedade é muito importante porque, em muitos casos, é mais fácil calcular a probabilidade do complementar do que do evento em si. Muitas vezes, aquilo que “não serve para mim” é mais simples de contar.\n\n## Exemplo 4 — Vendedor e “Pelo menos uma venda”\nDigamos que temos um vendedor com potencial de venda de 60% em cada tentativa, e as decisões são independentes. Ele visita três clientes: 1, 2 e 3. Após visitar os três, qual é a probabilidade de realizar pelo menos uma venda?\n\nOlha só que legal: “pelo menos uma” é o típico caso em que aplicamos o complementar. Em vez de contar “uma, duas ou três vendas”, contamos o complementar: “nenhuma venda”.\n\n- Probabilidade de venda em uma visita: 0,6.\n- Probabilidade de não vender em uma visita: 0,4.\n- Independentes, três clientes: probabilidade de não vender para nenhum = 0,4 × 0,4 × 0,4 = 0,4³ = 0,064.\n\nEntão:\n- P(pelo menos uma venda) = 1 − P(nenhuma venda) = 1 − 0,064 = 0,936 = 93,6%.\n\n> 🎯 Dicas de prova: Expressões como “ao menos uma”, “pelo menos uma” pedem, na maioria das vezes, o uso do complementar: 1 − P(nenhuma).\n\nEssa propriedade do complementar aparece muito, economiza tempo e evita contagens longas. Serve demais quando há muitas possibilidades e quando a negação é fácil de calcular.\n\n## Fechamento\nQuem está começando em probabilidade precisa, primeiro, perceber o que é o espaço amostral, o que é o evento, e que só serve para mim aquilo que está no meu universo. Se for condicional, o universo é a condição; o que está fora não participa. Lembrem: evento impossível é aquilo que não está no universo definido.\n\nNossa primeira grande propriedade aqui foi a do complementar: P(A) + P(Aᶜ) = 1. Ela facilita muitos problemas aparentemente complicados, especialmente aqueles com “pelo menos um”.\n\nNa próxima, sigo com mais propriedades e aplicações. Prestem atenção nisso, porque cai muito.",
+  "transcricao_meta": {
+    "title": "Probabilidade III",
+    "subject": "Raciocínio Lógico e Matemático",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 32283,
+    "createdAt": "2026-02-06T11:19:46.421Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: probabilidade condicional, eventos complementares e independência.\nPrincipais pontos:\n- Como identificar quando o universo é restrito por uma condição (“condição vai embaixo”).\n- Uso do complementar para “pelo menos um”.\n- Diferenças entre “ou” exclusivo e união.\n- Passos e macetes para resolver rapidamente.\n\n## 1. Base / Conceitos Fundamentais\n- Probabilidade condicional: Probabilidade de A dado B é a chance de A ocorrer considerando que B já ocorreu. Denominador = casos que satisfazem B.\n- Espaço amostral restrito: Ao observar uma condição (ex.: “é de prata”, “chegou atrasada”), o “todo” passa a ser apenas o subconjunto compatível com a condição.\n- Complementar: Para um evento A, A^c é “o que falta para 1”. Propriedade: P(A) + P(A^c) = 1.\n- Independência: Eventos independentes não se influenciam. Para eventos independentes A e B: P(A ∩ B) = P(A)·P(B).\n- “Ou” em contextos excludentes: Em escolhas como “carro próprio ou ônibus”, não há interseção. É um “ou” exclusivo por natureza operacional.\n\n## 2. Como Funciona / Distinções\n- Condicional vs. não condicional:\n  - Sem condição: denominador = total de casos possíveis.\n  - Com condição: denominador = total de casos que atendem à condição informada.\n- Complementar vs. contagem direta:\n  - “Pelo menos um” → use 1 − P(nenhum) (geralmente mais rápido).\n  - Contagem direta de “pelo menos um” pode ser trabalhosa para muitos casos.\n- “Ou” exclusivo vs. união:\n  - Exclusivo: eventos não podem ocorrer juntos (carro OU ônibus no mesmo deslocamento).\n  - União: soma menos a interseção (quando podem ocorrer juntos).\n- Condicional vs. independência:\n  - Condicional redefine o universo.\n  - Independência permite multiplicar probabilidades, mantendo o universo original.\n\n## 3. Aplicação Prática / Técnicas\n- Passo a passo para condicional:\n  1) Identifique a condição (gatilhos: “sabendo que”, “dado que”, “verificou que”, “observa-se que”).\n  2) Redefina o universo: mantenha só os casos compatíveis com a condição (vai no denominador).\n  3) Restrinja o evento pedido ao mesmo recorte (vai no numerador).\n  4) Em percentuais, padronize em 100 unidades para agilizar contas.\n  5) Monte a fração e simplifique.\n- Passo a passo para “pelo menos um”:\n  1) Verifique independência entre tentativas.\n  2) Calcule P(nenhum) multiplicando as probabilidades de falha.\n  3) Faça 1 − P(nenhum).\n- Macetes rápidos:\n  - “Condição vai embaixo.” O que não satisfaz a condição é impossível naquele cenário.\n  - Suponha 100 unidades para transformar percentuais em contagens inteiras.\n  - Em “ou” de escolhas excludentes, não aplique fórmula de união com interseção.\n  - Simplifique frações e apresente em fração, decimal e porcentagem quando útil.\n\n## 4. Exemplos e Casos Resolvidos\n- Exemplo 1 (Pulseiras – condicional):\n  - João: 9 pulseiras (4 prata, 5 ouro). Pedro: 11 pulseiras (8 prata, 3 ouro). Total: 20; pratas: 12.\n  - Condição: retirou e viu que é de prata.\n  - Universo: 12 (pratas). Evento: ser de João entre as pratas = 4.\n  - P(ser de João | é de prata) = 4/12 = 1/3.\n  > Dica de Prova: Não use 20 no denominador; ouro fica fora do universo após a condição.\n\n- Exemplo 2 (Sopa – Bayes sem fórmula explícita):\n  - Frequência de preparo: João 40%, José 40%, Maria 20%.\n  - Taxa de “salgada”: João 10%, José 5%, Maria 20%.\n  - Suponha 100 sopas: João 40 → 4 salgadas; José 40 → 2 salgadas; Maria 20 → 4 salgadas. Total salgadas: 10.\n  - Condição: “sopa salgada”.\n  - P(José | salgada) = 2/10 = 0,2.\n  > Dica de Prova: Transforme percentuais em 100 unidades para somar apenas os compatíveis com a condição.\n\n- Exemplo 3 (Beatriz – atraso, “ou” exclusivo + condicional):\n  - Carro: 90% das viagens; atraso 10% → 9 atrasos em 90; 81 sem atraso.\n  - Ônibus: 10% das viagens; atraso 30% → 3 atrasos em 10; 7 sem atraso.\n  - Condição: chegou atrasada. Universo: 9 + 3 = 12 atrasos.\n  - P(ônibus | atrasou) = 3/12 = 1/4 = 0,25 = 25%.\n  > Dica de Prova: “Carro ou ônibus” é excludente; não há interseção.\n\n- Exemplo 4 (Vendedor – “pelo menos um”, independência):\n  - Três clientes, probabilidade de vender por cliente = 60% (independentes).\n  - P(nenhuma) = (1 − 0,6)^3 = 0,4^3 = 0,064.\n  - P(≥1 venda) = 1 − 0,064 = 0,936 = 93,6%.\n  > Dica de Prova: Em séries de tentativas, o complementar economiza tempo.\n\n## 5. Pegadinhas e Erros Comuns\n- Usar o total original no denominador em problemas condicionais. Correto: denominador é o total sob a condição (ex.: só “pratas”, só “atrasos”, só “salgadas”).\n- Tratar “ou” excludente como união com interseção. Em escolhas operacionais (carro/ônibus), não há simultaneidade.\n- Esquecer de restringir o numerador à mesma condição do denominador.\n- Ignorar independência antes de multiplicar probabilidades. Se o enunciado não garantir (ou for razoável no contexto), cuidado ao multiplicar.\n- Calcular “pelo menos um” somando muitos casos. Use o complementar.\n- Confundir percentuais com contagens. Padronize para 100 para evitar erro aritmético.\n\n> Dica de Prova: Gatilhos de condicional — “sabendo que”, “dado que”, “verificou que”, “observa que”, “foi constatado que”.\n> Dica de Prova: “Ao menos”, “pelo menos”, “no mínimo” → pense imediatamente em 1 − P(nenhum).",
+  "resumo_bolso": "# Probabilidade III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Probabilidade condicional P(A|B)**: chance de **A** considerando que **B já ocorreu**. **Denominador = casos que satisfazem B** (universo restrito).\n* **Espaço amostral restrito**: ao observar uma condição (“é de prata”, “chegou atrasada”), o **todo passa a ser apenas o subconjunto compatível com a condição**.\n* **Complementar Aᶜ**: “o que falta para 1”. **P(A) + P(Aᶜ) = 1**. Útil para “pelo menos um” via **1 − P(nenhum)**.\n* **Independência**: eventos que **não se influenciam**. Se A e B são independentes, **P(A ∩ B) = P(A)·P(B)**.\n* **“Ou” em contextos excludentes**: em escolhas como “carro próprio ou ônibus”, **não há interseção**; é um “ou” exclusivo por natureza operacional.\n* **Gatilhos de condicional**: “sabendo que”, “dado que”, “verificou que”, “observa-se que”, “foi constatado que”.\n* **Gatilhos de complementar**: expressões como “ao menos”, “pelo menos”, “no mínimo” → pense em **1 − P(nenhum)**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Condicional vs Probabilidade Simples\n\n| Aspecto | Probabilidade simples | Probabilidade condicional |\n|--------|------------------------|---------------------------|\n| Universo (denominador) | **Total original** de casos possíveis | **Total de casos que atendem à condição informada** |\n| Foco | Situação sem informação extra | Situação **após** saber que a condição ocorreu |\n| Exemplo de denominador | 20 pulseiras (todas) | 12 pulseiras de prata (sob a condição “é de prata”) |\n\n---\n\n### Complementar vs Contagem Direta (“Pelo menos um”)\n\n| Aspecto | Contagem direta | Complementar |\n|--------|------------------|-------------|\n| Ideia | Somar casos com 1, 2, 3, ... sucessos | Calcular **nenhum sucesso** e fazer 1 − isso |\n| Quando usar | Poucos casos, fácil enumerar | Quando “pelo menos um” em **muitas tentativas** |\n\n---\n\n### “Ou” Exclusivo vs União\n\n| Aspecto | “Ou” exclusivo (operacional) | União (A ∪ B) |\n|--------|-------------------------------|---------------|\n| Interseção | **Não existe** (não podem ocorrer juntos) | Pode existir |\n| Fórmula | Soma simples: P(A) + P(B) | P(A) + P(B) − P(A ∩ B) |\n| Exemplo | Carro **ou** ônibus em 1 deslocamento | “Ser homem” **ou** “ser professor” (podem coincidir) |\n\n---\n\n### Condicional vs Independência\n\n| Aspecto | Condicional | Independência |\n|--------|-------------|---------------|\n| Universo | **Redefinido** pela condição | Universo **original** mantido |\n| Operação típica | Fração com universo restrito | Produto: P(A ∩ B) = P(A)·P(B) |\n| Uso | Quando há informação prévia (condição) | Quando um evento **não afeta** o outro |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Probabilidade Condicional**\n\n* **Regra**: P(A|B) = P(A ∩ B) / P(B).  \n* **Interpretação**: condição **vai embaixo**; o que não satisfaz a condição é impossível naquele cenário.\n* **Exemplo (Pulseiras)**:  \n  João: 9 pulseiras (4 prata, 5 ouro). Pedro: 11 pulseiras (8 prata, 3 ouro).  \n  Total: 20; pratas: 12.  \n  Condição: retirou e viu que é de prata → universo = 12 (pratas).  \n  Evento: ser de João entre as pratas = 4.  \n  P(ser de João | é de prata) = 4/12 = 1/3.  \n  > Não use 20 no denominador; ouro fica fora do universo após a condição.\n\n---\n\n**2. Complementar (“Pelo menos um”)**\n\n* **Regra geral**: P(“pelo menos um sucesso”) = **1 − P(nenhum sucesso)**.\n* **Passos**:\n  1) Verifique **independência** entre tentativas.\n  2) Calcule P(nenhum) multiplicando as probabilidades de falha.\n  3) Faça 1 − P(nenhum).\n* **Exemplo (Vendedor)**:  \n  Três clientes, probabilidade de vender por cliente = 60% (independentes).  \n  P(nenhuma) = (1 − 0,6)³ = 0,4³ = 0,064.  \n  P(≥1 venda) = 1 − 0,064 = 0,936 = 93,6%.\n\n---\n\n**3. Independência**\n\n* **Regra**: se A e B são independentes → **P(A ∩ B) = P(A)·P(B)**.\n* **Aplicação típica**: tentativas repetidas (clientes distintos, lançamentos etc.), quando o enunciado indicar ou for razoável que um não afete o outro.\n* **Ligação com “pelo menos um”**: em séries de tentativas independentes, use o complementar para agilizar.\n\n---\n\n**4. “Ou” Exclusivo Operacional**\n\n* **Regra**: em escolhas excludentes (não podem ocorrer juntas) → **P(A ou B) = P(A) + P(B)**.\n* **Exemplo (Beatriz – carro ou ônibus)**:  \n  Carro: 90% das viagens; atraso 10% → 9 atrasos em 90; 81 sem atraso.  \n  Ônibus: 10% das viagens; atraso 30% → 3 atrasos em 10; 7 sem atraso.  \n  “Carro ou ônibus” é excludente; não há simultaneidade.\n\n---\n\n**5. Técnica dos 100 (percentuais)**\n\n* **Regra**: transformar percentuais em **100 unidades** para facilitar contagem.\n* **Aplicação**: problemas com percentuais em cascata (como o da sopa).\n* **Exemplo (Sopa – Bayes sem fórmula)**:  \n  Frequência de preparo: João 40%, José 40%, Maria 20%.  \n  Taxa de “salgada”: João 10%, José 5%, Maria 20%.  \n  Suponha 100 sopas:  \n  • João 40 → 4 salgadas  \n  • José 40 → 2 salgadas  \n  • Maria 20 → 4 salgadas  \n  Total salgadas: 10.  \n  Condição: “sopa salgada” → universo = 10.  \n  P(José | salgada) = 2/10 = 0,2.  \n  > Transforme percentuais em 100 unidades para somar apenas os compatíveis com a condição.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n1. Usar o **total original** no denominador em problemas condicionais.  \n   Correto: denominador é o total sob a condição (ex.: só “pratas”, só “atrasos”, só “salgadas”).\n\n2. Tratar “ou” excludente como união com interseção.  \n   Em escolhas operacionais (carro/ônibus), **não há simultaneidade**.\n\n3. Esquecer de restringir o **numerador** à mesma condição do denominador.  \n   Em condicionais, recorte do numerador e do denominador deve ser o mesmo.\n\n4. Ignorar **independência** antes de multiplicar probabilidades.  \n   Se o enunciado não garantir (ou não for razoável), cuidado ao multiplicar.\n\n5. Calcular “pelo menos um” somando muitos casos.  \n   Use o complementar: **1 − P(nenhum)**.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **probabilidade simples** de **condicional** (universo original vs universo restrito)?\n* Lembrei que **“condição vai embaixo”** (denominador = casos que satisfazem a condição)?\n* Em problemas condicionais, restringi **numerador e denominador** ao **mesmo recorte**?\n* Estou usando **1 − P(nenhum)** para “pelo menos um / ao menos / no mínimo”, após checar independência?\n* Verifiquei **independência** antes de multiplicar probabilidades em tentativas repetidas?\n* Em escolhas como **carro ou ônibus**, tratei o “ou” como **excludente**, sem interseção?\n* Usei a técnica dos **100 casos** para problemas com percentuais em cascata (como o da sopa e o atraso)?\n* Lembro que **P(A) + P(Aᶜ) = 1** e posso usar isso para complementar rapidamente?\n* Estou simplificando frações e, quando útil, convertendo entre **fração, decimal e porcentagem**?",
+  "mapa_mental": "# 🧮 Probabilidade III\n## 🎯 Conceitos Centrais\n### 💡 Probabilidade Condicional\n- Notação P(A|B)\n- Universo restrito B\n- Condição no denominador\n- Evento no numerador\n- Gatilhos “sabendo que”\n### 💡 Espaço Amostral Restrito\n- Subconjunto da condição\n- Casos incompatíveis excluídos\n- Total ajustado\n- Mesmo recorte do evento\n- Uso em percentuais\n### 💡 Evento Complementar\n- Notação A complementar\n- Soma igual a um\n- P(Ac) = 1 − P(A)\n- “O que falta”\n- Base “pelo menos um”\n## 🧩 Relações Entre Eventos\n### ⚙️ Independência\n- Não influência mútua\n- P(A ∩ B) = P(A)P(B)\n- Tentativas sucessivas\n- Checar no enunciado\n- Uso em séries\n### ⚙️ Dependência e Condicional\n- Universo redefinido\n- Probabilidade ajustada\n- Informação prévia\n- Não multiplicar direto\n- Comparação com independência\n### 🔀 “Ou” e União\n- “Ou” inclusivo\n- Fórmula união\n- Soma menos interseção\n- “Ou” exclusivo\n- Escolhas excludentes\n## 🧮 Técnicas de Cálculo\n### 🧮 Passos Condicional\n- Identificar condição\n- Redefinir universo\n- Restringir evento\n- Montar fração\n- Simplificar resultado\n### 🧮 “Pelo Menos Um”\n- Pensar em complementar\n- Calcular nenhum sucesso\n- Multiplicar falhas\n- 1 menos P(nenhum)\n- Requer independência\n### 🧮 Percentuais e Contagens\n- Padronizar em 100\n- Transformar em frequências\n- Somar casos relevantes\n- Facilitar frações\n- Evitar erro aritmético\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Condicional\n- Usar total original\n- Ignorar universo restrito\n- Numerador fora da condição\n- Descartar gatilhos textuais\n- Misturar dependência\n### 🚨 “Ou” e União\n- Tratar exclusivo como união\n- Criar interseção impossível\n- Ignorar natureza da escolha\n- Somar probabilidades indevidas\n- Não distinguir tipos de “ou”\n### 🚨 Complementar e Séries\n- Esquecer P(Ac)\n- Somar muitos casos\n- Ignorar independência\n- Confundir porcentagem e contagem\n- Não usar 1 − P(nenhum)",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Espaço e Eventos",
+      "description": "Espaço e Eventos — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual conjunto reúne todos os resultados possíveis de um experimento aleatório?",
+          "back": "Espaço amostral",
+          "hint": "Termo técnico da teoria dos conjuntos",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como se denomina o subconjunto de resultados favoráveis a uma ocorrência?",
+          "back": "Evento",
+          "hint": "É um subconjunto do espaço amostral",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-3",
+          "front": "Que operação representa o conectivo “ou” entre eventos?",
+          "back": "União",
+          "hint": "Operação de teoria dos conjuntos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "operacoes"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Uniões e Independência",
+      "description": "Uniões e Independência — 2 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "O que deve ser verificado antes de somar probabilidades em uma união?",
+          "back": "Se têm algo em comum",
+          "hint": "Verifique a intersecção",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "soma-probabilidades"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Como se classificam decisões cujo resultado não influencia as tentativas seguintes?",
+          "back": "Independentes",
+          "hint": "Ausência de dependência causal",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "eventos"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Probabilidade Condicional",
+      "description": "Probabilidade Condicional — 3 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "O que acontece com o universo de resultados quando uma condição é observada?",
+          "back": "Existe uma condição",
+          "hint": "Refere-se à restrição do espaço amostral",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "probabilidade-condicional"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Em um cálculo condicional, qual conjunto deve compor o denominador?",
+          "back": "A condição",
+          "hint": "O que restringe o espaço amostral",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "probabilidade-condicional"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual proporção deve ser calculada para obter uma probabilidade condicional?",
+          "back": "O que serve dividido pelo que atende à condição",
+          "hint": "Envolve a regra da probabilidade condicional",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "probabilidade-condicional"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Evento Complementar",
+      "description": "Evento Complementar — 3 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Como se denomina o evento formado pelos resultados que faltam para completar o universo?",
+          "back": "Evento complementar",
+          "hint": "O que falta para o todo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "eventos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual igualdade relaciona as probabilidades de um evento e de seu complementar?",
+          "back": "A soma das probabilidades de um evento e de seu complementar é igual à unidade",
+          "hint": "A soma total é sempre 1",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Em que tipo de situação o cálculo pelo complementar costuma simplificar a probabilidade?",
+          "back": "Para calcular a probabilidade de ocorrer pelo menos uma vez em tentativas independentes",
+          "hint": "Evita cálculos exaustivos",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "metodologia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Aplicações Numéricas",
+      "description": "Aplicações Numéricas — 3 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Na caixa com 4 pulseiras prateadas de João e 8 de Pedro, qual a chance de uma prateada ser de João?",
+          "back": "1/3",
+          "hint": "Cálculo de probabilidade simples",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "exercicios"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-13",
+          "front": "Uma sopa salgada foi feita por João, José ou Maria; qual a chance de ser de José?",
+          "back": "0,2",
+          "hint": "Cálculo de probabilidade simples",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "exercicios"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-14",
+          "front": "Sabendo que Beatriz chegou atrasada, qual a chance de ter usado ônibus?",
+          "back": "1/4",
+          "hint": "Cálculo de probabilidade condicional",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "raciocinio-logico",
+            "probabilidade",
+            "exercicios"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em probabilidade, o espaço amostral representa:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O conjunto dos eventos favoráveis que atendem à condição específica do problema",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere a um 'evento' ou 'evento favorável', que é um subconjunto do espaço amostral. O evento favorável é o resultado ou conjunto de resultados que nos interessa em um determinado problema, enquanto o espaço amostral engloba todas as possibilidades."
+        },
+        {
+          "id": "b",
+          "text": "O conjunto dos resultados que possuem características em comum entre dois ou mais eventos",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se aproxima da definição de interseção de eventos, onde se busca os resultados que são comuns a dois ou mais eventos. O espaço amostral, por outro lado, é o universo completo de todos os resultados possíveis do experimento, sem restrições a características comuns entre subconjuntos."
+        },
+        {
+          "id": "c",
+          "text": "O conjunto de todos os resultados possíveis de um experimento aleatório",
+          "correct": true,
+          "explanation": "Correta. O espaço amostral, na teoria das probabilidades, é o conjunto de todos os resultados possíveis e distintos de um experimento aleatório. Por exemplo, ao lançar um dado de seis faces, o espaço amostral é {1, 2, 3, 4, 5, 6}, abrangendo todas as saídas concebíveis para esse evento."
+        },
+        {
+          "id": "d",
+          "text": "A razão entre o número de eventos favoráveis e o número total de possibilidades",
+          "correct": false,
+          "explanation": "Incorreta. Esta é a definição clássica de probabilidade de um evento. A probabilidade de um evento é calculada dividindo o número de resultados favoráveis pelo número total de resultados possíveis no espaço amostral, mas não define o espaço amostral em si."
+        }
+      ],
+      "explanation": "Correta. O espaço amostral, na teoria das probabilidades, é o conjunto de todos os resultados possíveis e distintos de um experimento aleatório. Por exemplo, ao lançar um dado de seis faces, o espaço amostral é {1, 2, 3, 4, 5, 6}, abrangendo todas as saídas concebíveis para esse evento.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Quando uma questão de probabilidade apresenta a expressão 'ou' entre dois eventos, isso indica:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Que se trata de uma operação de união, podendo ou não haver elementos em comum",
+          "correct": true,
+          "explanation": "Correta. Na teoria das probabilidades, a palavra 'ou' entre dois eventos (A e B) geralmente indica a união desses eventos (A ∪ B). Isso significa que estamos interessados nos resultados em que A ocorre, ou B ocorre, ou ambos ocorrem. Por exemplo, se queremos saber a probabilidade de tirar um número par 'ou' um número maior que 4 em um dado, incluímos os números {2, 4, 6} (pares) e {5, 6} (maiores que 4), resultando em {2, 4, 5, 6}, onde o 6 é um elemento em comum."
+        },
+        {
+          "id": "b",
+          "text": "Que os eventos são mutuamente exclusivos e nunca podem ter elementos compartilhados",
+          "correct": false,
+          "explanation": "Incorreta. Embora a união possa envolver eventos mutuamente exclusivos (que não possuem elementos em comum), a expressão 'ou' não *implica* necessariamente que sejam mutuamente exclusivos. Ela abrange tanto eventos com interseção quanto eventos sem interseção. Se fossem mutuamente exclusivos, a probabilidade da união seria simplesmente a soma das probabilidades individuais."
+        },
+        {
+          "id": "c",
+          "text": "Que os eventos devem ocorrer simultaneamente, caracterizando uma interseção",
+          "correct": false,
+          "explanation": "Incorreta. A ocorrência simultânea de eventos é geralmente indicada pela expressão 'e', que em teoria dos conjuntos corresponde à operação de interseção. A expressão 'ou' sugere que pelo menos um dos eventos ocorre, o que é característico da união."
+        },
+        {
+          "id": "d",
+          "text": "Que a probabilidade deve ser calculada multiplicando as chances de cada evento",
+          "correct": false,
+          "explanation": "Incorreta. A multiplicação das probabilidades é utilizada para calcular a probabilidade de eventos independentes que ocorrem em sequência ou simultaneamente (interseção). Para eventos ligados pelo 'ou' (união), a fórmula geral envolve a soma das probabilidades individuais e a subtração da probabilidade da interseção (P(A ou B) = P(A) + P(B) - P(A e B))."
+        }
+      ],
+      "explanation": "Correta. Na teoria das probabilidades, a palavra 'ou' entre dois eventos (A e B) geralmente indica a união desses eventos (A ∪ B). Isso significa que estamos interessados nos resultados em que A ocorre, ou B ocorre, ou ambos ocorrem. Por exemplo, se queremos saber a probabilidade de tirar um número par 'ou' um número maior que 4 em um dado, incluímos os números {2, 4, 6} (pares) e {5, 6} (maiores que 4), resultando em {2, 4, 5, 6}, onde o 6 é um elemento em comum.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Beatriz se desloca para o trabalho de carro próprio 90% das vezes e de ônibus 10% das vezes. Quando vai de ônibus, chega atrasada 30% das vezes; quando vai de carro, chega atrasada 10% das vezes. Sabendo que em determinado dia ela chegou atrasada, a abordagem correta para calcular a probabilidade de ter ido de ônibus é:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Considerar o total de viagens (100%) como denominador e as viagens de ônibus atrasadas como numerador",
+          "correct": false,
+          "explanation": "Incorreta. Considerar o total de viagens (100%) como denominador seria apropriado se a pergunta fosse sobre a probabilidade de 'ir de ônibus E chegar atrasada' sem nenhuma informação prévia. No entanto, a frase 'Sabendo que em determinado dia ela chegou atrasada' estabelece uma condição, alterando o espaço amostral relevante para o cálculo."
+        },
+        {
+          "id": "b",
+          "text": "Considerar apenas as viagens atrasadas como denominador e as viagens de ônibus atrasadas como numerador",
+          "correct": true,
+          "explanation": "Correta. Esta é a essência da probabilidade condicional, frequentemente expressa pela fórmula P(A|B) = P(A e B) / P(B). Neste caso, 'B' é o evento de Beatriz ter chegado atrasada, e 'A' é o evento de ter ido de ônibus. A condição 'chegou atrasada' restringe o universo de possibilidades para apenas os cenários em que o atraso ocorreu. Assim, o denominador deve ser a probabilidade total de atraso, e o numerador, a probabilidade de ter ido de ônibus E chegado atrasada."
+        },
+        {
+          "id": "c",
+          "text": "Somar as probabilidades de atraso de ambos os meios de transporte e dividir pela frequência de uso do ônibus",
+          "correct": false,
+          "explanation": "Incorreta. Somar as probabilidades de atraso de ambos os meios de transporte e dividir pela frequência de uso do ônibus não corresponde a nenhuma fórmula padrão de probabilidade. A probabilidade condicional exige que o denominador seja a probabilidade do evento que já ocorreu (o atraso), e o numerador, a probabilidade da interseção entre o evento que se quer calcular (ir de ônibus) e o evento que já ocorreu (o atraso)."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar a probabilidade de ir de ônibus pela probabilidade de chegar atrasada de carro",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a probabilidade de ir de ônibus pela probabilidade de chegar atrasada de carro não faz sentido lógico ou matemático neste contexto. Essa operação misturaria eventos e condições de forma incorreta, não representando a probabilidade condicional solicitada."
+        }
+      ],
+      "explanation": "Correta. Esta é a essência da probabilidade condicional, frequentemente expressa pela fórmula P(A|B) = P(A e B) / P(B). Neste caso, 'B' é o evento de Beatriz ter chegado atrasada, e 'A' é o evento de ter ido de ônibus. A condição 'chegou atrasada' restringe o universo de possibilidades para apenas os cenários em que o atraso ocorreu. Assim, o denominador deve ser a probabilidade total de atraso, e o numerador, a probabilidade de ter ido de ônibus E chegado atrasada.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Segundo a doutrina de probabilidade, quando uma questão envolve apenas porcentagens sem valores absolutos, a estratégia recomendada é:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Converter todas as porcentagens em frações irredutíveis antes de realizar qualquer cálculo",
+          "correct": false,
+          "explanation": "Incorreta. Embora converter porcentagens em frações seja matematicamente válido, em muitas situações, especialmente em problemas mais complexos com várias etapas, trabalhar com frações pode ser mais trabalhoso do que com um valor base. A estratégia recomendada visa simplificar o processo."
+        },
+        {
+          "id": "b",
+          "text": "Assumir um valor base conveniente, como 100 unidades, para facilitar os cálculos",
+          "correct": true,
+          "explanation": "Correta. Quando uma questão de probabilidade apresenta apenas porcentagens, uma estratégia didática e eficaz é assumir um valor base conveniente, como 100 ou 1000 unidades. Isso transforma os percentuais abstratos em números inteiros concretos, facilitando a visualização e a contagem dos eventos. Por exemplo, se 40% das vezes algo acontece, podemos considerar que em 100 tentativas, 40 vezes isso ocorreu, tornando os cálculos de proporção mais intuitivos."
+        },
+        {
+          "id": "c",
+          "text": "Multiplicar todas as porcentagens entre si para obter o resultado final",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar todas as porcentagens entre si é uma operação específica para calcular a probabilidade de uma sequência de eventos independentes, ou a probabilidade de uma interseção de eventos independentes. Não é uma estratégia geral para resolver qualquer problema que envolva apenas porcentagens."
+        },
+        {
+          "id": "d",
+          "text": "Trabalhar diretamente com as porcentagens em forma decimal sem conversão",
+          "correct": false,
+          "explanation": "Incorreta. Trabalhar diretamente com porcentagens em forma decimal (por exemplo, 0,40 para 40%) é matematicamente correto e comum. Contudo, para muitos estudantes e em certas estruturas de problemas, assumir um valor base (como 100) pode ser mais intuitivo e menos propenso a erros de cálculo, especialmente quando se trata de probabilidades condicionais ou eventos múltiplos. A questão pede a 'estratégia recomendada' para facilitar, e a base 100 é um facilitador didático."
+        }
+      ],
+      "explanation": "Correta. Quando uma questão de probabilidade apresenta apenas porcentagens, uma estratégia didática e eficaz é assumir um valor base conveniente, como 100 ou 1000 unidades. Isso transforma os percentuais abstratos em números inteiros concretos, facilitando a visualização e a contagem dos eventos. Por exemplo, se 40% das vezes algo acontece, podemos considerar que em 100 tentativas, 40 vezes isso ocorreu, tornando os cálculos de proporção mais intuitivos.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "A propriedade que estabelece a relação entre um evento e seu complementar afirma que a soma de suas probabilidades é igual à unidade. Essa propriedade é particularmente útil quando:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O cálculo direto do evento de interesse envolve múltiplas possibilidades favoráveis, tornando mais simples calcular o que não ocorre",
+          "correct": true,
+          "explanation": "Correta. A propriedade do evento complementar (P(A) + P(A') = 1, onde A' é o complementar de A) é extremamente útil quando o cálculo direto da probabilidade de um evento 'A' é complicado, pois envolve muitas possibilidades. Nesses casos, é mais fácil calcular a probabilidade de 'não A' (P(A')) e, em seguida, subtrair esse valor de 1 para obter P(A). Um exemplo clássico é calcular a probabilidade de 'pelo menos um' evento ocorrer, que é mais simples de calcular como 1 menos a probabilidade de 'nenhum' evento ocorrer."
+        },
+        {
+          "id": "b",
+          "text": "O espaço amostral contém elementos que pertencem simultaneamente ao evento e ao seu complementar",
+          "correct": false,
+          "explanation": "Incorreta. Por definição, um evento e seu complementar são conjuntos disjuntos (não possuem elementos em comum) e sua união forma todo o espaço amostral. Portanto, é impossível que o espaço amostral contenha elementos que pertençam simultaneamente ao evento e ao seu complementar. Essa afirmação contradiz a própria natureza dos eventos complementares."
+        },
+        {
+          "id": "c",
+          "text": "A questão solicita explicitamente o cálculo de probabilidades condicionais com restrições complexas",
+          "correct": false,
+          "explanation": "Incorreta. Embora a propriedade do complementar possa ser aplicada em problemas de probabilidade condicional, sua utilidade principal não está em lidar com as 'restrições complexas' da condicionalidade em si. A probabilidade condicional tem suas próprias fórmulas (P(A|B) = P(A e B) / P(B)). A propriedade do complementar serve para simplificar o cálculo de P(A) ou P(A') em qualquer contexto, incluindo o condicional, mas não é sua aplicação primária para as 'restrições'."
+        },
+        {
+          "id": "d",
+          "text": "Os eventos são mutuamente exclusivos e a soma das probabilidades individuais excede a unidade",
+          "correct": false,
+          "explanation": "Incorreta. Eventos mutuamente exclusivos são aqueles que não podem ocorrer ao mesmo tempo (sua interseção é vazia). A soma de suas probabilidades não necessariamente excede a unidade, a menos que a soma de todos os eventos possíveis exceda 1, o que indicaria um erro na definição do espaço amostral ou dos eventos. A propriedade do complementar se aplica a um evento e seu oposto, que por definição são mutuamente exclusivos e sua união é o espaço amostral completo."
+        }
+      ],
+      "explanation": "Correta. A propriedade do evento complementar (P(A) + P(A') = 1, onde A' é o complementar de A) é extremamente útil quando o cálculo direto da probabilidade de um evento 'A' é complicado, pois envolve muitas possibilidades. Nesses casos, é mais fácil calcular a probabilidade de 'não A' (P(A')) e, em seguida, subtrair esse valor de 1 para obter P(A). Um exemplo clássico é calcular a probabilidade de 'pelo menos um' evento ocorrer, que é mais simples de calcular como 1 menos a probabilidade de 'nenhum' evento ocorrer.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Um vendedor com 60% de potencial de venda visita três clientes independentes. Para calcular a probabilidade de realizar pelo menos uma venda, a aplicação do conceito de evento complementar consiste em:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular a probabilidade de vender para cada cliente separadamente e somar os três resultados",
+          "correct": false,
+          "explanation": "Incorreta. Somar as probabilidades de eventos independentes geralmente não é o método correto para calcular a probabilidade de 'pelo menos um' deles ocorrer, especialmente se os eventos não são mutuamente exclusivos. Essa abordagem pode levar a probabilidades superiores a 1, o que é conceitualmente impossível. Para eventos independentes, a probabilidade de ocorrência conjunta ou de 'pelo menos um' exige outras operações."
+        },
+        {
+          "id": "b",
+          "text": "Multiplicar 60% por três e dividir pelo número total de combinações possíveis de vendas",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar a probabilidade de venda individual (60% ou 0,6) pelo número de clientes (três) resulta em 1,8, um valor que excede 100% e, portanto, não representa uma probabilidade válida. Probabilidades são valores entre 0 e 1 (ou 0% e 100%). Essa operação demonstra uma compreensão equivocada de como as probabilidades são combinadas em múltiplos ensaios independentes. A divisão posterior por 'combinações possíveis' não corrige o erro fundamental."
+        },
+        {
+          "id": "c",
+          "text": "Calcular a probabilidade de vender para exatamente um cliente e multiplicar por três",
+          "correct": false,
+          "explanation": "Incorreta. 'Pelo menos uma venda' significa que o vendedor pode ter feito uma, duas ou três vendas. Calcular a probabilidade de vender para 'exatamente um cliente' considera apenas um desses cenários possíveis. Essa abordagem ignoraria as situações em que o vendedor realiza duas ou três vendas, subestimando significativamente a probabilidade total de 'pelo menos uma venda'. Para obter a probabilidade de 'pelo menos uma', seria necessário somar as probabilidades de exatamente uma venda, exatamente duas vendas e exatamente três vendas, ou usar o método do evento complementar, que é mais eficiente."
+        },
+        {
+          "id": "d",
+          "text": "Calcular a probabilidade de não realizar nenhuma venda nos três clientes e subtrair esse valor de 1",
+          "correct": true,
+          "explanation": "Correta. O conceito de evento complementar é fundamental em probabilidade e se aplica perfeitamente a cenários de 'pelo menos um'. A probabilidade de um evento ocorrer é igual a 1 menos a probabilidade de seu evento complementar. No caso de 'realizar pelo menos uma venda', o evento complementar é 'não realizar nenhuma venda'. Assim, calcula-se a probabilidade de não vender para nenhum dos três clientes (P(não vender ao C1) * P(não vender ao C2) * P(não vender ao C3), devido à independência) e subtrai-se esse resultado de 1. Se a chance de vender é 60% (0,6), a chance de não vender é 40% (0,4). A probabilidade de não vender para nenhum dos três clientes é 0,4 * 0,4 * 0,4 = 0,064. Portanto, a probabilidade de realizar pelo menos uma venda é 1 - 0,064 = 0,936 ou 93,6%."
+        }
+      ],
+      "explanation": "Correta. O conceito de evento complementar é fundamental em probabilidade e se aplica perfeitamente a cenários de 'pelo menos um'. A probabilidade de um evento ocorrer é igual a 1 menos a probabilidade de seu evento complementar. No caso de 'realizar pelo menos uma venda', o evento complementar é 'não realizar nenhuma venda'. Assim, calcula-se a probabilidade de não vender para nenhum dos três clientes (P(não vender ao C1) * P(não vender ao C2) * P(não vender ao C3), devido à independência) e subtrai-se esse resultado de 1. Se a chance de vender é 60% (0,6), a chance de não vender é 40% (0,4). A probabilidade de não vender para nenhum dos três clientes é 0,4 * 0,4 * 0,4 = 0,064. Portanto, a probabilidade de realizar pelo menos uma venda é 1 - 0,064 = 0,936 ou 93,6%.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "16_197438_Probabilidade III.pdf",
+  "coletado_em": "2026-09-23T21:03:46"
+}

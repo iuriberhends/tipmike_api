@@ -1,0 +1,767 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 14,
+  "ordem_no_curso": "14.00",
+  "titulo": "Windows 10 IX",
+  "codigo_aula": "253603",
+  "video_id": "SmAm8eRgYuw=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:38:08",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/SmAm8eRgYuw%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405101&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Windows 10 IX\n\n## Ferramentas nativas do Windows 10\nVamos continuar nossa linha do Windows 10. Agora nós vamos falar e conhecer algumas ferramentas do Windows 10 que estão disponíveis por padrão, ou seja, já acompanham a instalação.\n\nPor exemplo, a ferramenta Desfragmentador de Disco. O que é desfragmentar o disco? É uma ferramenta para desfragmentar o disco. Para quem não conhece, o que é a fragmentação do disco? Quando eu vou gravar uma informação, imaginem uma imagem, o que quer que seja, isso é dividido em vários pedacinhos. Não é gravado tudo inteiro de uma vez; o disco é dividido em vários pedaços e esses pedaços, quando ficam longe uns dos outros dentro do disco, nós temos uma fragmentação.\n\nE o que isso ocasiona? Quando os dados estão muito fragmentados, muito espalhados, imagine uma sala totalmente bagunçada, cheia de brinquedos, e você tem que procurar algo no meio daquela bagunça. Você vai demorar muito tempo. Na hora de fazer a leitura e a gravação desses dados, o disco vai demorar mais tempo.\n\nA desfragmentação se propõe a organizar os arquivos do disco. Normalmente você verá questões dizendo que a desfragmentação tem como objetivo organizar os arquivos do disco rígido, otimizar o tempo de leitura e gravação, algo nesse sentido. Fica mais fácil fazer a análise agora que você conhece um pouco mais dessa ferramenta.\n\n## Agendador de Tarefas\nAgendador de Tarefas: nome bem propício, bem intuitivo. Ele permite basicamente agendar tarefas para o computador. Por exemplo, criar uma tarefa básica, agendar uma atualização. Várias tarefas do próprio Windows podem ser agendadas: “Quero que amanhã, à tarde, ele faça atualização.” Embora a própria atualização do Windows permita definir horários, o Agendador está lá para isso.\n\n## Limpeza de Disco\nLimpeza de Disco é uma ferramenta volta e meia cobrada em prova. É bom conhecê-la. Ela vai fazer uma limpeza no disco, excluir aquilo que não precisamos mais. Você pode escolher desde o que está na Lixeira. Na hora da limpeza, ele mostra o que você vai marcar. Muita gente pensa: “Ah, mas o que está na Lixeira eu ainda posso precisar.” Você pode optar por não marcar a Lixeira. Pode tirar arquivos temporários e diversos outros arquivos, inclusive do sistema, obviamente os que não são necessários.\n\nDe maneira geral, pense assim para a prova: Limpeza de Disco vai eliminar arquivos desnecessários sem risco de o sistema falhar. Se você faz uma limpeza manual, acessando pastas aleatoriamente sem conhecer, você pode excluir coisas importantes e causar problema. Aqui, zero problema: você marca tudo e manda excluir.\n\n“Mas e o que está na Lixeira? Pode ser importante.” Se está na Lixeira, teoricamente pode ser descartado. Claro, às vezes você jogou sem querer; aí é outra história. Algumas opções: Arquivos de Programas Baixados, Arquivos Temporários, entre outros, inclusive arquivos do sistema (os que não são necessários). A Lixeira estará entre eles. Ele calcula o tamanho; no meu caso, já estava com cerca de 1 GB.\n\nHoje, como os discos estão muito grandes, muita gente acaba nem usando a ferramenta, porque não há necessidade. Mas para prova, conheça.\n\n## Programas nativos do Windows 10\nFalamos há pouco de ferramentas (coisas para consertar/manter o computador). Agora vamos falar de programas, algo mais genérico. Programas nativos do Windows 10 já vêm na instalação. Não precisa baixar. Atualizações podem ser necessárias ao longo do uso.\n\n### Paint\nTalvez você já tenha brincado com ele. Minha filha gosta de fazer desenhos ali, ou pelo menos tentar. É um editor de imagens simples, básico. Permite editar, visualizar e criar imagens; desenhar e pintar. É bom saber que a extensão padrão dele é BMP. Quando salvo um arquivo no Paint, ele é salvo com a extensão BMP. Não é a única extensão: trabalha com PNG, JPEG, GIF, entre outras, mas o padrão é BMP.\n\n### Internet Explorer 11 e Microsoft Edge\nInternet Explorer 11: está pela hora da morte. Em algumas atualizações do Windows, ele já não vem mais; você atualiza e o Internet Explorer some. Não é regra. A Microsoft ainda está no “vai, não vai” dependendo da atualização, região, idioma. Mas já foi anunciado há muito tempo que o Internet Explorer seria descontinuado. Ele é um navegador para acessar páginas da internet, bastante antigo. No Windows 10, para quem ainda tem, é a versão 11. No futuro, ele vai deixar de existir. Já é bom saber disso. Em alguns computadores ele ainda está presente; em outros, não.\n\nMas o “cara do momento” é o Microsoft Edge, o navegador da Microsoft que veio para substituir o Internet Explorer, alvo de muitos memes porque o IE era lento e dava muitos problemas. O Edge, ao longo do tempo, sofreu uma modificação drástica: novo ícone, nova logo. Hoje, o Edge usa o motor do Chromium.\n\nQuem é o Chromium? Você provavelmente já ouviu falar no Google Chrome, um dos navegadores mais usados. O Chromium é a versão livre, com código-fonte aberto, e por isso pôde ser usado no desenvolvimento do Edge. Com isso, além de mudanças visuais, alguns atalhos do Edge mudaram para ficar iguais aos do Chrome. Por exemplo, para navegar no modo privativo (no Edge, InPrivate). Os atalhos mudaram em relação ao Internet Explorer.\n\nDetalhes importantes para prova:\n- O Edge é o navegador padrão do Windows 10. Qual é o navegador padrão do Windows 10? Edge.\n- Quando você clica em um link, se não mudou nada na máquina, vai abrir no Edge.\n\nOutro detalhe: quando falamos da Cortana, mesmo que você tenha instalado outro navegador (Firefox, Chrome, etc.), se você usar a Cortana para fazer uma pesquisa na web, por padrão ela vai abrir no Edge e usar o Bing como motor de busca. Mesmo que você tenha trocado o navegador padrão para o Chrome e mudado o motor de busca do Edge para Google, a Cortana, por padrão, vai abrir o Edge e usar o Bing. Existem formas de mudar isso com modificações fora do padrão, mas foge ao nosso contexto de concurso.\n\n### Bloco de Notas\nBloco de Notas é um editor de textos bem simples. Não permite formatações avançadas. O que você precisa saber: ele salva com a extensão TXT. A ideia do Bloco de Notas é fazer anotações básicas. Quando você abre um arquivo .txt, por padrão ele abre no Bloco de Notas. Quando cria algo no Bloco de Notas e salva, será .txt.\n\nÉ muito versátil no sentido de que dá para escrever códigos simples, scripts (batch), HTML básico, etc. Mas, para prova, o principal é: a extensão padrão é .txt.\n\n> 🎯 **Dicas de prova:** A extensão padrão do Bloco de Notas é .txt.\n\nEsse cara é diferente do Word. O Word faz parte do pacote Office. O Office não faz parte do Windows. Ele não vem instalado junto com o Windows. Se eu formatar a máquina e instalar o Windows do zero, não vai ter Word lá. Já o Bloco de Notas está lá.\n\n> 🎯 **Dicas de prova:** O Office não faz parte do Windows. O Word não vem instalado por padrão com o Windows.\n\nQual é a extensão que o Word salva por padrão? DOCX.\n\n> 🎯 **Dicas de prova:** O Word salva por padrão em .docx.\n\nComparação que cai em prova:\n- Bloco de Notas: básico, sem formatação avançada.\n- WordPad: intermediário, permite formatações a mais.\n- Word (Office): avançado, editor de textos completo.\n\nSaiba quem é quem nessa hierarquia.\n\n### E-mail e Calendário\nPrograma de E-mail: já vem no Windows 10. É um gerenciador de e-mails, comparável ao Outlook (do pacote Office). Se você não tem o Office, pode usar o E-mail do Windows para cadastrar sua conta e enviar e receber e-mails. Simples, básico, funcional.\n\nCalendário: para você agendar suas tarefas. Pode usar junto com a Cortana para lembretes, cronograma de estudos, etc.\n\n### Microsoft Store\nA loja da Microsoft. Lá você pode adquirir aplicativos gratuitos ou pagos: jogos, editores, aplicativos em geral. Se está na loja, é compatível com Windows 10. Isso não quer dizer que nunca dará problema, mas a teoria é essa.\n\n### OneDrive\nO OneDrive é a ferramenta de computação em nuvem do Windows 10. Ele permite sincronizar seus dados. Você faz login na sua conta Microsoft, e tudo que você armazenar na pasta OneDrive no seu computador vai para a nuvem. Se apagar aqui, apaga lá; fica sincronizado. Cria uma pasta local; tudo que colocar ali sobe para a internet.\n\n💬 **História:** Eu tenho uma pasta chamada “concursos” com subpasta “Gran Cursos Online”, onde guardo materiais de aula. Se meu computador quebrar, está tudo na internet. Troco a máquina, faço login no OneDrive, sincroniza e traz tudo de volta. Muito prático.\n\nPara concurso, o serviço é essencialmente de armazenamento em nuvem e sincronização de arquivos. Já caiu em prova dizendo que o OneDrive é um programa para navegar na internet. Não é esse o papel dele.\n\n## Conexão de Área de Trabalho Remota e Ferramenta de Captura\nConexão de Área de Trabalho Remota permite acessar outro computador remotamente para manutenção ou auxílio, e também receber essa conexão.\n\n💬 **História:** Quando o computador da minha mãe dá algum problema e não posso ir à casa dela, uso esse recurso para conectar do meu computador e resolver, como se estivesse lá.\n\nFerramenta de Captura: para capturar a tela (inteira ou parte). Você pode digitar “captura” para achar. Dá para desenhar a área que quer capturar. Há também atalho de teclado para captura.\n\n## Windows Hello e segurança\nNovidade do Windows 10: o Windows Hello permite sua autenticação no Windows (e em alguns aplicativos) usando recursos biométricos, como reconhecimento facial (webcam homologada) ou leitor de impressão digital. Nem toda webcam funciona; precisa de hardware compatível.\n\nO PIN é diferente de uma senha normal: o PIN fica vinculado à máquina, não à conta Microsoft. Se alguém capturar sua senha e tentar usar em outra máquina, o PIN não funciona lá, porque está associado ao dispositivo. Claro, se furtarem seu computador, poderão formatar e usar a máquina, mas não terão acesso aos seus dados. Você pode aumentar a proteção usando criptografia do disco (BitLocker). O Windows Hello também suporta chaves de segurança físicas (FIDO) e oferece bloqueio dinâmico: você vincula seu celular via Bluetooth; ao se afastar, o PC bloqueia automaticamente.\n\nTudo isso fica em Configurações > Contas > Opções de entrada.\n\n## Complemento para telefone e Armazenamento\nComplemento para o telefone: você pode vincular um Android ou iOS e gerenciar algumas funções do telefone a partir do computador (ver fotos enviadas, por exemplo).\n\nArmazenamento: ferramenta visual que mostra quanto espaço você está usando em cada pasta e por tipo (aplicativos, temporários, imagens, etc.). Às vezes vemos dezenas de gigabytes de fotos e esquecemos de fazer backup. Faça sempre backup.\n\n## Questões comentadas\n\n> 🎯 **Dicas de prova:** Aumentar a segurança do computador, removendo senhas ao acessar o Windows 10 com contas da Microsoft, foi desenvolvido o serviço Windows Hello. Alternativas como “verificação do PIN” ou “leitura biométrica” não são o nome do recurso; o nome é Windows Hello.\n\nSobre aplicativos na categoria Acessórios do Windows:\n- Bloco de Notas: está lá.\n- Ferramenta de Captura: está lá.\n- Paint: está lá.\n- Windows Media Player: é o player padrão de áudio e vídeo.\n- Google Chrome: não é nativo (pode ser instalado, mas não vem).\n\n> 🎯 **Dicas de prova:** Qual navegador web é instalado junto com o Windows 10 e fica disponível em Acessórios? Internet Explorer (para versões que ainda o trazem). Questão sensível a atualizações, mas tradicionalmente é essa a resposta.\n\n> 🎯 **Dicas de prova:** O aplicativo Limpeza de Disco permite selecionar arquivos para remover, como arquivos temporários. Correto.\n\nAnálise sobre recursos do Windows 10:\n1) Painel de Controle é usado para alterar configurações do Windows, assim como a janela Configurações. Correto.\n2) A Central de Segurança do Windows Defender oferece um conjunto robusto de recursos de segurança para manter o PC seguro. Correto segundo a teoria do produto.\n3) Menu Iniciar tem várias opções de personalização, incluindo remover/editar blocos fixados. Correto.\n\nSobre configuração local e drivers:\n- O Windows 10 não suporta automaticamente todos os dispositivos. É preciso ter driver (software que torna possível a comunicação com o dispositivo). Às vezes um dispositivo antigo não tem driver compatível.\n- Drivers são arquivos que permitem que o sistema operacional se comunique com os dispositivos. Correto.\n- Quando conecta um dispositivo, o Windows 10 busca em seu banco de dados de drivers (inclusive via Plug and Play) o driver apropriado. Se não encontrar, instalação manual. Correto.\n\nSobre arquivos ocultos e somente leitura:\n- Atributo “Somente leitura” não impede seleção nem exclusão, apenas edição.\n- “Oculto” impede a seleção quando os arquivos ocultos não estão sendo exibidos. Se a opção “Exibir arquivos ocultos” estiver ativada, eles aparecem e serão selecionados com Ctrl+A.\n- Portanto, com arquivos ocultos exibidos, Ctrl+A seleciona tudo na pasta: pastas e arquivos, inclusive os ocultos e os somente leitura.\n\n## Encerramento\nDepois de muito tempo, finalizamos nossa linha do Windows 10. Espero ter ajudado a reforçar e aprender. Lembrem-se: vocês não estão sozinhos nessa caminhada. Usem o fórum de dúvidas; estamos aqui para ajudar até a sua aprovação, torcendo pela sua nomeação para exercer o cargo dos seus sonhos. Um abraço e até a próxima! Valeu!",
+  "transcricao_meta": {
+    "title": "Windows 10 IX",
+    "subject": "Noções de Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 50130,
+    "createdAt": "2026-02-05T23:40:59.268Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda recursos e ferramentas do Windows 10: navegadores (Edge/Internet Explorer), utilitários de manutenção (Desfragmentação, Limpeza de Disco), aplicativos nativos (Bloco de Notas, Paint, Ferramenta de Captura, Mail), nuvem (OneDrive), segurança e autenticação (Windows Hello, PIN, BitLocker, Bloqueio dinâmico), áreas de trabalho virtuais, drivers/Plug and Play e seleção/atributos de arquivos.\nPrincipais pontos: \n- Microsoft Edge é o padrão; Cortana usa Edge + Bing.\n- Extensões padrão: Paint → BMP; Bloco de Notas → TXT.\n- Desfragmentação melhora desempenho de HDD; Limpeza de Disco é segura.\n- Segurança: Windows Hello, PIN por dispositivo, BitLocker, Bloqueio dinâmico.\n\n## 1. Base / Conceitos Fundamentais\n- **Windows 10**: Sistema operacional com apps nativos e integração com conta da Microsoft.\n- **Aplicativos nativos**:\n  - **Bloco de Notas (Notepad)**: editor de texto simples. Padrão: .txt.\n  - **Paint**: editor básico de imagens. Padrão: .bmp.\n  - **Ferramenta de Captura** / Snip & Sketch: captura de tela.\n  - **Windows Media Player**: mídia.\n  - **Mail (Windows 10)**: cliente de e-mail básico.\n  - **Microsoft Store**: distribuição de apps para Windows 10.\n  - **OneDrive**: armazenamento e sincronização em nuvem.\n- **Navegadores**:\n  - **Microsoft Edge** (base **Chromium**): padrão no Windows 10.\n  - **Internet Explorer 11**: legado; pode ou não estar instalado (varia por versão/idioma/atualização).\n- **Segurança e autenticação**:\n  - **Windows Hello**: biometria e **PIN**.\n  - **PIN**: vinculado ao dispositivo (não à conta).\n  - **BitLocker**: criptografia de disco.\n  - **Bloqueio dinâmico**: bloqueio automático ao afastar um dispositivo Bluetooth.\n- **Gerenciamento e manutenção**:\n  - **Desfragmentação**: reorganiza dados no HDD.\n  - **Limpeza de Disco**: remove arquivos temporários/lixo com segurança.\n  - **Gerenciar armazenamentos**: visualiza uso do disco por categoria.\n- **Interfaces e configurações**:\n  - **Painel de Controle** e **Configurações**: ajuste do sistema.\n  - **Visão de Tarefas** / **Áreas de trabalho virtuais**: múltiplas áreas de trabalho.\n- **Drivers e Plug and Play**:\n  - **Drivers**: permitem comunicação entre hardware e sistema.\n  - **Plug and Play**: busca automática de drivers ao conectar dispositivos.\n\n## 2. Como Funciona / Distinções\n- Bloco de notas vs editores:\n  - **Básico** (Bloco de notas): texto puro, sem formatação.\n  - **Intermediário**: alguma formatação.\n  - **Processador de textos** (ex.: Word): avançado; faz parte do **Pacote Office** (não incluso no Windows).\n- Paint vs outros editores: Paint é básico; salva por padrão em **BMP** (também suporta PNG/JPG).\n- Edge (Chromium) vs Internet Explorer:\n  - Edge é atual, padrão e baseado em **Chromium** (compatibilidade e atalhos semelhantes ao **Chrome**).\n  - Internet Explorer é legado; pode constar em “Acessórios” em provas.\n- Cortana e busca:\n  - Pesquisas iniciadas pela **Cortana** → abrem no **Edge** e usam **Bing**, mesmo que o usuário tenha outro navegador/engine padrão (ex.: **Chrome/Google**).\n- Desfragmentação vs Limpeza vs Backup vs Overclock:\n  - **Desfragmentação**: desempenho de leitura/gravação (HDD).\n  - **Limpeza de Disco**: libera espaço removendo arquivos desnecessários.\n  - **Backup**: cópia de segurança (não melhora desempenho).\n  - **Overclock**: eleva frequência de hardware; não é solução do Windows e traz riscos.\n- Segurança:\n  - **Windows Hello**: recurso oficial de autenticação biométrica/PIN.\n  - **PIN**: fica no dispositivo; diferente da senha da conta Microsoft.\n  - **BitLocker**: protege dados em repouso (disco) com criptografia; sem chave não há acesso, mesmo conectando o disco em outro PC.\n  - **Bloqueio dinâmico**: adiciona conveniência; não substitui senha/biometria.\n- Atributos de arquivo:\n  - **Apenas leitura**: impede modificação, não seleção.\n  - **Oculto**: controla visibilidade; se visível (opção ativada), é selecionável.\n\n## 3. Aplicação Prática / Técnicas\n- Atalhos e comandos:\n  - Captura de tela: **Windows + Shift + S**.\n  - Selecionar tudo no Explorador: **Ctrl + A**.\n- Limpeza segura:\n  - Use **Limpeza de Disco** para remover “Arquivos temporários”, lixeira, etc. É seguro; evita apagar itens críticos.\n- Desfragmentar HDD:\n  - Execute “Desfragmentar e Otimizar Unidades” → escolha o disco HDD → Otimizar.\n- OneDrive (sincronismo):\n  - Vincule uma **conta da Microsoft** → faça login → use a pasta OneDrive local para sincronizar com a nuvem (bidirecional).\n- Conexão de Área de Trabalho Remota:\n  - Abra “Conexão da Área de Trabalho Remota” → informe o computador-alvo → autentique → controle e encerre.\n- Windows Hello e PIN:\n  - Configurações > Contas > Opções de entrada → configurar **Windows Hello** (face/digital) e **PIN**. Verifique hardware compatível (ex.: webcam homologada).\n- BitLocker:\n  - Ative o **BitLocker** (edições compatíveis) no drive do sistema/dados → guarde a chave de recuperação.\n- Bloqueio dinâmico:\n  - Emparelhe o celular via Bluetooth → Configurações > Contas > Opções de entrada > Bloqueio dinâmico → marcar para bloquear quando você se ausentar.\n- Gerenciar armazenamentos:\n  - Configurações > Sistema > Armazenamento → ver uso por categorias e limpar “Arquivos temporários”.\n- Áreas de trabalho virtuais:\n  - Abra **Visão de Tarefas** → criar nova área → arraste janelas entre áreas (não restrito a vizinhas).\n\n## 4. Exemplos e Casos Resolvidos\n- Navegação e buscas:\n  - Usuário define **Chrome** como padrão e Google como engine no Edge. Busca pela **Cortana** → abre no **Edge** e usa **Bing**. Correto.\n- Extensões padrão:\n  - No **Paint**, salvar sem mudar o tipo → arquivo sai como **.bmp**.\n  - No **Bloco de notas**, salvar sem mudar o tipo → arquivo sai como **.txt**.\n- Desempenho do disco:\n  - HDD lento após lotação e muitas exclusões → use **Desfragmentação**. “Overclock” não é solução de SO; “Backup” não melhora desempenho.\n- Segurança de dados:\n  - Notebook furtado; criminoso reinstala o Windows. Sem **BitLocker**, retirar o disco e ler em outro PC pode expor dados. Com **BitLocker**, sem chave não acessa.\n- Seleção de arquivos:\n  - Explorador exibindo arquivos ocultos (mostrados esmaecidos). Pressione **Ctrl + A** → todos os itens visíveis, incluindo ocultos exibidos, são selecionados. “Apenas leitura” não impede a seleção.\n- Áreas de trabalho:\n  - Criar várias áreas via **Visão de Tarefas** e mover janelas para qualquer área (não só vizinhas).\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: Cortana SEMPRE abre no Edge e usa Bing, mesmo com outro navegador/engine padrão.\n\n> Dica de Prova: “Pacote Office” não faz parte do Windows 10. Outlook ≠ Mail do Windows.\n\n> Dica de Prova: Paint salva por padrão em BMP; Bloco de Notas salva por padrão em TXT.\n\n> Dica de Prova: “Limpeza de Disco” é segura; apagar manualmente pastas do sistema pode causar problemas.\n\n> Dica de Prova: Desfragmentação melhora desempenho do HDD; não confundir com Backup ou Overclock.\n\n> Dica de Prova: “Apenas leitura” não impede seleção. Arquivo “oculto” só não é selecionado se não estiver sendo exibido.\n\n> Dica de Prova: **Internet Explorer 11** pode aparecer como item em Acessórios em questões legadas. Edge é o padrão do Windows 10.\n\n> Dica de Prova: Termos oficiais importam: Windows Hello, Visão de Tarefas, Painel de Controle, Windows Defender, Plug and Play.\n\nTabelas de comparação rápidas:\n- Navegadores\n  - IE 11: legado; pode constar em Acessórios; motor antigo; não padrão.\n  - Edge (Chromium): padrão; compatibilidade e atalhos próximos ao **Chrome**.\n- Segurança\n  - Windows Hello: biometria/PIN.\n  - PIN: por dispositivo.\n  - BitLocker: criptografia de disco.\n  - Bloqueio dinâmico: bloqueio automático via Bluetooth.\n\n> Dica de Prova: “Se está na Microsoft Store, é compatível com Windows 10” (compatível ≠ perfeito/sem bugs).",
+  "resumo_bolso": "# Windows 10 IX\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Microsoft Edge (Chromium)**: navegador **padrão** do Windows 10; baseado em **Chromium**, com compatibilidade e atalhos semelhantes ao **Chrome**.\n* **Internet Explorer 11**: navegador **legado**; pode ou não estar instalado e pode aparecer em “Acessórios” em provas; **não é o padrão** no Windows 10.\n* **Cortana**: pesquisas iniciadas pela Cortana **sempre** abrem no **Microsoft Edge** e usam **Bing**, mesmo que outro navegador/mecanismo esteja definido como padrão.\n* **Bloco de Notas (Notepad)**: editor de **texto simples**, sem formatação; extensão padrão **.txt**.\n* **Paint**: editor de imagem **básico**; extensão padrão **.bmp** (também suporta PNG/JPG).\n* **Ferramenta de Captura / Snip & Sketch**: aplicativo nativo para **captura de tela**.\n* **Mail (Windows 10)**: cliente de e-mail **básico** nativo do Windows (diferente do Outlook, que é do Office).\n* **OneDrive**: armazenamento e sincronização em nuvem integrado à **conta Microsoft**; sincroniza a pasta local com a nuvem.\n* **Desfragmentação de disco**: reorganiza dados no **HDD** para melhorar o desempenho de leitura/gravação.\n* **Limpeza de Disco**: remove arquivos temporários/lixo de forma **segura**, liberando espaço sem apagar itens críticos.\n* **Gerenciar armazenamentos**: mostra o uso do disco por categoria e permite limpar arquivos temporários.\n* **Windows Hello**: conjunto de métodos de autenticação (biometria + **PIN**).\n* **PIN do Windows 10**: código **vinculado ao dispositivo**, diferente da senha da conta Microsoft.\n* **BitLocker**: criptografia de disco; protege dados em repouso, mesmo se o disco for conectado a outro PC, desde que não se tenha a chave.\n* **Bloqueio dinâmico**: usa dispositivo Bluetooth (ex.: celular) para **bloquear automaticamente** o PC quando o usuário se afasta.\n* **Plug and Play + Drivers**: Windows detecta hardware e busca/instala **drivers** automaticamente ao conectar o dispositivo.\n* **Áreas de trabalho virtuais / Visão de Tarefas**: permitem múltiplas áreas de trabalho; janelas podem ser movidas entre **quaisquer** áreas.\n* **Atributos de arquivo**: **Apenas leitura** (impede modificação, não seleção); **Oculto** (controla visibilidade; se visível, é selecionável).\n* **Atalhos úteis**: **Windows + Shift + S** (captura de tela); **Ctrl + A** (selecionar todos os itens visíveis no Explorador).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Edge vs Internet Explorer 11\n\n| Aspecto | Edge (Chromium) | Internet Explorer 11 |\n|--------|------------------|----------------------|\n| **Padrão no Windows 10** | **Sim** | **Não** (legado) |\n| **Motor** | Chromium | Motor antigo (legado) |\n| **Local em menus/provas** | Apps modernos | Pode aparecer em “Acessórios” |\n| **Uso típico em prova** | Atual, compatível, padrão | Herança, compatibilidade com sistemas antigos |\n\n---\n\n### Desfragmentação vs Limpeza de Disco vs Backup vs Overclock\n\n| Aspecto | Desfragmentação | Limpeza de Disco | Backup | Overclock |\n|--------|------------------|------------------|--------|-----------|\n| **Função principal** | Otimizar acesso a dados no **HDD** | Liberar espaço removendo arquivos desnecessários | Cópia de segurança de dados | Aumentar frequência de hardware |\n| **Impacto em desempenho do disco** | **Melhora** leitura/gravação em HDD | Indireto (mais espaço) | Não melhora desempenho | Pode aumentar desempenho geral, com riscos; não é recurso do Windows |\n| **Ferramenta do Windows** | Sim | Sim | Sim (histórico/imagem, cópias) | Não é solução oficial de manutenção do Windows |\n\n---\n\n### Bloco de Notas vs Processador de Textos (Word)\n\n| Aspecto | Bloco de Notas | Word (Office) |\n|--------|-----------------|---------------|\n| **Tipo** | Editor de texto simples | Processador de textos avançado |\n| **Formatação** | Não possui | Completa (estilos, imagens etc.) |\n| **Extensão padrão** | **.txt** | .docx, .doc |\n| **Incluso no Windows?** | **Sim** (nativo) | **Não** (faz parte do Pacote Office, separado do Windows) |\n\n---\n\n### Paint vs Editores avançados\n\n| Aspecto | Paint |\n|--------|-------|\n| **Tipo** | Editor de imagens **básico** |\n| **Extensão padrão** | **.bmp** |\n| **Outros formatos suportados** | PNG, JPG etc. |\n| **Incluso no Windows?** | **Sim** (nativo) |\n\n---\n\n### Atributos: Apenas leitura vs Oculto\n\n| Aspecto | Apenas leitura | Oculto |\n|--------|----------------|--------|\n| **Função** | Impede **modificar** o conteúdo | Controla **visibilidade** do arquivo/pasta |\n| **Seleção (Ctrl + A)** | Continua selecionável | Se estiver visível (opção ativada), é selecionado normalmente |\n| **Impacto em edição** | Não permite gravação de alterações | Não interfere em edição se estiver acessível |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Cortana → Edge + Bing**\n\n* **Aplicação**: Toda pesquisa web iniciada pela **Cortana**.\n* **Regra**: **Sempre** abre no **Microsoft Edge** e usa **Bing**, mesmo com outro navegador/engine (ex.: Chrome/Google) definidos como padrão.\n* **Exemplo**: Usuário define Chrome como navegador padrão e Google como engine → busca pela Cortana → abre Edge usando Bing.\n\n---\n\n**2. Extensões padrão de aplicativos nativos**\n\n* **Aplicação**: Salvar arquivo sem alterar o tipo.\n* **Regra**: **Bloco de Notas → .txt** | **Paint → .bmp**.\n* **Exemplos**:\n  * No **Paint**, salvar sem mudar o tipo → arquivo sai como **.bmp**.\n  * No **Bloco de Notas**, salvar sem mudar o tipo → arquivo sai como **.txt**.\n\n---\n\n**3. Seleção de arquivos (Ctrl + A)**\n\n* **Aplicação**: Explorador de Arquivos.\n* **Regra**: **Ctrl + A** seleciona **todos os itens visíveis**; se arquivos ocultos estiverem sendo exibidos (esmaecidos), também serão selecionados.\n* **Exemplo**: Opção “Mostrar arquivos ocultos” ativada → Ctrl + A seleciona inclusive os ocultos exibidos.\n\n---\n\n**4. PIN x Senha da conta Microsoft**\n\n* **Aplicação**: Login e autenticação no Windows 10.\n* **Regra**: **PIN** é **local ao dispositivo**; a senha da conta Microsoft é **global** (usada em outros dispositivos/serviços).\n* **Exemplo**: Alterar o PIN em um PC não altera a senha da conta Microsoft usada para login em outros computadores.\n\n---\n\n**5. BitLocker – proteção de dados em repouso**\n\n* **Aplicação**: Criptografia de disco.\n* **Regra**: Sem chave/senha de recuperação, **não há acesso** aos dados, mesmo conectando o disco em outro computador.\n* **Exemplo**: Notebook furtado com BitLocker ativo → criminoso retira o disco e conecta em outro PC → sem a chave de recuperação, não lê os dados.\n\n---\n\n**6. Bloqueio dinâmico – bloqueio automático**\n\n* **Aplicação**: Bloqueio automático de sessão.\n* **Regra**: Com dispositivo Bluetooth emparelhado (ex.: celular) e opção ativada, o Windows bloqueia o PC quando detecta afastamento do dispositivo.\n* **Exemplo**: Usuário se afasta com o celular emparelhado → após algum tempo, o Windows bloqueia a sessão automaticamente.\n\n---\n\n**7. OneDrive – sincronização em nuvem**\n\n* **Aplicação**: Sincronismo de arquivos entre PC e nuvem.\n* **Regra**: Ao vincular uma **conta Microsoft** e usar a pasta OneDrive local, os arquivos são sincronizados de forma **bidirecional** com a nuvem.\n* **Exemplo**: Salvar arquivo na pasta OneDrive do PC → arquivo aparece na conta OneDrive online e em outros dispositivos conectados.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Cortana **sempre** abre buscas no **Edge** usando **Bing**, mesmo com outro navegador/engine padrão configurados.\n* **Pacote Office** (Word, Outlook etc.) **não faz parte** do Windows 10; o sistema traz apps nativos como Bloco de Notas, Paint e Mail.\n* **Paint** salva por padrão em **BMP** e o **Bloco de Notas** salva por padrão em **TXT**.\n* **Limpeza de Disco** é ferramenta **segura** do Windows para remover arquivos temporários e lixeira; não apaga itens críticos do sistema.\n* **Desfragmentação** é o recurso que melhora o desempenho de leitura/gravação em **HDD**; **Backup** não melhora desempenho e **Overclock** não é solução de manutenção do Windows.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Edge** de **Internet Explorer 11** (padrão x legado, Chromium x motor antigo)?\n* Memorizei as extensões padrão: **Bloco de Notas → .txt** e **Paint → .bmp**?\n* Fixei que **Cortana SEMPRE usa Edge + Bing**, independentemente do navegador/engine padrão?\n* Sei que **Desfragmentação** melhora desempenho de **HDD**, enquanto **Limpeza de Disco** apenas libera espaço com segurança?\n* Lembro que **PIN é por dispositivo**, **Windows Hello** usa biometria/PIN, **BitLocker** criptografa o disco e **Bloqueio dinâmico** usa Bluetooth para bloquear automaticamente?\n* Sei que **OneDrive** sincroniza arquivos entre a pasta local e a nuvem usando a **conta Microsoft**?\n* Sei que **“Apenas leitura” não impede seleção** e que arquivos ocultos visíveis são selecionados com **Ctrl + A**?\n* Lembro que **Mail** é cliente de e-mail nativo do Windows e **não é o Outlook** do Pacote Office?",
+  "mapa_mental": "# 💻 Windows 10 IX\n## 🌐 Navegadores e Cortana\n### 🧭 Microsoft Edge\n- Navegador padrão\n- Base Chromium\n- Integrado ao sistema\n- Atalhos tipo Chrome\n### 🧭 Internet Explorer 11\n- Navegador legado\n- Pode vir instalado\n- Acessórios do Windows\n- Não é padrão\n### 🗣️ Cortana e Buscas\n- Usa sempre Edge\n- Mecanismo Bing fixo\n- Ignora navegador padrão\n- Ignora mecanismo padrão\n\n## 🛠️ Aplicativos Nativos e Ferramentas\n### 📄 Bloco de Notas\n- Editor texto simples\n- Texto sem formatação\n- Extensão padrão TXT\n- Não é Office\n### 🎨 Paint e Captura\n- Editor imagem básico\n- Extensão padrão BMP\n- Suporta PNG JPG\n- Ferramenta de Captura\n### 📧 Mail e Store\n- Cliente e-mail básico\n- Diferente de Outlook\n- Microsoft Store apps\n- Compatibilidade Windows 10\n### ☁️ OneDrive\n- Nuvem Microsoft\n- Sincronismo arquivos\n- Integração conta Microsoft\n- Pasta local sincronizada\n### 🧹 Manutenção Disco\n- Desfragmentar HDD\n- Melhorar desempenho\n- Limpeza de Disco segura\n- Remoção arquivos temporários\n\n## 🔐 Segurança e Autenticação\n### 👁️ Windows Hello\n- Autenticação biométrica\n- Reconhecimento facial\n- Impressão digital\n- Integração PIN\n### 🔢 PIN do Dispositivo\n- Vinculado ao dispositivo\n- Diferente da senha\n- Não sincroniza nuvem\n- Opção de entrada\n### 🛡️ BitLocker\n- Criptografia de disco\n- Proteção dados repouso\n- Exige chave recuperação\n- Impede acesso outro PC\n### 📶 Bloqueio Dinâmico\n- Usa Bluetooth emparelhado\n- Bloqueio automático\n- Recurso complementar\n- Não substitui senha\n### 🧱 Atributos Arquivo\n- Apenas leitura proteção\n- Impede alteração gravação\n- Oculto controla visibilidade\n- Oculto visível selecionável\n\n## ⚙️ Sistema, Interface e Hardware\n### 🖥️ Interface e Configurações\n- Painel de Controle\n- App Configurações\n- Visão de Tarefas\n- Áreas de trabalho virtuais\n### 🔌 Drivers e Plug and Play\n- Driver comunica hardware\n- Instalação automática\n- Plug and Play suporte\n- Reconhecimento dispositivos\n### 💽 Armazenamento e Gerência\n- Gerenciar armazenamento\n- Uso por categorias\n- Limpeza arquivos temporários\n- Otimizar unidades HDD",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Armazenamento",
+      "description": "Armazenamento — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a finalidade da **desfragmentação** em um disco rígido?",
+          "back": "Organizar os arquivos do disco rígido e otimizar o tempo de leitura e gravação.",
+          "hint": "Pense na organização física dos dados",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "armazenamento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual efeito a fragmentação dos dados pode causar no tempo de leitura e gravação?",
+          "back": "Aumentar o tempo necessário para leitura e gravação.",
+          "hint": "Refere-se ao impacto na performance",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "armazenamento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Que tipo de arquivo a Limpeza de Disco permite selecionar para remoção?",
+          "back": "Arquivos da lixeira, arquivos temporários e arquivos do sistema não necessários.",
+          "hint": "São três categorias de itens",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "manutencao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual recurso do Windows 10 permite visualizar o espaço ocupado por pastas e arquivos?",
+          "back": "Gerenciamento de Armazenamento.",
+          "hint": "Localizado nas configurações de sistema",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "armazenamento"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Ferramentas Nativas",
+      "description": "Ferramentas Nativas — 6 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Que função desempenha o Agendador de Tarefas do Windows 10?",
+          "back": "Permitir o agendamento de tarefas e atualizações para o computador.",
+          "hint": "Automatização de processos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "ferramentas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual aplicativo nativo do Windows 10 permite criar e editar imagens de forma simples?",
+          "back": "Paint",
+          "hint": "Editor gráfico básico",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "acessorios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a extensão padrão utilizada pelo Bloco de Notas para salvar arquivos?",
+          "back": ".txt",
+          "hint": "Formato de texto sem formatação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "acessorios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual é a principal finalidade do Windows Mail?",
+          "back": "Gerenciar, enviar e receber e-mails de forma simples.",
+          "hint": "Cliente de comunicação eletrônica",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "comunicacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Que tipo de conteúdo pode ser obtido pela Microsoft Store?",
+          "back": "Aplicativos, programas gratuitos ou pagos e jogos compatíveis com o Windows 10.",
+          "hint": "Loja oficial de aplicativos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "loja-virtual"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual pacote de aplicativos não faz parte da instalação padrão do Windows 10?",
+          "back": "Pacote Office",
+          "hint": "Suíte de produtividade externa",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "software"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Navegadores",
+      "description": "Navegadores — 4 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Qual navegador substituiu o Internet Explorer como principal navegador da Microsoft?",
+          "back": "Microsoft Edge",
+          "hint": "Sucessor do navegador clássico",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "navegadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual versão do Internet Explorer acompanha determinadas instalações do Windows 10?",
+          "back": "Versão 11",
+          "hint": "Versão legada mantida para compatibilidade",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "navegadores"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Qual é a origem do código utilizado pelo Microsoft Edge baseado em Chromium?",
+          "back": "Chromium",
+          "hint": "Projeto de código aberto base",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "navegadores"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual navegador é aberto por padrão ao acessar um link no Windows 10?",
+          "back": "Microsoft Edge",
+          "hint": "Configuração de navegador padrão",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "navegadores"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Segurança e Acesso",
+      "description": "Segurança e Acesso — 4 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual recurso do Windows 10 permite autenticação por reconhecimento facial ou impressão digital?",
+          "back": "Windows Hello",
+          "hint": "Biometria no Windows",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "seguranca"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é a diferença entre o PIN do Windows 10 e a senha da conta Microsoft?",
+          "back": "O PIN fica vinculado à máquina, enquanto a senha está associada à conta Microsoft.",
+          "hint": "Diferença de escopo: local vs nuvem",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "seguranca"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-17",
+          "front": "Como o Bloqueio Dinâmico identifica que o usuário se afastou do computador?",
+          "back": "Por meio de um dispositivo vinculado, como um celular, que ao se afastar bloqueia automaticamente a máquina.",
+          "hint": "Uso de proximidade via Bluetooth",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "seguranca"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-18",
+          "front": "Qual medida protege os dados caso o disco rígido seja retirado do computador?",
+          "back": "BitLocker",
+          "hint": "Criptografia de unidade",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "seguranca"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Edição de Texto",
+      "description": "Edição de Texto — 1 cards",
+      "cards": [
+        {
+          "id": "card-19",
+          "front": "Qual é a diferença funcional entre o Bloco de Notas e o WordPad?",
+          "back": "O Bloco de Notas é um editor de texto básico para anotações simples, enquanto o WordPad oferece formatações mais avançadas.",
+          "hint": "Comparação de recursos de edição",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "acessorios"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-6",
+      "title": "Sistema e Interface",
+      "description": "Sistema e Interface — 4 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Qual recurso permite acessar e operar outro computador remotamente?",
+          "back": "Conexão de Área de Trabalho Remota",
+          "hint": "Acesso remoto nativo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "conectividade"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-21",
+          "front": "Que tipos de captura podem ser realizados pela Ferramenta de Captura?",
+          "back": "A tela inteira ou um trecho delimitado.",
+          "hint": "Modos de seleção de área",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "acessorios"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual recurso do Windows 10 permite criar e alternar entre áreas de trabalho virtuais?",
+          "back": "Visão de Tarefas (Task View)",
+          "hint": "Gestão de janelas e multitarefa",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "interface"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-23",
+          "front": "Como o Windows 10 procura automaticamente o software necessário para um dispositivo conectado?",
+          "back": "Identificando o dispositivo e buscando o driver apropriado em seu banco de dados.",
+          "hint": "Automação de hardware",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "hardware"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a finalidade principal da ferramenta Desfragmentador de Disco no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Criar cópias de segurança dos arquivos armazenados no disco rígido",
+          "correct": false,
+          "explanation": "Incorreta. A criação de cópias de segurança (ou \"backup\") é uma função realizada por ferramentas específicas para essa finalidade, como o Histórico de Arquivos ou o Backup e Restauração do Windows, ou softwares de terceiros. O Desfragmentador de Disco não tem como objetivo copiar ou duplicar arquivos."
+        },
+        {
+          "id": "b",
+          "text": "Organizar os arquivos do disco rígido para otimizar o tempo de leitura e gravação",
+          "correct": true,
+          "explanation": "Correta. A finalidade principal do Desfragmentador de Disco é reorganizar os arquivos armazenados no disco rígido, consolidando os pedaços de dados que estão espalhados. Isso permite que a cabeça de leitura/gravação do disco acesse os dados de forma mais sequencial e eficiente, otimizando o tempo necessário para ler e gravar informações e, consequentemente, melhorando o desempenho do sistema."
+        },
+        {
+          "id": "c",
+          "text": "Verificar e corrigir erros de setores danificados no disco rígido",
+          "correct": false,
+          "explanation": "Incorreta. A verificação e correção de erros em setores danificados do disco rígido é uma tarefa realizada por utilitários de verificação de disco, como o comando \"CHKDSK\" (Check Disk) no Windows. O Desfragmentador de Disco foca exclusivamente na organização lógica dos arquivos, não na integridade física ou lógica da superfície do disco."
+        },
+        {
+          "id": "d",
+          "text": "Aumentar a capacidade de armazenamento do disco rígido através de compressão",
+          "correct": false,
+          "explanation": "Incorreta. O Desfragmentador de Disco não aumenta a capacidade de armazenamento. A compressão de arquivos ou pastas é uma funcionalidade separada que pode ser aplicada para economizar espaço, mas não faz parte do processo de desfragmentação, que apenas rearranja os dados existentes."
+        }
+      ],
+      "explanation": "Correta. A finalidade principal do Desfragmentador de Disco é reorganizar os arquivos armazenados no disco rígido, consolidando os pedaços de dados que estão espalhados. Isso permite que a cabeça de leitura/gravação do disco acesse os dados de forma mais sequencial e eficiente, otimizando o tempo necessário para ler e gravar informações e, consequentemente, melhorando o desempenho do sistema.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual ferramenta nativa do Windows 10 permite agendar tarefas para execução automática em horários específicos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Monitor de Recursos",
+          "correct": false,
+          "explanation": "Incorreta. O Monitor de Recursos é uma ferramenta de diagnóstico que fornece informações detalhadas e em tempo real sobre o uso de recursos do sistema, como CPU (unidade central de processamento), memória, disco e rede. Sua função é monitorar o desempenho, não agendar a execução de programas ou scripts."
+        },
+        {
+          "id": "b",
+          "text": "Painel de Controle",
+          "correct": false,
+          "explanation": "Incorreta. O Painel de Controle é uma interface gráfica que agrega diversas ferramentas e configurações do sistema operacional, incluindo acesso ao Agendador de Tarefas. No entanto, o Painel de Controle em si não é a ferramenta que agenda as tarefas, mas sim um local onde essa e outras ferramentas de configuração podem ser acessadas."
+        },
+        {
+          "id": "c",
+          "text": "Gerenciador de Dispositivos",
+          "correct": false,
+          "explanation": "Incorreta. O Gerenciador de Dispositivos é uma ferramenta do Windows utilizada para visualizar e controlar os dispositivos de hardware conectados ao computador, como placas de vídeo, impressoras, adaptadores de rede, entre outros. Ele não possui funcionalidades para agendamento de tarefas."
+        },
+        {
+          "id": "d",
+          "text": "Agendador de Tarefas",
+          "correct": true,
+          "explanation": "Correta. O Agendador de Tarefas é uma utilidade do sistema operacional Windows que permite aos usuários criar, configurar e gerenciar tarefas que serão executadas automaticamente em momentos específicos (por exemplo, diariamente, semanalmente) ou em resposta a determinados eventos do sistema."
+        }
+      ],
+      "explanation": "Correta. O Agendador de Tarefas é uma utilidade do sistema operacional Windows que permite aos usuários criar, configurar e gerenciar tarefas que serão executadas automaticamente em momentos específicos (por exemplo, diariamente, semanalmente) ou em resposta a determinados eventos do sistema.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual recurso do Windows 10 permite a autenticação biométrica através de reconhecimento facial ou impressão digital?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Windows Hello",
+          "correct": true,
+          "explanation": "Correta. O Windows Hello é um recurso de segurança do Windows 10 que permite aos usuários autenticar-se em seus dispositivos, aplicativos, serviços online e redes utilizando métodos biométricos, como reconhecimento facial (com câmeras compatíveis), impressão digital (com leitores de impressão digital) ou um PIN (número de identificação pessoal)."
+        },
+        {
+          "id": "b",
+          "text": "Credential Manager",
+          "correct": false,
+          "explanation": "Incorreta. O Gerenciador de Credenciais (Credential Manager) é uma ferramenta do Windows que armazena de forma segura nomes de usuário e senhas para sites, aplicativos e redes. Ele facilita o login em diferentes serviços, mas não utiliza métodos de autenticação biométrica para o acesso ao sistema ou a esses serviços."
+        },
+        {
+          "id": "c",
+          "text": "BitLocker",
+          "correct": false,
+          "explanation": "Incorreta. O BitLocker é um recurso de criptografia de disco completo disponível em algumas edições do Windows. Ele protege os dados armazenados em um volume (como um disco rígido ou unidade USB) criptografando todo o seu conteúdo. Não está relacionado à autenticação biométrica para acesso ao sistema."
+        },
+        {
+          "id": "d",
+          "text": "Windows Defender",
+          "correct": false,
+          "explanation": "Incorreta. O Windows Defender, que atualmente faz parte do \"Segurança do Windows\", é o software antivírus e antimalware integrado ao sistema operacional. Sua função principal é proteger o computador contra ameaças de segurança, como vírus e softwares maliciosos, e não realizar a autenticação do usuário por biometria."
+        }
+      ],
+      "explanation": "Correta. O Windows Hello é um recurso de segurança do Windows 10 que permite aos usuários autenticar-se em seus dispositivos, aplicativos, serviços online e redes utilizando métodos biométricos, como reconhecimento facial (com câmeras compatíveis), impressão digital (com leitores de impressão digital) ou um PIN (número de identificação pessoal).",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "O que é o OneDrive no contexto do Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um navegador web alternativo desenvolvido pela Microsoft",
+          "correct": false,
+          "explanation": "Incorreta. Os navegadores web desenvolvidos pela Microsoft são o Internet Explorer e o Microsoft Edge. O OneDrive é um serviço de armazenamento, não um navegador de internet."
+        },
+        {
+          "id": "b",
+          "text": "Uma ferramenta de otimização de desempenho do sistema",
+          "correct": false,
+          "explanation": "Incorreta. Embora o uso do OneDrive possa indiretamente liberar espaço no disco local ao mover arquivos para a nuvem, ele não é uma ferramenta primária de otimização de desempenho do sistema no sentido de ajustar configurações, limpar arquivos temporários ou desfragmentar o disco. Essas são funções de outras utilidades do sistema."
+        },
+        {
+          "id": "c",
+          "text": "Um serviço de armazenamento e sincronização de arquivos na nuvem",
+          "correct": true,
+          "explanation": "Correta. O OneDrive é o serviço de armazenamento em nuvem da Microsoft, integrado ao Windows 10. Ele permite que os usuários armazenem arquivos online, sincronizem-nos entre múltiplos dispositivos e os acessem de qualquer lugar com conexão à internet, funcionando como uma extensão do armazenamento local do computador."
+        },
+        {
+          "id": "d",
+          "text": "Um aplicativo de edição de documentos de texto",
+          "correct": false,
+          "explanation": "Incorreta. O OneDrive armazena diversos tipos de arquivos, incluindo documentos de texto, mas não é um aplicativo de edição de texto por si só. Ele oferece integração com versões online de editores (como o Word Online) para visualização e edição, mas sua função central é o armazenamento e a sincronização."
+        }
+      ],
+      "explanation": "Correta. O OneDrive é o serviço de armazenamento em nuvem da Microsoft, integrado ao Windows 10. Ele permite que os usuários armazenem arquivos online, sincronizem-nos entre múltiplos dispositivos e os acessem de qualquer lugar com conexão à internet, funcionando como uma extensão do armazenamento local do computador.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual aplicativo do Windows 10 é um editor de texto simples, sem recursos avançados de formatação?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "WordPad",
+          "correct": false,
+          "explanation": "Incorreta. O WordPad é um processador de texto básico que oferece mais recursos de formatação do que um editor de texto simples. Ele permite alterar fontes, tamanhos, cores, estilos (negrito, itálico), e até inserir imagens, sendo mais avançado que o Bloco de Notas."
+        },
+        {
+          "id": "b",
+          "text": "Bloco de Notas",
+          "correct": true,
+          "explanation": "Correta. O Bloco de Notas é o editor de texto mais básico do Windows. Ele é projetado para criar e editar arquivos de texto puro (sem formatação), o que significa que não suporta alterações de fonte, tamanho, cor ou outros elementos visuais. É ideal para anotações rápidas ou edição de arquivos de configuração simples."
+        },
+        {
+          "id": "c",
+          "text": "Microsoft Word",
+          "correct": false,
+          "explanation": "Incorreta. O Microsoft Word é um processador de texto completo e robusto, parte do pacote Microsoft Office. Ele é conhecido por seus extensos recursos de formatação, revisão, colaboração e design, sendo o oposto de um editor de texto \"simples, sem recursos avançados\". Além disso, não é um aplicativo nativo do Windows 10, exigindo instalação separada."
+        },
+        {
+          "id": "d",
+          "text": "OneNote",
+          "correct": false,
+          "explanation": "Incorreta. O OneNote é um aplicativo da Microsoft para anotações digitais e organização de informações. Ele permite criar notas com texto formatado, imagens, áudio, vídeo e desenhos, além de oferecer recursos de colaboração, sendo muito mais complexo e rico em funcionalidades do que um editor de texto simples."
+        }
+      ],
+      "explanation": "Correta. O Bloco de Notas é o editor de texto mais básico do Windows. Ele é projetado para criar e editar arquivos de texto puro (sem formatação), o que significa que não suporta alterações de fonte, tamanho, cor ou outros elementos visuais. É ideal para anotações rápidas ou edição de arquivos de configuração simples.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual motor de renderização o Microsoft Edge passou a utilizar em suas versões mais recentes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Chromium",
+          "correct": true,
+          "explanation": "Correta. As versões mais recentes do Microsoft Edge, a partir de 2020, adotaram o motor de renderização Chromium (especificamente o Blink, que é parte do projeto Chromium). Essa mudança foi implementada para melhorar a compatibilidade com os padrões web, o desempenho e a experiência do usuário, alinhando-o com outros navegadores populares que também utilizam o Chromium."
+        },
+        {
+          "id": "b",
+          "text": "Trident",
+          "correct": false,
+          "explanation": "Incorreta. O Trident foi o motor de renderização utilizado pelo Internet Explorer, o antecessor do Microsoft Edge. As versões mais recentes do Edge não utilizam mais este motor."
+        },
+        {
+          "id": "c",
+          "text": "WebKit",
+          "correct": false,
+          "explanation": "Incorreta. O WebKit é o motor de renderização utilizado pelo navegador Safari da Apple e serviu de base para o Google Chrome em suas primeiras versões. Embora faça parte do ecossistema de motores de renderização, não é o adotado pelo Microsoft Edge em suas versões recentes."
+        },
+        {
+          "id": "d",
+          "text": "Gecko",
+          "correct": false,
+          "explanation": "Incorreta. O Gecko é o motor de renderização desenvolvido pela Mozilla e é utilizado principalmente pelo navegador Firefox. Não há relação direta com o Microsoft Edge."
+        }
+      ],
+      "explanation": "Correta. As versões mais recentes do Microsoft Edge, a partir de 2020, adotaram o motor de renderização Chromium (especificamente o Blink, que é parte do projeto Chromium). Essa mudança foi implementada para melhorar a compatibilidade com os padrões web, o desempenho e a experiência do usuário, alinhando-o com outros navegadores populares que também utilizam o Chromium.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Quando a assistente virtual Cortana realiza uma pesquisa na web no Windows 10, qual navegador é utilizado por padrão, independentemente de outros navegadores instalados?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O Internet Explorer, por questões de compatibilidade legada",
+          "correct": false,
+          "explanation": "Incorreta. O Internet Explorer é um navegador legado da Microsoft e, embora ainda presente em algumas versões do Windows 10 para compatibilidade com sistemas antigos, não é o navegador padrão para novas funcionalidades como as pesquisas da Cortana. O Microsoft Edge foi desenvolvido para substituí-lo."
+        },
+        {
+          "id": "b",
+          "text": "O navegador definido como padrão pelo usuário nas configurações do sistema",
+          "correct": false,
+          "explanation": "Incorreta. Embora o usuário possa definir um navegador padrão para abrir links em geral no sistema, a Cortana, por ser uma funcionalidade integrada da Microsoft, tem um comportamento específico para suas pesquisas web."
+        },
+        {
+          "id": "c",
+          "text": "O Microsoft Edge, mantendo a integração nativa com o sistema",
+          "correct": true,
+          "explanation": "Correta. A Cortana, assistente virtual do Windows 10, é desenvolvida pela Microsoft e possui uma integração profunda com os serviços e produtos da empresa. Ao realizar uma pesquisa na web, ela utiliza o navegador Microsoft Edge por padrão, independentemente de qual navegador o usuário tenha configurado como padrão no sistema. Isso garante uma experiência integrada e otimizada dentro do ecossistema Microsoft."
+        },
+        {
+          "id": "d",
+          "text": "Qualquer navegador que esteja aberto no momento da pesquisa",
+          "correct": false,
+          "explanation": "Incorreta. A escolha do navegador pela Cortana não depende de quais navegadores estão abertos no momento. Ela segue uma regra predefinida de integração com o Microsoft Edge."
+        }
+      ],
+      "explanation": "Correta. A Cortana, assistente virtual do Windows 10, é desenvolvida pela Microsoft e possui uma integração profunda com os serviços e produtos da empresa. Ao realizar uma pesquisa na web, ela utiliza o navegador Microsoft Edge por padrão, independentemente de qual navegador o usuário tenha configurado como padrão no sistema. Isso garante uma experiência integrada e otimizada dentro do ecossistema Microsoft.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a principal diferença entre o Bloco de Notas e o WordPad no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O Bloco de Notas suporta imagens enquanto o WordPad trabalha apenas com texto",
+          "correct": false,
+          "explanation": "Incorreta. O Bloco de Notas não suporta a inserção de imagens. O WordPad, por sua vez, suporta a inserção de imagens e outros objetos, além de texto."
+        },
+        {
+          "id": "b",
+          "text": "O WordPad é exclusivo para edição de código de programação",
+          "correct": false,
+          "explanation": "Incorreta. O WordPad não é exclusivo para edição de código de programação; ele é um editor de texto com recursos de formatação. Embora o Bloco de Notas seja frequentemente usado para código simples devido à sua natureza de texto puro, nenhum dos dois é \"exclusivo\" para essa finalidade."
+        },
+        {
+          "id": "c",
+          "text": "O Bloco de Notas permite formatações avançadas enquanto o WordPad é mais básico",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação inverte as características dos dois programas. O Bloco de Notas é um editor de texto simples, sem recursos de formatação, enquanto o WordPad oferece algumas opções de formatação."
+        },
+        {
+          "id": "d",
+          "text": "O WordPad oferece recursos de formatação mais avançados que o Bloco de Notas",
+          "correct": true,
+          "explanation": "Correta. O Bloco de Notas (Notepad) é um editor de texto puro, ideal para anotações rápidas ou edição de arquivos de configuração, pois não permite formatação de texto (negrito, itálico, cores, etc.). Já o WordPad é um processador de texto básico que oferece recursos de formatação, como alteração de fonte, tamanho, cor, alinhamento de texto, e inserção de imagens e objetos, sendo mais avançado que o Bloco de Notas, mas menos completo que um programa como o Microsoft Word."
+        }
+      ],
+      "explanation": "Correta. O Bloco de Notas (Notepad) é um editor de texto puro, ideal para anotações rápidas ou edição de arquivos de configuração, pois não permite formatação de texto (negrito, itálico, cores, etc.). Já o WordPad é um processador de texto básico que oferece recursos de formatação, como alteração de fonte, tamanho, cor, alinhamento de texto, e inserção de imagens e objetos, sendo mais avançado que o Bloco de Notas, mas menos completo que um programa como o Microsoft Word.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Qual é a característica do PIN (número de identificação pessoal) configurado no Windows Hello?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O PIN é armazenado nos servidores da Microsoft para recuperação",
+          "correct": false,
+          "explanation": "Incorreta. O PIN é uma credencial local e não é armazenado nos servidores da Microsoft. Ele é criptografado e armazenado no dispositivo do usuário, geralmente em um módulo de segurança de hardware (como um TPM - Trusted Platform Module), se disponível, para maior proteção."
+        },
+        {
+          "id": "b",
+          "text": "O PIN está vinculado especificamente ao dispositivo onde foi criado",
+          "correct": true,
+          "explanation": "Correta. O PIN configurado no Windows Hello (que inclui opções como reconhecimento facial, impressão digital e PIN numérico/alfanumérico) é uma credencial de login local. Isso significa que ele é específico para o dispositivo em que foi criado e não é transmitido pela rede ou armazenado em servidores da Microsoft. Essa característica aumenta a segurança, pois, mesmo que o PIN seja interceptado, ele não poderá ser usado para acessar a conta Microsoft em outro dispositivo."
+        },
+        {
+          "id": "c",
+          "text": "O PIN substitui permanentemente a senha da conta Microsoft",
+          "correct": false,
+          "explanation": "Incorreta. O PIN do Windows Hello não substitui permanentemente a senha da conta Microsoft. Ele serve como uma forma alternativa e mais rápida de autenticação para o dispositivo local, enquanto a senha da conta Microsoft ainda é necessária para outros serviços e para gerenciar a conta online."
+        },
+        {
+          "id": "d",
+          "text": "O PIN é sincronizado com a conta Microsoft e funciona em qualquer dispositivo",
+          "correct": false,
+          "explanation": "Incorreta. O PIN do Windows Hello é uma credencial de segurança local, vinculada ao dispositivo, e não é sincronizado com a conta Microsoft para uso em múltiplos aparelhos."
+        }
+      ],
+      "explanation": "Correta. O PIN configurado no Windows Hello (que inclui opções como reconhecimento facial, impressão digital e PIN numérico/alfanumérico) é uma credencial de login local. Isso significa que ele é específico para o dispositivo em que foi criado e não é transmitido pela rede ou armazenado em servidores da Microsoft. Essa característica aumenta a segurança, pois, mesmo que o PIN seja interceptado, ele não poderá ser usado para acessar a conta Microsoft em outro dispositivo.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a limitação de movimentação de aplicações entre áreas de trabalho virtuais no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aplicações podem ser movidas para qualquer área de trabalho virtual",
+          "correct": true,
+          "explanation": "Correta. O recurso de Áreas de Trabalho Virtuais no Windows 10 permite organizar janelas de aplicativos em diferentes \"desktops\". Para mover uma aplicação, o usuário pode acessar a \"Visão de Tarefas\" (geralmente pressionando Win + Tab ou clicando no ícone na barra de tarefas), clicar e arrastar a janela do aplicativo desejado para qualquer outra área de trabalho virtual, ou até mesmo para uma nova área de trabalho. Não há restrição de movimentação apenas para áreas \"vizinhas\"."
+        },
+        {
+          "id": "b",
+          "text": "Apenas aplicativos nativos do Windows podem ser movidos entre áreas",
+          "correct": false,
+          "explanation": "Incorreta. Qualquer aplicativo em execução no Windows 10, seja ele nativo do sistema ou um programa de terceiros, pode ser movido entre as áreas de trabalho virtuais. O recurso é universal para todas as janelas de aplicativos."
+        },
+        {
+          "id": "c",
+          "text": "Aplicações não podem ser movidas após serem abertas em uma área específica",
+          "correct": false,
+          "explanation": "Incorreta. As aplicações podem ser movidas livremente entre as áreas de trabalho virtuais a qualquer momento, mesmo após terem sido abertas em uma área específica. A flexibilidade de movimentação é uma das principais vantagens desse recurso."
+        },
+        {
+          "id": "d",
+          "text": "Aplicações só podem ser movidas para áreas de trabalho imediatamente vizinhas",
+          "correct": false,
+          "explanation": "Incorreta. No Windows 10, ao usar a \"Visão de Tarefas\" (Task View), o usuário pode arrastar e soltar janelas de aplicativos para qualquer área de trabalho virtual existente, não se limitando às vizinhas."
+        }
+      ],
+      "explanation": "Correta. O recurso de Áreas de Trabalho Virtuais no Windows 10 permite organizar janelas de aplicativos em diferentes \"desktops\". Para mover uma aplicação, o usuário pode acessar a \"Visão de Tarefas\" (geralmente pressionando Win + Tab ou clicando no ícone na barra de tarefas), clicar e arrastar a janela do aplicativo desejado para qualquer outra área de trabalho virtual, ou até mesmo para uma nova área de trabalho. Não há restrição de movimentação apenas para áreas \"vizinhas\".",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "14_253603_Windows 10 IX.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:57:57"
+}

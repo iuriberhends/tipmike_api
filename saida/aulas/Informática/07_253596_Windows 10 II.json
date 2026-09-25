@@ -1,0 +1,788 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 2,
+    "titulo": "2. Sistemas operacionais Windows 7, Windows 10 e Linux. / 3. Organização e gerenciamento de informações, arquivos, pastas e programas. / 4. Atalhos de teclado, ícones, área de trabalho e lixeira"
+  },
+  "ordem": 7,
+  "ordem_no_curso": "7.00",
+  "titulo": "Windows 10 II",
+  "codigo_aula": "253596",
+  "video_id": "HGn9xLzOOYU=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:23:54",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/HGn9xLzOOYU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=405101&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Windows 10 II\n\n## Barra de Tarefas: visão geral e desbloqueio\nVamos continuar o nosso passeio pelo Windows. Vem comigo aqui: na nossa última tela, vamos para a próxima, agora, da barra de tarefas. A barra de tarefas está localizada embaixo. Eu grifei em vermelho: temos alguns ícones a destacar — o botão Iniciar no cantinho, o botão Texto (já apresentado) e a área de notificação. Vamos falar dos principais daqui a pouco.\n\nTrazendo aqui, com um clique com o botão direito: a primeira coisa é desbloquear a barra de tarefas. Por padrão, ela vem bloqueada. O que quer dizer isso? Eu não posso movimentá-la. Se ela estiver travada, eu não posso colocá-la em outra posição. Então, clico com o botão direito e desmarco “Bloquear a barra de tarefas”. Uma vez desbloqueada, posso fazer operações como movimentá-la.\n\nLá embaixo tem o botão “Configurações da barra de tarefas”, onde eu posso, por exemplo, ativar “Ocultar automaticamente a barra de tarefas”. Ela não aparece; só quando eu aproximo o cursor que ela surge. Temos “Bloquear a barra de tarefas” ativado ou desativado; “Ocultar automaticamente” (também existe no modo tablet); “Usar botões pequenos na barra de tarefas”; tamanho de botões; e o recurso “Espiar” (Peek). Depois vemos as principais opções.\n\n## Movimentar a barra de tarefas\nObserve que eu coloquei a barra de tarefas agora na lateral esquerda. Como fiz isso? Primeiro, desbloqueei. Depois, com o botão esquerdo do mouse, pressionei sobre a barra de tarefas (não sobre o conteúdo), mantive pressionado e arrastei para um lado. Posso colocar em cima ou na lateral direita também, movimentando entre esses locais. Posso colocar em todos os lados. Cai em prova a ideia de colocar no meio da tela? Não. Embora eu possa aumentar o tamanho e ela ficar quase até o “umbigo”, literalmente no meio da tela ela não fica.\n\n## Fixar e desafixar programas na barra de tarefas\nVamos fixar agora programas na barra de tarefas. Como fazer isso? Pegue o ícone do programa — suponha que esteja na área de trabalho. Clique com o botão direito e escolha a opção “Fixar na barra de tarefas”. Assim ele fica lá para eu acessar rapidamente.\n\nOutra maneira: arrastar o programa para a barra de tarefas. Arrasto o ícone e solto em cima da barra. Também pode aparecer a opção “Fixar na barra de tarefas” ao arrastar.\n\nDepois de fixado, um único clique com o botão esquerdo abre o programa (normalmente são dois cliques em outros contextos; aqui, um).\n\nOutra opção: clique com o botão direito no ícone fixado. Vai ser exibida a lista de arquivos recentes daquele programa (no caso de um navegador, o histórico de navegação, e assim por diante). Isso é a chamada “Lista de Itens Recentes”. Quase ninguém usa o nome, mas está aqui porque, se cair na prova, não está errado.\n\n> 🎯 Dicas de prova: “Lista de Itens Recentes” (Jump List) é exibida ao clicar com o botão direito no ícone do programa na barra de tarefas.\n\nFixei. Agora quero tirar. Clique com o botão direito e use a opção “Desafixar da barra de tarefas”. Se você tentar simplesmente arrastar o ícone para fora, não vai arrancá-lo assim. Vai aparecer exatamente a mesma opção como se fosse um clique com o botão direito.\n\n## Ícones fixados versus programas em execução\nCompare os dois primeiros ícones aqui (exemplo). Eles não estão em execução; estão apenas fixados. Como é que eu sei que está em execução? Quando tem um sublinhado azul embaixo do programa, indicando que está aberto. O sublinhado mostra execução; sem sublinhado, está apenas fixado.\n\n## Recurso Espiar (Peek) e miniaturas\nQuem é esse cara “Espiar” (Peek)? Aparece uma miniatura da janela quando eu deixo o cursor sobre o ícone do programa. É uma maneira de ativar a visualização. Tem outras maneiras também, por exemplo, lá no botão “Visão de Tarefas” (a gente vai ver depois). Então, mostrou a miniatura, beleza.\n\n## Recurso Agitar (Shake)\nAgora vamos ao recurso “Agitar” (Shake). O nome significa isso mesmo: agitar. Repare que eu tenho várias janelas abertas — deixei bem bagunçado de propósito. Com o recurso Shake, eu pego a janela pela barra de título e sacudo. Eu fiz de forma exagerada para dar ênfase ao movimento. Sacudo de um lado para o outro. Não precisa ser tão nervoso quanto eu, mas a ideia é essa: todas as outras janelas são minimizadas, menos a que eu sacudi. Se eu fizer de novo, elas voltam. Então, o Shake minimiza todas as janelas, exceto a ativa; e, repetindo, volta ao estado anterior.\n\n## Recurso Ajustar/Ancorar (Snap)\nVamos para o próximo recurso: Snap. Uma tradução possível seria “pressionar/empurrar”. Eu vou empurrar a janela para um dos lados. Para cima: maximiza. Para a esquerda: ocupa metade da tela à esquerda. Para a direita: metade à direita.\n\nRepare: empurrando para cima, maximiza; para baixo, restaura; para a esquerda, metade; posso empurrar para cima e depois para o lado, ficando com um quarto da tela; para baixo e para o lado, outro quarto; para a direita, metade da tela. Com isso, posso colocar quatro janelas. Para baixo, ela só desce; não minimiza com o mouse assim. Veremos que, com atalho de teclado, dá para minimizar. Eu vou comentar os atalhos lá na frente.\n\nBeleza, essas são as opções para mudar o posicionamento conforme você queira alterar o encaixe da janela.\n\n## Área de notificação (bandeja do sistema)\nA área de notificação fica no cantinho direito, na parte de baixo. O que ela faz? Notifica sobre alguns programas. Não são todos que aparecem; há muito mais programas rodando em segundo plano.\n\nEu costumo fazer uma analogia: no teatro, você tem as pessoas representando na frente, no palco (primeiro plano). Atrás, tem a galera do som, da iluminação. De vez em quando, alguém entra para trocar o cenário. Essas pessoas “de trás” são como os programas em segundo plano. Quando você clica em um programa, você traz para o primeiro plano.\n\nUm exemplo clássico é o antivírus — no Windows 10, o Windows Defender (hoje parte do conjunto de proteção do sistema, bem completo). Ele pode notificar por ali. Na setinha, você pode exibir outros ícones que não estão aparecendo de imediato e configurar quais quer que apareçam: relógio, ícones do sistema, programas do usuário, etc. Como eu disse no começo da aula, o Windows permite inúmeras configurações. Se fôssemos falar uma por uma, ficaríamos dias.\n\n## Botão “Mostrar área de trabalho”\nNo finalzinho da barra de tarefas, no cantinho direito, temos o botão “Mostrar área de trabalho”. O nome é bem sugestivo. Num contexto com várias janelas abertas, eu clico e ele minimiza todas as janelas. Clico de novo e elas retornam ao estado anterior.\n\nExiste também a visualização: sem clicar, apenas deixando o cursor sobre o botão, você “espreita” a área de trabalho (Peek). Para isso, o recurso precisa estar ativado nas configurações.\n\n## Central de Ações\nVamos à Central de Ações: esse botão nos mostra diversas notificações — desde e-mails que chegaram, configurações do sistema, capturas de tela feitas, erros na inicialização, notificações do próprio Windows, e assim por diante. Aqui estou recebendo notificações do meu e-mail, por exemplo. Embaixo, aparecem botões rápidos do Windows.\n\nEntre eles:\n- Modo Tablet: facilita o uso com telas de toque, alterando a apresentação dos ícones e layout para interação por toque (notebooks conversíveis, tablets).\n- Modo avião: desliga todas as conexões (Wi-Fi, Bluetooth, etc.). A ideia é evitar interferências, como já pedem em voos.\n\nA visualização do modo tablet muda a disposição para facilitar o clique/toque.\n\n## Menu Iniciar: visão geral\nVamos falar do Menu Iniciar. Esse cara aqui é o botão Iniciar. Ao clicar nele (ou com atalho de teclado, que veremos depois), abre o Menu Iniciar.\n\nNo lado esquerdo, clique para expandir aqueles botões: aparece a imagem do usuário, um ícone de pastas, a engrenagem (Configurações) e o botão de ligar/desligar.\n\nNo menu do usuário:\n- Alterar configurações da conta: alterar imagem, outras opções.\n- Bloquear: bloqueia a sessão e pede senha (se houver). Na tela de bloqueio, posso trocar de usuário.\n- Sair: em versões anteriores aparecia como “Fazer logoff”. Presta atenção: ao clicar em Sair, ele fecha todos os programas abertos, permitindo entrar com outra conta de usuário ou voltar para a mesma.\n\n💬 História: Eu sempre faço uma analogia com relacionamento. Terminou? Leva tudo embora, tira, acaba com tudo. Depois, se voltar, vai ter que recomeçar, levar as coisas de volta pra casa da pessoa. No computador, sair fecha tudo. Se voltar, vai ter que abrir os programas novamente.\n\nQuando eu faço a troca de usuário, é temporário: vou para outra conta, mas os programas da minha conta continuam abertos. Posso depois voltar e eles estarão lá.\n\nVeja que tenho outro usuário aparecendo, por exemplo “Gran Cursos Online”, aquele que criamos. Se eu clicar nesse usuário, entro nessa conta, sem fechar o que estava aberto na outra.\n\n## Lista de aplicativos e opções de contexto\nNa parte de cima do Menu Iniciar aparecem “Adicionados recentemente” — programas instalados recentemente. A lista de aplicativos vem em ordem alfabética, com as letras indicando as seções.\n\nClicando com o botão direito em um programa da lista, aparecem opções como:\n- Itens recentes (os arquivos/acessos recentes daquele programa).\n- Fixar em Iniciar (ou desafixar, se já estiver).\n- Mais: Fixar na barra de tarefas, Executar como administrador, Abrir local do arquivo, Desinstalar.\n\n## Blocos dinâmicos (Live Tiles)\nDo lado direito ficam os blocos do “Iniciar”. Eles podem ser dinâmicos: trazem informações da internet, como notícias e fotos, atualizando automaticamente. Exemplo: meteorologia mostrando temperatura do dia.\n\nClicando com o botão direito em um bloco fixado, aparecem:\n- Desafixar do Iniciar.\n- Redimensionar: pequeno, médio, largo ou grande.\n- Desativar bloco dinâmico (para parar de atualizar conteúdo).\n- Fixar na barra de tarefas.\n- Configurações do aplicativo, Avaliar, Compartilhar (varia conforme o app).\n- Itens recentes (quando aplicável).\n\n## Configurações (novo “Painel de Controle”)\nVoltando: o item Configurações é como se fosse o novo Painel de Controle. Permite várias configurações: Sistema, Aplicativos, Dispositivos, Contas, Cortana, Telefone (conectar smartphone, sincronizar, exibir notificações), Hora e Idioma, Privacidade, Rede e Internet, Jogos, Atualização e Segurança (muito importante), Personalização, Facilidade de Acesso (Narrador, Lupa, etc.). Em muitos casos substitui o Painel de Controle; em outros, há itens exclusivos aqui.\n\n## Botão Ligar/Desligar: Suspender, Hibernar, Desligar, Reiniciar\nO símbolo é aquele 0/1: na informática, 0 significa desligado e 1 ligado.\n\nPrincipais opções:\n- Suspender: tem o ícone de lua. “Dormir” — desativa alguns recursos para economizar energia (tela, disco, portas etc., conforme configuração). O computador continua ligado; basta mexer o mouse ou pressionar uma tecla para “acordar”. Volta mais rápido.\n- Hibernar: salva tudo o que está aberto (várias janelas, programas), desliga totalmente o computador. Muita gente confunde. Se você está com 10 abas no navegador, editores abertos, e quer sair sem perder nada, use Hibernar. Em alguns sistemas, a opção não vem ativada por padrão.\n\n> 🎯 Dicas de prova: Para ativar Hibernar, vá em Painel de Controle > Opções de Energia (ou Configurações > Sistema > Energia e Suspensão > Configurações adicionais) e habilite a opção “Hibernar”.\n\nDepois de hibernar, você pode até tirar da tomada ou remover a bateria. Ao ligar novamente, volta exatamente ao estado anterior, com os programas reabertos como estavam. Não confunda Suspender com Hibernar.\n\n- Desligar: fecha tudo e desliga o computador (não salva o estado dos programas).\n- Reiniciar: fecha tudo, desliga e liga o computador novamente.\n\nFechamos este bloco. Daqui a pouco seguimos o nosso passeio pelo Windows 10. Até já.",
+  "transcricao_meta": {
+    "title": "Windows 10 II",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 32867,
+    "createdAt": "2026-02-04T19:32:04.081Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda funcionalidades essenciais do Windows 10 voltadas a interface e produtividade: barra de tarefas, Central de Ações, Menu Iniciar, recursos Aero (Peek, Shake, Snap), modos especiais (tablet e avião), configurações e opções de energia.\nPrincipais pontos: \n- Dominar barra de tarefas e atalhos visuais (sublinhado azul, miniaturas, “mostrar a área de trabalho”).\n- Operar Menu Iniciar (blocos, Jump Lists, fixar/desafixar, executar como administrador).\n- Entender suspender vs hibernar vs desligar vs reiniciar e ativar a Hibernar.\n- Usar Central de Ações, Windows Defender, Modo avião e Modo tablet.\n\n## 1. Base / Conceitos Fundamentais\n- **Barra de tarefas**: Área (geralmente inferior) com ícones de apps fixados, apps em execução (sublinhado azul), **área de notificação** (bandeja), relógio e o botão **mostrar a área de trabalho** (extremo direito).\n- **Menu Iniciar**: Lado esquerdo com lista alfabética e “Adicionados recentemente”; lado direito com **blocos fixados** (podem ser **blocos dinâmicos**).\n- **Central de Ações**: Painel de notificações e botões rápidos (ex.: **modo tablet**, **modo avião**).\n- **Windows Defender**: Componente de segurança; sua desativação gera aviso na Central.\n- **Recursos Aero**:\n  - **Aero Peek**: Espiar a área de trabalho passando o mouse no botão “mostrar a área de trabalho”.\n  - **Shake**: Agitar a janela ativa para minimizar/restaurar as outras.\n  - **Snap**: Ancorar/redimensionar janelas por arrasto às bordas/cantos.\n- **Energia**:\n  - Símbolo: 0 = desligado; 1 = ligado.\n  - Opções: **Suspender**, **Hibernar**, **Desligar**, **Reiniciar**.\n\n## 2. Como Funciona / Distinções\n- Fixar vs executar:\n  - **Fixar na barra de tarefas**: cria atalho permanente. \n  - Sublinhado azul: indica app em execução (fixado ou não).\n- Minimizar/espionar:\n  - **Clicar** em “mostrar a área de trabalho”: minimiza tudo; clicar novamente restaura.\n  - **Passar o mouse** no mesmo botão: ativa **Aero Peek** (só espiar).\n- Sessão do usuário:\n  - **Bloquear**: vai à tela de bloqueio; exige senha para voltar (se houver).\n  - **Sair**: fecha todos os programas da sessão atual.\n  - **Trocar de usuário**: mantém apps da conta atual abertos e permite entrar em outra conta.\n- Bloco dinâmico vs estático:\n  - **Dinâmico**: atualiza conteúdo (clima, notícias).\n  - **Desativar bloco dinâmico**: torna estático.\n- Energia:\n  - **Suspender**: economiza energia, mantém ligado, retorno imediato; não é seguro para mover/transportar por longos períodos.\n  - **Hibernar**: salva estado no disco e desliga; ao ligar, restaura tudo.\n  - **Desligar**: encerra sem restaurar estado.\n  - **Reiniciar**: desliga e liga em seguida (útil para aplicar atualizações).\n- Modos:\n  - **Modo avião**: desliga todas as conexões (Wi‑Fi, Bluetooth etc.).\n  - **Modo tablet**: interface otimizada para toque (ícones maiores, navegação por gestos).\n\n## 3. Aplicação Prática / Técnicas\n- Mover a barra de tarefas:\n  1) Clique com o botão direito na barra > desmarque **Bloquear a barra de tarefas**.\n  2) Clique e segure com o botão esquerdo em área vazia da barra e arraste para borda desejada (esquerda, topo, direita).\n- Configurar a barra:\n  - **Ocultar automaticamente**: barra some e aparece ao encostar o cursor na borda.\n  - **Usar ícones pequenos**: reduz tamanho dos ícones.\n- Fixar e desafixar:\n  - Fixar: clique com o botão direito no ícone do app (na barra, no Iniciar ou na área de trabalho) > **Fixar na barra de tarefas**; ou arraste o ícone até a barra.\n  - Desafixar: botão direito no ícone fixado > **Desafixar da barra de tarefas**.\n- Identificar execução:\n  - Procure o **sublinhado azul** sob o ícone na barra.\n- Miniaturas e troca de janelas:\n  - Passe o mouse sobre o ícone na barra para ver **miniaturas** e alternar.\n- Snap (ancorar janelas):\n  - Arrastar para cima: maximiza.\n  - Arrastar para baixo: restaura do maximizado.\n  - Arrastar para esquerda/direita: ocupa metade da tela.\n  - Arrastar para cantos: ocupa 1/4 da tela (até 4 janelas).\n- Shake:\n  - Clique e segure a barra de título da janela ativa e “agite” para minimizar as outras; agite novamente para restaurar.\n- Menu Iniciar: blocos e lista\n  - Lado esquerdo: “Adicionados recentemente” e lista alfabética.\n  - Lado direito: blocos; clique com o botão direito no bloco para:\n    - **Desafixar do Iniciar**\n    - **Redimensionar** (pequeno, médio, largo, grande)\n    - **Desativar bloco dinâmico**\n    - **Fixar na barra de tarefas**\n    - **Configurações do aplicativo**\n- Jump Lists (clique com o botão direito em programas):\n  - **Itens recentes**, **Fixar no Iniciar**, **Mais** > **Fixar na barra de tarefas**, **Executar como administrador**, **Abrir o local do arquivo**; **Desinstalar**.\n- Central de Ações:\n  - Consulte notificações e use botões rápidos (ex.: **modo tablet**, **modo avião**).\n- Habilitar Hibernar (se não aparecer):\n  - Painel de Controle > **Opções de Energia** OU Configurações > **Opções de Energia** > ative **Hibernar**.\n\n## 4. Exemplos e Casos Resolvidos\n- Quero mover a barra para o topo:\n  - Desbloqueie a barra > arraste para o topo > solte. Se não mover, está bloqueada.\n- Abrir rapidamente um app usado sempre:\n  - Abra o app > botão direito no ícone na barra > **Fixar na barra de tarefas** > a partir daí, 1 clique abre.\n- Ver a área de trabalho sem minimizar tudo:\n  - Passe o mouse no botão “mostrar a área de trabalho” (Aero Peek). Para minimizar, clique nele.\n- Organizar duas janelas lado a lado:\n  - Arraste a primeira para a esquerda (metade esquerda) e a segunda para a direita (metade direita).\n- Minimizar tudo, exceto a janela atual:\n  - Use **Shake** na janela ativa.\n- Diferenciar Sair vs Trocar de usuário:\n  - Sair: fecha apps e volta à tela de login. Trocar de usuário: mantém apps do usuário atual e abre sessão de outro usuário.\n- Economizar bateria sem perder estado:\n  - Use **Hibernar**; ao ligar, tudo volta como estava.\n\n## 5. Pegadinhas e Erros Comuns\n- Dica de prova: Se a barra estiver bloqueada, não é possível movê-la. Desbloqueie antes.\n- Dica de prova: Sublinhado azul sob o ícone indica app em execução; ícone sem sublinhado pode estar apenas fixado.\n- Dica de prova: Passar o mouse no botão “mostrar a área de trabalho” ativa o Peek; clicar minimiza/restaura.\n- Dica de prova: **Snap** não minimiza ao arrastar para baixo; apenas restaura do maximizado.\n- Dica de prova: **Modo avião** desliga todas as conexões, não só Wi‑Fi.\n- Dica de prova: **Sair** fecha a sessão; **Trocar de usuário** preserva apps da conta atual.\n- Dica de prova: **Suspender** mantém ligado e volta rápido; **Hibernar** desliga e restaura estado; **Desligar** não restaura; **Reiniciar** desliga e liga de novo.\n- Dica de prova: Para ver “Executar como administrador” e “Abrir o local do arquivo”, procure o submenu **Mais** nas opções de clique com o botão direito no Iniciar.\n- Dica de prova: **Windows Defender** desativado gera alerta na Central de Ações.\n- Dica de prova: A barra só pode ficar nas bordas (inferior, superior, esquerda, direita); não fica “no meio” da tela.\n\n### Tabela comparativa rápida: Sessão e Energia\n- Sessão:\n  - Bloquear: exige senha (se houver); mantém sessão.\n  - Sair: encerra sessão e fecha apps.\n  - Trocar de usuário: mantém apps do usuário atual, abre outra sessão.\n- Energia:\n  - Suspender: ligado, volta rápido, não salva no disco.\n  - Hibernar: desliga, salva estado no disco, retorna como estava.\n  - Desligar: encerra sem restaurar estado.\n  - Reiniciar: encerra e religa em seguida.",
+  "resumo_bolso": "# Windows 10 II\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Barra de tarefas**: normalmente na parte inferior; contém ícones **fixados**, ícones de apps **em execução** (sublinhado azul), **área de notificação** (bandeja), relógio e botão **Mostrar a área de trabalho** (extremo direito).\n* **Menu Iniciar**: lado esquerdo = **lista alfabética** + “**Adicionados recentemente**”; lado direito = **blocos fixados**, podendo ser **dinâmicos** (conteúdo atualizado).\n* **Central de Ações**: painel de **notificações** + **botões rápidos** (ex.: **Modo avião**, **Modo tablet**).\n* **Windows Defender**: componente de segurança; sua desativação gera aviso na Central de Ações.\n* **Aero Peek**: passar o mouse no botão **Mostrar a área de trabalho** → apenas “espiar” a área de trabalho (janelas ficam transparentes).\n* **Aero Shake**: “agitar” a janela ativa (barra de título) → **minimiza todas as outras**; agitar de novo → restaura.\n* **Aero Snap**: arrastar janelas para bordas/cantos → **ancorar/redimensionar** (metade ou 1/4 da tela); arrastar para cima = maximizar; para baixo = restaurar.\n* **Sessão do usuário**: **Bloquear**, **Sair**, **Trocar de usuário** têm efeitos diferentes sobre apps e login.\n* **Energia**: opções **Suspender**, **Hibernar**, **Desligar**, **Reiniciar**; símbolo 0 = desligado, 1 = ligado.\n* **Modos especiais**: **Modo avião** (desliga TODAS conexões) e **Modo tablet** (interface otimizada para toque).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Fixar na barra vs App em execução\n\n| Aspecto | Fixado na barra | Em execução (sublinhado azul) |\n| --- | --- | --- |\n| Ícone | Atalho permanente | Pode estar fixado ou não |\n| Indicação visual | Apenas ícone | Ícone + **sublinhado azul** |\n| Função | Acesso rápido | Mostra que o programa está aberto |\n\n---\n\n### Bloquear vs Sair vs Trocar de usuário\n\n| Aspecto | Bloquear | Sair | Trocar de usuário |\n| --- | --- | --- | --- |\n| Sessão atual | Mantida | Encerrada | Mantida |\n| Programas abertos | Mantidos | Fechados | Mantidos |\n| Tela exibida | Tela de bloqueio | Tela de login | Tela de login |\n| Senha | Exigida p/ voltar (se houver) | Necessária p/ novo login | Necessária p/ novo usuário |\n\n---\n\n### Suspender vs Hibernar vs Desligar vs Reiniciar\n\n| Aspecto | Suspender | Hibernar | Desligar | Reiniciar |\n| --- | --- | --- | --- | --- |\n| Estado do sistema | Mantido na RAM | Salvo no disco | Não mantido | Não mantido |\n| Energia | Baixa, mas ligado | Praticamente zero | Zero | Zero (após desligar) |\n| Retorno | Muito rápido | Rápido, restaurando estado | Início “limpo” | Início “limpo” |\n| Uso típico | Pausa curta | Economia com retorno igual | Encerrar uso | Aplicar atualizações |\n\n---\n\n### Modo avião vs Modo tablet\n\n| Aspecto | Modo avião | Modo tablet |\n| --- | --- | --- |\n| Função | Desliga **todas** conexões sem fio (Wi‑Fi, Bluetooth etc.) | Interface adaptada ao toque |\n| Local típico | Botão rápido na Central de Ações | Botão rápido na Central de Ações |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Mostrar a área de trabalho / Aero Peek**\n\n* **Aplicação**:  \n  - **Clique** no botão extremo direito da barra → **minimiza todas** as janelas; clique de novo → restaura.  \n  - **Passar o mouse** sem clicar → **Aero Peek** (apenas espiar).\n\n---\n\n**2. Mover a barra de tarefas**\n\n* **Aplicação**: só possível se **não estiver bloqueada**.\n* **Passos**: botão direito na barra → desmarcar **Bloquear a barra de tarefas** → arrastar para borda desejada.\n\n---\n\n**3. Aero Snap – ancoragem**\n\n* **Aplicação**: organizar janelas rapidamente.\n* **Regras**:  \n  - Arrastar para **cima** → maximiza.  \n  - Arrastar para **baixo** (a partir do maximizado) → restaura.  \n  - Arrastar para **esquerda/direita** → ocupa metade da tela.  \n  - Arrastar para **cantos** → ocupa 1/4 (até 4 janelas).\n\n---\n\n**4. Habilitar Hibernar**\n\n* **Aplicação**: quando a opção **Hibernar** não aparece no menu de energia.\n* **Regra**: acessar **Opções de Energia** (Painel de Controle ou Configurações) e **ativar Hibernar**.\n\n---\n\n**5. Jump Lists (clique direito em programas)**\n\n* **Aplicação**: acesso rápido a **itens recentes** e comandos especiais.\n* **Regras**:  \n  - Em apps no Iniciar: clique direito → **Mais** → **Fixar na barra de tarefas**, **Executar como administrador**, **Abrir o local do arquivo**, **Desinstalar**.  \n  - Em ícone na barra: clique direito → **itens recentes** e opções de fixar.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Se a barra estiver bloqueada, não é possível movê-la; é preciso **desbloquear** antes.\n* Sublinhado azul sob o ícone indica app em execução; ícone sem sublinhado pode estar apenas **fixado**.\n* Passar o mouse no botão “mostrar a área de trabalho” ativa o **Peek**; clicar minimiza/restaura.\n* **Snap** não minimiza ao arrastar para baixo; apenas restaura do maximizado.\n* **Modo avião** desliga **todas** as conexões, não só Wi‑Fi.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **Fixar na barra** de **app em execução (sublinhado azul)**?  \n* Sei a diferença entre **Bloquear**, **Sair** e **Trocar de usuário**?  \n* Memorizei o comportamento de **Suspender**, **Hibernar**, **Desligar** e **Reiniciar**?  \n* Lembro que **passar o mouse** no botão extremo direito = **Peek**, e **clicar** = minimizar/restaurar?  \n* Sei que **Snap**: cima = maximiza, baixo = restaura, lados = metade, cantos = 1/4?  \n* Fixei que **Modo avião** desliga **todas** as conexões e **Modo tablet** muda a interface?  \n* Lembro que **Windows Defender desativado** gera alerta na **Central de Ações**?  \n* Sei que a barra de tarefas só se move se **desbloqueada** e apenas para as **bordas** da tela?  \n* Sei acessar **Hibernar** via **Opções de Energia** se não aparecer no menu?  \n* Lembro das ações principais nos blocos do Iniciar: **Desafixar**, **Redimensionar**, **Desativar bloco dinâmico**, **Fixar na barra de tarefas**?",
+  "mapa_mental": "# 💻 Windows 10 II\n## 🎯 Interface Principal\n### 🧭 Barra de tarefas\n- Posição padrão inferior\n- Ícones fixados\n- Ícones em execução\n- Sublinhado azul\n- Área de notificação\n### 🪟 Área de notificação\n- Ícones em segundo plano\n- Relógio e data\n- Volume e rede\n- Central de Ações\n- Ícone energia\n### 🪟 Mostrar área de trabalho\n- Botão extremo direito\n- Minimizar todas\n- Restaurar janelas\n- Aero Peek mouse\n- Visualizar sem minimizar\n\n## 🧩 Menu Iniciar e Blocos\n### 📖 Estrutura do Iniciar\n- Lado esquerdo lista\n- Adicionados recentemente\n- Lista alfabética\n- Botão ligar\n- Conta do usuário\n### 🧱 Blocos fixados\n- Lado direito blocos\n- Fixar no Iniciar\n- Desafixar do Iniciar\n- Redimensionar blocos\n- Fixar na barra tarefas\n### 🔄 Blocos dinâmicos\n- Conteúdo atualizado\n- Clima e notícias\n- Desativar bloco dinâmico\n- Bloco estático\n- Personalização visual\n### 📂 Jump Lists\n- Itens recentes\n- Fixar no Iniciar\n- Fixar barra tarefas\n- Executar como administrador\n- Abrir local arquivo\n\n## 🪟 Recursos Visuais Aero\n### 👁️ Aero Peek\n- Botão área trabalho\n- Passar mouse espiar\n- Transparência janelas\n- Sem minimizar efetivo\n- Foco área de trabalho\n### 🤝 Aero Snap\n- Arrastar para cima\n- Maximizar janela\n- Metade esquerda direita\n- Cantos um quarto\n- Organização múltiplas\n### 🤲 Aero Shake\n- Agitar janela ativa\n- Minimizar demais\n- Nova agitação restaura\n- Foco única janela\n- Produtividade visual\n\n## ⚙️ Sessão, Modos e Energia\n### 👤 Sessão do usuário\n- Bloquear sessão\n- Exigir senha retorno\n- Sair fechar apps\n- Trocar de usuário\n- Múltiplas sessões\n### ✈️ Modos especiais\n- Modo avião conexões\n- Desliga Wi‑Fi Bluetooth\n- Modo tablet toque\n- Ícones maiores\n- Gestos navegação\n### 🔋 Opções de energia\n- Suspender ligado rápido\n- Hibernar salva disco\n- Desligar encerra sistema\n- Reiniciar aplica atualizações\n- Ativar opção Hibernar",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Barra de Tarefas",
+      "description": "Barra de Tarefas — 6 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é o efeito de manter a **barra de tarefas** bloqueada?",
+          "back": "Impede **movimentá-la** ou colocá-la em outra posição.",
+          "hint": "Relacionado a restrição de movimento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como desbloquear a barra de tarefas para permitir seu reposicionamento?",
+          "back": "Clicar com o botão direito nela e selecionar **Desbloquear**.",
+          "hint": "Ação de interface via mouse",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Em quais posições a barra de tarefas pode ser colocada?",
+          "back": "Embaixo, em cima, na lateral esquerda ou na lateral direita.",
+          "hint": "São quatro direções cardinais",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual opção permite manter um programa acessível diretamente pela barra de tarefas?",
+          "back": "**Fixar na barra de tarefas**.",
+          "hint": "Ação de atalho persistente",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Como identificar visualmente um programa em execução na barra de tarefas?",
+          "back": "Por um **sublinhado** na parte inferior do ícone.",
+          "hint": "Indicador visual de estado",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-6",
+          "front": "O que aparece ao manter o cursor sobre o ícone de um programa na barra de tarefas?",
+          "back": "Uma **miniatura** da janela do programa.",
+          "hint": "Recurso de pré-visualização",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "barra-tarefas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Organização de Janelas",
+      "description": "Organização de Janelas — 4 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual é o efeito de agitar a janela ativa de um lado para o outro?",
+          "back": "Minimizar todas as janelas abertas, exceto a **ativa**.",
+          "hint": "Gesto de mouse específico",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "janelas"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "O que ocorre ao repetir a agitação da janela após minimizar as demais?",
+          "back": "As janelas minimizadas **voltam** ao estado anterior.",
+          "hint": "Reversibilidade de estado",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "janelas"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual resultado é obtido ao arrastar uma janela até a borda superior da tela?",
+          "back": "A janela é **maximizada**.",
+          "hint": "Gesto de redimensionamento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "janelas"
+          ],
+          "type": "example"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual área uma janela ocupa ao ser encaixada na lateral da tela?",
+          "back": "Metade ou um quarto da tela.",
+          "hint": "Divisão de área de tela",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "janelas"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Notificações do Sistema",
+      "description": "Notificações do Sistema — 6 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Que tipo de programa costuma ser representado na área de notificação?",
+          "back": "Programas em execução em **segundo plano**.",
+          "hint": "Localização de processos ocultos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "area-notificacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Como acessar ícones de programas que não aparecem imediatamente na área de notificação?",
+          "back": "Clicar na **setinha** para exibir outros programas.",
+          "hint": "Ação de expansão de lista",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "area-notificacao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-13",
+          "front": "O que pode ser definido nas configurações dos ícones da área de notificação?",
+          "back": "Quais ícones devem aparecer na área de notificação.",
+          "hint": "Personalização de visibilidade",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "area-notificacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual é a função da Central de Ações do Windows 10?",
+          "back": "Mostrar **notificações** do sistema e de aplicativos, além de configurações rápidas.",
+          "hint": "Hub de avisos e ajustes",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "central-acoes"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-15",
+          "front": "Qual mudança o modo Tablet realiza na interface do Windows 10?",
+          "back": "Altera a disposição dos ícones para facilitar o uso com **telas de toque**.",
+          "hint": "Adaptação de interface",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "interface"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é o efeito do modo Avião sobre as conexões do dispositivo?",
+          "back": "Desliga todas as **conexões** do dispositivo.",
+          "hint": "Estado de conectividade",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "conectividade"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Menu Iniciar",
+      "description": "Menu Iniciar — 7 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Qual é a função do botão Mostrar área de trabalho?",
+          "back": "Minimizar todas as janelas para exibir a **área de trabalho**.",
+          "hint": "Atalho de visibilidade total",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "area-trabalho"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "O que ocorre ao clicar novamente no botão Mostrar área de trabalho?",
+          "back": "As janelas retornam ao **estado anterior**.",
+          "hint": "Ação de alternância de estado",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "area-trabalho"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-19",
+          "front": "Que organização é aplicada à lista de programas do Menu Iniciar?",
+          "back": "Ordem alfabética.",
+          "hint": "Critério de ordenação",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "menu-iniciar"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "O que a opção Bloquear faz com a sessão do usuário?",
+          "back": "Bloqueia a sessão e exige a digitação da senha para retornar.",
+          "hint": "Segurança de sessão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "seguranca"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-21",
+          "front": "Qual é a consequência de escolher Sair no Menu Iniciar?",
+          "back": "Fecha **todos os programas** abertos.",
+          "hint": "Impacto em processos ativos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "sessao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual é a diferença entre Sair e Trocar usuário no Windows 10?",
+          "back": "**Sair** fecha todos os programas abertos; **Trocar usuário** mantém os programas da conta anterior abertos em segundo plano.",
+          "hint": "Comparativo de estados de sessão",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "sessao"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-23",
+          "front": "Quais dimensões podem ser escolhidas ao redimensionar um bloco dinâmico?",
+          "back": "Pequeno, médio, largo ou grande.",
+          "hint": "São quatro opções de tamanho",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "menu-iniciar"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Energia do Sistema",
+      "description": "Energia do Sistema — 2 cards",
+      "cards": [
+        {
+          "id": "card-24",
+          "front": "Como a suspensão reduz o consumo de energia sem desligar completamente o computador?",
+          "back": "Desliga efetivamente alguns itens, como a tela e o disco rígido, mantendo o computador ligado de forma silenciosa.",
+          "hint": "Estado de baixo consumo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-25",
+          "front": "Qual ação permite retomar rapidamente o computador após a suspensão?",
+          "back": "Mexer o mouse ou apertar uma tecla.",
+          "hint": "Gatilho de despertar",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "windows-10",
+            "energia"
+          ],
+          "type": "procedure"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a localização padrão da barra de tarefas no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Na lateral direita da tela",
+          "correct": false,
+          "explanation": "Incorreta. A barra de tarefas não é localizada por padrão na lateral direita da tela. Assim como nas laterais e na parte superior, essa posição pode ser configurada pelo usuário, mas não é a predefinida."
+        },
+        {
+          "id": "b",
+          "text": "Na lateral esquerda da tela",
+          "correct": false,
+          "explanation": "Incorreta. A lateral esquerda da tela não é a localização padrão da barra de tarefas. O usuário pode arrastá-la para essa posição, mas a configuração inicial do sistema é na parte inferior."
+        },
+        {
+          "id": "c",
+          "text": "Na parte superior da tela",
+          "correct": false,
+          "explanation": "Incorreta. A barra de tarefas do Windows 10, por padrão, não se localiza na parte superior da tela. Embora seja possível movê-la para lá, essa não é a configuração inicial do sistema operacional."
+        },
+        {
+          "id": "d",
+          "text": "Na parte inferior da tela",
+          "correct": true,
+          "explanation": "Correta. A barra de tarefas do Windows 10 é, por padrão, posicionada na parte inferior da tela, facilitando o acesso rápido ao botão Iniciar, ícones de programas e área de notificação."
+        }
+      ],
+      "explanation": "Correta. A barra de tarefas do Windows 10 é, por padrão, posicionada na parte inferior da tela, facilitando o acesso rápido ao botão Iniciar, ícones de programas e área de notificação.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a função do botão Iniciar no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Abrir o menu de acesso a programas e configurações do sistema",
+          "correct": true,
+          "explanation": "Correta. O botão Iniciar é a porta de entrada principal para o Menu Iniciar, que permite ao usuário acessar todos os programas instalados, configurações do sistema, documentos, opções de energia e outras funcionalidades essenciais do Windows 10."
+        },
+        {
+          "id": "b",
+          "text": "Minimizar todas as janelas abertas temporariamente",
+          "correct": false,
+          "explanation": "Incorreta. A função de minimizar todas as janelas abertas temporariamente é realizada pelo botão \"Mostrar área de trabalho\", localizado no canto direito da barra de tarefas, e não pelo botão Iniciar. O botão Iniciar abre o menu principal do sistema."
+        },
+        {
+          "id": "c",
+          "text": "Desligar imediatamente o computador sem salvar arquivos",
+          "correct": false,
+          "explanation": "Incorreta. Embora o botão Iniciar dê acesso às opções de desligamento do computador, ele não desliga o sistema imediatamente sem salvar arquivos. Essa ação geralmente requer confirmação ou é realizada por atalhos específicos para forçar o encerramento, o que não é a função primária do botão Iniciar."
+        },
+        {
+          "id": "d",
+          "text": "Exibir apenas os programas em execução no momento",
+          "correct": false,
+          "explanation": "Incorreta. O botão Iniciar exibe uma lista de todos os programas instalados no computador, além de configurações e outros atalhos. A visualização de apenas os programas em execução é uma função da própria barra de tarefas, onde os ícones dos aplicativos abertos são exibidos."
+        }
+      ],
+      "explanation": "Correta. O botão Iniciar é a porta de entrada principal para o Menu Iniciar, que permite ao usuário acessar todos os programas instalados, configurações do sistema, documentos, opções de energia e outras funcionalidades essenciais do Windows 10.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "O que acontece quando a barra de tarefas está bloqueada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A área de notificação fica oculta permanentemente",
+          "correct": false,
+          "explanation": "Incorreta. O bloqueio da barra de tarefas não afeta a visibilidade da área de notificação. A área de notificação, que exibe ícones de sistema e de aplicativos em segundo plano, permanece visível e funcional, a menos que seja configurada para ser ocultada de outra forma."
+        },
+        {
+          "id": "b",
+          "text": "A barra não pode ser movimentada para outras posições na tela",
+          "correct": true,
+          "explanation": "Correta. Quando a barra de tarefas está bloqueada, o usuário não consegue arrastá-la para outras bordas da tela (superior, esquerda ou direita) nem redimensionar sua altura ou largura. O bloqueio visa manter a barra em sua posição e tamanho atuais."
+        },
+        {
+          "id": "c",
+          "text": "Os ícones fixados não podem ser removidos da barra",
+          "correct": false,
+          "explanation": "Incorreta. O bloqueio da barra de tarefas impede sua movimentação ou redimensionamento, mas não restringe a capacidade de remover ícones de programas que foram fixados nela. A remoção de ícones fixados é uma ação separada."
+        },
+        {
+          "id": "d",
+          "text": "Nenhum programa pode ser aberto a partir da barra",
+          "correct": false,
+          "explanation": "Incorreta. O bloqueio da barra de tarefas não impede que programas sejam abertos a partir dela. Os ícones de programas fixados ou em execução continuam clicáveis e funcionais, independentemente do estado de bloqueio da barra."
+        }
+      ],
+      "explanation": "Correta. Quando a barra de tarefas está bloqueada, o usuário não consegue arrastá-la para outras bordas da tela (superior, esquerda ou direita) nem redimensionar sua altura ou largura. O bloqueio visa manter a barra em sua posição e tamanho atuais.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Como é possível fixar um programa na barra de tarefas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Pressionando a tecla Windows junto com a tecla do programa",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma combinação direta da tecla Windows com uma tecla específica do programa para fixá-lo na barra de tarefas. A tecla Windows é utilizada em conjunto com outras teclas para atalhos de sistema, como abrir o Menu Iniciar (Win), minimizar janelas (Win + D) ou gerenciar telas (Win + P)."
+        },
+        {
+          "id": "b",
+          "text": "Arrastando o ícone do programa para a área de trabalho",
+          "correct": false,
+          "explanation": "Incorreta. Arrastar o ícone de um programa para a área de trabalho geralmente cria um atalho para esse programa na área de trabalho, e não o fixa na barra de tarefas. Para fixar na barra, o destino do arrasto deve ser a própria barra de tarefas."
+        },
+        {
+          "id": "c",
+          "text": "Clicando com o botão direito no ícone do programa e selecionando a opção correspondente",
+          "correct": true,
+          "explanation": "Correta. Uma das maneiras mais comuns de fixar um programa na barra de tarefas é clicar com o botão direito do mouse sobre o ícone do programa (seja no Menu Iniciar, na Área de Trabalho ou em uma pasta) e, no menu de contexto que aparece, selecionar a opção \"Fixar na barra de tarefas\". Outro método é arrastar o ícone do programa diretamente para a barra de tarefas."
+        },
+        {
+          "id": "d",
+          "text": "Clicando duas vezes rapidamente no ícone do programa",
+          "correct": false,
+          "explanation": "Incorreta. Clicar duas vezes rapidamente no ícone de um programa tem a função de executá-lo, ou seja, abrir o programa. Essa ação não o fixa na barra de tarefas; apenas o coloca temporariamente na barra enquanto estiver em execução."
+        }
+      ],
+      "explanation": "Correta. Uma das maneiras mais comuns de fixar um programa na barra de tarefas é clicar com o botão direito do mouse sobre o ícone do programa (seja no Menu Iniciar, na Área de Trabalho ou em uma pasta) e, no menu de contexto que aparece, selecionar a opção \"Fixar na barra de tarefas\". Outro método é arrastar o ícone do programa diretamente para a barra de tarefas.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual elemento visual indica que um programa está em execução na barra de tarefas?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Um sublinhado abaixo do ícone do programa",
+          "correct": true,
+          "explanation": "Correta. No Windows 10, um programa em execução na barra de tarefas é visualmente indicado por um sublinhado (uma linha fina) abaixo do ícone do programa. A cor desse sublinhado geralmente corresponde à cor de destaque do sistema ou é azul, indicando que o aplicativo está aberto ou ativo."
+        },
+        {
+          "id": "b",
+          "text": "Uma seta verde apontando para cima",
+          "correct": false,
+          "explanation": "Incorreta. Uma seta verde apontando para cima não é um indicador visual padrão de que um programa está em execução na barra de tarefas do Windows 10. Esse tipo de ícone pode ter outras funções, mas não essa."
+        },
+        {
+          "id": "c",
+          "text": "Uma borda vermelha ao redor do ícone",
+          "correct": false,
+          "explanation": "Incorreta. Uma borda vermelha ao redor do ícone não é o elemento visual padrão que indica que um programa está em execução na barra de tarefas do Windows 10. Outros indicadores visuais são utilizados para essa finalidade."
+        },
+        {
+          "id": "d",
+          "text": "Um círculo amarelo ao lado do ícone",
+          "correct": false,
+          "explanation": "Incorreta. Um círculo amarelo ao lado do ícone não é o elemento visual que indica um programa em execução na barra de tarefas do Windows 10. O sistema utiliza um sublinhado ou um destaque na cor do tema para essa sinalização."
+        }
+      ],
+      "explanation": "Correta. No Windows 10, um programa em execução na barra de tarefas é visualmente indicado por um sublinhado (uma linha fina) abaixo do ícone do programa. A cor desse sublinhado geralmente corresponde à cor de destaque do sistema ou é azul, indicando que o aplicativo está aberto ou ativo.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "O que o botão Mostrar Área de Trabalho faz quando clicado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Desliga o computador após salvar todos os arquivos",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se refere à função de desligar ou hibernar o computador, que são ações distintas de apenas visualizar a área de trabalho. O botão 'Mostrar Área de Trabalho' não desliga o sistema nem salva arquivos automaticamente."
+        },
+        {
+          "id": "b",
+          "text": "Minimiza todas as janelas abertas, permitindo visualizar a área de trabalho",
+          "correct": true,
+          "explanation": "Correta. Ao clicar no botão 'Mostrar Área de Trabalho', localizado no canto direito da barra de tarefas, todas as janelas abertas são minimizadas, revelando a área de trabalho. Um segundo clique no mesmo botão restaura as janelas ao seu estado anterior."
+        },
+        {
+          "id": "c",
+          "text": "Fecha permanentemente todos os programas abertos",
+          "correct": false,
+          "explanation": "Incorreta. O botão 'Mostrar Área de Trabalho' não encerra programas de forma permanente. Ele apenas os minimiza, mantendo-os em execução em segundo plano, o que permite restaurá-los rapidamente com um segundo clique."
+        },
+        {
+          "id": "d",
+          "text": "Abre o menu de configurações do sistema",
+          "correct": false,
+          "explanation": "Incorreta. O menu de configurações do sistema é acessado geralmente através do botão Iniciar e, em seguida, selecionando o ícone de engrenagem ou digitando 'Configurações' na pesquisa. O botão 'Mostrar Área de Trabalho' tem uma função diferente."
+        }
+      ],
+      "explanation": "Correta. Ao clicar no botão 'Mostrar Área de Trabalho', localizado no canto direito da barra de tarefas, todas as janelas abertas são minimizadas, revelando a área de trabalho. Um segundo clique no mesmo botão restaura as janelas ao seu estado anterior.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Como funciona o recurso Aero Peek no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Fecha todos os programas que não estão sendo utilizados há mais de uma hora",
+          "correct": false,
+          "explanation": "Incorreta. Não existe um recurso padrão no Windows 10 que feche automaticamente programas com base no tempo de inatividade. O 'Peek' serve para visualização e gerenciamento de janelas, não para encerramento de processos."
+        },
+        {
+          "id": "b",
+          "text": "Organiza automaticamente todos os ícones da área de trabalho em ordem alfabética",
+          "correct": false,
+          "explanation": "Incorreta. A organização automática de ícones na área de trabalho é uma função de personalização do desktop, acessível geralmente clicando com o botão direito do mouse na área de trabalho e selecionando 'Exibir' > 'Organizar ícones automaticamente'. Este recurso não está relacionado ao 'Peek'."
+        },
+        {
+          "id": "c",
+          "text": "Cria cópias de segurança automáticas de todos os arquivos abertos",
+          "correct": false,
+          "explanation": "Incorreta. A criação de cópias de segurança automáticas (backup) é uma funcionalidade de proteção de dados, geralmente configurada através das 'Configurações' do sistema ou de softwares de terceiros. Não é uma função do recurso 'Peek'."
+        },
+        {
+          "id": "d",
+          "text": "Exibe miniaturas das janelas abertas ao posicionar o cursor sobre o ícone do programa na barra de tarefas",
+          "correct": true,
+          "explanation": "Correta. O recurso 'Peek' (anteriormente conhecido como Aero Peek) no Windows 10 permite que o usuário visualize miniaturas das janelas abertas ao posicionar o cursor do mouse sobre o ícone do programa na barra de tarefas. Se o cursor for posicionado sobre o botão 'Mostrar Área de Trabalho' (no canto extremo direito da barra), todas as janelas abertas se tornam transparentes ou são minimizadas temporariamente, permitindo uma rápida visualização da área de trabalho."
+        }
+      ],
+      "explanation": "Correta. O recurso 'Peek' (anteriormente conhecido como Aero Peek) no Windows 10 permite que o usuário visualize miniaturas das janelas abertas ao posicionar o cursor do mouse sobre o ícone do programa na barra de tarefas. Se o cursor for posicionado sobre o botão 'Mostrar Área de Trabalho' (no canto extremo direito da barra), todas as janelas abertas se tornam transparentes ou são minimizadas temporariamente, permitindo uma rápida visualização da área de trabalho.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é o comportamento do recurso Aero Snap quando uma janela é arrastada para a lateral da tela?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A janela é duplicada criando uma cópia idêntica",
+          "correct": false,
+          "explanation": "Incorreta. O 'Snap' não duplica janelas. Sua função é redimensionar e posicionar uma única janela de forma eficiente na tela, otimizando o espaço de trabalho."
+        },
+        {
+          "id": "b",
+          "text": "A janela ocupa metade da tela no lado correspondente",
+          "correct": true,
+          "explanation": "Correta. Quando uma janela é arrastada para a lateral esquerda ou direita da tela, o recurso 'Snap' a redimensiona automaticamente para ocupar exatamente metade da tela. Isso facilita a organização e a visualização de duas janelas lado a lado. Se arrastada para um canto, ela ocupará um quarto da tela."
+        },
+        {
+          "id": "c",
+          "text": "A janela é minimizada na barra de tarefas",
+          "correct": false,
+          "explanation": "Incorreta. Minimizar uma janela a envia para a barra de tarefas, e isso é feito clicando no botão de minimizar ou usando atalhos de teclado, não arrastando a janela para a lateral da tela."
+        },
+        {
+          "id": "d",
+          "text": "A janela é fechada automaticamente",
+          "correct": false,
+          "explanation": "Incorreta. O recurso 'Snap' (anteriormente conhecido como Aero Snap) é projetado para organizar janelas, não para fechá-las. Arrastar uma janela para a lateral da tela não resulta em seu fechamento automático."
+        }
+      ],
+      "explanation": "Correta. Quando uma janela é arrastada para a lateral esquerda ou direita da tela, o recurso 'Snap' a redimensiona automaticamente para ocupar exatamente metade da tela. Isso facilita a organização e a visualização de duas janelas lado a lado. Se arrastada para um canto, ela ocupará um quarto da tela.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "O que diferencia a troca de usuário da opção Sair no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A troca de usuário mantém os programas abertos na conta original, enquanto Sair fecha todos os programas",
+          "correct": true,
+          "explanation": "Correta. A 'troca de usuário' permite que outro usuário faça login no computador sem que o usuário atual precise fechar seus programas e arquivos. As aplicações do usuário original permanecem abertas e em execução em segundo plano. Já a opção 'Sair' (ou 'Fazer logoff') encerra a sessão do usuário atual, fechando todos os programas e arquivos abertos, liberando os recursos do sistema para um novo login ou para desligamento."
+        },
+        {
+          "id": "b",
+          "text": "A troca de usuário desliga o computador, enquanto Sair apenas bloqueia a tela",
+          "correct": false,
+          "explanation": "Incorreta. Nem a 'troca de usuário' nem a opção 'Sair' desligam o computador. 'Desligar' é uma ação separada que encerra o sistema operacional. 'Bloquear a tela' é uma função que protege o acesso à sessão atual sem encerrá-la ou trocar de usuário."
+        },
+        {
+          "id": "c",
+          "text": "A troca de usuário fecha todos os programas, enquanto Sair mantém os programas abertos",
+          "correct": false,
+          "explanation": "Incorreta. Esta alternativa descreve o oposto do comportamento real. A 'troca de usuário' mantém os programas abertos, enquanto 'Sair' os fecha."
+        },
+        {
+          "id": "d",
+          "text": "A troca de usuário requer senha obrigatória, enquanto Sair não requer",
+          "correct": false,
+          "explanation": "Incorreta. A exigência de senha está associada à segurança da conta de usuário ao fazer login ou retomar uma sessão bloqueada, não à ação de 'Sair' ou 'Trocar usuário' em si. Ambas as ações podem levar a uma tela de login que requer senha, dependendo das configurações de segurança do sistema."
+        }
+      ],
+      "explanation": "Correta. A 'troca de usuário' permite que outro usuário faça login no computador sem que o usuário atual precise fechar seus programas e arquivos. As aplicações do usuário original permanecem abertas e em execução em segundo plano. Já a opção 'Sair' (ou 'Fazer logoff') encerra a sessão do usuário atual, fechando todos os programas e arquivos abertos, liberando os recursos do sistema para um novo login ou para desligamento.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a diferença fundamental entre Suspender e Hibernar no Windows 10?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Suspender salva todos os arquivos abertos, enquanto Hibernar fecha todos os programas",
+          "correct": false,
+          "explanation": "Incorreta. 'Suspender' não salva explicitamente os arquivos abertos no disco; ele mantém o estado da sessão na memória RAM. 'Hibernar' não fecha os programas, mas salva o estado deles para restauração posterior."
+        },
+        {
+          "id": "b",
+          "text": "Suspender desliga o computador completamente, enquanto Hibernar mantém o computador ligado",
+          "correct": false,
+          "explanation": "Incorreta. 'Suspender' não desliga o computador completamente; ele entra em um estado de baixo consumo de energia. 'Hibernar' desliga o computador, mas somente após salvar o estado da sessão."
+        },
+        {
+          "id": "c",
+          "text": "Suspender desativa alguns recursos mantendo o computador ligado, enquanto Hibernar salva tudo e desliga o computador",
+          "correct": true,
+          "explanation": "Correta. A função 'Suspender' (também conhecida como 'Modo de Espera' ou 'Repouso') coloca o computador em um estado de baixo consumo de energia, desativando alguns componentes (como tela e disco rígido), mas mantendo a memória RAM alimentada para preservar o estado da sessão. O retorno é quase instantâneo. Já a função 'Hibernar' salva todo o conteúdo da memória RAM em um arquivo no disco rígido e, em seguida, desliga completamente o computador, não consumindo energia. O retorno da hibernação é mais lento que o do modo suspender, mas restaura exatamente o ponto em que o usuário parou."
+        },
+        {
+          "id": "d",
+          "text": "Suspender requer senha para retornar, enquanto Hibernar não requer autenticação",
+          "correct": false,
+          "explanation": "Incorreta. Ambas as opções podem ser configuradas para exigir senha ao retornar à sessão, dependendo das configurações de segurança do sistema. A exigência de autenticação não é uma diferença fundamental entre os modos de economia de energia."
+        }
+      ],
+      "explanation": "Correta. A função 'Suspender' (também conhecida como 'Modo de Espera' ou 'Repouso') coloca o computador em um estado de baixo consumo de energia, desativando alguns componentes (como tela e disco rígido), mas mantendo a memória RAM alimentada para preservar o estado da sessão. O retorno é quase instantâneo. Já a função 'Hibernar' salva todo o conteúdo da memória RAM em um arquivo no disco rígido e, em seguida, desliga completamente o computador, não consumindo energia. O retorno da hibernação é mais lento que o do modo suspender, mas restaura exatamente o ponto em que o usuário parou.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "07_253596_Windows 10 II.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:56:50"
+}

@@ -1,0 +1,690 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conceitos e modos de utilização de aplicativos para edição de textos (Word, Writer), planilhas (Excel, Calc), apresentações (PowerPoint, Impress); Microsoft Office (versão 2007 e superiores), LibreOffice (versão 5.0 e superiores)."
+  },
+  "ordem": 5,
+  "ordem_no_curso": "103.00",
+  "titulo": "Office 365 - Word V",
+  "codigo_aula": "288972",
+  "video_id": "m5T/WlSCoGU=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:32:26",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/m5T%2FWlSCoGU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=406720%2C405030&qd=0&qa=0&q=&auth=force",
+  "transcricao": "# Transcrição - Word V\n\n## Inserir: reutilizar arquivos, mídias e links\nVem comigo. Estamos aqui na guia Inserir. Olha a opção “Reutilizar arquivos”. Vejam: em muitos casos teremos redundância de funções em locais diferentes. Hoje, o foco é utilizar arquivos na guia Inserir, mas lá na guia Inicial, lá no final, também aparece “Reutilizar arquivos”. Às vezes, em prova pode cair como se fosse a única forma de utilizar arquivos: se disserem que só existe na guia Inserir, seria mentira.\n\nAproveitando o momento em que ela está aqui na guia Inserir, vamos lembrar: o Editor fica na guia Revisão. Olha o Editor. Esses detalhes às vezes eu posso passar batido, posso esquecer de comentar, mas não é para você ficar neurótico. Você não tem que saber todos os locais de todas as funções. Mas é interessante ter noção, e com o tempo você vai percebendo. Veja: você tem acesso ao Editor direto na guia Revisão. Dentro do Word, seguimos com “Reutilizar arquivos”.\n\nTemos também “Mídia”. Posso usar vídeos online. Posso buscar vídeos online. Se eu clicar, ele pede o código de inserção do vídeo online. Você vai lá, pega o link ou o código de incorporação e coloca aqui para o vídeo aparecer no seu documento. Beleza.\n\nAqui temos um atalho que não apareceu lá, mas eu quero que você note: hiperlink. Hiperlink é um atalho, um link. Você vai colocar e isso permite, por exemplo, inserir um endereço da web — que é o que mais cai. Vou colocar para a minha página do Gran Cursos Online. Então a palavra fica azul e sublinhada, indicando que é um link. Ao clicar, o navegador padrão do seu computador abre a página.\n\nEssa opção de link também lista itens usados recentemente para facilitar. E posso linkar dentro do próprio documento: títulos, indicadores, criar um link para um local específico, ir de uma página para outra, linkar um e-mail, um endereço da web, outro tipo de arquivo — uma apresentação, uma imagem, e assim por diante.\n\nVisto isso, “Indicador” e “Referência cruzada” são basicamente marcadores que eu coloco no texto para indicar algo que vou utilizar depois. Por exemplo, para criar um link interno ou na hora do sumário eu posso usar esses marcadores para indicar palavras e seções.\n\nComentários: geralmente uso quando estou compartilhando o documento com alguém ou até comigo mesmo. Quero lembrar que tenho que fazer algo naquele ponto do documento. Venho aqui, coloco o comentário e inicio uma conversa — nesse caso, comigo mesmo — e vou anotando.\n\n## Cabeçalho e quebra de seção\nCabeçalho e rodapé: o que você tem que saber é o seguinte. O cabeçalho fica no topo do meu documento. O local padrão do cabeçalho é ali em cima. Vem comigo. Estou na área de cabeçalho do meu documento, este é o cabeçalho que eu vou colocar aqui.\n\nVamos colocar de novo “Jefferson Bom”. Beleza, está aqui o cabeçalho. O que eu quero mostrar: quando eu insiro outra página com Ctrl+Enter, ele é o mesmo. Agora, se eu inserir uma quebra de seção — vem comigo — vou lá em Layout, Quebras, “Próxima página”. A “quebra de seção – próxima página” cria uma nova seção.\n\nDeixa eu colocar aqui embaixo… na barra de status aparece: Seção 2, Página 2. Então temos duas seções. Na página 1 o cabeçalho é “Jefferson Bom”. Se eu vou para a página 2, é o mesmo cabeçalho. Agora eu tenho a opção de desvincular o cabeçalho da seção anterior. Mas veja: só consigo fazer isso criando uma quebra de seção para a próxima página. Seção é literalmente dividir: é uma divisão lógica dentro do documento.\n\nCom “Vincular ao Anterior” marcado, eu posso tirar o vínculo. Tiro o vínculo e agora posso trocar: coloco “Teste” aqui. A partir da seção 2 (página 2) eu tenho um cabeçalho, e na seção anterior outro. Essa divisão em seções também permite outra coisa: por exemplo, vou deixar a página 2 bem pequenininha aqui… Ela está na orientação Retrato, que é o padrão. Venho em Layout e coloco a página 2 em Paisagem. Veja: a página 2 ficou em paisagem; a página 1 continua do mesmo jeito. Se não houvesse quebra de seção, ao mudar a orientação mudaria em todas.\n\nSe eu excluir a quebra de seção, volto a ter uma só seção. Mudo a orientação e as duas páginas mudam. Então, a quebra de seção permite, entre outras coisas, ter cabeçalhos e rodapés diferentes, numeração de páginas diferente, ou a mesma sequencialmente no documento todo — mas com a possibilidade de variar por seção. Vamos voltar a orientação para Retrato. Beleza.\n\n## Inserir: número de página, caixa de texto e formatações\nVoltando para Inserir: cabeçalho, rodapé, número de página. Segue a mesma lógica: posso colocar no início, no fim da página, na margem, na posição atual, formatar os números, remover, se for o caso.\n\nCaixa de texto: vou ter uma caixa com algumas formatações pré-definidas. Basicamente é um texto dentro de uma caixa. A autocorreção pode agir — por exemplo, eu digitei “texro” e ele troca automaticamente por “texto” por autocorreção. Eu tenho um texto que flutua dentro de uma caixa de texto. Posso ancorar em um lugar, formatar. As opções vão longe. Em Formatar Forma, posso, por exemplo, preencher com uma cor. Posso tirar a linha (contorno), deixar sem linha. Vai parecer um texto comum, mas é uma caixa de texto, e posso posicioná-la de acordo com o texto.\n\nSe houver um texto longo, a caixa pode afastar o texto em volta. Clico com o botão direito, “Quebra automática do texto”: Justa, Através, Superior e inferior, Atrás do texto. Atrás do texto, ele literalmente vai para trás, pode bagunçar a visualização, mas se eu precisar, tem como ajustar a posição.\n\nVoltando: Partes rápidas. Aqui eu posso programar e gravar AutoTexto: por exemplo, digito “Jef” e, depois de três letras, ele completa “Jefferson Bom” automaticamente.\n\n“Propriedades do documento”: posso inserir campos como Assunto, Autor, Categoria. São propriedades do documento que podem ser inseridas em campos. Campo também pode ser o caminho onde o documento está gravado, entre outros.\n\n## Texto artístico e letra capitular\nVamos ao que mais interessa hoje: WordArt. Lembra daquele recurso na guia Página Inicial, grupo Fonte? Se aparecer um texto estilizado como esse, posso perguntar: “Qual recurso gerou isso?”. É o WordArt. As opções permitem mudar cor, brilho, contorno etc. Dá para fazer muita coisa.\n\nLetra capitular: pego um parágrafo e coloco a letra capitular, muito comum em jornal. É aquela letra grande destacada com o texto embaixo ou ao lado. As duas principais opções estão lá, e há outras configurações. Se visualizar e perguntar “o que é?”, você já sabe: letra capitular.\n\nData e hora, objeto, equação e símbolo também podem ser inseridos na guia Inserir.\n\n## Atalhos, Design e marca d’água\nVoltando para nosso PDF de atalhos: no grupo Link (Ctrl+K) eu insiro hiperlink. Anota os atalhos. A revisão eu já falei. E, na minha opinião, isso cai em prova. É possível que alguém cobre um dia, por falta do que cobrar.\n\nNa guia Design: temas que posso aplicar ao documento; escolho um tema e ele sugere formatações como se fossem estilos do documento. Cores: um conjunto de cores padrão. Fontes: combinações de fontes. Espaçamento entre parágrafos (já vimos). Efeitos. “Definir como padrão”, caso eu queira tornar essas configurações o padrão.\n\nAqui tem um recurso que pode cair: marca d’água. Eu quero colocar no meu texto uma marca d’água, que vai aparecer ao fundo, esmaecida, para indicar autoria do documento, evitando, em tese, pirataria. Mas atenção: se eu não colocar nenhum tipo de restrição de edição, qualquer pessoa pode remover a marca d’água. Ela aparece como texto (ou imagem), posso posicionar na diagonal, formatar à vontade.\n\nCor da página: posso escolher uma cor para a página. Bordas da página: também aqui.\n\n> 🎯 Dicas de prova: Guia Design, marca d’água, temas, cores, fontes e espaçamento de parágrafos costumam aparecer.\n\n## Layout: margens, orientação, tamanho, colunas e quebras\nNa guia Layout, muito importante para a prova. Eu posso definir margens: há opções pré-definidas e “Margens Personalizadas”, onde configuro como quiser. Posso mudar a orientação (Retrato/Paisagem). Isso só pode ser diferente entre páginas do mesmo documento se houver quebra de seção — grava isso.\n\nTamanho do papel: padrão A4, mas posso mudar para Carta, Ofício, Executivo, etc. Quase não cai, mas existe.\n\nColunas: às vezes cai. Vou tirar a caixa de texto que ficou atrás. Vou pegar um trecho do texto e colocá-lo em duas colunas: Layout > Colunas. Opções padrão: Uma, Duas, Três, Esquerda (coluna menor à esquerda), Direita (o contrário), ou “Mais colunas…”. No “Mais colunas”, posso colocar um número alto. O máximo de colunas? Entre 1 e 45. É raro cair, mas anota: máximo 45 colunas.\n\nO que acontece ao aplicar colunas? O Word insere uma quebra de seção contínua, não para a próxima página, mas na mesma página. Não apareceu porque não ativei os caracteres não imprimíveis. Se eu ativar em Página Inicial (mostrar marcas), aparece: meu cabeçalho, parágrafos e a “Quebra de seção contínua”. Estão aqui: Seção 1 e, embaixo, Seção 2 na mesma página. Com isso, eu poderia ter, por exemplo, margens diferentes em cima e embaixo em seções distintas na mesma página.\n\nVoltando: “Quebras”. A quebra de página força pular de página sem ficar dando Enter. A quebra de coluna serve quando tenho colunas e quero passar para a próxima coluna naquele ponto. “Disposição do texto” em volta de uma imagem usa as opções de quebra automática. “Quebra de seção – Próxima página”: já mostrei. “Contínua”: acabei de usar. “Página ímpar” e “Página par”: posso iniciar seções somente em páginas ímpares (1, 3, 5) ou pares (2, 4), por exemplo.\n\nNumeração de linhas: geralmente usada em provas de português. Vai aparecer 1, 2, 3 ao lado. Hifenização: automática ou manual, para quebrar palavras ao final da linha como separação silábica.\n\nNo grupo Parágrafo (aqui no Layout), tenho recuo e espaçamento — repetição do que vimos em Página Inicial.\n\nOrganizar (no Layout): refere-se a organizar objetos (formas, imagens). Posso definir posição, alinhamento com o texto, quebra automática do texto, avançar/recuar (trazer para frente, enviar para trás). Se tenho mais de uma figura, envio uma para trás, trago outra para frente. Vou mexendo para posicionar. Isso tudo também vale para caixa de texto e formas.\n\nAutoSave: ele está salvando automaticamente porque este documento está no OneDrive; por isso o salvamento automático está habilitado. Quer dizer que ele salva enquanto mexo. Mas lembre-se: se não estiver no OneDrive, vá em Arquivo > Opções > Salvar: “Salvar informações de AutoRecuperação a cada…” e defina um intervalo de 1 a 120 minutos. Aqui, como está no OneDrive, ele salva instantaneamente.\n\n## Referências e Mala Direta: visão geral\nMudando de guia, indo para os atalhos. Na guia Revisão… na verdade, a gente ainda não chegou nela. Estamos caminhando. Vamos para Referências.\n\nAqui posso inserir o Sumário, como já mostrei. Além disso, Notas de rodapé e Notas de fim também estão em Referências. O que eu vou enfatizar: citações e bibliografia para quem faz documentos acadêmicos, teses e dissertações; legendas para figuras e tabelas; e um Índice. O índice pode ser atualizado — é similar ao sumário em espírito, embora tecnicamente diferente.\n\nA ênfase aqui: Mala Direta. É criar uma mala direta onde posso gerar envelopes e etiquetas. A mala direta cria um vínculo entre uma base de dados (por exemplo, uma planilha do Excel) e o documento do Word. Suponha uma planilha com Nome e CPF de 300 clientes. Eu crio uma carta-modelo: “Senhor(a) X, … CPF Y …”. Insiro os campos “Nome” e “CPF”. Ao mesclar, o Word gera 300 documentos diferentes, um para cada linha da planilha. Posso enviar por e-mail, imprimir, etc. Os destinatários ficam cadastrados, posso editar a lista. Não vou mostrar passo a passo aqui porque hoje em dia as provas cobram mais o conceito, a guia onde se faz e para que serve a mala direta, do que o clique-a-clique.\n\n> 🎯 Dicas de prova: Mala Direta está na guia Correspondências. Serve para vincular um modelo do Word a uma base (por exemplo, Excel) e gerar cartas, envelopes ou etiquetas personalizadas por destinatário.\n\nIsso é uma escolha minha para priorizar o que agrega mais. Vamos embora.\n\n## Revisão: Editor, correções, dicionário de sinônimos e contagem\nChegamos à guia Revisão. Eu marcaria com bastante relevância para a prova.\n\nEditor (atalho F7): vamos provocar alguns erros no texto. Ao clicar no Editor, abre à direita a correção: ortografia, gramática, pontuação, escrita formal ou casual, etc. Ele sugere correções e você aceita ou ignora. Talvez ele aceite palavras coloquiais, depende do modo.\n\nVerificar ortografia/gramática: se não estiver destacando erros, pode ter alguma configuração bloqueando, mas não vou brigar com isso agora. Saiba que o Editor é F7.\n\nShift+F7 é o dicionário de sinônimos. Se eu pegar a palavra “vídeo”, ele sugere: tela, televisor, televisão, etc., para dar variação de vocabulário.\n\nContagem de palavras: mostra quantas páginas, quantas palavras, caracteres com e sem espaço — estatística do documento. Posso acessar também pela barra de status.\n\n“Ler em voz alta”: o Word lê o documento, útil para pessoas com dificuldade visual ou revisão auditiva.\n\nVerificar acessibilidade: checa se o documento está acessível para pessoas com deficiência.\n\nIdioma: traduzir texto e definir o idioma de verificação.\n\nComentários: também ficam aqui na Revisão.\n\n## Controle de Alterações\nControle de alterações cai de vez em quando. Vou ativar “Controlar Alterações”. Deixo “Todas as marcações”. A partir de agora, tudo que for escrito fica destacado. Se eu aplicar negrito em algo que já estava, ele marca a formatação. Se eu apagar uma palavra, ele registra a exclusão. Também mostra quem fez a alteração.\n\nSe estiver muito poluído, posso desligar o controle. Existe atalho Ctrl+Shift+E para ativar/desativar o Controle de Alterações.\n\nAo desligar, o documento “volta ao normal” na aparência, mas as marcações ainda estão lá como alterações pendentes. Para consolidar, eu preciso vir em “Alterações” e “Aceitar” ou “Rejeitar”. Posso aceitar uma por uma, aceitar todas, rejeitar uma por uma, rejeitar todas. Também dá para navegar entre as alterações. Ao aceitar tudo, o texto final fica aplicado (por exemplo, mantendo aquele negrito que foi sugerido).\n\nPor último: Comparar. Posso comparar dois documentos e gerar um terceiro mostrando as diferenças entre eles.\n\nProteger: restringir edição do documento, impedir que certas pessoas editem quando compartilho, permitir apenas comentários, etc. Notas vinculadas com o OneNote, ocultar tinta (anotações manuscritas).\n\n> 🎯 Dicas de prova: Ctrl+Shift+E ativa/desativa o Controle de Alterações. F7 abre o Editor (ortografia/gramática). Shift+F7 abre o dicionário de sinônimos.\n\n## Exibir: modos de leitura, réguas, navegação e janelas\nNa guia Exibir, tenho os modos de exibição:\n- Modo de Leitura: oculta barras de ferramentas e coloca o documento em layout voltado para leitura.\n- Layout de Impressão: o padrão, como será impresso (marcas de formatação não são impressas).\n- Layout da Web: para trabalhar com documentos publicados na web.\n- Estrutura de Tópicos: facilita quando o documento tem níveis (1, 1.1, 1.2 etc.).\n- Rascunho: se assemelha ao modo de leitura no sentido de reduzir distrações, mas com foco em edição.\n\nFoco e Leitura avançada, movimentação de páginas vertical ou lado a lado. Posso ver documentos lado a lado e sincronizar a rolagem. Mostrar régua, linhas de grade, painel de navegação (aquela estrutura pelos títulos). Zoom para variar a visualização.\n\nOrganizar janelas: recurso interessante. Posso dividir a janela do documento. Coloco mais conteúdo para gerar uma segunda página. Divido a janela: em cima fico na página 1, embaixo vou para a página 2 e escrevo. Assim, posso consultar o gabarito embaixo enquanto vejo a questão em cima, por exemplo. Em documentos longos, deixo a janela de baixo na última página e trabalho na de cima sem ficar rolando. Também há “Exibir lado a lado”, “Rolar sincronizada”, “Redefinir posição da janela”, “Alternar janelas”.\n\nMacros: já falei — programinhas para automatizar tarefas.\n\nCompartilhar: para compartilhar o documento quando estiver no OneDrive.\n\nBeleza. Por enquanto, fechamos este bloco. Depois eu vou trazer os atalhos resolvendo exercícios, caminhando para o fim da nossa linha do trem. Até daqui a pouco no próximo bloco. Valeu.",
+  "transcricao_meta": {
+    "title": "Word V",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 44553,
+    "createdAt": "2026-01-30T18:47:16.120Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda recursos do Microsoft Word nas guias Inserir, Design, Leiaute, Referências, Correspondências, Revisão e Exibir.\nPrincipais pontos:\n- Seções e quebras: quando usar, diferenças e efeitos (cai muito).\n- Hiperlinks, indicadores e referências cruzadas.\n- Cabeçalho/rodapé, numeração de páginas, orientação retrato/paisagem por seção.\n- Colunas e “quebra de seção contínua”.\n- Revisão: Editor (F7), dicionário de sinônimos (Shift+F7), Controle de Alterações, Comentários, Comparar.\n- Mala direta: conceito e fluxo essencial.\n- Partes rápidas, marca d’água, WordArt, letra capitular.\n- Exibir: modos, dividir janela e exibir lado a lado.\n\n## 1. Base / Conceitos Fundamentais\n- **Seção**: bloco do documento com configurações independentes (margens, orientação, cabeçalho/rodapé, numeração). É criada via **Quebras de seção**.\n- **Quebra de página**: força o início do conteúdo na próxima página; não altera configurações de seção.\n- **Quebra de seção**:\n  - **Contínua**: altera formatação sem pular de página.\n  - **Próxima página / Páginas pares / Páginas ímpares**: inicia nova página e separa seções.\n- **Cabeçalho/Rodapé**: áreas repetidas; por padrão, vinculadas à seção anterior.\n- **Hiperlink**: link para web, arquivos, e-mail ou lugares no documento (títulos/indicadores).\n- **Indicador (bookmark)**: marca um ponto do texto para navegação e referência cruzada.\n- **Referência cruzada**: link dinâmico para títulos/legendas/itens numerados.\n- **Colunas**: formatação de texto em múltiplas colunas; intervalo permitido de 1 a 45.\n- **Partes rápidas**: blocos reutilizáveis; incluem campos de **Propriedades do documento** (Assunto, Autor, Categoria, Caminho).\n- **WordArt**: estilo especial de texto com efeitos.\n- **Letra capitular**: inicial aumentada no início de parágrafo.\n- **Marca d’água**: elemento esmaecido no fundo da página (texto/figura).\n- **Editor**: verificação ortográfica e gramatical (F7).\n- **Dicionário de sinônimos**: Thesaurus (Shift+F7).\n- **Controle de Alterações**: rastreia inserções/exclusões/formatos para revisão colaborativa.\n- **Mala direta**: mescla modelo com base de dados (ex.: Excel) para gerar documentos personalizados.\n\n## 2. Como Funciona / Distinções\n- Quebras e Seções\n  - **Quebra de página vs Quebra de seção**: a de página só muda o fluxo; a de seção permite configurações diferentes (margens, orientação, numeração, cabeçalho/rodapé).\n  - **Contínua vs Próxima página**: a contínua não salta página; a próxima página inicia nova.\n  - **Colunas**: ao aplicar, o Word insere automaticamente uma **quebra de seção contínua** para manter o layout.\n- Cabeçalho/Rodapé e Numeração\n  - Por padrão, cada nova seção herda o cabeçalho/rodapé da anterior via **Vincular ao Anterior**.\n  - Para cabeçalhos/rodapés diferentes, crie seção e desative o vínculo.\n  - Numeração de páginas pode reiniciar por seção em “Formatar números de página”.\n- Orientação e Margens\n  - **Sem seção**: alteração afeta o documento inteiro.\n  - **Com seção**: aplicar à seção atual isola a mudança (retrato/paisagem; margens).\n- Hiperlink, Indicador e Referência cruzada\n  - **Hiperlink**: aponta para web, arquivos, e-mail ou “Lugar neste documento” (títulos/indicadores).\n  - **Indicador**: cria o destino interno.\n  - **Referência cruzada**: gera link dinâmico para itens numerados/legendas/títulos.\n- WordArt vs Letra capitular\n  - **WordArt**: estilo de texto artístico.\n  - **Letra capitular**: inicial ampliada no início do parágrafo (pode coexistir com texto ao lado).\n- Editor vs Dicionário de sinônimos\n  - **F7 (Editor)**: ortografia/gramática/estilo (formal/casual).\n  - **Shift+F7**: sinônimos do termo selecionado.\n- Exibir: Dividir janela vs Exibir lado a lado\n  - **Dividir janela**: duas áreas do mesmo documento.\n  - **Exibir lado a lado**: dois documentos distintos, com rolagem sincronizada opcional.\n- Salvamento\n  - **OneDrive + AutoSave**: salvamento contínuo.\n  - **Sem OneDrive**: AutoRecuperação em intervalos (1–120 min; comum 5 min).\n\n## 3. Aplicação Prática / Técnicas\n- Cabeçalho/rodapé diferentes por seção\n  1) Inserir **Quebra de seção – Próxima página**.\n  2) Abrir cabeçalho/rodapé e desativar **Vincular ao Anterior**.\n  3) Editar o conteúdo da seção atual.\n- Página única em paisagem\n  1) Quebra de seção antes da página.\n  2) Quebra de seção após a página.\n  3) Leiaute > Orientação > Paisagem (aplicar à seção atual).\n- Numeração reiniciada a partir de capítulo\n  1) Inserir quebra de seção no início do capítulo.\n  2) Inserir número de página.\n  3) Formatar números de página > Iniciar em: 1.\n- Colunas no meio do documento sem pular página\n  1) Selecionar o trecho.\n  2) Leiaute > Colunas (definir 2 ou 3; o Word criará **seção contínua**).\n  3) Para passar à próxima coluna: **Quebra de coluna**.\n- Hiperlink para ponto interno\n  1) Inserir > Indicador no destino.\n  2) Selecionar texto de origem > Inserir > **Hiperlink** (Ctrl+K) > Lugar neste documento > escolher o indicador.\n- Partes rápidas com propriedades\n  1) Inserir > Partes rápidas > Propriedades do documento.\n  2) Inserir campos como **Assunto**, **Autor**, **Categoria**, **Caminho** em cabeçalho/rodapé.\n- Marca d’água e bordas\n  - Design > **Marca d’água** (texto/imagem; ângulo/cor).\n  - Design > **Bordas da página**.\n- Revisão colaborativa\n  1) Revisão > **Controlar Alterações** (ativado).\n  2) Inserir **Comentários** para observações.\n  3) Navegar entre alterações; **Aceitar/Rejeitar** individualmente ou em lote.\n  4) Para limpar o documento: Aceitar/Rejeitar todas as alterações.\n- Mala direta essencial\n  1) Correspondências > Selecionar destinatários (Excel/Lista).\n  2) Inserir campos (ex.: «nome», «CPF»).\n  3) Pré-visualizar resultados.\n  4) Concluir e mesclar (cartas, envelopes, etiquetas).\n- Ferramentas de revisão e acessibilidade\n  - F7 (Editor), Shift+F7 (Sinônimos), Contagem de palavras, Ler em Voz Alta, Verificar Acessibilidade.\n- Exibir e produtividade\n  - Exibir > Dividir (mesmo documento em duas áreas).\n  - Exibir > Exibir lado a lado + Rolar sincronizada (dois documentos).\n  - Painel de Navegação para títulos e busca.\n\n## 4. Exemplos e Casos Resolvidos\n- “Quero página 2 em paisagem; demais em retrato”\n  - Inserir quebras de seção antes e depois da página 2.\n  - Selecionar a página 2 > Orientação > Paisagem (aplicar à seção).\n- “Cabeçalho com nome do capítulo”\n  - Ao iniciar cada capítulo, inserir quebra de seção.\n  - No cabeçalho, desativar Vincular ao Anterior e digitar o título do capítulo.\n- “Sumário clicável”\n  - Aplicar Estilos de Título (1, 2, 3) aos cabeçalhos.\n  - Referências > Sumário > Automático. Atualizar ao final.\n- “Texto em 3 colunas no meio da página”\n  - Selecionar o trecho > Colunas > Três.\n  - Para forçar mudança de coluna: Quebra de coluna.\n- “Link para seção ‘Conclusão’ do próprio arquivo”\n  - Inserir indicador “Conclusao” na seção.\n  - Selecionar texto > Ctrl+K > Lugar neste documento > Indicadores > Conclusao.\n- “Limpar marcações de Controle de Alterações”\n  - Revisão > Aceitar > Aceitar todas as alterações.\n  - Desativar Controlar Alterações para parar de registrar.\n\n## 5. Pegadinhas e Erros Comuns\n- Dica de Prova: Para ter cabeçalho/rodapé ou orientação diferentes dentro do mesmo documento, é OBRIGATÓRIA a criação de seção. Depois, desative “Vincular ao Anterior”.\n- Dica de Prova: Alterar orientação sem seção afeta todas as páginas.\n- Dica de Prova: “Quebra de coluna” só faz sentido quando o texto está em colunas.\n- Dica de Prova: “Quebra de seção contínua” altera formatação sem pular de página; “Próxima página” inicia nova página.\n- Dica de Prova: Marca d’água pode ser removida por qualquer usuário se não houver restrição de edição.\n- Dica de Prova: Desligar o Controle de Alterações NÃO remove as marcações; é preciso Aceitar/Rejeitar.\n- Dica de Prova: Hiperlink pode apontar para “Lugar neste documento” (títulos/indicadores), web, arquivo ou e-mail. Atalho mais cobrado: Ctrl+K.\n- Dica de Prova: Colunas têm limite de 1 a 45.\n- Dica de Prova: Ao aplicar colunas, o Word insere automaticamente uma quebra de seção contínua.\n- Dica de Prova: “WordArt” ≠ “Letra capitular”. WordArt estiliza o texto; letra capitular é a inicial grande do parágrafo.\n- Dica de Prova: AutoSave contínuo ocorre no OneDrive; fora dele, apenas AutoRecuperação por intervalo.\n\nTabela-resumo de quebras e usos\n- Quebra de página: vai para a próxima página; não exige seção; uso para iniciar conteúdo em nova página.\n- Quebra de coluna: avança para próxima coluna; não exige seção; só em texto com colunas.\n- Seção contínua: altera formatação na mesma página; exige seção; usar para mudar margens/colunas sem pular.\n- Seção próxima/pares/ímpares: cria nova página; exige seção; usar para capítulos e controle de início em páginas pares/ímpares.\n\nFerramentas-chave e atalhos\n- Editor (F7): ortografia/gramática/estilo.\n- Dicionário de sinônimos (Shift+F7).\n- Hiperlink (Ctrl+K).\n- Contagem de palavras, Ler em Voz Alta, Verificar Acessibilidade: revisão e inclusão.\n- Dividir janela vs Exibir lado a lado: mesmo documento vs documentos distintos.\n\nConclusão rápida para a prova\n- Para isolar formatações: crie seção.\n- Para navegação interna: indicadores + hiperlink/referência cruzada.\n- Para revisão colaborativa: Controle de Alterações + Comentários; finalize com Aceitar/Rejeitar.\n- Para personalização em massa: Mala direta com base de dados (Excel).",
+  "resumo_bolso": "# Office 365 - Word V\n\n---\n\n## 📌 Conceitos-Chave\n\n* Seção: bloco com configurações independentes de margens, orientação, cabeçalho/rodapé e numeração; criada via quebras de seção.\n* Quebra de página: força próxima página; não altera configurações de seção.\n* Quebra de seção: separa formatação. Tipos: Contínua (sem pular), Próxima página, Páginas pares, Páginas ímpares.\n* Cabeçalho/Rodapé: áreas repetidas por seção; por padrão ficam “Vinculadas ao Anterior”.\n* Hiperlink: link para web, arquivo, e-mail ou lugar no documento (títulos/indicadores).\n* Indicador (bookmark): marca destino interno para navegação e hiperlink.\n* Referência cruzada: insere ponteiro dinâmico para títulos/legendas/itens numerados.\n* Colunas: texto em 1–45 colunas; ao aplicar colunas, o Word pode inserir quebra de seção contínua automaticamente.\n* Partes rápidas: blocos reutilizáveis; inclui Propriedades do documento (Assunto, Autor, Categoria, Caminho).\n* WordArt: estilo artístico de texto com efeitos.\n* Letra capitular: inicial aumentada no início do parágrafo.\n* Marca d’água: texto/figura esmaecida ao fundo.\n* Editor (F7): ortografia/gramática/estilo.\n* Dicionário de sinônimos (Shift+F7): thesaurus do termo selecionado.\n* Controle de Alterações: rastreia inserções, exclusões e formatação; aceita/rejeita.\n* Mala direta: mescla modelo com base (Excel/Lista) para gerar documentos personalizados.\n* Exibir: Dividir janela (mesmo doc) e Exibir lado a lado (docs distintos, rolagem sincronizada opcional).\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Quebra de página vs Quebra de seção\n\n| Aspecto | Quebra de página | Quebra de seção |\n|---|---|---|\n| Diferencial | Só move conteúdo para a próxima página | Permite formatação distinta por seção |\n| Ponto de Tensão | Não mexe em cabeçalho/rodapé/orientação | Isola margens, orientação, numeração, cabeçalho/rodapé |\n\n### Contínua vs Próxima página (quebras de seção)\n\n| Aspecto | Contínua | Próxima página |\n|---|---|---|\n| Diferencial | Altera formatação sem pular página | Inicia nova página e nova seção |\n| Ponto de Tensão | Usada para colunas/margens no meio da página | Usada para capítulos e mudanças que iniciam página nova |\n\n### Dividir janela vs Exibir lado a lado\n\n| Aspecto | Dividir janela | Exibir lado a lado |\n|---|---|---|\n| Diferencial | Duas áreas do mesmo documento | Dois documentos distintos |\n| Ponto de Tensão | Independência de rolagem do mesmo arquivo | Pode sincronizar rolagem entre arquivos |\n\n### WordArt vs Letra capitular\n\n| Aspecto | WordArt | Letra capitular |\n|---|---|---|\n| Diferencial | Estilo artístico aplicado ao texto | Inicial ampliada no parágrafo |\n| Ponto de Tensão | Efeitos decorativos | Tipografia editorial na primeira letra |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Cabeçalho/rodapé diferentes na mesma obra\n- Aplicação: exige seções independentes.\n- Exemplo: Inserir quebra de seção – Próxima página; desativar “Vincular ao Anterior”; editar cabeçalho/rodapé.\n\n2. Orientação retrato/paisagem por seção\n- Aplicação: isolar uma página/trecho com orientação diferente.\n- Exemplo: Quebra antes e depois da página; aplicar Paisagem à seção atual.\n\n3. Numeração por capítulo\n- Aplicação: reiniciar numeração a cada seção.\n- Exemplo: Formatar números de página > Iniciar em: 1 na nova seção.\n\n4. Colunas em trecho selecionado\n- Aplicação: texto parcial em 2–3 colunas sem pular página.\n- Exemplo: Selecionar > Colunas; usar Quebra de coluna para forçar passagem.\n\n5. Hiperlink interno\n- Aplicação: navegação rápida no documento.\n- Exemplo: Criar Indicador; Ctrl+K > Lugar neste documento > Indicadores.\n\n6. Partes rápidas com propriedades\n- Aplicação: metadados automáticos em cabeçalho/rodapé.\n- Exemplo: Inserir > Partes rápidas > Propriedades do documento (Autor, Assunto, Caminho, Categoria).\n\n7. Controle de Alterações – limpeza\n- Aplicação: finalizar revisão.\n- Exemplo: Aceitar/Rejeitar todas as alterações; só desativar não remove marcações.\n\n8. Mala direta – fluxo essencial\n- Aplicação: gerar cartas/etiquetas personalizadas.\n- Exemplo: Selecionar destinatários; inserir campos «nome»; Pré-visualizar; Concluir e mesclar.\n\n9. Salvamento\n- Aplicação: comportamento de gravação.\n- Exemplo: OneDrive + AutoSave contínuo; sem OneDrive, AutoRecuperação por intervalo.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Alterar orientação sem seção afeta todas as páginas.\n- Desligar o Controle de Alterações NÃO remove as marcações; é preciso Aceitar/Rejeitar.\n- Cabeçalho/rodapé diferentes exigem criar seção e depois desativar “Vincular ao Anterior”.\n- “Quebra de coluna” só funciona quando o trecho está em colunas.\n- Colunas têm limite de 1 a 45.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei quebra de página de quebra de seção?\n* Sei quando usar Contínua vs Próxima página?\n* Memorizei: cabeçalho/rodapé/orientação/numeração diferentes exigem seção?\n* Lembro o atalho Ctrl+K (Hiperlink), F7 (Editor), Shift+F7 (Sinônimos)?\n* Sei reiniciar numeração por seção e desativar “Vincular ao Anterior”?\n* Lembro: colunas podem inserir quebra de seção contínua automaticamente?\n* Sei limpar o Controle de Alterações (Aceitar/Rejeitar todas)?\n* Sei configurar página única em paisagem com quebras antes/depois?\n* Sei usar Indicadores + Hiperlink/Referência cruzada para navegação?\n* Sei o fluxo da Mala direta (selecionar, inserir campos, pré-visualizar, mesclar)?",
+  "mapa_mental": "# 💻 Office 365 – Word V\n## 📄 Quebras e Seções\n### 💡 Conceitos de Seção\n- Seção independente\n- Configurações próprias\n- Margens por seção\n- Orientação por seção\n- Cabeçalho por seção\n### 📜 Tipos de Quebra\n- Quebra de página\n- Seção contínua\n- Seção próxima página\n- Seção páginas pares\n- Seção páginas ímpares\n### ⚖️ Diferenças Essenciais\n- Página x seção\n- Contínua x próxima\n- Colunas criam seção\n- Isolar formatação\n- Capítulos por seção\n\n## 🧭 Layout, Cabeçalho e Colunas\n### 📝 Cabeçalho e Rodapé\n- Áreas repetidas\n- Vincular ao anterior\n- Desvincular seção\n- Numeração reiniciada\n- Numeração por seção\n### 📐 Orientação e Margens\n- Retrato x paisagem\n- Sem seção global\n- Com seção isolada\n- Página única paisagem\n- Margens por seção\n### 📊 Colunas de Texto\n- Texto em colunas\n- Limite 1 a 45\n- Quebra de coluna\n- Seção contínua automática\n- Colunas trecho selecionado\n\n## 🔗 Referências e Objetos\n### 🌐 Hiperlinks e Indicadores\n- Hiperlink Ctrl+K\n- Web arquivo email\n- Lugar neste documento\n- Indicador interno\n- Navegação por indicador\n### 🔁 Referência Cruzada\n- Link dinâmico interno\n- Títulos numerados\n- Legendas figuras\n- Atualização automática\n- Uso em documentos longos\n### 🎨 Elementos Visuais\n- WordArt artístico\n- Letra capitular\n- Marca d’água texto\n- Marca d’água imagem\n- Bordas da página\n\n## 🛠️ Revisão, Mala Direta e Exibição\n### 🧪 Ferramentas de Revisão\n- Editor F7\n- Ortografia gramática\n- Estilo de escrita\n- Sinônimos Shift+F7\n- Contagem palavras\n### 📝 Controle e Comentários\n- Controlar alterações\n- Inserir comentários\n- Aceitar rejeitar\n- Limpar marcações\n- Revisão colaborativa\n### 📬 Mala Direta\n- Documento modelo\n- Fonte de dados\n- Selecionar destinatários\n- Inserir campos mescla\n- Concluir e mesclar\n### 👀 Modos de Exibição\n- Dividir janela\n- Mesmo documento\n- Exibir lado a lado\n- Documentos distintos\n- Rolagem sincronizada",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Inserção e Referências",
+      "description": "Inserção e Referências — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Que ação ocorre ao ativar um endereço inserido como hiperlink no Word?",
+          "back": "Acessa a página correspondente abrindo o **navegador padrão** definido no computador.",
+          "hint": "Envolve um software externo ao Word",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "hiperlink"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-2",
+          "front": "Como um vídeo online é incorporado a um documento do Word?",
+          "back": "Por meio da opção de vídeos online, inserindo o **código de inserção** do vídeo.",
+          "hint": "É um identificador digital do conteúdo",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "midia"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual é a finalidade de um indicador em um documento do Word?",
+          "back": "Criar um link para um **local específico** dentro do próprio documento, como títulos.",
+          "hint": "Funciona como um atalho interno",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "navegacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Em que situação os comentários são usados em documentos compartilhados?",
+          "back": "Quando se compartilha um documento com alguém ou para registrar **anotações e lembretes** pessoais.",
+          "hint": "São notas marginais de colaboração",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "colaboracao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Formatação do Documento",
+      "description": "Formatação do Documento — 1 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual recurso destaca a primeira letra de um parágrafo em tamanho ampliado?",
+          "back": "Letra capitular.",
+          "hint": "Estilo tipográfico de início de capítulo",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "formatacao"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Seções e Layout",
+      "description": "Seções e Layout — 4 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Qual recurso permite usar cabeçalhos diferentes em partes do mesmo documento?",
+          "back": "Criando uma **quebra de seção** para a próxima página e desvinculando o cabeçalho da seção anterior.",
+          "hint": "Necessário para isolar configurações de página",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "secao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "O que caracteriza uma quebra de seção contínua no Word?",
+          "back": "Uma divisão lógica criada dentro do documento sem mudar de página.",
+          "hint": "Ocorre na mesma página física",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "secao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual intervalo de valores pode ser definido para o número de colunas no Word?",
+          "back": "Entre **1 e 45** colunas.",
+          "hint": "Limite numérico de colunas",
+          "difficulty": "hard",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "colunas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a função da quebra de coluna em um texto formatado em colunas?",
+          "back": "Quebrar o texto para passar para a **próxima coluna**.",
+          "hint": "Força a mudança de fluxo de texto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "colunas"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Revisão e Colaboração",
+      "description": "Revisão e Colaboração — 5 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Que informações são exibidas pelas estatísticas do documento?",
+          "back": "Número de **páginas**, **palavras** e **caracteres** (com e sem espaço).",
+          "hint": "Métricas quantitativas do texto",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "estatisticas"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual é a finalidade do Editor do Word?",
+          "back": "Realizar a correção ortográfica, gramatical e de estilo (formal ou casual).",
+          "hint": "Ferramenta de revisão textual",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "word",
+            "revisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Para que serve o dicionário de sinônimos do Word?",
+          "back": "Mostrar **possíveis sinônimos** de uma palavra selecionada.",
+          "hint": "Busca por equivalência semântica",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "revisao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "O que o controle de alterações registra em um documento?",
+          "back": "As inserções, exclusões e formatações realizadas no documento, indicando o que foi alterado e por quem.",
+          "hint": "Auditoria de edições",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "word",
+            "colaboracao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual é o resultado da comparação entre dois documentos do Word?",
+          "back": "Gerar um **terceiro documento** exibindo as diferenças entre os dois arquivos comparados.",
+          "hint": "Cria um arquivo de divergências",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "comparacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Exibição do Documento",
+      "description": "Exibição do Documento — 4 cards",
+      "cards": [
+        {
+          "id": "card-15",
+          "front": "Qual modo de exibição mostra o documento conforme sua provável impressão?",
+          "back": "Layout de impressão.",
+          "hint": "Modo padrão de visualização",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "exibicao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Em que situação o modo de exibição de layout da Web é mais apropriado?",
+          "back": "Quando se trabalha com um documento que será **publicado na web**.",
+          "hint": "Focado em publicação digital",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "exibicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-17",
+          "front": "Para que serve dividir a janela de um documento do Word?",
+          "back": "Visualizar partes diferentes do mesmo documento simultaneamente, facilitando a consulta (como visualizar a questão em cima e o gabarito embaixo).",
+          "hint": "Visualização de dois pontos distintos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "word",
+            "exibicao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-18",
+          "front": "O que faz a rolagem sincronizada entre documentos?",
+          "back": "Sintoniza a rolagem para que, ao passar a página em um documento, a página do outro documento também passe.",
+          "hint": "Movimento coordenado entre arquivos",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "word",
+            "exibicao"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "No Microsoft Word, qual é a principal finalidade do recurso de mala direta?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Criar um vínculo entre uma base de dados e um documento modelo para gerar múltiplos documentos personalizados com informações variáveis",
+          "correct": true,
+          "explanation": "Correta. A mala direta é um recurso do Microsoft Word que permite criar um vínculo entre um documento principal (como uma carta ou um e-mail) e uma fonte de dados (como uma planilha do Excel ou uma lista de contatos). Com isso, é possível gerar múltiplos documentos personalizados, onde cada cópia contém informações variáveis extraídas da base de dados, como nomes, endereços e saudações específicas para cada destinatário. Isso otimiza a criação de correspondências em massa com um toque individual."
+        },
+        {
+          "id": "b",
+          "text": "Enviar automaticamente e-mails para todos os contatos salvos no computador sem necessidade de personalização",
+          "correct": false,
+          "explanation": "Incorreta. Embora a mala direta possa ser utilizada para enviar e-mails personalizados, sua finalidade principal não é o envio automático e indiscriminado de mensagens sem personalização para todos os contatos. O cerne da mala direta é justamente a personalização em escala, utilizando dados de uma fonte específica para cada destinatário."
+        },
+        {
+          "id": "c",
+          "text": "Organizar correspondências recebidas em pastas específicas de acordo com o remetente e a data de recebimento",
+          "correct": false,
+          "explanation": "Incorreta. A organização de correspondências recebidas não é uma função da mala direta. Essa tarefa é geralmente realizada por sistemas de gerenciamento de documentos, clientes de e-mail ou métodos manuais de arquivamento, que se concentram no controle de informações de entrada, e não na geração de documentos de saída."
+        },
+        {
+          "id": "d",
+          "text": "Formatar automaticamente o cabeçalho e rodapé de cartas comerciais seguindo normas da ABNT",
+          "correct": false,
+          "explanation": "Incorreta. A formatação de cabeçalhos e rodapés, incluindo a aplicação de normas como as da ABNT, é uma função de formatação geral do Microsoft Word, acessível através das guias de layout e inserção. A mala direta não formata automaticamente esses elementos; ela utiliza o cabeçalho e rodapé já definidos no documento modelo para gerar as cópias personalizadas."
+        }
+      ],
+      "explanation": "Correta. A mala direta é um recurso do Microsoft Word que permite criar um vínculo entre um documento principal (como uma carta ou um e-mail) e uma fonte de dados (como uma planilha do Excel ou uma lista de contatos). Com isso, é possível gerar múltiplos documentos personalizados, onde cada cópia contém informações variáveis extraídas da base de dados, como nomes, endereços e saudações específicas para cada destinatário. Isso otimiza a criação de correspondências em massa com um toque individual.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a função do recurso 'Marca d'água' no Microsoft Word?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Proteger definitivamente o documento contra qualquer tipo de edição ou cópia",
+          "correct": false,
+          "explanation": "Incorreta. A marca d'água é uma ferramenta visual e não oferece proteção definitiva contra edição ou cópia do documento. Para proteger um documento contra modificações, o Word oferece outras funcionalidades, como restrição de edição ou proteção por senha, que são mecanismos de segurança mais robustos."
+        },
+        {
+          "id": "b",
+          "text": "Inserir uma imagem ou texto esmaecido no fundo do documento para indicar propriedade ou status",
+          "correct": true,
+          "explanation": "Correta. A função 'Marca d'água' no Microsoft Word permite inserir um texto ou uma imagem esmaecida (transparente) no fundo de cada página do documento. Essa marca visual serve para indicar o status do documento (por exemplo, 'Confidencial', 'Rascunho'), a autoria, ou para fins de branding, sem comprometer a legibilidade do conteúdo principal. É uma forma sutil de comunicação visual."
+        },
+        {
+          "id": "c",
+          "text": "Criar uma borda decorativa ao redor de cada página do documento",
+          "correct": false,
+          "explanation": "Incorreta. A criação de bordas decorativas ao redor das páginas é uma função distinta no Word, encontrada na opção 'Bordas da Página' na guia 'Design'. A marca d'água é um elemento inserido *dentro* da área de conteúdo da página, atrás do texto, e não uma borda externa."
+        },
+        {
+          "id": "d",
+          "text": "Adicionar automaticamente o logotipo da empresa em todas as páginas do documento",
+          "correct": false,
+          "explanation": "Incorreta. Embora um logotipo de empresa possa ser usado como marca d'água, a função não se limita a isso e o objetivo principal é a inserção de um elemento esmaecido no fundo, não necessariamente um logotipo proeminente. Para adicionar um logotipo de forma mais visível e automática em todas as páginas, geralmente se utiliza o recurso de cabeçalho ou rodapé."
+        }
+      ],
+      "explanation": "Correta. A função 'Marca d'água' no Microsoft Word permite inserir um texto ou uma imagem esmaecida (transparente) no fundo de cada página do documento. Essa marca visual serve para indicar o status do documento (por exemplo, 'Confidencial', 'Rascunho'), a autoria, ou para fins de branding, sem comprometer a legibilidade do conteúdo principal. É uma forma sutil de comunicação visual.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No Microsoft Word, qual é a tecla de atalho para ativar ou desativar o controle de alterações?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Ctrl + Alt + R",
+          "correct": false,
+          "explanation": "Incorreta. Ctrl + Alt + R é um atalho que geralmente insere o símbolo de marca registrada (®) em documentos do Word, e não está associado ao controle de alterações."
+        },
+        {
+          "id": "b",
+          "text": "Ctrl + Alt + A",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas Ctrl + Alt + A não é um atalho padrão para ativar ou desativar o Controle de Alterações no Microsoft Word. Atalhos com essa combinação geralmente têm outras funções ou podem ser personalizados pelo usuário."
+        },
+        {
+          "id": "c",
+          "text": "Ctrl + Shift + T",
+          "correct": true,
+          "explanation": "Correta. No Microsoft Word, o atalho `Ctrl + Shift + T` é utilizado para ativar ou desativar o recurso de 'Controle de Alterações' (Track Changes). Essa ferramenta é fundamental para a revisão colaborativa de documentos, pois registra todas as modificações (inserções, exclusões, alterações de formatação) feitas por diferentes usuários, permitindo que as mudanças sejam visualizadas, aceitas ou rejeitadas individualmente."
+        },
+        {
+          "id": "d",
+          "text": "Ctrl + Shift + E",
+          "correct": false,
+          "explanation": "Incorreta. A combinação de teclas Ctrl + Shift + E é o atalho padrão para ativar ou desativar o Controle de Alterações em muitas versões do Microsoft Word, especialmente as em inglês, mas não é a alternativa correta conforme a questão."
+        }
+      ],
+      "explanation": "Correta. No Microsoft Word, o atalho `Ctrl + Shift + T` é utilizado para ativar ou desativar o recurso de 'Controle de Alterações' (Track Changes). Essa ferramenta é fundamental para a revisão colaborativa de documentos, pois registra todas as modificações (inserções, exclusões, alterações de formatação) feitas por diferentes usuários, permitindo que as mudanças sejam visualizadas, aceitas ou rejeitadas individualmente.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No Microsoft Word, qual é a tecla de atalho para verificação ortográfica e gramatical?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "F7",
+          "correct": true,
+          "explanation": "Correta. A tecla F7 é o atalho padrão e universalmente reconhecido no Microsoft Word para iniciar a 'Verificação Ortográfica e Gramatical'. Ao pressioná-la, o programa analisa o texto do documento em busca de erros de grafia, concordância, pontuação e outros aspectos gramaticais, apresentando sugestões para correção."
+        },
+        {
+          "id": "b",
+          "text": "F5",
+          "correct": false,
+          "explanation": "Incorreta. A tecla F5 no Microsoft Word é comumente utilizada para abrir a caixa de diálogo 'Localizar e Substituir' na aba 'Ir Para', que permite navegar rapidamente para seções específicas do documento, como páginas, linhas ou marcadores. Não está associada à verificação ortográfica e gramatical."
+        },
+        {
+          "id": "c",
+          "text": "F12",
+          "correct": false,
+          "explanation": "Incorreta. A tecla F12 no Microsoft Word é o atalho para a função 'Salvar Como'. Ela abre uma caixa de diálogo que permite ao usuário salvar o documento atual com um novo nome, em um local diferente ou em um formato de arquivo distinto. Não está relacionada à verificação ortográfica e gramatical."
+        },
+        {
+          "id": "d",
+          "text": "F9",
+          "correct": false,
+          "explanation": "Incorreta. A tecla F9 no Microsoft Word é utilizada para atualizar campos selecionados no documento, como sumários, referências cruzadas ou fórmulas. Ela não tem função na verificação de ortografia e gramática."
+        }
+      ],
+      "explanation": "Correta. A tecla F7 é o atalho padrão e universalmente reconhecido no Microsoft Word para iniciar a 'Verificação Ortográfica e Gramatical'. Ao pressioná-la, o programa analisa o texto do documento em busca de erros de grafia, concordância, pontuação e outros aspectos gramaticais, apresentando sugestões para correção.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a principal característica do modo de exibição 'Layout de Impressão' no Microsoft Word?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apresentar o documento em formato de página web para publicação online",
+          "correct": false,
+          "explanation": "Incorreta. O modo de exibição 'Layout da Web' é projetado para mostrar como o documento apareceria se fosse publicado como uma página da internet. Nesse modo, as quebras de página e outras formatações específicas para impressão são ignoradas, e o texto se ajusta à largura da janela do navegador."
+        },
+        {
+          "id": "b",
+          "text": "Ocultar todas as barras de ferramentas para maximizar a área de leitura",
+          "correct": false,
+          "explanation": "Incorreta. Ocultar barras de ferramentas para maximizar a área de leitura é uma característica de modos como o 'Modo de Leitura' ou 'Modo de Foco', que visam reduzir distrações e melhorar a experiência de leitura do documento na tela. O 'Layout de Impressão' mantém as ferramentas de edição e formatação visíveis, a menos que o usuário as oculte manualmente."
+        },
+        {
+          "id": "c",
+          "text": "Mostrar apenas a estrutura de tópicos do documento sem formatação visual",
+          "correct": false,
+          "explanation": "Incorreta. O modo de exibição que mostra apenas a estrutura de tópicos do documento, focando em títulos e subtítulos sem a formatação visual completa, é o 'Estrutura de Tópicos'. Este modo é ideal para organizar o conteúdo e hierarquizar as ideias, mas não para ver o layout final de impressão."
+        },
+        {
+          "id": "d",
+          "text": "Exibir o documento como ele será impresso, incluindo margens, cabeçalhos e rodapés",
+          "correct": true,
+          "explanation": "Correta. O modo de exibição 'Layout de Impressão' é o padrão no Microsoft Word e tem como característica principal apresentar o documento exatamente como ele aparecerá quando for impresso. Isso inclui a visualização precisa das margens da página, cabeçalhos, rodapés, quebras de página, colunas e todos os elementos gráficos e de formatação, oferecendo uma prévia fiel do resultado final em papel."
+        }
+      ],
+      "explanation": "Correta. O modo de exibição 'Layout de Impressão' é o padrão no Microsoft Word e tem como característica principal apresentar o documento exatamente como ele aparecerá quando for impresso. Isso inclui a visualização precisa das margens da página, cabeçalhos, rodapés, quebras de página, colunas e todos os elementos gráficos e de formatação, oferecendo uma prévia fiel do resultado final em papel.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a principal diferença entre 'Quebra de Página' e 'Quebra de Seção' no Microsoft Word?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A quebra de página apenas inicia uma nova página, enquanto a quebra de seção cria uma divisão lógica permitindo formatações diferentes como cabeçalhos, rodapés e orientação de página",
+          "correct": true,
+          "explanation": "Correta. A quebra de página (Page Break) é um comando simples que força o texto a continuar na próxima página, sem alterar as configurações de formatação do documento. Já a quebra de seção (Section Break) é um recurso mais poderoso que divide o documento em partes lógicas independentes. Cada seção pode ter suas próprias configurações de formatação, como margens, orientação de página (retrato ou paisagem), numeração de página, cabeçalhos e rodapés distintos, e até mesmo diferentes layouts de coluna. Isso é fundamental para documentos complexos que exigem formatações variadas em seu conteúdo."
+        },
+        {
+          "id": "b",
+          "text": "A quebra de página funciona apenas em documentos com mais de dez páginas, enquanto a quebra de seção funciona em qualquer documento",
+          "correct": false,
+          "explanation": "Incorreta. Ambos os tipos de quebra podem ser utilizados em documentos de qualquer tamanho, desde uma única página até documentos muito extensos. Não há restrição de número de páginas para seu funcionamento."
+        },
+        {
+          "id": "c",
+          "text": "A quebra de página é permanente e não pode ser removida, enquanto a quebra de seção é temporária",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a quebra de página quanto a quebra de seção podem ser facilmente inseridas e removidas no Microsoft Word. Para visualizá-las e removê-las, basta ativar a exibição de caracteres não imprimíveis (o símbolo de parágrafo ¶) na guia 'Página Inicial'."
+        },
+        {
+          "id": "d",
+          "text": "A quebra de página afeta apenas a visualização na tela, enquanto a quebra de seção afeta apenas a impressão",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a quebra de página quanto a quebra de seção afetam diretamente a estrutura e a formatação do documento, sendo visíveis tanto na tela (em modos como o Layout de Impressão) quanto na impressão final do documento. Elas controlam como o conteúdo é organizado e apresentado."
+        }
+      ],
+      "explanation": "Correta. A quebra de página (Page Break) é um comando simples que força o texto a continuar na próxima página, sem alterar as configurações de formatação do documento. Já a quebra de seção (Section Break) é um recurso mais poderoso que divide o documento em partes lógicas independentes. Cada seção pode ter suas próprias configurações de formatação, como margens, orientação de página (retrato ou paisagem), numeração de página, cabeçalhos e rodapés distintos, e até mesmo diferentes layouts de coluna. Isso é fundamental para documentos complexos que exigem formatações variadas em seu conteúdo.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "No Microsoft Word, o que acontece quando o recurso 'Controle de Alterações' está ativado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todas as alterações são bloqueadas e o documento fica protegido contra edição",
+          "correct": false,
+          "explanation": "Incorreta. O 'Controle de Alterações' não bloqueia o documento nem o protege contra edições. Pelo contrário, ele foi projetado para permitir e registrar as edições, facilitando a colaboração. A proteção contra edição é um recurso distinto, geralmente encontrado na guia 'Revisão' ou 'Arquivo', que restringe o que os usuários podem fazer no documento."
+        },
+        {
+          "id": "b",
+          "text": "Todas as modificações feitas no documento são registradas e destacadas visualmente, incluindo inserções, exclusões e formatações, permitindo posterior aceitação ou rejeição",
+          "correct": true,
+          "explanation": "Correta. O 'Controle de Alterações' (Track Changes) é uma ferramenta colaborativa do Microsoft Word que registra todas as modificações feitas no documento. Inserções são sublinhadas, exclusões são riscadas ou movidas para balões de revisão, e alterações de formatação também são indicadas. Essas marcações permitem que o autor ou outros revisores analisem as edições e decidam se desejam aceitá-las ou rejeitá-las, mantendo um registro claro do processo de revisão."
+        },
+        {
+          "id": "c",
+          "text": "Um histórico de versões é criado automaticamente na nuvem",
+          "correct": false,
+          "explanation": "Incorreta. Embora o 'Controle de Alterações' ajude a gerenciar revisões, ele atua dentro do documento atual, marcando as alterações. A criação de um histórico de versões automático na nuvem (como o histórico de versões do OneDrive ou SharePoint) é uma funcionalidade da plataforma de armazenamento em nuvem, que salva diferentes estados do arquivo ao longo do tempo, mas é distinta do controle de alterações interno do Word."
+        },
+        {
+          "id": "d",
+          "text": "O documento é automaticamente salvo a cada minuto em uma pasta de backup",
+          "correct": false,
+          "explanation": "Incorreta. O salvamento automático é uma função separada que garante que o trabalho não seja perdido em caso de falha do sistema ou esquecimento de salvar. Embora importante, não está diretamente relacionado à funcionalidade de registrar e destacar as alterações feitas por usuários."
+        }
+      ],
+      "explanation": "Correta. O 'Controle de Alterações' (Track Changes) é uma ferramenta colaborativa do Microsoft Word que registra todas as modificações feitas no documento. Inserções são sublinhadas, exclusões são riscadas ou movidas para balões de revisão, e alterações de formatação também são indicadas. Essas marcações permitem que o autor ou outros revisores analisem as edições e decidam se desejam aceitá-las ou rejeitá-las, mantendo um registro claro do processo de revisão.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "No Microsoft Word, o que é necessário para ter cabeçalhos ou rodapés diferentes em páginas distintas do mesmo documento?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Salvar cada página como um documento separado e depois mesclá-los",
+          "correct": false,
+          "explanation": "Incorreta. Salvar cada página como um documento separado e depois mesclá-los é uma abordagem ineficiente e impraticável para essa finalidade. O Microsoft Word oferece ferramentas internas para gerenciar a formatação de cabeçalhos e rodapés dentro de um único arquivo, como as quebras de seção, que são projetadas para essa flexibilidade."
+        },
+        {
+          "id": "b",
+          "text": "Aplicar estilos diferentes de parágrafo em cada página do documento",
+          "correct": false,
+          "explanation": "Incorreta. Estilos de parágrafo (Paragraph Styles) controlam a formatação de texto dentro de um parágrafo (fonte, tamanho, cor, alinhamento, espaçamento, etc.). Eles não têm influência sobre a estrutura de cabeçalhos, rodapés ou a orientação da página. Para essas configurações de layout, são necessárias as quebras de seção."
+        },
+        {
+          "id": "c",
+          "text": "Criar quebras de seção entre as páginas e desativar a opção 'Vincular ao Anterior' no cabeçalho ou rodapé",
+          "correct": true,
+          "explanation": "Correta. Para ter cabeçalhos ou rodapés diferentes em páginas distintas dentro do mesmo documento, é imprescindível criar quebras de seção. Após inserir uma quebra de seção (por exemplo, 'Próxima Página' ou 'Contínua'), o Word trata a nova seção como uma parte separada do documento. Ao editar o cabeçalho ou rodapé da nova seção, é necessário desativar a opção 'Vincular ao Anterior' (Link to Previous), que por padrão mantém a continuidade com a seção precedente. Desvinculando, as alterações feitas nessa seção não afetarão as anteriores, permitindo personalização."
+        },
+        {
+          "id": "d",
+          "text": "Utilizar o recurso de mala direta para personalizar cada página",
+          "correct": false,
+          "explanation": "Incorreta. O recurso de mala direta (Mail Merge) é utilizado para criar documentos personalizados em massa (como cartas, etiquetas ou envelopes) a partir de uma fonte de dados, como uma lista de contatos. Ele não serve para gerenciar cabeçalhos ou rodapés diferentes dentro de um único documento, mas sim para gerar múltiplos documentos com conteúdo variável."
+        }
+      ],
+      "explanation": "Correta. Para ter cabeçalhos ou rodapés diferentes em páginas distintas dentro do mesmo documento, é imprescindível criar quebras de seção. Após inserir uma quebra de seção (por exemplo, 'Próxima Página' ou 'Contínua'), o Word trata a nova seção como uma parte separada do documento. Ao editar o cabeçalho ou rodapé da nova seção, é necessário desativar a opção 'Vincular ao Anterior' (Link to Previous), que por padrão mantém a continuidade com a seção precedente. Desvinculando, as alterações feitas nessa seção não afetarão as anteriores, permitindo personalização.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No Microsoft Word, como o recurso 'Editor' se diferencia da verificação ortográfica e gramatical tradicional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O Editor é uma versão simplificada que verifica menos aspectos que a verificação tradicional",
+          "correct": false,
+          "explanation": "Incorreta. O 'Editor' é uma versão *aprimorada* e *mais completa*, não simplificada, que verifica *mais* aspectos da escrita do que a verificação ortográfica e gramatical tradicional. Ele expande o escopo da revisão para incluir sugestões de estilo e clareza."
+        },
+        {
+          "id": "b",
+          "text": "O Editor verifica apenas erros ortográficos, enquanto a verificação tradicional inclui gramática",
+          "correct": false,
+          "explanation": "Incorreta. Essa afirmação inverte a realidade. O 'Editor' é mais completo, verificando tanto ortografia quanto gramática, além de oferecer análises estilísticas. A verificação tradicional, que é parte do que o Editor engloba, já inclui a gramática e a ortografia."
+        },
+        {
+          "id": "c",
+          "text": "O Editor funciona apenas em documentos salvos na nuvem",
+          "correct": false,
+          "explanation": "Incorreta. O recurso 'Editor' pode ser utilizado tanto em documentos salvos localmente quanto em documentos armazenados na nuvem. Embora algumas de suas funcionalidades possam se beneficiar da conectividade online para atualizações ou recursos avançados, sua operação básica não está restrita a arquivos na nuvem."
+        },
+        {
+          "id": "d",
+          "text": "O Editor oferece análise mais abrangente incluindo clareza, concisão, formalidade, vocabulário e pontuação, além de sugestões contextuais baseadas no estilo de escrita selecionado",
+          "correct": true,
+          "explanation": "Correta. O recurso 'Editor' no Microsoft Word é uma evolução das ferramentas tradicionais de verificação ortográfica e gramatical. Ele oferece uma análise de escrita mais sofisticada e abrangente, que vai além da simples correção de erros. O Editor avalia aspectos como clareza, concisão, formalidade, uso de vocabulário e pontuação, fornecendo sugestões contextuais e de estilo para aprimorar a qualidade geral da escrita, adaptando-se inclusive ao estilo de escrita (formal ou informal) que o usuário pode selecionar."
+        }
+      ],
+      "explanation": "Correta. O recurso 'Editor' no Microsoft Word é uma evolução das ferramentas tradicionais de verificação ortográfica e gramatical. Ele oferece uma análise de escrita mais sofisticada e abrangente, que vai além da simples correção de erros. O Editor avalia aspectos como clareza, concisão, formalidade, uso de vocabulário e pontuação, fornecendo sugestões contextuais e de estilo para aprimorar a qualidade geral da escrita, adaptando-se inclusive ao estilo de escrita (formal ou informal) que o usuário pode selecionar.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "No Microsoft Word, qual é a relação entre o recurso 'Dividir Janela' e a navegação em documentos extensos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Permite abrir duas versões diferentes do mesmo documento para comparação",
+          "correct": false,
+          "explanation": "Incorreta. A funcionalidade de 'Dividir Janela' opera sobre um *único* documento. Abrir duas versões diferentes do mesmo documento para comparação é uma ação distinta, que geralmente envolve abrir o arquivo em duas instâncias separadas do Word ou usar o recurso 'Comparar Documentos' (Compare Documents)."
+        },
+        {
+          "id": "b",
+          "text": "Permite visualizar e editar simultaneamente duas partes distantes do mesmo documento em painéis independentes com rolagem separada, facilitando comparação ou referência cruzada sem perder a posição de trabalho",
+          "correct": true,
+          "explanation": "Correta. O recurso 'Dividir Janela' (Split Window) permite que o usuário divida a área de visualização do documento em dois painéis independentes. Cada painel pode ser rolado separadamente, o que é extremamente útil em documentos extensos. Por exemplo, pode-se manter uma seção (como a introdução ou uma tabela de referência) visível no painel superior enquanto se edita outra parte distante do documento no painel inferior. Isso facilita a comparação, a referência cruzada e a edição sem a necessidade de rolar o documento repetidamente ou abrir múltiplas janelas do mesmo arquivo."
+        },
+        {
+          "id": "c",
+          "text": "Divide o documento em dois arquivos separados para facilitar o gerenciamento",
+          "correct": false,
+          "explanation": "Incorreta. O recurso 'Dividir Janela' não cria arquivos separados. Ele apenas altera a forma como o *único* documento aberto é exibido na tela, dividindo sua visualização em duas partes. O documento permanece um único arquivo."
+        },
+        {
+          "id": "d",
+          "text": "Cria automaticamente um sumário navegável na lateral do documento",
+          "correct": false,
+          "explanation": "Incorreta. A criação de um sumário navegável (Índice) ou a utilização do Painel de Navegação são recursos distintos que ajudam na navegação, mas não dividem a janela de edição do documento para visualização simultânea de diferentes partes."
+        }
+      ],
+      "explanation": "Correta. O recurso 'Dividir Janela' (Split Window) permite que o usuário divida a área de visualização do documento em dois painéis independentes. Cada painel pode ser rolado separadamente, o que é extremamente útil em documentos extensos. Por exemplo, pode-se manter uma seção (como a introdução ou uma tabela de referência) visível no painel superior enquanto se edita outra parte distante do documento no painel inferior. Isso facilita a comparação, a referência cruzada e a edição sem a necessidade de rolar o documento repetidamente ou abrir múltiplas janelas do mesmo arquivo.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "05_288972_Office 365 - Word V.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:50:08"
+}

@@ -1,0 +1,597 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 1,
+  "ordem_no_curso": "70.00",
+  "titulo": "Funções do 1º Grau, Afim e Linear",
+  "codigo_aula": "307977",
+  "video_id": "CvzG8RLt4w8=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:39:38",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/CvzG8RLt4w8%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403845%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Funções do 1º Grau, Afim e Linear\n\n## Introdução e Motivação\nMatemática, eu acho muito interessante. Hoje vamos aprofundar um pouco mais para aprender um pouco mais dessa primeira parte, porque estamos aqui vendo aplicações em concursos e contabilidade. Se isso é a parte teórica de uma função, funções do primeiro grau, não somos do primeiro grau? Funções de primeiro grau são a função afim.\n\n## Definição de Função do 1º Grau (Afim) e Notação\nFunção do primeiro grau, ou função afim, é caracterizada por apresentar uma lei de formação do tipo y = ax + b. Então eu acho que nós já sabemos: domínio é o conjunto dos valores de x; imagem é o conjunto dos valores de y que a função assume. Essa “caminha” é a nossa função.\n\nAssim, função do primeiro grau terá uma lei com esses dois coeficientes. Eu posso juntar e falar “função afim” ou “função do primeiro grau”. Muita gente chama também de função linear, mas atenção: função linear, em sentido estrito, é um caso particular.\n\n> 🎯 Dicas de prova: Função do 1º grau (função afim) tem lei y = ax + b, com a e b reais e a diferente de zero.\n\nOs coeficientes a e b são números reais. Vamos chamar o a de coeficiente angular e o b de coeficiente linear (termo independente). Muito importante: o a precisa ser diferente de zero, senão não seria função do primeiro grau.\n\n## Gráfico da Função Afim\nO gráfico de uma função afim é uma reta no plano cartesiano. A reta pode cortar os eixos, depende dos coeficientes. Você pode chamar graficamente de “reta da função”.\n\nA função linear, no sentido mais específico, é o caso y = ax, com b = 0. Ela passa pela origem. A função afim geral y = ax + b, quando b ≠ 0, não passa pela origem.\n\n## Função Linear (Caso Particular: b = 0)\nA função linear é aquela cuja lei de formação é y = ax, restando apenas o coeficiente a. Se eu voltar ao caso y = ax, ela é chamada função linear.\n\nDigamos que eu pegue a mesma estrutura, mas com b = 2: y = ax + 2. Aí já não é linear no sentido estrito; é afim. A função linear passa pela origem; a afim, com b ≠ 0, não passa pela origem.\n\n> 🎯 Dicas de prova: Função linear é y = ax (b = 0) e passa pela origem. Função afim y = ax + b, com b ≠ 0, não passa pela origem.\n\n## Coeficiente Angular (a) e Crescimento/Decrescimento\nQuando a > 0, a função é crescente: conforme x aumenta, y aumenta. Quando a < 0, a função é decrescente: conforme x aumenta, y diminui. Isso é essencial para interpretar o gráfico e resolver questões.\n\n> 🎯 Dicas de prova: a > 0 implica função crescente; a < 0 implica função decrescente.\n\n## Exemplos e Identidade\nA função identidade é um exemplo especial: y = x. Nesse caso, a = 1 e b = 0. Ela passa pela origem, e cada valor de x é igual ao valor de y. Se eu trocar a por -2, por exemplo, y = -2x, continua linear, passa pela origem, mas agora é decrescente.\n\nQuando a função é do tipo y = ax + b com b ≠ 0, ela desloca a reta para cima ou para baixo, deixando de passar pela origem. Se a = 3 e b = -2, por exemplo, a reta mantém inclinação positiva, mas intercepta o eixo y em -2.\n\n## Passagem pela Origem e Interpretação dos Coeficientes\nA função linear (b = 0) passa pela origem. Na função afim geral, o ponto (0, b) é a interceptação no eixo y. O coeficiente a dá a inclinação da reta. Se a for maior que zero, a reta sobe da esquerda para a direita; se a for menor que zero, a reta desce.\n\n> 🎯 Dicas de prova: No gráfico de y = ax + b, o ponto (0, b) é a interseção com o eixo y; a é a inclinação (coeficiente angular).\n\n## Classificação por Sinal de a\n- a > 0: função crescente.\n- a < 0: função decrescente.\n\nIsso vale tanto para a função linear quanto para a função afim.\n\n## Aplicações e Reconhecimento de Funções Afim\nEm várias aplicações, veremos expressões como y = 2x + 5, y = -x + 3, y = 4x, y = -3x - 7. Todas são funções afim; as que têm b = 0 são lineares no sentido estrito.\n\nQuando aparece algo como y = x² + 3 ou y = 3x² - 1, isso já é de segundo grau, não é função do primeiro grau.\n\n## Construção do Gráfico: Passo a Passo\nPara desenhar o gráfico de y = ax + b:\n1) Identifique a (inclinação) e b (intercepto em y).\n2) Marque o ponto (0, b).\n3) Use a inclinação a para obter outro ponto: se a = 3, suba 3 unidades em y para cada 1 unidade em x; se a = -2, desça 2 para cada 1 em x.\n4) Trace a reta que passa pelos dois pontos.\n\nSe quiser, calcule também a interseção com o eixo x resolvendo ax + b = 0, ou seja, x = -b/a.\n\n> 🎯 Dicas de prova: Para encontrar o zero da função afim, resolva ax + b = 0 → x = -b/a.\n\n## Observações Finais e Revisão\nFunção linear: y = ax, passa pela origem, cresce se a > 0, decresce se a < 0.  \nFunção afim: y = ax + b, com b ≠ 0 em geral, desloca a reta para cima ou para baixo, não passa pela origem; cresce se a > 0 e decresce se a < 0.\n\n> 🎯 Dicas de prova: Jamais confunda “reta crescente” com “passar pela origem”. Crescimento depende do sinal de a; passar pela origem depende de b = 0.\n\nNo próximo encontro, continuamos com mais aplicações e exercícios para fixar bem esses conceitos de função do primeiro grau, função afim e função linear.",
+  "transcricao_meta": {
+    "title": "Funções do 1º Grau, Afim e Linear",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 23000,
+    "createdAt": "2026-02-04T22:18:58.058Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: funções do 1º grau, com foco em função afim e função linear, seus coeficientes e gráficos.\nPrincipais pontos: \n- Diferença entre **função afim (f(x)=ax+b)** e **função linear (f(x)=ax)**.\n- Papel de **a (coeficiente angular)** e **b (coeficiente linear)**.\n- Classificação em **crescente**, **decrescente** e **constante**.\n- Técnicas rápidas para identificar a, b e desenhar/ler o gráfico.\n\n## 1. Base / Conceitos Fundamentais\n- **Funções de primeiro grau**: regras do tipo f(x) = ax + b, com a, b ∈ ℝ e a ≠ 0.\n- **Função afim**: f(x) = ax + b (modelo geral das funções de 1º grau).\n- **Função linear**: f(x) = ax (caso particular da afim com b = 0).\n- **Coeficiente angular (a)**: inclinação da reta; taxa de variação de y por variação unitária em x.\n- **Coeficiente linear (b)**: intercepto em y; valor de f(0), onde a reta corta o eixo y.\n- **Plano cartesiano** e **reta**: o gráfico de toda função de 1º grau é uma reta.\n- **Origem**: ponto (0,0). “Passa pela origem” significa f(0) = 0 ⇒ b = 0.\n\n> Dica de Prova: Para ser de 1º grau, exige-se a ≠ 0. Se a = 0, vira f(x) = b (função constante), que não é de 1º grau.\n\n## 2. Como Funciona / Distinções\n- Crescimento/decrescimento:\n  - a > 0 ⇒ função **crescente** (sobe da esquerda para a direita).\n  - a < 0 ⇒ função **decrescente** (desce da esquerda para a direita).\n  - a = 0 ⇒ **constante** (reta horizontal; não é 1º grau).\n- Afim vs Linear:\n  - Afim (ax + b): em geral, não passa pela origem; passa apenas se b = 0.\n  - Linear (ax): sempre passa pela origem (b = 0).\n- Constante (b): reta horizontal y = b; não é 1º grau.\n\nTabela comparativa\n- Linear (ax): passa pela origem? Sim; intercepto em y: 0; monotonicidade: a>0 crescente, a<0 decrescente.\n- Afim (ax + b): passa pela origem? Só se b = 0; intercepto em y: b; monotonicidade: depende do sinal de a.\n- Constante (b): passa pela origem? Apenas se b = 0 (mas aí deixa de ser “constante não nula”); intercepto em y: b; monotonicidade: sem inclinação (a = 0).\n\n> Dica de Prova: “Passa pela origem” ⇒ b = 0 ⇒ função linear. Se o enunciado der “corta o eixo y em 5”, então b = 5 ⇒ afim com b ≠ 0.\n\n## 3. Aplicação Prática / Técnicas\n- Identificar coeficientes na expressão:\n  - f(x) = ax + b ⇒ a é o coeficiente de x; b = f(0).\n  - f(1) = a + b pode ajudar a checar o valor de a.\n- A partir de dois pontos do gráfico (x1, y1) e (x2, y2):\n  - a = (y2 − y1) / (x2 − x1).\n  - Depois, escolha um ponto e use y = ax + b para achar b.\n- Pontos fáceis para traçar a reta:\n  - (0, b) sempre é ponto da reta.\n  - Se for linear: (1, a) também é ponto rápido, pois f(1) = a.\n- Checagens relâmpago:\n  - Passa pela origem? Calcule f(0). Se f(0) = 0 ⇒ b = 0 ⇒ linear.\n  - Crescente ou decrescente? Olhe o sinal de a.\n  - É 1º grau? Verifique se a ≠ 0.\n\n> Dica de Prova: Em enunciados que falam “reta crescente que passa pela origem”, conclua de imediato: a > 0 e b = 0 (linear).\n\n## 4. Exemplos e Casos Resolvidos\n- f(x) = 3x\n  - a = 3 > 0 ⇒ crescente.\n  - b = 0 ⇒ linear; passa pela origem.\n- f(x) = −2x\n  - a = −2 < 0 ⇒ decrescente.\n  - b = 0 ⇒ linear; passa pela origem.\n- f(x) = x − 2\n  - a = 1 > 0 ⇒ crescente.\n  - b = −2 ⇒ intercepto em y = −2; não passa pela origem; afim.\n- f(x) = (2/3)x + 5\n  - a = 2/3 > 0 ⇒ crescente.\n  - b = 5 ⇒ intercepto em y = 5; afim.\n- f(x) = (2/3)x − 7\n  - a = 2/3 > 0 ⇒ crescente.\n  - b = −7 ⇒ corta y em −7; não é linear.\n- f(x) = −x\n  - a = −1 < 0 ⇒ decrescente.\n  - b = 0 ⇒ linear; passa pela origem.\n\n## 5. Pegadinhas e Erros Comuns\n- Chamar de “linear” quando b ≠ 0. Linear exige b = 0.\n- Considerar a = 0 como 1º grau. Com a = 0, vira constante (f(x) = b) e não é 1º grau.\n- Confundir “constante” com “crescente/decrescente”: constante não cresce nem decresce; é reta horizontal.\n- Frases ambíguas:\n  - “Jamais é crescente se a ≤ 0.” Correto: para ser crescente, precisa a > 0.\n  - “Passa pela origem” significa exatamente b = 0, nada além.\n- Interpretar “índice geral” como algo novo: trata-se do intercepto em y, isto é, b.\n\n> Dica de Prova: Dado um gráfico, pegue dois pontos “limpos” para calcular a. Depois use um deles para achar b. Evite estimar visualmente b sem confirmação numérica.",
+  "resumo_bolso": "# Funções do 1º Grau, Afim e Linear\n\n---\n\n## 📌 Conceitos-Chave\n\n* Função de 1º grau: f(x) = ax + b, com a, b ∈ ℝ e a ≠ 0; gráfico é uma reta.\n* Função afim: f(x) = ax + b (modelo geral); b é o intercepto em y; passa pela origem só se b = 0.\n* Função linear: f(x) = ax (caso particular com b = 0); passa pela origem.\n* Coeficiente angular (a): inclinação/taxa de variação; define crescimento/decrescimento.\n* Coeficiente linear (b): f(0); ponto em que a reta corta o eixo y.\n* Origem: (0,0); “passa pela origem” ⇔ f(0) = 0 ⇔ b = 0.\n* Crescente: a > 0; Decrescente: a < 0; Constante: a = 0 (não é 1º grau).\n* Função constante: f(x) = b; reta horizontal; não cresce nem decresce.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Afim (ax + b) vs Linear (ax)\n\n| Aspecto | Afim (ax + b) | Linear (ax) |\n| --- | --- | --- |\n| Passa pela origem? | Só se b = 0 | Sempre (b = 0) |\n| Intercepto em y | b | 0 |\n| Monotonicidade | Depende do sinal de a | Depende do sinal de a |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Coeficiente angular a por dois pontos\n- Dados (x1, y1) e (x2, y2), x1 ≠ x2: a = (y2 − y1) / (x2 − x1).\n\n2. Cálculo do coeficiente linear b\n- Conhecido a e um ponto (x0, y0): b = y0 − a x0.\n\n3. Interceptos\n- Eixo y: x = 0 ⇒ f(0) = b.\n- Eixo x: f(x) = 0 ⇒ x = −b/a (com a ≠ 0).\n\n4. Monotonicidade por a\n- a > 0 ⇒ crescente; a < 0 ⇒ decrescente; a = 0 ⇒ constante (não 1º grau).\n\n5. Checagens rápidas\n- f(0) = b ⇒ b = 0 indica que passa pela origem (linear).\n- f(1) = a + b pode ajudar a checar a.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Chamar de “linear” quando b ≠ 0. Linear exige b = 0.\n- Considerar a = 0 como 1º grau. Com a = 0, é constante (f(x) = b) e não é 1º grau.\n- Confundir “constante” com “crescente/decrescente”: constante não cresce nem decresce; é reta horizontal.\n- “Passa pela origem” significa exatamente b = 0, nada além.\n- Evitar estimar b apenas visualmente: use y = ax + b com um ponto do gráfico.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei afim (ax + b) de linear (ax)?\n* Fixei: “passa pela origem” ⇔ b = 0 ⇔ linear?\n* Sei calcular a com dois pontos e depois b?\n* Lembro: a > 0 crescente; a < 0 decrescente; a = 0 constante (não 1º grau)?\n* Sei achar interceptos: y = b e x = −b/a?",
+  "mapa_mental": "# 🧮 Funções do 1º Grau: Afim e Linear\n## 🎯 Visão Geral\n### 💡 Conceito função 1º grau\n- Regra f(x)=ax+b\n- a diferente de zero\n- a,b números reais\n- Gráfico sempre reta\n### 🧮 Função afim\n- Forma geral ax+b\n- Inclui linear\n- b qualquer real\n- a diferente de zero\n### 🧮 Função linear\n- Forma ax\n- Caso particular afim\n- b igual a zero\n- Sempre passa origem\n\n## 🔢 Coeficientes e Classificações\n### 📊 Coeficiente angular a\n- Inclinação da reta\n- Taxa variação y\n- Depende de x\n- Define crescimento\n### 📊 Coeficiente linear b\n- Intercepto eixo y\n- Valor f(0)\n- Ponto 0,b\n- Passa origem b=0\n### 📈 Crescente, decrescente, constante\n- a maior que zero crescente\n- a menor que zero decrescente\n- a igual zero constante\n- Constante não 1º grau\n\n## 📉 Tipos de Função\n### 🧮 Afim ax+b\n- Geralmente não origem\n- Origem só b=0\n- Intercepto y igual b\n- Monotonia sinal de a\n### 🧮 Linear ax\n- Sempre origem\n- Intercepto y zero\n- Monotonia sinal de a\n- Reta passa 0,0\n### 📏 Constante f(x)=b\n- a igual zero\n- Reta horizontal\n- Não 1º grau\n- Origem só b=0\n\n## 📝 Técnicas e Erros de Prova\n### 🧮 Identificação rápida\n- a coeficiente de x\n- b igual f(0)\n- f(1)=a+b\n- Passa origem b=0\n### 📐 Cálculo por dois pontos\n- Pontos x1,y1 e x2,y2\n- a=(y2−y1)/(x2−x1)\n- Usa y=ax+b\n- Encontra b com ponto\n### ⚠️ Erros frequentes\n- Chamar afim de linear\n- Aceitar a=0 como 1º grau\n- Confundir constante crescente\n- Ignorar condição a≠0",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Função Afim",
+      "description": "Função Afim — 3 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual é a forma algébrica geral de uma função afim?",
+          "back": "f(x) = ax + b",
+          "hint": "Estrutura polinomial de 1º grau",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "funcao-afim"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Em qual conjunto numérico estão os coeficientes de uma função afim?",
+          "back": "Conjunto dos números reais",
+          "hint": "Campo numérico padrão da álgebra",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "coeficientes"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual coeficiente de f(x)=ax+b determina a inclinação da reta?",
+          "back": "a",
+          "hint": "É o termo que acompanha a variável x",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "coeficiente-angular"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Primeiro Grau",
+      "description": "Primeiro Grau — 3 cards",
+      "cards": [
+        {
+          "id": "card-4",
+          "front": "Qual condição sobre a função afim a torna uma função do primeiro grau?",
+          "back": "O coeficiente a deve ser diferente de zero",
+          "hint": "Evita que a variável x desapareça",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "funcao-primeiro-grau"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual é a representação gráfica de uma função do primeiro grau?",
+          "back": "Uma reta",
+          "hint": "Forma geométrica de uma linha constante",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "graficos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como calcular a raiz de f(x)=ax+b, com a diferente de zero?",
+          "back": "x = -b / a",
+          "hint": "Valor de x que anula a função",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "raiz-funcao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Função Linear",
+      "description": "Função Linear — 3 cards",
+      "cards": [
+        {
+          "id": "card-7",
+          "front": "Qual condição sobre o coeficiente linear caracteriza uma função linear?",
+          "back": "O coeficiente linear b deve ser igual a zero",
+          "hint": "O termo independente é nulo",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "funcao-linear"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-8",
+          "front": "Por qual ponto fixo passa o gráfico de toda função linear?",
+          "back": "Origem do plano cartesiano",
+          "hint": "Onde x e y são ambos zero",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "funcao-linear"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual expressão define a função identidade?",
+          "back": "f(x) = x",
+          "hint": "A saída é igual à entrada",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "funcao-identidade"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Variação Gráfica",
+      "description": "Variação Gráfica — 3 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Qual é o comportamento de uma função afim quando seu coeficiente angular é positivo?",
+          "back": "Função crescente",
+          "hint": "O valor de y aumenta com x",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "crescimento"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Em que ponto o gráfico de uma função afim intercepta o eixo y?",
+          "back": "(0, b)",
+          "hint": "Onde x é igual a zero",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "intersecao-eixo-y"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual relação existe entre o zero da função e o ponto de interseção com o eixo x?",
+          "back": "O zero da função é a abscissa do ponto de interseção com o eixo x",
+          "hint": "Conceito de raiz e ponto no gráfico",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "raiz-funcao"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual é a forma geral da lei de formação de uma função afim?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "f(x) = aˣ + b, onde a > 0, a ≠ 1 e b é número real",
+          "correct": false,
+          "explanation": "Incorreta. A forma f(x) = aˣ + b, com a > 0 e a ≠ 1, caracteriza uma função exponencial. Nela, a variável independente 'x' está no expoente, o que a diferencia fundamentalmente de uma função afim."
+        },
+        {
+          "id": "b",
+          "text": "f(x) = ax² + bx + c, onde a, b e c são números reais",
+          "correct": false,
+          "explanation": "Incorreta. A forma f(x) = ax² + bx + c, com a ≠ 0, representa uma função quadrática ou função do segundo grau, cujo gráfico é uma parábola. Uma função afim, por definição, é de primeiro grau."
+        },
+        {
+          "id": "c",
+          "text": "f(x) = ax + b, onde a e b são números reais e a ≠ 0",
+          "correct": true,
+          "explanation": "Correta. Uma função afim, também conhecida como função do primeiro grau, é expressa pela lei de formação f(x) = ax + b. Nela, 'a' é o coeficiente angular e 'b' é o coeficiente linear, ambos números reais, e a condição a ≠ 0 é fundamental para que seja de primeiro grau."
+        },
+        {
+          "id": "d",
+          "text": "f(x) = a/x + b, onde a e b são números reais e x ≠ 0",
+          "correct": false,
+          "explanation": "Incorreta. A expressão f(x) = a/x + b, com x ≠ 0, descreve uma função racional, onde a variável independente 'x' aparece no denominador. Essa estrutura não corresponde à de uma função afim, que é um polinômio de primeiro grau."
+        }
+      ],
+      "explanation": "Correta. Uma função afim, também conhecida como função do primeiro grau, é expressa pela lei de formação f(x) = ax + b. Nela, 'a' é o coeficiente angular e 'b' é o coeficiente linear, ambos números reais, e a condição a ≠ 0 é fundamental para que seja de primeiro grau.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Em uma função do primeiro grau, qual é a condição necessária para o coeficiente angular?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O coeficiente angular deve ser sempre maior que o coeficiente linear",
+          "correct": false,
+          "explanation": "Incorreta. Não existe uma regra matemática que estabeleça que o coeficiente angular ('a') deva ser sempre maior que o coeficiente linear ('b'). Esses dois coeficientes são independentes e definem diferentes características da função, como inclinação e intercepto no eixo y."
+        },
+        {
+          "id": "b",
+          "text": "O coeficiente angular deve ser necessariamente um número inteiro positivo",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente angular ('a' na forma f(x) = ax + b) de uma função do primeiro grau pode ser qualquer número real, desde que não seja zero. Não há restrição para que seja apenas um número inteiro positivo; ele pode ser negativo, fracionário ou irracional."
+        },
+        {
+          "id": "c",
+          "text": "O coeficiente angular deve ser um número racional não negativo",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente angular pode ser um número negativo, o que indicaria que a função é decrescente. Além disso, ele pode ser irracional (como π ou √2), não se limitando apenas a números racionais não negativos."
+        },
+        {
+          "id": "d",
+          "text": "O coeficiente angular deve ser diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Para que uma função seja classificada como do primeiro grau ou afim, o coeficiente angular 'a' (que multiplica a variável x) deve ser obrigatoriamente diferente de zero. Se 'a' fosse igual a zero, a função se tornaria f(x) = b, que é uma função constante, e não mais de primeiro grau."
+        }
+      ],
+      "explanation": "Correta. Para que uma função seja classificada como do primeiro grau ou afim, o coeficiente angular 'a' (que multiplica a variável x) deve ser obrigatoriamente diferente de zero. Se 'a' fosse igual a zero, a função se tornaria f(x) = b, que é uma função constante, e não mais de primeiro grau.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a característica gráfica de uma função linear?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É uma hipérbole que possui duas assíntotas perpendiculares",
+          "correct": false,
+          "explanation": "Incorreta. Uma hipérbole é a representação gráfica de outro tipo de função, como as funções racionais da forma f(x) = k/x, e não de uma função linear. As assíntotas são características de funções que se aproximam de certas linhas sem nunca tocá-las."
+        },
+        {
+          "id": "b",
+          "text": "É uma reta paralela ao eixo x que não intercepta a origem",
+          "correct": false,
+          "explanation": "Incorreta. Uma reta paralela ao eixo x que não intercepta a origem representa uma função constante (f(x) = b, com b ≠ 0). Uma função linear (f(x) = ax) é uma reta que, por definição, sempre passa pela origem do plano cartesiano, a menos que 'a' seja zero, o que a tornaria uma função constante e não linear no sentido estrito."
+        },
+        {
+          "id": "c",
+          "text": "É uma parábola que intercepta o eixo y em um ponto qualquer",
+          "correct": false,
+          "explanation": "Incorreta. Uma parábola é o gráfico característico de uma função quadrática (do segundo grau), cuja lei de formação é f(x) = ax² + bx + c. Funções lineares, por outro lado, são representadas por retas."
+        },
+        {
+          "id": "d",
+          "text": "É uma reta que passa pela origem do plano cartesiano",
+          "correct": true,
+          "explanation": "Correta. Uma função linear é um caso especial de função afim, onde o coeficiente linear 'b' é igual a zero, resultando na forma f(x) = ax. O gráfico de qualquer função nessa forma é uma reta que, ao ter x = 0, resulta em f(x) = 0, ou seja, passa necessariamente pela origem (0,0) do plano cartesiano."
+        }
+      ],
+      "explanation": "Correta. Uma função linear é um caso especial de função afim, onde o coeficiente linear 'b' é igual a zero, resultando na forma f(x) = ax. O gráfico de qualquer função nessa forma é uma reta que, ao ter x = 0, resulta em f(x) = 0, ou seja, passa necessariamente pela origem (0,0) do plano cartesiano.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "O que caracteriza uma função identidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É uma função da forma f(x) = x, onde a = 1 e b = 0",
+          "correct": true,
+          "explanation": "Correta. A função identidade é definida como f(x) = x. Comparando com a forma geral da função afim f(x) = ax + b, percebe-se que o coeficiente angular 'a' é igual a 1 e o coeficiente linear 'b' é igual a 0. Essa função tem a propriedade de que a imagem é sempre igual ao seu domínio (f(x) = x)."
+        },
+        {
+          "id": "b",
+          "text": "É uma função onde o coeficiente angular e o linear são iguais entre si",
+          "correct": false,
+          "explanation": "Incorreta. Embora existam funções onde os coeficientes angular e linear são iguais (por exemplo, f(x) = 2x + 2), essa não é a definição específica da função identidade. A função identidade exige que 'a' seja 1 e 'b' seja 0, uma condição muito mais restritiva."
+        },
+        {
+          "id": "c",
+          "text": "É uma função onde o valor de saída é sempre o inverso do valor de entrada",
+          "correct": false,
+          "explanation": "Incorreta. Uma função onde o valor de saída é o inverso do valor de entrada seria f(x) = 1/x (para x ≠ 0), conhecida como função recíproca. Essa é uma função racional, e não a função identidade."
+        },
+        {
+          "id": "d",
+          "text": "É uma função onde o coeficiente angular vale zero e o linear vale um",
+          "correct": false,
+          "explanation": "Incorreta. Se o coeficiente angular ('a') vale zero, a função seria f(x) = 0x + 1, que simplifica para f(x) = 1. Esta é uma função constante, não a função identidade, que mapeia cada valor para si mesmo."
+        }
+      ],
+      "explanation": "Correta. A função identidade é definida como f(x) = x. Comparando com a forma geral da função afim f(x) = ax + b, percebe-se que o coeficiente angular 'a' é igual a 1 e o coeficiente linear 'b' é igual a 0. Essa função tem a propriedade de que a imagem é sempre igual ao seu domínio (f(x) = x).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a principal diferença entre uma função afim e uma função linear?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A função afim sempre é decrescente, enquanto a função linear sempre é crescente",
+          "correct": false,
+          "explanation": "Incorreta. A característica de uma função ser crescente ou decrescente é determinada exclusivamente pelo sinal do coeficiente angular 'a'. Se a > 0, a função é crescente; se a < 0, é decrescente. Isso se aplica tanto a funções afins quanto a funções lineares, independentemente do valor de 'b'."
+        },
+        {
+          "id": "b",
+          "text": "A função linear é um caso particular da função afim onde o coeficiente linear é zero",
+          "correct": true,
+          "explanation": "Correta. Uma função afim tem a forma geral f(x) = ax + b. Uma função linear é um caso particular dessa forma, onde o coeficiente linear 'b' é igual a zero, resultando em f(x) = ax. Portanto, toda função linear é uma função afim, mas nem toda função afim é linear (apenas aquelas com b=0)."
+        },
+        {
+          "id": "c",
+          "text": "A função afim possui coeficiente angular diferente de zero, enquanto a linear pode ter coeficiente angular nulo",
+          "correct": false,
+          "explanation": "Incorreta. Tanto a função afim (f(x) = ax + b) quanto a função linear (f(x) = ax) exigem que o coeficiente angular 'a' seja diferente de zero para serem consideradas funções de primeiro grau. Se 'a' fosse nulo, a função seria constante."
+        },
+        {
+          "id": "d",
+          "text": "A função linear possui dois coeficientes não nulos, enquanto a afim possui apenas um",
+          "correct": false,
+          "explanation": "Incorreta. Esta afirmação inverte as características. Uma função linear (f(x) = ax) possui apenas um coeficiente não nulo ('a'), pois 'b' é zero. Uma função afim (f(x) = ax + b) pode ter dois coeficientes não nulos ('a' e 'b'), desde que 'a' seja diferente de zero."
+        }
+      ],
+      "explanation": "Correta. Uma função afim tem a forma geral f(x) = ax + b. Uma função linear é um caso particular dessa forma, onde o coeficiente linear 'b' é igual a zero, resultando em f(x) = ax. Portanto, toda função linear é uma função afim, mas nem toda função afim é linear (apenas aquelas com b=0).",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Para construir o gráfico de uma função do primeiro grau, quantos pontos são necessários e suficientes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "São necessários infinitos pontos para representar adequadamente a função",
+          "correct": false,
+          "explanation": "Incorreta. Uma reta é, de fato, composta por infinitos pontos. Contudo, para *construir* ou *definir* graficamente essa reta, não é necessário conhecer ou plotar todos os infinitos pontos. Dois pontos são o mínimo suficiente para traçar a reta que representa a função."
+        },
+        {
+          "id": "b",
+          "text": "São necessários pelo menos três pontos para garantir a precisão da reta",
+          "correct": false,
+          "explanation": "Incorreta. Embora três pontos possam ser usados para verificar a colinearidade ou a precisão de um traçado, para definir unicamente uma reta (que é o gráfico de uma função do primeiro grau), o mínimo necessário são dois pontos distintos. Três pontos colineares definem a mesma reta que quaisquer dois deles, enquanto três pontos não colineares não definem uma única reta."
+        },
+        {
+          "id": "c",
+          "text": "São necessários e suficientes dois pontos distintos",
+          "correct": true,
+          "explanation": "Correta. No plano cartesiano, dois pontos distintos são suficientes para determinar uma única reta. Uma função do primeiro grau, também conhecida como função afim, tem como gráfico uma reta, e, portanto, apenas dois pontos são necessários para traçá-la e defini-la completamente."
+        },
+        {
+          "id": "d",
+          "text": "É necessário apenas um ponto, desde que se conheça o coeficiente angular",
+          "correct": false,
+          "explanation": "Incorreta. Um ponto e o coeficiente angular (inclinação da reta) são suficientes para determinar uma função do primeiro grau, pois permitem encontrar o coeficiente linear. No entanto, a questão pergunta especificamente sobre o número de *pontos* necessários e suficientes, e apenas um ponto por si só não define uma reta, a menos que outras informações, como a inclinação, sejam fornecidas."
+        }
+      ],
+      "explanation": "Correta. No plano cartesiano, dois pontos distintos são suficientes para determinar uma única reta. Uma função do primeiro grau, também conhecida como função afim, tem como gráfico uma reta, e, portanto, apenas dois pontos são necessários para traçá-la e defini-la completamente.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Considerando uma função linear f(x) = ax, qual é a relação entre o valor de entrada e o valor de saída na função identidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O valor de saída é sempre igual ao valor de entrada",
+          "correct": true,
+          "explanation": "Correta. A função identidade é definida como f(x) = x. Isso significa que, para qualquer valor de entrada (domínio), o valor de saída (imagem) é exatamente o mesmo. Por exemplo, se a entrada é 7, a saída é 7; se a entrada é -3, a saída é -3."
+        },
+        {
+          "id": "b",
+          "text": "O valor de saída é sempre o dobro do valor de entrada",
+          "correct": false,
+          "explanation": "Incorreta. Uma função onde o valor de saída é o dobro do valor de entrada seria do tipo f(x) = 2x, que é uma função linear, mas não a função identidade."
+        },
+        {
+          "id": "c",
+          "text": "O valor de saída é sempre a metade do valor de entrada",
+          "correct": false,
+          "explanation": "Incorreta. Uma função onde o valor de saída é a metade do valor de entrada seria do tipo f(x) = x/2 ou f(x) = 0.5x, que é uma função linear, mas não a função identidade."
+        },
+        {
+          "id": "d",
+          "text": "O valor de saída é sempre o oposto do valor de entrada",
+          "correct": false,
+          "explanation": "Incorreta. Uma função onde o valor de saída é o oposto do valor de entrada seria do tipo f(x) = -x, que também é uma função linear, mas não a função identidade."
+        }
+      ],
+      "explanation": "Correta. A função identidade é definida como f(x) = x. Isso significa que, para qualquer valor de entrada (domínio), o valor de saída (imagem) é exatamente o mesmo. Por exemplo, se a entrada é 7, a saída é 7; se a entrada é -3, a saída é -3.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Em uma função do primeiro grau f(x) = ax + b, o que representa geometricamente o coeficiente linear b?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Representa a inclinação da reta em relação ao eixo horizontal",
+          "correct": false,
+          "explanation": "Incorreta. A inclinação da reta em relação ao eixo horizontal é determinada pelo coeficiente angular 'a'. Ele indica a taxa de variação da função e a 'subida' ou 'descida' da reta."
+        },
+        {
+          "id": "b",
+          "text": "Representa o ponto onde a reta intercepta o eixo y (ordenada na origem)",
+          "correct": true,
+          "explanation": "Correta. O coeficiente linear 'b' em uma função do primeiro grau f(x) = ax + b representa o valor de f(x) quando x é igual a zero. Ou seja, f(0) = a(0) + b = b. Portanto, o ponto (0, b) é o local onde a reta intersecta o eixo y, também conhecido como ordenada na origem."
+        },
+        {
+          "id": "c",
+          "text": "Representa a distância perpendicular da reta até a origem do plano",
+          "correct": false,
+          "explanation": "Incorreta. A distância perpendicular da reta até a origem do plano é um conceito geométrico que envolve a fórmula da distância de um ponto a uma reta e não é diretamente representada pelo coeficiente 'b', a menos que a reta passe pela origem (quando b=0)."
+        },
+        {
+          "id": "d",
+          "text": "Representa o ângulo formado entre a reta e o eixo x medido em radianos",
+          "correct": false,
+          "explanation": "Incorreta. O ângulo formado entre a reta e o eixo x está diretamente relacionado ao coeficiente angular 'a' (a = tan(θ), onde θ é o ângulo). O coeficiente linear 'b' não representa o ângulo em si."
+        }
+      ],
+      "explanation": "Correta. O coeficiente linear 'b' em uma função do primeiro grau f(x) = ax + b representa o valor de f(x) quando x é igual a zero. Ou seja, f(0) = a(0) + b = b. Portanto, o ponto (0, b) é o local onde a reta intersecta o eixo y, também conhecido como ordenada na origem.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Para determinar completamente uma função afim, quais informações mínimas são necessárias?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "É necessário conhecer apenas o coeficiente angular e um ponto qualquer do plano",
+          "correct": false,
+          "explanation": "Incorreta. Conhecer apenas o coeficiente angular ('a') e um ponto qualquer do plano é, de fato, suficiente para determinar a função afim, pois permite calcular o coeficiente linear ('b'). No entanto, a alternativa 'b' apresenta uma opção mais abrangente e fundamental, que inclui a definição por dois pontos, um método clássico e essencial."
+        },
+        {
+          "id": "b",
+          "text": "É necessário conhecer dois pontos distintos pertencentes à reta ou os valores dos coeficientes a e b",
+          "correct": true,
+          "explanation": "Correta. Uma função afim (ou função do primeiro grau) é completamente determinada se conhecemos dois pontos distintos pelos quais a reta passa. Com esses dois pontos, é possível montar um sistema de equações para encontrar os coeficientes 'a' e 'b'. Alternativamente, se os valores dos coeficientes 'a' e 'b' já são conhecidos, a função está, por definição, completamente determinada."
+        },
+        {
+          "id": "c",
+          "text": "É necessário conhecer três pontos colineares para garantir a unicidade da função",
+          "correct": false,
+          "explanation": "Incorreta. Três pontos colineares não são o mínimo necessário; dois pontos já são suficientes para definir uma reta. Se os três pontos não forem colineares, eles não podem pertencer à mesma função do primeiro grau."
+        },
+        {
+          "id": "d",
+          "text": "É necessário conhecer o coeficiente linear e a inclinação da reta em graus",
+          "correct": false,
+          "explanation": "Incorreta. Conhecer o coeficiente linear ('b') e a inclinação da reta em graus é suficiente, pois a inclinação em graus pode ser convertida no coeficiente angular ('a'). No entanto, a alternativa 'b' é mais abrangente, incluindo a forma mais fundamental de definir uma reta a partir de pontos."
+        }
+      ],
+      "explanation": "Correta. Uma função afim (ou função do primeiro grau) é completamente determinada se conhecemos dois pontos distintos pelos quais a reta passa. Com esses dois pontos, é possível montar um sistema de equações para encontrar os coeficientes 'a' e 'b'. Alternativamente, se os valores dos coeficientes 'a' e 'b' já são conhecidos, a função está, por definição, completamente determinada.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a condição para que uma função do primeiro grau seja simultaneamente linear e identidade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O coeficiente angular deve ser igual a 1 e o coeficiente linear deve ser igual a 0",
+          "correct": true,
+          "explanation": "Correta. Uma função do primeiro grau é da forma f(x) = ax + b. Para ser uma função linear, o coeficiente linear 'b' deve ser igual a zero (f(x) = ax). Para ser uma função identidade, a saída deve ser igual à entrada (f(x) = x). Portanto, para que seja simultaneamente linear e identidade, a função deve ser f(x) = x, o que implica que o coeficiente angular 'a' deve ser 1 e o coeficiente linear 'b' deve ser 0."
+        },
+        {
+          "id": "b",
+          "text": "Ambos os coeficientes devem ser iguais a 1",
+          "correct": false,
+          "explanation": "Incorreta. Se ambos os coeficientes fossem iguais a 1, a função seria f(x) = 1x + 1, ou f(x) = x + 1. Esta não é a função identidade, pois a saída seria sempre uma unidade maior que a entrada, e também não é considerada uma função linear no sentido estrito (onde b=0)."
+        },
+        {
+          "id": "c",
+          "text": "O coeficiente angular deve ser diferente de zero e o linear deve ser unitário",
+          "correct": false,
+          "explanation": "Incorreta. O coeficiente linear unitário significa b = 1. Para a função ser identidade, o coeficiente linear 'b' deve ser 0, não 1."
+        },
+        {
+          "id": "d",
+          "text": "O coeficiente angular deve ser zero e o linear deve ser igual a 1",
+          "correct": false,
+          "explanation": "Incorreta. Se o coeficiente angular 'a' fosse zero e o linear 'b' fosse igual a 1, a função seria f(x) = 0x + 1, ou f(x) = 1. Esta é uma função constante, não a função identidade."
+        }
+      ],
+      "explanation": "Correta. Uma função do primeiro grau é da forma f(x) = ax + b. Para ser uma função linear, o coeficiente linear 'b' deve ser igual a zero (f(x) = ax). Para ser uma função identidade, a saída deve ser igual à entrada (f(x) = x). Portanto, para que seja simultaneamente linear e identidade, a função deve ser f(x) = x, o que implica que o coeficiente angular 'a' deve ser 1 e o coeficiente linear 'b' deve ser 0.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "01_307977_Funções do 1º Grau, Afim e Linear.pdf",
+  "coletado_em": "2026-09-23T20:55:58"
+}

@@ -1,0 +1,546 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 1,
+    "titulo": "1. Conjuntos numéricos: Números Naturais, Inteiros, Racionais, Reais e Complexos (forma algébrica e forma trigonométrica). Operações, propriedades e aplicações. Sequências numéricas, progressão aritmética e progressão geométrica."
+  },
+  "ordem": 9,
+  "ordem_no_curso": "9.00",
+  "titulo": "Progressão Aritmética III",
+  "codigo_aula": "261277",
+  "video_id": "zp2WckqE1lE=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:31:44",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/zp2WckqE1lE%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=408860%2C408859%2C408865&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Progressão Aritmética III\n\n## Aquecimento e contextualização\nContinua aqui comigo. Olha só: pode aparecer questão em que os ângulos internos de um triângulo são formados de tal maneira que seguem uma progressão aritmética. Progressão aritmética é muito presente na matemática. Então não se preocupe: se aparecer em geometria, deixa comigo. É importante saber que você pode ter progressão aritmética dentro de outros assuntos. Pode contextualizar, tá bom?\n\nCriamos um triângulo de tal maneira que seus ângulos internos seguem uma progressão aritmética de razão 25. Vamos fazer assim: colocar aqui o a1, o a2 e o a3, e vamos correr à frente. Ele fala que a razão é 25. Beleza. Desse modo, eu quero saber o valor do maior ângulo interno. Quem vai ser o a3?\n\nEntão vamos fazer o seguinte: você tem que saber que a soma dos ângulos de qualquer triângulo é sempre 180 graus. Eu posso falar que a1 + a2 + a3 = 180 graus.\n\nAgora, eu posso conferir de duas maneiras. Tem a propriedade da média aritmética, e tem o jeito convencional de colocar todo mundo em função de a1. Não tem caminho único; você escolhe. Se eu quiser achar pelo caminho mais rápido, tiro a média aritmética: o termo do meio é a média dos outros quando os três termos estão em PA. Achou o a2, acabou. Correto. Se não quiser assim, sem problema: faz a1, a2 = a1 + r, a3 = a1 + 2r, com r = 25, e trabalha com a soma 180.\n\nVou fazer das duas maneiras, começando pela convencional.\n\n## Triângulo com ângulos em PA (maneira convencional)\nColocando:\n- a1 = a1\n- a2 = a1 + r\n- a3 = a1 + 2r\n\nCom r = 25, temos:\na1 + (a1 + 25) + (a1 + 50) = 180\n3a1 + 75 = 180\n3a1 = 105\na1 = 35 graus\n\nShow de bola. Então:\n- a1 = 35\n- a2 = 35 + 25 = 60\n- a3 = 35 + 2·25 = 35 + 50 = 85 graus\n\nDo jeito convencional, achamos a3 = 85 graus. Correto.\n\nAgora vamos pela propriedade.\n\n## Triângulo com ângulos em PA (propriedade da média)\nSabemos que a soma dos ângulos internos é 180. Se eu pegar essa soma e dividir por 3, encontro o termo do meio, que é o a2, porque em uma PA de três termos o termo central é a média dos extremos. Então:\na2 = 180/3 = 60 graus\n\nCom r = 25:\na1 = a2 − r = 60 − 25 = 35\na3 = a2 + r = 60 + 25 = 85 graus\n\nMesma resposta, mais direto. É bom saber das duas maneiras porque, dependendo da banca, ela pode te empurrar por caminhos diferentes.\n\n> 🎯 Dicas de prova: Em uma PA de três termos, o termo central é a média aritmética dos outros dois.\n\n## Propriedades importantes de PA\nQuero que você saiba algumas propriedades porque elas permitem inferir informações rapidamente.\n\n- Em uma PA, a partir do segundo termo, cada termo é a média aritmética do anterior com o posterior.\n- Se você pegar uma quantidade ímpar de termos consecutivos de uma PA, a média aritmética deles é o termo central. Por exemplo, com cinco termos a1, a2, a3, a4, a5, a média é a3. Isso vale para qualquer PA.\n\nOutra situação:\n- Se você pegar dois termos quaisquer que estejam equidistantes dos extremos dentro de um bloco de termos consecutivos, a soma desses dois termos é igual para todos os pares equidistantes. Isso é muito importante.\n\n> 🎯 Dicas de prova: A soma de dois termos equidistantes dos extremos é constante. Em um bloco com número ímpar de termos, a média dos termos é o termo central.\n\nExemplificando a ideia de equidistância: em uma PA, pares como (a1, a5), (a2, a4) em um bloco de cinco termos têm a mesma soma. Essa constância de somas equidistantes é uma das chaves para somar termos de uma PA, como veremos já já.\n\nGuarda também um padrão geral que aparece com dois termos separados por dois passos: se você pega um termo e o termo que está duas posições à frente, a média deles te devolve o termo que está exatamente no meio. Generalizando, a média de a_k e a_{k+2} é a_{k+1}. Isso vale para qualquer espaçamento: a média de a_k e a_{k+m} é a_{k+m/2} quando m é par.\n\nEssas propriedades são a base para entendermos soma de termos de uma PA. Já já a gente começa a soma, mas antes, um desafio.\n\n## Desafio: conexão com equação do segundo grau\nVou passar um desafio que serve para você que está afiado com equação do segundo grau. Se seu edital tiver equações, esse desafio é para você ajustar a mira.\n\nA questão: a sequência (a, b, c) é uma progressão aritmética com b > a. Os números a e c são as raízes da equação:\n3·x^2 + 13 = 27\n\nPrimeiro, vamos resolver essa equação. 27 é 3^3. Então escrevo:\n3·x^2 + 13 = 3^3\n\nAs bases são as mesmas? Aqui a ideia é: isolo 3·x^2:\n3·x^2 = 27 − 13 = 14\n\nOpa, não. Vamos organizar direito. Melhor caminho: transformar 27 em potência de 3 e perceber que não dá para igualar potências diretamente por causa do +13. Então vamos resolver como equação do segundo grau padrão:\n\n3x^2 + 13 = 27\n3x^2 = 14\nx^2 = 14/3\nx = ±√(14/3)\n\nMas a narrativa que eu faço nas aulas sobre fatoração por soma e produto vale quando temos x^2 − Sx + P = 0. Aqui, como apareceu de outras formas em desafios, trago a técnica de soma e produto quando a forma permitir sem Bhaskara. Em casos como x^2 − 7x + 10 = 0, por exemplo, você procuraria dois números que somem −7 e multipliquem 10: −2 e −5. Essa é a “musiquinha”: “dois números que somados dão B e multiplicados dão C”.\n\nPara ficar claro, vamos considerar um exemplo didático, do tipo x^2 − 7x + 10 = 0:\n- Dois números que somem −7 e multipliquem 10: −2 e −5.\n- Logo, as raízes são 2 e 5 (ajustando o sinal conforme o polinômio estiver escrito).\n\nEssa técnica é para treinar a cabeça sem depender sempre do Bhaskara. Em muitos editais você pode e deve usar o Bhaskara, mas saber soma e produto agiliza.\n\nVoltando ao nosso objetivo: a e c serão as raízes; b é o termo do meio da PA, então b é a média aritmética de a e c. Sabendo as raízes, posso identificar a, b, c e calcular um termo pedido.\n\nSuponhamos que, do enunciado trabalhado, as raízes saiam como 2 e 5, por exemplo. Então, numa PA com a < b < c e b > a:\n- a = 2, c = 5\n- b = (a + c)/2 = (2 + 5)/2 = 3,5\n- A razão é r = b − a = 1,5, e também c − b = 1,5. Certinho.\n\nAgora, a pergunta que aparece é: qual o centésimo termo? O a100.\n\nO termo geral da PA é:\na_n = a1 + (n − 1)·r\n\nSe os três primeiros termos fossem a1 = a, a2 = b, a3 = c, com a = 2 e r = 1,5, então:\na100 = 2 + 99·1,5 = 2 + 148,5 = 150,5\n\nA ideia aqui é te mostrar o caminho: identificar as raízes, colocar em ordem crescente para formar a PA (com b > a), encontrar a razão e aplicar a fórmula do termo geral.\n\n> 🎯 Dicas de prova: Em qualquer PA, a_n = a1 + (n − 1)·r. E se você conhece dois termos e eles são raízes de uma equação, use b = (a + c)/2 para achar a razão.\n\nQuero que você tenha liberdade de escolher o melhor caminho. Matemática de verdade é entender de onde vem a fórmula. Você pode usar a fórmula prontinha, claro, mas é bom saber chegar nela:\na_n = a1 + (n − 1)·r\n\nPara o centésimo termo, substitui n = 100: a100 = a1 + 99·r. Localiza a1, pega a razão, e vai.\n\n## Encerramento e próxima etapa\nGuarda essas propriedades:\n- Termo do meio é a média (para três termos).\n- Em bloco ímpar de termos, a média dos termos é o termo central.\n- Pares equidistantes dos extremos têm soma constante.\n\nIsso vai validar nosso próximo passo: a soma dos termos de uma PA. No próximo vídeo, vamos começar a soma dos termos de uma PA. Treinando, fazendo desafios, você escolhe o melhor caminho e entende de verdade as questões. Às vezes são os detalhes que fazem a diferença.\n\nVoltamos em breve para começar, agora sim, a soma dos termos de uma progressão aritmética.",
+  "transcricao_meta": {
+    "title": "Progressão Aritmética III",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 28213,
+    "createdAt": "2026-01-30T14:25:28.890Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda Progressão Aritmética (PA) aplicada a problemas típicos de prova: identificação de termos, propriedades-chave (média do termo central e soma de equidistantes), transformação de equações exponenciais em quadráticas, e cálculo de termos distantes como a100.\nPrincipais pontos: \n- Propriedade do termo central em PA com quantidade ímpar.\n- Soma de termos equidistantes dos extremos é constante.\n- Técnicas rápidas: igualar expoentes em bases iguais, resolver x² − 7x + 10 = 0 por soma e produto, e aplicar an = a1 + (n−1)·r.\n\n## 1. Base / Conceitos Fundamentais\n- **Progressão aritmética (PA)**: sequência em que a diferença entre termos consecutivos é constante, chamada **razão r**.\n- **Termos**: a1, a2, a3, ... com a2 = a1 + r, a3 = a1 + 2r, etc.\n- **Termo geral**: an = a1 + (n−1)·r. Alternativa conveniente: an = ak + (n−k)·r (por exemplo, a100 = a3 + 97·r).\n- **Propriedade central (n ímpar)**: em PA com número ímpar de termos, o termo do meio é a média aritmética dos termos.\n- **Equidistantes**: a soma de dois termos igualmente afastados dos extremos é constante e igual à soma dos extremos.\n\n## 2. Como Funciona / Distinções\n- PA crescente vs. decrescente:\n  - **r > 0**: PA crescente (se b > a, então os termos aumentam).\n  - **r < 0**: PA decrescente.\n- Diferença entre médias:\n  - **Termo central (n ímpar)** = média de todos os termos.\n  - **Média de equidistantes**: média de a1 e a5, de a2 e a4, etc., é a mesma e igual ao termo central.\n- Equações exponenciais vs. quadráticas:\n  - Se as bases das potências são iguais, iguale os expoentes → vira **equação do segundo grau**.\n  - Em x² − 7x + 10 = 0, use soma (7) e produto (10) para achar raízes 2 e 5.\n\n## 3. Aplicação Prática / Técnicas\n- PA com 3 termos (triângulo com ângulos em PA):\n  1) Modele: a1, a2 = a1 + r, a3 = a1 + 2r.\n  2) Use a soma conhecida (triângulo: 180°) para achar a1.\n  3) Ou aplique o atalho do termo do meio: a2 = soma/3.\n- Soma de equidistantes:\n  - a1 + a5 = a2 + a4 = ... = constante.\n  - Útil para somas rápidas e verificação de coerência.\n- Equação exponencial com mesma base:\n  1) Bases iguais → iguale expoentes.\n  2) Resolva a quadrática por soma e produto (ou Bhaskara).\n  3) Interprete raízes como termos da PA quando o enunciado assim define.\n- Cálculo de termos distantes:\n  - Tenha a1 e r → an = a1 + (n−1)·r.\n  - Ou, se tiver a3 e r → an = a3 + (n−3)·r.\n\n> Dica de prova: Em PA com 3 termos, pegue o termo do meio pela média direta. Em equações exponenciais com bases iguais, economize tempo igualando os expoentes.\n\n## 4. Exemplos e Casos Resolvidos\n- Triângulo com ângulos em PA de razão 25:\n  - a1, a2 = a1 + 25, a3 = a1 + 50; soma = 180°.\n  - 3a1 + 75 = 180 → 3a1 = 105 → a1 = 35°.\n  - a2 = 60°, a3 = 85°. Maior ângulo: a3 = 85°.\n  - Atalho do termo do meio: a2 = 180/3 = 60°; então a1 = 35°, a3 = 85°.\n\n> Dica de prova: Em PA com número ímpar de termos, “a média aritmética vai ser o termo do meio”. Aqui, a2 sai direto: 60°.\n\n- Soma de equidistantes constante:\n  - Exemplo típico: 3+21 = 5+19 = 7+17 = 24 (mesma soma).\n\n> Dica de prova: A soma de dois termos equidistantes dos extremos é igual à soma dos extremos. Base para a fórmula de soma de PA.\n\n- Equação exponencial → PA → a100:\n  - Bases iguais → iguale expoentes → x² − 7x + 10 = 0.\n  - Soma e produto: dois números que somam 7 e multiplicam 10 → 2 e 5.\n  - Interpretação: os dois primeiros termos da PA são 2 e 5 → r = 3.\n  - a3 = 8; a100 = a1 + 99·r = 2 + 99·3 = 299.\n  - Verificação alternativa: a100 = a3 + 97·r = 8 + 291 = 299.\n\n> Dica de prova: Em x² − 7x + 10 = 0, teste pares de 10: (1,10), (2,5). O par 2 e 5 soma 7 → raízes imediatas.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir “média do termo do meio” com média de quaisquer dois termos. Só vale para:\n  - Termo do meio quando a quantidade de termos é ímpar.\n  - Pares equidistantes dos extremos (a1 com a5, a2 com a4, etc.).\n- Esquecer o sentido da razão:\n  - Se b > a, então r > 0 e a PA é crescente; não inverta a ordem dos termos.\n- Sinais em soma e produto da quadrática:\n  - Em x² − 7x + 10 = 0, a soma procurada é 7 (sinal oposto de b), o produto é 10.\n- Trocar fórmulas do termo geral:\n  - a100 = a1 + 99·r; cuidado para não usar 100·r por engano.\n- Triângulo em PA:\n  - Não esqueça: a soma dos ângulos internos é 180°. A3 é o maior quando r = 25 > 0.\n- Igualar expoentes:\n  - Só faça se as bases das potências são exatamente iguais. Caso contrário, não pode igualar.",
+  "resumo_bolso": "# Progressão Aritmética III\n\n---\n\n## 📌 Conceitos-Chave\n\n* **PA**: sequência em que a diferença entre termos consecutivos é **constante** (razão **r**).\n* **Termos**: a1, a2, a3, ... com **a2 = a1 + r**, **a3 = a1 + 2r**, etc.\n* **Termo geral**: **an = a1 + (n−1)·r**. Versão útil: **an = ak + (n−k)·r** (por exemplo, a100 = a3 + 97·r).\n* **PA crescente**: **r > 0** → termos aumentam.\n* **PA decrescente**: **r < 0** → termos diminuem.\n* **Termo central (n ímpar)**: em PA com **n ímpar**, o termo do meio é a **média aritmética de todos os termos**.\n* **Equidistantes**: soma de dois termos igualmente afastados dos extremos é **constante** e igual à **soma dos extremos**.\n* **Equação exponencial com mesma base**: se as bases são **iguais**, pode **igualar os expoentes** → vira **equação do 2º grau**.\n* **Equação x² − 7x + 10 = 0**: raízes por **soma e produto** → números que somam 7 e multiplicam 10 → **2 e 5**.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### PA Crescente vs PA Decrescente\n\n| Aspecto | PA Crescente | PA Decrescente |\n|--------|--------------|----------------|\n| **Razão r** | **r > 0** | **r < 0** |\n| **Comportamento** | termos aumentam | termos diminuem |\n\n---\n\n### Termo Central vs Pares Equidistantes\n\n| Aspecto | Termo Central (n ímpar) | Pares Equidistantes |\n|--------|--------------------------|----------------------|\n| **Definição** | termo do meio da PA | dois termos à mesma distância dos extremos |\n| **Média** | **= média de todos os termos** | média de cada par **= termo central** |\n| **Soma** | — | soma de cada par **= a1 + an** (constante) |\n\n---\n\n### Equação Exponencial vs Equação Quadrática\n\n| Aspecto | Equação Exponencial | Equação Quadrática |\n|--------|----------------------|--------------------|\n| **Forma típica** | a^f(x) = a^g(x) (mesma base) | ax² + bx + c = 0 |\n| **Técnica** | bases iguais → **igualar expoentes** | resolver por **soma e produto** ou Bhaskara |\n| **Uso em PA** | expoentes viram termos da PA | raízes podem ser termos da PA, conforme o enunciado |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Termo Geral da PA**\n\n* **Regra**: **an = a1 + (n−1)·r**.\n* **Aplicação**: achar termo distante (a100, a50, etc.) conhecendo a1 e r.\n* **Exemplo**: a1 = 2, r = 3 → a100 = 2 + 99·3 = 299.\n\n---\n\n**2. Termo Geral a partir de outro termo**\n\n* **Regra**: **an = ak + (n−k)·r**.\n* **Aplicação**: quando não se tem a1, mas tem algum ak.\n* **Exemplo**: a3 = 8, r = 3 → a100 = 8 + (100−3)·3 = 8 + 97·3 = 299.\n\n---\n\n**3. Termo Central (n ímpar)**\n\n* **Regra**: termo central = **média aritmética de todos os termos**.\n* **Aplicação**: PA com 3, 5, 7, ... termos.\n* **Exemplo (triângulo)**: ângulos em PA (3 termos) somam 180° → termo do meio = 180/3 = 60°.\n\n---\n\n**4. Soma de Termos Equidistantes**\n\n* **Regra**: em PA, **a1 + a5 = a2 + a4 = ...** (constante).\n* **Aplicação**: somas rápidas, checagem de coerência.\n* **Exemplo**: 3+21 = 5+19 = 7+17 = 24.\n\n---\n\n**5. Equação Quadrática por Soma e Produto**\n\n* **Regra**: em **x² − 7x + 10 = 0**, procurar dois números que:\n  * **somam 7** (sinal oposto de −7),\n  * **multiplicam 10**.\n* **Aplicação**: achar raízes **2 e 5** rapidamente.\n* **Exemplo**: pares de 10 → (1,10), (2,5); só (2,5) soma 7.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir “média do termo do meio” com média de quaisquer dois termos. Só vale para:\n  * termo do meio quando a quantidade de termos é ímpar;\n  * pares equidistantes dos extremos (a1 com a5, a2 com a4, etc.).\n* Esquecer o sentido da razão:\n  * se b > a, então r > 0 e a PA é crescente; não inverta a ordem dos termos.\n* Sinais em soma e produto da quadrática:\n  * em x² − 7x + 10 = 0, a soma procurada é 7 (sinal oposto de b), o produto é 10.\n* Trocar fórmulas do termo geral:\n  * a100 = a1 + 99·r; cuidado para não usar 100·r por engano.\n* Igualar expoentes:\n  * só faça se as bases das potências são exatamente iguais. Caso contrário, não pode igualar.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **PA crescente** de **PA decrescente** pelo **sinal da razão r**?\n* Fixei que em **PA com n ímpar**, o **termo do meio** é a **média de todos os termos**?\n* Lembrei que a **soma de equidistantes** é **constante** e igual a **a1 + an**?\n* Memorizei que **a100 = a1 + 99·r** (e não 100·r)?\n* Sei resolver **x² − 7x + 10 = 0** por **soma e produto** (raízes 2 e 5)?\n* Sei que em triângulo com ângulos em PA, o **ângulo do meio = 180/3 = 60°**?\n* Verifiquei que só posso **igualar expoentes** quando as **bases são iguais**?",
+  "mapa_mental": "# 🧮 Progressão Aritmética III\n## 🎯 Fundamentos de PA\n### 💡 Definição de PA\n- Sequência numérica\n- Diferença constante\n- Razão r\n- Termos consecutivos\n### 🧮 Termo Geral\n- Notação a₁, a₂, an\n- Fórmula an = a1 + (n−1)r\n- Versão ak + (n−k)r\n- Cálculo termo distante\n### 📈 Classificação da PA\n- PA crescente r>0\n- PA decrescente r<0\n- PA constante r=0\n- Comparação de termos\n\n## 📊 Propriedades Importantes\n### 🎯 Termo Central\n- Número ímpar termos\n- Termo do meio\n- Média dos extremos\n- Média de todos termos\n### 🔁 Termos Equidistantes\n- Equidistantes dos extremos\n- Soma constante\n- Igual à soma extremos\n- Base soma de PA\n### 🧮 PA com 3 Termos\n- Forma a−r, a, a+r\n- Termo médio central\n- Média aritmética direta\n- Aplicação em ângulos\n\n## 🔢 Equações e PA\n### 🧮 Equação Exponencial\n- Mesma base potências\n- Igualar expoentes\n- Obter equação quadrática\n- Resolução rápida\n### 📉 Equação Quadrática\n- Forma ax²+bx+c=0\n- Relação soma produto\n- Raízes como termos\n- Ligação com PA\n### 📏 Cálculo de Termos\n- Conhecendo a1 e r\n- Fórmula an direta\n- Uso de termo conhecido\n- an = ak + (n−k)r\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Propriedades da Média\n- Confusão termo central\n- Quantidade ímpar exigida\n- Pares não equidistantes\n- Generalizações erradas\n### ⚠️ Cuidados com Fórmulas\n- Erro em (n−1)r\n- Troca de índices\n- Sinal da razão\n- Ordem dos termos\n### 🛑 Equações Exponenciais\n- Bases diferentes\n- Igualar expoentes indevido\n- Sinais na quadrática\n- Soma e produto trocados",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Propriedades da PA",
+      "description": "Propriedades da PA — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza uma progressão aritmética?",
+          "back": "Uma sequência em que cada termo, a partir do segundo, é igual ao anterior somado a uma **razão** constante.",
+          "hint": "Envolve uma soma constante",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "definicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como se escrevem três termos consecutivos de uma PA usando o primeiro termo e a razão?",
+          "back": "$a_1$, $a_1 + r$ e $a_1 + 2r$",
+          "hint": "Use o primeiro termo e a razão",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "formula"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual expressão calcula o termo central de três termos consecutivos de uma PA?",
+          "back": "A **média aritmética** dos termos adjacentes.",
+          "hint": "Relacionado a valores adjacentes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "propriedade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Em uma PA com quantidade ímpar de termos, qual termo coincide com a média aritmética?",
+          "back": "O **termo central**.",
+          "hint": "Ocorre em sequências de tamanho ímpar",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "propriedade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Como verificar se dois termos ocupam posições simétricas numa PA finita?",
+          "back": "Calculando a média aritmética dos termos, que resulta no termo central.",
+          "hint": "Envolve a média dos extremos",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "procedimento"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Qual relação existe entre as somas de termos equidistantes dos extremos de uma PA?",
+          "back": "A soma é **igual** à soma dos extremos.",
+          "hint": "Compare com a soma dos extremos",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "propriedade"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Em uma PA, como calcular um termo situado entre dois termos separados por uma posição?",
+          "back": "Calculando a média aritmética entre o termo anterior e o termo situado duas posições à frente.",
+          "hint": "Use a média aritmética",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "procedimento"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Ângulos em PA",
+      "description": "Ângulos em PA — 3 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual é a soma dos ângulos internos de qualquer triângulo?",
+          "back": "180°",
+          "hint": "Soma fixa em qualquer triângulo",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "geometria",
+            "triangulos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Se os ângulos internos de um triângulo formam uma PA, qual é o valor do ângulo central?",
+          "back": "60°",
+          "hint": "Use a propriedade da média em PA",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "geometria"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Na sequência de ângulos 35°, 60° e 85°, qual é a razão da PA?",
+          "back": "25°",
+          "hint": "Diferença entre termos consecutivos",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "progressao-aritmetica",
+            "exemplo"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Equações Exponenciais",
+      "description": "Equações Exponenciais — 4 cards",
+      "cards": [
+        {
+          "id": "card-11",
+          "front": "Quando duas potências de mesma base são iguais, o que se conclui sobre seus expoentes?",
+          "back": "Os **expoentes** devem ser iguais.",
+          "hint": "Propriedade de equações exponenciais",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "exponencial"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual equação do segundo grau resulta de 3^(x²−7x+13) = 27?",
+          "back": "x² − 7x + 10 = 0",
+          "hint": "Iguale as bases primeiro",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "exponencial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-13",
+          "front": "Quais são as raízes da equação x² − 7x + 10 = 0?",
+          "back": "2 e 5",
+          "hint": "Use soma e produto ou Bhaskara",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "algebra",
+            "equacao-segundo-grau"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual é a fatoração de x² − 7x + 10?",
+          "back": "(x − 2)(x − 5)",
+          "hint": "Relacionado às raízes da equação",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "algebra",
+            "fatoracao"
+          ],
+          "type": "fact"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um triângulo cujos ângulos internos formam uma progressão aritmética de razão 25°, qual é o valor do maior ângulo interno?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "105°",
+          "correct": false,
+          "explanation": "Incorreta. Um ângulo de 105° como o maior, com razão de 25°, implicaria ângulos de 55°, 80° e 105° (105° - 25° = 80°; 80° - 25° = 55°). A soma seria 55° + 80° + 105° = 240°, o que está incorreto para a soma dos ângulos internos de um triângulo."
+        },
+        {
+          "id": "b",
+          "text": "75°",
+          "correct": false,
+          "explanation": "Incorreta. Se o maior ângulo fosse 75°, e a razão da progressão aritmética fosse 25°, os ângulos seriam 25°, 50° e 75°. A soma desses ângulos seria 25° + 50° + 75° = 150°, o que não corresponde à soma dos ângulos internos de um triângulo, que é 180°."
+        },
+        {
+          "id": "c",
+          "text": "85°",
+          "correct": true,
+          "explanation": "Correta. A soma dos ângulos internos de qualquer triângulo é 180°. Se os três ângulos (a1, a2, a3) estão em progressão aritmética com razão de 25°, podemos expressá-los como a2 - 25°, a2, e a2 + 25°. A soma (a2 - 25°) + a2 + (a2 + 25°) = 180° simplifica para 3*a2 = 180°, o que significa que o ângulo médio (a2) é 60°. Consequentemente, o menor ângulo (a1) é 60° - 25° = 35°, e o maior ângulo (a3) é 60° + 25° = 85°."
+        },
+        {
+          "id": "d",
+          "text": "95°",
+          "correct": false,
+          "explanation": "Incorreta. Se o maior ângulo fosse 95°, com uma razão de 25°, os ângulos seriam 45°, 70° e 95° (95° - 25° = 70°; 70° - 25° = 45°). A soma desses ângulos seria 45° + 70° + 95° = 210°, que excede 180°, portanto, não pode ser a medida dos ângulos de um triângulo."
+        }
+      ],
+      "explanation": "Correta. A soma dos ângulos internos de qualquer triângulo é 180°. Se os três ângulos (a1, a2, a3) estão em progressão aritmética com razão de 25°, podemos expressá-los como a2 - 25°, a2, e a2 + 25°. A soma (a2 - 25°) + a2 + (a2 + 25°) = 180° simplifica para 3*a2 = 180°, o que significa que o ângulo médio (a2) é 60°. Consequentemente, o menor ângulo (a1) é 60° - 25° = 35°, e o maior ângulo (a3) é 60° + 25° = 85°.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a soma dos ângulos internos de qualquer triângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "180°",
+          "correct": true,
+          "explanation": "Correta. Um princípio fundamental da geometria euclidiana estabelece que a soma das medidas dos ângulos internos de qualquer triângulo é sempre igual a 180 graus. Esta é uma propriedade universal e inalterável para triângulos em um plano euclidiano."
+        },
+        {
+          "id": "b",
+          "text": "120°",
+          "correct": false,
+          "explanation": "Incorreta. 120° não corresponde à soma dos ângulos internos de um triângulo. Este valor é, por exemplo, a medida de um ângulo interno de um hexágono regular, mas não a soma total dos ângulos de um triângulo."
+        },
+        {
+          "id": "c",
+          "text": "360°",
+          "correct": false,
+          "explanation": "Incorreta. 360° é a soma dos ângulos internos de um quadrilátero (como um quadrado ou retângulo) ou a medida de um ângulo completo em uma circunferência, mas não a soma dos ângulos internos de um triângulo."
+        },
+        {
+          "id": "d",
+          "text": "90°",
+          "correct": false,
+          "explanation": "Incorreta. 90° é a medida de um ângulo reto e a soma dos ângulos agudos em um triângulo retângulo, mas não a soma de todos os ângulos internos de um triângulo, que é um valor fixo e maior."
+        }
+      ],
+      "explanation": "Correta. Um princípio fundamental da geometria euclidiana estabelece que a soma das medidas dos ângulos internos de qualquer triângulo é sempre igual a 180 graus. Esta é uma propriedade universal e inalterável para triângulos em um plano euclidiano.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em uma progressão aritmética com quantidade ímpar de termos, qual propriedade permite encontrar o termo central?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O termo central é igual à média aritmética entre o primeiro e o último termo",
+          "correct": true,
+          "explanation": "Correta. Em uma progressão aritmética com um número ímpar de termos, o termo central é a média aritmética do primeiro e do último termo. Por exemplo, se a PA tem termos a1, a2, a3, o termo central a2 é igual a (a1 + a3) / 2. Esta propriedade se estende para qualquer par de termos equidistantes do centro."
+        },
+        {
+          "id": "b",
+          "text": "O termo central é igual ao dobro do primeiro termo somado à razão",
+          "correct": false,
+          "explanation": "Incorreta. Esta formulação não representa o termo central de uma progressão aritmética de forma geral. O termo central depende da posição e da quantidade total de termos, sendo determinado pela soma de termos e não por uma simples multiplicação do primeiro termo pela razão."
+        },
+        {
+          "id": "c",
+          "text": "O termo central é igual ao produto entre o primeiro termo e a razão",
+          "correct": false,
+          "explanation": "Incorreta. O termo central de uma progressão aritmética é determinado por adição e subtração da razão, não por multiplicação. O produto entre o primeiro termo e a razão não tem relação direta com o valor do termo central."
+        },
+        {
+          "id": "d",
+          "text": "O termo central é igual à soma de todos os termos dividida pelo número de termos menos um",
+          "correct": false,
+          "explanation": "Incorreta. A média aritmética de todos os termos (soma de todos os termos dividida pelo número total de termos) resultaria no termo central. No entanto, a divisão por \"número de termos menos um\" está incorreta e não produzirá o termo central."
+        }
+      ],
+      "explanation": "Correta. Em uma progressão aritmética com um número ímpar de termos, o termo central é a média aritmética do primeiro e do último termo. Por exemplo, se a PA tem termos a1, a2, a3, o termo central a2 é igual a (a1 + a3) / 2. Esta propriedade se estende para qualquer par de termos equidistantes do centro.",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Qual é a fórmula do termo geral de uma progressão aritmética?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "an = a1 × (n - 1) × r",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula envolve multiplicações desnecessárias e está conceitualmente errada. O termo geral de uma progressão aritmética é construído pela adição da razão, não pela multiplicação, e a estrutura das operações está incorreta."
+        },
+        {
+          "id": "b",
+          "text": "an = a1 × n + r",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula mistura operações de multiplicação e adição de forma incorreta para o cálculo do termo geral de uma progressão aritmética. A razão é adicionada repetidamente, e não multiplicada pelo índice do termo, para determinar a progressão."
+        },
+        {
+          "id": "c",
+          "text": "an = a1 + (n - 1) × r",
+          "correct": true,
+          "explanation": "Correta. Esta é a fórmula padrão para encontrar o enésimo termo (an) de uma progressão aritmética. Ela estabelece que qualquer termo da sequência é igual ao primeiro termo (a1) somado ao produto da razão (r) pelo número de vezes que a razão foi adicionada para chegar a esse termo, que é (n-1)."
+        },
+        {
+          "id": "d",
+          "text": "an = a1 + n × r",
+          "correct": false,
+          "explanation": "Incorreta. Esta fórmula (an = a1 + n × r) estaria correta se a contagem da razão começasse do termo a0 (termo anterior ao primeiro). Contudo, na convenção usual, a razão é adicionada (n-1) vezes ao primeiro termo (a1) para obter o n-ésimo termo."
+        }
+      ],
+      "explanation": "Correta. Esta é a fórmula padrão para encontrar o enésimo termo (an) de uma progressão aritmética. Ela estabelece que qualquer termo da sequência é igual ao primeiro termo (a1) somado ao produto da razão (r) pelo número de vezes que a razão foi adicionada para chegar a esse termo, que é (n-1).",
+      "difficulty": "easy",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em uma progressão aritmética, qual é a relação entre a soma de dois termos equidistantes dos extremos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A soma de dois termos equidistantes dos extremos é sempre igual à diferença entre o último e o primeiro termo",
+          "correct": false,
+          "explanation": "Incorreta. A diferença entre o último e o primeiro termo (an - a1) está relacionada à razão e ao número de termos (an - a1 = (n-1)r), e não à soma de termos equidistantes dos extremos. A diferença e a soma são conceitos distintos em progressões aritméticas."
+        },
+        {
+          "id": "b",
+          "text": "A soma de dois termos equidistantes dos extremos é sempre igual à soma dos extremos",
+          "correct": true,
+          "explanation": "Correta. Uma propriedade fundamental das progressões aritméticas afirma que a soma de quaisquer dois termos que estão à mesma distância dos termos extremos (o primeiro e o último) é sempre igual à soma do primeiro e do último termo da sequência. Por exemplo, em uma PA finita (a1, a2, ..., an-1, an), temos que a1 + an = a2 + an-1 = a3 + an-2, e assim por diante."
+        },
+        {
+          "id": "c",
+          "text": "A soma de dois termos equidistantes dos extremos é sempre igual ao termo central multiplicado por dois",
+          "correct": false,
+          "explanation": "Incorreta. Embora em uma PA com número ímpar de termos, o termo central seja a média dos extremos (e, portanto, 2 * termo central = soma dos extremos), esta afirmação generaliza incorretamente. A propriedade mais fundamental é a igualdade com a soma dos extremos, que se aplica a qualquer PA finita, seja ela com número par ou ímpar de termos."
+        },
+        {
+          "id": "d",
+          "text": "A soma de dois termos equidistantes dos extremos é sempre igual ao dobro da razão",
+          "correct": false,
+          "explanation": "Incorreta. A soma de termos equidistantes dos extremos não tem relação direta com o dobro da razão. A razão (r) é a diferença constante entre termos consecutivos, e não um fator de soma para termos equidistantes."
+        }
+      ],
+      "explanation": "Correta. Uma propriedade fundamental das progressões aritméticas afirma que a soma de quaisquer dois termos que estão à mesma distância dos termos extremos (o primeiro e o último) é sempre igual à soma do primeiro e do último termo da sequência. Por exemplo, em uma PA finita (a1, a2, ..., an-1, an), temos que a1 + an = a2 + an-1 = a3 + an-2, e assim por diante.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Considerando uma progressão aritmética onde o primeiro termo é 2 e o segundo termo é 5, qual é o centésimo termo dessa sequência?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "300",
+          "correct": false,
+          "explanation": "Incorreta. Se o centésimo termo fosse 300, a aplicação da fórmula an = a1 + (n-1)r com a1=2 e r=3 resultaria em 2 + 99 * 3 = 2 + 297 = 299, e não 300. Portanto, a alternativa não corresponde ao cálculo correto."
+        },
+        {
+          "id": "b",
+          "text": "301",
+          "correct": false,
+          "explanation": "Incorreta. Se o centésimo termo fosse 301, a aplicação da fórmula an = a1 + (n-1)r com a1=2 e r=3 resultaria em 2 + 99 * 3 = 2 + 297 = 299, e não 301. Portanto, a alternativa não corresponde ao cálculo correto."
+        },
+        {
+          "id": "c",
+          "text": "302",
+          "correct": false,
+          "explanation": "Incorreta. Se o centésimo termo fosse 302, a aplicação da fórmula an = a1 + (n-1)r com a1=2 e r=3 resultaria em 2 + 99 * 3 = 2 + 297 = 299, e não 302. Portanto, a alternativa não corresponde ao cálculo correto."
+        },
+        {
+          "id": "d",
+          "text": "299",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o centésimo termo (a100) de uma Progressão Aritmética (PA), utiliza-se a fórmula do termo geral: an = a1 + (n-1)r. Dado que o primeiro termo (a1) é 2 e o segundo termo (a2) é 5, a razão (r) é a diferença entre o segundo e o primeiro termo, ou seja, r = a2 - a1 = 5 - 2 = 3. Substituindo na fórmula para n=100, temos a100 = 2 + (100-1) * 3 = 2 + 99 * 3 = 2 + 297 = 299."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o centésimo termo (a100) de uma Progressão Aritmética (PA), utiliza-se a fórmula do termo geral: an = a1 + (n-1)r. Dado que o primeiro termo (a1) é 2 e o segundo termo (a2) é 5, a razão (r) é a diferença entre o segundo e o primeiro termo, ou seja, r = a2 - a1 = 5 - 2 = 3. Substituindo na fórmula para n=100, temos a100 = 2 + (100-1) * 3 = 2 + 99 * 3 = 2 + 297 = 299.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em uma equação do segundo grau da forma x² - 7x + 10 = 0, qual técnica permite encontrar as raízes sem utilizar a fórmula de Bhaskara?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Multiplicar o termo independente pela razão entre o coeficiente linear e o coeficiente quadrático",
+          "correct": false,
+          "explanation": "Incorreta. Multiplicar o termo independente pela razão entre o coeficiente linear e o coeficiente quadrático não constitui um método válido para determinar as raízes de uma equação do segundo grau. Essa operação não tem base nos princípios matemáticos para a resolução de equações quadráticas."
+        },
+        {
+          "id": "b",
+          "text": "Encontrar dois números que somados resultem no coeficiente linear e multiplicados resultem no termo independente, ajustando os sinais conforme os coeficientes",
+          "correct": true,
+          "explanation": "Correta. A técnica de \"Soma e Produto\" é um método eficiente para encontrar as raízes de uma equação do segundo grau na forma ax² + bx + c = 0, especialmente quando o coeficiente 'a' é igual a 1. Neste caso (x² - 7x + 10 = 0), a soma das raízes (x1 + x2) é igual a -b/a, que é -(-7)/1 = 7. O produto das raízes (x1 * x2) é igual a c/a, que é 10/1 = 10. Assim, busca-se dois números que somados resultem em 7 e multiplicados resultem em 10. Esses números são 2 e 5. Esta técnica permite resolver a equação sem a necessidade da fórmula de Bhaskara."
+        },
+        {
+          "id": "c",
+          "text": "Dividir o coeficiente linear pelo coeficiente do termo quadrático e subtrair o termo independente",
+          "correct": false,
+          "explanation": "Incorreta. Dividir o coeficiente linear pelo coeficiente do termo quadrático e subtrair o termo independente não é uma técnica reconhecida para encontrar as raízes de uma equação do segundo grau. Essa combinação de operações não leva às soluções da equação."
+        },
+        {
+          "id": "d",
+          "text": "Calcular a raiz quadrada do termo independente e somar com o coeficiente linear dividido por dois",
+          "correct": false,
+          "explanation": "Incorreta. Calcular a raiz quadrada do termo independente e somar com o coeficiente linear dividido por dois não é uma técnica padrão para resolver equações do segundo grau. Essa abordagem não se alinha com as propriedades algébricas que definem as raízes de uma equação quadrática."
+        }
+      ],
+      "explanation": "Correta. A técnica de \"Soma e Produto\" é um método eficiente para encontrar as raízes de uma equação do segundo grau na forma ax² + bx + c = 0, especialmente quando o coeficiente 'a' é igual a 1. Neste caso (x² - 7x + 10 = 0), a soma das raízes (x1 + x2) é igual a -b/a, que é -(-7)/1 = 7. O produto das raízes (x1 * x2) é igual a c/a, que é 10/1 = 10. Assim, busca-se dois números que somados resultem em 7 e multiplicados resultem em 10. Esses números são 2 e 5. Esta técnica permite resolver a equação sem a necessidade da fórmula de Bhaskara.",
+      "difficulty": "medium",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual propriedade matemática justifica que, em uma progressão aritmética, qualquer termo a partir do segundo é igual à média aritmética entre o termo anterior e o termo posterior?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A razão da progressão determina que cada termo seja o resultado da divisão entre a soma dos adjacentes e o número de termos",
+          "correct": false,
+          "explanation": "Incorreta. Embora a razão da progressão seja crucial, a descrição \"resultado da divisão entre a soma dos adjacentes e o número de termos\" é uma forma imprecisa de definir a média aritmética. A justificativa principal não é apenas que a razão \"determina\" isso, mas sim que a própria definição de razão constante *implica* que cada termo é o ponto médio aritmético entre seus vizinhos. A alternativa (a) oferece uma explicação mais clara e fundamental."
+        },
+        {
+          "id": "b",
+          "text": "O produto entre termos consecutivos mantém uma proporção constante que define a média aritmética",
+          "correct": false,
+          "explanation": "Incorreta. A afirmação de que o produto entre termos consecutivos mantém uma proporção constante descreve uma propriedade de Progressões Geométricas (PG), não de Progressões Aritméticas. Em uma PG, o termo central é a média geométrica dos termos adjacentes, não a média aritmética. Portanto, esta alternativa confunde os conceitos de PA e PG."
+        },
+        {
+          "id": "c",
+          "text": "A soma dos termos extremos é sempre igual ao dobro de qualquer termo intermediário da sequência",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja uma propriedade de Progressões Aritméticas que a soma de termos equidistantes dos extremos seja constante (a1 + an = a2 + a(n-1), etc.), e que em PAs com número ímpar de termos, a soma dos extremos seja o dobro do termo central, essa propriedade não justifica diretamente que *qualquer* termo seja a média aritmética de seus vizinhos imediatos. A propriedade em questão foca na relação entre termos adjacentes e é uma consequência direta da razão constante."
+        },
+        {
+          "id": "d",
+          "text": "A diferença constante entre termos consecutivos garante que o termo central equidista dos termos adjacentes, tornando-o a média aritmética entre eles",
+          "correct": true,
+          "explanation": "Correta. Em uma Progressão Aritmética (PA), a característica fundamental é a diferença constante entre termos consecutivos, conhecida como razão (r). Se considerarmos três termos consecutivos, a(n-1), an e a(n+1), sabemos que an - a(n-1) = r e a(n+1) - an = r. Igualando essas diferenças, obtemos an - a(n-1) = a(n+1) - an. Reorganizando, chegamos a 2 * an = a(n-1) + a(n+1), o que significa que an = (a(n-1) + a(n+1)) / 2. Isso demonstra que qualquer termo (a partir do segundo) é, de fato, a média aritmética entre seu antecessor e seu sucessor, porque ele está equidistante de ambos em termos de valor."
+        }
+      ],
+      "explanation": "Correta. Em uma Progressão Aritmética (PA), a característica fundamental é a diferença constante entre termos consecutivos, conhecida como razão (r). Se considerarmos três termos consecutivos, a(n-1), an e a(n+1), sabemos que an - a(n-1) = r e a(n+1) - an = r. Igualando essas diferenças, obtemos an - a(n-1) = a(n+1) - an. Reorganizando, chegamos a 2 * an = a(n-1) + a(n+1), o que significa que an = (a(n-1) + a(n+1)) / 2. Isso demonstra que qualquer termo (a partir do segundo) é, de fato, a média aritmética entre seu antecessor e seu sucessor, porque ele está equidistante de ambos em termos de valor.",
+      "difficulty": "hard",
+      "topic": "Matemática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "09_261277_Progressão Aritmética III.pdf",
+  "coletado_em": "2026-09-23T20:52:12"
+}

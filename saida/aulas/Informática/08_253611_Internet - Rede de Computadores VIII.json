@@ -1,0 +1,753 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 3,
+    "titulo": "5. Conceitos básicos e modos de utilização de tecnologias, ferramentas, aplicativos e procedimentos associados à Internet e intranet. /\n\n6. Correio eletrônico. / 7. Computação em nuvem"
+  },
+  "ordem": 8,
+  "ordem_no_curso": "22.00",
+  "titulo": "Internet - Rede de Computadores VIII",
+  "codigo_aula": "253611",
+  "video_id": "jqj3E0D9iR0=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:26:34",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/jqj3E0D9iR0%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420227,405034,419978,420229,419941,419980,420228,419940,419979,420257,419835,405060,420463,420230,420237,419889,8162&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Internet - Rede de Computadores VIII\n\n## Protocolos de e-mail: visão geral e fluxo de envio/recebimento\nAgora, de volta com a nossa linha de internet, redes de computadores. Na tela, acabamos de ver os protocolos de e-mail: IMAP, POP e SMTP. As diferenças entre POP e IMAP foram tratadas; vamos detalhá-las daqui em diante.\n\nEntão vamos lá: no envio de e-mail, a mensagem sai do remetente para o destinatário passando pelo servidor do provedor. Aquela coisa toda: envio da sua máquina para o seu servidor de e-mails, do seu servidor para o servidor da outra pessoa, sempre entrando via SMTP entre servidores.\n\nPortanto, o envio e o recebimento entre servidores usam SMTP. Depois, vamos baixar essa mensagem para a máquina, certo? Se o acesso foi via IMAP, beleza: o acesso é remoto.\n\nPortanto, se houver a desconexão da internet, por padrão a mensagem não fica disponível já usando POP. O POP baixa a mensagem e a tira do servidor por padrão. Isso tem que ficar atento. Existe a opção — já falei e volto a frisar — de deixar uma cópia no servidor, mas por padrão ela é tirada, não fica uma cópia lá. E aqui, desconectando da internet, vai continuar na máquina. Então, caso tenham acesso offline, é possível.\n\n## Formas de acessar e-mail: Webmail\nTodas as formas de acessar e-mail. Eu vou ter aqui o Webmail. Dá para deduzir: “web” tem a ver com a navegação na internet e “mail” é correio eletrônico, ou seja, correio eletrônico acessado pela internet, pelo navegador, porque estou navegando na web.\n\nIsso não é algo muito recente… quer dizer, já tem um certo tempo que existe, porém, considerando a internet como um todo, sim, é algo recente. Quem já usa internet há muito tempo vai dizer “mas desde quando lembro da internet tenho acesso a webmail”. Eu estou falando em relação ao lapso temporal total. Não é algo para se preocupar; estou citando meramente por curiosidade.\n\nQuando acesso meu e-mail usando Webmail, o que estou fazendo? Pego o navegador, qualquer um deles, e acesso a minha conta, acesso meu servidor remotamente. Lembra aquela ideia de abrir a janela lá e manipular os meus e-mails remotamente? É isso aqui. Por padrão, as mensagens não são baixadas para a máquina. Então, se de repente eu saio daqui e vou a um computador que não é o meu e faço login no meu e-mail, vejo, leio, respondo, aquela coisa toda, e faço o logoff, encerro minha conexão, as mensagens não ficam naquela máquina. Eu simplesmente, daquela máquina, “abri a janela”, fui lá no servidor, manipulei e fiz o que eu queria. Fechei a janela e fui embora. Continua tudo lá.\n\nNão preciso configurar nada, ou seja, não preciso chegar naquela máquina e falar “eu sou o Jefferson” — a não ser fazer login. Isso não é “configurar os protocolos” propriamente, que a gente vai ver que no gerenciador de e-mails eu tenho que fazer. Embora hoje seja quase automático, eu tenho que pelo menos colocar minha conta e minha senha para que ele faça essa conexão e as configurações.\n\nJoga na tela: continuando aqui, no nosso acesso via Webmail, eu tenho então os meus e-mails podendo ser acessados e gerenciados remotamente, sem novidade. Nos protocolos para o acesso à minha interface, já que é pela web, o envio entre servidores é como já tratamos, via SMTP. Mas essa interface inicial, o carregamento da minha máquina para o servidor, pode ser feita via HTTP — embora seja muito raro puro, porque não oferece segurança. A maioria, para não dizer todos os provedores, vai usar HTTPS. Estou citando HTTP porque pode cair na prova nesse contexto aplicado dessa forma. E já o recebimento aqui via IMAP, com a ideia que já falei do acesso remoto, sem trazer as mensagens de fato para a máquina. Caiu a conexão? Não faço mais nada, vou ficar offline.\n\n(E para quem não conhece, isso aqui é um joguinho. Se apertar uma tecla, ele movimenta esse boneco. Mas é só curiosidade. A aula não é sobre o jogo.)\n\n## Gerenciador de e-mail (cliente de e-mail)\nVoltando aqui, agora sobre o gerenciador de e-mail. O que eu tenho diferente? Que o browser, o navegador, não é um programa criado para acessar e-mails — embora permita fazer isso —, ele não foi criado com essa finalidade. Já o gerenciador de e-mail, na sua essência, sua razão de existir, é o gerenciamento de e-mails: enviar e receber e-mails. Ele pode ter outras funções, óbvio, como calendário e afins.\n\nConfiguração do Outlook só para demonstrar que estou no Office 2019, 365 etc. Como é que eu vou fazer? Vou instalar o programa — no caso, ele faz parte do pacote Office. Existe o Mozilla Thunderbird também, que cito entre os principais.\n\nDe um modo geral, vou acessar as configurações do programa. Nesse caso, pela guia Arquivo, vou em Adicionar conta. O programa, por si só, não vai adivinhar qual é a minha conta. Não basta abri-lo e eu vou receber e-mails. Tenho que indicar a conta, podendo cadastrar mais de uma. Hoje, em geral, o e-mail permite colocar várias contas num único local.\n\nEu cadastro minha conta colocando o endereço de e-mail, por exemplo, e posso escolher a configuração avançada ou manual. Vou escolher meu servidor — no meu caso é o Gmail — e aí entram as configurações manuais. Eu vou colocando cada um dos detalhes: servidor de entrada, servidor de saída.\n\nPara a entrada, eu posso usar IMAP com a porta 993, com criptografia aplicada. Para a saída, smtp.gmail.com (exemplo). Cada provedor vai ter suas configurações: vai usar ou não criptografia, vai exigir ou não autenticação. Essas são configurações particulares; aqui é só um apanhado geral. Também aplicando criptografia no SMTP, portanto porta 465. Feita a configuração, beleza.\n\nSe eu fosse optar pela entrada usando POP, eu colocaria POP na porta 995. A saída se mantém: SMTP porta 465. Configurações manuais realizadas e salvas, pronto. A partir daí, toda vez que eu abrir o gerenciador de e-mail, se estiver conectado à internet, ele vai fazer o recebimento de e-mails lá da minha caixa de entrada. E eu posso, obviamente, respondê-los e gerenciá-los a partir da minha máquina.\n\nMuita gente pensa: “pra que um programa gerenciador de e-mails, se é mais prático acessar pelo navegador?” Na minha opinião, é mais prático pelo navegador mesmo. Instalar um programa para isso é decisão pessoal. Não vou entrar nesse mérito. Para a prova, eu tenho que lembrar do funcionamento e das diferenças. O resto não vai fazer diferença na hora da prova.\n\n> 🎯 **Dicas de prova:** \n> - POP, por padrão, baixa e remove a mensagem do servidor (há opção de “deixar cópia no servidor”). \n> - IMAP acessa remotamente, mantendo as mensagens no servidor. \n> - SMTP é usado no envio (cliente-servidor e servidor-servidor). \n> - Webmail usa HTTP/HTTPS na interface e IMAP/SMTP no backend.\n\n## Questões práticas e revisão dos protocolos no cliente\nSendo bem objetivo, como eu sempre tento ser: no gerenciador de e-mails, o envio é via SMTP; o recebimento pode ser via POP ou via IMAP, com aquela diferença que POP, por padrão, tira do servidor (pode deixar cópia, se configurado). E aí essa mensagem pode ser manipulada offline. Já via IMAP, por padrão, a mensagem não é acessada offline se não houver sincronização local.\n\nOs principais gerenciadores de e-mail, como já comentei: Outlook (clássico, acompanha as versões do Office) e Mozilla Thunderbird (software livre). São mais completos, têm mais ferramentas. Por exemplo, o Outlook e o Thunderbird têm filtro de lixo eletrônico (spam), para e-mails indesejados — ofertas, consignado, etc.\n\nAlém deles, temos Opera Mail, SeaMonkey Mail (offline) como opções, e o aplicativo “Email” nativo do Windows 10.\n\n## Pastas principais do e-mail e regras/filtros\nPrincipais pastas de e-mail. Alguns nomes podem variar um pouquinho conforme o servidor ou programa, mas dá para entender:\n\n- Caixa de entrada: pasta que recebe os e-mails por padrão. Eu posso criar regras (filtros): por exemplo, toda mensagem que vier de fulano, ou que contenha tal palavra no assunto, vai para uma pasta específica. Posso cadastrar várias regras e definir se têm que ser todas atendidas ou ao menos uma.\n\n💬 **História:** No meu caso, eu crio regras com palavras como “Gran Online”, “Gran Cursos Online”, “professor”. Eu crio a pasta “Gran Cursos Online”. Tudo que vier relacionado ao Gran vai para lá. Para hobbies, por exemplo, “pedal”: eu crio a pasta “Pedal”. Não é prioridade; olho depois. As mensagens ficam marcadinhas lá e eu respondo quando der.\n\n- Spam/Lixo eletrônico: pode ser classificado automaticamente pelo programa ou por mim manualmente.\n- Caixa de saída: pasta temporária, onde ficam os e-mails que estão sendo enviados/processados. Em mensagem pequena e com internet, fica pouquíssimo tempo e vai embora.\n- Itens enviados: depois de enviado, vai para cá. Estar aqui não significa que foi entregue ao destinatário; podem haver problemas de caixa cheia do destinatário, bloqueio de anexos, etc.\n- Itens excluídos/Lixeira: armazena temporariamente o que excluí. Geralmente, 30 dias no servidor para exclusão automática. No cliente local, fica até eu esvaziar.\n- Rascunhos: hoje a maioria salva automaticamente enquanto digito. Ao fechar, pergunta se quero manter no rascunho.\n\n💬 **História:** Você terminou um relacionamento e, na angústia, começa a escrever um e-mail para a ex: “Assunto: Saudades” e escreve “sem você, não há vida na minha vida”. Antes de enviar, pensa melhor: “poxa, a cremosa pisou na minha vida... não vou mandar”. Fecha e salva como rascunho. No outro dia, já mais decidido: abre, muda o assunto para “A fila andou”, altera o conteúdo — e pode continuar salvando como rascunho até decidir enviar ou deletar.\n\n## Estrutura de um endereço de e-mail\nEstrutura genérica, muito cobrada em prova: usuário + arroba + domínio.\n\n- Usuário: “jefferson”, “maria”, “joao”.\n- Arroba (@): lido como “at”.\n- Domínio: provedor e TLD/subdomínio, por exemplo: gmail.com, ig.com.br, gov.br.\n\nIsso aqui chamamos, de modo geral, de “domínio” (host/máquina que hospeda o serviço), que leva à sua conta específica.\n\nExemplos: jefferson@gmail.com; jefferson@ig.com.br.\n\n> 🎯 **Dicas de prova:** \n> - Estrutura: usuario@dominio.tld \n> - Domínios comuns: .com, .com.br, .gov.br, etc. \n> - Alguns provedores restringem certos caracteres no usuário.\n\n## Campos de envio: Para, Cc e Cco\nMuito cobrado em prova. Posso mandar mensagem:\n- Para\n- Com cópia (Cc)\n- Com cópia oculta (Cco)\n\nExemplo: mando Para Antônio, com cópia para Giovanna, e com cópia oculta para Gabrielle e Teresinha.\n\n- Tecnicamente, não há diferença entre Para e Cc no roteamento; a diferença é administrativa/organizacional (hierarquia, visibilidade).\n- Cco serve para que os destinatários não vejam os e-mails uns dos outros e para evitar “Responder a todos” indevido e exposição de endereços.\n\nQuem está em “Para” e “Cc” não vê quem está em “Cco”. Eu posso, inclusive, não colocar ninguém em cima e colocar todo mundo em “Cco” — funciona. Quem está em “Cco” vê quem está em “Para” e “Cc”, mas os “Cco” não se veem entre si.\n\nSe Teresinha, que está em Cco, clicar “Responder a todos”, a resposta não vai para Gabrielle, porque as cópias foram enviadas separadamente e uma não sabe da outra. Os de cima (“Para”/“Cc”) também não veem quem está em “Cco”.\n\n> 🎯 **Dicas de prova:** \n> - “Responder a todos” nunca inclui destinatários em Cco. \n> - Use Cco para listas grandes para evitar exposição de e-mails e spam. \n> - Para e Cc são equivalentes tecnicamente; a diferença é de etiqueta/gestão.\n\n## Questões de prova: protocolos\nCom relação aos protocolos de rede de computadores, marque a opção correta.\n\n- HTTP permite a transferência de páginas/recursos na web. HTTPS usa, por padrão, porta TCP 443; HTTP usa 80.\n- DHCP (não “de CPI”) faz configuração dinâmica de endereços IP.\n- SMTP é utilizado para enviar e-mails; POP/IMAP são utilizados para receber (POP baixa, IMAP sincroniza/consulta).\n- POP não é usado para navegação em sites.\n\n> 🎯 **Dicas de prova:** \n> - Portas padrão: HTTP 80, HTTPS 443, SMTP 25/465/587, POP3 110/995, IMAP 143/993. \n> - DHCP: configuração dinâmica de IP. \n> - FTP: transferência de arquivos; não é protocolo de e-mail.\n\nOutra questão: considerando Outlook 2010 (configuração padrão), usuário quer enviar para 30 destinatários e evitar “Responder a todos” e a exposição de endereços. Coloque todos os 30 no campo Cco.\n\n> 🎯 **Dicas de prova:** \n> - Para listas grandes, use Cco para privacidade e para evitar “Responder a todos”.\n\nOutra: “assinale os protocolos responsáveis por envio e recepção de mensagens eletrônicas (e-mail).” Ele quer envio e recepção, não pediu ordem. A combinação correta envolve SMTP (envio) e POP ou IMAP (recepção). TCP/IP não é específico de e-mail.\n\n## VPN (Virtual Private Network)\nAgora, saindo do assunto e-mail: VPN — Virtual Private Network, rede privada virtual.\n\nA ideia: usar a internet (rede pública) como caminho, criando um “túnel” lógico entre cliente e servidor, aplicando segurança (criptografia) nesse túnel. Você vai ver questões falando de “tunelamento”. Dentro desse túnel, criptografamos os dados para ter segurança na transmissão, mesmo usando a infraestrutura pública.\n\nPor que usar VPN? Custo. Interligar filiais “cabendo” fisicamente seria absurdamente caro e inviável. A VPN usa a internet, com protocolos de segurança para prover confidencialidade, integridade e, muitas vezes, autenticação.\n\nAlguns protocolos aplicáveis em VPNs: IPsec, L2TP, PPTP (legado), SSL/TLS (em VPNs SSL).\n\n> 🎯 **Dicas de prova:** \n> - VPN cria túnel seguro sobre rede pública. \n> - Usa criptografia e pode envolver firewalls. \n> - Exemplos: IPsec, L2TP/IPsec, SSL VPN.\n\nQuestão: “Empresas utilizam VPN para criar intranets/ extranets de maneira mais segura e confiável, sem a necessidade de firewalls ou criptografia.” Errado. Vai ter, sim, criptografia e, comumente, uso de firewalls como filtros de segurança.\n\nVem comigo aqui: vamos encerrar esse bloco. Daqui a pouquinho, volto dando continuidade à nossa aula de internet, redes de computadores. Valeu.",
+  "transcricao_meta": {
+    "title": "Internet - Rede de Computadores VIII",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 37303,
+    "createdAt": "2026-02-06T14:27:26.664Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda acesso e envio/recebimento de e-mails (Webmail vs gerenciadores), protocolos e portas (SMTP, POP, IMAP, HTTP/HTTPS), configuração prática de clientes de e-mail (Outlook, Mozilla Thunderbird etc.), organização de pastas e campos de mensagem (Para/CC/CCO) e fundamentos de VPN (tunelamento e criptografia).\nPrincipais pontos: \n- SMTP envia; POP/IMAP recebem.\n- Portas com criptografia: POP 995, IMAP 993, SMTP 465.\n- Webmail via navegador; cliente precisa configurar servidor/portas.\n- CCO protege privacidade e evita “Responder a todos”.\n- VPN usa internet (rede pública) com túnel + criptografia.\n\n## 1. Base / Conceitos Fundamentais\n- Correio eletrônico (e-mail): serviço para enviar/receber mensagens entre remetente e destinatário(s), passando por servidores do provedor.\n- Formas de acesso ao e-mail:\n  - Webmail: acesso pelo navegador (HTTP/HTTPS). As mensagens são manipuladas no servidor; as mensagens não ficaram naquela máquina. Não preciso configurar nada, a não ser fazer login.\n  - Gerenciador de e-mail (cliente): programa dedicado instalado (ex.: Outlook, Mozilla Thunderbird, Opera Mail, Email do Windows 10).\n- Protocolos:\n  - Envio: SMTP.\n  - Recebimento: POP (baixa e, por padrão, remove do servidor) ou IMAP (acesso remoto, mantém no servidor).\n  - Navegação: HTTP (80/TCP) e HTTPS (443/TCP).\n- Portas com criptografia:\n  - IMAP: porta 993.\n  - POP: porta 995.\n  - SMTP: porta 465 (aplicando criptografia).\n- Estrutura de pastas:\n  - Caixa de entrada, Caixa de saída, Itens enviados, Lixo eletrônico/Spam, Itens excluídos/Lixeira, Rascunhos.\n- Campos da mensagem:\n  - Para, Com cópia (CC), Com cópia oculta (CCO).\n- VPN (Virtual Private Network): rede privada virtual sobre a internet (rede pública), usando tunelamento e criptografia para segurança.\n\n## 2. Como Funciona / Distinções\n- SMTP vs POP vs IMAP:\n  - SMTP: envio (cliente → servidor do remetente → servidor do destinatário).\n  - POP: recebimento com download local; por padrão tira do servidor (há opção de “deixar uma cópia”, mas não é o padrão). Acesso offline garantido após baixar.\n  - IMAP: acesso remoto sem trazer as mensagens de fato para a máquina; caiu a conexão → vou ficar offline (sem acesso às não sincronizadas). Mantém organização por pastas no servidor.\n- Webmail vs Gerenciador:\n  - Webmail: navegador, login, nada a configurar; interface via HTTP/HTTPS; maioria ainda envia via SMTP no backend.\n  - Gerenciador: requer configuração de servidores/portas; pode operar offline conforme POP/IMAP e cache.\n- Pastas:\n  - Caixa de saída: pasta temporária (mensagens em processo de envio).\n  - Itens enviados: comprova que foi enviado, não que foi entregue.\n  - Lixo eletrônico/Spam: mensagens filtradas por regras/filtros.\n- Para vs CC vs CCO:\n  - Para/CC: todos se veem.\n  - CCO: destinatários ocultos entre si; não aparecem para Para/CC; “Responder a todos” não alcança CCO.\n- HTTP vs HTTPS:\n  - HTTP usa 80/TCP; HTTPS usa 443/TCP (HTTP + TLS).\n- VPN:\n  - Internet = rede pública; cria-se um túnel lógico (tunelamento) com criptografia para confidencialidade; pode integrar firewalls (filtros).\n\n## 3. Aplicação Prática / Técnicas\n- Configuração no gerenciador (ex.: Outlook):\n  - Abrir programa → Guia Arquivo → Adicionar conta → inserir conta e senha.\n  - Se manual/avançada:\n    - Entrada usando o POP → porta 995; criptografia.\n    - OU IMAP → porta 993; criptografia.\n    - Saída SMTP → porta 465 (aplicando criptografia); exigir logon/autenticação se necessário.\n  - Salvar; conectado à internet, fará o recebimento na Caixa de entrada.\n- Organização e filtros:\n  - Criar regras por remetente, palavras no assunto/corpo, mover para pastas específicas, filtro de lixo eletrônico/spam.\n- Boas práticas de envio:\n  - Listas grandes: colocar todos em CCO para privacidade e para evitar “Responder a todos”.\n  - Pode usar próprio e-mail no campo Para (opcional).\n- Uso offline:\n  - POP: depois de baixar, acesso offline garantido.\n  - IMAP: depende de sincronização/cache; sem isso, offline perde acesso às mensagens não baixadas.\n- Verificação de entrega:\n  - Estar em Itens enviados não comprova entrega; servidores podem rejeitar (caixa cheia, bloqueios, erro de endereço).\n\n## 4. Exemplos e Casos Resolvidos\n- Diferença de portas e protocolos:\n  - HTTP: 80/TCP; HTTPS: 443/TCP.\n  - SMTP com criptografia: 465.\n  - POP com criptografia: 995.\n  - IMAP com criptografia: 993.\n- Configuração típica:\n  - Servidor de entrada IMAP, porta 993, criptografia; servidor de saída SMTP, porta 465.\n  - Alternativa com POP: porta 995 na entrada; saída mantém SMTP 465.\n- Fluxo de envio:\n  - Ao clicar Enviar, a mensagem vai para a Caixa de saída e fica sendo processada; se a conexão estiver ok e a mensagem for pequena, será enviada rapidamente e passará a Itens enviados.\n- Campos e respostas:\n  - Se a Terezinha clicar em “Responder a todos”, não vai uma cópia para quem estava em CCO.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova: Decore a tríade de portas com criptografia: IMAP 993, POP 995, SMTP 465.\n\n- “HTTP usa 443” — Errado. HTTP é 80; 443 é do HTTPS.\n- “POP é para navegação em sites” — Errado. Navegação é HTTP/HTTPS; POP é recebimento de e-mail.\n- “HTTP envia e-mail” — Errado. Envio é SMTP.\n- “Itens enviados = mensagem entregue” — Errado. Envio não garante entrega.\n- “POP mantém no servidor por padrão” — Errado. POP, por padrão, vai tirar podendo deixar uma cópia, é uma opção; por padrão, não fica.\n- “IMAP baixa tudo por padrão” — Errado. IMAP é acesso remoto; sem sincronização/cache, caiu a conexão → offline sem acesso às novas.\n- “Webmail baixa mensagens para a máquina acessada” — Errado. As mensagens são manipuladas no servidor via navegador; não preciso configurar nada, a não ser fazer login.\n- “VPN sem criptografia e sem firewalls” — Errado. VPN pressupõe túnel com criptografia; firewalls podem ser exigidos como filtros.\n- Termos confusos em enunciados:\n  - “Espanha”, “caixa Espanha” = lixo eletrônico/spam (tentativa de confundir).\n  - Letras/alternativas com ruído (“letra sexta-, corretíssima, letrada, imepi”): foque no conteúdo técnico.\n\n## Tabela de Comparações Essenciais\n| Tema | Correto | Erro Frequente |\n| HTTP vs HTTPS | HTTP: 80/TCP; HTTPS: 443/TCP | “HTTP usa 443” |\n| Envio vs Recebimento (e-mail) | Envio: SMTP; Recebimento: POP/IMAP | “HTTP/POP envia e-mail” |\n| POP vs IMAP | POP baixa e remove por padrão (opção de deixar cópia); acesso offline após baixar | “POP mantém no servidor por padrão” |\n| IMAP vs Offline | IMAP = acesso remoto; offline só com cache/sincronização | “IMAP sempre disponível offline” |\n| Webmail vs Cliente | Webmail: navegador; Cliente: programa (Outlook, Mozilla Thunderbird) | “Navegador é gerenciador de e-mail” |\n| VPN | Internet (rede pública) + túnel + criptografar | “VPN sem criptografia/firewalls” |\n\n> Dica de Prova: Ao pedirem “protocolos responsáveis pelo envio e recepção de mensagens eletrônicas”, procure o par correto: envio (SMTP) + recepção (POP ou IMAP). Se listar só envio ou só recepção, está incompleto.\n\n## Exemplos de Ferramentas\n- Outlook (Outlook 2013, Outlook 2016, Outlook 2019) — parte do Office; filtros de lixo eletrônico/spam; múltiplas contas.\n- Outlook Express — mais antigo.\n- Mozilla Thunderbird — software livre, robusto, filtros de spam.\n- Opera Mail; Email (nativo do Windows 10).\n\n> Dica de Prova: “Guia Arquivo → Adicionar conta” no Outlook. Configurações manuais: servidor de entrada (POP 995 ou IMAP 993) e saída SMTP 465 com criptografia; exigir logon/autenticação quando solicitado.",
+  "resumo_bolso": "# Internet - Rede de Computadores VIII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **E-mail**: serviço para enviar/receber mensagens entre remetente e destinatário(s), passando por servidores do provedor.\n* **Webmail**: acesso ao e-mail via navegador (HTTP/HTTPS); as mensagens são manipuladas no servidor; não preciso configurar nada, além do login.\n* **Cliente/gerenciador de e-mail**: programa instalado (Outlook, Mozilla Thunderbird, Opera Mail, Email do Windows 10 etc.) que exige configurar servidores e portas.\n* **SMTP**: protocolo de envio de e-mails (cliente → servidor do remetente → servidor do destinatário).\n* **POP**: protocolo de recebimento com download local; por padrão tira as mensagens do servidor (há opção de “deixar uma cópia”, mas não é o padrão); após baixar, garante acesso offline.\n* **IMAP**: protocolo de acesso remoto às mensagens no servidor; mantém organização/pastas no servidor; acesso offline depende de sincronização/cache.\n* **HTTP/HTTPS**: protocolos de navegação web; HTTP usa porta 80/TCP; HTTPS usa porta 443/TCP (HTTP + TLS).\n* **Portas com criptografia**: IMAP 993, POP 995, SMTP 465.\n* **Pastas principais**: Caixa de entrada, Caixa de saída (temporária, em processo de envio), Itens enviados (comprova envio, não entrega), Lixo eletrônico/Spam, Itens excluídos/Lixeira, Rascunhos.\n* **Campos da mensagem**: Para, CC (com cópia), CCO (com cópia oculta).\n* **CCO**: destinatários ocultos entre si; não aparecem para quem está em Para/CC; “Responder a todos” não alcança CCO; útil para listas grandes, preservando privacidade.\n* **VPN (Virtual Private Network)**: rede privada virtual sobre a internet (rede pública), usando tunelamento e criptografia para criar um canal seguro; pode integrar firewalls como filtros.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### SMTP vs POP vs IMAP\n\n| Aspecto | SMTP | POP | IMAP |\n|--------|------|-----|------|\n| Função | Envio de e-mails | Recebimento com download local | Acesso remoto às mensagens |\n| Local das mensagens | Servidores do remetente/destinatário no fluxo de envio | Baixadas para o cliente; por padrão tiram do servidor | Mantidas no servidor, com pastas organizadas lá |\n| Uso offline | Não se aplica | Após baixar, acesso offline garantido | Depende de sincronização/cache; sem isso, offline perde acesso às novas |\n\n---\n\n### Webmail vs Cliente de E-mail\n\n| Aspecto | Webmail | Cliente (Outlook, Thunderbird etc.) |\n|--------|---------|--------------------------------------|\n| Acesso | Navegador (HTTP/HTTPS) | Programa instalado |\n| Configuração | Apenas login | Exige configurar servidores e portas (POP/IMAP na entrada, SMTP na saída) |\n| Local das mensagens | Manipuladas no servidor | Podem ser baixadas (POP) ou acessadas remotamente (IMAP), conforme configuração |\n| Uso offline | Em regra, depende do acesso ao servidor via navegador | Pode operar offline conforme POP/IMAP e cache |\n\n---\n\n### POP vs IMAP\n\n| Aspecto | POP | IMAP |\n|--------|-----|------|\n| Comportamento padrão | Baixa e, por padrão, tira do servidor (opção de deixar cópia é exceção) | Acesso remoto, mantendo mensagens e pastas no servidor |\n| Organização | Pastas locais no cliente | Pastas e organização mantidas no servidor |\n| Uso offline | Após download, acesso garantido | Depende de sincronização/cache; sem isso, offline perde acesso às mensagens não baixadas |\n\n---\n\n### HTTP vs HTTPS\n\n| Aspecto | HTTP | HTTPS |\n|--------|------|-------|\n| Porta | 80/TCP | 443/TCP |\n| Segurança | Sem criptografia | HTTP + TLS (criptografado) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Portas Importantes com Criptografia**\n\n* **IMAP**: 993  \n* **POP**: 995  \n* **SMTP**: 465  \n\n---\n\n**2. Regras de POP**\n\n* Aplicação: recebimento de e-mails com download local, uso típico para acesso offline.\n* Comportamento padrão: baixa as mensagens e tira do servidor; existe opção de “deixar uma cópia”, mas não é o padrão.\n\n---\n\n**3. Regras de IMAP**\n\n* Aplicação: acesso remoto às mensagens diretamente no servidor, mantendo sincronização de pastas.\n* Uso offline: depende de sincronização/cache; sem isso, caiu a conexão → offline sem acesso às mensagens não sincronizadas.\n\n---\n\n**4. Campos Para / CC / CCO**\n\n* **Para / CC**: todos os destinatários se veem.\n* **CCO**: destinatários ocultos entre si; não aparecem para quem está em Para/CC; “Responder a todos” não envia para CCO.\n* Boas práticas: em listas grandes, colocar todos em CCO para preservar privacidade; pode usar o próprio e-mail no campo Para.\n\n---\n\n**5. VPN**\n\n* Aplicação: conectar redes/usuários remotos via internet (rede pública) como se fosse uma rede privada.\n* Regra: uso de tunelamento + criptografia para confidencialidade; pode integrar firewalls como filtros.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- “HTTP usa 443” — Errado. HTTP usa 80/TCP; 443/TCP é do HTTPS.\n- “POP é para navegação em sites” — Errado. Navegação é HTTP/HTTPS; POP é recebimento de e-mail.\n- “HTTP envia e-mail” — Errado. Envio de e-mail é feito pelo SMTP.\n- “Itens enviados = mensagem entregue” — Errado. Estar em Itens enviados comprova envio, não entrega (pode haver caixa cheia, bloqueios, erro de endereço).\n- “POP mantém no servidor por padrão” — Errado. Por padrão, POP tira do servidor; deixar cópia é opção.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **SMTP (envio)** de **POP/IMAP (recebimento/acesso)**?  \n* Memorizei as portas com criptografia: **IMAP 993, POP 995, SMTP 465**?  \n* Sei que **POP**, por padrão, tira do servidor (opção de deixar cópia é exceção) e que **IMAP mantém as mensagens no servidor**?  \n* Lembro que **webmail** é via navegador, sem configurar servidores/portas, e que **cliente** exige configuração de entrada (POP/IMAP) e saída (SMTP)?  \n* Sei que **Itens enviados** comprovam envio, mas não garantem entrega?  \n* Fixei que **CCO** oculta destinatários e não entra no **Responder a todos**, sendo indicado para listas grandes?  \n* Associei **VPN = internet (rede pública) + túnel lógico (tunelamento) + criptografia**, podendo envolver firewalls como filtros?",
+  "mapa_mental": "# 💻 Internet - Rede de Computadores VIII\n## 📧 E-mail: Visão Geral\n### 💡 Conceitos Básicos\n- Correio eletrônico\n- Remetente destinatário\n- Servidor provedor\n- Mensagens eletrônicas\n### 🌐 Formas de Acesso\n- Webmail navegador\n- Cliente instalado\n- HTTP HTTPS\n- Configuração necessária\n### 🗂️ Estrutura de Pastas\n- Caixa entrada\n- Caixa saída\n- Itens enviados\n- Lixo eletrônico spam\n- Itens excluídos lixeira\n- Rascunhos\n\n## 📡 Protocolos e Portas\n### ✉️ Envio e Recebimento\n- SMTP envio\n- POP recebimento\n- IMAP recebimento\n- Cliente servidor\n- Navegação web\n### 🔢 Portas Padrão\n- HTTP porta 80\n- HTTPS porta 443\n- SMTP seguro 465\n- POP seguro 995\n- IMAP seguro 993\n### 📥 POP vs IMAP\n- POP baixa remove\n- POP cópia opcional\n- POP acesso offline\n- IMAP acesso remoto\n- IMAP pastas servidor\n\n## 🛠️ Clientes de E-mail\n### 🧭 Webmail vs Cliente\n- Webmail sem configuração\n- Webmail via navegador\n- Cliente exige servidores\n- Cliente exige portas\n- Operação offline possível\n### ⚙️ Configuração Básica\n- Servidor entrada\n- POP porta 995\n- IMAP porta 993\n- SMTP porta 465\n- Autenticação logon\n### 🧾 Campos e Pastas\n- Campo Para\n- Campo CC\n- Campo CCO\n- CCO privacidade\n- CCO evita respostas\n\n## 🛡️ Segurança: HTTPS e VPN\n### 🔐 HTTP vs HTTPS\n- HTTP sem criptografia\n- HTTPS com TLS\n- Porta 80 HTTP\n- Porta 443 HTTPS\n- Proteção dados\n### 🕳️ Conceito de VPN\n- Rede privada virtual\n- Uso internet pública\n- Tunelamento lógico\n- Criptografia obrigatória\n- Integração firewalls\n### ⚠️ Erros Frequentes\n- HTTP porta 443\n- POP navegação web\n- HTTP envia e-mail\n- POP mantém servidor\n- VPN sem criptografia",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Protocolos de E-mail",
+      "description": "Protocolos de E-mail — 7 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "Qual protocolo é usado para enviar mensagens de e-mail?",
+          "back": "SMTP.",
+          "hint": "Protocolo de envio",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual protocolo permite gerenciar e-mails remotamente no servidor?",
+          "back": "IMAP.",
+          "hint": "Protocolo de sincronização",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual protocolo baixa mensagens do servidor para o cliente de e-mail?",
+          "back": "POP3.",
+          "hint": "Protocolo de download",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "O que ocorre com a mensagem no servidor após o download pelo POP3?",
+          "back": "A mensagem é retirada do servidor por padrão.",
+          "hint": "Comportamento padrão do servidor",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "pop3"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual configuração do POP3 mantém uma cópia das mensagens no servidor?",
+          "back": "Deixar uma cópia no servidor.",
+          "hint": "Configuração de persistência",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "pop3"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-6",
+          "front": "Em que condição mensagens baixadas pelo POP3 podem ser acessadas offline?",
+          "back": "Quando a mensagem for baixada para a máquina.",
+          "hint": "Estado de conectividade",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "redes",
+            "pop3"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Qual é a porta padrão do IMAP com criptografia?",
+          "back": "993",
+          "hint": "Porta segura",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "imap"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Gestão de E-mail",
+      "description": "Gestão de E-mail — 8 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "O que caracteriza o acesso a e-mails por webmail?",
+          "back": "Correio eletrônico acessado pela internet por meio de um navegador.",
+          "hint": "Meio de acesso",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "internet",
+            "email"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é a finalidade principal de um gerenciador de e-mails?",
+          "back": "Gerenciamento, envio e recebimento de e-mails.",
+          "hint": "Função do software cliente",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "software",
+            "email"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Qual dado é necessário para adicionar uma conta a um gerenciador de e-mails?",
+          "back": "Endereço de e-mail e senha.",
+          "hint": "Credenciais básicas",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "configuracao",
+            "email"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual pasta recebe, por padrão, as mensagens recebidas?",
+          "back": "Caixa de entrada.",
+          "hint": "Pasta de recebimento",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "interface",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-12",
+          "front": "O que as regras ou filtros de e-mail permitem automatizar?",
+          "back": "A organização automática de mensagens conforme critérios predefinidos.",
+          "hint": "Automação de fluxo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "email",
+            "organizacao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "O que a presença de uma mensagem em Itens Enviados comprova?",
+          "back": "A realização do envio pela máquina, sem garantir a entrega ao destinatário.",
+          "hint": "Limitação da prova de envio",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "email",
+            "protocolos"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual período geralmente precede a exclusão automática de mensagens na Lixeira?",
+          "back": "30 dias",
+          "hint": "Prazo de retenção",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "email",
+            "manutencao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Para que serve a pasta Rascunhos?",
+          "back": "Armazenar mensagens em rascunho ou em processo de criação.",
+          "hint": "Estado de edição",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "email",
+            "interface"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Campos e Endereços",
+      "description": "Campos e Endereços — 4 cards",
+      "cards": [
+        {
+          "id": "card-16",
+          "front": "Qual é a estrutura básica de um endereço de e-mail?",
+          "back": "Usuário, símbolo @ e domínio.",
+          "hint": "Componentes do endereço",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "email",
+            "sintaxe"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Qual é a diferença administrativa entre os campos Para e Cc?",
+          "back": "Diferença estritamente administrativa, como uma ideia de subordinação.",
+          "hint": "Natureza da distinção",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "email",
+            "campos-envio"
+          ],
+          "type": "comparison"
+        },
+        {
+          "id": "card-18",
+          "front": "Que informação os destinatários em Cco não conseguem visualizar entre si?",
+          "back": "Os endereços dos demais destinatários ocultos.",
+          "hint": "Visibilidade entre destinatários",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "email",
+            "cco"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual é a finalidade do campo Cco ao enviar uma mensagem para várias pessoas?",
+          "back": "Ocultar os endereços dos destinatários entre si e evitar respostas em massa.",
+          "hint": "Objetivo de privacidade",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "email",
+            "cco"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Redes Privadas Virtuais",
+      "description": "Redes Privadas Virtuais — 4 cards",
+      "cards": [
+        {
+          "id": "card-20",
+          "front": "Qual porta o HTTP utiliza por padrão?",
+          "back": "80",
+          "hint": "Porta de serviço web",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "http"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Que infraestrutura uma VPN utiliza como caminho para conectar redes privadas?",
+          "back": "Rede pública (internet).",
+          "hint": "Meio de transporte",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "vpn"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-22",
+          "front": "Que estrutura lógica uma VPN cria para transportar dados pela internet?",
+          "back": "Um túnel.",
+          "hint": "Conceito de conexão lógica",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "vpn"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-23",
+          "front": "Qual mecanismo protege os dados durante a transmissão em uma VPN?",
+          "back": "Criptografia.",
+          "hint": "Segurança dos dados",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "vpn"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Qual protocolo é utilizado para o envio de mensagens de correio eletrônico entre servidores de e-mail?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "SMTP",
+          "correct": true,
+          "explanation": "Correta. O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para o envio de e-mails, tanto do cliente para o servidor quanto entre servidores de e-mail. Ele atua como um \"carteiro\" digital, garantindo que as mensagens sejam encaminhadas corretamente na rede."
+        },
+        {
+          "id": "b",
+          "text": "POP3",
+          "correct": false,
+          "explanation": "Incorreta. O POP3 (Post Office Protocol version 3) é utilizado para o recebimento de e-mails, não para o envio entre servidores. Sua função principal é baixar as mensagens do servidor para o dispositivo do usuário."
+        },
+        {
+          "id": "c",
+          "text": "HTTP",
+          "correct": false,
+          "explanation": "Incorreta. O HTTP (Hypertext Transfer Protocol) é o protocolo fundamental para a World Wide Web (WWW), utilizado para a transferência de páginas web e outros recursos. Embora webmails utilizem HTTP para acesso via navegador, ele não é o protocolo específico para o envio de e-mails entre servidores."
+        },
+        {
+          "id": "d",
+          "text": "IMAP",
+          "correct": false,
+          "explanation": "Incorreta. O IMAP (Internet Message Access Protocol) também é um protocolo de recebimento de e-mails, que permite gerenciar as mensagens diretamente no servidor. Ele não é utilizado para o envio de e-mails entre servidores."
+        }
+      ],
+      "explanation": "Correta. O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para o envio de e-mails, tanto do cliente para o servidor quanto entre servidores de e-mail. Ele atua como um \"carteiro\" digital, garantindo que as mensagens sejam encaminhadas corretamente na rede.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é o comportamento padrão do protocolo POP3 em relação às mensagens após o download?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "As mensagens são removidas do servidor após o download, embora exista opção para manter uma cópia",
+          "correct": true,
+          "explanation": "Correta. O comportamento padrão do protocolo POP3 é remover as mensagens do servidor após o download para o dispositivo do usuário. Isso significa que, uma vez baixadas, as mensagens não estarão mais disponíveis no servidor, a menos que o usuário configure explicitamente para manter uma cópia. Essa característica pode ser vantajosa para quem acessa e-mails de um único dispositivo e deseja liberar espaço no servidor, mas é uma desvantagem para quem acessa de múltiplos dispositivos, pois a mensagem só estará disponível no primeiro dispositivo que a baixar."
+        },
+        {
+          "id": "b",
+          "text": "As mensagens são mantidas no servidor e também ficam disponíveis localmente na máquina do usuário",
+          "correct": false,
+          "explanation": "Incorreta. A opção de manter as mensagens no servidor é uma configuração que pode ser alterada, mas não é o comportamento padrão do POP3. Por padrão, ele as remove após o download."
+        },
+        {
+          "id": "c",
+          "text": "As mensagens são automaticamente encaminhadas para outros destinatários configurados",
+          "correct": false,
+          "explanation": "Incorreta. O POP3 não possui a funcionalidade de encaminhamento automático de mensagens para outros destinatários. Sua função é estritamente relacionada ao download de e-mails para o cliente."
+        },
+        {
+          "id": "d",
+          "text": "As mensagens permanecem exclusivamente no servidor e são acessadas remotamente",
+          "correct": false,
+          "explanation": "Incorreta. Esta descrição se aproxima mais do comportamento do IMAP, que mantém as mensagens no servidor e permite o acesso remoto. O POP3, por padrão, as baixa e remove."
+        }
+      ],
+      "explanation": "Correta. O comportamento padrão do protocolo POP3 é remover as mensagens do servidor após o download para o dispositivo do usuário. Isso significa que, uma vez baixadas, as mensagens não estarão mais disponíveis no servidor, a menos que o usuário configure explicitamente para manter uma cópia. Essa característica pode ser vantajosa para quem acessa e-mails de um único dispositivo e deseja liberar espaço no servidor, mas é uma desvantagem para quem acessa de múltiplos dispositivos, pois a mensagem só estará disponível no primeiro dispositivo que a baixar.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em um cliente de e-mail, qual pasta armazena temporariamente as mensagens durante o processo de envio?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Itens Enviados",
+          "correct": false,
+          "explanation": "Incorreta. A pasta Itens Enviados armazena as mensagens que já foram enviadas com sucesso. Ela não é uma pasta temporária para mensagens em processo de envio."
+        },
+        {
+          "id": "b",
+          "text": "Rascunhos",
+          "correct": false,
+          "explanation": "Incorreta. A pasta Rascunhos é utilizada para armazenar mensagens que foram iniciadas, mas ainda não estão prontas para serem enviadas. Elas ficam salvas para edição posterior, mas não estão em processo ativo de envio."
+        },
+        {
+          "id": "c",
+          "text": "Caixa de Entrada",
+          "correct": false,
+          "explanation": "Incorreta. A Caixa de Entrada é a pasta onde as mensagens recebidas são armazenadas. Ela não é utilizada para mensagens que estão sendo enviadas."
+        },
+        {
+          "id": "d",
+          "text": "Caixa de Saída",
+          "correct": true,
+          "explanation": "Correta. A Caixa de Saída (ou Outbox) é a pasta temporária onde as mensagens ficam armazenadas enquanto aguardam o envio. Quando o usuário clica em \"Enviar\", a mensagem é movida para essa pasta e permanece lá até que o processo de envio seja concluído pelo protocolo SMTP. Se houver algum problema de conexão ou configuração, a mensagem pode permanecer na Caixa de Saída até que o problema seja resolvido e ela possa ser enviada."
+        }
+      ],
+      "explanation": "Correta. A Caixa de Saída (ou Outbox) é a pasta temporária onde as mensagens ficam armazenadas enquanto aguardam o envio. Quando o usuário clica em \"Enviar\", a mensagem é movida para essa pasta e permanece lá até que o processo de envio seja concluído pelo protocolo SMTP. Se houver algum problema de conexão ou configuração, a mensagem pode permanecer na Caixa de Saída até que o problema seja resolvido e ela possa ser enviada.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Ao utilizar o campo CCO (Com Cópia Oculta) no envio de e-mails, qual é a característica principal desse recurso?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O campo CCO funciona de forma idêntica ao campo CC, diferenciando-se apenas na prioridade de entrega da mensagem",
+          "correct": false,
+          "explanation": "Incorreta. O campo CCO possui uma funcionalidade distinta do campo CC (Com Cópia). Enquanto no CC todos os destinatários são visíveis entre si, no CCO eles são ocultados. Não há diferença na prioridade de entrega entre eles."
+        },
+        {
+          "id": "b",
+          "text": "Os destinatários do campo CCO não são visíveis para os destinatários dos campos Para e CC, nem entre si",
+          "correct": true,
+          "explanation": "Correta. Ao utilizar o campo CCO (Com Cópia Oculta), os endereços de e-mail dos destinatários inseridos nesse campo não são visíveis para nenhum outro destinatário da mensagem, seja ele do campo 'Para', 'CC' ou até mesmo outros destinatários do próprio campo CCO. Isso garante a privacidade dos e-mails e impede que um destinatário saiba quem mais recebeu a mensagem, sendo útil para evitar a propagação de listas de e-mail e spam, além de prevenir o uso indevido da função 'Responder a todos'."
+        },
+        {
+          "id": "c",
+          "text": "Os destinatários do campo CCO podem visualizar todos os outros destinatários da mensagem, incluindo os do campo Para e CC",
+          "correct": false,
+          "explanation": "Incorreta. A principal função do CCO é justamente ocultar os destinatários uns dos outros, incluindo os do campo 'Para' e 'CC'."
+        },
+        {
+          "id": "d",
+          "text": "Os destinatários dos campos Para e CC não conseguem visualizar quem está no campo CCO, mas os destinatários do CCO podem ver uns aos outros",
+          "correct": false,
+          "explanation": "Incorreta. Embora os destinatários do campo 'Para' e 'CC' não vejam quem está no CCO, os destinatários do CCO também não conseguem ver uns aos outros, garantindo a privacidade de cada um."
+        }
+      ],
+      "explanation": "Correta. Ao utilizar o campo CCO (Com Cópia Oculta), os endereços de e-mail dos destinatários inseridos nesse campo não são visíveis para nenhum outro destinatário da mensagem, seja ele do campo 'Para', 'CC' ou até mesmo outros destinatários do próprio campo CCO. Isso garante a privacidade dos e-mails e impede que um destinatário saiba quem mais recebeu a mensagem, sendo útil para evitar a propagação de listas de e-mail e spam, além de prevenir o uso indevido da função 'Responder a todos'.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual é a principal diferença entre o acesso a e-mails via webmail e via gerenciador de e-mails local?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O webmail requer configuração manual de protocolos SMTP e IMAP, enquanto o gerenciador local não necessita de configurações",
+          "correct": false,
+          "explanation": "Incorreta. O webmail não requer configuração manual de protocolos, pois o acesso é feito via navegador. O gerenciador local, sim, requer essas configurações."
+        },
+        {
+          "id": "b",
+          "text": "O webmail acessa as mensagens remotamente através do navegador sem necessidade de configuração de protocolos, enquanto o gerenciador local requer configuração de conta e protocolos",
+          "correct": true,
+          "explanation": "Correta. O webmail permite o acesso e gerenciamento de e-mails diretamente pelo navegador de internet, sem a necessidade de instalar um programa específico ou configurar protocolos como SMTP, POP3 ou IMAP no dispositivo do usuário. As mensagens são acessadas e manipuladas diretamente no servidor. Já o gerenciador de e-mails local (como Outlook, Thunderbird) é um software instalado no computador do usuário que exige a configuração manual da conta de e-mail, incluindo os servidores e portas dos protocolos de envio (SMTP) e recebimento (POP3 ou IMAP), para baixar e gerenciar as mensagens localmente."
+        },
+        {
+          "id": "c",
+          "text": "O webmail permite apenas leitura de mensagens, enquanto o gerenciador local permite envio e recebimento completo",
+          "correct": false,
+          "explanation": "Incorreta. Tanto o webmail quanto o gerenciador local permitem o envio e recebimento completo de mensagens. A diferença reside na forma de acesso e gerenciamento."
+        },
+        {
+          "id": "d",
+          "text": "O webmail utiliza exclusivamente o protocolo POP3, enquanto o gerenciador local utiliza apenas IMAP",
+          "correct": false,
+          "explanation": "Incorreta. O webmail utiliza HTTP/HTTPS para comunicação com o servidor de e-mail, não exclusivamente POP3. Gerenciadores locais podem utilizar tanto POP3 quanto IMAP para recebimento, dependendo da configuração do usuário."
+        }
+      ],
+      "explanation": "Correta. O webmail permite o acesso e gerenciamento de e-mails diretamente pelo navegador de internet, sem a necessidade de instalar um programa específico ou configurar protocolos como SMTP, POP3 ou IMAP no dispositivo do usuário. As mensagens são acessadas e manipuladas diretamente no servidor. Já o gerenciador de e-mails local (como Outlook, Thunderbird) é um software instalado no computador do usuário que exige a configuração manual da conta de e-mail, incluindo os servidores e portas dos protocolos de envio (SMTP) e recebimento (POP3 ou IMAP), para baixar e gerenciar as mensagens localmente.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Quando uma mensagem está na pasta Itens Enviados de um cliente de e-mail, o que isso indica necessariamente?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A mensagem está aguardando aprovação do administrador do servidor antes de ser efetivamente enviada",
+          "correct": false,
+          "explanation": "Incorreta. O processo de envio de e-mail, uma vez que a mensagem sai do cliente do remetente para seu servidor, não envolve a aprovação de um administrador do servidor para cada mensagem individual. A aprovação ocorre em nível de configuração do servidor, mas não para cada e-mail enviado."
+        },
+        {
+          "id": "b",
+          "text": "A mensagem foi entregue com sucesso ao destinatário e confirmada pelo servidor de destino",
+          "correct": false,
+          "explanation": "Incorreta. A presença de uma mensagem na pasta \"Itens Enviados\" significa apenas que o cliente de e-mail do remetente processou a mensagem e a entregou ao servidor de e-mail do remetente. Não há garantia de que a mensagem tenha sido entregue com sucesso ao destinatário final, pois podem ocorrer problemas como caixa de entrada cheia, endereço incorreto ou filtros de spam no servidor de destino. É como postar uma carta: você a colocou no correio, mas não sabe se o destinatário a recebeu."
+        },
+        {
+          "id": "c",
+          "text": "A mensagem foi processada pelo cliente e enviada ao servidor de e-mail do remetente, mas não garante a entrega ao destinatário",
+          "correct": true,
+          "explanation": "Correta. A pasta \"Itens Enviados\" registra que o cliente de e-mail (aplicativo ou webmail) concluiu sua parte do processo, ou seja, enviou a mensagem para o servidor de e-mail do remetente. A partir daí, a responsabilidade pela entrega é do servidor de e-mail, que tentará encaminhá-la ao servidor do destinatário. No entanto, a entrega final não é confirmada automaticamente por essa pasta. Problemas como caixas de entrada lotadas, endereços inválidos ou filtros de spam podem impedir que a mensagem chegue ao destino."
+        },
+        {
+          "id": "d",
+          "text": "A mensagem foi lida pelo destinatário e uma confirmação de leitura foi recebida pelo remetente",
+          "correct": false,
+          "explanation": "Incorreta. A confirmação de leitura é um recurso opcional e, muitas vezes, configurável, que depende da aceitação do destinatário e do suporte do cliente de e-mail. A pasta \"Itens Enviados\" apenas indica que a mensagem foi despachada do lado do remetente, não que foi lida ou que uma confirmação de leitura foi recebida."
+        }
+      ],
+      "explanation": "Correta. A pasta \"Itens Enviados\" registra que o cliente de e-mail (aplicativo ou webmail) concluiu sua parte do processo, ou seja, enviou a mensagem para o servidor de e-mail do remetente. A partir daí, a responsabilidade pela entrega é do servidor de e-mail, que tentará encaminhá-la ao servidor do destinatário. No entanto, a entrega final não é confirmada automaticamente por essa pasta. Problemas como caixas de entrada lotadas, endereços inválidos ou filtros de spam podem impedir que a mensagem chegue ao destino.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em um gerenciador de e-mails, qual é a função principal da pasta Rascunhos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Guardar temporariamente mensagens em elaboração que podem ser editadas, salvas novamente ou enviadas posteriormente",
+          "correct": true,
+          "explanation": "Correta. A pasta Rascunhos serve como um local temporário para armazenar mensagens de e-mail que estão sendo escritas, mas que ainda não foram enviadas. Ela permite que o usuário salve o progresso de uma mensagem e retorne a ela mais tarde para continuar a edição, adicionar anexos ou, finalmente, enviá-la. É uma funcionalidade comum em praticamente todos os clientes e serviços de webmail."
+        },
+        {
+          "id": "b",
+          "text": "Armazenar permanentemente todas as mensagens que foram iniciadas mas nunca enviadas, sem possibilidade de edição posterior",
+          "correct": false,
+          "explanation": "Incorreta. A pasta Rascunhos é projetada para flexibilidade. As mensagens nela podem ser editadas, salvas novamente e, eventualmente, enviadas. Não são armazenadas permanentemente de forma imutável."
+        },
+        {
+          "id": "c",
+          "text": "Arquivar mensagens recebidas que foram marcadas como importantes pelo remetente",
+          "correct": false,
+          "explanation": "Incorreta. A pasta Rascunhos é exclusiva para mensagens que o usuário está compondo. Mensagens recebidas, mesmo que marcadas como importantes, são armazenadas na Caixa de Entrada ou em pastas designadas para organização de e-mails recebidos."
+        },
+        {
+          "id": "d",
+          "text": "Manter cópias de segurança automáticas de todas as mensagens enviadas nos últimos trinta dias",
+          "correct": false,
+          "explanation": "Incorreta. A função de cópias de segurança de mensagens enviadas é geralmente atribuída à pasta \"Itens Enviados\" ou a funcionalidades de arquivamento, não à pasta Rascunhos. Além disso, a pasta Rascunhos não se limita a um período de trinta dias."
+        }
+      ],
+      "explanation": "Correta. A pasta Rascunhos serve como um local temporário para armazenar mensagens de e-mail que estão sendo escritas, mas que ainda não foram enviadas. Ela permite que o usuário salve o progresso de uma mensagem e retorne a ela mais tarde para continuar a edição, adicionar anexos ou, finalmente, enviá-la. É uma funcionalidade comum em praticamente todos os clientes e serviços de webmail.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Considerando a estrutura de um endereço de e-mail no formato usuario@provedor.com.br, qual é a função específica do símbolo @ (arroba)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Representar um caractere obrigatório de segurança para validação criptográfica do endereço eletrônico",
+          "correct": false,
+          "explanation": "Incorreta. O símbolo @ não tem função de segurança ou validação criptográfica. Sua função é puramente de separação sintática dentro do endereço de e-mail. A segurança do e-mail é garantida por outros protocolos e tecnologias, como TLS/SSL para criptografia de transporte."
+        },
+        {
+          "id": "b",
+          "text": "Estabelecer a prioridade de entrega da mensagem no servidor de destino",
+          "correct": false,
+          "explanation": "Incorreta. A prioridade de entrega da mensagem é uma configuração que pode ser definida pelo remetente dentro do cliente de e-mail (por exemplo, \"alta importância\"), mas não é determinada pelo símbolo @ no endereço. O @ serve apenas para identificar o servidor de destino."
+        },
+        {
+          "id": "c",
+          "text": "Definir o protocolo de comunicação que será utilizado para o envio e recebimento de mensagens",
+          "correct": false,
+          "explanation": "Incorreta. Os protocolos de comunicação (como SMTP para envio e POP3/IMAP para recebimento) são definidos pelas configurações do cliente de e-mail e do servidor, e não pelo símbolo @ no endereço. O endereço apenas indica para qual servidor a mensagem deve ser encaminhada."
+        },
+        {
+          "id": "d",
+          "text": "Indicar a separação entre o nome do usuário e o domínio do servidor que hospeda o serviço de e-mail",
+          "correct": true,
+          "explanation": "Correta. O símbolo @ (arroba) é um elemento fundamental na sintaxe de um endereço de e-mail. Sua função é separar o nome de usuário (ou identificador local) do domínio do servidor de e-mail. O usuário é a parte que identifica a caixa postal individual dentro de um provedor, e o domínio (.com.br, .gov, .org, etc.) identifica o servidor ou organização que hospeda essa caixa postal. Essa convenção é estabelecida desde os primórdios do e-mail, em 1971, por Ray Tomlinson."
+        }
+      ],
+      "explanation": "Correta. O símbolo @ (arroba) é um elemento fundamental na sintaxe de um endereço de e-mail. Sua função é separar o nome de usuário (ou identificador local) do domínio do servidor de e-mail. O usuário é a parte que identifica a caixa postal individual dentro de um provedor, e o domínio (.com.br, .gov, .org, etc.) identifica o servidor ou organização que hospeda essa caixa postal. Essa convenção é estabelecida desde os primórdios do e-mail, em 1971, por Ray Tomlinson.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "No contexto de VPN (Virtual Private Network), qual é o principal objetivo da criação de um túnel criptografado através da internet?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Aumentar a velocidade de transmissão de dados eliminando a necessidade de roteadores intermediários na comunicação",
+          "correct": false,
+          "explanation": "Incorreta. O objetivo principal da VPN não é aumentar a velocidade de transmissão de dados, e sim a segurança. Na verdade, a criptografia e o tunelamento podem adicionar uma pequena sobrecarga, potencialmente diminuindo a velocidade em comparação com uma conexão direta sem VPN."
+        },
+        {
+          "id": "b",
+          "text": "Criar uma rede física dedicada entre os pontos de comunicação sem utilizar a infraestrutura da internet",
+          "correct": false,
+          "explanation": "Incorreta. A VPN é uma rede virtual que utiliza a infraestrutura existente da internet. Ela evita a necessidade de criar uma rede física dedicada (como cabos exclusivos entre escritórios distantes), o que seria extremamente caro e impraticável para a maioria das organizações. A ideia é justamente usar a internet como meio de transporte, adicionando uma camada de segurança."
+        },
+        {
+          "id": "c",
+          "text": "Permitir a interligação segura de computadores utilizando a infraestrutura pública da internet com aplicação de criptografia",
+          "correct": true,
+          "explanation": "Correta. Uma VPN (Virtual Private Network) cria uma conexão segura e criptografada, um \"túnel\", através de uma rede pública, como a internet. O principal objetivo é permitir que usuários ou redes se conectem a outra rede (como a rede de uma empresa) de forma privada e segura, como se estivessem fisicamente presentes nela, mesmo estando em locais remotos. A criptografia garante a confidencialidade e a integridade dos dados transmitidos através desse túnel."
+        },
+        {
+          "id": "d",
+          "text": "Substituir completamente os protocolos TCP/IP por protocolos proprietários mais eficientes e seguros",
+          "correct": false,
+          "explanation": "Incorreta. A VPN não substitui os protocolos TCP/IP. Pelo contrário, ela opera sobre eles, utilizando-os como base para estabelecer o túnel seguro. Os protocolos TCP/IP continuam sendo a espinha dorsal da comunicação na internet."
+        }
+      ],
+      "explanation": "Correta. Uma VPN (Virtual Private Network) cria uma conexão segura e criptografada, um \"túnel\", através de uma rede pública, como a internet. O principal objetivo é permitir que usuários ou redes se conectem a outra rede (como a rede de uma empresa) de forma privada e segura, como se estivessem fisicamente presentes nela, mesmo estando em locais remotos. A criptografia garante a confidencialidade e a integridade dos dados transmitidos através desse túnel.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Quando um usuário deseja enviar uma mensagem de e-mail para múltiplos destinatários evitando que qualquer um deles possa usar a função 'Responder a Todos' e atingir os demais destinatários originais, qual estratégia deve ser adotada?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Utilizar o campo Para com o endereço do remetente e colocar os destinatários no campo CC especial",
+          "correct": false,
+          "explanation": "Incorreta. Não existe um \"campo CC especial\" com essa funcionalidade. O campo CC (Com Cópia) torna os endereços visíveis para todos. Para ocultar os destinatários, o campo CCO é o único recurso apropriado."
+        },
+        {
+          "id": "b",
+          "text": "Posicionar todos os destinatários no campo CCO, deixando os campos Para e CC vazios ou com apenas o remetente",
+          "correct": true,
+          "explanation": "Correta. A estratégia correta é utilizar o campo CCO (Com Cópia Oculta), também conhecido como BCC (Blind Carbon Copy). Quando os destinatários são colocados neste campo, seus endereços de e-mail não são visíveis para os outros destinatários da mensagem. Consequentemente, se alguém clicar em \"Responder a Todos\", a resposta será enviada apenas para o remetente original e para quem estiver nos campos \"Para\" ou \"CC\" (se houver), mas não para os destinatários em CCO. Isso protege a privacidade dos endereços e evita o envio de respostas indesejadas para um grande grupo. Para garantir que nenhum endereço seja visível, o campo \"Para\" pode ser deixado vazio ou preenchido com o próprio endereço do remetente."
+        },
+        {
+          "id": "c",
+          "text": "Colocar todos os destinatários no campo Para e desabilitar a opção de resposta múltipla nas configurações do servidor",
+          "correct": false,
+          "explanation": "Incorreta. Colocar todos os destinatários no campo \"Para\" fará com que todos vejam os endereços uns dos outros. Além disso, a função \"Responder a Todos\" estará disponível e enviará a resposta para todos os destinatários originais. Não é possível desabilitar a opção de resposta múltipla nas configurações do servidor de e-mail de forma granular para uma única mensagem enviada."
+        },
+        {
+          "id": "d",
+          "text": "Inserir todos os destinatários no campo CC e adicionar a palavra 'oculto' no campo Assunto da mensagem",
+          "correct": false,
+          "explanation": "Incorreta. Inserir destinatários no campo CC (Com Cópia) também os torna visíveis para todos os outros destinatários, e a função \"Responder a Todos\" continuará a incluí-los. Adicionar a palavra \"oculto\" no campo Assunto não tem qualquer efeito funcional sobre a visibilidade dos endereços ou a funcionalidade de resposta."
+        }
+      ],
+      "explanation": "Correta. A estratégia correta é utilizar o campo CCO (Com Cópia Oculta), também conhecido como BCC (Blind Carbon Copy). Quando os destinatários são colocados neste campo, seus endereços de e-mail não são visíveis para os outros destinatários da mensagem. Consequentemente, se alguém clicar em \"Responder a Todos\", a resposta será enviada apenas para o remetente original e para quem estiver nos campos \"Para\" ou \"CC\" (se houver), mas não para os destinatários em CCO. Isso protege a privacidade dos endereços e evita o envio de respostas indesejadas para um grande grupo. Para garantir que nenhum endereço seja visível, o campo \"Para\" pode ser deixado vazio ou preenchido com o próprio endereço do remetente.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_253611_Internet - Rede de Computadores VIII.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:59:56"
+}

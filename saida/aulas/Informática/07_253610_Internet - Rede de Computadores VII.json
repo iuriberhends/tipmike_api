@@ -1,0 +1,746 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Informática",
+  "disciplina_id": "262",
+  "materia": "Informática",
+  "modulo": {
+    "id": 3,
+    "titulo": "5. Conceitos básicos e modos de utilização de tecnologias, ferramentas, aplicativos e procedimentos associados à Internet e intranet. /\n\n6. Correio eletrônico. / 7. Computação em nuvem"
+  },
+  "ordem": 7,
+  "ordem_no_curso": "21.00",
+  "titulo": "Internet - Rede de Computadores VII",
+  "codigo_aula": "253610",
+  "video_id": "eXSFVTInZ/Y=",
+  "professor": "Jeferson Bogo",
+  "duracao": "00:28:42",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/eXSFVTInZ%2FY%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?a=420157,420150,420145,405146,419985,405059,405034,419978,420228,419940,420229,419941,419980&qd=0&qa=0&auth=force",
+  "transcricao": "# Transcrição - Internet - Rede de Computadores VII\n\n## Revisão: Computação em Nuvem e Acesso a Aplicações\nEstamos de volta à nossa linha da internet, falando de computação em nuvem. Olha só na tela, só para lembrar: voltando àquela imagem, a ideia é que os dispositivos, quando conectados à internet, terão acesso à aplicação que está na nuvem.\n\nEntão, como já vimos nas últimas aulas, mesmo que o programa esteja na nuvem, ele não é baixado para a máquina. Não é feito o download dele para a máquina. Só isso que eu queria enfatizar nessa imagem.\n\nPodemos ter, inclusive, uma versão do mesmo software que roda na máquina e outra que roda na nuvem. Agora, sobre armazenamento.\n\n## Armazenamento na Nuvem\nArmazenamento na nuvem é basicamente armazenar dados online. Veja que é diferente daquela ideia genérica de “a internet é a nuvem”. Eu falei para esquecer essa confusão, como lá no e-mail, quando a gente fala “colocar na nuvem”. Em alguns contextos, se usa “nuvem” como sinônimo de internet, mas quando falamos de computação em nuvem, temos serviços específicos.\n\nO armazenamento na nuvem é basicamente colocar meus dados — apresentações, documentos, imagens, vídeos, áudios — na nuvem. E qual a diferença para a ideia de e-mail? Quando eu coloco um documento na nuvem, por exemplo, ele fica lá. Eu posso criar, editar e acessar esse mesmo documento de diferentes computadores.\n\nImagina: eu fiz o upload da minha casa. Do trabalho, eu acesso esse arquivo. Estou no trabalho aqui, e aqui estou em casa. Estou sempre trabalhando no mesmo documento. Posso até baixar, mas não preciso baixar para nenhuma das duas máquinas. Conforme eu vou alterando, não importa de qual computador, a alteração fica lá e não gera aquele tanto de e-mail com anexos.\n\n## Tipos de Nuvem\nAgora sim, vamos falar dos tipos de nuvem.\n\n- Nuvem pública: a analogia que eu gosto é a dos armários de uma academia comum, um ambiente compartilhado. Você vai ter sua conta, sua senha, vai armazenar seus dados, mas é um ambiente compartilhado. Isso torna a segurança um pouco mais frágil em comparação com outros modelos. Veja: não é porque é pública que todo mundo tem acesso a tudo. Você pode compartilhar seus dados se quiser. Por exemplo, aquele documento armazenado na nuvem: eu posso compartilhá-lo com outras pessoas que podem editar simultaneamente comigo, se eu permitir.\n\n- Nuvem privada: é como a academia do meu prédio. O acesso às instalações é restrito a quem mora ali. Na nuvem privada, tudo é exclusivo para a empresa que contratou. A empresa XYZ contratou? Toda a infraestrutura é para ela. Resultado: muito mais segurança. Óbvio que o custo de contratação também aumenta.\n\n- Nuvem híbrida: é a mistura da pública com a privada.\n\n- Nuvem comunitária: não representei na imagem, mas é o compartilhamento da nuvem por órgãos do mesmo setor. Por exemplo, órgãos da segurança pública, órgãos da saúde ou empresas do mesmo ramo que vão compartilhar aquela nuvem.\n\n## Modelos de Serviço em Nuvem\nAgora vou falar dos modelos de serviço ofertados na nuvem. Antes falamos genericamente; aqui é específico.\n\nComeçando pela infraestrutura como serviço (IaaS). Em algumas bancas, há confusão com “computação em nuvem” no geral, porque são parecidos. Muitos autores tratam como parte do mesmo guarda-chuva; a diferença é o nível de serviço. A analogia: é como se eu alugasse o “chão da fábrica”.\n\nO que eu vou ter nesse tipo de serviço?\n- Servidores\n- Armazenamento\n- Segurança e firewall de rede\n- Infraestrutura física do data center\n\nIsso é a infraestrutura.\n\nDepois temos a plataforma como serviço (PaaS). Plataforma é o local onde eu vou poder desenvolver algo, caso eu queira. Além do que já vimos na infraestrutura (servidor, segurança, parte física), eu tenho:\n- Sistemas operacionais à disposição\n- Ferramentas de desenvolvimento\n- Gerenciamento de banco de dados\n- Ferramentas de análise de negócios\n\nPara provas, PaaS geralmente aparece junto das palavras “desenvolvimento”, “criação”, “construir”. Além do chão da fábrica, você tem a mesa e as ferramentas para criar algo.\n\nVamos ao próximo modelo, normalmente usado por usuários finais: software como serviço (SaaS). Aqui eu tenho o programa pronto, os aplicativos hospedados. É solução pronta: eu só uso. Exemplos clássicos que veremos já já: Office na nuvem, Word online, etc. Grave as siglas: você vai deduzir na hora da prova a partir do enunciado.\n\n> 🎯 **Dicas de prova:** \n> - IaaS: “chão de fábrica”; foco em infraestrutura (servidores, armazenamento, rede, firewall).\n> - PaaS: palavras-chave “desenvolvimento”, “criação”, “ambiente de desenvolvimento”.\n> - SaaS: software pronto, aplicativo hospedado, “só usar”.\n\n## Vantagens da Computação em Nuvem\nQuais as principais vantagens?\n\n- Multiplataforma: não importa se é laptop, celular Android ou um notebook com Linux. Todos dependem de conexão à internet e funcionam.\n- Redução de custos: especialmente para empresas, reduz custos de armazenamento, capacidade computacional, energia, refrigeração, segurança, infraestrutura.\n- Flexibilidade: se eu preciso de mais armazenamento ou mais capacidade de computação, basta contratar. Posso aumentar ou reduzir a qualquer momento.\n- Segurança: dependendo do modelo contratado, há toda a segurança disponível, com responsabilidade da empresa provedora ou combinada no contrato.\n- Acesso e edição compartilhados: como falei do documento, posso compartilhar dados com outras pessoas para acesso e edição, conforme permissões.\n\n## Exemplos de Serviços de Nuvem\nPrimeiro, OneDrive, serviço da Microsoft. O principal serviço ofertado é o Office Online:\n- Word Online\n- Excel Online\n- PowerPoint Online\nEsses aplicativos são acessados diretamente pela plataforma da Microsoft e não precisam estar instalados na sua máquina. Por exemplo, num computador com Linux sem Office instalado, você pode usar online. Não é a versão 100% completa, mas dá para fazer muita coisa. Dá para fazer download, compartilhar e executar vários serviços diretamente na nuvem.\n\nGoogle Drive, da Google, oferta o Google Docs, que é uma plataforma similar ao Office Online:\n- Edição de textos\n- Criação de planilhas\n- Apresentações\n- Espaço de trabalho\n- Formulários do Google (muito famosos para pesquisas, cadastros e coletas periódicas)\n\nDropbox: hoje está vinculado ao ecossistema como um serviço de armazenamento e também edição integrada via apps conectados. Lá atrás, foi um dos primeiros serviços na nuvem, focado estritamente em armazenamento e compartilhamento (“colocar na caixa”). Hoje, também há recursos de edição via integrações.\n\n## Aplicativos de Sincronização e Acesso Offline\nQuando uso um serviço online e suponho que todos os dados estejam na nuvem, esse computador que estou usando pode não ter nada local. É um computador novo, sem nada. Com conexão à internet, eu acesso tudo que está na nuvem. Sem conexão, eu não tenho acesso a nada, porque nada ficou na máquina.\n\nEu posso instalar o aplicativo do OneDrive, Google Drive ou Dropbox. Posso ter os três na máquina. Esses aplicativos fazem a sincronização automática dos dados. Posso escolher quais pastas sincronizar.\n\nExemplo: instalei o OneDrive; ele cria uma pasta OneDrive. Suponha que eu tenha pastas 1, 2, 3 e 4. Posso escolher sincronizar apenas algumas. Tudo que eu fizer dentro da pasta OneDrive e subpastas será sincronizado com a nuvem automaticamente. Se eu alterar algo offline, quando eu voltar a me conectar, ele atualiza na nuvem. E vice-versa: se eu alterar em outro computador, sincroniza de volta para esta máquina.\n\nSincronização automática é uma opção, não é obrigatória. Posso instalá-los para permitir acesso offline aos documentos. Se eu apagar um arquivo, na nuvem ele vai para a lixeira por um período. Mesmo que eu apague permanentemente na máquina, posso ir à lixeira na nuvem e recuperar; ele sincroniza de volta para a máquina.\n\n## Questão Conceitual sobre Computação em Nuvem\nFornecimento de serviços de computação pela internet (servidores, armazenamento, banco de dados, rede, software, análise, inteligência) para oferecer inovações rápidas, recursos flexíveis e economias de escala é chamado de computação em nuvem.\n\n> 🎯 **Dicas de prova:** \n> - Computação local/indoor não é o termo correto nesse contexto. A resposta é computação em nuvem.\n\n## Questões sobre Modelos de Serviço\nAssinale a alternativa que contenha apenas os modelos de serviço em nuvem: IaaS, PaaS, SaaS. Letra B de bola (na questão exibida) era a correta. Cuidado: “negação de serviço (DDoS)” não é modelo de serviço; é tipo de ataque.\n\n> 🎯 **Dicas de prova:** \n> - Modelos: IaaS, PaaS, SaaS.\n> - Não confundir tipos de nuvem (pública, privada, híbrida, comunitária) com modelos de serviço.\n\n## Questões sobre Tipos de Nuvem\nAo pesquisar sobre cloud, um técnico verificou diferentes tipos de armazenamento em nuvem conforme uso:\n\n1) Voltado para pessoas físicas, com pequeno espaço gratuito e planos para expandir — ideal para testar e com baixo volume e exigência de segurança. Isso é nuvem pública.\n\n2) Dividido entre clientes com negócios em comum, com custos compartilhados, podendo ser hospedada internamente ou terceirizada. Nuvem comunitária.\n\n3) Projetada para uso exclusivo de uma única empresa, com servidores alocados nas dependências dela, controle total das aplicações. Nuvem privada.\n\nResposta: pública, comunitária e privada, respectivamente. Letra D de dado (na questão exibida).\n\n## Questão sobre PaaS\nModelo que oferece um ambiente sob demanda para desenvolvimento, teste e gerenciamento de aplicações de software é PaaS.\n\n> 🎯 **Dicas de prova:** \n> - “Desenvolvimento” → PaaS.\n> - “Infraestrutura” → IaaS.\n> - “Software pronto” → SaaS.\n> - Big Data/extração de dados não são modelos IaaS/PaaS/SaaS por si; são serviços/soluções que podem rodar “sobre” esses modelos.\n\n## Compartilhamento e Transferência de Arquivos: FTP\nAgora vamos falar da troca de arquivos. Temos um protocolo constantemente citado em provas: FTP.\n\nO FTP permite o compartilhamento de arquivos grandes e o gerenciamento de downloads/uploads. Você pode baixar arquivos usando HTTP/HTTPS, mas esses não são protocolos próprios para gerenciar grandes arquivos e diretórios de forma especializada.\n\nQuando falo HTTP/HTTPS, lembrem: estou falando de web. A troca de arquivos usando FTP pode ser feita pela web (via navegador), mas também por aplicativos próprios de cliente FTP. O viés do FTP é enviar ou receber arquivos (upload/download), com gerenciamento e outras funções.\n\nTemos um servidor FTP que hospeda os arquivos e diretórios, e clientes FTP que fazem upload/download para o servidor FTP.\n\nFTP usa:\n- Porta 20 (dados) e 21 (controle)\n- Protocolo TCP\n- Camada de aplicação\n\nExemplo de acesso via web: você vê “ftp://” na URL. Existem servidores anônimos (sem autenticação) e privados (com login). Em servidores anônimos, o acesso respeita as permissões disponibilizadas; em privados, é preciso login.\n\nAlguns aplicativos suportam FTP integrado (por exemplo, dentro do LibreOffice, é possível abrir/salvar via FTP). Existem também clientes dedicados de FTP para gerenciamento mais completo.\n\nSegurança: o FTP por si só não é seguro. Mas temos formas seguras:\n- FTPS (FTP over SSL/TLS)\n- SFTP (FTP “sobre” SSH? Atenção: na prática, SFTP é o subsistema do SSH, seguro para transferência de arquivos)\n\nExistem outras variações, mas essas são as principais.\n\n> 🎯 **Dicas de prova:** \n> - FTP: portas TCP 20 (dados) e 21 (controle).\n> - FTPS: FTP com SSL/TLS.\n> - SFTP: usa SSH; protocolo seguro para transferência e acesso remoto a arquivos.\n\nProtocolo de transmissão que permite troca de arquivos grandes e acesso remoto a sistemas de arquivos diretamente entre computadores, sem passar pela web? FTP. Isso exclui HTTP/HTTPS.\n\n## Introdução ao Serviço de E-mail\nChegamos ao serviço de e-mail, o correio eletrônico. Vamos à analogia:\n\nZezinho manda uma carta para Marieta, a 600 km de distância. Ele não abre a janela e solta no vento; ele usa os Correios. Leva à agência, usa Sedex, a carta vai, o carteiro entrega para a Marieta.\n\nAs casas são os computadores. O envio não é direto de máquina para máquina. Isso já caiu em prova. Temos “agências dos Correios”, que são os servidores de e-mail. Podem até ser do mesmo provedor, mas são contas diferentes. A mensagem passa pelo servidor do remetente, por servidores intermediários, até chegar ao servidor do destinatário.\n\nA mensagem normalmente fica no servidor do destinatário até que ele acesse. Isso é importante: e-mail é um serviço assíncrono. Ou seja, não dependo que a pessoa esteja online na hora do envio. Se o computador dela estiver desligado, o e-mail fica no servidor aguardando.\n\nPosso acessar esse e-mail de duas formas:\n- Retirando do servidor e trazendo para a minha máquina com um gerenciador de e-mail.\n- Acessando remotamente via web (ou via protocolo que acessa o servidor sem baixar definitivamente), manipulando lá no servidor.\n\nServiço assíncrono significa: não depende de sincronia entre as pontas. Exemplo de serviço síncrono: uma transação bancária no caixa eletrônico — depende do servidor estar online para confirmar saldo e autorizar o saque.\n\n## Protocolos de E-mail\nSMTP — Simple Mail Transfer Protocol\n- Função: envio de e-mails\n- Portas principais:\n  - 25 (sem criptografia, legado)\n  - 587 (com STARTTLS/criptografia)\n  - 465 (SMTPS, com criptografia; usado por alguns provedores)\n\nNa minha imagem conceitual, entre servidores (remetente → servidor remetente → servidor destinatário), o envio e repasse entre servidores usam SMTP. Nesse contexto, a gente pode dizer que “o SMTP envia e também ‘recebe’ entre servidores”, pois um servidor ‘recebe’ via SMTP do servidor anterior no caminho. Mas, para o recebimento final pelo usuário, entram outros protocolos.\n\nPOP3 — Post Office Protocol (versão 3)\n- Função: recebimento\n- Portas:\n  - 110 (sem criptografia)\n  - 995 (com criptografia)\n\nIMAP — Internet Message Access Protocol\n- Função: recebimento e acesso remoto a pastas e mensagens\n- Portas:\n  - 143 (sem criptografia)\n  - 993 (com criptografia)\n\nDiferença prática:\n- POP3: por padrão, tira a mensagem do servidor e traz para a máquina. Posso configurar para deixar cópia no servidor, mas o comportamento clássico é baixar e remover. Vantagem: acesso offline às mensagens baixadas mesmo sem internet.\n- IMAP: faz acesso remoto ao servidor, manipulando mensagens lá, sincronizando pastas e estados (lido, rascunho, enviados etc.). Por padrão, sem conexão, você perde o acesso às mensagens que não estão em cache. Pode ser usado tanto em webmail quanto em clientes de e-mail.\n\nClientes de e-mail (gerenciadores): Thunderbird (Mozilla), Outlook, entre outros. IMAP pode ser usado tanto em web quanto em clientes; POP3 é típico de clientes.\n\n> 🎯 **Dicas de prova:** \n> - Envio: SMTP (25/587/465).\n> - Recebimento final pelo usuário: POP3 (110/995) ou IMAP (143/993).\n> - POP3 baixa para a máquina; IMAP mantém no servidor e sincroniza.\n\nAté o próximo bloco, a gente volta com mais detalhes de serviços de e-mail.",
+  "transcricao_meta": {
+    "title": "Internet - Rede de Computadores VII",
+    "subject": "Informática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 39742,
+    "createdAt": "2026-02-05T14:16:02.146Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda computação em nuvem (tipos e modelos de serviço), sincronização/armazenamento em nuvem, FTP e correio eletrônico (protocolos SMTP, POP3 e IMAP).\nPrincipais pontos: \n- Diferenças entre nuvem pública, privada, híbrida e comunitária; e entre IaaS, PaaS e SaaS.\n- Sincronização opcional e acesso offline em serviços como OneDrive, Google Drive e Dropbox.\n- FTP vs HTTP/HTTPS; portas 20/21, SFTP e FTPS.\n- E-mail como serviço assíncrono; fluxo e portas de SMTP, POP3 e IMAP.\n\n## 1. Base / Conceitos Fundamentais\n- **Computação em nuvem**: provisão via internet de servidores, armazenamento, rede, software, banco de dados, análise e inteligência, com elasticidade e economia de escala. Sem internet, não acessa o que está apenas na nuvem.\n- **Armazenamento em nuvem**: guardar e trabalhar em arquivos centralizados em servidores online. Diferente de anexar por e-mail (que gera cópias).\n- **Aplicativos em nuvem (SaaS)**: rodam no provedor e são acessados pelo navegador (ex.: Office Online, Google Docs); não precisam ser instalados localmente.\n- **Sincronização**: apps de desktop (OneDrive, Google Drive, Dropbox) criam pasta local que replica com a nuvem. É opcional e configurável por pasta.\n- **FTP**: protocolo para transferência de arquivos entre cliente e servidor de arquivos (camada de aplicação). Portas TCP 21 (controle) e 20 (dados).\n- **Correio eletrônico (e-mail)**: serviço assíncrono; a mensagem fica no servidor até o destinatário acessar.\n  - **SMTP**: envio; entre servidores também faz recebimento no trânsito.\n  - **POP/POP3**: recebimento por download (por padrão remove do servidor).\n  - **IMAP**: recebimento com acesso remoto e sincronização no servidor.\n\n## 2. Como Funciona / Distinções\n- Tipos de nuvem (implantação):\n  - **Nuvem pública**: infraestrutura compartilhada; custo menor; segurança adequada, porém ambiente multiusuário.\n  - **Nuvem privada**: dedicada à organização; maior controle e segurança; custo mais alto.\n  - **Nuvem híbrida**: combinação pública + privada para balancear custo e segurança.\n  - **Nuvens comunitárias**: compartilhadas por organizações do mesmo setor com requisitos comuns.\n- Modelos de serviço:\n  - **IaaS (Infrastructure as a Service)**: entrega infraestrutura (servidores, armazenamento, rede, segurança, firewall, Data Center).\n  - **PaaS (Platform as a Service)**: IaaS + sistemas operacionais, ferramentas de desenvolvimento, bancos de dados, analytics; foco em desenvolvimento/gestão de apps.\n  - **SaaS (Software as a Service)**: aplicativos prontos hospedados; usuário só usa.\n- Sincronização e acesso:\n  - **Com app instalado**: pode trabalhar offline nos itens sincronizados; ao reconectar, replica mudanças.\n  - **Sem app/sem sincronizar**: arquivos só na nuvem dependem de internet.\n  - Seleção de pastas: você escolhe o que sincronizar; o não selecionado permanece apenas na nuvem.\n- FTP vs HTTP/HTTPS:\n  - **FTP/SFTP/FTPS**: transferência de arquivos; não é web. \n  - **HTTP/HTTPS**: navegação web.\n- POP3 vs IMAP (e-mail do cliente final):\n  - **POP3**: baixa e por padrão remove do servidor; bom para acesso offline.\n  - **IMAP**: mantém no servidor; sincroniza pastas; offline depende de cache.\n- Assíncrono vs síncrono:\n  - **E-mail**: assíncrono (destinatário não precisa estar online na hora).\n  - **Transação bancária**: síncrona (exige resposta do servidor em tempo real).\n\n## 3. Aplicação Prática / Técnicas\n- Identificação rápida em prova:\n  - “Desenvolvimento/ambiente para criar/testar apps” → **PaaS**.\n  - “Servidores/armazenamento/rede/firewall” → **IaaS**.\n  - “Aplicativo pronto via navegador” → **SaaS**.\n  - “Compartilhada por vários clientes” → **Nuvem pública**.\n  - “Exclusiva da empresa” → **Nuvem privada**.\n  - “Mistura público/privado” → **Nuvem híbrida**.\n  - “Órgãos do mesmo setor” → **Nuvem comunitária**.\n  - “Sem passar pela web; upload/download; portas 20/21” → **FTP** (ou **SFTP/FTPS** para seguro).\n  - “Envio de e-mail / entre servidores” → **SMTP**.\n  - “Recebimento por download local” → **POP3**.\n  - “Recebimento com sincronização no servidor” → **IMAP**.\n- Portas e segurança (memorizar):\n  - **FTP**: 21 (controle), 20 (dados); inseguro. \n  - **SFTP**: via **SSH** (seguro). \n  - **FTPS**: via TLS/SSL (seguro).\n  - **SMTP**: 25 (sem criptografia), 587/465 (com criptografia).\n  - **POP3**: 110 (sem), 995 (com).\n  - **IMAP**: 143 (sem), 993 (com).\n- Macetes:\n  - IaaS/PaaS/SaaS: “Infraestrutura → Plataforma → Software” (do tijolo ao aplicativo).\n  - FTP: “21 comanda, 20 manda” (21 controle, 20 dados).\n  - E-mail: “Enviar? SMTP. Baixar? POP. Sincronizar? IMAP.”\n\n> Dica de Prova\n> - Tipos de nuvem (pública/privada/híbrida/comunitária) ≠ Modelos de serviço (IaaS/PaaS/SaaS). Se misturar, erra.\n\n## 4. Exemplos e Casos Resolvidos\n- Caso 1: Empresa quer reduzir custo, mas tem dados sensíveis de RH.\n  - Armazena dados sensíveis em **nuvem privada**; sites e apps públicos em **nuvem pública** → **nuvem híbrida**.\n  - Para hospedar VMs e firewalls → **IaaS**.\n- Caso 2: Time de dev precisa de ambiente pronto para compilar e testar sem gerenciar SO.\n  - Contrata **PaaS** (fornece SO, ferramentas de dev, banco de dados).\n- Caso 3: Usuário quer editar documentos no navegador em diferentes sistemas (Windows, Linux, Android).\n  - Usa **SaaS**: Office Online (Word, Excel, PowerPoint) ou Google Docs/planilhas/apresentações/formulários.\n- Caso 4: Compartilhar arquivos grandes com controle de pastas.\n  - Configura **servidor FTP** e acessa com **cliente FTP**; se exigir segurança, usar **SFTP** ou **FTPS**.\n- Caso 5: Configuração de e-mail no Outlook para trabalhar offline em viagem.\n  - Seleciona **POP3** (porta 995 com criptografia) e “deixar cópia no servidor” se quiser manter no servidor.\n- Caso 6: Acessar e-mails sincronizados entre vários dispositivos com pastas no servidor.\n  - Configura **IMAP** (porta 993 com criptografia). Cache offline opcional.\n\n## 5. Pegadinhas e Erros Comuns\n> Dica de Prova\n> - “Entrega final ao usuário via SMTP” → Errado. Entrega final é POP3/IMAP.\n> - “POP é para webmail” → Errado. Webmail geralmente usa IMAP (acesso no servidor).\n> - “IMAP garante acesso offline” → Só com cache configurado; por padrão depende da conexão.\n\n- Confundir: “armazenar na nuvem” com “enviar por e-mail”. Nuvem mantém um arquivo central; e-mail cria cópias.\n- Achar que “sincronização automática” é obrigatória. É opcional e por pasta; sem sincronizar, sem internet não há acesso.\n- Considerar **nuvem pública** “insegura por definição”. Ela é compartilhada; segurança depende de configurações/serviços contratados.\n- Misturar tipos de nuvem (pública/privada/híbrida/comunitária) com modelos de serviço (IaaS/PaaS/SaaS).\n- Confundir **FTP** com **HTTP/HTTPS**. Protocolos e portas diferentes; “sem passar pela web” indica FTP/SFTP/FTPS.\n- Esquecer portas:\n  - SMTP 25/587/465; POP3 110/995; IMAP 143/993; FTP 21/20.\n- Achar que sem internet é impossível trabalhar com nuvem: é possível se os arquivos estiverem sincronizados localmente (acesso offline).\n\nDIFERENÇAS e COMPARAÇÕES (resumo rápido)\n- Tipos de nuvem:\n  - Pública: compartilhada, custo menor; \n  - Privada: exclusiva, mais segura, custo maior; \n  - Híbrida: mistura; \n  - Comunitária: setor comum.\n- Modelos de serviço:\n  - IaaS: infraestrutura; \n  - PaaS: desenvolvimento/plataforma; \n  - SaaS: app pronto.\n- E-mail:\n  - SMTP: envio; \n  - POP3: baixa e remove (padrão); \n  - IMAP: sincroniza no servidor.\n- FTP:\n  - FTP inseguro; SFTP/FTPS seguros; portas 21/20.\n\n> Dica de Prova\n> - Palavra “desenvolvimento” quase sempre aponta para **PaaS**.\n> - “Upload/download de arquivos por cliente específico; portas 20/21” → **FTP**.\n> - “Serviço assíncrono” → **e-mail**; “síncrono” → operações bancárias.\n\nExemplos de serviços/plataformas a lembrar:\n- **Microsoft OneDrive** + **Office Online** (Word, Excel, PowerPoint).\n- **Google Drive**: **Google Docs**, planilhas eletrônicas, apresentações, formulários do Google.\n- **Dropbox**: armazenamento e sincronização.\n- Multiplataforma: laptop, celular com Android, Linux — desde que haja internet.",
+  "resumo_bolso": "# Internet - Rede de Computadores VII\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Computação em nuvem**: provisão via internet de servidores, armazenamento, rede, software, banco de dados, análise e inteligência, com **elasticidade** e **economia de escala**; sem internet, não acessa o que está apenas na nuvem.\n* **Armazenamento em nuvem**: guardar e trabalhar em arquivos centralizados em servidores online; diferente de anexar por e-mail (anexo gera cópias).\n* **Aplicativos em nuvem (SaaS)**: rodam no provedor, acessados via navegador (ex.: Office Online, Google Docs); **não exigem instalação local**.\n* **Sincronização**: apps de desktop (OneDrive, Google Drive, Dropbox) criam pasta local que **replica** com a nuvem; é **opcional** e **configurável por pasta**.\n* **FTP**: protocolo de **transferência de arquivos** entre cliente e servidor de arquivos (camada de aplicação); usa portas TCP **21 (controle)** e **20 (dados)**.\n* **Correio eletrônico**: serviço **assíncrono**; a mensagem fica no servidor até o destinatário acessar.\n* **SMTP**: protocolo de **envio** de e-mails; entre servidores também faz recebimento no trânsito.\n* **POP3**: protocolo de **recebimento por download**; por padrão **remove do servidor**.\n* **IMAP**: protocolo de **recebimento com acesso remoto**; mantém mensagens e pastas **no servidor**, sincronizando dispositivos.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Tipos de Nuvem (Implantação)\n\n| Aspecto | Pública | Privada | Híbrida | Comunitária |\n|--------|--------|---------|---------|-------------|\n| Infraestrutura | Compartilhada (multiusuário) | Exclusiva da organização | Combinação pública + privada | Compartilhada por orgs. do mesmo setor |\n| Custo | Menor | Maior | Balanceado (custo x segurança) | Compartilhado |\n| Segurança/controle | Segurança adequada em ambiente compartilhado | Maior controle e segurança | Equilíbrio custo x segurança | Atende requisitos comuns do setor |\n\n---\n\n### Modelos de Serviço em Nuvem\n\n| Aspecto | IaaS | PaaS | SaaS |\n|--------|------|------|------|\n| Entrega | Infraestrutura (servidores, armazenamento, rede, segurança, firewall, Data Center) | IaaS + SO, banco de dados, ferramentas de desenvolvimento, analytics | Aplicativo pronto hospedado |\n| Foco | “Tijolo” de TI (infraestrutura) | Desenvolvimento/gestão de aplicações | Uso direto pelo usuário final |\n| Gestão pelo usuário | SO para cima (VMs, firewalls etc.) | Código/app | Só usa e configura o app |\n\n---\n\n### POP3 vs IMAP (Cliente Final)\n\n| Aspecto | POP3 | IMAP |\n|--------|------|------|\n| Modo | Baixa para o dispositivo | Acessa e gerencia no servidor |\n| Servidor | Por padrão **remove** após download | Mantém mensagens e pastas no servidor |\n| Offline | Forte (mensagens baixadas) | Depende de **cache** configurado |\n| Dispositivos múltiplos | Ruim (estado fragmentado) | Bom (sincronização entre dispositivos) |\n\n---\n\n### FTP vs HTTP/HTTPS\n\n| Aspecto | FTP/SFTP/FTPS | HTTP/HTTPS |\n|--------|----------------|-----------|\n| Função | Transferência de arquivos; não é web | Navegação web (páginas) |\n| Portas | FTP: 21 (controle), 20 (dados) | HTTP 80, HTTPS 443 |\n| Segurança | FTP inseguro; **SFTP via SSH** e **FTPS via TLS/SSL** são seguros | HTTPS seguro (TLS/SSL) |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Tipos de Nuvem x Modelos de Serviço**\n\n* **Aplicação**: identificar se a questão fala de **implantação** (pública, privada, híbrida, comunitária) ou de **modelo de serviço** (IaaS, PaaS, SaaS).\n\n---\n\n**2. IaaS / PaaS / SaaS**\n\n* **Hierarquia**: **Infraestrutura → Plataforma → Software**.\n* **Identificação rápida em prova**:\n  * “Servidores/armazenamento/rede/firewall” → **IaaS**.\n  * “Ambiente para criar/testar apps, com SO, banco e ferramentas” → **PaaS**.\n  * “Aplicativo pronto via navegador” → **SaaS**.\n\n---\n\n**3. Portas de Protocolos**\n\n* **FTP**: 21 (controle), 20 (dados).\n* **SMTP**: 25 (sem criptografia), 587/465 (com criptografia).\n* **POP3**: 110 (sem), 995 (com).\n* **IMAP**: 143 (sem), 993 (com).\n\n---\n\n**4. Sincronização em Nuvem**\n\n* **Com app instalado**: pode trabalhar **offline** nos itens **sincronizados**; ao reconectar, replica mudanças.\n* **Sem app/sem sincronizar**: arquivos só na nuvem **dependem de internet**.\n* **Seleção de pastas**: você escolhe o que sincronizar; o não selecionado permanece apenas na nuvem.\n\n---\n\n**5. E-mail: Fluxo Lógico**\n\n* Cadeia típica: **cliente envia → SMTP → servidor remetente → SMTP entre servidores → servidor destinatário → POP3/IMAP para o cliente**.\n* **Entrega final ao usuário** é feita por **POP3 ou IMAP**.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir **“armazenar na nuvem”** com **“enviar por e-mail”**: nuvem mantém um arquivo central; e-mail cria cópias.\n* Achar que **sincronização automática** é obrigatória: é **opcional** e **por pasta**; sem sincronizar, sem internet não há acesso.\n* Considerar **nuvem pública** “insegura por definição”: ela é compartilhada; a segurança depende das configurações/serviços contratados.\n* Misturar **tipos de nuvem** (pública/privada/híbrida/comunitária) com **modelos de serviço** (IaaS/PaaS/SaaS).\n* Afirmar que **IMAP garante acesso offline**: só com **cache** configurado; por padrão depende da conexão.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **tipos de nuvem** (pública, privada, híbrida, comunitária) dos **modelos de serviço** (IaaS, PaaS, SaaS)?\n* Associei corretamente: **IaaS = infraestrutura**, **PaaS = desenvolvimento/plataforma**, **SaaS = app pronto**?\n* Memorizei portas: **FTP 21/20; SMTP 25/587/465; POP3 110/995; IMAP 143/993**?\n* Fixei: **SMTP = envio**, **POP3 = baixar/remover (padrão)**, **IMAP = sincronizar no servidor**?\n* Lembrei que **FTP ≠ HTTP/HTTPS** e que **e-mail é assíncrono**, enquanto **transações bancárias são síncronas**?",
+  "mapa_mental": "# 🌐 Internet - Rede de Computadores VII\n## ☁️ Computação em Nuvem\n### 💡 Conceitos Gerais\n- Provisão via internet\n- Recursos sob demanda\n- Elasticidade escalabilidade\n- Pagamento por uso\n- Dependência conexão\n\n### 🏗️ Tipos de Nuvem\n- Nuvem pública\n- Nuvem privada\n- Nuvem híbrida\n- Nuvem comunitária\n\n### 🧩 Modelos de Serviço\n- IaaS infraestrutura\n- PaaS desenvolvimento\n- SaaS aplicativo pronto\n- Ordem IaaS PaaS SaaS\n- Tijolo ao aplicativo\n\n## 🗄️ Armazenamento e Sincronização\n### 💾 Armazenamento em Nuvem\n- Arquivos centralizados\n- Acesso multiplataforma\n- Sem cópias múltiplas\n- Diferente de e-mail\n- Depende de internet\n\n### 🔄 Sincronização Local\n- Pasta espelho local\n- OneDrive Google Drive\n- Dropbox sincronização\n- Seleção por pasta\n- Acesso offline opcional\n\n### 🌐 Acesso Offline\n- Arquivo sincronizado\n- Trabalho sem internet\n- Atualiza ao reconectar\n- Não sincronizado online\n- Cache local opcional\n\n## 📡 FTP e Transferência\n### 📤 Conceito FTP\n- Protocolo aplicação\n- Cliente servidor arquivos\n- Upload download\n- Não é navegação web\n- Sem criptografia padrão\n\n### 🔢 Portas FTP\n- Porta 21 controle\n- Porta 20 dados\n- Frase 21 comanda\n- Frase 20 manda\n- Memorizar 21 20\n\n### 🛡️ FTP Seguro\n- SFTP via SSH\n- FTPS via TLS SSL\n- Criptografia dados\n- Autenticação segura\n- Diferente HTTP HTTPS\n\n## 📧 Correio Eletrônico\n### ✉️ Conceitos Gerais\n- Serviço assíncrono\n- Mensagem no servidor\n- Cliente e servidor\n- Não exige simultaneidade\n- Comparação síncrono bancário\n\n### 📤 SMTP Envio\n- Protocolo envio\n- Entre servidores e-mail\n- Porta 25 sem criptografia\n- Portas 587 465 seguras\n- Não entrega final usuário\n\n### 📥 POP3 IMAP\n- POP3 download local\n- POP3 remove servidor\n- POP3 bom offline\n- IMAP acesso remoto\n- IMAP sincroniza pastas\n\n### 🔢 Portas POP3 IMAP\n- POP3 110 sem\n- POP3 995 seguro\n- IMAP 143 sem\n- IMAP 993 seguro\n- Webmail geralmente IMAP\n\n## 🧠 Comparações e Pegadinhas\n### ☁️ Nuvem Tipos x Serviços\n- Tipos pública privada\n- Híbrida comunitária\n- Serviços IaaS PaaS SaaS\n- Não misturar conceitos\n- Palavra desenvolvimento PaaS\n\n### 📡 FTP x HTTP\n- FTP transferência arquivos\n- HTTP HTTPS navegação\n- FTP portas 21 20\n- HTTP porta 80\n- HTTPS porta 443\n\n### 📧 E-mail Protocolos\n- Enviar SMTP\n- Baixar POP3\n- Sincronizar IMAP\n- Assíncrono e-mail\n- Síncrono transação bancária",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Armazenamento Em Nuvem",
+      "description": "Armazenamento Em Nuvem — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza o **armazenamento em nuvem**?",
+          "back": "Armazenar dados (como apresentações, documentos, imagens, vídeos ou áudio) na nuvem.",
+          "hint": "Refere-se ao local de processamento e salvamento",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Como arquivos armazenados na nuvem podem ser acessados em computadores diferentes?",
+          "back": "Acessando o arquivo diretamente na nuvem, sem precisar baixá-lo para as máquinas.",
+          "hint": "Pense na dispensa de download local",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual efeito ocorre nas alterações de um arquivo sincronizado com a nuvem?",
+          "back": "A alteração vai ficando lá, não importa de qual computador foi feita, sem gerar múltiplos e-mails.",
+          "hint": "Relacionado à atualização em tempo real",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "O que é necessário para acessar dados armazenados exclusivamente na nuvem?",
+          "back": "Conexão à internet.",
+          "hint": "Requisito de conectividade obrigatório",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Tipos De Nuvem",
+      "description": "Tipos De Nuvem — 4 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "Qual é a principal característica da nuvem pública quanto ao uso da infraestrutura?",
+          "back": "Ambiente compartilhado.",
+          "hint": "Oposto de exclusivo",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Em que situação uma nuvem é classificada como privada?",
+          "back": "Quando a infraestrutura é exclusiva para a empresa que contratou, com acesso restrito.",
+          "hint": "Pense no nível de acesso e propriedade",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-7",
+          "front": "Como se define uma nuvem híbrida?",
+          "back": "A mistura da nuvem pública com a privada.",
+          "hint": "Refere-se à combinação de modelos",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual critério define uma nuvem comunitária?",
+          "back": "O compartilhamento da nuvem por órgãos do mesmo setor ou empresas do mesmo ramo.",
+          "hint": "Baseado no perfil dos usuários",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Modelos De Serviço",
+      "description": "Modelos De Serviço — 4 cards",
+      "cards": [
+        {
+          "id": "card-9",
+          "front": "Qual modelo de serviço oferece recursos básicos de infraestrutura computacional?",
+          "back": "Infraestrutura como Serviço (IaaS).",
+          "hint": "Sigla para o nível mais baixo de serviço",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-10",
+          "front": "Quais recursos adicionais são oferecidos no modelo voltado ao desenvolvimento de aplicações?",
+          "back": "Sistemas operacionais, ferramentas de desenvolvimento, gerenciamento de banco de dados e análise de negócios.",
+          "hint": "Refere-se ao modelo PaaS",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Qual modelo fornece aplicativos prontos para uso pela internet?",
+          "back": "Software como Serviço (SaaS).",
+          "hint": "Sigla para o nível de aplicação final",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-12",
+          "front": "Qual vantagem da nuvem permite ajustar recursos computacionais conforme a demanda?",
+          "back": "Flexibilidade.",
+          "hint": "Capacidade de adaptação à carga",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "nuvem"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Transferência De Arquivos",
+      "description": "Transferência De Arquivos — 4 cards",
+      "cards": [
+        {
+          "id": "card-13",
+          "front": "Qual protocolo é destinado à transferência e ao gerenciamento de arquivos grandes?",
+          "back": "File Transfer Protocol (FTP).",
+          "hint": "Protocolo focado em movimentação de arquivos",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "ftp"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-14",
+          "front": "Em quais camadas e transporte de rede o FTP opera?",
+          "back": "Camada de aplicação e transporte TCP.",
+          "hint": "Pense no modelo OSI e na família TCP/IP",
+          "difficulty": "hard",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "ftp"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "Quais portas TCP são associadas, respectivamente, aos dados e ao controle do FTP?",
+          "back": "Porta 20 para dados e porta 21 para controle.",
+          "hint": "São dois números de porta distintos",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes",
+            "ftp"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual é a diferença entre um servidor FTP anônimo e um privado?",
+          "back": "O anônimo não precisa de autenticação, enquanto o privado exige login.",
+          "hint": "Diferença baseada em credenciais",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "ftp"
+          ],
+          "type": "comparison"
+        }
+      ]
+    },
+    {
+      "id": "deck-5",
+      "title": "Protocolos De E-mail",
+      "description": "Protocolos De E-mail — 6 cards",
+      "cards": [
+        {
+          "id": "card-17",
+          "front": "Qual é a função dos servidores de e-mail no envio de mensagens?",
+          "back": "Receber e guardar mensagens até que o destinatário as acesse.",
+          "hint": "Atua como um intermediário de mensagens",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-18",
+          "front": "Por que o destinatário de um e-mail não precisa estar conectado no momento do envio?",
+          "back": "Porque a mensagem é armazenada no servidor de e-mail.",
+          "hint": "Onde a mensagem reside enquanto espera",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-19",
+          "front": "Qual protocolo realiza o envio de mensagens entre servidores de e-mail?",
+          "back": "Simple Mail Transfer Protocol (SMTP).",
+          "hint": "Protocolo de envio, não de recebimento",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-20",
+          "front": "Qual protocolo transfere mensagens do servidor para o computador do destinatário?",
+          "back": "POP3 ou IMAP.",
+          "hint": "São os dois protocolos de recebimento",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-21",
+          "front": "Quais portas correspondem ao POP3 sem criptografia e com criptografia?",
+          "back": "Porta 110 sem criptografia e porta 995 com criptografia.",
+          "hint": "Pense nos números de porta padrão e seguros",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-22",
+          "front": "Qual é a diferença operacional entre POP3 e IMAP?",
+          "back": "O POP3 tira a mensagem do servidor e a traz para a máquina (com acesso offline), enquanto o IMAP faz acesso remoto manipulando as mensagens diretamente no servidor.",
+          "hint": "Localização do armazenamento da mensagem",
+          "difficulty": "hard",
+          "importance": "critical",
+          "tags": [
+            "informatica",
+            "redes",
+            "email"
+          ],
+          "type": "comparison"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Na computação em nuvem, qual é a principal característica que diferencia o armazenamento de dados na nuvem do armazenamento local tradicional?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O armazenamento é limitado a documentos de texto e planilhas, não suportando arquivos multimídia",
+          "correct": false,
+          "explanation": "Incorreta. O armazenamento em nuvem é extremamente versátil e suporta uma vasta gama de tipos de arquivos, incluindo documentos de texto, planilhas, apresentações, imagens, vídeos e áudios, sem limitações quanto a formatos multimídia. Muitos serviços de nuvem são inclusive otimizados para esses tipos de arquivos."
+        },
+        {
+          "id": "b",
+          "text": "Os arquivos são compactados em formato proprietário que reduz o tamanho em até 90% do original",
+          "correct": false,
+          "explanation": "Incorreta. A compactação de arquivos pode ocorrer para otimização de armazenamento, mas não é uma característica definidora que diferencia fundamentalmente o armazenamento em nuvem do local, nem há um formato proprietário específico que garanta uma redução de 90% para todos os tipos de arquivos. A principal diferença reside na localização e acessibilidade dos dados."
+        },
+        {
+          "id": "c",
+          "text": "Os dados ficam armazenados em servidores remotos acessíveis pela internet, permitindo acesso de diferentes dispositivos sem necessidade de download para a máquina local",
+          "correct": true,
+          "explanation": "Correta. A computação em nuvem permite que os dados sejam armazenados em servidores remotos, acessíveis de qualquer dispositivo conectado à internet, sem a necessidade de baixar os arquivos para a máquina local. Isso proporciona flexibilidade e acesso ubíquo aos dados."
+        },
+        {
+          "id": "d",
+          "text": "Os dados são automaticamente criptografados e só podem ser acessados mediante autenticação biométrica em todos os casos",
+          "correct": false,
+          "explanation": "Incorreta. Embora a criptografia e a autenticação sejam aspectos importantes da segurança em nuvem, a afirmação de que os dados são \"automaticamente criptografados e só podem ser acessados mediante autenticação biométrica em todos os casos\" não é universalmente verdadeira. Muitos serviços utilizam senhas e outros métodos de autenticação, e a criptografia pode ser uma opção ou um padrão, mas não necessariamente com biométrica exclusiva em todos os cenários."
+        }
+      ],
+      "explanation": "Correta. A computação em nuvem permite que os dados sejam armazenados em servidores remotos, acessíveis de qualquer dispositivo conectado à internet, sem a necessidade de baixar os arquivos para a máquina local. Isso proporciona flexibilidade e acesso ubíquo aos dados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual tipo de nuvem é caracterizado por ser um ambiente compartilhado, similar aos armários de uma academia, onde diversos usuários possuem contas individuais mas utilizam a mesma infraestrutura?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Nuvem privada, com acesso exclusivo para funcionários de uma única organização",
+          "correct": false,
+          "explanation": "Incorreta. A nuvem privada é um ambiente de computação em nuvem dedicado exclusivamente a uma única organização. Ela oferece maior controle e segurança, mas não se encaixa na descrição de um ambiente \"compartilhado\" por diversos usuários externos, como a analogia da academia sugere."
+        },
+        {
+          "id": "b",
+          "text": "Nuvem comunitária, restrita a órgãos governamentais do mesmo setor",
+          "correct": false,
+          "explanation": "Incorreta. A nuvem comunitária é compartilhada por várias organizações que possuem interesses ou requisitos comuns, como órgãos governamentais do mesmo setor ou empresas de um mesmo ramo. Ela não se refere a um ambiente genérico compartilhado por \"diversos usuários\" de forma ampla, mas sim a um grupo específico com necessidades alinhadas."
+        },
+        {
+          "id": "c",
+          "text": "Nuvem pública, onde múltiplos usuários compartilham a infraestrutura mantendo contas e dados separados",
+          "correct": true,
+          "explanation": "Correta. A nuvem pública é um modelo de computação em nuvem onde um provedor de serviços oferece recursos computacionais (servidores, armazenamento, redes, etc.) para múltiplos clientes por meio da internet. Embora a infraestrutura seja compartilhada entre os usuários, cada um tem acesso individual e seguro aos seus próprios dados, assim como armários em uma academia são usados por diferentes pessoas, mas cada um tem sua chave e espaço pessoal."
+        },
+        {
+          "id": "d",
+          "text": "Nuvem híbrida, que combina servidores locais com acesso remoto ocasional",
+          "correct": false,
+          "explanation": "Incorreta. A nuvem híbrida combina elementos de nuvens públicas e privadas, permitindo que os dados e aplicativos se movam entre elas. Sua característica principal é a integração entre diferentes ambientes de nuvem, e não a de ser um ambiente compartilhado no sentido da analogia proposta."
+        }
+      ],
+      "explanation": "Correta. A nuvem pública é um modelo de computação em nuvem onde um provedor de serviços oferece recursos computacionais (servidores, armazenamento, redes, etc.) para múltiplos clientes por meio da internet. Embora a infraestrutura seja compartilhada entre os usuários, cada um tem acesso individual e seguro aos seus próprios dados, assim como armários em uma academia são usados por diferentes pessoas, mas cada um tem sua chave e espaço pessoal.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "No contexto de computação em nuvem, qual é a principal vantagem da multiplataforma?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Possibilita o acesso aos serviços e dados independentemente do sistema operacional ou dispositivo utilizado, desde que haja conexão à internet",
+          "correct": true,
+          "explanation": "Correta. A principal vantagem da multiplataforma na computação em nuvem é a capacidade de acessar serviços e dados de qualquer dispositivo (computador, tablet, smartphone) e sistema operacional (Windows, macOS, Linux, Android, iOS), desde que haja uma conexão à internet. Isso proporciona flexibilidade e mobilidade aos usuários."
+        },
+        {
+          "id": "b",
+          "text": "Garante que todos os usuários utilizem a mesma versão de software simultaneamente",
+          "correct": false,
+          "explanation": "Incorreta. Embora a nuvem facilite a distribuição de atualizações de software e possa garantir que todos os usuários utilizem a mesma versão, essa não é a principal vantagem da característica \"multiplataforma\". A multiplataforma se refere à compatibilidade com diversos sistemas operacionais e dispositivos."
+        },
+        {
+          "id": "c",
+          "text": "Restringe o acesso a dispositivos previamente cadastrados para aumentar a segurança",
+          "correct": false,
+          "explanation": "Incorreta. Restringir o acesso a dispositivos previamente cadastrados é uma medida de segurança que pode ser implementada em qualquer tipo de serviço, mas não é uma característica intrínseca ou vantagem da multiplataforma. Pelo contrário, a multiplataforma visa ampliar o acesso, não restringi-lo."
+        },
+        {
+          "id": "d",
+          "text": "Permite que os dados sejam acessados apenas de dispositivos com o mesmo sistema operacional",
+          "correct": false,
+          "explanation": "Incorreta. A multiplataforma tem como objetivo exatamente o oposto: permitir o acesso e a utilização de serviços e dados em diferentes sistemas operacionais, e não apenas em um único tipo."
+        }
+      ],
+      "explanation": "Correta. A principal vantagem da multiplataforma na computação em nuvem é a capacidade de acessar serviços e dados de qualquer dispositivo (computador, tablet, smartphone) e sistema operacional (Windows, macOS, Linux, Android, iOS), desde que haja uma conexão à internet. Isso proporciona flexibilidade e mobilidade aos usuários.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "No contexto de aplicativos de sincronização de nuvem instalados localmente, como OneDrive ou Google Drive, o que significa a sincronização automática?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Todos os arquivos do computador são enviados para a nuvem sem possibilidade de seleção",
+          "correct": false,
+          "explanation": "Incorreta. A maioria dos aplicativos de sincronização oferece ao usuário a capacidade de selecionar quais pastas ou arquivos deseja sincronizar, permitindo um controle granular sobre o que é armazenado na nuvem e localmente. A sincronização de \"todos os arquivos sem possibilidade de seleção\" não é um padrão."
+        },
+        {
+          "id": "b",
+          "text": "A sincronização ocorre apenas quando o usuário executa manualmente o comando de backup",
+          "correct": false,
+          "explanation": "Incorreta. Isso descreve um processo de backup manual ou agendado, e não a sincronização automática. A sincronização automática opera de forma contínua ou quase contínua, reagindo às mudanças nos arquivos sem a necessidade de uma ação explícita do usuário para cada atualização."
+        },
+        {
+          "id": "c",
+          "text": "Os arquivos são compactados automaticamente antes de serem enviados para economizar espaço",
+          "correct": false,
+          "explanation": "Incorreta. Embora alguns serviços possam realizar compactação de arquivos para otimizar o armazenamento, a sincronização automática refere-se ao processo de manter os arquivos idênticos em diferentes locais, não primariamente à compactação."
+        },
+        {
+          "id": "d",
+          "text": "As alterações realizadas nos arquivos locais são automaticamente replicadas na nuvem e vice-versa, mantendo as versões atualizadas em ambos os locais",
+          "correct": true,
+          "explanation": "Correta. A sincronização automática, em aplicativos como OneDrive ou Google Drive, significa que qualquer alteração feita em um arquivo na máquina local é automaticamente detectada e replicada na nuvem. Da mesma forma, alterações feitas na nuvem (por outro dispositivo ou via interface web) são baixadas e aplicadas à cópia local do arquivo, garantindo que todas as versões estejam sempre atualizadas e consistentes em todos os locais sincronizados."
+        }
+      ],
+      "explanation": "Correta. A sincronização automática, em aplicativos como OneDrive ou Google Drive, significa que qualquer alteração feita em um arquivo na máquina local é automaticamente detectada e replicada na nuvem. Da mesma forma, alterações feitas na nuvem (por outro dispositivo ou via interface web) são baixadas e aplicadas à cópia local do arquivo, garantindo que todas as versões estejam sempre atualizadas e consistentes em todos os locais sincronizados.",
+      "difficulty": "easy",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Qual modelo de serviço em nuvem fornece infraestrutura computacional como servidores, armazenamento e recursos de rede, sendo comparável ao aluguel do 'chão de fábrica' para que o cliente construa suas próprias soluções?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "PaaS (Platform as a Service), que disponibiliza ambiente de desenvolvimento com ferramentas integradas",
+          "correct": false,
+          "explanation": "Incorreta. PaaS (Platform as a Service) fornece um ambiente completo para desenvolvimento, execução e gerenciamento de aplicações, incluindo sistemas operacionais, ferramentas de desenvolvimento e bancos de dados. É mais do que o \"chão de fábrica\", pois já inclui algumas ferramentas e o ambiente de trabalho, mas ainda permite que o cliente construa suas aplicações."
+        },
+        {
+          "id": "b",
+          "text": "IaaS (Infrastructure as a Service), que provê recursos computacionais básicos sob demanda",
+          "correct": true,
+          "explanation": "Correta. IaaS (Infrastructure as a Service) é o modelo que oferece os recursos computacionais mais básicos e fundamentais, como servidores virtuais, armazenamento, redes e sistemas operacionais, de forma flexível e sob demanda. O cliente tem controle sobre esses componentes e é responsável por instalar e gerenciar o sistema operacional, aplicações e dados. Essa é a analogia perfeita do \"aluguel do chão de fábrica\", onde o cliente recebe a infraestrutura bruta para construir suas próprias soluções."
+        },
+        {
+          "id": "c",
+          "text": "SaaS (Software as a Service), que oferece aplicativos prontos para uso imediato",
+          "correct": false,
+          "explanation": "Incorreta. SaaS (Software as a Service) oferece aplicações prontas para uso, onde o provedor gerencia toda a infraestrutura e a plataforma. O usuário final apenas utiliza o software, sem se preocupar com o \"chão de fábrica\" ou com a construção de soluções."
+        },
+        {
+          "id": "d",
+          "text": "DaaS (Data as a Service), que fornece acesso a conjuntos de dados estruturados",
+          "correct": false,
+          "explanation": "Incorreta. DaaS (Data as a Service) é um modelo que fornece dados sob demanda, geralmente para fins de análise, relatórios ou integração, e não a infraestrutura computacional subjacente para construir soluções."
+        }
+      ],
+      "explanation": "Correta. IaaS (Infrastructure as a Service) é o modelo que oferece os recursos computacionais mais básicos e fundamentais, como servidores virtuais, armazenamento, redes e sistemas operacionais, de forma flexível e sob demanda. O cliente tem controle sobre esses componentes e é responsável por instalar e gerenciar o sistema operacional, aplicações e dados. Essa é a analogia perfeita do \"aluguel do chão de fábrica\", onde o cliente recebe a infraestrutura bruta para construir suas próprias soluções.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "No modelo PaaS (Platform as a Service), além da infraestrutura básica, quais recursos adicionais são disponibilizados para os usuários?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sistemas operacionais, ferramentas de desenvolvimento, gerenciamento de banco de dados e recursos para análise de negócios",
+          "correct": true,
+          "explanation": "Correta. O modelo PaaS (Platform as a Service) oferece um ambiente completo para desenvolvimento, teste e gerenciamento de aplicações. Além da infraestrutura básica (servidores, rede, armazenamento), ele disponibiliza recursos como sistemas operacionais, ferramentas de desenvolvimento, gerenciamento de banco de dados e serviços para análise de negócios, permitindo que os desenvolvedores foquem na codificação e implantação de suas aplicações."
+        },
+        {
+          "id": "b",
+          "text": "Somente interfaces gráficas personalizáveis para criação de websites estáticos",
+          "correct": false,
+          "explanation": "Incorreta. Embora o PaaS possa ser utilizado para desenvolver e hospedar websites, a descrição de \"somente interfaces gráficas personalizáveis para criação de websites estáticos\" é muito restritiva e não abrange a amplitude dos recursos oferecidos pelo PaaS. Este modelo é uma plataforma robusta para o desenvolvimento de diversas aplicações, incluindo aplicações dinâmicas e complexas, não se limitando a sites estáticos ou apenas interfaces gráficas."
+        },
+        {
+          "id": "c",
+          "text": "Exclusivamente serviços de backup automático e recuperação de desastres",
+          "correct": false,
+          "explanation": "Incorreta. Embora serviços de backup automático e recuperação de desastres sejam funcionalidades importantes em ambientes de nuvem, eles não são os recursos adicionais que definem o PaaS. Esses serviços são mais comumente associados à infraestrutura (IaaS) ou são características gerais de resiliência em qualquer modelo de nuvem, não o foco principal do PaaS, que é o ambiente de desenvolvimento."
+        },
+        {
+          "id": "d",
+          "text": "Apenas aplicativos de produtividade prontos como editores de texto e planilhas",
+          "correct": false,
+          "explanation": "Incorreta. Aplicativos de produtividade prontos, como editores de texto e planilhas, são a principal característica do modelo SaaS (Software as a Service), onde o usuário consome o software já finalizado e hospedado na nuvem, sem se preocupar com a infraestrutura ou desenvolvimento."
+        }
+      ],
+      "explanation": "Correta. O modelo PaaS (Platform as a Service) oferece um ambiente completo para desenvolvimento, teste e gerenciamento de aplicações. Além da infraestrutura básica (servidores, rede, armazenamento), ele disponibiliza recursos como sistemas operacionais, ferramentas de desenvolvimento, gerenciamento de banco de dados e serviços para análise de negócios, permitindo que os desenvolvedores foquem na codificação e implantação de suas aplicações.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "No modelo SaaS (Software as a Service), qual é a principal característica do serviço oferecido?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Disponibiliza aplicativos completos e prontos para uso, hospedados na nuvem, acessíveis via navegador ou cliente específico",
+          "correct": true,
+          "explanation": "Correta. No modelo SaaS (Software as a Service), a principal característica é a disponibilização de aplicativos completos e prontos para uso, que são hospedados e gerenciados pelo provedor na nuvem. Os usuários acessam esses softwares via internet, geralmente por um navegador web ou um cliente específico, sem a necessidade de instalar, manter ou gerenciar a infraestrutura subjacente ou o próprio software."
+        },
+        {
+          "id": "b",
+          "text": "Oferece apenas a infraestrutura de servidores para instalação de software próprio",
+          "correct": false,
+          "explanation": "Incorreta. A oferta exclusiva de infraestrutura de servidores para instalação de software próprio é a definição do modelo IaaS (Infrastructure as a Service). Neste modelo, o usuário tem maior controle sobre o sistema operacional e as aplicações, mas ainda precisa gerenciá-los."
+        },
+        {
+          "id": "c",
+          "text": "Provê acesso a bancos de dados relacionais para análise de grandes volumes de informação",
+          "correct": false,
+          "explanation": "Incorreta. Embora muitas aplicações SaaS utilizem bancos de dados relacionais e possam envolver análise de grandes volumes de informação, a provisão de acesso a bancos de dados relacionais não é a principal característica que define o SaaS. Essa função é mais comumente associada a serviços de banco de dados como parte de IaaS ou PaaS, ou como um serviço de dados independente."
+        },
+        {
+          "id": "d",
+          "text": "Fornece ferramentas de desenvolvimento para que o usuário crie suas próprias aplicações",
+          "correct": false,
+          "explanation": "Incorreta. A oferta de ferramentas de desenvolvimento para que o usuário crie suas próprias aplicações é a característica central do modelo PaaS (Platform as a Service), e não do SaaS. No PaaS, o foco é a plataforma para construção de software."
+        }
+      ],
+      "explanation": "Correta. No modelo SaaS (Software as a Service), a principal característica é a disponibilização de aplicativos completos e prontos para uso, que são hospedados e gerenciados pelo provedor na nuvem. Os usuários acessam esses softwares via internet, geralmente por um navegador web ou um cliente específico, sem a necessidade de instalar, manter ou gerenciar a infraestrutura subjacente ou o próprio software.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual protocolo é utilizado especificamente para transferência e gerenciamento de arquivos grandes entre computadores, sem necessariamente passar por navegadores web?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "IMAP, protocolo para acesso remoto a mensagens em servidores de e-mail",
+          "correct": false,
+          "explanation": "Incorreta. O IMAP (Internet Message Access Protocol) é um protocolo usado para acessar e gerenciar mensagens de e-mail em um servidor. Ele permite que o usuário manipule as mensagens diretamente no servidor (ler, mover, excluir), mas não é um protocolo para transferência geral de arquivos entre computadores."
+        },
+        {
+          "id": "b",
+          "text": "FTP, protocolo projetado para upload e download de arquivos com recursos de gerenciamento",
+          "correct": true,
+          "explanation": "Correta. O FTP (File Transfer Protocol) é um protocolo de rede padrão utilizado para a transferência de arquivos entre um cliente e um servidor em uma rede de computadores. Ele é projetado para upload e download de arquivos, incluindo grandes volumes, e oferece recursos de gerenciamento de diretórios e permissões. Pode ser utilizado através de clientes FTP dedicados, permitindo transferências diretas sem a necessidade de um navegador web."
+        },
+        {
+          "id": "c",
+          "text": "SMTP, protocolo dedicado ao envio de mensagens de correio eletrônico",
+          "correct": false,
+          "explanation": "Incorreta. O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para o envio de mensagens de correio eletrônico entre servidores e do cliente para o servidor. Sua função é estritamente relacionada à entrega de e-mails, não à transferência geral de arquivos."
+        },
+        {
+          "id": "d",
+          "text": "HTTP, protocolo padrão para transferência de hipertexto na web",
+          "correct": false,
+          "explanation": "Incorreta. O HTTP (Hypertext Transfer Protocol) é o protocolo fundamental para a transferência de informações na World Wide Web, projetado para documentos de hipertexto e outros recursos web. Embora seja usado para baixar arquivos através de navegadores, ele não é \"especificamente\" para o gerenciamento de arquivos grandes ou para transferências diretas entre computadores fora do contexto da web."
+        }
+      ],
+      "explanation": "Correta. O FTP (File Transfer Protocol) é um protocolo de rede padrão utilizado para a transferência de arquivos entre um cliente e um servidor em uma rede de computadores. Ele é projetado para upload e download de arquivos, incluindo grandes volumes, e oferece recursos de gerenciamento de diretórios e permissões. Pode ser utilizado através de clientes FTP dedicados, permitindo transferências diretas sem a necessidade de um navegador web.",
+      "difficulty": "medium",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-9",
+      "question": "Considerando a arquitetura de serviços de e-mail, qual é a sequência correta de protocolos utilizados desde o envio de uma mensagem até seu recebimento final pelo destinatário?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "HTTP para envio do remetente ao servidor, FTP entre servidores, e HTTPS para entrega ao destinatário",
+          "correct": false,
+          "explanation": "Incorreta. HTTP e HTTPS são protocolos para comunicação web, não para a arquitetura principal de envio e recebimento de e-mails. FTP é para transferência de arquivos, não para mensagens de e-mail."
+        },
+        {
+          "id": "b",
+          "text": "IMAP para envio inicial, SMTP para transferência entre servidores, e POP3 obrigatoriamente para recebimento",
+          "correct": false,
+          "explanation": "Incorreta. O IMAP é um protocolo de recebimento/acesso a e-mails, não de envio inicial. O SMTP é utilizado para transferência entre servidores, mas o POP3 não é obrigatoriamente o único protocolo para recebimento, pois o IMAP também desempenha essa função."
+        },
+        {
+          "id": "c",
+          "text": "POP3 para upload da mensagem, HTTP para roteamento entre servidores, e SMTP para download pelo destinatário",
+          "correct": false,
+          "explanation": "Incorreta. O POP3 é um protocolo para recebimento/download de mensagens, não para upload. HTTP não é usado para roteamento de e-mails entre servidores. O SMTP é para envio/transferência, não para download final pelo destinatário."
+        },
+        {
+          "id": "d",
+          "text": "SMTP para envio do remetente ao servidor de origem, SMTP entre servidores, e POP3 ou IMAP para entrega ao cliente destinatário",
+          "correct": true,
+          "explanation": "Correta. A sequência correta de protocolos na arquitetura de e-mail é a seguinte: o remetente utiliza o SMTP (Simple Mail Transfer Protocol) para enviar a mensagem para seu servidor de e-mail de origem. Em seguida, o SMTP é usado para transferir a mensagem entre os servidores de e-mail até que ela chegue ao servidor do destinatário. Finalmente, o destinatário utiliza o POP3 (Post Office Protocol versão 3) ou o IMAP (Internet Message Access Protocol) para baixar ou acessar a mensagem de seu servidor de e-mail para seu cliente de e-mail."
+        }
+      ],
+      "explanation": "Correta. A sequência correta de protocolos na arquitetura de e-mail é a seguinte: o remetente utiliza o SMTP (Simple Mail Transfer Protocol) para enviar a mensagem para seu servidor de e-mail de origem. Em seguida, o SMTP é usado para transferir a mensagem entre os servidores de e-mail até que ela chegue ao servidor do destinatário. Finalmente, o destinatário utiliza o POP3 (Post Office Protocol versão 3) ou o IMAP (Internet Message Access Protocol) para baixar ou acessar a mensagem de seu servidor de e-mail para seu cliente de e-mail.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-10",
+      "question": "Qual é a principal vantagem do protocolo IMAP em relação ao POP3 quando um usuário acessa seus e-mails de múltiplos dispositivos?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "IMAP consome menos largura de banda por comprimir todas as mensagens antes da transmissão",
+          "correct": false,
+          "explanation": "Incorreta. Embora a largura de banda seja uma consideração importante, a principal vantagem do IMAP sobre o POP3 não reside em menor consumo de banda por compressão. Na verdade, o IMAP pode, em alguns cenários, consumir mais banda inicialmente ao sincronizar metadados, e a compressão não é uma característica inerente ou exclusiva do IMAP que o diferencie fundamentalmente do POP3 nesse aspecto."
+        },
+        {
+          "id": "b",
+          "text": "IMAP mantém as mensagens sincronizadas no servidor, permitindo que alterações feitas em um dispositivo sejam refletidas em todos os outros",
+          "correct": true,
+          "explanation": "Correta. A principal vantagem do protocolo IMAP (Internet Message Access Protocol) em relação ao POP3 (Post Office Protocol versão 3) é que o IMAP mantém as mensagens de e-mail sincronizadas diretamente no servidor. Isso significa que qualquer alteração feita em um e-mail (como lê-lo, movê-lo para uma pasta, excluí-lo ou marcá-lo) em um dispositivo será refletida no servidor e, consequentemente, em todos os outros dispositivos que acessam a mesma conta via IMAP. O POP3, por padrão, baixa as mensagens para o dispositivo local e as remove do servidor, dificultando a sincronização entre múltiplos dispositivos."
+        },
+        {
+          "id": "c",
+          "text": "IMAP criptografa automaticamente todas as mensagens, enquanto POP3 transmite em texto plano",
+          "correct": false,
+          "explanation": "Incorreta. Nem o IMAP nem o POP3 fornecem criptografia de forma intrínseca. A segurança e a criptografia (como SSL/TLS) são implementadas em uma camada de transporte (resultando em IMAPS ou POP3S) ou através de configurações do servidor/cliente de e-mail, e não como uma característica diferencial fundamental dos protocolos em si."
+        },
+        {
+          "id": "d",
+          "text": "IMAP permite acesso simultâneo de até 10 dispositivos, enquanto POP3 limita a 2 conexões",
+          "correct": false,
+          "explanation": "Incorreta. Não há um limite fixo de dispositivos (como 10 para IMAP e 2 para POP3) imposto pelos protocolos em si. A capacidade do IMAP de permitir acesso e sincronização de múltiplos dispositivos é uma vantagem de seu design, que gerencia as mensagens no servidor, ao contrário do POP3, que tende a baixar e remover as mensagens, tornando-o menos adequado para uso em vários dispositivos."
+        }
+      ],
+      "explanation": "Correta. A principal vantagem do protocolo IMAP (Internet Message Access Protocol) em relação ao POP3 (Post Office Protocol versão 3) é que o IMAP mantém as mensagens de e-mail sincronizadas diretamente no servidor. Isso significa que qualquer alteração feita em um e-mail (como lê-lo, movê-lo para uma pasta, excluí-lo ou marcá-lo) em um dispositivo será refletida no servidor e, consequentemente, em todos os outros dispositivos que acessam a mesma conta via IMAP. O POP3, por padrão, baixa as mensagens para o dispositivo local e as remove do servidor, dificultando a sincronização entre múltiplos dispositivos.",
+      "difficulty": "hard",
+      "topic": "Informática",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "07_253610_Internet - Rede de Computadores VII.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T21:59:47"
+}

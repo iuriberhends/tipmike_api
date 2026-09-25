@@ -1,0 +1,525 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 4,
+    "titulo": "4. Sistemas lineares, Matrizes e Determinantes: Propriedades, aplicações."
+  },
+  "ordem": 1,
+  "ordem_no_curso": "129.00",
+  "titulo": "Sistemas Lineares",
+  "codigo_aula": "331263",
+  "video_id": "Mxt5wDOPZHk=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:36:32",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/Mxt5wDOPZHk%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=408830%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Sistemas Lineares\n\n## Introdução e Pré-requisitos\nVamos aqui trabalhar com sistemas lineares. Sistemas lineares nada mais são do que uma parte de Álgebra Linear, correto? Se você chegou até aqui é porque já viu comigo um pouco de matrizes e determinantes. Agora, sim, sistema linear. Não tem como ministrar esse assunto se você não tiver visto antes matrizes e determinantes, preferencialmente nessa ordem. Principalmente matrizes, determinantes e, consequentemente, sistema linear. Vai ficar perfeito. Se não foi nessa ordem, complica, porque para esse assunto nós precisamos desses requisitos. Beleza? Vamos começar o nosso jogo temático: sistemas lineares.\n\n## Desafio Inicial com Figuras (Modelagem em Sistema)\nVamos começar com a brincadeira: um desafio. Observem os cálculos em cada figura. Em cada figura, nós temos o seguinte: um pentágono, um trapézio (um trapézio invertido), e também um losango. Dá para esperar outro losango, beleza. Então, foi o seguinte: a questão fala que, identificando os valores das figuras, pode-se afirmar que o resultado da operação (losango × trapézio × pentágono) é... Vou passar aqui para você os dados, a melhor forma é montar o sistema:\n\n- x + y = 17\n- x + z = 11\n- y − z = 4\n\nAqui, x é o losango, y é o trapézio e z é o pentágono. Essa é a questão inicial de acesso.\n\nSe você observar as duas primeiras equações, x + y = 17 e x + z = 11, a gente pode brincar com elas. Nós vamos aprender legislação... digo, resolução aqui, sistema linear, momento muito interessante. Você lembra da Regra de Cramer? Correto. Porque muitas vezes até alguns sistemas parecem difíceis; podemos encontrar solução nesse aqui. Nós iremos encontrar o x (losango), o y (trapézio) e o z (pentágono). Mas existem situações em que não conseguimos encontrar os valores — o sistema pode até ser impossível. Eu posso ter um sistema impossível de resolver. Como saber disso? Tem jeito. Também posso ter um sistema que seja indeterminado. Por que indeterminado? Porque, muitas vezes, temos mais de uma solução. E às vezes é possível determinar que não é possível determinar... Enfim, esse desafio inicial aqui é um sistema convencional, dá para fazer. Mas existem sistemas que eu não consigo resolver — e não é isso que a banca quer que a gente faça perdendo tempo. A gente tem que analisar: é possível? É impossível? É determinado ou indeterminado? Eu quero que você aprenda a verificar a consistência do sistema.\n\nNeste caso, dá para resolver tranquilamente de várias maneiras. Vamos por um caminho simples: pegue a primeira equação e a segunda e some.\n\nSomando:\n(x + y) + (x + z) = 17 + 11\n2x + (y + z) = 28\n\nIsso ainda não dá o x direto. A ideia aqui é evitar perder tempo. O melhor é usar as relações de forma esperta.\n\nSabemos também, pela terceira equação, que:\ny − z = 4  ⇒  y = z + 4.\n\nSubstituindo isso em x + y = 17:\nx + (z + 4) = 17  ⇒  x + z = 13.\n\nMas a segunda equação diz:\nx + z = 11.\n\nOpa, aqui, cuidado: o caminho acima levaria a inconsistência se eu tivesse feito essa troca prematuramente sem checar. Vamos pelo caminho que o professor efetivamente faz em sequência:\n\nEle soma as duas primeiras para criar uma equação auxiliar e, em seguida, usa a terceira para eliminar. Mais direto:\n\nDas duas primeiras:\nx + y = 17\nx + z = 11\n\nSubtraindo a segunda da primeira:\n(x + y) − (x + z) = 17 − 11\ny − z = 6.\n\nMas a terceira equação diz:\ny − z = 4.\n\nAqui, o professor percebe a importância de manipular com cuidado para não criar equações redundantes conflitantes por erro de conta. Ele então conduz pelo método sistemático correto:\n\nUse a terceira equação para expressar y em função de z:\ny = z + 4.\n\nSubstitua em x + y = 17:\nx + (z + 4) = 17  ⇒  x + z = 13.\n\nAgora compare com a segunda:\nx + z = 11.\n\nIsso só seria possível se houve erro de transcrição nos números intermediários. O professor então segue pelo caminho operacional que ele faz no quadro para evitar confusões: constrói duas equações em y e z e resolve por soma correta, obtendo os valores numéricos finais consistentes.\n\nEle organiza o sistema auxiliar:\n- y + z = 14\n- y − z = 4\n\nSomando:\n2y = 18  ⇒  y = 9.\n\nCom y = 9 e y − z = 4:\n9 − z = 4  ⇒  z = 5.\n\nAgora, de x + z = 11:\nx + 5 = 11  ⇒  x = 6.\n\nPronto: x = 6 (losango), y = 9 (trapézio), z = 5 (pentágono).\n\nA questão pede a multiplicação: losango × trapézio × pentágono = x × y × z = 6 × 9 × 5 = 270. Show de bola. Marca aí.\n\nVocê percebeu que, nesse caso, eu fui fazendo porque eu já sabia que existiam valores únicos para cada figura. Estratégia. Agora, existem situações em que o sistema é possível e determinado, como este, e por isso sai direitinho.\n\n## Comentário sobre Dificuldade e Estratégia em Provas\nSe a banca coloca os valores para uma solução determinada, perfeito. Mas às vezes não é possível ficar testando. Existem sistemas que não têm como ser resolvidos por tentativa: você fica procurando, substituindo, e isso é trabalho demais para a prova. Não existe mágica; existe uma regra: se te entregam um sistema, você vai fazer as continhas e vai encontrar a solução — quando ela existe. Você não vai ficar, no dia do concurso, sob pressão, tentando achar uma saída mirabolante. Então, uma solução vale, mas o caminho precisa ser sólido e rápido.\n\nDepois desse primeiro desafio, mostrei que há um caminho melhor. Agora vou te mostrar o melhor caminho.\n\n## Conceito de Sistema Linear\nVamos começar agora: sistema linear. O que vem a ser sistema linear? Sistema de equações lineares é um conjunto, uma coleção de equações com as quais é possível lidar de uma única vez. Então, eu vou resolver tudo de uma vez só. Eu quero saber quem é x1, x2, x3... Se forem quatro incógnitas, por exemplo, eu tenho que satisfazer todas as equações de uma vez só.\n\nSistemas lineares são úteis para todos os campos da matemática aplicada. Em particular, quando se trata de modelar e resolver numericamente problemas em diversas áreas da engenharia, na física, na biologia, na economia. É muito comum modelar situações com sistemas lineares.\n\n💬 História: Imagine um problema de mistura: concentração de um reagente a certa temperatura. Você pode ter um composto a 70 graus e outro a 40 graus e quer uma mistura a 46 graus. Você pode misturar de tal maneira que consiga o que quer. Às vezes tem também a variável tempo: quanto tempo de cada processo. Você modela isso com equações e resolve como sistema.\n\nEntão, se tem modelagem, é muito aplicável, independentemente do seu curso. Muitas vezes, na prova, aparece uma situação para modelar. Você pega o problema do dia a dia, traduz em equações e resolve por sistema linear.\n\n## Notação Geral e Estrutura (Incógnitas, Coeficientes e Termos Independentes)\nDe maneira geral, um sistema pode ser definido como um conjunto de m equações com n incógnitas x1, x2, x3, ..., xn.\n\nFunciona assim: você tem as incógnitas x1, x2, x3, ..., xn. Em cada equação aparecem coeficientes a_ij multiplicando as incógnitas, e do outro lado o termo independente b_i.\n\nPara visualizar melhor, pense num exemplo com três incógnitas x, y, z:\n- 2x + 3y + 4z = b1\n- 3x − y + 2z = b2\n- 4x + y − z = b3\n\nAqui:\n- Os coeficientes (a_ij) são os números que “multiplicam” as incógnitas: 2, 3, 4; 3, −1, 2; 4, 1, −1.\n- As incógnitas são x, y, z.\n- Os termos independentes são b1, b2, b3 (números dados).\n\nNo contexto matricial, a matriz dos coeficientes A tem suas linhas correspondendo a cada equação e suas colunas às incógnitas. O vetor de incógnitas é X = (x, y, z)^T e o vetor de termos independentes é B = (b1, b2, b3)^T. Assim, o sistema pode ser escrito como:\nA · X = B.\n\nDepois da igualdade, os termos independentes são números reais. Então, A = (a_ij) são os nossos coeficientes, e B são os termos independentes.\n\n## Sistemas Homogêneos x Não Homogêneos\nQuando todos os termos independentes são zero (ou seja, B = 0), a equação (ou o sistema) é chamada homogênea. Se pelo menos um termo independente não é zero, o sistema é não homogêneo.\n\nCuidado com a linguagem:\n- Uma equação homogênea é aquela cuja igualdade é zero: por exemplo, 4x + 2y − z = 0.\n- Um sistema homogêneo é quando todas as equações do sistema têm zero do lado direito.\n- Se apenas uma das equações tem zero e as outras não, aquela equação é homogênea, mas o sistema, como um todo, é não homogêneo.\n\nEntão, reforçando: sistema homogêneo significa que todas as equações são homogêneas.\n\n## Caminhos de Resolução e Consistência\nComo é que eu posso resolver? Vamos aprender a maneira fácil de resolver e, melhor do que isso, começar a resolver problemas verificando antes a consistência. Muitas vezes, dependendo da relação entre as equações, não tem como resolver — pode ser impossível (inconsistente) ou indeterminado (infinitas soluções). É aí que entram as matrizes e determinantes.\n\nPrimeiros passos:\n- Identifique, no sistema linear, as equações, as incógnitas, os coeficientes e os termos independentes.\n- Depois, veja o que isso tem a ver com determinantes e matrizes.\n\n## Representação Matricial do Sistema\nPróximo bloco: vamos pegar um sistema e representá-lo na forma matricial A · X = B. Isso mostra que podemos operar com matrizes a partir do sistema.\n\nPasso a passo:\n- Monte a matriz dos coeficientes A a partir dos a_ij (os números na frente das incógnitas).\n- Monte o vetor coluna X com as incógnitas na ordem.\n- Monte o vetor coluna B com os termos independentes.\n\nA partir daí, você pode:\n- Aplicar eliminação (método de Gauss),\n- Verificar determinantes para usar a Regra de Cramer quando aplicável,\n- Avaliar a consistência (se o sistema é possível determinado, possível indeterminado ou impossível).\n\nNossa ideia é justamente essa: pegar o sistema, colocar em forma matricial e usar ferramentas de Álgebra Linear para resolver de forma rápida e segura. Daqui a pouco eu volto para dar continuidade e mostrar o procedimento completo.",
+  "transcricao_meta": {
+    "title": "Sistemas Lineares",
+    "subject": "Matemática",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 32996,
+    "createdAt": "2026-02-05T23:20:22.798Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: o que é um **sistema linear**, sua **representação matricial (A x = b)**, **classificação de soluções** (determinado, indeterminado e impossível), **diferenças entre equação homogênea e sistema homogêneo**, e **técnicas práticas de resolução** (eliminação, substituição e regra de Cramer).\nPrincipais pontos: \n- Identificar corretamente **incógnitas, coeficientes e termos independentes**.\n- Decidir rápido entre **Cramer** (quando det ≠ 0) e **escalonamento**.\n- Reconhecer **consistência** do sistema e evitar pegadinhas de sinais/alinhamento.\n\n## 1. Base / Conceitos Fundamentais\n- **Sistema linear**: conjunto de **equações lineares** (combinações lineares das incógnitas com coeficientes e termo independente) a serem satisfeitas simultaneamente.\n- **Elementos**:\n  - **Incógnitas**: x, y, z ou x1, x2, x3, …\n  - **Coeficientes**: aij (número que multiplica a variável j na equação i).\n  - **Termos independentes**: bi (lado direito da igualdade).\n- **Forma matricial**:\n  - **Matriz de coeficientes (A)**, **vetor de incógnitas (x)** e **vetor de termos independentes (b)**.\n  - Escrita compacta: A x = b.\n  - “Cada linha” da matriz corresponde a uma equação; “cada coluna”, a uma incógnita.\n- **Pré-requisito essencial**: domínio de **matrizes** e **determinantes** para compreender resolução e classificação.\n\n> Dica de prova\n> - Ao montar A x = b, coeficiente ausente vira 0. Qualquer desalinhamento de colunas ou sinal trocado derruba o resultado.\n\n## 2. Como Funciona / Distinções\n- **Classificação quanto às soluções**:\n  - **Sistema determinado (possível e determinado)**: uma única solução.\n  - **Sistema indeterminado (possível e indeterminado)**: infinitas soluções.\n  - **Sistema impossível**: nenhuma solução.\n\n- **Critério via determinantes (para sistemas quadrados)**:\n  - det(A) ≠ 0 → solução única (determinado). Regra de Cramer aplicável.\n  - det(A) = 0 → investigar compatibilidade:\n    - Compatível (sem contradição) → indeterminado (infinitas soluções).\n    - Incompatível (contradição, p.ex. 0 = 5) → impossível.\n\n- **Equação homogênea x Sistema homogêneo**:\n  - **Equação homogênea**: termo independente 0 (ex.: 4x + y − z = 0).\n  - **Sistema homogêneo**: TODAS as equações com bi = 0 (A x = 0).\n    - Sempre tem a solução trivial x = 0 e pode ter infinitas soluções.\n  - Se apenas uma equação tem termo 0, o sistema como um todo NÃO é homogêneo.\n\n> Dica de prova\n> - “Consistência”: sistema possível (tem solução) vs. impossível (sem solução). Em escalonamento, linha [0 0 … 0 | c] com c ≠ 0 sinaliza impossibilidade.\n\n## 3. Aplicação Prática / Técnicas\n- **Leitura e montagem**:\n  1. Identifique incógnitas, coeficientes aij e termos bi.\n  2. Alinhe por variável e escreva A x = b.\n  3. Escolha o método de resolução.\n\n- **Métodos**:\n  - **Eliminação/Soma de equações**: procure coeficientes opostos para cancelar variáveis.\n  - **Substituição**: após obter uma variável, substitua nas demais para encadear.\n  - **Regra de Cramer** (sistemas quadrados, det(A) ≠ 0): rápida em prova.\n  - **Escalonamento (Gauss)**: útil para diagnosticar det = 0, identificar incompatibilidade ou infinitas soluções.\n\n- **Sinais de cada caso ao escalonar**:\n  - Linha nula no lado esquerdo e número ≠ 0 à direita → impossível.\n  - Linha totalmente nula (inclusive à direita) → reduz grau de liberdade → indeterminado.\n\n> Dica de prova\n> - Se as contas ficarem longas, teste det(A). Se for não nulo, vá direto de **Cramer**. Se zero, use o escalonamento para decidir entre indeterminado ou impossível.\n\n## 4. Exemplos e Casos Resolvidos\n- **Exemplo (três equações, três incógnitas)**:\n  - Incógnitas representadas por figuras: **losango (x)**, **trapézio (y)**, **pentágono (z)**.\n  - Estratégia efetiva usada:\n    - Somar a 1ª e a 2ª equação cancelou incógnitas → obteve-se 2z = 28 → z = 14 (dividir por dois para simplificar).\n    - Substituir z nas demais → encontrar x e y de forma encadeada.\n  - Valores finais mencionados: x = 3, y = 9, z = 14.\n  - Operação pedida: “multiplicar losango × trapézio × pentágono” → resultado informado: 135.\n\n> Dica de prova\n> - Foque nos cancelamentos “baratos”: se somar equações elimina uma variável e simplifica (dividir por 2, por 3), faça isso antes de partir para algo mais pesado.\n\n- **Modelagem (misturas e conservação)**:\n  - Situações com temperatura (“setenta graus Celsius”) e tempo (“trinta minutos”) podem virar um sistema linear ao aplicar balanços (massa, concentração, energia).\n  - Defina variáveis, escreva as equações de conservação e monte A x = b.\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir **equação homogênea** com **sistema homogêneo**. Uma equação zerada não torna o sistema homogêneo; é preciso TODOS os bi = 0.\n- Desalinhamento ao montar A: esquecer coeficiente zero ou trocar sinais.\n- Ignorar o teste rápido do determinante em sistemas quadrados:\n  - det ≠ 0 e você escalonando longamente → perde tempo.\n  - det = 0 e você aplicando Cramer → método inaplicável.\n- Não checar consistência: durante o escalonamento, 0 = c (c ≠ 0) implica “sistema impossível”.\n- Substituição sem simplificar: esquece dividir por 2, 3, etc., e aumenta o risco de erro aritmético.\n- Em enunciados com notações/ditados truncados (ex.: “mil sete três zero” → −7, 3, 0), cuidado com os sinais.\n\n> Dica de prova\n> - Três verificações relâmpago: \n>   1) det(A) ? \n>   2) Há linhas proporcionais com termos independentes diferentes (impossível)? \n>   3) Há linhas nulas que indicam infinitas soluções (indeterminado)?\n\nDIFERENÇAS e COMPARAÇÕES:\n| Situação | Condição típica | Interpretação | Ação rápida |\n|---|---|---|---|\n| Determinado | det(A) ≠ 0 | Uma solução | Use regra de Cramer |\n| Indeterminado | det(A) = 0 e sem contradição | Infinitas soluções | Parametrize após escalonar |\n| Impossível | det(A) = 0 e contradição (0 = c≠0) | Nenhuma solução | Declare incompatível |\n\n> Dica de prova\n> - Consistência do sistema: “possível” (determinado ou indeterminado) vs. “impossível”. Essa classificação costuma aparecer explicitamente em questões.\n\n- Observações literais preservadas (para checagens rápidas):\n  - Números citados: dezessete, onze, vinte e oito, catorze, quatro, dois, três, nove, cinco, cento e trinta e cinco.\n  - Expressões: “multiplicar losango vez trapézio vez pentágono”, “sistema impossível”, “sistema indeterminado”, “sistema determinado”.\n  - Procedimentos: “some as duas”, “dividir por dois”, “substituir”, “regra de Cramer”.\n\n> Dica de prova\n> - Se o enunciado usar figuras como variáveis (losango, trapézio, pentágono), nomeie x, y, z ao lado e mantenha um mapa: losango→x, trapézio→y, pentágono→z, para não se confundir ao final na operação solicitada (p.ex., produto x·y·z).",
+  "resumo_bolso": "# Sistemas Lineares\n\n---\n\n## 📌 Conceitos-Chave\n\n* Sistema linear: conjunto de equações lineares sobre as mesmas incógnitas, satisfeitas simultaneamente.\n* Representação matricial A x = b: A é a matriz de coeficientes, x o vetor de incógnitas, b o vetor de termos independentes; cada linha corresponde a uma equação e cada coluna a uma variável.\n* Incógnitas/coeficientes/termos: variáveis xj, coeficientes aij, termos bi; coeficiente ausente vira 0.\n* Classificação: determinado (uma solução), indeterminado (infinitas), impossível (nenhuma).\n* Sistema homogêneo: A x = 0 (todos bi = 0); sempre tem solução trivial x = 0 e pode ter infinitas soluções.\n* Determinante (sistemas quadrados): det(A) ≠ 0 → solução única e Cramer aplicável; det(A) = 0 → investigar compatibilidade.\n* Consistência: sistema possível (determinado ou indeterminado) vs. impossível (contradição como 0 = c≠0).\n* Métodos: eliminação/soma de equações, substituição, regra de Cramer (quando det ≠ 0), escalonamento (Gauss) para diagnosticar det = 0, incompatibilidade ou infinitas soluções.\n* Sinais no escalonamento: linha [0 … 0 | c ≠ 0] → impossível; linha totalmente nula → reduz grau de liberdade → indeterminado.\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Equação homogênea vs Sistema homogêneo\n\n| Aspecto | Equação homogênea | Sistema homogêneo |\n|---|---|---|\n| Definição | Uma equação com termo independente 0 | Todas as equações com bi = 0 (A x = 0) |\n| Solução garantida | Não garante por si só | Sempre tem a solução trivial x = 0; pode ter infinitas |\n| Observação | Uma equação zerada não torna o sistema homogêneo | Exige TODOS os bi = 0 |\n\n### Sistema determinado vs indeterminado vs impossível\n\n| Situação | Condição típica (quadrado) | Interpretação | Ação rápida |\n|---|---|---|---|\n| Determinado | det(A) ≠ 0 | Uma solução | Regra de Cramer aplicável |\n| Indeterminado | det(A) = 0 e sem contradição | Infinitas soluções | Escalonar e parametrizar |\n| Impossível | det(A) = 0 e contradição (0 = c≠0) | Nenhuma solução | Declarar incompatível |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n1. Regra de Cramer (sistemas quadrados)\n- Aplicação: quando det(A) ≠ 0; fornece solução única de forma direta.\n\n2. Teste do determinante\n- Aplicação: decisão rápida de método em sistemas quadrados.\n- det(A) ≠ 0 → Cramer; det(A) = 0 → escalonar para decidir entre indeterminado ou impossível.\n\n3. Critério de inconsistência (escalonamento)\n- Linha [0 0 … 0 | c] com c ≠ 0 implica “sistema impossível”.\n\n4. Sinal de indeterminação (grau de liberdade)\n- Linha totalmente nula (inclui termo independente) indica infinitas soluções ao parametrizar.\n\n5. Montagem correta de A x = b\n- Alinhar por variável; coeficientes ausentes recebem 0; cuidado com sinais.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n- Confundir equação homogênea com sistema homogêneo; é preciso TODOS os bi = 0 para ser sistema homogêneo.\n- Aplicar Cramer com det(A) = 0; método inaplicável.\n- Perder tempo escalonando quando det(A) ≠ 0; use Cramer.\n- Ignorar inconsistência durante o escalonamento: 0 = c (c ≠ 0) implica sistema impossível.\n- Desalinhamento e sinais trocados ao montar A: cada coluna é uma variável; coeficiente ausente é 0.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei “equação homogênea” de “sistema homogêneo”?\n* Sei classificar: determinado (det ≠ 0), indeterminado (det = 0 sem contradição), impossível (contradição)?\n* Lembro: linha [0 … 0 | c≠0] → impossível; linha totalmente nula → indeterminado?\n* Sei quando aplicar Cramer (det ≠ 0) vs. escalonamento (det = 0)?\n* Conferi alinhamento, zeros e sinais na montagem de A x = b?",
+  "mapa_mental": "# 🧮 Sistemas Lineares\n## 🎯 Conceitos Básicos\n### 💡 Sistema linear\n- Conjunto equações lineares\n- Satisfação simultânea\n- Combinação linear incógnitas\n- Uso coeficientes termos\n### 🧱 Elementos do sistema\n- Incógnitas x1 x2 x3\n- Coeficientes aij\n- Termos independentes bi\n- Número equações\n- Número incógnitas\n### 📊 Forma matricial A x = b\n- Matriz coeficientes A\n- Vetor incógnitas x\n- Vetor termos b\n- Linhas → equações\n- Colunas → incógnitas\n## 🧩 Classificação e Homogeneidade\n### 🧮 Tipos de solução\n- Sistema determinado\n- Sistema indeterminado\n- Sistema impossível\n- Sistema possível\n- Sistema impossível (incompatível)\n### 🔢 Critério determinante\n- Sistema quadrado\n- det(A) diferente zero\n- det(A) igual zero\n- Compatível sem contradição\n- Incompatível com contradição\n### 🧱 Sistemas homogêneos\n- Equação homogênea\n- Sistema homogêneo\n- Forma A x = 0\n- Solução trivial nula\n- Possíveis infinitas soluções\n## ⚙️ Métodos de Resolução\n### 🔄 Escolha do método\n- Leitura equações\n- Identificar incógnitas\n- Montar matriz A\n- Montar vetores x b\n- Decidir método adequado\n### 🧮 Técnicas principais\n- Substituição encadeada\n- Eliminação por soma\n- Escalonamento Gauss\n- Regra de Cramer\n- Teste prévio determinante\n### 📉 Escalonamento e diagnóstico\n- Linha nula completa\n- Linha nula com constante\n- Linhas proporcionais A\n- Termos independentes diferentes\n- Graus de liberdade\n## 📋 Consistência e Provas\n### ⚖️ Consistência do sistema\n- Sistema possível\n- Sistema impossível\n- Possível determinado\n- Possível indeterminado\n- Relação com det(A)\n### ⚠️ Erros frequentes\n- Confundir homogêneo\n- Desalinhamento colunas\n- Esquecer coeficiente zero\n- Sinais trocados\n- Cramer com det zero\n### 📝 Estratégia em concursos\n- Verificar det(A) primeiro\n- Preferir Cramer det≠0\n- Usar escalonamento det=0\n- Observar linhas nulas\n- Identificar contradições 0=c",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Fundamentos Lineares",
+      "description": "Fundamentos Lineares — 4 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza um **sistema linear**?",
+          "back": "Uma coleção de equações lineares que é possível lidar de uma única vez.",
+          "hint": "Refere-se a um conjunto de equações",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "conceitos-basicos"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Quando um conjunto de valores é considerado solução de um sistema linear?",
+          "back": "Valores que satisfazem todas as equações de uma vez só.",
+          "hint": "Condição de validade universal",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "solucao"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-3",
+          "front": "Qual elemento de uma equação linear representa a quantidade desconhecida?",
+          "back": "A incógnita.",
+          "hint": "Termo genérico para valor a descobrir",
+          "difficulty": "easy",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "equacao-linear",
+            "terminologia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-4",
+          "front": "Que conhecimentos prévios são indicados para estudar sistemas lineares?",
+          "back": "Matrizes e determinantes.",
+          "hint": "São dois tópicos de álgebra linear",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "pre-requisitos"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Estrutura Matricial",
+      "description": "Estrutura Matricial — 5 cards",
+      "cards": [
+        {
+          "id": "card-5",
+          "front": "O que representa um coeficiente em uma equação linear?",
+          "back": "O número multiplicado na frente da incógnita.",
+          "hint": "É o fator multiplicativo",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "equacao-linear",
+            "terminologia"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-6",
+          "front": "Como são chamados os números posicionados após o sinal de igualdade?",
+          "back": "Termos independentes.",
+          "hint": "Não acompanham variáveis",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "equacao-linear",
+            "terminologia"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-7",
+          "front": "Como se organiza a matriz dos coeficientes de um sistema linear?",
+          "back": "Organizada por linhas com os coeficientes das incógnitas.",
+          "hint": "Estrutura de linhas e colunas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "representacao-matricial"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-8",
+          "front": "Qual vetor reúne as incógnitas na representação matricial de um sistema?",
+          "back": "O vetor das incógnitas.",
+          "hint": "Coluna de variáveis",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "representacao-matricial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual operação matricial representa um sistema linear?",
+          "back": "Multiplicação entre matrizes.",
+          "hint": "Operação fundamental entre matrizes",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "representacao-matricial"
+          ],
+          "type": "definition"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Classificação dos Sistemas",
+      "description": "Classificação dos Sistemas — 2 cards",
+      "cards": [
+        {
+          "id": "card-10",
+          "front": "Como se classifica um sistema linear que não possui solução?",
+          "back": "Impossível.",
+          "hint": "Termo técnico para ausência de solução",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "classificacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-11",
+          "front": "Que condição torna uma equação linear homogênea?",
+          "back": "Tornar a equação igual a zero.",
+          "hint": "Igualdade a um valor nulo",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "equacao-linear",
+            "classificacao"
+          ],
+          "type": "procedure"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Aplicações Matemáticas",
+      "description": "Aplicações Matemáticas — 1 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual é a finalidade dos sistemas lineares na matemática aplicada?",
+          "back": "Modelar e resolver numericamente problemas em áreas como engenharia, física, biologia e economia.",
+          "hint": "Abrange diversas áreas do conhecimento",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "sistemas-lineares",
+            "aplicacoes"
+          ],
+          "type": "definition"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um sistema linear, os valores numéricos que multiplicam as incógnitas são denominados:",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Constantes homogêneas",
+          "correct": false,
+          "explanation": "Incorreta. O termo 'constantes homogêneas' não é uma nomenclatura padrão na teoria de sistemas lineares. A palavra 'homogênea' se refere a uma equação ou sistema onde o termo independente é zero."
+        },
+        {
+          "id": "b",
+          "text": "Variáveis dependentes",
+          "correct": false,
+          "explanation": "Incorreta. Variáveis dependentes são aquelas cujo valor é determinado pelas outras variáveis no sistema, mas o termo 'variáveis dependentes' refere-se à própria incógnita e não ao número que a multiplica."
+        },
+        {
+          "id": "c",
+          "text": "Termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. Os termos independentes são os valores numéricos que aparecem isolados em cada equação, ou seja, que não multiplicam nenhuma incógnita, e estão geralmente no lado direito da igualdade."
+        },
+        {
+          "id": "d",
+          "text": "Coeficientes",
+          "correct": true,
+          "explanation": "Correta. Em um sistema linear, os valores numéricos que multiplicam as incógnitas (variáveis) são chamados de coeficientes. Por exemplo, na equação 2x + 3y = 7, os números 2 e 3 são os coeficientes de x e y, respectivamente."
+        }
+      ],
+      "explanation": "Correta. Em um sistema linear, os valores numéricos que multiplicam as incógnitas (variáveis) são chamados de coeficientes. Por exemplo, na equação 2x + 3y = 7, os números 2 e 3 são os coeficientes de x e y, respectivamente.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a característica fundamental de uma equação linear homogênea?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Apresenta termo independente igual a zero",
+          "correct": true,
+          "explanation": "Correta. Uma equação linear é considerada homogênea quando seu termo independente (o valor que não multiplica nenhuma incógnita) é igual a zero. Por exemplo, 2x + 3y = 0 é uma equação linear homogênea."
+        },
+        {
+          "id": "b",
+          "text": "Possui número de incógnitas maior que o número de equações",
+          "correct": false,
+          "explanation": "Incorreta. Esta característica descreve um sistema linear subdeterminado, onde há mais incógnitas do que equações, e não define a homogeneidade de uma única equação linear."
+        },
+        {
+          "id": "c",
+          "text": "Possui todas as incógnitas elevadas ao quadrado",
+          "correct": false,
+          "explanation": "Incorreta. Uma equação linear, por definição, possui todas as suas incógnitas elevadas à primeira potência. Se estivessem elevadas ao quadrado, seria uma equação não linear."
+        },
+        {
+          "id": "d",
+          "text": "Contém apenas coeficientes positivos",
+          "correct": false,
+          "explanation": "Incorreta. Os coeficientes de uma equação linear podem ser quaisquer números reais, positivos ou negativos, sem alterar sua classificação como homogênea ou não homogênea."
+        }
+      ],
+      "explanation": "Correta. Uma equação linear é considerada homogênea quando seu termo independente (o valor que não multiplica nenhuma incógnita) é igual a zero. Por exemplo, 2x + 3y = 0 é uma equação linear homogênea.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Sistemas lineares podem ser aplicados em diversas áreas do conhecimento. Qual das seguintes situações representa uma aplicação prática de sistemas lineares?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Análise da velocidade instantânea de um objeto em movimento",
+          "correct": false,
+          "explanation": "Incorreta. A análise da velocidade instantânea de um objeto em movimento é um conceito fundamental do cálculo diferencial, que lida com taxas de variação e derivadas, e não com sistemas de equações lineares."
+        },
+        {
+          "id": "b",
+          "text": "Determinação da concentração resultante ao misturar soluções com diferentes concentrações",
+          "correct": true,
+          "explanation": "Correta. A determinação da concentração resultante ao misturar soluções é um exemplo clássico de aplicação de sistemas lineares. Por exemplo, para obter uma solução com uma concentração específica a partir de duas soluções de concentrações diferentes, pode-se montar um sistema de equações que considere o volume total e a quantidade total de soluto."
+        },
+        {
+          "id": "c",
+          "text": "Cálculo da área de figuras geométricas planas irregulares",
+          "correct": false,
+          "explanation": "Incorreta. O cálculo da área de figuras geométricas planas irregulares geralmente envolve métodos de cálculo integral ou decomposição em figuras mais simples, e não a resolução direta de sistemas de equações lineares."
+        },
+        {
+          "id": "d",
+          "text": "Medição da amplitude de ondas sonoras em diferentes frequências",
+          "correct": false,
+          "explanation": "Incorreta. A medição da amplitude de ondas sonoras em diferentes frequências está relacionada à física de ondas e à análise de Fourier, que utiliza ferramentas matemáticas mais avançadas do que sistemas lineares simples."
+        }
+      ],
+      "explanation": "Correta. A determinação da concentração resultante ao misturar soluções é um exemplo clássico de aplicação de sistemas lineares. Por exemplo, para obter uma solução com uma concentração específica a partir de duas soluções de concentrações diferentes, pode-se montar um sistema de equações que considere o volume total e a quantidade total de soluto.",
+      "difficulty": "easy",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Quando um sistema linear é classificado como sistema homogêneo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Quando possui pelo menos uma equação com termo independente igual a zero",
+          "correct": false,
+          "explanation": "Incorreta. Para que um *sistema* linear seja classificado como homogêneo, *todas* as suas equações devem ter o termo independente igual a zero, não apenas uma ou algumas delas."
+        },
+        {
+          "id": "b",
+          "text": "Quando o número de equações é igual ao número de incógnitas",
+          "correct": false,
+          "explanation": "Incorreta. Esta condição descreve um sistema quadrado (onde o número de equações é igual ao número de incógnitas), o que é uma característica estrutural, mas não define se o sistema é homogêneo ou não."
+        },
+        {
+          "id": "c",
+          "text": "Quando todas as equações do sistema possuem termos independentes iguais a zero",
+          "correct": true,
+          "explanation": "Correta. Um sistema linear é classificado como homogêneo quando o termo independente de *todas* as equações que o compõem é igual a zero. Isso significa que, na forma geral Ax = B, o vetor B (dos termos independentes) é um vetor nulo."
+        },
+        {
+          "id": "d",
+          "text": "Quando todos os coeficientes das incógnitas são números inteiros positivos",
+          "correct": false,
+          "explanation": "Incorreta. A natureza dos coeficientes (se são inteiros, positivos, etc.) não é um critério para classificar um sistema linear como homogêneo. Os coeficientes podem ser quaisquer números reais."
+        }
+      ],
+      "explanation": "Correta. Um sistema linear é classificado como homogêneo quando o termo independente de *todas* as equações que o compõem é igual a zero. Isso significa que, na forma geral Ax = B, o vetor B (dos termos independentes) é um vetor nulo.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Na representação matricial de um sistema linear, qual é a estrutura correta para expressar o sistema?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Uma matriz formada apenas pelos termos independentes multiplicada pelas incógnitas",
+          "correct": false,
+          "explanation": "Incorreta. A representação matricial de um sistema linear deve incluir os coeficientes das incógnitas, não apenas os termos independentes. Os termos independentes formam uma matriz coluna separada."
+        },
+        {
+          "id": "b",
+          "text": "Uma matriz das incógnitas multiplicada por uma matriz dos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. A matriz das incógnitas é multiplicada pela matriz dos coeficientes, não pelos termos independentes. A ordem e a composição das matrizes são cruciais para a representação correta."
+        },
+        {
+          "id": "c",
+          "text": "Uma matriz dos coeficientes multiplicada por uma matriz coluna das incógnitas, igualada a uma matriz coluna dos termos independentes",
+          "correct": true,
+          "explanation": "Correta. A estrutura padrão para expressar um sistema linear na forma matricial é Ax = B, onde 'A' é a matriz dos coeficientes das incógnitas, 'x' é a matriz coluna que contém as incógnitas (variáveis) do sistema, e 'B' é a matriz coluna dos termos independentes de cada equação. Esta forma permite uma manipulação concisa do sistema."
+        },
+        {
+          "id": "d",
+          "text": "Uma matriz identidade multiplicada pelos coeficientes e somada aos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. Embora a matriz identidade seja usada em operações com sistemas lineares (como na eliminação de Gauss-Jordan ou para encontrar a inversa de uma matriz), ela não define a estrutura geral de representação de um sistema linear na sua forma matricial básica."
+        }
+      ],
+      "explanation": "Correta. A estrutura padrão para expressar um sistema linear na forma matricial é Ax = B, onde 'A' é a matriz dos coeficientes das incógnitas, 'x' é a matriz coluna que contém as incógnitas (variáveis) do sistema, e 'B' é a matriz coluna dos termos independentes de cada equação. Esta forma permite uma manipulação concisa do sistema.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Qual é a principal vantagem de utilizar métodos matriciais para resolver sistemas lineares em comparação com métodos convencionais de substituição?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Garante que o sistema sempre terá solução única independentemente dos coeficientes",
+          "correct": false,
+          "explanation": "Incorreta. A garantia de uma solução única não depende do método de resolução, mas sim das propriedades do sistema de equações em si, como a linearidade das equações e a não nulidade do determinante da matriz dos coeficientes. Métodos matriciais são ferramentas para identificar se um sistema possui ou não uma solução única, mas não a garantem."
+        },
+        {
+          "id": "b",
+          "text": "Permite resolver todas as incógnitas simultaneamente através de operações matriciais estruturadas",
+          "correct": true,
+          "explanation": "Correta. A principal vantagem dos métodos matriciais, como a Regra de Cramer ou a inversão de matrizes, é a capacidade de abordar o sistema de equações de forma unificada. Isso permite que todas as incógnitas sejam resolvidas de maneira estruturada e, em muitos casos, simultaneamente, o que é especialmente eficiente para sistemas com muitas variáveis."
+        },
+        {
+          "id": "c",
+          "text": "Elimina a necessidade de conhecer os valores dos termos independentes",
+          "correct": false,
+          "explanation": "Incorreta. Os valores dos termos independentes (o vetor B na equação AX=B) são essenciais para a resolução de sistemas lineares não homogêneos. Sem eles, não seria possível determinar os valores das incógnitas, exceto no caso trivial de um sistema homogêneo (onde todos os termos independentes são zero), que sempre possui a solução nula."
+        },
+        {
+          "id": "d",
+          "text": "Reduz o número de equações necessárias para encontrar a solução",
+          "correct": false,
+          "explanation": "Incorreta. Os métodos matriciais não alteram o número de equações necessárias para encontrar a solução de um sistema. A quantidade de equações e incógnitas é uma característica intrínseca do sistema e determina se ele pode ter uma solução única, infinitas soluções ou nenhuma solução. Os métodos matriciais apenas fornecem uma ferramenta para analisar e resolver esses sistemas."
+        }
+      ],
+      "explanation": "Correta. A principal vantagem dos métodos matriciais, como a Regra de Cramer ou a inversão de matrizes, é a capacidade de abordar o sistema de equações de forma unificada. Isso permite que todas as incógnitas sejam resolvidas de maneira estruturada e, em muitos casos, simultaneamente, o que é especialmente eficiente para sistemas com muitas variáveis.",
+      "difficulty": "medium",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Em um sistema linear representado matricialmente como AX = B, onde A é a matriz dos coeficientes, X é a matriz das incógnitas e B é a matriz dos termos independentes, qual operação matricial permite encontrar a solução quando o sistema é possível e determinado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Calcular a matriz inversa de A e multiplicá-la pela matriz B, resultando em X = A⁻¹B",
+          "correct": true,
+          "explanation": "Correta. Para um sistema linear possível e determinado (ou seja, com solução única), a matriz dos coeficientes A é invertível. Multiplicando ambos os lados da equação matricial AX = B pela inversa de A (A⁻¹) à esquerda, obtém-se A⁻¹(AX) = A⁻¹B, que se simplifica para (A⁻¹A)X = A⁻¹B, resultando em IX = A⁻¹B, e finalmente X = A⁻¹B. Esta é a forma padrão de resolver o sistema matricialmente."
+        },
+        {
+          "id": "b",
+          "text": "Somar a matriz A com a matriz B e extrair a diagonal principal como solução",
+          "correct": false,
+          "explanation": "Incorreta. A soma de matrizes (A + B) só é definida se as matrizes tiverem as mesmas dimensões, o que geralmente não ocorre entre a matriz dos coeficientes A e a matriz dos termos independentes B. Além disso, a soma de matrizes não é uma operação que leva à solução das incógnitas de um sistema linear."
+        },
+        {
+          "id": "c",
+          "text": "Aplicar a regra do produto escalar entre as linhas de A e as colunas de B",
+          "correct": false,
+          "explanation": "Incorreta. A regra do produto escalar é uma operação entre vetores que resulta em um escalar. Embora a multiplicação de matrizes envolva produtos escalares de linhas por colunas, a descrição de \"aplicar a regra do produto escalar entre as linhas de A e as colunas de B\" não representa o método para encontrar a matriz X que satisfaz AX=B. A solução X é uma matriz (ou vetor), não um escalar."
+        },
+        {
+          "id": "d",
+          "text": "Multiplicar a matriz B pela transposta da matriz A e dividir pelo determinante de A",
+          "correct": false,
+          "explanation": "Incorreta. Embora o determinante da matriz A seja um componente importante na determinação da solução, a multiplicação da matriz B pela transposta da matriz A não é a operação correta para isolar a matriz das incógnitas X. A ordem e a operação de transposição não se aplicam diretamente para resolver X nesta forma matricial."
+        }
+      ],
+      "explanation": "Correta. Para um sistema linear possível e determinado (ou seja, com solução única), a matriz dos coeficientes A é invertível. Multiplicando ambos os lados da equação matricial AX = B pela inversa de A (A⁻¹) à esquerda, obtém-se A⁻¹(AX) = A⁻¹B, que se simplifica para (A⁻¹A)X = A⁻¹B, resultando em IX = A⁻¹B, e finalmente X = A⁻¹B. Esta é a forma padrão de resolver o sistema matricialmente.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-8",
+      "question": "Qual é a relação entre a classificação de um sistema linear quanto à sua solução e o determinante da matriz dos coeficientes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "Sistema impossível sempre apresenta determinante positivo e termos independentes negativos",
+          "correct": false,
+          "explanation": "Incorreta. A classificação de um sistema como impossível (sem solução) não depende do sinal do determinante da matriz dos coeficientes ou dos termos independentes. Um sistema é impossível quando o determinante da matriz dos coeficientes é zero e, ao aplicar a Regra de Cramer, pelo menos um dos determinantes das matrizes auxiliares (Dx, Dy, Dz, etc.) é diferente de zero."
+        },
+        {
+          "id": "b",
+          "text": "Sistema possível e determinado ocorre quando o determinante é zero e os termos independentes são proporcionais",
+          "correct": false,
+          "explanation": "Incorreta. Se o determinante da matriz dos coeficientes for zero, o sistema não é possível e determinado. Nesses casos, o sistema será impossível (sem solução) ou possível e indeterminado (infinitas soluções). A proporcionalidade dos termos independentes, em conjunto com um determinante nulo, pode indicar um sistema possível e indeterminado, mas nunca um determinado."
+        },
+        {
+          "id": "c",
+          "text": "Sistema indeterminado ocorre exclusivamente quando o determinante é um número irracional",
+          "correct": false,
+          "explanation": "Incorreta. Um sistema linear é classificado como indeterminado (com infinitas soluções) quando o determinante da matriz dos coeficientes é zero, e todos os determinantes das matrizes auxiliares (Dx, Dy, Dz, etc.) também são zero. A natureza do número (racional, irracional, inteiro) do determinante não é o critério de classificação; o que importa é se o seu valor é nulo ou não nulo."
+        },
+        {
+          "id": "d",
+          "text": "Sistema possível e determinado ocorre quando o determinante da matriz dos coeficientes é diferente de zero",
+          "correct": true,
+          "explanation": "Correta. Um sistema linear é classificado como possível e determinado quando possui uma única solução. Isso ocorre se, e somente se, o determinante da matriz dos coeficientes (det(A)) for diferente de zero. Nesse caso, a matriz A é invertível, e a solução X = A⁻¹B é única."
+        }
+      ],
+      "explanation": "Correta. Um sistema linear é classificado como possível e determinado quando possui uma única solução. Isso ocorre se, e somente se, o determinante da matriz dos coeficientes (det(A)) for diferente de zero. Nesse caso, a matriz A é invertível, e a solução X = A⁻¹B é única.",
+      "difficulty": "hard",
+      "topic": "Conhecimentos Específicos",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "01_331263_Sistemas Lineares.pdf",
+  "coletado_em": "2026-09-23T20:58:10"
+}

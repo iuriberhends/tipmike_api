@@ -1,0 +1,559 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Matemática",
+  "disciplina_id": "4986",
+  "materia": "Matemática",
+  "modulo": {
+    "id": 3,
+    "titulo": "3. Funções: generalidades. Funções elementares: 1º grau, 2º grau, modular, exponencial e logarítmica, gráficos. Propriedades."
+  },
+  "ordem": 13,
+  "ordem_no_curso": "82.01",
+  "titulo": "Logaritmo e Funções Logarítmicas IV",
+  "codigo_aula": "454197",
+  "video_id": "7dMFfpmsufM=",
+  "professor": "Josimar Padilha",
+  "duracao": "00:32:59",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/7dMFfpmsufM%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403851&desatualizada=0&anulada=0&query=&auth=force",
+  "transcricao": "# Transcrição - Logaritmo e Funções Logarítmicas IV\n\n## Introdução e revisão rápida\nOpa! Vamos lá, meus queridos. Agora vamos falar um pouquinho de funções logarítmicas — no singular ou no plural, tanto faz. Na verdade, é só uma continuação do que nós já vimos de logaritmos. Quando falo “função”, é porque vou ter um domínio e uma imagem. Vamos verificar aqui comigo.\n\nFunção logarítmica: nós já vimos quando a função é crescente — o gráfico é crescente — ou ela pode ser decrescente. Vamos construir um gráfico de uma função crescente pra começar. Lembrando: a função é crescente, graficamente, quando, à medida que o valor de x aumenta, o valor de y também aumenta.\n\nPor exemplo, no gráfico XY: o x vai aumentando — dois, três, quatro — e o y também vai aumentando. Isso é uma função crescente. Colocando valores: se em x = 1 eu tenho, por exemplo, y = 2; em x = 3, y = 7 (alguma coisa), e assim vai. O x aumenta e o y também aumenta. Show de bola.\n\nLógico, nós sabemos — não preciso falar novamente — a condição de existência de um logaritmo. Mas vamos relembrar.\n\n## Condição de existência do logaritmo\nlog de b na base a: \n- a é a base, \n- b é o logaritmando, \n- tudo isso é logaritmo.\n\nCondição de existência:\n- a > 0 e a ≠ 1 (a base é positiva e diferente de 1),\n- b > 0 (o logaritmando é positivo).\n\n## Função logarítmica crescente (sem construir o gráfico)\nQuando é que esse gráfico é crescente? O gráfico é crescente quando o x vai aumentando e, consequentemente, o y também vai aumentando.\n\nExemplo: f(x) = log de x na base 2. Observando uma tabelinha, se você olha o x de baixo pra cima: 1/4, 1/2, 1, 2, 4 — está aumentando. Agora a segunda coluna (os valores de f(x)): -2, -1, 0, 1, 2 — também está aumentando. Ou seja, f(x) também aumenta. Então essa função é crescente e você percebe isso no gráfico.\n\nAgora, como saber sem construir o gráfico? A função logarítmica é crescente quando a base a é maior que 1. Marca-texto alaranjado: função crescente quando a > 1. No nosso exemplo f(x) = log de x na base 2, a base é 2, e 2 > 1; logo, a função é crescente.\n\n> 🎯 **Dicas de prova:** A função logarítmica f(x) = log_a(x) é crescente se a > 1.\n\n## Função logarítmica decrescente\nQuando a função é decrescente? f(x) = log de b na base a é decrescente quando a base está entre 0 e 1: 0 < a < 1.\n\nUma função é considerada decrescente quando, à medida que o valor do x aumenta, o y diminui. No gráfico: x = 1, 2, 3, 4 vai aumentando; o y vai diminuindo. Enquanto o x aumenta, o y diminui — isso caracteriza uma função decrescente.\n\nNa tabelinha, olhando de baixo pra cima novamente no x: 1/4, 1/2, 1, 2, 4 — aumenta. Na coluna do f(x): 2, 1, 0, -1, -2 — diminui. Ou você pode pensar o contrário: quando o x diminui, o y aumenta. São inversamente proporcionais nesse sentido. O importante: se olhar o x de baixo pra cima, olhe também o f(x) de baixo pra cima, no mesmo sentido, e observe o que acontece.\n\nExemplo: f(x) = log de x na base 1/2. A base é 1/2, que está entre 0 e 1. Portanto, é uma função decrescente.\n\n> 🎯 **Dicas de prova:** A função logarítmica f(x) = log_a(x) é decrescente se 0 < a < 1.\n\n## Questões de concurso – Treinamento\n\n### Questão 1\nUma função logarítmica que possui base igual a 2 é o quê? Crescente, decrescente, constante... Se é log de alguma coisa na base 2, a base a = 2 > 1. Quando a base é maior que 1, a função é crescente. Resposta: letra A.\n\nSe fosse base entre 0 e 1, seria decrescente.\n\n> 🎯 **Dicas de prova:** Base a > 1 implica função logarítmica crescente.\n\n### Questão 2 – Função composta\nFala o seguinte: sendo f(x) = log de x na base 2 e g(x) = x + 3, então f(g(x)) = x + 3. A questão afirma: “então g(x) = 2^(x+3)”. Certo ou errado?\n\nTemos f(x) = log_2(x). E f(g(x)) = x + 3. Vou testar o item proposto: g(x) = 2^(x+3).\n\nSubstituindo:\n- f(g(x)) = log_2(g(x)) = log_2(2^(x+3)).\n\nPela propriedade log_b(b^k) = k, temos log_2(2^(x+3)) = x + 3. Ou seja, bate com f(g(x)) = x + 3. Portanto, o item está certíssimo.\n\n> 🎯 **Dicas de prova:** Se f(x) = log_a(x) e f(g(x)) = x + c, então uma solução é g(x) = a^(x+c), usando log_a(a^k) = k.\n\n## Modelo exponencial de crescimento populacional – Joinville\nQuestão boa, até puxadinha. Entre 1950 e 2010, a população de Joinville cresceu de forma aproximadamente exponencial, segundo o IBGE. Em 1950, aproximadamente 40 mil habitantes. Em 2010, 520 mil habitantes.\n\nModelo: P(t) = P0 · e^(k·t), com:\n- P0 população inicial,\n- k constante positiva,\n- t em décadas, com t = 0 correspondendo a 1950, e cada unidade em t correspondendo a 10 anos.\n\nAssim:\n- t = 0 → 1950,\n- t = 1 → 1960,\n- t = 2 → 1970,\n- t = 3 → 1980,\n- t = 4 → 1990,\n- t = 5 → 2000,\n- t = 6 → 2010,\n- ...\n- t = 12 → 2070.\n\nTambém foi lembrado: e^(ln x) = x. Aqui, ln é o logaritmo natural, isto é, logaritmo na base e. É a propriedade log_b(b^x) = x: corta a base com a base da potência e sobra o expoente.\n\nVamos aos dados:\n- Em 1950 (t = 0), P(0) = 40 mil.\n- Em 2010 (t = 6), P(6) = 520 mil.\n- Pergunta: estimar P(12) (ano 2070).\n\nComeçando:\nP(t) = P0 · e^(k t).\n\nPara t = 0:\nP(0) = P0 · e^(k·0) = P0 · 1 = P0.\nLogo, P0 = 40 (mil). Até aqui, P0 = 40.\n\nPara t = 6:\nP(6) = 40 · e^(6k) = 520.\nDividindo por 40: e^(6k) = 13.\n\nQueremos P(12):\nP(12) = 40 · e^(12k).\n\nJogada matemática: potência de potência.\nObserve que e^(12k) = (e^(6k))^2. Como e^(6k) = 13, então e^(12k) = 13^2 = 169.\n\nLogo:\nP(12) = 40 · 169 = 6.760 (em mil) = 6.760.000 habitantes.\n\nResposta: 6.760.000 habitantes. Letra B.\n\n> 🎯 **Dicas de prova:** No modelo P(t) = P0·e^(kt), se você conhece P(t1) e P(t2), use razões para obter e^(k·Δt). Muitas vezes dá um número “limpo” que facilita elevar à potência desejada.\n\nFechamos esse bloquinho. Vou voltar de imediato pra terminar com mais questões. Não saiam daí! Valeu.",
+  "transcricao_meta": {
+    "title": "Logaritmo e Funções Logarítmicas IV",
+    "subject": "Raciocínio Lógico-Matemático",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": true,
+    "originalLength": 34651,
+    "createdAt": "2026-02-05T19:04:57.948Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: funções logarítmicas e suas condições de existência, monotonicidade (crescente/decrescente), composição com funções exponenciais, uso de ln e e, e aplicação em modelos exponenciais de crescimento populacional.\nPrincipais pontos: \n- A base define existência e sentido (A > 1 crescente; 0 < A < 1 decrescente).\n- Inversão log/exponencial para validar composições (log_b(b^k) = k).\n- Modelagem: p(t) = p0·e^(a t), uso de potência de potência para projetar sem calcular a.\n\n## 1. Base / Conceitos Fundamentais\n- **Função logarítmica**: y = log_A(B) com:\n  - **Base (A)**: número positivo diferente de 1.\n  - **Logaritmando (B)**: argumento do log.\n  - **Domínio**: B > 0.\n  - **Imagem**: todos os reais.\n- **Notações usuais**:\n  - **f(x)**, **g(x)**.\n  - **f(x) = log₂(x)**: log de x na base 2.\n  - **ln(x)**: logaritmo na base e.\n- **Condições de existência**:\n  - A > 0 e A ≠ 1; B > 0.\n- **Monotonicidade**:\n  - A > 1 → função logarítmica é **crescente**.\n  - 0 < A < 1 → função logarítmica é **decrescente**.\n- **Inversas naturais**:\n  - log_A(A^k) = k e A^(log_A x) = x.\n  - e^(ln x) = x; ln(e) = 1.\n\n> Dica de prova: Antes de qualquer coisa, cheque existência: base positiva e ≠ 1; logaritmando positivo.\n\n## 2. Como Funciona / Distinções\n- **Crescente vs Decrescente**\n  - Crescente: x↑ ⇒ f(x)↑ (ex.: base 2).\n  - Decrescente: x↑ ⇒ f(x)↓ (ex.: base 1/2).\n- **Condição de existência vs Monotonicidade**\n  - Existência: restrição sobre A e B para o log existir.\n  - Monotonicidade: define o sentido do gráfico dada a base.\n- **Logaritmo vs Exponencial**\n  - Log e exponencial são funções inversas na mesma base.\n  - Composição “corta” quando as bases coincidem: log_A(A^k) = k e A^(log_A x) = x.\n\n> Dica de prova: Não confunda “A > 0, A ≠ 1; B > 0” (existência) com “A > 1” ou “0 < A < 1” (crescente/decrescente).\n\n## 3. Aplicação Prática / Técnicas\n- **Identificar o sentido da função logarítmica**\n  - Ver a base:\n    - A > 1 → crescente.\n    - 0 < A < 1 → decrescente.\n- **Leitura por tabela/gráfico**\n  - Ordene x: 1/4, 1/2, 1, 2, 4.\n  - Para f(x) = log₂(x): f(x) = -2, -1, 0, 1, 2 → crescente.\n  - Para base 1/2: f(x) = 2, 1, 0, -1, -2 → decrescente.\n- **Validar composição f(g(x))**\n  - Dada f(x) = log_A(x) e um alvo T(x), proponha g(x) = A^{T(x)} e substitua:\n    - f(g(x)) = log_A(A^{T(x)}) = T(x).\n- **Modelo exponencial populacional**\n  - p(t) = p0·e^(a t), a > 0.\n  - Se conhece p(t1) e p(t2) com mesmo passo, use razão para evitar achar a:\n    - e^{a(t2−t1)} = p(t2)/p(t1).\n    - Para projetar k passos: eleve a razão à potência k.\n- **Potência de potência**\n  - (b^m)^n = b^(m·n).\n  - Útil para transformar e^(12a) em (e^(6a))^2.\n\n> Dica de prova: Em p(t) = p0·e^(a t), dois pontos bastam: compute e^{Δt·a} uma vez (pela razão) e potencie para “pular décadas”.\n\n## 4. Exemplos e Casos Resolvidos\n- **Monotonicidade**\n  - f(x) = log₂(x): base 2 > 1 → função **crescente**.\n  - f(x) = log_{1/2}(x): 0 < 1/2 < 1 → **decrescente**.\n- **Composição correta**\n  - Dados: f(x) = log₂(x), f(g(x)) = x + 3.\n  - Teste g(x) = 2^{x+3}:\n    - f(g(x)) = log₂(2^{x+3}) = (x+3)·log₂(2) = x+3 → verdadeiro.\n- **Modelo populacional (Joinville, IBGE)**\n  - p(t) = p0·e^{a t}, t em décadas; t=0 → 1950.\n  - p(0) = 40 mil → p0 = 40 (em mil).\n  - p(6) = 520 mil (2010).\n  - e^{6a} = 520/40 = 13.\n  - p(12) = 40·e^{12a} = 40·(e^{6a})^2 = 40·13² = 40·169 = 6.760 (em mil) → 6.760.000.\n  - Alternativa: letra b — seis milhões setecentos e sessenta mil.\n\n> Dica de prova: Mantenha as grandezas “em mil” até o fim e só depois converta para unidades absolutas (acrescentando três zeros).\n\n## 5. Pegadinhas e Erros Comuns\n- Confundir existência com monotonicidade:\n  - Existência: A > 0, A ≠ 1; B > 0.\n  - Monotonicidade: depende apenas de A > 1 ou 0 < A < 1.\n- Esquecer que log_A(A) = 1:\n  - Em validações, log₂(2) = 1 “corta” o fator.\n- Trocar ln por log de base 10:\n  - ln(x) é base e. e^(ln x) = x.\n- Errar a leitura de tabela/gráfico:\n  - Leia x e f(x) no mesmo sentido de ordenação; sinais invertidos levam a concluir o contrário (decrescente vs crescente).\n- Ignorar a escala “em mil”:\n  - Se p está em mil, 6.760 significa 6.760 mil = 6.760.000.\n- Supor base negativa ou igual a 1:\n  - Base negativa ou A = 1 não são permitidas no logaritmo.\n- Na composição, esquecer de casar a base:\n  - Só “corta” se a base do log e da potência forem iguais.\n\n> Dica de prova: Dado f(x) = log_A(x) e f(g(x)) = T(x), proponha g(x) = A^{T(x)} e substitua. Se bater, o item é verdadeiro.",
+  "resumo_bolso": "# Logaritmo e Funções Logarítmicas IV\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Função logarítmica**: y = log_A(B) com:\n  * **Base (A)**: número positivo diferente de 1.\n  * **Logaritmando (B)**: argumento do log.\n  * **Domínio**: B > 0.\n  * **Imagem**: todos os reais.\n* **Condições de existência**: log_A(B) só existe se **A > 0, A ≠ 1** e **B > 0**.\n* **Monotonicidade**:\n  * **A > 1** → função logarítmica **crescente**.\n  * **0 < A < 1** → função logarítmica **decrescente**.\n* **Inversas log ↔ exponencial (mesma base)**:\n  * log_A(A^k) = k.\n  * A^{log_A x} = x.\n  * e^{ln x} = x e ln(e) = 1.\n* **ln(x)**: logaritmo **na base e**.\n* **Leitura de gráfico/tabela**:\n  * Crescente: x↑ ⇒ f(x)↑ (ex.: base 2).\n  * Decrescente: x↑ ⇒ f(x)↓ (ex.: base 1/2).\n* **Modelo exponencial populacional**: p(t) = p0·e^{a t}, com **a > 0**, t em unidades de tempo (ex.: décadas).\n* **Potência de potência**: (b^m)^n = b^{m·n}. Útil para transformar e^{12a} em (e^{6a})².\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### Condição de Existência vs Monotonicidade\n\n| Aspecto | Condição de Existência | Monotonicidade |\n|--------|------------------------|----------------|\n| **O que é** | Restrição sobre A e B para o log existir | Define o sentido do gráfico dada a base |\n| **Base A** | A > 0 e A ≠ 1 | Se A > 1 → crescente; se 0 < A < 1 → decrescente |\n| **Logaritmando B** | B > 0 | Não interfere no sentido, só no valor |\n\n> Não confunda “A > 0, A ≠ 1; B > 0” (existência) com “A > 1” ou “0 < A < 1” (crescente/decrescente).\n\n---\n\n### Logaritmo vs Exponencial\n\n| Aspecto | Logaritmo (log_A x) | Exponencial (A^x) |\n|--------|----------------------|--------------------|\n| **Relação** | Função inversa da exponencial na mesma base | Função inversa do log na mesma base |\n| **Composição** | log_A(A^k) = k | A^{log_A x} = x |\n| **Domínio** | x > 0 | x ∈ ℝ |\n| **Imagem** | ℝ | x > 0 |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Existência do logaritmo log_A(B)**\n\n* A > 0, A ≠ 1; B > 0.\n\n---\n\n**2. Monotonicidade da função logarítmica**\n\n* A > 1 → crescente; 0 < A < 1 → decrescente.\n* Exemplo:\n  * f(x) = log₂(x): base 2 > 1 → função **crescente**.\n  * f(x) = log_{1/2}(x): 0 < 1/2 < 1 → função **decrescente**.\n\n---\n\n**3. Composição log/exponencial (mesma base)**\n\n* log_A(A^k) = k; A^{log_A x} = x; e^{ln x} = x; ln(e) = 1.\n* Exemplo:\n  * Dados: f(x) = log₂(x), f(g(x)) = x + 3.\n  * g(x) = 2^{x+3} ⇒ f(g(x)) = log₂(2^{x+3}) = (x+3)·log₂(2) = x+3.\n\n---\n\n**4. Construção de g(x) a partir de f(g(x))**\n\n* Dado f(x) = log_A(x) e um alvo T(x), proponha g(x) = A^{T(x)}.\n* Então f(g(x)) = log_A(A^{T(x)}) = T(x).\n\n---\n\n**5. Modelo populacional p(t) = p0·e^{a t}**\n\n* p(t) = p0·e^{a t}, a > 0.\n* Se conhece p(t1) e p(t2) com mesmo passo Δt:\n  * e^{a(t2−t1)} = p(t2)/p(t1).\n  * Para projetar k passos: elevar a razão à potência k.\n* Exemplo (Joinville, IBGE):\n  * p(0) = 40 mil, p(6) = 520 mil.\n  * e^{6a} = 520/40 = 13.\n  * p(12) = 40·e^{12a} = 40·(e^{6a})^2 = 40·13² = 6.760 (em mil) → 6.760.000.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir existência com monotonicidade:\n  * Existência: A > 0, A ≠ 1; B > 0.\n  * Monotonicidade: depende apenas de A > 1 ou 0 < A < 1.\n* Esquecer que log_A(A) = 1 (ex.: log₂(2) = 1).\n* Trocar ln por log de base 10:\n  * ln(x) é base e e satisfaz e^{ln x} = x.\n* Errar a leitura de tabela/gráfico:\n  * Leia x e f(x) no mesmo sentido de ordenação para não inverter crescente/decrescente.\n* Ignorar a escala “em mil” em modelos populacionais:\n  * Se p está em mil, 6.760 significa 6.760 mil = 6.760.000.\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei **condição de existência** (A > 0, A ≠ 1; B > 0) de **monotonicidade** (A > 1 ou 0 < A < 1)?\n* Sei que **log e exponencial** são inversas **na mesma base** e que a composição só “corta” quando as bases coincidem?\n* Lembro que **ln(x)** é base **e** e que **e^{ln x} = x** e **ln(e) = 1**?\n* Sei montar **g(x) = A^{T(x)}** quando pedem f(g(x)) = T(x) com f(x) = log_A(x)?\n* Sei usar o modelo **p(t) = p0·e^{a t}**, achar a **razão e^{aΔt}** por dois pontos e “pular períodos” usando **(b^m)^n = b^{m·n}**?",
+  "mapa_mental": "# 🧮 Logaritmo e Funções Logarítmicas IV\n## 🎯 Estrutura da Função Logarítmica\n### 💡 Definição básica\n- Função logarítmica\n- y = log_A(B)\n- Base A positiva\n- A diferente de 1\n- Logaritmando B positivo\n### 🧱 Domínio e imagem\n- Domínio B > 0\n- Imagem reais R\n- Intervalo (0, +∞)\n- Sem zero no log\n- Sem B negativo\n### 🔢 Notações usuais\n- f(x), g(x)\n- log₂(x)\n- log_A(x)\n- ln(x) base e\n- e número de Euler\n\n## 📈 Monotonicidade e Inversas\n### 📊 Crescente vs decrescente\n- A > 1 crescente\n- 0 < A < 1 decrescente\n- Sentido do gráfico\n- Depende só da base\n- Não depende de B\n### ⚖️ Existência x sentido\n- Existência A > 0\n- A ≠ 1 obrigatório\n- Logaritmando B > 0\n- Monotonicidade pela base\n- Conceitos distintos\n### 🔄 Relação com exponencial\n- Funções inversas\n- Mesma base A\n- log_A(A^k) = k\n- A^(log_A x) = x\n- e^(ln x) = x\n\n## 🧮 Composição e Modelagem\n### 🧩 Composição log–expo\n- Composição f(g(x))\n- Bases coincidentes\n- log_A(A^{T(x)})\n- Resultado T(x)\n- “Corte” da composição\n### 📈 Modelo exponencial\n- p(t) = p0·e^{a t}\n- Crescimento populacional\n- a > 0 crescimento\n- t variável temporal\n- p0 valor inicial\n### 🔢 Razão e potência\n- Razão p(t2)/p(t1)\n- e^{a(t2−t1)} razão\n- Passos iguais Δt\n- Projeção k passos\n- Potência de potência\n\n## ⚠️ Erros Frequentes em Provas\n### 🚨 Existência e base\n- Confundir existência\n- Confundir monotonicidade\n- Base negativa proibida\n- Base A = 1 proibida\n- Logaritmando não positivo\n### 🧠 Propriedades chave\n- log_A(A) = 1\n- ln(x) base e\n- e^(ln x) = x\n- Necessidade mesma base\n- Composição sem casar base\n### 📉 Interpretação e escala\n- Leitura de gráficos\n- Ordem de x crescente\n- Sinais de f(x)\n- Crescente vs decrescente\n- Escala “em mil” números",
+  "flashcards": [
+    {
+      "id": "deck-1",
+      "title": "Função Logarítmica",
+      "description": "Função Logarítmica — 5 cards",
+      "cards": [
+        {
+          "id": "card-1",
+          "front": "O que caracteriza uma função crescente em termos da variação de x e y?",
+          "back": "À medida que o valor de **x** aumenta, o valor de **y** também aumenta.",
+          "hint": "Pense na relação direta entre variáveis",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "crescimento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-2",
+          "front": "Qual condição sobre a base torna uma função logarítmica crescente?",
+          "back": "A base **a** é maior do que 1.",
+          "hint": "Compare com a unidade",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "funcao-logaritmica"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-3",
+          "front": "Como varia y quando x aumenta em uma função logarítmica decrescente?",
+          "back": "Quando o valor de **x** aumenta, o valor de **y** diminui.",
+          "hint": "Pense na relação inversa entre variáveis",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "decrescimento"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-4",
+          "front": "Qual requisito deve cumprir o argumento de um logaritmo real?",
+          "back": "O argumento deve ser maior que zero.",
+          "hint": "Condição de existência do logaritmando",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "dominio"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-5",
+          "front": "Qual valor a base de um logaritmo não pode assumir?",
+          "back": "Diferente de 1 e maior que zero.",
+          "hint": "Restrições da base logarítmica",
+          "difficulty": "medium",
+          "importance": "critical",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "base"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-2",
+      "title": "Composição de Funções",
+      "description": "Composição de Funções — 2 cards",
+      "cards": [
+        {
+          "id": "card-6",
+          "front": "Como se interpreta a composição f(g(x)) quanto à ordem de aplicação das funções?",
+          "back": "A função **g(x)** é aplicada primeiro, e a função **f** é aplicada sobre o resultado.",
+          "hint": "Pense na ordem de dentro para fora",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "composicao"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-7",
+          "front": "Se f(x)=log₂x e f(g(x))=x+3, qual expressão representa g(x)?",
+          "back": "**2^(x + 3)**",
+          "hint": "Aplique a definição de logaritmo",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "composicao"
+          ],
+          "type": "example"
+        }
+      ]
+    },
+    {
+      "id": "deck-3",
+      "title": "Propriedades dos Logaritmos",
+      "description": "Propriedades dos Logaritmos — 4 cards",
+      "cards": [
+        {
+          "id": "card-8",
+          "front": "Qual notação representa o logaritmo na base e?",
+          "back": "**ln**",
+          "hint": "Logaritmo neperiano",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "notacao"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-9",
+          "front": "Qual é o valor de logₐ(aᵘ), sob as condições de existência?",
+          "back": "**u**",
+          "hint": "Propriedade fundamental de cancelamento",
+          "difficulty": "easy",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "propriedades"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-10",
+          "front": "Como se simplifica a potência (aᵐ)ⁿ?",
+          "back": "Conserva-se a base e multiplicam-se os expoentes (**a^(m · n)**).",
+          "hint": "Regra de potência de potência",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "potenciacao",
+            "propriedades"
+          ],
+          "type": "procedure"
+        },
+        {
+          "id": "card-11",
+          "front": "Que relação existe entre eˡⁿˣ e x, para x positivo?",
+          "back": "É igual a **x**.",
+          "hint": "Funções inversas",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "logaritmo",
+            "exponencial"
+          ],
+          "type": "fact"
+        }
+      ]
+    },
+    {
+      "id": "deck-4",
+      "title": "Modelagem Populacional",
+      "description": "Modelagem Populacional — 6 cards",
+      "cards": [
+        {
+          "id": "card-12",
+          "front": "Qual modelo exponencial descreve o crescimento populacional apresentado?",
+          "back": "**p(t) = p₀ · e^(a · t)**",
+          "hint": "Equação de crescimento exponencial",
+          "difficulty": "medium",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelo-exponencial"
+          ],
+          "type": "definition"
+        },
+        {
+          "id": "card-13",
+          "front": "O que representa o parâmetro p₀ no modelo p(t)=p₀eᵃᵗ?",
+          "back": "A população inicial.",
+          "hint": "Valor no instante inicial",
+          "difficulty": "easy",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelo-exponencial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-14",
+          "front": "Qual ano corresponde a t=0 no modelo populacional apresentado?",
+          "back": "Ano de **1950**.",
+          "hint": "Marco temporal zero",
+          "difficulty": "easy",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelo-exponencial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-15",
+          "front": "A quantos anos equivale cada unidade acrescentada ao parâmetro t?",
+          "back": "**10 anos**.",
+          "hint": "Escala do parâmetro t",
+          "difficulty": "medium",
+          "importance": "low",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelo-exponencial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-16",
+          "front": "Qual valor de t corresponde ao ano de 2070 nesse modelo?",
+          "back": "**12**",
+          "hint": "Calcule a diferença de anos e divida",
+          "difficulty": "medium",
+          "importance": "medium",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelo-exponencial"
+          ],
+          "type": "fact"
+        },
+        {
+          "id": "card-17",
+          "front": "Com p(0)=40 mil e p(6)=520 mil, qual população o modelo estima para t=12?",
+          "back": "**6.760.000** habitantes",
+          "hint": "Use a razão de crescimento",
+          "difficulty": "hard",
+          "importance": "high",
+          "tags": [
+            "matematica",
+            "funcoes",
+            "modelo-exponencial"
+          ],
+          "type": "example"
+        }
+      ]
+    }
+  ],
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Uma função logarítmica é classificada como crescente quando satisfaz qual condição em relação à sua base?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base é negativa e diferente de zero",
+          "correct": false,
+          "explanation": "Incorreta. A base de um logaritmo deve ser sempre um número positivo. Esta é uma das condições fundamentais de existência para que a função logarítmica seja definida nos números reais."
+        },
+        {
+          "id": "b",
+          "text": "A base é maior que 1",
+          "correct": true,
+          "explanation": "Correta. Uma função logarítmica f(x) = log_a(x) é classificada como crescente quando a sua base 'a' é maior que 1 (a > 1). Isso significa que, à medida que os valores de x aumentam, os valores correspondentes de f(x) também aumentam."
+        },
+        {
+          "id": "c",
+          "text": "A base é igual a 1",
+          "correct": false,
+          "explanation": "Incorreta. A base de um logaritmo, por definição, não pode ser igual a 1. Se a base fosse 1, o logaritmo não estaria bem definido, pois 1 elevado a qualquer potência é sempre 1, impossibilitando a obtenção de outros valores para o logaritmando."
+        },
+        {
+          "id": "d",
+          "text": "A base está compreendida entre 0 e 1",
+          "correct": false,
+          "explanation": "Incorreta. Quando a base 'a' de uma função logarítmica está compreendida entre 0 e 1 (0 < a < 1), a função é classificada como decrescente, ou seja, à medida que x aumenta, y diminui."
+        }
+      ],
+      "explanation": "Correta. Uma função logarítmica f(x) = log_a(x) é classificada como crescente quando a sua base 'a' é maior que 1 (a > 1). Isso significa que, à medida que os valores de x aumentam, os valores correspondentes de f(x) também aumentam.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "Qual é a condição de existência para o logaritmando em uma função logarítmica?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O logaritmando deve ser maior que zero",
+          "correct": true,
+          "explanation": "Correta. Para que o logaritmo log_a(x) seja definido no conjunto dos números reais, o logaritmando (x) deve ser estritamente maior que zero (x > 0). Isso garante que o resultado do logaritmo seja um número real."
+        },
+        {
+          "id": "b",
+          "text": "O logaritmando deve ser menor que zero",
+          "correct": false,
+          "explanation": "Incorreta. Logaritmos de números negativos não são definidos no conjunto dos números reais. A função logarítmica só aceita valores positivos para o logaritmando."
+        },
+        {
+          "id": "c",
+          "text": "O logaritmando deve ser maior ou igual a zero",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmando não pode ser igual a zero. O logaritmo de zero é indefinido no conjunto dos números reais, pois não existe nenhum número que, elevado a uma base positiva e diferente de 1, resulte em zero."
+        },
+        {
+          "id": "d",
+          "text": "O logaritmando deve ser diferente de um",
+          "correct": false,
+          "explanation": "Incorreta. A condição de ser diferente de um aplica-se à base do logaritmo, não ao logaritmando. O logaritmando pode ser 1; nesse caso, log_a(1) é sempre igual a 0 para qualquer base 'a' válida."
+        }
+      ],
+      "explanation": "Correta. Para que o logaritmo log_a(x) seja definido no conjunto dos números reais, o logaritmando (x) deve ser estritamente maior que zero (x > 0). Isso garante que o resultado do logaritmo seja um número real.",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Em uma função logarítmica decrescente, qual é o comportamento gráfico observado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "À medida que x aumenta, y diminui",
+          "correct": true,
+          "explanation": ""
+        },
+        {
+          "id": "b",
+          "text": "À medida que x aumenta, y também aumenta proporcionalmente",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "c",
+          "text": "À medida que x diminui, y permanece constante",
+          "correct": false,
+          "explanation": ""
+        },
+        {
+          "id": "d",
+          "text": "À medida que x aumenta, y permanece inalterado",
+          "correct": false,
+          "explanation": ""
+        }
+      ],
+      "explanation": "",
+      "difficulty": "easy",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Em uma função composta f(g(x)), onde f(x) = log₂(x) e f(g(x)) = x + 3, qual deve ser a expressão de g(x)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "g(x) = 2x + 3, pois a base multiplicada pelo argumento resulta na expressão desejada",
+          "correct": false,
+          "explanation": "Incorreta. Se g(x) = 2x + 3, então f(g(x)) = f(2x + 3) = log₂(2x + 3), o que não é igual a x + 3. Não há uma propriedade logarítmica que permita simplificar log₂(2x + 3) para x + 3 desta forma."
+        },
+        {
+          "id": "b",
+          "text": "g(x) = 2^(x+3), pois aplicando f sobre essa expressão resulta em x + 3",
+          "correct": true,
+          "explanation": "Correta. Dada f(x) = log₂(x) e f(g(x)) = x + 3, ao substituir g(x) na função f, obtemos log₂(g(x)) = x + 3. Para resolver para g(x), aplicamos a definição de logaritmo: se log_b(y) = z, então y = b^z. Assim, g(x) = 2^(x+3). Se aplicarmos f a essa expressão, teremos f(2^(x+3)) = log₂(2^(x+3)), que, pela propriedade de logaritmos log_b(b^z) = z, resulta em x + 3."
+        },
+        {
+          "id": "c",
+          "text": "g(x) = log₂(x + 3), pois a composição de logaritmos resulta em soma",
+          "correct": false,
+          "explanation": "Incorreta. Se g(x) = log₂(x + 3), então f(g(x)) = f(log₂(x + 3)) = log₂(log₂(x + 3)), o que não é igual a x + 3. A composição de funções não se resume a uma simples soma de logaritmos."
+        },
+        {
+          "id": "d",
+          "text": "g(x) = x + 3, pois a função identidade satisfaz a condição",
+          "correct": false,
+          "explanation": "Incorreta. Se g(x) = x + 3, então f(g(x)) = f(x + 3) = log₂(x + 3), o que não é igual a x + 3. A função identidade, por si só, não satisfaz a condição dada para a função composta."
+        }
+      ],
+      "explanation": "Correta. Dada f(x) = log₂(x) e f(g(x)) = x + 3, ao substituir g(x) na função f, obtemos log₂(g(x)) = x + 3. Para resolver para g(x), aplicamos a definição de logaritmo: se log_b(y) = z, então y = b^z. Assim, g(x) = 2^(x+3). Se aplicarmos f a essa expressão, teremos f(2^(x+3)) = log₂(2^(x+3)), que, pela propriedade de logaritmos log_b(b^z) = z, resulta em x + 3.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Na notação ln(x), qual é a base do logaritmo representado?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A base é variável e depende do contexto da aplicação",
+          "correct": false,
+          "explanation": "Incorreta. A base do logaritmo natural (ln) é fixa e universalmente definida como o número 'e'. Embora existam logaritmos com bases variáveis, a notação \"ln\" é reservada para uma base específica e constante."
+        },
+        {
+          "id": "b",
+          "text": "A base é 10, seguindo a convenção de logaritmos decimais",
+          "correct": false,
+          "explanation": "Incorreta. A base 10 é utilizada para o logaritmo decimal, que é comumente denotado como \"log(x)\" (sem a base explícita) ou \"log₁₀(x)\"). O logaritmo natural tem uma base diferente."
+        },
+        {
+          "id": "c",
+          "text": "A base é o número e, que é um número irracional aproximadamente igual a 2,71828",
+          "correct": true,
+          "explanation": "Correta. A notação \"ln(x)\" é uma abreviação para o logaritmo natural de x. Por definição, o logaritmo natural é o logaritmo cuja base é o número de Euler, denotado pela letra 'e'. O número 'e' é uma constante matemática irracional, aproximadamente igual a 2,71828, e é fundamental em diversas áreas da matemática e ciências."
+        },
+        {
+          "id": "d",
+          "text": "A base é 2, utilizada em computação e sistemas binários",
+          "correct": false,
+          "explanation": "Incorreta. A base 2 é utilizada para o logaritmo binário, frequentemente encontrado em ciência da computação e teoria da informação, e é denotado como \"log₂(x)\" ou \"lb(x)\". A notação \"ln(x)\" refere-se especificamente à base 'e'."
+        }
+      ],
+      "explanation": "Correta. A notação \"ln(x)\" é uma abreviação para o logaritmo natural de x. Por definição, o logaritmo natural é o logaritmo cuja base é o número de Euler, denotado pela letra 'e'. O número 'e' é uma constante matemática irracional, aproximadamente igual a 2,71828, e é fundamental em diversas áreas da matemática e ciências.",
+      "difficulty": "medium",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Em um modelo de crescimento populacional exponencial P(t) = P₀ · e^(at), onde t representa unidades de tempo e cada unidade corresponde a 10 anos, se em t=0 (ano 1950) a população era 40.000 habitantes e em t=6 (ano 2010) era 520.000 habitantes, qual é o valor de e^(6a)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "480.000, obtido pela diferença entre as populações",
+          "correct": false,
+          "explanation": "Incorreta. 480.000 é a diferença absoluta entre a população final e a inicial (520.000 - 40.000). Esta é a quantidade de habitantes que a cidade de Joinville aumentou no período, mas não corresponde ao fator de crescimento exponencial e^(6a) que a questão solicita."
+        },
+        {
+          "id": "b",
+          "text": "26, obtido pela soma das razões de crescimento em cada década",
+          "correct": false,
+          "explanation": "Incorreta. A alternativa propõe uma metodologia de cálculo que não se alinha com o modelo de crescimento exponencial fornecido. O valor de e^(6a) é um único fator que representa o crescimento total no período, e não uma soma de razões de crescimento por década ou qualquer outra operação aditiva."
+        },
+        {
+          "id": "c",
+          "text": "6, obtido pela diferença temporal entre as medições",
+          "correct": false,
+          "explanation": "Incorreta. O valor 6 representa o tempo transcorrido em unidades de 't' (60 anos divididos por 10 anos por unidade), que é o expoente da expressão e^(6a). No entanto, a questão pede o valor da expressão completa e^(6a), que é o fator de crescimento total, e não apenas o valor do tempo 't'."
+        },
+        {
+          "id": "d",
+          "text": "13, obtido pela razão entre as populações nos dois momentos",
+          "correct": true,
+          "explanation": "Correta. O modelo de crescimento populacional exponencial é dado por P(t) = P₀ ⋅ e^(at). Sabendo que P(0) = 40.000 (o que define P₀ = 40.000) e P(6) = 520.000, podemos substituir esses valores na fórmula. Assim, 520.000 = 40.000 ⋅ e^(6a). Para encontrar o valor de e^(6a), basta dividir a população em t=6 pela população inicial: e^(6a) = 520.000 / 40.000 = 13."
+        }
+      ],
+      "explanation": "Correta. O modelo de crescimento populacional exponencial é dado por P(t) = P₀ ⋅ e^(at). Sabendo que P(0) = 40.000 (o que define P₀ = 40.000) e P(6) = 520.000, podemos substituir esses valores na fórmula. Assim, 520.000 = 40.000 ⋅ e^(6a). Para encontrar o valor de e^(6a), basta dividir a população em t=6 pela população inicial: e^(6a) = 520.000 / 40.000 = 13.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Dada a propriedade e^(ln(x)) = x, qual é o fundamento matemático que justifica essa igualdade?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "A propriedade vale apenas quando x é um número inteiro positivo",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade e^(ln(x)) = x é válida para qualquer número real positivo 'x'. A restrição para 'x' é que ele seja maior que zero (x > 0), devido ao domínio da função logarítmica natural, mas não se limita apenas a números inteiros."
+        },
+        {
+          "id": "b",
+          "text": "A igualdade decorre da definição de que todo logaritmo elevado à sua base resulta no argumento original",
+          "correct": false,
+          "explanation": "Incorreta. Embora seja uma propriedade fundamental dos logaritmos que a base elevada ao logaritmo de um número nessa mesma base resulte no próprio número (a^(log_a(x)) = x), esta alternativa não captura o fundamento mais abrangente e conceitual. A razão principal para e^(ln(x)) = x é que a função exponencial e a logarítmica natural são funções inversas, e a propriedade mencionada é uma consequência direta dessa relação de inversão."
+        },
+        {
+          "id": "c",
+          "text": "A função exponencial e a função logarítmica natural são inversas, de modo que a composição de uma pela outra resulta na função identidade",
+          "correct": true,
+          "explanation": "Correta. A função exponencial com base 'e' (f(x) = e^x) e a função logarítmica natural (g(x) = ln(x)) são, por definição, funções inversas uma da outra. Quando funções inversas são compostas (aplicadas em sequência), elas se \"cancelam\", resultando na função identidade, que retorna o próprio argumento. Assim, e^(ln(x)) = x e ln(e^x) = x, desde que 'x' esteja no domínio adequado de cada função."
+        },
+        {
+          "id": "d",
+          "text": "O logaritmo natural sempre cancela qualquer base exponencial, independentemente de qual seja",
+          "correct": false,
+          "explanation": "Incorreta. O logaritmo natural (ln) é o logaritmo cuja base é o número de Euler 'e'. Ele só \"cancela\" uma exponencial se a base dessa exponencial também for 'e'. Por exemplo, 2^(ln(x)) não seria igual a 'x', pois as bases não são compatíveis para a propriedade de funções inversas diretas."
+        }
+      ],
+      "explanation": "Correta. A função exponencial com base 'e' (f(x) = e^x) e a função logarítmica natural (g(x) = ln(x)) são, por definição, funções inversas uma da outra. Quando funções inversas são compostas (aplicadas em sequência), elas se \"cancelam\", resultando na função identidade, que retorna o próprio argumento. Assim, e^(ln(x)) = x e ln(e^x) = x, desde que 'x' esteja no domínio adequado de cada função.",
+      "difficulty": "hard",
+      "topic": "Raciocínio Lógico-Matemático",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "13_454197_Logaritmo e Funções Logarítmicas IV.pdf",
+  "coletado_em": "2026-09-23T20:57:51"
+}

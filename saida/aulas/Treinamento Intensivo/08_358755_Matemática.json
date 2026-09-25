@@ -1,0 +1,294 @@
+{
+  "curso": "PM BA - Polícia Militar do Estado da Bahia - Soldado (Pré-edital)",
+  "curso_id": "dWIY1fRnw9M=",
+  "disciplina": "Treinamento Intensivo",
+  "disciplina_id": "14742",
+  "materia": "Treinamento Intensivo",
+  "modulo": {
+    "id": 4,
+    "titulo": "Matemática"
+  },
+  "ordem": 8,
+  "ordem_no_curso": "8.00",
+  "titulo": "Matemática",
+  "codigo_aula": "358755",
+  "video_id": "ikhwEwdlheU=",
+  "professor": "Diego Ribeiro",
+  "duracao": "00:21:58",
+  "url_aula": "https://www.grancursosonline.com.br/aluno/curso/video/codigo/dWIY1fRnw9M%3D/v/ikhwEwdlheU%3D",
+  "caderno_questoes": "https://questoes.grancursosonline.com.br/aluno/filtro/concursos?assunto=403870%2C408914%2C403858%2C403869%2C403825&desatualizada=0&anulada=0&auth=force",
+  "transcricao": "# Transcrição - Matemática\n\n## Questão 40 – Probabilidade com interseção (cantores e atores)\nVamos continuar nosso treinamento intensivo, reta final para o nosso concurso. Na matéria básica, Matemática, vamos para a questão número 40.\n\nA questão diz o seguinte: no grupo de 25 artistas, sabe-se que 14 são cantores e 18 são atores. Escolhendo-se ao acaso duas pessoas desse grupo, qual a probabilidade de que ambas sejam cantores e atores? Ele quer a interseção: cantor ∩ ator. Beleza, ele vai escolher dois artistas.\n\nProbabilidade é, mais uma vez, o que eu quero dividido pelo que eu tenho. O que eu tenho? 25 artistas. O que eu quero? A interseção. Vamos calcular. Somando cantores e atores: 14 + 18 = 32. Mas o total é 25. Então 32 − 25 = 7. Isso significa que a interseção é igual a 7.\n\nPara a primeira escolha, a probabilidade é 7/25 de escolher alguém que seja cantor e ator ao mesmo tempo. Para a segunda escolha, já não tenho 7, tenho 6, e o total também já não é 25, é 24. Vamos simplificar: 6/24 = 1/4. Multiplicando frações: 7/25 × 1/4 = 7/100 = 0,07, que é igual a 7%.\n\nEntão, a probabilidade de escolher duas pessoas desse grupo e ambas serem cantores e atores é de 7%. Bacana.\n\nSe quiser representar por meio de diagramas para entender melhor esse grupo de artistas: aqui você tem Cantores, aqui você tem Atores; a interseção é 7. Então 14 − 7 = 7 (somente cantores), 18 − 7 = 11 (somente atores). Se você somar 7 + 7 + 11 = 25 artistas. Essa é a nossa representação.\n\n## Questão 41 – Moeda e dado (OU vs E)\nNo lançamento simultâneo de uma moeda e de um dado, a probabilidade de se obter coroa ou um número ímpar. Galera, muita atenção nisso aqui: “ou, ou, ou”.\n\nA moeda tem duas possibilidades: cara ou coroa. O dado tem seis possibilidades: de 1 a 6. Jogando uma moeda e um dado, o que pode acontecer? Vamos listar as combinações por categorias:\n- Cara e número par\n- Cara e número ímpar\n- Coroa e número par\n- Coroa e número ímpar\n\nEssas são as possibilidades. Ele quer saber a probabilidade de se obter uma combinação que seja coroa ou número ímpar. “Ou” significa: pode ter um, pode ter o outro, pode ter os dois.\n\nObservando:\n- Cara e par: não atende (não é coroa nem ímpar).\n- Cara e ímpar: atende (ímpar).\n- Coroa e par: atende (coroa).\n- Coroa e ímpar: atende (coroa e ímpar).\n\nA única que não atende é a primeira, porque traz cara e par. Então a probabilidade é o que eu quero dividido pelo que eu tenho: 3 possibilidades favoráveis em um total de 4. Isso é 0,75, que é igual a 75%. Questão boa, bem tranquila. Você só precisa ter essa capacidade de visualizar as possibilidades.\n\nGabarito da 41: letra D de “brabo”. Porque eu tenho três situações num total de quatro.\n\nAntes de passar para a próxima questão: se a questão trocasse “ou” por “e” (coroa e número ímpar), aí não tem jeito, só atenderia a situação quatro (coroa e ímpar): 1 em 4, que dá 25%. Cuidado com a palavrinha “ou”; cuidado com a palavra “e”.\n\n## Questão 42 – Determinante do produto de matrizes\nVamos trabalhar matriz e determinante, sendo que o produto das matrizes M e P gera uma matriz cujo determinante queremos. Existe uma propriedade muito bacana: o determinante do produto é o produto dos determinantes.\n\n> det(MP) = det(M) × det(P)\n\nÉ isso que a gente vai fazer. Agora, vamos encontrar det(M) e det(P). Lembra como faz na matriz 2×2: diagonal principal menos diagonal secundária.\n\nDeterminante de M:\n- Principal: 1/3 × 1/4 = 1/12\n- Secundária: 1/2 × 1/5 = 1/10\n- det(M) = 1/12 − 1/10 = (10 − 12)/120 = −2/120 = −1/60\n\nDeterminante de P:\n- Principal: 2/5 × 5/4 = 10/20 = 1/2\n- Secundária: 2/3 × 1/1? (Ajustando o cálculo conforme a fala: resultado final usado pelo professor) Resulta em 2/3\n- det(P) = 1/2 − 2/3 = (3 − 4)/6 = −1/6\n\nMultiplicando:\ndet(MP) = (−1/60) × (−1/6) = 1/360\n\nTemos o gabarito: letra C de coragem. Beleza.\n\n## Questão 43 – Determinante igual a zero\nAssinalar a alternativa que apresenta uma matriz cujo determinante é igual a zero. Mais uma vez, matriz 2×2. Para encontrar o determinante: diagonal principal menos diagonal secundária.\n\nExemplo dado: 2 × 6 − 3 × 4 = 12 − 12 = 0. Por incrível que pareça, já achamos o gabarito: alternativa D de Diego.\n\nChecando as outras:\n- Letra B: 1 × 1 − 0 × 0 = 1 (não zera).\n- Letra C: 0 − 1 ≠ 0.\n- Letra A: 4 − 6 = −2 (também não zera).\n\nSem dúvida, gabarito: alternativa D. Beleza, podemos avançar.\n\n## Questão 44 – Multiplicação de matrizes (checagem de alternativa)\nSendo as matrizes A = [0 1; 0 5] e B = [2 0; 2 2], define-se C = ... (o enunciado traz uma forma; vamos checar via multiplicação). Eu vou pegar a matriz B e multiplicar pela que ele forneceu para ver se bate.\n\nFazendo a multiplicação (primeira linha × primeira coluna; primeira linha × segunda coluna; e assim por diante), desenvolvendo:\n- Resultado obtido pelo professor na multiplicação: \n  - Elementos calculados conduzem a uma matriz final que NÃO bate com a alternativa apresentada.\n\nConclusão: gabarito testado está errado. Testei e provei que não está certo.\n\n## Questão – Triângulo retângulo, perímetro e cosseno\nDetermina o perímetro de um triângulo retângulo cujo cateto adjacente mede 12 cm, se seu cosseno é 0,8.\n\nTenho aqui o triângulo retângulo. O cateto adjacente ao ângulo β mede 12. O cosseno do ângulo β é 0,8. Cosseno é cateto adjacente dividido pela hipotenusa.\n\nEntão: 0,8 = 12/H. Logo, H = 12/0,8 = 15. A hipotenusa mede 15 cm.\n\nAgora ele quer o perímetro. Falta o cateto oposto. Vou trabalhar Pitágoras:\nH^2 = cateto_oposto^2 + cateto_adjacente^2\n15^2 = x^2 + 12^2\n225 = x^2 + 144\nx^2 = 225 − 144 = 81\nx = 9\n\nTemos os lados: 9, 12, 15. Perímetro = 9 + 12 + 15 = 36 cm. Previsto na alternativa D. Bacana.\n\n## Questão – Equação da circunferência (centro na origem)\nGeometria analítica para treinar: equação da circunferência. Joyce desenhou o centro de uma circunferência no ponto (0, 0) e a figura indica raio 3.\n\nA equação da circunferência é:\n(x − x0)^2 + (y − y0)^2 = r^2\n\nComo o centro é (0, 0), fica:\nx^2 + y^2 = 3^2 = 9\n\nGabarito: letra D de destemido. Bem tranquila, bem direta. Tomara que caia uma dessa na prova.\n\n## Questão – Trigonometria no 4º quadrante\nNossa última questão desse treinamento intensivo. Um ângulo α é do quarto quadrante. No ciclo trigonométrico, seno está no eixo y e cosseno no eixo x; no 4º quadrante, cosseno é positivo e seno é negativo.\n\nDado: cos α = 0,8. É correto afirmar o valor de sen α. Pela relação fundamental:\ncos^2 α + sen^2 α = 1\n\n(0,8)^2 + sen^2 α = 1\n0,64 + sen^2 α = 1\nsen^2 α = 0,36\nsen α = ±0,6\n\nComo está no 4º quadrante, o seno é negativo. Então:\nsen α = −0,6 = −3/5\n\nGabarito: letra C de coragem.\n\nEu me despeço de vocês. Agradeço esse treinamento intensivo e desejo coragem.\n\n💬 História: Persistam no seu sonho! Galera, lutem, estudem, se dediquem. Tudo o que vocês estão passando eu também já passei. Eu posso garantir: é temporário, isso passa. O que vai ser permanente é a sua aprovação, é o seu nome no Diário Oficial. Isso aí ninguém tira. Nada paga esse preço.\n\nBeleza? Sigam firmes e contem sempre com o Gran Cursos Online e com o professor Diego Ribeiro. Forte abraço. Estamos juntos e boa prova, pessoal. Finalizamos mais um treinamento intensivo.\n\nMultiplicação de matriz: se fosse uma matriz de ordem 3, a gente montaria a terceira linha/coluna para aplicar a regra (Sarrus) ao determinante; na matriz de ordem 2, a gente aplica direto: diagonal principal menos diagonal secundária. Beleza, é isso.\n\nObrigado pela atenção. Boa vantagem a todos vocês! Fiquem com Deus. Precisando de alguma coisa, vou deixar o Instagram: arroba prof.diego.ribeiro. Basta seguir a gente lá. Manda sua dúvida e fala que o Gran está presente. A gente está aqui para isso. Forte abraço, fiquem com Deus e bons estudos.",
+  "transcricao_meta": {
+    "title": "Matemática",
+    "subject": "Treinamento Intensivo",
+    "defaultTone": "personal",
+    "totalTones": 1,
+    "corrected": true,
+    "organized": true,
+    "examFocused": false,
+    "originalLength": 22412,
+    "createdAt": "2026-02-09T03:54:46.861Z"
+  },
+  "resumo": "## 📋 O Que Você Vai Aprender\nEste resumo aborda: Probabilidade (união e interseção), Matrizes e Determinantes (2×2 e propriedades), Multiplicação de matrizes, Trigonometria no triângulo retângulo (cos, Pitágoras, perímetro) e Equação da circunferência.\nPrincipais pontos: \n- Probabilidade: interpretar “ou” (união) vs “e” (interseção) e usar produto de probabilidades condicionais.\n- Determinantes: regra 2×2 (ad − bc) e propriedade det(MP) = det(M)·det(P).\n- Trigonometria: cos para achar hipotenusa; Pitágoras para o terceiro lado; sinais por quadrante.\n- Circunferência: formas x² + y² = r² e (x − h)² + (y − k)² = r².\n\n## 1. Base / Conceitos Fundamentais\n- Probabilidade:\n  - “O que eu quero” dividido por “o que eu tenho” (eventos equiprováveis).\n  - **União (ou)**: evento ocorre se pelo menos um acontece.\n  - **Interseção (e)**: evento ocorre se ambos acontecem.\n- Matrizes e Determinantes:\n  - **Matriz quadrada 2×2**: det = ad − bc (diagonal principal menos diagonal secundária).\n  - **Propriedade**: det(MP) = det(M) × det(P).\n- Trigonometria (triângulo retângulo):\n  - **cos β = cateto adjacente / hipotenusa**.\n  - **Pitágoras**: hip² = cat₁² + cat₂².\n  - **Identidade**: cos²(α) + sen²(α) = 1.\n- Circunferência:\n  - **Geral**: (x − h)² + (y − k)² = r².\n  - **Centro na origem**: x² + y² = r².\n\n## 2. Como Funciona / Distinções\n- Probabilidade:\n  - “Ou” (união) conta casos de um, do outro ou de ambos.\n  - “E” (interseção) exige simultaneidade; quando há sorteios sucessivos sem reposição, multiplique probabilidades condicionais.\n- Determinantes:\n  - 2×2: aplique ad − bc direto.\n  - Produto de matrizes: calcular det do produto é mais rápido via det(MP) = det(M)·det(P).\n- Trigonometria:\n  - Se tem cos e um cateto, obtenha a hipotenusa diretamente: hip = adj/cos.\n  - Para o outro cateto, use Pitágoras.\n  - Sinais trigonométricos dependem do quadrante (4º quadrante: cos > 0, sen < 0).\n- Circunferência:\n  - Centro (0,0) simplifica para x² + y² = r² (sem termos lineares).\n  - Com centro (h,k), mantenha (x − h) e (y − k).\n\n## 3. Aplicação Prática / Técnicas\n- Probabilidade com interseção (sorteios sem reposição):\n  1. Encontre a interseção usando princípio da inclusão-exclusão: n(A∩B) = n(A) + n(B) − n(U).\n  2. Multiplique probabilidades em sequência: P(1ª) × P(2ª|1ª).\n  > Dica de Prova: Em “ambos”, raramente some; quase sempre multiplique probabilidades condicionais.\n- Probabilidade com união:\n  - Liste o espaço amostral e conte casos favoráveis.\n  > Dica de Prova: Em “ou”, não esqueça dos casos em que ocorrem os dois.\n- Determinantes:\n  - 2×2: det = ad − bc.\n  - det(MP): calcule det(M) e det(P) separadamente e multiplique.\n  > Dica de Prova: Padronize denominadores antes de subtrair frações; cuidado com o sinal da diagonal secundária.\n- Multiplicação de matrizes (A·B):\n  - Elemento (i,j) = linha i de A × coluna j de B.\n  > Dica de Prova: Use zeros para acelerar; descarte alternativas incompatíveis com entradas nulas.\n- Triângulo retângulo via cos:\n  1. hip = adj/cos.\n  2. Use Pitágoras para o cateto oposto.\n  3. Some lados para o perímetro.\n  > Dica de Prova: Se der cos em fração (ex.: 4/5), associe ao triângulo 3-4-5 escalado.\n- Circunferência:\n  - Identifique centro (h,k) e raio r; aplique a forma correta.\n  > Dica de Prova: Centro (0,0) e raio r → marque direto x² + y² = r².\n\n## 4. Exemplos e Casos Resolvidos\n- Probabilidade (cantores e atores):\n  - Total = 25; Cantores = 14; Atores = 18 → Interseção = 14 + 18 − 25 = 7.\n  - Escolher 2 ambos “cantores e atores”: (7/25) × (6/24) = 7/100 = 0,07 = 7%.\n- Probabilidade (moeda + dado):\n  - Espaço amostral: 4 casos equiprováveis.\n  - Evento “coroa ou ímpar”: 3/4 = 0,75 = 75%.\n  > Dica de Prova: Se fosse “e” (“coroa e ímpar”), seria 1/4 = 25%.\n- Propriedade de determinante no produto:\n  - det(M) = 1/12 − 1/10 = −1/60.\n  - det(P) = 1/2 − 1/3 = 1/6.\n  - det(MP) = (−1/60) × (1/6) = −1/360.\n- Determinante 2×2 igual a zero:\n  - 2×6 − 3×4 = 12 − 12 = 0.\n- Multiplicação de matrizes (checagem):\n  - A = [0 1; 0 5], B = [2 0; 2 2]. Use linha×coluna e compare com alternativas; zeros agilizam.\n- Triângulo retângulo (cos conhecido):\n  - cos β = 0,8; adj = 12 → hip = 12/0,8 = 15.\n  - Cateto oposto: 15² − 12² = 81 → 9.\n  - Perímetro: 12 + 15 + 9 = 36.\n- Circunferência:\n  - Centro (0,0), raio 3 → x² + y² = 9.\n- Identidade trigonométrica + quadrante:\n  - cos(α) = 0,8 → sen² = 1 − 0,64 = 0,36 → sen = ±0,6.\n  - 4º quadrante → sen = −0,6 = −3/5.\n  > Dica de Prova: Determine o sinal pelo quadrante antes de tirar a raiz.\n\n## 5. Pegadinhas e Erros Comuns\n- Probabilidade:\n  - Confundir “ou” com “e”. União aceita um, outro ou ambos; interseção exige os dois.\n  - Esquecer a redução do numerador e denominador na segunda retirada (sem reposição).\n- Determinantes:\n  - Trocar a ordem: ad − bc (não some; subtraia).\n  - Errar sinais ao subtrair frações: padronize denominadores.\n- Multiplicação de matrizes:\n  - Somar elementos correspondentes em vez de fazer produto linha×coluna.\n  - Ignorar zeros que simplificam contas.\n- Trigonometria:\n  - Escolher sinal errado do seno/cosseno ao usar a identidade; use o quadrante: 4º → sen < 0, cos > 0.\n  - Dividir errado ao isolar hipotenusa: hip = adj/cos (não cos = adj/hip invertido de forma incorreta).\n- Circunferência:\n  - Esquecer de elevar o raio ao quadrado.\n  - Escrever termos lineares quando o centro é (0,0).",
+  "resumo_bolso": "# Matemática\n\n---\n\n## 📌 Conceitos-Chave\n\n* **Probabilidade (básico)**: “o que eu quero” / “o que eu tenho” (eventos equiprováveis).\n* **União (A ∪ B – “ou”)**: evento ocorre se pelo menos um acontece (um, outro ou ambos).\n* **Interseção (A ∩ B – “e”)**: evento ocorre se ambos acontecem simultaneamente.\n* **Determinante 2×2**: para M = \\[\\[a b\\]; \\[c d\\]\\] → det(M) = ad − bc (diagonal principal menos diagonal secundária).\n* **Propriedade do determinante no produto**: det(MP) = det(M)·det(P).\n* **Multiplicação de matrizes**: (A·B)\\_{ij} = (linha i de A)·(coluna j de B).\n* **Trigonometria (triângulo retângulo)**: cos β = cateto adjacente / hipotenusa.\n* **Pitágoras**: hip² = cat₁² + cat₂².\n* **Identidade trigonométrica**: sen²α + cos²α = 1.\n* **Equação da circunferência**: (x − h)² + (y − k)² = r²; se centro (0,0): x² + y² = r².\n\n---\n\n## ⚖️ Diferenças Críticas\n\n### União (“ou”) vs Interseção (“e”)\n\n| Aspecto | União (A ∪ B – “ou”) | Interseção (A ∩ B – “e”) |\n| --- | --- | --- |\n| **Condição** | Pelo menos um ocorre (um, outro ou ambos) | Ambos ocorrem simultaneamente |\n| **Interpretação em problemas** | Conte casos de um, do outro ou de ambos | Exige simultaneidade; em sorteios sucessivos sem reposição, use produto de probabilidades condicionais |\n\n---\n\n## 🔢 Fórmulas e Regras\n\n**1. Probabilidade – Interseção em conjuntos (inclusão-exclusão)**\n\n* **Regra**: n(A∩B) = n(A) + n(B) − n(U), quando U é o total.\n* **Aplicação**: problemas de conjuntos, como “cantores e atores”.\n* **Exemplo**: 25 total, 14 cantores, 18 atores → interseção = 14 + 18 − 25 = 7.\n\n---\n\n**2. Probabilidade – Sorteios sucessivos sem reposição (“ambos”)**\n\n* **Regra**: P(A e B) = P(1ª favorável) × P(2ª favorável | 1ª favorável).\n* **Exemplo**: 25 pessoas; 14 cantores, 18 atores → interseção = 7. Escolher 2 que sejam “cantores e atores”: (7/25) × (6/24) = 7/100.\n\n---\n\n**3. Probabilidade – União (“ou”) em espaço amostral pequeno**\n\n* **Regra**: liste o espaço amostral e conte casos favoráveis, incluindo os que satisfazem ambos os eventos.\n* **Exemplo**: moeda (cara, coroa) e dado (par, ímpar): 4 casos equiprováveis. Evento “coroa ou ímpar” → 3/4.\n\n---\n\n**4. Determinante 2×2**\n\n* **Regra**: det = ad − bc.\n* **Exemplo**: \\[\\[2 3\\]; \\[4 6\\]\\] → 2·6 − 3·4 = 12 − 12 = 0.\n\n---\n\n**5. Propriedade det(MP) = det(M)·det(P)**\n\n* **Aplicação**: calcular det do produto via determinantes individuais.\n* **Exemplo**: det(M) = 1/12 − 1/10 = −1/60; det(P) = 1/2 − 1/3 = 1/6 → det(MP) = (−1/60) × (1/6) = −1/360.\n\n---\n\n**6. Multiplicação de matrizes**\n\n* **Regra**: elemento (i,j) = produto linha i de A × coluna j de B (soma dos produtos elemento a elemento).\n* **Exemplo**: A = \\[\\[0 1\\]; \\[0 5\\]\\], B = \\[\\[2 0\\]; \\[2 2\\]\\]; use linha×coluna, aproveitando os zeros para simplificar.\n\n---\n\n**7. Triângulo retângulo via cosseno**\n\n* **Passo 1**: hip = cateto adjacente / cos.\n* **Passo 2**: use Pitágoras para o cateto oposto.\n* **Passo 3**: perímetro = soma dos 3 lados.\n* **Exemplo**: cos β = 0,8; adj = 12 → hip = 12/0,8 = 15; cateto oposto: 15² − 12² = 81 → 9; perímetro = 12 + 15 + 9 = 36.\n\n---\n\n**8. Identidade trigonométrica + quadrante**\n\n* **Regra**: sen²α + cos²α = 1; sen² = 1 − cos².\n* **Aplicação**: achar sen a partir de cos (ou vice-versa), ajustando o sinal pelo quadrante.\n* **Exemplo**: cos α = 0,8 → sen² = 1 − 0,64 = 0,36 → sen = ±0,6. No 4º quadrante: sen = −0,6.\n\n---\n\n**9. Circunferência – formas principais**\n\n* **Centro (h,k), raio r**: (x − h)² + (y − k)² = r².\n* **Centro na origem**: x² + y² = r².\n* **Exemplo**: centro (0,0), raio 3 → x² + y² = 9.\n\n---\n\n## ⚠️ Pegadinhas Comuns\n\n* Confundir “ou” com “e” em probabilidade: união aceita um, outro ou ambos; interseção exige os dois.\n* Em sorteios sem reposição, esquecer de ajustar numerador e denominador na segunda retirada.\n* Em determinante 2×2, trocar a ordem ou somar em vez de fazer ad − bc.\n* Na identidade sen² + cos² = 1, escolher sinal errado do seno/cosseno; use o quadrante (4º: sen < 0, cos > 0).\n* Na circunferência, esquecer de elevar o raio ao quadrado (usar r em vez de r²).\n\n---\n\n## 📋 Checklist Final\n\n* Diferenciei claramente **união (“ou”)** de **interseção (“e”)** e sei quando usar produto de probabilidades condicionais?\n* Sei aplicar **n(A∩B) = n(A) + n(B) − n(U)** em problemas de conjuntos?\n* Memorizei **det 2×2 = ad − bc** e **det(MP) = det(M)·det(P)**?\n* Lembro que multiplicação de matrizes é **linha × coluna**, não soma de elementos correspondentes?\n* Sei usar **hip = adj/cos** + **Pitágoras** para achar o terceiro lado e o perímetro?\n* Consigo usar **sen² + cos² = 1** e escolher o **sinal correto pelo quadrante**?\n* Fixei as formas da circunferência: **(x − h)² + (y − k)² = r²** e, na origem, **x² + y² = r²**?",
+  "mapa_mental": "# 🧮 Matemática para Concursos\n## 🎯 Probabilidade\n### 💡 Conceitos básicos\n- Espaço amostral\n- Casos favoráveis\n- Eventos equiprováveis\n- Probabilidade clássica\n- Complementar de evento\n### 🔄 União e interseção\n- União A ou B\n- Interseção A e B\n- Inclusão-exclusão\n- Eventos simultâneos\n- Eventos disjuntos\n### ⚙️ Regras operatórias\n- Produto de probabilidades\n- Probabilidade condicional\n- Sorteios sucessivos\n- Sem reposição\n- Com reposição\n\n## 🧾 Matrizes e Determinantes\n### 💡 Matrizes e produto\n- Matriz 2×2\n- Ordem m×n\n- Produto A·B\n- Linha por coluna\n- Compatibilidade dimensões\n### 🧮 Determinante 2×2\n- Fórmula ad − bc\n- Diagonal principal\n- Diagonal secundária\n- Determinante nulo\n- Sinal da subtração\n### 📊 Propriedades determinantes\n- det(MP) = det(M)det(P)\n- Determinante do produto\n- Determinante identidade\n- Determinante triangular\n- Multiplicação escalar\n\n## 📐 Trigonometria e Triângulo Retângulo\n### 💡 Razões trigonométricas\n- Seno definição\n- Cosseno definição\n- Tangente definição\n- Cateto adjacente\n- Cateto oposto\n### 🧮 Relações fundamentais\n- Teorema Pitágoras\n- hip² = cat₁² + cat₂²\n- cos² + sen² = 1\n- Isolamento hipotenusa\n- Relação perímetro\n### 🧭 Sinais por quadrante\n- Primeiro quadrante\n- Segundo quadrante\n- Terceiro quadrante\n- Quarto quadrante\n- Sinais sen e cos\n\n## 🔵 Equação da Circunferência\n### 💡 Formas principais\n- Centro origem\n- x² + y² = r²\n- Centro (h,k)\n- (x − h)² + (y − k)²\n- Raio ao quadrado\n### 📍 Elementos geométricos\n- Centro da circunferência\n- Raio da circunferência\n- Ponto pertencente\n- Distância ponto-centro\n- Relação distância-raio\n### ⚠️ Cuidados frequentes\n- Elevar raio ao quadrado\n- Sinais de h e k\n- Termos lineares nulos\n- Identificação do centro\n- Identificação do raio",
+  "flashcards": null,
+  "questoes_fixacao": [
+    {
+      "id": "q-1",
+      "question": "Em um grupo de 25 artistas, 14 são cantores e 18 são atores. Quantos artistas exercem simultaneamente as duas atividades (cantor e ator)?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "11 artistas",
+          "correct": false,
+          "explanation": "Incorreta. Se houvesse 11 artistas na interseção, a soma dos grupos seria 14 (cantores) + 18 (atores) - 11 (interseção) = 21, o que é menor que o total de 25 artistas, indicando que alguns artistas não estariam em nenhuma das categorias, o que não é inferido pela questão."
+        },
+        {
+          "id": "b",
+          "text": "7 artistas",
+          "correct": true,
+          "explanation": "Correta. Para encontrar o número de artistas que são cantores e atores simultaneamente, utilizamos o Princípio da Inclusão-Exclusão. Sabemos que o número total de artistas (N) é 25. O número de cantores (C) é 14 e o número de atores (A) é 18. A fórmula é N = C + A - (C ∩ A), onde (C ∩ A) representa a interseção. Assim, 25 = 14 + 18 - (C ∩ A). Resolvendo a equação: 25 = 32 - (C ∩ A) => (C ∩ A) = 32 - 25 => (C ∩ A) = 7. Portanto, 7 artistas são cantores e atores."
+        },
+        {
+          "id": "c",
+          "text": "9 artistas",
+          "correct": false,
+          "explanation": "Incorreta. Se houvesse 9 artistas na interseção, a soma dos grupos seria 14 (cantores) + 18 (atores) - 9 (interseção) = 23, o que é menor que o total de 25 artistas, implicando que alguns artistas não seriam nem cantores nem atores, o que não é o caso, pois a questão não informa a existência de artistas que não se encaixam em nenhuma das categorias."
+        },
+        {
+          "id": "d",
+          "text": "5 artistas",
+          "correct": false,
+          "explanation": "Incorreta. Se houvesse 5 artistas na interseção, a soma dos grupos seria 14 (cantores) + 18 (atores) - 5 (interseção) = 27, o que excede o total de 25 artistas. Isso indica que a interseção deve ser maior."
+        }
+      ],
+      "explanation": "Correta. Para encontrar o número de artistas que são cantores e atores simultaneamente, utilizamos o Princípio da Inclusão-Exclusão. Sabemos que o número total de artistas (N) é 25. O número de cantores (C) é 14 e o número de atores (A) é 18. A fórmula é N = C + A - (C ∩ A), onde (C ∩ A) representa a interseção. Assim, 25 = 14 + 18 - (C ∩ A). Resolvendo a equação: 25 = 32 - (C ∩ A) => (C ∩ A) = 32 - 25 => (C ∩ A) = 7. Portanto, 7 artistas são cantores e atores.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-2",
+      "question": "No lançamento simultâneo de uma moeda e um dado, qual é a probabilidade de se obter coroa ou um número ímpar?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "75%",
+          "correct": true,
+          "explanation": "Correta. Para resolver esta questão, listamos os resultados possíveis do lançamento de uma moeda (Cara, Coroa) e de um dado (1, 2, 3, 4, 5, 6). O espaço amostral total é 2 * 6 = 12 resultados. No entanto, podemos simplificar o raciocínio considerando os eventos: A = obter coroa na moeda e B = obter número ímpar no dado. P(A) = 1/2 (Coroa). P(B) = 3/6 = 1/2 (números ímpares: 1, 3, 5). A probabilidade de obter coroa E número ímpar (A ∩ B) é P(A) * P(B) = (1/2) * (1/2) = 1/4, pois os eventos são independentes. A probabilidade de obter coroa OU número ímpar (A U B) é dada pela fórmula P(A U B) = P(A) + P(B) - P(A ∩ B). Substituindo os valores: P(A U B) = 1/2 + 1/2 - 1/4 = 1 - 1/4 = 3/4. Convertendo para porcentagem, 3/4 = 0,75 = 75%."
+        },
+        {
+          "id": "b",
+          "text": "83,33%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de obter coroa ou um número ímpar é de 75%. 83,33% (aproximadamente 5/6) não corresponde ao cálculo correto."
+        },
+        {
+          "id": "c",
+          "text": "50%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de obter coroa é 1/2 e a probabilidade de obter um número ímpar (1, 3, 5) em um dado é 3/6 = 1/2. A probabilidade de obter coroa E um número ímpar é (1/2) * (1/2) = 1/4. Usando a fórmula P(A ou B) = P(A) + P(B) - P(A e B), temos 1/2 + 1/2 - 1/4 = 1 - 1/4 = 3/4 ou 75%. Portanto, 50% é muito baixo."
+        },
+        {
+          "id": "d",
+          "text": "66,67%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de obter coroa ou um número ímpar é de 75%. 66,67% (aproximadamente 2/3) não corresponde ao cálculo correto."
+        }
+      ],
+      "explanation": "Correta. Para resolver esta questão, listamos os resultados possíveis do lançamento de uma moeda (Cara, Coroa) e de um dado (1, 2, 3, 4, 5, 6). O espaço amostral total é 2 * 6 = 12 resultados. No entanto, podemos simplificar o raciocínio considerando os eventos: A = obter coroa na moeda e B = obter número ímpar no dado. P(A) = 1/2 (Coroa). P(B) = 3/6 = 1/2 (números ímpares: 1, 3, 5). A probabilidade de obter coroa E número ímpar (A ∩ B) é P(A) * P(B) = (1/2) * (1/2) = 1/4, pois os eventos são independentes. A probabilidade de obter coroa OU número ímpar (A U B) é dada pela fórmula P(A U B) = P(A) + P(B) - P(A ∩ B). Substituindo os valores: P(A U B) = 1/2 + 1/2 - 1/4 = 1 - 1/4 = 3/4. Convertendo para porcentagem, 3/4 = 0,75 = 75%.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-3",
+      "question": "Qual é a equação da circunferência com centro no ponto (0,0) e raio igual a 3?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "x² + y² = 3",
+          "correct": false,
+          "explanation": "Incorreta. A equação da circunferência é (x - h)² + (y - k)² = r², onde (h, k) é o centro e r é o raio. Com centro em (0,0) e raio 3, a equação correta é x² + y² = 3², ou seja, x² + y² = 9."
+        },
+        {
+          "id": "b",
+          "text": "x² + y² = 9",
+          "correct": true,
+          "explanation": "Correta. A equação geral de uma circunferência com centro no ponto (h, k) e raio r é dada por (x - h)² + (y - k)² = r². No caso específico em que o centro da circunferência está na origem, ou seja, no ponto (0,0), a equação se simplifica para (x - 0)² + (y - 0)² = r², o que resulta em x² + y² = r². Dada a informação de que o raio (r) é igual a 3, substituímos esse valor na equação: x² + y² = 3². Assim, a equação da circunferência é x² + y² = 9."
+        },
+        {
+          "id": "c",
+          "text": "x² + y² = 12",
+          "correct": false,
+          "explanation": "Incorreta. A equação da circunferência com centro na origem e raio r é x² + y² = r². Se o raio é 3, então r² é 3² = 9, e não 12."
+        },
+        {
+          "id": "d",
+          "text": "x² + y² = 6",
+          "correct": false,
+          "explanation": "Incorreta. A equação da circunferência com centro na origem e raio r é x² + y² = r². Se o raio é 3, então r² é 3² = 9, e não 6."
+        }
+      ],
+      "explanation": "Correta. A equação geral de uma circunferência com centro no ponto (h, k) e raio r é dada por (x - h)² + (y - k)² = r². No caso específico em que o centro da circunferência está na origem, ou seja, no ponto (0,0), a equação se simplifica para (x - 0)² + (y - 0)² = r², o que resulta em x² + y² = r². Dada a informação de que o raio (r) é igual a 3, substituímos esse valor na equação: x² + y² = 3². Assim, a equação da circunferência é x² + y² = 9.",
+      "difficulty": "easy",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-4",
+      "question": "Dadas duas matrizes M e P, qual propriedade permite calcular o determinante do produto dessas matrizes?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "O determinante de M·P é igual à diferença entre os determinantes de M e P",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade dos determinantes para o produto de matrizes não envolve a diferença. A diferença entre os determinantes de M e P não é igual ao determinante do produto M·P."
+        },
+        {
+          "id": "b",
+          "text": "O determinante de M·P é igual à soma dos determinantes de M e P",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade dos determinantes para o produto de matrizes não envolve a soma. A soma dos determinantes de M e P não é igual ao determinante do produto M·P."
+        },
+        {
+          "id": "c",
+          "text": "O determinante de M·P é igual ao produto dos determinantes de M e P",
+          "correct": true,
+          "explanation": "Correta. Uma propriedade fundamental dos determinantes na álgebra linear afirma que o determinante do produto de duas matrizes quadradas (M e P) é igual ao produto dos determinantes dessas matrizes. Matematicamente, isso é expresso como det(M·P) = det(M) · det(P). Esta propriedade é extremamente útil para simplificar cálculos, pois permite encontrar o determinante de uma matriz resultante de uma multiplicação sem a necessidade de primeiro realizar a multiplicação das matrizes e depois calcular o determinante da matriz produto."
+        },
+        {
+          "id": "d",
+          "text": "O determinante de M·P é igual ao quociente entre os determinantes de M e P",
+          "correct": false,
+          "explanation": "Incorreta. A propriedade dos determinantes para o produto de matrizes não envolve o quociente. O quociente entre os determinantes de M e P não é igual ao determinante do produto M·P."
+        }
+      ],
+      "explanation": "Correta. Uma propriedade fundamental dos determinantes na álgebra linear afirma que o determinante do produto de duas matrizes quadradas (M e P) é igual ao produto dos determinantes dessas matrizes. Matematicamente, isso é expresso como det(M·P) = det(M) · det(P). Esta propriedade é extremamente útil para simplificar cálculos, pois permite encontrar o determinante de uma matriz resultante de uma multiplicação sem a necessidade de primeiro realizar a multiplicação das matrizes e depois calcular o determinante da matriz produto.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-5",
+      "question": "Em um triângulo retângulo, o cateto adjacente a um ângulo β mede 12 cm e o cosseno desse ângulo é 0,8. Qual é a medida da hipotenusa?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "18 cm",
+          "correct": false,
+          "explanation": "Incorreta. A medida da hipotenusa é 15 cm. 18 cm é um valor incorreto que não se alinha com os dados fornecidos e a definição de cosseno."
+        },
+        {
+          "id": "b",
+          "text": "9 cm",
+          "correct": false,
+          "explanation": "Incorreta. A medida da hipotenusa é 15 cm. 9 cm é a medida do outro cateto, que pode ser encontrado pelo Teorema de Pitágoras após calcular a hipotenusa."
+        },
+        {
+          "id": "c",
+          "text": "12 cm",
+          "correct": false,
+          "explanation": "Incorreta. A medida da hipotenusa é 15 cm. 12 cm é a medida do cateto adjacente fornecido na questão."
+        },
+        {
+          "id": "d",
+          "text": "15 cm",
+          "correct": true,
+          "explanation": "Correta. Em um triângulo retângulo, o cosseno de um ângulo agudo (β) é definido como a razão entre o comprimento do cateto adjacente a esse ângulo e o comprimento da hipotenusa. Ou seja, cos(β) = (cateto adjacente) / (hipotenusa). De acordo com a questão, o cateto adjacente mede 12 cm e cos(β) = 0,8. Substituindo esses valores na fórmula, temos: 0,8 = 12 / hipotenusa. Para encontrar a hipotenusa, rearranjamos a equação: hipotenusa = 12 / 0,8. Calculando, hipotenusa = 15 cm."
+        }
+      ],
+      "explanation": "Correta. Em um triângulo retângulo, o cosseno de um ângulo agudo (β) é definido como a razão entre o comprimento do cateto adjacente a esse ângulo e o comprimento da hipotenusa. Ou seja, cos(β) = (cateto adjacente) / (hipotenusa). De acordo com a questão, o cateto adjacente mede 12 cm e cos(β) = 0,8. Substituindo esses valores na fórmula, temos: 0,8 = 12 / hipotenusa. Para encontrar a hipotenusa, rearranjamos a equação: hipotenusa = 12 / 0,8. Calculando, hipotenusa = 15 cm.",
+      "difficulty": "medium",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-6",
+      "question": "Considerando um ângulo α localizado no quarto quadrante do círculo trigonométrico, com cosseno igual a 0,8, qual é o valor do seno desse ângulo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "-0,8",
+          "correct": false,
+          "explanation": "Incorreta. Embora o valor absoluto 0,8 seja o cosseno, o seno no quarto quadrante é negativo e, pelo cálculo da identidade trigonométrica fundamental, o valor correto seria -0,6."
+        },
+        {
+          "id": "b",
+          "text": "0,6",
+          "correct": false,
+          "explanation": "Incorreta. Se o ângulo está no quarto quadrante, o seno deve ser negativo. A identidade trigonométrica fundamental (sen²α + cos²α = 1) nos dá sen²α = 1 - (0,8)² = 1 - 0,64 = 0,36. Portanto, senα = ±√0,36 = ±0,6. No quarto quadrante, o seno é negativo, então senα = -0,6."
+        },
+        {
+          "id": "c",
+          "text": "-0,6",
+          "correct": true,
+          "explanation": "Correta. Para um ângulo α no quarto quadrante, o valor do seno é negativo. Utilizando a identidade trigonométrica fundamental, sen²α + cos²α = 1, e substituindo cosα = 0,8, temos sen²α + (0,8)² = 1. Isso resulta em sen²α + 0,64 = 1, o que implica sen²α = 1 - 0,64 = 0,36. Ao extrair a raiz quadrada, obtemos senα = ±0,6. Como o ângulo está no quarto quadrante, onde o seno é negativo, a resposta correta é -0,6."
+        },
+        {
+          "id": "d",
+          "text": "0,8",
+          "correct": false,
+          "explanation": "Incorreta. O valor de 0,8 corresponde ao cosseno do ângulo, não ao seno. Além disso, no quarto quadrante, o seno é negativo."
+        }
+      ],
+      "explanation": "Correta. Para um ângulo α no quarto quadrante, o valor do seno é negativo. Utilizando a identidade trigonométrica fundamental, sen²α + cos²α = 1, e substituindo cosα = 0,8, temos sen²α + (0,8)² = 1. Isso resulta em sen²α + 0,64 = 1, o que implica sen²α = 1 - 0,64 = 0,36. Ao extrair a raiz quadrada, obtemos senα = ±0,6. Como o ângulo está no quarto quadrante, onde o seno é negativo, a resposta correta é -0,6.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    },
+    {
+      "id": "q-7",
+      "question": "Ao escolher aleatoriamente duas pessoas de um grupo de 25 artistas, onde 7 exercem simultaneamente as funções de cantor e ator, qual é a probabilidade de que ambas as pessoas escolhidas sejam cantores e atores ao mesmo tempo?",
+      "alternatives": [
+        {
+          "id": "a",
+          "text": "7%",
+          "correct": true,
+          "explanation": "Correta. Para resolver esta questão, primeiro identificamos o número de artistas que são cantores e atores simultaneamente, que é 7. Em seguida, calculamos a probabilidade de escolher a primeira pessoa com essa característica: 7 (cantores e atores) / 25 (total de artistas). Para a segunda escolha, como uma pessoa já foi selecionada e não será reposta, teremos 6 pessoas com a característica desejada e 24 artistas no total. Assim, a probabilidade da segunda escolha é 6/24. A probabilidade de ambos os eventos ocorrerem é o produto das probabilidades: (7/25) * (6/24). Simplificando 6/24 para 1/4, a expressão se torna (7/25) * (1/4) = 7/100. Convertendo para porcentagem, 7/100 é igual a 7%."
+        },
+        {
+          "id": "b",
+          "text": "5%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de 5% (ou 1/20) não corresponde ao cálculo correto para a seleção de duas pessoas com a característica desejada, que envolve a multiplicação das probabilidades de cada evento sucessivo."
+        },
+        {
+          "id": "c",
+          "text": "11%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de 11% (ou 11/100) está incorreta. O cálculo da probabilidade de eventos dependentes requer a multiplicação das probabilidades individuais, ajustando o número de elementos após cada seleção."
+        },
+        {
+          "id": "d",
+          "text": "9%",
+          "correct": false,
+          "explanation": "Incorreta. A probabilidade de 9% (ou 9/100) não se alinha com o cálculo sequencial das probabilidades de seleção, que leva em consideração a redução do número de opções após a primeira escolha."
+        }
+      ],
+      "explanation": "Correta. Para resolver esta questão, primeiro identificamos o número de artistas que são cantores e atores simultaneamente, que é 7. Em seguida, calculamos a probabilidade de escolher a primeira pessoa com essa característica: 7 (cantores e atores) / 25 (total de artistas). Para a segunda escolha, como uma pessoa já foi selecionada e não será reposta, teremos 6 pessoas com a característica desejada e 24 artistas no total. Assim, a probabilidade da segunda escolha é 6/24. A probabilidade de ambos os eventos ocorrerem é o produto das probabilidades: (7/25) * (6/24). Simplificando 6/24 para 1/4, a expressão se torna (7/25) * (1/4) = 7/100. Convertendo para porcentagem, 7/100 é igual a 7%.",
+      "difficulty": "hard",
+      "topic": "Treinamento Intensivo",
+      "importance": "high",
+      "tags": [],
+      "type": "application"
+    }
+  ],
+  "pdf_degravacao": "08_358755_Matemática.pdf",
+  "tinha_legenda": true,
+  "artefatos_400": false,
+  "coletado_em": "2026-09-23T22:29:46"
+}
