@@ -175,6 +175,11 @@ def _row_to_dict(row, full=True):
     }
     if 'dono_nome' in d:
         base['dono_nome'] = d.get('dono_nome')
+    # v50: organizacao do usuario logado (so' vem na listagem)
+    if 'favorito' in d:
+        base['favorito'] = bool(d.get('favorito'))
+    if 'grupo_id' in d:
+        base['grupo_id'] = d.get('grupo_id')
 
     if not full:
         return base
@@ -239,6 +244,10 @@ async def list_bots(
     casa: Optional[str] = Query(None),
     esporte: Optional[str] = Query(None),
     q: Optional[str] = Query(None, description="Busca por nome (LIKE)"),
+    # v50 — organizacao por usuario: so' favoritos / so' um grupo / sem grupo
+    favoritos: bool = Query(False, description="true = so' os bots favoritados"),
+    grupo: Optional[str] = Query(None, pattern=r"^(sem|\d{1,9})$",
+                                 description="id do grupo, ou 'sem' (bots sem grupo)"),
     escopo: str = Query("todos", pattern="^(todos|meus)$",
                         description="admin: 'todos' (padrao) ou 'meus' (so os "
                                     "bots dele). Usuario comum ve so os dele "
@@ -260,18 +269,27 @@ async def list_bots(
     """
     # o escopo entra na CHAVE do cache: sem isso, "todos" e "meus" se
     # atropelariam (o segundo pedido receberia a lista do primeiro).
-    cache_key = (f"list:{_escopo(usuario)}:{escopo}:{limit}:{offset}:"
-                 f"{status}:{casa}:{esporte}:{q}")
+    # v50: favorito/grupo sao POR USUARIO -> o id do usuario entra na chave
+    # (dois admins nao podem dividir o cache da lista).
+    cache_key = (f"list:{_escopo(usuario)}:u{usuario.get('id')}:{escopo}:{limit}:"
+                 f"{offset}:{status}:{casa}:{esporte}:{q}:{favoritos}:{grupo}")
     cached = _cache_get(cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
     where = []
-    params = []
+    # v50: $1 e' SEMPRE o usuario logado (usado nos JOINs de favorito/grupo)
+    params = [usuario.get("id")]
     # usuario comum: sempre so os dele. Admin: so filtra se PEDIR (escopo=meus).
     if not acesso_total(usuario) or escopo == "meus":
-        params.append(usuario.get("id"))
-        where.append(f"b.user_id = ${len(params)}")
+        where.append("b.user_id = $1")
+    if favoritos:
+        where.append("f.bot_id IS NOT NULL")
+    if grupo == "sem":
+        where.append("gm.grupo_id IS NULL")
+    elif grupo:
+        params.append(int(grupo))
+        where.append(f"gm.grupo_id = ${len(params)}")
     if status:
         params.append(status)
         where.append(f"b.status = ${len(params)}")
@@ -287,23 +305,67 @@ async def list_bots(
 
     where_clause = ("WHERE " + " AND ".join(where)) if where else ""
 
+    # v50: favorito e grupo do USUARIO LOGADO ($1). Favoritos sobem pro topo.
+    _joins_org = """
+        LEFT JOIN bot_favoritos f ON f.bot_id = b.id AND f.user_id = $1
+        LEFT JOIN bot_grupo_membros gm ON gm.bot_id = b.id AND gm.user_id = $1
+    """
     sql = f"""
         SELECT b.id, b.nome, b.casa, b.esporte, b.mercado, b.status,
                b.em_treinamento, b.telegram_canal_id,
                b.criado_em, b.atualizado_em,
-               b.user_id, ud.nome AS dono_nome
+               b.user_id, ud.nome AS dono_nome,
+               (f.bot_id IS NOT NULL) AS favorito, gm.grupo_id
         FROM bots b
         LEFT JOIN usuarios ud ON ud.id = b.user_id
+        {_joins_org}
         {where_clause}
-        ORDER BY b.atualizado_em DESC NULLS LAST, b.id DESC
+        ORDER BY (f.bot_id IS NOT NULL) DESC, b.atualizado_em DESC NULLS LAST, b.id DESC
         LIMIT {limit} OFFSET {offset}
     """
-    sql_count = f"SELECT COUNT(*) FROM bots b {where_clause}"
+    sql_count = f"SELECT COUNT(*) FROM bots b {_joins_org} {where_clause}"
 
     try:
         async with db() as conn:
-            rows = await conn.fetch(sql, *params)
-            total = await conn.fetchval(sql_count, *params)
+            try:
+                rows = await conn.fetch(sql, *params)
+                total = await conn.fetchval(sql_count, *params)
+            except Exception as e_org:
+                # v50 BLINDAGEM: migration 034 ainda nao aplicada -> a lista
+                # continua funcionando como antes (sem favorito/grupo) em vez
+                # de derrubar a tela de Bots.
+                if 'bot_favoritos' not in str(e_org) and 'bot_grupo_membros' not in str(e_org):
+                    raise
+                logger.warning("list_bots: tabelas de organizacao ausentes "
+                               "(rode migrations/034_bots_org.sql) — lista sem favoritos/grupos.")
+                # remonta o WHERE do jeito antigo (numeracao propria dos $n)
+                where_leg, params_leg = [], []
+                if not acesso_total(usuario) or escopo == "meus":
+                    params_leg.append(usuario.get("id"))
+                    where_leg.append(f"b.user_id = ${len(params_leg)}")
+                for _col, _val in (("status", status), ("casa", casa), ("esporte", esporte)):
+                    if _val:
+                        params_leg.append(_val)
+                        where_leg.append(f"b.{_col} = ${len(params_leg)}")
+                if q:
+                    params_leg.append(f"%{q}%")
+                    where_leg.append(f"b.nome ILIKE ${len(params_leg)}")
+                wc_leg = ("WHERE " + " AND ".join(where_leg)) if where_leg else ""
+                if favoritos or grupo:
+                    rows, total = [], 0   # pediu favoritos/grupo e eles nao existem
+                else:
+                    rows = await conn.fetch(f"""
+                        SELECT b.id, b.nome, b.casa, b.esporte, b.mercado, b.status,
+                               b.em_treinamento, b.telegram_canal_id,
+                               b.criado_em, b.atualizado_em,
+                               b.user_id, ud.nome AS dono_nome
+                        FROM bots b
+                        LEFT JOIN usuarios ud ON ud.id = b.user_id
+                        {wc_leg}
+                        ORDER BY b.atualizado_em DESC NULLS LAST, b.id DESC
+                        LIMIT {limit} OFFSET {offset}
+                    """, *params_leg)
+                    total = await conn.fetchval(f"SELECT COUNT(*) FROM bots b {wc_leg}", *params_leg)
     except Exception:
         logger.exception("Erro ao listar bots.")
         raise HTTPException(status_code=500, detail="Erro interno ao listar bots.")
@@ -321,6 +383,290 @@ async def list_bots(
     }
     _cache_set(cache_key, resultado)
     return {**resultado, "_cache": "miss"}
+
+
+# ============================================================
+# v50 — ORGANIZACAO: FAVORITOS E GRUPOS (por usuario)
+# ============================================================
+# Ficam em tabelas proprias (bot_favoritos, bot_grupos, bot_grupo_membros —
+# migrations/034_bots_org.sql). A tabela `bots` NAO muda: o executor, o
+# backtest e os clones continuam iguais. Cada usuario tem a SUA organizacao
+# (admin favoritar bot alheio nao mexe na tela do dono). Um bot fica em no
+# maximo UM grupo por usuario ("mover" = tirar do anterior e por no novo).
+# Estas rotas vem ANTES de /{bot_id}, senao GET /bots/org cairia no get_bot.
+import re as _re_org
+
+_ORG_MAX_GRUPOS = 50
+_ORG_MAX_MOVER = 200
+_RE_COR = _re_org.compile(r'^#[0-9a-fA-F]{6}$')
+
+
+class FavoritoToggle(BaseModel):
+    favorito: bool
+
+
+class GrupoCriar(BaseModel):
+    nome: str = Field(..., min_length=1, max_length=60)
+    cor: Optional[str] = Field(None, max_length=7)
+
+    @field_validator('nome')
+    @classmethod
+    def _nome_ok(cls, v):
+        v = (v or '').strip()
+        if not v:
+            raise ValueError('nome vazio')
+        return v
+
+    @field_validator('cor')
+    @classmethod
+    def _cor_ok(cls, v):
+        if v in (None, ''):
+            return None
+        if not _RE_COR.match(v):
+            raise ValueError('cor invalida (use #RRGGBB)')
+        return v
+
+
+class GrupoEditar(BaseModel):
+    nome: Optional[str] = Field(None, min_length=1, max_length=60)
+    cor: Optional[str] = Field(None, max_length=7)
+    ordem: Optional[int] = Field(None, ge=0, le=10000)
+
+    @field_validator('nome')
+    @classmethod
+    def _nome_ok(cls, v):
+        if v is None:
+            return v
+        v = v.strip()
+        if not v:
+            raise ValueError('nome vazio')
+        return v
+
+    @field_validator('cor')
+    @classmethod
+    def _cor_ok(cls, v):
+        if v in (None, ''):
+            return None
+        if not _RE_COR.match(v):
+            raise ValueError('cor invalida (use #RRGGBB)')
+        return v
+
+
+class MoverBots(BaseModel):
+    bot_ids: List[int] = Field(..., min_length=1, max_length=_ORG_MAX_MOVER)
+    grupo_id: Optional[int] = None   # None = tirar do grupo
+
+
+async def _bots_acessiveis(conn, usuario: dict, ids) -> List[int]:
+    """Dos ids pedidos, devolve so' os que o usuario pode ver (dono ou admin)."""
+    ids = sorted({int(i) for i in ids if isinstance(i, int) and i > 0})
+    if not ids:
+        return []
+    if acesso_total(usuario):
+        rows = await conn.fetch("SELECT id FROM bots WHERE id = ANY($1::int[])", ids)
+    else:
+        rows = await conn.fetch(
+            "SELECT id FROM bots WHERE id = ANY($1::int[]) AND user_id = $2",
+            ids, usuario.get("id"))
+    return [r["id"] for r in rows]
+
+
+async def _grupo_do_usuario(conn, usuario: dict, grupo_id: int):
+    return await conn.fetchrow(
+        "SELECT id, nome, cor, ordem FROM bot_grupos WHERE id = $1 AND user_id = $2",
+        grupo_id, usuario.get("id"))
+
+
+@router.get("/org")
+async def org_listar(usuario: dict = Depends(get_current_user)):
+    """Grupos do usuario (com quantos bots VISIVEIS pra ele cada um tem) +
+    ids dos favoritos. Nao usa cache: e' leve e muda a cada clique."""
+    uid = usuario.get("id")
+    filtro_dono = "" if acesso_total(usuario) else " AND b.user_id = $1"
+    try:
+        async with db() as conn:
+            grupos = await conn.fetch(f"""
+                SELECT g.id, g.nome, g.cor, g.ordem,
+                       COUNT(b.id) AS total
+                FROM bot_grupos g
+                LEFT JOIN bot_grupo_membros gm
+                       ON gm.grupo_id = g.id AND gm.user_id = $1
+                LEFT JOIN bots b ON b.id = gm.bot_id{filtro_dono}
+                WHERE g.user_id = $1
+                GROUP BY g.id
+                ORDER BY g.ordem, lower(g.nome), g.id
+            """, uid)
+            favs = await conn.fetch(f"""
+                SELECT f.bot_id FROM bot_favoritos f
+                JOIN bots b ON b.id = f.bot_id{filtro_dono}
+                WHERE f.user_id = $1
+            """, uid)
+            dono_sem = "" if acesso_total(usuario) else "AND b.user_id = $1"
+            sem = await conn.fetchval(f"""
+                SELECT COUNT(*) FROM bots b
+                WHERE NOT EXISTS (SELECT 1 FROM bot_grupo_membros gm
+                                  WHERE gm.bot_id = b.id AND gm.user_id = $1)
+                {dono_sem}
+            """, uid)
+    except Exception:
+        logger.exception("Erro ao listar organizacao dos bots.")
+        raise HTTPException(status_code=500,
+                            detail="Erro interno ao carregar favoritos/grupos. "
+                                   "A migration 034_bots_org.sql foi aplicada?")
+    return {
+        "grupos": [{"id": g["id"], "nome": g["nome"], "cor": g["cor"],
+                    "ordem": g["ordem"], "total": g["total"]} for g in grupos],
+        "favoritos": [r["bot_id"] for r in favs],
+        "sem_grupo": sem or 0,
+    }
+
+
+@router.put("/org/favoritos/{bot_id}")
+async def org_favoritar(bot_id: int, payload: FavoritoToggle,
+                        usuario: dict = Depends(get_current_user)):
+    uid = usuario.get("id")
+    try:
+        async with db() as conn:
+            ok = await _bots_acessiveis(conn, usuario, [bot_id])
+            if not ok:
+                raise HTTPException(status_code=404, detail=f"Bot #{bot_id} não encontrado")
+            if payload.favorito:
+                await conn.execute("""
+                    INSERT INTO bot_favoritos (user_id, bot_id) VALUES ($1, $2)
+                    ON CONFLICT (user_id, bot_id) DO NOTHING
+                """, uid, bot_id)
+            else:
+                await conn.execute(
+                    "DELETE FROM bot_favoritos WHERE user_id = $1 AND bot_id = $2",
+                    uid, bot_id)
+    except HTTPException:
+        raise
+    except Exception:
+        logger.exception("Erro ao favoritar bot %s.", bot_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao favoritar.")
+    _cache_invalidate_all()
+    return {"id": bot_id, "favorito": payload.favorito}
+
+
+@router.post("/org/grupos", status_code=201)
+async def org_criar_grupo(payload: GrupoCriar, usuario: dict = Depends(get_current_user)):
+    uid = usuario.get("id")
+    try:
+        async with db() as conn:
+            n = await conn.fetchval("SELECT COUNT(*) FROM bot_grupos WHERE user_id = $1", uid)
+            if n >= _ORG_MAX_GRUPOS:
+                raise HTTPException(status_code=400,
+                                    detail=f"Limite de {_ORG_MAX_GRUPOS} grupos atingido")
+            existe = await conn.fetchval(
+                "SELECT 1 FROM bot_grupos WHERE user_id = $1 AND lower(nome) = lower($2)",
+                uid, payload.nome)
+            if existe:
+                raise HTTPException(status_code=409,
+                                    detail=f'Já existe um grupo "{payload.nome}"')
+            row = await conn.fetchrow("""
+                INSERT INTO bot_grupos (user_id, nome, cor, ordem)
+                VALUES ($1, $2, $3,
+                        COALESCE((SELECT MAX(ordem) + 1 FROM bot_grupos WHERE user_id = $1), 0))
+                RETURNING id, nome, cor, ordem
+            """, uid, payload.nome, payload.cor)
+    except HTTPException:
+        raise
+    except Exception:
+        logger.exception("Erro ao criar grupo de bots.")
+        raise HTTPException(status_code=500, detail="Erro interno ao criar grupo.")
+    _cache_invalidate_all()
+    return {"id": row["id"], "nome": row["nome"], "cor": row["cor"],
+            "ordem": row["ordem"], "total": 0}
+
+
+@router.patch("/org/grupos/{grupo_id}")
+async def org_editar_grupo(grupo_id: int, payload: GrupoEditar,
+                           usuario: dict = Depends(get_current_user)):
+    uid = usuario.get("id")
+    campos = payload.model_dump(exclude_unset=True)
+    if not campos:
+        raise HTTPException(status_code=400, detail="Nada pra alterar")
+    try:
+        async with db() as conn:
+            if not await _grupo_do_usuario(conn, usuario, grupo_id):
+                raise HTTPException(status_code=404, detail="Grupo não encontrado")
+            if campos.get("nome"):
+                dup = await conn.fetchval("""
+                    SELECT 1 FROM bot_grupos
+                    WHERE user_id = $1 AND lower(nome) = lower($2) AND id <> $3
+                """, uid, campos["nome"], grupo_id)
+                if dup:
+                    raise HTTPException(status_code=409,
+                                        detail=f'Já existe um grupo "{campos["nome"]}"')
+            sets, args = [], []
+            for col in ("nome", "cor", "ordem"):
+                if col in campos:
+                    args.append(campos[col])
+                    sets.append(f"{col} = ${len(args)}")
+            args += [grupo_id, uid]
+            row = await conn.fetchrow(f"""
+                UPDATE bot_grupos SET {", ".join(sets)}
+                WHERE id = ${len(args) - 1} AND user_id = ${len(args)}
+                RETURNING id, nome, cor, ordem
+            """, *args)
+    except HTTPException:
+        raise
+    except Exception:
+        logger.exception("Erro ao editar grupo %s.", grupo_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao editar grupo.")
+    _cache_invalidate_all()
+    return dict(row)
+
+
+@router.delete("/org/grupos/{grupo_id}")
+async def org_excluir_grupo(grupo_id: int, usuario: dict = Depends(get_current_user)):
+    """Apaga o GRUPO. Os bots NAO sao apagados: voltam pra 'Sem grupo'."""
+    try:
+        async with db() as conn:
+            r = await conn.execute(
+                "DELETE FROM bot_grupos WHERE id = $1 AND user_id = $2",
+                grupo_id, usuario.get("id"))
+    except Exception:
+        logger.exception("Erro ao excluir grupo %s.", grupo_id)
+        raise HTTPException(status_code=500, detail="Erro interno ao excluir grupo.")
+    if r == "DELETE 0":
+        raise HTTPException(status_code=404, detail="Grupo não encontrado")
+    _cache_invalidate_all()
+    return {"excluido": True, "id": grupo_id}
+
+
+@router.post("/org/mover")
+async def org_mover(payload: MoverBots, usuario: dict = Depends(get_current_user)):
+    """Move N bots pra um grupo (grupo_id) ou tira do grupo (grupo_id=null)."""
+    uid = usuario.get("id")
+    try:
+        async with db() as conn:
+            async with conn.transaction():
+                if payload.grupo_id is not None:
+                    if not await _grupo_do_usuario(conn, usuario, payload.grupo_id):
+                        raise HTTPException(status_code=404, detail="Grupo não encontrado")
+                ids = await _bots_acessiveis(conn, usuario, payload.bot_ids)
+                if not ids:
+                    raise HTTPException(status_code=404, detail="Nenhum bot válido na seleção")
+                if payload.grupo_id is None:
+                    await conn.execute("""
+                        DELETE FROM bot_grupo_membros
+                        WHERE user_id = $1 AND bot_id = ANY($2::int[])
+                    """, uid, ids)
+                else:
+                    await conn.execute("""
+                        INSERT INTO bot_grupo_membros (user_id, bot_id, grupo_id)
+                        SELECT $1, x, $3 FROM unnest($2::int[]) AS x
+                        ON CONFLICT (user_id, bot_id) DO UPDATE SET grupo_id = EXCLUDED.grupo_id
+                    """, uid, ids, payload.grupo_id)
+    except HTTPException:
+        raise
+    except Exception:
+        logger.exception("Erro ao mover bots de grupo.")
+        raise HTTPException(status_code=500, detail="Erro interno ao mover bots.")
+    _cache_invalidate_all()
+    return {"movidos": len(ids), "ignorados": len(set(payload.bot_ids)) - len(ids),
+            "grupo_id": payload.grupo_id}
 
 
 @router.get("/{bot_id}")
