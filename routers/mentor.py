@@ -19,6 +19,21 @@ Tudo que o painel precisa, em rotas:
   mais cai      GET  /mentor/mais-cai
   bizus         GET  /mentor/bizus/aula/{id}
   cards         GET  /mentor/cards/hoje  POST /mentor/card/{id}/responder
+  caderno       GET  /mentor/caderno  POST /mentor/caderno  POST /mentor/caderno/{id}   (caderno de erros: uma linha por erro)
+  base          GET  /mentor/base                          base por matéria (fase, trilha, aulas feitas, prova)
+                POST /mentor/materia/{id}/prova-base/iniciar   20 questões de Soldado da matéria
+                POST /mentor/prova-base/{id}/entregar          régua por matéria → modo questão
+
+v3.8 — A BASE no motor (BASE_POR_MATERIA_E_CRONOGRAMA.md): cada aula tem base=true/false (mentor_flags.py), cada assunto um modo
+(complemento | lei_seca | questoes | leitura | fora | revisao) e cada matéria uma fase (base → questao). O planejador monta a
+semana por 4 trilhas (config "trilhas"), base primeiro; quando a base de uma matéria fecha, a prova de base (20 questões) libera
+o modo questão e a matéria passa a entrar por sessões sem vídeo (resumo + fixação + concurso). O aquecimento decide o vídeo
+no painel: base pula com 5/5; complemento chama com ≤ 2/5.
+  versão        GET  /mentor/versao
+
+v3.7 — O MÉTODO no motor: caderno de erros (uma linha por erro → vira card), recall a cada 10 min do vídeo
+(evento "recall"), flashcards do Gran viram cards de Leitner quando a aula fecha, resumo de bolso e contagens
+de revisão (questões + cards + caderno) entregues ao painel.
 
 Regras (spec v3.2): gate 4 de 5 por aula; aquecimento não conta; certo/errado entra em tudo menos no
 simulado; revisão adaptativa R1→R7→R30→M com intervalos que esticam ou encurtam pelo acerto; teto de
@@ -28,6 +43,7 @@ import json
 import logging
 import math
 import random
+import re
 from datetime import date, datetime, timedelta
 from typing import Optional
 
@@ -37,6 +53,7 @@ from database import db
 
 log = logging.getLogger("mentor")
 router = APIRouter(prefix="/mentor", tags=["Mentor"])
+VERSAO = "3.8-base"
 
 # ----------------------------------------------------------------- constantes
 GATE_N, GATE_MIN = 5, 4
@@ -44,7 +61,13 @@ AQUEC_N, FIX_N = 5, 5
 REV_N = {"R1": 4, "R2": 4, "R3": 4, "R7": 6, "R15": 5, "R30": 4, "M": 4}
 INTERVALO = {"R1": 1, "R2": 1, "R3": 2, "R7": 6, "R15": 8, "R30": 23, "M": 30}
 XP = {"gate": 50, "gate_reestudo": 25, "revisao": 30, "revisao_no_dia": 15, "card": 3, "meta_dia": 80,
-      "meta_semana": 300, "simulado": 200, "simulado_acima_60": 200, "combo": 10, "aula_propria": 30}
+      "meta_semana": 300, "simulado": 200, "simulado_acima_60": 200, "combo": 10, "aula_propria": 30, "prova_base": 150}
+TRILHAS_PADRAO = {"A": [1, 2], "B": [10, 7, 9], "C": [3, 4], "D": [8, 11, 12, 6, 5]}
+PESOS_TRILHA_PADRAO = {"A": 0.25, "B": 0.37, "C": 0.21, "D": 0.17}
+MODOS_QUESTAO = ("complemento", "lei_seca", "questoes", "leitura")
+ATUALIDADES_ID, ATUALIDADES_DESDE = 5, date(2026, 11, 2)
+RETA_FINAL = date(2027, 1, 18)
+PROVA_BASE_N = 20
 PATENTES = [(0, "Recruta"), (500, "Soldado"), (1500, "Cabo"), (3000, "3º Sargento"), (5000, "2º Sargento"),
             (8000, "1º Sargento"), (12000, "Subtenente"), (17000, "Aspirante"), (23000, "Tenente"),
             (30000, "Capitão"), (40000, "Major"), (52000, "Tenente-Coronel"), (65000, "Coronel")]
@@ -150,6 +173,102 @@ async def _garantir_feedback(conn):
     await conn.execute("""CREATE TABLE IF NOT EXISTS mentor.vinculo_feedback (questao_id BIGINT NOT NULL, aula_id BIGINT NOT NULL, ok BOOLEAN NOT NULL,
                           criado_em TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY (questao_id, aula_id))""")
     _FEEDBACK_OK = True
+
+
+_BASE_OK = False
+
+
+async def _garantir_base(conn):
+    """Colunas/tabela da base (as mesmas do mentor_flags.py). Uma vez por processo; não muda dados."""
+    global _BASE_OK
+    if _BASE_OK:
+        return
+    for sql in ("ALTER TABLE mentor.aula ADD COLUMN IF NOT EXISTS base BOOLEAN NOT NULL DEFAULT FALSE",
+                "ALTER TABLE mentor.materia ADD COLUMN IF NOT EXISTS fase TEXT NOT NULL DEFAULT 'base'",
+                "ALTER TABLE mentor.materia ADD COLUMN IF NOT EXISTS trilha TEXT",
+                "ALTER TABLE mentor.materia ADD COLUMN IF NOT EXISTS trilha_ordem INT",
+                "ALTER TABLE mentor.materia ADD COLUMN IF NOT EXISTS regua_base INT NOT NULL DEFAULT 60",
+                "ALTER TABLE mentor.materia ADD COLUMN IF NOT EXISTS prova_base_em TIMESTAMPTZ",
+                "ALTER TABLE mentor.plano_item ADD COLUMN IF NOT EXISTS modo TEXT",
+                "ALTER TABLE mentor.plano_item ADD COLUMN IF NOT EXISTS aulas BIGINT[]",
+                """CREATE TABLE IF NOT EXISTS mentor.prova_base (id BIGSERIAL PRIMARY KEY, materia_id INT NOT NULL REFERENCES mentor.materia(id) ON DELETE CASCADE,
+                   questoes BIGINT[] NOT NULL, respostas JSONB, certas INT, n INT, acerto NUMERIC(5,2), regua INT, aprovada BOOLEAN, aulas_erradas BIGINT[],
+                   sessao_id BIGINT REFERENCES mentor.sessao(id) ON DELETE SET NULL, inicio TIMESTAMPTZ NOT NULL DEFAULT now(), fim TIMESTAMPTZ)"""):
+        await conn.execute(sql)
+    _BASE_OK = True
+
+
+_CADERNO_OK = False
+
+
+async def _garantir_caderno(conn):
+    """Caderno de erros: uma linha por erro (regra/contraste/pegadinha/desatenção). Criado aqui na primeira vez."""
+    global _CADERNO_OK
+    if _CADERNO_OK:
+        return
+    await conn.execute("""CREATE TABLE IF NOT EXISTS mentor.caderno (
+        id          BIGSERIAL PRIMARY KEY,
+        questao_id  BIGINT REFERENCES mentor.questao(id) ON DELETE SET NULL,
+        aula_id     BIGINT REFERENCES mentor.aula(id) ON DELETE SET NULL,
+        assunto_id  BIGINT REFERENCES mentor.assunto(id) ON DELETE SET NULL,
+        materia_id  BIGINT REFERENCES mentor.materia(id) ON DELETE SET NULL,
+        card_id     BIGINT REFERENCES mentor.card(id) ON DELETE SET NULL,
+        tipo        TEXT NOT NULL CHECK (tipo IN ('regra','contraste','pegadinha','desatencao')),
+        linha       TEXT NOT NULL,
+        enunciado   TEXT,
+        contexto    TEXT,
+        riscada_em  TIMESTAMPTZ,
+        voltou      INT NOT NULL DEFAULT 0,
+        criado_em   TIMESTAMPTZ NOT NULL DEFAULT now())""")
+    await conn.execute("CREATE INDEX IF NOT EXISTS ix_caderno_questao ON mentor.caderno(questao_id)")
+    await conn.execute("CREATE INDEX IF NOT EXISTS ix_caderno_aberta ON mentor.caderno(materia_id) WHERE riscada_em IS NULL")
+    # aulas fechadas antes da v3.7: os flashcards do Gran delas viram cards agora (uma vez)
+    for r in await conn.fetch("SELECT id FROM mentor.aula WHERE estado='concluida' AND flashcards IS NOT NULL AND NOT EXISTS (SELECT 1 FROM mentor.card c WHERE c.aula_id=mentor.aula.id AND c.tipo='flashcard_gran')"):
+        try:
+            await _semear_cards_aula(conn, r["id"])
+        except Exception as e:
+            log.warning("semear cards aula %s: %s", r["id"], e)
+    _CADERNO_OK = True
+
+
+def _curto(t, n=220):
+    t = re.sub(r"\s+", " ", str(t or "")).strip()
+    return t if len(t) <= n else t[:n - 1].rstrip() + "…"
+
+
+async def _semear_cards_aula(conn, aula_id):
+    """Flashcards do Gran da aula viram cards de Leitner (caixa 0, amanhã) quando a aula fecha — uma vez só."""
+    if await conn.fetchval("SELECT 1 FROM mentor.card WHERE aula_id=$1 AND tipo='flashcard_gran' LIMIT 1", aula_id):
+        return 0
+    a = _r(await conn.fetchrow("SELECT assunto_id, flashcards FROM mentor.aula WHERE id=$1", aula_id))
+    if not a or not a["flashcards"]:
+        return 0
+    fc = a["flashcards"]
+    if isinstance(fc, str):
+        try:
+            fc = json.loads(fc)
+        except Exception:
+            return 0
+    cartas = []
+    decks = fc if isinstance(fc, list) else (fc.get("decks") or fc.get("cards") or [])
+    for d in decks:
+        if isinstance(d, dict) and isinstance(d.get("cards") or d.get("flashcards"), list):
+            cartas += d.get("cards") or d.get("flashcards")
+        elif isinstance(d, dict):
+            cartas.append(d)
+    n = 0
+    hoje = _hoje()
+    for c in cartas[:15]:
+        if not isinstance(c, dict):
+            continue
+        fr = c.get("front") or c.get("question") or c.get("frente") or c.get("pergunta") or c.get("term")
+        vs = c.get("back") or c.get("answer") or c.get("verso") or c.get("resposta") or c.get("definition")
+        if not fr or not vs:
+            continue
+        await conn.execute("INSERT INTO mentor.card (assunto_id, aula_id, tipo, frente, verso, fonte, proxima) VALUES ($1,$2,'flashcard_gran',$3,$4,'flashcard do Gran',$5)",
+                           a["assunto_id"], aula_id, _curto(fr, 500), _curto(vs, 900), hoje + timedelta(days=1))
+        n += 1
+    return n
 
 
 async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=False, excluir=()):
@@ -390,78 +509,170 @@ async def semana(semana_id: int):
     return s
 
 
+async def _trilhas(conn):
+    t = await _config(conn, "trilhas", None) or TRILHAS_PADRAO
+    p = await _config(conn, "pesos_trilha", None) or PESOS_TRILHA_PADRAO
+    return {k: [int(x) for x in v] for k, v in t.items()}, {k: float(v) for k, v in p.items()}
+
+
+def _custo_aula(a, modo):
+    """Horas de estudo de uma aula: base = vídeo em 1,5x + 25 min (aquecimento, bolso, fixação, gate, caderno); sem vídeo = 25 min."""
+    if modo == "base":
+        return round(((a.get("duracao_s") or 0) / 60 / 1.5 + 25) / 60, 3)
+    if modo == "fora":
+        return 0.25
+    return round(25 / 60, 3)
+
+
+async def _universo_planejador(conn):
+    """Tudo que o planejador precisa, numa passada: matérias (fase/trilha) e aulas pendentes por assunto."""
+    await _garantir_base(conn)
+    mats = {r["id"]: dict(r) for r in await conn.fetch("SELECT id, nome, fase, trilha, trilha_ordem, regua_base FROM mentor.materia")}
+    rows = await conn.fetch("""
+        SELECT a.id, a.assunto_id, a.ordem, a.tipo, a.duracao_s, a.base, a.estado, s.materia_id, s.modo, s.tier, s.nome AS assunto, s.ordem AS s_ordem,
+               mo.ordem AS mo_ordem, mo.tipo AS mo_tipo
+        FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id JOIN mentor.modulo mo ON mo.id=s.modulo_id
+        WHERE a.tipo IN ('conteudo','exercicios','propria') AND a.estado <> 'concluida'
+        ORDER BY s.materia_id, (mo.tipo='propria'), mo.ordem, s.ordem, a.ordem""")
+    aulas = [dict(r) for r in rows]
+    return mats, aulas
+
+
+def _plano_trilhas(mats, aulas, seg, cap_h, trilhas, pesos, feitas=None):
+    """
+    Monta uma semana: cada trilha recebe cap × peso; dentro da trilha, as matérias em ordem; matéria em fase base entra pelas aulas
+    de base (ordem do curso), matéria em modo questão entra pelas aulas de complemento (S → A → B → C, sem vídeo). Aula é a unidade.
+    Devolve itens por assunto: {assunto_id, materia_id, modo, aulas:[ids], custo_h}. `feitas` = ids já usados (simulação).
+    """
+    if feitas is None:
+        feitas = set()
+    TIER = {"S": 0, "A": 1, "B": 2, "C": 3, "treino": 4}
+    pend = [a for a in aulas if a["id"] not in feitas and a["mo_tipo"] != "revisao" and a["modo"] not in ("revisao",)]
+    por_mat = {}
+    for a in pend:
+        por_mat.setdefault(a["materia_id"], []).append(a)
+
+    def fila_da(mid, fase_alvo):
+        m = mats.get(mid)
+        if not m or m["fase"] != fase_alvo:
+            return []
+        if mid == ATUALIDADES_ID and seg < ATUALIDADES_DESDE:
+            return []
+        lst = por_mat.get(mid, [])
+        if fase_alvo == "base":
+            return [(a, "base") for a in lst if a["base"]]
+        out = [(a, a["modo"]) for a in lst if not a["base"] and a["modo"] in MODOS_QUESTAO and a["tier"] != "fora"]
+        out.sort(key=lambda x: (TIER.get(x[0]["tier"], 3), x[0]["mo_tipo"] == "propria", x[0]["mo_ordem"], x[0]["s_ordem"], x[0]["ordem"]))
+        if seg >= RETA_FINAL:
+            out += [(a, "fora") for a in lst if not a["base"] and a["modo"] == "fora"]
+        return out
+
+    itens = {}
+
+    def usar(a, modo, custo):
+        k = (a["assunto_id"], modo if modo == "base" else "questoes")
+        it = itens.setdefault(k, {"assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "modo": k[1], "aulas": [], "aula_modos": [], "custo_h": 0.0})
+        it["aulas"].append(a["id"])
+        it["aula_modos"].append(modo)
+        it["custo_h"] = round(it["custo_h"] + custo, 2)
+        feitas.add(a["id"])
+
+    def encher(mids, orc, fase_alvo, limite_aulas=None):
+        """Enche as aulas das matérias (na ordem) enquanto couber no orçamento; devolve (orçamento que sobrou, gasto)."""
+        g = 0.0
+        for mid in mids:
+            n = 0
+            for a, modo in fila_da(mid, fase_alvo):
+                if a["id"] in feitas:
+                    continue
+                c = _custo_aula(a, modo)
+                if c > orc + 0.05:
+                    return orc, g
+                usar(a, modo, c)
+                orc -= c
+                g += c
+                n += 1
+                if limite_aulas and n >= limite_aulas:
+                    break
+            if orc < 0.2:
+                return orc, g
+        return orc, g
+
+    gasto = 0.0
+    # Atualidades: 1 aula por semana a partir de 02/11, fora das trilhas (resumo do mês + questões)
+    if seg >= ATUALIDADES_DESDE:
+        _, g = encher([ATUALIDADES_ID], 1.0, "questao", limite_aulas=1)
+        gasto += g
+    sobra = 0.0
+    for t, mids in trilhas.items():
+        mids = [m for m in mids if m != ATUALIDADES_ID]
+        orc = cap_h * pesos.get(t, 0.25) + sobra
+        orc, g = encher(mids, orc, "base")        # 1º a base das matérias da trilha, na ordem
+        gasto += g
+        orc, g = encher(mids, orc, "questao")     # 2º o complemento das que já fecharam a base
+        gasto += g
+        sobra = max(0.0, orc)
+    # sobra geral: qualquer trilha, base primeiro
+    if sobra > 0.3:
+        todas = [m for mids in trilhas.values() for m in mids if m != ATUALIDADES_ID]
+        sobra, g = encher(todas, sobra, "base")
+        gasto += g
+        if sobra > 0.3:
+            sobra, g = encher(todas, sobra, "questao")
+            gasto += g
+    return list(itens.values()), round(gasto, 2)
+
+
 @router.post("/semana/montar")
 async def montar_semana(inicio: Optional[str] = Body(None, embed=True), forcar: bool = Body(False, embed=True)):
     """
-    O planejador da segunda (spec v3.2 §2): fecha a semana anterior, abre a nova e escolhe os assuntos.
-    Regra: S de todas as matérias primeiro, depois A, depois B (com evidência antes), depois C por resumo;
-    4-5 matérias por semana, na proporção das horas restantes × peso; ordem do curso dentro da matéria;
-    o que sobrou da semana anterior vai na frente.
+    O planejador da segunda (v3.8): fecha a semana anterior, abre a nova e escolhe as AULAS pelas trilhas.
+    O que sobrou da semana anterior vai na frente. Base primeiro em cada matéria; complemento por questões depois da prova de base.
     """
     hoje = _hoje()
     seg = _segunda(date.fromisoformat(inicio)) if inicio else _segunda(hoje)
     async with db() as conn:
         async with conn.transaction():
+            await _garantir_base(conn)
+            if not await conn.fetchval("SELECT EXISTS (SELECT 1 FROM mentor.aula WHERE base)"):
+                raise HTTPException(409, "Nenhuma aula marcada como base: rode mentor_flags.py (edital v3) antes de montar a semana")
             existente = _r(await conn.fetchrow("SELECT * FROM mentor.semana WHERE inicio=$1", seg))
             if existente and existente["status"] != "bloqueada" and not forcar:
                 raise HTTPException(409, f"semana de {seg} já está {existente['status']}; use forcar=true pra refazer")
-            # fecha a anterior aberta
             await conn.execute("""UPDATE mentor.semana SET status='fechada', fechada_em=now(),
                                   horas_feitas = COALESCE((SELECT sum(minutos)/60.0 FROM mentor.sessao x WHERE x.fim IS NOT NULL
                                                            AND (x.inicio - interval '4 hours')::date BETWEEN semana.inicio AND semana.fim),0)
                                   WHERE status='aberta' AND inicio < $1""", seg)
             cap_total = await _capacidade_semana(conn, seg)
             cap_conteudo = round(cap_total * PCT_CONTEUDO, 1)
-            # pendências: assuntos em andamento ou do plano anterior não feitos
-            pend = _rs(await conn.fetch("""
-                SELECT DISTINCT a.id, a.nome, a.tier, a.modo, a.origem, a.materia_id, m.peso_prova, a.ordem, a.modulo_id,
-                       (SELECT count(*) FROM mentor.aula x WHERE x.assunto_id=a.id AND x.tipo IN ('conteudo','exercicios','propria') AND x.estado <> 'concluida') AS n_aulas,
-                       (SELECT COALESCE(sum(duracao_s),0) FROM mentor.aula x WHERE x.assunto_id=a.id AND x.tipo IN ('conteudo','exercicios','propria') AND x.estado <> 'concluida') AS duracao_total
-                FROM mentor.assunto a JOIN mentor.materia m ON m.id=a.materia_id
-                WHERE a.estado = 'em_andamento' OR a.id IN (SELECT p.assunto_id FROM mentor.plano_item p JOIN mentor.semana s ON s.id=p.semana_id
-                                                            WHERE s.inicio < $1 AND NOT p.feito AND s.status='fechada')""", seg))
-            restantes = _rs(await conn.fetch("""
-                SELECT a.id, a.nome, a.tier, a.modo, a.origem, a.materia_id, m.peso_prova, a.ordem, a.modulo_id, mo.ordem AS modulo_ordem,
-                       a.soldado,
-                       (SELECT count(*) FROM mentor.aula x WHERE x.assunto_id=a.id AND x.tipo IN ('conteudo','exercicios','propria')) AS n_aulas,
-                       (SELECT COALESCE(sum(duracao_s),0) FROM mentor.aula x WHERE x.assunto_id=a.id AND x.tipo IN ('conteudo','exercicios','propria')) AS duracao_total
-                FROM mentor.assunto a JOIN mentor.materia m ON m.id=a.materia_id JOIN mentor.modulo mo ON mo.id=a.modulo_id
-                WHERE a.estado = 'nao_estudado' AND a.tier IN ('S','A','B','C','treino') AND a.id <> ALL($1::bigint[])
-                ORDER BY a.materia_id, (mo.tipo = 'propria'), mo.ordem, a.ordem""", [p["id"] for p in pend]))
-            escolhidos, gasto = [], 0.0
-            for p in pend:
-                escolhidos.append(p)
-                gasto += _custo(p)
-            PESO_MAT = {1: 1.5, 8: 1.5, 7: 1.3, 4: 1.1, 6: 1.1, 10: 1.1, 12: 1.1, 5: 0.8}
-            for tier in ("S", "A", "B", "C", "treino"):
-                if gasto >= cap_conteudo * 0.95:
-                    break
-                fila = {}
-                for a in restantes:
-                    if a["tier"] == tier:
-                        fila.setdefault(a["materia_id"], []).append(a)
-                if tier == "B":
-                    for lst in fila.values():
-                        lst.sort(key=lambda a: (-(a["soldado"] or 0), a["modulo_ordem"], a["ordem"]))
-                if not fila:
+            trilhas, pesos = await _trilhas(conn)
+            mats, aulas = await _universo_planejador(conn)
+            # pendências: aulas planejadas em semanas fechadas e não concluídas entram primeiro, no mesmo modo
+            pend_ids = [r["aid"] for r in await conn.fetch("""SELECT DISTINCT unnest(p.aulas) AS aid FROM mentor.plano_item p JOIN mentor.semana s ON s.id=p.semana_id
+                                                              WHERE s.inicio < $1 AND NOT p.feito AND s.status='fechada' AND p.aulas IS NOT NULL""", seg)]
+            pend_set = set(pend_ids)
+            itens, gasto, feitas = [], 0.0, set()
+            por_id = {a["id"]: a for a in aulas}
+            for aid in pend_ids:
+                a = por_id.get(aid)
+                if not a:
                     continue
-                resto = cap_conteudo - gasto
-                peso = {mid: sum(_custo(a) for a in lst) * PESO_MAT.get(mid, 1.0) for mid, lst in fila.items()}
-                top = sorted(peso, key=lambda k: -peso[k])[:5]
-                tot = sum(peso[m] for m in top) or 1
-                for mid in top:
-                    if gasto >= cap_conteudo:
-                        break
-                    aloc, g = resto * peso[mid] / tot, 0.0
-                    for a in fila[mid]:
-                        c = _custo(a)
-                        if gasto + g + c > cap_conteudo * 1.1 or (g > 0 and g + c > aloc * 1.2):
-                            break
-                        escolhidos.append(a)
-                        g += c
-                    gasto += g
+                modo = "base" if a["base"] else (a["modo"] if a["modo"] in MODOS_QUESTAO else "fora")
+                c = _custo_aula(a, modo)
+                k = next((it for it in itens if it["assunto_id"] == a["assunto_id"] and it["modo"] == ("base" if modo == "base" else "questoes")), None)
+                if not k:
+                    k = {"assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "modo": "base" if modo == "base" else "questoes", "aulas": [], "aula_modos": [], "custo_h": 0.0}
+                    itens.append(k)
+                k["aulas"].append(aid)
+                k["aula_modos"].append(modo)
+                k["custo_h"] = round(k["custo_h"] + c, 2)
+                feitas.add(aid)
+                gasto += c
+            novos, g2 = _plano_trilhas(mats, aulas, seg, max(0.0, cap_conteudo - gasto), trilhas, pesos, feitas)
+            itens += novos
+            gasto += g2
             fim = seg + timedelta(days=6)
-            fase = "A" if seg < date(2026, 12, 14) else ("B" if seg < date(2027, 1, 4) else ("C" if seg < date(2027, 1, 18) else "D"))
+            fase = _fase_semana(seg)
             if existente:
                 sid = existente["id"]
                 await conn.execute("UPDATE mentor.semana SET meta_horas=$2, status='aberta', fase=$3, montada_em=now() WHERE id=$1", sid, cap_total, fase)
@@ -469,14 +680,15 @@ async def montar_semana(inicio: Optional[str] = Body(None, embed=True), forcar: 
             else:
                 sid = await conn.fetchval("INSERT INTO mentor.semana (inicio, fim, meta_horas, status, fase, montada_em) VALUES ($1,$2,$3,'aberta',$4,now()) RETURNING id",
                                           seg, fim, cap_total, fase)
-            for i, a in enumerate(escolhidos, 1):
-                await conn.execute("INSERT INTO mentor.plano_item (semana_id, assunto_id, ordem, previsto_h) VALUES ($1,$2,$3,$4) ON CONFLICT DO NOTHING", sid, a["id"], i, _custo(a))
-            # bloqueia a seguinte (cria placeholder)
+            for i, it in enumerate(itens, 1):
+                await conn.execute("""INSERT INTO mentor.plano_item (semana_id, assunto_id, ordem, previsto_h, modo, aulas) VALUES ($1,$2,$3,$4,$5,$6)
+                                      ON CONFLICT (semana_id, assunto_id) DO UPDATE SET aulas = mentor.plano_item.aulas || EXCLUDED.aulas, previsto_h = mentor.plano_item.previsto_h + EXCLUDED.previsto_h""",
+                                   sid, it["assunto_id"], i, it["custo_h"], it["modo"], it["aulas"])
             prox = seg + timedelta(days=7)
             await conn.execute("INSERT INTO mentor.semana (inicio, fim, meta_horas, status) VALUES ($1,$2,$3,'bloqueada') ON CONFLICT (inicio) DO NOTHING",
                                prox, prox + timedelta(days=6), await _capacidade_semana(conn, prox))
     return {"semana_id": sid, "inicio": seg.isoformat(), "meta_horas": cap_total, "conteudo_h": cap_conteudo, "fase": fase,
-            "itens": len(escolhidos), "horas_previstas": round(gasto, 1), "pendencias_da_anterior": len(pend)}
+            "itens": len(itens), "aulas": sum(len(it["aulas"]) for it in itens), "horas_previstas": round(gasto, 1), "pendencias_da_anterior": len(pend_set)}
 
 
 # ----------------------------------------------------------------- sessão
@@ -592,7 +804,20 @@ async def responder(questao_id: int = Body(...), contexto: str = Body(...), marc
             if len(ult) == 3 and all(r["correta"] and r["confianca"] == "certeza" for r in ult):
                 await _add_xp(conn, "combo", XP["combo"], {"sessao_id": sessao_id, "resposta_id": rid})
                 combo = XP["combo"]
-    return {"resposta_id": rid, "correta": correta, "gabarito": q["gabarito"], "comentario_professor": _comentario(q["comentario_professor"]), "combo_xp": combo}
+        # caderno de erros: acertar de novo (sem chute) risca a linha; errar de novo faz a linha voltar
+        cad = None
+        if correta is not None and contexto not in ("aquecimento", "simulado"):
+            await _garantir_caderno(conn)
+            if correta and confianca != "chute":
+                n = await conn.fetchval("WITH u AS (UPDATE mentor.caderno SET riscada_em=now() WHERE questao_id=$1 AND riscada_em IS NULL AND criado_em < now() - interval '2 hours' RETURNING id) SELECT count(*) FROM u", questao_id)
+                cad = {"riscadas": int(n or 0)}
+            elif not correta or confianca == "chute":
+                n = await conn.fetchval("WITH u AS (UPDATE mentor.caderno SET voltou=voltou+1, riscada_em=NULL WHERE questao_id=$1 AND criado_em < now() - interval '2 hours' RETURNING id) SELECT count(*) FROM u", questao_id)
+                cad = {"voltaram": int(n or 0)}
+            linhas = _rs(await conn.fetch("SELECT id, tipo, linha, riscada_em, voltou FROM mentor.caderno WHERE questao_id=$1 ORDER BY id", questao_id))
+            if cad is not None:
+                cad["linhas"] = linhas
+    return {"resposta_id": rid, "correta": correta, "gabarito": q["gabarito"], "comentario_professor": _comentario(q["comentario_professor"]), "combo_xp": combo, "caderno": cad}
 
 
 async def _agendar_revisao(conn, assunto_id, tipo, dias, hoje=None):
@@ -622,6 +847,7 @@ async def fechar_gate(aula_id: int, sessao_id: Optional[int] = Body(None, embed=
             reestudo_antes = max(0, (total_gate - 1) // GATE_N)   # 0 na 1ª rodada, 1 na 2ª...
             if certas >= GATE_MIN:
                 await conn.execute("UPDATE mentor.aula SET estado='concluida', concluida_em=now() WHERE id=$1", aula_id)
+                await _semear_cards_aula(conn, aula_id)
                 xp = await _add_xp(conn, "gate", XP["gate"] if not reestudo_antes else XP["gate_reestudo"], {"aula_id": aula_id, "sessao_id": sessao_id})
                 await conn.execute("UPDATE mentor.plano_item pi SET feito=TRUE FROM mentor.semana s WHERE pi.semana_id=s.id AND s.status='aberta' AND pi.assunto_id=$1 AND NOT EXISTS (SELECT 1 FROM mentor.aula x WHERE x.assunto_id=$1 AND x.tipo IN ('conteudo','exercicios','propria') AND x.estado <> 'concluida')", a["assunto_id"])
                 faltam = await conn.fetchval("SELECT count(*) FROM mentor.aula WHERE assunto_id=$1 AND tipo IN ('conteudo','exercicios','propria') AND estado <> 'concluida'", a["assunto_id"])
@@ -629,7 +855,8 @@ async def fechar_gate(aula_id: int, sessao_id: Optional[int] = Body(None, embed=
                 if faltam == 0:
                     await conn.execute("UPDATE mentor.assunto SET estado='estudado', estudado_em=now() WHERE id=$1", a["assunto_id"])
                     r1 = await _agendar_revisao(conn, a["assunto_id"], "R1", INTERVALO["R1"])
-                return {"aula_id": aula_id, "fechou": True, "certas": certas, "n": n, "xp": xp, "assunto_fechou": faltam == 0, "r1_em": r1.isoformat() if r1 else None}
+                base_fechada = await _base_fechou(conn, aula_id)
+                return {"aula_id": aula_id, "fechou": True, "certas": certas, "n": n, "xp": xp, "assunto_fechou": faltam == 0, "r1_em": r1.isoformat() if r1 else None, "base_fechada": base_fechada}
             # reprovou: reestudo + 5 novas (não repete as do gate)
             await conn.execute("UPDATE mentor.aula SET estado='ressalva' WHERE id=$1", aula_id)
             vistas = [r["questao_id"] for r in await conn.fetch("SELECT questao_id FROM mentor.resposta WHERE aula_id=$1", aula_id)]
@@ -637,6 +864,7 @@ async def fechar_gate(aula_id: int, sessao_id: Optional[int] = Body(None, embed=
             if reestudo_antes >= 1:
                 # reincidente: fica estudado com ressalva, R1 com gate próprio (spec §3.3.2)
                 await conn.execute("UPDATE mentor.aula SET estado='concluida', concluida_em=now() WHERE id=$1", aula_id)
+                await _semear_cards_aula(conn, aula_id)
                 faltam = await conn.fetchval("SELECT count(*) FROM mentor.aula WHERE assunto_id=$1 AND tipo IN ('conteudo','exercicios','propria') AND estado <> 'concluida'", a["assunto_id"])
                 if faltam == 0:
                     await conn.execute("UPDATE mentor.assunto SET estado='ressalva', estudado_em=now() WHERE id=$1", a["assunto_id"])
@@ -648,6 +876,16 @@ async def fechar_gate(aula_id: int, sessao_id: Optional[int] = Body(None, embed=
 
 
 # ----------------------------------------------------------------- revisões (curva do esquecimento)
+async def _base_fechou(conn, aula_id):
+    """Depois de concluir uma aula de base: se não sobrou aula de base pendente na matéria, devolve o nome dela (prova de base liberada)."""
+    await _garantir_base(conn)
+    m = _r(await conn.fetchrow("""SELECT m.id, m.nome, m.fase, a.base FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id JOIN mentor.materia m ON m.id=s.materia_id WHERE a.id=$1""", aula_id))
+    if not m or not m["base"] or m["fase"] != "base":
+        return None
+    faltam = await conn.fetchval("SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=$1 AND a.base AND a.estado <> 'concluida'", m["id"])
+    return m["nome"] if faltam == 0 else None
+
+
 def _proxima_revisao(tipo, acerto):
     """Intervalo adaptativo (v3.2 §3). Devolve (tipo_seguinte, dias) ou ('reestudo', 0)."""
     if tipo == "R1":
@@ -916,10 +1154,14 @@ CAIXAS = [1, 3, 7, 15, 30]
 async def cards_hoje(limite: int = 20):
     hoje = _hoje()
     async with db() as conn:
-        rows = await conn.fetch("""SELECT c.id, c.tipo, c.frente, c.verso, c.caixa, c.proxima, s.nome AS assunto, m.nome AS materia
-                                   FROM mentor.card c LEFT JOIN mentor.assunto s ON s.id=c.assunto_id LEFT JOIN mentor.materia m ON m.id=s.materia_id
+        rows = await conn.fetch("""SELECT c.id, c.tipo, c.frente, c.verso, c.caixa, c.proxima, c.fonte, s.nome AS assunto, m.nome AS materia, a.titulo AS aula
+                                   FROM mentor.card c LEFT JOIN mentor.assunto s ON s.id=c.assunto_id LEFT JOIN mentor.materia m ON m.id=s.materia_id LEFT JOIN mentor.aula a ON a.id=c.aula_id
                                    WHERE c.ativo AND (c.proxima IS NULL OR c.proxima <= $1) ORDER BY c.proxima NULLS FIRST, random() LIMIT $2""", hoje, limite)
-    return _rs(rows)
+    out = _rs(rows)
+    for r in out:
+        if r.get("proxima"):
+            r["proxima"] = r["proxima"].isoformat()
+    return out
 
 
 @router.post("/card/{card_id}/responder")
@@ -934,6 +1176,208 @@ async def responder_card(card_id: int, lembrou: bool = Body(..., embed=True)):
         await conn.execute("UPDATE mentor.card SET caixa=$2, proxima=$3, acertos=acertos+$4, erros=erros+$5 WHERE id=$1", card_id, caixa, prox, int(lembrou), int(not lembrou))
         xp = await _add_xp(conn, "card", XP["card"], {"card_id": card_id}) if lembrou else None
     return {"card_id": card_id, "caixa": caixa, "proxima": prox.isoformat(), "xp": xp}
+
+
+# =====================================================================
+# BASE POR MATÉRIA e PROVA DE BASE (v3.8)
+# =====================================================================
+@router.get("/base")
+async def base_por_materia():
+    async with db() as conn:
+        await _garantir_base(conn)
+        rows = _rs(await conn.fetch("""SELECT m.id, m.nome, m.fase, m.trilha, m.trilha_ordem, m.regua_base, m.prova_base_em,
+               (SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND a.base) AS base_total,
+               (SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND a.base AND a.estado='concluida') AS base_feitas
+               FROM mentor.materia m ORDER BY m.trilha, m.trilha_ordem"""))
+        for r in rows:
+            r["pronta"] = r["fase"] == "base" and r["base_total"] > 0 and r["base_feitas"] >= r["base_total"]
+            if r.get("prova_base_em"):
+                r["prova_base_em"] = r["prova_base_em"].isoformat()
+            r["provas"] = _rs(await conn.fetch("SELECT id, certas, n, acerto, regua, aprovada, aulas_erradas, inicio, fim FROM mentor.prova_base WHERE materia_id=$1 ORDER BY inicio DESC LIMIT 5", r["id"]))
+            for p in r["provas"]:
+                for k in ("inicio", "fim"):
+                    if p.get(k):
+                        p[k] = p[k].isoformat()
+                if p.get("acerto") is not None:
+                    p["acerto"] = float(p["acerto"])
+    return rows
+
+
+@router.post("/materia/{materia_id}/prova-base/iniciar")
+async def prova_base_iniciar(materia_id: int, sessao_id: Optional[int] = Body(None, embed=True)):
+    """20 questões de Soldado da matéria (inéditas, uma por texto; PM-BA/CBM-BA primeiro, depois as bancas preferidas)."""
+    async with db() as conn:
+        await _garantir_base(conn)
+        m = _r(await conn.fetchrow("SELECT id, nome, fase, regua_base FROM mentor.materia WHERE id=$1", materia_id))
+        if not m:
+            raise HTTPException(404, "matéria não encontrada")
+        aberta = _r(await conn.fetchrow("SELECT id, questoes FROM mentor.prova_base WHERE materia_id=$1 AND fim IS NULL ORDER BY inicio DESC LIMIT 1", materia_id))
+        if aberta:
+            qs = _rs(await conn.fetch(f"""SELECT q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo, q.indice_acerto, q.comentario_professor, q.soldado_ba
+                                          FROM mentor.questao q WHERE q.id = ANY($1::bigint[])""", list(aberta["questoes"])))
+            ordem = {qid: i for i, qid in enumerate(aberta["questoes"])}
+            qs.sort(key=lambda q: ordem.get(q["id"], 999))
+            return {"prova_id": aberta["id"], "materia": m["nome"], "regua": m["regua_base"], "questoes": [_q_proto(q, m["nome"], None) for q in qs], "retomada": True}
+        qs = _rs(await conn.fetch(f"""
+            SELECT DISTINCT ON (q.enunciado_hash) q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo, q.indice_acerto, q.comentario_professor, q.soldado_ba,
+                   random() AS rnd
+            FROM mentor.questao q JOIN mentor.questao_aula qa ON qa.questao_id=q.id JOIN mentor.assunto s ON s.id=qa.assunto_id
+            WHERE s.materia_id=$1 AND q.tipo='ME' AND {SQL_BASE_Q} AND COALESCE(qa.melhor_mat, TRUE)
+              AND NOT EXISTS (SELECT 1 FROM mentor.resposta r JOIN mentor.questao q2 ON q2.id=r.questao_id WHERE q2.enunciado_hash=q.enunciado_hash)
+            ORDER BY q.enunciado_hash, q.soldado_ba DESC, (q.banca_sigla = ANY($2::text[])) DESC, random()""", materia_id, list(BANCAS_PREF)))
+        if len(qs) < 5:
+            raise HTTPException(409, "estoque insuficiente de questões inéditas nesta matéria")
+        qs.sort(key=lambda q: (not q["soldado_ba"], q["banca_sigla"] not in BANCAS_PREF, q["rnd"]))
+        qs = qs[:PROVA_BASE_N]
+        random.shuffle(qs)
+        pid = await conn.fetchval("INSERT INTO mentor.prova_base (materia_id, questoes, n, regua, sessao_id) VALUES ($1,$2,$3,$4,$5) RETURNING id",
+                                  materia_id, [q["id"] for q in qs], len(qs), m["regua_base"], sessao_id)
+    return {"prova_id": pid, "materia": m["nome"], "regua": m["regua_base"], "questoes": [_q_proto(q, m["nome"], None) for q in qs], "retomada": False}
+
+
+@router.post("/prova-base/{prova_id}/entregar")
+async def prova_base_entregar(prova_id: int, respostas: dict = Body(default_factory=dict), confiancas: dict = Body(default_factory=dict), sessao_id: Optional[int] = Body(None)):
+    """Corrige, grava as respostas, aplica a régua da matéria; aprovada → fase 'questao'. Reprovada → aulas das questões erradas (reler o resumo de bolso)."""
+    async with db() as conn:
+        async with conn.transaction():
+            await _garantir_base(conn)
+            p = _r(await conn.fetchrow("SELECT * FROM mentor.prova_base WHERE id=$1", prova_id))
+            if not p:
+                raise HTTPException(404, "prova não encontrada")
+            if p["fim"]:
+                raise HTTPException(409, "prova já entregue")
+            m = _r(await conn.fetchrow("SELECT id, nome, fase, regua_base FROM mentor.materia WHERE id=$1", p["materia_id"]))
+            certas, erradas_q, detalhe = 0, [], []
+            for qid in p["questoes"]:
+                q = _r(await conn.fetchrow("SELECT id, gabarito, comentario_professor FROM mentor.questao WHERE id=$1", qid))
+                marc = (respostas.get(str(qid)) or respostas.get(qid) or "").strip().upper() or None
+                conf = confiancas.get(str(qid)) or confiancas.get(qid)
+                gab = (q["gabarito"] or "").strip().upper()
+                ok = bool(marc) and marc == gab and conf != "chute"
+                aula_id = await conn.fetchval("SELECT aula_id FROM mentor.questao_aula WHERE questao_id=$1 ORDER BY melhor DESC, melhor_mat DESC, forca DESC LIMIT 1", qid)
+                assunto_id = await conn.fetchval("SELECT assunto_id FROM mentor.aula WHERE id=$1", aula_id) if aula_id else None
+                await conn.execute("""INSERT INTO mentor.resposta (questao_id, sessao_id, aula_id, assunto_id, contexto, marcada, correta, confianca)
+                                      VALUES ($1,$2,$3,$4,'questoes',$5,$6,$7)""", qid, sessao_id or p["sessao_id"], aula_id, assunto_id, marc, bool(marc) and marc == gab, conf if conf in ("certeza", "duvida", "chute") else None)
+                if ok:
+                    certas += 1
+                else:
+                    if aula_id:
+                        erradas_q.append(aula_id)
+                detalhe.append({"questao_id": qid, "gabarito": gab, "marcada": marc, "correta": ok, "aula_id": aula_id, "comentario_professor": _comentario(q["comentario_professor"])})
+            n = len(p["questoes"]) or 1
+            acerto = round(100.0 * certas / n, 1)
+            aprovada = acerto >= (p["regua"] or m["regua_base"])
+            aulas_err = sorted(set(erradas_q))
+            await conn.execute("UPDATE mentor.prova_base SET respostas=$2, certas=$3, acerto=$4, aprovada=$5, aulas_erradas=$6, fim=now() WHERE id=$1",
+                               prova_id, json.dumps(respostas), certas, acerto, aprovada, aulas_err)
+            xp = None
+            if aprovada and m["fase"] == "base":
+                await conn.execute("UPDATE mentor.materia SET fase='questao', prova_base_em=now() WHERE id=$1", m["id"])
+                xp = await _add_xp(conn, "prova_base", XP["prova_base"], {"materia_id": m["id"], "prova_id": prova_id})
+            aulas = _rs(await conn.fetch("""SELECT a.id, a.titulo, s.nome AS assunto, count(*) AS erros FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id
+                                            JOIN unnest($1::bigint[]) e(id) ON e.id=a.id GROUP BY a.id, a.titulo, s.nome ORDER BY erros DESC, a.ordem""", erradas_q)) if erradas_q else []
+    return {"prova_id": prova_id, "materia": m["nome"], "certas": certas, "n": n, "acerto": acerto, "regua": p["regua"] or m["regua_base"], "aprovada": aprovada,
+            "fase": "questao" if (aprovada or m["fase"] == "questao") else "base", "xp": xp, "aulas_erradas": aulas, "detalhe": detalhe}
+
+
+# =====================================================================
+# CADERNO DE ERROS — uma linha por erro (regra / contraste / pegadinha / desatenção)
+# A linha vira card de Leitner (menos desatenção) e entra na aba Revisão.
+# =====================================================================
+TIPOS_CADERNO = ("regra", "contraste", "pegadinha", "desatencao")
+
+
+@router.get("/versao")
+async def versao():
+    return {"versao": VERSAO}
+
+
+@router.get("/caderno")
+async def caderno_listar(materia_id: Optional[int] = None, materia: Optional[str] = None, abertas: bool = False, limite: int = 500):
+    async with db() as conn:
+        await _garantir_caderno(conn)
+        cond = ["TRUE"]
+        args = []
+        if materia_id:
+            args.append(materia_id)
+            cond.append(f"c.materia_id=${len(args)}")
+        if materia:
+            args.append(materia)
+            cond.append(f"m.nome=${len(args)}")
+        if abertas:
+            cond.append("c.riscada_em IS NULL")
+        args.append(limite)
+        rows = _rs(await conn.fetch(f"""SELECT c.id, c.questao_id, c.aula_id, c.assunto_id, c.materia_id, c.card_id, c.tipo, c.linha, c.enunciado, c.contexto,
+                                              c.riscada_em, c.voltou, c.criado_em, m.nome AS materia, s.nome AS assunto, a.titulo AS aula
+                                       FROM mentor.caderno c LEFT JOIN mentor.materia m ON m.id=c.materia_id LEFT JOIN mentor.assunto s ON s.id=c.assunto_id LEFT JOIN mentor.aula a ON a.id=c.aula_id
+                                       WHERE {' AND '.join(cond)} ORDER BY (c.riscada_em IS NULL) DESC, c.voltou DESC, c.id DESC LIMIT ${len(args)}""", *args))
+        tot = _r(await conn.fetchrow("SELECT count(*) FILTER (WHERE riscada_em IS NULL) AS abertas, count(*) FILTER (WHERE riscada_em IS NOT NULL) AS riscadas, count(*) FILTER (WHERE voltou > 0) AS voltaram FROM mentor.caderno"))
+    for r in rows:
+        for k in ("riscada_em", "criado_em"):
+            if r.get(k):
+                r[k] = r[k].isoformat()
+    return {"linhas": rows, "abertas": int(tot["abertas"] or 0), "riscadas": int(tot["riscadas"] or 0), "voltaram": int(tot["voltaram"] or 0)}
+
+
+@router.post("/caderno")
+async def caderno_nova(questao_id: Optional[int] = Body(None), aula_id: Optional[int] = Body(None), assunto_id: Optional[int] = Body(None),
+                       tipo: str = Body("regra"), linha: str = Body(...), enunciado: Optional[str] = Body(None), contexto: Optional[str] = Body(None)):
+    linha = re.sub(r"\s+", " ", (linha or "")).strip()
+    if tipo not in TIPOS_CADERNO:
+        raise HTTPException(400, "tipo inválido")
+    if len(linha) < 3 or len(linha) > 240:
+        raise HTTPException(400, "a linha do caderno tem de 3 a 240 caracteres")
+    hoje = _hoje()
+    async with db() as conn:
+        await _garantir_caderno(conn)
+        if assunto_id is None and aula_id:
+            assunto_id = await conn.fetchval("SELECT assunto_id FROM mentor.aula WHERE id=$1", aula_id)
+        if assunto_id is None and questao_id:
+            assunto_id = await conn.fetchval("SELECT assunto_id FROM mentor.questao_aula WHERE questao_id=$1 ORDER BY forca DESC NULLS LAST LIMIT 1", questao_id)
+        materia_id = await conn.fetchval("SELECT materia_id FROM mentor.assunto WHERE id=$1", assunto_id) if assunto_id else None
+        if not enunciado and questao_id:
+            enunciado = await conn.fetchval("SELECT enunciado FROM mentor.questao WHERE id=$1", questao_id)
+        enunciado = _curto(enunciado, 240) if enunciado else None
+        card_id = None
+        if tipo != "desatencao":
+            frente = (enunciado + "\n\nQual é a regra?") if enunciado else "Qual é a regra?"
+            card_id = await conn.fetchval("INSERT INTO mentor.card (assunto_id, aula_id, tipo, frente, verso, fonte, proxima) VALUES ($1,$2,$3,$4,$5,'caderno de erros',$6) RETURNING id",
+                                          assunto_id, aula_id, "contraste" if tipo == "contraste" else "usuario", frente, linha, hoje + timedelta(days=1))
+        cid = await conn.fetchval("""INSERT INTO mentor.caderno (questao_id, aula_id, assunto_id, materia_id, card_id, tipo, linha, enunciado, contexto)
+                                     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING id""", questao_id, aula_id, assunto_id, materia_id, card_id, tipo, linha, enunciado, contexto)
+        abertas = await conn.fetchval("SELECT count(*) FROM mentor.caderno WHERE riscada_em IS NULL AND materia_id=$1", materia_id) if materia_id else None
+    return {"id": cid, "card_id": card_id, "abertas_materia": abertas}
+
+
+@router.post("/caderno/{caderno_id}")
+async def caderno_editar(caderno_id: int, linha: Optional[str] = Body(None), tipo: Optional[str] = Body(None), riscada: Optional[bool] = Body(None), apagar: bool = Body(False)):
+    async with db() as conn:
+        await _garantir_caderno(conn)
+        c = _r(await conn.fetchrow("SELECT * FROM mentor.caderno WHERE id=$1", caderno_id))
+        if not c:
+            raise HTTPException(404, "linha não encontrada")
+        if apagar:
+            await conn.execute("DELETE FROM mentor.caderno WHERE id=$1", caderno_id)
+            if c["card_id"]:
+                await conn.execute("UPDATE mentor.card SET ativo=FALSE WHERE id=$1", c["card_id"])
+            return {"ok": True, "apagada": True}
+        if linha is not None:
+            linha = re.sub(r"\s+", " ", linha).strip()
+            if len(linha) < 3 or len(linha) > 240:
+                raise HTTPException(400, "a linha do caderno tem de 3 a 240 caracteres")
+            await conn.execute("UPDATE mentor.caderno SET linha=$2 WHERE id=$1", caderno_id, linha)
+            if c["card_id"]:
+                await conn.execute("UPDATE mentor.card SET verso=$2 WHERE id=$1", c["card_id"], linha)
+        if tipo is not None:
+            if tipo not in TIPOS_CADERNO:
+                raise HTTPException(400, "tipo inválido")
+            await conn.execute("UPDATE mentor.caderno SET tipo=$2 WHERE id=$1", caderno_id, tipo)
+        if riscada is not None:
+            await conn.execute("UPDATE mentor.caderno SET riscada_em=CASE WHEN $2 THEN now() ELSE NULL END WHERE id=$1", caderno_id, riscada)
+        c = _r(await conn.fetchrow("SELECT id, tipo, linha, riscada_em, voltou, card_id FROM mentor.caderno WHERE id=$1", caderno_id))
+        if c.get("riscada_em"):
+            c["riscada_em"] = c["riscada_em"].isoformat()
+    return c
 
 
 # =====================================================================
@@ -987,6 +1431,7 @@ async def _assuntos_proto(conn, ids=None, materia_id=None):
                (SELECT array_agg(a.titulo ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aulas,
                (SELECT array_agg(a.id ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aula_ids,
                (SELECT array_agg(a.estado ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aula_estados,
+               (SELECT array_agg(a.base ORDER BY a.ordem) FROM mentor.aula a WHERE a.assunto_id=s.id AND a.tipo<>'fora') AS aula_base,
                (SELECT count(*) FROM mentor.questao_aula qa WHERE qa.assunto_id=s.id) AS questoes
         FROM mentor.assunto s JOIN mentor.materia m ON m.id=s.materia_id JOIN mentor.modulo mo ON mo.id=s.modulo_id
         WHERE {where} ORDER BY s.materia_id, (mo.tipo='propria'), mo.ordem, s.ordem""", *args)
@@ -996,10 +1441,11 @@ async def _assuntos_proto(conn, ids=None, materia_id=None):
         tipo = "conteudo"
         if r["tier"] in ("treino",):
             tipo = "exercicios"
-        modo = "leitura" if r["origem"] == "propria" else MODO_PROTO.get(r["tier"], "expresso")
-        out.append({"id": r["id"], "nome": r["nome"], "tipo": tipo, "base": r["tier"] == "S", "tier": r["tier"] if r["tier"] in ("S", "A", "B", "C") else "C",
-                    "modo": modo, "soldado": r["soldado"] or 0, "video": int(r["video"] or 0), "aulas": list(r["aulas"] or []),
-                    "aula_ids": list(r["aula_ids"] or []), "aula_estados": list(r["aula_estados"] or []), "questoes": r["questoes"],
+        ab = list(r["aula_base"] or [])
+        modo = "leitura" if r["origem"] == "propria" else ("completo" if any(ab) else "expresso")
+        out.append({"id": r["id"], "nome": r["nome"], "tipo": tipo, "base": any(ab), "tier": r["tier"] if r["tier"] in ("S", "A", "B", "C") else "C",
+                    "modo": modo, "modo_v3": r["modo"], "soldado": r["soldado"] or 0, "video": int(r["video"] or 0), "aulas": list(r["aulas"] or []),
+                    "aula_ids": list(r["aula_ids"] or []), "aula_estados": list(r["aula_estados"] or []), "aula_base": ab, "questoes": r["questoes"],
                     "propria": r["origem"] == "propria", "ordem": r["ordem"], "materia": r["materia"], "materia_id": r["materia_id"],
                     "modulo": r["modulo"], "modulo_ordem": r["modulo_ordem"], "modulo_tipo": r["modulo_tipo"], "estado": r["estado"]})
     return out
@@ -1018,6 +1464,30 @@ def _fase_semana(seg):
     return "A" if seg < date(2026, 12, 14) else ("B" if seg < date(2027, 1, 4) else ("C" if seg < date(2027, 1, 18) else "D"))
 
 
+def _titulo_semana_v3(seg, por):
+    """Base · matérias / Base + modo questão · matérias / Modo questão · matérias / Reta final."""
+    if seg >= RETA_FINAL:
+        return "Reta final: fora do edital, cards, simulados e questões dos assuntos fracos"
+    n_base = n_comp = 0
+    for l in por.values():
+        for a in l:
+            for mo in (a.get("aula_modos") or []):
+                if mo == "base":
+                    n_base += 1
+                else:
+                    n_comp += 1
+    mats = list(por.keys())
+    if n_base and not n_comp:
+        cab = "Base (vídeo + questões)"
+    elif n_base and n_comp:
+        cab = "Base + modo questão"
+    elif n_comp:
+        cab = "Modo questão (sem vídeo)"
+    else:
+        cab = "Semana"
+    return cab + (" · " + ", ".join(mats[:4]) if mats else "")
+
+
 def _titulo_semana(seg, mats):
     f = _fase_semana(seg)
     if f == "D":
@@ -1027,48 +1497,41 @@ def _titulo_semana(seg, mats):
 
 
 async def _previsao_semanas(conn, a_partir, ate=date(2027, 2, 21)):
-    """Simula as semanas futuras com a mesma regra do planejador (sem gravar)."""
-    todos = await _assuntos_proto(conn)
-    rest = [a for a in todos if a["estado"] == "nao_estudado" and a["tier"] in ("S", "A", "B", "C", "treino")]
-    W = {1: 1.5, 8: 1.5, 7: 1.3, 4: 1.1, 6: 1.1, 10: 1.1, 12: 1.1, 5: 0.8}
+    """Simula as semanas futuras com o planejador de trilhas (sem gravar). A base de uma matéria fecha quando as aulas de base acabam."""
+    trilhas, pesos = await _trilhas(conn)
+    mats, aulas = await _universo_planejador(conn)
+    mats = {k: dict(v) for k, v in mats.items()}
+    todos = {a["id"]: a for a in await _assuntos_proto(conn)}
+    feitas = set()
     semanas = []
     seg = a_partir
     while seg <= ate:
         cap_total = await _capacidade_semana(conn, seg)
-        cap = cap_total * PCT_CONTEUDO
-        sem, gasto = [], 0.0
-        for tier in ("S", "A", "B", "C", "treino"):
-            if gasto >= cap * 0.95:
-                break
-            fila = {}
-            for a in rest:
-                if a["tier"] == tier:
-                    fila.setdefault(a["materia_id"], []).append(a)
-            if tier == "B":
-                for l in fila.values():
-                    l.sort(key=lambda a: (-(a["soldado"] or 0), a["modulo_ordem"], a["ordem"]))
-            if not fila:
-                continue
-            resto = cap - gasto
-            peso = {m: sum(_custo_h(a) for a in l) * W.get(m, 1.0) for m, l in fila.items()}
-            top = sorted(peso, key=lambda k: -peso[k])[:5]
-            tot = sum(peso[m] for m in top) or 1
-            for mid in top:
-                if gasto >= cap:
-                    break
-                aloc, g = resto * peso[mid] / tot, 0.0
-                for a in fila[mid]:
-                    c = _custo_h(a)
-                    if gasto + g + c > cap * 1.1 or (g > 0 and g + c > aloc * 1.2):
-                        break
-                    sem.append(a)
-                    g += c
-                gasto += g
-        ids = {a["id"] for a in sem}
-        rest = [a for a in rest if a["id"] not in ids]
-        semanas.append((seg, cap_total, sem))
+        itens, _ = _plano_trilhas(mats, aulas, seg, cap_total * PCT_CONTEUDO, trilhas, pesos, feitas)
+        # fase vira "questao" quando não sobra aula de base
+        for mid, m in mats.items():
+            if m["fase"] == "base" and not any(a["base"] and a["id"] not in feitas for a in aulas if a["materia_id"] == mid):
+                m["fase"] = "questao"
+        semanas.append((seg, cap_total, [_item_proto(it, todos, aulas) for it in itens if it["assunto_id"] in todos]))
         seg += timedelta(days=7)
+        if not itens and all(m["fase"] == "questao" for m in mats.values()) and not any(a["id"] not in feitas for a in aulas if a["modo"] in MODOS_QUESTAO):
+            break
     return semanas
+
+
+def _item_proto(it, todos, aulas):
+    """Assunto do protótipo recortado às aulas planejadas nesta semana, com o modo de cada aula."""
+    a = dict(todos[it["assunto_id"]])
+    por_id = {x["id"]: x for x in aulas}
+    ids = it["aulas"]
+    pos = {aid: i for i, aid in enumerate(a.get("aula_ids") or [])}
+    a["aulas"] = [a["aulas"][pos[i]] if i in pos else (por_id.get(i, {}).get("titulo") or "") for i in ids]
+    a["aula_ids"] = ids
+    a["aula_estados"] = [a["aula_estados"][pos[i]] if i in pos else "pendente" for i in ids]
+    a["aula_modos"] = it["aula_modos"]
+    a["modo_item"] = it["modo"]
+    a["modo"] = "completo" if it["modo"] == "base" else "expresso"
+    return a
 
 
 def _semana_proto(n, seg, meta, itens, revisoes):
@@ -1076,8 +1539,9 @@ def _semana_proto(n, seg, meta, itens, revisoes):
     for a in itens:
         por.setdefault(a["materia"], []).append({"id": a["id"], "nome": a["nome"], "base": a["base"], "tier": a["tier"], "modo": a["modo"], "propria": a["propria"],
                                                  "aulas": a["aulas"], "aula_ids": a.get("aula_ids", []), "aula_estados": a.get("aula_estados", []),
+                                                 "aula_modos": a.get("aula_modos") or [("base" if b else "complemento") for b in (a.get("aula_base") or [])],
                                                  "video": a["video"], "soldado": a["soldado"], "estado": a.get("estado")})
-    return {"n": n, "ini": seg.isoformat(), "fim": (seg + timedelta(days=6)).isoformat(), "titulo": _titulo_semana(seg, list(por.keys())), "meta": float(meta),
+    return {"n": n, "ini": seg.isoformat(), "fim": (seg + timedelta(days=6)).isoformat(), "titulo": _titulo_semana_v3(seg, por), "meta": float(meta),
             "materias": [[m, l] for m, l in por.items()], "revisoes": revisoes, "reta": _fase_semana(seg) == "D"}
 
 
@@ -1096,7 +1560,7 @@ async def proto_dados():
                     continue
                 mods.setdefault((a["modulo_ordem"], a["modulo"]), []).append(a)
             D_mat.append({"id": m["id"], "nome": m["nome"], "peso": m["peso_prova"],
-                          "modulos": [{"ordem": k[0], "nome": k[1], "assuntos": [{kk: a[kk] for kk in ("id", "nome", "tipo", "base", "tier", "modo", "soldado", "video", "aulas", "aula_ids", "aula_estados", "questoes", "propria", "ordem", "estado")} for a in l]}
+                          "modulos": [{"ordem": k[0], "nome": k[1], "assuntos": [{kk: a[kk] for kk in ("id", "nome", "tipo", "base", "tier", "modo", "modo_v3", "soldado", "video", "aulas", "aula_ids", "aula_estados", "aula_base", "questoes", "propria", "ordem", "estado")} for a in l]}
                                       for k, l in sorted(mods.items(), key=lambda x: (x[0][0] == 0, x[0][0]))]})
         # ---- orçamento
         orc = []
@@ -1111,9 +1575,21 @@ async def proto_dados():
         semanas = []
         n = 1
         ultimo_fim = None
+        await _garantir_base(conn)
+        todos_por_id = {a["id"]: a for a in todos}
+        aulas_univ = [dict(r) for r in await conn.fetch("SELECT id, titulo, base FROM mentor.aula")]
         for s in reais:
-            itens_ids = [r["assunto_id"] for r in await conn.fetch("SELECT assunto_id FROM mentor.plano_item WHERE semana_id=$1 ORDER BY ordem", s["id"])]
-            itens = [next(a for a in todos if a["id"] == i) for i in itens_ids if any(a["id"] == i for a in todos)]
+            pis = _rs(await conn.fetch("SELECT assunto_id, modo, aulas FROM mentor.plano_item WHERE semana_id=$1 ORDER BY ordem", s["id"]))
+            itens = []
+            for pi in pis:
+                if pi["assunto_id"] not in todos_por_id:
+                    continue
+                if pi.get("aulas"):
+                    itens.append(_item_proto({"assunto_id": pi["assunto_id"], "aulas": list(pi["aulas"]), "modo": pi.get("modo") or "base",
+                                              "aula_modos": [("base" if next((x["base"] for x in aulas_univ if x["id"] == i), False) else (todos_por_id[pi["assunto_id"]].get("modo_v3") or "complemento")) for i in pi["aulas"]]},
+                                             todos_por_id, aulas_univ))
+                else:
+                    itens.append(todos_por_id[pi["assunto_id"]])
             revs = [[_curta(r["prevista"]), r["tipo"], r["nome"], REV_N.get(r["tipo"], 4), r["id"], bool(r["feita"]), r["acerto"] and float(r["acerto"])]
                     for r in await conn.fetch("""SELECT r.id, r.tipo, COALESCE(r.adiada_para, r.prevista) AS prevista, r.feita, r.acerto, a.nome FROM mentor.revisao r JOIN mentor.assunto a ON a.id=r.assunto_id
                                                  WHERE COALESCE(r.adiada_para, r.prevista) BETWEEN $1 AND $2 ORDER BY 3""", s["inicio"], s["fim"])]
@@ -1132,14 +1608,23 @@ async def proto_dados():
             n += 1
         # ---- hoje: aulas pendentes do plano aberto, até a meta do dia
         hoje_aulas = []
+        hoje_rev = {"revisoes": 0, "questoes": 0, "lista": [], "cards": 0, "caderno_abertas": 0, "caderno_por_materia": {}}
         aberta = _r(await conn.fetchrow("SELECT * FROM mentor.semana WHERE status='aberta' ORDER BY inicio DESC LIMIT 1"))
         if aberta:
             cfg = await _config(conn, "horas_dia", {})
             meta_min = _horas_dia(hoje, cfg) * 60 * PCT_CONTEUDO
             usado = 0
-            pend = await conn.fetch("""SELECT a.id, a.titulo, a.url, a.duracao_s, a.estado, a.tipo, s.id AS assunto_id, s.nome AS assunto, m.nome AS mat, a.questoes_fixacao
+            pend = await conn.fetch("""SELECT a.id, a.titulo, a.url, a.duracao_s, a.estado, a.tipo, a.base, s.modo AS modo_v3, s.id AS assunto_id, s.nome AS assunto, m.nome AS mat, m.id AS materia_id, a.questoes_fixacao,
+                                              COALESCE(a.resumo_bolso, a.resumo, a.mapa_mental) AS bolso, pi.aulas AS planejadas
                                        FROM mentor.plano_item pi JOIN mentor.assunto s ON s.id=pi.assunto_id JOIN mentor.materia m ON m.id=s.materia_id JOIN mentor.aula a ON a.assunto_id=s.id
-                                       WHERE pi.semana_id=$1 AND NOT pi.feito AND a.estado <> 'concluida' AND a.tipo IN ('conteudo','exercicios','propria') ORDER BY pi.ordem, a.ordem""", aberta["id"])
+                                       WHERE pi.semana_id=$1 AND NOT pi.feito AND a.estado <> 'concluida' AND a.tipo IN ('conteudo','exercicios','propria')
+                                         AND (pi.aulas IS NULL OR a.id = ANY(pi.aulas)) ORDER BY pi.ordem, a.ordem""", aberta["id"])
+            # prova de base: matéria em fase base com todas as aulas de base concluídas entra na frente do dia
+            for pb in await conn.fetch("""SELECT m.id, m.nome, m.regua_base FROM mentor.materia m WHERE m.fase='base' AND EXISTS (SELECT 1 FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND a.base)
+                                          AND NOT EXISTS (SELECT 1 FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND a.base AND a.estado <> 'concluida')
+                                          ORDER BY m.trilha, m.trilha_ordem"""):
+                hoje_aulas.append({"tipo": "prova_base", "mat": pb["nome"], "materia_id": pb["id"], "assunto": f"Prova de base · {pb['nome']}", "titulo": f"{PROVA_BASE_N} questões de Soldado · {pb['regua_base']}% libera o modo questão",
+                                   "codigo": f"PB{pb['id']}", "aula_id": None, "assunto_id": None, "dur": "40 min", "n": PROVA_BASE_N, "regua": pb["regua_base"], "modo": "prova_base", "pre": [], "gate": [], "fix": [], "bolso": "", "recalls": []})
             # intercalar: no máximo 2 aulas seguidas do mesmo assunto; a próxima vem de outra matéria (spec v3.2 §3)
             por_assunto = {}
             for a in pend:
@@ -1155,8 +1640,8 @@ async def proto_dados():
                 escolhidas += lote
                 mat_ultima = lote[0]["mat"]
             for a in escolhidas:
-                custo = (a["duracao_s"] or 0) / 60 / 1.5 + 15
-                if hoje_aulas and usado + custo > meta_min:
+                custo = ((a["duracao_s"] or 0) / 60 / 1.5 + 25) if a["base"] else 25
+                if any(x.get("tipo") == "aula" for x in hoje_aulas) and usado + custo > meta_min:
                     break
                 usado += custo
                 pre = await _questoes_da_aula(conn, a["id"], AQUEC_N, "aquecimento")
@@ -1175,9 +1660,22 @@ async def proto_dados():
                                 "alts": [[(x.get("id") or x.get("letra") or "").upper(), x.get("text") or x.get("texto") or "", bool(x.get("correct") or x.get("correta")), x.get("explanation") or x.get("explicacao") or ""] for x in alts],
                                 "gab": next(((x.get("id") or x.get("letra") or "").upper() for x in alts if x.get("correct")), None),
                                 "explicacoes": {(x.get("id") or x.get("letra") or "").upper(): x.get("explanation") or x.get("explicacao") or "" for x in alts}})
-                hoje_aulas.append({"mat": a["mat"], "assunto": a["assunto"], "codigo": str(a["id"]), "aula_id": a["id"], "assunto_id": a["assunto_id"], "titulo": a["titulo"],
-                                   "url": a["url"], "dur": _dur_txt(a["duracao_s"]), "propria": a["tipo"] == "propria",
+                recalls = [r["texto"] for r in await conn.fetch("SELECT texto FROM mentor.bizu WHERE aula_id=$1 AND fonte='usuario' AND secao='recall' ORDER BY id", a["id"])]
+                modo = "base" if a["base"] else (a["modo_v3"] if a["modo_v3"] in MODOS_QUESTAO else ("fora" if a["modo_v3"] == "fora" else "complemento"))
+                if a["tipo"] == "exercicios" and modo != "base":
+                    modo = "questoes"
+                hoje_aulas.append({"tipo": "aula", "mat": a["mat"], "assunto": a["assunto"], "codigo": str(a["id"]), "aula_id": a["id"], "assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "titulo": a["titulo"],
+                                   "url": a["url"], "dur": _dur_txt(a["duracao_s"]), "propria": a["tipo"] == "propria", "modo": modo,
+                                   "bolso": (a["bolso"] or "")[:12000], "recalls": recalls,
                                    "pre": [_q_proto(q, a["mat"], a["assunto"]) for q in pre], "gate": [_q_proto(q, a["mat"], a["assunto"]) for q in gate], "fix": fix})
+        # ---- revisão de hoje em números (questões + cards + caderno): o painel mostra no Plano de hoje e na aba Revisão
+        await _garantir_caderno(conn)
+        revs_hoje = _rs(await conn.fetch("""SELECT r.tipo, s.nome FROM mentor.revisao r JOIN mentor.assunto s ON s.id=r.assunto_id
+                                            WHERE r.feita IS NULL AND COALESCE(r.adiada_para, r.prevista) <= $1 ORDER BY r.prevista""", hoje))
+        hoje_rev = {"revisoes": len(revs_hoje), "questoes": sum(REV_N.get(r["tipo"], 4) for r in revs_hoje), "lista": [f'{r["tipo"]} · {r["nome"]}' for r in revs_hoje],
+                    "cards": int(await conn.fetchval("SELECT count(*) FROM mentor.card WHERE ativo AND (proxima IS NULL OR proxima <= $1)", hoje) or 0),
+                    "caderno_abertas": int(await conn.fetchval("SELECT count(*) FROM mentor.caderno WHERE riscada_em IS NULL") or 0),
+                    "caderno_por_materia": {r["nome"]: int(r["n"]) for r in await conn.fetch("SELECT m.nome, count(*) AS n FROM mentor.caderno c JOIN mentor.materia m ON m.id=c.materia_id WHERE c.riscada_em IS NULL GROUP BY m.nome")}}
         # ---- pool de questões (aba Questões e simulado): ME inéditas, uma por texto, dos assuntos estudados + amostra da prova
         pool = _rs(await conn.fetch(f"""
             SELECT DISTINCT ON (q.enunciado_hash) q.id, q.enunciado, q.alternativas, q.gabarito, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo, q.indice_acerto, q.comentario_professor, q.soldado_ba,
@@ -1204,8 +1702,22 @@ async def proto_dados():
             proj["conteudo"].append(cont)
             proj["revisao"].append(int(sum(s["meta"] for s in sems) * 0.35))
             proj["acumulado"].append(acum)
-    return {"D": {"materias": D_mat, "orcamento": orc, "calendario": {"fechado": "2027-01-31", "em_dia": [], "atrasado": []}, "questoes": D_q, "projecao": proj, "outras": [], "agenda_sim": AGENDA_SIM},
-            "SEMANAS": semanas, "HOJE_AULAS": hoje_aulas, "HOJE": hoje.isoformat(), "ESTADO": est, "progresso": prog}
+        base_mat = _rs(await conn.fetch("""SELECT m.id, m.nome, m.fase, m.trilha, m.trilha_ordem, m.regua_base, m.prova_base_em,
+                   (SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND a.base) AS base_total,
+                   (SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND a.base AND a.estado='concluida') AS base_feitas,
+                   (SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND NOT a.base AND s.modo IN ('complemento','lei_seca','questoes','leitura') AND a.tipo IN ('conteudo','exercicios','propria')) AS comp_total,
+                   (SELECT count(*) FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id WHERE s.materia_id=m.id AND NOT a.base AND s.modo IN ('complemento','lei_seca','questoes','leitura') AND a.tipo IN ('conteudo','exercicios','propria') AND a.estado='concluida') AS comp_feitas,
+                   (SELECT row_to_json(p) FROM (SELECT id, acerto, aprovada, fim FROM mentor.prova_base pb WHERE pb.materia_id=m.id ORDER BY inicio DESC LIMIT 1) p) AS ultima_prova
+                   FROM mentor.materia m ORDER BY m.trilha, m.trilha_ordem"""))
+        flags_ok = any(b["base_total"] > 0 for b in base_mat)
+        for b in base_mat:
+            b["pronta"] = b["fase"] == "base" and b["base_total"] > 0 and b["base_feitas"] >= b["base_total"]
+            if b.get("prova_base_em"):
+                b["prova_base_em"] = b["prova_base_em"].isoformat()
+            if isinstance(b.get("ultima_prova"), str):
+                b["ultima_prova"] = json.loads(b["ultima_prova"])
+    return {"D": {"materias": D_mat, "orcamento": orc, "calendario": {"fechado": "2027-01-31", "em_dia": [], "atrasado": []}, "questoes": D_q, "projecao": proj, "outras": [], "agenda_sim": AGENDA_SIM, "base": base_mat, "flags_ok": flags_ok},
+            "SEMANAS": semanas, "HOJE_AULAS": hoje_aulas, "HOJE": hoje.isoformat(), "ESTADO": est, "progresso": prog, "HOJE_REV": hoje_rev, "VERSAO": VERSAO}
 
 
 def dt_mes(iso):
@@ -1254,9 +1766,20 @@ async def proto_evento(tipo: str = Body(...), dados: dict = Body(default_factory
                 await conn.execute("UPDATE mentor.aula SET estado='pendente' WHERE assunto_id=$1", aid)
                 await conn.execute("DELETE FROM mentor.revisao WHERE assunto_id=$1 AND feita IS NULL", aid)
             return {"ok": True}
+        if tipo == "recall":
+            # "o que eu lembro" escrito na pausa do vídeo: guardado como bizu do aluno (secao=recall), comparado ao resumo de bolso no painel
+            aid = int(dados["aula_id"])
+            texto = re.sub(r"[ \t]+", " ", str(dados.get("texto") or "")).strip()
+            if len(texto) < 3:
+                raise HTTPException(400, "escreva pelo menos uma linha")
+            sid = await conn.fetchval("SELECT assunto_id FROM mentor.aula WHERE id=$1", aid)
+            await conn.execute("INSERT INTO mentor.bizu (aula_id, assunto_id, fonte, secao, texto, aprovado) VALUES ($1,$2,'usuario','recall',$3,FALSE)", aid, sid, texto[:2000])
+            n = await conn.fetchval("SELECT count(*) FROM mentor.bizu WHERE aula_id=$1 AND secao='recall'", aid)
+            return {"ok": True, "n": int(n)}
         if tipo == "aula_concluida":
             aid = int(dados["aula_id"])
             await conn.execute("UPDATE mentor.aula SET estado='concluida', concluida_em=now() WHERE id=$1 AND estado <> 'concluida'", aid)
+            await _semear_cards_aula(conn, aid)
             sid = await conn.fetchval("SELECT assunto_id FROM mentor.aula WHERE id=$1", aid)
             faltam = await conn.fetchval("SELECT count(*) FROM mentor.aula WHERE assunto_id=$1 AND tipo IN ('conteudo','exercicios','propria') AND estado <> 'concluida'", sid)
             if faltam == 0:
