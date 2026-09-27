@@ -74,7 +74,7 @@ from database import db
 
 log = logging.getLogger("mentor")
 router = APIRouter(prefix="/mentor", tags=["Mentor"])
-VERSAO = "3.10-valter"
+VERSAO = "3.10.1-dono"
 
 # ----------------------------------------------------------------- constantes
 GATE_N, GATE_MIN = 5, 4
@@ -402,7 +402,19 @@ async def _garantir_feedback(conn):
         return
     await conn.execute("""CREATE TABLE IF NOT EXISTS mentor.vinculo_feedback (questao_id BIGINT NOT NULL, aula_id BIGINT NOT NULL, ok BOOLEAN NOT NULL,
                           criado_em TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY (questao_id, aula_id))""")
+    # v3.10.1: "não é deste assunto" (marcado na revisão/treino); vale pro assunto inteiro
+    await conn.execute("""CREATE TABLE IF NOT EXISTS mentor.assunto_feedback (questao_id BIGINT NOT NULL, assunto_id BIGINT NOT NULL, ok BOOLEAN NOT NULL,
+                          criado_em TIMESTAMPTZ NOT NULL DEFAULT now(), PRIMARY KEY (questao_id, assunto_id))""")
     _FEEDBACK_OK = True
+
+
+def _sql_dono(assunto_expr, q="q"):
+    """v3.10.1 — a questão é "deste assunto" se o afinador (melhor_mat) pôs o melhor encaixe dela aqui, ou se não pôs em
+    nenhum outro assunto; e o aluno não marcou "não é deste assunto". Sem isso, a etiqueta ampla do Gran ("Interpretação
+    de textos") pendura a mesma questão em 14 aulas e a revisão de Tipos de discurso sorteia questão de vocabulário."""
+    return f"""((EXISTS (SELECT 1 FROM mentor.questao_aula qm WHERE qm.questao_id = {q}.id AND qm.assunto_id = {assunto_expr} AND qm.melhor_mat)
+            OR NOT EXISTS (SELECT 1 FROM mentor.questao_aula qx WHERE qx.questao_id = {q}.id AND qx.melhor_mat AND qx.assunto_id <> {assunto_expr}))
+           AND NOT EXISTS (SELECT 1 FROM mentor.assunto_feedback af WHERE af.questao_id = {q}.id AND af.assunto_id = {assunto_expr} AND NOT af.ok))"""
 
 
 _BASE_OK = False
@@ -958,6 +970,7 @@ async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=Fal
           {"AND q.tipo = 'ME'" if so_me else ""}
           AND NOT (q.id = ANY($2::bigint[]))
           AND NOT EXISTS (SELECT 1 FROM mentor.vinculo_feedback f WHERE f.questao_id = q.id AND f.aula_id = $1 AND NOT f.ok)
+          AND {_sql_dono("qa.assunto_id")}
           {{NIVEL}}
           {"AND NOT EXISTS (SELECT 1 FROM mentor.resposta r JOIN mentor.questao q2 ON q2.id = r.questao_id WHERE q2.enunciado_hash = q.enunciado_hash" + ("" if ineditas else " AND r.data > now() - interval '30 days'") + ")"}
         ORDER BY q.enunciado_hash, o_melhor, o_via, o_kw, o_banca, o_sold, q.ano DESC NULLS LAST
@@ -967,8 +980,6 @@ async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=Fal
     #    posterior ainda não concluída, espera. 2) sem afinação, pela etiqueta exclusiva de aula posterior.
     NIVEL = """AND NOT EXISTS (SELECT 1 FROM mentor.questao_aula qb JOIN mentor.aula a2 ON a2.id = qb.aula_id JOIN mentor.aula a1 ON a1.id = $1
                           WHERE qb.questao_id = q.id AND qb.melhor AND a2.assunto_id = a1.assunto_id AND a2.ordem > a1.ordem AND a2.estado <> 'concluida')
-               AND NOT EXISTS (SELECT 1 FROM mentor.questao_aula qc JOIN mentor.aula ac ON ac.id = qc.aula_id JOIN mentor.aula a1 ON a1.id = $1
-                          WHERE qc.questao_id = q.id AND qc.melhor_mat AND ac.assunto_id <> a1.assunto_id)
                AND (EXISTS (SELECT 1 FROM mentor.questao_aula qb JOIN mentor.aula a1 ON a1.id = $1 JOIN mentor.aula ab ON ab.id = qb.aula_id
                             WHERE qb.questao_id = q.id AND qb.melhor AND ab.assunto_id = a1.assunto_id)
                     OR NOT EXISTS (SELECT 1 FROM mentor.aula a2 JOIN mentor.aula a1 ON a1.id = $1
@@ -995,23 +1006,29 @@ async def _questoes_da_aula(conn, aula_id, n, contexto, ineditas=True, so_me=Fal
     return out
 
 
-async def _questoes_do_assunto(conn, assunto_id, n, ineditas=True):
+async def _questoes_do_assunto(conn, assunto_id, n, ineditas=True, excluir=None):
+    await _garantir_feedback(conn)
+    excluir = [int(x) for x in (excluir or [])]
     rows = await conn.fetch(f"""
         SELECT DISTINCT ON (q.id) q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano,
-               q.orgao_sigla, q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.aula_id
+               q.orgao_sigla, q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.aula_id, qa.melhor_mat AS o_dono
         FROM mentor.questao_aula qa JOIN mentor.questao q ON q.id = qa.questao_id
-        WHERE qa.assunto_id = $1 AND {SQL_BASE_Q}
+        WHERE qa.assunto_id = $1 AND {SQL_BASE_Q} AND {_sql_dono("qa.assunto_id")}
+          AND NOT (q.id = ANY($2::bigint[]))
           {"AND NOT EXISTS (SELECT 1 FROM mentor.resposta r WHERE r.questao_id = q.id)" if ineditas else ""}
-    """, assunto_id)
+        ORDER BY q.id, qa.melhor_mat DESC, qa.melhor DESC, qa.forca DESC
+    """, assunto_id, excluir)
     lst = _rs(rows)
     random.shuffle(lst)
     nivel = await _nivel_assunto(conn, assunto_id)
-    lst.sort(key=lambda q: (_o_nivel(q, nivel), _o_com(q), 0 if q["banca_sigla"] in BANCAS_PREF else 1, 0 if q["soldado_ba"] else 1))
+    # o melhor encaixe aqui vem primeiro; depois a escada de dificuldade, comentário, banca, PM-BA
+    lst.sort(key=lambda q: (0 if q.get("o_dono") else 1, _o_nivel(q, nivel), _o_com(q), 0 if q["banca_sigla"] in BANCAS_PREF else 1, 0 if q["soldado_ba"] else 1))
     out = lst[:n]
     if len(out) < n and ineditas:
-        out += await _questoes_do_assunto(conn, assunto_id, n - len(out), ineditas=False)
+        out += await _questoes_do_assunto(conn, assunto_id, n - len(out), ineditas=False, excluir=excluir + [q["id"] for q in out])
     vistos, dedup = set(), []
     for q in out:
+        q.pop("o_dono", None)
         h = (q.get("enunciado") or "")[:300].lower()
         if h in vistos:
             continue
@@ -1666,7 +1683,7 @@ async def revisoes_hoje(com_questoes: bool = True):
                         SELECT r1.questao_id FROM mentor.resposta r1 WHERE r1.assunto_id=$1 AND r1.correta = FALSE AND r1.contexto <> 'aquecimento'
                           AND NOT EXISTS (SELECT 1 FROM mentor.resposta r2 WHERE r2.questao_id=r1.questao_id AND r2.correta AND r2.id > r1.id)
                           AND NOT EXISTS (SELECT 1 FROM mentor.card c WHERE c.questao_id=r1.questao_id AND c.tipo='questao' AND c.ativo))
-                    AND {SQL_BASE_Q} ORDER BY random() LIMIT 2""", r["assunto_id"])
+                    AND {SQL_BASE_Q} AND {_sql_dono("$1::bigint")} ORDER BY random() LIMIT 2""", r["assunto_id"])
                 for e in erradas:
                     e = dict(e)
                     e["alternativas"] = json.loads(e["alternativas"]) if isinstance(e["alternativas"], str) else e["alternativas"]
@@ -1728,11 +1745,12 @@ async def questoes(modo: str = "estudado", materias: Optional[str] = None, assun
                 ids = [r["id"] for r in await conn.fetch("SELECT id FROM mentor.assunto WHERE materia_id = ANY($1::int[])", [int(x) for x in materias.split(",") if x.strip().isdigit()])]
         if not ids:
             return {"questoes": [], "aviso": "nenhum assunto selecionado ou estudado ainda"}
+        await _garantir_feedback(conn)
         rows = await conn.fetch(f"""
             SELECT DISTINCT ON (q.id) q.id, q.enunciado, q.alternativas, q.gabarito, q.tipo, q.banca_sigla, q.ano, q.orgao_sigla,
                    q.indice_acerto, q.comentario_professor, q.soldado_ba, qa.assunto_id, qa.aula_id
             FROM mentor.questao_aula qa JOIN mentor.questao q ON q.id=qa.questao_id
-            WHERE qa.assunto_id = ANY($1::bigint[]) AND {SQL_BASE_Q} {"AND q.tipo='ME'" if so_me else ""}
+            WHERE qa.assunto_id = ANY($1::bigint[]) AND {SQL_BASE_Q} {"AND q.tipo='ME'" if so_me else ""} AND {_sql_dono("qa.assunto_id")}
               AND NOT EXISTS (SELECT 1 FROM mentor.resposta r WHERE r.questao_id=q.id)
         """, ids)
         lst = _rs(rows)
@@ -2595,11 +2613,12 @@ async def proto_dados():
                     "caderno_abertas": int(await conn.fetchval("SELECT count(*) FROM mentor.caderno WHERE riscada_em IS NULL") or 0),
                     "caderno_por_materia": {r["nome"]: int(r["n"]) for r in await conn.fetch("SELECT m.nome, count(*) AS n FROM mentor.caderno c JOIN mentor.materia m ON m.id=c.materia_id WHERE c.riscada_em IS NULL GROUP BY m.nome")}}
         # ---- pool de questões (aba Questões e simulado): ME inéditas, uma por texto, dos assuntos estudados + amostra da prova
+        await _garantir_feedback(conn)
         pool = _rs(await conn.fetch(f"""
             SELECT DISTINCT ON (q.enunciado_hash) q.id, q.enunciado, q.alternativas, q.gabarito, q.banca_sigla, q.ano, q.orgao_sigla, q.cargo, q.indice_acerto, q.comentario_professor, q.soldado_ba,
                    qa.assunto_id, qa.aula_id, s.nome AS assunto, m.nome AS mat, random() AS rnd
             FROM mentor.questao_aula qa JOIN mentor.questao q ON q.id=qa.questao_id JOIN mentor.assunto s ON s.id=qa.assunto_id JOIN mentor.materia m ON m.id=s.materia_id
-            WHERE q.tipo='ME' AND {SQL_BASE_Q} AND s.estado IN ('estudado','ressalva','dominado','em_andamento')
+            WHERE q.tipo='ME' AND {SQL_BASE_Q} AND s.estado IN ('estudado','ressalva','dominado','em_andamento') AND {_sql_dono("qa.assunto_id")}
               AND NOT EXISTS (SELECT 1 FROM mentor.resposta r JOIN mentor.questao q2 ON q2.id=r.questao_id WHERE q2.enunciado_hash=q.enunciado_hash)
             ORDER BY q.enunciado_hash, (q.banca_sigla = ANY($1::text[])) DESC, q.ano DESC NULLS LAST LIMIT 600""", list(BANCAS_PREF)))
         random.shuffle(pool)
@@ -2740,6 +2759,34 @@ async def proto_evento(tipo: str = Body(...), dados: dict = Body(default_factory
             await _add_xp(conn, "simulado", XP["simulado"] + (XP["simulado_acima_60"] if nota >= 60 else 0), {"simulado_id": sid, "nota": nota})
             return {"ok": True, "simulado_id": sid}
     raise HTTPException(400, "evento desconhecido")
+
+
+# =====================================================================
+# v3.10.1 — "Não é deste assunto" (revisão/treino): tira a questão do assunto inteiro e devolve outra
+# =====================================================================
+@router.post("/vinculo/assunto")
+async def vinculo_assunto(questao_id: int = Body(...), assunto_id: int = Body(...), ok: bool = Body(False),
+                          excluir: list = Body(default_factory=list)):
+    async with db() as conn:
+        await _garantir_feedback(conn)
+        if not await conn.fetchval("SELECT 1 FROM mentor.assunto WHERE id=$1", assunto_id):
+            raise HTTPException(404, "assunto não encontrado")
+        async with conn.transaction():
+            await conn.execute("""INSERT INTO mentor.assunto_feedback (questao_id, assunto_id, ok) VALUES ($1,$2,$3)
+                                  ON CONFLICT (questao_id, assunto_id) DO UPDATE SET ok=EXCLUDED.ok, criado_em=now()""", questao_id, assunto_id, ok)
+            aulas = [r["aula_id"] for r in await conn.fetch("SELECT aula_id FROM mentor.questao_aula WHERE questao_id=$1 AND assunto_id=$2", questao_id, assunto_id)]
+            for aid in aulas:  # o afinador e a aula aprendem junto
+                await conn.execute("""INSERT INTO mentor.vinculo_feedback (questao_id, aula_id, ok) VALUES ($1,$2,$3)
+                                      ON CONFLICT (questao_id, aula_id) DO UPDATE SET ok=EXCLUDED.ok, criado_em=now()""", questao_id, aid, ok)
+            if not ok and aulas:
+                await conn.execute("UPDATE mentor.questao_aula SET melhor=FALSE, melhor_mat=FALSE, forca=LEAST(forca, 0.1) WHERE questao_id=$1 AND assunto_id=$2",
+                                   questao_id, assunto_id)
+        reposicao = None
+        if not ok:
+            ex = [int(x) for x in (excluir or []) if str(x).lstrip('-').isdigit()] + [questao_id]
+            novas = await _questoes_do_assunto(conn, assunto_id, 1, excluir=ex)
+            reposicao = novas[0] if novas else None
+    return {"ok": True, "aulas": len(aulas), "reposicao": reposicao}
 
 
 # =====================================================================
