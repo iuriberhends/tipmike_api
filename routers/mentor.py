@@ -74,7 +74,7 @@ from database import db
 
 log = logging.getLogger("mentor")
 router = APIRouter(prefix="/mentor", tags=["Mentor"])
-VERSAO = "3.10.1-dono"
+VERSAO = "3.11-navegar"
 
 # ----------------------------------------------------------------- constantes
 GATE_N, GATE_MIN = 5, 4
@@ -2325,6 +2325,60 @@ def _dur_txt(s):
     return f"{s // 3600}:{(s % 3600) // 60:02d}:{s % 60:02d}"
 
 
+# v3.11 — colunas que o montador do Plano de hoje usa (mesmas do "pend")
+SQL_AULA_HOJE = """SELECT a.id, a.titulo, a.url, a.duracao_s, a.estado, a.tipo, a.base, a.concluida_em, s.modo AS modo_v3, s.id AS assunto_id, s.nome AS assunto,
+                          m.nome AS mat, m.id AS materia_id, a.questoes_fixacao, a.flashcards, COALESCE(a.resumo_bolso, a.resumo, a.mapa_mental) AS bolso
+                   FROM mentor.aula a JOIN mentor.assunto s ON s.id=a.assunto_id JOIN mentor.materia m ON m.id=s.materia_id"""
+
+
+def _modo_item(a):
+    modo = "base" if a["base"] else (a["modo_v3"] if a["modo_v3"] in MODOS_QUESTAO else ("fora" if a["modo_v3"] == "fora" else "complemento"))
+    if a["tipo"] == "exercicios" and modo != "base":
+        modo = "questoes"
+    return modo
+
+
+def _hoje_item_feito(a):
+    """Aula concluída hoje: entra no Plano de hoje marcada pelo BANCO (antes era pela posição na tela)."""
+    return {"tipo": "aula", "feita": True, "mat": a["mat"], "assunto": a["assunto"], "codigo": str(a["id"]), "aula_id": a["id"], "assunto_id": a["assunto_id"],
+            "materia_id": a["materia_id"], "titulo": a["titulo"], "url": a["url"], "dur": _dur_txt(a["duracao_s"]), "propria": a["tipo"] == "propria",
+            "modo": _modo_item(a), "tem_video": bool(a["url"] and (a["duracao_s"] or 0) > 0), "n_flash": 0, "bolso": "", "recalls": [], "pre": [], "gate": [], "fix": []}
+
+
+def _hoje_item_leve(a):
+    return {"aula_id": a["id"], "mat": a["mat"], "assunto": a["assunto"], "titulo": a["titulo"], "dur": _dur_txt(a["duracao_s"]), "modo": _modo_item(a),
+            "estado": a["estado"], "materia_id": a["materia_id"]}
+
+
+async def _hoje_item(conn, a):
+    """Um item do Plano de hoje (aula com aquecimento, gate, fixação, resumo e recalls). `a` tem as colunas de SQL_AULA_HOJE."""
+    pre = await _questoes_da_aula(conn, a["id"], AQUEC_N, "aquecimento")
+    gate = await _questoes_da_aula(conn, a["id"], GATE_N, "gate", excluir=[q["id"] for q in pre])
+    fx = a["questoes_fixacao"]
+    if isinstance(fx, str):
+        try:
+            fx = json.loads(fx)
+        except Exception:
+            fx = []
+    fix = []
+    for q in (fx or [])[:FIX_N]:
+        alts = q.get("alternatives") or q.get("alternativas") or []
+        # formato do protótipo: [letra, texto, correta, explicação]
+        fix.append({"enunciado": q.get("question") or q.get("enunciado") or "",
+                    "alts": [[(x.get("id") or x.get("letra") or "").upper(), x.get("text") or x.get("texto") or "", bool(x.get("correct") or x.get("correta")), x.get("explanation") or x.get("explicacao") or ""] for x in alts],
+                    "gab": next(((x.get("id") or x.get("letra") or "").upper() for x in alts if x.get("correct")), None),
+                    "explicacoes": {(x.get("id") or x.get("letra") or "").upper(): x.get("explanation") or x.get("explicacao") or "" for x in alts}})
+    recalls = [r["texto"] for r in await conn.fetch("SELECT texto FROM mentor.bizu WHERE aula_id=$1 AND fonte='usuario' AND secao='recall' ORDER BY id", a["id"])]
+    modo = "base" if a["base"] else (a["modo_v3"] if a["modo_v3"] in MODOS_QUESTAO else ("fora" if a["modo_v3"] == "fora" else "complemento"))
+    if a["tipo"] == "exercicios" and modo != "base":
+        modo = "questoes"
+    return {"tipo": "aula", "mat": a["mat"], "assunto": a["assunto"], "codigo": str(a["id"]), "aula_id": a["id"], "assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "titulo": a["titulo"],
+                       "url": a["url"], "dur": _dur_txt(a["duracao_s"]), "propria": a["tipo"] == "propria", "modo": modo,
+                       "tem_video": bool(a["url"] and (a["duracao_s"] or 0) > 0), "n_flash": len(a["flashcards"]) if isinstance(a["flashcards"], list) else 0,
+                       "bolso": (a["bolso"] or "")[:12000], "recalls": recalls,
+                       "pre": [_q_proto(q, a["mat"], a["assunto"]) for q in pre], "gate": [_q_proto(q, a["mat"], a["assunto"]) for q in gate], "fix": fix}
+
+
 def _curta(d):
     MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
     SEM = ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"]
@@ -2524,6 +2578,7 @@ async def proto_dados():
             n += 1
         # ---- hoje: aulas pendentes do plano aberto, até a meta do dia
         hoje_aulas = []
+        hoje_extra = []
         hoje_ciclo = {"n_materias": 0, "materias": [], "proximas": [], "min_por_materia": 0}
         hoje_rev = {"revisoes": 0, "questoes": 0, "lista": [], "cards": 0, "caderno_abertas": 0, "caderno_por_materia": {}}
         aberta = _r(await conn.fetchrow("SELECT * FROM mentor.semana WHERE status='aberta' ORDER BY inicio DESC LIMIT 1"))
@@ -2567,31 +2622,23 @@ async def proto_dados():
                     gasto_m += custo
                     escolhidas.append(a)
             for a in escolhidas:
-                pre = await _questoes_da_aula(conn, a["id"], AQUEC_N, "aquecimento")
-                gate = await _questoes_da_aula(conn, a["id"], GATE_N, "gate", excluir=[q["id"] for q in pre])
-                fx = a["questoes_fixacao"]
-                if isinstance(fx, str):
-                    try:
-                        fx = json.loads(fx)
-                    except Exception:
-                        fx = []
-                fix = []
-                for q in (fx or [])[:FIX_N]:
-                    alts = q.get("alternatives") or q.get("alternativas") or []
-                    # formato do protótipo: [letra, texto, correta, explicação]
-                    fix.append({"enunciado": q.get("question") or q.get("enunciado") or "",
-                                "alts": [[(x.get("id") or x.get("letra") or "").upper(), x.get("text") or x.get("texto") or "", bool(x.get("correct") or x.get("correta")), x.get("explanation") or x.get("explicacao") or ""] for x in alts],
-                                "gab": next(((x.get("id") or x.get("letra") or "").upper() for x in alts if x.get("correct")), None),
-                                "explicacoes": {(x.get("id") or x.get("letra") or "").upper(): x.get("explanation") or x.get("explicacao") or "" for x in alts}})
-                recalls = [r["texto"] for r in await conn.fetch("SELECT texto FROM mentor.bizu WHERE aula_id=$1 AND fonte='usuario' AND secao='recall' ORDER BY id", a["id"])]
-                modo = "base" if a["base"] else (a["modo_v3"] if a["modo_v3"] in MODOS_QUESTAO else ("fora" if a["modo_v3"] == "fora" else "complemento"))
-                if a["tipo"] == "exercicios" and modo != "base":
-                    modo = "questoes"
-                hoje_aulas.append({"tipo": "aula", "mat": a["mat"], "assunto": a["assunto"], "codigo": str(a["id"]), "aula_id": a["id"], "assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "titulo": a["titulo"],
-                                   "url": a["url"], "dur": _dur_txt(a["duracao_s"]), "propria": a["tipo"] == "propria", "modo": modo,
-                                   "tem_video": bool(a["url"] and (a["duracao_s"] or 0) > 0), "n_flash": len(a["flashcards"]) if isinstance(a["flashcards"], list) else 0,
-                                   "bolso": (a["bolso"] or "")[:12000], "recalls": recalls,
-                                   "pre": [_q_proto(q, a["mat"], a["assunto"]) for q in pre], "gate": [_q_proto(q, a["mat"], a["assunto"]) for q in gate], "fix": fix})
+                hoje_aulas.append(await _hoje_item(conn, a))
+            # v3.11 — aulas que você pôs no dia por conta própria (Plano de hoje → mais aulas da semana): valem até o fim do dia
+            ja = {a["id"] for a in escolhidas}
+            esc_cfg = await _config(conn, "hoje_escolhidas", {})
+            extras_ids = [int(x) for x in (esc_cfg.get("aulas") or []) if str(x).isdigit()] if isinstance(esc_cfg, dict) and esc_cfg.get("dia") == hoje.isoformat() else []
+            if extras_ids:
+                por_id = {r["id"]: r for r in await conn.fetch(SQL_AULA_HOJE + " WHERE a.id = ANY($1::bigint[]) AND a.estado <> 'concluida'", extras_ids)}
+                for x in extras_ids:
+                    if x in por_id and x not in ja:
+                        hoje_aulas.append(await _hoje_item(conn, por_id[x]))
+                        ja.add(x)
+            hoje_extra = [_hoje_item_leve(a) for a in pend if a["id"] not in ja][:80]
+        # v3.11 — o que foi concluído hoje vem marcado pelo banco, no topo da lista
+        feitas_hoje = await conn.fetch(SQL_AULA_HOJE + " WHERE a.concluida_em >= $1 AND a.tipo IN ('conteudo','exercicios','propria') ORDER BY a.concluida_em", _inicio_dia(hoje))
+        if feitas_hoje:
+            cods = {x.get("codigo") for x in hoje_aulas}
+            hoje_aulas = [_hoje_item_feito(a) for a in feitas_hoje if str(a["id"]) not in cods] + hoje_aulas
         # ---- revisão de hoje em números (questões + cards + caderno): o painel mostra no Plano de hoje e na aba Revisão
         await _garantir_caderno(conn)
         await _garantir_fsrs(conn)
@@ -2661,7 +2708,7 @@ async def proto_dados():
             if isinstance(b.get("ultima_prova"), str):
                 b["ultima_prova"] = json.loads(b["ultima_prova"])
     return {"D": {"materias": D_mat, "orcamento": orc, "calendario": {"fechado": "2027-01-31", "em_dia": [], "atrasado": []}, "questoes": D_q, "projecao": proj, "outras": [], "agenda_sim": AGENDA_SIM, "base": base_mat, "flags_ok": flags_ok},
-            "SEMANAS": semanas, "HOJE_AULAS": hoje_aulas, "HOJE": hoje.isoformat(), "ESTADO": est, "progresso": prog, "HOJE_REV": {**hoje_rev, "ciclo": hoje_ciclo}, "VERSAO": VERSAO}
+            "SEMANAS": semanas, "HOJE_AULAS": hoje_aulas, "HOJE_EXTRA": hoje_extra, "HOJE": hoje.isoformat(), "ESTADO": est, "progresso": prog, "HOJE_REV": {**hoje_rev, "ciclo": hoje_ciclo}, "VERSAO": VERSAO}
 
 
 def dt_mes(iso):
@@ -2759,6 +2806,30 @@ async def proto_evento(tipo: str = Body(...), dados: dict = Body(default_factory
             await _add_xp(conn, "simulado", XP["simulado"] + (XP["simulado_acima_60"] if nota >= 60 else 0), {"simulado_id": sid, "nota": nota})
             return {"ok": True, "simulado_id": sid}
     raise HTTPException(400, "evento desconhecido")
+
+
+# =====================================================================
+# v3.11 — Plano de hoje: pôr no dia uma aula da semana que o ciclo não escolheu
+# =====================================================================
+@router.post("/hoje/escolher")
+async def hoje_escolher(aula_id: int = Body(..., embed=True)):
+    hoje = _hoje()
+    async with db() as conn:
+        a = await conn.fetchrow(SQL_AULA_HOJE + " WHERE a.id=$1", aula_id)
+        if not a:
+            raise HTTPException(404, "aula não encontrada")
+        if a["tipo"] not in ("conteudo", "exercicios", "propria"):
+            raise HTTPException(400, "essa aula não entra no plano (tipo " + str(a["tipo"]) + ")")
+        if a["estado"] == "concluida":
+            raise HTTPException(409, "aula já concluída")
+        cfg = await _config(conn, "hoje_escolhidas", {})
+        ids = [int(x) for x in (cfg.get("aulas") or []) if str(x).isdigit()] if isinstance(cfg, dict) and cfg.get("dia") == hoje.isoformat() else []
+        if aula_id not in ids:
+            ids.append(aula_id)
+        await conn.execute("INSERT INTO mentor.config (chave, valor) VALUES ('hoje_escolhidas', $1::jsonb) ON CONFLICT (chave) DO UPDATE SET valor=EXCLUDED.valor, alterado_em=now()",
+                           json.dumps({"dia": hoje.isoformat(), "aulas": ids[-20:]}))
+        item = await _hoje_item(conn, a)
+    return {"ok": True, "item": item}
 
 
 # =====================================================================
