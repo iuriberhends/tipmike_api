@@ -2,6 +2,12 @@
 """
 routers/mentor.py — MIKE MENTOR, motor de estudo (schema v3, spec v3 + v3.2)
 
+v3.12 — O CRONOGRAMA ANDA SOZINHO: o painel (proto) nunca chamava o planejador — a semana não virava. Agora o /proto/dados monta
+a semana que vale (a da segunda de hoje; em dia livre, a que começa amanhã; nunca antes de config "inicio_plano" = 28/09/2026)
+quando ela ainda não existe, com trava (advisory lock) contra montagem dupla. O orçamento de conteúdo novo da semana conta só os
+dias de conteúdo (sábado de set/out é revisão, domingo livre): 15h × 65% = 9,75h, não 18h × 65% = 11,7h (sobravam ~2h por semana
+que viravam atraso). POST /mentor/semana/montar sem data usa a mesma semana-alvo e recusa data antes do início do plano.
+
 Tudo que o painel precisa, em rotas:
   painel        GET  /mentor/painel                    início: agora, plano de hoje, KPIs, XP/sequência
   edital        GET  /mentor/edital?materia_id=        árvore: módulo → assunto → aulas (tier, estado, estoque)
@@ -74,7 +80,7 @@ from database import db
 
 log = logging.getLogger("mentor")
 router = APIRouter(prefix="/mentor", tags=["Mentor"])
-VERSAO = "3.11-navegar"
+VERSAO = "3.12-crono"
 
 # ----------------------------------------------------------------- constantes
 GATE_N, GATE_MIN = 5, 4
@@ -95,6 +101,8 @@ PATENTES = [(0, "Recruta"), (500, "Soldado"), (1500, "Cabo"), (3000, "3º Sargen
 MESES_HORAS = {10: 3.0, 11: 4.0, 12: 5.5, 1: 8.0, 2: 8.0, 9: 3.0}
 PCT_CONTEUDO = 0.65
 PROVA_DATA_PADRAO = date(2027, 1, 31)          # config "prova_data" sobrepõe (edital novo)
+INICIO_PLANO_PADRAO = date(2026, 9, 28)        # config "inicio_plano" sobrepõe — 1ª semana do cronograma (nada é montado antes)
+_LOCK_SEMANA = 7102812                         # pg_advisory_xact_lock: uma montagem de semana por vez
 FSRS_PADRAO = {"retencao": 0.9, "retencao_reta": 0.94, "passos_aprendendo_min": [10], "passos_reaprendendo_min": [10], "teto_dia": 60, "novos_dia": 30,
                "leech": 6, "fuzz": True, "margem_prova_dias": 3}
 # escada de dificuldade (índice de acerto do Gran): começa nas fáceis; ≥80% em 10+ respostas no assunto libera as médias;
@@ -1152,6 +1160,39 @@ async def _capacidade_semana(conn, seg: date):
     return round(total, 1)
 
 
+async def _capacidade_conteudo(conn, seg: date):
+    """Horas de CONTEÚDO NOVO da semana (v3.12): só os dias de conteúdo × PCT_CONTEUDO. O sábado de set/out é só revisão e o
+    domingo é livre — não entram no orçamento de aula nova (antes entravam e sobrava ~2h de plano por semana, que virava atraso)."""
+    cfg = await _config(conn, "horas_dia", {})
+    if not isinstance(cfg, dict):
+        cfg = {}
+    tot = 0.0
+    for i in range(7):
+        d = seg + timedelta(days=i)
+        if _dia_conta(d) == "conteudo":
+            tot += _horas_dia(d, cfg)
+    return round(tot * PCT_CONTEUDO, 2)
+
+
+async def _inicio_plano(conn):
+    """1ª segunda do cronograma (config "inicio_plano", padrão 28/09/2026)."""
+    v = await _config(conn, "inicio_plano", None)
+    try:
+        return _segunda(date.fromisoformat(str(v)[:10])) if v else INICIO_PLANO_PADRAO
+    except (TypeError, ValueError):
+        log.warning("config inicio_plano inválida (%r) — usando %s", v, INICIO_PLANO_PADRAO)
+        return INICIO_PLANO_PADRAO
+
+
+def _semana_alvo(hoje: date, inicio_plano: date):
+    """A semana que vale agora: a da segunda de hoje; se hoje é dia livre (domingo de set/out), já é a que começa amanhã.
+    Nunca antes do início do plano. (O dia de estudo vira às 04:00 — _hoje() — então segunda 00:30 ainda é domingo.)"""
+    seg = _segunda(hoje)
+    if _dia_conta(hoje) == "livre":
+        seg = _segunda(hoje + timedelta(days=1))
+    return max(seg, _segunda(inicio_plano))
+
+
 def _custo(assunto):
     v = (assunto.get("duracao_total") or 0) / 3600.0
     n = assunto.get("n_aulas") or 0
@@ -1335,66 +1376,83 @@ async def montar_semana(inicio: Optional[str] = Body(None, embed=True), forcar: 
     """
     O planejador da segunda (v3.8): fecha a semana anterior, abre a nova e escolhe as AULAS pelas trilhas.
     O que sobrou da semana anterior vai na frente. Base primeiro em cada matéria; complemento por questões depois da prova de base.
+    v3.12: sem `inicio`, monta a semana-alvo (_semana_alvo), não "a segunda de hoje" cega; data antes do início do plano é recusada.
     """
     hoje = _hoje()
-    seg = _segunda(date.fromisoformat(inicio)) if inicio else _segunda(hoje)
+    if inicio:
+        try:
+            pedido = date.fromisoformat(str(inicio)[:10])
+        except ValueError:
+            raise HTTPException(400, "inicio inválido — use AAAA-MM-DD")
     async with db() as conn:
+        ini = await _inicio_plano(conn)
+        seg = _segunda(pedido) if inicio else _semana_alvo(hoje, ini)
+        if seg < ini:
+            raise HTTPException(400, f"semana de {seg} é antes do início do plano ({ini}) — nada é montado antes disso")
         async with conn.transaction():
-            await _garantir_base(conn)
-            if not await conn.fetchval("SELECT EXISTS (SELECT 1 FROM mentor.aula WHERE base)"):
-                raise HTTPException(409, "Nenhuma aula marcada como base: rode mentor_flags.py (edital v3) antes de montar a semana")
-            existente = _r(await conn.fetchrow("SELECT * FROM mentor.semana WHERE inicio=$1", seg))
-            if existente and existente["status"] != "bloqueada" and not forcar:
-                raise HTTPException(409, f"semana de {seg} já está {existente['status']}; use forcar=true pra refazer")
-            await conn.execute("""UPDATE mentor.semana SET status='fechada', fechada_em=now(),
-                                  horas_feitas = COALESCE((SELECT sum(minutos)/60.0 FROM mentor.sessao x WHERE x.fim IS NOT NULL
-                                                           AND (x.inicio - interval '4 hours')::date BETWEEN semana.inicio AND semana.fim),0)
-                                  WHERE status='aberta' AND inicio < $1""", seg)
-            cap_total = await _capacidade_semana(conn, seg)
-            cap_conteudo = round(cap_total * PCT_CONTEUDO, 1)
-            trilhas, pesos = await _trilhas(conn)
-            mats, aulas = await _universo_planejador(conn)
-            # pendências: aulas planejadas em semanas fechadas e não concluídas entram primeiro, no mesmo modo
-            pend_ids = [r["aid"] for r in await conn.fetch("""SELECT DISTINCT unnest(p.aulas) AS aid FROM mentor.plano_item p JOIN mentor.semana s ON s.id=p.semana_id
-                                                              WHERE s.inicio < $1 AND NOT p.feito AND s.status='fechada' AND p.aulas IS NOT NULL""", seg)]
-            pend_set = set(pend_ids)
-            itens, gasto, feitas = [], 0.0, set()
-            por_id = {a["id"]: a for a in aulas}
-            for aid in pend_ids:
-                a = por_id.get(aid)
-                if not a:
-                    continue
-                modo = "base" if a["base"] else (a["modo"] if a["modo"] in MODOS_QUESTAO else "fora")
-                c = _custo_aula(a, modo)
-                k = next((it for it in itens if it["assunto_id"] == a["assunto_id"] and it["modo"] == ("base" if modo == "base" else "questoes")), None)
-                if not k:
-                    k = {"assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "modo": "base" if modo == "base" else "questoes", "aulas": [], "aula_modos": [], "custo_h": 0.0}
-                    itens.append(k)
-                k["aulas"].append(aid)
-                k["aula_modos"].append(modo)
-                k["custo_h"] = round(k["custo_h"] + c, 2)
-                feitas.add(aid)
-                gasto += c
-            reforco = await _materias_reforco(conn, hoje)
-            novos, g2 = _plano_trilhas(mats, aulas, seg, max(0.0, cap_conteudo - gasto), trilhas, pesos, feitas, reforco=reforco)
-            itens += novos
-            gasto += g2
-            fim = seg + timedelta(days=6)
-            fase = _fase_semana(seg)
-            if existente:
-                sid = existente["id"]
-                await conn.execute("UPDATE mentor.semana SET meta_horas=$2, status='aberta', fase=$3, montada_em=now() WHERE id=$1", sid, cap_total, fase)
-                await conn.execute("DELETE FROM mentor.plano_item WHERE semana_id=$1", sid)
-            else:
-                sid = await conn.fetchval("INSERT INTO mentor.semana (inicio, fim, meta_horas, status, fase, montada_em) VALUES ($1,$2,$3,'aberta',$4,now()) RETURNING id",
-                                          seg, fim, cap_total, fase)
-            for i, it in enumerate(itens, 1):
-                await conn.execute("""INSERT INTO mentor.plano_item (semana_id, assunto_id, ordem, previsto_h, modo, aulas) VALUES ($1,$2,$3,$4,$5,$6)
-                                      ON CONFLICT (semana_id, assunto_id) DO UPDATE SET aulas = mentor.plano_item.aulas || EXCLUDED.aulas, previsto_h = mentor.plano_item.previsto_h + EXCLUDED.previsto_h""",
-                                   sid, it["assunto_id"], i, it["custo_h"], it["modo"], it["aulas"])
-            prox = seg + timedelta(days=7)
-            await conn.execute("INSERT INTO mentor.semana (inicio, fim, meta_horas, status) VALUES ($1,$2,$3,'bloqueada') ON CONFLICT (inicio) DO NOTHING",
-                               prox, prox + timedelta(days=6), await _capacidade_semana(conn, prox))
+            return await _montar_semana_core(conn, seg, forcar, hoje)
+
+
+async def _montar_semana_core(conn, seg: date, forcar: bool, hoje: date):
+    """Miolo do planejador. Roda DENTRO de uma transação aberta pelo chamador; a trava garante uma montagem por vez
+    (o painel pode abrir em duas abas na virada — sem a trava as duas montam de novo a mesma semana ou uma estoura
+    na UNIQUE de semana.inicio; com a trava a 2ª espera, relê 'aberta' e desiste)."""
+    await conn.execute("SELECT pg_advisory_xact_lock($1)", _LOCK_SEMANA)
+    await _garantir_base(conn)
+    if not await conn.fetchval("SELECT EXISTS (SELECT 1 FROM mentor.aula WHERE base)"):
+        raise HTTPException(409, "Nenhuma aula marcada como base: rode mentor_flags.py (edital v3) antes de montar a semana")
+    existente = _r(await conn.fetchrow("SELECT * FROM mentor.semana WHERE inicio=$1", seg))
+    if existente and existente["status"] != "bloqueada" and not forcar:
+        raise HTTPException(409, f"semana de {seg} já está {existente['status']}; use forcar=true pra refazer")
+    await conn.execute("""UPDATE mentor.semana SET status='fechada', fechada_em=now(),
+                          horas_feitas = COALESCE((SELECT sum(minutos)/60.0 FROM mentor.sessao x WHERE x.fim IS NOT NULL
+                                                   AND (x.inicio - interval '4 hours')::date BETWEEN semana.inicio AND semana.fim),0)
+                          WHERE status='aberta' AND inicio < $1""", seg)
+    cap_total = await _capacidade_semana(conn, seg)
+    cap_conteudo = await _capacidade_conteudo(conn, seg)
+    trilhas, pesos = await _trilhas(conn)
+    mats, aulas = await _universo_planejador(conn)
+    # pendências: aulas planejadas em semanas fechadas e não concluídas entram primeiro, no mesmo modo
+    pend_ids = [r["aid"] for r in await conn.fetch("""SELECT DISTINCT unnest(p.aulas) AS aid FROM mentor.plano_item p JOIN mentor.semana s ON s.id=p.semana_id
+                                                      WHERE s.inicio < $1 AND NOT p.feito AND s.status='fechada' AND p.aulas IS NOT NULL""", seg)]
+    pend_set = set(pend_ids)
+    itens, gasto, feitas = [], 0.0, set()
+    por_id = {a["id"]: a for a in aulas}
+    for aid in pend_ids:
+        a = por_id.get(aid)
+        if not a:
+            continue
+        modo = "base" if a["base"] else (a["modo"] if a["modo"] in MODOS_QUESTAO else "fora")
+        c = _custo_aula(a, modo)
+        k = next((it for it in itens if it["assunto_id"] == a["assunto_id"] and it["modo"] == ("base" if modo == "base" else "questoes")), None)
+        if not k:
+            k = {"assunto_id": a["assunto_id"], "materia_id": a["materia_id"], "modo": "base" if modo == "base" else "questoes", "aulas": [], "aula_modos": [], "custo_h": 0.0}
+            itens.append(k)
+        k["aulas"].append(aid)
+        k["aula_modos"].append(modo)
+        k["custo_h"] = round(k["custo_h"] + c, 2)
+        feitas.add(aid)
+        gasto += c
+    reforco = await _materias_reforco(conn, hoje)
+    novos, g2 = _plano_trilhas(mats, aulas, seg, max(0.0, cap_conteudo - gasto), trilhas, pesos, feitas, reforco=reforco)
+    itens += novos
+    gasto += g2
+    fim = seg + timedelta(days=6)
+    fase = _fase_semana(seg)
+    if existente:
+        sid = existente["id"]
+        await conn.execute("UPDATE mentor.semana SET meta_horas=$2, status='aberta', fase=$3, montada_em=now() WHERE id=$1", sid, cap_total, fase)
+        await conn.execute("DELETE FROM mentor.plano_item WHERE semana_id=$1", sid)
+    else:
+        sid = await conn.fetchval("INSERT INTO mentor.semana (inicio, fim, meta_horas, status, fase, montada_em) VALUES ($1,$2,$3,'aberta',$4,now()) RETURNING id",
+                                  seg, fim, cap_total, fase)
+    for i, it in enumerate(itens, 1):
+        await conn.execute("""INSERT INTO mentor.plano_item (semana_id, assunto_id, ordem, previsto_h, modo, aulas) VALUES ($1,$2,$3,$4,$5,$6)
+                              ON CONFLICT (semana_id, assunto_id) DO UPDATE SET aulas = mentor.plano_item.aulas || EXCLUDED.aulas, previsto_h = mentor.plano_item.previsto_h + EXCLUDED.previsto_h""",
+                           sid, it["assunto_id"], i, it["custo_h"], it["modo"], it["aulas"])
+    prox = seg + timedelta(days=7)
+    await conn.execute("INSERT INTO mentor.semana (inicio, fim, meta_horas, status) VALUES ($1,$2,$3,'bloqueada') ON CONFLICT (inicio) DO NOTHING",
+                       prox, prox + timedelta(days=6), await _capacidade_semana(conn, prox))
     return {"semana_id": sid, "inicio": seg.isoformat(), "meta_horas": cap_total, "conteudo_h": cap_conteudo, "fase": fase,
             "itens": len(itens), "aulas": sum(len(it["aulas"]) for it in itens), "horas_previstas": round(gasto, 1), "pendencias_da_anterior": len(pend_set),
             "reforco": {str(k): v for k, v in (reforco or {}).items()}}
@@ -2477,7 +2535,7 @@ async def _previsao_semanas(conn, a_partir, ate=date(2027, 2, 21)):
     seg = a_partir
     while seg <= ate:
         cap_total = await _capacidade_semana(conn, seg)
-        itens, _ = _plano_trilhas(mats, aulas, seg, cap_total * PCT_CONTEUDO, trilhas, pesos, feitas)
+        itens, _ = _plano_trilhas(mats, aulas, seg, await _capacidade_conteudo(conn, seg), trilhas, pesos, feitas)
         # fase vira "questao" quando não sobra aula de base
         for mid, m in mats.items():
             if m["fase"] == "base" and not any(a["base"] and a["id"] not in feitas for a in aulas if a["materia_id"] == mid):
@@ -2515,9 +2573,33 @@ def _semana_proto(n, seg, meta, itens, revisoes):
             "materias": [[m, l] for m, l in por.items()], "revisoes": revisoes, "reta": _fase_semana(seg) == "D"}
 
 
+async def _auto_montar_semana(hoje: date):
+    """v3.12 — o painel não tem botão de montar: a semana-alvo é montada aqui, na 1ª abertura do painel em que ela ainda não existe
+    (ou só existe como rascunho 'bloqueada'). Falha nunca derruba o painel: loga e segue com o que tiver."""
+    try:
+        async with db() as conn:
+            ini = await _inicio_plano(conn)
+            seg = _semana_alvo(hoje, ini)
+            st = await conn.fetchval("SELECT status FROM mentor.semana WHERE inicio=$1", seg)
+            if st in ("aberta", "fechada"):
+                return None
+            async with conn.transaction():
+                # duas abas abrindo juntas: a trava no miolo faz a 2ª esperar, reler 'aberta' e cair no 409 abaixo (silencioso)
+                r = await _montar_semana_core(conn, seg, False, hoje)
+            log.info("semana %s montada automaticamente: %s aulas, %.1fh previstas", seg, r.get("aulas"), r.get("horas_previstas") or 0)
+            return r
+    except HTTPException as e:
+        if e.status_code != 409 or "já está" not in str(e.detail):
+            log.warning("auto-montar semana: %s", e.detail)
+    except Exception as e:
+        log.exception("auto-montar semana falhou: %s", e)
+    return None
+
+
 @router.get("/proto/dados")
 async def proto_dados():
     hoje = _hoje()
+    await _auto_montar_semana(hoje)
     async with db() as conn:
         # ---- D.materias
         todos = await _assuntos_proto(conn)
@@ -2541,7 +2623,8 @@ async def proto_dados():
             usado = sum(_custo_h(a) for a in am if a["estado"] in ("estudado", "dominado", "ressalva"))
             orc.append({"materia": m["nome"], "peso": m["peso_prova"], "orcamento": round(orcam, 1), "usado": round(usado, 1), "base": round(base, 1)})
         # ---- semanas: reais + previsão
-        reais = _rs(await conn.fetch("SELECT * FROM mentor.semana WHERE status <> 'bloqueada' ORDER BY inicio"))
+        # v3.12: semana de antes do início do plano (teste de montagem) nunca vira "Semana 01"
+        reais = _rs(await conn.fetch("SELECT * FROM mentor.semana WHERE status <> 'bloqueada' AND inicio >= $1 ORDER BY inicio", await _inicio_plano(conn)))
         semanas = []
         n = 1
         ultimo_fim = None
@@ -2569,7 +2652,7 @@ async def proto_dados():
             semanas.append(sp)
             ultimo_fim = s["fim"]
             n += 1
-        inicio_prev = (ultimo_fim + timedelta(days=1)) if ultimo_fim else _segunda(hoje)
+        inicio_prev = (ultimo_fim + timedelta(days=1)) if ultimo_fim else _semana_alvo(hoje, await _inicio_plano(conn))
         for seg, cap, itens in await _previsao_semanas(conn, inicio_prev):
             # revisões previstas: R1/R7/R30 dos assuntos das semanas anteriores (estimativa)
             sp = _semana_proto(n, seg, cap, itens, [])
