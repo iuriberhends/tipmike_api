@@ -21,6 +21,7 @@ from pydantic import BaseModel, Field
 
 from database import get_pool
 from security import get_current_user, acesso_total
+import casas as cadastro
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/varredura", tags=["varredura"])
@@ -100,34 +101,51 @@ def _do_parquet(caminho: str):
     """v030: tira LIGA e PERIODO do nome do parquet
     (`<hash>_mikedb_<casa>_<liga>_<de>_<ate>.parquet`). Sem isto a lista de
     origens nao diz de que liga o job e' — que e' justamente o que obriga o
-    usuario a decorar o nome do arquivo. Nunca levanta."""
+    usuario a decorar o nome do arquivo. Nunca levanta.
+    11/nov: devolve tambem a CASA do nome (4o item, ou None). Ela sai primeiro
+    do cadastro (o MAIOR codigo que abre o nome: betsson_pe_BATTLE da'
+    betsson_pe e liga BATTLE); se nenhum casar, o jeito antigo (primeira
+    palavra e' a casa, o resto e' a liga)."""
     import os as _os
     import re as _re
     try:
         nome = _os.path.basename(str(caminho or ""))
         if not nome.lower().endswith(".parquet"):
-            return "", None, None
+            return "", None, None, None
         m = _re.match(r"^([0-9a-f]{6,})_(?:mikedb_)?(.+?)"
                       r"(?:_(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2}))?"
                       r"\.parquet$", nome, _re.I)
         if not m:
-            return nome[:-8].replace("_", " ").strip(), None, None
-        miolo = m.group(2).replace("_", " ").strip()
+            return (nome[:-8].replace("_", " ").strip(), None, None,
+                    cadastro.casa_do_nome_de_arquivo(nome[:-8]))
+        bruto = m.group(2).strip()
+        casa = cadastro.casa_do_nome_de_arquivo(bruto)
+        if casa:
+            resto = bruto[len(casa):]
+            if resto[:1] in ("_", "-", ".", " "):
+                resto = resto[1:]          # o separador logo depois do codigo
+            return resto.replace("_", " ").rstrip(), m.group(3), m.group(4), casa
+        miolo = bruto.replace("_", " ").strip()
         partes = miolo.split(" ", 1)
         liga = partes[1] if len(partes) > 1 else ""
-        return liga, m.group(3), m.group(4)
+        return liga, m.group(3), m.group(4), (partes[0].lower() if partes else None)
     except Exception:
-        return "", None, None
+        return "", None, None, None
 
 
 @router.get("/origens")
 async def listar_origens(limite: int = Query(50, ge=1, le=200),
-                         usuario: dict = Depends(get_current_user)):
+                         usuario: dict = Depends(get_current_user),
+                         pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """Backtests que servem de fonte pro garimpo.
 
     `escancarado` = job SEM filtro (sem chip, sem linha, sem teto). E' a fonte
     certa: se o job de origem ja veio filtrado, a busca so procura DENTRO da
     estrategia dele e nunca fora dela. O front mostra isso como aviso.
+
+    11/nov: so' as origens do pais. A casa e' a do snapshot; sem ela, a do
+    nome do parquet; sem nenhuma das duas, conta como Brasil. O SELECT busca
+    uma folga alem do `limite` pra o corte valer sobre as origens DO PAIS.
     """
     # A coluna de data da backtest_jobs varia entre instalacoes (criado_em /
     # iniciado_em / nenhuma das duas). Em vez de chutar — o que derruba o
@@ -155,17 +173,33 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
                         WHERE status = 'concluido' AND total_apostas >= 500
                           AND id NOT IN (SELECT backtest_job_id FROM esteira_itens
                                           WHERE backtest_job_id IS NOT NULL)"""
+        # 11/nov: folga no LIMIT — origens de outro pais saem no laco abaixo e
+        # o `limite` passa a contar so' as do pais
+        lim_sql = min(limite * 4, 800)
         if acesso_total(usuario):
             rows = await conn.fetch(
-                base_sql + " ORDER BY id DESC LIMIT $1", limite)
+                base_sql + " ORDER BY id DESC LIMIT $1", lim_sql)
         else:
             rows = await conn.fetch(
                 base_sql + " AND user_id = $2 ORDER BY id DESC LIMIT $1",
-                limite, usuario.get("id"))
+                lim_sql, usuario.get("id"))
     saida = []
+    vistas = 0   # 11/nov: origens DO PAIS ja consideradas (o corte vale sobre elas)
     for r in rows:
         # linha torta nao derruba a lista inteira
         snap = _json(r["bot_snapshot"], {}) or {}
+        # 11/nov: pais da origem = casa do snapshot; sem ela, a do nome do
+        # parquet; sem nenhuma das duas, Brasil (casa_no_pais trata assim)
+        try:
+            casa_origem = (str(snap.get("casa") or "").strip()
+                           or _do_parquet(r["upload_id"] or "")[3])
+        except Exception:
+            casa_origem = None
+        if not cadastro.casa_no_pais(casa_origem, pais):
+            continue
+        vistas += 1
+        if vistas > limite:
+            break
         f = snap.get("filtros") or {}
         candidatos = bool(f.get("candidatos"))
         # chip 0-100 sem minimo e' escancarado, nao filtro
@@ -182,7 +216,7 @@ async def listar_origens(limite: int = Query(50, ge=1, le=200),
             or (snap.get("max_apostas_partida") and int(snap.get("max_apostas_partida") or 0) < 50))
         try:
             up = r["upload_id"] or ""
-            liga, de, ate = _do_parquet(up)
+            liga, de, ate, _casa_arq = _do_parquet(up)
             saida.append({
                 "job_id": r["id"], "criado_em": r["criado_em"],
                 "apostas": r["total_apostas"],

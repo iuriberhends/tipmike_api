@@ -128,6 +128,8 @@ for _p in (
 
 import asyncpg
 
+import casas as _cadastro_casas   # 11/nov: pais e ao_vivo por casa (tabela casas)
+
 from workers.backtest_runner import (
     _matches_mercado,
     MERCADOS_PLAYER,       # v35: total por TIME/JOGADOR
@@ -344,10 +346,19 @@ async def _carregar_bots_ativos():
                 rows = await conn.fetch("""
                     SELECT * FROM bots WHERE status = 'ativo'
                 """)
+                # 11/nov: cadastro de casas (pais / ao_vivo). Nunca levanta.
+                await _cadastro_casas.recarregar(conn)
 
             bots = []
+            fora_do_ao_vivo = []
             for r in rows:
                 d = dict(r)
+                # 11/nov: casa com ao vivo desligado no cadastro (ex.: Peru, so'
+                # dados e backtest) nao entra no executor, mesmo com bot ativo.
+                # O gatilho tick_novo (migration 036) ja nem avisa esses ticks.
+                if not _cadastro_casas.ao_vivo(d.get('casa')):
+                    fora_do_ao_vivo.append(f"{d.get('nome')} ({d.get('casa')})")
+                    continue
                 for jf in ('torneios', 'torneios_excluir', 'whitelist_pares',
                            'blacklist_pares', 'whitelist_cenarios', 'filtros'):
                     v = d.get(jf)
@@ -365,12 +376,14 @@ async def _carregar_bots_ativos():
             state.bots_ativos = bots
             state.bots_atualizado_em = agora
 
-            assinatura = ','.join(sorted(str(b['id']) for b in bots))
+            assinatura = ','.join(sorted(str(b['id']) for b in bots)) + '|' + ','.join(sorted(fora_do_ao_vivo))
             if assinatura != state.bots_assinatura:
                 if bots:
                     logger.info(f"Bots ativos: {len(bots)} -> {[b['nome'] for b in bots]}")
                 else:
                     logger.info("Nenhum bot ativo")
+                if fora_do_ao_vivo:
+                    logger.info(f"Bots ignorados (casa sem ao vivo no cadastro): {fora_do_ao_vivo}")
                 state.bots_assinatura = assinatura
 
             return bots

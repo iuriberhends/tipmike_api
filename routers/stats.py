@@ -19,6 +19,7 @@ from typing import Optional
 from datetime import datetime, timezone, timedelta
 from database import db
 from security import get_current_user, acesso_total
+import casas as cadastro
 
 logger = logging.getLogger("tipmike.stats")
 
@@ -68,12 +69,23 @@ def _sport_from_esporte(esporte: str) -> str:
     return ESPORTE_TO_SPORT.get(esporte, esporte)
 
 
+def _pais_sql(pais: str, coluna: str, params: list) -> str:
+    """11/nov: acrescenta em `params` o parametro do pais e devolve o pedaco de
+    WHERE que o usa (o $n sai do tamanho da lista NA HORA, entao chame no
+    ponto exato em que o parametro deve entrar). Brasil = tudo menos as casas
+    de outro pais (casa fora do cadastro e NULL seguem aparecendo)."""
+    sql, par = cadastro.condicao_pais(pais, coluna, len(params) + 1)
+    params.extend(par)
+    return sql
+
+
 # ============================================================
 # ENDPOINTS ANTIGOS (mantidos)
 # ============================================================
 
 @router.get("/dashboard")
-async def dashboard(usuario: dict = Depends(get_current_user)):
+async def dashboard(usuario: dict = Depends(get_current_user),
+                    pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     agora = datetime.utcnow()
     inicio_hoje = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
     uma_hora_atras = agora - timedelta(hours=1)
@@ -87,6 +99,12 @@ async def dashboard(usuario: dict = Depends(get_current_user)):
         args.append(usuario.get("id"))
         filtro_bots = f" AND user_id = ${len(args)}"
         filtro_apostas = f" AND bot_id IN (SELECT id FROM bots WHERE user_id = ${len(args)})"
+    # 11/nov: so' o que e' do pais (bots.casa, apostas.casa, ticks.bookmaker)
+    filtro_bots += " AND " + _pais_sql(pais, "casa", args)
+    filtro_apostas += " AND " + _pais_sql(pais, "casa", args)
+    filtro_ticks = " AND " + _pais_sql(pais, "bookmaker", args)
+    args_bk = [uma_hora_atras]
+    filtro_bk = _pais_sql(pais, "bookmaker", args_bk)
 
     try:
         async with db() as conn:
@@ -101,12 +119,12 @@ async def dashboard(usuario: dict = Depends(get_current_user)):
                      WHERE apostado_em >= $1 AND resultado != 'pendente'{filtro_apostas}) AS lucro_hoje,
                     (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1 AND resultado = 'green'{filtro_apostas}) AS ganhas_hoje,
                     (SELECT COUNT(*) FROM apostas WHERE apostado_em >= $1 AND resultado != 'pendente'{filtro_apostas}) AS resolvidas_hoje,
-                    (SELECT COUNT(*) FROM ticks WHERE ts >= $2) AS ticks_ultima_hora
+                    (SELECT COUNT(*) FROM ticks WHERE ts >= $2{filtro_ticks}) AS ticks_ultima_hora
             """, *args)
 
             bookmakers_rows = await conn.fetch(
-                "SELECT DISTINCT bookmaker FROM ticks WHERE ts >= $1 ORDER BY bookmaker",
-                uma_hora_atras
+                f"SELECT DISTINCT bookmaker FROM ticks WHERE ts >= $1 AND {filtro_bk} ORDER BY bookmaker",
+                *args_bk
             )
     except Exception:
         logger.exception("Erro ao montar dashboard.")
@@ -128,12 +146,14 @@ async def dashboard(usuario: dict = Depends(get_current_user)):
 
 
 @router.get("/bots")
-async def stats_todos_bots(usuario: dict = Depends(get_current_user)):
+async def stats_todos_bots(usuario: dict = Depends(get_current_user),
+                           pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     args = []
     filtro = ""
     if not acesso_total(usuario):
         args.append(usuario.get("id"))
         filtro = f" AND b.user_id = ${len(args)}"
+    filtro += " AND " + _pais_sql(pais, "b.casa", args)   # 11/nov: bots do pais
     sql = f"""
         SELECT
             b.id, b.nome, b.casa, b.esporte, b.mercado, b.status,
@@ -214,9 +234,10 @@ async def stats_bot(bot_id: int, usuario: dict = Depends(get_current_user)):
 # ============================================================
 
 @router.get("/overview")
-async def stats_overview(esporte: str = Query(...)):
+async def stats_overview(esporte: str = Query(...),
+                         pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """v3: 1 query agregada + cache 30s."""
-    cached = _cache_get('overview', (esporte,))
+    cached = _cache_get('overview', (esporte, pais))
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
@@ -226,52 +247,68 @@ async def stats_overview(esporte: str = Query(...)):
     h6 = datetime.utcnow() - timedelta(hours=6)
     h24 = datetime.utcnow() - timedelta(hours=24)
 
+    # 11/nov: cada consulta com a sua lista (o $n do pais sai do tamanho dela)
+    p_kpi = [sport, h6, esporte, h24]
+    c_kpi_t = _pais_sql(pais, "bookmaker", p_kpi)   # $5 (ticks)
+    c_kpi_a = _pais_sql(pais, "casa", p_kpi)        # $6 (apostas)
+    p_liga = [sport, h6]
+    c_liga = _pais_sql(pais, "bookmaker", p_liga)   # $3
+    p_jog = [sport, h6]
+    c_jog = _pais_sql(pais, "bookmaker", p_jog)     # $3
+    p_top = [sport]
+    c_top = _pais_sql(pais, "bookmaker", p_top)     # $2
+
     async with db() as conn:
         # 1 query agregada com tudo de uma vez
-        kpi_row = await conn.fetchrow("""
+        kpi_row = await conn.fetchrow(f"""
             SELECT
                 (SELECT COUNT(DISTINCT event_id) FROM ticks
-                 WHERE sport = $1 AND ts >= $2) AS jogos_hoje,
+                 WHERE sport = $1 AND ts >= $2 AND {c_kpi_t}) AS jogos_hoje,
 
                 (SELECT ROUND(
                     COUNT(*) FILTER (WHERE resultado = 'green') * 100.0 /
                     NULLIF(COUNT(*) FILTER (WHERE resultado IN ('green','red')), 0), 1)
                  FROM apostas
-                 WHERE esporte = $3 AND apostado_em >= $4 AND modo = 'simulado') AS wr_medio,
+                 WHERE esporte = $3 AND apostado_em >= $4 AND modo = 'simulado'
+                   AND {c_kpi_a}) AS wr_medio,
 
                 (SELECT COALESCE(SUM(lucro_unidades), 0)
                  FROM apostas
                  WHERE esporte = $3 AND apostado_em >= $4
-                   AND resultado != 'pendente' AND modo = 'simulado') AS lucro_24h
-        """, sport, h6, esporte, h24)
+                   AND resultado != 'pendente' AND modo = 'simulado'
+                   AND {c_kpi_a}) AS lucro_24h
+        """, *p_kpi)
 
         # Liga quente e jogador hot em queries separadas mas leves
-        liga_quente = await conn.fetchval("""
+        liga_quente = await conn.fetchval(f"""
             SELECT liga FROM ticks
             WHERE sport = $1 AND ts >= $2
               AND liga IS NOT NULL AND liga != ''
+              AND {c_liga}
             GROUP BY liga
             ORDER BY COUNT(*) DESC
             LIMIT 1
-        """, sport, h6)
+        """, *p_liga)
 
-        jogador_hot = await conn.fetchval("""
+        jogador_hot = await conn.fetchval(f"""
             SELECT jogador FROM (
                 SELECT jogador_a AS jogador, COUNT(*) AS qtd FROM ticks
                 WHERE sport = $1 AND ts >= $2 AND jogador_a IS NOT NULL
+                  AND {c_jog}
                 GROUP BY jogador_a
                 UNION ALL
                 SELECT jogador_b AS jogador, COUNT(*) AS qtd FROM ticks
                 WHERE sport = $1 AND ts >= $2 AND jogador_b IS NOT NULL
+                  AND {c_jog}
                 GROUP BY jogador_b
             ) sub
             GROUP BY jogador
             ORDER BY SUM(qtd) DESC
             LIMIT 1
-        """, sport, h6)
+        """, *p_jog)
 
         # Top 3 ligas com jogos ativos
-        ligas_top = await conn.fetch("""
+        ligas_top = await conn.fetch(f"""
             WITH ult AS (
                 SELECT DISTINCT ON (event_id)
                     event_id, liga, jogador_a, jogador_b, time_a, time_b, ts
@@ -279,6 +316,7 @@ async def stats_overview(esporte: str = Query(...)):
                 WHERE sport = $1
                   AND ts >= NOW() - INTERVAL '5 minutes'
                   AND liga IS NOT NULL AND liga != ''
+                  AND {c_top}
                 ORDER BY event_id, ts DESC
             )
             SELECT liga,
@@ -293,7 +331,7 @@ async def stats_overview(esporte: str = Query(...)):
             GROUP BY liga
             ORDER BY qtd DESC
             LIMIT 3
-        """, sport)
+        """, *p_top)
 
     ligas = []
     for i, r in enumerate(ligas_top):
@@ -321,7 +359,7 @@ async def stats_overview(esporte: str = Query(...)):
         },
         "ligas": ligas,
     }
-    _cache_set('overview', (esporte,), resultado)
+    _cache_set('overview', (esporte, pais), resultado)
     return {**resultado, "_cache": "miss"}
 
 
@@ -332,9 +370,10 @@ async def stats_proximos(
     liga: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
     pageSize: int = Query(10, ge=1, le=100),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov
 ):
     """v3: cache 15s."""
-    cache_key = (esporte, busca or '', liga or '', page, pageSize)
+    cache_key = (esporte, busca or '', liga or '', page, pageSize, pais)
     cached = _cache_get('proximos', cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
@@ -351,6 +390,9 @@ async def stats_proximos(
         params.append(f"%{busca}%")
         idx = len(params)
         where_extras += f" AND (jogador_a ILIKE ${idx} OR jogador_b ILIKE ${idx} OR time_a ILIKE ${idx} OR time_b ILIKE ${idx} OR liga ILIKE ${idx})"
+
+    # 11/nov: pais ANTES de pageSize/offset (o count usa params[:-2])
+    where_extras += " AND " + _pais_sql(pais, "bookmaker", params)
 
     offset = (page - 1) * pageSize
     params.extend([pageSize, offset])
@@ -410,6 +452,7 @@ async def stats_ultimos(
     liga: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
     pageSize: int = Query(10, ge=1, le=100),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov
 ):
     """
     v5: query reescrita com LATERAL JOIN + filtro 'finalizados'.
@@ -421,7 +464,7 @@ async def stats_ultimos(
     2. Pra cada um, LATERAL pega o ultimo tick com placar = placar final
     3. Paginacao por evento, ordenado pelo timestamp do final do jogo
     """
-    cache_key = (esporte, busca or '', liga or '', page, pageSize)
+    cache_key = (esporte, busca or '', liga or '', page, pageSize, pais)
     cached = _cache_get('ultimos', cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
@@ -438,6 +481,11 @@ async def stats_ultimos(
         params.append(f"%{busca}%")
         idx = len(params)
         where_extras += f" AND (jogador_a ILIKE ${idx} OR jogador_b ILIKE ${idx} OR time_a ILIKE ${idx} OR time_b ILIKE ${idx} OR liga ILIKE ${idx})"
+
+    # 11/nov: pais ANTES de pageSize/offset (o count usa params[:-2]); o mesmo
+    # $n vale no LATERAL, pra o placar final nao vir de casa de outro pais
+    cond_pais = _pais_sql(pais, "bookmaker", params)
+    where_extras += " AND " + cond_pais
 
     offset = (page - 1) * pageSize
     limit_param_idx = len(params) + 1
@@ -471,6 +519,7 @@ async def stats_ultimos(
                    score_home, score_away
             FROM ticks
             WHERE event_id = e.event_id AND ts = e.final_ts
+              AND {cond_pais}
             LIMIT 1
         ) t ON true
         ORDER BY e.final_ts DESC
@@ -521,21 +570,26 @@ async def stats_ultimos(
 
 
 @router.get("/heatmap")
-async def stats_heatmap(esporte: str = Query(...)):
+async def stats_heatmap(esporte: str = Query(...),
+                        pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """
     v3: janela 7d, agrupa em SUBQUERY com bucket pre-calculado pra evitar
     EXTRACT em milhoes de linhas. Cache 10min.
     """
-    cached = _cache_get('heatmap', (esporte,))
+    cached = _cache_get('heatmap', (esporte, pais))
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
     sport = _sport_from_esporte(esporte)
+    p_ticks = [sport]
+    c_ticks = _pais_sql(pais, "bookmaker", p_ticks)   # $2
+    p_ap = [esporte]
+    c_ap = _pais_sql(pais, "casa", p_ap)              # $2
 
     async with db() as conn:
         # Ticks: agrupa apenas DOW e HORA, sem AT TIME ZONE
         # (Postgres ja armazena com timezone, EXTRACT funciona direto)
-        ticks_rows = await conn.fetch("""
+        ticks_rows = await conn.fetch(f"""
             SELECT
                 EXTRACT(DOW FROM ts)::int AS dow,
                 EXTRACT(HOUR FROM ts)::int AS hora,
@@ -543,10 +597,11 @@ async def stats_heatmap(esporte: str = Query(...)):
             FROM ticks
             WHERE sport = $1
               AND ts >= NOW() - INTERVAL '3 days'
+              AND {c_ticks}
             GROUP BY dow, hora
-        """, sport)
+        """, *p_ticks)
 
-        apostas_rows = await conn.fetch("""
+        apostas_rows = await conn.fetch(f"""
             SELECT
                 EXTRACT(DOW FROM apostado_em)::int AS dow,
                 EXTRACT(HOUR FROM apostado_em)::int AS hora,
@@ -557,8 +612,9 @@ async def stats_heatmap(esporte: str = Query(...)):
             WHERE esporte = $1
               AND apostado_em >= NOW() - INTERVAL '7 days'
               AND modo = 'simulado'
+              AND {c_ap}
             GROUP BY dow, hora
-        """, esporte)
+        """, *p_ap)
 
     ticks_map = {(r['dow'], r['hora']): r['qtd'] for r in ticks_rows}
     apostas_map = {(r['dow'], r['hora']): r for r in apostas_rows}
@@ -584,19 +640,23 @@ async def stats_heatmap(esporte: str = Query(...)):
         matriz.append({"dia": nome, "horas": horas})
 
     resultado = {"matriz": matriz}
-    _cache_set('heatmap', (esporte,), resultado)
+    _cache_set('heatmap', (esporte, pais), resultado)
     return {**resultado, "_cache": "miss"}
 
 
 @router.get("/distribuicoes")
-async def stats_distribuicoes(esporte: str = Query(...)):
+async def stats_distribuicoes(esporte: str = Query(...),
+                              pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """v3: janela 7d + cache 5min."""
-    cached = _cache_get('distribuicoes', (esporte,))
+    cached = _cache_get('distribuicoes', (esporte, pais))
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
+    p_ap = [esporte]
+    c_ap = _pais_sql(pais, "casa", p_ap)   # $2 (apostas.casa) — vale nas 2 consultas
+
     async with db() as conn:
-        wr_rows = await conn.fetch("""
+        wr_rows = await conn.fetch(f"""
             WITH wr_por_bot AS (
                 SELECT bot_id,
                        COUNT(*) FILTER (WHERE resultado = 'green') AS g,
@@ -604,6 +664,7 @@ async def stats_distribuicoes(esporte: str = Query(...)):
                 FROM apostas
                 WHERE esporte = $1 AND modo = 'simulado'
                   AND apostado_em >= NOW() - INTERVAL '7 days'
+                  AND {c_ap}
                 GROUP BY bot_id
                 HAVING COUNT(*) FILTER (WHERE resultado IN ('green','red')) > 5
             )
@@ -613,9 +674,9 @@ async def stats_distribuicoes(esporte: str = Query(...)):
             FROM wr_por_bot
             GROUP BY bin
             ORDER BY bin
-        """, esporte)
+        """, *p_ap)
 
-        roi_rows = await conn.fetch("""
+        roi_rows = await conn.fetch(f"""
             WITH roi_por_bot AS (
                 SELECT bot_id,
                        SUM(lucro_unidades) FILTER (WHERE resultado != 'pendente') AS lucro,
@@ -623,6 +684,7 @@ async def stats_distribuicoes(esporte: str = Query(...)):
                 FROM apostas
                 WHERE esporte = $1 AND modo = 'simulado'
                   AND apostado_em >= NOW() - INTERVAL '7 days'
+                  AND {c_ap}
                 GROUP BY bot_id
                 HAVING COUNT(*) FILTER (WHERE resultado != 'pendente') > 5
             )
@@ -632,7 +694,7 @@ async def stats_distribuicoes(esporte: str = Query(...)):
             FROM roi_por_bot
             GROUP BY roi_pct
             ORDER BY roi_pct
-        """, esporte)
+        """, *p_ap)
 
     wr_map = {r['bin']: r['qtd'] for r in wr_rows if r['bin'] is not None}
     wr_bins = []
@@ -659,7 +721,7 @@ async def stats_distribuicoes(esporte: str = Query(...)):
         })
 
     resultado = {"wr": wr_bins, "roi": roi_bins}
-    _cache_set('distribuicoes', (esporte,), resultado)
+    _cache_set('distribuicoes', (esporte, pais), resultado)
     return {**resultado, "_cache": "miss"}
 
 
@@ -667,9 +729,10 @@ async def stats_distribuicoes(esporte: str = Query(...)):
 async def stats_jogadores(
     esporte: str = Query(...),
     busca: Optional[str] = Query(None),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov
 ):
     """v3: janela reduzida 3d + LIMIT 300 + cache 15min."""
-    cache_key = (esporte, busca or '')
+    cache_key = (esporte, busca or '', pais)
     cached = _cache_get('jogadores', cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
@@ -680,6 +743,7 @@ async def stats_jogadores(
     if busca:
         params.append(f"%{busca}%")
         where_busca = f"AND (jogador ILIKE ${len(params)} OR time ILIKE ${len(params)})"
+    cond_pais = _pais_sql(pais, "bookmaker", params)   # 11/nov: $2 ou $3
 
     sql = f"""
         WITH jog_time AS (
@@ -688,6 +752,7 @@ async def stats_jogadores(
             WHERE sport = $1
               AND jogador_a IS NOT NULL AND jogador_a != ''
               AND ts >= NOW() - INTERVAL '6 hours'
+              AND {cond_pais}
             GROUP BY jogador_a, time_a
             UNION ALL
             SELECT jogador_b AS jogador, time_b AS time, COUNT(*) AS qtd
@@ -695,6 +760,7 @@ async def stats_jogadores(
             WHERE sport = $1
               AND jogador_b IS NOT NULL AND jogador_b != ''
               AND ts >= NOW() - INTERVAL '6 hours'
+              AND {cond_pais}
             GROUP BY jogador_b, time_b
         ),
         jog_principal AS (
@@ -720,13 +786,14 @@ async def stats_jogadores(
 
 
 @router.get("/torneios")
-async def stats_torneios(esporte: str = Query(...)):
+async def stats_torneios(esporte: str = Query(...),
+                         pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """
     v6: retorna apenas torneios PAIS (Battle, GT League, H2H GG, etc),
     nao mais cada grade individual. Usa classificar_pai do routers/torneios.
     Janela 6h + cache 15min.
     """
-    cached = _cache_get('torneios', (esporte,))
+    cached = _cache_get('torneios', (esporte, pais))
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
@@ -734,20 +801,23 @@ async def stats_torneios(esporte: str = Query(...)):
     from routers.torneios import classificar_pai, nome_pai_para_exibicao
 
     sport = _sport_from_esporte(esporte)
+    params = [sport]
+    cond_pais = _pais_sql(pais, "bookmaker", params)   # 11/nov: $2
 
-    sql = """
+    sql = f"""
         SELECT liga, COUNT(*) AS qtd
         FROM ticks
         WHERE sport = $1
           AND liga IS NOT NULL AND liga != ''
           AND ts >= NOW() - INTERVAL '6 hours'
+          AND {cond_pais}
         GROUP BY liga
         ORDER BY qtd DESC
         LIMIT 200
     """
 
     async with db() as conn:
-        rows = await conn.fetch(sql, sport)
+        rows = await conn.fetch(sql, *params)
 
     # Agrupa ligas brutas por torneio pai
     pais_dict = {}
@@ -766,7 +836,7 @@ async def stats_torneios(esporte: str = Query(...)):
     torneios = [nome_pai_para_exibicao(pai) for pai, _ in torneios_pais[:30]]
 
     resultado = {"torneios": torneios}
-    _cache_set('torneios', (esporte,), resultado)
+    _cache_set('torneios', (esporte, pais), resultado)
     return {**resultado, "_cache": "miss"}
 
 
@@ -774,16 +844,19 @@ async def stats_torneios(esporte: str = Query(...)):
 async def stats_preview_jogador(
     esporte: str = Query(...),
     nome: str = Query(...),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov
 ):
     """v3: janela 14d + cache 2min."""
-    cache_key = (esporte, nome)
+    cache_key = (esporte, nome, pais)
     cached = _cache_get('preview', cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
 
     sport = _sport_from_esporte(esporte)
+    params = [sport, nome]
+    cond_pais = _pais_sql(pais, "bookmaker", params)   # 11/nov: $3
 
-    sql = """
+    sql = f"""
         SELECT DISTINCT ON (event_id)
             event_id, ts,
             jogador_a, jogador_b,
@@ -794,12 +867,13 @@ async def stats_preview_jogador(
           AND score_home IS NOT NULL
           AND score_away IS NOT NULL
           AND ts >= NOW() - INTERVAL '3 days'
+          AND {cond_pais}
         ORDER BY event_id, ts DESC
         LIMIT 30
     """
 
     async with db() as conn:
-        rows = await conn.fetch(sql, sport, nome)
+        rows = await conn.fetch(sql, *params)
 
     def vencedor(row):
         sh = row['score_home']
@@ -857,8 +931,10 @@ async def stats_preview_jogador(
                 break
 
     h24 = datetime.utcnow() - timedelta(hours=24)
+    p_ap = [esporte, nome, h24]
+    c_ap = _pais_sql(pais, "casa", p_ap)   # 11/nov: $4 (apostas.casa)
     async with db() as conn:
-        apostas_jogador = await conn.fetchrow("""
+        apostas_jogador = await conn.fetchrow(f"""
             SELECT
                 COALESCE(SUM(lucro_unidades), 0) AS lucro,
                 AVG(odd) AS odd_media
@@ -868,7 +944,8 @@ async def stats_preview_jogador(
               AND apostado_em >= $3
               AND resultado != 'pendente'
               AND modo = 'simulado'
-        """, esporte, nome, h24)
+              AND {c_ap}
+        """, *p_ap)
 
     resultado = {
         "preview": {

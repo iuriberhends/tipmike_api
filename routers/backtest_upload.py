@@ -43,6 +43,7 @@ from pydantic import BaseModel, Field
 
 from database import get_pool
 from security import get_current_user, acesso_total
+import casas as cadastro
 from workers.backtest_runner import executar_backtest
 from workers.backtest_upload import (salvar_upload, parse_ticks_parquet,
                                      caminho_do_upload, BacktestUploadError)
@@ -883,12 +884,32 @@ async def _rodar_backtest_seguro(job_id: int):
             logger.exception(f"[backtest_upload] nao consegui marcar job {job_id} como erro")
 
 
+def _casa_liga_do_miolo(bruto: str) -> tuple:
+    """11/nov: (casa, liga) do miolo do nome do parquet
+    (`<casa>_<liga...>`). Primeiro o cadastro — vale o MAIOR codigo que abre o
+    nome, entao `betsson_pe_BATTLE` da' betsson_pe (e nao 'betsson' com liga
+    'pe BATTLE'). Se nenhum codigo casar, o jeito antigo: primeira palavra."""
+    bruto = (bruto or "").strip()
+    casa = cadastro.casa_do_nome_de_arquivo(bruto)
+    if casa:
+        resto = bruto[len(casa):]
+        if resto[:1] in ("_", "-", ".", " "):
+            resto = resto[1:]          # o separador logo depois do codigo
+        return casa, resto.replace("_", " ").rstrip()
+    miolo = bruto.replace("_", " ").strip()
+    partes = miolo.split(" ", 1)
+    return ((partes[0].lower() if partes else ""),
+            (partes[1] if len(partes) > 1 else ""))
+
+
 @router.get("/arquivos")
-async def listar_parquets():
+async def listar_parquets(pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """v029: os parquets que ja estao no servidor, pro painel escolher em vez
     de exigir que o usuario decore o caminho. Le a MESMA pasta que o backtest
     usa (uploads_backtest) e junta o APELIDO da tabela `rotulos`, quando tem.
-    So' leitura — nada aqui muda o funcionamento do backtest."""
+    So' leitura — nada aqui muda o funcionamento do backtest.
+    11/nov: so' os arquivos do pais (casa tirada do nome; casa desconhecida
+    conta como Brasil)."""
     import re as _re
     itens = []
     try:
@@ -906,14 +927,17 @@ async def listar_parquets():
             m = _re.match(r"^([0-9a-f]{6,})_(?:mikedb_)?(.+?)"
                           r"(?:_(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2}))?"
                           r"\.parquet$", nome, _re.I)
-            miolo = (m.group(2) if m else nome[:-8]).replace("_", " ").strip()
-            partes = miolo.split(" ", 1)
+            bruto = (m.group(2) if m else nome[:-8])
+            miolo = bruto.replace("_", " ").strip()
+            casa, liga = _casa_liga_do_miolo(bruto)
+            if not cadastro.casa_no_pais(casa, pais):
+                continue   # 11/nov: arquivo de casa de outro pais
             itens.append({
                 "upload_id": cam.replace("\\", "/"),
                 "arquivo": nome,
                 "limpo": miolo,
-                "casa": (partes[0].lower() if partes else ""),
-                "liga": (partes[1] if len(partes) > 1 else ""),
+                "casa": casa,
+                "liga": liga,
                 "de": (m.group(3) if m else None),
                 "ate": (m.group(4) if m else None),
                 "mb": round(st.st_size / (1024 * 1024), 1),

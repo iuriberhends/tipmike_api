@@ -14,6 +14,7 @@ import logging
 
 from database import db
 from security import get_current_user, acesso_total
+import casas as cadastro
 
 logger = logging.getLogger("tipmike.bots")
 
@@ -51,8 +52,18 @@ def _cache_invalidate_all():
 # MODELOS PYDANTIC
 # ============================================================
 ESPORTES_VALIDOS = {'fifa', 'nba2k', 'ehockey', 'etennis'}
-CASAS_VALIDAS = {'betano', 'superbet', 'bet365', 'estrelabet', 'novibet', 'vupi'}
+# 11/nov: a lista fixa CASAS_VALIDAS virou o cadastro de casas (casas.py / tabela
+# casas). Ela rejeitava kto e apostaganha no POST e o PATCH nao validava nada.
 STATUS_VALIDOS = {'ativo', 'pausado', 'erro'}
+
+
+def _valida_casa_cadastro(v):
+    if v is None:
+        return v
+    v = str(v).strip().lower()
+    if not cadastro.casa_valida(v):
+        raise ValueError(f"Casa inválida. Use: {', '.join(cadastro.codigos_ativos())}")
+    return v
 
 
 class BotCreate(BaseModel):
@@ -76,9 +87,7 @@ class BotCreate(BaseModel):
     @field_validator('casa')
     @classmethod
     def valida_casa(cls, v):
-        if v not in CASAS_VALIDAS:
-            raise ValueError(f"Casa inválida. Use: {', '.join(CASAS_VALIDAS)}")
-        return v
+        return _valida_casa_cadastro(v)
 
     @field_validator('esporte')
     @classmethod
@@ -124,6 +133,11 @@ class BotPatch(BaseModel):
     filtros: Optional[Dict[str, Any]] = None
     em_treinamento: Optional[bool] = None
     telegram_canal_id: Optional[int] = None
+
+    @field_validator('casa')
+    @classmethod
+    def valida_casa(cls, v):
+        return _valida_casa_cadastro(v)
 
     @field_validator('status')
     @classmethod
@@ -253,6 +267,7 @@ async def list_bots(
                                     "bots dele). Usuario comum ve so os dele "
                                     "de qualquer jeito."),
     usuario: dict = Depends(get_current_user),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: so' bots de casas do pais
 ):
     """
     Lista bots paginada. Inclui em_treinamento + telegram_canal_id
@@ -272,7 +287,7 @@ async def list_bots(
     # v50: favorito/grupo sao POR USUARIO -> o id do usuario entra na chave
     # (dois admins nao podem dividir o cache da lista).
     cache_key = (f"list:{_escopo(usuario)}:u{usuario.get('id')}:{escopo}:{limit}:"
-                 f"{offset}:{status}:{casa}:{esporte}:{q}:{favoritos}:{grupo}")
+                 f"{offset}:{status}:{casa}:{esporte}:{q}:{favoritos}:{grupo}:{pais}")
     cached = _cache_get(cache_key)
     if cached is not None:
         return {**cached, "_cache": "hit"}
@@ -302,6 +317,9 @@ async def list_bots(
     if q:
         params.append(f"%{q}%")
         where.append(f"b.nome ILIKE ${len(params)}")
+    _sql_pais, _par_pais = cadastro.condicao_pais(pais, "b.casa", len(params) + 1)
+    params.extend(_par_pais)
+    where.append(_sql_pais)
 
     where_clause = ("WHERE " + " AND ".join(where)) if where else ""
 
@@ -350,6 +368,9 @@ async def list_bots(
                 if q:
                     params_leg.append(f"%{q}%")
                     where_leg.append(f"b.nome ILIKE ${len(params_leg)}")
+                _sql_p, _par_p = cadastro.condicao_pais(pais, "b.casa", len(params_leg) + 1)
+                params_leg.extend(_par_p)
+                where_leg.append(_sql_p)
                 wc_leg = ("WHERE " + " AND ".join(where_leg)) if where_leg else ""
                 if favoritos or grupo:
                     rows, total = [], 0   # pediu favoritos/grupo e eles nao existem

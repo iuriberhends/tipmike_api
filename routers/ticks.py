@@ -3,10 +3,11 @@ routers/ticks.py
 GET /ticks, GET /ticks/count
 """
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Depends, Query
 from typing import Optional
 from datetime import datetime, date
 from database import db
+import casas as cadastro
 
 router = APIRouter(prefix="/ticks", tags=["Ticks"])
 
@@ -21,6 +22,7 @@ async def count_ticks(
     data_inicio: Optional[date] = None,
     data_fim: Optional[date] = None,
     score_updates_only: bool = False,
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     conditions = ["1=1"]
     params = []
@@ -28,6 +30,9 @@ async def count_ticks(
 
     if bookmaker:
         conditions.append(f"bookmaker = ${i}"); params.append(bookmaker); i += 1
+    else:
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "bookmaker", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
     if sport:
         conditions.append(f"sport ILIKE ${i}"); params.append(f"%{sport}%"); i += 1
     if liga:
@@ -66,6 +71,7 @@ async def get_ticks(
     score_updates_only: bool = False,
     limit: int = Query(default=100, le=1000),
     offset: int = 0,
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     conditions = ["1=1"]
     params = []
@@ -73,6 +79,9 @@ async def get_ticks(
 
     if bookmaker:
         conditions.append(f"bookmaker = ${i}"); params.append(bookmaker); i += 1
+    else:
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "bookmaker", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
     if sport:
         conditions.append(f"sport ILIKE ${i}"); params.append(f"%{sport}%"); i += 1
     if liga:

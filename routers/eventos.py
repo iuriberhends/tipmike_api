@@ -3,10 +3,11 @@ routers/eventos.py
 GET /eventos/live, GET /eventos/finished, GET /eventos/{id}
 """
 
-from fastapi import APIRouter, Query, HTTPException
+from fastapi import APIRouter, Depends, Query, HTTPException
 from typing import Optional
 from datetime import datetime, timezone, timedelta
 from database import db
+import casas as cadastro
 
 router = APIRouter(prefix="/eventos", tags=["Eventos"])
 
@@ -19,6 +20,7 @@ async def eventos_live(
     bookmaker: Optional[str] = None,
     sport: Optional[str] = None,
     liga: Optional[str] = None,
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     """Jogos rolando agora (baseado em ticks recentes)."""
     cutoff = datetime.now(timezone.utc) - timedelta(seconds=LIVE_WINDOW_SEG)
@@ -29,6 +31,9 @@ async def eventos_live(
 
     if bookmaker:
         conditions.append(f"bookmaker = ${i}"); params.append(bookmaker); i += 1
+    else:
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "bookmaker", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
     if sport:
         conditions.append(f"sport ILIKE ${i}"); params.append(f"%{sport}%"); i += 1
     if liga:
@@ -62,6 +67,7 @@ async def eventos_finished(
     data_fim: Optional[str] = None,
     limit: int = Query(default=100, le=500),
     offset: int = 0,
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     """Jogos terminados com score final."""
     conditions = ["mercado_tipo = 'SCORE_UPDATE'"]
@@ -70,6 +76,9 @@ async def eventos_finished(
 
     if bookmaker:
         conditions.append(f"bookmaker = ${i}"); params.append(bookmaker); i += 1
+    else:
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "bookmaker", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
     if sport:
         conditions.append(f"sport ILIKE ${i}"); params.append(f"%{sport}%"); i += 1
     if liga:

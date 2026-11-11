@@ -15,10 +15,11 @@ v4 - tradutor de IDs:
 
 v3 - endpoint /disponiveis retorna torneios pai com grades agrupadas.
 """
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from typing import Optional
 from datetime import datetime, timedelta
 from database import db
+import casas as cadastro
 
 router = APIRouter(prefix="/torneios", tags=["Torneios"])
 
@@ -464,26 +465,31 @@ async def listar_torneios_disponiveis(
 
 
 @router.get("/{torneio_id}/grades")
-async def listar_grades(torneio_id: str):
-    cache_key = ("grades", torneio_id)
+async def listar_grades(torneio_id: str,
+                        pais: str = Depends(cadastro.pais_atual)):   # 11/nov
+    # o pais entra na chave; k[1] continua sendo o torneio (invalidar_cache)
+    cache_key = ("grades", torneio_id, pais)
     cached = _cache_get(cache_key)
     if cached is not None:
         return cached
 
     pattern = TORNEIO_PATTERNS.get(torneio_id, torneio_id)
+    # 11/nov: so' ticks das casas do pais ($2)
+    cond_pais, par_pais = cadastro.condicao_pais(pais, "bookmaker", 2)
 
-    sql = """
+    sql = f"""
         SELECT DISTINCT liga, COUNT(*) AS ticks
         FROM ticks
         WHERE liga LIKE $1
           AND liga IS NOT NULL
           AND ts >= NOW() - INTERVAL '14 days'
+          AND {cond_pais}
         GROUP BY liga
         ORDER BY ticks DESC
     """
 
     async with db() as conn:
-        rows = await conn.fetch(sql, pattern)
+        rows = await conn.fetch(sql, pattern, *par_pais)
 
     grades = [{"nome": r["liga"], "ticks": r["ticks"]} for r in rows]
     resultado = {

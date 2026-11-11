@@ -68,6 +68,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from security import get_current_user
+import casas as cadastro
 from workers.backtest_upload import UPLOAD_DIR, caminho_do_upload
 # fonte UNICA: os mesmos mapas que o motor usa pra casar mercado/esporte.
 # Se o runner ganhar um mercado novo, esta aba enxerga junto, sem eu duplicar
@@ -156,6 +157,39 @@ _RE_DATA = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _RE_SEGURO = re.compile(r"^[\w\s\-.,()/]{1,60}$", re.UNICODE)
 
 
+# ------------------------------------------------------------------ pais ---
+# 11/nov: o historico mistura casas de todos os paises (bookmaker=betsson_pe
+# mora ao lado de bookmaker=superbet). Sem casa escolhida, o antigo
+# `bookmaker=*` vira "as pastas das casas do pais" (+ as globais). Pasta de
+# casa fora do cadastro conta como Brasil. Casa escolhida = so' ela, sem
+# forcar o pais.
+def _casas_do_historico(pais: Optional[str]) -> list:
+    """Casas (nomes das pastas bookmaker=) que existem no historico e
+    aparecem no pais."""
+    out = set()
+    for p in glob.glob(str(HIST_DIR / "bookmaker=*")):
+        c = os.path.basename(p).split("=", 1)[1]
+        if cadastro.casa_no_pais(c, pais):
+            out.add(c)
+    return sorted(out)
+
+
+def _alvos_bookmaker(casa: Optional[str], pais: Optional[str]) -> list:
+    """Os pedacos `bookmaker=...` do glob: a casa pedida, ou as do pais."""
+    if casa:
+        return [f"bookmaker={casa}"]
+    return [f"bookmaker={glob.escape(c)}" for c in _casas_do_historico(pais)]
+
+
+def _glob_hist(casa: Optional[str], pais: Optional[str], *resto: str) -> list:
+    """glob em HIST_DIR/<bookmaker=...>/<resto...> juntando as casas alvo
+    (mesma lista que o `bookmaker=*` antigo daria, menos as de outro pais)."""
+    achados = []
+    for alvo in _alvos_bookmaker(casa, pais):
+        achados.extend(glob.glob(str(HIST_DIR.joinpath(alvo, *resto))))
+    return achados
+
+
 # --------------------------------------------------- mercados de verdade ---
 # O mapa do motor diz o que a casa DEVERIA ter. A amostragem do historico
 # (03/ago) mostrou que a realidade e' mais rica e mais traicoeira:
@@ -173,17 +207,19 @@ _CACHE_MERCADOS: dict = {}
 _TTL_MERCADOS = 3600
 
 
-def _escanear_mercados(casa: Optional[str], sport: Optional[str]) -> list:
+def _escanear_mercados(casa: Optional[str], sport: Optional[str],
+                       pais: Optional[str] = None) -> list:
     import time as _t
-    chave = (casa or "", sport or "")
+    # 11/nov: sem casa, o resultado depende do pais -> o pais entra na chave
+    chave = (casa or "", sport or "", "" if casa else (pais or cadastro.PAIS_PADRAO).upper())
     cache = _CACHE_MERCADOS.get(chave)
     if cache and (_t.time() - cache[0]) < _TTL_MERCADOS:
         return cache[1]
 
     import polars as pl
-    alvo = f"bookmaker={casa}" if casa else "bookmaker=*"
     amostra = []
-    for pasta_liga in sorted(glob.glob(str(HIST_DIR / alvo / "liga=*")))[:60]:
+    # 11/nov: sem casa = so' as pastas das casas do pais (era bookmaker=*)
+    for pasta_liga in sorted(_glob_hist(casa, pais, "liga=*"))[:60]:
         arqs = sorted(glob.glob(os.path.join(pasta_liga, "data=*", "*.parquet")))
         if arqs:
             amostra.append(arqs[-1])   # o dia mais recente daquela liga
@@ -223,6 +259,8 @@ def _escanear_mercados(casa: Optional[str], sport: Optional[str]) -> list:
     for c, mapa in MERCADO_TIPOS_POR_CASA.items():
         if casa and c != casa.lower():
             continue
+        if not casa and not cadastro.casa_no_pais(c, pais):
+            continue   # 11/nov: sem casa, so' o dialeto das casas do pais
         chaves = ([k for k in ordem if k in mapa] +
                   [k for k in mapa if k not in ordem])
         for chave_log in chaves:
@@ -271,12 +309,13 @@ def _escanear_mercados(casa: Optional[str], sport: Optional[str]) -> list:
 
 @router.get("/mercados")
 async def mercados(casa: Optional[str] = None, sport: Optional[str] = None,
-                   usuario: dict = Depends(get_current_user)):
+                   usuario: dict = Depends(get_current_user),
+                   pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """Mercados que EXISTEM no historico pra essa casa/esporte (amostrado)."""
     _valida_texto(casa, "casa")
     _valida_texto(sport, "sport")
     try:
-        return {"mercados": await asyncio.to_thread(_escanear_mercados, casa, sport)}
+        return {"mercados": await asyncio.to_thread(_escanear_mercados, casa, sport, pais)}
     except Exception as e:
         logger.exception("[mikedb] falha escaneando mercados")
         return {"mercados": [], "aviso": str(e)}
@@ -568,18 +607,19 @@ async def status(usuario: dict = Depends(get_current_user)):
 _CACHE_SPORT: dict = {}
 
 
-def _sport_da_liga(casa: Optional[str], liga: str) -> Optional[str]:
+def _sport_da_liga(casa: Optional[str], liga: str,
+                   pais: Optional[str] = None) -> Optional[str]:
     """Descobre o esporte de uma liga lendo 1 linha do parquet mais recente
     dela. Cache em memoria (o esporte de uma liga nao muda)."""
-    chave = (casa or "*", liga)
+    # 11/nov: sem casa, quem conta sao as casas do pais -> pais na chave
+    chave = (casa or "*:" + (pais or cadastro.PAIS_PADRAO).upper(), liga)
     if chave in _CACHE_SPORT:
         return _CACHE_SPORT[chave]
     valor = None
     try:
         import pyarrow.parquet as pq
-        alvo = f"bookmaker={casa}" if casa else "bookmaker=*"
-        arqs = sorted(glob.glob(str(HIST_DIR / alvo / f"liga={liga}" /
-                                    "data=*" / "*.parquet")))
+        # 11/nov: sem casa = so' as pastas das casas do pais (era bookmaker=*)
+        arqs = sorted(_glob_hist(casa, pais, f"liga={liga}", "data=*", "*.parquet"))
         if arqs:
             tabela = pq.ParquetFile(arqs[-1]).read_row_group(0, columns=["sport"])
             col = tabela.column("sport").to_pylist()
@@ -593,19 +633,19 @@ def _sport_da_liga(casa: Optional[str], liga: str) -> Optional[str]:
     return valor
 
 
-def _ler_catalogo(casa: Optional[str]) -> dict:
+def _ler_catalogo(casa: Optional[str], pais: Optional[str] = None) -> dict:
     """Le SO os nomes das pastas do historico particionado (barato: nao abre
     nenhum parquet). Devolve casas, ligas e o periodo coberto."""
     if not HIST_DIR.exists():
         return {"casas": [], "ligas": [], "periodo": None,
                 "aviso": f"historico nao encontrado em {HIST_DIR}"}
 
-    casas = sorted({os.path.basename(p).split("=", 1)[1]
-                    for p in glob.glob(str(HIST_DIR / "bookmaker=*"))})
-    alvo = f"bookmaker={casa}" if casa else "bookmaker=*"
+    # 11/nov: so' as casas do pais (+ globais); pasta fora do cadastro = Brasil
+    casas = _casas_do_historico(pais)
     ligas = {}
     dias_todos = []
-    for pdia in glob.glob(str(HIST_DIR / alvo / "liga=*" / "data=*")):
+    # 11/nov: sem casa = so' as pastas das casas do pais (era bookmaker=*)
+    for pdia in _glob_hist(casa, pais, "liga=*", "data=*"):
         partes = Path(pdia).parts
         try:
             liga = [x for x in partes if x.startswith("liga=")][0].split("=", 1)[1]
@@ -625,7 +665,7 @@ def _ler_catalogo(casa: Optional[str]) -> dict:
     # do script explicava. Agora o painel sabe antes de gerar. Le so a 1a
     # linha de 1 parquet por liga (row group 0, coluna sport) — barato.
     for it in ligas.values():
-        it["sport"] = _sport_da_liga(casa, it["liga"])
+        it["sport"] = _sport_da_liga(casa, it["liga"], pais)
 
     return {
         "casas": casas,
@@ -637,13 +677,14 @@ def _ler_catalogo(casa: Optional[str]) -> dict:
 
 @router.get("/catalogo")
 async def catalogo(casa: Optional[str] = None,
-                   usuario: dict = Depends(get_current_user)):
+                   usuario: dict = Depends(get_current_user),
+                   pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     _valida_texto(casa, "casa")
     if casa and casa.lower() == CASA_BETSAPI:
         # bet365 nao vem do historico: as opcoes sao o catalogo do coletor
         return {"casas": [CASA_BETSAPI], "ligas": [], "periodo": None,
                 "fonte": "betsapi", "ligas_betsapi": LIGAS_BETSAPI}
-    dados = await asyncio.to_thread(_ler_catalogo, casa)
+    dados = await asyncio.to_thread(_ler_catalogo, casa, pais)
     dados["fonte"] = "historico"
     return dados
 

@@ -15,6 +15,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import init_pool, close_pool
 from security import get_current_user
 from routers import sistema, ticks, h2h, eventos, bots, apostas, stats, torneios, backtest, historico, telegram, backtest_upload, auth, admin, h2h_sync, mikedb, varredura, esteira, rotulos, export_tm, mentor
+from routers import paises   # 11/nov: países e casas (operação do Peru)
+import casas as cadastro_casas
 
 
 @asynccontextmanager
@@ -23,6 +25,8 @@ async def lifespan(app: FastAPI):
     print("Conectando MikeDB...")
     await init_pool()
     print("MikeDB conectado")
+    await cadastro_casas.garantir()
+    print(f"Cadastro de casas: {cadastro_casas.fonte()}")
     yield
     # Fecha o pool ao desligar
     await close_pool()
@@ -82,6 +86,7 @@ app.include_router(esteira.router, dependencies=PROTEGIDO)
 app.include_router(rotulos.router, dependencies=PROTEGIDO)   # v029: apelidos de tela
 app.include_router(export_tm.router, dependencies=PROTEGIDO)
 app.include_router(mentor.router, dependencies=PROTEGIDO)
+app.include_router(paises.router, dependencies=PROTEGIDO)   # 11/nov: /paises e /casas
 
 
 @app.get("/")

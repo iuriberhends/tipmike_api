@@ -39,6 +39,7 @@ from pydantic import BaseModel, Field
 
 from database import get_pool
 from security import get_current_user, acesso_total
+import casas as cadastro
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/esteira", tags=["esteira"])
@@ -250,11 +251,31 @@ async def criar_bot_do_item(item_id: int, req: CriarBotDoItemRequest,
             "status": bot.get("status", "pausado"), "casa": payload.casa,
             "aviso": "bot criado PAUSADO — confere e ativa na tela de Bots"}
 
+def _casa_liga_do_miolo(bruto: str) -> tuple:
+    """11/nov: (casa, liga) do miolo do nome do parquet (`<casa>_<liga...>`).
+    Primeiro o cadastro (o MAIOR codigo que abre o nome: betano_pe_x da'
+    betano_pe); se nenhum casar, o jeito antigo: primeira palavra."""
+    bruto = (bruto or "").strip()
+    casa = cadastro.casa_do_nome_de_arquivo(bruto)
+    if casa:
+        resto = bruto[len(casa):]
+        if resto[:1] in ("_", "-", ".", " "):
+            resto = resto[1:]          # o separador logo depois do codigo
+        return casa, resto.replace("_", " ").rstrip()
+    miolo = bruto.replace("_", " ").strip()
+    partes = miolo.split(" ", 1)
+    return ((partes[0].lower() if partes else ""),
+            (partes[1] if len(partes) > 1 else ""))
+
+
 # ================================================================ endpoints ==
 @router.get("/arquivos")
-async def listar_arquivos(usuario: dict = Depends(get_current_user)):
+async def listar_arquivos(usuario: dict = Depends(get_current_user),
+                          pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     """Planilhas (.xlsx) e parquets da RAIZ do tipmike_api, pros dropdowns da
-    tela — em vez de digitar caminho. So le nomes; nada do cliente vira path."""
+    tela — em vez de digitar caminho. So le nomes; nada do cliente vira path.
+    11/nov: so' o que e' do pais. A casa sai do nome do arquivo; arquivo sem
+    casa conhecida conta como Brasil."""
     def _lista(padrao, ignora=()):  # nome, tamanho MB, mtime — mais novo 1o
         itens = []
         try:
@@ -262,6 +283,10 @@ async def listar_arquivos(usuario: dict = Depends(get_current_user)):
                 if not p.is_file() or p.name.startswith("~$"):
                     continue
                 if any(p.name.startswith(x) for x in ignora):
+                    continue
+                # 11/nov: casa pelo nome (so' o cadastro; sem casa = Brasil)
+                if not cadastro.casa_no_pais(
+                        cadastro.casa_do_nome_de_arquivo(p.stem), pais):
                     continue
                 st = p.stat()
                 itens.append({"nome": p.name,
@@ -289,7 +314,7 @@ async def listar_arquivos(usuario: dict = Depends(get_current_user)):
     except Exception:
         logger.exception("[esteira] falha listando uploads_backtest")
     ups.sort(key=lambda x: -x["mtime"])
-    ups = ups[:100]
+    # 11/nov: o corte dos 100 mais novos foi pra DEPOIS do filtro de pais
     # v030: APELIDO do parquet (mesmo escopo do backtest avulso: nomeou uma
     # vez, vale em toda tela) + casa/liga/periodo tirados do proprio nome.
     # So' rotulo: nada aqui muda o que a rodada roda.
@@ -299,15 +324,17 @@ async def listar_arquivos(usuario: dict = Depends(get_current_user)):
             m = _re.match(r"^(?:mikedb_)?(.+?)"
                           r"(?:_(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2}))?"
                           r"\.parquet$", u["nome"], _re.I)
-            miolo = (m.group(1) if m else u["nome"][:-8]).replace("_", " ").strip()
-            partes = miolo.split(" ", 1)
-            u["casa"] = partes[0].lower() if partes else ""
-            u["liga"] = partes[1] if len(partes) > 1 else ""
+            # 11/nov: cadastro primeiro (betsson_pe_x -> betsson_pe)
+            u["casa"], u["liga"] = _casa_liga_do_miolo(
+                m.group(1) if m else u["nome"][:-8])
             u["de"] = m.group(2) if m else None
             u["ate"] = m.group(3) if m else None
         except Exception:
             u["casa"] = u["liga"] = ""
             u["de"] = u["ate"] = None
+    # 11/nov: so' os parquets do pais (casa desconhecida/vazia = Brasil),
+    # e o corte dos 100 mais novos vale sobre ELES
+    ups = [u for u in ups if cadastro.casa_no_pais(u.get("casa"), pais)][:100]
     try:
         from routers.rotulos import apelidos
         # a chave do apelido e' o caminho ABSOLUTO (o mesmo que o backtest

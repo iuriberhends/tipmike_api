@@ -3,9 +3,10 @@ routers/h2h.py
 GET /h2h, GET /h2h/{ja}/{jb}, GET /h2h/{ja}/{jb}/jogos
 """
 
-from fastapi import APIRouter, Query, HTTPException
+from fastapi import APIRouter, Depends, Query, HTTPException
 from typing import Optional
 from database import db
+import casas as cadastro
 
 router = APIRouter(prefix="/h2h", tags=["H2H"])
 
@@ -16,9 +17,10 @@ async def buscar_h2h(
     jb: str = Query(..., description="Jogador B"),
     bookmaker: Optional[str] = None,
     limit: int = Query(default=50, le=200),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     """Stats H2H entre dois jogadores."""
-    return await _get_h2h_stats(ja, jb, bookmaker, limit)
+    return await _get_h2h_stats(ja, jb, bookmaker, limit, pais)
 
 
 @router.get("/{ja}/{jb}")
@@ -27,9 +29,10 @@ async def h2h_stats(
     jb: str,
     bookmaker: Optional[str] = None,
     limit: int = Query(default=50, le=200),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     """Stats H2H agregados entre dois jogadores."""
-    return await _get_h2h_stats(ja, jb, bookmaker, limit)
+    return await _get_h2h_stats(ja, jb, bookmaker, limit, pais)
 
 
 @router.get("/{ja}/{jb}/jogos")
@@ -39,6 +42,7 @@ async def h2h_jogos(
     bookmaker: Optional[str] = None,
     limit: int = Query(default=50, le=200),
     offset: int = 0,
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem bookmaker
 ):
     """Lista todos os jogos do par H2H."""
     conditions = [
@@ -51,6 +55,9 @@ async def h2h_jogos(
 
     if bookmaker:
         conditions.append(f"bookmaker = ${i}"); params.append(bookmaker); i += 1
+    else:
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "bookmaker", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
 
     where = " AND ".join(conditions)
     params += [limit, offset]
@@ -72,7 +79,8 @@ async def h2h_jogos(
     return [dict(r) for r in rows]
 
 
-async def _get_h2h_stats(ja: str, jb: str, bookmaker: Optional[str], limit: int):
+async def _get_h2h_stats(ja: str, jb: str, bookmaker: Optional[str], limit: int,
+                         pais: Optional[str] = None):
     conditions = [
         "(jogador_a ILIKE $1 OR jogador_b ILIKE $1)",
         "(jogador_a ILIKE $2 OR jogador_b ILIKE $2)",
@@ -83,6 +91,10 @@ async def _get_h2h_stats(ja: str, jb: str, bookmaker: Optional[str], limit: int)
 
     if bookmaker:
         conditions.append(f"bookmaker = ${i}"); params.append(bookmaker); i += 1
+    else:
+        # 11/nov: sem casa pedida, so' as casas do pais (None = Brasil)
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "bookmaker", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
 
     where = " AND ".join(conditions)
     params.append(limit)

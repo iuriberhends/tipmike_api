@@ -165,6 +165,7 @@ import logging
 import asyncio
 
 from database import get_pool
+import casas as _cadastro_casas   # 11/nov: pais/plataforma/idioma por casa (operacao do Peru)
 
 logger = logging.getLogger(__name__)
 
@@ -481,6 +482,62 @@ MERCADO_TIPOS_POR_CASA = {
 }
 
 
+# =========================================================================
+# 11/nov/2026 — CASAS DE FORA DO BRASIL (operacao do Peru)
+# =========================================================================
+# Codigos EXATOS por plataforma, medidos nos ticks de 10/11 (parquet do Peru).
+# So' mercados do JOGO INTEIRO por enquanto:
+#   - 1o tempo (over_under_ht, ml_ht) fica de fora ate o placar de intervalo de
+#     cada feed ser medido como foi o do Brasil (PLACAR_HT_POR_FEED);
+#   - handicap (ah_ft) fica de fora ate validar se a linha e' relativa ao placar
+#     (HC_RELATIVO_AO_PLACAR) em cada feed;
+#   - total por time/jogador fica de fora (o OBG tem linha .25/.75 ali).
+# Totais e vencedor de e-basket sao os que INCLUEM prorrogacao (o placar final
+# da coleta inclui). O 1x2 de tempo regulamentar da Altenar no basquete ('1')
+# e' renomeado na entrada (_canonizar_tick_estrangeiro) pra nao casar.
+# Casa estrangeira SEM o mercado aqui NAO cai na palavra-chave (fail closed):
+# ver _matches_mercado.
+_MAPA_ESTRANGEIRO_POR_PLATAFORMA = {
+    'obg': {                       # Betsson, Betsafe, Inkabet (PE)
+        'over_under_ft': ['ESFMTOTAL', 'ESNMOTOTAL'],
+        'ml_ft':         ['ESFMWINNER3W', 'ESNMOWINNER2W'],
+        'btts_ft':       ['ESFMBTS'],
+    },
+    'altenar': {                   # Jokerbet, Masterbets365 (PE)
+        'over_under_ft': ['18', '225'],
+        'ml_ft':         ['1', '219'],
+        'btts_ft':       ['29'],
+    },
+    'kambi': {                     # Rushbet, Olimpo (PE)
+        'over_under_ft': ['Total Goals', 'Total Points - Including Overtime'],
+        'ml_ft':         ['Full Time', 'Moneyline - Including Overtime'],
+        'btts_ft':       ['Both Teams To Score'],
+    },
+    'kaizen': {                    # Betano PE (codigos de texto, nao os numericos da Betano BR)
+        'over_under_ft': ['HCTG', 'FTPO'],
+        'ml_ft':         ['MRES', 'H2HT'],
+        'btts_ft':       ['BTSC'],
+    },
+}
+
+
+def _casa_estrangeira(casa) -> bool:
+    """Casa de outro pais (nao Brasil e nao global). Fora do cadastro = Brasil."""
+    try:
+        return _cadastro_casas.pais_da_casa(casa) not in (None, _cadastro_casas.PAIS_PADRAO)
+    except Exception:
+        return False
+
+
+for _pais_x in _cadastro_casas.paises(so_ativos=False):
+    if _pais_x['codigo'] == _cadastro_casas.PAIS_PADRAO:
+        continue
+    for _casa_x in _cadastro_casas.casas_do_pais(_pais_x['codigo'], so_ativas=False):
+        _mapa_x = _MAPA_ESTRANGEIRO_POR_PLATAFORMA.get(_casa_x.get('plataforma') or '')
+        if _casa_x.get('pais') and _mapa_x and _casa_x['codigo'] not in MERCADO_TIPOS_POR_CASA:
+            MERCADO_TIPOS_POR_CASA[_casa_x['codigo']] = {k: list(v) for k, v in _mapa_x.items()}
+
+
 MERCADO_KEYWORDS = {
     'over_under_ft': [
         'total de gols', 'total - jogo', 'total - partida',
@@ -545,6 +602,63 @@ def _sem_acento(s) -> str:
                        if unicodedata.category(c) != 'Mn').lower()
     except Exception:
         return ''
+
+
+# =========================================================================
+# 11/nov/2026 — TICK DE CASA ESTRANGEIRA -> VOCABULARIO DO MOTOR
+# =========================================================================
+# O motor foi escrito para os feeds do Brasil (pt/en). Em vez de ensinar
+# espanhol a cada funcao (e arriscar mudar resultado do Brasil), o tick de casa
+# de OUTRO PAIS e' traduzido UMA vez, na entrada do backtest, pro vocabulario
+# que o motor ja conhece. Tick do Brasil nunca passa por aqui.
+#   - texto com dupla codificacao do parquet ('mÃ¡s', 'SÃ\xad') -> conserta;
+#   - selecao 'más de 2.5' / 'Más de 2.5' -> 'Mais de 2.5'; 'Menos 2.5' -> 'Menos de 2.5';
+#   - 'Sí' -> 'Sim' (ambos marcam);
+#   - periodo no nome do mercado: '1er tiempo', '1ra mitad', '1ª Mitad', '1.ª parte',
+#     'Primer Tiempo' -> '1º tempo'; '2da mitad', 'Segundo Tiempo' -> '2º tempo';
+#     'cuarto' -> 'quarto'; 'Descanso' (1X2 do intervalo da Kambi) -> '1º tempo - resultado'.
+#     Assim _periodo_do_mercado nunca toma mercado de 1o tempo por jogo inteiro;
+#   - Altenar, e-basket, mercado_tipo '1' (1x2 do TEMPO REGULAMENTAR): o placar
+#     final da coleta inclui prorrogacao, entao esse mercado nao pode casar com
+#     ml_ft -> vira '1_tempo_regulamentar'.
+_RX_ES_MAS = re.compile(r'^\s*m[aá]s(?:\s+de)?\s+', re.I)
+_RX_ES_MENOS = re.compile(r'^\s*menos(?:\s+de)?\s+', re.I)
+_RX_ES_1T = re.compile(r'\b(?:1\s*(?:er|ra|ro|\.?\s*[ªºa])?|primer[ao]?)\s*(?:tiempo|mitad|parte)\b', re.I)
+_RX_ES_2T = re.compile(r'\b(?:2\s*(?:do|da|\.?\s*[ªºa])?|segund[ao])\s*(?:tiempo|mitad|parte)\b', re.I)
+_RX_ES_CUARTO = re.compile(r'\bcuarto\b', re.I)
+
+
+def _canonizar_tick_estrangeiro(t: dict, casa) -> dict:
+    """Traduz IN PLACE um tick (dict) de casa estrangeira. BLINDADO: erro -> tick como veio."""
+    try:
+        for campo in ('mercado', 'selecao', 'evento', 'time_a', 'time_b', 'jogador_a', 'jogador_b', 'liga'):
+            v = t.get(campo)
+            if isinstance(v, str) and v:
+                t[campo] = _demojibake(v)
+        m = t.get('mercado')
+        if isinstance(m, str) and m:
+            m = _RX_ES_1T.sub('1º tempo', m)
+            m = _RX_ES_2T.sub('2º tempo', m)
+            m = _RX_ES_CUARTO.sub('quarto', m)
+            if m.strip().lower() == 'descanso':
+                m = '1º tempo - resultado'
+            t['mercado'] = m
+        s = t.get('selecao')
+        if isinstance(s, str) and s:
+            if _RX_ES_MAS.match(s):
+                s = _RX_ES_MAS.sub('Mais de ', s, count=1)
+            elif _RX_ES_MENOS.match(s):
+                s = _RX_ES_MENOS.sub('Menos de ', s, count=1)
+            elif s.strip().lower() in ('sí', 'si'):
+                s = 'Sim'
+            t['selecao'] = s
+        if (_cadastro_casas.plataforma_da_casa(casa) == 'altenar'
+                and str(t.get('sport') or '') == 'E-Basketball'
+                and str(t.get('mercado_tipo') or '') == '1'):
+            t['mercado_tipo'] = '1_tempo_regulamentar'
+    except Exception:
+        pass
+    return t
 
 
 # =========================================================================
@@ -836,6 +950,12 @@ def _matches_mercado(mercado_bot: str, tick_mercado: str, tick_mercado_tipo: str
         if mercado_bot == 'eh_ft' and not eh_3way_nome:
             return False
         return True
+
+    # 11/nov: casa de OUTRO PAIS sem o mercado no mapa NAO cai na palavra-chave
+    # (pt/en): ela casaria '1er tiempo - Total' como total do jogo inteiro e
+    # 'Hándicap' sem saber se a linha e' relativa ao placar. Fail closed.
+    if _casa_estrangeira(casa_lower):
+        return False
 
     keywords = MERCADO_KEYWORDS.get(mercado_bot, [])
     if not keywords:
@@ -4471,6 +4591,12 @@ async def executar_backtest(job_id: int):
                         job_id,
                     )
                     return
+
+        # 11/nov: casa de outro pais (Peru...) -> tick traduzido pro vocabulario do
+        # motor (ver _canonizar_tick_estrangeiro). Brasil nao passa por aqui.
+        if _casa_estrangeira(bot.get('casa')):
+            _casa_x = bot.get('casa')
+            ticks = [_canonizar_tick_estrangeiro(dict(t), _casa_x) for t in ticks]
 
         placar_final: dict = {}
         _placar_ts: dict = {}   # evt -> ts do tick que deu o placar (pega o MAIS RECENTE)
