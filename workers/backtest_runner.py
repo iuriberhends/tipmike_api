@@ -489,8 +489,9 @@ MERCADO_TIPOS_POR_CASA = {
 # So' mercados do JOGO INTEIRO por enquanto:
 #   - 1o tempo (over_under_ht, ml_ht) fica de fora ate o placar de intervalo de
 #     cada feed ser medido como foi o do Brasil (PLACAR_HT_POR_FEED);
-#   - handicap (ah_ft) fica de fora ate validar se a linha e' relativa ao placar
-#     (HC_RELATIVO_AO_PLACAR) em cada feed;
+#   - handicap (ah_ft) LIGADO em 11/nov depois de validado feed a feed (ver
+#     _HC_MODO_ESTRANGEIRO_POR_PLATAFORMA: jogo inteiro x relativo ao placar);
+#     linha .25/.75 (asiatica de quarto) nao casa: o resolvedor nao faz meia aposta;
 #   - total por time/jogador fica de fora (o OBG tem linha .25/.75 ali).
 # Totais e vencedor de e-basket sao os que INCLUEM prorrogacao (o placar final
 # da coleta inclui). O 1x2 de tempo regulamentar da Altenar no basquete ('1')
@@ -502,22 +503,47 @@ _MAPA_ESTRANGEIRO_POR_PLATAFORMA = {
         'over_under_ft': ['ESFMTOTAL', 'ESNMOTOTAL'],
         'ml_ft':         ['ESFMWINNER3W', 'ESNMOWINNER2W'],
         'btts_ft':       ['ESFMBTS'],
+        'ah_ft':         ['ESNMOHANDICAP', 'ESFMHANDICAP', 'ESFMAGH'],
     },
     'altenar': {                   # Jokerbet, Masterbets365 (PE)
         'over_under_ft': ['18', '225'],
         'ml_ft':         ['1', '219'],
         'btts_ft':       ['29'],
+        'ah_ft':         ['16', '223'],
     },
     'kambi': {                     # Rushbet, Olimpo (PE)
         'over_under_ft': ['Total Goals', 'Total Points - Including Overtime'],
         'ml_ft':         ['Full Time', 'Moneyline - Including Overtime'],
         'btts_ft':       ['Both Teams To Score'],
+        'ah_ft':         ['Handicap', 'Handicap - Including Overtime'],
     },
     'kaizen': {                    # Betano PE (codigos de texto, nao os numericos da Betano BR)
         'over_under_ft': ['HCTG', 'FTPO'],
         'ml_ft':         ['MRES', 'H2HT'],
         'btts_ft':       ['BTSC'],
+        'ah_ft':         ['FHOT', '1001058', 'AHRF'],
     },
+}
+
+# 11/nov — DE QUE PLACAR A LINHA DE HC VALE, por plataforma e mercado_tipo
+# (False = jogo inteiro, True = do placar do envio pra frente). Medido com o
+# metodo do valida_hc (secao v20) em 09–11/11: ticks com odd de moeda (1.85–2.00),
+# separados por quem LIDERA e quem PERDE no envio; a leitura certa fica perto de
+# 50% nos dois lados e a errada vai pra ~25%/~72%. O mesmo teste confirmou o que
+# o Brasil ja usa (Superbet e Estrelabet = jogo inteiro).
+#   OBG    ESNMOHANDICAP basquete 'Margen de puntos'         jogo inteiro (desvio 3,0 x 23,0; 50 mil ticks)
+#          ESFMHANDICAP  futebol 'Hándicap de goles' (2 vias) jogo inteiro (desvio 9 x 35)
+#          ESFMAGH       futebol 'Hándicap Asiático (1:0)'    RELATIVO     (desvio 1,9 x 15,6)
+#   Altenar 223 basquete / 16 futebol                         jogo inteiro (desvio 3 x 24–26)
+#   Kambi  'Handicap' futebol                                 jogo inteiro (desvio 3,6 x 33,5)
+#          'Handicap - Including Overtime' basquete           jogo inteiro (vantagem >= 5: 52/37 x 26/68)
+#   Kaizen FHOT basquete / 1001058 futebol                    jogo inteiro (desvio 3,4 x 27,8)
+#          AHRF futebol 'Hándicap Asiático (Resultado actual)' RELATIVO    (desvio 3,8 x 31,1)
+_HC_MODO_ESTRANGEIRO_POR_PLATAFORMA = {
+    'obg':     {'ESNMOHANDICAP': False, 'ESFMHANDICAP': False, 'ESFMAGH': True},
+    'altenar': {'16': False, '223': False},
+    'kambi':   {'Handicap': False, 'Handicap - Including Overtime': False},
+    'kaizen':  {'FHOT': False, '1001058': False, 'AHRF': True},
 }
 
 
@@ -656,6 +682,14 @@ def _canonizar_tick_estrangeiro(t: dict, casa) -> dict:
                 and str(t.get('sport') or '') == 'E-Basketball'
                 and str(t.get('mercado_tipo') or '') == '1'):
             t['mercado_tipo'] = '1_tempo_regulamentar'
+        # HC asiatico de QUARTO (.25/.75): o resolvedor so' faz green/red/void
+        # inteiro, entao essas linhas nao podem casar com ah_ft.
+        _mt = str(t.get('mercado_tipo') or '')
+        _ah = _MAPA_ESTRANGEIRO_POR_PLATAFORMA.get(_cadastro_casas.plataforma_da_casa(casa) or '', {}).get('ah_ft', [])
+        if _mt in _ah:
+            _v = _selecao_hc_valor(t.get('selecao'))
+            if _v is not None and abs(round(_v * 4)) % 2 == 1:
+                t['mercado_tipo'] = _mt + '_linha_quarto'
     except Exception:
         pass
     return t
@@ -1611,6 +1645,17 @@ HC_RELATIVO_POR_LIGA: dict = {}
 #   'rejeitar'     -> nao aposta (fail closed) ate voce validar o feed
 HC_MODO_DESCONHECIDO = 'jogo_inteiro'
 
+# 11/nov: (BOOKMAKER, mercado_tipo) -> relativo? Mais especifico que (casa, esporte):
+# o OBG e a Betano PE tem, no MESMO esporte, um HC de jogo inteiro e outro relativo.
+# So' casas de fora do Brasil entram aqui (de _HC_MODO_ESTRANGEIRO_POR_PLATAFORMA);
+# Brasil segue exatamente no caminho de antes.
+HC_RELATIVO_POR_TIPO: dict = {}
+for _casa_hc, _plat_hc in [(c['codigo'], c.get('plataforma'))
+                           for p in _cadastro_casas.paises(so_ativos=False) if p['codigo'] != _cadastro_casas.PAIS_PADRAO
+                           for c in _cadastro_casas.casas_do_pais(p['codigo'], so_ativas=False) if c.get('pais')]:
+    for _tipo_hc, _rel_hc in _HC_MODO_ESTRANGEIRO_POR_PLATAFORMA.get(_plat_hc or '', {}).items():
+        HC_RELATIVO_POR_TIPO[(_casa_hc.strip().upper(), _tipo_hc)] = _rel_hc
+
 
 def _chave_feed(valor) -> str:
     """Normaliza bookmaker/sport/liga pra chave (upper, sem espaco nas pontas).
@@ -1635,6 +1680,15 @@ def _hc_modo_liquidacao(tick) -> str:
         return 'desconhecido'
     if not book:
         return 'desconhecido'
+
+    # 11/nov: casa estrangeira com o modo medido POR mercado_tipo
+    if HC_RELATIVO_POR_TIPO:
+        try:
+            _rel_t = HC_RELATIVO_POR_TIPO.get((book, str(tick.get('mercado_tipo') or '')))
+        except Exception:
+            _rel_t = None
+        if _rel_t is not None:
+            return 'relativo' if _rel_t else 'jogo_inteiro'
 
     sport = ESPORTE_UI_PARA_BANCO.get(sport_raw, sport_raw)
     sport = _chave_feed(sport)
