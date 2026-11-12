@@ -557,10 +557,11 @@ class GerarRequest(BaseModel):
     jogador: Optional[str] = None
     de: Optional[str] = Field(None, description="AAAA-MM-DD")
     ate: Optional[str] = Field(None, description="AAAA-MM-DD")
-    # 'auto' = bet365 vai pra BetsAPI, resto vai pro historico.
-    # Mas o historico JA TEM bet365 (coletor via JBot alimentando a MikeDB),
-    # entao o painel pode forcar 'historico' pra bet365: sai em segundos em
-    # vez de horas e nao depende do Chrome/Cloudflare.
+    # 'auto' = historico pra TODAS as casas. 12/nov: a bet365 tambem, quando o
+    # historico tem dado dela (coleta propria via JBot, no dialeto numerico que
+    # o motor casa: 1450, 1446, 10566...). Sai em segundos e nao depende do
+    # Chrome/Cloudflare. A BetsAPI continua disponivel com via='betsapi', e e'
+    # o padrao da bet365 so' se o historico dela nao existir.
     via: Optional[str] = Field("auto", description="auto | historico | betsapi")
     # paralelismo da raspagem (abas worker no Chrome). Default do coletor = 7.
     workers: Optional[int] = Field(None, ge=1, le=24, description="abas worker (1-24)")
@@ -681,12 +682,43 @@ async def catalogo(casa: Optional[str] = None,
                    pais: str = Depends(cadastro.pais_atual)):   # 11/nov
     _valida_texto(casa, "casa")
     if casa and casa.lower() == CASA_BETSAPI:
-        # bet365 nao vem do historico: as opcoes sao o catalogo do coletor
+        # 12/nov: a bet365 vem do HISTORICO (coleta propria via JBot) quando ele
+        # tem dado dela; a BetsAPI fica como alternativa (ligas_betsapi).
+        if await asyncio.to_thread(_bet365_tem_historico):
+            dados = await asyncio.to_thread(_ler_catalogo, casa, pais)
+            for it in dados.get("ligas", []):
+                try:
+                    from routers.torneios import traduzir_liga
+                    nome = traduzir_liga(CASA_BETSAPI, it["liga"])
+                    if nome and nome != it["liga"]:
+                        it["rotulo"] = nome
+                except Exception:
+                    pass
+            dados.update(fonte="historico", betsapi_disponivel=True, ligas_betsapi=LIGAS_BETSAPI)
+            return dados
         return {"casas": [CASA_BETSAPI], "ligas": [], "periodo": None,
                 "fonte": "betsapi", "ligas_betsapi": LIGAS_BETSAPI}
     dados = await asyncio.to_thread(_ler_catalogo, casa, pais)
     dados["fonte"] = "historico"
     return dados
+
+
+def _bet365_tem_historico() -> bool:
+    """12/nov: o historico parquet tem dado da bet365 (coleta via JBot)?"""
+    try:
+        return bool(glob.glob(str(HIST_DIR / f"bookmaker={CASA_BETSAPI}" / "liga=*" / "data=*")))
+    except Exception:
+        return False
+
+
+def _via_eh_betsapi(via: str, casa: Optional[str]) -> bool:
+    """12/nov: 'auto' so' vai pra BetsAPI se for bet365 SEM historico local."""
+    via = (via or "auto").lower()
+    if via == "betsapi":
+        return True
+    if via == "historico":
+        return False
+    return (casa or "").lower() == CASA_BETSAPI and not _bet365_tem_historico()
 
 
 # ------------------------------------------------------------------ /gerar ---
@@ -800,9 +832,7 @@ async def _executar(jid: str, req: GerarRequest):
     try:
         async with _LOCK_GERACAO:
             _log_job(jid, "iniciando", etapa="preparando", progresso=3)
-            via = (req.via or "auto").lower()
-            eh_betsapi = (via == "betsapi" or
-                          (via == "auto" and (req.casa or "").lower() == CASA_BETSAPI))
+            eh_betsapi = _via_eh_betsapi(req.via, req.casa)   # 12/nov
             caminho = (await _gerar_da_betsapi(jid, req) if eh_betsapi
                        else await _gerar_do_historico(jid, req))
 
@@ -889,8 +919,7 @@ async def gerar(req: GerarRequest, usuario: dict = Depends(get_current_user)):
     via = (req.via or "auto").lower()
     if via not in ("auto", "historico", "betsapi"):
         raise HTTPException(400, "via invalida: use auto, historico ou betsapi")
-    eh_betsapi = (via == "betsapi" or
-                  (via == "auto" and (req.casa or "").lower() == CASA_BETSAPI))
+    eh_betsapi = _via_eh_betsapi(via, req.casa)   # 12/nov
     if not eh_betsapi and not HIST_DIR.exists():
         raise HTTPException(400, f"historico nao encontrado em {HIST_DIR}")
     if not eh_betsapi and not SCRIPT_CSV.exists():
