@@ -129,6 +129,7 @@ for _p in (
 import asyncpg
 
 import casas as _cadastro_casas   # 11/nov: pais e ao_vivo por casa (tabela casas)
+import workers.backtest_runner as _bkr   # 11/nov: traducao e regras das casas de fora do Brasil
 
 from workers.backtest_runner import (
     _matches_mercado,
@@ -702,6 +703,11 @@ async def _processar_tick(tick_id: int):
         return
 
     tick = dict(tick_row)
+    # 11/nov: tick de casa de fora do Brasil -> mesmo vocabulario do backtest
+    # (selecao 'más de' -> 'Mais de', periodo em espanhol, quarto 'Q2' -> '2Q',
+    # linha .25/.75 fora...). Brasil nao passa por aqui.
+    if _bkr._casa_estrangeira(tick.get('bookmaker')):
+        tick = _bkr._canonizar_tick_estrangeiro(tick, tick.get('bookmaker'))
 
     for bot in bots:
         try:
@@ -1619,6 +1625,15 @@ async def _placar_intervalo(conn, event_id, bookmaker):
     if not linhas:
         return None
 
+    # 11/nov: casa de fora do Brasil — mesmo vocabulario e mesma regra validada
+    # no backtest: quarto 'Q2' do Peru vira '2Q', e o tick 'HT' da propria casa
+    # MANDA (o primeiro). Brasil segue no caminho de sempre.
+    if _bkr._casa_estrangeira(bookmaker):
+        linhas = [_bkr._canonizar_tick_estrangeiro(dict(r), bookmaker) for r in linhas]
+        for r in linhas:
+            if _bkr._ht_autoridade(r['live_time']):
+                return (r['score_home'], r['score_away'])
+
     regra = _regra_ht_do_tick(linhas[0])
     if regra:
         meia = _meia_da_liga(linhas[0]['liga'], bookmaker)
@@ -1655,7 +1670,10 @@ async def _resolver_apostas_pendentes():
                        -- esporte/liga pra saber de que placar a linha vale
                        a.placar_a_entrada, a.placar_b_entrada,
                        a.esporte, a.liga,
-                       a.stats_h2h
+                       a.stats_h2h,
+                       -- 11/nov: o modo do HC das casas de fora do Brasil e' por
+                       -- mercado_tipo (OBG ESFMAGH e Betano PE AHRF sao relativos)
+                       a.mercado_tipo
                 FROM apostas a
                 WHERE a.status = 'pendente'
                   AND a.modo = 'simulado'
@@ -1714,6 +1732,21 @@ async def _resolver_apostas_pendentes():
                 except (KeyError, IndexError, TypeError):
                     _lt_raw = None
                 lt = str(_lt_raw or '').strip().upper()
+                # 11/nov: casa de fora do Brasil — o relogio do Peru marca 'Q4'
+                # (e 'Q4 18'' na Altenar) e o fim como 'FT' (inclusive o tick do
+                # placar final corrigido). Na OBG o jogo some da casa 4-7 min
+                # ANTES do fim: so' vale como fim o tick 'FT' (o corrigido chega
+                # pelo AtualizarH2H); senao segue pra TM / espera longa, nunca o
+                # parcial dos 5 min.
+                if _bkr._casa_estrangeira(ap['bookmaker']):
+                    _mq = re.match(r'^Q([1-4])\b', lt)
+                    if _mq:
+                        lt = f"{_mq.group(1)}Q"
+                    elif lt.startswith('FT'):
+                        lt = 'END'
+                    if (_cadastro_casas.plataforma_da_casa(ap['bookmaker']) == 'obg'
+                            and not lt.startswith('END')):
+                        lt = 'OBG_SEM_FIM'
                 sh = placar['score_home']
                 sa = placar['score_away']
                 placar_final_ok = (
@@ -1790,6 +1823,7 @@ async def _resolver_apostas_pendentes():
                             'bookmaker': ap['bookmaker'],
                             'sport': ap['esporte'],
                             'liga': ap['liga'],
+                            'mercado_tipo': ap['mercado_tipo'],
                         })
                     except Exception:
                         _modo_hc = 'desconhecido'
@@ -1850,8 +1884,14 @@ async def _resolver_apostas_pendentes():
                         logger.info(f"[resolver] ap {ap['id']}: tenis {_sh_g}x{_sa_g} "
                                     f"nao e' placar final — segue pendente")
                         continue
+                    # 11/nov: vencedor do 1o tempo (ml_ht) de casa de fora do
+                    # Brasil liquida com a regra do vencedor sobre o placar do
+                    # intervalo (mesma regra do backtest). Brasil segue igual.
+                    _m_res = ('ml_ft' if (ap['mercado'] == 'ml_ht'
+                                          and _bkr._casa_estrangeira(ap['bookmaker']))
+                              else ap['mercado'])
                     resultado = _resolve_resultado(
-                        ap['mercado'], ap['selecao'] or ap['lado'],
+                        _m_res, ap['selecao'] or ap['lado'],
                         float(ap['linha']) if ap['linha'] else None,
                         _sh_g, _sa_g,
                         score_alvo=_score_alvo,

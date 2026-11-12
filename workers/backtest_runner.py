@@ -504,26 +504,51 @@ _MAPA_ESTRANGEIRO_POR_PLATAFORMA = {
         'ml_ft':         ['ESFMWINNER3W', 'ESNMOWINNER2W'],
         'btts_ft':       ['ESFMBTS'],
         'ah_ft':         ['ESNMOHANDICAP', 'ESFMHANDICAP', 'ESFMAGH'],
+        'over_under_ht': ['ESF1HTG', 'ESNH1TOTAL'],
+        'ml_ht':         ['ESFH1WINNER3W', 'ESNH1WINNER3W'],
+        'over_under_ft_player': ['ESFMITOTALL', 'ESFMITOTALR', 'ESNMOITOTALL', 'ESNMOITOTALR'],
     },
     'altenar': {                   # Jokerbet, Masterbets365 (PE)
         'over_under_ft': ['18', '225'],
         'ml_ft':         ['1', '219'],
         'btts_ft':       ['29'],
         'ah_ft':         ['16', '223'],
+        'over_under_ht': ['68'],
+        'ml_ht':         ['60'],
+        'over_under_ft_player': ['19', '20', '227', '228'],   # nome traduzido na entrada (ver _ALTENAR_TOTAL_TIME)
     },
     'kambi': {                     # Rushbet, Olimpo (PE)
         'over_under_ft': ['Total Goals', 'Total Points - Including Overtime'],
         'ml_ft':         ['Full Time', 'Moneyline - Including Overtime'],
         'btts_ft':       ['Both Teams To Score'],
         'ah_ft':         ['Handicap', 'Handicap - Including Overtime'],
+        'over_under_ht': ['Total Goals - 1st Half', 'Total Points - 1st Half'],
+        'ml_ht':         ['Half Time', '1st Half'],
+        'over_under_ft_player': ['Total Goals by HOME', 'Total Goals by AWAY',
+                                 'Total Points by HOME - Including Overtime', 'Total Points by AWAY - Including Overtime'],
     },
     'kaizen': {                    # Betano PE (codigos de texto, nao os numericos da Betano BR)
         'over_under_ft': ['HCTG', 'FTPO'],
         'ml_ft':         ['MRES', 'H2HT'],
         'btts_ft':       ['BTSC'],
         'ah_ft':         ['FHOT', '1001058', 'AHRF'],
+        # SEM 1o tempo: o placar de intervalo da Betano PE bateu so' 68,7% (futebol)
+        # e 91,6% (basquete) com as outras plataformas (11/nov). Fica fora ate o
+        # coletor dela marcar o tempo direito.
+        'over_under_ft_player': ['OUHG', 'OUAG', 'OUHO', 'OUAO'],
     },
 }
+
+# 11/nov — 1o TEMPO: placar de intervalo VALIDADO contra as outras plataformas no
+# mesmo jogo (09–11/11, jogos em 3+ plataformas): OBG 99,5% futebol / 99,4% basquete;
+# Altenar 99,0% / 98,3%; Kambi 99,8% / 99,0%. Futebol usa a regra 'rotulo_1h' da
+# Superbet (ultimo tick '1H', e o tick 'HT' da casa manda); basquete o caminho
+# padrao ('HT' ou ultimo '2Q' — o 'Q2' do Peru vira '2Q' na entrada).
+_HT_VALIDADO_POR_PLATAFORMA = {'obg', 'altenar', 'kambi'}
+
+# Altenar escreve o total por time como '1 total' / '2 total' (sem nome): a entrada
+# reescreve com o time e o nick pra _lado_alvo_player achar o lado.
+_ALTENAR_TOTAL_TIME = {'19': 'home', '227': 'home', '20': 'away', '228': 'away'}
 
 # 11/nov — DE QUE PLACAR A LINHA DE HC VALE, por plataforma e mercado_tipo
 # (False = jogo inteiro, True = do placar do envio pra frente). Medido com o
@@ -555,6 +580,7 @@ def _casa_estrangeira(casa) -> bool:
         return False
 
 
+_CASAS_ESTRANGEIRAS_HT = []    # casas com o 1o tempo validado (entram no PLACAR_HT_POR_FEED abaixo)
 for _pais_x in _cadastro_casas.paises(so_ativos=False):
     if _pais_x['codigo'] == _cadastro_casas.PAIS_PADRAO:
         continue
@@ -562,6 +588,8 @@ for _pais_x in _cadastro_casas.paises(so_ativos=False):
         _mapa_x = _MAPA_ESTRANGEIRO_POR_PLATAFORMA.get(_casa_x.get('plataforma') or '')
         if _casa_x.get('pais') and _mapa_x and _casa_x['codigo'] not in MERCADO_TIPOS_POR_CASA:
             MERCADO_TIPOS_POR_CASA[_casa_x['codigo']] = {k: list(v) for k, v in _mapa_x.items()}
+            if (_casa_x.get('plataforma') or '') in _HT_VALIDADO_POR_PLATAFORMA:
+                _CASAS_ESTRANGEIRAS_HT.append(_casa_x['codigo'])
 
 
 MERCADO_KEYWORDS = {
@@ -652,6 +680,7 @@ _RX_ES_MENOS = re.compile(r'^\s*menos(?:\s+de)?\s+', re.I)
 _RX_ES_1T = re.compile(r'\b(?:1\s*(?:er|ra|ro|\.?\s*[ªºa])?|primer[ao]?)\s*(?:tiempo|mitad|parte)\b', re.I)
 _RX_ES_2T = re.compile(r'\b(?:2\s*(?:do|da|\.?\s*[ªºa])?|segund[ao])\s*(?:tiempo|mitad|parte)\b', re.I)
 _RX_ES_CUARTO = re.compile(r'\bcuarto\b', re.I)
+_RX_ES_QUARTO = re.compile(r'^\s*Q([1-4])\b')
 
 
 def _canonizar_tick_estrangeiro(t: dict, casa) -> dict:
@@ -684,12 +713,36 @@ def _canonizar_tick_estrangeiro(t: dict, casa) -> dict:
             t['mercado_tipo'] = '1_tempo_regulamentar'
         # HC asiatico de QUARTO (.25/.75): o resolvedor so' faz green/red/void
         # inteiro, entao essas linhas nao podem casar com ah_ft.
+        _plat = _cadastro_casas.plataforma_da_casa(casa) or ''
+        _mapa_p = _MAPA_ESTRANGEIRO_POR_PLATAFORMA.get(_plat, {})
         _mt = str(t.get('mercado_tipo') or '')
-        _ah = _MAPA_ESTRANGEIRO_POR_PLATAFORMA.get(_cadastro_casas.plataforma_da_casa(casa) or '', {}).get('ah_ft', [])
+        _ah = _mapa_p.get('ah_ft', [])
         if _mt in _ah:
             _v = _selecao_hc_valor(t.get('selecao'))
             if _v is not None and abs(round(_v * 4)) % 2 == 1:
                 t['mercado_tipo'] = _mt + '_linha_quarto'
+        # Idem pros TOTAIS (jogo inteiro, 1o tempo, por time): linha .25/.75 e'
+        # total asiatico (meia aposta) e nao casa.
+        elif _mt in (_mapa_p.get('over_under_ft', []) + _mapa_p.get('over_under_ht', [])
+                     + _mapa_p.get('over_under_ft_player', [])):
+            _l = _parse_linha(t.get('linha'))
+            if _l is not None and abs(round(_l * 4)) % 2 == 1:
+                t['mercado_tipo'] = _mt + '_linha_quarto'
+        # Altenar: '1 total' / '2 total' -> 'Time (nick) - total' (lado do total por time)
+        if _plat == 'altenar' and _mt in _ALTENAR_TOTAL_TIME:
+            _l_ = 'a' if _ALTENAR_TOTAL_TIME[_mt] == 'home' else 'b'
+            _nm = ' '.join(x for x in (str(t.get(f'time_{_l_}') or '').strip(),
+                                       f"({str(t.get(f'jogador_{_l_}') or '').strip()})") if x and x != '()')
+            if _nm:
+                t['mercado'] = f"{_nm} - total"
+        # Basquete: o Peru marca o quarto 'Q2' / 'Q2 8'' (Altenar com minuto); o motor
+        # (intervalo pelo ultimo '2Q', momento, ERR) le '1Q'..'4Q'.
+        if str(t.get('sport') or '') == 'E-Basketball':
+            _lt = t.get('live_time')
+            if isinstance(_lt, str):
+                _mq = _RX_ES_QUARTO.match(_lt)
+                if _mq:
+                    t['live_time'] = f"{_mq.group(1)}Q"
     except Exception:
         pass
     return t
@@ -754,6 +807,10 @@ PLACAR_HT_POR_FEED = {
     ('estrelabet', 'e-football'): 'relogio_estrela',
     ('superbet',   'e-football'): 'rotulo_1h',
 }
+# 11/nov: casas de fora do Brasil com o intervalo validado (ver
+# _HT_VALIDADO_POR_PLATAFORMA): futebol pela mesma regra da Superbet.
+for _casa_ht in _CASAS_ESTRANGEIRAS_HT:
+    PLACAR_HT_POR_FEED.setdefault((_casa_ht, 'e-football'), 'rotulo_1h')
 
 # Ligas que NAO trazem o formato no nome. Medido em 08/set no proprio feed
 # (minuto final mediana / 2). Sem esta tabela, 21% dos eventos de e-football
@@ -4620,6 +4677,36 @@ async def executar_backtest(job_id: int):
                 logger.info(f"[backtest] SQL params count: {len(params)}")
 
                 ticks = await conn.fetch(sql, *params)
+                # 11/nov: JOGO QUE ATRAVESSA A MEIA-NOITE do ultimo dia. O corte
+                # (data_fim + 1 dia, meia-noite de Brasilia na sessao do banco)
+                # deixava o jogo sem o fim, e o placar_final saia o parcial das
+                # 23:59. Entram SO os ticks de PLACAR (score_update e o
+                # score_final_ref) das 3 horas seguintes, e so' dos jogos que JA
+                # estao no periodo: nenhuma odd nova, nenhum jogo novo.
+                # Blindado: erro aqui so' registra e segue sem a continuacao.
+                try:
+                    _evs_periodo = list({t['event_id'] for t in ticks if t['event_id'] is not None})
+                    if _evs_periodo:
+                        _cont = await conn.fetch(
+                            """
+                            SELECT id, ts, bookmaker, sport, liga, event_id,
+                                   jogador_a, jogador_b, time_a, time_b,
+                                   score_home, score_away, live_time,
+                                   mercado, mercado_id, mercado_tipo, linha, selecao, selecao_id,
+                                   odds
+                            FROM ticks
+                            WHERE bookmaker = $1
+                              AND ts >= $2::timestamp + INTERVAL '1 day'
+                              AND ts < $2::timestamp + INTERVAL '1 day 3 hours'
+                              AND selecao_id IN ('score_update', 'score_final_ref')
+                              AND event_id = ANY($3::text[])
+                            """, bot.get('casa'), data_fim, _evs_periodo)
+                        if _cont:
+                            ticks = list(ticks) + list(_cont)
+                            logger.info(f"[backtest] Job {job_id}: +{len(_cont)} ticks de placar "
+                                        f"de jogos que passaram da meia-noite")
+                except Exception as _e_cont:
+                    logger.warning(f"[backtest] Job {job_id}: continuacao da meia-noite falhou ({_e_cont})")
                 total_ticks = len(ticks)
                 logger.info(f"[backtest] Job {job_id}: {total_ticks} ticks brutos")
 
@@ -5410,8 +5497,16 @@ async def executar_backtest(job_id: int):
                     score_alvo=_score_alvo,
                 )
             else:
+                # 11/nov: VENCEDOR DO 1o TEMPO (ml_ht) — _resolve_resultado nao
+                # tem ramo de ml_ht (devolvia None pra qualquer casa). Pra casa de
+                # fora do Brasil o intervalo foi VALIDADO contra as outras
+                # plataformas, e o placar que chega aqui ja' e' o do intervalo:
+                # resolve com a regra do vencedor (ml_ft). Brasil segue como estava.
+                _mercado_res = ('ml_ft' if (mercado_bot == 'ml_ht'
+                                            and _casa_estrangeira(bot.get('casa')))
+                                else mercado_bot)
                 resultado = _resolve_resultado(
-                    mercado_bot, tick.get('selecao', ''),
+                    _mercado_res, tick.get('selecao', ''),
                     linha_num, score_home, score_away,
                     jogador_a=tick.get('jogador_a'), jogador_b=tick.get('jogador_b'),
                 )

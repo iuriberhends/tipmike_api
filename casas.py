@@ -55,14 +55,14 @@ _CASAS_EMBUTIDAS = {c["codigo"]: c for c in [
     _c("betmgm", "BetMGM", "BR", None, "pt", None, True, 11),
     _c("betboom", "Betboom", "BR", None, "pt", None, True, 12),
     _c("starbet", "Starbet", "BR", None, "pt", None, True, 13),
-    _c("betsson_pe", "Betsson", "PE", "obg", "es", None, False, 1),
-    _c("betsafe_pe", "Betsafe", "PE", "obg", "es", None, False, 2),
-    _c("inkabet_pe", "Inkabet", "PE", "obg", "es", None, False, 3),
-    _c("jokerbet_pe", "Jokerbet", "PE", "altenar", "es", None, False, 4),
-    _c("masterbets365_pe", "Masterbets365", "PE", "altenar", "es", None, False, 5),
-    _c("rushbet_pe", "Rushbet", "PE", "kambi", "es", None, False, 6),
-    _c("olimpo_pe", "Olimpo", "PE", "kambi", "es", None, False, 7),
-    _c("betano_pe", "Betano", "PE", "kaizen", "es", "blue", False, 8),
+    _c("betsson_pe", "Betsson", "PE", "obg", "es", None, True, 1),
+    _c("betsafe_pe", "Betsafe", "PE", "obg", "es", None, True, 2),
+    _c("inkabet_pe", "Inkabet", "PE", "obg", "es", None, True, 3),
+    _c("jokerbet_pe", "Jokerbet", "PE", "altenar", "es", None, True, 4),
+    _c("masterbets365_pe", "Masterbets365", "PE", "altenar", "es", None, True, 5),
+    _c("rushbet_pe", "Rushbet", "PE", "kambi", "es", None, True, 6),
+    _c("olimpo_pe", "Olimpo", "PE", "kambi", "es", None, True, 7),
+    _c("betano_pe", "Betano", "PE", "kaizen", "es", "blue", True, 8),
 ]}
 
 _estado = {"paises": dict(_PAISES_EMBUTIDOS), "casas": dict(_CASAS_EMBUTIDAS), "lido": 0.0, "fonte": "embutido"}

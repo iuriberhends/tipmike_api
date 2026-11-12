@@ -15,6 +15,7 @@ from datetime import datetime
 from database import db
 from models import ApostaCreate, ApostaUpdate
 from security import get_current_user, acesso_total
+import casas as cadastro
 
 logger = logging.getLogger("tipmike.apostas")
 
@@ -53,6 +54,7 @@ async def listar_apostas(
     limit: int = Query(default=100, le=500),
     offset: int = 0,
     usuario: dict = Depends(get_current_user),
+    pais: str = Depends(cadastro.pais_atual),   # 11/nov: vale so' sem casa e sem bot_id
 ):
     conditions = ["1=1"]
     params = []
@@ -71,6 +73,13 @@ async def listar_apostas(
         conditions.append(f"resultado = ${i}"); params.append(resultado); i += 1
     if casa:
         conditions.append(f"casa = ${i}"); params.append(casa); i += 1
+    elif not bot_id:
+        # 11/nov: sem casa nem bot pedidos, so' as apostas das casas do pais.
+        # Filtra por apostas.casa (e' o que o executor grava; bookmaker pode vir
+        # vazia). Brasil = tudo menos as casas de outro pais (NULL segue no BR).
+        # Com bot_id nao filtra: o bot e' um recurso especifico e traz a casa dele.
+        _sql_p, _par_p = cadastro.condicao_pais(pais, "casa", i)
+        conditions.append(_sql_p); params.extend(_par_p); i += 1
     if jogador:
         conditions.append(f"(jogador_a ILIKE ${i} OR jogador_b ILIKE ${i})")
         params.append(f"%{jogador}%"); i += 1

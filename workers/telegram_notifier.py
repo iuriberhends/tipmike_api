@@ -33,6 +33,26 @@ from typing import Optional
 import asyncpg
 import httpx
 
+# 11/nov: o cadastro de casas (tipmike_api/casas.py) mora na pasta de cima.
+_RAIZ_API = str(Path(__file__).resolve().parent.parent)
+if _RAIZ_API not in sys.path:
+    sys.path.insert(0, _RAIZ_API)
+
+
+def _simbolo_moeda(aposta) -> str:
+    """11/nov: moeda pelo PAIS da casa do bot (R$ no Brasil, S/ no Peru).
+    Casa global (bet365) ou qualquer falha -> R$, como sempre foi."""
+    try:
+        import casas as _cad
+        pais = _cad.pais_da_casa((aposta or {}).get('bot_casa') or (aposta or {}).get('casa'))
+        if pais:
+            for p in _cad.paises(so_ativos=False):
+                if p['codigo'] == pais:
+                    return p.get('simbolo_moeda') or 'R$'
+    except Exception:
+        pass
+    return 'R$'
+
 try:
     sys.stdout.reconfigure(encoding='utf-8')
     sys.stderr.reconfigure(encoding='utf-8')
@@ -602,7 +622,7 @@ async def montar_msg_aposta_nova(aposta: dict) -> str:
         f'{ultimo_txt}'
         f'{total_confrontos_txt}'
         f'{filtros_bloco}'
-        f'\n\n💰 Stake: R${stake}\n'
+        f'\n\n💰 Stake: {_simbolo_moeda(aposta)}{stake}\n'
         f'🆔 #{aposta.get("id")}'
     )
     return msg
@@ -644,7 +664,7 @@ def _footer_resolucao(aposta: dict) -> str:
         try:
             pnl_dec = Decimal(str(pnl_raw))
             sinal = '+' if pnl_dec >= 0 else ''
-            pnl_txt = f'{sinal}R${_format_decimal(pnl_dec)}'
+            pnl_txt = f'{sinal}{_simbolo_moeda(aposta)}{_format_decimal(pnl_dec)}'
         except Exception:
             pnl_txt = '-'
     else:
@@ -707,7 +727,7 @@ def montar_msg_aposta_resolvida(aposta: dict) -> str:
     if pnl_raw is not None:
         pnl_dec = Decimal(str(pnl_raw))
         sinal = '+' if pnl_dec >= 0 else ''
-        pnl_txt = f'{sinal}R${_format_decimal(pnl_dec)}'
+        pnl_txt = f'{sinal}{_simbolo_moeda(aposta)}{_format_decimal(pnl_dec)}'
     else:
         pnl_txt = '-'
 
